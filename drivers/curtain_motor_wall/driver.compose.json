@@ -47,9 +47,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/curtain_motor/assets/images/small.png",
-    "large": "drivers/curtain_motor/assets/images/large.png",
-    "xlarge": "drivers/curtain_motor/assets/images/xlarge.png"
+    "small": "/drivers/curtain_motor/assets/images/small.png",
+    "large": "/drivers/curtain_motor/assets/images/large.png",
+    "xlarge": "/drivers/curtain_motor/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

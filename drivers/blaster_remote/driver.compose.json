@@ -37,8 +37,15 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3290_nba3knpsarkawgnt",
+      "_TZ3290_jxvzqatwgsaqzx1u",
+      "_TZ3290_lypnqvlem5eq1ree",
+      "_TZ3210_OGX8U9IT"
+    ],
+    "productId": [
+      "TS1201"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -62,8 +69,8 @@
     }
   },
   "images": {
-    "large": "drivers/ir_remote/assets/images/large.png",
-    "small": "drivers/ir_remote/assets/images/small.png"
+    "large": "/drivers/ir_remote/assets/images/large.png",
+    "small": "/drivers/ir_remote/assets/images/small.png"
   },
   "maintenanceActions": [
     {

@@ -21,8 +21,25 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TYST11_jeaxp72v",
+      "_TYST11_kfvq6avy",
+      "_TYST11_zivfvd7h",
+      "_TYST11_hhrtiq0x",
+      "_TYST11_ps5v5jor",
+      "_TYST11_owwdxjbx",
+      "_TYST11_8daqwrsj",
+      "_TYST11_czk78ptr",
+      "_TYST11_ckud7u2l",
+      "_TYST11_ywdxldoj",
+      "_TYST11_cwnjrr72",
+      "_TYST11_2atgpdho",
+      "_TZE284_noixx2uz",
+      "_TZE204_wc2w9t1s"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -33,8 +50,8 @@
     }
   },
   "images": {
-    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
-    "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
+    "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "/drivers/thermostat_tuya_dp/assets/images/small.png"
   },
   "energy": {
     "batteries": [

@@ -20,8 +20,13 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE204_n9ctkb6j",
+      "_TZE200_3p5ydos3"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
       "instruction": {
@@ -478,8 +483,8 @@
     }
   ],
   "images": {
-    "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
-    "large": "drivers/dimmer_wall_1gang/assets/images/large.png"
+    "small": "/drivers/dimmer_wall_1gang/assets/images/small.png",
+    "large": "/drivers/dimmer_wall_1gang/assets/images/large.png"
   },
   "platforms": [
     "local"

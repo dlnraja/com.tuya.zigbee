@@ -54,7 +54,9 @@
       "_TZE200_CFCZGBSS",
       "_tze284_cfczgbss",
       "_TZE284_cfczgbss",
-      "_TZE284_CFCZGBSS"
+      "_TZE284_CFCZGBSS",
+      "_TZE200_R32CTEZX",
+      "_TZE204_R32CTEZX"
     ],
     "productId": [
       "TS0601"
@@ -69,9 +71,9 @@
     }
   },
   "images": {
-    "small": "drivers/hvac_controller/assets/images/small.png",
-    "large": "drivers/hvac_controller/assets/images/large.png",
-    "xlarge": "drivers/hvac_controller/assets/images/xlarge.png"
+    "small": "/drivers/hvac_controller/assets/images/small.png",
+    "large": "/drivers/hvac_controller/assets/images/large.png",
+    "xlarge": "/drivers/hvac_controller/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

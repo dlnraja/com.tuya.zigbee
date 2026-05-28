@@ -31,8 +31,16 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZA226_ueagguan",
+      "_TZ3000_bguser20",
+      "_TYZB01_a082h2cc",
+      "_TZ3000_fllyghyj"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -642,8 +650,8 @@
     }
   ],
   "images": {
-    "small": "drivers/climate_sensor/assets/images/small.png",
-    "large": "drivers/climate_sensor/assets/images/large.png"
+    "small": "/drivers/climate_sensor/assets/images/small.png",
+    "large": "/drivers/climate_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

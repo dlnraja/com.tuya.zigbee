@@ -537,7 +537,12 @@
       "_TZE284_O3X45P96",
       "_tze284_rv6iuyxb",
       "_TZE284_rv6iuyxb",
-      "_TZE284_RV6IUYXB"
+      "_TZE284_RV6IUYXB",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_zion52ef",
+      "_TZE200_2atgpdho",
+      "_TZE200_0j6pth9y",
+      "_TZE204_9xfjixap"
     ],
     "productId": [
       "TV01-ZB",
@@ -800,9 +805,9 @@
     }
   ],
   "images": {
-    "small": "drivers/radiator_valve/assets/images/small.png",
-    "large": "drivers/radiator_valve/assets/images/large.png",
-    "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
+    "small": "/drivers/radiator_valve/assets/images/small.png",
+    "large": "/drivers/radiator_valve/assets/images/large.png",
+    "xlarge": "/drivers/radiator_valve/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

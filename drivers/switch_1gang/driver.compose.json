@@ -1310,9 +1310,9 @@
     ]
   },
   "images": {
-    "small": "drivers/switch_1gang/assets/images/small.png",
-    "large": "drivers/switch_1gang/assets/images/large.png",
-    "xlarge": "drivers/switch_1gang/assets/images/xlarge.png"
+    "small": "/drivers/switch_1gang/assets/images/small.png",
+    "large": "/drivers/switch_1gang/assets/images/large.png",
+    "xlarge": "/drivers/switch_1gang/assets/images/xlarge.png"
   },
   "settings": [
     {

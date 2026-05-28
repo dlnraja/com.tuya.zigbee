@@ -62,8 +62,15 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_2xlvlnvp",
+      "_TZ3000_typdpdpg",
+      "_tz3000_5f43h46b"
+    ],
+    "productId": [
+      "TS011F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -369,8 +376,8 @@
     }
   ],
   "images": {
-    "small": "drivers/usb_dongle_dual_repeater/assets/images/small.png",
-    "large": "drivers/usb_dongle_dual_repeater/assets/images/large.png"
+    "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
+    "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png"
   },
   "platforms": [
     "local"

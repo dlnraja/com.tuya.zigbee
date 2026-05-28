@@ -14,14 +14,21 @@
     "alarm_battery"
   ],
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_7bztmfm1",
+      "_TZE200_qpn5q17m",
+      "_TZE200_4mh6tyyo",
+      "_TYST11_d0yu2xgi"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,8 +39,8 @@
     }
   },
   "images": {
-    "small": "drivers/switch_1gang/assets/images/small.png",
-    "large": "drivers/switch_1gang/assets/images/large.png"
+    "small": "/drivers/switch_1gang/assets/images/small.png",
+    "large": "/drivers/switch_1gang/assets/images/large.png"
   },
   "settings": [
     {

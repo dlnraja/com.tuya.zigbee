@@ -27,7 +27,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_gek6snaj"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -621,8 +623,8 @@
     }
   ],
   "images": {
-    "small": "drivers/bulb_rgb/assets/images/small.png",
-    "large": "drivers/bulb_rgb/assets/images/large.png"
+    "small": "/drivers/bulb_rgb/assets/images/small.png",
+    "large": "/drivers/bulb_rgb/assets/images/large.png"
   },
   "platforms": [
     "local"

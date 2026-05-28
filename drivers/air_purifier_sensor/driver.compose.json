@@ -30,7 +30,12 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_7bztmfm1",
+      "_TZE200_s8gkrkxk",
+      "_TZE200_qpn5q17m",
+      "_TZE204_s8gkrkxk"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,7 +51,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {
@@ -575,8 +582,8 @@
     }
   ],
   "images": {
-    "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
-    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png"
+    "small": "/drivers/motion_sensor_radar_mmwave/assets/images/small.png",
+    "large": "/drivers/motion_sensor_radar_mmwave/assets/images/large.png"
   },
   "platforms": [
     "local"

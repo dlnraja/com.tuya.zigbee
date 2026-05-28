@@ -92,7 +92,10 @@
       "_TZ3000_8BXRZYXZ",
       "_tz3000_ky0fq4ho",
       "_TZ3000_ky0fq4ho",
-      "_TZ3000_KY0FQ4HO"
+      "_TZ3000_KY0FQ4HO",
+      "_TYZB01_kulduhbj",
+      "_TZ3000_hktqahrq",
+      "_TZ3000_a4ouv4qs"
     ],
     "productId": [
       "TS0209",
@@ -112,9 +115,9 @@
     }
   },
   "images": {
-    "small": "drivers/vibration_sensor/assets/images/small.png",
-    "large": "drivers/vibration_sensor/assets/images/large.png",
-    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
+    "small": "/drivers/vibration_sensor/assets/images/small.png",
+    "large": "/drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "/drivers/vibration_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

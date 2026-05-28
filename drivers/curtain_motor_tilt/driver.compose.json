@@ -116,9 +116,9 @@
     }
   },
   "images": {
-    "small": "drivers/curtain_motor_tilt/assets/images/small.png",
-    "large": "drivers/curtain_motor_tilt/assets/images/large.png",
-    "xlarge": "drivers/curtain_motor_tilt/assets/images/xlarge.png"
+    "small": "/drivers/curtain_motor_tilt/assets/images/small.png",
+    "large": "/drivers/curtain_motor_tilt/assets/images/large.png",
+    "xlarge": "/drivers/curtain_motor_tilt/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -50,8 +50,16 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_owmlbbs0",
+      "_TZ3000_yodvhg4y",
+      "_TZ3000_b3mgfu0d",
+      "_TZ3000_tqlv4ug4"
+    ],
+    "productId": [
+      "TS0041",
+      "TS0042"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -86,8 +94,8 @@
     }
   },
   "images": {
-    "small": "drivers/button_wireless_2/assets/images/small.png",
-    "large": "drivers/button_wireless_2/assets/images/large.png"
+    "small": "/drivers/button_wireless_2/assets/images/small.png",
+    "large": "/drivers/button_wireless_2/assets/images/large.png"
   },
   "platforms": [
     "local"

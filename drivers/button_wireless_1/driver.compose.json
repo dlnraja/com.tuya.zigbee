@@ -131,7 +131,11 @@
       "_TZ3000_ee9s2k4d",
       "_TZ3000_EE9S2K4D",
       "_tyzb02_keyjqthh",
-      "_TYZB02_KEYJQTHH"
+      "_TYZB02_KEYJQTHH",
+      "_TZ3000_1gcuf2uw",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_n2egfsli",
+      "_TYZB01_b3mgfu0d"
     ],
     "productId": [
       "TS0041",
@@ -160,7 +164,8 @@
       "3450-L",
       "SNZB-01",
       "SNZB-01P",
-      "TS0041A"
+      "TS0041A",
+      "TS0001"
     ],
     "endpoints": {
       "1": {
@@ -195,9 +200,9 @@
     }
   },
   "images": {
-    "small": "drivers/button_wireless_1/assets/images/small.png",
-    "large": "drivers/button_wireless_1/assets/images/large.png",
-    "xlarge": "drivers/button_wireless_1/assets/images/xlarge.png"
+    "small": "/drivers/button_wireless_1/assets/images/small.png",
+    "large": "/drivers/button_wireless_1/assets/images/large.png",
+    "xlarge": "/drivers/button_wireless_1/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

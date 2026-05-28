@@ -31,7 +31,14 @@
   "zigbee": {
     "manufacturerName": [
       "ewelink",
-      "EWELINK"
+      "EWELINK",
+      "_tz3000_85czd6fy",
+      "_tz3000_bpkijo14",
+      "_tz3000_gszjt2xx",
+      "_tz3000_m0vaazab",
+      "_tz3000_misw04hq",
+      "_tz3000_ufttklsz",
+      "_tz3000_wlquqiiz"
     ],
     "productId": [
       "TS0601"
@@ -464,9 +471,9 @@
     }
   ],
   "images": {
-    "small": "drivers/climate_sensor/assets/images/small.png",
-    "large": "drivers/climate_sensor/assets/images/large.png",
-    "xlarge": "drivers/climate_sensor/assets/images/xlarge.png"
+    "small": "/drivers/climate_sensor/assets/images/small.png",
+    "large": "/drivers/climate_sensor/assets/images/large.png",
+    "xlarge": "/drivers/climate_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

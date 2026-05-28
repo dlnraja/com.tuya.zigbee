@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "8.5.28",
+  "version": "8.5.33",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -57,7 +57,9 @@
       "local-first"
     ]
   },
-  "category": "appliances",
+  "category": [
+    "appliances"
+  ],
   "permissions": [
     "homey:manager:api"
   ],

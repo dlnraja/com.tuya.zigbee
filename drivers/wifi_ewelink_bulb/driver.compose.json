@@ -79,9 +79,9 @@
     }
   ],
   "images": {
-    "small": "drivers/wifi_ewelink_bulb/assets/images/small.png",
-    "large": "drivers/wifi_ewelink_bulb/assets/images/large.png",
-    "xlarge": "drivers/wifi_ewelink_bulb/assets/images/xlarge.png"
+    "small": "/drivers/wifi_ewelink_bulb/assets/images/small.png",
+    "large": "/drivers/wifi_ewelink_bulb/assets/images/large.png",
+    "xlarge": "/drivers/wifi_ewelink_bulb/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

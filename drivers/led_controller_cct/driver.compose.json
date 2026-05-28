@@ -22,7 +22,11 @@
       "_TZB210_NGNT8KNI",
       "_tzb210_endmggws",
       "_TZB210_endmggws",
-      "_TZB210_ENDMGGWS"
+      "_TZB210_ENDMGGWS",
+      "_TZ3000_OBACBUKL",
+      "_tz3000_riwp3k79",
+      "_tz3210_r0xgkft5",
+      "_TZ3210_P9AO60DA"
     ],
     "productId": [
       "TS0502"
@@ -42,9 +46,9 @@
     }
   },
   "images": {
-    "small": "drivers/led_controller_cct/assets/images/small.png",
-    "large": "drivers/led_controller_cct/assets/images/large.png",
-    "xlarge": "drivers/led_controller_cct/assets/images/xlarge.png"
+    "small": "/drivers/led_controller_cct/assets/images/small.png",
+    "large": "/drivers/led_controller_cct/assets/images/large.png",
+    "xlarge": "/drivers/led_controller_cct/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -79,9 +79,9 @@
     }
   ],
   "images": {
-    "small": "drivers/water_valve_garden/assets/images/small.png",
-    "large": "drivers/water_valve_garden/assets/images/large.png",
-    "xlarge": "drivers/water_valve_garden/assets/images/xlarge.png"
+    "small": "/drivers/water_valve_garden/assets/images/small.png",
+    "large": "/drivers/water_valve_garden/assets/images/large.png",
+    "xlarge": "/drivers/water_valve_garden/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

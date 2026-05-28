@@ -352,9 +352,9 @@
     }
   ],
   "images": {
-    "small": "drivers/siren/assets/images/small.png",
-    "large": "drivers/siren/assets/images/large.png",
-    "xlarge": "drivers/siren/assets/images/xlarge.png"
+    "small": "/drivers/siren/assets/images/small.png",
+    "large": "/drivers/siren/assets/images/large.png",
+    "xlarge": "/drivers/siren/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

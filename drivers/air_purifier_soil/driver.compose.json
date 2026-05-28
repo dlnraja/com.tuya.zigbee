@@ -71,8 +71,45 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE284_oitavov2",
+      "_TZE284_aao3yzhs",
+      "_TZE284_sgabhwa6",
+      "_TZE284_0ints6wl",
+      "_TZE284_g2e6cpnw",
+      "_TZE284_awepdiwi",
+      "_TZE284_nhgdf6qr",
+      "_TZE284_ap9owrsa",
+      "_TZE284_33bwcga2",
+      "_TZE284_wckqztdq",
+      "_TZE284_3urschql",
+      "_TZE284_nt4pquef",
+      "_TZE200_ip2akl4w",
+      "_TZE200_1agwnems",
+      "_TZE200_579lguh2",
+      "_TZE200_vucankjx",
+      "_TZE204_9qhuzgo0",
+      "_TZE200_swaamsoy",
+      "_TZE200_ojzhk75b",
+      "_TZE200_w4cryh2i",
+      "_TZE200_dfxkcots",
+      "_TZE200_9i9dt8is",
+      "_TZE200_ctq0k47x",
+      "_TZE200_ebwgzdqq",
+      "_TZE204_vevc4c6g",
+      "_TZE284_m1cvyneb",
+      "_TZE200_e2bedvo9",
+      "_TZE200_dnz6yvl2",
+      "_TZE284_e2bedvo9",
+      "_TZE204_fhvdgeuh",
+      "_TZE204_4bjixefp",
+      "_TZE21C_dohbhb5k",
+      "_TZE200_ka8l86iu",
+      "_TZE284_hdml1aav"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -401,8 +438,8 @@
     }
   ],
   "images": {
-    "small": "drivers/soil_sensor/assets/images/small.png",
-    "large": "drivers/soil_sensor/assets/images/large.png"
+    "small": "/drivers/soil_sensor/assets/images/small.png",
+    "large": "/drivers/soil_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

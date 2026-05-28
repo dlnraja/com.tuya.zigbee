@@ -24,9 +24,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
-    "large": "drivers/wall_switch_2gang_1way/assets/images/large.png",
-    "xlarge": "drivers/wall_switch_2gang_1way/assets/images/xlarge.png"
+    "small": "/drivers/wall_switch_2gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_switch_2gang_1way/assets/images/large.png",
+    "xlarge": "/drivers/wall_switch_2gang_1way/assets/images/xlarge.png"
   },
   "devices": {
     "secondSwitch": {
@@ -93,7 +93,12 @@
       "_TZ3000_P8ALO7QA",
       "_tz3000_s8r1qoyq",
       "_TZ3000_s8r1qoyq",
-      "_TZ3000_S8R1QOYQ"
+      "_TZ3000_S8R1QOYQ",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_owmlbbs0",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_m5bzwpoh"
     ],
     "productId": [
       "TS0002",

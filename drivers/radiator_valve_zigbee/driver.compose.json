@@ -52,9 +52,9 @@
     ]
   },
   "images": {
-    "small": "drivers/radiator_valve_zigbee/assets/images/small.png",
-    "large": "drivers/radiator_valve_zigbee/assets/images/large.png",
-    "xlarge": "drivers/radiator_valve_zigbee/assets/images/xlarge.png"
+    "small": "/drivers/radiator_valve_zigbee/assets/images/small.png",
+    "large": "/drivers/radiator_valve_zigbee/assets/images/large.png",
+    "xlarge": "/drivers/radiator_valve_zigbee/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [

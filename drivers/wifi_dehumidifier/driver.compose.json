@@ -113,9 +113,9 @@
     "lan"
   ],
   "images": {
-    "small": "drivers/wifi_dehumidifier/assets/images/small.png",
-    "large": "drivers/wifi_dehumidifier/assets/images/large.png",
-    "xlarge": "drivers/wifi_dehumidifier/assets/images/xlarge.png"
+    "small": "/drivers/wifi_dehumidifier/assets/images/small.png",
+    "large": "/drivers/wifi_dehumidifier/assets/images/large.png",
+    "xlarge": "/drivers/wifi_dehumidifier/assets/images/xlarge.png"
   },
   "maintenanceActions": [
     {

@@ -25,8 +25,15 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE200_ztvwu4nk",
+      "_TZE200_aoclfnxz",
+      "_TZE200_ekd8x5dt",
+      "_TZE204_ztvwu4nk"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -37,8 +44,8 @@
     }
   },
   "images": {
-    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
-    "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
+    "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "/drivers/thermostat_tuya_dp/assets/images/small.png"
   },
   "energy": {
     "batteries": [

@@ -44,9 +44,9 @@
     }
   },
   "images": {
-    "small": "drivers/switch_2gang/assets/images/small.png",
-    "large": "drivers/switch_2gang/assets/images/large.png",
-    "xlarge": "drivers/switch_2gang/assets/images/xlarge.png"
+    "small": "/drivers/switch_2gang/assets/images/small.png",
+    "large": "/drivers/switch_2gang/assets/images/large.png",
+    "xlarge": "/drivers/switch_2gang/assets/images/xlarge.png"
   },
   "settings": [
     {

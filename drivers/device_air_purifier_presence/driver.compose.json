@@ -35,7 +35,17 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tze200_ztc6ggyl",
+      "_tze204_ztc6ggyl",
+      "_tze204_qasjif9e",
+      "_tze200_sgpeacqp",
+      "_tze200_ikvncluo",
+      "_tze204_ztqnh5cg",
+      "_tze204_7gclukjs",
+      "_tze204_sxm7l9xa",
+      "_tze204_ijxvkhd0"
+    ],
     "productId": [],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -729,8 +739,8 @@
     }
   ],
   "images": {
-    "small": "drivers/presence_sensor_radar/assets/images/small.png",
-    "large": "drivers/presence_sensor_radar/assets/images/large.png"
+    "small": "/drivers/presence_sensor_radar/assets/images/small.png",
+    "large": "/drivers/presence_sensor_radar/assets/images/large.png"
   },
   "platforms": [
     "local"

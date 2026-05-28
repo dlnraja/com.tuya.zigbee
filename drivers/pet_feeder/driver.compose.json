@@ -111,9 +111,9 @@
     ]
   },
   "images": {
-    "small": "drivers/pet_feeder/assets/images/small.png",
-    "large": "drivers/pet_feeder/assets/images/large.png",
-    "xlarge": "drivers/pet_feeder/assets/images/xlarge.png"
+    "small": "/drivers/pet_feeder/assets/images/small.png",
+    "large": "/drivers/pet_feeder/assets/images/large.png",
+    "xlarge": "/drivers/pet_feeder/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

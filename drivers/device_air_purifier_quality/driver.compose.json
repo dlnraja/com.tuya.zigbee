@@ -40,8 +40,14 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE284_8b9zpaav",
+      "_TZE284_it9utkro",
+      "_tze200_9cxuhakf"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
       "instruction": {
@@ -481,8 +487,8 @@
     }
   ],
   "images": {
-    "small": "drivers/air_quality_comprehensive/assets/images/small.png",
-    "large": "drivers/air_quality_comprehensive/assets/images/large.png"
+    "small": "/drivers/air_quality_comprehensive/assets/images/small.png",
+    "large": "/drivers/air_quality_comprehensive/assets/images/large.png"
   },
   "platforms": [
     "local"

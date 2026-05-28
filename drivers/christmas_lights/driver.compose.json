@@ -18,8 +18,8 @@
     "lidl_xmas_mode"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -28,9 +28,14 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZB210_zdgnbgus",
+      "_TZ3000_hiuyt5mq",
+      "_TZ3000_jd3z4yig"
+    ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "TS0504B"
     ],
     "endpoints": {
       "1": {

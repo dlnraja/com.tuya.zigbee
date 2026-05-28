@@ -43,12 +43,14 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/usb_dongle_triple/assets/images/small.png",
-    "large": "drivers/usb_dongle_triple/assets/images/large.png",
-    "xlarge": "drivers/usb_dongle_triple/assets/images/xlarge.png"
+    "small": "/drivers/usb_dongle_triple/assets/images/small.png",
+    "large": "/drivers/usb_dongle_triple/assets/images/large.png",
+    "xlarge": "/drivers/usb_dongle_triple/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_MW1PQQQT"
+    ],
     "productId": [
       "TS0003"
     ],

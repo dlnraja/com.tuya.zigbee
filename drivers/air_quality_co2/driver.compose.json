@@ -76,7 +76,12 @@
       "_TZE204_YWAGC4RJ",
       "_tze204_zl1kmjqx",
       "_TZE204_zl1kmjqx",
-      "_TZE204_ZL1KMJQX"
+      "_TZE204_ZL1KMJQX",
+      "_TZE200_8ikyd92m",
+      "_TZE204_8ikyd92m",
+      "_TZE200_yvx5lh6k",
+      "_TZE200_mja3fuja",
+      "_TZE204_mja3fuja"
     ],
     "productId": [
       "TS0601_co2",
@@ -200,9 +205,9 @@
     }
   ],
   "images": {
-    "small": "drivers/air_quality_co2/assets/images/small.png",
-    "large": "drivers/air_quality_co2/assets/images/large.png",
-    "xlarge": "drivers/air_quality_co2/assets/images/xlarge.png"
+    "small": "/drivers/air_quality_co2/assets/images/small.png",
+    "large": "/drivers/air_quality_co2/assets/images/large.png",
+    "xlarge": "/drivers/air_quality_co2/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

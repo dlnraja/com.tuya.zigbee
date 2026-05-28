@@ -43,7 +43,9 @@
       "_TZE608_LAPUUOKE",
       "_tze200_deqnbaux",
       "_TZE200_deqnbaux",
-      "_TZE200_DEQNBAUX"
+      "_TZE200_DEQNBAUX",
+      "_TZE200_c75zqghm",
+      "_TZE204_c75zqghm"
     ],
     "productId": [
       "TS0601",
@@ -59,9 +61,9 @@
     }
   },
   "images": {
-    "small": "drivers/garage_door_opener/assets/images/small.png",
-    "large": "drivers/garage_door_opener/assets/images/large.png",
-    "xlarge": "drivers/garage_door_opener/assets/images/xlarge.png"
+    "small": "/drivers/garage_door_opener/assets/images/small.png",
+    "large": "/drivers/garage_door_opener/assets/images/large.png",
+    "xlarge": "/drivers/garage_door_opener/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

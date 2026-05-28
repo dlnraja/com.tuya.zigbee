@@ -37,9 +37,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/smart_heater_controller/assets/images/small.png",
-    "large": "drivers/smart_heater_controller/assets/images/large.png",
-    "xlarge": "drivers/smart_heater_controller/assets/images/xlarge.png"
+    "small": "/drivers/smart_heater_controller/assets/images/small.png",
+    "large": "/drivers/smart_heater_controller/assets/images/large.png",
+    "xlarge": "/drivers/smart_heater_controller/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

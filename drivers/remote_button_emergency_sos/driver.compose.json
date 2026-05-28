@@ -24,9 +24,9 @@
     "alarm_battery"
   ],
   "images": {
-    "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
-    "small": "drivers/smart_remote_4_buttons/assets/images/small.png",
-    "xlarge": "drivers/smart_remote_4_buttons/assets/images/xlarge.png"
+    "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
+    "small": "/drivers/smart_remote_4_buttons/assets/images/small.png",
+    "xlarge": "/drivers/smart_remote_4_buttons/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [
@@ -34,7 +34,9 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tyzb01_qm6djpta"
+    ],
     "productId": [
       "TS0215A"
     ],

@@ -29,7 +29,9 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_rjxqso4a"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -45,7 +47,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {
@@ -444,8 +448,8 @@
     }
   ],
   "images": {
-    "small": "drivers/smoke_detector_advanced/assets/images/small.png",
-    "large": "drivers/smoke_detector_advanced/assets/images/large.png"
+    "small": "/drivers/smoke_detector_advanced/assets/images/small.png",
+    "large": "/drivers/smoke_detector_advanced/assets/images/large.png"
   },
   "platforms": [
     "local"

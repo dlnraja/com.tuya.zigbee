@@ -126,9 +126,9 @@
     }
   ],
   "images": {
-    "small": "drivers/wifi_heater/assets/images/small.png",
-    "large": "drivers/wifi_heater/assets/images/large.png",
-    "xlarge": "drivers/wifi_heater/assets/images/xlarge.png"
+    "small": "/drivers/wifi_heater/assets/images/small.png",
+    "large": "/drivers/wifi_heater/assets/images/large.png",
+    "xlarge": "/drivers/wifi_heater/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -14,8 +14,8 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -30,7 +30,10 @@
       "_TZE200_R731ZLXK",
       "_tze200_9mahtqtg",
       "_TZE200_9mahtqtg",
-      "_TZE200_9MAHTQTG"
+      "_TZE200_9MAHTQTG",
+      "_TZE204_ad2jkxwh",
+      "_TZE204_72bewjky",
+      "TZE204_7sjncirf"
     ],
     "productId": [
       "TS0601"

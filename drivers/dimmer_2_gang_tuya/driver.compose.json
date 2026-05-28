@@ -22,8 +22,8 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -32,7 +32,12 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_nue3fvem",
+      "_TZE200_dfxkcots",
+      "_TZE200_9i9dt8is",
+      "_TZE204_9i9dt8is"
+    ],
     "productId": [
       "TS0601"
     ],

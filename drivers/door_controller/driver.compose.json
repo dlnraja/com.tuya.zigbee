@@ -277,9 +277,9 @@
     }
   ],
   "images": {
-    "small": "drivers/door_controller/assets/images/small.png",
-    "large": "drivers/door_controller/assets/images/large.png",
-    "xlarge": "drivers/door_controller/assets/images/xlarge.png"
+    "small": "/drivers/door_controller/assets/images/small.png",
+    "large": "/drivers/door_controller/assets/images/large.png",
+    "xlarge": "/drivers/door_controller/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

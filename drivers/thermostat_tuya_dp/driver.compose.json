@@ -211,7 +211,11 @@
       "_TZE284_XNBKHHDR",
       "_tze284_znlqjmih",
       "_TZE284_znlqjmih",
-      "_TZE284_ZNLQJMIH"
+      "_TZE284_ZNLQJMIH",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_hue3yfsn",
+      "_TZE200_0j6pth9y",
+      "_TZE204_ye5jkfsb"
     ],
     "productId": [
       "TS0601_thermo",
@@ -227,9 +231,9 @@
     }
   },
   "images": {
-    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
-    "small": "drivers/thermostat_tuya_dp/assets/images/small.png",
-    "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png"
+    "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "/drivers/thermostat_tuya_dp/assets/images/small.png",
+    "xlarge": "/drivers/thermostat_tuya_dp/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [

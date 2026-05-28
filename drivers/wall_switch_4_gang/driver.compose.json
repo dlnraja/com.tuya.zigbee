@@ -14,8 +14,8 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -33,11 +33,16 @@
       "_TZ3000_DKU2CFSC",
       "_tz3000_fjt5218m",
       "_TZ3000_fjt5218m",
-      "_TZ3000_FJT5218M"
+      "_TZ3000_FJT5218M",
+      "_TZ3000_tyg4yiat",
+      "_TZ3000_2ei1fkwb",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_hy5lggkg"
     ],
     "productId": [
       "TS0014",
-      "TS0044"
+      "TS0044",
+      "TS0004"
     ],
     "endpoints": {
       "1": {

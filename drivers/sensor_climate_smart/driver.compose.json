@@ -44,7 +44,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE284_7ZAZVLYN"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
@@ -245,8 +247,8 @@
     }
   ],
   "images": {
-    "small": "drivers/smart_scene_panel/assets/images/small.png",
-    "large": "drivers/smart_scene_panel/assets/images/large.png"
+    "small": "/drivers/smart_scene_panel/assets/images/small.png",
+    "large": "/drivers/smart_scene_panel/assets/images/large.png"
   },
   "platforms": [
     "local"

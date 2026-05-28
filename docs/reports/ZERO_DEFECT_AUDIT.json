@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T03:57:48.516Z",
+  "timestamp": "2026-05-28T04:56:46.649Z",
   "driversChecked": 412,
   "collisions": [
     {
@@ -319,7 +319,7 @@
     "lib\\ZigbeeClusterManager.js:466: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00"
   ],
   "naNSafetyCheck": [
-    ".homeybuild\\app.js:154: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\app.js:149: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\bulb_rgbw\\device.js:78: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\bulb_rgbw\\device.js:123: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\bulb_rgb_led\\device.js:48: Potential unchecked division/multiplication (NaN risk)",

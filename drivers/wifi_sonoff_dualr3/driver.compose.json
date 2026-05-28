@@ -100,9 +100,9 @@
     }
   },
   "images": {
-    "small": "drivers/wifi_sonoff_dualr3/assets/images/small.png",
-    "large": "drivers/wifi_sonoff_dualr3/assets/images/large.png",
-    "xlarge": "drivers/wifi_sonoff_dualr3/assets/images/xlarge.png"
+    "small": "/drivers/wifi_sonoff_dualr3/assets/images/small.png",
+    "large": "/drivers/wifi_sonoff_dualr3/assets/images/large.png",
+    "xlarge": "/drivers/wifi_sonoff_dualr3/assets/images/xlarge.png"
   },
   "maintenanceActions": [
     {

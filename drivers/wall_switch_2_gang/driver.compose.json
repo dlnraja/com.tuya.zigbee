@@ -14,8 +14,8 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,7 +24,14 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_7hp93xpr",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_owmlbbs0",
+      "_TZ3000_m5bzwpoh",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_gjnozsaz"
+    ],
     "productId": [
       "TS0002",
       "TS0012",

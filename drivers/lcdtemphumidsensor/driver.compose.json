@@ -32,7 +32,13 @@
       "_TZ3000_RUSU2VZB",
       "_tz3000_itnrsufe",
       "_TZ3000_itnrsufe",
-      "_TZ3000_ITNRSUFE"
+      "_TZ3000_ITNRSUFE",
+      "_TZA226_ueagguan",
+      "_TYZB01_a082h2cc",
+      "_TZ3000_bguser20",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_rufdtfyv",
+      "_TZ3000_m0vaazab"
     ],
     "productId": [
       "TS0601_lcd",
@@ -52,9 +58,9 @@
     }
   },
   "images": {
-    "small": "drivers/lcdtemphumidsensor/assets/images/small.png",
-    "large": "drivers/lcdtemphumidsensor/assets/images/large.png",
-    "xlarge": "drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+    "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",
+    "large": "/drivers/lcdtemphumidsensor/assets/images/large.png",
+    "xlarge": "/drivers/lcdtemphumidsensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

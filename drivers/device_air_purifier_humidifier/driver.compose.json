@@ -35,7 +35,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tze200_mja3fuja"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
@@ -53,8 +55,8 @@
     }
   },
   "images": {
-    "small": "drivers/humidifier/assets/images/small.png",
-    "large": "drivers/humidifier/assets/images/large.png"
+    "small": "/drivers/humidifier/assets/images/small.png",
+    "large": "/drivers/humidifier/assets/images/large.png"
   },
   "platforms": [
     "local"
