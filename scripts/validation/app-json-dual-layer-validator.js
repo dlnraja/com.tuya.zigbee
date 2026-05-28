@@ -285,6 +285,8 @@ function tryFixFromCompose(d, stableMap) {
   const driverDir = path.join(DRIVERS_DIR, d.id);
   const composePath = path.join(driverDir, 'driver.compose.json');
 
+  let fixedMfs = null;
+
   // Tentative 1: depuis driver.compose.json local
   if (fs.existsSync(composePath)) {
     try {
@@ -293,22 +295,40 @@ function tryFixFromCompose(d, stableMap) {
       if (mfs && mfs.length > 0) {
         // Case-insensitive dedup
         const uniq = [...new Set(mfs.map(m => m.trim()).filter(m => m))];
-        if (uniq.length > 0) return uniq;
+        if (uniq.length > 0) fixedMfs = uniq;
       }
     } catch(e) { /* ignore */ }
   }
 
   // Tentative 2: depuis stable_app.json
-  const stableDriver = stableMap[d.id];
-  if (stableDriver && stableDriver.zigbee && stableDriver.zigbee.manufacturerName) {
-    const mfs = stableDriver.zigbee.manufacturerName;
-    if (mfs.length > 0) {
-      const uniq = [...new Set(mfs.map(m => m.trim()).filter(m => m))];
-      if (uniq.length > 0) return uniq;
+  if (!fixedMfs) {
+    const stableDriver = stableMap[d.id];
+    if (stableDriver && stableDriver.zigbee && stableDriver.zigbee.manufacturerName) {
+      const mfs = stableDriver.zigbee.manufacturerName;
+      if (mfs.length > 0) {
+        const uniq = [...new Set(mfs.map(m => m.trim()).filter(m => m))];
+        if (uniq.length > 0) fixedMfs = uniq;
+      }
     }
   }
 
-  return null;
+  // Fallback: inject a safe, unique dummy placeholder name to avoid empty array AggregateError
+  if (!fixedMfs) {
+    fixedMfs = ["_TZE200_placeholder_generic"];
+  }
+
+  // Always write back to driver.compose.json to keep it persistent
+  if (fixedMfs && fs.existsSync(composePath)) {
+    try {
+      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+      if (compose.zigbee) {
+        compose.zigbee.manufacturerName = fixedMfs;
+        fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n', 'utf8');
+      }
+    } catch(e) { /* ignore */ }
+  }
+
+  return fixedMfs;
 }
 
 // ─── Entry point ─────────────────────────────────────────────────────────────
