@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.0] - 2026-05-28
+## [7.0.1] - 2026-05-28
+
+v7.0.0:
+---
+
+ [7.0.0] - 2026-05-28
 
 Fresh v7.0.0: 412 drivers, 3365 FPs, AggregateError fix
 ---
