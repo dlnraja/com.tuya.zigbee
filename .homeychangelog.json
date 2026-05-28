@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.41": {
+    "en": "v8.5.41: . Critical fixes for app.json validation (category, permissions, icon). Restored 360 Zigbee manufacturer names. Resolved 4,361 fingerprint collisions. 114 new fingerprints from community sync. New pre-commit/pre-push hooks for build integrity."
+  },
   "8.5.40": {
     "en": "v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual README files."
   },
@@ -59,10 +62,7 @@
   "8.5.17": {
     "en": "v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor improvements and stability enhancements."
   },
-  "8.1.13": {
-    "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
-  },
-  "8.5.41": {
-    "en": "v8.5.40: CRITICAL, CRITICAL, CRITICAL, Fixed .gitignore to allow multilingual README files (README.nl.txt, README.de.txt, README.fr.txt)., Restored all 360 Zigbee manufacturerName entries in driver.compose.json, eliminating AggregateError on app load."
+  "8.5.42": {
+    "en": "v8.5.41: Critical, Critical, Critical, Fixed, Fixed"
   }
 }
