@@ -1,8 +1,8 @@
 # CRITICAL MISTAKES - Never Repeat (v8.5.0 Phoenix Sovereign + Fleetwood Gateway)
 
-> **Dernière mise à jour :** 26 Mai 2026
-> **Version :** v8.5.0
-> **Architecture :** Phoenix Sovereign + Fleetwood Gateway + UnifiedBatteryHandler
+> **Dernière mise à jour :** 28 Mai 2026
+> **Version :** v8.5.36
+> **Architecture :** Phoenix Sovereign + Fleetwood Gateway + UnifiedBatteryHandler + Dual-Layer Gate
 
 ---
 
@@ -184,6 +184,10 @@
 | O10 | **Base class exports** : `SensorBase.SensorBase = SensorBase; module.exports = SensorBase;` |
 | O11 | **Universal Evolution Loop** : scan PRs/issues → auto-learn → self-heal → enrich |
 | O12 | **Smart Divisors + UnifiedBatteryHandler** : vérifier que les imports sont corrects |
+| O13 | **icon.svg OBLIGATOIRE à la racine** — SDK3 exige `/icon.svg`. Sans lui, Athom affiche `undefined` dans tous les champs du manifest (Name, SDK, Category, etc.) causant "Processing failed". Builds #2175-2179 ont été perdus pour cette raison |
+| O14 | **CI bot INTERDIT de supprimer des manufacturerName[]** — Le bot (`nightly-auto-process`, `monthly-enrichment`) écrase `app.json` depuis `.homeycompose/` et perd les MFs ajoutés uniquement dans `app.json`. Le Dual-Layer Gate (`dual-layer-integrity-gate.yml`) bloque ce scénario |
+| O15 | **Fichiers junk racine = pollution bundle** — Les commandes PowerShell mal échappées créent des fichiers comme `!d.startsWith('.')`, `$null`, `m.toLowerCase())` qui polluent le package Homey. Le script `scripts/maintenance/root-cleanup.js` et le workflow `root-cleanup-and-integrity.yml` automatisent le nettoyage |
+| O16 | **Buffer-based JSON loading obligatoire** — Pour `app.json` (7MB) et `fingerprints.json`, toujours `JSON.parse(fs.readFileSync(path))` (Buffer) au lieu de `JSON.parse(fs.readFileSync(path, 'utf8'))` (String). Divise par 2 l'empreinte mémoire V8 heap. Limite Homey Pro: 64MB |
 
 ### P. DIAGNOSTICS & SUPPORT
 
