@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.27": {
+    "en": "Removed SmartThings 2 integration. Monthly  adds 413 drivers and 3306 validated fingerprints. Bug fix for AggregateError on app startup."
+  },
   "8.5.26": {
     "en": "v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total."
   },
@@ -58,10 +61,7 @@
   "8.1.2": {
     "en": "bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQMWTYM→doorbell, switch_1gang/TVUARKSA→plug_energy_monitor, button_wireless_smart/MRPEVH8P→button_wireless_1). Fixed curtain_motor_tilt flow cards, valve_irrigation class, bed_sensor settings."
   },
-  "8.1.1": {
-    "en": "v8.1.1: Fixed Issue #331 — Settings tab crash on 6 drivers (Hybrid*Base renamed to Unified*Base). Fixed curtain_motor_tilt missing flow cards (turn_on, turn_off, toggle). Fixed valve_irrigation device class (thermostat→socket). Added bed_sensor driver for _TZE200_seq9cm6u. Added CT Clamp _TZE28C1000000_81yrt3lo to power_clamp_meter. New fingerprints across 8 drivers."
-  },
-  "8.5.27": {
-    "en": "v8.5.26: Added 122 new device fingerprints from Z2M, ZHA, and community contributions (JohanBendz), Fixed crash in , Expanded device support to 413 drivers with 7448 total fingerprints, Updated device matrix and project status reports"
+  "8.5.28": {
+    "en": "v8.5.27: Fixed `AggregateError` crash on app startup by removing deprecated SmartThings , Removed SmartThings driver (wifi_smartthings_device) and all related , Monthly device enrichment: 413 drivers, 3306 validated fingerprints, Added new fingerprint batches (batch1.json, batch2.json) for improved device matching, Updated app to use native `Homey.App` instead o"
   }
 }
