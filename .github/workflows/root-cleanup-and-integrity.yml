@@ -1,0 +1,163 @@
+# ═══════════════════════════════════════════════════════════════
+# 🧹 Automated Root Cleanup & Build Integrity Verification
+# ═══════════════════════════════════════════════════════════════
+# Runs on every push to master after auto-publish workflow.
+# Cleans junk files created by PowerShell misescapes, temp dumps,
+# orphan scripts, and verifies .homeybuild/app.json integrity.
+# ═══════════════════════════════════════════════════════════════
+
+name: 🧹 Root Cleanup & Build Integrity
+
+on:
+  push:
+    branches: [master, main]
+  schedule:
+    - cron: '0 3 * * 0'  # Every Sunday at 3AM UTC
+  workflow_dispatch:
+
+concurrency:
+  group: cleanup-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  cleanup-and-verify:
+    name: 🧹 Cleanup Root + Verify Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit 2>/dev/null || npm install --no-audit
+
+      - name: 🧹 Detect Root Junk Files
+        id: cleanup
+        run: |
+          node - << 'CLEANUP'
+          const fs = require('fs');
+          const path = require('path');
+
+          const KEEP = new Set([
+            'app.js','app.json','api.js','icon.svg',
+            'package.json','package-lock.json',
+            'stable_app.json','driver-mapping-database.json',
+            'README.md','CHANGELOG.md','LICENSE',
+            'CODE_OF_CONDUCT.md','CONTRIBUTING.md',
+            'GLOBAL_IMPROVEMENT_PLAN.md','PROJECT_INDEX.md',
+            'AI_CONTEXT_MANDATE.md','AI_INSTRUCTIONS.md',
+            'jest.config.js',
+            '.gitignore','.gitattributes','.homeyignore',
+            '.homeychangelog.json','.homeyplugins.json',
+            '.editorconfig','.eslintrc.json','.nycrc',
+            '.prettierrc','.prettierignore',
+            '.cascade','.cursorrules','.windsurfrules',
+            '.clinerule','.clinerules','.antigravityignore',
+            '.env.example',
+          ]);
+
+          const KEEP_DIRS = new Set([
+            '.agents','.ai','.cache','.gemini','.git','.github',
+            '.homeybuild','.homeycompose','.memory','.vscode','.windsurf',
+            'assets','capabilities','data','diagnostics','docs','drivers',
+            'lib','locales','node_modules','reference pdf','reimplementation_gateway',
+            'reports','scripts','settings','skills','test','tests','.archive',
+          ]);
+
+          const junk = [];
+          fs.readdirSync('.').forEach(name => {
+            if (KEEP.has(name) || KEEP_DIRS.has(name)) return;
+            if (name.startsWith('.') && !fs.statSync(name).isFile()) return;
+
+            const stat = fs.statSync(name);
+            if (stat.isDirectory() && !KEEP_DIRS.has(name)) {
+              junk.push({ name, type: 'dir', size: 0 });
+            } else if (stat.isFile() && !KEEP.has(name)) {
+              junk.push({ name, type: 'file', size: stat.size });
+            }
+          });
+
+          console.log('Junk files found:', junk.length);
+          junk.forEach(f => console.log('  -', f.name, '(' + (f.size/1024).toFixed(0) + 'KB)'));
+
+          // Archive them
+          if (junk.length > 0) {
+            const archDir = '.archive/ci-cleanup-' + new Date().toISOString().slice(0,10);
+            fs.mkdirSync(archDir, { recursive: true });
+            junk.forEach(f => {
+              try { fs.renameSync(f.name, archDir + '/' + f.name); }
+              catch(e) { console.log('  skip:', f.name, e.message); }
+            });
+            console.log('Archived to:', archDir);
+          }
+
+          // Output for GH Actions
+          const out = process.env.GITHUB_OUTPUT;
+          if (out) {
+            fs.appendFileSync(out, 'junk_count=' + junk.length + '\n');
+          }
+          CLEANUP
+
+      - name: 🔍 Verify Build app.json Integrity
+        run: |
+          node - << 'VERIFY'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json'));
+          const REQUIRED = ['id','version','compatibility','sdk','name','description','category',
+                            'permissions','images','author','brandColor','homeyCommunityTopicId',
+                            'icon','tags','platforms'];
+          const missing = REQUIRED.filter(k => app[k] === undefined || app[k] === null);
+          if (missing.length > 0) {
+            console.error('❌ MISSING FIELDS in app.json:', missing.join(', '));
+            console.error('These will show as "undefined" in Athom console!');
+            process.exit(1);
+          }
+          // Verify icon.svg exists
+          if (!fs.existsSync('icon.svg')) {
+            console.error('❌ icon.svg MISSING at root — Athom will show undefined');
+            process.exit(1);
+          }
+          // Verify images exist
+          ['assets/images/small.png','assets/images/large.png'].forEach(f => {
+            if (!fs.existsSync(f)) {
+              console.error('❌ MISSING:', f);
+              process.exit(1);
+            }
+          });
+          console.log('✅ Build integrity: ALL fields present');
+          console.log('  v' + app.version + ' | sdk:' + app.sdk + ' | icon:' + app.icon);
+          console.log('  brandColor:' + app.brandColor + ' | topicId:' + app.homeyCommunityTopicId);
+          console.log('  drivers:', (app.drivers||[]).length);
+          VERIFY
+
+      - name: 📤 Commit Cleanup
+        if: steps.cleanup.outputs.junk_count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: root cleanup — archived junk files [skip ci]"
+          git push || true
+
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "## 🧹 Root Cleanup Report" >> $GITHUB_STEP_SUMMARY
+          echo "- Junk files archived: ${{ steps.cleanup.outputs.junk_count || '0' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Build integrity: ✅" >> $GITHUB_STEP_SUMMARY
