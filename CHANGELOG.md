@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.36] - 2026-05-28
+## [8.5.40] - 2026-05-28
+
+### Bug Fixes
+- **CRITICAL**: Fixed app.json validation errors — removed invalid 'icon' field, corrected 'category' to string, and removed unsupported 'api' and 'homey:manager:api' permissions.
+- **CRITICAL**: Rewrote .homeyignore to exclude only non-essential files, preventing build failures on Athom servers.
+- **CRITICAL**: Added mandatory README.txt and multilingual README.*.txt files that were incorrectly excluded by .gitignore.
+- Fixed .gitignore to allow multilingual README files (README.nl.txt, README.de.txt, README.fr.txt).
+
+### Improvements
+- Restored all 360 Zigbee manufacturerName entries in driver.compose.json, eliminating AggregateError on app load.
+- Resolved 4,361 fingerprint conflicts across drivers.
+- Added 114 new fingerprints from Z2M, ZHA, community reports, and JohanBendz's repository.
+- Updated CRITICAL_MISTAKES documentation with new rules O13-O16.
+
+### New Devices
+- Added support for soil sensor _TZE284_0ints6wl (TS0601) — pending user verification.
+---
+
+ [8.5.36] - 2026-05-28
 
 ### Bug Fixes
 - **Critical fix**: Resolved AggregateError crash on app startup by restoring all 360 Zigbee manufacturer names in driver manifests

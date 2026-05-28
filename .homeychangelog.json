@@ -1,6 +1,11 @@
 {
+  "v8_5_30": {
+    "version": "8.5.30",
+    "date": "2026-05-28",
+    "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
   "8.5.40": {
-    "en": "v8.5.40: CRITICAL FIX - Add mandatory README.txt (SDK App.js:1427 throws if missing, was causing Processing failed). Add README.nl/de/fr.txt for App Store multilingual support. Fix .homeyignore to not exclude README files."
+    "en": "v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual README files."
   },
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
@@ -8,10 +13,8 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "v8_5_30": {
-    "version": "8.5.30",
-    "date": "2026-05-28",
-    "changes": "fix OAuth2Client CLIENT_ID crash"
+  "8.5.37": {
+    "en": "v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database, CI"
   },
   "8.5.36": {
     "en": "v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all 360 Zigbee manufacturer names. New soil sensor support (_TZE284_0ints6wl)."
@@ -59,19 +62,7 @@
   "8.1.13": {
     "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
   },
-  "8.1.12": {
-    "en": "v8.1.12 — 298 new fingerprints added, DeviceIdentificationDatabase crash fix, 413 drivers, 3296 FPs validated."
-  },
-  "8.1.11": {
-    "en": "Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298 new fingerprints added across drivers."
-  },
-  "8.1.10": {
-    "en": "Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1way validation errors resolved. Duplicate flow card warnings eliminated globally."
-  },
-  "8.1.9": {
-    "en": "v8.1.9 — No driver changes."
-  },
-  "8.5.37": {
-    "en": "v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database, CI"
+  "8.5.41": {
+    "en": "v8.5.40: CRITICAL, CRITICAL, CRITICAL, Fixed .gitignore to allow multilingual README files (README.nl.txt, README.de.txt, README.fr.txt)., Restored all 360 Zigbee manufacturerName entries in driver.compose.json, eliminating AggregateError on app load."
   }
 }
