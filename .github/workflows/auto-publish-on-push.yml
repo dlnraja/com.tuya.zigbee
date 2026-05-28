@@ -85,8 +85,8 @@ jobs:
                 if (!fs.existsSync(p)) return;
                 try {
                   const comp = JSON.parse(fs.readFileSync(p, 'utf8'));
-                  if (comp.zigbee && Array.isArray(comp.zigbee.manufacturerName) && comp.zigbee.manufacturerName.length === 0) {
-                    delete comp.zigbee.manufacturerName;
+                  if (comp.zigbee && !comp.zigbee.manufacturerName) {
+                    comp.zigbee.manufacturerName = [];
                     fs.writeFileSync(p, JSON.stringify(comp, null, 2) + '\n', 'utf8');
                     srcFixed++;
                   }
@@ -99,14 +99,14 @@ jobs:
           let appFixed = 0;
           app.drivers.forEach(d => {
             if (!d.zigbee) return;
-            if (Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0) {
-              delete d.zigbee.manufacturerName;
+            if (!d.zigbee.manufacturerName) {
+              d.zigbee.manufacturerName = [];
               appFixed++;
             }
           });
           if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
 
-          console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries removed from app.json`);
+          console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
           PRECLEAN
 
       # ─────────────────────────────────────────────────────────────
