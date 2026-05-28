@@ -288,7 +288,10 @@
       "piriv01",
       "PIRIV01",
       "vabrate",
-      "VABRATE"
+      "VABRATE",
+      "_TYZB01_dl7cejts",
+      "_TYZB01_v8jnclqd",
+      "_TZ3000_wrgn6xrz"
     ],
     "productId": [
       "TS0202",
@@ -675,9 +678,9 @@
     }
   ],
   "images": {
-    "small": "drivers/motion_sensor/assets/images/small.png",
-    "large": "drivers/motion_sensor/assets/images/large.png",
-    "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
+    "small": "/drivers/motion_sensor/assets/images/small.png",
+    "large": "/drivers/motion_sensor/assets/images/large.png",
+    "xlarge": "/drivers/motion_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

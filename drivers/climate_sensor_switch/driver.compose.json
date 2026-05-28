@@ -21,7 +21,9 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_i8jfiezr"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,8 +34,8 @@
     }
   },
   "images": {
-    "small": "drivers/switch_1gang/assets/images/small.png",
-    "large": "drivers/switch_1gang/assets/images/large.png"
+    "small": "/drivers/switch_1gang/assets/images/small.png",
+    "large": "/drivers/switch_1gang/assets/images/large.png"
   },
   "settings": [
     {

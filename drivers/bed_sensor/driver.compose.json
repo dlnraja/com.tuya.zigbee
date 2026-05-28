@@ -29,7 +29,10 @@
     "manufacturerName": [
       "_tze200_seq9cm6u",
       "_TZE200_seq9cm6u",
-      "_TZE200_SEQ9CM6U"
+      "_TZE200_SEQ9CM6U",
+      "_TZE200_v6ossqfy",
+      "_TZE204_v6ossqfy",
+      "_TZE200_8ygsuhe1"
     ],
     "productId": [
       "TS0601"
@@ -52,9 +55,9 @@
     }
   },
   "images": {
-    "small": "drivers/bed_sensor/assets/images/small.png",
-    "large": "drivers/bed_sensor/assets/images/large.png",
-    "xlarge": "drivers/bed_sensor/assets/images/xlarge.png"
+    "small": "/drivers/bed_sensor/assets/images/small.png",
+    "large": "/drivers/bed_sensor/assets/images/large.png",
+    "xlarge": "/drivers/bed_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -25,8 +25,17 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_keabpigv",
+      "_TZ3210_keabpigv",
+      "_TYZB01_keabpigv",
+      "_TZ3000_9fvm3mis"
+    ],
+    "productId": [
+      "TS0502A",
+      "TS0502B",
+      "TS0504A"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -490,8 +499,8 @@
     }
   ],
   "images": {
-    "small": "drivers/bulb_tunable_white/assets/images/small.png",
-    "large": "drivers/bulb_tunable_white/assets/images/large.png"
+    "small": "/drivers/bulb_tunable_white/assets/images/small.png",
+    "large": "/drivers/bulb_tunable_white/assets/images/large.png"
   },
   "platforms": [
     "local"

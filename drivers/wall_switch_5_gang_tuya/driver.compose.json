@@ -14,8 +14,8 @@
     "onoff"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,7 +24,11 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE204_ad2jkxwh",
+      "_TZE204_72bewjky",
+      "TZE204_7sjncirf"
+    ],
     "productId": [
       "TS0601"
     ],

@@ -104,9 +104,9 @@
     }
   ],
   "images": {
-    "small": "drivers/wifi_fan/assets/images/small.png",
-    "large": "drivers/wifi_fan/assets/images/large.png",
-    "xlarge": "drivers/wifi_fan/assets/images/xlarge.png"
+    "small": "/drivers/wifi_fan/assets/images/small.png",
+    "large": "/drivers/wifi_fan/assets/images/large.png",
+    "xlarge": "/drivers/wifi_fan/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

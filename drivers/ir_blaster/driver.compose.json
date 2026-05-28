@@ -223,9 +223,9 @@
     }
   },
   "images": {
-    "small": "drivers/ir_blaster/assets/images/small.png",
-    "large": "drivers/ir_blaster/assets/images/large.png",
-    "xlarge": "drivers/ir_blaster/assets/images/xlarge.png"
+    "small": "/drivers/ir_blaster/assets/images/small.png",
+    "large": "/drivers/ir_blaster/assets/images/large.png",
+    "xlarge": "/drivers/ir_blaster/assets/images/xlarge.png"
   },
   "energy": {
     "approximation": {

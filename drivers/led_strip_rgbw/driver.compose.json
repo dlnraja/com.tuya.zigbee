@@ -343,9 +343,9 @@
     }
   ],
   "images": {
-    "small": "drivers/led_strip_rgbw/assets/images/small.png",
-    "large": "drivers/led_strip_rgbw/assets/images/large.png",
-    "xlarge": "drivers/led_strip_rgbw/assets/images/xlarge.png"
+    "small": "/drivers/led_strip_rgbw/assets/images/small.png",
+    "large": "/drivers/led_strip_rgbw/assets/images/large.png",
+    "xlarge": "/drivers/led_strip_rgbw/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

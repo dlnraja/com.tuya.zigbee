@@ -33,7 +33,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tze200_aqnazj70"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
@@ -51,8 +53,8 @@
     }
   },
   "images": {
-    "small": "drivers/din_rail_switch/assets/images/small.png",
-    "large": "drivers/din_rail_switch/assets/images/large.png"
+    "small": "/drivers/din_rail_switch/assets/images/small.png",
+    "large": "/drivers/din_rail_switch/assets/images/large.png"
   },
   "platforms": [
     "local"

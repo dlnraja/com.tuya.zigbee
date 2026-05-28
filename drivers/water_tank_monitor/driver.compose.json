@@ -64,9 +64,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/water_tank_monitor/assets/images/small.png",
-    "large": "drivers/water_tank_monitor/assets/images/large.png",
-    "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
+    "small": "/drivers/water_tank_monitor/assets/images/small.png",
+    "large": "/drivers/water_tank_monitor/assets/images/large.png",
+    "xlarge": "/drivers/water_tank_monitor/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

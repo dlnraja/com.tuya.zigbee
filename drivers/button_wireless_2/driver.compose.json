@@ -130,7 +130,11 @@
       "_TZ3000_5e235jpa",
       "_TZ3000_5E235JPA",
       "_tyzb01_bagt1e4o",
-      "_TYZB01_BAGT1E4O"
+      "_TYZB01_BAGT1E4O",
+      "_TZ3000_18ejxno0",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_aa5t61rh",
+      "_TYZB01_b3mgfu0d"
     ],
     "productId": [
       "TS0042",
@@ -191,9 +195,9 @@
     }
   },
   "images": {
-    "small": "drivers/button_wireless_2/assets/images/small.png",
-    "large": "drivers/button_wireless_2/assets/images/large.png",
-    "xlarge": "drivers/button_wireless_2/assets/images/xlarge.png"
+    "small": "/drivers/button_wireless_2/assets/images/small.png",
+    "large": "/drivers/button_wireless_2/assets/images/large.png",
+    "xlarge": "/drivers/button_wireless_2/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

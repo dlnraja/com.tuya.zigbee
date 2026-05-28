@@ -25,7 +25,9 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_s8gkrkxk"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
@@ -484,8 +486,8 @@
     }
   ],
   "images": {
-    "small": "drivers/led_strip/assets/images/small.png",
-    "large": "drivers/led_strip/assets/images/large.png"
+    "small": "/drivers/led_strip/assets/images/small.png",
+    "large": "/drivers/led_strip/assets/images/large.png"
   },
   "platforms": [
     "local"

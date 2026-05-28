@@ -23,8 +23,26 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_1obwwnmq",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_8gs8h2e4",
+      "_TZ3000_vzopcetz",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_cphmq0q7",
+      "_TZ3210_fgwhjm9j",
+      "_TZ3210_ph1joc22",
+      "_TZ3000_pl5v1yyy",
+      "EWELINK"
+    ],
+    "productId": [
+      "TS0002",
+      "TS0121",
+      "TS011F"
+    ],
     "learnmode": {
       "image": "/drivers/plug_smart/assets/learnmode.svg",
       "instruction": {
@@ -832,8 +850,8 @@
     }
   ],
   "images": {
-    "small": "drivers/plug_smart/assets/images/small.png",
-    "large": "drivers/plug_smart/assets/images/large.png"
+    "small": "/drivers/plug_smart/assets/images/small.png",
+    "large": "/drivers/plug_smart/assets/images/large.png"
   },
   "platforms": [
     "local"

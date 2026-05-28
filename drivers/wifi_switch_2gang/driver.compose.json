@@ -104,9 +104,9 @@
     }
   ],
   "images": {
-    "small": "drivers/wifi_switch_2gang/assets/images/small.png",
-    "large": "drivers/wifi_switch_2gang/assets/images/large.png",
-    "xlarge": "drivers/wifi_switch_2gang/assets/images/xlarge.png"
+    "small": "/drivers/wifi_switch_2gang/assets/images/small.png",
+    "large": "/drivers/wifi_switch_2gang/assets/images/large.png",
+    "xlarge": "/drivers/wifi_switch_2gang/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

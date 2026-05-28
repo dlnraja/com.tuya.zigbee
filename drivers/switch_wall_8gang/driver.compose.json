@@ -381,9 +381,9 @@
     }
   ],
   "images": {
-    "small": "drivers/switch_wall_8gang/assets/images/small.png",
-    "large": "drivers/switch_wall_8gang/assets/images/large.png",
-    "xlarge": "drivers/switch_wall_8gang/assets/images/xlarge.png"
+    "small": "/drivers/switch_wall_8gang/assets/images/small.png",
+    "large": "/drivers/switch_wall_8gang/assets/images/large.png",
+    "xlarge": "/drivers/switch_wall_8gang/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

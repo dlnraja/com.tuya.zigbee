@@ -327,9 +327,9 @@
     }
   ],
   "images": {
-    "small": "drivers/water_valve_smart/assets/images/small.png",
-    "large": "drivers/water_valve_smart/assets/images/large.png",
-    "xlarge": "drivers/water_valve_smart/assets/images/xlarge.png"
+    "small": "/drivers/water_valve_smart/assets/images/small.png",
+    "large": "/drivers/water_valve_smart/assets/images/large.png",
+    "xlarge": "/drivers/water_valve_smart/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

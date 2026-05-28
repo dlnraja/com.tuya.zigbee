@@ -7,7 +7,9 @@
     "meter_power"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_iwtv2jwo"
+    ],
     "productId": [
       "TS0002"
     ],
@@ -42,9 +44,9 @@
     }
   },
   "images": {
-    "small": "drivers/switch_usb_dongle/assets/images/small.png",
-    "large": "drivers/switch_usb_dongle/assets/images/large.png",
-    "xlarge": "drivers/switch_usb_dongle/assets/images/xlarge.png"
+    "small": "/drivers/switch_usb_dongle/assets/images/small.png",
+    "large": "/drivers/switch_usb_dongle/assets/images/large.png",
+    "xlarge": "/drivers/switch_usb_dongle/assets/images/xlarge.png"
   },
   "settings": [
     {

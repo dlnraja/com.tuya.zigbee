@@ -104,9 +104,9 @@
     }
   ],
   "images": {
-    "small": "drivers/wifi_garage_door/assets/images/small.png",
-    "large": "drivers/wifi_garage_door/assets/images/large.png",
-    "xlarge": "drivers/wifi_garage_door/assets/images/xlarge.png"
+    "small": "/drivers/wifi_garage_door/assets/images/small.png",
+    "large": "/drivers/wifi_garage_door/assets/images/large.png",
+    "xlarge": "/drivers/wifi_garage_door/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

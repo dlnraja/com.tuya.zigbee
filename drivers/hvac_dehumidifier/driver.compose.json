@@ -53,9 +53,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/hvac_dehumidifier/assets/images/small.png",
-    "large": "drivers/hvac_dehumidifier/assets/images/large.png",
-    "xlarge": "drivers/hvac_dehumidifier/assets/images/xlarge.png"
+    "small": "/drivers/hvac_dehumidifier/assets/images/small.png",
+    "large": "/drivers/hvac_dehumidifier/assets/images/large.png",
+    "xlarge": "/drivers/hvac_dehumidifier/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [

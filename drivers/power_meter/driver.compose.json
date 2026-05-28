@@ -271,7 +271,9 @@
       "_TZE204_Q9XTY0AD",
       "_TZE204_byzdayie",
       "_TZE200_lsanae78",
-      "_TZE204_lsanae78"
+      "_TZE204_lsanae78",
+      "_TZE200_lsanae86",
+      "_TZE200_dsu7j6dn"
     ],
     "productId": [
       "TS0601",
@@ -300,9 +302,9 @@
     ]
   },
   "images": {
-    "small": "drivers/power_meter/assets/images/small.png",
-    "large": "drivers/power_meter/assets/images/large.png",
-    "xlarge": "drivers/power_meter/assets/images/xlarge.png"
+    "small": "/drivers/power_meter/assets/images/small.png",
+    "large": "/drivers/power_meter/assets/images/large.png",
+    "xlarge": "/drivers/power_meter/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

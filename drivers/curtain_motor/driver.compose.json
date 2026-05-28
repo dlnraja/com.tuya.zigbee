@@ -46,9 +46,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/curtain_motor/assets/images/small.png",
-    "large": "drivers/curtain_motor/assets/images/large.png",
-    "xlarge": "drivers/curtain_motor/assets/images/xlarge.png"
+    "small": "/drivers/curtain_motor/assets/images/small.png",
+    "large": "/drivers/curtain_motor/assets/images/large.png",
+    "xlarge": "/drivers/curtain_motor/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -439,7 +439,12 @@
       "_TZ3000_EVAG0PVN",
       "_tz3000_riwp3k79",
       "_TZ3000_riwp3k79",
-      "_TZ3000_RIWP3K79"
+      "_TZ3000_RIWP3K79",
+      "_TZE200_fzo2pocs",
+      "_TZE200_3i3exuay",
+      "_TZE200_zpzndjez",
+      "_TZE200_cowvfni3",
+      "_TZE204_fzo2pocs"
     ],
     "productId": [
       "TS0302",

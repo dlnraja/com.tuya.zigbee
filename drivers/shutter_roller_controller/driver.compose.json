@@ -283,9 +283,9 @@
     }
   ],
   "images": {
-    "small": "drivers/shutter_roller_controller/assets/images/small.png",
-    "large": "drivers/shutter_roller_controller/assets/images/large.png",
-    "xlarge": "drivers/shutter_roller_controller/assets/images/xlarge.png"
+    "small": "/drivers/shutter_roller_controller/assets/images/small.png",
+    "large": "/drivers/shutter_roller_controller/assets/images/large.png",
+    "xlarge": "/drivers/shutter_roller_controller/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -121,9 +121,9 @@
     }
   },
   "images": {
-    "small": "drivers/scene_switch_4/assets/images/small.png",
-    "large": "drivers/scene_switch_4/assets/images/large.png",
-    "xlarge": "drivers/scene_switch_4/assets/images/xlarge.png"
+    "small": "/drivers/scene_switch_4/assets/images/small.png",
+    "large": "/drivers/scene_switch_4/assets/images/large.png",
+    "xlarge": "/drivers/scene_switch_4/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -22,11 +22,16 @@
     ]
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_bguser20",
+      "_TZA226_ueagguan",
+      "_TYZB01_a082h2cc",
+      "_TZ3000_rufdtfyv"
+    ],
     "productId": [
       "RH3052",
       "TS0201"

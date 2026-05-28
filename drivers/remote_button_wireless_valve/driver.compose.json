@@ -56,7 +56,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_j9568h44"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
@@ -92,8 +94,8 @@
     }
   },
   "images": {
-    "small": "drivers/button_wireless_2/assets/images/small.png",
-    "large": "drivers/button_wireless_2/assets/images/large.png"
+    "small": "/drivers/button_wireless_2/assets/images/small.png",
+    "large": "/drivers/button_wireless_2/assets/images/large.png"
   },
   "platforms": [
     "local"

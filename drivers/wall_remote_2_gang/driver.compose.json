@@ -21,9 +21,9 @@
     "alarm_battery"
   ],
   "images": {
-    "large": "drivers/wall_remote_2_gang/assets/images/large.png",
-    "small": "drivers/wall_remote_2_gang/assets/images/small.png",
-    "xlarge": "drivers/wall_remote_2_gang/assets/images/xlarge.png"
+    "large": "/drivers/wall_remote_2_gang/assets/images/large.png",
+    "small": "/drivers/wall_remote_2_gang/assets/images/small.png",
+    "xlarge": "/drivers/wall_remote_2_gang/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [
@@ -40,7 +40,8 @@
       "_TZ3000_AB9PBA9Q",
       "_tz3000_df6005om",
       "_TZ3000_df6005om",
-      "_TZ3000_DF6005OM"
+      "_TZ3000_DF6005OM",
+      "_tz3000_tzvbimpq"
     ],
     "productId": [
       "TS0042"

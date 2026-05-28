@@ -20,7 +20,9 @@
     "alarm_battery"
   ],
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,11 +52,32 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZE200_yojqa8xn",
+      "_TZE204_zougpkpy",
+      "_TZE204_chbyv06x",
+      "_TZE204_yojqa8xn",
+      "_TZE284_chbyv06x",
+      "_TZE200_nus5kk3n",
+      "_TZE200_mby4kbtq",
+      "_TZE204_mby4kbtq",
+      "_TZE204_uo8qcagc",
+      "_TZE204_v6iczj35",
+      "_TZE204_hiith90n",
+      "_TZ3000_2uollq9d",
+      "_TZ3000_cehuw1lw",
+      "_TZE200_ttcovulf",
+      "_TZE200_gjldowol",
+      "_TZE200_jxyhl4eq",
+      "_TZE200_qxyh4r7g",
+      "_TZE200_na5qlzow",
+      "_TZE200_nojsjtj2",
+      "_TZE200_vrcfo4i0"
+    ]
   },
   "images": {
-    "small": "drivers/switch_4gang/assets/images/small.png",
-    "large": "drivers/switch_4gang/assets/images/large.png"
+    "small": "/drivers/switch_4gang/assets/images/small.png",
+    "large": "/drivers/switch_4gang/assets/images/large.png"
   },
   "settings": [
     {

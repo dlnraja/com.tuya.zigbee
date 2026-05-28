@@ -88,9 +88,9 @@
     "meter_power"
   ],
   "images": {
-    "small": "drivers/wifi_sonoff_pow_elite/assets/images/small.png",
-    "large": "drivers/wifi_sonoff_pow_elite/assets/images/large.png",
-    "xlarge": "drivers/wifi_sonoff_pow_elite/assets/images/xlarge.png"
+    "small": "/drivers/wifi_sonoff_pow_elite/assets/images/small.png",
+    "large": "/drivers/wifi_sonoff_pow_elite/assets/images/large.png",
+    "xlarge": "/drivers/wifi_sonoff_pow_elite/assets/images/xlarge.png"
   },
   "maintenanceActions": [
     {

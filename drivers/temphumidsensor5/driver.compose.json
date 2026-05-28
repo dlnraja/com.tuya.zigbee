@@ -24,13 +24,19 @@
     "zigbee"
   ],
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png"
+    "small": "/{{driverAssetsPath}}/images/small.png",
+    "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_bguser20",
+      "_TZA226_ueagguan",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_rufdtfyv"
+    ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "TS0201"
     ],
     "endpoints": {
       "1": {

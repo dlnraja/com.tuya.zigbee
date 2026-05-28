@@ -66,9 +66,9 @@
     }
   },
   "images": {
-    "small": "drivers/smart_breaker/assets/images/small.png",
-    "large": "drivers/smart_breaker/assets/images/large.png",
-    "xlarge": "drivers/smart_breaker/assets/images/xlarge.png"
+    "small": "/drivers/smart_breaker/assets/images/small.png",
+    "large": "/drivers/smart_breaker/assets/images/large.png",
+    "xlarge": "/drivers/smart_breaker/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

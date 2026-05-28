@@ -271,9 +271,9 @@
     }
   ],
   "images": {
-    "small": "drivers/ceiling_fan/assets/images/small.png",
-    "large": "drivers/ceiling_fan/assets/images/large.png",
-    "xlarge": "drivers/ceiling_fan/assets/images/xlarge.png"
+    "small": "/drivers/ceiling_fan/assets/images/small.png",
+    "large": "/drivers/ceiling_fan/assets/images/large.png",
+    "xlarge": "/drivers/ceiling_fan/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

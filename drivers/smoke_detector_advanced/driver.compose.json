@@ -139,7 +139,9 @@
       "_TZE284_CJBOFHXW",
       "_tz3000_qtyyuaq6",
       "_TZ3000_qtyyuaq6",
-      "_TZ3000_QTYYUAQ6"
+      "_TZ3000_QTYYUAQ6",
+      "_TZE204_ntcy3xu1",
+      "_TZE200_5d3vhjro"
     ],
     "endpoints": {
       "1": {
@@ -401,9 +403,9 @@
     }
   ],
   "images": {
-    "small": "drivers/smoke_detector_advanced/assets/images/small.png",
-    "large": "drivers/smoke_detector_advanced/assets/images/large.png",
-    "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
+    "small": "/drivers/smoke_detector_advanced/assets/images/small.png",
+    "large": "/drivers/smoke_detector_advanced/assets/images/large.png",
+    "xlarge": "/drivers/smoke_detector_advanced/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

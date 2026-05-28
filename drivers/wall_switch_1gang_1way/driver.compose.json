@@ -22,9 +22,9 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/wall_switch_1gang_1way/assets/images/small.png",
-    "large": "drivers/wall_switch_1gang_1way/assets/images/large.png",
-    "xlarge": "drivers/wall_switch_1gang_1way/assets/images/xlarge.png"
+    "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png",
+    "xlarge": "/drivers/wall_switch_1gang_1way/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -48,7 +48,12 @@
       "_TZ3000_OVYAISIP",
       "_tz3000_pk8tgtdb",
       "_TZ3000_pk8tgtdb",
-      "_TZ3000_PK8TGTDB"
+      "_TZ3000_PK8TGTDB",
+      "_TYZB01_qm6djpta",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_qlai3277",
+      "_TZ3000_hkkkuk7k",
+      "_TZ3000_b3mgfu0d"
     ],
     "productId": [
       "TS0001",

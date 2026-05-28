@@ -46,7 +46,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tze200_kly8gjlz"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
@@ -58,8 +60,8 @@
     }
   },
   "images": {
-    "small": "drivers/smart_lcd_thermostat/assets/images/small.png",
-    "large": "drivers/smart_lcd_thermostat/assets/images/large.png"
+    "small": "/drivers/smart_lcd_thermostat/assets/images/small.png",
+    "large": "/drivers/smart_lcd_thermostat/assets/images/large.png"
   },
   "platforms": [
     "local"

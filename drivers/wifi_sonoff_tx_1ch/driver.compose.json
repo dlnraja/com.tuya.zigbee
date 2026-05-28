@@ -84,9 +84,9 @@
     "onoff"
   ],
   "images": {
-    "small": "drivers/wifi_sonoff_tx_1ch/assets/images/small.png",
-    "large": "drivers/wifi_sonoff_tx_1ch/assets/images/large.png",
-    "xlarge": "drivers/wifi_sonoff_tx_1ch/assets/images/xlarge.png"
+    "small": "/drivers/wifi_sonoff_tx_1ch/assets/images/small.png",
+    "large": "/drivers/wifi_sonoff_tx_1ch/assets/images/large.png",
+    "xlarge": "/drivers/wifi_sonoff_tx_1ch/assets/images/xlarge.png"
   },
   "maintenanceActions": [
     {

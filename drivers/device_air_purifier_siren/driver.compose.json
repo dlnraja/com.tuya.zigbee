@@ -26,8 +26,19 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TYZB01_sbpc1zrb",
+      "_TZE200_znzs7yaw",
+      "_TZE204_vmcgja59",
+      "_TZE284_vmcgja59",
+      "_TZE204_ex3rcdha",
+      "_tze204_t1blo2bj",
+      "_tze200_d0yu2xgi",
+      "_tyst11_d0yu2xgi"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/siren/assets/learnmode.svg",
       "instruction": {
@@ -441,8 +452,8 @@
     }
   ],
   "images": {
-    "small": "drivers/siren/assets/images/small.png",
-    "large": "drivers/siren/assets/images/large.png"
+    "small": "/drivers/siren/assets/images/small.png",
+    "large": "/drivers/siren/assets/images/large.png"
   },
   "platforms": [
     "local"

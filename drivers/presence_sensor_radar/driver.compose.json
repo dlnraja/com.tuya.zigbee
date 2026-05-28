@@ -531,7 +531,8 @@
       "_TZE284_z5jz7wpo",
       "_TZE284_Z5JZ7WPO",
       "b3876m9",
-      "B3876M9"
+      "B3876M9",
+      "_TZE204_ikvncluo"
     ],
     "productId": [
       "CK-BL702-MWS-01",
@@ -1168,9 +1169,9 @@
     }
   ],
   "images": {
-    "small": "drivers/presence_sensor_radar/assets/images/small.png",
-    "large": "drivers/presence_sensor_radar/assets/images/large.png",
-    "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+    "small": "/drivers/presence_sensor_radar/assets/images/small.png",
+    "large": "/drivers/presence_sensor_radar/assets/images/large.png",
+    "xlarge": "/drivers/presence_sensor_radar/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

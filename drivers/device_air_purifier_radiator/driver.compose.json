@@ -27,8 +27,15 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE200_9xfjixap",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_zion52ef",
+      "_TZE200_hue3yfsn"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
@@ -455,8 +462,8 @@
     }
   ],
   "images": {
-    "small": "drivers/radiator_valve/assets/images/small.png",
-    "large": "drivers/radiator_valve/assets/images/large.png"
+    "small": "/drivers/radiator_valve/assets/images/small.png",
+    "large": "/drivers/radiator_valve/assets/images/large.png"
   },
   "platforms": [
     "local"

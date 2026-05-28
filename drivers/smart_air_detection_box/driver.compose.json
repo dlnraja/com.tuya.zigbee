@@ -24,11 +24,21 @@
     }
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_rbbx5mfq",
+      "_TZE204_rbbx5mfq",
+      "_TZE204_ogkdpgy2",
+      "_TZE200_7bztmfm1",
+      "_TZE204_7bztmfm1",
+      "_TZ3210_guijtl8k",
+      "_TZ3210_hquixjeg",
+      "_TZE284_8b9zpaav",
+      "_TZE284_it9utkro"
+    ],
     "productId": [
       "TS0601"
     ],

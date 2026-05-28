@@ -25,8 +25,17 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE608_c75zqghm",
+      "_TZE608_fmemczv1",
+      "_TZE608_xkr8gep3",
+      "_TZE608_lapuuoke",
+      "_TZE204_NKLQJK62"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0603"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -440,8 +449,8 @@
     }
   ],
   "images": {
-    "small": "drivers/door_controller/assets/images/small.png",
-    "large": "drivers/door_controller/assets/images/large.png"
+    "small": "/drivers/door_controller/assets/images/small.png",
+    "large": "/drivers/door_controller/assets/images/large.png"
   },
   "platforms": [
     "local"
