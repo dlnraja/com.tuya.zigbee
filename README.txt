@@ -1,3 +1,0 @@
-This application provides unified support for a wide variety of Tuya Zigbee devices, aiming to integrate as many unbranded, generic, and rebranded smart home products as possible. It utilizes a universal fallback approach to automatically map unknown sub-variants into working templates without requiring explicit configuration. 
-
-Users can connect a vast array of smart plugs, presence detectors, energy monitors, multi-gang wall switches, thermostats, and intelligent bulbs directly to their smart home environment. The drivers are engineered to dynamically expand coverage and autonomously heal configuration maps, ensuring strong stability and high compatibility for an ever-growing list of devices.

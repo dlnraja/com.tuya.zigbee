@@ -977,4 +977,79 @@ As part of the v5.12.0 core update, the app introduces **Dynamic Heuristics** di
 - Adapts runtime polling actively instead of waiting passively for Tuya battery payloads.
 
 ---
+
+## 28. DUAL-LAYER PAIRING ARCHITECTURE & AGGREGATE ERROR PREVENTION (v8.5.34+)
+
+> **🚨 CRITICAL — ALL AI AGENTS MUST READ THIS BEFORE TOUCHING driver.compose.json**
+
+### Root Cause of AggregateError (v8.1.6 → v8.5.33 — 58 failed builds)
+
+From v8.1.6, 182 synthetic hybrid drivers were created with `manufacturerName: []` empty.
+Homey Pro reads `app.json` **locally and statically** to match a device during pairing.
+An empty `manufacturerName` array means **zero matches** → Homey throws `AggregateError`.
+
+### The Two-Layer Architecture (MANDATORY)
+
+```
+LAYER 1 — STATIC (Pairing Time) — MANDATORY
+  driver.compose.json → zigbee.manufacturerName[]
+  Copied into app.json at build time
+  Homey Pro reads this OFFLINE/LOCALLY during pairing
+  ❌ EMPTY = AggregateError = device cannot pair
+
+LAYER 2 — DYNAMIC (Runtime) — OPTIONAL (enrichment only)
+  data/fingerprints.json (11.8 Mo, 126k entries)
+  Loaded lazily via Buffer (anti-OOM)
+  Used to refine capabilities/DPs AFTER successful pairing
+  ✅ Can be empty/absent — pairing still works
+```
+
+### Rules (PERMANENT CONSTRAINTS)
+
+1. **NEVER** create a Zigbee driver with `manufacturerName: []`
+2. **NEVER** remove MFs from `driver.compose.json` without explicitly moving them
+3. **Hybrid drivers** (e.g. `air_purifier_climate`) MUST inherit MFs from their parent driver
+4. **Wildcards** (`_TZE200_*`) are **STRICTLY FORBIDDEN** in `manufacturerName`
+5. **All comparisons** must use `CaseInsensitiveMatcher.js` — no manual `.toLowerCase()`
+6. **After any fingerprint operation**, run `node scripts/validation/check-fingerprint-health.js`
+
+### Maintenance Scripts (v8.5.34)
+
+| Script | Purpose | When to Run |
+|--------|---------|-------------|
+| `scripts/validation/check-fingerprint-health.js` | CI gate: detects empty MFs and wildcards | Before every commit |
+| `scripts/deep-compare-stable-vs-master.js` | Finds MFs present in stable-v5 but missing in master | Monthly |
+| `scripts/inject-stable-fps-to-master.js` | Injects missing MFs from stable-v5 → master | After deep-compare |
+| `scripts/restore-master-only-hybrid-mfs.js` | Copies MFs from parent driver to hybrid variants | After collision fixes |
+| `scripts/fix-fingerprint-collisions.js` | Resolves true MF+PID collisions | Before publish |
+| `scripts/analyze-fingerprints-db.js` | Analyzes data/fingerprints.json health | Debugging |
+| `scripts/sync-fingerprints-to-compose.js` | Syncs data/ DB fingerprints → driver.compose.json | After DB update |
+
+### Validation Pipeline
+
+```bash
+# Pre-commit (mandatory)
+node scripts/validation/check-fingerprint-health.js    # Must PASS
+npx homey app validate --level publish                 # Must PASS
+
+# Monthly maintenance
+node scripts/deep-compare-stable-vs-master.js
+node scripts/inject-stable-fps-to-master.js
+node scripts/restore-master-only-hybrid-mfs.js
+node scripts/validation/check-fingerprint-health.js   # Verify
+```
+
+### Fingerprint Statistics (v8.5.34)
+
+| Metric | Value |
+|--------|-------|
+| Total drivers | 412 |
+| Zigbee drivers | 360 |
+| Drivers with MF = 0 | **0** (was: 99) |
+| Wildcards | **0** |
+| MFs injected from stable-v5 | **1053** |
+| Hybrid drivers restored | **90** |
+| Validation level | **publish ✅** |
+
+---
 **END OF PROJECT_INDEX.md**
