@@ -1,11 +1,11 @@
 {
-  "8.5.43": {
-    "en": "v8.5.43: HOMEY_PAT updated — publish re-triggered with valid Athom token. User feedback fixes: TS0044 scene switch, BSEED glass switches, TS0601 siren MFs, blind switch. CI: check_pat step fixed, no more silent publish failures."
-  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
+  "8.5.43": {
+    "en": "v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new fingerprints from community and Z2M/ZHA sources."
   },
   "8.5.42": {
     "en": "v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new device fingerprints from community and Z2M/ZHA sources. Resolved 4361 fingerprint conflicts across all drivers."
@@ -62,7 +62,7 @@
   "8.5.21": {
     "en": "v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML ."
   },
-  "8.5.20": {
-    "en": "v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements."
+  "8.5.44": {
+    "en": "v8.5.43: Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor drivers, Resolved persistent M09 validation issues for button and sensor drivers, Added 114 new device fingerprints from Z2M/ZHA, community reports, and JohanBendz fork, New soil sensor support: _TZE284_0ints6wl (TS0601), 412 drivers now support 15,003+ device fingerprints"
   }
 }
