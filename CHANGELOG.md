@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.42] - 2026-05-28
+## [8.5.43] - 2026-05-28
+
+### Bug Fixes
+- Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor drivers
+- Resolved persistent M09 validation issues for button and sensor drivers
+
+### New Features
+- Added 114 new device fingerprints from Z2M/ZHA, community reports, and JohanBendz fork
+- New soil sensor support: _TZE284_0ints6wl (TS0601)
+
+### Improvements
+- 412 drivers now support 15,003+ device fingerprints
+- Enhanced fingerprint database with community-contributed mappings
+---
+
+ [8.5.42] - 2026-05-28
 
 ### Bug Fixes
 - Fixed manufacturer fingerprint for button_wireless_4 driver
