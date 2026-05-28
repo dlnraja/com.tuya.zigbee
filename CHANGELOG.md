@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.41] - 2026-05-28
+## [8.5.42] - 2026-05-28
+
+### Bug Fixes
+- Fixed manufacturer fingerprint for button_wireless_4 driver
+- Fixed manufacturer fingerprint for illuminance_sensor driver
+
+### New Features
+- Added 114 new device fingerprints from Zigbee2MQTT, ZHA, and community reports
+- Resolved 4,361 fingerprint conflicts across all 412 drivers
+
+### Improvements
+- Updated device database with latest community feedback and corrections
+- Improved fingerprint matching accuracy for Tuya devices
+---
+
+ [8.5.41] - 2026-05-28
 
 ### Bug Fixes
 - **Critical**: Fixed `app.json` validation errors — corrected `category` to string type, removed invalid `icon` field, and removed unsupported `homey:manager:api` permission
