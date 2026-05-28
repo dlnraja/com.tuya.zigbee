@@ -23,10 +23,7 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_ngqk6jia",
-      "_tz3210_weaqkhab"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",

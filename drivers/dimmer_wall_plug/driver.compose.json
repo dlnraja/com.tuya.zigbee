@@ -24,12 +24,7 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_KDI2O9M6",
-      "_TZ3210_5CT6E7YE",
-      "_TZ3210_8N4DN1NE",
-      "_TZ3210_URJF5U18"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",

@@ -27,9 +27,7 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_gek6snaj"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
