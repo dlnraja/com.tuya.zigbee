@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.48": {
+    "en": "v8.5.47:"
+  },
   "8.5.47": {
     "en": "v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persistent M09 validation errors for button_wireless_4 and illuminance_sensor drivers, Fixed missing manufacturerName entries for 360 Zigbee drivers (AggregateError fix), Removed 75 empty manufacturerName arrays causing validation failures, Corrected .homeyignore to include multilingual READ"
   },
@@ -59,10 +62,7 @@
   "8.5.28": {
     "en": "v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability improvements."
   },
-  "8.5.27": {
-    "en": "Removed SmartThings 2 integration. Monthly  adds 413 drivers and 3306 validated fingerprints. Bug fix for AggregateError on app startup."
-  },
-  "8.5.48": {
-    "en": "v8.5.47:"
+  "8.5.49": {
+    "en": "v8.5.48:"
   }
 }
