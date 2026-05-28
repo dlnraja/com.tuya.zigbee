@@ -3,7 +3,8 @@
     "en": "Garage Door Opener",
     "fr": "Ouvre-porte de Garage",
     "nl": "Garagedeur Opener",
-    "de": "Garagentorantrieb"
+    "de": "Garagentorantrieb",
+    "pl": "Sterownik bramy garażowej"
   },
   "class": "garagedoor",
   "capabilities": [
@@ -14,14 +15,21 @@
     "garagedoor_closed": {
       "title": {
         "en": "Garage Door",
-        "fr": "Porte de Garage"
+        "fr": "Porte de Garage",
+        "nl": "Garagedeur",
+        "de": "Garagentor",
+        "pl": "Brama garażowa zamknięta"
       }
     },
     "alarm_contact": {
       "title": {
         "en": "Door Sensor",
-        "fr": "Capteur de Porte"
-      }
+        "fr": "Capteur de Porte",
+        "nl": "Deursensor",
+        "de": "Türsensor",
+        "pl": "Czujnik otwarcia (kontaktron)"
+      },
+      "uiQuickAction": false
     }
   },
   "zigbee": {
@@ -70,7 +78,8 @@
       "title": {
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA",
-        "nl": "Controleer op OTA-updates"
+        "nl": "Controleer op OTA-updates",
+        "pl": "Sprawdź aktualizację OTA Zigbee"
       }
     }
   ]

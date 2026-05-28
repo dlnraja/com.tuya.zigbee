@@ -1,0 +1,102 @@
+{
+  "timestamp": "2026-05-28T05:22:49.327Z",
+  "results": [
+    {
+      "class": "sensor",
+      "guessed_capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "dps": [
+        {
+          "id": 1,
+          "cap": "measure_temperature"
+        },
+        {
+          "id": 2,
+          "cap": "measure_humidity"
+        },
+        {
+          "id": 3,
+          "cap": "measure_battery"
+        }
+      ],
+      "reasoning": "The fingerprint '_TZE200_nqaqq4cf' is a known Tuya Zigbee climate sensor (temperature and humidity). The commercial descriptions mention 'Tuya ZigBee 3.0 Smart Gateway Hub' and 'Smart Lock SDK', but the fingerprint itself is a standard Tuya sensor. Based on the fingerprint database and common Tuya sensor DP mappings, it typically reports temperature (DP1), humidity (DP2), and battery (DP3). The device class is 'sensor' as it is a climate sensor, not a switch, light, or plug.",
+      "fingerprint": "_TZE200_nqaqq4cf"
+    },
+    {
+      "class": "socket",
+      "guessed_capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "dps": [
+        {
+          "id": 1,
+          "cap": "onoff"
+        },
+        {
+          "id": 2,
+          "cap": "measure_power"
+        },
+        {
+          "id": 3,
+          "cap": "measure_voltage"
+        },
+        {
+          "id": 4,
+          "cap": "measure_current"
+        },
+        {
+          "id": 5,
+          "cap": "meter_power"
+        }
+      ],
+      "reasoning": "The fingerprint '_TZE284_rvnbnvw8' is a known Tuya TS0601 smart plug with energy monitoring. Based on the standard Tuya DP mapping for energy monitoring sockets, DP1 controls the relay (onoff), DP2 reports power in watts, DP3 reports voltage, DP4 reports current, and DP5 reports cumulative energy consumption. The device class is 'socket' as it is a plug-in smart socket with a physical relay.",
+      "fingerprint": "_TZE284_rvnbnvw8"
+    },
+    {
+      "class": "sensor",
+      "guessed_capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_motion",
+        "measure_luminance",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [
+        {
+          "id": 1,
+          "cap": "alarm_motion"
+        },
+        {
+          "id": 2,
+          "cap": "measure_temperature"
+        },
+        {
+          "id": 3,
+          "cap": "measure_humidity"
+        },
+        {
+          "id": 4,
+          "cap": "measure_luminance"
+        },
+        {
+          "id": 5,
+          "cap": "measure_battery"
+        },
+        {
+          "id": 6,
+          "cap": "alarm_battery"
+        }
+      ],
+      "reasoning": "The fingerprint '_TZE284_zp8xakad' is a known Tuya motion sensor variant (TS0601). Based on the manufacturer prefix '_TZE284' (Tuya Zigbee Endpoint 284) and common Tuya sensor DP mappings, this device likely reports motion (DP1), temperature (DP2), humidity (DP3), luminance (DP4), and battery percentage (DP5) with a low battery alarm (DP6). The 'measure_battery' capability is standard for battery-powered sensors, and 'alarm_battery' is triggered when the battery drops below a threshold. No onoff or power capabilities are expected as this is a passive sensor, not a switch or plug.",
+      "fingerprint": "_TZE284_zp8xakad"
+    }
+  ]
+}
