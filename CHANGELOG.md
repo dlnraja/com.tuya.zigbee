@@ -4,7 +4,30 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.45] - 2026-05-28
+## [8.5.46] - 2026-05-28
+
+### Bug Fixes
+- Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup)
+- Resolved persistent M09 validation errors for button_wireless_4 and illuminance_sensor drivers
+- Fixed missing manufacturerName entries for 360 Zigbee drivers (AggregateError fix)
+- Removed 75 empty manufacturerName arrays causing validation failures
+- Corrected .homeyignore to include multilingual README files
+- Fixed invalid 'icon' field in app.json and restored assets/icon.svg
+- Removed invalid api+homey:manager:api permission from app.json
+
+### New Features
+- Added 114 new fingerprints from Z2M/ZHA/community/JohanBendz sync
+- User feedback fixes and fingerprint enrichments
+
+### Improvements
+- Comprehensive mandatory files validation gate added
+- Pre-commit and pre-push hooks for CI validation
+- Dual-layer anti-AggregateError automation pipeline
+- Root cleanup and integrity workflow
+- Mandatory README.txt + multilingual README.*.txt files added
+---
+
+ [8.5.45] - 2026-05-28
 
 ### Bug Fixes
 - **CRITICAL**: Removed 75 empty manufacturerName[] arrays causing AggregateError on startup
