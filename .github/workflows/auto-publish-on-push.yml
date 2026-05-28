@@ -119,31 +119,21 @@ jobs:
       - name: Validate (npx)
         run: npx homey app validate --level publish
 
-      - name: Validate (Athom Docker)
-        continue-on-error: true
-        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
-        with:
-          level: publish
-
-      - name: Check HOMEY_PAT
-        id: check_pat
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+      - name: Minify app.json (reduce 6MB → 3.3MB to pass Homey size limit)
         run: |
-          if [ -n "$HOMEY_PAT" ]; then
-            echo "has_pat=true" >> $GITHUB_OUTPUT
+          if [ -f ".homeybuild/app.json" ]; then
+            node -e "const fs=require('fs');const p='.homeybuild/app.json';const raw=fs.readFileSync(p,'utf8');const min=JSON.stringify(JSON.parse(raw));fs.writeFileSync(p,min,'utf8');console.log('Minified app.json:',(raw.length/1048576).toFixed(2)+'MB → '+(min.length/1048576).toFixed(2)+'MB')"
           else
-            echo "has_pat=false" >> $GITHUB_OUTPUT
-            echo "::warning::HOMEY_PAT not configured - skipping publish"
+            npx homey app build
+            node -e "const fs=require('fs');const p='.homeybuild/app.json';const raw=fs.readFileSync(p,'utf8');const min=JSON.stringify(JSON.parse(raw));fs.writeFileSync(p,min,'utf8');console.log('Minified app.json:',(raw.length/1048576).toFixed(2)+'MB → '+(min.length/1048576).toFixed(2)+'MB')"
           fi
 
       - name: Publish
-        if: steps.check_pat.outputs.has_pat == 'true'
-        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         id: pub
         continue-on-error: true
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: npx homey app publish
 
       - name: Create GitHub Release
         if: steps.check_pat.outputs.has_pat == 'true'
