@@ -1,4 +1,7 @@
 {
+  "8.5.43": {
+    "en": "v8.5.43: HOMEY_PAT updated — publish re-triggered with valid Athom token. User feedback fixes: TS0044 scene switch, BSEED glass switches, TS0601 siren MFs, blind switch. CI: check_pat step fixed, no more silent publish failures."
+  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
@@ -61,8 +64,5 @@
   },
   "8.5.20": {
     "en": "v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements."
-  },
-  "8.5.43": {
-    "en": "v8.5.42: Fixed manufacturer fingerprint for button_wireless_4 driver, Fixed manufacturer fingerprint for illuminance_sensor driver, Added 114 new device fingerprints from Zigbee2MQTT, ZHA, and community reports, Resolved 4,361 fingerprint conflicts across all 412 drivers, Updated device database with latest community feedback and corrections"
   }
 }
