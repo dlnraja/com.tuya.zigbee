@@ -122556,8 +122556,8 @@
         "lidl_xmas_mode"
       ],
       "images": {
-        "large": "/drivers/christmas_lights/assets/images/large.png",
-        "small": "/drivers/christmas_lights/assets/images/small.png"
+        "large": "//drivers/christmas_lights/assets/images/large.png",
+        "small": "//drivers/christmas_lights/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -134296,8 +134296,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "large": "/drivers/curtain_module/assets/images/large.png",
-        "small": "/drivers/curtain_module/assets/images/small.png"
+        "large": "//drivers/curtain_module/assets/images/large.png",
+        "small": "//drivers/curtain_module/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -134537,8 +134537,8 @@
         "windowcoverings_state"
       ],
       "images": {
-        "large": "/drivers/curtain_module_2_gang/assets/images/large.png",
-        "small": "/drivers/curtain_module_2_gang/assets/images/small.png"
+        "large": "//drivers/curtain_module_2_gang/assets/images/large.png",
+        "small": "//drivers/curtain_module_2_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -149620,8 +149620,8 @@
         }
       },
       "images": {
-        "large": "/drivers/dimmer_1_gang/assets/images/large.png",
-        "small": "/drivers/dimmer_1_gang/assets/images/small.png"
+        "large": "//drivers/dimmer_1_gang/assets/images/large.png",
+        "small": "//drivers/dimmer_1_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -149720,8 +149720,8 @@
         }
       },
       "images": {
-        "large": "/drivers/dimmer_1_gang_2/assets/images/large.png",
-        "small": "/drivers/dimmer_1_gang_2/assets/images/small.png"
+        "large": "//drivers/dimmer_1_gang_2/assets/images/large.png",
+        "small": "//drivers/dimmer_1_gang_2/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -150034,8 +150034,8 @@
         }
       },
       "images": {
-        "large": "/drivers/dimmer_1_gang_tuya/assets/images/large.png",
-        "small": "/drivers/dimmer_1_gang_tuya/assets/images/small.png"
+        "large": "//drivers/dimmer_1_gang_tuya/assets/images/large.png",
+        "small": "//drivers/dimmer_1_gang_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -150278,8 +150278,8 @@
         }
       },
       "images": {
-        "large": "/drivers/dimmer_2_gang/assets/images/large.png",
-        "small": "/drivers/dimmer_2_gang/assets/images/small.png"
+        "large": "//drivers/dimmer_2_gang/assets/images/large.png",
+        "small": "//drivers/dimmer_2_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -150376,8 +150376,8 @@
         }
       },
       "images": {
-        "large": "/drivers/dimmer_2_gang_tuya/assets/images/large.png",
-        "small": "/drivers/dimmer_2_gang_tuya/assets/images/small.png"
+        "large": "//drivers/dimmer_2_gang_tuya/assets/images/large.png",
+        "small": "//drivers/dimmer_2_gang_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -156841,8 +156841,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/doorwindowsensor/assets/images/large.png",
-        "small": "/drivers/doorwindowsensor/assets/images/small.png"
+        "large": "//drivers/doorwindowsensor/assets/images/large.png",
+        "small": "//drivers/doorwindowsensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -156947,8 +156947,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/doorwindowsensor_2/assets/images/large.png",
-        "small": "/drivers/doorwindowsensor_2/assets/images/small.png"
+        "large": "//drivers/doorwindowsensor_2/assets/images/large.png",
+        "small": "//drivers/doorwindowsensor_2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -157020,8 +157020,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/doorwindowsensor_3/assets/images/large.png",
-        "small": "/drivers/doorwindowsensor_3/assets/images/small.png"
+        "large": "//drivers/doorwindowsensor_3/assets/images/large.png",
+        "small": "//drivers/doorwindowsensor_3/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -157084,8 +157084,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/doorwindowsensor_4/assets/images/large.png",
-        "small": "/drivers/doorwindowsensor_4/assets/images/small.png"
+        "large": "//drivers/doorwindowsensor_4/assets/images/large.png",
+        "small": "//drivers/doorwindowsensor_4/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -157145,8 +157145,8 @@
         }
       },
       "images": {
-        "large": "/drivers/double_power_point/assets/images/large.png",
-        "small": "/drivers/double_power_point/assets/images/small.png"
+        "large": "//drivers/double_power_point/assets/images/large.png",
+        "small": "//drivers/double_power_point/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -157372,8 +157372,8 @@
         }
       },
       "images": {
-        "large": "/drivers/double_power_point_2/assets/images/large.png",
-        "small": "/drivers/double_power_point_2/assets/images/small.png"
+        "large": "//drivers/double_power_point_2/assets/images/large.png",
+        "small": "//drivers/double_power_point_2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -157758,8 +157758,8 @@
         "alarm_battery"
       ],
       "images": {
-        "large": "/drivers/fingerbot/assets/images/large.png",
-        "small": "/drivers/fingerbot/assets/images/small.png"
+        "large": "//drivers/fingerbot/assets/images/large.png",
+        "small": "//drivers/fingerbot/assets/images/small.png"
       },
       "energy": {
         "batteries": [
@@ -158913,8 +158913,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/flood_sensor/assets/images/large.png",
-        "small": "/drivers/flood_sensor/assets/images/small.png"
+        "large": "//drivers/flood_sensor/assets/images/large.png",
+        "small": "//drivers/flood_sensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -164033,8 +164033,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/lcdtemphumidluxsensor/assets/images/large.png",
-        "small": "/drivers/lcdtemphumidluxsensor/assets/images/small.png"
+        "large": "//drivers/lcdtemphumidluxsensor/assets/images/large.png",
+        "small": "//drivers/lcdtemphumidluxsensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -164450,8 +164450,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/lcdtemphumidsensor_2/assets/images/large.png",
-        "small": "/drivers/lcdtemphumidsensor_2/assets/images/small.png"
+        "large": "//drivers/lcdtemphumidsensor_2/assets/images/large.png",
+        "small": "//drivers/lcdtemphumidsensor_2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -164693,8 +164693,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/lcdtemphumidsensor_3/assets/images/large.png",
-        "small": "/drivers/lcdtemphumidsensor_3/assets/images/small.png"
+        "large": "//drivers/lcdtemphumidsensor_3/assets/images/large.png",
+        "small": "//drivers/lcdtemphumidsensor_3/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -171612,8 +171612,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/motion_sensor_2/assets/images/large.png",
-        "small": "/drivers/motion_sensor_2/assets/images/small.png"
+        "large": "//drivers/motion_sensor_2/assets/images/large.png",
+        "small": "//drivers/motion_sensor_2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -173143,8 +173143,8 @@
         "measure_voltage"
       ],
       "images": {
-        "large": "/drivers/outdoor_2_socket/assets/images/large.png",
-        "small": "/drivers/outdoor_2_socket/assets/images/small.png"
+        "large": "//drivers/outdoor_2_socket/assets/images/large.png",
+        "small": "//drivers/outdoor_2_socket/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -173371,8 +173371,8 @@
         }
       },
       "images": {
-        "large": "/drivers/outdoor_plug/assets/images/large.png",
-        "small": "/drivers/outdoor_plug/assets/images/small.png"
+        "large": "//drivers/outdoor_plug/assets/images/large.png",
+        "small": "//drivers/outdoor_plug/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -173654,8 +173654,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/pir_mmwave_sensor/assets/images/large.png",
-        "small": "/drivers/pir_mmwave_sensor/assets/images/small.png"
+        "large": "//drivers/pir_mmwave_sensor/assets/images/large.png",
+        "small": "//drivers/pir_mmwave_sensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -173910,8 +173910,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/pir_sensor_2/assets/images/large.png",
-        "small": "/drivers/pir_sensor_2/assets/images/small.png"
+        "large": "//drivers/pir_sensor_2/assets/images/large.png",
+        "small": "//drivers/pir_sensor_2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -173974,8 +173974,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/pirsensor/assets/images/large.png",
-        "small": "/drivers/pirsensor/assets/images/small.png"
+        "large": "//drivers/pirsensor/assets/images/large.png",
+        "small": "//drivers/pirsensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -174032,8 +174032,8 @@
         }
       },
       "images": {
-        "large": "/drivers/plug/assets/images/large.png",
-        "small": "/drivers/plug/assets/images/small.png"
+        "large": "//drivers/plug/assets/images/large.png",
+        "small": "//drivers/plug/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -178929,8 +178929,8 @@
         "target_distance"
       ],
       "images": {
-        "large": "/drivers/radar_sensor/assets/images/large.png",
-        "small": "/drivers/radar_sensor/assets/images/small.png"
+        "large": "//drivers/radar_sensor/assets/images/large.png",
+        "small": "//drivers/radar_sensor/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -179105,8 +179105,8 @@
         "target_distance"
       ],
       "images": {
-        "large": "/drivers/radar_sensor_2/assets/images/large.png",
-        "small": "/drivers/radar_sensor_2/assets/images/small.png"
+        "large": "//drivers/radar_sensor_2/assets/images/large.png",
+        "small": "//drivers/radar_sensor_2/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -179345,8 +179345,8 @@
         "alarm_motion"
       ],
       "images": {
-        "large": "/drivers/radar_sensor_ceiling/assets/images/large.png",
-        "small": "/drivers/radar_sensor_ceiling/assets/images/small.png"
+        "large": "//drivers/radar_sensor_ceiling/assets/images/large.png",
+        "small": "//drivers/radar_sensor_ceiling/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -181288,8 +181288,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/relay_board_1_channel/assets/images/large.png",
-        "small": "/drivers/relay_board_1_channel/assets/images/small.png"
+        "large": "//drivers/relay_board_1_channel/assets/images/large.png",
+        "small": "//drivers/relay_board_1_channel/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -181345,8 +181345,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/relay_board_2_channel/assets/images/large.png",
-        "small": "/drivers/relay_board_2_channel/assets/images/small.png"
+        "large": "//drivers/relay_board_2_channel/assets/images/large.png",
+        "small": "//drivers/relay_board_2_channel/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -181429,8 +181429,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/relay_board_4_channel/assets/images/large.png",
-        "small": "/drivers/relay_board_4_channel/assets/images/small.png"
+        "large": "//drivers/relay_board_4_channel/assets/images/large.png",
+        "small": "//drivers/relay_board_4_channel/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -201812,8 +201812,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/siren_sirentemphumidsensor/assets/images/small.png",
-        "large": "/drivers/siren_sirentemphumidsensor/assets/images/large.png"
+        "small": "//drivers/siren_sirentemphumidsensor/assets/images/small.png",
+        "large": "//drivers/siren_sirentemphumidsensor/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -201892,8 +201892,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/sirentemphumidsensor/assets/images/small.png",
-        "large": "/drivers/sirentemphumidsensor/assets/images/large.png"
+        "small": "//drivers/sirentemphumidsensor/assets/images/small.png",
+        "large": "//drivers/sirentemphumidsensor/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -202227,8 +202227,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/slim_motion_sensor/assets/images/large.png",
-        "small": "/drivers/slim_motion_sensor/assets/images/small.png"
+        "large": "//drivers/slim_motion_sensor/assets/images/large.png",
+        "small": "//drivers/slim_motion_sensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -202287,8 +202287,8 @@
         }
       },
       "images": {
-        "large": "/drivers/smartPlug_DinRail/assets/images/large.png",
-        "small": "/drivers/smartPlug_DinRail/assets/images/small.png"
+        "large": "//drivers/smartPlug_DinRail/assets/images/large.png",
+        "small": "//drivers/smartPlug_DinRail/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -202518,8 +202518,8 @@
         }
       },
       "images": {
-        "large": "/drivers/smart_air_detection_box/assets/images/large.png",
-        "small": "/drivers/smart_air_detection_box/assets/images/small.png"
+        "large": "//drivers/smart_air_detection_box/assets/images/large.png",
+        "small": "//drivers/smart_air_detection_box/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -202777,8 +202777,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/smart_door_window_sensor/assets/images/large.png",
-        "small": "/drivers/smart_door_window_sensor/assets/images/small.png"
+        "large": "//drivers/smart_door_window_sensor/assets/images/large.png",
+        "small": "//drivers/smart_door_window_sensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -202866,8 +202866,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/smart_garden_irrigation_control/assets/images/small.png",
-        "large": "/drivers/smart_garden_irrigation_control/assets/images/large.png"
+        "small": "//drivers/smart_garden_irrigation_control/assets/images/small.png",
+        "large": "//drivers/smart_garden_irrigation_control/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -203779,8 +203779,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/smart_motion_sensor/assets/images/large.png",
-        "small": "/drivers/smart_motion_sensor/assets/images/small.png"
+        "large": "//drivers/smart_motion_sensor/assets/images/large.png",
+        "small": "//drivers/smart_motion_sensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -204353,8 +204353,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/smart_switch/assets/images/large.png",
-        "small": "/drivers/smart_switch/assets/images/small.png"
+        "large": "//drivers/smart_switch/assets/images/large.png",
+        "small": "//drivers/smart_switch/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -204418,8 +204418,8 @@
         }
       },
       "images": {
-        "large": "/drivers/smartplug/assets/images/large.png",
-        "small": "/drivers/smartplug/assets/images/small.png"
+        "large": "//drivers/smartplug/assets/images/large.png",
+        "small": "//drivers/smartplug/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -204725,8 +204725,8 @@
         }
       },
       "images": {
-        "large": "/drivers/smartplug_2_socket/assets/images/large.png",
-        "small": "/drivers/smartplug_2_socket/assets/images/small.png"
+        "large": "//drivers/smartplug_2_socket/assets/images/large.png",
+        "small": "//drivers/smartplug_2_socket/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -205479,8 +205479,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/smoke_sensor/assets/images/large.png",
-        "small": "/drivers/smoke_sensor/assets/images/small.png"
+        "large": "//drivers/smoke_sensor/assets/images/large.png",
+        "small": "//drivers/smoke_sensor/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -205563,8 +205563,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/smoke_sensor2/assets/images/large.png",
-        "small": "/drivers/smoke_sensor2/assets/images/small.png"
+        "large": "//drivers/smoke_sensor2/assets/images/large.png",
+        "small": "//drivers/smoke_sensor2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -205652,8 +205652,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/smoke_sensor3/assets/images/large.png",
-        "small": "/drivers/smoke_sensor3/assets/images/small.png"
+        "large": "//drivers/smoke_sensor3/assets/images/large.png",
+        "small": "//drivers/smoke_sensor3/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -205732,8 +205732,8 @@
         }
       },
       "images": {
-        "large": "/drivers/socket_power_strip/assets/images/large.png",
-        "small": "/drivers/socket_power_strip/assets/images/small.png"
+        "large": "//drivers/socket_power_strip/assets/images/large.png",
+        "small": "//drivers/socket_power_strip/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -205915,8 +205915,8 @@
         }
       },
       "images": {
-        "large": "/drivers/socket_power_strip_four/assets/images/large.png",
-        "small": "/drivers/socket_power_strip_four/assets/images/small.png"
+        "large": "//drivers/socket_power_strip_four/assets/images/large.png",
+        "small": "//drivers/socket_power_strip_four/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -206145,8 +206145,8 @@
         }
       },
       "images": {
-        "large": "/drivers/socket_power_strip_four_three/assets/images/large.png",
-        "small": "/drivers/socket_power_strip_four_three/assets/images/small.png"
+        "large": "//drivers/socket_power_strip_four_three/assets/images/large.png",
+        "small": "//drivers/socket_power_strip_four_three/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -206340,8 +206340,8 @@
         }
       },
       "images": {
-        "large": "/drivers/socket_power_strip_four_two/assets/images/large.png",
-        "small": "/drivers/socket_power_strip_four_two/assets/images/small.png"
+        "large": "//drivers/socket_power_strip_four_two/assets/images/large.png",
+        "small": "//drivers/socket_power_strip_four_two/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -206863,8 +206863,8 @@
         "alarm_battery"
       ],
       "images": {
-        "large": "/drivers/soilsensor/assets/images/large.png",
-        "small": "/drivers/soilsensor/assets/images/small.png"
+        "large": "//drivers/soilsensor/assets/images/large.png",
+        "small": "//drivers/soilsensor/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -206932,8 +206932,8 @@
         "alarm_battery"
       ],
       "images": {
-        "large": "/drivers/soilsensor_2/assets/images/large.png",
-        "small": "/drivers/soilsensor_2/assets/images/small.png"
+        "large": "//drivers/soilsensor_2/assets/images/large.png",
+        "small": "//drivers/soilsensor_2/assets/images/small.png"
       },
       "energy": {
         "batteries": [
@@ -207787,8 +207787,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/switch_1_gang/assets/images/large.png",
-        "small": "/drivers/switch_1_gang/assets/images/small.png"
+        "large": "//drivers/switch_1_gang/assets/images/large.png",
+        "small": "//drivers/switch_1_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -208082,8 +208082,8 @@
         }
       },
       "images": {
-        "large": "/drivers/switch_1_gang_metering/assets/images/large.png",
-        "small": "/drivers/switch_1_gang_metering/assets/images/small.png"
+        "large": "//drivers/switch_1_gang_metering/assets/images/large.png",
+        "small": "//drivers/switch_1_gang_metering/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -210284,8 +210284,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/switch_2_gang/assets/images/large.png",
-        "small": "/drivers/switch_2_gang/assets/images/small.png"
+        "large": "//drivers/switch_2_gang/assets/images/large.png",
+        "small": "//drivers/switch_2_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -210378,8 +210378,8 @@
         }
       },
       "images": {
-        "large": "/drivers/switch_2_gang_metering/assets/images/large.png",
-        "small": "/drivers/switch_2_gang_metering/assets/images/small.png"
+        "large": "//drivers/switch_2_gang_metering/assets/images/large.png",
+        "small": "//drivers/switch_2_gang_metering/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -211458,8 +211458,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/switch_3_gang/assets/images/large.png",
-        "small": "/drivers/switch_3_gang/assets/images/small.png"
+        "large": "//drivers/switch_3_gang/assets/images/large.png",
+        "small": "//drivers/switch_3_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -212353,8 +212353,8 @@
         }
       },
       "images": {
-        "large": "/drivers/switch_4_gang_metering/assets/images/large.png",
-        "small": "/drivers/switch_4_gang_metering/assets/images/small.png"
+        "large": "//drivers/switch_4_gang_metering/assets/images/large.png",
+        "small": "//drivers/switch_4_gang_metering/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -218204,8 +218204,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/temphumidsensor2/assets/images/large.png",
-        "small": "/drivers/temphumidsensor2/assets/images/small.png"
+        "large": "//drivers/temphumidsensor2/assets/images/large.png",
+        "small": "//drivers/temphumidsensor2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -218351,8 +218351,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/temphumidsensor3/assets/images/small.png",
-        "large": "/drivers/temphumidsensor3/assets/images/large.png"
+        "small": "//drivers/temphumidsensor3/assets/images/small.png",
+        "large": "//drivers/temphumidsensor3/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -218508,8 +218508,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/temphumidsensor4/assets/images/small.png",
-        "large": "/drivers/temphumidsensor4/assets/images/large.png"
+        "small": "//drivers/temphumidsensor4/assets/images/small.png",
+        "large": "//drivers/temphumidsensor4/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -218614,8 +218614,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/temphumidsensor5/assets/images/small.png",
-        "large": "/drivers/temphumidsensor5/assets/images/large.png"
+        "small": "//drivers/temphumidsensor5/assets/images/small.png",
+        "large": "//drivers/temphumidsensor5/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -219177,8 +219177,8 @@
         ]
       },
       "images": {
-        "small": "/drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_small.png",
-        "large": "/drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_large.png"
+        "small": "//drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_small.png",
+        "large": "//drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -219640,8 +219640,8 @@
       ],
       "capabilities": [],
       "images": {
-        "large": "/drivers/tuya_dummy_device/assets/images/large.png",
-        "small": "/drivers/tuya_dummy_device/assets/images/small.png"
+        "large": "//drivers/tuya_dummy_device/assets/images/large.png",
+        "small": "//drivers/tuya_dummy_device/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -221862,8 +221862,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/valvecontroller/assets/images/large.png",
-        "small": "/drivers/valvecontroller/assets/images/small.png"
+        "large": "//drivers/valvecontroller/assets/images/large.png",
+        "small": "//drivers/valvecontroller/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -222465,8 +222465,8 @@
         }
       },
       "images": {
-        "large": "/drivers/wall_dimmer_tuya/assets/images/large.png",
-        "small": "/drivers/wall_dimmer_tuya/assets/images/small.png"
+        "large": "//drivers/wall_dimmer_tuya/assets/images/large.png",
+        "small": "//drivers/wall_dimmer_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -222996,8 +222996,8 @@
         "alarm_battery"
       ],
       "images": {
-        "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
-        "small": "/drivers/wall_remote_4_gang_2/assets/images/small.png"
+        "large": "//drivers/wall_remote_4_gang_2/assets/images/large.png",
+        "small": "//drivers/wall_remote_4_gang_2/assets/images/small.png"
       },
       "energy": {
         "batteries": [
@@ -223494,8 +223494,8 @@
         }
       },
       "images": {
-        "large": "/drivers/wall_socket/assets/images/large.png",
-        "small": "/drivers/wall_socket/assets/images/small.png"
+        "large": "//drivers/wall_socket/assets/images/large.png",
+        "small": "//drivers/wall_socket/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -223712,8 +223712,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_1_gang/assets/images/large.png",
-        "small": "/drivers/wall_switch_1_gang/assets/images/small.png"
+        "large": "//drivers/wall_switch_1_gang/assets/images/large.png",
+        "small": "//drivers/wall_switch_1_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -224029,8 +224029,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_1_gang_tuya/assets/images/large.png",
-        "small": "/drivers/wall_switch_1_gang_tuya/assets/images/small.png"
+        "large": "//drivers/wall_switch_1_gang_tuya/assets/images/large.png",
+        "small": "//drivers/wall_switch_1_gang_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -224452,8 +224452,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_2_gang/assets/images/large.png",
-        "small": "/drivers/wall_switch_2_gang/assets/images/small.png"
+        "large": "//drivers/wall_switch_2_gang/assets/images/large.png",
+        "small": "//drivers/wall_switch_2_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -224899,8 +224899,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_3_gang/assets/images/large.png",
-        "small": "/drivers/wall_switch_3_gang/assets/images/small.png"
+        "large": "//drivers/wall_switch_3_gang/assets/images/large.png",
+        "small": "//drivers/wall_switch_3_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -225407,8 +225407,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_4_gang/assets/images/large.png",
-        "small": "/drivers/wall_switch_4_gang/assets/images/small.png"
+        "large": "//drivers/wall_switch_4_gang/assets/images/large.png",
+        "small": "//drivers/wall_switch_4_gang/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -225573,8 +225573,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_4_gang_tuya/assets/images/large.png",
-        "small": "/drivers/wall_switch_4_gang_tuya/assets/images/small.png"
+        "large": "//drivers/wall_switch_4_gang_tuya/assets/images/large.png",
+        "small": "//drivers/wall_switch_4_gang_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -226013,8 +226013,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_5_gang_tuya/assets/images/large.png",
-        "small": "/drivers/wall_switch_5_gang_tuya/assets/images/small.png"
+        "large": "//drivers/wall_switch_5_gang_tuya/assets/images/large.png",
+        "small": "//drivers/wall_switch_5_gang_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -226132,8 +226132,8 @@
         "onoff"
       ],
       "images": {
-        "large": "/drivers/wall_switch_6_gang_tuya/assets/images/large.png",
-        "small": "/drivers/wall_switch_6_gang_tuya/assets/images/small.png"
+        "large": "//drivers/wall_switch_6_gang_tuya/assets/images/large.png",
+        "small": "//drivers/wall_switch_6_gang_tuya/assets/images/small.png"
       },
       "energy": {
         "approximation": {
@@ -226269,8 +226269,8 @@
         "child_lock"
       ],
       "images": {
-        "large": "/drivers/wall_thermostat/assets/images/large.jpg",
-        "small": "/drivers/wall_thermostat/assets/images/small.jpg"
+        "large": "//drivers/wall_thermostat/assets/images/large.jpg",
+        "small": "//drivers/wall_thermostat/assets/images/small.jpg"
       },
       "zigbee": {
         "manufacturerName": [
@@ -226451,8 +226451,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/water_detector/assets/images/large.png",
-        "small": "/drivers/water_detector/assets/images/small.png"
+        "large": "//drivers/water_detector/assets/images/large.png",
+        "small": "//drivers/water_detector/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -227024,8 +227024,8 @@
         ]
       },
       "images": {
-        "large": "/drivers/water_leak_sensor_tuya/assets/images/large.png",
-        "small": "/drivers/water_leak_sensor_tuya/assets/images/small.png"
+        "large": "//drivers/water_leak_sensor_tuya/assets/images/large.png",
+        "small": "//drivers/water_leak_sensor_tuya/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [
