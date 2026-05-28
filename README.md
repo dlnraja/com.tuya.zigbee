@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-12,804+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-12,781+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-412-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,073-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **12,804+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **12,781+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -30,32 +30,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **vv8_5_30** |  |
-| **v8.5.50** | v8.5.49: |
-| **v8.5.49** | v8.5.48: |
-| **v8.5.48** | v8.5.47: |
-| **v8.5.47** | v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files ... |
-| **v8.5.46** | v8.5.46: . Cleaned 88 empty manufacturer arrays from driver configs. New fing... |
-| **v8.5.45** | v8.5.45: . Bug fixes: empty manufacturerName arrays removed, button_wireless_... |
-| **v8.5.44** | v8.5.44: Fixed critical app crash (AggregateError) caused by empty manufactur... |
-| **v8.5.43** | v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer finger... |
-| **v8.5.42** | v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerpr... |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.51 |
-| **Device Fingerprints** | 12,804+ |
+| **App Version** | v8.5.52 |
+| **Device Fingerprints** | 12,781+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,073 |
@@ -73,8 +53,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 1 | `climate_sensor` | 2,121 |
 | 2 | `switch_1gang` | 1,232 |
 | 3 | `bulb_dimmable` | 628 |
-| 4 | `wall_dimmer_tuya` | 402 |
-| 5 | `radiator_valve` | 401 |
+| 4 | `radiator_valve` | 401 |
+| 5 | `wall_dimmer_tuya` | 399 |
 | 6 | `presence_sensor_radar` | 395 |
 | 7 | `generic_tuya` | 356 |
 | 8 | `curtain_motor` | 319 |
@@ -122,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
+| **v8.5.52** | v8.5.51: |
 | **v8.5.51** | v8.5.50: |
 | **v8.5.50** | v8.5.49: |
 | **v8.5.49** | v8.5.48: |
@@ -135,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v8.5.41** | v8.5.41: . Critical fixes for app.json validation (category, permissions, icon). Restored 360 Zigbee manufacturer nam... |
 | **v8.5.40** | v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual README files. |
 | **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manage... |
-| **v8.5.38** | v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec ... |
 
 <!-- CHANGELOG_END -->
 
@@ -201,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 412 Drivers ─ 12,804+ fingerprints
+       └─ 412 Drivers ─ 12,781+ fingerprints
 ```
 
 ---

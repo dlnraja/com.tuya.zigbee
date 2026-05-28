@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.51": {
+    "en": "v8.5.50:"
+  },
   "8.5.50": {
     "en": "v8.5.49:"
   },
@@ -59,10 +62,7 @@
     "en": "CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.compose.json (156 drivers fixed). Fix category to array format. Fix all image paths. Inject fingerprints from data/fingerprints.json (126k entries). Merge PR #345 garage_door_opener DP3. Process Issues #322 #324 #328 #329 #333 #334 #337 #339 #340.",
     "fr": "CORRECTIF CRITIQUE: Restauration de tous les manufacturerName statiques dans driver.compose.json (156 drivers). Fix category en array. Fix chemins images. Injection depuis data/fingerprints.json (126k entrées). Merge PR #345 garage_door_opener DP3. Traitement Issues #322 #324 #328 #329 #333 #334 #337 #339 #340."
   },
-  "8.5.30": {
-    "en": "v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garage Door Opener, Updated to **412 drivers** and **7449 fingerprints** total."
-  },
-  "8.5.51": {
-    "en": "v8.5.50:"
+  "8.5.52": {
+    "en": "v8.5.51:"
   }
 }
