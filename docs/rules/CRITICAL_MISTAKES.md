@@ -192,6 +192,7 @@
 | O18 | **`*.json` WILDCARD INTERDIT dans .homeyignore** — La règle `*.json` exclut TOUS les JSON y compris les fichiers runtime critiques: `data/fingerprints.json` (DeviceFingerprintDB.js:83), `lib/tuya/fingerprints.json` (tuya-engine:14), `locales/*.json` (util/index.js:131). Pattern correct: exclure uniquement les fichiers dev spécifiques par chemin exact, jamais par wildcard `*.json` |
 | O19 | **`category` DOIT être une STRING (pas un array)** — Bien que le schema homey-lib accepte `oneOf: [string, array]` et que la validation locale passe, le **serveur Athom rejette un array** et retourne Processing failed. stable-v5 utilise `"appliances"` (string). JAMAIS `["appliances"]` (array). Source: comparaison stable-v5 vs master |
 | O20 | **Champ `api` + permission `homey:manager:api` causent des delays de review** — La permission `homey:manager:api` déclenche une "thorough review" (homey-lib/lib/App.js) et peut causer des délais ou rejets. La branche stable-v5 n'a pas ce champ. Supprimer `api` et vider `permissions: []` pour aligner sur stable-v5 |
+| O21 | **`README.txt` est OBLIGATOIRE** — SDK App.js:1427 : `throw new Error('Missing file /README.txt')` — erreur bloquante lors du publish. Le fichier doit exister à la racine. Optionnel mais recommandé: `README.nl.txt`, `README.de.txt`, `README.fr.txt` pour les descriptions multilingues dans l'App Store. NE PAS exclure ces fichiers dans `.homeyignore` |
 
 ### P. DIAGNOSTICS & SUPPORT
 

@@ -76,7 +76,22 @@ if (!fs.existsSync(iconPath)) {
   else ok(`assets/icon.svg OK (${size} bytes)`);
 }
 
-// ─── 3. .homeyignore check ────────────────────────────────────────────────────
+// ─── 3. README.txt check (O21) ───────────────────────────────────────────────
+const readmePath = path.join(ROOT, 'README.txt');
+if (!fs.existsSync(readmePath)) {
+  fail('O21: README.txt MISSING — SDK App.js:1427 throws: "Missing file /README.txt". This causes Processing failed.');
+} else {
+  const size = fs.statSync(readmePath).size;
+  if (size < 50) fail(`O21: README.txt exists but too short (${size} bytes) — must have meaningful content`);
+  else ok(`O21: README.txt OK (${size} bytes)`);
+}
+// Optional multilingual readmes
+['nl', 'de', 'fr'].forEach(lang => {
+  const p = path.join(ROOT, `README.${lang}.txt`);
+  if (fs.existsSync(p)) ok(`O21: README.${lang}.txt OK (${fs.statSync(p).size} bytes) — App Store ${lang.toUpperCase()}`);
+  else warn(`O21: README.${lang}.txt missing — App Store will use English for ${lang.toUpperCase()}`);
+});
+
 const homeyignorePath = path.join(ROOT, '.homeyignore');
 if (fs.existsSync(homeyignorePath)) {
   const content = fs.readFileSync(homeyignorePath, 'utf8');
