@@ -32,7 +32,9 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "hobeian"
+    ],
     "productId": [
       "TS0203",
       "TS0601",

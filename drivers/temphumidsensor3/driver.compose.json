@@ -28,10 +28,41 @@
     "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_jnhu1llv",
+      "_TZ3000_jnhu1llv",
+      "_TZ3000_JNHU1LLV",
+      "_tz3000_i8jfiezr",
+      "_TZ3000_i8jfiezr",
+      "_TZ3000_I8JFIEZR",
+      "_TZE200_vvmbj46n",
+      "tuyatec-1g3tawnp",
+      "tuyatec-1uxx9cci",
+      "tuyatec-gqhxixyk",
+      "tuyatec-haoiuwzy",
+      "tuyatec-ojmxeikg",
+      "tuyatec-ojmxeikq",
+      "tuyatec-qun7vq14",
+      "tuyatec-riuj5xzs",
+      "tuyatec-v3uxbuxy",
+      "tuyatec-vmgh3fxd",
+      "tuyatec-g3gl6cgy",
+      "tuyatec-bfq2i2sy",
+      "tuyatec-abkehqus",
+      "tuyatec-yg5dcbfu",
+      "tuyatec-prhs1rsd",
+      "_tz3000_bguser20",
+      "_tz3000_8ybe88nf",
+      "_tz3000_fie1dpkm",
+      "_tz3000_f2bw0b6k"
+    ],
     "productId": [
-      "TS0201",
-      "TS0601"
+      "TY0201",
+      "SNTZ003",
+      "CK-TLSR8656-SS5-01(7014)",
+      "ZG-227Z",
+      "RH3052",
+      "TS0201"
     ],
     "endpoints": {
       "1": {

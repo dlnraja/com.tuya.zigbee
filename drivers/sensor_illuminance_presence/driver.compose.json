@@ -32,12 +32,31 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tyzb01_4mdqxxnn",
+      "_TYZB01_4MDQXXNN",
+      "_tyzb01_m6ec2pgj",
+      "_TYZB01_M6EC2PGJ",
+      "_tz3000_do6txrcw",
+      "_TZ3000_do6txrcw",
+      "_TZ3000_DO6TXRCW",
+      "zg-106z",
+      "ZG-106Z",
+      "_tze200_dwcarsat",
+      "_TZE200_dwcarsat",
+      "_TZE200_DWCARSAT",
+      "_tz3000_8uxxzz4b",
+      "_tze200_hl0ss9oa",
+      "_tyzb01_jvsojrqx",
+      "_tze200_jsaqgakf",
+      "ts0222",
+      "_tze284_aaeasoll"
+    ],
     "productId": [
+      "TS0222",
+      "ZG-106Z",
       "TS0225",
-      "TS0601",
-      "CK-BL702-MWS-01(7016)",
-      "ZP-301Z"
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
