@@ -19,6 +19,22 @@ if (!fs.existsSync(BUILD_DIR)) {
   process.exit(0);
 }
 
+// ===== MINIFY app.json to pass Homey 7MB size limit =====
+const APP_JSON_PATH = path.join(ROOT, '.homeybuild', 'app.json');
+if (fs.existsSync(APP_JSON_PATH)) {
+  try {
+    const raw = fs.readFileSync(APP_JSON_PATH, 'utf8');
+    const minified = JSON.stringify(JSON.parse(raw));
+    fs.writeFileSync(APP_JSON_PATH, minified, 'utf8');
+    const saved = raw.length - minified.length;
+    console.log(` — Minified app.json from ${(raw.length / 1048576).toFixed(2)} MB to ${(minified.length / 1048576).toFixed(2)} MB (saved ${(saved / 1048576).toFixed(2)} MB)`);
+  } catch (e) {
+    console.error(' — Failed to minify app.json:', e.message);
+  }
+} else {
+  console.log(' — app.json not found in .homeybuild, skipping minification');
+}
+
 let copied = 0;
 
 const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => 
