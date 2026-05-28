@@ -27,7 +27,13 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3210_invesber",
+      "_TZ3210_invesber",
+      "_TZ3210_INVESBER",
+      "_tz3210_eejm8dcr",
+      "_tz3210_iystcadi"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,7 +54,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [],
+    "productId": [
+      "TS0505B"
+    ],
     "capabilities": {
       "light_color_temp": {
         "cluster": "colorControl",

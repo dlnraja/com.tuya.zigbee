@@ -29,7 +29,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "ewelink"
+    ],
     "productId": [
       "TS0601"
     ],
