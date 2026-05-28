@@ -182,7 +182,7 @@
 | pir_sensor_2 | 9 | TS0202 | alarm_motion, alarm_battery, measure_battery |
 | pirsensor | 6 | RH3040 | alarm_motion, alarm_battery, measure_battery |
 | plug | 3 | TS011F | onoff |
-| plug_energy_monitor | 247 | TS0121, TS011F, A7Z, A11Z, SP-EUC01, SP-EUC02, SP 120, SP 220, SP 222, S60ZBTPF, S60ZBTPG, S60ZBTPE, S31ZB, S31 Lite zb, S26R2ZB, S40ZBTPB, LSPA9, HY0105, HY0104, JZ-ZB-005, ZBMINIL2, lumi.plug.maeu01, lumi.plug.macn01, lumi.plug.mmeu01, E1603/E1702/E1708, TRADFRI control outlet, TS0601, CK-BL702-SWP-01(7020), S40LITE, SA-029-1, SA-028-1, Z111PL0H-1JX, SNZB-06P, SPM01, SPMZBR2, S40ZBTPF, S40ZBTPG, S60ZBTPF-R2, TSO121 | measure_power, meter_power, measure_voltage... |
+| plug_energy_monitor | 248 | TS0121, TS011F, A7Z, A11Z, SP-EUC01, SP-EUC02, SP 120, SP 220, SP 222, S60ZBTPF, S60ZBTPG, S60ZBTPE, S31ZB, S31 Lite zb, S26R2ZB, S40ZBTPB, LSPA9, HY0105, HY0104, JZ-ZB-005, ZBMINIL2, lumi.plug.maeu01, lumi.plug.macn01, lumi.plug.mmeu01, E1603/E1702/E1708, TRADFRI control outlet, TS0601, CK-BL702-SWP-01(7020), S40LITE, SA-029-1, SA-028-1, Z111PL0H-1JX, SNZB-06P, SPM01, SPMZBR2, S40ZBTPF, S40ZBTPG, S60ZBTPF-R2, TSO121 | measure_power, meter_power, measure_voltage... |
 | plug_smart | 186 | TS0111, TS0101, TS0601, TS011F, S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG | onoff, measure_power, meter_power... |
 | plug_smart_switch | 0 | - | onoff, measure_battery, measure_power... |
 | pool_pump | 12 | TS0601_pool, TS0601 | onoff, measure_power, meter_power |
@@ -364,6 +364,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 360 drivers, 12027 manufacturer IDs
+**Total:** 360 drivers, 12028 manufacturer IDs
 
-*Generated: 2026-05-28T03:27:38.812Z*
+*Generated: 2026-05-28T06:29:12.236Z*
