@@ -1,0 +1,398 @@
+[
+  {
+    "driver": "air_purifier_climate",
+    "flowCards": 9
+  },
+  {
+    "driver": "air_purifier_contact",
+    "flowCards": 12
+  },
+  {
+    "driver": "air_purifier_curtain",
+    "flowCards": 5
+  },
+  {
+    "driver": "air_purifier_dimmer",
+    "flowCards": 20
+  },
+  {
+    "driver": "air_purifier_din",
+    "flowCards": 12
+  },
+  {
+    "driver": "air_purifier_lcdtemphumidsensor",
+    "flowCards": 9
+  },
+  {
+    "driver": "air_purifier_motion",
+    "flowCards": 9
+  },
+  {
+    "driver": "air_purifier_presence",
+    "flowCards": 11
+  },
+  {
+    "driver": "air_purifier_quality",
+    "flowCards": 12
+  },
+  {
+    "driver": "air_purifier_sensor",
+    "flowCards": 23
+  },
+  {
+    "driver": "air_purifier_siren",
+    "flowCards": 0
+  },
+  {
+    "driver": "air_purifier_soil",
+    "flowCards": 17
+  },
+  {
+    "driver": "air_purifier_switch",
+    "flowCards": 21
+  },
+  {
+    "driver": "bed_sensor",
+    "flowCards": 3
+  },
+  {
+    "driver": "blaster_remote",
+    "flowCards": 4
+  },
+  {
+    "driver": "bulb_rgb_rgbw",
+    "flowCards": 16
+  },
+  {
+    "driver": "bulb_rgbw_universal",
+    "flowCards": 0
+  },
+  {
+    "driver": "button_wireless_fingerbot",
+    "flowCards": 21
+  },
+  {
+    "driver": "button_wireless_scene",
+    "flowCards": 15
+  },
+  {
+    "driver": "button_wireless_switch",
+    "flowCards": 29
+  },
+  {
+    "driver": "button_wireless_usb",
+    "flowCards": 7
+  },
+  {
+    "driver": "button_wireless_valve",
+    "flowCards": 15
+  },
+  {
+    "driver": "button_wireless_wall",
+    "flowCards": 15
+  },
+  {
+    "driver": "christmas_lights",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "climate_sensor_dimmer",
+    "flowCards": 20
+  },
+  {
+    "driver": "climate_sensor_gas",
+    "flowCards": 15
+  },
+  {
+    "driver": "climate_sensor_plug",
+    "flowCards": 14
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "flowCards": 11
+  },
+  {
+    "driver": "climate_sensor_smart",
+    "flowCards": 9
+  },
+  {
+    "driver": "climate_sensor_switch",
+    "flowCards": 21
+  },
+  {
+    "driver": "contact_sensor_curtain",
+    "flowCards": 18
+  },
+  {
+    "driver": "contact_sensor_dimmer",
+    "flowCards": 12
+  },
+  {
+    "driver": "contact_sensor_plug",
+    "flowCards": 14
+  },
+  {
+    "driver": "contact_sensor_switch",
+    "flowCards": 21
+  },
+  {
+    "driver": "contact_sensor_zigbee",
+    "flowCards": 12
+  },
+  {
+    "driver": "curtain_module",
+    "flowCards": 2
+  },
+  {
+    "driver": "curtain_module_2_gang",
+    "flowCards": 2
+  },
+  {
+    "driver": "device_air_purifier",
+    "flowCards": 28
+  },
+  {
+    "driver": "device_air_purifier_climate",
+    "flowCards": 9
+  },
+  {
+    "driver": "device_air_purifier_din",
+    "flowCards": 6
+  },
+  {
+    "driver": "device_air_purifier_floor",
+    "flowCards": 0
+  },
+  {
+    "driver": "device_air_purifier_humidifier",
+    "flowCards": 8
+  },
+  {
+    "driver": "device_air_purifier_led",
+    "flowCards": 14
+  },
+  {
+    "driver": "device_air_purifier_motion",
+    "flowCards": 9
+  },
+  {
+    "driver": "device_air_purifier_plug",
+    "flowCards": 15
+  },
+  {
+    "driver": "device_air_purifier_presence",
+    "flowCards": 11
+  },
+  {
+    "driver": "device_air_purifier_quality",
+    "flowCards": 8
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "flowCards": 6
+  },
+  {
+    "driver": "device_air_purifier_siren",
+    "flowCards": 15
+  },
+  {
+    "driver": "device_air_purifier_smart",
+    "flowCards": 0
+  },
+  {
+    "driver": "device_air_purifier_smoke",
+    "flowCards": 14
+  },
+  {
+    "driver": "device_air_purifier_soil",
+    "flowCards": 17
+  },
+  {
+    "driver": "device_air_purifier_thermostat",
+    "flowCards": 28
+  },
+  {
+    "driver": "device_air_purifier_water",
+    "flowCards": 6
+  },
+  {
+    "driver": "device_generic_diy_universal",
+    "flowCards": 0
+  },
+  {
+    "driver": "device_generic_tuya",
+    "flowCards": 0
+  },
+  {
+    "driver": "device_plug_energy",
+    "flowCards": 14
+  },
+  {
+    "driver": "device_plug_energy_monitor",
+    "flowCards": 14
+  },
+  {
+    "driver": "device_plug_smart",
+    "flowCards": 14
+  },
+  {
+    "driver": "device_plug_smart_water",
+    "flowCards": 14
+  },
+  {
+    "driver": "device_radiator_valve_thermostat",
+    "flowCards": 28
+  },
+  {
+    "driver": "dimmable_led_strip",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmable_recessed_led",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_1_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_1_gang_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_1_gang_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_2_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_2_gang_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_air_purifier",
+    "flowCards": 20
+  },
+  {
+    "driver": "dimmer_bulb_dimmable",
+    "flowCards": 16
+  },
+  {
+    "driver": "dimmer_ts110e",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "dimmer_wall_plug",
+    "flowCards": 15
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "flowCards": 29
+  },
+  {
+    "driver": "dimmer_wall_water",
+    "flowCards": 20
+  },
+  {
+    "driver": "door_controller_garage",
+    "flowCards": 16
+  },
+  {
+    "driver": "doorwindowsensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "doorwindowsensor_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "doorwindowsensor_3",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "doorwindowsensor_4",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "double_power_point",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "double_power_point_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "fingerbot_switch",
+    "flowCards": 21
+  },
+  {
+    "driver": "flood_sensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "gas_sensor_switch",
+    "flowCards": 65
+  },
+  {
+    "driver": "lcdtemphumidluxsensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "lcdtemphumidsensor_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "lcdtemphumidsensor_3",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "light_bulb_dimmable_tunable",
+    "flowCards": 16
+  },
+  {
+    "driver": "light_bulb_rgb",
+    "flowCards": 16
+  },
+  {
+    "driver": "light_bulb_rgb_led",
+    "flowCards": 16
+  },
+  {
+    "driver": "light_bulb_tunable_white",
+    "flowCards": 8
+  },
+  {
+    "driver": "motion_sensor_switch",
+    "flowCards": 21
+  },
+  {
+    "driver": "outdoor_2_socket",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "outdoor_plug",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "pir_mmwave_sensor",
+    "flowCards": 7
+  },
+  {
+    "driver": "pir_sensor_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "pirsensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "plug",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "plug_smart_switch",
+    "flowCards": 21
+  }
+]
