@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.49": {
+    "en": "v8.5.48:"
+  },
   "8.5.48": {
     "en": "v8.5.47:"
   },
@@ -59,10 +62,7 @@
   "8.5.29": {
     "en": "Garage door opener fix: DP3 state now properly applied to Homey. 122 new fingerprints added from community sync.  total."
   },
-  "8.5.28": {
-    "en": "v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability improvements."
-  },
-  "8.5.49": {
-    "en": "v8.5.48:"
+  "8.5.50": {
+    "en": "v8.5.49:"
   }
 }
