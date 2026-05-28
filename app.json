@@ -141486,6 +141486,17 @@
         }
       ],
       "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ]
+          }
+        },
         "manufacturerName": [
           "_TZ3000_device_floor_heating_thermostat"
         ]
@@ -187369,6 +187380,17 @@
         }
       ],
       "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ]
+          }
+        },
         "manufacturerName": [
           "_TZ3000_sensor_contact_motion"
         ]
