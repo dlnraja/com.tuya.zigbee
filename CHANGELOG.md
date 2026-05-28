@@ -4,7 +4,26 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.43] - 2026-05-28
+## [8.5.44] - 2026-05-28
+
+### Bug Fixes
+- **Critical fix**: Resolved app crash (AggregateError) on startup caused by empty `manufacturerName[]` arrays in 75 drivers. All 360 Zigbee drivers now have valid manufacturer names.
+- **Homey store compliance**: Fixed `app.json` validation errors — removed invalid `icon` field, fixed `category` type, removed deprecated permissions, and added mandatory `icon.svg`.
+- **Multilingual README**: Added missing `README.*.txt` files for Dutch, French, and German users.
+
+### New Features
+- **114 new fingerprints** added from Z2M, ZHA, community reports, and JohanBendz's repository.
+- **User feedback fixes**: Applied enrichment updates and new device fingerprints from user diagnostics.
+
+### Improvements
+- **Pre-commit/pre-push hooks**: Added mandatory file validation gate to prevent future store submission failures.
+- **Comprehensive validation**: Rewritten validation pipeline to catch empty arrays, missing files, and permission issues before publishing.
+
+### Fingerprint Count
+- **412 drivers** | **13,550 fingerprints** | **3,357 verified**
+---
+
+ [8.5.43] - 2026-05-28
 
 ### Bug Fixes
 - Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor drivers

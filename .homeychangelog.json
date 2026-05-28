@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.44": {
+    "en": "v8.5.44: Fixed critical app crash (AggregateError) caused by empty manufacturerName arrays in 75 drivers. Restored 360 Zigbee manufacturer names. Added 114 new fingerprints from community. Improved app.json validation for Homey store compliance."
+  },
   "8.5.43": {
     "en": "v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new fingerprints from community and Z2M/ZHA sources."
   },
@@ -59,10 +62,7 @@
   "8.5.22": {
     "en": "v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (_TZE284_0ints6wl). Bug fixes: auto-off timer, button triple click, overload, and radio presence triggers now work correctly."
   },
-  "8.5.21": {
-    "en": "v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML ."
-  },
-  "8.5.44": {
-    "en": "v8.5.43: Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor drivers, Resolved persistent M09 validation issues for button and sensor drivers, Added 114 new device fingerprints from Z2M/ZHA, community reports, and JohanBendz fork, New soil sensor support: _TZE284_0ints6wl (TS0601), 412 drivers now support 15,003+ device fingerprints"
+  "8.5.45": {
+    "en": "v8.5.44: Critical fix, Homey store compliance, Multilingual README, 114 new fingerprints, User feedback fixes"
   }
 }
