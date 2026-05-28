@@ -57,7 +57,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.37 |
+| **App Version** | v8.5.38 |
 | **Device Fingerprints** | 33,235+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
@@ -125,6 +125,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
+| **v8.5.38** | v8.5.38: Fix Processing failed â€” remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec ... |
 | **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database, CI |
 | **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all 360 Zigbee manufacturer names. New soil... |
 | **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Driver count, App.json |
@@ -138,7 +139,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initialization, and general stability improvements. |
 | **v8.5.22** | v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (_TZE284_0ints6wl). Bug fixes: auto-off t... |
 | **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
-| **v8.5.20** | v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements. |
 
 <!-- CHANGELOG_END -->
 
