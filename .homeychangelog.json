@@ -61,5 +61,10 @@
   },
   "8.5.26": {
     "en": "v8.5.24: Fixed app crash on startup by correcting the base class from .App., Added 122 new device fingerprints from community sync (Z2M, ZHA, JohanBendz)., Updated device matrix and project status reports., General stability and compatibility enhancements."
+  },
+  "v8_5_30": {
+    "version": "8.5.30",
+    "date": "2026-05-28",
+    "changes": "fix OAuth2Client CLIENT_ID crash"
   }
 }
