@@ -4,7 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.27] - 2026-05-28
+## [8.5.28] - 2026-05-28
+
+### New Features
+- Added support for new soil sensor: `_TZE284_0ints6wl` / TS0601
+
+### Improvements
+- Expanded driver fleet to 412 drivers with 7448 fingerprints
+- Updated project status and contribution guidelines
+
+### Bug Fixes
+- General stability and documentation fixes
+---
+
+ [8.5.27] - 2026-05-28
 
 ### Bug Fixes
 - Fixed `AggregateError` crash on app startup by removing deprecated SmartThings OAuth2 integration
