@@ -39,6 +39,10 @@ concurrency:
   group: mandatory-gate-${{ github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   mandatory-check:
     name: Mandatory Files & Rules Check (O17-O21 + M01-M14)
