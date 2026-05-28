@@ -1,11 +1,11 @@
 {
-  "8.5.42": {
-    "en": "v8.5.42: User feedback enrichment — TS0044 4-button scene switch (_TZ3000_vp6clf9d), BSEED 1/2/3-gang glass touch switches, TS0601 siren melody/volume MFs, blind switch fingerprints fixed, glass switch gang detection improved. Mandatory files gate added."
-  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
+  "8.5.42": {
+    "en": "v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new device fingerprints from community and Z2M/ZHA sources. Resolved 4361 fingerprint conflicts across all drivers."
   },
   "8.5.41": {
     "en": "v8.5.41: . Critical fixes for app.json validation (category, permissions, icon). Restored 360 Zigbee manufacturer names. Resolved 4,361 fingerprint collisions. 114 new fingerprints from community sync. New pre-commit/pre-push hooks for build integrity."
@@ -62,10 +62,7 @@
   "8.5.20": {
     "en": "v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements."
   },
-  "8.5.17": {
-    "en": "v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor improvements and stability enhancements."
-  },
-  "8.5.42": {
-    "en": "v8.5.41: Critical, Critical, Critical, Fixed, Fixed"
+  "8.5.43": {
+    "en": "v8.5.42: Fixed manufacturer fingerprint for button_wireless_4 driver, Fixed manufacturer fingerprint for illuminance_sensor driver, Added 114 new device fingerprints from Zigbee2MQTT, ZHA, and community reports, Resolved 4,361 fingerprint conflicts across all 412 drivers, Updated device database with latest community feedback and corrections"
   }
 }
