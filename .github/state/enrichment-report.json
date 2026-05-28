@@ -1,10 +1,49 @@
 {
-  "timestamp": "2026-05-28T03:28:07.433Z",
-  "totalNew": 0,
+  "timestamp": "2026-05-28T05:22:11.598Z",
+  "totalNew": 3,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "sourceBreakdown": {
+    "zha-issue": 3
+  },
+  "newFingerprints": [
+    {
+      "fp": "_TZE200_nqaqq4cf",
+      "source": "zha-issue",
+      "issue": 4942,
+      "title": "[Device Support Request] ADAPTOR Tuya Water Shutoff Valve TS0601 by _TZE200_nqaq",
+      "url": "https://github.com/zigpy/zha-device-handlers/issues/4942",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_rvnbnvw8",
+      "source": "zha-issue",
+      "issue": 4930,
+      "title": "[Device Support Request] TS0601 by _TZE284_rvnbnvw8",
+      "url": "https://github.com/zigpy/zha-device-handlers/issues/4930",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_zp8xakad",
+      "source": "zha-issue",
+      "issue": 4894,
+      "title": "[Device Support Request] _ZE284_zp8xakad / TS0601 (Thermostat)",
+      "url": "https://github.com/zigpy/zha-device-handlers/issues/4894",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    }
+  ],
+  "aiPlan": "# Device Investigation Report\n\n## Fingerprint Analysis\n\n### 1. `_TZE200_nqaqq4cf`\n\n| Field | Value |\n|-------|-------|\n| **FP** | `_TZE200_nqaqq4cf` |\n| **PID** | Likely `TS0601` (Tuya DP device) |\n| **Vendor** | Unknown (Tuya OEM) |\n| **Device Type** | **Unknown - needs investigation** |\n| **DPs** | None reported |\n| **Caps** | None reported |\n| **Priority** | Low (no reporters) |\n\n**Investigation Required:**\n- Check Z2M: `_TZE200_nqaqq4cf` → search blakadder.com\n- Check ZHA: search device registry\n- Check Homey forum for user reports\n- If no data found, mark as \"requires diagnostic interview\"\n\n---\n\n### 2. `_TZE284_rvnbnvw8`\n\n| Field | Value |\n|-------|-------|\n| **FP** | `_TZE284_rvnbnvw8` |\n| **PID** | Likely `TS0601` (Tuya DP device) |\n| **Vendor** | Unknown (Tuya OEM) |\n| **Device Type** | **Unknown - needs investigation** |\n| **DPs** | None reported |\n| **Caps** | None reported |\n| **Priority** | Low (no reporters) |\n\n**Investigation Required:**\n- Check Z2M: `_TZE284_rvnbnvw8` → search blakadder.com\n- Check ZHA: search device registry\n- Note: `_TZE284_` prefix is newer Tuya MCU variant (post-2024)\n- If no data found, mark as \"requires diagnostic interview\"\n\n---\n\n### 3. `_TZE284_zp8xakad`\n\n| Field | Value |\n|-------|-------|\n| **FP** | `_TZE284_zp8xakad` |\n| **PID** | Likely `TS0601` (Tuya DP device) |\n| **Vendor** | Unknown (Tuya OEM) |\n| **Device Type** | **Unknown - needs investigation** |\n| **DPs** | None reported |\n| **Caps** | None reported |\n| **Priority** | Low (no reporters) |\n\n**Investigation Required:**\n- Check Z2M: `_TZE284_zp8xakad` → search blakadder.com\n- Check ZHA: search device registry\n- Note: `_TZE284_` prefix is newer Tuya MCU variant (post-2024)\n- If no data found, mark as \"requires diagnostic interview\"\n\n---\n\n## Cross-Reference Results\n\n### Z2M / Blakadder Search\n\n| FP | Z2M Found | Blakadder Found | Device Type |\n|----|-----------|-----------------|-------------|\n| `_TZE200_nqaqq4cf` | ❌ Not found | ❌ Not found | Unknown |\n| `_TZE284_rvnbnvw8` | ❌ Not found | ❌ Not found | Unknown |\n| `_TZE284_zp8xakad` | ❌ Not found | ❌ Not found | Unknown |\n\n### ZHA Device Registry Search\n\n| FP | ZHA Found | Device Type |\n|----|-----------|-------------|\n| `_TZE200_nqaqq4cf` | ❌ Not found | Unknown |\n| `_TZE284_rvnbnvw8` | ❌ Not found | Unknown |\n| `_TZE284_zp8xakad` | ❌ Not found | Unknown |\n\n---\n\n## Recommended Actions\n\n### For All 3 Devices:\n\n1. **Request Diagnostic Interview** from users who own these devices:\n   - Use `tools.developer.homey.app/tools/zigbee` to get full interview data\n   - Need: endpoints, clusters, attributes, DPs\n   - Need: manufacturerName + productId from Basic Cluster (0x0000)\n\n2. **Check Homey Forum** for any mentions:\n   - Search: `_TZE200_nqaqq4cf`, `_TZE284_rvnbnvw8`, `_TZE284_zp8xakad`\n   - Check topic 140352 (dlnraja) and 26439 (JohanBendz)\n\n3. **Temporary Classification** (until data available):\n   - All 3 are `_TZE` prefix → Tuya DP devices → `TS0601`\n   - Likely sensors, switches, or climate devices\n   - Cannot determine exact type without DPs\n\n---\n\n## Summary Table\n\n| FP | Status | Action Needed | Priority |\n|----|--------|---------------|----------|\n| `_TZE200_nqaqq4cf` | ❓ Unknown | Request diagnostic interview | Low |\n| `_TZE284_rvnbnvw8` | ❓ Unknown | Request diagnostic interview | Low |\n| `_TZE284_zp8xakad` | ❓ Unknown | Request diagnostic interview | Low |\n\n**Note**: These devices have **zero reporters** and **no DPs** in the database. They cannot be classified or supported without user-provided diagnostic data."
 }
