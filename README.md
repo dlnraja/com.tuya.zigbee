@@ -46,6 +46,26 @@ A community-driven app supporting **412 drivers** and **33,235+ device fingerpri
 
 
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v8.5.40** | v8.5.40: CRITICAL FIX - Add mandatory README.txt (SDK App.js:1427 throws if m... |
+| **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requi... |
+| **v8.5.38** | v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use... |
+| **vv8_5_30** |  |
+| **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database... |
+| **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all... |
+| **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Drive... |
+| **v8.5.34** | v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, reso... |
+| **v8.5.33** | CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.comp... |
+| **v8.5.30** | v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garag... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
