@@ -393,6 +393,12 @@
     }
   ],
   "zigbee": {
+    "productId": ["TS0601"],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 61184]
+      }
+    },
     "manufacturerName": [
       "_TZ3000_sensor_contact_motion"
     ]
