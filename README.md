@@ -61,8 +61,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v8.5.43** | v8.5.43: HOMEY_PAT updated â€” publish re-triggered with valid Athom token. Use... |
 | **vv8_5_30** |  |
+| **v8.5.44** | v8.5.43: Fixed manufacturer fingerprint restoration for button_wireless_4 and... |
+| **v8.5.43** | v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer finger... |
 | **v8.5.42** | v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerpr... |
 | **v8.5.41** | v8.5.41: . Critical fixes for app.json validation (category, permissions, ico... |
 | **v8.5.40** | v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual... |
@@ -70,8 +71,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.38** | v8.5.38: Fix Processing failed â€” remove invalid icon field from app.json, use... |
 | **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database... |
 | **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all... |
-| **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Drive... |
 <!-- CHANGELOG_END -->
+
 
 
 
