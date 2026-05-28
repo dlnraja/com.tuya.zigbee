@@ -4,7 +4,23 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.29] - 2026-05-28
+## [8.5.34] - 2026-05-28
+
+### Bug Fixes
+- **Critical fix**: Restored all 360 Zigbee driver `manufacturerName` entries, eliminating the `AggregateError` crash on startup.
+- **Fingerprint conflicts**: Resolved 4,361 fingerprint conflicts across all drivers.
+- **Empty manufacturer names**: Fixed 156 drivers that had empty `manufacturerName` arrays.
+
+### Improvements
+- **Driver count**: 412 drivers with 29,039 fingerprints.
+- **App.json**: Minified before publish to prevent `AggregateError`.
+- **Image paths**: Corrected category array and image paths for all drivers.
+
+### New Devices
+- Added support for soil sensor `_TZE284_0ints6wl` (TS0601).
+---
+
+ [8.5.29] - 2026-05-28
 
 ### Bug Fixes
 - **Garage Door Opener**: Fixed an issue where DP3 state was never applied to Homey, causing incorrect door position reporting.
