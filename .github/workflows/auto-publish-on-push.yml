@@ -50,6 +50,17 @@ jobs:
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: Check HOMEY_PAT secret availability
+        id: check_pat
+        run: |
+          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "✅ HOMEY_PAT secret is set — publish will run"
+          else
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "⚠️ HOMEY_PAT secret not set — publish will be skipped"
+          fi
+
       - name: App info
         id: pre_info
         run: |
@@ -182,10 +193,13 @@ jobs:
 
       - name: Publish
         id: pub
-        continue-on-error: true
+        if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: npx homey app publish
+        run: |
+          echo "Publishing v$(node -p "require('./app.json').version") to Athom App Store (Test channel)..."
+          npx homey app publish
+          echo "✅ Published successfully"
 
       - name: Create GitHub Release
         if: steps.check_pat.outputs.has_pat == 'true'
