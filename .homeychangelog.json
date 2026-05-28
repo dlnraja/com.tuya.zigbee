@@ -1,4 +1,12 @@
 {
+  "v8_5_30": {
+    "version": "8.5.30",
+    "date": "2026-05-28",
+    "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
+  "8.5.26": {
+    "en": "v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total."
+  },
   "8.5.24": {
     "en": "v8.5.24: 122 new fingerprints from community sync, crash fix for app initialization, and general stability improvements."
   },
@@ -53,18 +61,7 @@
   "8.1.1": {
     "en": "v8.1.1: Fixed Issue #331 — Settings tab crash on 6 drivers (Hybrid*Base renamed to Unified*Base). Fixed curtain_motor_tilt missing flow cards (turn_on, turn_off, toggle). Fixed valve_irrigation device class (thermostat→socket). Added bed_sensor driver for _TZE200_seq9cm6u. Added CT Clamp _TZE28C1000000_81yrt3lo to power_clamp_meter. New fingerprints across 8 drivers."
   },
-  "8.1.0": {
-    "en": "New fingerprints for RGB bulbs, RGBW bulbs, air purifiers, and air quality sensors. Soil sensor driver added. Bug fixes for bulb color control and air quality reporting."
-  },
-  "7.5.53": {
-    "en": "v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster device capability handling, Fixed soil_sensor measure_soil_moisture capability, Fixed plug_smart driver compose, Fixed switch driver issues"
-  },
-  "8.5.26": {
-    "en": "v8.5.24: Fixed app crash on startup by correcting the base class from .App., Added 122 new device fingerprints from community sync (Z2M, ZHA, JohanBendz)., Updated device matrix and project status reports., General stability and compatibility enhancements."
-  },
-  "v8_5_30": {
-    "version": "8.5.30",
-    "date": "2026-05-28",
-    "changes": "fix OAuth2Client CLIENT_ID crash"
+  "8.5.27": {
+    "en": "v8.5.26: Added 122 new device fingerprints from Z2M, ZHA, and community contributions (JohanBendz), Fixed crash in , Expanded device support to 413 drivers with 7448 total fingerprints, Updated device matrix and project status reports"
   }
 }
