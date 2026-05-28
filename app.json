@@ -104012,7 +104012,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -106425,7 +106427,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/switch_1gang/assets/images/small.png",
@@ -125100,7 +125104,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -132311,7 +132317,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -135310,7 +135318,20 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tze200_7bztmfm1",
+          "_TZE200_7bztmfm1",
+          "_TZE200_7BZTMFM1",
+          "_tze200_qpn5q17m",
+          "_TZE200_qpn5q17m",
+          "_TZE200_QPN5Q17M",
+          "_tze204_7bztmfm1",
+          "_TZE204_7bztmfm1",
+          "_TZE204_7BZTMFM1",
+          "_tze204_qpn5q17m",
+          "_TZE204_qpn5q17m",
+          "_TZE204_QPN5Q17M"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -136508,7 +136529,15 @@
           "_TZE204_7BZTMFM1",
           "_tze204_qpn5q17m",
           "_TZE204_qpn5q17m",
-          "_TZE204_QPN5Q17M"
+          "_TZE204_QPN5Q17M",
+          "_tze200_4mh6tyyo",
+          "_TZE200_4mh6tyyo",
+          "_TZE200_4MH6TYYO",
+          "_tze20x_xxxxxxxx",
+          "_TZE20X_xxxxxxxx",
+          "_TZE20X_XXXXXXXX",
+          "_tyst11_d0yu2xgi",
+          "_TYST11_D0YU2XGI"
         ],
         "productId": [
           "TS0601_air_purifier",
@@ -141086,7 +141115,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -146749,7 +146780,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -153056,7 +153089,9 @@
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
@@ -174068,7 +174103,9 @@
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -175972,7 +176009,9 @@
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
