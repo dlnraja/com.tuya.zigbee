@@ -6,8 +6,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v8.5.27 |
-| Drivers | 413 |
+| Version | v8.5.28 |
+| Drivers | 412 |
 | Fingerprints | 12,027 |
 | Last Updated | 2026-05-28 |
 
@@ -17,7 +17,7 @@
 |----------|-------|
 | sensor | 122 |
 | socket | 113 |
-| other | 45 |
+| other | 44 |
 | light | 42 |
 | thermostat | 25 |
 | remote | 18 |

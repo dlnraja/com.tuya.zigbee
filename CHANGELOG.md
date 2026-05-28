@@ -4,7 +4,23 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.26] - 2026-05-28
+## [8.5.27] - 2026-05-28
+
+### Bug Fixes
+- Fixed `AggregateError` crash on app startup by removing deprecated SmartThings OAuth2 integration
+- Removed SmartThings driver (wifi_smartthings_device) and all related OAuth2 client code
+
+### New Features
+- Monthly device enrichment: 413 drivers, 3306 validated fingerprints
+- Added new fingerprint batches (batch1.json, batch2.json) for improved device matching
+
+### Improvements
+- Updated app to use native `Homey.App` instead of deprecated OAuth2 flow
+- Updated device matrix, project status, and zero-defect audit reports
+- Synced app.json and changelog metadata
+---
+
+ [8.5.26] - 2026-05-28
 
 ### New Features
 - Added 122 new device fingerprints from Z2M, ZHA, and community contributions (JohanBendz)
