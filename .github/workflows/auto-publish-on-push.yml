@@ -116,6 +116,13 @@ jobs:
       - name: 🔍 Resolve Fingerprint Collisions Automatically
         run: node scripts/ci/resolve-collisions.js
 
+      - name: 🔐 MANDATORY FILES CHECK (O17-O21 + M01-M14) — BLOQUANT
+        run: |
+          echo "Running comprehensive mandatory files check..."
+          node scripts/validate/homey-mandatory-check.js
+          echo "Running Athom server requirements check..."
+          node scripts/validate/validate-app-json.js
+
       - name: 🛡️ DUAL-LAYER GATE — Anti-AggregateError (BLOQUANT)
         run: |
           node - << 'DUAL_LAYER_GATE'

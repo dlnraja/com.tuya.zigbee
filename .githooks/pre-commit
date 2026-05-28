@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit
+# ═══════════════════════════════════════════════════════════════════════════
+# Homey App Mandatory Files Pre-Commit Hook
+# Runs ALL mandatory checks before every git commit.
+# Blocks commit if any error is found.
+#
+# INSTALL: git config core.hooksPath .githooks
+# Or run:  npm run hooks:install
+# ═══════════════════════════════════════════════════════════════════════════
+
+set -e
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+RESET='\033[0m'
+
+echo ""
+echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${CYAN}║     HOMEY MANDATORY FILES PRE-COMMIT CHECK                  ║${RESET}"
+echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${RESET}"
+echo ""
+
+ROOT="$(git rev-parse --show-toplevel)"
+
+# ─── 1. Run mandatory check ──────────────────────────────────────────────────
+echo -e "${CYAN}[1/4] Running comprehensive mandatory file check...${RESET}"
+if ! node "$ROOT/scripts/validate/homey-mandatory-check.js" --quiet; then
+  echo ""
+  echo -e "${RED}╔══════════════════════════════════════════════════════════════╗${RESET}"
+  echo -e "${RED}║  ❌ COMMIT BLOCKED — Mandatory file check FAILED             ║${RESET}"
+  echo -e "${RED}║     Run: node scripts/validate/homey-mandatory-check.js      ║${RESET}"
+  echo -e "${RED}║     Fix:  node scripts/validate/homey-mandatory-check.js --fix║${RESET}"
+  echo -e "${RED}╚══════════════════════════════════════════════════════════════╝${RESET}"
+  exit 1
+fi
+echo -e "${GREEN}✅ Mandatory file check PASSED${RESET}"
+
+# ─── 2. Quick JSON syntax check on staged files ───────────────────────────────
+echo -e "${CYAN}[2/4] Checking staged JSON files...${RESET}"
+STAGED_JSON=$(git diff --cached --name-only --diff-filter=ACM | grep '\.json$' || true)
+JSON_ERRORS=0
+if [ -n "$STAGED_JSON" ]; then
+  while IFS= read -r file; do
+    if [ -f "$ROOT/$file" ]; then
+      if ! node -e "JSON.parse(require('fs').readFileSync('$ROOT/$file','utf8'))" 2>/dev/null; then
+        echo -e "${RED}  ❌ Invalid JSON: $file${RESET}"
+        JSON_ERRORS=$((JSON_ERRORS + 1))
+      fi
+    fi
+  done <<< "$STAGED_JSON"
+fi
+if [ $JSON_ERRORS -gt 0 ]; then
+  echo -e "${RED}❌ COMMIT BLOCKED — $JSON_ERRORS staged JSON file(s) have invalid syntax${RESET}"
+  exit 1
+fi
+echo -e "${GREEN}✅ Staged JSON files OK${RESET}"
+
+# ─── 3. Check version consistency if app.json is staged ──────────────────────
+echo -e "${CYAN}[3/4] Checking version consistency...${RESET}"
+if git diff --cached --name-only | grep -q "app.json"; then
+  APP_VER=$(node -p "require('$ROOT/app.json').version" 2>/dev/null || echo "unknown")
+  PKG_VER=$(node -p "require('$ROOT/package.json').version" 2>/dev/null || echo "unknown")
+  if [ "$APP_VER" != "$PKG_VER" ] && [ "$PKG_VER" != "unknown" ]; then
+    echo -e "${YELLOW}⚠️  Version mismatch: app.json=$APP_VER vs package.json=$PKG_VER${RESET}"
+    echo -e "${YELLOW}   Auto-fixing package.json version...${RESET}"
+    node -e "
+      const fs = require('fs');
+      const pkg = JSON.parse(fs.readFileSync('$ROOT/package.json','utf8'));
+      pkg.version = require('$ROOT/app.json').version;
+      fs.writeFileSync('$ROOT/package.json', JSON.stringify(pkg, null,2)+'\\n','utf8');
+    " && git add "$ROOT/package.json"
+    echo -e "${GREEN}  ✅ package.json version synced${RESET}"
+  else
+    echo -e "${GREEN}✅ Version consistent: $APP_VER${RESET}"
+  fi
+else
+  echo -e "${GREEN}✅ Version check skipped (app.json not staged)${RESET}"
+fi
+
+# ─── 4. Warn on .homeyignore changes (high risk) ─────────────────────────────
+echo -e "${CYAN}[4/4] Checking for high-risk staged files...${RESET}"
+if git diff --cached --name-only | grep -q ".homeyignore"; then
+  echo -e "${YELLOW}⚠️  WARNING: .homeyignore is staged for commit!${RESET}"
+  echo -e "${YELLOW}   Verify these rules are NOT added:${RESET}"
+  echo -e "${YELLOW}   - *.json  (excludes runtime fingerprints.json)${RESET}"
+  echo -e "${YELLOW}   - README.txt  (required by SDK App.js:1427)${RESET}"
+  echo -e "${YELLOW}   - data/fingerprints.json  (required by DeviceFingerprintDB.js)${RESET}"
+  # Re-run O18 check specifically
+  JSONWILD=$(grep -E '^[*][.]json$' "$ROOT/.homeyignore" 2>/dev/null || true)
+  README_EXCL=$(grep -E '^README[.]txt$' "$ROOT/.homeyignore" 2>/dev/null || true)
+  if [ -n "$JSONWILD" ]; then
+    echo -e "${RED}  ❌ BLOCKED: .homeyignore still has *.json wildcard!${RESET}"
+    exit 1
+  fi
+  if [ -n "$README_EXCL" ]; then
+    echo -e "${RED}  ❌ BLOCKED: .homeyignore excludes README.txt (required by SDK)!${RESET}"
+    exit 1
+  fi
+  echo -e "${GREEN}  ✅ .homeyignore has no dangerous wildcards${RESET}"
+else
+  echo -e "${GREEN}✅ .homeyignore not modified${RESET}"
+fi
+
+echo ""
+echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${GREEN}║  ✅ ALL PRE-COMMIT CHECKS PASSED — Commit allowed           ║${RESET}"
+echo -e "${GREEN}╚══════════════════════════════════════════════════════════════╝${RESET}"
+echo ""
+exit 0
