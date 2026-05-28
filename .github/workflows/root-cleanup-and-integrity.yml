@@ -121,7 +121,7 @@ jobs:
           const app = JSON.parse(fs.readFileSync('app.json'));
           const REQUIRED = ['id','version','compatibility','sdk','name','description','category',
                             'permissions','images','author','brandColor','homeyCommunityTopicId',
-                            'icon','tags','platforms'];
+                            'tags','platforms'];
           const missing = REQUIRED.filter(k => app[k] === undefined || app[k] === null);
           if (missing.length > 0) {
             console.error('❌ MISSING FIELDS in app.json:', missing.join(', '));
@@ -141,7 +141,7 @@ jobs:
             }
           });
           console.log('✅ Build integrity: ALL fields present');
-          console.log('  v' + app.version + ' | sdk:' + app.sdk + ' | icon:' + app.icon);
+          console.log('  v' + app.version + ' | sdk:' + app.sdk);
           console.log('  brandColor:' + app.brandColor + ' | topicId:' + app.homeyCommunityTopicId);
           console.log('  drivers:', (app.drivers||[]).length);
           VERIFY
