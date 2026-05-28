@@ -30,11 +30,31 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
+## ðŸš€ Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### âœ¨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **vv8_5_30** |  |
+| **v8.5.29** | v8.5.28: Added support for new soil sensor: `_TZE284_0ints6wl` / TS0601, Expa... |
+| **v8.5.28** | v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability impr... |
+| **v8.5.27** | Removed SmartThings 2 integration. Monthly  adds 413 drivers and 3306 validat... |
+| **v8.5.26** | v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total. |
+| **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initiali... |
+| **v8.5.22** | v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (... |
+| **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
+| **v8.5.20** | v8.5.20: . New soil sensor support. Removed stale fingerprints. General stabi... |
+| **v8.5.17** | v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.28 |
+| **App Version** | v8.5.29 |
 | **Device Fingerprints** | 12,027+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
@@ -102,7 +122,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
-| **v8.5.28** | v8.5.27: Fixed `AggregateError` crash on app startup by removing deprecated SmartThings , Removed SmartThings driver ... |
+| **v8.5.29** | v8.5.28: Added support for new soil sensor: `_TZE284_0ints6wl` / TS0601, Expanded driver fleet to 412 drivers with 74... |
+| **v8.5.28** | v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability improvements. |
 | **v8.5.27** | Removed SmartThings 2 integration. Monthly  adds 413 drivers and 3306 validated fingerprints. Bug fix for AggregateEr... |
 | **v8.5.26** | v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total. |
 | **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initialization, and general stability improvements. |
@@ -115,7 +136,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.1.11** | Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298 new fingerprints added across drivers. |
 | **v8.1.10** | Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1way validation errors resolved. Duplicat... |
 | **v8.1.9** | v8.1.9 â€” No driver changes. |
-| **v8.1.8** | 298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor upd... |
 
 <!-- CHANGELOG_END -->
 
