@@ -38,15 +38,15 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Feature |
 |---------|---------|
 | **vv8_5_30** |  |
-| **v9.0.0** | v8.5.54: |
-| **v8.5.54** | v8.5.53: |
-| **v8.5.53** | v8.5.52: |
-| **v8.5.52** | v8.5.51: |
-| **v8.5.51** | v8.5.50: |
-| **v8.5.50** | v8.5.49: |
-| **v8.5.49** | v8.5.48: |
-| **v8.5.48** | v8.5.47: |
-| **v8.5.47** | v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files ... |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: Fixed 88 empty manufacturerName arrays in driver.compose.json files ... |
 <!-- CHANGELOG_END -->
 
 
@@ -55,7 +55,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.1 |
+| **App Version** | v7.0.0 |
 | **Device Fingerprints** | 12,753+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
@@ -123,20 +123,20 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
-| **v9.0.1** | v9.0.0: |
-| **v9.0.0** | v8.5.54: |
-| **v8.5.54** | v8.5.53: |
-| **v8.5.53** | v8.5.52: |
-| **v8.5.52** | v8.5.51: |
-| **v8.5.51** | v8.5.50: |
-| **v8.5.50** | v8.5.49: |
-| **v8.5.49** | v8.5.48: |
-| **v8.5.48** | v8.5.47: |
-| **v8.5.47** | v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persisten... |
-| **v8.5.46** | v8.5.46: . Cleaned 88 empty manufacturer arrays from driver configs. New fingerprints from community sync. Stability ... |
-| **v8.5.45** | v8.5.45: . Bug fixes: empty manufacturerName arrays removed, button_wireless_4 + illuminance_sensor MFs restored. New... |
-| **v8.5.44** | v8.5.44: Fixed critical app crash (AggregateError) caused by empty manufacturerName arrays in 75 drivers. Restored 36... |
-| **v8.5.43** | v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new fingerprints from ... |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: |
+| **v7.0.0** | v7.0.0: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persisten... |
+| **v7.0.0** | v7.0.0: . Cleaned 88 empty manufacturer arrays from driver configs. New fingerprints from community sync. Stability ... |
+| **v7.0.0** | v7.0.0: . Bug fixes: empty manufacturerName arrays removed, button_wireless_4 + illuminance_sensor MFs restored. New... |
+| **v7.0.0** | v7.0.0: Fixed critical app crash (AggregateError) caused by empty manufacturerName arrays in 75 drivers. Restored 36... |
+| **v7.0.0** | v7.0.0: . Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new fingerprints from ... |
 
 <!-- CHANGELOG_END -->
 
