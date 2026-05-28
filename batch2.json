@@ -1,0 +1,346 @@
+[
+  {
+    "driver": "radar_sensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "radar_sensor_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "radar_sensor_ceiling",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "relay_board_1_channel",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "relay_board_2_channel",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "relay_board_4_channel",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "remote_button_wireless_fingerbot",
+    "flowCards": 21
+  },
+  {
+    "driver": "remote_button_wireless_scene",
+    "flowCards": 15
+  },
+  {
+    "driver": "remote_button_wireless_smart",
+    "flowCards": 10
+  },
+  {
+    "driver": "remote_button_wireless_usb",
+    "flowCards": 7
+  },
+  {
+    "driver": "remote_button_wireless_valve",
+    "flowCards": 15
+  },
+  {
+    "driver": "rgb_bulb_E14",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_bulb_E27",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_ceiling_led_light",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_floor_led_light",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_led_light_bar",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_led_strip",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_led_strip_controller",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_mood_light",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_spot_GU10",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_spot_GardenLight",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "rgb_wall_led_light",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "sensor_climate_lcdtemphumidsensor",
+    "flowCards": 12
+  },
+  {
+    "driver": "sensor_climate_motion",
+    "flowCards": 10
+  },
+  {
+    "driver": "sensor_climate_presence",
+    "flowCards": 11
+  },
+  {
+    "driver": "sensor_climate_smart",
+    "flowCards": 9
+  },
+  {
+    "driver": "sensor_climate_temphumidsensor",
+    "flowCards": 12
+  },
+  {
+    "driver": "sensor_contact_climate",
+    "flowCards": 12
+  },
+  {
+    "driver": "sensor_contact_plug",
+    "flowCards": 14
+  },
+  {
+    "driver": "sensor_contact_rain",
+    "flowCards": 12
+  },
+  {
+    "driver": "sensor_contact_zigbee",
+    "flowCards": 12
+  },
+  {
+    "driver": "sensor_gas_presence",
+    "flowCards": 11
+  },
+  {
+    "driver": "sensor_lcdtemphumidsensor_soil",
+    "flowCards": 17
+  },
+  {
+    "driver": "sensor_lcdtemphumidsensor_temphumidsensor",
+    "flowCards": 5
+  },
+  {
+    "driver": "slim_motion_sensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smartPlug_DinRail",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smart_air_detection_box",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smart_door_window_sensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smart_garden_irrigation_control",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smart_motion_sensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smart_switch",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smartplug",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smartplug_2_socket",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smoke_sensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smoke_sensor2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "smoke_sensor3",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "socket_power_strip",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "socket_power_strip_four",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "socket_power_strip_four_three",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "socket_power_strip_four_two",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "soilsensor",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "soilsensor_2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "sr_zs_switch",
+    "flowCards": 4
+  },
+  {
+    "driver": "switch_1_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "switch_1_gang_metering",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "switch_2_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "switch_2_gang_metering",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "switch_3_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "switch_4_gang_metering",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "switch_wall",
+    "flowCards": 21
+  },
+  {
+    "driver": "temphumidsensor2",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "temphumidsensor3",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "temphumidsensor4",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "temphumidsensor5",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "thermostatic_radiator_valve",
+    "flowCards": 2
+  },
+  {
+    "driver": "tunable_bulb_E14",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "tunable_bulb_E27",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "tunable_spot_GU10",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "tuya_dummy_device",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "universal_zigbee",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "valve_dual_irrigation",
+    "flowCards": 7
+  },
+  {
+    "driver": "valvecontroller",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_dimmer_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_socket",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_1_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_1_gang_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_2_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_3_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_4_gang",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_4_gang_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_5_gang_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_switch_6_gang_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wall_thermostat",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "water_detector",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "water_leak_sensor_tuya",
+    "flowCards": "ERROR"
+  },
+  {
+    "driver": "wifi_smartthings_device",
+    "flowCards": "ERROR"
+  }
+]
