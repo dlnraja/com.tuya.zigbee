@@ -101499,7 +101499,8 @@
             "en": "Press and hold the power button for 5 seconds",
             "fr": "Maintenez le bouton power pendant 5 secondes"
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/air_purifier/assets/images/small.png",
@@ -104010,7 +104011,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -106422,7 +106424,8 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/switch_1gang/assets/images/small.png",
@@ -107948,7 +107951,8 @@
             "nl": "Houd de koppelknop 5 seconden ingedrukt tot LED knippert",
             "de": "Halten Sie die Pairing-Taste 5 Sekunden gedrückt, bis die LED blinkt"
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/bed_sensor/assets/images/small.png",
@@ -109219,7 +109223,8 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -110016,7 +110021,8 @@
         },
         "productId": [
           "TS0505B"
-        ]
+        ],
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -125091,7 +125097,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -132301,7 +132308,8 @@
           "instruction": {
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -132461,7 +132469,8 @@
           "instruction": {
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -133119,7 +133128,8 @@
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -141166,7 +141176,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -141500,7 +141511,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
@@ -145802,7 +145814,8 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -146826,7 +146839,8 @@
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -147087,7 +147101,8 @@
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -147330,7 +147345,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -152281,7 +152297,8 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -153123,7 +153140,8 @@
           "instruction": {
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -153179,7 +153197,8 @@
           "instruction": {
             "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -153373,7 +153392,8 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -153528,7 +153548,8 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -154983,7 +155004,8 @@
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -155777,7 +155799,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -156100,7 +156123,8 @@
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/switch_4gang/assets/images/small.png",
@@ -160255,7 +160279,8 @@
           "instruction": {
             "en": "Open the backside of the unit and press the button inside for 5 seconds."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -160399,7 +160424,8 @@
           "instruction": {
             "en": "Press the button on the side of the unit for 5 seconds."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -168925,7 +168951,8 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -174109,7 +174136,8 @@
             "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -174275,7 +174303,8 @@
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -176009,7 +176038,8 @@
           "instruction": {
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -177906,7 +177936,8 @@
               57344
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/button_wireless_4/assets/images/small.png",
@@ -185761,7 +185792,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -194268,7 +194300,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -194873,7 +194906,8 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -195680,7 +195714,8 @@
           "instruction": {
             "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "maintenanceActions": [
         {
@@ -197755,7 +197790,8 @@
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [],
       "maintenanceActions": [
@@ -197989,7 +198025,8 @@
           "instruction": {
             "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -200368,7 +200405,8 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -201378,7 +201416,8 @@
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -203539,7 +203578,8 @@
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -211259,7 +211299,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/temphumidsensor/assets/images/small.png",
@@ -211575,7 +211616,8 @@
             "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the LED blinks rapidly.",
             "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -214685,7 +214727,8 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/valve_dual_irrigation/assets/images/small.png",
@@ -217522,7 +217565,8 @@
           "instruction": {
             "en": "Switch the unit on and off five times and then hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
@@ -219362,7 +219406,8 @@
           "instruction": {
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
-        }
+        },
+        "manufacturerName": []
       },
       "settings": []
     },
