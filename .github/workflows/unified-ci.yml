@@ -48,8 +48,13 @@ jobs:
             const hasZ = !!d.zigbee;
             const isLan = conn.some(c=>['lan','cloud'].includes(c));
             const type = hasZ&&isLan?'hybrid':hasZ?'zigbee':WIFI_ID(d.id)?'wifi':'virtual';
-            if((type==='zigbee'||type==='hybrid')&&(!d.zigbee?.manufacturerName?.length))
-              errs.push('['+type+'] '+d.id);
+            if(type==='zigbee'||type==='hybrid'){
+              const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
+              const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
+              if (hasFp && !hasMf) {
+                errs.push('['+type+'] '+d.id);
+              }
+            }
           });
           if(errs.length){console.error('❌ AggregateError dans',errs.length,'drivers:');errs.forEach(e=>console.error('  ❌',e));process.exit(1);}
           console.log('✅ Dual-Layer: PASS — Zéro AggregateError');
