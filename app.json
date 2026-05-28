@@ -101500,7 +101500,9 @@
             "fr": "Maintenez le bouton power pendant 5 secondes"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/air_purifier/assets/images/small.png",
@@ -104012,7 +104014,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -106425,7 +106429,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/switch_1gang/assets/images/small.png",
@@ -107952,7 +107958,9 @@
             "de": "Halten Sie die Pairing-Taste 5 Sekunden gedrückt, bis die LED blinkt"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/bed_sensor/assets/images/small.png",
@@ -109224,7 +109232,9 @@
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -110022,7 +110032,9 @@
         "productId": [
           "TS0505B"
         ],
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -125098,7 +125110,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -132309,7 +132323,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -133131,7 +133147,9 @@
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -134083,7 +134101,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -135306,7 +135326,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -136492,7 +136514,9 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -141061,7 +141085,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -141396,7 +141422,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
@@ -145699,7 +145727,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -146724,7 +146754,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -153031,7 +153063,9 @@
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
@@ -153088,7 +153122,9 @@
             "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
@@ -153283,7 +153319,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -155694,7 +155732,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -160176,7 +160216,9 @@
             "en": "Open the backside of the unit and press the button inside for 5 seconds."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -174037,7 +174079,9 @@
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -175941,7 +175985,9 @@
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
@@ -177839,7 +177885,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/button_wireless_4/assets/images/small.png",
@@ -185695,7 +185743,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -194203,7 +194253,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -194809,7 +194861,9 @@
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -197932,7 +197986,9 @@
             "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
@@ -200312,7 +200368,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": [
         {
@@ -211107,7 +211165,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "images": {
         "small": "/drivers/temphumidsensor/assets/images/small.png",
@@ -217376,7 +217436,9 @@
             "en": "Switch the unit on and off five times and then hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZE200_placeholder_generic"
+        ]
       },
       "settings": []
     },
