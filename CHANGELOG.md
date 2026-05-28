@@ -4,7 +4,31 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.40] - 2026-05-28
+## [8.5.41] - 2026-05-28
+
+### Bug Fixes
+- **Critical**: Fixed `app.json` validation errors — corrected `category` to string type, removed invalid `icon` field, and removed unsupported `homey:manager:api` permission
+- **Critical**: Restored all 360 Zigbee driver `manufacturerName` entries that were causing `AggregateError` on app load
+- **Critical**: Rewrote `.homeyignore` to exclude non-essential files and added Athom server validation
+- **Fixed**: Resolved 4,361 fingerprint collisions across drivers, ensuring no duplicate `manufacturerName` + `productId` combinations
+- **Fixed**: Added mandatory `README.txt` and multilingual `README.*.txt` files to satisfy Athom store requirements
+- **Fixed**: Added proper `icon.svg` asset to prevent build failures
+
+### New Features
+- **114 new fingerprints** added from Z2M, ZHA, community reports, and JohanBendz's repository sync
+- **Driver count**: Now 412 drivers with 18,367 total fingerprints
+
+### Improvements
+- Added comprehensive pre-commit and pre-push Git hooks to catch validation errors before publishing
+- Implemented dual-layer integrity gate workflow for automated validation
+- Added mandatory files gate to ensure all required assets are present before build
+- Root cleanup: archived junk files and removed deprecated documentation
+
+### Community
+- New device request: Soil sensor `_TZE284_0ints6wl` / `TS0601` — under investigation
+---
+
+ [8.5.40] - 2026-05-28
 
 ### Bug Fixes
 - **CRITICAL**: Fixed app.json validation errors — removed invalid 'icon' field, corrected 'category' to string, and removed unsupported 'api' and 'homey:manager:api' permissions.
