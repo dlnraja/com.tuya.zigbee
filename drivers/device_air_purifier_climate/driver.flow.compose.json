@@ -4,14 +4,14 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -20,14 +20,14 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -36,16 +36,16 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changÃ©",
+        "fr": "PM2.5 changé",
         "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geÃ¤ndert"
+        "de": "PM2.5 geändert"
       },
       "tokens": [
         {
           "name": "pm25",
           "type": "number",
           "title": {
-            "en": "PM2.5 (Âµg/mÂ³)"
+            "en": "PM2.5 (µg/m³)"
           },
           "example": 35
         }
@@ -53,9 +53,9 @@
       "args": [],
       "titleFormatted": {
         "en": "PM2.5 changed",
-        "fr": "PM2.5 changÃ©",
+        "fr": "PM2.5 changé",
         "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geÃ¤ndert"
+        "de": "PM2.5 geändert"
       }
     }
   ],
@@ -64,14 +64,14 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -98,14 +98,14 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Ã‰teindre",
+        "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -130,13 +130,13 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_set_fan_speed",
       "title": {
         "en": "Set fan speed",
-        "fr": "RÃ©gler vitesse",
+        "fr": "Régler vitesse",
         "nl": "Snelheid instellen",
         "de": "Geschwindigkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set fan speed to [[speed]]%",
-        "fr": "RÃ©gler vitesse Ã [[speed]]%",
+        "fr": "Régler vitesse à[[speed]]%",
         "nl": "Snelheid instellen op [[speed]]%",
         "de": "Geschwindigkeit auf [[speed]]% setzen"
       },
@@ -156,13 +156,13 @@
       "id": "device_air_purifier_climate_air_purifier_climate_air_purifier_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "RÃ©gler luminositÃ©",
+        "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
+        "fr": "Régler luminosité à[[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },

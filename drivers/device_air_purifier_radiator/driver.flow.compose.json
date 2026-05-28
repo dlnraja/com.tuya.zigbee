@@ -4,7 +4,7 @@
       "id": "device_air_purifier_radiator_radiator_valve_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "TempÃ©rature cible changÃ©e"
+        "fr": "Température cible changée"
       },
       "tokens": [
         {
@@ -12,7 +12,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "TempÃ©rature"
+            "fr": "Température"
           },
           "example": 21
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Target temperature changed",
-        "fr": "TempÃ©rature cible changÃ©e"
+        "fr": "Température cible changée"
       }
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
+        "fr": "Température changée"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "TempÃ©rature"
+            "fr": "Température"
           },
           "example": 20.5
         }
@@ -43,23 +43,23 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
+        "fr": "Température changée"
       }
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
+        "fr": "Température changée",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
+        "de": "Temperatur geändert"
       }
     },
     {
@@ -84,7 +84,7 @@
       "id": "device_air_purifier_radiator_radiator_valve_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
-        "fr": "RÃ©gler la tempÃ©rature Ã..."
+        "fr": "Régler la température Ã..."
       },
       "args": [
         {
@@ -95,28 +95,28 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "TempÃ©rature"
+            "fr": "Température"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set temperature to [[temperature]]Â°C",
-        "fr": "RÃ©gler la tempÃ©rature Ã [[temperature]]Â°C"
+        "en": "Set temperature to [[temperature]]°C",
+        "fr": "Régler la température à[[temperature]]°C"
       }
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_set_temperature",
       "title": {
         "en": "Set temperature",
-        "fr": "RÃ©gler tempÃ©rature",
+        "fr": "Régler température",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
       },
       "titleFormatted": {
-        "en": "Set temperature to [[temperature]]Â°C",
-        "fr": "RÃ©gler Ã [[temperature]]Â°C",
-        "nl": "Instellen op [[temperature]]Â°C",
-        "de": "Auf [[temperature]]Â°C einstellen"
+        "en": "Set temperature to [[temperature]]°C",
+        "fr": "Régler à[[temperature]]°C",
+        "nl": "Instellen op [[temperature]]°C",
+        "de": "Auf [[temperature]]°C einstellen"
       },
       "args": [
         {
@@ -125,7 +125,7 @@
           "min": 5,
           "max": 35,
           "step": 0.5,
-          "label": "Â°C",
+          "label": "°C",
           "labelDecimals": 1
         }
       ]

@@ -2,8 +2,8 @@
   "name": {
     "en": "Air Purifier Quality",
     "nl": "Luchtreiniger kwaliteit",
-    "fr": "Purificateur d'air qualitÃ©",
-    "de": "Luftreiniger QualitÃ¤ts-",
+    "fr": "Purificateur d'air qualité",
+    "de": "Luftreiniger Qualitäts-",
     "es": "Purificador de aire calidad"
   },
   "class": "sensor",
@@ -35,7 +35,7 @@
         "en": "PM2.5",
         "fr": "PM2.5"
       },
-      "units": "Âµg/mÂ³"
+      "units": "µg/m³"
     },
     "measure_voc": {
       "title": {
@@ -46,14 +46,14 @@
     "measure_formaldehyde": {
       "title": {
         "en": "Formaldehyde (HCHO)",
-        "fr": "FormaldÃ©hyde (HCHO)"
+        "fr": "Formaldéhyde (HCHO)"
       },
-      "units": "mg/mÂ³"
+      "units": "mg/m³"
     },
     "alarm_generic": {
       "title": {
         "en": "Air Quality Alert",
-        "fr": "Alerte QualitÃ© Air"
+        "fr": "Alerte Qualité Air"
       }
     }
   },
@@ -81,7 +81,7 @@
       "type": "dropdown",
       "label": {
         "en": "Temperature Unit",
-        "fr": "UnitÃ© tempÃ©rature"
+        "fr": "Unité température"
       },
       "value": "celsius",
       "values": [
@@ -116,10 +116,10 @@
             "nl": "Temperatuur correctie"
           },
           "hint": {
-            "en": "Adjust sensor reading (Â±10Â°C)",
-            "nl": "Pas meetwaarde aan (Â±10Â°C)"
+            "en": "Adjust sensor reading (Â±10°C)",
+            "nl": "Pas meetwaarde aan (Â±10°C)"
           },
-          "units": "Â°C",
+          "units": "°C",
           "value": 0,
           "min": -10,
           "max": 10,
@@ -149,7 +149,7 @@
       "type": "dropdown",
       "label": {
         "en": "Decimal Precision",
-        "fr": "PrÃ©cision"
+        "fr": "Précision"
       },
       "value": "1",
       "hint": {
@@ -159,13 +159,13 @@
         {
           "id": "1",
           "label": {
-            "en": "1 decimal (20.5Â°C)"
+            "en": "1 decimal (20.5°C)"
           }
         },
         {
           "id": "2",
           "label": {
-            "en": "2 decimals (20.53Â°C)"
+            "en": "2 decimals (20.53°C)"
           }
         }
       ]
@@ -175,12 +175,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+        "fr": "Activer la Détection de Présence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -188,7 +188,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
+        "fr": "Sensibilité Présence Radio"
       },
       "value": 15,
       "min": 5,
@@ -203,12 +203,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "SÃ©curitÃ© Enfant Logicielle"
+        "fr": "Sécurité Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'état manuels sur l'appareil"
       }
     },
     {
@@ -223,7 +223,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
+        "fr": "S'éteint après X minutes (0 = désactivé)"
       }
     },
     {
@@ -231,12 +231,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation PrÃ©sence)"
+        "fr": "Mode Vacances (Simulation Présence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
       }
     },
     {
@@ -244,14 +244,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
+        "fr": "Maintien Mouvement Émulé (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
       }
     },
     {
@@ -266,7 +266,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
+        "fr": "Émulation logicielle pour boutons àaction unique"
       }
     },
     {
@@ -281,7 +281,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
+        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
       }
     },
     {
@@ -289,7 +289,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "DurÃ©e Inching (Secondes)"
+        "fr": "Durée Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -297,7 +297,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
       }
     },
     {
@@ -305,12 +305,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
+        "fr": "Récupération d'État Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
+        "fr": "Restore l'état précédent après une coupure de courant"
       }
     },
     {
@@ -323,7 +323,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
       }
     },
     {
@@ -338,7 +338,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
+        "fr": "Alerte si le score de santé descend sous cette valeur"
       }
     }
   ],
@@ -354,7 +354,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
+        "fr": "Vérifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

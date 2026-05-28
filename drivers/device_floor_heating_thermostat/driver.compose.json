@@ -76,5 +76,10 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_device_floor_heating_thermostat"
+    ]
+  }
 }

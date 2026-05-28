@@ -391,5 +391,10 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_sensor_contact_motion"
+    ]
+  }
 }

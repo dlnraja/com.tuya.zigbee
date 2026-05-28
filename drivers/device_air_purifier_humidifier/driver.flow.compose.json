@@ -40,13 +40,13 @@
       "id": "device_air_purifier_humidifier_humidifier_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "RÃ©gler luminositÃ©",
+        "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
+        "fr": "Régler luminosité à[[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },
@@ -68,14 +68,14 @@
       "id": "device_air_purifier_humidifier_humidifier_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "AllumÃ©",
+        "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -84,14 +84,14 @@
       "id": "device_air_purifier_humidifier_humidifier_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Ã‰teint",
+        "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -100,16 +100,16 @@
       "id": "device_air_purifier_humidifier_humidifier_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
+        "fr": "Humidité changée",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
+        "de": "Feuchtigkeit geändert"
       }
     }
   ],
@@ -118,14 +118,14 @@
       "id": "device_air_purifier_humidifier_humidifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
