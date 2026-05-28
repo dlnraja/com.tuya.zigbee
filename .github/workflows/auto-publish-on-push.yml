@@ -210,19 +210,9 @@ jobs:
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: |
-          V=$(node -p "require('./app.json').version")
-          echo "Publishing v$V..."
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "⚠️ Uncommitted changes detected — answering interactive prompts accordingly"
-            printf "y\nn\n" | npx homey app publish
-          else
-            echo "Clean workspace detected — answering version prompt"
-            echo "n" | npx homey app publish
-          fi
-          echo "✅ Published successfully"
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       # ─────────────────────────────────────────────────────────────
       # 7. POST-PUBLISH (all continue-on-error)
