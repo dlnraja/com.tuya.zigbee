@@ -1,4 +1,7 @@
 {
+  "8.5.38": {
+    "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
+  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
