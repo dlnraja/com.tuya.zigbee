@@ -282,6 +282,35 @@ jobs:
           node .github/scripts/auto-update-docs.js || true
           node .github/scripts/generate-readme.js || true
 
+      - name: "🔧 M09 Auto-fix — restore MFs from fingerprints (prevents bot regression)"
+        if: always()
+        continue-on-error: true
+        run: |
+          node - << 'M09_FIX'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json','utf8'));
+          let fixed = 0;
+          app.drivers.forEach(d => {
+            if (!d.zigbee) return;
+            const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
+            const fps = d.zigbee.fingerprints || [];
+            if (!hasMf && fps.length > 0) {
+              const mfs = [...new Set(fps.map(fp => fp.manufacturerName).filter(Boolean))];
+              if (mfs.length > 0) {
+                d.zigbee.manufacturerName = mfs;
+                fixed++;
+                console.log('Auto-fixed M09:', d.id, '->', mfs.length, 'MFs');
+              }
+            }
+          });
+          if (fixed > 0) {
+            fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
+            console.log('M09 auto-fix:', fixed, 'drivers restored');
+          } else {
+            console.log('M09: all drivers OK, no fix needed');
+          }
+          M09_FIX
+
       - name: Commit & Push
         if: always()
         run: |
@@ -293,6 +322,7 @@ jobs:
           git diff --cached --quiet || git commit -m "v${{ steps.info.outputs.version }}: ${D} drivers, ${F} FPs [skip ci]"
           git pull --rebase origin master || true
           git push || true
+
 
       - name: Summary
         if: always()
