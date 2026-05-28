@@ -101483,7 +101483,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -101565,7 +101564,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -101792,7 +101790,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -102607,7 +102604,6 @@
         "alarm_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -102921,7 +102917,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -103467,7 +103462,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -108311,7 +108305,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS1201"
         ],
@@ -109524,7 +109517,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS1101",
           "TS110E",
@@ -109848,7 +109840,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -110319,7 +110310,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -110774,7 +110764,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -112357,7 +112346,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0502A",
           "TS0502B",
@@ -113523,7 +113511,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0040",
           "SNZB-01",
@@ -116866,7 +116853,6 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -120138,7 +120124,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0040",
           "SNZB-01",
@@ -120538,7 +120523,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0040",
           "SNZB-01",
@@ -124906,7 +124890,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0201",
           "TS0222",
@@ -125483,7 +125466,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0201",
           "TS0222",
@@ -125588,7 +125570,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "learnmode": {
           "image": "/drivers/gas_detector/assets/learnmode.svg",
           "instruction": {
@@ -126115,7 +126096,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0201",
           "TS0222",
@@ -127893,7 +127873,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0201",
           "TS0222",
@@ -131230,7 +131209,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0203",
           "ZG-102Z",
@@ -131642,7 +131620,6 @@
         "large": "/drivers/curtain_motor/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -132202,7 +132179,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0203",
           "ZG-102Z",
@@ -132760,7 +132736,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0203",
           "ZG-102Z",
@@ -133670,7 +133645,6 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -134573,7 +134547,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0203",
           "ZG-102Z",
@@ -135130,7 +135103,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS130F",
           "TS0601"
@@ -138937,7 +138909,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0225",
@@ -144137,7 +144108,6 @@
       ],
       "energy": {},
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0001",
@@ -144582,7 +144552,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -144700,7 +144669,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0001",
           "TS0002",
@@ -146254,7 +146222,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0111",
           "TS0101",
@@ -149551,7 +149518,6 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TV01-ZB",
           "TV02-ZB",
@@ -149963,7 +149929,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS110F",
           "TS110E",
@@ -150211,7 +150176,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS110F",
           "TS110E"
@@ -151966,7 +151930,6 @@
       ],
       "energy": {},
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_dim1",
           "TS0601",
@@ -152335,7 +152298,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_dim1",
           "TS0601",
@@ -152791,7 +152753,6 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -153601,7 +153562,6 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_dim1",
           "TS0601",
@@ -156513,7 +156473,6 @@
         "small": "//drivers/double_power_point/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS011F",
           "TS0601"
@@ -156673,7 +156632,6 @@
         "small": "//drivers/double_power_point_2/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS011F",
           "TS0601"
@@ -158936,7 +158894,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_gas",
           "TS0601",
@@ -163362,7 +163319,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_lcd",
           "TS0601",
@@ -163515,7 +163471,6 @@
         "small": "//drivers/lcdtemphumidsensor_2/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "SM0201",
           "TS0601",
@@ -163661,7 +163616,6 @@
         "small": "//drivers/lcdtemphumidsensor_3/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0201",
@@ -172134,7 +172088,6 @@
         "small": "//drivers/outdoor_2_socket/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS011F",
           "TS0601"
@@ -173680,7 +173633,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0111",
           "TS0101",
@@ -174400,7 +174352,6 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -177548,7 +177499,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
@@ -177710,7 +177660,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
@@ -179531,7 +179480,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0001",
           "TS0011",
@@ -179837,7 +179785,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0040",
           "SNZB-01",
@@ -198580,7 +198527,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0203",
           "ZG-102Z",
@@ -205235,7 +205181,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601_lcd",
           "TS0601",
@@ -206991,7 +206936,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0203",
           "TS0601",
@@ -209773,7 +209717,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS004F",
           "ERS-10TZBVK-AA"
@@ -210738,7 +210681,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0001"
         ],
@@ -211329,7 +211271,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -212394,7 +212335,6 @@
         "small": "//drivers/socket_power_strip_four_two/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0111",
           "TS0101",
@@ -213041,7 +212981,6 @@
         "small": "/drivers/sr_zs_switch/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0726",
           "TS0001",
@@ -216191,7 +216130,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0003",
           "TS0012",
@@ -220122,7 +220060,6 @@
         "meter_power"
       ],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0002"
         ],
@@ -220289,7 +220226,6 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -223879,7 +223815,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TY0201",
           "SNTZ003",
@@ -224182,7 +224117,6 @@
         "large": "//drivers/temphumidsensor3/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TY0201",
           "SNTZ003",
@@ -224339,7 +224273,6 @@
         "large": "//drivers/temphumidsensor4/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0201"
@@ -225500,7 +225433,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0001",
           "TS0002",
@@ -227360,7 +227292,6 @@
         "alarm_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -229107,7 +229038,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0043"
         ],
@@ -229217,7 +229147,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0043"
         ],
@@ -229339,7 +229268,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0043"
         ],
@@ -230091,7 +230019,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0001",
           "TS0011",
@@ -231844,7 +231771,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0001",
           "TS0011",
@@ -232255,7 +232181,6 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0207",
           "q9mpfhw",
