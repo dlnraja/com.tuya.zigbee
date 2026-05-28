@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-12,838+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-13,132+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-412-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,073-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **12,838+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **13,132+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -30,33 +30,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **vv8_5_30** |  |
-| **v8.5.47** | v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files ... |
-| **v8.5.46** | v8.5.46: . Cleaned 88 empty manufacturer arrays from driver configs. New fing... |
-| **v8.5.45** | v8.5.45: . Bug fixes: empty manufacturerName arrays removed, button_wireless_... |
-| **v8.5.44** | v8.5.44: Fixed critical app crash (AggregateError) caused by empty manufactur... |
-| **v8.5.43** | v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer finger... |
-| **v8.5.42** | v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerpr... |
-| **v8.5.41** | v8.5.41: . Critical fixes for app.json validation (category, permissions, ico... |
-| **v8.5.40** | v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual... |
-| **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requi... |
-<!-- CHANGELOG_END -->
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.48 |
-| **Device Fingerprints** | 12,838+ |
+| **App Version** | v8.5.49 |
+| **Device Fingerprints** | 13,132+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,073 |
@@ -71,26 +50,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,036 |
-| 2 | `switch_1gang` | 1,231 |
+| 1 | `climate_sensor` | 2,121 |
+| 2 | `switch_1gang` | 1,236 |
 | 3 | `bulb_dimmable` | 628 |
-| 4 | `presence_sensor_radar` | 502 |
-| 5 | `radiator_valve` | 478 |
-| 6 | `wall_dimmer_tuya` | 377 |
-| 7 | `curtain_motor` | 365 |
-| 8 | `generic_tuya` | 357 |
-| 9 | `motion_sensor` | 264 |
-| 10 | `bulb_rgbw` | 235 |
-| 11 | `sensor_contact_zigbee` | 219 |
-| 12 | `plug_energy_monitor` | 218 |
+| 4 | `wall_dimmer_tuya` | 404 |
+| 5 | `radiator_valve` | 401 |
+| 6 | `presence_sensor_radar` | 395 |
+| 7 | `generic_tuya` | 356 |
+| 8 | `curtain_motor` | 319 |
+| 9 | `motion_sensor` | 265 |
+| 10 | `sensor_contact_zigbee` | 261 |
+| 11 | `bulb_rgbw` | 235 |
+| 12 | `dimmer_ts110e` | 207 |
 | 13 | `diy_custom_zigbee` | 206 |
-| 14 | `generic_diy` | 202 |
-| 15 | `switch_4gang` | 199 |
+| 14 | `switch_4gang` | 197 |
+| 15 | `generic_diy` | 195 |
 | 16 | `thermostat_tuya_dp` | 195 |
-| 17 | `switch_2gang` | 191 |
-| 18 | `usb_dongle_triple` | 182 |
-| 19 | `water_leak_sensor_tuya` | 153 |
-| 20 | `air_purifier` | 126 |
+| 17 | `switch_2gang` | 189 |
+| 18 | `switch_4_gang_metering` | 186 |
+| 19 | `switch_1_gang` | 183 |
+| 20 | `usb_dongle_triple` | 176 |
 
 ### Drivers by Device Class
 
@@ -123,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
+| **v8.5.49** | v8.5.48: |
 | **v8.5.48** | v8.5.47: |
 | **v8.5.47** | v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persisten... |
 | **v8.5.46** | v8.5.46: . Cleaned 88 empty manufacturer arrays from driver configs. New fingerprints from community sync. Stability ... |
@@ -136,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v8.5.38** | v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec ... |
 | **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database, CI |
 | **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all 360 Zigbee manufacturer names. New soil... |
-| **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Driver count, App.json |
 
 <!-- CHANGELOG_END -->
 
@@ -202,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 412 Drivers ─ 12,838+ fingerprints
+       └─ 412 Drivers ─ 13,132+ fingerprints
 ```
 
 ---
