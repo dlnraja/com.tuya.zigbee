@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v8.5.26** | v8.5.24: Fixed app crash on startup by correcting the base class from .App., ... |
+| **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initiali... |
+| **v8.5.22** | v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (... |
+| **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
+| **v8.5.20** | v8.5.20: . New soil sensor support. Removed stale fingerprints. General stabi... |
+| **v8.5.17** | v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor... |
+| **v8.1.13** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app ins... |
+| **v8.1.12** | v8.1.12 — 298 new fingerprints added, DeviceIdentificationDatabase crash fix,... |
+| **v8.1.11** | Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298... |
+| **v8.1.10** | Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
