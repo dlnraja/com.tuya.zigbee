@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-28T11:01:10.156Z",
+  "ts": "2026-05-28T13:03:49.363Z",
   "currentCount": 10525,
   "src": {
     "johan": {
@@ -19250,9 +19250,19 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 60,
+      "issueCount": 61,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 348,
+          "title": "[Auto] 114 new fingerprints from community (2026-05)",
+          "mfrs": [
+            "_TZE204_hewlydpz",
+            "_TZE284_gnpflcoq",
+            "_TZB210_qzsxaqqe"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 342,
@@ -19504,17 +19514,6 @@
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1392,
-          "title": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
-          "mfrs": [
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc"
           ]
         }
       ]
