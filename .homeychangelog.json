@@ -1,12 +1,18 @@
 {
-  "8.5.33": {
-    "en": "CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.compose.json (156 drivers fixed). Fix category to array format. Fix all image paths. Inject fingerprints from data/fingerprints.json (126k entries). Merge PR #345 garage_door_opener DP3. Process Issues #322 #324 #328 #329 #333 #334 #337 #339 #340.",
-    "fr": "CORRECTIF CRITIQUE: Restauration de tous les manufacturerName statiques dans driver.compose.json (156 drivers). Fix category en array. Fix chemins images. Injection depuis data/fingerprints.json (126k entrées). Merge PR #345 garage_door_opener DP3. Traitement Issues #322 #324 #328 #329 #333 #334 #337 #339 #340."
-  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
+  "8.5.34": {
+    "en": "v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, resolving the AggregateError crash. 4,361 fingerprint conflicts resolved."
+  },
+  "8.5.33": {
+    "en": "CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.compose.json (156 drivers fixed). Fix category to array format. Fix all image paths. Inject fingerprints from data/fingerprints.json (126k entries). Merge PR #345 garage_door_opener DP3. Process Issues #322 #324 #328 #329 #333 #334 #337 #339 #340.",
+    "fr": "CORRECTIF CRITIQUE: Restauration de tous les manufacturerName statiques dans driver.compose.json (156 drivers). Fix category en array. Fix chemins images. Injection depuis data/fingerprints.json (126k entrées). Merge PR #345 garage_door_opener DP3. Traitement Issues #322 #324 #328 #329 #333 #334 #337 #339 #340."
+  },
+  "8.5.30": {
+    "en": "v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garage Door Opener, Updated to **412 drivers** and **7449 fingerprints** total."
   },
   "8.5.29": {
     "en": "Garage door opener fix: DP3 state now properly applied to Homey. 122 new fingerprints added from community sync.  total."
@@ -56,16 +62,7 @@
   "8.1.7": {
     "en": "298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision corrections."
   },
-  "8.1.6": {
-    "en": "Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints for christmas_lights, curtain_module_2_gang, and dimmer drivers. Removed outdated configurations."
-  },
-  "8.1.5": {
-    "en": "v8.1.5 — 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation valve, battery init fix, SOS/BSEED/Avatto WT198 fixes, SmartDivisor math, mainsPowered optimization, 53 FPs validated."
-  },
-  "8.1.4": {
-    "en": ". New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_high, boost_mode. 82 Johan SDK3 fingerprints added. 5 bug fixes. 1208 fingerprints auto-healed."
-  },
-  "8.5.30": {
-    "en": "v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garage Door Opener, Updated to **412 drivers** and **7449 fingerprints** total."
+  "8.5.35": {
+    "en": "v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Driver count, App.json"
   }
 }
