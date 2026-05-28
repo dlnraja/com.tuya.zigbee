@@ -91,8 +91,8 @@ jobs:
       - name: 🧪 Regression Verification
         run: |
           echo "Verifying presence of critical stability hooks..."
-          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar_unified/device.js && echo "✅ Radar Hook Active"
-          grep -q "Smart Divisor" lib/devices/UnifiedSensorBase.js && echo "✅ Smart Divisor Active"
+          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar/device.js && echo "✅ Radar Hook Active"
+          grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "✅ Smart Divisor Active"
       
       - name: 📦 Artifact
         uses: actions/upload-artifact@v4
