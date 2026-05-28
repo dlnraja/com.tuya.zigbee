@@ -282,14 +282,26 @@ jobs:
           node .github/scripts/auto-update-docs.js || true
           node .github/scripts/generate-readme.js || true
 
-      - name: "🔧 M09 Auto-fix — restore MFs from fingerprints (prevents bot regression)"
+      - name: "🔧 M09+M15 Auto-fix — clean empty MF arrays + restore MFs from fingerprints"
         if: always()
         continue-on-error: true
         run: |
-          node - << 'M09_FIX'
+          node - << 'MF_CLEANUP'
           const fs = require('fs');
           const app = JSON.parse(fs.readFileSync('app.json','utf8'));
-          let fixed = 0;
+          let emptyRemoved = 0, fpFixed = 0;
+
+          // M15: Remove empty manufacturerName arrays (Athom CLI removes them anyway)
+          // Keeping them causes the build to lose MF data silently -> AggregateError
+          app.drivers.forEach(d => {
+            if (!d.zigbee) return;
+            if (Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0) {
+              delete d.zigbee.manufacturerName;
+              emptyRemoved++;
+            }
+          });
+
+          // M09: For drivers with fingerprints but no MF, extract MF from fingerprints
           app.drivers.forEach(d => {
             if (!d.zigbee) return;
             const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
@@ -298,18 +310,21 @@ jobs:
               const mfs = [...new Set(fps.map(fp => fp.manufacturerName).filter(Boolean))];
               if (mfs.length > 0) {
                 d.zigbee.manufacturerName = mfs;
-                fixed++;
-                console.log('Auto-fixed M09:', d.id, '->', mfs.length, 'MFs');
+                fpFixed++;
+                console.log('M09 fixed:', d.id, '->', mfs.length, 'MFs');
               }
             }
           });
-          if (fixed > 0) {
+
+          if (emptyRemoved > 0 || fpFixed > 0) {
             fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
-            console.log('M09 auto-fix:', fixed, 'drivers restored');
+            console.log('M15: removed', emptyRemoved, 'empty MF arrays');
+            console.log('M09: extracted MF from FPs for', fpFixed, 'drivers');
           } else {
-            console.log('M09: all drivers OK, no fix needed');
+            console.log('M09+M15: all drivers OK, no fix needed');
           }
-          M09_FIX
+          MF_CLEANUP
+
 
       - name: Commit & Push
         if: always()
