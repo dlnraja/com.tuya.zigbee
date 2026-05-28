@@ -4,7 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.24] - 2026-05-27
+## [8.5.26] - 2026-05-28
+
+### New Features
+- Added 122 new device fingerprints from Z2M, ZHA, and community contributions (JohanBendz)
+
+### Bug Fixes
+- Fixed crash in OAuth2Client when CLIENT_ID was missing
+
+### Improvements
+- Expanded device support to 413 drivers with 7448 total fingerprints
+- Updated device matrix and project status reports
+---
+
+ [8.5.24] - 2026-05-27
 
 ### Bug Fixes
 - Fixed app crash on startup by correcting the base class from OAuth2App to Homey.App.

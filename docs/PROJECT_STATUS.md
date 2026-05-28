@@ -1,15 +1,15 @@
 # Project Status
 
-> Auto-generated on 2026-05-27
+> Auto-generated on 2026-05-28
 
 ## Overview
 
 | Metric | Value |
 |--------|-------|
-| Version | v8.5.26 |
+| Version | v8.5.27 |
 | Drivers | 413 |
 | Fingerprints | 12,027 |
-| Last Updated | 2026-05-27 |
+| Last Updated | 2026-05-28 |
 
 ## Drivers by Category
 

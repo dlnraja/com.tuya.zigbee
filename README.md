@@ -54,7 +54,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.26 |
+| **App Version** | v8.5.27 |
 | **Device Fingerprints** | 12,027+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 413 (362 Zigbee + 51 WiFi) |
@@ -64,7 +64,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-05-27 |
+| **Last Updated** | 2026-05-28 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -121,7 +121,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.5.26** | v8.5.24: Fixed app crash on startup by correcting the base class from .App., Added 122 new device fingerprints from c... |
+| **vv8_5_30** | [object Object] |
+| **v8.5.27** | v8.5.26: Added 122 new device fingerprints from Z2M, ZHA, and community contributions (JohanBendz), Fixed crash in , ... |
+| **v8.5.26** | v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total. |
 | **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initialization, and general stability improvements. |
 | **v8.5.22** | v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (_TZE284_0ints6wl). Bug fixes: auto-off t... |
 | **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
@@ -134,8 +136,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.1.9** | v8.1.9 â€” No driver changes. |
 | **v8.1.8** | 298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor upd... |
 | **v8.1.7** | 298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision correc... |
-| **v8.1.6** | Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints for christmas_lights, curtain_module_2_gan... |
-| **v8.1.5** | v8.1.5 â€” 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation valve, battery init fix, SOS/BSEED/Avatto W... |
 
 <!-- CHANGELOG_END -->
 
@@ -375,4 +375,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-05-27*
+*Last updated: 2026-05-28*
