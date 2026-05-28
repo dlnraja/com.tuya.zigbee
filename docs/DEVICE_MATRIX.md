@@ -4,16 +4,16 @@
 |--------|---------------|----------|-------------|
 | air_purifier | 0 | TS0601_air_purifier, TS0601 | onoff, dim, measure_pm25 |
 | air_purifier_motion | 9 | TS0601, TS0225, Excellux | onoff, dim, measure_pm25... |
-| air_purifier_presence | 0 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
+| air_purifier_presence | 1 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | air_purifier_sensor | 3 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
-| air_purifier_switch | 0 | TS0601_air_purifier, TS0601 | onoff, measure_battery, measure_power... |
+| air_purifier_switch | 1 | TS0601_air_purifier, TS0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 18 | TS0601_co2, TS0601 | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 33 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | bed_sensor | 1 | TS0601 | alarm_contact, measure_battery, alarm_battery |
 | bulb_dimmable | 628 | TS0501A, TS0501B, TS110E, TS110F, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, Plug 01, A19 W 10 year, BR30 W 10 year, PAR38 W 10 year, GL-B-001Z, RS 125, RB 165, RB 175 W, ZBT-DimmableLight, TS0052, TS1101 | dim, light_hue, light_saturation... |
 | bulb_dimmable_dimmer | 0 | TS1101, TS110E, TS110F, TS0052 | dim, light_hue, light_saturation... |
 | bulb_rgb | 4 | TS0503A, TS0503B, LCT001, LCT002, LCT003, LCT007, LCT010, LCT011, LCT012, LCT014, LCT015, LCT016, GL-C-006, RB 185 C, RB 285 C, E11-G13, E11-G14, E11-G23, ZBT-ColorLight, TS0505A, TS0505B, ZB-CL01, TS0504B | dim, light_hue, light_saturation... |
-| bulb_rgb_led | 0 | TS0505B | dim, light_hue, light_saturation... |
+| bulb_rgb_led | 1 | TS0505B | dim, light_hue, light_saturation... |
 | bulb_rgbw | 235 | generic, TS0504A, TS0504B, TS0505A, TS0505B, Classic A60 RGBW, Flex RGBW, GL-C-008, GL-B-008Z, TS1002, FE-GU10-5W, SMD9300, CK-BL702-AL-01(7009_Z102LG03-1) | onoff, dim, light_hue... |
 | bulb_rgbw_universal | 14 | TS0505B, TS0504B, TS0503B | onoff, dim, measure_temperature... |
 | bulb_tunable_white | 12 | TS0502A, TS0502B, LED1545G12, LED1546G12, LTW001, LTW004, LTW010, LTW012, LTW013, LTW015, Classic A60 TW, GL-C-007, GL-B-007Z, RS 128 T, RB 178 T, E11-N13, E11-N14, E12-N13, E12-N14, ZBT-CCTLight | dim, light_hue, light_saturation... |
@@ -50,11 +50,11 @@
 | device_air_purifier_din | 1 | TS0601_air_purifier, TS0601 | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_floor | 1 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_air_purifier_humidifier | 1 | TS0601_air_purifier, TS0601 | onoff, dim, measure_humidity... |
-| device_air_purifier_led | 0 | TS0601_air_purifier, TS0601 | dim, measure_battery, onoff... |
+| device_air_purifier_led | 1 | TS0601_air_purifier, TS0601 | dim, measure_battery, onoff... |
 | device_air_purifier_plug | 6 | TS011F | measure_power, meter_power, measure_voltage... |
-| device_air_purifier_presence | 12 | TS0601_air_purifier, TS0601 | alarm_motion, measure_luminance, measure_temperature... |
-| device_air_purifier_quality | 20 | TS0601_air_purifier, TS0601 | measure_co2, measure_pm25, measure_pm10... |
-| device_air_purifier_radiator | 20 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
+| device_air_purifier_presence | 1 | TS0601_air_purifier, TS0601 | alarm_motion, measure_luminance, measure_temperature... |
+| device_air_purifier_quality | 0 | TS0601_air_purifier, TS0601 | measure_co2, measure_pm25, measure_pm10... |
+| device_air_purifier_radiator | 12 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_siren | 20 | TS0601_air_purifier, TS0601 | alarm_motion, measure_battery, alarm_generic... |
 | device_air_purifier_smart | 20 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_humidity... |
 | device_air_purifier_smoke | 20 | TS0601_air_purifier, TS0601 | alarm_smoke, measure_battery, measure_temperature... |
@@ -63,17 +63,17 @@
 | device_air_purifier_water | 20 | TS0601_air_purifier, TS0601 | measure_water_level, measure_water_percentage, alarm_water_low... |
 | device_din_rail | 15 | TS0601, TS0001, TS0002, TS011F | alarm_motion, alarm_contact, measure_battery... |
 | device_din_rail_meter | 0 | TS0601, TS0001, TS0002, TS011F | alarm_motion, alarm_contact, alarm_generic... |
-| device_floor_heating | 0 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
+| device_floor_heating | 1 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya | 9 | TS0601 | onoff, dim, measure_temperature... |
 | device_generic_tuya_universal | 44 | TS0203, TS0601 | measure_battery, measure_temperature, measure_humidity... |
 | device_plug_energy | 3 | TS0002, TS0121, TS011F | onoff, measure_power, meter_power... |
 | device_plug_smart | 3 | TS0601 | onoff, measure_power, meter_power... |
 | device_plug_smart_water | 3 | TS0601, TS0207 | onoff, measure_power, meter_power... |
-| device_radiator_valve | 0 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
+| device_radiator_valve | 1 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | device_radiator_valve_smart | 3 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | dimmable_led_strip | 3 | TS0502B |  |
 | dimmable_recessed_led | 3 | TS0502B |  |
-| dimmer_1_gang | 0 | TS110F, TS110E, TS0052 | onoff, dim |
+| dimmer_1_gang | 1 | TS110F, TS110E, TS0052 | onoff, dim |
 | dimmer_1_gang_2 | 3 | TS110E, TS0601 | onoff, dim |
 | dimmer_1_gang_tuya | 5 | TS110F, TS110E, TS0052 | onoff, dim |
 | dimmer_2_gang | 1 | TS110F, TS110E | onoff, dim |
@@ -169,7 +169,7 @@
 | relay_board_4_channel | 6 | TS0004 | onoff |
 | remote_button_emergency_sos | 2 | TS0040, SNZB-01, SNZB-01P, SNZB-01M, WB01, WB-01, CK-TLSR8656-SS5-01(7000), TS0041 | button.1, button.2, button.3... |
 | remote_button_wireless | 20 | TS0043, TS011F, TS0121, TSO121, TS0601 | button.1, button.2, button.3... |
-| remote_button_wireless_handheld | 0 | TS0044 | button.1, button.2, button.3... |
+| remote_button_wireless_handheld | 1 | TS0044 | button.1, button.2, button.3... |
 | remote_button_wireless_plug | 3 | TS011F, TS0121, TSO121 | measure_power, meter_power, measure_voltage... |
 | remote_button_wireless_smart | 3 | TS0601 | button.1, measure_battery, alarm_battery |
 | remote_button_wireless_wall | 42 | TS0041, TS0043, TS004F, TS0044, TS0046, TS0042 | button.1, measure_battery, alarm_battery |
@@ -202,8 +202,8 @@
 | sensor_lcdtemphumidsensor_temphumidsensor | 12 | TS0601_lcd, TS0601, TS0201, TY0201 | measure_temperature, measure_humidity, measure_battery... |
 | sensor_motion_presence | 3 | TS0225, TS0601, Excellux | alarm_motion, measure_luminance, measure_temperature... |
 | sensor_motion_radar | 3 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
-| sensor_presence_radar | 0 | TS0203, TS0601, ZG-204ZL, ZG-204ZM, ZG-204ZV, TS0225, CK-BL702-MWS-01(7016), ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
-| shutter_roller_controller | 0 | TS0601_shutter, TS0601 | alarm_generic, windowcoverings_state, measure_battery... |
+| sensor_presence_radar | 1 | TS0203, TS0601, ZG-204ZL, ZG-204ZM, ZG-204ZV, TS0225, CK-BL702-MWS-01(7016), ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
+| shutter_roller_controller | 1 | TS0601_shutter, TS0601 | alarm_generic, windowcoverings_state, measure_battery... |
 | siren | 75 | TS0216, TS0219, TS0601 | alarm_motion, measure_battery, alarm_generic... |
 | siren_sirentemphumidsensor | 3 | TS0601 | onoff, measure_temperature, measure_humidity... |
 | sirentemphumidsensor | 1 | TS0601 | onoff, measure_temperature, measure_humidity... |
@@ -317,6 +317,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 313 drivers, 12753 manufacturer IDs
+**Total:** 313 drivers, 12724 manufacturer IDs
 
-*Generated: 2026-05-28T20:12:24.777Z*
+*Generated: 2026-05-28T21:49:05.742Z*
