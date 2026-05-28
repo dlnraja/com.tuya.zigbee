@@ -213,7 +213,8 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          echo "Publishing v$(node -p \"require('./app.json').version\")..."
+          V=$(node -p "require('./app.json').version")
+          echo "Publishing v$V..."
           npx homey app publish
           echo "✅ Published successfully"
 
