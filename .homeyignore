@@ -101,10 +101,16 @@ lib/data/z2m_devices_full.json
 lib/tuya-dp-engine/
 
 # === Documentation ===
+# NOTE: README.txt IS REQUIRED by SDK (App.js:1427 throws if missing)
+# NOTE: README.*.txt ARE required for multilingual App Store descriptions
+# NOTE: README.md is kept for GitHub visibility
 CHANGELOG.md
 CONTRIBUTING.md
 LICENSE
-README.txt
+# README.txt            ← DO NOT EXCLUDE — REQUIRED BY ATHOM SDK
+# README.nl.txt         ← DO NOT EXCLUDE — App Store NL description
+# README.de.txt         ← DO NOT EXCLUDE — App Store DE description
+# README.fr.txt         ← DO NOT EXCLUDE — App Store FR description
 drivers/**/README.txt
 
 # === Root dev scripts (non-runtime) ===
