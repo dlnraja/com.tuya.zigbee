@@ -1,4 +1,7 @@
 {
+  "8.1.3": {
+    "en": "v8.1.3: Fixed AggregateError on Homey push — corrected UTF-8 encoding in 186 JSON files (latin-1/CP1252 garbled characters), removed invalid flow card ID 'switch_switch_2gang_gangX_scene' (uppercase X not allowed), renamed flow card 'resetEnergyMeter' to 'reset_energy_meter' (camelCase not allowed in flow card IDs). App name and description restored to Tuya Unified."
+  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",

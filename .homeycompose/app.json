@@ -1,22 +1,22 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.0.2",
+  "version": "8.1.3",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Unified Smart Home Engine",
-    "nl": "Unified Smart Home Engine",
-    "de": "Unified Smart Home Engine",
-    "fr": "Unified Smart Home Engine"
+    "en": "Tuya Unified",
+    "nl": "Tuya Unified",
+    "de": "Tuya Unified",
+    "fr": "Tuya Unified"
   },
   "description": {
-    "en": "Unified Smart Home Engine: High-performance local-first control for Tuya, eWeLink, SmartThings & more",
-    "nl": "Unified Smart Home Engine: Hoogwaardige lokale bediening voor Tuya, eWeLink, SmartThings & meer",
-    "de": "Unified Smart Home Engine: Leistungsstarke lokale Steuerung für Tuya, eWeLink, SmartThings & mehr",
-    "fr": "Unified Smart Home Engine : Contrôle local multi-protocoles pour Tuya, eWeLink, SmartThings & plus"
+    "en": "Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
+    "nl": "Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
+    "de": "Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
+    "fr": "Moteur Tuya Unified : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
   },
   "tags": {
     "en": [

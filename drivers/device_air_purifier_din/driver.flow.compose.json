@@ -4,23 +4,23 @@
       "id": "device_air_purifier_din_din_rail_meter_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changÃ©e",
+        "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changÃ©e",
+        "fr": "Puissance changée",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
+        "de": "Leistung geändert"
       }
     },
     {
       "id": "device_air_purifier_din_din_rail_meter_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changÃ©e"
+        "fr": "Tension changée"
       },
       "tokens": [
         {
@@ -35,14 +35,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Voltage changed",
-        "fr": "Tension changÃ©e"
+        "fr": "Tension changée"
       }
     },
     {
       "id": "device_air_purifier_din_din_rail_meter_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changÃ©"
+        "fr": "Courant changé"
       },
       "tokens": [
         {
@@ -57,14 +57,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Current changed",
-        "fr": "Courant changÃ©"
+        "fr": "Courant changé"
       }
     },
     {
       "id": "device_air_purifier_din_din_rail_meter_energy_changed",
       "title": {
         "en": "Energy consumption changed",
-        "fr": "Consommation changÃ©e"
+        "fr": "Consommation changée"
       },
       "tokens": [
         {
@@ -79,7 +79,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Energy consumption changed",
-        "fr": "Consommation changÃ©e"
+        "fr": "Consommation changée"
       }
     }
   ],
