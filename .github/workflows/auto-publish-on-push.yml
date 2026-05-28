@@ -158,6 +158,9 @@ jobs:
           console.log('✅ DUAL-LAYER PASS — Zéro AggregateError sur '+stats.z+' drivers Zigbee');
           DUAL_LAYER_GATE
 
+      - name: 🔐 Athom Server Requirements Validator (O17-O20)
+        run: node scripts/validate/validate-app-json.js
+
       - name: Validate (npx homey app validate --level publish)
         run: npx homey app validate --level publish
 

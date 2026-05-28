@@ -1,10 +1,11 @@
-# HOMEYIGNORE - Clean App Package (CRITICAL: Homey enforces 7MB limit)
-# Only runtime files go to Homey. Everything else excluded.
+# HOMEYIGNORE - Tuya Zigbee Master Branch
+# Based on working stable-v5 pattern.
+# CRITICAL RULE: NO *.json wildcard — it breaks runtime deps.
+# CRITICAL RULE: NO *.md wildcard at root — Homey requires README.md.
+# Only exclude specific dev/CI files, NEVER use broad wildcards.
 
 # === CI/CD & Dev Infrastructure ===
 .github/
-reimplementation_gateway/
-scratch/
 .githooks/
 .git/
 .windsurf/
@@ -19,16 +20,17 @@ project-data/
 data/community-sync/
 data/temp_desktop_cleanup/
 data/intel-harvest/
+data/intel-harvest/
 data/archive/
+reimplementation_gateway/
 diagnostics/
 reports/
 logs/
 .archive/
 settings/
 skills/
-tests/
-test/
-spec/
+scratch/
+tmp_artifacts/
 
 # === Dev config files ===
 .cascade
@@ -55,20 +57,6 @@ config.local.js
 secrets.json
 credentials.json
 
-# === Root dev files (large reports, docs, patches) ===
-*.md
-!drivers/**/*.md
-*.json
-!app.json
-!package.json
-!package-lock.json
-!.homeychangelog.json
-!driver-mapping-database.json
-*.patch
-*.py
-*.txt
-*.pdf
-
 # === Build/cache/deps ===
 node_modules/
 .npm/
@@ -82,7 +70,7 @@ temp/
 tmp/
 package-lock.json
 
-# === Large dev data files ===
+# === Large dev data JSON files (NOT needed at runtime) ===
 data/bug-fixes-report.json
 data/bug-patterns.json
 data/COMMUNITY_ENRICHMENT_REPORT.json
@@ -92,13 +80,11 @@ data/reference-urls.json
 data/community-intel.json
 data/universal_tuya_urls.json
 data/rapport_data.json
-data/analysis_output.txt
-data/assigned_output.txt
-data/key_analysis.txt
-data/rapport_analyse.txt
-data/rapport_suite.txt
+MANUFACTURER_IDS_AUDIT.json
+**/MANUFACTURER_IDS_AUDIT.json
+*.analysis.json
 
-# === Large lib/data files (dev-only) ===
+# === Large lib/data JSON files (dev-only, NOT imported at runtime) ===
 lib/data/categorized_devices.json
 lib/data/enrichment_data.json
 lib/data/fingerprints_raw.json
@@ -111,23 +97,27 @@ lib/data/smart_fingerprints.js
 lib/data/z2m_devices.json
 lib/data/z2m_devices_full.json
 
-# === Dev-only engine ===
+# === Dev-only engine (not imported by runtime code) ===
 lib/tuya-dp-engine/
 
-# === Assets NOT needed for runtime ===
-assets/branding/
-assets/templates/
-assets/README.md
+# === Documentation ===
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+README.txt
+drivers/**/README.txt
 
-# === Oversized driver images (xlarge not needed, Homey uses small/large) ===
-drivers/*/assets/images/xlarge.png
-
-# === Root junk files (catch-all) ===
+# === Root dev scripts (non-runtime) ===
 _*.js
 _*.py
 *.ps1
 *.cmd
 *.bat
+*.patch
+*.py
+*.pdf
+
+# === Data files not needed ===
 *.csv
 **/*.csv
 *.log
@@ -151,20 +141,34 @@ backup-*
 Thumbs.db
 desktop.ini
 
-# === Audit/analysis files ===
-MANUFACTURER_IDS_AUDIT.json
-**/MANUFACTURER_IDS_AUDIT.json
-*.analysis.json
+# === Test files ===
+test/
+tests/
+spec/
+*.test.js
+*.spec.js
 
-# === Learnmode SVGs ===
+# === Assets NOT needed for runtime ===
+assets/branding/
+assets/templates/
+assets/README.md
+
+# === Learnmode SVGs (optional) ===
 **/learnmode.svg
 
-# === KEEP these (required for App Store & Runtime): ===
-# .homeychangelog.json - required
-# drivers/*/assets/images/small.png - required
-# drivers/*/assets/images/large.png - required  
-# drivers/*/assets/images/xlarge.png - recommended
-# drivers/*/assets/icon.svg - required
-# data/fingerprints.json - REQUIRED AT RUNTIME (DeviceFingerprintDB.js lazy-loads it)
-# driver-mapping-database.json - REQUIRED AT RUNTIME (DriverMappingLoader.js)
-# lib/tuya/fingerprints.json - REQUIRED AT RUNTIME (tuya-engine)
+# === RUNTIME FILES — DO NOT EXCLUDE (required for App Store & Runtime) ===
+# app.json                          ← Homey manifest
+# package.json                      ← Node package
+# .homeychangelog.json              ← Store changelog
+# driver-mapping-database.json      ← DriverMappingLoader.js
+# data/fingerprints.json            ← DeviceFingerprintDB.js (lazy-loaded)
+# lib/tuya/fingerprints.json        ← tuya-engine/index.js:14
+# lib/tuya/profiles.json            ← tuya-engine/index.js:15
+# lib/tuya/capability-map.json      ← tuya-dp-engine
+# locales/*.json                    ← lib/util/index.js:131
+# assets/icon.svg                   ← Athom SDK3 App.js:618 (iconHash)
+# assets/images/small.png           ← Required
+# assets/images/large.png           ← Required
+# drivers/*/assets/icon.svg         ← Required per driver
+# drivers/*/assets/images/small.png ← Required
+# drivers/*/assets/images/large.png ← Required
