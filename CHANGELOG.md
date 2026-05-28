@@ -4,7 +4,30 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.44] - 2026-05-28
+## [8.5.45] - 2026-05-28
+
+### Bug Fixes
+- **CRITICAL**: Removed 75 empty manufacturerName[] arrays causing AggregateError on startup
+- **CRITICAL**: Restored missing manufacturerName for button_wireless_4 and illuminance_sensor drivers
+- **CRITICAL**: Rewrote .homeyignore to prevent server-side file exclusion
+- **CRITICAL**: Removed invalid 'icon' field from app.json, added proper assets/icon.svg
+- **CRITICAL**: Fixed app.json permissions (removed api+homey:manager:api, set category to string)
+- Restored all 360 Zigbee driver manufacturerName entries to zero AggregateError
+- Resolved 4361 fingerprint conflicts across drivers
+
+### New Features
+- **114 new fingerprints** from Z2M, ZHA, community reports, and JohanBendz fork
+- Added mandatory README.txt + multilingual README.*.txt files for store compliance
+- Comprehensive mandatory files gate with pre-commit/pre-push hooks
+
+### Improvements
+- Dual-layer anti-AggregateError automation pipeline for CI stability
+- Root cleanup: archived junk files, removed deprecated audit reports
+- Updated CRITICAL_MISTAKES with O13-O16 rules
+- Community sync: 114 new FPs from Z2M/ZHA/community/JohanBendz
+---
+
+ [8.5.44] - 2026-05-28
 
 ### Bug Fixes
 - **Critical fix**: Resolved app crash (AggregateError) on startup caused by empty `manufacturerName[]` arrays in 75 drivers. All 360 Zigbee drivers now have valid manufacturer names.
