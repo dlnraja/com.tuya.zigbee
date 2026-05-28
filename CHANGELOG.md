@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.34] - 2026-05-28
+## [8.5.36] - 2026-05-28
+
+### Bug Fixes
+- **Critical fix**: Resolved AggregateError crash on app startup by restoring all 360 Zigbee manufacturer names in driver manifests
+- **Root cleanup**: Removed stale audit reports, consolidated fix documents, and deprecated project index files to reduce app size
+
+### New Features
+- **New device support**: Added fingerprint for soil sensor `_TZE284_0ints6wl` / TS0601 (requested by community)
+
+### Improvements
+- **Fingerprint database**: Expanded to 24,519 fingerprints across 412 drivers
+- **CI pipeline**: Added dual-layer integrity gate to prevent future manufacturer name corruption
+- **Stability**: Enhanced app.json validation and icon.svg inclusion for all drivers
+---
+
+ [8.5.34] - 2026-05-28
 
 ### Bug Fixes
 - **Critical fix**: Restored all 360 Zigbee driver `manufacturerName` entries, eliminating the `AggregateError` crash on startup.

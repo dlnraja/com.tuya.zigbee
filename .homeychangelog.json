@@ -4,6 +4,12 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.5.36": {
+    "en": "v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all 360 Zigbee manufacturer names. New soil sensor support (_TZE284_0ints6wl)."
+  },
+  "8.5.35": {
+    "en": "v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Driver count, App.json"
+  },
   "8.5.34": {
     "en": "v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, resolving the AggregateError crash. 4,361 fingerprint conflicts resolved."
   },
@@ -56,13 +62,7 @@
   "8.1.9": {
     "en": "v8.1.9 — No driver changes."
   },
-  "8.1.8": {
-    "en": "298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor updates."
-  },
-  "8.1.7": {
-    "en": "298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision corrections."
-  },
-  "8.5.35": {
-    "en": "v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Driver count, App.json"
+  "8.5.37": {
+    "en": "v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database, CI"
   }
 }
