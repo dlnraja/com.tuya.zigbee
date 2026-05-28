@@ -215,7 +215,7 @@ jobs:
         run: |
           V=$(node -p "require('./app.json').version")
           echo "Publishing v$V..."
-          npx homey app publish
+          echo "y" | npx homey app publish
           echo "✅ Published successfully"
 
       # ─────────────────────────────────────────────────────────────
