@@ -37,17 +37,18 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.5.38** | v8.5.38: Fix Processing failed â€” remove invalid icon field from app.json, use... |
 | **vv8_5_30** |  |
+| **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database... |
+| **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all... |
 | **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Drive... |
 | **v8.5.34** | v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, reso... |
 | **v8.5.33** | CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.comp... |
 | **v8.5.30** | v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garag... |
 | **v8.5.29** | Garage door opener fix: DP3 state now properly applied to Homey. 122 new fing... |
 | **v8.5.28** | v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability impr... |
-| **v8.5.27** | Removed SmartThings 2 integration. Monthly  adds 413 drivers and 3306 validat... |
-| **v8.5.26** | v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total. |
-| **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initiali... |
 <!-- CHANGELOG_END -->
+
 
 
 
