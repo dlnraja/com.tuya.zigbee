@@ -17,6 +17,8 @@ const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
+const { OAuth2App } = require('homey-oauth2app');
+const SmartThingsOAuth2Client = require('./lib/smartthings/SmartThingsOAuth2Client');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
@@ -51,7 +53,10 @@ const SessionManager = require('./lib/session/SessionManager');
 const HealthMonitor = require('./lib/health/HealthMonitor');
 const SanityFilter = require('./lib/filter/SanityFilter');
 
-class TuyaUnifiedZigbeeApp extends Homey.App {
+class TuyaUnifiedZigbeeApp extends OAuth2App {
+  static OAUTH2_CLIENT = SmartThingsOAuth2Client;
+  static OAUTH2_DRIVERS = [];
+
   _flowCardsRegistered = false;
   flowCardManager = null;
   capabilityManager = null;
