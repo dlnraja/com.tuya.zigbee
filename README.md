@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **vv8_5_30** |  |
+| **v8.5.29** | v8.5.28: Added support for new soil sensor: `_TZE284_0ints6wl` / TS0601, Expa... |
+| **v8.5.28** | v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability impr... |
+| **v8.5.27** | Removed SmartThings 2 integration. Monthly  adds 413 drivers and 3306 validat... |
+| **v8.5.26** | v8.5.26: 122 new fingerprints from community sync. Fixed 2Client crash.  total. |
+| **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initiali... |
+| **v8.5.22** | v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (... |
+| **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
+| **v8.5.20** | v8.5.20: . New soil sensor support. Removed stale fingerprints. General stabi... |
+| **v8.5.17** | v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
