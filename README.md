@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-21,375+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-18,914+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-412-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,073-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **21,375+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **18,914+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -30,60 +30,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## Supported Devices
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requi... |
-| **v8.5.38** | v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use... |
-| **vv8_5_30** |  |
-| **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database... |
-| **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all... |
-| **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Drive... |
-| **v8.5.34** | v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, reso... |
-| **v8.5.33** | CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.comp... |
-| **v8.5.30** | v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garag... |
-| **v8.5.29** | Garage door opener fix: DP3 state now properly applied to Homey. 122 new fing... |
-<!-- CHANGELOG_END -->
-
-
-
-
-
-
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **vv8_5_30** |  |
-| **v8.5.44** | v8.5.43: Fixed manufacturer fingerprint restoration for button_wireless_4 and... |
-| **v8.5.43** | v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer finger... |
-| **v8.5.42** | v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerpr... |
-| **v8.5.41** | v8.5.41: . Critical fixes for app.json validation (category, permissions, ico... |
-| **v8.5.40** | v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual... |
-| **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requi... |
-| **v8.5.38** | v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use... |
-| **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database... |
-| **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all... |
-<!-- CHANGELOG_END -->
-
-
-
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.44 |
-| **Device Fingerprints** | 21,375+ |
+| **App Version** | v8.5.45 |
+| **Device Fingerprints** | 18,914+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,073 |
@@ -99,25 +51,25 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | # | Driver | Fingerprints |
 |---|--------|-------------|
 | 1 | `climate_sensor` | 2,036 |
-| 2 | `sensor_climate_lcdtemphumidsensor` | 2,036 |
-| 3 | `sensor_climate_presence` | 2,036 |
-| 4 | `sensor_climate_smart` | 2,036 |
-| 5 | `sensor_climate_temphumidsensor` | 2,036 |
-| 6 | `switch_1gang` | 1,231 |
-| 7 | `bulb_dimmable` | 628 |
-| 8 | `presence_sensor_radar` | 502 |
-| 9 | `radiator_valve` | 479 |
-| 10 | `wall_dimmer_tuya` | 377 |
-| 11 | `curtain_motor` | 366 |
-| 12 | `generic_tuya` | 357 |
-| 13 | `motion_sensor` | 264 |
-| 14 | `bulb_rgbw` | 235 |
-| 15 | `sensor_contact_rain` | 228 |
-| 16 | `sensor_contact_zigbee` | 228 |
-| 17 | `plug_energy_monitor` | 225 |
-| 18 | `diy_custom_zigbee` | 206 |
-| 19 | `generic_diy` | 202 |
-| 20 | `switch_4gang` | 199 |
+| 2 | `sensor_climate_presence` | 2,036 |
+| 3 | `sensor_climate_smart` | 2,036 |
+| 4 | `sensor_climate_temphumidsensor` | 2,036 |
+| 5 | `switch_1gang` | 1,231 |
+| 6 | `bulb_dimmable` | 628 |
+| 7 | `presence_sensor_radar` | 502 |
+| 8 | `radiator_valve` | 478 |
+| 9 | `wall_dimmer_tuya` | 377 |
+| 10 | `curtain_motor` | 365 |
+| 11 | `generic_tuya` | 357 |
+| 12 | `motion_sensor` | 264 |
+| 13 | `bulb_rgbw` | 235 |
+| 14 | `sensor_contact_zigbee` | 228 |
+| 15 | `plug_energy_monitor` | 220 |
+| 16 | `diy_custom_zigbee` | 206 |
+| 17 | `generic_diy` | 202 |
+| 18 | `switch_4gang` | 199 |
+| 19 | `thermostat_tuya_dp` | 195 |
+| 20 | `switch_2gang` | 191 |
 
 ### Drivers by Device Class
 
@@ -150,7 +102,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
-| **v8.5.44** | v8.5.43: Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor drivers, Resolved pe... |
+| **v8.5.45** | v8.5.44: Critical fix, Homey store compliance, Multilingual README, 114 new fingerprints, User feedback fixes |
+| **v8.5.44** | v8.5.44: Fixed critical app crash (AggregateError) caused by empty manufacturerName arrays in 75 drivers. Restored 36... |
 | **v8.5.43** | v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new fingerprints from ... |
 | **v8.5.42** | v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new device fingerprints ... |
 | **v8.5.41** | v8.5.41: . Critical fixes for app.json validation (category, permissions, icon). Restored 360 Zigbee manufacturer nam... |
@@ -163,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v8.5.34** | v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, resolving the AggregateError crash. 4,361 fi... |
 | **v8.5.33** | CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.compose.json (156 drivers fixed). Fix catego... |
 | **v8.5.30** | v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garage Door Opener, Updated to **412 drivers*... |
-| **v8.5.29** | Garage door opener fix: DP3 state now properly applied to Homey. 122 new fingerprints added from community sync.  total. |
 
 <!-- CHANGELOG_END -->
 
@@ -229,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 412 Drivers ─ 21,375+ fingerprints
+       └─ 412 Drivers ─ 18,914+ fingerprints
 ```
 
 ---
