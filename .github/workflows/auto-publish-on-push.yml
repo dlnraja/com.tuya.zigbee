@@ -215,7 +215,13 @@ jobs:
         run: |
           V=$(node -p "require('./app.json').version")
           echo "Publishing v$V..."
-          echo "y" | npx homey app publish
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "⚠️ Uncommitted changes detected — answering interactive prompts accordingly"
+            printf "y\nn\n" | npx homey app publish
+          else
+            echo "Clean workspace detected — answering version prompt"
+            echo "n" | npx homey app publish
+          fi
           echo "✅ Published successfully"
 
       # ─────────────────────────────────────────────────────────────
