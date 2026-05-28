@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.46] - 2026-05-28
+## [8.5.47] - 2026-05-28
+
+v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persistent M09 validation errors for button_wireless_4 and illuminance_sensor drivers, Fixed missing manufacturerName entries for 360 Zigbee drivers (AggregateError fix), Removed 75 empty manufacturerName arrays causing validation failures, Corrected .homeyignore to include multilingual READ
+---
+
+ [8.5.46] - 2026-05-28
 
 ### Bug Fixes
 - Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup)
