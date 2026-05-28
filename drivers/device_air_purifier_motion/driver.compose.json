@@ -31,35 +31,12 @@
       "units": "Âµg/mÂ³"
     }
   },
-  "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0225",
-      "Excellux"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0
-        ]
-      }
-    },
-    "learnmode": {
-      "instruction": {
-        "en": "Press and hold the power button for 5 seconds",
-        "fr": "Maintenez le bouton power pendant 5 secondes"
-      }
-    }
-  },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",
     "large": "/drivers/air_purifier/assets/images/large.png"
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "energy": {
     "approximation": {

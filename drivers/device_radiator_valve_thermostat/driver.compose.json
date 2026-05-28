@@ -17,38 +17,6 @@
   "platforms": [
     "local"
   ],
-  "connectivity": [
-    "zigbee"
-  ],
-  "zigbee": {
-    "productId": [
-      "TV01-ZB",
-      "TV02-ZB",
-      "TRV601",
-      "TRV602",
-      "SEA801-Zigbee",
-      "eTRV0100",
-      "SPZB0001",
-      "SPZB0003",
-      "lumi.airrtc.agl001",
-      "lumi.airrtc.vrfegl01",
-      "014G2461",
-      "014G2463",
-      "STZB402",
-      "STZB403",
-      "Zen-01",
-      "TS0601",
-      "TRVZB"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ]
-      }
-    }
-  },
   "images": {
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
     "small": "/drivers/thermostat_tuya_dp/assets/images/small.png"

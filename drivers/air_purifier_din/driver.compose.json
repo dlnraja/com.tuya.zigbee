@@ -32,35 +32,12 @@
       "units": "kWh"
     }
   },
-  "zigbee": {
-    "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    },
-    "learnmode": {
-      "instruction": {
-        "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
-        "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'Ã clignotement rapide"
-      }
-    }
-  },
   "images": {
     "small": "/drivers/din_rail_switch/assets/images/small.png",
     "large": "/drivers/din_rail_switch/assets/images/large.png"
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "maintenanceActions": [
     {

@@ -30,44 +30,6 @@
       }
     }
   },
-  "zigbee": {
-    "productId": [
-      "TS0201",
-      "TS0222",
-      "TH01",
-      "WSDCGQ01LM",
-      "WSDCGQ11LM",
-      "WSDCGQ12LM",
-      "lumi.sensor_ht",
-      "lumi.sensor_ht.agl02",
-      "lumi.weather",
-      "SM0201",
-      "SNZB-02",
-      "SNZB-02D",
-      "SNZB-02P",
-      "TS0601",
-      "ZG-227Z",
-      "ZG-227ZL",
-      "CK-TLSR8656-SS5-01(7014)",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02WD",
-      "THS317-ET",
-      "ZG-303Z",
-      "TY0201",
-      "TS1201",
-      "RH3052",
-      "Excellux"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    }
-  },
   "settings": [
     {
       "type": "group",
@@ -673,9 +635,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "maintenanceActions": [
     {

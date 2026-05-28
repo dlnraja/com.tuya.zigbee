@@ -18,29 +18,12 @@
     "measure_pm25",
     "alarm_battery"
   ],
-  "zigbee": {
-    "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    }
-  },
   "images": {
     "small": "/drivers/curtain_motor_tilt/assets/images/small.png",
     "large": "/drivers/curtain_motor_tilt/assets/images/large.png"
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "energy": {
     "batteries": [

@@ -67,21 +67,6 @@
     "mains": true
   },
   "subDevices": [],
-  "zigbee": {
-    "productId": [
-      "TS0601_lcd",
-      "TS0601",
-      "TS0201",
-      "TY0201"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0
-        ]
-      }
-    }
-  },
   "settings": [
     {
       "type": "group",
@@ -407,9 +392,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "maintenanceActions": [
     {

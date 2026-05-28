@@ -55,59 +55,12 @@
     },
     "mains": true
   },
-  "zigbee": {
-    "productId": [
-      "TS0040",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-01M",
-      "WB01",
-      "WB-01",
-      "CK-TLSR8656-SS5-01(7000)",
-      "TS0041"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          4,
-          5,
-          6,
-          18,
-          57344
-        ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/button_wireless_2/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
-      }
-    }
-  },
   "images": {
     "small": "/drivers/button_wireless_2/assets/images/small.png",
     "large": "/drivers/button_wireless_2/assets/images/large.png"
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "settings": [
     {

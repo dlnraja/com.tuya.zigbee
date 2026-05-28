@@ -59,7 +59,16 @@
         "es": "Mantenga presionado el botón de reinicio durante 5 segundos hasta que el LED parpadee rápidamente",
         "da": "Hold nulstillingsknappen inde i 5 sekunder, indtil LED'en blinker hurtigt"
       }
-    }
+    },
+    "manufacturerName": [
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "_TZ3000_",
+      "_TZ3400_",
+      "_TYZB01_"
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless/assets/images/small.png",

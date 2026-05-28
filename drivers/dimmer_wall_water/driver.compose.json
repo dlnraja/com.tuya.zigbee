@@ -22,34 +22,6 @@
     ],
     "mains": true
   },
-  "zigbee": {
-    "productId": [
-      "TS0601_dim1",
-      "TS0601",
-      "ZBMINI-DIM",
-      "ZBMINID",
-      "TS110E",
-      "TS110F",
-      "TS1101",
-      "TS0052",
-      "TS0011"
-    ],
-    "learnmode": {
-      "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
-      }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    }
-  },
   "settings": [
     {
       "id": "power_source",
@@ -495,9 +467,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "pair": [
     {
