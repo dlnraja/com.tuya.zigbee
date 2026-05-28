@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requi... |
 | **v8.5.38** | v8.5.38: Fix Processing failed â€” remove invalid icon field from app.json, use... |
 | **vv8_5_30** |  |
 | **v8.5.37** | v8.5.36: Critical fix, Root cleanup, New device support, Fingerprint database... |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.33** | CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.comp... |
 | **v8.5.30** | v8.5.29: Garage Door Opener, 122 new fingerprints, Plug Energy Monitor, Garag... |
 | **v8.5.29** | Garage door opener fix: DP3 state now properly applied to Homey. 122 new fing... |
-| **v8.5.28** | v8.5.28: . New soil sensor support (_TZE284_0ints6wl). General stability impr... |
 <!-- CHANGELOG_END -->
+
 
 
 
