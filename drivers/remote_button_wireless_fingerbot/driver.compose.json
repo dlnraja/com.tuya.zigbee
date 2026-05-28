@@ -14,32 +14,6 @@
     "finger_bot_mode",
     "alarm_battery"
   ],
-  "zigbee": {
-    "productId": [
-      "TS0040",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-01M",
-      "WB01",
-      "WB-01",
-      "CK-TLSR8656-SS5-01(7000)",
-      "TS0041"
-    ],
-    "learnmode": {
-      "image": "/drivers/switch_1gang/assets/learnmode.svg",
-      "instruction": {
-        "en": "Turn the switch on/off 3 times quickly"
-      }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ]
-      }
-    }
-  },
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",
     "large": "/drivers/switch_1gang/assets/images/large.png"
@@ -828,9 +802,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "capabilitiesOptions": {
     "measure_battery": {

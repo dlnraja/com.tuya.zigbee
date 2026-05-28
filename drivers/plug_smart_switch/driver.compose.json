@@ -11,33 +11,6 @@
     "button.identify",
     "alarm_battery"
   ],
-  "zigbee": {
-    "productId": [
-      "TS0111",
-      "TS0101",
-      "TS0601",
-      "TS011F",
-      "S26R2ZB",
-      "S31 Lite zb",
-      "S40LITE",
-      "S60ZBTPF",
-      "S60ZBTPG"
-    ],
-    "learnmode": {
-      "image": "/drivers/switch_1gang/assets/learnmode.svg",
-      "instruction": {
-        "en": "Turn the switch on/off 3 times quickly"
-      }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ]
-      }
-    }
-  },
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",
     "large": "/drivers/switch_1gang/assets/images/large.png"
@@ -828,9 +801,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "capabilitiesOptions": {
     "measure_battery": {

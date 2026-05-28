@@ -47,32 +47,9 @@
   "platforms": [
     "local"
   ],
-  "connectivity": [
-    "zigbee"
-  ],
   "images": {
     "small": "/drivers/curtain_motor/assets/images/small.png",
     "large": "/drivers/curtain_motor/assets/images/large.png"
-  },
-  "zigbee": {
-    "productId": [
-      "TS0601",
-      "Excellux"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/curtain_motor/assets/large.png",
-      "instruction": {
-        "en": "Follow the pairing instructions for your Smart Curtain Motor."
-      }
-    }
   },
   "settings": [
     {

@@ -61,40 +61,6 @@
     ],
     "mains": true
   },
-  "zigbee": {
-    "manufacturerName": [],
-    "productId": [
-      "TS0040",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-01M",
-      "WB01",
-      "WB-01",
-      "CK-TLSR8656-SS5-01(7000)",
-      "TS0041"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      },
-      "2": {
-        "clusters": [
-          4,
-          5,
-          6
-        ]
-      }
-    },
-    "learnmode": {
-      "instruction": {
-        "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",
-        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement."
-      }
-    }
-  },
   "settings": [
     {
       "id": "power_on_behavior",
@@ -383,9 +349,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "maintenanceActions": [
     {

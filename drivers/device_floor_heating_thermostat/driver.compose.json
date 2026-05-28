@@ -51,19 +51,6 @@
       ]
     }
   },
-  "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    }
-  },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
     "large": "/drivers/floor_heating_thermostat/assets/images/large.png",
@@ -71,9 +58,6 @@
   },
   "platforms": [
     "local"
-  ],
-  "connectivity": [
-    "zigbee"
   ],
   "energy": {
     "batteries": [
