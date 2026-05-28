@@ -61,8 +61,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.5.42** | v8.5.41: Critical, Critical, Critical, Fixed, Fixed |
 | **vv8_5_30** |  |
-| **v8.5.41** | v8.5.40: CRITICAL, CRITICAL, CRITICAL, Fixed .gitignore to allow multilingual... |
+| **v8.5.41** | v8.5.41: . Critical fixes for app.json validation (category, permissions, ico... |
 | **v8.5.40** | v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual... |
 | **v8.5.39** | v8.5.39: CRITICAL FIX - category must be string not array (Athom server requi... |
 | **v8.5.38** | v8.5.38: Fix Processing failed â€” remove invalid icon field from app.json, use... |
@@ -70,8 +71,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.36** | v8.5.36: Critical fix for app crash on startup (AggregateError). Restored all... |
 | **v8.5.35** | v8.5.34: Critical fix, Fingerprint conflicts, Empty manufacturer names, Drive... |
 | **v8.5.34** | v8.5.34: Critical fix restores all 360 Zigbee driver manufacturer names, reso... |
-| **v8.5.33** | CRITICAL FIX: Restore all static manufacturerName fingerprints in driver.comp... |
 <!-- CHANGELOG_END -->
+
 
 
 
