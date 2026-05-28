@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.5.28] - 2026-05-28
+## [8.5.29] - 2026-05-28
+
+### Bug Fixes
+- **Garage Door Opener**: Fixed an issue where DP3 state was never applied to Homey, causing incorrect door position reporting.
+
+### New Devices & Fingerprints
+- **122 new fingerprints** added from community sync (Z2M, ZHA, JohanBendz).
+- **Plug Energy Monitor**: Added support for new energy monitoring variant.
+- **Garage Door Opener**: Expanded fingerprint coverage for additional models.
+
+### Improvements
+- Updated to **412 drivers** and **7449 fingerprints** total.
+- Monthly enrichment cycle completed: 3307 fingerprints cross-referenced against Z2M/ZHA databases.
+---
+
+ [8.5.28] - 2026-05-28
 
 ### New Features
 - Added support for new soil sensor: `_TZE284_0ints6wl` / TS0601
