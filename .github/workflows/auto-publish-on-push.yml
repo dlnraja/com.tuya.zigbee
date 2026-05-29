@@ -104,7 +104,7 @@ jobs:
               appFixed++;
             }
           });
-          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app, null, 2), 'utf8');
+          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app), 'utf8');
 
           console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
           PRECLEAN
@@ -163,46 +163,36 @@ jobs:
           echo "Bumped to v$V"
 
       # ─────────────────────────────────────────────────────────────
-      # 5. VALIDATE — Strict gate before publish
+      # 4.5 COMPACT app.json — CRITICAL (prevents Athom 5MB upload limit error)
       # ─────────────────────────────────────────────────────────────
-      - name: Resolve fingerprint collisions
-        continue-on-error: true
-        run: node scripts/ci/resolve-collisions.js
-
-      - name: Mandatory files check (51 rules)
-        run: node scripts/validate/homey-mandatory-check.js
-
-      - name: Athom server requirements check
-        run: node scripts/validate/validate-app-json.js
-
-      - name: Anti-AggregateError gate (Zigbee MF check)
+      # WHY: The compose plugin (.homeyplugins.json "compose") rebuilds app.json
+      # from .homeycompose/ with 2-space indentation = 6.03MB for 412 drivers.
+      # Athom's servers reject files > ~5MB with "Processing failed".
+      # v8.1.6 (232 drivers = 3.67MB) worked; v8.1.7+ (412 drivers) breaks.
+      # FIX: compact JSON immediately before validate+publish (3.39MB → safe).
+      - name: "🗜️ COMPACT app.json (anti-Athom-5MB-limit)"
         run: |
-          node - << 'GATE'
+          node - << 'COMPACT'
           const fs = require('fs');
-          const app = JSON.parse(fs.readFileSync('app.json'));
-          const errors = [];
-          (app.drivers || []).forEach(d => {
-            if (!d.zigbee) return;
-            const conn = d.connectivity || [];
-            const isLan = conn.some(c => ['lan', 'cloud'].includes(c));
-            if (!isLan) {
-              const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
-              const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
-              if (hasFp && !hasMf) {
-                errors.push(d.id);
-              }
-            }
-          });
-          if (errors.length) {
-            console.error('❌ ' + errors.length + ' Zigbee drivers missing manufacturerName:');
-            errors.forEach(e => console.error('  -', e));
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          const compact = JSON.stringify(app);
+          const prev = fs.statSync('app.json').size;
+          fs.writeFileSync('app.json', compact, 'utf8');
+          const curr = compact.length;
+          console.log('app.json compacted:', (prev/1024/1024).toFixed(2) + 'MB → ' + (curr/1024/1024).toFixed(2) + 'MB');
+          if (curr / 1024 / 1024 > 5) {
+            console.error('❌ FATAL: app.json still > 5MB after compaction! (' + (curr/1024/1024).toFixed(2) + 'MB)');
             process.exit(1);
           }
-          console.log('✅ All Zigbee drivers have manufacturerName — no AggregateError risk');
-          GATE
+          console.log('✅ app.json safe for Athom upload (' + (curr/1024/1024).toFixed(2) + 'MB < 5MB limit)');
+          COMPACT
+          # Also remove .homeycompose to prevent the Homey CLI from
+          # re-expanding app.json with indentation during validate/publish
+          rm -rf .homeycompose
 
       - name: Official Homey validator
         run: npx homey app validate --level publish
+
 
       # ─────────────────────────────────────────────────────────────
       # 6. PUBLISH

@@ -342,7 +342,7 @@ jobs:
                 fixed++;
               }
             });
-            fs.writeFileSync('app.json', JSON.stringify(app, null, 2));
+            fs.writeFileSync('app.json', JSON.stringify(app)); // COMPACT: 412 drivers × null,2 = 6MB → exceeds Athom 5MB limit
             console.log('Total fixed:', fixed, 'drivers');
             INLINEFIX
           fi
