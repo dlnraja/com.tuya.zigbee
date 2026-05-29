@@ -30,6 +30,29 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v8.1.7** | v8.1.7: fix: generate missing small and large driver images to resolve server... |
+| **vv8_5_30** |  |
+| **v9.0.1** | v9.0.0: |
+| **v9.0.0** | v8.5.54: |
+| **v8.5.54** | v8.5.53: |
+| **v8.5.53** | v8.5.52: |
+| **v8.5.52** | v8.5.51: |
+| **v8.5.51** | v8.5.50: |
+| **v8.5.50** | v8.5.49: |
+| **v8.5.49** | v8.5.48: |
+<!-- CHANGELOG_END -->
+
+
+
+
+
 ## Statistics
 
 | Metric | Value |
