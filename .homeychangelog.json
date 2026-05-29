@@ -66,5 +66,8 @@
   },
   "8.1.10": {
     "en": "fix: resolve server-side AggregateError by reducing asset sizes and removing xlarge images"
+  },
+  "8.1.11": {
+    "en": "Fix AggregateError by including xlarge images"
   }
 }
