@@ -63,5 +63,8 @@
   },
   "8.1.9": {
     "en": "v8.1.8: chore: bump version to v8.1.8 and update changelog"
+  },
+  "8.1.10": {
+    "en": "fix: resolve server-side AggregateError by reducing asset sizes and removing xlarge images"
   }
 }
