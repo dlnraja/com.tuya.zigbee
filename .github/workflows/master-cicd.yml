@@ -200,6 +200,9 @@ jobs:
             git push origin HEAD:${{ github.ref_name }}
           fi
 
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+
       - name: 🏗️ Pre-build (Fix Bug #366)
         run: |
           npm ci

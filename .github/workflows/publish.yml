@@ -62,6 +62,9 @@ jobs:
         continue-on-error: false
         run: npm run validate:flows
 
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+
       - name: Validate (npx)
         run: npx homey app validate --level publish
 
@@ -184,6 +187,9 @@ jobs:
           git push origin HEAD --tags --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🗜️ Compact app.json before publish (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
 
       - name: Publish
         if: steps.pat.outputs.ok == 'true'

@@ -489,6 +489,40 @@ function auditWorkflows() {
 // Execute checks
 printHeader();
 
+// ─── app.json size gate ───────────────────────────────────────────────────
+// ROOT CAUSE of all "Processing failed" since v8.1.7:
+// .homeyplugins.json compose plugin rebuilds app.json with 2-space indentation
+// → 6.03MB for 412 drivers → Athom server rejects anything > ~5MB.
+console.log(`${colors.bold}⚡ Checking app.json size (Athom 5MB limit)...${colors.reset}`);
+try {
+  const appJsonPath = path.join(ROOT, 'app.json');
+  if (fs.existsSync(appJsonPath)) {
+    const raw = fs.readFileSync(appJsonPath, 'utf8');
+    const bytes = Buffer.byteLength(raw, 'utf8');
+    const mb = (bytes / 1024 / 1024).toFixed(2);
+    const drivers = (() => { try { return JSON.parse(raw).drivers?.length || 0; } catch { return '?'; } })();
+    const compact = JSON.stringify(JSON.parse(raw)).length;
+    const compactMB = (compact / 1024 / 1024).toFixed(2);
+    if (bytes / 1024 / 1024 > 5) {
+      report.errors.push({
+        file: appJsonPath,
+        type: 'APP_JSON_TOO_LARGE',
+        message: `app.json is ${mb}MB (${drivers} drivers) — EXCEEDS Athom 5MB limit! Run: node -e "const fs=require('fs');fs.writeFileSync('app.json',JSON.stringify(JSON.parse(fs.readFileSync('app.json','utf8'))))" to compact it to ~${compactMB}MB.`,
+      });
+    } else if (bytes / 1024 / 1024 > 4) {
+      report.warnings.push({
+        file: appJsonPath,
+        type: 'APP_JSON_SIZE_WARNING',
+        message: `app.json is ${mb}MB (${drivers} drivers) — approaching Athom 5MB limit! Consider keeping it compact (${compactMB}MB compact).`,
+      });
+    } else {
+      console.log(`   └─ app.json: ${colors.green}${mb}MB${colors.reset} (${drivers} drivers, compact: ${compactMB}MB) — ✅ within Athom limit`);
+    }
+  }
+} catch (e) {
+  // non-fatal
+}
+
 console.log(`${colors.bold}⚡ Conducting Fleetwood Code & Manifest Audit...${colors.reset}`);
 TARGET_DIRS.forEach(dir => {
   const fullPath = path.join(ROOT, dir);
