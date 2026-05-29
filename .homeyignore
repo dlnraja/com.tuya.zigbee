@@ -176,6 +176,7 @@ spec/
 assets/branding/
 assets/templates/
 assets/README.md
+**/xlarge.png
 
 # === Learnmode SVGs (optional) ===
 **/learnmode.svg
@@ -196,3 +197,19 @@ assets/README.md
 # drivers/*/assets/icon.svg         ← Required per driver
 # drivers/*/assets/images/small.png ← Required
 # drivers/*/assets/images/large.png ← Required
+
+# === Type definitions (not needed at runtime) ===
+*.d.ts
+*.d.mts
+*.ts
+*.mts
+
+# === Test files in node_modules ===
+**/node_modules/**/test.js
+**/node_modules/**/test/
+**/node_modules/**/*.test.js
+**/node_modules/**/test/
+**/node_modules/**/*.md
+**/node_modules/**/*.d.ts
+**/node_modules/**/*.d.mts
+**/node_modules/**/*.map
