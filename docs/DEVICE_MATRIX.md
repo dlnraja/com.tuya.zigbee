@@ -9,7 +9,7 @@
 | air_purifier_switch | 0 | TS0601_air_purifier, TS0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 18 | TS0601_co2, TS0601 | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 33 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_pm10... |
-| bed_sensor | 1 | TS0601 | alarm_contact, measure_battery, alarm_battery |
+| bed_sensor | 0 | TS0601 | alarm_contact, measure_battery, alarm_battery |
 | bulb_dimmable | 628 | TS0501A, TS0501B, TS110E, TS110F, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, Plug 01, A19 W 10 year, BR30 W 10 year, PAR38 W 10 year, GL-B-001Z, RS 125, RB 165, RB 175 W, ZBT-DimmableLight, TS0052, TS1101 | dim, light_hue, light_saturation... |
 | bulb_dimmable_dimmer | 0 | TS1101, TS110E, TS110F, TS0052 | dim, light_hue, light_saturation... |
 | bulb_rgb | 4 | TS0503A, TS0503B, LCT001, LCT002, LCT003, LCT007, LCT010, LCT011, LCT012, LCT014, LCT015, LCT016, GL-C-006, RB 185 C, RB 285 C, E11-G13, E11-G14, E11-G23, ZBT-ColorLight, TS0505A, TS0505B, ZB-CL01, TS0504B | dim, light_hue, light_saturation... |
@@ -40,13 +40,13 @@
 | co_sensor | 12 | TS0601_co, TS0601 | alarm_co, measure_battery, measure_co... |
 | contact_sensor | 4 | TS0203, ZG-102Z, ZG-102ZL, DS01, RH3001, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, lumi.sensor_magnet, lumi.sensor_magnet.aq2, lumi.magnet.ac01, lumi.magnet.agl02, E1603/E1702, TRADFRI open/close remote, 3300-S, 3320-L, SNZB-04, TS0601, SNZB-04P, SNZB-04PR2, CK-TLSR8656-SS5-01(7003), SNZB-04R2, TS0021, DoorWindow-Sensor-ZB3.0, MCT-340 E, TS0207, q9mpfhw | alarm_contact, measure_battery, alarm_tamper... |
 | curtain_module | 0 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
-| curtain_module_2_gang | 1 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
+| curtain_module_2_gang | 0 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
 | curtain_motor | 319 | TS0302, ZC-LS02, TS130F, DS82, DS421, lumi.curtain, lumi.curtain.hagl04, lumi.curtain.acn002, E1757, KADRILJ, FYRTUR, AM02, AM43-0.45/40-ES-EZ, AM43-0.45/40-ES-EB, TS0601, TS0301, ZBCurtain, TS030F, TS0105 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_shutter | 0 | TS0601, TS0301 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_tilt | 36 | TS0601_curtain_tilt, TS0601 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_wall | 24 | TS130F | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
-| device_air_purifier | 1 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
-| device_air_purifier_climate | 1 | TS0601_air_purifier, TS0601 | onoff, dim, measure_pm25... |
+| device_air_purifier | 0 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
+| device_air_purifier_climate | 0 | TS0601_air_purifier, TS0601 | onoff, dim, measure_pm25... |
 | device_air_purifier_din | 1 | TS0601_air_purifier, TS0601 | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_floor | 1 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_air_purifier_humidifier | 1 | TS0601_air_purifier, TS0601 | onoff, dim, measure_humidity... |
@@ -54,9 +54,9 @@
 | device_air_purifier_plug | 6 | TS011F | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_presence | 1 | TS0601_air_purifier, TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | device_air_purifier_quality | 1 | TS0601_air_purifier, TS0601 | measure_co2, measure_pm25, measure_pm10... |
-| device_air_purifier_radiator | 12 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
-| device_air_purifier_siren | 20 | TS0601_air_purifier, TS0601 | alarm_motion, measure_battery, alarm_generic... |
-| device_air_purifier_smart | 20 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_humidity... |
+| device_air_purifier_radiator | 0 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
+| device_air_purifier_siren | 0 | TS0601_air_purifier, TS0601 | alarm_motion, measure_battery, alarm_generic... |
+| device_air_purifier_smart | 12 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_humidity... |
 | device_air_purifier_smoke | 20 | TS0601_air_purifier, TS0601 | alarm_smoke, measure_battery, measure_temperature... |
 | device_air_purifier_soil | 20 | TS0601_air_purifier, TS0601 | measure_humidity.soil, measure_temperature, measure_humidity... |
 | device_air_purifier_thermostat | 20 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
@@ -92,11 +92,11 @@
 | door_controller_garage | 1 | TS0601, TS0603 | alarm_motion, alarm_contact, measure_battery... |
 | doorbell | 24 | TS0211, TS0601 | alarm_motion, alarm_contact, measure_battery... |
 | doorwindowsensor | 0 | RH3001, TS0203, TS0203 | alarm_contact, alarm_battery, measure_battery |
-| doorwindowsensor_2 | 1 | RH3001, TS0203, DoorWindow-Sensor-ZB3.0, MCT-340 E | alarm_contact, alarm_tamper, alarm_battery... |
+| doorwindowsensor_2 | 0 | RH3001, TS0203, DoorWindow-Sensor-ZB3.0, MCT-340 E | alarm_contact, alarm_tamper, alarm_battery... |
 | doorwindowsensor_3 | 3 | TS0203 | alarm_contact, alarm_battery, measure_battery |
 | doorwindowsensor_4 | 3 | DS01, TS0203 | alarm_contact, alarm_battery, measure_battery |
-| double_power_point | 1 | TS011F, TS0601 | onoff, measure_power, meter_power... |
-| double_power_point_2 | 1 | TS011F, TS0601 | onoff, measure_power, meter_power... |
+| double_power_point | 0 | TS011F, TS0601 | onoff, measure_power, meter_power... |
+| double_power_point_2 | 0 | TS011F, TS0601 | onoff, measure_power, meter_power... |
 | energy_meter_3phase | 42 | TS0601, TS0601_3phase | measure_power, meter_power, measure_voltage... |
 | fan_controller | 45 | TS0601_fanctrl, TS0601 | onoff, dim |
 | fingerbot | 12 | TS0001, TS0001_fingerbot, TS0003, TS011F, TS0011, TS000F | onoff, button.push, finger_bot_mode... |
@@ -122,8 +122,8 @@
 | ir_blaster | 90 | TS1201, TS0601 | onoff, volume_up, volume_down... |
 | lcdtemphumidluxsensor | 9 | TS0201, TS0222, TS0601, Excellux | measure_luminance, measure_temperature, measure_humidity... |
 | lcdtemphumidsensor | 6 | TS0601_lcd, TS0601, TS0201, TY0201 | measure_temperature, measure_humidity, measure_battery... |
-| lcdtemphumidsensor_2 | 1 | SM0201, TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
-| lcdtemphumidsensor_3 | 1 | TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
+| lcdtemphumidsensor_2 | 0 | SM0201, TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
+| lcdtemphumidsensor_3 | 0 | TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
 | lcdtemphumidsensor_plug_energy | 2 | TS0601 | measure_power, meter_power, measure_voltage... |
 | led_controller_cct | 21 | TS0502 | onoff, dim, light_temperature... |
 | led_controller_dimmable | 6 | TS0601_led, TS0501B, TRI-C1ZR, TRI-K1ZR | onoff, dim |
@@ -160,7 +160,7 @@
 | presence_sensor_radar | 395 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZV, ZG-205Z, ZP-301Z, SNZB-06P, ZG-204ZE, ZG-204ZQ, ZG-205ZL, ZG-302ZL, ZG-302ZM | alarm_motion, measure_luminance, measure_temperature... |
 | radar_sensor | 15 | TS0601 | measure_luminance, alarm_motion, target_distance |
 | radar_sensor_2 | 0 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZV, ZG-205Z, ZP-301Z, SNZB-06P, ZG-204ZE, ZG-204ZQ, ZG-205ZL, ZG-302ZL, ZG-302ZM | measure_luminance, alarm_motion, target_distance |
-| radar_sensor_ceiling | 1 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZV, ZG-205Z, ZP-301Z, SNZB-06P, ZG-204ZE, ZG-204ZQ, ZG-205ZL, ZG-302ZL, ZG-302ZM | measure_luminance, alarm_motion |
+| radar_sensor_ceiling | 0 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZV, ZG-205Z, ZP-301Z, SNZB-06P, ZG-204ZE, ZG-204ZQ, ZG-205ZL, ZG-302ZL, ZG-302ZM | measure_luminance, alarm_motion |
 | radiator_controller | 12 | TS0601_rad, TS0601 | onoff, target_temperature, measure_temperature... |
 | radiator_valve | 401 | TV01-ZB, TV02-ZB, TRV601, TRV602, SEA801-Zigbee, eTRV0100, SPZB0001, SPZB0003, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, 014G2461, 014G2463, STZB402, STZB403, Zen-01, TS0601, TRVZB | target_temperature, measure_temperature, thermostat_mode... |
 | radiator_valve_zigbee | 7 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
@@ -193,7 +193,7 @@
 | scene_switch_6 | 3 | TS0601_scene6 | button.1, button.2, button.3... |
 | scene_switch_wall | 3 | TS0042, TS0043 | button.1, button.2, measure_battery... |
 | sensor_climate_contact | 2 | TS0601 | measure_temperature, measure_temperature.probe, measure_humidity... |
-| sensor_climate_temphumidsensor | 1 | TS0201, TS0222, TH01, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, SM0201, SNZB-02, SNZB-02D, SNZB-02P, TS0601, ZG-227Z, ZG-227ZL, CK-TLSR8656-SS5-01(7014), SNZB-02DR2, SNZB-02LD, SNZB-02WD, THS317-ET, ZG-303Z, TY0201, TS1201, RH3052, Excellux | measure_temperature, measure_humidity, measure_battery... |
+| sensor_climate_temphumidsensor | 0 | TS0201, TS0222, TH01, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, SM0201, SNZB-02, SNZB-02D, SNZB-02P, TS0601, ZG-227Z, ZG-227ZL, CK-TLSR8656-SS5-01(7014), SNZB-02DR2, SNZB-02LD, SNZB-02WD, THS317-ET, ZG-303Z, TY0201, TS1201, RH3052, Excellux | measure_temperature, measure_humidity, measure_battery... |
 | sensor_contact_motion | 1 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | sensor_contact_plug | 3 | TS0601, Excellux | onoff, measure_power, meter_power... |
 | sensor_contact_presence | 2 | ZG-227Z | alarm_motion, measure_luminance, measure_temperature... |
@@ -227,7 +227,7 @@
 | smart_remote_1_button_2 | 3 | TS004F | button.1, measure_battery, alarm_battery |
 | smart_remote_4_buttons | 1 | TS0215A, TS0601 | button.1, button.2, button.3... |
 | smart_scene_panel | 6 | TS0601 | onoff.gang1, onoff.gang2, onoff.gang3... |
-| smart_switch | 1 | TS0001 | onoff |
+| smart_switch | 0 | TS0001 | onoff |
 | smartplug | 78 | TS0121, TSO121, TS011F | onoff, measure_power, meter_power... |
 | smartplug_2_socket | 3 | TS011F, TS0601 | onoff, measure_power, meter_power... |
 | smartPlug_DinRail | 3 | TS0121, TSO121, TS011F | onoff, measure_power, meter_power... |
@@ -242,12 +242,12 @@
 | soil_sensor | 98 | ZG-303Z, CS-201Z, TS0601, Arteco | measure_humidity.soil, measure_temperature, measure_humidity... |
 | soilsensor | 9 | TS0601 | measure_temperature, measure_humidity, measure_battery... |
 | soilsensor_2 | 6 | TS0601 | measure_temperature, measure_humidity, measure_battery... |
-| sr_zs_switch | 1 | TS0726, TS0001, TS0002 | onoff_1, onoff_2, onoff_3 |
+| sr_zs_switch | 0 | TS0726, TS0001, TS0002 | onoff_1, onoff_2, onoff_3 |
 | switch | 3 | TS0601, TS011F, TS0726 | onoff, onoff.gang2, measure_power... |
 | switch_1_gang | 183 | TS0003, TS011F, TS0011, TS000F, TS0001, TS0601 | onoff |
-| switch_1_gang_metering | 1 | TS0001, TS0601 | onoff, measure_power, meter_power... |
+| switch_1_gang_metering | 0 | TS0001, TS0601 | onoff, measure_power, meter_power... |
 | switch_1gang | 1232 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS0601, TS000F, ZBMINI, ZBMINIL2, BASICZBR3, S31ZB, S26R2ZB, 01MINIZB, ZBMINIR2, ZBM5-1C-120, ZBMINIR, ZBMINIL2-R2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, TS0101, TS4100, TS011F, ZBM5-2C-120, ZBM5-3C-120, TS0726 | onoff, measure_power, meter_power... |
-| switch_2_gang | 1 | TS0003, TS0012, TS011F, TS0002, TS0013 | onoff |
+| switch_2_gang | 0 | TS0003, TS0012, TS011F, TS0002, TS0013 | onoff |
 | switch_2_gang_metering | 1 | TS0002, TS011F, TS0601 | onoff, measure_power, meter_power... |
 | switch_2gang | 189 | TS0002, TS0012, TS0002_power, TS0002_switch_module, TS0601, ZG-302Z2, TS011F, ZG-305Z, TS0003, TS0013, TS0726 | onoff, onoff.gang2, measure_power... |
 | switch_3_gang | 3 | TS0003, TS0013 | onoff |
@@ -297,7 +297,7 @@
 | wall_remote_6_gang | 30 | TS0046, TS0601 | button.1, button.2, button.3... |
 | wall_socket | 9 | TS011F | onoff, measure_power, meter_power... |
 | wall_switch_1_gang | 5 | TS0001, TS0011, TS0601 | onoff |
-| wall_switch_1_gang_tuya | 1 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS0601, TS000F, ZBMINI, ZBMINIL2, BASICZBR3, S31ZB, S26R2ZB, 01MINIZB, ZBMINIR2, ZBM5-1C-120, ZBMINIR, ZBMINIL2-R2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, TS0101, TS4100, TS011F, ZBM5-2C-120, ZBM5-3C-120, TS0726 | onoff |
+| wall_switch_1_gang_tuya | 0 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS0601, TS000F, ZBMINI, ZBMINIL2, BASICZBR3, S31ZB, S26R2ZB, 01MINIZB, ZBMINIR2, ZBM5-1C-120, ZBMINIR, ZBMINIL2-R2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, TS0101, TS4100, TS011F, ZBM5-2C-120, ZBM5-3C-120, TS0726 | onoff |
 | wall_switch_1gang_1way | 21 | TS0001, TS0011 | onoff |
 | wall_switch_2_gang | 15 | TS0002, TS0012, TS0042 | onoff |
 | wall_switch_2gang_1way | 48 | TS0002, TS0012, TS0042 | onoff, onoff.gang2 |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 315 drivers, 12724 manufacturer IDs
+**Total:** 315 drivers, 12668 manufacturer IDs
 
-*Generated: 2026-05-29T00:02:16.961Z*
+*Generated: 2026-05-29T01:20:43.129Z*
