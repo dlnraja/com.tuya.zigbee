@@ -1,21 +1,21 @@
 # Monthly Tuya Zigbee Report - 2026-05
 
-*Generated: 2026-05-28T22:58:56.396Z*
+*Generated: 2026-05-29T00:02:17.018Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 412 |
-| Manufacturer IDs | 207321 |
-| Collisions | 85 |
+| Manufacturer IDs | 207322 |
+| Collisions | 83 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZE200_placeholder_generic|TS0601` | air_purifier_presence, air_purifier_switch, bed_sensor, curtain_module_2_gang, device_air_purifier, device_air_purifier_climate, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_humidifier, device_air_purifier_led, device_air_purifier_presence, device_floor_heating, device_radiator_valve, dimmer_air_purifier, door_controller_garage, double_power_point, double_power_point_2, gas_sensor_switch, lcdtemphumidsensor_2, lcdtemphumidsensor_3, outdoor_2_socket, radar_sensor_ceiling, sensor_climate_temphumidsensor, sensor_presence_radar, shutter_roller_controller, sirentemphumidsensor, smart_remote_4_buttons, switch_1_gang_metering, switch_2_gang_metering, temphumidsensor4, valve_dual_irrigation, wall_switch_1_gang_tuya, wall_switch_5_gang_tuya |
-| `_TZE200_placeholder_generic|TS0601_air_purifier` | air_purifier_switch, device_air_purifier, device_air_purifier_climate, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_humidifier, device_air_purifier_led, device_air_purifier_presence |
+| `_TZE200_placeholder_generic|TS0601` | bed_sensor, curtain_module_2_gang, device_air_purifier, device_air_purifier_climate, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_humidifier, device_air_purifier_led, device_air_purifier_presence, device_air_purifier_quality, device_floor_heating, device_radiator_valve, dimmer_air_purifier, door_controller_garage, double_power_point, double_power_point_2, gas_sensor_switch, lcdtemphumidsensor_2, lcdtemphumidsensor_3, outdoor_2_socket, radar_sensor_ceiling, sensor_climate_temphumidsensor, sensor_presence_radar, shutter_roller_controller, sirentemphumidsensor, smart_remote_4_buttons, switch_1_gang_metering, switch_2_gang_metering, temphumidsensor4, valve_dual_irrigation, wall_switch_1_gang_tuya, wall_switch_5_gang_tuya |
+| `_TZE200_placeholder_generic|TS0601_air_purifier` | device_air_purifier, device_air_purifier_climate, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_humidifier, device_air_purifier_led, device_air_purifier_presence, device_air_purifier_quality |
 | `_tze200_7bztmfm1|TS0601_air_purifier` | device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 | `_tze200_7bztmfm1|TS0601` | device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 | `_TZE200_7bztmfm1|TS0601_air_purifier` | device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
@@ -35,7 +35,7 @@
 | `_TZE204_7BZTMFM1|TS0601_air_purifier` | device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 | `_TZE204_7BZTMFM1|TS0601` | device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 
-*...and 65 more*
+*...and 63 more*
 
 ## 📋 Action Items
 

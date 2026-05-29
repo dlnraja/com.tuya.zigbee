@@ -4,9 +4,9 @@
 |--------|---------------|----------|-------------|
 | air_purifier | 0 | TS0601_air_purifier, TS0601 | onoff, dim, measure_pm25 |
 | air_purifier_motion | 9 | TS0601, TS0225, Excellux | onoff, dim, measure_pm25... |
-| air_purifier_presence | 1 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
+| air_purifier_presence | 0 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | air_purifier_sensor | 3 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
-| air_purifier_switch | 1 | TS0601_air_purifier, TS0601 | onoff, measure_battery, measure_power... |
+| air_purifier_switch | 0 | TS0601_air_purifier, TS0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 18 | TS0601_co2, TS0601 | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 33 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | bed_sensor | 1 | TS0601 | alarm_contact, measure_battery, alarm_battery |
@@ -53,7 +53,7 @@
 | device_air_purifier_led | 1 | TS0601_air_purifier, TS0601 | dim, measure_battery, onoff... |
 | device_air_purifier_plug | 6 | TS011F | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_presence | 1 | TS0601_air_purifier, TS0601 | alarm_motion, measure_luminance, measure_temperature... |
-| device_air_purifier_quality | 0 | TS0601_air_purifier, TS0601 | measure_co2, measure_pm25, measure_pm10... |
+| device_air_purifier_quality | 1 | TS0601_air_purifier, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | device_air_purifier_radiator | 12 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_siren | 20 | TS0601_air_purifier, TS0601 | alarm_motion, measure_battery, alarm_generic... |
 | device_air_purifier_smart | 20 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_humidity... |
@@ -64,6 +64,7 @@
 | device_din_rail | 15 | TS0601, TS0001, TS0002, TS011F | alarm_motion, alarm_contact, measure_battery... |
 | device_din_rail_meter | 0 | TS0601, TS0001, TS0002, TS011F | alarm_motion, alarm_contact, alarm_generic... |
 | device_floor_heating | 1 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
+| device_floor_heating_thermostat | 1 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya | 9 | TS0601 | onoff, dim, measure_temperature... |
 | device_generic_tuya_universal | 44 | TS0203, TS0601 | measure_battery, measure_temperature, measure_humidity... |
 | device_plug_energy | 3 | TS0002, TS0121, TS011F | onoff, measure_power, meter_power... |
@@ -73,7 +74,7 @@
 | device_radiator_valve_smart | 3 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | dimmable_led_strip | 3 | TS0502B |  |
 | dimmable_recessed_led | 3 | TS0502B |  |
-| dimmer_1_gang | 1 | TS110F, TS110E, TS0052 | onoff, dim |
+| dimmer_1_gang | 0 | TS110F, TS110E, TS0052 | onoff, dim |
 | dimmer_1_gang_2 | 3 | TS110E, TS0601 | onoff, dim |
 | dimmer_1_gang_tuya | 5 | TS110F, TS110E, TS0052 | onoff, dim |
 | dimmer_2_gang | 1 | TS110F, TS110E | onoff, dim |
@@ -193,6 +194,7 @@
 | scene_switch_wall | 3 | TS0042, TS0043 | button.1, button.2, measure_battery... |
 | sensor_climate_contact | 2 | TS0601 | measure_temperature, measure_temperature.probe, measure_humidity... |
 | sensor_climate_temphumidsensor | 1 | TS0201, TS0222, TH01, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, SM0201, SNZB-02, SNZB-02D, SNZB-02P, TS0601, ZG-227Z, ZG-227ZL, CK-TLSR8656-SS5-01(7014), SNZB-02DR2, SNZB-02LD, SNZB-02WD, THS317-ET, ZG-303Z, TY0201, TS1201, RH3052, Excellux | measure_temperature, measure_humidity, measure_battery... |
+| sensor_contact_motion | 1 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | sensor_contact_plug | 3 | TS0601, Excellux | onoff, measure_power, meter_power... |
 | sensor_contact_presence | 2 | ZG-227Z | alarm_motion, measure_luminance, measure_temperature... |
 | sensor_contact_water | 24 | TS0601, TS0207, q9mpfhw, Excellux | alarm_contact, measure_battery, alarm_tamper... |
@@ -317,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 313 drivers, 12724 manufacturer IDs
+**Total:** 315 drivers, 12724 manufacturer IDs
 
-*Generated: 2026-05-28T22:58:56.347Z*
+*Generated: 2026-05-29T00:02:16.961Z*
