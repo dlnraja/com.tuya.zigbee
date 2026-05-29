@@ -1,10 +1,4 @@
 {
-  "8.1.8": {
-    "en": "v8.1.8: fix: resolve server-side AggregateError by defining GENERIC_MANUFACTURER placeholder inside all 25 source driver compose manifests"
-  },
-  "8.1.7": {
-    "en": "v8.1.7: fix: generate missing small and large driver images to resolve server-side Processing failed"
-  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
@@ -67,7 +61,7 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "8.1.7": {
-    "en": "v8.1.6: fix: generate all missing and correct driver images to fix processing failed on Athom store"
+  "8.1.9": {
+    "en": "v8.1.8: chore: bump version to v8.1.8 and update changelog"
   }
 }
