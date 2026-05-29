@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-29T23:12:53.295Z",
+  "ts": "2026-05-29T23:46:59.800Z",
   "currentCount": 10779,
   "src": {
     "johan": {
@@ -19265,99 +19265,16 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 61,
-      "prCount": 3,
+      "issueCount": 57,
+      "prCount": 2,
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 349,
+          "num": 350,
           "title": "[Auto] 116 new fingerprints from community (2026-05)",
           "mfrs": [
             "_TZE284_zofmmt9s",
             "_TZE204_hewlydpz"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 348,
-          "title": "[Auto] 114 new fingerprints from community (2026-05)",
-          "mfrs": [
-            "_TZE204_hewlydpz",
-            "_TZE284_gnpflcoq",
-            "_TZB210_qzsxaqqe"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 342,
-          "title": "[Auto] 298 new fingerprints from community (2026-05)",
-          "mfrs": [
-            "_TZE200_5zbp6j0u",
-            "_TZE200_bjzrowv2",
-            "_TZE200_nkoabg8w",
-            "_TZE200_xuzcvlku",
-            "_TZE200_4vobcgd3",
-            "_TZE200_nogaemzt",
-            "_TZE200_r0jdjrvi",
-            "_TZE200_pk0sfzvr",
-            "_TZE200_fdtjuw7u",
-            "_TZE200_zpzndjez",
-            "_TZE200_rddyvrci",
-            "_TZE200_nueqqe6k",
-            "_TZE200_xaabybja",
-            "_TZE200_rmymn92d",
-            "_TZE200_3i3exuay",
-            "_TZE200_hsgrhjpf",
-            "_TZE200_68nvbio9",
-            "_TZE200_pw7mji0l",
-            "_TZE204_1fuxihti",
-            "_TZE200_axgvo9jh",
-            "_TZE200_yia0p3tr",
-            "_TZE200_nw1r9hp6",
-            "_TZE200_cf1sl3tj",
-            "_TZE204_xu4a5rhj",
-            "_TZE200_4mh6tyyo",
-            "_TZ3000_ebar6ljy",
-            "_TZ3000_2mbfxlzr",
-            "_TZ3000_6jeesvrt",
-            "_TZ3000_26fmupbb",
-            "_TZ3000_bmg14ax2",
-            "_TZ3000_oxslv1c9",
-            "_TZ3000_bzxlofth",
-            "_TZ3000_n2egfsli",
-            "_TZ3000_rgchmad8",
-            "_TZ3000_au1rjicn",
-            "_TZ3000_4ugnzsli",
-            "_TZ3000_9eeavbk5",
-            "_TZ3000_yfekcy3n",
-            "_TZ3000_cea5xugq",
-            "_TZ3000_1bwpjvlz",
-            "_TZ3000_v7chgqso",
-            "_TZ3000_qrldbmfn",
-            "_TZ3000_7tbsruql",
-            "_TZ3000_8yhypbo7",
-            "_TZ3000_ywagc4rj",
-            "_TZ3210_ncw88jfq",
-            "_TZ3000_mmtwjmaq",
-            "_TZ3000_msl6wxk9",
-            "_TZ3000_mcxw5ehu",
-            "_TZ3000_otvn3lne",
-            "_TZ3000_6ygjfyll",
-            "_TZ3000_nss8amz9",
-            "_TZ3000_bsvqrxru",
-            "_TZ3000_dpo1ysak",
-            "_TZE200_holel4dk",
-            "_TZE200_jva8ink8",
-            "_TZE200_lyetpprm",
-            "_TZ3000_cayepv1a",
-            "_TZ3000_lepzuhto",
-            "_TZ3000_qystbcjg",
-            "_TZ3000_3ooaz3ng",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_ew3ldmgx",
-            "_TZ3000_dpo1ysak",
-            "_TZ3000_amdymr7l",
-            "_TZ3000_amdymr71"
           ]
         },
         {
@@ -19377,16 +19294,6 @@
           "mfrs": [
             "_TZE200_3towulqd",
             "_TZE200_3towulqd"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 334,
-          "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug:",
-          "mfrs": [
-            "_TZ3000_yj6k7vfo",
-            "_TZ3000_yj6k7vfo",
-            "_TZ3000_yj6k7vfo"
           ]
         },
         {
@@ -19528,6 +19435,38 @@
             "_TZE284_1youk3hj",
             "_TZE284_1youk3hj",
             "_TZE284_1youk3hj"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1396,
+          "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
+          "mfrs": [
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1395,
+          "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
+          "mfrs": [
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1393,
+          "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
+          "mfrs": [
+            "_TZE204_81yrt3lo",
+            "_TZE204_81yrt3lo",
+            "_TZE204_81yrt3lo",
+            "_TZE204_81yrt3lo"
           ]
         }
       ]
