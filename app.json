@@ -132464,7 +132464,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -134323,7 +134325,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -138305,7 +138309,9 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -153379,7 +153385,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": []
     },
@@ -160261,7 +160269,9 @@
             "en": "Press the button on the side of the unit for 5 seconds."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -201287,7 +201297,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -203449,7 +203461,9 @@
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": []
     },
