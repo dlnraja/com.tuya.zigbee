@@ -64,7 +64,7 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "8.1.6": {
-    "en": "v8.1.5: fix: restore settings/ folder in .homeyignore to prevent server-side Processing failed error"
+  "8.1.7": {
+    "en": "v8.1.6: fix: generate all missing and correct driver images to fix processing failed on Athom store"
   }
 }
