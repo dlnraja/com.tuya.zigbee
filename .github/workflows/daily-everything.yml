@@ -120,6 +120,8 @@ jobs:
           git add -A drivers/ lib/ .github/state/ docs/ app.json package.json
           git commit -m "🤖 [Unified Engine] v$(node -p "require('./app.json').version") stabilization sweep [skip ci]" || echo "No changes"
           git push origin master --force || echo "Push failed"
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
       - name: "🛠️ Homey Validate"
         uses: athombv/github-action-homey-app-validate@v1
         with:

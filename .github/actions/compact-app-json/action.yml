@@ -1,0 +1,66 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Composite Action: compact-app-json
+# ─────────────────────────────────────────────────────────────────────────────
+# PURPOSE: Prevents "Processing failed" on Athom's servers.
+#
+# ROOT CAUSE ANALYSIS (discovered 2026-05-29):
+#   .homeyplugins.json includes {"id":"compose"} which activates the Homey
+#   compose plugin. During `homey app validate` or `homey app publish`, the
+#   plugin REBUILDS app.json from .homeycompose/ with 2-space indentation.
+#   With 412+ drivers, this produces a 6.03 MB file.
+#   Athom's servers reject app bundles with app.json > ~5 MB → "Processing failed".
+#
+#   Timeline:
+#     v8.1.6 (232 drivers) → 3.67 MB → ✅ Athom accepted (Build #2159)
+#     v8.1.7+ (412 drivers) → 6.03 MB → ❌ "Processing failed" (Build #2160+)
+#
+# FIX: Compact app.json to JSON.stringify() format (~3.39 MB) + remove
+#      .homeycompose to prevent re-expansion by Homey CLI during validate/publish.
+#
+# USAGE in any workflow:
+#   - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+#     uses: ./.github/actions/compact-app-json
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: "🗜️ Compact app.json"
+description: >
+  Compacts app.json to single-line JSON and removes .homeycompose to prevent
+  the Homey compose plugin from re-expanding app.json above Athom's ~5 MB limit.
+
+runs:
+  using: composite
+  steps:
+    - name: "🗜️ Compact app.json (anti-Athom-5MB-limit)"
+      shell: bash
+      run: |
+        node - << 'COMPACT_EOF'
+        const fs = require('fs');
+        if (!fs.existsSync('app.json')) {
+          console.log('⚠️  app.json not found, skipping compaction');
+          process.exit(0);
+        }
+        const raw = fs.readFileSync('app.json', 'utf8');
+        const prevBytes = Buffer.byteLength(raw, 'utf8');
+        const app = JSON.parse(raw);
+        const compact = JSON.stringify(app);
+        const currBytes = Buffer.byteLength(compact, 'utf8');
+        fs.writeFileSync('app.json', compact, 'utf8');
+        const prevMB = (prevBytes / 1024 / 1024).toFixed(2);
+        const currMB = (currBytes / 1024 / 1024).toFixed(2);
+        console.log('app.json compacted: ' + prevMB + 'MB → ' + currMB + 'MB');
+        if (currBytes / 1024 / 1024 > 5) {
+          console.error('❌ FATAL: app.json still > 5 MB after compaction (' + currMB + 'MB)!');
+          console.error('   Athom servers will reject this bundle with "Processing failed".');
+          process.exit(1);
+        }
+        const drivers = (app.drivers || []).length;
+        console.log('✅ app.json safe for Athom upload (' + currMB + 'MB < 5 MB limit) | ' + drivers + ' drivers');
+        COMPACT_EOF
+
+        # Remove .homeycompose to prevent Homey CLI compose plugin from
+        # re-expanding app.json back to 2-space indented 6+ MB during validate/publish
+        if [ -d ".homeycompose" ]; then
+          echo "Removing .homeycompose to prevent compose plugin re-expansion..."
+          rm -rf .homeycompose
+          echo "✅ .homeycompose removed"
+        fi

@@ -199,6 +199,9 @@ jobs:
         continue-on-error: false
         run: npm run validate:fingerprints
 
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+
       - name: 🔍 Validate (npx primary)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
 

@@ -43,6 +43,8 @@ jobs:
             exit 1
           fi
           echo "SDK3 validated"
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
       - name: Validate App
         run: npx homey app validate --level publish
 
@@ -61,6 +63,8 @@ jobs:
           cache: 'npm'
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+      - name: 🗜️ Compact app.json before publish (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
       - name: Publish to Draft
         uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:

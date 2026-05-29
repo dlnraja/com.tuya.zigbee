@@ -60,6 +60,9 @@ jobs:
           console.log('✅ Dual-Layer: PASS — Zéro AggregateError');
           GATE
 
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+
       - name: 🏠 Homey Validate
         run: npx homey app validate --level publish
       
