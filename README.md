@@ -37,7 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v8.1.3** | v8.1.3: Fixed AggregateError on Homey push â€” corrected UTF-8 encoding in 186 ... |
+| **v8.1.5** | v8.1.5: Fix settings/ directory packaging in .homeyignore to resolve Processi... |
 | **vv8_5_30** |  |
 | **v9.0.1** | v9.0.0: |
 | **v9.0.0** | v8.5.54: |
@@ -48,6 +48,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.50** | v8.5.49: |
 | **v8.5.49** | v8.5.48: |
 <!-- CHANGELOG_END -->
+
 
 
 
