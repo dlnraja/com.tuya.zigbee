@@ -27,16 +27,18 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_3towulqd",
-      "_TZE200_3towulqd",
       "_TZE200_3TOWULQD",
-      "_tze204_3towulqd",
+      "_TZE200_3towulqd",
+      "_TZE200_y8jijhba",
+      "_TZE204_3TOWULQD",
       "_TZE204_3towulqd",
-      "_TZE204_3TOWULQD"
+      "_tze200_3towulqd",
+      "_tze204_3towulqd"
     ],
     "productId": [
-      "TS0225",
       "CK-BL702-MWS-01(7016)",
+      "TS0225",
+      "TS0601",
       "ZP-301Z"
     ],
     "endpoints": {
