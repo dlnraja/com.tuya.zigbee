@@ -37,7 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v8.1.7** | v8.1.7: fix: generate missing small and large driver images to resolve server... |
+| **v8.1.8** | v8.1.8: fix: resolve server-side AggregateError by defining GENERIC_MANUFACTU... |
+| **v8.1.7** | v8.1.6: fix: generate all missing and correct driver images to fix processing... |
 | **vv8_5_30** |  |
 | **v9.0.1** | v9.0.0: |
 | **v9.0.0** | v8.5.54: |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.52** | v8.5.51: |
 | **v8.5.51** | v8.5.50: |
 | **v8.5.50** | v8.5.49: |
-| **v8.5.49** | v8.5.48: |
 <!-- CHANGELOG_END -->
+
 
 
 
