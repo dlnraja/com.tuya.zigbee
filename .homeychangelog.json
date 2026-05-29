@@ -61,19 +61,7 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "8.1.9": {
-    "en": "v8.1.8: chore: bump version to v8.1.8 and update changelog"
-  },
-  "8.1.10": {
-    "en": "fix: resolve server-side AggregateError by reducing asset sizes and removing xlarge images"
-  },
-  "8.1.12": {
-    "en": "v8.1.12: Fixed aggregate error during build via Homey composition API adjustments",
-    "nl": "v8.1.12: Aggregate error verholpen tijdens de build via Homey composition API-aanpassingen",
-    "de": "v8.1.12: Aggregationsfehler während des Builds durch Homey-Composition-API-Anpassungen behoben",
-    "fr": "v8.1.12: Erreur d'agrégation corrigée lors de la compilation via les ajustements de l'API de composition Homey"
-  },
-  "8.1.11": {
-    "en": "Fix AggregateError by including xlarge images"
+  "8.1.13": {
+    "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
   }
 }

@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.1.12** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device  |
 | **vv8_5_30** |  |
 | **v9.0.1** | v9.0.0: |
 | **v9.0.0** | v8.5.54: |
