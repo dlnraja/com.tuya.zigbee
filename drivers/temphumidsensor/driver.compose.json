@@ -38,7 +38,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "GENERIC_MANUFACTURER"
+    ]
   },
   "images": {
     "small": "/drivers/temphumidsensor/assets/images/small.png",
