@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "8.1.11",
+  "version": "8.1.12",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -21,45 +21,52 @@
   },
   "tags": {
     "en": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "smart home",
       "switch",
       "sensor",
-      "local-first"
+      "thermostat"
     ],
     "nl": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "schakelaar",
       "sensor",
-      "local-first"
+      "thermostaat",
+      "lamp"
     ],
     "de": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "schalter",
       "sensor",
-      "local-first"
+      "thermostat",
+      "licht"
     ],
     "fr": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "interrupteur",
       "capteur",
-      "local-first"
+      "thermostat",
+      "lumière"
     ]
   },
   "category": "appliances",
-  "permissions": [],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "api": {
+    "getDevices": {
+      "method": "get",
+      "path": "/devices",
+      "public": false,
+      "role": "owner"
+    },
+    "replaceDevice": {
+      "method": "post",
+      "path": "/replace",
+      "public": false,
+      "role": "owner"
+    }
+  },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",
@@ -101484,7 +101491,9 @@
             "fr": "Maintenez le bouton power pendant 5 secondes"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "images": {
         "small": "/drivers/air_purifier/assets/images/small.png",
@@ -109214,7 +109223,9 @@
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -125090,7 +125101,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -133125,7 +133138,9 @@
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -134767,7 +134782,9 @@
         }
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -138823,7 +138840,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ],
         "productId": [
           "TS0601_air_purifier",
           "TS0601"
@@ -140981,7 +141000,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -152973,7 +152994,9 @@
             "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": []
     },
@@ -155640,7 +155663,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -168798,7 +168823,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -173983,7 +174010,9 @@
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {
@@ -175887,7 +175916,9 @@
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": []
     },
@@ -211400,7 +211431,9 @@
             "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "GENERIC_MANUFACTURER"
+        ]
       },
       "settings": [
         {

@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "8.1.11",
+  "version": "8.1.12",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -20,45 +20,52 @@
   },
   "tags": {
     "en": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "smart home",
       "switch",
       "sensor",
-      "local-first"
+      "thermostat"
     ],
     "nl": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "schakelaar",
       "sensor",
-      "local-first"
+      "thermostaat",
+      "lamp"
     ],
     "de": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "schalter",
       "sensor",
-      "local-first"
+      "thermostat",
+      "licht"
     ],
     "fr": [
-      "unified",
-      "smartthings",
-      "ewelink",
-      "sonoff",
+      "tuya",
       "interrupteur",
       "capteur",
-      "local-first"
+      "thermostat",
+      "lumière"
     ]
   },
   "category": "appliances",
-  "permissions": [],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "api": {
+    "getDevices": {
+      "method": "get",
+      "path": "/devices",
+      "public": false,
+      "role": "owner"
+    },
+    "replaceDevice": {
+      "method": "post",
+      "path": "/replace",
+      "public": false,
+      "role": "owner"
+    }
+  },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",
