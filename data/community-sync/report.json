@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-29T18:24:37.074Z",
+  "ts": "2026-05-29T18:43:46.280Z",
   "currentCount": 10779,
   "src": {
     "johan": {
@@ -19265,9 +19265,18 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 60,
+      "issueCount": 61,
       "prCount": 3,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 349,
+          "title": "[Auto] 116 new fingerprints from community (2026-05)",
+          "mfrs": [
+            "_TZE284_zofmmt9s",
+            "_TZE204_hewlydpz"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 348,
@@ -19519,16 +19528,6 @@
             "_TZE284_1youk3hj",
             "_TZE284_1youk3hj",
             "_TZE284_1youk3hj"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1396,
-          "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
-          "mfrs": [
-            "_TZE284_0ints6wl",
-            "_TZE284_0ints6wl",
-            "_TZE284_0ints6wl"
           ]
         }
       ]
