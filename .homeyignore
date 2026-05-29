@@ -20,7 +20,6 @@ project-data/
 data/community-sync/
 data/temp_desktop_cleanup/
 data/intel-harvest/
-data/intel-harvest/
 data/archive/
 reimplementation_gateway/
 diagnostics/
@@ -30,13 +29,21 @@ logs/
 skills/
 scratch/
 tmp_artifacts/
+.agents/
+.ai/
+.cache/
+.memory/
 
 # === Dev config files ===
 .cascade
-.windsurfrules
-.cursorrules
 .clinerule
 .clinerules
+.windsurfrules
+.cursorrules
+.agents
+.ai
+.cache
+.memory
 .gemini/
 .nycrc
 .prettierrc
@@ -79,9 +86,16 @@ data/reference-urls.json
 data/community-intel.json
 data/universal_tuya_urls.json
 data/rapport_data.json
+data/rapport_analyse.txt
+data/rapport_suite.txt
+data/analysis_output.txt
+data/assigned_output.txt
+data/key_analysis.txt
+data/manufacturers.json
 MANUFACTURER_IDS_AUDIT.json
 **/MANUFACTURER_IDS_AUDIT.json
 *.analysis.json
+stable_app.json
 
 # === Large lib/data JSON files (dev-only, NOT imported at runtime) ===
 lib/data/categorized_devices.json
@@ -106,6 +120,11 @@ lib/tuya-dp-engine/
 CHANGELOG.md
 CONTRIBUTING.md
 LICENSE
+AI_CONTEXT_MANDATE.md
+AI_INSTRUCTIONS.md
+CODE_OF_CONDUCT.md
+GLOBAL_IMPROVEMENT_PLAN.md
+PROJECT_INDEX.md
 # README.txt            ← DO NOT EXCLUDE — REQUIRED BY ATHOM SDK
 # README.nl.txt         ← DO NOT EXCLUDE — App Store NL description
 # README.de.txt         ← DO NOT EXCLUDE — App Store DE description
