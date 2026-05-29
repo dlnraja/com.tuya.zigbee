@@ -1,21 +1,29 @@
-# MEGA-PROMPT ULTIME - VERSION FINALE 2025
-# Code Owners for com.tuya.zigbee
+# CODEOWNERS — Critical file protection
+# These files require review by dlnraja before any PR can merge.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-# Global owners
-* @dlnraja
+# ─── Core App Files ────────────────────────────────────────────────────────
+# Any change to these files MUST be reviewed
+/app.json                   @dlnraja
+/app.js                     @dlnraja
+/package.json               @dlnraja
 
-# Drivers
-drivers/ @dlnraja
+# ─── Athom Required Files ──────────────────────────────────────────────────
+/README.txt                 @dlnraja
+/README.*.txt               @dlnraja
+/.homeyignore               @dlnraja
+/.homeyplugins.json         @dlnraja
 
-# Scripts
-scripts/ @dlnraja
+# ─── Assets (protected) ────────────────────────────────────────────────────
+/assets/                    @dlnraja
 
-# Documentation
-*.md @dlnraja
-README* @dlnraja
+# ─── CI/CD Workflows ──────────────────────────────────────────────────────
+/.github/workflows/         @dlnraja
+/.github/actions/           @dlnraja
 
-# GitHub Actions
-.github/ @dlnraja
+# ─── Security Scripts ──────────────────────────────────────────────────────
+/scripts/security/          @dlnraja
+/scripts/maintenance/       @dlnraja
 
-# Templates
-templates/ @dlnraja
+# ─── Lib (production code) ─────────────────────────────────────────────────
+/lib/                       @dlnraja

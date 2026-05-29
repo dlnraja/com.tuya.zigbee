@@ -214,3 +214,19 @@ page-dump.html
 # Temporary workspace directories and scratch scripts
 tmp/
 count_fps.js
+
+# ─── scripts/temp — Development scratch scripts (139 files, intentionally excluded) ───
+# These are one-off debugging/exploration scripts, NOT production code.
+# The STRICT_SYNTAX_GUARD.js already excludes this dir from CI scan.
+scripts/temp/
+scripts/temp/**
+
+# ─── Security: diagnostic output files ────────────────────────────────────────
+page-dump.html
+*.diag.html
+promote-result*.json
+push-result*.json
+
+# ─── Build diagnostics (never commit) ─────────────────────────────────────────
+.github/state/build-result*.json
+.github/state/publish-result*.json
