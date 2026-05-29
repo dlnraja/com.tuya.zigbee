@@ -227,8 +227,10 @@ jobs:
 
       - name: "🔢 Sync package.json version"
         run: |
-          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
-          echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
+          node -e 'const f=require("fs"),a=JSON.parse(f.readFileSync("app.json","utf8")),p=JSON.parse(f.readFileSync("package.json","utf8"));p.version=a.version;f.writeFileSync("package.json",JSON.stringify(p,null,2)+"\n","utf8");console.log("package.json synced to v"+a.version);'
+          V=$(node -p 'require("./app.json").version')
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "✅ package.json version synced to v$V"
 
       - name: "🗜️ FINAL compact before publish"
         run: |
