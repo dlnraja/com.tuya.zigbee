@@ -40,13 +40,13 @@
 | co_sensor | 12 | TS0601_co, TS0601 | alarm_co, measure_battery, measure_co... |
 | contact_sensor | 4 | TS0203, ZG-102Z, ZG-102ZL, DS01, RH3001, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, lumi.sensor_magnet, lumi.sensor_magnet.aq2, lumi.magnet.ac01, lumi.magnet.agl02, E1603/E1702, TRADFRI open/close remote, 3300-S, 3320-L, SNZB-04, TS0601, SNZB-04P, SNZB-04PR2, CK-TLSR8656-SS5-01(7003), SNZB-04R2, TS0021, DoorWindow-Sensor-ZB3.0, MCT-340 E, TS0207, q9mpfhw | alarm_contact, measure_battery, alarm_tamper... |
 | curtain_module | 1 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
-| curtain_module_2_gang | 0 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
+| curtain_module_2_gang | 1 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
 | curtain_motor | 319 | TS0302, ZC-LS02, TS130F, DS82, DS421, lumi.curtain, lumi.curtain.hagl04, lumi.curtain.acn002, E1757, KADRILJ, FYRTUR, AM02, AM43-0.45/40-ES-EZ, AM43-0.45/40-ES-EB, TS0601, TS0301, ZBCurtain, TS030F, TS0105 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_shutter | 0 | TS0601, TS0301 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_tilt | 36 | TS0601_curtain_tilt, TS0601 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_wall | 24 | TS130F | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | device_air_purifier | 1 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
-| device_air_purifier_climate | 0 | TS0601_air_purifier, TS0601 | onoff, dim, measure_pm25... |
+| device_air_purifier_climate | 1 | TS0601_air_purifier, TS0601 | onoff, dim, measure_pm25... |
 | device_air_purifier_din | 0 | TS0601_air_purifier, TS0601 | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_floor | 1 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_air_purifier_humidifier | 1 | TS0601_air_purifier, TS0601 | onoff, dim, measure_humidity... |
@@ -55,7 +55,7 @@
 | device_air_purifier_presence | 1 | TS0601_air_purifier, TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | device_air_purifier_quality | 1 | TS0601_air_purifier, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | device_air_purifier_radiator | 1 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, thermostat_mode... |
-| device_air_purifier_siren | 0 | TS0601_air_purifier, TS0601 | alarm_motion, measure_battery, alarm_generic... |
+| device_air_purifier_siren | 1 | TS0601_air_purifier, TS0601 | alarm_motion, measure_battery, alarm_generic... |
 | device_air_purifier_smart | 0 | TS0601_air_purifier, TS0601 | target_temperature, measure_temperature, measure_humidity... |
 | device_air_purifier_smoke | 12 | TS0601_air_purifier, TS0601 | alarm_smoke, measure_battery, measure_temperature... |
 | device_air_purifier_soil | 20 | TS0601_air_purifier, TS0601 | measure_humidity.soil, measure_temperature, measure_humidity... |
@@ -96,7 +96,7 @@
 | doorwindowsensor_3 | 3 | TS0203 | alarm_contact, alarm_battery, measure_battery |
 | doorwindowsensor_4 | 3 | DS01, TS0203 | alarm_contact, alarm_battery, measure_battery |
 | double_power_point | 1 | TS011F, TS0601 | onoff, measure_power, meter_power... |
-| double_power_point_2 | 0 | TS011F, TS0601 | onoff, measure_power, meter_power... |
+| double_power_point_2 | 1 | TS011F, TS0601 | onoff, measure_power, meter_power... |
 | energy_meter_3phase | 42 | TS0601, TS0601_3phase | measure_power, meter_power, measure_voltage... |
 | fan_controller | 45 | TS0601_fanctrl, TS0601 | onoff, dim |
 | fingerbot | 12 | TS0001, TS0001_fingerbot, TS0003, TS011F, TS0011, TS000F | onoff, button.push, finger_bot_mode... |
@@ -123,7 +123,7 @@
 | lcdtemphumidluxsensor | 9 | TS0201, TS0222, TS0601, Excellux | measure_luminance, measure_temperature, measure_humidity... |
 | lcdtemphumidsensor | 6 | TS0601_lcd, TS0601, TS0201, TY0201 | measure_temperature, measure_humidity, measure_battery... |
 | lcdtemphumidsensor_2 | 1 | SM0201, TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
-| lcdtemphumidsensor_3 | 0 | TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
+| lcdtemphumidsensor_3 | 1 | TS0601, TS0201, Excellux | measure_temperature, measure_humidity, measure_battery... |
 | lcdtemphumidsensor_plug_energy | 2 | TS0601 | measure_power, meter_power, measure_voltage... |
 | led_controller_cct | 21 | TS0502 | onoff, dim, light_temperature... |
 | led_controller_dimmable | 6 | TS0601_led, TS0501B, TRI-C1ZR, TRI-K1ZR | onoff, dim |
@@ -245,9 +245,9 @@
 | sr_zs_switch | 1 | TS0726, TS0001, TS0002 | onoff_1, onoff_2, onoff_3 |
 | switch | 3 | TS0601, TS011F, TS0726 | onoff, onoff.gang2, measure_power... |
 | switch_1_gang | 183 | TS0003, TS011F, TS0011, TS000F, TS0001, TS0601 | onoff |
-| switch_1_gang_metering | 0 | TS0001, TS0601 | onoff, measure_power, meter_power... |
+| switch_1_gang_metering | 1 | TS0001, TS0601 | onoff, measure_power, meter_power... |
 | switch_1gang | 1232 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS0601, TS000F, ZBMINI, ZBMINIL2, BASICZBR3, S31ZB, S26R2ZB, 01MINIZB, ZBMINIR2, ZBM5-1C-120, ZBMINIR, ZBMINIL2-R2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, TS0101, TS4100, TS011F, ZBM5-2C-120, ZBM5-3C-120, TS0726 | onoff, measure_power, meter_power... |
-| switch_2_gang | 0 | TS0003, TS0012, TS011F, TS0002, TS0013 | onoff |
+| switch_2_gang | 1 | TS0003, TS0012, TS011F, TS0002, TS0013 | onoff |
 | switch_2_gang_metering | 1 | TS0002, TS011F, TS0601 | onoff, measure_power, meter_power... |
 | switch_2gang | 189 | TS0002, TS0012, TS0002_power, TS0002_switch_module, TS0601, ZG-302Z2, TS011F, ZG-305Z, TS0003, TS0013, TS0726 | onoff, onoff.gang2, measure_power... |
 | switch_3_gang | 3 | TS0003, TS0013 | onoff |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 315 drivers, 12661 manufacturer IDs
+**Total:** 315 drivers, 12668 manufacturer IDs
 
-*Generated: 2026-05-29T02:10:21.028Z*
+*Generated: 2026-05-29T03:26:50.361Z*
