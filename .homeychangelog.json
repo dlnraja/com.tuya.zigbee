@@ -67,6 +67,12 @@
   "8.1.10": {
     "en": "fix: resolve server-side AggregateError by reducing asset sizes and removing xlarge images"
   },
+  "8.1.12": {
+    "en": "v8.1.12: Fixed aggregate error during build via Homey composition API adjustments",
+    "nl": "v8.1.12: Aggregate error verholpen tijdens de build via Homey composition API-aanpassingen",
+    "de": "v8.1.12: Aggregationsfehler während des Builds durch Homey-Composition-API-Anpassungen behoben",
+    "fr": "v8.1.12: Erreur d'agrégation corrigée lors de la compilation via les ajustements de l'API de composition Homey"
+  },
   "8.1.11": {
     "en": "Fix AggregateError by including xlarge images"
   }

@@ -46,7 +46,7 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": ["GENERIC_MANUFACTURER"],
     "productId": [
       "TS0601_air_purifier",
       "TS0601"

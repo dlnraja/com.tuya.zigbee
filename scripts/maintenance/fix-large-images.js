@@ -19,20 +19,97 @@ if (!fs.existsSync(BUILD_DIR)) {
   process.exit(0);
 }
 
-// ===== MINIFY app.json to pass Homey 7MB size limit =====
+// ===== MINIFY app.json to pass Homey size limit =====
 const APP_JSON_PATH = path.join(ROOT, '.homeybuild', 'app.json');
-if (fs.existsSync(APP_JSON_PATH)) {
-  try {
-    const raw = fs.readFileSync(APP_JSON_PATH, 'utf8');
-    const minified = JSON.stringify(JSON.parse(raw));
-    fs.writeFileSync(APP_JSON_PATH, minified, 'utf8');
-    const saved = raw.length - minified.length;
-    console.log(` — Minified app.json from ${(raw.length / 1048576).toFixed(2)} MB to ${(minified.length / 1048576).toFixed(2)} MB (saved ${(saved / 1048576).toFixed(2)} MB)`);
-  } catch (e) {
-    console.error(' — Failed to minify app.json:', e.message);
+const ROOT_APP_JSON_PATH = path.join(ROOT, 'app.json');
+
+for (const p of [APP_JSON_PATH, ROOT_APP_JSON_PATH]) {
+  if (fs.existsSync(p)) {
+    try {
+      const raw = fs.readFileSync(p, 'utf8');
+      let app = JSON.parse(raw);
+      let rLower=0, rTrans=0, fTrans=0;
+      const keep = new Set(['en', 'nl']);
+      
+      app.drivers.forEach(d => {
+        if(d.zigbee && Array.isArray(d.zigbee.manufacturerName)) {
+          let mixed = new Set();
+          d.zigbee.manufacturerName.forEach(m => {
+            if(m !== m.toLowerCase() && m !== m.toUpperCase()) mixed.add(m.toLowerCase());
+          });
+          d.zigbee.manufacturerName = d.zigbee.manufacturerName.filter(m => {
+            if((m === m.toLowerCase() || m === m.toUpperCase()) && mixed.has(m.toLowerCase())) {
+              rLower++; return false;
+            }
+            return true;
+          });
+        }
+        if(d.settings) {
+          d.settings.forEach(s => {
+            ['label','hint'].forEach(k => {
+              if(s[k] && typeof s[k]==='object') {
+                Object.keys(s[k]).forEach(lang => {
+                  if(!keep.has(lang)) { delete s[k][lang]; rTrans++; }
+                });
+              }
+            });
+            if(s.values) {
+              s.values.forEach(v => {
+                if(v.label && typeof v.label==='object') {
+                  Object.keys(v.label).forEach(lang => {
+                    if(!keep.has(lang)) { delete v.label[lang]; rTrans++; }
+                  });
+                }
+              });
+            }
+          });
+        }
+      });
+      
+      if(app.flow) {
+        ['triggers','conditions','actions'].forEach(k => {
+          if(app.flow[k]) {
+            app.flow[k].forEach(f => {
+              ['title','titleFormatted'].forEach(tk => {
+                if(f[tk] && typeof f[tk]==='object') {
+                  Object.keys(f[tk]).forEach(lang => {
+                    if(!keep.has(lang)) { delete f[tk][lang]; fTrans++; }
+                  });
+                }
+              });
+              if(f.args) {
+                f.args.forEach(a => {
+                  if(a.title && typeof a.title==='object') {
+                    Object.keys(a.title).forEach(lang => {
+                      if(!keep.has(lang)) { delete a.title[lang]; fTrans++; }
+                    });
+                  }
+                });
+              }
+              if(f.tokens) {
+                f.tokens.forEach(t => {
+                  if(t.title && typeof t.title==='object') {
+                    Object.keys(t.title).forEach(lang => {
+                      if(!keep.has(lang)) { delete t.title[lang]; fTrans++; }
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+      
+      const minified = JSON.stringify(app);
+      fs.writeFileSync(p, minified, 'utf8');
+      const saved = raw.length - minified.length;
+      console.log(` — Minified ${path.basename(path.dirname(p))}/${path.basename(p)} from ${(raw.length / 1048576).toFixed(2)} MB to ${(minified.length / 1048576).toFixed(2)} MB (saved ${(saved / 1048576).toFixed(2)} MB)`);
+    } catch (e) {
+      console.error(` — Failed to minify ${p}:`, e.message);
+    }
+  } else {
+    console.log(` — ${p} not found, skipping minification`);
   }
-} else {
-  console.log(' — app.json not found in .homeybuild, skipping minification');
 }
 
 let copied = 0;
