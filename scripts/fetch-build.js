@@ -15,7 +15,7 @@ const { AthomAppsAPI } = require('homey-api');
     });
 
     console.log('--- 5 MOST RECENT BUILDS DETAILS ---');
-    const sorted = builds.sort((a, b) => b.id - a.id).slice(0, 5);
+    const sorted = builds.sort((a, b) => b.id - a.id).slice(0, 200);
     sorted.forEach(b => {
       console.log(`\nBuild #${b.id} | Version: ${b.version}`);
       console.log(`State: ${b.state} | stateMeta: ${JSON.stringify(b.stateMeta)}`);
