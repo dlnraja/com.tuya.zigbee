@@ -1,4 +1,7 @@
 {
+  "8.1.8": {
+    "en": "v8.1.8: fix: resolve server-side AggregateError by defining GENERIC_MANUFACTURER placeholder inside all 25 source driver compose manifests"
+  },
   "8.1.7": {
     "en": "v8.1.7: fix: generate missing small and large driver images to resolve server-side Processing failed"
   },
