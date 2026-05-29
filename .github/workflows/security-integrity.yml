@@ -1,0 +1,176 @@
+name: "🔒 Security & Integrity Gate"
+
+on:
+  push:
+    branches: [master, main, stable-v5]
+  pull_request:
+    branches: [master, main, stable-v5]
+  workflow_dispatch:
+
+concurrency:
+  group: security-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  # ─── Job 1: Secret Leak Detection ─────────────────────────────────────────
+  secret-scan:
+    name: "🔑 Secret Leak Scan"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for delta scan
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: "🔑 Scan for hardcoded secrets"
+        run: node scripts/security/secret-scan.js full
+        env:
+          NODE_ENV: ci
+
+      - name: "🔑 Scan git diff for new secrets (PR only)"
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          git diff origin/${{ github.base_ref }}...HEAD -- '*.js' '*.json' '*.yml' '*.yaml' '*.env' \
+            | grep '^+' | grep -v '^+++' > /tmp/diff.txt || true
+          # Check diff for obvious token patterns
+          if grep -qP 'ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{40}|AIza[0-9A-Za-z-_]{35}|sk-[A-Za-z0-9]{40}' /tmp/diff.txt; then
+            echo "❌ Potential secret in git diff!"
+            grep -P 'ghp_[A-Za-z0-9]{36}|github_pat_|AIza|sk-[A-Za-z0-9]{40}' /tmp/diff.txt | head -5
+            exit 1
+          fi
+          echo "✅ No secrets in diff"
+
+      - name: "🔑 Check .gitignore protects sensitive paths"
+        run: |
+          check() {
+            grep -q "$1" .gitignore && echo "OK: $1" || { echo "MISSING: $1"; exit 1; }
+          }
+          check 'scripts/temp'
+          check '\.env'
+          check 'credentials\.json'
+          check 'token\.json'
+          check 'screenshots'
+          echo "✅ .gitignore coverage OK"
+
+  # ─── Job 2: File Integrity ─────────────────────────────────────────────────
+  file-integrity:
+    name: "📁 Critical File Integrity"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: "📁 Check critical files"
+        run: node scripts/security/file-integrity-check.js
+
+      - name: "📁 Verify README files exist"
+        run: |
+          for f in README.txt README.md; do
+            [ -f "$f" ] && echo "OK: $f ($(wc -c < $f) bytes)" || { echo "MISSING: $f"; exit 1; }
+          done
+
+      - name: "📁 Verify .homeyignore not too permissive"
+        run: |
+          # .homeyignore should NOT ignore app.json, app.js, or assets/
+          for pattern in "app.json" "app.js" "assets/"; do
+            if grep -qx "$pattern" .homeyignore 2>/dev/null; then
+              echo "❌ .homeyignore is ignoring critical file: $pattern"
+              exit 1
+            fi
+          done
+          echo "✅ .homeyignore is safe"
+
+      - name: "📁 Verify no scripts/temp tracked"
+        run: |
+          tracked=$(git ls-files scripts/temp/ 2>/dev/null | wc -l)
+          if [ "$tracked" -gt 0 ]; then
+            echo "⚠️  WARNING: $tracked files tracked in scripts/temp/ — should be gitignored"
+            git ls-files scripts/temp/ | head -5
+            # Warn only, do not fail (legacy files may still be there)
+          else
+            echo "✅ scripts/temp/ not tracked"
+          fi
+
+  # ─── Job 3: app.json Publish Readiness ────────────────────────────────────
+  publish-readiness:
+    name: "🚀 Publish Readiness Check"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: "🗜️ Compact app.json (prevent >5MB Athom rejection)"
+        run: |
+          node -e "
+          const fs = require('fs');
+          const raw = fs.readFileSync('app.json', 'utf8');
+          const app = JSON.parse(raw);
+          const compact = JSON.stringify(app);
+          const rawMB = (Buffer.byteLength(raw) / 1024 / 1024).toFixed(2);
+          const compactMB = (Buffer.byteLength(compact) / 1024 / 1024).toFixed(2);
+          console.log('app.json: raw=' + rawMB + 'MB compact=' + compactMB + 'MB drivers=' + app.drivers.length);
+          if (Buffer.byteLength(compact) > 5 * 1024 * 1024) {
+            console.error('❌ app.json compact size >' + compactMB + 'MB — OVER ATHOM 5MB LIMIT');
+            process.exit(1);
+          }
+          if (Buffer.byteLength(compact) > 4 * 1024 * 1024) {
+            console.warn('⚠️ app.json compact size ' + compactMB + 'MB — approaching 5MB limit');
+          }
+          console.log('✅ app.json size OK');
+          "
+
+      - name: "🔒 Remove .homeycompose to prevent re-inflation"
+        run: |
+          if [ -d ".homeycompose" ]; then
+            rm -rf .homeycompose
+            echo "Removed .homeycompose (prevents compose plugin re-inflation)"
+          fi
+
+      - name: "✅ Run Homey validator"
+        run: |
+          npm ci --prefer-offline --no-audit 2>/dev/null || npm install --no-audit
+          npx homey app validate --level publish 2>&1 | tail -20
+        env:
+          NODE_ENV: ci
+        continue-on-error: false
+
+      - name: "📋 Anti-AggregateError check (manufacturer names)"
+        run: |
+          node -e "
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json','utf8'));
+          let errors = 0;
+          for (const driver of app.drivers) {
+            const mfNames = driver.zigbee && driver.zigbee.manufacturerName;
+            if (!mfNames) continue;
+            const names = Array.isArray(mfNames) ? mfNames : [mfNames];
+            for (const n of names) {
+              if (!n || typeof n !== 'string' || n.trim() === '') {
+                console.error('❌ Empty manufacturerName in driver: ' + driver.id);
+                errors++;
+              }
+            }
+          }
+          if (errors > 0) { console.error('Total: ' + errors + ' empty manufacturerNames'); process.exit(1); }
+          console.log('✅ All manufacturerNames valid (' + app.drivers.length + ' drivers)');
+          "

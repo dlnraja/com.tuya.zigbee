@@ -1,0 +1,191 @@
+name: "📦 Enrichment Catch-Up (post-publish-bug)"
+
+# Runs enrichment tasks that were missed during the v8.1.7+ publish bug period
+# Triggered manually or weekly to ensure no data gaps
+on:
+  workflow_dispatch:
+    inputs:
+      from_version:
+        description: "Start version for enrichment (e.g. 8.1.7)"
+        required: false
+        default: "8.1.7"
+      force_full:
+        description: "Force full re-enrichment (true/false)"
+        required: false
+        default: "false"
+  schedule:
+    # Every Sunday at 04:00 UTC
+    - cron: "0 4 * * 0"
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: enrichment-catchup
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # ─── Job 1: Community FP Enrichment ─────────────────────────────────────────
+  community-fps:
+    name: "🌐 Community Fingerprint Enrichment"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: "📁 File integrity pre-check"
+        run: node scripts/security/file-integrity-check.js
+
+      - name: "🌐 Run community FP enrichment"
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          FROM_VERSION: ${{ github.event.inputs.from_version || '8.1.7' }}
+          FORCE_FULL: ${{ github.event.inputs.force_full || 'false' }}
+        run: |
+          # Run community sync if script exists
+          if [ -f "scripts/maintenance/community-fp-enricher.js" ]; then
+            node scripts/maintenance/community-fp-enricher.js
+          elif [ -f ".github/scripts/sync-community-fps.js" ]; then
+            node .github/scripts/sync-community-fps.js
+          else
+            echo "No FP enricher script found — skipping"
+          fi
+
+      - name: "🌐 Run Johan SDK3 sync"
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f ".github/scripts/sync-johan-sdk3.js" ]; then
+            node .github/scripts/sync-johan-sdk3.js
+          fi
+
+      - name: "🗜️ Compact app.json after enrichment"
+        run: |
+          node -e "
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json','utf8'));
+          const compact = JSON.stringify(app);
+          const mb = (Buffer.byteLength(compact)/1024/1024).toFixed(2);
+          fs.writeFileSync('app.json', compact, 'utf8');
+          console.log('Compacted: '+mb+'MB | drivers: '+app.drivers.length);
+          if (mb > 5) { console.error('OVER 5MB!'); process.exit(1); }
+          "
+
+      - name: "🔒 Secret scan post-enrichment"
+        run: node scripts/security/secret-scan.js full
+
+      - name: "📁 File integrity post-check"
+        run: node scripts/security/file-integrity-check.js
+
+      - name: "💾 Commit enrichment results"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            D=$(ls -d drivers/*/ 2>/dev/null | wc -l || echo 0)
+            F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
+            git commit -m "chore(enrich): community FP catch-up — ${D} drivers, ${F} FPs [skip ci]"
+            git pull --rebase origin master || true
+            git push || true
+          fi
+
+  # ─── Job 2: Auto-close resolved issues ───────────────────────────────────────
+  auto-close-issues:
+    name: "🔒 Auto-close Resolved Issues"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [community-fps]
+    if: always()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: "🔒 Close issues with FPs now in app"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f ".github/scripts/auto-close-resolved.js" ]; then
+            node .github/scripts/auto-close-resolved.js
+          elif [ -f "scripts/maintenance/auto-close-issues.js" ]; then
+            node scripts/maintenance/auto-close-issues.js
+          else
+            echo "No auto-close script — skipping"
+          fi
+
+  # ─── Job 3: Docs update ───────────────────────────────────────────────────────
+  update-docs:
+    name: "📝 Update Docs & README"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [community-fps]
+    if: always()
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: "📝 Regenerate README & docs"
+        continue-on-error: true
+        run: |
+          node .github/scripts/auto-update-docs.js || true
+          node .github/scripts/generate-readme.js || true
+
+      - name: "📁 Verify README.txt not corrupted"
+        run: |
+          if [ ! -f "README.txt" ] || [ ! -s "README.txt" ]; then
+            echo "❌ README.txt missing or empty after docs update!"
+            exit 1
+          fi
+          SIZE=$(wc -c < README.txt)
+          echo "✅ README.txt OK (${SIZE} bytes)"
+
+      - name: "💾 Commit docs"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md README.txt docs/ 2>/dev/null || git add README.md README.txt 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "docs: auto-update README and docs [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
