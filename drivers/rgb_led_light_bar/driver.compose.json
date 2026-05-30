@@ -55,5 +55,9 @@
     "onoff",
     "dim",
     "light_temperature"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/rgb_led_light_bar/assets/images/large.png",
+    "small": "/drivers/rgb_led_light_bar/assets/images/small.png"
+  }
 }

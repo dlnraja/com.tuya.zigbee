@@ -50,5 +50,9 @@
   "capabilities": [
     "onoff",
     "dim"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/dimmable_led_strip/assets/images/large.png",
+    "small": "/drivers/dimmable_led_strip/assets/images/small.png"
+  }
 }

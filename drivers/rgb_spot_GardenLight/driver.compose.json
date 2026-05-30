@@ -50,5 +50,9 @@
   "capabilities": [
     "onoff",
     "dim"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/rgb_spot_GardenLight/assets/images/large.png",
+    "small": "/drivers/rgb_spot_GardenLight/assets/images/small.png"
+  }
 }
