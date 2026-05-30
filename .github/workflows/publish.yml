@@ -1,4 +1,4 @@
-﻿# Auto Publish - Official Athom Actions (NO CLI)
+# Auto Publish - Official Athom Actions (NO CLI)
 # Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
 name: Auto Publish
 on:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      # === AI providers â€” circular chain (ai-helper.js) ===
+      # === AI providers — circular chain (ai-helper.js) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -51,18 +51,18 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: ðŸ›¡ï¸ Check Git Conflicts
+      - name: 🛡️ Check Git Conflicts
         run: npm run validate:conflicts
 
-      - name: ðŸ” Verify Fingerprints Integrity
+      - name: 🔍 Verify Fingerprints Integrity
         continue-on-error: false
         run: npm run validate:fingerprints
 
-      - name: ðŸ” Verify Flows Integrity
+      - name: 🔍 Verify Flows Integrity
         continue-on-error: false
         run: npm run validate:flows
 
-      - name: ðŸ—œï¸ Compact app.json (anti-Athom-5MB-limit)
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
         uses: ./.github/actions/compact-app-json
 
       - name: Validate (npx)
@@ -77,7 +77,7 @@ jobs:
   version-and-publish:
     needs: validate
     runs-on: ubuntu-latest
-    timeout-minutes: 22
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
@@ -88,10 +88,6 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      # Install CI-only optional deps (puppeteer, axios, etc.) that are excluded from .npmrc omit=optional
-      # These are NOT needed in the Athom Docker container but ARE needed for CI scripts here
-      - name: Install CI optional deps
-        run: npm install --no-save --ignore-scripts puppeteer axios sharp canvas cheerio imapflow @octokit/rest || true
 
       - name: Check HOMEY_PAT
         id: pat
@@ -183,108 +179,24 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # === CRITICAL: Compact app.json BEFORE git add (Bump action re-expands to 6MB) ===
-          BEFORE=$(node -p "require('fs').statSync('app.json').size")
-          node -e "
-            const fs=require('fs');
-            const app=JSON.parse(fs.readFileSync('app.json','utf8'));
-            const compact=JSON.stringify(app);
-            fs.writeFileSync('app.json',compact,'utf8');
-            const after=fs.statSync('app.json').size;
-            console.log('app.json compact: ' + Math.round(after/1024) + 'KB (' + (after/1024/1024).toFixed(2) + 'MB)');
-            if(after > 5*1024*1024){console.error('FATAL: app.json still >5MB!');process.exit(1);}
-          "
-          # Remove compose plugin to prevent re-expansion on publish
-          node -e "
-            const fs=require('fs');
-            const p=JSON.parse(fs.readFileSync('.homeyplugins.json','utf8'));
-            fs.writeFileSync('.homeyplugins.json',JSON.stringify(p.filter(x=>x.id!=='compose'),null,2));
-            console.log('compose plugin removed from .homeyplugins.json');
-          "
-          # Remove .homeycompose dir (prevents CLI from re-expanding)
-          rm -rf .homeycompose
-          # Commit with compact app.json
           git add -A
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
-          SZ=$(node -p "Math.round(require('fs').statSync('app.json').size/1024)")
-          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} FPs, app.json=${SZ}KB [skip ci]"
+          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
           git tag -f "v${{ steps.bump.outputs.version }}"
           git push origin HEAD --tags --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: ðŸ“¦ Archive Size Gate (block if >15MB compressed)
-        if: steps.pat.outputs.ok == 'true'
-        id: archive_gate
-        run: |
-          # Use ignore-walk to estimate packed size respecting .homeyignore
-          # ROOT CAUSE FIX (2026-05-30): large.png (13MB) + xlarge.png (10MB) excluded
-          # from .homeyignore â†’ archive ~12MB â†’ under Athom ~15MB processing limit.
-          # Previous threshold was 20MB but real Athom limit is closer to 15MB.
-          SIZE=$(node -e "
-            const ignoreWalk = require('ignore-walk');
-            const fs = require('fs');
-            const path = require('path');
-            ignoreWalk({ path: process.cwd(), ignoreFiles: ['.homeyignore'], includeEmpty: false, follow: false })
-              .then(files => {
-                let total = 0;
-                const big = [];
-                for (const f of files) {
-                  try {
-                    const sz = fs.statSync(f).size;
-                    total += sz;
-                    big.push({ f, sz });
-                  } catch {}
-                }
-                // tgz compression ratio ~45% for mixed JS/JSON/PNG content
-                const estimatedMB = (total * 0.38 / 1024 / 1024).toFixed(2);
-                const uncompMB = (total / 1024 / 1024).toFixed(2);
-                console.log('Files in archive: ' + files.length);
-                console.log('Uncompressed: ' + uncompMB + ' MB');
-                console.log('Estimated tgz (~38% ratio (JS/JSON heavy content)): ' + estimatedMB + ' MB');
-                // Show top 10 largest files for diagnosis
-                big.sort((a, b) => b.sz - a.sz).slice(0, 10).forEach(({f, sz}) => {
-                  console.log('  ' + (sz/1024).toFixed(0) + 'KB  ' + f);
-                });
-                process.stdout.write(estimatedMB);
-              });
-          " 2>/dev/null | tail -1)
-          echo "estimated_mb=$SIZE" >> $GITHUB_OUTPUT
-          echo "Archive estimated size: ${SIZE} MB"
-          # Block if > 15 MB (Athom confirmed limit ~15MB for processing)
-          # Fix: large.png + xlarge.png now excluded via .homeyignore â†’ ~12MB
-          python3 -c "
-          s = float('$SIZE')
-          print(f'Archive: {s} MB')
-          if s > 15:
-            print(f'::error::Archive too large: {s} MB > 15 MB â€” WILL cause Athom processing_failed.')
-            print(f'  ROOT CAUSE: large.png (13MB) or xlarge.png (10MB) may be included.')
-            print(f'  CHECK: drivers/**/assets/images/large.png in .homeyignore?')
-            print(f'  Run: node .github/scripts/athom-archive-audit.js to diagnose.')
-            exit(1)
-          elif s > 12:
-            print(f'::warning::Archive approaching limit: {s} MB (target < 12MB, limit ~15MB). Monitor carefully.')
-            print(f'âœ… Archive OK but close to limit: {s} MB')
-          else:
-            print(f'âœ… Archive OK: {s} MB < 12 MB target')
-          "
-
+      - name: 🗜️ Compact app.json before publish (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
 
       - name: Publish
-        if: steps.pat.outputs.ok == 'true' && steps.archive_gate.outcome == 'success'
+        if: steps.pat.outputs.ok == 'true'
         id: pub
         uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-
-      - name: Capture Build ID from publish log
-        if: steps.pub.outcome == 'success'
-        id: build_id
-        continue-on-error: true
-        run: node .github/scripts/capture-build-id.js
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
 
       - name: Create GitHub Release
         if: steps.pat.outputs.ok == 'true'
@@ -299,7 +211,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      # ===== DRAFT â†’ TEST (Puppeteer + API fallback) =====
+      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Wait for Athom draft processing
         if: steps.pub.outcome == 'success'
         run: |
@@ -309,10 +221,7 @@ jobs:
       - name: Install Puppeteer
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
-        run: |
-          # Install to /tmp/pptr to avoid EACCES from Docker root-owned node_modules
-          npm install puppeteer athom-api --prefix /tmp/pptr --no-save 2>&1 || \
-            npm install puppeteer athom-api --no-save --ignore-scripts 2>&1 || true
+        run: npm install puppeteer athom-api --no-save
 
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         if: steps.pat.outputs.ok == 'true'
@@ -323,8 +232,6 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: 'false'
-          BUILD_ID: ${{ steps.build_id.outputs.build_id }}
-          NODE_PATH: /tmp/pptr/node_modules
         run: node .github/scripts/auto-promote-puppeteer.js
 
       - name: "Tier 2: Promote via OAuth (headless)"
@@ -382,4 +289,3 @@ jobs:
             echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
             echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
           fi
-

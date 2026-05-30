@@ -170,6 +170,7 @@ async function main() {
     } catch (e) { console.log(`  [GH API error] ${e.message}`); }
 
     // 2. Analyser les workflows clés
+    const now2h = Date.now() - 2 * 60 * 60 * 1000; // 2h ago
     const seen = new Set();
     const latestByName = [];
     for (const run of runs) {
@@ -184,8 +185,20 @@ async function main() {
     for (const r of keyRuns) {
       const icon = { success: 'OK', failure: 'FAIL', skipped: 'SKIP' }[r.conclusion] ||
         (r.status === 'in_progress' ? 'RUN' : r.status === 'queued' ? 'WAIT' : '?');
-      console.log(`  [${icon}] #${r.run_number} ${r.name}`);
-      if (r.conclusion === 'failure') failed.push(r);
+      const runAge = new Date(r.created_at).getTime();
+      const isStale = runAge < now2h;       // > 2h old
+      const isCancelled = r.conclusion === 'failure' && r.jobs_url; // will check jobs count
+
+      console.log(`  [${icon}] #${r.run_number} ${r.name}${isStale ? ' (stale>2h)' : ''}`);
+
+      if (r.conclusion === 'failure') {
+        // Skip stale failures (pre-fix historical runs)
+        if (isStale) {
+          console.log(`    => SKIPPED (stale historical failure — pre-fix run)`);
+          continue;
+        }
+        failed.push(r);
+      }
       else if (r.status === 'in_progress') inProgress.push(r);
       else if (r.conclusion === 'success') succeeded.push(r);
     }

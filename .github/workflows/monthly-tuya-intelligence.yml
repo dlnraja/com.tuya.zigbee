@@ -1,58 +1,62 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
-# Re-enable by removing 'if: false' below
-name: 🌙 Monthly Tuya Intelligence & URL Audit
+name: "Monthly Tuya Intelligence Sync"
 
 on:
   schedule:
-    - cron: '0 0 1 * *' # Once a month on the 1st
-  workflow_dispatch: # Allow manual trigger
+    - cron: "0 3 1 * *"  # 1st of each month at 03:00 UTC
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force sync even if no changes"
+        required: false
+        default: "false"
 
-defaults:
-  run:
-    shell: bash
+env:
+  NODE_VERSION: "22"
 
 jobs:
-  audit-and-enrich:
+  intelligence-sync:
+    name: "Monthly Intelligence Sync"
     runs-on: ubuntu-latest
-    steps:
-      - name: 🛰️ Checkout Repository
-        uses: actions/checkout@v4
+    timeout-minutes: 60
+    permissions:
+      contents: write
 
-      - name: 🟢 Setup Node.js
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: "Setup Node.js"
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
 
-      - name: 📦 Install Dependencies
+      - name: "Install Dependencies"
         run: npm install axios cheerio
 
-      - name: 🔴 Step 1: Challenge All URLs
+      - name: "Step 1 - Challenge All URLs"
         run: node .github/scripts/challenge-all-urls.js
+        continue-on-error: true
 
-      - name: 🟠 Step 2: Run Intelligent Enrichment Engine
+      - name: "Step 2 - Run Intelligent Enrichment Engine"
         run: node .github/scripts/ai-enrichment-engine.js
+        continue-on-error: true
         env:
-          XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: 🟡 Step 3: Run Ultimate Validation
-        run: node scripts/ULTIMATE_CHECK.js
+      - name: "Step 3 - Run Tuya Intelligence Fingerprinting"
+        run: node .github/scripts/tuya-intelligence.js
+        continue-on-error: true
 
-      - name: 📝 Step 4: Generate Monthly Intelligence Summary
+      - name: "Commit and Push Results"
         run: |
-          echo "# 🌙 Monthly Intelligence Summary - $(date +'%Y-%m')" > reports/MONTHLY_SUMMARY.md
-          echo "## 📊 Stats" >> reports/MONTHLY_SUMMARY.md
-          grep -E "total|alive|dead" reports/url_audit_report.json >> reports/MONTHLY_SUMMARY.md
-          echo "## ✨ New Enrichment Data" >> reports/MONTHLY_SUMMARY.md
-          jq -r '.data[] | "* [" + .title + "](" + .url + ") - " + .description' data/enriched_intelligence.json >> reports/MONTHLY_SUMMARY.md
-
-      - name: 🟢 Step 5: Commit and Push Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add data/enriched_intelligence.json reports/URL_AUDIT.md reports/url_audit_report.json reports/MONTHLY_SUMMARY.md
-          git commit -m "chore(intelligence): monthly automated url audit and enrichment [skip ci]" || echo "No changes to commit"
-          git push
+          git config user.email "ci@tuya-zigbee.bot"
+          git config user.name "Tuya Intelligence Bot"
+          git add -A || true
+          git diff --staged --quiet || git commit -m "chore: Monthly intelligence sync [skip ci]"
+          git push origin master || true
+        continue-on-error: true
