@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.23 (2026-05-30)
+## v8.1.24 (2026-05-30)
+
+fix(ci): correct build targeting — promote right build to test
+
+---
+
+## [8.1.23] - 2026-05-30
+
+### New Features
+- Added 116 new fingerprints from community contributions, enhancing device compatibility.
+
+### Bug Fixes
+- No bug fixes reported in this release.
+---
+
+ v8.1.23 (2026-05-30)
 
 ci: fresh publish after .npmrc revert - test processing
 
