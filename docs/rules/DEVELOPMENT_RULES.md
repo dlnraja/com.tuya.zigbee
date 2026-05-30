@@ -1,16 +1,29 @@
-# Development Rules - Tuya Unified Zigbee
+﻿# Development Rules - Tuya Unified Zigbee
 
-##  CRITICAL RULES
+> **Updated: 2026-05-30** -- Added Archive Size Rules (Root Cause: Processing Failed v8.1.7+)
 
-### 1. Publication Rule
-**NEVER use `npx homey app publish` locally.**  
-Always publish via GitHub Actions by pushing to master/main branch.
-The workflow `.github/workflows/publish.yml` handles publication automatically.
+## CRITICAL RULES
 
-### 2. ManufacturerName Duplication Rule
-**ManufacturerNames CAN be in multiple drivers** - this is NORMAL and EXPECTED!
+### 0. Archive Size Rule (ROOT CAUSE -- Processing Failed v8.1.7 to v8.1.26)
 
-####  VALID: Same manufacturerName in multiple drivers
+DISCOVERED 2026-05-30: Every publish from v8.1.7 to v8.1.26 silently failed with
+"Processing failed" on Athom. Root cause: `.diag/` (55MB of CI screenshots/tarballs)
+was NOT in `.homeyignore`. Archive reached ~39MB compressed > Athom 30MB limit.
+Fix: Added `.diag/` `.memory/` `.ai/` `.gemini/` to `.homeyignore`.
+
+Mandatory checks before ANY publish commit:
+  node .github/scripts/check-archive-size.js   # Must exit 0 (< 20MB compressed)
+  node .github/scripts/athom-archive-audit.js  # Full audit report
+
+NEVER ship to Athom: .diag/ .memory/ .ai/ .gemini/ screenshots/ docs/ reports/
+  reimplementation_gateway/ (contains 40MB MP4!) data/archive/
+
+REQUIRED in archive: app.json app.js package.json .homeychangelog.json
+  driver-mapping-database.json data/fingerprints.json lib/tuya/fingerprints.json
+  locales/*.json assets/icon.svg README.txt (+ nl/de/fr)
+  drivers/*/assets/icon.svg + small.png + large.png
+
+---
 ```
 _TZ3000_abcdefgh + TS0001  switch_1gang
 _TZ3000_abcdefgh + TS0002  switch_2gang

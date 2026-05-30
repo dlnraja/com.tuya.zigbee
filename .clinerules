@@ -68,8 +68,13 @@
    - **Casing Normalization**: Run `scripts/maintenance/master-self-heal.js` to auto-normalize casing variants of community fingerprints on both tracks.
    - **Internet Research & Indexing**: For web scraping and file tracing without active MCP search servers, always utilize `.github/scripts/internet-research-tool.js`.
 
-6. **Bundle Size Limit (< 7MB)**:
-   - Always exclude `.github/`, `scripts/`, `docs/`, `tmp/`, and `.git/` via [.homeyignore](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/.homeyignore).
+6. **Archive Size Limits (CRITICAL — Athom Processing Failure Root Cause)**:
+   - **TARGET**: < 20MB compressed (Athom hard limit ~30MB — 10MB safety margin)
+   - **ROOT CAUSE 2026-05-30**: `.diag/` was NOT in `.homeyignore` → 55MB bloat → 39MB compressed → "Processing failed" on ALL builds v8.1.7–v8.1.26
+   - **Fix**: Added `.diag/` `.memory/` `.ai/` `.gemini/` to `.homeyignore`
+   - **CI Gate**: `check-archive-size.js` exits 1 if > 20MB; `athom-archive-audit.js --ci` for full report
+   - **NEVER ship**: `.diag/` `.archive/` `screenshots/` `docs/` `reports/` `reimplementation_gateway/` (contains 40MB MP4!)
+   - **Always verify**: `node .github/scripts/check-archive-size.js` before any publish
 
 7. **Post-Promotion Documentation & Registry Synchronization Rule (MANDATORY)**:
    - **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
