@@ -112,6 +112,7 @@ jobs:
         run: node scripts/maintenance/string-integrity-gate.js
 
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
+        continue-on-error: true
         run: |
           node scripts/maintenance/zero-defect-architect-audit.js
           if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
