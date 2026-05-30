@@ -1,4 +1,4 @@
-﻿name: ðŸ›¡ï¸ Unified CI/CD Orchestrator
+﻿name: ­ƒøí´©Å Unified CI/CD Orchestrator
 
 on:
   push:
@@ -21,7 +21,7 @@ defaults:
 
 jobs:
   validate:
-    name: ðŸ” Universal Validation (SDK 3 Strict)
+    name: ­ƒöì Universal Validation (SDK 3 Strict)
     if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
     timeout-minutes: 15
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
       
-      - name: ðŸ›¡ï¸ Dual-Layer AggregateError Gate (BLOQUANT)
+      - name: ­ƒøí´©Å Dual-Layer AggregateError Gate (BLOQUANT)
         run: |
           node - << 'GATE'
           const fs = require('fs');
@@ -56,33 +56,33 @@ jobs:
               }
             }
           });
-          if(errs.length){console.error('âŒ AggregateError dans',errs.length,'drivers:');errs.forEach(e=>console.error('  âŒ',e));process.exit(1);}
-          console.log('âœ… Dual-Layer: PASS â€” ZÃ©ro AggregateError');
+          if(errs.length){console.error('ÔØî AggregateError dans',errs.length,'drivers:');errs.forEach(e=>console.error('  ÔØî',e));process.exit(1);}
+          console.log('Ô£à Dual-Layer: PASS ÔÇö Z├®ro AggregateError');
           GATE
 
-      - name: ðŸ—œï¸ Compact app.json (anti-Athom-5MB-limit)
+      - name: ­ƒù£´©Å Compact app.json (anti-Athom-5MB-limit)
         uses: ./.github/actions/compact-app-json
 
-      - name: ðŸ  Homey Validate
+      - name: ­ƒÅá Homey Validate
         run: npx homey app validate --level publish
-        continue-on-error: true  # large.png present since v8.1.32
+        continue-on-error: true  # large.png required since v8.1.32
       
-      - name: ðŸ›¡ï¸ Fleetwood Integrity & Manifest Gateway
+      - name: ­ƒøí´©Å Fleetwood Integrity & Manifest Gateway
         run: node scripts/PRE_COMMIT_CHECKS.js
       
-      - name: ðŸ›¡ï¸ SDK 3 Strict Linter
+      - name: ­ƒøí´©Å SDK 3 Strict Linter
         run: node scripts/maintenance/rule-21-linter.js
       
-      - name: ðŸ“Š Architectural Audit & Performance Benchmark
+      - name: ­ƒôè Architectural Audit & Performance Benchmark
         run: node scripts/benchmark/app-audit-plus.js
       
-      - name: ðŸ§¹ Metadata Consistency Check
+      - name: ­ƒº╣ Metadata Consistency Check
         run: node scripts/maintenance/validate-driver-manifests.js
       
-      - name: ðŸŒŒ ZERO DEFECT ARCHITECT AUDIT
+      - name: ­ƒîî ZERO DEFECT ARCHITECT AUDIT
         run: node scripts/maintenance/zero-defect-architect-audit.js
       
-      - name: ðŸ”„ Z2M/ZHA Case Variant Check
+      - name: ­ƒöä Z2M/ZHA Case Variant Check
         run: |
           echo "Checking case variant coverage for Z2M/ZHA compatibility..."
           node scripts/automation/detect-missing-variants.js
@@ -92,11 +92,11 @@ jobs:
             echo "::warning::Found $MISSING missing case variants - auto-fixing..."
             node scripts/automation/fix-detected-variants.js
           else
-            echo "âœ“ All drivers have complete case variant coverage"
+            echo "Ô£ô All drivers have complete case variant coverage"
           fi
 
   build:
-    name: ðŸ—ï¸ Production Build & Optimize
+    name: ­ƒÅù´©Å Production Build & Optimize
     needs: validate
     runs-on: ubuntu-latest
     steps:
@@ -110,84 +110,84 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
       
-      - name: ðŸ‘· Homey Build
+      - name: ­ƒæÀ Homey Build
         run: npx homey app build
       
-      - name: ðŸ–¼ï¸ Fix Large Images
+      - name: ­ƒû╝´©Å Fix Large Images
         run: node scripts/maintenance/fix-large-images.js
       
-      - name: ðŸ§ª Regression Verification
+      - name: ­ƒº¬ Regression Verification
         run: |
           echo "Verifying presence of critical stability hooks..."
-          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar/device.js && echo "âœ… Radar Hook Active"
-          grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "âœ… Smart Divisor Active"
+          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar/device.js && echo "Ô£à Radar Hook Active"
+          grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "Ô£à Smart Divisor Active"
       
-      - name: ðŸ“¦ Artifact
+      - name: ­ƒôª Artifact
         uses: actions/upload-artifact@v4
         with:
           name: homey-app-bundle
           path: .homeybuild/
 
   security:
-    name: ðŸ›¡ï¸ Unified Security Shield (v8.5.0 Hardened)
+    name: ­ƒøí´©Å Unified Security Shield (v8.5.0 Hardened)
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
-      - name: ðŸ•µï¸ Deep Credential & Token Leak Detection
+      - name: ­ƒòÁ´©Å Deep Credential & Token Leak Detection
         run: |
-          echo "ðŸ” [1/5] Checking for .env and forbidden files..."
+          echo "­ƒöÉ [1/5] Checking for .env and forbidden files..."
           FOUND_ENV=$(find . -maxdepth 3 -name '.env' -not -path './node_modules/*' -not -path './.git/*' 2>/dev/null | head -5)
           if [ -n "$FOUND_ENV" ]; then
-            echo "::error::âš ï¸ .env files detected in repo! Remove immediately: $FOUND_ENV"
+            echo "::error::ÔÜá´©Å .env files detected in repo! Remove immediately: $FOUND_ENV"
             exit 1
           fi
-          echo "âœ… No .env files in tracked directories"
+          echo "Ô£à No .env files in tracked directories"
 
-          echo "ðŸ” [2/5] Checking git remote URLs for embedded tokens..."
+          echo "­ƒöÉ [2/5] Checking git remote URLs for embedded tokens..."
           if git remote -v 2>/dev/null | grep -qiE 'gh[opsu]_[A-Za-z0-9]{30,}'; then
-            echo "::error::âš ï¸ GIT REMOTE CONTAINS A TOKEN! Run: git remote set-url origin <clean-url>"
+            echo "::error::ÔÜá´©Å GIT REMOTE CONTAINS A TOKEN! Run: git remote set-url origin <clean-url>"
             echo "::error::Also revoke the token at: https://github.com/settings/tokens"
             exit 1
           fi
-          echo "âœ… Git remote URLs are clean"
+          echo "Ô£à Git remote URLs are clean"
 
-          echo "ðŸ” [3/5] Running JavaScript Security Scanner..."
-          node scripts/ci/security-scanner.js && echo "âœ… Security scanner passed" || {
-            echo "::error::âš ï¸ Security scanner found issues (exit code $?)"
+          echo "­ƒöÉ [3/5] Running JavaScript Security Scanner..."
+          node scripts/ci/security-scanner.js && echo "Ô£à Security scanner passed" || {
+            echo "::error::ÔÜá´©Å Security scanner found issues (exit code $?)"
             exit 1
           }
 
-          echo "ðŸ” [4/5] Checking .gitignore for env/credential protection..."
+          echo "­ƒöÉ [4/5] Checking .gitignore for env/credential protection..."
           REQUIRED_ENTRIES=(".env" "credentials.json" "secrets.json" "token.json" "*.key" "*.pem")
           for entry in "${REQUIRED_ENTRIES[@]}"; do
             if ! grep -qF "$entry" .gitignore 2>/dev/null; then
-              echo "::warning::âš ï¸ .gitignore missing: $entry"
+              echo "::warning::ÔÜá´©Å .gitignore missing: $entry"
               echo "$entry" >> .gitignore
             fi
           done
-          echo "âœ… .gitignore properly configured"
+          echo "Ô£à .gitignore properly configured"
 
-          echo "ðŸ” [5/5] Checking for leaked emails in source..."
+          echo "­ƒöÉ [5/5] Checking for leaked emails in source..."
           EMAIL_RESULT=$(grep -rniE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" . \
             --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.homeybuild \
             --include='*.js' --include='*.json' --include='*.yml' --include='*.yaml' 2>/dev/null || true)
           FILTERED=$(echo "$EMAIL_RESULT" | grep -viE "example\.com|test\.com|@homey\.app|@users\.noreply|@github\.com" || true)
           if [ -n "$FILTERED" ]; then
             echo "$FILTERED"
-            echo "::warning::âš ï¸ Found potential email leaks in code"
+            echo "::warning::ÔÜá´©Å Found potential email leaks in code"
           else
-            echo "âœ… No email leaks detected"
+            echo "Ô£à No email leaks detected"
           fi
 
   notify:
-    name: ðŸ“¬ Notification & Diagnostics
+    name: ­ƒô¼ Notification & Diagnostics
     needs: [validate, security]
     if: always() && (needs.validate.result == 'failure' || needs.security.result == 'failure')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: âš ï¸ Notify on Failure
+      - name: ÔÜá´©Å Notify on Failure
         run: |
           echo "::warning::Unified CI detected failures. Review logs above."
