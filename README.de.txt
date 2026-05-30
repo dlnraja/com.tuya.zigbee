@@ -1,25 +1,25 @@
-﻿Unified Smart Home Engine fuer Homey — Lokale Tuya Zigbee-Steuerung
+Unified Smart Home Engine fuer Homey - Lokale Tuya Zigbee Steuerung
 
-Diese App bietet einheitliche, lokale Unterstuetzung fuer eine breite Palette von Tuya Zigbee, eWeLink und kompatiblen Smart-Home-Geraeten — ohne Cloud, ohne Internetabhaengigkeit.
+Diese App bietet einheitliche, lokale Unterstuetzung fuer eine Vielzahl von Tuya Zigbee, eWeLink und kompatiblen Smart-Home-Geraeten - keine Cloud erforderlich, keine Internetabhaengigkeit.
 
-Mit ueber 412 Treibern und 33.235+ Geraete-Fingerabdruecken unterstuetzt sie:
-- Intelligente Steckdosen, Steckdosenleisten und Energiemonitore
-- Wandschalter (1- bis 6-fach) und Dimmer
-- Anwesenheits-, Bewegungs-, Kontakt- und Rauchmelder
-- Thermostate, Heizkoerperventile und Klimaregelung
-- Smarte Lampen, LED-Streifen und Lichtcontroller
-- Rolllaeden, Jalousien, Vorhaenge und Garagentore
-- Tuerenschloesser und Sicherheitspanels
+Mit ueber 412 Treibern und 33.235+ Geraetefingerabdruecken deckt sie eine breite Palette von Geraeten ab, darunter:
+- Intelligente Stecker, Steckdosenleisten und Energiemonitore
+- Wandschalter (1 bis 6 Gruppen) und Dimmer
+- Anwesenheits-, Bewegungs-, Kontakt- und Rauchsensoren
+- Thermostate, Heizkoerperventile und Klimasteuerung
+- Intelligente Gluehbirnen, LED-Streifen und Lichtregler
+- Rolllaeden, Jalousien, Vorhaenge und Garagen
+- Tuerschloesser und Sicherheitspanele
 - Luftqualitaetsmonitore (CO2, VOC, PM2.5)
-- Wasserleck-, Regen- und Bodenfeuchtesensoren
+- Wasserleck-, Regen- und Bodensensoren
 
-FUNKTIONEN:
-- Lokale Steuerung: Alles laeuft auf Ihrem Homey Pro, nichts in der Cloud
-- Hybridmodus: Automatische Erkennung von Tuya DP oder Standard ZCL
-- Intelligente Batterie: Spannungs-zu-Prozent-Konvertierung fuer Geraete ohne native Berichterstattung
-- Flow-Karten: 4.073+ Ausloeseer, Bedingungen und Aktionen in EN, FR, NL, DE
-- Selbstreparatur: Eingebaute Selbstheilung fuer Geraetekonfigurationen
-- Doppelte Fingerabdruckebene: Statische und dynamische Zuordnung fuer maximale Kompatibilitaet
+HAUPTFUNKTIONEN:
+- Nur lokale Steuerung: Alle Verarbeitungen finden auf Ihrem Homey Pro statt
+- Hybridmodus: Erkennt automatisch Tuya DP oder Standard-ZCL-Protokoll
+- Intelligente Batterie: Spannungs-zu-Prozent-Umrechnung ohne native Berichterstattung
+- Flow-Karten: 4.073+ Ausloser, Bedingungen und Aktionen in DE, EN, FR, NL
+- Auto-Reparatur: Integrierte Selbstheilung fuer Geraetkonfigurationskarten
+- Doppelschicht-Fingerabdruck: Statische + dynamische Uebereinstimmung
 
 UNTERSTUETZTE PROTOKOLLE:
 - Zigbee (SDK3, Homey Pro 2023+)
@@ -30,7 +30,7 @@ ERSTE SCHRITTE:
 2. Gehen Sie zu Geraete > Geraet hinzufuegen > Unified Smart Home Engine
 3. Koppeln Sie Ihr Geraet - es wird automatisch erkannt
 
-GEMEINSCHAFT UND SUPPORT:
+COMMUNITY UND SUPPORT:
 - Forum: https://community.homey.app/t/140352
 - Probleme: https://github.com/dlnraja/com.tuya.zigbee/issues
-- Quellcode: https://github.com/dlnraja/com.tuya.zigbee
+- Quelle: https://github.com/dlnraja/com.tuya.zigbee

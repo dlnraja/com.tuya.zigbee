@@ -1,6 +1,6 @@
-Unified Smart Home Engine for Homey — Local-First Tuya Zigbee Control
+Unified Smart Home Engine for Homey - Local-First Tuya Zigbee Control
 
-This app provides unified, local-first support for a wide variety of Tuya Zigbee, eWeLink, and compatible smart home devices — no cloud required, no internet dependency.
+This app provides unified, local-first support for a wide variety of Tuya Zigbee, eWeLink, and compatible smart home devices - no cloud required, no internet dependency.
 
 With over 412 drivers and 33,235+ device fingerprints, it covers an extensive range of devices including:
 - Smart plugs, power strips and energy monitors
