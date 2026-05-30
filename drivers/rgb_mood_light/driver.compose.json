@@ -49,5 +49,11 @@
         "en": "Power on to enter pairing mode."
       }
     }
-  }
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ]
 }
