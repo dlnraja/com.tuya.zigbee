@@ -517,7 +517,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     
     // v5.7.48: If we have a cached config, check if it's still valid
     // If mfr was empty before but now available, re-lookup config
-    // v5.8.77: Also re-check if config is a FALLBACK (e.g. HOBEIAN_10G_MULTI_FALLBACK)
+    // v5.8.77: Also re-check if config is a named fallback (ends with _FALLBACK suffix)
     if (this._sensorConfig) {
       const cachedConfigName = this._sensorConfig.configName || 'DEFAULT';
       const isFallback = cachedConfigName === 'DEFAULT' || cachedConfigName.endsWith('_FALLBACK');
