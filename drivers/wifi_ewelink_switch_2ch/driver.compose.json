@@ -99,7 +99,6 @@
   "connectivity": [
     "lan"
   ],
-  "discovery": "ewelink_mdns",
   "maintenanceActions": [
     {
       "id": "ota_check",
