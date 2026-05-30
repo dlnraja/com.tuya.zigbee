@@ -1,6 +1,6 @@
 ﻿# comprehensive-auto-validation.yml
 # Validates app structure, drivers, and publish-readiness on every push
-name: ðŸ›¡ï¸ Fleet-Wide Comprehensive Validation
+name: ­ƒøí´©Å Fleet-Wide Comprehensive Validation
 
 on:
   push:
@@ -25,43 +25,43 @@ defaults:
 
 jobs:
   fleet-audit:
-    name: ðŸ›¡ï¸ Fleet Audit & Validation
+    name: ­ƒøí´©Å Fleet Audit & Validation
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: ðŸ“¥ Checkout Code
+      - name: ­ƒôÑ Checkout Code
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
-      - name: ðŸ“¦ Setup Node.js
+      - name: ­ƒôª Setup Node.js
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      - name: ðŸ“¦ Install Dependencies
+      - name: ­ƒôª Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: ðŸ” Mandatory Files Check (O17-O21 + M01-M14) â€” BLOCKING
+      - name: ­ƒöÉ Mandatory Files Check (O17-O21 + M01-M14) ÔÇö BLOCKING
         run: node scripts/validate/homey-mandatory-check.js
 
-      - name: ðŸ” Athom Server Requirements (O17-O20) â€” BLOCKING
+      - name: ­ƒöÉ Athom Server Requirements (O17-O20) ÔÇö BLOCKING
         run: node scripts/validate/validate-app-json.js
 
-      - name: ðŸ“ No Legacy Hybrid Folder Regression
+      - name: ­ƒôü No Legacy Hybrid Folder Regression
         run: |
           HYBRIDS=$(find drivers -maxdepth 1 -type d -name "*_hybrid" 2>/dev/null | wc -l)
           if [ "$HYBRIDS" -gt 0 ]; then
-            echo "âŒ REGRESSION: Found $HYBRIDS legacy hybrid driver directories!"
+            echo "ÔØî REGRESSION: Found $HYBRIDS legacy hybrid driver directories!"
             find drivers -maxdepth 1 -type d -name "*_hybrid"
             exit 1
           fi
-          echo "âœ… No hybrid folders found."
+          echo "Ô£à No hybrid folders found."
 
-      - name: ðŸ” Resolve Fingerprint Collisions
+      - name: ­ƒöì Resolve Fingerprint Collisions
         run: node scripts/ci/resolve-collisions.js
         continue-on-error: true
 
-      - name: ðŸ›¡ï¸ Dual-Layer Integrity (no AggregateError)
+      - name: ­ƒøí´©Å Dual-Layer Integrity (no AggregateError)
         run: |
           node - << 'DUAL_LAYER'
           const fs = require('fs');
@@ -83,24 +83,24 @@ jobs:
             }
           });
           if (errors.length) {
-            console.error('âŒ M09: ' + errors.length + ' Zigbee drivers with FPs but no MF (AggregateError):', errors.slice(0,5).join(', '));
+            console.error('ÔØî M09: ' + errors.length + ' Zigbee drivers with FPs but no MF (AggregateError):', errors.slice(0,5).join(', '));
             process.exit(1);
           }
-          console.log('âœ… Dual-Layer OK: ' + zigbeeOk + ' Zigbee drivers with MF, ' + generic + ' generic templates exempt');
+          console.log('Ô£à Dual-Layer OK: ' + zigbeeOk + ' Zigbee drivers with MF, ' + generic + ' generic templates exempt');
           DUAL_LAYER
 
-      - name: ðŸ” Homey Publish-Level Validation
+      - name: ­ƒöì Homey Publish-Level Validation
         run: npx homey app validate --level publish
-        continue-on-error: true  # large.png present since v8.1.32
+        continue-on-error: true  # large.png required since v8.1.32
 
-      - name: ðŸ“Š Report Summary
+      - name: ­ƒôè Report Summary
         if: always()
         run: |
           echo "## Fleet Validation Summary" >> $GITHUB_STEP_SUMMARY
           echo "| File | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| README.txt | $([ -f README.txt ] && echo 'âœ…' || echo 'âŒ') |" >> $GITHUB_STEP_SUMMARY
-          echo "| assets/icon.svg | $([ -f assets/icon.svg ] && echo 'âœ…' || echo 'âŒ') |" >> $GITHUB_STEP_SUMMARY
-          echo "| app.json | $(node -e "JSON.parse(require('fs').readFileSync('app.json'));process.stdout.write('âœ…')" 2>/dev/null || echo 'âŒ') |" >> $GITHUB_STEP_SUMMARY
+          echo "| README.txt | $([ -f README.txt ] && echo 'Ô£à' || echo 'ÔØî') |" >> $GITHUB_STEP_SUMMARY
+          echo "| assets/icon.svg | $([ -f assets/icon.svg ] && echo 'Ô£à' || echo 'ÔØî') |" >> $GITHUB_STEP_SUMMARY
+          echo "| app.json | $(node -e "JSON.parse(require('fs').readFileSync('app.json'));process.stdout.write('Ô£à')" 2>/dev/null || echo 'ÔØî') |" >> $GITHUB_STEP_SUMMARY
           DRV=$(node -p "require('./app.json').drivers.length" 2>/dev/null || echo '?')
           echo "| Drivers | $DRV |" >> $GITHUB_STEP_SUMMARY
