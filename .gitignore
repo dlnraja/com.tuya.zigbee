@@ -229,3 +229,9 @@ push-result*.json
 # â”€â”€â”€ Build diagnostics (never commit) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 .github/state/build-result*.json
 .github/state/publish-result*.json
+
+# Diagnostic tarballs and diag folder
+.diag/
+.diag/**
+
+*.dedup-backup

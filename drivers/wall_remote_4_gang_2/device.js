@@ -6,13 +6,21 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  * 4 Gang Wall Remote (Type 2)
  * v5.13.2: Migrated to TuyaZigbeeDevice with standardized onZigBeeMessage hook
  */
+'use strict';
+
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+
+/**
+ * 4 Gang Wall Remote (Type 2)
+ * v5.13.2: Migrated to TuyaZigbeeDevice with standardized onZigBeeMessage hook
+ */
 class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
       // Call parent to setup raw frame fallbacks
       await super.onNodeInit({ zclNode  });
-      this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
+      this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_2_wall_remote_4_gang_buttons_2');
       if (this._buttonPressedTriggerDevice) {
       this._buttonPressedTriggerDevice.registerRunListener(async (args, state) => {
       return args.button === state.button;
@@ -57,7 +65,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('4 Gang Wall Remote removed');
-    if (typeof super.onDeleted === 'function') {super.onNodeInit({ zclNode });}
+    if (typeof super.onDeleted === 'function') { super.onDeleted(); }
   }
 
 }

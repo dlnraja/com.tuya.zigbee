@@ -294,13 +294,13 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
     async registerTriggerCards() {
         // Register configurable switch trigger
-        this._switchTrigger = this.homey.flow.getDeviceTriggerCard('switch_state_changed');
+        this._switchTrigger = this.homey.flow.getDeviceTriggerCard('sr_zs_switch_switch_state_changed');
         this._switchTrigger.registerRunListener(async (args, state) => {
             return args.switch === state.switch && args.state === state.state.toString();
         });
 
         // Register configurable scene trigger
-        this._sceneTrigger = this.homey.flow.getDeviceTriggerCard('scene_triggered_configurable');
+        this._sceneTrigger = this.homey.flow.getDeviceTriggerCard('sr_zs_switch_scene_triggered_configurable');
         this._sceneTrigger.registerRunListener(async (args, state) => {
             return args.scene === state.scene;
         });
