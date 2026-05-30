@@ -179,17 +179,36 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # === CRITICAL: Compact app.json BEFORE git add (Bump action re-expands to 6MB) ===
+          BEFORE=$(node -p "require('fs').statSync('app.json').size")
+          node -e "
+            const fs=require('fs');
+            const app=JSON.parse(fs.readFileSync('app.json','utf8'));
+            const compact=JSON.stringify(app);
+            fs.writeFileSync('app.json',compact,'utf8');
+            const after=fs.statSync('app.json').size;
+            console.log('app.json compact: ' + Math.round(after/1024) + 'KB (' + (after/1024/1024).toFixed(2) + 'MB)');
+            if(after > 5*1024*1024){console.error('FATAL: app.json still >5MB!');process.exit(1);}
+          "
+          # Remove compose plugin to prevent re-expansion on publish
+          node -e "
+            const fs=require('fs');
+            const p=JSON.parse(fs.readFileSync('.homeyplugins.json','utf8'));
+            fs.writeFileSync('.homeyplugins.json',JSON.stringify(p.filter(x=>x.id!=='compose'),null,2));
+            console.log('compose plugin removed from .homeyplugins.json');
+          "
+          # Remove .homeycompose dir (prevents CLI from re-expanding)
+          rm -rf .homeycompose
+          # Commit with compact app.json
           git add -A
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
-          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
+          SZ=$(node -p "Math.round(require('fs').statSync('app.json').size/1024)")
+          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} FPs, app.json=${SZ}KB [skip ci]"
           git tag -f "v${{ steps.bump.outputs.version }}"
           git push origin HEAD --tags --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 🗜️ Compact app.json before publish (anti-Athom-5MB-limit)
-        uses: ./.github/actions/compact-app-json
 
       - name: 📦 Archive Size Gate (block if >30MB compressed)
         if: steps.pat.outputs.ok == 'true'
