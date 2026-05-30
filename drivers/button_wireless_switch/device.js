@@ -2,7 +2,7 @@
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin.js');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
