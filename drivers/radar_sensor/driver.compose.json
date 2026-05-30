@@ -13,8 +13,7 @@
   ],
   "capabilities": [
     "measure_luminance",
-    "alarm_motion",
-    "target_distance"
+    "alarm_motion"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",

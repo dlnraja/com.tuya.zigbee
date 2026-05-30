@@ -9,10 +9,7 @@
   "capabilities": [
     "onoff",
     "target_temperature",
-    "measure_temperature",
-    "wifi_heater_mode",
-    "child_lock",
-    "eco_mode"
+    "measure_temperature"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

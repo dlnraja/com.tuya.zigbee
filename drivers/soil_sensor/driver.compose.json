@@ -11,9 +11,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_luminance",
-    "alarm_water",
-    "measure_ec",
-    "measure_conductivity"
+    "alarm_water"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {

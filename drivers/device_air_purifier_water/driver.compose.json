@@ -8,10 +8,7 @@
   },
   "class": "sensor",
   "capabilities": [
-    "measure_water_level",
-    "measure_water_percentage",
-    "alarm_water_low",
-    "alarm_water_high",
+    "measure_humidity",
     "alarm_water",
     "alarm_battery",
     "onoff",
