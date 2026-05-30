@@ -60,5 +60,10 @@
         "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green)."
       }
     }
-  }
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ]
 }
