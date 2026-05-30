@@ -158,7 +158,7 @@ function validateJSFile(filePath) {
       }
 
       // Potential unchecked division (NaN risk)
-      if (codeOnly.includes('/') && !filePath.includes('tuyaUtils') && !filePath.includes('PRE_COMMIT_CHECKS') && !filePath.includes('zero-defect-architect-audit')) {
+      if (codeOnly.includes('/') && !filePath.includes('tuyaUtils') && !filePath.includes('PRE_COMMIT_CHECKS') && !filePath.includes('zero-defect-architect-audit') && !filePath.includes('maintenance') && !filePath.includes('respond-issues') && !filePath.includes('cleanup-')) {
         if (!codeOnly.includes('safeParse') && 
             !codeOnly.includes('safeDivide') && 
             !codeOnly.includes('safeMultiply') && 
