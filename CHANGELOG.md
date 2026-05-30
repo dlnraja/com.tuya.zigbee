@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.27] - 2026-05-30
+## [8.1.28] - 2026-05-30
+
+v8.1.27:
+---
+
+ [8.1.27] - 2026-05-30
 
 fix(promote): SPA warm-up fixes blank page — both apps promoted to test
 ---
