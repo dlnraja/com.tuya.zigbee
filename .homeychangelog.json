@@ -63,5 +63,8 @@
   },
   "8.1.21": {
     "en": "v8.1.20: Removed 21 ewelink/sonoff discovery entries and cleaned up discovery process., Added images to 16 light drivers and removed 29 invalid capabilities., Mapped 235 invalid capabilities to valid Homey SDK3 capabilities, including:, Replaced 22 invalid capabilities, including measure_voc → co2 and soil → temp/humidity., Fixed driver classes and capabilities for 6 drivers (rgb_spot, rgb_wall)."
+  },
+  "8.1.22": {
+    "en": "v8.1.20: Removed 21 ewelink/sonoff discovery entries and cleaned up discovery process., Added images to 16 light drivers and removed 29 invalid capabilities., Mapped 235 invalid capabilities to valid Homey SDK3 capabilities, including:, Replaced 22 invalid capabilities, including measure_voc → co2 and soil → temp/humidity., Fixed driver classes and capabilities for 6 drivers (rgb_spot, rgb_wall)."
   }
 }
