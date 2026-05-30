@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.20] - 2026-05-30
+## v8.1.23 (2026-05-30)
+
+ci: fresh publish after .npmrc revert - test processing
+
+---
+
+## [8.1.22] - 2026-05-30
+
+### New Features
+- Added 116 new fingerprints from Z2M/ZHA/community/JohanBendz.
+
+### Bug Fixes
+- No bug fixes in this release.
+---
+
+ [8.1.20] - 2026-05-30
 
 ### Bug Fixes
 - Removed 21 ewelink/sonoff discovery entries and cleaned up discovery process.
