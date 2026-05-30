@@ -7,6 +7,7 @@ const { mapValueRange, calculateLevelControlTransitionTime } = require("../../li
 
 class dimmer_1_gang extends ZigBeeDevice {
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         this.printNode();
 
         this.registerCapability("onoff", CLUSTER.ON_OFF);

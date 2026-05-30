@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class TuyaDiagnosticDevice extends require('homey-zigbeedriver').ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.printNode();
 /*     debug(true);
     this.enableDebug(); */

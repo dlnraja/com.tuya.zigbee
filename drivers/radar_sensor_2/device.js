@@ -11,6 +11,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class radarSensor2 extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.printNode();
 /*     debug(true);
     this.enableDebug(); */

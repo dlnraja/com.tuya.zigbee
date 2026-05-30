@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-05-30T22:30:19.251Z",
+  "appId": "com.dlnraja.tuya.zigbee",
+  "localIssues": [],
+  "dashResult": {
+    "screenshots": [
+      "diag-01-apps-list.png",
+      "diag-02-app-detail.png",
+      "diag-03-versions.png"
+    ],
+    "errors": [],
+    "warnings": [],
+    "appStatus": {
+      "hasAggregate": false,
+      "hasProcessingFailed": false,
+      "hasPublished": false,
+      "hasDraft": false,
+      "hasTest": false,
+      "hasError": false,
+      "hasSuccess": false,
+      "rawFirst500": "Developer Tools\nLOG IN\nHome\nMy Account\nMy Apps\nMy API Clients\nMy Webhooks\nTOOLS\nSystem\nPairing\nDevices\nImages\nVideos\nWIRELESS\nBluetooth LE\nInfrared\nRF\nZigbee\nZ-Wave\nWEB API\nWeb API Playground"
+    },
+    "versions": []
+  },
+  "apiResult": null,
+  "allGood": true
+}

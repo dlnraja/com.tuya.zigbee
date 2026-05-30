@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaOnOffCluster);
 class wall_socket extends ZigBeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
     this.printNode();
 

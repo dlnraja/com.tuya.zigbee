@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaOnOffCluster);
 class smartplug extends ZigBeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
     this.printNode();
 

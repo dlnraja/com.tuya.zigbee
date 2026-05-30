@@ -60,6 +60,7 @@ const getDataValue = (dpValue) => {
 
 class radarSensor extends TuyaSpecificClusterDevice {
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
     zclNode.endpoints[1].clusters.tuya.on("response", value => this.updatePosition(value));
   }
 

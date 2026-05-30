@@ -50,6 +50,7 @@ const getDataValue = (dpValue) => {
 class pir_mmwave_sensor extends ZigBeeDevice {
 
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         // Initialize transaction ID for Tuya commands
         this.transactionID = 0;
 

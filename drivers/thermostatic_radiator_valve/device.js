@@ -21,6 +21,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
 
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
 
         this.printNode();
 /*     debug(true);

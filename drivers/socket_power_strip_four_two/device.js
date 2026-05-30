@@ -7,6 +7,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class socket_power_strip_four_two extends ZigBeeDevice {
 		
 	async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
 		this.printNode();
 

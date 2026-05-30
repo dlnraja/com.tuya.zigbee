@@ -62,6 +62,7 @@ const getDataValue = (dpValue) => {
 
 class SmartAirDetectionBox extends TuyaSpecificClusterDevice {
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         this.printNode();
 
         zclNode.endpoints[1].clusters.tuya.on("response", (value) =>

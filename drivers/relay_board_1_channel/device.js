@@ -7,6 +7,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class relay_board_1_channel extends ZigBeeDevice {
 
     async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
         this.printNode();
 

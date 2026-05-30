@@ -58,6 +58,7 @@ const getDataValue = (dpValue) => {
 class soilsensor extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
 
     this.printNode();
 

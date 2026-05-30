@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class TuyaWaterLeakSensor extends TuyaSpecificClusterDevice {
 
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         
         this.printNode();
 

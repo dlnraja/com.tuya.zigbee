@@ -57,6 +57,7 @@ const getDataValue = (dpValue) => {
 class lcdtemphumidsensor3 extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.printNode();
 
     zclNode.endpoints[1].clusters.tuya.on("reporting", value => this.processResponse(value));

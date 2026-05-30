@@ -4,6 +4,7 @@ const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDev
 
 class ClimateSensorDimmerDevice extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.log('Climate Sensor Dimmer hybrid initialized');
   }
 

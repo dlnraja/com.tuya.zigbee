@@ -12,6 +12,7 @@ const DEFAULT_ONOFF_DURATION = 1000
 class IrrigationController extends ZigBeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
     this.printNode();
 

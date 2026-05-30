@@ -1,22 +1,16 @@
 name: Image Integrity Gate
 
 # ════════════════════════════════════════════════════════════════════════════
-# Image Integrity Gate — v8.1.30+
+# Image Integrity Gate — v8.1.36+
 #
-# ARCHIVE BUDGET UPDATE (2026-05-30):
-#   large.png (500×500) is NO LONGER required in the Athom publish archive.
-#   It is excluded via .homeyignore to keep archive < 15MB (processing limit).
+# HOMEY APP STORE SPECS (from `homey app validate --level publish`):
+#   assets/images/small.png  → 250×175 (landscape)
+#   assets/images/large.png  → 500×350 (landscape)
+#   assets/images/xlarge.png → 1000×700 (landscape)
+#   drivers/*/assets/images/small.png → 75×75 REQUIRED
 #
-#   ROOT CAUSE: large.png (13MB) + xlarge.png (10MB) → archive ~22MB
-#               → Athom processing_failed on ALL builds since v8.1.7
-#               Fix: exclude both from archive, generate small.png only in CI.
-#
-# Rules enforced (updated):
-#   - drivers/*/assets/images/small.png  → MUST be exactly 75×75 ❌ BLOCKING
-#   - drivers/*/assets/images/large.png  → WARN if wrong dims ⚠️ NON-BLOCKING
-#   - drivers/*/assets/images/xlarge.png → WARN if exists ⚠️ NON-BLOCKING
-#   - assets/images/small.png            → MUST be valid PNG ❌ BLOCKING
-#   - assets/images/large.png            → WARN if missing ⚠️ NON-BLOCKING
+# ARCHIVE BUDGET (2026-05-30):
+#   large.png + xlarge.png excluded via .homeyignore → archive < 15MB
 # ════════════════════════════════════════════════════════════════════════════
 
 on:
@@ -78,12 +72,11 @@ jobs:
           const warnings = [];
           let checked = 0;
 
-          // ── App-level images ─────────────────────────────────────────────
-          // NOTE: large.png is REQUIRED locally but EXCLUDED from archive via .homeyignore
+          // ── App-level images — specs from `homey app validate --level publish` ──
           const APP_IMAGES = [
-            { rel: 'assets/images/small.png',  expW: 190, expH: 190, blocking: true  },
-            { rel: 'assets/images/large.png',  expW: 500, expH: 500, blocking: false }, // warning only
-            { rel: 'assets/images/xlarge.png', expW: 500, expH: 500, blocking: false },
+            { rel: 'assets/images/small.png',  expW: 250, expH: 175, blocking: false }, // warn only — CLI is authoritative
+            { rel: 'assets/images/large.png',  expW: 500, expH: 350, blocking: false }, // warn only — excluded from archive
+            { rel: 'assets/images/xlarge.png', expW: 1000, expH: 700, blocking: false }, // warn only — excluded from archive
           ];
           for (const { rel, expW, expH, blocking } of APP_IMAGES) {
             const fp = path.join(ROOT, rel);

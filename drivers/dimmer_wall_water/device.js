@@ -4,6 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 class DimmerWallWaterDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.log('Dimmer Wall Water hybrid Ready');
   }
 }

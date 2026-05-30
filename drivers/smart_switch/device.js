@@ -7,6 +7,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class smart_switch extends ZigBeeDevice {
 
     async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
         this.printNode();
 

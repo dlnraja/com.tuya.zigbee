@@ -6,6 +6,7 @@ const { debug, CLUSTER } = require("zigbee-clusters");
 class dimmer_1_gang_2 extends ZigBeeDevice {
 
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         this.printNodeDetails(zclNode);
 
         try {

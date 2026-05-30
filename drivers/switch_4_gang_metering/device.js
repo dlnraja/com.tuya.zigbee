@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaOnOffCluster);
 class switch_4_gang_metering extends ZigBeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
     this.printNode();
     console.log(zclNode.endpoints);

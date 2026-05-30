@@ -6,6 +6,7 @@ const DP = { state: 1, pm25: 2, mode: 3, speed: 4, filter: 5, childLock: 7, brig
 
 class AirPurifierDevice extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.log('Air Purifier init...');
     this._lastOnoff = null;
     this._lastPm25 = null;
