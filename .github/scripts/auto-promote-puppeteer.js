@@ -59,6 +59,12 @@ async function main() {
   log('## Auto-Promote Draft -> Test (Puppeteer)');
   log(`App: ${APP_ID} | v${ver} | DRY=${DRY}`);
 
+  // List of apps to promote — main app first, then stable variant
+  // APPS_TO_PROMOTE env var can override (comma-separated)
+  const appsRaw = process.env.APPS_TO_PROMOTE || `${APP_ID},com.dlnraja.tuya.zigbee.stable`;
+  const APPS = appsRaw.split(',').map(s => s.trim()).filter(Boolean);
+  log(`Apps to promote: ${APPS.join(', ')}`);
+
   const browser = await puppeteer.launch({
     headless: 'new',
     args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage'],
@@ -69,13 +75,13 @@ async function main() {
     const page = await browser.newPage();
     page.setDefaultTimeout(30000);
 
-    // Auto-accept browser confirmation dialogs (e.g. "Are you sure you want to publish?")
+    // Auto-accept browser confirmation dialogs
     page.on('dialog', async (dialog) => {
       log('  [DIALOG] ' + dialog.type() + ': ' + dialog.message());
       await dialog.accept();
     });
 
-    // Intercept network to capture OAuth token from both requests and responses
+    // Intercept network to capture OAuth token
     const captured = { token: null, apiUrls: [], reqHeaders: {} };
     page.on('request', (req) => {
       try {
@@ -99,14 +105,14 @@ async function main() {
       } catch {}
     });
 
-    // Step 1: Go to HOME page (not deep URL — SPA needs step-by-step navigation)
+    // Step 1: Login once, then promote all apps
     log('\n### Step 1: Navigate to home');
     await page.goto(BASE, { waitUntil: 'networkidle2' });
     await waitReady(page, 'home-page', 5000);
     await snap(page, '01-initial');
     log(`  URL: ${page.url()}`);
 
-    // Step 2: Login — detect via URL redirect OR in-page "LOG IN" button
+    // Step 2: Login
     log('\n### Step 2: Check login');
     const url = page.url();
     const pageText = await page.evaluate(() => document.body?.innerText || '');
@@ -116,12 +122,9 @@ async function main() {
 
     if (isOnAuth || hasLoginBtn) {
       log('  Login required');
-
-      // If we're on tools page with LOG IN button, click it first
       if (hasLoginBtn && !isOnAuth) {
         log('  Clicking LOG IN button in sidebar...');
         const clicked = await page.evaluate(() => {
-          // Find the LOG IN button/link in sidebar
           const els = [...document.querySelectorAll('a, button, [role="button"]')];
           for (const el of els) {
             const t = (el.textContent || '').trim().toUpperCase();
@@ -133,20 +136,15 @@ async function main() {
           return null;
         });
         log(`  Clicked: ${clicked}`);
-        // Wait for navigation to accounts.athom.com
         await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
         await waitReady(page, 'after-login-click', 4000);
         await snap(page, '02-after-login-click');
         log(`  Now at: ${page.url()}`);
       }
-
-      // Now we should be on accounts.athom.com — fill credentials
       await doLogin(page);
       await waitReady(page, 'post-login', 5000);
       await snap(page, '04-post-login');
       log(`  Post-login URL: ${page.url()}`);
-
-      // Check for 2FA or errors
       if (page.url().includes('accounts.athom.com')) {
         const t = await page.evaluate(() => document.body?.innerText?.slice(0, 500) || '');
         if (/two.?factor|2fa|verification code/i.test(t)) {
@@ -155,12 +153,8 @@ async function main() {
         if (/incorrect|invalid|wrong/i.test(t)) {
           log('  Login failed - bad credentials'); process.exitCode = 1; return;
         }
-        log('  Still on accounts page, waiting...');
         await new Promise(r => setTimeout(r, 5000));
-        await snap(page, '04b-still-on-accounts');
       }
-
-      // Go to home so SPA hydrates properly
       if (!page.url().includes('tools.developer.homey.app')) {
         await page.goto(BASE, { waitUntil: 'networkidle2' });
         await waitReady(page, 'home-after-login', 5000);
@@ -170,18 +164,32 @@ async function main() {
     }
 
     await waitReady(page, 'pre-navigate', 3000);
-    log(`  Current URL: ${page.url()}`);
 
-    // Step 3: Find and promote (includes SPA navigation)
-    log('\n### Step 3: Find draft & promote');
-    const result = await findAndPromote(page, captured);
+    // Step 3: Promote each app in sequence
+    const envBuildId = process.env.BUILD_ID || '';
+    let anySuccess = false;
+
+    for (let i = 0; i < APPS.length; i++) {
+      const appId = APPS[i];
+      const isMainApp = appId === APP_ID;
+      const buildId = isMainApp ? envBuildId : ''; // only use BUILD_ID for main app
+      log(`\n### Step 3.${i+1}: Promote ${appId}${buildId ? ' (BUILD_ID='+buildId+')' : ''}`);
+      const result = await findAndPromote(page, captured, appId, buildId, i);
+      if (result) {
+        log(`### Result: ${appId} — Draft promoted to Test`);
+        anySuccess = true;
+      } else {
+        log(`### Result: ${appId} — FAILED to promote`);
+      }
+    }
+
     await snap(page, '07-final');
-
-    if (result) {
-      log('\n### Result: Draft promoted to Test');
-      log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}`);
+    if (anySuccess) {
+      log('\n### Overall: at least one app promoted successfully');
+      log(`Manage: ${BASE}/apps/app/${APP_ID}`);
     } else {
-      log('\nManual: https://tools.developer.homey.app/apps/app/' + APP_ID + '/versions');
+      log('\n### Overall: NO apps were promoted');
+      log('Manual: ' + BASE + '/apps/app/' + APP_ID + '/versions');
       process.exitCode = 1;
     }
   } finally {
@@ -275,52 +283,43 @@ async function doLogin(page) {
   log('  Final login URL: ' + page.url());
 }
 
-async function findAndPromote(page, captured) {
-  // If BUILD_ID is explicitly set, navigate directly to that build's submission page
-  const envBuildId = process.env.BUILD_ID || '';
-  if (envBuildId) {
-    const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${envBuildId}`;
-    log(`  Direct nav to build ${envBuildId}: ${buildUrl}`);
+async function findAndPromote(page, captured, appId, buildId, idx) {
+  const snapPfx = `app${idx}`;
+  // === ALWAYS use direct URL navigation — NEVER click from the My Apps list ===
+  // This avoids clicking .stable when looking for the main app or vice versa.
+  const appUrl = `${BASE}/apps/app/${appId}`;
+  const versionsUrl = `${appUrl}/versions`;
+
+  if (buildId) {
+    // Navigate directly to the specific build's submission page
+    const buildUrl = `${appUrl}/build/${buildId}`;
+    log(`  Direct nav to build ${buildId}: ${buildUrl}`);
     await page.goto(buildUrl, { waitUntil: 'networkidle2' });
-    await waitReady(page, 'build-page', 8000);
-    await snap(page, '05-build-direct');
+    await waitReady(page, `${snapPfx}-build-direct`, 8000);
+    await snap(page, `05-${snapPfx}-build-direct`);
     log(`  URL: ${page.url()}`);
   } else {
-    // Navigate via SPA clicks: My Apps -> App -> Versions
-    await spaNav(page);
-  }
-  async function spaNav(p) {
-    log('  3a: My Apps');
-    await p.evaluate(()=>{const l=document.querySelector('a[href="/apps"]');if(l)l.click();});
-    await waitReady(p, 'my-apps-page', 8000);
-    await snap(p,'05a-apps');
-    log('  3b: App — exact match to avoid .stable confusion');
-    // Use exact suffix match with trailing slash: /apps/app/APP_ID/ to avoid matching .stable variant
-    const ok=await p.evaluate(id=>{
-      const exact='/apps/app/'+id+'/';
-      const a=[...document.querySelectorAll('a')].find(l=>l.href&&(l.href.includes(exact)||l.pathname===('/apps/app/'+id)));
-      if(a){a.click();return a.href;}return false;
-    },APP_ID);
-    log(`  App link found: ${ok}`);
-    if(!ok) await p.goto(BASE+'/apps/app/'+APP_ID,{waitUntil:'networkidle2'});
-    await waitReady(p, 'app-page', 8000);
-    await snap(p,'05b-app');
-    log('  3c: Versions');
-    await p.evaluate(()=>{const a=[...document.querySelectorAll('a,button,[role="tab"]')].find(e=>/version/i.test(e.textContent));if(a)a.click();});
-    await waitReady(p, 'versions-page', 8000);
-    await snap(p,'05c-ver');
+    // Navigate directly to the app's versions page
+    log(`  Direct nav to versions: ${versionsUrl}`);
+    await page.goto(versionsUrl, { waitUntil: 'networkidle2' });
+    await waitReady(page, `${snapPfx}-versions`, 8000);
+    await snap(page, `05-${snapPfx}-versions`);
+    log(`  URL: ${page.url()}`);
   }
 
-
-  // Try session API with captured token
+  // Try session API with captured token — use per-app appId
   if (captured.token) log('  Token: captured');
   let text = await page.evaluate(() => document.body?.innerText || '');
   log('  Page: ' + text.length + 'c, URL: ' + page.url());
+  // Pass appId to promote-via-session via env override
+  const savedApp = process.env.PROMOTE_APP_ID;
+  process.env.PROMOTE_APP_ID = appId;
   try {
     const apiRes = await promoteViaBrowserSession(page, log, DRY, captured?.token);
     if (apiRes === true) return true;
     log('  Session API: ' + (apiRes || 'no result') + ', falling back to SPA polling...');
   } catch (e) { log('  Session API error: ' + e.message); }
+  finally { if (savedApp !== undefined) process.env.PROMOTE_APP_ID = savedApp; else delete process.env.PROMOTE_APP_ID; }
 
   let hasDraft = false;
   for (let attempt = 0; attempt < 15; attempt++) {
