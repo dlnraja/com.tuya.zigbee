@@ -82,7 +82,7 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           if [ "$CODE_FILES" -gt 0 ]; then
             git commit -m "v${VER}: processed issues/PRs, ${CODE_FILES} file(s) [skip ci]"
-            
+
             # Intelligent Push with Retry/Rebase
             MAX_RETRIES=5
             RETRY_COUNT=0
@@ -195,7 +195,7 @@ jobs:
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           if [ "$CODE_FILES" -gt 0 ]; then
             git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA, ${CODE_FILES} file(s) [skip ci]"
-            
+
             # Intelligent Push with Retry/Rebase
             MAX_RETRIES=5
             RETRY_COUNT=0

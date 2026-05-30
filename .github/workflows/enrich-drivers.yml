@@ -139,12 +139,12 @@ jobs:
           echo "- Zigbee2MQTT: ✅" >> /tmp/enrichment-report.md
           echo "- ZHA: ✅" >> /tmp/enrichment-report.md
           echo "" >> /tmp/enrichment-report.md
-          
+
           # Count drivers
           DRIVER_COUNT=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           echo "### Stats" >> /tmp/enrichment-report.md
           echo "- Total drivers: $DRIVER_COUNT" >> /tmp/enrichment-report.md
-          
+
           # Check for new files
           NEW_FILES=$(git status --porcelain | grep "^?" | wc -l)
           MODIFIED_FILES=$(git status --porcelain | grep "^ M" | wc -l)
@@ -160,11 +160,11 @@ jobs:
         run: |
           git config user.name "Tuya Enrichment Bot"
           git config user.email "bot@tuya-engine.local"
-          
+
           # Stage only relevant changes
           git add drivers/ lib/ data/ docs/ || true
           git add .github/scripts/ || true
-          
+
           # Check if there are changes
           if git diff --cached --quiet; then
             echo "📭 No changes to commit"
@@ -174,9 +174,9 @@ jobs:
 
             Sources: Blakadder + Z2M + ZHA
             Timestamp: $(date -u)
-            
+
             Co-authored-by: Tuya Enrichment Bot <bot@tuya-engine.local>"
-            
+
             echo "✅ Changes committed"
           fi
 

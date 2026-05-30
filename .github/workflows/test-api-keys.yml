@@ -85,7 +85,7 @@ jobs:
             if (keys['Together']) await check('Together', 'https://api.together.xyz/v1/chat/completions', {'Authorization':'Bearer '+keys['Together'],'Content-Type':'application/json'}, {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:msgs, max_tokens:5});
             if (keys['Groq']) await check('Groq', 'https://api.groq.com/openai/v1/chat/completions', {'Authorization':'Bearer '+keys['Groq'],'Content-Type':'application/json'}, {model:'llama-3.3-70b-versatile', messages:msgs, max_tokens:5});
             if (keys['DeepSeek']) await check('DeepSeek', 'https://api.deepseek.com/chat/completions', {'Authorization':'Bearer '+keys['DeepSeek'],'Content-Type':'application/json'}, {model:'deepseek-chat', messages:msgs, max_tokens:5});
-            
+
             if (keys['Gemini']) {
               try {
                 const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${keys['Gemini']}`, {

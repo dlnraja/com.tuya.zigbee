@@ -27,7 +27,7 @@ jobs:
         run: node scripts/maintenance/github-issue-manager.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+
   ingest:
     name: 📥 Diagnostic Ingestion
     runs-on: ubuntu-latest

@@ -75,7 +75,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "v${VER}: daily self-healing (collisions + hygiene + flows + linter) [skip ci]"
-            
+
             # Intelligent Push with Retry/Rebase
             MAX_RETRIES=5
             RETRY_COUNT=0
@@ -87,14 +87,14 @@ jobs:
               sleep $((RANDOM % 10 + 5))
             done
           fi
-      
+
       # NEW: Check for invalid paths (spaces in require/import)
       - name: 🔍 Check Invalid Paths
         id: check-paths
         run: |
           echo "🔍 Checking for invalid paths (spaces in require/import)..."
           echo ""
-          
+
           # Quick grep check for the specific pattern
           INVALID_COUNT=$(grep -rn "'.* / " --include="*.js" --include="*.json" . 2>/dev/null | \
             grep -v "node_modules" | \
@@ -102,7 +102,7 @@ jobs:
             grep -v "// " | \
             grep -v "\"/" | \
             wc -l)
-          
+
           if [ "$INVALID_COUNT" -gt 0 ]; then
             echo "::error::Found $INVALID_COUNT potential invalid path(s) with spaces"
             grep -rn "'.* / " --include="*.js" --include="*.json" . 2>/dev/null | \

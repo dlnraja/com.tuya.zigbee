@@ -156,7 +156,7 @@ jobs:
           npx homey app validate --level publish 2>&1 | tail -20
         env:
           NODE_ENV: ci
-        continue-on-error: true  # Warn — large.png needed only at publish time
+        continue-on-error: true  # Warn ï¿½ large.png needed only at publish time
 
       - name: "ðŸ“‹ Anti-AggregateError check (manufacturer names)"
         run: |
