@@ -4,6 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## v8.1.19 (2026-05-30)
+
+v8.1.17: Fixed climate_sensor case drift in driver.compose.json., Added 3367 new fingerprints to 412 drivers.
+
+---
+
 ## v8.1.18 (2026-05-30)
 
 v8.1.17: Fixed climate_sensor case drift in driver.compose.json., Added 3367 new fingerprints to 412 drivers.
