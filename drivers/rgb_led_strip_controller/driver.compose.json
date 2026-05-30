@@ -65,5 +65,9 @@
   "capabilities": [
     "onoff",
     "dim"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/rgb_led_strip_controller/assets/images/large.png",
+    "small": "/drivers/rgb_led_strip_controller/assets/images/small.png"
+  }
 }

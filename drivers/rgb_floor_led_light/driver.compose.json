@@ -51,5 +51,9 @@
     "onoff",
     "dim",
     "light_temperature"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/rgb_floor_led_light/assets/images/large.png",
+    "small": "/drivers/rgb_floor_led_light/assets/images/small.png"
+  }
 }

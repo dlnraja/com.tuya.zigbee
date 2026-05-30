@@ -49,5 +49,9 @@
   "class": "other",
   "capabilities": [
     "onoff"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/dimmable_recessed_led/assets/images/large.png",
+    "small": "/drivers/dimmable_recessed_led/assets/images/small.png"
+  }
 }

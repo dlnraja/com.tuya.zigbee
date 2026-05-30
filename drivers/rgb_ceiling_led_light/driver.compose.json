@@ -50,5 +50,9 @@
   "capabilities": [
     "onoff",
     "dim"
-  ]
+  ],
+  "images": {
+    "large": "/drivers/rgb_ceiling_led_light/assets/images/large.png",
+    "small": "/drivers/rgb_ceiling_led_light/assets/images/small.png"
+  }
 }
