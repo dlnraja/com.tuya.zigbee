@@ -38,6 +38,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Feature |
 |---------|---------|
 | **v8.1.35** | - Fixed: 60 Zigbee drivers manufacturerName[] AggregateError resolved - Fixed... |
+| **v8.1.35** | v8.1.35:  |
 | **vv8_5_30** |  |
 | **v9.0.1** | v9.0.0: |
 | **v9.0.0** | v8.5.54: |
