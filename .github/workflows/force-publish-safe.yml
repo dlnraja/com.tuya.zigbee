@@ -59,12 +59,12 @@ jobs:
       - name: "📦 Install deps"
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
-      - name: "🔧 STEP 1 — Fix empty manufacturerName (AggregateError prevention)"
+      - name: "🔧 STEP 1 — Fix manufacturerName + metadata (AggregateError prevention)"
         id: preclean
         run: |
-          node -e "
-          const fs=require('fs'),path=require('path');
-          const app=JSON.parse(fs.readFileSync('app.json','utf8'));
+          node -e '
+          const fs=require("fs"),path=require("path");
+          const app=JSON.parse(fs.readFileSync("app.json","utf8"));
           let fixed=0;
 
           // Fix app.json drivers
@@ -73,41 +73,61 @@ jobs:
             if(!d.zigbee.manufacturerName){d.zigbee.manufacturerName=[];fixed++;continue;}
             if(!Array.isArray(d.zigbee.manufacturerName)){d.zigbee.manufacturerName=[d.zigbee.manufacturerName].filter(Boolean);fixed++;continue;}
             const before=d.zigbee.manufacturerName.length;
-            d.zigbee.manufacturerName=d.zigbee.manufacturerName.filter(n=>n&&typeof n==='string'&&n.trim()!=='');
+            d.zigbee.manufacturerName=d.zigbee.manufacturerName.filter(n=>n&&typeof n==="string"&&n.trim()!=="");
             if(d.zigbee.manufacturerName.length!==before)fixed++;
           }
 
           // Fix driver.compose.json source files
           let srcFixed=0;
-          const dd=path.join(process.cwd(),'drivers');
+          const dd=path.join(process.cwd(),"drivers");
           if(fs.existsSync(dd)){
             for(const dname of fs.readdirSync(dd)){
-              const fp=path.join(dd,dname,'driver.compose.json');
+              const fp=path.join(dd,dname,"driver.compose.json");
               if(!fs.existsSync(fp))continue;
               try{
-                const comp=JSON.parse(fs.readFileSync(fp,'utf8'));
+                const comp=JSON.parse(fs.readFileSync(fp,"utf8"));
                 if(!comp.zigbee)continue;
                 let ch=false;
                 if(!comp.zigbee.manufacturerName){comp.zigbee.manufacturerName=[];ch=true;}
                 else if(!Array.isArray(comp.zigbee.manufacturerName)){comp.zigbee.manufacturerName=[comp.zigbee.manufacturerName].filter(Boolean);ch=true;}
                 else{
                   const b=comp.zigbee.manufacturerName.length;
-                  comp.zigbee.manufacturerName=comp.zigbee.manufacturerName.filter(n=>n&&typeof n==='string'&&n.trim()!=='');
+                  comp.zigbee.manufacturerName=comp.zigbee.manufacturerName.filter(n=>n&&typeof n==="string"&&n.trim()!=="");
                   if(comp.zigbee.manufacturerName.length!==b)ch=true;
                 }
-                if(ch){fs.writeFileSync(fp,JSON.stringify(comp,null,2)+'\n','utf8');srcFixed++;}
-              }catch{}
+                if(ch){fs.writeFileSync(fp,JSON.stringify(comp,null,2)+"\n","utf8");srcFixed++;}
+              }catch(e){}
             }
           }
 
           // FATAL CHECK — any remaining empty after fix?
-          const bad=app.drivers.filter(d=>d.zigbee&&Array.isArray(d.zigbee.manufacturerName)&&d.zigbee.manufacturerName.some(n=>!n||n.trim()===''));
-          if(bad.length>0){console.error('FATAL: '+bad.length+' drivers still have empty manufacturerName after fix');process.exit(1);}
+          const bad=app.drivers.filter(d=>d.zigbee&&Array.isArray(d.zigbee.manufacturerName)&&d.zigbee.manufacturerName.some(n=>!n||n.trim()===""));
+          if(bad.length>0){console.error("FATAL: "+bad.length+" drivers still have empty manufacturerName after fix");process.exit(1);}
 
-          fs.writeFileSync('app.json',JSON.stringify(app),'utf8');
-          console.log('Pre-clean: '+fixed+' app.json fixed, '+srcFixed+' driver.compose.json fixed');
-          console.log('AggregateError check: 0 empty manufacturerNames ✅');
-          "
+          // FIX METADATA — permissions, category, remove phantom api block
+          // Wrong permission causes process-failed on tools.dev
+          if(!Array.isArray(app.permissions)||!app.permissions.includes("homey:wireless:zigbee")){
+            app.permissions=["homey:wireless:zigbee"];
+            console.log("Fixed permissions -> homey:wireless:zigbee");
+          }
+          // category must be array for correct Homey App Store display
+          if(!Array.isArray(app.category)){
+            app.category=["lights","security","appliances"];
+            console.log("Fixed category -> array [lights,security,appliances]");
+          }
+          // Remove phantom api block (causes AggregateError when handler not in app.js)
+          if(app.api){
+            delete app.api;
+            console.log("Removed phantom api block (not implemented in app.js)");
+          }
+
+          fs.writeFileSync("app.json",JSON.stringify(app),"utf8");
+          const mb=(Buffer.byteLength(JSON.stringify(app))/1024/1024).toFixed(2);
+          console.log("Pre-clean done: "+fixed+" mfr fixed, "+srcFixed+" compose fixed, "+mb+"MB");
+          console.log("permissions="+JSON.stringify(app.permissions));
+          console.log("category="+JSON.stringify(app.category));
+          console.log("AggregateError check: 0 empty manufacturerNames OK");
+          '
           echo "preclean=ok" >> $GITHUB_OUTPUT
 
       - name: "🗜️ STEP 2 — Compact app.json (< 5MB Athom limit)"
