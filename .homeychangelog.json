@@ -61,19 +61,10 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "8.1.14": {
-    "en": "v8.1.13:"
-  },
-  "8.1.15": {
-    "en": "Fix: restored driver image dimensions (large.png 250x175), reduced tags to 8, restored README format — resolves AggregateError since build-2159",
-    "fr": "Correctif : dimensions images drivers restaurées (large.png 250x175), tags réduits à 8, README restauré — résout AggregateError depuis build-2159",
-    "nl": "Fix: driver afbeeldingsafmetingen hersteld (large.png 250x175), tags teruggebracht naar 8, README hersteld — lost AggregateError op sinds build-2159",
-    "de": "Fix: Treiber-Bildabmessungen wiederhergestellt (large.png 250x175), Tags auf 8 reduziert, README wiederhergestellt — behebt AggregateError seit Build-2159"
-  },
   "8.1.16": {
     "en": "Fix: Restore driver images to correct 500x500 (from v8.1.6 GOOD commit), remove _comment from app.json, add LRU lazy loading for fingerprint DB, add CI image dimension guard",
-    "fr": "Correctif: Restauration images drivers 500x500 (depuis commit v8.1.6 GOOD), suppression _comment de app.json, lazy loading LRU pour DB fingerprints, guard dimensions CI",
-    "nl": "Fix: Driver afbeeldingen hersteld naar 500x500 (van v8.1.6 GOOD commit), _comment verwijderd uit app.json, LRU lazy loading voor fingerprint DB, CI afbeeldingsgrootte controle",
-    "de": "Fix: Treiber-Bilder auf 500x500 wiederhergestellt (aus v8.1.6 GOOD commit), _comment aus app.json entfernt, LRU Lazy Loading für Fingerprint-DB, CI Bildgröße-Guard"
+    "fr": "Correctif: Restauration images drivers 500x500, suppression _comment, lazy loading LRU, guard dimensions CI",
+    "nl": "Fix: Driver afbeeldingen hersteld naar 500x500, _comment verwijderd, LRU lazy loading, CI grootte controle",
+    "de": "Fix: Treiber-Bilder auf 500x500 wiederhergestellt, _comment entfernt, LRU Lazy Loading, CI Guard"
   }
 }
