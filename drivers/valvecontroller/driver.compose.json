@@ -56,5 +56,35 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "id": "powerOnState",
+      "type": "dropdown",
+      "label": {
+        "en": "Power On State"
+      },
+      "value": "recover",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "OFF"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "ON"
+          }
+        },
+        {
+          "id": "recover",
+          "label": {
+            "en": "RECOVER"
+          }
+        }
+      ]
+    }
+  ]
 }
