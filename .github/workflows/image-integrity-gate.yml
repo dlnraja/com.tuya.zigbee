@@ -32,6 +32,10 @@ on:
         required: false
         default: 'false'
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   image-dimensions:
     name: Check PNG Dimensions

@@ -226,3 +226,13 @@ drivers/**/assets/images/xlarge.png
 # drivers/*/assets/icon.svg         ← Required per driver
 # drivers/*/assets/images/small.png ← Required
 # drivers/*/assets/images/large.png ← Required
+
+# === ADDED BY fix-all-blocking.js ===
+
+# Backup file - dev only
+driver-mapping-database.json.dedup-backup
+
+data/archive/collisions.json
+data/archive/icons_grid.html
+data/archive/icons_grid_dark.html
+reference pdf/
