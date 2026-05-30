@@ -82,10 +82,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.2",
     "measure_power",
-    "measure_voltage",
-    "measure_current"
+    "measure_voltage"
   ],
   "capabilitiesOptions": {
     "onoff": {

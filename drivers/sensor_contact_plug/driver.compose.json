@@ -11,11 +11,10 @@
     "onoff",
     "measure_power",
     "meter_power",
-    "measure_current",
     "measure_voltage",
     "measure_battery",
     "alarm_contact",
-    "alarm_tamper",
+    "alarm_generic",
     "measure_luminance",
     "alarm_battery"
   ],

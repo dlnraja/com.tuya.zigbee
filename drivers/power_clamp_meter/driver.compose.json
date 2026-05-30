@@ -14,7 +14,6 @@
   "capabilities": [
     "measure_power",
     "meter_power",
-    "measure_current",
     "measure_current.phase2",
     "measure_voltage",
     "measure_frequency",

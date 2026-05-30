@@ -13,7 +13,7 @@
   "class": "lock",
   "capabilities": [
     "locked",
-    "alarm_tamper",
+    "alarm_generic",
     "measure_battery",
     "alarm_battery"
   ],
