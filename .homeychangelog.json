@@ -61,10 +61,7 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "8.1.17": {
-    "en": "Fix archive size: reduced from 47MB to 17.8MB (.homeyignore), preventing Athom processing_failed builds. Added archive integrity gate in CI + auto-diagnostic cartographer.",
-    "nl": "Fix archiefgrootte: verkleind van 47MB naar 17.8MB, voorkomt processing_failed builds. Archiefintegriteitsgate en cartograaf-script toegevoegd.",
-    "fr": "Correction taille archive: reduite de 47MB a 17.8MB (.homeyignore), previent les builds processing_failed. Gate integrite CI et cartographe ajoutes.",
-    "de": "Archivgroesse behoben: von 47MB auf 17.8MB reduziert, verhindert processing_failed Builds. Archiv-Integritaetsgate in CI und Kartograf-Skript ergaenzt."
+  "8.1.18": {
+    "en": "v8.1.17: Fixed climate_sensor case drift in driver.compose.json., Added 3367 new fingerprints to 412 drivers."
   }
 }
