@@ -19,7 +19,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.log('-------------------------------------------------------');
 
     // 1. Base Initialization (Standard ZCL + Diagnostics)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     // 2. Specific Cluster Listeners (Native ZCL Fallbacks)
     this._setupNativeZclListeners();

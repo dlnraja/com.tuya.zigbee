@@ -4,7 +4,7 @@ const UniversalZigbeeDevice = require('../../lib/UniversalZigbeeDevice');
 
 class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
   async onNodeInit() {
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
     this._setupNativeZclListeners();
   }
 
