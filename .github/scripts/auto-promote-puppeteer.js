@@ -165,13 +165,13 @@ async function main() {
 
     await waitReady(page, 'pre-navigate', 3000);
 
-    // === SPA warm-up: navigate to /apps to initialize React Router and auth state ===
-    log('\n### Step 2.5: SPA warm-up — navigate to My Apps');
+    // === SPA warm-up: ALWAYS navigate to /apps to initialize React Router and auth state ===
+    // CRITICAL FIX 2026-05-30: Removed conditional — must ALWAYS hard goto /apps
+    // Without this, /versions page loads with blank main area (59KB screenshot bug)
+    log('\n### Step 2.5: SPA warm-up — hard goto My Apps (always)');
     const myAppsUrl = `${BASE}/apps`;
-    if (!page.url().includes('/apps')) {
-      await page.goto(myAppsUrl, { waitUntil: 'networkidle2' });
-      await waitReady(page, 'my-apps-warmup', 6000);
-    }
+    await page.goto(myAppsUrl, { waitUntil: 'networkidle2' });
+    await waitReady(page, 'my-apps-warmup', 4000);
     const myAppsText = await page.evaluate(() => document.body?.innerText || '');
     log(`  My Apps loaded: ${myAppsText.length}c — has apps: ${myAppsText.toLowerCase().includes('tuya')}`);
     await snap(page, '04b-my-apps');

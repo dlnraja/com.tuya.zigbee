@@ -1,5 +1,11 @@
 # HOMEYIGNORE - Tuya Zigbee Master Branch
-# Based on working stable-v5 pattern.
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  ARCHIVE SIZE RULES (enforced by athom-archive-audit.js)    ║
+# ║  Target: < 20MB compressed / < 55MB uncompressed            ║
+# ║  Athom hard limit: ~30MB compressed (processing failed if >) ║
+# ║  Root cause v8.1.7+: .diag/ was NOT excluded → 55MB bloat   ║
+# ╚══════════════════════════════════════════════════════════════╝
+#
 # CRITICAL RULE: NO *.json wildcard — it breaks runtime deps.
 # CRITICAL RULE: NO *.md wildcard at root — Homey requires README.md.
 # Only exclude specific dev/CI files, NEVER use broad wildcards.
@@ -31,6 +37,13 @@ skills/
 scratch/
 tmp_artifacts/
 screenshots/
+
+# === CRITICAL — Diagnostic & CI artifacts (55MB bloat source — DO NOT REMOVE) ===
+.diag/
+.memory/
+.ai/
+.gemini/
+.antigravityignore
 
 # === Dev config files ===
 .cascade
@@ -79,6 +92,8 @@ packed_files.txt
 packed_files_details.txt
 *.backup
 *.backup2
+*.dedup-backup
+*.dedup-backup2
 repomix-*.md
 repomix-*.txt
 

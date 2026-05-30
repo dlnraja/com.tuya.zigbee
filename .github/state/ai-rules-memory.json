@@ -196,9 +196,41 @@
         "bulb_white",
         "button_wireless_plug"
       ]
+    },
+    {
+      "id": "archive-size-processing-failed",
+      "desc": "CRITICAL DISCOVERY 2026-05-30: ALL publishes from v8.1.7 to v8.1.26 failed with 'Processing failed' on Athom. Root cause: .diag/ folder (55MB CI screenshots/tarballs) was NOT in .homeyignore, causing archive ~39MB compressed > Athom's ~30MB hard limit. Fix: added .diag/ .memory/ .ai/ .gemini/ to .homeyignore. CI gate lowered from 30MB to 20MB threshold. Puppeteer SPA warm-up fixed (removed conditional goto). Job timeout raised 15->22min.",
+      "severity": "critical-discovery",
+      "count": 19,
+      "firstSeen": "2026-05-30T14:00:00.000Z",
+      "lastSeen": "2026-05-30T14:50:00.000Z",
+      "fixedIn": "v8.1.27",
+      "affectedBuilds": "v8.1.7-v8.1.26 (builds #2160-#2213)",
+      "rootCause": ".diag/ NOT in .homeyignore",
+      "fix": "Added .diag/ .memory/ .ai/ .gemini/ *.dedup-backup to .homeyignore",
+      "ciChanges": [
+        "publish.yml: timeout 15->22min",
+        "publish.yml: archive gate 30MB->20MB",
+        "auto-promote-puppeteer.js: always goto /apps (no condition)",
+        "auto-promote-puppeteer.js: warmup sleep 6000->4000ms",
+        "check-archive-size.js: rewritten with required file check"
+      ],
+      "docsUpdated": [
+        ".windsurfrules", ".cursorrules", ".clinerules",
+        "docs/rules/DEVELOPMENT_RULES.md",
+        "AI_CONTEXT_MANDATE.md",
+        ".github/state/ai-rules-memory.json"
+      ],
+      "files": [
+        ".homeyignore",
+        ".github/workflows/publish.yml",
+        ".github/scripts/auto-promote-puppeteer.js",
+        ".github/scripts/check-archive-size.js",
+        ".github/scripts/athom-archive-audit.js"
+      ]
     }
   ],
-  "lastRun": "2026-05-15T05:13:14.965Z",
-  "totalRuns": 12,
-  "totalIssues": 408
+  "lastRun": "2026-05-30T14:50:00.000Z",
+  "totalRuns": 13,
+  "totalIssues": 427
 }
