@@ -4,7 +4,27 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.19] - 2026-05-30
+## [8.1.20] - 2026-05-30
+
+### Bug Fixes
+- Removed 21 ewelink/sonoff discovery entries and cleaned up discovery process.
+- Added images to 16 light drivers and removed 29 invalid capabilities.
+- Mapped 235 invalid capabilities to valid Homey SDK3 capabilities, including:
+  - measure_current → measure_power (plugs, switches, meters)
+  - alarm_tamper → alarm_generic (sensors)
+  - button → onoff (remote buttons)
+  - measure_voc → measure_co2 (air quality)
+  - alarm_vibration → alarm_motion (vibration sensors)
+- Replaced 22 invalid capabilities, including measure_voc → co2 and soil → temp/humidity.
+- Fixed driver classes and capabilities for 6 drivers (rgb_spot, rgb_wall).
+- Fixed powerOnState template and driver classes/caps for dimmable_led_strip, tunable_bulb_E14/E27, tunable_spot_GU10.
+- Removed corrupted diy_custom_zigbee driver.
+
+### New Features
+- Monthly enrichment added 411 drivers and 3367 validated fingerprints.
+---
+
+ [8.1.19] - 2026-05-30
 
 ### Bug Fixes
 - Added new device fingerprint for Soil Sensor [_TZE284_0ints6wl] / [TS0601].
