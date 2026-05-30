@@ -63,5 +63,11 @@
   },
   "8.1.14": {
     "en": "v8.1.13:"
+  },
+  "8.1.15": {
+    "en": "Fix: restored driver image dimensions (large.png 250x175), reduced tags to 8, restored README format — resolves AggregateError since build-2159",
+    "fr": "Correctif : dimensions images drivers restaurées (large.png 250x175), tags réduits à 8, README restauré — résout AggregateError depuis build-2159",
+    "nl": "Fix: driver afbeeldingsafmetingen hersteld (large.png 250x175), tags teruggebracht naar 8, README hersteld — lost AggregateError op sinds build-2159",
+    "de": "Fix: Treiber-Bildabmessungen wiederhergestellt (large.png 250x175), Tags auf 8 reduziert, README wiederhergestellt — behebt AggregateError seit Build-2159"
   }
 }
