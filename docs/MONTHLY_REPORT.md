@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-05
 
-*Generated: 2026-05-30T15:05:16.552Z*
+*Generated: 2026-05-30T15:38:09.716Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 411 |
-| Manufacturer IDs | 842032 |
-| Collisions | 2954 |
+| Manufacturer IDs | 756296 |
+| Collisions | 598 |
 
 ## ⚠️ Collisions Detected
 
@@ -20,22 +20,22 @@
 | `_TZ3000_lf56vpxj|TS0225` | air_purifier_motion, motion_sensor |
 | `_TZ3040_6ygjfyll|TS0601` | air_purifier_motion, motion_sensor |
 | `_TZ3040_6ygjfyll|TS0225` | air_purifier_motion, motion_sensor |
-| `_TZ3210_guijtl8k|TS0601` | air_quality_co2, wall_dimmer_tuya |
-| `_TZ3210_hquixjeg|TS0601` | air_quality_co2, wall_dimmer_tuya |
-| `_TZE200_7bztmfm1|TS0601` | air_quality_co2, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
+| `_TZE200_7bztmfm1|TS0601` | air_quality_co2, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 | `_TZE200_rbbx5mfq|TS0601` | air_quality_co2, climate_sensor |
-| `_TZE204_7bztmfm1|TS0601` | air_quality_co2, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
+| `_TZE204_7bztmfm1|TS0601` | air_quality_co2, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 | `_TZE204_ogkdpgy2|TS0601` | air_quality_co2, climate_sensor |
 | `_TZE204_rbbx5mfq|TS0601` | air_quality_co2, climate_sensor |
-| `_TZ3210_iystcadi|TS0501B` | bulb_dimmable, led_controller_dimmable |
-| `_TZ3210_iystcadi|TS110E` | bulb_dimmable, wall_dimmer_tuya |
-| `_TZ3210_iystcadi|TS110F` | bulb_dimmable, wall_dimmer_tuya |
-| `_TZ3210_iystcadi|TS0052` | bulb_dimmable, wall_dimmer_tuya |
-| `_TZ3210_iystcadi|TS1101` | bulb_dimmable, wall_dimmer_tuya |
 | `_TZE200_kzm5w4iz|TS0601` | button_emergency_sos, generic_tuya |
 | `_TZ3000_5bpeda8u|TS0041` | button_wireless_1, scene_switch_1 |
+| `_TZ3000_ja5osu5g|TS0041` | button_wireless_1, smart_button_switch |
+| `_TZ3000_tzvbimpq|TS0002` | button_wireless_2, switch_2gang |
+| `_TZ3000_tzvbimpq|TS0012` | button_wireless_2, switch_2gang |
+| `_TZ3000_tzvbimpq|TS0003` | button_wireless_2, switch_2gang |
+| `_TZ3000_tzvbimpq|TS0013` | button_wireless_2, switch_2gang |
+| `_TZ3000_famkxci2|TS0043` | button_wireless_3, switch_3gang |
+| `_TZ3000_famkxci2|TS0013` | button_wireless_3, switch_3gang |
 
-*...and 2934 more*
+*...and 578 more*
 
 ## 📋 Action Items
 
