@@ -165,7 +165,17 @@ async function main() {
 
     await waitReady(page, 'pre-navigate', 3000);
 
-    // Step 3: Promote each app in sequence
+    // === SPA warm-up: navigate to /apps to initialize React Router and auth state ===
+    log('\n### Step 2.5: SPA warm-up — navigate to My Apps');
+    const myAppsUrl = `${BASE}/apps`;
+    if (!page.url().includes('/apps')) {
+      await page.goto(myAppsUrl, { waitUntil: 'networkidle2' });
+      await waitReady(page, 'my-apps-warmup', 6000);
+    }
+    const myAppsText = await page.evaluate(() => document.body?.innerText || '');
+    log(`  My Apps loaded: ${myAppsText.length}c — has apps: ${myAppsText.toLowerCase().includes('tuya')}`);
+    await snap(page, '04b-my-apps');
+
     const envBuildId = process.env.BUILD_ID || '';
     let anySuccess = false;
 
@@ -283,28 +293,95 @@ async function doLogin(page) {
   log('  Final login URL: ' + page.url());
 }
 
+async function spaNavigate(page, targetUrl, label, timeoutMs = 20000) {
+  // Strategy A: SPA-internal navigation via clicking <a href> that matches target
+  const clicked = await page.evaluate((url) => {
+    const anchors = [...document.querySelectorAll('a[href]')];
+    const match = anchors.find(a => {
+      const href = a.getAttribute('href') || '';
+      // exact path match (href can be relative like /apps/app/xxx/versions)
+      return url.endsWith(href) || href === url || url.includes(href) && href.length > 5;
+    });
+    if (match) { match.click(); return match.getAttribute('href'); }
+    return null;
+  }, targetUrl);
+
+  if (clicked) {
+    try { await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: timeoutMs }); } catch {}
+  } else {
+    // Strategy B: pushState then dispatch popstate to trigger React Router
+    await page.evaluate((url) => {
+      const path = url.replace(/^https?:\/\/[^/]+/, '');
+      window.history.pushState({}, '', path);
+      window.dispatchEvent(new PopStateEvent('popstate', { state: {} }));
+    }, targetUrl);
+    await sleep(3000);
+    try { await page.waitForNetworkIdle({ idleTime: 1000, timeout: 8000 }); } catch {}
+  }
+
+  // Verify the SPA rendered content
+  await sleep(2000);
+  const len = await page.evaluate(() => document.body?.innerText?.length || 0);
+  log(`  [spa-nav ${label}] content: ${len}c, url: ${page.url()}`);
+  return len;
+}
+
 async function findAndPromote(page, captured, appId, buildId, idx) {
   const snapPfx = `app${idx}`;
-  // === ALWAYS use direct URL navigation — NEVER click from the My Apps list ===
-  // This avoids clicking .stable when looking for the main app or vice versa.
   const appUrl = `${BASE}/apps/app/${appId}`;
   const versionsUrl = `${appUrl}/versions`;
 
-  if (buildId) {
-    // Navigate directly to the specific build's submission page
-    const buildUrl = `${appUrl}/build/${buildId}`;
-    log(`  Direct nav to build ${buildId}: ${buildUrl}`);
-    await page.goto(buildUrl, { waitUntil: 'networkidle2' });
-    await waitReady(page, `${snapPfx}-build-direct`, 8000);
-    await snap(page, `05-${snapPfx}-build-direct`);
-    log(`  URL: ${page.url()}`);
-  } else {
-    // Navigate directly to the app's versions page
-    log(`  Direct nav to versions: ${versionsUrl}`);
-    await page.goto(versionsUrl, { waitUntil: 'networkidle2' });
-    await waitReady(page, `${snapPfx}-versions`, 8000);
-    await snap(page, `05-${snapPfx}-versions`);
-    log(`  URL: ${page.url()}`);
+  // === SPA warm-up strategy ===
+  // The Athom Dev Tools is a React SPA. Navigating cold to a deep URL leaves <main> blank.
+  // Fix: always go through /apps first (warm-up), then use React Router navigation.
+  const myAppsUrl = `${BASE}/apps`;
+
+  // Step A: Warm up SPA via /apps (already authenticated at this point)
+  const currentUrl = page.url();
+  const alreadyOnApps = currentUrl.includes('/apps');
+  if (!alreadyOnApps) {
+    log(`  SPA warm-up: navigating to /apps...`);
+    const warmLen = await spaNavigate(page, myAppsUrl, 'warmup-apps');
+    await snap(page, `05-${snapPfx}-warmup`);
+    if (warmLen < 200) {
+      // Hard reload to /apps as last resort
+      await page.goto(myAppsUrl, { waitUntil: 'networkidle2' });
+      await waitReady(page, `${snapPfx}-apps-reload`, 8000);
+    }
+  }
+
+  // Step B: Navigate within the warm SPA to the specific app page
+  log(`  SPA navigate to app versions: ${versionsUrl}`);
+  let contentLen = await spaNavigate(page, versionsUrl, `${snapPfx}-versions`);
+  await snap(page, `05-${snapPfx}-versions`);
+
+  // Step C: If SPA navigate didn't work, try clicking the correct app link in My Apps list
+  if (contentLen < 400) {
+    log(`  SPA nav gave ${contentLen}c — trying to click app card for ${appId}...`);
+    // Navigate back to /apps to find the app card
+    await spaNavigate(page, myAppsUrl, `${snapPfx}-back-to-apps`);
+    await sleep(3000);
+
+    const clicked = await page.evaluate((id) => {
+      // Find link whose href EXACTLY contains /apps/app/<id> but NOT /apps/app/<id>.stable etc.
+      const anchors = [...document.querySelectorAll('a[href*="/apps/app/"]')];
+      const exact = anchors.find(a => {
+        const href = a.getAttribute('href') || '';
+        // Must match /apps/app/<id> exactly — avoid partial matches like com.dlnraja.tuya.zigbee.stable
+        const seg = href.split('?')[0].split('#')[0];
+        return seg === `/apps/app/${id}` || seg === `/apps/app/${id}/` || seg.endsWith(`/${id}`);
+      });
+      if (exact) { exact.click(); return `clicked: ${exact.getAttribute('href')}`; }
+      return null;
+    }, appId);
+
+    log(`  App card click: ${clicked || 'not found'}`);
+    await sleep(3000);
+    try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 10000 }); } catch {}
+
+    // Now navigate to /versions via SPA
+    contentLen = await spaNavigate(page, versionsUrl, `${snapPfx}-versions-after-card`);
+    await snap(page, `05-${snapPfx}-versions2`);
   }
 
   // Try session API with captured token — use per-app appId
@@ -322,13 +399,13 @@ async function findAndPromote(page, captured, appId, buildId, idx) {
   finally { if (savedApp !== undefined) process.env.PROMOTE_APP_ID = savedApp; else delete process.env.PROMOTE_APP_ID; }
 
   let hasDraft = false;
-  for (let attempt = 0; attempt < 15; attempt++) {
-    await new Promise(r => setTimeout(r, 2000));
+  for (let attempt = 0; attempt < 10; attempt++) {
+    await sleep(2000);
     text = await page.evaluate(() => document.body?.innerText || '');
     hasDraft = text.toLowerCase().includes('draft');
     const hasVersion = /\d+\.\d+\.\d+/.test(text);
     const hasContent = text.length > 400;
-    log(`  Poll ${attempt+1}/15: ${text.length} chars, hasVersion=${hasVersion}, hasDraft=${hasDraft}`);
+    log(`  Poll ${attempt+1}/10: ${text.length}c, hasVersion=${hasVersion}, hasDraft=${hasDraft}`);
     if (hasContent && (hasVersion || hasDraft)) break;
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   }
@@ -338,34 +415,22 @@ async function findAndPromote(page, captured, appId, buildId, idx) {
   log(`  Page snippet: "${snippet}"`);
 
   if (!hasDraft) {
-    // Fallback: try direct deep-link to versions page
-    log('  SPA nav didn\'t find drafts, trying deep-link to versions...');
-    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle2' });
-    await waitReady(page, 'deep-link-versions', 8000);
-    text = await page.evaluate(() => document.body?.innerText || '');
-    hasDraft = text.toLowerCase().includes('draft');
-    log('  Deep-link: ' + text.length + 'c, hasDraft=' + hasDraft);
-    await snap(page, '05d-deeplink');
-  }
-
-  if (!hasDraft) {
-    // Check if page has "test" or "live" but no "draft" — means no draft available
     const hasTest = text.toLowerCase().includes('test');
     const hasLive = text.toLowerCase().includes('live');
     if (hasTest || hasLive) {
-      log('  Page loaded but no draft builds (has test/live). Already promoted?');
+      log('  Page loaded but no draft builds (has test/live). Already promoted or no new build?');
     } else {
-      log('  No draft builds found (SPA may not have loaded)');
+      log('  No draft builds found — SPA still not hydrated or no draft exists');
     }
     // Dump HTML for debugging
     const html = await page.evaluate(() => document.documentElement.outerHTML);
     log(`  HTML length: ${html.length}`);
-    const dir = process.env.GITHUB_WORKSPACE
+    const dDir = process.env.GITHUB_WORKSPACE
       ? path.join(process.env.GITHUB_WORKSPACE, 'screenshots')
       : path.join(__dirname, '..', '..', 'screenshots');
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(path.join(dir, 'page-dump.html'), html);
-    log('  Saved page-dump.html for analysis');
+    fs.mkdirSync(dDir, { recursive: true });
+    fs.writeFileSync(path.join(dDir, `page-dump-${appId.replace(/\./g,'-')}.html`), html);
+    log(`  Saved page-dump-${appId}.html for analysis`);
     return false;
   }
 
