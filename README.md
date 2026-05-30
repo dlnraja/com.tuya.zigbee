@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.1.13** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device  |
 | **v8.1.12** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device  |
 | **vv8_5_30** |  |
 | **v9.0.1** | v9.0.0: |
@@ -71,7 +72,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-05-29 |
+| **Last Updated** | 2026-05-30 |
 
 ### Top 20 Drivers by Fingerprint Count
 
