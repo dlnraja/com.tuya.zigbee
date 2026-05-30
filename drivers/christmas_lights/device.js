@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class christmas_lights extends TuyaSpecificClusterDevice {
 
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         
         this.printNode();
 

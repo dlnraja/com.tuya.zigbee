@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaOnOffCluster);
 class outdoor2socket_2 extends ZigBeeDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
     await zclNode.endpoints[1].clusters.basic.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus'])
     .catch(err => {

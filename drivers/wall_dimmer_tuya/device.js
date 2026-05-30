@@ -11,6 +11,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     this.printNode();
 /*     debug(true);
     this.enableDebug(); */

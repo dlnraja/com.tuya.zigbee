@@ -9,6 +9,7 @@ Cluster.addCluster(TuyaOnOffCluster);
 class doublepowerpoint extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     const { subDeviceId } = this.getData();
 
     this.printNode();

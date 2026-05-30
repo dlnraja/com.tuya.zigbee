@@ -38,6 +38,7 @@ try {
 
 class TuyaDimmerTS110E extends ZigBeeDevice {
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         this.printNode();
 
         // 3. Register standard On/Off

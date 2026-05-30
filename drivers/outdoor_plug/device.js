@@ -6,6 +6,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class outdoorplug extends ZigBeeDevice {
 		
 	async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
     this.printNode();
 

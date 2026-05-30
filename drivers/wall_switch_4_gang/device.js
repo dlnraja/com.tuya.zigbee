@@ -7,6 +7,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class wall_switch_4_gang extends ZigBeeDevice {
 
     async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
         this.printNode();
 

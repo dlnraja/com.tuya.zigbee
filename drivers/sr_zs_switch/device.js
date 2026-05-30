@@ -26,6 +26,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      * @param {Object} params.zclNode - ZCL node object
      */
     async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
         await this.initializeDevice(zclNode);
         await this.registerCapabilities(zclNode);
         await this.setupFrameHandler();

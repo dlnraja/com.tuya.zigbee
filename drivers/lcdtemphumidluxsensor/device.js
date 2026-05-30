@@ -7,6 +7,7 @@ const { debug, CLUSTER } = require('zigbee-clusters');
 class lcdtemphumidluxsensor extends ZigBeeDevice {
 	
 	async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
 
 /*     debug(true);
     this.enableDebug(); */

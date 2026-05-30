@@ -6,6 +6,7 @@ const { CLUSTER } = require('zigbee-clusters');
 class smoke_sensor extends ZigBeeDevice {
 
 	async onNodeInit({zclNode}) {
+    await super.onNodeInit({zclNode}).catch(() => {});
         
       this.printNode();
 

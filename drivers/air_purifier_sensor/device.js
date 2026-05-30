@@ -141,6 +141,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     try {
       await this.configureAttributeReporting([
         {

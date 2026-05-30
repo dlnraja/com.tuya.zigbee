@@ -67,6 +67,7 @@ class SirenDevice extends UnifiedPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
