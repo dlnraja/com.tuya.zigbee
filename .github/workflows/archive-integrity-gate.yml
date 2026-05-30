@@ -1,0 +1,174 @@
+name: Archive Integrity Gate
+# Runs on every push/PR to catch archive bloat BEFORE it reaches Athom
+# Also provides a manual trigger for investigation
+on:
+  push:
+    branches: [master, main, stable]
+    paths:
+      - '.homeyignore'
+      - 'app.json'
+      - 'drivers/**'
+      - 'data/**'
+      - 'lib/**'
+  pull_request:
+    paths:
+      - '.homeyignore'
+      - 'app.json'
+      - 'drivers/**'
+  workflow_dispatch:
+    inputs:
+      fix_homeyignore:
+        description: "Auto-fix .homeyignore if bloat found"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: archive-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  archive-audit:
+    name: 📦 Archive Audit (<30MB gate)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      size_mb: ${{ steps.audit.outputs.size_mb }}
+      ok: ${{ steps.audit.outputs.ok }}
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Run archive audit
+        id: audit
+        run: |
+          # Run the audit script and capture output
+          node .github/scripts/athom-archive-audit.js --ci 2>&1 | tee /tmp/audit-out.txt
+          EXIT=$?
+
+          # Extract size from output
+          SIZE=$(grep -oP 'Estimated \.tgz:\s+~\K[\d.]+' /tmp/audit-out.txt | head -1 || echo "?")
+          echo "size_mb=$SIZE" >> $GITHUB_OUTPUT
+
+          if [ $EXIT -eq 0 ]; then
+            echo "ok=true" >> $GITHUB_OUTPUT
+          else
+            echo "ok=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Auto-fix .homeyignore (if requested)
+        if: inputs.fix_homeyignore == true && steps.audit.outputs.ok == 'false'
+        run: |
+          node .github/scripts/athom-archive-audit.js --fix
+          # Commit if changes made
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || (git add .homeyignore && git commit -m "fix: auto-update .homeyignore to reduce archive size [skip ci]" && git push)
+
+      - name: Add PR comment with results
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        with:
+          script: |
+            const sizeMB = '${{ steps.audit.outputs.size_mb }}';
+            const ok = '${{ steps.audit.outputs.ok }}' === 'true';
+            const icon = ok ? '✅' : '❌';
+            const body = `## ${icon} Archive Integrity Gate\n\n` +
+              `**Estimated .tgz size**: ~${sizeMB} MB (threshold: 30 MB)\n\n` +
+              (ok
+                ? '✅ Archive is within safe limits for Athom submission.'
+                : '❌ **Archive too large!** Athom will fail to process this build.\n\nRun `node .github/scripts/athom-archive-audit.js --fix` to auto-update `.homeyignore`.'
+              );
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body,
+            });
+
+      - name: Step Summary
+        if: always()
+        run: |
+          SIZE="${{ steps.audit.outputs.size_mb }}"
+          OK="${{ steps.audit.outputs.ok }}"
+          echo "## 📦 Archive Audit Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Estimated .tgz size | ~${SIZE} MB |" >> $GITHUB_STEP_SUMMARY
+          echo "| Gate (<30 MB) | $([ "$OK" = "true" ] && echo "✅ PASS" || echo "❌ FAIL") |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "$OK" != "true" ]; then
+            echo "### Fix" >> $GITHUB_STEP_SUMMARY
+            echo '```bash' >> $GITHUB_STEP_SUMMARY
+            echo 'node .github/scripts/athom-archive-audit.js --fix' >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
+
+  build-state-check:
+    name: 🔍 Post-Build State Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # Only run on manual dispatch — after a publish has been done
+    if: github.event_name == 'workflow_dispatch'
+    needs: archive-audit
+    env:
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - run: npm install puppeteer --no-save
+
+      - name: Install Puppeteer system deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libgbm-dev libnss3 libatk1.0-0 libatk-bridge2.0-0 \
+            libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 \
+            libpango-1.0-0 libcairo2 libxshmfence1 2>/dev/null || true
+
+      - name: 🗺️ Cartograph dev portal & check latest build
+        continue-on-error: true
+        run: |
+          node .github/scripts/athom-dev-cartographer.js --all-builds 2>&1 | tee /tmp/cartographer-out.txt
+          # Show AggregateError findings
+          grep -A5 "AggregateError\|processing_failed\|aggregate" /tmp/cartographer-out.txt || echo "No AggregateErrors found"
+
+      - name: Upload cartography screenshots
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: dev-portal-cartography
+          path: screenshots/cartography/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Upload cartography report
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: cartography-report
+          path: screenshots/cartography/report.json
+          retention-days: 14
+          if-no-files-found: ignore
