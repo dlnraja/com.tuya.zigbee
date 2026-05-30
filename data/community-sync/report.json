@@ -1,6 +1,6 @@
 {
-  "ts": "2026-05-30T00:15:47.716Z",
-  "currentCount": 10779,
+  "ts": "2026-05-30T01:20:22.385Z",
+  "currentCount": 10735,
   "src": {
     "johan": {
       "count": 650,
@@ -19265,7 +19265,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 57,
+      "issueCount": 58,
       "prCount": 2,
       "deviceRequests": [
         {
@@ -19786,6 +19786,25 @@
       "source": "Johan"
     },
     {
+      "mfr": "_TYZB01_hlla45kx",
+      "productId": [
+        "TS011F"
+      ],
+      "driver": "double_power_point_2",
+      "deviceType": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "hasBattery": false,
+      "vendor": null,
+      "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+      "source": "Johan"
+    },
+    {
       "mfr": "TUYATEC-3tipnsrx",
       "productId": [
         "RH3001",
@@ -19900,6 +19919,24 @@
       "source": "Johan"
     },
     {
+      "mfr": "_TYZB01_cbiezpds",
+      "productId": [
+        "SM0201"
+      ],
+      "driver": "lcdtemphumidsensor_2",
+      "deviceType": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+      "source": "Johan"
+    },
+    {
       "mfr": "TUYATEC-bd5faf9p",
       "productId": [
         "RH3040"
@@ -19929,6 +19966,22 @@
       "hasBattery": true,
       "vendor": null,
       "description": "alarm_motion, measure_battery",
+      "source": "Johan"
+    },
+    {
+      "mfr": "_TYZB01_jytabjkb",
+      "productId": [
+        "TS0202"
+      ],
+      "driver": "pir_sensor_2",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_motion, alarm_battery",
       "source": "Johan"
     },
     {
@@ -20107,6 +20160,25 @@
       "source": "Johan"
     },
     {
+      "mfr": "_TYST11_d0yu2xgi",
+      "productId": [
+        "TS0601"
+      ],
+      "driver": "sirentemphumidsensor",
+      "deviceType": "other",
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery",
+        "alarm_siren"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
+      "source": "Johan"
+    },
+    {
       "mfr": "_TYZB01_qm6djpta",
       "productId": [
         "TS0215A"
@@ -20157,6 +20229,22 @@
     },
     {
       "mfr": "_TYZB01_dsjszp0x",
+      "productId": [
+        "TS0205"
+      ],
+      "driver": "smoke_sensor",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_smoke",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_smoke, alarm_battery",
+      "source": "Johan"
+    },
+    {
+      "mfr": "_TYZB01_wqcac7lo",
       "productId": [
         "TS0205"
       ],
@@ -20548,6 +20636,40 @@
       "source": "Johan"
     },
     {
+      "mfr": "_TYZB01_ymcdbl3u",
+      "productId": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ],
+      "driver": "valvecontroller",
+      "deviceType": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "hasBattery": false,
+      "vendor": null,
+      "description": "onoff",
+      "source": "Johan"
+    },
+    {
+      "mfr": "_TYZB01_4tlksk8a",
+      "productId": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ],
+      "driver": "valvecontroller",
+      "deviceType": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "hasBattery": false,
+      "vendor": null,
+      "description": "onoff",
+      "source": "Johan"
+    },
+    {
       "mfr": "_TYZB02_keyjqthh",
       "productId": [
         "TS0041"
@@ -20818,6 +20940,24 @@
       "hasBattery": false,
       "vendor": null,
       "description": "onoff",
+      "source": "Johan"
+    },
+    {
+      "mfr": "_TYZB01_sqmd19i1",
+      "productId": [
+        "TS0207",
+        "q9mpfhw"
+      ],
+      "driver": "water_detector",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_water",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_contact, alarm_water, alarm_battery",
       "source": "Johan"
     },
     {
@@ -41543,6 +41683,6 @@
       "driver": null
     }
   ],
-  "newCount": 116,
+  "newCount": 124,
   "enrichedCount": 2211
 }
