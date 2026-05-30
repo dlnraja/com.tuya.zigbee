@@ -11,5 +11,6 @@ defaults:
 jobs:
   placeholder:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       - run: echo "DISABLED — merged into unified-ci.yml"
