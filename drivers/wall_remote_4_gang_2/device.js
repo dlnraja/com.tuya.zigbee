@@ -1,6 +1,5 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
  * 4 Gang Wall Remote (Type 2)
