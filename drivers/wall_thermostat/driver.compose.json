@@ -5,10 +5,8 @@
   "class": "thermostat",
   "capabilities": [
     "onoff",
-    "thermostat_programming",
     "measure_temperature",
-    "target_temperature",
-    "child_lock"
+    "target_temperature"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.jpg",

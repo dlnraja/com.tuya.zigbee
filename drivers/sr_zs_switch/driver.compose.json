@@ -6,9 +6,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff_1",
-    "onoff_2",
-    "onoff_3"
+    "onoff"
   ],
   "platforms": [
     "local"
