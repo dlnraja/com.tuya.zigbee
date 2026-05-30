@@ -88,6 +88,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
+      # Install CI-only optional deps (puppeteer, axios, etc.) that are excluded from .npmrc omit=optional
+      # These are NOT needed in the Athom Docker container but ARE needed for CI scripts here
+      - name: Install CI optional deps
+        run: npm install --no-save --ignore-scripts puppeteer axios sharp canvas cheerio imapflow @octokit/rest || true
 
       - name: Check HOMEY_PAT
         id: pat
