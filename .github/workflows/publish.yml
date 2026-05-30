@@ -191,12 +191,48 @@ jobs:
       - name: 🗜️ Compact app.json before publish (anti-Athom-5MB-limit)
         uses: ./.github/actions/compact-app-json
 
-      - name: Publish
+      - name: 📦 Archive Size Gate (block if >30MB compressed)
         if: steps.pat.outputs.ok == 'true'
+        id: archive_gate
+        run: |
+          # Use ignore-walk to estimate packed size
+          SIZE=$(node -e "
+            const ignoreWalk = require('ignore-walk');
+            const fs = require('fs');
+            ignoreWalk({ path: process.cwd(), ignoreFiles: ['.homeyignore'], includeEmpty: false, follow: false })
+              .then(files => {
+                let total = 0;
+                for (const f of files) {
+                  try { total += fs.statSync(f).size; } catch {}
+                }
+                // tgz compression ratio ~38% for mixed content
+                const estimatedMB = (total * 0.38 / 1024 / 1024).toFixed(2);
+                const uncompMB = (total / 1024 / 1024).toFixed(2);
+                console.log('Uncompressed: ' + uncompMB + ' MB');
+                console.log('Estimated tgz: ' + estimatedMB + ' MB');
+                process.stdout.write(estimatedMB);
+              });
+          " 2>/dev/null | tail -1)
+          echo "estimated_mb=$SIZE" >> $GITHUB_OUTPUT
+          echo "Archive estimated size: ${SIZE} MB"
+          # Block if > 30 MB (Athom server fails to parse at ~47MB)
+          python3 -c "
+          s = float('$SIZE')
+          print(f'Archive: {s} MB')
+          if s > 30:
+            print(f'::error::Archive too large: {s} MB > 30 MB — Athom will fail to process. Check .homeyignore.')
+            exit(1)
+          else:
+            print(f'✅ Archive OK: {s} MB < 30 MB')
+          "
+
+      - name: Publish
+        if: steps.pat.outputs.ok == 'true' && steps.archive_gate.outcome == 'success'
         id: pub
         uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
+
 
       - name: Create GitHub Release
         if: steps.pat.outputs.ok == 'true'
