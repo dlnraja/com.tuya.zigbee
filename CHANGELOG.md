@@ -4,7 +4,26 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.25 (2026-05-30)
+## v8.1.26 (2026-05-30)
+
+fix(ci): promote BOTH apps to test — direct URL nav, no SPA list clicks
+
+---
+
+## [8.1.25] - 2026-05-30
+
+### Bug Fixes
+- No bug fixes reported in this release.
+
+### New Features
+- Added 411 new drivers.
+- Validated 3367 new fingerprints.
+
+### Improvements
+- Updated enrichment reports.
+---
+
+ v8.1.25 (2026-05-30)
 
 fix(ci): promote correct build — BUILD_ID + no EACCES + exact nav
 
