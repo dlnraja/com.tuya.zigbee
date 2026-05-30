@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.15] - 2026-05-30
+## [8.1.16] - 2026-05-30
+
+Fix: Restore driver images to correct 500x500 (from v8.1.6 GOOD commit), remove _comment from app.json, add LRU lazy loading for fingerprint DB, add CI image dimension guard
+---
+
+ [8.1.15] - 2026-05-30
 
 Fix: restored driver image dimensions (large.png 250x175), reduced tags to 8, restored README format — resolves AggregateError since build-2159
 ---

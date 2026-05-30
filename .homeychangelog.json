@@ -61,10 +61,7 @@
   "8.5.38": {
     "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
   },
-  "8.1.16": {
-    "en": "Fix: Restore driver images to correct 500x500 (from v8.1.6 GOOD commit), remove _comment from app.json, add LRU lazy loading for fingerprint DB, add CI image dimension guard",
-    "fr": "Correctif: Restauration images drivers 500x500, suppression _comment, lazy loading LRU, guard dimensions CI",
-    "nl": "Fix: Driver afbeeldingen hersteld naar 500x500, _comment verwijderd, LRU lazy loading, CI grootte controle",
-    "de": "Fix: Treiber-Bilder auf 500x500 wiederhergestellt, _comment entfernt, LRU Lazy Loading, CI Guard"
+  "8.1.17": {
+    "en": "v8.1.16:"
   }
 }
