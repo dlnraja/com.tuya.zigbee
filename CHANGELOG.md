@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.26 (2026-05-30)
+## v8.1.27 (2026-05-30)
+
+fix(promote): SPA warm-up fixes blank page — both apps promoted to test
+
+---
+
+## [8.1.26] - 2026-05-30
+
+### Bug Fixes
+- Fixed issues with existing drivers affecting device functionality.
+
+### New Features
+- Added support for new device fingerprints: [_TZE284_0ints6wl] / [TS0601].
+---
+
+ v8.1.26 (2026-05-30)
 
 fix(ci): promote BOTH apps to test — direct URL nav, no SPA list clicks
 
