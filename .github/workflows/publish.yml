@@ -1,4 +1,4 @@
-# Auto Publish - Official Athom Actions (NO CLI)
+﻿# Auto Publish - Official Athom Actions (NO CLI)
 # Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
 name: Auto Publish
 on:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      # === AI providers — circular chain (ai-helper.js) ===
+      # === AI providers â€” circular chain (ai-helper.js) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -51,18 +51,18 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: 🛡️ Check Git Conflicts
+      - name: ðŸ›¡ï¸ Check Git Conflicts
         run: npm run validate:conflicts
 
-      - name: 🔍 Verify Fingerprints Integrity
+      - name: ðŸ” Verify Fingerprints Integrity
         continue-on-error: false
         run: npm run validate:fingerprints
 
-      - name: 🔍 Verify Flows Integrity
+      - name: ðŸ” Verify Flows Integrity
         continue-on-error: false
         run: npm run validate:flows
 
-      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+      - name: ðŸ—œï¸ Compact app.json (anti-Athom-5MB-limit)
         uses: ./.github/actions/compact-app-json
 
       - name: Validate (npx)
@@ -214,43 +214,62 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 📦 Archive Size Gate (block if >30MB compressed)
+      - name: ðŸ“¦ Archive Size Gate (block if >15MB compressed)
         if: steps.pat.outputs.ok == 'true'
         id: archive_gate
         run: |
-          # Use ignore-walk to estimate packed size
+          # Use ignore-walk to estimate packed size respecting .homeyignore
+          # ROOT CAUSE FIX (2026-05-30): large.png (13MB) + xlarge.png (10MB) excluded
+          # from .homeyignore â†’ archive ~12MB â†’ under Athom ~15MB processing limit.
+          # Previous threshold was 20MB but real Athom limit is closer to 15MB.
           SIZE=$(node -e "
             const ignoreWalk = require('ignore-walk');
             const fs = require('fs');
+            const path = require('path');
             ignoreWalk({ path: process.cwd(), ignoreFiles: ['.homeyignore'], includeEmpty: false, follow: false })
               .then(files => {
                 let total = 0;
+                const big = [];
                 for (const f of files) {
-                  try { total += fs.statSync(f).size; } catch {}
+                  try {
+                    const sz = fs.statSync(f).size;
+                    total += sz;
+                    big.push({ f, sz });
+                  } catch {}
                 }
-                // tgz compression ratio ~38% for mixed content
+                // tgz compression ratio ~45% for mixed JS/JSON/PNG content
                 const estimatedMB = (total * 0.38 / 1024 / 1024).toFixed(2);
                 const uncompMB = (total / 1024 / 1024).toFixed(2);
+                console.log('Files in archive: ' + files.length);
                 console.log('Uncompressed: ' + uncompMB + ' MB');
-                console.log('Estimated tgz: ' + estimatedMB + ' MB');
+                console.log('Estimated tgz (~38% ratio (JS/JSON heavy content)): ' + estimatedMB + ' MB');
+                // Show top 10 largest files for diagnosis
+                big.sort((a, b) => b.sz - a.sz).slice(0, 10).forEach(({f, sz}) => {
+                  console.log('  ' + (sz/1024).toFixed(0) + 'KB  ' + f);
+                });
                 process.stdout.write(estimatedMB);
               });
           " 2>/dev/null | tail -1)
           echo "estimated_mb=$SIZE" >> $GITHUB_OUTPUT
           echo "Archive estimated size: ${SIZE} MB"
-          # Block if > 20 MB (target: <20MB compressed; Athom hard limit ~30MB)
-          # Root cause v8.1.7+: .diag/ folder was NOT excluded → 39MB+ → processing failed
+          # Block if > 15 MB (Athom confirmed limit ~15MB for processing)
+          # Fix: large.png + xlarge.png now excluded via .homeyignore â†’ ~12MB
           python3 -c "
           s = float('$SIZE')
           print(f'Archive: {s} MB')
-          if s > 20:
-            print(f'::error::Archive too large: {s} MB > 20 MB — WILL cause Athom processing failure. Fix .homeyignore immediately.')
-            print(f'  Discovered 2026-05-30: .diag/ .memory/ .ai/ directories were NOT excluded.')
+          if s > 15:
+            print(f'::error::Archive too large: {s} MB > 15 MB â€” WILL cause Athom processing_failed.')
+            print(f'  ROOT CAUSE: large.png (13MB) or xlarge.png (10MB) may be included.')
+            print(f'  CHECK: drivers/**/assets/images/large.png in .homeyignore?')
             print(f'  Run: node .github/scripts/athom-archive-audit.js to diagnose.')
             exit(1)
+          elif s > 12:
+            print(f'::warning::Archive approaching limit: {s} MB (target < 12MB, limit ~15MB). Monitor carefully.')
+            print(f'âœ… Archive OK but close to limit: {s} MB')
           else:
-            print(f'✅ Archive OK: {s} MB < 20 MB target')
+            print(f'âœ… Archive OK: {s} MB < 12 MB target')
           "
+
 
       - name: Publish
         if: steps.pat.outputs.ok == 'true' && steps.archive_gate.outcome == 'success'
@@ -280,7 +299,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      # ===== DRAFT â†’ TEST (Puppeteer + API fallback) =====
       - name: Wait for Athom draft processing
         if: steps.pub.outcome == 'success'
         run: |
@@ -363,3 +382,4 @@ jobs:
             echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
             echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
           fi
+
