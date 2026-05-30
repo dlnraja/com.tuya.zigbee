@@ -4,7 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.19 (2026-05-30)
+## [8.1.19] - 2026-05-30
+
+### Bug Fixes
+- Added new device fingerprint for Soil Sensor [_TZE284_0ints6wl] / [TS0601].
+
+### New Features
+- Enhanced support for existing devices with updated capabilities.
+---
+
+ v8.1.19 (2026-05-30)
 
 v8.1.17: Fixed climate_sensor case drift in driver.compose.json., Added 3367 new fingerprints to 412 drivers.
 
