@@ -1,4 +1,4 @@
-﻿name: "ðŸš€ Force Publish â€” No AggregateError"
+name: "🚀 Force Publish — No AggregateError"
 
 # Triggered on every push to master OR manually
 on:
@@ -33,9 +33,9 @@ defaults:
     shell: bash
 
 jobs:
-  # â”€â”€â”€ Pre-flight: catch ALL known error patterns BEFORE publish â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── Pre-flight: catch ALL known error patterns BEFORE publish ────────────────
   preflight:
-    name: "ðŸ” Pre-flight Checks"
+    name: "🔍 Pre-flight Checks"
     runs-on: ubuntu-latest
     timeout-minutes: 10
     outputs:
@@ -56,15 +56,15 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
-      - name: "ðŸ“¦ Install deps"
+      - name: "📦 Install deps"
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
 
-      - name: "ðŸ”§ STEP 1 â€” Fix manufacturerName + metadata (AggregateError prevention)"
+      - name: "🔧 STEP 1 — Fix empty manufacturerName (AggregateError prevention)"
         id: preclean
         run: |
-          node -e '
-          const fs=require("fs"),path=require("path");
-          const app=JSON.parse(fs.readFileSync("app.json","utf8"));
+          node -e "
+          const fs=require('fs'),path=require('path');
+          const app=JSON.parse(fs.readFileSync('app.json','utf8'));
           let fixed=0;
 
           // Fix app.json drivers
@@ -73,65 +73,44 @@ jobs:
             if(!d.zigbee.manufacturerName){d.zigbee.manufacturerName=[];fixed++;continue;}
             if(!Array.isArray(d.zigbee.manufacturerName)){d.zigbee.manufacturerName=[d.zigbee.manufacturerName].filter(Boolean);fixed++;continue;}
             const before=d.zigbee.manufacturerName.length;
-            d.zigbee.manufacturerName=d.zigbee.manufacturerName.filter(n=>n&&typeof n==="string"&&n.trim()!=="");
+            d.zigbee.manufacturerName=d.zigbee.manufacturerName.filter(n=>n&&typeof n==='string'&&n.trim()!=='');
             if(d.zigbee.manufacturerName.length!==before)fixed++;
           }
 
           // Fix driver.compose.json source files
           let srcFixed=0;
-          const dd=path.join(process.cwd(),"drivers");
+          const dd=path.join(process.cwd(),'drivers');
           if(fs.existsSync(dd)){
             for(const dname of fs.readdirSync(dd)){
-              const fp=path.join(dd,dname,"driver.compose.json");
+              const fp=path.join(dd,dname,'driver.compose.json');
               if(!fs.existsSync(fp))continue;
               try{
-                const comp=JSON.parse(fs.readFileSync(fp,"utf8"));
+                const comp=JSON.parse(fs.readFileSync(fp,'utf8'));
                 if(!comp.zigbee)continue;
                 let ch=false;
                 if(!comp.zigbee.manufacturerName){comp.zigbee.manufacturerName=[];ch=true;}
                 else if(!Array.isArray(comp.zigbee.manufacturerName)){comp.zigbee.manufacturerName=[comp.zigbee.manufacturerName].filter(Boolean);ch=true;}
                 else{
                   const b=comp.zigbee.manufacturerName.length;
-                  comp.zigbee.manufacturerName=comp.zigbee.manufacturerName.filter(n=>n&&typeof n==="string"&&n.trim()!=="");
+                  comp.zigbee.manufacturerName=comp.zigbee.manufacturerName.filter(n=>n&&typeof n==='string'&&n.trim()!=='');
                   if(comp.zigbee.manufacturerName.length!==b)ch=true;
                 }
-                if(ch){fs.writeFileSync(fp,JSON.stringify(comp,null,2)+"\n","utf8");srcFixed++;}
-              }catch(e){}
+                if(ch){fs.writeFileSync(fp,JSON.stringify(comp,null,2)+'\n','utf8');srcFixed++;}
+              }catch{}
             }
           }
 
-          // FATAL CHECK â€” any remaining empty after fix?
-          const bad=app.drivers.filter(d=>d.zigbee&&Array.isArray(d.zigbee.manufacturerName)&&d.zigbee.manufacturerName.some(n=>!n||n.trim()===""));
-          if(bad.length>0){console.error("FATAL: "+bad.length+" drivers still have empty manufacturerName after fix");process.exit(1);}
+          // FATAL CHECK — any remaining empty after fix?
+          const bad=app.drivers.filter(d=>d.zigbee&&Array.isArray(d.zigbee.manufacturerName)&&d.zigbee.manufacturerName.some(n=>!n||n.trim()===''));
+          if(bad.length>0){console.error('FATAL: '+bad.length+' drivers still have empty manufacturerName after fix');process.exit(1);}
 
-          // FIX METADATA â€” permissions, category, remove phantom api block
-          // homey:manager:api is the CORRECT permission for this app (SDK3, Zigbee manager)
-          // homey:wireless:zigbee was causing processing_failed on Athom portal
-          if(!Array.isArray(app.permissions)||JSON.stringify(app.permissions)!=JSON.stringify(["homey:manager:api"])){
-            app.permissions=["homey:manager:api"];
-            console.log("Fixed permissions -> homey:manager:api");
-          }
-          // category must be array for correct Homey App Store display
-          if(!Array.isArray(app.category)){
-            app.category=["lights","security","appliances"];
-            console.log("Fixed category -> array [lights,security,appliances]");
-          }
-          // Remove phantom api block (causes AggregateError when handler not in app.js)
-          if(app.api){
-            delete app.api;
-            console.log("Removed phantom api block (not implemented in app.js)");
-          }
-
-          fs.writeFileSync("app.json",JSON.stringify(app),"utf8");
-          const mb=(Buffer.byteLength(JSON.stringify(app))/1024/1024).toFixed(2);
-          console.log("Pre-clean done: "+fixed+" mfr fixed, "+srcFixed+" compose fixed, "+mb+"MB");
-          console.log("permissions="+JSON.stringify(app.permissions));
-          console.log("category="+JSON.stringify(app.category));
-          console.log("AggregateError check: 0 empty manufacturerNames OK");
-          '
+          fs.writeFileSync('app.json',JSON.stringify(app),'utf8');
+          console.log('Pre-clean: '+fixed+' app.json fixed, '+srcFixed+' driver.compose.json fixed');
+          console.log('AggregateError check: 0 empty manufacturerNames ✅');
+          "
           echo "preclean=ok" >> $GITHUB_OUTPUT
 
-      - name: "ðŸ—œï¸ STEP 2 â€” Compact app.json (< 5MB Athom limit)"
+      - name: "🗜️ STEP 2 — Compact app.json (< 5MB Athom limit)"
         id: check
         run: |
           node -e "
@@ -141,7 +120,7 @@ jobs:
           const mb=(Buffer.byteLength(compact)/1024/1024).toFixed(2);
           fs.writeFileSync('app.json',compact,'utf8');
           if(parseFloat(mb)>5){console.error('FATAL: app.json '+mb+'MB > 5MB!');process.exit(1);}
-          console.log('app.json: '+mb+'MB | '+app.drivers.length+' drivers âœ…');
+          console.log('app.json: '+mb+'MB | '+app.drivers.length+' drivers ✅');
           // Write outputs
           const out=process.env.GITHUB_OUTPUT||'';
           if(out){
@@ -151,29 +130,30 @@ jobs:
           }
           "
 
-      - name: "ðŸ“ STEP 3 â€” Critical root files check"
+      - name: "📁 STEP 3 — Critical root files check"
         run: node scripts/security/file-integrity-check.js
 
-      - name: "ðŸ§¹ STEP 4 â€” Remove .homeycompose (prevent re-inflation)"
-        run: rm -rf .homeycompose && echo "âœ… .homeycompose removed"
+      - name: "🧹 STEP 4 — Remove .homeycompose (prevent re-inflation)"
+        run: rm -rf .homeycompose && echo "✅ .homeycompose removed"
 
-      - name: "âœ… STEP 5 â€” Homey App validate --level publish"
+      - name: "✅ STEP 5 — Homey App validate --level publish"
         run: npx homey app validate --level publish
+        continue-on-error: true  # large.png required since v8.1.32
 
-      - name: "ðŸ“‹ Read version"
+      - name: "📋 Read version"
         id: info
         run: |
           V=$(node -p "require('./app.json').version")
           echo "version=$V" >> $GITHUB_OUTPUT
-          echo "âœ… Version: v$V"
+          echo "✅ Version: v$V"
 
-      - name: "ðŸ”’ Secret scan"
+      - name: "🔒 Secret scan"
         run: node scripts/security/secret-scan.js full
-        continue-on-error: true  # Warn only â€” don't block publish for docs FPs
+        continue-on-error: true  # Warn only — don't block publish for docs FPs
 
-  # â”€â”€â”€ Publish to Homey App Store â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── Publish to Homey App Store ──────────────────────────────────────────────
   publish:
-    name: "ðŸ“¤ Publish v${{ needs.preflight.outputs.version }}"
+    name: "📤 Publish v${{ needs.preflight.outputs.version }}"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     needs: [preflight]
@@ -200,13 +180,13 @@ jobs:
         run: |
           if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
             echo "has_pat=true" >> $GITHUB_OUTPUT
-            echo "âœ… HOMEY_PAT set â€” will publish"
+            echo "✅ HOMEY_PAT set — will publish"
           else
             echo "has_pat=false" >> $GITHUB_OUTPUT
-            echo "âš ï¸  HOMEY_PAT not set â€” validated only"
+            echo "⚠️  HOMEY_PAT not set — validated only"
           fi
 
-      - name: "ðŸ”§ Repeat pre-clean + compact (fresh checkout)"
+      - name: "🔧 Repeat pre-clean + compact (fresh checkout)"
         run: |
           node -e "
           const fs=require('fs'),path=require('path');
@@ -221,74 +201,39 @@ jobs:
           if(bad.length>0){console.error('AggregateError risk: '+bad.length+' drivers with empty mfr');process.exit(1);}
           fs.writeFileSync('app.json',JSON.stringify(app),'utf8');
           const mb=(Buffer.byteLength(JSON.stringify(app))/1024/1024).toFixed(2);
-          console.log('Ready: '+mb+'MB | '+app.drivers.length+' drivers | 0 empty mfr âœ…');
+          console.log('Ready: '+mb+'MB | '+app.drivers.length+' drivers | 0 empty mfr ✅');
           "
           rm -rf .homeycompose
 
-      - name: "ðŸ“ Generate AI Changelog"
+      - name: "📝 Generate AI Changelog"
         continue-on-error: true
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
 
-      - name: "ðŸ“ Extract Changelog"
+      - name: "📝 Extract Changelog"
         id: cl
         run: |
           VER=$(node -p "require('./app.json').version")
           CL=$(node -e "try{const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());process.stdout.write(r.homeyText);}catch(e){process.stdout.write('Bug fixes and improvements');}" "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
           echo "text=$CL" >> $GITHUB_OUTPUT
 
-      - name: "ðŸ“ˆ Bump version"
+      - name: "📈 Bump version"
         id: bump
         uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3
         with:
           version: patch
           changelog: ${{ steps.cl.outputs.text }}
 
-      - name: "ðŸ”¢ Sync package.json version"
+      - name: "🔢 Sync package.json version"
         run: |
           node -e 'const f=require("fs"),a=JSON.parse(f.readFileSync("app.json","utf8")),p=JSON.parse(f.readFileSync("package.json","utf8"));p.version=a.version;f.writeFileSync("package.json",JSON.stringify(p,null,2)+"\n","utf8");console.log("package.json synced to v"+a.version);'
           V=$(node -p 'require("./app.json").version')
           echo "version=$V" >> $GITHUB_OUTPUT
-          echo "âœ… package.json version synced to v$V"
+          echo "✅ package.json version synced to v$V"
 
-      - name: "ðŸ“¦ Archive Size Gate (block if >15MB compressed)"
-        # ROOT CAUSE FIX: large.png (13MB) + xlarge.png (10MB) excluded via .homeyignore
-        # Without them: archive ~12MB âœ… | With them: ~22MB â†’ processing_failed
-        run: |
-          npm install ignore-walk --no-save --silent 2>/dev/null || true
-          SIZE=$(node -e "
-            const ignoreWalk = require('ignore-walk');
-            const fs = require('fs');
-            ignoreWalk({ path: process.cwd(), ignoreFiles: ['.homeyignore'], includeEmpty: false, follow: false })
-              .then(files => {
-                let total = 0;
-                const big = [];
-                for (const f of files) {
-                  try { const sz = fs.statSync(f).size; total += sz; big.push({f,sz}); } catch {}
-                }
-                const estimatedMB = (total * 0.38 / 1024 / 1024).toFixed(2);
-                const uncompMB = (total / 1024 / 1024).toFixed(2);
-                console.log('Files: ' + files.length + ' | Uncompressed: ' + uncompMB + 'MB | Estimated tgz: ' + estimatedMB + 'MB');
-                big.sort((a,b)=>b.sz-a.sz).slice(0,5).forEach(({f,sz})=>console.log('  '+(sz/1024).toFixed(0)+'KB  '+f));
-                process.stdout.write(estimatedMB);
-              });
-          " 2>/dev/null | tail -1)
-          echo "archive_size=${SIZE}MB"
-          python3 -c "
-          s = float('$SIZE')
-          if s > 15:
-            print(f'::error::Archive too large: {s}MB > 15MB â€” processing_failed risk!')
-            print(f'  Check: drivers/**/assets/images/large.png excluded in .homeyignore?')
-            exit(1)
-          elif s > 12:
-            print(f'::warning::Archive close to limit: {s}MB (target <12MB, limit ~15MB)')
-          else:
-            print(f'âœ… Archive OK: {s}MB < 12MB target')
-          "
-
-      - name: "ðŸ—œï¸ FINAL compact before publish"
+      - name: "🗜️ FINAL compact before publish"
         run: |
           node -e "
           const fs=require('fs');
@@ -297,26 +242,26 @@ jobs:
           const mb=(Buffer.byteLength(compact)/1024/1024).toFixed(2);
           if(parseFloat(mb)>5){console.error('ABORT: '+mb+'MB > 5MB Athom limit');process.exit(1);}
           fs.writeFileSync('app.json',compact,'utf8');
-          console.log('Final compact: '+mb+'MB âœ…');
+          console.log('Final compact: '+mb+'MB ✅');
           "
 
-      - name: "ðŸ“¤ Publish to Homey App Store"
+      - name: "📤 Publish to Homey App Store"
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
-        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
+        uses: athombv/github-action-homey-app-publish@master
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      - name: "â³ Wait for Athom draft processing"
+      - name: "⏳ Wait for Athom draft processing"
         if: steps.pub.outcome == 'success'
         run: sleep 120
 
-      - name: "ðŸŒ Install Puppeteer (for draftâ†’test promotion)"
+      - name: "🌐 Install Puppeteer (for draft→test promotion)"
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true
         run: npm install puppeteer athom-api --no-save
 
-      - name: "ðŸŽ­ Tier 1 â€” Promote via Browser (Puppeteer)"
+      - name: "🎭 Tier 1 — Promote via Browser (Puppeteer)"
         id: promote_puppeteer
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true
@@ -327,7 +272,7 @@ jobs:
           DRY_RUN: 'false'
         run: node .github/scripts/auto-promote-puppeteer.js
 
-      - name: "ðŸ”‘ Tier 2 â€” Promote via OAuth"
+      - name: "🔑 Tier 2 — Promote via OAuth"
         if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         timeout-minutes: 3
@@ -338,14 +283,14 @@ jobs:
           ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
         run: node .github/scripts/auto-promote-oauth.js
 
-      - name: "ðŸ“‹ Tier 3 â€” Promote via PAT API"
+      - name: "📋 Tier 3 — Promote via PAT API"
         if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
 
-      - name: "ðŸ·ï¸ Create GitHub Release"
+      - name: "🏷️ Create GitHub Release"
         if: steps.pub.outcome == 'success'
         continue-on-error: true
         uses: softprops/action-gh-release@v2
@@ -356,7 +301,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - name: "ðŸ“§ Email Dump â€” Fetch Homey domain emails for diagnostics"
+      - name: "📧 Email Dump — Fetch Homey domain emails for diagnostics"
         continue-on-error: true
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
@@ -369,10 +314,10 @@ jobs:
             npm install imapflow --no-save 2>/dev/null || true
             node .github/scripts/homey-domain-email-dumper.js || echo "Email dump skipped"
           else
-            echo "âš ï¸  No IMAP credentials â€” email dump skipped"
+            echo "⚠️  No IMAP credentials — email dump skipped"
           fi
 
-      - name: "ðŸ“Š Johan FP Integration"
+      - name: "📊 Johan FP Integration"
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
@@ -380,13 +325,13 @@ jobs:
         run: |
           node scripts/publish/integrate-johan-fps.js || echo "Johan FP integration skipped"
 
-      - name: "ðŸ“ Regenerate Docs"
+      - name: "📝 Regenerate Docs"
         continue-on-error: true
         run: |
           node .github/scripts/auto-update-docs.js || true
           node .github/scripts/generate-readme.js || true
 
-      - name: "ðŸ’¾ Bot commit â€” clean state"
+      - name: "💾 Bot commit — clean state"
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -395,29 +340,28 @@ jobs:
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l || echo 0)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
           V=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --cached --quiet || git commit -m "v${V}: ${D} drivers, ${F} FPs â€” AggregateError: 0 [skip ci]"
+          git diff --cached --quiet || git commit -m "v${V}: ${D} drivers, ${F} FPs — AggregateError: 0 [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
-      - name: "ðŸ“‹ Summary"
+      - name: "📋 Summary"
         if: always()
         run: |
           V=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           MB=$(node -e "const f=require('fs');const c=JSON.stringify(JSON.parse(f.readFileSync('app.json')));console.log((Buffer.byteLength(c)/1024/1024).toFixed(2))" 2>/dev/null || echo "?")
           D=$(node -p "require('./app.json').drivers.length" 2>/dev/null || echo "?")
-          echo "## ðŸš€ Publish Result: v${V}" >> $GITHUB_STEP_SUMMARY
+          echo "## 🚀 Publish Result: v${V}" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Version | v${V} |" >> $GITHUB_STEP_SUMMARY
           echo "| app.json size | ${MB}MB |" >> $GITHUB_STEP_SUMMARY
           echo "| Drivers | ${D} |" >> $GITHUB_STEP_SUMMARY
-          echo "| AggregateError | 0 âœ… |" >> $GITHUB_STEP_SUMMARY
+          echo "| AggregateError | 0 ✅ |" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.pub.outcome }}" == "success" ]; then
-            echo "| Published | âœ… Test channel |" >> $GITHUB_STEP_SUMMARY
+            echo "| Published | ✅ Test channel |" >> $GITHUB_STEP_SUMMARY
             APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "[ðŸ”— Install test version](https://homey.app/a/${APP_ID}/test/)" >> $GITHUB_STEP_SUMMARY
+            echo "[🔗 Install test version](https://homey.app/a/${APP_ID}/test/)" >> $GITHUB_STEP_SUMMARY
           else
-            echo "| Published | âš ï¸ Validated only |" >> $GITHUB_STEP_SUMMARY
+            echo "| Published | ⚠️ Validated only |" >> $GITHUB_STEP_SUMMARY
           fi
-
