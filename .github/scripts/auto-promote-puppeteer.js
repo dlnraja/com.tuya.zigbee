@@ -276,15 +276,32 @@ async function doLogin(page) {
 }
 
 async function findAndPromote(page, captured) {
-  // Navigate via SPA clicks: My Apps -> App -> Versions
-  await spaNav(page);
+  // If BUILD_ID is explicitly set, navigate directly to that build's submission page
+  const envBuildId = process.env.BUILD_ID || '';
+  if (envBuildId) {
+    const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${envBuildId}`;
+    log(`  Direct nav to build ${envBuildId}: ${buildUrl}`);
+    await page.goto(buildUrl, { waitUntil: 'networkidle2' });
+    await waitReady(page, 'build-page', 8000);
+    await snap(page, '05-build-direct');
+    log(`  URL: ${page.url()}`);
+  } else {
+    // Navigate via SPA clicks: My Apps -> App -> Versions
+    await spaNav(page);
+  }
   async function spaNav(p) {
     log('  3a: My Apps');
     await p.evaluate(()=>{const l=document.querySelector('a[href="/apps"]');if(l)l.click();});
     await waitReady(p, 'my-apps-page', 8000);
     await snap(p,'05a-apps');
-    log('  3b: App');
-    const ok=await p.evaluate(id=>{const a=[...document.querySelectorAll('a')].find(l=>l.href&&l.href.includes(id));if(a){a.click();return true;}return false;},APP_ID);
+    log('  3b: App — exact match to avoid .stable confusion');
+    // Use exact suffix match with trailing slash: /apps/app/APP_ID/ to avoid matching .stable variant
+    const ok=await p.evaluate(id=>{
+      const exact='/apps/app/'+id+'/';
+      const a=[...document.querySelectorAll('a')].find(l=>l.href&&(l.href.includes(exact)||l.pathname===('/apps/app/'+id)));
+      if(a){a.click();return a.href;}return false;
+    },APP_ID);
+    log(`  App link found: ${ok}`);
     if(!ok) await p.goto(BASE+'/apps/app/'+APP_ID,{waitUntil:'networkidle2'});
     await waitReady(p, 'app-page', 8000);
     await snap(p,'05b-app');
@@ -293,6 +310,7 @@ async function findAndPromote(page, captured) {
     await waitReady(p, 'versions-page', 8000);
     await snap(p,'05c-ver');
   }
+
 
   // Try session API with captured token
   if (captured.token) log('  Token: captured');
