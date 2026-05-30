@@ -35,6 +35,17 @@
 const fs = require('fs');
 const path = require('path');
 
+// ─── PNG dimension helper (reads IHDR chunk, no external deps) ────────────────
+function pngDimensions(filePath) {
+  try {
+    const buf = fs.readFileSync(filePath);
+    // PNG signature: 8 bytes, then IHDR chunk: 4 len + 4 'IHDR' + 4 width + 4 height
+    if (buf.length < 24) return null;
+    if (buf[0] !== 0x89 || buf[1] !== 0x50) return null; // Not a PNG
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  } catch (_) { return null; }
+}
+
 // ─── CLI args ─────────────────────────────────────────────────────────────────
 const FIX_MODE = process.argv.includes('--fix');
 const QUIET = process.argv.includes('--quiet');
@@ -197,19 +208,35 @@ if (!fs.existsSync(iconSvgPath)) {
 }
 
 // ─── M02 — assets/images ─────────────────────────────────────────────────────
+// NOTE: App-level image dimensions (250×175, 500×350, 1000×700) differ from
+// driver-level images (75×75, 500×500). These are the correct Homey App Store
+// dimensions confirmed from v8.1.6 GOOD commit (5d795b60).
+// Driver-level dimension validation is enforced by M15.
 section('M02 — assets/images (App Store required)');
 [
-  ['assets/images/small.png', 'App Store thumbnail (190×190)'],
-  ['assets/images/large.png', 'App Store banner (500×350)'],
-].forEach(([f, desc]) => {
+  ['assets/images/small.png', 'App Store thumbnail', 250, 175],
+  ['assets/images/large.png', 'App Store banner',    500, 350],
+].forEach(([f, desc, expW, expH]) => {
   const p = path.join(ROOT, f);
-  if (!fs.existsSync(p)) fail('M02', `${f} MISSING — required: ${desc}`);
-  else ok('M02', `${f} OK (${fs.statSync(p).size} bytes) — ${desc}`);
+  if (!fs.existsSync(p)) { fail('M02', `${f} MISSING — required: ${desc} (${expW}×${expH})`); return; }
+  const dim = pngDimensions(p);
+  if (!dim) {
+    fail('M02', `${f} is not a valid PNG`);
+  } else if (dim.w !== expW || dim.h !== expH) {
+    // Warn but don't fail — Homey may accept various app-level sizes
+    warn('M02', `${f} unusual dimensions: ${dim.w}×${dim.h} (typical ${expW}×${expH}) — verify App Store acceptance`);
+  } else {
+    ok('M02', `${f} OK (${dim.w}×${dim.h}) — ${desc}`);
+  }
 });
 // xlarge optional
 const xlarge = path.join(ROOT, 'assets/images/xlarge.png');
-if (fs.existsSync(xlarge)) ok('M02', `assets/images/xlarge.png OK (optional)`);
-else warn('M02', 'assets/images/xlarge.png missing (optional for some stores)');
+if (fs.existsSync(xlarge)) {
+  const xd = pngDimensions(xlarge);
+  ok('M02', `assets/images/xlarge.png OK${xd ? ` (${xd.w}×${xd.h})` : ''} (optional)`);
+} else {
+  warn('M02', 'assets/images/xlarge.png missing (optional for some stores)');
+}
 
 // ─── M03 — .homeychangelog.json ──────────────────────────────────────────────
 section('M03 — .homeychangelog.json');
@@ -379,21 +406,59 @@ if (app.drivers && Array.isArray(app.drivers)) {
 }
 
 
-// ─── Per-driver asset checks (spot check first 5 drivers) ────────────────────
-section('Driver Asset Spot Check (first 5)');
+// ─── M15 — Per-driver image dimension validation (ALL drivers) ───────────────
+// This was the missing guard that caused AggregateError in v8.1.7–v8.1.15:
+// large.png must be 500×500, small.png must be 75×75.
+section('M15 — Driver Image Dimensions (ALL drivers, large=500×500 small=75×75)');
 if (app.drivers && app.drivers.length > 0) {
-  const sample = app.drivers.slice(0, 5);
-  sample.forEach(d => {
+  let dimOk = 0, dimFail = 0;
+  const dimErrors = [];
+
+  app.drivers.forEach(d => {
     const driverDir = path.join(ROOT, 'drivers', d.id);
-    if (!fs.existsSync(driverDir)) { warn('DRV', `drivers/${d.id}/ directory missing`); return; }
-    const iconPath = path.join(driverDir, 'assets', 'icon.svg');
+    if (!fs.existsSync(driverDir)) return; // already caught by M09
+
     const smallImg = path.join(driverDir, 'assets', 'images', 'small.png');
     const largeImg = path.join(driverDir, 'assets', 'images', 'large.png');
-    if (!fs.existsSync(iconPath)) warn('DRV', `drivers/${d.id}/assets/icon.svg missing`);
-    if (!fs.existsSync(smallImg)) warn('DRV', `drivers/${d.id}/assets/images/small.png missing`);
-    if (!fs.existsSync(largeImg)) warn('DRV', `drivers/${d.id}/assets/images/large.png missing`);
-    if (fs.existsSync(iconPath) && fs.existsSync(smallImg)) ok('DRV', `drivers/${d.id} assets OK`);
+
+    let driverOk = true;
+
+    if (!fs.existsSync(smallImg)) {
+      dimErrors.push(`${d.id}/small.png MISSING`);
+      driverOk = false;
+    } else {
+      const dim = pngDimensions(smallImg);
+      if (!dim) { dimErrors.push(`${d.id}/small.png NOT A PNG`); driverOk = false; }
+      else if (dim.w !== 75 || dim.h !== 75) {
+        dimErrors.push(`${d.id}/small.png: ${dim.w}×${dim.h} (expected 75×75)`);
+        driverOk = false;
+      }
+    }
+
+    if (!fs.existsSync(largeImg)) {
+      dimErrors.push(`${d.id}/large.png MISSING`);
+      driverOk = false;
+    } else {
+      const dim = pngDimensions(largeImg);
+      if (!dim) { dimErrors.push(`${d.id}/large.png NOT A PNG`); driverOk = false; }
+      else if (dim.w !== 500 || dim.h !== 500) {
+        dimErrors.push(`${d.id}/large.png: ${dim.w}×${dim.h} (expected 500×500)`);
+        driverOk = false;
+      }
+    }
+
+    if (driverOk) dimOk++;
+    else dimFail++;
   });
+
+  if (dimErrors.length > 0) {
+    // Show first 10 errors; full list in --json mode
+    const preview = dimErrors.slice(0, 10).join('; ');
+    const extra = dimErrors.length > 10 ? ` (+${dimErrors.length - 10} more)` : '';
+    fail('M15', `${dimFail} driver(s) have incorrect image dimensions: ${preview}${extra}`);
+  } else {
+    ok('M15', `All ${dimOk} drivers: small.png=75×75 ✓  large.png=500×500 ✓`);
+  }
 }
 
 // ─── Results ──────────────────────────────────────────────────────────────────

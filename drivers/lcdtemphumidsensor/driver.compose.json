@@ -21,9 +21,9 @@
   },
   "zigbee": {
     "productId": [
-      "TS0201",
-      "TS0601",
       "TS0601_lcd",
+      "TS0601",
+      "TS0201",
       "TY0201"
     ],
     "endpoints": {
@@ -37,13 +37,12 @@
       }
     },
     "manufacturerName": [
-      "_TZ2000_AVDNVYKF",
-      "_TZ2000_HJSGDKFL",
-      "_TZ2000_avdnvykf",
-      "_TZ2000_hjsgdkfl",
-      "_TZ3000_ywagc4rj",
       "_tz2000_avdnvykf",
-      "_tz2000_hjsgdkfl"
+      "_TZ2000_avdnvykf",
+      "_TZ2000_AVDNVYKF",
+      "_tz2000_hjsgdkfl",
+      "_TZ2000_hjsgdkfl",
+      "_TZ2000_HJSGDKFL"
     ]
   },
   "images": {
