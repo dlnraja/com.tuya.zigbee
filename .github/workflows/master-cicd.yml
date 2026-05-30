@@ -59,19 +59,19 @@ jobs:
 
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-      
+
       - name: 🛡️ ULTIMATE INTEGRITY GATE
         run: node scripts/ULTIMATE_CHECK.js
-      
+
       - name: 🛡️ STRICT SYNTAX PURITY GUARD
         run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
-      
+
       - name: 🛡️ ARITHMETIC INTEGRITY GUARD
         run: node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js
 
       - name: 📦 Setup Unified
         uses: ./.github/actions/setup-unified
-      
+
       - name: "0a. Intelligence Mode Selector"
         id: intelligence_selector
         run: |
@@ -91,13 +91,13 @@ jobs:
           # Analyze the last few commits for critical patterns
           node .github/scripts/ai-helper.js --action assess_risk --commits 10
 
-      
+
       - name: ⚙️ Run Auto-Ganger
         run: node scripts/automation/generate-subdevices.js
 
       - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
         run: node scripts/maintenance/ensure-500x500-images.js
-      
+
       - name: 📉 IMAGE MINIMIZATION (App Store Compliance)
         run: node scripts/maintenance/clean-images.js
 
@@ -107,17 +107,17 @@ jobs:
           if [ -f SUPERIOR_AUDIT_REPORT.md ]; then
             cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
           fi
-      
+
       - name: 🛡️ STRING INTEGRITY & INVISIBLE CHARACTER AUDIT
         run: node scripts/maintenance/string-integrity-gate.js
-      
+
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
         run: |
           node scripts/maintenance/zero-defect-architect-audit.js
           if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
             echo "### 🛡️ Zero Defect Audit Summary" >> $GITHUB_STEP_SUMMARY
             node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
-            
+
             # Fail if there are critical violations
             node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.collisions.length > 0 || r.errors.length > 0 || r.sdkDeprecations.length > 0 || r.buttonLogicFailures.length > 0) { console.error('FAILED: Architectural violations detected!'); process.exit(1); }"
           fi
@@ -166,7 +166,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      
+
       - name: 📦 Setup Unified
         uses: ./.github/actions/setup-unified
 
@@ -190,7 +190,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add app.json package.json .homeychangelog.json
-          
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

@@ -43,7 +43,7 @@ jobs:
       - name: 🚫 Syntax Guard (Prevent Recursive Crashes)
         run: |
           echo "🔍 Vérification stricte de la syntaxe sur tous les fichiers critiques..."
-          
+
           # 1. Vérification globale
           find lib drivers -name "*.js" -exec node -c {} +
           echo "✅ Syntaxe globale OK."
@@ -54,7 +54,7 @@ jobs:
              echo "❌ ERREUR BLOQUANTE: Pattern 'if ... return ... : null' détecté dans tuyaUtils.js. Voir PR #274."
              exit 1
           fi
-          
+
           # Pattern v7.4.6: Parenthèse en trop dans AdvancedAnalytics.js
           if grep -rn "Math.round.*safeDivide.*10))" lib/analytics/AdvancedAnalytics.js; then
              echo "❌ ERREUR BLOQUANTE: Parenthèse excédentaire détectée dans AdvancedAnalytics.js."
@@ -80,23 +80,23 @@ jobs:
         run: |
           echo "📂 Création du rapport d'analyse anonymisé..."
           mkdir -p reports/diagnostics
-          
+
           # Rapport basé sur les erreurs fournies par l'utilisateur
           cat > reports/diagnostics/crash-analysis.md << 'EOF'
           # 📊 Rapport d'Analyse des Crashs (Anonymisé)
           ## 🚨 Patterns Critiques Identifiés
-          
+
           | Version | Fichier | Ligne | Erreur | Cause Racine |
           |---------|---------|-------|--------|--------------|
           | **v7.4.8** | `lib/utils/tuyaUtils.js` | 118 | `SyntaxError: Unexpected token ':'` | Mélange invalide `if` / opérateur ternaire. |
           | **v7.4.6** | `lib/analytics/AdvancedAnalytics.js` | 215 | `SyntaxError: Unexpected token ')'` | Parenthèse fermante orpheline dans `Math.round`. |
-          
+
           ## 📝 Analyse des Emails Utilisateurs
           - **Impact**: 100% des devices sur v7.4.8 crashent au démarrage (`Unable to initialize app`).
           - **Firmware**: Affecte Homey Pro 2019 (v12/v13) et 2023 (v13).
           - **Action**: Le fix syntaxique est **OBLIGATOIRE** avant toute publication.
           EOF
-          
+
           echo "✅ Rapport généré dans reports/diagnostics/"
 
       - name: Upload Diagnostic Report
@@ -138,7 +138,7 @@ jobs:
             echo "✅ (Simulation) Version ${{ github.event.inputs.target_version }} publiée sur Test Channel."
             exit 0
           fi
-          
+
           # Commande réelle de publication
           # homey app publish --test --token ${{ secrets.HOMEY_PAT }}
           echo "✅ Commande de publication exécutée."

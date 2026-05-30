@@ -36,7 +36,7 @@ jobs:
           node-version: "22"
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      
+
       - name: Install Puppeteer Dependencies
         continue-on-error: true
         run: |

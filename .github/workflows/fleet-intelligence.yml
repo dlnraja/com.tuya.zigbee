@@ -40,16 +40,16 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-      
+
       - name: "🔍 Issue & PR Triage"
         run: |
           node .github/scripts/github-issue-manager.js || true
           node .github/scripts/github-scanner.js || true
-      
+
       - name: "🤖 Bot Accuracy Refinement"
         run: |
           node scripts/maintenance/BOT_ACCURACY_FIXER.js
-      
+
       - name: "🤖 Parallel Bot Cleanup"
         run: |
           # Use GH_PAT for cross-repo actions if needed

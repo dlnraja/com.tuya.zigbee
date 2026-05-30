@@ -84,21 +84,21 @@ jobs:
           body: |
             ## 🔄 Auto-Sync report
             This PR automatically cherry-picks changes and new device variants from Johan Benz's repository.
-            
+
             **Stats:**
             - Added FPs: ${{ steps.sync.outputs.added }}
             - DP Gaps detected: ${{ steps.sync.outputs.gaps }}
             - New Johan drivers: ${{ steps.sync.outputs.new_drivers }}
-            
+
             **Checks performed:**
             - [x] New device IDs detected using heuristics script
             - [x] Endpoint routing validated for multi-gang devices
             - [x] Tuya raw frame handlers adapted
             - [x] `homey app validate` passed
-            
+
             **Protocol followed:** [SYNC_PROTOCOL.md](.github/skills/SYNC_PROTOCOL.md)
             **Investigation framework:** [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section deep diagnostic methodology for cross-referencing forums/emails/GitHub/Z2M/ZHA
-            
+
             *Please review carefully before merging. This PR is AI-ready for auto-merge if risk is low.*
           branch: auto-sync-johan-enhanced
           labels: "upstream, automerge, reviewed-by-ai, fingerprints"
