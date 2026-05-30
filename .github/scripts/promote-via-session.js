@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-const APP = 'com.dlnraja.tuya.zigbee';
+// APP can be overridden per-call via PROMOTE_APP_ID env var (set by auto-promote-puppeteer.js loop)
+const APP = process.env.PROMOTE_APP_ID || 'com.dlnraja.tuya.zigbee';
 const BASE = 'https://apps-api.athom.com/api/v1';
 
 async function promoteViaBrowserSession(page, log, dry, capturedToken) {

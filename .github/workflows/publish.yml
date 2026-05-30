@@ -259,31 +259,8 @@ jobs:
       - name: Capture Build ID from publish log
         if: steps.pub.outcome == 'success'
         id: build_id
-        shell: bash
-        run: |
-          # Query Athom API to get the latest build ID for this app
-          BID=''
-          BID=$(node -e "
-            const https = require('https');
-            const token = process.env.HOMEY_PAT;
-            const app = require('./app.json').id;
-            const url = 'https://apps-api.athom.com/api/v1/app/' + app + '/build';
-            https.get(url,{headers:{'Authorization':'Bearer '+token,'Accept':'application/json'}},res=>{
-              let d='';
-              res.on('data',c=>d+=c);
-              res.on('end',()=>{
-                try{
-                  const arr=JSON.parse(d);
-                  const a=Array.isArray(arr)?arr:(arr.builds||[]);
-                  a.sort((x,y)=>parseInt(y.id||0,10)-parseInt(x.id||0,10));
-                  process.stdout.write(String(a[0].id||''));
-                }catch(e){}
-              });
-            }).on('error',()=>{});
-          " 2>/dev/null || echo '')
-          echo "build_id=$BID" >> $GITHUB_OUTPUT
-          echo "Build ID captured: $BID"
-          echo "Manage: https://tools.developer.homey.app/apps/app/$(node -p \"require('./app.json').id\")/build/$BID"
+        continue-on-error: true
+        run: node .github/scripts/capture-build-id.js
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
 
