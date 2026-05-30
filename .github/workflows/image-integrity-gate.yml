@@ -1,0 +1,156 @@
+name: Image Integrity Gate
+
+# ════════════════════════════════════════════════════════════════════════════
+# Image Integrity Gate — v8.1.16+
+# 
+# Guards against the regression introduced in v8.1.7 where auto-generated
+# large.png files had wrong dimensions (250×175 instead of 500×500).
+# This was confirmed as a contributing factor to "Processing Failed" /
+# AggregateError on Athom tools.dev builds.
+#
+# Rules enforced:
+#   - drivers/*/assets/images/small.png  → MUST be exactly 75×75
+#   - drivers/*/assets/images/large.png  → MUST be exactly 500×500
+#   - drivers/*/assets/images/xlarge.png → WARN if exists and ≠ 500×500
+#   - assets/images/small.png            → MUST be valid PNG
+#   - assets/images/large.png            → MUST be valid PNG
+# ════════════════════════════════════════════════════════════════════════════
+
+on:
+  push:
+    paths:
+      - 'drivers/**/assets/images/*.png'
+      - 'assets/images/*.png'
+  pull_request:
+    paths:
+      - 'drivers/**/assets/images/*.png'
+      - 'assets/images/*.png'
+  workflow_dispatch:
+    inputs:
+      fail_on_warn:
+        description: 'Treat xlarge warnings as errors'
+        required: false
+        default: 'false'
+
+jobs:
+  image-dimensions:
+    name: Check PNG Dimensions
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate image dimensions
+        run: |
+          node - <<'EOF'
+          const fs   = require('fs');
+          const path = require('path');
+
+          // ── Read PNG dimensions from IHDR chunk (no external deps) ──────
+          function pngDims(fp) {
+            try {
+              const buf = fs.readFileSync(fp);
+              if (buf.length < 24 || buf[0] !== 0x89 || buf[1] !== 0x50) return null;
+              return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+            } catch (_) { return null; }
+          }
+
+          const ROOT = process.cwd();
+          const errors  = [];
+          const warnings = [];
+          let checked = 0;
+
+          // ── App-level images ─────────────────────────────────────────────
+          const APP_IMAGES = [
+            { rel: 'assets/images/small.png', expW: 190, expH: 190, required: true  },
+            { rel: 'assets/images/large.png', expW: 500, expH: 500, required: true  },
+            { rel: 'assets/images/xlarge.png', expW: 500, expH: 500, required: false },
+          ];
+          for (const { rel, expW, expH, required } of APP_IMAGES) {
+            const fp = path.join(ROOT, rel);
+            if (!fs.existsSync(fp)) {
+              if (required) errors.push(`MISSING: ${rel}`);
+              continue;
+            }
+            const d = pngDims(fp);
+            checked++;
+            if (!d) { errors.push(`NOT_PNG: ${rel}`); continue; }
+            if (d.w !== expW || d.h !== expH) {
+              const msg = `WRONG_DIM: ${rel} = ${d.w}×${d.h} (expected ${expW}×${expH})`;
+              if (required) errors.push(msg); else warnings.push(msg);
+            } else {
+              console.log(`  ✅ ${rel} (${d.w}×${d.h})`);
+            }
+          }
+
+          // ── Driver images ────────────────────────────────────────────────
+          const driversDir = path.join(ROOT, 'drivers');
+          if (!fs.existsSync(driversDir)) {
+            errors.push('MISSING: drivers/ directory');
+          } else {
+            const driverIds = fs.readdirSync(driversDir)
+              .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory());
+
+            const DRIVER_RULES = [
+              { file: 'small.png', expW: 75,  expH: 75,  required: true  },
+              { file: 'large.png', expW: 500, expH: 500, required: true  },
+              { file: 'xlarge.png',expW: 500, expH: 500, required: false },
+            ];
+
+            let ok = 0, fail = 0;
+            for (const dId of driverIds) {
+              const imgDir = path.join(driversDir, dId, 'assets', 'images');
+              let driverOk = true;
+              for (const { file, expW, expH, required } of DRIVER_RULES) {
+                const fp = path.join(imgDir, file);
+                if (!fs.existsSync(fp)) {
+                  if (required) { errors.push(`MISSING: drivers/${dId}/assets/images/${file}`); driverOk = false; }
+                  continue;
+                }
+                const d = pngDims(fp);
+                checked++;
+                if (!d) { errors.push(`NOT_PNG: drivers/${dId}/assets/images/${file}`); driverOk = false; continue; }
+                if (d.w !== expW || d.h !== expH) {
+                  const msg = `WRONG_DIM: drivers/${dId}/assets/images/${file} = ${d.w}×${d.h} (expected ${expW}×${expH})`;
+                  if (required) { errors.push(msg); driverOk = false; }
+                  else warnings.push(msg);
+                }
+              }
+              if (driverOk) ok++; else fail++;
+            }
+            console.log(`\n📊 Drivers checked: ${ok} OK, ${fail} FAIL (out of ${driverIds.length} total)`);
+          }
+
+          // ── Report ───────────────────────────────────────────────────────
+          console.log(`\n📸 Images checked: ${checked}`);
+          if (warnings.length) {
+            console.warn('\n⚠️  WARNINGS (' + warnings.length + '):');
+            warnings.forEach(w => console.warn('  ' + w));
+          }
+          if (errors.length) {
+            console.error('\n❌ ERRORS (' + errors.length + '):');
+            errors.forEach(e => console.error('  ' + e));
+            process.exit(1);
+          } else {
+            console.log('\n✅ All image dimensions are correct');
+          }
+          EOF
+
+      - name: Upload dimension report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: image-dimension-report-${{ github.run_number }}
+          path: |
+            drivers/**/assets/images/
+            assets/images/
+          retention-days: 7

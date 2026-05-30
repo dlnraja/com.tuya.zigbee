@@ -22,9 +22,9 @@
   },
   "zigbee": {
     "productId": [
+      "TS0726",
       "TS0001",
-      "TS0002",
-      "TS0726"
+      "TS0002"
     ],
     "endpoints": {
       "1": {
@@ -86,9 +86,6 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3002_vaq2bfcu",
-      "_TZE200_placeholder_generic"
-    ]
+    "manufacturerName": []
   }
 }

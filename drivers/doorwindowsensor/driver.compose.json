@@ -28,7 +28,7 @@
     "productId": [
       "RH3001",
       "TS0203",
-      "TS0601"
+      "TS0203"
     ],
     "endpoints": {
       "1": {
@@ -50,11 +50,6 @@
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_996rpfy6",
-      "_TZ3000_gntwytxo",
-      "_TZE200_pay2byax",
-      "_TZE200_placeholder_generic"
-    ]
+    "manufacturerName": []
   }
 }
