@@ -1,0 +1,46 @@
+{
+  "id": "powerOnState",
+  "type": "dropdown",
+  "label": {
+    "en": "Power On State",
+    "fr": "Etat a la mise sous tension",
+    "nl": "Inschakeltoestand",
+    "de": "Einschaltzustand"
+  },
+  "hint": {
+    "en": "Set the device state when power is restored.",
+    "fr": "Definit l etat lors du retablissement de l alimentation.",
+    "nl": "Stel de apparaatstatus in bij het herstellen van de stroom.",
+    "de": "Legen Sie den Geratezustand beim Wiederherstellen der Stromversorgung fest."
+  },
+  "value": "recover",
+  "values": [
+    {
+      "id": "off",
+      "label": {
+        "en": "Always Off",
+        "fr": "Toujours eteint",
+        "nl": "Altijd uit",
+        "de": "Immer aus"
+      }
+    },
+    {
+      "id": "on",
+      "label": {
+        "en": "Always On",
+        "fr": "Toujours allume",
+        "nl": "Altijd aan",
+        "de": "Immer an"
+      }
+    },
+    {
+      "id": "recover",
+      "label": {
+        "en": "Restore Previous State",
+        "fr": "Restaurer etat precedent",
+        "nl": "Vorige toestand herstellen",
+        "de": "Vorherigen Zustand wiederherstellen"
+      }
+    }
+  ]
+}
