@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-30T10:30:44.548Z",
+  "ts": "2026-05-30T11:05:18.455Z",
   "currentCount": 37871,
   "src": {
     "johan": {
@@ -19338,6 +19338,16 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1407,
+          "title": "Device Request - Tuya Zigbee Smart Button - _TZ3000_b4awzgct / TS0041",
+          "mfrs": [
+            "_TZ3000_b4awzgct",
+            "_TZ3000_b4awzgct",
+            "_TZ3000_b4awzgct"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1406,
           "title": "Add Quoya M515EGBZTN support and fix curtain_motor position inversion",
           "mfrs": [
@@ -19456,17 +19466,6 @@
             "_TZ3000_hyarhbyx",
             "_TZ3000_hyarhbyx",
             "_TZ3000_hyarhbyx"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1393,
-          "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
-          "mfrs": [
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo"
           ]
         }
       ]
