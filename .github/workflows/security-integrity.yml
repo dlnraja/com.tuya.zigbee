@@ -15,6 +15,10 @@ permissions:
   contents: read
   security-events: write
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   # ─── Job 1: Secret Leak Detection ─────────────────────────────────────────
   secret-scan:
