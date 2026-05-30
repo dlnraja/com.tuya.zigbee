@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.1.24** | Added support for Soil Sensor [_TZE284_0ints6wl]. |
 | **v8.1.23** | Updated with 116 new fingerprints. |
 | **v8.1.22** | Added 116 new fingerprints in v8.1.22. |
 | **vv8_5_30** |  |

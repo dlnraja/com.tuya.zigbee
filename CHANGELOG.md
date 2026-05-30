@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.24 (2026-05-30)
+## v8.1.25 (2026-05-30)
+
+fix(ci): promote correct build — BUILD_ID + no EACCES + exact nav
+
+---
+
+## [8.1.24] - 2026-05-30
+
+### Bug Fixes
+- Fixed issue with device fingerprint recognition for the Soil Sensor [_TZE284_0ints6wl] / [TS0601].
+
+### New Features
+- Added new fingerprint for Soil Sensor [_TZE284_0ints6wl].
+---
+
+ v8.1.24 (2026-05-30)
 
 fix(ci): correct build targeting — promote right build to test
 
