@@ -1,4 +1,10 @@
 {
+  "8.1.35": {
+    "en": "- Fixed: 60 Zigbee drivers manufacturerName[] AggregateError resolved\n- Fixed: App image dimensions 190x190 + 500x500\n- Fixed: app.json compacted under 5MB Athom limit\n- CI: Syntax check PF-01/PF-02 patterns corrected",
+    "fr": "- Correctif : 60 drivers Zigbee manufacturerName[] AggregateError résolu\n- Correctif : Dimensions images app 190x190 + 500x500\n- Correctif : app.json compacté sous la limite 5MB Athom\n- CI : Patterns PF-01/PF-02 syntax check corrigés",
+    "nl": "- Fix: 60 Zigbee drivers manufacturerName[] AggregateError opgelost\n- Fix: App afbeelding afmetingen 190x190 + 500x500\n- Fix: app.json verkleind onder 5MB Athom limiet",
+    "de": "- Fix: 60 Zigbee-Treiber manufacturerName[] AggregateError behoben\n- Fix: App-Bild Dimensionen 190x190 + 500x500\n- Fix: app.json unter 5MB Athom Limit komprimiert"
+  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
