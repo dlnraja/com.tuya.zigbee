@@ -190,6 +190,72 @@ jobs:
           # re-expanding app.json with indentation during validate/publish
           rm -rf .homeycompose
 
+      # ─────────────────────────────────────────────────────────────
+      # 4.6 SLIM fingerprints.json — CRITICAL (prevents archive > 30MB)
+      # ─────────────────────────────────────────────────────────────
+      # WHY: data/fingerprints.json has 126,189 entries (11.3MB) but only
+      # 1,430 match our 411 active drivers. The other 124,759 are dead weight.
+      # FIX: Filter to only keep entries matching active driver manufacturerNames.
+      # RESULT: 11.3MB → 0.16MB, archive 38MB → 25MB (< Athom 30MB limit)
+      - name: "🪶 SLIM fingerprints.json (anti-Athom-30MB-archive-limit)"
+        run: |
+          node - << 'SLIM'
+          const fs = require('fs');
+          const path = require('path');
+
+          const FP_PATH  = 'data/fingerprints.json';
+          const APP_PATH = 'app.json';
+          const DRV_DIR  = 'drivers';
+
+          // Collect all manufacturerNames from active drivers
+          const knownMfrs = new Set();
+          const app = JSON.parse(fs.readFileSync(APP_PATH, 'utf8'));
+          app.drivers.forEach(d => {
+            if (d.zigbee && Array.isArray(d.zigbee.manufacturerName)) {
+              d.zigbee.manufacturerName.forEach(m => m && knownMfrs.add(m.toLowerCase()));
+            }
+          });
+
+          // Also scan driver.compose.json files
+          try {
+            fs.readdirSync(DRV_DIR, {withFileTypes:true})
+              .filter(e=>e.isDirectory())
+              .forEach(e => {
+                const p = path.join(DRV_DIR, e.name, 'driver.compose.json');
+                if (!fs.existsSync(p)) return;
+                try {
+                  const c = JSON.parse(fs.readFileSync(p,'utf8'));
+                  if (c.zigbee && Array.isArray(c.zigbee.manufacturerName)) {
+                    c.zigbee.manufacturerName.forEach(m => m && knownMfrs.add(m.toLowerCase()));
+                  }
+                } catch {}
+              });
+          } catch {}
+
+          const before = fs.statSync(FP_PATH).size;
+          const allFP = JSON.parse(fs.readFileSync(FP_PATH, 'utf8'));
+          const total = Object.keys(allFP).length;
+
+          // Filter — keep only entries matching known drivers
+          const slimFP = {};
+          for (const [key, val] of Object.entries(allFP)) {
+            if (knownMfrs.has(key.toLowerCase())) slimFP[key] = val;
+          }
+          const kept = Object.keys(slimFP).length;
+
+          fs.writeFileSync(FP_PATH, JSON.stringify(slimFP), 'utf8');
+          const after = fs.statSync(FP_PATH).size;
+
+          console.log('fingerprints.json: ' + total.toLocaleString() + ' entries => ' + kept + ' kept');
+          console.log('Size: ' + (before/1024/1024).toFixed(2) + 'MB => ' + (after/1024/1024).toFixed(2) + 'MB');
+          console.log('Saved: ' + ((before-after)/1024/1024).toFixed(2) + 'MB');
+          if (kept === 0) {
+            console.error('FATAL: 0 fingerprints kept -- manufacturerName extraction failed!');
+            process.exit(1);
+          }
+          console.log('OK fingerprints.json slimmed (' + kept + ' active driver entries retained)');
+          SLIM
+
       - name: Official Homey validator
         run: npx homey app validate --level publish
 
