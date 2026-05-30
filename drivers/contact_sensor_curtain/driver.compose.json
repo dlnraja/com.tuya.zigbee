@@ -12,11 +12,11 @@
     "windowcoverings_set",
     "windowcoverings_tilt_set",
     "measure_luminance",
-    "button",
+    "onoff",
     "dim",
     "measure_battery",
     "alarm_contact",
-    "alarm_tamper",
+    "alarm_generic",
     "alarm_battery"
   ],
   "capabilitiesOptions": {

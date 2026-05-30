@@ -6,14 +6,13 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
     "button.toggle",
     "button.identify",
     "alarm_motion",
     "measure_luminance",
     "measure_temperature",
     "measure_humidity",
-    "alarm_tamper",
+    "alarm_generic",
     "alarm_battery"
   ],
   "zigbee": {

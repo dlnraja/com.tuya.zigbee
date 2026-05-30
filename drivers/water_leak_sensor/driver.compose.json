@@ -9,7 +9,7 @@
   "capabilities": [
     "alarm_water",
     "measure_battery",
-    "alarm_tamper",
+    "alarm_generic",
     "alarm_battery"
   ],
   "capabilitiesOptions": {

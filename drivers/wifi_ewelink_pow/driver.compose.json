@@ -10,8 +10,7 @@
   "capabilities": [
     "onoff",
     "measure_power",
-    "measure_voltage",
-    "measure_current"
+    "measure_voltage"
   ],
   "pair": [
     {

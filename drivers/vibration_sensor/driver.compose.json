@@ -7,10 +7,10 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_vibration",
+    "alarm_motion",
     "measure_temperature",
     "measure_battery",
-    "alarm_tamper",
+    "alarm_generic",
     "alarm_battery"
   ],
   "energy": {

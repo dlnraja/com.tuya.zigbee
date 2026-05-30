@@ -9,7 +9,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_contact",
-    "alarm_tamper",
+    "alarm_generic",
     "measure_battery",
     "measure_luminance",
     "alarm_battery"

@@ -81,8 +81,7 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
-    "onoff.2"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff": {
