@@ -243,3 +243,6 @@ data/archive/collisions.json
 data/archive/icons_grid.html
 data/archive/icons_grid_dark.html
 reference pdf/
+# Fingerprint DB full backup (11MB — not needed at runtime)
+data/fingerprints.json.full-backup
+
