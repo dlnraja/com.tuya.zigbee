@@ -1,6 +1,6 @@
-# Homey build output - GENERATED AT BUILD TIME, NEVER COMMIT
+﻿# Homey build output - GENERATED AT BUILD TIME, NEVER COMMIT
 .homeybuild/
-# NOTE: .homeycompose/ is the SOURCE directory — it MUST be committed!
+# NOTE: .homeycompose/ is the SOURCE directory â€” it MUST be committed!
 # It contains app.json, capabilities/, and driver compose files.
 env.json
 node_modules/
@@ -16,7 +16,7 @@ node_modules/
 *_mapping*.json
 tuya_full.ts
 
-# GitHub Pages (désactivé - mais on garde docs/ pour notre documentation)
+# GitHub Pages (dÃ©sactivÃ© - mais on garde docs/ pour notre documentation)
 # docs/ <- ne plus ignorer, on utilise docs/ pour notre documentation
 _site/
 .jekyll-cache/
@@ -40,7 +40,7 @@ homey-auth.*
 pdfhomey/
 lint_report.txt
 
-# Excessively large documentation (DÉSACTIVÉ - on commit tout maintenant)
+# Excessively large documentation (DÃ‰SACTIVÃ‰ - on commit tout maintenant)
 # docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
 # **/ULTIMATE_AUDIT_REPORT*.md
 
@@ -85,7 +85,7 @@ archive/*
 archive_old/
 
 *.backup-auto
-# Auto-cleanup rules - Ne pas créer ces fichiers à la racine (DÉSACTIVÉ)
+# Auto-cleanup rules - Ne pas crÃ©er ces fichiers Ã  la racine (DÃ‰SACTIVÃ‰)
 # *_REPORT*.md
 # *_STATUS*.md
 # *_SUMMARY*.md
@@ -138,12 +138,12 @@ desktop.ini
 !*/README.md
 !*/readme.txt
 
-# Large project status files (DÉSACTIVÉ - on commit tout)
+# Large project status files (DÃ‰SACTIVÃ‰ - on commit tout)
 # docs/project-status/PROJECT_STRUCTURE.md
 # docs/project-status/*_LARGE*.md
 # docs/releases/ULTIMATE_AUDIT_REPORT_*.md
 
-# Bloated docs (DÉSACTIVÉ - on commit tout maintenant)
+# Bloated docs (DÃ‰SACTIVÃ‰ - on commit tout maintenant)
 # docs/workflow/README_WORKFLOW.md
 # docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
 # docs/community/QUICK_IMPROVEMENTS.md
@@ -208,25 +208,24 @@ page-dump.html
 *.pfx
 *.keystore
 .netrc
-.npmrc
 !.npmrc.example
 
 # Temporary workspace directories and scratch scripts
 tmp/
 count_fps.js
 
-# ─── scripts/temp — Development scratch scripts (139 files, intentionally excluded) ───
+# â”€â”€â”€ scripts/temp â€” Development scratch scripts (139 files, intentionally excluded) â”€â”€â”€
 # These are one-off debugging/exploration scripts, NOT production code.
 # The STRICT_SYNTAX_GUARD.js already excludes this dir from CI scan.
 scripts/temp/
 scripts/temp/**
 
-# ─── Security: diagnostic output files ────────────────────────────────────────
+# â”€â”€â”€ Security: diagnostic output files â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 page-dump.html
 *.diag.html
 promote-result*.json
 push-result*.json
 
-# ─── Build diagnostics (never commit) ─────────────────────────────────────────
+# â”€â”€â”€ Build diagnostics (never commit) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 .github/state/build-result*.json
 .github/state/publish-result*.json
