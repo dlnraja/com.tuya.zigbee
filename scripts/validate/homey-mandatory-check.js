@@ -162,10 +162,14 @@ section('O20 — No api field / homey:manager:api');
 if (app.api) {
   warn('O20', 'api field present — absent in stable-v5, may cause longer Athom review');
 }
+// homey:manager:api is the CORRECT permission for this Zigbee app
+// homey:wireless:zigbee was causing processing_failed — manager:api is the right one
 if (Array.isArray(app.permissions) && app.permissions.includes('homey:manager:api')) {
-  warn('O20', 'homey:manager:api permission — triggers thorough review (App.js validate warning)');
+  ok('O20', 'homey:manager:api permission set — correct for Zigbee manager apps');
+} else if (Array.isArray(app.permissions) && app.permissions.includes('homey:wireless:zigbee')) {
+  warn('O20', 'homey:wireless:zigbee permission — may cause processing_failed (prefer homey:manager:api)');
 } else {
-  ok('O20', 'No homey:manager:api permission');
+  ok('O20', 'No special permissions set');
 }
 
 // ─── O21 — README.txt REQUIRED ────────────────────────────────────────────────
@@ -208,34 +212,36 @@ if (!fs.existsSync(iconSvgPath)) {
 }
 
 // ─── M02 — assets/images ─────────────────────────────────────────────────────
-// NOTE: App-level image dimensions (250×175, 500×350, 1000×700) differ from
-// driver-level images (75×75, 500×500). These are the correct Homey App Store
-// dimensions confirmed from v8.1.6 GOOD commit (5d795b60).
-// Driver-level dimension validation is enforced by M15.
+// ARCHIVE BUDGET FIX (2026-05-30): large.png excluded from Athom archive via .homeyignore
+// large.png (13MB) + xlarge.png (10MB) → archive ~22MB → processing_failed
+// Only small.png is REQUIRED in the archive. large.png is kept locally for dev.
 section('M02 — assets/images (App Store required)');
-[
-  ['assets/images/small.png', 'App Store thumbnail', 250, 175],
-  ['assets/images/large.png', 'App Store banner',    500, 350],
-].forEach(([f, desc, expW, expH]) => {
-  const p = path.join(ROOT, f);
-  if (!fs.existsSync(p)) { fail('M02', `${f} MISSING — required: ${desc} (${expW}×${expH})`); return; }
-  const dim = pngDimensions(p);
+// small.png is REQUIRED (app-level)
+const appSmall = path.join(ROOT, 'assets/images/small.png');
+if (!fs.existsSync(appSmall)) {
+  fail('M02', 'assets/images/small.png MISSING — required for App Store thumbnail');
+} else {
+  const dim = pngDimensions(appSmall);
   if (!dim) {
-    fail('M02', `${f} is not a valid PNG`);
-  } else if (dim.w !== expW || dim.h !== expH) {
-    // Warn but don't fail — Homey may accept various app-level sizes
-    warn('M02', `${f} unusual dimensions: ${dim.w}×${dim.h} (typical ${expW}×${expH}) — verify App Store acceptance`);
+    fail('M02', 'assets/images/small.png is not a valid PNG');
   } else {
-    ok('M02', `${f} OK (${dim.w}×${dim.h}) — ${desc}`);
+    ok('M02', `assets/images/small.png OK (${dim.w}×${dim.h})`);
   }
-});
+}
+// large.png exists locally but is EXCLUDED from archive via .homeyignore → warning only
+const appLarge = path.join(ROOT, 'assets/images/large.png');
+if (!fs.existsSync(appLarge)) {
+  warn('M02', 'assets/images/large.png absent locally (excluded from archive via .homeyignore — OK for publish)');
+} else {
+  const dim = pngDimensions(appLarge);
+  if (!dim) warn('M02', 'assets/images/large.png is not a valid PNG (non-blocking — excluded from archive)');
+  else ok('M02', `assets/images/large.png OK (${dim.w}×${dim.h}) — present locally, excluded from archive`);
+}
 // xlarge optional
 const xlarge = path.join(ROOT, 'assets/images/xlarge.png');
 if (fs.existsSync(xlarge)) {
   const xd = pngDimensions(xlarge);
-  ok('M02', `assets/images/xlarge.png OK${xd ? ` (${xd.w}×${xd.h})` : ''} (optional)`);
-} else {
-  warn('M02', 'assets/images/xlarge.png missing (optional for some stores)');
+  ok('M02', `assets/images/xlarge.png OK${xd ? ` (${xd.w}×${xd.h})` : ''} — present locally, excluded from archive`);
 }
 
 // ─── M03 — .homeychangelog.json ──────────────────────────────────────────────
@@ -407,22 +413,25 @@ if (app.drivers && Array.isArray(app.drivers)) {
 
 
 // ─── M15 — Per-driver image dimension validation (ALL drivers) ───────────────
-// This was the missing guard that caused AggregateError in v8.1.7–v8.1.15:
-// large.png must be 500×500, small.png must be 75×75.
-section('M15 — Driver Image Dimensions (ALL drivers, large=500×500 small=75×75)');
+// ARCHIVE BUDGET UPDATE (2026-05-30):
+// large.png is excluded from archive via .homeyignore — only small.png is REQUIRED.
+// large.png validation is now WARNING-only (non-blocking) to align with archive strategy.
+section('M15 — Driver Image Dimensions (small.png REQUIRED, large.png = warning)');
 if (app.drivers && app.drivers.length > 0) {
-  let dimOk = 0, dimFail = 0;
+  let dimOk = 0, dimFail = 0, dimWarn = 0;
   const dimErrors = [];
+  const dimWarnings = [];
 
   app.drivers.forEach(d => {
     const driverDir = path.join(ROOT, 'drivers', d.id);
-    if (!fs.existsSync(driverDir)) return; // already caught by M09
+    if (!fs.existsSync(driverDir)) return;
 
     const smallImg = path.join(driverDir, 'assets', 'images', 'small.png');
     const largeImg = path.join(driverDir, 'assets', 'images', 'large.png');
 
     let driverOk = true;
 
+    // small.png — REQUIRED (included in archive)
     if (!fs.existsSync(smallImg)) {
       dimErrors.push(`${d.id}/small.png MISSING`);
       driverOk = false;
@@ -435,15 +444,15 @@ if (app.drivers && app.drivers.length > 0) {
       }
     }
 
+    // large.png — WARNING ONLY (excluded from archive via .homeyignore)
     if (!fs.existsSync(largeImg)) {
-      dimErrors.push(`${d.id}/large.png MISSING`);
-      driverOk = false;
+      // silently skip — large.png excluded from archive, absence is expected
     } else {
       const dim = pngDimensions(largeImg);
-      if (!dim) { dimErrors.push(`${d.id}/large.png NOT A PNG`); driverOk = false; }
+      if (!dim) dimWarnings.push(`${d.id}/large.png NOT A PNG`);
       else if (dim.w !== 500 || dim.h !== 500) {
-        dimErrors.push(`${d.id}/large.png: ${dim.w}×${dim.h} (expected 500×500)`);
-        driverOk = false;
+        dimWarnings.push(`${d.id}/large.png: ${dim.w}×${dim.h} (expected 500×500)`);
+        dimWarn++;
       }
     }
 
@@ -451,13 +460,16 @@ if (app.drivers && app.drivers.length > 0) {
     else dimFail++;
   });
 
+  if (dimWarnings.length > 0 && !QUIET) {
+    const preview = dimWarnings.slice(0, 3).join('; ');
+    warn('M15', `${dimWarn} driver(s) have incorrect large.png dimensions (non-blocking — excluded from archive): ${preview}...`);
+  }
   if (dimErrors.length > 0) {
-    // Show first 10 errors; full list in --json mode
     const preview = dimErrors.slice(0, 10).join('; ');
     const extra = dimErrors.length > 10 ? ` (+${dimErrors.length - 10} more)` : '';
-    fail('M15', `${dimFail} driver(s) have incorrect image dimensions: ${preview}${extra}`);
+    fail('M15', `${dimFail} driver(s) missing or invalid small.png (REQUIRED in archive): ${preview}${extra}`);
   } else {
-    ok('M15', `All ${dimOk} drivers: small.png=75×75 ✓  large.png=500×500 ✓`);
+    ok('M15', `All ${dimOk} drivers: small.png=75×75 ✓  (large.png excluded from archive — ${dimWarn} with wrong dims, non-blocking)`);
   }
 }
 

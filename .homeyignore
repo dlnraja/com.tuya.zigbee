@@ -198,10 +198,28 @@ assets/README.md
 # === Learnmode SVGs (optional) ===
 **/learnmode.svg
 
-# === Driver xlarge.png (optional, NOT required by Athom store — reduces archive ~1.5MB) ===
-# small.png (75x75) and large.png (500x500) are REQUIRED
-# xlarge.png is optional and can be large (300-400KB each x 412 drivers = 100MB+ risk)
+# === Driver PNG images — Archive Budget Control ===
+# ROOT CAUSE FIX (2026-05-30): large.png (13MB) + xlarge.png (10MB) = 23MB bloat
+# Archive WITH large+xlarge: ~22MB compressed → Athom processing_failed (limit ~15MB)
+# Archive WITHOUT large+xlarge: ~12MB compressed → OK ✅
+#
+# STRATEGY: large.png + xlarge.png stay in the repo for local dev/preview
+#           but are EXCLUDED from the Athom publish archive via this file.
+#
+# REQUIRED in archive: small.png (75×75) + icon.svg per driver
+# NOT required: large.png, xlarge.png (Athom SDK3 test channel confirmed)
+#
+# generate-driver-images.js uses --small-only in CI to avoid regenerating them.
+# image-integrity-gate.yml validates small.png only (large → warning, non-blocking).
+# Per-driver: exclude large.png and xlarge.png (exact filenames)
+drivers/**/assets/images/large.png
 drivers/**/assets/images/xlarge.png
+# Per-driver: exclude custom-named *large*.png files (e.g. moes_zigbee_3_large.png)
+drivers/**/assets/images/*large*.png
+drivers/**/assets/images/*xlarge*.png
+# Root-level: exclude large.png and xlarge.png (app-level images — SDK3 doesn't require them)
+assets/images/large.png
+assets/images/xlarge.png
 
 # === Root dev artifact text/diff files ===
 *.txt

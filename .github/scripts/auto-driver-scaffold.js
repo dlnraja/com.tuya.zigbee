@@ -77,7 +77,7 @@ function scaffoldDriver(name,info,johanCompose){
   if(fs.existsSync(driverDir)){console.log('  SKIP '+name+' (exists)');return false;}
   fs.mkdirSync(driverDir,{recursive:true});
   fs.mkdirSync(path.join(driverDir,'assets','images'),{recursive:true});
-  const compose=johanCompose||{name:{en:name.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())},class:info.class||'other',capabilities:['onoff'],zigbee:{manufacturerName:info.mfrs||[],productId:info.pids||[],deviceJoinedTriggerFlowId:'_triggerFlowDeviceAdded',learnmode:{instruction:{en:'Put device in pairing mode'}}},images:{small:'{{driverAssetsPath}}/images/small.png',large:'{{driverAssetsPath}}/images/large.png',xlarge:'{{driverAssetsPath}}/images/xlarge.png'}};
+  const compose=johanCompose||{name:{en:name.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())},class:info.class||'other',capabilities:['onoff'],zigbee:{manufacturerName:info.mfrs||[],productId:info.pids||[],deviceJoinedTriggerFlowId:'_triggerFlowDeviceAdded',learnmode:{instruction:{en:'Put device in pairing mode'}}},images:{small:'{{driverAssetsPath}}/images/small.png',large:'{{driverAssetsPath}}/images/large.png'}};
   fs.writeFileSync(path.join(driverDir,'driver.compose.json'),JSON.stringify(compose,null,2)+'\n');
   const base=CLASS_MAP[info.class]||'BaseUnifiedDevice';
   const imp=CLASS_IMPORTS[base]||CLASS_IMPORTS.BaseUnifiedDevice;

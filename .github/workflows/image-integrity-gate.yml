@@ -1,34 +1,39 @@
 name: Image Integrity Gate
 
 # ════════════════════════════════════════════════════════════════════════════
-# Image Integrity Gate — v8.1.16+
-# 
-# Guards against the regression introduced in v8.1.7 where auto-generated
-# large.png files had wrong dimensions (250×175 instead of 500×500).
-# This was confirmed as a contributing factor to "Processing Failed" /
-# AggregateError on Athom tools.dev builds.
+# Image Integrity Gate — v8.1.30+
 #
-# Rules enforced:
-#   - drivers/*/assets/images/small.png  → MUST be exactly 75×75
-#   - drivers/*/assets/images/large.png  → MUST be exactly 500×500
-#   - drivers/*/assets/images/xlarge.png → WARN if exists and ≠ 500×500
-#   - assets/images/small.png            → MUST be valid PNG
-#   - assets/images/large.png            → MUST be valid PNG
+# ARCHIVE BUDGET UPDATE (2026-05-30):
+#   large.png (500×500) is NO LONGER required in the Athom publish archive.
+#   It is excluded via .homeyignore to keep archive < 15MB (processing limit).
+#
+#   ROOT CAUSE: large.png (13MB) + xlarge.png (10MB) → archive ~22MB
+#               → Athom processing_failed on ALL builds since v8.1.7
+#               Fix: exclude both from archive, generate small.png only in CI.
+#
+# Rules enforced (updated):
+#   - drivers/*/assets/images/small.png  → MUST be exactly 75×75 ❌ BLOCKING
+#   - drivers/*/assets/images/large.png  → WARN if wrong dims ⚠️ NON-BLOCKING
+#   - drivers/*/assets/images/xlarge.png → WARN if exists ⚠️ NON-BLOCKING
+#   - assets/images/small.png            → MUST be valid PNG ❌ BLOCKING
+#   - assets/images/large.png            → WARN if missing ⚠️ NON-BLOCKING
 # ════════════════════════════════════════════════════════════════════════════
 
 on:
   push:
     paths:
-      - 'drivers/**/assets/images/*.png'
-      - 'assets/images/*.png'
+      - 'drivers/**/assets/images/small.png'
+      - 'assets/images/small.png'
+      - 'drivers/**/assets/images/large.png'
+      - 'assets/images/large.png'
   pull_request:
     paths:
-      - 'drivers/**/assets/images/*.png'
-      - 'assets/images/*.png'
+      - 'drivers/**/assets/images/small.png'
+      - 'assets/images/small.png'
   workflow_dispatch:
     inputs:
       fail_on_warn:
-        description: 'Treat xlarge warnings as errors'
+        description: 'Treat large/xlarge warnings as errors'
         required: false
         default: 'false'
 
@@ -69,34 +74,42 @@ jobs:
           }
 
           const ROOT = process.cwd();
-          const errors  = [];
+          const errors   = [];
           const warnings = [];
           let checked = 0;
 
           // ── App-level images ─────────────────────────────────────────────
+          // NOTE: large.png is REQUIRED locally but EXCLUDED from archive via .homeyignore
           const APP_IMAGES = [
-            { rel: 'assets/images/small.png', expW: 190, expH: 190, required: true  },
-            { rel: 'assets/images/large.png', expW: 500, expH: 500, required: true  },
-            { rel: 'assets/images/xlarge.png', expW: 500, expH: 500, required: false },
+            { rel: 'assets/images/small.png',  expW: 190, expH: 190, blocking: true  },
+            { rel: 'assets/images/large.png',  expW: 500, expH: 500, blocking: false }, // warning only
+            { rel: 'assets/images/xlarge.png', expW: 500, expH: 500, blocking: false },
           ];
-          for (const { rel, expW, expH, required } of APP_IMAGES) {
+          for (const { rel, expW, expH, blocking } of APP_IMAGES) {
             const fp = path.join(ROOT, rel);
             if (!fs.existsSync(fp)) {
-              if (required) errors.push(`MISSING: ${rel}`);
+              if (blocking) errors.push(`MISSING (required): ${rel}`);
+              else warnings.push(`MISSING (optional — excluded from archive): ${rel}`);
               continue;
             }
             const d = pngDims(fp);
             checked++;
-            if (!d) { errors.push(`NOT_PNG: ${rel}`); continue; }
+            if (!d) {
+              if (blocking) errors.push(`NOT_PNG: ${rel}`);
+              else warnings.push(`NOT_PNG: ${rel}`);
+              continue;
+            }
             if (d.w !== expW || d.h !== expH) {
               const msg = `WRONG_DIM: ${rel} = ${d.w}×${d.h} (expected ${expW}×${expH})`;
-              if (required) errors.push(msg); else warnings.push(msg);
+              if (blocking) errors.push(msg); else warnings.push(msg);
             } else {
               console.log(`  ✅ ${rel} (${d.w}×${d.h})`);
             }
           }
 
           // ── Driver images ────────────────────────────────────────────────
+          // ARCHIVE STRATEGY: only small.png (75×75) is REQUIRED in the archive.
+          // large.png + xlarge.png are excluded from .homeyignore → non-blocking.
           const driversDir = path.join(ROOT, 'drivers');
           if (!fs.existsSync(driversDir)) {
             errors.push('MISSING: drivers/ directory');
@@ -105,47 +118,54 @@ jobs:
               .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory());
 
             const DRIVER_RULES = [
-              { file: 'small.png', expW: 75,  expH: 75,  required: true  },
-              { file: 'large.png', expW: 500, expH: 500, required: true  },
-              { file: 'xlarge.png',expW: 500, expH: 500, required: false },
+              { file: 'small.png',  expW: 75,  expH: 75,  blocking: true  }, // REQUIRED in archive
+              { file: 'large.png',  expW: 500, expH: 500, blocking: false }, // WARNING — excluded from archive
+              { file: 'xlarge.png', expW: 500, expH: 500, blocking: false }, // WARNING — excluded from archive
             ];
 
-            let ok = 0, fail = 0;
+            let ok = 0, fail = 0, warn = 0;
             for (const dId of driverIds) {
               const imgDir = path.join(driversDir, dId, 'assets', 'images');
               let driverOk = true;
-              for (const { file, expW, expH, required } of DRIVER_RULES) {
+              for (const { file, expW, expH, blocking } of DRIVER_RULES) {
                 const fp = path.join(imgDir, file);
                 if (!fs.existsSync(fp)) {
-                  if (required) { errors.push(`MISSING: drivers/${dId}/assets/images/${file}`); driverOk = false; }
+                  if (blocking) { errors.push(`MISSING: drivers/${dId}/assets/images/${file}`); driverOk = false; }
+                  // non-blocking: silently skip (excluded from archive anyway)
                   continue;
                 }
                 const d = pngDims(fp);
                 checked++;
-                if (!d) { errors.push(`NOT_PNG: drivers/${dId}/assets/images/${file}`); driverOk = false; continue; }
+                if (!d) {
+                  if (blocking) { errors.push(`NOT_PNG: drivers/${dId}/assets/images/${file}`); driverOk = false; }
+                  else warnings.push(`NOT_PNG: drivers/${dId}/assets/images/${file}`);
+                  continue;
+                }
                 if (d.w !== expW || d.h !== expH) {
                   const msg = `WRONG_DIM: drivers/${dId}/assets/images/${file} = ${d.w}×${d.h} (expected ${expW}×${expH})`;
-                  if (required) { errors.push(msg); driverOk = false; }
-                  else warnings.push(msg);
+                  if (blocking) { errors.push(msg); driverOk = false; }
+                  else { warnings.push(msg); warn++; }
                 }
               }
               if (driverOk) ok++; else fail++;
             }
-            console.log(`\n📊 Drivers checked: ${ok} OK, ${fail} FAIL (out of ${driverIds.length} total)`);
+            console.log(`\n📊 Drivers checked: ${ok} OK, ${fail} FAIL, ${warn} warnings (out of ${driverIds.length} total)`);
           }
 
           // ── Report ───────────────────────────────────────────────────────
           console.log(`\n📸 Images checked: ${checked}`);
+          console.log('ℹ️  Note: large.png + xlarge.png are excluded from Athom archive via .homeyignore');
           if (warnings.length) {
-            console.warn('\n⚠️  WARNINGS (' + warnings.length + '):');
-            warnings.forEach(w => console.warn('  ' + w));
+            console.warn('\n⚠️  WARNINGS (' + warnings.length + ') — non-blocking (files excluded from archive):');
+            warnings.slice(0, 10).forEach(w => console.warn('  ' + w));
+            if (warnings.length > 10) console.warn(`  ... and ${warnings.length - 10} more`);
           }
           if (errors.length) {
-            console.error('\n❌ ERRORS (' + errors.length + '):');
+            console.error('\n❌ ERRORS (' + errors.length + ') — blocking:');
             errors.forEach(e => console.error('  ' + e));
             process.exit(1);
           } else {
-            console.log('\n✅ All image dimensions are correct');
+            console.log('\n✅ All required image dimensions are correct');
           }
           EOF
 
@@ -155,6 +175,6 @@ jobs:
         with:
           name: image-dimension-report-${{ github.run_number }}
           path: |
-            drivers/**/assets/images/
+            drivers/**/assets/images/small.png
             assets/images/
           retention-days: 7

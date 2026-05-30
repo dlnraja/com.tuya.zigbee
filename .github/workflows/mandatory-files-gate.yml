@@ -9,7 +9,7 @@
 #   O20 — No api / homey:manager:api
 #   O21 — README.txt present
 #   M01 — assets/icon.svg
-#   M02 — assets/images/small+large.png
+#   M02 — assets/images/small.png (REQUIRED) — large.png optional (excluded from archive)
 #   M03 — .homeychangelog.json
 #   M04 — locales/en.json
 #   M05 — app.json required fields
@@ -93,17 +93,25 @@ jobs:
           fi
           echo "✅ M01: assets/icon.svg OK ($(wc -c < assets/icon.svg) bytes)"
 
-      - name: "🔍 M02 — assets/images (App Store required)"
+      - name: "🔍 M02 — assets/images/small.png (REQUIRED in archive)"
+        # ARCHIVE BUDGET (2026-05-30): large.png excluded from archive via .homeyignore
+        # large.png (13MB) + xlarge.png (10MB) → archive too large → processing_failed
+        # Only small.png (75×75) + icon.svg are required in the Athom publish archive.
         run: |
           FAILED=0
-          for img in "assets/images/small.png" "assets/images/large.png"; do
-            if [ ! -f "$img" ]; then
-              echo "::error file=$img::❌ M02: $img MISSING — required for App Store"
-              FAILED=1
-            else
-              echo "✅ M02: $img OK"
-            fi
-          done
+          # small.png is REQUIRED (included in archive)
+          if [ ! -f "assets/images/small.png" ]; then
+            echo "::error file=assets/images/small.png::❌ M02: assets/images/small.png MISSING — required in Athom archive"
+            FAILED=1
+          else
+            echo "✅ M02: assets/images/small.png OK"
+          fi
+          # large.png exists locally but is EXCLUDED from archive → warning only
+          if [ ! -f "assets/images/large.png" ]; then
+            echo "::notice::ℹ️ M02: assets/images/large.png absent locally (excluded from archive via .homeyignore — OK)"
+          else
+            echo "✅ M02: assets/images/large.png OK (present locally, excluded from archive)"
+          fi
           [ $FAILED -eq 0 ] || exit 1
 
       - name: "🔍 O17/O18/O19/O20 + M03-M08 — app.json Athom Server Requirements"
@@ -186,7 +194,7 @@ jobs:
           echo "| README.txt | O21 | $([ -f README.txt ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
           echo "| assets/icon.svg | M01 | $([ -f assets/icon.svg ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
           echo "| assets/images/small.png | M02 | $([ -f assets/images/small.png ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
-          echo "| assets/images/large.png | M02 | $([ -f assets/images/large.png ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
+          echo "| assets/images/large.png | M02⚠️ | $([ -f assets/images/large.png ] && echo '✅ (local only)' || echo '⚠️ absent (excl. from archive)') |" >> $GITHUB_STEP_SUMMARY
           echo "| .homeychangelog.json | M03 | $([ -f .homeychangelog.json ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
           echo "| locales/en.json | M04 | $([ -f locales/en.json ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
           echo "| data/fingerprints.json | M06 | $([ -f data/fingerprints.json ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
