@@ -256,6 +256,36 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
+      - name: Capture Build ID from publish log
+        if: steps.pub.outcome == 'success'
+        id: build_id
+        shell: bash
+        run: |
+          # Query Athom API to get the latest build ID for this app
+          BID=''
+          BID=$(node -e "
+            const https = require('https');
+            const token = process.env.HOMEY_PAT;
+            const app = require('./app.json').id;
+            const url = 'https://apps-api.athom.com/api/v1/app/' + app + '/build';
+            https.get(url,{headers:{'Authorization':'Bearer '+token,'Accept':'application/json'}},res=>{
+              let d='';
+              res.on('data',c=>d+=c);
+              res.on('end',()=>{
+                try{
+                  const arr=JSON.parse(d);
+                  const a=Array.isArray(arr)?arr:(arr.builds||[]);
+                  a.sort((x,y)=>parseInt(y.id||0,10)-parseInt(x.id||0,10));
+                  process.stdout.write(String(a[0].id||''));
+                }catch(e){}
+              });
+            }).on('error',()=>{});
+          " 2>/dev/null || echo '')
+          echo "build_id=$BID" >> $GITHUB_OUTPUT
+          echo "Build ID captured: $BID"
+          echo "Manage: https://tools.developer.homey.app/apps/app/$(node -p \"require('./app.json').id\")/build/$BID"
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
 
       - name: Create GitHub Release
         if: steps.pat.outputs.ok == 'true'
@@ -280,7 +310,10 @@ jobs:
       - name: Install Puppeteer
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
-        run: npm install puppeteer athom-api --no-save
+        run: |
+          # Install to /tmp/pptr to avoid EACCES from Docker root-owned node_modules
+          npm install puppeteer athom-api --prefix /tmp/pptr --no-save 2>&1 || \
+            npm install puppeteer athom-api --no-save --ignore-scripts 2>&1 || true
 
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         if: steps.pat.outputs.ok == 'true'
@@ -291,6 +324,8 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: 'false'
+          BUILD_ID: ${{ steps.build_id.outputs.build_id }}
+          NODE_PATH: /tmp/pptr/node_modules
         run: node .github/scripts/auto-promote-puppeteer.js
 
       - name: "Tier 2: Promote via OAuth (headless)"
