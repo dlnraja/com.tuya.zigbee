@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.33] - 2026-05-30
+## [8.1.35] - 2026-05-30
+
+vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization.
+---
+
+ [8.1.33] - 2026-05-30
 
 v8.1.32:
 ---
