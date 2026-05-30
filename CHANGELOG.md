@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.13] - 2026-05-30
+## [8.1.15] - 2026-05-30
+
+Fix: restored driver image dimensions (large.png 250x175), reduced tags to 8, restored README format — resolves AggregateError since build-2159
+---
+
+ [8.1.13] - 2026-05-30
 
 v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update.
 ---
