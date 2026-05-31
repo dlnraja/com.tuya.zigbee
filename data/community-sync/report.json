@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-31T07:57:38.394Z",
+  "ts": "2026-05-31T09:08:53.924Z",
   "currentCount": 10475,
   "src": {
     "johan": {
@@ -19265,7 +19265,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 58,
+      "issueCount": 57,
       "prCount": 2,
       "deviceRequests": [
         {
@@ -19343,42 +19343,127 @@
         },
         {
           "repo": "dlnraja/com.tuya.zigbee",
+          "num": 336,
+          "title": "[Auto] 298 new fingerprints from community (2026-05)",
+          "mfrs": [
+            "_TZE200_5zbp6j0u",
+            "_TZE200_bjzrowv2",
+            "_TZE200_nkoabg8w",
+            "_TZE200_xuzcvlku",
+            "_TZE200_4vobcgd3",
+            "_TZE200_nogaemzt",
+            "_TZE200_r0jdjrvi",
+            "_TZE200_pk0sfzvr",
+            "_TZE200_fdtjuw7u",
+            "_TZE200_zpzndjez",
+            "_TZE200_rddyvrci",
+            "_TZE200_nueqqe6k",
+            "_TZE200_xaabybja",
+            "_TZE200_rmymn92d",
+            "_TZE200_3i3exuay",
+            "_TZE200_hsgrhjpf",
+            "_TZE200_68nvbio9",
+            "_TZE200_pw7mji0l",
+            "_TZE204_1fuxihti",
+            "_TZE200_axgvo9jh",
+            "_TZE200_yia0p3tr",
+            "_TZE200_nw1r9hp6",
+            "_TZE200_cf1sl3tj",
+            "_TZE204_xu4a5rhj",
+            "_TZE200_4mh6tyyo",
+            "_TZ3000_ebar6ljy",
+            "_TZ3000_2mbfxlzr",
+            "_TZ3000_6jeesvrt",
+            "_TZ3000_26fmupbb",
+            "_TZ3000_bmg14ax2",
+            "_TZ3000_oxslv1c9",
+            "_TZ3000_bzxlofth",
+            "_TZ3000_n2egfsli",
+            "_TZ3000_rgchmad8",
+            "_TZ3000_au1rjicn",
+            "_TZ3000_4ugnzsli",
+            "_TZ3000_9eeavbk5",
+            "_TZ3000_yfekcy3n",
+            "_TZ3000_cea5xugq",
+            "_TZ3000_1bwpjvlz",
+            "_TZ3000_v7chgqso",
+            "_TZ3000_qrldbmfn",
+            "_TZ3000_7tbsruql",
+            "_TZ3000_8yhypbo7",
+            "_TZ3000_ywagc4rj",
+            "_TZ3210_ncw88jfq",
+            "_TZ3000_mmtwjmaq",
+            "_TZ3000_msl6wxk9",
+            "_TZ3000_mcxw5ehu",
+            "_TZ3000_otvn3lne",
+            "_TZ3000_6ygjfyll",
+            "_TZ3000_nss8amz9",
+            "_TZ3000_bsvqrxru",
+            "_TZ3000_dpo1ysak",
+            "_TZE200_holel4dk",
+            "_TZE200_jva8ink8",
+            "_TZE200_lyetpprm",
+            "_TZ3000_cayepv1a",
+            "_TZ3000_lepzuhto",
+            "_TZ3000_qystbcjg",
+            "_TZ3000_3ooaz3ng",
+            "_TZ3000_8nkb7mof",
+            "_TZ3000_ew3ldmgx",
+            "_TZ3000_dpo1ysak",
+            "_TZ3000_amdymr7l",
+            "_TZ3000_amdymr71"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 335,
+          "title": "[Auto] 51 new fingerprints from community (2026-05)",
+          "mfrs": [
+            "_TZE204_hewlydpz",
+            "_TZE284_gnpflcoq",
+            "_TZB210_qzsxaqqe",
+            "_TZ3218_ofguu6mz",
+            "_TZE200_itp8dt7f",
+            "_TZ3000_yujem9ee",
+            "_TZ3000_filhl5b7",
+            "_TZ3000_cllghx1k",
+            "_TZ3000_1kmurvlx",
+            "_TZ3000_zojh9vz7",
+            "_TZ3000_dershnvx",
+            "_TZ3210_9hbau615",
+            "_TZE200_swlgvdlh",
+            "_TZ3210_qjvi92wz",
+            "_TZ3210_w3hl6rao",
+            "_TZ3210_z4hgsevd",
+            "_TZ3000_cumqn2av",
+            "_TZ300A_fhbcipep",
+            "_TZ3000_1fqpj6qz",
+            "_TZ3000_sfibawtr",
+            "_TZ3290_acv1iusl",
+            "_TZE200_y8wkaq6w",
+            "_TZ3210_cyuyd5az",
+            "_TZ3000_5rpu3r0d",
+            "_TZE204_p6vz3wzt",
+            "_TZ3000_djgzdba9",
+            "_TZE284_nvodulvi",
+            "_TZ3000_r2fgo9ks",
+            "_TZ3000_hurauima",
+            "_TZ3002_tdf2m4ch",
+            "_TZE21C_i2ij4rb3",
+            "_TZE204_izy1g1mb",
+            "_TZE204_f2rflfa6",
+            "_TZ3218_n0jsuogs",
+            "_TZ3218_sgbsg6mr"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
           "num": 333,
           "title": "Smart Button (round). Added but not working",
           "mfrs": [
             "_TZ3000_b4awzgct",
             "_TZ3000_b4awzgct",
             "_TZ3000_b4awzgct"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 328,
-          "title": "Pressure Sensing Strap/Bed Occupancy Sensor",
-          "mfrs": [
-            "_TZE200_seq9cm6u",
-            "_TZE200_seq9cm6u",
-            "_TZE200_seq9cm6u",
-            "_TZE200_seq9cm6u"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 324,
-          "title": "2.4 ghz MMwave _TZE200_hl0ss9oa",
-          "mfrs": [
-            "_TZE200_hl0ss9oa",
-            "_TZE200_hl0ss9oa"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 322,
-          "title": "DEVICE REQUEST LORATAP TS0043",
-          "mfrs": [
-            "_TZ3000_famkxci2",
-            "_TZ3000_famkxci2",
-            "_TZ3000_famkxci2"
           ]
         },
         {
@@ -19500,6 +19585,17 @@
             "_TZE284_0ints6wl",
             "_TZE284_0ints6wl",
             "_TZE284_0ints6wl"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1395,
+          "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
+          "mfrs": [
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx"
           ]
         }
       ]
