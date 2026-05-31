@@ -260,105 +260,70 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 5.5 DISABLE COMPOSE + COMPACT — critical for Athom parsing
+      # 5.5 DISABLE COMPOSE + COMPACT + CREATE ARCHIVE
       # ─────────────────────────────────────────────────────────────
-      - name: "🗜️ DISABLE COMPOSE + COMPACT .homeybuild/app.json"
+      # The compose plugin STRIPS api/capabilities/discovery from app.json.
+      # Athom server needs these fields to parse the manifest.
+      # We also create the archive ourselves using tar-fs (same as homey CLI)
+      # to control the exact format and ensure NO ./ prefix.
+      - name: "🗜️ OPTIMIZE + CREATE ARCHIVE"
         run: |
+          # Disable compose plugin
           echo '[]' > .homeyplugins.json
-          node - << 'POSTCOMPACT'
+
+          # Compact .homeybuild/app.json
+          node - << 'OPTIMIZE'
           const fs = require('fs');
           const p = '.homeybuild/app.json';
-          if (!fs.existsSync(p)) { console.error('FATAL: .homeybuild/app.json not found'); process.exit(1); }
-          const before = fs.statSync(p).size;
+          if (!fs.existsSync(p)) { console.error('FATAL'); process.exit(1); }
           const app = JSON.parse(fs.readFileSync(p, 'utf8'));
           fs.writeFileSync(p, JSON.stringify(app), 'utf8');
-          const after = fs.statSync(p).size;
-          console.log('.homeybuild/app.json:', (before/1024/1024).toFixed(2) + 'MB -> ' + (after/1024/1024).toFixed(2) + 'MB');
           console.log('api:', app.api ? 'YES' : 'MISSING');
           console.log('capabilities:', app.capabilities ? 'YES(' + Object.keys(app.capabilities).length + ')' : 'MISSING');
           console.log('discovery:', app.discovery ? 'YES' : 'MISSING');
-          if (after > 5242880) { console.error('FATAL: > 5MB after compaction!'); process.exit(1); }
-          POSTCOMPACT
+          if (fs.statSync(p).size > 5242880) { console.error('FATAL: > 5MB'); process.exit(1); }
+          OPTIMIZE
+
+          # Create archive using tar-fs (same as homey CLI, no ./ prefix)
+          node - << 'CREATE_ARCHIVE'
+          const tar = require('tar-fs');
+          const zlib = require('zlib');
+          const { pipeline } = require('stream');
+          const path = require('path');
+          const fs = require('fs');
+
+          const appPath = path.resolve('.homeybuild');
+          const archivePath = '/tmp/homey-app.tar.gz';
+
+          pipeline(
+            tar.pack(appPath, {
+              dereference: true,
+              ignore(name) {
+                if (name.startsWith('.')) return true;
+                if (name.includes('/.git/')) return true;
+                return false;
+              },
+            }),
+            zlib.createGzip(),
+            fs.createWriteStream(archivePath),
+            (err) => {
+              if (err) { console.error('Archive error:', err); process.exit(1); }
+              const size = fs.statSync(archivePath).size;
+              console.log('Archive created:', (size/1024/1024).toFixed(2) + 'MB');
+            }
+          );
+          CREATE_ARCHIVE
 
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — manual archive (NO ./ prefix) + Athom API upload
+      # 6. PUBLISH — homey CLI (archive already created by step 5.5)
       # ─────────────────────────────────────────────────────────────
-      # CRITICAL: homey CLI creates archives with ./ prefix which Athom
-      # server cannot parse (sdk=undefined). The good builds (#2120 etc)
-      # had NO ./ prefix. We must create archive ourselves and upload
-      # via Athom delegation API to avoid the CLI's archive format.
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: |
-          node - << 'PUBLISH'
-          const { execSync } = require('child_process');
-          const fs = require('fs');
-
-          const PAT = process.env.HOMEY_PAT;
-          const APP_ID = 'com.dlnraja.tuya.zigbee';
-          if (!PAT) { console.error('HOMEY_PAT not set'); process.exit(1); }
-
-          // Step 1: Create archive WITHOUT ./ prefix
-          console.log('=== Step 1: Create archive ===');
-          execSync('cd .homeybuild && ls -1 | tar czf /tmp/homey-app.tar.gz -T -');
-          const size = fs.statSync('/tmp/homey-app.tar.gz').size;
-          const prefixCount = execSync('tar tzf /tmp/homey-app.tar.gz | grep "^\\./" | wc -l', {encoding:'utf8'}).trim();
-          console.log('Archive:', (size/1024/1024).toFixed(2) + 'MB');
-          console.log('./ prefix entries:', prefixCount);
-          if (prefixCount !== '0') { console.error('FATAL: ./ prefix found!'); process.exit(1); }
-
-          // Step 2: Get delegation token
-          console.log('=== Step 2: Get delegation token ===');
-          let token;
-          try {
-            const tokenRes = execSync(
-              `curl -s -X POST https://api.athom.com/delegation/token -H "Authorization: Bearer $HOMEY_PAT" -H "Content-Type: application/json" -d '{"audience":"apps"}'`,
-              {encoding:'utf8', timeout: 15000, env: {...process.env, HOMEY_PAT: PAT}}
-            );
-            const parsed = JSON.parse(tokenRes);
-            token = parsed.token;
-            if (!token) throw new Error('No token: ' + tokenRes.substring(0, 100));
-            console.log('Got delegation token');
-          } catch(e) {
-            console.error('Delegation failed:', e.message);
-            console.log('Falling back to homey CLI...');
-            execSync('HOMEY_PAT="' + PAT + '" HOMEY_HEADLESS=1 npx homey app publish', {stdio:'inherit', timeout: 300000});
-            process.exit(0);
-          }
-
-          // Step 3: Upload via Athom API
-          console.log('=== Step 3: Upload to Athom ===');
-          const uploadUrl = 'https://apps-api.athom.com/api/v1/app/' + APP_ID + '/build';
-          const tokenFile = '/tmp/athom-token.txt';
-          fs.writeFileSync(tokenFile, token);
-
-          const curlCmd = [
-            'curl', '-s', '-w', '\\n%{http_code}',
-            '-X', 'POST', uploadUrl,
-            '-H', '"Authorization: Bearer $(cat ' + tokenFile + ')"',
-            '-H', '"Content-Type: application/gzip"',
-            '--data-binary', '@/tmp/homey-app.tar.gz'
-          ].join(' ');
-
-          console.log('Uploading', (size/1024/1024).toFixed(2) + 'MB to', uploadUrl);
-          const uploadRes = execSync(curlCmd, {encoding:'utf8', timeout: 300000});
-          const lines = uploadRes.trim().split('\n');
-          const httpCode = lines.pop();
-          const responseBody = lines.join('\n');
-
-          console.log('HTTP', httpCode);
-          if (responseBody) console.log('Response:', responseBody.substring(0, 500));
-
-          if (httpCode === '200' || httpCode === '201') {
-            console.log('Published successfully!');
-          } else {
-            console.error('API upload failed (' + httpCode + '), falling back to CLI...');
-            execSync('HOMEY_PAT="' + PAT + '" HOMEY_HEADLESS=1 npx homey app publish', {stdio:'inherit', timeout: 300000});
-          }
-          PUBLISH
+          HOMEY_HEADLESS: "1"
+        run: HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
 
       # ─────────────────────────────────────────────────────────────
       # 7. POST-PUBLISH (all continue-on-error)
