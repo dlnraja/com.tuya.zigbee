@@ -63,5 +63,14 @@
   },
   "8.1.53": {
     "en": "v8.1.52:"
-  }
+  },
+  "entries": [
+    {
+      "version": "8.1.53",
+      "intro": {
+        "en": "Processing fixed: archive format corrected for Athom server compatibility.",
+        "nl": "Verwerking gecorrigeerd: archiefformaat gecorrigeerd voor Athom server-compatibiliteit."
+      }
+    }
+  ]
 }
