@@ -1,5 +1,5 @@
 # AI HANDOFF — com.tuya.zigbee Build Fix
-> Updated: 2026-05-31 02:55 | Status: FIX DEPLOYED — awaiting CI result | Run #1469
+> Updated: 2026-05-31 03:05 | Status: FIX #2 DEPLOYED — `--no-verify` removed | Run #1470 pending
 
 ---
 
@@ -27,7 +27,7 @@ Fix: `SLIM fingerprints.json` step (line 200) → 0.16MB → archive ~24MB.
 → re-executes compose plugin → recreates `app.json` with 6MB+ (before our COMPACT step)
 → Athom server can't parse oversized manifest → `processing_failed`, `sdk=undefined`, `platforms=[]`
 
-**Fix applied** (commit `120f5f65`, run #1469):
+**Fix #1 applied** (commit `120f5f65`, run #1469):
 Replaced external action with inline publish from `.homeybuild/` (already built by validator):
 ```yaml
 - name: Publish to Homey App Store
@@ -38,6 +38,16 @@ Replaced external action with inline publish from `.homeybuild/` (already built 
   run: |
     cd .homeybuild
     HOMEY_PAT="${HOMEY_PAT}" npx homey app publish --no-verify
+```
+
+### ✅ FIX #2 DEPLOYED — Cause 4: `--no-verify` flag does not exist
+Run #1469 failed with `Unknown argument: verify`. The `homey app publish` CLI does NOT accept `--no-verify`.
+Valid args: `--version`, `-p/--path`, `--help` only.
+
+**Fix applied** (commit TBD, run #1470):
+Removed `--no-verify` from the publish command:
+```yaml
+HOMEY_PAT="${HOMEY_PAT}" npx homey app publish
 ```
 
 ---
@@ -56,7 +66,7 @@ Replaced external action with inline publish from `.homeybuild/` (already built 
 ## 🔧 IF FIX #1469 STILL FAILS
 
 ### Hypothesis B: `homey app publish --no-verify` not accepted
-The `--no-verify` flag may not exist in newer CLI versions.
+**CONFIRMED**: `--no-verify` does NOT exist. Removed in Fix #2.
 Try: `HOMEY_PAT="${HOMEY_PAT}" npx homey app publish`
 
 ### Hypothesis C: `.homeybuild/` is deleted by validator step
