@@ -260,18 +260,10 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 5.5 COMPACT .homeybuild/app.json + DISABLE compose plugin
+      # 5.5 COMPACT .homeybuild/app.json
       # ─────────────────────────────────────────────────────────────
-      # The compose plugin (zigbee) reads drivers/*/driver.compose.json
-      # and rebuilds app.json with 2-space indent = 6MB+.
-      # When `homey app publish` runs, it calls `homey app build` which
-      # triggers this plugin again, undoing our COMPACT.
-      # FIX: Compact .homeybuild/app.json AND temporarily remove the
-      # compose plugin from .homeyplugins.json so homey app publish
-      # doesn't re-run the compose step.
-      - name: "🗜️ COMPACT .homeybuild/app.json (post-validator) + disable compose"
+      - name: "🗜️ COMPACT .homeybuild/app.json (post-validator)"
         run: |
-          # Compact .homeybuild/app.json
           node - << 'POSTCOMPACT'
           const fs = require('fs');
           const p = '.homeybuild/app.json';
@@ -284,35 +276,100 @@ jobs:
           if (after > 5242880) { console.error('FATAL: > 5MB after compaction!'); process.exit(1); }
           POSTCOMPACT
 
-          # Disable compose plugin so homey app publish doesn't re-expand
-          # Save original and write empty array
-          cp .homeyplugins.json .homeyplugins.json.bak
-          echo '[]' > .homeyplugins.json
-          echo "Compose plugin disabled for publish (saved backup)"
-
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — inline with compose plugin disabled
+      # 6. PUBLISH — manual archive + Athom API upload
       # ─────────────────────────────────────────────────────────────
-      # With compose plugin disabled, `homey app publish` won't re-run
-      # the compose step and won't re-expand app.json. It will use the
-      # pre-built .homeybuild/ with compact app.json (3.5MB).
+      # WHY: `homey app publish` from root calls `homey app build`
+      # internally which re-expands app.json (6MB+) and creates a
+      # 26MB archive. Athom server rejects it (sdk=undefined).
+      # FIX: We create tar.gz from .homeybuild/ ourselves (7.9MB)
+      # and upload via the Athom delegation API.
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_HEADLESS: "1"
         run: |
-          echo "=== Pre-publish audit ==="
-          du -sh .homeybuild/ || echo "(no .homeybuild)"
-          node -e "const s=require('fs').statSync('.homeybuild/app.json');console.log('app.json:', (s.size/1024/1024).toFixed(2)+'MB')"
+          node - << 'PUBLISH'
+          const fs = require('fs');
+          const path = require('path');
+          const { execSync } = require('child_process');
 
-          echo "=== Publishing (compose plugin disabled) ==="
-          HOMEY_PAT="${HOMEY_PAT}" npx homey app publish
+          const PAT = process.env.HOMEY_PAT;
+          const APP_ID = 'com.dlnraja.tuya.zigbee';
+          const BUILD_DIR = '.homeybuild';
 
-          # Restore compose plugin
-          cp .homeyplugins.json.bak .homeyplugins.json 2>/dev/null || true
-          echo "Compose plugin restored"
+          if (!PAT) { console.error('HOMEY_PAT not set'); process.exit(1); }
+          if (!fs.existsSync(BUILD_DIR)) { console.error('.homeybuild/ not found'); process.exit(1); }
+
+          // Step 1: Get delegation token
+          console.log('=== Step 1: Get delegation token ===');
+          let token;
+          try {
+            const tokenRes = execSync(
+              'curl -s -X POST https://api.athom.com/delegation/token ' +
+              '-H "Authorization: Bearer ' + PAT + '" ' +
+              '-H "Content-Type: application/json" ' +
+              "-d '{\"audience\":\"apps\"}'",
+              {encoding:'utf8', timeout: 15000}
+            );
+            const parsed = JSON.parse(tokenRes);
+            token = parsed.token;
+            if (!token) throw new Error('No token in response: ' + tokenRes.substring(0, 200));
+            console.log('Got delegation token');
+          } catch(e) {
+            console.error('Delegation failed:', e.message);
+            console.log('Falling back to homey CLI publish...');
+            try {
+              execSync('HOMEY_PAT="' + PAT + '" npx homey app publish', {stdio:'inherit', timeout: 120000});
+              console.log('published=true');
+              process.exit(0);
+            } catch(e2) { console.error('CLI fallback failed'); process.exit(1); }
+          }
+
+          // Step 2: Create tar.gz from .homeybuild/
+          console.log('=== Step 2: Create archive ===');
+          const archivePath = '/tmp/homey-app.tar.gz';
+          execSync('tar czf ' + archivePath + ' -C ' + BUILD_DIR + ' .');
+          const archiveSize = fs.statSync(archivePath).size;
+          console.log('Archive: ' + (archiveSize/1024/1024).toFixed(2) + 'MB');
+
+          // Step 3: Get version from app.json
+          const app = JSON.parse(fs.readFileSync(path.join(BUILD_DIR, 'app.json'), 'utf8'));
+          console.log('Version: v' + app.version);
+
+          // Step 4: Upload via Athom API
+          console.log('=== Step 3: Upload to Athom ===');
+          const uploadUrl = 'https://apps-api.athom.com/api/v1/app/' + APP_ID + '/build';
+
+          // Use --data-binary with the tar.gz file
+          const curlCmd = [
+            'curl', '-s', '-w', '\\n%{http_code}',
+            '-X', 'POST', uploadUrl,
+            '-H', '"Authorization: Bearer ' + token + '"',
+            '-H', '"Content-Type: application/gzip"',
+            '--data-binary', '@' + archivePath
+          ].join(' ');
+
+          console.log('Uploading to: ' + uploadUrl);
+          const uploadRes = execSync(curlCmd, {encoding:'utf8', timeout: 300000});
+          const lines = uploadRes.trim().split('\n');
+          const httpCode = lines.pop();
+          const responseBody = lines.join('\n');
+
+          console.log('HTTP ' + httpCode);
+          if (responseBody) console.log('Response: ' + responseBody.substring(0, 500));
+
+          if (httpCode === '200' || httpCode === '201') {
+            console.log('Published successfully!');
+          } else {
+            console.error('Upload failed with HTTP ' + httpCode);
+            console.log('Falling back to homey CLI publish...');
+            try {
+              execSync('HOMEY_PAT="' + PAT + '" npx homey app publish', {stdio:'inherit', timeout: 120000});
+            } catch(e) { console.error('CLI fallback also failed'); process.exit(1); }
+          }
+          PUBLISH
           echo "published=true" >> $GITHUB_OUTPUT
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
           echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
