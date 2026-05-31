@@ -1,10 +1,25 @@
 {
-  "timestamp": "2026-05-31T16:17:54.549Z",
-  "totalNew": 0,
+  "timestamp": "2026-05-31T16:45:56.098Z",
+  "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "sourceBreakdown": {
+    "zha-issue": 1
+  },
+  "newFingerprints": [
+    {
+      "fp": "_TZE204_umh2xkoc",
+      "source": "zha-issue",
+      "issue": 5049,
+      "title": "[BUG] no datapoint handler - tuya_thermostat()",
+      "url": "https://github.com/zigpy/zha-device-handlers/issues/5049",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    }
+  ],
+  "aiPlan": "# Device Analysis: `_TZE204_umh2xkoc`\n\n## Initial Assessment\n\n| Attribute | Value |\n|-----------|-------|\n| **Fingerprint** | `_TZE204_umh2xkoc` |\n| **Source** | ZHA Issue |\n| **Prefix** | `_TZE204_` → Tuya MCU device (TS0601) |\n| **Known Variants** | `_TZE204_` prefix typically = climate/thermostat or sensor devices |\n\n## Classification\n\nBased on the `_TZE204_` prefix pattern analysis:\n- **Likely Type**: Climate/Thermostat device or Environmental Sensor\n- **Confidence**: Medium (need DPs or interview data to confirm)\n\n## Recommended Action\n\n| Step | Action |\n|------|--------|\n| 1 | **Request device interview** from user via `tools.developer.homey.app/tools/zigbee` |\n| 2 | **Cross-reference** with Z2M/ZHA databases for `_TZE204_umh2xkoc` |\n| 3 | **Check existing drivers** that use `_TZE204_` prefix (thermostat_advanced, climate_sensor, radiator_valve) |\n\n## Similar Known Devices (for reference)\n\n| FP | Device | Driver |\n|----|--------|--------|\n| `_TZE204_xxxxxx` | Various thermostats | `thermostat_advanced` |\n| `_TZE204_xxxxxx` | Climate sensors | `climate_sensor` |\n| `_TZE204_xxxxxx` | Radiator valves | `radiator_valve` |\n\n## Next Steps\n\nTo properly classify this device, we need:\n1. **Zigbee interview data** (clusters, endpoints, manufacturerName)\n2. **DP definitions** (if TS0601)\n3. **Z2M/ZHA cross-reference** for known DP mappings\n\n**Request template for user:**\n> \"Please run a Zigbee device interview using https://tools.developer.homey.app/tools/zigbee and share the full JSON output. This will help us identify the correct driver and DP mappings for `_TZE204_umh2xkoc`.\""
 }
