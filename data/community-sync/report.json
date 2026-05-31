@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-31T18:39:51.871Z",
+  "ts": "2026-05-31T19:11:07.436Z",
   "currentCount": 10475,
   "src": {
     "johan": {
@@ -11033,7 +11033,7 @@
       "enriched": true
     },
     "z2m": {
-      "count": 1561,
+      "count": 1564,
       "fingerprints": [
         {
           "mfr": "_TZ3000_zl1kmjqx",
@@ -13985,6 +13985,11 @@
           "source": "Z2M"
         },
         {
+          "mfr": "_TZE200_xixlazkg",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
           "mfr": "_TZE200_dzuqwsyg",
           "productId": null,
           "source": "Z2M"
@@ -14896,6 +14901,11 @@
         },
         {
           "mfr": "_TZE200_swlgvdlh",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE200_2jwrgrro",
           "productId": null,
           "source": "Z2M"
         },
@@ -18923,6 +18933,11 @@
           "mfr": "_TZ3218_sgbsg6mr",
           "productId": null,
           "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE284_aaeasoll",
+          "productId": null,
+          "source": "Z2M"
         }
       ],
       "sample": [
@@ -19669,6 +19684,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZE200_xixlazkg",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZ3000_zojh9vz7",
       "productId": null,
       "source": "Z2M",
@@ -19688,6 +19709,12 @@
     },
     {
       "mfr": "_TZE200_swlgvdlh",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -34379,6 +34406,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZE200_xixlazkg",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZE200_dzuqwsyg",
       "productId": null,
       "source": "Z2M",
@@ -35472,6 +35505,12 @@
     },
     {
       "mfr": "_TZE200_swlgvdlh",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE200_2jwrgrro",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -40305,8 +40344,14 @@
       "productId": null,
       "source": "Z2M",
       "driver": null
+    },
+    {
+      "mfr": "_TZE284_aaeasoll",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
     }
   ],
-  "newCount": 38,
-  "enrichedCount": 2211
+  "newCount": 40,
+  "enrichedCount": 2214
 }
