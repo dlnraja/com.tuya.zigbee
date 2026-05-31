@@ -260,31 +260,37 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 5.5 OPTIMIZE .homeybuild/ — reduce archive from 27MB to ~7MB
+      # 5.5 DISABLE COMPOSE + COMPACT — critical for Athom parsing
       # ─────────────────────────────────────────────────────────────
-      # homey app build includes node_modules/ (5.5MB) and large.png (1.14MB)
-      # These are NOT needed in the archive:
-      # - node_modules: bundled by SDK3 compose plugin into app.js
-      # - large.png: driver images not required at runtime
-      # Result: 32MB → 24MB uncompressed, archive 27MB → ~7MB
-      - name: "🧹 OPTIMIZE .homeybuild/ (remove non-runtime files)"
+      # The compose plugin (zigbee) reads driver.compose.json files
+      # and rebuilds app.json with 2-space indent = 6MB+.
+      # It also STRIPS api, capabilities, discovery from app.json.
+      # Athom server needs these fields to parse the manifest.
+      # FIX: Disable compose plugin + compact app.json.
+      - name: "🗜️ DISABLE COMPOSE + COMPACT .homeybuild/app.json"
         run: |
-          echo "=== Before optimization ==="
-          du -sh .homeybuild/
-          echo "node_modules: $(du -sh .homeybuild/node_modules/ 2>/dev/null | cut -f1)"
-          echo "large.png count: $(find .homeybuild/drivers -name 'large.png' 2>/dev/null | wc -l)"
+          # Disable compose plugin
+          echo '[]' > .homeyplugins.json
+          echo "Compose plugin disabled"
 
-          # Remove node_modules (bundled by SDK3)
-          rm -rf .homeybuild/node_modules
-
-          # Remove large.png (not needed at runtime)
-          find .homeybuild/drivers -name "large.png" -delete 2>/dev/null
-
-          echo "=== After optimization ==="
-          du -sh .homeybuild/
+          # Compact .homeybuild/app.json
+          node - << 'POSTCOMPACT'
+          const fs = require('fs');
+          const p = '.homeybuild/app.json';
+          if (!fs.existsSync(p)) { console.error('FATAL: .homeybuild/app.json not found'); process.exit(1); }
+          const before = fs.statSync(p).size;
+          const app = JSON.parse(fs.readFileSync(p, 'utf8'));
+          fs.writeFileSync(p, JSON.stringify(app), 'utf8');
+          const after = fs.statSync(p).size;
+          console.log('.homeybuild/app.json:', (before/1024/1024).toFixed(2) + 'MB -> ' + (after/1024/1024).toFixed(2) + 'MB');
+          console.log('api:', app.api ? 'YES' : 'MISSING');
+          console.log('capabilities:', app.capabilities ? 'YES(' + Object.keys(app.capabilities).length + ')' : 'MISSING');
+          console.log('discovery:', app.discovery ? 'YES' : 'MISSING');
+          if (after > 5242880) { console.error('FATAL: > 5MB after compaction!'); process.exit(1); }
+          POSTCOMPACT
 
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — homey CLI (uses optimized .homeybuild/)
+      # 6. PUBLISH — homey CLI (compose disabled, won't re-expand)
       # ─────────────────────────────────────────────────────────────
       - name: Publish to Homey App Store
         id: pub
