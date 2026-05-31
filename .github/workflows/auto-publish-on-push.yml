@@ -275,7 +275,7 @@ jobs:
         run: |
           echo "=== Step 1: Create archive (NO ./ prefix) ==="
           rm -f /tmp/homey-app.tar.gz
-          tar czf /tmp/homey-app.tar.gz -C .homeybuild *
+          cd .homeybuild && tar czf /tmp/homey-app.tar.gz * && cd ..
           ARCHIVE_SIZE=$(stat -c%s /tmp/homey-app.tar.gz)
           echo "Archive: $((ARCHIVE_SIZE / 1024 / 1024))MB"
           echo "First entries (no ./ prefix):"
