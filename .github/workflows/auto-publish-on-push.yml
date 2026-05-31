@@ -260,70 +260,78 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 5.5 DISABLE COMPOSE + COMPACT + CREATE ARCHIVE
+      # 5.5 DISABLE COMPOSE + COMPACT .homeybuild/app.json
       # ─────────────────────────────────────────────────────────────
-      # The compose plugin STRIPS api/capabilities/discovery from app.json.
-      # Athom server needs these fields to parse the manifest.
-      # We also create the archive ourselves using tar-fs (same as homey CLI)
-      # to control the exact format and ensure NO ./ prefix.
-      - name: "🗜️ OPTIMIZE + CREATE ARCHIVE"
+      - name: "🗜️ DISABLE COMPOSE + COMPACT"
         run: |
-          # Disable compose plugin
           echo '[]' > .homeyplugins.json
-
-          # Compact .homeybuild/app.json
-          node - << 'OPTIMIZE'
+          node - << 'POSTCOMPACT'
           const fs = require('fs');
           const p = '.homeybuild/app.json';
           if (!fs.existsSync(p)) { console.error('FATAL'); process.exit(1); }
+          const before = fs.statSync(p).size;
           const app = JSON.parse(fs.readFileSync(p, 'utf8'));
           fs.writeFileSync(p, JSON.stringify(app), 'utf8');
+          const after = fs.statSync(p).size;
+          console.log('.homeybuild/app.json:', (before/1024/1024).toFixed(2) + 'MB -> ' + (after/1024/1024).toFixed(2) + 'MB');
           console.log('api:', app.api ? 'YES' : 'MISSING');
           console.log('capabilities:', app.capabilities ? 'YES(' + Object.keys(app.capabilities).length + ')' : 'MISSING');
           console.log('discovery:', app.discovery ? 'YES' : 'MISSING');
-          if (fs.statSync(p).size > 5242880) { console.error('FATAL: > 5MB'); process.exit(1); }
-          OPTIMIZE
-
-          # Create archive using tar-fs (same as homey CLI, no ./ prefix)
-          node - << 'CREATE_ARCHIVE'
-          const tar = require('tar-fs');
-          const zlib = require('zlib');
-          const { pipeline } = require('stream');
-          const path = require('path');
-          const fs = require('fs');
-
-          const appPath = path.resolve('.homeybuild');
-          const archivePath = '/tmp/homey-app.tar.gz';
-
-          pipeline(
-            tar.pack(appPath, {
-              dereference: true,
-              ignore(name) {
-                if (name.startsWith('.')) return true;
-                if (name.includes('/.git/')) return true;
-                return false;
-              },
-            }),
-            zlib.createGzip(),
-            fs.createWriteStream(archivePath),
-            (err) => {
-              if (err) { console.error('Archive error:', err); process.exit(1); }
-              const size = fs.statSync(archivePath).size;
-              console.log('Archive created:', (size/1024/1024).toFixed(2) + 'MB');
-            }
-          );
-          CREATE_ARCHIVE
+          if (after > 5242880) { console.error('FATAL: > 5MB'); process.exit(1); }
+          POSTCOMPACT
 
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — homey CLI (archive already created by step 5.5)
+      # 6. PUBLISH — upload via Athom API (bypass homey CLI entirely)
       # ─────────────────────────────────────────────────────────────
+      # WHY: homey CLI always rebuilds .homeybuild/ (overriding our optimizations)
+      # and creates 27MB archive that Athom server rejects.
+      # FIX: Create archive from .homeybuild/ with tar (no ./ prefix)
+      # and upload via Athom API directly using PAT.
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_HEADLESS: "1"
-        run: HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
+        run: |
+          echo "=== Create archive from .homeybuild/ (no ./ prefix) ==="
+          rm -f /tmp/homey-app.tar.gz
+          cd .homeybuild && tar czf /tmp/homey-app.tar.gz * && cd ..
+          ARCHIVE_SIZE=$(stat -c%s /tmp/homey-app.tar.gz)
+          echo "Archive: $((ARCHIVE_SIZE / 1024 / 1024))MB"
+          echo "Prefix entries: $(tar tzf /tmp/homey-app.tar.gz | grep '^\./' | wc -l)"
+          echo "app.json size: $(stat -c%s .homeybuild/app.json) bytes"
+          echo "api: $(node -p "JSON.parse(require('fs').readFileSync('.homeybuild/app.json','utf8')).api ? 'YES' : 'MISSING'")"
+
+          echo "=== Upload via Athom API ==="
+          # Get delegation token
+          TOKEN=$(curl -s -X POST https://api.athom.com/delegation/token \
+            -H "Authorization: Bearer $HOMEY_PAT" \
+            -H "Content-Type: application/json" \
+            -d '{"audience":"apps"}' | node -e "process.stdin.on('data',d=>{try{console.log(JSON.parse(d).token||'')}catch{console.log('')}})")
+
+          if [ -z "$TOKEN" ]; then
+            echo "Delegation token failed, trying homey CLI fallback..."
+            HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
+            exit $?
+          fi
+          echo "Got delegation token (${#TOKEN} chars)"
+
+          # Upload archive
+          HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/upload-response.txt \
+            -X POST "https://apps-api.athom.com/api/v1/app/com.dlnraja.tuya.zigbee/build" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Content-Type: application/gzip" \
+            --data-binary @/tmp/homey-app.tar.gz)
+          echo "HTTP $HTTP_CODE"
+          cat /tmp/upload-response.txt | head -c 500
+          echo ""
+
+          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
+            echo "Published successfully!"
+          else
+            echo "API upload failed ($HTTP_CODE), falling back to CLI..."
+            HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
+          fi
 
       # ─────────────────────────────────────────────────────────────
       # 7. POST-PUBLISH (all continue-on-error)
