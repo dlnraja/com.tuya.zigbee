@@ -30,33 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
-## ðŸš€ Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v8.1.35** | - Fixed: 60 Zigbee drivers manufacturerName[] AggregateError resolved - Fixed... |
-| **v8.1.35** | v8.1.35:  |
-| **vv8_5_30** |  |
-| **v9.0.1** | v9.0.0: |
-| **v9.0.0** | v8.5.54: |
-| **v8.5.54** | v8.5.53: |
-| **v8.5.53** | v8.5.52: |
-| **v8.5.52** | v8.5.51: |
-| **v8.5.51** | v8.5.50: |
-| **v8.5.50** | v8.5.49: |
-| **v8.5.49** | v8.5.48: |
-<!-- CHANGELOG_END -->
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.36 |
+| **App Version** | v8.1.40 |
 | **Device Fingerprints** | 29,249+ |
 | **Unique Product IDs** | 499 |
 | **Drivers** | 411 (361 Zigbee + 50 WiFi) |
@@ -66,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-05-30 |
+| **Last Updated** | 2026-05-31 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -377,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-05-30*
+*Last updated: 2026-05-31*
