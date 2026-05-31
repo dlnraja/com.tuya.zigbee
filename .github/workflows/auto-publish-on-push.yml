@@ -301,8 +301,7 @@ jobs:
           rm -rf .homeybuild/.homeybuild 2>/dev/null || true
 
           echo "=== Publishing from .homeybuild/ ==="
-          cd .homeybuild
-          HOMEY_PAT="${HOMEY_PAT}" npx homey app publish
+          HOMEY_PAT="${HOMEY_PAT}" npx homey app publish --path .homeybuild
           echo "published=true" >> $GITHUB_OUTPUT
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
           echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
