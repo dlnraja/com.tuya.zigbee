@@ -260,72 +260,39 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — manual archive (NO ./ prefix) + API upload
+      # 5.5 OPTIMIZE .homeybuild/ — reduce archive from 27MB to ~7MB
       # ─────────────────────────────────────────────────────────────
-      # ROOT CAUSE: `homey app publish` creates tar.gz with ./ prefix
-      # (e.g. ./app.json) but Athom server expects bare names (app.json).
-      # The ./ prefix causes all manifest fields to be undefined.
-      # FIX: Create archive with `tar czf X -C .homeybuild *` (no ./)
-      # and upload via Athom delegation API.
+      # homey app build includes node_modules/ (5.5MB) and large.png (1.14MB)
+      # These are NOT needed in the archive:
+      # - node_modules: bundled by SDK3 compose plugin into app.js
+      # - large.png: driver images not required at runtime
+      # Result: 32MB → 24MB uncompressed, archive 27MB → ~7MB
+      - name: "🧹 OPTIMIZE .homeybuild/ (remove non-runtime files)"
+        run: |
+          echo "=== Before optimization ==="
+          du -sh .homeybuild/
+          echo "node_modules: $(du -sh .homeybuild/node_modules/ 2>/dev/null | cut -f1)"
+          echo "large.png count: $(find .homeybuild/drivers -name 'large.png' 2>/dev/null | wc -l)"
+
+          # Remove node_modules (bundled by SDK3)
+          rm -rf .homeybuild/node_modules
+
+          # Remove large.png (not needed at runtime)
+          find .homeybuild/drivers -name "large.png" -delete 2>/dev/null
+
+          echo "=== After optimization ==="
+          du -sh .homeybuild/
+
+      # ─────────────────────────────────────────────────────────────
+      # 6. PUBLISH — homey CLI (uses optimized .homeybuild/)
+      # ─────────────────────────────────────────────────────────────
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: |
-          echo "=== Step 1: Create archive (NO ./ prefix) ==="
-          rm -f /tmp/homey-app.tar.gz
-          # Create archive from .homeybuild/ without ./ prefix
-          # Must use bash -c to expand * inside .homeybuild/
-          bash -c 'cd .homeybuild && tar czf /tmp/homey-app.tar.gz *'
-          ARCHIVE_SIZE=$(stat -c%s /tmp/homey-app.tar.gz)
-          echo "Archive: $((ARCHIVE_SIZE / 1024 / 1024))MB"
-          echo "First entries (no ./ prefix):"
-          tar tzf /tmp/homey-app.tar.gz | head -5
-          echo "Entries with ./ prefix: $(tar tzf /tmp/homey-app.tar.gz | grep '^\./' | wc -l)"
-
-          echo "=== Step 2: Get delegation token ==="
-          # Write PAT to temp file to avoid shell escaping
-          echo -n "$HOMEY_PAT" > /tmp/athom-pat.txt
-          TOKEN_RES=$(curl -s -X POST https://api.athom.com/delegation/token \
-            -H "Authorization: Bearer $(cat /tmp/athom-pat.txt)" \
-            -H "Content-Type: application/json" \
-            -d '{"audience":"apps"}')
-          echo "Token response: $(echo "$TOKEN_RES" | head -c 100)"
-          TOKEN=$(echo "$TOKEN_RES" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.parse(d).token||'')}catch{console.log('')}")
-          echo -n "$TOKEN" > /tmp/athom-token.txt
-
-          if [ -z "$TOKEN" ]; then
-            echo "Delegation token failed, trying homey CLI as fallback..."
-            HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
-            echo "published=true" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          echo "Got token (${#TOKEN} chars)"
-
-          echo "=== Step 3: Upload archive to Athom ==="
-          UPLOAD_URL="https://apps-api.athom.com/api/v1/app/com.dlnraja.tuya.zigbee/build"
-          HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/upload-response.txt \
-            -X POST "$UPLOAD_URL" \
-            -H "Authorization: Bearer $(cat /tmp/athom-token.txt)" \
-            -H "Content-Type: application/gzip" \
-            --data-binary @/tmp/homey-app.tar.gz)
-          echo "HTTP $HTTP_CODE"
-          cat /tmp/upload-response.txt | head -c 500
-
-          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
-            echo ""
-            echo "Published successfully!"
-            echo "published=true" >> $GITHUB_OUTPUT
-          else
-            echo ""
-            echo "API upload failed ($HTTP_CODE), falling back to homey CLI..."
-            HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
-            echo "published=true" >> $GITHUB_OUTPUT
-          fi
-
-          APP_ID="com.dlnraja.tuya.zigbee"
-          echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
+          HOMEY_HEADLESS: "1"
+        run: HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
 
       # ─────────────────────────────────────────────────────────────
       # 7. POST-PUBLISH (all continue-on-error)
