@@ -68,7 +68,7 @@ card.registerRunListener(this._safeDeviceHandler(async (args) => {
 
 | Metric | Value |
 |--------|-------|
-| Version | v8.1.49 |
+| Version | v8.1.51 |
 | Drivers | 411 |
 | Fingerprints | 29,249 |
 | Last Updated | 2026-05-31 |
