@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T17:29:28.648Z",
+  "timestamp": "2026-05-31T08:28:19.800Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -28,12 +28,16 @@
           6
         ],
         [
+          "TS0041",
+          6
+        ],
+        [
           "router",
           6
         ],
         [
-          "test",
-          5
+          "TS0044",
+          6
         ],
         [
           "_TZE284_",
@@ -42,10 +46,6 @@
         [
           "_TZE200_",
           5
-        ],
-        [
-          "example",
-          3
         ]
       ],
       "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
@@ -112,10 +112,6 @@
       "priority": "high",
       "topFPs": [
         [
-          "test",
-          5
-        ],
-        [
           "TS0601",
           5
         ],
@@ -137,6 +133,10 @@
         ],
         [
           "_TZE284_",
+          2
+        ],
+        [
+          "TS0044",
           2
         ],
         [
@@ -190,15 +190,15 @@
           2
         ],
         [
-          "test",
-          2
-        ],
-        [
           "generic",
           2
         ],
         [
           "router",
+          2
+        ],
+        [
+          "TS0001",
           2
         ]
       ],
@@ -284,15 +284,11 @@
           1
         ],
         [
-          "MOES",
-          1
-        ],
-        [
           "tuya",
           1
         ],
         [
-          "test",
+          "MOES",
           1
         ],
         [
@@ -301,6 +297,10 @@
         ],
         [
           "router",
+          1
+        ],
+        [
+          "lumi",
           1
         ]
       ],
@@ -329,14 +329,6 @@
         ],
         [
           "sonoff",
-          1
-        ],
-        [
-          "debug",
-          1
-        ],
-        [
-          "test",
           1
         ],
         [

@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-03-27T04:34:32.367Z",
-      "wf": "Daily Everything Pipeline",
-      "stale": 0,
-      "missing": 0,
-      "alerts": 0
-    },
-    {
       "ts": "2026-03-27T06:34:07.070Z",
       "wf": "Nightly Auto-Process",
       "stale": 0,
@@ -209,50 +202,47 @@
       "stale": 3,
       "missing": 0,
       "alerts": 1
-    }
-  ],
-  "alerts": [
+    },
     {
-      "type": "stale",
-      "files": [
-        "nightly-state.json",
-        "diagnostics-state.json",
-        "issue-manager-state.json"
-      ],
-      "msg": "3 state file(s) older than 48h"
+      "ts": "2026-05-31T08:29:05.404Z",
+      "wf": "Sunday Master Automation",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
-  "lastRun": "2026-05-25T20:26:10.410Z",
+  "alerts": [],
+  "lastRun": "2026-05-31T08:29:05.404Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
-      "ageH": 290,
+      "ageH": 0,
       "size": 5855
     },
     "diagnostics-state.json": {
       "ok": true,
-      "ageH": 195,
+      "ageH": 0,
       "size": 9566
     },
     "pattern-data.json": {
       "ok": true,
       "ageH": 0,
-      "size": 7631
+      "size": 7733
     },
     "resolver-state.json": {
       "ok": true,
       "ageH": 0,
-      "size": 8964
+      "size": 9140
     },
     "issue-manager-state.json": {
       "ok": true,
-      "ageH": 290,
+      "ageH": 0,
       "size": 19865
     },
     "github-state.json": {
       "ok": true,
       "ageH": 0,
-      "size": 1886
+      "size": 1946
     }
   }
 }
