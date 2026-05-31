@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-05
 
-*Generated: 2026-05-31T03:39:47.130Z*
+*Generated: 2026-05-31T07:57:37.721Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 411 |
-| Manufacturer IDs | 184815 |
-| Collisions | 118893 |
+| Manufacturer IDs | 188800 |
+| Collisions | 118996 |
 
 ## ⚠️ Collisions Detected
 
@@ -35,7 +35,7 @@
 | `_TZE200_7BZTMFM1|TS0601_air_purifier` | air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 | `_TZE200_7BZTMFM1|TS0601` | air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
 
-*...and 118873 more*
+*...and 118976 more*
 
 ## 📋 Action Items
 
