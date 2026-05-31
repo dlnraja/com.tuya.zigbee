@@ -1,12 +1,46 @@
 {
-  "timestamp": "2026-05-26T15:00:01.667Z",
+  "timestamp": "2026-05-30T23:56:01.738Z",
   "topicsScanned": 261,
-  "totalPosts": 0,
-  "categories": {},
+  "totalPosts": 1,
+  "categories": {
+    "wifi_request": 1
+  },
   "missingFPs": [],
-  "wifiRequests": [],
+  "wifiRequests": [
+    {
+      "user": "dlnraja",
+      "date": "2026-05-26",
+      "topicId": 140352,
+      "postNum": 2050,
+      "postId": 743761,
+      "missing": [],
+      "found": [
+        "_TZE200_9xfjixap"
+      ],
+      "issues": [
+        "wifi_request"
+      ],
+      "text": "  Subject: v8.5.7+ fixes startup crash (OOM) + multiple device fixes — please update and re-pair  \n Hi everyone, \n If you’ve experienced the app  crashing at startup  or  devices not showing any capabilities  after pairing, here’s what happened and how to fix it: \n   What was the problem? \n The app "
+    }
+  ],
   "pairingIssues": [],
   "unknownDevices": [],
   "wrongValues": [],
-  "allIssues": []
+  "allIssues": [
+    {
+      "user": "dlnraja",
+      "date": "2026-05-26",
+      "topicId": 140352,
+      "postNum": 2050,
+      "postId": 743761,
+      "missing": [],
+      "found": [
+        "_TZE200_9xfjixap"
+      ],
+      "issues": [
+        "wifi_request"
+      ],
+      "text": "  Subject: v8.5.7+ fixes startup crash (OOM) + multiple device fixes — please update and re-pair  \n Hi everyone, \n If you’ve experienced the app  crashing at startup  or  devices not showing any capabilities  after pairing, here’s what happened and how to fix it: \n   What was the problem? \n The app "
+    }
+  ]
 }
