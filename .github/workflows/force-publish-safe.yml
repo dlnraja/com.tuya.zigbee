@@ -136,6 +136,27 @@ jobs:
       - name: "🧹 STEP 4 — Remove .homeycompose (prevent re-inflation)"
         run: rm -rf .homeycompose && echo "✅ .homeycompose removed"
 
+      - name: "🪶 STEP 4.5 — Slim fingerprints.json (anti-Athom-30MB-archive-limit)"
+        run: |
+          node - << 'SLIM_EOF'
+          const fs=require('fs'),path=require('path');
+          const FP='data/fingerprints.json',APP='app.json',DRV='drivers';
+          if(!fs.existsSync(FP)){console.log('No fingerprints.json, skip');process.exit(0);}
+          const knownMfrs=new Set();
+          const app=JSON.parse(fs.readFileSync(APP,'utf8'));
+          app.drivers.forEach(d=>{if(d.zigbee&&Array.isArray(d.zigbee.manufacturerName))d.zigbee.manufacturerName.forEach(m=>m&&knownMfrs.add(m.toLowerCase()));});
+          try{fs.readdirSync(DRV,{withFileTypes:true}).filter(e=>e.isDirectory()).forEach(e=>{const p=path.join(DRV,e.name,'driver.compose.json');if(!fs.existsSync(p))return;try{const c=JSON.parse(fs.readFileSync(p,'utf8'));if(c.zigbee&&Array.isArray(c.zigbee.manufacturerName))c.zigbee.manufacturerName.forEach(m=>m&&knownMfrs.add(m.toLowerCase()));}catch{}});}catch{}
+          const before=fs.statSync(FP).size,allFP=JSON.parse(fs.readFileSync(FP,'utf8')),total=Object.keys(allFP).length;
+          const slimFP={};for(const[k,v]of Object.entries(allFP)){if(knownMfrs.has(k.toLowerCase()))slimFP[k]=v;}
+          const kept=Object.keys(slimFP).length;
+          fs.writeFileSync(FP,JSON.stringify(slimFP),'utf8');
+          const after=fs.statSync(FP).size;
+          console.log('fingerprints.json: '+total.toLocaleString()+' entries => '+kept+' kept');
+          console.log('Size: '+(before/1024/1024).toFixed(2)+'MB => '+(after/1024/1024).toFixed(2)+'MB');
+          if(kept===0){console.error('FATAL: 0 fingerprints kept');process.exit(1);}
+          console.log('fingerprints.json slimmed OK');
+          SLIM_EOF
+
       - name: "✅ STEP 5 — Homey App validate --level publish"
         run: npx homey app validate --level publish
         continue-on-error: true  # large.png required since v8.1.32
@@ -204,6 +225,26 @@ jobs:
           console.log('Ready: '+mb+'MB | '+app.drivers.length+' drivers | 0 empty mfr ✅');
           "
           rm -rf .homeycompose
+
+      - name: "🪶 Slim fingerprints.json before publish (anti-30MB-limit)"
+        run: |
+          node - << 'SLIM_EOF2'
+          const fs=require('fs'),path=require('path');
+          const FP='data/fingerprints.json',APP='app.json',DRV='drivers';
+          if(!fs.existsSync(FP)){console.log('No fingerprints.json, skip');process.exit(0);}
+          const knownMfrs=new Set();
+          const app=JSON.parse(fs.readFileSync(APP,'utf8'));
+          app.drivers.forEach(d=>{if(d.zigbee&&Array.isArray(d.zigbee.manufacturerName))d.zigbee.manufacturerName.forEach(m=>m&&knownMfrs.add(m.toLowerCase()));});
+          try{fs.readdirSync(DRV,{withFileTypes:true}).filter(e=>e.isDirectory()).forEach(e=>{const p=path.join(DRV,e.name,'driver.compose.json');if(!fs.existsSync(p))return;try{const c=JSON.parse(fs.readFileSync(p,'utf8'));if(c.zigbee&&Array.isArray(c.zigbee.manufacturerName))c.zigbee.manufacturerName.forEach(m=>m&&knownMfrs.add(m.toLowerCase()));}catch{}});}catch{}
+          const before=fs.statSync(FP).size,allFP=JSON.parse(fs.readFileSync(FP,'utf8')),total=Object.keys(allFP).length;
+          const slimFP={};for(const[k,v]of Object.entries(allFP)){if(knownMfrs.has(k.toLowerCase()))slimFP[k]=v;}
+          const kept=Object.keys(slimFP).length;
+          fs.writeFileSync(FP,JSON.stringify(slimFP),'utf8');
+          const after=fs.statSync(FP).size;
+          console.log('fingerprints: '+total+' => '+kept+' | '+(before/1024/1024).toFixed(2)+'MB => '+(after/1024/1024).toFixed(2)+'MB');
+          if(kept===0){console.error('FATAL: 0 fingerprints kept');process.exit(1);}
+          console.log('fingerprints.json slim OK - archive will be ~25MB');
+          SLIM_EOF2
 
       - name: "📝 Generate AI Changelog"
         continue-on-error: true
