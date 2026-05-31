@@ -308,10 +308,10 @@ jobs:
           try {
             const tokenRes = execSync(
               'curl -s -X POST https://api.athom.com/delegation/token ' +
-              '-H "Authorization: Bearer ' + PAT + '" ' +
+              '-H "Authorization: Bearer $HOMEY_PAT" ' +
               '-H "Content-Type: application/json" ' +
               "-d '{\"audience\":\"apps\"}'",
-              {encoding:'utf8', timeout: 15000}
+              {encoding:'utf8', timeout: 15000, env: {...process.env, HOMEY_PAT: PAT}}
             );
             const parsed = JSON.parse(tokenRes);
             token = parsed.token;
@@ -321,7 +321,7 @@ jobs:
             console.error('Delegation failed:', e.message);
             console.log('Falling back to homey CLI publish...');
             try {
-              execSync('HOMEY_PAT="' + PAT + '" npx homey app publish', {stdio:'inherit', timeout: 120000});
+              execSync('HOMEY_PAT="' + PAT + '" HOMEY_HEADLESS=1 npx homey app publish --yes', {stdio:'inherit', timeout: 120000});
               console.log('published=true');
               process.exit(0);
             } catch(e2) { console.error('CLI fallback failed'); process.exit(1); }
@@ -343,10 +343,14 @@ jobs:
           const uploadUrl = 'https://apps-api.athom.com/api/v1/app/' + APP_ID + '/build';
 
           // Use --data-binary with the tar.gz file
+          // Write token to temp file to avoid shell escaping issues
+          const tokenFile = '/tmp/athom-token.txt';
+          fs.writeFileSync(tokenFile, token);
+
           const curlCmd = [
             'curl', '-s', '-w', '\\n%{http_code}',
             '-X', 'POST', uploadUrl,
-            '-H', '"Authorization: Bearer ' + token + '"',
+            '-H', '"Authorization: Bearer $(cat ' + tokenFile + ')"',
             '-H', '"Content-Type: application/gzip"',
             '--data-binary', '@' + archivePath
           ].join(' ');
@@ -366,7 +370,7 @@ jobs:
             console.error('Upload failed with HTTP ' + httpCode);
             console.log('Falling back to homey CLI publish...');
             try {
-              execSync('HOMEY_PAT="' + PAT + '" npx homey app publish', {stdio:'inherit', timeout: 120000});
+              execSync('HOMEY_PAT="' + PAT + '" HOMEY_HEADLESS=1 npx homey app publish --yes', {stdio:'inherit', timeout: 120000});
             } catch(e) { console.error('CLI fallback also failed'); process.exit(1); }
           }
           PUBLISH
