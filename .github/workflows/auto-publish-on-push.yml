@@ -260,18 +260,69 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — homey CLI from workspace root
+      # 6. PUBLISH — manual archive (NO ./ prefix) + API upload
       # ─────────────────────────────────────────────────────────────
+      # ROOT CAUSE: `homey app publish` creates tar.gz with ./ prefix
+      # (e.g. ./app.json) but Athom server expects bare names (app.json).
+      # The ./ prefix causes all manifest fields to be undefined.
+      # FIX: Create archive with `tar czf X -C .homeybuild *` (no ./)
+      # and upload via Athom delegation API.
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_HEADLESS: "1"
         run: |
-          HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
-          echo "published=true" >> $GITHUB_OUTPUT
-          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          echo "=== Step 1: Create archive (NO ./ prefix) ==="
+          rm -f /tmp/homey-app.tar.gz
+          tar czf /tmp/homey-app.tar.gz -C .homeybuild *
+          ARCHIVE_SIZE=$(stat -c%s /tmp/homey-app.tar.gz)
+          echo "Archive: $((ARCHIVE_SIZE / 1024 / 1024))MB"
+          echo "First entries (no ./ prefix):"
+          tar tzf /tmp/homey-app.tar.gz | head -5
+          echo "Entries with ./ prefix: $(tar tzf /tmp/homey-app.tar.gz | grep '^\./' | wc -l)"
+
+          echo "=== Step 2: Get delegation token ==="
+          # Write PAT to temp file to avoid shell escaping
+          echo -n "$HOMEY_PAT" > /tmp/athom-pat.txt
+          TOKEN_RES=$(curl -s -X POST https://api.athom.com/delegation/token \
+            -H "Authorization: Bearer $(cat /tmp/athom-pat.txt)" \
+            -H "Content-Type: application/json" \
+            -d '{"audience":"apps"}')
+          echo "Token response: $(echo "$TOKEN_RES" | head -c 100)"
+          TOKEN=$(echo "$TOKEN_RES" | node -e "const d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.parse(d).token||'')}catch{console.log('')}")
+          echo -n "$TOKEN" > /tmp/athom-token.txt
+
+          if [ -z "$TOKEN" ]; then
+            echo "Delegation token failed, trying homey CLI as fallback..."
+            HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
+            echo "published=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "Got token (${#TOKEN} chars)"
+
+          echo "=== Step 3: Upload archive to Athom ==="
+          UPLOAD_URL="https://apps-api.athom.com/api/v1/app/com.dlnraja.tuya.zigbee/build"
+          HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/upload-response.txt \
+            -X POST "$UPLOAD_URL" \
+            -H "Authorization: Bearer $(cat /tmp/athom-token.txt)" \
+            -H "Content-Type: application/gzip" \
+            --data-binary @/tmp/homey-app.tar.gz)
+          echo "HTTP $HTTP_CODE"
+          cat /tmp/upload-response.txt | head -c 500
+
+          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "201" ]; then
+            echo ""
+            echo "Published successfully!"
+            echo "published=true" >> $GITHUB_OUTPUT
+          else
+            echo ""
+            echo "API upload failed ($HTTP_CODE), falling back to homey CLI..."
+            HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
+            echo "published=true" >> $GITHUB_OUTPUT
+          fi
+
+          APP_ID="com.dlnraja.tuya.zigbee"
           echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
 
       # ─────────────────────────────────────────────────────────────
