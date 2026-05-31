@@ -260,120 +260,16 @@ jobs:
         run: npx homey app validate --level publish
 
       # ─────────────────────────────────────────────────────────────
-      # 5.5 COMPACT .homeybuild/app.json
+      # 6. PUBLISH — homey CLI from workspace root
       # ─────────────────────────────────────────────────────────────
-      - name: "🗜️ COMPACT .homeybuild/app.json (post-validator)"
-        run: |
-          node - << 'POSTCOMPACT'
-          const fs = require('fs');
-          const p = '.homeybuild/app.json';
-          if (!fs.existsSync(p)) { console.error('FATAL: .homeybuild/app.json not found'); process.exit(1); }
-          const before = fs.statSync(p).size;
-          const app = JSON.parse(fs.readFileSync(p, 'utf8'));
-          fs.writeFileSync(p, JSON.stringify(app), 'utf8');
-          const after = fs.statSync(p).size;
-          console.log('.homeybuild/app.json:', (before/1024/1024).toFixed(2) + 'MB -> ' + (after/1024/1024).toFixed(2) + 'MB');
-          if (after > 5242880) { console.error('FATAL: > 5MB after compaction!'); process.exit(1); }
-          POSTCOMPACT
-
-      # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH — manual archive + Athom API upload
-      # ─────────────────────────────────────────────────────────────
-      # WHY: `homey app publish` from root calls `homey app build`
-      # internally which re-expands app.json (6MB+) and creates a
-      # 26MB archive. Athom server rejects it (sdk=undefined).
-      # FIX: We create tar.gz from .homeybuild/ ourselves (7.9MB)
-      # and upload via the Athom delegation API.
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_HEADLESS: "1"
         run: |
-          node - << 'PUBLISH'
-          const fs = require('fs');
-          const path = require('path');
-          const { execSync } = require('child_process');
-
-          const PAT = process.env.HOMEY_PAT;
-          const APP_ID = 'com.dlnraja.tuya.zigbee';
-          const BUILD_DIR = '.homeybuild';
-
-          if (!PAT) { console.error('HOMEY_PAT not set'); process.exit(1); }
-          if (!fs.existsSync(BUILD_DIR)) { console.error('.homeybuild/ not found'); process.exit(1); }
-
-          // Step 1: Get delegation token
-          console.log('=== Step 1: Get delegation token ===');
-          let token;
-          try {
-            const tokenRes = execSync(
-              'curl -s -X POST https://api.athom.com/delegation/token ' +
-              '-H "Authorization: Bearer $HOMEY_PAT" ' +
-              '-H "Content-Type: application/json" ' +
-              "-d '{\"audience\":\"apps\"}'",
-              {encoding:'utf8', timeout: 15000, env: {...process.env, HOMEY_PAT: PAT}}
-            );
-            const parsed = JSON.parse(tokenRes);
-            token = parsed.token;
-            if (!token) throw new Error('No token in response: ' + tokenRes.substring(0, 200));
-            console.log('Got delegation token');
-          } catch(e) {
-            console.error('Delegation failed:', e.message);
-            console.log('Falling back to homey CLI publish...');
-            try {
-              execSync('HOMEY_PAT="' + PAT + '" HOMEY_HEADLESS=1 npx homey app publish --yes', {stdio:'inherit', timeout: 120000});
-              console.log('published=true');
-              process.exit(0);
-            } catch(e2) { console.error('CLI fallback failed'); process.exit(1); }
-          }
-
-          // Step 2: Create tar.gz from .homeybuild/
-          console.log('=== Step 2: Create archive ===');
-          const archivePath = '/tmp/homey-app.tar.gz';
-          execSync('tar czf ' + archivePath + ' -C ' + BUILD_DIR + ' .');
-          const archiveSize = fs.statSync(archivePath).size;
-          console.log('Archive: ' + (archiveSize/1024/1024).toFixed(2) + 'MB');
-
-          // Step 3: Get version from app.json
-          const app = JSON.parse(fs.readFileSync(path.join(BUILD_DIR, 'app.json'), 'utf8'));
-          console.log('Version: v' + app.version);
-
-          // Step 4: Upload via Athom API
-          console.log('=== Step 3: Upload to Athom ===');
-          const uploadUrl = 'https://apps-api.athom.com/api/v1/app/' + APP_ID + '/build';
-
-          // Use --data-binary with the tar.gz file
-          // Write token to temp file to avoid shell escaping issues
-          const tokenFile = '/tmp/athom-token.txt';
-          fs.writeFileSync(tokenFile, token);
-
-          const curlCmd = [
-            'curl', '-s', '-w', '\\n%{http_code}',
-            '-X', 'POST', uploadUrl,
-            '-H', '"Authorization: Bearer $(cat ' + tokenFile + ')"',
-            '-H', '"Content-Type: application/gzip"',
-            '--data-binary', '@' + archivePath
-          ].join(' ');
-
-          console.log('Uploading to: ' + uploadUrl);
-          const uploadRes = execSync(curlCmd, {encoding:'utf8', timeout: 300000});
-          const lines = uploadRes.trim().split('\n');
-          const httpCode = lines.pop();
-          const responseBody = lines.join('\n');
-
-          console.log('HTTP ' + httpCode);
-          if (responseBody) console.log('Response: ' + responseBody.substring(0, 500));
-
-          if (httpCode === '200' || httpCode === '201') {
-            console.log('Published successfully!');
-          } else {
-            console.error('Upload failed with HTTP ' + httpCode);
-            console.log('Falling back to homey CLI publish...');
-            try {
-              execSync('HOMEY_PAT="' + PAT + '" HOMEY_HEADLESS=1 npx homey app publish --yes', {stdio:'inherit', timeout: 120000});
-            } catch(e) { console.error('CLI fallback also failed'); process.exit(1); }
-          }
-          PUBLISH
+          HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
           echo "published=true" >> $GITHUB_OUTPUT
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
           echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
