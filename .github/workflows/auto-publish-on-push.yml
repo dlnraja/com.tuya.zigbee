@@ -261,14 +261,51 @@ jobs:
 
 
       # ─────────────────────────────────────────────────────────────
-      # 6. PUBLISH
+      # 6. PUBLISH — inline (NOT external action which rebuilds & loses compact files)
       # ─────────────────────────────────────────────────────────────
+      # WHY INLINE: athombv/github-action-homey-app-publish runs its own
+      # `homey app build` internally which re-runs the compose plugin and
+      # recreates app.json with 2-space indentation (6MB+) → Athom server
+      # can't parse the oversized manifest → processing_failed with sdk=undefined.
+      # FIX: publish directly from .homeybuild/ (already built by validator step)
+      # using the compact app.json (3.56MB) and slim fingerprints (0.16MB).
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
-        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_HEADLESS: "1"
+        run: |
+          echo "=== Pre-publish archive audit ==="
+          du -sh .homeybuild/ || echo "(no .homeybuild)"
+          APP_JSON_SIZE=$(stat -c%s .homeybuild/app.json 2>/dev/null || echo 0)
+          echo "app.json in .homeybuild: $((APP_JSON_SIZE / 1024))KB"
+          FP_SIZE=$(stat -c%s .homeybuild/data/fingerprints.json 2>/dev/null || echo 0)
+          echo "fingerprints.json in .homeybuild: $((FP_SIZE / 1024))KB"
+
+          # Safety check: app.json must be < 5MB
+          if [ "$APP_JSON_SIZE" -gt 5242880 ]; then
+            echo "❌ FATAL: app.json too large ($((APP_JSON_SIZE/1024/1024))MB > 5MB limit). Compacting..."
+            node -e "
+              const fs=require('fs');
+              const app=JSON.parse(fs.readFileSync('.homeybuild/app.json','utf8'));
+              fs.writeFileSync('.homeybuild/app.json',JSON.stringify(app),'utf8');
+              console.log('Compacted to',(fs.statSync('.homeybuild/app.json').size/1024/1024).toFixed(2)+'MB');
+            "
+          fi
+
+          # Ensure .homeychangelog.json is in .homeybuild
+          cp .homeychangelog.json .homeybuild/.homeychangelog.json 2>/dev/null || true
+
+          # Remove nested .homeybuild if exists
+          rm -rf .homeybuild/.homeybuild 2>/dev/null || true
+
+          echo "=== Publishing from .homeybuild/ ==="
+          cd .homeybuild
+          HOMEY_PAT="${HOMEY_PAT}" npx homey app publish --no-verify
+          echo "published=true" >> $GITHUB_OUTPUT
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
 
       # ─────────────────────────────────────────────────────────────
       # 7. POST-PUBLISH (all continue-on-error)
@@ -287,7 +324,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Wait for Athom draft processing
-        if: steps.pub.outcome == 'success'
+        if: steps.pub.outputs.published == 'true'
         run: sleep 120
 
       - name: Install Puppeteer (draft → test promotion)
