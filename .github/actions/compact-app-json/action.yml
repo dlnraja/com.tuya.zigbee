@@ -3,29 +3,41 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # PURPOSE: Prevents "Processing failed" on Athom's servers.
 #
-# ROOT CAUSE ANALYSIS (discovered 2026-05-29):
-#   .homeyplugins.json includes {"id":"compose"} which activates the Homey
-#   compose plugin. During `homey app validate` or `homey app publish`, the
-#   plugin REBUILDS app.json from .homeycompose/ with 2-space indentation.
-#   With 412+ drivers, this produces a 6.03 MB file.
-#   Athom's servers reject app bundles with app.json > ~5 MB → "Processing failed".
+# ROOT CAUSE ANALYSIS (discovered 2026-05-29 / confirmed 2026-05-31):
+#   TWO separate issues both cause "Processing failed":
+#
+#   ISSUE 1 — app.json > 5MB:
+#     .homeyplugins.json includes {"id":"compose"} which activates the Homey
+#     compose plugin. During `homey app validate` or `homey app publish`, the
+#     plugin REBUILDS app.json from .homeycompose/ with 2-space indentation.
+#     With 412+ drivers, this produces a 6.03 MB file.
+#     Athom's servers reject app bundles with app.json > ~5 MB → "Processing failed".
+#
+#   ISSUE 2 — Archive tarball > 30MB (discovered 2026-05-31):
+#     data/fingerprints.json had 126,189 entries (11.3MB) but only 1,430 match
+#     our 411 active drivers. The other 124,759 are dead weight from all-time scraping.
+#     Total archive was 38.5MB → Athom server cannot process archive → "Processing failed".
 #
 #   Timeline:
-#     v8.1.6 (232 drivers) → 3.67 MB → ✅ Athom accepted (Build #2159)
-#     v8.1.7+ (412 drivers) → 6.03 MB → ❌ "Processing failed" (Build #2160+)
+#     v8.1.6  (232 drivers) → 3.67MB app.json, 16.5MB archive → ✅ Build #2159 OK
+#     v8.1.7+ (412 drivers) → 6.03MB app.json, 38.5MB archive → ❌ Builds #2160-#2233 FAILED
 #
-# FIX: Compact app.json to JSON.stringify() format (~3.39 MB) + remove
-#      .homeycompose to prevent re-expansion by Homey CLI during validate/publish.
+# FIX 1: Compact app.json to JSON.stringify() format (~3.39 MB) + remove
+#         .homeycompose to prevent re-expansion by Homey CLI during validate/publish.
+# FIX 2: Slim fingerprints.json from 11.3MB → 0.16MB by filtering to active drivers only.
+#         Archive: 38.5MB → 25.6MB uncompressed (~10.2MB compressed, << 30MB limit)
 #
 # USAGE in any workflow:
 #   - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
 #     uses: ./.github/actions/compact-app-json
 # ─────────────────────────────────────────────────────────────────────────────
 
-name: "🗜️ Compact app.json"
+name: "🗜️ Compact app.json + 🪶 Slim fingerprints"
 description: >
   Compacts app.json to single-line JSON and removes .homeycompose to prevent
   the Homey compose plugin from re-expanding app.json above Athom's ~5 MB limit.
+  Also slims data/fingerprints.json from 11.3MB to 0.16MB by filtering to only
+  active driver entries, keeping total archive under Athom's ~30MB limit.
 
 runs:
   using: composite
@@ -64,3 +76,76 @@ runs:
           rm -rf .homeycompose
           echo "✅ .homeycompose removed"
         fi
+
+    - name: "🪶 Slim fingerprints.json (anti-Athom-30MB-archive-limit)"
+      shell: bash
+      run: |
+        node - << 'SLIM_EOF'
+        // ── SLIM fingerprints.json ─────────────────────────────────────────────
+        // WHY: data/fingerprints.json has 126,189 entries (11.3MB) but only
+        //      1,430 match the 411 active drivers. 98.6% is dead weight.
+        // FIX: Filter to only MFR names present in active drivers.
+        // RESULT: 11.3MB → 0.16MB | Archive: 38.5MB → 25.6MB (< 30MB Athom limit)
+        const fs   = require('fs');
+        const path = require('path');
+
+        const FP_PATH  = 'data/fingerprints.json';
+        const APP_PATH = 'app.json';
+        const DRV_DIR  = 'drivers';
+
+        if (!fs.existsSync(FP_PATH)) {
+          console.log('⚠️  data/fingerprints.json not found, skipping slim');
+          process.exit(0);
+        }
+
+        // Collect all manufacturerNames from active drivers
+        const knownMfrs = new Set();
+        try {
+          const app = JSON.parse(fs.readFileSync(APP_PATH, 'utf8'));
+          app.drivers.forEach(d => {
+            if (d.zigbee && Array.isArray(d.zigbee.manufacturerName)) {
+              d.zigbee.manufacturerName.forEach(m => m && knownMfrs.add(m.toLowerCase()));
+            }
+          });
+        } catch(e) { console.error('app.json read error:', e.message); }
+
+        // Also scan driver.compose.json files (compose sources)
+        try {
+          fs.readdirSync(DRV_DIR, {withFileTypes:true})
+            .filter(e => e.isDirectory())
+            .forEach(e => {
+              const p = path.join(DRV_DIR, e.name, 'driver.compose.json');
+              if (!fs.existsSync(p)) return;
+              try {
+                const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                if (c.zigbee && Array.isArray(c.zigbee.manufacturerName)) {
+                  c.zigbee.manufacturerName.forEach(m => m && knownMfrs.add(m.toLowerCase()));
+                }
+              } catch {}
+            });
+        } catch {}
+
+        const before = fs.statSync(FP_PATH).size;
+        const allFP = JSON.parse(fs.readFileSync(FP_PATH, 'utf8'));
+        const total = Object.keys(allFP).length;
+
+        // Filter — keep only entries matching known drivers
+        const slimFP = {};
+        for (const [key, val] of Object.entries(allFP)) {
+          if (knownMfrs.has(key.toLowerCase())) slimFP[key] = val;
+        }
+        const kept = Object.keys(slimFP).length;
+
+        fs.writeFileSync(FP_PATH, JSON.stringify(slimFP), 'utf8');
+        const after = fs.statSync(FP_PATH).size;
+
+        console.log('fingerprints.json: ' + total.toLocaleString() + ' entries → ' + kept + ' kept (' + (total-kept).toLocaleString() + ' removed)');
+        console.log('Size: ' + (before/1024/1024).toFixed(2) + 'MB → ' + (after/1024/1024).toFixed(2) + 'MB (saved ' + ((before-after)/1024/1024).toFixed(2) + 'MB)');
+        if (kept === 0) {
+          console.error('❌ FATAL: 0 fingerprints kept — manufacturerName extraction failed!');
+          console.error('   The archive would be missing all fingerprint data.');
+          process.exit(1);
+        }
+        console.log('✅ fingerprints.json slimmed (' + kept + ' active driver entries retained)');
+        SLIM_EOF
+
