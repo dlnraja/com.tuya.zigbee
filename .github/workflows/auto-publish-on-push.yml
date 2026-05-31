@@ -300,7 +300,7 @@ jobs:
           # Remove nested .homeybuild if exists
           rm -rf .homeybuild/.homeybuild 2>/dev/null || true
 
-          echo "=== Publishing (root with .homeybuild/ pre-built) ==="
+          echo "=== Publishing from workspace root ==="
           HOMEY_PAT="${HOMEY_PAT}" npx homey app publish
           echo "published=true" >> $GITHUB_OUTPUT
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
