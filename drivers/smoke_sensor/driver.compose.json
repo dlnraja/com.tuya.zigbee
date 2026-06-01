@@ -25,14 +25,7 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_m9skfctm",
-      "_TZE200_m9skfctm",
-      "_TZE200_M9SKFCTM",
-      "_tze200_rccxox8p",
-      "_TZE200_rccxox8p",
-      "_TZE200_RCCXOX8P"
-    ],
+    "manufacturerName": [],
     "productId": [
       "TS0205",
       "TS0601"
