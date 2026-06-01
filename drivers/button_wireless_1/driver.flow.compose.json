@@ -1,6 +1,39 @@
 {
   "triggers": [
     {
+      "id": "button_wireless_1_button_1_pressed",
+      "title": {
+        "fr": "Bouton 1 appuyé",
+        "en": "Button 1 pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton 1 appuyé",
+        "en": "Button 1 pressed"
+      }
+    },
+    {
+      "id": "button_wireless_1_button_1_double",
+      "title": {
+        "fr": "Bouton 1 double-appui",
+        "en": "Button 1 double-pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton 1 double-appui",
+        "en": "Button 1 double-pressed"
+      }
+    },
+    {
+      "id": "button_wireless_1_button_1_long",
+      "title": {
+        "fr": "Bouton 1 appui long",
+        "en": "Button 1 long-pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton 1 appui long",
+        "en": "Button 1 long-pressed"
+      }
+    },
+    {
       "id": "button_wireless_1_battery_low",
       "title": {
         "en": "Battery low",
