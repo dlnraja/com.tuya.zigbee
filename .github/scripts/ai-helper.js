@@ -68,178 +68,136 @@ async function callAIEngine(url, headers, body, providerName, maxRetries = 1, ti
   return null;
 }
 
+const PROVIDER_PROFILES = [
+  { id: 'openrouter', name: 'OpenRouter (Free)', tier: 'free', max_cx: 3, speed: 5, capabilities: ['code', 'analyze', 'merge', 'lookup', 'classify', 'generate'] },
+  { id: 'hf', name: 'HuggingFace', tier: 'free', max_cx: 3, speed: 6, capabilities: ['code', 'analyze', 'merge', 'lookup', 'classify', 'generate'] },
+  { id: 'cerebras', name: 'Cerebras', tier: 'free', max_cx: 2, speed: 10, capabilities: ['lookup', 'classify', 'merge', 'generate'] },
+  { id: 'together', name: 'Together.ai', tier: 'free', max_cx: 2, speed: 9, capabilities: ['lookup', 'classify', 'generate'] },
+  { id: 'groq', name: 'Groq', tier: 'free', max_cx: 2, speed: 10, capabilities: ['lookup', 'classify', 'generate'] },
+  { id: 'deepseek', name: 'DeepSeek', tier: 'paid_low', max_cx: 3, speed: 5, capabilities: ['code', 'analyze', 'merge', 'generate'] },
+  { id: 'gemini', name: 'Gemini (Free Tier)', tier: 'free_limit', max_cx: 3, speed: 7, capabilities: ['code', 'analyze', 'merge', 'lookup', 'classify', 'generate'] },
+  { id: 'gh-models', name: 'GitHub Models', tier: 'free_limit', max_cx: 2, speed: 6, capabilities: ['code', 'analyze', 'generate'] },
+  { id: 'openai', name: 'OpenAI', tier: 'paid_high', max_cx: 3, speed: 7, capabilities: ['code', 'analyze', 'merge', 'generate'] },
+  { id: 'mistral', name: 'Mistral', tier: 'paid_medium', max_cx: 2, speed: 6, capabilities: ['code', 'analyze', 'generate'] },
+  { id: 'kimi', name: 'Kimi', tier: 'paid_medium', max_cx: 3, speed: 6, capabilities: ['analyze', 'merge', 'generate'] }
+];
+
 async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
   const tk = classifyTask(text, sysPrompt, opts);
   
-  // Intelligent Waiter: Global retry loop for the entire API cascade
   let globalAttempts = 0;
   const maxGlobalAttempts = opts.maxGlobalAttempts || 3;
   
   while(globalAttempts < maxGlobalAttempts) {
     const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
-  const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
-  const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
-  
-  _rtLoad();
-  
-  // 1. OpenRouter (Aggregator - High priority)
-  if (process.env.OPENROUTER_API_KEY && cbOk('openrouter')) {
-    console.log('  Trying OpenRouter...');
-    let orModel = 'google/gemini-2.0-flash-lite-preview-02-05:free'; // Safe fallback
-    try {
-      const mr = await fetchT('https://openrouter.ai/api/v1/models', {}, 3000);
-      if (mr.ok) {
-        const d = await mr.json();
-        const frees = d.data.filter(m => m.pricing && m.pricing.prompt === "0" && m.id.endsWith(':free'));
-        if (frees.length > 0) orModel = frees[0].id; // Pick first available free model
-      }
-    } catch(e) {}
+    const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
+    const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
     
-    const res = await callAIEngine(
-      'https://openrouter.ai/api/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY, 'Content-Type': 'application/json'},
-      {model:orModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
-      'openrouter'
-    );
-    if (res) return res;
-  }
+    _rtLoad();
 
-  // 2. HuggingFace (Aggregator)
-  if (process.env.HF_TOKEN && cbOk('hf')) {
-    let hfM='meta-llama/Llama-3.1-8B-Instruct';
-    if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct';
-    else if(tk.type==='code')hfM='Qwen/Qwen2.5-Coder-32B-Instruct';
-    else if(tk.type==='analyze'||tk.type==='merge')hfM='ibm-granite/granite-3.3-8b-instruct';
-    console.log(`  Trying HuggingFace (${hfM})...`);
-    const res = await callAIEngine(
-      'https://router.huggingface.co/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.HF_TOKEN, 'Content-Type': 'application/json'},
-      {model:hfM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
-      `hf-${hfM.split('/').pop()}`
-    );
-    if (res) return res;
-  }
+    // Dynamically score and rank providers based on current task
+    const rankedProviders = PROVIDER_PROFILES.map(p => {
+      let score = 100;
+      // 1. Availability / Keys
+      let hasKey = false;
+      if (p.id === 'openrouter') hasKey = !!process.env.OPENROUTER_API_KEY;
+      if (p.id === 'hf') hasKey = !!process.env.HF_TOKEN;
+      if (p.id === 'cerebras') hasKey = !!process.env.CEREBRAS_API_KEY;
+      if (p.id === 'together') hasKey = !!process.env.TOGETHER_API_KEY;
+      if (p.id === 'groq') hasKey = !!process.env.GROQ_API_KEY;
+      if (p.id === 'deepseek') hasKey = !!process.env.DEEPSEEK_API_KEY;
+      if (p.id === 'gemini') hasKey = !!process.env.GOOGLE_API_KEY;
+      if (p.id === 'gh-models') hasKey = !!(process.env.GH_PAT || process.env.GITHUB_TOKEN);
+      if (p.id === 'openai') hasKey = !!process.env.OPENAI_API_KEY;
+      if (p.id === 'mistral') hasKey = !!process.env.MISTRAL_API_KEY;
+      if (p.id === 'kimi') hasKey = !!process.env.KIMI_API_KEY;
+      
+      if (!hasKey || !cbOk(p.id)) return { ...p, score: -1 }; // Disqualified
 
-  // 3. Cerebras (Fast 70B)
-  if (process.env.CEREBRAS_API_KEY && cbOk('cerebras')) {
-    console.log('  Trying Cerebras...');
-    const res = await callAIEngine(
-      'https://api.cerebras.ai/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.CEREBRAS_API_KEY, 'Content-Type': 'application/json'},
-      {model:'llama3.1-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
-      'cerebras'
-    );
-    if (res) return res;
-  }
+      // 2. Budget and Free Tier Logic
+      if (p.tier === 'paid_high') score -= 50; // Penalize expensive APIs heavily
+      if (p.tier === 'paid_medium' || p.tier === 'paid_low') score -= 20; // Penalize paid APIs slightly
+      
+      if (p.id === 'gemini') {
+          const gemUsed = _rt.d['gemini'] || 0;
+          if (gemUsed >= 1400) return { ...p, score: -1 }; // Hard limit on free tier
+          if (gemUsed > 1000) score -= 15; // Soft penalty near limit
+      }
+      if (p.id === 'openai' && ((_rt.d['openai']||0) >= 200 || (_rt.m['openai']||0) >= 3)) return { ...p, score: -1 };
+      if (p.id === 'mistral' && ((_rt.d['mistral']||0) >= 30 || (_rt.m['mistral']||0) >= 1)) return { ...p, score: -1 };
 
-  // 4. Together.ai
-  if (process.env.TOGETHER_API_KEY && cbOk('together')) {
-    console.log('  Trying Together...');
-    const res = await callAIEngine(
-      'https://api.together.xyz/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.TOGETHER_API_KEY, 'Content-Type': 'application/json'},
-      {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
-      'together'
-    );
-    if (res) return res;
-  }
+      // 3. Complexity Matching
+      if (tk.cx > p.max_cx) score -= 40; // Penalize if model is too weak for the task
+      
+      // 4. Capability Focus
+      if (p.capabilities.includes(tk.type)) {
+          score += 20; // Bonus for specialized capability
+      }
+      
+      // 5. Performance/Speed
+      // For low complexity tasks (lookup/classify), speed is heavily prioritized
+      if (tk.cx <= 1) score += (p.speed * 2);
+      else score += p.speed;
+      
+      return { ...p, score };
+    }).filter(p => p.score > 0).sort((a, b) => b.score - a.score);
 
-  // 5. Groq
-  if (process.env.GROQ_API_KEY && cbOk('groq')) {
-    console.log('  Trying Groq...');
-    const res = await callAIEngine(
-      'https://api.groq.com/openai/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.GROQ_API_KEY, 'Content-Type': 'application/json'},
-      {model:'llama-3.3-70b-versatile', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
-      'groq'
-    );
-    if (res) return res;
-  }
-
-  // 6. DeepSeek
-  if (process.env.DEEPSEEK_API_KEY && cbOk('deepseek')) {
-    const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
-    console.log(`  Trying DeepSeek (${dsM})...`);
-    const res = await callAIEngine(
-      'https://api.deepseek.com/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.DEEPSEEK_API_KEY, 'Content-Type': 'application/json'},
-      {model:dsM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
-      'deepseek'
-    );
-    if (res) return res;
-  }
-
-  // 7. Gemini (High Cap, free tier limits apply)
-  if (process.env.GOOGLE_API_KEY && cbOk('gemini')) {
-    const gemUsed = _rt.d['gemini'] || 0;
-    if (gemUsed < 1400) {
-      console.log('  Trying Gemini...');
-      const res = await callAIEngine(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + process.env.GOOGLE_API_KEY,
-        {'Content-Type': 'application/json'},
-        {systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}], generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}},
-        'gemini'
-      );
-      if (res) return res;
-    } else console.log('  Gemini cap reached.');
-  }
-
-  // 8. GitHub Models 
-  const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
-  if (ghToken && cbOk('gh-models')) {
-    const ghSys = fullSysPrompt.length > 6000 ? sysPrompt.substring(0, 5000) + '...' : fullSysPrompt;
-    console.log('  Trying GitHub Models...');
-    const res = await callAIEngine(
-      'https://models.inference.ai.azure.com/chat/completions',
-      {'Authorization': 'Bearer ' + ghToken, 'Content-Type': 'application/json'},
-      {model:'gpt-4o-mini', messages:[{role:'system',content:ghSys},{role:'user',content:text.substring(0,12000)}], max_tokens:maxTokens, temperature:0.2},
-      'gh-models'
-    );
-    if (res) return res;
-  }
-
-  // 9. OpenAI (Strict Limits)
-  if (process.env.OPENAI_API_KEY && cbOk('openai')) {
-    if ((_rt.d['openai']||0) < 200 && (_rt.m['openai']||0) < 3) {
-      console.log('  Trying OpenAI...');
-      const res = await callAIEngine(
-        'https://api.openai.com/v1/chat/completions',
-        {'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY, 'Content-Type': 'application/json'},
-        {model:'gpt-3.5-turbo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
-        'openai'
-      );
-      if (res) return res;
-    }
-  }
-
-  // 10. Mistral
-  if (process.env.MISTRAL_API_KEY && cbOk('mistral')) {
-    if ((_rt.d['mistral']||0) < 30 && (_rt.m['mistral']||0) < 1) {
-      console.log('  Trying Mistral...');
-      const res = await callAIEngine(
-        'https://api.mistral.ai/v1/chat/completions',
-        {'Authorization': 'Bearer ' + process.env.MISTRAL_API_KEY, 'Content-Type': 'application/json'},
-        {model:'open-mistral-nemo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
-        'mistral'
-      );
-      if (res) return res;
-    }
-  }
-
-    // 11. Kimi
-    if (process.env.KIMI_API_KEY && cbOk('kimi')) {
-      console.log('  Trying Kimi...');
-      const res = await callAIEngine(
-        'https://api.moonshot.cn/v1/chat/completions',
-        {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'},
-        {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
-        'kimi'
-      );
-      if (res) return res;
+    if (rankedProviders.length === 0) {
+        console.log('  [AI Orchestrator] No available providers with remaining budget or keys.');
+        break;
     }
 
-    console.log(`  [Waiter] All AI engines exhausted on attempt ${globalAttempts + 1}/${maxGlobalAttempts}.`);
+    console.log(`  [AI Orchestrator] Task: ${tk.type} (Cx: ${tk.cx}). Best engines: ${rankedProviders.slice(0,3).map(p=>`${p.name}(${p.score})`).join(', ')}`);
+
+    for (const provider of rankedProviders) {
+        console.log(`  Trying ${provider.name}...`);
+        let res = null;
+        
+        if (provider.id === 'openrouter') {
+            let orModel = 'google/gemini-2.0-flash-lite-preview-02-05:free';
+            try {
+              const mr = await fetchT('https://openrouter.ai/api/v1/models', {}, 3000);
+              if (mr.ok) {
+                const d = await mr.json();
+                const frees = d.data.filter(m => m.pricing && m.pricing.prompt === "0" && m.id.endsWith(':free'));
+                if (frees.length > 0) orModel = frees[0].id;
+              }
+            } catch(e) {}
+            res = await callAIEngine('https://openrouter.ai/api/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY, 'Content-Type': 'application/json'}, {model:orModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2}, 'openrouter');
+        } else if (provider.id === 'hf') {
+            let hfM='meta-llama/Llama-3.1-8B-Instruct';
+            if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct';
+            else if(tk.type==='code')hfM='Qwen/Qwen2.5-Coder-32B-Instruct';
+            else if(tk.type==='analyze'||tk.type==='merge')hfM='ibm-granite/granite-3.3-8b-instruct';
+            res = await callAIEngine('https://router.huggingface.co/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.HF_TOKEN, 'Content-Type': 'application/json'}, {model:hfM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2}, `hf-${hfM.split('/').pop()}`);
+        } else if (provider.id === 'cerebras') {
+            res = await callAIEngine('https://api.cerebras.ai/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.CEREBRAS_API_KEY, 'Content-Type': 'application/json'}, {model:'llama3.1-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2}, 'cerebras');
+        } else if (provider.id === 'together') {
+            res = await callAIEngine('https://api.together.xyz/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.TOGETHER_API_KEY, 'Content-Type': 'application/json'}, {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2}, 'together');
+        } else if (provider.id === 'groq') {
+            res = await callAIEngine('https://api.groq.com/openai/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.GROQ_API_KEY, 'Content-Type': 'application/json'}, {model:'llama-3.3-70b-versatile', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2}, 'groq');
+        } else if (provider.id === 'deepseek') {
+            const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
+            res = await callAIEngine('https://api.deepseek.com/chat/completions', {'Authorization': 'Bearer ' + process.env.DEEPSEEK_API_KEY, 'Content-Type': 'application/json'}, {model:dsM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2}, 'deepseek');
+        } else if (provider.id === 'gemini') {
+            res = await callAIEngine('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + process.env.GOOGLE_API_KEY, {'Content-Type': 'application/json'}, {systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}], generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}}, 'gemini');
+        } else if (provider.id === 'gh-models') {
+            const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+            const ghSys = fullSysPrompt.length > 6000 ? sysPrompt.substring(0, 5000) + '...' : fullSysPrompt;
+            res = await callAIEngine('https://models.inference.ai.azure.com/chat/completions', {'Authorization': 'Bearer ' + ghToken, 'Content-Type': 'application/json'}, {model:'gpt-4o-mini', messages:[{role:'system',content:ghSys},{role:'user',content:text.substring(0,12000)}], max_tokens:maxTokens, temperature:0.2}, 'gh-models');
+        } else if (provider.id === 'openai') {
+            res = await callAIEngine('https://api.openai.com/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY, 'Content-Type': 'application/json'}, {model:'gpt-3.5-turbo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2}, 'openai');
+        } else if (provider.id === 'mistral') {
+            res = await callAIEngine('https://api.mistral.ai/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.MISTRAL_API_KEY, 'Content-Type': 'application/json'}, {model:'open-mistral-nemo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2}, 'mistral');
+        } else if (provider.id === 'kimi') {
+            res = await callAIEngine('https://api.moonshot.cn/v1/chat/completions', {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'}, {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2}, 'kimi');
+        }
+        
+        if (res) return res;
+    }
+
+    console.log(`  [Waiter] All scored AI engines exhausted on attempt ${globalAttempts + 1}/${maxGlobalAttempts}.`);
     globalAttempts++;
     if (globalAttempts >= maxGlobalAttempts) break;
     
