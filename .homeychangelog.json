@@ -4,6 +4,15 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "entries": [
+    {
+      "version": "8.1.53",
+      "intro": {
+        "en": "Processing fixed: archive format corrected for Athom server compatibility.",
+        "nl": "Verwerking gecorrigeerd: archiefformaat gecorrigeerd voor Athom server-compatibiliteit."
+      }
+    }
+  ],
   "9.0.1": {
     "en": "v9.0.0:"
   },
@@ -58,37 +67,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.5.38": {
-    "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
-  },
-  "8.1.53": {
-    "en": "v8.1.52:"
-  },
-  "entries": [
-    {
-      "version": "8.1.53",
-      "intro": {
-        "en": "Processing fixed: archive format corrected for Athom server compatibility.",
-        "nl": "Verwerking gecorrigeerd: archiefformaat gecorrigeerd voor Athom server-compatibiliteit."
-      }
-    }
-  ],
-  "8.1.54": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.55": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.56": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.57": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.58": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.59": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
+  "8.1.60": {
+    "en": "v8.1.59:"
   }
 }
