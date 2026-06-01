@@ -14,6 +14,7 @@
 | bulb_dimmable_dimmer | 632 | TS0501A, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, Plug 01, A19 W 10 year, BR30 W 10 year, PAR38 W 10 year, GL-B-001Z, RS 125, RB 165, RB 175 W, ZBT-DimmableLight, TS0501B, TS110E, TS110F | dim, light_hue, light_saturation... |
 | bulb_rgb | 25 | TS0503A, TS0503B, LCT001, LCT002, LCT003, LCT007, LCT010, LCT011, LCT012, LCT014, LCT015, LCT016, GL-C-006, RB 185 C, RB 285 C, E11-G13, E11-G14, E11-G23, ZBT-ColorLight, TS0505A, TS0505B, ZB-CL01, TS0504B | dim, light_hue, light_saturation... |
 | bulb_rgb_led | 4 | TS0505B | dim, light_hue, light_saturation... |
+| bulb_rgb_rgbw | 87 | TS0505A, TS0505B | dim, light_hue, light_saturation... |
 | bulb_rgbw | 243 | generic, TS0504A, TS0504B, TS0505A, TS0505B, Classic A60 RGBW, Flex RGBW, GL-C-008, GL-B-008Z, TS1002, FE-GU10-5W, SMD9300, CK-BL702-AL-01(7009_Z102LG03-1) | onoff, dim, light_hue... |
 | bulb_rgbw_universal | 14 | TS0505B, TS0504B, TS0503B | onoff, dim, measure_temperature... |
 | bulb_tunable_white | 58 | TS0502A, TS0502B, LED1545G12, LED1546G12, LTW001, LTW004, LTW010, LTW012, LTW013, LTW015, Classic A60 TW, GL-C-007, GL-B-007Z, RS 128 T, RB 178 T, E11-N13, E11-N14, E12-N13, E12-N14, ZBT-CCTLight | dim, light_hue, light_saturation... |
@@ -318,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 314 drivers, 29323 manufacturer IDs
+**Total:** 315 drivers, 29410 manufacturer IDs
 
-*Generated: 2026-06-01T00:17:35.506Z*
+*Generated: 2026-06-01T01:33:18.588Z*
