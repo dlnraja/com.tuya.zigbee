@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-01T03:54:48.640Z*
+*Generated: 2026-06-01T07:23:30.431Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 375 |
-| Manufacturer IDs | 194968 |
-| Collisions | 120621 |
+| Manufacturer IDs | 190219 |
+| Collisions | 102957 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_tze200_7bztmfm1|TS0601_air_purifier` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze200_7bztmfm1|TS0601` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_plug, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze200_qpn5q17m|TS0601_air_purifier` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze200_qpn5q17m|TS0601` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze204_7bztmfm1|TS0601_air_purifier` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze204_7bztmfm1|TS0601` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze204_qpn5q17m|TS0601_air_purifier` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze204_qpn5q17m|TS0601` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze20x_xxxxxxxx|TS0601_air_purifier` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_tze20x_xxxxxxxx|TS0601` | air_purifier, air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box, tuya_dummy_device |
-| `_TZ3040_bb6xaihh|TS0601` | air_purifier_motion, bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TZ3040_bb6xaihh|TS0225` | air_purifier_motion, bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TZ3000_lf56vpxj|TS0601` | air_purifier_motion, bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TZ3000_lf56vpxj|TS0225` | air_purifier_motion, bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TZ3040_6ygjfyll|TS0601` | air_purifier_motion, bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TZ3040_6ygjfyll|TS0225` | air_purifier_motion, bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TZE200_7bztmfm1|TS0601_air_purifier` | air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_climate, device_air_purifier_floor, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_TZE200_7bztmfm1|TS0601` | air_purifier_presence, air_purifier_sensor, air_purifier_switch, air_quality_co2, device_air_purifier, device_air_purifier_climate, device_air_purifier_floor, device_air_purifier_plug, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_TZE200_7BZTMFM1|TS0601_air_purifier` | air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
-| `_TZE200_7BZTMFM1|TS0601` | air_purifier_presence, air_purifier_switch, device_air_purifier, device_air_purifier_plug, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, smart_air_detection_box |
+| `_tze20x_xxxxxxxx|TS0601` | air_purifier, tuya_dummy_device |
+| `_TZE200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2 |
+| `_TZE200_rbbx5mfq|TS0601` | air_quality_co2, climate_sensor |
+| `_TZE204_ogkdpgy2|TS0601` | air_quality_co2, climate_sensor |
+| `_TZE204_rbbx5mfq|TS0601` | air_quality_co2, climate_sensor |
+| `_tze200_c2fmom5z|TS0601` | air_quality_co2, climate_sensor |
+| `_tze200_ryfmq5rl|TS0601` | air_quality_co2, climate_sensor |
+| `_tze200_yvx5lh6k|TS0601` | air_quality_co2, climate_sensor |
+| `_tz2000_avdnvykf|TS0601` | air_quality_comprehensive, lcdtemphumidsensor |
+| `_tz2000_hjsgdkfl|TS0601` | air_quality_comprehensive, lcdtemphumidsensor |
+| `_tze200_8ygsuhe1|TS0601` | air_quality_comprehensive, climate_sensor |
+| `_TYZB01_2B8F6CIO|TS0202` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|TS0225` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|ZG-204Z` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|MS01` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|RH3040` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|IH012-RT01` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|TY0202` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|lumi.sensor_motion` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TYZB01_2B8F6CIO|lumi.sensor_motion.aq2` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
 
-*...and 120601 more*
+*...and 102937 more*
 
 ## 📋 Action Items
 
