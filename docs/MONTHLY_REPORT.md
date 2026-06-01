@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-01T13:05:07.934Z*
+*Generated: 2026-06-01T15:20:54.414Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 375 |
-| Manufacturer IDs | 190219 |
-| Collisions | 102957 |
+| Manufacturer IDs | 212482 |
+| Collisions | 120816 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
+| `_tze200_qpn5q17m|TS0601` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
+| `_tze200_qpn5q17m|TS0601_air_purifier` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_qpn5q17m|TS0601` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_qpn5q17m|TS0601_air_purifier` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_QPN5Q17M|TS0601` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_QPN5Q17M|TS0601_air_purifier` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
+| `_tze204_7bztmfm1|TS0601` | air_purifier, device_air_purifier_climate |
+| `_tze204_7bztmfm1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
+| `_TZE204_7bztmfm1|TS0601` | air_purifier, device_air_purifier_climate |
+| `_TZE204_7bztmfm1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
+| `_TZE204_7BZTMFM1|TS0601` | air_purifier, device_air_purifier_climate |
+| `_TZE204_7BZTMFM1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
 | `_tze20x_xxxxxxxx|TS0601` | air_purifier, tuya_dummy_device |
+| `_TZE20X_xxxxxxxx|TS0601` | air_purifier, tuya_dummy_device |
+| `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
+| `_tze200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2 |
 | `_TZE200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2 |
-| `_TZE200_rbbx5mfq|TS0601` | air_quality_co2, climate_sensor |
-| `_TZE204_ogkdpgy2|TS0601` | air_quality_co2, climate_sensor |
-| `_TZE204_rbbx5mfq|TS0601` | air_quality_co2, climate_sensor |
-| `_tze200_c2fmom5z|TS0601` | air_quality_co2, climate_sensor |
-| `_tze200_ryfmq5rl|TS0601` | air_quality_co2, climate_sensor |
-| `_tze200_yvx5lh6k|TS0601` | air_quality_co2, climate_sensor |
-| `_tz2000_avdnvykf|TS0601` | air_quality_comprehensive, lcdtemphumidsensor |
-| `_tz2000_hjsgdkfl|TS0601` | air_quality_comprehensive, lcdtemphumidsensor |
-| `_tze200_8ygsuhe1|TS0601` | air_quality_comprehensive, climate_sensor |
-| `_TYZB01_2B8F6CIO|TS0202` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|TS0225` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|ZG-204Z` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|MS01` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|RH3040` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|IH012-RT01` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|TY0202` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|lumi.sensor_motion` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
-| `_TYZB01_2B8F6CIO|lumi.sensor_motion.aq2` | bed_sensor, motion_sensor, radar_sensor_2, radar_sensor_ceiling |
+| `_TZE200_3TOWULQD|TS0601` | air_purifier_presence, motion_sensor_2 |
+| `_tz3210_guijtl8k|TS0601` | air_quality_co2, dimmer_wall_1gang |
+| `_TZ3210_guijtl8k|TS0601` | air_quality_co2, dimmer_wall_1gang |
 
-*...and 102937 more*
+*...and 120796 more*
 
 ## 📋 Action Items
 
