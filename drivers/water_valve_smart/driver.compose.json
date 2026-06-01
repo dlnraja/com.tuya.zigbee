@@ -48,9 +48,6 @@
       "_tz3000_8n7lqbm0",
       "_TZ3000_8n7lqbm0",
       "_TZ3000_8N7LQBM0",
-      "_tz3000_yz38gdra",
-      "_TZ3000_yz38gdra",
-      "_TZ3000_YZ38GDRA",
       "_tz3000_ctftgjwb",
       "_TZ3000_ctftgjwb",
       "_TZ3000_CTFTGJWB",
@@ -60,6 +57,9 @@
       "_tz3000_udl7uyd2",
       "_TZ3000_udl7uyd2",
       "_TZ3000_UDL7UYD2",
+      "_tz3000_yz38gdra",
+      "_TZ3000_yz38gdra",
+      "_TZ3000_YZ38GDRA",
       "_tz3218_7fiyo3kv",
       "_TZ3218_7fiyo3kv",
       "_TZ3218_7FIYO3KV",
@@ -84,18 +84,18 @@
       "_tze284_7zazvlyn",
       "_TZE284_7zazvlyn",
       "_TZE284_7ZAZVLYN",
-      "_tze284_vuwtqx0t",
-      "_TZE284_vuwtqx0t",
-      "_TZE284_VUWTQX0T",
-      "_tze284_wt66haax",
-      "_TZE284_wt66haax",
-      "_TZE284_WT66HAAX",
       "_tze284_ajlu4cud",
       "_TZE284_ajlu4cud",
       "_TZE284_AJLU4CUD",
       "_tze284_idn2htgu",
       "_TZE284_idn2htgu",
-      "_TZE284_IDN2HTGU"
+      "_TZE284_IDN2HTGU",
+      "_tze284_vuwtqx0t",
+      "_TZE284_vuwtqx0t",
+      "_TZE284_VUWTQX0T",
+      "_tze284_wt66haax",
+      "_TZE284_wt66haax",
+      "_TZE284_WT66HAAX"
     ],
     "learnmode": {
       "image": "/drivers/water_valve_smart/assets/learnmode.svg",
@@ -105,13 +105,13 @@
       }
     },
     "productId": [
-      "TS0601_watervalve",
-      "TS0601",
+      "SWV-ZFE",
+      "SWV-ZFU",
       "SWV-ZN",
       "SWV-ZNE",
-      "SWV-ZFE",
       "SWV-ZNU",
-      "SWV-ZFU"
+      "TS0601",
+      "TS0601_watervalve"
     ],
     "endpoints": {
       "1": {

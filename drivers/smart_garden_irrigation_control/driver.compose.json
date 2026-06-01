@@ -37,16 +37,16 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_eymunffl",
-      "_TZ3210_eymunffl",
-      "_TZ3210_EYMUNFFL",
       "_tz3000_mq4wujmp",
       "_TZ3000_mq4wujmp",
-      "_TZ3000_MQ4WUJMP"
+      "_TZ3000_MQ4WUJMP",
+      "_tz3210_eymunffl",
+      "_TZ3210_eymunffl",
+      "_TZ3210_EYMUNFFL"
     ],
     "productId": [
-      "TS0101",
-      "TS0049"
+      "TS0049",
+      "TS0101"
     ],
     "endpoints": {
       "1": {

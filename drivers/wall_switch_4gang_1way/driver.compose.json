@@ -76,20 +76,20 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3002_vaq2bfcu",
-      "_TZ3002_vaq2bfcu",
-      "_TZ3002_VAQ2BFCU",
       "_tz3000_2ei1fkwb",
       "_TZ3000_2ei1fkwb",
       "_TZ3000_2EI1FKWB",
       "_tz3000_hy5lggkg",
       "_TZ3000_hy5lggkg",
-      "_TZ3000_HY5LGGKG"
+      "_TZ3000_HY5LGGKG",
+      "_tz3002_vaq2bfcu",
+      "_TZ3002_vaq2bfcu",
+      "_TZ3002_VAQ2BFCU"
     ],
     "productId": [
-      "TS0726",
       "TS0004",
-      "TS0014"
+      "TS0014",
+      "TS0726"
     ],
     "endpoints": {
       "1": {

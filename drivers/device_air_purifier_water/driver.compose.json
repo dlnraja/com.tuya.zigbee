@@ -69,10 +69,9 @@
     "large": "/drivers/water_tank_monitor/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
+      "TS0601",
+      "TS0601_air_purifier"
     ],
     "endpoints": {
       "1": {

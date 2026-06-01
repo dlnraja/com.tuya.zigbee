@@ -4,11 +4,11 @@
 # Runs every Monday at 06:00 UTC.
 # Sources: Z2M, ZHA, Blakadder, deCONZ, Hubitat, JohanBendz upstream, GitHub Issues
 
-name: "🌌 UNIFIED ENGINE — Weekly Fingerprint Sync"
+name: "🌌 UNIFIED ENGINE — Daily Fingerprint LazyLoad Sync"
 
 on:
   schedule:
-    - cron: '0 6 * * 1'
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -170,6 +170,13 @@ jobs:
           echo "Running fingerprint conflict resolver..."
           node scripts/automation/fix-fingerprint-conflicts.js
           echo "Conflict resolution complete."
+
+      # Step 3.5d: Optimize MFs and LazyLoad JSON DBs
+      - name: Optimize JSON and Static MFs
+        run: |
+          echo "Optimizing JSON databases and static driver.compose.json arrays..."
+          node scripts/automation/optimize-mf-databases.js
+          echo "Optimization complete."
 
       # Step 4: Check for changes
       - name: Check changes

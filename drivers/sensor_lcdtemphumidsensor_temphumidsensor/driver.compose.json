@@ -19,6 +19,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tyzb01_a082h2cc",
+      "_TYZB01_A082H2CC",
       "_tz2000_a476raq2",
       "_TZ2000_a476raq2",
       "_TZ2000_A476RAQ2",
@@ -30,14 +32,12 @@
       "_TZ3000_RUSU2VZB",
       "_tza226_ueagguan",
       "_TZA226_ueagguan",
-      "_TZA226_UEAGGUAN",
-      "_tyzb01_a082h2cc",
-      "_TYZB01_A082H2CC"
+      "_TZA226_UEAGGUAN"
     ],
     "productId": [
-      "TS0601_lcd",
-      "TS0601",
       "TS0201",
+      "TS0601",
+      "TS0601_lcd",
       "TY0201"
     ],
     "endpoints": {

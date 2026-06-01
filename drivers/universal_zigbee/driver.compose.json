@@ -69,6 +69,12 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_ty",
+      "_TY",
+      "_tyst",
+      "_TYST",
+      "_tyzb",
+      "_TYZB",
       "_tz",
       "_TZ",
       "_tzb",
@@ -93,12 +99,6 @@
       "_TZS",
       "_tzw",
       "_TZW",
-      "_ty",
-      "_TY",
-      "_tyst",
-      "_TYST",
-      "_tyzb",
-      "_TYZB",
       "lidl livarno",
       "LIDL LIVARNO",
       "nous",
@@ -109,6 +109,7 @@
       "TUYATEC"
     ],
     "productId": [
+      "q9mpfhw",
       "TS0001",
       "TS0002",
       "TS0003",
@@ -175,8 +176,7 @@
       "TS0601",
       "TS110E",
       "TS110F",
-      "TS130F",
-      "q9mpfhw"
+      "TS130F"
     ],
     "endpoints": {
       "1": {

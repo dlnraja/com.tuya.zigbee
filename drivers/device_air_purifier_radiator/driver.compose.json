@@ -27,10 +27,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
+      "TS0601",
+      "TS0601_air_purifier"
     ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",

@@ -35,14 +35,14 @@
   },
   "zigbee": {
     "productId": [
-      "TS0040",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-01M",
-      "WB01",
-      "WB-01",
       "CK-TLSR8656-SS5-01(7000)",
-      "TS0041"
+      "SNZB-01",
+      "SNZB-01M",
+      "SNZB-01P",
+      "TS0040",
+      "TS0041",
+      "WB-01",
+      "WB01"
     ],
     "endpoints": {
       "1": {

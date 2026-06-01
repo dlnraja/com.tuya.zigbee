@@ -46,8 +46,6 @@
       }
     ],
     "manufacturerName": [
-      "moes",
-      "MOES",
       "_tyzb01_4mdqxxnn",
       "_TYZB01_4MDQXXNN",
       "_tyzb01_m6ec2pgj",
@@ -75,7 +73,9 @@
       "_TZE200_KLTFFUZL",
       "_tze204_dwcarsat",
       "_TZE204_dwcarsat",
-      "_TZE204_DWCARSAT"
+      "_TZE204_DWCARSAT",
+      "moes",
+      "MOES"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",

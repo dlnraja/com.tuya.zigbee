@@ -26,18 +26,18 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_typddjyr",
-      "_TZ3000_typddjyr",
-      "_TZ3000_TYPDDJYR",
       "_tz3000_m8f08ihs",
       "_TZ3000_m8f08ihs",
-      "_TZ3000_M8F08IHS"
+      "_TZ3000_M8F08IHS",
+      "_tz3000_typddjyr",
+      "_TZ3000_typddjyr",
+      "_TZ3000_TYPDDJYR"
     ],
     "productId": [
-      "TS0601",
       "TS0001",
       "TS0002",
-      "TS011F"
+      "TS011F",
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/doorbell/assets/learnmode.svg",

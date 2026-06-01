@@ -14,17 +14,17 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_vrjkcam9",
-      "_TZE200_vrjkcam9",
-      "_TZE200_VRJKCAM9",
       "_tz3000_ahxwesag",
       "_TZ3000_ahxwesag",
-      "_TZ3000_AHXWESAG"
+      "_TZ3000_AHXWESAG",
+      "_tze200_vrjkcam9",
+      "_TZE200_vrjkcam9",
+      "_TZE200_VRJKCAM9"
     ],
     "productId": [
-      "TS0601_valve",
+      "TS0001",
       "TS0601",
-      "TS0001"
+      "TS0601_valve"
     ],
     "endpoints": {
       "1": {

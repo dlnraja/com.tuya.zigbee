@@ -35,8 +35,8 @@
   "subDevices": [],
   "zigbee": {
     "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
+      "TS0601",
+      "TS0601_air_purifier"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",

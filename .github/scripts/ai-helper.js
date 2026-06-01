@@ -253,18 +253,21 @@ async function callAI(text,sysPrompt,opts={}){
   return { text: "AI_OFFLINE_OR_LIMIT_REACHED", model: "fallback-error-system" };
 }
 
-// Map-Reduce logic with varying models for concurrency
+// Map-Reduce logic with dynamic N-way split and capability-based routing
 async function splitTaskAndCombine(text, sysPrompt, opts={}) {
   const maxTokens = opts.maxTokens || 2048;
   const tk = classifyTask(text, sysPrompt, opts);
   
-  if (text.length < 3000 || tk.cx <= 1 || (opts.depth||0) >= 2) {
+  // Base case: small text, trivial task, or max depth reached
+  if (text.length < 4000 || tk.cx <= 1 || (opts.depth||0) >= 2) {
     return await callAI(text, sysPrompt, opts);
   }
   
-  console.log(`  [AI Orchestrator] Slicing task (depth ${opts.depth||0}) length (${text.length})`);
+  // Calculate intelligent split factor based on length and complexity
+  const numChunks = Math.min(4, Math.max(2, Math.ceil(text.length / 4000)));
+  console.log(`  [AI Orchestrator] Slicing task (depth ${opts.depth||0}) length (${text.length}) into ${numChunks} chunks for Agents...`);
   
-  const slicePrompt = `Split the following complex text into exactly TWO non-overlapping sub-tasks (JSON array of 2 strings). Preserve all details. Do not solve them. Output ONLY valid JSON: ["PART1_TEXT...", "PART2_TEXT..."]`;
+  const slicePrompt = `Split the following complex text into exactly ${numChunks} non-overlapping, logical sub-tasks (JSON array of ${numChunks} strings). Preserve all details. Do not solve them. Output ONLY valid JSON array of strings: ["PART1...", "PART2..."]`;
   const sliceRes = await callAI(text, slicePrompt, { maxTokens: 4096, complexity: 1 });
   
   let parts = null;
@@ -272,31 +275,39 @@ async function splitTaskAndCombine(text, sysPrompt, opts={}) {
     try {
       const cleaned = sliceRes.text.replace(/```json/g, '').replace(/```/g, '').trim();
       parts = JSON.parse(cleaned);
-      if (!Array.isArray(parts) || parts.length !== 2) parts = null;
+      if (!Array.isArray(parts) || parts.length < 2) parts = null;
     } catch(e) {}
   }
   
-  if (!parts) return await callAI(text, sysPrompt, opts);
+  if (!parts) return await callAI(text, sysPrompt, opts); // Fallback if parsing fails
   
-  // Parallel map with offset to force different providers if possible 
-  // (In practice, cbOk/rate limiting and random jitter organically distribute load if run concurrently)
-  console.log(`  [AI Orchestrator] Sub-task execution in parallel...`);
-  const results = await Promise.all([
-    splitTaskAndCombine(parts[0], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
-    splitTaskAndCombine(parts[1], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
-    sleep(1000) // Small offset
-  ]);
+  // Parallel map dispatch to specialized agents
+  console.log(`  [AI Orchestrator] Dispatching ${parts.length} sub-tasks to available agents...`);
   
-  if (!results[0] || !results[1]) return results[0] || results[1] || null;
+  const tasks = parts.map((part, index) => {
+      // Add slight offset and task-specific hint to encourage diverse API selection
+      return sleep(index * 1500).then(() => 
+          splitTaskAndCombine(part, sysPrompt + `\n(Focus on sub-task ${index+1}/${parts.length})`, { ...opts, depth: (opts.depth||0)+1 })
+      );
+  });
+
+  const results = await Promise.all(tasks);
   
-  console.log(`  [AI Orchestrator] Merging solutions...`);
-  const mergeSystem = `Merge these two processed parts seamlessly. Original goal: ${sysPrompt}`;
-  const mergeText = `[PART 1]\n${results[0].text}\n\n[PART 2]\n${results[1].text}`;
+  const validResults = results.filter(r => r && r.text && r.text !== "AI_OFFLINE_OR_LIMIT_REACHED");
+  if (validResults.length === 0) return { text: "AI_OFFLINE_OR_LIMIT_REACHED", model: "map-reduce-fail" };
   
-  const finalRes = await callAI(mergeText, mergeSystem, { ...opts, maxTokens: Math.max(maxTokens, 4000) });
-  if (finalRes) return { text: finalRes.text, model: `map-reduce(${results[0].model}+${results[1].model}->${finalRes.model})` };
+  console.log(`  [AI Orchestrator] Merging ${validResults.length} partial solutions intelligently...`);
+  const mergeSystem = `Merge these processed parts seamlessly into a single cohesive output. Original goal: ${sysPrompt}`;
+  const mergeText = validResults.map((r, i) => `[PART ${i+1} from ${r.model}]\n${r.text}`).join('\n\n');
   
-  return { text: results[0].text + '\n\n' + results[1].text, model: 'map-reduce(fallback)' };
+  const finalRes = await callAI(mergeText, mergeSystem, { ...opts, maxTokens: Math.max(maxTokens, 4000), complexity: tk.cx + 1 }); // Bump complexity for merge step
+  
+  if (finalRes) {
+      const usedModels = validResults.map(r => r.model.split('-')[0]).join('+');
+      return { text: finalRes.text, model: `orchestrator(${usedModels}->${finalRes.model})` };
+  }
+  
+  return { text: validResults.map(r => r.text).join('\n\n'), model: 'orchestrator(fallback-concat)' };
 }
 
 async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}

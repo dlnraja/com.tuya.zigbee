@@ -27,16 +27,16 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_85czd6fy",
-      "_TZ3000_85czd6fy",
-      "_TZ3000_85CZD6FY",
       "_tz3000_6oabgtzv",
       "_TZ3000_6oabgtzv",
-      "_TZ3000_6OABGTZV"
+      "_TZ3000_6OABGTZV",
+      "_tz3000_85czd6fy",
+      "_TZ3000_85czd6fy",
+      "_TZ3000_85CZD6FY"
     ],
     "productId": [
-      "TS0207",
-      "q9mpfhw"
+      "q9mpfhw",
+      "TS0207"
     ],
     "endpoints": {
       "1": {

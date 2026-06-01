@@ -29,7 +29,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,8 +45,8 @@
       }
     },
     "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
+      "TS0601",
+      "TS0601_air_purifier"
     ]
   },
   "settings": [
