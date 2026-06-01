@@ -7,6 +7,16 @@ class BedSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('[BED] Bed Sensor initializing...');
+    
+    // Explicitly remove bogus inherited capabilities for temperature/humidity
+    if (this.hasCapability('measure_temperature')) {
+      await this.removeCapability('measure_temperature').catch(() => {});
+      this.log('[BED] Removed bogus measure_temperature capability');
+    }
+    if (this.hasCapability('measure_humidity')) {
+      await this.removeCapability('measure_humidity').catch(() => {});
+      this.log('[BED] Removed bogus measure_humidity capability');
+    }
 
     this._setupDPListeners();
   }
@@ -26,13 +36,10 @@ class BedSensorDevice extends UnifiedSensorBase {
       103: { capability: null, internal: 'delay_occupied', writable: true }
     };
 
-    if (this._dpMappings) {
-      Object.assign(this._dpMappings, dpMappings);
-    } else {
-      this._dpMappings = dpMappings;
-    }
+    // Completely overwrite any inherited default mappings (which map DP2 to humidity, etc.)
+    this._dpMappings = dpMappings;
 
-    this.log('[BED] DP mappings configured', Object.keys(dpMappings).length);
+    this.log('[BED] DP mappings strictly configured for Bed Sensor:', Object.keys(dpMappings).length);
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
