@@ -351,7 +351,10 @@
       "tuyatec-zw6hxafz",
       "TUYATEC-ZW6HXAFZ",
       "vabrate",
-      "VABRATE"
+      "VABRATE",
+      "_TZE200_locansqn",
+      "_tze200_locansqn",
+      "_TZE200_LOCANSQN"
     ],
     "productId": [
       "3305-S",
@@ -739,8 +742,7 @@
   ],
   "images": {
     "small": "/drivers/motion_sensor/assets/images/small.png",
-    "large": "/drivers/motion_sensor/assets/images/large.png",
-    "xlarge": "/drivers/motion_sensor/assets/images/xlarge.png"
+    "large": "/drivers/motion_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

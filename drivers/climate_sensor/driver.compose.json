@@ -765,9 +765,6 @@
       "_tze200_llm0epxg",
       "_TZE200_llm0epxg",
       "_TZE200_LLM0EPXG",
-      "_tze200_locansqn",
-      "_TZE200_locansqn",
-      "_TZE200_LOCANSQN",
       "_tze200_lve3dvpy",
       "_TZE200_lve3dvpy",
       "_TZE200_LVE3DVPY",
@@ -1704,9 +1701,6 @@
       "_tze284_kyyu8rbj",
       "_TZE284_kyyu8rbj",
       "_TZE284_KYYU8RBJ",
-      "_tze284_locansqn",
-      "_TZE284_locansqn",
-      "_TZE284_LOCANSQN",
       "_tze284_m1cvyneb",
       "_TZE284_m1cvyneb",
       "_TZE284_M1CVYNEB",
@@ -2381,8 +2375,7 @@
   ],
   "images": {
     "small": "/drivers/climate_sensor/assets/images/small.png",
-    "large": "/drivers/climate_sensor/assets/images/large.png",
-    "xlarge": "/drivers/climate_sensor/assets/images/xlarge.png"
+    "large": "/drivers/climate_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

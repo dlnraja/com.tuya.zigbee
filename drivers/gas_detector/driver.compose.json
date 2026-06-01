@@ -33,9 +33,6 @@
       "_tz3000_8nysnv3b",
       "_TZ3000_8nysnv3b",
       "_TZ3000_8NYSNV3B",
-      "_tz3000_ywagc4rj",
-      "_TZ3000_ywagc4rj",
-      "_TZ3000_YWAGC4RJ",
       "_tz3210_ncw88jfq",
       "_TZ3210_ncw88jfq",
       "_TZ3210_NCW88JFQ",
@@ -308,8 +305,7 @@
   ],
   "images": {
     "small": "/drivers/gas_detector/assets/images/small.png",
-    "large": "/drivers/gas_detector/assets/images/large.png",
-    "xlarge": "/drivers/gas_detector/assets/images/xlarge.png"
+    "large": "/drivers/gas_detector/assets/images/large.png"
   },
   "platforms": [
     "local"
