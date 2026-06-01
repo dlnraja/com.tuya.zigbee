@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-01T15:20:55.184Z",
-  "currentCount": 10667,
+  "ts": "2026-06-01T17:12:25.844Z",
+  "currentCount": 10668,
   "src": {
     "johan": {
       "count": 650,
@@ -19280,7 +19280,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 54,
       "prCount": 2,
       "deviceRequests": [
         {
@@ -19367,6 +19367,14 @@
             "_TZ3000_b4awzgct",
             "_TZ3000_b4awzgct",
             "_TZ3000_b4awzgct"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1408,
+          "title": "Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw)",
+          "mfrs": [
+            "_TZ3210_jlf1nepw"
           ]
         },
         {
@@ -19531,16 +19539,6 @@
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1389,
-          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
-          "mfrs": [
-            "_TZ3000_qja6nq5z",
-            "_TZ3000_qja6nq5z",
-            "_TZ3000_qja6nq5z"
           ]
         }
       ]
