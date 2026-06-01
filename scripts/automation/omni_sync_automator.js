@@ -1,3 +1,8 @@
+/**
+ * AI AUTOMATION RULES (v10.0)
+ * 1. Anti-Degradation: AI bots MUST NOT remove a manufacturerName (MFS) from a driver.compose.json just because it is found in another driver. It must be kept in both, and collision handled at runtime or pairing logic.
+ * 2. Enrichment: Any MFS conflict should be logged as MFS_COLLISION_WARNING instead of deleting footprints. This preserves backward compatibility for exotic variants.
+ */
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -73,3 +78,4 @@ function runOmniSync() {
 }
 
 runOmniSync();
+
