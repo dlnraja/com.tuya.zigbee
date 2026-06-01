@@ -29,3 +29,7 @@ To ensure every driver in the Universal Tuya Engine adheres to the **5 Levels of
 ## 💡 Pro-Tips
 - Use `claude-code-local` for deep repository scans to avoid cloud latency.
 - Leverage `antigravity-awesome-skills` to find community-validated DP patterns for exotic hardware.
+
+## AI AUTOMATION RULES (v10.0)
+1. **Anti-Degradation**: AI bots MUST NOT remove a manufacturerName (MFS) from a driver.compose.json just because it is found in another driver. It must be kept in both, and collision handled at runtime or pairing logic.
+2. **Enrichment**: Any MFS conflict should be logged as MFS_COLLISION_WARNING instead of deleting footprints. This preserves backward compatibility for exotic variants.
