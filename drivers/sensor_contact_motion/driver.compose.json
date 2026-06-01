@@ -405,8 +405,11 @@
       }
     },
     "manufacturerName": [
+      "_tz3000_sensor_contact_motion",
       "_TZ3000_sensor_contact_motion",
-      "zbeacon"
+      "_TZ3000_SENSOR_CONTACT_MOTION",
+      "zbeacon",
+      "ZBEACON"
     ]
   }
 }

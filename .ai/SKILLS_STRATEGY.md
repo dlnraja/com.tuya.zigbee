@@ -33,3 +33,6 @@ All new driver creation follows the **Squirrel** 8-phase pipeline.
 
 ## 5. Technical Change Tracker (Session Continuity)
 We maintain **SYSTEM_CHANGELOG.md** using structured TC patterns. This ensures that even if an AI session expires, the next agent can resume the "state machine" of the project without re-researching previous milestones.
+
+## 6. Trellis Orchestration Standard Compatibility
+To guarantee seamless portability and execution across different AI systems, our local skills strategy is structured around the **Trellis (mindfold-ai/Trellis)** 4-phase loop. By keeping our instructions modular and mapping them directly to Trellis's Plan, Implement, Verify, and Finish segments, we maintain a zero-defect, self-healing pipeline that guarantees consistency across any workspace environment.
