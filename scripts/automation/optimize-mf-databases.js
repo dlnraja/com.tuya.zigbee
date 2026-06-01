@@ -74,8 +74,30 @@ function optimizeLazyDB(dbPath) {
                 if (!uniqueMap.has(key)) {
                     uniqueMap.set(key, fp);
                 } else {
-                    // merge properties if needed, here we just keep the first or combine
-                    Object.assign(uniqueMap.get(key), fp);
+                    // SMART HEURISTIC: Prioritize User Feedback > Z2M > ZHA > Blakadder
+                    const existing = uniqueMap.get(key);
+                    const resolveSourcePriority = (source) => {
+                        if (typeof source !== 'string') return 0;
+                        const s = source.toLowerCase();
+                        if (s.includes('user') || s.includes('issue') || s.includes('forum')) return 4;
+                        if (s.includes('z2m') || s.includes('zigbee2mqtt')) return 3;
+                        if (s.includes('zha')) return 2;
+                        if (s.includes('blakadder')) return 1;
+                        return 0;
+                    };
+                    const pExist = resolveSourcePriority(existing.source);
+                    const pNew = resolveSourcePriority(fp.source);
+                    
+                    if (pNew > pExist) {
+                        uniqueMap.set(key, Object.assign({}, existing, fp, { _merged_from_smart_heuristic: true }));
+                    } else if (pNew === pExist) {
+                        // Merge preserving existing data as primary
+                        const merged = Object.assign({}, fp, existing);
+                        uniqueMap.set(key, merged);
+                    } else {
+                        // Existing has higher priority, but merge any non-conflicting new properties
+                        uniqueMap.set(key, Object.assign({}, fp, existing));
+                    }
                 }
             });
             optimizedData = Array.from(uniqueMap.values()).sort((a, b) => {
@@ -106,4 +128,23 @@ optimizeLazyDB('data/fingerprints.json');
 optimizeLazyDB('lib/tuya/fingerprints.json');
 optimizeLazyDB('driver-mapping-database.json');
 
-console.log("MF Optimization completed.");
+// 3. Intelligent Size Prevention (Minify app.json if too large)
+function optimizeAppJsonSize() {
+    const appJsonPath = 'app.json';
+    if (!fs.existsSync(appJsonPath)) return;
+    try {
+        const stats = fs.statSync(appJsonPath);
+        const sizeMB = stats.size / (1024 * 1024);
+        if (sizeMB > 3.0) { // If over 3MB, auto-minify to prevent Athom 5MB limit
+            console.log(`⚠️ app.json is ${sizeMB.toFixed(2)}MB. Auto-minifying to prevent Athom size limits...`);
+            const data = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
+            fs.writeFileSync(appJsonPath, JSON.stringify(data, null, 0), 'utf8');
+            console.log(`✅ app.json minified successfully.`);
+        }
+    } catch (e) {
+        console.error(`Error optimizing app.json size: ${e.message}`);
+    }
+}
+optimizeAppJsonSize();
+
+console.log("MF Optimization & Smart Adaptation completed.");
