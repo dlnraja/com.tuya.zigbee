@@ -46,6 +46,7 @@ jobs:
   validate:
     name: 🛡️ Validate
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - uses: actions/checkout@v5
@@ -159,6 +160,7 @@ jobs:
     name: 🚀 Publish & Promote
     needs: validate
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     if: |
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))

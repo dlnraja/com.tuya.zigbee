@@ -24,21 +24,21 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3000_5bpeda8u",
+      "_TZ3000_5bpeda8u",
+      "_TZ3000_5BPEDA8U",
       "_tz3000_peszejy7",
       "_TZ3000_peszejy7",
       "_TZ3000_PESZEJY7",
       "_tz3000_qzjcsmar",
       "_TZ3000_qzjcsmar",
-      "_TZ3000_QZJCSMAR",
-      "_tz3000_5bpeda8u",
-      "_TZ3000_5bpeda8u",
-      "_TZ3000_5BPEDA8U"
+      "_TZ3000_QZJCSMAR"
     ],
     "productId": [
-      "TS0601_scene1",
-      "TS0601",
+      "TS0041",
       "TS004F",
-      "TS0041"
+      "TS0601",
+      "TS0601_scene1"
     ],
     "endpoints": {
       "1": {

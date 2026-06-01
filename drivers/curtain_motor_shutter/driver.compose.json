@@ -54,8 +54,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601",
-      "TS0301"
+      "TS0301",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -74,12 +74,12 @@
       }
     },
     "manufacturerName": [
-      "_tze200_wmcdj3aq",
-      "_TZE200_wmcdj3aq",
-      "_TZE200_WMCDJ3AQ",
       "_tze200_cowvfni3",
       "_TZE200_cowvfni3",
-      "_TZE200_COWVFNI3"
+      "_TZE200_COWVFNI3",
+      "_tze200_wmcdj3aq",
+      "_TZE200_wmcdj3aq",
+      "_TZE200_WMCDJ3AQ"
     ]
   },
   "settings": [

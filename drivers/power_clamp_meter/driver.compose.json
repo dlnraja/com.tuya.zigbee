@@ -97,9 +97,15 @@
   ],
   "zigbee": {
     "manufacturerName": [
+      "_tze200_81yrt3lo",
+      "_TZE200_81yrt3lo",
+      "_TZE200_81YRT3LO",
       "_tze200_sur36rju",
       "_TZE200_sur36rju",
       "_TZE200_SUR36RJU",
+      "_tze204_81yrt3l",
+      "_TZE204_81yrt3l",
+      "_TZE204_81YRT3L",
       "_tze204_d0ypnbvn",
       "_TZE204_d0ypnbvn",
       "_TZE204_D0YPNBVN",
@@ -109,19 +115,13 @@
       "_tze284_byzdayie",
       "_TZE284_byzdayie",
       "_TZE284_BYZDAYIE",
-      "_tze200_81yrt3lo",
-      "_TZE200_81yrt3lo",
-      "_TZE200_81YRT3LO",
-      "_tze204_81yrt3l",
-      "_TZE204_81yrt3l",
-      "_TZE204_81YRT3L",
       "_tze28c1000000_81yrt3lo",
       "_TZE28C1000000_81yrt3lo",
       "_TZE28C1000000_81YRT3LO"
     ],
     "productId": [
-      "TS0601_clamp",
-      "TS0601"
+      "TS0601",
+      "TS0601_clamp"
     ],
     "endpoints": {
       "1": {

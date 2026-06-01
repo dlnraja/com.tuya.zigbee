@@ -28,12 +28,13 @@ jobs:
   verify-and-lint:
     name: 🕵️ Vérification & Syntaxe
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22' # Requis pour Homey SDK v3 / Node 22 env
 
@@ -70,11 +71,12 @@ jobs:
   analyze-diagnostics:
     name: 📧 Analyse des Crashs & Dump Emails
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: verify-and-lint
     if: ${{ github.event.inputs.run_diagnostics == 'true' }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📥 Traitement du Dump de Crashs (v7.4.8 & v7.4.6)
         run: |
@@ -109,13 +111,14 @@ jobs:
   build-and-publish:
     name: 🚀 Build & Publish Test Channel
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: verify-and-lint
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with: { node-version: '22' }
 
       - name: Install Homey CLI

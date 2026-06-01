@@ -27,10 +27,9 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
-      "TY0203",
-      "TS0203"
+      "TS0203",
+      "TY0203"
     ],
     "endpoints": {
       "1": {

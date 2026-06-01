@@ -26,14 +26,14 @@
   },
   "zigbee": {
     "productId": [
-      "TS0040",
-      "SNZB-01",
-      "SNZB-01P",
-      "SNZB-01M",
-      "WB01",
-      "WB-01",
       "CK-TLSR8656-SS5-01(7000)",
-      "TS0041"
+      "SNZB-01",
+      "SNZB-01M",
+      "SNZB-01P",
+      "TS0040",
+      "TS0041",
+      "WB-01",
+      "WB01"
     ],
     "endpoints": {
       "1": {
@@ -61,6 +61,20 @@
       }
     },
     "manufacturerName": [
+      "_tyzb01_",
+      "_TYZB01_",
+      "_tyzb02_keyjqthh",
+      "_TYZB02_KEYJQTHH",
+      "_tz3000_",
+      "_TZ3000_",
+      "_tz3400_",
+      "_TZ3400_",
+      "_tz3400_key8kk7r",
+      "_TZ3400_key8kk7r",
+      "_TZ3400_KEY8KK7R",
+      "_tz3400_keyjhapk",
+      "_TZ3400_keyjhapk",
+      "_TZ3400_KEYJHAPK",
       "ts0041",
       "TS0041",
       "ts0042",
@@ -68,21 +82,7 @@
       "ts0043",
       "TS0043",
       "ts0044",
-      "TS0044",
-      "_tz3000_",
-      "_TZ3000_",
-      "_tz3400_",
-      "_TZ3400_",
-      "_tyzb01_",
-      "_TYZB01_",
-      "_tz3400_key8kk7r",
-      "_TZ3400_key8kk7r",
-      "_TZ3400_KEY8KK7R",
-      "_tz3400_keyjhapk",
-      "_TZ3400_keyjhapk",
-      "_TZ3400_KEYJHAPK",
-      "_tyzb02_keyjqthh",
-      "_TYZB02_KEYJQTHH"
+      "TS0044"
     ]
   },
   "images": {

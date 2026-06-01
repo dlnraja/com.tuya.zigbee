@@ -44,6 +44,33 @@ function printHeader() {
   console.log(`${colors.cyan}${colors.bold}═══════════════════════════════════════════════════════════════════════════${colors.reset}\n`);
 }
 
+// ─── PNG dimension helper ───────────────────────────────────────────────────
+function pngDimensions(filePath) {
+  try {
+    const buf = fs.readFileSync(filePath);
+    if (buf.length < 24 || buf[0] !== 0x89 || buf[1] !== 0x50) return null;
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  } catch (_) { return null; }
+}
+
+function validateImageFile(filePath) {
+  const fileName = path.basename(filePath);
+  const dim = pngDimensions(filePath);
+  
+  if (!dim) {
+    report.errors.push({ file: filePath, type: 'INVALID_PNG', message: 'File is not a valid PNG image.' });
+    return;
+  }
+  
+  if (fileName === 'small.png' && (dim.w !== 75 || dim.h !== 75)) {
+    report.errors.push({ file: filePath, type: 'IMG_DIMENSION_ERROR', message: `small.png must be exactly 75x75, found ${dim.w}x${dim.h}` });
+  } else if (fileName === 'large.png' && (dim.w !== 500 || dim.h !== 500)) {
+    report.warnings.push({ file: filePath, type: 'IMG_DIMENSION_WARN', message: `large.png should be 500x500, found ${dim.w}x${dim.h}` });
+  } else if (fileName === 'xlarge.png' && (dim.w !== 1000 || dim.h !== 700)) {
+    report.warnings.push({ file: filePath, type: 'IMG_DIMENSION_WARN', message: `xlarge.png should be 1000x700, found ${dim.w}x${dim.h}` });
+  }
+}
+
 /**
  * 1. JavaScript Syntax & Spacing Check
  */
@@ -354,6 +381,15 @@ function validateComposeFile(filePath) {
         message: 'Manifest has BOTH energy.approximation and direct power capabilities. This is a severe Homey Energy v3 schema conflict.',
       });
     }
+
+    // AggregateError Prevention (Dual-Layer Gate)
+    if (compose.zigbee && Array.isArray(compose.zigbee.manufacturerName) && compose.zigbee.manufacturerName.length === 0) {
+      report.errors.push({
+        file: filePath,
+        type: 'AGGREGATE_ERROR_RISK',
+        message: 'Empty zigbee.manufacturerName array detected. This will trigger a fatal AggregateError on Athom servers and block the build!',
+      });
+    }
   } catch (err) {
     report.errors.push({
       file: filePath,
@@ -470,6 +506,8 @@ function walk(dir) {
         validateJSFile(fullPath);
       } else if (entry.name === 'driver.compose.json') {
         validateComposeFile(fullPath);
+      } else if (entry.name.endsWith('.png')) {
+        validateImageFile(fullPath);
       }
     }
   }

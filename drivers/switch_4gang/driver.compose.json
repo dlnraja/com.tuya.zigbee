@@ -14,13 +14,13 @@
   ],
   "zigbee": {
     "productId": [
+      "JZ-ZB-004",
       "TS0004",
-      "TS0014",
       "TS0004_power",
       "TS0004_switch_module",
+      "TS0014",
       "TS0601",
-      "TS0726",
-      "JZ-ZB-004"
+      "TS0726"
     ],
     "endpoints": {
       "1": {
@@ -56,8 +56,6 @@
       }
     },
     "manufacturerName": [
-      "lellki",
-      "LELLKI",
       "_tz3000_3n2minvf",
       "_TZ3000_3n2minvf",
       "_TZ3000_3N2MINVF",
@@ -142,6 +140,9 @@
       "_tz3000_ssup6h68",
       "_TZ3000_ssup6h68",
       "_TZ3000_SSUP6H68",
+      "_tz3000_tyg4yiat",
+      "_TZ3000_tyg4yiat",
+      "_TZ3000_TYG4YIAT",
       "_tz3000_u3oupgdy",
       "_TZ3000_u3oupgdy",
       "_TZ3000_U3OUPGDY",
@@ -163,9 +164,6 @@
       "_tz3000_z6zplt0y",
       "_TZ3000_z6zplt0y",
       "_TZ3000_Z6ZPLT0Y",
-      "_tz3000_tyg4yiat",
-      "_TZ3000_tyg4yiat",
-      "_TZ3000_TYG4YIAT",
       "_tz3002_9eavto1k",
       "_TZ3002_9eavto1k",
       "_TZ3002_9EAVTO1K",
@@ -249,7 +247,9 @@
       "_TZE204_XIBAABMU",
       "_tze284_xibaabmu",
       "_TZE284_xibaabmu",
-      "_TZE284_XIBAABMU"
+      "_TZE284_XIBAABMU",
+      "lellki",
+      "LELLKI"
     ]
   },
   "images": {

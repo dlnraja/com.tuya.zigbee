@@ -33,26 +33,26 @@
   "subDevices": [],
   "zigbee": {
     "productId": [
-      "TS0207",
-      "q9mpfhw",
-      "ZG-222Z",
-      "ZG-223Z",
-      "LS21001",
       "_tz3000_eit6l5",
       "_tz3000_k4ej3ww2",
       "_tz3000_kyb656no",
+      "3315-S",
+      "3315-Seu",
+      "CK-TLSR8656-SS5-01(7019)",
+      "HS1WL",
+      "LS21001",
       "lumi.sensor_wleak.aq1",
+      "q9mpfhw",
       "SJCGQ11LM",
       "SJCGQ12LM",
       "SJCGQ13LM",
-      "HS1WL",
       "SNZB-05",
-      "3315-S",
-      "3315-Seu",
-      "TS0601",
-      "SQ510A",
       "SNZB-05P",
-      "CK-TLSR8656-SS5-01(7019)"
+      "SQ510A",
+      "TS0207",
+      "TS0601",
+      "ZG-222Z",
+      "ZG-223Z"
     ],
     "learnmode": {
       "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
@@ -70,10 +70,6 @@
       }
     },
     "manufacturerName": [
-      "lumi.sensor_wleak",
-      "LUMI.SENSOR_WLEAK",
-      "lumi.sensor_wleak.aq1",
-      "LUMI.SENSOR_WLEAK.AQ1",
       "_tyzb01_sqmd19i1",
       "_TYZB01_SQMD19I1",
       "_tyzb01_ttvdudvx",
@@ -168,15 +164,19 @@
       "_tze200_htnnfasr",
       "_TZE200_htnnfasr",
       "_TZE200_HTNNFASR",
+      "_tze200_jthf7vb6",
+      "_TZE200_jthf7vb6",
+      "_TZE200_JTHF7VB6",
       "_tze200_qq9mpfhw",
       "_TZE200_qq9mpfhw",
       "_TZE200_QQ9MPFHW",
       "_tze200_sh1btabb",
       "_TZE200_sh1btabb",
       "_TZE200_SH1BTABB",
-      "_tze200_jthf7vb6",
-      "_TZE200_jthf7vb6",
-      "_TZE200_JTHF7VB6"
+      "lumi.sensor_wleak",
+      "LUMI.SENSOR_WLEAK",
+      "lumi.sensor_wleak.aq1",
+      "LUMI.SENSOR_WLEAK.AQ1"
     ]
   },
   "settings": [

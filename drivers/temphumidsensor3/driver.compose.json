@@ -29,12 +29,12 @@
   },
   "zigbee": {
     "productId": [
-      "TY0201",
-      "SNTZ003",
       "CK-TLSR8656-SS5-01(7014)",
-      "ZG-227Z",
       "RH3052",
-      "TS0201"
+      "SNTZ003",
+      "TS0201",
+      "TY0201",
+      "ZG-227Z"
     ],
     "endpoints": {
       "1": {
@@ -58,15 +58,15 @@
       }
     },
     "manufacturerName": [
-      "_tze200_placeholder_generic",
-      "_TZE200_placeholder_generic",
-      "_TZE200_PLACEHOLDER_GENERIC",
       "_tz3000_fllyghyj",
       "_TZ3000_fllyghyj",
       "_TZ3000_FLLYGHYJ",
       "_tz3000_m0vaazab",
       "_TZ3000_m0vaazab",
-      "_TZ3000_M0VAAZAB"
+      "_TZ3000_M0VAAZAB",
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC"
     ]
   }
 }

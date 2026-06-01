@@ -27,6 +27,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3000_vd43bbfq",
+      "_TZ3000_vd43bbfq",
+      "_TZ3000_VD43BBFQ",
       "_tze200_bse1xpui",
       "_TZE200_bse1xpui",
       "_TZE200_BSE1XPUI",
@@ -50,14 +53,11 @@
       "_TZE204_VU0JDQNM",
       "_tze204_xyhhcx94",
       "_TZE204_xyhhcx94",
-      "_TZE204_XYHHCX94",
-      "_tz3000_vd43bbfq",
-      "_TZ3000_vd43bbfq",
-      "_TZ3000_VD43BBFQ"
+      "_TZE204_XYHHCX94"
     ],
     "productId": [
-      "TS0601_lock",
-      "TS0601"
+      "TS0601",
+      "TS0601_lock"
     ],
     "learnmode": {
       "instruction": {

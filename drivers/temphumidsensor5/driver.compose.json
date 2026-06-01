@@ -29,26 +29,26 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_jnhu1llv",
-      "_TZ3000_jnhu1llv",
-      "_TZ3000_JNHU1LLV",
       "_tz3000_i8jfiezr",
       "_TZ3000_i8jfiezr",
       "_TZ3000_I8JFIEZR",
-      "_tza226_ueagguan",
-      "_TZA226_ueagguan",
-      "_TZA226_UEAGGUAN",
+      "_tz3000_jnhu1llv",
+      "_TZ3000_jnhu1llv",
+      "_TZ3000_JNHU1LLV",
       "_tz3000_rufdtfyv",
       "_TZ3000_rufdtfyv",
-      "_TZ3000_RUFDTFYV"
+      "_TZ3000_RUFDTFYV",
+      "_tza226_ueagguan",
+      "_TZA226_ueagguan",
+      "_TZA226_UEAGGUAN"
     ],
     "productId": [
-      "TY0201",
-      "SNTZ003",
       "CK-TLSR8656-SS5-01(7014)",
-      "ZG-227Z",
       "RH3052",
-      "TS0201"
+      "SNTZ003",
+      "TS0201",
+      "TY0201",
+      "ZG-227Z"
     ],
     "endpoints": {
       "1": {

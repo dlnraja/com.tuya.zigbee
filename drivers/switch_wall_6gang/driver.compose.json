@@ -67,8 +67,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "tze204_7sjncirf",
-      "TZE204_7SJNCIRF",
       "_tz3000_cziew6eu",
       "_TZ3000_cziew6eu",
       "_TZ3000_CZIEW6EU",
@@ -89,7 +87,9 @@
       "_TZE284_G1ENHDSI",
       "_tze284_tz32mtza",
       "_TZE284_tz32mtza",
-      "_TZE284_TZ32MTZA"
+      "_TZE284_TZ32MTZA",
+      "tze204_7sjncirf",
+      "TZE204_7SJNCIRF"
     ],
     "productId": [
       "TS0016",

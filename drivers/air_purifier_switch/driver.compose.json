@@ -14,8 +14,8 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0601_air_purifier",
-      "TS0601"
+      "TS0601",
+      "TS0601_air_purifier"
     ],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
@@ -30,8 +30,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",

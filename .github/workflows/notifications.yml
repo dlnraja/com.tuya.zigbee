@@ -20,6 +20,7 @@ defaults:
 jobs:
   notify-maintainers:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     if: "contains(github.event.repository.name, 'tuya.zigbee')"
     steps:
       - name: 📥 Checkout
