@@ -12,11 +12,18 @@ class BedSensorDevice extends UnifiedSensorBase {
   }
 
   _setupDPListeners() {
-    // DP1: Occupancy (0=vacant, 1=occupied)
-    // DP3: Battery percentage
+    // DP1: Occupancy (Inverted: 0=occupied, 1=vacant)
+    // DP4: Battery percentage (not DP3, not DP104)
+    // DP12: Pressure (prevent auto-temp fallback)
     const dpMappings = {
-      1: { capability: 'alarm_contact', converter: (v) => !!v },
-      3: { capability: 'measure_battery', converter: (v) => v },
+      1: { capability: 'alarm_contact', converter: (v) => v === 0 },
+      4: { capability: 'measure_battery', converter: (v) => v },
+      12: { capability: 'measure_pressure', converter: (v) => v }, // Or map to a custom capability
+      // Configuration DPs
+      9: { capability: null, internal: 'sensitivity', writable: true },
+      101: { capability: null, internal: 'sampling_interval', writable: true },
+      102: { capability: null, internal: 'delay_unoccupied', writable: true },
+      103: { capability: null, internal: 'delay_occupied', writable: true }
     };
 
     if (this._dpMappings) {

@@ -1,0 +1,84 @@
+name: Trellis Autonomous Multi-Agent Orchestration
+on:
+  schedule:
+    - cron: '0 2,14 * * *' # Twice daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: trellis-orchestration
+  cancel-in-progress: false
+
+jobs:
+  trellis-brain:
+    name: Trellis Cognitive Loop & Subtasking
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Test API Capabilities & Credits
+        id: api-check
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          APIFREELLM_KEY: ${{ secrets.APIFREELLM_KEY }}
+        run: |
+          echo "Initiating API Ping & Credit Evaluation..."
+          node scripts/ai/validate-apis.js
+
+      - name: Ingest Multi-Source Data
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          echo "Aggregating GitHub Issues, PRs, Forum Messages, Emails, and Diagnostic Logs..."
+          node .github/scripts/homey-domain-email-dumper.js || true
+          node .github/scripts/triage-upstream-enhanced.js || true
+
+      - name: Trellis Intelligent Subtask Delegation
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          echo "Delegating tasks based on API capabilities and context size..."
+          node scripts/ai/trellis-orchestrator.js
+
+      - name: Intelligent Lazyloading DB Optimization
+        run: |
+          echo "Optimizing and intelligently updating static JSON MF databases..."
+          node scripts/automation/optimize-mf-databases.js --heuristic-update
+
+      - name: Pre-Commit Quality Gate
+        run: |
+          node scripts/PRE_COMMIT_CHECKS.js
+
+      - name: Auto-Commit & Push Fixes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Trellis: Autonomous orchestration fixes & lazy-loading updates [skip ci]"
+          branch: master
+          file_pattern: 'lib/ drivers/ data/ .github/state/ package.json app.json'

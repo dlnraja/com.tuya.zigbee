@@ -1,0 +1,98 @@
+[
+  {
+    "id": "sensitivity",
+    "type": "dropdown",
+    "value": "1",
+    "title": {
+      "en": "Sensitivity",
+      "fr": "Sensibilité",
+      "nl": "Gevoeligheid",
+      "de": "Empfindlichkeit"
+    },
+    "hint": {
+      "en": "Select the sensitivity level of the bed sensor.",
+      "fr": "Sélectionnez le niveau de sensibilité du capteur de lit.",
+      "nl": "Selecteer het gevoeligheidsniveau van de bed sensor."
+    },
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Low",
+          "fr": "Faible",
+          "nl": "Laag",
+          "de": "Niedrig"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Middle",
+          "fr": "Moyen",
+          "nl": "Midden",
+          "de": "Mittel"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "High",
+          "fr": "Élevé",
+          "nl": "Hoog",
+          "de": "Hoch"
+        }
+      }
+    ]
+  },
+  {
+    "id": "sampling_interval",
+    "type": "number",
+    "value": 1,
+    "min": 1,
+    "max": 60,
+    "title": {
+      "en": "Sampling Interval (s)",
+      "fr": "Intervalle d'échantillonnage (s)",
+      "nl": "Bemonsteringsinterval (s)"
+    },
+    "hint": {
+      "en": "Time in seconds between measurements.",
+      "fr": "Temps en secondes entre les mesures.",
+      "nl": "Tijd in seconden tussen metingen."
+    }
+  },
+  {
+    "id": "delay_unoccupied",
+    "type": "number",
+    "value": 5,
+    "min": 1,
+    "max": 3600,
+    "title": {
+      "en": "Delay until unoccupied (s)",
+      "fr": "Délai avant inoccupé (s)",
+      "nl": "Vertraging tot onbezet (s)"
+    },
+    "hint": {
+      "en": "Time in seconds to wait before changing state to unoccupied.",
+      "fr": "Temps en secondes à attendre avant de passer à l'état inoccupé.",
+      "nl": "Tijd in seconden om te wachten voordat de status naar onbezet verandert."
+    }
+  },
+  {
+    "id": "delay_occupied",
+    "type": "number",
+    "value": 1,
+    "min": 1,
+    "max": 60,
+    "title": {
+      "en": "Delay until occupied (s)",
+      "fr": "Délai avant occupé (s)",
+      "nl": "Vertraging tot bezet (s)"
+    },
+    "hint": {
+      "en": "Time in seconds to wait before changing state to occupied.",
+      "fr": "Temps en secondes à attendre avant de passer à l'état occupé.",
+      "nl": "Tijd in seconden om te wachten voordat de status naar bezet verandert."
+    }
+  }
+]
