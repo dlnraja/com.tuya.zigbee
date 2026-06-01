@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-01T01:33:19.311Z",
-  "currentCount": 10475,
+  "ts": "2026-06-01T02:30:52.356Z",
+  "currentCount": 10516,
   "src": {
     "johan": {
       "count": 650,
@@ -19280,7 +19280,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 61,
+      "issueCount": 58,
       "prCount": 2,
       "deviceRequests": [
         {
@@ -19328,53 +19328,6 @@
             "_TZE284_gnpflcoq",
             "_TZE284_nvodulvi",
             "_TZE284_zofmmt9s"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 356,
-          "title": "[Auto] 40 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZE284_zofmmt9s",
-            "_TZE204_hewlydpz",
-            "_TZE284_gnpflcoq",
-            "_TZB210_qzsxaqqe",
-            "_TZ3218_ofguu6mz",
-            "_TZE200_itp8dt7f",
-            "_TZE20C_xbexmf8h",
-            "_TZ3000_yujem9ee",
-            "_TZ3000_filhl5b7",
-            "_TZ3000_cllghx1k",
-            "_TZ3000_1kmurvlx",
-            "_TZE200_xixlazkg",
-            "_TZ3000_zojh9vz7",
-            "_TZ3000_dershnvx",
-            "_TZ3210_9hbau615",
-            "_TZE200_swlgvdlh",
-            "_TZE200_2jwrgrro",
-            "_TZ3210_qjvi92wz",
-            "_TZ3210_w3hl6rao",
-            "_TZ3210_z4hgsevd",
-            "_TZ3000_cumqn2av",
-            "_TZ300A_fhbcipep",
-            "_TZ3000_1fqpj6qz",
-            "_TZ3000_sfibawtr",
-            "_TZ3290_acv1iusl",
-            "_TZE200_y8wkaq6w",
-            "_TZ3210_cyuyd5az",
-            "_TZ3000_yi0n4xfd",
-            "_TZ3000_5rpu3r0d",
-            "_TZE204_p6vz3wzt",
-            "_TZ3000_djgzdba9",
-            "_TZE284_nvodulvi",
-            "_TZ3000_r2fgo9ks",
-            "_TZ3000_hurauima",
-            "_TZ3002_tdf2m4ch",
-            "_TZE21C_i2ij4rb3",
-            "_TZE204_izy1g1mb",
-            "_TZE204_f2rflfa6",
-            "_TZ3218_n0jsuogs",
-            "_TZ3218_sgbsg6mr"
           ]
         },
         {
@@ -19476,16 +19429,6 @@
           "mfrs": [
             "_TZE284_zofmmt9s",
             "_TZE204_hewlydpz"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 339,
-          "title": "[radiator_valve] Bug: _TZE200_9xfjixap",
-          "mfrs": [
-            "_TZE200_9xfjixap",
-            "_TZE200_9xfjixap",
-            "_TZE200_9xfjixap"
           ]
         },
         {
@@ -19722,252 +19665,31 @@
             "_TZE200_rhgsbacq",
             "_TZE200_rhgsbacq"
           ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1397,
+          "title": "Device Request - [Radaar sensor /  mmWave] - [TS0601] / [_TZE284_1youk3hj]",
+          "mfrs": [
+            "_TZE284_1youk3hj",
+            "_TZE284_1youk3hj",
+            "_TZE284_1youk3hj"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1396,
+          "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
+          "mfrs": [
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl"
+          ]
         }
       ]
     }
   },
-  "newFps": [
-    {
-      "mfr": "_TZE284_zofmmt9s",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_hewlydpz",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE284_gnpflcoq",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZB210_qzsxaqqe",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3218_ofguu6mz",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_itp8dt7f",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE20C_xbexmf8h",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_yujem9ee",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_filhl5b7",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_cllghx1k",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_1kmurvlx",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_xixlazkg",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_zojh9vz7",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_dershnvx",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3210_9hbau615",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_swlgvdlh",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_2jwrgrro",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3210_qjvi92wz",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3210_w3hl6rao",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3210_z4hgsevd",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_cumqn2av",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ300A_fhbcipep",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_1fqpj6qz",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_sfibawtr",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3290_acv1iusl",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_y8wkaq6w",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3210_cyuyd5az",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_yi0n4xfd",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_5rpu3r0d",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_p6vz3wzt",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_djgzdba9",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE284_nvodulvi",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_r2fgo9ks",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_hurauima",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3002_tdf2m4ch",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE21C_i2ij4rb3",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_izy1g1mb",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_f2rflfa6",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3218_n0jsuogs",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3218_sgbsg6mr",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    }
-  ],
+  "newFps": [],
   "enrichedFps": [
     {
       "mfr": "_TZE200_s8gkrkxk",
@@ -40462,6 +40184,6 @@
       "driver": null
     }
   ],
-  "newCount": 40,
+  "newCount": 0,
   "enrichedCount": 2214
 }
