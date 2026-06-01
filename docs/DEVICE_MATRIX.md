@@ -34,9 +34,9 @@
 | button_wireless_wall | 12 | TS0041, TS0042 | button.1, button.2, measure_battery... |
 | ceiling_fan | 6 | TS0601, TS0601_fan | dim, onoff, dim.speed |
 | christmas_lights | 9 | TS0504B, TS0601 | onoff, dim, light_hue... |
-| climate_sensor | 1881 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
+| climate_sensor | 1875 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
 | climate_sensor_device | 3 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
-| climate_sensor_energy | 1878 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_power, meter_power, measure_voltage... |
+| climate_sensor_energy | 1872 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_power, meter_power, measure_voltage... |
 | climate_sensor_presence | 3 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | co_sensor | 15 | TS0601, TS0601_co | alarm_co, measure_battery, measure_co... |
 | contact_sensor | 366 | 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DoorWindow-Sensor-ZB3.0, DS01, E1603/E1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, MCT-340 E, q9mpfhw, RH3001, SNZB-04, SNZB-04P, SNZB-04PR2, SNZB-04R2, TRADFRI open/close remote, TS0021, TS0203, TS0207, TS0601, ZG-102Z, ZG-102ZL | alarm_contact, measure_battery, alarm_generic... |
@@ -107,7 +107,7 @@
 | formaldehyde_sensor | 3 | TS0601, TS0601_hcho | measure_co2, measure_temperature, measure_humidity... |
 | garage_door | 15 | TS0601, TS0601_garage | garagedoor_closed, alarm_contact |
 | garage_door_opener | 24 | TS0601, TS0603 | garagedoor_closed, alarm_contact |
-| gas_detector | 32 | TS0204, TS0601 | alarm_generic, alarm_co, alarm_co2... |
+| gas_detector | 29 | TS0204, TS0601 | alarm_generic, alarm_co, alarm_co2... |
 | gas_sensor | 60 | TS0225, TS0601, TS0601_gas | alarm_co, alarm_co2, alarm_contact... |
 | gas_sensor_switch | 3 | TS0601 | onoff, onoff.gang2, onoff.gang3... |
 | gateway_zigbee_bridge | 3 | TS0601_gw | alarm_generic, measure_battery, onoff... |
@@ -122,7 +122,7 @@
 | ir_blaster | 96 | TS0601, TS1201 | onoff, volume_up, volume_down... |
 | lcdtemphumidluxsensor | 9 | Excellux, TS0201, TS0222, TS0601 | measure_luminance, measure_temperature, measure_humidity... |
 | lcdtemphumidsensor | 6 | TS0201, TS0601, TS0601_lcd, TY0201 | measure_temperature, measure_humidity, measure_battery... |
-| lcdtemphumidsensor_2 | 1878 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
+| lcdtemphumidsensor_2 | 1875 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
 | lcdtemphumidsensor_3 | 3 | Excellux, TS0201, TS0601 | measure_temperature, measure_humidity, measure_battery... |
 | lcdtemphumidsensor_plug_energy | 2 | TS0601 | measure_power, meter_power, measure_voltage... |
 | led_controller_cct | 21 | TS0502 | onoff, dim, light_temperature... |
@@ -130,7 +130,7 @@
 | led_controller_rgb | 3 | TS0503, TS0504 | onoff, dim, light_hue... |
 | led_strip | 15 | TS0505B, TS0601_strip | dim, onoff, light_hue... |
 | led_strip_advanced | 6 | TS0601_strip_adv | dim, light_hue, light_saturation... |
-| led_strip_rgbw | 33 | TS0601_strip_rgbw | light_hue, light_saturation, light_temperature... |
+| led_strip_rgbw | 34 | TS0601_strip_rgbw | light_hue, light_saturation, light_temperature... |
 | light_bulb_dimmable_tunable | 105 | Classic A60 TW, E11-N13, E11-N14, E12-N13, E12-N14, GL-B-007Z, GL-C-007, LED1545G12, LED1546G12, LTW001, LTW004, LTW010, LTW012, LTW013, LTW015, RB 178 T, RS 128 T, TS0502A, TS0502B, ZBT-CCTLight | dim, light_hue, light_mode... |
 | light_bulb_rgb | 59 | E11-G13, E11-G14, E11-G23, GL-C-006, LCT001, LCT002, LCT003, LCT007, LCT010, LCT011, LCT012, LCT014, LCT015, LCT016, RB 185 C, RB 285 C, TS0503A, TS0503B, TS0504B, TS0505A, TS0505B, ZB-CL01, ZBT-ColorLight | dim, light_hue, light_saturation... |
 | light_bulb_rgb_led | 3 | TS0505B | dim, light_hue, light_saturation... |
@@ -139,7 +139,7 @@
 | light_sensor_outdoor | 3 | TS0222, TS0601 | measure_luminance, measure_battery, alarm_battery |
 | lock_smart | 36 | TS0601, TS0601_smartlock | locked, lock_mode, measure_battery... |
 | module_mini_switch | 22 | 01MINIZB, ZBM5-1C-120, ZBMINI, ZBMINI-L, ZBMINIL2, ZBMINIL2-R2, ZBMINIR, ZBMINIR2, ZBMINIR2-R2 | alarm_generic, measure_power, measure_voltage... |
-| motion_sensor | 331 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | alarm_motion, measure_luminance, measure_temperature... |
+| motion_sensor | 334 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | alarm_motion, measure_luminance, measure_temperature... |
 | motion_sensor_2 | 9 | TS0601 | measure_battery, measure_luminance, alarm_motion... |
 | motion_sensor_radar_mmwave | 27 | TS0601, TS0601_mmwave | alarm_motion, measure_luminance.distance, measure_temperature... |
 | motion_sensor_switch | 2 | Excellux, TS0225, TS0601 | onoff, measure_battery, measure_power... |
@@ -151,7 +151,7 @@
 | pir_sensor_2 | 3 | TS0202 | alarm_motion, alarm_battery, measure_battery |
 | pirsensor | 6 | RH3040 | alarm_motion, alarm_battery, measure_battery |
 | plug | 3 | TS011F | onoff |
-| plug_energy_monitor | 154 | A11Z, A7Z, CK-BL702-SWP-01(7020), E1603/E1702/E1708, HY0104, HY0105, JZ-ZB-005, LSPA9, lumi.plug.macn01, lumi.plug.maeu01, lumi.plug.mmeu01, S26R2ZB, S31 Lite zb, S31ZB, S40LITE, S40ZBTPB, S40ZBTPF, S40ZBTPG, S60ZBTPE, S60ZBTPF, S60ZBTPF-R2, S60ZBTPG, SA-028-1, SA-029-1, SNZB-06P, SP 120, SP 220, SP 222, SP-EUC01, SP-EUC02, SPM01, SPMZBR2, TRADFRI control outlet, TS011F, TS0121, TS0601, TSO121, Z111PL0H-1JX, ZBMINIL2 | measure_power, meter_power, measure_voltage... |
+| plug_energy_monitor | 158 | A11Z, A7Z, CK-BL702-SWP-01(7020), E1603/E1702/E1708, EWELINK, HY0104, HY0105, JZ-ZB-005, LSPA9, lumi.plug.macn01, lumi.plug.maeu01, lumi.plug.mmeu01, S26R2ZB, S31 Lite zb, S31ZB, S40LITE, S40ZBTPB, S40ZBTPF, S40ZBTPG, S60ZBTPE, S60ZBTPF, S60ZBTPF-R2, S60ZBTPG, SA-028-1, SA-029-1, SNZB-06P, SONOFF, SP 120, SP 220, SP 222, SP-EUC01, SP-EUC02, SPM01, SPMZBR2, TRADFRI control outlet, TS011F, TS0121, TS0601, TSO121, Z111PL0H-1JX, ZBMINIL2, eWeLink, sonoff | measure_power, meter_power, measure_voltage... |
 | plug_smart | 225 | S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS0101, TS0111, TS011F, TS0601 | onoff, measure_power, meter_power... |
 | pool_pump | 12 | TS0601, TS0601_pool | onoff, measure_power, meter_power |
 | power_clamp_meter | 21 | TS0601, TS0601_clamp | measure_power, meter_power, measure_current.phase2... |
@@ -193,7 +193,7 @@
 | scene_switch_6 | 3 | TS0601_scene6 | button.1, button.2, button.3... |
 | scene_switch_wall | 3 | TS0042, TS0043 | button.1, button.2, measure_battery... |
 | sensor_climate_contact | 2 | TS0601 | measure_temperature, measure_temperature.probe, measure_humidity... |
-| sensor_climate_temphumidsensor | 1878 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
+| sensor_climate_temphumidsensor | 1872 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
 | sensor_contact_motion | 5 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | sensor_contact_plug | 3 | Excellux, TS0601 | onoff, measure_power, meter_power... |
 | sensor_contact_presence | 2 | ZG-227Z | alarm_motion, measure_luminance, measure_temperature... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 315 drivers, 29434 manufacturer IDs
+**Total:** 315 drivers, 29418 manufacturer IDs
 
-*Generated: 2026-06-01T19:10:36.581Z*
+*Generated: 2026-06-01T20:42:03.219Z*
