@@ -1,5 +1,7 @@
 name: Gmail Diagnostics Auto-Analysis
 on:
+  push:
+    branches: [ master, main ]
   schedule:
     - cron: '0 22 * * 0'    # Weekly sweep (Sunday 22:00 UTC)
   workflow_dispatch:
