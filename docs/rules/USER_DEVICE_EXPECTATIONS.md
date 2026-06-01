@@ -5913,3 +5913,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | vision + TS0207 | JohanBendz/com.tuya.zigbee#1380 | device_request |
 | vision + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
 | _TZ3000_ + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
+
+
+## Auto-discovered from GitHub (2026-06-01)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE200_5zbp6j0u + TS0203 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS0202 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS0505A | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS0505B | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS0121 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + DoorWindow-Sensor-ZB3.0 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + MCT-340 E | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + RH3001 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + RH3040 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + SNZB-04 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS011F | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TSO121 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TY0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + ZB-CL01 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_5zbp6j0u + TS0505 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0203 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0202 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0505A | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0505B | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0121 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + DoorWindow-Sensor-ZB3.0 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + MCT-340 E | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + RH3001 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + RH3040 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + SNZB-04 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS011F | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TSO121 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TY0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + ZB-CL01 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_bjzrowv2 + TS0505 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0203 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0202 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0505A | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0505B | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0121 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + DoorWindow-Sensor-ZB3.0 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + MCT-340 E | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + RH3001 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + RH3040 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + SNZB-04 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS011F | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TSO121 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TY0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + ZB-CL01 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_nkoabg8w + TS0505 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_xuzcvlku + TS0203 | dlnraja/com.tuya.zigbee#336 | device_request |
+| _TZE200_xuzcvlku + TS0201 | dlnraja/com.tuya.zigbee#336 | device_request |
