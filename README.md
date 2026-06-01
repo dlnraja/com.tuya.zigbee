@@ -38,6 +38,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Feature |
 |---------|---------|
 | **vv8_5_30** |  |
+| **ventries** |  |
 | **v9.0.1** | v9.0.0: |
 | **v9.0.0** | v8.5.54: |
 | **v8.5.54** | v8.5.53: |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.51** | v8.5.50: |
 | **v8.5.50** | v8.5.49: |
 | **v8.5.49** | v8.5.48: |
-| **v8.5.48** | v8.5.47: |
 <!-- CHANGELOG_END -->
+
 
 
 
