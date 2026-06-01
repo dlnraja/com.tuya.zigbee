@@ -799,6 +799,21 @@ To support offline/local functionality while avoiding startup OOM, a two-layer d
 - **Static Matching Layer (Pairing Time)**: Device manufacturer names (mfs) and `modelId` / `deviceId` strings must be statically defined in the driver's `driver.compose.json` and the central `app.json` fingerprints. This allows the Homey Pro Z-Wave/Zigbee pairing wizard to match the device and successfully bind it locally.
 - **Dynamic Refinement Layer (Runtime)**: Dynamic database files (like `fingerprints.json` and `driver-mapping-database.json`) must remain in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capability mappings and DP values dynamically at runtime.
 
+---
+
+## 30. TRELLIS AUTONOMOUS MULTI-AGENT ORCHESTRATION (v10.0.0+)
+
+To reach full autonomy in maintaining, debugging, and enriching the Universal Tuya Engine, a **Trellis-based Orchestration System** runs via GitHub Actions (`.github/workflows/trellis-autonomous-orchestration.yml`).
+
+### Core Philosophy
+1. **Multi-Source Ingestion**: The system continuously aggregates logs, diagnostics reports, forum posts, emails (Peter), and GitHub issues/PRs into a central cognitive buffer.
+2. **Dynamic API & Credit Validation**: Before launching deep diagnostic routines, the orchestrator actively tests all configured AI providers (OpenAI, Anthropic, Gemini, Groq, Mistral, HuggingFace, ApiFreeLLM) for availability and remaining credits using GitHub Secrets.
+3. **Intelligent Sub-tasking**: Depending on the API capabilities and context size required:
+   - *Heuristic Analysis* (e.g., DP inversion, complex YAML parsing) is delegated to heavy-weight models (Gemini 2.0 Pro / Claude 3.5).
+   - *Syntax checking and JSON lazyloading updates* are routed to fast/free models (Groq Llama 3 / Granite).
+4. **Recursive Lazy-loading DB Updates**: Static MF databases (`driver-mapping-database.json`, `fingerprints.json`) are updated heuristically to avoid unnecessary file writes, ensuring that lazyloading mechanisms only fetch new chunks when statistical confidence is high.
+5. **Self-Healing Loop**: The orchestration loop commits, tests (`node scripts/PRE_COMMIT_CHECKS.js`), and automatically publishes fixed drivers without human intervention, maintaining absolute compliance with the strict 5MB Athom limit.
+
 ### 22.3. Promise-Chaining Trigger Card Crash Prevention (v9.5.0+)
 To prevent runtime type errors and crashes (e.g. `TypeError: card.trigger is not a function`) when triggering device-specific cards in multi-gang BSEED or standard switch drivers, the trigger handling pattern is strictly isolated:
 - **Card Retrieval separation**: Card fetching via `getDeviceTriggerCard` is isolated from the trigger call.

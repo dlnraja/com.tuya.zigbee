@@ -37,7 +37,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_dummy_fix"
+    ]
   },
   "images": {
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",

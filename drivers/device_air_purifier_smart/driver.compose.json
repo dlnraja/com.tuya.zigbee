@@ -58,7 +58,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_dummy_fix"
+    ]
   },
   "images": {
     "small": "/drivers/smart_lcd_thermostat/assets/images/small.png",
