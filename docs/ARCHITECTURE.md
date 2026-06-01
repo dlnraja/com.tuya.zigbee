@@ -631,4 +631,20 @@ To secure all future developments against regression:
    - **ZCL-Only Early Return Violations**: Scans for drivers calling ZCL-Only initialization that omit the early `return` in `onNodeInit()`.
 2. **Continuous Compliance**: These gates prevent sub-standard code from bypassing pre-commit or pre-push controls, maintaining a zero-defect baseline across all 413 drivers.
 
+## 37. Trellis AI Orchestration & Continuous Lazy-Loading (v10.0.0+)
 
+The architecture now fully integrates the **Trellis AI Framework** principles and aggressive **Lazy-Loading** strategies to support massive fingerprint and DP mapping scaling within Homey Pro's memory constraints.
+
+### 37.1 Trellis Orchestration Loop
+The AI agent behaviors and internal CI scripts now follow the Trellis orchestration loop defined in `SKILL_REGISTRY.md`:
+- **Plan**: Deep discovery, cross-referencing all sources (issues, crash logs, forum posts) before executing.
+- **Implement**: Aggressively resolving missing fingerprints and DP bugs across all 130+ driver classes dynamically.
+- **Verify**: Quality Gate Layer 10+ validations via zero-defect scripts.
+- **Finish**: Updating runtime manifests safely.
+
+### 37.2 Continuous Lazy-Loading Architecture
+To ensure extreme stability (Zero OOM) when loading databases like `driver-mapping-database.json` and `fingerprints.json`:
+- **Idempotent Guards**: Classes like `DriverMappingLoader` use an idempotent `_ensureLoaded()` pattern.
+- **Just-In-Time (JIT) Processing**: Parsing is deferred until the exact moment a device pairing or data conversion requires the lookup.
+- **Buffer-Level V8 Protection**: Standard file operations skip UTF-16 string allocation entirely, reading as raw Node.js Buffers and passing directly to `JSON.parse()`.
+- **Dynamic Unloading**: (Future capability) Purging mappings from the heap once pairing phases conclude.

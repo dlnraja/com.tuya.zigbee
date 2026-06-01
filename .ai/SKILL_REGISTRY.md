@@ -34,9 +34,31 @@ As an AI agent interacting with this repository, you **MUST** prioritize using t
 2.  **Follow the Pipeline**: If a skill defines an 8-phase pipeline (like `squirrel`), adhere to it strictly.
 3.  **Document Actions**: Use `technical-change-tracker` to record architectural changes in `SYSTEM_CHANGELOG.md`.
 
-## 🌐 External Reference
+## 🌐 AI Workflow Orchestration & Trellis Integration
 
-Source: [Antigravity Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills)
+To align this repository's local Agentic Skills with modern multi-platform orchestration standards, we formally follow the design standards of [Trellis (mindfold-ai/Trellis)](https://github.com/mindfold-ai/Trellis). 
+
+This orchestration model splits development tasks into a strict, repeatable 4-phase loop. Our local skills map directly to these phases to ensure absolute zero-defect execution:
+
+1. **`Plan` Phase**
+   - *Trellis Standard*: Defining requirements and generating the `prd.md`.
+   - *Local Fleet*: Governed by `squirrel` discovery rules and local `.cursorrules` / `.windsurfrules` constraints.
+2. **`Implement` Phase**
+   - *Trellis Standard*: Writing clean code with context-aware helper scripts.
+   - *Local Fleet*: Hardened by `@logic-lens` (idempotency audits) and `@performance-optimizer` (heap protection / lazy-loading models).
+3. **`Verify` Phase**
+   - *Trellis Standard*: Multi-layered syntax checks, schema validations, and unit tests.
+   - *Local Fleet*: Enforced by the 9-Layer Quality Gate (`_verify_prs.js`) and standard `homey app validate` commands.
+4. **`Finish` Phase**
+   - *Trellis Standard*: Archiving task metadata and updating logs/journals.
+   - *Local Fleet*: Handled by `@technical-change-tracker` via `SYSTEM_CHANGELOG.md` to ensure absolute continuity between AI agent sessions.
+
+---
+
+## 🌐 External References
+
+- **Antigravity Skills**: [Antigravity Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills)
+- **Orchestration Harness**: [Trellis Repository](https://github.com/mindfold-ai/Trellis)
 
 ---
 
