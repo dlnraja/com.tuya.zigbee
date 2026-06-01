@@ -1,0 +1,18 @@
+{
+  "id": "wifi_unified_ewelink",
+  "name": {
+    "en": "WiFi eWeLink",
+    "nl": "WiFi eWeLink",
+    "de": "WiFi eWeLink",
+    "fr": "eWeLink WiFi"
+  },
+  "platform": [
+    "wifi"
+  ],
+  "interfaces": [
+    "local"
+  ],
+  "capabilities": [
+    "onoff"
+  ]
+}

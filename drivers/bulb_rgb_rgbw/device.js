@@ -85,7 +85,7 @@ class RGBBulbDevice extends UnifiedLightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode }).catch(() => {});
+    await super.onNodeInit({ zclNode });
     try {
       // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
       this.log('[RGB] v5.5.288 - Starting initialization...');
@@ -116,7 +116,7 @@ class RGBBulbDevice extends UnifiedLightBase {
   }
 
   _parseHSV(raw) {
-    if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
+    if (!raw || typeof raw !== 'string' || raw.length < 12) {return null;}
     try {
       const h = parseInt(raw.substring(0, safeMultiply(4), 16));
       const s = parseInt(raw.substring(4, safeMultiply(8), 16));
@@ -130,7 +130,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _setupColorCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
@@ -154,9 +154,9 @@ class RGBBulbDevice extends UnifiedLightBase {
   async _sendHSV() {
     // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
     await this._tryTuyaRgbMode?.(1 )?.catch(() => {});
-    const h = Math.round((this.getCapabilityValue('light_hue') || safeMultiply(0), 360));
-    const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
-    const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
+    const h = Math.round((this.getCapabilityValue('light_hue')|| safeMultiply(0), 360));
+    const s = Math.round((this.getCapabilityValue('light_saturation')|| 1) * 1000);
+    const v = Math.round((this.getCapabilityValue('dim')|| 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
     await this._sendTuyaDP(5, hsv, 'raw');
     await this._sendTuyaDP(2, 1, 'enum' ); // Switch to color mode
@@ -164,7 +164,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _sendTuyaDP(dp, value, type) {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
+    if (tuya?.datapoint) {await tuya.datapoint({ dp, value, type });}
   }
 
   // 
@@ -204,7 +204,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
     // Convert Kelvin to Tuya value (0-1000 scale, inverted)
     // 6500K = 0 (cold), 2000K = 1000 (warm)
-    const tuyaValue = Math.round(6500 - kelvin * 4500     * 1000);
+    const tuyaValue = Math.round(safeMultiply(safeDivide(6500 - kelvin, 4500), 1000));
 
     // Also convert to Homey light_temperature (0 = warm, 1 = cold)
     const homeyValue = kelvin - safeMultiply(2000, 4500);

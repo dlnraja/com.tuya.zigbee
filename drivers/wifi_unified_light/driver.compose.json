@@ -1,0 +1,18 @@
+{
+  "id": "wifi_unified_light",
+  "name": {
+    "en": "WiFi Light & LED",
+    "nl": "WiFi Lamp",
+    "de": "WiFi Licht",
+    "fr": "Lampe WiFi"
+  },
+  "platform": [
+    "wifi"
+  ],
+  "interfaces": [
+    "local"
+  ],
+  "capabilities": [
+    "onoff"
+  ]
+}
