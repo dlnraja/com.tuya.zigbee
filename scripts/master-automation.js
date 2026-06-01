@@ -235,7 +235,8 @@ function phase1d_collisionCheck(app) {
   drivers.forEach(d => {
     if (!d.zigbee) return;
     const mfs = d.zigbee.manufacturerName || [];
-    const pids = d.zigbee.productId || [];
+    const pids_raw = d.zigbee.productId || [];
+    const pids = Array.isArray(pids_raw) ? pids_raw : [pids_raw];
 
     mfs.forEach(mf => {
       if (!mf) return;
