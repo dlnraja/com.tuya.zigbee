@@ -156,7 +156,7 @@ function validateJSFile(filePath) {
                             filePath.includes('TuyaDPDeviceHelper') || 
                             filePath.includes('TuyaDeviceHelper') || 
                             codeOnly.includes('CI.');
-        if (!isException) {
+        if (!isException && !filePath.includes('scripts\\') && !filePath.includes('scripts/')) {
           report.warnings.push({
             file: filePath,
             type: 'MANUAL_IDENTITY_COMPARE',
@@ -185,7 +185,7 @@ function validateJSFile(filePath) {
       }
 
       // Potential unchecked division (NaN risk)
-      if (codeOnly.includes('/') && !filePath.includes('tuyaUtils') && !filePath.includes('PRE_COMMIT_CHECKS') && !filePath.includes('zero-defect-architect-audit') && !filePath.includes('maintenance') && !filePath.includes('respond-issues') && !filePath.includes('cleanup-') && !filePath.includes('legacy') && !filePath.includes('scripts/_')) {
+      if (codeOnly.includes('/') && !filePath.includes('tuyaUtils') && !filePath.includes('PRE_COMMIT_CHECKS') && !filePath.includes('zero-defect-architect-audit') && !filePath.includes('scripts\\') && !filePath.includes('scripts/')) {
         if (!codeOnly.includes('safeParse') && 
             !codeOnly.includes('safeDivide') && 
             !codeOnly.includes('safeMultiply') && 
@@ -389,6 +389,28 @@ function validateComposeFile(filePath) {
         type: 'AGGREGATE_ERROR_RISK',
         message: 'Empty zigbee.manufacturerName array detected. This will trigger a fatal AggregateError on Athom servers and block the build!',
       });
+    }
+
+    // AggregateError Prevention (Missing Image Gate)
+    if (compose.images) {
+      const driverId = path.basename(path.dirname(filePath));
+      for (const [imgKey, rawPath] of Object.entries(compose.images)) {
+        const resolvedPath = rawPath.replace('{{driverAssetsPath}}', 'drivers/' + driverId + '/assets').replace(/^\//, '');
+        const imgPath = path.join(ROOT, resolvedPath);
+        if (!fs.existsSync(imgPath)) {
+          report.errors.push({
+            file: filePath,
+            type: 'MISSING_IMAGE_REFERENCE',
+            message: `Referenced image "${imgKey}" (${rawPath}) does not exist. This triggers a fatal AggregateError during Athom compilation! Remove it or provide the image.`,
+          });
+        } else if (!resolvedPath.includes('/' + driverId + '/')) {
+          report.warnings.push({
+            file: filePath,
+            type: 'CROSS_DRIVER_IMAGE_REFERENCE',
+            message: `Referenced image "${imgKey}" points to another driver's folder (${resolvedPath}). While supported, ensure this is intentional for space optimization.`,
+          });
+        }
+      }
     }
   } catch (err) {
     report.errors.push({

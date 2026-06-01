@@ -397,8 +397,7 @@
   },
   "images": {
     "small": "/drivers/bed_sensor/assets/images/small.png",
-    "large": "/drivers/bed_sensor/assets/images/large.png",
-    "xlarge": "/drivers/bed_sensor/assets/images/xlarge.png"
+    "large": "/drivers/bed_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

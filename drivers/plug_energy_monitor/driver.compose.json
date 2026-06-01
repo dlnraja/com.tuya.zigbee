@@ -168,13 +168,18 @@
       "_TZN3000_cfnprab5",
       "_TZN3000_CFNPRAB5",
       "ck-bl702-swp-01(7020)",
-      "CK-BL702-SWP-01(7020)"
+      "CK-BL702-SWP-01(7020)",
+      "eWeLink",
+      "EWELINK",
+      "SONOFF",
+      "sonoff"
     ],
     "productId": [
       "A11Z",
       "A7Z",
       "CK-BL702-SWP-01(7020)",
       "E1603/E1702/E1708",
+      "EWELINK",
       "HY0104",
       "HY0105",
       "JZ-ZB-005",
@@ -196,6 +201,7 @@
       "SA-028-1",
       "SA-029-1",
       "SNZB-06P",
+      "SONOFF",
       "SP 120",
       "SP 220",
       "SP 222",
@@ -209,7 +215,9 @@
       "TS0601",
       "TSO121",
       "Z111PL0H-1JX",
-      "ZBMINIL2"
+      "ZBMINIL2",
+      "eWeLink",
+      "sonoff"
     ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -658,8 +666,7 @@
   ],
   "images": {
     "small": "/drivers/plug_energy_monitor/assets/images/small.png",
-    "large": "/drivers/plug_energy_monitor/assets/images/large.png",
-    "xlarge": "/drivers/plug_energy_monitor/assets/images/xlarge.png"
+    "large": "/drivers/plug_energy_monitor/assets/images/large.png"
   },
   "platforms": [
     "local"

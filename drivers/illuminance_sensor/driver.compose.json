@@ -81,8 +81,7 @@
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
   "images": {
     "small": "/drivers/illuminance_sensor/assets/images/small.png",
-    "large": "/drivers/illuminance_sensor/assets/images/large.png",
-    "xlarge": "/drivers/illuminance_sensor/assets/images/xlarge.png"
+    "large": "/drivers/illuminance_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
