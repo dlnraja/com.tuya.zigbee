@@ -33,7 +33,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 ## ðŸš€ Latest Updates
 
 <!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (May 2026)
+### âœ¨ Recent Changes (Jun 2026)
 
 | Version | Feature |
 |---------|---------|
@@ -48,6 +48,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.5.49** | v8.5.48: |
 | **v8.5.48** | v8.5.47: |
 <!-- CHANGELOG_END -->
+
 
 
 
