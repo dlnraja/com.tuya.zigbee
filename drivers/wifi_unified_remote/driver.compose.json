@@ -1,0 +1,18 @@
+{
+  "id": "wifi_unified_remote",
+  "name": {
+    "en": "WiFi Remote & IR",
+    "nl": "WiFi Afstandsbediening",
+    "de": "WiFi Fernbedienung",
+    "fr": "Télécommande WiFi"
+  },
+  "platform": [
+    "wifi"
+  ],
+  "interfaces": [
+    "local"
+  ],
+  "capabilities": [
+    "onoff"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "wifi_unified_plug",
+  "name": {
+    "en": "WiFi Plug & Power Strip",
+    "nl": "WiFi Stopcontact",
+    "de": "WiFi Steckdose",
+    "fr": "Prise WiFi"
+  },
+  "platform": [
+    "wifi"
+  ],
+  "interfaces": [
+    "local"
+  ],
+  "capabilities": [
+    "onoff"
+  ]
+}
