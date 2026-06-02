@@ -116,3 +116,34 @@ Merging pull requests can take time. Here’s how you can help:
 - Ask fellow developers to **review** and test your changes.
 - Keep your PR as **small** and focused as possible.
 - Make sure your changes are well-documented and explain **why** they’re necessary.
+## Project Stats
+
+| Metric | Value |
+|--------|-------|
+| Version | v8.1.72 |
+| Drivers | 365 |
+| Fingerprints | 29,418 |
+| Last Updated | 2026-06-02 |
+
+
+## How to Add a Device
+
+1. Get your device fingerprint from Homey Developer Tools
+2. Find the matching driver in `drivers/` directory
+3. Add the fingerprint to `driver.compose.json`
+4. Test with `homey app run`
+5. Submit a PR or open an issue
+
+
+## Bug Reports
+
+- Include your device fingerprint (`_TZxxxx_xxxxx`)
+- Include Homey developer tools diagnostic report
+- Issues are auto-triaged and responses generated daily
+
+
+## Device Finder
+
+Check [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) to see if your device is already supported.
+Each device card includes a bug report button that creates a pre-filled issue.
+
