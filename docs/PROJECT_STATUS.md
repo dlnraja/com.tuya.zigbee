@@ -1,15 +1,15 @@
 # Project Status
 
-> Auto-generated on 2026-06-01
+> Auto-generated on 2026-06-02
 
 ## Overview
 
 | Metric | Value |
 |--------|-------|
-| Version | v8.1.66 |
-| Drivers | 375 |
-| Fingerprints | 29,434 |
-| Last Updated | 2026-06-01 |
+| Version | v8.1.69 |
+| Drivers | 365 |
+| Fingerprints | 29,418 |
+| Last Updated | 2026-06-02 |
 
 ## Drivers by Category
 
@@ -18,7 +18,7 @@
 | sensor | 119 |
 | socket | 95 |
 | light | 51 |
-| other | 35 |
+| other | 25 |
 | thermostat | 23 |
 | remote | 17 |
 | fan | 11 |
