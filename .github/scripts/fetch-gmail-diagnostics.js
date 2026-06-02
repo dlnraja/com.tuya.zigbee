@@ -321,8 +321,19 @@ async function main(){
   // v5.13.0: Pseudo tracking for cross-referencing
   const pseudoMap=new Map(); // username -> [{type, subj, date, fps}]
 
+  // Create dump folder for local analysis
+  const dumpDir = path.join(ROOT, 'diagnostics');
+  fs.mkdirSync(dumpDir, { recursive: true });
+
   for(const em of emails){
     if(done.has(em.id))continue;
+    
+    // Dump raw email to folder
+    try {
+      const safeId = (em.id || Date.now().toString()).replace(/[^a-z0-9_-]/gi, '_');
+      fs.writeFileSync(path.join(dumpDir, safeId + '.txt'), `Subject: ${em.subj}\nFrom: ${em.from}\nDate: ${em.date}\n\n${em.body}`);
+    } catch(e) {}
+
     const type=classify(em);
     const d=parse(em.body);
     const xref=crossRef(d,idx);

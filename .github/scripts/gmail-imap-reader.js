@@ -263,16 +263,17 @@ async function readViaIMAP(opts = {}) {
     if (!lock) { await c.logout(); return null }
     const out = [];
     try {
-      const kws = ['_TZE', '_TZ3', 'TS0', 'TS1', 'TS02', 'TS06', 'TS05', 'TS11', '_TZ', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log', 'oom', 'heap limit', 'allocation failed', 'homey', 'tuya', 'zigbee', 'athombv', 'com.tuya.zigbee', 'com.dlnraja.tuya.zigbee'];
-      const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'noreply@homey.app', 'support@athom.com', 'support@homey.app', 'dev@athom.com', 'developer@athom.com'];
       const seqSet = new Set();
-      for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
-      for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
-      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS0001', 'TS0002', 'TS0003', 'TS0004', 'TS011F', 'TS0201', 'TS0203', 'TS0501', 'TS0601', 'PJ-1203', 'PJ-1203A', '_TYZB01', '_TYST11', 'TS0011', 'TS0012', 'TS0013', 'TS0014', 'TS0015', 'TS0502', 'TS0503', 'TS0504', 'TS0505', 'TS0051', 'TS0052', 'TS0053', 'TS0054', 'TS110E', 'TS110F', 'TS0202', 'TS0204', 'TS0205', 'TS0207', 'TS0211', 'TS0212', 'TS0215', 'TS0216', 'TS0218', 'TS0222', 'TS0301', 'TS0302', 'TS0726', 'TS0801', 'TS1001', 'TS1101', 'TS1201', 'TS1301']) {
-        try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
+      try {
+        console.log('[IMAP] Running single optimized search for all emails since', since);
+        const allSeqs = await c.search({ since: new Date(since) });
+        allSeqs.forEach(s => seqSet.add(s));
+      } catch (err) {
+        console.error('[IMAP] Search failed:', err.message);
       }
-      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 100);
-      console.log('[IMAP]', seqSet.size, 'relevant msgs, fetching', seqs.length);
+      
+      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 200);
+      console.log('[IMAP]', seqSet.size, 'total msgs since date, fetching', seqs.length);
       if (seqs.length > 0) {
         const range = seqs.join(',');
         for await (const m of c.fetch(range, { envelope: true, source: true })) {
