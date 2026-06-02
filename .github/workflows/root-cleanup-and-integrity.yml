@@ -68,8 +68,7 @@ jobs:
             '.homeychangelog.json','.homeyplugins.json',
             '.editorconfig','.eslintrc.json','.nycrc',
             '.prettierrc','.prettierignore',
-            '.cascade','.cursorrules','.windsurfrules',
-            '.clinerule','.clinerules','.antigravityignore',
+              '.antigravityignore',
             '.env.example',
           ]);
 

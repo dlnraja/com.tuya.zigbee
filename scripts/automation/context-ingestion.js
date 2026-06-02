@@ -30,7 +30,7 @@ fs.writeFileSync('.context_branches.txt', branches);
 console.log('✅ Branches saved');
 
 // 3. Parse dotfiles
-const dotfiles = ['.cursorrules', '.windsurfrules', '.eslintrc.json', '.prettierrc', '.gitattributes', '.gitignore', '.homeyignore'];
+const dotfiles = ['.ai/rules/.cursorrules', '.ai/rules/.windsurfrules', '.eslintrc.json', '.prettierrc', '.gitattributes', '.gitignore', '.homeyignore'];
 let dotfilesContent = '=== DOTFILES DUMP ===\n\n';
 for (const f of dotfiles) {
   const fp = path.join(ROOT, f);
