@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-02T03:42:06.107Z",
+  "timestamp": "2026-06-02T03:44:05.271Z",
   "totalFiles": 0,
   "totalFixes": 198,
   "rules": {
@@ -104,7 +104,7 @@
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
-          "detail": "Line 3401: getDeviceTriggerCard without try-catch"
+          "detail": "Line 3402: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSwitchBase.js",
@@ -266,11 +266,11 @@
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
-          "detail": "Line 1687: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 1688: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
-          "detail": "Line 1716: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 1717: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/devices/UnifiedThermostatBase.js",
