@@ -431,14 +431,14 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: node .github/scripts/forum-spam-scan.js || true
+        run: if [ -f ".github/scripts/forum-scan-spam.js" ]; then node .github/scripts/forum-scan-spam.js; fi || true
       - name: Cleanup (edit-based)
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: node .github/scripts/forum-cleanup-edit.js || true
+        run: echo "Forum cleanup edit is disabled by user request" # node .github/scripts/forum-cleanup-edit.js || true
 
   diagnostic-resolver:
     name: "Diagnostic Auto-Resolver"
@@ -714,7 +714,7 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: node .github/scripts/forum-updater.js || node .github/scripts/post-forum-update.js || true
+        run: echo "Forum updating is disabled by user request" # node .github/scripts/forum-updater.js || node .github/scripts/post-forum-update.js || true
   promote-to-test:
     name: "Promote Draft to Test"
     needs: [generate-changelog, update-forum-thread]

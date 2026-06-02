@@ -53,7 +53,29 @@ async onInit() {
               card.registerRunListener(async (args) => {
                 if (!args.device) {return false;}
                 const val = action === 'turn_on' ? true : action === 'turn_off' ? false : !args.device.getCapabilityValue(cap);
-                await args.device.triggerCapabilityListener(cap, val);
+                if (typeof args.device._setGangOnOff === 'function') {
+                  await args.device._setGangOnOff(idx + 1, val);
+                } else if (args.device.isZclOnlyDevice || args.device._isZclOnlyMode) {
+                  const onOff = args.device.zclNode?.endpoints?.[idx + 1]?.clusters?.onOff || 
+                                args.device.zclNode?.endpoints?.[idx + 1]?.clusters?.genOnOff ||
+                                args.device._zclNode?.endpoints?.[idx + 1]?.clusters?.onOff || 
+                                args.device._zclNode?.endpoints?.[idx + 1]?.clusters?.genOnOff;
+                  if (onOff) {
+                    if (typeof onOff.writeAttributes === 'function') {
+                      await onOff.writeAttributes({ onOff: val ? true : false }).catch(() => onOff[val ? 'setOn' : 'setOff']());
+                    } else {
+                      await onOff[val ? 'setOn' : 'setOff']();
+                    }
+                  }
+                } else {
+                  await args.device.triggerCapabilityListener(cap, val).catch(() => {});
+                }
+                
+                if (typeof args.device.safeSetCapabilityValue === 'function') {
+                  await args.device.safeSetCapabilityValue(cap, val).catch(() => {});
+                } else {
+                  await args.device.setCapabilityValue(cap, val).catch(() => {});
+                }
                 return true;
               });
             }
@@ -72,7 +94,30 @@ async onInit() {
             for (let i = 1; i <= 4; i++) {
               const cap = i === 1 ? 'onoff' : `onoff.gang${i}`;
               if (args.device.hasCapability(cap)) {
-                await args.device.triggerCapabilityListener(cap, action === 'turn_on_all').catch(() => {});
+                const val = action === 'turn_on_all';
+                if (typeof args.device._setGangOnOff === 'function') {
+                  await args.device._setGangOnOff(i, val);
+                } else if (args.device.isZclOnlyDevice || args.device._isZclOnlyMode) {
+                  const onOff = args.device.zclNode?.endpoints?.[i]?.clusters?.onOff || 
+                                args.device.zclNode?.endpoints?.[i]?.clusters?.genOnOff ||
+                                args.device._zclNode?.endpoints?.[i]?.clusters?.onOff || 
+                                args.device._zclNode?.endpoints?.[i]?.clusters?.genOnOff;
+                  if (onOff) {
+                    if (typeof onOff.writeAttributes === 'function') {
+                      await onOff.writeAttributes({ onOff: val ? true : false }).catch(() => onOff[val ? 'setOn' : 'setOff']());
+                    } else {
+                      await onOff[val ? 'setOn' : 'setOff']();
+                    }
+                  }
+                } else {
+                  await args.device.triggerCapabilityListener(cap, val).catch(() => {});
+                }
+                
+                if (typeof args.device.safeSetCapabilityValue === 'function') {
+                  await args.device.safeSetCapabilityValue(cap, val).catch(() => {});
+                } else {
+                  await args.device.setCapabilityValue(cap, val).catch(() => {});
+                }
               }
             }
             return true;

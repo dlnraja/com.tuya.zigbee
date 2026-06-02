@@ -20,6 +20,10 @@ This framework defines the strict boundaries and architectural imperatives for a
 *   **Layer 11 (Sanity)**: **Data Plausibility Filter**.
     *   *Directive*: Reject sensor reports that exceed physics-based deltas (e.g., >10°C change in <5s).
 
+### 🌟 L12-L13: Auto-Discovery & Diagnostic Resilience (Phase 1-6 Learnings)
+*   **Layer 12 (Auto-Discovery & Diagnostics)**: Use `TuyaDPDatabase.js` for on-the-fly capability mapping instead of raw inference. Use `api.js` endpoints (e.g. `/diagnostics/:id`) for community-driven data extraction rather than scraping forums or logs.
+*   **Layer 13 (Stability & Virtual Polling)**: Implement `_destroyed` circuit breakers and exponential backoff (`_safeInvoke`) on all network calls. For devices that stop reporting state (like presence sensors with Lux), use Virtual Polling and local state retention to re-broadcast values. Unused timers MUST be cleared in `onUninit()` to prevent memory leaks.
+
 ---
 
 ## 🚀 2. ZERO-DEFECT OPERATIONAL RULES
@@ -66,6 +70,6 @@ This framework defines the strict boundaries and architectural imperatives for a
 3.  **Sanitize third**: Ensure no invisible characters or `??` artifacts exist.
 4.  **Ground Truth**: `diagnostics/summary.json` is the ultimate source of truth for runtime errors.
 
-**Version**: 4.6.0 (Opus Standard)
-**Last Audit**: 2026-05-01
+**Version**: 4.7.0 (Opus Standard - Updated with 6-Phase Improvements)
+**Last Audit**: 2026-06-02
 **Signed**: dlnraja-bot / Antigravity Agent

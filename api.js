@@ -144,5 +144,50 @@ module.exports = [
         throw new Error(`Device replacement failed: ${err.message}`);
       }
     }
+  },
+  {
+    method: 'GET',
+    path: '/diagnostics/:id',
+    public: true,
+    fn: async function({ homey, params }) {
+      try {
+        const deviceId = params.id;
+        const driverList = homey.drivers.getDrivers();
+        let targetDevice = null;
+        
+        for (const driverId of Object.keys(driverList)) {
+          const devices = driverList[driverId].getDevices();
+          if (devices[deviceId]) {
+            targetDevice = devices[deviceId];
+            break;
+          }
+        }
+
+        if (!targetDevice) throw new Error('Device not found');
+
+        const diagDump = {
+          timestamp: new Date().toISOString(),
+          id: targetDevice.getId(),
+          name: targetDevice.getName(),
+          driver: targetDevice.getDriver().getId(),
+          data: targetDevice.getData(),
+          store: targetDevice.getStore(),
+          settings: targetDevice.getSettings(),
+          capabilities: targetDevice.getCapabilities(),
+          zclNodeData: targetDevice.zclNode ? {
+            endpoints: Object.keys(targetDevice.zclNode.endpoints || {}),
+          } : null
+        };
+
+        if (typeof targetDevice.runDiagnostics === 'function') {
+           diagDump.runtimeDiagnostics = await targetDevice.runDiagnostics();
+        }
+
+        return diagDump;
+      } catch (err) {
+        homey.error('[Diagnostics API] Error:', err);
+        throw new Error(`Diagnostics failed: ${err.message}`);
+      }
+    }
   }
 ];

@@ -88,7 +88,7 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: $(node -p "require('./app.json').version")
           CHANGELOG: "Automated promotion from draft to test channel."
-        run: node .github/scripts/post-forum-update.js
+        run: echo "Forum updating is disabled by user request" # node .github/scripts/post-forum-update.js
 
       - name: Summary
         if: always()
