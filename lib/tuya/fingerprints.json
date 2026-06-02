@@ -12272,5 +12272,29 @@
         "capability": "measure_battery"
       }
     }
+  },
+  "_TZE200_seq9cm6u": {
+    "driverId": "bed_sensor",
+    "type": "zigbee",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_3towulqd": {
+    "driverId": "motion_sensor_2",
+    "type": "zigbee",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_b4awzgct": {
+    "driverId": "button_wireless_1",
+    "type": "zigbee",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0041"
+    ]
   }
 }
