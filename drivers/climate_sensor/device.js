@@ -38,7 +38,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       4: { capability: 'measure_battery', divisor: 1 },
       5: { capability: 'measure_luminance', divisor: 1 },
       12: { capability: 'measure_luminance', divisor: 1 },
-      38: { capability: 'measure_temperature.probe', divisor: 10, dynamicAdd: true }
+      105: { capability: 'measure_temperature.probe', divisor: 10, dynamicAdd: true }
     };
   }
 

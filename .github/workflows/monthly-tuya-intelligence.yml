@@ -53,7 +53,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: "Step 3 - Run Tuya Intelligence Fingerprinting"
-        run: node .github/scripts/tuya-intelligence.js
+        run: if [ -f ".github/scripts/tuya-intelligence.js" ]; then node .github/scripts/tuya-intelligence.js; fi
         continue-on-error: true
 
       - name: "Commit and Push Results"

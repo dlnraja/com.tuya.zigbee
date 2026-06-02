@@ -10,7 +10,6 @@
     "Zigbee2MQTT Device Database",
     "ZHA Device Handlers"
   ],
-
   "interviews": {
     "presence_sensors": [
       {
@@ -19,7 +18,13 @@
         "manufacturerName": "_TZE284_iadro9bf",
         "productId": "TS0601",
         "deviceType": "router",
-        "inputClusters": [4, 5, 61184, 0, 60672],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0,
+          60672
+        ],
         "source": "Forum Page 39",
         "diagnosticId": "d8820bc1-7646-411b-8158-2132ea45a1ac",
         "status": "fixed",
@@ -43,11 +48,18 @@
         "manufacturerName": "_TZE204_gkfbdvyx",
         "productId": "TS0601",
         "deviceType": "router",
-        "inputClusters": [4, 5, 61184, 0],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0
+        ],
         "source": "Forum Page 39",
         "status": "fixed",
         "priority": "high",
-        "symptoms": ["Was broken, now working with movement detection"],
+        "symptoms": [
+          "Was broken, now working with movement detection"
+        ],
         "fix": {
           "applied": true,
           "version": "5.5.750"
@@ -60,7 +72,10 @@
         "productId": "TS0601",
         "source": "Forum Page 43",
         "status": "fixed",
-        "symptoms": ["Battery spam gone but no motion detection", "Missing static_detection_distance"],
+        "symptoms": [
+          "Battery spam gone but no motion detection",
+          "Missing static_detection_distance"
+        ],
         "fix": {
           "applied": false,
           "strategy": "Verify DP102/103 mappings, add capability if missing"
@@ -74,7 +89,9 @@
         "source": "Forum Page 45/46",
         "user": "tlink",
         "status": "fixed",
-        "symptoms": ["Flow triggers don't work (presence_detected, presence_cleared)"],
+        "symptoms": [
+          "Flow triggers don't work (presence_detected, presence_cleared)"
+        ],
         "fix": {
           "applied": true,
           "version": "5.5.435",
@@ -93,7 +110,6 @@
         "driver": "presence_sensor_radar"
       }
     ],
-
     "buttons_scene_switches": [
       {
         "id": "INT-010",
@@ -135,9 +151,16 @@
         ],
         "rootCause": "Fingerprint collision - ID in 8+ drivers",
         "collisionDrivers": [
-          "water_leak_sensor", "switch_3gang", "switch_2gang", "switch_4gang",
-          "switch_1gang", "scene_switch_4", "motion_sensor", "contact_sensor",
-          "climate_sensor", "button_wireless_4"
+          "water_leak_sensor",
+          "switch_3gang",
+          "switch_2gang",
+          "switch_4gang",
+          "switch_1gang",
+          "scene_switch_4",
+          "motion_sensor",
+          "contact_sensor",
+          "climate_sensor",
+          "button_wireless_4"
         ],
         "fix": {
           "applied": true,
@@ -167,7 +190,10 @@
         "user": "Eftychis_Georgilas",
         "diagnosticId": "7fc451ca-ed9a-4997-a070-979118b8e6c2",
         "status": "fixed",
-        "symptoms": ["No option to choose buttons in GUI", "Error message displayed"]
+        "symptoms": [
+          "No option to choose buttons in GUI",
+          "Error message displayed"
+        ]
       },
       {
         "id": "INT-014",
@@ -188,7 +214,12 @@
         "user": "Jesse22homey, Freddyboy",
         "status": "fixed",
         "priority": "high",
-        "inputClusters": [1, 6, 57344, 0],
+        "inputClusters": [
+          1,
+          6,
+          57344,
+          0
+        ],
         "symptoms": [
           "Physical buttons not triggering flows",
           "Virtual buttons not clickable (setable:false)",
@@ -210,10 +241,25 @@
         "productId": "TS0601",
         "source": "JohanBendz #1343",
         "user": "cvh1111",
-        "status": "new_device_request",
+        "status": "supported",
         "priority": "medium",
-        "inputClusters": [0, 3, 1280, 61184, 1026, 1029, 1, 1024],
-        "capabilities": ["motion", "temperature", "humidity", "illuminance", "battery"],
+        "inputClusters": [
+          0,
+          3,
+          1280,
+          61184,
+          1026,
+          1029,
+          1,
+          1024
+        ],
+        "capabilities": [
+          "motion",
+          "temperature",
+          "humidity",
+          "illuminance",
+          "battery"
+        ],
         "notes": "Has IAS Zone, temperature, humidity, illuminance clusters - hybrid ZCL+DP device",
         "driver": "presence_sensor_radar"
       },
@@ -224,9 +270,15 @@
         "productId": "TS0601",
         "source": "JohanBendz #1345",
         "user": "Nono-3ric",
-        "status": "new_device_request",
+        "status": "supported",
         "priority": "medium",
-        "inputClusters": [4, 5, 61184, 0, 60672],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0,
+          60672
+        ],
         "powerSource": "battery",
         "notes": "Battery-powered thermostat for radiator valves",
         "driver": "thermostat_radiator_valve"
@@ -269,7 +321,6 @@
         "driver": "switch_3gang"
       }
     ],
-
     "contact_sensors": [
       {
         "id": "INT-020",
@@ -279,7 +330,10 @@
         "source": "Forum Page 42",
         "user": "Lasse_K",
         "status": "fixed",
-        "symptoms": ["Device completely unresponsive", "No indication when magnet removed/attached"],
+        "symptoms": [
+          "Device completely unresponsive",
+          "No indication when magnet removed/attached"
+        ],
         "rootCause": "Possible IAS Zone CIE enrollment failure or debounce issue",
         "fix": {
           "applied": false,
@@ -295,10 +349,18 @@
         "user": "Lasse_K",
         "status": "fixed",
         "priority": "high",
-        "inputClusters": [0, 3, 1280, 61184, 1],
+        "inputClusters": [
+          0,
+          3,
+          1280,
+          61184,
+          1
+        ],
         "iasZoneType": "contactSwitch",
         "iasCIEAddress": "00:00:00:00:00:00:00:00",
-        "symptoms": ["Device not sending IAS Zone notifications"],
+        "symptoms": [
+          "Device not sending IAS Zone notifications"
+        ],
         "rootCause": "CIE address not enrolled - device shows 00:00:00:00:00:00:00:00",
         "fix": {
           "applied": true,
@@ -316,7 +378,6 @@
         "driver": "contact_sensor"
       }
     ],
-
     "climate_sensors": [
       {
         "id": "INT-030",
@@ -324,15 +385,24 @@
         "manufacturerName": "eWeLink",
         "productId": "CK-TLSR8656-SS5-01(7014)",
         "deviceType": "enddevice",
-        "inputClusters": [0, 1, 3, 4, 32, 1026, 1029, 64529],
+        "inputClusters": [
+          0,
+          1,
+          3,
+          4,
+          32,
+          1026,
+          1029,
+          64529
+        ],
         "source": "Forum Page 42",
         "status": "fixed",
         "clusterDetails": {
           "0": "basic",
           "1": "powerConfiguration (battery: 3.2V, 100%)",
+          "32": "pollControl (checkIn: 14400s)",
           "1026": "temperatureMeasurement (26.5°C)",
           "1029": "relativeHumidity (62.3%)",
-          "32": "pollControl (checkIn: 14400s)",
           "64529": "eWeLink proprietary (0xFC11)"
         },
         "fix": {
@@ -362,7 +432,6 @@
         "driver": "climate_sensor"
       }
     ],
-
     "motion_sensors": [
       {
         "id": "INT-044",
@@ -373,7 +442,10 @@
         "user": "Cam",
         "status": "fixed",
         "priority": "high",
-        "symptoms": ["Motion sensor always shows active in Homey UI", "Never goes inactive even after hour"],
+        "symptoms": [
+          "Motion sensor always shows active in Homey UI",
+          "Never goes inactive even after hour"
+        ],
         "rootCause": "invert_presence setting not applied to IAS Zone and Tuya DP motion handlers",
         "fix": {
           "applied": true,
@@ -389,7 +461,9 @@
         "source": "Forum Page 41",
         "user": "Eftychis",
         "status": "design_limitation",
-        "symptoms": ["Lux level only updates when motion is triggered"],
+        "symptoms": [
+          "Lux level only updates when motion is triggered"
+        ],
         "explanation": "Expected behavior for battery-powered PIR sensors - sleepy devices only wake on motion"
       },
       {
@@ -413,14 +487,16 @@
       {
         "id": "INT-043",
         "deviceName": "PIR sensors",
-        "manufacturerName": ["_TZ3000_fa9mlvja", "_TZ3000_rcuyhwe3"],
+        "manufacturerName": [
+          "_TZ3000_fa9mlvja",
+          "_TZ3000_rcuyhwe3"
+        ],
         "productId": "TS0202",
         "source": "GitHub PR #1161",
         "status": "supported",
         "driver": "motion_sensor"
       }
     ],
-
     "switches": [
       {
         "id": "INT-050",
@@ -432,11 +508,20 @@
         "status": "supported",
         "driver": "switch_1gang",
         "protocol": "zcl_only",
-        "clusters": ["0x0006", "0xE000", "0xE001"],
+        "clusters": [
+          "0x0006",
+          "0xE000",
+          "0xE001"
+        ],
         "physicalButtonDetection": {
           "method": "onOff attribute report without app command",
           "appCommandWindow": 2000,
-          "flowCards": ["physical_gang1_on", "physical_gang1_off", "physical_gang1_single", "physical_gang1_long_press"]
+          "flowCards": [
+            "physical_gang1_on",
+            "physical_gang1_off",
+            "physical_gang1_single",
+            "physical_gang1_long_press"
+          ]
         }
       },
       {
@@ -479,7 +564,6 @@
         "driver": "plug_smart"
       }
     ],
-
     "plugs_energy": [
       {
         "id": "INT-060",
@@ -489,7 +573,12 @@
         "source": "Forum Page 44",
         "status": "supported",
         "driver": "power_meter",
-        "capabilities": ["measure_power", "measure_voltage", "measure_current", "meter_power"]
+        "capabilities": [
+          "measure_power",
+          "measure_voltage",
+          "measure_current",
+          "meter_power"
+        ]
       },
       {
         "id": "INT-061",
@@ -511,7 +600,6 @@
         "driver": "plug_smart"
       }
     ],
-
     "smoke_detectors": [
       {
         "id": "INT-070",
@@ -533,7 +621,6 @@
         "driver": "smoke_detector_advanced"
       }
     ],
-
     "soil_water_sensors": [
       {
         "id": "INT-080",
@@ -544,7 +631,11 @@
         "user": "csmobiel",
         "status": "supported",
         "driver": "soil_sensor",
-        "capabilities": ["measure_soil_moisture", "measure_temperature", "measure_battery"]
+        "capabilities": [
+          "measure_soil_moisture",
+          "measure_temperature",
+          "measure_battery"
+        ]
       },
       {
         "id": "INT-081",
@@ -557,7 +648,6 @@
         "driver": "water_tank_monitor"
       }
     ],
-
     "thermostats": [
       {
         "id": "INT-090",
@@ -569,7 +659,6 @@
         "driver": "thermostat_tuya_dp"
       }
     ],
-
     "air_quality": [
       {
         "id": "INT-100",
@@ -580,10 +669,15 @@
         "user": "gfi63",
         "status": "supported",
         "driver": "air_quality_comprehensive",
-        "capabilities": ["measure_co2", "measure_voc", "measure_formaldehyde", "measure_temperature", "measure_humidity"]
+        "capabilities": [
+          "measure_co2",
+          "measure_voc",
+          "measure_formaldehyde",
+          "measure_temperature",
+          "measure_humidity"
+        ]
       }
     ],
-
     "curtains_covers": [
       {
         "id": "INT-110",
@@ -600,14 +694,26 @@
         "manufacturerName": "_TZE204_xu4a5rhj",
         "productId": "TS0601",
         "firmware": "M3TYW-2.0-13",
-        "aliases": ["DS82-Tuya", "LS82-Tuya", "Leisguar LS82"],
+        "aliases": [
+          "DS82-Tuya",
+          "LS82-Tuya",
+          "Leisguar LS82"
+        ],
         "source": "GitHub #117, #122 (elgato7), Z2M #25428, #26660, ZHA #3181, #1319, JohanBendz #1070",
         "user": "elgato7",
         "status": "fixed",
         "priority": "high",
         "diagnosticId": "68fd94c5-5b34-4e62-8ea0-b028b47f33a9",
-        "inputClusters": [0, 4, 5, 61184],
-        "outputClusters": [10, 25],
+        "inputClusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "outputClusters": [
+          10,
+          25
+        ],
         "symptoms": [
           "Commands sent but motor doesn't respond",
           "DP values change but no rotation",
@@ -640,7 +746,6 @@
         "driver": "curtain_motor"
       }
     ],
-
     "sirens": [
       {
         "id": "INT-120",
@@ -652,7 +757,6 @@
         "driver": "siren_alarm"
       }
     ],
-
     "fingerbot": [
       {
         "id": "INT-130",
@@ -664,7 +768,6 @@
         "driver": "fingerbot"
       }
     ],
-
     "radar_sensors": [
       {
         "id": "INT-143",
@@ -675,7 +778,14 @@
         "user": "Peter_van_Werkhoven",
         "status": "fixed",
         "priority": "critical",
-        "inputClusters": [0, 1, 3, 1024, 1280, 61184],
+        "inputClusters": [
+          0,
+          1,
+          3,
+          1024,
+          1280,
+          61184
+        ],
         "dpMap": {
           "DP1": "alarm_motion (presence bool)",
           "DP3": "measure_temperature (÷10)",
@@ -692,16 +802,46 @@
           "SOS button flow not triggering (v5.5.841)"
         ],
         "fixHistory": [
-          {"version": "5.5.841", "fix": "Added ZG-204ZV handling in getSensorConfig()"},
-          {"version": "5.5.907", "fix": "Battery capability auto-added"},
-          {"version": "5.5.912", "fix": "ZCL temp/humidity cluster listeners (0x0402/0x0405)"},
-          {"version": "5.5.919", "fix": "Tuya DP capability support for temp/humidity"},
-          {"version": "5.5.930", "fix": "DP polling for temp/humidity/battery"},
-          {"version": "5.5.953", "fix": "Humidity scaling fix (raw values, no divisor)"},
-          {"version": "5.5.984", "fix": "modelId detection from settings/store"},
-          {"version": "5.5.985", "fix": "Lux smoothing (15% threshold)"},
-          {"version": "5.5.986", "fix": "ZCL illuminance throttle (30s)"},
-          {"version": "5.5.987", "fix": "Humidity multiplier (×10)"}
+          {
+            "version": "5.5.841",
+            "fix": "Added ZG-204ZV handling in getSensorConfig()"
+          },
+          {
+            "version": "5.5.907",
+            "fix": "Battery capability auto-added"
+          },
+          {
+            "version": "5.5.912",
+            "fix": "ZCL temp/humidity cluster listeners (0x0402/0x0405)"
+          },
+          {
+            "version": "5.5.919",
+            "fix": "Tuya DP capability support for temp/humidity"
+          },
+          {
+            "version": "5.5.930",
+            "fix": "DP polling for temp/humidity/battery"
+          },
+          {
+            "version": "5.5.953",
+            "fix": "Humidity scaling fix (raw values, no divisor)"
+          },
+          {
+            "version": "5.5.984",
+            "fix": "modelId detection from settings/store"
+          },
+          {
+            "version": "5.5.985",
+            "fix": "Lux smoothing (15% threshold)"
+          },
+          {
+            "version": "5.5.986",
+            "fix": "ZCL illuminance throttle (30s)"
+          },
+          {
+            "version": "5.5.987",
+            "fix": "Humidity multiplier (×10)"
+          }
         ],
         "crossReference": [
           "Z2M: https://www.zigbee2mqtt.io/devices/ZG-204ZV.html",
@@ -717,7 +857,10 @@
         "manufacturerName": "_TZE200_3towulqd",
         "productId": "TS0601",
         "source": "Z2M #12364, Peter_van_Werkhoven #1225, 4x4_Pete #788, #810",
-        "users": ["Peter_van_Werkhoven", "4x4_Pete"],
+        "users": [
+          "Peter_van_Werkhoven",
+          "4x4_Pete"
+        ],
         "status": "fixed",
         "priority": "high",
         "dpMap": {
@@ -733,9 +876,18 @@
         ],
         "rootCause": "Same _TZE200_3towulqd can be ZG-204ZL (PIR-only) OR ZG-204ZV (with temp/humidity) - manufacturer variants",
         "fixHistory": [
-          {"version": "5.5.329", "fix": "Remove incorrect temp/humidity (4x4_Pete #788)"},
-          {"version": "5.5.335", "fix": "PIR_ONLY_MANUFACTURERS list (4x4_Pete #810)"},
-          {"version": "5.5.920", "fix": "Battery DP4 + permissive variant mode (Peter_van_Werkhoven #1225)"}
+          {
+            "version": "5.5.329",
+            "fix": "Remove incorrect temp/humidity (4x4_Pete #788)"
+          },
+          {
+            "version": "5.5.335",
+            "fix": "PIR_ONLY_MANUFACTURERS list (4x4_Pete #810)"
+          },
+          {
+            "version": "5.5.920",
+            "fix": "Battery DP4 + permissive variant mode (Peter_van_Werkhoven #1225)"
+          }
         ],
         "crossReference": [
           "Z2M #12364: ZG-204ZL support request",
@@ -753,7 +905,14 @@
         "user": "4x4_Pete",
         "status": "fixed",
         "priority": "high",
-        "inputClusters": [0, 1, 3, 61184, 1024, 1280],
+        "inputClusters": [
+          0,
+          1,
+          3,
+          61184,
+          1024,
+          1280
+        ],
         "dpMap": {
           "DP1": "presence (binary)",
           "DP2": "motion_state (none/small/large/static)",
@@ -770,12 +929,30 @@
           "Duplicate DP15 reports"
         ],
         "fixHistory": [
-          {"version": "5.5.364", "fix": "Removed duplicate productIds from motion_sensor (#848)"},
-          {"version": "5.5.366", "fix": "Battery throttling + PIR_ONLY list (#851)"},
-          {"version": "5.5.394", "fix": "NEW: ZG-204ZM Motion Sensor support"},
-          {"version": "5.5.395", "fix": "ENHANCED: PIR+24GHz Radar with Z2M settings"},
-          {"version": "5.5.511-512", "fix": "ZCL+Tuya hybrid detection + HOBEIAN mfr list"},
-          {"version": "5.5.983", "fix": "Battery spam fix (throttle + remove dup DP15)"}
+          {
+            "version": "5.5.364",
+            "fix": "Removed duplicate productIds from motion_sensor (#848)"
+          },
+          {
+            "version": "5.5.366",
+            "fix": "Battery throttling + PIR_ONLY list (#851)"
+          },
+          {
+            "version": "5.5.394",
+            "fix": "NEW: ZG-204ZM Motion Sensor support"
+          },
+          {
+            "version": "5.5.395",
+            "fix": "ENHANCED: PIR+24GHz Radar with Z2M settings"
+          },
+          {
+            "version": "5.5.511-512",
+            "fix": "ZCL+Tuya hybrid detection + HOBEIAN mfr list"
+          },
+          {
+            "version": "5.5.983",
+            "fix": "Battery spam fix (throttle + remove dup DP15)"
+          }
         ],
         "crossReference": [
           "SmartHomeScene: https://smarthomescene.com/reviews/zigbee-battery-powered-presence-sensor-zg-204zm-review/",
@@ -812,7 +989,6 @@
         "driver": "presence_sensor_radar"
       }
     ],
-
     "led_lights": [
       {
         "id": "INT-150",
@@ -824,7 +1000,6 @@
         "driver": "led_strip"
       }
     ],
-
     "forum_jan_2026": [
       {
         "id": "INT-150",
@@ -887,7 +1062,14 @@
         "user": "Mitch_Vallinga",
         "status": "supported",
         "priority": "medium",
-        "inputClusters": [4, 5, 6, 258, 57345, 0],
+        "inputClusters": [
+          4,
+          5,
+          6,
+          258,
+          57345,
+          0
+        ],
         "notes": "Fingerprint already exists in curtain_motor driver, user needs to re-pair",
         "driver": "curtain_motor"
       },
@@ -950,7 +1132,9 @@
         "source": "Forum Jan 26 2026 - Dominique_C",
         "user": "Dominique_C",
         "status": "supported",
-        "symptoms": ["IAS Zone error"],
+        "symptoms": [
+          "IAS Zone error"
+        ],
         "driver": "water_leak_sensor"
       },
       {
@@ -959,7 +1143,12 @@
         "manufacturerName": "_TZE200_3towulqd",
         "productId": "TS0601",
         "source": "Forum Jan 26-30 2026 - Peter_van_Werkhoven",
-        "diagnosticIds": ["52546992-9767-4557-bc11-aee8ea943b74", "9018c1c9-0c9c-4da4-9a84-ca0d896b34f1", "9b3495bb-16c7-4e90-8ee6-335b0f2fdec6", "fb042598-ef9f-4552-94cf-f4eb23db067b"],
+        "diagnosticIds": [
+          "52546992-9767-4557-bc11-aee8ea943b74",
+          "9018c1c9-0c9c-4da4-9a84-ca0d896b34f1",
+          "9b3495bb-16c7-4e90-8ee6-335b0f2fdec6",
+          "fb042598-ef9f-4552-94cf-f4eb23db067b"
+        ],
         "user": "Peter_van_Werkhoven",
         "status": "fixed",
         "priority": "critical",
@@ -1003,7 +1192,9 @@
         "source": "Forum Jan 26 2026 - blutch32",
         "user": "blutch32",
         "status": "fixed",
-        "symptoms": ["Detected as unknown zigbee device"],
+        "symptoms": [
+          "Detected as unknown zigbee device"
+        ],
         "fix": {
           "applied": true,
           "version": "5.7.8",
@@ -1058,7 +1249,10 @@
         "source": "Forum Jan 30 2026 - tlink",
         "user": "tlink",
         "status": "fixed",
-        "symptoms": ["Not being recognized anymore", "Worked in October 2025"],
+        "symptoms": [
+          "Not being recognized anymore",
+          "Worked in October 2025"
+        ],
         "fix": {
           "applied": true,
           "version": "5.6.0",
@@ -1071,7 +1265,11 @@
         "manufacturerName": "_TZE284_o3x45p96",
         "productId": "TS0601",
         "source": "Forum Jan 27-30 2026 - ManuelKugler + ZHA #3559 + Z2M #24197",
-        "diagnosticIds": ["f089e2e7-ef9f-465e-8240-7dc3c00d22db", "aba2c0c3-9925-4528-b876-24deb63cf932", "e8f3e458-be41-4532-bdef-548545e1af87"],
+        "diagnosticIds": [
+          "f089e2e7-ef9f-465e-8240-7dc3c00d22db",
+          "aba2c0c3-9925-4528-b876-24deb63cf932",
+          "e8f3e458-be41-4532-bdef-548545e1af87"
+        ],
         "user": "ManuelKugler",
         "status": "fixed",
         "priority": "high",
@@ -1100,7 +1298,13 @@
           "103": "boost",
           "104": "battery"
         },
-        "relatedFingerprints": ["_TZE200_p3dbf6qs", "_TZE204_p3dbf6qs", "_TZE204_eekpf0ft", "_TZE200_ymldrmzx", "_TZE284_ymldrmzx"],
+        "relatedFingerprints": [
+          "_TZE200_p3dbf6qs",
+          "_TZE204_p3dbf6qs",
+          "_TZE204_eekpf0ft",
+          "_TZE200_ymldrmzx",
+          "_TZE284_ymldrmzx"
+        ],
         "driver": "radiator_valve"
       },
       {
@@ -1111,7 +1315,9 @@
         "source": "Forum Jan 28 2026 - JJ10",
         "user": "JJ10",
         "status": "fixed",
-        "symptoms": ["Connected as unknown device"],
+        "symptoms": [
+          "Connected as unknown device"
+        ],
         "fix": {
           "applied": true,
           "version": "5.8.86",
@@ -1144,11 +1350,12 @@
         "source": "Forum Jan 27 2026 - JohnnyBravo",
         "user": "JohnnyBravo",
         "status": "stale",
-        "symptoms": ["Data measured only once then no updates"],
+        "symptoms": [
+          "Data measured only once then no updates"
+        ],
         "notes": "No follow-up from user since Jan 2026. No fingerprint provided. Marked stale."
       }
     ],
-
     "new_diagnostics_2026_01": [
       {
         "id": "INT-146",
@@ -1257,7 +1464,12 @@
           "version": "5.6.0",
           "description": "Fixed settings keys in BaseUnifiedDevice.js, UnifiedThermostatBase.js, UnifiedLightBase.js, TuyaUnifiedDevice.js - now uses zb_model_id and zb_manufacturer_name with fallbacks"
         },
-        "affectedFiles": ["BaseUnifiedDevice.js", "UnifiedThermostatBase.js", "UnifiedLightBase.js", "TuyaUnifiedDevice.js"],
+        "affectedFiles": [
+          "BaseUnifiedDevice.js",
+          "UnifiedThermostatBase.js",
+          "UnifiedLightBase.js",
+          "TuyaUnifiedDevice.js"
+        ],
         "driver": "button_wireless_1"
       },
       {
@@ -1341,12 +1553,17 @@
         "source": "Forum Page 59 (Jan 31, 2026)",
         "user": "Pieter_Pessers",
         "status": "supported",
-        "symptoms": ["Device seen as unknown"],
+        "symptoms": [
+          "Device seen as unknown"
+        ],
         "resolution": {
           "status": "already_supported",
           "driver": "switch_1gang",
           "version": "5.5.900+",
-          "features": ["onoff", "physical_button_detection"]
+          "features": [
+            "onoff",
+            "physical_button_detection"
+          ]
         },
         "notes": "ZCL-only device with clusters 0xE000/0xE001. Uses PhysicalButtonMixin.",
         "driver": "switch_1gang"
@@ -1359,12 +1576,18 @@
         "source": "Forum Page 54-59 (Jan 2026)",
         "user": "Pieter_Pessers",
         "status": "supported",
-        "symptoms": ["Device seen as unknown"],
+        "symptoms": [
+          "Device seen as unknown"
+        ],
         "resolution": {
           "status": "already_supported",
           "driver": "switch_2gang",
           "version": "5.5.900+",
-          "features": ["onoff_gang1", "onoff_gang2", "physical_button_detection"]
+          "features": [
+            "onoff_gang1",
+            "onoff_gang2",
+            "physical_button_detection"
+          ]
         },
         "notes": "ZCL-only device. 2 endpoints with onOff cluster per gang.",
         "driver": "switch_2gang"
@@ -1377,12 +1600,19 @@
         "source": "Forum Page 54-59 (Jan 2026)",
         "user": "Pieter_Pessers",
         "status": "supported",
-        "symptoms": ["Device seen as unknown"],
+        "symptoms": [
+          "Device seen as unknown"
+        ],
         "resolution": {
           "status": "already_supported",
           "driver": "switch_3gang",
           "version": "5.5.900+",
-          "features": ["onoff_gang1", "onoff_gang2", "onoff_gang3", "physical_button_detection"]
+          "features": [
+            "onoff_gang1",
+            "onoff_gang2",
+            "onoff_gang3",
+            "physical_button_detection"
+          ]
         },
         "notes": "ZCL-only device. 3 endpoints with onOff cluster per gang. Clusters 57344/57345.",
         "driver": "switch_3gang"
@@ -1415,12 +1645,17 @@
         "source": "Forum Page 58 (Jan 2026)",
         "user": "Pieter_Pessers",
         "status": "supported",
-        "symptoms": ["Valve control not working"],
+        "symptoms": [
+          "Valve control not working"
+        ],
         "resolution": {
           "status": "already_supported",
           "driver": "valve_single",
           "version": "5.6.0+",
-          "features": ["onoff", "valve_control"]
+          "features": [
+            "onoff",
+            "valve_control"
+          ]
         },
         "notes": "ZCL-only device. Uses onOff cluster for valve control.",
         "driver": "valve_single"
@@ -1433,18 +1668,32 @@
         "source": "Forum #1299 (Jan 31, 2026)",
         "user": "Lasse_K",
         "status": "supported",
-        "symptoms": ["Contact sensor interview"],
+        "symptoms": [
+          "Contact sensor interview"
+        ],
         "interviewData": {
-          "clusters": ["basic", "identify", "iasZone", "powerConfiguration", "tuya(61184)"],
+          "clusters": [
+            "basic",
+            "identify",
+            "iasZone",
+            "powerConfiguration",
+            "tuya(61184)"
+          ],
           "zoneType": "contactSwitch",
           "zoneState": "enrolled",
-          "battery": {"voltage": 30, "percentage": 200}
+          "battery": {
+            "voltage": 30,
+            "percentage": 200
+          }
         },
         "resolution": {
           "status": "already_supported",
           "driver": "contact_sensor",
           "version": "5.5.900+",
-          "features": ["alarm_contact", "measure_battery"]
+          "features": [
+            "alarm_contact",
+            "measure_battery"
+          ]
         },
         "notes": "IAS Zone contact sensor with Tuya cluster. Uses zoneType=contactSwitch.",
         "driver": "contact_sensor"
@@ -1457,19 +1706,45 @@
         "source": "Forum #1298 (Jan 31, 2026)",
         "user": "Peter_van_Werkhoven",
         "status": "supported",
-        "symptoms": ["Updated interview for existing device"],
+        "symptoms": [
+          "Updated interview for existing device"
+        ],
         "interviewData": {
-          "clusters": ["basic", "identify", "iasZone", "temperatureMeasurement", "relativeHumidity", "powerConfiguration", "illuminanceMeasurement", "tuya(61184)"],
+          "clusters": [
+            "basic",
+            "identify",
+            "iasZone",
+            "temperatureMeasurement",
+            "relativeHumidity",
+            "powerConfiguration",
+            "illuminanceMeasurement",
+            "tuya(61184)"
+          ],
           "zoneType": "motionSensor",
-          "temperature": {"measuredValue": 2020, "reportingConfigured": true},
-          "humidity": {"measuredValue": 6920, "reportingConfigured": true},
-          "illuminance": {"measuredValue": 27926, "reportingConfigured": true}
+          "temperature": {
+            "measuredValue": 2020,
+            "reportingConfigured": true
+          },
+          "humidity": {
+            "measuredValue": 6920,
+            "reportingConfigured": true
+          },
+          "illuminance": {
+            "measuredValue": 27926,
+            "reportingConfigured": true
+          }
         },
         "resolution": {
           "status": "already_supported",
           "driver": "presence_sensor_radar",
           "version": "5.5.987+",
-          "features": ["alarm_motion", "measure_temperature", "measure_humidity", "measure_luminance", "measure_battery"]
+          "features": [
+            "alarm_motion",
+            "measure_temperature",
+            "measure_humidity",
+            "measure_luminance",
+            "measure_battery"
+          ]
         },
         "notes": "ZCL clusters for temp/humidity/lux + Tuya DP for presence. Reporting configured.",
         "driver": "presence_sensor_radar"
@@ -1491,7 +1766,13 @@
           "Battery not working"
         ],
         "interviewData": {
-          "clusters": ["basic", "identify", "iasZone", "powerConfiguration", "illuminanceMeasurement"],
+          "clusters": [
+            "basic",
+            "identify",
+            "iasZone",
+            "powerConfiguration",
+            "illuminanceMeasurement"
+          ],
           "zoneType": "motionSensor",
           "zoneState": "notEnrolled",
           "missingCluster": "tuya(61184) - NOT present in inputClusters"
@@ -1518,9 +1799,17 @@
         "user": "ManuelKugler",
         "status": "fixed",
         "diagnosticId": "aba2c0c3-9925-4528-b876-24deb63cf932",
-        "symptoms": ["No change - device not working"],
+        "symptoms": [
+          "No change - device not working"
+        ],
         "interviewData": {
-          "clusters": ["groups(4)", "scenes(5)", "tuya(61184)", "basic(0)", "60672"],
+          "clusters": [
+            "groups(4)",
+            "scenes(5)",
+            "tuya(61184)",
+            "basic(0)",
+            "60672"
+          ],
           "applicationDeviceId": 81,
           "powerSource": "battery"
         },
@@ -1585,7 +1874,9 @@
         "source": "Forum #1290 (Jan 31, 2026)",
         "user": "blutch32",
         "status": "new_device_request",
-        "symptoms": ["Device to be added"],
+        "symptoms": [
+          "Device to be added"
+        ],
         "resolution": {
           "status": "awaiting_interview",
           "issue": "New soil sensor - needs full interview data"
@@ -1601,7 +1892,9 @@
         "source": "Forum #1290 (Jan 31, 2026)",
         "user": "blutch32",
         "status": "new_device_request",
-        "symptoms": ["Detected as unknown Zigbee device"],
+        "symptoms": [
+          "Detected as unknown Zigbee device"
+        ],
         "resolution": {
           "status": "awaiting_interview",
           "issue": "New energy meter - needs full interview data"
@@ -1620,11 +1913,25 @@
         "powerSource": "battery",
         "ieeeAddress": "a4:c1:38:ac:ed:30:d7:a5",
         "applicationDeviceId": 81,
-        "inputClusters": [4, 5, 61184, 0, 60672],
-        "outputClusters": [25, 10],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0,
+          60672
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
         "protocol": "tuya_dp",
         "zclClusters": {
-          "basic": {"zclVersion": 3, "appVersion": 77, "hwVersion": 1, "powerSource": "battery"}
+          "basic": {
+            "zclVersion": 3,
+            "appVersion": 77,
+            "hwVersion": 1,
+            "powerSource": "battery"
+          }
         },
         "driver": "climate_sensor",
         "driverNote": "Fingerprint verified in climate_sensor (not soil_sensor). TS0601 in productId list.",
@@ -1641,11 +1948,25 @@
         "powerSource": "battery",
         "ieeeAddress": "a4:c1:38:1f:36:99:34:ed",
         "applicationDeviceId": 81,
-        "inputClusters": [4, 5, 61184, 0, 60672],
-        "outputClusters": [25, 10],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0,
+          60672
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
         "protocol": "tuya_dp",
         "zclClusters": {
-          "basic": {"zclVersion": 3, "appVersion": 80, "hwVersion": 1, "powerSource": "battery"}
+          "basic": {
+            "zclVersion": 3,
+            "appVersion": 80,
+            "hwVersion": 1,
+            "powerSource": "battery"
+          }
         },
         "driver": "soil_sensor",
         "notes": "Battery-powered soil/moisture sensor. Uses Tuya DP cluster 61184. Fingerprint in soil_sensor driver."
@@ -1660,14 +1981,35 @@
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
-        "inputClusters": [0, 3, 1280, 61184, 1, 1024],
+        "inputClusters": [
+          0,
+          3,
+          1280,
+          61184,
+          1,
+          1024
+        ],
         "outputClusters": [],
         "protocol": "hybrid",
-        "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+        "capabilities": [
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ],
         "zclClusters": {
-          "iasZone": {"zoneType": "motionSensor", "zoneState": "enrolled"},
-          "powerConfiguration": {"batteryVoltage": 30, "batteryPercentage": 200},
-          "illuminanceMeasurement": {"measuredValue": 32816, "minInterval": 10, "maxInterval": 300}
+          "iasZone": {
+            "zoneType": "motionSensor",
+            "zoneState": "enrolled"
+          },
+          "powerConfiguration": {
+            "batteryVoltage": 30,
+            "batteryPercentage": 200
+          },
+          "illuminanceMeasurement": {
+            "measuredValue": 32816,
+            "minInterval": 10,
+            "maxInterval": 300
+          }
         },
         "driver": "presence_sensor_radar",
         "notes": "Hybrid device: IAS Zone 1280 + Tuya DP 61184 + Illuminance 1024 + PowerConfig 1. swBuildId: 0112112025"
@@ -1681,14 +2023,34 @@
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
-        "endpoints": [1, 2, 3, 4],
-        "inputClusters": [1, 6, 57344, 0],
-        "outputClusters": [25, 10],
+        "endpoints": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "inputClusters": [
+          1,
+          6,
+          57344,
+          0
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
         "protocol": "zcl",
-        "capabilities": ["measure_battery"],
+        "capabilities": [
+          "measure_battery"
+        ],
         "zclClusters": {
-          "powerConfiguration": {"batteryVoltage": 26, "batteryPercentage": 58},
-          "onOff": {"perEndpoint": true}
+          "powerConfiguration": {
+            "batteryVoltage": 26,
+            "batteryPercentage": 58
+          },
+          "onOff": {
+            "perEndpoint": true
+          }
         },
         "driver": "button_wireless_3",
         "driverNote": "Fingerprint verified in button_wireless_3 (TS0043). 4 endpoints but mapped to 3-button driver.",
@@ -1706,15 +2068,56 @@
         "powerSource": "mains",
         "ieeeAddress": "a4:c1:38:7b:94:f2:18:46",
         "applicationDeviceId": 256,
-        "endpoints": [1, 2, 242],
-        "inputClusters": [3, 4, 5, 6, 1794, 2820, 57344, 57345, 0],
-        "outputClusters": [25, 10],
+        "endpoints": [
+          1,
+          2,
+          242
+        ],
+        "inputClusters": [
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          57344,
+          57345,
+          0
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
         "protocol": "zcl",
-        "capabilities": ["onoff", "onoff.gang2", "measure_power", "measure_voltage", "measure_current", "meter_power"],
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "measure_power",
+          "measure_voltage",
+          "measure_current",
+          "meter_power"
+        ],
         "zclClusters": {
-          "metering": {"currentSummationDelivered": 0, "instantaneousDemand": -1, "multiplier": 1, "divisor": 100, "unitOfMeasure": "kW"},
-          "electricalMeasurement": {"rmsVoltage": 2354, "rmsCurrent": 0, "activePower": -1, "acCurrentDivisor": 1000, "acPowerDivisor": 10},
-          "basic": {"zclVersion": 3, "appVersion": 69, "hwVersion": 1, "powerSource": "mains"}
+          "metering": {
+            "currentSummationDelivered": 0,
+            "instantaneousDemand": -1,
+            "multiplier": 1,
+            "divisor": 100,
+            "unitOfMeasure": "kW"
+          },
+          "electricalMeasurement": {
+            "rmsVoltage": 2354,
+            "rmsCurrent": 0,
+            "activePower": -1,
+            "acCurrentDivisor": 1000,
+            "acPowerDivisor": 10
+          },
+          "basic": {
+            "zclVersion": 3,
+            "appVersion": 69,
+            "hwVersion": 1,
+            "powerSource": "mains"
+          }
         },
         "driver": "usb_dongle_dual_repeater",
         "driverNote": "Fingerprint verified in usb_dongle_dual_repeater (has TS0002 in productId list). Interview shows 2-gang switch with energy monitoring.",
@@ -1729,8 +2132,17 @@
         "status": "supported",
         "deviceType": "router",
         "powerSource": "mains",
-        "inputClusters": [4, 5, 61184, 0, 60672],
-        "outputClusters": [25, 10],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0,
+          60672
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
         "protocol": "tuya_dp",
         "driver": "presence_sensor_radar",
         "notes": "Mains-powered radar. Already supported in presence_sensor_radar. Z2M issue #26615."
@@ -1746,11 +2158,24 @@
         "powerSource": "mains",
         "ieeeAddress": "a4:c1:38:ce:29:4d:2e:d7",
         "applicationDeviceId": 81,
-        "inputClusters": [4, 5, 61184, 0],
-        "outputClusters": [25, 10],
+        "inputClusters": [
+          4,
+          5,
+          61184,
+          0
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
         "protocol": "tuya_dp",
         "zclClusters": {
-          "basic": {"zclVersion": 3, "appVersion": 74, "hwVersion": 1, "powerSource": "dc"}
+          "basic": {
+            "zclVersion": 3,
+            "appVersion": 74,
+            "hwVersion": 1,
+            "powerSource": "dc"
+          }
         },
         "driver": "presence_sensor_radar",
         "driverNote": "Fingerprint verified in presence_sensor_radar (not climate_sensor). TS0601 in productId list.",
@@ -1766,14 +2191,33 @@
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
-        "endpoints": [1, 2, 3, 4],
-        "inputClusters": [0, 1, 6],
-        "outputClusters": [10, 25],
+        "endpoints": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "inputClusters": [
+          0,
+          1,
+          6
+        ],
+        "outputClusters": [
+          10,
+          25
+        ],
         "protocol": "zcl",
-        "capabilities": ["measure_battery"],
+        "capabilities": [
+          "measure_battery"
+        ],
         "zclClusters": {
-          "powerConfiguration": {"batteryVoltage": 30, "batteryPercentage": 200},
-          "onOff": {"perEndpoint": true}
+          "powerConfiguration": {
+            "batteryVoltage": 30,
+            "batteryPercentage": 200
+          },
+          "onOff": {
+            "perEndpoint": true
+          }
         },
         "driver": "button_wireless_4",
         "notes": "TS0044 4-button. Already in button_wireless_4 fingerprints. swBuildId: 0118092025"
@@ -1788,14 +2232,34 @@
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
-        "inputClusters": [1, 3, 1280, 0],
-        "outputClusters": [1281, 25, 10],
+        "inputClusters": [
+          1,
+          3,
+          1280,
+          0
+        ],
+        "outputClusters": [
+          1281,
+          25,
+          10
+        ],
         "protocol": "zcl",
-        "capabilities": ["alarm_generic", "measure_battery"],
+        "capabilities": [
+          "alarm_generic",
+          "measure_battery"
+        ],
         "zclClusters": {
-          "iasZone": {"zoneType": "remoteControl", "zoneState": "notEnrolled"},
-          "powerConfiguration": {"batteryVoltage": 28, "batteryPercentage": 140},
-          "iasACE": {"clusterRevision": 2}
+          "iasZone": {
+            "zoneType": "remoteControl",
+            "zoneState": "notEnrolled"
+          },
+          "powerConfiguration": {
+            "batteryVoltage": 28,
+            "batteryPercentage": 140
+          },
+          "iasACE": {
+            "clusterRevision": 2
+          }
         },
         "driver": "button_emergency_sos",
         "notes": "SOS button via IAS Zone remoteControl. Already in button_emergency_sos fingerprints. Output cluster 1281 = IAS ACE."
@@ -1811,14 +2275,33 @@
         "status": "fix_applied",
         "deviceType": "enddevice",
         "powerSource": "battery",
-        "inputClusters": [0, 3, 1280, 1, 1024],
+        "inputClusters": [
+          0,
+          3,
+          1280,
+          1,
+          1024
+        ],
         "outputClusters": [],
         "protocol": "zcl_only",
-        "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+        "capabilities": [
+          "alarm_motion",
+          "measure_luminance",
+          "measure_battery"
+        ],
         "zclClusters": {
-          "iasZone": {"zoneType": "motionSensor", "zoneState": "notEnrolled"},
-          "powerConfiguration": {"batteryVoltage": 30, "batteryPercentage": 200},
-          "illuminanceMeasurement": {"measuredValue": 33280, "maxMeasuredValue": 4000}
+          "iasZone": {
+            "zoneType": "motionSensor",
+            "zoneState": "notEnrolled"
+          },
+          "powerConfiguration": {
+            "batteryVoltage": 30,
+            "batteryPercentage": 200
+          },
+          "illuminanceMeasurement": {
+            "measuredValue": 33280,
+            "maxMeasuredValue": 4000
+          }
         },
         "fix": {
           "version": "5.6.0",
@@ -1829,7 +2312,6 @@
       }
     ]
   },
-
   "regressions": [
     {
       "version": "5.5.989",
@@ -1843,7 +2325,10 @@
         "Was stable in v987"
       ],
       "previousWorkingVersion": "5.5.987",
-      "additionalIssues": ["Humidity showing 9% instead of 90%", "No battery menu"],
+      "additionalIssues": [
+        "Humidity showing 9% instead of 90%",
+        "No battery menu"
+      ],
       "status": "fix_applied",
       "resolution": {
         "version": "5.5.991",
@@ -1886,12 +2371,24 @@
       "status": "fixed"
     }
   ],
-
   "recurringPatterns": {
     "Peter_van_Werkhoven": {
       "totalFixes": 22,
-      "devices": ["HOBEIAN ZG-204ZV"],
-      "forumPosts": ["#1203", "#1204", "#1211", "#1225", "#1253", "#1265", "#1282", "#1291", "#1297", "#1298"],
+      "devices": [
+        "HOBEIAN ZG-204ZV"
+      ],
+      "forumPosts": [
+        "#1203",
+        "#1204",
+        "#1211",
+        "#1225",
+        "#1253",
+        "#1265",
+        "#1282",
+        "#1291",
+        "#1297",
+        "#1298"
+      ],
       "commonIssues": [
         "Humidity multiplier (9% vs 90%) - v5.5.953, v5.5.987, v5.5.989",
         "Motion sensor disco lights regression - v5.5.989 → FIXED v5.5.991",
@@ -1911,8 +2408,16 @@
     },
     "4x4_Pete": {
       "totalFixes": 10,
-      "devices": ["HOBEIAN ZG-204ZM", "HOBEIAN ZG-204ZL"],
-      "forumPosts": ["#788", "#810", "#848", "#851"],
+      "devices": [
+        "HOBEIAN ZG-204ZM",
+        "HOBEIAN ZG-204ZL"
+      ],
+      "forumPosts": [
+        "#788",
+        "#810",
+        "#848",
+        "#851"
+      ],
       "commonIssues": [
         "Wrong driver pairing (radar vs motion_sensor) - v5.5.364, v5.5.511-512",
         "Battery spam (throttling + duplicate DP15) - v5.5.366, v5.5.983",
@@ -1934,7 +2439,11 @@
     },
     "Lasse_K": {
       "totalFixes": 8,
-      "devices": ["Water leak sensor", "Contact sensor", "HOBEIAN ZG-222Z"],
+      "devices": [
+        "Water leak sensor",
+        "Contact sensor",
+        "HOBEIAN ZG-222Z"
+      ],
       "commonIssues": [
         "Sensor polarity inversion (alarm reversed)",
         "IAS Zone alarm not triggering",
@@ -1945,7 +2454,9 @@
     },
     "Pieter_Pessers": {
       "totalFixes": 7,
-      "devices": ["BSEED 1/2/3-gang switches"],
+      "devices": [
+        "BSEED 1/2/3-gang switches"
+      ],
       "commonIssues": [
         "Unknown zigbee device (fingerprint conflicts)",
         "Fingerprint in wrong driver",
@@ -1965,7 +2476,6 @@
       ]
     }
   },
-
   "statistics": {
     "totalDevicesAnalyzed": 87,
     "lastCodeVersion": "5.11.25",

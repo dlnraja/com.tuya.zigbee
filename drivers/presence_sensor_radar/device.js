@@ -75,6 +75,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
 
       if (presence !== null) {
+        // PHASE 2: Virtual Polling & State Retention for Lux
+        // Prevent lux from going stale when motion ends
+        if (presence === false) {
+           // Asynchronously request a fresh DP reading
+           this._requestDPRefresh(this.zclNode).catch(() => {});
+        }
+        
+        // Re-broadcast last known lux to retain state in Homey
+        if (this._inference && this._inference.state.lastLux !== null) {
+           this.setCapabilityValue('measure_luminance', this._inference.state.lastLux).catch(() => {});
+        }
+
         return this.setCapabilityValue('alarm_motion', presence).catch(() => {});
       }
       return;

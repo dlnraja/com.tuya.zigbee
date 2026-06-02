@@ -68,6 +68,67 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     };
   }
 
+ * 
+ *             SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    
+ * 
+ *    v5.5.317: INTELLIGENT INFERENCE ENGINE                                   
+ *   - Validates moisture readings with temperature correlation                 
+ *   - Predicts watering needs based on moisture trends                         
+ *   - Smooths erratic sensor readings                                          
+ *                                                                               
+ *   KNOWN MODELS:                                                               
+ *   - TS0601 / _TZE284_oitavov2 : QT-07S Soil moisture sensor                   
+ *   - TS0601 / _TZE284_aao3yzhs : Soil sensor variant                           
+ *   - TS0601 / _TZE284_hdml1aav : Flower Care Fertilizer sensor (EC)          
+ *                                                                               
+ *   DP MAPPINGS:                                                 
+ *   - DP3: soil_moisture %                                                      
+ *   - DP4: fertilizer_ec                                        
+ *   - DP5: temperature / 10                                                      
+ *   - DP14: battery_state enum (0=low, 1=med, 2=high)                           
+ *   - DP15: battery_percent %                                                   
+ *   - DP101: ambient_humidity %                                          
+ *   - DP102: illuminance lux                                                   
+ *   - DP106: fertilizer_ec (advanced variants)                                  
+ *   - DP112: soil_fertility_ec (TZE284 specific)                                
+ */
+class SoilSensorDevice extends TuyaUnifiedDevice {
+
+  /** Battery powered */
+  get mainsPowered() { return false; }
+
+  get forceActiveTuyaMode() { return true; }
+
+  get hybridModeEnabled() { return true; }
+
+  /** Capabilities for soil sensors */
+  get sensorCapabilities() {
+    return [
+      'measure_humidity.soil', 
+      'measure_temperature', 
+      'measure_humidity', 
+      'measure_luminance', 
+      'measure_battery', 
+      'alarm_battery',
+      'alarm_water', 
+      'measure_ec'
+    ];
+  }
+
+  /**
+   * v5.5.47: Battery configuration 
+   */
+  get batteryConfig() {
+    return {
+      chemistry: BatteryCalculator.CHEMISTRY.CR2032,
+      algorithm: BatteryCalculator.ALGORITHM.DIRECT,  // DP15 = direct %
+      dpId: 15,           // DP15 = battery percentage
+      dpIdState: 14,      // DP14 = battery_state enum (0=low, 1=med, 2=high)
+      voltageMin: 2.0,
+      voltageMax: 3.0,
+    };
+  }
+
   /**
    * DP mappings for Soil Sensors
    */
@@ -80,8 +141,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
           const num = safeMultiply(v, 1);
           if (num === null) {return null;}
           // Handle various Tuya temperature formats (x10, x100, or raw)
-          if (Math.abs(num) > 1000) {return num * 100;}
-          if (Math.abs(num) > 100) {return safeMultiply(num, 10);}
+          if (Math.abs(num) > 1000) {return safeDivide(num, 100);}
+          if (Math.abs(num) > 100) {return safeDivide(num, 10);}
           return num; 
         }
       },
@@ -180,17 +241,13 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     if (dp === 5 || dp === 1) {
       let temp = parsedValue;
-      if (dp === 1) {temp = safeMultiply(temp, 10);}
+      if (dp === 1) {temp = safeDivide(temp, 10);}
       else {
-        if (Math.abs(temp) > 1000) {temp = temp * 100;}
-        else if (Math.abs(temp) > 100) {temp = safeMultiply(temp, 10);}
+        if (Math.abs(temp) > 1000) {temp = safeDivide(temp, 100);}
+        else if (Math.abs(temp) > 100) {temp = safeDivide(temp, 10);}
       }
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
       this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
-      this._triggerTemperatureFlows(temp);
-      return;
-    }
-
     super._handleDP(dpId, value);
   }
 

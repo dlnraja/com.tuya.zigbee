@@ -51,7 +51,9 @@ body:
     attributes:
       label: "Zigbee Fingerprint (MANDATORY)"
       description: |
-        Get this from Homey Developer Tools → Zigbee → Device → Info
+        NEW: You can easily get this by navigating to `http://<your-homey-ip>/api/app/com.tuya.zigbee/diagnostics/<device-id>`
+        
+        Otherwise, get this from Homey Developer Tools → Zigbee → Device → Info
         
         We need:
         - manufacturerName (ex: _TZ3000_abcd1234)

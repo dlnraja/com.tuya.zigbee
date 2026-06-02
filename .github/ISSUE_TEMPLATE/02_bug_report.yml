@@ -90,11 +90,13 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: "Logs"
+      label: "Logs / Diagnostics"
       description: |
         Homey logs showing the issue
         
-        Get from: Settings → Apps → Tuya Unified Zigbee → View Logs
+        Get App Logs from: Settings → Apps → Tuya Unified Zigbee → View Logs
+        
+        NEW: Get Device Diagnostics by navigating to `http://<your-homey-ip>/api/app/com.tuya.zigbee/diagnostics/<device-id>`
       render: shell
     validations:
       required: false
