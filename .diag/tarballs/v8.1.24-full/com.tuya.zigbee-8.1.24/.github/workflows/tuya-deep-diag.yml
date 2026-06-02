@@ -1,0 +1,46 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌1‌7‌ — ENABLED
+name: "Tuya Deep Diagnostics Recovery"
+on:
+  workflow_dispatch:
+    inputs:
+      target_device:
+        description: "Device ID to target"
+        required: false
+      report_id:
+        description: "Diagnostic Report ID from Homey"
+        required: false
+
+env:
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      
+      - name: "Autonomous Log Recovery"
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          echo "🔍 Searching Gmail for report: ${{ github.event.inputs.report_id }}"
+          node scripts/automation/fetch-remote-logs.js --id "${{ github.event.inputs.report_id }}"
+          
+      - name: "Architectural Analysis"
+        run: |
+          echo "🏅 Deep Thinking Analysis..."
+          node scripts/analysis/deep-impact-analyzer.js --file latest_logs.json
+          
+      - name: "Auto-Patch Proposal"
+        run: |
+          node scripts/maintenance/propose-patch.js --issue-id "${{ github.event.inputs.report_id }}"
+          
+      - name: "Notify Results"
+        run: |
+          # Send back to developer/user
+          echo "Done."

@@ -1,0 +1,395 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# 🛡️ DUAL-LAYER INTEGRITY GATE — Anti-AggregateError
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+# Architecture dual-layer (ARCHITECTURE.md §34):
+#
+#   LAYER 1 — STATIQUE (pairing local Homey Pro)
+#     driver.compose.json → app.json (via homey app build)
+#     ▸ zigbee.manufacturerName[] DOIT être non-vide pour tout driver Zigbee
+#     ▸ Si vide → AggregateError → build rejeté Athom
+#     ▸ Source de vérité: driver/*/driver.compose.json
+#
+#   LAYER 2 — DYNAMIQUE (runtime enrichment)
+#     data/fingerprints.json + driver-mapping-database.json
+#     ▸ Chargé via Buffer direct (anti-OOM, 64MB Homey Pro limit)
+#     ▸ Lazy-loaded progressivement en mémoire
+#     ▸ Ne remplace PAS la couche statique pour le pairing
+#
+#   CLASSIFICATION:
+#     ZIGBEE   → a section zigbee → MF OBLIGATOIRE
+#     HYBRID   → zigbee + lan/cloud → MF OBLIGATOIRE
+#     WIFI/LAN → connectivity:lan ou préfixe wifi_ → MF NON REQUIS (pairing IP)
+#     VIRTUAL  → pas de connectivity, pas de zigbee → EXEMPT
+#
+# Ce workflow BLOQUE le push si AggregateError détecté.
+# S'exécute AVANT auto-publish-on-push.yml
+# ═══════════════════════════════════════════════════════════════════════════════
+
+name: 🛡️ Dual-Layer Anti-AggregateError Gate
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - 'app.json'
+      - 'drivers/**/driver.compose.json'
+      - '.homeycompose/**'
+      - 'scripts/master-automation.js'
+      - 'scripts/validation/**'
+  pull_request:
+    branches: [master, main]
+    paths:
+      - 'app.json'
+      - 'drivers/**/driver.compose.json'
+  workflow_dispatch:
+    inputs:
+      auto_fix:
+        description: 'Auto-fix empty manufacturerName'
+        type: boolean
+        default: false
+      verbose:
+        description: 'Verbose output'
+        type: boolean
+        default: true
+
+concurrency:
+  group: dual-layer-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # JOB 1: DUAL-LAYER VALIDATION (BLOQUANT)
+  # ───────────────────────────────────────────────────────────────────────────
+  dual-layer-validate:
+    name: 🔍 Dual-Layer Static/Dynamic Integrity Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    outputs:
+      errors_count:   ${{ steps.validate.outputs.errors_count }}
+      drivers_total:  ${{ steps.validate.outputs.drivers_total }}
+      zigbee_count:   ${{ steps.validate.outputs.zigbee_count }}
+      wifi_count:     ${{ steps.validate.outputs.wifi_count }}
+      fp_total:       ${{ steps.validate.outputs.fp_total }}
+      app_version:    ${{ steps.validate.outputs.app_version }}
+      needs_fix:      ${{ steps.validate.outputs.needs_fix }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: 📦 Install deps
+        run: npm ci --prefer-offline --no-audit 2>/dev/null || npm install --no-audit
+
+      # ── LAYER 1: Validation statique inline ──────────────────────────────
+      - name: 🔍 Layer 1 — Static Manifest Validation
+        id: validate
+        run: |
+          node - << 'NODESCRIPT'
+          const fs = require('fs');
+          const path = require('path');
+
+          // ── Helpers ──
+          const WIFI_ID = (id) => {
+            const s = (id||'').toLowerCase();
+            return s.startsWith('wifi_') || s.includes('ewelink') ||
+                   s.includes('sonoff') || s.includes('radiator_wifi');
+          };
+
+          function classify(d) {
+            const conn = d.connectivity || [];
+            const hasZ = !!d.zigbee;
+            const isLan = conn.some(c => ['lan','cloud'].includes(c));
+            if (hasZ && isLan)   return 'hybrid';
+            if (hasZ)            return 'zigbee';
+            if (WIFI_ID(d.id))   return 'wifi';
+            if (!conn.length && !hasZ) return 'virtual';
+            return 'wifi';
+          }
+
+          function hasMF(d) {
+            return d.zigbee &&
+                   Array.isArray(d.zigbee.manufacturerName) &&
+                   d.zigbee.manufacturerName.length > 0;
+          }
+
+          // ── Charger app.json via Buffer (anti-OOM) ──
+          let app;
+          try { app = JSON.parse(fs.readFileSync('app.json')); }
+          catch(e) { console.error('❌ app.json illisible:', e.message); process.exit(1); }
+
+          const drivers = app.drivers || [];
+          const stats = { total: drivers.length, zigbee:0, wifi:0, hybrid:0, virtual:0, fp:0 };
+          const emptyMF = [];
+          const errors = [];
+
+          // ── SDK3 top-level ──
+          ['id','version','compatibility','sdk','name','description',
+           'category','permissions','images','author'].forEach(k => {
+            if (!app[k]) errors.push('SDK3 champ manquant: ' + k);
+          });
+          if (app.sdk !== 3) errors.push('sdk doit être 3');
+
+          // ── Driver classification + MF check ──
+          drivers.forEach(d => {
+            const type = classify(d);
+            stats[type] = (stats[type]||0) + 1;
+            if (d.zigbee && d.zigbee.manufacturerName)
+              stats.fp += d.zigbee.manufacturerName.length;
+
+            if (type === 'zigbee' || type === 'hybrid') {
+              if (!hasMF(d)) {
+                emptyMF.push({ id: d.id, type });
+                errors.push('AGGREGATE_ERROR [' + type + ']: ' + d.id + ' manufacturerName[]');
+              }
+            }
+          });
+
+          // ── Rapport console ──
+          console.log('\n╔══════════════════════════════════════════════════════╗');
+          console.log('║   DUAL-LAYER INTEGRITY REPORT — v' + app.version + '         ║');
+          console.log('╚══════════════════════════════════════════════════════╝');
+          console.log('\n📊 Classification:');
+          console.log('   Zigbee   :', stats.zigbee, '(MF obligatoire)');
+          console.log('   WiFi/LAN :', stats.wifi, '(MF non requis — pairing IP)');
+          console.log('   Hybrid   :', stats.hybrid, '(MF obligatoire — pairing Zigbee initial)');
+          console.log('   Virtual  :', stats.virtual, '(exempt — pas de pairing HW)');
+          console.log('   Total FPs:', stats.fp.toLocaleString());
+
+          // ── Layer 2 info ──
+          console.log('\n📡 Layer 2 (Dynamic):');
+          const fp2 = 'data/fingerprints.json';
+          if (fs.existsSync(fp2)) {
+            const sz = (fs.statSync(fp2).size / 1048576).toFixed(1);
+            console.log('   fingerprints.json:', sz, 'MB (Buffer-loaded anti-OOM)');
+          }
+          const db2 = 'driver-mapping-database.json';
+          if (fs.existsSync(db2)) {
+            const sz = (fs.statSync(db2).size / 1048576).toFixed(1);
+            console.log('   driver-mapping-database.json:', sz, 'MB');
+          }
+
+          // ── Résultat ──
+          const needsFix = emptyMF.length > 0;
+          console.log('\n' + (needsFix
+            ? '❌ ERREURS BLOQUANTES: ' + errors.length
+            : '✅ ZERO AGGREGATE ERROR — PRÊT POUR PUBLISH'));
+
+          if (needsFix) {
+            console.log('\nDrivers à corriger:');
+            emptyMF.forEach(({id,type}) => console.log('  ❌ [' + type + ']', id));
+          }
+
+          // ── GitHub outputs ──
+          const out = process.env.GITHUB_OUTPUT;
+          if (out) {
+            const append = (k,v) => require('fs').appendFileSync(out, k+'='+v+'\n');
+            append('errors_count',  errors.length);
+            append('drivers_total', stats.total);
+            append('zigbee_count',  stats.zigbee);
+            append('wifi_count',    stats.wifi);
+            append('fp_total',      stats.fp);
+            append('app_version',   app.version);
+            append('needs_fix',     needsFix ? 'true' : 'false');
+          }
+
+          process.exit(needsFix ? 1 : 0);
+          NODESCRIPT
+
+      # ── Vérification JSON syntax de tous les driver.compose.json ──────────
+      - name: 📋 Layer 1 — driver.compose.json Syntax Check
+        if: always()
+        run: |
+          BROKEN=0
+          TOTAL=0
+          for f in drivers/*/driver.compose.json; do
+            TOTAL=$((TOTAL+1))
+            node -e "JSON.parse(require('fs').readFileSync('$f'))" 2>/dev/null || {
+              echo "❌ JSON invalide: $f"
+              BROKEN=$((BROKEN+1))
+            }
+          done
+          echo "✅ JSON syntax: $((TOTAL-BROKEN))/$TOTAL valides"
+          [ $BROKEN -eq 0 ] || exit 1
+
+      # ── Vérification du dernier build Athom ───────────────────────────────
+      - name: 📡 Check Athom Build Status (API)
+        if: always()
+        continue-on-error: true
+        run: |
+          echo "🔍 Vérification du dernier build Athom via GitHub API..."
+          node - << 'NODEATHOM'
+          const https = require('https');
+          https.get({
+            hostname: 'api.github.com',
+            path: '/repos/' + process.env.GITHUB_REPOSITORY + '/actions/runs?per_page=5&branch=master',
+            headers: { 'User-Agent': 'node', 'Authorization': 'Bearer ' + (process.env.GITHUB_TOKEN||'') }
+          }, res => {
+            let d = '';
+            res.on('data', c => d += c);
+            res.on('end', () => {
+              try {
+                const runs = JSON.parse(d).workflow_runs || [];
+                console.log('Derniers runs CI:');
+                runs.slice(0,5).forEach(r => {
+                  const icon = r.conclusion === 'success' ? '✅' : r.status === 'in_progress' ? '🔄' : '❌';
+                  console.log(icon, '#' + r.run_number, r.name.substring(0,35).padEnd(35), r.status, r.conclusion||'pending');
+                });
+              } catch(e) { console.log('API parse error:', e.message); }
+            });
+          }).on('error', () => console.log('API unavailable'));
+          NODEATHOM
+
+      # ── Rapport d'étape GitHub ─────────────────────────────────────────────
+      - name: 📊 Job Summary
+        if: always()
+        run: |
+          echo "## 🛡️ Dual-Layer Integrity Report — v${{ steps.validate.outputs.app_version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Couche | Rôle | État |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|------|------|" >> $GITHUB_STEP_SUMMARY
+          echo "| **Layer 1 Static** | app.json + driver.compose.json (pairing local) | ${{ steps.validate.outputs.errors_count == '0' && '✅ PASS' || '❌ FAIL' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Layer 2 Dynamic** | fingerprints.json + DB (runtime enrichment) | ℹ️ INFO |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Classification drivers" >> $GITHUB_STEP_SUMMARY
+          echo "- **Zigbee** (MF obligatoire): ${{ steps.validate.outputs.zigbee_count }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **WiFi/LAN** (MF non requis): ${{ steps.validate.outputs.wifi_count }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total fingerprints statiques**: ${{ steps.validate.outputs.fp_total }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total drivers**: ${{ steps.validate.outputs.drivers_total }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.validate.outputs.errors_count }}" = "0" ]; then
+            echo "✅ **ZERO AggregateError** — Tous les drivers Zigbee ont des manufacturerName statiques" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **${{ steps.validate.outputs.errors_count }} erreurs AggregateError** — Lancer le fix automatique" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # JOB 2: AUTO-FIX (optionnel, sur dispatch manual ou si erreurs)
+  # ───────────────────────────────────────────────────────────────────────────
+  auto-fix:
+    name: 🔧 Auto-Fix Empty ManufacturerName
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: dual-layer-validate
+    if: |
+      needs.dual-layer-validate.outputs.needs_fix == 'true' ||
+      (github.event_name == 'workflow_dispatch' && inputs.auto_fix == true)
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: 🔧 Run master-automation --fix
+        run: |
+          if [ -f "scripts/master-automation.js" ]; then
+            node scripts/master-automation.js --fix --verbose
+          else
+            echo "::warning::scripts/master-automation.js not found, running inline fix"
+            node - << 'INLINEFIX'
+            const fs = require('fs');
+            const path = require('path');
+            const app = JSON.parse(fs.readFileSync('app.json'));
+            const stableApp = fs.existsSync('stable_app.json')
+              ? JSON.parse(fs.readFileSync('stable_app.json')) : { drivers: [] };
+            const stableMap = {};
+            (stableApp.drivers||[]).forEach(d => stableMap[d.id] = d);
+
+            let fixed = 0;
+            (app.drivers||[]).forEach(d => {
+              if (!d.zigbee) return;
+              const mfs = d.zigbee.manufacturerName;
+              if (mfs && mfs.length > 0) return;
+
+              // Fix depuis driver.compose.json
+              const cp = path.join('drivers', d.id, 'driver.compose.json');
+              if (fs.existsSync(cp)) {
+                const c = JSON.parse(fs.readFileSync(cp));
+                const cmf = c.zigbee && c.zigbee.manufacturerName;
+                if (cmf && cmf.length > 0) {
+                  d.zigbee.manufacturerName = [...new Set(cmf.map(m=>m.trim()).filter(Boolean))];
+                  console.log('FIXED from compose:', d.id, '→', d.zigbee.manufacturerName.length, 'MFs');
+                  fixed++;
+                  return;
+                }
+              }
+              // Fix depuis stable
+              const sd = stableMap[d.id];
+              if (sd && sd.zigbee && sd.zigbee.manufacturerName && sd.zigbee.manufacturerName.length > 0) {
+                d.zigbee.manufacturerName = [...new Set(sd.zigbee.manufacturerName.map(m=>m.trim()).filter(Boolean))];
+                console.log('FIXED from stable:', d.id, '→', d.zigbee.manufacturerName.length, 'MFs');
+                fixed++;
+              }
+            });
+            fs.writeFileSync('app.json', JSON.stringify(app)); // COMPACT: 412 drivers × null,2 = 6MB → exceeds Athom 5MB limit
+            console.log('Total fixed:', fixed, 'drivers');
+            INLINEFIX
+          fi
+
+      - name: ✅ Re-validate after fix
+        run: |
+          EMPTY=$(node -e "
+            const app=JSON.parse(require('fs').readFileSync('app.json'));
+            const empty=(app.drivers||[]).filter(d=>d.zigbee&&(!d.zigbee.manufacturerName||!d.zigbee.manufacturerName.length)).map(d=>d.id);
+            console.log(JSON.stringify(empty));
+          ")
+          echo "Drivers encore vides après fix: $EMPTY"
+          [ "$EMPTY" = "[]" ] || echo "::warning::Certains drivers n'ont pas pu être fixés automatiquement: $EMPTY"
+
+      - name: 📤 Commit & Push fix
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          V=$(node -p "require('./app.json').version")
+          git add app.json drivers/
+          git diff --cached --quiet || git commit -m "fix(auto): restore manufacturerName Layer1 static — v${V} [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+          echo "✅ Fix committé et poussé"
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # JOB 3: RAPPORT FINAL
+  # ───────────────────────────────────────────────────────────────────────────
+  report:
+    name: 📊 Pipeline Report
+    runs-on: ubuntu-latest
+    needs: [dual-layer-validate]
+    if: always()
+    steps:
+      - name: 📋 Summary
+        run: |
+          echo "Pipeline Dual-Layer: ${{ needs.dual-layer-validate.result }}"
+          echo "Version: v${{ needs.dual-layer-validate.outputs.app_version }}"
+          echo "Drivers: ${{ needs.dual-layer-validate.outputs.drivers_total }}"
+          echo "Fingerprints: ${{ needs.dual-layer-validate.outputs.fp_total }}"
+          echo "Errors: ${{ needs.dual-layer-validate.outputs.errors_count }}"
+
+          if [ "${{ needs.dual-layer-validate.result }}" = "success" ]; then
+            echo "✅ DUAL-LAYER GATE PASSED — Zéro AggregateError"
+            echo "🚀 auto-publish-on-push.yml peut se déclencher"
+          else
+            echo "❌ DUAL-LAYER GATE FAILED — AggregateError détecté"
+            echo "⛔ La publication Athom va échouer si ce push passe"
+          fi

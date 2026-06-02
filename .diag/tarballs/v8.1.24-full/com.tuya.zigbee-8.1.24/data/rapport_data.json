@@ -1,0 +1,395 @@
+{
+  "total": 126189,
+  "assigned": 1430,
+  "unassigned": 124759,
+  "uniques": 3610,
+  "prefixData": {
+    "_TZE200": 19820,
+    "_TZE204": 11712,
+    "AUTRE": 27956,
+    "_TZ3000": 45777,
+    "_TZE284": 9053,
+    "_TZ3210": 5952,
+    "_TYZB01": 3385,
+    "_TYST11": 1104
+  },
+  "drStats": {
+    "climate_sensor": {
+      "total": 25020,
+      "uniques": 691,
+      "existants": 93
+    },
+    "switch_1gang": {
+      "total": 17654,
+      "uniques": 492,
+      "existants": 228
+    },
+    "diy_custom_zigbee": {
+      "total": 15038,
+      "uniques": 103,
+      "existants": 0
+    },
+    "contact_sensor": {
+      "total": 9238,
+      "uniques": 164,
+      "existants": 61
+    },
+    "plug_energy_monitor": {
+      "total": 6855,
+      "uniques": 154,
+      "existants": 0
+    },
+    "motion_sensor": {
+      "total": 6405,
+      "uniques": 119,
+      "existants": 62
+    },
+    "radiator_valve": {
+      "total": 5382,
+      "uniques": 187,
+      "existants": 14
+    },
+    "presence_sensor_radar": {
+      "total": 4655,
+      "uniques": 163,
+      "existants": 93
+    },
+    "curtain_motor": {
+      "total": 3781,
+      "uniques": 131,
+      "existants": 4
+    },
+    "universal_fallback": {
+      "total": 2565,
+      "uniques": 19,
+      "existants": 0
+    },
+    "button_wireless_2": {
+      "total": 2547,
+      "uniques": 172,
+      "existants": 0
+    },
+    "generic_diy": {
+      "total": 1986,
+      "uniques": 23,
+      "existants": 0
+    },
+    "water_leak_sensor": {
+      "total": 1940,
+      "uniques": 68,
+      "existants": 32
+    },
+    "dimmer_wall_1gang": {
+      "total": 1648,
+      "uniques": 132,
+      "existants": 3
+    },
+    "universal_zigbee": {
+      "total": 1512,
+      "uniques": 14,
+      "existants": 0
+    },
+    "bulb_rgb": {
+      "total": 1448,
+      "uniques": 41,
+      "existants": 0
+    },
+    "bulb_rgbw": {
+      "total": 1417,
+      "uniques": 87,
+      "existants": 0
+    },
+    "button_wireless_1": {
+      "total": 1396,
+      "uniques": 40,
+      "existants": 2
+    },
+    "air_purifier": {
+      "total": 1246,
+      "uniques": 202,
+      "existants": 0
+    },
+    "bulb_dimmable": {
+      "total": 1240,
+      "uniques": 55,
+      "existants": 0
+    },
+    "switch_2gang": {
+      "total": 1238,
+      "uniques": 91,
+      "existants": 1
+    },
+    "bulb_tunable_white": {
+      "total": 1130,
+      "uniques": 46,
+      "existants": 0
+    },
+    "smoke_detector_advanced": {
+      "total": 1120,
+      "uniques": 47,
+      "existants": 24
+    },
+    "generic_tuya": {
+      "total": 868,
+      "uniques": 180,
+      "existants": 0
+    },
+    "switch_4gang": {
+      "total": 841,
+      "uniques": 81,
+      "existants": 1
+    }
+  },
+  "drAc": {
+    "climate_sensor": 93,
+    "cover_motor": 111,
+    "switch_wireless": 25,
+    "contact_sensor": 61,
+    "soil_sensor": 34,
+    "plug_1socket": 66,
+    "presence_sensor_radar": 93,
+    "dimmer_1gang": 68,
+    "zigbee_universal": 44,
+    "switch_1gang": 228,
+    "motion_sensor_radar_mmwave": 1,
+    "button_wireless_1": 2,
+    "light_dimmable": 178,
+    "plug_smart": 12,
+    "switch_2gang": 1,
+    "usb_outlet_advanced": 3,
+    "motion_sensor": 62,
+    "water_leak_sensor": 32,
+    "smoke_detector": 1,
+    "thermostat_ts0601": 106,
+    "curtain_motor": 4,
+    "button_wireless_4": 2,
+    "energy_meter": 69,
+    "gas_sensor": 20,
+    "air_quality_co2": 7,
+    "garage_door_opener": 4,
+    "fan_controller": 3,
+    "light_sensor": 10,
+    "ir_blaster": 3,
+    "radiator_valve": 14,
+    "siren": 1,
+    "siren_alarm": 5,
+    "smoke_detector_advanced": 24,
+    "switch_dimmer_1gang": 2,
+    "water_valve_smart": 11,
+    "vibration_sensor": 17,
+    "co_detector": 1,
+    "air_quality_comprehensive": 2,
+    "dimmer_wall_1gang": 3,
+    "gas_detector": 1,
+    "switch_4gang": 1,
+    "switch_wall_6gang": 3,
+    "button_emergency_sos": 1,
+    "switch_usb_dongle": 1
+  },
+  "topModels": {
+    "climate_sensor": [
+      [
+        "TS0222",
+        1001
+      ],
+      [
+        "TH01",
+        1001
+      ],
+      [
+        "WSDCGQ01LM",
+        1001
+      ],
+      [
+        "WSDCGQ11LM",
+        1001
+      ],
+      [
+        "WSDCGQ12LM",
+        1001
+      ],
+      [
+        "SM0201",
+        1001
+      ],
+      [
+        "SNZB-02",
+        1001
+      ],
+      [
+        "SNZB-02D",
+        1001
+      ]
+    ],
+    "switch_1gang": [
+      [
+        "TS0001",
+        679
+      ],
+      [
+        "TS0011",
+        679
+      ],
+      [
+        "TS0601",
+        679
+      ],
+      [
+        "TS000F",
+        679
+      ],
+      [
+        "ZBMINI",
+        679
+      ],
+      [
+        "ZBMINIL2",
+        679
+      ],
+      [
+        "BASICZBR3",
+        679
+      ],
+      [
+        "S31ZB",
+        679
+      ]
+    ],
+    "contact_sensor": [
+      [
+        "TS0203",
+        306
+      ],
+      [
+        "ZG-102Z",
+        306
+      ],
+      [
+        "ZG-102ZL",
+        306
+      ],
+      [
+        "DS01",
+        306
+      ],
+      [
+        "RH3001",
+        306
+      ],
+      [
+        "MCCGQ01LM",
+        306
+      ],
+      [
+        "MCCGQ11LM",
+        306
+      ],
+      [
+        "MCCGQ12LM",
+        306
+      ]
+    ],
+    "motion_sensor": [
+      [
+        "TS0202",
+        232
+      ],
+      [
+        "ZG-204Z",
+        232
+      ],
+      [
+        "MS01",
+        232
+      ],
+      [
+        "RH3040",
+        232
+      ],
+      [
+        "IH012-RT01",
+        232
+      ],
+      [
+        "TY0202",
+        232
+      ],
+      [
+        "E1745",
+        232
+      ],
+      [
+        "E1525/E1745",
+        232
+      ]
+    ],
+    "radiator_valve": [
+      [
+        "TS0601",
+        316
+      ],
+      [
+        "TV01-ZB",
+        316
+      ],
+      [
+        "TV02-ZB",
+        316
+      ],
+      [
+        "TRV601",
+        316
+      ],
+      [
+        "TRV602",
+        316
+      ],
+      [
+        "SPZB0001",
+        316
+      ],
+      [
+        "SPZB0003",
+        316
+      ],
+      [
+        "014G2461",
+        316
+      ]
+    ],
+    "presence_sensor_radar": [
+      [
+        "TS0225",
+        240
+      ],
+      [
+        "CK-BL702-MWS-01",
+        240
+      ],
+      [
+        "CK-BL702-MWS-01(7016)",
+        240
+      ],
+      [
+        "MG1_5RZ",
+        240
+      ],
+      [
+        "SZLMR10",
+        240
+      ],
+      [
+        "ZG-204ZH",
+        240
+      ],
+      [
+        "ZG-204ZK",
+        240
+      ],
+      [
+        "ZG-205Z",
+        240
+      ]
+    ]
+  }
+}

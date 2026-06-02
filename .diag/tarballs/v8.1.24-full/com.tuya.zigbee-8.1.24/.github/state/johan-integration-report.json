@@ -1,0 +1,283 @@
+{
+  "processed": 30,
+  "totalAdded": 34,
+  "byDriver": [
+    {
+      "pr": 1406,
+      "driver": "curtain_motor",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\curtain_motor\\driver.compose.json",
+      "mfr": [
+        "_TZE204_xu4a5rhj",
+        "_TZE200_gubdgai2",
+        "_TZE200_vdiuwbkq"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1372,
+      "driver": "motion_sensor_3",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\motion_sensor\\driver.compose.json",
+      "mfr": [
+        "_TZE200_mgxy2d9f"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "added": 1
+    },
+    {
+      "pr": 1350,
+      "driver": "dimmer_ts110e",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\dimmer_ts110e\\driver.compose.json",
+      "mfr": [
+        "_TZ3210_ngqk6jia",
+        "_TZ3210_weaqkhab"
+      ],
+      "pid": [
+        "TS110E"
+      ],
+      "added": 3
+    },
+    {
+      "pr": 1303,
+      "driver": "pir_mmwave_sensor",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\pir_mmwave_sensor\\driver.compose.json",
+      "mfr": [
+        "_TZE200_y8jijhba"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "added": 2
+    },
+    {
+      "pr": 1253,
+      "driver": "doorwindowsensor",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\doorwindowsensor\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_gntwytxo",
+        "_TZE200_pay2byax",
+        "_TZ3000_996rpfy6"
+      ],
+      "pid": [
+        "TS0203",
+        "TS0601"
+      ],
+      "added": 4
+    },
+    {
+      "pr": 1253,
+      "driver": "lcdtemphumidsensor_3",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\lcdtemphumidsensor_3\\driver.compose.json",
+      "mfr": [
+        "_TZE200_vvmbj46n"
+      ],
+      "pid": [],
+      "added": 1
+    },
+    {
+      "pr": 1253,
+      "driver": "smart_button_switch",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\smart_button_switch\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_qgwcxxws",
+        "_TZ3000_mrpevh8p"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1231,
+      "driver": "wall_remote_4_gang_3",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\wall_remote_4_gang_3\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_jcspr0tp",
+        "_TZ3000_zgyzgdua"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1221,
+      "driver": "valvecontroller",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\valvecontroller\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_5ucujjts",
+        "_TZ3000_wpueorev"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1220,
+      "driver": "handheld_remote_4_buttons",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\handheld_remote_4_buttons\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_u3nv1jwk",
+        "_TZ3000_mh9px7cq"
+      ],
+      "pid": [],
+      "added": 1
+    },
+    {
+      "pr": 1219,
+      "driver": "switch_1_gang",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\switch_1_gang\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_6axxqqi2",
+        "_TZ3000_gjrubzje"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1218,
+      "driver": "radar_sensor",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\radar_sensor\\driver.compose.json",
+      "mfr": [
+        "_TZE204_7gclukjs",
+        "_TZE204_dapwryy7"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1209,
+      "driver": "wall_remote_4_gang_3",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\wall_remote_4_gang_3\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_jcspr0tp",
+        "_TZ3000_kfu8zapd"
+      ],
+      "pid": [],
+      "added": 1
+    },
+    {
+      "pr": 1204,
+      "driver": "lcdtemphumidsensor",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\lcdtemphumidsensor\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_ywagc4rj"
+      ],
+      "pid": [
+        "TS0201"
+      ],
+      "added": 1
+    },
+    {
+      "pr": 1194,
+      "driver": "curtain_motor",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\curtain_motor\\driver.compose.json",
+      "mfr": [
+        "_TZE200_9p5xmj5r",
+        "_TZE204_bjzrowv2"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1128,
+      "driver": "smart_button_switch",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\smart_button_switch\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_qgwcxxws",
+        "_TZ3000_an5rjiwd"
+      ],
+      "pid": [],
+      "added": 1
+    },
+    {
+      "pr": 1122,
+      "driver": "motion_sensor_2",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\motion_sensor_2\\driver.compose.json",
+      "mfr": [
+        "_TZE200_ttcovulf",
+        "_TZE200_kb5noeto"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1118,
+      "driver": "smartplug",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\smartplug\\driver.compose.json",
+      "mfr": [
+        "_TZ3000_pjcqjtev",
+        "_TZ3000_wzmuk9ai",
+        "_TZ3000_ww6drja5"
+      ],
+      "pid": [],
+      "added": 2
+    },
+    {
+      "pr": 1106,
+      "driver": "sr_zs_switch",
+      "driverPath": "C:\\Users\\HP\\Desktop\\homey-app\\tuya_repair\\drivers\\sr_zs_switch\\driver.compose.json",
+      "mfr": [
+        "_TZ3002_vaq2bfcu"
+      ],
+      "pid": [
+        "TS0726"
+      ],
+      "added": 1
+    }
+  ],
+  "skipped": [
+    {
+      "pr": 1292,
+      "driver": "radarLuminanceSensor",
+      "mfr": [
+        "_TZE200_y8jijhba"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "reason": "No matching local driver"
+    },
+    {
+      "pr": 1237,
+      "driver": "smoke_temp_humid_sensor",
+      "mfr": [
+        "_TZE284_gyzlwu5q"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "reason": "No matching local driver"
+    },
+    {
+      "pr": 1230,
+      "driver": "temperaturesensor_ths317",
+      "mfr": [
+        "_TZE200_iq4ygaai"
+      ],
+      "pid": [
+        "TS0201"
+      ],
+      "reason": "No matching local driver"
+    },
+    {
+      "pr": 1204,
+      "driver": "Neo_siren",
+      "mfr": [
+        "_TZE204_q76rtoa9"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "reason": "No matching local driver"
+    },
+    {
+      "pr": 1204,
+      "driver": "dimmer_3_gang_tuya",
+      "mfr": [
+        "_TZE204_1v1dxkck"
+      ],
+      "pid": [
+        "TS0601"
+      ],
+      "reason": "No matching local driver"
+    }
+  ]
+}

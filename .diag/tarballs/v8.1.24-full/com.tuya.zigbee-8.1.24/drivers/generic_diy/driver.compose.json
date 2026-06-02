@@ -1,0 +1,376 @@
+{
+  "name": {
+    "en": "Generic DIY Zigbee Device",
+    "fr": "Appareil Zigbee DIY Générique",
+    "nl": "Generiek DIY Zigbee Apparaat",
+    "de": "Generisches DIY Zigbee Gerät"
+  },
+  "class": "other",
+  "images": {
+    "small": "/drivers/generic_diy/assets/images/small.png",
+    "large": "/drivers/generic_diy/assets/images/large.png",
+    "xlarge": "/drivers/generic_diy/assets/images/xlarge.png"
+  },
+  "capabilities": [],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "dln",
+      "DLN",
+      "dln-diy",
+      "DLN-DIY",
+      "dlnraja",
+      "DLNRAJA",
+      "efekta",
+      "EFEKTA",
+      "legrand",
+      "LEGRAND",
+      " legrand",
+      " LEGRAND",
+      "lumi router",
+      "LUMI ROUTER",
+      "slzb",
+      "SLZB",
+      "sonoffzigbee",
+      "SONOFFZIGBEE",
+      "schneider electric",
+      "SCHNEIDER ELECTRIC",
+      "schneider",
+      "SCHNEIDER",
+      "se",
+      "SE",
+      "wiser",
+      "WISER",
+      "danfoss",
+      "DANFOSS",
+      "bosch",
+      "BOSCH",
+      "rbsh",
+      "RBSH",
+      "niko",
+      "NIKO",
+      "niko nv",
+      "NIKO NV",
+      "d5x84yu",
+      "D5X84YU",
+      "netatmo",
+      "NETATMO",
+      "ti router",
+      "TI ROUTER",
+      "ti.router",
+      "TI.ROUTER",
+      "zig-a-zig-ah",
+      "ZIG-A-ZIG-AH",
+      "zigfred",
+      "ZIGFRED",
+      "_tze284_uo8qcagc",
+      "_TZE284_uo8qcagc",
+      "_TZE284_UO8QCAGC",
+      "_tz3290_ot6ewjvmejq5ekhl",
+      "_TZ3290_ot6ewjvmejq5ekhl",
+      "_TZ3290_OT6EWJVMEJQ5EKHL",
+      "_tz3290_j37rooaxrcdcqo5n",
+      "_TZ3290_j37rooaxrcdcqo5n",
+      "_TZ3290_J37ROOAXRCDCQO5N",
+      "_tz3002_eda6eitk",
+      "_TZ3002_eda6eitk",
+      "_TZ3002_EDA6EITK",
+      "_tz3002_vsom92pp",
+      "_TZ3002_vsom92pp",
+      "_TZ3002_VSOM92PP",
+      "_tz3008_reatplte",
+      "_TZ3008_reatplte",
+      "_TZ3008_REATPLTE",
+      "_tz3210_2putqrmw",
+      "_TZ3210_2putqrmw",
+      "_TZ3210_2PUTQRMW",
+      "_tz3210_6smingw0",
+      "_TZ3210_6smingw0",
+      "_TZ3210_6SMINGW0",
+      "_tz3210_a04acm9s",
+      "_TZ3210_a04acm9s",
+      "_TZ3210_A04ACM9S",
+      "_tz3210_cm9mbpr1",
+      "_TZ3210_cm9mbpr1",
+      "_TZ3210_CM9MBPR1",
+      "_tz3210_imaccztn",
+      "_TZ3210_imaccztn",
+      "_TZ3210_IMACCZTN",
+      "_tz3210_ok0ggpk7",
+      "_TZ3210_ok0ggpk7",
+      "_TZ3210_OK0GGPK7",
+      "_tz3210_vbfp8eyv",
+      "_TZ3210_vbfp8eyv",
+      "_TZ3210_VBFP8EYV",
+      "_tz3210_zifx0xoj",
+      "_TZ3210_zifx0xoj",
+      "_TZ3210_ZIFX0XOJ",
+      "_tz3290_7v1k4vufotpowp9z",
+      "_TZ3290_7v1k4vufotpowp9z",
+      "_TZ3290_7V1K4VUFOTPOWP9Z",
+      "_tze200_0hb4rdnp",
+      "_TZE200_0hb4rdnp",
+      "_TZE200_0HB4RDNP",
+      "_tze200_gne0e6mk",
+      "_TZE200_gne0e6mk",
+      "_TZE200_GNE0E6MK",
+      "_tze200_hbnfokum",
+      "_TZE200_hbnfokum",
+      "_TZE200_HBNFOKUM",
+      "_tze200_m6lwazh9",
+      "_TZE200_m6lwazh9",
+      "_TZE200_M6LWAZH9",
+      "_tze200_w0ap83qu",
+      "_TZE200_w0ap83qu",
+      "_TZE200_W0AP83QU",
+      "_tze204_ai4rqhky",
+      "_TZE204_ai4rqhky",
+      "_TZE204_AI4RQHKY",
+      "_tze204_cduqh1l0",
+      "_TZE204_cduqh1l0",
+      "_TZE204_CDUQH1L0",
+      "_tze204_ouy7vpm1",
+      "_TZE204_ouy7vpm1",
+      "_TZE204_OUY7VPM1",
+      "_tze284_3regm3h6",
+      "_TZE284_3regm3h6",
+      "_TZE284_3REGM3H6",
+      "_tze284_4vbj3fxh",
+      "_TZE284_4vbj3fxh",
+      "_TZE284_4VBJ3FXH",
+      "_tze284_4vobcgd3",
+      "_TZE284_4vobcgd3",
+      "_TZE284_4VOBCGD3",
+      "_tze284_bw4ayyeh",
+      "_TZE284_bw4ayyeh",
+      "_TZE284_BW4AYYEH",
+      "_tze284_kow4ok3t",
+      "_TZE284_kow4ok3t",
+      "_TZE284_KOW4OK3T",
+      "_tze284_mul9abs3",
+      "_TZE284_mul9abs3",
+      "_TZE284_MUL9ABS3",
+      "_tze284_mvtclclq",
+      "_TZE284_mvtclclq",
+      "_TZE284_MVTCLCLQ",
+      "_tze284_nbv4tdaz",
+      "_TZE284_nbv4tdaz",
+      "_TZE284_NBV4TDAZ",
+      "_tze284_o9ofysmo",
+      "_TZE284_o9ofysmo",
+      "_TZE284_O9OFYSMO",
+      "_tze284_r731zlxk",
+      "_TZE284_r731zlxk",
+      "_TZE284_R731ZLXK",
+      "_tze284_tgrzpqf4",
+      "_TZE284_tgrzpqf4",
+      "_TZE284_TGRZPQF4",
+      "_tze284_xc3vwx5a",
+      "_TZE284_xc3vwx5a",
+      "_TZE284_XC3VWX5A",
+      "_tze200_1ibpyhdc",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_1IBPYHDC",
+      "_tze200_2atgpdho",
+      "_TZE200_2atgpdho",
+      "_TZE200_2ATGPDHO",
+      "_tze200_2ekuz3dz",
+      "_TZE200_2ekuz3dz",
+      "_TZE200_2EKUZ3DZ",
+      "_tze200_2imwyigp",
+      "_TZE200_2imwyigp",
+      "_TZE200_2IMWYIGP",
+      "_tze200_2m38mh6k",
+      "_TZE200_2m38mh6k",
+      "_TZE200_2M38MH6K",
+      "_tze200_2pddnnrk",
+      "_TZE200_2pddnnrk",
+      "_TZE200_2PDDNNRK",
+      "_tze200_2se8efxh",
+      "_TZE200_2se8efxh",
+      "_TZE200_2SE8EFXH",
+      "_tze200_3towulqd",
+      "_TZE200_3towulqd",
+      "_TZE200_3TOWULQD",
+      "_tze200_7bztmfm1",
+      "_TZE200_7bztmfm1",
+      "_TZE200_7BZTMFM1",
+      "_tze200_8whxpsiw",
+      "_TZE200_8whxpsiw",
+      "_TZE200_8WHXPSIW",
+      "_tze200_9cqcpkgb",
+      "_TZE200_9cqcpkgb",
+      "_TZE200_9CQCPKGB",
+      "_tze200_9p5xmj5r",
+      "_TZE200_9p5xmj5r",
+      "_TZE200_9P5XMJ5R",
+      "_tze200_9sfg7gm0",
+      "_TZE200_9sfg7gm0",
+      "_TZE200_9SFG7GM0",
+      "_tze200_a4bpgplm",
+      "_TZE200_a4bpgplm",
+      "_TZE200_A4BPGPLM"
+    ],
+    "productId": [
+      "BUTTON",
+      "CC2530",
+      "CC2531",
+      "CC2652",
+      "CUSTOM",
+      "DIY",
+      "EFEKTA",
+      "ESP32",
+      "MAKER",
+      "PTVO",
+      "RELAY",
+      "ROUTER",
+      "SENSOR",
+      "SWITCH",
+      "SNZB-01",
+      "SNZB-02",
+      "SNZB-03",
+      "SNZB-04",
+      "SNZB-01P",
+      "SNZB-02P",
+      "SNZB-03P",
+      "SNZB-04P",
+      "SNZB-06P",
+      "S26R2ZB",
+      "S31ZB",
+      "S40ZBTPB",
+      "ZBMINI",
+      "ZBMINIL2",
+      "BASICZBR3",
+      "eTRV0100",
+      "eTRV0101",
+      "eTRV0103",
+      "eT093WRO",
+      "eT093WRG",
+      "TRV001",
+      "TRV003",
+      "0x8040",
+      "BSP-FZ2",
+      "BSP-EZ2",
+      "Battery switch, 1 button",
+      "Battery switch, 2 buttons",
+      "ZIGSTAR",
+      "TS0041A",
+      "TS0026",
+      "TS0052",
+      "TS0224",
+      "TS0105",
+      "TS0901"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Universal Zigbee Device (DIY + Standard ZCL)\n\n1. Put your device in pairing mode\n2. For Sonoff: Hold button 5+ seconds\n3. For ESP32/PTVO: Press boot button\n4. For Danfoss/Legrand/Schneider: Follow manufacturer pairing\n\nCapabilities auto-discovered from ZCL clusters.\n\nSupported: Sonoff, eWeLink, Danfoss, Legrand, Schneider, Bosch, Niko, ESP32, PTVO, CC2652, routers.",
+        "fr": "Appareil Zigbee DIY générique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou déclenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Redémarrez ou réinitialisez\n\nLes capacités seront auto-découvertes depuis les clusters ZCL.\n\nSupporté: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Device Information",
+        "fr": "🔧 Informations Appareil"
+      },
+      "children": [
+        {
+          "id": "diy_manufacturer_name",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer",
+            "fr": "Fabricant"
+          },
+          "value": "DIY"
+        },
+        {
+          "id": "diy_model_id",
+          "type": "label",
+          "label": {
+            "en": "Model ID",
+            "fr": "ID Modèle"
+          },
+          "value": "Unknown"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "📡 Discovered Clusters",
+        "fr": "📡 Clusters Découverts"
+      },
+      "children": [
+        {
+          "id": "discovered_clusters",
+          "type": "label",
+          "label": {
+            "en": "ZCL Clusters",
+            "fr": "Clusters ZCL"
+          },
+          "value": "Scanning..."
+        },
+        {
+          "id": "discovered_capabilities",
+          "type": "label",
+          "label": {
+            "en": "Capabilities Added",
+            "fr": "Capacités Ajoutées"
+          },
+          "value": "None yet"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚙️ Advanced",
+        "fr": "⚙️ Avancé"
+      },
+      "children": [
+        {
+          "id": "force_rescan",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Cluster Rescan",
+            "fr": "Forcer Rescan Clusters"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable to rescan clusters on next init",
+            "fr": "Activer pour rescanner les clusters au prochain démarrage"
+          }
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

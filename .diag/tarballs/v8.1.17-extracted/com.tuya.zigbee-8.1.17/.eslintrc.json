@@ -1,0 +1,60 @@
+{
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {
+    "no-unexpected-multiline": "error",
+    "no-cond-assign": "error",
+    "no-unused-expressions": "error",
+    "no-self-compare": "error",
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+    "no-mixed-operators": "warn",
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "smart"],
+    "no-var": "error",
+    "prefer-const": "warn",
+    "prefer-template": "warn",
+    "no-console": "off",
+    "no-debugger": "error",
+    "complexity": ["warn", 15],
+    "max-depth": ["warn", 4],
+    "max-nested-callbacks": ["warn", 3],
+    "max-params": ["warn", 5],
+    "max-statements": ["warn", 50],
+    "no-return-await": "warn",
+    "handle-callback-err": ["error", "^(err|error)$"],
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-unsafe-negation": "error",
+    "no-throw-literal": "error"
+  },
+  "globals": {
+    "Homey": "readonly",
+    "module": "writable",
+    "require": "writable",
+    "console": "writable",
+    "Buffer": "readonly",
+    "setTimeout": "readonly",
+    "setInterval": "readonly",
+    "clearTimeout": "readonly",
+    "clearInterval": "readonly",
+    "process": "readonly",
+    "__dirname": "readonly"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    ".homey/",
+    "build/",
+    "data/",
+    "tmp/",
+    ".cache/",
+    "coverage/"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "LCD Temperature & Humidity Sensor",
+    "fr": "Capteur de Température et Humidité LCD",
+    "nl": "LCD Temp/Vocht Sensor",
+    "de": "LCD Temp/Feuchte Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601_lcd",
+      "TS0601",
+      "TS0201",
+      "TY0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          1,
+          1026,
+          1029,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_tz2000_avdnvykf",
+      "_TZ2000_avdnvykf",
+      "_TZ2000_AVDNVYKF",
+      "_tz2000_hjsgdkfl",
+      "_TZ2000_hjsgdkfl",
+      "_TZ2000_HJSGDKFL"
+    ]
+  },
+  "images": {
+    "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",
+    "large": "/drivers/lcdtemphumidsensor/assets/images/large.png",
+    "xlarge": "/drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

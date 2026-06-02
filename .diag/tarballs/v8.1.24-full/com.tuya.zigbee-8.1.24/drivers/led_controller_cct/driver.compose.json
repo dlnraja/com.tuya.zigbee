@@ -1,0 +1,87 @@
+{
+  "name": {
+    "en": "LED Controller CCT",
+    "fr": "Contrôleur LED CCT",
+    "nl": "LED CCT Controller",
+    "de": "LED CCT Steuerung"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature",
+    "light_mode"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3210_iystcadi",
+      "_TZ3210_iystcadi",
+      "_TZ3210_IYSTCADI",
+      "_tzb210_ngnt8kni",
+      "_TZB210_ngnt8kni",
+      "_TZB210_NGNT8KNI",
+      "_tzb210_endmggws",
+      "_TZB210_endmggws",
+      "_TZB210_ENDMGGWS",
+      "_tz3000_obacbukl",
+      "_TZ3000_obacbukl",
+      "_TZ3000_OBACBUKL",
+      "_tz3000_riwp3k79",
+      "_TZ3000_riwp3k79",
+      "_TZ3000_RIWP3K79",
+      "_tz3210_r0xgkft5",
+      "_TZ3210_r0xgkft5",
+      "_TZ3210_R0XGKFT5",
+      "_tz3210_p9ao60da",
+      "_TZ3210_p9ao60da",
+      "_TZ3210_P9AO60DA"
+    ],
+    "productId": [
+      "TS0502"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/led_controller_cct/assets/images/small.png",
+    "large": "/drivers/led_controller_cct/assets/images/large.png",
+    "xlarge": "/drivers/led_controller_cct/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

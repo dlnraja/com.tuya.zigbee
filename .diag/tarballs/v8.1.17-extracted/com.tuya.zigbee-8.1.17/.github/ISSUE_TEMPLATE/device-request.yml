@@ -1,0 +1,180 @@
+name: 🔌 Device Support Request
+description: Request support for a new Tuya Zigbee device
+title: "[Device Request] "
+labels: ["device-request", "needs-fingerprint"]
+assignees:
+  - dlnraja
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for contributing!
+        
+        To add support for your device, we need specific technical information.
+        Please fill out all required fields to speed up the process.
+        
+        **Before submitting:**
+        - Check if your device is already supported: [Device Matrix](https://github.com/dlnraja/com.tuya.zigbee/blob/master/DEVICE_MATRIX.md)
+        - Search existing issues to avoid duplicates
+
+  - type: input
+    id: device-name
+    attributes:
+      label: Device Name
+      description: Commercial name of the device (e.g., "MOES Smart Plug ZSS-X")
+      placeholder: ex. MOES Smart Plug ZSS-X
+    validations:
+      required: true
+
+  - type: input
+    id: model-id
+    attributes:
+      label: Model ID
+      description: Model number from the device or packaging
+      placeholder: ex. TS011F, TS0601, ZBSP10WT
+    validations:
+      required: true
+
+  - type: input
+    id: manufacturer-id
+    attributes:
+      label: Manufacturer ID
+      description: From Homey device info or Z2M (e.g., _TZ3000_8nkb7mof)
+      placeholder: ex. _TZ3000_8nkb7mof
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device-category
+    attributes:
+      label: Device Category
+      description: What type of device is it?
+      options:
+        - Smart Plug
+        - Light Bulb
+        - LED Strip
+        - Wall Switch
+        - Dimmer
+        - Motion Sensor
+        - Door/Window Sensor
+        - Temperature/Humidity Sensor
+        - Smoke Detector
+        - Water Leak Sensor
+        - Button/Remote
+        - Thermostat
+        - Valve (TRV)
+        - Curtain Motor
+        - Siren/Alarm
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: power-source
+    attributes:
+      label: Power Source
+      options:
+        - AC Powered (mains)
+        - Battery (CR2032)
+        - Battery (CR2450)
+        - Battery (AAA/AA)
+        - Battery (built-in rechargeable)
+        - Hybrid (AC + battery backup)
+    validations:
+      required: true
+
+  - type: input
+    id: zigbee2mqtt-link
+    attributes:
+      label: Zigbee2MQTT Device Link
+      description: Link to this device on Zigbee2MQTT supported devices
+      placeholder: https://www.zigbee2mqtt.io/devices/TS011F_plug_1.html
+    validations:
+      required: false
+
+  - type: textarea
+    id: device-fingerprint
+    attributes:
+      label: Device Fingerprint (from Homey)
+      description: |
+        Go to Homey Settings → Zigbee → Click your device → Copy all technical info
+        Or use Homey Developer Tools to get ZCL clusters and attributes
+      placeholder: |
+        Model: TS011F
+        Manufacturer: _TZ3000_8nkb7mof
+        Endpoints:
+          1: genBasic, genIdentify, genGroups, genScenes, genOnOff, seMetering, haElectricalMeasurement
+      render: yaml
+    validations:
+      required: true
+
+  - type: textarea
+    id: datapoints
+    attributes:
+      label: Data Points (DP) - If TS0601
+      description: Only for TS0601 devices - List known DPs and their function
+      placeholder: |
+        DP 1: On/Off (bool)
+        DP 18: Current (int, divide by 1000)
+        DP 19: Power (int, divide by 10)
+        DP 20: Voltage (int, divide by 10)
+      render: yaml
+    validations:
+      required: false
+
+  - type: textarea
+    id: working-features
+    attributes:
+      label: Working Features
+      description: What features already work with another app or Z2M?
+      placeholder: |
+        - On/Off control works
+        - Energy monitoring works
+        - Overload protection works
+    validations:
+      required: false
+
+  - type: textarea
+    id: not-working
+    attributes:
+      label: Not Working / Issues
+      description: What doesn't work or needs improvement?
+      placeholder: |
+        - Battery percentage always shows 0%
+        - Motion sensor doesn't trigger
+        - Energy readings are incorrect
+    validations:
+      required: false
+
+  - type: input
+    id: purchase-link
+    attributes:
+      label: Where to Buy
+      description: Store link or location (helps other users)
+      placeholder: ex. Action (NL), Amazon, AliExpress
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Any other relevant details (photos, tests, etc.)
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm
+      options:
+        - label: I have searched for existing device requests
+          required: true
+        - label: I have checked the device is not already supported
+          required: true
+        - label: I can test the driver when it's ready
+          required: false
+        - label: I'm willing to provide debug logs if needed
+          required: false

@@ -1,0 +1,29 @@
+# CODEOWNERS — Critical file protection
+# These files require review by dlnraja before any PR can merge.
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# ─── Core App Files ────────────────────────────────────────────────────────
+# Any change to these files MUST be reviewed
+/app.json                   @dlnraja
+/app.js                     @dlnraja
+/package.json               @dlnraja
+
+# ─── Athom Required Files ──────────────────────────────────────────────────
+/README.txt                 @dlnraja
+/README.*.txt               @dlnraja
+/.homeyignore               @dlnraja
+/.homeyplugins.json         @dlnraja
+
+# ─── Assets (protected) ────────────────────────────────────────────────────
+/assets/                    @dlnraja
+
+# ─── CI/CD Workflows ──────────────────────────────────────────────────────
+/.github/workflows/         @dlnraja
+/.github/actions/           @dlnraja
+
+# ─── Security Scripts ──────────────────────────────────────────────────────
+/scripts/security/          @dlnraja
+/scripts/maintenance/       @dlnraja
+
+# ─── Lib (production code) ─────────────────────────────────────────────────
+/lib/                       @dlnraja

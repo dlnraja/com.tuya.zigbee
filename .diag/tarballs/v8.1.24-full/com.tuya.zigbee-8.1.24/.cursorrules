@@ -1,0 +1,191 @@
+# Universal Tuya Zigbee - Cursor AI Rules
+# Project: com.dlnraja.tuya.zigbee
+
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
+> 
+> **MANDATORY SECOND STEP:** Then read [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. Every AI agent MUST follow this framework before making any code changes.
+> 
+> **MANDATORY THIRD STEP:** Read [ARCHITECTURE_AI.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURE_AI.md) to understand the 3 AI layers — IDE Locale (Windows/Claude Code), GitHub Actions (workflows/ai-helper/secrets), and Homey Runtime (SDK3, zero cloud). Every AI agent MUST distinguish these layers before making automation or runtime code changes.
+
+## Project Context
+Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.
+
+## CRITICAL: Settings Keys
+- Use `zb_model_id` NOT zb_modelId
+- Use `zb_manufacturer_name` NOT zb_manufacturerName
+
+## Flow Cards
+- ID pattern: `{driver}_physical_gang{N}_{on|off}`
+- NO `titleFormatted` with `[[device]]` - causes bugs
+- Always check driver.flow.compose.json for exact IDs
+- Virtual buttons MUST use `this.setCapabilityValue()` to route through the v5 hardening pipeline in `TuyaZigbeeDevice.js`. This ensures flow triggers map optimally and are protected by the L14 SanityFilter.
+
+## Imports
+```javascript
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+```
+
+## Switch Mixin Order
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+```
+
+## L14 Hardened Telemetry (v5.13.6+)
+- **Unified Engine**: ALL capability updates MUST use `this.setCapabilityValue()`.
+- **Inheritance**: Drivers must inherit from `TuyaZigbeeDevice` (or `UnifiedBase`) to benefit from L14.
+- **SanityFilter**: Automatically active. Filters EMA (noise) and ROC (spikes).
+- **Anti-Flood**: Throttling is managed at the base class level.
+- **Case-Insensitivity**: Use `CaseInsensitiveMatcher.js` (`lib/utils/CaseInsensitiveMatcher.js`) for all manufacturerName matching. Manual `.toLowerCase()` is forbidden.
+- **Smart Divisors (v8.2+)**: Use `smartDivisorDetect()` for measure_temperature and measure_humidity parsing. Do NOT hardcode `value / 100` or `value / 10`.
+
+## Phoenix Sovereign Architecture (v8.2.0+) Rules
+1. **Virtual Buttons**: NEVER use `this.setCapabilityValue('button', ...)` natively. You MUST use `this._safeSetCapability()` or wrap with `markAppCommand()` to avoid infinite flow loops when physical buttons trigger Generic Flow Cards.
+2. **Batteries**: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED. You must use `SmartBatteryManager` and non-linear profiles like `3V_2100` or `1.5V_AA`.
+3. **Mains-Powered Devices**: Must define `get mainsPowered() { return true; }` and strip `measure_battery` in `onNodeInit` to prevent phantom capabilities.
+
+## Smart Divisor Manager (v8.2.0+)
+- Located in `lib/managers/SmartDivisorManager.js`
+- Auto-détection du diviseur pour temperature, humidity, co2, power, current, voltage, energy, battery, distance, luminance
+- Résout le "Double-Division Bug": AdaptiveDataParser → /100 THEN dpMappings → /100 again
+- `smartDivisorDetect(rawValue, dpId, options)` — détection intelligente
+- `smartParse(rawValue, dpId, options)` — parse wrapper complet
+- Database KNOWN_DIVISORS + VALID_RANGES pour auto-détection
+- Cache automatique par (manufacturerName + dpId + capability)
+- Chaîne de fallback: Known DB → Auto-detect range → defaultDivisor param → 1
+
+## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
+- FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
+- `BATTERY_SPECS` statique: 15+ types (CR2032, CR2450, CR2477, CR123A, CR1632, AAA, AA, C, D, 9V, 2xAAA, 2xAA, 4xAAA, Li-ion, Li-polymer, 18650)
+- `calculateFromVoltage(voltage, batteryType, temperature)` — interpolation linéaire multipoints + compensation température
+- `lookupBatteryProfile(manufacturerName, productId)` — lookup par fabricant + productId (20+ profils)
+- `DEVICE_BATTERY_MAP` — 30+ device types → battery type mapping
+- `INTERVALS` — polling intervals par type d'appareil (1h à 12h)
+- EMA smoothing + health monitoring (drain rate, estimated days)
+- `calculateFromTuyaDP()` + `normalizeZigbeeValue()` — parsing multi-format
+- Anti-flood 5min/2% deduplication
+- Store persistence entre les sessions
+- ⚠️ RULE: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED
+- ⚠️ RULE: Use non-linear profiles like `'3V_2100'` or `'1.5V_AA'`
+
+## Anti-Patterns & Bug Fallbacks
+
+- **ZCL Cluster Double-Parsing**: When mixing custom inference handlers in `setupUniversalZCLListeners` for hybrid sensors, wrap base class setups (`_setupZCLCluster`) in checks for `!this.clusterHandlers?.temperatureMeasurement` to prevent bouncing parallel streams.
+- **Phantom Capabilities**: Do NOT fallback to feature-bloated configs like `HOBEIAN_10G_MULTI` for missing-model IDs on onboarding. It assigns fake temperature and humidity capabilities causing UI spam, and breaks IAS Zone protocols. Cascade safely into robust profiles like `HOBEIAN_ZG204ZM_FALLBACK`.
+
+## Backlight Values
+- Strings only: `"off"`, `"normal"`, `"inverted"`.
+- Must NOT use numeric comparisons (e.g., `=== 0`, `=== 1`, `'0'`, `'1'`).
+- Use ternary assignments to map to DP integers when sending commands: `const lightMode = backlightMode === 'normal' ? 1 : 2;`
+- This is strictly verified by Layer 11 of the Multi-Layer Quality Gateway.
+
+## BSEED ZCL-Only Fingerprints
+`_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`,
+`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`
+
+## Tuya DP Protocol
+- Cluster: 0xEF00 | DP1-8: gangs | DP14: power-on | DP15: backlight
+- Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
+
+## Key Files
+- `lib/devices/HybridSwitchBase.js` - Base switch class
+- `lib/mixins/PhysicalButtonMixin.js` - Physical detection
+- `drivers/{type}/driver.flow.compose.json` - Flow definitions
+
+## CRITICAL: Fingerprint Matching
+**manufacturerName CAN appear in MULTIPLE drivers** - this is NORMAL!
+
+### Fingerprint = manufacturerName + productId (COMBINED)
+```
+_TZ3000_abc + TS0001 → switch_1gang
+_TZ3000_abc + TS0002 → switch_2gang  (SAME mfr, different productId = OK!)
+_TZ3000_abc + TS0003 → switch_3gang
+```
+
+### When to REMOVE a fingerprint
+Only if SAME manufacturerName + SAME productId in WRONG driver.
+Do NOT remove just because mfr appears in another driver with different productId.
+
+### Common Multi-Driver Manufacturers
+- `_TZ3000_*` - Makes 1-gang, 2-gang, 3-gang variants
+- `_TZE200_*` / `_TZE204_*` - Tuya DP across sensors, TRVs, covers
+- Same OEM = different productIds for different device types
+
+## GITHUB ACTIONS / YML WORKFLOW RULES
+
+> Full reference: `.github/WORKFLOW_GUIDELINES.md` and `.github/SECRETS.md`
+
+### Before editing ANY `.github/workflows/*.yml`:
+1. Read `.github/WORKFLOW_GUIDELINES.md` first
+2. Every job running `node` scripts MUST have: checkout → setup-node → npm ci
+3. Always set `timeout-minutes` on jobs
+4. Always set `permissions:` and `concurrency:` at top level
+5. Use `continue-on-error: true` for optional-secret steps
+6. Use `[skip ci]` in auto-commit messages to prevent infinite loops
+7. Stagger cron schedules by 30+ min to avoid git push conflicts
+8. Draft→test promotion: 3 tiers (Node → curl fallback → verify retry)
+9. `DISCOURSE_API_KEY` lint warnings = false positives (secret exists)
+10. `GITHUB_TOKEN` auto-provided; `GH_PAT` for cross-repo access
+11. Guard missing secrets: `if [ -z "$SECRET" ]; then exit 0; fi`
+12. Git commits: always `git pull --rebase origin master || true` before push
+
+## SDK v3 OFFICIAL RULES (apps-sdk-v3.developer.homey.app)
+- Managers via `this.homey.<managerId>`: `this.homey.drivers`, `this.homey.flow`, `this.homey.settings`
+- Zigbee init: `async onNodeInit()` (NOT sync onInit)
+- `await this.setCapabilityValue()` — ALWAYS use this; it is hardened in `TuyaZigbeeDevice.js` to provide L14 SanityFiltering and Anti-Flood protection.
+- Memory: idempotent listeners, clear timeouts in `onDeleted()`/`onUninit()`
+- NO v2 patterns: `this.homey.zigbee.getDevice()`, global Manager*
+
+## FORUM POSTING — ABSOLUTE RULE
+- Bot must ONLY post on T140352. REPLY_TOPICS must be '140352' only
+- FORUM_TOPICS can include other threads for READ-ONLY scanning
+- Never add T26439 (Johan), T146735 (Tuya) to REPLY_TOPICS
+
+## CI SEMANTIC LINTER — SAFETY
+- NEVER auto-modify driver files — report-only
+- Never pipe AI output into source files
+
+## INFORMATION FLOW & ATTRIBUTION
+- SCAN everything (Johan, WiFi, all threads, forks) → implement SILENTLY
+- External sources: NEVER mention in forum/changelogs/commits/PR comments
+- Own sources (dlnraja T140352, own GitHub, own PRs, own forks): CAN mention
+- Forum: ALWAYS merge with last dlnraja post (even if bot posted it)
+- Commit messages for external syncs: use generic wording ("improved", "added support")
+
+## POST-PROMOTION DOCUMENTATION & REGISTRY SYNC
+- **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
+
+Generated by Antigravity AI — 14 May 2026 | Version 8.0.0 (Hardened v5)
+\n
+
+## Dynamic RAM Optimization & Dual-Layer Pairing (v9.0.0+)
+- **Buffer-Based Direct JSON Loading (Double Heap memory fix)**: For all large JSON/file database loading (like `fingerprints.json` or `driver-mapping-database.json`), you **MUST** read the file directly as a raw Buffer (`fs.readFileSync(fpath)`) instead of converted UTF-16 string (`utf8`). Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. This avoids allocating a giant intermediate JS String on the V8 heap and prevents fatal OOM crashes under Homey Pro's strict 64MB memory limit.
+- **Defensive V8 Garbage Collection**: The loader forces `global.gc()` sweeps (if available) before and after database parses to cleanly eject transient chunks.
+- **Static vs Dynamic Dual-Layer Matching**:
+  - **Static Manifests**: The manufacturer name, ZCL clusters, and `modelId` must remain statically registered in `driver.compose.json` / `app.json` to allow the Homey Pro box to match the hardware and complete the pairing flow locally.
+  - **Dynamic JSON Databases**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine capabilities and custom DP parser operations dynamically at runtime, ensuring offline capability mapping continues to work perfectly.
+
+## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
+- **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
+- **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.
+- **Mains/Battery Approximation Conflicts**: If a compose manifest (`driver.compose.json`) defines `measure_power` or `meter_power`, it MUST NOT define `energy.approximation` under `energy` to prevent severe Homey Pro Energy v3 schema validation errors.
+- **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
+- **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
+
+// ============================================================================
+// DEEP DIAGNOSTIC & CROSS-REFERENCING MANDATE (CRITICAL)
+// ============================================================================
+- DO NOT just say 'Missing manufacturer'. Perform deep cross-referencing with Z2M/ZHA and scrape forum/email info.
+- Remember a single `manufacturerName` can map to MULTIPLE variants and device IDs. Check productId!
+- Use Antigravity skills (`.agents/skills/`) and local Claude Code scripts.
+- Update docs, workflows, and Github Actions after fixing a bug.
+- Read Architecture 7+ and 8.0 docs before acting.
+
+// ============================================================================
+// AUTONOMOUS AGENT REFLECTION & LOGIC MODE
+// ============================================================================
+- **Thinking Blocks**: Before taking action, use a structured thinking process to reflect on the codebase state and potential side-effects.
+- **Incremental Verification**: Do not attempt to fix 10 things at once. Plan, execute one logical block, test/verify, and reflect on the outcome before proceeding.
+- **Tool-Driven Loop**: Leverage tools intelligently (read files to confirm context, search codebase for dependencies, run validation scripts) before making blind code edits.
+- **Context Mastery**: Assimilate the dual-app context and project architecture fully into your reasoning model before proposing solutions.

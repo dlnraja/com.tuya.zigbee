@@ -1,0 +1,204 @@
+{
+  "patterns": [
+    {
+      "id": "sdk3-await-capability",
+      "desc": "setCapabilityValue() calls should be awaited.",
+      "severity": "info",
+      "count": 39,
+      "firstSeen": "2026-04-04T17:57:49.240Z",
+      "lastSeen": "2026-05-15T05:13:15.078Z",
+      "files": [
+        "air_purifier",
+        "air_quality_co2",
+        "bulb_rgb",
+        "bulb_rgb_led",
+        "bulb_rgbw",
+        "button_emergency_sos",
+        "climate_sensor",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "sdk3-ondeleted-cleanup",
+      "desc": "Driver has listeners but no onDeleted/onUninit cleanup.",
+      "severity": "info",
+      "count": 2,
+      "firstSeen": "2026-04-04T17:57:49.253Z",
+      "lastSeen": "2026-05-15T05:13:15.057Z",
+      "files": [
+        "bulb_rgb",
+        "air_purifier"
+      ]
+    },
+    {
+      "id": "sdk3-battery-conflict",
+      "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
+      "severity": "error",
+      "count": 214,
+      "firstSeen": "2026-04-04T21:17:00.000Z",
+      "lastSeen": "2026-05-15T05:13:15.112Z",
+      "files": [
+        "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
+        "air_quality_co2",
+        "bulb_dimmable",
+        "bulb_rgb",
+        "bulb_rgb_led",
+        "bulb_rgbw",
+        "bulb_tunable_white",
+        "bulb_white",
+        "button_emergency_sos",
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_4",
+        "button_wireless_6",
+        "button_wireless_8",
+        "button_wireless_smart",
+        "climate_sensor",
+        "bulb_dimmable_dimmer",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "sdk3-flow-card-unsafe",
+      "desc": "Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard crashes app if card missing in app.json. ALWAYS use try-catch.",
+      "severity": "error",
+      "count": 23,
+      "firstSeen": "2026-04-04T17:46:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": [
+        "RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js"
+      ]
+    },
+    {
+      "id": "runtime-energy-adaptation",
+      "desc": "Chinese variants are too diverse for static compose. Same manufacturerName can be battery, mains, kinetic, hybrid. UnifiedBatteryHandler probes ALL sources (ZCL/DP/IAS/voltage) at runtime and adapts capabilities dynamically.",
+      "severity": "critical-pattern",
+      "count": 193,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
+    },
+    {
+      "id": "battery-dp-mapping",
+      "desc": "Battery DPs: 4,10,14,15,21,100,101,102,104,105 (%). Voltage DPs: 33,35,247 (mV). IAS Zone bit 3 = low-battery. ZCL genPowerCfg 0x0001 batteryPercentageRemaining div 2.",
+      "severity": "knowledge",
+      "count": 1,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
+    },
+    {
+      "id": "power-source-types",
+      "desc": "5 power types: Battery (measure_battery), Mains (mainsPowered=true, no battery caps), Hybrid (runtime detect), Kinetic/self-powered (TS004x, no battery), USB (treated as mains). NEVER assume from driver name.",
+      "severity": "knowledge",
+      "count": 1,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
+    },
+    {
+      "id": "zigbee-protocol-types",
+      "desc": "4 protocol types: Tuya DP (TS0601/0xEF00), Standard ZCL (TS0001-TS0504), Tuya+ZCL (0xE000/0xE001 extensions), Custom (0xFC00-0xFCFF). NEVER mix: no ZCL bindings on TS0601, no EF00 on standard ZCL.",
+      "severity": "knowledge",
+      "count": 1,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": [
+        "drivers/*/device.js"
+      ]
+    },
+    {
+      "id": "variant-intelligence",
+      "desc": "One manufacturerName maps to many productIds (normal). One productId (especially TS0601) maps to many manufacturerNames (normal). Same mfr+pid = MUST be same driver. Power source varies per variant - same _TZ3000_ can be battery OR mains OR kinetic.",
+      "severity": "knowledge",
+      "count": 982,
+      "firstSeen": "2026-04-04T21:07:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": [
+        "982 fork FPs analyzed"
+      ]
+    },
+    {
+      "id": "sdk3-case-sensitive-fingerprint",
+      "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
+      "severity": "warn",
+      "count": 118,
+      "firstSeen": "2026-05-11T03:53:21.008Z",
+      "lastSeen": "2026-05-15T05:13:15.112Z",
+      "files": [
+        "bulb_dimmable_dimmer",
+        "air_purifier",
+        "air_quality_co2",
+        "air_quality_comprehensive",
+        "bulb_dimmable",
+        "bulb_rgb",
+        "bulb_rgb_led",
+        "bulb_rgbw",
+        "bulb_tunable_white",
+        "bulb_white",
+        "button_emergency_sos",
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_4",
+        "button_wireless_6",
+        "button_wireless_8",
+        "button_wireless_plug",
+        "button_wireless_smart"
+      ]
+    },
+    {
+      "id": "ai-fix-fix",
+      "desc": "Missing removeAllListeners() cleanup to prevent memory leaks (sdk3-ondeleted-cleanup).",
+      "severity": "info",
+      "count": 10,
+      "firstSeen": "2026-05-11T15:33:24.378Z",
+      "lastSeen": "2026-05-13T03:40:59.076Z",
+      "files": [
+        "air_purifier",
+        "air_quality_comprehensive"
+      ]
+    },
+    {
+      "id": "sdk3-dp-variant-awareness",
+      "desc": "DP mapping has no variant-awareness comment. Same DP can serve different functions across _TZE200/_TZE204/_TZE284 variants. Consider adding variant notes.",
+      "severity": "info",
+      "count": 4,
+      "firstSeen": "2026-05-12T03:38:35.450Z",
+      "lastSeen": "2026-05-15T05:13:15.109Z",
+      "files": [
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "sdk3-mains-has-battery",
+      "desc": "Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.",
+      "severity": "warn",
+      "count": 8,
+      "firstSeen": "2026-05-15T05:13:15.067Z",
+      "lastSeen": "2026-05-15T05:13:15.109Z",
+      "files": [
+        "bulb_dimmable",
+        "bulb_dimmable_dimmer",
+        "bulb_rgb",
+        "bulb_rgbw",
+        "bulb_rgb_led",
+        "bulb_tunable_white",
+        "bulb_white",
+        "button_wireless_plug"
+      ]
+    }
+  ],
+  "lastRun": "2026-05-15T05:13:14.965Z",
+  "totalRuns": 12,
+  "totalIssues": 408
+}

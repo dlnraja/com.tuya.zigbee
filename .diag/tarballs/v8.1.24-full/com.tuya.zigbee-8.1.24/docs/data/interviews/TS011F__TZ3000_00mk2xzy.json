@@ -1,0 +1,19 @@
+{
+  "id": "INT-060-A",
+  "deviceName": "Smart Plug with Energy Monitoring",
+  "manufacturerName": "_TZ3000_00mk2xzy",
+  "productId": "TS011F",
+  "source": "Ian Gibbo Interview (Oct 2025)",
+  "user": "Ian_Gibbo",
+  "status": "supported",
+  "driver": "smart_plug_ac",
+  "deviceType": "router",
+  "powerSource": "mains",
+  "inputClusters": [0, 6, 1794, 2820],
+  "capabilities": ["onoff", "measure_power", "measure_voltage", "measure_current", "meter_power"],
+  "clusterDetails": {
+    "onOff": true,
+    "metering": { "currentSummationDelivered": true },
+    "electricalMeasurement": { "rmsVoltage": true, "rmsCurrent": true, "activePower": true }
+  }
+}

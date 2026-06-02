@@ -1,0 +1,10 @@
+{
+  "id": "INT-020",
+  "deviceName": "BSEED 3-Gang Wall Switch",
+  "manufacturerName": "_TZ3000_qkixdnon",
+  "productId": "TS0003",
+  "source": "JohanBendz #1338, dlnraja #102",
+  "status": "supported",
+  "driver": "switch_3gang",
+  "notes": "ZCL-only device"
+}

@@ -1,0 +1,405 @@
+{
+  "stats": {
+    "wallControllerEvents": {
+      "added": 7,
+      "skipped": 0
+    },
+    "curtainHoldAction": {
+      "added": 2,
+      "skipped": 0
+    },
+    "forcedBrightness": {
+      "added": 4,
+      "skipped": 0
+    },
+    "dimUpDown": {
+      "added": 4,
+      "skipped": 0
+    },
+    "energyAlerts": {
+      "added": 2,
+      "skipped": 0
+    },
+    "batteryAlerts": {
+      "added": 12,
+      "skipped": 0
+    }
+  },
+  "details": {
+    "wallControllerEvents": [
+      {
+        "driver": "button_wireless",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_1",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_2",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_3",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_4",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_6",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_8",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "key_held",
+            "key_released"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      }
+    ],
+    "curtainHoldAction": [
+      {
+        "driver": "curtain_motor",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "curtain_hold",
+            "curtain_open_partial"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "curtain_hold",
+            "curtain_open_partial"
+          ],
+          "settings": []
+        }
+      }
+    ],
+    "forcedBrightness": [
+      {
+        "driver": "bulb_rgb",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "set_forced_brightness"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "bulb_rgbw",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "set_forced_brightness"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "bulb_white",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "set_forced_brightness"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "dimmer_wall_1gang",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "set_forced_brightness"
+          ],
+          "settings": []
+        }
+      }
+    ],
+    "dimUpDown": [
+      {
+        "driver": "bulb_rgb",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "dim_up",
+            "dim_down"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "bulb_rgbw",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "dim_up",
+            "dim_down"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "bulb_white",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "dim_up",
+            "dim_down"
+          ],
+          "settings": []
+        }
+      },
+      {
+        "driver": "dimmer_wall_1gang",
+        "added": true,
+        "changes": {
+          "triggers": [],
+          "actions": [
+            "dim_up",
+            "dim_down"
+          ],
+          "settings": []
+        }
+      }
+    ],
+    "energyAlerts": [
+      {
+        "driver": "plug_smart",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "power_exceeded",
+            "standby_detected"
+          ],
+          "actions": [],
+          "settings": [
+            "power_threshold",
+            "standby_threshold"
+          ]
+        }
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "power_exceeded",
+            "standby_detected"
+          ],
+          "actions": [],
+          "settings": [
+            "power_threshold",
+            "standby_threshold"
+          ]
+        }
+      }
+    ],
+    "batteryAlerts": [
+      {
+        "driver": "button_wireless",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_1",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_2",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_3",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_4",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_6",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "button_wireless_8",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "contact_sensor",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "motion_sensor",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "motion_sensor_radar_mmwave",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      },
+      {
+        "driver": "water_leak_sensor",
+        "added": true,
+        "changes": {
+          "triggers": [
+            "battery_low"
+          ],
+          "actions": [],
+          "settings": []
+        }
+      }
+    ]
+  },
+  "timestamp": "2026-01-10T06:55:48.595Z"
+}

@@ -1,0 +1,87 @@
+{
+  "name": {
+    "en": "Pet Feeder (Zigbee)",
+    "fr": "Distributeur de Nourriture (Zigbee)",
+    "nl": "Huisdier Voeder (Zigbee)",
+    "de": "Futterspender (Zigbee)"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_weight",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "button": {
+      "title": {
+        "en": "Feed Now",
+        "fr": "Nourrir Maintenant"
+      }
+    },
+    "measure_weight": {
+      "title": {
+        "en": "Food Level",
+        "fr": "Niveau de Nourriture"
+      },
+      "units": {
+        "en": "g"
+      }
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Food Empty",
+        "fr": "Nourriture Vide"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_b8o5vk1c",
+      "_TZE200_b8o5vk1c",
+      "_TZE200_B8O5VK1C",
+      "_tze200_aqi3n6a3",
+      "_TZE200_aqi3n6a3",
+      "_TZE200_AQI3N6A3",
+      "_tze204_sh1btabb",
+      "_TZE204_sh1btabb",
+      "_TZE204_SH1BTABB"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/pet_feeder_zigbee/assets/images/small.png",
+    "large": "/drivers/pet_feeder_zigbee/assets/images/large.png",
+    "xlarge": "/drivers/pet_feeder_zigbee/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 3
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

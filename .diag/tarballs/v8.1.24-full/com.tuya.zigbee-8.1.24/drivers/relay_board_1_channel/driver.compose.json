@@ -1,0 +1,76 @@
+{
+  "id": "relay_board_1_channel",
+  "name": {
+    "en": "1 Channel Relay Board"
+  },
+  "class": "socket",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0001",
+      "TS0011",
+      "TS0001_power",
+      "TS0001_switch",
+      "TS0001_switch_module",
+      "TS0601",
+      "TS000F",
+      "ZBMINI",
+      "ZBMINIL2",
+      "BASICZBR3",
+      "S31ZB",
+      "S26R2ZB",
+      "01MINIZB",
+      "ZBMINIR2",
+      "ZBM5-1C-120",
+      "ZBMINIR",
+      "ZBMINIL2-R2",
+      "ZBMINIR2-R2",
+      "ZG-301Z",
+      "ZG-302Z1",
+      "TS0101",
+      "TS4100",
+      "TS011F",
+      "ZBM5-2C-120",
+      "ZBM5-3C-120",
+      "TS0726"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
+      }
+    },
+    "manufacturerName": []
+  }
+}

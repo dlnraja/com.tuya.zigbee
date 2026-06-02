@@ -1,0 +1,118 @@
+# 🤖 Cline / Roo Code Project Rules
+
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
+> 
+> **MANDATORY SECOND STEP:** Then read [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. Every AI agent MUST follow this framework before making any code changes.
+> 
+> **MANDATORY THIRD STEP:** Read [ARCHITECTURE_AI.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURE_AI.md) to understand the 3 AI layers — IDE Locale (Windows/Claude Code), GitHub Actions (workflows/ai-helper/secrets), and Homey Runtime (SDK3, zero cloud). Every AI agent MUST distinguish these layers before making automation or runtime code changes.
+
+## ⚠️ CRITICAL PROVIDER GUARD
+**CRITICAL: Always provide a brief explanation or thought process in plain text before using any tool or executing a command. Never send a message containing only a tool call. This is required to prevent API 400 errors with the Moonshot/Kimi provider.**
+
+---
+
+## 📐 CORE ZIGBEE & TUYA RULES (MUST OBEY)
+
+1. **Fingerprints Rule**: `manufacturerName` + `productId` (combined) must BOTH match.
+   - It is normal for the same `manufacturerName` to exist in multiple drivers with different `productId`s.
+   - **NO WILDCARDS** in `manufacturerName` (e.g., `_TZE284_*` is strictly forbidden).
+   - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/utils/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
+   - Setting keys must be `zb_model_id` (not `zb_modelId`) and `zb_manufacturer_name` (not `zb_manufacturerName`).
+   - **Layer 11: Backlight Value Representation Check**: Backlight settings must use string representation (`"off"`, `"normal"`, `"inverted"`) instead of numeric comparisons. Direct comparisons against numbers (e.g., `=== 0`, `=== 1`, `=== 2` or as strings `'0'`, `'1'`, `'2'`) are strictly forbidden. Use ternary operators to map string states to DP integers when sending commands.
+   - **BSEED 3-Gang ZCL Routing (Issue #170)**: Ensure `_TZ3000_v4l4b0lp` is registered inside the `ZCL_ONLY_MANUFACTURERS_3G` array in `drivers/switch_3gang/device.js` to force routing over standard ZCL Clusters (OnOff) instead of Tuya custom DP (0xEF00) mode, ensuring sub-capability flow cards are bound correctly.
+
+2. **Energy & Hybrid Drivers Rule**:
+   - All drivers are inherently hybrid and must support all types of energy monitoring/generation.
+   - **Remove the "hybrid" or "hybride" suffix** from all drivers, directories, configuration keys, and classes, as energy management is globalized.
+
+## Smart Divisor Manager (v8.2.0+)
+- Located in `lib/managers/SmartDivisorManager.js`
+- Auto-détection du diviseur pour temperature, humidity, co2, power, current, voltage, energy, battery, distance, luminance
+- Résout le "Double-Division Bug": AdaptiveDataParser → /100 THEN dpMappings → /100 again
+- `smartDivisorDetect(rawValue, dpId, options)` — détection intelligente
+- `smartParse(rawValue, dpId, options)` — parse wrapper complet
+- Database KNOWN_DIVISORS + VALID_RANGES pour auto-détection
+- Cache automatique par (manufacturerName + dpId + capability)
+- Chaîne de fallback: Known DB → Auto-detect range → defaultDivisor param → 1
+
+## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
+- FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
+- `BATTERY_SPECS` statique: 15+ types (CR2032, CR2450, CR2477, CR123A, CR1632, AAA, AA, C, D, 9V, 2xAAA, 2xAA, 4xAAA, Li-ion, Li-polymer, 18650)
+- `calculateFromVoltage(voltage, batteryType, temperature)` — interpolation linéaire multipoints + compensation température
+- `lookupBatteryProfile(manufacturerName, productId)` — lookup par fabricant + productId (20+ profils)
+- `DEVICE_BATTERY_MAP` — 30+ device types → battery type mapping
+- `INTERVALS` — polling intervals par type d'appareil (1h à 12h)
+- EMA smoothing + health monitoring (drain rate, estimated days)
+- `calculateFromTuyaDP()` + `normalizeZigbeeValue()` — parsing multi-format
+- Anti-flood 5min/2% deduplication
+- Store persistence entre les sessions
+- ⚠️ RULE: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED
+- ⚠️ RULE: Use non-linear profiles like `'3V_2100'` or `'1.5V_AA'`
+
+3. **Phoenix Sovereign Architecture (v8.2.0+) Rules**:
+   - **Virtual Buttons**: NEVER use `this.setCapabilityValue('button', ...)` natively. You MUST use `this._safeSetCapability()` or wrap with `markAppCommand()` to avoid infinite flow loops when physical buttons trigger Generic Flow Cards.
+   - **Batteries**: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED. You must use `UnifiedBatteryHandler` and non-linear profiles like `3V_2100` or `1.5V_AA`.
+   - **Smart Divisors**: Use `smartDivisorDetect()` for measure_temperature and measure_humidity in device classes. Do NOT hardcode `value / 100` or `value / 10` manually.
+
+4. **Local Tuya WiFi Architecture Rule**:
+   - Do **NOT** instantiate raw `tuyapi` directly in device classes. Always use the robust [TuyaLocalClient.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/tuya-local/TuyaLocalClient.js) wrapper instead.
+   - Ensure a minimal command queue delay of `200ms` between sequential DP updates to prevent over-flooding Tuya's microcontrollers.
+   - Always implement standard Homey SDK3 lifecycle hooks: `onUninit()` and `onDeleted()`. Ensure they cleanly release resources (TCP sockets, event listeners, and timers) using `_destroyDevice()` to prevent memory leaks during app reloads or device disables.
+
+4. **Runtime 100% Local**:
+   - Zero cloud API calls in the Homey application runtime code.
+
+5. **Dynamic App Promotion, Casing & Research Tools**:
+   - **Dynamic App Resolution**: Avoid hardcoding `APP_ID` or release namespaces inside GitHub deployment scripts (like `auto-publish-draft.js`, `auto-promote-oauth.js`, and `auto-promote-puppeteer.js`). Load them dynamically from `app.json` at runtime to support parallel tracks (`com.dlnraja.tuya.zigbee` on `master` and `com.dlnraja.tuya.zigbee.stable` on `stable-v5`).
+   - **Casing Normalization**: Run `scripts/maintenance/master-self-heal.js` to auto-normalize casing variants of community fingerprints on both tracks.
+   - **Internet Research & Indexing**: For web scraping and file tracing without active MCP search servers, always utilize `.github/scripts/internet-research-tool.js`.
+
+6. **Bundle Size Limit (< 7MB)**:
+   - Always exclude `.github/`, `scripts/`, `docs/`, `tmp/`, and `.git/` via [.homeyignore](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/.homeyignore).
+
+7. **Post-Promotion Documentation & Registry Synchronization Rule (MANDATORY)**:
+   - **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
+
+---
+
+## 🕵️ SHADOW MODE PROTOCOL
+- All repairs, synchronizations, and automation pipelines must be operated in **Shadow Mode** — meaning no public forum announcements, no notifications to external threads, and zero automated forum interactions. Work in background silence.
+
+---
+
+## 🔗 IMPORTANT REFERENCE FILES
+
+- **Global Plan**: [GLOBAL_IMPROVEMENT_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/GLOBAL_IMPROVEMENT_PLAN.md)
+- **Project Index**: [PROJECT_INDEX.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/PROJECT_INDEX.md)
+- **Architectural Rules**: [ARCHITECTURAL_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURAL_RULES.md)
+- **Development Rules**: [DEVELOPMENT_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/DEVELOPMENT_RULES.md)
+- **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/ZIGBEE_TUYA_RULES.md)
+- **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)
+- **Global Investigation Plan (22 sections)**: [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — Mandatory deep diagnostic methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
+- **AI Architecture (3 layers)**: [ARCHITECTURE_AI.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURE_AI.md) — Distinguishes IDE Locale AI, GitHub Actions AI, and Homey Runtime AI.
+
+\n
+
+## Dynamic RAM Optimization & Dual-Layer Pairing (v9.0.0+)
+- **Buffer-Based Direct JSON Loading (Double Heap memory fix)**: For all large JSON/file database loading (like `fingerprints.json` or `driver-mapping-database.json`), you **MUST** read the file directly as a raw Buffer (`fs.readFileSync(fpath)`) instead of converted UTF-16 string (`utf8`). Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. This avoids allocating a giant intermediate JS String on the V8 heap and prevents fatal OOM crashes under Homey Pro's strict 64MB memory limit.
+- **Defensive V8 Garbage Collection**: The loader forces `global.gc()` sweeps (if available) before and after database parses to cleanly eject transient chunks.
+- **Static vs Dynamic Dual-Layer Matching**:
+  - **Static Manifests**: The manufacturer name, ZCL clusters, and `modelId` must remain statically registered in `driver.compose.json` / `app.json` to allow the Homey Pro box to match the hardware and complete the pairing flow locally.
+  - **Dynamic JSON Databases**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine capabilities and custom DP parser operations dynamically at runtime, ensuring offline capability mapping continues to work perfectly.
+
+## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
+- **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
+- **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.
+- **Mains/Battery Approximation Conflicts**: If a compose manifest (`driver.compose.json`) defines `measure_power` or `meter_power`, it MUST NOT define `energy.approximation` under `energy` to prevent severe Homey Pro Energy v3 schema validation errors.
+- **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
+- **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
+
+// ============================================================================
+// DEEP DIAGNOSTIC & CROSS-REFERENCING MANDATE (CRITICAL)
+// ============================================================================
+- DO NOT just say 'Missing manufacturer'. Perform deep cross-referencing with Z2M/ZHA and scrape forum/email info.
+- Remember a single `manufacturerName` can map to MULTIPLE variants and device IDs. Check productId!
+- Use Antigravity skills (`.agents/skills/`) and local Claude Code scripts.
+- Update docs, workflows, and Github Actions after fixing a bug.
+- Read Architecture 7+ and 8.0 docs before acting.

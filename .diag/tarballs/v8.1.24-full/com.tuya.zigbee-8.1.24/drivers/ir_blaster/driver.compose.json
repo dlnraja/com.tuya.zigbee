@@ -1,0 +1,431 @@
+{
+  "name": {
+    "en": "IR Blaster Remote",
+    "nl": "IR Afstandsbediening",
+    "de": "IR-Fernbedienung",
+    "fr": "Télécommande IR"
+  },
+  "class": "remote",
+  "capabilities": [
+    "onoff",
+    "volume_up",
+    "volume_down",
+    "channel_up",
+    "channel_down",
+    "button.mute",
+    "button.source",
+    "button.menu",
+    "button.enter",
+    "button.learn_ir"
+  ],
+  "capabilitiesOptions": {
+    "button.learn_ir": {
+      "title": {
+        "en": "Learn IR Code",
+        "nl": "Leer IR Code",
+        "de": "IR-Code lernen"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "nl": "Aan/Uit",
+        "de": "Ein/Aus"
+      }
+    },
+    "button.mute": {
+      "title": {
+        "en": "Mute"
+      }
+    },
+    "button.source": {
+      "title": {
+        "en": "Source/Input"
+      }
+    },
+    "button.menu": {
+      "title": {
+        "en": "Menu"
+      }
+    },
+    "button.enter": {
+      "title": {
+        "en": "OK/Enter"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Universal Remote Config"
+      },
+      "children": [
+        {
+          "id": "ir_brand",
+          "type": "text",
+          "value": "Samsung",
+          "label": {
+            "en": "Remote Brand (e.g. Samsung, LG, Sony)"
+          },
+          "hint": {
+            "en": "Type the brand of your TV or AC (must match IR database)."
+          }
+        },
+        {
+          "id": "ir_category",
+          "type": "dropdown",
+          "value": "TV",
+          "label": {
+            "en": "Device Category"
+          },
+          "values": [
+            {
+              "id": "TV",
+              "label": {
+                "en": "TV"
+              }
+            },
+            {
+              "id": "Audio",
+              "label": {
+                "en": "Audio/Soundbar"
+              }
+            },
+            {
+              "id": "AC",
+              "label": {
+                "en": "Air Conditioner"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3210_JIC09I9A",
+      "_TZ3210_OGX8U9IT",
+      "_TZ3210_jic09i9a",
+      "_TZ3210_ogx8u9it",
+      "_TZ3290_0XK5DGCV",
+      "_TZ3290_0xk5dgcv",
+      "_TZ3290_5LUHABKC",
+      "_TZ3290_5luhabkc",
+      "_TZ3290_785FBXIK",
+      "_TZ3290_785fbxik",
+      "_TZ3290_7V1K4VUF",
+      "_TZ3290_7v1k4vuf",
+      "_TZ3290_AI4V11WR0MYCYH7K",
+      "_TZ3290_CFV2UYXE",
+      "_TZ3290_GHTYM4CE",
+      "_TZ3290_GNL5A6A5XVQL7C2A",
+      "_TZ3290_GNLSAFC7",
+      "_TZ3290_HDLPIFBK",
+      "_TZ3290_JXVZQATW",
+      "_TZ3290_KJFZUYCL",
+      "_TZ3290_LYPNQVLE",
+      "_TZ3290_NBA3KNPS",
+      "_TZ3290_NBA3KNPSARKAWGNT",
+      "_TZ3290_NKPXAPOZ",
+      "_TZ3290_NLFQEDRT",
+      "_TZ3290_NWGYCQCO",
+      "_TZ3290_QDSS6SCO",
+      "_TZ3290_RLKMY85Q",
+      "_TZ3290_TVFRXBG9",
+      "_TZ3290_WLQDKVP7",
+      "_TZ3290_YAC64INU",
+      "_TZ3290_YYAX9AJF",
+      "_TZ3290_ai4v11wr0mycyh7k",
+      "_TZ3290_cfv2uyxe",
+      "_TZ3290_ghtym4ce",
+      "_TZ3290_gnl5a6a5xvql7c2a",
+      "_TZ3290_gnlsafc7",
+      "_TZ3290_hdlpifbk",
+      "_TZ3290_jxvzqatw",
+      "_TZ3290_jxvzqatwgsaqzx1u",
+      "_TZ3290_kjfzuycl",
+      "_TZ3290_lypnqvle",
+      "_TZ3290_lypnqvlem5eq1ree",
+      "_TZ3290_nba3knps",
+      "_TZ3290_nba3knpsarkawgnt",
+      "_TZ3290_nkpxapoz",
+      "_TZ3290_nlfqedrt",
+      "_TZ3290_nwgycqco",
+      "_TZ3290_qdss6sco",
+      "_TZ3290_rlkmy85q",
+      "_TZ3290_tvfrxbg9",
+      "_TZ3290_wlqdkvp7",
+      "_TZ3290_yac64inu",
+      "_TZ3290_yyax9ajf",
+      "_TZE200_KYFGCYF1",
+      "_TZE200_OWVFNI2Z",
+      "_TZE200_kyfgcyf1",
+      "_TZE200_owvfni2z",
+      "_TZE284_3MZB0SDZ",
+      "_TZE284_3mzb0sdz",
+      "_TZE284_LA9VHSOK",
+      "_TZE284_la9vhsok",
+      "_tz3210_jic09i9a",
+      "_tz3210_ogx8u9it",
+      "_tz3290_0xk5dgcv",
+      "_tz3290_5luhabkc",
+      "_tz3290_785fbxik",
+      "_tz3290_7v1k4vuf",
+      "_tz3290_ai4v11wr0mycyh7k",
+      "_tz3290_cfv2uyxe",
+      "_tz3290_ghtym4ce",
+      "_tz3290_gnl5a6a5xvql7c2a",
+      "_tz3290_gnlsafc7",
+      "_tz3290_hdlpifbk",
+      "_tz3290_jxvzqatw",
+      "_tz3290_kjfzuycl",
+      "_tz3290_lypnqvle",
+      "_tz3290_nba3knps",
+      "_tz3290_nba3knpsarkawgnt",
+      "_tz3290_nkpxapoz",
+      "_tz3290_nlfqedrt",
+      "_tz3290_nwgycqco",
+      "_tz3290_qdss6sco",
+      "_tz3290_rlkmy85q",
+      "_tz3290_tvfrxbg9",
+      "_tz3290_wlqdkvp7",
+      "_tz3290_yac64inu",
+      "_tz3290_yyax9ajf",
+      "_tze200_kyfgcyf1",
+      "_tze200_owvfni2z",
+      "_tze284_3mzb0sdz",
+      "_tze284_la9vhsok"
+    ],
+    "productId": [
+      "TS1201",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          57348,
+          60672,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/ir_blaster/assets/images/small.png",
+    "large": "/drivers/ir_blaster/assets/images/large.png",
+    "xlarge": "/drivers/ir_blaster/assets/images/xlarge.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.3
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "repair": [
+    {
+      "id": "ir_setup"
+    }
+  ],
+  "flow": {
+    "actions": [
+      {
+        "id": "ir_blaster_send_tv_command",
+        "title": {
+          "en": "Send TV Command",
+          "fr": "Envoyer une commande TV"
+        },
+        "args": [
+          {
+            "name": "brand",
+            "type": "text",
+            "placeholder": "Samsung"
+          },
+          {
+            "name": "command",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Power",
+                "title": {
+                  "en": "Power"
+                }
+              },
+              {
+                "id": "Volume Up",
+                "title": {
+                  "en": "Volume Up"
+                }
+              },
+              {
+                "id": "Volume Down",
+                "title": {
+                  "en": "Volume Down"
+                }
+              },
+              {
+                "id": "Mute",
+                "title": {
+                  "en": "Mute"
+                }
+              },
+              {
+                "id": "Channel Up",
+                "title": {
+                  "en": "Channel Up"
+                }
+              },
+              {
+                "id": "Channel Down",
+                "title": {
+                  "en": "Channel Down"
+                }
+              },
+              {
+                "id": "Source",
+                "title": {
+                  "en": "Source"
+                }
+              },
+              {
+                "id": "Menu",
+                "title": {
+                  "en": "Menu"
+                }
+              },
+              {
+                "id": "OK/Enter",
+                "title": {
+                  "en": "OK/Enter"
+                }
+              },
+              {
+                "id": "Up",
+                "title": {
+                  "en": "Up"
+                }
+              },
+              {
+                "id": "Down",
+                "title": {
+                  "en": "Down"
+                }
+              },
+              {
+                "id": "Left",
+                "title": {
+                  "en": "Left"
+                }
+              },
+              {
+                "id": "Right",
+                "title": {
+                  "en": "Right"
+                }
+              },
+              {
+                "id": "Back",
+                "title": {
+                  "en": "Back"
+                }
+              },
+              {
+                "id": "Home",
+                "title": {
+                  "en": "Home"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_send_ac_command",
+        "title": {
+          "en": "Send AC Command",
+          "fr": "Envoyer une commande Clim"
+        },
+        "args": [
+          {
+            "name": "brand",
+            "type": "text",
+            "placeholder": "Daikin"
+          },
+          {
+            "name": "command",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "Power On",
+                "title": {
+                  "en": "Power On"
+                }
+              },
+              {
+                "id": "Power Off",
+                "title": {
+                  "en": "Power Off"
+                }
+              },
+              {
+                "id": "Cool 20",
+                "title": {
+                  "en": "Cool 20°C"
+                }
+              },
+              {
+                "id": "Cool 22",
+                "title": {
+                  "en": "Cool 22°C"
+                }
+              },
+              {
+                "id": "Cool 24",
+                "title": {
+                  "en": "Cool 24°C"
+                }
+              },
+              {
+                "id": "Heat 20",
+                "title": {
+                  "en": "Heat 20°C"
+                }
+              },
+              {
+                "id": "Heat 22",
+                "title": {
+                  "en": "Heat 22°C"
+                }
+              },
+              {
+                "id": "Heat 24",
+                "title": {
+                  "en": "Heat 24°C"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

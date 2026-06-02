@@ -1,0 +1,62 @@
+name: Gmail IMAP Health Check
+# v5.12.6: IMAP-only — OAuth keepalive replaced by IMAP health check
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Weekly Monday 08:00 UTC
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: gmail-keepalive
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  imap-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5 # v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: IMAP health check
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/gmail-token-keepalive.js
+      - name: Commit health state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/gmail-token-health.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "IMAP health $(date -u +%Y-%m-%d) [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+      - name: Alert if IMAP failing
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f ".github/state/_imap_alert.txt" ]; then
+            gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] IMAP connection failing" \
+              --body "$(cat .github/state/_imap_alert.txt)" \
+              --label "automation" 2>/dev/null || true
+            rm -f .github/state/_imap_alert.txt
+          fi

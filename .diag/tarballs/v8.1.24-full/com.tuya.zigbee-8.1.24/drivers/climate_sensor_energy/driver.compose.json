@@ -1,0 +1,94 @@
+{
+  "name": {
+    "en": "Climate Sensor Energy",
+    "nl": "Klimaatsensor energie",
+    "fr": "Capteur climatique énergétique",
+    "de": "Klimasensor Energie",
+    "es": "Sensor climático energético"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_power.phase1",
+    "measure_power.phase2",
+    "measure_power.phase3",
+    "measure_battery",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS0201",
+      "TS0222",
+      "TH01",
+      "WSDCGQ01LM",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.weather",
+      "SM0201",
+      "SNZB-02",
+      "SNZB-02D",
+      "SNZB-02P",
+      "TS0601",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "CK-TLSR8656-SS5-01(7014)",
+      "SNZB-02DR2",
+      "SNZB-02LD",
+      "SNZB-02WD",
+      "THS317-ET",
+      "ZG-303Z",
+      "TY0201",
+      "TS1201",
+      "RH3052",
+      "Excellux"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820,
+          1794,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": []
+  },
+  "images": {
+    "small": "/drivers/energy_meter_3phase/assets/images/small.png",
+    "large": "/drivers/energy_meter_3phase/assets/images/large.png",
+    "xlarge": "/drivers/energy_meter_3phase/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

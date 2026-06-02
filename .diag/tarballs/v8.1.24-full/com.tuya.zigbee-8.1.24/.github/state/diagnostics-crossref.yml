@@ -1,0 +1,316 @@
+# Diagnostics Cross-Reference (auto-generated)
+# Generated: 2026-05-17T12:50:03.167Z
+# Emails processed: 149
+
+fingerprints:
+  _TZE284_oitavov2:
+    priority: NaN
+    supported: true
+    protocol: tuya_dp
+    drivers: [soil_sensor]
+    requires: [TuyaEF00Manager, dpMappings]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [R.B.]
+    sources:
+      - type: device_issue
+        date: 2026-05-08T10:38:32.000Z
+  TS0601:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, climate_sensor_device, climate_sensor_energy, co_sensor, contact_sensor, curtain_motor, curtain_motor_shutter, curtain_motor_tilt, device_din_rail, device_din_rail_meter, device_floor_heating, device_floor_heating_thermostat, device_generic_tuya_universal, device_radiator_valve, device_radiator_valve_smart, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, lcdtemphumidsensor_plug_energy, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_2, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, sensor_climate_contact, sensor_contact_motion, sensor_contact_water, sensor_motion_presence, sensor_motion_radar, sensor_presence_radar, shutter_roller_controller, siren, siren_sirentemphumidsensor, sirentemphumidsensor, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
+    mentions: 2
+    source_types: [device_issue, github]
+    reporters: [R.B., vikinos]
+    sources:
+      - type: device_issue
+        date: 2026-05-08T10:38:32.000Z
+      - type: github
+        date: 2026-05-11T04:59:00.000Z
+  _TZE284_rqcuwlsa:
+    priority: NaN
+    supported: true
+    protocol: tuya_dp
+    drivers: [climate_sensor]
+    requires: [TuyaEF00Manager, dpMappings]
+    mentions: 1
+    source_types: [github]
+    reporters: [vikinos]
+    sources:
+      - type: github
+        date: 2026-05-11T04:59:00.000Z
+  _TZE200_crq3r3la:
+    priority: NaN
+    supported: true
+    protocol: tuya_dp
+    drivers: [presence_sensor_radar]
+    requires: [TuyaEF00Manager, dpMappings]
+    mentions: 1
+    source_types: [bug_report]
+    reporters: [J.K.]
+    sources:
+      - type: bug_report
+        date: 2026-05-11T13:23:06.000Z
+
+users:
+  github-actions[bot]:
+    activity_score: 25
+    emails: 12
+    types: [github]
+    latest: 2026-05-13T06:12:26.000Z
+  T.L.:
+    activity_score: 22
+    emails: 8
+    types: [changelog, device_issue, general, bug_report]
+    has_errors: true
+    latest: 2026-05-12T18:50:15.000Z
+  R.U.:
+    activity_score: 11
+    emails: 5
+    types: [general]
+    latest: 2026-05-09T10:26:02.000Z
+  F.L.:
+    activity_score: 8
+    emails: 2
+    types: [interview, general]
+    has_errors: true
+    latest: 2026-05-07T21:30:51.000Z
+  T.G.:
+    activity_score: 7
+    emails: 2
+    types: [bug_report]
+    has_errors: true
+    latest: 2026-05-08T18:51:14.000Z
+  vladivdv-bot:
+    activity_score: 7
+    emails: 2
+    types: [github]
+    has_errors: true
+    latest: 2026-05-09T20:54:05.000Z
+  P.W.:
+    activity_score: 6
+    emails: 2
+    types: [changelog, diagnostic]
+    latest: 2026-04-21T06:59:02.000Z
+  S.L.:
+    activity_score: 6
+    emails: 2
+    types: [diagnostic, general]
+    latest: 2026-05-12T17:43:14.000Z
+  N.D.:
+    activity_score: 6
+    emails: 2
+    types: [general, changelog]
+    latest: 2026-05-12T19:13:49.000Z
+  V.L.:
+    activity_score: 6
+    emails: 2
+    types: [general, device_issue]
+    latest: 2026-05-12T08:16:05.000Z
+  R.B.:
+    activity_score: 6
+    emails: 1
+    fingerprints: [_TZE284_oitavov2]
+    types: [device_issue]
+    latest: 2026-05-08T10:38:32.000Z
+  vikinos:
+    activity_score: 6
+    emails: 1
+    fingerprints: [_TZE284_rqcuwlsa]
+    types: [github]
+    latest: 2026-05-11T04:59:00.000Z
+  J.K.:
+    activity_score: 6
+    emails: 1
+    fingerprints: [_TZE200_crq3r3la]
+    types: [bug_report]
+    latest: 2026-05-11T13:23:06.000Z
+  L.7.:
+    activity_score: 6
+    emails: 2
+    types: [device_issue, bug_report]
+    latest: 2026-05-13T06:31:02.000Z
+  api...:
+    activity_score: 5
+    emails: 1
+    types: [crash_report]
+    has_errors: true
+    latest: 2026-04-21T15:02:45.000Z
+  PDominikPL:
+    activity_score: 5
+    emails: 1
+    types: [github]
+    has_errors: true
+    latest: 2026-05-10T11:38:33.000Z
+  Goo...:
+    activity_score: 5
+    emails: 2
+    types: [device_issue]
+    latest: 2026-05-11T13:46:58.000Z
+  Snacker80:
+    activity_score: 3
+    emails: 1
+    types: [github]
+    latest: 2026-04-19T14:39:37.000Z
+  I.I.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-04-20T12:00:22.000Z
+  V.J.:
+    activity_score: 3
+    emails: 1
+    types: [diagnostic]
+    latest: 2026-04-20T20:33:57.000Z
+  L.R.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-04-20T21:25:15.000Z
+  L.G.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-04-21T03:07:51.000Z
+  M.P.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-04-21T09:48:49.000Z
+  J.W.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-04-22T06:05:22.000Z
+  J.H.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-04-22T13:08:19.000Z
+  C.M.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-08T01:45:27.000Z
+  xer...:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-05-08T06:33:51.000Z
+  E.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-08T08:18:20.000Z
+  T.H.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-08T09:20:41.000Z
+  A.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-08T11:00:00.000Z
+  R.G.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-05-08T11:29:43.000Z
+  N.L.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-05-08T13:40:30.000Z
+  Sve...:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-05-08T20:56:59.000Z
+  Inv...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-09T14:14:27.000Z
+  Y.E.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-05-09T17:42:38.000Z
+  D.P.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-05-10T11:38:30.000Z
+  Dut...:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-05-10T19:06:54.000Z
+  Ope...:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-05-11T23:47:01.000Z
+  B.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-12T05:31:19.000Z
+  J.P.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-13T06:01:50.000Z
+  Zem...:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-05-13T06:49:51.000Z
+
+error_patterns:
+  - count: 14
+    error: "Unexpected token ')'"
+  - count: 9
+    error: "Cannot access `this.homey.app` because the app instance has been destroyed."
+  - count: 9
+    error: "access `this.homey.app` because the app instance has been de"
+  - count: 9
+    error: "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215"
+  - count: 8
+    error: "Unexpected token ':'"
+  - count: 5
+    error: "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118"
+  - count: 2
+    error: ", please notify the sender and delete this message and its attachments."
+  - count: 2
+    error: "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b"
+  - count: 2
+    error: "(`Cannot send '${e}' because the app instance has been destroyed.\n`+'This may i"
+  - count: 2
+    error: "(`Cannot access \`this.homey.${t}\` because the app instance has been destroyed."
+  - count: 2
+    error: "('Cannot access `this.homey.app` because the app instance has been destroyed.\nT"
+  - count: 2
+    error: ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU"
+  - count: 2
+    error: ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t"
+  - count: 2
+    error: ")}}}module.exports=Homey;"
+  - count: 2
+    error: "send '${e}' because the app instance has been destroyed.\n`+"
+  - count: 2
+    error: "access \`this.homey.${t}\` because the app instance has been"
+  - count: 1
+    error: "access 'smokeDetectedCondition' before initialization"
+  - count: 1
+    error: "access 'batteryAboveCondition' before initialization"
+  - count: 1
+    error: "access 'testAlarmAction' before initialization"
+  - count: 1
+    error: "access 'sirenCondition' before initialization"
+
+protocol_distribution:
+  tuya_dp: 3
+  unknown: 1

@@ -1,0 +1,12 @@
+{
+  "id": "INT-060",
+  "deviceName": "PJ-1203A Energy Meter",
+  "manufacturerName": "_TZE204_81yrt3lo",
+  "productId": "TS0601",
+  "source": "Forum Page 44",
+  "status": "supported",
+  "driver": "power_meter",
+  "deviceType": "router",
+  "powerSource": "mains",
+  "capabilities": ["measure_power", "measure_voltage", "measure_current", "meter_power"]
+}

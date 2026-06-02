@@ -1,0 +1,67 @@
+{
+  "name": {
+    "en": "Smart RCBO",
+    "fr": "Disjoncteur Différentiel Connecté",
+    "nl": "Slimme RCBO",
+    "de": "Smart FI-Schalter"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "alarm_generic",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze204_hkdl5fmv",
+      "_TZE204_hkdl5fmv",
+      "_TZE204_HKDL5FMV"
+    ],
+    "productId": [
+      "TS0601_rcbo",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/smart_rcbo/assets/images/small.png",
+    "large": "/drivers/smart_rcbo/assets/images/large.png",
+    "xlarge": "/drivers/smart_rcbo/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — ENABLED
+name: Draft to Test Promotion
+on:
+  workflow_dispatch:
+    inputs:
+      app_id:
+        description: "App ID to promote (leave empty for auto-detect)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: promote-to-test
+  cancel-in-progress: true
+
+env:
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  promote:
+    name: Promote Draft to Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          submodules: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      
+      - name: Install Puppeteer Dependencies
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgbm-dev libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libpango-1.0-0 libcairo2 libxshmfence1 || echo "Apt failed, proceeding anyway"
+
+
+      - name: Install promotion tools
+        run: npm install puppeteer athom-api --no-save
+
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: 'false'
+          TARGET_APP_ID: ${{ inputs.app_id }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Tier 2: Promote via OAuth (headless)"
+        if: steps.promote_puppeteer.outcome != 'success'
+        id: promote_oauth
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+          TARGET_APP_ID: ${{ inputs.app_id }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via API (PAT fallback)"
+        if: steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        id: promote_api
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          TARGET_APP_ID: ${{ inputs.app_id }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Post update to Homey Community Forum
+        if: steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success'
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: $(node -p "require('./app.json').version")
+          CHANGELOG: "Automated promotion from draft to test channel."
+        run: node .github/scripts/post-forum-update.js
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Promotion Results" >> $GITHUB_STEP_SUMMARY
+          echo "- Puppeteer: ${{ steps.promote_puppeteer.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- OAuth: ${{ steps.promote_oauth.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- API: ${{ steps.promote_api.outcome }}" >> $GITHUB_STEP_SUMMARY

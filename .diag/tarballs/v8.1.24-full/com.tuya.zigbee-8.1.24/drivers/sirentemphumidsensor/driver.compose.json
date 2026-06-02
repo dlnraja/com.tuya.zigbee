@@ -1,0 +1,78 @@
+{
+  "id": "sirentemphumidsensor",
+  "name": {
+    "en": "Siren, Temperature & Humidity Sensor",
+    "fr": "Sirène, capteur de température et d'humidité",
+    "nl": "Sirene, temperatuur- en vochtigheidssensor",
+    "de": "Sirene, Temperatur- und Feuchtigkeitssensor",
+    "es": "Sirena, sensor de temperatura y humedad"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_generic",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "greyout": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR123A",
+      "CR123A"
+    ]
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/{{driverAssetsPath}}/images/small.png",
+    "large": "/{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          10,
+          25,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
+      }
+    },
+    "manufacturerName": [
+      "_TZE200_placeholder_generic"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

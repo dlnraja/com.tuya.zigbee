@@ -1,0 +1,74 @@
+{
+  "name": {
+    "en": "Pool/Spa Pump Controller",
+    "fr": "Contrôleur Pompe Piscine",
+    "nl": "Zwembadpomp Controller",
+    "de": "Pool-Pumpensteuerung",
+    "it": "Controller Pompa Piscina",
+    "sv": "Poolpumpkontroll",
+    "no": "Bassengpumpekontroller",
+    "es": "Controlador Bomba Piscina",
+    "da": "Poolpumpekontrol"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_k6jhsr0q",
+      "_TZE200_k6jhsr0q",
+      "_TZE200_K6JHSR0Q",
+      "_tze200_ruavtjnq",
+      "_TZE200_ruavtjnq",
+      "_TZE200_RUAVTJNQ",
+      "_tze204_k6jhsr0q",
+      "_TZE204_k6jhsr0q",
+      "_TZE204_K6JHSR0Q",
+      "_tze204_ruavtjnq",
+      "_TZE204_ruavtjnq",
+      "_TZE204_RUAVTJNQ"
+    ],
+    "productId": [
+      "TS0601_pool",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/pool_pump/assets/images/small.png",
+    "large": "/drivers/pool_pump/assets/images/large.png",
+    "xlarge": "/drivers/pool_pump/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

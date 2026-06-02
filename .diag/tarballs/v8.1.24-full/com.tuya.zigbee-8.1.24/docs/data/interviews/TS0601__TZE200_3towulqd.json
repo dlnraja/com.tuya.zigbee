@@ -1,0 +1,61 @@
+{
+  "interviewDate": "2026-02-25",
+  "source": "Desktop interview file (files 11, 12, 13)",
+  "ids": {
+    "modelId": "TS0601",
+    "manufacturerName": "_TZE200_3towulqd"
+  },
+  "ieeeAddress": "a4:c1:38:51:fe:ec:0e:f3",
+  "networkAddress": 41332,
+  "deviceType": "enddevice",
+  "powerSource": "battery",
+  "applicationDeviceId": 1026,
+  "swBuildId": "0122052017",
+  "endpoints": [1],
+  "inputClusters": [0, 3, 1280, 1, 1024],
+  "outputClusters": [],
+  "protocol": "zcl_only",
+  "clusters": {
+    "basic": {
+      "attributes": ["zclVersion", "appVersion", "stackVersion", "hwVersion", "manufacturerName", "modelId", "powerSource", "deviceEnabled", "swBuildId", "clusterRevision"]
+    },
+    "identify": {
+      "identifyTime": 0,
+      "clusterRevision": 1
+    },
+    "iasZone": {
+      "zoneState": "notEnrolled",
+      "zoneType": "motionSensor",
+      "zoneStatus": [0, 0],
+      "iasCIEAddress": "b0:c7:de:ff:fe:56:51:0b",
+      "zoneId": 0,
+      "clusterRevision": 1
+    },
+    "powerConfiguration": {
+      "batteryVoltage": 30,
+      "batteryPercentageRemaining": 200,
+      "clusterRevision": 1
+    },
+    "illuminanceMeasurement": {
+      "measuredValue": 33280,
+      "minMeasuredValue": 0,
+      "maxMeasuredValue": 4000,
+      "clusterRevision": 1
+    }
+  },
+  "bindings": {},
+  "driver": "presence_sensor_radar",
+  "status": "supported",
+  "notes": "ZCL-only PIR motion sensor (4x4_Pete variant). NO 0xEF00 Tuya DP cluster despite TS0601 modelId! Uses IAS Zone (motionSensor) + illuminanceMeasurement (lux) + powerConfiguration (battery). zoneState=notEnrolled. Battery 3.0V/100%. v5.8.88 fixes: noIasMotion override + noTemp/noHum forced + opportunistic enrollment. Two interview readings taken with different lux values (33280 vs 26385).",
+  "analysis": {
+    "hasTuyaDP": false,
+    "hasIasZone": true,
+    "iasZoneEnrolled": false,
+    "hasIlluminance": true,
+    "hasBattery": true,
+    "hasEnergyMonitoring": false,
+    "isRouter": false,
+    "isSleepy": true,
+    "isZclOnlyTS0601": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "triggers": [
+    {
+      "id": "garage_door_opener_opened",
+      "title": {
+        "en": "Opened",
+        "fr": "Ouvert",
+        "nl": "Geopend",
+        "de": "Geöffnet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Opened",
+        "fr": "Ouvert",
+        "nl": "Geopend",
+        "de": "Geöffnet"
+      }
+    },
+    {
+      "id": "garage_door_opener_closed",
+      "title": {
+        "en": "Closed",
+        "fr": "Fermé",
+        "nl": "Gesloten",
+        "de": "Geschlossen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Closed",
+        "fr": "Fermé",
+        "nl": "Gesloten",
+        "de": "Geschlossen"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "garage_door_opener_is_closed",
+      "title": {
+        "en": "Garage door !{{is|is not}} closed",
+        "fr": "Porte de garage !{{est|n'est pas}} fermée",
+        "nl": "Garagedeur !{{is|is niet}} gesloten",
+        "de": "Garagentor !{{ist|ist nicht}} geschlossen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage door !{{is|is not}} closed",
+        "fr": "Porte de garage !{{est|n'est pas}} fermée",
+        "nl": "Garagedeur !{{is|is niet}} gesloten",
+        "de": "Garagentor !{{ist|ist nicht}} geschlossen"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "garage_door_opener_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      }
+    },
+    {
+      "id": "garage_door_opener_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      }
+    }
+  ]
+}

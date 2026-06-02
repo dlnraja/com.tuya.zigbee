@@ -1,0 +1,102 @@
+{
+  "name": {
+    "en": "Garage Door Opener",
+    "fr": "Ouvre-porte de Garage",
+    "nl": "Garagedeur Opener",
+    "de": "Garagentorantrieb",
+    "pl": "Sterownik bramy garażowej"
+  },
+  "class": "garagedoor",
+  "capabilities": [
+    "garagedoor_closed",
+    "alarm_contact"
+  ],
+  "capabilitiesOptions": {
+    "garagedoor_closed": {
+      "title": {
+        "en": "Garage Door",
+        "fr": "Porte de Garage",
+        "nl": "Garagedeur",
+        "de": "Garagentor",
+        "pl": "Brama garażowa zamknięta"
+      }
+    },
+    "alarm_contact": {
+      "title": {
+        "en": "Door Sensor",
+        "fr": "Capteur de Porte",
+        "nl": "Deursensor",
+        "de": "Türsensor",
+        "pl": "Czujnik otwarcia (kontaktron)"
+      },
+      "uiQuickAction": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_5uer6sww",
+      "_TZE200_5uer6sww",
+      "_TZE200_5UER6SWW",
+      "_tze200_deqnbaux",
+      "_TZE200_deqnbaux",
+      "_TZE200_DEQNBAUX",
+      "_tze200_c75zqghm",
+      "_TZE200_c75zqghm",
+      "_TZE200_C75ZQGHM",
+      "_tze204_c75zqghm",
+      "_TZE204_c75zqghm",
+      "_TZE204_C75ZQGHM",
+      "_tze608_c75zqghm",
+      "_TZE608_c75zqghm",
+      "_TZE608_C75ZQGHM",
+      "_tze608_fmemczv1",
+      "_TZE608_fmemczv1",
+      "_TZE608_FMEMCZV1",
+      "_tze608_xkr8gep3",
+      "_TZE608_xkr8gep3",
+      "_TZE608_XKR8GEP3",
+      "_tze608_lapuuoke",
+      "_TZE608_lapuuoke",
+      "_TZE608_LAPUUOKE"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0603"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/garage_door_opener/assets/images/small.png",
+    "large": "/drivers/garage_door_opener/assets/images/large.png",
+    "xlarge": "/drivers/garage_door_opener/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates",
+        "pl": "Sprawdź aktualizację OTA Zigbee"
+      }
+    }
+  ]
+}

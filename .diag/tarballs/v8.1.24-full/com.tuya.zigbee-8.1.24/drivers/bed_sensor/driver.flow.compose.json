@@ -1,0 +1,73 @@
+{
+  "triggers": [
+    {
+      "id": "bed_sensor_occupied",
+      "highlight": true,
+      "title": {
+        "en": "Bed occupied",
+        "fr": "Lit occupé",
+        "nl": "Bed bezet",
+        "de": "Bett besetzt"
+      },
+      "hint": {
+        "en": "Triggers when someone lies down on the bed",
+        "fr": "Se déclenche quand quelqu'un se couche dans le lit",
+        "nl": "Wordt geactiveerd wanneer iemand in bed gaat liggen",
+        "de": "Wird ausgelöst, wenn jemand ins Bett geht"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Bed occupied",
+        "fr": "Lit occupé",
+        "nl": "Bed bezet",
+        "de": "Bett besetzt"
+      }
+    },
+    {
+      "id": "bed_sensor_vacant",
+      "title": {
+        "en": "Bed vacant",
+        "fr": "Lit libre",
+        "nl": "Bed vrij",
+        "de": "Bett frei"
+      },
+      "hint": {
+        "en": "Triggers when someone gets out of bed",
+        "fr": "Se déclenche quand quelqu'un se lève du lit",
+        "nl": "Wordt geactiveerd wanneer iemand uit bed gaat",
+        "de": "Wird ausgelöst, wenn jemand aufsteht"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Bed vacant",
+        "fr": "Lit libre",
+        "nl": "Bed vrij",
+        "de": "Bett frei"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "bed_sensor_is_occupied",
+      "title": {
+        "en": "Bed is occupied",
+        "fr": "Le lit est occupé",
+        "nl": "Bed is bezet",
+        "de": "Bett ist besetzt"
+      },
+      "hint": {
+        "en": "True when someone is in bed",
+        "fr": "Vrai quand quelqu'un est dans le lit",
+        "nl": "Waar wanneer iemand in bed ligt",
+        "de": "Wahr, wenn jemand im Bett ist"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Bed is occupied",
+        "fr": "Le lit est occupé",
+        "nl": "Bed is bezet",
+        "de": "Bett ist besetzt"
+      }
+    }
+  ]
+}

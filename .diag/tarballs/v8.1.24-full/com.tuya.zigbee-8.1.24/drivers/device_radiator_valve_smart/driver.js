@@ -1,0 +1,44 @@
+'use strict';
+
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+class RadiatorValveDriver extends ZigBeeDriver {
+async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) {return;}
+    this._flowCardsRegistered = true;
+    this.log('RadiatorValveDriver v5.5.572 initialized');
+    this._registerFlowCards();
+  }
+
+  _registerFlowCards() {
+    // TRIGGERS
+
+    // ACTIONS
+    try {
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const card = null;
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_radiator_valve_smart_hybrid_set_target_temperature: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_radiator_valve_smart_hybrid_set_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_radiator_valve_smart_hybrid_set_temperature: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
+    }
+}
+module.exports = RadiatorValveDriver;

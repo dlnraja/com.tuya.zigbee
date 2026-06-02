@@ -1,0 +1,138 @@
+{
+  "name": {
+    "en": "DIN Rail Switch",
+    "fr": "Interrupteur DIN Rail",
+    "nl": "DIN Rail Schakelaar",
+    "de": "DIN-Schienen Schalter",
+    "it": "Interruttore DIN Rail",
+    "sv": "DIN-skena Strömbrytare",
+    "no": "DIN-skinne Bryter",
+    "es": "Interruptor DIN Rail",
+    "da": "DIN-skinne Kontakt"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      },
+      "units": "kWh"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_3r9fthmw",
+      "_TZ3000_3r9fthmw",
+      "_TZ3000_3R9FTHMW",
+      "_tz3000_5f43h46b",
+      "_TZ3000_5f43h46b",
+      "_TZ3000_5F43H46B",
+      "_tz3000_7y5ikxwq",
+      "_TZ3000_7y5ikxwq",
+      "_TZ3000_7Y5IKXWQ",
+      "_tz3000_fjm6mjrj",
+      "_TZ3000_fjm6mjrj",
+      "_TZ3000_FJM6MJRJ",
+      "_tz3000_rjxqso4a",
+      "_TZ3000_rjxqso4a",
+      "_TZ3000_RJXQSO4A",
+      "_tze200_fjb98hbq",
+      "_TZE200_fjb98hbq",
+      "_TZE200_FJB98HBQ",
+      "_tze204_aqnazj70",
+      "_TZE204_aqnazj70",
+      "_TZE204_AQNAZJ70",
+      "_tze204_fjb98hbq",
+      "_TZE204_fjb98hbq",
+      "_TZE204_FJB98HBQ",
+      "_tze200_aqnazj70",
+      "_TZE200_aqnazj70",
+      "_TZE200_AQNAZJ70",
+      "_tz3000_3r9fthmw|TS0001_din",
+      "_tz3000_3r9fthmw|TS0601",
+      "_tz3000_5f43h46b|TS0001_din",
+      "_tz3000_5f43h46b|TS0601",
+      "_tz3000_7y5ikxwq|TS0001_din",
+      "_tz3000_7y5ikxwq|TS0601",
+      "_tz3000_fjm6mjrj|TS0001_din",
+      "_tz3000_fjm6mjrj|TS0601",
+      "_tz3000_rjxqso4a|TS0001_din",
+      "_tz3000_rjxqso4a|TS0601",
+      "_tze200_aqnazj70|TS0001_din",
+      "_tze200_aqnazj70|TS0601",
+      "_tze200_fjb98hbq|TS0001_din",
+      "_tze200_fjb98hbq|TS0601",
+      "_tze204_aqnazj70|TS0001_din",
+      "_tze204_aqnazj70|TS0601",
+      "_tze204_fjb98hbq|TS0001_din",
+      "_tze204_fjb98hbq|TS0601",
+      "_tze200_ewxhg6o9|TS0001_din",
+      "_tze200_ewxhg6o9|TS0601",
+      "_tze200_fsb6zw01|TS0001_din",
+      "_tze200_fsb6zw01|TS0601",
+      "_tze200_rhblgy0z|TS0001_din",
+      "_tze200_rhblgy0z|TS0601",
+      "_tze204_rhblgy0z|TS0001_din",
+      "_tze204_rhblgy0z|TS0601",
+      "_tze200_byzdayie|TS0001_din",
+      "_tze200_byzdayie|TS0601"
+    ],
+    "productId": [
+      "TS0001_din",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
+        "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'à clignotement rapide"
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/din_rail_switch/assets/images/small.png",
+    "large": "/drivers/din_rail_switch/assets/images/large.png",
+    "xlarge": "/drivers/din_rail_switch/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

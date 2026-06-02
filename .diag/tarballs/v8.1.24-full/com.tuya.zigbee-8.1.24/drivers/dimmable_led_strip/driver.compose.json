@@ -1,0 +1,58 @@
+{
+  "id": "dimmable_led_strip",
+  "name": {
+    "en": "Dimmable LED Strip"
+  },
+  "$extends": [
+    "light_white_ambiance"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 50,
+      "usageOff": 1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3210_invesber",
+      "_TZ3210_invesber",
+      "_TZ3210_INVESBER"
+    ],
+    "productId": [
+      "TS0502B"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Power on to enter pairing mode."
+      }
+    }
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "images": {
+    "large": "/drivers/dimmable_led_strip/assets/images/large.png",
+    "small": "/drivers/dimmable_led_strip/assets/images/small.png"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "name": {
+    "en": "Radiator Valve (TRV) Zigbee",
+    "fr": "Vanne de radiateur (TRV) Zigbee",
+    "nl": "Radiatorkraan (TRV) Zigbee",
+    "de": "Heizkörperventil (TRV) Zigbee",
+    "es": "Válvula de radiador (TRV) Zigbee"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "onoff",
+    "alarm_contact",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5,
+      "decimals": 1
+    },
+    "measure_temperature": {
+      "decimals": 1
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          61184
+        ]
+      }
+    },
+    "manufacturerName": [
+      "_tze200_bhd_5kn9",
+      "_TZE200_bhd_5kn9",
+      "_TZE200_BHD_5KN9",
+      "_tyst11_2ekuz3dz",
+      "_TYST11_2EKUZ3DZ",
+      "_tyst11_kly8gjlz",
+      "_TYST11_KLY8GJLZ"
+    ]
+  },
+  "images": {
+    "small": "/drivers/radiator_valve_zigbee/assets/images/small.png",
+    "large": "/drivers/radiator_valve_zigbee/assets/images/large.png",
+    "xlarge": "/drivers/radiator_valve_zigbee/assets/images/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "actions": [
+    {
+      "id": "curtain_module_move_open",
+      "title": {
+        "en": "Open",
+        "de": "Öffnen"
+      }
+    },
+    {
+      "id": "curtain_module_move_close",
+      "title": {
+        "en": "Close",
+        "de": "Schließen"
+      }
+    }
+  ]
+}

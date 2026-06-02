@@ -1,0 +1,64 @@
+{
+  "triggers": [
+    {
+      "id": "button_emergency_sos_pressed",
+      "title": {
+        "en": "SOS Button pressed",
+        "fr": "Bouton SOS appuyé",
+        "nl": "SOS-knop ingedrukt",
+        "de": "SOS-Taste gedrückt",
+        "it": "Pulsante SOS premuto",
+        "es": "Botón SOS presionado"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "SOS Button pressed",
+        "fr": "Bouton SOS appuyé",
+        "nl": "SOS-knop ingedrukt",
+        "de": "SOS-Taste gedrückt",
+        "it": "Pulsante SOS premuto",
+        "es": "Botón SOS presionado"
+      }
+    },
+    {
+      "id": "button_emergency_sos_double_pressed",
+      "title": {
+        "en": "SOS Button double-pressed",
+        "fr": "Bouton SOS double-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "SOS Button double-pressed",
+        "fr": "Bouton SOS double-appui"
+      }
+    },
+    {
+      "id": "button_emergency_sos_long_pressed",
+      "title": {
+        "en": "SOS Button long-pressed",
+        "fr": "Bouton SOS appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "SOS Button long-pressed",
+        "fr": "Bouton SOS appui long"
+      }
+    },
+    {
+      "id": "button_emergency_sos_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ]
+}

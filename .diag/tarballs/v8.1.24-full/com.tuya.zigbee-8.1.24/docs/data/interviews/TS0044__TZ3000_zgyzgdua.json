@@ -1,0 +1,24 @@
+{
+  "id": "INT-015",
+  "deviceName": "MOES Scene Switch 4 gang",
+  "manufacturerName": "_TZ3000_zgyzgdua",
+  "productId": "TS0044",
+  "source": "JohanBendz #1327, dlnraja Forum (Freddyboy)",
+  "user": "Jesse22homey, Freddyboy",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "button_wireless_4",
+  "inputClusters": [1, 6, 57344, 0],
+  "symptoms": [
+    "Physical buttons not triggering flows",
+    "Virtual buttons not clickable (setable:false)",
+    "Device stuck in Dimmer Mode",
+    "manufacturerName shows empty in logs"
+  ],
+  "rootCause": "Multiple issues: setable:false, getData() empty, mode switch skipped",
+  "fix": {
+    "applied": true,
+    "version": "5.7.19",
+    "description": "v5.7.16: setable:true, v5.7.17: added to mode list, v5.7.18: getSetting fallback, v5.7.19: universal scene mode in ButtonDevice.js"
+  }
+}

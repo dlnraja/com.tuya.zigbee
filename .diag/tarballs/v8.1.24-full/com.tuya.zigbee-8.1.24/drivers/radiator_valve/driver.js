@@ -1,0 +1,36 @@
+'use strict';
+
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
+
+class RadiatorValveDriver extends BaseZigBeeDriver {
+async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) {return;}
+    this._flowCardsRegistered = true;
+    this.log('RadiatorValveDriver initialized');
+    this._registerFlowCards();
+  }
+
+  _registerFlowCards() {
+    const P = 'radiator_valve';
+    const actions = ['set_target_temperature', 'set_temperature'];
+
+    actions.forEach(act => {
+      try {
+        const id = `${P}_${act}`;
+        const card = this._getFlowCard(id, 'action');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) {return false;}
+            const val = args.temperature || args.target_temperature || args.value;
+            await args.device.triggerCapabilityListener('target_temperature', val);
+            return true;
+          });
+          this.log(`[FLOW] Registered: ${id}`);
+        }
+      } catch (err) { this.error(`Action ${act} failed:`, err.message); }
+    });
+  }
+}
+
+module.exports = RadiatorValveDriver;

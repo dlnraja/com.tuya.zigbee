@@ -1,0 +1,105 @@
+# comprehensive-auto-validation.yml
+# Validates app structure, drivers, and publish-readiness on every push
+name: 🛡️ Fleet-Wide Comprehensive Validation
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fleet-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  fleet-audit:
+    name: 🛡️ Fleet Audit & Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔐 Mandatory Files Check (O17-O21 + M01-M14) — BLOCKING
+        run: node scripts/validate/homey-mandatory-check.js
+
+      - name: 🔐 Athom Server Requirements (O17-O20) — BLOCKING
+        run: node scripts/validate/validate-app-json.js
+
+      - name: 📁 No Legacy Hybrid Folder Regression
+        run: |
+          HYBRIDS=$(find drivers -maxdepth 1 -type d -name "*_hybrid" 2>/dev/null | wc -l)
+          if [ "$HYBRIDS" -gt 0 ]; then
+            echo "❌ REGRESSION: Found $HYBRIDS legacy hybrid driver directories!"
+            find drivers -maxdepth 1 -type d -name "*_hybrid"
+            exit 1
+          fi
+          echo "✅ No hybrid folders found."
+
+      - name: 🔍 Resolve Fingerprint Collisions
+        run: node scripts/ci/resolve-collisions.js
+        continue-on-error: true
+
+      - name: 🛡️ Dual-Layer Integrity (no AggregateError)
+        run: |
+          node - << 'DUAL_LAYER'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json'));
+          const WIFI = id => { const s = (id||'').toLowerCase(); return s.startsWith('wifi_') || s.includes('ewelink') || s.includes('sonoff'); };
+          const errors = [];
+          let zigbeeOk = 0, generic = 0;
+          (app.drivers||[]).forEach(d => {
+            const conn = d.connectivity || [];
+            const hasZ = !!d.zigbee;
+            const isLan = conn.some(c => ['lan','cloud'].includes(c));
+            const type = hasZ && isLan ? 'hybrid' : hasZ ? 'zigbee' : WIFI(d.id) ? 'wifi' : 'virtual';
+            if (type === 'zigbee' || type === 'hybrid') {
+              const hasMf = d.zigbee?.manufacturerName?.length > 0;
+              const hasFp = d.zigbee?.fingerprints?.length > 0;
+              if (!hasMf && !hasFp) { generic++; }
+              else if (!hasMf) { errors.push(d.id); }
+              else { zigbeeOk++; }
+            }
+          });
+          if (errors.length) {
+            console.error('❌ M09: ' + errors.length + ' Zigbee drivers with FPs but no MF (AggregateError):', errors.slice(0,5).join(', '));
+            process.exit(1);
+          }
+          console.log('✅ Dual-Layer OK: ' + zigbeeOk + ' Zigbee drivers with MF, ' + generic + ' generic templates exempt');
+          DUAL_LAYER
+
+      - name: 🔍 Homey Publish-Level Validation
+        run: npx homey app validate --level publish
+
+      - name: 📊 Report Summary
+        if: always()
+        run: |
+          echo "## Fleet Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| File | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| README.txt | $([ -f README.txt ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
+          echo "| assets/icon.svg | $([ -f assets/icon.svg ] && echo '✅' || echo '❌') |" >> $GITHUB_STEP_SUMMARY
+          echo "| app.json | $(node -e "JSON.parse(require('fs').readFileSync('app.json'));process.stdout.write('✅')" 2>/dev/null || echo '❌') |" >> $GITHUB_STEP_SUMMARY
+          DRV=$(node -p "require('./app.json').drivers.length" 2>/dev/null || echo '?')
+          echo "| Drivers | $DRV |" >> $GITHUB_STEP_SUMMARY

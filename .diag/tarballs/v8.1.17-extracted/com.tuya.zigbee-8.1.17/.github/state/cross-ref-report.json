@@ -1,0 +1,209 @@
+{
+  "ts": "2026-05-26T15:54:44.798Z",
+  "correlations": [],
+  "actionable": [
+    {
+      "user": "Cam",
+      "device": "`_TZ3000_5bpeda8u` TS0041",
+      "status": "NEEDS DIAG",
+      "note": "Update v5.11.25 + re-pair + diag"
+    },
+    {
+      "user": "Freddyboy",
+      "device": "`_TZ3000_zgyzgdua` TS0044",
+      "status": "NEEDS DIAG",
+      "note": "Update v5.11.25 + re-pair + diag"
+    },
+    {
+      "user": "FrankP",
+      "device": "IR remote learning mode",
+      "status": "NEW BUG",
+      "note": "Learning button turns off immediately (diag b6635c8c) — #1471"
+    },
+    {
+      "user": "Ricardo_Lenior",
+      "device": "Ceiling presence 230v",
+      "status": "NEEDS FP",
+      "note": "Only has diag ID, no fingerprint"
+    },
+    {
+      "user": "Ferenc_Szasz",
+      "device": "`_TZE200_3p5ydos3` dimmer",
+      "status": "NEEDS DIAG",
+      "note": "Dimmer errors on control. T89271#660. Need diag log."
+    },
+    {
+      "user": "JJ10",
+      "fp": "radar_TS0601",
+      "status": "DEFERRED"
+    }
+  ],
+  "resolved": [],
+  "patterns": [
+    {
+      "id": "battery",
+      "pattern": "False Battery Alert / Missing Battery",
+      "count": 37,
+      "priority": "high"
+    },
+    {
+      "id": "pairing",
+      "pattern": "Pairing Failure",
+      "count": 18,
+      "priority": "high"
+    },
+    {
+      "id": "no_response",
+      "pattern": "Device Not Responding",
+      "count": 9,
+      "priority": "high"
+    },
+    {
+      "id": "unknown",
+      "pattern": "Device Shows Unknown",
+      "count": 7,
+      "priority": "high"
+    },
+    {
+      "id": "ring_value",
+      "pattern": "Ring/Alarm Wrong",
+      "count": 5,
+      "priority": "high"
+    }
+  ],
+  "flowAudit": [
+    {
+      "driver": "air_purifier_din",
+      "actions": 3
+    },
+    {
+      "driver": "button_wireless_usb",
+      "actions": 3
+    },
+    {
+      "driver": "device_air_purifier",
+      "actions": 12
+    },
+    {
+      "driver": "device_air_purifier_din",
+      "actions": 1
+    },
+    {
+      "driver": "device_air_purifier_motion",
+      "actions": 5
+    },
+    {
+      "driver": "device_air_purifier_plug",
+      "actions": 4
+    },
+    {
+      "driver": "device_plug_energy",
+      "actions": 7
+    },
+    {
+      "driver": "energy_meter_3phase",
+      "actions": 1
+    },
+    {
+      "driver": "power_clamp_meter",
+      "actions": 1
+    },
+    {
+      "driver": "power_meter",
+      "actions": 1
+    },
+    {
+      "driver": "radiator_wifi_tuya",
+      "actions": 1
+    },
+    {
+      "driver": "remote_button_wireless_usb",
+      "actions": 3
+    },
+    {
+      "driver": "thermostatic_radiator_valve",
+      "actions": 1
+    },
+    {
+      "driver": "valve_dual_irrigation",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_ewelink_bulb",
+      "actions": 2
+    },
+    {
+      "driver": "wifi_ewelink_dimmer",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_ewelink_fan",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_ewelink_led",
+      "actions": 2
+    },
+    {
+      "driver": "wifi_generic",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_led_strip",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_power_strip",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_sonoff_basicr4",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_dualr3",
+      "actions": 6
+    },
+    {
+      "driver": "wifi_sonoff_micro",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_minir3",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_minir4",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_pow_elite",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_smate2",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_tx_1ch",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_sonoff_tx_2ch",
+      "actions": 6
+    },
+    {
+      "driver": "wifi_sonoff_tx_3ch",
+      "actions": 9
+    },
+    {
+      "driver": "wifi_switch",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_thermostat",
+      "actions": 1
+    }
+  ],
+  "mainsBatteryIssues": []
+}

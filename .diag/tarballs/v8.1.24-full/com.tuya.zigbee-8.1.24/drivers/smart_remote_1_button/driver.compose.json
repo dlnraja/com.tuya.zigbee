@@ -1,0 +1,111 @@
+{
+  "id": "smart_remote_1_button",
+  "name": {
+    "en": "1 button Smart Remote Controller",
+    "fr": "Télécommande intelligente à 1 bouton",
+    "nl": "1 knops slimme afstandsbediening",
+    "de": "Intelligenter Fernbedienung mit 1 Taste",
+    "es": "Control remoto inteligente de 1 botón"
+  },
+  "class": "remote",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "images": {
+    "large": "/drivers/smart_remote_1_button/assets/images/large.png",
+    "small": "/drivers/smart_remote_1_button/assets/images/small.png",
+    "xlarge": "/drivers/smart_remote_1_button/assets/images/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_rco1yzb1",
+      "_TZ3000_rco1yzb1",
+      "_TZ3000_RCO1YZB1",
+      "_tz3000_yirp2pgd",
+      "_TZ3000_yirp2pgd",
+      "_TZ3000_YIRP2PGD"
+    ],
+    "productId": [
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          4096,
+          57345
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode Scène (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ]
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

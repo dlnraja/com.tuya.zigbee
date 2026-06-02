@@ -1,0 +1,85 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E88E5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1976D2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1565C0;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowGrad" cx="50%" cy="40%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+    
+    <filter id="shadowFilter">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with gradient -->
+  <circle cx="250" cy="250" r="240" fill="url(#bgGrad)"/>
+  
+  <!-- Glow effect -->
+  <ellipse cx="250" cy="180" rx="200" ry="150" fill="url(#glowGrad)"/>
+  
+  <!-- Main hub circle -->
+  <circle cx="250" cy="250" r="110" 
+          fill="rgba(255,255,255,0.15)" 
+          stroke="rgba(255,255,255,0.4)" 
+          stroke-width="6"/>
+  
+  <!-- Inner white circle -->
+  <circle cx="250" cy="250" r="70" 
+          fill="rgba(255,255,255,0.95)" 
+          filter="url(#shadowFilter)"/>
+  
+  <!-- Zigbee "Z" symbol -->
+  <g transform="translate(250, 250)">
+    <path d="M -35 -42 L 35 -42 L -35 42 L 35 42" 
+          stroke="#1E88E5" 
+          stroke-width="12" 
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Connection nodes (4 directions) -->
+  <circle cx="250" cy="90" r="20" 
+          fill="white" 
+          opacity="0.9"
+          filter="url(#shadowFilter)"/>
+  <circle cx="250" cy="410" r="20" 
+          fill="white" 
+          opacity="0.9"
+          filter="url(#shadowFilter)"/>
+  <circle cx="90" cy="250" r="20" 
+          fill="white" 
+          opacity="0.9"
+          filter="url(#shadowFilter)"/>
+  <circle cx="410" cy="250" r="20" 
+          fill="white" 
+          opacity="0.9"
+          filter="url(#shadowFilter)"/>
+  
+  <!-- Connection lines -->
+  <line x1="250" y1="160" x2="250" y2="110" 
+        stroke="rgba(255,255,255,0.7)" 
+        stroke-width="6"/>
+  <line x1="250" y1="340" x2="250" y2="390" 
+        stroke="rgba(255,255,255,0.7)" 
+        stroke-width="6"/>
+  <line x1="160" y1="250" x2="110" y2="250" 
+        stroke="rgba(255,255,255,0.7)" 
+        stroke-width="6"/>
+  <line x1="340" y1="250" x2="390" y2="250" 
+        stroke="rgba(255,255,255,0.7)" 
+        stroke-width="6"/>
+</svg>

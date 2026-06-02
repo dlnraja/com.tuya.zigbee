@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-05-24T09:05:41.756Z",
+  "dryRun": false,
+  "sources": {
+    "external": 1607,
+    "github": 8,
+    "forks": 0,
+    "johan": 0,
+    "gmail": 0,
+    "forum": 0,
+    "diagnostics": 0,
+    "deepSearch": 0
+  },
+  "variants": {
+    "confirmed": 0,
+    "details": []
+  },
+  "classified": {
+    "total": 0,
+    "byMethod": {},
+    "details": []
+  },
+  "implemented": {
+    "added": 0,
+    "skipped": 0
+  },
+  "ghApiCalls": 100,
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1615,\n    \"confirmed_variants\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 37,\n        \"priority\": \"high\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 18,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
+}

@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "HVAC Controller",
+    "fr": "Contrôleur HVAC",
+    "nl": "HVAC Controller",
+    "de": "HVAC Steuerung"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 16,
+      "max": 30,
+      "step": 0.5
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        }
+      ]
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_cfczgbss",
+      "_TZE200_cfczgbss",
+      "_TZE200_CFCZGBSS",
+      "_tze284_cfczgbss",
+      "_TZE284_cfczgbss",
+      "_TZE284_CFCZGBSS"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/hvac_controller/assets/images/small.png",
+    "large": "/drivers/hvac_controller/assets/images/large.png",
+    "xlarge": "/drivers/hvac_controller/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 5
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

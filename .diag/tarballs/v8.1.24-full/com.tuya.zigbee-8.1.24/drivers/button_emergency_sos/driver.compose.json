@@ -1,0 +1,653 @@
+{
+  "name": {
+    "en": "Sos Emergency Button",
+    "fr": "Sos Emergency Button",
+    "nl": "SOS Noodknop",
+    "de": "SOS Notfalltaste"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_generic",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "SOS Alert",
+        "fr": "Alerte SOS"
+      },
+      "insightsTitleTrue": {
+        "en": "SOS pressed",
+        "fr": "SOS appuyé"
+      },
+      "insightsTitleFalse": {
+        "en": "SOS reset",
+        "fr": "SOS réinitialisé"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_trqoesc6",
+      "_TYZB01_TRQOESC6",
+      "_tz3000_8xz0pyqy",
+      "_TZ3000_8xz0pyqy",
+      "_TZ3000_8XZ0PYQY",
+      "_tz3000_c0gf6xd7",
+      "_TZ3000_c0gf6xd7",
+      "_TZ3000_C0GF6XD7",
+      "_tz3000_fywhzh9u",
+      "_TZ3000_fywhzh9u",
+      "_TZ3000_FYWHZH9U",
+      "_tz3000_gnwgnwvq",
+      "_TZ3000_gnwgnwvq",
+      "_TZ3000_GNWGNWVQ",
+      "_tz3000_graty6sj",
+      "_TZ3000_graty6sj",
+      "_TZ3000_GRATY6SJ",
+      "_tz3000_imkwgfwh",
+      "_TZ3000_imkwgfwh",
+      "_TZ3000_IMKWGFWH",
+      "_tz3000_is27vzco",
+      "_TZ3000_is27vzco",
+      "_TZ3000_IS27VZCO",
+      "_tz3000_iystcadi",
+      "_TZ3000_iystcadi",
+      "_TZ3000_IYSTCADI",
+      "_tz3000_n0h1dr7u",
+      "_TZ3000_n0h1dr7u",
+      "_TZ3000_N0H1DR7U",
+      "_tz3000_qjhwtnkf",
+      "_TZ3000_qjhwtnkf",
+      "_TZ3000_QJHWTNKF",
+      "_tz3000_rmhkdz0l",
+      "_TZ3000_rmhkdz0l",
+      "_TZ3000_RMHKDZ0L",
+      "_tz3000_zpjuqnco",
+      "_TZ3000_zpjuqnco",
+      "_TZ3000_ZPJUQNCO",
+      "_tz3000_cdso6bjw",
+      "_TZ3000_cdso6bjw",
+      "_TZ3000_CDSO6BJW",
+      "_tze200_0ble7ow3",
+      "_TZE200_0ble7ow3",
+      "_TZE200_0BLE7OW3",
+      "_tze200_kzm5w4iz",
+      "_TZE200_kzm5w4iz",
+      "_TZE200_KZM5W4IZ",
+      "_tze284_3qhgndv6",
+      "_TZE284_3qhgndv6",
+      "_TZE284_3QHGNDV6",
+      "_tz3000_8utxxtzr",
+      "_TZ3000_8utxxtzr",
+      "_TZ3000_8UTXXTZR",
+      "_tz3000_irwuzilv",
+      "_TZ3000_irwuzilv",
+      "_TZ3000_IRWUZILV",
+      "_tz3000_u2bbagu4",
+      "_TZ3000_u2bbagu4",
+      "_TZ3000_U2BBAGU4",
+      "_tz3000_nxdziqzc",
+      "_TZ3000_nxdziqzc",
+      "_TZ3000_NXDZIQZC",
+      "_tyzb01_trqoesc6|ZBPB10BK",
+      "_tyzb01_trqoesc6|TS0218",
+      "_tyzb01_trqoesc6|TS0601",
+      "_tyzb01_trqoesc6|TS0215",
+      "_tyzb01_trqoesc6|TS0215A",
+      "_tz3000_0dumfk2z|ZBPB10BK",
+      "_tz3000_0dumfk2z|TS0218",
+      "_tz3000_0dumfk2z|TS0601",
+      "_tz3000_0dumfk2z|TS0215",
+      "_tz3000_0dumfk2z|TS0215A",
+      "_tz3000_2izubafb|ZBPB10BK",
+      "_tz3000_2izubafb|TS0218",
+      "_tz3000_2izubafb|TS0601",
+      "_tz3000_2izubafb|TS0215",
+      "_tz3000_2izubafb|TS0215A",
+      "_tz3000_4fsgukof|ZBPB10BK",
+      "_tz3000_4fsgukof|TS0218",
+      "_tz3000_4fsgukof|TS0601",
+      "_tz3000_4fsgukof|TS0215",
+      "_tz3000_4fsgukof|TS0215A",
+      "_tz3000_8xz0pyqy|ZBPB10BK",
+      "_tz3000_8xz0pyqy|TS0218",
+      "_tz3000_8xz0pyqy|TS0601",
+      "_tz3000_8xz0pyqy|TS0215",
+      "_tz3000_8xz0pyqy|TS0215A",
+      "_tz3000_c0gf6xd7|ZBPB10BK",
+      "_tz3000_c0gf6xd7|TS0218",
+      "_tz3000_c0gf6xd7|TS0601",
+      "_tz3000_c0gf6xd7|TS0215",
+      "_tz3000_c0gf6xd7|TS0215A",
+      "_tz3000_eo3dttwe|ZBPB10BK",
+      "_tz3000_eo3dttwe|TS0218",
+      "_tz3000_eo3dttwe|TS0601",
+      "_tz3000_eo3dttwe|TS0215",
+      "_tz3000_eo3dttwe|TS0215A",
+      "_tz3000_fsiepnrh|ZBPB10BK",
+      "_tz3000_fsiepnrh|TS0218",
+      "_tz3000_fsiepnrh|TS0601",
+      "_tz3000_fsiepnrh|TS0215",
+      "_tz3000_fsiepnrh|TS0215A",
+      "_tz3000_fywhzh9u|ZBPB10BK",
+      "_tz3000_fywhzh9u|TS0218",
+      "_tz3000_fywhzh9u|TS0601",
+      "_tz3000_fywhzh9u|TS0215",
+      "_tz3000_fywhzh9u|TS0215A",
+      "_tz3000_gnwgnwvq|ZBPB10BK",
+      "_tz3000_gnwgnwvq|TS0218",
+      "_tz3000_gnwgnwvq|TS0601",
+      "_tz3000_gnwgnwvq|TS0215",
+      "_tz3000_gnwgnwvq|TS0215A",
+      "_tz3000_graty6sj|ZBPB10BK",
+      "_tz3000_graty6sj|TS0218",
+      "_tz3000_graty6sj|TS0601",
+      "_tz3000_graty6sj|TS0215",
+      "_tz3000_graty6sj|TS0215A",
+      "_tz3000_imkwgfwh|ZBPB10BK",
+      "_tz3000_imkwgfwh|TS0218",
+      "_tz3000_imkwgfwh|TS0601",
+      "_tz3000_imkwgfwh|TS0215",
+      "_tz3000_imkwgfwh|TS0215A",
+      "_tz3000_is27vzco|ZBPB10BK",
+      "_tz3000_is27vzco|TS0218",
+      "_tz3000_is27vzco|TS0601",
+      "_tz3000_is27vzco|TS0215",
+      "_tz3000_is27vzco|TS0215A",
+      "_tz3000_iystcadi|ZBPB10BK",
+      "_tz3000_iystcadi|TS0218",
+      "_tz3000_iystcadi|TS0601",
+      "_tz3000_iystcadi|TS0215",
+      "_tz3000_iystcadi|TS0215A",
+      "_tz3000_n0h1dr7u|ZBPB10BK",
+      "_tz3000_n0h1dr7u|TS0218",
+      "_tz3000_n0h1dr7u|TS0601",
+      "_tz3000_n0h1dr7u|TS0215",
+      "_tz3000_n0h1dr7u|TS0215A",
+      "_tz3000_p6ju8myv|ZBPB10BK",
+      "_tz3000_p6ju8myv|TS0218",
+      "_tz3000_p6ju8myv|TS0601",
+      "_tz3000_p6ju8myv|TS0215",
+      "_tz3000_p6ju8myv|TS0215A",
+      "_tz3000_peszejy7|ZBPB10BK",
+      "_tz3000_peszejy7|TS0218",
+      "_tz3000_peszejy7|TS0601",
+      "_tz3000_peszejy7|TS0215",
+      "_tz3000_peszejy7|TS0215A",
+      "_tz3000_pkfazisv|ZBPB10BK",
+      "_tz3000_pkfazisv|TS0218",
+      "_tz3000_pkfazisv|TS0601",
+      "_tz3000_pkfazisv|TS0215",
+      "_tz3000_pkfazisv|TS0215A",
+      "_tz3000_qjhwtnkf|ZBPB10BK",
+      "_tz3000_qjhwtnkf|TS0218",
+      "_tz3000_qjhwtnkf|TS0601",
+      "_tz3000_qjhwtnkf|TS0215",
+      "_tz3000_qjhwtnkf|TS0215A",
+      "_tz3000_rmhkdz0l|ZBPB10BK",
+      "_tz3000_rmhkdz0l|TS0218",
+      "_tz3000_rmhkdz0l|TS0601",
+      "_tz3000_rmhkdz0l|TS0215",
+      "_tz3000_rmhkdz0l|TS0215A",
+      "_tz3000_ssp0maqm|ZBPB10BK",
+      "_tz3000_ssp0maqm|TS0218",
+      "_tz3000_ssp0maqm|TS0601",
+      "_tz3000_ssp0maqm|TS0215",
+      "_tz3000_ssp0maqm|TS0215A",
+      "_tz3000_ug1vtuzn|ZBPB10BK",
+      "_tz3000_ug1vtuzn|TS0218",
+      "_tz3000_ug1vtuzn|TS0601",
+      "_tz3000_ug1vtuzn|TS0215",
+      "_tz3000_ug1vtuzn|TS0215A",
+      "_tz3000_wr2ucaj9|ZBPB10BK",
+      "_tz3000_wr2ucaj9|TS0218",
+      "_tz3000_wr2ucaj9|TS0601",
+      "_tz3000_wr2ucaj9|TS0215",
+      "_tz3000_wr2ucaj9|TS0215A",
+      "_tz3000_zpjuqnco|ZBPB10BK",
+      "_tz3000_zpjuqnco|TS0218",
+      "_tz3000_zpjuqnco|TS0601",
+      "_tz3000_zpjuqnco|TS0215",
+      "_tz3000_zpjuqnco|TS0215A",
+      "_tz3000_cdso6bjw|ZBPB10BK",
+      "_tz3000_cdso6bjw|TS0218",
+      "_tz3000_cdso6bjw|TS0601",
+      "_tz3000_cdso6bjw|TS0215",
+      "_tz3000_cdso6bjw|TS0215A",
+      "_tze200_0ble7ow3|ZBPB10BK",
+      "_tze200_0ble7ow3|TS0218",
+      "_tze200_0ble7ow3|TS0601",
+      "_tze200_0ble7ow3|TS0215",
+      "_tze200_0ble7ow3|TS0215A",
+      "_tze200_kzm5w4iz|ZBPB10BK",
+      "_tze200_kzm5w4iz|TS0218",
+      "_tze200_kzm5w4iz|TS0601",
+      "_tze200_kzm5w4iz|TS0215",
+      "_tze200_kzm5w4iz|TS0215A",
+      "_tze284_3qhgndv6|ZBPB10BK",
+      "_tze284_3qhgndv6|TS0218",
+      "_tze284_3qhgndv6|TS0601",
+      "_tze284_3qhgndv6|TS0215",
+      "_tze284_3qhgndv6|TS0215A",
+      "_tz3000_8utxxtzr|ZBPB10BK",
+      "_tz3000_8utxxtzr|TS0218",
+      "_tz3000_8utxxtzr|TS0601",
+      "_tz3000_8utxxtzr|TS0215",
+      "_tz3000_8utxxtzr|TS0215A",
+      "_tz3000_p3fph1go|ZBPB10BK",
+      "_tz3000_p3fph1go|TS0218",
+      "_tz3000_p3fph1go|TS0601",
+      "_tz3000_p3fph1go|TS0215",
+      "_tz3000_p3fph1go|TS0215A",
+      "_tz3000_tj4pwzzm|ZBPB10BK",
+      "_tz3000_tj4pwzzm|TS0218",
+      "_tz3000_tj4pwzzm|TS0601",
+      "_tz3000_tj4pwzzm|TS0215",
+      "_tz3000_tj4pwzzm|TS0215A",
+      "_tz3000_zsh6uat3|ZBPB10BK",
+      "_tz3000_zsh6uat3|TS0218",
+      "_tz3000_zsh6uat3|TS0601",
+      "_tz3000_zsh6uat3|TS0215",
+      "_tz3000_zsh6uat3|TS0215A",
+      "_tz3000_0zrccfgx|ZBPB10BK",
+      "_tz3000_0zrccfgx|TS0218",
+      "_tz3000_0zrccfgx|TS0601",
+      "_tz3000_0zrccfgx|TS0215",
+      "_tz3000_0zrccfgx|TS0215A",
+      "_tz3000_9r5jaajv|ZBPB10BK",
+      "_tz3000_9r5jaajv|TS0218",
+      "_tz3000_9r5jaajv|TS0601",
+      "_tz3000_9r5jaajv|TS0215",
+      "_tz3000_9r5jaajv|TS0215A",
+      "_tz3000_irwuzilv|ZBPB10BK",
+      "_tz3000_irwuzilv|TS0218",
+      "_tz3000_irwuzilv|TS0601",
+      "_tz3000_irwuzilv|TS0215",
+      "_tz3000_irwuzilv|TS0215A",
+      "_tz3000_jwcixnrz|ZBPB10BK",
+      "_tz3000_jwcixnrz|TS0218",
+      "_tz3000_jwcixnrz|TS0601",
+      "_tz3000_jwcixnrz|TS0215",
+      "_tz3000_jwcixnrz|TS0215A",
+      "_tz3000_u2bbagu4|ZBPB10BK",
+      "_tz3000_u2bbagu4|TS0218",
+      "_tz3000_u2bbagu4|TS0601",
+      "_tz3000_u2bbagu4|TS0215",
+      "_tz3000_u2bbagu4|TS0215A",
+      "_tz3000_nxdziqzc|ZBPB10BK",
+      "_tz3000_nxdziqzc|TS0218",
+      "_tz3000_nxdziqzc|TS0601",
+      "_tz3000_nxdziqzc|TS0215",
+      "_tz3000_nxdziqzc|TS0215A"
+    ],
+    "productId": [
+      "ZBPB10BK",
+      "TS0218",
+      "TS0601",
+      "TS0215",
+      "TS0215A",
+      "ts0215a"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          1281,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the SOS button for 5 seconds. KEEP PRESSING the button every 2 seconds during pairing to prevent device sleep and enrollment timeout.",
+        "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ à appuyer toutes les 2 secondes pendant l appairage pour éviter la mise en veille."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Maintenance",
+        "fr": "🔧 Maintenance"
+      },
+      "children": [
+        {
+          "id": "refresh_battery",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Battery Read (toggle to trigger)",
+            "fr": "Forcer Lecture Batterie (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to force a battery reading. The device must be awake (press SOS button first).",
+            "fr": "Basculer ce paramètre pour forcer une lecture de batterie. L'appareil doit être éveillé (appuyez d'abord sur le bouton SOS)."
+          }
+        },
+        {
+          "id": "re_enroll",
+          "type": "checkbox",
+          "label": {
+            "en": "Re-enroll IAS Zone (toggle to trigger)",
+            "fr": "Ré-inscrire IAS Zone (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
+            "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "DP1/DP14: SOS (bool)\nDP4/DP15: Battery %\nDP101: Context (bool=SOS, num=battery)"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "enable_time_sync",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time Sync",
+        "fr": "Activer Synchro Heure"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sync device time with Homey",
+        "fr": "Synchroniser l'heure du device avec Homey"
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/button_emergency_sos/assets/images/small.png",
+    "large": "/drivers/button_emergency_sos/assets/images/large.png",
+    "xlarge": "/drivers/button_emergency_sos/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

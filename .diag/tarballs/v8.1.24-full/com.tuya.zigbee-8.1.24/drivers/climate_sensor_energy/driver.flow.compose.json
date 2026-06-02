@@ -1,0 +1,74 @@
+{
+  "triggers": [
+    {
+      "id": "climate_sensor_energy_temperature_changed",
+      "highlight": true,
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
+    },
+    {
+      "id": "climate_sensor_energy_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
+    },
+    {
+      "id": "climate_sensor_energy_power_changed",
+      "title": {
+        "en": "Power consumption changed",
+        "fr": "Consommation changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 150
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Power consumption changed",
+        "fr": "Consommation changée"
+      }
+    }
+  ]
+}

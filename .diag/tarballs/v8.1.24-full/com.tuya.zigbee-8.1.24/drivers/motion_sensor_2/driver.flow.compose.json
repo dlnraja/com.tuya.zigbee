@@ -1,0 +1,89 @@
+{
+  "triggers": [
+    {
+      "id": "motion_sensor_2_motion_detected",
+      "highlight": true,
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
+    },
+    {
+      "id": "motion_sensor_2_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé",
+        "nl": "Beweging voorbij",
+        "de": "Bewegung beendet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé",
+        "nl": "Beweging voorbij",
+        "de": "Bewegung beendet"
+      }
+    },
+    {
+      "id": "motion_sensor_2_tamper_detected",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "motion_sensor_2_has_motion",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "motion_sensor_2_reset_alarm",
+      "title": {
+        "en": "Reset alarm",
+        "fr": "Réinitialiser l'alarme",
+        "nl": "Alarm resetten",
+        "de": "Alarm zurücksetzen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Reset alarm",
+        "fr": "Réinitialiser l'alarme",
+        "nl": "Alarm resetten",
+        "de": "Alarm zurücksetzen"
+      }
+    }
+  ]
+}

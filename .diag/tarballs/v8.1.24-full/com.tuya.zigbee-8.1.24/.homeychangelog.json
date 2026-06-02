@@ -1,0 +1,67 @@
+{
+  "v8_5_30": {
+    "version": "8.5.30",
+    "date": "2026-05-28",
+    "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
+  "9.0.1": {
+    "en": "v9.0.0:"
+  },
+  "9.0.0": {
+    "en": "v8.5.54:"
+  },
+  "8.5.54": {
+    "en": "v8.5.53:"
+  },
+  "8.5.53": {
+    "en": "v8.5.52:"
+  },
+  "8.5.52": {
+    "en": "v8.5.51:"
+  },
+  "8.5.51": {
+    "en": "v8.5.50:"
+  },
+  "8.5.50": {
+    "en": "v8.5.49:"
+  },
+  "8.5.49": {
+    "en": "v8.5.48:"
+  },
+  "8.5.48": {
+    "en": "v8.5.47:"
+  },
+  "8.5.47": {
+    "en": "v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persistent M09 validation errors for button_wireless_4 and illuminance_sensor drivers, Fixed missing manufacturerName entries for 360 Zigbee drivers (AggregateError fix), Removed 75 empty manufacturerName arrays causing validation failures, Corrected .homeyignore to include multilingual READ"
+  },
+  "8.5.46": {
+    "en": "v8.5.46: . Cleaned 88 empty manufacturer arrays from driver configs. New fingerprints from community sync. Stability improvements for button and illuminance sensors."
+  },
+  "8.5.45": {
+    "en": "v8.5.45: . Bug fixes: empty manufacturerName arrays removed, button_wireless_4 + illuminance_sensor MFs restored. New: 114 community fingerprints from Z2M/ZHA/. Critical fixes: icon.svg, app.json permissions.homeyignore rewrite."
+  },
+  "8.5.44": {
+    "en": "v8.5.44: Fixed critical app crash (AggregateError) caused by empty manufacturerName arrays in 75 drivers. Restored 360 Zigbee manufacturer names. Added 114 new fingerprints from community. Improved app.json validation for Homey store compliance."
+  },
+  "8.5.43": {
+    "en": "v8.5.43: . Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new fingerprints from community and Z2M/ZHA sources."
+  },
+  "8.5.42": {
+    "en": "v8.5.42: Fixed button_wireless_4 and illuminance_sensor manufacturer fingerprints. Added 114 new device fingerprints from community and Z2M/ZHA sources. Resolved 4361 fingerprint conflicts across all drivers."
+  },
+  "8.5.41": {
+    "en": "v8.5.41: . Critical fixes for app.json validation (category, permissions, icon). Restored 360 Zigbee manufacturer names. Resolved 4,361 fingerprint collisions. 114 new fingerprints from community sync. New pre-commit/pre-push hooks for build integrity."
+  },
+  "8.5.40": {
+    "en": "v8.5.40: Critical fixes for app.json validation.homeyignore, and multilingual README files."
+  },
+  "8.5.39": {
+    "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
+  },
+  "8.5.38": {
+    "en": "v8.5.38: Fix Processing failed — remove invalid icon field from app.json, use assets/icon.svg as per Athom SDK3 spec (App.js:618). Also corrects icon hash computation for Athom server."
+  },
+  "8.1.24": {
+    "en": "fix(ci): correct build targeting — promote right build to test"
+  }
+}

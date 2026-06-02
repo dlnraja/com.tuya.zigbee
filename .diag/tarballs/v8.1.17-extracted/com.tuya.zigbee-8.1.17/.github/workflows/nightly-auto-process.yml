@@ -1,0 +1,127 @@
+# Nightly Auto Process — v8.0.0 ULTIMATE
+# Automated maintenance, architectural enforcement, and bug hunting.
+# Runs nightly (02:00 UTC) to ensure the Zero-Defect promise.
+# Investigation methodology: docs/GLOBAL_INVESTIGATION_PLAN.md (22 sections)
+
+name: "🌙 Nightly Auto Process"
+
+on:
+  schedule:
+    - cron: '30 2 * * *'  # Staggered by 30min to avoid git conflicts
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  maintenance:
+    name: "Architectural Hardening"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: "22"
+          cache: 'npm'
+          
+      - run: npm ci || npm install
+
+      - name: 📖 Load Investigation Framework (GLOBAL_INVESTIGATION_PLAN.md)
+        run: |
+          echo "## Investigation Framework Active" >> $GITHUB_STEP_SUMMARY
+          echo "Using [GLOBAL_INVESTIGATION_PLAN.md](../../docs/GLOBAL_INVESTIGATION_PLAN.md)" >> $GITHUB_STEP_SUMMARY
+          echo "22-section methodology applied to nightly auto-process:" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 1: Investigation Philosophy & Deep Diagnostic Mandate" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 7: Investigation Flows per Bug Type (6 types)" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 8: Forum & GitHub Investigation Protocol" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 9: Diagnostics & Email Investigation Protocol" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 17: Prevention Scripts Creation Methodology" >> $GITHUB_STEP_SUMMARY
+          echo "Plan injected into all AI engine calls via project-rules.js" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔍 Community Intake (Scan PRs/Issues)
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 8 (Forum & GitHub Investigation Protocol)
+          node .github/scripts/scan-prs-issues.js
+        continue-on-error: true
+
+      - name: 🌐 Cross-Reference External Intelligence (Z2M, Domoticz, Forums)
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 4 (Source Matrix) + Section 10 (Z2M/ZHA Protocol)
+          node .github/scripts/cross-ref-intelligence.js || true
+          node .github/scripts/sync-external-sources.js || true
+          node .github/scripts/scan-tuya-ecosystem.js || true
+          node scripts/automation/deep-crossref-scraper.js || true
+        continue-on-error: true
+
+      - name: 🧬 Enrich Fingerprints (V8 Sovereign Sync)
+        run: |
+          node scripts/community-sync/sync-all.js || true
+          node scripts/apply_enriched_fps_v3.js || true
+          node scripts/fix_titleformatted_v3.js || true
+        continue-on-error: true
+
+      - name: ✉️ Fetch User Diagnostic Emails & Logs
+        run: node .github/scripts/gmail-imap-reader.js || true
+        continue-on-error: true
+        
+      - name: 🕵️ Deep Issue & Variant Researcher
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 6 (Cross-Ref Patterns)
+          node .github/scripts/issue-deep-researcher.js || true
+        continue-on-error: true
+
+      - name: 🛡️ Run Skill Check
+        run: node scripts/ci/skill-check.js
+        
+      - name: ⚖️ Run Zero-Defect Control
+        run: node scripts/ci/zero-defect-control.js
+        
+      - name: 🛰️ Run Antigravity Deep Audit
+        run: node scripts/ci/antigravity-controls.js
+        
+      - name: 🌌 Execute Antigravity Mega-Audit
+        run: node scripts/automation/mega-audit.js
+        continue-on-error: false
+
+      - name: 🛠️ Execute Antigravity Mega-Fixer (Self-Healing)
+        if: failure()
+        run: |
+          node scripts/automation/mega-fixer.js
+          node scripts/automation/mega-audit.js
+        
+      - name: 🔍 Run Bug Hunter
+        run: node scripts/ci/bug-hunter.js
+        
+      - name: 🔧 Apply Antigravity Patterns
+        run: node scripts/automation/apply-antigravity.js
+        
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+
+      - name: 📦 Validate Homey App
+        run: npx homey app validate --level publish
+
+      - name: 🎯 Zero-Defect Ultimate Validation (v8.0.0)
+        run: node scripts/_validate_all.js
+        
+      - name: 🚀 Publish to Homey Store (Optional)
+        if: env.HOMEY_PAT != ''
+        uses: athombv/github-action-homey-app-publish@v1
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        
+      - name: 🔄 Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
+        with:
+          commit_message: "chore(auto): nightly architectural hardening and stabilization [skip ci]"
+          branch: master
+          file_pattern: 'drivers/**/*.js drivers/**/*.json lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'

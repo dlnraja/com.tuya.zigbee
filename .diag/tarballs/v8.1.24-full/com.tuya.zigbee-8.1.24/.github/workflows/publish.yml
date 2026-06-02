@@ -1,0 +1,350 @@
+# Auto Publish - Official Athom Actions (NO CLI)
+# Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
+name: Auto Publish
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+      changelog:
+        type: string
+        required: false
+        description: "Custom changelog (leave empty to auto-extract from .homeychangelog.json)"
+permissions:
+  contents: write
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: 🛡️ Check Git Conflicts
+        run: npm run validate:conflicts
+
+      - name: 🔍 Verify Fingerprints Integrity
+        continue-on-error: false
+        run: npm run validate:fingerprints
+
+      - name: 🔍 Verify Flows Integrity
+        continue-on-error: false
+        run: npm run validate:flows
+
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+
+      - name: Validate (npx)
+        run: npx homey app validate --level publish
+
+      - name: Athom Validate (Docker)
+        continue-on-error: true
+        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
+        with:
+          level: publish
+
+  version-and-publish:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      # Install CI-only optional deps (puppeteer, axios, etc.) that are excluded from .npmrc omit=optional
+      # These are NOT needed in the Athom Docker container but ARE needed for CI scripts here
+      - name: Install CI optional deps
+        run: npm install --no-save --ignore-scripts puppeteer axios sharp canvas cheerio imapflow @octokit/rest || true
+
+      - name: Check HOMEY_PAT
+        id: pat
+        run: |
+          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "ok=true" >> $GITHUB_OUTPUT
+          else
+            echo "ok=false" >> $GITHUB_OUTPUT
+            echo "::warning::HOMEY_PAT not set - add from https://tools.developer.homey.app/me"
+          fi
+
+      - name: Generate AI Changelog
+        id: ai_cl
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/generate-ai-changelog.js || echo "AI fallback"
+          VER=$(node -p "require('./app.json').version")
+          CL=$(node -e "const cl=require('./.homeychangelog.json');const v=process.argv[1];if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);" "$VER" 2>/dev/null || echo "")
+          echo "ai_text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Extract Changelog
+        id: cl
+        shell: bash
+        run: |
+          CL="${{ inputs.changelog }}"
+          # Prefer: manual input > AI-generated > .homeychangelog.json
+          if [ -z "$CL" ] && [ -n "${{ steps.ai_cl.outputs.ai_text }}" ]; then
+            CL="${{ steps.ai_cl.outputs.ai_text }}"
+          fi
+          if [ -z "$CL" ]; then
+            VER=$(node -p "require('./app.json').version")
+            CL=$(node -e "const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());process.stdout.write(r.homeyText)" "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
+          fi
+          # Escape newlines for GitHub output
+          CL="${CL//'%'/'%25'}"
+          CL="${CL//$'\n'/'%0A'}"
+          CL="${CL//$'\r'/'%0D'}"
+          echo "text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Bump
+        if: steps.pat.outputs.ok == 'true'
+        id: bump
+        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
+        with:
+          version: ${{ inputs.version || 'patch' }}
+          changelog: ${{ steps.cl.outputs.text }}
+
+      - name: Sync package.json and .homeycompose version
+        if: steps.pat.outputs.ok == 'true'
+        run: node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');if(f.existsSync('.homeycompose/app.json')){const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));hc.version=a.version;f.writeFileSync('.homeycompose/app.json',JSON.stringify(hc,null,2)+'\n');}console.log('Synced package.json and .homeycompose to v'+a.version);"
+
+      - name: Update Changelogs for New Version
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW_VER="${{ steps.bump.outputs.version }}"
+          CL_TEXT="${{ steps.cl.outputs.text }}"
+          # Update .homeychangelog.json with new version entry
+          node -e "
+            const fs=require('fs');
+            const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
+            const v=process.argv[1], t=process.argv[2];
+            if(v && t && !cl[v]){cl[v]={en:t};fs.writeFileSync('.homeychangelog.json',JSON.stringify(cl,null,2)+'\n');}
+          " "$NEW_VER" "$CL_TEXT"
+          # Update CHANGELOG.md with new version header
+          if [ -f CHANGELOG.md ]; then
+            HEADER="## v${NEW_VER} ($(date +%Y-%m-%d))"
+            if ! grep -q "v${NEW_VER}" CHANGELOG.md; then
+              sed -i "0,/^## /{s/^## /${HEADER}\n\n${CL_TEXT}\n\n---\n\n## /}" CHANGELOG.md
+            fi
+          fi
+          # Update README.md last-updated date
+          if [ -f README.md ]; then
+            sed -i "s/Last Updated|[0-9-]*/Last Updated|$(date +%Y-%m-%d)/" README.md
+          fi
+          echo "Changelogs updated for v${NEW_VER}"
+
+      - name: Push
+        if: steps.pat.outputs.ok == 'true'
+        shell: bash
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # === CRITICAL: Compact app.json BEFORE git add (Bump action re-expands to 6MB) ===
+          BEFORE=$(node -p "require('fs').statSync('app.json').size")
+          node -e "
+            const fs=require('fs');
+            const app=JSON.parse(fs.readFileSync('app.json','utf8'));
+            const compact=JSON.stringify(app);
+            fs.writeFileSync('app.json',compact,'utf8');
+            const after=fs.statSync('app.json').size;
+            console.log('app.json compact: ' + Math.round(after/1024) + 'KB (' + (after/1024/1024).toFixed(2) + 'MB)');
+            if(after > 5*1024*1024){console.error('FATAL: app.json still >5MB!');process.exit(1);}
+          "
+          # Remove compose plugin to prevent re-expansion on publish
+          node -e "
+            const fs=require('fs');
+            const p=JSON.parse(fs.readFileSync('.homeyplugins.json','utf8'));
+            fs.writeFileSync('.homeyplugins.json',JSON.stringify(p.filter(x=>x.id!=='compose'),null,2));
+            console.log('compose plugin removed from .homeyplugins.json');
+          "
+          # Remove .homeycompose dir (prevents CLI from re-expanding)
+          rm -rf .homeycompose
+          # Commit with compact app.json
+          git add -A
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          SZ=$(node -p "Math.round(require('fs').statSync('app.json').size/1024)")
+          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} FPs, app.json=${SZ}KB [skip ci]"
+          git tag -f "v${{ steps.bump.outputs.version }}"
+          git push origin HEAD --tags --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Archive Size Gate (block if >30MB compressed)
+        if: steps.pat.outputs.ok == 'true'
+        id: archive_gate
+        run: |
+          # Use ignore-walk to estimate packed size
+          SIZE=$(node -e "
+            const ignoreWalk = require('ignore-walk');
+            const fs = require('fs');
+            ignoreWalk({ path: process.cwd(), ignoreFiles: ['.homeyignore'], includeEmpty: false, follow: false })
+              .then(files => {
+                let total = 0;
+                for (const f of files) {
+                  try { total += fs.statSync(f).size; } catch {}
+                }
+                // tgz compression ratio ~38% for mixed content
+                const estimatedMB = (total * 0.38 / 1024 / 1024).toFixed(2);
+                const uncompMB = (total / 1024 / 1024).toFixed(2);
+                console.log('Uncompressed: ' + uncompMB + ' MB');
+                console.log('Estimated tgz: ' + estimatedMB + ' MB');
+                process.stdout.write(estimatedMB);
+              });
+          " 2>/dev/null | tail -1)
+          echo "estimated_mb=$SIZE" >> $GITHUB_OUTPUT
+          echo "Archive estimated size: ${SIZE} MB"
+          # Block if > 30 MB (Athom server fails to parse at ~47MB)
+          python3 -c "
+          s = float('$SIZE')
+          print(f'Archive: {s} MB')
+          if s > 30:
+            print(f'::error::Archive too large: {s} MB > 30 MB — Athom will fail to process. Check .homeyignore.')
+            exit(1)
+          else:
+            print(f'✅ Archive OK: {s} MB < 30 MB')
+          "
+
+      - name: Publish
+        if: steps.pat.outputs.ok == 'true' && steps.archive_gate.outcome == 'success'
+        id: pub
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+
+      - name: Create GitHub Release
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
+        with:
+          tag_name: v${{ steps.bump.outputs.version }}
+          name: v${{ steps.bump.outputs.version }}
+          body: ${{ steps.cl.outputs.text }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      - name: Wait for Athom draft processing
+        if: steps.pub.outcome == 'success'
+        run: |
+          echo "Waiting 120s for Athom to process draft build..."
+          sleep 120
+
+      - name: Install Puppeteer
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        run: npm install puppeteer athom-api --no-save
+
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        if: steps.pat.outputs.ok == 'true'
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: 'false'
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Tier 2: Promote via OAuth (headless)"
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success'
+        id: promote_oauth
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via API (PAT fallback)"
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Upload promote screenshots
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: publish-promote-screenshots
+          path: screenshots/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Post update to Homey Community Forum
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.bump.outputs.version }}
+          CHANGELOG: ${{ steps.cl.outputs.text }}
+          PUBLISH_URL: ${{ steps.pub.outputs.url || 'https://homey.app/a/com.dlnraja.tuya.zigbee/test/' }}
+        run: node .github/scripts/post-forum-update.js
+
+      - name: Summary
+        if: always()
+        run: |
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          if [ "${{ steps.pat.outputs.ok }}" == "true" ]; then
+            echo "## Published v${{ steps.bump.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Manage: ${{ steps.pub.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
+            echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
+          fi

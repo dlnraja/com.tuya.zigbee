@@ -1,0 +1,107 @@
+name: "🚀 Publish Stable to Test"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - stable-v5
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  pre-validation:
+    name: "Pre-Validation"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: SDK3 Validation
+        run: |
+          SDK=$(node -p "require('./app.json').sdk")
+          if [ "$SDK" != "3" ]; then
+            echo "::error::Invalid SDK: $SDK (expected 3)"
+            exit 1
+          fi
+          echo "SDK3 validated"
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+      - name: Validate App
+        run: npx homey app validate --level publish
+
+  publish:
+    name: "Publish to Draft"
+    needs: pre-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: 🗜️ Compact app.json before publish (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+      - name: Publish to Draft
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+  promote:
+    name: "Promote to Test"
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Wait for Athom draft processing
+        run: sleep 120
+      - name: Install Puppeteer
+        continue-on-error: true
+        run: npm install puppeteer --no-save
+      - name: Promote via Browser (Puppeteer)
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+      - name: Promote via API (PAT)
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+      - name: Summary
+        if: always()
+        run: |
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "?")
+          echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY

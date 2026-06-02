@@ -1,0 +1,86 @@
+{
+  "name": {
+    "en": "Illuminance Sensor",
+    "fr": "Capteur d'éclairement",
+    "nl": "Verlichtingssensor",
+    "de": "Beleuchtungssensor",
+    "es": "Sensor de iluminancia"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_luminance",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450",
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "productId": [
+      "TS0222",
+      "ZG-106Z",
+      "TS0225",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1024
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Hold button 5s until LED flashes."
+      }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_hl0ss9oa",
+        "productId": "TS0225"
+      }
+    ],
+    "manufacturerName": [
+      "MOES",
+      "_TYZB01_4mdqxxnn",
+      "_TYZB01_m6ec2pgj",
+      "_TZ3000_7kscdesh",
+      "_TZ3000_do6txrcw",
+      "_TZ3000_hy6ncvmw",
+      "_TZE200_blfcpsxz",
+      "_TZE200_dwcarsat",
+      "_TZE200_fwoorn8y",
+      "_TZE200_kltffuzl",
+      "_TZE204_dwcarsat",
+      "moes"
+    ]
+  },
+  "icon": "/drivers/illuminance_sensor/assets/icon.svg",
+  "images": {
+    "small": "/drivers/illuminance_sensor/assets/images/small.png",
+    "large": "/drivers/illuminance_sensor/assets/images/large.png",
+    "xlarge": "/drivers/illuminance_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

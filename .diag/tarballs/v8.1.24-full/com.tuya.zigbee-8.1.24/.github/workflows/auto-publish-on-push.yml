@@ -1,0 +1,297 @@
+name: Auto-Publish on Push
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  publish:
+    name: Validate & Auto-Publish to Homey App Store
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      # ─────────────────────────────────────────────────────────────
+      # 1. CHECKOUT + SETUP
+      # ─────────────────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      # ─────────────────────────────────────────────────────────────
+      # 2. CHECK SECRETS
+      # ─────────────────────────────────────────────────────────────
+      - name: Check HOMEY_PAT availability
+        id: check_pat
+        run: |
+          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "✅ HOMEY_PAT is set — publish will run"
+          else
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "⚠️  HOMEY_PAT not set — publish will be skipped"
+          fi
+
+      - name: Read current version
+        id: pre_info
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "Current version: v$V"
+
+      # ─────────────────────────────────────────────────────────────
+      # 3. PRE-CLEAN — Fix source files BEFORE any validation
+      # ─────────────────────────────────────────────────────────────
+      - name: "🔧 PRE-CLEAN: Fix empty manufacturerName in driver.compose.json + app.json"
+        run: |
+          node - << 'PRECLEAN'
+          const fs = require('fs'), path = require('path');
+
+          // Step A: Fix driver.compose.json source files
+          const driversDir = path.join(process.cwd(), 'drivers');
+          let srcFixed = 0;
+          try {
+            fs.readdirSync(driversDir)
+              .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory())
+              .forEach(d => {
+                const p = path.join(driversDir, d, 'driver.compose.json');
+                if (!fs.existsSync(p)) return;
+                try {
+                  const comp = JSON.parse(fs.readFileSync(p, 'utf8'));
+                  if (comp.zigbee && !comp.zigbee.manufacturerName) {
+                    comp.zigbee.manufacturerName = [];
+                    fs.writeFileSync(p, JSON.stringify(comp, null, 2) + '\n', 'utf8');
+                    srcFixed++;
+                  }
+                } catch (e) { /* skip corrupt */ }
+              });
+          } catch (e) { console.error('driver scan error:', e.message); }
+
+          // Step B: Fix app.json
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          let appFixed = 0;
+          app.drivers.forEach(d => {
+            if (!d.zigbee) return;
+            if (!d.zigbee.manufacturerName) {
+              d.zigbee.manufacturerName = [];
+              appFixed++;
+            }
+          });
+          if (appFixed > 0) fs.writeFileSync('app.json', JSON.stringify(app), 'utf8');
+
+          console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
+          PRECLEAN
+
+      # ─────────────────────────────────────────────────────────────
+      # 4. CHANGELOG + VERSION BUMP
+      # ─────────────────────────────────────────────────────────────
+      - name: Generate AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
+
+      - name: Extract Changelog
+        id: cl
+        run: |
+          VER=$(node -p "require('./app.json').version")
+          CL=$(node -e "
+            try {
+              const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());
+              process.stdout.write(r.homeyText);
+            } catch(e) { process.stdout.write('Bug fixes and improvements'); }
+          " "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
+          echo "text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Determine bump level
+        id: bump_level
+        run: |
+          MSG=$(git log -1 --pretty=%B)
+          if [[ "$MSG" == *"[major]"* ]]; then echo "level=major" >> $GITHUB_OUTPUT
+          elif [[ "$MSG" == *"[minor]"* ]]; then echo "level=minor" >> $GITHUB_OUTPUT
+          else echo "level=patch" >> $GITHUB_OUTPUT; fi
+
+      - name: Bump version
+        id: bump
+        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3
+        with:
+          version: ${{ steps.bump_level.outputs.level }}
+          changelog: ${{ steps.cl.outputs.text }}
+
+      - name: Sync package.json version
+        run: |
+          node -e "
+            const f=require('fs'), a=require('./app.json'), p=JSON.parse(f.readFileSync('package.json','utf8'));
+            p.version=a.version;
+            f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');
+            console.log('Synced package.json to v'+a.version);
+          "
+
+      - name: Read bumped version
+        id: info
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "Bumped to v$V"
+
+      # ─────────────────────────────────────────────────────────────
+      # 4.5 COMPACT app.json — CRITICAL (prevents Athom 5MB upload limit error)
+      # ─────────────────────────────────────────────────────────────
+      # WHY: The compose plugin (.homeyplugins.json "compose") rebuilds app.json
+      # from .homeycompose/ with 2-space indentation = 6.03MB for 412 drivers.
+      # Athom's servers reject files > ~5MB with "Processing failed".
+      # v8.1.6 (232 drivers = 3.67MB) worked; v8.1.7+ (412 drivers) breaks.
+      # FIX: compact JSON immediately before validate+publish (3.39MB → safe).
+      - name: "🗜️ COMPACT app.json (anti-Athom-5MB-limit)"
+        run: |
+          node - << 'COMPACT'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          const compact = JSON.stringify(app);
+          const prev = fs.statSync('app.json').size;
+          fs.writeFileSync('app.json', compact, 'utf8');
+          const curr = compact.length;
+          console.log('app.json compacted:', (prev/1024/1024).toFixed(2) + 'MB → ' + (curr/1024/1024).toFixed(2) + 'MB');
+          if (curr / 1024 / 1024 > 5) {
+            console.error('❌ FATAL: app.json still > 5MB after compaction! (' + (curr/1024/1024).toFixed(2) + 'MB)');
+            process.exit(1);
+          }
+          console.log('✅ app.json safe for Athom upload (' + (curr/1024/1024).toFixed(2) + 'MB < 5MB limit)');
+          COMPACT
+          # Also remove .homeycompose to prevent the Homey CLI from
+          # re-expanding app.json with indentation during validate/publish
+          rm -rf .homeycompose
+
+      - name: Official Homey validator
+        run: npx homey app validate --level publish
+
+
+      # ─────────────────────────────────────────────────────────────
+      # 6. PUBLISH
+      # ─────────────────────────────────────────────────────────────
+      - name: Publish to Homey App Store
+        id: pub
+        if: steps.check_pat.outputs.has_pat == 'true'
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      # ─────────────────────────────────────────────────────────────
+      # 7. POST-PUBLISH (all continue-on-error)
+      # ─────────────────────────────────────────────────────────────
+      - name: Create GitHub Release
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
+        with:
+          tag_name: v${{ steps.info.outputs.version }}
+          name: v${{ steps.info.outputs.version }}
+          body: ${{ steps.cl.outputs.text }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Wait for Athom draft processing
+        if: steps.pub.outcome == 'success'
+        run: sleep 120
+
+      - name: Install Puppeteer (draft → test promotion)
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        run: npm install puppeteer athom-api --no-save
+
+      - name: "Tier 1: Promote via Browser"
+        if: steps.check_pat.outputs.has_pat == 'true'
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: 'false'
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      - name: "Tier 2: Promote via OAuth"
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via PAT API"
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Regenerate README & Docs
+        if: always()
+        continue-on-error: true
+        run: |
+          node .github/scripts/auto-update-docs.js || true
+          node .github/scripts/generate-readme.js || true
+
+      # ─────────────────────────────────────────────────────────────
+      # 8. BOT COMMIT — Always runs, commits clean state
+      # ─────────────────────────────────────────────────────────────
+      - name: Bot commit & push
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
+          git diff --cached --quiet || git commit -m "v${{ steps.info.outputs.version }}: ${D} drivers, ${F} FPs [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+      # ─────────────────────────────────────────────────────────────
+      # 9. SUMMARY
+      # ─────────────────────────────────────────────────────────────
+      - name: Summary
+        if: always()
+        run: |
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+            echo "✅ Published to Homey App Store (Test channel)" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ Validated only — HOMEY_PAT not set" >> $GITHUB_STEP_SUMMARY
+          fi

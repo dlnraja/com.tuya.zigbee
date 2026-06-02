@@ -1,0 +1,98 @@
+{
+  "name": {
+    "en": "Fingerprint Smart Lock",
+    "fr": "Serrure Empreinte Digitale",
+    "nl": "Vingerafdruk Slim Slot",
+    "de": "Fingerabdruck Smartlock",
+    "it": "Serratura Impronta Digitale",
+    "sv": "Fingeravtryckslås",
+    "no": "Fingeravtrykkslås",
+    "es": "Cerradura Huella Digital",
+    "da": "Fingeraftrykslås"
+  },
+  "class": "lock",
+  "capabilities": [
+    "locked",
+    "alarm_generic",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AA",
+      "AA",
+      "AA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_bse1xpui",
+      "_TZE200_bse1xpui",
+      "_TZE200_BSE1XPUI",
+      "_tze200_bwerwhpr",
+      "_TZE200_bwerwhpr",
+      "_TZE200_BWERWHPR",
+      "_tze200_vu0jdqnm",
+      "_TZE200_vu0jdqnm",
+      "_TZE200_VU0JDQNM",
+      "_tze200_xyhhcx94",
+      "_TZE200_xyhhcx94",
+      "_TZE200_XYHHCX94",
+      "_tze204_bwerwhpr",
+      "_TZE204_bwerwhpr",
+      "_TZE204_BWERWHPR",
+      "_tze204_pvvbommb",
+      "_TZE204_pvvbommb",
+      "_TZE204_PVVBOMMB",
+      "_tze204_vu0jdqnm",
+      "_TZE204_vu0jdqnm",
+      "_TZE204_VU0JDQNM",
+      "_tze204_xyhhcx94",
+      "_TZE204_xyhhcx94",
+      "_TZE204_XYHHCX94",
+      "_tz3000_vd43bbfq",
+      "_TZ3000_vd43bbfq",
+      "_TZ3000_VD43BBFQ"
+    ],
+    "productId": [
+      "TS0601_lock",
+      "TS0601"
+    ],
+    "learnmode": {
+      "instruction": {
+        "en": "Follow the lock's pairing instructions (usually hold * + # for 5 seconds)",
+        "fr": "Suivez les instructions d'appairage de la serrure"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/fingerprint_lock/assets/images/small.png",
+    "large": "/drivers/fingerprint_lock/assets/images/large.png",
+    "xlarge": "/drivers/fingerprint_lock/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

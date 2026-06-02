@@ -1,0 +1,363 @@
+{
+  "timestamp": "2026-01-10T05:33:00.389Z",
+  "phase": 2,
+  "summary": {
+    "forum_pages_analyzed": "1-46",
+    "forum_devices_found": 4,
+    "forum_issues_pending": 2,
+    "zigbee2mqtt_cross_referenced": 15,
+    "zigbee2mqtt_missing": 6,
+    "github_prs_analyzed": 2,
+    "github_devices_found": 2,
+    "phase2_high_priority": 3,
+    "phase2_medium_priority": 5,
+    "total_new_ids_phase2": 8
+  },
+  "sources": {
+    "forum": {
+      "analyzed_pages": "1-46",
+      "total_messages": "900+",
+      "devices_reported": [
+        {
+          "manufacturer": "eWeLink",
+          "model": "CK-TLSR8656-SS5-01(7014)",
+          "productId": "CK-TLSR8656-SS5-01",
+          "type": "climate_sensor",
+          "status": "ADDED",
+          "capabilities": [
+            "measure_temperature",
+            "measure_humidity",
+            "measure_battery"
+          ],
+          "clusters": [
+            1026,
+            1029
+          ],
+          "page": 42
+        },
+        {
+          "manufacturer": "_TZE204_81yrt3lo",
+          "model": "TS0601",
+          "productId": "PJ-1203A",
+          "type": "power_meter",
+          "status": "ADDED",
+          "capabilities": [
+            "measure_power",
+            "measure_voltage",
+            "measure_current",
+            "meter_power"
+          ],
+          "page": 44
+        },
+        {
+          "manufacturer": "_TZE204_ztqnh5cg",
+          "model": "TS0601",
+          "type": "presence_sensor_radar",
+          "issue": "Flow triggers not firing",
+          "status": "FIXED",
+          "fix_commit": "efcce36261",
+          "page": 45
+        },
+        {
+          "manufacturer": "Multiple",
+          "model": "ZG-204ZM",
+          "productId": "TS0601",
+          "type": "presence_sensor_radar",
+          "issue": "No motion detection, missing static_detection_distance",
+          "status": "INVESTIGATING",
+          "page": 43
+        }
+      ],
+      "issues_unresolved": [
+        {
+          "page": 45,
+          "user": "Cam",
+          "issue": "Smart switch no progress v5.6.434",
+          "status": "NEED_INFO",
+          "action": "Request diagnostic log + manufacturer ID"
+        },
+        {
+          "page": 43,
+          "user": "blutch32",
+          "issue": "Unknown device from image",
+          "status": "NEED_INFO",
+          "action": "Waiting user response on model"
+        }
+      ]
+    },
+    "zigbee2mqtt": {
+      "devices_cross_referenced": [
+        {
+          "id": "_TZE204_qasjif9e",
+          "model": "TS0225",
+          "type": "presence",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZE284_sxm7l9xa",
+          "model": "TS0601",
+          "type": "presence",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_msl6wxkp",
+          "model": "TS0202",
+          "type": "motion",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_otvn6y0a",
+          "model": "TS0202",
+          "type": "motion",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_26fmupbb",
+          "model": "TS0203",
+          "type": "contact",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_oxslv1c9",
+          "model": "TS0203",
+          "type": "contact",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZE200_yvjc5cjn",
+          "model": "TS0201",
+          "type": "climate",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZE204_yvjc5cjn",
+          "model": "TS0201",
+          "type": "climate",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_vsn4qal7",
+          "model": "TS011F",
+          "type": "plug",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_8bxrzyxz",
+          "model": "TS011F",
+          "type": "plug",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_kyakwbf8",
+          "model": "TS0207",
+          "type": "water_leak",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_tgddllx4",
+          "model": "TS0001",
+          "type": "switch",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZ3000_lupfd8bq",
+          "model": "TS0011",
+          "type": "switch",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZE200_fctwhugx",
+          "model": "TS0601",
+          "type": "curtain",
+          "status": "ADDED"
+        },
+        {
+          "id": "_TZE204_fctwhugx",
+          "model": "TS0601",
+          "type": "curtain",
+          "status": "ADDED"
+        }
+      ],
+      "missing_devices": [
+        {
+          "id": "_TZE200_pay2byax",
+          "model": "TS0601",
+          "type": "thermostat",
+          "priority": "high"
+        },
+        {
+          "id": "_TZE204_aoclfnxz",
+          "model": "TS0601",
+          "type": "switch_4gang",
+          "priority": "high"
+        },
+        {
+          "id": "_TZ3000_zmy4lslw",
+          "model": "TS0505B",
+          "type": "bulb_rgbw",
+          "priority": "medium"
+        },
+        {
+          "id": "_TZ3000_j4gg6d1b",
+          "model": "TS011F",
+          "type": "plug_usb",
+          "priority": "medium"
+        },
+        {
+          "id": "_TZE200_sgpeacqp",
+          "model": "TS0601",
+          "type": "radiator_valve",
+          "priority": "high"
+        },
+        {
+          "id": "_TZ3000_kgvamgxs",
+          "model": "TS0044",
+          "type": "scene_switch_4",
+          "priority": "medium"
+        }
+      ]
+    },
+    "github": {
+      "reference_repo": "JohanBendz/com.tuya.zigbee",
+      "pull_requests": [
+        {
+          "number": 1171,
+          "title": "Add EweLink Tuya (SQ510A) water leak detector",
+          "author": "semolex",
+          "date": "2025-03-05",
+          "status": "open",
+          "relevance": "eWeLink manufacturer support"
+        },
+        {
+          "number": 1166,
+          "title": "Add support for Tuya PIR sensor TS0202 / _TZ3000_c8ozah8n",
+          "author": "chernals",
+          "date": "2025-02-18",
+          "status": "open",
+          "device_id": "_TZ3000_c8ozah8n"
+        }
+      ],
+      "closed_issues_with_solutions": [
+        {
+          "title": "Device Request - GIRIER Tuya Smart ZigBee",
+          "number": 1187,
+          "solution": "Fixed with commit #1188",
+          "learning": "GIRIER manufacturer pattern"
+        }
+      ],
+      "devices_from_issues": [
+        {
+          "id": "_TZ3000_c8ozah8n",
+          "model": "TS0202",
+          "type": "motion",
+          "status": "PENDING"
+        },
+        {
+          "id": "SQ510A",
+          "manufacturer": "eWeLink",
+          "type": "water_leak",
+          "status": "PENDING"
+        }
+      ]
+    },
+    "patterns": {
+      "new_manufacturers": [
+        "eWeLink",
+        "GIRIER",
+        "SQ510A"
+      ],
+      "variant_patterns": [
+        {
+          "base": "_TZE200_",
+          "variant": "_TZE204_",
+          "note": "Firmware variants"
+        },
+        {
+          "pattern": "case_sensitivity",
+          "note": "Already normalized in Phase 1"
+        }
+      ]
+    }
+  },
+  "enrichment": {
+    "high_priority": [
+      {
+        "driver": "thermostat_tuya_dp",
+        "ids": [
+          "_TZE200_PAY2BYAX"
+        ],
+        "reason": "Z2M supported, user requests"
+      },
+      {
+        "driver": "switch_4gang",
+        "ids": [
+          "_TZE204_AOCLFNXZ"
+        ],
+        "reason": "Z2M supported, popular device"
+      },
+      {
+        "driver": "radiator_valve",
+        "ids": [
+          "_TZE200_SGPEACQP"
+        ],
+        "reason": "Z2M supported, heating season"
+      }
+    ],
+    "github_devices": [
+      {
+        "driver": "motion_sensor",
+        "ids": [
+          "_TZ3000_C8OZAH8N"
+        ],
+        "reason": "GitHub PR #1166"
+      },
+      {
+        "driver": "water_leak_sensor",
+        "ids": [
+          "EWELINK"
+        ],
+        "reason": "GitHub PR #1171, eWeLink manufacturer"
+      }
+    ],
+    "medium_priority": [
+      {
+        "driver": "bulb_rgbw",
+        "ids": [
+          "_TZ3000_ZMY4LSLW"
+        ],
+        "reason": "Z2M supported"
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "ids": [
+          "_TZ3000_J4GG6D1B"
+        ],
+        "reason": "Z2M supported, USB variant"
+      },
+      {
+        "driver": "scene_switch_4",
+        "ids": [
+          "_TZ3000_KGVAMGXS"
+        ],
+        "reason": "Z2M supported, TS0044 variant"
+      }
+    ]
+  },
+  "recommendations": {
+    "immediate": [
+      "Ajouter 6 IDs high priority (thermostat, switch_4gang, radiator_valve)",
+      "Corriger ZG-204ZM static_detection_distance issue",
+      "Follow-up forum users (Cam smart switch, blutch32 device)"
+    ],
+    "short_term": [
+      "Ajouter 5 IDs medium priority (bulb, usb, scene_switch)",
+      "Process GitHub PR devices (_TZ3000_c8ozah8n, eWeLink SQ510A)",
+      "Sync avec Z2M database (monthly)"
+    ],
+    "long_term": [
+      "Automated Z2M sync script",
+      "GitHub issues monitoring webhook",
+      "Forum scraping automation"
+    ]
+  }
+}

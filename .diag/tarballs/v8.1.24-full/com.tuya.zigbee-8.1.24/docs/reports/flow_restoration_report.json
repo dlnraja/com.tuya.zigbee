@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-12-29T01:22:47.895Z",
+  "results": {
+    "restored": 61,
+    "conservativelyFixed": 0,
+    "duplicatesFound": 0,
+    "duplicatesResolved": 0
+  },
+  "approach": "conservative_restoration",
+  "duplicatesDetected": 0,
+  "nextActions": "ready_for_validation"
+}

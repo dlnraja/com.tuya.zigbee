@@ -1,0 +1,68 @@
+{
+  "name": {
+    "en": "Outdoor Light Sensor",
+    "fr": "Capteur de Luminosité Extérieur",
+    "nl": "Buitenlicht Sensor",
+    "de": "Außen Lichtsensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_luminance",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_luminance": {
+      "title": {
+        "en": "Luminance",
+        "fr": "Luminosité"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3210_snzbbgvi",
+      "_TZ3210_snzbbgvi",
+      "_TZ3210_SNZBBGVI"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0222"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/light_sensor_outdoor/assets/images/small.png",
+    "large": "/drivers/light_sensor_outdoor/assets/images/large.png",
+    "xlarge": "/drivers/light_sensor_outdoor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450",
+      "AAA"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

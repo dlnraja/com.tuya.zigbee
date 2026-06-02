@@ -1,0 +1,24 @@
+{
+  "ts": "2026-05-13T04:07:28.490Z",
+  "ghCalls": 120,
+  "totalFPs": 99,
+  "newFPs": 6,
+  "researched": 1,
+  "implemented": 0,
+  "results": [
+    {
+      "fp": "_TZE204_81yrt3l",
+      "driver": "power_meter",
+      "confidence": 0,
+      "pidsFromIssue": [
+        "TS0601"
+      ],
+      "discoveredPIDs": [],
+      "variants": 2,
+      "actions": [],
+      "sources": [
+        "dlnraja/com.tuya.zigbee#318 (issue)"
+      ]
+    }
+  ]
+}

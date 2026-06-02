@@ -1,0 +1,431 @@
+{
+  "id": "dimmer_ts110e",
+  "name": {
+    "en": "Tuya Dimmer Module TS110E",
+    "fr": "Module variateur Tuya TS110E",
+    "nl": "Tuya dimmermodule TS110E",
+    "de": "Tuya Dimmermodul TS110E",
+    "es": "MÃ³dulo regulador Tuya TS110E"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/dimmer_ts110e/assets/images/large.png",
+    "small": "/drivers/dimmer_ts110e/assets/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  },
+  "settings": [
+    {
+      "id": "minBrightness",
+      "type": "number",
+      "label": {
+        "en": "Minimum Brightness",
+        "fr": "Luminosité Minimale"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 1000
+    },
+    {
+      "id": "maxBrightness",
+      "type": "number",
+      "label": {
+        "en": "Maximum Brightness",
+        "fr": "Luminosité Maximale"
+      },
+      "value": 1000,
+      "min": 1,
+      "max": 1000
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "EmpÃªche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons àaction unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_0dumfk2z",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_0DUMFK2Z",
+      "_tz3000_4fsgukof",
+      "_TZ3000_4fsgukof",
+      "_TZ3000_4FSGUKOF",
+      "_tz3000_wr2ucaj9",
+      "_TZ3000_wr2ucaj9",
+      "_TZ3000_WR2UCAJ9",
+      "_tz3000_zsh6uat3",
+      "_TZ3000_zsh6uat3",
+      "_TZ3000_ZSH6UAT3",
+      "_tz3000_pkfazisv",
+      "_TZ3000_pkfazisv",
+      "_TZ3000_PKFAZISV",
+      "_tz3000_2izubafb",
+      "_TZ3000_2izubafb",
+      "_TZ3000_2IZUBAFB",
+      "_tz3000_j0gtlepx",
+      "_TZ3000_j0gtlepx",
+      "_TZ3000_J0GTLEPX",
+      "_tz3000_iivsrikg",
+      "_TZ3000_iivsrikg",
+      "_TZ3000_IIVSRIKG",
+      "_tz3000_v1srfw9x",
+      "_TZ3000_v1srfw9x",
+      "_TZ3000_V1SRFW9X",
+      "_tz3000_gb5gaeca",
+      "_TZ3000_gb5gaeca",
+      "_TZ3000_GB5GAECA",
+      "_tz3210_r0xgkft5",
+      "_TZ3210_r0xgkft5",
+      "_TZ3210_R0XGKFT5",
+      "_tz3210_umi6vbsz",
+      "_TZ3210_umi6vbsz",
+      "_TZ3210_UMI6VBSZ",
+      "_tz3210_p9ao60da",
+      "_TZ3210_p9ao60da",
+      "_TZ3210_P9AO60DA",
+      "_tz3210_z1vlyufu",
+      "_TZ3210_z1vlyufu",
+      "_TZ3210_Z1VLYUFU",
+      "_tz3210_hxtfthp5",
+      "_TZ3210_hxtfthp5",
+      "_TZ3210_HXTFTHP5",
+      "_tz3000_quqaeew6",
+      "_TZ3000_quqaeew6",
+      "_TZ3000_QUQAEEW6",
+      "_tz3000_th6zqqy6",
+      "_TZ3000_th6zqqy6",
+      "_TZ3000_TH6ZQQY6",
+      "_tz3000_wr6g6olr",
+      "_TZ3000_wr6g6olr",
+      "_TZ3000_WR6G6OLR",
+      "_tz3000_q50zhdsc",
+      "_TZ3000_q50zhdsc",
+      "_TZ3000_Q50ZHDSC",
+      "_tz3000_qd7hej8u",
+      "_TZ3000_qd7hej8u",
+      "_TZ3000_QD7HEJ8U",
+      "_tz3000_bwlvyjwk",
+      "_TZ3000_bwlvyjwk",
+      "_TZ3000_BWLVYJWK",
+      "_tz3000_taspddvq",
+      "_TZ3000_taspddvq",
+      "_TZ3000_TASPDDVQ",
+      "_tz3210_sln7ah6r",
+      "_TZ3210_sln7ah6r",
+      "_TZ3210_SLN7AH6R",
+      "_tz3210_dn5higyl",
+      "_TZ3210_dn5higyl",
+      "_TZ3210_DN5HIGYL",
+      "_tz3210_hicxa0rh",
+      "_TZ3210_hicxa0rh",
+      "_TZ3210_HICXA0RH",
+      "_tz3210_zbabx9wh",
+      "_TZ3210_zbabx9wh",
+      "_TZ3210_ZBABX9WH",
+      "_tz3210_c0s1xloa",
+      "_TZ3210_c0s1xloa",
+      "_TZ3210_C0S1XLOA",
+      "_tz3210_x13bu7za",
+      "_TZ3210_x13bu7za",
+      "_TZ3210_X13BU7ZA",
+      "_tz3210_cieijuw1",
+      "_TZ3210_cieijuw1",
+      "_TZ3210_CIEIJUW1",
+      "_tz3000_7hcgjxpc",
+      "_TZ3000_7hcgjxpc",
+      "_TZ3000_7HCGJXPC",
+      "_tz3210_rcggc0ys",
+      "_TZ3210_rcggc0ys",
+      "_TZ3210_RCGGC0YS",
+      "_tz3210_ljoasixl",
+      "_TZ3210_ljoasixl",
+      "_TZ3210_LJOASIXL",
+      "_tz3210_wxa85bwk",
+      "_TZ3210_wxa85bwk",
+      "_TZ3210_WXA85BWK",
+      "_tz3210_s9lumfhn",
+      "_TZ3210_s9lumfhn",
+      "_TZ3210_S9LUMFHN",
+      "_tz3210_jjqdqxfq",
+      "_TZ3210_jjqdqxfq",
+      "_TZ3210_JJQDQXFQ",
+      "_tz3210_dwzfzfjc",
+      "_TZ3210_dwzfzfjc",
+      "_TZ3210_DWZFZFJC",
+      "_tz3210_ifga63rg",
+      "_TZ3210_ifga63rg",
+      "_TZ3210_IFGA63RG",
+      "_tz3210_jicmoite",
+      "_TZ3210_jicmoite",
+      "_TZ3210_JICMOITE",
+      "_tz3210_zrvxvydd",
+      "_TZ3210_zrvxvydd",
+      "_TZ3210_ZRVXVYDD",
+      "_tzb210_endmggws",
+      "_TZB210_endmggws",
+      "_TZB210_ENDMGGWS",
+      "_tzb210_6eed09b9",
+      "_TZB210_6eed09b9",
+      "_TZB210_6EED09B9",
+      "_tzb210_rwy5hexp",
+      "_TZB210_rwy5hexp",
+      "_TZB210_RWY5HEXP",
+      "_tzb210_lnnkh3f9",
+      "_TZB210_lnnkh3f9",
+      "_TZB210_LNNKH3F9",
+      "_tz3210_jd3z4yig",
+      "_TZ3210_jd3z4yig",
+      "_TZ3210_JD3Z4YIG",
+      "_tz3210_r5afgmkl",
+      "_TZ3210_r5afgmkl",
+      "_TZ3210_R5AFGMKL",
+      "_tz3210_mja6r5ix",
+      "_TZ3210_mja6r5ix",
+      "_TZ3210_MJA6R5IX",
+      "_tzb210_zmppwawa",
+      "_TZB210_zmppwawa",
+      "_TZB210_ZMPPWAWA",
+      "_tz3210_iw0zkcu8",
+      "_TZ3210_iw0zkcu8",
+      "_TZ3210_IW0ZKCU8",
+      "_tz3210_it1u8ahz",
+      "_TZ3210_it1u8ahz",
+      "_TZ3210_IT1U8AHZ",
+      "_tz3210_bfwvfyx1",
+      "_TZ3210_bfwvfyx1",
+      "_TZ3210_BFWVFYX1",
+      "_tz3210_778drfdt",
+      "_TZ3210_778drfdt",
+      "_TZ3210_778DRFDT",
+      "_tz3000_j2w1dw29",
+      "_TZ3000_j2w1dw29",
+      "_TZ3000_J2W1DW29",
+      "_tz3000_nosnx7im",
+      "_TZ3000_nosnx7im",
+      "_TZ3000_NOSNX7IM",
+      "_tz3000_7dcddnye",
+      "_TZ3000_7dcddnye",
+      "_TZ3000_7DCDDNYE",
+      "_tz3000_nbnmw9nc",
+      "_TZ3000_nbnmw9nc",
+      "_TZ3000_NBNMW9NC",
+      "_tz3210_dxroobu3",
+      "_TZ3210_dxroobu3",
+      "_TZ3210_DXROOBU3",
+      "_tz3210_dbilpfqk",
+      "_TZ3210_dbilpfqk",
+      "_TZ3210_DBILPFQK",
+      "_tz3000_juq7i1fr",
+      "_TZ3000_juq7i1fr",
+      "_TZ3000_JUQ7I1FR",
+      "_tz3000_tj4pwzzm",
+      "_TZ3000_tj4pwzzm",
+      "_TZ3000_TJ4PWZZM",
+      "_tz3000_ssp0maqm",
+      "_TZ3000_ssp0maqm",
+      "_TZ3000_SSP0MAQM",
+      "_tz3000_p3fph1go",
+      "_TZ3000_p3fph1go",
+      "_TZ3000_P3FPH1GO",
+      "_tz3000_9r5jaajv",
+      "_TZ3000_9r5jaajv",
+      "_TZ3000_9R5JAAJV",
+      "_tz3000_g1glzzfk",
+      "_TZ3000_g1glzzfk",
+      "_TZ3000_G1GLZZFK",
+      "_tz3210_frm6149r",
+      "_TZ3210_frm6149r",
+      "_TZ3210_FRM6149R",
+      "_tz3210_jtifm80b",
+      "_TZ3210_jtifm80b",
+      "_TZ3210_JTIFM80B",
+      "_tz3210_xwqng7ol",
+      "_TZ3210_xwqng7ol",
+      "_TZ3210_XWQNG7OL",
+      "_tz3210_c2iwpxf1",
+      "_TZ3210_c2iwpxf1",
+      "_TZ3210_C2IWPXF1",
+      "_tz3210_09hzmirw",
+      "_TZ3210_09hzmirw",
+      "_TZ3210_09HZMIRW",
+      "_tz3000_n",
+      "_TZ3000_n",
+      "_TZ3000_N"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode.",
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et éteignez l'appareil cinq fois pour passer en mode appairage."
+      }
+    }
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

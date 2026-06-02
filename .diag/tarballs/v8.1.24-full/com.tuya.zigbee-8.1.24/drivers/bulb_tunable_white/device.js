@@ -1,0 +1,56 @@
+'use strict';
+const LightBase = require('../../lib/devices/UnifiedLightBase');
+
+/**
+ * Tunable White Bulb Device - v5.3.64 SIMPLIFIED
+ */
+class TunableWhiteBulbDevice extends LightBase {
+
+  get mainsPowered() { return true; }
+
+  get lightCapabilities() {
+    return ['onoff', 'dim', 'light_temperature'];
+  }
+
+  get dpMappings() {
+    return {
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      2: { capability: 'dim', divisor: 1000, min: 0, max: 1 },
+      3: { capability: 'light_temperature', divisor: 1000, min: 0, max: 1 }
+    };
+  }
+
+  async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+
+      // --- Attribute Reporting Configuration ---
+      try {
+        await this.configureAttributeReporting([
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 2,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
+      } catch (err) {
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
+      }
+
+      this.log('[BULB] ✅ Tunable white bulb ready');
+    }, 'onNodeInit');
+  }
+
+  onDeleted() {
+    this.log('Device deleted, cleaning up');
+    if (super.onDeleted) {super.onDeleted();}
+  }
+}
+
+module.exports = TunableWhiteBulbDevice;

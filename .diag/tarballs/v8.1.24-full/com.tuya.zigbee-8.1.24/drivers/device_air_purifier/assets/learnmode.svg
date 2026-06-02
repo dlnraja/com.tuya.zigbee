@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="45" r="30" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <circle cx="50" cy="45" r="25" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+  <text x="50" y="50" text-anchor="middle" font-size="14" fill="#2196F3" font-weight="bold">21°</text>
+  <circle cx="50" cy="80" r="4" fill="#FF5722"/>
+  <text x="50" y="95" text-anchor="middle" font-size="7" fill="#666">Hold reset 5s</text>
+</svg>

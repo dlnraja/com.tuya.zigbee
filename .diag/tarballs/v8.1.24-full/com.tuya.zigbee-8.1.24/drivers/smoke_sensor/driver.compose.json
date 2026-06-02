@@ -1,0 +1,59 @@
+{
+  "id": "smoke_sensor",
+  "name": {
+    "en": "Smoke Sensor"
+  },
+  "class": "sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "alarm_smoke",
+    "alarm_battery",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR123A"
+    ]
+  },
+  "images": {
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_m9skfctm",
+      "_TZE200_m9skfctm",
+      "_TZE200_M9SKFCTM",
+      "_tze200_rccxox8p",
+      "_TZE200_rccxox8p",
+      "_TZE200_RCCXOX8P"
+    ],
+    "productId": [
+      "TS0205",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280
+        ],
+        "bindings": [
+          0,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold down test switch until the LED blinks green."
+      }
+    }
+  }
+}

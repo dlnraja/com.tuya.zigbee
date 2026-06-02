@@ -1,0 +1,141 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
+name: "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"
+
+on:
+  schedule:
+    - cron: '0 2 * * 0'    # Full overnight scan at 02:00 UTC every Sunday
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no commit/publish)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+  SHADOW_MODE: "true"
+  PIPELINE_STABILITY: "PRODUCTION_READY"
+  GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
+  OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+  NVIDIA_API_KEY: "${{ secrets.NVIDIA_API_KEY }}"
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+
+jobs:
+  audit_and_intel:
+    name: "🔍 AUDIT & INTEL"
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: 🛡️ Signature Audit
+        run: node scripts/ci/signature-audit.js
+      - name: App stats
+        id: stats
+        run: |
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          echo "drivers=$D" >> $GITHUB_OUTPUT
+          echo "fps=$F" >> $GITHUB_OUTPUT
+      - name: "GitHub Triage"
+        run: |
+          node .github/scripts/github-issue-manager.js || true
+          node .github/scripts/github-scanner.js || true
+      - name: "Community Intel Ingestion"
+        run: node scripts/maintenance/fetch-community-intel.js || true
+      - name: "🌐 Universal URL Audit"
+        run: node .github/scripts/challenge-all-urls.js || true
+      - name: "🧠 Intelligent Enrichment"
+        run: node .github/scripts/ai-enrichment-engine.js || true
+
+  repair_and_stabilize:
+    name: "🛠️ REPAIR & STABILIZE"
+    needs: audit_and_intel
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: "🌌 Orchestrated Self-Healing (Intelligent Engine)"
+        run: |
+          node scripts/maintenance/INTELLIGENT_ENGINE_STABILIZER.js
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+      - name: "🛡️ Strict Syntax Guard"
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
+      - name: "🧪 SDK v3 Compliance Check"
+        run: node scripts/maintenance/sdk3-smart-linter.js
+      - name: "🖼️ Image Optimization"
+        run: |
+          node scripts/maintenance/ensure-500x500-images.js
+          node scripts/maintenance/clean-images.js
+      - name: "Documentation Update"
+        run: |
+          node .github/scripts/generate-device-finder.js || true
+          node .github/scripts/generate-readme.js || true
+
+  validate_and_publish:
+    name: "🚀 VALIDATE & PUBLISH"
+    needs: repair_and_stabilize
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: "🚩 Commit Fixes"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A drivers/ lib/ .github/state/ docs/ app.json package.json
+          git commit -m "🤖 [Unified Engine] v$(node -p "require('./app.json').version") stabilization sweep [skip ci]" || echo "No changes"
+          git push origin master --force || echo "Push failed"
+      - name: 🗜️ Compact app.json (anti-Athom-5MB-limit)
+        uses: ./.github/actions/compact-app-json
+      - name: "🛠️ Homey Validate"
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+      - name: "🚀 Homey Publish"
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false')
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      - name: "🎉 Create Release"
+        if: success() && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'))
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,44 @@
+'use strict';
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
+
+class CeilingFanDevice extends UnifiedLightBase {
+  get mainsPowered() { return true; }
+  get lightCapabilities() { return ['onoff', 'dim']; }
+
+  get dpMappings() {
+    return {
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      3: { capability: 'dim', divisor: 100 }, // Fan speed 0-100
+      9: { capability: 'onoff.light', transform: (v) => v === 1 }
+    };
+  }
+
+  async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
+    await super.onNodeInit({ zclNode });this.log('[FAN]  Ready');
+  }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
+}
+module.exports = CeilingFanDevice;

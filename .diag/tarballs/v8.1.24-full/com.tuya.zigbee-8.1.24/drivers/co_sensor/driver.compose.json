@@ -1,0 +1,82 @@
+{
+  "name": {
+    "en": "CO Sensor",
+    "fr": "Capteur CO",
+    "nl": "CO Sensor",
+    "de": "CO Sensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_co",
+    "measure_battery",
+    "measure_co",
+    "alarm_generic",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2",
+      "CR123A",
+      "AAA"
+    ]
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_NBM3PJII",
+      "_TZ3000_nbm3pjii",
+      "_TZE200_AYCXWIAU",
+      "_TZE200_PBDLRMFB",
+      "_TZE200_aycxwiau",
+      "_TZE200_pbdlrmfb",
+      "_TZE200_rjxqso4a",
+      "_TZE204_PBDLRMFB",
+      "_TZE204_pbdlrmfb",
+      "_tz3000_nbm3pjii",
+      "_tze200_aycxwiau",
+      "_tze200_pbdlrmfb",
+      "_tze204_pbdlrmfb",
+      "_tz3000_nbm3pjii|TS0601_co",
+      "_tz3000_nbm3pjii|TS0601",
+      "_tze200_aycxwiau|TS0601_co",
+      "_tze200_aycxwiau|TS0601",
+      "_tze200_pbdlrmfb|TS0601_co",
+      "_tze200_pbdlrmfb|TS0601",
+      "_tze204_pbdlrmfb|TS0601_co",
+      "_tze204_pbdlrmfb|TS0601"
+    ],
+    "productId": [
+      "TS0601_co",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "/drivers/co_sensor/assets/images/small.png",
+    "large": "/drivers/co_sensor/assets/images/large.png",
+    "xlarge": "/drivers/co_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

@@ -78,5 +78,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(auto): nightly architectural hardening and stabilization [skip ci]"
-          branch: master
-          file_pattern: 'drivers/**/*.js lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'
+          branch: stable-v5
+          file_pattern: 'drivers/**/*.js lib/**/*.js app.json .ai/rules/* AI_INSTRUCTIONS.md docs/**/*.md'

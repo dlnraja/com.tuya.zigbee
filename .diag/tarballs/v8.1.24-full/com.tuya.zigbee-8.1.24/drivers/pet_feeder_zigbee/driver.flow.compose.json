@@ -1,0 +1,99 @@
+{
+  "triggers": [
+    {
+      "id": "pet_feeder_zigbee_feeding_completed",
+      "title": {
+        "en": "Feeding completed",
+        "fr": "Distribution terminée",
+        "nl": "Voeding voltooid",
+        "de": "Fütterung abgeschlossen"
+      },
+      "tokens": [
+        {
+          "name": "amount",
+          "type": "number",
+          "title": {
+            "en": "Amount",
+            "fr": "Quantité",
+            "nl": "Hoeveelheid",
+            "de": "Menge"
+          },
+          "example": 5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Feeding completed",
+        "fr": "Distribution terminée",
+        "nl": "Voeding voltooid",
+        "de": "Fütterung abgeschlossen"
+      }
+    },
+    {
+      "id": "pet_feeder_zigbee_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "pet_feeder_zigbee_is_on",
+      "title": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "pet_feeder_zigbee_feed",
+      "title": {
+        "en": "Feed",
+        "fr": "Nourrir",
+        "nl": "Voeden",
+        "de": "Füttern"
+      },
+      "args": [
+        {
+          "name": "amount",
+          "type": "number",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "title": {
+            "en": "Amount",
+            "fr": "Quantité",
+            "nl": "Hoeveelheid",
+            "de": "Menge"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Feed [[amount]]",
+        "fr": "Nourrir [[amount]]",
+        "nl": "Voeden [[amount]]",
+        "de": "Füttern [[amount]]"
+      }
+    }
+  ]
+}

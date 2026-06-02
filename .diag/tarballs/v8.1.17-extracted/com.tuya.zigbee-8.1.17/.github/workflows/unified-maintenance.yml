@@ -1,0 +1,74 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
+name: 🔩 Unified Maintenance Orchestrator
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Weekly at Midnight UTC (Monday)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: global-cicd
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  maintenance:
+    name: 🛡️ Fleet Maintenance Agent
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: 'npm'
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      
+      - name: ⚙️ Fleet Repair (Flows + Capabilities)
+        run: node scripts/maintenance/fleet-repair-flows.js
+        
+      - name: 🩹 Self-Healing (Manifests + Drivers)
+        run: node scripts/maintenance/master-self-heal.js
+        
+      - name: 🔍 ZCL/DP Signature Audit
+        run: node scripts/ci/signature-audit.js
+        
+      # - name: 🧹 PR/Issue Cleanup
+      #   run: node scripts/maintenance/auto-close-supported.js # Consolidated from standalone yml
+        
+      - name: 🔄 Stats & Metadata Update
+        run: node scripts/maintenance/update-readme-stats.js
+        
+      - name: Commit Maintenance Changes
+        run: |
+          git config user.name "unified-agent[bot]"
+          git config user.email "unified-agent@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "🤖 Unified Maintenance: Fleet self-repaired [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  sync:
+    name: 🔄 Global Ecosystem Sync
+    needs: maintenance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: 'npm'
+      - name: 🔄 Fingerprint Sync (Z2M/ZHA)
+        run: node scripts/maintenance/weekly-fingerprint-sync.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

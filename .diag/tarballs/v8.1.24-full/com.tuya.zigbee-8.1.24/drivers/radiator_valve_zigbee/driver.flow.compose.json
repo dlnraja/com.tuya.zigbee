@@ -1,0 +1,473 @@
+{
+  "triggers": [
+    {
+      "id": "radiator_valve_zigbee_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)",
+            "nl": "Temperatuur (°C)",
+            "de": "Temperatur (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target temperature (°C)",
+            "fr": "Température cible (°C)",
+            "nl": "Doeltemperatuur (°C)",
+            "de": "Zieltemperatur (°C)"
+          },
+          "example": 22
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_mode_changed",
+      "title": {
+        "en": "Mode changed",
+        "fr": "Mode changé",
+        "nl": "Modus gewijzigd",
+        "de": "Modus geändert"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode",
+            "nl": "Modus",
+            "de": "Modus"
+          },
+          "example": "auto"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Mode changed",
+        "fr": "Mode changé",
+        "nl": "Modus gewijzigd",
+        "de": "Modus geändert"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "radiator_valve_zigbee_is_on",
+      "title": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_mode_is",
+      "title": {
+        "en": "Mode !{{is|is not}}",
+        "fr": "Mode !{{est|n'est pas}}",
+        "nl": "Modus !{{is|is niet}}",
+        "de": "Modus !{{ist|ist nicht}}"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode",
+            "nl": "Modus",
+            "de": "Modus"
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto",
+                "nl": "Auto",
+                "de": "Auto"
+              }
+            },
+            {
+              "id": "manual",
+              "label": {
+                "en": "Manual",
+                "fr": "Manuel",
+                "nl": "Handmatig",
+                "de": "Manuell"
+              }
+            },
+            {
+              "id": "eco",
+              "label": {
+                "en": "Eco",
+                "fr": "Éco",
+                "nl": "Eco",
+                "de": "Eco"
+              }
+            },
+            {
+              "id": "boost",
+              "label": {
+                "en": "Boost",
+                "fr": "Boost",
+                "nl": "Boost",
+                "de": "Boost"
+              }
+            },
+            {
+              "id": "away",
+              "label": {
+                "en": "Away",
+                "fr": "Absent",
+                "nl": "Afwezig",
+                "de": "Abwesend"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt",
+                "nl": "Uit",
+                "de": "Aus"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Mode !{{is|is not}} [[mode]]",
+        "fr": "Mode !{{est|n'est pas}} [[mode]]",
+        "nl": "Modus !{{is|is niet}} [[mode]]",
+        "de": "Modus !{{ist|ist nicht}} [[mode]]"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_is_heating",
+      "title": {
+        "en": "!{{Is|Is not}} heating",
+        "fr": "!{{Chauffe|Ne chauffe pas}}",
+        "nl": "!{{Verwarmt|Verwarmt niet}}",
+        "de": "!{{Heizt|Heizt nicht}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "!{{Is|Is not}} heating",
+        "fr": "!{{Chauffe|Ne chauffe pas}}",
+        "nl": "!{{Verwarmt|Verwarmt niet}}",
+        "de": "!{{Heizt|Heizt nicht}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "radiator_valve_zigbee_set_target_temperature",
+      "title": {
+        "en": "Set target temperature to...",
+        "fr": "Régler la température cible à...",
+        "nl": "Doeltemperatuur instellen op...",
+        "de": "Zieltemperatur einstellen auf..."
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)",
+            "nl": "Temperatuur (°C)",
+            "de": "Temperatur (°C)"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set target temperature to... [[temperature]]",
+        "fr": "Régler la température cible à... [[temperature]]",
+        "nl": "Doeltemperatuur instellen op... [[temperature]]",
+        "de": "Zieltemperatur einstellen auf... [[temperature]]"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_set_mode",
+      "title": {
+        "en": "Set mode to...",
+        "fr": "Régler le mode sur...",
+        "nl": "Modus instellen op...",
+        "de": "Modus einstellen auf..."
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode",
+            "nl": "Modus",
+            "de": "Modus"
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto",
+                "nl": "Auto",
+                "de": "Auto"
+              }
+            },
+            {
+              "id": "manual",
+              "label": {
+                "en": "Manual",
+                "fr": "Manuel",
+                "nl": "Handmatig",
+                "de": "Manuell"
+              }
+            },
+            {
+              "id": "eco",
+              "label": {
+                "en": "Eco",
+                "fr": "Éco",
+                "nl": "Eco",
+                "de": "Eco"
+              }
+            },
+            {
+              "id": "boost",
+              "label": {
+                "en": "Boost",
+                "fr": "Boost",
+                "nl": "Boost",
+                "de": "Boost"
+              }
+            },
+            {
+              "id": "away",
+              "label": {
+                "en": "Away",
+                "fr": "Absent",
+                "nl": "Afwezig",
+                "de": "Abwesend"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt",
+                "nl": "Uit",
+                "de": "Aus"
+              }
+            }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set mode to... [[mode]]",
+        "fr": "Régler le mode sur... [[mode]]",
+        "nl": "Modus instellen op... [[mode]]",
+        "de": "Modus einstellen auf... [[mode]]"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_set_child_lock",
+      "title": {
+        "en": "Set child lock",
+        "fr": "Activer verrouillage enfant",
+        "nl": "Kinderslot instellen",
+        "de": "Kindersicherung einstellen"
+      },
+      "args": [
+        {
+          "name": "enabled",
+          "type": "checkbox",
+          "title": {
+            "en": "Enabled",
+            "fr": "Activé",
+            "nl": "Ingeschakeld",
+            "de": "Aktiviert"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set child lock [[enabled]]",
+        "fr": "Activer verrouillage enfant [[enabled]]",
+        "nl": "Kinderslot instellen [[enabled]]",
+        "de": "Kindersicherung einstellen [[enabled]]"
+      }
+    },
+    {
+      "id": "radiator_valve_zigbee_set_window_detection",
+      "title": {
+        "en": "Set window detection",
+        "fr": "Activer détection fenêtre",
+        "nl": "Raamdetectie instellen",
+        "de": "Fenstererkennung einstellen"
+      },
+      "args": [
+        {
+          "name": "enabled",
+          "type": "checkbox",
+          "title": {
+            "en": "Enabled",
+            "fr": "Activé",
+            "nl": "Ingeschakeld",
+            "de": "Aktiviert"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set window detection [[enabled]]",
+        "fr": "Activer détection fenêtre [[enabled]]",
+        "nl": "Raamdetectie instellen [[enabled]]",
+        "de": "Fenstererkennung einstellen [[enabled]]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+# HOMEYIGNORE - Tuya Zigbee Master Branch
+# Based on working stable-v5 pattern.
+# CRITICAL RULE: NO *.json wildcard — it breaks runtime deps.
+# CRITICAL RULE: NO *.md wildcard at root — Homey requires README.md.
+# Only exclude specific dev/CI files, NEVER use broad wildcards.
+
+# === CI/CD & Dev Infrastructure ===
+.github/
+.githooks/
+.git/
+.windsurf/
+.vscode/
+.idea/
+.vs/
+.agents/
+scripts/
+docs/
+references/
+backup/
+project-data/
+data/community-sync/
+data/temp_desktop_cleanup/
+data/intel-harvest/
+data/archive/
+reimplementation_gateway/
+diagnostics/
+reports/
+logs/
+.archive/
+skills/
+scratch/
+tmp_artifacts/
+screenshots/
+
+# === Dev config files ===
+.cascade
+.windsurfrules
+.cursorrules
+.clinerule
+.clinerules
+.gemini/
+.nycrc
+.prettierrc
+.prettierrc.*
+.prettierignore
+.eslintrc.*
+eslint.config.js
+jest.config.js
+karma.conf.js
+babel.config.js
+webpack.config.js
+rollup.config.js
+vite.config.js
+.env
+.env.*
+config.local.js
+secrets.json
+credentials.json
+
+# === Build/cache/deps ===
+node_modules/
+.npm/
+.nyc_output/
+.homeybuild/
+build/
+dist/
+out/
+target/
+temp/
+tmp/
+package-lock.json
+.cache/
+.tmp/
+
+# === Root-level dev artifacts (CRITICAL — causing Processing failed via 65MB+ archive) ===
+stable_app.json
+full_diff.txt
+packed_files.txt
+packed_files_details.txt
+*.backup
+*.backup2
+repomix-*.md
+repomix-*.txt
+
+# === Large dev data JSON files (NOT needed at runtime) ===
+data/bug-fixes-report.json
+data/bug-patterns.json
+data/COMMUNITY_ENRICHMENT_REPORT.json
+data/PHASE2_ENRICHMENT_REPORT.json
+data/full-rules-fix-report.json
+data/reference-urls.json
+data/community-intel.json
+data/universal_tuya_urls.json
+data/rapport_data.json
+MANUFACTURER_IDS_AUDIT.json
+**/MANUFACTURER_IDS_AUDIT.json
+*.analysis.json
+
+# === Large lib/data JSON files (dev-only, NOT imported at runtime) ===
+lib/data/categorized_devices.json
+lib/data/enrichment_data.json
+lib/data/fingerprints_raw.json
+lib/data/fingerprint_map.json
+lib/data/generated_fingerprints.json
+lib/data/model_manufacturer_map.json
+lib/data/new_fingerprints.js
+lib/data/new_fingerprints.json
+lib/data/smart_fingerprints.js
+lib/data/z2m_devices.json
+lib/data/z2m_devices_full.json
+
+# === Dev-only engine (not imported by runtime code) ===
+lib/tuya-dp-engine/
+
+# === Documentation & AI context files (not needed at runtime) ===
+# NOTE: README.txt IS REQUIRED by SDK (App.js:1427 throws if missing)
+# NOTE: README.*.txt ARE required for multilingual App Store descriptions
+CHANGELOG.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+LICENSE
+README.md
+PROJECT_INDEX.md
+AI_CONTEXT_MANDATE.md
+GLOBAL_IMPROVEMENT_PLAN.md
+*.md
+!README.txt
+!README.nl.txt
+!README.de.txt
+!README.fr.txt
+# README.txt            ← DO NOT EXCLUDE — REQUIRED BY ATHOM SDK
+# README.nl.txt         ← DO NOT EXCLUDE — App Store NL description
+# README.de.txt         ← DO NOT EXCLUDE — App Store DE description
+# README.fr.txt         ← DO NOT EXCLUDE — App Store FR description
+drivers/**/README.txt
+
+# === Root dev scripts (non-runtime) ===
+_*.js
+_*.py
+*.ps1
+*.cmd
+*.bat
+*.patch
+*.py
+*.pdf
+
+# === Data files not needed ===
+*.csv
+**/*.csv
+*.log
+*.tmp
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bak
+*.old
+*.orig
+*.swp
+*.swo
+*~
+backup-*
+**/*.backup*
+**/*.bak
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Test files ===
+test/
+tests/
+spec/
+*.test.js
+*.spec.js
+
+# === Assets NOT needed for runtime ===
+assets/branding/
+assets/templates/
+assets/README.md
+
+# === Learnmode SVGs (optional) ===
+**/learnmode.svg
+
+# === Driver xlarge.png (optional, NOT required by Athom store — reduces archive ~1.5MB) ===
+# small.png (75x75) and large.png (500x500) are REQUIRED
+# xlarge.png is optional and can be large (300-400KB each x 412 drivers = 100MB+ risk)
+drivers/**/assets/images/xlarge.png
+
+# === Root dev artifact text/diff files ===
+*.txt
+!README.txt
+!README.nl.txt
+!README.de.txt
+!README.fr.txt
+
+# === RUNTIME FILES — DO NOT EXCLUDE (required for App Store & Runtime) ===
+# app.json                          ← Homey manifest
+# package.json                      ← Node package
+# .homeychangelog.json              ← Store changelog
+# driver-mapping-database.json      ← DriverMappingLoader.js
+# data/fingerprints.json            ← DeviceFingerprintDB.js (lazy-loaded)
+# lib/tuya/fingerprints.json        ← tuya-engine/index.js:14
+# lib/tuya/profiles.json            ← tuya-engine/index.js:15
+# lib/tuya/capability-map.json      ← tuya-dp-engine
+# locales/*.json                    ← lib/util/index.js:131
+# assets/icon.svg                   ← Athom SDK3 App.js:618 (iconHash)
+# assets/images/small.png           ← Required
+# assets/images/large.png           ← Required
+# drivers/*/assets/icon.svg         ← Required per driver
+# drivers/*/assets/images/small.png ← Required
+# drivers/*/assets/images/large.png ← Required
