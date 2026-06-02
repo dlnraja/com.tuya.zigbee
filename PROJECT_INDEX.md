@@ -737,7 +737,13 @@ Our codebase is protected by a state-of-the-art **9-Layer Quality Gateway** run 
 
 ---
 
-## 21. LOCAL TUYA WIFI ARCHITECTURE
+## 21. LOCAL TUYA WIFI ARCHITECTURE (UNIFIED IN MASTER)
+
+> **🚨 CRITICAL AI ARCHITECTURE RULE: THE WIFI APP IS DEAD. DO NOT SPLIT IT.**
+> The standalone `tuya_wifi_local` repository/app has been PERMANENTLY DELETED. 
+> Master now unifies BOTH Zigbee and WiFi. The 57 legacy WiFi drivers were intelligently merged into 10 `wifi_unified_*` drivers, solving the 5MB Athom limit error forever.
+> **DO NOT** attempt to delete WiFi drivers from `master` to save space. 
+> **DO NOT** attempt to sync to a separate WiFi app. There are only two apps now: `master` (beta) and `stable-v5` (stable).
 
 Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection and Execution Loop** to support robust operation on Homey Pro without cloud latency:
 

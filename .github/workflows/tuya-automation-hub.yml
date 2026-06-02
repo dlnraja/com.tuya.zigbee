@@ -148,24 +148,6 @@ jobs:
           TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/manufacturer-scraper.js
-      - name: Run Tuya WiFi Local Automation Deep Researcher
-        continue-on-error: true
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || '' }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || '' }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY || '' }}
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
-          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-          GEMINI_MAX_TIER: "1"
-        run: node .github/scripts/tuya-wifi-local-researcher.js
       - name: Run Diagnostic Auto Resolver & Crash Fixer
         continue-on-error: true
         env:

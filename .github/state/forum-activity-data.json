@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-05-26T19:34:16.630Z",
+  "timestamp": "2026-06-01T23:22:26.310Z",
   "username": "dlnraja",
   "summary": {
-    "postCount": 694,
+    "postCount": 698,
     "topicCount": 1,
     "likes": 73,
-    "likesReceived": 235,
+    "likesReceived": 250,
     "topTopics": [
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1971
+        "posts": 1986
       },
       {
         "id": 26439,
         "title": "[APP][Pro] Tuya Zigbee App",
-        "posts": 1170
+        "posts": 1171
       }
     ],
     "topReplies": [
@@ -36,12 +36,12 @@
         "postNum": 483
       },
       {
-        "topicId": 26439,
-        "postNum": 5271
+        "topicId": 140352,
+        "postNum": 2052
       },
       {
-        "topicId": 140352,
-        "postNum": 1973
+        "topicId": 26439,
+        "postNum": 5271
       }
     ]
   },
@@ -49,13 +49,49 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1971,
-      "views": 19408,
-      "lastPosted": "2026-05-25T20:16:52.256Z",
+      "posts": 1986,
+      "views": 20071,
+      "lastPosted": "2026-06-01T21:46:52.354Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 2058,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "New version released \nI have found the publish issue ( related of number of drivers , I have merged some drivers to unified one ) and now working of fixing all issues forums users , pr , and forums messages . So the fix will be soon available. This one might right now crash ( the today released vers&hellip;",
+      "createdAt": "2026-06-01T00:54:40.838Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 2056,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "No eta. Only hobby purposes. Hopping fixed soon or asap \nIt’s an bloking issue because of the max number of flow limitations by homey. \nMust delete merge or optimise the number of flow",
+      "createdAt": "2026-05-30T14:19:50.000Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 2052,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "I have an issue \nI will try to fix asap. \n [image]",
+      "createdAt": "2026-05-27T11:43:09.000Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 2050,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Subject: v8.5.7+ fixes startup crash (OOM) + multiple device fixes — please update and re-pair \nHi everyone, \nIf you’ve experienced the app crashing at startup or devices not showing any capabilities after pairing, here’s what happened and how to fix it: \nWhat was the problem?\nThe app had a memory (&hellip;",
+      "createdAt": "2026-05-26T20:55:25.358Z",
+      "username": "dlnraja"
+    },
     {
       "type": 5,
       "topicId": 140352,
@@ -2718,42 +2754,6 @@
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "excerpt": "[image] \nits added as curtain motor , is it right ?",
       "createdAt": "2026-01-18T17:37:53.630Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1060,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "it’s my be already added , please update and try again paring.",
-      "createdAt": "2026-01-18T17:34:00.269Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1058,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "thx",
-      "createdAt": "2026-01-18T16:23:15.001Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1055,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "perhaps an issue about an shared file, i must check that",
-      "createdAt": "2026-01-18T15:45:53.944Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1053,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "thx",
-      "createdAt": "2026-01-18T14:37:01.416Z",
       "username": "dlnraja"
     }
   ],
@@ -17620,6 +17620,111 @@
           "text": "Dylan, thank you so much for your effort and dedication. Your reasons are completely understandable. There are many people who, even though this is unpaid work, still feel entitled to make demands, while you’ve always made it clear that you do this primarily for your own personal use and still choose to share it generously with the whole community — and that says a lot about you.\n\nThank you again for everything. Without you, these devices would never have had support on this platform. I truly hope you find a job that you are passionate about and that brings you the best opportunities.\n\nThank you for everything!!",
           "date": "2026-05-25T20:16:52.256Z",
           "replyTo": 2040
+        },
+        {
+          "num": 2049,
+          "user": "JohnLundin",
+          "text": "Same here, try to download the app but it crashed when downloaded, maybie its the v8.1.6 update\n\nYou are awesome with all your work you done for the people​\n\nIMG_21331290×2796 185 KB",
+          "date": "2026-05-26T19:59:44.222Z",
+          "replyTo": null
+        },
+        {
+          "num": 2050,
+          "user": "dlnraja",
+          "text": "Subject: v8.5.7+ fixes startup crash (OOM) + multiple device fixes — please update and re-pair\n\nHi everyone,\n\nIf you’ve experienced the app crashing at startup or devices not showing any capabilities after pairing, here’s what happened and how to fix it:\n\nWhat was the problem?\nThe app had a memory (OOM) crash at startup. Our fingerprint database file (data/fingerprints.json) was 11.5MB and was being loaded into memory all at once during app initialization. Homey Pro has a 64MB heap limit, and this single file was consuming 50-80MB during JSON parsing — causing the app to crash with FATAL ERROR: Reached heap limit Allocation failed.\n\nThis meant no devices could initialize, no flow cards were available, and all pairing appeared to fail or show as “generic device”.\n\nWhat we fixed (v8.5.7 through v8.5.14):\n\n\nStartup crash (OOM): The 11.5MB fingerprint database is now loaded lazily (only when first needed, not at startup). It’s also excluded from the app bundle to save memory.\n\n\n\n102 duplicate flow card IDs: Many drivers shared identical flow card IDs, causing Homey SDK validation to fail. All IDs are now globally unique.\n\n\n\nNode.js compatibility: Fixed engines.node from >=22 to >=18 for Homey Pro compatibility.\n\n\n\nRadiator valve fix: The AVATTO ME167 thermostat (_TZE200_9xfjixap) was using the wrong DP profile. It now correctly uses DPs: 2=mode, 4=target_temp, 5=current_temp, 7=child_lock.\n\n\n\nGarage door opener crashes: Fixed multiple runtime errors in BaseUnifiedDevice and flow action card IDs.\n\n\n\nCT Clamp Power Meter (PJ-1203A): Was being detected as “Presence Radar” due to the startup crash preventing fingerprint matching.\n\n\n\nWhat you need to do:\n\nUpdate to v8.5.7+ from the test channel\nDelete any devices that aren’t working from Homey\nRe-pair each device (most need a 3-6 second button hold to reset)\nAll capabilities should now appear correctly\n\nKnown devices affected:\n\nRadiator valves (AVATTO ME167 / _TZE200_9xfjixap)\nSmart buttons (TS0041)\nCT Clamp Power Meters (PJ-1203A)\nMotion sensors, soil sensors, bed sensors\nAny device that was showing as “Generic Device”\n\nIf you still have issues after updating and re-pairing, please share debug logs (Homey → Settings → Apps → Universal Tuya Zigbee → Advanced → Enable debug logging) and I’ll investigate.\n\nThanks for your patience!",
+          "date": "2026-05-26T20:55:25.358Z",
+          "replyTo": 2049
+        },
+        {
+          "num": 2051,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan thanks for your hard work again but I don’t see the new version, still seeing version 8.1.6\n\nBest regards Peter.",
+          "date": "2026-05-27T11:14:58.880Z",
+          "replyTo": 2050
+        },
+        {
+          "num": 2052,
+          "user": "dlnraja",
+          "text": "I have an issue\n\nI will try to fix asap.\n\n1001536223.jpg1260×2800 223 KB",
+          "date": "2026-05-27T11:43:09.000Z",
+          "replyTo": 2051
+        },
+        {
+          "num": 2053,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan Good evening, I managed to side load ver 9.0.1 of the app with CLI.\n\nAnd the only devices that are working are the 2 existing Door/Window sensors with Luminance, the other one of those tried to add but is adding as a Soil sensor, SOS button existing one not working and adding the other one is added as a Universal device.\n\nSmartbutton also not working even not after a repair.\n\nTried to run a diagnostic report but that option is not there in this version of the app.\n\n10000317891220×2712 194 KB\n\nGood luck and thanks again, Peter.",
+          "date": "2026-05-29T16:20:24.792Z",
+          "replyTo": null
+        },
+        {
+          "num": 2054,
+          "user": "Mikko_Vayrynen",
+          "text": "Still crashing, is any ETA fix for this?\n\n7.x.x works but not showing measurements on my meters\n\nScreenshot_2026-05-30-12-54-59-72_4bbfc4a7dd885a2bb189f300112a7ed41272×2772 165 KB",
+          "date": "2026-05-30T10:02:00.287Z",
+          "replyTo": 2050
+        },
+        {
+          "num": 2055,
+          "user": "SunBeech",
+          "text": "Mikko_Vayrynen:\n\nStill crashing, is any ETA fix for this?\n\n\n\nDid you read his following recent post?\n\n\n  \n    \n    \n    \n      [APP][Pro] Universal TUYA Zigbee Device App - test Apps\n    \n  \n  \n    Hey everyone — time for a proper update on where things stand. \nThe landscape has shifted. \nThere are now effectively 3 apps / 2 branches for Tuya Zigbee on Homey, and the documentation in the repo explains the differences in detail: \n\n\nJohanBendz / com.johanbendz.tuya.zigbee — The original. Johan stepped away from active development long ago. This app still works for many basic devices but receives no updates. New fingerprints, bug fixes, and modern devices are not being added there but now Joh…",
+          "date": "2026-05-30T10:08:49.054Z",
+          "replyTo": 2054
+        },
+        {
+          "num": 2056,
+          "user": "dlnraja",
+          "text": "No eta. Only hobby purposes. Hopping fixed soon or asap\n\nIt’s an bloking issue because of the max number of flow limitations by homey.\n\nMust delete merge or optimise the number of flow",
+          "date": "2026-05-30T14:19:50.000Z",
+          "replyTo": 2055
+        },
+        {
+          "num": 2057,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan I’ve installed version 8.1.24 now, Door/Window sensors are adding the right ones now, only the Luminance data isn’t changing by itself, only when triggering it by opening/closing the window.\n\nSOS button still not working and added as Universal ZigBee device same for Smartbutton.\n\nNot able to make a diagnostic report because this option not available in the app.\n\n10000318241220×2712 166 KB\n\n10000318251220×2712 126 KB\n\n10000318261220×2712 62.4 KB\n\nGood luck and thanks again Peter.",
+          "date": "2026-05-30T16:28:27.075Z",
+          "replyTo": 2056
+        },
+        {
+          "num": 2058,
+          "user": "dlnraja",
+          "text": "New version released\n\nI have found the publish issue ( related of number of drivers , I have merged some drivers to unified one ) and now working of fixing all issues forums users , pr , and forums messages . So the fix will be soon available. This one might right now crash ( the today released version ), so I reimplementing back the d fingerprint.json .\n\nAnd good new I have found another new job I will start back en 10 June my new job. ( In cyber strategy)",
+          "date": "2026-06-01T00:54:40.838Z",
+          "replyTo": 2057
+        },
+        {
+          "num": 2059,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan Good afternoon, installed new version 8.1.60.\n\nContact sensors okay, repairing existing SOS button no result. Adding Smartbutton and other SOS button still only been seen as Universal ZigBee device.\n\nDiagnostic code: 703fb7df-35b6-478a-995e-5beb8fb6d901\n\n\n10000318831220×2712 245 KB\n\n10000318841220×2712 175 KB\n\n10000318821220×2712 186 KB\n\n\nThanks again and good luck again, best regards Peter.",
+          "date": "2026-06-01T10:55:49.770Z",
+          "replyTo": 2058
+        },
+        {
+          "num": 2060,
+          "user": "Peter_van_Werkhoven",
+          "text": "Version 8.1.63 no changes for me.",
+          "date": "2026-06-01T14:00:44.109Z",
+          "replyTo": 2059
+        },
+        {
+          "num": 2061,
+          "user": "Mikko_Vayrynen",
+          "text": "And now APP works fine to me. Thank You!",
+          "date": "2026-06-01T16:54:30.350Z",
+          "replyTo": 2056
+        },
+        {
+          "num": 2062,
+          "user": "Tobias-B",
+          "text": "Hi,\n\nI’m trying to integrate a SmarterCurry Solar Lux Sensor (Tuya fingerprint: _TZE284_aaeasoll / TS0601) with the Tuya Unified Zigbee app on my Homey Pro.\n\nAfter pairing, the device is recognized as a climate_sensor instead of a brightness/lux sensor, and no lux values are displayed.\n\nI was pointed here by dlnraja via GitHub Issue #1379 (JohanBendz/com.tuya.zigbee), where he mentioned that TZE284 is logged for the next release but not yet fully implemented.\n\nI have created a diagnostic report — ID: [056e5755-7444-44a7-889f-7a7e95569c0b]\n\nHope this helps to add proper support for this device. Happy to provide any additional information if needed.\n\nThanks!",
+          "date": "2026-06-01T16:55:21.748Z",
+          "replyTo": null
+        },
+        {
+          "num": 2063,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan, just tested version 8.1.68 no changes and I’ve seen that the Luminance of the Doo/Window sensors the Luminance is not lower than 1128 Lx while it’s fully dark outside see screenshot.\n\nDiagnostic code 'ff555890-afce-4dee-8706-6ff993c40db2\n\n10000318991220×2712 235 KB\n\nGood night and thanks for your hard work.\n\nBest regards Peter.",
+          "date": "2026-06-01T21:46:52.354Z",
+          "replyTo": null
         }
       ],
       "category": 7
@@ -25880,6 +25985,13 @@
           "text": "FYI\n\n\n  \n    \n    \n    \n      [APP][Pro] Universal TUYA Zigbee Device App - test Apps\n    \n  \n  \n    To all those posting interview results in this topic, please consider using the following to increase readability of your post: \n\nPreformatted text option to keep the output in the original format and presented in a scrollable window. This reduces the length of your post.\nHide details option, to collapse/hide the entire interview output. Clicking the collapsed item will show the interview output again.\n\n [IMG_2409]",
           "date": "2026-05-26T12:38:26.602Z",
           "replyTo": 5479
+        },
+        {
+          "num": 5481,
+          "user": "late4marshmellow",
+          "text": "Even though that is indeed a better way to post interviews, they should be directed to Github \n\n\n\n\n johan_bendz:\n\nPROCESS FOR REQUESTING DEVICES TO BE ADDED\n\nIf your device is not supported by the app it will have to be added by adding code to the app, this is done by me or by someone helping me out (anyone can - it’s open source  ).\n\nTo be able to add more devices I will need help with interviews of the devices you want added. Anyone asking for a device to be added will have to have:\n\n\nupgraded to firmware v5\nhave a physical example of the device\nadd it as a generic Zigbee device\ngo to https://developer.athom.com/tools/zigbee  and interview the device\ncopy the info (by clicking the copy button/icon!) and post it as a new issue at the apps Github repository(</>).\n\nGithub: GitHub - JohanBendz/com.tuya.zigbee · GitHub\n\n\nI request that all device requests be directed to Github. The reason is straightforward: previously, when requests were made in this thread, I had to manually create an issue on Github, transfer the information, fill in any missing details, and then schedule the device to be added. Additionally, many requests were either duplicates or inquiries about the status of an existing request.\n\nI hope that creating a Github account (which is free and straightforward) isn’t too much to ask. Doing so will significantly streamline my process for handling requests and follow-ups. I believe this approach will also encourage more individuals to contribute code.\n\nOld requests made in this thread can be found here:\n\nhttps://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/\n\nYou are, and will always be, more than welcome to discuss the app, report problems, seek support, share ideas, and more in this thread. All I ask is that device requests be made on Github",
+          "date": "2026-05-28T07:36:15.546Z",
+          "replyTo": 5480
         }
       ],
       "category": 7
@@ -27447,6 +27559,69 @@
           "user": "Willi_Budeus",
           "text": "Just want to say “THX” to the developer.\n\nNow my new Plugs from Silvercrest (LIDL) SAPM 1 A1 are working perfectly with energymeasuring. The device is made for Matter, but there is no energymeasuring. Via the Tuya-app with WLAN the plugs are showing all figures correct.\n\nBest regards- Willi",
           "date": "2026-05-12T07:15:50.277Z",
+          "replyTo": null
+        },
+        {
+          "num": 238,
+          "user": "Lacobo",
+          "text": "Found a nice Tuya Ceiling lamp-fan that (as a bonus) can show something very close to the Homey logo   In the Tuya app I can set the Scene to number 33 or 34 and voila, the Homey logo is there. But now I want to start this from an advanced flow. But I have no clue what to fill in at the String or JSON cards. I have this information.\n\n{ “device”: { “active_time”: 1779469570, “biz_type”: 0, “category”: “fsd”, “create_time”: 1779469570, “icon”: “smart/icon/bay16341152123566Lf0/8643276ede5759a350b35668b6e05733.png”, “id”: “(my lamps tuya ID)”, “ip”: “”, “lat”: “”, “local_key”: “”, “lon”: “”, “name”: “CompFan”, “online”: true, “owner_id”: “”, “product_id”: “nqdytaota6qmmdny”, “product_name”: “Smart Fan Light”, “status”: [ { “code”: “switch_led”, “value”: true }, { “code”: “work_mode”, “value”: “colour” }, { “code”: “bright_value”, “value”: 1000 }, { “code”: “temp_value”, “value”: 292 }, { “code”: “colour_data”, “value”: “{\\“h\\”:0,\\“s\\”:1000,\\“v\\”:130}” }, { “code”: “do_not_disturb”, “value”: false }, { “code”: “fan_switch”, “value”: false }, { “code”: “fan_mode”, “value”: “fresh” }, { “code”: “fan_speed”, “value”: 15 }, { “code”: “fan_direction”, “value”: “forward” }, { “code”: “countdown_left_fan”, “value”: 0 } ], “sub”: false, “time_zone”: “+02:00”, “uid”: “”, “update_time”: 1779469570, “uuid”: “” }, “specifications”: { “category”: “fsd”, “functions”: [ { “code”: “switch_led”, “type”: “Boolean”, “values”: “{}” }, { “code”: “work_mode”, “type”: “Enum”, “values”: “{\\“range\\”:[\\“white\\”,\\“colour\\”,\\“scene\\”,\\“music\\”]}” }, { “code”: “bright_value”, “type”: “Integer”, “values”: “{\\“min\\”:10,\\“max\\”:1000,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “temp_value”, “type”: “Integer”, “values”: “{\\“min\\”:0,\\“max\\”:1000,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “colour_data”, “type”: “Json”, “values”: “{}” }, { “code”: “control_data”, “type”: “String”, “values”: “{\\“maxlen\\”:255}” }, { “code”: “do_not_disturb”, “type”: “Boolean”, “values”: “{}” }, { “code”: “fan_switch”, “type”: “Boolean”, “values”: “{}” }, { “code”: “fan_mode”, “type”: “Enum”, “values”: “{\\“range\\”:[\\“fresh\\”,\\“nature\\”]}” }, { “code”: “fan_speed”, “type”: “Integer”, “values”: “{\\“min\\”:1,\\“max\\”:100,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “fan_direction”, “type”: “Enum”, “values”: “{\\“range\\”:[\\“forward\\”,\\“reverse\\”]}” }, { “code”: “countdown_left_fan”, “type”: “Integer”, “values”: “{\\“unit\\”:\\“min\\”,\\“min\\”:0,\\“max\\”:540,\\“scale\\”:0,\\“step\\”:1}” } ], “status”: [ { “code”: “switch_led”, “type”: “Boolean”, “values”: “{}” }, { “code”: “work_mode”, “type”: “Enum”, “values”: “{\\“range\\”:[\\“white\\”,\\“colour\\”,\\“scene\\”,\\“music\\”]}” }, { “code”: “bright_value”, “type”: “Integer”, “values”: “{\\“min\\”:10,\\“max\\”:1000,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “temp_value”, “type”: “Integer”, “values”: “{\\“min\\”:0,\\“max\\”:1000,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “colour_data”, “type”: “Json”, “values”: “{}” }, { “code”: “do_not_disturb”, “type”: “Boolean”, “values”: “{}” }, { “code”: “fan_switch”, “type”: “Boolean”, “values”: “{}” }, { “code”: “fan_mode”, “type”: “Enum”, “values”: “{\\“range\\”:[\\“fresh\\”,\\“nature\\”]}” }, { “code”: “fan_speed”, “type”: “Integer”, “values”: “{\\“min\\”:1,\\“max\\”:100,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “fan_direction”, “type”: “Enum”, “values”: “{\\“range\\”:[\\“forward\\”,\\“reverse\\”]}” }, { “code”: “countdown_left_fan”, “type”: “Integer”, “values”: “{\\“unit\\”:\\“min\\”,\\“min\\”:0,\\“max\\”:540,\\“scale\\”:0,\\“step\\”:1}” } ] }, “data_points”: [ { “code”: “switch_led”, “custom_name”: “”, “dp_id”: 20, “time”: 0, “type”: “Boolean”, “value”: “{}” }, { “code”: “work_mode”, “custom_name”: “”, “dp_id”: 21, “time”: 0, “type”: “Enum”, “value”: “{\\“range\\”:[\\“white\\”,\\“colour\\”,\\“scene\\”,\\“music\\”]}” }, { “code”: “bright_value”, “custom_name”: “”, “dp_id”: 22, “time”: 0, “type”: “Integer”, “value”: “{\\“min\\”:10,\\“max\\”:1000,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “temp_value”, “custom_name”: “”, “dp_id”: 23, “time”: 0, “type”: “Integer”, “value”: “{\\“min\\”:0,\\“max\\”:1000,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “colour_data”, “custom_name”: “”, “dp_id”: 24, “time”: 0, “type”: “Json”, “value”: “{}” }, { “code”: “do_not_disturb”, “custom_name”: “”, “dp_id”: 34, “time”: 0, “type”: “Boolean”, “value”: “{}” }, { “code”: “fan_switch”, “custom_name”: “”, “dp_id”: 60, “time”: 0, “type”: “Boolean”, “value”: “{}” }, { “code”: “fan_mode”, “custom_name”: “”, “dp_id”: 61, “time”: 0, “type”: “Enum”, “value”: “{\\“range\\”:[\\“fresh\\”,\\“nature\\”]}” }, { “code”: “fan_speed”, “custom_name”: “”, “dp_id”: 62, “time”: 0, “type”: “Integer”, “value”: “{\\“min\\”:1,\\“max\\”:100,\\“scale\\”:0,\\“step\\”:1}” }, { “code”: “fan_direction”, “custom_name”: “”, “dp_id”: 63, “time”: 0, “type”: “Enum”, “value”: “{\\“range\\”:[\\“forward\\”,\\“reverse\\”]}” }, { “code”: “fan_countdown_left”, “custom_name”: “”, “dp_id”: 64, “time”: 0, “type”: “Integer”, “value”: “{\\“unit\\”:\\“min\\”,\\“min\\”:0,\\“max\\”:540,\\“scale\\”:0,\\“step\\”:1}” } ] }\n\nI have a Set colour_data to JSON card and a work_mode to String card, tried for hours using parts of the code above, but all ends in errors. Has anyone the solution to this riddle?",
+          "date": "2026-05-27T18:52:27.840Z",
+          "replyTo": null
+        },
+        {
+          "num": 239,
+          "user": "Andy_Henderson",
+          "text": "FWIW, if you can set up your desired arrangement as a Tuya scene, there’s a card to execute Tuya scenes.\n\nAndy",
+          "date": "2026-05-27T19:27:40.911Z",
+          "replyTo": 238
+        },
+        {
+          "num": 240,
+          "user": "Lacobo",
+          "text": "Sorry, but there’s no Scene card \n\nimage452×241 25.2 KBThe lamp in al it’s glory. In real life it’s even more fantastic.",
+          "date": "2026-05-28T13:11:15.104Z",
+          "replyTo": 239
+        },
+        {
+          "num": 241,
+          "user": "smarthomesven",
+          "text": "You can use Tap-to-Run’s to set the scenes of the light. The Tap to Run card can be found in the Tuya app, not the specific device. So when selecting the THEN part, select “Tuya” and the Tap to Run card should show up under the devices. You first need to create the Tap to Run scene in the Tuya or Smart Life mobile app",
+          "date": "2026-05-28T13:57:46.420Z",
+          "replyTo": 240
+        },
+        {
+          "num": 242,
+          "user": "Andy_Henderson",
+          "text": "That’s it. The card is called ‘Trigger’ and the available scenes appear as a drop down from the card.\n\nIf you think about it, it can’t be device-specific because a Tuya scene can work with multiple devices.\n\nAndy",
+          "date": "2026-05-28T18:07:44.095Z",
+          "replyTo": null
+        },
+        {
+          "num": 243,
+          "user": "Lacobo",
+          "text": "Thanks! I could add the Scene, but can’t give it a number. So it seems I need to add some JSON code to it, but still can’t figure out how that works.",
+          "date": "2026-05-28T21:02:29.057Z",
+          "replyTo": null
+        },
+        {
+          "num": 244,
+          "user": "Andy_Henderson",
+          "text": "It sounds like there’s dual use of the term ‘scene’ going on. In general a Tuya scene has a name and it can set attributes of devices such as turning them on, or changing colour. It doesn’t have a number.\n\nThe scene you are describing seems to be an attribute of the device. If that’s right, you want to create a Tuya scene that sets the device’s scene to 33. You can then trigger the Tuya scene from Homey.\n\nHowever, that might not be possible. I have Tuya bulbs that don’t let me create a scene to change their colour even though Tuya’s interface does allow me to set a colour, and I can set the colour from Homey. Bizarre.\n\nAnyhow, if you can’t use a scene to change your device’s ‘scene’ all might not be lost. The ‘devices’ section of Homey developer tools exposes all the capabilities you can change for a device and allows you to modify them directly. That way you can  experiment with what is possible through Homey.\n\nAndy",
+          "date": "2026-05-28T21:39:09.893Z",
+          "replyTo": null
+        },
+        {
+          "num": 245,
+          "user": "smarthomesven",
+          "text": "These are the LED strip (or ceiling light) scenes. Do you also get this screen?\n\nScreenshot_20260528_235410_Tuya1080×2340 141 KB\n\nUnfortunately, you can’t control those from Tap to Run (at least not on my LED strip). You can however set the mode to Scene (which starts the last selected scene)\n\nScreenshot_20260528_235737_Tuya1080×2340 159 KB",
+          "date": "2026-05-28T21:58:36.928Z",
+          "replyTo": 243
+        },
+        {
+          "num": 246,
+          "user": "Lacobo",
+          "text": "Thanks for the suggestions. Still no luck, but when I find the solution I will post it here.",
+          "date": "2026-05-29T19:55:32.786Z",
           "replyTo": null
         }
       ],
@@ -62231,6 +62406,13 @@
           "text": "Heute Morgen stand noch: 9 Stück verfügbar… Mist",
           "date": "2026-05-25T12:41:05.213Z",
           "replyTo": 938
+        },
+        {
+          "num": 940,
+          "user": "ManuelKugler",
+          "text": "Wieder erhältlich\n\n\n  \n\n      amazon.de\n  \n\n  \n    \n\nTHIRDREALITY Smart Soil Moisture Sensor Gen2, Zigbee Hub Needed, Enhanced Signal...\n\n\n\nTHIRDREALITY Smart Soil Moisture Sensor Gen2, Zigbee Hub Needed, Enhanced Signal Stability, Capacitive Moisture Monitoring, Garden Planting, Compatible with Hubitat, SmartThings, Home Assistant, Alexa : Amazon.de: Pet Supplies",
+          "date": "2026-05-30T13:54:43.746Z",
+          "replyTo": 938
         }
       ],
       "category": 28
@@ -70687,6 +70869,20 @@
           "text": "Inno:\n\nSonoff Hydro One\n\n\n\nAs it is basically just an OnOff device, it should work with the generic Homey zigbee driver.\n\n(Add device > at the next screen, below the “Technology” tab, select “Zigbee”)",
           "date": "2026-05-22T22:56:31.542Z",
           "replyTo": 501
+        },
+        {
+          "num": 508,
+          "user": "Inno",
+          "text": "I actually bought it and tried.\n\nIt can not be added as an old SWV and needs to be added as a other zigbee device.\n\nI do not have any data I can use. the old valve at least had a counter and a flow meter.\n\nBut here comes the catch. It shuts off every 10 minutes!\n\nEven when my flows work perfectly, it shuts itself off everytime.\n\nno setting I can find to change it, and I don’t think I can acces it through te ewelink app without their bridge.\n\nNot too pleased with it to be honest.\n\nI have contacted styrahem but they haven’t responded yet.",
+          "date": "2026-05-27T08:27:54.494Z",
+          "replyTo": 507
+        },
+        {
+          "num": 509,
+          "user": "Krzysiek",
+          "text": "@B_Cogs Do you still get water flow and water use values? I used the SWV last spring and summer and I was getting all the values. I then removed the valve from my tap and stored it without batteries over winter. When I installed it a week ago, I noticed that while I can still control the on/off function, I do not get the water flow or water use values anymore. I tried reinstalling the app (the official one), removing and re-adding the device, re-adding it very close to Homey and then moving the valve, adding one extra node just behind a wall (ikea inspelning outlet). None of this helped. I’m on the latest version of the Sonoff app and latest Homey firmware, using Homey pro 2023.",
+          "date": "2026-05-28T20:07:06.401Z",
+          "replyTo": 506
         }
       ],
       "category": 7
@@ -70962,6 +71158,7 @@
       "_TZ3000_h1ipgkwn",
       "_TZ3000_iwtv2jwo",
       "_TZE200_9xfjixap",
+      "_TZE284_aaeasoll",
       "_TZ3000_i8jfiezr",
       "_TZ3000_bguser20",
       "_TZ3000_8ybe88nf",
@@ -71475,7 +71672,6 @@
       "_TZ3000_pjb1ua0m",
       "_TZE284_tgeqdjgk",
       "_TZ3000_kaflzta4",
-      "_TZE284_aaeasoll",
       "_TZE204_ex3rcdha",
       "_TZE284_myd45weu",
       "_TZE200_seq9cm6u",
@@ -71746,6 +71942,7 @@
       "_TZ3000_h1ipgkwn",
       "_TZ3000_iwtv2jwo",
       "_TZE200_9xfjixap",
+      "_TZE284_aaeasoll",
       "_TZ3000_i8jfiezr",
       "_TZ3000_bguser20",
       "_TZ3000_8ybe88nf",
@@ -72218,7 +72415,6 @@
       "_TZ3000_pjb1ua0m",
       "_TZE284_tgeqdjgk",
       "_TZ3000_kaflzta4",
-      "_TZE284_aaeasoll",
       "_TZE204_ex3rcdha",
       "_TZE284_myd45weu",
       "_TZE200_seq9cm6u",
@@ -72498,11 +72694,12 @@
           "_TZE284_8se38w3c",
           "_TZ3000_h1ipgkwn",
           "_TZ3000_iwtv2jwo",
+          "_TZE200_9xfjixap",
           "_TZE204_qasjif9e",
           "_TZ3000_kqvb5akv",
           "_TZ3000_ww6drja5"
         ],
-        "posts": 65,
+        "posts": 66,
         "ctx": [
           "NOW THE BUG IS FIXED Can someone try it please? p\n\n HOMEY ULTIMATE ZIGBEE HUB v1.0.0\nThe Complete Zigbee Ecosystem for Homey Pro\n\nThe Ultimate Zigbee Hub provides comprehensive support for 500+ Zigbee",
           "Why the Universal TUYA Zigbee Device App - Lite Version Adds Value to the Homey Ecosystem\n\nDear Homey Community,\n\nI’m excited to share an update on the Universal TUYA Zigbee Device App - Lite Version ",
@@ -73274,6 +73471,16 @@
         "posts": 1,
         "ctx": [
           "Please add this Presence sensor to the app\n\n\"ieeeAddress\":string\"a4:c1:38:d3:de:d0:e6:77\",\n\"networkAddress\":int65248,\n\"modelId\":string\"CK-BL702-MWS-01(7016)\",\n\"manufacturerName\":string\"_TZE200_crq3r3l"
+        ]
+      },
+      "Tobias-B": {
+        "fps": [
+          "_TZE284_aaeasoll"
+        ],
+        "posts": 2,
+        "ctx": [
+          "Hi,\n\nI’m trying to integrate a SmarterCurry Solar Lux Sensor (Tuya fingerprint: _TZE284_aaeasoll / TS0601) with the Tuya Unified Zigbee app on my Homey Pro.\n\nAfter pairing, the device is recognized as",
+          "Hi @Johann_Bendz\n\nI’ve just submitted a device request on GitHub for a new SmarterCurry (JoyousMall) Solar Lux Sensor.\n\nIt’s currently recognized as a generic Zigbee device. I’ve already performed the"
         ]
       },
       "Maurizio_Errico": {
@@ -75050,15 +75257,6 @@
         "posts": 1,
         "ctx": [
           "Hi, could you please add support for this MOES Wireless Button? It adds as a generic Zigbee device. Manufacturer ID: _TZ3000_kaflzta4 Product ID: TS004F"
-        ]
-      },
-      "Tobias-B": {
-        "fps": [
-          "_TZE284_aaeasoll"
-        ],
-        "posts": 1,
-        "ctx": [
-          "Hi @Johann_Bendz\n\nI’ve just submitted a device request on GitHub for a new SmarterCurry (JoyousMall) Solar Lux Sensor.\n\nIt’s currently recognized as a generic Zigbee device. I’ve already performed the"
         ]
       },
       "Riccardo_Baro": {
