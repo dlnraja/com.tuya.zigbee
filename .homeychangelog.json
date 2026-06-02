@@ -69,5 +69,8 @@
   },
   "8.1.72": {
     "en": "v8.1.71:"
+  },
+  "8.1.73": {
+    "en": "v8.1.73: 6-Phase Engine Overhaul (Auto-discovery, Memory leak fixes, Exponential Backoff, Virtual Polling, Driver Consolidation, Diagnostic API)."
   }
 }
