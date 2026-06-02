@@ -33,7 +33,7 @@ const ruleInjection = `
 - Read Architecture 7+ and 8.0 docs before acting.
 `;
 
-['.windsurfrules', '.cursorrules', '.clinerules'].forEach(f => {
+['.ai/rules/.windsurfrules', '.ai/rules/.cursorrules', '.ai/rules/.clinerules'].forEach(f => {
     if (fs.existsSync(f)) {
         let text = fs.readFileSync(f, 'utf8');
         if (!text.includes('DEEP DIAGNOSTIC & CROSS-REFERENCING MANDATE')) {

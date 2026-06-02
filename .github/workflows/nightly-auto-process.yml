@@ -124,4 +124,4 @@ jobs:
         with:
           commit_message: "chore(auto): nightly architectural hardening and stabilization [skip ci]"
           branch: master
-          file_pattern: 'drivers/**/*.js drivers/**/*.json lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'
+          file_pattern: 'drivers/**/*.js drivers/**/*.json lib/**/*.js app.json .ai/rules/.cursorrules AI_INSTRUCTIONS.md docs/**/*.md'
