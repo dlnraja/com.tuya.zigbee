@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-06-01T23:22:23.592Z",
+  "target": {
+    "mfr": "",
+    "pid": "",
+    "issueId": ""
+  },
+  "findings": {
+    "z2m": null,
+    "zha": null,
+    "domoticz": null,
+    "forum": {
+      "success": true
+    },
+    "gmail": {
+      "success": false,
+      "error": "Command failed: node .github/scripts/fetch-gmail-diagnostics.js --max 10\nIMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)\n"
+    },
+    "github": {
+      "success": true
+    },
+    "variants": []
+  },
+  "verdict": {
+    "action": "STANDBY",
+    "reason": "No target manufacturerName or productId defined. Generic scan executed."
+  }
+}

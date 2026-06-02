@@ -22,7 +22,12 @@ This framework defines the strict boundaries and architectural imperatives for a
 
 ---
 
-## 🎯 2. ZERO-DEFECT OPERATIONAL RULES
+## 🚀 2. ZERO-DEFECT OPERATIONAL RULES
+
+### Rule #0: THE UNIFIED APP MANDATE (NO SEPARATE WIFI APP)
+*   **The Law**: `master` natively unifies BOTH Zigbee and Local WiFi (via 10 dynamic `wifi_unified_*` drivers).
+*   **The Prohibition**: NEVER delete WiFi drivers from `master` to "save space" and NEVER attempt to create or sync a separate `tuya_wifi_local` repository. The size limit issue is permanently fixed.
+*   **The Outcome**: There are exactly TWO apps. `master` (for Beta/Testing) and `stable-v5` (for Production). Any external WiFi clones must be ignored and deleted.
 
 ### Rule #1: Fingerprint Integrity (MFS + PID)
 *   **The Law**: A valid fingerprint match **MUST** combine `manufacturerName` AND `productId`.
