@@ -67,10 +67,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.72": {
-    "en": "v8.1.71:"
-  },
-  "8.1.73": {
-    "en": "v8.1.73: 6-Phase Engine Overhaul (Auto-discovery, Memory leak fixes, Exponential Backoff, Virtual Polling, Driver Consolidation, Diagnostic API)."
+  "8.1.74": {
+    "en": "v8.1.73:"
   }
 }

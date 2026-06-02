@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.71] - 2026-06-02
+## [8.1.73] - 2026-06-02
+
+v8.1.73: 6-Phase Engine Overhaul (Auto-discovery, Memory leak fixes, Exponential Backoff, Virtual Polling, Driver Consolidation, Diagnostic API).
+---
+
+ [8.1.71] - 2026-06-02
 
 v8.1.70:
 ---
