@@ -265,7 +265,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
   async onEndDeviceAnnounce() {
     if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
-    if (this._dataRecoveryManager) this._dataRecoveryManager.triggerRecovery();
+    if (this._dataRecoveryManager && typeof this._dataRecoveryManager.triggerRecovery === 'function') if (this._dataRecoveryManager && typeof this._dataRecoveryManager.triggerRecovery === 'function') this._dataRecoveryManager.triggerRecovery();
   }
 }
 
