@@ -1,280 +1,74 @@
 # Credits & Contributors
 
-> Auto-generated from project analysis.
+> Auto-generated from fork scanning and PR analysis.
 > Last updated: 2026-06-03
 
-A huge thank you to the following community members who have reported issues, provided diagnostic logs, requested devices, or contributed code:
+| Contributor | Fingerprints | PRs | Source |
+|------------|-------------|-----|--------|
+| [@dlnraja](https://github.com/dlnraja) | 0 | 19 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@pbruining](https://github.com/pbruining) | 0 | 8 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@packetninja](https://github.com/packetninja) | 0 | 7 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@PDominikPL](https://github.com/PDominikPL) | 0 | 4 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@Peter-Celica](https://github.com/Peter-Celica) | 0 | 4 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@sinan92](https://github.com/sinan92) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@WJGvdVelden](https://github.com/WJGvdVelden) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@Melectro1](https://github.com/Melectro1) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@slicke](https://github.com/slicke) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@stefan-schweiger](https://github.com/stefan-schweiger) | 0 | 3 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@late4marshmellow](https://github.com/late4marshmellow) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@michelhelsdingen](https://github.com/michelhelsdingen) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@google-labs-jules[bot]](https://github.com/google-labs-jules[bot]) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@vl14-dev](https://github.com/vl14-dev) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@NicolasYDDER](https://github.com/NicolasYDDER) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@YuriEstevan](https://github.com/YuriEstevan) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@mikberg](https://github.com/mikberg) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@mech78](https://github.com/mech78) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@Onclin13](https://github.com/Onclin13) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@mhaid](https://github.com/mhaid) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@bengro](https://github.com/bengro) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@Eastmasters](https://github.com/Eastmasters) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@TzK069](https://github.com/TzK069) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@shaarkys](https://github.com/shaarkys) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@maccyber](https://github.com/maccyber) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@shahzadsk](https://github.com/shahzadsk) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@jepke](https://github.com/jepke) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@Robsta86](https://github.com/Robsta86) | 0 | 1 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@AreAArseth](https://github.com/AreAArseth) | 0 | 1 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@ErnieV](https://github.com/ErnieV) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@oskarirauta](https://github.com/oskarirauta) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@PiTRiS87](https://github.com/PiTRiS87) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@pkuijpers](https://github.com/pkuijpers) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@bmalkow](https://github.com/bmalkow) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@jievie2000](https://github.com/jievie2000) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@jrevillard](https://github.com/jrevillard) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@TKGHill](https://github.com/TKGHill) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@crimson7O](https://github.com/crimson7O) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@gpmachado](https://github.com/gpmachado) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@semolex](https://github.com/semolex) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@chernals](https://github.com/chernals) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@antonhagg](https://github.com/antonhagg) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@dirkg173](https://github.com/dirkg173) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@mkoslacz](https://github.com/mkoslacz) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@evervondel](https://github.com/evervondel) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@omBratteng](https://github.com/omBratteng) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@abn](https://github.com/abn) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@jeroenvanagt](https://github.com/jeroenvanagt) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@roelofoomen](https://github.com/roelofoomen) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@galaxyprof](https://github.com/galaxyprof) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@mruiter](https://github.com/mruiter) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@giokerst](https://github.com/giokerst) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@BertvanHoekelen](https://github.com/BertvanHoekelen) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@tfoldi](https://github.com/tfoldi) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@jcmandersson](https://github.com/jcmandersson) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@djfutur](https://github.com/djfutur) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@mpagnoulle](https://github.com/mpagnoulle) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@eelco2k](https://github.com/eelco2k) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@HenkLaracker](https://github.com/HenkLaracker) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@InDate](https://github.com/InDate) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@ProfFunny13](https://github.com/ProfFunny13) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@MihaiINW](https://github.com/MihaiINW) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@SparklingKnuckle69](https://github.com/SparklingKnuckle69) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@rickardgranberg](https://github.com/rickardgranberg) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 
-- **---**
-- **------**
-- **--------**
-- **---------**
-- **----------**
-- **-------------**
-- **--------------**
-- **4576ggv4536**
-- **4x4_Pete**
-- **7Hills**
-- **Adri1**
-- **Anders_Lim**
-- **Andi**
-- **Author**
-- **Brianhomey**
-- **Cam**
-- **Carole_C**
-- **Clement_Loridan**
-- **DAVID9SE**
-- **Device**
-- **DomLAJO**
-- **Domingoso**
-- **DutchDuke**
-- **EchoNL**
-- **Eftychis_Georgilas**
-- **Ernst02507**
-- **Erwin3**
-- **Fantuz**
-- **Ferenc_Szasz**
-- **Fingerprint**
-- **FinnKje**
-- **FrankP**
-- **Freddyboy**
-- **G4nd41f**
-- **Goncalo_Barradas**
-- **Hartmut_Dunker**
-- **Henk_de_Boom**
-- **Hogar_Otal_Scridon**
-- **JJ10**
-- **Janderek**
-- **Jocke_Wallen**
-- **Joep_Vullings**
-- **Johan_Rossouw**
-- **Julien_31**
-- **KasvanD**
-- **Kringloper**
-- **Lachee**
-- **Lalla80111**
-- **Lasse_K**
-- **MBrandt**
-- **MF-ITuser**
-- **Mahom**
-- **ManuelKugler**
-- **Marcel_Visser**
-- **Mark_Hermens**
-- **Mats_Nygren**
-- **Melectro1**
-- **Meruem**
-- **Michael_Mock**
-- **MihaiINW**
-- **Mr_D_Forrest**
-- **Nicolas**
-- **NicolasYDDER**
-- **OH2TH**
-- **Olivier_VE**
-- **Ons**
-- **PDominikPL**
-- **Peter-Celica**
-- **Peter_Kawa**
-- **Peter_N**
-- **Peter_van_Werkhoven**
-- **PiTRiS87**
-- **Pieter_Pessers**
-- **Piotr**
-- **Pollepa**
-- **Reason**
-- **Remigiusz_Budzioch**
-- **RezaRose**
-- **Ricardo_Lenior**
-- **Rikjes**
-- **Roger_Gorissen**
-- **Ronald_Bok**
-- **Rudi_Hendrix**
-- **Sem**
-- **SingKT**
-- **SkiMattie**
-- **Slawek_Pe**
-- **Source**
-- **SunBeech**
-- **Symptom**
-- **TKGHill**
-- **Tauno20**
-- **TeejooK**
-- **Tobias-B**
-- **TobiasB295**
-- **Trey_Rogerson**
-- **Trond_Sandland**
-- **Version**
-- **Vincent_Lim**
-- **WJGvdVelden**
-- **Willi_Budeus**
-- **Willy**
-- **Wiosenna_26**
-- **Wojciech_Ciarkowski**
-- **Wuma68**
-- **Yannick_Eeckelaert**
-- **YuriEstevan**
-- **_TZ3000_402vrq2i**
-- **_TZ3000_avotanj3**
-- **_TZ3000_cziew6eu**
-- **_TZ3000_dojqjapa**
-- **_TZ3000_icoxotza**
-- **_TZ3000_iktiy8ue**
-- **_TZ3000_kxaow5ki**
-- **_TZ3000_otwpdq1d**
-- **_TZ3000_qamj2vnn**
-- **_TZ3000_t7ugva7q**
-- **_TZ3000_tw4ztbp4**
-- **_TZ3000_uyrhiafs**
-- **_TZ3000_vjhcxjqb**
-- **_TZ3000_wol32olt**
-- **_TZ3000_ww6drja5ts011f**
-- **_TZ3000_zutizvykts0203**
-- **_TZ3002_tlsvxhxc**
-- **_TZ3002_vsom92pp**
-- **_TZ3002_xkxgfxsg**
-- **_TZ3008_reatplte**
-- **_TZ3210_7vgttna6**
-- **_TZ3210_a04acm9s**
-- **_TZ3210_cm9mbpr1**
-- **_TZ3210_imaccztn**
-- **_TZ3210_iymfxdis**
-- **_TZ3210_jaap6jeb**
-- **_TZ3210_vbfp8eyv**
-- **_TZ3210_zifx0xoj**
-- **_TZ3290_7v1k4vuf**
-- **_TZ3290_jxvzqatw**
-- **_TZ3290_lypnqvle**
-- **_TZ3290_nba3knps**
-- **_TZ3290_rlkmy85q**
-- **_TZ3290_yac64inu**
-- **_TZB210_qzsxaqqe**
-- **_TZE200_d2zfgtij**
-- **_TZE200_hbnfokum**
-- **_TZE200_jt50ea5d**
-- **_TZE200_rxq4iti9**
-- **_TZE200_s4sa1mcx**
-- **_TZE200_seq9cm6u**
-- **_TZE200_w0ap83qu**
-- **_TZE200_wjk6rurm**
-- **_TZE200_x8diwkqb**
-- **_TZE204_2jnoy8dj**
-- **_TZE204_cduqh1l0**
-- **_TZE204_d2zfgtij**
-- **_TZE204_ouy7vpm1**
-- **_TZE204_s4sa1mcx**
-- **_TZE204_wjk6rurm**
-- **_TZE204_x8diwkqb**
-- **_TZE20X_xxxxxxxx**
-- **_TZE284_3regm3h6**
-- **_TZE284_4vbj3fxh**
-- **_TZE284_4vobcgd3**
-- **_TZE284_bw4ayyeh**
-- **_TZE284_d2zfgtij**
-- **_TZE284_g1enhdsi**
-- **_TZE284_mul9abs3**
-- **_TZE284_mvtclclq**
-- **_TZE284_nbv4tdaz**
-- **_TZE284_s4sa1mcx**
-- **_TZE284_tgrzpqf4**
-- **_TZE284_uo8qcagc**
-- **_TZE284_wjk6rurm**
-- **_TZE284_x8diwkqb**
-- **_TZe200_01fvxamo**
-- **_TZe200_0hg58wyk**
-- **_TZe200_0j5jma9b**
-- **_TZe200_0u3bj3rc**
-- **_TZe200_1agwnems**
-- **_TZe200_1drr8tab**
-- **_TZe200_1ibpyhdc**
-- **_TZe200_2aaelwxk**
-- **_TZe200_2atgpdho**
-- **_TZe200_2ekuz3dz**
-- **_TZe200_2hf7x9n3**
-- **_TZe200_2imwyigp**
-- **_TZe200_2m38mh6k**
-- **_TZe200_2pddnnrk**
-- **_TZe200_2se8efxh**
-- **_TZe200_2vfxweng**
-- **_TZe200_3ejwxpmu**
-- **_TZe200_3p5ydos3**
-- **_TZe200_3t91nb6k**
-- **_TZe200_3towulqd**
-- **_TZe200_3xfjp0ag**
-- **_TZe200_44af8vyi**
-- **_TZe200_4eeyebrt**
-- **_TZe200_579lguh2**
-- **_TZe200_5d3vhjro**
-- **_TZe200_6wi2mope**
-- **_TZe200_78ioiaml**
-- **_TZe200_7bztmfm1**
-- **_TZe200_7deq70b8**
-- **_TZe200_7fqkphoq**
-- **_TZe200_7sjncirf**
-- **_TZe200_86nbew0j**
-- **_TZe200_8eazvzo6**
-- **_TZe200_8ply8mjj**
-- **_TZe200_8thwkzxl**
-- **_TZe200_8whxpsiw**
-- **_TZe200_8ygsuhe1**
-- **_TZe200_9cqcpkgb**
-- **_TZe200_9i9dt8is**
-- **_TZe200_9p5xmj5r**
-- **_TZe200_9sfg7gm0**
-- **_TZe200_9yapgbuv**
-- **_TZe200_a4bpgplm**
-- **_TZe200_a8sdabtg**
-- **_TZe200_a8z0g46u**
-- **antonhagg**
-- **auto**
-- **azkysmarthome**
-- **bbrodnik**
-- **blutch32**
-- **bogdan296**
-- **bug_report**
-- **chernals**
-- **climate_sensor**
-- **crimson7O**
-- **cristianoisaac**
-- **davidgeresdi-cyber**
-- **device_request**
-- **dlnraja**
-- **dmz-86**
-- **dzsandzsee**
-- **eeckelaertyannick**
-- **elgato7**
-- **emos**
-- **feature**
-- **gangstigen-glitch**
-- **gitebk**
-- **johan_bendz**
-- **johbiraus**
-- **late4marshmellow**
-- **maccyber**
-- **macmonty**
-- **mech78**
-- **migueleap**
-- **mikberg**
-- **mkoslacz**
-- **oskarirauta**
-- **packetninja**
-- **pbruining**
-- **pemikalsen-sudo**
-- **pixelwiese**
-- **pkuijpers**
-- **punkportaldan**
-- **radiothieves**
-- **robertklep**
-- **s0By**
-- **slicke**
-- **smarthomesven**
-- **sondregjessing-blip**
-- **steampunklolcat**
-- **switch_2gang**
-- **telenut**
-- **tjoepatjoep**
-- **tlink**
-- **vikino**
-- **vikinos**
-- **wall_switch_4gang_1way**
-- **xerot**
-- **xfiler**
-- **zhivauk**
+## New Fingerprints by Contributor
+
