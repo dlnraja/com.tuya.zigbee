@@ -1,0 +1,40 @@
+name: External Sources Sync
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # Every Monday at 3:00 AM UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync-external-sources:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run Sync Script
+        run: node .github/scripts/sync_external_sources.js
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(sync): automated external sources enrichment"
+          branch: "auto/enrichment-sync"
+          title: "🔄 Auto-Sync: New Tuya Device Fingerprints"
+          body: |
+            ## External Sources Synchronization
+            This PR automatically merges the latest Tuya fingerprints from external open-source projects (Zigbee2MQTT, ZHA) into our `ExternalMappings.json` file.
+            
+            **Sources Checked:**
+            - Koenkk/zigbee-herdsman-converters
+            - zigpy/zha-device-handlers
+            
+            This allows our auto-discovery system to recognize new models faster.
+          labels: "enrichment, automated pr"
