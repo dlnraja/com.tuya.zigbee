@@ -5,18 +5,23 @@ on:
     - cron: '0 3 * * 1' # Every Monday at 3:00 AM UTC
   workflow_dispatch: # Allow manual trigger
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   sync-external-sources:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Run Sync Script
         run: node .github/scripts/sync_external_sources.js
