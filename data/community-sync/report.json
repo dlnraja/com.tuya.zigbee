@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-03T20:12:23.094Z",
+  "ts": "2026-06-03T20:45:09.082Z",
   "currentCount": 10671,
   "src": {
     "johan": {
@@ -19352,6 +19352,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1409,
+          "title": "Device Request - Tuya Thermostat Radiator - _TZE284_pcdmj88b / TS0601",
+          "mfrs": [
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1408,
           "title": "Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw)",
           "mfrs": [
@@ -19520,16 +19531,6 @@
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1389,
-          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
-          "mfrs": [
-            "_TZ3000_qja6nq5z",
-            "_TZ3000_qja6nq5z",
-            "_TZ3000_qja6nq5z"
           ]
         }
       ]
