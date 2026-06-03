@@ -68,66 +68,6 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     };
   }
 
- * 
- *             SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    
- * 
- *    v5.5.317: INTELLIGENT INFERENCE ENGINE                                   
- *   - Validates moisture readings with temperature correlation                 
- *   - Predicts watering needs based on moisture trends                         
- *   - Smooths erratic sensor readings                                          
- *                                                                               
- *   KNOWN MODELS:                                                               
- *   - TS0601 / _TZE284_oitavov2 : QT-07S Soil moisture sensor                   
- *   - TS0601 / _TZE284_aao3yzhs : Soil sensor variant                           
- *   - TS0601 / _TZE284_hdml1aav : Flower Care Fertilizer sensor (EC)          
- *                                                                               
- *   DP MAPPINGS:                                                 
- *   - DP3: soil_moisture %                                                      
- *   - DP4: fertilizer_ec                                        
- *   - DP5: temperature / 10                                                      
- *   - DP14: battery_state enum (0=low, 1=med, 2=high)                           
- *   - DP15: battery_percent %                                                   
- *   - DP101: ambient_humidity %                                          
- *   - DP102: illuminance lux                                                   
- *   - DP106: fertilizer_ec (advanced variants)                                  
- *   - DP112: soil_fertility_ec (TZE284 specific)                                
- */
-class SoilSensorDevice extends TuyaUnifiedDevice {
-
-  /** Battery powered */
-  get mainsPowered() { return false; }
-
-  get forceActiveTuyaMode() { return true; }
-
-  get hybridModeEnabled() { return true; }
-
-  /** Capabilities for soil sensors */
-  get sensorCapabilities() {
-    return [
-      'measure_humidity.soil', 
-      'measure_temperature', 
-      'measure_humidity', 
-      'measure_luminance', 
-      'measure_battery', 
-      'alarm_battery',
-      'alarm_water', 
-      'measure_ec'
-    ];
-  }
-
-  /**
-   * v5.5.47: Battery configuration 
-   */
-  get batteryConfig() {
-    return {
-      chemistry: BatteryCalculator.CHEMISTRY.CR2032,
-      algorithm: BatteryCalculator.ALGORITHM.DIRECT,  // DP15 = direct %
-      dpId: 15,           // DP15 = battery percentage
-      dpIdState: 14,      // DP14 = battery_state enum (0=low, 1=med, 2=high)
-      voltageMin: 2.0,
-      voltageMax: 3.0,
-    };
-  }
 
   /**
    * DP mappings for Soil Sensors
