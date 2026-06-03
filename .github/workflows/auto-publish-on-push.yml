@@ -91,6 +91,55 @@ jobs:
           SYNC
 
       # ─────────────────────────────────────────────────────────────
+      # 2.5 INTEGRITY CHECK — .homeyplugins.json, fingerprint collisions
+      # ─────────────────────────────────────────────────────────────
+      - name: "🛡️ INTEGRITY: Check .homeyplugins.json + fingerprint collisions"
+        run: |
+          node - << 'INTEGRITY'
+          const fs = require('fs'), path = require('path');
+
+          // 1. Check .homeyplugins.json is not empty
+          const pluginsPath = '.homeyplugins.json';
+          if (fs.existsSync(pluginsPath)) {
+            const content = fs.readFileSync(pluginsPath, 'utf8').trim();
+            if (content.length < 10) {
+              console.error('❌ .homeyplugins.json is empty! Restoring...');
+              fs.writeFileSync(pluginsPath, '[{"id":"zigbee"}]\n');
+              console.log('✅ Restored .homeyplugins.json');
+            } else {
+              console.log('✅ .homeyplugins.json OK (' + content.length + ' bytes)');
+            }
+          }
+
+          // 2. Check for fingerprint collisions
+          const driversDir = 'drivers';
+          const fpMap = {};
+          let collisions = 0;
+          try {
+            fs.readdirSync(driversDir)
+              .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory())
+              .forEach(d => {
+                const p = path.join(driversDir, d, 'driver.compose.json');
+                if (!fs.existsSync(p)) return;
+                try {
+                  const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                  if (c.zigbee?.manufacturerName) {
+                    c.zigbee.manufacturerName.forEach(m => {
+                      const key = m.toLowerCase();
+                      if (fpMap[key]) {
+                        console.log('⚠️  COLLISION: "' + m + '" in ' + fpMap[key] + ' AND ' + d);
+                        collisions++;
+                      }
+                      fpMap[key] = d;
+                    });
+                  }
+                } catch {}
+              });
+          } catch (e) { console.error('driver scan error:', e.message); }
+          console.log('✅ Fingerprint check: ' + Object.keys(fpMap).length + ' unique, ' + collisions + ' collisions');
+          INTEGRITY
+
+      # ─────────────────────────────────────────────────────────────
       # 3. PRE-CLEAN — Fix source files BEFORE any validation
       # ─────────────────────────────────────────────────────────────
       - name: "🔧 PRE-CLEAN: Fix empty manufacturerName in driver.compose.json + app.json"
@@ -132,6 +181,13 @@ jobs:
 
           console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
           PRECLEAN
+
+      # ─────────────────────────────────────────────────────────────
+      # 3.5 FINGERPRINT INJECTION — Auto-inject new fingerprints
+      # ─────────────────────────────────────────────────────────────
+      - name: "🧬 INJECT: Auto-inject fingerprints from community sync"
+        continue-on-error: true
+        run: node scripts/inject-remaining-fingerprints.js || echo "Fingerprint injection skipped (no new FPs)"
 
       # ─────────────────────────────────────────────────────────────
       # 4. CHANGELOG + VERSION BUMP
