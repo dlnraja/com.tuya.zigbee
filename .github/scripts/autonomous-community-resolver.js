@@ -9,12 +9,16 @@ const INTEL_PATH = path.join(__dirname, '..', 'state', 'community_intel.md');
 const APP_DIR = path.join(__dirname, '..', '..');
 
 async function main() {
-  if (!fs.existsSync(INTEL_PATH)) {
-    console.log('No community intelligence found. Exiting.');
+  if (!fs.existsSync(INTEL_PATH) && !fs.existsSync(path.join(__dirname, '..', 'state', 'forum-activity-report.json'))) {
+    console.log('No community intelligence or forum report found. Exiting.');
     return;
   }
 
-  const intelContent = fs.readFileSync(INTEL_PATH, 'utf8');
+  let intelContent = fs.existsSync(INTEL_PATH) ? fs.readFileSync(INTEL_PATH, 'utf8') : '';
+  const FORUM_PATH = path.join(__dirname, '..', 'state', 'forum-activity-report.json');
+  if (fs.existsSync(FORUM_PATH)) {
+    intelContent += '\n\n--- FORUM MESSAGES ---\n\n' + fs.readFileSync(FORUM_PATH, 'utf8');
+  }
   if (intelContent.length < 50) {
     console.log('Community intelligence file is too small. Exiting.');
     return;
