@@ -440,13 +440,6 @@
         el.className = 'ss';
       }
     }
-      var e = document.getElementById(id);
-      e.textContent = t;
-      e.style.display = 'block';
-      setTimeout(function() {
-        e.style.display = 'none';
-      }, 4000);
-    }
 
     function saveCreds() {
       if (!Homey) { show('err-msg', 'App not ready yet'); return; }
