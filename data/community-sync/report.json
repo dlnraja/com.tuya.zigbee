@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-03T16:31:39.973Z",
-  "currentCount": 10670,
+  "ts": "2026-06-03T18:13:05.187Z",
+  "currentCount": 10671,
   "src": {
     "johan": {
       "count": 650,
@@ -19270,7 +19270,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 54,
+      "issueCount": 53,
       "prCount": 3,
       "deviceRequests": [
         {
@@ -19347,16 +19347,6 @@
           "mfrs": [
             "_TZE200_3towulqd",
             "_TZE200_3towulqd"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 333,
-          "title": "Smart Button (round). Added but not working",
-          "mfrs": [
-            "_TZ3000_b4awzgct",
-            "_TZ3000_b4awzgct",
-            "_TZ3000_b4awzgct"
           ]
         },
         {
@@ -19529,6 +19519,16 @@
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1389,
+          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z"
           ]
         }
       ]
@@ -20219,25 +20219,6 @@
       "hasBattery": false,
       "vendor": null,
       "description": null,
-      "source": "Johan"
-    },
-    {
-      "mfr": "_TYST11_d0yu2xgi",
-      "productId": [
-        "TS0601"
-      ],
-      "driver": "sirentemphumidsensor",
-      "deviceType": "other",
-      "capabilities": [
-        "onoff",
-        "measure_temperature",
-        "measure_humidity",
-        "alarm_battery",
-        "alarm_siren"
-      ],
-      "hasBattery": true,
-      "vendor": null,
-      "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
       "source": "Johan"
     },
     {
@@ -41523,6 +41504,6 @@
       "driver": null
     }
   ],
-  "newCount": 86,
+  "newCount": 85,
   "enrichedCount": 2212
 }
