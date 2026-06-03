@@ -67,6 +67,30 @@ jobs:
           echo "Current version: v$V"
 
       # ─────────────────────────────────────────────────────────────
+      # 2.5 SYNC — Ensure app.json and package.json versions match
+      # ─────────────────────────────────────────────────────────────
+      - name: "🔄 SYNC app.json ↔ package.json versions"
+        run: |
+          node - << 'SYNC'
+          const fs = require('fs');
+          const appPath = 'app.json';
+          const pkgPath = 'package.json';
+
+          const app = JSON.parse(fs.readFileSync(appPath, 'utf8'));
+          const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+
+          if (app.version !== pkg.version) {
+            console.log(`⚠️  Version mismatch: app.json=${app.version} vs package.json=${pkg.version}`);
+            // Sync to app.json version (authoritative)
+            pkg.version = app.version;
+            fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+            console.log(`✅ Synced package.json to v${app.version}`);
+          } else {
+            console.log(`✅ Versions synced: v${app.version}`);
+          }
+          SYNC
+
+      # ─────────────────────────────────────────────────────────────
       # 3. PRE-CLEAN — Fix source files BEFORE any validation
       # ─────────────────────────────────────────────────────────────
       - name: "🔧 PRE-CLEAN: Fix empty manufacturerName in driver.compose.json + app.json"
