@@ -27,6 +27,15 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
       this.log('IAS Zone enrollment attempt (non-critical):', err.message);
     }
 
+    if (this.getData().manufacturerName === '_TZE200_3towulqd' || this.getData().manufacturerName === '_tze200_3towulqd') {
+      try {
+        await zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME].zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 0 });
+        this.log('Sent zoneEnrollResponse for _TZE200_3towulqd');
+      } catch (err) {
+        this.log('Failed to send zoneEnrollResponse:', err.message);
+      }
+    }
+
     if (this.isFirstInit()) {
       await this.configureAttributeReporting([
         {
