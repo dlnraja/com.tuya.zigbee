@@ -6,6 +6,12 @@
   },
   "entries": [
     {
+      "version": "8.1.83",
+      "intro": {
+        "en": "Bug fixes: bed_sensor battery, sensitivity DP9, fingerprint enrichment"
+      }
+    },
+    {
       "version": "8.1.53",
       "intro": {
         "en": "Processing fixed: archive format corrected for Athom server compatibility.",
@@ -69,5 +75,11 @@
   },
   "8.1.84": {
     "en": "v8.1.83:"
+  },
+  "8.1.83": {
+    "intro": {
+      "en": "Bug fixes: bed_sensor battery, sensitivity DP9, fingerprint enrichment"
+    },
+    "changes": []
   }
 }
