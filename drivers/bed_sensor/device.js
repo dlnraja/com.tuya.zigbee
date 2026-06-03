@@ -26,9 +26,9 @@ class BedSensorDevice extends UnifiedSensorBase {
     // DP4: Battery percentage (not DP3, not DP104)
     // DP12: Pressure (prevent auto-temp fallback)
     const dpMappings = {
-      1: { capability: 'alarm_contact', converter: (v) => v === 0 },
-      4: { capability: 'measure_battery', converter: (v) => v },
-      12: { capability: 'measure_pressure', converter: (v) => v }, // Or map to a custom capability
+      1: { capability: 'alarm_contact', transform: (v) => v === 0 },
+      4: { capability: 'measure_battery', transform: (v) => v },
+      12: { capability: 'measure_pressure', transform: (v) => v }, // Or map to a custom capability
       // Configuration DPs
       9: { capability: null, internal: 'sensitivity', writable: true },
       101: { capability: null, internal: 'sampling_interval', writable: true },

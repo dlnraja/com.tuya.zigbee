@@ -15,6 +15,98 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "button_wireless_1_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_1_button_double_press",
+      "title": {
+        "en": "Button double pressed",
+        "fr": "Double appui bouton"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double pressed",
+        "fr": "Double appui bouton"
+      }
+    },
+    {
+      "id": "button_wireless_1_button_long_press",
+      "title": {
+        "en": "Button long pressed",
+        "fr": "Appui long bouton"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long pressed",
+        "fr": "Appui long bouton"
+      }
+    },
+    {
+      "id": "button_wireless_1_button_release",
+      "title": {
+        "en": "Button released",
+        "fr": "Bouton relâché"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button released",
+        "fr": "Bouton relâché"
+      }
     }
   ]
 }

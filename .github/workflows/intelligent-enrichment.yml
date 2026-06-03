@@ -1,0 +1,40 @@
+name: Intelligent Enrichment & Credits Sync
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # Run daily at 3 AM
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  enrich-and-credit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Deep Cross-Reference Scraper
+        run: node scripts/automation/deep-crossref-scraper.js
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        continue-on-error: true # Don't fail the whole workflow if scraper has issues
+
+      - name: Update Credits & Acknowledgements
+        run: node scripts/automation/update-credits.js
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json app.json docs/CREDITS.md .github/state/
+          git commit -m "chore: auto-update intelligence and credits [skip ci]" || echo "No changes to commit"
+          git push
