@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-03T18:13:05.187Z",
+  "ts": "2026-06-03T19:39:10.776Z",
   "currentCount": 10671,
   "src": {
     "johan": {
@@ -19270,9 +19270,19 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 52,
       "prCount": 3,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 365,
+          "title": "[radiator_valve] Bug: \t_TZE200_9xfjixap",
+          "mfrs": [
+            "_TZE200_9xfjixap",
+            "_TZE200_9xfjixap",
+            "_TZE200_9xfjixap"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 358,
@@ -19338,15 +19348,6 @@
             "_TZE204_lh3arisb",
             "_TZE204_zuq5xxib",
             "_TZE200_byzdayie"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 337,
-          "title": "[motion_sensor_2] Bug: _TZE200_3towulqd",
-          "mfrs": [
-            "_TZE200_3towulqd",
-            "_TZE200_3towulqd"
           ]
         },
         {
