@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-31T05:31:34.199Z",
+  "timestamp": "2026-06-03T06:42:52.542Z",
   "added": [
     {
       "fp": "_TYZB01_qezuin6k",
@@ -155,6 +155,13 @@
       ]
     },
     {
+      "fp": "_TYZB01_hlla45kx",
+      "driver": "button_wireless_1",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
       "fp": "TUYATEC-3tipnsrx",
       "driver": "contact_sensor",
       "pids": [
@@ -196,11 +203,18 @@
     },
     {
       "fp": "_TYZB01_iuepbmpv",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_1",
       "pids": [
         "TS0121",
         "TSO121",
         "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_cbiezpds",
+      "driver": "climate_sensor",
+      "pids": [
+        "SM0201"
       ]
     },
     {
@@ -215,6 +229,13 @@
       "driver": "bed_sensor",
       "pids": [
         "RH3040"
+      ]
+    },
+    {
+      "fp": "_TYZB01_jytabjkb",
+      "driver": "bed_sensor",
+      "pids": [
+        "TS0202"
       ]
     },
     {
@@ -297,6 +318,13 @@
       ]
     },
     {
+      "fp": "_TYST11_d0yu2xgi",
+      "driver": "air_purifier",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
       "fp": "_TYZB01_qm6djpta",
       "driver": "button_emergency_sos",
       "pids": [
@@ -312,6 +340,13 @@
     },
     {
       "fp": "_TYZB01_dsjszp0x",
+      "driver": "smoke_detector_advanced",
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "fp": "_TYZB01_wqcac7lo",
       "driver": "smoke_detector_advanced",
       "pids": [
         "TS0205"
@@ -465,6 +500,24 @@
       ]
     },
     {
+      "fp": "_TYZB01_ymcdbl3u",
+      "driver": "button_wireless_1",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_4tlksk8a",
+      "driver": "button_wireless_1",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
       "fp": "_TYZB02_keyjqthh",
       "driver": "button_wireless",
       "pids": [
@@ -473,14 +526,14 @@
     },
     {
       "fp": "_TYZB02_keyjhapk",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_1",
       "pids": [
         "TS0042"
       ]
     },
     {
       "fp": "_TYZB02_key8kk7r",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_1",
       "pids": [
         "TS0043"
       ]
@@ -601,10 +654,18 @@
     },
     {
       "fp": "_TYZB01_bagt1e4o",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless",
       "pids": [
         "TS0014",
         "TS0044"
+      ]
+    },
+    {
+      "fp": "_TYZB01_sqmd19i1",
+      "driver": "contact_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
       ]
     },
     {
@@ -942,9 +1003,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 10401,
-    "missingFPs": 74,
-    "addedFPs": 74,
+    "totalOurFPs": 10671,
+    "missingFPs": 82,
+    "addedFPs": 82,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 0,
