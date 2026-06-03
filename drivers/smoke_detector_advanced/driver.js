@@ -47,7 +47,7 @@ async onInit() {
     // CONDITION: Smoke is/is not detected
     // 
     try {
-      const smokeDetectedCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected');
+      var smokeDetectedCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected');
 
       smokeDetectedCondition.registerRunListener(async (args) => {
         const device = args.device;
@@ -68,7 +68,7 @@ async onInit() {
     // CONDITION: Battery is/is not above threshold
     // 
     try {
-      const batteryAboveCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above');
+      var batteryAboveCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above');
 
       batteryAboveCondition.registerRunListener(async (args) => {
         const device = args.device;
@@ -91,7 +91,7 @@ async onInit() {
     // ACTION: Test the alarm
     // 
     try {
-      const testAlarmAction = this.homey.flow.getActionCard('smoke_detector_advanced_test_alarm');
+      var testAlarmAction = this.homey.flow.getActionCard('smoke_detector_advanced_test_alarm');
 
       testAlarmAction.registerRunListener(async (args) => {
         const device = args.device;
