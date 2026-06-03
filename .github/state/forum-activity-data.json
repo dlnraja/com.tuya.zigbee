@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T23:22:26.310Z",
+  "timestamp": "2026-06-03T04:35:33.621Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 698,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1986
+        "posts": 1987
       },
       {
         "id": 26439,
@@ -49,9 +49,9 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1986,
-      "views": 20071,
-      "lastPosted": "2026-06-01T21:46:52.354Z",
+      "posts": 1987,
+      "views": 20143,
+      "lastPosted": "2026-06-02T16:49:11.594Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
@@ -2902,6 +2902,13 @@
       "date": "2026-03-06T22:27:53.399Z"
     },
     {
+      "topicId": 155646,
+      "postNum": 1,
+      "user": "Gabriel_Pedrosa_Mach",
+      "excerpt": "A personal/unofficial Homey Pro app focused on device availability and power-cut recovery for Zigbee devices I physically own and test. It's not a universal Tuya app or a replacement for other apps — I'm sharing it mainly so others can use it, fork it, improve it, or take it over. Supported (test...",
+      "date": "2026-06-02T01:33:22.910Z"
+    },
+    {
       "topicId": 76025,
       "postNum": 4,
       "user": "SmarTino",
@@ -3208,13 +3215,6 @@
       "user": "Paxman",
       "excerpt": "Hi Homeys! So I have these three Livarno LED filament dimmable bulbs that I have been using in three living room windows. I had to delete them from the system due to reasons and now I’d like to include them again. For the life of me I can’t remember what app or device I used last time to add them...",
       "date": "2023-02-01T14:35:16.498Z"
-    },
-    {
-      "topicId": 47502,
-      "postNum": 2,
-      "user": "johan_bendz",
-      "excerpt": "https://community.homey.app/t/app-tuya-zigbee-app/26439 [APP][Pro] Tuya Zigbee App /c/apps/7 Talk about all Homey Apps in this category. Apps This app makes Homey support Tuya Zigbee devices! Tuya Zigbee devices are white label products and found with many brands, each brand will have a unique ma...",
-      "date": "2021-05-18T09:02:49.617Z"
     },
     {
       "topicId": 78655,
@@ -17725,6 +17725,13 @@
           "text": "Hi Dylan, just tested version 8.1.68 no changes and I’ve seen that the Luminance of the Doo/Window sensors the Luminance is not lower than 1128 Lx while it’s fully dark outside see screenshot.\n\nDiagnostic code 'ff555890-afce-4dee-8706-6ff993c40db2\n\n10000318991220×2712 235 KB\n\nGood night and thanks for your hard work.\n\nBest regards Peter.",
           "date": "2026-06-01T21:46:52.354Z",
           "replyTo": null
+        },
+        {
+          "num": 2064,
+          "user": "DomLAJO",
+          "text": "Hi\n\nI’m a bit confused …\n\nDoes every sensor have to be recognized by an app before integrating it in this app ?",
+          "date": "2026-06-02T16:49:11.594Z",
+          "replyTo": 2063
         }
       ],
       "category": 7
@@ -55810,6 +55817,34 @@
       "category": 8
     },
     {
+      "id": 155646,
+      "title": "[Unofficial] /[App] HomeSuite — reliability-focused Zigbee drivers for Homey",
+      "posts": [
+        {
+          "num": 1,
+          "user": "Gabriel_Pedrosa_Mach",
+          "text": "A personal/unofficial Homey Pro app focused on device availability and power-cut recovery for Zigbee devices I physically own and test. It’s not a universal Tuya app or a replacement for other apps — I’m sharing it mainly so others can use it, fork it, improve it, or take it over.\n\nSupported (tested on my own hardware):\n\n\nZemismart / NovaDigital switches 1–6 gang (+ 2-gang+outlet) & 1CH relay\nTuya smart plugs & power strip (TS011F)\nMOES 3-gang dimmer + wireless scene remotes\nTemp/humidity sensors (Tuya LCD + Sonoff SNZB-02)\nHEIMAN combustible gas detector (plug-in)\nSonoff ZBMINIR2 / BASICZBR3 relays\nZigbee repeater / USB dongle (router firmware)\n\n(Full list with manufacturer IDs is in the README.)\n\n Easy to extend. Many of these differ only by manufacturer ID — if your device shares the same clusters, adding it is often just editing the matching driver’s driver.compose.json (add your manufacturer ID, no code change), or forking to go further. The GIRIER 1CH relay was added this way: it reuses the switch driver with its own manufacturer ID.\n\nMain features\n\nAvailability — detects when a mains device loses power or drops off the network, instead of silently looking “online”.\nReconnect-after-power-cut trigger — fires on the device’s boot/rejoin, even for short outages.\nConnected-devices info — for multi-gang devices, shows the group and which sub-device is the main.\nSmart polling — exponential backoff (no hammering offline devices) + jittered timing so devices don’t all report at the same instant.\nNo dead settings — firmware options the hardware doesn’t actually have (relay LED, gas-detector tamper) are hidden, not shown as non-functional.\nDevice-specific — native inching, toggle/momentary switch mode, per-gang power-on, persistent backlight, working Sonoff ZBMINIR2 turbo mode.\n\nAvailability strategy\nHomey exposes little operational Zigbee state, so this layer is heuristic (probabilistic, not deterministic):\n\n\npassive heartbeat monitoring\nadaptive timeout windows\nexponential-backoff polling\nreconnect detection after power restore\n\nI also opened an upstream issue requesting proper availability primitives in Homey’s Zigbee stack: Feature request: expose node.lastSeen timestamp in the ZigBee node object · Issue #180 · athombv/node-homey-zigbeedriver · GitHub\n\nHow it was built\nZigbee packet captures (Wireshark + network keys), Tuya/Sonoff traffic analysis, comparisons against Hubitat / ZHA / zigbee2mqtt behaviour, and live debugging with homey app run --remote.\n\nLimitations\n\nExperimental / personal project, tested on Homey Pro (2023).\nTuya firmware/manufacturer IDs change — behaviour may break after updates.\nAvailability is heuristic — “online on the network” ≠ “fully operational”.\nBest-effort only — and I’m explicitly open to others picking it up.\n\nGitHub\nGitHub - gpmachado/com.gpm.homesuite: Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more · GitHub — GPL-3.0, fork / improve / reuse freely.\n\nCredits: JohanBendz (Tuya/Sonoff base) · StyraHem / s-dimaio (Sonoff).",
+          "date": "2026-06-02T01:33:22.910Z",
+          "replyTo": null
+        },
+        {
+          "num": 2,
+          "user": "robertklep",
+          "text": "Gabriel_Pedrosa_Mach:\n\nGPL-3.0, fork / improve / reuse freely.\n\n\n\nFWIW, AI/LLM-generated code is, in most jurisdictions, unlicensable.",
+          "date": "2026-06-02T05:11:14.650Z",
+          "replyTo": null
+        },
+        {
+          "num": 3,
+          "user": "smarthomesven",
+          "text": "Gabriel_Pedrosa_Mach:\n\n\nTuya firmware/manufacturer IDs change — behaviour may break after updates.\n\n\n\nUnless you have them linked to a Tuya multimode/Zigbee gateway to update them occasionally, the device can’t change manufacturer or product ID when it’s linked to Homey. And even if you do use a Tuya gateway to update your device, I don’t think Zigbee devices will change their identity after a firmware update",
+          "date": "2026-06-02T10:01:17.457Z",
+          "replyTo": null
+        }
+      ],
+      "category": 7
+    },
+    {
       "id": 76025,
       "title": "Any Pet Feeders supported? What about Xiaomi or Tuya devices?",
       "posts": [
@@ -70886,83 +70921,6 @@
         }
       ],
       "category": 7
-    },
-    {
-      "id": 129207,
-      "title": "[Device] Tuya eWeLink Wifi Zigbee Computer Power Reset switch PCIe card",
-      "posts": [
-        {
-          "num": 1,
-          "user": "Franklin_Marlin",
-          "text": "Hello,\n\nI just have an new Homey Pro, I think with the newest firmware (was updating after making an account). I trie to use an Zigbee power switch for my Pc / Server with Homey Pro. a Tuya eWeLink Wifi Zigbee Computer Power Reset switch\n\n(  https://www.aliexpress.com/item/1005006090821609.html?spm=a2g0o.order_list.order_list_main.50.281979d2BAY94c&gatewayAdapt=glo2nld )\n\nI can add the Tuya Zigbee switch in Homey Pro, but when I used the button in the Homey Pro app, I get a red message \" Power on / off is not working \"  I also install the Tuya app in Homey Pro, but without success.\n\nIn Home Assistant the Zigbee power switch for Pc is working without any problem. Can you please tell me what I need to do?\n\nThank you,\n\nKind regards,\n\nFranklin",
-          "date": "2025-01-29T11:16:25.073Z",
-          "replyTo": null
-        },
-        {
-          "num": 2,
-          "user": "Dijker",
-          "text": "Franklin_Marlin:\n\nI also install the Tuya app in Homey Pro, but without success.\n\n\n\nAlways first install the app and use the Add device wizard from the app,\n\nAdding an App after pairing the device is useless.\n\nbut afaik your device isn’t listed as supported in this app :Tuya Zigbee App for Homey | Homey",
-          "date": "2025-01-29T11:51:31.630Z",
-          "replyTo": null
-        },
-        {
-          "num": 4,
-          "user": "Peter_Kawa",
-          "text": "In my humble opinion it should work as generic zigbee  On/Off device.\n\nBut Tuya always deviates from standard (zigbee) specs. I\"d stay away from it.\n\nNext to the hints from @Dijker , you could contact Athom (homey.app/support), and request for adjustments to the generic zigbee driver, to have this switch working.\n\nZero guarantee it will be picked up though.",
-          "date": "2025-01-29T12:26:01.248Z",
-          "replyTo": null
-        },
-        {
-          "num": 5,
-          "user": "Dijker",
-          "text": "For support in Zigbee there is a community app you found, read the topic for how to get support in that app. But for a developer is could be difficult without a device to test.\n\n[APP][Pro] Tuya Zigbee App",
-          "date": "2025-01-29T12:29:41.153Z",
-          "replyTo": null
-        },
-        {
-          "num": 6,
-          "user": "Franklin_Marlin",
-          "text": "Yes, but I want to use the Zigbee device directly ( local ), like it work without any problems in Home Assistant.  In Home Assistand I use a Sonoff Zigbee 3.0. . The strange thing is that after I can add the Tuya Zigbee device to Homey Pro, it can see the Tuya device in the Home pro app ( by Zigbee device ), but I cannot use the button ( I get an error ).\n\nI think that this can be solved by an firmware upgrade in Homey Pro",
-          "date": "2025-01-29T13:18:18.728Z",
-          "replyTo": 2
-        },
-        {
-          "num": 7,
-          "user": "Franklin_Marlin",
-          "text": "Hello Peter, I did not see your reply. So I need to take contact with Athom (homey.app/support) for my request? Thank you.",
-          "date": "2025-01-29T13:21:07.921Z",
-          "replyTo": 4
-        },
-        {
-          "num": 8,
-          "user": "Franklin_Marlin",
-          "text": "If homey.app/support can help met, than I decently keep the Homey Pro",
-          "date": "2025-01-29T13:22:32.692Z",
-          "replyTo": 6
-        },
-        {
-          "num": 9,
-          "user": "Franklin_Marlin",
-          "text": "Sorry I mean definitely",
-          "date": "2025-01-29T13:28:58.203Z",
-          "replyTo": 8
-        },
-        {
-          "num": 10,
-          "user": "robertklep",
-          "text": "Franklin_Marlin:\n\nI think that this can be solved by an firmware upgrade in Homey Pro\n\n\n\nYou seem to misunderstand how Homey works.\n\nAs opposed to Home Assistant (and many other platforms), it only has very limited generic Zigbee device support, for anything else you need specific support for your device by an app, and that’s that problem here: there is no app that supports your device.\n\nThe first post of the Tuya Zigbee app support thread explains how to request support for your device.",
-          "date": "2025-01-29T13:36:24.460Z",
-          "replyTo": 6
-        },
-        {
-          "num": 11,
-          "user": "Franklin_Marlin",
-          "text": "Hello Robert,\n\nYou completely right. I am misunderstanding how Homey Pro works. I am using Home Assistant for many years, and I want to try something new.  I thought that the Homey Pro Zigbee 3.0 support standard all Zigbee devices,  like the Home Assistant.  But If I understand your message right, I need to send a request to the \" Tuya Zigbee app support thread \"  I will do that. Thank you",
-          "date": "2025-01-29T14:27:38.119Z",
-          "replyTo": 10
-        }
-      ],
-      "category": 6
     }
   ],
   "deviceInfo": {
