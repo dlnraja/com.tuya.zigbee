@@ -584,7 +584,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
-       this._dataRecoveryManager.triggerRecovery();
+       if (this._dataRecoveryManager && typeof this._dataRecoveryManager.triggerRecovery === 'function') this._dataRecoveryManager.triggerRecovery();
     }
   }
 }
