@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-03T12:03:45.316Z",
-  "version": "8.1.78",
+  "timestamp": "2026-06-03T12:25:39.172Z",
+  "version": "8.1.80",
   "phases": {
     "1a": {
       "errors": [],
@@ -13,7 +13,7 @@
         "hybrid": 0,
         "ok": 314,
         "emptyMF": [],
-        "totalFP": 29429
+        "totalFP": 29430
       }
     },
     "1b": {
@@ -25,7 +25,7 @@
       "total": 730
     },
     "1d": {
-      "collisions": 42286,
+      "collisions": 42287,
       "collisionMap": {
         "_TZE200_7BZTMFM1|TS0601_AIR_PURIFIER": [
           "air_purifier",
@@ -198686,6 +198686,10 @@
           "sr_zs_switch",
           "wall_switch_2gang_1way"
         ],
+        "_TZ3000_QKIXDNON|TS0601": [
+          "switch",
+          "switch_3gang"
+        ],
         "_TZ3000_7HP93XPR|TS0012": [
           "switch_2_gang_metering",
           "wall_switch_2_gang"
@@ -198751,7 +198755,7 @@
   },
   "errors": [],
   "warnings": [
-    "COLLISIONS: 42286"
+    "COLLISIONS: 42287"
   ],
   "fixes": [],
   "stats": {
@@ -198762,7 +198766,7 @@
     "hybrid": 0,
     "ok": 314,
     "emptyMF": [],
-    "totalFP": 29429
+    "totalFP": 29430
   },
   "conclusion": "PASS"
 }
