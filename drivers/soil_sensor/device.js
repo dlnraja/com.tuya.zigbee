@@ -188,6 +188,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       }
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
       this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+    }
     super._handleDP(dpId, value);
   }
 
