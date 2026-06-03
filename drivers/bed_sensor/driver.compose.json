@@ -267,9 +267,6 @@
       "_tz3210_dse8ogfy",
       "_TZ3210_dse8ogfy",
       "_TZ3210_DSE8OGFY",
-      "_tz3210_j4pdtz9v",
-      "_TZ3210_j4pdtz9v",
-      "_TZ3210_J4PDTZ9V",
       "_tz3210_jijr1sss",
       "_TZ3210_jijr1sss",
       "_TZ3210_JIJR1SSS",
@@ -411,6 +408,36 @@
         "nl": "Controleer op OTA-updates",
         "fr": "Vérifier MàJ OTA"
       }
+    }
+  ],
+  "settings": [
+    {
+      "type": "dropdown",
+      "id": "sensitivity",
+      "value": "1",
+      "title": {
+        "en": "Sensitivity"
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Middle"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
     }
   ]
 }

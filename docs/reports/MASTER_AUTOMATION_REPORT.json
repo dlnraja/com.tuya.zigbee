@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T12:25:39.172Z",
+  "timestamp": "2026-06-03T14:54:37.025Z",
   "version": "8.1.80",
   "phases": {
     "1a": {
@@ -13,7 +13,7 @@
         "hybrid": 0,
         "ok": 314,
         "emptyMF": [],
-        "totalFP": 29430
+        "totalFP": 29427
       }
     },
     "1b": {
@@ -233,6 +233,12 @@
           "climate_sensor",
           "climate_sensor_energy"
         ],
+        "_TZE200_8YGSUHE1|TS0601": [
+          "air_quality_co2",
+          "air_quality_comprehensive",
+          "climate_sensor",
+          "climate_sensor_energy"
+        ],
         "_TZ2000_AVDNVYKF|TS0601": [
           "air_quality_comprehensive",
           "lcdtemphumidsensor"
@@ -248,11 +254,6 @@
         "_TZ3000_8GS8H2E4|TS0601": [
           "air_quality_comprehensive",
           "plug_smart"
-        ],
-        "_TZE200_8YGSUHE1|TS0601": [
-          "air_quality_comprehensive",
-          "climate_sensor",
-          "climate_sensor_energy"
         ],
         "_TZE200_DWCARSAT|TS0601": [
           "air_quality_comprehensive",
@@ -198766,7 +198767,7 @@
     "hybrid": 0,
     "ok": 314,
     "emptyMF": [],
-    "totalFP": 29430
+    "totalFP": 29427
   },
   "conclusion": "PASS"
 }

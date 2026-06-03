@@ -1,0 +1,20 @@
+{
+  "ts": "2026-06-03T12:15:34.817Z",
+  "total": 106,
+  "known": 103,
+  "new": 3,
+  "newFPs": [
+    {
+      "fp": "_top_bottom",
+      "src": "johan-pr-1406-diff"
+    },
+    {
+      "fp": "_temp_humid",
+      "src": "johan-pr-1237-diff"
+    },
+    {
+      "fp": "_TEMPHUMID_SENSOR",
+      "src": "johan-pr-1237-diff"
+    }
+  ]
+}
