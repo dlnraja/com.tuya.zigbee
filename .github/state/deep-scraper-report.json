@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T23:22:23.592Z",
+  "timestamp": "2026-06-03T04:35:25.713Z",
   "target": {
     "mfr": "",
     "pid": "",
@@ -13,8 +13,7 @@
       "success": true
     },
     "gmail": {
-      "success": false,
-      "error": "Command failed: node .github/scripts/fetch-gmail-diagnostics.js --max 10\nIMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)\n"
+      "success": true
     },
     "github": {
       "success": true
