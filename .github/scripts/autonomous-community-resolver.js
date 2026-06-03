@@ -26,9 +26,14 @@ async function main() {
 
   console.log('Analyzing community intelligence with AI...');
   
-  const systemPrompt = `You are an expert maintainer of the Tuya Homey app.
-Read the following GitHub issues and PR comments.
+const systemPrompt = `You are an expert maintainer of the Tuya Homey app.
+Read the following GitHub issues, PR comments, and Forum messages.
 Extract any user requests to add new Tuya fingerprints (e.g. _TZ3000_xxxxxx) to existing drivers.
+
+CRITICAL PROJECT RULES:
+1. NEVER REMOVE or REPLACE existing fingerprints to solve conflicts. A single manufacturerName (mfs) can have multiple hardware variants and device IDs.
+2. ONLY ADD/APPEND new fingerprints to the targeted driver.
+
 Return ONLY a valid JSON array of objects, with no markdown formatting around it (no \`\`\`json).
 Each object must have:
 - "fingerprint": The exact fingerprint string (e.g. "_TZ3000_xxxxx")
