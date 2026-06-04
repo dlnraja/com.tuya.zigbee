@@ -42,7 +42,7 @@
 | contact_sensor | 31 | 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DoorWindow-Sensor-ZB3.0, DS01, E1603/E1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, MCT-340 E, q9mpfhw, RH3001, SNZB-04, SNZB-04P, SNZB-04PR2, SNZB-04R2, TRADFRI open/close remote, TS0021, TS0203, TS0207, TS0601, ZG-102Z, ZG-102ZL | alarm_contact, measure_battery, alarm_generic... |
 | curtain_module | 1 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_set, windowcoverings_state |
 | curtain_module_2_gang | 1 | TS0601, TS130F | windowcoverings_set, windowcoverings_state |
-| curtain_motor | 395 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
+| curtain_motor | 397 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_shutter | 2 | TS0301, TS0601 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_tilt | 79 | TS0601, TS0601_curtain_tilt | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_wall | 24 | TS130F | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
@@ -157,7 +157,7 @@
 | power_clamp_meter | 22 | TS0601, TS0601_clamp | measure_power, meter_power, measure_current.phase2... |
 | power_meter | 220 | pj-1203a, Pj-1203A, PJ-1203A, TS0601, TS0601_meter | measure_power, meter_power, measure_voltage... |
 | presence_sensor_ceiling | 12 | CK-BL702-MWS-01(7016), TS0225, TS0601, TS0601_ceiling, ZP-301Z | alarm_motion, onoff, measure_luminance... |
-| presence_sensor_radar | 506 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
+| presence_sensor_radar | 503 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
 | radar_sensor | 6 | TS0601 | measure_luminance, alarm_motion |
 | radar_sensor_2 | 1 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | measure_luminance, alarm_motion |
 | radar_sensor_ceiling | 300 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | measure_luminance, alarm_motion |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 315 drivers, 17627 manufacturer IDs
+**Total:** 315 drivers, 17626 manufacturer IDs
 
-*Generated: 2026-06-04T18:58:26.186Z*
+*Generated: 2026-06-04T19:45:55.334Z*
