@@ -55,7 +55,7 @@
 | device_air_purifier_plug | 4 | TS011F, TS0601 | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_presence | 3 | TS0601, TS0601_air_purifier | alarm_motion, measure_luminance, measure_temperature... |
 | device_air_purifier_quality | 3 | TS0601, TS0601_air_purifier | measure_co2, measure_pm25, measure_temperature... |
-| device_air_purifier_radiator | 5 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
+| device_air_purifier_radiator | 4 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_siren | 1 | TS0601, TS0601_air_purifier | alarm_motion, measure_battery, alarm_generic... |
 | device_air_purifier_smart | 1 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, measure_humidity... |
 | device_air_purifier_smoke | 1 | TS0601, TS0601_air_purifier | alarm_smoke, measure_battery, measure_temperature... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 315 drivers, 31366 manufacturer IDs
+**Total:** 315 drivers, 31365 manufacturer IDs
 
-*Generated: 2026-06-04T07:22:40.203Z*
+*Generated: 2026-06-04T11:24:52.415Z*
