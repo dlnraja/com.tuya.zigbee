@@ -115,12 +115,30 @@ function checkForbiddenFiles() {
           if (forbidden.includes('*')) {
             const pattern = new RegExp('^' + forbidden.replace(/\./g, '\\.').replace(/\*/g, '.*') + '$');
             if (pattern.test(entry.name)) {
-              console.log(`  ${RED}⚠  FORBIDDEN: ${relativePath}${RESET}`);
-              found = true;
+              let isTracked = false;
+              try {
+                execSync(`git ls-files --error-unmatch "${relativePath}"`, { stdio: 'ignore' });
+                isTracked = true;
+              } catch {}
+              if (isTracked || process.env.CI) {
+                console.log(`  ${RED}⚠  FORBIDDEN: ${relativePath}${RESET}`);
+                found = true;
+              } else {
+                console.log(`  ${YELLOW}ℹ  Ignored local untracked forbidden file: ${relativePath}${RESET}`);
+              }
             }
           } else if (entry.name === forbidden) {
-            console.log(`  ${RED}⚠  FORBIDDEN: ${relativePath}${RESET}`);
-            found = true;
+            let isTracked = false;
+            try {
+              execSync(`git ls-files --error-unmatch "${relativePath}"`, { stdio: 'ignore' });
+              isTracked = true;
+            } catch {}
+            if (isTracked || process.env.CI) {
+              console.log(`  ${RED}⚠  FORBIDDEN: ${relativePath}${RESET}`);
+              found = true;
+            } else {
+              console.log(`  ${YELLOW}ℹ  Ignored local untracked forbidden file: ${relativePath}${RESET}`);
+            }
           }
         }
       }

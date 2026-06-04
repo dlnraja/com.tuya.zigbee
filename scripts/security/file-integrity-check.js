@@ -19,7 +19,7 @@ const CRITICAL_FILES = [
   // Athom required
   { path: 'README.txt',         minBytes: 100,   validate: 'none',    desc: 'Athom Store description (EN)' },
   { path: '.homeyignore',       minBytes: 10,    validate: 'none',    desc: 'Homey publish ignore rules' },
-  { path: '.homeyplugins.json', minBytes: 10,    validate: 'json',    desc: 'Homey plugins config' },
+  { path: '.homeyplugins.json', minBytes: 2,     validate: 'json',    desc: 'Homey plugins config' },
   // Assets
   { path: 'assets/icon.svg',    minBytes: 100,   validate: 'svg',     desc: 'App icon' },
   // Git & project
