@@ -47,7 +47,8 @@ async onInit() {
     // CONDITION: Smoke is/is not detected
     // 
     try {
-      var smokeDetectedCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected');
+      const smokeDetectedCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected');
+      if (smokeDetectedCondition) {
 
       smokeDetectedCondition.registerRunListener(async (args) => {
         const device = args.device;
@@ -60,6 +61,9 @@ async onInit() {
         return smokeDetected === true;
       });
       this.log('[FLOW]  Registered: smoke_detector_advanced_smoke_detected');
+      } else {
+        this.log('[FLOW]  smoke_detector_advanced_smoke_detected condition card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register smoke_detected condition: ${err.message}`);
     }
@@ -68,7 +72,8 @@ async onInit() {
     // CONDITION: Battery is/is not above threshold
     // 
     try {
-      var batteryAboveCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above');
+      const batteryAboveCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above');
+      if (batteryAboveCondition) {
 
       batteryAboveCondition.registerRunListener(async (args) => {
         const device = args.device;
@@ -83,6 +88,9 @@ async onInit() {
         return isAbove;
       });
       this.log('[FLOW]  Registered: smoke_detector_advanced_battery_above');
+      } else {
+        this.log('[FLOW]  smoke_detector_advanced_battery_above condition card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register battery_above condition: ${err.message}`);
     }
@@ -91,7 +99,8 @@ async onInit() {
     // ACTION: Test the alarm
     // 
     try {
-      var testAlarmAction = this.homey.flow.getActionCard('smoke_detector_advanced_test_alarm');
+      const testAlarmAction = this.homey.flow.getActionCard('smoke_detector_advanced_test_alarm');
+      if (testAlarmAction) {
 
       testAlarmAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -119,6 +128,9 @@ async onInit() {
         }
       });
       this.log('[FLOW]  Registered: smoke_detector_advanced_test_alarm');
+      } else {
+        this.log('[FLOW]  smoke_detector_advanced_test_alarm action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register test_alarm action: ${err.message}`);
     }

@@ -38,18 +38,21 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // 
     try {
       const sirenCondition = this.homey.flow.getConditionCard('device_air_purifier_siren_siren_is_sounding');
-
-      sirenCondition.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Condition: Device not available');
-          return false;
-        }
-        const isOn = device.getCapabilityValue('onoff') || device.getCapabilityValue('alarm_generic');
-        this.log(`[FLOW] Condition siren_is_sounding: ${isOn}`);
-        return isOn === true;
-      });
-      this.log('[FLOW]  Registered: siren_is_sounding');
+      if (sirenCondition) {
+        sirenCondition.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Condition: Device not available');
+            return false;
+          }
+          const isOn = device.getCapabilityValue('onoff') || device.getCapabilityValue('alarm_generic');
+          this.log(`[FLOW] Condition siren_is_sounding: ${isOn}`);
+          return isOn === true;
+        });
+        this.log('[FLOW]  Registered: siren_is_sounding');
+      } else {
+        this.log('[FLOW]  siren_is_sounding condition card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register siren_is_sounding: ${err.message}`);
     }
@@ -59,28 +62,31 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // 
     try {
       const turnOnAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_on');
-
-      turnOnAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        this.log('[FLOW] Action: Turning siren ON');
-        try {
-          if (device.hasCapability('onoff')) {
-            await device.setCapabilityValue('onoff', true);
+      if (turnOnAction) {
+        turnOnAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Action: Device not available');
+            return false;
           }
-          if (device.hasCapability('alarm_generic')) {
-            await device.setCapabilityValue('alarm_generic', true);
+          this.log('[FLOW] Action: Turning siren ON');
+          try {
+            if (device.hasCapability('onoff')) {
+              await device.setCapabilityValue('onoff', true);
+            }
+            if (device.hasCapability('alarm_generic')) {
+              await device.setCapabilityValue('alarm_generic', true);
+            }
+            return true;
+          } catch (err) {
+            this.log(`[FLOW]  Turn on failed: ${err.message}`);
+            return true;
           }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW]  Turn on failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW]  Registered: siren_turn_on');
+        });
+        this.log('[FLOW]  Registered: siren_turn_on');
+      } else {
+        this.log('[FLOW]  siren_turn_on action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register siren_turn_on: ${err.message}`);
     }
@@ -90,28 +96,31 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // 
     try {
       const turnOffAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_off');
-
-      turnOffAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        this.log('[FLOW] Action: Turning siren OFF');
-        try {
-          if (device.hasCapability('onoff')) {
-            await device.setCapabilityValue('onoff', false);
+      if (turnOffAction) {
+        turnOffAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Action: Device not available');
+            return false;
           }
-          if (device.hasCapability('alarm_generic')) {
-            await device.setCapabilityValue('alarm_generic', false);
+          this.log('[FLOW] Action: Turning siren OFF');
+          try {
+            if (device.hasCapability('onoff')) {
+              await device.setCapabilityValue('onoff', false);
+            }
+            if (device.hasCapability('alarm_generic')) {
+              await device.setCapabilityValue('alarm_generic', false);
+            }
+            return true;
+          } catch (err) {
+            this.log(`[FLOW]  Turn off failed: ${err.message}`);
+            return true;
           }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW]  Turn off failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW]  Registered: siren_turn_off');
+        });
+        this.log('[FLOW]  Registered: siren_turn_off');
+      } else {
+        this.log('[FLOW]  siren_turn_off action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register siren_turn_off: ${err.message}`);
     }
@@ -121,30 +130,33 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // 
     try {
       const setVolumeAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_volume');
-
-      setVolumeAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        const volume = args.volume || 'medium';
-        this.log(`[FLOW] Action: Set volume to ${volume}`);
-        try {
-          const volumeMap = { low: 0, medium: 1, high: 2 };
-          const val = volumeMap[volume] ?? 1;
-          // Send to standard DP5 + NEO DP116
-          if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(5, val, 'enum' ); } catch (e) {}
-            try { await device._sendTuyaDP(116, val, 'enum'); } catch (e) {}
+      if (setVolumeAction) {
+        setVolumeAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Action: Device not available');
+            return false;
           }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW]  Set volume failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW]  Registered: siren_set_volume');
+          const volume = args.volume || 'medium';
+          this.log(`[FLOW] Action: Set volume to ${volume}`);
+          try {
+            const volumeMap = { low: 0, medium: 1, high: 2 };
+            const val = volumeMap[volume] ?? 1;
+            // Send to standard DP5 + NEO DP116
+            if (device._sendTuyaDP) {
+              try { await device._sendTuyaDP(5, val, 'enum' ); } catch (e) {}
+              try { await device._sendTuyaDP(116, val, 'enum'); } catch (e) {}
+            }
+            return true;
+          } catch (err) {
+            this.log(`[FLOW]  Set volume failed: ${err.message}`);
+            return true;
+          }
+        });
+        this.log('[FLOW]  Registered: siren_set_volume');
+      } else {
+        this.log('[FLOW]  siren_set_volume action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register siren_set_volume: ${err.message}`);
     }
@@ -154,28 +166,31 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // 
     try {
       const setDurationAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_duration');
-
-      setDurationAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        const duration = args.duration || 30;
-        this.log(`[FLOW] Action: Set duration to ${duration}s`);
-        try {
-          // Send to standard DP7 + NEO DP103
-          if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(7, duration, 'value'); } catch (e) {}
-            try { await device._sendTuyaDP(103, duration, 'value'); } catch (e) {}
+      if (setDurationAction) {
+        setDurationAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Action: Device not available');
+            return false;
           }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW]  Set duration failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW]  Registered: siren_set_duration');
+          const duration = args.duration || 30;
+          this.log(`[FLOW] Action: Set duration to ${duration}s`);
+          try {
+            // Send to standard DP7 + NEO DP103
+            if (device._sendTuyaDP) {
+              try { await device._sendTuyaDP(7, duration, 'value'); } catch (e) {}
+              try { await device._sendTuyaDP(103, duration, 'value'); } catch (e) {}
+            }
+            return true;
+          } catch (err) {
+            this.log(`[FLOW]  Set duration failed: ${err.message}`);
+            return true;
+          }
+        });
+        this.log('[FLOW]  Registered: siren_set_duration');
+      } else {
+        this.log('[FLOW]  siren_set_duration action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register siren_set_duration: ${err.message}`);
     }
@@ -185,25 +200,28 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // 
     try {
       const setMelodyAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_melody');
-
-      setMelodyAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) return false;
-        const melody = parseInt(args.melody , 10) || 0;
-        this.log(`[FLOW] Action: Set melody to ${melody}`);
-        try {
-          // Send to standard DP21 + NEO DP102
-          if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(21, melody, 'enum'); } catch (e) {}
-            try { await device._sendTuyaDP(102, melody, 'enum'); } catch (e) {}
+      if (setMelodyAction) {
+        setMelodyAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) return false;
+          const melody = parseInt(args.melody , 10) || 0;
+          this.log(`[FLOW] Action: Set melody to ${melody}`);
+          try {
+            // Send to standard DP21 + NEO DP102
+            if (device._sendTuyaDP) {
+              try { await device._sendTuyaDP(21, melody, 'enum'); } catch (e) {}
+              try { await device._sendTuyaDP(102, melody, 'enum'); } catch (e) {}
+            }
+            return true;
+          } catch (err) {
+            this.log(`[FLOW]  Set melody failed: ${err.message}`);
+            return true;
           }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW]  Set melody failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW]  Registered: siren_set_melody');
+        });
+        this.log('[FLOW]  Registered: siren_set_melody');
+      } else {
+        this.log('[FLOW]  siren_set_melody action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register siren_set_melody: ${err.message}`);
     }

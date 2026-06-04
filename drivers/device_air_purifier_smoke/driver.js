@@ -57,19 +57,22 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Smoke is/is not detected
     // 
     try {
-      var smokeDetectedCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_smoke_detected');
-
-      smokeDetectedCondition.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Condition: Device not available');
-          return false;
-        }
-        const smokeDetected = device.getCapabilityValue('alarm_smoke');
-        this.log(`[FLOW] Condition smoke_detected: ${smokeDetected}`);
-        return smokeDetected === true;
-      });
-      this.log('[FLOW]  Registered: smoke_detector_advanced_smoke_detected');
+      const smokeDetectedCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_smoke_detected');
+      if (smokeDetectedCondition) {
+        smokeDetectedCondition.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Condition: Device not available');
+            return false;
+          }
+          const smokeDetected = device.getCapabilityValue('alarm_smoke');
+          this.log(`[FLOW] Condition smoke_detected: ${smokeDetected}`);
+          return smokeDetected === true;
+        });
+        this.log('[FLOW]  Registered: smoke_detector_advanced_smoke_detected');
+      } else {
+        this.log('[FLOW]  smoke_detector_advanced_smoke_detected condition card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register smoke_detected condition: ${err.message}`);
     }
@@ -78,21 +81,24 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Battery is/is not above threshold
     // 
     try {
-      var batteryAboveCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_battery_above');
-
-      batteryAboveCondition.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Condition: Device not available');
-          return false;
-        }
-        const battery = device.getCapabilityValue('measure_battery') || 0;
-        const threshold = args.threshold || 20;
-        const isAbove = battery > threshold;
-        this.log(`[FLOW] Condition battery_above: ${battery}% > ${threshold}% = ${isAbove}`);
-        return isAbove;
-      });
-      this.log('[FLOW]  Registered: smoke_detector_advanced_battery_above');
+      const batteryAboveCondition = this.homey.flow.getConditionCard('device_air_purifier_smoke_smoke_detector_advanced_battery_above');
+      if (batteryAboveCondition) {
+        batteryAboveCondition.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Condition: Device not available');
+            return false;
+          }
+          const battery = device.getCapabilityValue('measure_battery') || 0;
+          const threshold = args.threshold || 20;
+          const isAbove = battery > threshold;
+          this.log(`[FLOW] Condition battery_above: ${battery}% > ${threshold}% = ${isAbove}`);
+          return isAbove;
+        });
+        this.log('[FLOW]  Registered: smoke_detector_advanced_battery_above');
+      } else {
+        this.log('[FLOW]  smoke_detector_advanced_battery_above condition card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register battery_above condition: ${err.message}`);
     }
@@ -101,34 +107,37 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ACTION: Test the alarm
     // 
     try {
-      var testAlarmAction = this.homey.flow.getActionCard('device_air_purifier_smoke_smoke_detector_advanced_test_alarm');
-
-      testAlarmAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        
-        this.log('[FLOW] Action test_alarm: Triggering self-test');
-        
-        // Try to send self-test command via Tuya DP
-        try {
-          if (device._tuyaEF00Manager) {
-            // DP8 = self_test on many smoke detectors
-            await device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
-            this.log('[FLOW]  Self-test command sent via Tuya DP8');
-            return true;
-          } else {
-            this.log('[FLOW]  Tuya manager not available - device may not support remote test');
+      const testAlarmAction = this.homey.flow.getActionCard('device_air_purifier_smoke_smoke_detector_advanced_test_alarm');
+      if (testAlarmAction) {
+        testAlarmAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Action: Device not available');
+            return false;
+          }
+          
+          this.log('[FLOW] Action test_alarm: Triggering self-test');
+          
+          // Try to send self-test command via Tuya DP
+          try {
+            if (device._tuyaEF00Manager) {
+              // DP8 = self_test on many smoke detectors
+              await device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
+              this.log('[FLOW]  Self-test command sent via Tuya DP8');
+              return true;
+            } else {
+              this.log('[FLOW]  Tuya manager not available - device may not support remote test');
+              return true; // Return true to not break the flow
+            }
+          } catch (err) {
+            this.log(`[FLOW]  Self-test failed: ${err.message}`);
             return true; // Return true to not break the flow
           }
-        } catch (err) {
-          this.log(`[FLOW]  Self-test failed: ${err.message}`);
-          return true; // Return true to not break the flow
-        }
-      });
-      this.log('[FLOW]  Registered: smoke_detector_advanced_test_alarm');
+        });
+        this.log('[FLOW]  Registered: smoke_detector_advanced_test_alarm');
+      } else {
+        this.log('[FLOW]  smoke_detector_advanced_test_alarm action card not found');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register test_alarm action: ${err.message}`);
     }
