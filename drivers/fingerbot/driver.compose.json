@@ -69,7 +69,37 @@
       "instruction": {
         "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3210_j4pdtz9v",
+        "productId": [
+          "TS0001",
+          "TS0001_fingerbot"
+        ]
+      },
+      {
+        "manufacturerName": "_TZ3210_dse8ogfy",
+        "productId": [
+          "TS0001",
+          "TS0001_fingerbot"
+        ]
+      },
+      {
+        "manufacturerName": "_TZ3210_232nryqh",
+        "productId": [
+          "TS0001",
+          "TS0001_fingerbot"
+        ]
+      },
+      {
+        "manufacturerName": "_TZ3210_okbss9dy",
+        "productId": [
+          "TS0001",
+          "TS0001_fingerbot"
+        ]
+      }
+    ]
   },
   "maintenanceActions": [
     {
