@@ -1,0 +1,511 @@
+[
+  {
+    "postNumber": 500,
+    "username": "Peter_van_Werkhoven",
+    "date": "2025-10-25",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Multisensor (Tuya Zigbee)",
+        "issue": "Still not recognized as sensor, still showing as universal ZigBee device. Fails to register as a proper sensor."
+      },
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "SOS device",
+        "issue": "Recognized but not triggering and no battery reading."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": "4.9.19"
+  },
+  {
+    "postNumber": 530,
+    "username": "Laborhexe",
+    "date": "2025-11-20",
+    "devices": [
+      {
+        "manufacturerName": "_TZ3000_1o6x1bl0",
+        "productId": "ZG-204ZM",
+        "deviceType": "Generic Zigbee device",
+        "issue": "Device was added as generic - app did not recognize it properly."
+      },
+      {
+        "manufacturerName": "_TZE200_rhgsbacq",
+        "productId": null,
+        "deviceType": "Presence sensor",
+        "issue": "Recognized as presence sensor but not working."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": "4.9.352"
+  },
+  {
+    "postNumber": 540,
+    "username": "telenut",
+    "date": "2025-11-26",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Generic Tuya Zigbee device",
+        "issue": "Initially showed all parameters but no values. After app update, degraded to only a button with no values."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 550,
+    "username": "Laborhexe",
+    "date": "2025-11-30",
+    "devices": [
+      {
+        "manufacturerName": "_TZE200_rhgsbacq",
+        "productId": null,
+        "deviceType": "Multi-sensor (temp/humidity/luminance/motion)",
+        "issue": "Shows proper luminance data now, but temperature, humidity and motion readings show '56 years ago' - epoch/timestamp parsing bug."
+      },
+      {
+        "manufacturerName": null,
+        "productId": "ZG-204ZM",
+        "deviceType": "Zigbee device",
+        "issue": "No changes for ZG-204ZM - previously reported issue remains unresolved."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 570,
+    "username": "JDrewsen",
+    "date": "2025-12-04",
+    "devices": [
+      {
+        "manufacturerName": "_TZ3000_7ysdnebc",
+        "productId": "TS1101",
+        "deviceType": "2-channel dimmer",
+        "issue": "App fails to detect the device has two channels, recognizing only one. Channel selector displays incorrectly showing 'On | Channel 2 | On' where 'On' is Danish for 'tandt'. Selecting first 'On' controls channel one, the other two selections do nothing."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 600,
+    "username": "Peter_van_Werkhoven",
+    "date": "2025-12-08",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Tuya Zigbee Multisensor",
+        "issue": "Temperature fluctuating (reading ~14 degrees but actual not matching), motion detection stopped working, humidity inaccurate (reading 50% but actual is 89%), SOS button not triggering flows, no battery reading."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "resolution": "After update 5.5.107, temperature and humidity stabilized, motion detection resumed working."
+  },
+  {
+    "postNumber": 640,
+    "username": "Vitalii",
+    "date": "2025-12-21",
+    "devices": [
+      {
+        "manufacturerName": "_TZE204_chbyv06",
+        "productId": null,
+        "deviceType": "Gas sensor/detector",
+        "issue": "Device was misclassified as climate_sensor instead of gas_detector. Fix exists in test version (from forum post #638) but not yet in released version. User requests inclusion in next release."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 660,
+    "username": "Cyril",
+    "date": "2025-12-22",
+    "devices": [
+      {
+        "manufacturerName": "_TZ3000_zgyzgdua",
+        "productId": "TS0044",
+        "deviceType": "4-button Zigbee switch",
+        "issue": "Positive report - device works correctly after being added to MOES gateway, deleted, and re-added to Homey."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "ieeeAddress": "a4:c1:38:b7:1d:a0:94:53",
+    "networkAddress": 39252,
+    "powerSource": "Battery",
+    "gateway": "MOES gateway"
+  },
+  {
+    "postNumber": 670,
+    "username": "FrankP",
+    "date": "2025-12-24",
+    "devices": [
+      {
+        "manufacturerName": "Tuya (ZS06)",
+        "productId": "ZS06",
+        "deviceType": "IR remote blaster",
+        "issue": "IR code learning fails - button pressed but not staying in 'on' position, no code displayed as learned. On/off button non-functional. Missing flow card support for learned IR codes."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 680,
+    "username": "Francesco_Carrozzo",
+    "date": "2025-12-25",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Zigbee end device",
+        "issue": "Device becomes unavailable within seconds while continuing to blink, despite being configured as enddevice."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 690,
+    "username": "Ronny_M",
+    "date": "2025-12-26",
+    "devices": [
+      {
+        "manufacturerName": "_TZE204_gkfbdvyx",
+        "productId": "TS0601",
+        "deviceType": "Zigbee sensor (from Aliexpress)",
+        "issue": "Nothing is working - all readings appear broken."
+      },
+      {
+        "manufacturerName": "_TZE284_iadro9bf",
+        "productId": "TS0601",
+        "deviceType": "Zigbee sensor (from Aliexpress)",
+        "issue": "Nothing is working - all readings appear broken."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 760,
+    "username": "Ronny_M",
+    "date": "2025-12-29",
+    "devices": [
+      {
+        "manufacturerName": "_TZE284_iadro9bf",
+        "productId": "TS0601",
+        "deviceType": "Human Presence / mmWave sensor (router, mains-powered)",
+        "issue": "Motion alarm always stuck on 'Yes'. Lux readings way too high (~2200 lux when range is 0-2000, room should be 10-20 lux). Hundreds of spurious battery notifications flooding timeline even though device is mains-powered. Toggling battery notification setting does not help."
+      },
+      {
+        "manufacturerName": "_TZE204_gkfbdvyx",
+        "productId": "TS0601",
+        "deviceType": "Presence/motion sensor with lux (router, mains-powered)",
+        "issue": "Was working yesterday on v5.5.291 for motion and lux, but this morning turned into a climate sensor. Motion always stuck on 'Yes'. Presence is inverted - shows 'Yes' when outside room, 'No' when inside. After update to .302, device reverted to presence sensor type but with inverted/inaccurate readings."
+      }
+    ],
+    "diagnosticReportIds": ["1445f2fd-dec1-455e-bf2c-9a60f1c7869a"],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "ieeeAddresses": {
+      "_TZE284_iadro9bf": "a4:c1:38:45:44:ae:8d:34",
+      "_TZE204_gkfbdvyx": "a4:c1:38:4d:39:f6:1a:6c"
+    }
+  },
+  {
+    "postNumber": 800,
+    "username": "Lasse_K",
+    "date": "2025-12-31",
+    "devices": [
+      {
+        "manufacturerName": "HOBEIAN",
+        "productId": "33417 (8289)",
+        "deviceType": "ZG-102Z",
+        "issue": "User asking if device is the same as previously discussed - likely requesting compatibility confirmation or reporting new device for support."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "ieeeAddress": "a4:c1:38:a4:ac:29:7c:5f"
+  },
+  {
+    "postNumber": 820,
+    "username": "Fiek",
+    "date": "2026-01-02",
+    "devices": [
+      {
+        "manufacturerName": "_TZ3210_s8lvbbuc",
+        "productId": "TS0505B",
+        "deviceType": "RGB Zigbee light (color control, router)",
+        "issue": "Error: 'Cannot get device by id'. Device paired using interview process as generic Zigbee device. Reporting configurations mostly show NOT_FOUND status except OnOff and LevelControl."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "ieeeAddress": "a4:c1:38:74:53:06:7c:f3",
+    "networkAddress": 42270
+  },
+  {
+    "postNumber": 830,
+    "username": "4x4_Pete",
+    "date": "2026-01-02",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": "ZG-204ZM",
+        "deviceType": "PIR + 2.4GHz human presence sensor",
+        "issue": "Constant battery warnings flooding the timeline making device unusable, despite disabling battery notifications in settings. Brightness, temperature and humidity shown although device only provides brightness. Many additional options/properties from Zigbee2MQTT profile not exposed in Homey app; some properties may be misinterpreted as battery settings."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "zigbee2mqttReference": "https://www.zigbee2mqtt.io/devices/ZG-204ZM.html"
+  },
+  {
+    "postNumber": 850,
+    "username": "ManuelKugler",
+    "date": "2026-01-05",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Unknown Tuya Zigbee device",
+        "issue": "Missing token value error: trigger::a1281cc0-5ddf-4de8-9fb5-7b8889ab5687::button"
+      }
+    ],
+    "diagnosticReportIds": ["3005a512-7e2b-45cb-b2fc-e2c02fd37892"],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 860,
+    "username": "ManuelKugler",
+    "date": "2026-01-06",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Unknown Tuya Zigbee device",
+        "issue": "Missing token value error: trigger::f0bef52e-39f2-4e9f-9ab3-32bea3c9a9cc::dp_id"
+      }
+    ],
+    "diagnosticReportIds": ["f0bef52e-39f2-4e9f-9ab3-32bea3c9a9cc"],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 870,
+    "username": "Peter_Kawa",
+    "date": "2026-01-07",
+    "devices": [
+      {
+        "manufacturerName": "_TZE204_81yrt3lo",
+        "productId": "TS0601",
+        "deviceType": "Climate sensor (router, mains-powered)",
+        "issue": "Device interview/pairing test - gets added as climate sensor. Uses Tuya proprietary cluster 61184 (0xEF00)."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/1081"],
+    "appVersion": null,
+    "ieeeAddress": "a4:c1:38:09:7d:67:14:05",
+    "networkAddress": 24230,
+    "productLink": "https://nl.aliexpress.com/item/1005005881727281.html"
+  },
+  {
+    "postNumber": 880,
+    "username": "Hartmut_Dunker",
+    "date": "2026-01-09",
+    "devices": [
+      {
+        "manufacturerName": "_TZ3002_pzao9ls1",
+        "productId": "TS0726",
+        "deviceType": "BSEED Smart Zigbee 4-gang switch",
+        "issue": "Device added as unknown zigbee device. Only shows basic on/off capability - no multi-gang switch support recognized. Interview with Homey Developer Tools did not work. Capabilities detected: only 'onoff' (single boolean)."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "ieeeAddress": "a4:c1:38:37:6d:12:06:30"
+  },
+  {
+    "postNumber": 890,
+    "username": "Ronny_M",
+    "date": "2026-01-10",
+    "devices": [
+      {
+        "manufacturerName": "_TZE284_iadro9bf",
+        "productId": null,
+        "deviceType": "Presence sensor",
+        "issue": "Previously attempted to add around Christmas time; now working with Tuya Hub."
+      },
+      {
+        "manufacturerName": "_TZE204_gkfbdvyx",
+        "productId": null,
+        "deviceType": "Presence sensor",
+        "issue": "Really slow through Tuya app in Homey."
+      },
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Zigbee button (Tuya)",
+        "issue": "Not working in Tuya Hub or in the app. Cannot make the interview - device does not stay awake long enough to complete pairing. 4 units received."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 920,
+    "username": "Ronny_M",
+    "date": "2026-01-11",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Zigbee button",
+        "issue": "After firmware update .473, button device continues to show as 'unknown zigbee device' - still unrecognized."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 930,
+    "username": "Ronny_M",
+    "date": "2026-01-11",
+    "devices": [
+      {
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-101ZL",
+        "deviceType": "Zigbee Button",
+        "issue": "Device now identifies as button after update .481, but pressing the physical button does nothing. Many cards appear but none work. Many cards appear two times in the list (duplicate cards). Pressing the right button online in Homey works, but the physical button does not trigger any action."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": ".481"
+  },
+  {
+    "postNumber": 940,
+    "username": "Ricardo_Lenior",
+    "date": "2026-01-12",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Ceiling presence sensor",
+        "issue": "User shared diagnostic code without describing specific problem. States 'only the ceiling presence sensor added to my devices' suggesting possible difficulty getting device to function."
+      }
+    ],
+    "diagnosticReportIds": ["ceed4a94-9b36-4395-b47c-f5a6b073abe8"],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 950,
+    "username": "FrankP",
+    "date": "2026-01-13",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Zigbee IR remote",
+        "issue": "Still no success after testing with version .509 - implies prior attempts with earlier versions also failed."
+      }
+    ],
+    "diagnosticReportIds": ["1eb3322e-8178-41fc-88d4-a3b40a333cd0"],
+    "githubIssueReferences": [],
+    "appVersion": ".509"
+  },
+  {
+    "postNumber": 960,
+    "username": "Cam",
+    "date": "2026-01-14",
+    "devices": [
+      {
+        "manufacturerName": "_TZ3000_5bpeda8u",
+        "productId": "TS0041",
+        "deviceType": "1-button wireless controller",
+        "issue": "Device interview/diagnostic data submission. User notes they also tried other devices (like universal button) but get the same pairing result - suggesting potential pairing/driver selection issues."
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null,
+    "ieeeAddress": "a4:c1:38:42:b7:e7:68:f3",
+    "homeyFirmwareVersion": "v5.5.552"
+  },
+  {
+    "postNumber": 970,
+    "username": "Lasse_K",
+    "date": "2026-01-14",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Water sensor",
+        "issue": "Device exhibits same behavior as previously discussed. Labeled as water sensor but user uncertain about naming differences - 'maybe just a difference name wise.'"
+      }
+    ],
+    "diagnosticReportIds": [],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 980,
+    "username": "Hartmut_Dunker",
+    "date": "2026-01-16",
+    "devices": [
+      {
+        "manufacturerName": "BSEED",
+        "productId": null,
+        "deviceType": "Zigbee 4 Gang Button Switch",
+        "issue": "Repeated error: 'Could not get device by id.' Error persists despite previous attempts. User offers to perform new device interview."
+      }
+    ],
+    "diagnosticReportIds": ["283afbba-6e17-4b42-bfce-863eb7ea6230"],
+    "githubIssueReferences": [],
+    "appVersion": null
+  },
+  {
+    "postNumber": 1000,
+    "username": "JJ10",
+    "date": "2026-01-15",
+    "devices": [
+      {
+        "manufacturerName": null,
+        "productId": null,
+        "deviceType": "Presence sensor (previously Climate sensor)",
+        "issue": "Device is no longer recognized as Climate sensor after update to v5.5.549. Now gets connected as unknown Zigbee device (no longer supported). Regression from previous working state."
+      }
+    ],
+    "diagnosticReportIds": ["31fa4814-598a-4e7e-9fa1-bce0a0da1988"],
+    "githubIssueReferences": [],
+    "appVersion": "5.5.549"
+  }
+]
