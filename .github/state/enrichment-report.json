@@ -1,10 +1,25 @@
 {
-  "timestamp": "2026-06-04T17:00:16.172Z",
-  "totalNew": 0,
+  "timestamp": "2026-06-04T17:59:52.159Z",
+  "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "sourceBreakdown": {
+    "zha-issue": 1
+  },
+  "newFingerprints": [
+    {
+      "fp": "_TZE284_sdvbnmj5",
+      "source": "zha-issue",
+      "issue": 5058,
+      "title": "Add Novato ZPV-01 battery powered smart valve quirk",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/5058",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    }
+  ],
+  "aiPlan": "Based on the provided information, it appears that the device fingerprint (_TZE284_sdvbnmj5) does not have any available data points (DPs) or capabilities listed. This makes it challenging to classify the device type or suggest a specific Homey driver.\n\nHowever, I can provide a general structure for the output markdown table, which can be filled in once more information about the device becomes available.\n\n```markdown\n| FP                  | Type   | Driver | DPs→Capabilities | Quirks |\n|---------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5    | Unknown| Unknown| None              | None   |\n```\n\n### Notes:\n- **Device Type**: Unable to classify without DPs or additional information.\n- **Driver**: Cannot suggest an existing driver without knowing the device type.\n- **DPs**: No DPs available to map to Homey capabilities.\n- **Quirks**: No quirks noted due to lack of information.\n\nPlease provide additional details about the device or its capabilities for a more accurate classification and mapping."
 }
