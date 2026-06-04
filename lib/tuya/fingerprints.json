@@ -6622,8 +6622,8 @@
     ]
   },
   "_TZE200_gubdgai2": {
-    "driverId": "presence_sensor_radar",
-    "type": "presence",
+    "driverId": "curtain_motor",
+    "type": "cover",
     "powerSource": "mains",
     "modelIds": [
       "TS0601"
@@ -8208,8 +8208,8 @@
     ]
   },
   "_TZE200_vdiuwbkq": {
-    "driverId": "presence_sensor_radar",
-    "type": "presence",
+    "driverId": "curtain_motor",
+    "type": "cover",
     "powerSource": "mains",
     "modelIds": [
       "TS0601"
