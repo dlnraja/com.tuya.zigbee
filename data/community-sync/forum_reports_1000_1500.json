@@ -1,0 +1,1638 @@
+{
+  "meta": {
+    "source": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+    "post_range": "1000-1500",
+    "extracted_date": "2026-06-04",
+    "total_device_reports": 95,
+    "total_diagnostic_ids": 62,
+    "total_github_references": 12
+  },
+  "device_reports": [
+    {
+      "post": 991,
+      "username": "blutch32",
+      "date": "2026-01-15",
+      "devices": [
+        {"type": "Soil sensor", "manufacturerName": null, "productId": null, "status": "new device request"},
+        {"type": "Amperemetric power meter", "manufacturerName": null, "productId": null, "status": "new device request"},
+        {"type": "Contact sensor", "manufacturerName": null, "productId": null, "issue": "Contact sensor not sending alarms"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 993,
+      "username": "tlink",
+      "date": "2026-01-15",
+      "devices": [{"type": "general", "issue": "Version x.554 crashes repeatedly"}],
+      "diagnosticIds": ["28ad5d68-c0cb-4700-89b2-9f15977f0824", "3b3ce767-aef2-403a-96ec-7a9be507cc6c"],
+      "githubRefs": []
+    },
+    {
+      "post": 994,
+      "username": "gjssj",
+      "date": "2026-01-15",
+      "devices": [{"type": "general", "issue": "Last version crashes"}],
+      "diagnosticIds": ["9130d5ea-2a76-4812-922d-bbc4b1e1ee75"],
+      "githubRefs": []
+    },
+    {
+      "post": 995,
+      "username": "Manu_Demay",
+      "date": "2026-01-15",
+      "devices": [{"type": "general", "issue": "V.554 app crashed"}],
+      "diagnosticIds": ["8a99f43d-743d-4547-94e6-53bb4ae08fe7"],
+      "githubRefs": []
+    },
+    {
+      "post": 996,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-15",
+      "devices": [{"type": "general", "issue": "App version 5.5.554 crashes straight away"}],
+      "diagnosticIds": ["bfe3a30b-4f47-4dc4-ba9e-be3df119988e"],
+      "githubRefs": []
+    },
+    {
+      "post": 1000,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-16",
+      "devices": [
+        {"type": "4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Could not get device by id error"}
+      ],
+      "diagnosticIds": ["283afbba-6e17-4b42-bfce-863eb7ea6230"],
+      "githubRefs": []
+    },
+    {
+      "post": 1001,
+      "username": "Lasse_K",
+      "date": "2026-01-16",
+      "devices": [
+        {"type": "Water sensor", "manufacturerName": null, "productId": null, "issue": "Installs but no alarm"},
+        {"type": "Contact sensors", "manufacturerName": null, "productId": null, "status": "work 100%"},
+        {"type": "Presence radar sensor", "manufacturerName": null, "productId": null, "issue": "Installs as unknown"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1003,
+      "username": "JJ10",
+      "date": "2026-01-16",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE200_crq3r3la", "productId": "CK-BL702-MWS-01(7016)", "issue": "Connected as unknown device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1004,
+      "username": "Ferdy_van_Hove",
+      "date": "2026-01-16",
+      "devices": [
+        {"type": "Rain/water sensor", "manufacturerName": "_TZ3210_p68kms0l", "productId": "TS0207", "issue": "Added as universal device instead of proper driver"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1005,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-16",
+      "devices": [
+        {"type": "4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1006,
+      "username": "tlink",
+      "date": "2026-01-16",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE204_ztqnh5cg", "productId": "TS0601", "issue": "Installs as climate sensor instead of presence sensor"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1011,
+      "username": "blutch32",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "Contact sensor", "manufacturerName": "_TZ3000_996rpfy6", "productId": "TS0203", "issue": "Contact alarm always displays no"},
+        {"type": "Soil sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-303Z"},
+        {"type": "Energy meter", "manufacturerName": "_TZE284_81yrt3lo", "productId": "TS0601"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1014,
+      "username": "ManuelKugler",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "Unknown Tuya device", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "Integration request - not working"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1016,
+      "username": "Mario_F",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "Moes UFO-R11 IR remote", "manufacturerName": "_TZ3290_ot6ewjvmejq5ekhl", "productId": "TS1201", "issue": "Integration request - not added"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1023,
+      "username": "Attilla",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "Bseed dimmer", "manufacturerName": "_TZE204_n9ctkb6j", "productId": "TS0601", "issue": "Not recognized by new app"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1027,
+      "username": "Tbao",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "Curtain switch", "manufacturerName": "_TZ3000_bs93npae", "productId": "TS130F", "issue": "Not recognized by any Homey app"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1029,
+      "username": "Eftychis_Georgilas",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "4-gang scene switch", "manufacturerName": "_TZ3000_wkai4ga5", "productId": "TS0044", "issue": "Unknown device"},
+        {"type": "4-gang scene switch", "manufacturerName": "_TZ3000_5tqxpine", "productId": "TS0044", "issue": "Unknown device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1030,
+      "username": "Freddyboy",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "Moes 4-button scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": "TS0044", "issue": "Physical buttons never worked; flow cards lost button controls"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1032,
+      "username": "Fiek",
+      "date": "2026-01-17",
+      "devices": [
+        {"type": "RGBW bulb", "manufacturerName": "_TZ3210_s8lvbbuc", "productId": "TS0505B", "issue": "Now pairs as unknown; got cannot get device by Id"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1036,
+      "username": "Freddyboy",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "4-gang wireless button", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "Flow card does not provide button press options; appears under Sensor section"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1037,
+      "username": "Lasse_K",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Water sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-222Z", "issue": "Installs but will not alarm"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1039,
+      "username": "Ferdy_van_Hove",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Solar rain sensor", "manufacturerName": "_TZ3210_p68kms0l", "productId": "TS0207", "issue": "Adds as universal device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1040,
+      "username": "Eftychis_Georgilas",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "4-gang wireless button", "manufacturerName": "_TZ3000_wkai4ga5", "productId": "TS0044", "issue": "Still unknown after multiple attempts"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1049,
+      "username": "JJ10",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Presence Sensor Radar", "manufacturerName": "_TZE200_crq3r3la", "productId": null, "issue": "Still pairs as unknown after all recommended steps"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1050,
+      "username": "dlnraja",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "4-button controller", "manufacturerName": "_TZ3000_wkai4ga5", "productId": "TS0044", "issue": "Duplicate manufacturerName in manifest caused incorrect matching", "resolution": "Fixed in v5.5.636"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1054,
+      "username": "JJ10",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": null, "productId": null, "issue": "Was climate sensor, now shows as unknown device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1056,
+      "username": "Eftychis_Georgilas",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "1-gang switch", "manufacturerName": null, "productId": null, "issue": "One device recognized, other still unknown"}
+      ],
+      "diagnosticIds": ["5caead78-5afa-458b-9316-1107beb1c902"],
+      "githubRefs": []
+    },
+    {
+      "post": 1057,
+      "username": "ManuelKugler",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Tuya sensor (battery)", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "Integration request"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1059,
+      "username": "Tbao",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Curtain/blind motor switch", "manufacturerName": "_TZ3000_bs93npae", "productId": "TS130F", "issue": "Device not pairing - no application for this device error"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1065,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Could not get device by id for 7 days; TypeError in driver init"}
+      ],
+      "diagnosticIds": ["875da0be-a317-4dcb-b585-0b6b2716db4b"],
+      "githubRefs": []
+    },
+    {
+      "post": 1074,
+      "username": "ManuelKugler",
+      "date": "2026-01-18",
+      "devices": [
+        {"type": "Valve (battery)", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "Integration request"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1075,
+      "username": "Freddyboy",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "Moes wireless scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "Physical buttons do not trigger flows; only 5 flow cards shown"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1077,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "1-button wall switch", "manufacturerName": "_TZ3000_ysdv91bk", "productId": "TS0001", "brand": "BSEED"},
+        {"type": "1-button wall switch", "manufacturerName": "_TZ3000_blhvsaqf", "productId": "TS0001", "brand": "BSEED"},
+        {"type": "3-button wall switch", "manufacturerName": "_TZ3000_qkixdnon", "productId": "TS0003", "brand": "BSEED"},
+        {"type": "2-button wall switch", "manufacturerName": "_TZ3000_l9brjwau", "productId": "TS0002", "brand": "BSEED"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1078,
+      "username": "Attilla",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "Dimmer", "manufacturerName": "_TZE204_n9ctkb6j", "productId": "TS0601", "issue": "Does not work in new app (worked in old app)"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1082,
+      "username": "Attilla",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "Dimmer", "manufacturerName": "_TZE204_n9ctkb6j", "productId": "TS0601", "issue": "Upper/lower case issue in manufacturerName"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/dlnraja/com.tuya.zigbee/pull/106"]
+    },
+    {
+      "post": 1086,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "BSEED wall switches", "manufacturerName": "multiple", "productId": "TS0001/TS0002/TS0003", "issue": "Not including; not seeing 2 gang wall switch"}
+      ],
+      "diagnosticIds": ["901ba6b1-dddf-4f14-a004-9684f4f9dbd3"],
+      "githubRefs": []
+    },
+    {
+      "post": 1087,
+      "username": "Peter_Kawa",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "unknown", "manufacturerName": "_TZE204_81yrt3lo", "productId": null, "issue": "Request to add device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1089,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "4-gang wall switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Device shows battery config despite being mains-powered; attached to wrong driver"}
+      ],
+      "diagnosticIds": ["cdeb32ac-30fc-429f-b04a-eb59b5bd79ce"],
+      "githubRefs": []
+    },
+    {
+      "post": 1091,
+      "username": "Freddyboy",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "Moes wireless scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": "TS0044", "issue": "Physical and icon buttons do nothing when pressed"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1092,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "4-Gang Smart Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Recognized as 4-Buttons Wireless Controller and does not work"}
+      ],
+      "diagnosticIds": ["0c99f5ac-df95-4f53-81d4-0fa7259d5405"],
+      "githubRefs": []
+    },
+    {
+      "post": 1093,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "2-button wall switch", "manufacturerName": "_TZ3000_l9brjwau", "productId": "TS0002", "brand": "BSEED", "issue": "Seen as unknown zigbee device"}
+      ],
+      "diagnosticIds": ["7366d559-8375-4a3a-8dd2-af62bc3b3cdd"],
+      "githubRefs": []
+    },
+    {
+      "post": 1094,
+      "username": "AlbertQ",
+      "date": "2026-01-19",
+      "devices": [
+        {"type": "HOBEIAN ZG-227Z climate sensor", "manufacturerName": "_TZE200_a8sdabtg", "productId": "TS0601", "issue": "Appears as unsupported device despite being in changelog"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1097,
+      "username": "FrankP",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "IR blaster", "manufacturerName": null, "productId": null, "issue": "Giving errors and still not working"}
+      ],
+      "diagnosticIds": ["89e408fe-d0ba-4216-95be-951824dac2b8"],
+      "githubRefs": []
+    },
+    {
+      "post": 1099,
+      "username": "Attilla",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "Touch dimmer", "manufacturerName": "_TZE200_3p5ydos3", "productId": "TS0601", "issue": "Both dimmers no longer work since v690; added as generic zigbee devices"},
+        {"type": "Touch dimmer", "manufacturerName": "_TZE204_n9ctkb6j", "productId": "TS0601", "issue": "Same as above"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1104,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "4-Gang Smart switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Recognized but physical and virtual button presses do nothing"}
+      ],
+      "diagnosticIds": ["7fab96a9-09f6-4df4-ae01-9873f72ecc5e"],
+      "githubRefs": []
+    },
+    {
+      "post": 1114,
+      "username": "JJ10",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE200_crq3r3la", "productId": null, "issue": "Still connected as unknown device in .707"}
+      ],
+      "diagnosticIds": ["999de772-5ce2-4674-86c3-c267c7e3a3f0"],
+      "githubRefs": []
+    },
+    {
+      "post": 1115,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "HOBEIAN Multisensor", "manufacturerName": "HOBEIAN", "productId": null, "issue": "Temperature and Humidity stopped updating since v5.5.677"}
+      ],
+      "diagnosticIds": ["b969422a-3d5b-446f-9b00-bce2cad0cdd9"],
+      "githubRefs": []
+    },
+    {
+      "post": 1116,
+      "username": "Freddyboy",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "Moes wireless scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "Physical and icon buttons not working on v707"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1117,
+      "username": "Ronny_M",
+      "date": "2026-01-20",
+      "devices": [
+        {"type": "HOBEIAN ZG-101ZL smart button", "manufacturerName": "HOBEIAN", "productId": "ZG-101ZL", "issue": "Identifies as button but nothing works"}
+      ],
+      "diagnosticIds": ["d9c6820f-334b-4e85-9615-762606f2a1f9"],
+      "githubRefs": []
+    },
+    {
+      "post": 1122,
+      "username": "AlbertQ",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "HOBEIAN ZG-227Z climate sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-227Z", "issue": "Cannot connect despite having drivers in changelog"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1124,
+      "username": "Lasse_K",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "HOBEIAN ZG-222Z water sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-222Z", "issue": "Alarm shows 56 years and Sabotage shows 4 min - incorrect time values"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1125,
+      "username": "blutch32",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "Soil sensor", "manufacturerName": null, "productId": null, "status": "now works"},
+        {"type": "Contact sensors", "manufacturerName": null, "productId": null, "issue": "Now detected as unknown zigbee devices"},
+        {"type": "Amperemetric energy meter", "manufacturerName": "_TZE284_81yrt3lo", "productId": "TS0601", "issue": "Now detected as unknown (was climate sensor)"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1126,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Buttons still do not work despite driver update to v718"}
+      ],
+      "diagnosticIds": ["8cbd94dd-573b-4e4d-8d7a-937c20aad729"],
+      "githubRefs": []
+    },
+    {
+      "post": 1128,
+      "username": "FinnKje",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "Vibration sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-102ZM", "issue": "Pairs as Generic Zigbee Device despite existing driver"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1129,
+      "username": "FinnKje",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "CCT LED strip controller", "manufacturerName": "_TZ3210_ksqwlz9v", "productId": "TS0502B", "issue": "On/Off and Color Temp work but dimming has no effect"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1130,
+      "username": "FinnKje",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "Human presence sensor", "manufacturerName": "_TZE284_debczeci", "productId": "TS0601", "issue": "Reports randomly with hours between updates; does not exit pairing mode"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1132,
+      "username": "JJ10",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": null, "productId": null, "issue": "Still connected as unknown zigbee device"}
+      ],
+      "diagnosticIds": ["5b4ab19d-78f0-4a72-9cb8-c5b163a25fab"],
+      "githubRefs": []
+    },
+    {
+      "post": 1133,
+      "username": "johnv",
+      "date": "2026-01-21",
+      "devices": [
+        {"type": "Plug with power meter", "manufacturerName": "eWeLink", "productId": "CK-BL702-SWP-01(7020)", "issue": "Request to add support"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1142,
+      "username": "Lasse_K",
+      "date": "2026-01-22",
+      "devices": [
+        {"type": "HOBEIAN ZG-222Z water sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-222Z", "issue": "Installs but no alarm (ver.731)"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1144,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-22",
+      "devices": [
+        {"type": "HOBEIAN ZG-204ZV Multisensor", "manufacturerName": "HOBEIAN", "productId": "ZG-204ZV", "issue": "Not sending temperature and humidity; only triggers movement and luminance"},
+        {"type": "SOS Peter Button", "manufacturerName": null, "productId": null, "issue": "No response to app or Flow on button press"}
+      ],
+      "diagnosticIds": ["55649ae3-2084-4c67-8173-b8ed67fb69a6"],
+      "githubRefs": []
+    },
+    {
+      "post": 1147,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-22",
+      "devices": [
+        {"type": "2-gang wall switch", "manufacturerName": "_TZ3000_l9brjwau", "productId": "TS0002", "brand": "BSEED", "issue": "Still seen as unknown device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1148,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-22",
+      "devices": [
+        {"type": "3-gang wall switch", "manufacturerName": "_TZ3000_qkixdnon", "productId": "TS0003", "brand": "BSEED", "issue": "Shown as unknown/not supported"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1149,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-22",
+      "devices": [
+        {"type": "Valve control / 1-gang switch", "manufacturerName": "_TZ3000_iedbgyxt", "productId": "TS0001", "issue": "Does do nothing - recognized but non-functional"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1152,
+      "username": "Freddyboy",
+      "date": "2026-01-22",
+      "devices": [
+        {"type": "Moes wireless scene switch", "manufacturerName": "Moes", "productId": "_TZ3000_zgyzgdua", "issue": "Still not responding to physical or icon buttons (v739)"}
+      ],
+      "diagnosticIds": ["b0e28de1-86b0-429b-9bcb-3519f0a96bdb"],
+      "githubRefs": []
+    },
+    {
+      "post": 1155,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-23",
+      "devices": [
+        {"type": "4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Buttons still do not work (v759)"}
+      ],
+      "diagnosticIds": ["da1490f2-0a0f-44f8-a7fd-66eb4f4f3d8b"],
+      "githubRefs": []
+    },
+    {
+      "post": 1160,
+      "username": "Cam",
+      "date": "2026-01-23",
+      "devices": [
+        {"type": "1-Button Wireless controller", "manufacturerName": null, "productId": null, "issue": "No GUI button, no response through flows, no battery readout"}
+      ],
+      "diagnosticIds": ["4d7b45a5-082f-4f1e-a787-a439eac5257a"],
+      "githubRefs": []
+    },
+    {
+      "post": 1161,
+      "username": "ManuelKugler",
+      "date": "2026-01-24",
+      "devices": [
+        {"type": "Thermostat", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "Recognized but cannot operate anything"}
+      ],
+      "diagnosticIds": ["fd5b7823-9790-4e3b-910c-5113600b755a"],
+      "githubRefs": []
+    },
+    {
+      "post": 1162,
+      "username": "JohnnyBravo",
+      "date": "2026-01-24",
+      "devices": [
+        {"type": "Temperature sensor", "manufacturerName": null, "productId": null, "issue": "Stopped working for 5 days; re-adding shows unknown Zigbee device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1163,
+      "username": "LukasT",
+      "date": "2026-01-24",
+      "devices": [
+        {"type": "Tuya Zigbee temperature/humidity sensor", "manufacturerName": "_TZE284_1wnh8bqp", "productId": "TS0601", "issue": "No temperature, humidity or battery values available"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/Koenkk/zigbee2mqtt/issues/28172"]
+    },
+    {
+      "post": 1171,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-25",
+      "devices": [
+        {"type": "SOS Peter Button", "manufacturerName": null, "productId": null, "issue": "Not responding and no Battery reading"},
+        {"type": "HOBEIAN Multisensor", "manufacturerName": "HOBEIAN", "productId": null, "issue": "Added as Motion/Luminance/Distance but should be Motion/Luminance/Temperature/Humidity"}
+      ],
+      "diagnosticIds": ["1e2e2f3a-ec1d-4684-b7da-b782af232913"],
+      "githubRefs": []
+    },
+    {
+      "post": 1176,
+      "username": "Ronny_M",
+      "date": "2026-01-25",
+      "devices": [
+        {"type": "HOBEIAN ZG-101ZL multisensor/button", "manufacturerName": "HOBEIAN", "productId": "ZG-101ZL", "issue": "Buttons are non-functional"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1182,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-25",
+      "devices": [
+        {"type": "BSEED 1-button wall switch", "manufacturerName": "_TZ3000_blhvsaqf", "productId": "TS0001", "brand": "BSEED", "issue": "Still seen as unknown zigbee device"},
+        {"type": "BSEED 1-button wall switch", "manufacturerName": "_TZ3000_ysdv91bk", "productId": "TS0001", "brand": "BSEED", "issue": "Same"},
+        {"type": "BSEED 3-button wall switch", "manufacturerName": "_TZ3000_qkixdnon", "productId": "TS0003", "brand": "BSEED", "issue": "Same; all buttons switch on simultaneously"}
+      ],
+      "diagnosticIds": ["77181b3e-4cc6-4917-8655-691059f66334"],
+      "githubRefs": []
+    },
+    {
+      "post": 1191,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "BSEED wall switches", "manufacturerName": "multiple", "productId": "TS0001/TS0002/TS0003", "brand": "BSEED", "issue": "Still seen as unknown zigbee device on V5.5.881"}
+      ],
+      "diagnosticIds": ["9b3ab61f-db38-4050-a7a0-9281ea1aae08"],
+      "githubRefs": []
+    },
+    {
+      "post": 1192,
+      "username": "Cam",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "HOBEIAN ZG-204ZL motion sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-204ZL", "issue": "Always reporting active zones, never goes inactive (regression)"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/1267"]
+    },
+    {
+      "post": 1193,
+      "username": "Ricardo_Lenior",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "Ceiling presence sensor (mmWave)", "manufacturerName": null, "productId": null, "issue": "Missing options; shows battery mmWave options not needed for 230v sensor"}
+      ],
+      "diagnosticIds": ["77C4CE16"],
+      "githubRefs": []
+    },
+    {
+      "post": 1194,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "BSEED 4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Physical buttons still do not work"}
+      ],
+      "diagnosticIds": ["112d80f7-d36c-4d27-8ad4-2377089d7fa1"],
+      "githubRefs": []
+    },
+    {
+      "post": 1195,
+      "username": "Mike_Van_A",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "Hobeian ZG-103ZL vibration sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-103ZL", "issue": "No official app for it yet; requests integration"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1196,
+      "username": "Mitch_Vallinga",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "Tuya Zigbee Curtain Module", "manufacturerName": "_TZ3000_5iixzdo7", "productId": "TS130F", "issue": "Not recognized by any app"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1200,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-26",
+      "devices": [{"type": "general", "issue": "Device still not working after V5.5.817"}],
+      "diagnosticIds": ["bd38b69e-2ed9-4f28-8775-0334222b2854"],
+      "githubRefs": []
+    },
+    {
+      "post": 1201,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-26",
+      "devices": [{"type": "general", "issue": "Device not working with V5.5.820 either"}],
+      "diagnosticIds": ["92e144d3-277a-4d09-8692-aa689b82bab5"],
+      "githubRefs": []
+    },
+    {
+      "post": 1202,
+      "username": "Dominique_C",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "Rain sensor", "manufacturerName": "TZ3210_p68kms0l", "productId": "TS0207", "issue": "IAS Zone error; requesting support"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1203,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-26",
+      "devices": [
+        {"type": "HOBEIAN ZG-204ZV Multisensor", "manufacturerName": "HOBEIAN", "productId": "ZG-204ZV", "issue": "SOS button triggers app but not Flow; missing Temperature/Humidity; Distance shown incorrectly; sensor readings fluctuating"}
+      ],
+      "diagnosticIds": ["52546992-9767-4557-bc11-aee8ea943b74"],
+      "githubRefs": []
+    },
+    {
+      "post": 1219,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-27",
+      "devices": [
+        {"type": "BSEED 1-gang switch", "manufacturerName": "_TZ3000_ysdv91bk", "productId": "TS0001", "brand": "BSEED", "issue": "All Bseed devices installed as unknown"}
+      ],
+      "diagnosticIds": ["15869329-ad28-4691-8449-1cf7f8b58331"],
+      "githubRefs": []
+    },
+    {
+      "post": 1223,
+      "username": "ManuelKugler",
+      "date": "2026-01-27",
+      "devices": [
+        {"type": "AVATTO TRV (battery)", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "Device does not work with the app"}
+      ],
+      "diagnosticIds": ["f089e2e7-ef9f-465e-8240-7dc3c00d22db"],
+      "githubRefs": []
+    },
+    {
+      "post": 1242,
+      "username": "Ronny_M",
+      "date": "2026-01-27",
+      "devices": [
+        {"type": "HOBEIAN ZG-101ZL button", "manufacturerName": "HOBEIAN", "productId": "ZG-101ZL", "issue": "Button still not working when pressing 1, 2 or long (v5.5.915)"}
+      ],
+      "diagnosticIds": ["093bfeb8-4a84-4f38-a63f-8f333d0d2949"],
+      "githubRefs": []
+    },
+    {
+      "post": 1243,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-27",
+      "devices": [
+        {"type": "BSEED 2-button wall switch", "manufacturerName": "_TZ3000_l9brjwau", "productId": "TS0003", "brand": "BSEED", "issue": "Unknown"},
+        {"type": "BSEED 3-button wall switch", "manufacturerName": "_TZ3000_qkixdnon", "productId": "TS0003", "brand": "BSEED", "issue": "Unknown"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/dlnraja/com.tuya.zigbee/issues/103", "https://github.com/dlnraja/com.tuya.zigbee/issues/102"]
+    },
+    {
+      "post": 1253,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-28",
+      "devices": [
+        {"type": "HOBEIAN Multisensor", "manufacturerName": "HOBEIAN", "productId": "ZG-204ZV", "issue": "Still no Battery, Temperature and Humidity data (v5.5.915)"}
+      ],
+      "diagnosticIds": ["add1366d-9538-4f8c-9ba4-1252034e5ce4"],
+      "githubRefs": []
+    },
+    {
+      "post": 1256,
+      "username": "Peter_van_Werkhoven",
+      "date": "2026-01-28",
+      "devices": [
+        {"type": "HOBEIAN Multisensor", "manufacturerName": "HOBEIAN", "productId": "ZG-204ZV", "issue": "Temperature showing but invalid; battery shows only in Insights"}
+      ],
+      "diagnosticIds": ["fb042598-ef9f-4552-94cf-f4eb23db067b"],
+      "githubRefs": []
+    },
+    {
+      "post": 1259,
+      "username": "Vitalii",
+      "date": "2026-01-28",
+      "devices": [
+        {"type": "Combustible Gas Detector / RQ500A", "manufacturerName": "_TZE204_chbyv06", "productId": "TS0601", "issue": "Gas sensor detects but does not work correctly"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/626"]
+    },
+    {
+      "post": 1261,
+      "username": "Pieter_Pessers",
+      "date": "2026-01-28",
+      "devices": [
+        {"type": "BSEED wall switches", "manufacturerName": "multiple", "productId": "TS0001/TS0003", "brand": "BSEED", "issue": "All still seen as unknown zigbee device on V5.5.932"}
+      ],
+      "diagnosticIds": ["ad00e674-dbdc-47cd-bd56-8638fbe3f12c"],
+      "githubRefs": []
+    },
+    {
+      "post": 1263,
+      "username": "Freddyboy",
+      "date": "2026-01-28",
+      "devices": [
+        {"type": "Moes 4 button wireless scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "No response to flows when pressing physical button or icons (v934)"}
+      ],
+      "diagnosticIds": ["ad2e946e-e40b-477f-912c-7825383619fb"],
+      "githubRefs": []
+    },
+    {
+      "post": 1270,
+      "username": "Joep_K",
+      "date": "2026-01-29",
+      "devices": [
+        {"type": "Tuya Fingerbot", "manufacturerName": null, "productId": null, "issue": "Shows red exclamation mark; unable to select or add"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1276,
+      "username": "ManuelKugler",
+      "date": "2026-01-29",
+      "devices": [
+        {"type": "AVATTO TRV", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "No change with 5.5.960"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1279,
+      "username": "Hartmut_Dunker",
+      "date": "2026-01-29",
+      "devices": [
+        {"type": "4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Physical buttons worked with v817 but stopped after re-pairing; virtual buttons never worked"}
+      ],
+      "diagnosticIds": ["c33007b0-d28d-4fda-bab8-b5423def961b"],
+      "githubRefs": []
+    },
+    {
+      "post": 1288,
+      "username": "Patrick_Van_Deursen",
+      "date": "2026-01-30",
+      "devices": [
+        {"type": "Radar sensor", "manufacturerName": "_TZE200_kb5noeto", "productId": "TS0601", "issue": "Battery oscillates 100% to 1-2%; settings don't persist; distance/humidity not working; only motion shown"}
+      ],
+      "diagnosticIds": ["211668d0-4dd2-44fa-b0b6-6a3802d52bd8"],
+      "githubRefs": []
+    },
+    {
+      "post": 1290,
+      "username": "ManuelKugler",
+      "date": "2026-01-30",
+      "devices": [
+        {"type": "AVATTO TRV", "manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "issue": "No change - device still not recognized properly"}
+      ],
+      "diagnosticIds": ["aba2c0c3-9925-4528-b876-24deb63cf932"],
+      "githubRefs": []
+    },
+    {
+      "post": 1291,
+      "username": "tlink",
+      "date": "2026-01-30",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE204_ztqnh5cg", "productId": "TS0601", "issue": "Not recognised anymore (worked in October); issue persists to v980"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1295,
+      "username": "ManuelKugler",
+      "date": "2026-01-30",
+      "devices": [
+        {"type": "1-button switch", "manufacturerName": "_TZ3000_yj6k7vfo", "productId": "TS0041", "issue": "Device not functioning properly"}
+      ],
+      "diagnosticIds": ["e8f3e458-be41-4532-bdef-548545e1af87"],
+      "githubRefs": []
+    },
+    {
+      "post": 1297,
+      "username": "Patrick_Van_Deursen",
+      "date": "2026-01-31",
+      "devices": [
+        {"type": "Radar sensor", "manufacturerName": "_TZE200_kb5noeto", "productId": "TS0601", "issue": "Motion works; distance, temp, lux, battery not working or present"}
+      ],
+      "diagnosticIds": ["33677378-eb74-437d-9ab6-35e8e4168a47"],
+      "githubRefs": []
+    },
+    {
+      "post": 1314,
+      "username": "blutch32",
+      "date": "2026-01-31",
+      "devices": [
+        {"type": "Power clamp meter", "manufacturerName": "_TZE284_81yrt3lo", "productId": "TS0601", "issue": "Power meter shows 0W despite clamps connected"}
+      ],
+      "diagnosticIds": ["a0f7de6a-7e07-4bea-99a1-68e4a7faa131"],
+      "githubRefs": []
+    },
+    {
+      "post": 1340,
+      "username": "Freddyboy",
+      "date": "2026-02-01",
+      "devices": [
+        {"type": "Moes 4 button wireless scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "Physical buttons cannot trigger flows; virtual button works (v5.7.35)"}
+      ],
+      "diagnosticIds": ["087ee80a-f230-4119-af8d-bea3c366755e"],
+      "githubRefs": []
+    },
+    {
+      "post": 1341,
+      "username": "blutch32",
+      "date": "2026-02-01",
+      "devices": [
+        {"type": "Energy measurement module", "manufacturerName": "_TZE284_81yrt3lo", "productId": "TS0601", "issue": "Wiring checked, ratio set to 1000, v5.7.16"}
+      ],
+      "diagnosticIds": ["e0fcf3c9-89e4-4a92-a689-26f401ba0f50"],
+      "githubRefs": []
+    },
+    {
+      "post": 1347,
+      "username": "FrankP",
+      "date": "2026-02-02",
+      "devices": [
+        {"type": "IR remote", "manufacturerName": null, "productId": null, "issue": "IR remote never worked; Missing Capability Listener: onoff"}
+      ],
+      "diagnosticIds": ["df7c5882-0876-4989-a0cb-c2d2cc4eb7b2"],
+      "githubRefs": []
+    },
+    {
+      "post": 1350,
+      "username": "tlink",
+      "date": "2026-02-02",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE204_ztqnh5cg", "productId": "TS0601", "issue": "Shows up as generic Zigbee device; not recognized by app"}
+      ],
+      "diagnosticIds": ["1a942c70-99ad-4cf2-ad71-e7a860661399"],
+      "githubRefs": []
+    },
+    {
+      "post": 1351,
+      "username": "FinnKje",
+      "date": "2026-02-02",
+      "devices": [
+        {"type": "Human/presence sensor", "manufacturerName": null, "productId": null, "issue": "Triggering every 5 minutes"}
+      ],
+      "diagnosticIds": ["7570421d-64b1-46b4-ac74-ee02e92bbc58"],
+      "githubRefs": []
+    },
+    {
+      "post": 1353,
+      "username": "DutchDuke",
+      "date": "2026-02-03",
+      "devices": [
+        {"type": "Soil sensor", "manufacturerName": "_TZE284_oitavov2", "productId": "TS0601", "issue": "Added as unknown device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/1245"]
+    },
+    {
+      "post": 1360,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-04",
+      "devices": [
+        {"type": "BSEED 4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Added as unknown zigbee device (v5.8.12)"}
+      ],
+      "diagnosticIds": ["edc28fd4-854b-4a74-b8e7-656494808811"],
+      "githubRefs": []
+    },
+    {
+      "post": 1362,
+      "username": "blutch32",
+      "date": "2026-02-04",
+      "devices": [
+        {"type": "Contact sensor", "manufacturerName": "_TZ3000_996rpfy6", "productId": "TS0203", "issue": "Detected but alarm not working on the other side"},
+        {"type": "Ampermetric power meter", "manufacturerName": "_TZE284_81yrt3lo", "productId": "TS0601", "status": "Now works"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1365,
+      "username": "Cam",
+      "date": "2026-02-04",
+      "devices": [
+        {"type": "1 Button Wireless", "manufacturerName": "_TZ3000_5bpeda8u", "productId": "TS0041", "issue": "Added as 1 Buttons Wireless but still not registering presses"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1367,
+      "username": "Karsten_Hille",
+      "date": "2026-02-05",
+      "devices": [
+        {"type": "Zigbee Temperature and Humidity Sensor", "manufacturerName": null, "productId": null, "issue": "New update broke the sensor"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1368,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-05",
+      "devices": [
+        {"type": "BSEED 4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Only physical button 1 works; buttons 2, 3, 4 no reaction"}
+      ],
+      "diagnosticIds": ["83af3e29-4243-46ef-828d-7a3328aa0112"],
+      "githubRefs": []
+    },
+    {
+      "post": 1370,
+      "username": "DutchDuke",
+      "date": "2026-02-06",
+      "devices": [
+        {"type": "Soil sensor", "manufacturerName": "_TZE284_oitavov2", "productId": "TS0601", "issue": "Recognized but gives error while installing"}
+      ],
+      "diagnosticIds": ["6540a283-5dec-4cf5-8ded-0eaf4a0db892"],
+      "githubRefs": []
+    },
+    {
+      "post": 1374,
+      "username": "Cam",
+      "date": "2026-02-06",
+      "devices": [
+        {"type": "1 Button Wireless", "manufacturerName": "_TZ3000_5bpeda8u", "productId": "TS0041", "issue": "Button not registering presses (v5.8.30)"}
+      ],
+      "diagnosticIds": ["9d71284c-a32a-4742-8e2e-760a99af98ba"],
+      "githubRefs": []
+    },
+    {
+      "post": 1375,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-06",
+      "devices": [
+        {"type": "BSEED 4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Only button 1 works; no reaction on buttons 2, 3, 4 (v5.8.25/5.8.30)"}
+      ],
+      "diagnosticIds": ["0fd344ca-6c37-4a4a-962c-4b8c8f53412c"],
+      "githubRefs": []
+    },
+    {
+      "post": 1376,
+      "username": "Tbao",
+      "date": "2026-02-06",
+      "devices": [
+        {"type": "BSEED Curtain Switch", "manufacturerName": "_TZ3000_bs93npae", "productId": "TS130F", "brand": "BSEED", "issue": "None of the functionality currently working; cannot make curtains go up or down"}
+      ],
+      "diagnosticIds": ["d531929b-4df2-4962-98ac-26ddd9b39572"],
+      "githubRefs": []
+    },
+    {
+      "post": 1378,
+      "username": "Freddyboy",
+      "date": "2026-02-07",
+      "devices": [
+        {"type": "Moes scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "Virtual button can activate flow but physical button fails (v5.8.37)"}
+      ],
+      "diagnosticIds": ["e5c0bbf5-1c84-4e0a-8911-deb3dd9f09a2"],
+      "githubRefs": []
+    },
+    {
+      "post": 1381,
+      "username": "FrankP",
+      "date": "2026-02-07",
+      "devices": [
+        {"type": "ZS06 IR remote (Zosung)", "manufacturerName": "_TZ3290_7v1k4vufotpowp9z", "productId": "TS1201", "issue": "Learning mode not working; LED does not light; no code learned"}
+      ],
+      "diagnosticIds": ["1af2e2be-48e8-42c6-8606-f9981791aff6"],
+      "githubRefs": []
+    },
+    {
+      "post": 1383,
+      "username": "4x4_Pete",
+      "date": "2026-02-07",
+      "devices": [
+        {"type": "PIR sensor (HOBEIAN ZG-204ZM)", "manufacturerName": "HOBEIAN", "productId": "ZG-204ZM", "issue": "PIR does not work"}
+      ],
+      "diagnosticIds": ["25cbd6ae-364e-4477-a1c9-0009cfcb6719"],
+      "githubRefs": []
+    },
+    {
+      "post": 1386,
+      "username": "Cam",
+      "date": "2026-02-08",
+      "devices": [
+        {"type": "1-gang button", "manufacturerName": "_TZ3000_5bpeda8u", "productId": "TS0041", "issue": "Still no button presses registering (v5.8.66)"}
+      ],
+      "diagnosticIds": ["4b2150c6-11f9-412e-a133-e71bc4d0f538"],
+      "githubRefs": []
+    },
+    {
+      "post": 1387,
+      "username": "JJ10",
+      "date": "2026-02-08",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE200_crq3r3la", "productId": null, "issue": "Motion registered only ~1 sec; lux/distance not updated; battery shows ? but USB powered (v5.8.66)"}
+      ],
+      "diagnosticIds": ["17c03ea7-894d-4646-bfb2-4e3b6adc5b2c"],
+      "githubRefs": []
+    },
+    {
+      "post": 1389,
+      "username": "Freddyboy",
+      "date": "2026-02-08",
+      "devices": [
+        {"type": "Moes 4-button scene switch", "manufacturerName": "_TZ3000_zgyzgdua", "productId": null, "issue": "Still no flow triggered with physical keys (v5.8.65)"}
+      ],
+      "diagnosticIds": ["34b9565c-aee9-4906-bd21-145a18461285"],
+      "githubRefs": []
+    },
+    {
+      "post": 1393,
+      "username": "DutchDuke",
+      "date": "2026-02-09",
+      "devices": [
+        {"type": "Soil sensor", "manufacturerName": "_TZE284_oitavov2", "productId": "TS0601", "issue": "Temperature reading off - shows 1.8C instead of 18C (multiplier issue)"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1395,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-09",
+      "devices": [
+        {"type": "BSEED 4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "All 4 physical buttons work but pressing a virtual button causes all 4 physical buttons to toggle simultaneously"}
+      ],
+      "diagnosticIds": ["2cf6ccf7-78e8-4271-bc4b-3dc33c64e366"],
+      "githubRefs": []
+    },
+    {
+      "post": 1397,
+      "username": "Tividor",
+      "date": "2026-02-10",
+      "devices": [
+        {"type": "ZG-101ZS 4-button scene switch", "manufacturerName": "_TZ3000_bgtzm4ny", "productId": "TS0044", "issue": "Double press required to trigger; nothing else works"}
+      ],
+      "diagnosticIds": ["4a3b2feb-12d0-422c-ae77-97a7d045045a"],
+      "githubRefs": []
+    },
+    {
+      "post": 1399,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-10",
+      "devices": [
+        {"type": "BSEED 4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Physical buttons work but virtual button causes all 4 gangs to toggle simultaneously (v5.8.88)"}
+      ],
+      "diagnosticIds": ["be0e798a-2939-435f-841f-d8007e7ae634"],
+      "githubRefs": []
+    },
+    {
+      "post": 1400,
+      "username": "Piotr_Cetler",
+      "date": "2026-02-10",
+      "devices": [
+        {"type": "2 gang wall switch", "manufacturerName": "_TZ3000_cauq1okq", "productId": "TS0002", "issue": "Powering on first gang also turns on the second gang"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1405,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-13",
+      "devices": [
+        {"type": "BSEED 4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Virtual buttons no longer trigger any action on the switch (v5.9.6)"}
+      ],
+      "diagnosticIds": ["1c9a24c2-14b4-41e3-b492-64099e03f108"],
+      "githubRefs": []
+    },
+    {
+      "post": 1408,
+      "username": "Tividor",
+      "date": "2026-02-14",
+      "devices": [
+        {"type": "ZG-101ZS 4 button switch", "manufacturerName": "_TZ3000_bgtzm4ny", "productId": "TS0044", "issue": "Double/triple/long press not recognized"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1413,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-14",
+      "devices": [
+        {"type": "BSEED 4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Pressing one virtual button causes all physical buttons to toggle (v5.9.17)"}
+      ],
+      "diagnosticIds": ["945448b9-01a1-42bd-8ced-8b409b889216"],
+      "githubRefs": []
+    },
+    {
+      "post": 1424,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-16",
+      "devices": [
+        {"type": "4-gang switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Device paired but may need dedicated driver outside switch_4gang profile"}
+      ],
+      "diagnosticIds": ["2ce2df38-a775-42bf-a517-3354ebdfe4e8"],
+      "githubRefs": []
+    },
+    {
+      "post": 1428,
+      "username": "lemon",
+      "date": "2026-02-16",
+      "devices": [
+        {"type": "Door/window sensor", "manufacturerName": "_TZ3000_okohwwap", "productId": "TS0203", "issue": "Shows as generic Zigbee device despite being in Smart Device Finder"},
+        {"type": "Door/window sensor", "manufacturerName": "Zbeacon", "productId": null, "issue": "Same - shows as generic device"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1439,
+      "username": "Peter_Kawa",
+      "date": "2026-02-18",
+      "devices": [
+        {"type": "Arteco ZS-SF00 plant/soil sensor", "manufacturerName": "A89G12C", "productId": "Arteco", "issue": "Requesting device be added to app"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1443,
+      "username": "FrankP",
+      "date": "2026-02-19",
+      "devices": [
+        {"type": "IR remote", "manufacturerName": null, "productId": null, "issue": "Learning mode still not working; button turns off right away; nothing received when sending IR"}
+      ],
+      "diagnosticIds": ["caed9008-4d35-45ce-b62d-1d699c7e0b7d"],
+      "githubRefs": []
+    },
+    {
+      "post": 1444,
+      "username": "FrankP",
+      "date": "2026-02-19",
+      "devices": [
+        {"type": "2-gang wall switch", "manufacturerName": "_TZ3000_tzvbimpq", "productId": "TS0042", "issue": "Not recognized"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/986"]
+    },
+    {
+      "post": 1445,
+      "username": "Wasdroger",
+      "date": "2026-02-19",
+      "devices": [
+        {"type": "MOES Scene Switch 4 gang", "manufacturerName": "_TZ3000_zgyzgdua", "productId": "TS0044", "issue": "Pairing issues"}
+      ],
+      "diagnosticIds": ["5e4fae16-bae2-4858-8cf9-7537ecefea50"],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/1327"]
+    },
+    {
+      "post": 1446,
+      "username": "SkiMattie",
+      "date": "2026-02-19",
+      "devices": [
+        {"type": "HIMOJO Smart button", "manufacturerName": "_TZ3000_ja5osu5g", "productId": "TS0041", "issue": "Cannot add device; binding error; timeout on sleepy battery devices"},
+        {"type": "Radiator Valve", "manufacturerName": "_TZE204_9mjy74mp", "productId": "TS0601", "issue": "Cannot add"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/781"]
+    },
+    {
+      "post": 1461,
+      "username": "JJ10",
+      "date": "2026-02-20",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE200_crq3r3la", "productId": "CK-BL702-MWS-01(7016)", "issue": "Distance gone; temperature/humidity appear then disappear; lux gives 900 instead of ~30"}
+      ],
+      "diagnosticIds": ["6e261a02-b436-4f47-a4a9-85c25e6b15a9"],
+      "githubRefs": []
+    },
+    {
+      "post": 1462,
+      "username": "SkiMattie",
+      "date": "2026-02-20",
+      "devices": [
+        {"type": "Button", "manufacturerName": "_TZ3000_mrpevh8p", "productId": "TS0041", "issue": "Cannot add device; same error after updating"},
+        {"type": "Radiator Valve", "manufacturerName": "_TZE204_9mjy74mp", "productId": "TS0601", "issue": "Cannot add"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1464,
+      "username": "ManuelKugler",
+      "date": "2026-02-20",
+      "devices": [
+        {"type": "HOBEIAN ZG-303Z temp/humidity sensor", "manufacturerName": "HOBEIAN", "productId": "ZG-303Z", "issue": "Detected as standard Zigbee instead of being properly supported"}
+      ],
+      "diagnosticIds": ["3d592616-3f51-48c1-8fac-d52cc78910c7"],
+      "githubRefs": []
+    },
+    {
+      "post": 1465,
+      "username": "ManuelKugler",
+      "date": "2026-02-20",
+      "devices": [
+        {"type": "Soil moisture sensor", "manufacturerName": "_TZE284_aao3yzhs", "productId": "TS0601", "issue": "Always shows 100% moisture regardless of soil condition"}
+      ],
+      "diagnosticIds": ["f7d82927-e669-45e9-b78e-6169f2288b7f"],
+      "githubRefs": []
+    },
+    {
+      "post": 1467,
+      "username": "Slawek_Pe",
+      "date": "2026-02-21",
+      "devices": [
+        {"type": "Smart plug (energy monitoring)", "manufacturerName": "_TZ3210_xzhnra8x", "productId": "TS011F", "issue": "Voltage and power 10X lower than expected (~23V instead of ~230V)"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1477,
+      "username": "FrankP",
+      "date": "2026-02-24",
+      "devices": [
+        {"type": "1-gang wall remote", "manufacturerName": "_TZ3000_itb0omhv", "productId": "TS0041", "issue": "Covered as climate sensor but is actually a 1-gang wall remote"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": ["https://github.com/JohanBendz/com.tuya.zigbee/issues/762"]
+    },
+    {
+      "post": 1479,
+      "username": "Jocke_Wallen",
+      "date": "2026-02-25",
+      "devices": [
+        {"type": "4-button remote controller", "manufacturerName": "_TZ3000_u3nv1jwk", "productId": "TS0044", "issue": "Detected but does not recognize any buttons pressed"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1481,
+      "username": "JJ10",
+      "date": "2026-02-25",
+      "devices": [
+        {"type": "Presence sensor", "manufacturerName": "_TZE200_crq3r3la", "productId": "CK-BL702-MWS-01(7016)", "issue": "Movement detected but LUX off, distance not calculated, incorrect humidity/temp display"},
+        {"type": "Presence sensor", "manufacturerName": "_TZE200_gkfbdvyx", "productId": "TS0601", "issue": "Same behavior; router functionality not working"}
+      ],
+      "diagnosticIds": ["5a38ea0b-b225-4312-ba04-6dc7b4960339"],
+      "githubRefs": []
+    },
+    {
+      "post": 1482,
+      "username": "7Hills",
+      "date": "2026-02-25",
+      "devices": [
+        {"type": "Wenzhi WZ-235-ZB-RL 24G mmWave ceiling presence sensor with relay", "manufacturerName": "_TZE204_clrdrnya", "productId": "TS0601", "issue": "Wrong capabilities exposed; no temp/humidity but app shows them; incorrect luminance; battery cannot be disabled on mains-powered device"}
+      ],
+      "diagnosticIds": ["822fcb89-a1ba-43c0-b876-ef626163f7fb"],
+      "githubRefs": []
+    },
+    {
+      "post": 1484,
+      "username": "Jocke_Wallen",
+      "date": "2026-02-26",
+      "devices": [
+        {"type": "4-button remote", "manufacturerName": "_TZ3000_u3nv1jwk", "productId": "TS0044", "issue": "Detected but does not recognize or respond to buttons pressed"}
+      ],
+      "diagnosticIds": [],
+      "githubRefs": []
+    },
+    {
+      "post": 1520,
+      "username": "Hartmut_Dunker",
+      "date": "2026-02-26",
+      "devices": [
+        {"type": "BSEED Zigbee 4 Gang Button Switch", "manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "brand": "BSEED", "issue": "Pressing any virtual button causes all 4 physical buttons to turn on/off; should use wall_switch_4gang_1way driver"}
+      ],
+      "diagnosticIds": ["9803c61a-aa73-4e3c-99ed-30a5d0c43973"],
+      "githubRefs": []
+    }
+  ],
+  "all_diagnostic_ids": [
+    "28ad5d68-c0cb-4700-89b2-9f15977f0824",
+    "3b3ce767-aef2-403a-96ec-7a9be507cc6c",
+    "9130d5ea-2a76-4812-922d-bbc4b1e1ee75",
+    "8a99f43d-743d-4547-94e6-53bb4ae08fe7",
+    "bfe3a30b-4f47-4dc4-ba9e-be3df119988e",
+    "283afbba-6e17-4b42-bfce-863eb7ea6230",
+    "5caead78-5afa-458b-9316-1107beb1c902",
+    "28104a34-ea21-4021-bac0-d38ae22ef722",
+    "875da0be-a317-4dcb-b585-0b6b2716db4b",
+    "901ba6b1-dddf-4f14-a004-9684f4f9dbd3",
+    "0c99f5ac-df95-4f53-81d4-0fa7259d5405",
+    "7366d559-8375-4a3a-8dd2-af62bc3b3cdd",
+    "89e408fe-d0ba-4216-95be-951824dac2b8",
+    "7fab96a9-09f6-4df4-ae01-9873f72ecc5e",
+    "999de772-5ce2-4674-86c3-c267c7e3a3f0",
+    "b969422a-3d5b-446f-9b00-bce2cad0cdd9",
+    "d9c6820f-334b-4e85-9615-762606f2a1f9",
+    "5b4ab19d-78f0-4a72-9cb8-c5b163a25fab",
+    "8cbd94dd-573b-4e4d-8d7a-937c20aad729",
+    "55649ae3-2084-4c67-8173-b8ed67fb69a6",
+    "b0e28de1-86b0-429b-9bcb-3519f0a96bdb",
+    "f78a7a80-0de5-448a-975e-8ee8d6fc7b9d",
+    "5ce0f2d5-373e-45bf-a541-c3ef0576064d",
+    "da1490f2-0a0f-44f8-a7fd-66eb4f4f3d8b",
+    "4d7b45a5-082f-4f1e-a787-a439eac5257a",
+    "fd5b7823-9790-4e3b-910c-5113600b755a",
+    "1e2e2f3a-ec1d-4684-b7da-b782af232913",
+    "15869329-ad28-4691-8449-1cf7f8b58331",
+    "f089e2e7-ef9f-465e-8240-7dc3c00d22db",
+    "093bfeb8-4a84-4f38-a63f-8f333d0d2949",
+    "add1366d-9538-4f8c-9ba4-1252034e5ce4",
+    "fb042598-ef9f-4552-94cf-f4eb23db067b",
+    "77181b3e-4cc6-4917-8655-691059f66334",
+    "9b3ab61f-db38-4050-a7a0-9281ea1aae08",
+    "77C4CE16",
+    "112d80f7-d36c-4d27-8ad4-2377089d7fa1",
+    "bd38b69e-2ed9-4f28-8775-0334222b2854",
+    "92e144d3-277a-4d09-8692-aa689b82bab5",
+    "52546992-9767-4557-bc11-aee8ea943b74",
+    "ad00e674-dbdc-47cd-bd56-8638fbe3f12c",
+    "ad2e946e-e40b-477f-912c-7825383619fb",
+    "c33007b0-d28d-4fda-bab8-b5423def961b",
+    "211668d0-4dd2-44fa-b0b6-6a3802d52bd8",
+    "aba2c0c3-9925-4528-b876-24deb63cf932",
+    "e8f3e458-be41-4532-bdef-548545e1af87",
+    "33677378-eb74-437d-9ab6-35e8e4168a47",
+    "a0f7de6a-7e07-4bea-99a1-68e4a7faa131",
+    "087ee80a-f230-4119-af8d-bea3c366755e",
+    "e0fcf3c9-89e4-4a92-a689-26f401ba0f50",
+    "5bf7923d-e563-4588-8415-3368db7037f1",
+    "df7c5882-0876-4989-a0cb-c2d2cc4eb7b2",
+    "1a942c70-99ad-4cf2-ad71-e7a860661399",
+    "7570421d-64b1-46b4-ac74-ee02e92bbc58",
+    "edc28fd4-854b-4a74-b8e7-656494808811",
+    "83af3e29-4243-46ef-828d-7a3328aa0112",
+    "6540a283-5dec-4cf5-8ded-0eaf4a0db892",
+    "9d71284c-a32a-4742-8e2e-760a99af98ba",
+    "0fd344ca-6c37-4a4a-962c-4b8c8f53412c",
+    "d531929b-4df2-4962-98ac-26ddd9b39572",
+    "e5c0bbf5-1c84-4e0a-8911-deb3dd9f09a2",
+    "1af2e2be-48e8-42c6-8606-f9981791aff6",
+    "25cbd6ae-364e-4477-a1c9-0009cfcb6719",
+    "4b2150c6-11f9-412e-a133-e71bc4d0f538",
+    "17c03ea7-894d-4646-bfb2-4e3b6adc5b2c",
+    "34b9565c-aee9-4906-bd21-145a18461285",
+    "2cf6ccf7-78e8-4271-bc4b-3dc33c64e366",
+    "4a3b2feb-12d0-422c-ae77-97a7d045045a",
+    "be0e798a-2939-435f-841f-d8007e7ae634",
+    "1c9a24c2-14b4-41e3-b492-64099e03f108",
+    "945448b9-01a1-42bd-8ced-8b409b889216",
+    "2ce2df38-a775-42bf-a517-3354ebdfe4e8",
+    "caed9008-4d35-45ce-b62d-1d699c7e0b7d",
+    "5e4fae16-bae2-4858-8cf9-7537ecefea50",
+    "6e261a02-b436-4f47-a4a9-85c25e6b15a9",
+    "3d592616-3f51-48c1-8fac-d52cc78910c7",
+    "f7d82927-e669-45e9-b78e-6169f2288b7f",
+    "4fbd500e-f237-43dd-a0ab-76fc28f7cc87",
+    "5a38ea0b-b225-4312-ba04-6dc7b4960339",
+    "822fcb89-a1ba-43c0-b876-ef626163f7fb",
+    "9803c61a-aa73-4e3c-99ed-30a5d0c43973",
+    "aa9ab027-9a4d-42f1-9e7f-562492c7dadd",
+    "69f82041-407f-4305-85a4-0b3daa0e247e",
+    "32709eaf-384c-4779-bec7-3b1532fc5d87",
+    "68414c21-de2b-4fe7-9ce4-8d381fec3157",
+    "b6635c8c-afb1-440b-8d19-95f8fd7c3f70"
+  ],
+  "all_github_references": [
+    {"url": "https://github.com/dlnraja/com.tuya.zigbee/pull/106", "post": 1082, "description": "Added _TZE204_n9ctkb6j, lower/upper case ID fix for dimmer"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1267", "post": 1192, "description": "HOBEIAN ZG-204ZL motion sensor regression"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/626", "post": 1259, "description": "Device request for _TZE204_chbyv06 / TS0601 / RQ500A gas detector"},
+    {"url": "https://github.com/dlnraja/com.tuya.zigbee/issues/103", "post": 1243, "description": "BSEED 2-button wall switch _TZ3000_l9brjwau / TS0003"},
+    {"url": "https://github.com/dlnraja/com.tuya.zigbee/issues/102", "post": 1243, "description": "BSEED 3-button wall switch _TZ3000_qkixdnon / TS0003"},
+    {"url": "https://github.com/Koenkk/zigbee2mqtt/issues/28172", "post": 1163, "description": "Tuya Zigbee temp/humidity sensor _TZE284_1wnh8bqp"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1245", "post": 1353, "description": "Device request for _TZE284_oitavov2 / TS0601 soil sensor"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/986", "post": 1444, "description": "Comment about _TZ3000_tzvbimpq / TS0042 2-gang wall switch"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1327", "post": 1445, "description": "MOES Scene Switch 4 gang _TZ3000_zgyzgdua"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/781", "post": 1446, "description": "HIMOJO/TS0041 smart button _TZ3000_ja5osu5g"},
+    {"url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/762", "post": 1477, "description": "1 Gang Wall Switch Remote _TZ3000_itb0omhv / TS0041"},
+    {"url": "https://github.com/dlnraja/com.tuya.zigbee/pull/118", "post": 1239, "description": "BSEED switch implementation _TZ3000_ysdv91bk and _TZ3000_blhvsaqf"}
+  ],
+  "unique_devices_summary": [
+    {"manufacturerName": "_TZ3002_pzao9ls1", "productId": "TS0726", "deviceType": "BSEED 4 Gang Button Switch", "reportCount": 18, "primaryIssue": "Physical/virtual button toggle issues; all buttons toggle simultaneously"},
+    {"manufacturerName": "_TZ3000_zgyzgdua", "productId": "TS0044", "deviceType": "Moes 4-button wireless scene switch", "reportCount": 14, "primaryIssue": "Physical buttons do not trigger flows"},
+    {"manufacturerName": "HOBEIAN", "productId": "ZG-222Z", "deviceType": "Water sensor", "reportCount": 10, "primaryIssue": "Installs but alarm never triggers"},
+    {"manufacturerName": "HOBEIAN", "productId": "ZG-204ZV", "deviceType": "Multisensor", "reportCount": 8, "primaryIssue": "Missing temperature/humidity; fluctuating data; false motion triggers"},
+    {"manufacturerName": "_TZE284_o3x45p96", "productId": "TS0601", "deviceType": "AVATTO TRV / Thermostat", "reportCount": 7, "primaryIssue": "Not working; cannot operate; error patterns"},
+    {"manufacturerName": "_TZE200_crq3r3la", "productId": "CK-BL702-MWS-01(7016)", "deviceType": "Presence Sensor Radar", "reportCount": 6, "primaryIssue": "Pairs as unknown device; incorrect lux/distance/humidity values"},
+    {"manufacturerName": "_TZ3000_5bpeda8u", "productId": "TS0041", "deviceType": "1-gang button", "reportCount": 4, "primaryIssue": "Button presses not registering"},
+    {"manufacturerName": "_TZE204_ztqnh5cg", "productId": "TS0601", "deviceType": "Presence sensor", "reportCount": 4, "primaryIssue": "Incorrectly mapped capabilities; shows as generic device"},
+    {"manufacturerName": "_TZE284_81yrt3lo", "productId": "TS0601", "deviceType": "Power clamp meter / Energy meter", "reportCount": 4, "primaryIssue": "Shows 0W; 3-phase instead of 2-phase"},
+    {"manufacturerName": "_TZ3000_bs93npae", "productId": "TS130F", "deviceType": "BSEED Curtain Switch", "reportCount": 3, "primaryIssue": "Not recognized; cannot control curtains"},
+    {"manufacturerName": "_TZ3000_wkai4ga5", "productId": "TS0044", "deviceType": "4-gang scene switch", "reportCount": 3, "primaryIssue": "Unknown device"},
+    {"manufacturerName": "_TZ3000_5tqxpine", "productId": "TS0044", "deviceType": "4-gang scene switch", "reportCount": 2, "primaryIssue": "Unknown device"},
+    {"manufacturerName": "_TZ3210_p68kms0l", "productId": "TS0207", "deviceType": "Rain/water sensor", "reportCount": 3, "primaryIssue": "Added as universal device; IAS Zone error"},
+    {"manufacturerName": "_TZE200_kb5noeto", "productId": "TS0601", "deviceType": "Radar sensor", "reportCount": 2, "primaryIssue": "Battery oscillates; motion works but distance/temp/lux/battery not working"},
+    {"manufacturerName": "_TZ3000_996rpfy6", "productId": "TS0203", "deviceType": "Contact sensor", "reportCount": 3, "primaryIssue": "Alarm always displays no; becomes unknown after updates"},
+    {"manufacturerName": "_TZE284_debczeci", "productId": "TS0601", "deviceType": "Human presence sensor", "reportCount": 1, "primaryIssue": "Reports randomly with hours between updates"},
+    {"manufacturerName": "_TZE204_n9ctkb6j", "productId": "TS0601", "deviceType": "Bseed dimmer", "reportCount": 2, "primaryIssue": "Not recognized by new app"},
+    {"manufacturerName": "_TZ3000_l9brjwau", "productId": "TS0002", "deviceType": "BSEED 2-button wall switch", "reportCount": 3, "primaryIssue": "Unknown device"},
+    {"manufacturerName": "_TZ3000_qkixdnon", "productId": "TS0003", "deviceType": "BSEED 3-button wall switch", "reportCount": 3, "primaryIssue": "Unknown device; all buttons toggle simultaneously"},
+    {"manufacturerName": "_TZ3000_ysdv91bk", "productId": "TS0001", "deviceType": "BSEED 1-button wall switch", "reportCount": 3, "primaryIssue": "Unknown device (resolved in some versions)"},
+    {"manufacturerName": "_TZ3000_blhvsaqf", "productId": "TS0001", "deviceType": "BSEED 1-button wall switch", "reportCount": 3, "primaryIssue": "Unknown device (resolved in some versions)"},
+    {"manufacturerName": "_TZE204_chbyv06", "productId": "TS0601", "deviceType": "Combustible Gas Detector RQ500A", "reportCount": 1, "primaryIssue": "Detects but does not work correctly"},
+    {"manufacturerName": "_TZE284_oitavov2", "productId": "TS0601", "deviceType": "Soil sensor", "reportCount": 3, "primaryIssue": "Install error; temperature multiplier off by 10x"},
+    {"manufacturerName": "_TZE284_aao3yzhs", "productId": "TS0601", "deviceType": "Soil moisture sensor", "reportCount": 1, "primaryIssue": "Always shows 100% moisture"},
+    {"manufacturerName": "_TZE204_clrdrnya", "productId": "TS0601", "deviceType": "Wenzhi WZ-235-ZB-RL mmWave ceiling sensor", "reportCount": 1, "primaryIssue": "Wrong capabilities; incorrect luminance; battery cannot be disabled"},
+    {"manufacturerName": "_TZ3000_u3nv1jwk", "productId": "TS0044", "deviceType": "4-button remote", "reportCount": 2, "primaryIssue": "Detected but buttons not recognized (fixed by reinstall)"},
+    {"manufacturerName": "_TZ3000_5iixzdo7", "productId": "TS130F", "deviceType": "Tuya Zigbee Curtain Module", "reportCount": 1, "primaryIssue": "Not recognized by any app"},
+    {"manufacturerName": "_TZ3000_bgtzm4ny", "productId": "TS0044", "deviceType": "ZG-101ZS 4-button scene switch", "reportCount": 2, "primaryIssue": "Double press required; multi-press not recognized"},
+    {"manufacturerName": "_TZ3290_7v1k4vufotpowp9z", "productId": "TS1201", "deviceType": "ZS06 IR remote (Zosung)", "reportCount": 2, "primaryIssue": "Learning mode turns off immediately; no code learned"},
+    {"manufacturerName": "_TZ3000_bgtzm4ny", "productId": "TS0044", "deviceType": "ZG-101ZS 4-button scene switch", "reportCount": 2, "primaryIssue": "Double press required; multi-press not recognized"},
+    {"manufacturerName": "_TZ3000_cauq1okq", "productId": "TS0002", "deviceType": "2 gang wall switch", "reportCount": 1, "primaryIssue": "Both gangs operate as one switch"},
+    {"manufacturerName": "_TZE204_1wnh8bqp", "productId": "TS0601", "deviceType": "Tuya Zigbee temp/humidity sensor", "reportCount": 1, "primaryIssue": "No temperature, humidity or battery values"},
+    {"manufacturerName": "_TZ3210_ksqwlz9v", "productId": "TS0502B", "deviceType": "CCT LED strip controller", "reportCount": 1, "primaryIssue": "Dimming has no effect"},
+    {"manufacturerName": "_TZ3000_ja5osu5g", "productId": "TS0041", "deviceType": "HIMOJO Smart button", "reportCount": 1, "primaryIssue": "Cannot add device; binding error; timeout"},
+    {"manufacturerName": "_TZ3000_itb0omhv", "productId": "TS0041", "deviceType": "1-gang wall remote", "reportCount": 1, "primaryIssue": "Covered as climate sensor instead of wall remote"},
+    {"manufacturerName": "_TZ3210_xzhnra8x", "productId": "TS011F", "deviceType": "Smart plug", "reportCount": 1, "primaryIssue": "Voltage and power 10x lower than expected"},
+    {"manufacturerName": "_TZ3000_okohwwap", "productId": "TS0203", "deviceType": "Door/window sensor", "reportCount": 1, "primaryIssue": "Shows as generic Zigbee device"},
+    {"manufacturerName": "_TZ3210_s8lvbbuc", "productId": "TS0505B", "deviceType": "RGBW bulb", "reportCount": 1, "primaryIssue": "Pairs as unknown after update"},
+    {"manufacturerName": "_TZE200_a8sdabtg", "productId": "TS0601", "deviceType": "HOBEIAN ZG-227Z climate sensor", "reportCount": 1, "primaryIssue": "Appears as unsupported despite changelog entry"},
+    {"manufacturerName": "_TZE200_3p5ydos3", "productId": "TS0601", "deviceType": "Touch dimmer", "reportCount": 1, "primaryIssue": "No longer works since v690"},
+    {"manufacturerName": "_TZE200_gkfbdvyx", "productId": "TS0601", "deviceType": "Presence sensor", "reportCount": 1, "primaryIssue": "Incorrect lux; router functionality broken"},
+    {"manufacturerName": "A89G12C", "productId": "Arteco", "deviceType": "Arteco ZS-SF00 soil/plant sensor", "reportCount": 1, "primaryIssue": "Adds as generic zigbee device"}
+  ]
+}

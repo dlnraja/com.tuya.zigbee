@@ -1,0 +1,70 @@
+[
+  {
+    "modelId": "Excellux",
+    "manufacturers": [
+      "DHT0001",
+      "DHTA001"
+    ],
+    "z2mModel": "DHT0001",
+    "vendor": "Excellux",
+    "description": "Temperature and humidity sensor",
+    "features": [],
+    "tuyaFeatures": []
+  },
+  {
+    "modelId": "Excellux",
+    "manufacturers": [
+      "NTCHT01",
+      "NTCHT02"
+    ],
+    "z2mModel": "ZG-105NTH",
+    "vendor": "Excellux",
+    "description": "Temperature and humidity sensor with probe",
+    "features": [],
+    "tuyaFeatures": []
+  },
+  {
+    "modelId": "Excellux",
+    "manufacturers": [
+      "PIRIV01"
+    ],
+    "z2mModel": "ZG-104PLV",
+    "vendor": "Excellux",
+    "description": "PIR motion sensor, vibration sensor, and light sensor",
+    "features": [],
+    "tuyaFeatures": []
+  },
+  {
+    "modelId": "Excellux",
+    "manufacturers": [
+      "CAT0001"
+    ],
+    "z2mModel": "ZG-102MV",
+    "vendor": "Excellux",
+    "description": "Contact sensor and vibration sensor",
+    "features": [],
+    "tuyaFeatures": []
+  },
+  {
+    "modelId": "Excellux",
+    "manufacturers": [
+      "VABRATE"
+    ],
+    "z2mModel": "ZG-103V",
+    "vendor": "Excellux",
+    "description": "Vibration sensor",
+    "features": [],
+    "tuyaFeatures": []
+  },
+  {
+    "modelId": "Excellux",
+    "manufacturers": [
+      "C6B7KM9"
+    ],
+    "z2mModel": "ZG-301A",
+    "vendor": "Excellux",
+    "description": "PIR Motion Sensor Light with Night Light Function",
+    "features": [],
+    "tuyaFeatures": []
+  }
+]
