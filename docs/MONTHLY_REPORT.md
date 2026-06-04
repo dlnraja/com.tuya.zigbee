@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-04T12:31:12.436Z*
+*Generated: 2026-06-04T15:56:04.227Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 218696 |
-| Collisions | 124453 |
+| Manufacturer IDs | 198809 |
+| Collisions | 67668 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZE200_7bztmfm1|TS0601` | air_purifier, air_purifier_sensor, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor, device_air_purifier_plug |
-| `_TZE200_7bztmfm1|TS0601_air_purifier` | air_purifier, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
-| `_tze200_qpn5q17m|TS0601` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
-| `_tze200_qpn5q17m|TS0601_air_purifier` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
-| `_TZE200_qpn5q17m|TS0601` | air_purifier, air_purifier_sensor, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
-| `_TZE200_qpn5q17m|TS0601_air_purifier` | air_purifier, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
-| `_TZE200_QPN5Q17M|TS0601` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
-| `_TZE200_QPN5Q17M|TS0601_air_purifier` | air_purifier, device_air_purifier_climate, device_air_purifier_floor |
-| `_tze204_7bztmfm1|TS0601` | air_purifier, device_air_purifier_climate |
-| `_tze204_7bztmfm1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
-| `_TZE204_7bztmfm1|TS0601` | air_purifier, device_air_purifier_climate |
-| `_TZE204_7bztmfm1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
-| `_TZE204_7BZTMFM1|TS0601` | air_purifier, device_air_purifier_climate |
-| `_TZE204_7BZTMFM1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
-| `_tze20x_xxxxxxxx|TS0601` | air_purifier, tuya_dummy_device |
-| `_TZE20X_xxxxxxxx|TS0601` | air_purifier, tuya_dummy_device |
-| `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
-| `_TZ3000_dummy_fix|TS0601` | air_purifier_motion, air_purifier_switch, device_air_purifier, device_air_purifier_plug, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_water, dimmer_bulb_dimmable, smart_air_detection_box, smoke_sensor, socket_power_strip_four_three, soilsensor, soilsensor_2, switch_4_gang_metering |
-| `_tze200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2, pir_mmwave_sensor |
-| `_TZE200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2, pir_mmwave_sensor |
+| `_TZ3000_dummy_fix|TS0601` | air_purifier_motion, device_air_purifier, device_air_purifier_plug, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_water, dimmer_bulb_dimmable, smart_air_detection_box, smoke_sensor, socket_power_strip_four_three, soilsensor, soilsensor_2, switch_4_gang_metering |
+| `_TZE200_ikvncluo|TS0601` | air_purifier_presence, presence_sensor_radar |
+| `_TZE200_hl0ss9oa|TS0601` | air_purifier_presence, climate_sensor_presence, motion_sensor_radar_mmwave, presence_sensor_radar |
+| `_TZE204_hl0ss9oa|TS0601` | air_purifier_presence, climate_sensor_presence, motion_sensor_radar_mmwave, presence_sensor_radar |
+| `_TZE200_3towulqd|TS0601` | air_purifier_presence, pir_mmwave_sensor |
+| `_TZE200_7bztmfm1|TS0601` | air_purifier_sensor, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor, device_air_purifier_plug |
+| `_TZE200_s8gkrkxk|TS0601` | air_purifier_sensor, thermostat_tuya_dp |
+| `_TZE200_qpn5q17m|TS0601` | air_purifier_sensor, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_7bztmfm1|TS0601_air_purifier` | air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_qpn5q17m|TS0601_air_purifier` | air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
+| `_TZE200_4mh6tyyo|TS0601` | air_purifier_switch, device_air_purifier_floor, dimmer_wall_1gang |
+| `_TZE200_4mh6tyyo|TS0601_air_purifier` | air_purifier_switch, device_air_purifier_floor |
+| `_TZ3210_WUHEYHVM|TS0505A` | bulb_rgb_rgbw, light_bulb_rgb_rgbw |
+| `_TZ3210_WUHEYHVM|TS0505B` | bulb_rgb_rgbw, light_bulb_rgb_rgbw |
+| `_TYZB02_KEYJQTHH|TS0041` | button_wireless, wall_remote_1_gang |
+| `_TYZB01_2ATHZHFR|TS0002` | button_wireless_2, switch_2_gang, wall_switch_2_gang |
+| `_TYZB01_2ATHZHFR|TS0003` | button_wireless_2, switch_2_gang |
+| `_TYZB01_2ATHZHFR|TS0012` | button_wireless_2, switch_2_gang, wall_switch_2_gang |
+| `_TYZB01_2ATHZHFR|TS0013` | button_wireless_2, switch_2_gang |
+| `_TYZB01_2ATHZHFR|TS0042` | button_wireless_2, wall_switch_2_gang |
 
-*...and 124433 more*
+*...and 67648 more*
 
 ## 📋 Action Items
 
