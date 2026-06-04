@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-04T07:41:40.715Z",
+  "timestamp": "2026-06-04T07:58:54.712Z",
   "count": 3,
   "byType": {
     "general": 3
@@ -12,14 +12,14 @@
   },
   "diagnostics": [
     {
-      "id": "imap_514493",
+      "id": "imap_514496",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2291 has been created",
-      "from": "homey_system",
-      "date": "2026-06-04T07:33:29.000Z",
+      "subj": "Livraison OFFERTE dès 49€ d'achats*",
+      "from": "user",
+      "date": "2026-06-04T07:43:50.000Z",
       "pseudo": {
-        "source": "homey_system",
-        "username": null
+        "source": "user",
+        "username": "P.A."
       },
       "fps": {
         "mfr": [],
@@ -34,18 +34,44 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 508,
+      "bodyLength": 3927,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514497",
+      "type": "general",
+      "subj": "😎 12X SANS frais : c'est parti pour les Woodbrass Days !",
+      "from": "user",
+      "date": "2026-06-04T07:45:29.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Woo..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 21138,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514494",
+      "id": "imap_514498",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-04T07:33:42.000Z",
+      "subj": "Vous avez 4 CADEAUX non réclamés",
+      "from": "user",
+      "date": "2026-06-04T07:46:32.000Z",
       "pseudo": {
-        "source": "homey_system",
-        "username": null
+        "source": "user",
+        "username": "Tem..."
       },
       "fps": {
         "mfr": [],
@@ -60,34 +86,8 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514495",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2291 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-04T07:35:13.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
+      "bodyLength": 4402,
+      "contentType": "text/plain"
     }
   ]
 }
