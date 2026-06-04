@@ -1,13 +1,13 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-04T18:58:26.238Z*
+*Generated: 2026-06-04T19:45:55.382Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 198727 |
+| Manufacturer IDs | 198704 |
 | Collisions | 67594 |
 
 ## ⚠️ Collisions Detected
