@@ -47,6 +47,7 @@ const WARN_FILE_KB  = 500;  // warn if single file > 500KB
 const ERROR_FILE_KB = 2048; // error if single file > 2MB (excluding known-large)
 const KNOWN_LARGE   = [
   'data/fingerprints.json',       // fingerprint DB — lazy-loaded
+  'lib/tuya/fingerprints.json',   // fingerprint DB — lazy-loaded (tuya engine)
   'app.json',                     // Homey manifest (412 drivers = large)
   'driver-mapping-database.json', // DriverMappingLoader.js runtime dep
 ]; // allowed to be large
