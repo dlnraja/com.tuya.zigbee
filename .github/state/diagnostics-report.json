@@ -1,11 +1,8 @@
 {
-  "timestamp": "2026-06-04T07:15:12.562Z",
-  "count": 30,
+  "timestamp": "2026-06-04T07:28:36.107Z",
+  "count": 5,
   "byType": {
-    "diagnostic": 1,
-    "general": 25,
-    "changelog": 1,
-    "device_issue": 3
+    "general": 5
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -15,24 +12,21 @@
   },
   "diagnostics": [
     {
-      "id": "imap_514453",
-      "type": "diagnostic",
-      "subj": "Multi-sensor NB-IoT ref design, 2-Mbit EEPROM ID, ready-to-use Ki board, and silent GaN innovations",
+      "id": "imap_514486",
+      "type": "general",
+      "subj": "AI Agent Builder / AI Automation Engineer (1 jour de remote Paris ou Bordeaux) H/F (IT) / Freelance – Pickmeup",
       "from": "user",
-      "date": "2026-06-04T05:02:45.000Z",
+      "date": "2026-06-04T07:16:14.000Z",
       "pseudo": {
         "source": "user",
-        "username": "STM..."
+        "username": "Ind..."
       },
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [],
-      "devices": [
-        "with",
-        "onboarding"
-      ],
+      "devices": [],
       "xref": [],
       "ghInfo": null,
       "forumInfo": null,
@@ -40,329 +34,17 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 6092,
+      "bodyLength": 6963,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514454",
+      "id": "imap_514487",
       "type": "general",
-      "subj": "Buzztron Briefing : Une machine lit vos emails avant vos prospects. Vous écrivez encore pour qui ?",
-      "from": "user",
-      "date": "2026-06-04T05:15:26.000Z",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2290 has been created",
+      "from": "homey_system",
+      "date": "2026-06-04T07:19:24.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "N.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 14224,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514455",
-      "type": "general",
-      "subj": "Moustiques : protégez-vous efficacement et naturellement",
-      "from": "user",
-      "date": "2026-06-04T05:16:44.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "R.P."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6791,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514456",
-      "type": "general",
-      "subj": "L'actualité de votre métier sur Tekkit cette semaine",
-      "from": "user",
-      "date": "2026-06-04T05:18:28.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Tek..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 18043,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514458",
-      "type": "general",
-      "subj": "Comment vous faciliter l’accès aux offres de bourse sur Ma Banque ?",
-      "from": "user",
-      "date": "2026-06-04T05:31:53.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "L.C."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2123,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514459",
-      "type": "changelog",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-06-04T05:51:16.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "J.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 540,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514460",
-      "type": "general",
-      "subj": "NOUVEAU : E-book sur les LED, les lasers et la lumière du soleil 👉 -20% pour les membres",
-      "from": "user",
-      "date": "2026-06-04T06:00:08.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ele..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2112,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514461",
-      "type": "general",
-      "subj": "Pourquoi je me suis lamentablement vautré dans la poudreuse avec un D4s",
-      "from": "user",
-      "date": "2026-06-04T06:01:49.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "J.P."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5996,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514462",
-      "type": "general",
-      "subj": "Le seul \"Summer Body\" qui compte...",
-      "from": "user",
-      "date": "2026-06-04T06:04:45.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.M."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 720,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514463",
-      "type": "general",
-      "subj": "Commande confirmée : Clavier Français Ori...",
-      "from": "user",
-      "date": "2026-06-04T06:08:20.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "eBa..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 31755,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514464",
-      "type": "general",
-      "subj": "eBay S.a.r.l.: 74,98 € EUR",
-      "from": "user",
-      "date": "2026-06-04T06:08:34.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9290,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514465",
-      "type": "general",
-      "subj": "Jusqu'à -600€ sur les TV et équipements Home Cinéma",
-      "from": "user",
-      "date": "2026-06-04T06:14:28.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Son..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 18,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514466",
-      "type": "general",
-      "subj": "OK, vous souhaitez annuler une commande",
-      "from": "user",
-      "date": "2026-06-04T06:18:14.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "eBa..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 25976,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514467",
-      "type": "general",
-      "subj": "J-1 : Votre permis à 559,99€ ⏳",
-      "from": "user",
-      "date": "2026-06-04T06:20:33.000Z",
-      "pseudo": {
-        "source": "user",
+        "source": "homey_system",
         "username": null
       },
       "fps": {
@@ -378,44 +60,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 17444,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514468",
-      "type": "general",
-      "subj": "Lea Elui, et si vous pouviez la rencontrer ? 😍",
-      "from": "user",
-      "date": "2026-06-04T06:26:58.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "W.2."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9884,
+      "bodyLength": 508,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514469",
-      "type": "device_issue",
-      "subj": "Accro aux paris sportifs",
-      "from": "user",
-      "date": "2026-06-04T06:30:50.000Z",
+      "id": "imap_514488",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-06-04T07:19:36.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "L.7."
+        "source": "homey_system",
+        "username": null
       },
       "fps": {
         "mfr": [],
@@ -430,18 +86,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 9710,
+      "bodyLength": 564,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514471",
+      "id": "imap_514489",
       "type": "general",
-      "subj": "Vous recevrez bientôt votre remboursement de eBay S.a.r.l.",
+      "subj": "Encore plus d'offres pour les Soldes d'Été 🔥",
       "from": "user",
-      "date": "2026-06-04T06:34:27.000Z",
+      "date": "2026-06-04T07:17:19.000Z",
       "pseudo": {
         "source": "user",
-        "username": "ser..."
+        "username": "Phi..."
       },
       "fps": {
         "mfr": [],
@@ -456,346 +112,34 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 9468,
+      "bodyLength": 8511,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514490",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2290 is now testing",
+      "from": "homey_system",
+      "date": "2026-06-04T07:25:04.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
       "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514472",
-      "type": "general",
-      "subj": "Jeu concours spécial fête des pères",
-      "from": "user",
-      "date": "2026-06-04T06:34:54.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "V.a."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1142,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514473",
-      "type": "general",
-      "subj": "À propos de : dlnraja a envoyé un message concernant Clavier Français Original HP Elite x[phone]-in-1 G9 / G10 n° [phone]",
-      "from": "user",
-      "date": "2026-06-04T06:36:53.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "e.l."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 29616,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514474",
-      "type": "general",
-      "subj": "La commande [phone] a été annulée",
-      "from": "user",
-      "date": "2026-06-04T06:40:51.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "eBa..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 33447,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514475",
-      "type": "general",
-      "subj": "Vous recevrez bientôt votre remboursement de eBay S.a.r.l.",
-      "from": "user",
-      "date": "2026-06-04T06:47:26.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9417,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514476",
-      "type": "general",
-      "subj": "216/46 pièces Jeu de: Était , Maintenant 10,79€",
-      "from": "user",
-      "date": "2026-06-04T06:51:35.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Tem..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4571,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514477",
-      "type": "general",
-      "subj": "La commande [phone] a été annulée",
-      "from": "user",
-      "date": "2026-06-04T06:53:52.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "eBa..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 33534,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514478",
-      "type": "device_issue",
-      "subj": "Costumes 100% lin",
-      "from": "user",
-      "date": "2026-06-04T06:56:14.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Bex..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4859,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514479",
-      "type": "general",
-      "subj": "Votre relevé de compte est disponible",
-      "from": "user",
-      "date": "2026-06-04T07:00:05.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Sha..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2125,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514480",
-      "type": "device_issue",
-      "subj": "Notre meilleur combo de l'été",
-      "from": "user",
-      "date": "2026-06-04T07:01:10.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "UNI..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 117584,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514481",
-      "type": "general",
-      "subj": "Votre candidature : Cybersecurity Platform Engineer chez LVMH",
-      "from": "user",
-      "date": "2026-06-04T07:02:20.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Lin..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2229,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514482",
-      "type": "general",
-      "subj": "Morning Meeting : votre brief marchés quotidien",
-      "from": "user",
-      "date": "2026-06-04T07:04:45.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Bou..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6671,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514483",
-      "type": "general",
-      "subj": "documents pour l'hopital de jour",
-      "from": "user",
-      "date": "2026-06-04T07:08:09.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "P.H."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 328,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514484",
-      "type": "general",
-      "subj": "Commencez votre inscription, votre badge vous attend !",
-      "from": "user",
-      "date": "2026-06-04T07:09:56.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "B.2."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4957,
-      "contentType": "text/plain"
     }
   ]
 }
