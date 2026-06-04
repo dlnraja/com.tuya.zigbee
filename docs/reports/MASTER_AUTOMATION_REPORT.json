@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-04T07:19:40.103Z",
-  "version": "8.1.89",
+  "timestamp": "2026-06-04T13:24:05.627Z",
+  "version": "8.1.92",
   "phases": {
     "1a": {
       "errors": [],
@@ -13,7 +13,7 @@
         "hybrid": 0,
         "ok": 314,
         "emptyMF": [],
-        "totalFP": 33732
+        "totalFP": 33824
       }
     },
     "1b": {
@@ -25,7 +25,7 @@
       "total": 730
     },
     "1d": {
-      "collisions": 46985,
+      "collisions": 47115,
       "collisionMap": {
         "_TZE200_7BZTMFM1|TS0601": [
           "air_purifier",
@@ -168,16 +168,23 @@
         "_TZE200_HL0SS9OA|TS0601": [
           "air_purifier_presence",
           "climate_sensor_presence",
+          "motion_sensor_radar_mmwave",
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
           "presence_sensor_radar"
         ],
         "_TZE204_HL0SS9OA|TS0601": [
           "air_purifier_presence",
           "climate_sensor_presence",
+          "motion_sensor_radar_mmwave",
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
           "presence_sensor_radar"
         ],
         "_TZE200_3TOWULQD|TS0601": [
           "air_purifier_presence",
-          "motion_sensor_2"
+          "motion_sensor_2",
+          "pir_mmwave_sensor"
         ],
         "_TZE200_IKVNCLUO|TS0601": [
           "air_purifier_presence",
@@ -230,6 +237,15 @@
           "air_quality_co2",
           "climate_sensor",
           "climate_sensor_energy"
+        ],
+        "_TZE200_MJA3FUJA|TS0601": [
+          "air_quality_co2",
+          "climate_sensor",
+          "climate_sensor_energy"
+        ],
+        "_TZE204_MJA3FUJA|TS0601": [
+          "air_quality_co2",
+          "humidifier"
         ],
         "_TZ2000_AVDNVYKF|TS0601": [
           "air_quality_comprehensive",
@@ -5751,6 +5767,8 @@
         ],
         "_TZ3000_M0VAAZAB|TS0601": [
           "bed_sensor",
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3",
           "motion_sensor",
           "radar_sensor_2",
           "radar_sensor_ceiling",
@@ -11563,7 +11581,8 @@
           "fingerbot_switch",
           "motion_sensor",
           "radar_sensor_2",
-          "radar_sensor_ceiling"
+          "radar_sensor_ceiling",
+          "smoke_sensor2"
         ],
         "_TZ3210_DSE8OGFY|TY0202": [
           "bed_sensor",
@@ -39911,6 +39930,153 @@
           "button_wireless",
           "smart_button_switch"
         ],
+        "_TZ3000_YJ6K7VFO|CK-TLSR8656-SS5-01(7000)": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|SNZB-01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|SNZB-01M": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|SNZB-01P": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|TS0040": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|TS0041": [
+          "button_wireless",
+          "button_wireless_scene",
+          "scene_switch_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|WB-01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|WB01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_YJ6K7VFO|TS0044": [
+          "button_wireless",
+          "button_wireless_scene"
+        ],
+        "_TZ3000_JA5OSU5G|CK-TLSR8656-SS5-01(7000)": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|SNZB-01": [
+          "button_wireless",
+          "button_wireless_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|SNZB-01M": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|SNZB-01P": [
+          "button_wireless",
+          "button_wireless_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|TS0040": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|TS0041": [
+          "button_wireless",
+          "button_wireless_1",
+          "button_wireless_scene",
+          "scene_switch_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|WB-01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|WB01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_JA5OSU5G|TS0044": [
+          "button_wireless",
+          "button_wireless_scene"
+        ],
+        "_TYZB02_KEYJQTHA|CK-TLSR8656-SS5-01(7000)": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|SNZB-01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|SNZB-01M": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|SNZB-01P": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|TS0040": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|TS0041": [
+          "button_wireless",
+          "scene_switch_1",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|WB-01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TYZB02_KEYJQTHA|WB01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|CK-TLSR8656-SS5-01(7000)": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|SNZB-01": [
+          "button_wireless",
+          "button_wireless_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|SNZB-01M": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|SNZB-01P": [
+          "button_wireless",
+          "button_wireless_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|TS0040": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|TS0041": [
+          "button_wireless",
+          "button_wireless_1",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|WB-01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
+        "_TZ3000_1GCUF2UW|WB01": [
+          "button_wireless",
+          "smart_button_switch"
+        ],
         "_TZ3000_B4AWZGCT|TS0041": [
           "button_wireless_smart",
           "button_wireless_1"
@@ -40623,20 +40789,13 @@
           "relay_board_1_channel",
           "switch_1_gang"
         ],
-        "_TZ3000_JA5OSU5G|SNZB-01": [
+        "_TZ3000_JA5OSU5G|TS0042": [
           "button_wireless_1",
-          "smart_button_switch"
-        ],
-        "_TZ3000_JA5OSU5G|SNZB-01P": [
-          "button_wireless_1",
-          "smart_button_switch"
-        ],
-        "_TZ3000_JA5OSU5G|TS0041": [
-          "button_wireless_1",
-          "smart_button_switch"
+          "button_wireless_scene"
         ],
         "_TZ3000_JA5OSU5G|TS0043": [
           "button_wireless_1",
+          "button_wireless_scene",
           "remote_button_wireless"
         ],
         "_TZ3000_JA5OSU5G|TS011F": [
@@ -40703,6 +40862,11 @@
         "_TZ3000_ZMY4LSLW|TS0013": [
           "button_wireless_1",
           "switch_2_gang_metering"
+        ],
+        "_TZ3000_ZMY4LSLW|TS011F": [
+          "button_wireless_1",
+          "outdoor_2_socket",
+          "socket_power_strip_four"
         ],
         "SONOFF|TS0043": [
           "button_wireless_1",
@@ -40784,6 +40948,79 @@
           "button_wireless_1",
           "button_wireless_2"
         ],
+        "_TZ3000_N2EGFSLI|TS0001": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0002": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0003": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0011": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0012": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0013": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0041": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0042": [
+          "button_wireless_1",
+          "button_wireless_2",
+          "scene_switch_2"
+        ],
+        "_TZ3000_N2EGFSLI|TS0043": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0001": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0002": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0003": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0011": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0012": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0013": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0041": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0042": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
+        "_TYZB01_B3MGFU0D|TS0043": [
+          "button_wireless_1",
+          "button_wireless_2"
+        ],
         "_TZ3000_TZVBIMPQ|TS0002": [
           "button_wireless_2",
           "switch_2_gang_metering"
@@ -40840,23 +41077,35 @@
           "button_wireless_2",
           "button_wireless_plug"
         ],
+        "_TZ3000_18EJXNO0|TS0042": [
+          "button_wireless_2",
+          "wall_switch_2gang_1way"
+        ],
         "_TZ3000_18EJXNO0|TS0043": [
           "button_wireless_2",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_18EJXNO0|TS0002": [
           "button_wireless_2",
-          "relay_board_2_channel"
+          "relay_board_2_channel",
+          "wall_switch_2gang_1way"
+        ],
+        "_TZ3000_18EJXNO0|TS0012": [
+          "button_wireless_2",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_18EJXNO0|TS0003": [
           "button_wireless_2",
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_18EJXNO0|TS0013": [
           "button_wireless_2",
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_AA5T61RH|TS0002": [
           "button_wireless_2",
@@ -40888,7 +41137,26 @@
         ],
         "_TZ3000_FAMKXCI2|TS0043": [
           "button_wireless_3",
+          "button_wireless_scene",
+          "scene_switch_3",
           "switch_3gang"
+        ],
+        "_TZ3000_XABCKQ1V|TS0043": [
+          "button_wireless_3",
+          "scene_switch_3",
+          "wall_remote_4_gang_2"
+        ],
+        "_TZ3000_NSAR4IFE|TS0013": [
+          "button_wireless_3",
+          "switch_3_gang",
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
+        ],
+        "_TZ3000_NSAR4IFE|TS0043": [
+          "button_wireless_3",
+          "scene_switch_3",
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TYZB01_QM6DJPTA|SNZB-01M": [
           "button_wireless_4",
@@ -41342,13 +41610,47 @@
           "button_wireless_4",
           "handheld_remote_4_buttons"
         ],
+        "_TYZB01_IUEPBMPV|TS011F": [
+          "button_wireless_plug",
+          "smartplug_2_socket"
+        ],
+        "_TZ3000_FAMKXCI2|TS0044": [
+          "button_wireless_scene",
+          "scene_switch_3"
+        ],
+        "_TZ3000_FAMKXCI2|TS0601": [
+          "button_wireless_scene",
+          "scene_switch_3",
+          "switch_3gang"
+        ],
+        "_TZ3000_JA5OSU5G|TS0601": [
+          "button_wireless_scene",
+          "remote_button_wireless",
+          "scene_switch_1"
+        ],
+        "_TZ3000_YJ6K7VFO|TS0043": [
+          "button_wireless_scene",
+          "remote_button_wireless"
+        ],
+        "_TZ3000_YJ6K7VFO|TS0601": [
+          "button_wireless_scene",
+          "remote_button_wireless",
+          "scene_switch_1"
+        ],
+        "_TZ3000_B3MGFU0D|TS0042": [
+          "button_wireless_wall",
+          "scene_switch_2"
+        ],
         "_TZ3000_OWMLBBS0|TS0042": [
           "button_wireless_wall",
-          "wall_switch_2_gang"
+          "scene_switch_2",
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_TQLV4UG4|TS0042": [
           "button_wireless_wall",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "DHT0001|TS0201": [
           "climate_sensor",
@@ -47507,6 +47809,9 @@
         "_TZ3000_BGUSER20|TS0201": [
           "climate_sensor",
           "climate_sensor_energy",
+          "lcdtemphumidluxsensor",
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3",
           "sensor_lcdtemphumidsensor_temphumidsensor",
           "temphumidsensor2",
           "temphumidsensor3",
@@ -47560,6 +47865,9 @@
         "_TZ3000_BGUSER20|TS0601": [
           "climate_sensor",
           "climate_sensor_energy",
+          "lcdtemphumidluxsensor",
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3",
           "sensor_lcdtemphumidsensor_temphumidsensor",
           "temphumidsensor4"
         ],
@@ -47598,6 +47906,7 @@
         "_TZ3000_BGUSER20|TY0201": [
           "climate_sensor",
           "climate_sensor_energy",
+          "lcdtemphumidsensor",
           "sensor_lcdtemphumidsensor_temphumidsensor",
           "temphumidsensor3",
           "temphumidsensor5"
@@ -47611,11 +47920,14 @@
         ],
         "_TZ3000_BGUSER20|EXCELLUX": [
           "climate_sensor",
-          "climate_sensor_energy"
+          "climate_sensor_energy",
+          "lcdtemphumidluxsensor",
+          "lcdtemphumidsensor_3"
         ],
         "_TZ3000_BGUSER20|TS0222": [
           "climate_sensor",
-          "climate_sensor_energy"
+          "climate_sensor_energy",
+          "lcdtemphumidluxsensor"
         ],
         "_TZ3000_BGUSER20|TS1201": [
           "climate_sensor",
@@ -49606,6 +49918,7 @@
         "_TZ3000_FLLYGHYJ|TS0201": [
           "climate_sensor",
           "climate_sensor_energy",
+          "lcdtemphumidsensor",
           "temphumidsensor3",
           "temphumidsensor5"
         ],
@@ -49655,7 +49968,8 @@
         ],
         "_TZ3000_FLLYGHYJ|TS0601": [
           "climate_sensor",
-          "climate_sensor_energy"
+          "climate_sensor_energy",
+          "lcdtemphumidsensor"
         ],
         "_TZ3000_FLLYGHYJ|ZG-227Z": [
           "climate_sensor",
@@ -49692,6 +50006,7 @@
         "_TZ3000_FLLYGHYJ|TY0201": [
           "climate_sensor",
           "climate_sensor_energy",
+          "lcdtemphumidsensor",
           "temphumidsensor3",
           "temphumidsensor5"
         ],
@@ -72718,10 +73033,6 @@
           "climate_sensor",
           "climate_sensor_energy"
         ],
-        "_TZE200_MJA3FUJA|TS0601": [
-          "climate_sensor",
-          "climate_sensor_energy"
-        ],
         "_TZE200_MJA3FUJA|ZG-227Z": [
           "climate_sensor",
           "climate_sensor_energy"
@@ -83157,7 +83468,10 @@
         "_TZE200_YE5JKFSB|TS0601": [
           "climate_sensor",
           "climate_sensor_energy",
-          "device_air_purifier_radiator"
+          "device_air_purifier_radiator",
+          "floor_heating_thermostat",
+          "thermostat_tuya_dp",
+          "thermostatic_radiator_valve"
         ],
         "_TZE200_YE5JKFSB|ZG-227Z": [
           "climate_sensor",
@@ -100696,7 +101010,8 @@
         ],
         "_TZE204_YE5JKFSB|TS0601": [
           "climate_sensor",
-          "climate_sensor_energy"
+          "climate_sensor_energy",
+          "thermostat_tuya_dp"
         ],
         "_TZE204_YE5JKFSB|ZG-227Z": [
           "climate_sensor",
@@ -124226,7 +124541,8 @@
         "_TZ3000_N2EGFSLI|TS0601": [
           "contact_sensor",
           "doorwindowsensor",
-          "doorwindowsensor_2"
+          "doorwindowsensor_2",
+          "scene_switch_2"
         ],
         "_TZ3000_N2EGFSLI|ZG-102Z": [
           "contact_sensor",
@@ -125119,6 +125435,7 @@
           "contact_sensor",
           "doorwindowsensor",
           "doorwindowsensor_2",
+          "smartplug_2_socket",
           "socket_power_strip"
         ],
         "_TZ3000_OXSLV1C9|ZG-102Z": [
@@ -136568,7 +136885,10 @@
         "_TZE200_2ATGPDHO|TS0601": [
           "curtain_module",
           "curtain_motor",
-          "thermostat_tuya_dp"
+          "smart_lcd_thermostat",
+          "thermostat_tuya_dp",
+          "thermostatic_radiator_valve",
+          "wall_thermostat"
         ],
         "_TZE200_2ATGPDHO|TS130F": [
           "curtain_module",
@@ -138865,7 +139185,9 @@
           "curtain_module",
           "curtain_motor",
           "device_air_purifier_radiator",
-          "thermostat_tuya_dp"
+          "floor_heating_thermostat",
+          "thermostat_tuya_dp",
+          "thermostatic_radiator_valve"
         ],
         "_TZE200_HUE3YFSN|TS130F": [
           "curtain_module",
@@ -145424,33 +145746,43 @@
         "_TZE200_BYZDAYIE|TS0601": [
           "device_air_purifier_plug",
           "din_rail_switch",
+          "power_meter",
           "switch_4_gang_metering"
         ],
         "_TZE200_9XFJIXAP|TS0601": [
           "device_air_purifier_radiator",
           "device_radiator_valve",
           "radiator_valve",
-          "thermostat_4ch"
+          "thermostat_4ch",
+          "thermostatic_radiator_valve"
         ],
         "_TZE200_ZION52EF|TS0601": [
           "device_air_purifier_radiator",
-          "thermostat_4ch"
+          "thermostat_4ch",
+          "thermostatic_radiator_valve"
         ],
         "_TZE200_ZTVWU4NK|TS0601": [
           "device_air_purifier_thermostat",
-          "thermostat_tuya_dp"
+          "floor_heating_thermostat",
+          "smart_lcd_thermostat",
+          "thermostat_tuya_dp",
+          "wall_thermostat"
         ],
         "_TZE200_AOCLFNXZ|TS0601": [
           "device_air_purifier_thermostat",
+          "floor_heating_thermostat",
+          "smart_lcd_thermostat",
           "wall_thermostat"
         ],
         "_TZE200_EKD8X5DT|TS0601": [
           "device_air_purifier_thermostat",
+          "smart_lcd_thermostat",
           "wall_thermostat"
         ],
         "_TZE204_ZTVWU4NK|TS0601": [
           "device_air_purifier_thermostat",
-          "floor_heating_thermostat"
+          "floor_heating_thermostat",
+          "smart_lcd_thermostat"
         ],
         "_TZ3000_GZVNIQJB|TS0601": [
           "device_din_rail_meter",
@@ -145506,9 +145838,17 @@
           "device_generic_tuya_universal",
           "switch_1_gang"
         ],
-        "MOES|TS0601": [
+        "_TZE200_U6X1ZYV2|TS0601": [
           "device_generic_tuya_universal",
-          "illuminance_sensor"
+          "rain_sensor"
+        ],
+        "_TZB000_YQJAOLLC|TS0601": [
+          "device_generic_tuya_universal",
+          "plug_energy_monitor"
+        ],
+        "_TZ3000_TZVBIMPQ|TS0601": [
+          "device_generic_tuya_universal",
+          "switch_2_gang_metering"
         ],
         "_TZE200_QQ9MPFHW|TS0207": [
           "device_plug_smart_water",
@@ -151776,11 +152116,13 @@
         ],
         "_TZ3000_8NKB7MOF|TS011F": [
           "double_power_point",
-          "plug_smart"
+          "plug_smart",
+          "smartplug_2_socket"
         ],
         "_TZ3000_8NKB7MOF|TS0601": [
           "double_power_point",
-          "plug_smart"
+          "plug_smart",
+          "smartplug_2_socket"
         ],
         "_TZ3000_8NYAANZB|S26R2ZB": [
           "double_power_point",
@@ -153867,6 +154209,8 @@
         "_TZE204_NTCY3XU1|TS0601": [
           "double_power_point",
           "plug_smart",
+          "smoke_detector_advanced",
+          "smoke_sensor2",
           "socket_power_strip_four_three"
         ],
         "_TZE284_2SE8EFXH|S26R2ZB": [
@@ -153950,6 +154294,10 @@
         "_TZ3210_DSE8OGFY|TS0001": [
           "fingerbot",
           "fingerbot_switch"
+        ],
+        "_TZE200_0J6PTH9Y|TS0601": [
+          "floor_heating_thermostat",
+          "thermostat_tuya_dp"
         ],
         "_TZE200_NKLQJK62|TS0601": [
           "garage_door",
@@ -154079,6 +154427,10 @@
           "generic_tuya",
           "presence_sensor_radar"
         ],
+        "_TZE284_GYZLWU5Q|TS0601": [
+          "generic_tuya",
+          "smoke_sensor2"
+        ],
         "_TZE284_IADRO9BF|TS0203": [
           "generic_tuya",
           "presence_sensor_radar"
@@ -154103,10 +154455,87 @@
           "illuminance_sensor",
           "sensor_illuminance_presence"
         ],
+        "_TZA226_UEAGGUAN|TS0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor2",
+          "temphumidsensor4",
+          "temphumidsensor5"
+        ],
+        "_TZA226_UEAGGUAN|TS0601": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor4"
+        ],
+        "_TZA226_UEAGGUAN|TS0601_LCD": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZA226_UEAGGUAN|TY0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor5"
+        ],
+        "_TYZB01_A082H2CC|TS0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor2",
+          "temphumidsensor4"
+        ],
+        "_TYZB01_A082H2CC|TS0601": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor4"
+        ],
+        "_TYZB01_A082H2CC|TS0601_LCD": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TYZB01_A082H2CC|TY0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_BGUSER20|TS0601_LCD": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_RUFDTFYV|TS0201": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3",
+          "temphumidsensor2",
+          "temphumidsensor5"
+        ],
+        "_TZ3000_RUFDTFYV|TS0601": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3"
+        ],
+        "_TZ3000_RUFDTFYV|TY0201": [
+          "lcdtemphumidsensor",
+          "temphumidsensor5"
+        ],
+        "_TZ3000_M0VAAZAB|TS0201": [
+          "lcdtemphumidsensor",
+          "lcdtemphumidsensor_3",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor3"
+        ],
+        "_TZ3000_M0VAAZAB|TS0601_LCD": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor"
+        ],
+        "_TZ3000_M0VAAZAB|TY0201": [
+          "lcdtemphumidsensor",
+          "sensor_lcdtemphumidsensor_temphumidsensor",
+          "temphumidsensor3"
+        ],
         "_TZE200_PLACEHOLDER_GENERIC|TS0201": [
           "lcdtemphumidsensor_3",
           "temphumidsensor3",
           "temphumidsensor4"
+        ],
+        "_TYZB01_IUEPBMPV|TS0601": [
+          "lcdtemphumidsensor_plug_energy",
+          "smartplug_2_socket"
         ],
         "_TZ3000_LF56VPXJ|TS0202": [
           "motion_sensor",
@@ -154120,8 +154549,59 @@
           "motion_sensor",
           "pir_sensor_2"
         ],
-        "_TZE200_RHGSBACQ|TS0601": [
-          "motion_sensor_radar_mmwave",
+        "_TZE204_3TOWULQD|TS0601": [
+          "motion_sensor_2",
+          "pir_mmwave_sensor"
+        ],
+        "_TZ3000_ZMY4LSLW|TS0601": [
+          "outdoor_2_socket",
+          "socket_power_strip_four",
+          "switch_2_gang_metering"
+        ],
+        "_TZ3000_U5U0DROF|TS0601": [
+          "outdoor_2_socket",
+          "socket_power_strip_four"
+        ],
+        "_TZ3000_U5U0DROF|TS011F": [
+          "outdoor_2_socket",
+          "socket_power_strip_four"
+        ],
+        "_TZ3000_1HWJUTGO|TS0601": [
+          "outdoor_2_socket",
+          "switch_1_gang"
+        ],
+        "_TZ3000_1HWJUTGO|TS011F": [
+          "outdoor_2_socket",
+          "switch_1_gang"
+        ],
+        "_TZE200_HL0SS9OA|CK-BL702-MWS-01(7016)": [
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
+          "presence_sensor_radar"
+        ],
+        "_TZE200_HL0SS9OA|TS0225": [
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
+          "presence_sensor_radar"
+        ],
+        "_TZE200_HL0SS9OA|ZP-301Z": [
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
+          "presence_sensor_radar"
+        ],
+        "_TZE204_HL0SS9OA|CK-BL702-MWS-01(7016)": [
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
+          "presence_sensor_radar"
+        ],
+        "_TZE204_HL0SS9OA|TS0225": [
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
+          "presence_sensor_radar"
+        ],
+        "_TZE204_HL0SS9OA|ZP-301Z": [
+          "pir_mmwave_sensor",
+          "presence_sensor_ceiling",
           "presence_sensor_radar"
         ],
         "_TYZB01_4TLKSK8A|TS0601": [
@@ -154233,6 +154713,10 @@
         "_TZE204_IJXVKHD0|TS0601": [
           "presence_sensor_radar",
           "switch_1_gang"
+        ],
+        "_TZE204_9XFJIXAP|TS0601": [
+          "radiator_valve",
+          "thermostatic_radiator_valve"
         ],
         "BSEED|TS0001_POWER": [
           "relay_board_1_channel",
@@ -164976,7 +165460,9 @@
           "relay_board_1_channel",
           "smart_switch",
           "sr_zs_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_B3MGFU0D|TS011F": [
           "relay_board_1_channel",
@@ -174743,7 +175229,9 @@
           "relay_board_1_channel",
           "smart_switch",
           "sr_zs_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_HKKKUK7K|TS011F": [
           "relay_board_1_channel",
@@ -191118,7 +191606,9 @@
           "relay_board_1_channel",
           "smart_switch",
           "sr_zs_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_QLAI3277|TS011F": [
           "relay_board_1_channel",
@@ -195837,7 +196327,9 @@
           "relay_board_1_channel",
           "smart_switch",
           "sr_zs_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_TQLV4UG4|TS011F": [
           "relay_board_1_channel",
@@ -221889,40 +222381,26 @@
           "relay_board_1_channel",
           "sr_zs_switch"
         ],
-        "_TZ3000_NSAR4IFE|TS0043": [
+        "_TZ3000_JA5OSU5G|TS004F": [
+          "scene_switch_1",
+          "smart_remote_1_button_2"
+        ],
+        "_TZ3000_OWMLBBS0|TS0601": [
+          "scene_switch_2",
+          "switch_2_gang"
+        ],
+        "_TZ3000_OWMLBBS0|TS0726": [
+          "scene_switch_2",
+          "switch_2_gang"
+        ],
+        "_TZ3000_B3MGFU0D|TS0601": [
+          "scene_switch_2",
+          "switch_1_gang",
+          "wall_switch_1_gang"
+        ],
+        "_TZ3000_XABCKQ1V|TS0601": [
           "scene_switch_3",
-          "wall_switch_3_gang"
-        ],
-        "_TZ3000_M0VAAZAB|TS0201": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor3"
-        ],
-        "_TZ3000_M0VAAZAB|TY0201": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor3"
-        ],
-        "_TZA226_UEAGGUAN|TS0601": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor4"
-        ],
-        "_TZA226_UEAGGUAN|TS0201": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor2",
-          "temphumidsensor4",
-          "temphumidsensor5"
-        ],
-        "_TZA226_UEAGGUAN|TY0201": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor5"
-        ],
-        "_TYZB01_A082H2CC|TS0601": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor4"
-        ],
-        "_TYZB01_A082H2CC|TS0201": [
-          "sensor_lcdtemphumidsensor_temphumidsensor",
-          "temphumidsensor2",
-          "temphumidsensor4"
+          "switch_1_gang"
         ],
         "_TYZB01_SBPC1ZRB|TS0601": [
           "siren",
@@ -222206,7 +222684,9 @@
         ],
         "_TZ3000_B3MGFU0D|TS0011": [
           "smart_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_B7BXOJRG|TS0011": [
           "smart_switch",
@@ -222462,7 +222942,9 @@
         ],
         "_TZ3000_HKKKUK7K|TS0011": [
           "smart_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_HKTQAHRQ|TS0011": [
           "smart_switch",
@@ -222910,7 +223392,9 @@
         ],
         "_TZ3000_QLAI3277|TS0011": [
           "smart_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_QMI1CFUQ|TS0011": [
           "smart_switch",
@@ -223042,7 +223526,9 @@
         ],
         "_TZ3000_TQLV4UG4|TS0011": [
           "smart_switch",
-          "switch_1_gang"
+          "switch_1_gang",
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
         ],
         "_TZ3000_TRDX8UXS|TS0011": [
           "smart_switch",
@@ -223762,54 +224248,6 @@
           "switch_1_gang",
           "wall_switch_1_gang"
         ],
-        "_TYZB01_DSJSZP0X|GS361A-H04": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|HS1SA": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|HS3SA": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|JTYJ-GD-01LM/BW": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|LUMI.SENSOR_SMOKE": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|NAS-SD02B0": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|PG-S11Z": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|SA12IZL": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|SD8SC_00.00.03.12TC": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|SMSZB-120": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|SSSQS01LM": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
-        "_TYZB01_DSJSZP0X|YG400A": [
-          "smoke_detector_advanced",
-          "smoke_sensor2"
-        ],
         "_TZE200_M9SKFCTM|TS0205": [
           "smoke_detector_advanced",
           "smoke_sensor"
@@ -223818,13 +224256,179 @@
           "smoke_detector_advanced",
           "smoke_sensor"
         ],
+        "_TZE200_NTCY3XU1|GS361A-H04": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|HS1SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|HS3SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|JTYJ-GD-01LM/BW": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|LUMI.SENSOR_SMOKE": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|NAS-SD02B0": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|PG-S11Z": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SA12IZL": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SD8SC_00.00.03.12TC": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SMSZB-120": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|SSSQS01LM": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|TS0601": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_NTCY3XU1|YG400A": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
         "_TZE200_RCCXOX8P|TS0205": [
           "smoke_detector_advanced",
-          "smoke_sensor"
+          "smoke_sensor",
+          "smoke_sensor3"
         ],
         "_TZE200_RCCXOX8P|TS0601": [
           "smoke_detector_advanced",
-          "smoke_sensor"
+          "smoke_sensor",
+          "smoke_sensor3"
+        ],
+        "_TZE200_T5P1VJ8R|GS361A-H04": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|HS1SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|HS3SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|JTYJ-GD-01LM/BW": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|LUMI.SENSOR_SMOKE": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|NAS-SD02B0": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|PG-S11Z": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|SA12IZL": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|SD8SC_00.00.03.12TC": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|SMSZB-120": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|SSSQS01LM": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|TS0601": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_T5P1VJ8R|YG400A": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE200_UEBOJRAA|TS0205": [
+          "smoke_detector_advanced",
+          "smoke_sensor3"
+        ],
+        "_TZE200_UEBOJRAA|TS0601": [
+          "smoke_detector_advanced",
+          "smoke_sensor3"
+        ],
+        "_TZE204_NTCY3XU1|GS361A-H04": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|HS1SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|HS3SA": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|JTYJ-GD-01LM/BW": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|LUMI.SENSOR_SMOKE": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|NAS-SD02B0": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|PG-S11Z": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|SA12IZL": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|SD8SC_00.00.03.12TC": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|SMSZB-120": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|SSSQS01LM": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZE204_NTCY3XU1|YG400A": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "_TZ3000_HHIODADE|TS0601": [
+          "smoke_sensor2",
+          "switch_1_gang"
         ],
         "_TYZB01_VKWRYFDR|TS0601": [
           "socket_power_strip",
@@ -223912,7 +224516,8 @@
         "_TZ3000_TQLV4UG4|TS0002": [
           "sr_zs_switch",
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_YHAGRQMD|TS0002": [
           "sr_zs_switch",
@@ -224073,6 +224678,10 @@
           "switch_1_gang",
           "wall_switch_1gang_1way"
         ],
+        "_TZ3000_HKKKUK7K|TS0601": [
+          "switch_1_gang",
+          "wall_switch_1_gang"
+        ],
         "_TZ3000_HLWM8E96|TS0003": [
           "switch_1_gang",
           "switch_3_gang",
@@ -224154,6 +224763,7 @@
         ],
         "_TZ3000_QLAI3277|TS0601": [
           "switch_1_gang",
+          "wall_switch_1_gang",
           "water_leak_sensor"
         ],
         "_TZ3000_QNEJHCSU|TS0601": [
@@ -224187,7 +224797,8 @@
         ],
         "_TZ3000_TQLV4UG4|TS0601": [
           "switch_1_gang",
-          "switch_2_gang"
+          "switch_2_gang",
+          "wall_switch_1_gang"
         ],
         "_TZ3000_UDL7UYD2|TS0601": [
           "switch_1_gang",
@@ -224854,11 +225465,13 @@
         ],
         "_TZ3000_GJNOZSAZ|TS0002": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_GJNOZSAZ|TS0012": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_GKESADUS|TS0002": [
           "switch_2_gang",
@@ -225435,11 +226048,13 @@
         ],
         "_TZ3000_M5BZWPOH|TS0002": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_M5BZWPOH|TS0012": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_MKLGAYEK|TS0002": [
           "switch_2_gang",
@@ -225607,11 +226222,13 @@
         ],
         "_TZ3000_OWMLBBS0|TS0002": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_OWMLBBS0|TS0012": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_P8ALO7QA|TS0002": [
           "switch_2_gang",
@@ -226075,7 +226692,8 @@
         ],
         "_TZ3000_TQLV4UG4|TS0012": [
           "switch_2_gang",
-          "wall_switch_2_gang"
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
         ],
         "_TZ3000_TRIBAKZK|TS0002": [
           "switch_2_gang",
@@ -227106,11 +227724,13 @@
         ],
         "_TZ3000_MWMCQMTB|TS0003": [
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_MWMCQMTB|TS0013": [
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_MZCP0OF6|TS0003": [
           "switch_3_gang",
@@ -227138,11 +227758,8 @@
         ],
         "_TZ3000_NSAR4IFE|TS0003": [
           "switch_3_gang",
-          "wall_switch_3_gang"
-        ],
-        "_TZ3000_NSAR4IFE|TS0013": [
-          "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_NWIDMC4N|TS0003": [
           "switch_3_gang",
@@ -227190,11 +227807,13 @@
         ],
         "_TZ3000_QQRFZBOE|TS0003": [
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_QQRFZBOE|TS0013": [
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_QXCNWV26|TS0003": [
           "switch_3_gang",
@@ -227214,11 +227833,13 @@
         ],
         "_TZ3000_RRJHBUYN|TS0003": [
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_RRJHBUYN|TS0013": [
           "switch_3_gang",
-          "wall_switch_3_gang"
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
         ],
         "_TZ3000_SNQ47IZK|TS0003": [
           "switch_3_gang",
@@ -227380,10 +228001,6 @@
           "temphumidsensor2",
           "temphumidsensor5"
         ],
-        "_TZ3000_RUFDTFYV|TS0201": [
-          "temphumidsensor2",
-          "temphumidsensor5"
-        ],
         "_TZ3000_FLLYGHYJ|SNTZ003": [
           "temphumidsensor3",
           "temphumidsensor5"
@@ -227395,13 +228012,49 @@
         "_TZ3000_I8JFIEZR|TS0201": [
           "temphumidsensor4",
           "temphumidsensor5"
+        ],
+        "_TYZB01_QM6DJPTA|TS0001": [
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
+        ],
+        "_TYZB01_QM6DJPTA|TS0011": [
+          "wall_switch_1_gang",
+          "wall_switch_1gang_1way"
+        ],
+        "_TZ3000_M5BZWPOH|TS0042": [
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
+        ],
+        "_TZ3000_GJNOZSAZ|TS0042": [
+          "wall_switch_2_gang",
+          "wall_switch_2gang_1way"
+        ],
+        "_TZ3000_QQRFZBOE|TS0043": [
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
+        ],
+        "_TZ3000_RRJHBUYN|TS0043": [
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
+        ],
+        "_TZ3000_MWMCQMTB|TS0043": [
+          "wall_switch_3_gang",
+          "wall_switch_3gang_1way"
+        ],
+        "_TZ3000_DFGBTUB0|TS0014": [
+          "wall_switch_4_gang",
+          "wall_switch_4gang_1way"
+        ],
+        "_TZ3000_DFGBTUB0|TS0004": [
+          "wall_switch_4_gang",
+          "wall_switch_4gang_1way"
         ]
       }
     }
   },
   "errors": [],
   "warnings": [
-    "COLLISIONS: 46985"
+    "COLLISIONS: 47115"
   ],
   "fixes": [],
   "stats": {
@@ -227412,7 +228065,7 @@
     "hybrid": 0,
     "ok": 314,
     "emptyMF": [],
-    "totalFP": 33732
+    "totalFP": 33824
   },
   "conclusion": "PASS"
 }
