@@ -1,708 +1,57 @@
 {
-  "timestamp": "2026-06-04T04:31:37.122Z",
-  "count": 176,
+  "timestamp": "2026-06-04T07:15:12.562Z",
+  "count": 30,
   "byType": {
-    "general": 133,
-    "interview": 2,
-    "github": 9,
-    "crash_report": 10,
-    "device_issue": 9,
-    "changelog": 7,
-    "diagnostic": 2,
-    "bug_report": 4
+    "diagnostic": 1,
+    "general": 25,
+    "changelog": 1,
+    "device_issue": 3
   },
-  "newFingerprints": [
-    "_TYZB01_4tlksk8a"
-  ],
+  "newFingerprints": [],
   "deepResearch": {
-    "researched": 1,
+    "researched": 0,
     "added": 0,
     "details": []
   },
   "diagnostics": [
     {
-      "id": "imap_514257",
-      "type": "general",
-      "subj": "Confirmation du départ de votre cadeau!",
-      "from": "user",
-      "date": "2026-06-03T07:50:55.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Tem..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4566,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514258",
-      "type": "general",
-      "subj": "Bons plans pour le Canada cet été",
-      "from": "user",
-      "date": "2026-06-03T07:51:14.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.T."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7878,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514259",
-      "type": "general",
-      "subj": "Bons plans pour le Canada cet été",
-      "from": "user",
-      "date": "2026-06-03T07:52:08.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.T."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7671,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514260",
-      "type": "general",
-      "subj": "Parlons Tech #46 : Cap sur VivaTech, Sobriété des infrastructures IA, Electrification en Guinée avec Orange Energies",
-      "from": "user",
-      "date": "2026-06-03T07:56:18.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "O.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "e et lâimplÃ©mentation dâÃ©tiquettes Ã©nergÃ©tiques sur les serveurs poussÃ©"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8671,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514261",
-      "type": "interview",
-      "subj": "🤔 Starting a Small Business? Share What Support You Need Here.",
-      "from": "user",
-      "date": "2026-06-03T07:59:52.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "euf..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3721,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514263",
-      "type": "general",
-      "subj": "Déstockage : jusqu’à -50 % dès maintenant 🚨",
-      "from": "user",
-      "date": "2026-06-03T08:01:03.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "U.F."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2971,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514264",
-      "type": "general",
-      "subj": "Apprenez à communiquer avec votre clientèle à ses conditions.",
-      "from": "user",
-      "date": "2026-06-03T08:03:43.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ado..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3660,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514265",
-      "type": "general",
-      "subj": "New: Gel Douche Vetiver Primavera",
-      "from": "user",
-      "date": "2026-06-03T08:23:25.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Hor..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2257,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514266",
-      "type": "general",
-      "subj": "Ingénieur(e) Systèmes et Réseaux - Lille chez Sopra Steria",
-      "from": "user",
-      "date": "2026-06-03T08:31:52.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.J."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10319,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514267",
-      "type": "general",
-      "subj": "🎟️ Pas de billets ? Ne passe pas à côté de la musique !",
-      "from": "user",
-      "date": "2026-06-03T08:31:22.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "C.F."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7758,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514268",
-      "type": "general",
-      "subj": "🌾 Nos 5 plus beaux domaines",
-      "from": "user",
-      "date": "2026-06-03T08:42:05.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Sta..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5116,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514269",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [bed_sensor] Bug: Issue in post #328 ist not fixed (Issue #360)",
-      "from": "github",
-      "date": "2026-06-03T08:46:17.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "DaPicardos"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "328",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "DaPicardos",
-        "bodyExcerpt": "DaPicardos left a comment (dlnraja/com.tuya.zigbee#360)\r\n\r\nHi @dlnraja,\r\n\r\nThank you! Referencing my original bug report in #328 and the CLI logs provided there, the contact alarm is now working perfectly with the `transform` keyword. \r\n\r\nHowever, two things still need a fix based on those logs:\r\n\r\n1. **Battery still at 1%:** The driver is still listening to **DP4**. My hardware sends the battery status on **DP104** instead. Please shift the mapping to DP104 and map the binary value `1` to 100%."
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1015,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514270",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T08:46:19.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger",
-        "'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is n",
-        "could not initialize node TypeError: this._registerCapabilityListeners is not a",
-        "this._registerCapabilityListeners is not a function",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_c",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_i",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_s",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_d",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_t",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_is_on",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_power_above",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_energy_above",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_turn_on",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_turn_off",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_toggle"
-      ],
-      "devices": [
-        "contact_sensor",
-        "85bfafb1-299e-48f9-ab",
-        "851c02ee-0f77-4e",
-        "ec94cae4-c7ba-490b-bbe2-617ada",
-        "device_radiator_valve_thermost",
-        "dimmer_wall_plug",
-        "dimmer_wall_switch",
-        "dimmer_wall_water",
-        "remote_button_wireless_fingerb",
-        "sensor_climate_presence",
-        "sensor_climate_smart",
-        "sensor_contact_rain",
-        "switch_wall"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_triggered\r",
-          "Error: 'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is not a function\r",
-          "Error: 'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is not a function\r",
-          "Error: could not initialize node TypeError: this._registerCapabilityListeners is not a function\r",
-          "Error: could not initialize node TypeError: this._registerCapabilityListeners is not a function\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "alarm_tamper",
-          "measure_luminance",
-          "measure_battery"
-        ],
-        "clusters": [
-          "0xEF00"
-        ]
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 39565,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514271",
-      "type": "general",
-      "subj": "Suggestion de contact pour Dylan",
-      "from": "user",
-      "date": "2026-06-03T08:49:39.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Job..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2698,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514272",
-      "type": "device_issue",
-      "subj": "Digital Transformation at the Core: Powering AI and Enterprise Execution",
-      "from": "user",
-      "date": "2026-06-03T08:58:30.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "B.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10012,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514273",
-      "type": "changelog",
-      "subj": "C'est unanime ! 🏆",
-      "from": "user",
-      "date": "2026-06-03T09:00:30.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "gre..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2974,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514274",
-      "type": "general",
-      "subj": "💪 Gardez votre capteur bien en place à chaque mouvement",
-      "from": "user",
-      "date": "2026-06-03T09:00:51.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "S.D."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2845,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514275",
-      "type": "general",
-      "subj": "1 recruteur vient de consulter votre cv",
-      "from": "user",
-      "date": "2026-06-03T09:02:28.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Hel..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 11426,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514276",
-      "type": "interview",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-06-03T09:03:19.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "P.W."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "from"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 579,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514277",
-      "type": "general",
-      "subj": "Laisse pas Ibiza s'envoler 😏",
-      "from": "user",
-      "date": "2026-06-03T09:08:13.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "K.F."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5694,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514278",
+      "id": "imap_514453",
       "type": "diagnostic",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "subj": "Multi-sensor NB-IoT ref design, 2-Mbit EEPROM ID, ready-to-use Ki board, and silent GaN innovations",
       "from": "user",
-      "date": "2026-06-03T09:11:16.000Z",
+      "date": "2026-06-04T05:02:45.000Z",
       "pseudo": {
         "source": "user",
-        "username": "P.W."
+        "username": "STM..."
       },
       "fps": {
-        "mfr": [
-          "_TZ3000_mrpevh8p",
-          "_TZ3000_0dumfk2z"
-        ],
-        "pid": [
-          "TS0041",
-          "TS0215A"
-        ]
+        "mfr": [],
+        "pid": []
       },
       "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZ3000_mrpevh8p",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "button_wireless_1",
-            "switch_1_gang",
-            "switch_1gang",
-            "wall_switch_1_gang_tuya",
-            "wall_switch_5_gang_tuya"
-          ],
-          "protocol": "unknown",
-          "requires": [],
-          "conflict": true
-        },
-        {
-          "fingerprint": "_TZ3000_0dumfk2z",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "bulb_dimmable",
-            "button_emergency_sos"
-          ],
-          "protocol": "unknown",
-          "requires": [],
-          "conflict": true
-        },
-        {
-          "fingerprint": "TS0041",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "button_wireless",
-            "button_wireless_1",
-            "button_wireless_2",
-            "button_wireless_scene",
-            "button_wireless_smart",
-            "button_wireless_wall",
-            "remote_button_emergency_sos",
-            "remote_button_wireless_wall",
-            "scene_switch_1",
-            "smart_button_switch",
-            "universal_zigbee",
-            "wall_remote_1_gang"
-          ],
-          "multiDriver": true
-        },
-        {
-          "fingerprint": "TS0215A",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "button_emergency_sos",
-            "smart_remote_4_buttons",
-            "universal_zigbee"
-          ],
-          "multiDriver": true
-        }
+      "devices": [
+        "with",
+        "onboarding"
       ],
+      "xref": [],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 918,
+      "bodyLength": 6092,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514279",
+      "id": "imap_514454",
       "type": "general",
-      "subj": "Coup de frais à PRIX MALIN !",
+      "subj": "Buzztron Briefing : Une machine lit vos emails avant vos prospects. Vous écrivez encore pour qui ?",
       "from": "user",
-      "date": "2026-06-03T09:06:21.000Z",
+      "date": "2026-06-04T05:15:26.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Cas..."
+        "username": "N.L."
       },
       "fps": {
         "mfr": [],
@@ -717,18 +66,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 14833,
+      "bodyLength": 14224,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514280",
+      "id": "imap_514455",
       "type": "general",
-      "subj": "🥳 Oscaro Birthdays : vos catégories préférées en promo !",
+      "subj": "Moustiques : protégez-vous efficacement et naturellement",
       "from": "user",
-      "date": "2026-06-03T09:15:34.000Z",
+      "date": "2026-06-04T05:16:44.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Osc..."
+        "username": "R.P."
       },
       "fps": {
         "mfr": [],
@@ -743,171 +92,15 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 10601,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514281",
-      "type": "general",
-      "subj": "Ventes Privées c'est parti : Jusqu'à -60% !",
-      "from": "user",
-      "date": "2026-06-03T09:16:00.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "BUT..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 36921,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514282",
-      "type": "general",
-      "subj": "[FREEMOBILE] [phone]: Nouveau message de: [phone]",
-      "from": "user",
-      "date": "2026-06-03T09:16:13.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 129,
+      "bodyLength": 6791,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514283",
+      "id": "imap_514456",
       "type": "general",
-      "subj": "[FREEMOBILE] [phone]: Nouveau message de: [phone]",
+      "subj": "L'actualité de votre métier sur Tekkit cette semaine",
       "from": "user",
-      "date": "2026-06-03T09:16:13.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 129,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514284",
-      "type": "general",
-      "subj": "[FREEMOBILE] [phone]: Nouveau message de: [phone]",
-      "from": "user",
-      "date": "2026-06-03T09:16:13.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 129,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514285",
-      "type": "general",
-      "subj": "Percevez plus d'intérêts",
-      "from": "user",
-      "date": "2026-06-03T09:28:06.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.R."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 19491,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514287",
-      "type": "general",
-      "subj": "Sérélys Meno : la solution naturelle non-hormonale",
-      "from": "user",
-      "date": "2026-06-03T09:43:20.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "P.D."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8356,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514288",
-      "type": "general",
-      "subj": "Orange Business - Nouvel épisode du Shortcast « La Tech en Short »",
-      "from": "user",
-      "date": "2026-06-03T09:50:09.000Z",
+      "date": "2026-06-04T05:18:28.000Z",
       "pseudo": {
         "source": "user",
         "username": "Tek..."
@@ -925,292 +118,44 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 2909,
+      "bodyLength": 18043,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514289",
+      "id": "imap_514458",
+      "type": "general",
+      "subj": "Comment vous faciliter l’accès aux offres de bourse sur Ma Banque ?",
+      "from": "user",
+      "date": "2026-06-04T05:31:53.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "L.C."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2123,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514459",
       "type": "changelog",
-      "subj": "4,25 € la monture. Le reste, c’est du vol.",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "user",
-      "date": "2026-06-03T10:02:04.000Z",
+      "date": "2026-06-04T05:51:16.000Z",
       "pseudo": {
         "source": "user",
-        "username": "BLA..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5703,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514291",
-      "type": "general",
-      "subj": "“ingénieur it” : France Travail - Ingénieur(e) de production IT (H/F)",
-      "from": "user",
-      "date": "2026-06-03T10:31:14.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.J."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5198,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514292",
-      "type": "changelog",
-      "subj": "Google Fixes 120+ Android Vulnerabilities In June 2026 Security Update",
-      "from": "user",
-      "date": "2026-06-03T10:37:11.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "compromise",
-        "functions",
-        "takeovers",
-        "hardware",
-        "manufacturer",
-        "management"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 12293,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514293",
-      "type": "device_issue",
-      "subj": "4 nouvelles offres ont été publiées ce matin",
-      "from": "user",
-      "date": "2026-06-03T10:40:20.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "V.C."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 11164,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514294",
-      "type": "general",
-      "subj": "Livraison à 0,99€ sur showroomprivé, snowleader, bébéboutik ...",
-      "from": "user",
-      "date": "2026-06-03T10:47:54.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.R."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10038,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514295",
-      "type": "general",
-      "subj": "Are You Ready for AI-Generated Attacks?",
-      "from": "user",
-      "date": "2026-06-03T10:57:09.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3879,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514296",
-      "type": "bug_report",
-      "subj": "Frais à partir de 0 % sur Revolut X",
-      "from": "user",
-      "date": "2026-06-03T10:57:43.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Rev..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "isme, et sur le transfert de fonds (informations concernant le payeur). SiÃ¨ge s"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": "ind",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9687,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514297",
-      "type": "general",
-      "subj": "SEX INVITATION : au centre de tous les désirs",
-      "from": "user",
-      "date": "2026-06-03T11:00:56.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "D.C."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 967,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514298",
-      "type": "general",
-      "subj": "Jours LuXure : le plaisir vous attend",
-      "from": "user",
-      "date": "2026-06-03T11:01:59.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "D.V."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 892,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514299",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2279 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T11:14:58.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514300",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build has failed processing",
-      "from": "homey_system",
-      "date": "2026-06-03T11:15:13.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
+        "username": "J.L."
       },
       "fps": {
         "mfr": [],
@@ -1226,17 +171,121 @@
       "homeyVersion": null,
       "appVersion": null,
       "bodyLength": 540,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514460",
+      "type": "general",
+      "subj": "NOUVEAU : E-book sur les LED, les lasers et la lumière du soleil 👉 -20% pour les membres",
+      "from": "user",
+      "date": "2026-06-04T06:00:08.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Ele..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2112,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514461",
+      "type": "general",
+      "subj": "Pourquoi je me suis lamentablement vautré dans la poudreuse avec un D4s",
+      "from": "user",
+      "date": "2026-06-04T06:01:49.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "J.P."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 5996,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514462",
+      "type": "general",
+      "subj": "Le seul \"Summer Body\" qui compte...",
+      "from": "user",
+      "date": "2026-06-04T06:04:45.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "M.M."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 720,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514463",
+      "type": "general",
+      "subj": "Commande confirmée : Clavier Français Ori...",
+      "from": "user",
+      "date": "2026-06-04T06:08:20.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "eBa..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 31755,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514301",
+      "id": "imap_514464",
       "type": "general",
-      "subj": "Nouveau message pour \"HP EliteBook x360 1040 G8 - Écran Tactile - Intel i7 (11e Gen) / 16 Go RAM / SSD 256 Go\" sur leboncoin",
+      "subj": "eBay S.a.r.l.: 74,98 € EUR",
       "from": "user",
-      "date": "2026-06-03T11:25:25.000Z",
+      "date": "2026-06-04T06:08:34.000Z",
       "pseudo": {
         "source": "user",
-        "username": "a.l."
+        "username": "ser..."
       },
       "fps": {
         "mfr": [],
@@ -1251,260 +300,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 1689,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514302",
-      "type": "general",
-      "subj": "Nouveau message pour \"HP EliteBook x360 1040 G8 - Écran Tactile - Intel i7 (11e Gen) / 16 Go RAM / SSD 256 Go\" sur leboncoin",
-      "from": "user",
-      "date": "2026-06-03T11:25:45.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "a.l."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1753,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514303",
-      "type": "general",
-      "subj": "Nouveau message pour \"HP EliteBook x360 1040 G8 - Écran Tactile - Intel i7 (11e Gen) / 16 Go RAM / SSD 256 Go\" sur leboncoin",
-      "from": "user",
-      "date": "2026-06-03T11:25:48.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "a.l."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1810,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514304",
-      "type": "general",
-      "subj": "Field Notes: Find more of your [greeting] [name]",
-      "from": "user",
-      "date": "2026-06-03T11:26:30.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Z.H."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4542,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514305",
-      "type": "general",
-      "subj": "Nouveau message pour \"HP EliteBook x360 1040 G8 - Écran Tactile - Intel i7 (11e Gen) / 16 Go RAM / SSD 256 Go\" sur leboncoin",
-      "from": "user",
-      "date": "2026-06-03T11:27:24.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "a.l."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1876,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514306",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T11:36:35.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [
-          "_TYZB01_4tlksk8a"
-        ],
-        "pid": [
-          "TS0111"
-        ]
-      },
-      "errs": [
-        "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger",
-        "plug_smart_gang1_scene)",
-        "plug_smart_physical_on)",
-        "plug_smart_physical_single)",
-        "contact_sensor_switch_hybrid_switch_1gang_turn_on",
-        "contact_sensor_switch_hybrid_switch_1gang_turn_off",
-        "contact_sensor_switch_hybrid_switch_1gang_toggle",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight_colo",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight_brig",
-        "contact_sensor_switch_hybrid_switch_1gang_set_countdown",
-        "contact_sensor_switch_hybrid_switch_1gang_set_child_lock",
-        "contact_sensor_switch_hybrid_switch_1gang_set_scene_mode",
-        "contact_sensor_zigbee_hybrid_contact_sensor_is_open",
-        "contact_sensor_zigbee_hybrid_contact_sensor_battery_above"
-      ],
-      "devices": [
-        "plug_smart",
-        "unknown",
-        "0be1f4e7-b1c4-417d-b6c3-ca0c58",
-        "profile",
-        "contact_sensor_switch",
-        "contact_sensor_zigbee",
-        "device_plug_energy_monitor",
-        "device_radiator_valve_thermost",
-        "dimmer_wall_plug",
-        "dimmer_wall_switch",
-        "dimmer_wall_water",
-        "remote_button_wireless_fingerb",
-        "sensor_climate_presence",
-        "sensor_climate_smart",
-        "sensor_contact_rain",
-        "switch_wall"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TYZB01_4tlksk8a",
-          "type": "mfr",
-          "supported": false,
-          "drivers": [],
-          "protocol": "unknown",
-          "requires": []
-        },
-        {
-          "fingerprint": "TS0111",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "button_wireless_2",
-            "button_wireless_plug",
-            "double_power_point",
-            "plug_smart",
-            "socket_power_strip_four_two",
-            "universal_zigbee",
-            "valvecontroller"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_triggered\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "onoff"
-        ],
-        "clusters": [
-          "0x8004"
-        ]
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 42835,
+      "bodyLength": 9290,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514307",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)",
-      "from": "github",
-      "date": "2026-06-03T11:38:10.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Lucas360-blip"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "data"
-      ],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1408",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Lucas360-blip",
-        "bodyExcerpt": "Lucas360-blip left a comment (JohanBendz/com.tuya.zigbee#1408)\r\n\r\nHi dlnraja,\r\nâThanks for the quick updates! I've tested up to version v8.1.75.\r\nâAfter a clean re-pair on this version, the capability layout screens remain active, but the live measurements (Power, Voltage, and Energy) are still showing as blank dashes and aren't updating.\r\nâI have just triggered and sent a diagnostic report from the Homey app to help you see what the plug is broadcasting.\r\nâDiagnostic Report ID: 143fc5e0"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 864,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514308",
+      "id": "imap_514465",
       "type": "general",
-      "subj": "🚧 Travaux d'été sur vos lignes",
+      "subj": "Jusqu'à -600€ sur les TV et équipements Home Cinéma",
       "from": "user",
-      "date": "2026-06-03T05:31:36.000Z",
+      "date": "2026-06-04T06:14:28.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.V."
+        "username": "Son..."
       },
       "fps": {
         "mfr": [],
@@ -1519,147 +326,43 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 9420,
+      "bodyLength": 18,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_514466",
+      "type": "general",
+      "subj": "OK, vous souhaitez annuler une commande",
+      "from": "user",
+      "date": "2026-06-04T06:18:14.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "eBa..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 25976,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514309",
+      "id": "imap_514467",
       "type": "general",
-      "subj": "Nouveau message pour \"HP EliteBook x360 1040 G8 - Écran Tactile - Intel i7 (11e Gen) / 16 Go RAM / SSD 256 Go\" sur leboncoin",
+      "subj": "J-1 : Votre permis à 559,99€ ⏳",
       "from": "user",
-      "date": "2026-06-03T11:44:55.000Z",
+      "date": "2026-06-04T06:20:33.000Z",
       "pseudo": {
         "source": "user",
-        "username": "a.l."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2014,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514311",
-      "type": "general",
-      "subj": "Dylan,vous nous manquez ! Envie d'une réduction de 5€ ?",
-      "from": "user",
-      "date": "2026-06-03T11:50:55.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "UNI..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8257,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514312",
-      "type": "general",
-      "subj": "Get Ready for Father's Day & & Craft Unforgettable Memories with Smart Lighting",
-      "from": "user",
-      "date": "2026-06-03T12:01:11.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Gov..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1807,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514313",
-      "type": "general",
-      "subj": "Stephenson Etudes Entretiens en ligne sur les banques",
-      "from": "user",
-      "date": "2026-06-03T12:05:29.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "S.E."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2155,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514314",
-      "type": "general",
-      "subj": "Des vacances dès 206 € ? Oui, c’est une offre Last Minute !",
-      "from": "user",
-      "date": "2026-06-03T12:10:25.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "las..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 16490,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514315",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2280 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T12:11:07.000Z",
-      "pseudo": {
-        "source": "homey_system",
         "username": null
       },
       "fps": {
@@ -1675,78 +378,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514316",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T12:11:22.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514317",
-      "type": "bug_report",
-      "subj": "Data Architecture Design and Business Objectives: How to choose a model that addresses your company’s challenges?",
-      "from": "user",
-      "date": "2026-06-03T12:11:43.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "s from reaching management dashboards, and visual data lineage maps that build b",
-        "be a matter of chance or blindly following market trends. Th"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6072,
+      "bodyLength": 17444,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514318",
+      "id": "imap_514468",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2280 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T12:12:59.000Z",
+      "subj": "Lea Elui, et si vous pouviez la rencontrer ? 😍",
+      "from": "user",
+      "date": "2026-06-04T06:26:58.000Z",
       "pseudo": {
-        "source": "homey_system",
-        "username": null
+        "source": "user",
+        "username": "W.2."
       },
       "fps": {
         "mfr": [],
@@ -1761,18 +404,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 559,
+      "bodyLength": 9884,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514319",
-      "type": "general",
-      "subj": "🎉 ENGWE Rewards Is Back.",
+      "id": "imap_514469",
+      "type": "device_issue",
+      "subj": "Accro aux paris sportifs",
       "from": "user",
-      "date": "2026-06-03T12:15:07.000Z",
+      "date": "2026-06-04T06:30:50.000Z",
       "pseudo": {
         "source": "user",
-        "username": "E.E."
+        "username": "L.7."
       },
       "fps": {
         "mfr": [],
@@ -1787,96 +430,70 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 1157,
+      "bodyLength": 9710,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_514471",
+      "type": "general",
+      "subj": "Vous recevrez bientôt votre remboursement de eBay S.a.r.l.",
+      "from": "user",
+      "date": "2026-06-04T06:34:27.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "ser..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 9468,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_514472",
+      "type": "general",
+      "subj": "Jeu concours spécial fête des pères",
+      "from": "user",
+      "date": "2026-06-04T06:34:54.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "V.a."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1142,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514320",
+      "id": "imap_514473",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2281 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T12:20:53.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514321",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T12:21:10.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514322",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2281 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T12:22:43.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514323",
-      "type": "general",
-      "subj": "Revolte et votre véhicule - HA024GD",
+      "subj": "À propos de : dlnraja a envoyé un message concernant Clavier Français Original HP Elite x[phone]-in-1 G9 / G10 n° [phone]",
       "from": "user",
-      "date": "2026-06-03T12:26:34.000Z",
+      "date": "2026-06-04T06:36:53.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.R."
+        "username": "e.l."
       },
       "fps": {
         "mfr": [],
@@ -1891,70 +508,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 438,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514324",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2282 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T12:31:07.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
+      "bodyLength": 29616,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514326",
+      "id": "imap_514474",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T12:31:20.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514327",
-      "type": "general",
-      "subj": "Ingénieur(e) Systèmes et Réseaux - Lille chez Sopra Steria",
+      "subj": "La commande [phone] a été annulée",
       "from": "user",
-      "date": "2026-06-03T12:31:21.000Z",
+      "date": "2026-06-04T06:40:51.000Z",
       "pseudo": {
         "source": "user",
-        "username": "A.J."
+        "username": "eBa..."
       },
       "fps": {
         "mfr": [],
@@ -1969,44 +534,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 10324,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514328",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2282 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T12:32:52.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
+      "bodyLength": 33447,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514329",
+      "id": "imap_514475",
       "type": "general",
-      "subj": "🔥Unlock a $30 coupon on REDMAGIC 11S Pro for just $1.",
+      "subj": "Vous recevrez bientôt votre remboursement de eBay S.a.r.l.",
       "from": "user",
-      "date": "2026-06-03T12:15:09.000Z",
+      "date": "2026-06-04T06:47:26.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.T."
+        "username": "ser..."
       },
       "fps": {
         "mfr": [],
@@ -2021,67 +560,15 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 2023,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514330",
-      "type": "general",
-      "subj": "Quelle nouveauté va vous faire craquer ?",
-      "from": "user",
-      "date": "2026-06-03T12:43:25.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Pic..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 20553,
+      "bodyLength": 9417,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514331",
+      "id": "imap_514476",
       "type": "general",
-      "subj": "Nouveau Hors-série : PSG, LEGENDAIRES !",
+      "subj": "216/46 pièces Jeu de: Était , Maintenant 10,79€",
       "from": "user",
-      "date": "2026-06-03T12:46:54.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "L.P."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 14548,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514332",
-      "type": "general",
-      "subj": "Vous avez réussi !",
-      "from": "user",
-      "date": "2026-06-03T12:50:40.000Z",
+      "date": "2026-06-04T06:51:35.000Z",
       "pseudo": {
         "source": "user",
         "username": "Tem..."
@@ -2099,299 +586,15 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 4366,
+      "bodyLength": 4571,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514333",
-      "type": "changelog",
-      "subj": "Votre offre exclusive de points se termine bientôt",
-      "from": "user",
-      "date": "2026-06-03T13:07:31.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.B."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 27855,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514334",
+      "id": "imap_514477",
       "type": "general",
-      "subj": "262040095 - Suivi de votre dossier d'expertise sur MonAutoEtCie.fr : date de mise en r�paration enregistr�e",
+      "subj": "La commande [phone] a été annulée",
       "from": "user",
-      "date": "2026-06-03T13:22:00.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "R.C."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1178,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514335",
-      "type": "general",
-      "subj": "Votre candidature a été vue par Würth France",
-      "from": "user",
-      "date": "2026-06-03T13:24:55.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Lin..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2207,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514336",
-      "type": "general",
-      "subj": "Livraison à 0,99€ sur showroomprivé, snowleader, bébéboutik ...",
-      "from": "user",
-      "date": "2026-06-03T13:26:58.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.R."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10447,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514337",
-      "type": "general",
-      "subj": "Prends la route (des vacances) ☀️",
-      "from": "user",
-      "date": "2026-06-03T13:34:04.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "car..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3919,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514338",
-      "type": "general",
-      "subj": "Votre candidature au poste de Chef/fe de projet sûreté - Défense & Sécurité - Le Plessis Robinson",
-      "from": "user",
-      "date": "2026-06-03T13:40:20.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "É.G."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 728,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514339",
-      "type": "general",
-      "subj": "🎁 Déjà 2 cadeaux à débloquer !",
-      "from": "user",
-      "date": "2026-06-03T13:47:11.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.G."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4108,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514340",
-      "type": "general",
-      "subj": "On a enfin trouvé la recette parfaite 🍫",
-      "from": "user",
-      "date": "2026-06-03T13:48:11.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "L.F."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3482,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514341",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Pressure Sensing Strap/Bed Occupancy Sensor (Issue #328)",
-      "from": "github",
-      "date": "2026-06-03T13:54:23.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "DaPicardos"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "328",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "DaPicardos",
-        "bodyExcerpt": "DaPicardos left a comment (dlnraja/com.tuya.zigbee#328)\r\n\r\n**Hi @dlnraja,**\r\n\r\nThanks for looking into this and the quick update! However, I just tested the new experimental version **v1.8.81**, and the battery issue is unfortunately not resolved yet. \r\n\r\nThe battery status is **still stuck at 1%**. \r\n\r\nCould you please double-check if the mapping for **DP104** is correctly converting the binary raw value `1` to `100` (percent) in the code? If Homey takes the raw value `1` without a transform fu"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 900,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514342",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [bed_sensor] Bug: Issue in post #328 ist not fixed (Issue #360)",
-      "from": "github",
-      "date": "2026-06-03T13:54:36.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "DaPicardos"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "328",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "DaPicardos",
-        "bodyExcerpt": "DaPicardos left a comment (dlnraja/com.tuya.zigbee#360)\r\n\r\n**Hi @dlnraja,**\r\n\r\nThanks for looking into this and the quick update! However, I just tested the new experimental version **v1.8.81**, and the battery issue is unfortunately not resolved yet. \r\n\r\nThe battery status is **still stuck at 1%**. \r\n\r\nCould you please double-check if the mapping for **DP104** is correctly converting the binary raw value `1` to `100` (percent) in the code? If Homey takes the raw value `1` without a transform fu"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 900,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514343",
-      "type": "device_issue",
-      "subj": "Récemment consulté : HP EliteBook 640 G11 intel Ultra 5 135U DDR5 DEFEKT",
-      "from": "user",
-      "date": "2026-06-03T13:59:07.000Z",
+      "date": "2026-06-04T06:53:52.000Z",
       "pseudo": {
         "source": "user",
         "username": "eBa..."
@@ -2409,58 +612,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 28810,
+      "bodyLength": 33534,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514344",
-      "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] Bug: Issue in post #328 ist not fixed, please reopen the issue (Issue #363)",
-      "from": "github",
-      "date": "2026-06-03T14:07:41.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "DaPicardos"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "listens"
-      ],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "328",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "DaPicardos",
-        "bodyExcerpt": "DaPicardos created an issue (dlnraja/com.tuya.zigbee#363)\r\n\r\n**Hi @dlnraja,**\r\n\r\nThanks for looking into this and the quick update! However, I just tested the new experimental version **v1.8.81**, and the issue is unfortunately not fully resolved yet.\r\n\r\nCould you please reopen this ticket (#328) and take another look at my specific issue? Based on the commit message `f50966a`, it looks like you might have mixed this up with another bed sensor ticket (#360). \r\n\r\nFor my specific hardware revision"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1322,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514345",
+      "id": "imap_514478",
       "type": "device_issue",
-      "subj": "Votre profil intéresse ces entreprises !",
+      "subj": "Costumes 100% lin",
       "from": "user",
-      "date": "2026-06-03T14:10:20.000Z",
+      "date": "2026-06-04T06:56:14.000Z",
       "pseudo": {
         "source": "user",
-        "username": "V.C."
+        "username": "Bex..."
       },
       "fps": {
         "mfr": [],
@@ -2475,496 +638,15 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 12977,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514346",
-      "type": "general",
-      "subj": "Nexo’s MiCA-ready setup",
-      "from": "user",
-      "date": "2026-06-03T14:05:38.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Nex..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5151,
+      "bodyLength": 4859,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514347",
+      "id": "imap_514479",
       "type": "general",
-      "subj": "Surprise ! Nous avons quelque chose pour vous !",
+      "subj": "Votre relevé de compte est disponible",
       "from": "user",
-      "date": "2026-06-03T14:12:05.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Len..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5832,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514348",
-      "type": "general",
-      "subj": ".COM for $9.99 & .NET for $11.99 - June Domain Deals",
-      "from": "user",
-      "date": "2026-06-03T14:19:21.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Clo..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1673,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514349",
-      "type": "general",
-      "subj": "Pour des performances optimales",
-      "from": "user",
-      "date": "2026-06-03T14:22:06.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "BOS..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 90432,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514350",
-      "type": "general",
-      "subj": "The Shift: Rewiring for the Agentic Era",
-      "from": "user",
-      "date": "2026-06-03T14:22:05.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "operate safely on intelligence alone. It needs the operating",
-        "become a rubber stamp under time pressure, incomplete inform",
-        "be delegated to technology teams alone.Â  If AI saves time,"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10762,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514352",
-      "type": "general",
-      "subj": "⏳ Dernier appel : votre code promo expire ce soir",
-      "from": "user",
-      "date": "2026-06-03T14:28:36.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.h."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 58119,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514353",
-      "type": "general",
-      "subj": "Stime DSI Groupement Les Mousquetaires recrute à France",
-      "from": "user",
-      "date": "2026-06-03T14:31:20.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.J."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10207,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514355",
-      "type": "device_issue",
-      "subj": "The Career Skills AI Can’t Replace, According To AMD CEO Lisa Su",
-      "from": "user",
-      "date": "2026-06-03T14:31:55.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "F.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7645,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514357",
-      "type": "general",
-      "subj": "Recrutement Crédit Agricole Group Infrastructure Platform : Suite à votre candidature pour le poste [phone]-Ingénieur sécurité vulnérabilités H/F",
-      "from": "user",
-      "date": "2026-06-03T14:40:13.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4016,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514358",
-      "type": "general",
-      "subj": "Découvrez notre nouveau rendez-vous : « Les Décideurs ».",
-      "from": "user",
-      "date": "2026-06-03T14:49:43.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "X.S."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5066,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514359",
-      "type": "general",
-      "subj": "Consultant fonctionnel AGICAP H/F – Apogea",
-      "from": "user",
-      "date": "2026-06-03T14:50:09.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ind..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7862,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514360",
-      "type": "general",
-      "subj": "Lecks erkennen, Schaden vorbeugen",
-      "from": "user",
-      "date": "2026-06-03T15:01:47.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "She..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2879,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514361",
-      "type": "general",
-      "subj": "Juin 2026: le meilleur du streaming arrive",
-      "from": "user",
-      "date": "2026-06-03T15:01:59.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Par..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 11183,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514362",
-      "type": "device_issue",
-      "subj": "COMPUTEX 2026: Big news and mini PCs",
-      "from": "user",
-      "date": "2026-06-03T15:01:07.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.P."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2113,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514364",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2283 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T15:04:59.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514365",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T15:05:12.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514366",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2283 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T15:06:43.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514367",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
-      "from": "homey_system",
-      "date": "2026-06-03T15:14:48.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "this._inferCapabilityFromValue is not a function"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "TypeError: this._inferCapabilityFromValue is not a function\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1686,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514369",
-      "type": "general",
-      "subj": "NOUVEAU | Shark PowerDetect Speed Collection Luxe ✨",
-      "from": "user",
-      "date": "2026-06-03T15:37:21.000Z",
+      "date": "2026-06-04T07:00:05.000Z",
       "pseudo": {
         "source": "user",
         "username": "Sha..."
@@ -2982,679 +664,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 19007,
+      "bodyLength": 2125,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514370",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2284 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T15:39:52.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514371",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T15:40:05.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514373",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2284 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T15:41:32.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514374",
-      "type": "changelog",
-      "subj": "Offre spéciale pour fêter nos 10 ans 🎁",
-      "from": "user",
-      "date": "2026-06-03T14:43:56.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "WEE..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 634,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514375",
-      "type": "general",
-      "subj": "Here's what makes it different.",
-      "from": "user",
-      "date": "2026-06-03T15:48:26.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "C.S."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 837,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514377",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)",
-      "from": "github",
-      "date": "2026-06-03T15:55:15.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Lucas360-blip"
-      },
-      "fps": {
-        "mfr": [
-          "_TZ3210_jlf1nepw"
-        ],
-        "pid": [
-          "TS011F"
-        ]
-      },
-      "errs": [],
-      "devices": [
-        "interview"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ3210_jlf1nepw",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "double_power_point",
-            "plug_smart"
-          ],
-          "protocol": "unknown",
-          "requires": [],
-          "conflict": true
-        },
-        {
-          "fingerprint": "TS011F",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "button_wireless_1",
-            "button_wireless_plug",
-            "device_air_purifier_plug",
-            "device_din_rail",
-            "double_power_point",
-            "fingerbot",
-            "plug",
-            "plug_energy_monitor",
-            "plug_smart",
-            "relay_board_1_channel",
-            "relay_board_2_channel",
-            "remote_button_wireless",
-            "smartPlug_DinRail",
-            "smartplug_2_socket",
-            "socket_power_strip_four",
-            "switch",
-            "switch_1_gang",
-            "universal_zigbee",
-            "usb_dongle_triple",
-            "valvecontroller"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "1408",
-        "action": "commented",
-        "fps": {
-          "mfr": [
-            "_TZ3210_jlf1nepw"
-          ],
-          "pid": [
-            "TS011F"
-          ]
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Lucas360-blip",
-        "bodyExcerpt": "Lucas360-blip left a comment (JohanBendz/com.tuya.zigbee#1408)\r\n\r\nHi dlnraja,\r\n\r\nI did a clean re-pair on the latest test version and left it running for a while with a laptop and monitor attached, but the power metrics are still showing as blank dashes.\r\n\r\nI have successfully completed a Zigbee device interview via the Homey Developer Tools. Interestingly, the raw cluster values show that the plug is successfully reading the live data internally (rmsVoltage: 237 and activePower: 74), but the re"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 17649,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514378",
-      "type": "changelog",
-      "subj": "Une aventure légendaire, réinventée",
-      "from": "user",
-      "date": "2026-06-03T15:59:33.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ubi..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7376,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514379",
-      "type": "general",
-      "subj": "Dylan  ⚽️ Alerte Bons Plans : Préparez vos soirées Coupe du Monde avec Fidme !",
-      "from": "user",
-      "date": "2026-06-03T16:00:04.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Fid..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5758,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514380",
-      "type": "general",
-      "subj": "Les commandes de l’A390 GTS sont ouvertes",
-      "from": "user",
-      "date": "2026-06-03T16:01:43.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Alp..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4464,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514381",
-      "type": "general",
-      "subj": "L’arme secrète du coin WC !",
-      "from": "user",
-      "date": "2026-06-03T16:02:12.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "BOK..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2726,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514383",
-      "type": "general",
-      "subj": "Jusqu'à -500€ sur le Galaxy S26 Ultra",
-      "from": "user",
-      "date": "2026-06-03T16:05:16.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Les..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2082,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514384",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2285 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T16:14:53.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514385",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T16:15:06.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514386",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2285 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T16:19:29.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514387",
-      "type": "general",
-      "subj": "🌿 3 nouvelles barres naturellement protéinées et gourmandes.",
-      "from": "user",
-      "date": "2026-06-03T16:30:23.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "O.N."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1974,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514388",
-      "type": "general",
-      "subj": "Consultant VSI H/F chez LSI",
-      "from": "user",
-      "date": "2026-06-03T16:31:14.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.J."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10283,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514389",
-      "type": "general",
-      "subj": "On se capte au prochain festival ?",
-      "from": "user",
-      "date": "2026-06-03T16:34:21.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "F.M."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9467,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514390",
-      "type": "general",
-      "subj": "The Ultimate RC Plane Sale: Restock Your Fleet Before the Summer Begins",
-      "from": "user",
-      "date": "2026-06-03T16:35:24.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Hob..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 17706,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514392",
-      "type": "general",
-      "subj": "Commande confirmée : Clavier Français Ori...",
-      "from": "user",
-      "date": "2026-06-03T16:42:15.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "eBa..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 31771,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514393",
-      "type": "general",
-      "subj": "Your order [phone] is closed",
-      "from": "user",
-      "date": "2026-06-03T16:46:28.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ali..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9396,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514394",
-      "type": "general",
-      "subj": "Remboursement pour annulation effectué",
-      "from": "user",
-      "date": "2026-06-03T16:46:33.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ali..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6036,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514395",
-      "type": "general",
-      "subj": "Your order [phone] is closed",
-      "from": "user",
-      "date": "2026-06-03T16:47:05.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ali..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9396,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514396",
-      "type": "general",
-      "subj": "Remboursement pour annulation effectué",
-      "from": "user",
-      "date": "2026-06-03T16:47:10.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ali..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6008,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514397",
+      "id": "imap_514480",
       "type": "device_issue",
-      "subj": "Your Royal Mail parcel is on its way",
+      "subj": "Notre meilleur combo de l'été",
       "from": "user",
-      "date": "2026-06-03T16:51:44.000Z",
+      "date": "2026-06-04T07:01:10.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.M."
+        "username": "UNI..."
       },
       "fps": {
         "mfr": [],
@@ -3669,1672 +690,15 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 12648,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514399",
-      "type": "general",
-      "subj": "Dylan, 90 Paar Socken 38€",
-      "from": "user",
-      "date": "2026-06-03T17:19:18.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "L.O."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 354,
+      "bodyLength": 117584,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514400",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "id": "imap_514481",
+      "type": "general",
+      "subj": "Votre candidature : Cybersecurity Platform Engineer chez LVMH",
       "from": "user",
-      "date": "2026-06-03T17:20:30.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "D.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": [
-          "SNZB-03"
-        ]
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "SNZB-03",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "motion_sensor",
-            "radar_sensor_2",
-            "radar_sensor_ceiling"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 5385,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514402",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2286 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T17:35:14.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514403",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T17:35:27.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514404",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2286 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T17:37:53.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514405",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
-      "from": "homey_system",
-      "date": "2026-06-03T17:48:28.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "this._inferCapabilityFromValue is not a function"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "TypeError: this._inferCapabilityFromValue is not a function\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1686,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514406",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2287 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T17:50:29.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514407",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build has failed processing",
-      "from": "homey_system",
-      "date": "2026-06-03T17:50:44.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 540,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514408",
-      "type": "general",
-      "subj": "Chef de projet technique - Intégration et projets clients (H/F) – Leviia",
-      "from": "user",
-      "date": "2026-06-03T18:01:41.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ind..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8240,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514409",
-      "type": "general",
-      "subj": "Développeur IA - Freelance – Partenaire Technique Long Terme (F/H) chez MATTHIEU LOUVET – S’INVESTIR (Télétravail) et 13 nouveaux postes",
-      "from": "user",
-      "date": "2026-06-03T18:02:10.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ind..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 20526,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514410",
-      "type": "general",
-      "subj": "eBay S.a.r.l.: 69,99 € EUR",
-      "from": "user",
-      "date": "2026-06-03T18:08:01.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9313,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514411",
-      "type": "general",
-      "subj": "Vous avez reçu un remboursement de AliExpress",
-      "from": "user",
-      "date": "2026-06-03T18:11:35.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8102,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514412",
-      "type": "general",
-      "subj": "Vous avez reçu un remboursement de AliExpress",
-      "from": "user",
-      "date": "2026-06-03T18:12:37.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8094,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514413",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2288 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T18:30:05.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514414",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T18:30:14.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger",
-        "plug_smart_gang1_scene)",
-        "plug_smart_physical_off)",
-        "contact_sensor_switch_hybrid_switch_1gang_set_scene_mode",
-        "contact_sensor_plug_hybrid_plug_smart_is_on",
-        "contact_sensor_plug_hybrid_plug_smart_turn_on",
-        "contact_sensor_plug_hybrid_plug_smart_turn_off",
-        "contact_sensor_plug_hybrid_plug_smart_toggle",
-        "contact_sensor_plug_hybrid_plug_smart_turn_on_delay",
-        "contact_sensor_plug_hybrid_plug_smart_turn_off_delay",
-        "contact_sensor_plug_hybrid_plug_smart_set_indicator",
-        "contact_sensor_plug_hybrid_plug_smart_set_power_on",
-        "contact_sensor_zigbee_hybrid_contact_sensor_is_open",
-        "contact_sensor_zigbee_hybrid_contact_sensor_battery_above",
-        "contact_sensor_zigbee_hybrid_contact_sensor_contact_open"
-      ],
-      "devices": [
-        "plug_smart",
-        "88efeba9-04a8-4466-b936-fa",
-        "migration",
-        "unknown",
-        "MIGRATION",
-        "profile",
-        "contact_sensor_switch",
-        "contact_sensor_plug",
-        "contact_sensor_zigbee",
-        "device_plug_energy_monitor",
-        "device_radiator_valve_thermost",
-        "dimmer_wall_plug",
-        "dimmer_wall_switch",
-        "dimmer_wall_water",
-        "remote_button_wireless_fingerb",
-        "sensor_climate_presence",
-        "sensor_climate_smart",
-        "sensor_contact_rain",
-        "switch_wall"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_triggered\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "onoff"
-        ],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 42734,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514415",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build has failed processing",
-      "from": "homey_system",
-      "date": "2026-06-03T18:30:19.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 540,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514416",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)",
-      "from": "github",
-      "date": "2026-06-03T18:31:42.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Lucas360-blip"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1408",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Lucas360-blip",
-        "bodyExcerpt": "Lucas360-blip left a comment (JohanBendz/com.tuya.zigbee#1408)\r\n\r\nHi dlnraja,\r\nâThank you for fixing that typo so quickly! I completed a clean re-pair on v8.1.90, but unfortunately, the power and energy numbers are still displaying as blank dashes.\r\nâSince we know from the previous interview logs that the plug's internal hardware is successfully reading the load (around 77 W), it seems the incoming heartbeat data packets might be failing validation or missing a specific parser format on this"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1167,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514417",
-      "type": "general",
-      "subj": "Lea Elui, et si vous pouviez la rencontrer ? 😍",
-      "from": "user",
-      "date": "2026-06-03T18:35:19.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "W.H."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9900,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514418",
-      "type": "general",
-      "subj": "Nous venons d'ajouter quelque chose qui devrait vous plaire…",
-      "from": "user",
-      "date": "2026-06-03T18:44:24.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Net..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3937,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514419",
-      "type": "general",
-      "subj": "1000€ virés. Vérifiez si c'est vous.",
-      "from": "user",
-      "date": "2026-06-03T18:53:04.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ban..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3690,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514420",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2289 has been created",
-      "from": "homey_system",
-      "date": "2026-06-03T19:02:42.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514421",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-06-03T19:02:55.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514422",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2289 is now testing",
-      "from": "homey_system",
-      "date": "2026-06-03T19:04:44.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514423",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T19:09:44.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "Could not trigger Flow card with id \"soil_sensor_moisture_changed\": Invalid valu"
-      ],
-      "devices": [
-        "rain_sensor",
-        "3f2aeb30-7917-4c27-8e99-32cee3",
-        "missing",
-        "soil_sensor",
-        "8e2aa888-22a4-46c7-9fae-fda179",
-        "dd5a",
-        "5189714e-ef0a-4cf2-806b",
-        "e2e54d3e-9ea8-48fa-95ce-e6289c",
-        "b7e43ff8-b9d4-4e82-bddd-45e9b6",
-        "3384a891-f76a-4a98-8cc6-006c",
-        "32efb661-1ce5-4d1a-91b4-df1fc9",
-        "a6be33f6-fe6a-46f0-b204-863ee2",
-        "b152eb8e-380b-4fac-9c83-43e4d1"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error: Could not trigger Flow card with id \"soil_sensor_moisture_changed\": Invalid value for token moisture. Expected number but got undefined\r",
-          "Error: Could not trigger Flow card with id \"soil_sensor_moisture_changed\": Invalid value for token moisture. Expected number but got undefined\r",
-          "Error: Could not trigger Flow card with id \"soil_sensor_moisture_changed\": Invalid value for token moisture. Expected number but got undefined\r",
-          "Error: Could not trigger Flow card with id \"soil_sensor_moisture_changed\": Invalid value for token moisture. Expected number but got undefined\r",
-          "Error: Could not trigger Flow card with id \"soil_sensor_moisture_changed\": Invalid value for token moisture. Expected number but got undefined\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "measure_luminance"
-        ],
-        "clusters": [
-          "0xEF00"
-        ]
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 25328,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514424",
-      "type": "general",
-      "subj": "Dylan, obtenez un bon électronique allant jusqu’à 500 $ à l’achat d’un nouveau moniteur Samsung admissible",
-      "from": "user",
-      "date": "2026-06-03T19:10:19.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "S.C."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 619,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514425",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [radiator_valve] Bug: _TZE200_9xfjixap (Issue #339)",
-      "from": "github",
-      "date": "2026-06-03T19:12:09.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "haadeess"
-      },
-      "fps": {
-        "mfr": [
-          "_TZE200_9xfjixap"
-        ],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_9xfjixap",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "device_air_purifier_radiator",
-            "radiator_valve"
-          ],
-          "protocol": "tuya_dp",
-          "requires": [
-            "TuyaEF00Manager",
-            "dpMappings"
-          ],
-          "conflict": true
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_purifier_motion",
-            "air_purifier_presence",
-            "air_purifier_sensor",
-            "air_purifier_switch",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "bed_sensor",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "button_wireless_scene",
-            "button_wireless_switch",
-            "ceiling_fan",
-            "christmas_lights",
-            "climate_sensor",
-            "climate_sensor_device",
-            "climate_sensor_energy",
-            "climate_sensor_presence",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_module",
-            "curtain_module_2_gang",
-            "curtain_motor",
-            "curtain_motor_shutter",
-            "curtain_motor_tilt",
-            "device_air_purifier",
-            "device_air_purifier_climate",
-            "device_air_purifier_din",
-            "device_air_purifier_floor",
-            "device_air_purifier_humidifier",
-            "device_air_purifier_led",
-            "device_air_purifier_plug",
-            "device_air_purifier_presence",
-            "device_air_purifier_quality",
-            "device_air_purifier_radiator",
-            "device_air_purifier_siren",
-            "device_air_purifier_smart",
-            "device_air_purifier_smoke",
-            "device_air_purifier_soil",
-            "device_air_purifier_thermostat",
-            "device_air_purifier_water",
-            "device_din_rail",
-            "device_din_rail_meter",
-            "device_floor_heating",
-            "device_floor_heating_thermostat",
-            "device_generic_tuya",
-            "device_generic_tuya_universal",
-            "device_plug_smart",
-            "device_plug_smart_water",
-            "device_radiator_valve",
-            "device_radiator_valve_smart",
-            "dimmer_1_gang",
-            "dimmer_1_gang_2",
-            "dimmer_1_gang_tuya",
-            "dimmer_2_gang_tuya",
-            "dimmer_3gang",
-            "dimmer_air_purifier",
-            "dimmer_bulb_dimmable",
-            "dimmer_dual_channel",
-            "dimmer_ts110e",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "door_controller_garage",
-            "doorbell",
-            "doorwindowsensor",
-            "doorwindowsensor_2",
-            "double_power_point",
-            "double_power_point_2",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerbot_switch",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "gas_sensor_switch",
-            "generic_tuya",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "illuminance_sensor",
-            "ir_blaster",
-            "lcdtemphumidluxsensor",
-            "lcdtemphumidsensor",
-            "lcdtemphumidsensor_2",
-            "lcdtemphumidsensor_3",
-            "lcdtemphumidsensor_plug_energy",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_2",
-            "motion_sensor_radar_mmwave",
-            "motion_sensor_switch",
-            "outdoor_2_socket",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radar_sensor",
-            "radar_sensor_2",
-            "radar_sensor_ceiling",
-            "radiator_controller",
-            "radiator_valve",
-            "radiator_valve_zigbee",
-            "rain_sensor",
-            "remote_button_wireless",
-            "remote_button_wireless_smart",
-            "scene_switch_1",
-            "scene_switch_2",
-            "scene_switch_3",
-            "scene_switch_4",
-            "sensor_climate_contact",
-            "sensor_climate_temphumidsensor",
-            "sensor_contact_motion",
-            "sensor_contact_plug",
-            "sensor_contact_water",
-            "sensor_gas_presence",
-            "sensor_illuminance_presence",
-            "sensor_lcdtemphumidsensor_temphumidsensor",
-            "sensor_motion_presence",
-            "sensor_motion_radar",
-            "sensor_presence_radar",
-            "shutter_roller_controller",
-            "siren",
-            "siren_sirentemphumidsensor",
-            "sirentemphumidsensor",
-            "smart_air_detection_box",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smart_remote_4_buttons",
-            "smart_scene_panel",
-            "smartplug_2_socket",
-            "smoke_detector_advanced",
-            "smoke_sensor",
-            "smoke_sensor3",
-            "socket_power_strip",
-            "socket_power_strip_four",
-            "socket_power_strip_four_three",
-            "socket_power_strip_four_two",
-            "soil_sensor",
-            "soilsensor",
-            "soilsensor_2",
-            "switch",
-            "switch_1_gang",
-            "switch_1_gang_metering",
-            "switch_2_gang",
-            "switch_2_gang_metering",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4_gang_metering",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "temphumidsensor4",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "thermostatic_radiator_valve",
-            "tuya_dummy_device",
-            "universal_zigbee",
-            "usb_outlet_advanced",
-            "valve_dual_irrigation",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "wall_remote_6_gang",
-            "wall_switch_1_gang",
-            "wall_switch_4_gang_tuya",
-            "wall_switch_6_gang_tuya",
-            "wall_thermostat",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "339",
-        "action": null,
-        "fps": {
-          "mfr": [
-            "_TZE200_9xfjixap"
-          ],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "haadeess",
-        "bodyExcerpt": "haadeess left a comment (dlnraja/com.tuya.zigbee#339)\r\n\r\n<html>\r\n<body>\r\n<!--StartFragment-->\r\n_TZE200_9xfjixap\r\n--\r\n\r\n\r\n<!--EndFragment-->\r\n</body>\r\n</html>\r\n\r\nNot working...\r\n\r\n255122ff-7f51-45bb-a1a6-66a462d55160\r\n\r\n<img width=\"367\" height=\"1286\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a6bc5c18-26a8-451d-ae99-338b58b68b39\" />\r\n\r\n<img width=\"135\" height=\"151\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/8a8a40fc-6fab-48a2-b8c0-1d[REDACTED_PHONE]e8\" />\r\n  \"ids"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8498,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514426",
-      "type": "changelog",
-      "subj": "Toutes les dernières actus de gameplay de Black Flag Resynced",
-      "from": "user",
-      "date": "2026-06-03T19:17:26.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.R."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10209,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514427",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T19:37:15.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger",
-        "plug_smart_gang1_scene)",
-        "plug_smart_physical_off)",
-        "contact_sensor_switch_hybrid_switch_1gang_turn_on",
-        "contact_sensor_switch_hybrid_switch_1gang_turn_off",
-        "contact_sensor_switch_hybrid_switch_1gang_toggle",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight_colo",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight_brig",
-        "contact_sensor_switch_hybrid_switch_1gang_set_countdown",
-        "contact_sensor_switch_hybrid_switch_1gang_set_child_lock",
-        "contact_sensor_switch_hybrid_switch_1gang_set_scene_mode",
-        "contact_sensor_zigbee_hybrid_contact_sensor_is_open",
-        "contact_sensor_zigbee_hybrid_contact_sensor_battery_above",
-        "contact_sensor_zigbee_hybrid_contact_sensor_contact_open"
-      ],
-      "devices": [
-        "plug_smart",
-        "unknown",
-        "9c5f440a-db1a-4020-ac22-f269fa",
-        "profile",
-        "contact_sensor_switch",
-        "contact_sensor_zigbee",
-        "device_plug_energy_monitor",
-        "device_radiator_valve_thermost",
-        "dimmer_wall_plug",
-        "dimmer_wall_switch",
-        "dimmer_wall_water",
-        "remote_button_wireless_fingerb",
-        "sensor_climate_presence",
-        "sensor_climate_smart",
-        "sensor_contact_rain",
-        "switch_wall"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_triggered\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "onoff"
-        ],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 42780,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514428",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T19:37:36.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger",
-        "plug_smart_gang1_scene)",
-        "plug_smart_physical_off)",
-        "contact_sensor_switch_hybrid_switch_1gang_turn_on",
-        "contact_sensor_switch_hybrid_switch_1gang_turn_off",
-        "contact_sensor_switch_hybrid_switch_1gang_toggle",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight_colo",
-        "contact_sensor_switch_hybrid_switch_1gang_set_backlight_brig",
-        "contact_sensor_switch_hybrid_switch_1gang_set_countdown",
-        "contact_sensor_switch_hybrid_switch_1gang_set_child_lock",
-        "contact_sensor_switch_hybrid_switch_1gang_set_scene_mode",
-        "contact_sensor_zigbee_hybrid_contact_sensor_is_open",
-        "contact_sensor_zigbee_hybrid_contact_sensor_battery_above",
-        "contact_sensor_zigbee_hybrid_contact_sensor_contact_open"
-      ],
-      "devices": [
-        "plug_smart",
-        "unknown",
-        "9c5f440a-db1a-4020-ac22-f269fa",
-        "profile",
-        "contact_sensor_switch",
-        "contact_sensor_zigbee",
-        "device_plug_energy_monitor",
-        "device_radiator_valve_thermost",
-        "dimmer_wall_plug",
-        "dimmer_wall_switch",
-        "dimmer_wall_water",
-        "remote_button_wireless_fingerb",
-        "sensor_climate_presence",
-        "sensor_climate_smart",
-        "sensor_contact_rain",
-        "switch_wall"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_triggered\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "onoff"
-        ],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 42780,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514429",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw) (Issue #1408)",
-      "from": "github",
-      "date": "2026-06-03T19:38:49.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Lucas360-blip"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1408",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Lucas360-blip",
-        "bodyExcerpt": "Lucas360-blip left a comment (JohanBendz/com.tuya.zigbee#1408)\r\n\r\nâI did a clean remote delete and re-pair on v8.1.93, but unfortunately, the power and energy fields are still showing as blank dashes.\r\nâThe packet-reassembly buffer logic makes total sense for this hardware batch, but it seems Homey might still be rejecting the stitched payload, or perhaps the timing window between the split packets needs a slight tweak to align properly.\r\nâTo help you see what Homey is doing with the split"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1032,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514430",
-      "type": "general",
-      "subj": "Anthropic's Project Glasswing Expands Mythos To 150+ Organizations",
-      "from": "user",
-      "date": "2026-06-03T20:44:07.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 15495,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514431",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-06-03T20:58:51.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [
-          "_TZ3000_mrpevh8p"
-        ],
-        "pid": []
-      },
-      "errs": [
-        "during init: Invalid capabilities in manifest: button.1. Please check driver con",
-        "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger",
-        "'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is n",
-        "could not initialize node TypeError: this._registerCapabilityListeners is not a",
-        "this._registerCapabilityListeners is not a function",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_c",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_i",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_s",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_d",
-        "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_t",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_is_on",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_power_above",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_energy_above",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_turn_on",
-        "dimmer_wall_plug_hybrid_plug_energy_monitor_turn_off"
-      ],
-      "devices": [
-        "button_wireless_1",
-        "e3ec4433-d713-451d-90c5-7e4a57",
-        "3450-L",
-        "ready",
-        "awake",
-        "contact_sensor",
-        "851c02ee-0f77-4e",
-        "announce",
-        "deleted",
-        "being",
-        "cleanup",
-        "has",
-        "false",
-        "added",
-        "name",
-        "initializing",
-        "configuration",
-        "will",
-        "device_radiator_valve_thermost",
-        "dimmer_wall_plug",
-        "dimmer_wall_switch",
-        "dimmer_wall_water",
-        "remote_button_wireless_fingerb",
-        "sensor_climate_presence",
-        "sensor_climate_smart",
-        "sensor_contact_rain",
-        "switch_wall",
-        "ec94cae4-c7ba-490b-bbe2-617ada",
-        "85bfafb1-299e-48f9-ab"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ3000_mrpevh8p",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "button_wireless_1",
-            "switch_1_gang",
-            "switch_1gang",
-            "wall_switch_1_gang_tuya",
-            "wall_switch_5_gang_tuya"
-          ],
-          "protocol": "unknown",
-          "requires": [],
-          "conflict": true
-        }
-      ],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_triggered\r",
-          "Error: 'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is not a function\r",
-          "Error: could not initialize node TypeError: this._registerCapabilityListeners is not a function\r",
-          "Error: 'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is not a function\r",
-          "Error: 'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is not a function\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [
-          "measure_battery",
-          "measure_luminance"
-        ],
-        "clusters": [
-          "0xEF00"
-        ]
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 41241,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514433",
-      "type": "diagnostic",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-06-03T21:22:42.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "P.W."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1124,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514434",
-      "type": "general",
-      "subj": "These Are America’s Richest Self-Made Women",
-      "from": "user",
-      "date": "2026-06-03T21:27:40.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "F.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 3780,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514435",
-      "type": "bug_report",
-      "subj": "Aspirateurs sans fil et laveurs : ils sont à -15%",
-      "from": "user",
-      "date": "2026-06-03T22:13:26.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Row..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 20052,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514437",
-      "type": "bug_report",
-      "subj": "Aspirateurs sans fil et laveurs : ils sont à -15%",
-      "from": "user",
-      "date": "2026-06-03T22:13:56.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Row..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 20052,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514438",
-      "type": "general",
-      "subj": "Nous vous envoyons un remboursement pour votre Paiement en 4X  PayPal",
-      "from": "user",
-      "date": "2026-06-03T23:29:33.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9447,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514439",
-      "type": "general",
-      "subj": "Nous vous envoyons un remboursement pour votre Paiement en 4X  PayPal",
-      "from": "user",
-      "date": "2026-06-03T23:39:23.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9528,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514440",
-      "type": "crash_report",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
-      "from": "homey_system",
-      "date": "2026-06-03T23:55:45.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "this._inferCapabilityFromValue is not a function"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "TypeError: this._inferCapabilityFromValue is not a function\r"
-        ],
-        "crashApp": "has",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1686,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514441",
-      "type": "general",
-      "subj": "Information de paiement",
-      "from": "user",
-      "date": "2026-06-04T00:10:04.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "V.M."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 370,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514442",
-      "type": "general",
-      "subj": "Nous vous envoyons un remboursement pour votre Paiement en 4X  PayPal",
-      "from": "user",
-      "date": "2026-06-04T00:23:48.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "ser..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 9438,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514443",
-      "type": "general",
-      "subj": "J’aimerais rejoindre votre réseau 👤",
-      "from": "user",
-      "date": "2026-06-04T00:31:12.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "V.C."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4629,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514444",
-      "type": "general",
-      "subj": "Nous avons trouvé quelque chose qui pourrait vous plaire",
-      "from": "user",
-      "date": "2026-06-04T02:09:41.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ama..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6769,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514445",
-      "type": "general",
-      "subj": "Notification",
-      "from": "user",
-      "date": "2026-06-04T02:51:54.000Z",
+      "date": "2026-06-04T07:02:20.000Z",
       "pseudo": {
         "source": "user",
         "username": "Lin..."
@@ -5352,70 +716,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 4972,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514446",
-      "type": "general",
-      "subj": "Votre clone vous attend sur Gemini : quelle est cette nouvelle fonctionnalité vidéo de l’IA de Google ?",
-      "from": "user",
-      "date": "2026-06-04T03:08:54.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "L.G."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 25016,
+      "bodyLength": 2229,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514448",
-      "type": "device_issue",
-      "subj": "30min avec une décoratrice pour sublimer votre intérieur",
-      "from": "user",
-      "date": "2026-06-04T04:00:19.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Rhi..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 14977,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_514449",
+      "id": "imap_514482",
       "type": "general",
-      "subj": "À l’intérieur : des cadeaux parfaits pour papa",
+      "subj": "Morning Meeting : votre brief marchés quotidien",
       "from": "user",
-      "date": "2026-06-04T04:15:22.000Z",
+      "date": "2026-06-04T07:04:45.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Fos..."
+        "username": "Bou..."
       },
       "fps": {
         "mfr": [],
@@ -5430,18 +742,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 23204,
+      "bodyLength": 6671,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514450",
+      "id": "imap_514483",
       "type": "general",
-      "subj": "✨ À ne pas manquer aujourd’hui",
+      "subj": "documents pour l'hopital de jour",
       "from": "user",
-      "date": "2026-06-04T04:17:13.000Z",
+      "date": "2026-06-04T07:08:09.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Ver..."
+        "username": "P.H."
       },
       "fps": {
         "mfr": [],
@@ -5456,18 +768,18 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 40127,
+      "bodyLength": 328,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_514451",
+      "id": "imap_514484",
       "type": "general",
-      "subj": "Le maillot parfait pour tous vos moments d’été.",
+      "subj": "Commencez votre inscription, votre badge vous attend !",
       "from": "user",
-      "date": "2026-06-04T04:22:46.000Z",
+      "date": "2026-06-04T07:09:56.000Z",
       "pseudo": {
         "source": "user",
-        "username": "JUL..."
+        "username": "B.2."
       },
       "fps": {
         "mfr": [],
@@ -5482,8 +794,8 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 21715,
-      "contentType": "text/html->text"
+      "bodyLength": 4957,
+      "contentType": "text/plain"
     }
   ]
 }
