@@ -18,8 +18,18 @@ function saveCompose(driver, data) {
 const fpMap = new Map();
 const dirs = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
 
+const composeCache = new Map();
+const modifiedDrivers = new Set();
+
+function getComposeCached(driver) {
+  if (!composeCache.has(driver)) {
+    composeCache.set(driver, getCompose(driver));
+  }
+  return composeCache.get(driver);
+}
+
 for (const dir of dirs) {
-  const comp = getCompose(dir);
+  const comp = getComposeCached(dir);
   if (!comp || !comp.zigbee || !comp.zigbee.manufacturerName || !comp.zigbee.productId) continue;
   
   for (const mfr of comp.zigbee.manufacturerName) {
@@ -46,14 +56,23 @@ for (const [key, drvs] of fpMap) {
     let victim = uniqueDrivers.find(d => !PRIMARY_DRIVERS.includes(d));
     if (!victim) victim = uniqueDrivers[1]; // fallback
     
-    console.log(`Resolving collision for ${mfr}|${pid} between ${uniqueDrivers.join(', ')} -> Removing from ${victim}`);
-    
-    const comp = getCompose(victim);
-    if (comp && comp.zigbee && comp.zigbee.manufacturerName) {
-      comp.zigbee.manufacturerName = comp.zigbee.manufacturerName.filter(m => m !== mfr);
-      saveCompose(victim, comp);
+    const comp = getComposeCached(victim);
+    if (comp && comp.zigbee && comp.zigbee.manufacturerName && comp.zigbee.manufacturerName.includes(mfr)) {
+      const updatedMfrs = comp.zigbee.manufacturerName.filter(m => m !== mfr);
+      if (updatedMfrs.length > 0) {
+        console.log(`Resolving collision for ${mfr}|${pid} between ${uniqueDrivers.join(', ')} -> Removing from ${victim}`);
+        comp.zigbee.manufacturerName = updatedMfrs;
+        modifiedDrivers.add(victim);
+      } else {
+        console.log(`Resolving collision for ${mfr}|${pid} between ${uniqueDrivers.join(', ')} -> Skipping removal from ${victim} to prevent empty fingerprints`);
+      }
     }
   }
+}
+
+for (const driver of modifiedDrivers) {
+  console.log(`Saving updated compose JSON for ${driver}...`);
+  saveCompose(driver, composeCache.get(driver));
 }
 
 console.log('Done resolving collisions.');

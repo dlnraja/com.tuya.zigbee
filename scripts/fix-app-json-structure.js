@@ -46,11 +46,15 @@ if (typeof app.category === 'string') {
 }
 
 // Même correction dans .homeycompose/app.json
-const composeApp = JSON.parse(fs.readFileSync(COMPOSE_APP, 'utf8'));
-if (typeof composeApp.category === 'string') {
-  composeApp.category = [composeApp.category];
-  fs.writeFileSync(COMPOSE_APP, JSON.stringify(composeApp, null, 2));
-  console.log('  ✓ .homeycompose/app.json category corrigé aussi');
+if (fs.existsSync(COMPOSE_APP)) {
+  const composeApp = JSON.parse(fs.readFileSync(COMPOSE_APP, 'utf8'));
+  if (typeof composeApp.category === 'string') {
+    composeApp.category = [composeApp.category];
+    fs.writeFileSync(COMPOSE_APP, JSON.stringify(composeApp, null, 2));
+    console.log('  ✓ .homeycompose/app.json category corrigé aussi');
+  }
+} else {
+  console.log('  ℹ️  .homeycompose/app.json absent, ignoré');
 }
 
 // --- 3. Corriger les chemins d'images des drivers ---

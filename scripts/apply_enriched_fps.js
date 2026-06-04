@@ -257,7 +257,6 @@ Object.keys(stats.byDriver).forEach(driverName => {
   
   fps.forEach(f => {
     const mfrLower = (f.mfr || '').toLowerCase();
-    const pidUpper = (f.productId || '').toUpperCase();
     
     // Add manufacturer if not present
     if (mfrLower && !existingMfrsLower.includes(mfrLower)) {
@@ -267,13 +266,21 @@ Object.keys(stats.byDriver).forEach(driverName => {
     }
     
     // Add productId if not present and not null
-    if (pidUpper && pidUpper !== 'NULL' && pidUpper !== '') {
-      if (!existingPidsLower.includes(pidUpper.toLowerCase())) {
-        existingPids.push(f.productId);
-        existingPidsLower.push(pidUpper.toLowerCase());
-        addedPids++;
+    const pids = Array.isArray(f.productId)
+      ? f.productId
+      : (f.productId ? [f.productId] : []);
+
+    pids.forEach(p => {
+      if (!p) return;
+      const pidUpper = String(p).toUpperCase();
+      if (pidUpper && pidUpper !== 'NULL' && pidUpper !== '') {
+        if (!existingPidsLower.includes(pidUpper.toLowerCase())) {
+          existingPids.push(p);
+          existingPidsLower.push(pidUpper.toLowerCase());
+          addedPids++;
+        }
       }
-    }
+    });
   });
   
   // Update compose

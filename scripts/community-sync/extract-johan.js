@@ -10,18 +10,22 @@
  *   - vendor from compose or inferred
  */
 const fs = require('fs'), path = require('path'), {execSync} = require('child_process');
-const tmp = '/tmp/johan', repo = 'JohanBendz/com.tuya.zigbee';
+const tmp = path.join(require('os').tmpdir(), 'johan_clone');
+const repo = 'JohanBendz/com.tuya.zigbee';
 
 module.exports = () => {
-  try { execSync(`rm -rf ${tmp} && git clone --depth 1 https://github.com/${repo}.git ${tmp}`, {stdio:'pipe'}); } 
+  try {
+    fs.rmSync(tmp, { recursive: true, force: true });
+    execSync(`git clone --depth 1 https://github.com/${repo}.git "${tmp}"`, {stdio:'pipe'});
+  } 
   catch(e) { return {error: e.message}; }
   
-  const fps = [], dir = `${tmp}/drivers`;
+  const fps = [], dir = path.join(tmp, 'drivers');
   if (!fs.existsSync(dir)) return {error:'no drivers'};
   
   fs.readdirSync(dir).forEach(d => {
     try {
-      const c = JSON.parse(fs.readFileSync(`${dir}/${d}/driver.compose.json`));
+      const c = JSON.parse(fs.readFileSync(path.join(dir, d, 'driver.compose.json')));
       const mfrNames = [].concat(c.zigbee?.manufacturerName || []);
       const productId = c.zigbee?.productId || null;
       const deviceClass = c.class || null;
