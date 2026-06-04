@@ -426,25 +426,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TYZB01_iuepbmpv",
-    "productId": [
-      "TS0201",
-      "TY0201"
-    ],
-    "driver": "lcdtemphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_cbiezpds",
     "productId": [
       "SM0201"
@@ -686,19 +667,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TYZB01_qm6djpta",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_phjeraqq",
     "productId": [
       "TS0001"
@@ -711,27 +679,6 @@
     "hasBattery": false,
     "vendor": null,
     "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYZB01_iuepbmpv",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
     "source": "Johan"
   },
   {

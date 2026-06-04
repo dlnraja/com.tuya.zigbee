@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-04T05:50:19.895Z*
+*Generated: 2026-06-04T07:22:40.238Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 218369 |
-| Collisions | 124251 |
+| Manufacturer IDs | 218697 |
+| Collisions | 124453 |
 
 ## ⚠️ Collisions Detected
 
@@ -32,10 +32,10 @@
 | `_TZE20X_xxxxxxxx|TS0601` | air_purifier, tuya_dummy_device |
 | `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
 | `_TZ3000_dummy_fix|TS0601` | air_purifier_motion, air_purifier_switch, device_air_purifier, device_air_purifier_plug, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_water, dimmer_bulb_dimmable, smart_air_detection_box, smoke_sensor, socket_power_strip_four_three, soilsensor, soilsensor_2, switch_4_gang_metering |
-| `_tze200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2 |
-| `_TZE200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2 |
+| `_tze200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2, pir_mmwave_sensor |
+| `_TZE200_3towulqd|TS0601` | air_purifier_presence, motion_sensor_2, pir_mmwave_sensor |
 
-*...and 124231 more*
+*...and 124433 more*
 
 ## 📋 Action Items
 
