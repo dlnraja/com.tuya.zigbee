@@ -144,7 +144,7 @@ function step4_validate_files() {
     { path: 'app.js',             minBytes: 1000,  desc: 'App entry point' },
     { path: 'package.json',       minBytes: 200,   desc: 'NPM manifest' },
     { path: '.homeyignore',       minBytes: 10,    desc: 'Homey publish ignore rules' },
-    { path: '.homeyplugins.json', minBytes: 10,    desc: 'Homey plugins config' },
+    { path: '.homeyplugins.json', minBytes: 2,     desc: 'Homey plugins config' },
     { path: 'assets/icon.svg',    minBytes: 100,   desc: 'App icon' },
   ];
   

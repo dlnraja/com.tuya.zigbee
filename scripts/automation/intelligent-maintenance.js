@@ -7,7 +7,7 @@
  * Chains into master-automation.js for validation and Git pushing.
  */
 
-const { spawnSync } = require('child_process');
+const { spawnSync, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -68,17 +68,20 @@ async function main() {
     process.exit(1);
   }
 
-  // 5. Git Commit and Push
-  info('Phase 3: Deploying Changes');
-  run('git', ['add', '-A'], 'Staging files');
-  
-  // We use spawnSync to check status and commit
-  const gitStatus = spawnSync('git', ['status', '--porcelain'], { cwd: ROOT, encoding: 'utf8' });
-  if (gitStatus.stdout.trim().length > 0) {
-    run('git', ['commit', '-m', 'auto: autonomous maintenance (sync FPs and fixes)'], 'Committing changes');
-    run('git', ['push', 'origin', 'master'], 'Pushing to repository');
-  } else {
-    ok('No new changes to commit. Repository is up-to-date.');
+  try {
+    execSync('git add -A', { cwd: ROOT, stdio: 'inherit' });
+    ok('Staged changes');
+    const gitStatus = execSync('git status --porcelain', { cwd: ROOT, encoding: 'utf8' });
+    if (gitStatus.trim().length > 0) {
+      execSync('git commit -m "auto: autonomous maintenance (sync FPs and fixes)"', { cwd: ROOT, stdio: 'inherit' });
+      ok('Committed changes');
+      execSync('git push origin master', { cwd: ROOT, stdio: 'inherit' });
+      ok('Pushed changes');
+    } else {
+      ok('No new changes to commit. Repository is up-to-date.');
+    }
+  } catch (e) {
+    fail('Git operation failed: ' + e.message);
   }
 
   log(C.bold + C.green, '\n🎉 MAINTENANCE ENGINE COMPLETED SUCCESSFULLY');
