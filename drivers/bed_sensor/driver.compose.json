@@ -46,9 +46,6 @@
       "SML002",
       "SML003",
       "SML004",
-      "SNZB-03",
-      "SNZB-03P",
-      "SNZB-03R2",
       "TRADFRI motion sensor",
       "TS0202",
       "TS0225",
@@ -267,9 +264,6 @@
       "_tz3210_dse8ogfy",
       "_TZ3210_dse8ogfy",
       "_TZ3210_DSE8OGFY",
-      "_tz3210_j4pdtz9v",
-      "_TZ3210_j4pdtz9v",
-      "_TZ3210_J4PDTZ9V",
       "_tz3210_jijr1sss",
       "_TZ3210_jijr1sss",
       "_TZ3210_JIJR1SSS",
@@ -342,9 +336,6 @@
       "_tze200_seq9cm6u",
       "_TZE200_seq9cm6u",
       "_TZE200_SEQ9CM6U",
-      "_tze200_u6x1zyv2",
-      "_TZE200_u6x1zyv2",
-      "_TZE200_U6X1ZYV2",
       "_tze200_wqashyqo",
       "_TZE200_wqashyqo",
       "_TZE200_WQASHYQO",
@@ -427,6 +418,36 @@
         "nl": "Controleer op OTA-updates",
         "fr": "Vérifier MàJ OTA"
       }
+    }
+  ],
+  "settings": [
+    {
+      "type": "dropdown",
+      "id": "sensitivity",
+      "value": "1",
+      "title": {
+        "en": "Sensitivity"
+      },
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Middle"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "High"
+          }
+        }
+      ]
     }
   ]
 }

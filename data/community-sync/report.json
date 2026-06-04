@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-03T06:05:31.182Z",
-  "currentCount": 10671,
+  "ts": "2026-06-04T12:31:13.133Z",
+  "currentCount": 10676,
   "src": {
     "johan": {
       "count": 650,
@@ -19270,8 +19270,8 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 56,
-      "prCount": 2,
+      "issueCount": 52,
+      "prCount": 3,
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
@@ -19341,22 +19341,24 @@
           ]
         },
         {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 337,
-          "title": "[motion_sensor_2] Bug: _TZE200_3towulqd",
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1410,
+          "title": "Device Request - GIEX 2-Zone Smart Water Valve - _TZE284_8zizsafo / TS0601",
           "mfrs": [
-            "_TZE200_3towulqd",
-            "_TZE200_3towulqd"
+            "_TZE284_8zizsafo",
+            "_TZE284_8zizsafo",
+            "_TZE284_8zizsafo"
           ]
         },
         {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 333,
-          "title": "Smart Button (round). Added but not working",
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1409,
+          "title": "Device Request - Tuya Thermostat Radiator - _TZE284_pcdmj88b / TS0601",
           "mfrs": [
-            "_TZ3000_b4awzgct",
-            "_TZ3000_b4awzgct",
-            "_TZ3000_b4awzgct"
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b"
           ]
         },
         {
@@ -19962,25 +19964,6 @@
       "source": "Johan"
     },
     {
-      "mfr": "_TYZB01_iuepbmpv",
-      "productId": [
-        "TS0201",
-        "TY0201"
-      ],
-      "driver": "lcdtemphumidsensor",
-      "deviceType": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
-      ],
-      "hasBattery": true,
-      "vendor": null,
-      "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-      "source": "Johan"
-    },
-    {
       "mfr": "_TYZB01_cbiezpds",
       "productId": [
         "SM0201"
@@ -20222,38 +20205,6 @@
       "source": "Johan"
     },
     {
-      "mfr": "_TYST11_d0yu2xgi",
-      "productId": [
-        "TS0601"
-      ],
-      "driver": "sirentemphumidsensor",
-      "deviceType": "other",
-      "capabilities": [
-        "onoff",
-        "measure_temperature",
-        "measure_humidity",
-        "alarm_battery",
-        "alarm_siren"
-      ],
-      "hasBattery": true,
-      "vendor": null,
-      "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
-      "source": "Johan"
-    },
-    {
-      "mfr": "_TYZB01_qm6djpta",
-      "productId": [
-        "TS0215A"
-      ],
-      "driver": "smart_remote_4_buttons",
-      "deviceType": "remote",
-      "capabilities": [],
-      "hasBattery": true,
-      "vendor": null,
-      "description": null,
-      "source": "Johan"
-    },
-    {
       "mfr": "_TYZB01_phjeraqq",
       "productId": [
         "TS0001"
@@ -20266,27 +20217,6 @@
       "hasBattery": false,
       "vendor": null,
       "description": "onoff",
-      "source": "Johan"
-    },
-    {
-      "mfr": "_TYZB01_iuepbmpv",
-      "productId": [
-        "TS0121",
-        "TSO121",
-        "TS011F"
-      ],
-      "driver": "smartplug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "measure_current",
-        "measure_voltage"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
       "source": "Johan"
     },
     {
@@ -41523,6 +41453,6 @@
       "driver": null
     }
   ],
-  "newCount": 86,
+  "newCount": 82,
   "enrichedCount": 2212
 }

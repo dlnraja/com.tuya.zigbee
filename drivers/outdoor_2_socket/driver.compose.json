@@ -22,7 +22,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601"
+      "TS0601",
+      "TS011F"
     ],
     "endpoints": {
       "1": {
@@ -71,7 +72,10 @@
     "manufacturerName": [
       "_tze200_placeholder_generic",
       "_TZE200_placeholder_generic",
-      "_TZE200_PLACEHOLDER_GENERIC"
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_u5u0drof",
+      "_TZ3000_1hwjutgo"
     ]
   }
 }

@@ -25,6 +25,7 @@ jobs:
     name: 🛡️ Fleet Maintenance Agent
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    if: false
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -64,6 +65,7 @@ jobs:
     needs: maintenance
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    if: false
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5

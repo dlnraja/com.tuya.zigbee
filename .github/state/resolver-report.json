@@ -1,9 +1,12 @@
 {
-  "timestamp": "2026-06-01T15:16:16.916Z",
-  "processed": 0,
-  "commented": 0,
+  "timestamp": "2026-06-04T07:59:00.384Z",
+  "processed": 5,
+  "commented": 1,
   "closed": 0,
-  "protocols": {},
+  "protocols": {
+    "unknown": 3,
+    "tuya_dp": 2
+  },
   "errors": [],
   "fpPidPairs": [],
   "kbMatches": 0
