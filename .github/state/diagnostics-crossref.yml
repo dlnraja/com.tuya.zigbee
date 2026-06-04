@@ -1,159 +1,659 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-06-03T07:47:38.474Z
-# Emails processed: 37
+# Generated: 2026-06-04T04:31:37.122Z
+# Emails processed: 176
 
 fingerprints:
+  _TZ3000_mrpevh8p:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    conflict: true  # Same FP in multiple drivers!
+    drivers: [button_wireless_1, switch_1_gang, switch_1gang, wall_switch_1_gang_tuya, wall_switch_5_gang_tuya]
+    mentions: 2
+    source_types: [diagnostic, crash_report]
+    reporters: [P.W.]
+    action: "Verify productId mapping - ensure correct driver match"
+    sources:
+      - type: diagnostic
+        date: 2026-06-03T09:11:16.000Z
+      - type: crash_report
+        date: 2026-06-03T20:58:51.000Z
+  _TZ3000_0dumfk2z:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    conflict: true  # Same FP in multiple drivers!
+    drivers: [bulb_dimmable, button_emergency_sos]
+    mentions: 1
+    source_types: [diagnostic]
+    reporters: [P.W.]
+    action: "Verify productId mapping - ensure correct driver match"
+    sources:
+      - type: diagnostic
+        date: 2026-06-03T09:11:16.000Z
+  TS0041:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [button_wireless, button_wireless_1, button_wireless_2, button_wireless_scene, button_wireless_smart, button_wireless_wall, remote_button_emergency_sos, remote_button_wireless_wall, scene_switch_1, smart_button_switch, universal_zigbee, wall_remote_1_gang]
+    mentions: 1
+    source_types: [diagnostic]
+    reporters: [P.W.]
+    sources:
+      - type: diagnostic
+        date: 2026-06-03T09:11:16.000Z
+  TS0215A:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [button_emergency_sos, smart_remote_4_buttons, universal_zigbee]
+    mentions: 1
+    source_types: [diagnostic]
+    reporters: [P.W.]
+    sources:
+      - type: diagnostic
+        date: 2026-06-03T09:11:16.000Z
+  _TYZB01_4tlksk8a:
+    priority: NaN
+    supported: false
+    protocol: unknown
+    mentions: 1
+    source_types: [crash_report]
+    action: "Add to driver via enrichment-scanner or manual fingerprint addition"
+    sources:
+      - type: crash_report
+        date: 2026-06-03T11:36:35.000Z
+  TS0111:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [button_wireless_2, button_wireless_plug, double_power_point, plug_smart, socket_power_strip_four_two, universal_zigbee, valvecontroller]
+    mentions: 1
+    source_types: [crash_report]
+    sources:
+      - type: crash_report
+        date: 2026-06-03T11:36:35.000Z
+  _TZ3210_jlf1nepw:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    conflict: true  # Same FP in multiple drivers!
+    drivers: [double_power_point, plug_smart]
+    mentions: 1
+    source_types: [github]
+    reporters: [Lucas360-blip]
+    action: "Verify productId mapping - ensure correct driver match"
+    sources:
+      - type: github
+        date: 2026-06-03T15:55:15.000Z
+  TS011F:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [button_wireless_1, button_wireless_plug, device_air_purifier_plug, device_din_rail, double_power_point, fingerbot, plug, plug_energy_monitor, plug_smart, relay_board_1_channel, relay_board_2_channel, remote_button_wireless, smartPlug_DinRail, smartplug_2_socket, socket_power_strip_four, switch, switch_1_gang, universal_zigbee, usb_dongle_triple, valvecontroller]
+    mentions: 1
+    source_types: [github]
+    reporters: [Lucas360-blip]
+    sources:
+      - type: github
+        date: 2026-06-03T15:55:15.000Z
+  SNZB-03:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [motion_sensor, radar_sensor_2, radar_sensor_ceiling]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [D.L.]
+    sources:
+      - type: device_issue
+        date: 2026-06-03T17:20:30.000Z
+  _TZE200_9xfjixap:
+    priority: NaN
+    supported: true
+    protocol: tuya_dp
+    conflict: true  # Same FP in multiple drivers!
+    drivers: [device_air_purifier_radiator, radiator_valve]
+    requires: [TuyaEF00Manager, dpMappings]
+    mentions: 1
+    source_types: [github]
+    reporters: [haadeess]
+    action: "Verify productId mapping - ensure correct driver match"
+    sources:
+      - type: github
+        date: 2026-06-03T19:12:09.000Z
+  TS0601:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [air_purifier, air_purifier_motion, air_purifier_presence, air_purifier_sensor, air_purifier_switch, air_quality_co2, air_quality_comprehensive, bed_sensor, button_emergency_sos, button_wireless_6, button_wireless_scene, button_wireless_switch, ceiling_fan, christmas_lights, climate_sensor, climate_sensor_device, climate_sensor_energy, climate_sensor_presence, co_sensor, contact_sensor, curtain_module, curtain_module_2_gang, curtain_motor, curtain_motor_shutter, curtain_motor_tilt, device_air_purifier, device_air_purifier_climate, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_humidifier, device_air_purifier_led, device_air_purifier_plug, device_air_purifier_presence, device_air_purifier_quality, device_air_purifier_radiator, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, device_din_rail, device_din_rail_meter, device_floor_heating, device_floor_heating_thermostat, device_generic_tuya, device_generic_tuya_universal, device_plug_smart, device_plug_smart_water, device_radiator_valve, device_radiator_valve_smart, dimmer_1_gang, dimmer_1_gang_2, dimmer_1_gang_tuya, dimmer_2_gang_tuya, dimmer_3gang, dimmer_air_purifier, dimmer_bulb_dimmable, dimmer_dual_channel, dimmer_ts110e, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, door_controller_garage, doorbell, doorwindowsensor, doorwindowsensor_2, double_power_point, double_power_point_2, energy_meter_3phase, fan_controller, fingerbot_switch, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, gas_sensor_switch, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, illuminance_sensor, ir_blaster, lcdtemphumidluxsensor, lcdtemphumidsensor, lcdtemphumidsensor_2, lcdtemphumidsensor_3, lcdtemphumidsensor_plug_energy, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_2, motion_sensor_radar_mmwave, motion_sensor_switch, outdoor_2_socket, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radar_sensor, radar_sensor_2, radar_sensor_ceiling, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, remote_button_wireless, remote_button_wireless_smart, scene_switch_1, scene_switch_2, scene_switch_3, scene_switch_4, sensor_climate_contact, sensor_climate_temphumidsensor, sensor_contact_motion, sensor_contact_plug, sensor_contact_water, sensor_gas_presence, sensor_illuminance_presence, sensor_lcdtemphumidsensor_temphumidsensor, sensor_motion_presence, sensor_motion_radar, sensor_presence_radar, shutter_roller_controller, siren, siren_sirentemphumidsensor, sirentemphumidsensor, smart_air_detection_box, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_remote_4_buttons, smart_scene_panel, smartplug_2_socket, smoke_detector_advanced, smoke_sensor, smoke_sensor3, socket_power_strip, socket_power_strip_four, socket_power_strip_four_three, socket_power_strip_four_two, soil_sensor, soilsensor, soilsensor_2, switch, switch_1_gang, switch_1_gang_metering, switch_2_gang, switch_2_gang_metering, switch_2gang, switch_3gang, switch_4_gang_metering, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, temphumidsensor4, thermostat_4ch, thermostat_tuya_dp, thermostatic_radiator_valve, tuya_dummy_device, universal_zigbee, usb_outlet_advanced, valve_dual_irrigation, valve_irrigation, valve_single, vibration_sensor, wall_remote_6_gang, wall_switch_1_gang, wall_switch_4_gang_tuya, wall_switch_6_gang_tuya, wall_thermostat, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
+    mentions: 1
+    source_types: [github]
+    reporters: [haadeess]
+    sources:
+      - type: github
+        date: 2026-06-03T19:12:09.000Z
 
 users:
+  P.W.:
+    activity_score: 14
+    emails: 3
+    fingerprints: [_TZ3000_mrpevh8p, _TZ3000_0dumfk2z]
+    types: [interview, diagnostic]
+    latest: 2026-06-03T21:22:42.000Z
   ser...:
+    activity_score: 13
+    emails: 6
+    types: [general]
+    latest: 2026-06-04T00:23:48.000Z
+  Lucas360-blip:
+    activity_score: 12
+    emails: 4
+    fingerprints: [_TZ3210_jlf1nepw]
+    types: [github]
+    latest: 2026-06-03T19:38:49.000Z
+  A.J.:
     activity_score: 11
     emails: 5
     types: [general]
-    latest: 2026-06-03T07:27:42.000Z
+    latest: 2026-06-03T16:31:14.000Z
+  a.l.:
+    activity_score: 11
+    emails: 5
+    types: [general]
+    latest: 2026-06-03T11:44:55.000Z
+  DaPicardos:
+    activity_score: 9
+    emails: 4
+    types: [github]
+    latest: 2026-06-03T14:07:41.000Z
   Ali...:
     activity_score: 9
     emails: 4
     types: [general]
-    latest: 2026-06-03T07:18:08.000Z
-  Pay...:
+    latest: 2026-06-03T16:47:10.000Z
+  T.L.:
+    activity_score: 8
+    emails: 3
+    types: [changelog, general]
+    latest: 2026-06-03T20:44:07.000Z
+  V.C.:
+    activity_score: 8
+    emails: 3
+    types: [device_issue, general]
+    latest: 2026-06-04T00:31:12.000Z
+  A.L.:
+    activity_score: 8
+    emails: 2
+    types: [bug_report, general]
+    has_errors: true
+    latest: 2026-06-03T14:22:05.000Z
+  Ind...:
+    activity_score: 7
+    emails: 3
+    types: [general]
+    latest: 2026-06-03T18:02:10.000Z
+  eBa...:
+    activity_score: 6
+    emails: 2
+    types: [device_issue, general]
+    latest: 2026-06-03T16:42:15.000Z
+  F.L.:
+    activity_score: 6
+    emails: 2
+    types: [device_issue, general]
+    latest: 2026-06-03T21:27:40.000Z
+  haadeess:
+    activity_score: 6
+    emails: 1
+    fingerprints: [_TZE200_9xfjixap]
+    types: [github]
+    latest: 2026-06-03T19:12:09.000Z
+  Tem...:
     activity_score: 5
     emails: 2
     types: [general]
-    latest: 2026-06-03T07:22:08.000Z
-  McA...:
+    latest: 2026-06-03T12:50:40.000Z
+  A.T.:
+    activity_score: 5
+    emails: 2
+    types: [general]
+    latest: 2026-06-03T07:52:08.000Z
+  O.L.:
     activity_score: 5
     emails: 1
-    types: [changelog]
+    types: [general]
     has_errors: true
-    latest: 2026-06-03T07:36:24.000Z
-  Fos...:
-    activity_score: 3
-    emails: 1
+    latest: 2026-06-03T07:56:18.000Z
+  M.R.:
+    activity_score: 5
+    emails: 2
     types: [general]
-    latest: 2026-06-03T04:36:47.000Z
-  Cad...:
-    activity_score: 3
+    latest: 2026-06-03T13:26:58.000Z
+  Rev...:
+    activity_score: 5
     emails: 1
+    types: [bug_report]
+    has_errors: true
+    latest: 2026-06-03T10:57:43.000Z
+  Lin...:
+    activity_score: 5
+    emails: 2
     types: [general]
-    latest: 2026-06-03T04:36:41.000Z
-  N.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-06-03T05:15:40.000Z
-  L.O.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-06-03T05:19:24.000Z
-  S.T.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-06-03T05:47:32.000Z
-  G.L.:
+    latest: 2026-06-04T02:51:54.000Z
+  Row...:
+    activity_score: 5
+    emails: 2
+    types: [bug_report]
+    latest: 2026-06-03T22:13:56.000Z
+  euf...:
     activity_score: 3
     emails: 1
     types: [interview]
-    latest: 2026-06-03T05:54:47.000Z
-  U.E.:
+    latest: 2026-06-03T07:59:52.000Z
+  U.F.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T05:57:51.000Z
-  J.P.:
+    latest: 2026-06-03T08:01:03.000Z
+  Ado...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:01:08.000Z
-  DEV...:
+    latest: 2026-06-03T08:03:43.000Z
+  Hor...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:03:58.000Z
-  Can...:
+    latest: 2026-06-03T08:23:25.000Z
+  C.F.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:04:07.000Z
-  Ope...:
+    latest: 2026-06-03T08:31:22.000Z
+  Sta...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:12:36.000Z
-  MyV...:
+    latest: 2026-06-03T08:42:05.000Z
+  Job...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:14:07.000Z
-  A.E.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-06-03T06:23:49.000Z
-  L.7.:
+    latest: 2026-06-03T08:49:39.000Z
+  B.L.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-06-03T06:31:06.000Z
-  Lin...:
+    latest: 2026-06-03T08:58:30.000Z
+  gre...:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-06-03T09:00:30.000Z
+  S.D.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:31:14.000Z
-  S.E.:
+    latest: 2026-06-03T09:00:51.000Z
+  Hel...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:43:42.000Z
+    latest: 2026-06-03T09:02:28.000Z
+  K.F.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:08:13.000Z
+  Cas...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:06:21.000Z
+  Osc...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:15:34.000Z
+  BUT...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:16:00.000Z
+  T.R.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:28:06.000Z
+  P.D.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:43:20.000Z
+  Tek...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T09:50:09.000Z
+  BLA...:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-06-03T10:02:04.000Z
+  D.C.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T11:00:56.000Z
+  D.V.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T11:01:59.000Z
+  Z.H.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T11:26:30.000Z
+  T.V.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T05:31:36.000Z
   UNI...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T06:49:56.000Z
-  J.F.:
+    latest: 2026-06-03T11:50:55.000Z
+  Gov...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T07:01:21.000Z
-  Bou...:
+    latest: 2026-06-03T12:01:11.000Z
+  S.E.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T07:02:15.000Z
-  M.M.:
+    latest: 2026-06-03T12:05:29.000Z
+  las...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T12:10:25.000Z
+  E.E.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T12:15:07.000Z
+  L.R.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T12:26:34.000Z
+  R.T.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T12:15:09.000Z
+  Pic...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T12:43:25.000Z
+  L.P.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T12:46:54.000Z
+  M.B.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-06-03T13:07:31.000Z
+  R.C.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T13:22:00.000Z
+  car...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T13:34:04.000Z
+  É.G.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T13:40:20.000Z
+  T.G.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T13:47:11.000Z
+  L.F.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T13:48:11.000Z
+  Nex...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T14:05:38.000Z
+  Len...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T14:12:05.000Z
+  Clo...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T14:19:21.000Z
+  BOS...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T14:22:06.000Z
+  A.h.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T14:28:36.000Z
+  X.S.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T14:49:43.000Z
+  She...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T15:01:47.000Z
+  Par...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T15:01:59.000Z
+  T.P.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-06-03T07:06:31.000Z
-  M.R.:
+    latest: 2026-06-03T15:01:07.000Z
+  Sha...:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T07:06:55.000Z
-  Ind...:
+    latest: 2026-06-03T15:37:21.000Z
+  WEE...:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-06-03T14:43:56.000Z
+  C.S.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T07:16:18.000Z
-  V.T.:
+    latest: 2026-06-03T15:48:26.000Z
+  Ubi...:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-06-03T15:59:33.000Z
+  Fid...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:00:04.000Z
+  Alp...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:01:43.000Z
+  BOK...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:02:12.000Z
+  Les...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:05:16.000Z
+  O.N.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:30:23.000Z
+  F.M.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:34:21.000Z
+  Hob...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T16:35:24.000Z
+  R.M.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-06-03T07:17:36.000Z
-  X.P.:
+    latest: 2026-06-03T16:51:44.000Z
+  L.O.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T07:18:01.000Z
-  C.P.:
+    latest: 2026-06-03T17:19:18.000Z
+  D.L.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-06-03T17:20:30.000Z
+  W.H.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-06-03T07:42:35.000Z
+    latest: 2026-06-03T18:35:19.000Z
+  Net...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T18:44:24.000Z
+  Ban...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T18:53:04.000Z
+  S.C.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-03T19:10:19.000Z
+  A.R.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-06-03T19:17:26.000Z
+  V.M.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-04T00:10:04.000Z
+  Ama...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-04T02:09:41.000Z
+  L.G.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-04T03:08:54.000Z
+  Rhi...:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-06-04T04:00:19.000Z
+  Fos...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-04T04:15:22.000Z
+  Ver...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-04T04:17:13.000Z
+  JUL...:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-06-04T04:22:46.000Z
 
 error_patterns:
-  - count: 1
-    error: "remove a virus from"
-  - count: 1
-    error: "accept incoming email. For"
+  - count: 6
+    error: "registering climate_scene_triggered: Invalid Flow Card ID: climate_scene_trigger"
+  - count: 4
+    error: "plug_smart_gang1_scene)"
+  - count: 4
+    error: "contact_sensor_switch_hybrid_switch_1gang_set_scene_mode"
+  - count: 4
+    error: "contact_sensor_zigbee_hybrid_contact_sensor_is_open"
+  - count: 4
+    error: "contact_sensor_zigbee_hybrid_contact_sensor_battery_above"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_turn_on"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_turn_off"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_toggle"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_set_backlight"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_set_backlight_colo"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_set_backlight_brig"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_set_countdown"
+  - count: 3
+    error: "contact_sensor_switch_hybrid_switch_1gang_set_child_lock"
+  - count: 3
+    error: "this._inferCapabilityFromValue is not a function"
+  - count: 3
+    error: "plug_smart_physical_off)"
+  - count: 3
+    error: "contact_sensor_zigbee_hybrid_contact_sensor_contact_open"
+  - count: 2
+    error: "'onNodeInit()' failed, reason: TypeError: this._registerCapabilityListeners is n"
+  - count: 2
+    error: "could not initialize node TypeError: this._registerCapabilityListeners is not a"
+  - count: 2
+    error: "this._registerCapabilityListeners is not a function"
+  - count: 2
+    error: "device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_c"
+
+protocol_distribution:
+  unknown: 10
+  tuya_dp: 1
