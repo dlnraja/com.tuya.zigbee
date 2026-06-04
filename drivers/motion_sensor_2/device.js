@@ -27,6 +27,15 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
       this.log('IAS Zone enrollment attempt (non-critical):', err.message);
     }
 
+    // Fix #337: Send zoneEnrollResponse for ALL devices with IAS Zone (not just _TZE200_3towulqd)
+    // IAS Zone stays "notEnrolled" without this, causing motion detection delays
+    try {
+      await zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME].zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 0 });
+      this.log('Sent zoneEnrollResponse (IAS Zone enrollment)');
+    } catch (err) {
+      this.log('Failed to send zoneEnrollResponse:', err.message);
+    }
+
     if (this.isFirstInit()) {
       await this.configureAttributeReporting([
         {

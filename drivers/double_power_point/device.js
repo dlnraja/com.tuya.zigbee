@@ -133,6 +133,17 @@ class doublepowerpoint extends ZigBeeDevice {
       this.log('Configured reporting for measure_voltage');
     } catch (error) {
       this.error('Failed to configure reporting for some attributes:', error);
+      // Fallback: poll attributes every 30 seconds if reporting fails
+      this.log('Setting up fallback polling for power attributes');
+      this._powerPollTimer = this.homey.setInterval(async () => {
+        try {
+          const elec = zclNode.endpoints[endpoint].clusters.electricalMeasurement;
+          const attrs = await elec.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).catch(() => ({}));
+          if (attrs.activePower != null) this.setCapabilityValue('measure_power', attrs.activePower / 10).catch(() => {});
+          if (attrs.rmsVoltage != null) this.setCapabilityValue('measure_voltage', attrs.rmsVoltage / 10).catch(() => {});
+          if (attrs.rmsCurrent != null) this.setCapabilityValue('measure_current', attrs.rmsCurrent / 1000).catch(() => {});
+        } catch (e) { /* silent */ }
+      }, 30000);
     }
   }
 

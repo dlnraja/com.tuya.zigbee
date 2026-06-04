@@ -4,7 +4,52 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.76] - 2026-06-03
+## [8.1.89] - 2026-06-04
+
+v8.1.88:
+---
+
+ [8.1.88] - 2026-06-03
+
+v8.1.87:
+---
+
+ [8.1.87] - 2026-06-03
+
+vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization.
+---
+
+ [8.1.83] - 2026-06-03
+
+vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization.
+---
+
+ [8.1.81] - 2026-06-03
+
+v8.1.80:
+---
+
+ [8.1.80] - 2026-06-03
+
+v8.1.79:
+---
+
+ [8.1.79] - 2026-06-03
+
+v8.1.78:
+---
+
+ [8.1.78] - 2026-06-03
+
+v8.1.77:
+---
+
+ [8.1.77] - 2026-06-03
+
+v8.1.76:
+---
+
+ [8.1.76] - 2026-06-03
 
 Resolve diagnostic crash logs (DataRecoveryManager) and add TS0041 fingerprint
 ---

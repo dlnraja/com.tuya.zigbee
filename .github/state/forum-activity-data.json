@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T04:35:33.621Z",
+  "timestamp": "2026-06-04T04:31:37.302Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 698,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1987
+        "posts": 1991
       },
       {
         "id": 26439,
@@ -49,9 +49,9 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1987,
-      "views": 20143,
-      "lastPosted": "2026-06-02T16:49:11.594Z",
+      "posts": 1991,
+      "views": 20198,
+      "lastPosted": "2026-06-03T21:12:36.801Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
@@ -17732,6 +17732,34 @@
           "text": "Hi\n\nI’m a bit confused …\n\nDoes every sensor have to be recognized by an app before integrating it in this app ?",
           "date": "2026-06-02T16:49:11.594Z",
           "replyTo": 2063
+        },
+        {
+          "num": 2065,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi the device’s need to be registered into the app and after that you need to add every single device to your Homey.\n\nRegistering can be done by interviewing the device from the tools.developer.homey.app/tools/zigbee page.\n\nBest regards Peter.",
+          "date": "2026-06-03T08:53:17.464Z",
+          "replyTo": 2064
+        },
+        {
+          "num": 2066,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan Good morning,\n\nI’ve installed the latest version 8.1.75 of your app, the Luminance readings from the Door/Window sensors are still wrong the all staying at the same value even when it’s dark.\n\nAlso the Smartbutton _TZ3000_mrpevh8p TS0041 and the SOS button _TZ3000_0dumfk2z TS0215A still been added as generic ZigBee device.\n\nDiagnostic code: ea2c0a85-4cc3-40e2-8e71-166016b6ed9e\n\n10000319311220×2712 206 KB\n\n10000319321220×2712 245 KB\n\nGood luck and thanks again Peter.",
+          "date": "2026-06-03T09:01:13.333Z",
+          "replyTo": null
+        },
+        {
+          "num": 2067,
+          "user": "DomLAJO",
+          "text": "No other needed ? just this APP\n\nIn devtools I can see it but in unkwon Zigbee item\n\n\n\n\n\n\nAppareil Zigbee inconnu\na4:c1:38:8a:9c:51:ab:a0\n14993 (3A91)\nEndDevice\n?\nx\neWeLink\nSNZB-03\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n“ids”: {\n\n“modelId”: “SNZB-03”,\n\n“manufacturerName”: “eWeLink”\n\n},\n\n“endpoints”: {\n\n“endpointDescriptors”: [\n\n{\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 1026,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 0,\n\n“inputClusters”: [\n\n0,\n\n3,\n\n1,\n\n1280,\n\n32\n\n],\n\n“outputClusters”: [\n\n25\n\n]\n\n}\n\n],\n\n“endpoints”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”,\n\n“value”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”,\n\n“value”: 113\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”,\n\n“value”: 2\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“value”: “eWeLink”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”,\n\n“value”: “SNZB-03”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”,\n\n“value”: “battery”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 18,\n\n“name”: “deviceEnabled”,\n\n“value”: true\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 16384,\n\n“name”: “swBuildId”,\n\n“value”: “0122052017”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“identify”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 0,\n\n“name”: “identifyTime”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 24,\n\n“reportingConfiguration”: {\n\n“direction”: “reported”,\n\n“attributeDataType”: 32,\n\n“minInterval”: 0,\n\n“maxInterval”: 3600,\n\n“minChange”: 3,\n\n“status”: “SUCCESS”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 58,\n\n“reportingConfiguration”: {\n\n“direction”: “reported”,\n\n“attributeDataType”: 32,\n\n“minInterval”: 0,\n\n“maxInterval”: 3600,\n\n“minChange”: 6,\n\n“status”: “SUCCESS”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“iasZone”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “zoneState”,\n\n“value”: “enrolled”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “zoneType”,\n\n“value”: “motionSensor”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “zoneStatus”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n1,\n\n0\n\n]\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 16,\n\n“name”: “iasCIEAddress”,\n\n“value”: “00:12:4b:00:1b:44:e3:cc”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 17,\n\n“name”: “zoneId”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“pollControl”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 0,\n\n“name”: “checkInInterval”,\n\n“value”: 14400\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “longPollInterval”,\n\n“value”: 14400\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “shortPollInterval”,\n\n“value”: 1\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 3,\n\n“name”: “fastPollTimeout”,\n\n“value”: 40\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 4,\n\n“name”: “checkInIntervalMin”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 5,\n\n“name”: “longPollIntervalMin”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 6,\n\n“name”: “fastPollTimeoutMax”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 4\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 5\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 6\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 7\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 8\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 9\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n}\n\n}\n\n}\n\n}",
+          "date": "2026-06-03T17:10:28.001Z",
+          "replyTo": 2066
+        },
+        {
+          "num": 2068,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan Good evening, thanks for fixing the Luminance is okay now it decreased now it’s dark to 0 \n\nThe SOS button and the Smartbutton are added now as the right ones, Smartbutton was very difficult to add it took me about 10 time’s, no response and battery readings from both of them.\n\nDiagnostic code: 330bb9b9-83f5-4c9e-952a-a4b5755decbe\n\n\n10000319611220×2712 267 KB\n\n10000319621220×2712 56.9 KB\n\n10000319631220×2712 89.1 KB\n\n10000319641220×2712 54.4 KB\n\n10000319651220×2712 62.1 KB\n\n\nThanks so far and good luck \n\nGood night Peter.",
+          "date": "2026-06-03T21:12:36.801Z",
+          "replyTo": null
         }
       ],
       "category": 7
@@ -55840,6 +55868,20 @@
           "text": "Gabriel_Pedrosa_Mach:\n\n\nTuya firmware/manufacturer IDs change — behaviour may break after updates.\n\n\n\nUnless you have them linked to a Tuya multimode/Zigbee gateway to update them occasionally, the device can’t change manufacturer or product ID when it’s linked to Homey. And even if you do use a Tuya gateway to update your device, I don’t think Zigbee devices will change their identity after a firmware update",
           "date": "2026-06-02T10:01:17.457Z",
           "replyTo": null
+        },
+        {
+          "num": 4,
+          "user": "Gabriel_Pedrosa_Mach",
+          "text": "CleanShot 2026-06-03 at 19.01.11@2x1920×549 273 KB",
+          "date": "2026-06-03T22:33:47.533Z",
+          "replyTo": null
+        },
+        {
+          "num": 5,
+          "user": "Gabriel_Pedrosa_Mach",
+          "text": "CleanShot 2026-06-03 at 19.38.10@2x1920×1373 214 KB",
+          "date": "2026-06-03T22:37:11.941Z",
+          "replyTo": null
         }
       ],
       "category": 7
@@ -71725,6 +71767,7 @@
       "_TZ3000_0s1izerx",
       "_TZ3000_akqdg6g7",
       "_TZE284_9ern5sfh",
+      "_TYST11_d0yu2xgi",
       "_TZ3000_6uzkisv2",
       "_TZ3000_fllyghyj",
       "_TZ3000_utwgoauk",
@@ -72459,7 +72502,6 @@
       "_TYZB01_hjsgdkfl",
       "_TYZB01_kvwjujy9",
       "_TZ3000_bjawzod",
-      "_TYST11_d0yu2xgi",
       "_TZ3000_sqcn0y",
       "_TZ3000_zgyzgd",
       "_TYZB01_iuepbmpv",
@@ -72679,7 +72721,7 @@
           "_TZ3000_odzoiovu",
           "_TZ3000_nkkl7uzv"
         ],
-        "posts": 19,
+        "posts": 20,
         "ctx": [
           "Hi Dylan, me again.\n\nAlso this Single red SOS button remote control TZ3000_0dumfk2z  TS2015A isn’t recognized in the app, only as a general ZigBee device.\n\nAlready requested long time ago @JohanBendz ",
           "Hi Dylan thanks for your reply,\n\nThe SOS button information is registered here @JohanBentz\n\nDevice Request - SOS Emergency Button - _TZ3000_0dumfk2z/TS0215A #591\n\nand the Temp Hum and motion sensor he",

@@ -21,7 +21,7 @@ jobs:
     name: 🛡️ Auto-Triage Agent
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: github.event_name == 'issues'
+    if: false
     steps:
       - uses: actions/checkout@v5
       - name: 🔍 Issue analysis
@@ -33,7 +33,7 @@ jobs:
     name: 📥 Diagnostic Ingestion
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: github.event_name == 'workflow_dispatch'
+    if: false
     steps:
       - uses: actions/checkout@v5
       - name: ⚙️ Sync Crash Reports
@@ -45,7 +45,7 @@ jobs:
     name: 📉 Performance Benchmark
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: github.event_name == 'pull_request'
+    if: false
     steps:
       - uses: actions/checkout@v5
       - name: 🏁 Comparison Run

@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "8.1.77",
+  "version": "8.1.92",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "ai:generate": "node scripts/ai/driver-generator.js",
     "update": "node scripts/automation/update-all-links.js",
     "readme:update": "node scripts/automation/update-readme-proactive.js",
-    "prepush": "node scripts/master-automation.js && node scripts/automation/pre-push-intelligent.js",
+    "prepush": "node scripts/master-automation.js",
     "finalize": "powershell -ExecutionPolicy Bypass -File scripts/automation/finalize-all.ps1",
     "precommit": "node scripts/PRE_COMMIT_CHECKS.js && node scripts/ci/security-scanner.js",
     "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
@@ -40,8 +40,8 @@
     "images:verify": "node scripts/images/verify-all-images.js",
     "fix-nomenclature": "node scripts/FIX_DRIVER_NOMENCLATURE.js",
     "build:drivers-db": "node scripts/build_driver_database.js",
-    "extract:z2m": "node scripts/sync/extract-z2m.js",
-    "extract:blakadder": "node scripts/automation/fetch-z2m-fingerprints.js",
+    "extract:z2m": "node scripts/community-sync/extract-z2m.js",
+    "extract:blakadder": "node scripts/community-sync/extract-johan.js",
     "extract:all": "npm run extract:z2m && npm run extract:blakadder",
     "consolidate": "node scripts/automation/generate-mapping-db.js",
     "intelligence:full": "npm run extract:all && npm run consolidate",

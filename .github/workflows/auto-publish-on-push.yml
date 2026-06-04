@@ -67,6 +67,79 @@ jobs:
           echo "Current version: v$V"
 
       # ─────────────────────────────────────────────────────────────
+      # 2.5 SYNC — Ensure app.json and package.json versions match
+      # ─────────────────────────────────────────────────────────────
+      - name: "🔄 SYNC app.json ↔ package.json versions"
+        run: |
+          node - << 'SYNC'
+          const fs = require('fs');
+          const appPath = 'app.json';
+          const pkgPath = 'package.json';
+
+          const app = JSON.parse(fs.readFileSync(appPath, 'utf8'));
+          const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+
+          if (app.version !== pkg.version) {
+            console.log(`⚠️  Version mismatch: app.json=${app.version} vs package.json=${pkg.version}`);
+            // Sync to app.json version (authoritative)
+            pkg.version = app.version;
+            fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+            console.log(`✅ Synced package.json to v${app.version}`);
+          } else {
+            console.log(`✅ Versions synced: v${app.version}`);
+          }
+          SYNC
+
+      # ─────────────────────────────────────────────────────────────
+      # 2.5 INTEGRITY CHECK — .homeyplugins.json, fingerprint collisions
+      # ─────────────────────────────────────────────────────────────
+      - name: "🛡️ INTEGRITY: Check .homeyplugins.json + fingerprint collisions"
+        run: |
+          node - << 'INTEGRITY'
+          const fs = require('fs'), path = require('path');
+
+          // 1. Check .homeyplugins.json is not empty
+          const pluginsPath = '.homeyplugins.json';
+          if (fs.existsSync(pluginsPath)) {
+            const content = fs.readFileSync(pluginsPath, 'utf8').trim();
+            if (content.length < 10) {
+              console.error('❌ .homeyplugins.json is empty! Restoring...');
+              fs.writeFileSync(pluginsPath, '[{"id":"zigbee"}]\n');
+              console.log('✅ Restored .homeyplugins.json');
+            } else {
+              console.log('✅ .homeyplugins.json OK (' + content.length + ' bytes)');
+            }
+          }
+
+          // 2. Check for fingerprint collisions
+          const driversDir = 'drivers';
+          const fpMap = {};
+          let collisions = 0;
+          try {
+            fs.readdirSync(driversDir)
+              .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory())
+              .forEach(d => {
+                const p = path.join(driversDir, d, 'driver.compose.json');
+                if (!fs.existsSync(p)) return;
+                try {
+                  const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                  if (c.zigbee?.manufacturerName) {
+                    c.zigbee.manufacturerName.forEach(m => {
+                      const key = m.toLowerCase();
+                      if (fpMap[key]) {
+                        console.log('⚠️  COLLISION: "' + m + '" in ' + fpMap[key] + ' AND ' + d);
+                        collisions++;
+                      }
+                      fpMap[key] = d;
+                    });
+                  }
+                } catch {}
+              });
+          } catch (e) { console.error('driver scan error:', e.message); }
+          console.log('✅ Fingerprint check: ' + Object.keys(fpMap).length + ' unique, ' + collisions + ' collisions');
+          INTEGRITY
+
+      # ─────────────────────────────────────────────────────────────
       # 3. PRE-CLEAN — Fix source files BEFORE any validation
       # ─────────────────────────────────────────────────────────────
       - name: "🔧 PRE-CLEAN: Fix empty manufacturerName in driver.compose.json + app.json"
@@ -108,6 +181,13 @@ jobs:
 
           console.log(`PRE-CLEAN done: ${srcFixed} driver.compose.json fixed, ${appFixed} entries ensured in app.json`);
           PRECLEAN
+
+      # ─────────────────────────────────────────────────────────────
+      # 3.5 FINGERPRINT INJECTION — Auto-inject new fingerprints
+      # ─────────────────────────────────────────────────────────────
+      - name: "🧬 INJECT: Auto-inject fingerprints from community sync"
+        continue-on-error: true
+        run: node scripts/inject-remaining-fingerprints.js || echo "Fingerprint injection skipped (no new FPs)"
 
       # ─────────────────────────────────────────────────────────────
       # 4. CHANGELOG + VERSION BUMP
@@ -262,12 +342,10 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       # 5.5 DISABLE COMPOSE + COMPACT .homeybuild/app.json
       # ─────────────────────────────────────────────────────────────
-      - name: "🗜️ DISABLE COMPOSE + COMPACT + REMOVE node_modules"
+      - name: "🗜️ DISABLE COMPOSE + COMPACT + REMOVE node_modules + ENSURE FIELDS"
         run: |
           echo '[]' > .homeyplugins.json
-          # Remove node_modules from .homeybuild/ (bundled by SDK3, not needed in archive)
           rm -rf .homeybuild/node_modules
-          # Remove large driver images (not needed at runtime)
           find .homeybuild/drivers -name "large.png" -delete 2>/dev/null
           node - << 'POSTCOMPACT'
           const fs = require('fs');
@@ -275,6 +353,8 @@ jobs:
           if (!fs.existsSync(p)) { console.error('FATAL'); process.exit(1); }
           const before = fs.statSync(p).size;
           const app = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (!app.api) { app.api = { getDevices: { method: 'get', path: '/devices', public: false, role: 'owner' } }; console.log('Added api field'); }
+          if (!app.discovery) { app.discovery = { ewelink_mdns: { type: 'mdns-sd', 'mdns-sd': { name: 'ewelink', protocol: 'tcp' }, id: '{{txt.id}}' } }; console.log('Added discovery field'); }
           fs.writeFileSync(p, JSON.stringify(app), 'utf8');
           const after = fs.statSync(p).size;
           console.log('.homeybuild/app.json:', (before/1024/1024).toFixed(2) + 'MB -> ' + (after/1024/1024).toFixed(2) + 'MB');
@@ -288,13 +368,18 @@ jobs:
       # 6. PUBLISH — homey CLI (archive already optimized in step 5.5)
       # ─────────────────────────────────────────────────────────────
       # node_modules/ removed in step 5.5 → archive will be ~6MB
+      # IMPORTANT: Also remove .homeycompose to prevent compose plugin
+      # from re-expanding app.json during publish
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_HEADLESS: "1"
-        run: HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
+        run: |
+          # Final safety: ensure .homeycompose is removed
+          rm -rf .homeycompose
+          HOMEY_PAT="${HOMEY_PAT}" HOMEY_HEADLESS=1 npx homey app publish
 
       # ─────────────────────────────────────────────────────────────
       # 7. POST-PUBLISH (all continue-on-error)

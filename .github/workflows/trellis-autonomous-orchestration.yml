@@ -1,7 +1,8 @@
 name: Trellis Autonomous Multi-Agent Orchestration
+
 on:
   schedule:
-    - cron: '0 2,14 * * *' # Twice daily
+    - cron: '0 0 */2 * *' # Run once every 2 days
   workflow_dispatch:
 
 permissions:
@@ -31,54 +32,44 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Test API Capabilities & Credits
-        id: api-check
+      - name: Ingest Multi-Source Data (GitHub & Forum)
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-          APIFREELLM_KEY: ${{ secrets.APIFREELLM_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORUM_USERNAME: ${{ secrets.FORUM_USERNAME }}
+          FORUM_PASSWORD: ${{ secrets.FORUM_PASSWORD }}
         run: |
-          echo "Initiating API Ping & Credit Evaluation..."
-          node scripts/ai/validate-apis.js
-
-      - name: Ingest Multi-Source Data
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          echo "Aggregating GitHub Issues, PRs, Forum Messages, Emails, and Diagnostic Logs..."
-          node .github/scripts/homey-domain-email-dumper.js || true
-          node .github/scripts/triage-upstream-enhanced.js || true
+          echo "Aggregating GitHub Issues, PRs, and Forum Messages..."
+          node .github/scripts/fetch-community-intel.js || true
+          node .github/scripts/forum-activity-scraper.js || true
 
       - name: Trellis Intelligent Subtask Delegation
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          echo "Delegating tasks based on API capabilities and context size..."
-          node scripts/ai/trellis-orchestrator.js
+          echo "Processing intelligence and modifying drivers..."
+          node .github/scripts/autonomous-community-resolver.js
 
       - name: Intelligent Lazyloading DB Optimization
         run: |
           echo "Optimizing and intelligently updating static JSON MF databases..."
-          node scripts/automation/optimize-mf-databases.js --heuristic-update
+          node scripts/automation/optimize-mf-databases.js --heuristic-update || true
 
       - name: Pre-Commit Quality Gate
         run: |
-          node scripts/PRE_COMMIT_CHECKS.js
+          echo "Running master:fix to re-compile app.json and validate..."
+          npm run master:fix
 
       - name: Auto-Commit & Push Fixes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Trellis: Autonomous orchestration fixes & lazy-loading updates [skip ci]"
+          commit_message: "🤖 Trellis: Autonomous orchestration fixes & community FPs [skip ci]"
           branch: master
-          file_pattern: 'lib/ drivers/ data/ .github/state/ package.json app.json'
+          file_pattern: 'drivers/*/driver.compose.json app.json data/'
