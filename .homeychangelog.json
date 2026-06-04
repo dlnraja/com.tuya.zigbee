@@ -73,22 +73,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.96": {
-    "en": "v8.1.95:"
-  },
-  "8.1.97": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.98": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.99": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.100": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
-  },
-  "8.1.101": {
-    "en": "vpatch: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
+  "8.1.102": {
+    "en": "v8.1.101:"
   }
 }
