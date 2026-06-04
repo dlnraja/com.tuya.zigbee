@@ -116,6 +116,46 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
 
+    // Register physical limit actions (border settings)
+    const dataPoints = { border: 16 };
+    const borderValues = { up: 0, down: 1, remove_top_bottom: 4 };
+
+    try {
+      const setUpperLimitCard = this.homey.flow.getActionCard('set_upper_limit');
+      if (setUpperLimitCard) {
+        setUpperLimitCard.registerRunListener(async (args) => {
+          this.log('[CURTAIN] Flow Action: Set upper limit');
+          return args.device.writeEnum(dataPoints.border, borderValues.up);
+        });
+      }
+    } catch (err) {
+      this.error('[CURTAIN] Failed to register set_upper_limit flow card:', err.message);
+    }
+
+    try {
+      const setLowerLimitCard = this.homey.flow.getActionCard('set_lower_limit');
+      if (setLowerLimitCard) {
+        setLowerLimitCard.registerRunListener(async (args) => {
+          this.log('[CURTAIN] Flow Action: Set lower limit');
+          return args.device.writeEnum(dataPoints.border, borderValues.down);
+        });
+      }
+    } catch (err) {
+      this.error('[CURTAIN] Failed to register set_lower_limit flow card:', err.message);
+    }
+
+    try {
+      const removeLimitsCard = this.homey.flow.getActionCard('remove_limits');
+      if (removeLimitsCard) {
+        removeLimitsCard.registerRunListener(async (args) => {
+          this.log('[CURTAIN] Flow Action: Remove limits');
+          return args.device.writeEnum(dataPoints.border, borderValues.remove_top_bottom);
+        });
+      }
+    } catch (err) {
+      this.error('[CURTAIN] Failed to register remove_limits flow card:', err.message);
+    }
+
     // v5.7.9: Start connection health monitor
     this._startHealthMonitor();
 
@@ -293,9 +333,28 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     try {
       await super.onSettings?.({ oldSettings, newSettings, changedKeys });
 
+      const dataPoints = { border: 16 };
+      const borderValues = { up: 0, down: 1, remove_top_bottom: 4 };
+
       if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
         this.log('[CURTAIN] Calibration settings changed, applying...');
         await this._applyCalibrationSettings();
+      }
+
+      if (changedKeys.includes('set_upper_limit') && newSettings.set_upper_limit) {
+        this.log('[CURTAIN] Settings: Setting upper limit');
+        await this.writeEnum(dataPoints.border, borderValues.up);
+        this.setSettings({ set_upper_limit: false }).catch(this.error);
+      }
+      if (changedKeys.includes('set_lower_limit') && newSettings.set_lower_limit) {
+        this.log('[CURTAIN] Settings: Setting lower limit');
+        await this.writeEnum(dataPoints.border, borderValues.down);
+        this.setSettings({ set_lower_limit: false }).catch(this.error);
+      }
+      if (changedKeys.includes('remove_limits') && newSettings.remove_limits) {
+        this.log('[CURTAIN] Settings: Removing limits');
+        await this.writeEnum(dataPoints.border, borderValues.remove_top_bottom);
+        this.setSettings({ remove_limits: false }).catch(this.error);
       }
     } catch (err) {
       this.error('[CURTAIN] Failed to apply settings:', err.message);

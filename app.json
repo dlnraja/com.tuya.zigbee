@@ -118544,7 +118544,9 @@
           "_TZE284_ZQQ3CIPQ",
           "_tze600_ogyg1y6b",
           "_TZE600_ogyg1y6b",
-          "_TZE600_OGYG1Y6B"
+          "_TZE600_OGYG1Y6B",
+          "_TZE200_gubdgai2",
+          "_TZE200_vdiuwbkq"
         ],
         "productId": [
           "AM02",
@@ -118603,6 +118605,33 @@
               }
             }
           ]
+        },
+        {
+          "id": "set_upper_limit",
+          "type": "checkbox",
+          "label": {
+            "en": "Set upper limit at current position",
+            "nl": "Bovengrens instellen op huidige positie"
+          },
+          "value": false
+        },
+        {
+          "id": "set_lower_limit",
+          "type": "checkbox",
+          "label": {
+            "en": "Set lower limit at current position",
+            "nl": "Ondergrens instellen op huidige positie"
+          },
+          "value": false
+        },
+        {
+          "id": "remove_limits",
+          "type": "checkbox",
+          "label": {
+            "en": "Remove upper and lower limits",
+            "nl": "Boven- en ondergrens verwijderen"
+          },
+          "value": false
         },
         {
           "id": "max_open_percentage",
@@ -153448,9 +153477,6 @@
           "_tze200_gnw1rril",
           "_TZE200_gnw1rril",
           "_TZE200_GNW1RRIL",
-          "_tze200_gubdgai2",
-          "_TZE200_gubdgai2",
-          "_TZE200_GUBDGAI2",
           "_tze200_ha0vwoew",
           "_TZE200_ha0vwoew",
           "_TZE200_HA0VWOEW",
@@ -221741,5 +221767,51 @@
     "xerot",
     "xfiler",
     "zhivauk"
-  ]
+  ],
+  "flows": {
+    "actions": [
+      {
+        "id": "set_upper_limit",
+        "title": {
+          "en": "Set upper limit at current position",
+          "nl": "Bovengrens instellen op huidige positie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
+        "id": "set_lower_limit",
+        "title": {
+          "en": "Set lower limit at current position",
+          "nl": "Ondergrens instellen op huidige positie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
+        "id": "remove_limits",
+        "title": {
+          "en": "Remove upper and lower limits",
+          "nl": "Boven- en ondergrens verwijderen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      }
+    ]
+  }
 }
