@@ -79,7 +79,7 @@
 | dimmer_1_gang_2 | 1 | TS0601, TS110E | onoff, dim |
 | dimmer_1_gang_tuya | 1 | TS0052, TS110E, TS110F, TS0601 | onoff, dim |
 | dimmer_2_gang | 24 | TS110E, TS110F | onoff, dim |
-| dimmer_2_gang_tuya | 4 | TS0601, TS110E, TS110F | onoff, dim |
+| dimmer_2_gang_tuya | 6 | TS0601, TS110E, TS110F | onoff, dim |
 | dimmer_3gang | 6 | TS0601, TS0601_dimmer3 | onoff, dim, onoff.gang2... |
 | dimmer_air_purifier | 3 | TS0601 | dim, onoff, measure_power... |
 | dimmer_bulb_dimmable | 1 | TS0601 | dim, light_hue, light_saturation... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 315 drivers, 18449 manufacturer IDs
+**Total:** 315 drivers, 18451 manufacturer IDs
 
-*Generated: 2026-06-04T21:12:08.580Z*
+*Generated: 2026-06-04T22:27:16.736Z*
