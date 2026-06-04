@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-04T07:22:40.720Z",
+  "ts": "2026-06-04T08:42:48.597Z",
   "currentCount": 10676,
   "src": {
     "johan": {
@@ -19270,19 +19270,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 52,
+      "issueCount": 51,
       "prCount": 3,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 365,
-          "title": "[radiator_valve] Bug: \t_TZE200_9xfjixap",
-          "mfrs": [
-            "_TZE200_9xfjixap",
-            "_TZE200_9xfjixap",
-            "_TZE200_9xfjixap"
-          ]
-        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 358,
@@ -19348,6 +19338,16 @@
             "_TZE204_lh3arisb",
             "_TZE204_zuq5xxib",
             "_TZE200_byzdayie"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1410,
+          "title": "Device Request - GIEX 2-Zone Smart Water Valve - _TZE284_8zizsafo / TS0601",
+          "mfrs": [
+            "_TZE284_8zizsafo",
+            "_TZE284_8zizsafo",
+            "_TZE284_8zizsafo"
           ]
         },
         {
