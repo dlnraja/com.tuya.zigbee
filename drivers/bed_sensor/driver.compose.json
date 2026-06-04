@@ -426,28 +426,94 @@
       "id": "sensitivity",
       "value": "1",
       "title": {
-        "en": "Sensitivity"
+        "en": "Sensitivity",
+        "fr": "Sensibilité",
+        "nl": "Gevoeligheid",
+        "de": "Empfindlichkeit"
       },
       "values": [
         {
           "id": "0",
           "label": {
-            "en": "Low"
+            "en": "Low",
+            "fr": "Faible",
+            "nl": "Laag",
+            "de": "Niedrig"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "Middle"
+            "en": "Middle",
+            "fr": "Moyen",
+            "nl": "Midden",
+            "de": "Mittel"
           }
         },
         {
           "id": "2",
           "label": {
-            "en": "High"
+            "en": "High",
+            "fr": "Élevé",
+            "nl": "Hoog",
+            "de": "Hoch"
           }
         }
       ]
+    },
+    {
+      "type": "number",
+      "id": "sampling_interval",
+      "value": 5,
+      "min": 1,
+      "max": 60,
+      "units": "s",
+      "title": {
+        "en": "Sampling Interval",
+        "fr": "Intervalle d'échantillonnage",
+        "nl": "Meetinterval",
+        "de": "Abtastintervall"
+      },
+      "hint": {
+        "en": "How often the sensor checks for occupancy (seconds)",
+        "fr": "Fréquence de vérification de l'occupation (secondes)"
+      }
+    },
+    {
+      "type": "number",
+      "id": "delay_occupied",
+      "value": 3,
+      "min": 0,
+      "max": 300,
+      "units": "s",
+      "title": {
+        "en": "Delay Occupied",
+        "fr": "Délai occupation",
+        "nl": "Vertraging bezet",
+        "de": "Verzögerung belegt"
+      },
+      "hint": {
+        "en": "Seconds before reporting bed as occupied",
+        "fr": "Secondes avant de signaler le lit comme occupé"
+      }
+    },
+    {
+      "type": "number",
+      "id": "delay_unoccupied",
+      "value": 10,
+      "min": 0,
+      "max": 300,
+      "units": "s",
+      "title": {
+        "en": "Delay Unoccupied",
+        "fr": "Délai inoccupé",
+        "nl": "Vertraging onbezet",
+        "de": "Verzögerung frei"
+      },
+      "hint": {
+        "en": "Seconds before reporting bed as unoccupied",
+        "fr": "Secondes avant de signaler le lit comme inoccupé"
+      }
     }
   ]
 }

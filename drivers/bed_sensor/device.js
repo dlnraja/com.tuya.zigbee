@@ -7,13 +7,12 @@ class BedSensorDevice extends UnifiedSensorBase {
   get dpMappings() {
     return {
       1: { capability: 'alarm_contact', transform: (v) => v === 0 },
-      4: { capability: 'measure_battery', transform: (v) => v },
-      104: { capability: 'measure_battery', transform: (v) => {
-        // DP104: Binary sensor → 1 = occupied (100%), 0 = unoccupied (0%)
-        // Some devices return raw values, clamp to 0-100
-        if (v === 1 || v === true) return 100;
-        if (v === 0 || v === false) return 0;
-        return Math.min(100, Math.max(0, v));
+      4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
+      104: { capability: 'alarm_contact', transform: (v) => {
+        // DP104: Binary occupancy sensor → true/1 = occupied (alarm ON), false/0 = unoccupied
+        if (v === 1 || v === true) return true;
+        if (v === 0 || v === false) return false;
+        return !!v;
       }},
       12: { capability: 'measure_pressure', transform: (v) => v },
       9: { capability: null, internal: 'sensitivity', writable: true },
@@ -40,14 +39,23 @@ class BedSensorDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
     
-    if (changedKeys.includes('sensitivity')) {
-      const value = parseInt(newSettings.sensitivity, 10);
-      this.log('[BED] Setting sensitivity to', value);
-      // Use TuyaEF00Manager to send DP9 value
+    const dpWrites = {
+      sensitivity: { dp: 9 },
+      sampling_interval: { dp: 101 },
+      delay_unoccupied: { dp: 102 },
+      delay_occupied: { dp: 103 }
+    };
+
+    for (const key of changedKeys) {
+      const mapping = dpWrites[key];
+      if (!mapping) continue;
+      
+      const value = parseInt(newSettings[key], 10);
+      this.log(`[BED] Setting ${key} (DP${mapping.dp}) to`, value);
       if (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendDP(9, value, 'value');
+        await this.tuyaEF00Manager.sendDP(mapping.dp, value, 'value');
       } else {
-        this.log('[BED] WARNING: tuyaEF00Manager not available for DP9 write');
+        this.log(`[BED] WARNING: tuyaEF00Manager not available for DP${mapping.dp} write`);
       }
     }
   }
