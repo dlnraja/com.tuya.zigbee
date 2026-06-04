@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-06-04T07:28:36.107Z",
-  "count": 5,
+  "timestamp": "2026-06-04T07:41:40.715Z",
+  "count": 3,
   "byType": {
-    "general": 5
+    "general": 3
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -12,37 +12,11 @@
   },
   "diagnostics": [
     {
-      "id": "imap_514486",
+      "id": "imap_514493",
       "type": "general",
-      "subj": "AI Agent Builder / AI Automation Engineer (1 jour de remote Paris ou Bordeaux) H/F (IT) / Freelance – Pickmeup",
-      "from": "user",
-      "date": "2026-06-04T07:16:14.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Ind..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 6963,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514487",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2290 has been created",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2291 has been created",
       "from": "homey_system",
-      "date": "2026-06-04T07:19:24.000Z",
+      "date": "2026-06-04T07:33:29.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
@@ -64,11 +38,11 @@
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514488",
+      "id": "imap_514494",
       "type": "general",
       "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
       "from": "homey_system",
-      "date": "2026-06-04T07:19:36.000Z",
+      "date": "2026-06-04T07:33:42.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
@@ -90,37 +64,11 @@
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_514489",
+      "id": "imap_514495",
       "type": "general",
-      "subj": "Encore plus d'offres pour les Soldes d'Été 🔥",
-      "from": "user",
-      "date": "2026-06-04T07:17:19.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Phi..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8511,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514490",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2290 is now testing",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2291 is now testing",
       "from": "homey_system",
-      "date": "2026-06-04T07:25:04.000Z",
+      "date": "2026-06-04T07:35:13.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
