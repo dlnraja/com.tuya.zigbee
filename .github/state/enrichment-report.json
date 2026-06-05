@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-05T18:01:01.838Z",
+  "timestamp": "2026-06-05T18:50:05.705Z",
   "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
@@ -21,5 +21,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided information, it appears that the device fingerprint (_TZE284_sdvbnmj5) does not have any available data points (DPs) or capabilities listed. This makes it challenging to classify the device type or suggest a specific Homey driver. \n\nHowever, I can provide a template for how to fill out the information if DPs were available in the future. Here's the markdown table format:\n\n| FP                  | Type   | Driver | DPs→Capabilities | Quirks |\n|---------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5    | Unknown| N/A    | N/A               | N/A    |\n\n### Notes:\n- **Type**: Since there are no DPs, we cannot classify the device type.\n- **Driver**: Without knowing the device type or capabilities, we cannot suggest an existing Homey driver.\n- **DPs→Capabilities**: There are no DPs available to map to Homey capabilities.\n- **Quirks**: No quirks can be noted due to lack of information.\n\nIf more information becomes available regarding the device's capabilities or specifications, we can update the table accordingly."
+  "aiPlan": "Based on the provided device fingerprint information, here is the classification and mapping:\n\n| FP               | Type   | Driver | DPs→Capabilities | Quirks |\n|------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5 | Unknown | N/A    | N/A               | No DPs available |\n\n### Notes:\n- The device does not have any available DPs (data points), which means there are no capabilities to map or any specific handling required.\n- Since the device type is unknown and there are no DPs, it cannot be classified further or associated with an existing Homey driver.\n- Further information about the device (like vendor or device type) would be needed to provide a more accurate classification or to suggest a driver."
 }
