@@ -68,7 +68,7 @@
 | device_floor_heating_thermostat | 3 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya | 9 | TS0601 | onoff, dim, measure_temperature... |
 | device_generic_tuya_universal | 46 | TS0203, TS0601 | measure_battery, measure_temperature, measure_humidity... |
-| device_plug_energy | 3 | TS0002, TS0121 | onoff, measure_power, meter_power... |
+| device_plug_energy | 5 | TS0002, TS0121 | onoff, measure_power, meter_power... |
 | device_plug_smart | 3 | TS0601 | onoff, measure_power, meter_power... |
 | device_plug_smart_water | 7 | TS0207, TS0601 | onoff, measure_power, meter_power... |
 | device_radiator_valve | 1 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 18406 manufacturer IDs
+**Total:** 315 drivers, 18408 manufacturer IDs
 
-*Generated: 2026-06-05T15:28:22.007Z*
+*Generated: 2026-06-05T16:24:12.267Z*
