@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-05T15:32:22.415Z",
-  "currentCount": 10768,
+  "ts": "2026-06-05T16:24:12.919Z",
+  "currentCount": 10769,
   "src": {
     "johan": {
       "count": 650,
@@ -19479,48 +19479,7 @@
       ]
     }
   },
-  "newFps": [
-    {
-      "mfr": "_TYZB01_iuepbmpv",
-      "productId": [
-        "TS0201",
-        "TY0201"
-      ],
-      "driver": "lcdtemphumidsensor",
-      "deviceType": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
-      ],
-      "hasBattery": true,
-      "vendor": null,
-      "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-      "source": "Johan"
-    },
-    {
-      "mfr": "_TYZB01_iuepbmpv",
-      "productId": [
-        "TS0121",
-        "TSO121",
-        "TS011F"
-      ],
-      "driver": "smartplug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "measure_current",
-        "measure_voltage"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-      "source": "Johan"
-    }
-  ],
+  "newFps": [],
   "enrichedFps": [
     {
       "mfr": "_TZE200_s8gkrkxk",
@@ -40003,6 +39962,6 @@
       "driver": null
     }
   ],
-  "newCount": 2,
+  "newCount": 0,
   "enrichedCount": 2212
 }
