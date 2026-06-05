@@ -196,6 +196,24 @@ jobs:
         continue-on-error: true
         run: node scripts/inject-remaining-fingerprints.js || echo "Fingerprint injection skipped (no new FPs)"
 
+      # ─── Pipeline Step 6c Safety Gate (WORKFLOW_GUIDELINES.md) ───
+      - name: "🔧 Pipeline 6c: Fix Flow Cards"
+        continue-on-error: true
+        run: |
+          node scripts/automation/cleanup-flow-cards.js || true
+          node scripts/maintenance/fix-unsafe-flow-cards.js || true
+
+      - name: "🔋 Pipeline 6c: Revert Battery Conflicts"
+        continue-on-error: true
+        run: node scripts/maintenance/revert-alarm-battery-conflict.js || true
+
+      - name: "📋 Pipeline 6c: Fix Empty Capabilities"
+        continue-on-error: true
+        run: node scripts/automation/audit-capabilities.js || true
+
+      - name: "📏 Archive Size Gate (< 20MB)"
+        run: node .github/scripts/check-archive-size.js
+
       # ─────────────────────────────────────────────────────────────
       # 4. CHANGELOG + VERSION BUMP
       # ─────────────────────────────────────────────────────────────
