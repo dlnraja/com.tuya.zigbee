@@ -1,13 +1,19 @@
 {
   "source": "davemachado/public-api",
-  "timestamp": "2026-06-05T20:57:30.822Z",
-  "total": 1503,
+  "timestamp": "2026-06-05T21:32:21.828Z",
+  "total": 1523,
   "ai": [
     {
       "name": "Gitter",
       "url": "https://developer.gitter.im/docs/welcome",
       "desc": "Chat for Developers",
       "auth": "OAuth"
+    },
+    {
+      "name": "Sugra",
+      "url": "https://sugra.ai",
+      "desc": "One API for market data, economics, commodities, climate, and global news. LLM-ready JSON",
+      "auth": "apiKey"
     },
     {
       "name": "GeoJS",
@@ -124,6 +130,12 @@
       "auth": "apiKey"
     },
     {
+      "name": "MediaCraft AI",
+      "url": "https://mediacraft-x402-api.onrender.com",
+      "desc": "Chinese content compliance review (17 platforms), EN↔CN translation, and SEO optimization. Pay-per-call via x402 (Solana USDC).",
+      "auth": "apiKey"
+    },
+    {
       "name": "MessengerX.io",
       "url": "https://messengerx.rtfd.io",
       "desc": "A FREE API for developers to build and monetize personalized ML based chat apps",
@@ -225,5 +237,5 @@
       "desc": "Real-time AI news, model pricing, service status, and agent activity feeds"
     }
   ],
-  "dev_count": 162
+  "dev_count": 165
 }
