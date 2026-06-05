@@ -1,9 +1,7 @@
 {
-  "timestamp": "2026-06-05T04:21:23.802Z",
+  "timestamp": "2026-06-05T04:24:01.327Z",
   "appId": "com.dlnraja.tuya.zigbee",
-  "localIssues": [
-    "app.json too large: 5.86MB"
-  ],
+  "localIssues": [],
   "dashResult": {
     "screenshots": [
       "diag-01-apps-list.png",
@@ -25,5 +23,5 @@
     "versions": []
   },
   "apiResult": null,
-  "allGood": false
+  "allGood": true
 }
