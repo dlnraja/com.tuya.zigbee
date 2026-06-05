@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-05T12:04:02.171Z",
-  "currentCount": 10767,
+  "ts": "2026-06-05T13:23:46.339Z",
+  "currentCount": 10768,
   "src": {
     "johan": {
       "count": 650,
@@ -19274,14 +19274,6 @@
       "prCount": 2,
       "deviceRequests": [
         {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 370,
-          "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
-          "mfrs": [
-            "_TZE200_u6x1zyv2"
-          ]
-        },
-        {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
           "title": "Device Request - GIEX 2-Zone Smart Water Valve - _TZE284_8zizsafo / TS0601",
@@ -19472,6 +19464,16 @@
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1389,
+          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z"
           ]
         }
       ]
