@@ -1,13 +1,13 @@
-# Nightly Auto Process — v8.0.0 ULTIMATE
+# Weekly Auto Process — v8.0.0 ULTIMATE
 # Automated maintenance, architectural enforcement, and bug hunting.
-# Runs nightly (02:00 UTC) to ensure the Zero-Defect promise.
+# Runs weekly (Sunday 02:30 UTC) to avoid GitHub Actions minute saturation.
 # Investigation methodology: docs/GLOBAL_INVESTIGATION_PLAN.md (22 sections)
 
-name: "🌙 Nightly Auto Process"
+name: "🌙 Weekly Auto Process"
 
 on:
   schedule:
-    - cron: '30 2 * * *'  # Staggered by 30min to avoid git conflicts
+    - cron: '30 2 * * 0'  # Sunday 02:30 UTC — weekly to save Actions minutes
   workflow_dispatch:
 
 permissions:
