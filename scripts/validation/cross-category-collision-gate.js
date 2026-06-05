@@ -43,9 +43,9 @@ const CATEGORY = {
   sensor_climate_air_quality: 'sensor',
   motion_sensor: 'sensor',
   presence_sensor: 'sensor',
-  pir_mmwave_sensor: 'radar',
-  presence_sensor_radar: 'radar', motion_sensor_radar_mmwave: 'radar',
-  presence_sensor_ceiling: 'radar', radar_sensor_ceiling: 'radar',
+  pir_mmwave_sensor: 'sensor',
+  presence_sensor_radar: 'sensor', motion_sensor_radar_mmwave: 'sensor',
+  presence_sensor_ceiling: 'sensor', radar_sensor_ceiling: 'sensor',
   smoke_detector_advanced: 'safety', gas_detector: 'safety',
   gas_sensor: 'safety', co_sensor: 'safety',
   thermostat_tuya_dp: 'thermostat', radiator_valve: 'thermostat',
@@ -92,7 +92,7 @@ const CATEGORY = {
 
 // Specialization score: higher = more specialized, wins conflicts
 const SPECIALIZATION = {
-  cover: 90, thermostat: 85, radar: 85, safety: 80,
+  cover: 90, thermostat: 85, safety: 80,
   valve: 80, lock: 80, pet: 80, ir: 75, pump: 75,
   monitor: 75, hvac: 70, fan: 70, scene: 70,
   power: 65, plug: 60, light: 60, button: 60,
