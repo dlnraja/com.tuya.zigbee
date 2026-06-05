@@ -1,12 +1,41 @@
 {
-  "timestamp": "2026-06-05T05:37:48.893Z",
-  "count": 0,
-  "byType": {},
+  "timestamp": "2026-06-05T05:44:23.749Z",
+  "count": 1,
+  "byType": {
+    "general": 1
+  },
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "imap_514705",
+      "type": "general",
+      "subj": "Ne manquez pas cette offre ! Vos offres alléchantes expirent bientôt ⏰",
+      "from": "user",
+      "date": "2026-06-05T05:43:30.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "U.E."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 28195,
+      "contentType": "text/html->text"
+    }
+  ]
 }
