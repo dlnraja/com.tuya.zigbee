@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-05T21:03:58.625Z",
+  "ts": "2026-06-05T21:32:08.895Z",
   "currentCount": 10769,
   "src": {
     "johan": {
@@ -19270,9 +19270,20 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 52,
+      "issueCount": 54,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 376,
+          "title": "Bug report - Strange readings from the soil sensors",
+          "mfrs": [
+            "_TZE200_npj9bug3",
+            "_TZE284_aao3yzhs",
+            "_TZE284_oitavov2",
+            "_TZE284_hdml1aav"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 374,
@@ -19464,16 +19475,6 @@
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1391,
-          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
-          "mfrs": [
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6"
           ]
         }
       ]
