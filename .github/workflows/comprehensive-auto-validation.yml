@@ -93,6 +93,21 @@ jobs:
         run: npx homey app validate --level publish
         continue-on-error: true  # large.png required since v8.1.32
 
+      # ─── Pipeline Step 6c Safety Gate (WORKFLOW_GUIDELINES.md) ───
+      - name: "🔧 Pipeline 6c: Fix Flow Cards"
+        run: |
+          node scripts/automation/cleanup-flow-cards.js || true
+          node scripts/maintenance/fix-unsafe-flow-cards.js || true
+
+      - name: "🔋 Pipeline 6c: Revert Battery Conflicts"
+        run: node scripts/maintenance/revert-alarm-battery-conflict.js || true
+
+      - name: "📋 Pipeline 6c: Fix Empty Capabilities"
+        run: node scripts/automation/audit-capabilities.js || true
+
+      - name: "📏 Archive Size Gate (< 20MB)"
+        run: node .github/scripts/check-archive-size.js
+
       - name: ­ƒôè Report Summary
         if: always()
         run: |

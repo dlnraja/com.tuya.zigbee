@@ -107,6 +107,21 @@ jobs:
           echo "Validating DP divisors and capability assignments against Z2M reference..."
           node scripts/validation/dp-mapping-validator.js
 
+      - name: "📏 Archive Size Gate (< 20MB)"
+        run: node .github/scripts/check-archive-size.js
+
+      # ─── Pipeline Step 6c Safety Gate (WORKFLOW_GUIDELINES.md) ───
+      - name: "🔧 Pipeline 6c: Fix Flow Cards"
+        run: |
+          node scripts/automation/cleanup-flow-cards.js || true
+          node scripts/maintenance/fix-unsafe-flow-cards.js || true
+
+      - name: "🔋 Pipeline 6c: Revert Battery Conflicts"
+        run: node scripts/maintenance/revert-alarm-battery-conflict.js || true
+
+      - name: "📋 Pipeline 6c: Fix Empty Capabilities"
+        run: node scripts/automation/audit-capabilities.js || true
+
   build:
     name: ­ƒÅù´©Å Production Build & Optimize
     needs: validate

@@ -103,6 +103,22 @@ jobs:
           echo "Validating DP divisors against Z2M reference data..."
           node scripts/validation/dp-mapping-validator.js || true
 
+      # ─── Pipeline Step 6c Safety Gate (WORKFLOW_GUIDELINES.md) ───
+      # Order: fix-flow-cards → revert-battery-conflicts → fix-empty-caps → validate
+      - name: "🔧 Pipeline 6c: Fix Flow Cards"
+        run: |
+          node scripts/automation/cleanup-flow-cards.js || true
+          node scripts/maintenance/fix-unsafe-flow-cards.js || true
+
+      - name: "🔋 Pipeline 6c: Revert Battery Conflicts"
+        run: node scripts/maintenance/revert-alarm-battery-conflict.js || true
+
+      - name: "📋 Pipeline 6c: Fix Empty Capabilities"
+        run: node scripts/automation/audit-capabilities.js || true
+
+      - name: "🧹 Pipeline 6c: Casing Normalization (master-self-heal)"
+        run: node scripts/maintenance/master-self-heal.js || true
+
       - name: 🛠️ Execute Antigravity Mega-Fixer (Self-Healing)
         if: failure()
         run: |
@@ -120,6 +136,9 @@ jobs:
 
       - name: 📦 Validate Homey App
         run: npx homey app validate --level publish
+
+      - name: "📏 Archive Size Gate (< 20MB)"
+        run: node .github/scripts/check-archive-size.js
 
       - name: 🎯 Zero-Defect Ultimate Validation (v8.0.0)
         run: node scripts/_validate_all.js
