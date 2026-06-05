@@ -1,8 +1,120 @@
 {
-  "timestamp": "2026-06-05T04:39:41.598Z",
-  "appVersion": "8.1.107",
+  "timestamp": "2026-06-05T23:12:36.466Z",
+  "appVersion": "8.1.116",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 376,
+        "title": "Bug report - Strange readings from the soil sensors",
+        "user": "haadeess",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_npj9bug3",
+            "drivers": [
+              "curtain_motor"
+            ]
+          },
+          {
+            "fp": "_TZE284_aao3yzhs",
+            "drivers": [
+              "soil_sensor"
+            ]
+          },
+          {
+            "fp": "_TZE284_oitavov2",
+            "drivers": [
+              "soil_sensor"
+            ]
+          },
+          {
+            "fp": "_TZE284_hdml1aav",
+            "drivers": [
+              "soil_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/376",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 374,
+        "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor",
+        "user": "haadeess",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_ka8l86iu",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/374",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 372,
+        "title": "[Auto] 2 new fingerprints from community (2026-06)",
+        "user": "github-actions[bot]",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TYZB01_iuepbmpv",
+            "drivers": [
+              "device_plug_energy",
+              "lcdtemphumidsensor",
+              "smartplug"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/372",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 324,
+        "title": "2.4 ghz MMwave _TZE200_hl0ss9oa",
+        "user": "kringloper",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_hl0ss9oa",
+            "drivers": [
+              "air_purifier_presence",
+              "climate_sensor_presence",
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/324",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 370,
+        "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
+        "user": "haadeess",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_u6x1zyv2",
+            "drivers": [
+              "rain_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/370",
+        "state": "closed",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 328,
@@ -23,1227 +135,8 @@
       },
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 369,
-        "title": "[Auto] 2 new fingerprints from community (2026-06)",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TYZB01_mqel1whf",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_bagt1e4o",
-            "drivers": [
-              "wall_switch_4_gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/369",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 368,
-        "title": "[Auto] 28 new fingerprints from community (2026-06)",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TYZB01_hlla45kx",
-            "drivers": [
-              "double_power_point_2"
-            ]
-          },
-          {
-            "fp": "_TYZB01_phjeraqq",
-            "drivers": [
-              "smart_switch"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dsjszp0x",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_wqcac7lo",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vkwryfdr",
-            "drivers": [
-              "socket_power_strip_four"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ncutbjdi",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_aneiicmq",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_zsl6z0pw",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_digziiav",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ymcdbl3u",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB01_4tlksk8a",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjqthh",
-            "drivers": [
-              "wall_remote_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjhapk",
-            "drivers": [
-              "wall_remote_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_key8kk7r",
-            "drivers": [
-              "wall_remote_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xfpdrwvc",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_qeqvmvti",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_seqwasot",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_mtlhqn48",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6sadkhcy",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vzrytttn",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_2athzhfr",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6g8b7at8",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xiuox57i",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_b8cr31hp",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_mqel1whf",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_bagt1e4o",
-            "drivers": [
-              "wall_switch_4_gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/368",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 358,
-        "title": "[Auto] 69 new fingerprints from community (2026-06)",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE200_5zbp6j0u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_bjzrowv2",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nkoabg8w",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_xuzcvlku",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_4vobcgd3",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nogaemzt",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_r0jdjrvi",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_pk0sfzvr",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_fdtjuw7u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_zpzndjez",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_rddyvrci",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_nueqqe6k",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_xaabybja",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_rmymn92d",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_3i3exuay",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_hsgrhjpf",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE204_1fuxihti",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_axgvo9jh",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_yia0p3tr",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZ3000_6jeesvrt",
-            "drivers": [
-              "doorwindowsensor_2"
-            ]
-          },
-          {
-            "fp": "_TZ3000_au1rjicn",
-            "drivers": [
-              "doorwindowsensor_2"
-            ]
-          },
-          {
-            "fp": "_TZ3000_9eeavbk5",
-            "drivers": [
-              "doorwindowsensor_2"
-            ]
-          },
-          {
-            "fp": "_TZ3000_1bwpjvlz",
-            "drivers": [
-              "doorwindowsensor_2"
-            ]
-          },
-          {
-            "fp": "_TZ3000_7tbsruql",
-            "drivers": [
-              "doorwindowsensor_2"
-            ]
-          },
-          {
-            "fp": "_TZ3210_huzkzqyk",
-            "drivers": [
-              "dimmer_wall_1gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_iuepbmpv",
-            "drivers": [
-              "lcdtemphumidsensor",
-              "smartplug_2_socket"
-            ]
-          },
-          {
-            "fp": "_TZ1800_ejwkn2h2",
-            "drivers": [
-              "doorwindowsensor_2"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vkwryfdr",
-            "drivers": [
-              "socket_power_strip_four"
-            ]
-          },
-          {
-            "fp": "_TZ3000_0ht8dnxj",
-            "drivers": [
-              "air_quality_comprehensive"
-            ]
-          },
-          {
-            "fp": "_TZE200_go3tvswy",
-            "drivers": [
-              "curtain_motor",
-              "switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TZE200_ol5jlkkr",
-            "drivers": [
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_zxxfv8wi",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE204_57hjqelq",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE204_vvvtcehj",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_fctwhugx",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_5sbebbzs",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_nv6nxo0c",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE204_bjzrowv2",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE204_yrugsphv",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE204_lh3arisb",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE204_zuq5xxib",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_byzdayie",
-            "drivers": [
-              "device_air_purifier_plug",
-              "energy_meter_3phase",
-              "power_meter"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/358",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 359,
-        "title": "[Auto] 86 new fingerprints from community (2026-06)",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TYZB01_qezuin6k",
-            "drivers": [
-              "bulb_dimmable"
-            ]
-          },
-          {
-            "fp": "_TYZB01_v8gtiaed",
-            "drivers": [
-              "bulb_dimmable"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xph99wvr",
-            "drivers": [
-              "contact_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_hlla45kx",
-            "drivers": [
-              "double_power_point_2"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ftdkanlj",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_kvwjujy9",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_a476raq2",
-            "drivers": [
-              "climate_sensor",
-              "lcdtemphumidsensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_hjsgdkfl",
-            "drivers": [
-              "climate_sensor",
-              "lcdtemphumidsensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_iuepbmpv",
-            "drivers": [
-              "lcdtemphumidsensor",
-              "smartplug_2_socket"
-            ]
-          },
-          {
-            "fp": "_TYZB01_cbiezpds",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_jytabjkb",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dl7cejts",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dr6sduka",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_geepvxsy",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYST11_d0yu2xgi",
-            "drivers": [
-              "air_purifier_switch"
-            ]
-          },
-          {
-            "fp": "_TYZB01_qm6djpta",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_phjeraqq",
-            "drivers": [
-              "smart_switch"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dsjszp0x",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_wqcac7lo",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vkwryfdr",
-            "drivers": [
-              "socket_power_strip_four"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ncutbjdi",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_aneiicmq",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_zsl6z0pw",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_digziiav",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ymcdbl3u",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB01_4tlksk8a",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjqthh",
-            "drivers": [
-              "wall_remote_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjhapk",
-            "drivers": [
-              "wall_remote_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_key8kk7r",
-            "drivers": [
-              "wall_remote_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xfpdrwvc",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_qeqvmvti",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_seqwasot",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_mtlhqn48",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6sadkhcy",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vzrytttn",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_2athzhfr",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6g8b7at8",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/359",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 364,
-        "title": "[Auto] 85 new fingerprints from community (2026-06)",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TYZB01_qezuin6k",
-            "drivers": [
-              "bulb_dimmable"
-            ]
-          },
-          {
-            "fp": "_TYZB01_v8gtiaed",
-            "drivers": [
-              "bulb_dimmable"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xph99wvr",
-            "drivers": [
-              "contact_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_hlla45kx",
-            "drivers": [
-              "double_power_point_2"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ftdkanlj",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_kvwjujy9",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_a476raq2",
-            "drivers": [
-              "climate_sensor",
-              "lcdtemphumidsensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_hjsgdkfl",
-            "drivers": [
-              "climate_sensor",
-              "lcdtemphumidsensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_iuepbmpv",
-            "drivers": [
-              "lcdtemphumidsensor",
-              "smartplug_2_socket"
-            ]
-          },
-          {
-            "fp": "_TYZB01_cbiezpds",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_jytabjkb",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dl7cejts",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dr6sduka",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_geepvxsy",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_qm6djpta",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_phjeraqq",
-            "drivers": [
-              "smart_switch"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dsjszp0x",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_wqcac7lo",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vkwryfdr",
-            "drivers": [
-              "socket_power_strip_four"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ncutbjdi",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_aneiicmq",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_zsl6z0pw",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_digziiav",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ymcdbl3u",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB01_4tlksk8a",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjqthh",
-            "drivers": [
-              "wall_remote_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjhapk",
-            "drivers": [
-              "wall_remote_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_key8kk7r",
-            "drivers": [
-              "wall_remote_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xfpdrwvc",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_qeqvmvti",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_seqwasot",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_mtlhqn48",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6sadkhcy",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vzrytttn",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_2athzhfr",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6g8b7at8",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xiuox57i",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/364",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 366,
-        "title": "[Auto] 82 new fingerprints from community (2026-06)",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TYZB01_qezuin6k",
-            "drivers": [
-              "bulb_dimmable"
-            ]
-          },
-          {
-            "fp": "_TYZB01_v8gtiaed",
-            "drivers": [
-              "bulb_dimmable"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xph99wvr",
-            "drivers": [
-              "contact_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_hlla45kx",
-            "drivers": [
-              "double_power_point_2"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ftdkanlj",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_kvwjujy9",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_a476raq2",
-            "drivers": [
-              "climate_sensor",
-              "lcdtemphumidsensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_hjsgdkfl",
-            "drivers": [
-              "climate_sensor",
-              "lcdtemphumidsensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_cbiezpds",
-            "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_jytabjkb",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dl7cejts",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dr6sduka",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_geepvxsy",
-            "drivers": [
-              "bed_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_phjeraqq",
-            "drivers": [
-              "smart_switch"
-            ]
-          },
-          {
-            "fp": "_TYZB01_dsjszp0x",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_wqcac7lo",
-            "drivers": [
-              "smoke_sensor"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vkwryfdr",
-            "drivers": [
-              "socket_power_strip_four"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ncutbjdi",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_aneiicmq",
-            "drivers": [
-              "switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_zsl6z0pw",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_digziiav",
-            "drivers": [
-              "switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_ymcdbl3u",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB01_4tlksk8a",
-            "drivers": [
-              "valvecontroller"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjqthh",
-            "drivers": [
-              "wall_remote_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_keyjhapk",
-            "drivers": [
-              "wall_remote_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB02_key8kk7r",
-            "drivers": [
-              "wall_remote_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xfpdrwvc",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_qeqvmvti",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_seqwasot",
-            "drivers": [
-              "wall_switch_1_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_mtlhqn48",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6sadkhcy",
-            "drivers": [
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_vzrytttn",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_2athzhfr",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_6g8b7at8",
-            "drivers": [
-              "switch_2_gang",
-              "wall_switch_2_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_xiuox57i",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_b8cr31hp",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_mqel1whf",
-            "drivers": [
-              "wall_switch_3_gang"
-            ]
-          },
-          {
-            "fp": "_TYZB01_bagt1e4o",
-            "drivers": [
-              "wall_switch_4_gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/366",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 334,
-        "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug: ",
-        "user": "haadeess",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_yj6k7vfo",
-            "drivers": [
-              "smart_button_switch"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/334",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
         "number": 337,
-        "title": "[motion_sensor_2] Bug: _TZE200_3towulqd",
+        "title": "[motion_sensor_2] Bug: _TZE200_3towulqd ",
         "user": "haadeess",
         "newFPs": [],
         "existingFPs": [
@@ -1263,8 +156,8 @@
       },
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 365,
-        "title": "[radiator_valve] Bug: \t_TZE200_9xfjixap",
+        "number": 339,
+        "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working",
         "user": "haadeess",
         "newFPs": [],
         "existingFPs": [
@@ -1276,45 +169,26 @@
             ]
           }
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/365",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/339",
         "state": "closed",
         "imageAnalysis": null
       },
       {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1408,
-        "title": "Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw)",
-        "user": "Lucas360-blip",
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 334,
+        "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug: No button press detected again.",
+        "user": "haadeess",
         "newFPs": [],
         "existingFPs": [
           {
-            "fp": "_TZ3210_jlf1nepw",
+            "fp": "_TZ3000_yj6k7vfo",
             "drivers": [
-              "plug_smart"
+              "smart_button_switch"
             ]
           }
         ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1408",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1410,
-        "title": "Device Request - GIEX 2-Zone Smart Water Valve - _TZE284_8zizsafo / TS0601",
-        "user": "tholeeg",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE284_8zizsafo",
-            "drivers": [
-              "valve_irrigation",
-              "valvecontroller"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1410",
-        "state": "open",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/334",
+        "state": "closed",
         "imageAnalysis": null
       },
       {
@@ -1332,6 +206,24 @@
           }
         ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1409",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1408,
+        "title": "Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw)",
+        "user": "Lucas360-blip",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_jlf1nepw",
+            "drivers": [
+              "plug_smart"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1408",
         "state": "open",
         "imageAnalysis": null
       }

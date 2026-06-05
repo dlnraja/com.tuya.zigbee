@@ -5,15 +5,20 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 class BedSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
+    // v8.1.117: FIX #371 - Corrected DP mapping for _TZE200_seq9cm6u bed sensor
+    // - DP101 was incorrectly mapped to measure_battery (caused DP104/DP4 collision → battery stuck at 1%)
+    // - DP104 mapped to alarm_battery instead of measure_battery to avoid collision with DP4
+    // - DP1 alarm_contact logic: sensor sends 1=occupied, 0=unoccupied
+    //   Homey alarm_contact=true means "contact open" (unoccupied), so we invert
     return {
       1: { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
       4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
-      104: { capability: 'measure_battery', transform: (v) => (v === 1 || v === true) ? 100 : 10 },
-      101: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
+      104: { capability: 'alarm_battery', transform: (v) => (v === 0 || v === false) },
       12: { capability: 'measure_pressure', transform: (v) => v },
       9: { capability: null, internal: 'sensitivity', writable: true },
-      102: { capability: null, internal: 'delay_unoccupied', writable: true },
-      103: { capability: null, internal: 'delay_occupied', writable: true }
+      101: { capability: null, internal: 'delay_unoccupied', writable: true },
+      102: { capability: null, internal: 'delay_occupied', writable: true },
+      103: { capability: null, internal: 'config', writable: true }
     };
   }
 
@@ -34,10 +39,12 @@ class BedSensorDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
     
+    // v8.1.117: FIX #371 - Corrected DP numbers per Z2M reference
+    // DP9 = sensitivity (enum), DP101 = pir_delay (unoccupied), DP102 = presence_time (occupied)
     const dpWrites = {
       sensitivity: { dp: 9 },
-      delay_unoccupied: { dp: 102 },
-      delay_occupied: { dp: 103 }
+      delay_unoccupied: { dp: 101 },
+      delay_occupied: { dp: 102 }
     };
 
     for (const key of changedKeys) {
