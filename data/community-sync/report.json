@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-05T16:30:12.243Z",
+  "ts": "2026-06-05T17:15:14.881Z",
   "currentCount": 10769,
   "src": {
     "johan": {
@@ -19270,9 +19270,19 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 51,
+      "issueCount": 52,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 374,
+          "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor",
+          "mfrs": [
+            "_TZE200_ka8l86iu",
+            "_TZE200_ka8l86iu",
+            "_TZE200_ka8l86iu"
+          ]
+        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
@@ -19464,16 +19474,6 @@
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1389,
-          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
-          "mfrs": [
-            "_TZ3000_qja6nq5z",
-            "_TZ3000_qja6nq5z",
-            "_TZ3000_qja6nq5z"
           ]
         }
       ]
