@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-05T10:57:04.803Z*
+*Generated: 2026-06-05T12:04:01.564Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 203492 |
-| Collisions | 68699 |
+| Manufacturer IDs | 203194 |
+| Collisions | 68383 |
 
 ## ⚠️ Collisions Detected
 
@@ -35,7 +35,7 @@
 | `_TYZB01_2ATHZHFR|TS0012` | button_wireless_2, switch_2_gang, wall_switch_2_gang |
 | `_TYZB01_2ATHZHFR|TS0013` | button_wireless_2, switch_2_gang |
 
-*...and 68679 more*
+*...and 68363 more*
 
 ## 📋 Action Items
 
