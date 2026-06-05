@@ -199,6 +199,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._flowTriggerMoistureChanged = this._getFlowCardSafe('soil_sensor_moisture_changed');
     this._flowTriggerSoilDry = this._getFlowCardSafe('soil_sensor_soil_dry');
     this._flowTriggerSoilWet = this._getFlowCardSafe('soil_sensor_soil_wet');
+    this._flowTriggerTemperatureChanged = this._getFlowCardSafe('soil_sensor_temperature_changed');
   }
 
   _getFlowCardSafe(id) {
@@ -206,22 +207,31 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   _triggerMoistureFlows(moisture) {
+    const moistureNum = parseFloat(moisture);
+    if (isNaN(moistureNum)) return;
+
     if (this._flowTriggerMoistureChanged) {
-      this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);
+      this._flowTriggerMoistureChanged.trigger(this, { moisture: moistureNum }).catch(this.error);
     }
     if (this._previousMoisture !== null) {
-      if (moisture < 30 && this._previousMoisture >= 30 && this._flowTriggerSoilDry) {
+      if (moistureNum < 30 && this._previousMoisture >= 30 && this._flowTriggerSoilDry) {
         this._flowTriggerSoilDry.trigger(this, {}).catch(this.error);
       }
-      if (moisture > 70 && this._previousMoisture <= 70 && this._flowTriggerSoilWet) {
+      if (moistureNum > 70 && this._previousMoisture <= 70 && this._flowTriggerSoilWet) {
         this._flowTriggerSoilWet.trigger(this, {}).catch(this.error);
       }
     }
-    this._previousMoisture = moisture;
+    this._previousMoisture = moistureNum;
   }
 
   _triggerTemperatureFlows(temperature) {
-    this._previousTemperature = temperature;
+    const tempNum = parseFloat(temperature);
+    if (isNaN(tempNum)) return;
+
+    if (this._flowTriggerTemperatureChanged) {
+      this._flowTriggerTemperatureChanged.trigger(this, { temperature: tempNum }).catch(this.error);
+    }
+    this._previousTemperature = tempNum;
   }
 
   async onEndDeviceAnnounce() {

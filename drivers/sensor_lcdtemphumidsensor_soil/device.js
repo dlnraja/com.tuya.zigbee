@@ -475,8 +475,20 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     // v5.8.72: Safe flow card getter  prevents onNodeInit crash if card missing
     const safeGetTrigger = (id) => {
       try { return this.homey.flow.getTriggerCard(id); }
-
-      catch (e) { this.log(`[SOIL]  Flow trigger '${id}' not available: ${e.message}`); return null; }
+      catch (e) {
+        try {
+          const prefixedId = `${this.driver.id}_${id}`;
+          return this.homey.flow.getTriggerCard(prefixedId);
+        } catch (e2) {
+          try {
+            const extraPrefixedId = `${this.driver.id}_${this.driver.id.replace('device_', '')}_${id}`;
+            return this.homey.flow.getTriggerCard(extraPrefixedId);
+          } catch (e3) {
+            this.log(`[SOIL]  Flow trigger '${id}' (or prefixed) not available: ${e3.message}`);
+            return null;
+          }
+        }
+      }
     };
 
     // Register flow trigger cards
@@ -510,53 +522,62 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Trigger moisture-related flows
    */
   _triggerMoistureFlows(moisture) {
+    const moistureNum = parseFloat(moisture);
+    if (isNaN(moistureNum)) return;
+
     // Trigger: moisture changed
     if (this._flowTriggerMoistureChanged) {
-      this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);
+      this._flowTriggerMoistureChanged.trigger(this, { moisture: moistureNum }).catch(this.error);
     }
 
     // Trigger: soil dry (moisture below 30%)
-    if (this._previousMoisture !== null && moisture < 30 && this._previousMoisture >= 30) {
+    if (this._previousMoisture !== null && moistureNum < 30 && this._previousMoisture >= 30) {
       if (this._flowTriggerSoilDry) {
         this._flowTriggerSoilDry.trigger(this, {}).catch(this.error);
       }
     }
 
     // Trigger: soil wet (moisture above 70%)
-    if (this._previousMoisture !== null && moisture > 70 && this._previousMoisture <= 70) {
+    if (this._previousMoisture !== null && moistureNum > 70 && this._previousMoisture <= 70) {
       if (this._flowTriggerSoilWet) {
         this._flowTriggerSoilWet.trigger(this, {}).catch(this.error);
       }
     }
 
-    this._previousMoisture = moisture;
+    this._previousMoisture = moistureNum;
   }
 
   /**
    * Trigger temperature-related flows
    */
   _triggerTemperatureFlows(temperature) {
+    const tempNum = parseFloat(temperature);
+    if (isNaN(tempNum)) return;
+
     // Trigger: temperature changed
     if (this._flowTriggerTemperatureChanged) {
-      this._flowTriggerTemperatureChanged.trigger(this, { temperature }).catch(this.error);
+      this._flowTriggerTemperatureChanged.trigger(this, { temperature: tempNum }).catch(this.error);
     }
 
-    this._previousTemperature = temperature;
+    this._previousTemperature = tempNum;
   }
 
   /**
    * Trigger battery-related flows
    */
   _triggerBatteryFlows(battery) {
+    const batteryNum = parseFloat(battery);
+    if (isNaN(batteryNum)) return;
+
     // Trigger: battery low (below 20%)
-    if (battery <= 20 && (this._previousBattery === null || this._previousBattery > 20)) {
+    if (batteryNum <= 20 && (this._previousBattery === null || this._previousBattery > 20)) {
       if (this._flowTriggerBatteryLow) {
-        this._flowTriggerBatteryLow.trigger(this, { battery }).catch(this.error);
-        this.log(`[SOIL]  Battery low alert triggered: ${battery}%`);
+        this._flowTriggerBatteryLow.trigger(this, { battery: batteryNum }).catch(this.error);
+        this.log(`[SOIL]  Battery low alert triggered: ${batteryNum}%`);
       }
     }
 
-    this._previousBattery = battery;
+    this._previousBattery = batteryNum;
   }
 
   /**
