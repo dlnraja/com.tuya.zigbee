@@ -1,5 +1,5 @@
 # 🕵️‍♂️ DEEP CROSS-REFERENCE SCRAPER REPORT
-> **Executed**: 2026-06-04T04:31:31.278Z
+> **Executed**: 2026-06-05T04:09:55.557Z
 > **Target**: MFR=`Any`, PID=`Any`, Issue=`None`
 
 ## 🎯 DIAGNOSTIC VERDICT
@@ -11,7 +11,7 @@
 
 ## 🌐 EXTERNAL AGGREGATIONS STATUS
 - **Z2M / ZHA Quirks**: `FAILED`
-- **Diagnostics Gmail Logs**: `SUCCESS`
+- **Diagnostics Gmail Logs**: `FAILED`
 - **Homey Forum Scraper**: `SUCCESS`
 - **GitHub Triage Logs**: `SUCCESS`
 
