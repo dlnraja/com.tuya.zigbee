@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-05T19:28:00.798Z",
+  "timestamp": "2026-06-05T20:13:01.856Z",
   "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
@@ -21,5 +21,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided device fingerprint data, here is the classification and suggestions for the Tuya Unified Zigbee Homey app:\n\n| FP                | Type   | Driver           | DPs→Capabilities | Quirks |\n|-------------------|--------|------------------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| Not available     | None              | None   |\n\n### Notes:\n- The device fingerprint does not provide any specific information about the device type, capabilities, or data points (DPs).\n- Since there are no DPs available, we cannot map any capabilities or identify any quirks.\n- Further information about the device (such as vendor, name, or specific capabilities) would be needed to classify it accurately and suggest an appropriate driver."
+  "aiPlan": "Based on the provided information, here is the classification and mapping for the device:\n\n| FP                | Type   | Driver               | DPs→Capabilities | Quirks |\n|-------------------|--------|----------------------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| Not available         | None              | None   |\n\n### Notes:\n1. **Device Type**: The device type is unknown as there are no details provided about its functionality or capabilities.\n2. **Driver**: Since there is no information about the device's capabilities or type, it is not possible to suggest an existing Homey driver to add a fingerprint to.\n3. **DPs**: There are no DPs (Data Points) available, so there are no mappings to Homey capabilities.\n4. **Quirks**: There are no quirks noted due to the lack of information.\n\n### Conclusion:\nTo proceed with this device, more information is needed regarding its capabilities, type, and any available DPs."
 }
