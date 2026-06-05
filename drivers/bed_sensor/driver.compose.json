@@ -114,7 +114,7 @@
       "type": "dropdown",
       "id": "sensitivity",
       "value": "1",
-      "title": {
+      "label": {
         "en": "Sensitivity",
         "fr": "Sensibilité",
         "nl": "Gevoeligheid",
@@ -152,30 +152,12 @@
     },
     {
       "type": "number",
-      "id": "sampling_interval",
-      "value": 5,
-      "min": 1,
-      "max": 60,
-      "units": "s",
-      "title": {
-        "en": "Sampling Interval",
-        "fr": "Intervalle d'échantillonnage",
-        "nl": "Meetinterval",
-        "de": "Abtastintervall"
-      },
-      "hint": {
-        "en": "How often the sensor checks for occupancy (seconds)",
-        "fr": "Fréquence de vérification de l'occupation (secondes)"
-      }
-    },
-    {
-      "type": "number",
       "id": "delay_occupied",
       "value": 3,
       "min": 0,
       "max": 300,
       "units": "s",
-      "title": {
+      "label": {
         "en": "Delay Occupied",
         "fr": "Délai occupation",
         "nl": "Vertraging bezet",
@@ -193,7 +175,7 @@
       "min": 0,
       "max": 300,
       "units": "s",
-      "title": {
+      "label": {
         "en": "Delay Unoccupied",
         "fr": "Délai inoccupé",
         "nl": "Vertraging onbezet",

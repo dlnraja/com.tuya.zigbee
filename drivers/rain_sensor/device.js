@@ -15,7 +15,7 @@ class RainSensorDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
 
   get sensorCapabilities() {
-    return ['alarm_water', 'measure_humidity', 'measure_battery'];
+    return ['alarm_water', 'measure_humidity', 'measure_luminance', 'measure_battery'];
   }
 
     get dpMappings() {
@@ -148,6 +148,31 @@ class RainSensorDevice extends UnifiedSensorBase {
     }
   }
 
+
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    await super.onSettings({ oldSettings, newSettings, changedKeys });
+    
+    this.log('[RAIN] [SETTINGS] Changed settings:', changedKeys);
+
+    for (const key of changedKeys) {
+      try {
+        const val = newSettings[key];
+        if (key === 'sensitivity') {
+          if (this.tuyaEF00Manager) {
+            await this.tuyaEF00Manager.sendDP(9, parseInt(val) || 0, 'value');
+            this.log(`[RAIN] Sent DP9 sensitivity = ${val}`);
+          }
+        } else if (key === 'illuminance_sampling') {
+          if (this.tuyaEF00Manager) {
+            await this.tuyaEF00Manager.sendDP(101, parseInt(val) || 0, 'value');
+            this.log(`[RAIN] Sent DP101 illuminance_sampling = ${val}`);
+          }
+        }
+      } catch (err) {
+        this.error(`[RAIN] Error updating setting ${key}:`, err.message);
+      }
+    }
+  }
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');

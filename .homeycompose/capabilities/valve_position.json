@@ -1,0 +1,20 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve Position",
+    "fr": "Position Vanne"
+  },
+  "desc": {
+    "en": "Current valve opening percentage",
+    "fr": "Pourcentage d'ouverture de la vanne"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "min": 0,
+  "max": 100,
+  "decimals": 0
+}
