@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Gas Alarm",
+    "nl": "Gasalarm",
+    "de": "Gasalarm",
+    "fr": "Alarme gaz"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Gas detected"
+  },
+  "insightsTitleFalse": {
+    "en": "No gas detected"
+  }
+}

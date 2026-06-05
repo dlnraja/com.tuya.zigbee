@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Frost Protection Temperature",
+    "fr": "Température Antigel"
+  },
+  "desc": {
+    "en": "Minimum temperature for frost protection",
+    "fr": "Température minimale pour protection antigel"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "min": 5,
+  "max": 10,
+  "step": 0.5,
+  "decimals": 1
+}

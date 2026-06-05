@@ -6,12 +6,12 @@ class BedSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
     return {
-      1: { capability: 'alarm_contact', transform: (v) => (v === 1 || v === true) },
+      1: { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
       4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
       104: { capability: 'measure_battery', transform: (v) => (v === 1 || v === true) ? 100 : 10 },
+      101: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
       12: { capability: 'measure_pressure', transform: (v) => v },
       9: { capability: null, internal: 'sensitivity', writable: true },
-      101: { capability: null, internal: 'sampling_interval', writable: true },
       102: { capability: null, internal: 'delay_unoccupied', writable: true },
       103: { capability: null, internal: 'delay_occupied', writable: true }
     };
@@ -36,7 +36,6 @@ class BedSensorDevice extends UnifiedSensorBase {
     
     const dpWrites = {
       sensitivity: { dp: 9 },
-      sampling_interval: { dp: 101 },
       delay_unoccupied: { dp: 102 },
       delay_occupied: { dp: 103 }
     };
