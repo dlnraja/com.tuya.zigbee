@@ -1,1 +1,78 @@
-[]
+[
+  {
+    "type": "dropdown",
+    "id": "sensitivity",
+    "value": "1",
+    "label": {
+      "en": "Sensitivity",
+      "fr": "Sensibilité",
+      "nl": "Gevoeligheid",
+      "de": "Empfindlichkeit"
+    },
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Low",
+          "fr": "Faible",
+          "nl": "Laag",
+          "de": "Niedrig"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Middle",
+          "fr": "Moyen",
+          "nl": "Midden",
+          "de": "Mittel"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "High",
+          "fr": "Élevé",
+          "nl": "Hoog",
+          "de": "Hoch"
+        }
+      }
+    ]
+  },
+  {
+    "type": "number",
+    "id": "delay_occupied",
+    "value": 3,
+    "min": 0,
+    "max": 300,
+    "units": "s",
+    "label": {
+      "en": "Delay Occupied",
+      "fr": "Délai occupation",
+      "nl": "Vertraging bezet",
+      "de": "Verzögerung belegt"
+    },
+    "hint": {
+      "en": "Seconds before reporting bed as occupied",
+      "fr": "Secondes avant de signaler le lit comme occupé"
+    }
+  },
+  {
+    "type": "number",
+    "id": "delay_unoccupied",
+    "value": 10,
+    "min": 0,
+    "max": 300,
+    "units": "s",
+    "label": {
+      "en": "Delay Unoccupied",
+      "fr": "Délai inoccupé",
+      "nl": "Vertraging onbezet",
+      "de": "Verzögerung frei"
+    },
+    "hint": {
+      "en": "Seconds before reporting bed as unoccupied",
+      "fr": "Secondes avant de signaler le lit comme inoccupé"
+    }
+  }
+]

@@ -1,10 +1,12 @@
 {
-  "timestamp": "2026-06-05T07:14:12.661Z",
-  "processed": 1,
-  "commented": 0,
+  "timestamp": "2026-06-05T23:14:24.604Z",
+  "processed": 4,
+  "commented": 3,
   "closed": 0,
   "protocols": {
-    "unknown": 1
+    "tuya_dp": 1,
+    "hybrid": 1,
+    "unknown": 2
   },
   "errors": [],
   "fpPidPairs": [],

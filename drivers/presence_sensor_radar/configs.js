@@ -28,6 +28,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_iaeejhvf',
       '_TZE204_ikvncluo', '_TZE204_jva8ink8',
       '_TZE204_lyetpprm', '_TZE204_no6qtgtl',
+      '_TZE200_ka8l86iu', // v8.1.117: FIX #374 - Issue #374: no detection
     ],
     battery: false,
     noTemperature: true,
