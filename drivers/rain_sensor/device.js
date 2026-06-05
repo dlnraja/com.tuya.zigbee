@@ -26,7 +26,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       return {
         1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
         2: { capability: 'measure_humidity', divisor: 1 },
-        102: { capability: 'measure_luminance', divisor: 1 },
+        102: { capability: 'measure_luminance', divisor: 10 }, // v8.1.114: Fixed 10x too low lux readings
         4: { capability: 'measure_battery', divisor: 1 },
         104: { capability: 'measure_battery', divisor: 1 },
         106: { capability: 'measure_humidity', divisor: 1 }
