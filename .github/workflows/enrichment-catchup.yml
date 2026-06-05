@@ -1,7 +1,7 @@
-name: "📦 Enrichment Catch-Up (post-publish-bug)"
+name: "📦 Enrichment Catch-Up (DISABLED: merged into weekly-auto-process.yml)"
 
-# Runs enrichment tasks that were missed during the v8.1.7+ publish bug period
-# Triggered manually or weekly to ensure no data gaps
+# DISABLED: Enrichment catch-up now runs in weekly-auto-process.yml Phase 2
+# Was: community FP enricher + Johan SDK3 sync + auto-close-resolved
 on:
   workflow_dispatch:
     inputs:
@@ -13,9 +13,6 @@ on:
         description: "Force full re-enrichment (true/false)"
         required: false
         default: "false"
-  schedule:
-    # Every Sunday at 04:00 UTC
-    - cron: "0 4 * * 0"
 
 permissions:
   contents: write

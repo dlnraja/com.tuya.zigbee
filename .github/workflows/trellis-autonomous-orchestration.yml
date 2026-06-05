@@ -2,7 +2,7 @@ name: Trellis Autonomous Multi-Agent Orchestration
 
 on:
   schedule:
-    - cron: '0 0 */2 * *' # Run once every 2 days
+    - cron: '30 0 */2 * *' # Every 2 days at 00:30 UTC (staggered from daily-fingerprint at 00:00)
   workflow_dispatch:
 
 permissions:

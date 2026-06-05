@@ -90,12 +90,24 @@ jobs:
           node scripts/fix_titleformatted_v3.js || true
         continue-on-error: true
 
-      - name: "🤖 [7/7] Auto-Resolve Diagnostics & Auto-Heal"
+      - name: "🤖 [7/7] Auto-Resolve Diagnostics & Auto-Heal (skip already-processed)"
         run: |
+          # State tracking: skip crash logs / diag logs already processed
+          # unless an open issue references them or a user mentions them
+          STATE_FILE=".github/state/processed-diagnostics.json"
+          if [ ! -f "$STATE_FILE" ]; then echo '{"processed":[]}' > "$STATE_FILE"; fi
+
+          # Check for user-referenced diagnostics in open issues
+          REFERENCED=$(gh issue list --state open --json body -q '.[].body' 2>/dev/null | grep -oE '[a-f0-9]{8,}' | sort -u || true)
+          echo "User-referenced diagnostic IDs: ${REFERENCED:-none}"
+
+          # Run resolver (it reads state file internally and skips processed IDs)
           node .github/scripts/diagnostic-auto-resolver.js || true
           node .github/scripts/diagnostic-auto-heal-radar.js || true
           node scripts/automation/fix-crashers.js || true
         continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🛡️ Run Skill Check
         run: node scripts/ci/skill-check.js

@@ -12,7 +12,7 @@ on:
   push:
     branches: [master, main]
   schedule:
-    - cron: '0 3 * * 0'  # Every Sunday at 3AM UTC
+    - cron: '0 3 * * 6'  # Every Saturday at 3AM UTC (avoid Sunday conflict with weekly-auto-process)
   workflow_dispatch:
 
 concurrency:

@@ -1,9 +1,9 @@
-name: Intelligent Enrichment & Credits Sync
+name: "Intelligent Enrichment & Credits Sync (DISABLED: merged into weekly-auto-process.yml)"
 
+# DISABLED: Deep cross-ref and credit sync now run in weekly-auto-process.yml
+# which handles the full enrichment pipeline (collect → enrich → repair → validate)
 on:
-  schedule:
-    - cron: '0 3 * * *' # Run daily at 3 AM
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch: # Allow manual trigger only
 
 defaults:
   run:
