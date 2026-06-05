@@ -1,7 +1,9 @@
 {
-  "timestamp": "2026-05-30T22:30:19.251Z",
+  "timestamp": "2026-06-05T04:18:12.833Z",
   "appId": "com.dlnraja.tuya.zigbee",
-  "localIssues": [],
+  "localIssues": [
+    "WRONG_DIM: assets/images/small.png = 250x175 (need 190x190)"
+  ],
   "dashResult": {
     "screenshots": [
       "diag-01-apps-list.png",
@@ -23,5 +25,5 @@
     "versions": []
   },
   "apiResult": null,
-  "allGood": true
+  "allGood": false
 }
