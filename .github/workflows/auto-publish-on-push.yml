@@ -93,7 +93,7 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       # 2.5 INTEGRITY CHECK — .homeyplugins.json, fingerprint collisions
       # ─────────────────────────────────────────────────────────────
-      - name: "🛡️ INTEGRITY: Check .homeyplugins.json + fingerprint collisions"
+      - name: "🛡️ INTEGRITY: Check .homeyplugins.json + fingerprint collisions (mfr+pid)"
         run: |
           node - << 'INTEGRITY'
           const fs = require('fs'), path = require('path');
@@ -111,10 +111,11 @@ jobs:
             }
           }
 
-          // 2. Check for fingerprint collisions
+          // 2. Check for fingerprint collisions (manufacturerName + productId)
           const driversDir = 'drivers';
-          const fpMap = {};
+          const fpMap = {}; // key: mfr|pid -> driver
           let collisions = 0;
+          let totalFps = 0;
           try {
             fs.readdirSync(driversDir)
               .filter(d => fs.statSync(path.join(driversDir, d)).isDirectory())
@@ -123,20 +124,26 @@ jobs:
                 if (!fs.existsSync(p)) return;
                 try {
                   const c = JSON.parse(fs.readFileSync(p, 'utf8'));
-                  if (c.zigbee?.manufacturerName) {
-                    c.zigbee.manufacturerName.forEach(m => {
-                      const key = m.toLowerCase();
-                      if (fpMap[key]) {
-                        console.log('⚠️  COLLISION: "' + m + '" in ' + fpMap[key] + ' AND ' + d);
+                  const mfrs = (c.zigbee?.manufacturerName || []).map(m => m.toLowerCase());
+                  const pids = c.zigbee?.productId || [];
+                  for (const m of mfrs) {
+                    for (const pid of pids) {
+                      const key = m + '|' + pid;
+                      totalFps++;
+                      if (fpMap[key] && fpMap[key] !== d) {
+                        console.log('⚠️  COLLISION [' + m + ' + ' + pid + ']: ' + fpMap[key] + ' vs ' + d);
                         collisions++;
                       }
                       fpMap[key] = d;
-                    });
+                    }
                   }
                 } catch {}
               });
           } catch (e) { console.error('driver scan error:', e.message); }
-          console.log('✅ Fingerprint check: ' + Object.keys(fpMap).length + ' unique, ' + collisions + ' collisions');
+          console.log('✅ Fingerprint check: ' + totalFps + ' combos, ' + Object.keys(fpMap).length + ' unique, ' + collisions + ' collisions');
+          if (collisions > 0) {
+            echo "::warning::$collisions fingerprint+PID collisions detected — review drivers"
+          }
           INTEGRITY
 
       # ─────────────────────────────────────────────────────────────

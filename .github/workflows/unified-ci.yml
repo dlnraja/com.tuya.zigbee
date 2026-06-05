@@ -96,6 +96,17 @@ jobs:
             echo "Ô£ô All drivers have complete case variant coverage"
           fi
 
+      - name: ­ƒîî Cross-Category Collision Gate (BLOQUANT)
+        run: |
+          echo "Detecting FPs assigned to wrong driver category (radar in climate, etc.)..."
+          node scripts/validation/cross-category-collision-gate.js
+
+      - name: ­ƒö╝ DP Mapping Validator
+        continue-on-error: true
+        run: |
+          echo "Validating DP divisors and capability assignments against Z2M reference..."
+          node scripts/validation/dp-mapping-validator.js
+
   build:
     name: ­ƒÅù´©Å Production Build & Optimize
     needs: validate

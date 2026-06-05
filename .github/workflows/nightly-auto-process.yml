@@ -92,6 +92,17 @@ jobs:
         run: node scripts/automation/mega-audit.js
         continue-on-error: false
 
+      - name: 🔀 Cross-Category Collision Audit + Auto-Fix
+        run: |
+          echo "Detecting and auto-fixing FPs in wrong driver category..."
+          node scripts/validation/cross-category-collision-gate.js --fix || true
+
+      - name: 📐 DP Mapping Validation (Z2M Cross-Reference)
+        continue-on-error: true
+        run: |
+          echo "Validating DP divisors against Z2M reference data..."
+          node scripts/validation/dp-mapping-validator.js || true
+
       - name: 🛠️ Execute Antigravity Mega-Fixer (Self-Healing)
         if: failure()
         run: |
