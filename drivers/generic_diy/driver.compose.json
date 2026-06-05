@@ -10,7 +10,7 @@
     "small": "/drivers/generic_diy/assets/images/small.png",
     "large": "/drivers/generic_diy/assets/images/large.png"
   },
-  "capabilities": [],
+  "capabilities": ["onoff"],
   "energy": {
     "approximation": {
       "usageConstant": 1

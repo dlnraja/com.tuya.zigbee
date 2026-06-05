@@ -7,7 +7,7 @@
     "es": "Repetidor de señal Zigbee"
   },
   "class": "other",
-  "capabilities": [],
+  "capabilities": ["onoff"],
   "zigbee": {
     "manufacturerName": [
       "_tz3000_1mxvlhmq",
