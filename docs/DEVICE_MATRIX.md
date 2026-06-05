@@ -111,7 +111,7 @@
 | gas_sensor | 15 | TS0225, TS0601, TS0601_gas | alarm_co, alarm_co2, alarm_contact... |
 | gas_sensor_switch | 3 | TS0601 | onoff, onoff.gang2, onoff.gang3... |
 | gateway_zigbee_bridge | 3 | TS0601_gw | alarm_generic, measure_battery, onoff... |
-| generic_diy | 195 | 0x8040, BASICZBR3, Battery switch, 1 button, Battery switch, 2 buttons, BSP-EZ2, BSP-FZ2, BUTTON, CC2530, CC2531, CC2652, CUSTOM, DIY, EFEKTA, ESP32, eT093WRG, eT093WRO, eTRV0100, eTRV0101, eTRV0103, MAKER, PTVO, RELAY, ROUTER, S31ZB, S40ZBTPB, SENSOR, SNZB-01, SNZB-01P, SNZB-02, SNZB-02P, SNZB-06P, SWITCH, TRV001, TRV003, TS0026, TS0041A, TS0224, TS0901, ZBMINI, ZBMINIL2, ZIGSTAR |  |
+| generic_diy | 195 | 0x8040, BASICZBR3, Battery switch, 1 button, Battery switch, 2 buttons, BSP-EZ2, BSP-FZ2, BUTTON, CC2530, CC2531, CC2652, CUSTOM, DIY, EFEKTA, ESP32, eT093WRG, eT093WRO, eTRV0100, eTRV0101, eTRV0103, MAKER, PTVO, RELAY, ROUTER, S31ZB, S40ZBTPB, SENSOR, SNZB-01, SNZB-01P, SNZB-02, SNZB-02P, SNZB-06P, SWITCH, TRV001, TRV003, TS0026, TS0041A, TS0224, TS0901, ZBMINI, ZBMINIL2, ZIGSTAR | onoff |
 | generic_tuya | 358 | TS0203, TS0601, TS0601_generic | measure_battery, measure_temperature, measure_humidity... |
 | handheld_remote_4_buttons | 85 | SNZB-01M, TS0014, TS0044, TS004F | onoff, measure_battery, alarm_battery |
 | humidifier | 18 | TS0601, TS0601_humid | onoff, dim, measure_humidity... |
@@ -275,7 +275,7 @@
 | tunable_bulb_E14 | 3 | TS0502A | onoff, dim, light_temperature |
 | tunable_bulb_E27 | 3 | TS0502A | onoff, dim, light_temperature |
 | tunable_spot_GU10 | 3 | TS0502A | onoff, dim, light_temperature |
-| tuya_dummy_device | 3 | TS0601 |  |
+| tuya_dummy_device | 3 | TS0601 | measure_battery |
 | universal_zigbee | 38 | q9mpfhw, TS0001, TS0002, TS0003, TS0004, TS0005, TS0006, TS0011, TS0012, TS0013, TS0014, TS0015, TS0041, TS0042, TS0043, TS0044, TS0045, TS0046, TS0047, TS0048, TS004F, TS0101, TS0111, TS011F, TS0121, TS0201, TS0203, TS0204, TS0205, TS0206, TS0207, TS0208, TS0209, TS0210, TS0211, TS0212, TS0215, TS0215A, TS0216, TS0216A, TS0218, TS0222, TS0225, TS0301, TS0302, TS0303, TS0304, TS0401, TS0402, TS0501, TS0501A, TS0501B, TS0502, TS0502A, TS0502B, TS0503, TS0503A, TS0503B, TS0504, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS0601, TS110E, TS110F, TS130F | onoff, dim, measure_temperature... |
 | usb_dongle_dual_repeater | 9 | TS0002, TS0207, TS0601_repeater | onoff, onoff.usb2, measure_power... |
 | usb_dongle_triple | 75 | S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F | onoff, onoff.usb2, onoff.usb3... |
@@ -316,9 +316,9 @@
 | water_valve_garden | 18 | TS0049 | onoff, measure_battery, alarm_battery |
 | water_valve_smart | 36 | SWV-ZFE, SWV-ZFU, SWV-ZN, SWV-ZNE, SWV-ZNU, TS0601, TS0601_watervalve | onoff, meter_water, measure_temperature... |
 | weather_station_outdoor | 6 | TS0601, TS0601_weather | measure_temperature, measure_humidity, measure_pressure... |
-| zigbee_repeater | 39 | TS0207 |  |
+| zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
 **Total:** 315 drivers, 18451 manufacturer IDs
 
-*Generated: 2026-06-05T08:18:47.200Z*
+*Generated: 2026-06-05T09:37:03.957Z*
