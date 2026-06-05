@@ -1,15 +1,10 @@
-name: "🚀 Force Publish — No AggregateError"
+name: "🚀 Force Publish — No AggregateError (DISABLED: merged into auto-publish-on-push.yml)"
 
-# Triggered on every push to master OR manually
+# DISABLED: This workflow is redundant with auto-publish-on-push.yml
+# which already does pre-clean, Pipeline 6c, archive check, and publish.
+# Kept for manual workflow_dispatch only if needed.
+
 on:
-  push:
-    branches: [master, main]
-    paths:
-      - 'drivers/**'
-      - 'app.json'
-      - 'app.js'
-      - 'lib/**'
-      - '.homeyignore'
   workflow_dispatch:
     inputs:
       force:
