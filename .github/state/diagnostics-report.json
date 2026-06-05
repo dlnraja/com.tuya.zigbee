@@ -1,120 +1,12 @@
 {
-  "timestamp": "2026-06-05T05:28:03.812Z",
-  "count": 4,
-  "byType": {
-    "general": 3,
-    "diagnostic": 1
-  },
+  "timestamp": "2026-06-05T05:37:48.893Z",
+  "count": 0,
+  "byType": {},
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": [
-    {
-      "id": "imap_514701",
-      "type": "general",
-      "subj": "Prêt.e pour l'été ?",
-      "from": "user",
-      "date": "2026-06-05T04:35:03.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "A.N."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 12126,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514702",
-      "type": "general",
-      "subj": "Licencié parce qu'il travaille moins, Il réclame 127 000 € à ses amis, Salaire pour être riche en France",
-      "from": "user",
-      "date": "2026-06-05T04:33:09.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Cad..."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10825,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514703",
-      "type": "diagnostic",
-      "subj": "Buzztron Briefing : On leur a vendu un outil chaque mardi. Ils ont construit quoi, au juste ?",
-      "from": "user",
-      "date": "2026-06-05T05:15:27.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "N.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 14342,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_514704",
-      "type": "general",
-      "subj": "☀️ Des snacks malins pour l’été – 25 % de réduction chez nu3",
-      "from": "user",
-      "date": "2026-06-05T05:19:49.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "R.P."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7277,
-      "contentType": "text/plain"
-    }
-  ]
+  "diagnostics": []
 }
