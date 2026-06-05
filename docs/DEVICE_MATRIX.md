@@ -52,7 +52,7 @@
 | device_air_purifier_floor | 8 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_air_purifier_humidifier | 3 | TS0601, TS0601_air_purifier | onoff, dim, measure_humidity... |
 | device_air_purifier_led | 3 | TS0601, TS0601_air_purifier | dim, measure_battery, onoff... |
-| device_air_purifier_plug | 2 | TS011F, TS0601 | measure_power, meter_power, measure_voltage... |
+| device_air_purifier_plug | 4 | TS011F, TS0601 | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_presence | 3 | TS0601, TS0601_air_purifier | alarm_motion, measure_luminance, measure_temperature... |
 | device_air_purifier_quality | 3 | TS0601, TS0601_air_purifier | measure_co2, measure_pm25, measure_temperature... |
 | device_air_purifier_radiator | 5 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
@@ -192,7 +192,7 @@
 | scene_switch_4 | 21 | ERS-10TZBVK-AA, TS0601, ZG-101ZS | button.1, button.2, button.3... |
 | scene_switch_6 | 3 | TS0601_scene6 | button.1, button.2, button.3... |
 | scene_switch_wall | 3 | TS0042, TS0043 | button.1, button.2, measure_battery... |
-| sensor_climate_contact | 0 | TS0601 | measure_temperature, measure_temperature.probe, measure_humidity... |
+| sensor_climate_contact | 1 | TS0601 | measure_temperature, measure_temperature.probe, measure_humidity... |
 | sensor_climate_temphumidsensor | 1857 | CK-TLSR8656-SS5-01(7014), Excellux, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TS1201, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_temperature, measure_humidity, measure_battery... |
 | sensor_contact_motion | 5 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | sensor_contact_plug | 3 | Excellux, TS0601 | onoff, measure_power, meter_power... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 18403 manufacturer IDs
+**Total:** 315 drivers, 18406 manufacturer IDs
 
-*Generated: 2026-06-05T12:04:01.517Z*
+*Generated: 2026-06-05T13:23:45.704Z*
