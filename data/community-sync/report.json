@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-06T15:56:11.454Z",
-  "currentCount": 10798,
+  "ts": "2026-06-06T16:22:36.137Z",
+  "currentCount": 10817,
   "src": {
     "johan": {
       "count": 650,
@@ -19270,9 +19270,20 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 51,
+      "issueCount": 52,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 385,
+          "title": "[Auto] 4 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh",
+            "_TZE284_iadro9bf",
+            "_TZE204_nbkshs6k",
+            "_TZE204_no6qtgtl"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 382,
@@ -19463,16 +19474,6 @@
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc"
           ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1391,
-          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
-          "mfrs": [
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6"
-          ]
         }
       ]
     }
@@ -19492,19 +19493,7 @@
       "source": "Johan"
     },
     {
-      "mfr": "_TZE284_iadro9bf",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_nbkshs6k",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_no6qtgtl",
+      "mfr": "_TZE200_qasjif9e",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -39992,6 +39981,6 @@
       "driver": null
     }
   ],
-  "newCount": 4,
+  "newCount": 2,
   "enrichedCount": 2212
 }
