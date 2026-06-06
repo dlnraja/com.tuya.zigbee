@@ -140,6 +140,27 @@ jobs:
           node scripts/automation/fix-detected-variants.js
       # Step 3.5b: Duplicate FP+PID check
 
+      # ─── Enriched from disabled daily-everything + tuya-automation-hub ───
+      - name: "🌐 Challenge All URLs (link validation)"
+        continue-on-error: true
+        run: node .github/scripts/challenge-all-urls.js || true
+
+      - name: "🤖 AI Enrichment Engine"
+        continue-on-error: true
+        run: |
+          node .github/scripts/ai-enrichment-engine.js || true
+          node .github/scripts/manufacturer-scraper.js || true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: "🔌 Scan Public APIs for new devices"
+        continue-on-error: true
+        run: node .github/scripts/scan-public-apis.js || true
+
+      - name: "📖 Sync SDK3 Documentation"
+        continue-on-error: true
+        run: node .github/scripts/sync-sdk3-docs.js || true
+
       - name: Check duplicate FP+PID combos
         run: |
           node -e "
