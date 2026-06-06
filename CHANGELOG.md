@@ -4,7 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.134 (2026-06-06)
+## v8.1.135 (2026-06-06)
+
+v8.1.134: Fixed illuminance sensor: removed ZCL reporting for Tuya DP devices.
+
+---
+
+## [8.1.134] - 2026-06-06
+
+### Bug Fixes
+- Fixed illuminance sensor: removed ZCL reporting for Tuya DP devices.
+---
+
+ v8.1.134 (2026-06-06)
 
 v8.1.133: Fixed luminance ZCL log-scale conversion., Improved DP101 handler functionality., Added support for 365 drivers and 3428 fingerprints.
 
