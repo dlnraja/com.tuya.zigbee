@@ -1,19 +1,17 @@
-name: "🤖 Auto-Enrich & Resolve — Forum + Issues + Diagnostics"
+name: "🤖 Auto-Enrich & Resolve — Full Pipeline"
+
+# Per GLOBAL_INVESTIGATION_PLAN.md §8 + architectural.md §3
+# Per .windsurfrules: Shadow Mode — NO forum posting, resolve silently
+# When diagnostic is missing, investigate anyway using Z2M/ZHA/Domoticz cross-ref
 
 on:
   schedule:
-    - cron: '0 6 * * 0'  # Sunday 06:00 UTC (after weekly-auto-process)
+    - cron: '30 5 * * 0'  # Sunday 05:30 UTC (after weekly-auto-process 02:30, before sunday-master 07:00)
   workflow_dispatch:
-    inputs:
-      deep_investigate:
-        description: "Run deep investigation on all open issues"
-        type: boolean
-        default: true
 
 permissions:
   contents: write
   issues: write
-  pull-requests: write
 
 concurrency:
   group: auto-enrich-resolve
@@ -42,8 +40,11 @@ jobs:
 
       - run: npm ci || npm install
 
-      # ─── PHASE 1: COLLECT ALL DATA ───────────────────────────
-      - name: "📡 [1/6] Scan GitHub Issues & PRs"
+      # ═══════════════════════════════════════════════════════════
+      # PHASE 1: COLLECT ALL DATA (GitHub + Forum + Diagnostics)
+      # ═══════════════════════════════════════════════════════════
+
+      - name: "📡 [1/7] Scan GitHub Issues & PRs (both repos)"
         run: |
           node .github/scripts/scan-prs-issues.js || true
           node scripts/automation/issue-content-analyzer.js || true
@@ -51,35 +52,47 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "✉️ [2/6] Fetch Diagnostic Emails & Crash Logs"
-        run: node .github/scripts/collect-diagnostics.js || true
+      - name: "✉️ [2/7] Fetch Diagnostic Emails & Crash Logs"
+        run: |
+          # Fetch ALL diagnostic emails (even without diagnostic codes)
+          node .github/scripts/collect-diagnostics.js || true
+          node .github/scripts/gmail-imap-reader.js || true
         continue-on-error: true
 
-      - name: "💬 [3/6] Scan Forum Messages (T140352)"
+      - name: "💬 [3/7] Scan Forum Messages (T140352 — READ ONLY)"
         run: |
+          # Shadow Mode: scan only, NEVER post replies
           node .github/scripts/scan-forum.js || true
           node .github/scripts/forum-activity-scraper.js || true
         continue-on-error: true
 
-      # ─── PHASE 2: DEEP INVESTIGATION ─────────────────────────
-      - name: "🔬 [4/6] Deep Investigation (Z2M/ZHA/Domoticz cross-ref)"
+      # ═══════════════════════════════════════════════════════════
+      # PHASE 2: DEEP INVESTIGATION (even without diagnostics)
+      # ═══════════════════════════════════════════════════════════
+
+      - name: "🔬 [4/7] Deep Investigation (Z2M/ZHA/Domoticz cross-ref)"
         run: |
-          echo "Running deep investigation on all open issues..."
+          # Cross-reference with external projects even if no diagnostic
           node scripts/automation/deep-investigate-and-resolve.js || true
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: "🤖 [5/6] Auto-Resolve Diagnostics & Triage"
+      - name: "🔍 [5/7] Auto-Resolve — no diagnostic required"
         run: |
+          # Resolve issues even without diagnostic codes
+          # Uses Z2M/ZHA cross-reference + codebase analysis
           node .github/scripts/diagnostic-auto-resolver.js || true
           node .github/scripts/diagnostic-auto-heal-radar.js || true
           node scripts/automation/fix-crashers.js || true
         continue-on-error: true
 
-      # ─── PHASE 3: ENRICH & FIX ──────────────────────────────
-      - name: "🧬 [6/6] Enrich FPs & Auto-Fix Collisions"
+      # ═══════════════════════════════════════════════════════════
+      # PHASE 3: ENRICH & FIX (FPs, collisions, crash patterns)
+      # ═══════════════════════════════════════════════════════════
+
+      - name: "🧬 [6/7] Enrich FPs & Auto-Fix Collisions"
         run: |
           node scripts/automation/fix-fingerprint-conflicts.js --fix || true
           node scripts/validation/cross-category-collision-gate.js --fix || true
@@ -87,7 +100,17 @@ jobs:
           node scripts/automation/fix-crashers.js || true
         continue-on-error: true
 
-      # ─── COMMIT ──────────────────────────────────────────────
+      - name: "🛡️ [7/7] PII Anonymization (security.md §2)"
+        run: |
+          for f in .github/state/diagnostics-report.json .github/state/resolver-report.json; do
+            [ -f "$f" ] && node scripts/security/pii-anonymizer.js "$f" --output "$f" 2>/dev/null || true
+          done
+        continue-on-error: true
+
+      # ═══════════════════════════════════════════════════════════
+      # COMMIT (NO FORUM POSTING — Shadow Mode)
+      # ═══════════════════════════════════════════════════════════
+
       - name: "🔄 Commit Changes"
         if: always()
         run: |
