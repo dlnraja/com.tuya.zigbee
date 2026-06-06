@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-06T17:48:20.324Z*
+*Generated: 2026-06-06T18:18:31.633Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 218453 |
-| Collisions | 93338 |
+| Manufacturer IDs | 212857 |
+| Collisions | 76430 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZE200_QPN5Q17M|TS0601` | air_purifier, air_purifier_sensor, device_air_purifier_floor |
-| `_TZE200_QPN5Q17M|TS0601_air_purifier` | air_purifier, device_air_purifier_floor |
-| `_TZE204_7BZTMFM1|TS0601` | air_purifier, device_air_purifier_climate |
-| `_TZE204_7BZTMFM1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
-| `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
-| `_TZE200_5zbp6j0u|TS0601` | air_purifier, curtain_motor, switch_1gang |
-| `_TZE200_nkoabg8w|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
-| `_TZE200_xuzcvlku|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
-| `_TZE200_r0jdjrvi|TS0601` | air_purifier, curtain_motor_tilt, switch_1gang |
-| `_TZE200_fdtjuw7u|TS0601` | air_purifier, curtain_motor, switch_1gang |
-| `_TZE200_zpzndjez|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
-| `_TZE200_wmcdj3aq|TS0601` | air_purifier, curtain_motor, curtain_motor_shutter, switch_1_gang, switch_1gang |
-| `_TZE200_cowvfni3|TS0601` | air_purifier, curtain_motor, curtain_motor_shutter, switch_1_gang, switch_1gang |
-| `_TZE200_rddyvrci|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
-| `_TZE200_zah67ekd|TS0601` | air_purifier, curtain_module, curtain_module_2_gang, curtain_motor, curtain_motor_shutter, curtain_motor_tilt |
-| `_TZE200_pw7mji0l|TS0601` | air_purifier, curtain_motor, device_floor_heating_thermostat, device_radiator_valve, thermostat_4ch |
-| `_TZE200_uj3f4wr5|TS0601` | air_purifier, curtain_motor, curtain_motor_shutter |
-| `_TZE200_axgvo9jh|TS0601` | air_purifier, curtain_motor, switch_1gang |
-| `_TZE200_gaj531w3|TS0601` | air_purifier, contact_sensor, curtain_motor, doorwindowsensor_2, sensor_contact_motion, sensor_contact_plug, sensor_contact_water |
-| `_TZE200_nw1r9hp6|TS0601` | air_purifier, curtain_motor, device_floor_heating_thermostat, device_radiator_valve, thermostat_4ch |
+| `_TYST11_d0yu2xgi|TS0601` | air_purifier, siren |
+| `_TZ3000_0s1izerx|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_6uzkisv2|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_akqdg6g7|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_bjawzodf|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_dowj6gyi|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_fllyghyj|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_itnrsufe|TS0601` | air_purifier, button_wireless_1 |
+| `_TZ3000_qaaysllp|TS0601` | air_purifier, contact_sensor |
+| `_TZ3000_saiqcn0y|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_xr3htd96|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_yd2e749y|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_ywagc4rj|TS0601` | air_purifier, generic_tuya |
+| `_TZE200_0nauxa0p|TS0601` | air_purifier, dimmer_wall_1gang |
+| `_TZE200_2se8efxh|TS0601` | air_purifier, plug_smart |
+| `_TZE200_3p5ydos3|TS0601` | air_purifier, switch_dimmer_1gang |
+| `_TZE200_44af8vyi|TS0601` | air_purifier, button_wireless_1 |
+| `_TZE200_8ygsuhe1|TS0601` | air_purifier, climate_sensor |
+| `_TZE200_9cqcpkgb|TS0601` | air_purifier, plug_smart |
+| `_TZE200_9cxuhakf|TS0601` | air_purifier, dimmer_wall_1gang |
 
-*...and 93318 more*
+*...and 76410 more*
 
 ## 📋 Action Items
 
