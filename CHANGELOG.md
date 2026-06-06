@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.127 (2026-06-06)
+## v8.1.128 (2026-06-06)
+
+v8.1.127: Fixed bed sensor complete DP remap per Z2M reference., No new features added., No improvements made.
+
+---
+
+## [8.1.127] - 2026-06-06
+
+### Bug Fixes
+- Fixed bed sensor complete DP remap per Z2M reference.
+
+### New Features
+- No new features added.
+
+### Improvements
+- No improvements made.
+---
+
+ v8.1.127 (2026-06-06)
 
 v8.1.126: Fixed issue with bed sensor settings to filter bed-specific keys before super call.
 

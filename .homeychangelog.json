@@ -73,7 +73,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.127": {
-    "en": "v8.1.126: Fixed issue with bed sensor settings to filter bed-specific keys before super call."
+  "8.1.128": {
+    "en": "v8.1.127: Fixed bed sensor complete DP remap per Z2M reference., No new features added., No improvements made."
   }
 }
