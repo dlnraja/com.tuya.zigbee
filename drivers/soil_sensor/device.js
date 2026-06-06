@@ -70,9 +70,34 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
 
   /**
-   * DP mappings for Soil Sensors
+   * DP mappings for Soil Sensors — Manufacturer-specific per Z2M reference
+   * ZG-303Z (npj9bug3): DP5=temp(/10), DP109=moisture, battery=genPowerCfg
+   * _TZE284_aao3yzhs: DP3=moisture, DP5=temp(/10), DP14=battery_state, DP15=battery
+   * _TZE284_oitavov2: DP3=moisture, DP5=temp(raw°C), DP14=battery_state, DP15=battery
+   * _TZE284_hdml1aav: DP3=moisture, DP5=temp, DP4=EC, DP14=battery_state, DP15=battery
    */
   get dpMappings() {
+    const mfr = (this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+
+    // ZG-303Z variant (npj9bug3): DP109=moisture, DP5=temp, battery=genPowerCfg
+    if (mfr.includes('npj9bug3')) {
+      return {
+        5: {
+          capability: 'measure_temperature',
+          transform: (v) => {
+            const num = safeMultiply(v, 1);
+            if (num === null) {return null;}
+            if (Math.abs(num) > 1000) {return safeDivide(num, 100);}
+            if (Math.abs(num) > 100) {return safeDivide(num, 10);}
+            return num;
+          }
+        },
+        109: { capability: 'measure_humidity.soil', divisor: 1 },
+        // Battery from genPowerCfg cluster (not Tuya DP)
+      };
+    }
+
+    // _TZE284 variants (aao3yzhs, oitavov2, hdml1aav): DP3=moisture, DP5=temp, DP14/15=battery
     return {
       3: { capability: 'measure_humidity.soil', divisor: 1 },
       5: {
@@ -80,12 +105,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         transform: (v) => {
           const num = safeMultiply(v, 1);
           if (num === null) {return null;}
-          // v8.1.107: Handle combined 4-byte values (e.g., 67109120 = 0x4000100)
-          // Upper 16 bits = temperature * 10, lower 16 bits = moisture * 10
+          // v8.1.107: Handle combined 4-byte values
           if (num > 0xFFFF) {
             const temp = (num >> 16) / 10;
             const moisture = (num & 0xFFFF) / 10;
-            // Store soil moisture from combined value (sync — no await in transform)
             if (moisture >= 0 && moisture <= 100) {
               setTimeout(() => {
                 this.setCapabilityValue('measure_humidity.soil', moisture).catch(() => {});
@@ -93,39 +116,40 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             }
             return temp;
           }
-          // Handle various Tuya temperature formats (x10, x100, or raw)
+          // _TZE284_oitavov2 sends raw °C (not x10)
+          if (mfr.includes('oitavov2') && Math.abs(num) <= 100) {return num;}
           if (Math.abs(num) > 1000) {return safeDivide(num, 100);}
           if (Math.abs(num) > 100) {return safeDivide(num, 10);}
           return num;
         }
       },
-      109: { capability: 'measure_humidity', divisor: 1 },
-      15: { capability: 'measure_battery', divisor: 1 },
-      14: { 
-        capability: 'measure_battery', 
-        transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) 
+      4: { capability: 'measure_ec', divisor: 1 }, // EC for hdml1aav
+      14: {
+        capability: 'measure_battery',
+        transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v)
       },
+      15: { capability: 'measure_battery', divisor: 1 },
+      101: { capability: 'measure_humidity', divisor: 1 },
       102: { capability: 'measure_luminance', divisor: 1 },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
+      106: { capability: 'measure_ec', divisor: 1 },
+      109: { capability: 'measure_humidity.soil', divisor: 1 },
+      111: {
+        capability: 'measure_humidity.soil',
+        divisor: 1,
+        transform: (v) => {
+          if (mfr.includes('npj9bug3')) {return v;}
+          return v === 1;
+        }
+      },
+      112: { capability: 'measure_ec', divisor: 1 },
       103: { setting: 'report_interval', min: 30, max: 1200 },
       104: { setting: 'soil_calibration', min: -30, max: 30 },
       107: { setting: 'temperature_calibration', min: -20, max: 20 },
       110: { setting: 'soil_warning', min: 0, max: 100 },
-      111: { 
-        capability: 'measure_humidity.soil', 
-        divisor: 1,
-        transform: (v) => {
-          const mfr = this.getSetting?.('zb_manufacturer_name') || '';if (mfr.includes('npj9bug3')) {return v;}
-          return v === 1; // Fallback to alarm_water
-        }
-      },
-      112: { capability: 'measure_ec', divisor: 1 }, // Soil Conductivity -> EC
       113: { setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
       114: { setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
       1: { capability: 'measure_temperature', divisor: 10 },
-      4: { capability: 'measure_ec', divisor: 1 },
-      101: { capability: 'measure_humidity', divisor: 1 },
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
-      106: { capability: 'measure_ec', divisor: 1 },
     };
   }
 
