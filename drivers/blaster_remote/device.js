@@ -290,7 +290,7 @@ class IRRemoteDevice extends ZigBeeDevice {
       } catch (e) { /* raw code */ }
 
       // Update capability
-      this.setCapabilityValue('ir_learned_code', keyCode).catch(this.error);
+      await this.setCapabilityValue('ir_learned_code', keyCode).catch(this.error);
 
       // Trigger flow
       const card = this.homey.flow.getTriggerCard('ir_code_received');

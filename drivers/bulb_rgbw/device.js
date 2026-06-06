@@ -75,9 +75,9 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
       const v = parseInt(raw.substring(8, 12), 16);
-      this.setCapabilityValue('light_hue', h / 360).catch(() => { });
-      this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
+      await this.setCapabilityValue('light_hue', h / 360).catch(() => { });
+      await this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
+      await this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) {
       return null;

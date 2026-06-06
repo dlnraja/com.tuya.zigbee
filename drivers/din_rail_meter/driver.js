@@ -16,13 +16,13 @@ async onInit() {
     
     // Register triggers from driver.flow.compose.json
     try {
-      this._powerChangedTrigger = this._getFlowCard('din_rail_meter_power_changed', 'trigger');
-      this._voltageChangedTrigger = this._getFlowCard('din_rail_meter_voltage_changed', 'trigger');
-      this._currentChangedTrigger = this._getFlowCard('din_rail_meter_current_changed', 'trigger');
-      this._energyChangedTrigger = this._getFlowCard('din_rail_meter_energy_changed', 'trigger');
+      this._powerChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_power_changed');
+      this._voltageChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_voltage_changed');
+      this._currentChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_current_changed');
+      this._energyChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_energy_changed');
       
       // Register condition
-      this._powerAboveCondition = this._getFlowCard('din_rail_meter_power_above', 'condition');
+      this._powerAboveCondition = this.homey.flow.getConditionCard('din_rail_meter_power_above');
       if (this._powerAboveCondition) {
         this._powerAboveCondition.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.getCapabilityValue === 'function') {
@@ -35,7 +35,7 @@ async onInit() {
       }
       
       // Register action (already present but keep for consistency)
-      const actionCard = (() => { try { return this._getFlowCard('din_rail_meter_reset_meter', 'action'); } catch(e) { return null; } })();
+      const actionCard = (() => { try { return this.homey.flow.getActionCard('din_rail_meter_reset_meter'); } catch(e) { return null; } })();
       if (actionCard) {
         actionCard.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.resetMeter === 'function') {

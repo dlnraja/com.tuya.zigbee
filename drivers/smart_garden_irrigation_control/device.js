@@ -50,11 +50,11 @@ class IrrigationController extends ZigBeeDevice {
         const batteryThreshold = this.getSetting('batteryThreshold') || 20;
         this.log('Battery percentage received:', batteryPercentage);
 
-        this.setCapabilityValue('measure_battery', batteryPercentage).catch((err) => {
+        await this.setCapabilityValue('measure_battery', batteryPercentage).catch((err) => {
           this.error('Failed to update battery level', err);
         });
 
-        this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+        await this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
 
       }
     });

@@ -1,0 +1,174 @@
+{
+  "timestamp": "2026-06-06T00:50:17.831Z",
+  "repo": "dlnraja/com.tuya.zigbee",
+  "state": "open",
+  "totalIssues": 4,
+  "withImages": 0,
+  "withDiagnostics": 1,
+  "withErrorPatterns": 1,
+  "uniqueManufacturerIds": [
+    "_TZ3000",
+    "_996rpfy6",
+    "_TZE200",
+    "_npj9bug3",
+    "_TZE284",
+    "_aao3yzhs",
+    "_oitavov2",
+    "_hdml1aav",
+    "_Originally",
+    "_TYZB01",
+    "_iuepbmpv",
+    "_temperature",
+    "_humidity",
+    "_battery"
+  ],
+  "uniqueDeviceTypes": [],
+  "issues": [
+    {
+      "number": 377,
+      "title": "[Auto] 1 new fingerprints from community (2026-06)",
+      "author": "app/github-actions",
+      "labels": [
+        "enhancement",
+        "community-sync"
+      ],
+      "comments": [],
+      "createdAt": "2026-06-05T23:51:22Z",
+      "manufacturerIds": [
+        "_TZ3000",
+        "_996rpfy6"
+      ],
+      "productIds": [],
+      "diagnosticIds": [],
+      "images": [],
+      "errorPatterns": [],
+      "deviceTypes": [],
+      "hasImage": false,
+      "hasDiagnostic": false,
+      "bodyLength": 508,
+      "bodyPreview": "## 🌐 Monthly Community Sync Found 1 New Fingerprints\n\n| Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |\n|---|---|---|---|---|---|\n| `_TZ3000_996rpfy6` | - | - | Z2M | - | - |\n\n### Sources\n- Zigbee2MQTT tuya.ts (mfr+pid+vendor+description)\n- JohanBendz/com.tuya.zigbee (",
+      "commentTexts": []
+    },
+    {
+      "number": 376,
+      "title": "Bug report - Strange readings from the soil sensors",
+      "author": "haadeess",
+      "labels": [
+        "bug"
+      ],
+      "comments": [],
+      "createdAt": "2026-06-05T21:29:15Z",
+      "manufacturerIds": [
+        "_TZE200",
+        "_npj9bug3",
+        "_TZE284",
+        "_aao3yzhs",
+        "_oitavov2",
+        "_hdml1aav"
+      ],
+      "productIds": [],
+      "diagnosticIds": [
+        "f4aebb68",
+        "a1f6176b3c90"
+      ],
+      "images": [
+        "https://github.com/user-attachments/assets/f4aebb68-47e5-4d7f-999c-a1f6176b3c90"
+      ],
+      "errorPatterns": [],
+      "deviceTypes": [],
+      "hasImage": false,
+      "hasDiagnostic": false,
+      "bodyLength": 479,
+      "bodyPreview": "Hi Dylan,\n\nAll my soil sensors are showing almost the same high readings, followed by hours of very low readings, which can't be right. Is this due to the software updates, or what could be causing it? Let me know if I can help in any way 👍\n\n<img width=\"1804\" height=\"1312\" alt=\"Image\" src=\"https://",
+      "commentTexts": []
+    },
+    {
+      "number": 375,
+      "title": "361 Still loading endlessly",
+      "author": "haadeess",
+      "labels": [],
+      "comments": [],
+      "createdAt": "2026-06-05T21:16:57Z",
+      "manufacturerIds": [
+        "_Originally"
+      ],
+      "productIds": [],
+      "diagnosticIds": [
+        "4625410846"
+      ],
+      "images": [],
+      "errorPatterns": [
+        "ReferenceError",
+        "crash"
+      ],
+      "deviceTypes": [],
+      "hasImage": false,
+      "hasDiagnostic": true,
+      "bodyLength": 748,
+      "bodyPreview": "> Hi @haadeess,\n> \n> We have resolved the startup `ReferenceError` crash caused by the legacy dynamic `try/catch` require of `DataRecoveryManager` in `BaseUnifiedDevice`. This startup crash was preventing the app's backend from initializing properly, resulting in the debugging/configuration option l",
+      "commentTexts": []
+    },
+    {
+      "number": 372,
+      "title": "[Auto] 2 new fingerprints from community (2026-06)",
+      "author": "app/github-actions",
+      "labels": [
+        "enhancement",
+        "community-sync"
+      ],
+      "comments": [
+        {
+          "id": "IC_kwDOPPue0s8AAAABFCvrcg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v8.1.115**:\n- `_TYZB01_iuepbmpv` -> **device_plug_energy**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+          "createdAt": "2026-06-05T16:09:57Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/372#issuecomment-4633389938",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFC55SA",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v8.1.115**:\n- `_TYZB01_iuepbmpv` -> **device_plug_energy**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
+          "createdAt": "2026-06-05T16:35:31Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/372#issuecomment-4633557320",
+          "viewerDidAuthor": true
+        }
+      ],
+      "createdAt": "2026-06-05T12:10:55Z",
+      "manufacturerIds": [
+        "_TYZB01",
+        "_iuepbmpv",
+        "_temperature",
+        "_humidity",
+        "_battery"
+      ],
+      "productIds": [
+        "TS0201",
+        "TS0121"
+      ],
+      "diagnosticIds": [],
+      "images": [],
+      "errorPatterns": [],
+      "deviceTypes": [],
+      "hasImage": false,
+      "hasDiagnostic": false,
+      "bodyLength": 698,
+      "bodyPreview": "## 🌐 Monthly Community Sync Found 2 New Fingerprints\n\n| Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |\n|---|---|---|---|---|---|\n| `_TYZB01_iuepbmpv` | TS0201,TY0201 | lcdtemphumidsensor | Johan | - | measure_temperature, measure_humidity, measure_battery |\n| `_TYZB01",
+      "commentTexts": []
+    }
+  ]
+}

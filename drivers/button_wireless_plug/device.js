@@ -223,19 +223,19 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
       if (zclAttrs.power) {
         const pDiv = this.zclEnergyDivisors.power;
         elecCluster.on('attr.activePower', (value) => {
-          this.setCapabilityValue('measure_power', parseFloat(Math.max(0, value / pDiv))).catch(() => { });
+          await this.setCapabilityValue('measure_power', parseFloat(Math.max(0, value / pDiv))).catch(() => { });
         });
       }
       if (zclAttrs.voltage) {
         const vDiv = this.zclEnergyDivisors.voltage;
         elecCluster.on('attr.rmsVoltage', (value) => {
-          this.setCapabilityValue('measure_voltage', parseFloat(value / vDiv)).catch(() => { });
+          await this.setCapabilityValue('measure_voltage', parseFloat(value / vDiv)).catch(() => { });
         });
       }
       if (zclAttrs.current) {
         const cDiv = this.zclEnergyDivisors.current;
         elecCluster.on('attr.rmsCurrent', (value) => {
-          this.setCapabilityValue('measure_current', parseFloat(value / cDiv)).catch(() => { });
+          await this.setCapabilityValue('measure_current', parseFloat(value / cDiv)).catch(() => { });
         });
       }
     }
@@ -249,7 +249,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
         return (raw / baseEDiv) * eScale;
       };
       mc.on('attr.currentSummDelivered', (v) => {
-        this.setCapabilityValue('meter_power', parseFloat(parseE(v))).catch(() => { });
+        await this.setCapabilityValue('meter_power', parseFloat(parseE(v))).catch(() => { });
       });
       
       // Poll fallback
@@ -263,7 +263,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
       try {
         const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
         if (a?.currentSummDelivered !== undefined) {
-          this.setCapabilityValue('meter_power', parseFloat(parseE(a.currentSummDelivered))).catch(() => { });
+          await this.setCapabilityValue('meter_power', parseFloat(parseE(a.currentSummDelivered))).catch(() => { });
         }
       } catch (_) { }
     }, 120000);

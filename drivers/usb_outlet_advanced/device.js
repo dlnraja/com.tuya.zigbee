@@ -176,7 +176,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         ep2.clusters.onOff.on('attr.onOff', (value) => {
           this.log(`[USB-ADV] EP2 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.socket2')) {
-            this.setCapabilityValue('onoff.socket2', value).catch(this.error);
+            await this.setCapabilityValue('onoff.socket2', value).catch(this.error);
           }
         });
       }
@@ -194,7 +194,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         ep3.clusters.onOff.on('attr.onOff', (value) => {
           this.log(`[USB-ADV] EP3 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.usb1')) {
-            this.setCapabilityValue('onoff.usb1', value).catch(this.error);
+            await this.setCapabilityValue('onoff.usb1', value).catch(this.error);
           }
         });
       }

@@ -139,9 +139,9 @@ class doublepowerpoint extends ZigBeeDevice {
         try {
           const elec = zclNode.endpoints[endpoint].clusters.electricalMeasurement;
           const attrs = await elec.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).catch(() => ({}));
-          if (attrs.activePower != null) this.setCapabilityValue('measure_power', attrs.activePower / 10).catch(() => {});
-          if (attrs.rmsVoltage != null) this.setCapabilityValue('measure_voltage', attrs.rmsVoltage / 10).catch(() => {});
-          if (attrs.rmsCurrent != null) this.setCapabilityValue('measure_current', attrs.rmsCurrent / 1000).catch(() => {});
+          if (attrs.activePower != null) await this.setCapabilityValue('measure_power', attrs.activePower / 10).catch(() => {});
+          if (attrs.rmsVoltage != null) await this.setCapabilityValue('measure_voltage', attrs.rmsVoltage / 10).catch(() => {});
+          if (attrs.rmsCurrent != null) await this.setCapabilityValue('measure_current', attrs.rmsCurrent / 1000).catch(() => {});
         } catch (e) { /* silent */ }
       }, 30000);
     }

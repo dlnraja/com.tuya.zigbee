@@ -119,12 +119,12 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
           
           this.log(`[SMOKE-ADV] IAS Zone: smoke=${smokeAlarm}, tamper=${tamperAlarm}, batteryLow=${batteryLow}`);
           
-          this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(() => {});
+          await this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(() => {});
           if (this.hasCapability('alarm_tamper')) {
-            this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(() => {});
+            await this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(() => {});
           }
           if (batteryLow && this.hasCapability('measure_battery')) {
-            this.setCapabilityValue('measure_battery', 10).catch(() => {});
+            await this.setCapabilityValue('measure_battery', 10).catch(() => {});
           }
         });
 

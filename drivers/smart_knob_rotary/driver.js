@@ -16,7 +16,7 @@ async onInit() {
     // TRIGGERS
     // CONDITIONS
     try {
-      const card = this._getFlowCard('smart_knob_rotary_brightness_above', 'condition');
+      const card = this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -28,7 +28,7 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('smart_knob_rotary_set_brightness', 'action');
+      const card = this.homey.flow.getActionCard('smart_knob_rotary_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}

@@ -61,7 +61,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       }
 
       if (val !== null) {
-        return this.setCapabilityValue(mapping.capability, val).catch(() => {});
+        return await this.setCapabilityValue(mapping.capability, val).catch(() => {});
       }
       return;
     }

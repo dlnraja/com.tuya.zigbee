@@ -58,9 +58,9 @@ class RGBBulbDevice extends UnifiedLightBase {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
       const v = parseInt(raw.substring(8, 12), 16);
-      this.setCapabilityValue('light_hue', safeDivide(h, 360)).catch(() => { });
-      this.setCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, safeDivide(v, 1000))).catch(() => { });
+      await this.setCapabilityValue('light_hue', safeDivide(h, 360)).catch(() => { });
+      await this.setCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(() => { });
+      await this.setCapabilityValue('dim', Math.max(0.01, safeDivide(v, 1000))).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -69,8 +69,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     if (!ep1) {return;}
     const color = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
     if (color?.on) {
-      color.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', safeDivide(v, 254)).catch(() => { }));
-      color.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', safeDivide(v, 254)).catch(() => { }));
+      color.on('attr.currentHue', (v) => await this.setCapabilityValue('light_hue', safeDivide(v, 254)).catch(() => { }));
+      color.on('attr.currentSaturation', (v) => await this.setCapabilityValue('light_saturation', safeDivide(v, 254)).catch(() => { }));
     }
   }
   _setupHueListeners() {

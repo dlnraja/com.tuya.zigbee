@@ -118,7 +118,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const watts = smartParse(value, null, { capability: 'measure_power' });
           this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => {});
+            await this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => {});
           }
         });
 
@@ -126,7 +126,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const volts = smartParse(value, null, { capability: 'measure_voltage' });
           this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
-            this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => {});
+            await this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => {});
           }
         });
 
@@ -134,7 +134,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const amps = smartParse(value, null, { capability: 'measure_current' }) || 0;
           this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
-            this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => {});
+            await this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => {});
           }
         });
       }
@@ -157,7 +157,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => {});
+            await this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => {});
           }
         });
       }
@@ -249,13 +249,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => {});
+        await this.setCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => {});
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => {});
+        await this.setCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => {});
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => {});
+        await this.setCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => {});
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -273,7 +273,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => {});
+        await this.setCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => {});
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {
@@ -334,12 +334,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          await this.setCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            await this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;

@@ -238,7 +238,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       if (occCluster) {
         occCluster.on('attr.occupancy', (v) => {
           this._updateLastEventTime();
-          if (this.hasCapability('alarm_motion')) {this.setCapabilityValue('alarm_motion', v > 0).catch(() => {});}
+          if (this.hasCapability('alarm_motion')) {await this.setCapabilityValue('alarm_motion', v > 0).catch(() => {});}
         });
       }
     } catch (e) {}
@@ -252,7 +252,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
         iasCluster.onZoneStatusChangeNotification = (p) => {
           this._updateLastEventTime();
           const parsed = this._parseIASZoneStatus(p?.zoneStatus);
-          if (this.hasCapability('alarm_motion')) {this.setCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});}
+          if (this.hasCapability('alarm_motion')) {await this.setCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});}
         };
       }
     } catch (e) {}

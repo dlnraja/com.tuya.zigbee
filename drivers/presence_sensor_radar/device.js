@@ -51,7 +51,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const result = this._discovery.applyDiscoveredValue(dpId, value);
       if (result) {
         this.log(`[RADAR] 🧠 Auto-Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => { });
+        return await this.setCapabilityValue(result.capability, result.value).catch(() => { });
       }
     }
 
@@ -84,10 +84,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         
         // Re-broadcast last known lux to retain state in Homey
         if (this._inference && this._inference.state.lastLux !== null) {
-           this.setCapabilityValue('measure_luminance', this._inference.state.lastLux).catch(() => {});
+           await this.setCapabilityValue('measure_luminance', this._inference.state.lastLux).catch(() => {});
         }
 
-        return this.setCapabilityValue('alarm_motion', presence).catch(() => {});
+        return await this.setCapabilityValue('alarm_motion', presence).catch(() => {});
       }
       return;
     }
@@ -96,7 +96,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.cap === 'measure_luminance.distance') {
       const distance = value / (mapping.divisor || 100);
       this._inference.updateDistance(distance);
-      return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+      return await this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
     // C. Handle illuminance DPs
@@ -106,13 +106,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       else if (mapping.divisor) {lux = value / mapping.divisor;}
       
       this._inference.updateLux(lux);
-      return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+      return await this.setCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
     // D. Handle battery DPs
     if (mapping.cap === 'measure_battery') {
       const battery = value / (mapping.divisor || 1);
-      return this.setCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
+      return await this.setCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
     }
   }
 

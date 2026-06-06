@@ -154,17 +154,17 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
           const scaled = this._applyScale(v, 'measure_power');
-          this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
+          await this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsVoltage', (v) => {
           const scaled = this._applyScale(v, 'measure_voltage');
-          this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
+          await this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsCurrent', (v) => {
           const scaledCurrent = this._applyScale(v * 1000, 'measure_current');
-          this.setCapabilityValue('measure_current', parseFloat(scaledCurrent)).catch(() => { });
+          await this.setCapabilityValue('measure_current', parseFloat(scaledCurrent)).catch(() => { });
           const scaledPower = this._applyScale(v * 1000, 'meter_power');
-          this.setCapabilityValue('meter_power', parseFloat(scaledPower)).catch(() => { });
+          await this.setCapabilityValue('meter_power', parseFloat(scaledPower)).catch(() => { });
         });
         this.log('[PLUG]  ZCL Metering configured (with scale support)');
       }

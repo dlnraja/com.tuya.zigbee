@@ -119,10 +119,10 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     if (presence === current) {return;}
     if (presence) {
       if (this._intelGate) {this._intelGate.process('alarm_motion', true);}
-      this.setCapabilityValue('alarm_motion', true).catch(() => {});
+      await this.setCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
-      this.setCapabilityValue('alarm_motion', false).catch(() => {});
+      await this.setCapabilityValue('alarm_motion', false).catch(() => {});
       this._triggerPresenceFlows(false);
     }
   }
@@ -137,7 +137,7 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {return;}
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
-    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));}
+    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => await this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));}
   }
   _setupTuyaDPListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
