@@ -3,8 +3,6 @@
 name: Monthly Comprehensive Sync
 
 on:
-  schedule:
-    - cron: '0 1 1 * *'  # 1AM UTC, before nightly (2AM)
   workflow_dispatch:
     inputs:
       dry_run:

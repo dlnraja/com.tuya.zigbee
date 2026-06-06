@@ -3,8 +3,6 @@
 name: Synchronisation Johan Repo (Enhanced)
 
 on:
-  schedule:
-    - cron: '30 2 * * *' # Every day at 02:30 AM
   workflow_dispatch:
     inputs:
       force_sync:

@@ -3,8 +3,6 @@
 name: "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"
 
 on:
-  schedule:
-    - cron: '0 2 * * 0'    # Full overnight scan at 02:00 UTC every Sunday
   workflow_dispatch:
     inputs:
       dry_run:
