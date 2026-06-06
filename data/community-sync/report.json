@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-06T17:30:35.107Z",
+  "ts": "2026-06-06T17:48:21.052Z",
   "currentCount": 10817,
   "src": {
     "johan": {
@@ -19270,37 +19270,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 50,
       "prCount": 2,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 386,
-          "title": "[Auto] 2 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_owgcnkrh",
-            "_TZE200_qasjif9e"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 385,
-          "title": "[Auto] 4 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_owgcnkrh",
-            "_TZE284_iadro9bf",
-            "_TZE204_nbkshs6k",
-            "_TZE204_no6qtgtl"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 382,
-          "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374",
-          "mfrs": [
-            "_TZE200_9xfjixap"
-          ]
-        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
@@ -19471,6 +19443,37 @@
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1392,
+          "title": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
+          "mfrs": [
+            "_TZ3040_o4mkahkc",
+            "_TZ3040_o4mkahkc",
+            "_TZ3040_o4mkahkc",
+            "_TZ3040_o4mkahkc"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1391,
+          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
+          "mfrs": [
+            "_TZ3000_996rpfy6",
+            "_TZ3000_996rpfy6",
+            "_TZ3000_996rpfy6"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1389,
+          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z"
           ]
         }
       ]
