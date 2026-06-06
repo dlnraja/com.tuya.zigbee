@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.147] - 2026-06-06
+## v8.1.149 (2026-06-06)
+
+v8.1.148: Fixed rain sensor _TZ3210_tgvtvdoc moved from water_leak_sensor to rain_sensor., Added 36 new fingerprints from community contributions, enhancing device compatibility.
+
+---
+
+## [8.1.148] - 2026-06-06
+
+### Bug Fixes
+- Fixed rain sensor _TZ3210_tgvtvdoc moved from water_leak_sensor to rain_sensor.
+
+### New Fingerprints
+- Added 36 new fingerprints from community contributions, enhancing device compatibility.
+---
+
+ [8.1.147] - 2026-06-06
 
 ### Bug Fixes
 - Resolved issues with 2 new fingerprints from community sync.
