@@ -34,13 +34,14 @@ class RainSensorDevice extends UnifiedSensorBase {
     }
 
     return {
-      // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
-      1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain alarm boolean
+      // TS0601 DP layout (generic rain sensors)
+      1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
       2: { capability: 'measure_humidity', divisor: 1 }, // Rain level 0-100% (mapped as humidity)
       4: { capability: 'measure_battery', divisor: 1 },  // Battery %
       // TS0207 and some TS0601 variants
       15: { capability: 'measure_battery', divisor: 1 },
       101: { capability: 'measure_luminance', divisor: 1 }, // Illuminance (lux)
+      104: { capability: 'alarm_battery', transform: (v) => (v === 0 || v === false) },
       105: { capability: 'measure_voltage.rain', divisor: 1000 }, // Raw sensor voltage
       106: { capability: 'measure_humidity', divisor: 1 }  // Rain level on some variants
     };
@@ -128,7 +129,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         this.log(`[RAIN-IAS]  Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
-          this.setCapabilityValue('alarm_water', raining).catch(this.error);
+          await this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       };
 
@@ -138,7 +139,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         this.log(`[RAIN-IAS]  Zone attr status: ${status}  raining=${raining}`);
         
         if (this.hasCapability('alarm_water')) {
-          this.setCapabilityValue('alarm_water', raining).catch(this.error);
+          await this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       });
 
