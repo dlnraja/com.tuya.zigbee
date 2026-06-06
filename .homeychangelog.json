@@ -73,7 +73,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.143": {
-    "en": "v8.1.142: Fixed healing of fingerprints after radiator valve cleanup., Completed cleanup of radiator valve collisions., None., None."
+  "8.1.144": {
+    "en": "v8.1.143: Resolved all cross-category collisions., Added 4 new fingerprints from Z2M/ZHA/community., Updated fingerprints.json to sync with new data."
   }
 }
