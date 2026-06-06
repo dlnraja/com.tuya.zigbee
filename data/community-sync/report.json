@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-06T21:44:17.226Z",
+  "ts": "2026-06-06T22:11:35.578Z",
   "currentCount": 10755,
   "src": {
     "johan": {
@@ -19270,29 +19270,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 51,
+      "issueCount": 50,
       "prCount": 2,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 389,
-          "title": "[Auto] 36 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_rco1yzb1",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_fkp5zyho",
-            "_TZ3000_axpdxqgu",
-            "_TZ3000_peszejy7",
-            "_TZ3000_f97vq5mn",
-            "_TZ3000_owgcnkrh",
-            "_TZ3000_nwidmc4n",
-            "_TZ3000_pfc7i3kt",
-            "_TZ3000_iv4eq7eh",
-            "_TZ3000_mzcp0of6",
-            "_TZ3000_avotanj3",
-            "_TZE200_qasjif9e"
-          ]
-        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
@@ -19484,6 +19464,16 @@
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6",
             "_TZ3000_996rpfy6"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1389,
+          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z"
           ]
         }
       ]
