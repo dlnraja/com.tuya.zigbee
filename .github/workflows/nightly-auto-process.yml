@@ -60,6 +60,16 @@ jobs:
         run: node .github/scripts/gmail-imap-reader.js || true
         continue-on-error: true
 
+      - name: "🔏 [2.5/7] Anonymize PII in Diagnostic Data"
+        run: |
+          for f in .github/state/diagnostics-report.json .github/state/resolver-report.json; do
+            [ -f "$f" ] && node scripts/security/pii-anonymizer.js "$f" --output "$f" 2>/dev/null && echo "Anonymized: $f"
+          done
+          find diagnostics/ -name "*.json" 2>/dev/null | while read f; do
+            node scripts/security/pii-anonymizer.js "$f" --output "$f" 2>/dev/null
+          done
+        continue-on-error: true
+
       - name: "💬 [3/7] Scan Forum Messages (T140352 + upstream)"
         run: |
           node .github/scripts/forum-activity-scraper.js || true
