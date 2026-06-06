@@ -45,40 +45,21 @@
   },
   {
     "type": "number",
-    "id": "presence_time",
-    "value": 3,
-    "min": 0,
-    "max": 3600,
-    "units": "s",
-    "label": {
-      "en": "Presence Delay (DP103)",
-      "fr": "Délai Présence (DP103)",
-      "nl": "Aanwezigheidsvertraging (DP103)",
-      "de": "Anwesenheitsverzögerung (DP103)"
-    },
-    "hint": {
-      "en": "Seconds before reporting bed as occupied (0-3600)",
-      "fr": "Secondes avant de signaler le lit comme occupé (0-3600)",
-      "nl": "Seconden voordat bed als bezet wordt gemeld (0-3600)"
-    }
-  },
-  {
-    "type": "number",
-    "id": "pir_delay",
+    "id": "presence_delay",
     "value": 10,
     "min": 0,
     "max": 3600,
     "units": "s",
     "label": {
-      "en": "Unoccupied Delay (DP102)",
-      "fr": "Délai Inoccupé (DP102)",
-      "nl": "Onbezette Vertraging (DP102)",
-      "de": "Unbesetzte Verzögerung (DP102)"
+      "en": "Presence Delay (DP102)",
+      "fr": "Délai Présence (DP102)",
+      "nl": "Aanwezigheidsvertraging (DP102)",
+      "de": "Anwesenheitsverzögerung (DP102)"
     },
     "hint": {
-      "en": "Seconds before reporting bed as unoccupied (0-3600)",
-      "fr": "Secondes avant de signaler le lit comme inoccupé (0-3600)",
-      "nl": "Seconden voordat bed als onbezet wordt gemeld (0-3600)"
+      "en": "Seconds before reporting bed as occupied (0-3600)",
+      "fr": "Secondes avant de signaler le lit comme occupé (0-3600)",
+      "nl": "Seconden voordat bed als bezet wordt gemeld (0-3600)"
     }
   },
   {

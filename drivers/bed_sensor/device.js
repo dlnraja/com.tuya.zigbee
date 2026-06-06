@@ -10,20 +10,23 @@ class BedSensorDevice extends UnifiedSensorBase {
   }
 
   get dpMappings() {
-    // v8.1.129: FIX #328 #378 — Complete DP remap per Z2M reference
-    // github.com/Koenkk/zigbee2mqtt/issues/31079
-    // Z2M uses trueFalse0: DP1=0 → occupied, DP1=1 → unoccupied
-    // Homey alarm_contact: true = "contact open" = unoccupied
-    // So DP1=1 (unoccupied) → alarm_contact=true ✓
-    //    DP1=0 (occupied)  → alarm_contact=false ✓
+    // v8.1.145: CORRECTED per Z2M PR #11584 (github.com/Koenkk/zigbee-herdsman-converters/pull/11584)
+    // DP1 = occupancy (trueFalse0: 0=occupied, 1=unoccupied)
+    // DP4 = battery (raw %)
+    // DP9 = sensitivity (enum: 0=low, 1=middle, 2=high)
+    // DP12 = illuminance (raw lux, 0-10000)
+    // DP101 = interval_time (sampling interval, minutes)
+    // DP102 = presence_delay (delay to report no presence, seconds)
+    // DP104 = work_state (READ-ONLY enum, NOT battery!)
+    // DP103 does NOT exist in Z2M definition
     return {
       1: { capability: 'alarm_contact', transform: (v) => (v !== 0 && v !== false) },
       4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
       12: { capability: 'measure_pressure', transform: (v) => v },
       9: { capability: null, internal: 'sensitivity', writable: true },
       101: { capability: null, internal: 'interval_time', writable: true },
-      102: { capability: null, internal: 'pir_delay', writable: true },
-      103: { capability: null, internal: 'presence_time', writable: true },
+      102: { capability: null, internal: 'presence_delay', writable: true },
+      // DP103 REMOVED — does not exist in Z2M definition for _TZE200_seq9cm6u
       // DP104 REMOVED — it's work_state (read-only), NOT battery!
     };
   }
@@ -42,22 +45,19 @@ class BedSensorDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    // v8.1.127: FIX #378 - Filter bed-specific keys before super.onSettings()
-    // The base class maps 'sensitivity' to DP2 (value), but bed sensor uses DP9 (enum).
-    const BED_KEYS = ['sensitivity', 'interval_time', 'pir_delay', 'presence_time'];
+    // v8.1.145: Corrected DP writes per Z2M PR #11584
+    // DP9 = sensitivity (enum), DP101 = interval_time (min), DP102 = presence_delay (s)
+    const BED_KEYS = ['sensitivity', 'interval_time', 'presence_delay'];
     const superKeys = changedKeys.filter(k => !BED_KEYS.includes(k));
 
     if (superKeys.length > 0) {
       await super.onSettings({ oldSettings, newSettings, changedKeys: superKeys });
     }
 
-    // DP writes per Z2M reference (github.com/Koenkk/zigbee2mqtt/issues/31079)
-    // DP9 = sensitivity (enum), DP101 = interval_time (min), DP102 = pir_delay (s), DP103 = presence_time (s)
     const dpWrites = {
       sensitivity: { dp: 9, type: 'enum' },
       interval_time: { dp: 101, type: 'value' },
-      pir_delay: { dp: 102, type: 'value' },
-      presence_time: { dp: 103, type: 'value' },
+      presence_delay: { dp: 102, type: 'value' },
     };
 
     for (const key of changedKeys) {
