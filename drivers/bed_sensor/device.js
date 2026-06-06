@@ -4,18 +4,20 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 class BedSensorDevice extends UnifiedSensorBase {
 
+  // v8.1.129: Override sensorCapabilities — bed sensor has NO temperature/humidity
+  get sensorCapabilities() {
+    return ['alarm_contact', 'measure_battery', 'alarm_battery', 'measure_pressure'];
+  }
+
   get dpMappings() {
-    // v8.1.127: FIX #378 - Complete DP remap per Z2M reference (github.com/Koenkk/zigbee2mqtt/issues/31079)
-    // DP1 = occupancy (0=occupied, 1=unoccupied — inverted for Homey alarm_contact)
-    // DP4 = battery percentage (raw %)
-    // DP9 = PIR sensitivity (enum: 0=low, 1=middle, 2=high)
-    // DP12 = pressure (raw)
-    // DP101 = interval_time (sampling interval, minutes, 5-720, read/write)
-    // DP102 = pir_delay (delay to report no presence, seconds, 0-3600, read/write)
-    // DP103 = presence_time (delay to report presence, seconds, 0-3600, read/write)
-    // DP104 = work_state (READ-ONLY enum: 0=presence,1=none,2=presence_5min,3=presence_30min,4=none_5min,5=none_30min)
+    // v8.1.129: FIX #328 #378 — Complete DP remap per Z2M reference
+    // github.com/Koenkk/zigbee2mqtt/issues/31079
+    // Z2M uses trueFalse0: DP1=0 → occupied, DP1=1 → unoccupied
+    // Homey alarm_contact: true = "contact open" = unoccupied
+    // So DP1=1 (unoccupied) → alarm_contact=true ✓
+    //    DP1=0 (occupied)  → alarm_contact=false ✓
     return {
-      1: { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
+      1: { capability: 'alarm_contact', transform: (v) => (v !== 0 && v !== false) },
       4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
       12: { capability: 'measure_pressure', transform: (v) => v },
       9: { capability: null, internal: 'sensitivity', writable: true },
@@ -30,13 +32,12 @@ class BedSensorDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     this.log('[BED] Bed Sensor initializing...');
 
-    if (this.hasCapability('measure_temperature')) {
-      await this.removeCapability('measure_temperature').catch(() => {});
-      this.log('[BED] Removed bogus measure_temperature capability');
-    }
-    if (this.hasCapability('measure_humidity')) {
-      await this.removeCapability('measure_humidity').catch(() => {});
-      this.log('[BED] Removed bogus measure_humidity capability');
+    // v8.1.129: Remove ALL bogus capabilities (bed sensor has no temp/humidity)
+    for (const cap of ['measure_temperature', 'measure_humidity', 'measure_luminance']) {
+      if (this.hasCapability(cap)) {
+        await this.removeCapability(cap).catch(() => {});
+        this.log(`[BED] Removed bogus ${cap} capability`);
+      }
     }
   }
 
