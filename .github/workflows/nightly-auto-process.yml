@@ -92,16 +92,45 @@ jobs:
 
       - name: "🤖 [7/7] Auto-Resolve Diagnostics & Auto-Heal (skip already-processed)"
         run: |
-          # State tracking: skip crash logs / diag logs already processed
-          # unless an open issue references them or a user mentions them
-          STATE_FILE=".github/state/processed-diagnostics.json"
-          if [ ! -f "$STATE_FILE" ]; then echo '{"processed":[]}' > "$STATE_FILE"; fi
+          # ═══════════════════════════════════════════════════════════════
+          # SAFETY GATE: Don't re-process crash/diag logs already handled
+          # UNLESS referenced in: GitHub issues/PRs OR Homey Community Forum
+          # ═══════════════════════════════════════════════════════════════
 
-          # Check for user-referenced diagnostics in open issues
-          REFERENCED=$(gh issue list --state open --json body -q '.[].body' 2>/dev/null | grep -oE '[a-f0-9]{8,}' | sort -u || true)
-          echo "User-referenced diagnostic IDs: ${REFERENCED:-none}"
+          # Step 1: Scan GitHub issues + PRs for diagnostic IDs
+          GH_REFS=$(gh issue list --state open --json body -q '.[].body' 2>/dev/null | grep -oE '[a-f0-9]{8,}' | sort -u || true)
+          GH_PR_REFS=$(gh pr list --state open --json body -q '.[].body' 2>/dev/null | grep -oE '[a-f0-9]{8,}' | sort -u || true)
 
-          # Run resolver (it reads state file internally and skips processed IDs)
+          # Step 2: Scan Homey Community Forum (T140352) for diagnostic IDs
+          FORUM_REFS=""
+          if [ -f ".github/state/forum-activity-report.json" ]; then
+            FORUM_REFS=$(node -e "
+              try {
+                const r=JSON.parse(require('fs').readFileSync('.github/state/forum-activity-report.json','utf8'));
+                const posts=r.posts||r.recentPosts||[];
+                const ids=new Set();
+                posts.forEach(p=>{
+                  const body=p.raw||p.body||p.cleaned||'';
+                  const matches=body.match(/[a-f0-9]{8,}/g)||[];
+                  matches.forEach(m=>ids.add(m));
+                  if(/crash|diag|error|stack|trace|fatal/i.test(body)){
+                    (body.match(/\\b[a-f0-9]{16,}\\b/g)||[]).forEach(d=>ids.add(d));
+                  }
+                });
+                console.log([...ids].join(' '));
+              } catch(e) { console.log(''); }
+            " 2>/dev/null || true)
+          fi
+
+          # Step 3: Merge all referenced IDs
+          ALL_REFS=$(echo "$GH_REFS $GH_PR_REFS $FORUM_REFS" | tr ' ' '\n' | sort -u | tr '\n' ' ')
+          export REFERENCED_IDS="$ALL_REFS"
+          echo "Referenced IDs (GitHub + Forum): ${ALL_REFS:-none}"
+
+          # Step 4: Run safety gate (determines what to skip vs re-process)
+          node scripts/validation/diag-safety-gate.js || true
+
+          # Step 5: Run resolver + auto-healers
           node .github/scripts/diagnostic-auto-resolver.js || true
           node .github/scripts/diagnostic-auto-heal-radar.js || true
           node scripts/automation/fix-crashers.js || true
@@ -132,6 +161,24 @@ jobs:
         run: |
           echo "Validating DP divisors against Z2M reference data..."
           node scripts/validation/dp-mapping-validator.js || true
+
+      - name: "🏥 Fingerprint Health Check (no empty MFs, no wildcards)"
+        run: node scripts/validation/check-fingerprint-health.js
+
+      - name: "🛡️ Dual-Layer Integrity (no AggregateError)"
+        run: |
+          node - << 'GATE'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json'));
+          const errs = [];
+          (app.drivers||[]).forEach(d => {
+            if (d.zigbee && d.zigbee.fingerprints?.length > 0 && (!d.zigbee.manufacturerName || d.zigbee.manufacturerName.length === 0)) {
+              errs.push(d.id);
+            }
+          });
+          if (errs.length) { console.error('AggregateError risk:', errs.length, 'drivers'); process.exit(1); }
+          console.log('Dual-Layer: PASS');
+          GATE
 
       # ─── Pipeline Step 6c Safety Gate (WORKFLOW_GUIDELINES.md) ───
       # Order: fix-flow-cards → revert-battery-conflicts → fix-empty-caps → validate
