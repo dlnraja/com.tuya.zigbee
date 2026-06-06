@@ -507,7 +507,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_temperature'))
                 {this.addCapability('measure_temperature').catch(() => {});}
-              this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+              await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL]  Temperature out of range: ${temp}Â°C (raw: ${data.measuredValue})`);
             }
@@ -534,7 +534,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_humidity'))
                 {this.addCapability('measure_humidity').catch(() => {});}
-              this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+              await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL]  Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
@@ -554,7 +554,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_luminance'))
                 {this.addCapability('measure_luminance').catch(() => {});}
-              this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+              await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
@@ -589,7 +589,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // v5.8.7: Permissive - auto-add capability from ZCL data
             if (!this.hasCapability('measure_battery'))
               {this.addCapability('measure_battery').catch(() => {});}
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -1100,7 +1100,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log(`[ZCL-DATA] motion_sensor.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.18: Trigger flow card
@@ -1131,7 +1131,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status}  alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.104: Also read temp/humidity on this event
@@ -1536,7 +1536,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       // Only update if confidence is high enough
       if (confidence >= 50) {
-        this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
+        await this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
 
         // Trigger flow if motion detected
         if (inferredMotion && this.driver?.motionTrigger) {
@@ -1652,7 +1652,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     if (significantChange || timeToForce) {
       this.log(`[LUX-SMART]  Luminance update: ${lux} lux (change=${significantChange}, force=${timeToForce})`);
-      this.setCapabilityValue('measure_luminance', lux).catch(() => { });
+      await this.setCapabilityValue('measure_luminance', lux).catch(() => { });
       this._luxSmartReporting.lastLuxValue = lux;
       this._luxSmartReporting.lastLuxTime = now;
       

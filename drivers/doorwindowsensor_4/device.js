@@ -36,15 +36,15 @@ class doorwindowsensor_4 extends ZigBeeDevice {
 
   onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
     this.log('IASZoneStatusChangeNotification received for DS01:', zoneStatus, extendedStatus, zoneId, delay);
-    this.setCapabilityValue('alarm_contact', zoneStatus.alarm1).catch(this.error);
-    this.setCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
+    await this.setCapabilityValue('alarm_contact', zoneStatus.alarm1).catch(this.error);
+    await this.setCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
   }
 
   onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
 		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
 		this.log("DS01 measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
-		this.setCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
-		this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+		await this.setCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
+		await this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
   }
 
 

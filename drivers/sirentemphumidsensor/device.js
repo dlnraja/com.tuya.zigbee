@@ -503,7 +503,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       humidityOffset,
     );
 
-    this.setCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
+    await this.setCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
   }
 
   reportTemperatureCapacity(measuredValue) {
@@ -517,19 +517,19 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       temperatureOffset,
     );
 
-    this.setCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
+    await this.setCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
   }
 
   /*   reportBatteryPercentageCapacity(measuredValue) {
     const parsedValue = Number(measuredValue);
 
     this.log('measure_battery | battery percentage remaining:', parsedValue, '%');
-    this.setCapabilityValue('measure_battery', parsedValue).catch(this.error);
+    await this.setCapabilityValue('measure_battery', parsedValue).catch(this.error);
   } */
 
   reportAlarmBatteryCapacity(measuredValue) {
     this.log('alarm_battery | battery alarm:', measuredValue);
-    this.setCapabilityValue('alarm_battery', measuredValue).catch(this.error);
+    await this.setCapabilityValue('alarm_battery', measuredValue).catch(this.error);
   }
 
   async onSettings({ newSettings, changedKeys }) {

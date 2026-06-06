@@ -313,7 +313,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   _updateSimulatedBrightness(delta) {
     this._simulatedBrightness = Math.max(0, Math.min(1, this._simulatedBrightness + delta));
     if (this.hasCapability('dim')) {
-      this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
+      await this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
     this.log('Simulated brightness:', Math.round(this._simulatedBrightness * 100), '%');
   }
@@ -322,7 +322,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (this.hasCapability('button.rotate_left')) {
       await this.setCapabilityValue('button.rotate_left', true).catch(this.error);
       this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.rotate_left', false).catch(this.error);
+        await this.setCapabilityValue('button.rotate_left', false).catch(this.error);
       }, 100);
     }
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
@@ -335,7 +335,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (this.hasCapability('button.rotate_right')) {
       await this.setCapabilityValue('button.rotate_right', true).catch(this.error);
       this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.rotate_right', false).catch(this.error);
+        await this.setCapabilityValue('button.rotate_right', false).catch(this.error);
       }, 100);
     }
     const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
@@ -348,7 +348,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (this.hasCapability('button.press')) {
       await this.setCapabilityValue('button.press', true).catch(this.error);
       this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.press', false).catch(this.error);
+        await this.setCapabilityValue('button.press', false).catch(this.error);
       }, 100);
     }
     try {

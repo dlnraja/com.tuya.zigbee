@@ -12,7 +12,7 @@ class DimmerWallSwitchDevice extends ZigBeeDevice {
     if (ep && ep.clusters.levelControl) {
       ep.clusters.levelControl.on('attr.currentLevel', (value) => {
         const dim = value / 254;
-        this.setCapabilityValue('dim', dim).catch(() => {});
+        await this.setCapabilityValue('dim', dim).catch(() => {});
       });
       this._readInitialLevel(ep.clusters.levelControl);
     }
@@ -22,7 +22,7 @@ class DimmerWallSwitchDevice extends ZigBeeDevice {
     try {
       const data = await cluster.readAttributes(['currentLevel']).catch(() => ({}));
       if (data.currentLevel != null) {
-        this.setCapabilityValue('dim', data.currentLevel / 254).catch(() => {});
+        await this.setCapabilityValue('dim', data.currentLevel / 254).catch(() => {});
       }
     } catch (e) {
       this.log('Initial level read failed:', e.message);

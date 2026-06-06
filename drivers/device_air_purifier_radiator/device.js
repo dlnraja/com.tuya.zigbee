@@ -229,10 +229,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
     try {
       const thermo = ep1.clusters?.hvacThermostat;if (thermo?.on) {
-        thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
-        thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', v * 100).catch(() => { }));
+        thermo.on('attr.localTemperature', (v) => await this.setCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
+        thermo.on('attr.occupiedHeatingSetpoint', (v) => await this.setCapabilityValue('target_temperature', v * 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
-          if (this.hasCapability('dim')) this.setCapabilityValue('dim', v * 100).catch(() => { });
+          if (this.hasCapability('dim')) await this.setCapabilityValue('dim', v * 100).catch(() => { });
       });
         this.log('[TRV]  ZCL Thermostat configured');
       }

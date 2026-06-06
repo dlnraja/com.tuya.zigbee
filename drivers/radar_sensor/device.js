@@ -72,7 +72,7 @@ class radarSensor extends TuyaSpecificClusterDevice {
     switch (dp) {
       case dataPoints.tshpsPresenceState:
         this.log("presence state: "+ value)
-        this.setCapabilityValue('alarm_motion', Boolean(value))
+        await this.setCapabilityValue('alarm_motion', Boolean(value))
         break;
       case dataPoints.tshpscSensitivity:
         this.log("sensitivity state: "+ value)
@@ -83,7 +83,7 @@ class radarSensor extends TuyaSpecificClusterDevice {
         break;
       case dataPoints.tshpsTargetDistance:
         if (new Date().getSeconds() % distanceUpdateInterval === 0) {
-          this.setCapabilityValue('target_distance', value/100);
+          await this.setCapabilityValue('target_distance', value/100);
         }
 
         break;
@@ -121,12 +121,12 @@ class radarSensor extends TuyaSpecificClusterDevice {
 
   onIlluminanceMeasuredAttributeReport(measuredValue) {
     this.log('measure_luminance | Luminance - measuredValue (lux):', measuredValue);
-    this.setCapabilityValue('measure_luminance', measuredValue);
+    await this.setCapabilityValue('measure_luminance', measuredValue);
   }
 
   onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
     this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-    this.setCapabilityValue('alarm_motion', zoneStatus.alarm1);
+    await this.setCapabilityValue('alarm_motion', zoneStatus.alarm1);
   }
 
 }

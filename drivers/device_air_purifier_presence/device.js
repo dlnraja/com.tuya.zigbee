@@ -136,10 +136,10 @@ class GenericAirPurifierPresenceDevice extends UnifiedSensorBase {
 
     if (presence) {
       if (this._intelGate) this._intelGate.process('alarm_motion', true);
-      this.setCapabilityValue('alarm_motion', true).catch(() => {});
+      await this.setCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
-      this.setCapabilityValue('alarm_motion', false).catch(() => {});
+      await this.setCapabilityValue('alarm_motion', false).catch(() => {});
       this._triggerPresenceFlows(false);
     }
   }
@@ -160,14 +160,14 @@ class GenericAirPurifierPresenceDevice extends UnifiedSensorBase {
     const temp = ep1.clusters?.msTemperatureMeasurement;
     if (temp?.on) {
       temp.on('attr.measuredValue', (v) => {
-        this.setCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
+        await this.setCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
       });
     }
 
     const hum = ep1.clusters?.msRelativeHumidity;
     if (hum?.on) {
       hum.on('attr.measuredValue', (v) => {
-        this.setCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
+        await this.setCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
       });
     }
   }

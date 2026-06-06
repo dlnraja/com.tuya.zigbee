@@ -68,17 +68,17 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       case 9: // Target Distance
         const distance = smartParse(value, null, { capability: 'measure_temperature' });
         this._inference.updateDistance(distance);
-        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => { });
+        return await this.setCapabilityValue('measure_luminance.distance', distance).catch(() => { });
 
       case 104: // Illuminance
         const lux = Math.max(0, value + (this.getSetting('illuminance_calibration') || 0));
         this._inference.updateLux(lux);
-        return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+        return await this.setCapabilityValue('measure_luminance', lux).catch(() => {});
 
       case 101: // Relay / Detection Delay
       case 16:  // Relay Alt
         if (dpType === 'bool' || typeof value === 'boolean') {
-          return this.setCapabilityValue('onoff', value).catch(() => {});
+          return await this.setCapabilityValue('onoff', value).catch(() => {});
         }
         break;
     }
@@ -88,7 +88,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       const result = this._discovery.analyzeDP(dpId, value);
       if (result && result.confidence >= 80) {
         this.log(`[CEILING] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value}`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => {});
+        return await this.setCapabilityValue(result.capability, result.value).catch(() => {});
       }
     }
   }

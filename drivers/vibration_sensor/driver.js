@@ -19,7 +19,7 @@ async onInit() {
     conditions.forEach(cond => {
       try {
         const id = `${P}_${cond}`;
-        const card = this._getFlowCard(id, 'condition');
+        const card = this.homey.flow.getConditionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) {return false;}

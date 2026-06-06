@@ -353,7 +353,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.activePower', (value) => {
             const power = safeDivide(value, pDiv);
             this.log(`[ENERGY-ZCL] Power: ${power}W (raw=${value} div=${pDiv})`);
-            this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
+            await this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
       });
         }
 
@@ -363,7 +363,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.rmsVoltage', (value) => {
             const voltage = safeDivide(value, vDiv);
             this.log(`[ENERGY-ZCL] Voltage: ${voltage}V (raw=${value} div=${vDiv})`);
-            this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
+            await this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
       });
         }
 
@@ -373,7 +373,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.rmsCurrent', (value) => {
             const current = safeDivide(value, cDiv);
             this.log(`[ENERGY-ZCL] Current: ${current}A (raw=${value} div=${cDiv})`);
-            this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
+            await this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
       });
         }
 
@@ -409,7 +409,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           mc.on('attr.currentSummDelivered', (v) => {
             const e = parseE(v);
             this.log(`[ENERGY-ZCL] Energy: ${e}kWh`);
-            this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
+            await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
       });
         }
         // v5.11.26: Poll metering  many TS011F don't auto-report energy

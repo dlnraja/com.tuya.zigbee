@@ -51,7 +51,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const g = dp - 23;
       const cap = `onoff.gang${g}`;
       if (this.hasCapability(cap)) {
-        this.setCapabilityValue(cap, !!value).catch(this.error);
+        await this.setCapabilityValue(cap, !!value).catch(this.error);
       }
       const flowCardId = `climate_sensor_smart_smart_scene_panel_switch_${g}_changed`;
       (() => { try { return this.homey.flow.getTriggerCard(flowCardId); } catch(e) { return null; } })()?.trigger(this, { state: !!value }, {}).catch(() => {})

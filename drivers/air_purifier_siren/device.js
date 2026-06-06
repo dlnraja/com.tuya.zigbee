@@ -311,7 +311,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   reportAlarmBatteryCapacity(measuredValue) {
-    this.setCapabilityValue('alarm_battery', measuredValue).catch(this.error);
+    await this.setCapabilityValue('alarm_battery', measuredValue).catch(this.error);
   }
 
   async onSettings({ newSettings, changedKeys }) {

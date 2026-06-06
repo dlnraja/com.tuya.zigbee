@@ -33,7 +33,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card = this._getFlowCard(triggerId, 'trigger');
+          const card = this.homey.flow.getTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -60,7 +60,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card = this._getFlowCard(triggerId, 'trigger');
+          const card = this.homey.flow.getTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -78,7 +78,7 @@ class Button1GangDriver extends BaseZigBeeDriver {
 
       // Fix #333: Battery low trigger (was using undefined batteryCard variable)
       try {
-        const batteryCard = this._getFlowCard('button_wireless_smart_battery_low', 'trigger');
+        const batteryCard = this.homey.flow.getTriggerCard('button_wireless_smart_battery_low');
         if (batteryCard) {
           batteryCard.registerRunListener(async (args, state) => {
             if (!args.device) { return false; }

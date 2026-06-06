@@ -207,7 +207,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             const temp = data.measuredValue * 100;
             this.log(`[ZCL]  Temperature: ${temp}Â°C`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -226,7 +226,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             this._registerZigbeeHit?.();
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
             if (this.hasCapability('measure_humidity')) {
-              this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+              await this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
             }
           }
         }
@@ -243,7 +243,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             const battery = Math.round(data.batteryPercentageRemaining);
             this.log(`[ZCL]  Battery: ${battery}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -314,7 +314,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const moisture = this.getCapabilityValue('measure_humidity.soil');
     if (moisture !== null && this.hasCapability('alarm_water')) {
       const alarm = moisture < this._soilWarningThreshold;
-      this.setCapabilityValue('alarm_water', alarm).catch(() => { });
+      await this.setCapabilityValue('alarm_water', alarm).catch(() => { });
       this.log(`[SOIL]  Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
     }
   }

@@ -155,7 +155,7 @@ class AirQualityCO2Device extends SensorBase {
         temp.on('attr.measuredValue', (v) => {
           const t = parseFloat(v) / 100;
           if (t >= -40 && t <= 80) {
-            this.setCapabilityValue('measure_temperature', t).catch(() => { });
+            await this.setCapabilityValue('measure_temperature', t).catch(() => { });
           } else {
             this.log('[CO2] ZCL temp rejected:', t);
           }
@@ -166,7 +166,7 @@ class AirQualityCO2Device extends SensorBase {
         hum.on('attr.measuredValue', (v) => {
           const h = parseFloat(v) / 100;
           if (h >= 0 && h <= 100) {
-            this.setCapabilityValue('measure_humidity', h).catch(() => { });
+            await this.setCapabilityValue('measure_humidity', h).catch(() => { });
           } else {
             this.log('[CO2] ZCL hum rejected:', h);
           }

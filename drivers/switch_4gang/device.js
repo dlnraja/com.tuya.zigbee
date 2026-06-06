@@ -145,11 +145,11 @@ class Switch4GangDevice extends BaseClass {
 
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          await this.setCapabilityValue(capName, value).catch(() => {});
 
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            await this.setCapabilityValue(capName, !value).catch(() => {});
           }
 
           if (isPhysical && (mode === 'auto' || mode === 'both')) {

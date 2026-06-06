@@ -34,7 +34,7 @@ async onInit() {
     ];
     for (const id of triggers) {
       try {
-        this._getFlowCard(id, 'trigger');
+        this.homey.flow.getTriggerCard(id);
         this.log(`Trigger: ${id}`);
       } catch (err) {
         this.error(`Failed trigger ${id}: ${err.message}`);
@@ -43,7 +43,7 @@ async onInit() {
 
     // Condition: is_on
     try {
-      const card = this._getFlowCard('switch_dimmer_1gang_is_on', 'condition');
+      const card = this.homey.flow.getConditionCard('switch_dimmer_1gang_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -57,7 +57,7 @@ async onInit() {
 
     // Action: set brightness
     try {
-      const card = this._getFlowCard('switch_dimmer_1gang_set_brightness', 'action');
+      const card = this.homey.flow.getActionCard('switch_dimmer_1gang_set_brightness');
       if (card) {card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           const dim = safeParse(args.brightness, 100);
@@ -71,7 +71,7 @@ async onInit() {
 
     // Action: turn on
     try {
-      const card = this._getFlowCard('switch_dimmer_1gang_turn_on', 'action');
+      const card = this.homey.flow.getActionCard('switch_dimmer_1gang_turn_on');
       if (card) {card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -83,7 +83,7 @@ async onInit() {
 
     // Action: turn off
     try {
-      const card = this._getFlowCard('switch_dimmer_1gang_turn_off', 'action');
+      const card = this.homey.flow.getActionCard('switch_dimmer_1gang_turn_off');
       if (card) {card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -95,7 +95,7 @@ async onInit() {
 
     // Action: toggle
     try {
-      const card = this._getFlowCard('switch_dimmer_1gang_toggle', 'action');
+      const card = this.homey.flow.getActionCard('switch_dimmer_1gang_toggle');
       if (card) {card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           const cur = args.device.getCapabilityValue('onoff');

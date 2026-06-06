@@ -61,9 +61,9 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
       // DP1 is a relay pulse (0→1 within ~100ms) — intentionally not listened.
       this.tuyaEF00Manager.on('dp-3', (value) => {
         const isOpen = !!value;
-        this.setCapabilityValue('alarm_contact', isOpen)
+        await this.setCapabilityValue('alarm_contact', isOpen)
           .catch(err => this.error(`[GarageOpener] alarm_contact set failed: ${err.message}`));
-        this.setCapabilityValue('garagedoor_closed', !isOpen)
+        await this.setCapabilityValue('garagedoor_closed', !isOpen)
           .catch(err => this.error(`[GarageOpener] garagedoor_closed set failed: ${err.message}`));
         this.log(`[GarageOpener] DP3 → door ${isOpen ? 'OPEN' : 'CLOSED'} (raw=${value})`);
       });

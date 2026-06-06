@@ -47,15 +47,15 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     if (elecCluster && typeof elecCluster.on === 'function') {
       elecCluster.on('attr.activePower', (value) => {
         const watts = safeMultiply(value, 10);
-        if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+        if (this.hasCapability('measure_power')) await this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
       });
       elecCluster.on('attr.rmsVoltage', (value) => {
         const volts = safeMultiply(value, 10);
-        if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+        if (this.hasCapability('measure_voltage')) await this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
       });
       elecCluster.on('attr.rmsCurrent', (value) => {
         const amps = value * 1000;
-        if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+        if (this.hasCapability('measure_current')) await this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
       });
       this._readElectricalAttributes(elecCluster);
     }
@@ -64,7 +64,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     if (meteringCluster && typeof meteringCluster.on === 'function') {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         const kwh = value * 1000;
-        if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+        if (this.hasCapability('meter_power')) await this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
       });
       this._readMeteringAttributes(meteringCluster);
     }
@@ -74,13 +74,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     try {
       const attrs = await cluster.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).catch(() => ({}));
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => { });
+        await this.setCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => { });
+        await this.setCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => { });
+        await this.setCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => { });
       }
     } catch (e) {
       this.log('[SWITCH-2G] Initial electrical read failed:', e.message);
@@ -91,7 +91,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     try {
       const attrs = await cluster.readAttributes(['currentSummationDelivered']).catch(() => ({}));
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', attrs.currentSummationDelivered * 1000).catch(() => { });
+        await this.setCapabilityValue('meter_power', attrs.currentSummationDelivered * 1000).catch(() => { });
       }
     } catch (e) {
       this.log('[SWITCH-2G] Initial metering read failed:', e.message);
@@ -162,11 +162,11 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
           if (this._zclState.lastState[epNum] !== value) {
             this._zclState.lastState[epNum] = value;
-            this.setCapabilityValue(capName, !!value).catch(() => {});
+            await this.setCapabilityValue(capName, !!value).catch(() => {});
 
             const mode = this.sceneMode;
             if (mode === 'magic') {
-              this.setCapabilityValue(capName, !value).catch(() => {});
+              await this.setCapabilityValue(capName, !value).catch(() => {});
             }
             if (isPhysical && (mode === 'auto' || mode === 'both')) {
               const flowId = `button_wireless_switch_switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;

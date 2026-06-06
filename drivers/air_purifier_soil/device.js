@@ -43,11 +43,11 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
 
     if (dp === 3) {
-      this.setCapabilityValue('measure_humidity.soil', parseFloat(parsedValue)).catch(() => { });
+      await this.setCapabilityValue('measure_humidity.soil', parseFloat(parsedValue)).catch(() => { });
     } else if (dp === 5) {
       let temp = parsedValue;
       if (temp > 100) temp = safeMultiply(temp, 10);
-      this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+      await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
     } else {
       super._handleDP(dpId, value);
     }

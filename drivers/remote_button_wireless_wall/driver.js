@@ -39,7 +39,7 @@ async onInit() {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card = this._getFlowCard(triggerId, 'trigger');
+          const card = this.homey.flow.getTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -64,7 +64,7 @@ async onInit() {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card = this._getFlowCard(triggerId, 'trigger');
+          const card = this.homey.flow.getTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {

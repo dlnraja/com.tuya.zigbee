@@ -45,7 +45,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       if (isPhysical) {
         const id = v ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_on' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_off';
         const card = this.homey.app?._safeGetTriggerCard?.(id );
-        if (card) card.trigger(this, {}, {}).catch(() => {});
+        if (card) card
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');

@@ -338,7 +338,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
           this._updateLastEventTime();
           const motion = value > 0;
           if (this.hasCapability('alarm_motion')) {
-            this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+            await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
           }
         });
         try {
@@ -346,7 +346,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
           if (attrs?.occupancy !== undefined) {
             const motion = attrs.occupancy > 0;
             if (this.hasCapability('alarm_motion')) {
-              this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+              await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
             }
           }
         } catch (e) { }
@@ -364,14 +364,14 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
           const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
           const motion = parsed.alarm1 || parsed.alarm2;
           if (this.hasCapability('alarm_motion')) {
-            this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+            await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
           }
         };
         iasCluster.on('attr.zoneStatus', (status) => {
           this._updateLastEventTime();
           const motion = (status & 0x01) !== 0 || (status & 0x02) !== 0;
           if (this.hasCapability('alarm_motion')) {
-            this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+            await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
           }
         });
       }
@@ -391,12 +391,12 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       break;
     case 101:
       if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-        this.setCapabilityValue('alarm_motion', true).catch(this.error);
+        await this.setCapabilityValue('alarm_motion', true).catch(this.error);
       }
       break;
     case 102:
       if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-        this.setCapabilityValue('alarm_motion', true).catch(this.error);
+        await this.setCapabilityValue('alarm_motion', true).catch(this.error);
       }
       break;
     }
