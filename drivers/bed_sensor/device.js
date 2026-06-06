@@ -37,8 +37,16 @@ class BedSensorDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    await super.onSettings({ oldSettings, newSettings, changedKeys });
-    
+    // v8.1.126: FIX #378 - Filter bed-specific keys before super.onSettings()
+    // The base class maps 'sensitivity' to DP2 (value), but bed sensor uses DP9 (enum).
+    // Passing bed-specific keys to super causes wrong DP writes and UI errors.
+    const BED_KEYS = ['sensitivity', 'delay_unoccupied', 'delay_occupied'];
+    const superKeys = changedKeys.filter(k => !BED_KEYS.includes(k));
+
+    if (superKeys.length > 0) {
+      await super.onSettings({ oldSettings, newSettings, changedKeys: superKeys });
+    }
+
     // v8.1.117: FIX #371 - Corrected DP numbers per Z2M reference
     // DP9 = sensitivity (enum), DP101 = pir_delay (unoccupied), DP102 = presence_time (occupied)
     const dpWrites = {
@@ -50,7 +58,7 @@ class BedSensorDevice extends UnifiedSensorBase {
     for (const key of changedKeys) {
       const mapping = dpWrites[key];
       if (!mapping) continue;
-      
+
       let value = newSettings[key];
       if (key === 'sensitivity') {
         const valMap = { low: 0, middle: 1, high: 2, '0': 0, '1': 1, '2': 2 };
@@ -60,11 +68,16 @@ class BedSensorDevice extends UnifiedSensorBase {
       }
 
       this.log(`[BED] Setting ${key} (DP${mapping.dp}) to`, value);
-      if (this.tuyaEF00Manager) {
-        const type = key === 'sensitivity' ? 'enum' : 'value';
-        await this.tuyaEF00Manager.sendDP(mapping.dp, value, type);
-      } else {
-        this.log(`[BED] WARNING: tuyaEF00Manager not available for DP${mapping.dp} write`);
+      try {
+        if (this.tuyaEF00Manager) {
+          const type = key === 'sensitivity' ? 'enum' : 'value';
+          await this.tuyaEF00Manager.sendDP(mapping.dp, value, type);
+          this.log(`[BED] ✅ ${key} written successfully`);
+        } else {
+          this.log(`[BED] ⚠️ tuyaEF00Manager not available for DP${mapping.dp} write`);
+        }
+      } catch (err) {
+        this.log(`[BED] ❌ Error writing ${key} (DP${mapping.dp}):`, err.message);
       }
     }
   }
