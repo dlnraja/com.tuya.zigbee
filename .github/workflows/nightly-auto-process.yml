@@ -82,6 +82,15 @@ jobs:
         run: node .github/scripts/issue-deep-researcher.js || true
         continue-on-error: true
 
+      - name: "🔬 [4.5/7] Deep Investigation (Z2M/ZHA/Domoticz cross-ref)"
+        run: |
+          echo "Cross-referencing with external projects..."
+          node scripts/automation/deep-investigate-and-resolve.js || true
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
       # ═══════════════════════════════════════════════════════════════
       # PHASE 2: ENRICH — Cross-reference & sync external sources
       # Per GLOBAL_INVESTIGATION_PLAN.md §4 (Source Matrix) + §10 (Z2M/ZHA)
