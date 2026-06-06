@@ -1,6 +1,9 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 # 🛡️ DUAL-LAYER INTEGRITY GATE — Anti-AggregateError
 # ═══════════════════════════════════════════════════════════════════════════════
+
+permissions:
+  contents: read
 #
 # Architecture dual-layer (ARCHITECTURE.md §34):
 #
