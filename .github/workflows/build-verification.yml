@@ -47,9 +47,28 @@ jobs:
       - run: npm ci || npm install
 
       # ─── PHASE 1: Pre-Commit Checks ────────────────────────────────
+      - name: "🗜️ Compact app.json (Athom 5MB limit)"
+        run: |
+          node -e "
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          const compact = JSON.stringify(app);
+          const rawMB = (fs.statSync('app.json').size / 1024 / 1024).toFixed(2);
+          const compactMB = (compact.length / 1024 / 1024).toFixed(2);
+          console.log('app.json: ' + rawMB + 'MB → ' + compactMB + 'MB');
+          if (compact.length < fs.statSync('app.json').size) {
+            fs.writeFileSync('app.json', compact);
+            console.log('✅ Compacted');
+          }
+          if (compact.length > 5 * 1024 * 1024) {
+            console.error('❌ Still > 5MB after compaction!');
+            process.exit(1);
+          }
+          "
+
       - name: "🛡️ Pre-Commit Integrity Gate"
         run: node scripts/PRE_COMMIT_CHECKS.js
-        continue-on-error: true  # 1190 pre-existing warnings (NAN_SAFETY_RISK etc.)
+        continue-on-error: true  # 1190 pre-existing warnings
 
       - name: "📏 Archive Size Gate (< 20MB)"
         run: node .github/scripts/check-archive-size.js
