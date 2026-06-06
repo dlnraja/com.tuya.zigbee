@@ -164,7 +164,7 @@
 | radiator_controller | 12 | TS0601, TS0601_rad | onoff, target_temperature, measure_temperature... |
 | radiator_valve | 495 | 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, measure_temperature, thermostat_mode... |
 | radiator_valve_zigbee | 7 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
-| rain_sensor | 15 | TS0207, TS0207_rain, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_humidity, measure_luminance... |
+| rain_sensor | 18 | TS0207, TS0207_rain, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_humidity, measure_luminance... |
 | relay_board_1_channel | 4 | 01MINIZB, BASICZBR3, S31ZB, TS0001, TS0001_power, TS0001_switch, TS0001_switch_module, TS0101, TS011F, TS4100, ZBM5-1C-120, ZBM5-2C-120, ZBM5-3C-120, ZBMINI, ZBMINIL2, ZBMINIL2-R2, ZBMINIR, ZBMINIR2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1 | onoff |
 | relay_board_2_channel | 6 | TS0002, TS011F | onoff |
 | relay_board_4_channel | 6 | TS0004 | onoff |
@@ -310,7 +310,7 @@
 | wall_switch_6_gang_tuya | 8 | TS0016, TS0601, TS0726 | onoff |
 | wall_thermostat | 5 | TS0601 | onoff, measure_temperature, target_temperature |
 | water_detector | 6 | q9mpfhw, TS0207 | alarm_contact, alarm_water, measure_battery |
-| water_leak_sensor | 71 | _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, lumi.sensor_wleak.aq1, q9mpfhw, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, SNZB-05, SNZB-05P, SQ510A, TS0207, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_battery, alarm_generic |
+| water_leak_sensor | 68 | _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, lumi.sensor_wleak.aq1, q9mpfhw, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, SNZB-05, SNZB-05P, SQ510A, TS0207, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_battery, alarm_generic |
 | water_leak_sensor_tuya | 112 | _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, lumi.sensor_wleak.aq1, q9mpfhw, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, SNZB-05, SNZB-05P, SQ510A, ZG-222Z, ZG-223Z | alarm_water, measure_battery |
 | water_tank_monitor | 30 | TS0601, TS0601_tank | measure_humidity, alarm_water, measure_battery |
 | water_valve_garden | 18 | TS0049 | onoff, measure_battery |
@@ -321,4 +321,4 @@
 ---
 **Total:** 315 drivers, 22197 manufacturer IDs
 
-*Generated: 2026-06-06T19:22:29.048Z*
+*Generated: 2026-06-06T21:44:16.505Z*
