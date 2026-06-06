@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.150 (2026-06-06)
+## v8.1.151 (2026-06-06)
+
+v8.1.150: Fixed an issue in UnifiedSensorBase._handleDP where the Mode object may not exist., Added 36 new fingerprints from community contributions.
+
+---
+
+## [8.1.150] - 2026-06-06
+
+### Bug Fixes
+- Fixed an issue in UnifiedSensorBase._handleDP where the Mode object may not exist.
+
+### New Features
+- Added 36 new fingerprints from community contributions.
+---
+
+ v8.1.150 (2026-06-06)
 
 v8.1.149: Fixed a bug in UnifiedSensorBase by adding a forceActiveTuyaMode check to _handleDP., Added 36 new fingerprints from community contributions, enhancing device compatibility.
 
