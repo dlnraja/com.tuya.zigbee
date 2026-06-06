@@ -73,7 +73,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.141": {
-    "en": "v8.1.140: Fixed auto-heal for 5 missing fingerprints from radiator valve collision issue., No new features added in this release., No improvements made in this release."
+  "8.1.142": {
+    "en": "v8.1.141: Fixed auto-heal for fingerprints after radiator valve collision cleanup., Resolved radiator valve collision issue #381 and improved issue responses."
   }
 }
