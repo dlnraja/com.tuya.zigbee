@@ -110,6 +110,31 @@ jobs:
       - name: "📏 Archive Size Gate (< 20MB)"
         run: node .github/scripts/check-archive-size.js
 
+      # ─── Enriched from disabled master-cicd.yml + daily-everything.yml ───
+      - name: "🔬 ULTIMATE_CHECK (master-cicd遗产)"
+        continue-on-error: true
+        run: node scripts/ULTIMATE_CHECK.js || true
+
+      - name: "🔢 Arithmetic Integrity Check"
+        continue-on-error: true
+        run: node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js || true
+
+      - name: "📝 String Integrity Gate"
+        continue-on-error: true
+        run: node scripts/maintenance/string-integrity-gate.js || true
+
+      - name: "🔍 Fingerprint Collision Analysis"
+        continue-on-error: true
+        run: node scripts/automation/analyze-collisions.js || true
+
+      - name: "🔁 Recursive Validator"
+        continue-on-error: true
+        run: node scripts/maintenance/recursive-validator.js || true
+
+      - name: "🔐 Signature Audit"
+        continue-on-error: true
+        run: node scripts/ci/signature-audit.js || true
+
       # ─── Pipeline Step 6c Safety Gate (WORKFLOW_GUIDELINES.md) ───
       - name: "🔧 Pipeline 6c: Fix Flow Cards"
         run: |

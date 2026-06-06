@@ -163,6 +163,41 @@ jobs:
         run: node scripts/automation/mega-audit.js
         continue-on-error: false
 
+      # ─── Enriched from disabled daily-everything + master-cicd + daily-maintenance ───
+      - name: "🧠 Intelligent Engine Stabilizer"
+        continue-on-error: true
+        run: node scripts/maintenance/INTELLIGENT_ENGINE_STABILIZER.js || true
+
+      - name: "🔍 SDK3 Smart Linter"
+        continue-on-error: true
+        run: node scripts/maintenance/sdk3-smart-linter.js || true
+
+      - name: "🖼️ Image Optimization (500x500 + clean)"
+        continue-on-error: true
+        run: |
+          node scripts/maintenance/ensure-500x500-images.js || true
+          node scripts/maintenance/clean-images.js || true
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js || true
+
+      - name: "🏗️ Fleet Repair Flows"
+        continue-on-error: true
+        run: node scripts/maintenance/fleet-repair-flows.js || true
+
+      - name: "🚨 Emergency Repair Hardener"
+        continue-on-error: true
+        run: node scripts/remediation/emergency-repair-hardener-corruption.js || true
+
+      - name: "🔒 Shadow Sanitizer"
+        continue-on-error: true
+        run: node scripts/shadow_sanitizer.js || true
+
+      - name: "📊 Diagnostic Ingestion (crash reports)"
+        continue-on-error: true
+        run: |
+          # Diagnostic ingestion from crash reports
+          node .github/scripts/collect-diagnostics.js || true
+          node scripts/ci/signature-audit.js || true
+
       - name: 🔀 Cross-Category Collision Audit + Auto-Fix
         run: |
           echo "Detecting and auto-fixing FPs in wrong driver category..."

@@ -310,6 +310,27 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node .github/scripts/github-scanner.js
 
+      # ─── Enriched from disabled fleet-intelligence.yml + tuya-automation-hub.yml ───
+      - name: "🤖 Bot Accuracy Fixer"
+        continue-on-error: true
+        run: node scripts/maintenance/BOT_ACCURACY_FIXER.js || true
+
+      - name: "🗺️ Project Mapper"
+        continue-on-error: true
+        run: node scripts/automation/project-mapper.js || true
+
+      - name: "🏭 Manufacturer Scraper (Aliexpress/Tuya)"
+        continue-on-error: true
+        run: node .github/scripts/manufacturer-scraper.js || true
+
+      - name: "🔌 Scan Public APIs"
+        continue-on-error: true
+        run: node .github/scripts/scan-public-apis.js || true
+
+      - name: "📖 Sync SDK3 Docs"
+        continue-on-error: true
+        run: node .github/scripts/sync-sdk3-docs.js || true
+
   github-issue-manager:
     name: "GitHub Issue Manager"
     needs: stats
@@ -336,6 +357,15 @@ jobs:
           INCLUDE_CLOSED: "true"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
+
+      # ─── Enriched from disabled fleet-intelligence.yml + master-cicd.yml ───
+      - name: "🔀 Auto-Merge PRs"
+        continue-on-error: true
+        run: node scripts/automation/pr-auto-merger.js || true
+
+      - name: "🔧 Auto-Ganger (Subdevice Generation)"
+        continue-on-error: true
+        run: node scripts/automation/generate-subdevices.js || true
 
   forum-activity:
     name: "Forum Activity Scraper"
