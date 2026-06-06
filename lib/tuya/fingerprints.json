@@ -5793,7 +5793,7 @@
     ]
   },
   "_TZE200_9xfjixap": {
-    "driverId": "device_radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -134362,7 +134362,7 @@
     ]
   },
   "_tze200_9xfjixap": {
-    "driverId": "radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -135898,7 +135898,7 @@
     ]
   },
   "_tze204_9xfjixap": {
-    "driverId": "radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
