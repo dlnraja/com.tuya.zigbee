@@ -181,3 +181,15 @@ jobs:
           if (errors > 0) { console.error('Total: ' + errors + ' empty manufacturerNames'); process.exit(1); }
           console.log('✅ All manufacturerNames valid (' + app.drivers.length + ' drivers)');
           "
+
+      - name: "🛡️ Forum Posting Guard (T140352 only)"
+        run: node scripts/security/forum-posting-guard.js
+
+      - name: "🔒 Secret Scan (enhanced — state files)"
+        run: |
+          node scripts/security/secret-scan.js full || true
+          if [ -d ".github/state" ]; then
+            grep -rlE 'ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{40}' .github/state/ 2>/dev/null | head -5 && {
+              echo "❌ Secret in state files!"; exit 1
+            } || echo "✅ State files clean"
+          fi
