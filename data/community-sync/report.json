@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-06T10:54:46.301Z",
+  "ts": "2026-06-06T11:30:58.304Z",
   "currentCount": 10836,
   "src": {
     "johan": {
@@ -19275,13 +19275,10 @@
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 376,
-          "title": "Bug report - Strange readings from the soil sensors",
+          "num": 382,
+          "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374",
           "mfrs": [
-            "_TZE200_npj9bug3",
-            "_TZE284_aao3yzhs",
-            "_TZE284_oitavov2",
-            "_TZE284_hdml1aav"
+            "_TZE200_9xfjixap"
           ]
         },
         {
