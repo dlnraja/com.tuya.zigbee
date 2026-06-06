@@ -32,15 +32,13 @@
   },
   "zigbee": {
     "productId": [
-      "Excellux",
-      "TS0225",
-      "TS0601",
       "3305-S",
       "3325-S",
       "3326-L",
       "CK-TLSR8656-SS5-01(7002)",
       "E1525/E1745",
       "E1745",
+      "Excellux",
       "IH012-RT01",
       "lumi.motion.ac02",
       "lumi.motion.agl04",
@@ -58,6 +56,8 @@
       "SNZB-03R2",
       "TRADFRI motion sensor",
       "TS0202",
+      "TS0225",
+      "TS0601",
       "TY0202",
       "ZG-204Z"
     ],
@@ -75,17 +75,15 @@
       }
     },
     "manufacturerName": [
-      "PIRIV01",
-      "VABRATE",
-      "_TYZB01_5nr7ncpl",
       "_TYZB01_jytabjkb",
       "_TYZB01_yr95mpib",
       "_TYZB01_z2umiwvq",
       "_TZ3000_5k5vh43t",
       "_TZ3000_6ygjfyll",
-      "_TZ3000_DUMMY_FIX",
       "_TZ3000_bsvqrxru",
+      "_tz3000_dummy_fix",
       "_TZ3000_dummy_fix",
+      "_TZ3000_DUMMY_FIX",
       "_TZ3000_gszjt2xx",
       "_TZ3000_h4wnrtck",
       "_TZ3000_hktqahrq",
@@ -139,10 +137,9 @@
       "_TZE204_oqtpvx51",
       "_TZE204_sooucan5",
       "_TZE284_tre6haif",
-      "_tyst11_7hfcudw5",
-      "_tyst11_i5j6ifxj",
-      "_tz3000_dummy_fix",
-      "tuyatec-smmlguju"
+      "PIRIV01",
+      "tuyatec-smmlguju",
+      "VABRATE"
     ]
   },
   "images": {
