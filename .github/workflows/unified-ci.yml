@@ -1,5 +1,8 @@
 name: ­ƒøí´©Å Unified CI/CD Orchestrator
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: [ master, main ]
@@ -151,6 +154,7 @@ jobs:
     name: ­ƒÅù´©Å Production Build & Optimize
     needs: validate
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - name: Setup Node.js
