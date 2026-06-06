@@ -111,12 +111,15 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         continue-on-error: true
 
-      - name: "📸 Cartograph Dev Dashboard (Visual)"
+      - name: "📸 Cartograph Dev Dashboard (Visual + Puppeteer)"
         if: env.HOMEY_EMAIL != ''
         run: |
           echo "Taking visual screenshots of Athom dev portal..."
           node .github/scripts/athom-login-cartography.js 2>&1 || true
           node .github/scripts/puppeteer-full-cartography.js 2>&1 || true
+          # Puppeteer deep diagnostics
+          node .github/scripts/athom-puppeteer-full-diag.js 2>&1 || true
+          node .github/scripts/puppeteer-aggregate-diag.js 2>&1 || true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
