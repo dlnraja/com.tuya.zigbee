@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v8.1.127** | Fixed bed sensor DP remap issue. |
 | **v8.1.126** | Fixed bed sensor settings. |
 | **vv8_5_30** |  |
 | **ventries** |  |
