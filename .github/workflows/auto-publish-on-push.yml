@@ -142,7 +142,7 @@ jobs:
           } catch (e) { console.error('driver scan error:', e.message); }
           console.log('✅ Fingerprint check: ' + totalFps + ' combos, ' + Object.keys(fpMap).length + ' unique, ' + collisions + ' collisions');
           if (collisions > 0) {
-            echo "::warning::$collisions fingerprint+PID collisions detected — review drivers"
+            console.log('::warning::' + collisions + ' fingerprint+PID collisions detected — review drivers');
           }
           INTEGRITY
 
