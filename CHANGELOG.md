@@ -4,7 +4,26 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.145] - 2026-06-06
+## v8.1.147 (2026-06-06)
+
+v8.1.146: Restored presence_time for bed sensor DP103., Added forceActiveTuyaMode and hybridModeEnabled for bed sensor, addressing critical functionality issues., No new features added in this release., No improvements made in this release.
+
+---
+
+## [8.1.146] - 2026-06-06
+
+### Bug Fixes
+- Restored presence_time for bed sensor DP103.
+- Added forceActiveTuyaMode and hybridModeEnabled for bed sensor, addressing critical functionality issues.
+
+### New Features
+- No new features added in this release.
+
+### Improvements
+- No improvements made in this release.
+---
+
+ [8.1.145] - 2026-06-06
 
 v8.1.144:
 ---
