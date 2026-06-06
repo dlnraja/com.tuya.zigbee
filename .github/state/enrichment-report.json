@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T07:22:32.876Z",
+  "timestamp": "2026-06-06T08:17:27.419Z",
   "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
@@ -21,5 +21,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided device fingerprint, here is the classification and suggestions:\n\n| FP                | Type   | Driver | DPs→Capabilities | Quirks |\n|-------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| N/A    | None              | No DPs available, unable to classify further. |\n\n### Notes:\n- The device does not have any available DPs (data points), which makes it difficult to classify its type or suggest a specific driver.\n- Without any DPs, there are no capabilities to map, and thus no quirks or special handling can be noted.\n- Further information about the device (e.g., vendor, device type) would be needed to provide more accurate suggestions."
+  "aiPlan": "Based on the provided information, here is the classification and suggestions for the device:\n\n| FP                | Type   | Driver                | DPs→Capabilities | Quirks |\n|-------------------|--------|-----------------------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| Not enough data       | None              | None   |\n\n### Notes:\n- The device fingerprint (_TZE284_sdvbnmj5) does not provide any specific device type, vendor, or capabilities, as the DPs array is empty.\n- Without any DPs or capabilities, it is not possible to suggest an existing Homey driver to add a fingerprint to.\n- Further information about the device is required to classify it properly and determine its functionalities. \n\nPlease provide additional details or context about the device for a more accurate classification and recommendations."
 }
