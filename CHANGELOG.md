@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.143] - 2026-06-06
+## [8.1.144] - 2026-06-06
+
+v8.1.143: Resolved all cross-category collisions., Added 4 new fingerprints from Z2M/ZHA/community., Updated fingerprints.json to sync with new data.
+---
+
+ [8.1.143] - 2026-06-06
 
 ### Bug Fixes
 - Resolved all cross-category collisions.
