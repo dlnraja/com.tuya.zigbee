@@ -134,7 +134,7 @@ async function searchZHA(mfr) {
   });
 }
 
-// ─── Check our codebase for matching drivers ───
+// ─── Check our codebase for matching drivers (case-insensitive) ───
 function checkOurDrivers(info) {
   const results = [];
 
@@ -160,6 +160,27 @@ function checkOurDrivers(info) {
       } catch {}
     }
   }
+
+  // Also check fingerprints.json (case-insensitive)
+  try {
+    const fpData = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib', 'tuya', 'fingerprints.json'), 'utf8'));
+    for (const mfr of info.manufacturerIds) {
+      const mfrLower = mfr.toLowerCase();
+      for (const [fp, config] of Object.entries(fpData)) {
+        if (fp.toLowerCase() === mfrLower && config.driverId) {
+          if (!results.find(r => r.driver === config.driverId)) {
+            results.push({
+              driver: config.driverId,
+              mfr,
+              pids: [],
+              category: 'from-fingerprints-json',
+              source: 'fingerprints.json',
+            });
+          }
+        }
+      }
+    }
+  } catch {}
 
   for (const pid of info.productIds) {
     for (const d of fs.readdirSync(DRIVERS_DIR)) {
@@ -187,13 +208,46 @@ async function investigate(postId, text) {
   const info = extractDeviceInfo(text);
   console.log('Device Info:', JSON.stringify(info, null, 2));
 
-  // 1. Check our drivers
-  console.log('\n--- Nos Drivers ---');
+  // 1. Check our drivers (case-insensitive)
+  console.log('\n--- Nos Drivers (case-insensitive) ---');
   const ourDrivers = checkOurDrivers(info);
   if (ourDrivers.length > 0) {
     ourDrivers.forEach(r => console.log(`  ✅ ${r.driver} (${r.category}) — MFR: ${r.mfr || 'N/A'}, PIDs: ${r.pids.join(', ')}`));
   } else {
     console.log('  ❌ Aucun driver trouvé pour ce device');
+  }
+
+  // 2. DP Pattern Analysis — check what DPs similar devices use
+  console.log('\n--- DP Pattern Analysis ---');
+  for (const mfr of info.manufacturerIds.slice(0, 3)) {
+    try {
+      const fpData = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib', 'tuya', 'fingerprints.json'), 'utf8'));
+      const mfrLower = mfr.toLowerCase();
+      for (const [fp, config] of Object.entries(fpData)) {
+        if (fp.toLowerCase().includes(mfrLower) && config.driverId) {
+          const driverPath = path.join(DRIVERS_DIR, config.driverId, 'device.js');
+          if (fs.existsSync(driverPath)) {
+            const deviceContent = fs.readFileSync(driverPath, 'utf8');
+            const dpMatches = deviceContent.match(/dp\s*[=:]\s*(\d+)/g) || [];
+            console.log(`  ${mfr} → ${config.driverId}: ${dpMatches.length} DP references found`);
+          }
+        }
+      }
+    } catch {}
+  }
+
+  // 3. Variant support — check how many variants exist for similar MFRs
+  console.log('\n--- Variant Support Analysis ---');
+  for (const mfr of info.manufacturerIds.slice(0, 3)) {
+    const mfrPrefix = mfr.substring(0, 10); // e.g., _TZE200_
+    let variantCount = 0;
+    try {
+      const fpData = JSON.parse(fs.readFileSync(path.join(ROOT, 'lib', 'tuya', 'fingerprints.json'), 'utf8'));
+      for (const [fp] of Object.entries(fpData)) {
+        if (fp.toLowerCase().startsWith(mfrPrefix.toLowerCase())) variantCount++;
+      }
+    } catch {}
+    console.log(`  ${mfrPrefix}*: ${variantCount} variants dans fingerprints.json`);
   }
 
   // 2. Cross-reference Z2M
