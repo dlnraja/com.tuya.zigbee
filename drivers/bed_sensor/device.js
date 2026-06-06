@@ -5,27 +5,31 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 class BedSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
-    // v8.1.117: FIX #371 - Corrected DP mapping for _TZE200_seq9cm6u bed sensor
-    // - DP101 was incorrectly mapped to measure_battery (caused DP104/DP4 collision → battery stuck at 1%)
-    // - DP104 mapped to alarm_battery instead of measure_battery to avoid collision with DP4
-    // - DP1 alarm_contact logic: sensor sends 1=occupied, 0=unoccupied
-    //   Homey alarm_contact=true means "contact open" (unoccupied), so we invert
+    // v8.1.127: FIX #378 - Complete DP remap per Z2M reference (github.com/Koenkk/zigbee2mqtt/issues/31079)
+    // DP1 = occupancy (0=occupied, 1=unoccupied — inverted for Homey alarm_contact)
+    // DP4 = battery percentage (raw %)
+    // DP9 = PIR sensitivity (enum: 0=low, 1=middle, 2=high)
+    // DP12 = pressure (raw)
+    // DP101 = interval_time (sampling interval, minutes, 5-720, read/write)
+    // DP102 = pir_delay (delay to report no presence, seconds, 0-3600, read/write)
+    // DP103 = presence_time (delay to report presence, seconds, 0-3600, read/write)
+    // DP104 = work_state (READ-ONLY enum: 0=presence,1=none,2=presence_5min,3=presence_30min,4=none_5min,5=none_30min)
     return {
       1: { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
       4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
-      104: { capability: 'alarm_battery', transform: (v) => (v === 0 || v === false) },
       12: { capability: 'measure_pressure', transform: (v) => v },
       9: { capability: null, internal: 'sensitivity', writable: true },
-      101: { capability: null, internal: 'delay_unoccupied', writable: true },
-      102: { capability: null, internal: 'delay_occupied', writable: true },
-      103: { capability: null, internal: 'config', writable: true }
+      101: { capability: null, internal: 'interval_time', writable: true },
+      102: { capability: null, internal: 'pir_delay', writable: true },
+      103: { capability: null, internal: 'presence_time', writable: true },
+      // DP104 REMOVED — it's work_state (read-only), NOT battery!
     };
   }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('[BED] Bed Sensor initializing...');
-    
+
     if (this.hasCapability('measure_temperature')) {
       await this.removeCapability('measure_temperature').catch(() => {});
       this.log('[BED] Removed bogus measure_temperature capability');
@@ -37,22 +41,22 @@ class BedSensorDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    // v8.1.126: FIX #378 - Filter bed-specific keys before super.onSettings()
+    // v8.1.127: FIX #378 - Filter bed-specific keys before super.onSettings()
     // The base class maps 'sensitivity' to DP2 (value), but bed sensor uses DP9 (enum).
-    // Passing bed-specific keys to super causes wrong DP writes and UI errors.
-    const BED_KEYS = ['sensitivity', 'delay_unoccupied', 'delay_occupied'];
+    const BED_KEYS = ['sensitivity', 'interval_time', 'pir_delay', 'presence_time'];
     const superKeys = changedKeys.filter(k => !BED_KEYS.includes(k));
 
     if (superKeys.length > 0) {
       await super.onSettings({ oldSettings, newSettings, changedKeys: superKeys });
     }
 
-    // v8.1.117: FIX #371 - Corrected DP numbers per Z2M reference
-    // DP9 = sensitivity (enum), DP101 = pir_delay (unoccupied), DP102 = presence_time (occupied)
+    // DP writes per Z2M reference (github.com/Koenkk/zigbee2mqtt/issues/31079)
+    // DP9 = sensitivity (enum), DP101 = interval_time (min), DP102 = pir_delay (s), DP103 = presence_time (s)
     const dpWrites = {
-      sensitivity: { dp: 9 },
-      delay_unoccupied: { dp: 101 },
-      delay_occupied: { dp: 102 }
+      sensitivity: { dp: 9, type: 'enum' },
+      interval_time: { dp: 101, type: 'value' },
+      pir_delay: { dp: 102, type: 'value' },
+      presence_time: { dp: 103, type: 'value' },
     };
 
     for (const key of changedKeys) {
@@ -70,8 +74,7 @@ class BedSensorDevice extends UnifiedSensorBase {
       this.log(`[BED] Setting ${key} (DP${mapping.dp}) to`, value);
       try {
         if (this.tuyaEF00Manager) {
-          const type = key === 'sensitivity' ? 'enum' : 'value';
-          await this.tuyaEF00Manager.sendDP(mapping.dp, value, type);
+          await this.tuyaEF00Manager.sendDP(mapping.dp, value, mapping.type);
           this.log(`[BED] ✅ ${key} written successfully`);
         } else {
           this.log(`[BED] ⚠️ tuyaEF00Manager not available for DP${mapping.dp} write`);

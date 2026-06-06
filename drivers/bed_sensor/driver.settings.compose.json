@@ -4,10 +4,14 @@
     "id": "sensitivity",
     "value": "1",
     "label": {
-      "en": "Sensitivity",
-      "fr": "Sensibilité",
-      "nl": "Gevoeligheid",
-      "de": "Empfindlichkeit"
+      "en": "PIR Sensitivity",
+      "fr": "Sensibilité PIR",
+      "nl": "PIR Gevoeligheid",
+      "de": "PIR Empfindlichkeit"
+    },
+    "hint": {
+      "en": "Low=less sensitive, High=more sensitive",
+      "fr": "Faible=moins sensible, Haut=plus sensible"
     },
     "values": [
       {
@@ -41,38 +45,59 @@
   },
   {
     "type": "number",
-    "id": "delay_occupied",
+    "id": "presence_time",
     "value": 3,
     "min": 0,
-    "max": 300,
+    "max": 3600,
     "units": "s",
     "label": {
-      "en": "Delay Occupied",
-      "fr": "Délai occupation",
-      "nl": "Vertraging bezet",
-      "de": "Verzögerung belegt"
+      "en": "Presence Delay (DP103)",
+      "fr": "Délai Présence (DP103)",
+      "nl": "Aanwezigheidsvertraging (DP103)",
+      "de": "Anwesenheitsverzögerung (DP103)"
     },
     "hint": {
-      "en": "Seconds before reporting bed as occupied",
-      "fr": "Secondes avant de signaler le lit comme occupé"
+      "en": "Seconds before reporting bed as occupied (0-3600)",
+      "fr": "Secondes avant de signaler le lit comme occupé (0-3600)",
+      "nl": "Seconden voordat bed als bezet wordt gemeld (0-3600)"
     }
   },
   {
     "type": "number",
-    "id": "delay_unoccupied",
+    "id": "pir_delay",
     "value": 10,
     "min": 0,
-    "max": 300,
+    "max": 3600,
     "units": "s",
     "label": {
-      "en": "Delay Unoccupied",
-      "fr": "Délai inoccupé",
-      "nl": "Vertraging onbezet",
-      "de": "Verzögerung frei"
+      "en": "Unoccupied Delay (DP102)",
+      "fr": "Délai Inoccupé (DP102)",
+      "nl": "Onbezette Vertraging (DP102)",
+      "de": "Unbesetzte Verzögerung (DP102)"
     },
     "hint": {
-      "en": "Seconds before reporting bed as unoccupied",
-      "fr": "Secondes avant de signaler le lit comme inoccupé"
+      "en": "Seconds before reporting bed as unoccupied (0-3600)",
+      "fr": "Secondes avant de signaler le lit comme inoccupé (0-3600)",
+      "nl": "Seconden voordat bed als onbezet wordt gemeld (0-3600)"
+    }
+  },
+  {
+    "type": "number",
+    "id": "interval_time",
+    "value": 10,
+    "min": 5,
+    "max": 720,
+    "units": "min",
+    "label": {
+      "en": "Sampling Interval (DP101)",
+      "fr": "Intervalle d'Échantillonnage (DP101)",
+      "nl": "Sample-interval (DP101)",
+      "de": "Abtastintervall (DP101)"
+    },
+    "hint": {
+      "en": "How often the sensor samples (5-720 minutes)",
+      "fr": "Fréquence d'échantillonnage (5-720 minutes)",
+      "nl": "Hoe vaak de sensor meet (5-720 minuten)"
     }
   }
 ]
