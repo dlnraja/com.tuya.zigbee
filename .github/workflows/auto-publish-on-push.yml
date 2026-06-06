@@ -468,6 +468,44 @@ jobs:
           node .github/scripts/generate-readme.js || true
 
       # ─────────────────────────────────────────────────────────────
+      # 7.5 VERIFY BUILD ON HOMEY SERVERS + DASHBOARD CARTOGRAPHY
+      # ─────────────────────────────────────────────────────────────
+      - name: "🏗️ Verify Build State + Dashboard Cartography"
+        if: steps.check_pat.outputs.has_pat == 'true'
+        run: |
+          echo "Checking build on Homey servers..."
+          # Check build state
+          node .github/scripts/athom-build-state-monitor.js --ci 2>&1 || true
+
+          # Cartography of dev dashboard
+          node .github/scripts/athom-dev-cartographer.js 2>&1 || true
+
+          # Verify NOT in draft
+          node -e "
+            try {
+              const s = JSON.parse(require('fs').readFileSync('.github/state/athom-build-state.json','utf8'));
+              const b = s.builds?.[0] || {};
+              if (b.channel === 'draft') {
+                console.log('⚠️ Build still in DRAFT — auto-promoting...');
+                process.exit(2);
+              }
+              console.log('✅ Build in ' + (b.channel||'unknown') + ' channel (v' + (b.version||'?') + ')');
+            } catch(e) { console.log('Build state check skipped:', e.message); }
+          "
+          # Auto-promote if draft
+          if [ $? -eq 2 ]; then
+            node .github/scripts/auto-promote-puppeteer.js 2>&1 || \
+            node .github/scripts/auto-promote-oauth.js 2>&1 || \
+            node .github/scripts/auto-publish-draft.js 2>&1 || \
+            echo "❌ Auto-promotion failed"
+          fi
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        continue-on-error: true
+
+      # ─────────────────────────────────────────────────────────────
       # 8. BOT COMMIT — Always runs, commits clean state
       # ─────────────────────────────────────────────────────────────
       - name: Bot commit & push
