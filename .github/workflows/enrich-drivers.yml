@@ -3,8 +3,6 @@
 name: 🌐 Enrich Drivers (Blakadder + Z2M + ZHA)
 
 on:
-  schedule:
-    - cron: "0 3 * * 1"   # Every Monday 3h UTC (weekly to save GitHub Actions minutes)
   workflow_dispatch:
     inputs:
       dry_run:
