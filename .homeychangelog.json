@@ -73,7 +73,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.150": {
-    "en": "v8.1.149: Fixed a bug in UnifiedSensorBase by adding a forceActiveTuyaMode check to _handleDP., Added 36 new fingerprints from community contributions, enhancing device compatibility."
+  "8.1.151": {
+    "en": "v8.1.150: Fixed an issue in UnifiedSensorBase._handleDP where the Mode object may not exist., Added 36 new fingerprints from community contributions."
   }
 }
