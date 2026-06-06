@@ -1,1 +1,33 @@
-[]
+[
+  {
+    "mfr": "_TZ3000_owgcnkrh",
+    "productId": [
+      "TS0042"
+    ],
+    "driver": "wall_remote_2_gang",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZE284_iadro9bf",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE204_nbkshs6k",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE204_no6qtgtl",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  }
+]
