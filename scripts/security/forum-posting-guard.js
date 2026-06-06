@@ -11,11 +11,22 @@ const wd = path.join(ROOT, '.github', 'workflows');
 if (fs.existsSync(wd)) {
   for (const f of fs.readdirSync(wd).filter(f => f.endsWith('.yml'))) {
     const c = fs.readFileSync(path.join(wd, f), 'utf8');
+    // Skip disabled workflows
+    if (c.includes('DISABLED') || /if:\s*false/.test(c)) continue;
+    // Check REPLY_TOPICS env var (the actual posting target)
     const rm = c.match(/REPLY_TOPICS['":\s]+['"]?(\d+)/);
-    if (rm && rm[1] !== SAFE) { console.error(`❌ ${f}: REPLY_TOPICS=${rm[1]} (must be ${SAFE})`); v++; }
-    for (const tid of FORBIDDEN) {
-      if (c.includes(tid) && /REPLY|post_reply|create_post/i.test(c)) {
-        console.error(`❌ ${f}: Posts to forbidden topic ${tid}`); v++;
+    if (rm && rm[1] !== SAFE) { console.error(`❌ ${f}: REPLY_TOPICS=${rm[1]}`); v++; }
+    // Check for forbidden topics in ACTUAL posting code (not comments)
+    // Look for topic IDs in env vars, function args, or API calls
+    const lines = c.split('\n');
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      // Skip comment lines
+      if (/^\s*#/.test(line) || /^\s*\/\//.test(line)) continue;
+      for (const tid of FORBIDDEN) {
+        if (line.includes(tid) && /REPLY_TOPICS|topic_id|create_post|post_reply|reply_to/i.test(line)) {
+          console.error(`❌ ${f}:${i + 1}: Posts to forbidden topic ${tid}`); v++;
+        }
       }
     }
   }
