@@ -65,7 +65,7 @@
 | device_din_rail | 8 | TS0001, TS0002, TS011F, TS0601 | alarm_motion, alarm_contact, measure_battery... |
 | device_din_rail_meter | 72 | TS0001, TS0002, TS0601 | alarm_motion, alarm_contact, alarm_generic... |
 | device_floor_heating | 4 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
-| device_floor_heating_thermostat | 109 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
+| device_floor_heating_thermostat | 108 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya | 9 | TS0601 | onoff, dim, measure_temperature... |
 | device_generic_tuya_universal | 46 | TS0203, TS0601 | measure_battery, measure_temperature, measure_humidity |
 | device_plug_energy | 72 | TS0002, TS0121, TS011F, S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS0101, TS0111, TS0601 | onoff, measure_power, meter_power... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 26486 manufacturer IDs
+**Total:** 315 drivers, 26485 manufacturer IDs
 
-*Generated: 2026-06-06T08:16:51.293Z*
+*Generated: 2026-06-06T10:45:37.076Z*
