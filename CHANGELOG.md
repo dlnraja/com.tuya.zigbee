@@ -4,7 +4,27 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.124] - 2026-06-06
+## v8.1.126 (2026-06-06)
+
+v8.1.125: Fixed auto-healing for 851 missing fingerprints from fingerprints.json., Synced fingerprints from fingerprints.json to driver.compose.json., Comprehensive self-healing and DP fixes implemented for improved device support., Total drivers: 365, Total fingerprints: 16245
+
+---
+
+## [8.1.125] - 2026-06-06
+
+### Bug Fixes
+- Fixed auto-healing for 851 missing fingerprints from fingerprints.json.
+- Synced fingerprints from fingerprints.json to driver.compose.json.
+
+### New Features
+- Comprehensive self-healing and DP fixes implemented for improved device support.
+
+### Device Support
+- Total drivers: 365
+- Total fingerprints: 16245
+---
+
+ [8.1.124] - 2026-06-06
 
 v8.1.123:
 ---
