@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-06T15:22:41.474Z",
-  "currentCount": 10836,
+  "ts": "2026-06-06T15:56:11.454Z",
+  "currentCount": 10798,
   "src": {
     "johan": {
       "count": 650,
@@ -19477,7 +19477,39 @@
       ]
     }
   },
-  "newFps": [],
+  "newFps": [
+    {
+      "mfr": "_TZ3000_owgcnkrh",
+      "productId": [
+        "TS0042"
+      ],
+      "driver": "wall_remote_2_gang",
+      "deviceType": "remote",
+      "capabilities": [],
+      "hasBattery": true,
+      "vendor": null,
+      "description": null,
+      "source": "Johan"
+    },
+    {
+      "mfr": "_TZE284_iadro9bf",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE204_nbkshs6k",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE204_no6qtgtl",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    }
+  ],
   "enrichedFps": [
     {
       "mfr": "_TZE200_s8gkrkxk",
@@ -39960,6 +39992,6 @@
       "driver": null
     }
   ],
-  "newCount": 0,
+  "newCount": 4,
   "enrichedCount": 2212
 }
