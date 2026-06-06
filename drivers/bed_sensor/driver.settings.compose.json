@@ -45,6 +45,25 @@
   },
   {
     "type": "number",
+    "id": "presence_time",
+    "value": 3,
+    "min": 0,
+    "max": 3600,
+    "units": "s",
+    "label": {
+      "en": "Presence Time (DP103)",
+      "fr": "Temps Présence (DP103)",
+      "nl": "Aanwezigheidstijd (DP103)",
+      "de": "Anwesenheitszeit (DP103)"
+    },
+    "hint": {
+      "en": "Seconds before reporting bed as occupied (0-3600)",
+      "fr": "Secondes avant de signaler le lit comme occupé (0-3600)",
+      "nl": "Seconden voordat bed als bezet wordt gemeld (0-3600)"
+    }
+  },
+  {
+    "type": "number",
     "id": "presence_delay",
     "value": 10,
     "min": 0,
