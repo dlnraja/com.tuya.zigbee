@@ -81,6 +81,7 @@ jobs:
       # ─── PHASE 2: Build State Check (API) ──────────────────────────
       - name: "📊 Check Build State on Homey Servers"
         id: build_state
+        continue-on-error: true  # Requires HOMEY_PAT, may not be available in all runs
         run: |
           echo "Checking build state via AthomAppsAPI..."
           node .github/scripts/athom-build-state-monitor.js --ci 2>&1 | tee /tmp/build-state.txt
