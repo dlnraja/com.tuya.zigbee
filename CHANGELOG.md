@@ -4,7 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.147 (2026-06-06)
+## [8.1.147] - 2026-06-06
+
+### Bug Fixes
+- Resolved issues with 2 new fingerprints from community sync.
+
+### New Features
+- Added 2 new fingerprints from Z2M/ZHA/community.
+- Enriched 365 drivers with 3428 validated fingerprints.
+---
+
+ v8.1.147 (2026-06-06)
 
 v8.1.146: Restored presence_time for bed sensor DP103., Added forceActiveTuyaMode and hybridModeEnabled for bed sensor, addressing critical functionality issues., No new features added in this release., No improvements made in this release.
 
