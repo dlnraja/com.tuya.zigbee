@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.118 |
+| **App Version** | v8.1.119 |
 | **Device Fingerprints** | 18,401+ |
 | **Unique Product IDs** | 504 |
 | **Drivers** | 365 (361 Zigbee + 4 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-06-05 |
+| **Last Updated** | 2026-06-06 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -352,4 +352,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-06-05*
+*Last updated: 2026-06-06*
