@@ -73,7 +73,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.133": {
-    "en": "v8.1.132:"
+  "8.1.134": {
+    "en": "v8.1.133: Fixed luminance ZCL log-scale conversion., Improved DP101 handler functionality., Added support for 365 drivers and 3428 fingerprints."
   }
 }
