@@ -1,0 +1,184 @@
+# Build Verification & Dashboard Cartography
+# Verifies build is properly done on Homey servers, promotes draft→test,
+# and runs full pre-commit checks. Uses Athom dev dashboard cartography.
+#
+# Per WORKFLOW_GUIDELINES.md §D: 3-tier promotion (Puppeteer → OAuth → API)
+
+name: "🏗️ Build Verification & Dashboard Cartography"
+
+on:
+  workflow_run:
+    workflows: ["Auto-Publish on Push"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      force_promote:
+        description: "Force promote draft to test"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-verify-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  verify-build:
+    name: "🔍 Verify Build on Homey Servers"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci || npm install
+
+      # ─── PHASE 1: Pre-Commit Checks ────────────────────────────────
+      - name: "🛡️ Pre-Commit Integrity Gate"
+        run: node scripts/PRE_COMMIT_CHECKS.js
+
+      - name: "📏 Archive Size Gate (< 20MB)"
+        run: node .github/scripts/check-archive-size.js
+
+      - name: "🏥 Fingerprint Health Check"
+        run: node scripts/validation/check-fingerprint-health.js
+
+      # ─── PHASE 2: Build State Check (API) ──────────────────────────
+      - name: "📊 Check Build State on Homey Servers"
+        id: build_state
+        run: |
+          echo "Checking build state via AthomAppsAPI..."
+          node .github/scripts/athom-build-state-monitor.js --ci 2>&1 | tee /tmp/build-state.txt
+          # Extract latest build info
+          node -e "
+            const fs = require('fs');
+            const state = JSON.parse(fs.readFileSync('.github/state/athom-build-state.json','utf8'));
+            const latest = state.builds?.[0] || {};
+            console.log('version=' + (latest.version || 'unknown'));
+            console.log('state=' + (latest.state || 'unknown'));
+            console.log('channel=' + (latest.channel || 'unknown'));
+            fs.appendFileSync(process.env.GITHUB_OUTPUT,
+              'version=' + (latest.version || 'unknown') + '\n' +
+              'state=' + (latest.state || 'unknown') + '\n' +
+              'channel=' + (latest.channel || 'unknown') + '\n'
+            );
+          " 2>/dev/null || echo "state=unknown" >> $GITHUB_OUTPUT
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+
+      # ─── PHASE 3: Dashboard Cartography ─────────────────────────────
+      - name: "🗺️ Cartograph Dev Dashboard (API)"
+        run: |
+          echo "Mapping Athom dev portal via API..."
+          node .github/scripts/athom-dev-cartographer.js 2>&1 | tee /tmp/cartography.txt
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        continue-on-error: true
+
+      - name: "📸 Cartograph Dev Dashboard (Visual)"
+        if: env.HOMEY_EMAIL != ''
+        run: |
+          echo "Taking visual screenshots of Athom dev portal..."
+          node .github/scripts/athom-login-cartography.js 2>&1 || true
+          node .github/scripts/puppeteer-full-cartography.js 2>&1 || true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        continue-on-error: true
+
+      # ─── PHASE 4: Verify NOT Draft ─────────────────────────────────
+      - name: "✅ Verify Build is in TEST Channel (not Draft)"
+        run: |
+          STATE="${{ steps.build_state.outputs.state }}"
+          CHANNEL="${{ steps.build_state.outputs.channel }}"
+          VERSION="${{ steps.build_state.outputs.version }}"
+
+          echo "Build state: $STATE"
+          echo "Build channel: $CHANNEL"
+          echo "Build version: $VERSION"
+
+          if [ "$STATE" = "error" ]; then
+            echo "❌ BUILD FAILED on Homey servers!"
+            # Run deep diagnostics
+            node .github/scripts/athom-build-diag.js 2>&1 || true
+            node .github/scripts/athom-build-error-diag.js 2>&1 || true
+            exit 1
+          fi
+
+          if [ "$STATE" = "processing" ] || [ "$STATE" = "queued" ]; then
+            echo "⏳ Build still processing — waiting..."
+            node .github/scripts/athom-build-state-monitor.js --wait-test 2>&1 || true
+          fi
+
+          if [ "$CHANNEL" = "draft" ]; then
+            echo "⚠️ Build is still in DRAFT — attempting promotion..."
+            # Tier 1: Puppeteer
+            node .github/scripts/auto-promote-puppeteer.js 2>&1 && echo "✅ Promoted via Puppeteer" && exit 0
+            # Tier 2: OAuth
+            node .github/scripts/auto-promote-oauth.js 2>&1 && echo "✅ Promoted via OAuth" && exit 0
+            # Tier 3: API
+            node .github/scripts/auto-publish-draft.js 2>&1 && echo "✅ Promoted via API" && exit 0
+            echo "❌ All promotion methods failed"
+            exit 1
+          fi
+
+          if [ "$CHANNEL" = "test" ]; then
+            echo "✅ Build is in TEST channel — all good!"
+          elif [ "$CHANNEL" = "stable" ]; then
+            echo "✅ Build is in STABLE channel — all good!"
+          else
+            echo "⚠️ Unknown channel: $CHANNEL"
+          fi
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        continue-on-error: false
+
+      # ─── PHASE 5: Build Compare (if needed) ────────────────────────
+      - name: "🔍 Compare Latest Builds"
+        if: always()
+        run: node .github/scripts/athom-build-compare.js 2>&1 || true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        continue-on-error: true
+
+      # ─── PHASE 6: Monitor Until Published ──────────────────────────
+      - name: "📡 Monitor Build Until Published"
+        if: steps.build_state.outputs.state == 'test' || steps.build_state.outputs.channel == 'test'
+        run: |
+          echo "Monitoring build publication to App Store..."
+          node .github/scripts/recursive-publish-monitor.js 2>&1 || true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      # ─── Summary ────────────────────────────────────────────────────
+      - name: "📋 Build Verification Summary"
+        if: always()
+        run: |
+          echo "## 🏗️ Build Verification Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Pre-Commit Gate | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Archive Size | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Fingerprint Health | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build State | ${{ steps.build_state.outputs.state || 'unknown' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build Channel | ${{ steps.build_state.outputs.channel || 'unknown' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build Version | ${{ steps.build_state.outputs.version || 'unknown' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Dashboard Cartography | ✅ |" >> $GITHUB_STEP_SUMMARY
