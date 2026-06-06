@@ -149,7 +149,7 @@ class GenericAirPurifierPresenceDevice extends UnifiedSensorBase {
     const cardId = detected ? prefix + 'sensor_presence_radar_hybrid_presence_detected' : prefix + 'sensor_presence_radar_hybrid_presence_cleared';
     
     try {
-      await this.homey.flow.getTriggerCard(cardId).trigger(this, {}).catch(() => {});
+      await (() => { try { return this.homey.flow.getTriggerCard(cardId); } catch(e) { return null; } })()?.trigger(this, {}).catch(() => {});
     } catch (e) {}
   }
 

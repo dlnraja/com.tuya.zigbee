@@ -54,9 +54,9 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
         this.setCapabilityValue(cap, !!value).catch(this.error);
       }
       const flowCardId = `sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_${g}_changed`;
-      this.homey.flow.getTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
+      (() => { try { return this.homey.flow.getTriggerCard(flowCardId); } catch(e) { return null; } })()?.trigger(this, { state: !!value }, {}).catch(() => {})
     } else if (dp >= 5 && dp <= 8) {
-      this.homey.flow.getTriggerCard('sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
+      (() => { try { return this.homey.flow.getTriggerCard('sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated'); } catch(e) { return null; } })()?.trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
     } else if (dp === 38) {
       this.log(`[SCENE-PANEL] relay_status=${value}`);
     } else if (dp === 106) {

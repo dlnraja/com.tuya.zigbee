@@ -16,8 +16,7 @@
     "alarm_water",
     "onoff",
     "dim",
-    "measure_pm25",
-    "alarm_battery"
+    "measure_pm25"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {

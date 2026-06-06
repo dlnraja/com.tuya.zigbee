@@ -14,13 +14,11 @@ class IrRemoteDriver extends Homey.Driver {
   }
 
   _registerFlowCards() {
-    this.homey.flow.getActionCard('ir_remote_send_command')
-      .registerRunListener(async (args) => {
+    (() => { try { return this.homey.flow.getActionCard('ir_remote_send_command'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
         return args.device.onCapabilityOnOff(true); // Reuses logic for sending command
       });
 
-    this.homey.flow.getActionCard('ir_remote_send_custom')
-      .registerRunListener(async (args) => {
+    (() => { try { return this.homey.flow.getActionCard('ir_remote_send_custom'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
         const brand = args.device.getSetting('ir_brand');
         const category = args.device.getSetting('ir_category');
         return args.device._sendRemoteCommand(brand, category, args.key);
