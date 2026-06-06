@@ -4,7 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.128 (2026-06-06)
+## v8.1.129 (2026-06-06)
+
+v8.1.128: Fixed inversion issue for bed sensor DP1., Removed bogus capabilities from bed sensor driver.
+
+---
+
+## [8.1.128] - 2026-06-06
+
+### Bug Fixes
+- Fixed inversion issue for bed sensor DP1.
+- Removed bogus capabilities from bed sensor driver.
+---
+
+ v8.1.128 (2026-06-06)
 
 v8.1.127: Fixed bed sensor complete DP remap per Z2M reference., No new features added., No improvements made.
 
