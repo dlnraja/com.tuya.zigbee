@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-06T19:50:29.758Z",
+  "ts": "2026-06-06T20:22:03.799Z",
   "currentCount": 10755,
   "src": {
     "johan": {
@@ -19270,39 +19270,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 52,
+      "issueCount": 50,
       "prCount": 2,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 388,
-          "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
-          "mfrs": [
-            "_TZ3210_tgvtvdoc",
-            "_TZ3210_tgvtvdoc",
-            "_TZ3210_tgvtvdoc"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 387,
-          "title": "[Auto] 36 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_rco1yzb1",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_fkp5zyho",
-            "_TZ3000_axpdxqgu",
-            "_TZ3000_peszejy7",
-            "_TZ3000_f97vq5mn",
-            "_TZ3000_owgcnkrh",
-            "_TZ3000_nwidmc4n",
-            "_TZ3000_pfc7i3kt",
-            "_TZ3000_iv4eq7eh",
-            "_TZ3000_mzcp0of6",
-            "_TZ3000_avotanj3",
-            "_TZE200_qasjif9e"
-          ]
-        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
@@ -19484,6 +19454,26 @@
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1391,
+          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
+          "mfrs": [
+            "_TZ3000_996rpfy6",
+            "_TZ3000_996rpfy6",
+            "_TZ3000_996rpfy6"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1389,
+          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z"
           ]
         }
       ]
