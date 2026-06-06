@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-06T08:16:52.042Z",
+  "ts": "2026-06-06T08:25:27.811Z",
   "currentCount": 10836,
   "src": {
     "johan": {
@@ -19270,9 +19270,17 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 49,
+      "issueCount": 50,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 379,
+          "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working #339",
+          "mfrs": [
+            "_TZE200_9xfjixap"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 376,
@@ -19465,16 +19473,6 @@
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1391,
-          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
-          "mfrs": [
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6"
           ]
         }
       ]
