@@ -4,7 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.126 (2026-06-06)
+## v8.1.127 (2026-06-06)
+
+v8.1.126: Fixed issue with bed sensor settings to filter bed-specific keys before super call.
+
+---
+
+## [8.1.126] - 2026-06-06
+
+### Bug Fixes
+- Fixed issue with bed sensor settings to filter bed-specific keys before super call.
+---
+
+ v8.1.126 (2026-06-06)
 
 v8.1.125: Fixed auto-healing for 851 missing fingerprints from fingerprints.json., Synced fingerprints from fingerprints.json to driver.compose.json., Comprehensive self-healing and DP fixes implemented for improved device support., Total drivers: 365, Total fingerprints: 16245
 
