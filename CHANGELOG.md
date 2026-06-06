@@ -4,7 +4,26 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.142 (2026-06-06)
+## v8.1.143 (2026-06-06)
+
+v8.1.142: Fixed healing of fingerprints after radiator valve cleanup., Completed cleanup of radiator valve collisions., None., None.
+
+---
+
+## [8.1.142] - 2026-06-06
+
+### Bug Fixes
+- Fixed healing of fingerprints after radiator valve cleanup.
+- Completed cleanup of radiator valve collisions.
+
+### New Features
+- None.
+
+### Improvements
+- None.
+---
+
+ v8.1.142 (2026-06-06)
 
 v8.1.141: Fixed auto-heal for fingerprints after radiator valve collision cleanup., Resolved radiator valve collision issue #381 and improved issue responses.
 
