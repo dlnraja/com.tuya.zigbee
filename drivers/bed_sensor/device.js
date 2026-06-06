@@ -4,6 +4,11 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 class BedSensorDevice extends UnifiedSensorBase {
 
+  // v8.1.146: CRITICAL — Battery device MUST keep Tuya DP mode active
+  // Without these, Tuya mode deactivates after learning phase → no data received
+  get forceActiveTuyaMode() { return true; }
+  get hybridModeEnabled() { return true; }
+
   // v8.1.129: Override sensorCapabilities — bed sensor has NO temperature/humidity
   get sensorCapabilities() {
     return ['alarm_contact', 'measure_battery', 'alarm_battery', 'measure_pressure'];
