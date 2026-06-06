@@ -260,8 +260,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
       async registerActionCards() {
         // Register configurable switch action
-        this.homey.flow.getActionCard('set_switch_state')
-            .registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('set_switch_state'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
                 const switchId = args.switch;
                 const state = args.state === 'true';
                 try {
@@ -283,8 +282,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
      */
     async registerConditionCards() {
         // Register configurable switch condition
-        this.homey.flow.getConditionCard('switch_is')
-            .registerRunListener(async (args, state) => {
+        (() => { try { return this.homey.flow.getConditionCard('switch_is'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => {
                 const switchId = args.switch;
                 return this.getCapabilityValue(`onoff_${switchId}`);
             });

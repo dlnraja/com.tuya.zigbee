@@ -17,8 +17,7 @@
   "capabilities": [
     "onoff",
     "button.push",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",

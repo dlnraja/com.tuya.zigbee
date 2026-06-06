@@ -14,7 +14,7 @@ async onInit() {
 
     this.log('ValveSingleDriver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
+    const reg=(id,fn)=>{try{(() => { try { return this.homey.flow.getActionCard(id); } catch(e) { return null; } })()?.registerRunListener(fn);
   
   
   

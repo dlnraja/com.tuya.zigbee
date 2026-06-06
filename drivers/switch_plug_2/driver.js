@@ -14,7 +14,7 @@ async onInit() {
 
     this.log('SwitchPlug2Driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
+    const r=(i,fn)=>{try{(() => { try { return this.homey.flow.getActionCard(i); } catch(e) { return null; } })()?.registerRunListener(fn);
   
   
   

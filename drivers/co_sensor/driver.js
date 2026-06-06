@@ -60,8 +60,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     for (const card of conditions) {
       try {
-        this.homey.flow.getConditionCard(card.id)
-          .registerRunListener(card.run.bind(this));
+        (() => { try { return this.homey.flow.getConditionCard(card.id); } catch(e) { return null; } })()?.registerRunListener(card.run.bind(this));
         this.log(`[FLOW] ✅ Condition Registered: ${card.id}`);
       } catch (e) {
         this.error(`[FLOW] ❌ Failed to register condition ${card.id}:`, e.message);
@@ -87,8 +86,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     for (const card of actions) {
       try {
-        this.homey.flow.getActionCard(card.id)
-          .registerRunListener(card.run.bind(this));
+        (() => { try { return this.homey.flow.getActionCard(card.id); } catch(e) { return null; } })()?.registerRunListener(card.run.bind(this));
         this.log(`[FLOW] ✅ Action Registered: ${card.id}`);
       } catch (e) {
         this.error(`[FLOW] ❌ Failed to register action ${card.id}:`, e.message);
