@@ -58,8 +58,13 @@ jobs:
           node scripts/automation/issue-content-analyzer.js || true
         continue-on-error: true
 
-      - name: "✉️ [2/7] Fetch Diagnostic Emails & Crash Logs"
-        run: node .github/scripts/gmail-imap-reader.js || true
+      - name: "✉️ [2/7] Fetch Diagnostic Emails & Crash Logs (ALL, not just with codes)"
+        run: |
+          # Fetch ALL diagnostic emails — even without diagnostic codes
+          node .github/scripts/collect-diagnostics.js || true
+          node .github/scripts/gmail-imap-reader.js || true
+          # Fetch crash logs from remote sources
+          node scripts/automation/fetch-remote-logs.js || true
         continue-on-error: true
 
       - name: "🔏 [2.5/7] Anonymize PII in Diagnostic Data"
