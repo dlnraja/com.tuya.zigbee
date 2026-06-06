@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.129 (2026-06-06)
+## v8.1.130 (2026-06-06)
+
+v8.1.129: Fixed manufacturer-specific DP mappings for soil sensors, enhancing compatibility with various models., None, None
+
+---
+
+## [8.1.129] - 2026-06-06
+
+### Bug Fixes
+- Fixed manufacturer-specific DP mappings for soil sensors, enhancing compatibility with various models.
+
+### New Features
+- None
+
+### Improvements
+- None
+---
+
+ v8.1.129 (2026-06-06)
 
 v8.1.128: Fixed inversion issue for bed sensor DP1., Removed bogus capabilities from bed sensor driver.
 
