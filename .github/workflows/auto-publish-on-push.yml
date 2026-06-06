@@ -535,3 +535,10 @@ jobs:
           else
             echo "⚠️ Validated only — HOMEY_PAT not set" >> $GITHUB_STEP_SUMMARY
           fi
+
+      - name: "🚨 Failure Notification"
+        if: failure()
+        run: |
+          echo "::error::Publish workflow failed! Check logs above for details."
+          echo "## ❌ Publish Failed" >> $GITHUB_STEP_SUMMARY
+          echo "The auto-publish workflow failed. Check the job logs for details." >> $GITHUB_STEP_SUMMARY
