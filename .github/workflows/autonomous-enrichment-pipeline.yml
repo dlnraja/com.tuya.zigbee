@@ -121,17 +121,17 @@ jobs:
 
       - name: "🛡️ [7/10] Supply Chain Security Gate"
         run: |
-          # Verify no hardcoded secrets in code
+          # Full supply chain security audit
+          node scripts/security/supply-chain-guard.js || true
+          # Secret scan
           node scripts/security/secret-scan.js full || true
-          # Verify .gitignore protects sensitive paths
-          for entry in ".env" "credentials.json" "secrets.json" "*.key" "*.pem"; do
-            grep -qF "$entry" .gitignore 2>/dev/null || echo "::warning::Missing .gitignore: $entry"
-          done
           # Verify no secrets in git remote
           if git remote -v 2>/dev/null | grep -qiE 'gh[opsu]_[A-Za-z0-9]{30,}'; then
             echo "::error::GIT REMOTE CONTAINS A TOKEN!"
             exit 1
           fi
+          # Verify npm audit
+          npm audit --audit-level=high 2>/dev/null || echo "::warning::npm audit found vulnerabilities"
         continue-on-error: true
 
       - name: "🔏 [8/10] PII Anonymization (security.md §2)"

@@ -185,6 +185,9 @@ jobs:
       - name: "🛡️ Forum Posting Guard (T140352 only)"
         run: node scripts/security/forum-posting-guard.js
 
+      - name: "🔗 Supply Chain Security Guard"
+        run: node scripts/security/supply-chain-guard.js
+
       - name: "🔒 Secret Scan (enhanced — state files)"
         run: |
           node scripts/security/secret-scan.js full || true
