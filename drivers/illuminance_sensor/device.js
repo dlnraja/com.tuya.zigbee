@@ -4,7 +4,7 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 class IlluminanceSensorDevice extends UnifiedSensorBase {
 
-  // v8.1.107: Tuya DP mappings for TS0601 luminance sensors
+  // v8.1.131: Tuya DP mappings for TS0601 luminance sensors
   // _TZE284_aaeasoll and similar send lux via Tuya DPs, not ZCL illuminance cluster
   get dpMappings() {
     return {
@@ -15,77 +15,70 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
     this.log('[ILLUMINANCE] Initializing illuminance sensor');
     await super.onNodeInit({ zclNode });
+
+    // v8.1.131: FIX #2075 — Removed ZCL configureAttributeReporting
+    // TS0601 devices with Tuya DPs don't have the ZCL illuminance cluster
+    // The device sends illuminance via Tuya DPs (DP3, DP4, DP12)
+    // ZCL reporting config was silently failing and preventing DP reports
+
+    // Setup ZCL illuminance listener for devices that DO have the cluster
     await this._setupIlluminanceCluster(zclNode);
+
+    // v8.1.131: Add periodic DP request for devices that don't send spontaneously
+    this._pollInterval = setInterval(() => {
+      if (this.tuyaEF00Manager && !this._lastLuminance) {
+        this.log('[ILLUMINANCE] Polling for luminance data...');
+        this.tuyaEF00Manager.requestDPs?.([3, 4, 12]).catch(() => {});
+      }
+    }, 60000); // Poll every 60 seconds if no data received
+
+    this.log('[ILLUMINANCE] Sensor ready — waiting for Tuya DP data');
   }
 
   async _setupIlluminanceCluster(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
-      if (!endpoint) {return;}
+      if (!endpoint) { return; }
 
       const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement ||
                                   endpoint.clusters?.['msIlluminanceMeasurement'] ||
                                   endpoint.clusters?.[1024];
 
       if (illuminanceCluster) {
-        this.log('[ILLUMINANCE] Found illuminance cluster');
+        this.log('[ILLUMINANCE] Found ZCL illuminance cluster — setting up listener');
 
         if (typeof illuminanceCluster.on === 'function') {
           illuminanceCluster.on('attr.measuredValue', async (value) => {
+            this._lastLuminance = Date.now();
             const lux = this._convertToLux(value);
-            this.log(`[ILLUMINANCE] Received: raw=${value}, lux=${lux}`);
+            this.log(`[ILLUMINANCE] ZCL received: raw=${value}, lux=${lux}`);
             await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
           });
         }
-
-        if (typeof illuminanceCluster.configureReporting === 'function') {
-          await illuminanceCluster.configureReporting({
-            measuredValue: {
-              minInterval: 10,
-              maxInterval: 3600,
-              minChange: 100
-            }
-          }).catch(e => this.log('[ILLUMINANCE] Reporting config failed:', e.message));
-        }
+      } else {
+        this.log('[ILLUMINANCE] No ZCL illuminance cluster — using Tuya DPs only');
       }
     } catch (err) {
-      this.error('[ILLUMINANCE] Setup error:', err.message);
+      this.log('[ILLUMINANCE] ZCL cluster setup error:', err.message);
     }
   }
 
-  _convertToLux(value) {
-    if (value === 0 || value === 0xFFFF) {return 0;}
-    return Math.round(Math.pow(10, (value - 1) / 10000));
+  _convertToLux(zclValue) {
+    // ZCL illuminance measurement: lux = 10^((value - 1) / 10000)
+    if (typeof zclValue === 'number' && zclValue > 1) {
+      return Math.round(Math.pow(10, (zclValue - 1) / 10000));
+    }
+    return zclValue;
   }
 
-
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
+  async onUninit() {
+    if (this._pollInterval) {
+      clearInterval(this._pollInterval);
+      this._pollInterval = null;
+    }
+    await super.onUninit();
   }
 }
 
