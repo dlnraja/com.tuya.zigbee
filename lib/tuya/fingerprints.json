@@ -750,7 +750,7 @@
     ]
   },
   "_TZ3000_5bpeda8u": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "button",
     "powerSource": "battery",
     "modelIds": [
@@ -2120,7 +2120,7 @@
     ]
   },
   "_TZ3000_ja5osu5g": {
-    "driverId": "button_wireless_1",
+    "driverId": "smart_button_switch",
     "type": "button",
     "powerSource": "battery",
     "batteryType": "CR2032",
@@ -3417,7 +3417,7 @@
     ]
   },
   "_TZ3000_rul9yxcc": {
-    "driverId": "switch_wireless",
+    "driverId": "switch_2gang",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -3672,7 +3672,7 @@
     ]
   },
   "_TZ3000_u3nv1jwk": {
-    "driverId": "button_wireless_4",
+    "driverId": "scene_switch_3",
     "type": "remote",
     "powerSource": "battery",
     "batteryType": "CR2032",
@@ -5057,7 +5057,7 @@
     ]
   },
   "_TZ3290_jxvzqatwgsaqzx1u": {
-    "driverId": "ir_blaster",
+    "driverId": "sensor_climate_temphumidsensor",
     "type": "ir_blaster",
     "powerSource": "mains",
     "modelIds": [
@@ -5065,7 +5065,7 @@
     ]
   },
   "_TZ3290_lypnqvlem5eq1ree": {
-    "driverId": "ir_blaster",
+    "driverId": "sensor_climate_temphumidsensor",
     "type": "ir_blaster",
     "powerSource": "mains",
     "modelIds": [
@@ -9498,7 +9498,7 @@
     ]
   },
   "_TZE204_iadro9bf": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -9650,7 +9650,7 @@
     ]
   },
   "_TZE204_laokfqwu": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -9842,7 +9842,7 @@
     ]
   },
   "_TZE204_nbkshs6k": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -9874,7 +9874,7 @@
     ]
   },
   "_TZE204_no6qtgtl": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -10010,7 +10010,7 @@
     ]
   },
   "_TZE204_qasjif9e": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -10505,7 +10505,7 @@
     ]
   },
   "_TZE204_ztqnh5cg": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -11237,7 +11237,7 @@
     }
   },
   "_TZE284_iadro9bf": {
-    "driverId": "generic_tuya",
+    "driverId": "pir_mmwave_sensor",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -28082,7 +28082,7 @@
     ]
   },
   "_tz3000_0cxtpylt": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28126,7 +28126,7 @@
     ]
   },
   "_TZ3000_0CXTPYLT": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28170,7 +28170,7 @@
     ]
   },
   "_tz3000_22ugzkme": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28214,7 +28214,7 @@
     ]
   },
   "_TZ3000_22UGZKME": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28258,7 +28258,7 @@
     ]
   },
   "_tz3000_adndolvx": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28302,7 +28302,7 @@
     ]
   },
   "_TZ3000_ADNDOLVX": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28346,7 +28346,7 @@
     ]
   },
   "_tz3000_an5rjiwd": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28390,7 +28390,7 @@
     ]
   },
   "_TZ3000_AN5RJIWD": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28434,7 +28434,7 @@
     ]
   },
   "_tz3000_arfwfgre": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28478,7 +28478,7 @@
     ]
   },
   "_TZ3000_ARFWFGRE": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28522,7 +28522,7 @@
     ]
   },
   "_tz3000_bsvqrux3": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28566,7 +28566,7 @@
     ]
   },
   "_TZ3000_BSVQRUX3": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28610,7 +28610,7 @@
     ]
   },
   "_tz3000_csflgqj2": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "unknown",
     "powerSource": "battery",
     "modelIds": [
@@ -28654,7 +28654,7 @@
     ]
   },
   "_TZ3000_CSFLGQJ2": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "unknown",
     "powerSource": "battery",
     "modelIds": [
@@ -28698,7 +28698,7 @@
     ]
   },
   "_tz3000_ebar5p3z": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28742,7 +28742,7 @@
     ]
   },
   "_TZ3000_EBAR5P3Z": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28786,7 +28786,7 @@
     ]
   },
   "_tz3000_ee9s2k4d": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28830,7 +28830,7 @@
     ]
   },
   "_TZ3000_EE9S2K4D": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28874,7 +28874,7 @@
     ]
   },
   "_tz3000_ke_x0oo3": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28918,7 +28918,7 @@
     ]
   },
   "_TZ3000_KE_X0OO3": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -28962,7 +28962,7 @@
     ]
   },
   "_tz3000_kxaow5ki": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -29006,7 +29006,7 @@
     ]
   },
   "_TZ3000_KXAOW5KI": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -29050,7 +29050,7 @@
     ]
   },
   "_tz3000_owgcnkrh": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29094,7 +29094,7 @@
     ]
   },
   "_TZ3000_OWGCNKRH": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29138,7 +29138,7 @@
     ]
   },
   "_tz3000_mrpevh8p": {
-    "driverId": "button_wireless_1",
+    "driverId": "smart_button_switch",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29182,7 +29182,7 @@
     ]
   },
   "_TZ3000_MRPEVH8P": {
-    "driverId": "button_wireless_1",
+    "driverId": "smart_button_switch",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29226,7 +29226,7 @@
     ]
   },
   "_tz3000_rco1yzb1": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29270,7 +29270,7 @@
     ]
   },
   "_TZ3000_RCO1YZB1": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29314,7 +29314,7 @@
     ]
   },
   "_tz3000_uri7oadn": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29358,7 +29358,7 @@
     ]
   },
   "_TZ3000_URI7OADN": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29402,7 +29402,7 @@
     ]
   },
   "_tz3000_uri7ongn": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "energy_meter",
     "powerSource": "battery",
     "modelIds": [
@@ -29446,7 +29446,7 @@
     ]
   },
   "_TZ3000_URI7ONGN": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "energy_meter",
     "powerSource": "battery",
     "modelIds": [
@@ -29490,7 +29490,7 @@
     ]
   },
   "_tz3000_vn88ezar": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -29534,7 +29534,7 @@
     ]
   },
   "_TZ3000_VN88EZAR": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -29578,7 +29578,7 @@
     ]
   },
   "_tz3000_xkwalgne": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29622,7 +29622,7 @@
     ]
   },
   "_TZ3000_XKWALGNE": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29666,7 +29666,7 @@
     ]
   },
   "_tz3210_amleyeej": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29710,7 +29710,7 @@
     ]
   },
   "_TZ3210_AMLEYEEJ": {
-    "driverId": "button_wireless_1",
+    "driverId": "scene_switch_1",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -29792,7 +29792,7 @@
     ]
   },
   "_tyzb01_4tlksk8a": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_smart",
     "type": "unknown",
     "powerSource": "battery",
     "modelIds": [
@@ -29811,7 +29811,7 @@
     ]
   },
   "_TYZB01_4TLKSK8A": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_smart",
     "type": "unknown",
     "powerSource": "battery",
     "modelIds": [
@@ -30096,7 +30096,7 @@
     ]
   },
   "_tyzb01_hlla45kx": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_smart",
     "type": "energy_meter",
     "powerSource": "battery",
     "modelIds": [
@@ -30115,7 +30115,7 @@
     ]
   },
   "_TYZB01_HLLA45KX": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_smart",
     "type": "energy_meter",
     "powerSource": "battery",
     "modelIds": [
@@ -30514,7 +30514,7 @@
     ]
   },
   "_tyzb01_ymcdbl3u": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_smart",
     "type": "unknown",
     "powerSource": "battery",
     "modelIds": [
@@ -30533,7 +30533,7 @@
     ]
   },
   "_TYZB01_YMCDBL3U": {
-    "driverId": "button_wireless_2",
+    "driverId": "plug_smart",
     "type": "unknown",
     "powerSource": "battery",
     "modelIds": [
@@ -31008,7 +31008,7 @@
     ]
   },
   "_tz3000_tzvbimpq": {
-    "driverId": "button_wireless_2",
+    "driverId": "switch_2gang",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -31027,7 +31027,7 @@
     ]
   },
   "_TZ3000_TZVBIMPQ": {
-    "driverId": "button_wireless_2",
+    "driverId": "switch_2gang",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -57800,7 +57800,7 @@
     ]
   },
   "_tze204_iadro9bf": {
-    "driverId": "climate_sensor",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -57833,7 +57833,7 @@
     ]
   },
   "_TZE204_IADRO9BF": {
-    "driverId": "climate_sensor",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -92190,7 +92190,7 @@
     ]
   },
   "_tz3210_3ulg9kpo": {
-    "driverId": "doorwindowsensor_2",
+    "driverId": "generic_tuya",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -92224,7 +92224,7 @@
     ]
   },
   "_TZ3210_3ULG9KPO": {
-    "driverId": "doorwindowsensor_2",
+    "driverId": "generic_tuya",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -108406,7 +108406,7 @@
     ]
   },
   "_tze204_qasjif9e": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -108415,7 +108415,7 @@
     ]
   },
   "_TZE204_QASJIF9E": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -108424,7 +108424,7 @@
     ]
   },
   "_tze204_ztqnh5cg": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -108433,7 +108433,7 @@
     ]
   },
   "_TZE204_ZTQNH5CG": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -108442,7 +108442,7 @@
     ]
   },
   "_tze204_laokfqwu": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -108451,7 +108451,7 @@
     ]
   },
   "_TZE204_LAOKFQWU": {
-    "driverId": "motion_sensor_radar_mmwave",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -118908,7 +118908,7 @@
     ]
   },
   "_tze200_laokfqwu": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -118935,7 +118935,7 @@
     ]
   },
   "_TZE200_LAOKFQWU": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -119070,7 +119070,7 @@
     ]
   },
   "_tze200_nbkshs6k": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -119097,7 +119097,7 @@
     ]
   },
   "_TZE200_NBKSHS6K": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -119232,7 +119232,7 @@
     ]
   },
   "_tze200_qasjif9e": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -119259,7 +119259,7 @@
     ]
   },
   "_TZE200_QASJIF9E": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -120150,7 +120150,7 @@
     ]
   },
   "_tze200_ztqnh5cg": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -120177,7 +120177,7 @@
     ]
   },
   "_TZE200_ZTQNH5CG": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -121500,7 +121500,7 @@
     ]
   },
   "_tze204_nbkshs6k": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -121527,7 +121527,7 @@
     ]
   },
   "_TZE204_NBKSHS6K": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -121608,7 +121608,7 @@
     ]
   },
   "_tze204_no6qtgtl": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -121635,7 +121635,7 @@
     ]
   },
   "_TZE204_NO6QTGTL": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -123174,7 +123174,7 @@
     ]
   },
   "_tze284_iadro9bf": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -123201,7 +123201,7 @@
     ]
   },
   "_TZE284_IADRO9BF": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -123606,7 +123606,7 @@
     ]
   },
   "_tze284_qasjif9e": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -123633,7 +123633,7 @@
     ]
   },
   "_TZE284_QASJIF9E": {
-    "driverId": "presence_sensor_radar",
+    "driverId": "pir_mmwave_sensor",
     "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -139006,7 +139006,7 @@
     ]
   },
   "_tyzb02_keyjqtha": {
-    "driverId": "scene_switch_1",
+    "driverId": "smart_button_switch",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
@@ -139017,7 +139017,7 @@
     ]
   },
   "_TYZB02_KEYJQTHA": {
-    "driverId": "scene_switch_1",
+    "driverId": "smart_button_switch",
     "type": "remote",
     "powerSource": "battery",
     "modelIds": [
