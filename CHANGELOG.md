@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.151 (2026-06-06)
+## v8.1.152 (2026-06-07)
+
+v8.1.151: Fixed bed sensor: added periodic DP poll and cleaned up intervals., Added 41 new fingerprints from community contributions.
+
+---
+
+## [8.1.151] - 2026-06-07
+
+### Bug Fixes
+- Fixed bed sensor: added periodic DP poll and cleaned up intervals.
+
+### New Features
+- Added 41 new fingerprints from community contributions.
+---
+
+ v8.1.151 (2026-06-06)
 
 v8.1.150: Fixed an issue in UnifiedSensorBase._handleDP where the Mode object may not exist., Added 36 new fingerprints from community contributions.
 
