@@ -49,6 +49,28 @@ class BedSensorDevice extends UnifiedSensorBase {
       }
     }
 
+    // v8.1.153: Force TuyaEF00Manager initialization if not already done
+    // Battery devices may not have the Tuya cluster detected during interview
+    if (!this.tuyaEF00Manager) {
+      this.log('[BED] TuyaEF00Manager not initialized — forcing initialization...');
+      try {
+        const { TuyaEF00Manager } = require('../../lib/tuya/TuyaEF00Manager');
+        this.tuyaEF00Manager = new TuyaEF00Manager(this);
+        const initialized = await this.tuyaEF00Manager.initialize(this.zclNode);
+        if (initialized) {
+          this.log('[BED] ✅ TuyaEF00Manager initialized successfully');
+          this.tuyaEF00Manager.on('dpReport', (data) => {
+            this.log(`[BED] 📥 DP${data.dpId} = ${data.value}`);
+            this._handleDP(data.dpId, data.value);
+          });
+        } else {
+          this.log('[BED] ⚠️ TuyaEF00Manager failed to initialize');
+        }
+      } catch (e) {
+        this.log('[BED] ⚠️ TuyaEF00Manager init error:', e.message);
+      }
+    }
+
     // v8.1.152: Add periodic DP poll to force data reception
     // Some Tuya DP devices don't send data spontaneously
     this._pollInterval = setInterval(async () => {
