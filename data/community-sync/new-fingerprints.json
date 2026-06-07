@@ -1,5 +1,41 @@
 [
   {
+    "mfr": "_TYZB01_qezuin6k",
+    "productId": [
+      "TS110F",
+      "TS110E",
+      "TS0052"
+    ],
+    "driver": "dimmer_1_gang",
+    "deviceType": "light",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, dim",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TYZB01_v8gtiaed",
+    "productId": [
+      "TS110F",
+      "TS110E",
+      "TS1101"
+    ],
+    "driver": "dimmer_2_gang",
+    "deviceType": "light",
+    "capabilities": [
+      "onoff",
+      "dim"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, dim",
+    "source": "Johan"
+  },
+  {
     "mfr": "TUYATEC-53o41joc",
     "productId": [
       "RH3040"

@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-07T11:19:24.369Z",
-  "currentCount": 10748,
+  "ts": "2026-06-07T12:03:25.744Z",
+  "currentCount": 10726,
   "src": {
     "johan": {
       "count": 650,
@@ -19270,9 +19270,18 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 54,
+      "issueCount": 55,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 399,
+          "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374 #382",
+          "mfrs": [
+            "_TZE200_ka8l86iu",
+            "_TZE284_oitavov2"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 397,
@@ -19472,22 +19481,47 @@
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo"
           ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1392,
-          "title": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
-          "mfrs": [
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc"
-          ]
         }
       ]
     }
   },
   "newFps": [
+    {
+      "mfr": "_TYZB01_qezuin6k",
+      "productId": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ],
+      "driver": "dimmer_1_gang",
+      "deviceType": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "hasBattery": false,
+      "vendor": null,
+      "description": "onoff, dim",
+      "source": "Johan"
+    },
+    {
+      "mfr": "_TYZB01_v8gtiaed",
+      "productId": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ],
+      "driver": "dimmer_2_gang",
+      "deviceType": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "hasBattery": false,
+      "vendor": null,
+      "description": "onoff, dim",
+      "source": "Johan"
+    },
     {
       "mfr": "TUYATEC-53o41joc",
       "productId": [
@@ -40507,6 +40541,6 @@
       "driver": null
     }
   ],
-  "newCount": 37,
+  "newCount": 39,
   "enrichedCount": 2212
 }
