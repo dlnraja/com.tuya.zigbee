@@ -218,6 +218,19 @@ class ContactSensorDevice extends UnifiedSensorBase {
     await setupSonoffSensor(this, zclNode);
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
     this.log(`[CONTACT]  Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
+
+    // v8.1.157: Add periodic DP poll for luminance (DP101)
+    // Contact sensors with luminance don't send data spontaneously
+    this._pollInterval = setInterval(async () => {
+      try {
+        if (this.tuyaEF00Manager && !this._lastDPReceived) {
+          this.log('[CONTACT] Polling for luminance data...');
+          await this.tuyaEF00Manager.requestDPs?.([1, 2, 4, 101]).catch(() => {});
+        }
+      } catch (e) {
+        this.log('[CONTACT] Poll error:', e.message);
+      }
+    }, 60000); // Poll every 60 seconds
   }
 
   /**
@@ -420,6 +433,10 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Cleanup on device delete
    */
   async onDeleted() {
+    if (this._pollInterval) {
+      clearInterval(this._pollInterval);
+      this._pollInterval = null;
+    }
     if (this._contactState?.timer) {
       this.homey.clearTimeout(this._contactState.timer );
       this._contactState.timer = null;
