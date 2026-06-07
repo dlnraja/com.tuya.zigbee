@@ -1,7 +1,7 @@
 {
   "source": "davemachado/public-api",
-  "timestamp": "2026-06-07T05:10:24.177Z",
-  "total": 1544,
+  "timestamp": "2026-06-07T08:05:59.597Z",
+  "total": 1554,
   "ai": [
     {
       "name": "Gitter",
@@ -115,6 +115,12 @@
       "name": "Irisnet",
       "url": "https://irisnet.de/api/",
       "desc": "Realtime content moderation API that blocks or blurs unwanted images in real-time",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Jina AI",
+      "url": "https://jina.ai",
+      "desc": "Free AI API for embeddings, reranking, and text processing",
       "auth": "apiKey"
     },
     {
@@ -237,5 +243,5 @@
       "desc": "Real-time AI news, model pricing, service status, and agent activity feeds"
     }
   ],
-  "dev_count": 168
+  "dev_count": 169
 }

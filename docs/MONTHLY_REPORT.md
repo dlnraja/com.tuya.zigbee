@@ -1,26 +1,29 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-07T05:10:10.497Z*
+*Generated: 2026-06-07T08:05:46.450Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 211429 |
-| Collisions | 69257 |
+| Manufacturer IDs | 211458 |
+| Collisions | 69311 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TYST11_d0yu2xgi|TS0601` | air_purifier, siren |
+| `_TYST11_d0yu2xgi|TS0601` | air_purifier, air_purifier_switch, siren |
+| `_TYST11_d0yu2xgi|TS0601_air_purifier` | air_purifier, air_purifier_switch |
 | `_TZ3000_0s1izerx|TS0601` | air_purifier, climate_sensor |
 | `_TZ3000_6uzkisv2|TS0601` | air_purifier, climate_sensor |
 | `_TZ3000_akqdg6g7|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_bguser20|TS0601` | air_purifier, sensor_lcdtemphumidsensor_temphumidsensor, temphumidsensor4 |
 | `_TZ3000_bjawzodf|TS0601` | air_purifier, climate_sensor |
 | `_TZ3000_dowj6gyi|TS0601` | air_purifier, climate_sensor |
 | `_TZ3000_fllyghyj|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_i8jfiezr|TS0601` | air_purifier, temphumidsensor4 |
 | `_TZ3000_itnrsufe|TS0601` | air_purifier, button_wireless_1 |
 | `_TZ3000_qaaysllp|TS0601` | air_purifier, contact_sensor |
 | `_TZ3000_saiqcn0y|TS0601` | air_purifier, climate_sensor |
@@ -31,11 +34,8 @@
 | `_TZE200_2se8efxh|TS0601` | air_purifier, plug_smart |
 | `_TZE200_3p5ydos3|TS0601` | air_purifier, switch_dimmer_1gang |
 | `_TZE200_44af8vyi|TS0601` | air_purifier, button_wireless_1 |
-| `_TZE200_8ygsuhe1|TS0601` | air_purifier, climate_sensor |
-| `_TZE200_9cqcpkgb|TS0601` | air_purifier, plug_smart |
-| `_TZE200_9cxuhakf|TS0601` | air_purifier, dimmer_wall_1gang |
 
-*...and 69237 more*
+*...and 69291 more*
 
 ## 📋 Action Items
 
