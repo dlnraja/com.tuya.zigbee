@@ -26,14 +26,22 @@ async function main(){
   const summary={timestamp:now,devices:[],unmatchedFPs:[],errors:[],sources:{}};
 
   // Source 1: Gmail diagnostics report
+  // FILTER: Only process emails related to Homey/Tuya/Zigbee (not spam/personal)
+  const HOMEY_KEYWORDS = ['homey', 'tuya', 'zigbee', 'diagnostic', 'crash', 'error', 'sensor', 'switch', 'device', 'pairing'];
   const gmailR=loadJ(path.join(SD,'diagnostics-report.json'));
   if(gmailR?.diagnostics){
-    summary.sources.gmail=gmailR.diagnostics.length;
+    let homeyCount=0;
     for(const d of gmailR.diagnostics){
+      const subj=(d.subj||'').toLowerCase();
+      const body=(d.body||'').toLowerCase();
+      const isHomey=HOMEY_KEYWORDS.some(k=>subj.includes(k)||body.includes(k));
+      if(!isHomey) continue; // Skip non-Homey emails
+      homeyCount++;
       if(d.fps?.mfr?.length) for(const fp of d.fps.mfr)
         if(!idx.has(fp)) summary.unmatchedFPs.push({fp,source:'gmail',subj:(d.subj||'').slice(0,60)});
       if(d.errs?.length) summary.errors.push(...d.errs.map(e=>({err:e,source:'gmail'})));
     }
+    summary.sources.gmail=homeyCount;
   }
 
   // Source 2: Homey device report (from homey-device-diagnostics.js)
