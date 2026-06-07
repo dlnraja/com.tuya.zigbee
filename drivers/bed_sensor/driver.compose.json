@@ -173,38 +173,56 @@
     },
     {
       "type": "number",
-      "id": "delay_occupied",
+      "id": "presence_delay",
       "value": 3,
       "min": 0,
-      "max": 300,
+      "max": 3600,
       "units": "s",
       "label": {
-        "en": "Delay Occupied",
-        "fr": "Délai occupation",
-        "nl": "Vertraging bezet",
-        "de": "Verzögerung belegt"
+        "en": "Presence Delay",
+        "fr": "Délai de présence",
+        "nl": "Aanwezigheidsvertraging",
+        "de": "Anwesenheitsverzögerung"
       },
       "hint": {
-        "en": "Seconds before reporting bed as occupied",
-        "fr": "Secondes avant de signaler le lit comme occupé"
+        "en": "Seconds before reporting bed as unoccupied (DP102)",
+        "fr": "Secondes avant de signaler le lit comme inoccupé (DP102)"
       }
     },
     {
       "type": "number",
-      "id": "delay_unoccupied",
+      "id": "interval_time",
       "value": 10,
-      "min": 0,
-      "max": 300,
-      "units": "s",
+      "min": 5,
+      "max": 720,
+      "units": "min",
       "label": {
-        "en": "Delay Unoccupied",
-        "fr": "Délai inoccupé",
-        "nl": "Vertraging onbezet",
-        "de": "Verzögerung frei"
+        "en": "Sampling Interval",
+        "fr": "Intervalle d'échantillonnage",
+        "nl": "Monsteringsinterval",
+        "de": "Abtastintervall"
       },
       "hint": {
-        "en": "Seconds before reporting bed as unoccupied",
-        "fr": "Secondes avant de signaler le lit comme inoccupé"
+        "en": "Sampling interval in minutes (DP101, 5-720 min)",
+        "fr": "Intervalle d'échantillonnage en minutes (DP101, 5-720 min)"
+      }
+    },
+    {
+      "type": "number",
+      "id": "presence_time",
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "units": "s",
+      "label": {
+        "en": "Presence Report Delay",
+        "fr": "Délai rapport de présence",
+        "nl": "Vertraging aanwezigheidsrapport",
+        "de": "Anwesenheitsmeldeverzögerung"
+      },
+      "hint": {
+        "en": "Seconds before reporting bed as occupied (DP103, 0-3600 s)",
+        "fr": "Secondes avant de signaler le lit comme occupé (DP103, 0-3600 s)"
       }
     }
   ]

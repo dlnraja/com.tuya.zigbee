@@ -83235,7 +83235,7 @@
   },
   "_TZ3210_tgvtvdoc": {
     "driverId": "rain_sensor",
-    "type": "water_leak_sensor",
+    "type": "rain_sensor",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"
@@ -109540,8 +109540,8 @@
     ]
   },
   "_TZE200_ka8l86iu": {
-    "driverId": "soil_sensor",
-    "type": "soil_sensor",
+    "driverId": "presence_sensor_radar",
+    "type": "sensor",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"
