@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.152 (2026-06-07)
+## v8.1.153 (2026-06-07)
+
+v8.1.152: Fixed initialization issue for bed sensor driver, ensuring proper functionality., No new features added in this release., No improvements made in this release.
+
+---
+
+## [8.1.152] - 2026-06-07
+
+### Bug Fixes
+- Fixed initialization issue for bed sensor driver, ensuring proper functionality.
+
+### New Features
+- No new features added in this release.
+
+### Improvements
+- No improvements made in this release.
+---
+
+ v8.1.152 (2026-06-07)
 
 v8.1.151: Fixed bed sensor: added periodic DP poll and cleaned up intervals., Added 41 new fingerprints from community contributions.
 
