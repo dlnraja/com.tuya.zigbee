@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v8.1.154 (2026-06-07)
+## [8.1.154] - 2026-06-07
+
+v8.1.153: Fixed bed sensor: DP12 now reports illuminance correctly., Removed obsolete data point DP103 from bed sensor driver., Monthly enrichment: 365 drivers and 3428 fingerprints validated.
+---
+
+ v8.1.154 (2026-06-07)
 
 v8.1.153: Fixed bed sensor: DP12 now reports illuminance correctly., Removed obsolete data point DP103 from bed sensor driver., Monthly enrichment: 365 drivers and 3428 fingerprints validated.
 
