@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-07T01:29:06.754Z",
-  "currentCount": 10755,
+  "ts": "2026-06-07T02:16:35.101Z",
+  "currentCount": 10443,
   "src": {
     "johan": {
       "count": 650,
@@ -19491,7 +19491,42 @@
   },
   "newFps": [
     {
+      "mfr": "_TZ3210_ncw88jfq",
+      "productId": [
+        "TS0201",
+        "TY0201"
+      ],
+      "driver": "lcdtemphumidsensor",
+      "deviceType": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+      "source": "Johan"
+    },
+    {
       "mfr": "TUYATEC-53o41joc",
+      "productId": [
+        "RH3040"
+      ],
+      "driver": "pirsensor",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_motion, alarm_battery",
+      "source": "Johan"
+    },
+    {
+      "mfr": "TUYATEC-b5g40alm",
       "productId": [
         "RH3040"
       ],
@@ -19975,6 +20010,18 @@
       "source": "Johan"
     },
     {
+      "mfr": "_TZ3210_ncw88jfq",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE204_7bztmfm1",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZ3000_nwidmc4n",
       "productId": null,
       "source": "Z2M",
@@ -19994,6 +20041,12 @@
     },
     {
       "mfr": "_TZ3000_mzcp0of6",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE204_guvc7pdy",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -40493,6 +40546,6 @@
       "driver": null
     }
   ],
-  "newCount": 36,
+  "newCount": 41,
   "enrichedCount": 2212
 }
