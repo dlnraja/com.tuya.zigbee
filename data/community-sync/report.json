@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-07T15:01:06.847Z",
+  "ts": "2026-06-07T16:08:46.223Z",
   "currentCount": 10726,
   "src": {
     "johan": {
@@ -19275,7 +19275,7 @@
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 400,
+          "num": 401,
           "title": "[Auto] 39 new fingerprints from community (2026-06)",
           "mfrs": [
             "_TZ3000_rco1yzb1",
@@ -19304,30 +19304,20 @@
         },
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 397,
-          "title": "[Auto] 37 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_rco1yzb1",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_fkp5zyho",
-            "_TZ3000_axpdxqgu",
-            "_TZ3000_peszejy7",
-            "_TZ3000_f97vq5mn",
-            "_TZ3000_owgcnkrh",
-            "_TZ3000_nwidmc4n",
-            "_TZ3000_pfc7i3kt",
-            "_TZ3000_iv4eq7eh",
-            "_TZ3000_mzcp0of6",
-            "_TZ3000_avotanj3",
-            "_TZE200_qasjif9e"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
           "num": 395,
           "title": "TS0601 _TZE200_9xfjixap #339#379 #381  #384",
           "mfrs": [
             "_TZE200_9xfjixap"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 388,
+          "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+          "mfrs": [
+            "_TZ3210_tgvtvdoc",
+            "_TZ3210_tgvtvdoc",
+            "_TZ3210_tgvtvdoc"
           ]
         },
         {
