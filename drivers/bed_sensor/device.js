@@ -66,6 +66,7 @@ class BedSensorDevice extends UnifiedSensorBase {
 
   // ─── Initialization ───────────────────────────────────────────────────
   async onNodeInit({ zclNode }) {
+    this._destroyed = false;
     await super.onNodeInit({ zclNode });
     this.log('[BedSensor] Initializing...');
 
@@ -169,9 +170,8 @@ class BedSensorDevice extends UnifiedSensorBase {
       this.log(`[BedSensor] Setting ${key} (DP${mapping.dp}) to`, value);
       try {
         if (this.tuyaEF00Manager) {
-          // sendTuyaDP(dp, dpType, value) — dpType: 0=raw, 1=bool, 2=value, 4=enum
-          const dpTypeMap = { enum: 4, value: 2 };
-          await this.tuyaEF00Manager.sendTuyaDP(mapping.dp, dpTypeMap[mapping.type] || 2, value);
+          // sendDP(dp, value, type) — compatibility wrapper on TuyaEF00Manager
+          await this.tuyaEF00Manager.sendDP(mapping.dp, value, mapping.type);
           this.log(`[BedSensor] ${key} written successfully`);
         } else {
           this.log(`[BedSensor] tuyaEF00Manager not available for DP${mapping.dp} write`);
@@ -187,6 +187,22 @@ class BedSensorDevice extends UnifiedSensorBase {
   _handleDP(dpId, value) {
     this._lastDPReceived = true;
     return super._handleDP(dpId, value);
+  }
+
+  // ─── Battery DP4 Handler ─────────────────────────────────────────────
+  // CRITICAL FIX: The device sends raw 0 or 1 for DP4, NOT a percentage.
+  // 0 = battery depleted, 1 = battery OK.
+  // Parent class treats raw value as percentage → 1 becomes 1%.
+  // Z2M reference confirms: battery is 0-100% but some hardware sends 0/1.
+  // We map: 0 → 10% (low but functional), 1 → 100% (full).
+  // Values > 1 are already percentages and pass through unchanged.
+  _handleBatteryDP(dp, value) {
+    if (dp === 4 && typeof value === 'number' && value <= 1) {
+      const mapped = value === 0 ? 10 : 100;
+      this.log(`[BedSensor] Battery DP4 raw=${value} mapped to ${mapped}%`);
+      return super._handleBatteryDP(dp, mapped);
+    }
+    return super._handleBatteryDP(dp, value);
   }
 
   // ─── Lifecycle Cleanup ────────────────────────────────────────────────
