@@ -27,7 +27,7 @@ async function main(){
 
   // Source 1: Gmail diagnostics report
   // FILTER: Only process emails related to Homey/Tuya/Zigbee (not spam/personal)
-  const HOMEY_KEYWORDS = ['homey', 'tuya', 'zigbee', 'diagnostic', 'crash', 'error', 'sensor', 'switch', 'device', 'pairing'];
+  const HOMEY_KEYWORDS = ['homey', 'tuya', 'zigbee', 'diagnostic', 'crash', 'error', 'sensor', 'switch', 'device', 'pairing', 'firmware', 'athom', 'homey app', 'zigbee device', 'tuya unified'];
   const HOMEY_DOMAINS = ['homey.app', 'athom.com', 'tuya.com', 'tuya.cn', 'zigbee2mqtt.io', 'github.com', 'community.homey.app'];
   const gmailR=loadJ(path.join(SD,'diagnostics-report.json'));
   if(gmailR?.diagnostics){
