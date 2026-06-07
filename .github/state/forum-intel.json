@@ -1,12 +1,48 @@
 {
-  "timestamp": "2026-06-06T03:53:09.051Z",
+  "timestamp": "2026-06-07T01:48:00.715Z",
   "topicsScanned": 263,
-  "totalPosts": 0,
-  "categories": {},
+  "totalPosts": 1,
+  "categories": {
+    "unknown_device": 1
+  },
   "missingFPs": [],
   "wifiRequests": [],
   "pairingIssues": [],
-  "unknownDevices": [],
+  "unknownDevices": [
+    {
+      "user": "Peter_van_Werkhoven",
+      "date": "2026-06-03",
+      "topicId": 140352,
+      "postNum": 2066,
+      "postId": 745928,
+      "missing": [],
+      "found": [
+        "_TZ3000_mrpevh8p",
+        "_TZ3000_0dumfk2z"
+      ],
+      "issues": [
+        "unknown_device"
+      ],
+      "text": " Hi Dylan Good morning, \n I’ve installed the latest version 8.1.75 of your app, the Luminance readings from the Door/Window sensors are still wrong the all staying at the same value even when it’s dark. \nAlso the Smartbutton _TZ3000_mrpevh8p TS0041 and the SOS button _TZ3000_0dumfk2z TS0215A still b"
+    }
+  ],
   "wrongValues": [],
-  "allIssues": []
+  "allIssues": [
+    {
+      "user": "Peter_van_Werkhoven",
+      "date": "2026-06-03",
+      "topicId": 140352,
+      "postNum": 2066,
+      "postId": 745928,
+      "missing": [],
+      "found": [
+        "_TZ3000_mrpevh8p",
+        "_TZ3000_0dumfk2z"
+      ],
+      "issues": [
+        "unknown_device"
+      ],
+      "text": " Hi Dylan Good morning, \n I’ve installed the latest version 8.1.75 of your app, the Luminance readings from the Door/Window sensors are still wrong the all staying at the same value even when it’s dark. \nAlso the Smartbutton _TZ3000_mrpevh8p TS0041 and the SOS button _TZ3000_0dumfk2z TS0215A still b"
+    }
+  ]
 }

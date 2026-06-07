@@ -42,6 +42,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 
     // Register onoff capability listener for relay control
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       this.log(`[CEILING] Relay control: ${value}`);
       return this._setRelay(value);
     });

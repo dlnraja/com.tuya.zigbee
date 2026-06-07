@@ -209,6 +209,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
     if (config.type === 'RELAY' && this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
         this.log(`[MMWAVE]  Relay control: ${value ? 'ON' : 'OFF'} (DP108)`);
         const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
         if (tuya?.datapoint) {

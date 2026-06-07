@@ -35,6 +35,7 @@ class HumidifierDevice extends ZigBeeDevice {
 
     // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
       });
 

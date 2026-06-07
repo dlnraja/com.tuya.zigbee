@@ -61,6 +61,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
     if (!this.isSubDevice()) {
       // Gang 1 (main device)
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
         this.log(`onoff first gang:`, value);
         try {
           await this.writeBool(V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.onOffGangOne, value);
@@ -100,6 +101,7 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
     } else {
       // Gang 2 (subdevice)
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
         this.log(`onoff second gang:`, value);
         try {
           await this.writeBool(V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.onOffGangTwo, value);

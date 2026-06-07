@@ -1,6 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const EweLinkLocalDevice=require('../../lib/ewelink-local/EweLinkLocalDevice');
-class D extends EweLinkLocalDevice{
+class D extends VirtualButtonMixin(EweLinkLocalDevice) {
   get stateMappings(){return{switch:{capability:'onoff',transform:v=>v==='on'}};}
   _registerCapListeners(){
     if(this.hasCapability('onoff')){this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);

@@ -15,6 +15,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
 
         // Handler for on/off
         this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
             return this.writeBool(1, value);
         });
 

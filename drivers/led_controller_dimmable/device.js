@@ -160,6 +160,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
   _registerCapabilityListeners() {
     // On/Off capability
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       this.log(`[LED] Setting onoff: ${value}`);
 
       if (!this._onOffCluster) {

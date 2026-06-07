@@ -57,6 +57,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   async _setupGang(zclNode) {
     // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       this.log('onoff:', value);
       try {
         await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
