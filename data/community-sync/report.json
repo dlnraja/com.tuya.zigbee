@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-07T14:17:02.114Z",
+  "ts": "2026-06-07T15:01:06.847Z",
   "currentCount": 10726,
   "src": {
     "johan": {
@@ -19332,6 +19332,16 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1411,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZ3210_nuenzetq",
+            "_TZ3210_nuenzetq",
+            "_TZ3210_nuenzetq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
           "title": "Device Request - GIEX 2-Zone Smart Water Valve - _TZE284_8zizsafo / TS0601",
           "mfrs": [
@@ -19478,17 +19488,6 @@
             "_TZE284_0ints6wl",
             "_TZE284_0ints6wl",
             "_TZE284_0ints6wl"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1395,
-          "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
-          "mfrs": [
-            "_TZ3000_hyarhbyx",
-            "_TZ3000_hyarhbyx",
-            "_TZ3000_hyarhbyx",
-            "_TZ3000_hyarhbyx"
           ]
         }
       ]
