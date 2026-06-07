@@ -9,30 +9,29 @@ class BedSensorDevice extends UnifiedSensorBase {
   get forceActiveTuyaMode() { return true; }
   get hybridModeEnabled() { return true; }
 
-  // v8.1.129: Override sensorCapabilities — bed sensor has NO temperature/humidity
+  // v8.1.154: Override sensorCapabilities — bed sensor has NO temperature/humidity
   get sensorCapabilities() {
-    return ['alarm_contact', 'measure_battery', 'alarm_battery', 'measure_pressure'];
+    return ['alarm_contact', 'measure_battery', 'alarm_battery', 'measure_luminance'];
   }
 
   get dpMappings() {
-    // v8.1.147: FINAL corrected per Z2M PR #11584
-    // github.com/Koenkk/zigbee-herdsman-converters/pull/11584
+    // v8.1.154: CORRECTED per Z2M PR #11584 (github.com/Koenkk/zigbee-herdsman-converters/pull/11584)
     // DP1 = presence (trueFalse0: 0=occupied, 1=unoccupied)
     // DP4 = battery (raw %)
     // DP9 = sensitivity (enum: 0=low, 1=middle, 2=high)
-    // DP12 = illuminance/pressure (raw, 0-10000)
+    // DP12 = illuminance (raw, 0-10000) — NOT pressure!
     // DP101 = interval_time (sampling interval, 5-720 min)
     // DP102 = presence_delay (delay to report no presence, 0-3600 s)
-    // DP103 = presence_time (delay to report presence, 0-3600 s)
+    // DP103 does NOT exist on the actual device (removed per Koenkk review)
     // DP104 = work_state (READ-ONLY enum: presence/none/presence_5min/etc)
     return {
       1: { capability: 'alarm_contact', transform: (v) => (v !== 0 && v !== false) },
       4: { capability: 'measure_battery', transform: (v) => Math.min(100, Math.max(0, v)) },
-      12: { capability: 'measure_pressure', transform: (v) => v },
+      12: { capability: 'measure_luminance', divisor: 1 },
       9: { capability: null, internal: 'sensitivity', writable: true },
       101: { capability: null, internal: 'interval_time', writable: true },
       102: { capability: null, internal: 'presence_delay', writable: true },
-      103: { capability: null, internal: 'presence_time', writable: true },
+      // DP103 REMOVED — does not exist on actual device (per Koenkk review)
       // DP104 REMOVED — it's work_state (read-only enum), NOT battery!
     };
   }
@@ -88,7 +87,7 @@ class BedSensorDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     // v8.1.145: Corrected DP writes per Z2M PR #11584
     // DP9 = sensitivity (enum), DP101 = interval_time (min), DP102 = presence_delay (s)
-    const BED_KEYS = ['sensitivity', 'interval_time', 'presence_delay', 'presence_time'];
+    const BED_KEYS = ['sensitivity', 'interval_time', 'presence_delay'];
     const superKeys = changedKeys.filter(k => !BED_KEYS.includes(k));
 
     if (superKeys.length > 0) {
@@ -99,7 +98,6 @@ class BedSensorDevice extends UnifiedSensorBase {
       sensitivity: { dp: 9, type: 'enum' },
       interval_time: { dp: 101, type: 'value' },
       presence_delay: { dp: 102, type: 'value' },
-      presence_time: { dp: 103, type: 'value' },
     };
 
     for (const key of changedKeys) {
