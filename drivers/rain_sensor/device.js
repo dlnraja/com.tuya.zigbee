@@ -28,7 +28,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         2: { capability: 'measure_humidity', divisor: 1 },
         102: { capability: 'measure_luminance', divisor: 1 }, // v8.1.117: FIX #373 - divisor=10 caused 10x too low lux
         4: { capability: 'measure_battery', divisor: 1 },
-        104: { capability: 'alarm_battery', transform: (v) => (v === 0 || v === false) },
+        // DP104 alarm_battery REMOVED — SDK3 Rule AO: never combine measure_battery + alarm_battery
         106: { capability: 'measure_humidity', divisor: 1 }
       };
     }
@@ -41,7 +41,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       // TS0207 and some TS0601 variants
       15: { capability: 'measure_battery', divisor: 1 },
       101: { capability: 'measure_luminance', divisor: 1 }, // Illuminance (lux)
-      104: { capability: 'alarm_battery', transform: (v) => (v === 0 || v === false) },
+      // DP104 alarm_battery REMOVED — SDK3 Rule AO: never combine measure_battery + alarm_battery
       105: { capability: 'measure_voltage.rain', divisor: 1000 }, // Raw sensor voltage
       106: { capability: 'measure_humidity', divisor: 1 }  // Rain level on some variants
     };
@@ -135,7 +135,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       }
 
       // Zone Status Change Notification (rain detected)
-      iasCluster.onZoneStatusChangeNotification = (payload) => {
+      iasCluster.onZoneStatusChangeNotification = async (payload) => {
         const parsed = this._parseIASZoneStatus(payload?.zoneStatus);const raining = parsed.alarm1 || parsed.alarm2;
         
         this.log(`[RAIN-IAS]  Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  raining=${raining}`);
@@ -146,7 +146,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       };
 
       // Attribute listener for zone status
-      iasCluster.on('attr.zoneStatus', (status) => {
+      iasCluster.on('attr.zoneStatus', async (status) => {
         const raining = (status & 0x01) !== 0 || (status & 0x02) !== 0;
         this.log(`[RAIN-IAS]  Zone attr status: ${status}  raining=${raining}`);
         

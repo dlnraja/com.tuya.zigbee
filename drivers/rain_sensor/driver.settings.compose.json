@@ -1,6 +1,6 @@
 [
     {
-        "id": "batteryThreshold",
+        "id": "battery_threshold",
         "type": "number",
         "label": {
             "en": "Battery Low Alarm Voltage Threshold (%)"
