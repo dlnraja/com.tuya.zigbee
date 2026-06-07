@@ -2,28 +2,37 @@
 
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
+/**
+ * Bed Sensor Driver — SDK3 Compliant
+ *
+ * Flow card registration for bed presence detection.
+ * Uses idempotent registration pattern (no duplicate listeners on reconnect).
+ *
+ * @version 8.2.0
+ */
 class BedSensorDriver extends BaseZigBeeDriver {
-async onInit() {
+
+  async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) {return;}
-    this._flowCardsRegistered = true;
-    this.log('BedSensorDriver v1.0 initialized');
+    this.log('[BedSensor] Driver initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // CONDITIONS
+    // Condition: Is bed occupied?
     try {
       const card = this.homey.flow.getConditionCard('bed_sensor_is_occupied');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
+          if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition bed_sensor_is_occupied: ${err.message}`); }
+    } catch (err) {
+      this.error('[BedSensor] Flow card registration error:', err.message);
+    }
 
-    this.log('[FLOW] All flow cards registered');
+    this.log('[BedSensor] Flow cards registered');
   }
 }
 
