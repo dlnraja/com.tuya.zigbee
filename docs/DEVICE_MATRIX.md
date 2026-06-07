@@ -59,7 +59,7 @@
 | device_air_purifier_siren | 3 | TS0601, TS0601_air_purifier | alarm_motion, measure_battery, alarm_generic... |
 | device_air_purifier_smart | 2 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, measure_humidity... |
 | device_air_purifier_smoke | 2 | TS0601, TS0601_air_purifier | alarm_smoke, measure_battery, measure_temperature... |
-| device_air_purifier_soil | 77 | Arteco, CS-201Z, TS0601, TS0601_air_purifier, ZG-303Z | measure_humidity.soil, measure_temperature, measure_humidity... |
+| device_air_purifier_soil | 3 | Arteco, CS-201Z, TS0601, TS0601_air_purifier, ZG-303Z | measure_humidity.soil, measure_temperature, measure_humidity... |
 | device_air_purifier_thermostat | 9 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_water | 2 | TS0601, TS0601_air_purifier | measure_humidity, alarm_water, onoff... |
 | device_din_rail | 8 | TS0001, TS0002, TS011F, TS0601 | alarm_motion, alarm_contact, measure_battery... |
@@ -157,7 +157,7 @@
 | power_clamp_meter | 24 | TS0601, TS0601_clamp | measure_power, meter_power, measure_current.phase2... |
 | power_meter | 218 | pj-1203a, Pj-1203A, PJ-1203A, TS0601, TS0601_meter | measure_power, meter_power, measure_voltage... |
 | presence_sensor_ceiling | 12 | CK-BL702-MWS-01(7016), TS0225, TS0601, TS0601_ceiling, ZP-301Z | alarm_motion, onoff, measure_luminance... |
-| presence_sensor_radar | 470 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
+| presence_sensor_radar | 473 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0203, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
 | radar_sensor | 6 | TS0601 | measure_luminance, alarm_motion |
 | radar_sensor_2 | 104 | 3305-S, 3325-S, 3326-L, CK-BL702-MWS-01, CK-BL702-MWS-01(7016), CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MG1_5RZ, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, SNZB-06P, SZLMR10, TRADFRI motion sensor, TS0202, TS0203, TS0225, TS0601, TY0202, ZG-204Z, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z | measure_luminance, alarm_motion |
 | radar_sensor_ceiling | 292 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | measure_luminance, alarm_motion |
@@ -271,7 +271,7 @@
 | temphumidsensor5 | 10 | CK-TLSR8656-SS5-01(7014), RH3052, SNTZ003, TS0201, TY0201, ZG-227Z | measure_temperature, measure_humidity, measure_battery |
 | thermostat_4ch | 153 | TS0601, TS0601_thermo4ch | onoff, onoff.ch2, onoff.ch3... |
 | thermostat_tuya_dp | 191 | TS0601, TS0601_thermo | target_temperature, measure_temperature, thermostat_mode... |
-| thermostatic_radiator_valve | 119 | 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, alarm_contact, measure_battery |
+| thermostatic_radiator_valve | 117 | 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, alarm_contact, measure_battery |
 | tunable_bulb_E14 | 3 | TS0502A | onoff, dim, light_temperature |
 | tunable_bulb_E27 | 3 | TS0502A | onoff, dim, light_temperature |
 | tunable_spot_GU10 | 3 | TS0502A | onoff, dim, light_temperature |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 21187 manufacturer IDs
+**Total:** 315 drivers, 21114 manufacturer IDs
 
-*Generated: 2026-06-07T20:54:10.217Z*
+*Generated: 2026-06-07T21:23:58.900Z*
