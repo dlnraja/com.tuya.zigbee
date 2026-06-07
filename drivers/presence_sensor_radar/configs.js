@@ -28,7 +28,6 @@ const SENSOR_CONFIGS = {
       '_TZE204_iaeejhvf',
       '_TZE204_ikvncluo', '_TZE204_jva8ink8',
       '_TZE204_lyetpprm', '_TZE204_no6qtgtl',
-      '_TZE200_ka8l86iu', // v8.1.117: FIX #374 - Issue #374: no detection
     ],
     battery: false,
     noTemperature: true,
@@ -218,6 +217,29 @@ const SENSOR_CONFIGS = {
       113: { cap: null, setting: 'breathe_false_detection' },
       122: { cap: null, setting: 'motion_detection_mode' },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+    }
+  },
+
+  // TYPE: _TZE200_ka8l86iu battery multisensor (Z2M confirmed)
+  // Different DP layout from ZY_M100: battery on DP110, illuminance on DP106
+  'KA8L86IU_BATTERY': {
+    sensors: [
+      '_TZE200_ka8l86iu',
+      '_TZE200_zbfmvj13', // Same DP structure per Z2M
+    ],
+    battery: true,
+    hasIlluminance: true,
+    needsPolling: true,
+    noTemperature: true,
+    noHumidity: true,
+    dpMap: {
+      1:   { cap: 'alarm_motion', type: 'presence_enum' },        // Z2M: presence (enum)
+      2:   { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 9 }, // Z2M: motion_detection_sensitivity
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 }, // Z2M: fading_time
+      106: { cap: 'measure_luminance', type: 'lux_direct' },       // Z2M: illuminance (lux)
+      107: { cap: null, setting: 'illuminance_interval', min: 0, max: 60 }, // Z2M: illuminance_interval
+      108: { cap: null, setting: 'indicator' },                     // Z2M: indicator (bool)
+      110: { cap: 'measure_battery', divisor: 1 },                  // Z2M: battery (value 0-100%)
     }
   },
 
