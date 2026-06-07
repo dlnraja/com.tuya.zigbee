@@ -4,27 +4,183 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 
 /**
- * Bed Sensor Device — SDK3 Compliant
+ * Bed Sensor Device — SDK3 Compliant with Per-MFR Auto-Adaptation
  *
- * DP mappings per Z2M PR #11584:
- *   DP1   = presence     (trueFalse0: 0=occupied, 1=unoccupied)
- *   DP4   = battery      (raw percentage, CR2032)
- *   DP9   = sensitivity  (enum writable: 0=low, 1=middle, 2=high)
- *   DP12  = pressure     (raw 0-10000)
- *   DP101 = interval_time   (sampling interval, 5-720 min, writable)
- *   DP102 = presence_delay  (delay to report unoccupied, 0-3600 s, writable)
- *   DP103 = presence_time   (delay to report occupied, 0-3600 s, writable)
- *   DP104 = work_state      (READ-ONLY enum — NOT battery!)
+ * Supports multiple manufacturer variants with DIFFERENT protocols:
+ * - _TZE200_seq9cm6u: Tuya DP bed pressure sensor (confirmed Z2M)
+ * - _TZE200_sh11h1f5: Tuya DP bed pressure sensor (inferred, same DP layout)
+ * - _TYZB01_* / TUYATEC-*: ZCL PIR motion sensors (IAS Zone, NOT Tuya DP)
  *
- * @version 8.2.0 — Full SDK3 compliance rewrite
+ * The driver auto-detects the protocol based on manufacturer name and
+ * applies the correct DP mappings, battery handling, and inversion logic.
+ *
+ * @version 8.3.0 — Per-MFR auto-adaptation
  */
 class BedSensorDevice extends UnifiedSensorBase {
 
-  // ─── Battery Configuration ────────────────────────────────────────────
-  // Bed sensor uses DP4 for battery (not DP15 default).
-  // DIRECT algorithm: raw DP value = percentage (no conversion needed).
-  get batteryConfig() {
+  // ═══════════════════════════════════════════════════════════════════════
+  // PER-MFR CONFIGURATION MAP
+  // Each MFR has its own protocol, DP layout, battery format, and quirks.
+  // The driver detects the MFR at init and applies the correct config.
+  // ═══════════════════════════════════════════════════════════════════════
+
+  static get MFR_CONFIGS() {
     return {
+      // ─── Tuya DP Bed Pressure Sensors ────────────────────────────────
+      // Confirmed via Z2M zigbee-herdsman-converters source code
+      '_TZE200_seq9cm6u': {
+        protocol: 'tuya_dp',
+        description: 'Tuya DP Bed Pressure Sensor (Z2M confirmed)',
+        // Z2M tuyaDatapoints: [DP, name, converter]
+        dpMappings: {
+          1:   { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) }, // trueFalse0
+          4:   { capability: 'measure_battery', divisor: 1 }, // raw 0-100%
+          9:   { capability: null, internal: 'sensitivity', writable: true },
+          12:  { capability: 'measure_luminance', divisor: 1 }, // Z2M calls it "illuminance"
+          101: { capability: null, internal: 'interval_time', writable: true },
+          102: { capability: null, internal: 'presence_delay', writable: true },
+          103: { capability: null, internal: 'presence_time', writable: true },
+          104: { capability: null, internal: 'work_state' }, // READ-ONLY enum, NOT battery
+        },
+        batteryConfig: {
+          chemistry: BatteryCalculator.CHEMISTRY.CR2032,
+          algorithm: BatteryCalculator.ALGORITHM.DIRECT,
+          dpId: 4,
+          dpIdState: null,
+          voltageMin: 2.0,
+          voltageMax: 3.0,
+        },
+        sensorCapabilities: ['alarm_contact', 'measure_battery', 'measure_luminance'],
+        forceActiveTuyaMode: true,
+        hybridModeEnabled: true,
+        pollDPs: [1, 4, 12],
+      },
+
+      // Inferred same DP layout as seq9cm6u (NOT confirmed in Z2M)
+      '_TZE200_sh11h1f5': {
+        protocol: 'tuya_dp',
+        description: 'Tuya DP Bed Pressure Sensor (inferred)',
+        dpMappings: {
+          1:   { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
+          4:   { capability: 'measure_battery', divisor: 1 },
+          9:   { capability: null, internal: 'sensitivity', writable: true },
+          12:  { capability: 'measure_luminance', divisor: 1 },
+          101: { capability: null, internal: 'interval_time', writable: true },
+          102: { capability: null, internal: 'presence_delay', writable: true },
+          103: { capability: null, internal: 'presence_time', writable: true },
+          104: { capability: null, internal: 'work_state' },
+        },
+        batteryConfig: {
+          chemistry: BatteryCalculator.CHEMISTRY.CR2032,
+          algorithm: BatteryCalculator.ALGORITHM.DIRECT,
+          dpId: 4,
+          dpIdState: null,
+          voltageMin: 2.0,
+          voltageMax: 3.0,
+        },
+        sensorCapabilities: ['alarm_contact', 'measure_battery', 'measure_luminance'],
+        forceActiveTuyaMode: true,
+        hybridModeEnabled: true,
+        pollDPs: [1, 4, 12],
+      },
+
+      // ─── ZCL PIR Motion Sensors (NOT bed sensors!) ──────────────────
+      // These use IAS Zone cluster for occupancy + genPowerCfg for battery.
+      // They are PIR sensors that happen to be in the bed_sensor driver
+      // due to broad productId matching (TS0202, RH3040).
+      // Protocol: Standard ZCL, NO Tuya DP.
+      '_TYZB01_dl7cejts': {
+        protocol: 'zcl_ias',
+        description: 'ZCL PIR Motion Sensor (NOT bed sensor)',
+        dpMappings: {}, // No Tuya DPs — uses ZCL clusters
+        batteryConfig: null, // Battery via ZCL genPowerCfg, not Tuya DP
+        sensorCapabilities: ['alarm_motion', 'measure_battery'],
+        forceActiveTuyaMode: false,
+        hybridModeEnabled: false,
+        pollDPs: [], // No Tuya DPs to poll
+      },
+      '_TYZB01_dr6sduka': {
+        protocol: 'zcl_ias',
+        description: 'ZCL PIR Motion Sensor (NOT bed sensor)',
+        dpMappings: {},
+        batteryConfig: null,
+        sensorCapabilities: ['alarm_motion', 'measure_battery'],
+        forceActiveTuyaMode: false,
+        hybridModeEnabled: false,
+        pollDPs: [],
+      },
+      '_TYZB01_geepvxsy': {
+        protocol: 'zcl_ias',
+        description: 'ZCL PIR Motion Sensor (NOT bed sensor)',
+        dpMappings: {},
+        batteryConfig: null,
+        sensorCapabilities: ['alarm_motion', 'measure_battery'],
+        forceActiveTuyaMode: false,
+        hybridModeEnabled: false,
+        pollDPs: [],
+      },
+
+      // ─── TUYATEC PIR Sensors ────────────────────────────────────────
+      'TUYATEC-B5G40ALM': {
+        protocol: 'zcl_ias',
+        description: 'TUYATEC PIR Motion Sensor (NOT bed sensor)',
+        dpMappings: {},
+        batteryConfig: null,
+        sensorCapabilities: ['alarm_motion', 'measure_battery'],
+        forceActiveTuyaMode: false,
+        hybridModeEnabled: false,
+        pollDPs: [],
+      },
+      'TUYATEC-53O41JOC': {
+        protocol: 'zcl_ias',
+        description: 'TUYATEC PIR Motion Sensor (NOT bed sensor)',
+        dpMappings: {},
+        batteryConfig: null,
+        sensorCapabilities: ['alarm_motion', 'measure_battery'],
+        forceActiveTuyaMode: false,
+        hybridModeEnabled: false,
+        pollDPs: [],
+      },
+    };
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // AUTO-DETECT MFR AND APPLY CONFIG
+  // ═══════════════════════════════════════════════════════════════════════
+
+  /**
+   * Get the MFR-specific configuration for this device.
+   * Falls back to default Tuya DP config if MFR not in map.
+   */
+  _getMFRConfig() {
+    const mfr = (this.getSetting?.('zb_manufacturer_name') || '').toLowerCase();
+    const configs = BedSensorDevice.MFR_CONFIGS;
+
+    // Direct match
+    if (configs[mfr]) {
+      this.log(`[BedSensor] MFR config: ${configs[mfr].description}`);
+      return configs[mfr];
+    }
+
+    // Partial match (some MFRs have case variants)
+    for (const [key, config] of Object.entries(configs)) {
+      if (mfr.includes(key.toLowerCase().replace(/^_/, ''))) {
+        this.log(`[BedSensor] MFR config (partial): ${config.description}`);
+        return config;
+      }
+    }
+
+    // Default: assume Tuya DP bed sensor with standard layout
+    this.log(`[BedSensor] No specific MFR config for "${mfr}" — using default Tuya DP layout`);
+    return configs['_TZE200_seq9cm6u']; // Safe default
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // DYNAMIC GETTERS (delegate to MFR config)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  get batteryConfig() {
+    return this._mfrConfig?.batteryConfig || {
       chemistry: BatteryCalculator.CHEMISTRY.CR2032,
       algorithm: BatteryCalculator.ALGORITHM.DIRECT,
       dpId: 4,
@@ -34,83 +190,102 @@ class BedSensorDevice extends UnifiedSensorBase {
     };
   }
 
-  // ─── Tuya DP Mode ────────────────────────────────────────────────────
-  // Battery devices MUST keep Tuya DP mode active.
-  // Without these, Tuya mode deactivates after learning phase → no data received.
-  get forceActiveTuyaMode() { return true; }
-  get hybridModeEnabled() { return true; }
-
-  // ─── Sensor Capabilities ──────────────────────────────────────────────
-  // Bed sensor has NO temperature, humidity, or luminance.
-  // SDK3 Rule AO: NEVER combine measure_battery + alarm_battery on same device.
-  // UnifiedBatteryHandler adapts at runtime to keep only the appropriate one.
-  get sensorCapabilities() {
-    return ['alarm_contact', 'measure_battery', 'measure_luminance'];
+  get forceActiveTuyaMode() {
+    return this._mfrConfig?.forceActiveTuyaMode ?? true;
   }
 
-  // ─── DP Mappings ──────────────────────────────────────────────────────
-  // DP4 battery is handled by batteryConfig (parent class _handleBatteryDP),
-  // so it is NOT listed in dpMappings to avoid double-processing.
+  get hybridModeEnabled() {
+    return this._mfrConfig?.hybridModeEnabled ?? true;
+  }
+
+  get sensorCapabilities() {
+    return this._mfrConfig?.sensorCapabilities || ['alarm_contact', 'measure_battery', 'measure_luminance'];
+  }
+
   get dpMappings() {
-    return {
-      // Z2M trueFalse0: 0=occupied (true), 1=unoccupied (false)
-      1: { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
-      12: { capability: 'measure_luminance', divisor: 1 },
-      // Writable settings DPs (no capability, internal only)
-      9: { capability: null, internal: 'sensitivity', writable: true },
+    return this._mfrConfig?.dpMappings || {
+      1:   { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
+      4:   { capability: 'measure_battery', divisor: 1 },
+      12:  { capability: 'measure_luminance', divisor: 1 },
+      9:   { capability: null, internal: 'sensitivity', writable: true },
       101: { capability: null, internal: 'interval_time', writable: true },
       102: { capability: null, internal: 'presence_delay', writable: true },
       103: { capability: null, internal: 'presence_time', writable: true },
-      // DP104 is work_state (enum). Must map to null to prevent UnifiedSensorBase from processing it as battery
       104: { capability: null, internal: 'work_state' },
     };
   }
 
-  // ─── Initialization ───────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════════
+  // INITIALIZATION
+  // ═══════════════════════════════════════════════════════════════════════
+
   async onNodeInit({ zclNode }) {
     this._destroyed = false;
-    await super.onNodeInit({ zclNode });
-    this.log('[BedSensor] Initializing...');
 
-    // Remove bogus capabilities that may have been inherited from parent class
-    for (const cap of ['measure_temperature', 'measure_humidity', 'measure_luminance']) {
+    // Detect MFR and load config BEFORE super.onNodeInit
+    this._mfrConfig = this._getMFRConfig();
+    this.log(`[BedSensor] Protocol: ${this._mfrConfig.protocol}`);
+    this.log(`[BedSensor] ${this._mfrConfig.description}`);
+
+    await super.onNodeInit({ zclNode });
+
+    // Remove bogus capabilities inherited from parent class
+    const capsToRemove = ['measure_temperature', 'measure_humidity'];
+    for (const cap of capsToRemove) {
       if (this.hasCapability(cap)) {
         await this.removeCapability(cap).catch(() => {});
         this.log(`[BedSensor] Removed inherited ${cap} capability`);
       }
     }
 
-    // Removed the new TuyaEF00Manager override here.
-    // UnifiedSensorBase already handles it and registers the dpReport listener.
-    // Overriding it here caused all incoming Zigbee messages to be silently dropped.
+    // ZCL PIR sensors don't need Tuya DP setup — skip Tuya-specific init
+    if (this._mfrConfig.protocol === 'zcl_ias') {
+      this.log('[BedSensor] ZCL IAS protocol — skipping Tuya DP setup');
+      return; // Standard ZCL handling via parent class
+    }
 
-    // Z2M/ZHA Pattern: Send initial data query immediately after init.
-    // Battery-powered Tuya devices (receiveWhenIdle=false) do NOT send data
-    // spontaneously. They must be queried. ZHA calls this "spell_data_query".
-    // Without this, the device pairs but never reports any DP values.
-    // NOTE: requestDP takes a SINGLE dp, not an array!
+    // ─── Tuya DP Path ────────────────────────────────────────────────
+
+    // Force TuyaEF00Manager initialization if not already done
+    if (!this.tuyaEF00Manager) {
+      this.log('[BedSensor] TuyaEF00Manager not initialized — forcing...');
+      try {
+        const { TuyaEF00Manager } = require('../../lib/tuya/TuyaEF00Manager');
+        this.tuyaEF00Manager = new TuyaEF00Manager(this);
+        const initialized = await this.tuyaEF00Manager.initialize(this.zclNode);
+        if (initialized) {
+          this.log('[BedSensor] TuyaEF00Manager initialized');
+        } else {
+          this.log('[BedSensor] TuyaEF00Manager failed to initialize');
+        }
+      } catch (e) {
+        this.log('[BedSensor] TuyaEF00Manager init error:', e.message);
+      }
+    }
+
+    // Send initial data query (Z2M/ZHA "spell_data_query" pattern)
+    const pollDPs = this._mfrConfig.pollDPs || [1, 4, 12];
     this.homey.setTimeout(async () => {
       if (this._destroyed) return;
       try {
         if (this.tuyaEF00Manager) {
-          this.log('[BedSensor] Sending initial DP query (spell_data_query)...');
-          for (const dp of [1, 4, 12]) {
+          this.log(`[BedSensor] Sending initial DP query for DPs: ${pollDPs.join(',')}`);
+          for (const dp of pollDPs) {
             await this.tuyaEF00Manager.requestDP(dp).catch(() => {});
           }
         }
       } catch (e) {
         this.log('[BedSensor] Initial query error:', e.message);
       }
-    }, 3000); // 3s delay to allow cluster binding to complete
+    }, 3000);
 
-    // Periodic DP poll as fallback for devices that don't respond to initial query.
-    // Uses this.homey.setInterval() for proper SDK3 lifecycle management.
+    // Periodic DP poll as fallback
     this._pollInterval = this.homey.setInterval(async () => {
       try {
         if (this._destroyed) return;
         if (this.tuyaEF00Manager && !this._lastDPReceived) {
           this.log('[BedSensor] Polling for DP data...');
-          for (const dp of [1, 4, 12]) {
+          for (const dp of pollDPs) {
             await this.tuyaEF00Manager.requestDP(dp).catch(() => {});
           }
         }
@@ -120,11 +295,18 @@ class BedSensorDevice extends UnifiedSensorBase {
     }, 30000);
   }
 
-  // ─── Settings Handler ─────────────────────────────────────────────────
-  // DP9 = sensitivity (enum), DP101 = interval_time (min),
-  // DP102 = presence_delay (s), DP103 = presence_time (s)
+  // ═══════════════════════════════════════════════════════════════════════
+  // SETTINGS HANDLER
+  // ═══════════════════════════════════════════════════════════════════════
+
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (this._destroyed) return;
+
+    // ZCL sensors have no writable Tuya DPs
+    if (this._mfrConfig?.protocol === 'zcl_ias') {
+      await super.onSettings({ oldSettings, newSettings, changedKeys });
+      return;
+    }
 
     const BED_KEYS = ['sensitivity', 'interval_time', 'presence_delay', 'presence_time'];
     const superKeys = changedKeys.filter((k) => !BED_KEYS.includes(k));
@@ -155,7 +337,6 @@ class BedSensorDevice extends UnifiedSensorBase {
       this.log(`[BedSensor] Setting ${key} (DP${mapping.dp}) to ${value} (type: ${mapping.type})`);
       try {
         if (this.tuyaEF00Manager) {
-          // sendDP(dp, value, type) — compatibility wrapper on TuyaEF00Manager
           const result = await this.tuyaEF00Manager.sendDP(mapping.dp, value, mapping.type);
           this.log(`[BedSensor] ${key} write result: ${result}`);
         } else {
@@ -167,30 +348,34 @@ class BedSensorDevice extends UnifiedSensorBase {
     }
   }
 
-  // ─── DP Data Tracking ─────────────────────────────────────────────────
-  // Override to track when DP data arrives, so polling can stop.
+  // ═══════════════════════════════════════════════════════════════════════
+  // DP DATA TRACKING
+  // ═══════════════════════════════════════════════════════════════════════
+
   _handleDP(dpId, value) {
     this._lastDPReceived = true;
-    // Log all received DPs for diagnostic analysis
+
+    // Log first 3 DPs for diagnostic analysis
     if (!this._dpDiagnosticSent) {
       this._dpDiagnosticReceived = this._dpDiagnosticReceived || {};
       this._dpDiagnosticReceived[dpId] = value;
-      // Check if we have at least 3 different DPs
       const dpCount = Object.keys(this._dpDiagnosticReceived).length;
       if (dpCount >= 3) {
         this._dpDiagnosticSent = true;
-        this.log(`[BedSensor] 📊 DP DIAGNOSTIC: ${JSON.stringify(this._dpDiagnosticReceived)}`);
+        this.log(`[BedSensor] DP DIAGNOSTIC: ${JSON.stringify(this._dpDiagnosticReceived)}`);
       }
     }
+
     return super._handleDP(dpId, value);
   }
 
-  // ─── Battery DP4 Handler ─────────────────────────────────────────────
-  // DP4 per Z2M: battery percentage 0-100%.
-  // Some hardware variants send 0 (depleted) or 1 (OK) instead of actual percentage.
-  // We map: 0 → 10% (low), 1 → 100% (full). Values > 1 pass through as-is.
+  // ═══════════════════════════════════════════════════════════════════════
+  // BATTERY DP4 HANDLER
+  // ═══════════════════════════════════════════════════════════════════════
+
   _handleBatteryDP(dp, value) {
     this.log(`[BedSensor] Battery DP4 raw=${value} (type=${typeof value})`);
+    // Some hardware variants send 0 (depleted) or 1 (OK) instead of actual percentage
     if (dp === 4 && typeof value === 'number' && value <= 1) {
       const mapped = value === 0 ? 10 : 100;
       this.log(`[BedSensor] Battery DP4 mapped: ${value} → ${mapped}%`);
@@ -199,9 +384,10 @@ class BedSensorDevice extends UnifiedSensorBase {
     return super._handleBatteryDP(dp, value);
   }
 
-  // ─── Lifecycle Cleanup ────────────────────────────────────────────────
-  // SDK3 Rule: All intervals/timeouts MUST be cleared in onUninit/onDeleted.
-  // _destroyed guard prevents capability updates after destruction.
+  // ═══════════════════════════════════════════════════════════════════════
+  // LIFECYCLE CLEANUP
+  // ═══════════════════════════════════════════════════════════════════════
+
   async onUninit() {
     this._destroyed = true;
     if (this._pollInterval) {
