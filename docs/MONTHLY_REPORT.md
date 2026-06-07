@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-07T03:32:40.350Z*
+*Generated: 2026-06-07T05:10:10.497Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 365 |
-| Manufacturer IDs | 202234 |
-| Collisions | 67433 |
+| Manufacturer IDs | 211429 |
+| Collisions | 69257 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
 | `_TYST11_d0yu2xgi|TS0601` | air_purifier, siren |
+| `_TZ3000_0s1izerx|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_6uzkisv2|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_akqdg6g7|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_bjawzodf|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_dowj6gyi|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_fllyghyj|TS0601` | air_purifier, climate_sensor |
 | `_TZ3000_itnrsufe|TS0601` | air_purifier, button_wireless_1 |
+| `_TZ3000_qaaysllp|TS0601` | air_purifier, contact_sensor |
+| `_TZ3000_saiqcn0y|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_xr3htd96|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_yd2e749y|TS0601` | air_purifier, climate_sensor |
+| `_TZ3000_ywagc4rj|TS0601` | air_purifier, generic_tuya |
+| `_TZE200_0nauxa0p|TS0601` | air_purifier, dimmer_wall_1gang |
 | `_TZE200_2se8efxh|TS0601` | air_purifier, plug_smart |
+| `_TZE200_3p5ydos3|TS0601` | air_purifier, switch_dimmer_1gang |
 | `_TZE200_44af8vyi|TS0601` | air_purifier, button_wireless_1 |
+| `_TZE200_8ygsuhe1|TS0601` | air_purifier, climate_sensor |
 | `_TZE200_9cqcpkgb|TS0601` | air_purifier, plug_smart |
-| `_TZE200_bjawzodf|TS0601` | air_purifier, button_wireless_1 |
-| `_TZE200_bq5c8xfe|TS0601` | air_purifier, button_wireless_1 |
-| `_TZE200_d0yu2xgi|TS0601` | air_purifier, doorbell, siren_sirentemphumidsensor |
-| `_TZE200_ga1maeof|TS0601` | air_purifier, plug_smart |
-| `_TZE200_m9skfctm|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_myd45weu|TS0601` | air_purifier, plug_smart |
-| `_TZE200_ntcy3xu1|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_ojzhk75b|TS0601` | air_purifier, water_tank_monitor |
-| `_TZE200_rccxox8p|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_shkxsgis|TS0601` | air_purifier, wall_switch_4_gang_tuya |
-| `_TZE200_t5p1vj8r|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_uebojraa|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_vzekyi4c|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_yh7aoahi|TS0601` | air_purifier, smoke_detector_advanced |
-| `_TZE200_zl1kmjqx|TS0601` | air_purifier, smart_remote_4_buttons |
+| `_TZE200_9cxuhakf|TS0601` | air_purifier, dimmer_wall_1gang |
 
-*...and 67413 more*
+*...and 69237 more*
 
 ## 📋 Action Items
 

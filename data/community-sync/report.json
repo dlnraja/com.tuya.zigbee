@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-07T03:54:09.918Z",
-  "currentCount": 10443,
+  "ts": "2026-06-07T05:10:11.131Z",
+  "currentCount": 10747,
   "src": {
     "johan": {
       "count": 650,
@@ -19270,53 +19270,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 52,
+      "issueCount": 50,
       "prCount": 2,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 391,
-          "title": "[Auto] 41 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3210_ncw88jfq",
-            "_TZ3000_rco1yzb1",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_fkp5zyho",
-            "_TZ3000_axpdxqgu",
-            "_TZ3000_peszejy7",
-            "_TZ3000_f97vq5mn",
-            "_TZ3000_owgcnkrh",
-            "_TZ3210_ncw88jfq",
-            "_TZE204_7bztmfm1",
-            "_TZ3000_nwidmc4n",
-            "_TZ3000_pfc7i3kt",
-            "_TZ3000_iv4eq7eh",
-            "_TZ3000_mzcp0of6",
-            "_TZE204_guvc7pdy",
-            "_TZ3000_avotanj3",
-            "_TZE200_qasjif9e"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 390,
-          "title": "[Auto] 36 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_rco1yzb1",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_fkp5zyho",
-            "_TZ3000_axpdxqgu",
-            "_TZ3000_peszejy7",
-            "_TZ3000_f97vq5mn",
-            "_TZ3000_owgcnkrh",
-            "_TZ3000_nwidmc4n",
-            "_TZ3000_pfc7i3kt",
-            "_TZ3000_iv4eq7eh",
-            "_TZ3000_mzcp0of6",
-            "_TZ3000_avotanj3",
-            "_TZE200_qasjif9e"
-          ]
-        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1410,
@@ -19499,30 +19455,31 @@
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc"
           ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1391,
+          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
+          "mfrs": [
+            "_TZ3000_996rpfy6",
+            "_TZ3000_996rpfy6",
+            "_TZ3000_996rpfy6"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1389,
+          "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+          "mfrs": [
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z",
+            "_TZ3000_qja6nq5z"
+          ]
         }
       ]
     }
   },
   "newFps": [
-    {
-      "mfr": "_TZ3210_ncw88jfq",
-      "productId": [
-        "TS0201",
-        "TY0201"
-      ],
-      "driver": "lcdtemphumidsensor",
-      "deviceType": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
-      ],
-      "hasBattery": true,
-      "vendor": null,
-      "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-      "source": "Johan"
-    },
     {
       "mfr": "TUYATEC-53o41joc",
       "productId": [
@@ -20024,18 +19981,6 @@
       "source": "Johan"
     },
     {
-      "mfr": "_TZ3210_ncw88jfq",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_7bztmfm1",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
       "mfr": "_TZ3000_nwidmc4n",
       "productId": null,
       "source": "Z2M",
@@ -20055,12 +20000,6 @@
     },
     {
       "mfr": "_TZ3000_mzcp0of6",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE204_guvc7pdy",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -40560,6 +40499,6 @@
       "driver": null
     }
   ],
-  "newCount": 41,
+  "newCount": 37,
   "enrichedCount": 2212
 }
