@@ -28,14 +28,21 @@ async function main(){
   // Source 1: Gmail diagnostics report
   // FILTER: Only process emails related to Homey/Tuya/Zigbee (not spam/personal)
   const HOMEY_KEYWORDS = ['homey', 'tuya', 'zigbee', 'diagnostic', 'crash', 'error', 'sensor', 'switch', 'device', 'pairing'];
+  const HOMEY_DOMAINS = ['homey.app', 'athom.com', 'tuya.com', 'tuya.cn', 'zigbee2mqtt.io', 'github.com', 'community.homey.app'];
   const gmailR=loadJ(path.join(SD,'diagnostics-report.json'));
   if(gmailR?.diagnostics){
     let homeyCount=0;
     for(const d of gmailR.diagnostics){
       const subj=(d.subj||'').toLowerCase();
       const body=(d.body||'').toLowerCase();
-      const isHomey=HOMEY_KEYWORDS.some(k=>subj.includes(k)||body.includes(k));
-      if(!isHomey) continue; // Skip non-Homey emails
+      const from=(d.from||'').toLowerCase();
+      // Check keywords in subject/body
+      const hasKeyword=HOMEY_KEYWORDS.some(k=>subj.includes(k)||body.includes(k));
+      // Check sender domain
+      const hasDomain=HOMEY_DOMAINS.some(k=>from.includes(k));
+      // Check if from is a known Homey-related sender
+      const isHomeySender=from.includes('community.homey')||from.includes('athom')||from.includes('noreply@homey');
+      if(!hasKeyword && !hasDomain && !isHomeySender) continue; // Skip non-Homey emails
       homeyCount++;
       if(d.fps?.mfr?.length) for(const fp of d.fps.mfr)
         if(!idx.has(fp)) summary.unmatchedFPs.push({fp,source:'gmail',subj:(d.subj||'').slice(0,60)});
