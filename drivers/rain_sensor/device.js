@@ -74,6 +74,18 @@ class RainSensorDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     // v8.4.1: _registerCapabilityListeners removed — UnifiedSensorBase uses
     // capability listeners via dpMappings + UnifiedSensorBase native handlers
+
+    // v8.1.156: Add periodic DP poll for devices that don't send data spontaneously
+    this._pollInterval = setInterval(async () => {
+      try {
+        if (this.tuyaEF00Manager && !this._lastDPReceived) {
+          this.log('[RAIN] Polling for DP data...');
+          await this.tuyaEF00Manager.requestDPs?.([1, 2, 4, 102, 104]).catch(() => {});
+        }
+      } catch (e) {
+        this.log('[RAIN] Poll error:', e.message);
+      }
+    }, 60000); // Poll every 60 seconds
     
     // v5.5.889: IAS Zone support for TS0207 rain sensors
     await this._setupIASZone(zclNode);
@@ -176,6 +188,10 @@ class RainSensorDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
+    if (this._pollInterval) {
+      clearInterval(this._pollInterval);
+      this._pollInterval = null;
+    }
     this.log('Device deleted, cleaning up');
   }
 
