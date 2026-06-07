@@ -1,8 +1,8 @@
 {
-  "date": "2026-06-04T13:37:14.242Z",
+  "date": "2026-06-07T01:34:44.664Z",
   "local": {
     "drivers": 365,
-    "fps": 10727
+    "fps": 10755
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -482,7 +482,9 @@
           "_TZ3000_an5rjiwd"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_an5rjiwd"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1128"
       },
       {
@@ -3248,7 +3250,9 @@
         "pids": [
           "TS0041"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_kxaow5ki"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1352"
       },
       {
@@ -5192,7 +5196,9 @@
         "pids": [
           "TS0041"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_vn88ezar"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1205"
       },
       {
@@ -5927,7 +5933,9 @@
         "pids": [
           "TS0003"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_ly9apzky"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1152"
       },
       {
@@ -13067,7 +13075,9 @@
         "pids": [
           "TS0003"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_pfc7i3kt"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/650"
       },
       {
@@ -16081,7 +16091,9 @@
           "_TZ3000_rco1yzb1"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_rco1yzb1"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/424"
       },
       {
@@ -16096,7 +16108,9 @@
           "_TZ3000_rco1yzb1"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_rco1yzb1"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/423"
       },
       {
@@ -16340,11 +16354,4921 @@
         "pids": [
           "TS0003"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_pfc7i3kt"
+        ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/408"
+      },
+      {
+        "number": 407,
+        "title": "Device Request - Blitzwolf socket with metering - _TZ3000_pjcqjtev / TS011F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_pjcqjtev"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/407"
+      },
+      {
+        "number": 406,
+        "title": "Device Request - Tuya Gas Sensor - _TZE204_yojqa8xn / TS0601",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE204_yojqa8xn"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/406"
+      },
+      {
+        "number": 405,
+        "title": "Device Request - door contact - _TZ3000_yxqnffam / TS0203",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_yxqnffam"
+        ],
+        "pids": [
+          "TS0203"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/405"
+      },
+      {
+        "number": 404,
+        "title": "Device Request - smart plug with meetering - _TZ3000_j1v25l17 / TS011F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_j1v25l17"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/404"
+      },
+      {
+        "number": 403,
+        "title": "Device Request - Miboxer - _TZ3210_jtifm80b / TS0502B",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3210_jtifm80b"
+        ],
+        "pids": [
+          "TS0502B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/403"
+      },
+      {
+        "number": 402,
+        "title": "Device Request - door sensor - _TZ3000_bpkijo14 / TS0203",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_bpkijo14"
+        ],
+        "pids": [
+          "TS0203"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/402"
+      },
+      {
+        "number": 401,
+        "title": "Device Request - doubble wall switch - _TZ3000_atp7xmd9 / TS0002",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_atp7xmd9"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/401"
+      },
+      {
+        "number": 400,
+        "title": "Device Request - water controller - _TZE200_a7sghmms / TS0601",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_a7sghmms"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/400"
+      },
+      {
+        "number": 399,
+        "title": "Device Request - smoke detector - _TYZB01_wqcac7lo / TS0205",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0205"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/399"
+      },
+      {
+        "number": 398,
+        "title": "Device Request - Smart air box 4 - _TZE200_mja3fuja / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_mja3fuja"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/398"
+      },
+      {
+        "number": 397,
+        "title": "Device Request - LIDL Smart Plug with Power Metering - _TZ3000_nkcobies / TS011F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_nkcobies"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/397"
+      },
+      {
+        "number": 396,
+        "title": "Device Request - 3 gang wall switch - _TZ3000_lvhy15ix / TS0003",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_lvhy15ix"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/396"
+      },
+      {
+        "number": 395,
+        "title": "Device Request - 4 gang wall switch - _TZ3000_mmkbptmx / TS0004",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_mmkbptmx"
+        ],
+        "pids": [
+          "TS0004"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/395"
+      },
+      {
+        "number": 394,
+        "title": "Device Request - 2 gang wall switch - _TZ3000_ruxexjfz / TS0002",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_ruxexjfz"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/394"
+      },
+      {
+        "number": 393,
+        "title": "Device Request - thermostat - _TZE200_2ekuz3dz / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_2ekuz3dz"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/393"
+      },
+      {
+        "number": 392,
+        "title": "Device Request - single button remote wall switch - _TZ3000_4upl1fcj / TS0041",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_4upl1fcj"
+        ],
+        "pids": [
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/392"
+      },
+      {
+        "number": 391,
+        "title": "Device Request - MOES Smart Dimmer Switch Dimmable 1-3Gang - _TZE204_hlx9tnzb / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE204_hlx9tnzb"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/391"
+      },
+      {
+        "number": 390,
+        "title": "Device Request - Near Zigbee LED Strip Controller - _TZB210_rkgngb5o / TS0502B",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0502B",
+          "TS0501B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/390"
+      },
+      {
+        "number": 389,
+        "title": "Device Request - Livarno Smart LED Light Bar - _TZ3210_iystcadi / TS0505B",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3210_iystcadi"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/389"
+      },
+      {
+        "number": 388,
+        "title": "Device Request - 2 gang switch - _TYZB01_6g8b7at8 / TS0012",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0012"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/388"
+      },
+      {
+        "number": 387,
+        "title": "Device Request - RGB Light controller - _TZ3210_0zabbfax / TS0503B",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3210_0zabbfax"
+        ],
+        "pids": [
+          "TS0503B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/387"
+      },
+      {
+        "number": 386,
+        "title": "Device Request - Nedis Zigbee Motion Sensor (PIR) - Nedis / ZBSM10WT",
+        "state": "open",
+        "user": "jorgenborgersen",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/386"
+      },
+      {
+        "number": 385,
+        "title": "Device Request - Smart Mini Rf Switch module - _TZ3000_hdc8bbha / TS000F",
+        "state": "open",
+        "user": "Sjalabert",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_hdc8bbha"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/385"
+      },
+      {
+        "number": 384,
+        "title": "Device Request - [1gang Wall Switch] - [Moes] / [1 gang Wall Switch]",
+        "state": "closed",
+        "user": "ogazgaz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_hhiodade"
+        ],
+        "pids": [
+          "TS0011"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/384"
+      },
+      {
+        "number": 383,
+        "title": "Device Request - [2 gangs Wall Switch] - [Moes] / [2 gangs Wall Switch]",
+        "state": "closed",
+        "user": "ogazgaz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_18ejxno0"
+        ],
+        "pids": [
+          "TS0012"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/383"
+      },
+      {
+        "number": 382,
+        "title": "Device Request - [3 gangs Wall Switch] - [Moes] / [3 gangs Wall Switch] - _TZ3000_qewo8dlz / TS0013",
+        "state": "closed",
+        "user": "ogazgaz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_qewo8dlz"
+        ],
+        "pids": [
+          "TS0013"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/382"
+      },
+      {
+        "number": 381,
+        "title": "Device Request - Zigbee Temp/Hum sensor - ZTH01 / TS0601 / _TZE200_yjjdcqsq ",
+        "state": "open",
+        "user": "martin072",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_yjjdcqsq"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/381"
+      },
+      {
+        "number": 380,
+        "title": "Device Request - Zigbee PIR Sensor - ZG-204Z(L) /TS0601 / _TZE200_3towulqd",
+        "state": "open",
+        "user": "martin072",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_3towulqd"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/380"
+      },
+      {
+        "number": 379,
+        "title": "Device Request - [ZigBee Multi-Sensor] - [manufacturer OWON] / [THS317-ET]",
+        "state": "open",
+        "user": "Eagleblis",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/379"
+      },
+      {
+        "number": 378,
+        "title": "Device Request - RH3040 PIR - TUYATEC-dxnohkpd / SH-ZS03-QNE",
+        "state": "closed",
+        "user": "JuliusIl",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/378"
+      },
+      {
+        "number": 377,
+        "title": "Device Request - [Wall plug with meting] - [eWeLink] / [SA-003-Zigbee]",
+        "state": "open",
+        "user": "nissenhj",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/377"
+      },
+      {
+        "number": 376,
+        "title": "Device Request - Heiman Siren - Heiman / WarningDevice",
+        "state": "open",
+        "user": "mruiter",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/376"
+      },
+      {
+        "number": 374,
+        "title": "Device Request - Immax NEO Smart internal double socket - _TZ3000_jak16dll / TS011F",
+        "state": "closed",
+        "user": "abn",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_jak16dll"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/374"
+      },
+      {
+        "number": 373,
+        "title": "Device Request - Tuya PIR motion sensor - _TYZB01_dl7cejts / TS0202",
+        "state": "closed",
+        "user": "Sufkonijn",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/373"
+      },
+      {
+        "number": 372,
+        "title": "Device Request - Zigbee Smoke Detector - _TZE204_ntcy3xu1 / TS0601",
+        "state": "closed",
+        "user": "Sufkonijn",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE204_ntcy3xu1"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/372"
+      },
+      {
+        "number": 371,
+        "title": "Device Request - Temperature & Humidity Sensor - AUBESS _TZ3000_xr3htd96 / TS0201",
+        "state": "closed",
+        "user": "Sufkonijn",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_xr3htd96"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/371"
+      },
+      {
+        "number": 370,
+        "title": "Device Request - 4 Chanel relay module - _TZ3000_wkr3jqmr / TS0004",
+        "state": "closed",
+        "user": "roy1uno",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_wkr3jqmr"
+        ],
+        "pids": [
+          "TS0004"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/370"
+      },
+      {
+        "number": 369,
+        "title": "Device Request - Flood Sensor - _TZ3000_3dfewsk1 / TS0207",
+        "state": "closed",
+        "user": "roy1uno",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_3dfewsk1"
+        ],
+        "pids": [
+          "TS0207"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/369"
+      },
+      {
+        "number": 368,
+        "title": "Device Request - ZG-204Z Motion Sensor - _TZE200_3towulqd / TS0601",
+        "state": "closed",
+        "user": "riisling",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_3towulqd"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/368"
+      },
+      {
+        "number": 367,
+        "title": "Bug report - [Blitzwolf bw-shp13",
+        "state": "closed",
+        "user": "mfkess81",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/367"
+      },
+      {
+        "number": 366,
+        "title": "Device Request - Neo Coolcam Battery and USB powered Siren - _TZE200_t1blo2bj / TS0601",
+        "state": "open",
+        "user": "mruiter",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_t1blo2bj"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/366"
+      },
+      {
+        "number": 365,
+        "title": "Device Request - Tuya 4 gang remote switch - TZ3000_u3nv1jwk / TS0044",
+        "state": "closed",
+        "user": "on6bb",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_u3nv1jwk"
+        ],
+        "pids": [
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/365"
+      },
+      {
+        "number": 364,
+        "title": "Device Request - LED Strip Controller - _TZ3210_3lbtuxgp / TS0505B",
+        "state": "open",
+        "user": "late4marshmellow",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3210_3lbtuxgp"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/364"
+      },
+      {
+        "number": 363,
+        "title": "Device Request - Tongou din rail energy monitor _TZ3000_qeuvnohg / TS011F + attempt to add class to code",
+        "state": "closed",
+        "user": "ErnieV",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_qeuvnohg"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/363"
+      },
+      {
+        "number": 362,
+        "title": "Device Request - 2 channel curtain module by Girier / tuya - _TZ3000_j1xl73iw / TS130F",
+        "state": "closed",
+        "user": "pwvandeursen",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_j1xl73iw"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/362"
+      },
+      {
+        "number": 361,
+        "title": "Device Request - curtains device - _TZ3210_dwytrmda / TS130F",
+        "state": "closed",
+        "user": "tweakerrobin",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3210_dwytrmda"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/361"
+      },
+      {
+        "number": 360,
+        "title": "Device Request - Tuya Smart Dimmer switch - _TZE200_p0gzbqct / TS0601",
+        "state": "closed",
+        "user": "henkdeboom",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_p0gzbqct"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/360"
+      },
+      {
+        "number": 359,
+        "title": "Device Request - Formaldehyd, VOC, CO2, Temp, Hum Sensor - _TZE200_ryfmq5rl / TS0601",
+        "state": "open",
+        "user": "gine78",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_ryfmq5rl"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/359"
+      },
+      {
+        "number": 358,
+        "title": "Device Request - 2 chanel dimmer module - _TZ3000_zjtxnoft / TS0052",
+        "state": "open",
+        "user": "remkot",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_zjtxnoft"
+        ],
+        "pids": [
+          "TS0052"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/358"
+      },
+      {
+        "number": 357,
+        "title": "Device Request - Radar sensor ceiling model - _TZE204_sxm7l9xa / TS0601",
+        "state": "closed",
+        "user": "nides34",
+        "labels": [
+          "bug"
+        ],
+        "fps": [
+          "_TZE204_sxm7l9xa",
+          "_TZE204_sxm7l9x"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/357"
+      },
+      {
+        "number": 355,
+        "title": "Device Request - Bseed Double Switch - _TZ3000_mklgayek / TS0002",
+        "state": "open",
+        "user": "Xybertecnic",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_mklgayek"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/355"
+      },
+      {
+        "number": 354,
+        "title": "Issue with _TZE200_3p5ydos3",
+        "state": "closed",
+        "user": "szferi91",
+        "labels": [
+          "bug"
+        ],
+        "fps": [
+          "_TZE200_3p5ydos3"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/354"
+      },
+      {
+        "number": 353,
+        "title": "Latest update broke NOUS Zigbee Plug connection",
+        "state": "closed",
+        "user": "RiseOlsen",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/353"
+      },
+      {
+        "number": 352,
+        "title": "problem with update 0.2.14 ",
+        "state": "closed",
+        "user": "MrFlash2023",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/352"
+      },
+      {
+        "number": 351,
+        "title": "Nous plug error ",
+        "state": "closed",
+        "user": "Madzen77",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/351"
+      },
+      {
+        "number": 350,
+        "title": "New update broke NOUS Zigbee Plug connection ",
+        "state": "closed",
+        "user": "RepairGuyDK",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/350"
+      },
+      {
+        "number": 349,
+        "title": "New app (V0.2.14) update results in a not working zigbee watervalve (TS0001)",
+        "state": "closed",
+        "user": "pjmpessers",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/349"
+      },
+      {
+        "number": 348,
+        "title": "Device Request - Mini Motion Sensor - _TZ3040_bb6xaihh / TS0202",
+        "state": "closed",
+        "user": "Xybertecnic",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3040_bb6xaihh"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/348"
+      },
+      {
+        "number": 347,
+        "title": "Add support for PiR and temp/hum sensor",
+        "state": "closed",
+        "user": "martin072",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/347"
+      },
+      {
+        "number": 346,
+        "title": "Scene Switch IH-L400-P4 (Producent ID: _Tz300_sj7bgks Product ID TS043)",
+        "state": "closed",
+        "user": "elwinekker",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/346"
+      },
+      {
+        "number": 344,
+        "title": "Device for Homey pro - Silvecrest SSRA1",
+        "state": "open",
+        "user": "Sink337",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/344"
+      },
+      {
+        "number": 341,
+        "title": "4-button wall switch wkai4ga5 does not work",
+        "state": "closed",
+        "user": "robgBY",
+        "labels": [],
+        "fps": [
+          "_TZ3000_wkai4ga5"
+        ],
+        "pids": [
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/341"
+      },
+      {
+        "number": 340,
+        "title": "Restart the app",
+        "state": "closed",
+        "user": "spajder77",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/340"
+      },
+      {
+        "number": 339,
+        "title": "Nedis ZBRC10WT remote",
+        "state": "closed",
+        "user": "hapth15",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/339"
+      },
+      {
+        "number": 338,
+        "title": "ADD device ID to app",
+        "state": "closed",
+        "user": "MKraghs",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/338"
+      },
+      {
+        "number": 336,
+        "title": "Tuya Zigbee \"dissapear\" ",
+        "state": "closed",
+        "user": "Grimleiv",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/336"
+      },
+      {
+        "number": 335,
+        "title": "more options for IF condition than for AND condition ",
+        "state": "open",
+        "user": "ruudvaneck",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/335"
+      },
+      {
+        "number": 334,
+        "title": "Tuya Zigbee Water Leak Detector",
+        "state": "closed",
+        "user": "AlbyMulder",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/334"
+      },
+      {
+        "number": 332,
+        "title": "Add support for Nous A1Z with Power monitor",
+        "state": "closed",
+        "user": "ajschot",
+        "labels": [],
+        "fps": [
+          "_TZ3000_2putqrmw"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/332"
+      },
+      {
+        "number": 330,
+        "title": "Curtain Module QS-Zigbee-CP03",
+        "state": "closed",
+        "user": "STJDK",
+        "labels": [],
+        "fps": [
+          "_TZ3210_ol1uhvza"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/330"
+      },
+      {
+        "number": 329,
+        "title": "Temperature & Humidity doesn't work in Homey Pro 2023",
+        "state": "closed",
+        "user": "Melectro1",
+        "labels": [],
+        "fps": [
+          "_TZ3000_0s1izerx",
+          "_TZ3210_ol1uhvza"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/329"
+      },
+      {
+        "number": 327,
+        "title": "nedis smartlife wall switch",
+        "state": "closed",
+        "user": "OleVag",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/327"
+      },
+      {
+        "number": 326,
+        "title": "Kan du lägga till denna Temp o fuktvakt ? Uppdaterad info 230731",
+        "state": "closed",
+        "user": "Mefiboset666",
+        "labels": [],
+        "fps": [
+          "_TZ3000_xr3htd96"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/326"
+      },
+      {
+        "number": 325,
+        "title": "4 gang wall switch",
+        "state": "closed",
+        "user": "Alibozis",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/325"
+      },
+      {
+        "number": 322,
+        "title": "Tuya smart signee garage door opener ",
+        "state": "closed",
+        "user": "eirikwe",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/322"
+      },
+      {
+        "number": 320,
+        "title": "Will it work? Shown at AliExpress: Tuya zigbee finger bot.  THX!",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/320"
+      },
+      {
+        "number": 319,
+        "title": "Soil sensor QT-07S TUYA",
+        "state": "closed",
+        "user": "barendbigfoot",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/319"
+      },
+      {
+        "number": 318,
+        "title": "Can you add support for TuYa PJ-MGW1203 (Clamp meter)",
+        "state": "open",
+        "user": "rwanrooy",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/318"
+      },
+      {
+        "number": 317,
+        "title": "Add support for TS011F, Nous Smart ZigBee Socket",
+        "state": "closed",
+        "user": "veraign",
+        "labels": [],
+        "fps": [
+          "_TZ3000_ksw8qtmt"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/317"
+      },
+      {
+        "number": 316,
+        "title": "Add support for _TZ3040_6ygjfyll (TS0202) motion sensor",
+        "state": "closed",
+        "user": "pienne-be",
+        "labels": [],
+        "fps": [
+          "_TZ3040_6ygjfyll"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/316"
+      },
+      {
+        "number": 314,
+        "title": "Can u Add support for TZE200_la2c2uo9 MOES 1 gang Dimmer switch",
+        "state": "closed",
+        "user": "HarrieSpotter",
+        "labels": [],
+        "fps": [
+          "_TZE200_la2c2uo9"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/314"
+      },
+      {
+        "number": 313,
+        "title": "Add Support to TZ3000_zmy4lslw",
+        "state": "closed",
+        "user": "jmcscorrea",
+        "labels": [],
+        "fps": [
+          "_TZ3000_zmy4lslw"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/313"
+      },
+      {
+        "number": 312,
+        "title": "Temperature & Humidity Sensor Aubess ",
+        "state": "closed",
+        "user": "Roessje",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/312"
+      },
+      {
+        "number": 311,
+        "title": "Moes Zigbee Temprature Humidity Sensor",
+        "state": "closed",
+        "user": "PepijnvdrVinne",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/311"
+      },
+      {
+        "number": 310,
+        "title": "Tuya mmWave presence sensor - _TZE204_ztc6ggyl / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE204_ztc6ggyl"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/310"
+      },
+      {
+        "number": 307,
+        "title": "Can't use any device in flows?",
+        "state": "closed",
+        "user": "Xybertecnic",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/307"
+      },
+      {
+        "number": 306,
+        "title": "MOES temperature sensor",
+        "state": "closed",
+        "user": "freshslo",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/306"
+      },
+      {
+        "number": 305,
+        "title": "Soil sensor - _TZE200_myd45weu / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_myd45weu"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/305"
+      },
+      {
+        "number": 302,
+        "title": "Blitzwolf BW-SHP 15",
+        "state": "closed",
+        "user": "Ricoheyni",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/302"
+      },
+      {
+        "number": 301,
+        "title": "Memory leak?",
+        "state": "open",
+        "user": "magnusheino",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/301"
+      },
+      {
+        "number": 300,
+        "title": "Moes smart knob by tuya",
+        "state": "closed",
+        "user": "m8marcus",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/300"
+      },
+      {
+        "number": 299,
+        "title": "Door sensor not supported",
+        "state": "closed",
+        "user": "STD078",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/299"
+      },
+      {
+        "number": 298,
+        "title": "Marmitek - motion sensor - _TYZB01_yr95mpib / SM0202",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/298"
+      },
+      {
+        "number": 296,
+        "title": "Air Quality -TS0601/  _TZE200_ryfmq5rl ",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_ryfmq5rl"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/296"
+      },
+      {
+        "number": 295,
+        "title": "3 gang switch module - TS0003 / _TZ3000_4o16jdca",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_4o16jdca"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/295"
+      },
+      {
+        "number": 294,
+        "title": "_TZ3210_x13bu7za ",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_x13bu7za"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/294"
+      },
+      {
+        "number": 293,
+        "title": "_TZ3000_ajkq2isy ",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_ajkq2isy"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/293"
+      },
+      {
+        "number": 292,
+        "title": "NOUS L6 lcd temperature and humidity sensor",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_nnrfa68v"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/292"
+      },
+      {
+        "number": 291,
+        "title": "Add some nous devices",
+        "state": "open",
+        "user": "PatrikMihalik",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/291"
+      },
+      {
+        "number": 290,
+        "title": "Expérimental version and _TZ2000_a476raq2",
+        "state": "open",
+        "user": "gore-",
+        "labels": [],
+        "fps": [
+          "_TZ2000_a476raq2"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/290"
+      },
+      {
+        "number": 289,
+        "title": "TH01Z Tuya Zigbee Smart Temperatuur En Vochtigheid Sensor ",
+        "state": "open",
+        "user": "gjb1969",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/289"
+      },
+      {
+        "number": 288,
+        "title": "Hi @Majebo, currently there is not. Working on it.",
+        "state": "closed",
+        "user": "Majebo",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/288"
+      },
+      {
+        "number": 287,
+        "title": "_TZN3000_cfnprab5 / TS011F",
+        "state": "closed",
+        "user": "Grobaa",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/287"
+      },
+      {
+        "number": 286,
+        "title": "Tuya Zigbee homey app dissapear from homey",
+        "state": "closed",
+        "user": "Grimleiv",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/286"
+      },
+      {
+        "number": 284,
+        "title": "Samotech Dimmer",
+        "state": "open",
+        "user": "HenryMD18",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/284"
+      },
+      {
+        "number": 283,
+        "title": "Lidl Outdoor Wall mounted light  _TZ3000_utagpnzs / TS0505A",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_utagpnzs"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/283"
+      },
+      {
+        "number": 282,
+        "title": "Tuya Switch 4 Gang Remote Point to Point Control - _TZ3000_abci1hiu / TS0044",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_abci1hiu"
+        ],
+        "pids": [
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/282"
+      },
+      {
+        "number": 279,
+        "title": " 4way switch with 2scene buttons _TZ3002_ymcctknk / TS0726",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3002_ymcctknk"
+        ],
+        "pids": [
+          "TS0726"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/279"
+      },
+      {
+        "number": 278,
+        "title": "Smart switch with metering _TZ3000_46t1rvdu / TS0001",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_46t1rvdu"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/278"
+      },
+      {
+        "number": 277,
+        "title": "Lidl Flood Light",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_umi6vbsz"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/277"
+      },
+      {
+        "number": 276,
+        "title": "Temp/Humidity/Lux sensor",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0222"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/276"
+      },
+      {
+        "number": 275,
+        "title": "Smart Switch TS0001 / _TZ3000_46t1rvdu",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_46t1rvdu"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/275"
+      },
+      {
+        "number": 274,
+        "title": "Tuya 4-button Scene Switch (TS0044)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_abci1hiu"
+        ],
+        "pids": [
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/274"
+      },
+      {
+        "number": 273,
+        "title": "Livarno Lux E27 A60 Filament Bulb",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_nbnmw9nc"
+        ],
+        "pids": [
+          "TS0501A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/273"
+      },
+      {
+        "number": 272,
+        "title": "Livarno Lux E27 ST64 Filament Bulb",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_j2w1dw29"
+        ],
+        "pids": [
+          "TS0501A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/272"
+      },
+      {
+        "number": 271,
+        "title": "Livarno Lux E27 A60 Filament Bulb",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_nosnx7im"
+        ],
+        "pids": [
+          "TS0501A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/271"
+      },
+      {
+        "number": 270,
+        "title": "4 gang wall switch issues",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "bug"
+        ],
+        "fps": [
+          "_TZ3000_xabckq1v"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/270"
+      },
+      {
+        "number": 267,
+        "title": "Tuya zigbee lcd temperature/humidity sensor not working",
+        "state": "closed",
+        "user": "DennisMeeki",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/267"
+      },
+      {
+        "number": 266,
+        "title": "AUBESS ZigBee Smart Plug Socket EU 16A/20A With Power Monitor For Tuya",
+        "state": "closed",
+        "user": "frode1814",
+        "labels": [],
+        "fps": [
+          "_TZ3000_hdopuwv6"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/266"
+      },
+      {
+        "number": 265,
+        "title": "tuya temperature and humidity sensors",
+        "state": "closed",
+        "user": "5tal3m8",
+        "labels": [],
+        "fps": [
+          "_TZE200_a8sdabtg"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/265"
+      },
+      {
+        "number": 264,
+        "title": "missing Capability Listener: onoff",
+        "state": "closed",
+        "user": "FreBrake",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/264"
+      },
+      {
+        "number": 263,
+        "title": "Tuya 3 and 4 Gang modules support",
+        "state": "closed",
+        "user": "kb-net",
+        "labels": [],
+        "fps": [
+          "_TZ3000_qcdqw8nf"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/263"
+      },
+      {
+        "number": 262,
+        "title": "Feedback on experimental version",
+        "state": "closed",
+        "user": "austrier",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/262"
+      },
+      {
+        "number": 261,
+        "title": "Zigbee switch metered is not recognized as such",
+        "state": "open",
+        "user": "Tonlaar",
+        "labels": [],
+        "fps": [
+          "_TZ3000_cjrngdr3"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/261"
+      },
+      {
+        "number": 258,
+        "title": "Missing support for smart plug with smart metering",
+        "state": "closed",
+        "user": "AndersE-75",
+        "labels": [],
+        "fps": [
+          "_TZ3000_gjnozsaz"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/258"
+      },
+      {
+        "number": 257,
+        "title": "Tuya Zigbee Curtain Module requires open/close time calibration ",
+        "state": "closed",
+        "user": "Capetrip",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/257"
+      },
+      {
+        "number": 256,
+        "title": "Issue with Neo plug in relay (PLUS-001SPB2)",
+        "state": "closed",
+        "user": "ionizah",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/256"
+      },
+      {
+        "number": 255,
+        "title": "Support for Nous",
+        "state": "closed",
+        "user": "lmunck",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/255"
+      },
+      {
+        "number": 254,
+        "title": "3 rocker wall switch with neutral - _TZ3000_2dlwlvex / TS0003",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_2dlwlvex"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/254"
+      },
+      {
+        "number": 253,
+        "title": "How to calibrate the curtain module?",
+        "state": "closed",
+        "user": "Majebo",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/253"
+      },
+      {
+        "number": 252,
+        "title": "Socket stripes",
+        "state": "closed",
+        "user": "marko0703",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/252"
+      },
+      {
+        "number": 251,
+        "title": "Temperature and humidity sensor",
+        "state": "closed",
+        "user": "Harmbe",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/251"
+      },
+      {
+        "number": 250,
+        "title": "Dimmer switch - _TZE200_3p5ydos3 / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_3p5ydos3"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/250"
+      },
+      {
+        "number": 249,
+        "title": "2 gang dimmer - _TZ3210_3mpwqzuu  / TS110E",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_3mpwqzuu"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/249"
+      },
+      {
+        "number": 248,
+        "title": "Curtain module",
+        "state": "closed",
+        "user": "CGEUREVIA",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/248"
+      },
+      {
+        "number": 247,
+        "title": "Right app version?",
+        "state": "closed",
+        "user": "AlRei263",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/247"
+      },
+      {
+        "number": 246,
+        "title": "0.2.4 release 3 hours ago",
+        "state": "closed",
+        "user": "Tonlaar",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/246"
+      },
+      {
+        "number": 245,
+        "title": "TZ3000_dowj6gyi / TS0201 models issue",
+        "state": "closed",
+        "user": "Sjalabert",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/245"
+      },
+      {
+        "number": 243,
+        "title": "Nedis smart plug",
+        "state": "closed",
+        "user": "Peterm63",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/243"
+      },
+      {
+        "number": 242,
+        "title": "Support for tuya double curtain module",
+        "state": "open",
+        "user": "Marjet46",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/242"
+      },
+      {
+        "number": 240,
+        "title": "Device Unavailable UNSUP_GENERAL_COMMAND",
+        "state": "closed",
+        "user": "PeterKawa",
+        "labels": [],
+        "fps": [
+          "_TZ3000_qaaysllp"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/240"
+      },
+      {
+        "number": 239,
+        "title": "Keyfob",
+        "state": "open",
+        "user": "ivv72",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/239"
+      },
+      {
+        "number": 238,
+        "title": "Roller Shutter zb_product_id\t\"TS130F\" zb_manufacturer_name\t\"_TZ3000_zirycpws\"",
+        "state": "closed",
+        "user": "Koen12345",
+        "labels": [],
+        "fps": [
+          "_TZ3000_zirycpws"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/238"
+      },
+      {
+        "number": 237,
+        "title": "Tuya zigbee temperature & Humity sensor IH-K009",
+        "state": "closed",
+        "user": "yvoren",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/237"
+      },
+      {
+        "number": 235,
+        "title": "Device not found",
+        "state": "closed",
+        "user": "steef303",
+        "labels": [],
+        "fps": [
+          "_TZ3000_mcxw5ehu"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/235"
+      },
+      {
+        "number": 234,
+        "title": "Blind Drive Motor",
+        "state": "closed",
+        "user": "Vetjes",
+        "labels": [],
+        "fps": [
+          "_TZE200_zah67ekd"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/234"
+      },
+      {
+        "number": 233,
+        "title": "Tuya smart plug power meting ",
+        "state": "closed",
+        "user": "Acibev",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/233"
+      },
+      {
+        "number": 232,
+        "title": "Nedis PIR Zigbee not working",
+        "state": "closed",
+        "user": "Norinvstor",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/232"
+      },
+      {
+        "number": 231,
+        "title": "NeoCoolcam siren and watersensor",
+        "state": "closed",
+        "user": "vinsaas",
+        "labels": [],
+        "fps": [
+          "_TZE200_d0yu2xgi",
+          "_TZE200_qq9mpfhw"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/231"
+      },
+      {
+        "number": 230,
+        "title": "Are you planning on adding WIFI to this app aswell?",
+        "state": "closed",
+        "user": "Norinvstor",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/230"
+      },
+      {
+        "number": 229,
+        "title": "Nedis Termostat",
+        "state": "open",
+        "user": "Deejaybaze",
+        "labels": [],
+        "fps": [
+          "_TZE200_hhrtiq0x"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/229"
+      },
+      {
+        "number": 228,
+        "title": "Issues with a Zigbee unit that is on the supportive list",
+        "state": "open",
+        "user": "Norinvstor",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/228"
+      },
+      {
+        "number": 227,
+        "title": "smart button",
+        "state": "closed",
+        "user": "Gbgdanielandersson",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/227"
+      },
+      {
+        "number": 226,
+        "title": "Tuya smart plug energy monitoring not working",
+        "state": "closed",
+        "user": "NevetsRek",
+        "labels": [],
+        "fps": [
+          "_TZ3000_kx0pris5"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/226"
+      },
+      {
+        "number": 224,
+        "title": "thermostat with Homey (‎BHT-002-GBLWW)",
+        "state": "open",
+        "user": "daemsmathieu",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/224"
+      },
+      {
+        "number": 223,
+        "title": "1 and 2 gang dimmer module TS1101",
+        "state": "open",
+        "user": "Destroyer8000",
+        "labels": [],
+        "fps": [
+          "_TZ3000_xfs39dbf"
+        ],
+        "pids": [
+          "TS1101"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/223"
+      },
+      {
+        "number": 222,
+        "title": "2 gang switch module",
+        "state": "closed",
+        "user": "Destroyer8000",
+        "labels": [],
+        "fps": [
+          "_TZ3000_bvrlqyj7"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/222"
+      },
+      {
+        "number": 221,
+        "title": "could you add the smartsocket BW-SHP13 Blitzwolf with product id “TS011F”",
+        "state": "closed",
+        "user": "Derffie",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0121"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/221"
+      },
+      {
+        "number": 220,
+        "title": "Curtain motor position inverted",
+        "state": "open",
+        "user": "nlrb",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/220"
+      },
+      {
+        "number": 219,
+        "title": "App Crashes, Routers are not working well in Zigbee mesh network",
+        "state": "closed",
+        "user": "sossienl",
+        "labels": [],
+        "fps": [
+          "_TZ3000_gjnozsaz"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/219"
+      },
+      {
+        "number": 218,
+        "title": "LCD temp and humidity sensor fails",
+        "state": "closed",
+        "user": "Malalicious",
+        "labels": [],
+        "fps": [
+          "_TZ2000_a476raq2"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/218"
+      },
+      {
+        "number": 217,
+        "title": "Moes, zigbee curtain switch",
+        "state": "open",
+        "user": "EddyTP",
+        "labels": [],
+        "fps": [
+          "_TZE200_nhyj64w2"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/217"
+      },
+      {
+        "number": 216,
+        "title": "smart plug with power measurement",
+        "state": "closed",
+        "user": "jodo50",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/216"
+      },
+      {
+        "number": 215,
+        "title": "temperature Hydrometry Sensor TS0201 Unknown with test version homey app",
+        "state": "closed",
+        "user": "malcom0106",
+        "labels": [],
+        "fps": [
+          "_TZ3000_dowj6gyi"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/215"
+      },
+      {
+        "number": 213,
+        "title": "LCD Temp, Hum, Lux sensor - _TYZB01 _kvwjujy9 / TS0222",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0222"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/213"
+      },
+      {
+        "number": 212,
+        "title": "Adding Aubess Temperature & Humidity Sensor",
+        "state": "open",
+        "user": "Fen67",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/212"
+      },
+      {
+        "number": 211,
+        "title": "Please ad the water flood sensor",
+        "state": "closed",
+        "user": "Dj-spooky",
+        "labels": [],
+        "fps": [
+          "_TZ3000_kyb656no"
+        ],
+        "pids": [
+          "TS0207"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/211"
+      },
+      {
+        "number": 210,
+        "title": "Smart Plug with 2 USB slots - _TZ3000_2xlvlnez / TS011F",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_2xlvlnez"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/210"
+      },
+      {
+        "number": 209,
+        "title": "Livarno floodlight - _TZ3210_umi6vbsz / TS0505B",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_umi6vbsz"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/209"
+      },
+      {
+        "number": 208,
+        "title": "PIR - _TZE200_3towulqd / TS0601 ",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_3towulqd"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/208"
+      },
+      {
+        "number": 207,
+        "title": "Multi Sensor - _TZ3210_zmy9hjay / TS0202",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_zmy9hjay"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/207"
+      },
+      {
+        "number": 206,
+        "title": "Double Power Point - _TZ3210_7jnk7l3k / TS011F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_7jnk7l3k"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/206"
+      },
+      {
+        "number": 204,
+        "title": "LCD Temperatur and Humidity Sensor Tuya",
+        "state": "closed",
+        "user": "AlRei263",
+        "labels": [],
+        "fps": [
+          "_TZ2000_a476raq2"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/204"
+      },
+      {
+        "number": 202,
+        "title": "Temperature and Humidity Sensor",
+        "state": "closed",
+        "user": "dansav",
+        "labels": [],
+        "fps": [
+          "_TZ3000_fie1dpkm"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/202"
+      },
+      {
+        "number": 201,
+        "title": "ZigBee smoke alarm devices",
+        "state": "closed",
+        "user": "dyandh",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/201"
+      },
+      {
+        "number": 200,
+        "title": "Temperatuur sensor is not working",
+        "state": "closed",
+        "user": "bvdp02",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/200"
+      },
+      {
+        "number": 199,
+        "title": "3 Gang wall switch not recognised ",
+        "state": "open",
+        "user": "JPGroeneweg",
+        "labels": [],
+        "fps": [
+          "_TZE200_tz32mtza"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/199"
+      },
+      {
+        "number": 198,
+        "title": "Smart Switch BSD33 (Zigbee) no energy-monitoring",
+        "state": "open",
+        "user": "Kosyko",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/198"
+      },
+      {
+        "number": 196,
+        "title": "Blitwolf BW-SHP13 _TZ3000_amdymr71 TS011F not found in Homey",
+        "state": "closed",
+        "user": "vbebber",
+        "labels": [],
+        "fps": [
+          "_TZ3000_amdymr71"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/196"
+      },
+      {
+        "number": 195,
+        "title": "Pairing TZ3000_qbm10jnj problem in Homey Tuya Zigbee app",
+        "state": "open",
+        "user": "mharberink",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/195"
+      },
+      {
+        "number": 194,
+        "title": "Request",
+        "state": "closed",
+        "user": "JaromirM",
+        "labels": [],
+        "fps": [
+          "_TZ3000_hlijwsai"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/194"
+      },
+      {
+        "number": 192,
+        "title": "WOOX Smart Door/Window sensor",
+        "state": "closed",
+        "user": "annekurver",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/192"
+      },
+      {
+        "number": 191,
+        "title": "“Tuya ZigBee 3.0 Garage Door Wireless Sensor Opener Controller Switch” from LoraTap",
+        "state": "open",
+        "user": "senadaruc",
+        "labels": [],
+        "fps": [
+          "_TZE200_wfxuhoea"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/191"
+      },
+      {
+        "number": 190,
+        "title": "Smoke sensor - SmokeSensor-EF-3.0 / HEIMAN",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/190"
+      },
+      {
+        "number": 189,
+        "title": "Bulb - Filament - _TZ3000_0ausfos0 / TS0502A",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_0ausfos0"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/189"
+      },
+      {
+        "number": 188,
+        "title": "Tuya Smart ZigBee Radiator Actuator TRV TUYA (_TZE200_hue3yfsn TS0601)",
+        "state": "closed",
+        "user": "paja609",
+        "labels": [],
+        "fps": [
+          "_TZE200_hue3yfsn"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/188"
+      },
+      {
+        "number": 187,
+        "title": "2 gang dimmer - TS110E / _TZ3210_wdexaypg",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_wdexaypg"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/187"
+      },
+      {
+        "number": 186,
+        "title": "Zemismart 6 Scene Switch",
+        "state": "closed",
+        "user": "christhedj",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/186"
+      },
+      {
+        "number": 185,
+        "title": "Tuya Mini LED strip controller, CCT (color temperature) version - ZB-CT01 / eWeLight",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/185"
+      },
+      {
+        "number": 184,
+        "title": "Tuya mini LED strip controller, RGB+CCT version - ZB-CL01 / eWeLight",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/184"
+      },
+      {
+        "number": 183,
+        "title": "3 button Wall Mounted Curtain Switch - TS130F / _TZ3000_qqdbccb3",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_qqdbccb3"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/183"
+      },
+      {
+        "number": 182,
+        "title": "Tuya ZigBee Garage Door Opener with door sensor - TS0601 / _TZE200_nklqjk62",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_nklqjk62"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/182"
+      },
+      {
+        "number": 181,
+        "title": "Zemismart Tuya Zigbee Roller Blind Motor - USB Dongle - TS0601 / _TZE200_iossyxra",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_iossyxra"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/181"
+      },
+      {
+        "number": 180,
+        "title": "PIR Sensor 3 - square shaped - same as PIR Sensor 2",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/180"
+      },
+      {
+        "number": 179,
+        "title": "Livarno Home Smart Colour-Change LED Light Bulb - TS0505B / _TZ3000_th6zqqy6",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_th6zqqy6"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/179"
+      },
+      {
+        "number": 178,
+        "title": "CCT LED Strip Controller - TS0502B / _TZ3210_frm6149r",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_frm6149r"
+        ],
+        "pids": [
+          "TS0502B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/178"
+      },
+      {
+        "number": 177,
+        "title": "Livarno LUX - LED Floorlamp - TS0502A / _TZ3000_8uaoilu9",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_8uaoilu9"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/177"
+      },
+      {
+        "number": 176,
+        "title": "Water Sensor - TS0207 / _TZ3000_upgcbody",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_upgcbody"
+        ],
+        "pids": [
+          "TS0207"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/176"
+      },
+      {
+        "number": 175,
+        "title": "RGB Spot GU 10 and 1 Gang / 2 Gang Wall Switch",
+        "state": "open",
+        "user": "Gebucht",
+        "labels": [],
+        "fps": [
+          "_TZ3000_kdpxju99",
+          "_TZE200_amp6tsvy",
+          "_TZE200_g1ib5ldv"
+        ],
+        "pids": [
+          "TS0505A",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/175"
+      },
+      {
+        "number": 174,
+        "title": "SHP15 Blitzwolf",
+        "state": "closed",
+        "user": "Chopper8",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/174"
+      },
+      {
+        "number": 173,
+        "title": "2 channel dimmer ",
+        "state": "closed",
+        "user": "fdopperen",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/173"
+      },
+      {
+        "number": 172,
+        "title": "3 gang wall switch errors",
+        "state": "closed",
+        "user": "ghost",
+        "labels": [],
+        "fps": [
+          "_TZ3000_wyhuocal",
+          "_TZ3000_cdamjqm9",
+          "_TZ3000_hlwm8e96",
+          "_TZ3000_odzoiovu",
+          "_TZE200_tz32mtza"
+        ],
+        "pids": [
+          "TS0003",
+          "TS0013",
+          "TS0043",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/172"
+      },
+      {
+        "number": 170,
+        "title": "No Power (Watts) and Energy (kWh) from a smart switch relais",
+        "state": "closed",
+        "user": "Tonlaar",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/170"
+      },
+      {
+        "number": 169,
+        "title": "_TZ3000_fccpjz5z / TS130F does not get paired",
+        "state": "closed",
+        "user": "ruben375",
+        "labels": [],
+        "fps": [
+          "_TZ3000_fccpjz5z"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/169"
+      },
+      {
+        "number": 168,
+        "title": "LIVARNO LUX® LED-plafondlamp",
+        "state": "open",
+        "user": "djdirty60",
+        "labels": [],
+        "fps": [
+          "_TZ3000_rylaozuc"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/168"
+      },
+      {
+        "number": 167,
+        "title": "External siren immax NEO zigbee 3 - _TYZB01_b6eaxdlh / TS0219",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0219"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/167"
+      },
+      {
+        "number": 166,
+        "title": "Wall Socket - _TZ3000_wxtp7c5y / TS011F",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_wxtp7c5y"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/166"
+      },
+      {
+        "number": 165,
+        "title": "Livarno Home Smart Colour-Change LED Light Bulb - _TZ3000_quqaeew6 / TS0505B",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_quqaeew6"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/165"
+      },
+      {
+        "number": 164,
+        "title": "Livarno Home Smart Colour-Change LED Light Bulb - _TZ3000_qd7hej8u / TS0505B",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_qd7hej8u"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/164"
+      },
+      {
+        "number": 163,
+        "title": "Livarno Lux Smart LED Wall Light - _TZ3000_v7fkcekx / TS0505A",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_v7fkcekx"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/163"
+      },
+      {
+        "number": 162,
+        "title": "LCD Temp-Humid Sensor - _TZE200_locansqn / TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_locansqn"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/162"
+      },
+      {
+        "number": 161,
+        "title": "Doorbell - _TZ1800_ladpngdx / TS0211 (Silvercrest / Lidl)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0211"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/161"
+      },
+      {
+        "number": 160,
+        "title": "Heater/Boiler Switch - _TZ3000_e8cquwdk / TS0001",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_e8cquwdk"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/160"
+      },
+      {
+        "number": 159,
+        "title": "4 relay Zigbee PCB from AliExpress: _TZ3000_excgg5kb & TS0004",
+        "state": "closed",
+        "user": "kb-net",
+        "labels": [],
+        "fps": [
+          "_TZ3000_excgg5kb"
+        ],
+        "pids": [
+          "TS0004"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/159"
+      },
+      {
+        "number": 158,
+        "title": "Smart Power Plug (with Power Meter)",
+        "state": "closed",
+        "user": "kb-net",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/158"
+      },
+      {
+        "number": 157,
+        "title": "Homey pro Lidl 3 Socket Power Strip? ",
+        "state": "closed",
+        "user": "kimc88",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/157"
+      },
+      {
+        "number": 156,
+        "title": "Could you add the support of Tuya 2gang dimmer and 2 switch without N?",
+        "state": "closed",
+        "user": "ruben375",
+        "labels": [],
+        "fps": [
+          "_TZ3000_jl7qyupf"
+        ],
+        "pids": [
+          "TS0012"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/156"
+      },
+      {
+        "number": 154,
+        "title": "Tuya Powerplug TS011F with metering not recognized",
+        "state": "closed",
+        "user": "erwinjong",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_mraovvmm"
+        ],
+        "pids": [
+          "TS0011F"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/154"
+      },
+      {
+        "number": 153,
+        "title": "4 gang wall remote",
+        "state": "closed",
+        "user": "CSvitzer",
+        "labels": [],
+        "fps": [
+          "_TZ3000_xabckq1v"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/153"
+      },
+      {
+        "number": 152,
+        "title": "Tuya PIR \"TS0202\", \"_TZ3000_mmtwjmaq\"",
+        "state": "closed",
+        "user": "JirLap",
+        "labels": [],
+        "fps": [
+          "_TZ3000_mmtwjmaq"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/152"
+      },
+      {
+        "number": 151,
+        "title": "Powerplug Tuya zigbee",
+        "state": "closed",
+        "user": "Markiemajax",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/151"
+      },
+      {
+        "number": 150,
+        "title": "3 Gang Wall Remote _TZ3000_w4thianr",
+        "state": "open",
+        "user": "Caes78",
+        "labels": [],
+        "fps": [
+          "_TZ3000_w4thianr"
+        ],
+        "pids": [
+          "TS0043"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/150"
+      },
+      {
+        "number": 148,
+        "title": "TZ3000_w0qqde0g\tTS011F Recognised like generic zigbee device",
+        "state": "closed",
+        "user": "sinnamoragtb",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/148"
+      },
+      {
+        "number": 147,
+        "title": "Woox R7060 Smart Garden Irrigation Control / Woox _TZ3210_eymunffl TS0101 - battery level missing",
+        "state": "closed",
+        "user": "shaarkys",
+        "labels": [],
+        "fps": [
+          "_TZ3210_eymunffl"
+        ],
+        "pids": [
+          "TS0101"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/147"
+      },
+      {
+        "number": 146,
+        "title": "Devices do not work anymore ",
+        "state": "closed",
+        "user": "sinnamoragtb",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/146"
+      },
+      {
+        "number": 144,
+        "title": "1 Gang Gimmer  - TS110E / _TZ3210_ngqk6jia not working",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3210_ngqk6jia"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/144"
+      },
+      {
+        "number": 143,
+        "title": "Problem with LCD Temperature & Humidity Sensor - TS0201 / _TZ2000_a476raq2 ",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ2000_a476raq2"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/143"
+      },
+      {
+        "number": 142,
+        "title": "x Gang Wall Remote problems",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/142"
+      },
+      {
+        "number": 141,
+        "title": "Tuya Zigbee Temperature and humidity sensor ZN288408 dones't work",
+        "state": "closed",
+        "user": "ptiyannou",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/141"
+      },
+      {
+        "number": 140,
+        "title": "Radiator Valve - _TZE200_c88teujp / TS0601 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_c88teujp"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/140"
+      },
+      {
+        "number": 139,
+        "title": "Curtain switch module",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_1dd0d5yi"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/139"
+      },
+      {
+        "number": 138,
+        "title": "TS0012 not recognized",
+        "state": "closed",
+        "user": "Rabbitelly",
+        "labels": [],
+        "fps": [
+          "_TZ3000_jl7qyupf"
+        ],
+        "pids": [
+          "TS0012"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/138"
+      },
+      {
+        "number": 136,
+        "title": "Eeese Dehumidifier by Tuya",
+        "state": "closed",
+        "user": "Chopper8",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/136"
+      },
+      {
+        "number": 133,
+        "title": "Please add new NEO ZIGBEE SMART POWER PLUG powered by TUYA",
+        "state": "closed",
+        "user": "Frankman66",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/133"
+      },
+      {
+        "number": 131,
+        "title": "Livarno Lux RGBW LED-Strip no color.",
+        "state": "closed",
+        "user": "kb-net",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/131"
+      },
+      {
+        "number": 130,
+        "title": "4CH Zigbee Smart Lichtschakelaar Module Dc 5/12/32V RF433 Ontvangen 10A Relais Werken Met Alexa google Assistent Mqtt Tuya Smartthings: 1 relais only...",
+        "state": "closed",
+        "user": "kb-net",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/130"
+      },
+      {
+        "number": 129,
+        "title": "Nedis ZBHTR10WT",
+        "state": "open",
+        "user": "Allansoegaardlarsen",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/129"
+      },
+      {
+        "number": 128,
+        "title": "1/2/3/4 gang wall switches and touch dimmer",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_41ki5xyq",
+          "_TZ3000_ho0cjoi2",
+          "_TZ3000_amal63is",
+          "_TZ3000_mvvw8wnx",
+          "_TZ3000_keayt8ol",
+          "_TZ3000_etx8inrk",
+          "_TZE200_dfxkcots"
+        ],
+        "pids": [
+          "TS0004",
+          "TS0003",
+          "TS0002",
+          "TS0001",
+          "TS0013",
+          "TS0011",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/128"
+      },
+      {
+        "number": 127,
+        "title": "Powerstrip socket 3 ports not switching individually ",
+        "state": "closed",
+        "user": "jellelambers",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/127"
+      },
+      {
+        "number": 126,
+        "title": "problems with extension and fan addition",
+        "state": "closed",
+        "user": "tobi8868",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/126"
+      },
+      {
+        "number": 125,
+        "title": "problems with extension and fan addition",
+        "state": "closed",
+        "user": "tobi8868",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/125"
+      },
+      {
+        "number": 124,
+        "title": "Tuya App for Homey Bridge",
+        "state": "closed",
+        "user": "janv01",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/124"
+      },
+      {
+        "number": 123,
+        "title": "Tuya TS0121 (or TS011F?)  Zigbee smart plug with metering not recognised",
+        "state": "closed",
+        "user": "autohans",
+        "labels": [],
+        "fps": [
+          "_TZ3000_cphmq0q7"
+        ],
+        "pids": [
+          "TS0121"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/123"
+      },
+      {
+        "number": 122,
+        "title": "Tuya Zigbee 2 gang switch with neutral",
+        "state": "closed",
+        "user": "eeckelaertyannick",
+        "labels": [],
+        "fps": [
+          "_TZ3000_fisb3ajo"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/122"
+      },
+      {
+        "number": 121,
+        "title": "In-wall 2 gang switch - TS0002 / _TZ3000_bvrlqyj7",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_bvrlqyj7"
+        ],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/121"
+      },
+      {
+        "number": 120,
+        "title": "Tuya zigbee 3.0 Temperature an humidity 1 sensors - TS0201 / _TZ3000_i8jfiezr",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_i8jfiezr"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/120"
+      },
+      {
+        "number": 119,
+        "title": "Salcar Thermostat - TS0601 / _TZE200_a4bpgplm - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_a4bpgplm"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/119"
+      },
+      {
+        "number": 118,
+        "title": "Silvercrest outdoor plug - TS0101 / _TZ3000_pnzfdr9y",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_pnzfdr9y"
+        ],
+        "pids": [
+          "TS0101"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/118"
+      },
+      {
+        "number": 117,
+        "title": "Water Leak Alarm - TS0601 / _TZE200_jthf7vb6 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_jthf7vb6"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/117"
+      },
+      {
+        "number": 116,
+        "title": "4 gang scene switch TS004F / TZ3000_xabckq1v",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_xabckq1v"
+        ],
+        "pids": [
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/116"
+      },
+      {
+        "number": 115,
+        "title": "Moes MS-105Z - 1 gang Dimmer module - TS0601 / _TZE200_la2c2uo9 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_la2c2uo9"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/115"
+      },
+      {
+        "number": 114,
+        "title": "Flood Detector - RH3001 / TUYATEC-3tipnsrx",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/114"
+      },
+      {
+        "number": 113,
+        "title": "Lidl smart led ceiling light - TS0502A / _TZ3000_rylaozuc",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_rylaozuc"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/113"
+      },
+      {
+        "number": 112,
+        "title": "Plug with metering - TS011F / _TZ3000_hyfvrar3",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_hyfvrar3"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/112"
+      },
+      {
+        "number": 111,
+        "title": "Thermometer LCD Screen - TS0201 / _TZ3000_qaaysllp",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_qaaysllp"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/111"
+      },
+      {
+        "number": 110,
+        "title": "Moes 3 gang wall switch (touch)?",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_tz32mtza"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/110"
+      },
+      {
+        "number": 109,
+        "title": "4 Gang Remote - support for long press (5s)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/109"
+      },
+      {
+        "number": 108,
+        "title": "1 gang Zigbee dimmer module",
+        "state": "closed",
+        "user": "eeckelaertyannick",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/108"
+      },
+      {
+        "number": 107,
+        "title": "MoesGo Zigbee wallswitch (N/L) TS0601",
+        "state": "open",
+        "user": "Pim65",
+        "labels": [],
+        "fps": [
+          "_TZE200_amp6tsvy"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/107"
+      },
+      {
+        "number": 106,
+        "title": "new tuya zigbee water gas valve",
+        "state": "open",
+        "user": "langa64",
+        "labels": [],
+        "fps": [
+          "_TZE200_vrjkcam9"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/106"
+      },
+      {
+        "number": 105,
+        "title": "Is it perhaps time to update the app?",
+        "state": "closed",
+        "user": "Aard01",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/105"
+      },
+      {
+        "number": 104,
+        "title": "New Device",
+        "state": "closed",
+        "user": "eeckelaertyannick",
+        "labels": [],
+        "fps": [
+          "_TZ3000_ktuoyvt5"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/104"
+      },
+      {
+        "number": 103,
+        "title": "Smoke detector/alarm _TZE200_t5p1vj8r TS0601",
+        "state": "closed",
+        "user": "Sufkonijn",
+        "labels": [],
+        "fps": [
+          "_TZE200_t5p1vj8r"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/103"
+      },
+      {
+        "number": 101,
+        "title": "Moes - Temp / Lux / Hum Sensor - _TYZB01_kvwjujy9 / TS0222",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0222"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/101"
+      },
+      {
+        "number": 100,
+        "title": "4 button Keyfob - HEIMAN / RC-EF-3.0",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/100"
+      },
+      {
+        "number": 99,
+        "title": "Tuya Fingerbot via Bluetooth on Homey",
+        "state": "closed",
+        "user": "Theluh",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/99"
+      },
+      {
+        "number": 98,
+        "title": "RGB Tuya Zigbee spot werkt niet volledig",
+        "state": "open",
+        "user": "brembootje",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/98"
+      },
+      {
+        "number": 97,
+        "title": "Please add the tuya ts0215 to your app ",
+        "state": "closed",
+        "user": "JulDozer",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "ts0215"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/97"
+      },
+      {
+        "number": 96,
+        "title": "Touch key switch - _TYZB01_gr6rozze / TS0011",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0011"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/96"
+      },
+      {
+        "number": 95,
+        "title": "Alfawise Z1 Zigbee Wi-Fi Smart Security Kit 3 - Door/Win Sensor - TUYATEC-ip9ganvw / RH3001",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/95"
+      },
+      {
+        "number": 94,
+        "title": "Alfawise Z1 Zigbee Wi-Fi Smart Security Kit 3 - Temp/Hum Sensor - TUYATEC-1g3tawnp / RH3052",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/94"
+      },
+      {
+        "number": 93,
+        "title": "Alfawise Z1 Zigbee Wi-Fi Smart Security Kit 3 - PIR Sensor - TUYATEC-deetibst / RH3040",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/93"
+      },
+      {
+        "number": 92,
+        "title": "Roller Shader - Zemismart - _TZE200_fzo2pocs / TS0601 - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_fzo2pocs"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/92"
+      },
+      {
+        "number": 91,
+        "title": "LIDL Parkside - water irrigation - _TZE200_htnnfasr / TS0601 - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_htnnfasr"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/91"
+      },
+      {
+        "number": 90,
+        "title": "Wireless 1 button Scene Switch - _TZ3000_pzui3skt / TS0041",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_pzui3skt"
+        ],
+        "pids": [
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/90"
+      },
+      {
+        "number": 89,
+        "title": "Plug with measuring - _TZ3000_cphmq0q7 / TS011F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_cphmq0q7"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/89"
+      },
+      {
+        "number": 88,
+        "title": "Neo Coolcam Motion Sensor NAS-PD07 - _TZE200_7hfcudw5 / TS0601 - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZE200_7hfcudw5"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/88"
+      },
+      {
+        "number": 86,
+        "title": "Woox R7060 Smart Garden Irrigation Control / Woox _TZ3210_eymunffl TS0101",
+        "state": "closed",
+        "user": "shaarkys",
+        "labels": [],
+        "fps": [
+          "_TZ3210_eymunffl"
+        ],
+        "pids": [
+          "TS0101"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/86"
+      },
+      {
+        "number": 85,
+        "title": "Tuya app support for SAE803 thermostat",
+        "state": "open",
+        "user": "HarryV55",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/85"
+      },
+      {
+        "number": 84,
+        "title": "TS0504B Led strip ",
+        "state": "closed",
+        "user": "Tijn-hhs",
+        "labels": [],
+        "fps": [],
+        "pids": [
+          "TS0504B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/84"
+      },
+      {
+        "number": 83,
+        "title": "LCD Temperature & Humidity Sensor: No updates after installation",
+        "state": "closed",
+        "user": "Sven266",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/83"
+      },
+      {
+        "number": 82,
+        "title": "Curtain module - _TZ3000_vd43bbfq / TS130F",
+        "state": "closed",
+        "user": "valvarez",
+        "labels": [],
+        "fps": [
+          "_TZ3000_vd43bbfq"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/82"
+      },
+      {
+        "number": 81,
+        "title": "Smart Air Box ",
+        "state": "closed",
+        "user": "eeckelaertyannick",
+        "labels": [],
+        "fps": [
+          "_TZE200_8ygsuhe1"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/81"
+      },
+      {
+        "number": 80,
+        "title": "Led strip controller - TS0504B / _TZ3000_ukuvyhaa",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_ukuvyhaa"
+        ],
+        "pids": [
+          "TS0504B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/80"
+      },
+      {
+        "number": 79,
+        "title": "E14 RGB - ZB-CL01 / eWeLight",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/79"
+      },
+      {
+        "number": 78,
+        "title": "feature request suppport for tuya (ewelink) TZ3000_hdlpifbk 4 chan relay module",
+        "state": "closed",
+        "user": "melkuier",
+        "labels": [],
+        "fps": [
+          "_TZ3000_hdlpifbk"
+        ],
+        "pids": [
+          "TS0004"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/78"
+      },
+      {
+        "number": 77,
+        "title": "In-wall 1 Gang Switch Module - TS0001 / _TZ3000_hktqahrq",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_hktqahrq"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/77"
+      },
+      {
+        "number": 76,
+        "title": "4 gang remote control",
+        "state": "closed",
+        "user": "Legbl42",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/76"
+      },
+      {
+        "number": 75,
+        "title": "Dos not work",
+        "state": "closed",
+        "user": "ghost",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/75"
+      },
+      {
+        "number": 74,
+        "title": "Default status after power outage",
+        "state": "open",
+        "user": "kapusticka",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/74"
+      },
+      {
+        "number": 73,
+        "title": "help",
+        "state": "closed",
+        "user": "tt1012",
+        "labels": [],
+        "fps": [
+          "_TZ3000_tk3s5tyg"
+        ],
+        "pids": [
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/73"
+      },
+      {
+        "number": 72,
+        "title": "New model of (1?) 4 Gang Wall Remote - _TZ3000_xabckq1v / TS004F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [],
+        "fps": [
+          "_TZ3000_xabckq1v"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/72"
+      },
+      {
+        "number": 70,
+        "title": "The AM43 Blinds Drive Tuya Zigbee",
+        "state": "closed",
+        "user": "eeckelaertyannick",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/70"
+      },
+      {
+        "number": 69,
+        "title": "Feature request: Support for curtain switch _TZ3000_8kzqqzu4 TS130F",
+        "state": "closed",
+        "user": "Dikootje",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_8kzqqzu4"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/69"
+      },
+      {
+        "number": 68,
+        "title": "Nedis Motion Sensor - ZBSM10WT - TUYATEC-bd5faf9p / RH3040",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/68"
+      },
+      {
+        "number": 67,
+        "title": "Dim duration does not work for Dimmer_2_gang",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/67"
+      },
+      {
+        "number": 65,
+        "title": "Single Color Smart Led Controller - _TZE200_mde0utnv / TS0601 - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_mde0utnv"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/65"
+      },
+      {
+        "number": 64,
+        "title": "Woox R7049 Smoke Alarm",
+        "state": "closed",
+        "user": "andwari",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/64"
+      },
+      {
+        "number": 63,
+        "title": "Temp / Hum Sensor - _TYZB01_cbiezpds / SM0201",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/63"
+      },
+      {
+        "number": 62,
+        "title": "Water irrigation  - _TZ3210_eymunffl / TS0101 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3210_eymunffl"
+        ],
+        "pids": [
+          "TS0101"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/62"
+      },
+      {
+        "number": 61,
+        "title": "switch_1_gang and switch_2_gang as class socket instead of light",
+        "state": "closed",
+        "user": "MarcoGos",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/61"
+      },
+      {
+        "number": 60,
+        "title": "RGB light bars do not change color",
+        "state": "closed",
+        "user": "Malalicious",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/60"
+      },
+      {
+        "number": 59,
+        "title": "Button remotes do not trigger",
+        "state": "closed",
+        "user": "Malalicious",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/59"
+      },
+      {
+        "number": 58,
+        "title": "Remotes are added as wall switch",
+        "state": "closed",
+        "user": "Malalicious",
+        "labels": [],
+        "fps": [
+          "_TZ3000_a7ouggvs",
+          "_TZ3000_owgcnkrh"
+        ],
+        "pids": [
+          "TS0043",
+          "TS0042"
+        ],
+        "newFPs": [
+          "_TZ3000_owgcnkrh"
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/58"
+      },
+      {
+        "number": 57,
+        "title": "3-button remote - _TZ3000_bi6lpsew / TS0043",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_bi6lpsew"
+        ],
+        "pids": [
+          "TS0043"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/57"
+      },
+      {
+        "number": 56,
+        "title": "3 Way Wall Remote - _TZ3000_qzjcsmar / TS0043",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_qzjcsmar"
+        ],
+        "pids": [
+          "TS0043"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/56"
+      },
+      {
+        "number": 55,
+        "title": "3 Way Wall Switch - Neutral - _TZ3000_cdamjqm9 / TS0003",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_cdamjqm9"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/55"
+      },
+      {
+        "number": 54,
+        "title": "Smoke sensor - _TYZB01_dsjszp0x / TS0205",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0205"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/54"
+      },
+      {
+        "number": 53,
+        "title": "2 and 3 gang switches additional device times out",
+        "state": "closed",
+        "user": "Malalicious",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/53"
+      },
+      {
+        "number": 52,
+        "title": "New Siren - _TZE200_d0yu2xgi / TS0601 - (Tuya cluster)",
+        "state": "closed",
+        "user": "jrevillard",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_d0yu2xgi"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/52"
+      },
+      {
+        "number": 51,
+        "title": "_TZ3000_riwp3k79 Livarnolux LED strip colors issues. ",
+        "state": "closed",
+        "user": "kapusticka",
+        "labels": [],
+        "fps": [
+          "_TZ3000_riwp3k79"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/51"
+      },
+      {
+        "number": 50,
+        "title": "Touch Dimmer Switch -  _TZE200_dfxkcots / TS0601 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_dfxkcots"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/50"
+      },
+      {
+        "number": 49,
+        "title": "Bug in use variable Change color shade",
+        "state": "closed",
+        "user": "Ritsell",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/49"
+      },
+      {
+        "number": 48,
+        "title": "Smart led Light Bar - Lidl - TS0505A / _TZ3000_gek6snaj",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_gek6snaj"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/48"
+      },
+      {
+        "number": 47,
+        "title": "Mood Light - Lidl - TS0505A / _TZ3000_9cpuaca6",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_9cpuaca6"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/47"
+      },
+      {
+        "number": 46,
+        "title": "2 Way Switch - TS0601 - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_nkjintbl"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/46"
+      },
+      {
+        "number": 44,
+        "title": "Tuya PIR Sensor",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/44"
+      },
+      {
+        "number": 43,
+        "title": "Possible to detect switch device turned on/off by wall switch?",
+        "state": "closed",
+        "user": "jrevillard",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/43"
+      },
+      {
+        "number": 40,
+        "title": "Blitzwolf smart plug ",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_g5xawfcq"
+        ],
+        "pids": [
+          "TS0121"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/40"
+      },
+      {
+        "number": 39,
+        "title": "Roller Shader - _TZE200_xuzcvlku / TS0601 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_xuzcvlku"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/39"
+      },
+      {
+        "number": 38,
+        "title": "4 Gang Wall Switch - _TZ3000_vp6clf9d / TS0044",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_vp6clf9d"
+        ],
+        "pids": [
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/38"
+      },
+      {
+        "number": 37,
+        "title": "Tuya 4 smart power strip - TS0115 / _TYZB01_vkwryfdr",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0115"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/37"
+      },
+      {
+        "number": 36,
+        "title": "Add support for IASZone Enrollment",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "enhancement"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/36"
+      },
+      {
+        "number": 35,
+        "title": "Add support for Tuya Specific Cluster",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "enhancement"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/35"
+      },
+      {
+        "number": 34,
+        "title": "EJLINK - Manufacturer ID: _TZ3000_f8tmviy0 Product ID: TS0001",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_f8tmviy0"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/34"
+      },
+      {
+        "number": 33,
+        "title": "Lidl - Smart Window and Door Sensor - _TZ1800_ejwkn2h2 / TY0203",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/33"
+      },
+      {
+        "number": 32,
+        "title": "LIDL - RGB E14 - TS0505A, _TZ3000_odygigth",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_odygigth"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/32"
+      },
+      {
+        "number": 31,
+        "title": "Tuya Zigbee 3.0 Smart Switch - TS0121",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0121"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/31"
+      },
+      {
+        "number": 30,
+        "title": "LIDL - Starter kit remote (on/off, brightness) - paired as Zigbee basic. Manuf ID: _TYZB01_bngwdjsr Prod ID: TS1001",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS1001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/30"
+      },
+      {
+        "number": 29,
+        "title": "LIDL - Tunable spot GU-10 - paired as Zigbee basic. Manuf ID: _TZ3000_el5kt5im Prod ID: TS0502A (so the same as the E27 and E14 tunable bulb)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_el5kt5im"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/29"
+      },
+      {
+        "number": 28,
+        "title": "LIDL - RGB spot GU-10 - paired as Zigbee basic. Manuf ID: _TZ3000_kdpxju99 Prod ID: TS0505A (so the same as the E27 RGB bulb)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_kdpxju99"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/28"
+      },
+      {
+        "number": 26,
+        "title": "LIDL - Smart plug - paired as Zigbee basic. Manuf ID: _TZ3000_kdi2o9m6 Prod ID: TS011F (so seems to be the same ID as the 3-socket power strip)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_kdi2o9m6"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/26"
+      },
+      {
+        "number": 25,
+        "title": "LIDL - RGB LED strip - paired as Zigbee basic. Manuf ID: _TZ3000_riwp3k79 Prod ID: TS0505A (so seems to be the same ID as the E27 RGB bulb)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_riwp3k79"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/25"
+      },
+      {
+        "number": 24,
+        "title": "LIDL - Motion sensor - paired as Zigbee basic. Manuf ID: _TZ1800_fcdjzz3s Prod ID: TY0202",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/24"
+      },
+      {
+        "number": 23,
+        "title": "LIDL - Tunable bulb E27 - paired as Zigbee basic. Manuf ID: _TZ3000_49qchf10 Prod ID: TS0502A",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_49qchf10"
+        ],
+        "pids": [
+          "TS0502A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/23"
+      },
+      {
+        "number": 22,
+        "title": "LIDL - RGB bulb E27- paired as Zigbee basic. Manuf. ID: _TZ3000_dbou1ap4 Prod ID: TS0505A",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_dbou1ap4"
+        ],
+        "pids": [
+          "TS0505A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/22"
+      },
+      {
+        "number": 21,
+        "title": "LIDL - Christmas Tree lights - paired as Zigbee basic. Manuf ID: _TZE200_s8gkrkxk Prod ID: TS0601",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_s8gkrkxk"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/21"
+      },
+      {
+        "number": 20,
+        "title": "LIDL - 3 socket power strip - paired as Zigbee basic. Manuf ID: _TZ3000_1obwwnmq Prod ID: TS011F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_1obwwnmq"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/20"
+      },
+      {
+        "number": 19,
+        "title": "RGB LED Strip Controller - lonsohno TS0503A",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_obacbukl"
+        ],
+        "pids": [
+          "TS0503A"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/19"
+      },
+      {
+        "number": 16,
+        "title": "Valve Controller - TS0111",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0111"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/16"
+      },
+      {
+        "number": 15,
+        "title": "1 Gang Dimmer & 2 Gang Dimmer - TS110F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/15"
+      },
+      {
+        "number": 14,
+        "title": "Neo Leak Sensor",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/14"
+      },
+      {
+        "number": 13,
+        "title": "Lonsonho QS-Zigbee-D02-TRIAC-2C-LN",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/13"
+      },
+      {
+        "number": 12,
+        "title": "Smart Radiator Actuator - TS0601 - (Tuya cluster)",
+        "state": "open",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZE200_ckud7u2l"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/12"
+      },
+      {
+        "number": 11,
+        "title": "1 Gang Switch & 2 Gang Switch - TSO003",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/11"
+      },
+      {
+        "number": 10,
+        "title": "Siren - _TYST11_d0yu2xgi / 0yu2xgi",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/10"
+      },
+      {
+        "number": 9,
+        "title": "Curtain Switch - TS130F",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_8kzqqzu4"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/9"
+      },
+      {
+        "number": 8,
+        "title": "2 Gang Wall Switch - TS0012",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0012"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/8"
+      },
+      {
+        "number": 7,
+        "title": "1 Gang Wall Switch - TS0011",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0011"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/7"
+      },
+      {
+        "number": 6,
+        "title": "2 Gang Wall Switch - TS0002",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/6"
+      },
+      {
+        "number": 5,
+        "title": "Plug - TS0121",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [
+          "_TZ3000_3ooaz3ng"
+        ],
+        "pids": [
+          "TS0121"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/5"
+      },
+      {
+        "number": 4,
+        "title": "2 Gang Switch Module",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/4"
+      },
+      {
+        "number": 3,
+        "title": "Curtain motor - TS0601 - (Tuya cluster)",
+        "state": "closed",
+        "user": "JohanBendz",
+        "labels": [
+          "New Device"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/3"
       }
     ],
     "newFPs": [
+      {
+        "mfr": "_TZ3000_an5rjiwd",
+        "source": "PR #1128",
+        "title": "Added _TZ3000_an5rjiwd to smart_button_switch"
+      },
+      {
+        "mfr": "_TZ3000_kxaow5ki",
+        "source": "Issue #1352",
+        "title": "Device Request: TS0041 1‑button wireless switch (_TZ3000_kxaow5ki)"
+      },
       {
         "mfr": "_TZ3000_Itgngnqz",
         "source": "Issue #1334",
@@ -16356,9 +21280,44 @@
         "title": "Zigbee Door & window sensor"
       },
       {
+        "mfr": "_TZ3000_vn88ezar",
+        "source": "Issue #1205",
+        "title": "Device Request - Tuya ZigBee 3.0 Wireless 1 Gang Remote Control Switch Compatible with Smart Life Home Assistant Zigbee2MQTT DIY  -  #1204"
+      },
+      {
+        "mfr": "_TZ3000_ly9apzky",
+        "source": "Issue #1152",
+        "title": "Device Request - Mini 3 Gang Zigbee Switch Module - TZ3000 / TS0003"
+      },
+      {
         "mfr": "_TZ3000_ww6drja5TS011F",
         "source": "Issue #1096",
         "title": "Device Request - Smart Plug with monitoring _TZ3000_ww6drja5TS011F"
+      },
+      {
+        "mfr": "_TZ3000_pfc7i3kt",
+        "source": "Issue #650",
+        "title": "Device Request - [3 Gang Smart Switch Module][Moes] / [MS-104CZ]"
+      },
+      {
+        "mfr": "_TZ3000_rco1yzb1",
+        "source": "Issue #424",
+        "title": "Feature Request - \t_TZ3000_rco1yzb1 TS004F recognize 3 clicks and adjust interval time"
+      },
+      {
+        "mfr": "_TZ3000_rco1yzb1",
+        "source": "Issue #423",
+        "title": "Bug report - \t_TZ3000_rco1yzb1 TS004F 1 click not recognized "
+      },
+      {
+        "mfr": "_TZ3000_pfc7i3kt",
+        "source": "Issue #408",
+        "title": "Device Request - Smart switch module 3 gang - _TZ3000_pfc7i3kt / TS0003"
+      },
+      {
+        "mfr": "_TZ3000_owgcnkrh",
+        "source": "Issue #58",
+        "title": "Remotes are added as wall switch"
       }
     ]
   },
@@ -17087,6 +22046,501 @@
       }
     ],
     "issues": [
+      {
+        "number": 390,
+        "title": "[Auto] 36 new fingerprints from community (2026-06)",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_nwidmc4n",
+          "_TZ3000_pfc7i3kt",
+          "_TZ3000_iv4eq7eh",
+          "_TZ3000_mzcp0of6",
+          "_TZ3000_avotanj3",
+          "_TZE200_qasjif9e"
+        ],
+        "pids": [
+          "TS0215A",
+          "TS0001",
+          "TS0121",
+          "TS0205",
+          "TS0003",
+          "TS0011",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0014",
+          "TS0044"
+        ],
+        "newFPs": [
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_nwidmc4n",
+          "_TZ3000_pfc7i3kt",
+          "_TZ3000_iv4eq7eh",
+          "_TZ3000_mzcp0of6",
+          "_TZ3000_avotanj3",
+          "_TZE200_qasjif9e"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/390"
+      },
+      {
+        "number": 389,
+        "title": "[Auto] 36 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_nwidmc4n",
+          "_TZ3000_pfc7i3kt",
+          "_TZ3000_iv4eq7eh",
+          "_TZ3000_mzcp0of6",
+          "_TZ3000_avotanj3",
+          "_TZE200_qasjif9e"
+        ],
+        "pids": [
+          "TS0215A",
+          "TS0001",
+          "TS0121",
+          "TS0205",
+          "TS0003",
+          "TS0011",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0014",
+          "TS0044"
+        ],
+        "newFPs": [
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_nwidmc4n",
+          "_TZ3000_pfc7i3kt",
+          "_TZ3000_iv4eq7eh",
+          "_TZ3000_mzcp0of6",
+          "_TZ3000_avotanj3",
+          "_TZE200_qasjif9e"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/389"
+      },
+      {
+        "number": 388,
+        "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+        "state": "closed",
+        "user": "DaPicardos",
+        "labels": [],
+        "fps": [
+          "_TZ3210_tgvtvdo",
+          "_TZ3210_tgvtvdoc"
+        ],
+        "pids": [
+          "TS0207"
+        ],
+        "newFPs": [
+          "_TZ3210_tgvtvdo"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/388"
+      },
+      {
+        "number": 387,
+        "title": "[Auto] 36 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_nwidmc4n",
+          "_TZ3000_pfc7i3kt",
+          "_TZ3000_iv4eq7eh",
+          "_TZ3000_mzcp0of6",
+          "_TZ3000_avotanj3",
+          "_TZE200_qasjif9e"
+        ],
+        "pids": [
+          "TS0215A",
+          "TS0001",
+          "TS0121",
+          "TS0205",
+          "TS0003",
+          "TS0011",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0014",
+          "TS0044"
+        ],
+        "newFPs": [
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_nwidmc4n",
+          "_TZ3000_pfc7i3kt",
+          "_TZ3000_iv4eq7eh",
+          "_TZ3000_mzcp0of6",
+          "_TZ3000_avotanj3",
+          "_TZE200_qasjif9e"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/387"
+      },
+      {
+        "number": 386,
+        "title": "[Auto] 2 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZ3000_owgcnkrh",
+          "_TZE200_qasjif9e"
+        ],
+        "pids": [
+          "TS0042"
+        ],
+        "newFPs": [
+          "_TZ3000_owgcnkrh",
+          "_TZE200_qasjif9e"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/386"
+      },
+      {
+        "number": 385,
+        "title": "[Auto] 4 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZ3000_owgcnkrh",
+          "_TZE284_iadro9bf",
+          "_TZE204_nbkshs6k",
+          "_TZE204_no6qtgtl"
+        ],
+        "pids": [
+          "TS0042"
+        ],
+        "newFPs": [
+          "_TZ3000_owgcnkrh"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/385"
+      },
+      {
+        "number": 384,
+        "title": "TS0601 _TZE200_9xfjixap #339#379 #381",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [
+          "_TZE200_9xfjixap"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/384"
+      },
+      {
+        "number": 383,
+        "title": "Bug Report: Bed Sensor issues still persist in v8.1.141",
+        "state": "open",
+        "user": "DaPicardos",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383"
+      },
+      {
+        "number": 382,
+        "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor #374",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [
+          "_TZE200_ka8l86iu",
+          "_TZE200_9xfjixap"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/382"
+      },
+      {
+        "number": 381,
+        "title": "TS0601  _TZE200_9xfjixap  #339#379",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [
+          "_TZE200_9xfjixap"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/381"
+      },
+      {
+        "number": 380,
+        "title": "361 configuration page is still loading endlessly",
+        "state": "open",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380"
+      },
+      {
+        "number": 379,
+        "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working #339",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [
+          "_TZE200_9xfjixap"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/379"
+      },
+      {
+        "number": 378,
+        "title": "Bug Report: Bed Sensor issues still persist in v8.1.124",
+        "state": "closed",
+        "user": "DaPicardos",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/378"
+      },
+      {
+        "number": 377,
+        "title": "[Auto] 1 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZ3000_996rpfy6"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/377"
+      },
+      {
+        "number": 376,
+        "title": "Bug report - Strange readings from the soil sensors",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [
+          "bug"
+        ],
+        "fps": [
+          "_TZE200_npj9bug3",
+          "_TZE284_aao3yzhs",
+          "_TZE284_oitavov2",
+          "_TZE284_hdml1aav"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/376"
+      },
+      {
+        "number": 375,
+        "title": "361 Still loading endlessly",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/375"
+      },
+      {
+        "number": 374,
+        "title": "[presence_sensor_radar] Bug: _TZE200_ka8l86iu PesenceSensor",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [
+          "_TZE200_ka8l86iu"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/374"
+      },
+      {
+        "number": 373,
+        "title": "From #370",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/373"
+      },
+      {
+        "number": 372,
+        "title": "[Auto] 2 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0201",
+          "TS0121"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/372"
+      },
+      {
+        "number": 371,
+        "title": "Bug Report: Bed Sensor issues still persist in v8.1.106",
+        "state": "closed",
+        "user": "DaPicardos",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/371"
+      },
+      {
+        "number": 370,
+        "title": "[rain_sensor] Bug: _TZE200_u6x1zyv2",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [
+          "_TZE200_u6x1zyv2"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/370"
+      },
+      {
+        "number": 369,
+        "title": "[Auto] 2 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0003",
+          "TS0013",
+          "TS0043",
+          "TS0014",
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/369"
+      },
+      {
+        "number": 368,
+        "title": "[Auto] 28 new fingerprints from community (2026-06)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0001",
+          "TS0205",
+          "TS0115",
+          "TS0003",
+          "TS0011",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0111",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0014",
+          "TS0044"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/368"
+      },
       {
         "number": 367,
         "title": "Bug Report: Bed Sensor issues still persist in v8.1.92",
@@ -17914,12 +23368,14 @@
           "TS0505B",
           "TS0121"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_8nkb7mof"
+        ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/342"
       },
       {
         "number": 340,
-        "title": "[soil_sensor] Bug: ZG-303Z",
+        "title": "[soil_sensor] Bug: ZG-303Z ",
         "state": "closed",
         "user": "haadeess",
         "labels": [
@@ -17935,7 +23391,7 @@
       },
       {
         "number": 339,
-        "title": "[radiator_valve] Bug: _TZE200_9xfjixap",
+        "title": "[radiator_valve] Bug: _TZE200_9xfjixap Still not working",
         "state": "closed",
         "user": "haadeess",
         "labels": [
@@ -17976,7 +23432,7 @@
       },
       {
         "number": 337,
-        "title": "[motion_sensor_2] Bug: _TZE200_3towulqd",
+        "title": "[motion_sensor_2] Bug: _TZE200_3towulqd ",
         "state": "closed",
         "user": "haadeess",
         "labels": [
@@ -18092,7 +23548,9 @@
           "TS0505B",
           "TS0121"
         ],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_8nkb7mof"
+        ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/336"
       },
       {
@@ -18153,7 +23611,7 @@
       },
       {
         "number": 334,
-        "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug: ",
+        "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug: No button press detected again.",
         "state": "closed",
         "user": "haadeess",
         "labels": [
@@ -24811,7 +30269,9 @@
           "_TZ3000_kxaow5ki"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_kxaow5ki"
+        ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/167"
       },
       {
@@ -25663,7 +31123,9 @@
           "_TZE200_seq9cm6u"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_avotanj3"
+        ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/136"
       },
       {
@@ -25719,7 +31181,9 @@
           "_TZ3002_tlsvxhxc"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_avotanj3"
+        ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/133"
       },
       {
@@ -26008,7 +31472,9 @@
           "_TZ3000_an5rjiwd"
         ],
         "pids": [],
-        "newFPs": [],
+        "newFPs": [
+          "_TZ3000_an5rjiwd"
+        ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/121"
       },
       {
@@ -27777,11 +33243,241 @@
     ],
     "newFPs": [
       {
+        "mfr": "_TZ3000_rco1yzb1",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_8nkb7mof",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_fkp5zyho",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_axpdxqgu",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_peszejy7",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_f97vq5mn",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_owgcnkrh",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_nwidmc4n",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_pfc7i3kt",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_iv4eq7eh",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_mzcp0of6",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_avotanj3",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZE200_qasjif9e",
+        "source": "Issue #390",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_rco1yzb1",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_8nkb7mof",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_fkp5zyho",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_axpdxqgu",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_peszejy7",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_f97vq5mn",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_owgcnkrh",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_nwidmc4n",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_pfc7i3kt",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_iv4eq7eh",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_mzcp0of6",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_avotanj3",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZE200_qasjif9e",
+        "source": "Issue #389",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3210_tgvtvdo",
+        "source": "Issue #388",
+        "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor"
+      },
+      {
+        "mfr": "_TZ3000_rco1yzb1",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_8nkb7mof",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_fkp5zyho",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_axpdxqgu",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_peszejy7",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_f97vq5mn",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_owgcnkrh",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_nwidmc4n",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_pfc7i3kt",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_iv4eq7eh",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_mzcp0of6",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_avotanj3",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZE200_qasjif9e",
+        "source": "Issue #387",
+        "title": "[Auto] 36 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_owgcnkrh",
+        "source": "Issue #386",
+        "title": "[Auto] 2 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZE200_qasjif9e",
+        "source": "Issue #386",
+        "title": "[Auto] 2 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZ3000_owgcnkrh",
+        "source": "Issue #385",
+        "title": "[Auto] 4 new fingerprints from community (2026-06)"
+      },
+      {
         "mfr": "_TZ3290_acv1iuslxi3shaaj",
         "source": "Issue #357",
         "title": "[Auto] New Tuya devices found in zigbee2mqtt"
       },
       {
+        "mfr": "_TZ3000_8nkb7mof",
+        "source": "Issue #342",
+        "title": "[Auto] 298 new fingerprints from community (2026-05)"
+      },
+      {
+        "mfr": "_TZ3000_8nkb7mof",
+        "source": "Issue #336",
+        "title": "[Auto] 298 new fingerprints from community (2026-05)"
+      },
+      {
+        "mfr": "_TZ3000_kxaow5ki",
+        "source": "Issue #167",
+        "title": "[Auto] 1 new fingerprint(s) from upstream"
+      },
+      {
         "mfr": "_TZ3000_zutizvykts0203",
         "source": "Issue #140",
         "title": "[Auto] 736 new fingerprints from forks"
@@ -28240,6 +33936,21 @@
         "mfr": "_TZe200_a8z0g46u",
         "source": "Issue #138",
         "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZ3000_avotanj3",
+        "source": "Issue #136",
+        "title": "[Auto] 17 new fingerprints from community (2026-02)"
+      },
+      {
+        "mfr": "_TZ3000_avotanj3",
+        "source": "Issue #133",
+        "title": "[Auto] 14 new fingerprints from community (2026-02)"
+      },
+      {
+        "mfr": "_TZ3000_an5rjiwd",
+        "source": "Issue #121",
+        "title": "_TZ3000_an5rjiwd - not working"
       }
     ]
   }

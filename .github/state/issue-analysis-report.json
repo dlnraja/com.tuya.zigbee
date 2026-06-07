@@ -1,43 +1,273 @@
 {
-  "timestamp": "2026-06-06T00:50:17.831Z",
+  "timestamp": "2026-06-07T01:34:46.026Z",
   "repo": "dlnraja/com.tuya.zigbee",
   "state": "open",
-  "totalIssues": 4,
+  "totalIssues": 3,
   "withImages": 0,
   "withDiagnostics": 1,
   "withErrorPatterns": 1,
   "uniqueManufacturerIds": [
+    "_motion",
+    "_battery",
     "_TZ3000",
-    "_996rpfy6",
-    "_TZE200",
-    "_npj9bug3",
-    "_TZE284",
-    "_aao3yzhs",
-    "_oitavov2",
-    "_hdml1aav",
-    "_Originally",
+    "_rco1yzb1",
+    "_remote",
+    "_button",
     "_TYZB01",
-    "_iuepbmpv",
-    "_temperature",
-    "_humidity",
-    "_battery"
+    "_qm6djpta",
+    "_buttons",
+    "_phjeraqq",
+    "_switch",
+    "_8nkb7mof",
+    "_dsjszp0x",
+    "_sensor",
+    "_ncutbjdi",
+    "_aneiicmq",
+    "_zsl6z0pw",
+    "_digziiav",
+    "_TYZB02",
+    "_keyjqthh",
+    "_fkp5zyho",
+    "_axpdxqgu",
+    "_peszejy7",
+    "_f97vq5mn",
+    "_owgcnkrh",
+    "_xfpdrwvc",
+    "_qeqvmvti",
+    "_seqwasot",
+    "_mtlhqn48",
+    "_6sadkhcy",
+    "_vzrytttn",
+    "_2athzhfr",
+    "_6g8b7at8",
+    "_xiuox57i",
+    "_b8cr31hp",
+    "_mqel1whf",
+    "_bagt1e4o",
+    "_nwidmc4n",
+    "_pfc7i3kt",
+    "_iv4eq7eh",
+    "_mzcp0of6",
+    "_avotanj3",
+    "_TZE200",
+    "_qasjif9e",
+    "_Originally"
   ],
   "uniqueDeviceTypes": [],
   "issues": [
     {
-      "number": 377,
-      "title": "[Auto] 1 new fingerprints from community (2026-06)",
+      "number": 390,
+      "title": "[Auto] 36 new fingerprints from community (2026-06)",
       "author": "app/github-actions",
       "labels": [
         "enhancement",
         "community-sync"
       ],
       "comments": [],
-      "createdAt": "2026-06-05T23:51:22Z",
+      "createdAt": "2026-06-06T22:16:34Z",
       "manufacturerIds": [
+        "_motion",
+        "_battery",
         "_TZ3000",
-        "_996rpfy6"
+        "_rco1yzb1",
+        "_remote",
+        "_button",
+        "_TYZB01",
+        "_qm6djpta",
+        "_buttons",
+        "_phjeraqq",
+        "_switch",
+        "_8nkb7mof",
+        "_dsjszp0x",
+        "_sensor",
+        "_ncutbjdi",
+        "_aneiicmq",
+        "_zsl6z0pw",
+        "_digziiav",
+        "_TYZB02",
+        "_keyjqthh",
+        "_fkp5zyho",
+        "_axpdxqgu",
+        "_peszejy7",
+        "_f97vq5mn",
+        "_owgcnkrh",
+        "_xfpdrwvc",
+        "_qeqvmvti",
+        "_seqwasot",
+        "_mtlhqn48",
+        "_6sadkhcy",
+        "_vzrytttn",
+        "_2athzhfr",
+        "_6g8b7at8",
+        "_xiuox57i",
+        "_b8cr31hp",
+        "_mqel1whf",
+        "_bagt1e4o",
+        "_nwidmc4n",
+        "_pfc7i3kt",
+        "_iv4eq7eh",
+        "_mzcp0of6",
+        "_avotanj3",
+        "_TZE200",
+        "_qasjif9e"
       ],
+      "productIds": [
+        "TS0215A",
+        "TS0001",
+        "TS0121",
+        "TS0205",
+        "TS0003",
+        "TS0011",
+        "TS0012",
+        "TS0002",
+        "TS0013",
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0014",
+        "TS0044"
+      ],
+      "diagnosticIds": [],
+      "images": [],
+      "errorPatterns": [],
+      "deviceTypes": [],
+      "hasImage": false,
+      "hasDiagnostic": false,
+      "bodyLength": 3232,
+      "bodyPreview": "## 🌐 Monthly Community Sync Found 36 New Fingerprints\n\n| Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |\n|---|---|---|---|---|---|\n| `TUYATEC-53o41joc` | RH3040 | pirsensor | Johan | - | alarm_motion, alarm_battery |\n| `_TZ3000_rco1yzb1` | TS004F | smart_remote_1_butto",
+      "commentTexts": []
+    },
+    {
+      "number": 383,
+      "title": "Bug Report: Bed Sensor issues still persist in v8.1.141",
+      "author": "DaPicardos",
+      "labels": [
+        "bug"
+      ],
+      "comments": [
+        {
+          "id": "IC_kwDOPPue0s8AAAABFIdFbQ",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @DaPicardos,\n\nThanks for the detailed breakdown! I've reviewed the logs from #328.\n\n**What was fixed in v8.1.129+:**\n- DP1 inversion corrected (0=occupied, 1=unoccupied)\n- DP104 removed (was work_state, not battery)\n- DP101/102/103 remapped per Z2M reference\n- Settings crashes fixed (bed-specific keys filtered)\n- Bogus capabilities removed (temperature, humidity)\n\n**What might still be broken:**\n- The diagnostic code needs to be shared via https://tools.developer.homey.app for me to see the actual DP values\n- Some features might need additional configuration\n\n**Please:**\n1. Update to v8.1.143+\n2. Remove and re-pair the device\n3. Share the diagnostic via the web portal\n4. Test the settings save (sensitivity, delays)\n\nIf the issues persist after re-pairing, please share the diagnostic link and I'll investigate further. 🔍",
+          "createdAt": "2026-06-06T15:13:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4639376749",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFIhTPw",
+          "author": {
+            "login": "DaPicardos"
+          },
+          "authorAssociation": "NONE",
+          "body": "Hi @dlnraja, **Diagnostics Report ID** v8.1.143 from the web portal: CF9D907E",
+          "createdAt": "2026-06-06T15:32:12Z",
+          "includesCreatedEdit": true,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4639445823",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFI4Lbg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @DaPicardos,\n\nThanks for the diagnostic CF9D907E and the detailed feedback from #328!\n\n**I found the root causes and fixed them in v8.1.147:**\n\n**Bug 1 — forceActiveTuyaMode missing (CRITICAL):**\nThe bed sensor was missing `forceActiveTuyaMode = true` and `hybridModeEnabled = true`. Without these, the Tuya DP mode deactivates after the learning phase and the device stops sending data. This explains 'completely broken, no data received'.\n\n**Bug 2 — DP103 incorrectly removed:**\nI mistakenly removed DP103 from the driver. Z2M PR #11584 confirms DP103 = `presence_time` (delay to report presence/occupied, 0-3600s). It has been restored.\n\n**Bug 3 — DP102 naming:**\nFixed: pir_delay → presence_delay per Z2M PR #11584.\n\n**Corrected DP mappings (per Z2M PR #11584):**\n| DP | Name | Function |\n|----|------|----------|\n| 1 | presence | Occupancy (trueFalse0) |\n| 4 | battery | Battery level |\n| 9 | sensitivity | low/middle/high (enum) |\n| 12 | illuminance/pressure | Raw value |\n| 101 | interval_time | Sampling interval (5-720 min) |\n| 102 | presence_delay | Delay to report no presence (0-3600 s) |\n| 103 | presence_time | Delay to report presence (0-3600 s) |\n| 104 | work_state | READ-ONLY enum (NOT battery) |\n\n**Please:**\n1. Update to v8.1.147+\n2. Remove and re-pair the device\n3. Test the settings (sensitivity, delays, interval)\n4. The device should now receive data via Tuya DPs 🎯",
+          "createdAt": "2026-06-06T17:19:18Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4639820654",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFI73Fg",
+          "author": {
+            "login": "DaPicardos"
+          },
+          "authorAssociation": "NONE",
+          "body": "**Hi @dlnraja,**\n\nThank you for the updates in version **v8.1.147**! However, the core issue is still not solved: the bed sensor is completely dead in Homey and transfers absolutely zero data. \n\nTo rule out any pairing or communication issues, I completely deleted the bed sensor from Homey and re-paired it from scratch. **Removing and re-adding the device works perfectly fine**, which proves the Zigbee connection itself is stable. \n\nHowever, even after a completely fresh pairing, the sensor still refuses to send or update any states (presence, battery, etc.) inside Homey. Furthermore, when I try to run Homey's built-in \"Repair\" feature on the device, it immediately fails with the error shown in the attached screenshot: **\"Repair not possible - Device not initialized or found...\"**.\n\nI have generated and sent a fresh Diagnostics Report for you with the **ID: 761056AB**. \n\nPlease check this report to see where the incoming data from the Tuya DPs is getting stuck or why the driver is failing during operation and repair. Thank you!\n\n<img width=\"401\" height=\"817\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/97b706e4-36c7-48c0-9778-634d8bd2529e\" />",
+          "createdAt": "2026-06-06T17:46:22Z",
+          "includesCreatedEdit": true,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4639880982",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFJUmMw",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @DaPicardos,\n\nThanks for the detailed feedback and diagnostic 761056AB!\n\n**I found the ROOT CAUSE — it was in the base class, not the driver:**\n\nThe `UnifiedSensorBase._handleDP` method did NOT check `forceActiveTuyaMode` or `Mode.tuyaActive`. This meant battery devices that extend `UnifiedSensorBase` (like bed_sensor) would stop receiving Tuya DP data after the learning phase, because the mode check was missing.\n\n**The TuyaUnifiedDevice has this check, but UnifiedSensorBase did not!**\n\n**Fix applied in v8.1.150:**\n- Added `forceActiveTuyaMode` check at the start of `_handleDP` in UnifiedSensorBase\n- If `forceActiveTuyaMode=true` → always process DPs ✓\n- If `Mode.tuyaActive=true` → process DPs ✓\n- If `isLearningPhase` → process DPs ✓\n\n**Please:**\n1. Update to v8.1.150+\n2. Remove and re-pair the device\n3. The device should now receive data via Tuya DPs\n\nThis explains why 'completely broken, no data received' persisted despite correct DP mappings — the base class was blocking DP processing! 🎯",
+          "createdAt": "2026-06-06T20:33:32Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4640286259",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFJXOPQ",
+          "author": {
+            "login": "DaPicardos"
+          },
+          "authorAssociation": "NONE",
+          "body": "**Hi @dlnraja,**\n\nUnfortunately, the problem is still occurring even after updating to version 8.1.150.\n\nFor your reference, here is the diagnostic code generated by the app: 4A24490B\n\nPlease let me know if you need any additional logs or information to help track this down.\n\n**Best regards**",
+          "createdAt": "2026-06-06T20:53:25Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4640329277",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFJZv2g",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @DaPicardos,\n\nThanks for the diagnostic 4A24490B!\n\n**I found a SECOND ROOT CAUSE — the Mode object check was broken:**\n\nIn my v8.1.150 fix, I added `this.Mode?.tuyaActive` check. But `this.Mode` doesn't exist in `UnifiedSensorBase` (only in `TuyaUnifiedDevice`). When `this.Mode` is undefined, `this.Mode?.tuyaActive` returns `undefined`, and `!undefined = true`, so DPs were STILL being ignored!\n\n**Fix in v8.1.151:**\n- Check if `this.Mode` exists first\n- If Mode is not initialized, default to `true` (assume Tuya mode is active)\n- This allows battery devices to receive DPs even without the Mode object\n\n**Please:**\n1. Update to v8.1.151+\n2. Remove and re-pair the device\n3. The device should now receive data 🎯",
+          "createdAt": "2026-06-06T21:11:11Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4640370650",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFJhktw",
+          "author": {
+            "login": "DaPicardos"
+          },
+          "authorAssociation": "NONE",
+          "body": "**Hi @dlnraja,**\n\nUnfortunately, the problem is still occurring even after updating to version 8.1.151.\n\nFor your reference, here is the diagnostic code generated by the app: E990E57B\n\nPlease let me know if you need any additional logs or information to help track this down.\n\n**Best regards**",
+          "createdAt": "2026-06-06T21:59:53Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/383#issuecomment-4640498871",
+          "viewerDidAuthor": false
+        }
+      ],
+      "createdAt": "2026-06-06T11:33:46Z",
+      "manufacturerIds": [],
       "productIds": [],
       "diagnosticIds": [],
       "images": [],
@@ -45,129 +275,111 @@
       "deviceTypes": [],
       "hasImage": false,
       "hasDiagnostic": false,
-      "bodyLength": 508,
-      "bodyPreview": "## 🌐 Monthly Community Sync Found 1 New Fingerprints\n\n| Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |\n|---|---|---|---|---|---|\n| `_TZ3000_996rpfy6` | - | - | Z2M | - | - |\n\n### Sources\n- Zigbee2MQTT tuya.ts (mfr+pid+vendor+description)\n- JohanBendz/com.tuya.zigbee (",
+      "bodyLength": 504,
+      "bodyPreview": "The bugs regarding the bed sensor are unfortunately not resolved in the latest experimental version v8.1.141, and some features are still missing or broken.\n\nI have just posted a detailed breakdown, including fresh CLI logs, screenshots, and the exact technical causes for the battery drop and missin",
       "commentTexts": []
     },
     {
-      "number": 376,
-      "title": "Bug report - Strange readings from the soil sensors",
-      "author": "haadeess",
-      "labels": [
-        "bug"
-      ],
-      "comments": [],
-      "createdAt": "2026-06-05T21:29:15Z",
-      "manufacturerIds": [
-        "_TZE200",
-        "_npj9bug3",
-        "_TZE284",
-        "_aao3yzhs",
-        "_oitavov2",
-        "_hdml1aav"
-      ],
-      "productIds": [],
-      "diagnosticIds": [
-        "f4aebb68",
-        "a1f6176b3c90"
-      ],
-      "images": [
-        "https://github.com/user-attachments/assets/f4aebb68-47e5-4d7f-999c-a1f6176b3c90"
-      ],
-      "errorPatterns": [],
-      "deviceTypes": [],
-      "hasImage": false,
-      "hasDiagnostic": false,
-      "bodyLength": 479,
-      "bodyPreview": "Hi Dylan,\n\nAll my soil sensors are showing almost the same high readings, followed by hours of very low readings, which can't be right. Is this due to the software updates, or what could be causing it? Let me know if I can help in any way 👍\n\n<img width=\"1804\" height=\"1312\" alt=\"Image\" src=\"https://",
-      "commentTexts": []
-    },
-    {
-      "number": 375,
-      "title": "361 Still loading endlessly",
+      "number": 380,
+      "title": "361 configuration page is still loading endlessly",
       "author": "haadeess",
       "labels": [],
-      "comments": [],
-      "createdAt": "2026-06-05T21:16:57Z",
+      "comments": [
+        {
+          "id": "IC_kwDOPPue0s8AAAABFHSHsg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @haadeess,\n\nThanks for the diagnostic report! The configuration page loading endlessly is a known issue that occurs when the app tries to initialize too many capabilities during startup.\n\n**Workaround:** \n1. Try removing and re-pairing one device at a time\n2. If you have many devices, try pairing them in smaller batches\n\n**What I'm investigating:**\n- The universal_zigbee driver has 20 capabilities which might cause timeout\n- The diagnostic code 13ede9e4 has been noted for further analysis\n\n**Please try:**\n1. Update to v8.1.136+ (radiator valve fix included)\n2. Restart the Homey completely (power cycle)\n3. Try pairing devices one by one\n\nIf the issue persists, please share the specific device that triggers the endless loading. 🔍",
+          "createdAt": "2026-06-06T09:41:50Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380#issuecomment-4638148530",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFHdbng",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @haadeess,\n\nThanks for the detailed report! The configuration page loading endlessly is a known limitation when the Homey Pro has many devices paired.\n\n**What's happening:**\n- The configuration page loads ALL settings for ALL paired devices\n- With 20+ devices, this can cause a timeout on the Homey Pro\n- The `universal_zigbee` driver has 20 capabilities which contributes to the load\n\n**Workarounds:**\n1. **Update your Homey CLI** — the 'Unknown argument: logs' error means your CLI is outdated. Run: `npm install -g homey`\n2. **Share the diagnostic via the web portal** — go to https://tools.developer.homey.app and log in with your Homey account to view the diagnostic\n3. **Try with fewer devices** — temporarily remove some devices and test if the configuration page loads\n\n**What I'm investigating:**\n- Reducing the number of capabilities in universal drivers\n- Optimizing the settings loading process\n- The diagnostic code 13ede9e4 has been noted\n\nIf you can share the diagnostic via the web portal, I'll be able to investigate further. 🎯",
+          "createdAt": "2026-06-06T11:11:40Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380#issuecomment-4638333854",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFHh2pw",
+          "author": {
+            "login": "haadeess"
+          },
+          "authorAssociation": "NONE",
+          "body": "Hi,\n\nI updated the Homey CLI as requested.\n\nMy current versions are:\n\nNode.js: v24.15.0\nnpm: 11.12.1\nHomey CLI: 4.3.0\n\n`homey app logs` still does not exist:\n\nUnknown argument: logs\n\nI also checked `homey app --help`, and there is no `logs` command listed.\n\nI checked the Homey Developer Tools → App Performance for Tuya Unified.\n\nCurrent app version shown there:\ncom.dlraja.tuya.zigbee @ 8.1.141\n\nObserved performance:\n- CPU: 0.0 %\n- Memory RSS: about 98 MB\n- Memory PSS: about 47 MB\n\nThe App Performance page says that a Homey app should not use more than 30 MB PSS, so this looks high.\n\nI still cannot find a Diagnostics or Diagnostic Reports section as a normal user.\n\nCan you access this diagnostic report as the app owner, or do you need another specific report/screenshot?",
+          "createdAt": "2026-06-06T11:42:07Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380#issuecomment-4638406311",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFHh9lQ",
+          "author": {
+            "login": "haadeess"
+          },
+          "authorAssociation": "NONE",
+          "body": "Hi,\n\nI tested another important scenario.\n\nI disabled the current/test version and enabled the Stable version v5.11.212.\n\nThis Stable version has no paired devices at all.\n\nHowever, the issue is exactly the same:\nThe configuration page still loads endlessly.\n\nSo this does not seem to be caused only by too many paired devices or too many capabilities, because the same issue happens with zero devices.\n\nNew diagnostics report:\nf504de4c-6581-4304-9a56-b0cb99295b09\n\nPrevious diagnostics report:\n13ede9e4\n\nI also already updated the Homey CLI to 4.3.0, but `homey app logs` still does not exist and returns:\n\nUnknown argument: logs\n\nCould this be related to the configuration page itself, app settings/storage, or a migration issue rather than the number of paired devices?",
+          "createdAt": "2026-06-06T11:42:36Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380#issuecomment-4638408085",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s8AAAABFJgMgg",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Hi @haadeess,\n\nThanks for the thorough testing and the detailed report!\n\n**Analysis:**\nThe configuration page loading endlessly is caused by the **total number of settings** in the app. The Tuya Unified app has:\n- **365 drivers** with **3081 settings** total\n- The largest driver (`climate_sensor_presence`) has **37 settings**\n- Homey has a timeout when loading all these settings\n\n**Why it happens even in stable with no devices:**\nThe configuration page loads ALL driver settings during app initialization, regardless of how many devices are paired. With 3081 settings, the page exceeds Homey's rendering timeout.\n\n**Workarounds:**\n1. **Use the Homey CLI** for device management instead of the configuration page\n2. **Pair devices directly** from the Zigbee pairing wizard (not from the configuration page)\n3. **Update your CLI** — the 'Unknown argument: logs' error means your CLI is outdated. Run: `npm install -g homey`\n\n**What I'm working on:**\n- Optimizing the settings loading to be lazy-loaded (only load settings for paired devices)\n- Reducing the number of unnecessary settings per driver\n- This will be addressed in a future release\n\n**For now:** The app works correctly for device pairing and operation — the configuration page limitation doesn't affect device functionality. 🔧",
+          "createdAt": "2026-06-06T21:49:54Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/380#issuecomment-4640476290",
+          "viewerDidAuthor": false
+        }
+      ],
+      "createdAt": "2026-06-06T08:40:54Z",
       "manufacturerIds": [
         "_Originally"
       ],
       "productIds": [],
       "diagnosticIds": [
-        "4625410846"
+        "13ede9e4",
+        "529e57d148bf",
+        "4636776820"
       ],
       "images": [],
       "errorPatterns": [
-        "ReferenceError",
         "crash"
       ],
       "deviceTypes": [],
       "hasImage": false,
       "hasDiagnostic": true,
-      "bodyLength": 748,
-      "bodyPreview": "> Hi @haadeess,\n> \n> We have resolved the startup `ReferenceError` crash caused by the legacy dynamic `try/catch` require of `DataRecoveryManager` in `BaseUnifiedDevice`. This startup crash was preventing the app's backend from initializing properly, resulting in the debugging/configuration option l",
-      "commentTexts": []
-    },
-    {
-      "number": 372,
-      "title": "[Auto] 2 new fingerprints from community (2026-06)",
-      "author": "app/github-actions",
-      "labels": [
-        "enhancement",
-        "community-sync"
-      ],
-      "comments": [
-        {
-          "id": "IC_kwDOPPue0s8AAAABFCvrcg",
-          "author": {
-            "login": "dlnraja"
-          },
-          "authorAssociation": "OWNER",
-          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v8.1.115**:\n- `_TYZB01_iuepbmpv` -> **device_plug_energy**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
-          "createdAt": "2026-06-05T16:09:57Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/372#issuecomment-4633389938",
-          "viewerDidAuthor": true
-        },
-        {
-          "id": "IC_kwDOPPue0s8AAAABFC55SA",
-          "author": {
-            "login": "dlnraja"
-          },
-          "authorAssociation": "OWNER",
-          "body": "<!-- diag-resolver -->\n### Auto-resolved by Diagnostic Resolver\n\nAll fingerprints in this issue found in **Tuya Unified Zigbee v8.1.115**:\n- `_TYZB01_iuepbmpv` -> **device_plug_energy**\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n**Troubleshooting:** https://github.com/dlnraja/com.tuya.zigbee/wiki/Troubleshooting\n\n> **Detected protocols:** unknown\n",
-          "createdAt": "2026-06-05T16:35:31Z",
-          "includesCreatedEdit": false,
-          "isMinimized": false,
-          "minimizedReason": "",
-          "reactionGroups": [],
-          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/372#issuecomment-4633557320",
-          "viewerDidAuthor": true
-        }
-      ],
-      "createdAt": "2026-06-05T12:10:55Z",
-      "manufacturerIds": [
-        "_TYZB01",
-        "_iuepbmpv",
-        "_temperature",
-        "_humidity",
-        "_battery"
-      ],
-      "productIds": [
-        "TS0201",
-        "TS0121"
-      ],
-      "diagnosticIds": [],
-      "images": [],
-      "errorPatterns": [],
-      "deviceTypes": [],
-      "hasImage": false,
-      "hasDiagnostic": false,
-      "bodyLength": 698,
-      "bodyPreview": "## 🌐 Monthly Community Sync Found 2 New Fingerprints\n\n| Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |\n|---|---|---|---|---|---|\n| `_TYZB01_iuepbmpv` | TS0201,TY0201 | lcdtemphumidsensor | Johan | - | measure_temperature, measure_humidity, measure_battery |\n| `_TYZB01",
+      "bodyLength": 722,
+      "bodyPreview": "Hi, I am on Tuya Unified v8.1.135 and the configuration page is still loading endlessly.\n\nAndroid App, Android Web web and Win11 tested\n\nI tried to run `homey app logs`, but my Homey CLI returns:\n\nUnknown argument: logs\n\nI reproduced the issue by opening the configuration page and then immediately c",
       "commentTexts": []
     }
   ]

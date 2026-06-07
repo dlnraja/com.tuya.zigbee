@@ -153,6 +153,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Previously only registered if onOff cluster existed, causing "Missing Capability Listener: onoff" error
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
         this.log(`Setting learn mode: ${value}`);
         try {
           if (value) {

@@ -147,6 +147,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
     // Relay Control
     if (config.type === 'RELAY' && this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
         const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
         if (tuya?.datapoint) {await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });}
       });

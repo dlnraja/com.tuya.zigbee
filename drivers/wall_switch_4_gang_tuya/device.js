@@ -59,6 +59,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
   async _setupGang(zclNode, gangName, dpOnOff) {
     // Register capability listener for on/off for each gang
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       this.log(`${gangName} on/off:`, value);
       try {
         await this.writeBool(dpOnOff, value);

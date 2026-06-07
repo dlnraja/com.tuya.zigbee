@@ -139,6 +139,7 @@ class FanControllerDevice extends ZigBeeDevice {
 
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
         this.log(`Setting fan on/off: ${value}`);
         try {
           await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
