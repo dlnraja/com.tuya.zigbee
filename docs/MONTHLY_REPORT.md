@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-07T16:08:45.567Z*
+*Generated: 2026-06-07T16:45:13.851Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 320 |
-| Manufacturer IDs | 211131 |
-| Collisions | 69180 |
+| Manufacturer IDs | 211190 |
+| Collisions | 69365 |
 
 ## ⚠️ Collisions Detected
 
@@ -35,7 +35,7 @@
 | `_TZ3000_5k5vh43t|lumi.sensor_motion.aq2` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
 | `_TZ3000_5k5vh43t|MS01` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
 
-*...and 69160 more*
+*...and 69345 more*
 
 ## 📋 Action Items
 

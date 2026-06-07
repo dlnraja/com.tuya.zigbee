@@ -59,7 +59,7 @@
 | device_air_purifier_siren | 3 | TS0601, TS0601_air_purifier | alarm_motion, measure_battery, alarm_generic... |
 | device_air_purifier_smart | 2 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, measure_humidity... |
 | device_air_purifier_smoke | 2 | TS0601, TS0601_air_purifier | alarm_smoke, measure_battery, measure_temperature... |
-| device_air_purifier_soil | 27 | Arteco, CS-201Z, TS0601, TS0601_air_purifier, ZG-303Z | measure_humidity.soil, measure_temperature, measure_humidity... |
+| device_air_purifier_soil | 77 | Arteco, CS-201Z, TS0601, TS0601_air_purifier, ZG-303Z | measure_humidity.soil, measure_temperature, measure_humidity... |
 | device_air_purifier_thermostat | 9 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_water | 2 | TS0601, TS0601_air_purifier | measure_humidity, alarm_water, onoff... |
 | device_din_rail | 8 | TS0001, TS0002, TS011F, TS0601 | alarm_motion, alarm_contact, measure_battery... |
@@ -239,7 +239,7 @@
 | socket_power_strip_four | 19 | TS0115, TS011F, TS0601 | onoff |
 | socket_power_strip_four_three | 3 | JZ-ZB-004, TS0601 | onoff |
 | socket_power_strip_four_two | 3 | TS0101, TS0111, TS0601 | onoff |
-| soil_sensor | 176 | Arteco, CS-201Z, TS0601, ZG-303Z | measure_humidity.soil, measure_temperature, measure_humidity... |
+| soil_sensor | 175 | Arteco, CS-201Z, TS0601, ZG-303Z | measure_humidity.soil, measure_temperature, measure_humidity... |
 | soilsensor | 1 | TS0601 | measure_temperature, measure_humidity, measure_battery |
 | soilsensor_2 | 1 | TS0601 | measure_temperature, measure_humidity, measure_battery |
 | sr_zs_switch | 4 | 01MINIZB, BASICZBR3, S31ZB, TS0001, TS0001_power, TS0001_switch, TS0001_switch_module, TS0002, TS0101, TS4100, ZBM5-1C-120, ZBM5-2C-120, ZBM5-3C-120, ZBMINI, ZBMINIL2, ZBMINIL2-R2, ZBMINIR, ZBMINIR2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1 | onoff |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 21138 manufacturer IDs
+**Total:** 315 drivers, 21187 manufacturer IDs
 
-*Generated: 2026-06-07T16:08:45.519Z*
+*Generated: 2026-06-07T16:45:13.801Z*
