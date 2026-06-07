@@ -55,7 +55,7 @@ jobs:
           stale-pr-label: stale
           close-issue-label: closed-stale
           close-pr-label: closed-stale
-          exempt-issue-labels: "pinned,security,enhancement,auto-fix,community-sync,new-device,needs-info"
+          exempt-issue-labels: "pinned,security,enhancement,auto-fix,community-sync,new-device,needs-info,bug"
           exempt-pr-labels: "pinned,security,auto-fix,new-device,pr-fingerprints"
           exempt-all-assignees: true
           operations-per-run: 100

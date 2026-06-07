@@ -294,6 +294,31 @@ function checkEndpointAlignment() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// CHECK 8: Fingerprint Database Integrity
+// ═══════════════════════════════════════════════════════════════════════════════
+function checkFingerprintDBIntegrity() {
+  console.log('\n📋 Check 8: Fingerprint Database Integrity...');
+  const fpPath = path.join(__dirname, '..', '..', 'data', 'fingerprints.json');
+  if (!fs.existsSync(fpPath)) {
+    console.log('  data/fingerprints.json not found, skipping.');
+    return;
+  }
+  try {
+    const fps = JSON.parse(fs.readFileSync(fpPath, 'utf8'));
+    const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
+      fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
+    );
+    for (const [mfr, fp] of Object.entries(fps)) {
+      if (fp.driverId && !drivers.includes(fp.driverId)) {
+        error('GLOBAL', `ORPHANED FINGERPRINT: MFR '${mfr}' points to driver '${fp.driverId}', which does not exist in the drivers/ directory!`);
+      }
+    }
+  } catch (e) {
+    error('GLOBAL', `Failed to parse data/fingerprints.json: ${e.message}`);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // RUN ALL CHECKS
 // ═══════════════════════════════════════════════════════════════════════════════
 console.log('═══════════════════════════════════════════════════════════════');
@@ -308,6 +333,7 @@ checkDuplicateFingerprints();
 checkFlowCards();
 checkDefensiveInit();
 checkEndpointAlignment();
+checkFingerprintDBIntegrity();
 
 console.log('\n═══════════════════════════════════════════════════════════════');
 console.log(`  RESULTS: ${errors} errors, ${warnings} warnings`);
