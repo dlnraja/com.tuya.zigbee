@@ -28,6 +28,9 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       // Relay control initialization
       await this._setupRelayControl(zclNode);
 
+      // v8.1.158: Start periodic DP poll for devices that don't send data spontaneously
+      this._startPolling();
+
       this.log('[CEILING] ✅ Ready');
     }, 'onNodeInit');
   }
@@ -132,6 +135,20 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       this.error('[CEILING] Relay set failed:', err.message);
       return false;
     }
+  }
+
+  // v8.1.158: Add periodic DP poll for devices that don't send data spontaneously
+  _startPolling() {
+    this._pollInterval = setInterval(async () => {
+      try {
+        if (this.tuyaEF00Manager && !this._lastDPReceived) {
+          this.log('[CEILING] Polling for DP data...');
+          await this.tuyaEF00Manager.requestDPs?.([1, 2, 4, 9, 12]).catch(() => {});
+        }
+      } catch (e) {
+        this.log('[CEILING] Poll error:', e.message);
+      }
+    }, 60000);
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
