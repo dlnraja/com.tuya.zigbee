@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-07T02:29:50.565Z",
+  "ts": "2026-06-07T03:32:41.050Z",
   "currentCount": 10443,
   "src": {
     "johan": {
@@ -19270,9 +19270,33 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 51,
+      "issueCount": 52,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 391,
+          "title": "[Auto] 41 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3210_ncw88jfq",
+            "_TZ3000_rco1yzb1",
+            "_TZ3000_8nkb7mof",
+            "_TZ3000_fkp5zyho",
+            "_TZ3000_axpdxqgu",
+            "_TZ3000_peszejy7",
+            "_TZ3000_f97vq5mn",
+            "_TZ3000_owgcnkrh",
+            "_TZ3210_ncw88jfq",
+            "_TZE204_7bztmfm1",
+            "_TZ3000_nwidmc4n",
+            "_TZ3000_pfc7i3kt",
+            "_TZ3000_iv4eq7eh",
+            "_TZ3000_mzcp0of6",
+            "_TZE204_guvc7pdy",
+            "_TZ3000_avotanj3",
+            "_TZE200_qasjif9e"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 390,
@@ -19474,16 +19498,6 @@
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc",
             "_TZ3040_o4mkahkc"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1391,
-          "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
-          "mfrs": [
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6",
-            "_TZ3000_996rpfy6"
           ]
         }
       ]
