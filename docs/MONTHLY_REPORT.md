@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-07T11:03:29.185Z*
+*Generated: 2026-06-07T12:17:53.155Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 365 |
-| Manufacturer IDs | 211458 |
-| Collisions | 69311 |
+| Total Drivers | 320 |
+| Manufacturer IDs | 211131 |
+| Collisions | 69180 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TYST11_d0yu2xgi|TS0601` | air_purifier, air_purifier_switch, siren |
-| `_TYST11_d0yu2xgi|TS0601_air_purifier` | air_purifier, air_purifier_switch |
-| `_TZ3000_0s1izerx|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_6uzkisv2|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_akqdg6g7|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_bguser20|TS0601` | air_purifier, sensor_lcdtemphumidsensor_temphumidsensor, temphumidsensor4 |
-| `_TZ3000_bjawzodf|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_dowj6gyi|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_fllyghyj|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_i8jfiezr|TS0601` | air_purifier, temphumidsensor4 |
-| `_TZ3000_itnrsufe|TS0601` | air_purifier, button_wireless_1 |
-| `_TZ3000_qaaysllp|TS0601` | air_purifier, contact_sensor |
-| `_TZ3000_saiqcn0y|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_xr3htd96|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_yd2e749y|TS0601` | air_purifier, climate_sensor |
-| `_TZ3000_ywagc4rj|TS0601` | air_purifier, generic_tuya |
-| `_TZE200_0nauxa0p|TS0601` | air_purifier, dimmer_wall_1gang |
-| `_TZE200_2se8efxh|TS0601` | air_purifier, plug_smart |
-| `_TZE200_3p5ydos3|TS0601` | air_purifier, switch_dimmer_1gang |
-| `_TZE200_44af8vyi|TS0601` | air_purifier, button_wireless_1 |
+| `_TZE204_upagmta9|TS0601` | air_purifier, climate_sensor |
+| `_TZE204_vevc4c6g|TS0601` | air_purifier, soil_sensor |
+| `_TZE204_yjjdcqsq|TS0601` | air_purifier, climate_sensor |
+| `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
+| `_TZE284_aao3yzhs|TS0601` | air_purifier, soil_sensor |
+| `_TZE284_g2e6cpnw|TS0601` | air_purifier, soil_sensor |
+| `_TZE284_sgabhwa6|TS0601` | air_purifier, soil_sensor |
+| `_TZ3000_5k5vh43t|3305-S` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|3325-S` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|3326-L` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|CK-TLSR8656-SS5-01(7002)` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|E1525/E1745` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|E1745` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|Excellux` | air_purifier_motion, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|IH012-RT01` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|lumi.motion.ac02` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|lumi.motion.agl04` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|lumi.sensor_motion` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|lumi.sensor_motion.aq2` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
+| `_TZ3000_5k5vh43t|MS01` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
 
-*...and 69291 more*
+*...and 69160 more*
 
 ## 📋 Action Items
 

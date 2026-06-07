@@ -2,16 +2,16 @@
 
 | Driver | Manufacturers | Products | Capabilities |
 |--------|---------------|----------|-------------|
-| air_purifier | 124 | TS0601, TS0601_air_purifier | onoff, dim, measure_pm25 |
+| air_purifier | 44 | TS0601, TS0601_air_purifier | onoff, dim, measure_pm25 |
 | air_purifier_motion | 62 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, Excellux, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | onoff, dim, measure_pm25... |
 | air_purifier_presence | 6 | TS0601, TS0601_air_purifier | alarm_motion, measure_luminance, measure_temperature... |
 | air_purifier_sensor | 8 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
 | air_purifier_switch | 4 | TS0601, TS0601_air_purifier | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 25 | TS0601, TS0601_co2 | measure_co2, measure_temperature, measure_humidity... |
-| air_quality_comprehensive | 36 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_temperature... |
-| bed_sensor | 40 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | alarm_contact, measure_battery, measure_pressure |
-| bulb_dimmable | 249 | A19 W 10 year, BR30 W 10 year, GL-B-001Z, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, PAR38 W 10 year, Plug 01, RB 165, RB 175 W, RS 125, TS0052, TS0501A, TS0501B, TS1101, TS110E, TS110F, ZBT-DimmableLight | dim, light_hue, light_saturation... |
-| bulb_dimmable_dimmer | 507 | A19 W 10 year, BR30 W 10 year, GL-B-001Z, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, PAR38 W 10 year, Plug 01, RB 165, RB 175 W, RS 125, TS0501A, TS0501B, TS110E, TS110F, ZBT-DimmableLight | dim, light_hue, light_saturation... |
+| air_quality_comprehensive | 24 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_temperature... |
+| bed_sensor | 39 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | alarm_contact, measure_battery, measure_pressure |
+| bulb_dimmable | 243 | A19 W 10 year, BR30 W 10 year, GL-B-001Z, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, PAR38 W 10 year, Plug 01, RB 165, RB 175 W, RS 125, TS0052, TS0501A, TS0501B, TS1101, TS110E, TS110F, ZBT-DimmableLight | dim, light_hue, light_saturation... |
+| bulb_dimmable_dimmer | 504 | A19 W 10 year, BR30 W 10 year, GL-B-001Z, LED1623G12, LED1649C5, LED1836G9, LWB004, LWB006, LWB010, LWB014, PAR38 W 10 year, Plug 01, RB 165, RB 175 W, RS 125, TS0501A, TS0501B, TS110E, TS110F, ZBT-DimmableLight | dim, light_hue, light_saturation... |
 | bulb_rgb | 22 | E11-G13, E11-G14, E11-G23, GL-C-006, LCT001, LCT002, LCT003, LCT007, LCT010, LCT011, LCT012, LCT014, LCT015, LCT016, RB 185 C, RB 285 C, TS0503A, TS0503B, TS0504B, TS0505A, TS0505B, ZB-CL01, ZBT-ColorLight | dim, light_hue, light_saturation... |
 | bulb_rgb_led | 3 | TS0505B | dim, light_hue, light_saturation... |
 | bulb_rgb_rgbw | 2 | TS0505A, TS0505B | dim, light_hue, light_saturation... |
@@ -85,7 +85,7 @@
 | dimmer_bulb_dimmable | 3 | TS0601 | dim, light_hue, light_saturation... |
 | dimmer_dual_channel | 12 | TS0601, TS1101 | onoff, dim, onoff.channel2... |
 | dimmer_ts110e | 177 | TS0601 | onoff, dim |
-| dimmer_wall_1gang | 275 | TS0011, TS0052, TS0601, TS0601_dim1, TS1101, TS110E, TS110F, ZBMINI-DIM, ZBMINID | dim, onoff, measure_power |
+| dimmer_wall_1gang | 269 | TS0011, TS0052, TS0601, TS0601_dim1, TS1101, TS110E, TS110F, ZBMINI-DIM, ZBMINID | dim, onoff, measure_power |
 | din_rail_meter | 42 | SDM01-3Z1, SDM02-2Z1, SPM01-1Z2, SPM02-3Z3, TS0601 | measure_power, meter_power, measure_voltage... |
 | din_rail_switch | 26 | TS0001_din, TS0601 | onoff, measure_power, meter_power... |
 | door_controller | 6 | TS0601, TS0601_door | alarm_motion, alarm_contact, measure_battery... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 21246 manufacturer IDs
+**Total:** 315 drivers, 21138 manufacturer IDs
 
-*Generated: 2026-06-07T11:03:29.139Z*
+*Generated: 2026-06-07T12:17:53.106Z*
