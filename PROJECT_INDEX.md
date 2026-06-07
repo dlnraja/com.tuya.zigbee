@@ -835,6 +835,7 @@ Multi-gang switches and scened panels under BSEED/Zemismart require strict liste
 ### Issues Résolues Récemment
 | # | Titre | Status |
 |---|-------|--------|
+| #398 | Soil Sensor "Could not get device by id" & Ghost Drivers | ✅ Fixed (MFRs reassigned, 657 orphans purged) |
 | #318 | PJ-1203A wrong driver mapping | ✅ Fixed v7.5.26 (power_clamp_meter) |
 | #319 | Smart Knob TZ3000_402vrq2i | ✅ Déjà supporté, fermé |
 | #317 | OAuth pairing white screen | ✅ Fermé (architectural constraint) |
