@@ -47,8 +47,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       'measure_temperature', 
       'measure_humidity', 
       'measure_luminance', 
-      'measure_battery', 
-      'alarm_battery',
+      'measure_battery',
+      // NOTE: alarm_battery REMOVED — SDK v3 cannot have both measure_battery + alarm_battery
+      // Fix #398: coexistence caused device init crash → "Could not get device by id"
       'alarm_water', 
       'measure_ec'
     ];
@@ -181,7 +182,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._previousBattery = null;
   }
 
-  _updateWaterAlarm() {
+  async _updateWaterAlarm() {
     const moisture = this.getCapabilityValue('measure_humidity.soil');
     const threshold = this.getSetting('soil_warning_threshold') || 30;
     if (moisture !== null && this.hasCapability('alarm_water')) {
@@ -190,7 +191,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
   }
 
-  _handleDP(dpId, value) {
+  async _handleDP(dpId, value) {
     const dp = Number(dpId);
     let parsedValue = value;
     
@@ -226,7 +227,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         if (Math.abs(temp) > 1000) {temp = safeDivide(temp, 100);}
         else if (Math.abs(temp) > 100) {temp = safeDivide(temp, 10);}
       }
-      this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
+      this.log(`[SOIL] Temp DP${dp} = ${temp}°C`);
       await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
     }
     super._handleDP(dpId, value);
