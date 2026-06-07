@@ -48,6 +48,19 @@ class BedSensorDevice extends UnifiedSensorBase {
         this.log(`[BED] Removed bogus ${cap} capability`);
       }
     }
+
+    // v8.1.152: Add periodic DP poll to force data reception
+    // Some Tuya DP devices don't send data spontaneously
+    this._pollInterval = setInterval(async () => {
+      try {
+        if (this.tuyaEF00Manager && !this._lastDPReceived) {
+          this.log('[BED] Polling for DP data...');
+          await this.tuyaEF00Manager.requestDPs?.([1, 4, 9, 12]).catch(() => {});
+        }
+      } catch (e) {
+        this.log('[BED] Poll error:', e.message);
+      }
+    }, 30000); // Poll every 30 seconds
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -94,11 +107,19 @@ class BedSensorDevice extends UnifiedSensorBase {
   }
 
   async onUninit() {
+    if (this._pollInterval) {
+      clearInterval(this._pollInterval);
+      this._pollInterval = null;
+    }
     this.log('[BED] Bed Sensor uninitialized');
     await super.onUninit();
   }
 
   async onDeleted() {
+    if (this._pollInterval) {
+      clearInterval(this._pollInterval);
+      this._pollInterval = null;
+    }
     this.log('[BED] Bed Sensor deleted');
     await super.onDeleted();
   }
