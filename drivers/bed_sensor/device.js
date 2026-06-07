@@ -32,11 +32,11 @@ class BedSensorDevice extends UnifiedSensorBase {
         protocol: 'tuya_dp',
         description: 'Tuya DP Bed Pressure Sensor (Z2M confirmed)',
         // Z2M tuyaDatapoints: [DP, name, converter]
+        // DP4 NOT in dpMappings — handled by batteryConfig + _handleBatteryDP override
         dpMappings: {
           1:   { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) }, // trueFalse0
-          4:   { capability: 'measure_battery', divisor: 1 }, // raw 0-100%
           9:   { capability: null, internal: 'sensitivity', writable: true },
-          12:  { capability: 'measure_luminance', divisor: 1 }, // Z2M calls it "illuminance"
+          12:  { capability: 'measure_pressure', divisor: 1 }, // User confirmed: DP12 = pressure (not illuminance)
           101: { capability: null, internal: 'interval_time', writable: true },
           102: { capability: null, internal: 'presence_delay', writable: true },
           103: { capability: null, internal: 'presence_time', writable: true },
@@ -50,7 +50,7 @@ class BedSensorDevice extends UnifiedSensorBase {
           voltageMin: 2.0,
           voltageMax: 3.0,
         },
-        sensorCapabilities: ['alarm_contact', 'measure_battery', 'measure_luminance'],
+        sensorCapabilities: ['alarm_contact', 'measure_battery', 'measure_pressure'],
         forceActiveTuyaMode: true,
         hybridModeEnabled: true,
         pollDPs: [1, 4, 12],
@@ -62,9 +62,8 @@ class BedSensorDevice extends UnifiedSensorBase {
         description: 'Tuya DP Bed Pressure Sensor (inferred)',
         dpMappings: {
           1:   { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
-          4:   { capability: 'measure_battery', divisor: 1 },
           9:   { capability: null, internal: 'sensitivity', writable: true },
-          12:  { capability: 'measure_luminance', divisor: 1 },
+          12:  { capability: 'measure_pressure', divisor: 1 },
           101: { capability: null, internal: 'interval_time', writable: true },
           102: { capability: null, internal: 'presence_delay', writable: true },
           103: { capability: null, internal: 'presence_time', writable: true },
@@ -78,7 +77,7 @@ class BedSensorDevice extends UnifiedSensorBase {
           voltageMin: 2.0,
           voltageMax: 3.0,
         },
-        sensorCapabilities: ['alarm_contact', 'measure_battery', 'measure_luminance'],
+        sensorCapabilities: ['alarm_contact', 'measure_battery', 'measure_pressure'],
         forceActiveTuyaMode: true,
         hybridModeEnabled: true,
         pollDPs: [1, 4, 12],
