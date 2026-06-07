@@ -36,7 +36,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   /**
    * Main Tuya DP processing entry point
    */
-  onTuyaDP(dpId, value, dpType) {
+  async onTuyaDP(dpId, value, dpType) {
     const config = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
     const mapping = config.dpMap?.[dpId];
 
@@ -62,7 +62,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   /**
    * Handle DPs defined in the SENSOR_CONFIGS
    */
-  _handleStaticDP(dpId, value, mapping, config) {
+  async _handleStaticDP(dpId, value, mapping, config) {
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
       let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);

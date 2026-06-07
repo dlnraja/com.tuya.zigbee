@@ -273,9 +273,35 @@ function getSensorConfig(manufacturerName, modelId = null) {
   return SENSOR_CONFIGS.DEFAULT;
 }
 
+/**
+ * Transform raw DP value to presence boolean.
+ * Per Z2M pattern: trueFalse0 means 0=occupied(true), 1=unoccupied(false).
+ * @param {any} value - Raw DP value
+ * @param {string} type - Value type (e.g., 'bool', 'value', 'enum')
+ * @param {boolean} invert - Whether to invert the result
+ * @param {string} configName - Config name for logging
+ * @returns {boolean|null} - Presence state or null if unparseable
+ */
+function transformPresence(value, type, invert, configName) {
+  let result;
+  if (type === 'bool' || type === 'boolean') {
+    result = Boolean(value);
+  } else if (type === 'value' || type === 'number') {
+    // trueFalse0: 0 = occupied (true), 1 = unoccupied (false)
+    result = (value === 0 || value === false);
+  } else if (type === 'enum') {
+    result = (value === 0 || value === 1);
+  } else {
+    result = Boolean(value);
+  }
+  if (invert) {result = !result;}
+  return result;
+}
+
 module.exports = {
   SENSOR_CONFIGS,
   getSensorConfig,
   normalize,
-  containsCI
+  containsCI,
+  transformPresence
 };
