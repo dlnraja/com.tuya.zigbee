@@ -141,6 +141,14 @@ class BedSensorDevice extends UnifiedSensorBase {
         hybridModeEnabled: false,
         pollDPs: [],
       },
+      // Additional TUYATEC PIR sensors (ZCL IAS, not Tuya DP)
+      'TUYATEC-BD5FAF9P': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
+      'TUYATEC-DEETIBST': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
+      'TUYATEC-DGTXMIHE': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
+      'TUYATEC-DXNOHKPD': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
+      'TUYATEC-LHA8PBWD': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
+      'TUYATEC-ZN9WYQTR': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
+      'TUYATEC-ZW6HXAFZ': { protocol: 'zcl_ias', description: 'TUYATEC PIR Motion Sensor', dpMappings: {}, batteryConfig: null, sensorCapabilities: ['alarm_motion', 'measure_battery'], forceActiveTuyaMode: false, hybridModeEnabled: false, pollDPs: [] },
     };
   }
 
