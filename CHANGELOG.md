@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.158] - 2026-06-07
+## v8.1.160 (2026-06-07)
+
+v8.1.159: Fixed presence_sensor_ceiling by adding periodic DP polling to enhance device responsiveness., Introduced support for presence_sensor_ceiling with updated driver functionality.
+
+---
+
+## [8.1.159] - 2026-06-07
+
+### Bug Fixes
+- Fixed presence_sensor_ceiling by adding periodic DP polling to enhance device responsiveness.
+
+### New Features
+- Introduced support for presence_sensor_ceiling with updated driver functionality.
+---
+
+ [8.1.158] - 2026-06-07
 
 v8.1.157:
 ---
