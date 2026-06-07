@@ -45,7 +45,7 @@ class BedSensorDevice extends UnifiedSensorBase {
   // SDK3 Rule AO: NEVER combine measure_battery + alarm_battery on same device.
   // UnifiedBatteryHandler adapts at runtime to keep only the appropriate one.
   get sensorCapabilities() {
-    return ['alarm_contact', 'measure_battery', 'measure_pressure'];
+    return ['alarm_contact', 'measure_battery', 'measure_luminance'];
   }
 
   // ─── DP Mappings ──────────────────────────────────────────────────────
@@ -53,14 +53,16 @@ class BedSensorDevice extends UnifiedSensorBase {
   // so it is NOT listed in dpMappings to avoid double-processing.
   get dpMappings() {
     return {
-      1: { capability: 'alarm_contact', transform: (v) => (v !== 0 && v !== false) },
-      12: { capability: 'measure_pressure', divisor: 1 },
+      // Z2M trueFalse0: 0=occupied (true), 1=unoccupied (false)
+      1: { capability: 'alarm_contact', transform: (v) => (v === 0 || v === false) },
+      12: { capability: 'measure_luminance', divisor: 1 },
       // Writable settings DPs (no capability, internal only)
       9: { capability: null, internal: 'sensitivity', writable: true },
       101: { capability: null, internal: 'interval_time', writable: true },
       102: { capability: null, internal: 'presence_delay', writable: true },
       103: { capability: null, internal: 'presence_time', writable: true },
-      // DP104 REMOVED — it's work_state (read-only enum), NOT battery!
+      // DP104 is work_state (enum). Must map to null to prevent UnifiedSensorBase from processing it as battery
+      104: { capability: null, internal: 'work_state' },
     };
   }
 
@@ -78,26 +80,9 @@ class BedSensorDevice extends UnifiedSensorBase {
       }
     }
 
-    // Force TuyaEF00Manager initialization if not already done.
-    // Battery devices may not have the Tuya cluster detected during interview.
-    // NOTE: Do NOT add dpReport listener here — parent UnifiedSensorBase already
-    // has one (line 2018) that calls _handleDP. Our _handleDP override handles
-    // _lastDPReceived tracking.
-    if (!this.tuyaEF00Manager) {
-      this.log('[BedSensor] TuyaEF00Manager not initialized — forcing...');
-      try {
-        const { TuyaEF00Manager } = require('../../lib/tuya/TuyaEF00Manager');
-        this.tuyaEF00Manager = new TuyaEF00Manager(this);
-        const initialized = await this.tuyaEF00Manager.initialize(this.zclNode);
-        if (initialized) {
-          this.log('[BedSensor] TuyaEF00Manager initialized successfully');
-        } else {
-          this.log('[BedSensor] TuyaEF00Manager failed to initialize');
-        }
-      } catch (e) {
-        this.log('[BedSensor] TuyaEF00Manager init error:', e.message);
-      }
-    }
+    // Removed the new TuyaEF00Manager override here.
+    // UnifiedSensorBase already handles it and registers the dpReport listener.
+    // Overriding it here caused all incoming Zigbee messages to be silently dropped.
 
     // Z2M/ZHA Pattern: Send initial data query immediately after init.
     // Battery-powered Tuya devices (receiveWhenIdle=false) do NOT send data
@@ -167,12 +152,12 @@ class BedSensorDevice extends UnifiedSensorBase {
         value = parseInt(value, 10);
       }
 
-      this.log(`[BedSensor] Setting ${key} (DP${mapping.dp}) to`, value);
+      this.log(`[BedSensor] Setting ${key} (DP${mapping.dp}) to ${value} (type: ${mapping.type})`);
       try {
         if (this.tuyaEF00Manager) {
           // sendDP(dp, value, type) — compatibility wrapper on TuyaEF00Manager
-          await this.tuyaEF00Manager.sendDP(mapping.dp, value, mapping.type);
-          this.log(`[BedSensor] ${key} written successfully`);
+          const result = await this.tuyaEF00Manager.sendDP(mapping.dp, value, mapping.type);
+          this.log(`[BedSensor] ${key} write result: ${result}`);
         } else {
           this.log(`[BedSensor] tuyaEF00Manager not available for DP${mapping.dp} write`);
         }
@@ -186,20 +171,29 @@ class BedSensorDevice extends UnifiedSensorBase {
   // Override to track when DP data arrives, so polling can stop.
   _handleDP(dpId, value) {
     this._lastDPReceived = true;
+    // Log all received DPs for diagnostic analysis
+    if (!this._dpDiagnosticSent) {
+      this._dpDiagnosticReceived = this._dpDiagnosticReceived || {};
+      this._dpDiagnosticReceived[dpId] = value;
+      // Check if we have at least 3 different DPs
+      const dpCount = Object.keys(this._dpDiagnosticReceived).length;
+      if (dpCount >= 3) {
+        this._dpDiagnosticSent = true;
+        this.log(`[BedSensor] 📊 DP DIAGNOSTIC: ${JSON.stringify(this._dpDiagnosticReceived)}`);
+      }
+    }
     return super._handleDP(dpId, value);
   }
 
   // ─── Battery DP4 Handler ─────────────────────────────────────────────
-  // CRITICAL FIX: The device sends raw 0 or 1 for DP4, NOT a percentage.
-  // 0 = battery depleted, 1 = battery OK.
-  // Parent class treats raw value as percentage → 1 becomes 1%.
-  // Z2M reference confirms: battery is 0-100% but some hardware sends 0/1.
-  // We map: 0 → 10% (low but functional), 1 → 100% (full).
-  // Values > 1 are already percentages and pass through unchanged.
+  // DP4 per Z2M: battery percentage 0-100%.
+  // Some hardware variants send 0 (depleted) or 1 (OK) instead of actual percentage.
+  // We map: 0 → 10% (low), 1 → 100% (full). Values > 1 pass through as-is.
   _handleBatteryDP(dp, value) {
+    this.log(`[BedSensor] Battery DP4 raw=${value} (type=${typeof value})`);
     if (dp === 4 && typeof value === 'number' && value <= 1) {
       const mapped = value === 0 ? 10 : 100;
-      this.log(`[BedSensor] Battery DP4 raw=${value} mapped to ${mapped}%`);
+      this.log(`[BedSensor] Battery DP4 mapped: ${value} → ${mapped}%`);
       return super._handleBatteryDP(dp, mapped);
     }
     return super._handleBatteryDP(dp, value);
