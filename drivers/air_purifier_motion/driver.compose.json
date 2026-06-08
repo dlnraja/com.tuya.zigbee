@@ -13,7 +13,8 @@
     "measure_pm25",
     "measure_battery",
     "measure_luminance",
-    "alarm_motion"
+    "alarm_motion",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "dim": {

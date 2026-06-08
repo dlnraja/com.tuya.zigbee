@@ -13,7 +13,8 @@
     "light_mode",
     "onoff",
     "measure_battery",
-    "measure_power"
+    "measure_power",
+    "alarm_battery"
   ],
   "energy": {
     "mains": true,

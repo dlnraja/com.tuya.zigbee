@@ -13,8 +13,10 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_generic",
+    "measure_battery",
     "onoff",
-    "dim"
+    "dim",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {
