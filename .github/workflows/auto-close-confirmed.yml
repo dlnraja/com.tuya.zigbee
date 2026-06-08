@@ -1,0 +1,65 @@
+name: Auto-Close Confirmed Issues
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  auto-close:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.issue.state == 'open' &&
+      !contains(github.event.issue.labels[*].name, 'auto-generated') &&
+      !contains(github.event.issue.labels[*].name, 'awaiting-verification')
+    timeout-minutes: 5
+
+    steps:
+      - name: Check for resolution keywords
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const comment = context.payload.comment.body.toLowerCase();
+            const issue = context.payload.issue;
+
+            // Resolution keywords (user confirms fix works)
+            const resolutionKeywords = [
+              'works now', 'working now', 'fixed', 'resolved', 'solved',
+              'it works', 'problem solved', 'issue resolved', 'thank you',
+              'merci', 'ça marche', 'problème résolu', 'c\'est résolu',
+              'confirmed', 'confirmed working', 'tested and working'
+            ];
+
+            // Check if comment contains resolution keyword
+            const isResolution = resolutionKeywords.some(keyword =>
+              comment.includes(keyword)
+            );
+
+            // Only close if comment is from the issue author or a contributor
+            const isAuthor = issue.user.login === context.actor;
+            const isContributor = context.actor === 'dlnraja';
+
+            if (isResolution && (isAuthor || isContributor)) {
+              // Add resolution comment
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `✅ **Issue resolved** — confirmed by ${context.actor}.\n\nClosing automatically per project protocol.`
+              });
+
+              // Close the issue
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed'
+              });
+
+              console.log(`✅ Closed issue #${issue.number} (confirmed by ${context.actor})`);
+            } else {
+              console.log(`ℹ️  No resolution keyword found or not from author/contributor`);
+            }

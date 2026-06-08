@@ -1,0 +1,46 @@
+name: Enrichment Pipeline
+
+on:
+  schedule:
+    # Run daily at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: enrichment-pipeline-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Sync community fingerprints
+        run: node scripts/community-sync/sync-all.js
+
+      - name: Auto-add safe fingerprints
+        run: node scripts/automation/auto-add-fingerprints.js
+
+      - name: Enrich fingerprints
+        run: node scripts/automation/enrich-fingerprints.js
+
+      - name: Run validation
+        run: |
+          node scripts/validation/check-fingerprint-health.js || true
+          node scripts/validation/check-database-routing.js || true
+
+      - name: Upload enrichment report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: enrichment-report
+          path: data/community-sync/enrichment-report.json
+          retention-days: 30
