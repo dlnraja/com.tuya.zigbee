@@ -1,41 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-08T02:23:36.987Z*
+*Generated: 2026-06-08T05:20:53.728Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 320 |
-| Manufacturer IDs | 211163 |
-| Collisions | 69069 |
-
-## ⚠️ Collisions Detected
-
-| ID | Drivers |
-|----|--------|
-| `_TZE204_upagmta9|TS0601` | air_purifier, climate_sensor |
-| `_TZE204_vevc4c6g|TS0601` | air_purifier, soil_sensor |
-| `_TZE204_yjjdcqsq|TS0601` | air_purifier, climate_sensor |
-| `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
-| `_TZE284_aao3yzhs|TS0601` | air_purifier, soil_sensor |
-| `_TZE284_g2e6cpnw|TS0601` | air_purifier, soil_sensor |
-| `_TZE284_sgabhwa6|TS0601` | air_purifier, soil_sensor |
-| `_TZ3000_5k5vh43t|3305-S` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|3325-S` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|3326-L` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|CK-TLSR8656-SS5-01(7002)` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|E1525/E1745` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|E1745` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|Excellux` | air_purifier_motion, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|IH012-RT01` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|lumi.motion.ac02` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|lumi.motion.agl04` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|lumi.sensor_motion` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|lumi.sensor_motion.aq2` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-| `_TZ3000_5k5vh43t|MS01` | air_purifier_motion, motion_sensor, motion_sensor_2, motion_sensor_switch, sensor_motion_presence |
-
-*...and 69049 more*
+| Manufacturer IDs | 0 |
+| Collisions | 0 |
 
 ## 📋 Action Items
 
