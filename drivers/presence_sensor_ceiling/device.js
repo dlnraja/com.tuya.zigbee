@@ -143,7 +143,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       try {
         if (this.tuyaEF00Manager && !this._lastDPReceived) {
           this.log('[CEILING] Polling for DP data...');
-          await this.tuyaEF00Manager.requestDPs?.([1, 2, 4, 9, 12]).catch(() => {});
+          for (const dp of [1, 2, 4, 9, 12]) { await this.tuyaEF00Manager.requestDP(dp).catch(() => {}); }
         }
       } catch (e) {
         this.log('[CEILING] Poll error:', e.message);

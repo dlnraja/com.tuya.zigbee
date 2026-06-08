@@ -225,7 +225,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       try {
         if (this.tuyaEF00Manager && !this._lastDPReceived) {
           this.log('[CONTACT] Polling for luminance data...');
-          await this.tuyaEF00Manager.requestDPs?.([1, 2, 4, 101]).catch(() => {});
+          for (const dp of [1, 2, 4, 101]) { await this.tuyaEF00Manager.requestDP(dp).catch(() => {}); }
         }
       } catch (e) {
         this.log('[CONTACT] Poll error:', e.message);

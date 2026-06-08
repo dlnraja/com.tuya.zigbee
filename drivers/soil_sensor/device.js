@@ -106,10 +106,11 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         transform: (v) => {
           const num = safeMultiply(v, 1);
           if (num === null) {return null;}
-          // v8.1.107: Handle combined 4-byte values
+          // v8.1.107: Handle combined 4-byte values (e.g., 67109120 = 0x03FF0120)
           if (num > 0xFFFF) {
             const temp = (num >> 16) / 10;
             const moisture = (num & 0xFFFF) / 10;
+            this.log(`[SOIL] Combined 4-byte: raw=${num}, temp=${temp}°C, moisture=${moisture}%`);
             if (moisture >= 0 && moisture <= 100) {
               setTimeout(() => {
                 this.setCapabilityValue('measure_humidity.soil', moisture).catch(() => {});
