@@ -420,6 +420,50 @@ if (isPhysical) {
 - `initPhysicalButtonDetection()` called without `zclNode` argument
 - `onDeleted()` without `clearTimeout()` or `super.onDeleted()` — timer/memory leaks
 
+### TS0044 4-Button Scene Mode Architecture
+
+**Device type:** TS0044 = 4-button remote in scene mode
+- 4 endpoints, each with OnOff cluster (6) + Power Configuration (1)
+- Button presses detected via scene recall commands (cluster 5)
+- Each endpoint = 1 physical button
+- Battery powered (CR2032)
+
+**Scene mode switching:**
+- Attribute 0x8004 on OnOff cluster: 0=dimmer, 1=scene
+- `_universalSceneModeSwitch()` writes attribute 0x8004=1 with 5 retry attempts
+- Some devices need scene mode to send proper button events
+
+**Button detection hierarchy (ButtonDevice):**
+1. **PRIORITY 1:** Scenes cluster (cluster 5) — Tuya TS0043/TS0044
+2. **PRIORITY 2:** OnOff cluster (cluster 6) — attribute reports + direct commands
+3. **PRIORITY 3:** Tuya proprietary 0xFD commands (cluster 6) — long press
+4. **PRIORITY 4:** MultistateInput (cluster 15) — some devices
+
+**Press type mapping (0-indexed per Z2M):**
+```javascript
+// TuyaPressTypeMap.js
+{ 0: 'single', 1: 'double', 2: 'long',
+  3: 'single', 4: 'double', 5: 'long' }  // 1-indexed fallback
+```
+
+**MFR routing (collision resolution):**
+- `_TZ3000_u3nv1jwk` TS0044: Only in `button_wireless_4` (4-button)
+- Removed from `button_wireless_1` (1-button) and `scene_switch_3` (3-gang)
+- First matching driver wins in SDK3 — correct driver MUST be listed first
+
+**Z2M/ZHA comparison:**
+- Z2M: Scene recall via `commandRecall` on `genScenes` cluster
+- ZHA: Same pattern, scene ID maps to button number
+- Homey: Identical to Z2M/ZHA via ButtonDevice base class
+
+### Bidirectional Button Anti-Patterns (DO NOT USE)
+- Local `_markAppCommand()` without `super.markAppCommand()` — shadows mixin
+- `getTriggerCard()` without `.trigger()` — flow cards silently broken (Rule A12)
+- `initPhysicalButtonDetection()` called twice — duplicate listeners
+- `onDeleted()` without `clearTimeout()` or `super.onDeleted()` — memory leak
+- Raw `setInterval()` without `this.homey.setInterval()` — lifecycle leak
+- `requestDPs()` (plural) does NOT exist — use `requestDP(dp)` singular (Rule J8)
+
 ### Mixin Order
 ```javascript
 class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
