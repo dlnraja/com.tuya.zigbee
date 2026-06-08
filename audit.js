@@ -31,7 +31,7 @@ drivers.forEach(dir => {
       if (comp.zigbee && comp.zigbee.fingerprints) {
         comp.zigbee.fingerprints.forEach(fp => {
           if (fp.manufacturerName && fp.productId) {
-             const key = `${fp.productId.toLowerCase()}|${fp.manufacturerName.toLowerCase()}`;
+             const key = `${String(fp.productId).toLowerCase()}|${fp.manufacturerName.toLowerCase()}`;
              if (!map[key]) map[key] = new Set();
              map[key].add(dir);
           }
