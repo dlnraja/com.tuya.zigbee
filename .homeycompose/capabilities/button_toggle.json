@@ -1,0 +1,17 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Toggle",
+    "nl": "Schakelen",
+    "de": "Umschalten",
+    "fr": "Basculer"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "icon": "/assets/capabilities/button_toggle.svg",
+  "insights": false,
+  "desc": {
+    "en": "Toggle button"
+  }
+}

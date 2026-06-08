@@ -1,0 +1,12 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Open",
+    "fr": "Ouvrir",
+    "nl": "Openen"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "insights": false
+}
