@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-08T21:12:35.315Z",
+  "timestamp": "2026-06-08T21:55:03.427Z",
   "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
@@ -21,5 +21,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided information, here is the classification and mapping for the device:\n\n| FP                | Type   | Driver | DPs→Capabilities | Quirks |\n|-------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| N/A    | N/A               | No DPs available |\n\n### Notes:\n- The device does not have any DPs (data points) available, which means there are no capabilities to map or existing drivers to suggest for this fingerprint.\n- Since the device type and driver are unknown, further information would be needed to classify it properly or to determine if it can be integrated into the Homey system."
+  "aiPlan": "Based on the provided fingerprint data, here is the classification and suggestions for the Tuya device:\n\n| FP                | Type   | Driver | DPs→Capabilities | Quirks |\n|-------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| N/A    | N/A               | No DPs available, unable to classify or map capabilities. |\n\n### Notes:\n- The device does not have any available DPs (data points), which makes it impossible to classify its type or suggest a driver.\n- Without any DPs or capabilities, further information about the device is required to provide a meaningful classification or mapping.\n- It may be beneficial to check for updates or additional information regarding this device fingerprint in the future."
 }
