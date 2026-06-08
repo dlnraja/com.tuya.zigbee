@@ -1,0 +1,17 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Identify",
+    "nl": "Identificeren",
+    "de": "Identifizieren",
+    "fr": "Identifier"
+  },
+  "getable": false,
+  "setable": true,
+  "uiComponent": "button",
+  "icon": "/assets/capabilities/button_identify.svg",
+  "insights": false,
+  "desc": {
+    "en": "Identify device"
+  }
+}

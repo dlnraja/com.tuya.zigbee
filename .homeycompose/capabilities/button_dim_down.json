@@ -1,0 +1,12 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Dim Down",
+    "fr": "Diminuer",
+    "nl": "Dimmen Omlaag"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "insights": false
+}
