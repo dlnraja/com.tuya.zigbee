@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-08T10:17:26.529Z",
+  "timestamp": "2026-06-08T12:02:48.063Z",
   "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
@@ -21,5 +21,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided device fingerprint, here is the classification and suggested handling:\n\n| FP                | Type   | Driver | DPs→Capabilities | Quirks |\n|-------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| N/A    | N/A               | No DPs available, unable to classify further. |\n\n### Notes:\n- The device does not have any available DPs (data points), which makes it difficult to classify its type or suggest a driver.\n- Without additional information about the device (such as vendor, device type, or specific capabilities), it is not possible to provide a more detailed analysis or mapping.\n- If more information becomes available, please provide it for a more accurate classification and mapping."
+  "aiPlan": "Based on the provided information, it appears that the device fingerprint (_TZE284_sdvbnmj5) does not have any available data points (DPs) or capabilities listed. This limits the ability to classify the device type or suggest a Homey driver.\n\nHowever, I can provide a template for how to structure the information if DPs were available in the future. Here's how it would look:\n\n| FP                  | Type   | Driver | DPs→Capabilities | Quirks |\n|---------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5    | Unknown| Unknown| None              | None   |\n\n### Notes:\n- **Type**: Cannot be determined without DPs or additional information.\n- **Driver**: Cannot be suggested without knowing the device type.\n- **DPs→Capabilities**: Currently empty as there are no DPs available.\n- **Quirks**: No quirks noted due to lack of information.\n\nIf more information about the device becomes available, such as DPs or specific functionalities, please provide that, and I can update the classification accordingly."
 }
