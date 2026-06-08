@@ -8,7 +8,8 @@
     "measure_voltage",
     "button.toggle",
     "button.identify",
-    "button.push"
+    "button.push",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [

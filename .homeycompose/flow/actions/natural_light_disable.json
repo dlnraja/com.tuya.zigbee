@@ -1,0 +1,14 @@
+{
+  "id": "natural_light_disable",
+  "title": {
+    "en": "Disable Natural Light (Solar Sync)",
+    "fr": "Désactiver Natural Light (Synchro Solaire)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=bulb_rgbw|driver_id=bulb_rgb_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
+    }
+  ]
+}

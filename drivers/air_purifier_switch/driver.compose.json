@@ -9,7 +9,8 @@
     "button.toggle",
     "button.identify",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [

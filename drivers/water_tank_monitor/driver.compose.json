@@ -9,7 +9,8 @@
   "capabilities": [
     "measure_humidity",
     "alarm_water",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_water_level": {

@@ -1,0 +1,13 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Child Lock",
+    "fr": "Verrouillage Enfant",
+    "nl": "Kinderslot",
+    "de": "Kindersicherung"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "insights": false
+}

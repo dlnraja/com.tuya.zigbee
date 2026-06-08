@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Radio Stability",
+    "fr": "Stabilité Radio",
+    "nl": "Radio Stabiliteit"
+  },
+  "uiComponent": "sensor",
+  "uiQuickAction": false,
+  "getable": true,
+  "setable": false,
+  "units": "%",
+  "min": 0,
+  "max": 100,
+  "decimals": 0
+}
