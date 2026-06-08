@@ -18,7 +18,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  */
 
 const ZCL_ONLY_MANUFACTURERS_4G = [
-  '_TZ302_pzao9ls1', '_TZ3002_vaq2bfcu', '_TZ3000_blhvsaqf',
+  '_TZ3002_pzao9ls1', '_TZ3002_vaq2bfcu', '_TZ3000_blhvsaqf',
   '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk',
   '_TZ3000_qkixdnon', '_TZ3000_xk5udnd6', '_TZ3000_bseed'
 ];
