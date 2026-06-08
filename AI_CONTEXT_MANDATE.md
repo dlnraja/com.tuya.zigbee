@@ -6,6 +6,8 @@
 > **MANDATORY SECOND STEP**: After reading this mandate, you **MUST** read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. It is the operational companion to this architectural mandate.
 > 
 > **MANDATORY V8.5.5 UPDATE**: This mandate includes all v8.5.0–v8.5.5 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safesetCapability()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 26/05/2026. See section 9 for the complete changelog.
+> 
+> **MANDATORY V8.3.0 UPDATE (07/06/2026)**: This mandate now includes bidirectional button system fixes (PhysicalButtonMixin + VirtualButtonMixin memory leak, flow card triggers, async callbacks), bed sensor MFR auto-adaptation, TuyaEF00Manager `sendDP()` wrapper, raw frame dataQuery as primary query method, and 3 new validation scripts for systemic bug prevention. See sections 8-11 and section 9 changelog.
 
 ---
 
@@ -105,7 +107,8 @@ Every frame received (RX) from a physical Zigbee device or sent (TX) from Homey 
 | **L3** | `TuyaBoundCluster.js` / `TuyaE000BoundCluster.js` | **Binding & Command Capture**: Attaches listeners to endpoints to receive cmd0-cmd6 physical button state changes. |
 | **L4** | `TuyaEF00Manager.js` / `AdaptiveDataParser.js` | **DataPoint (DP) Decoding**: Parses bytes into logical JS types, automatically dividing/multiplying values (e.g., `/10` or `/100` for temperature). |
 | **L5** | `GlobalTimeSyncEngine.js` | **Time Synchronization**: Responds to wake-up time sync requests (`0x24`) for LCD devices that lose their clocks. |
-| **L6** | `PhysicalButtonMixin.js` | **Physical Button Deduplication**: Decouples physical presses from software feedback loops using the `appCommandPending` flag. |
+| **L6a** | `PhysicalButtonMixin.js` | **Physical Button Deduplication**: Decouples physical presses from software feedback loops using the `appCommandPending` flag. Manages `_virtualPhysicalDedup` with 1.5s bidirectional dedup window, `_metricsSyncInterval` for memory-safe periodic sync. |
+| **L6b** | `VirtualButtonMixin.js` | **Virtual Button State Tracking**: Handles app-initiated button presses (`button.toggle`, `button_dim_up`), records virtual events with timestamps in `_virtualButtonState`, and feeds the bidirectional dedup system. |
 | **L7** | `BaseHybridDevice.js` | **Applicative Capability Mapping**: Binds normalized DPs to official Homey capabilities (e.g., `measure_temperature`) and updates the UI. |
 | **L8** | `DynamicCapabilityManager.js` | **Dynamic Auto-Discovery**: Heuristically registers unrecognized DPs as generic `tuya_dp_{id}` capabilities for user custom flow cards. |
 | **L9** | `SessionManager` *(Master Beta)* | **Fragmented Session Layer**: Reassembles segmented infrared packets for Zosung IR remote codes (`0xE004` / `0xED00`). |
@@ -163,6 +166,38 @@ Every frame received (RX) from a physical Zigbee device or sent (TX) from Homey 
 - **Context:** The "Double-Division Bug" caused temperature/humidity values to be divided twice (once by AdaptiveDataParser, once by dpMappings divisor).
 - **Fix:** `SmartDivisorManager.js` in `lib/managers/` provides `smartDivisorDetect()` and `smartParse()` with a fallback chain: Known DB → Auto-detect range → defaultDivisor → 1.
 - **Rule:** Use `smartDivisorDetect(rawValue, dpId, options)` for `measure_temperature` and `measure_humidity` parsing. Never hardcode `value / 100` or `value / 10`.
+
+### 8. Bidirectional Button System (PhysicalButtonMixin + VirtualButtonMixin)
+- **Context:** Physical button presses and virtual app button presses can create feedback loops (physical press triggers capability update, which re-triggers the same handler). Memory leaks from un-cleared intervals and missing flow card `.trigger()` calls were found across plug_smart, device_plug_smart, device_plug_smart_water, sensor_contact_plug, and wall_dimmer_1gang_1way drivers.
+- **Fix:** Two complementary mixins form a bidirectional deduplication system:
+  - **`PhysicalButtonMixin.js`**: Detects physical presses from ZCL events, checks `_virtualPhysicalDedup.lastVirtualPress[gang]` to skip if virtual press happened within 1.5s, then triggers flow cards. Now properly saves and clears `_metricsSyncInterval` in `_cleanupPhysicalButtonDetection()` to prevent memory leaks on device deletion.
+  - **`VirtualButtonMixin.js`**: Records virtual button events with timestamps, feeds `_virtualPhysicalDedup` so physical handler knows to skip.
+  - **`ButtonDevice.js`**: Base class combining both mixins with scene mode switching (TS004F/TS0044).
+- **Anti-Patterns Found & Fixed (v8.3.0):**
+  1. **Flow card .trigger() never called:** `getTriggerCard()` result was stored but `.trigger()` was never invoked. Fix: `getDeviceTriggerCard(flowId).trigger(tokens).catch(() => {})`.
+  2. **await without async in callbacks:** ZCL cluster `attrReport` callbacks used `await` inside non-async functions (crashes on Node.js v22+). Fix: Added `async` keyword to all ZCL callback functions.
+  3. **Timer/memory leak:** `_metricsSyncInterval` was not cleared on device deletion, and `wall_dimmer_1gang_1way` was missing `onDeleted()` cleanup entirely.
+  4. **Duplicate init calls:** `initPhysicalButtonDetection()` called twice (second call with no args caused silent failure). Fix: Removed duplicate call.
+- **Rule:** Always use `getDeviceTriggerCard(flowId).trigger(tokens).catch(() => {})` — never discard the card reference. All ZCL `attrReport`/`cmd` callbacks containing `await` MUST be declared `async`. All intervals/timers MUST be saved to instance properties and cleared in `onDeleted()`/`onUninit()`.
+
+### 9. Bed Sensor Per-MFR Auto-Adaptation System (v8.3.0)
+- **Context:** Bed sensors (`_TZE200_seq9cm6u`, `_TZE200_sh11h1f5`, `_TYZB01_*`) use DIFFERENT protocols — some are Tuya DP, others are ZCL IAS Zone. A single driver must handle all variants without manual per-device configuration.
+- **Fix:** `drivers/bed_sensor/device.js` implements `static get MFR_CONFIGS()` — a per-MFR configuration map that returns the correct protocol, DP layout, battery handling, and sensor capabilities based on `zb_manufacturer_name` at runtime. Key elements:
+  - `_getMFRConfig()` performs direct match, then partial match, then falls back to default Tuya DP layout.
+  - Battery DP4 removed from `dpMappings` so `_handleBatteryDP()` override is actually called by the parent class (parent skips custom handler when DP is in dpMappings).
+  - `_handleBatteryDP()` maps raw 0/1 values to 10%/100% for hardware variants that send boolean battery state.
+  - DP12 remapped from `measure_luminance` to `measure_pressure` (user-confirmed: device has no light sensor; Z2M label is misleading for this hardware variant).
+- **Rule:** Drivers with multi-MFR protocol divergence MUST use `MFR_CONFIGS` static map. Battery DPs that need custom mapping MUST NOT be in `dpMappings` — use `batteryConfig` + `_handleBatteryDP()` override instead.
+
+### 10. TuyaEF00Manager sendDP Compatibility Wrapper
+- **Context:** Codebase calls `sendDP(dp, value, type)` with string type names (`'bool'`, `'value'`, `'enum'`) in some drivers, but `sendTuyaDP()` expects numeric `dpType` values.
+- **Fix:** `TuyaEF00Manager.js` exposes `sendDP(dp, value, type)` that maps string type names to numeric values via `TYPE_MAP = { bool: 1, boolean: 1, value: 2, number: 2, string: 3, enum: 4, raw: 0, bitmap: 5 }`, then delegates to `sendTuyaDP()`.
+- **Rule:** Drivers may use `sendDP()` with either string or numeric type. The wrapper handles normalization.
+
+### 11. Raw Frame dataQuery as Primary Query Method (v8.2.0)
+- **Context:** The cluster method `dataQuery({})` fails silently on some devices because the cluster abstraction does not support all Tuya variants. Raw frame delivery bypasses the cluster layer entirely.
+- **Fix:** `TuyaEF00Manager.js` DP query methods are now ordered: (1) Raw frame via `endpoint.sendFrame(0xEF00, ...)` with command `0x03` and seq echo — most reliable; (2) `tuyaCluster.dataQuery({})` — cluster method fallback; (3) `tuyaCluster.command('dataQuery', ...)` — generic command fallback. All attempts are wrapped in `Promise.race` with device-specific timeout (3s for battery devices, 8s for mains).
+- **Rule:** DP query priority is always raw frame first. Never rely solely on `tuyaCluster.dataQuery()` as the only query method.
 
 ---
 
@@ -306,6 +341,32 @@ All CI workflows include a `security` job that validates:
 - Logger system → Replaced `console.log/error` with injectable `this.logger` in `DriverMappingLoader.js`
 - **Non-linear profiles:** `3V_2100`, `1.5V_AA` etc. from `BATTERY_SPECS`
 
+### 🔒 Auto-Close Protocol for GitHub Issues (v8.1.175)
+- **Workflow:** `.github/workflows/auto-close-supported.yml` batch-closes issues/PRs where ALL fingerprints are already supported in the codebase.
+- **Reopen safety:** `.github/workflows/auto-reopen-on-comment.yml` reopens a closed issue when a real user comments (not the CI bot). Issues closed < 2 minutes ago are excluded to prevent reopening immediately auto-closed items.
+- **Enrichment integration:** `enrichment-catchup.yml` includes an `auto-close-issues` job that closes resolved issues after FP enrichment completes.
+- **Rule:** Never manually close issues that the auto-close pipeline handles. Use `gh issue close` only for issues confirmed resolved through direct user feedback or manual testing.
+
+### 🛡️ Validation Scripts — 7-Bug Category Prevention System (v8.3.0)
+The following validation scripts in `scripts/validation/` prevent recurrence of systemic bug categories. Run before every commit:
+
+| Script | Bug Category | Severity | Blocks CI |
+| :--- | :--- | :--- | :--- |
+| `check-await-without-async.js` | #7: await in non-async functions | CRITICAL (SyntaxError on Node.js v22+) | Yes |
+| `check-database-routing.js` | #2: Orphaned database entries pointing to deleted drivers | ERROR (wrong device routing) | Yes |
+| `check-mfr-config-completeness.js` | #3: MFRs without per-MFR config entries | WARNING (silent fallback) | No |
+| `check-fingerprint-health.js` | #1: MFR+PID collisions across drivers | ERROR | Yes |
+| `lint-collisions.js` | #1: Cross-category collision detection | ERROR | Yes |
+| `validate-drivers.js` | #1, #8: Driver structure + flow card integrity | ERROR | Yes |
+| `dp-mapping-validator.js` | #4: DP mapping consistency | ERROR | Yes |
+
+```bash
+# Run all validation scripts
+node scripts/validation/check-await-without-async.js
+node scripts/validation/check-database-routing.js
+node scripts/validation/check-mfr-config-completeness.js --verbose
+```
+
 ---
 
 ## 📚 8. Reference Documents
@@ -318,6 +379,7 @@ All CI workflows include a `security` job that validates:
 | Development Rules | `docs/rules/DEVELOPMENT_RULES.md` | SDK3 development best practices |
 | Zigbee/Tuya Rules | `docs/rules/ZIGBEE_TUYA_RULES.md` | Tuya DP and ZCL protocol rules |
 | Critical Mistakes | `docs/rules/CRITICAL_MISTAKES.md` | Known anti-patterns and bugs |
+| Bidirectional Buttons | `docs/BIDIRECTIONAL_BUTTONS.md` | PhysicalButtonMixin + VirtualButtonMixin architecture |
 | Post-Promotion Protocol | `docs/rules/POST_PROMOTION_PROTOCOL.md` | Registry sync after release |
 | Project Index | `PROJECT_INDEX.md` | Full project structure overview |
 | Global Improvement Plan | `GLOBAL_IMPROVEMENT_PLAN.md` | Long-term improvement roadmap |
@@ -327,6 +389,18 @@ All CI workflows include a `security` job that validates:
 ---
 
 ## 📝 9. v8.5.5 Consolidation Changelog (26/05/2026)
+
+### 🟡 Bidirectional Button Fixes & Validation Scripts (v8.3.0 — 07/06/2026)
+- [x] Fixed memory leak: `_metricsSyncInterval` now saved and cleared in `_cleanupPhysicalButtonDetection()`
+- [x] Fixed flow card `.trigger()` never called in plug_smart, device_plug_smart, device_plug_smart_water, sensor_contact_plug
+- [x] Fixed `await` without `async` in ZCL cluster callbacks across 5 drivers
+- [x] Fixed missing `onDeleted()` cleanup in wall_dimmer_1gang_1way
+- [x] Removed duplicate `initPhysicalButtonDetection()` calls
+- [x] Added `sendDP(dp, value, type)` compatibility wrapper on TuyaEF00Manager
+- [x] Reordered DP query: raw frame dataQuery as primary method (v8.2.0)
+- [x] Bed sensor: DP12 pressure (not luminance), DP4 battery routing fix, MFR auto-adaptation
+- [x] 3 new validation scripts: check-await-without-async, check-database-routing, check-mfr-config-completeness
+- [x] Auto-close protocol for GitHub issues verified (auto-close-supported.yml + auto-reopen-on-comment.yml)
 
 ### 🔵 Gmail IMAP Query & Speed Optimization (v8.5.5)
 - [x] Optimized `gmail-imap-reader.js` by removing generic search keywords (`tuya`, `zigbee`, `homey`) and high-traffic senders (`notifications@github.com`).
