@@ -21,7 +21,7 @@
 | bulb_white | 6 | TS0501 | dim, light_hue, light_saturation... |
 | button_emergency_sos | 94 | TS0215, ts0215a, TS0215A, TS0218, TS0601, ZBPB10BK | alarm_generic, measure_battery |
 | button_wireless | 19 | CK-TLSR8656-SS5-01(7000), SNZB-01, SNZB-01M, SNZB-01P, TS0040, TS0041, WB-01, WB01, TS0044 | measure_battery |
-| button_wireless_1 | 174 | 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, ROM001, RWL020, RWL021, RWL022, SNZB-01, SNZB-01P, TS0001, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0041, TS0041A, TS0042, TS0043, TS004F, TS011F, TS0601, TS0601_wirelesssw, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL | button.1, measure_battery |
+| button_wireless_1 | 171 | 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, ROM001, RWL020, RWL021, RWL022, SNZB-01, SNZB-01P, TS0001, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0041, TS0041A, TS0042, TS0043, TS004F, TS011F, TS0601, TS0601_wirelesssw, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL | button.1, measure_battery |
 | button_wireless_2 | 89 | TS0001, TS0002, TS0003, TS0011, TS0012, TS0013, TS0014, TS0041, TS0042, TS0043, TS0044, TS0111 | button.1, button.2, measure_battery |
 | button_wireless_3 | 27 | TS0013, TS0043 | button.1, button.2, button.3... |
 | button_wireless_4 | 14 | SNZB-01M, TS0014, TS0044, TS004F, TS0726 | button.1, button.2, button.3... |
@@ -188,7 +188,7 @@
 | rgb_wall_led_light | 6 | TS0505A | onoff, dim, light_temperature |
 | scene_switch_1 | 70 | TS0041, TS004F, TS0601, TS0601_scene1, TS0601_wirelesssw, 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, ROM001, RWL020, RWL021, RWL022, SNZB-01, SNZB-01P, TS0001, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0041A, TS0042, TS0043, TS011F, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL | button.1, measure_battery |
 | scene_switch_2 | 31 | TS0042, TS0601, TS0601_scene2, TS0726, TS0601_wirelesssw | button.1, button.2, measure_battery |
-| scene_switch_3 | 12 | TS0043, TS0044, TS0601, TS0601_scene3, TS0726 | button.1, button.2, button.3... |
+| scene_switch_3 | 9 | TS0043, TS0044, TS0601, TS0601_scene3, TS0726 | button.1, button.2, button.3... |
 | scene_switch_4 | 21 | ERS-10TZBVK-AA, TS0601, ZG-101ZS | button.1, button.2, button.3... |
 | scene_switch_6 | 3 | TS0601_scene6 | button.1, button.2, button.3... |
 | scene_switch_wall | 3 | TS0042, TS0043 | button.1, button.2, measure_battery |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 26643 manufacturer IDs
+**Total:** 315 drivers, 26637 manufacturer IDs
 
-*Generated: 2026-06-08T12:02:12.167Z*
+*Generated: 2026-06-08T13:46:03.959Z*
