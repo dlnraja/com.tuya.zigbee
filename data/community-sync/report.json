@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-08T16:37:46.161Z",
+  "ts": "2026-06-08T17:39:40.232Z",
   "currentCount": 10819,
   "src": {
     "johan": {
@@ -19275,9 +19275,18 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 54,
+      "issueCount": 55,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 407,
+          "title": "[Auto] 2 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh",
+            "_TZE284_sdvbnmj5"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 405,
@@ -19462,17 +19471,6 @@
             "_TZE284_0ints6wl",
             "_TZE284_0ints6wl",
             "_TZE284_0ints6wl"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1395,
-          "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
-          "mfrs": [
-            "_TZ3000_hyarhbyx",
-            "_TZ3000_hyarhbyx",
-            "_TZ3000_hyarhbyx",
-            "_TZ3000_hyarhbyx"
           ]
         }
       ]
