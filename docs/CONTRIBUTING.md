@@ -120,7 +120,7 @@ Merging pull requests can take time. Here’s how you can help:
 
 | Metric | Value |
 |--------|-------|
-| Version | v8.1.184 |
+| Version | v8.1.185 |
 | Drivers | 320 |
 | Fingerprints | 26,643 |
 | Last Updated | 2026-06-08 |
