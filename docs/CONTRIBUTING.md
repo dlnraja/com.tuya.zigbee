@@ -120,10 +120,10 @@ Merging pull requests can take time. Here’s how you can help:
 
 | Metric | Value |
 |--------|-------|
-| Version | v8.1.172 |
+| Version | v8.1.173 |
 | Drivers | 320 |
-| Fingerprints | 21,114 |
-| Last Updated | 2026-06-07 |
+| Fingerprints | 21,117 |
+| Last Updated | 2026-06-08 |
 
 
 ## How to Add a Device
