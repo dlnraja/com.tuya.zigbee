@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-08T15:08:36.239Z",
+  "ts": "2026-06-08T16:32:17.823Z",
   "currentCount": 10819,
   "src": {
     "johan": {
@@ -11033,7 +11033,7 @@
       "enriched": true
     },
     "z2m": {
-      "count": 1562,
+      "count": 1563,
       "fingerprints": [
         {
           "mfr": "_TZ3000_zl1kmjqx",
@@ -18040,6 +18040,11 @@
           "source": "Z2M"
         },
         {
+          "mfr": "_TZE284_sdvbnmj5",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
           "mfr": "_TZ3218_7fiyo3kv",
           "productId": null,
           "source": "Z2M"
@@ -19486,6 +19491,12 @@
       "vendor": null,
       "description": null,
       "source": "Johan"
+    },
+    {
+      "mfr": "_TZE284_sdvbnmj5",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
     }
   ],
   "enrichedFps": [
@@ -38902,6 +38913,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZE284_sdvbnmj5",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZ3218_7fiyo3kv",
       "productId": null,
       "source": "Z2M",
@@ -39970,6 +39987,6 @@
       "driver": null
     }
   ],
-  "newCount": 1,
-  "enrichedCount": 2212
+  "newCount": 2,
+  "enrichedCount": 2213
 }
