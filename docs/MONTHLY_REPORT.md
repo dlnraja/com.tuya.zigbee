@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-08T07:03:06.109Z*
+*Generated: 2026-06-08T08:44:48.685Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 320 |
-| Manufacturer IDs | 124 |
-| Collisions | 23 |
+| Manufacturer IDs | 223121 |
+| Collisions | 96847 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZE200_hl0ss9oa|TS0601` | air_purifier_presence, climate_sensor_presence |
-| `_TZE204_hl0ss9oa|TS0601` | air_purifier_presence, climate_sensor_presence |
-| `_TZE200_7bztmfm1|TS0601` | air_purifier_sensor, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor, device_air_purifier_plug |
-| `_TZE200_qpn5q17m|TS0601` | air_purifier_sensor, air_purifier_switch, device_air_purifier_climate, device_air_purifier_floor |
-| `_TZE200_4mh6tyyo|TS0601` | air_purifier_switch, device_air_purifier_floor |
-| `_TZ3000_gzvniqjb|TS0001` | device_din_rail, relay_board_1_channel, sr_zs_switch |
-| `_TZ3000_gzvniqjb|TS0002` | device_din_rail, sr_zs_switch |
-| `_TZ3000_gzvniqjb|TS011F` | device_din_rail, relay_board_1_channel |
-| `_TZ3000_typddjyr|TS0001` | device_din_rail, sr_zs_switch |
-| `_TZ3000_typddjyr|TS0002` | device_din_rail, sr_zs_switch |
-| `_TZ3000_m8f08ihs|TS0001` | device_din_rail, relay_board_1_channel, sr_zs_switch |
-| `_TZ3000_m8f08ihs|TS0002` | device_din_rail, sr_zs_switch |
-| `_TZ3000_m8f08ihs|TS011F` | device_din_rail, relay_board_1_channel |
-| `_TZ3000_tqlv4ug4|TS0001` | relay_board_1_channel, smart_switch |
-| `_TZA226_ueagguan|TS0201` | sensor_lcdtemphumidsensor_temphumidsensor, temphumidsensor2, temphumidsensor4, temphumidsensor5 |
-| `_TZ3000_bguser20|TS0201` | sensor_lcdtemphumidsensor_temphumidsensor, temphumidsensor2, temphumidsensor3, temphumidsensor4, temphumidsensor5 |
-| `_TYZB01_a082h2cc|TS0201` | sensor_lcdtemphumidsensor_temphumidsensor, temphumidsensor2, temphumidsensor4 |
-| `_TZ3000_18ejxno0|TS0013` | switch_3_gang, wall_switch_3_gang |
-| `_TZ3000_nsar4ife|TS0013` | switch_3_gang, wall_switch_3_gang |
-| `_TZ3000_qqrfzboe|TS0013` | switch_3_gang, wall_switch_3_gang |
+| `_TZE200_QPN5Q17M|TS0601` | air_purifier, air_purifier_sensor, device_air_purifier_floor |
+| `_TZE200_QPN5Q17M|TS0601_air_purifier` | air_purifier, device_air_purifier_floor |
+| `_TZE204_7BZTMFM1|TS0601` | air_purifier, device_air_purifier_climate |
+| `_TZE204_7BZTMFM1|TS0601_air_purifier` | air_purifier, device_air_purifier_climate |
+| `_TZE20X_XXXXXXXX|TS0601` | air_purifier, tuya_dummy_device |
+| `_TZE200_5zbp6j0u|TS0601` | air_purifier, curtain_motor, switch_1gang |
+| `_TZE200_nkoabg8w|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
+| `_TZE200_xuzcvlku|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
+| `_TZE200_r0jdjrvi|TS0601` | air_purifier, curtain_motor_tilt, switch_1gang |
+| `_TZE200_fdtjuw7u|TS0601` | air_purifier, curtain_motor, switch_1gang |
+| `_TZE200_zpzndjez|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
+| `_TZE200_wmcdj3aq|TS0601` | air_purifier, curtain_motor, curtain_motor_shutter, switch_1_gang, switch_1gang |
+| `_TZE200_cowvfni3|TS0601` | air_purifier, curtain_motor, curtain_motor_shutter, switch_1_gang, switch_1gang |
+| `_TZE200_rddyvrci|TS0601` | air_purifier, curtain_motor, curtain_motor_tilt, switch_1gang |
+| `_TZE200_zah67ekd|TS0601` | air_purifier, curtain_module, curtain_module_2_gang, curtain_motor, curtain_motor_shutter, curtain_motor_tilt |
+| `_TZE200_pw7mji0l|TS0601` | air_purifier, curtain_motor, device_floor_heating_thermostat, device_radiator_valve, thermostat_4ch |
+| `_TZE200_uj3f4wr5|TS0601` | air_purifier, curtain_motor, curtain_motor_shutter |
+| `_TZE200_axgvo9jh|TS0601` | air_purifier, curtain_motor, switch_1gang |
+| `_TZE200_gaj531w3|TS0601` | air_purifier, contact_sensor, curtain_motor, doorwindowsensor_2, sensor_contact_motion, sensor_contact_plug, sensor_contact_water |
+| `_TZE200_nw1r9hp6|TS0601` | air_purifier, curtain_motor, device_floor_heating_thermostat, device_radiator_valve, thermostat_4ch |
 
-*...and 3 more*
+*...and 96827 more*
 
 ## 📋 Action Items
 
