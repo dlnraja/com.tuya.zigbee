@@ -187,7 +187,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
   /**
    * v5.5.854: Handles both dataReport and response events with physical button detection
    */
-  _processTuyaData(data, isReportingEvent = false) {
+  async _processTuyaData(data, isReportingEvent = false) {
     if (DEBUG_MODE) {
       this.log('_processTuyaData:', JSON.stringify(data), 'reporting:', isReportingEvent);
     }
@@ -344,8 +344,13 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     }, 2000);
   }
 
-  onDeleted() {
+  async onDeleted() {
+    if (this._appCommandTimeout) {
+      clearTimeout(this._appCommandTimeout);
+      this._appCommandTimeout = null;
+    }
     this.log('Switch Touch Dimmer (1 Gang) removed');
+    await super.onDeleted();
   }
 
 }
