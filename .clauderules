@@ -1,0 +1,71 @@
+# Claude Code Rules — Tuya Unified Zigbee
+
+## MANDATORY READING ORDER
+
+1. `AI_CONTEXT_MANDATE.md` — Architecture, 11-layer pipeline
+2. `PROJECT_INDEX.md` — 412 drivers, 44594 fingerprints, button architecture
+3. `docs/rules/CRITICAL_MISTAKES.md` — 70+ rules (A1-A13, B1-B10, H1-H7, J1-J10, L1-L8)
+4. `.ai/rules/.windsurfrules` — IDE rules
+
+## ARCHITECTURE
+
+- App: com.dlnraja.tuya.zigbee (master) / com.dlnraja.tuya.zigbee.stable (stable-v5)
+- SDK: Homey SDK v3 + homey-zigbeedriver ^2.2.2
+- Drivers: 320 Zigbee + 51 WiFi = 371 total, 44594 fingerprints
+- Chain: Homey.Device → ZigBeeDevice → TuyaZigbeeDevice → TuyaUnifiedDevice → BaseUnifiedDevice → UnifiedSensorBase
+
+## CRITICAL RULES
+
+### SDK3 Mandatory
+- `async onNodeInit()` NOT sync onInit
+- `await setCapabilityValue()` ALWAYS
+- `_destroyed` guard in ALL async methods
+- Settings: snake_case (zb_model_id NOT zb_modelId)
+- `console.log/error` INTERDIT
+
+### Tuya DP (J7-J10)
+- `sendDP()` DOES NOT EXIST — use `sendTuyaDP(dp, dpType, value)` or wrapper
+- `requestDPs()` DOES NOT EXIST — use `requestDP(dp)` singular
+- DP12 can be pressure OR luminance per hardware
+- DP4: Don't put in dpMappings if `_handleBatteryDP` override needed
+
+### Fingerprints (L8)
+- `fingerprints[]` format NOT supported by `homey app compose`
+- ALWAYS use `manufacturerName[]` + `productId[]` arrays
+- Wildcards FORBIDDEN (Rule L6)
+
+### Battery (B2-C7)
+- Linear formulas STRICTLY BANNED
+- NEVER combine `measure_battery` + `alarm_battery` (Rule AO)
+
+### Buttons (H1-H7, Rule A12)
+- PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) MANDATORY order
+- `markAppCommand()` BEFORE device command
+- Flow cards: `.trigger()` MUST be called (Rule A12)
+- `initPhysicalButtonDetection()` called ONCE with zclNode (Rule H6)
+- `requestDPs()` DOES NOT EXIST — use `requestDP(dp)` singular
+
+### TS0044 4-Button Scene Mode
+- 4 endpoints, each = 1 button
+- Scene recall commands (cluster 5)
+- Scene mode via attribute 0x8004 (0=dimmer, 1=scene)
+- 0-indexed: 0=single, 1=double, 2=long
+
+## VALIDATION SCRIPTS
+- `node scripts/validation/check-await-without-async.js`
+- `node scripts/validation/check-database-routing.js`
+- `node scripts/validation/check-fingerprint-health.js`
+- `npx homey app validate --level publish`
+
+## GIT
+- NEVER `npx homey app publish` locally
+- ALWAYS `git pull --rebase` before push
+- NEVER close issues without user confirmation
+
+## BUTTON ANTI-PATTERNS (DO NOT USE)
+- Local `_markAppCommand()` without `super.markAppCommand()`
+- `getTriggerCard()` without `.trigger()`
+- `initPhysicalButtonDetection()` called twice
+- `onDeleted()` without `clearTimeout()` or `super.onDeleted()`
+- Raw `setInterval()` without `this.homey.setInterval()`
+- `requestDPs()` (plural) — DOES NOT EXIST
