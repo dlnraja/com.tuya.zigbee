@@ -13,14 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_el5kt5im",
-      "_TZ3000_el5kt5im",
-      "_TZ3000_EL5KT5IM"
-    ],
-    "productId": [
-      "TS0502A"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

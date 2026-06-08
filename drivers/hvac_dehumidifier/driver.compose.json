@@ -57,33 +57,6 @@
     "large": "/drivers/hvac_dehumidifier/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_44xpctxy",
-      "_TZE200_44xpctxy",
-      "_TZE200_44XPCTXY",
-      "_tze200_bgjfxh3o",
-      "_TZE200_bgjfxh3o",
-      "_TZE200_BGJFXH3O",
-      "_tze200_qtbrwrfv",
-      "_TZE200_qtbrwrfv",
-      "_TZE200_QTBRWRFV",
-      "_tze204_44xpctxy",
-      "_TZE204_44xpctxy",
-      "_TZE204_44XPCTXY",
-      "_tze204_bgjfxh3o",
-      "_TZE204_bgjfxh3o",
-      "_TZE204_BGJFXH3O",
-      "_tze204_oisqyl4o",
-      "_TZE204_oisqyl4o",
-      "_TZE204_OISQYL4O",
-      "_tze204_qtbrwrfv",
-      "_TZE204_qtbrwrfv",
-      "_TZE204_QTBRWRFV"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_dehum"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -100,7 +73,65 @@
         "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_44xpctxy",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_44xpctxy",
+        "productId": "TS0601_dehum"
+      },
+      {
+        "manufacturerName": "_tze200_bgjfxh3o",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_bgjfxh3o",
+        "productId": "TS0601_dehum"
+      },
+      {
+        "manufacturerName": "_tze200_qtbrwrfv",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_qtbrwrfv",
+        "productId": "TS0601_dehum"
+      },
+      {
+        "manufacturerName": "_tze204_44xpctxy",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_44xpctxy",
+        "productId": "TS0601_dehum"
+      },
+      {
+        "manufacturerName": "_tze204_bgjfxh3o",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_bgjfxh3o",
+        "productId": "TS0601_dehum"
+      },
+      {
+        "manufacturerName": "_tze204_oisqyl4o",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_oisqyl4o",
+        "productId": "TS0601_dehum"
+      },
+      {
+        "manufacturerName": "_tze204_qtbrwrfv",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_qtbrwrfv",
+        "productId": "TS0601_dehum"
+      }
+    ]
   },
   "metadata": {
     "app": {

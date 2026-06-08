@@ -29,20 +29,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_8YGSUHE1",
-      "_TZE200_DWCARSAT",
-      "_TZE204_7BZTMFM1",
-      "_tze200_8ygsuhe1",
-      "_tze200_dwcarsat",
-      "_tze204_7bztmfm1",
-      "_TZE200_7bztmfm1",
-      "_TZE200_qpn5q17m"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,7 +41,33 @@
         "en": "Press and hold the power button for 5 seconds",
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_8YGSUHE1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_8YGSUHE1",
+        "productId": "TS0601_air_purifier"
+      },
+      {
+        "manufacturerName": "_TZE200_DWCARSAT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_DWCARSAT",
+        "productId": "TS0601_air_purifier"
+      },
+      {
+        "manufacturerName": "_TZE204_7BZTMFM1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_7BZTMFM1",
+        "productId": "TS0601_air_purifier"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",

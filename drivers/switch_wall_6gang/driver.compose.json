@@ -66,37 +66,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_cziew6eu",
-      "_TZ3000_cziew6eu",
-      "_TZ3000_CZIEW6EU",
-      "_tze200_tz32mtza",
-      "_TZE200_tz32mtza",
-      "_TZE200_TZ32MTZA",
-      "_tze204_72bewjky",
-      "_TZE204_72bewjky",
-      "_TZE204_72BEWJKY",
-      "_tze204_ad2jkxwh",
-      "_TZE204_ad2jkxwh",
-      "_TZE204_AD2JKXWH",
-      "_tze204_tz32mtza",
-      "_TZE204_tz32mtza",
-      "_TZE204_TZ32MTZA",
-      "_tze284_g1enhdsi",
-      "_TZE284_g1enhdsi",
-      "_TZE284_G1ENHDSI",
-      "_tze284_tz32mtza",
-      "_TZE284_tz32mtza",
-      "_TZE284_TZ32MTZA",
-      "tze204_7sjncirf",
-      "TZE204_7sjncirf",
-      "TZE204_7SJNCIRF"
-    ],
-    "productId": [
-      "TS0016",
-      "TS0601",
-      "TS0726"
-    ],
     "learnmode": {
       "image": "/drivers/switch_wall_6gang/assets/learnmode.svg",
       "instruction": {
@@ -140,7 +109,93 @@
           6
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_cziew6eu",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "_tz3000_cziew6eu",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_cziew6eu",
+        "productId": "TS0726"
+      },
+      {
+        "manufacturerName": "_tze204_72bewjky",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "_tze204_72bewjky",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_72bewjky",
+        "productId": "TS0726"
+      },
+      {
+        "manufacturerName": "_tze204_ad2jkxwh",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "_tze204_ad2jkxwh",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_ad2jkxwh",
+        "productId": "TS0726"
+      },
+      {
+        "manufacturerName": "_tze204_tz32mtza",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "_tze204_tz32mtza",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_tz32mtza",
+        "productId": "TS0726"
+      },
+      {
+        "manufacturerName": "_tze284_g1enhdsi",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "_tze284_g1enhdsi",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_g1enhdsi",
+        "productId": "TS0726"
+      },
+      {
+        "manufacturerName": "_tze284_tz32mtza",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "_tze284_tz32mtza",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_tz32mtza",
+        "productId": "TS0726"
+      },
+      {
+        "manufacturerName": "tze204_7sjncirf",
+        "productId": "TS0016"
+      },
+      {
+        "manufacturerName": "tze204_7sjncirf",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "tze204_7sjncirf",
+        "productId": "TS0726"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/switch_wall_6gang/assets/images/small.png",

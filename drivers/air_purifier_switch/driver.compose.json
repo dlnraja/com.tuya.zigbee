@@ -12,10 +12,6 @@
     "measure_pm25"
   ],
   "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
@@ -29,13 +25,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_4mh6tyyo",
-      "_TZE200_7bztmfm1",
-      "_TZE200_qpn5q17m",
-      "_TYST11_d0yu2xgi"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",

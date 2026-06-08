@@ -62,22 +62,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_dku2cfsc",
-      "_tz3000_h1c2eamp",
-      "_tz3000_oikiyf3b",
-      "_TZ3000_QZJCSMAR",
-      "_tz3000_tk3s5tyg",
-      "_tz3000_yirp2pgd"
-    ],
-    "productId": [
-      "TS0043",
-      "TS011F",
-      "TS0121",
-      "TS0601",
-      "TS0601_wirelesssw",
-      "TSO121"
-    ],
     "learnmode": {
       "image": "/drivers/button_wireless_3/assets/learnmode.svg",
       "instruction": {

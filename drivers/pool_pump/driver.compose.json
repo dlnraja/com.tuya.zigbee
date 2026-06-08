@@ -17,24 +17,6 @@
     "meter_power"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_k6jhsr0q",
-      "_TZE200_k6jhsr0q",
-      "_TZE200_K6JHSR0Q",
-      "_tze200_ruavtjnq",
-      "_TZE200_ruavtjnq",
-      "_TZE200_RUAVTJNQ",
-      "_tze204_k6jhsr0q",
-      "_TZE204_k6jhsr0q",
-      "_TZE204_K6JHSR0Q",
-      "_tze204_ruavtjnq",
-      "_TZE204_ruavtjnq",
-      "_TZE204_RUAVTJNQ"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_pool"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,7 +30,33 @@
         "en": "Press and hold the power button for 5 seconds",
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_ruavtjnq",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_ruavtjnq",
+        "productId": "TS0601_pool"
+      },
+      {
+        "manufacturerName": "_tze204_k6jhsr0q",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_k6jhsr0q",
+        "productId": "TS0601_pool"
+      },
+      {
+        "manufacturerName": "_tze204_ruavtjnq",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_ruavtjnq",
+        "productId": "TS0601_pool"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/pool_pump/assets/images/small.png",

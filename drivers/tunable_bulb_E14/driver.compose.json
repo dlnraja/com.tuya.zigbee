@@ -13,14 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_oborybow",
-      "_TZ3000_oborybow",
-      "_TZ3000_OBORYBOW"
-    ],
-    "productId": [
-      "TS0502A"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

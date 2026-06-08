@@ -27,14 +27,6 @@
     "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "RH3052",
-      "SNTZ003",
-      "TS0201",
-      "TY0201",
-      "ZG-227Z"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,13 +47,6 @@
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the LED blinks rapidly.",
         "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
       }
-    },
-    "manufacturerName": [
-      "_tz3000_m0vaazab",
-      "_TZ3000_m0vaazab",
-      "_TZ3000_M0VAAZAB",
-      "_TZ3000_bguser20",
-      "_TZ3000_fllyghyj"
-    ]
+    }
   }
 }

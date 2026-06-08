@@ -26,9 +26,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,9 +63,6 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": [
-      "_TZE284_myd45weu"
-    ]
+    }
   }
 }

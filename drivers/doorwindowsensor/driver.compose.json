@@ -24,35 +24,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "3300-S",
-      "3320-L",
-      "CK-TLSR8656-SS5-01(7003)",
-      "DoorWindow-Sensor-ZB3.0",
-      "DS01",
-      "E1603/E1702",
-      "lumi.magnet.ac01",
-      "lumi.magnet.agl02",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2",
-      "MCCGQ01LM",
-      "MCCGQ11LM",
-      "MCCGQ12LM",
-      "MCCGQ14LM",
-      "MCT-340 E",
-      "RH3001",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-04PR2",
-      "SNZB-04R2",
-      "TRADFRI open/close remote",
-      "TS0021",
-      "TS0203",
-      "TS0207",
-      "TS0601",
-      "ZG-102Z",
-      "ZG-102ZL"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -73,9 +44,115 @@
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
       }
     },
-    "manufacturerName": [
-      "zbeacon",
-      "ZBEACON"
+    "fingerprints": [
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "3300-S"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "3320-L"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "CK-TLSR8656-SS5-01(7003)"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "DoorWindow-Sensor-ZB3.0"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "DS01"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "E1603/E1702"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "lumi.magnet.ac01"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "lumi.magnet.agl02"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "lumi.sensor_magnet"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "lumi.sensor_magnet.aq2"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "MCCGQ01LM"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "MCCGQ11LM"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "MCCGQ12LM"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "MCCGQ14LM"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "MCT-340 E"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "RH3001"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "SNZB-04"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "SNZB-04P"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "SNZB-04PR2"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "SNZB-04R2"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "TRADFRI open/close remote"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "TS0021"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "ZG-102Z"
+      },
+      {
+        "manufacturerName": "zbeacon",
+        "productId": "ZG-102ZL"
+      }
     ]
   }
 }

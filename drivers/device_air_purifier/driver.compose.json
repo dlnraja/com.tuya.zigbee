@@ -24,10 +24,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -35,20 +31,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_tze200_mudxchsu",
-      "_tze200_py4cm3he",
-      "_TZE200_S8GKRKXK",
-      "_tze200_sur6q7ko",
-      "_tze200_vzekyi4c",
-      "_tze200_yh7aoahi",
-      "_tze200_yvx5lh6k",
-      "_tze204_aoclfnxz",
-      "_tze204_ntcy3xu1",
-      "_tze204_t1blo2bj"
-    ]
+    }
   },
   "images": {
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",

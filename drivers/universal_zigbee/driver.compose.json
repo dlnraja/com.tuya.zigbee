@@ -67,116 +67,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_ty",
-      "_TY",
-      "_tyst",
-      "_TYST",
-      "_tyzb",
-      "_TYZB",
-      "_tz",
-      "_TZ",
-      "_tzb",
-      "_TZB",
-      "_tzc",
-      "_TZC",
-      "_tze",
-      "_TZE",
-      "_tzf",
-      "_TZF",
-      "_tzh",
-      "_TZH",
-      "_tzj",
-      "_TZJ",
-      "_tzl",
-      "_TZL",
-      "_tzn",
-      "_TZN",
-      "_tzq",
-      "_TZQ",
-      "_tzs",
-      "_TZS",
-      "_tzw",
-      "_TZW",
-      "lidl livarno",
-      "LIDL LIVARNO",
-      "nous",
-      "NOUS",
-      "ts",
-      "TS",
-      "tuyatec",
-      "TUYATEC"
-    ],
-    "productId": [
-      "q9mpfhw",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS0015",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0045",
-      "TS0046",
-      "TS0047",
-      "TS0048",
-      "TS004F",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0121",
-      "TS0201",
-      "TS0203",
-      "TS0204",
-      "TS0205",
-      "TS0206",
-      "TS0207",
-      "TS0208",
-      "TS0209",
-      "TS0210",
-      "TS0211",
-      "TS0212",
-      "TS0215",
-      "TS0215A",
-      "TS0216",
-      "TS0216A",
-      "TS0218",
-      "TS0222",
-      "TS0225",
-      "TS0301",
-      "TS0302",
-      "TS0303",
-      "TS0304",
-      "TS0401",
-      "TS0402",
-      "TS0501",
-      "TS0501A",
-      "TS0501B",
-      "TS0502",
-      "TS0502A",
-      "TS0502B",
-      "TS0503",
-      "TS0503A",
-      "TS0503B",
-      "TS0504",
-      "TS0504A",
-      "TS0504B",
-      "TS0505",
-      "TS0505A",
-      "TS0505B",
-      "TS0601",
-      "TS110E",
-      "TS110F",
-      "TS130F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -191,7 +81,5177 @@
         "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
         "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_ty",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_ty",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tyst",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tyzb",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tz",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzb",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzc",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tze",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzf",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzh",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzj",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzl",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzn",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzq",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzs",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_tzw",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "lidl livarno",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "nous",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "ts",
+        "productId": "TS130F"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0002"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0012"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0014"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0015"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0045"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0047"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0048"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0121"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0204"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0206"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0208"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0209"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0210"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0211"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0212"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0215"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0215A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0216"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0216A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0218"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0222"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0301"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0302"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0303"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0304"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0401"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0402"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0501A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0501B"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0502"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0503"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0504"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0504A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0505"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "tuyatec",
+        "productId": "TS130F"
+      }
+    ]
   },
   "images": {
     "large": "/drivers/universal_zigbee/assets/images/large.png",

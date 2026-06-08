@@ -33,14 +33,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze204_qasjif9e",
-      "_tze204_ztqnh5cg"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {

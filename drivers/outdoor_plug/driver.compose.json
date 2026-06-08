@@ -23,14 +23,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_br3laukf",
-      "_TZ3000_br3laukf",
-      "_TZ3000_BR3LAUKF"
-    ],
-    "productId": [
-      "TS0101"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

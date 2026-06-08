@@ -23,14 +23,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze204_seq9cm6u",
-      "_TZE204_seq9cm6u",
-      "_TZE204_SEQ9CM6U"
-    ],
-    "productId": [
-      "TS0601"
-    ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
@@ -45,7 +37,13 @@
           6
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze204_seq9cm6u",
+        "productId": "TS0601"
+      }
+    ]
   },
   "settings": [
     {

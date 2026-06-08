@@ -22,9 +22,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -49,12 +46,7 @@
         "cluster": "colorControl",
         "attr": "colorTemperature"
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_TZE204_zenj4lxv",
-      "_TZE204_znvwzxkq"
-    ]
+    }
   },
   "settings": [
     {

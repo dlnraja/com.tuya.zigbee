@@ -24,135 +24,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_5fkufhn1",
-      "_TZ3000_5fkufhn1",
-      "_TZ3000_5FKUFHN1",
-      "_tz3000_6dwfra5l",
-      "_TZ3000_6dwfra5l",
-      "_TZ3000_6DWFRA5L",
-      "_tz3000_bumeauzp",
-      "_TZ3000_bumeauzp",
-      "_TZ3000_BUMEAUZP",
-      "_tz3000_g1glzzfk",
-      "_TZ3000_g1glzzfk",
-      "_TZ3000_G1GLZZFK",
-      "_tz3000_psg0zx5j",
-      "_TZ3000_psg0zx5j",
-      "_TZ3000_PSG0ZX5J",
-      "_tz3000_rylaozuc",
-      "_TZ3000_rylaozuc",
-      "_TZ3000_RYLAOZUC",
-      "_tz3000_tqlv4yz4",
-      "_TZ3000_tqlv4yz4",
-      "_TZ3000_TQLV4YZ4",
-      "_tz3000_u5u4cakc",
-      "_TZ3000_u5u4cakc",
-      "_TZ3000_U5U4CAKC",
-      "_tz3000_vzopcetz",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_VZOPCETZ",
-      "_tz3000_w2ug5kgu",
-      "_TZ3000_w2ug5kgu",
-      "_TZ3000_W2UG5KGU",
-      "_tz3000_x2fqbdun",
-      "_TZ3000_x2fqbdun",
-      "_TZ3000_X2FQBDUN",
-      "_tz3000_zw7wr5uo",
-      "_TZ3000_zw7wr5uo",
-      "_TZ3000_ZW7WR5UO",
-      "_tz3210_09hzmirw",
-      "_TZ3210_09hzmirw",
-      "_TZ3210_09HZMIRW",
-      "_tz3210_0c4np92r",
-      "_TZ3210_0c4np92r",
-      "_TZ3210_0C4NP92R",
-      "_tz3210_0fc3g9sq",
-      "_TZ3210_0fc3g9sq",
-      "_TZ3210_0FC3G9SQ",
-      "_tz3210_1agihf3z",
-      "_TZ3210_1agihf3z",
-      "_TZ3210_1AGIHF3Z",
-      "_tz3210_4ubylghk",
-      "_TZ3210_4ubylghk",
-      "_TZ3210_4UBYLGHK",
-      "_tz3210_agwvapnp",
-      "_TZ3210_agwvapnp",
-      "_TZ3210_AGWVAPNP",
-      "_tz3210_bcplf4ds",
-      "_TZ3210_bcplf4ds",
-      "_TZ3210_BCPLF4DS",
-      "_tz3210_c2iwpxf1",
-      "_TZ3210_c2iwpxf1",
-      "_TZ3210_C2IWPXF1",
-      "_tz3210_claeh5ds",
-      "_TZ3210_claeh5ds",
-      "_TZ3210_CLAEH5DS",
-      "_tz3210_dxrjkpi6",
-      "_TZ3210_dxrjkpi6",
-      "_TZ3210_DXRJKPI6",
-      "_tz3210_h1zvcpwd",
-      "_TZ3210_h1zvcpwd",
-      "_TZ3210_H1ZVCPWD",
-      "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI",
-      "_tz3210_jkbdrvvf",
-      "_TZ3210_jkbdrvvf",
-      "_TZ3210_JKBDRVVF",
-      "_tz3210_ksqwlz9v",
-      "_TZ3210_ksqwlz9v",
-      "_TZ3210_KSQWLZ9V",
-      "_tz3210_lezkafxf",
-      "_TZ3210_lezkafxf",
-      "_TZ3210_LEZKAFXF",
-      "_tz3210_lmqquxus",
-      "_TZ3210_lmqquxus",
-      "_TZ3210_LMQQUXUS",
-      "_tz3210_rbgfkwbl",
-      "_TZ3210_rbgfkwbl",
-      "_TZ3210_RBGFKWBL",
-      "_tz3210_sroezl0s",
-      "_TZ3210_sroezl0s",
-      "_TZ3210_SROEZL0S",
-      "_tz3210_taw0fc13",
-      "_TZ3210_taw0fc13",
-      "_TZ3210_TAW0FC13",
-      "_tz3210_wuheyhvm",
-      "_TZ3210_wuheyhvm",
-      "_TZ3210_WUHEYHVM",
-      "_tzb210_0bkzabht",
-      "_TZB210_0bkzabht",
-      "_TZB210_0BKZABHT",
-      "_tzb210_ayx58ft5",
-      "_TZB210_ayx58ft5",
-      "_TZB210_AYX58FT5",
-      "_tzb210_eiwanbeb",
-      "_TZB210_eiwanbeb",
-      "_TZB210_EIWANBEB"
-    ],
-    "productId": [
-      "Classic A60 TW",
-      "E11-N13",
-      "E11-N14",
-      "E12-N13",
-      "E12-N14",
-      "GL-B-007Z",
-      "GL-C-007",
-      "LED1545G12",
-      "LED1546G12",
-      "LTW001",
-      "LTW004",
-      "LTW010",
-      "LTW012",
-      "LTW013",
-      "LTW015",
-      "RB 178 T",
-      "RS 128 T",
-      "TS0502A",
-      "TS0502B",
-      "ZBT-CCTLight"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -177,7 +48,489 @@
         "cluster": "colorControl",
         "attr": "colorTemperature"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "Classic A60 TW"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "E11-N13"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "E11-N14"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "E12-N13"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "E12-N14"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "GL-B-007Z"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "GL-C-007"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LED1545G12"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LED1546G12"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LTW001"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LTW004"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LTW010"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LTW012"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LTW013"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "LTW015"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "RB 178 T"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "RS 128 T"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz3000_6dwfra5l",
+        "productId": "ZBT-CCTLight"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "Classic A60 TW"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "E11-N13"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "E11-N14"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "E12-N13"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "E12-N14"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "GL-B-007Z"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "GL-C-007"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LED1545G12"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LED1546G12"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LTW001"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LTW004"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LTW010"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LTW012"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LTW013"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "LTW015"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "RB 178 T"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "RS 128 T"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz3000_bumeauzp",
+        "productId": "ZBT-CCTLight"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "Classic A60 TW"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "E11-N13"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "E11-N14"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "E12-N13"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "E12-N14"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "GL-B-007Z"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "GL-C-007"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LED1545G12"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LED1546G12"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LTW001"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LTW004"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LTW010"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LTW012"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LTW013"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "LTW015"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "RB 178 T"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "RS 128 T"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz3000_psg0zx5j",
+        "productId": "ZBT-CCTLight"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "Classic A60 TW"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "E11-N13"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "E11-N14"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "E12-N13"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "E12-N14"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "GL-B-007Z"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "GL-C-007"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LED1545G12"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LED1546G12"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LTW001"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LTW004"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LTW010"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LTW012"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LTW013"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "LTW015"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "RB 178 T"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "RS 128 T"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz3210_agwvapnp",
+        "productId": "ZBT-CCTLight"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "Classic A60 TW"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "E11-N13"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "E11-N14"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "E12-N13"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "E12-N14"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "GL-B-007Z"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "GL-C-007"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LED1545G12"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LED1546G12"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LTW001"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LTW004"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LTW010"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LTW012"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LTW013"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "LTW015"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "RB 178 T"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "RS 128 T"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz3210_claeh5ds",
+        "productId": "ZBT-CCTLight"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "Classic A60 TW"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "E11-N13"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "E11-N14"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "E12-N13"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "E12-N14"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "GL-B-007Z"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "GL-C-007"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LED1545G12"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LED1546G12"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LTW001"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LTW004"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LTW010"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LTW012"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LTW013"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "LTW015"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "RB 178 T"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "RS 128 T"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "TS0502A"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "TS0502B"
+      },
+      {
+        "manufacturerName": "_tz3210_ksqwlz9v",
+        "productId": "ZBT-CCTLight"
+      }
+    ]
   },
   "settings": [
     {

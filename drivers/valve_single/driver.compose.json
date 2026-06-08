@@ -12,19 +12,6 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_ahxwesag",
-      "_TZ3000_ahxwesag",
-      "_TZ3000_AHXWESAG",
-      "_tze200_vrjkcam9",
-      "_TZE200_vrjkcam9",
-      "_TZE200_VRJKCAM9"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0601",
-      "TS0601_valve"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,7 +19,33 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_ahxwesag",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tz3000_ahxwesag",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_ahxwesag",
+        "productId": "TS0601_valve"
+      },
+      {
+        "manufacturerName": "_tze200_vrjkcam9",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tze200_vrjkcam9",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_vrjkcam9",
+        "productId": "TS0601_valve"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/valve_single/assets/images/small.png",

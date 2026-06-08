@@ -26,34 +26,6 @@
     "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_3u4hripk",
-      "_TZ3000_3u4hripk",
-      "_TZ3000_3U4HRIPK",
-      "_tz3000_7jx5ypra",
-      "_TZ3000_7jx5ypra",
-      "_TZ3000_7JX5YPRA",
-      "_tz3000_9hpxg80k",
-      "_TZ3000_9hpxg80k",
-      "_TZ3000_9HPXG80K",
-      "_TZ3000_b3mgfu0d",
-      "_tz3000_hhiodade",
-      "_TZ3000_hhiodade",
-      "_TZ3000_HHIODADE",
-      "_tz3000_ovyaisip",
-      "_TZ3000_ovyaisip",
-      "_TZ3000_OVYAISIP",
-      "_tz3000_pk8tgtdb",
-      "_TZ3000_pk8tgtdb",
-      "_TZ3000_PK8TGTDB",
-      "_tz3000_vw40zqp4",
-      "_TZ3000_vw40zqp4",
-      "_TZ3000_VW40ZQP4"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -72,7 +44,25 @@
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle the switch on/off 3 times quickly.",
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_hhiodade",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tz3000_hhiodade",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_tz3000_vw40zqp4",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tz3000_vw40zqp4",
+        "productId": "TS0011"
+      }
+    ]
   },
   "settings": [
     {

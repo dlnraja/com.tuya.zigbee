@@ -13,14 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_x13bu7za",
-      "_TZ3210_x13bu7za",
-      "_TZ3210_X13BU7ZA"
-    ],
-    "productId": [
-      "TS0505B"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

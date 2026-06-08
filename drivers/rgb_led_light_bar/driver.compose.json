@@ -13,15 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI"
-    ],
-    "productId": [
-      "TS0505A",
-      "TS0505B"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

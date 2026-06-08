@@ -96925,7 +96925,7 @@
     ]
   },
   "_TZE200_9XFJIXAP": {
-    "driverId": "radiator_valve",
+    "driverId": "thermostatic_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -121039,7 +121039,7 @@
     ]
   },
   "_TZE200_u6x1zyv2": {
-    "driverId": "motion_sensor",
+    "driverId": "rain_sensor",
     "type": "motion_sensor",
     "powerSource": "battery",
     "modelIds": [

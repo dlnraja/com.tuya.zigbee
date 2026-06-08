@@ -26,10 +26,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0001",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -62,10 +58,6 @@
       "instruction": {
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
-    },
-    "manufacturerName": [
-      "_TZE284_gomuk3dc",
-      "_TZE284_loejka0i"
-    ]
+    }
   }
 }

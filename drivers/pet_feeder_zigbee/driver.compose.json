@@ -35,21 +35,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_aqi3n6a3",
-      "_TZE200_aqi3n6a3",
-      "_TZE200_AQI3N6A3",
-      "_tze200_b8o5vk1c",
-      "_TZE200_b8o5vk1c",
-      "_TZE200_B8O5VK1C",
-      "_TZE200_SH1BTABB",
-      "_tze204_sh1btabb",
-      "_TZE204_sh1btabb",
-      "_TZE204_SH1BTABB"
-    ],
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -57,7 +42,21 @@
           6
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_aqi3n6a3",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_b8o5vk1c",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_sh1btabb",
+        "productId": "TS0601"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/pet_feeder_zigbee/assets/images/small.png",

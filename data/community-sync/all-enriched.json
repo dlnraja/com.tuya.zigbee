@@ -3064,6 +3064,118 @@
     "source": "Johan"
   },
   {
+    "mfr": "TUYATEC-lha8pbwd",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-zn9wyqtr",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-53o41joc",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-deetibst",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-dgtxmihe",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-b5g40alm",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-dxnohkpd",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "pirsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
     "mfr": "_TYZB01_jytabjkb",
     "productId": [
       "TS0202"
@@ -3357,118 +3469,6 @@
       "TS0202"
     ],
     "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-lha8pbwd",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-zn9wyqtr",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-53o41joc",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-deetibst",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-dgtxmihe",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-b5g40alm",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-dxnohkpd",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
     "deviceType": "sensor",
     "capabilities": [
       "alarm_motion",
@@ -4388,11 +4388,11 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_kdpxju99",
+    "mfr": "_TZ3000_h1jnz6l8",
     "productId": [
       "TS0505A"
     ],
-    "driver": "rgb_spot_GU10",
+    "driver": "rgb_spot_GardenLight",
     "deviceType": null,
     "capabilities": [],
     "hasBattery": false,
@@ -4401,11 +4401,11 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_h1jnz6l8",
+    "mfr": "_TZ3000_kdpxju99",
     "productId": [
       "TS0505A"
     ],
-    "driver": "rgb_spot_GardenLight",
+    "driver": "rgb_spot_GU10",
     "deviceType": null,
     "capabilities": [],
     "hasBattery": false,
@@ -4507,573 +4507,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qeuvnohg",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartPlug_DinRail",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_cayepv1a",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartPlug_DinRail",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_lepzuhto",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartPlug_DinRail",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qystbcjg",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartPlug_DinRail",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_6l1pjfqe",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartPlug_DinRail",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_yvx5lh6k",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smart_air_detection_box",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_formaldehyde",
-      "measure_voc",
-      "measure_co2",
-      "measure_temperature",
-      "measure_humidity"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_8ygsuhe1",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smart_air_detection_box",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_formaldehyde",
-      "measure_voc",
-      "measure_co2",
-      "measure_temperature",
-      "measure_humidity"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_mja3fuja",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smart_air_detection_box",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_formaldehyde",
-      "measure_voc",
-      "measure_co2",
-      "measure_temperature",
-      "measure_humidity"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_ryfmq5rl",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smart_air_detection_box",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_formaldehyde",
-      "measure_voc",
-      "measure_co2",
-      "measure_temperature",
-      "measure_humidity"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_c2fmom5z",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smart_air_detection_box",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_formaldehyde",
-      "measure_voc",
-      "measure_co2",
-      "measure_temperature",
-      "measure_humidity"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_fa9mlvja",
-    "productId": [
-      "TS0041"
-    ],
-    "driver": "smart_button_switch",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_yj6k7vfo",
-    "productId": [
-      "TS0041"
-    ],
-    "driver": "smart_button_switch",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qgwcxxws",
-    "productId": [
-      "TS0041"
-    ],
-    "driver": "smart_button_switch",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ1800_ejwkn2h2",
-    "productId": [
-      "TY0203",
-      "TS0203"
-    ],
-    "driver": "smart_door_window_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_contact",
-      "alarm_battery",
-      "alarm_tamper"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_contact, alarm_battery, alarm_tamper",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_rcuyhwe3",
-    "productId": [
-      "TY0203",
-      "TS0203"
-    ],
-    "driver": "smart_door_window_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_contact",
-      "alarm_battery",
-      "alarm_tamper"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_contact, alarm_battery, alarm_tamper",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_eymunffl",
-    "productId": [
-      "TS0101",
-      "TS0049"
-    ],
-    "driver": "smart_garden_irrigation_control",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "alarm_battery",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, alarm_battery, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_cjfmu5he",
-    "productId": [
-      "TS0101",
-      "TS0049"
-    ],
-    "driver": "smart_garden_irrigation_control",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "alarm_battery",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, alarm_battery, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_kz1anoi8",
-    "productId": [
-      "TS0101",
-      "TS0049"
-    ],
-    "driver": "smart_garden_irrigation_control",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "alarm_battery",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, alarm_battery, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_mq4wujmp",
-    "productId": [
-      "TS0101",
-      "TS0049"
-    ],
-    "driver": "smart_garden_irrigation_control",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "alarm_battery",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, alarm_battery, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_abrsvsou",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_knob_switch",
-    "deviceType": "remote",
-    "capabilities": [
-      "dim"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_4fjiwweb",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_knob_switch",
-    "deviceType": "remote",
-    "capabilities": [
-      "dim"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qja6nq5z",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_knob_switch",
-    "deviceType": "remote",
-    "capabilities": [
-      "dim"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ixla93vd",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_knob_switch",
-    "deviceType": "remote",
-    "capabilities": [
-      "dim"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_uri7ongn",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_knob_switch",
-    "deviceType": "remote",
-    "capabilities": [
-      "dim"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ1800_fcdjzz3s",
-    "productId": [
-      "TY0202"
-    ],
-    "driver": "smart_motion_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_motion",
-      "alarm_battery",
-      "alarm_tamper"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_motion, alarm_battery, alarm_tamper",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_kjfzuycl",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_remote_1_button",
-    "deviceType": "remote",
-    "capabilities": [
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_rco1yzb1",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_remote_1_button",
-    "deviceType": "remote",
-    "capabilities": [
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_yirp2pgd",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_remote_1_button",
-    "deviceType": "remote",
-    "capabilities": [
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ja5osu5g",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "smart_remote_1_button_2",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_fsiepnrh",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYZB01_qm6djpta",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_p6ju8myv",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_eo3dttwe",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYZB01_phjeraqq",
-    "productId": [
-      "TS0001"
-    ],
-    "driver": "smart_switch",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
     "source": "Johan"
   },
   {
@@ -6122,6 +5555,573 @@
     "hasBattery": false,
     "vendor": null,
     "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_qeuvnohg",
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS011F"
+    ],
+    "driver": "smartPlug_DinRail",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_cayepv1a",
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS011F"
+    ],
+    "driver": "smartPlug_DinRail",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_lepzuhto",
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS011F"
+    ],
+    "driver": "smartPlug_DinRail",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_qystbcjg",
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS011F"
+    ],
+    "driver": "smartPlug_DinRail",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_6l1pjfqe",
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS011F"
+    ],
+    "driver": "smartPlug_DinRail",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZE200_yvx5lh6k",
+    "productId": [
+      "TS0601"
+    ],
+    "driver": "smart_air_detection_box",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZE200_8ygsuhe1",
+    "productId": [
+      "TS0601"
+    ],
+    "driver": "smart_air_detection_box",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZE200_mja3fuja",
+    "productId": [
+      "TS0601"
+    ],
+    "driver": "smart_air_detection_box",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZE200_ryfmq5rl",
+    "productId": [
+      "TS0601"
+    ],
+    "driver": "smart_air_detection_box",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZE200_c2fmom5z",
+    "productId": [
+      "TS0601"
+    ],
+    "driver": "smart_air_detection_box",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_formaldehyde",
+      "measure_voc",
+      "measure_co2",
+      "measure_temperature",
+      "measure_humidity"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "measure_formaldehyde, measure_voc, measure_co2, measure_temperature, measure_humidity",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_fa9mlvja",
+    "productId": [
+      "TS0041"
+    ],
+    "driver": "smart_button_switch",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_yj6k7vfo",
+    "productId": [
+      "TS0041"
+    ],
+    "driver": "smart_button_switch",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_qgwcxxws",
+    "productId": [
+      "TS0041"
+    ],
+    "driver": "smart_button_switch",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ1800_ejwkn2h2",
+    "productId": [
+      "TY0203",
+      "TS0203"
+    ],
+    "driver": "smart_door_window_sensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_battery",
+      "alarm_contact",
+      "alarm_battery",
+      "alarm_tamper"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_battery, alarm_contact, alarm_battery, alarm_tamper",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_rcuyhwe3",
+    "productId": [
+      "TY0203",
+      "TS0203"
+    ],
+    "driver": "smart_door_window_sensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_battery",
+      "alarm_contact",
+      "alarm_battery",
+      "alarm_tamper"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_battery, alarm_contact, alarm_battery, alarm_tamper",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3210_eymunffl",
+    "productId": [
+      "TS0101",
+      "TS0049"
+    ],
+    "driver": "smart_garden_irrigation_control",
+    "deviceType": "other",
+    "capabilities": [
+      "onoff",
+      "alarm_battery",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "onoff, alarm_battery, measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_cjfmu5he",
+    "productId": [
+      "TS0101",
+      "TS0049"
+    ],
+    "driver": "smart_garden_irrigation_control",
+    "deviceType": "other",
+    "capabilities": [
+      "onoff",
+      "alarm_battery",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "onoff, alarm_battery, measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_kz1anoi8",
+    "productId": [
+      "TS0101",
+      "TS0049"
+    ],
+    "driver": "smart_garden_irrigation_control",
+    "deviceType": "other",
+    "capabilities": [
+      "onoff",
+      "alarm_battery",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "onoff, alarm_battery, measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_mq4wujmp",
+    "productId": [
+      "TS0101",
+      "TS0049"
+    ],
+    "driver": "smart_garden_irrigation_control",
+    "deviceType": "other",
+    "capabilities": [
+      "onoff",
+      "alarm_battery",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "onoff, alarm_battery, measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_abrsvsou",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_knob_switch",
+    "deviceType": "remote",
+    "capabilities": [
+      "dim"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "dim",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_4fjiwweb",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_knob_switch",
+    "deviceType": "remote",
+    "capabilities": [
+      "dim"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "dim",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_qja6nq5z",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_knob_switch",
+    "deviceType": "remote",
+    "capabilities": [
+      "dim"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "dim",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_ixla93vd",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_knob_switch",
+    "deviceType": "remote",
+    "capabilities": [
+      "dim"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "dim",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_uri7ongn",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_knob_switch",
+    "deviceType": "remote",
+    "capabilities": [
+      "dim"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "dim",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ1800_fcdjzz3s",
+    "productId": [
+      "TY0202"
+    ],
+    "driver": "smart_motion_sensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_battery",
+      "alarm_motion",
+      "alarm_battery",
+      "alarm_tamper"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_battery, alarm_motion, alarm_battery, alarm_tamper",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_kjfzuycl",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_remote_1_button",
+    "deviceType": "remote",
+    "capabilities": [
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_rco1yzb1",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_remote_1_button",
+    "deviceType": "remote",
+    "capabilities": [
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_yirp2pgd",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_remote_1_button",
+    "deviceType": "remote",
+    "capabilities": [
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_ja5osu5g",
+    "productId": [
+      "TS004F"
+    ],
+    "driver": "smart_remote_1_button_2",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_fsiepnrh",
+    "productId": [
+      "TS0215A"
+    ],
+    "driver": "smart_remote_4_buttons",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TYZB01_qm6djpta",
+    "productId": [
+      "TS0215A"
+    ],
+    "driver": "smart_remote_4_buttons",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_p6ju8myv",
+    "productId": [
+      "TS0215A"
+    ],
+    "driver": "smart_remote_4_buttons",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TZ3000_eo3dttwe",
+    "productId": [
+      "TS0215A"
+    ],
+    "driver": "smart_remote_4_buttons",
+    "deviceType": "remote",
+    "capabilities": [],
+    "hasBattery": true,
+    "vendor": null,
+    "description": null,
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TYZB01_phjeraqq",
+    "productId": [
+      "TS0001"
+    ],
+    "driver": "smart_switch",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff",
     "source": "Johan"
   },
   {

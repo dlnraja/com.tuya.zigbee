@@ -24,17 +24,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "CK-TLSR8656-SS5-01(7000)",
-      "SNZB-01",
-      "SNZB-01M",
-      "SNZB-01P",
-      "TS0040",
-      "TS0041",
-      "TS0044",
-      "WB-01",
-      "WB01"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -60,20 +49,331 @@
         "da": "Hold nulstillingsknappen inde i 5 sekunder, indtil LED'en blinker hurtigt"
       }
     },
-    "manufacturerName": [
-      "_tyzb02_keyjqthh",
-      "_TYZB02_KEYJQTHH",
-      "_tz3000_2t1g0sdb",
-      "_TZ3000_2t1g0sdb",
-      "_TZ3000_2T1G0SDB",
-      "ts0041",
-      "TS0041",
-      "ts0042",
-      "TS0042",
-      "ts0043",
-      "TS0043",
-      "ts0044",
-      "TS0044"
+    "fingerprints": [
+      {
+        "manufacturerName": "TS0041",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "TS0041",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "TS0042",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "TS0043",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "TS0044",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "_TYZB01_",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "_TYZB02_KEYJQTHH",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "_TZ3000_",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "_TZ3000_2T1G0SDB",
+        "productId": "WB01"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "CK-TLSR8656-SS5-01(7000)"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "SNZB-01"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "SNZB-01M"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "SNZB-01P"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "TS0040"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "WB-01"
+      },
+      {
+        "manufacturerName": "_TZ3400_",
+        "productId": "WB01"
+      }
     ]
   },
   "images": {

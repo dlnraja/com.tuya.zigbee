@@ -15,15 +15,6 @@
     "light_mode"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI"
-    ],
-    "productId": [
-      "TS0503",
-      "TS0504"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

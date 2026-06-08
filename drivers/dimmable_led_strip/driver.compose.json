@@ -13,14 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_invesber",
-      "_TZ3210_invesber",
-      "_TZ3210_INVESBER"
-    ],
-    "productId": [
-      "TS0502B"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -44,7 +36,13 @@
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3210_invesber",
+        "productId": "TS0502B"
+      }
+    ]
   },
   "class": "light",
   "capabilities": [

@@ -23,14 +23,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_cymsnfvf",
-      "_TZ3000_cymsnfvf",
-      "_TZ3000_CYMSNFVF"
-    ],
-    "productId": [
-      "TS011F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

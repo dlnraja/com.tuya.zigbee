@@ -24,15 +24,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_placeholder_generic",
-      "_TZE200_placeholder_generic",
-      "_TZE200_PLACEHOLDER_GENERIC"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

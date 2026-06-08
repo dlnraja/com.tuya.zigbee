@@ -24,10 +24,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0205",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,14 +42,23 @@
         "en": "Press and hold down test switch until the LED blinks green."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_tze204_kgaxpvxr",
-      "_TZE204_kgaxpvxr",
-      "_TZE204_KGAXPVXR",
-      "_tze284_n4ttsck2",
-      "_TZE284_n4ttsck2",
-      "_TZE284_N4TTSCK2"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze204_kgaxpvxr",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze204_kgaxpvxr",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_n4ttsck2",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze284_n4ttsck2",
+        "productId": "TS0601"
+      }
     ]
   }
 }

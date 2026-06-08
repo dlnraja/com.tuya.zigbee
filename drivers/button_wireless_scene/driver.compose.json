@@ -48,21 +48,6 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_GBM10JNJ",
-      "_TZ3000_KJPLYRN4",
-      "_TZ3000_kjplyrn4",
-      "_tz3000_gbm10jnj",
-      "_tz3000_kjplyrn4"
-    ],
-    "productId": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0601",
-      "TS0601_wirelesssw"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -94,7 +79,33 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3000_KJPLYRN4",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_KJPLYRN4",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_KJPLYRN4",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_KJPLYRN4",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_KJPLYRN4",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_KJPLYRN4",
+        "productId": "TS0601_wirelesssw"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_2/assets/images/small.png",

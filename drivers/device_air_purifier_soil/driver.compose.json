@@ -68,25 +68,13 @@
   },
   "subDevices": [],
   "zigbee": {
-    "productId": [
-      "Arteco",
-      "CS-201Z",
-      "TS0601",
-      "TS0601_air_purifier",
-      "ZG-303Z"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
           0
         ]
       }
-    },
-    "manufacturerName": [
-      "_tz3000_dummy_fix",
-      "_TZ3000_dummy_fix",
-      "_TZ3000_DUMMY_FIX"
-    ]
+    }
   },
   "settings": [
     {

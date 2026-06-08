@@ -51,9 +51,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -61,10 +58,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_RUFDTFYV"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",

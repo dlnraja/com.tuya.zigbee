@@ -26,10 +26,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0203",
-      "TY0203"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,9 +44,6 @@
       "instruction": {
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix"
-    ]
+    }
   }
 }

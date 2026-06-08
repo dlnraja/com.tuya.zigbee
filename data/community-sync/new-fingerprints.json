@@ -68,6 +68,27 @@
     "source": "Johan"
   },
   {
+    "mfr": "_TZ3000_8nkb7mof",
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS011F"
+    ],
+    "driver": "smartplug",
+    "deviceType": "socket",
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "meter_power",
+      "measure_current",
+      "measure_voltage"
+    ],
+    "hasBattery": false,
+    "vendor": null,
+    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
+    "source": "Johan"
+  },
+  {
     "mfr": "_TZ3000_rco1yzb1",
     "productId": [
       "TS004F"
@@ -108,27 +129,6 @@
     "hasBattery": false,
     "vendor": null,
     "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_8nkb7mof",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
     "source": "Johan"
   },
   {

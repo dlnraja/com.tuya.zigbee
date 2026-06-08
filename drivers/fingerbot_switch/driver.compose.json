@@ -11,23 +11,12 @@
     "button.push"
   ],
   "zigbee": {
-    "productId": [
-      "TS0001",
-      "TS0601"
-    ],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_tz3210_m2ax2xyk",
-      "_TZ3210_m2ax2xyk",
-      "_TZ3210_M2AX2XYK",
-      "_TZ3210_dse8ogfy",
-      "_TZ3210_j4pdtz9v"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -35,7 +24,17 @@
           6
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3210_m2ax2xyk",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_tz3210_m2ax2xyk",
+        "productId": "TS0601"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",

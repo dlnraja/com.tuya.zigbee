@@ -32,10 +32,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS110E",
-      "TS110F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -86,22 +82,31 @@
         "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "manufacturerName": [
-      "_TZE200_E3OITDYU",
-      "_TZE200_PLACEHOLDER_GENERIC",
-      "_TZE200_placeholder_generic",
-      "_TZE204_BXOO2SWD",
-      "_TZE204_JTBGUSDC",
-      "_TZE204_O9GYSZW2",
-      "_TZE204_ZENJ4LXV",
-      "_TZE204_jtbgusdc",
-      "_TZE204_o9gyszw2",
-      "_tze200_e3oitdyu",
-      "_tze200_placeholder_generic",
-      "_tze204_bxoo2swd",
-      "_tze204_jtbgusdc",
-      "_tze204_o9gyszw2",
-      "_tze204_zenj4lxv"
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_E3OITDYU",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_E3OITDYU",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_BXOO2SWD",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_BXOO2SWD",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_ZENJ4LXV",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_ZENJ4LXV",
+        "productId": "TS110F"
+      }
     ]
   }
 }

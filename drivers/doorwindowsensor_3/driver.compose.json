@@ -25,14 +25,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_bpkijo14",
-      "_TZ3000_bpkijo14",
-      "_TZ3000_BPKIJO14"
-    ],
-    "productId": [
-      "TS0203"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

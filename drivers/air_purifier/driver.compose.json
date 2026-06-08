@@ -32,10 +32,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -49,50 +45,15 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "manufacturerName": [
-      "_TYZB01_a476raq2",
-      "_TYZB01_ftdkanlj",
-      "_TYZB01_hjsgdkfl",
-      "_TYZB01_kvwjujy9",
-      "_TZ2000_a476raq2",
-      "_TZ2000_avdnvykf",
-      "_TZ2000_hjsgdkfl",
-      "_TZ2000_xogb73am",
-      "_TZ3000_8ybe88nf",
-      "_TZ3000_f2bw0b6k",
-      "_TZ3000_fie1dpkm",
-      "_TZ3000_rusu2vzb",
-      "_TZ3000_utwgoauk",
-      "_TZ3000_zl1kmjqx",
-      "_TZ3210_huzkzqyk",
-      "_TZE200_9mahtqtg",
-      "_TZE200_locansqn",
-      "_TZE200_r731zlxk",
-      "_TZE204_5cuocqty",
-      "_TZE204_aoclfnxz",
-      "_tze204_qpn5q17m",
-      "_TZE204_qpn5q17m",
-      "_TZE204_QPN5Q17M",
-      "_TZE204_upagmta9",
-      "_TZE204_vevc4c6g",
-      "_TZE204_yjjdcqsq",
-      "_TZE284_aao3yzhs",
-      "_TZE284_g2e6cpnw",
-      "_TZE284_sgabhwa6",
-      "TUYATEC-1g3tawnp",
-      "TUYATEC-1uxx9cci",
-      "TUYATEC-abkehqus",
-      "TUYATEC-Bfq2i2Sy",
-      "TUYATEC-gqhxixyk",
-      "TUYATEC-HaoiuWzy",
-      "TUYATEC-ojmxeikg",
-      "TUYATEC-ojmxeikq",
-      "TUYATEC-prhs1rsd",
-      "TUYATEC-qun7vq14",
-      "TUYATEC-riuj5xzs",
-      "TUYATEC-v3uxbuxy",
-      "TUYATEC-vmgh3fxd",
-      "TUYATEC-yg5dcbfu"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze204_qpn5q17m",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_qpn5q17m",
+        "productId": "TS0601_air_purifier"
+      }
     ]
   },
   "images": {

@@ -10,7 +10,9 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilities": ["measure_battery"],
+  "capabilities": [
+    "measure_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032"
@@ -21,14 +23,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze20x_xxxxxxxx",
-      "_TZE20X_xxxxxxxx",
-      "_TZE20X_XXXXXXXX"
-    ],
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -39,7 +33,13 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze20x_xxxxxxxx",
+        "productId": "TS0601"
+      }
+    ]
   },
   "learnmode": {
     "instruction": {

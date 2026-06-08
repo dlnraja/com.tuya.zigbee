@@ -13,17 +13,6 @@
   ],
   "energy": {},
   "zigbee": {
-    "productId": [
-      "TS0011",
-      "TS0052",
-      "TS0601",
-      "TS0601_dim1",
-      "TS1101",
-      "TS110E",
-      "TS110F",
-      "ZBMINI-DIM",
-      "ZBMINID"
-    ],
     "learnmode": {
       "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
       "instruction": {
@@ -39,273 +28,2635 @@
         ]
       }
     },
-    "manufacturerName": [
-      "TS110E",
-      "TS110F",
-      "_TYST11_pisltm67",
-      "_TYZB01_QEZUIN6K",
-      "_TZ3000_7YSDNEBC",
-      "_TZ3000_7ysdnebc",
-      "_TZ3000_F3XKA28J",
-      "_TZ3000_FJGWFL3Z",
-      "_TZ3000_FVH3PJAZ",
-      "_TZ3000_HEXQJ6LS",
-      "_TZ3000_KTUOYVT5",
-      "_TZ3000_KVWRDF47",
-      "_TZ3000_MGUSV51K",
-      "_TZ3000_SDKLHKRS",
-      "_TZ3000_SFC7ZTZE",
-      "_TZ3000_SVOSNZMU",
-      "_TZ3000_ZJTXNOFT",
-      "_TZ3000_f3xka28j",
-      "_TZ3000_fjgwfl3z",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_hexqj6ls",
-      "_TZ3000_ktuoyvt5",
-      "_TZ3000_kvwrdf47",
-      "_TZ3000_mgusv51k",
-      "_TZ3000_oiymh3qu",
-      "_TZ3000_sdklhkrs",
-      "_TZ3000_sfc7ztze",
-      "_TZ3000_svosnzmu",
-      "_TZ3000_zjtxnoft",
-      "_TZ3210_2UK4Z8CE",
-      "_TZ3210_2uk4z8ce",
-      "_TZ3210_3LBTUXGP",
-      "_TZ3210_3MPWQZUU",
-      "_TZ3210_3lbtuxgp",
-      "_TZ3210_3mpwqzuu",
-      "_TZ3210_4UBYLGHK",
-      "_TZ3210_4WHIGL8I",
-      "_TZ3210_4ZINQ6IO",
-      "_TZ3210_4ubylghk",
-      "_TZ3210_4whigl8i",
-      "_TZ3210_4zinq6io",
-      "_TZ3210_5RTA89NJ",
-      "_TZ3210_5rta89nj",
-      "_TZ3210_9Q49BASR",
-      "_TZ3210_9S5HT4D6",
-      "_TZ3210_9q49basr",
-      "_TZ3210_9s5ht4d6",
-      "_TZ3210_AGJX0PXT",
-      "_TZ3210_D062RV7J",
-      "_TZ3210_DFE8HWLQ",
-      "_TZ3210_E5T9BFDV",
-      "_TZ3210_EEJM8DCR",
-      "_TZ3210_EJCTEPKU",
-      "_TZ3210_EYMUNFFL",
-      "_TZ3210_F8DQBUZE",
-      "_TZ3210_FXLKQWFL",
-      "_TZ3210_HBMQBOZL",
-      "_TZ3210_HUZKZQYK",
-      "_TZ3210_I680RTJA",
-      "_TZ3210_INVESBER",
-      "_TZ3210_IP2AKL4W",
-      "_TZ3210_IYSTCADI",
-      "_TZ3210_K1MSUVG6",
-      "_TZ3210_K1PE6IBM",
-      "_TZ3210_KVNBGRRJ",
-      "_TZ3210_MGQZZWXI",
-      "_TZ3210_MT5XJOY6",
-      "_TZ3210_NGQK6JIA",
-      "_TZ3210_ODLGHNA1",
-      "_TZ3210_ONEJZ0GT",
-      "_TZ3210_PAGAJPOG",
-      "_TZ3210_PNZBSKUV",
-      "_TZ3210_Q1SQ6PBA",
-      "_TZ3210_RKGNGB5O",
-      "_TZ3210_RL6K0OET",
-      "_TZ3210_VFWHHLDZ",
-      "_TZ3210_WDEXAYPG",
-      "_TZ3210_WEAQKHAB",
-      "_TZ3210_YSFO0WLA",
-      "_TZ3210_agjx0pxt",
-      "_TZ3210_d062rv7j",
-      "_TZ3210_dfe8hwlq",
-      "_TZ3210_e5t9bfdv",
-      "_TZ3210_eejm8dcr",
-      "_TZ3210_ejctepku",
-      "_TZ3210_eymunffl",
-      "_TZ3210_f8dqbuze",
-      "_TZ3210_fxlkqwfl",
-      "_TZ3210_hbmqbozl",
-      "_TZ3210_i680rtja",
-      "_TZ3210_invesber",
-      "_TZ3210_ip2akl4w",
-      "_TZ3210_iystcadi",
-      "_TZ3210_k1msuvg6",
-      "_TZ3210_k1pe6ibm",
-      "_TZ3210_kvnbgrrj",
-      "_TZ3210_mgqzzwxi",
-      "_TZ3210_mt5xjoy6",
-      "_TZ3210_ngqk6jia",
-      "_TZ3210_odlghna1",
-      "_TZ3210_onejz0gt",
-      "_TZ3210_pagajpog",
-      "_TZ3210_pnzbskuv",
-      "_TZ3210_q1sq6pba",
-      "_TZ3210_rkgngb5o",
-      "_TZ3210_rl6k0oet",
-      "_TZ3210_vfwhhldz",
-      "_TZ3210_wdexaypg",
-      "_TZ3210_weaqkhab",
-      "_TZ3210_ysfo0wla",
-      "_TZB210_G01IE5WU",
-      "_TZB210_RKGNGB5O",
-      "_TZB210_g01ie5wu",
-      "_TZB210_rkgngb5o",
-      "_TZE200_0HB4RDNP",
-      "_TZE200_0hb4rdnp",
-      "_TZE200_0nauxa0p",
-      "_TZE200_4MH6TYYO",
-      "_TZE200_4mh6tyyo",
-      "_TZE200_9cxuhakf",
-      "_TZE200_DCNSGGVZ",
-      "_TZE200_GNE0E6MK",
-      "_TZE200_QZAING2G",
-      "_TZE200_TGEQDJGK",
-      "_TZE200_TSXPL0D0",
-      "_TZE200_WUKB7RHC",
-      "_TZE200_XPQ2RZHQ",
-      "_TZE200_YKGAR0OW",
-      "_TZE200_a0syesf5",
-      "_TZE200_dcnsggvz",
-      "_TZE200_e3oitdyu",
-      "_TZE200_edl8pz1k",
-      "_TZE200_fjjbhx9d",
-      "_TZE200_gne0e6mk",
-      "_TZE200_gwkapsoq",
-      "_TZE200_holel4dk",
-      "_TZE200_ikvncluo",
-      "_TZE200_jva8ink8",
-      "_TZE200_khah2lkr",
-      "_TZE200_la2c2uo9",
-      "_TZE200_lyetpprm",
-      "_TZE200_nslr42tt",
-      "_TZE200_p0gzbqct",
-      "_TZE200_pisltm67",
-      "_TZE200_qzaing2g",
-      "_TZE200_sgpeacqp",
-      "_TZE200_tgeqdjgk",
-      "_TZE200_tsxpl0d0",
-      "_TZE200_vizxbhco",
-      "_TZE200_vm1gyrso",
-      "_TZE200_whpb9yts",
-      "_TZE200_wukb7rhc",
-      "_TZE200_xpq2rzhq",
-      "_TZE200_ykgar0ow",
-      "_TZE200_ztc6ggyl",
-      "_TZE204_1V1DXKCK",
-      "_TZE204_1v1dxkck",
-      "_TZE204_432zhuwe",
-      "_TZE204_68UTEMIO",
-      "_TZE204_68utemio",
-      "_TZE204_6a4vxfnv",
-      "_TZE204_BXOO2SWD",
-      "_TZE204_DCNSGGVZ",
-      "_TZE204_HLX9TNZB",
-      "_TZE204_XSM7L9XA",
-      "_TZE204_ZENJ4LXV",
-      "_TZE204_ZNVWZXKQ",
-      "_TZE204_bxoo2swd",
-      "_TZE204_dcnsggvz",
-      "_TZE204_edl8pz1k",
-      "_TZE204_hlx9tnzb",
-      "_TZE204_kobbcyum",
-      "_TZE204_xpq2rzhq",
-      "_TZE204_xsm7l9xa",
-      "_TZE204_zenj4lxv",
-      "_TZE204_znvwzxkq",
-      "_TZE284_432zhuwe",
-      "_TZE284_68UTEMIO",
-      "_TZE284_68utemio",
-      "_TZE284_ZNVWZXKQ",
-      "_TZE284_hecsejsb",
-      "_TZE284_kobbcyum",
-      "_TZE284_s5vuaadg",
-      "_TZE284_tuhfx7tf",
-      "_TZE284_znvwzxkq",
-      "_tyzb01_qezuin6k",
-      "_tz3000_",
-      "_tz3000_7ysdnebc",
-      "_tz3000_f3xka28j",
-      "_tz3000_fjgwfl3z",
-      "_tz3000_fvh3pjaz",
-      "_tz3000_hexqj6ls",
-      "_tz3000_ktuoyvt5",
-      "_tz3000_kvwrdf47",
-      "_tz3000_mgusv51k",
-      "_tz3000_sdklhkrs",
-      "_tz3000_sfc7ztze",
-      "_tz3000_svosnzmu",
-      "_tz3000_zjtxnoft",
-      "_tz3210_",
-      "_tz3210_2uk4z8ce",
-      "_tz3210_3lbtuxgp",
-      "_tz3210_3mpwqzuu",
-      "_tz3210_4ubylghk",
-      "_tz3210_4whigl8i",
-      "_tz3210_4zinq6io",
-      "_tz3210_5rta89nj",
-      "_tz3210_9q49basr",
-      "_tz3210_9s5ht4d6",
-      "_tz3210_agjx0pxt",
-      "_tz3210_d062rv7j",
-      "_tz3210_dfe8hwlq",
-      "_tz3210_e5t9bfdv",
-      "_tz3210_eejm8dcr",
-      "_tz3210_ejctepku",
-      "_tz3210_eymunffl",
-      "_tz3210_f8dqbuze",
-      "_tz3210_fxlkqwfl",
-      "_tz3210_hbmqbozl",
-      "_tz3210_huzkzqyk",
-      "_tz3210_i680rtja",
-      "_tz3210_invesber",
-      "_tz3210_ip2akl4w",
-      "_tz3210_iystcadi",
-      "_tz3210_k1msuvg6",
-      "_tz3210_k1pe6ibm",
-      "_tz3210_kvnbgrrj",
-      "_tz3210_mgqzzwxi",
-      "_tz3210_mt5xjoy6",
-      "_tz3210_ngqk6jia",
-      "_tz3210_odlghna1",
-      "_tz3210_onejz0gt",
-      "_tz3210_pagajpog",
-      "_tz3210_pnzbskuv",
-      "_tz3210_q1sq6pba",
-      "_tz3210_rkgngb5o",
-      "_tz3210_rl6k0oet",
-      "_tz3210_vfwhhldz",
-      "_tz3210_wdexaypg",
-      "_tz3210_weaqkhab",
-      "_tz3210_ysfo0wla",
-      "_tzb210_g01ie5wu",
-      "_tzb210_rkgngb5o",
-      "_tze200_",
-      "_tze200_0hb4rdnp",
-      "_tze200_4mh6tyyo",
-      "_tze200_dcnsggvz",
-      "_tze200_gne0e6mk",
-      "_tze200_qzaing2g",
-      "_tze200_tgeqdjgk",
-      "_tze200_tsxpl0d0",
-      "_tze200_wukb7rhc",
-      "_tze200_xpq2rzhq",
-      "_tze200_ykgar0ow",
-      "_tze204_1v1dxkck",
-      "_tze204_68utemio",
-      "_tze204_bxoo2swd",
-      "_tze204_dcnsggvz",
-      "_tze204_hlx9tnzb",
-      "_tze204_xsm7l9xa",
-      "_tze204_zenj4lxv",
-      "_tze204_znvwzxkq",
-      "_tze284_68utemio",
-      "_tze284_znvwzxkq",
-      "ts110e",
-      "ts110f"
+    "fingerprints": [
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "TS110E",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "TS110F",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_7YSDNEBC",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_F3XKA28J",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_FJGWFL3Z",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_HEXQJ6LS",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_KTUOYVT5",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_KVWRDF47",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_MGUSV51K",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_SDKLHKRS",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_SFC7ZTZE",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_SVOSNZMU",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZJTXNOFT",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_2UK4Z8CE",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_3LBTUXGP",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_3MPWQZUU",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_4UBYLGHK",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_4WHIGL8I",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_4ZINQ6IO",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_5RTA89NJ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_9Q49BASR",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_9S5HT4D6",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_AGJX0PXT",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_D062RV7J",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_DFE8HWLQ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_E5T9BFDV",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_EEJM8DCR",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_EJCTEPKU",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_EYMUNFFL",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_F8DQBUZE",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_FXLKQWFL",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_GUIJTL8K",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_HBMQBOZL",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_HQUIXJEG",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_HUZKZQYK",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_I680RTJA",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_IP2AKL4W",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_IYSTCADI",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1MSUVG6",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_K1PE6IBM",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_KVNBGRRJ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_MGQZZWXI",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_MT5XJOY6",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_ODLGHNA1",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_ONEJZ0GT",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_PAGAJPOG",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_PNZBSKUV",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_Q1SQ6PBA",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_RL6K0OET",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_VFWHHLDZ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_WDEXAYPG",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_WEAQKHAB",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZ3210_YSFO0WLA",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZB210_G01IE5WU",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZB210_RKGNGB5O",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_0HB4RDNP",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_4MH6TYYO",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_DCNSGGVZ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_GNE0E6MK",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_QZAING2G",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_TGEQDJGK",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_TSXPL0D0",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_WUKB7RHC",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_XPQ2RZHQ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE200_YKGAR0OW",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE204_1V1DXKCK",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE204_68UTEMIO",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE204_HLX9TNZB",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE204_XSM7L9XA",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE204_ZNVWZXKQ",
+        "productId": "ZBMINID"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS0011"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS0052"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS0601_dim1"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS1101"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS110E"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "TS110F"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "ZBMINI-DIM"
+      },
+      {
+        "manufacturerName": "_TZE284_68UTEMIO",
+        "productId": "ZBMINID"
+      }
     ]
   },
   "settings": [

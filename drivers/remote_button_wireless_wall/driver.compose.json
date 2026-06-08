@@ -44,33 +44,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_11PG3IMA",
-      "_TZ3000_11pg3ima",
-      "_TZ3000_ET7AFZXZ",
-      "_TZ3000_ISZEGWPD",
-      "_TZ3000_JCSPR0TP",
-      "_TZ3000_NUOMBROO",
-      "_TZ3000_UAA99ARV",
-      "_TZ3000_et7afzxz",
-      "_TZ3000_jcspr0tp",
-      "_TZ3000_nuombroo",
-      "_TZ3000_uaa99arv",
-      "_tz3000_11pg3ima",
-      "_tz3000_et7afzxz",
-      "_tz3000_iszegwpd",
-      "_tz3000_jcspr0tp",
-      "_tz3000_nuombroo",
-      "_tz3000_uaa99arv"
-    ],
-    "productId": [
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0046",
-      "TS004F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -101,7 +74,153 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3000_11PG3IMA",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_11PG3IMA",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_11PG3IMA",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_11PG3IMA",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_11PG3IMA",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_TZ3000_11PG3IMA",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_TZ3000_ET7AFZXZ",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_ET7AFZXZ",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_ET7AFZXZ",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_ET7AFZXZ",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_ET7AFZXZ",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_TZ3000_ET7AFZXZ",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_TZ3000_ISZEGWPD",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_ISZEGWPD",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_ISZEGWPD",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_ISZEGWPD",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_ISZEGWPD",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_TZ3000_ISZEGWPD",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_TZ3000_JCSPR0TP",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_JCSPR0TP",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_JCSPR0TP",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_JCSPR0TP",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_JCSPR0TP",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_TZ3000_JCSPR0TP",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_TZ3000_NUOMBROO",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_NUOMBROO",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_NUOMBROO",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_NUOMBROO",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_NUOMBROO",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_TZ3000_NUOMBROO",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_TZ3000_UAA99ARV",
+        "productId": "TS0041"
+      },
+      {
+        "manufacturerName": "_TZ3000_UAA99ARV",
+        "productId": "TS0042"
+      },
+      {
+        "manufacturerName": "_TZ3000_UAA99ARV",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_UAA99ARV",
+        "productId": "TS0044"
+      },
+      {
+        "manufacturerName": "_TZ3000_UAA99ARV",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_TZ3000_UAA99ARV",
+        "productId": "TS004F"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_1/assets/images/small.png",

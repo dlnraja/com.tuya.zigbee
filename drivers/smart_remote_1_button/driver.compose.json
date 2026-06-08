@@ -27,14 +27,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_yirp2pgd",
-      "_TZ3000_yirp2pgd",
-      "_TZ3000_YIRP2PGD"
-    ],
-    "productId": [
-      "TS004F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -53,7 +45,13 @@
       "instruction": {
         "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_yirp2pgd",
+        "productId": "TS004F"
+      }
+    ]
   },
   "settings": [
     {

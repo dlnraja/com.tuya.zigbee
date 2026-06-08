@@ -13,14 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_zdrhqmo0",
-      "_TZ3210_zdrhqmo0",
-      "_TZ3210_ZDRHQMO0"
-    ],
-    "productId": [
-      "TS0502B"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -44,7 +36,13 @@
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3210_zdrhqmo0",
+        "productId": "TS0502B"
+      }
+    ]
   },
   "class": "other",
   "capabilities": [

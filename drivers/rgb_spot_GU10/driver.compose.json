@@ -13,10 +13,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS0505A",
-      "TS0505B"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,10 +36,7 @@
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix"
-    ]
+    }
   },
   "class": "light",
   "capabilities": [

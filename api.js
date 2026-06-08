@@ -15,7 +15,6 @@ module.exports = [
             allDevices.push({
               id: device.getId(),
               name: device.getName(),
-              zoneName: device.getZone()?.getName() || '',
               driverId: device.getDriver().getId() || '',
               driverUri: device.getDriver().getUri() || ''
             });

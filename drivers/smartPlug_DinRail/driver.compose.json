@@ -26,16 +26,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_qeuvnohg",
-      "_TZ3000_qeuvnohg",
-      "_TZ3000_QEUVNOHG"
-    ],
-    "productId": [
-      "TS011F",
-      "TS0121",
-      "TSO121"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

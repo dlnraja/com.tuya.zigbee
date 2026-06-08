@@ -26,29 +26,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_4ux0ondb",
-      "_TZ3000_b28wrpvx",
-      "_tz3000_hdopuwv6",
-      "_TZ3000_hdopuwv6",
-      "_TZ3000_HDOPUWV6",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_o1jzcxou",
-      "_TZ3000_y4ona9me",
-      "_TZ3000_ysiog9xi",
-      "_TZ3000_yujkchbz",
-      "_TZ3210_2dfy6tol",
-      "_TZ3210_5ct6e7ye",
-      "_TZ3210_ddigca5n",
-      "_TZ3210_fhx7lk3d",
-      "_TZ3210_jlf1nepw",
-      "_TZ3210_rwmitwj4",
-      "_TZE284_myd45weu"
-    ],
-    "productId": [
-      "TS011F",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -93,6 +70,16 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_hdopuwv6",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tz3000_hdopuwv6",
+        "productId": "TS0601"
+      }
+    ]
   }
 }

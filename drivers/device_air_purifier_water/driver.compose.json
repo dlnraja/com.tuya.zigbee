@@ -68,10 +68,6 @@
     "large": "/drivers/water_tank_monitor/assets/images/large.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -79,11 +75,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_tze200_ojzhk75b"
-    ]
+    }
   },
   "energy": {
     "batteries": [
