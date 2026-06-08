@@ -6,6 +6,12 @@
   },
   "entries": [
     {
+      "version": "8.1.181",
+      "intro": {
+        "en": "Bed sensor SDK3 rewrite, MFR auto-adaptation, collision fixes, enrichment automation, auto-close workflow"
+      }
+    },
+    {
       "version": "8.1.83",
       "intro": {
         "en": "Bug fixes: bed_sensor battery, sensitivity DP9, fingerprint enrichment"
