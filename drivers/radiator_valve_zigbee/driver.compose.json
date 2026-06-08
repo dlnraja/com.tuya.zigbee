@@ -13,7 +13,8 @@
     "thermostat_mode",
     "measure_battery",
     "onoff",
-    "alarm_contact"
+    "alarm_contact",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

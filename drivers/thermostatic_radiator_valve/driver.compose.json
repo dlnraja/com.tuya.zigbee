@@ -4,6 +4,7 @@
   },
   "class": "thermostat",
   "capabilities": [
+    "alarm_battery",
     "target_temperature",
     "alarm_contact",
     "measure_battery"
