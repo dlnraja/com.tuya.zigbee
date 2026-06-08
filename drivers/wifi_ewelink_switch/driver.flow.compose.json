@@ -7,7 +7,8 @@
       },
       "titleFormatted": {
         "en": "Turned on"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_ewelink_switch_turned_off",
@@ -16,7 +17,8 @@
       },
       "titleFormatted": {
         "en": "Turned off"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -27,8 +29,8 @@
       },
       "titleFormatted": {
         "en": "Is on"
-      }
+      },
+      "args": []
     }
-  ],
-  "actions": []
+  ]
 }

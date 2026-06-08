@@ -1,5 +1,4 @@
 {
-  "id": "doorwindowsensor_3",
   "name": {
     "en": "Door & Window Sensor"
   },
@@ -12,6 +11,7 @@
   ],
   "capabilities": [
     "alarm_contact",
+    "alarm_battery",
     "measure_battery"
   ],
   "energy": {
@@ -21,10 +21,18 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/doorwindowsensor_3/assets/images/large.png",
+    "small": "//drivers/doorwindowsensor_3/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_bpkijo14",
+      "_TZ3000_bpkijo14",
+      "_TZ3000_BPKIJO14"
+    ],
+    "productId": [
+      "TS0203"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -39,11 +47,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "/drivers/doorwindowsensor_3/assets/learn.svg",
       "instruction": {
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": []
-  }
+    }
+  },
+  "settings": []
 }

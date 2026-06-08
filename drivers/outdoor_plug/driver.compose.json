@@ -1,5 +1,4 @@
 {
-  "id": "outdoorplug",
   "name": {
     "en": "Outdoor Plug without metering"
   },
@@ -19,10 +18,18 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/outdoor_plug/assets/images/large.png",
+    "small": "//drivers/outdoor_plug/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_br3laukf",
+      "_TZ3000_br3laukf",
+      "_TZ3000_BR3LAUKF"
+    ],
+    "productId": [
+      "TS0101"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,7 +47,7 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": []
-  }
+    }
+  },
+  "settings": []
 }

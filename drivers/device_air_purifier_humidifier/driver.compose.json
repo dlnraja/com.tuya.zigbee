@@ -35,6 +35,16 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_tze200_mja3fuja"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,8 +58,7 @@
         "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "small": "/drivers/humidifier/assets/images/small.png",
@@ -211,6 +220,5 @@
         "fr": "Alerte si le score de santé descend sous cette valeur"
       }
     }
-  ],
-  "id": "device_air_purifier_humidifier"
+  ]
 }

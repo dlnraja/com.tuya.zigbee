@@ -54,6 +54,54 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_VKWRYFDR",
+      "_TZ3000_2XLVLNVP",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_2xlvlnvp",
+      "_TZ3000_8KCQDNGY",
+      "_TZ3000_8kcqdngy",
+      "_TZ3000_ATP3BEWS",
+      "_TZ3000_J4GG6D1B",
+      "_TZ3000_KO6V90PG",
+      "_TZ3000_QYOLRMC9",
+      "_TZ3000_TYPDPDPG",
+      "_TZ3000_U5U4CAHO",
+      "_TZ3000_atp3bews",
+      "_TZ3000_j4gg6d1b",
+      "_TZ3000_ko6v90pg",
+      "_TZ3000_qyolrmc9",
+      "_TZ3000_typdpdpg",
+      "_TZ3000_u5u4caho",
+      "_TZB210_2DP1BPQQ",
+      "_TZB210_2dp1bpqq",
+      "_TZB210_HBEJZGPJ",
+      "_TZB210_WLBHVABF",
+      "_TZB210_hbejzgpj",
+      "_TZB210_wlbhvabf",
+      "_TZE200_BSEED2G",
+      "_TZE200_bseed2g",
+      "_TZE204_BSEED3G",
+      "_TZE204_bseed3g",
+      "_tyzb01_vkwryfdr",
+      "_tz3000_2xlvlnvp",
+      "_tz3000_8kcqdngy",
+      "_tz3000_atp3bews",
+      "_tz3000_j4gg6d1b",
+      "_tz3000_ko6v90pg",
+      "_tz3000_qyolrmc9",
+      "_tz3000_typdpdpg",
+      "_tz3000_u5u4caho",
+      "_tzb210_2dp1bpqq",
+      "_tzb210_hbejzgpj",
+      "_tzb210_wlbhvabf",
+      "_tze200_bseed2g",
+      "_tze204_bseed3g"
+    ],
+    "productId": [
+      "TS0115",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -74,35 +122,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_8KCQDNGY",
-      "_TZ3000_ATP3BEWS",
-      "_TZ3000_J4GG6D1B",
-      "_TZ3000_KO6V90PG",
-      "_TZ3000_QYOLRMC9",
-      "_TZ3000_U5U4CAHO",
-      "_TZB210_2DP1BPQQ",
-      "_TZB210_HBEJZGPJ",
-      "_TZB210_WLBHVABF",
-      "_TZE200_BSEED2G",
-      "_TZE204_BSEED3G",
-      "_tz3000_8kcqdngy",
-      "_tz3000_atp3bews",
-      "_tz3000_j4gg6d1b",
-      "_tz3000_ko6v90pg",
-      "_tz3000_qyolrmc9",
-      "_tz3000_u5u4caho",
-      "_tzb210_2dp1bpqq",
-      "_tzb210_hbejzgpj",
-      "_tzb210_wlbhvabf",
-      "_tze200_bseed2g",
-      "_tze204_bseed3g"
-    ],
-    "productId": [
-      "TS0115",
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {

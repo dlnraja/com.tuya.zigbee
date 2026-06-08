@@ -21,6 +21,18 @@
     "zigbee"
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_1v1dxkck",
+      "_TZE200_1v1dxkck",
+      "_TZE200_1V1DXKCK",
+      "_tze204_pdznlbhv",
+      "_TZE204_pdznlbhv",
+      "_TZE204_PDZNLBHV"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_dimmer3"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -33,17 +45,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_1V1DXKCK",
-      "_TZE204_PDZNLBHV",
-      "_tze200_1v1dxkck",
-      "_tze204_pdznlbhv"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_dimmer3"
-    ]
+    }
   },
   "capabilitiesOptions": {
     "onoff": {

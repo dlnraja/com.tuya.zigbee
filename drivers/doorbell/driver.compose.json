@@ -10,7 +10,8 @@
     "alarm_motion",
     "alarm_contact",
     "measure_battery",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -22,6 +23,69 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_5e2f3n2h",
+      "_TZ3000_5e2f3n2h",
+      "_TZ3000_5E2F3N2H",
+      "_tz3000_8h73rpe5",
+      "_TZ3000_8h73rpe5",
+      "_TZ3000_8H73RPE5",
+      "_tz3000_ali1q8p0",
+      "_TZ3000_ali1q8p0",
+      "_TZ3000_ALI1Q8P0",
+      "_tz3000_bffkdmp8",
+      "_TZ3000_bffkdmp8",
+      "_TZ3000_BFFKDMP8",
+      "_tz3000_bn4t9du1",
+      "_TZ3000_bn4t9du1",
+      "_TZ3000_BN4T9DU1",
+      "_tz3000_ddcqbtgs",
+      "_TZ3000_ddcqbtgs",
+      "_TZ3000_DDCQBTGS",
+      "_tze200_2wg5rjgr",
+      "_TZE200_2wg5rjgr",
+      "_TZE200_2WG5RJGR",
+      "_tze284_9qhgsdta",
+      "_TZE284_9qhgsdta",
+      "_TZE284_9QHGSDTA",
+      "_tze204_nlrfgpny",
+      "_TZE204_nlrfgpny",
+      "_TZE204_NLRFGPNY",
+      "_tze200_nlrfgpny",
+      "_TZE200_nlrfgpny",
+      "_TZE200_NLRFGPNY",
+      "_tze284_nlrfgpny",
+      "_TZE284_nlrfgpny",
+      "_TZE284_NLRFGPNY",
+      "_tze200_d0yu2xgi",
+      "_TZE200_d0yu2xgi",
+      "_TZE200_D0YU2XGI",
+      "_tze200_t1blo2bj",
+      "_TZE200_t1blo2bj",
+      "_TZE200_T1BLO2BJ",
+      "_tze204_t1blo2bj",
+      "_TZE204_t1blo2bj",
+      "_TZE204_T1BLO2BJ",
+      "_tze204_q76rtoa9",
+      "_TZE204_q76rtoa9",
+      "_TZE204_Q76RTOA9",
+      "_tze204_hcxvyxa5",
+      "_TZE204_hcxvyxa5",
+      "_TZE204_HCXVYXA5",
+      "_tze204_k7mfgaen",
+      "_TZE204_k7mfgaen",
+      "_TZE204_K7MFGAEN",
+      "_tze204_fncxk3ob",
+      "_TZE204_fncxk3ob",
+      "_TZE204_FNCXK3OB",
+      "_TZ3210_emqmwtym",
+      "_tz3210_emqmwtym",
+      "_TZ3210_EMQMWTYM"
+    ],
+    "productId": [
+      "TS0211",
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/doorbell/assets/learnmode.svg",
       "instruction": {
@@ -37,47 +101,7 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_5E2F3N2H",
-      "_TZ3000_8H73RPE5",
-      "_TZ3000_ALI1Q8P0",
-      "_TZ3000_BFFKDMP8",
-      "_TZ3000_BN4T9DU1",
-      "_TZ3000_DDCQBTGS",
-      "_TZ3210_EMQMWTYM",
-      "_TZ3210_emqmwtym",
-      "_TZE200_2WG5RJGR",
-      "_TZE200_D0YU2XGI",
-      "_TZE200_NLRFGPNY",
-      "_TZE200_T1BLO2BJ",
-      "_TZE204_HCXVYXA5",
-      "_TZE204_NLRFGPNY",
-      "_TZE204_Q76RTOA9",
-      "_TZE204_T1BLO2BJ",
-      "_TZE284_9QHGSDTA",
-      "_TZE284_NLRFGPNY",
-      "_tz3000_5e2f3n2h",
-      "_tz3000_8h73rpe5",
-      "_tz3000_ali1q8p0",
-      "_tz3000_bffkdmp8",
-      "_tz3000_bn4t9du1",
-      "_tz3000_ddcqbtgs",
-      "_tz3210_emqmwtym",
-      "_tze200_2wg5rjgr",
-      "_tze200_d0yu2xgi",
-      "_tze200_nlrfgpny",
-      "_tze200_t1blo2bj",
-      "_tze204_hcxvyxa5",
-      "_tze204_nlrfgpny",
-      "_tze204_q76rtoa9",
-      "_tze204_t1blo2bj",
-      "_tze284_9qhgsdta",
-      "_tze284_nlrfgpny"
-    ],
-    "productId": [
-      "TS0211",
-      "TS0601"
-    ]
+    "fingerprints": []
   },
   "settings": [
     {

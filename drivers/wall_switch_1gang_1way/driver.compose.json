@@ -26,6 +26,34 @@
     "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_3u4hripk",
+      "_TZ3000_3u4hripk",
+      "_TZ3000_3U4HRIPK",
+      "_tz3000_7jx5ypra",
+      "_TZ3000_7jx5ypra",
+      "_TZ3000_7JX5YPRA",
+      "_tz3000_9hpxg80k",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_9HPXG80K",
+      "_tz3000_hhiodade",
+      "_TZ3000_hhiodade",
+      "_TZ3000_HHIODADE",
+      "_tz3000_ovyaisip",
+      "_TZ3000_ovyaisip",
+      "_TZ3000_OVYAISIP",
+      "_tz3000_pk8tgtdb",
+      "_TZ3000_pk8tgtdb",
+      "_TZ3000_PK8TGTDB",
+      "_tz3000_vw40zqp4",
+      "_TZ3000_vw40zqp4",
+      "_TZ3000_VW40ZQP4",
+      "_TZ3000_b3mgfu0d"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0011"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -44,17 +72,7 @@
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle the switch on/off 3 times quickly.",
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_HHIODADE",
-      "_TZ3000_VW40ZQP4",
-      "_tz3000_hhiodade",
-      "_tz3000_vw40zqp4"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ]
+    }
   },
   "settings": [
     {
@@ -96,142 +114,6 @@
               "label": {
                 "en": "On when Switch OFF (Inverted)",
                 "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Power-On Behavior",
-        "nl": "Gedrag bij inschakelen"
-      },
-      "children": [
-        {
-          "id": "power_on_behavior",
-          "type": "dropdown",
-          "label": {
-            "en": "Power-On Behavior",
-            "nl": "Gedrag bij inschakelen",
-            "de": "Einschaltverhalten",
-            "fr": "Comportement à la mise sous tension"
-          },
-          "hint": {
-            "en": "What happens when power is restored after an outage",
-            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
-          },
-          "value": "memory",
-          "values": [
-            {
-              "id": "off",
-              "label": {
-                "en": "Always Off",
-                "nl": "Altijd Uit"
-              }
-            },
-            {
-              "id": "on",
-              "label": {
-                "en": "Always On",
-                "nl": "Altijd Aan"
-              }
-            },
-            {
-              "id": "memory",
-              "label": {
-                "en": "Last State",
-                "nl": "Laatste status"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "External Switch Type",
-        "nl": "Extern schakelaartype"
-      },
-      "children": [
-        {
-          "id": "switch_mode",
-          "type": "dropdown",
-          "label": {
-            "en": "External Switch Type",
-            "nl": "Extern schakelaartype",
-            "de": "Externer Schaltertyp",
-            "fr": "Type d'interrupteur externe"
-          },
-          "hint": {
-            "en": "Type of external switch connected to this relay module",
-            "nl": "Type externe schakelaar aangesloten op deze relaismodule"
-          },
-          "value": "toggle",
-          "values": [
-            {
-              "id": "toggle",
-              "label": {
-                "en": "Toggle",
-                "nl": "Tuimelschakelaar"
-              }
-            },
-            {
-              "id": "state",
-              "label": {
-                "en": "State (Rocker)",
-                "nl": "Status (Wipschakelaar)"
-              }
-            },
-            {
-              "id": "momentary",
-              "label": {
-                "en": "Momentary (Push Button)",
-                "nl": "Pulsdrukknop"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Scene Mode",
-        "nl": "Scènemodus"
-      },
-      "children": [
-        {
-          "id": "scene_mode",
-          "type": "dropdown",
-          "label": {
-            "en": "Scene Mode",
-            "nl": "Scènemodus"
-          },
-          "hint": {
-            "en": "Auto: Normal switch + physical button flows. Magic: Scene only (load unchanged). Both: Load + scene flows.",
-            "nl": "Auto: Normaal + fysieke knop flows. Magic: Alleen scène (belasting ongewijzigd). Both: Belasting + scène flows."
-          },
-          "value": "auto",
-          "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto (Normal + flows)"
-              }
-            },
-            {
-              "id": "magic",
-              "label": {
-                "en": "Magic (Scene only)"
-              }
-            },
-            {
-              "id": "both",
-              "label": {
-                "en": "Both (Load + scene)"
               }
             }
           ]

@@ -122,6 +122,48 @@
       ]
     }
   ],
+  "conditions": [
+    {
+      "id": "sr_zs_switch_switch_is",
+      "title": {
+        "en": "Switch # is !{{on|off}}",
+        "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
+      },
+      "titleFormatted": {
+        "en": "[[switch]] is !{{on|off}}",
+        "pl": "[[switch]] jest !{{włączony|wyłączony}}"
+      },
+      "args": [
+        {
+          "name": "switch",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "1",
+              "title": {
+                "en": "Switch 1",
+                "pl": "Przełącznik 1"
+              }
+            },
+            {
+              "id": "2",
+              "title": {
+                "en": "Switch 2",
+                "pl": "Przełącznik 2"
+              }
+            },
+            {
+              "id": "3",
+              "title": {
+                "en": "Switch 3",
+                "pl": "Przełącznik 3"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "actions": [
     {
       "id": "sr_zs_switch_set_switch_state",
@@ -177,48 +219,6 @@
               "title": {
                 "en": "Turned off",
                 "pl": "Wyłączony"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "conditions": [
-    {
-      "id": "sr_zs_switch_switch_is",
-      "title": {
-        "en": "Switch # is !{{on|off}}",
-        "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
-      },
-      "titleFormatted": {
-        "en": "[[switch]] is !{{on|off}}",
-        "pl": "[[switch]] jest !{{włączony|wyłączony}}"
-      },
-      "args": [
-        {
-          "name": "switch",
-          "type": "dropdown",
-          "values": [
-            {
-              "id": "1",
-              "title": {
-                "en": "Switch 1",
-                "pl": "Przełącznik 1"
-              }
-            },
-            {
-              "id": "2",
-              "title": {
-                "en": "Switch 2",
-                "pl": "Przełącznik 2"
-              }
-            },
-            {
-              "id": "3",
-              "title": {
-                "en": "Switch 3",
-                "pl": "Przełącznik 3"
               }
             }
           ]

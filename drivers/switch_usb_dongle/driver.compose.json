@@ -7,6 +7,9 @@
     "meter_power"
   ],
   "zigbee": {
+    "productId": [
+      "TS0002"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -36,7 +39,12 @@
         "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tz3000_mw1pqqqt",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_MW1PQQQT",
+      "_TZ3000_iwtv2jwo"
+    ]
   },
   "images": {
     "small": "/drivers/switch_usb_dongle/assets/images/small.png",

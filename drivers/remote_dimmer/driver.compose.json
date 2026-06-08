@@ -10,7 +10,8 @@
     "zigbee"
   ],
   "capabilities": [
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -19,6 +20,13 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_bngwdjsr",
+      "_TYZB01_BNGWDJSR"
+    ],
+    "productId": [
+      "TS1001"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -38,8 +46,7 @@
         "nl": "Houd de koppelknop 5 seconden ingedrukt tot de LED snel knippert.",
         "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt, bis die LED schnell blinkt."
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "large": "/drivers/remote_dimmer/assets/images/large.png",

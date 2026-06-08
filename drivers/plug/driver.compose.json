@@ -1,5 +1,4 @@
 {
-  "id": "plug",
   "name": {
     "en": "Smart Plug without metering"
   },
@@ -19,10 +18,18 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/plug/assets/images/large.png",
+    "small": "//drivers/plug/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_cymsnfvf",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_CYMSNFVF"
+    ],
+    "productId": [
+      "TS011F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,7 +47,7 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": []
-  }
+    }
+  },
+  "settings": []
 }

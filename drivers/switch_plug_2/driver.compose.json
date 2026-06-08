@@ -13,6 +13,14 @@
     "meter_power"
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_zloso4jk",
+      "_TZ3000_zloso4jk",
+      "_TZ3000_ZLOSO4JK"
+    ],
+    "productId": [
+      "TS0122"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -26,8 +34,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "small": "/drivers/switch_plug_2/assets/images/small.png",

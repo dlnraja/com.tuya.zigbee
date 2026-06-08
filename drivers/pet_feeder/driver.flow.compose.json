@@ -7,7 +7,8 @@
       },
       "titleFormatted": {
         "en": "Pet was fed"
-      }
+      },
+      "args": []
     },
     {
       "id": "pet_feeder_food_low",
@@ -16,7 +17,8 @@
       },
       "titleFormatted": {
         "en": "Food level is low"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -27,7 +29,8 @@
       },
       "titleFormatted": {
         "en": "Food level is OK"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -38,7 +41,8 @@
       },
       "titleFormatted": {
         "en": "Feed now"
-      }
+      },
+      "args": []
     }
   ]
 }

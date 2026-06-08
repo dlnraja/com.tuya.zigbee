@@ -121,6 +121,20 @@
       }
     }
   ],
+  "conditions": [
+    {
+      "id": "wall_switch_2gang_1way_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "nl": "Is !{{aan|uit}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "nl": "Is !{{aan|uit}}"
+      }
+    }
+  ],
   "actions": [
     {
       "id": "wall_switch_2gang_1way_set_backlight",
@@ -417,20 +431,6 @@
       "titleFormatted": {
         "en": "Turn off all gangs",
         "nl": "Alle gangs uitzetten"
-      }
-    }
-  ],
-  "conditions": [
-    {
-      "id": "wall_switch_2gang_1way_is_on",
-      "title": {
-        "en": "Is !{{on|off}}",
-        "nl": "Is !{{aan|uit}}"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "nl": "Is !{{aan|uit}}"
       }
     }
   ]

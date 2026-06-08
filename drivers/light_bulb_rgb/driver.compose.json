@@ -14,7 +14,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
@@ -26,6 +27,67 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_4g7vxuqk",
+      "_TZ3000_4g7vxuqk",
+      "_TZ3000_4G7VXUQK",
+      "_tz3000_keabpigv",
+      "_TZ3000_keabpigv",
+      "_TZ3000_KEABPIGV",
+      "_tz3000_mn9k8nhm",
+      "_TZ3000_mn9k8nhm",
+      "_TZ3000_MN9K8NHM",
+      "_tz3000_obacbukl",
+      "_TZ3000_obacbukl",
+      "_TZ3000_OBACBUKL",
+      "_tz3000_oborybow",
+      "_TZ3000_oborybow",
+      "_TZ3000_OBORYBOW",
+      "_tz3000_rnnzvseu",
+      "_TZ3000_rnnzvseu",
+      "_TZ3000_RNNZVSEU",
+      "_tz3210_0zabbfax",
+      "_TZ3210_0zabbfax",
+      "_TZ3210_0ZABBFAX",
+      "_tz3210_5vbjzw54",
+      "_TZ3210_5vbjzw54",
+      "_TZ3210_5VBJZW54",
+      "_tz3210_778drfdt",
+      "_TZ3210_778drfdt",
+      "_TZ3210_778DRFDT",
+      "_tz3210_95txyzbx",
+      "_TZ3210_95txyzbx",
+      "_TZ3210_95TXYZBX",
+      "_tz3210_dse8ogfy",
+      "_TZ3210_dse8ogfy",
+      "_TZ3210_DSE8OGFY",
+      "_tz3210_emqmwtym",
+      "_TZ3210_emqmwtym",
+      "_TZ3210_EMQMWTYM",
+      "_tz3210_k1pe6ibm",
+      "_TZ3210_k1pe6ibm",
+      "_TZ3210_K1PE6IBM",
+      "_tz3210_zdrhqmo0",
+      "_TZ3210_zdrhqmo0",
+      "_TZ3210_ZDRHQMO0",
+      "_tz3290_gnl5a6a5",
+      "_TZ3290_gnl5a6a5",
+      "_TZ3290_GNL5A6A5",
+      "_tzb210_aavhaadb",
+      "_TZB210_aavhaadb",
+      "_TZB210_AAVHAADB",
+      "_tzb210_g01ie5wu",
+      "_TZB210_g01ie5wu",
+      "_TZB210_G01IE5WU",
+      "_tzb210_lmqquxus",
+      "_TZB210_lmqquxus",
+      "_TZB210_LMQQUXUS",
+      "_tzb210_quinzf3w",
+      "_TZB210_quinzf3w",
+      "_TZB210_QUINZF3W",
+      "ewelight",
+      "EWELIGHT"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,30 +108,6 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
       }
     },
-    "capabilities": {
-      "light_color_temp": {
-        "cluster": "colorControl",
-        "attr": "colorTemperature"
-      }
-    },
-    "manufacturerName": [
-      "_TZ3000_4G7VXUQK",
-      "_TZ3000_MN9K8NHM",
-      "_TZ3000_RNNZVSEU",
-      "_TZ3210_5VBJZW54",
-      "_TZ3210_EMQMWTYM",
-      "_TZ3290_GNL5A6A5",
-      "_TZB210_AAVHAADB",
-      "_TZB210_QUINZF3W",
-      "_tz3000_4g7vxuqk",
-      "_tz3000_mn9k8nhm",
-      "_tz3000_rnnzvseu",
-      "_tz3210_5vbjzw54",
-      "_tz3210_emqmwtym",
-      "_tz3290_gnl5a6a5",
-      "_tzb210_aavhaadb",
-      "_tzb210_quinzf3w"
-    ],
     "productId": [
       "E11-G13",
       "E11-G14",
@@ -94,7 +132,13 @@
       "TS0505B",
       "ZB-CL01",
       "ZBT-ColorLight"
-    ]
+    ],
+    "capabilities": {
+      "light_color_temp": {
+        "cluster": "colorControl",
+        "attr": "colorTemperature"
+      }
+    }
   },
   "settings": [
     {
@@ -713,6 +757,5 @@
     "homey": {
       "natural_light": true
     }
-  },
-  "id": "light_bulb_rgb"
+  }
 }

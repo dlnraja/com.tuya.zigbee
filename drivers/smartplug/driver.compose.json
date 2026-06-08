@@ -1,5 +1,4 @@
 {
-  "id": "smartplug",
   "name": {
     "en": "Smart Plug with metering"
   },
@@ -22,10 +21,97 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/smartplug/assets/images/large.png",
+    "small": "//drivers/smartplug/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_1h2x4akh",
+      "_TZ3000_1h2x4akh",
+      "_TZ3000_1H2X4AKH",
+      "_tz3000_5f43h46b",
+      "_TZ3000_5f43h46b",
+      "_TZ3000_5F43H46B",
+      "_tz3000_cphmq0q7",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_CPHMQ0Q7",
+      "_tz3000_dksbtrzs",
+      "_TZ3000_dksbtrzs",
+      "_TZ3000_DKSBTRZS",
+      "_tz3000_fqoynhku",
+      "_TZ3000_fqoynhku",
+      "_TZ3000_FQOYNHKU",
+      "_tz3000_g5xawfcq",
+      "_TZ3000_g5xawfcq",
+      "_TZ3000_G5XAWFCQ",
+      "_tz3000_gjnozsaz",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_GJNOZSAZ",
+      "_tz3000_gnjozsaz",
+      "_TZ3000_gnjozsaz",
+      "_TZ3000_GNJOZSAZ",
+      "_tz3000_gvn91tmx",
+      "_TZ3000_gvn91tmx",
+      "_TZ3000_GVN91TMX",
+      "_tz3000_gznh2xla",
+      "_TZ3000_gznh2xla",
+      "_TZ3000_GZNH2XLA",
+      "_tz3000_j1v25l17",
+      "_TZ3000_j1v25l17",
+      "_TZ3000_J1V25L17",
+      "_tz3000_ksw8qtmt",
+      "_TZ3000_ksw8qtmt",
+      "_TZ3000_KSW8QTMT",
+      "_tz3000_kx0pris5",
+      "_TZ3000_kx0pris5",
+      "_TZ3000_KX0PRIS5",
+      "_tz3000_mraovvmm",
+      "_TZ3000_mraovvmm",
+      "_TZ3000_MRAOVVMM",
+      "_tz3000_nkcobies",
+      "_TZ3000_nkcobies",
+      "_TZ3000_NKCOBIES",
+      "_tz3000_pjcqjtev",
+      "_TZ3000_pjcqjtev",
+      "_TZ3000_PJCQJTEV",
+      "_tz3000_r6buo8ba",
+      "_TZ3000_r6buo8ba",
+      "_TZ3000_R6BUO8BA",
+      "_tz3000_rdtixbnu",
+      "_TZ3000_rdtixbnu",
+      "_TZ3000_RDTIXBNU",
+      "_tz3000_ss98ec5d",
+      "_TZ3000_ss98ec5d",
+      "_TZ3000_SS98EC5D",
+      "_tz3000_typdpbpg",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_TYPDPBPG",
+      "_tz3000_u5u4cakc",
+      "_TZ3000_u5u4cakc",
+      "_TZ3000_U5U4CAKC",
+      "_tz3000_vtscrpmw",
+      "_TZ3000_vtscrpmw",
+      "_TZ3000_VTSCRPMW",
+      "_tz3000_w0qqde0g",
+      "_TZ3000_w0qqde0g",
+      "_TZ3000_W0QQDE0G",
+      "_tz3000_waho4jtj",
+      "_TZ3000_waho4jtj",
+      "_TZ3000_WAHO4JTJ",
+      "_tz3000_ynmowqk2",
+      "_TZ3000_ynmowqk2",
+      "_TZ3000_YNMOWQK2",
+      "_tz3000_zloso4jk",
+      "_TZ3000_zloso4jk",
+      "_TZ3000_ZLOSO4JK",
+      "_TYZB01_iuepbmpv"
+    ],
+    "productId": [
+      "TS0121",
+      "TSO121",
+      "TS121",
+      "TS011F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,40 +133,166 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
+    }
+  },
+  "settings": [
+    {
+      "id": "metering_offset",
+      "type": "number",
+      "label": {
+        "en": "Metering Correction Factor"
+      },
+      "hint": {
+        "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+      },
+      "value": 1,
+      "attr": {
+        "min": 0.8,
+        "max": 1.2,
+        "step": 0.1
+      }
     },
-    "manufacturerName": [
-      "_TZ3000_FQOYNHKU",
-      "_TZ3000_GNJOZSAZ",
-      "_TZ3000_GVN91TMX",
-      "_TZ3000_J1V25L17",
-      "_TZ3000_KX0PRIS5",
-      "_TZ3000_MRAOVVMM",
-      "_TZ3000_NKCOBIES",
-      "_TZ3000_PJCQJTEV",
-      "_TZ3000_R6BUO8BA",
-      "_TZ3000_VTSCRPMW",
-      "_TZ3000_WAHO4JTJ",
-      "_TZ3000_YNMOWQK2",
-      "_TZ3000_ZLOSO4JK",
-      "_tz3000_fqoynhku",
-      "_tz3000_gnjozsaz",
-      "_tz3000_gvn91tmx",
-      "_tz3000_j1v25l17",
-      "_tz3000_kx0pris5",
-      "_tz3000_mraovvmm",
-      "_tz3000_nkcobies",
-      "_tz3000_pjcqjtev",
-      "_tz3000_r6buo8ba",
-      "_tz3000_vtscrpmw",
-      "_tz3000_waho4jtj",
-      "_tz3000_ynmowqk2",
-      "_tz3000_zloso4jk"
-    ],
-    "productId": [
-      "TS011F",
-      "TS0121",
-      "TS121",
-      "TSO121"
-    ]
-  }
+    {
+      "id": "measure_offset",
+      "type": "number",
+      "label": {
+        "en": "Measure Correction Factor"
+      },
+      "hint": {
+        "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+      },
+      "value": 1,
+      "attr": {
+        "min": 0.8,
+        "max": 1.2,
+        "step": 0.1
+      }
+    },
+    {
+      "id": "minReportPower",
+      "type": "number",
+      "label": {
+        "en": "Min report interval for power (s)"
+      },
+      "hint": {
+        "en": "Min interval before a report is sent to Homey (s)"
+      },
+      "value": 60,
+      "attr": {
+        "step": 1,
+        "min": 10,
+        "max": 86400
+      }
+    },
+    {
+      "id": "minReportCurrent",
+      "type": "number",
+      "label": {
+        "en": "Min report interval for current (s)"
+      },
+      "hint": {
+        "en": "Min interval before a report is sent to Homey (s)"
+      },
+      "value": 60,
+      "attr": {
+        "step": 1,
+        "min": 10,
+        "max": 86400
+      }
+    },
+    {
+      "id": "minReportVoltage",
+      "type": "number",
+      "label": {
+        "en": "Min report interval for voltage (s)"
+      },
+      "hint": {
+        "en": "Min interval before a report is sent to Homey (s)"
+      },
+      "value": 60,
+      "attr": {
+        "step": 1,
+        "min": 10,
+        "max": 86400
+      }
+    },
+    {
+      "id": "relay_status",
+      "type": "radio",
+      "label": {
+        "en": "Relay status"
+      },
+      "value": "2",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Remember last status"
+          }
+        }
+      ]
+    },
+    {
+      "id": "indicator_mode",
+      "type": "radio",
+      "label": {
+        "en": "Indicator mode"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Indicates status. The indicator comes on when the switch is turned on."
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Indicates position. The indicator comes on when the switch is turned off."
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_lock",
+      "type": "radio",
+      "label": {
+        "en": "Child lock"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Release"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Lock"
+          }
+        }
+      ]
+    }
+  ]
 }

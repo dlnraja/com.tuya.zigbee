@@ -1,5 +1,4 @@
 {
-  "id": "bulb_rgbw_universal",
   "name": {
     "en": "Bulb Rgbw Universal",
     "nl": "Bulb Rgbw Universal",
@@ -26,7 +25,8 @@
     "windowcoverings_set",
     "windowcoverings_state",
     "target_temperature",
-    "thermostat_mode"
+    "thermostat_mode",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "tuya_dp_value": {
@@ -63,6 +63,27 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_freedyfyq",
+      "_TYZB01_FREEDYFYQ",
+      "_tz3000_hhbizuqb",
+      "_TZ3000_hhbizuqb",
+      "_TZ3000_HHBIZUQB",
+      "_tz3000_i5gv74od",
+      "_TZ3000_i5gv74od",
+      "_TZ3000_I5GV74OD",
+      "_tz3000_inejxewm",
+      "_TZ3000_inejxewm",
+      "_TZ3000_INEJXEWM",
+      "_tz3210_sroezl0k",
+      "_TZ3210_sroezl0k",
+      "_TZ3210_SROEZL0K"
+    ],
+    "productId": [
+      "TS0503B",
+      "TS0504B",
+      "TS0505B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -77,81 +98,7 @@
         "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
         "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tyzb01_freedyfyq",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tyzb01_freedyfyq",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tyzb01_freedyfyq",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3000_hhbizuqb",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3000_hhbizuqb",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_hhbizuqb",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3000_i5gv74od",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3000_i5gv74od",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_i5gv74od",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3000_inejxewm",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3000_inejxewm",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_inejxewm",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3210_sroezl0k",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3210_sroezl0k",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3210_sroezl0k",
-        "productId": "TS0505B"
-      }
-    ],
-    "manufacturerName": [
-      "_TZ3000_inejxewm",
-      "_TZ3000_hhbizuqb",
-      "_TZ3000_i5gv74od",
-      "_TYZB01_freedyfyq",
-      "_TZ3210_sroezl0k"
-    ],
-    "productId": [
-      "TS0505B",
-      "TS0504B",
-      "TS0503B"
-    ]
+    }
   },
   "images": {
     "large": "/drivers/universal_zigbee/assets/images/large.png",

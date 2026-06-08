@@ -40,6 +40,17 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze284_ibnz7orz",
+      "_TZE284_ibnz7orz",
+      "_TZE284_IBNZ7ORZ",
+      "_tze284_rlytpmij",
+      "_TZE284_rlytpmij",
+      "_TZE284_RLYTPMIJ"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,16 +58,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE284_IBNZ7ORZ",
-      "_TZE284_RLYTPMIJ",
-      "_tze284_ibnz7orz",
-      "_tze284_rlytpmij"
-    ],
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {

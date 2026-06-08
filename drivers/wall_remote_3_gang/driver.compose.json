@@ -1,5 +1,4 @@
 {
-  "id": "wall_remote_3_gang",
   "name": {
     "en": "3 Gang Wall Remote",
     "fr": "Télécommande murale 3 gangs",
@@ -18,7 +17,8 @@
     "button.1",
     "button.2",
     "button.3",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/wall_remote_3_gang/assets/images/large.png",
@@ -30,6 +30,9 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "TS0043"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -49,57 +52,32 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_remote_3_gang/assets/icon.svg",
       "instruction": {
         "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
       }
     },
     "manufacturerName": [
+      "_tz3000_a7ouggvs",
+      "_TZ3000_a7ouggvs",
       "_TZ3000_A7OUGGVS",
-      "_tz3000_a7ouggvs"
-    ],
-    "productId": [
-      "TS0043"
+      "_tz3000_gbm10jnj",
+      "_TZ3000_gbm10jnj",
+      "_TZ3000_GBM10JNJ",
+      "_tz3000_sj7jbgks",
+      "_TZ3000_sj7jbgks",
+      "_TZ3000_SJ7JBGKS",
+      "_tz3000_w8jwkczz",
+      "_TZ3000_w8jwkczz",
+      "_TZ3000_W8JWKCZZ",
+      "_tz3000_yw5tvzsk",
+      "_TZ3000_yw5tvzsk",
+      "_TZ3000_YW5TVZSK",
+      "_TYZB02_key8kk7r",
+      "_TYZB02_KEY8KK7R"
     ]
   },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
-    }
-  ],
+  "settings": [],
   "maintenanceActions": [
     {
       "id": "ota_check",

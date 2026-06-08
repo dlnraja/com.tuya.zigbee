@@ -11,7 +11,8 @@
     "meter_water",
     "measure_temperature",
     "alarm_water",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -43,6 +44,49 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_8n7lqbm0",
+      "_TZ3000_YZ38GDRA",
+      "_TZ3000_ctftgjwb",
+      "_TZ3000_g8n1n7lg",
+      "_TZ3000_udl7uyd2",
+      "_TZ3000_yz38gdra",
+      "_TZ3218_7fiyo3kv",
+      "_TZ3290_IXD9MVV4",
+      "_TZ3290_ixd9mvv4",
+      "_TZE200_R32CTEZX",
+      "_TZE200_VUWTQX0T",
+      "_TZE200_YLTIVVZB",
+      "_TZE200_r32ctezx",
+      "_TZE200_vuwtqx0t",
+      "_TZE200_yltivvzb",
+      "_TZE204_R32CTEZX",
+      "_TZE204_WT66HAAX",
+      "_TZE204_r32ctezx",
+      "_TZE204_wt66haax",
+      "_TZE284_7ZAZVLYN",
+      "_TZE284_7zazvlyn",
+      "_TZE284_AJLU4CUD",
+      "_TZE284_IDN2HTGU",
+      "_TZE284_VUWTQX0T",
+      "_TZE284_WT66HAAX",
+      "_TZE284_ajlu4cud",
+      "_TZE284_idn2htgu",
+      "_TZE284_vuwtqx0t",
+      "_TZE284_wt66haax",
+      "_tz3000_yz38gdra",
+      "_tz3290_ixd9mvv4",
+      "_tze200_r32ctezx",
+      "_tze200_vuwtqx0t",
+      "_tze200_yltivvzb",
+      "_tze204_r32ctezx",
+      "_tze204_wt66haax",
+      "_tze284_7zazvlyn",
+      "_tze284_ajlu4cud",
+      "_tze284_idn2htgu",
+      "_tze284_vuwtqx0t",
+      "_tze284_wt66haax"
+    ],
     "learnmode": {
       "image": "/drivers/water_valve_smart/assets/learnmode.svg",
       "instruction": {
@@ -50,32 +94,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ]
-      }
-    },
-    "manufacturerName": [
-      "_TZ3000_YZ38GDRA",
-      "_TZE200_R32CTEZX",
-      "_TZE200_YLTIVVZB",
-      "_TZE204_R32CTEZX",
-      "_TZE204_WT66HAAX",
-      "_TZE284_7ZAZVLYN",
-      "_TZE284_WT66HAAX",
-      "_tz3000_yz38gdra",
-      "_tze200_r32ctezx",
-      "_tze200_yltivvzb",
-      "_tze204_r32ctezx",
-      "_tze204_wt66haax",
-      "_tze284_7zazvlyn",
-      "_tze284_wt66haax"
-    ],
     "productId": [
-      "SWV-ZF2",
       "SWV-ZFE",
       "SWV-ZFU",
       "SWV-ZN",
@@ -83,7 +102,15 @@
       "SWV-ZNU",
       "TS0601",
       "TS0601_watervalve"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   },
   "settings": [
     {

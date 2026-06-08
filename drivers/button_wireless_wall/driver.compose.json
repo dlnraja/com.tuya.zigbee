@@ -11,7 +11,8 @@
     "button.1",
     "button.2",
     "measure_battery",
-    "onoff"
+    "onoff",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -49,6 +50,21 @@
     "mains": true
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_B3MGFU0D",
+      "_TZ3000_OWMLBBS0",
+      "_TZ3000_YODVHG4Y",
+      "_TZ3000_owmlbbs0",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_yodvhg4y",
+      "_tz3000_b3mgfu0d",
+      "_tz3000_owmlbbs0",
+      "_tz3000_yodvhg4y"
+    ],
+    "productId": [
+      "TS0041",
+      "TS0042"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -80,43 +96,7 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'àce que la LED clignote rapidement"
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_b3mgfu0d",
-        "productId": "TS0041"
-      },
-      {
-        "manufacturerName": "_tz3000_b3mgfu0d",
-        "productId": "TS0042"
-      },
-      {
-        "manufacturerName": "_tz3000_owmlbbs0",
-        "productId": "TS0041"
-      },
-      {
-        "manufacturerName": "_tz3000_owmlbbs0",
-        "productId": "TS0042"
-      },
-      {
-        "manufacturerName": "_tz3000_yodvhg4y",
-        "productId": "TS0041"
-      },
-      {
-        "manufacturerName": "_tz3000_yodvhg4y",
-        "productId": "TS0042"
-      }
-    ],
-    "manufacturerName": [
-      "_TZ3000_owmlbbs0",
-      "_TZ3000_yodvhg4y",
-      "_TZ3000_b3mgfu0d",
-      "_TZ3000_tqlv4ug4"
-    ],
-    "productId": [
-      "TS0041",
-      "TS0042"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/button_wireless_2/assets/images/small.png",
@@ -593,6 +573,5 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  },
-  "id": "button_wireless_wall"
+  }
 }

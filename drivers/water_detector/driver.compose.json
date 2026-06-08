@@ -1,5 +1,4 @@
 {
-  "id": "waterdetector",
   "name": {
     "en": "Water Detector"
   },
@@ -13,6 +12,7 @@
   "capabilities": [
     "alarm_contact",
     "alarm_water",
+    "alarm_battery",
     "measure_battery"
   ],
   "energy": {
@@ -21,10 +21,22 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/water_detector/assets/images/large.png",
+    "small": "//drivers/water_detector/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_6oabgtzv",
+      "_TZ3000_6oabgtzv",
+      "_TZ3000_6OABGTZV",
+      "_tz3000_85czd6fy",
+      "_TZ3000_85czd6fy",
+      "_TZ3000_85CZD6FY"
+    ],
+    "productId": [
+      "q9mpfhw",
+      "TS0207"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,11 +52,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/water_detector/assets/icon.svg",
       "instruction": {
         "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
       }
-    },
-    "manufacturerName": []
-  }
+    }
+  },
+  "settings": []
 }

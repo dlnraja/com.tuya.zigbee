@@ -1,5 +1,4 @@
 {
-  "id": "floodsensor",
   "name": {
     "en": "Flood sensor"
   },
@@ -12,6 +11,7 @@
   ],
   "capabilities": [
     "alarm_water",
+    "alarm_battery",
     "measure_battery"
   ],
   "energy": {
@@ -20,10 +20,14 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/flood_sensor/assets/images/large.png",
+    "small": "//drivers/flood_sensor/assets/images/small.png"
   },
   "zigbee": {
+    "productId": [
+      "RH3001",
+      "TS0207"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -39,11 +43,16 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/flood_sensor/assets/icon.svg",
       "instruction": {
         "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC"
+    ]
+  },
+  "settings": []
 }

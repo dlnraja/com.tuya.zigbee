@@ -27,6 +27,18 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze204_68nvbio9",
+      "_TZE204_68nvbio9",
+      "_TZE204_68NVBIO9",
+      "_TZE200_HKDL5FMV",
+      "_TZE200_WBHAESPM",
+      "_TZE204_WBHAESPM"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_breaker"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -44,15 +56,7 @@
         "en": "Press and hold the reset button for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes"
       }
-    },
-    "manufacturerName": [
-      "_TZE204_68NVBIO9",
-      "_tze204_68nvbio9"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_breaker"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/smart_breaker/assets/images/small.png",

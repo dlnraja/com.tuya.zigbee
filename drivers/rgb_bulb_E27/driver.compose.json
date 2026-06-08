@@ -1,11 +1,27 @@
 {
-  "id": "rgb_bulb_E27",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/rgb_bulb_E27/assets/images/large.png",
+    "small": "/drivers/rgb_bulb_E27/assets/images/small.png"
+  },
   "name": {
     "en": "RGB Bulb E27"
   },
-  "$extends": [
-    "light_color_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 9,
@@ -13,6 +29,22 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_q50zhdsc",
+      "_TZ3000_q50zhdsc",
+      "_TZ3000_Q50ZHDSC",
+      "_tz3000_qd7hej8u",
+      "_TZ3000_qd7hej8u",
+      "_TZ3000_QD7HEJ8U",
+      "_tz3210_mja6r5ix",
+      "_TZ3210_mja6r5ix",
+      "_TZ3210_MJA6R5IX"
+    ],
+    "productId": [
+      "TS0505A",
+      "TS0505B",
+      "ZB-CL01"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,20 +64,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/rgb_bulb_E27/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": []
+    }
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim"
-  ],
-  "images": {
-    "large": "/drivers/rgb_bulb_E27/assets/images/large.png",
-    "small": "/drivers/rgb_bulb_E27/assets/images/small.png"
-  }
+  "settings": []
 }

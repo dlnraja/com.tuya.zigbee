@@ -1,5 +1,4 @@
 {
-  "id": "relay_board_4_channel",
   "name": {
     "en": "4 Channel Relay Board"
   },
@@ -14,8 +13,8 @@
     "onoff"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/relay_board_4_channel/assets/images/large.png",
+    "small": "//drivers/relay_board_4_channel/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,6 +23,17 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_hdlpifbk",
+      "_TZ3000_hdlpifbk",
+      "_TZ3000_HDLPIFBK",
+      "_tz3000_wkr3jqmr",
+      "_TZ3000_wkr3jqmr",
+      "_TZ3000_WKR3JQMR"
+    ],
+    "productId": [
+      "TS0004"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -115,19 +125,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/relay_board_4_channel/assets/icon.svg",
       "instruction": {
         "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_HDLPIFBK",
-      "_TZ3000_WKR3JQMR",
-      "_tz3000_hdlpifbk",
-      "_tz3000_wkr3jqmr"
-    ],
-    "productId": [
-      "TS0004"
-    ]
-  }
+    }
+  },
+  "settings": []
 }

@@ -13,7 +13,8 @@
     "thermostat_mode",
     "measure_battery",
     "onoff",
-    "alarm_contact"
+    "alarm_contact",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -27,6 +28,9 @@
     }
   },
   "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -37,15 +41,13 @@
       }
     },
     "manufacturerName": [
-      "_TYST11_2EKUZ3DZ",
-      "_TYST11_KLY8GJLZ",
-      "_TZE200_BHD_5KN9",
       "_tyst11_2ekuz3dz",
+      "_TYST11_2EKUZ3DZ",
       "_tyst11_kly8gjlz",
-      "_tze200_bhd_5kn9"
-    ],
-    "productId": [
-      "TS0601"
+      "_TYST11_KLY8GJLZ",
+      "_tze200_bhd_5kn9",
+      "_TZE200_bhd_5kn9",
+      "_TZE200_BHD_5KN9"
     ]
   },
   "images": {

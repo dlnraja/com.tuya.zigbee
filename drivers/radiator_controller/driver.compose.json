@@ -7,6 +7,10 @@
     "thermostat_mode"
   ],
   "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0601_rad"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -26,18 +30,18 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_3REGM3H6",
-      "_TZE200_EEKPF0FT",
-      "_TZE200_PCDMJ88B",
-      "_TZE204_2EKUZ3DZ",
       "_tze200_3regm3h6",
+      "_TZE200_3regm3h6",
+      "_TZE200_3REGM3H6",
       "_tze200_eekpf0ft",
+      "_TZE200_eekpf0ft",
+      "_TZE200_EEKPF0FT",
       "_tze200_pcdmj88b",
-      "_tze204_2ekuz3dz"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_rad"
+      "_TZE200_pcdmj88b",
+      "_TZE200_PCDMJ88B",
+      "_tze204_2ekuz3dz",
+      "_TZE204_2ekuz3dz",
+      "_TZE204_2EKUZ3DZ"
     ]
   },
   "images": {

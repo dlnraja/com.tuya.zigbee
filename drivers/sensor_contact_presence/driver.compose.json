@@ -15,7 +15,8 @@
     "measure_battery",
     "measure_luminance.distance",
     "alarm_contact",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -32,6 +33,13 @@
   },
   "subDevices": [],
   "zigbee": {
+    "manufacturerName": [
+      "hobeian",
+      "HOBEIAN"
+    ],
+    "productId": [
+      "ZG-227Z"
+    ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {
@@ -50,8 +58,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": []
+    }
   },
   "settings": [
     {

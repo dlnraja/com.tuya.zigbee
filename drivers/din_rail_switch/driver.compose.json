@@ -34,6 +34,38 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_3r9fthmw",
+      "_TZ3000_3r9fthmw",
+      "_TZ3000_3R9FTHMW",
+      "_tz3000_5f43h46b",
+      "_TZ3000_5f43h46b",
+      "_TZ3000_5F43H46B",
+      "_tz3000_7y5ikxwq",
+      "_TZ3000_7y5ikxwq",
+      "_TZ3000_7Y5IKXWQ",
+      "_tz3000_fjm6mjrj",
+      "_TZ3000_fjm6mjrj",
+      "_TZ3000_FJM6MJRJ",
+      "_tz3000_rjxqso4a",
+      "_TZ3000_rjxqso4a",
+      "_TZ3000_RJXQSO4A",
+      "_tze200_byzdayie",
+      "_TZE200_BYZDAYIE",
+      "_tze200_fjb98hbq",
+      "_TZE200_fjb98hbq",
+      "_TZE200_FJB98HBQ",
+      "_tze204_aqnazj70",
+      "_TZE204_aqnazj70",
+      "_TZE204_AQNAZJ70",
+      "_tze204_fjb98hbq",
+      "_TZE204_fjb98hbq",
+      "_TZE204_FJB98HBQ"
+    ],
+    "productId": [
+      "TS0001_din",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -51,31 +83,7 @@
         "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
         "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'à clignotement rapide"
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_3R9FTHMW",
-      "_TZ3000_5F43H46B",
-      "_TZ3000_7Y5IKXWQ",
-      "_TZ3000_FJM6MJRJ",
-      "_TZ3000_RJXQSO4A",
-      "_TZE200_BYZDAYIE",
-      "_TZE200_FJB98HBQ",
-      "_TZE204_AQNAZJ70",
-      "_TZE204_FJB98HBQ",
-      "_tz3000_3r9fthmw",
-      "_tz3000_5f43h46b",
-      "_tz3000_7y5ikxwq",
-      "_tz3000_fjm6mjrj",
-      "_tz3000_rjxqso4a",
-      "_tze200_byzdayie",
-      "_tze200_fjb98hbq",
-      "_tze204_aqnazj70",
-      "_tze204_fjb98hbq"
-    ],
-    "productId": [
-      "TS0001_din",
-      "TS0601"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/din_rail_switch/assets/images/small.png",

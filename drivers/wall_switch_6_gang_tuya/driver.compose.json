@@ -1,5 +1,4 @@
 {
-  "id": "wall_switch_6_gang_tuya",
   "name": {
     "en": "6 Gang Wall Switch"
   },
@@ -14,8 +13,8 @@
     "onoff"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/wall_switch_6_gang_tuya/assets/images/large.png",
+    "small": "//drivers/wall_switch_6_gang_tuya/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,6 +23,26 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_9mahtqtg",
+      "_TZE200_9mahtqtg",
+      "_TZE200_9MAHTQTG",
+      "_tze200_r731zlxk",
+      "_TZE200_r731zlxk",
+      "_TZE200_R731ZLXK",
+      "_TZE204_72bewjky",
+      "_TZE204_ad2jkxwh",
+      "TZE204_7sjncirf",
+      "_tz3000_cziew6eu",
+      "_tze204_tz32mtza",
+      "_tze284_g1enhdsi",
+      "_tze284_tz32mtza"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0016",
+      "TS0726"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -116,21 +135,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_switch_6_gang_tuya/assets/icon.svg",
       "instruction": {
         "en": "Six tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
-    },
-    "manufacturerName": [
-      "_TZE200_9MAHTQTG",
-      "_TZE200_R731ZLXK",
-      "_tze200_9mahtqtg",
-      "_tze200_r731zlxk"
-    ],
-    "productId": [
-      "TS0016",
-      "TS0601",
-      "TS0726"
-    ]
-  }
+    }
+  },
+  "settings": []
 }

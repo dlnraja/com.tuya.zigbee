@@ -16,6 +16,10 @@
     "measure_pm25"
   ],
   "zigbee": {
+    "productId": [
+      "TS011F",
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
@@ -31,24 +35,13 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_byzdayie",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze204_byzdayie",
-        "productId": "TS0601"
-      }
-    ],
     "manufacturerName": [
-      "_TZE200_byzdayie",
+      "_TZ3000_dummy_fix",
       "_TZE200_7bztmfm1",
-      "_TZE204_byzdayie"
-    ],
-    "productId": [
-      "TS0601",
-      "TS011F"
+      "_TZE200_byzdayie",
+      "_TZE204_BYZDAYIE",
+      "_TZE204_byzdayie",
+      "_tze204_byzdayie"
     ]
   },
   "settings": [
@@ -442,6 +435,5 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  },
-  "id": "device_air_purifier_plug"
+  }
 }

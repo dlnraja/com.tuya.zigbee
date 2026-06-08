@@ -52,6 +52,20 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_tze200_qpn5q17m",
+      "_TZE200_qpn5q17m",
+      "_TZE200_QPN5Q17M",
+      "_TZE200_7bztmfm1",
+      "_TZE200_4mh6tyyo"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -59,15 +73,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_7bztmfm1",
-      "_TZE200_qpn5q17m",
-      "_TZE200_4mh6tyyo"
-    ],
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
@@ -228,6 +234,5 @@
         "fr": "Alerte si le score de santé descend sous cette valeur"
       }
     }
-  ],
-  "id": "device_air_purifier_floor"
+  ]
 }

@@ -12,7 +12,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
@@ -24,6 +25,24 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_keabpigv",
+      "_TYZB01_KEABPIGV",
+      "_tz3000_9fvm3mis",
+      "_TZ3000_9fvm3mis",
+      "_TZ3000_9FVM3MIS",
+      "_tz3000_keabpigv",
+      "_TZ3000_keabpigv",
+      "_TZ3000_KEABPIGV",
+      "_tz3210_keabpigv",
+      "_TZ3210_keabpigv",
+      "_TZ3210_KEABPIGV"
+    ],
+    "productId": [
+      "TS0502A",
+      "TS0502B",
+      "TS0504A"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -49,56 +68,7 @@
         "cluster": "colorControl",
         "attr": "colorTemperature"
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tyzb01_keabpigv",
-        "productId": "TS0502A"
-      },
-      {
-        "manufacturerName": "_tyzb01_keabpigv",
-        "productId": "TS0502B"
-      },
-      {
-        "manufacturerName": "_tyzb01_keabpigv",
-        "productId": "TS0504A"
-      },
-      {
-        "manufacturerName": "_tz3000_9fvm3mis",
-        "productId": "TS0502A"
-      },
-      {
-        "manufacturerName": "_tz3000_9fvm3mis",
-        "productId": "TS0502B"
-      },
-      {
-        "manufacturerName": "_tz3000_9fvm3mis",
-        "productId": "TS0504A"
-      },
-      {
-        "manufacturerName": "_tz3210_keabpigv",
-        "productId": "TS0502A"
-      },
-      {
-        "manufacturerName": "_tz3210_keabpigv",
-        "productId": "TS0502B"
-      },
-      {
-        "manufacturerName": "_tz3210_keabpigv",
-        "productId": "TS0504A"
-      }
-    ],
-    "manufacturerName": [
-      "_TZ3000_keabpigv",
-      "_TZ3210_keabpigv",
-      "_TYZB01_keabpigv",
-      "_TZ3000_9fvm3mis"
-    ],
-    "productId": [
-      "TS0502A",
-      "TS0502B",
-      "TS0504A"
-    ]
+    }
   },
   "settings": [
     {
@@ -588,6 +558,5 @@
     "homey": {
       "natural_light": true
     }
-  },
-  "id": "light_bulb_tunable_white"
+  }
 }

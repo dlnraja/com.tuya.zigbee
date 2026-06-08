@@ -1,5 +1,4 @@
 {
-  "id": "wall_switch_2_gang",
   "name": {
     "en": "2 Gang Wall Switch"
   },
@@ -14,8 +13,8 @@
     "onoff"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/wall_switch_2_gang/assets/images/large.png",
+    "small": "//drivers/wall_switch_2_gang/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,6 +23,37 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_gjnozsaz",
+      "_TZ3000_gjnozsaz",
+      "_TZ3000_GJNOZSAZ",
+      "_tz3000_m5bzwpoh",
+      "_TZ3000_m5bzwpoh",
+      "_TZ3000_M5BZWPOH",
+      "_tz3000_owmlbbs0",
+      "_TZ3000_owmlbbs0",
+      "_TZ3000_OWMLBBS0",
+      "_tz3000_tqlv4ug4",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_TQLV4UG4",
+      "_TYZB01_mtlhqn48",
+      "_TYZB01_MTLHQN48",
+      "_TYZB01_6sadkhcy",
+      "_TYZB01_6SADKHCY",
+      "_TYZB01_vzrytttn",
+      "_TYZB01_VZRYTTTN",
+      "_TYZB01_2athzhfr",
+      "_TYZB01_2ATHZHFR",
+      "_TYZB01_6g8b7at8",
+      "_TYZB01_6G8B7AT8",
+      "TUYATEC-O6SNCwd6",
+      "TUYATEC-nzrrvgco"
+    ],
+    "productId": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -61,20 +91,41 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_switch_2_gang/assets/icon.svg",
       "instruction": {
         "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_M5BZWPOH",
-      "_tz3000_m5bzwpoh"
-    ],
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ]
+    }
   },
-  "deprecated": true
+  "deprecated": true,
+  "settings": [
+    {
+      "id": "indicator_mode",
+      "type": "radio",
+      "label": {
+        "en": "Indicator mode"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Light Off"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Light on when switch turned on."
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Light on when the switch is turned off."
+          }
+        }
+      ]
+    }
+  ]
 }

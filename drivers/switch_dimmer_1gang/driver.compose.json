@@ -31,6 +31,23 @@
     "large": "/drivers/switch_dimmer_1gang/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_3p5ydos3",
+      "_TZE200_3p5ydos3",
+      "_TZE200_3P5YDOS3",
+      "_tze204_3z6hca0q",
+      "_TZE204_3z6hca0q",
+      "_TZE204_3Z6HCA0Q",
+      "_tze204_n9ctkb6j",
+      "_TZE204_n9ctkb6j",
+      "_TZE204_N9CTKB6J",
+      "_tze284_4ar89tr1",
+      "_TZE284_4ar89tr1",
+      "_TZE284_4AR89TR1"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,16 +63,7 @@
         "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
         "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
       }
-    },
-    "manufacturerName": [
-      "_TZE204_3Z6HCA0Q",
-      "_TZE284_4AR89TR1",
-      "_tze204_3z6hca0q",
-      "_tze284_4ar89tr1"
-    ],
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {

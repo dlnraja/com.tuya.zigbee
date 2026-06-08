@@ -1,5 +1,4 @@
 {
-  "id": "radar_sensor",
   "name": {
     "en": "Radar Sensor",
     "nl": "Radar Sensor"
@@ -16,8 +15,8 @@
     "alarm_motion"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/radar_sensor/assets/images/large.png",
+    "small": "//drivers/radar_sensor/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -26,6 +25,20 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_f1lvlia0",
+      "_TZE200_f1lvlia0",
+      "_TZE200_F1LVLIA0",
+      "_tze200_ikvvplwq",
+      "_TZE200_ikvvplwq",
+      "_TZE200_IKVVPLWQ",
+      "_TZE200_nklqjk62",
+      "_tze200_nklqjk62",
+      "_TZE200_NKLQJK62"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,25 +55,109 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/radar_sensor/assets/icon.svg",
       "instruction": {
         "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
         "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
       }
     },
-    "manufacturerName": [
-      "_TZE200_F1LVLIA0",
-      "_TZE200_IKVVPLWQ",
-      "_TZE200_NKLQJK62",
-      "_TZE200_f1lvlia0",
-      "_TZE200_ikvvplwq",
-      "_TZE200_nklqjk62",
-      "_tze200_f1lvlia0",
-      "_tze200_ikvvplwq",
-      "_tze200_nklqjk62"
-    ],
-    "productId": [
-      "TS0601"
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_f1lvlia0",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_ikvvplwq",
+        "productId": "TS0601"
+      }
     ]
-  }
+  },
+  "settings": [
+    {
+      "id": "radar_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radar sensitivity",
+        "nl": "Radar sensitiviteit"
+      },
+      "value": 7,
+      "min": 1,
+      "max": 9
+    },
+    {
+      "id": "minimum_range",
+      "type": "number",
+      "label": {
+        "en": "Minimum range",
+        "nl": "Minimale bereik"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 9.5,
+      "units": {
+        "en": "meters",
+        "nl": "meters"
+      }
+    },
+    {
+      "id": "maximum_range",
+      "type": "number",
+      "label": {
+        "en": "Maximum range",
+        "nl": "Maximale bereik"
+      },
+      "value": 9.5,
+      "min": 0,
+      "max": 9.5,
+      "units": {
+        "en": "meters",
+        "nl": "meters"
+      }
+    },
+    {
+      "id": "detection_delay",
+      "type": "number",
+      "label": {
+        "en": "Detection delay",
+        "nl": "Detectie vertraging"
+      },
+      "value": 7,
+      "min": 0,
+      "max": 10,
+      "units": {
+        "en": "seconds",
+        "nl": "seconden"
+      }
+    },
+    {
+      "id": "fading_time",
+      "type": "number",
+      "label": {
+        "en": "Fading time",
+        "nl": "Reset tijd"
+      },
+      "value": 7,
+      "min": 0,
+      "max": 1500,
+      "units": {
+        "en": "seconds",
+        "nl": "seconden"
+      }
+    },
+    {
+      "id": "distance_update_interval",
+      "type": "number",
+      "label": {
+        "en": "Distance update interval",
+        "nl": "Afstand update interval"
+      },
+      "value": 10,
+      "min": 3,
+      "max": 60,
+      "units": {
+        "en": "seconds",
+        "nl": "seconden"
+      }
+    }
+  ]
 }

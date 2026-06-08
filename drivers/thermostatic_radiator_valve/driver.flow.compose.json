@@ -1,11 +1,11 @@
 {
-  "triggers": [],
   "conditions": [
     {
       "id": "thermostatic_radiator_valve_window_open_status_get",
       "title": {
         "en": "Window !{{is|is not}} open"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [

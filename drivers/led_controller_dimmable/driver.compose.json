@@ -17,6 +17,20 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3210_iystcadi",
+      "_TZ3210_iystcadi",
+      "_TZ3210_IYSTCADI",
+      "_tzb210_3dxbg9ks",
+      "_TZB210_3dxbg9ks",
+      "_TZB210_3DXBG9KS"
+    ],
+    "productId": [
+      "TRI-C1ZR",
+      "TRI-K1ZR",
+      "TS0501B",
+      "TS0601_led"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -29,17 +43,7 @@
         ]
       }
     },
-    "subDevices": [],
-    "manufacturerName": [
-      "_TZB210_3DXBG9KS",
-      "_tzb210_3dxbg9ks"
-    ],
-    "productId": [
-      "TRI-C1ZR",
-      "TRI-K1ZR",
-      "TS0501B",
-      "TS0601_led"
-    ]
+    "subDevices": []
   },
   "images": {
     "small": "/drivers/led_controller_dimmable/assets/images/small.png",

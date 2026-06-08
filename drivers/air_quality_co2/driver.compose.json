@@ -11,7 +11,9 @@
     "measure_temperature",
     "measure_humidity",
     "measure_pm25",
-    "alarm_generic"
+    "alarm_generic",
+    "measure_battery",
+    "alarm_battery"
   ],
   "subDevices": [],
   "capabilitiesOptions": {
@@ -60,21 +62,27 @@
     ]
   },
   "zigbee": {
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    },
     "manufacturerName": [
+      "_TZ3210_guijtl8k",
+      "_TZ3210_hquixjeg",
+      "_TZE200_7bztmfm1",
       "_TZE200_8IKYD92M",
+      "_TZE200_8ikyd92m",
+      "_TZE200_8ygsuhe1",
       "_TZE200_YWAGC4RJ",
+      "_TZE200_rbbx5mfq",
+      "_TZE200_ywagc4rj",
+      "_TZE204_7bztmfm1",
       "_TZE204_8IKYD92M",
+      "_TZE204_8ikyd92m",
       "_TZE204_A8SDABTG",
       "_TZE204_YWAGC4RJ",
       "_TZE204_ZL1KMJQX",
+      "_TZE204_a8sdabtg",
+      "_TZE204_ogkdpgy2",
+      "_TZE204_rbbx5mfq",
+      "_TZE204_ywagc4rj",
+      "_TZE204_zl1kmjqx",
       "_tze200_8ikyd92m",
       "_tze200_ywagc4rj",
       "_tze204_8ikyd92m",
@@ -85,7 +93,15 @@
     "productId": [
       "TS0601",
       "TS0601_co2"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
   },
   "settings": [
     {

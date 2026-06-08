@@ -1,5 +1,4 @@
 {
-  "id": "switch_4_gang_metering",
   "name": {
     "en": "4 Gang Switch Module with metering"
   },
@@ -22,10 +21,14 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/switch_4_gang_metering/assets/images/large.png",
+    "small": "//drivers/switch_4_gang_metering/assets/images/small.png"
   },
   "zigbee": {
+    "productId": [
+      "TS0004",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -98,11 +101,107 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/switch_4_gang_metering/assets/icon.svg",
       "instruction": {
         "en": "Four tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZ3000_dummy_fix",
+      "_TZE200_AQNAZJ70",
+      "_TZE200_aqnazj70",
+      "_TZE200_1OZGUK6X",
+      "_TZE200_1ozguk6x",
+      "_TZE200_K6JHSR0Q",
+      "_TZE200_k6jhsr0q",
+      "_TZE200_1N2KYPHZ",
+      "_TZE200_1n2kyphz",
+      "_TZE200_MEXISFIK",
+      "_TZE200_mexisfik",
+      "_TZE204_58OF2PFN",
+      "_TZE204_58of2pfn"
+    ]
+  },
+  "settings": [
+    {
+      "id": "metering_offset",
+      "type": "number",
+      "label": {
+        "en": "Metering Correction Factor"
+      },
+      "hint": {
+        "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+      },
+      "value": 1,
+      "attr": {
+        "min": 0.8,
+        "max": 1.2,
+        "step": 0.1
+      }
+    },
+    {
+      "id": "measure_offset",
+      "type": "number",
+      "label": {
+        "en": "Measure Correction Factor"
+      },
+      "hint": {
+        "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+      },
+      "value": 1,
+      "attr": {
+        "min": 0.8,
+        "max": 1.2,
+        "step": 0.1
+      }
+    },
+    {
+      "id": "minReportPower",
+      "type": "number",
+      "label": {
+        "en": "Min report interval for power (s)"
+      },
+      "hint": {
+        "en": "Min interval before a report is sent to Homey (s)"
+      },
+      "value": 60,
+      "attr": {
+        "step": 1,
+        "min": 10,
+        "max": 86400
+      }
+    },
+    {
+      "id": "minReportCurrent",
+      "type": "number",
+      "label": {
+        "en": "Min report interval for current (s)"
+      },
+      "hint": {
+        "en": "Min interval before a report is sent to Homey (s)"
+      },
+      "value": 60,
+      "attr": {
+        "step": 1,
+        "min": 10,
+        "max": 86400
+      }
+    },
+    {
+      "id": "minReportVoltage",
+      "type": "number",
+      "label": {
+        "en": "Min report interval for voltage (s)"
+      },
+      "hint": {
+        "en": "Min interval before a report is sent to Homey (s)"
+      },
+      "value": 60,
+      "attr": {
+        "step": 1,
+        "min": 10,
+        "max": 86400
+      }
+    }
+  ]
 }

@@ -9,7 +9,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -18,6 +19,14 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "CK-TLSR8656-SS5-01(7014)",
+      "RH3052",
+      "SNTZ003",
+      "TS0201",
+      "TY0201",
+      "ZG-227Z"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -29,7 +38,11 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "TUYATEC-QUN7VQ14",
+      "_TZE200_vvmbj46n",
+      "_TZ3000_JNHU1LLV"
+    ]
   },
   "images": {
     "small": "/drivers/temphumidsensor/assets/images/small.png",
@@ -43,27 +56,83 @@
   ],
   "settings": [
     {
-      "id": "sensor_precision",
-      "type": "dropdown",
+      "id": "temperature_offset",
+      "type": "number",
       "label": {
-        "en": "Decimal Precision",
-        "fr": "Précision"
+        "en": "Temperature offset (°C)"
+      },
+      "hint": {
+        "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]"
+      },
+      "value": 0,
+      "attr": {
+        "min": -10,
+        "max": 10,
+        "step": 0.1
+      }
+    },
+    {
+      "id": "temperature_decimals",
+      "type": "radio",
+      "label": {
+        "en": "Temperature reporting decimals"
       },
       "value": "1",
-      "hint": {
-        "en": "Decimals for temperature/humidity values"
-      },
       "values": [
         {
           "id": "1",
           "label": {
-            "en": "1 decimal (20.5°C)"
+            "en": "Report temperature value with 1 decimal (21.4 °C)"
           }
         },
         {
           "id": "2",
           "label": {
-            "en": "2 decimals (20.53°C)"
+            "en": "Report temperature value with 2 decimals (21.37 °C)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": {
+        "en": "Humidity offset (%)",
+        "nl": "Luchtvochtigheids compensatie (%)"
+      },
+      "hint": {
+        "en": "Set a correction to compensate a humidity offset.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]",
+        "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]"
+      },
+      "value": 0,
+      "attr": {
+        "min": -10,
+        "max": 10,
+        "step": 1
+      },
+      "units": {
+        "en": "%",
+        "nl": "%"
+      }
+    },
+    {
+      "id": "humidity_decimals",
+      "type": "radio",
+      "label": {
+        "en": "Humidity reporting"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "Report humidity value with 1 decimal (35.2 %)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Report humidity value with 2 decimals (35.19 %)"
           }
         }
       ]

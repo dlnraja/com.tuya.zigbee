@@ -9,7 +9,8 @@
   "class": "sensor",
   "capabilities": [
     "measure_luminance",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -18,6 +19,11 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "TS0222",
+      "TS0225",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -33,16 +39,36 @@
         "en": "Hold button 5s until LED flashes."
       }
     },
+    "fingerprints": [],
     "manufacturerName": [
       "MOES",
+      "_TYZB01_4mdqxxnn",
+      "_TYZB01_m6ec2pgj",
+      "_TZ3000_7kscdesh",
+      "_TZ3000_DO6TXRCW",
+      "_TZ3000_do6txrcw",
+      "_TZ3000_hy6ncvmw",
+      "_TZE200_DWCARSAT",
+      "_TZE200_KHX7NNKA",
+      "_TZE200_YI4JTQQ1",
+      "_TZE200_blfcpsxz",
+      "_TZE200_dwcarsat",
+      "_TZE200_fwoorn8y",
+      "_TZE200_khx7nnka",
+      "_TZE200_kltffuzl",
+      "_TZE200_yi4jtqq1",
+      "_TZE204_KHX7NNKA",
+      "_TZE204_dwcarsat",
+      "_TZE204_khx7nnka",
       "_TZE284_AAEASOLL",
+      "_TZE284_aaeasoll",
+      "_tz3000_do6txrcw",
+      "_tze200_dwcarsat",
+      "_tze200_khx7nnka",
+      "_tze200_yi4jtqq1",
+      "_tze204_khx7nnka",
       "_tze284_aaeasoll",
       "moes"
-    ],
-    "productId": [
-      "TS0222",
-      "TS0225",
-      "TS0601"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",

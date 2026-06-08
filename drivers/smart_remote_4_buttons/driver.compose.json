@@ -1,5 +1,4 @@
 {
-  "id": "smart_remote_4_buttons",
   "name": {
     "en": "4 button Smart Remote Controller",
     "fr": "Télécommande intelligente à 4 boutons",
@@ -19,7 +18,8 @@
     "button.2",
     "button.3",
     "button.4",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -31,6 +31,11 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "TS0215A",
+      "TS0601",
+      "TS0601_wirelesssw"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,51 +47,44 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/smart_remote_4_buttons/assets/icon.svg",
       "instruction": {
         "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_eo3dttwe",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_itnrsufe",
+      "_TZ3000_jwcixnrz",
+      "_TZ3000_obacbukl",
+      "_TZ3000_p6ju8myv",
+      "_TZ3000_rul9yxcc",
+      "_TZ3000_ug1vtuzn",
+      "_TZ3290_8xzb2ghn",
+      "_TZ3290_rlkmy85q4pzoxobl",
+      "_TZ3290_uc8lwbi2",
+      "_TZ3290_yac64inudpovoaba",
+      "_TZE200_44af8vyi",
+      "_TZE200_bjawzodf",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_d7lpruvi",
+      "_TZE200_hkdl5fmv",
+      "_TZE200_zl1kmjqx",
+      "_TZE204_1wnh8bqp",
+      "_TZE204_jygvp6fk",
+      "_TZE204_ksz749x8",
+      "_TZE204_muvkrjr5",
+      "_TZE284_1wnh8bqp",
+      "_TZE284_d4h8j2n6",
+      "_tyzb01_qm6djpta"
+    ]
   },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
-    }
-  ],
+  "settings": [],
   "maintenanceActions": [
     {
       "id": "ota_check",

@@ -1,5 +1,4 @@
 {
-  "id": "wall_remote_1_gang",
   "name": {
     "en": "1 Gang Wall Remote",
     "fr": "Télécommande murale 1 gang",
@@ -16,7 +15,8 @@
   ],
   "capabilities": [
     "button.1",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/wall_remote_1_gang/assets/images/large.png",
@@ -28,6 +28,16 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_tk3s5tyg",
+      "_TZ3000_tk3s5tyg",
+      "_TZ3000_TK3S5TYG",
+      "_TYZB02_keyjqthh",
+      "_TYZB02_KEYJQTHH"
+    ],
+    "productId": [
+      "TS0041"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -37,51 +47,13 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_remote_1_gang/assets/icon.svg",
       "instruction": {
         "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
       }
-    },
-    "manufacturerName": []
-  },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
     }
-  ],
+  },
+  "settings": [],
   "maintenanceActions": [
     {
       "id": "ota_check",

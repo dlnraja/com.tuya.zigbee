@@ -1,5 +1,4 @@
 {
-  "id": "smart_button_switch",
   "name": {
     "en": "Smart Button Switch",
     "fr": "Interrupteur à bouton intelligent",
@@ -23,6 +22,43 @@
   },
   "energy": {},
   "zigbee": {
+    "manufacturerName": [
+      "_TYZB02_KEYJQTHA",
+      "_TZ3000_1GCUF2UW",
+      "_TZ3000_1gcuf2uw",
+      "_TZ3000_JA5OSU5G",
+      "_TZ3000_LQ01",
+      "_TZ3000_MRPEVH8P",
+      "_TZ3000_WQXWPITA",
+      "_TZ3000_YJ6K7VFO",
+      "_TZ3000_ja5osu5g",
+      "_TZ3000_lq01",
+      "_TZ3000_wqxwpita",
+      "_TZ3000_yj6k7vfo",
+      "_TZ3400_KEY8KK7R",
+      "_TZ3400_KEYJHAPK",
+      "_TZ3400_key8kk7r",
+      "_TZ3400_keyjhapk",
+      "_tyzb02_keyjqtha",
+      "_tz3000_1gcuf2uw",
+      "_tz3000_ja5osu5g",
+      "_tz3000_lq01",
+      "_tz3000_mrpevh8p",
+      "_tz3000_wqxwpita",
+      "_tz3000_yj6k7vfo",
+      "_tz3400_key8kk7r",
+      "_tz3400_keyjhapk"
+    ],
+    "productId": [
+      "CK-TLSR8656-SS5-01(7000)",
+      "SNZB-01",
+      "SNZB-01M",
+      "SNZB-01P",
+      "TS0040",
+      "TS0041",
+      "WB-01",
+      "WB01"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,72 +83,13 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/smart_button_switch/assets/icon.svg",
       "instruction": {
         "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_1GCUF2UW",
-      "_TZ3000_LQ01",
-      "_TZ3000_WQXWPITA",
-      "_TZ3400_KEY8KK7R",
-      "_TZ3400_KEYJHAPK",
-      "_tz3000_1gcuf2uw",
-      "_tz3000_lq01",
-      "_tz3000_wqxwpita",
-      "_tz3400_key8kk7r",
-      "_tz3400_keyjhapk"
-    ],
-    "productId": [
-      "CK-TLSR8656-SS5-01(7000)",
-      "SNZB-01",
-      "SNZB-01M",
-      "SNZB-01P",
-      "TS0040",
-      "TS0041",
-      "WB-01",
-      "WB01"
-    ]
-  },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
     }
-  ],
+  },
+  "settings": [],
   "maintenanceActions": [
     {
       "id": "ota_check",

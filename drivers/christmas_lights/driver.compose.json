@@ -1,5 +1,4 @@
 {
-  "id": "christmas_lights",
   "name": {
     "en": "Christmas Lights"
   },
@@ -17,8 +16,8 @@
     "light_saturation"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/christmas_lights/assets/images/large.png",
+    "small": "//drivers/christmas_lights/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -27,6 +26,21 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_hiuyt5mq",
+      "_TZ3000_hiuyt5mq",
+      "_TZ3000_HIUYT5MQ",
+      "_tz3000_jd3z4yig",
+      "_TZ3000_jd3z4yig",
+      "_TZ3000_JD3Z4YIG",
+      "_tzb210_zdgnbgus",
+      "_TZB210_zdgnbgus",
+      "_TZB210_ZDGNBGUS"
+    ],
+    "productId": [
+      "TS0504B",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -41,45 +55,10 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/christmas_lights/assets/icon.svg",
       "instruction": {
         "en": "Push the F button on the Christmas Lights controller for aprox 5-10 seconds and release, lights should start to flash slowly."
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_hiuyt5mq",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_hiuyt5mq",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_jd3z4yig",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_jd3z4yig",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tzb210_zdgnbgus",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tzb210_zdgnbgus",
-        "productId": "TS0601"
-      }
-    ],
-    "manufacturerName": [
-      "_TZB210_zdgnbgus",
-      "_TZ3000_hiuyt5mq",
-      "_TZ3000_jd3z4yig"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0504B"
-    ]
+    }
   }
 }

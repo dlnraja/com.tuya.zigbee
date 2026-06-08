@@ -1,11 +1,27 @@
 {
-  "id": "dimmable_led_strip",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/dimmable_led_strip/assets/images/large.png",
+    "small": "/drivers/dimmable_led_strip/assets/images/small.png"
+  },
   "name": {
     "en": "Dimmable LED Strip"
   },
-  "$extends": [
-    "light_white_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 50,
@@ -13,6 +29,14 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3210_invesber",
+      "_TZ3210_invesber",
+      "_TZ3210_INVESBER"
+    ],
+    "productId": [
+      "TS0502B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,26 +56,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/dimmable_led_strip/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": [
-      "_TZ3210_INVESBER",
-      "_tz3210_invesber"
-    ],
-    "productId": [
-      "TS0502B"
-    ]
+    }
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim"
-  ],
-  "images": {
-    "large": "/drivers/dimmable_led_strip/assets/images/large.png",
-    "small": "/drivers/dimmable_led_strip/assets/images/small.png"
-  }
+  "settings": []
 }

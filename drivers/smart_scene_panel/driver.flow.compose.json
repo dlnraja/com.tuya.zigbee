@@ -48,7 +48,8 @@
       },
       "titleFormatted": {
         "en": "Switch 1 changed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_scene_panel_switch_2_changed",
@@ -57,7 +58,8 @@
       },
       "titleFormatted": {
         "en": "Switch 2 changed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_scene_panel_switch_3_changed",
@@ -66,7 +68,8 @@
       },
       "titleFormatted": {
         "en": "Switch 3 changed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_scene_panel_switch_4_changed",
@@ -75,7 +78,8 @@
       },
       "titleFormatted": {
         "en": "Switch 4 changed"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [

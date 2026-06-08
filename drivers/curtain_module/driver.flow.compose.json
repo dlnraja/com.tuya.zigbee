@@ -5,14 +5,16 @@
       "title": {
         "en": "Open",
         "de": "Öffnen"
-      }
+      },
+      "args": []
     },
     {
       "id": "curtain_module_move_close",
       "title": {
         "en": "Close",
         "de": "Schließen"
-      }
+      },
+      "args": []
     }
   ]
 }

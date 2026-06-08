@@ -18,7 +18,8 @@
     "button.4",
     "button.5",
     "button.6",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -88,6 +89,19 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_zxx7mi77",
+      "_TZE200_zxx7mi77",
+      "_TZE200_ZXX7MI77",
+      "_tze204_zxx7mi77",
+      "_TZE204_zxx7mi77",
+      "_TZE204_ZXX7MI77",
+      "_TZ3000_iszegwpd"
+    ],
+    "productId": [
+      "TS0046",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -166,17 +180,7 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    },
-    "manufacturerName": [
-      "_TZE200_ZXX7MI77",
-      "_TZE204_ZXX7MI77",
-      "_tze200_zxx7mi77",
-      "_tze204_zxx7mi77"
-    ],
-    "productId": [
-      "TS0046",
-      "TS0601"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/button_wireless_6/assets/images/small.png",

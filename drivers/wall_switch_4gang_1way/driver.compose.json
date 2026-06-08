@@ -74,6 +74,68 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_2ei1fkwb",
+      "_TZ3000_2EI1FKWB",
+      "_tz3000_hy5lggkg",
+      "_TZ3000_HY5LGGKG",
+      "_tz3002_vaq2bfcu",
+      "_TZ3002_vaq2bfcu",
+      "_TZ3002_VAQ2BFCU",
+      "_TZ3000_tyg4yiat",
+      "_tz3000_3n2minvf",
+      "_tz3000_4vobcwsc",
+      "_tz3000_a37eix1s",
+      "_tz3000_aqsjyh1h",
+      "_tz3000_enmfaave",
+      "_tz3000_excgg5kb",
+      "_tz3000_eyzpwhtc",
+      "_tz3000_jwoyqycg",
+      "_tz3000_kfkqkjqe",
+      "_tz3000_kt6xxa4o",
+      "_tz3000_lcjsewlo",
+      "_tz3000_mrduubod",
+      "_tz3000_pdvkkcuc",
+      "_tz3000_r9e2w7dn",
+      "_tz3000_s6ma1nh4",
+      "_tz3000_ssup6h68",
+      "_tz3000_uz6ibhib",
+      "_tz3000_wopf2sox",
+      "_tz3000_wwtnshol",
+      "_tz3000_xabckqv1",
+      "_tz3000_xk5udnd6",
+      "_tz3000_z6zplt0y",
+      "_tz3002_9eavto1k",
+      "_tz3002_a4kvf6zd",
+      "_tz3002_hkaktryd",
+      "_tz3002_l8bfzlcd",
+      "_tz3002_pw4ad2xa",
+      "_tz3002_tlsvxhxc",
+      "_tz3002_u7d3nes3",
+      "_tz3002_uu4uircb",
+      "_tz3002_xkxgfxsg",
+      "_tz3002_ybtqbyk3",
+      "_tz3002_yptomml1",
+      "_tz3002_zyuajkzz",
+      "_tz300a_ohjmifiz",
+      "_tz300a_rncj86af",
+      "_tz300a_vkflnsl0",
+      "_tz300a_vqrs45nj",
+      "_tz3210_iymfxdis",
+      "_tze204_xibaabmu",
+      "_tze284_xibaabmu",
+      "lellki",
+      "_TZ3002_PZAO9LS1"
+    ],
+    "productId": [
+      "TS0004",
+      "TS0014",
+      "TS0726",
+      "JZ-ZB-004",
+      "TS0004_power",
+      "TS0004_switch_module",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -119,24 +181,7 @@
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_2EI1FKWB",
-      "_TZ3000_HY5LGGKG",
-      "_TZ3002_VAQ2BFCU",
-      "_tz3000_2ei1fkwb",
-      "_tz3000_hy5lggkg",
-      "_tz3002_vaq2bfcu"
-    ],
-    "productId": [
-      "JZ-ZB-004",
-      "TS0004",
-      "TS0004_power",
-      "TS0004_switch_module",
-      "TS0014",
-      "TS0601",
-      "TS0726"
-    ]
+    }
   },
   "settings": [
     {

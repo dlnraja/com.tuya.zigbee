@@ -23,6 +23,14 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_oboryztc",
+      "_TZ3000_oboryztc",
+      "_TZ3000_OBORYZTC",
+      "_tz3210_iystcadi",
+      "_TZ3210_iystcadi",
+      "_TZ3210_IYSTCADI"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,7 +51,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "manufacturerName": []
+    "productId": [
+      "TS0601_strip_adv"
+    ]
   },
   "settings": [
     {

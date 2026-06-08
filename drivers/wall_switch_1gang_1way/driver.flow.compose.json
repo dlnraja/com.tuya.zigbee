@@ -167,6 +167,24 @@
       }
     }
   ],
+  "conditions": [
+    {
+      "id": "wall_switch_1gang_1way_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
   "actions": [
     {
       "id": "wall_switch_1gang_1way_set_backlight",
@@ -383,24 +401,6 @@
       "titleFormatted": {
         "en": "Set scene mode [[mode]]",
         "nl": "Stel scènemodus in [[mode]]"
-      }
-    }
-  ],
-  "conditions": [
-    {
-      "id": "wall_switch_1gang_1way_is_on",
-      "title": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
       }
     }
   ]

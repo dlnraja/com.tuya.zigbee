@@ -41,6 +41,22 @@
   },
   "energy": {},
   "zigbee": {
+    "productId": [
+      "TS0002",
+      "TS0207",
+      "TS0601_repeater"
+    ],
+    "manufacturerName": [
+      "_tz3000_5f43h46b",
+      "_TZ3000_5f43h46b",
+      "_TZ3000_5F43H46B",
+      "_tz3000_cfv2uyxe",
+      "_TZ3000_cfv2uyxe",
+      "_TZ3000_CFV2UYXE",
+      "_tz3000_iwtv2jwo",
+      "_TZ3000_iwtv2jwo",
+      "_TZ3000_IWTV2JWO"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -69,16 +85,7 @@
         "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",
         "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_CFV2UYXE",
-      "_tz3000_cfv2uyxe"
-    ],
-    "productId": [
-      "TS0002",
-      "TS0207",
-      "TS0601_repeater"
-    ]
+    }
   },
   "settings": [
     {

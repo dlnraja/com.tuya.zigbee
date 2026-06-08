@@ -1,5 +1,4 @@
 {
-  "id": "wall_switch_4_gang",
   "name": {
     "en": "Wall Switch (1/4 Gang)"
   },
@@ -14,8 +13,8 @@
     "onoff"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/wall_switch_4_gang/assets/images/large.png",
+    "small": "//drivers/wall_switch_4_gang/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,6 +23,29 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_dfgbtub0",
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_DFGBTUB0",
+      "_tz3000_dku2cfsc",
+      "_TZ3000_dku2cfsc",
+      "_TZ3000_DKU2CFSC",
+      "_tz3000_fjt5218m",
+      "_TZ3000_fjt5218m",
+      "_TZ3000_FJT5218M",
+      "_tz3000_r0pmi2p3",
+      "_TZ3000_r0pmi2p3",
+      "_TZ3000_R0PMI2P3",
+      "_TZ3000_2ei1fkwb",
+      "_TZ3000_hy5lggkg",
+      "_TYZB01_bagt1e4o",
+      "_TYZB01_BAGT1E4O"
+    ],
+    "productId": [
+      "TS0004",
+      "TS0014",
+      "TS0044"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -107,11 +129,40 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_switch_4_gang/assets/icon.svg",
       "instruction": {
         "en": "A tile for each button will be created. Press the first button (or the setup button if one exists) for 10 seconds (the LED should start blinking)."
       }
-    },
-    "manufacturerName": []
-  }
+    }
+  },
+  "settings": [
+    {
+      "id": "indicator_mode",
+      "type": "radio",
+      "label": {
+        "en": "Indicator mode"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Light Off"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Light on when switch turned on."
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Light on when the switch is turned off."
+          }
+        }
+      ]
+    }
+  ]
 }

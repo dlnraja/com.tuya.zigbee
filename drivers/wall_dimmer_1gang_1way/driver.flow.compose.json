@@ -107,6 +107,24 @@
       }
     }
   ],
+  "conditions": [
+    {
+      "id": "wall_dimmer_1gang_1way_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
   "actions": [
     {
       "id": "wall_dimmer_1gang_1way_set_backlight",
@@ -224,24 +242,6 @@
         "fr": "Régler luminosité [[brightness]]",
         "nl": "Helderheid instellen [[brightness]]",
         "de": "Helligkeit einstellen [[brightness]]"
-      }
-    }
-  ],
-  "conditions": [
-    {
-      "id": "wall_dimmer_1gang_1way_is_on",
-      "title": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
       }
     }
   ]

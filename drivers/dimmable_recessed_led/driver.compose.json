@@ -1,11 +1,26 @@
 {
-  "id": "dimmable_recessed_led",
+  "class": "other",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/dimmable_recessed_led/assets/images/large.png",
+    "small": "/drivers/dimmable_recessed_led/assets/images/small.png"
+  },
   "name": {
     "en": "Dimmable Recessed LED"
   },
-  "$extends": [
-    "light_white_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 7,
@@ -13,6 +28,14 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3210_zdrhqmo0",
+      "_TZ3210_zdrhqmo0",
+      "_TZ3210_ZDRHQMO0"
+    ],
+    "productId": [
+      "TS0502B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,25 +55,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/dimmable_recessed_led/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": [
-      "_TZ3210_ZDRHQMO0",
-      "_tz3210_zdrhqmo0"
-    ],
-    "productId": [
-      "TS0502B"
-    ]
+    }
   },
-  "class": "other",
-  "capabilities": [
-    "onoff"
-  ],
-  "images": {
-    "large": "/drivers/dimmable_recessed_led/assets/images/large.png",
-    "small": "/drivers/dimmable_recessed_led/assets/images/small.png"
-  }
+  "settings": []
 }

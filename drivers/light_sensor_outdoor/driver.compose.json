@@ -8,7 +8,8 @@
   "class": "sensor",
   "capabilities": [
     "measure_luminance",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance": {
@@ -19,6 +20,15 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3210_snzbbgvi",
+      "_TZ3210_snzbbgvi",
+      "_TZ3210_SNZBBGVI"
+    ],
+    "productId": [
+      "TS0222",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -26,15 +36,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3210_SNZBBGVI",
-      "_tz3210_snzbbgvi"
-    ],
-    "productId": [
-      "TS0222",
-      "TS0601"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/light_sensor_outdoor/assets/images/small.png",
