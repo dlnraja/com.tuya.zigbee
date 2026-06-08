@@ -1,24 +1,5 @@
 [
   {
-    "mfr": "_TZE200_s8gkrkxk",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "christmas_lights",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim",
-      "light_hue",
-      "light_saturation",
-      "lidl_xmas_mode"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim, light_hue, light_saturation, lidl_xmas_mode",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_vd43bbfq",
     "productId": [
       "TS130F"
@@ -958,22 +939,6 @@
   },
   {
     "mfr": "_TZE200_vucankjx",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "dimmer_1_gang_tuya",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_4mh6tyyo",
     "productId": [
       "TS0601"
     ],
@@ -2224,40 +2189,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3210_j4pdtz9v",
-    "productId": [
-      "TS0001",
-      "TS0001_fingerbot"
-    ],
-    "driver": "fingerbot",
-    "deviceType": "button",
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_dse8ogfy",
-    "productId": [
-      "TS0001",
-      "TS0001_fingerbot"
-    ],
-    "driver": "fingerbot",
-    "deviceType": "button",
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3210_232nryqh",
     "productId": [
       "TS0001",
@@ -2892,24 +2823,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "alarm_motion, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_3towulqd",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "motion_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "measure_luminance",
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, measure_luminance, alarm_motion, alarm_battery",
     "source": "Johan"
   },
   {
@@ -3773,23 +3686,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_ikvncluo",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "radar_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_luminance",
-      "alarm_motion",
-      "target_distance"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_luminance, alarm_motion, target_distance",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE204_ztqnh5cg",
     "productId": [
       "TS0601"
@@ -4030,21 +3926,6 @@
   },
   {
     "mfr": "_TZ3000_dbou1ap4",
-    "productId": [
-      "TS0505A",
-      "TS0505B",
-      "ZB-CL01"
-    ],
-    "driver": "rgb_bulb_E27",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_keabpigv",
     "productId": [
       "TS0505A",
       "TS0505B",
@@ -4409,25 +4290,6 @@
   },
   {
     "mfr": "_TZE200_d0yu2xgi",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "sirentemphumidsensor",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_battery",
-      "alarm_siren"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYST11_d0yu2xgi",
     "productId": [
       "TS0601"
     ],
@@ -5764,27 +5626,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_okaz9tjs",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_eyzb8yg3",
     "productId": [
       "TS0121",
@@ -6700,25 +6541,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_tqlv4ug4",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_rmjr4ufz",
     "productId": [
       "TS0003",
@@ -7393,45 +7215,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_i8jfiezr",
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
-    "driver": "temphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "TUYATEC-v3uxbuxy",
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
-    "driver": "temphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_bguser20",
     "productId": [
       "RH3052",
       "TS0201"
@@ -7637,25 +7421,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_fllyghyj",
-    "productId": [
-      "TS0201",
-      "TS0601"
-    ],
-    "driver": "temphumidsensor3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_battery",
-      "measure_humidity",
-      "measure_temperature"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_battery, measure_humidity, measure_temperature",
     "source": "Johan"
   },
   {
@@ -7954,24 +7719,6 @@
   },
   {
     "mfr": "_TZE200_sur6q7ko",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "thermostatic_radiator_valve",
-    "deviceType": "thermostat",
-    "capabilities": [
-      "alarm_battery",
-      "target_temperature",
-      "thermostat_preset",
-      "window_open"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_battery, target_temperature, thermostat_preset, window_open",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_hue3yfsn",
     "productId": [
       "TS0601"
     ],
@@ -8532,38 +8279,6 @@
   },
   {
     "mfr": "_TZE200_ctq0k47x",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "wall_dimmer_tuya",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_9i9dt8is",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "wall_dimmer_tuya",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_dfxkcots",
     "productId": [
       "TS0601"
     ],
@@ -9150,19 +8865,6 @@
   },
   {
     "mfr": "_TZ3000_0ht8dnxj",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "wall_remote_4_gang_2",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_b3mgfu0d",
     "productId": [
       "TS004F"
     ],
@@ -9837,23 +9539,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_18ejxno0",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_atp7xmd9",
     "productId": [
       "TS0002",
@@ -10459,25 +10144,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_aoclfnxz",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "wall_thermostat",
-    "deviceType": "thermostat",
-    "capabilities": [
-      "onoff",
-      "thermostat_programming",
-      "measure_temperature",
-      "target_temperature",
-      "child_lock"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, thermostat_programming, measure_temperature, target_temperature, child_lock",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE204_aoclfnxz",
     "productId": [
       "TS0601"
@@ -10786,23 +10452,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_qq9mpfhw",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "water_leak_sensor_tuya",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_water",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_water, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_jthf7vb6",
     "productId": [
       "TS0601"
@@ -10817,19 +10466,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "alarm_water, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_m0vaazab",
-    "productId": [
-      "TS0207"
-    ],
-    "driver": "zigbee_repeater",
-    "deviceType": "other",
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
     "source": "Johan"
   },
   {
@@ -10958,15 +10594,6 @@
     "vendor": "Tuya",
     "source": "Z2M",
     "driver": "plug"
-  },
-  {
-    "mfr": "_TZE200_hl0ss9oa",
-    "productId": "TS0225",
-    "model": "ZG-205ZL",
-    "description": "24Ghz/5.8GHz human presence sensor",
-    "vendor": "Tuya",
-    "source": "Z2M",
-    "driver": null
   },
   {
     "mfr": "_TZE200_y4mdop0b",
@@ -11774,18 +11401,6 @@
   },
   {
     "mfr": "_TZE204_ogkdpgy2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_7bztmfm1",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_7bztmfm1",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12721,12 +12336,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_m0vaazab",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_ufttklsz",
     "productId": null,
     "source": "Z2M",
@@ -13075,12 +12684,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_4mh6tyyo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_hlx9tnzb",
     "productId": null,
     "source": "Z2M",
@@ -13135,19 +12738,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_dfxkcots",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_68utemio",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_9i9dt8is",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14161,12 +13752,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_bguser20",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_yd2e749y",
     "productId": null,
     "source": "Z2M",
@@ -14180,12 +13765,6 @@
   },
   {
     "mfr": "_TZ3000_xr3htd96",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_fllyghyj",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14413,12 +13992,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_b3mgfu0d",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_11pg3ima",
     "productId": null,
     "source": "Z2M",
@@ -14450,12 +14023,6 @@
   },
   {
     "mfr": "_TZE204_dzuqwsyg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_qq9mpfhw",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14510,12 +14077,6 @@
   },
   {
     "mfr": "_TZ3000_g92baclx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_qlai3277",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15038,12 +14599,6 @@
   },
   {
     "mfr": "_TZ3000_nnwehhst",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_tqlv4ug4",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15949,12 +15504,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_hue3yfsn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_e9ba97vf",
     "productId": null,
     "source": "Z2M",
@@ -16046,12 +15595,6 @@
   },
   {
     "mfr": "_TZE200_6rdj8dzm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_9xfjixap",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16340,12 +15883,6 @@
   },
   {
     "mfr": "_TZ3000_ss98ec5d",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_okaz9tjs",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16747,12 +16284,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_byzdayie",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_fsb6zw01",
     "productId": null,
     "source": "Z2M",
@@ -16808,12 +16339,6 @@
   },
   {
     "mfr": "_TZ3000_tw4ztbp4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_18ejxno0",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17317,12 +16842,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_gzvniqjb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_nklqjk62",
     "productId": null,
     "source": "Z2M",
@@ -17558,12 +17077,6 @@
   },
   {
     "mfr": "_TZ3000_sfibawtr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ikvncluo",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17894,12 +17407,6 @@
   },
   {
     "mfr": "_TZE200_aj0oxo1i",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_3towulqd",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18752,18 +18259,6 @@
   },
   {
     "mfr": "_TZ3000_djgzdba9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_dse8ogfy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_j4pdtz9v",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -20264,12 +19759,6 @@
   },
   {
     "mfr": "_TZE200_qcasmfan",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_byzdayie",
     "productId": null,
     "source": "Z2M",
     "driver": null
