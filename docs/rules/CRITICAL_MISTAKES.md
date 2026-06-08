@@ -1,7 +1,7 @@
 # CRITICAL MISTAKES - Never Repeat (v8.5.0 Phoenix Sovereign + Fleetwood Gateway)
 
-> **Dernière mise à jour :** 07 Juin 2026
-> **Version :** v8.5.37
+> **Dernière mise à jour :** 08 Juin 2026
+> **Version :** v8.5.38
 > **Architecture :** Phoenix Sovereign + Fleetwood Gateway + UnifiedBatteryHandler + Dual-Layer Gate + Bidirectional Button System
 
 ---
@@ -127,6 +127,10 @@
 | J4 | Some manufacturers send raw C (no division) | Vérifier par fingerprint |
 | J5 | Multi-DP frames: parse ALL DPs dans un seul report | Ne pas ignorer les DPs additionnels |
 | J6 | Time Sync (0x24): 10-byte `[seq:2][UTC:4][Local:4]` | Echo `seqNum` from request |
+| J7 | **`sendDP()` N'EXISTE PAS sur TuyaEF00Manager** | Utiliser `sendTuyaDP(dp, dpType, value)` ou le wrapper `sendDP(dp, value, type)` ajouté dans v8.2.0. L'ancien code appelait `sendDP()` qui n'existait pas = écritures settings silencieusement échouées |
+| J8 | **`requestDPs()` N'EXISTE PAS** — utiliser `requestDP(dp)` singulier | L'ancien code appelait `requestDPs([1,4,12])` = tableau = crash silencieux. Chaque DP doit être demandé individuellement via `requestDP(dp)` |
+| J9 | **DP12 peut être pressure OU luminance** selon le hardware | Z2M l'appelle "illuminance" mais le hardware envoie parfois de la pression. Vérifier par MFR: `_TZE200_seq9cm6u` = pressure, d'autres = luminance |
+| J10 | **DP4 routing: ne pas mettre dans dpMappings si `_handleBatteryDP` override** | Si DP4 est dans dpMappings, le parent le traite directement et l'override `_handleBatteryDP` n'est JAMAIS appelé. Retirer DP4 de dpMappings, utiliser `batteryConfig.dpId: 4` |
 
 ### K. ENERGY & HYBRID DRIVERS
 
@@ -149,6 +153,7 @@
 | L5 | Case-insensitive: utiliser `driver-fingerprint-matcher.js` | NE PAS `.toLowerCase()` manuellement |
 | L6 | Pas de wildcards SDK3: `_TZE284_*` INVALIDE | Chaque fingerprint complet |
 | L7 | Mise à jour: `auto-learn-fingerprints.js` → compose.json | Pipeline automatisé |
+| L8 | **Format `fingerprints[]` dans compose.json N'EST PAS supporté par `homey app compose`** | Le tool de composition génère TOUJOURS `manufacturerName[]` + `productId[]` dans app.json, quel que soit le format dans compose.json. NE PAS migrer vers le format `fingerprints` — il sera ignoré et l'app.json restera avec l'ancien format |
 
 ---
 

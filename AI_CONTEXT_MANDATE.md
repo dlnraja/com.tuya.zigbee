@@ -199,6 +199,12 @@ Every frame received (RX) from a physical Zigbee device or sent (TX) from Homey 
 - **Fix:** `TuyaEF00Manager.js` DP query methods are now ordered: (1) Raw frame via `endpoint.sendFrame(0xEF00, ...)` with command `0x03` and seq echo — most reliable; (2) `tuyaCluster.dataQuery({})` — cluster method fallback; (3) `tuyaCluster.command('dataQuery', ...)` — generic command fallback. All attempts are wrapped in `Promise.race` with device-specific timeout (3s for battery devices, 8s for mains).
 - **Rule:** DP query priority is always raw frame first. Never rely solely on `tuyaCluster.dataQuery()` as the only query method.
 
+### 12. Format `fingerprints[]` NON supporté par `homey app compose` (v8.5.38)
+- **Découverte:** Le format `fingerprints: [{ manufacturerName, productId }]` dans `driver.compose.json` **N'EST PAS supporté** par `homey app compose`. Le tool génère TOUJOURS `manufacturerName[]` + `productId[]` dans app.json, quel que soit le format dans compose.json.
+- **Impact:** Toute migration vers le format `fingerprints` sera ignorée par le tool de composition. L'app.json restera avec l'ancien format.
+- **Règle:** Utiliser le format actuel: `manufacturerName[]` + `productId[]` séparés dans `driver.compose.json`. NE PAS migrer vers `fingerprints[]`.
+- **Source:** Vérifié en exécutant `homey app compose` après une migration — app.json est revenu au format ancien.
+
 ---
 
 ## 🔧 5. Diagnostic & Issue Resolution History
