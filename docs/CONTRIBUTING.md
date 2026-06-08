@@ -122,7 +122,7 @@ Merging pull requests can take time. Here’s how you can help:
 |--------|-------|
 | Version | v8.1.185 |
 | Drivers | 320 |
-| Fingerprints | 26,643 |
+| Fingerprints | 26,637 |
 | Last Updated | 2026-06-08 |
 
 
