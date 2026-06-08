@@ -1,0 +1,23 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Soil Moisture",
+    "nl": "Bodemvocht",
+    "de": "Bodenfeuchtigkeit",
+    "fr": "Humidité du Sol"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/measure_soil_moisture.svg",
+  "insights": true,
+  "desc": {
+    "en": "Soil moisture percentage"
+  },
+  "min": 0,
+  "max": 100,
+  "step": 1
+}
