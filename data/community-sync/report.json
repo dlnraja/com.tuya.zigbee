@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-08T20:18:20.134Z",
+  "ts": "2026-06-08T20:28:23.998Z",
   "currentCount": 10819,
   "src": {
     "johan": {
@@ -19275,7 +19275,205 @@
       "enriched": true
     },
     "gh": {
-      "error": "issues.forEach is not a function"
+      "issueCount": 55,
+      "prCount": 2,
+      "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 407,
+          "title": "[Auto] 2 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh",
+            "_TZE284_sdvbnmj5"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 405,
+          "title": "[Auto] 1 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 395,
+          "title": "TS0601 _TZE200_9xfjixap #339#379 #381  #384",
+          "mfrs": [
+            "_TZE200_9xfjixap"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 388,
+          "title": "Bug Report: Incorrect recognition of Rain Sensor TS0207 as Water Leak Sensor",
+          "mfrs": [
+            "_TZ3210_tgvtvdoc",
+            "_TZ3210_tgvtvdoc",
+            "_TZ3210_tgvtvdoc"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1411,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZ3210_nuenzetq",
+            "_TZ3210_nuenzetq",
+            "_TZ3210_nuenzetq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1410,
+          "title": "Device Request - GIEX 2-Zone Smart Water Valve - _TZE284_8zizsafo / TS0601",
+          "mfrs": [
+            "_TZE284_8zizsafo",
+            "_TZE284_8zizsafo",
+            "_TZE284_8zizsafo"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1409,
+          "title": "Device Request - Tuya Thermostat Radiator - _TZE284_pcdmj88b / TS0601",
+          "mfrs": [
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b",
+            "_TZE284_pcdmj88b"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1408,
+          "title": "Device Request: Tuya Power Monitoring Plug variant (_TZ3210_jlf1nepw)",
+          "mfrs": [
+            "_TZ3210_jlf1nepw"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1407,
+          "title": "Device Request - Tuya Zigbee Smart Button - _TZ3000_b4awzgct / TS0041",
+          "mfrs": [
+            "_TZ3000_b4awzgct",
+            "_TZ3000_b4awzgct",
+            "_TZ3000_b4awzgct"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1406,
+          "title": "Add Quoya M515EGBZTN support and fix curtain_motor position inversion",
+          "mfrs": [
+            "_TZE200_gubdgai2",
+            "_TZE200_vdiuwbkq",
+            "_TZE200_gubdgai2",
+            "_TZE200_vdiuwbkq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1405,
+          "title": "Add support for _TZE200_gubdgai2 (TS0601) - Quoya M515EGBZTN Zigbee roller blind / plissé motor",
+          "mfrs": [
+            "_TZE200_gubdgai2",
+            "_TZE200_gubdgai2",
+            "_TZE200_vdiuwbkq",
+            "_TZE200_gubdgai2"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1404,
+          "title": "Device Request - [Moes mini 2 gang zigbee dimmer/ [ZM-105B-M]",
+          "mfrs": [
+            "_TZE200_bxoo2swd",
+            "_TZE200_bxoo2swd",
+            "_TZE200_bxoo2swd"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1403,
+          "title": "Device Request - Tuya Zigbee Pressure/Contact Sensor - _TZE200_seq9cm6u / TS0601",
+          "mfrs": [
+            "_TZE200_seq9cm6u",
+            "_TZE200_seq9cm6u",
+            "_TZE200_seq9cm6u"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1402,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZ3210_n0wbkysi",
+            "_TZ3210_n0wbkysi",
+            "_TZ3210_n0wbkysi"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1401,
+          "title": "Device Request - BSEED 4 Gang light switch - [_TZ3002_pzao9ls1] / [TS0726]",
+          "mfrs": [
+            "_TZ3002_pzao9ls1",
+            "_TZ3002_pzao9ls1",
+            "_TZ3002_pzao9ls1"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1400,
+          "title": "Device Request - [LCD thermometer & humidity sensor ] - [_TZE284_qf5mzewi] / [TS0601]",
+          "mfrs": [
+            "_TZE284_qf5mzewi",
+            "_TZE284_qf5mzewi"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1399,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZE284_uo8qcagc",
+            "_TZE284_uo8qcagc",
+            "_TZE284_uo8qcagc",
+            "_TZE284_uo8qcagc"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1398,
+          "title": "Device Request - [10G Radarsensor 4in1] - [_TZE200_rhgsbacq] / [TS0601]",
+          "mfrs": [
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1397,
+          "title": "Device Request - [Radaar sensor /  mmWave] - [TS0601] / [_TZE284_1youk3hj]",
+          "mfrs": [
+            "_TZE284_1youk3hj",
+            "_TZE284_1youk3hj",
+            "_TZE284_1youk3hj"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1396,
+          "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
+          "mfrs": [
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl"
+          ]
+        }
+      ]
     }
   },
   "newFps": [
