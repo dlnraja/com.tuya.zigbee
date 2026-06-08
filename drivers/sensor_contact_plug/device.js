@@ -105,7 +105,6 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)
@@ -156,15 +155,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
-        elec.on('attr.activePower', (v) => {
+        elec.on('attr.activePower', async (v) => {
           const scaled = safeMultiply(this._applyScale(v, 10), 'measure_power');
           await this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
       });
-        elec.on('attr.rmsVoltage', (v) => {
+        elec.on('attr.rmsVoltage', async (v) => {
           const scaled = safeMultiply(this._applyScale(v, 10), 'measure_voltage');
           await this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
       });
-        elec.on('attr.rmsCurrent', (v) => {
+        elec.on('attr.rmsCurrent', async (v) => {
           const scaled = this._applyScale(v * 1000, 'measure_current' );
           await this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
       });
@@ -175,7 +174,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Metering cluster (0x0702) - v5.5.422: Apply user scale
     try {
       const meter = ep1.clusters?.seMetering;if (meter?.on) {
-        meter.on('attr.currentSummationDelivered', (v) => {
+        meter.on('attr.currentSummationDelivered', async (v) => {
           const scaled = this._applyScale(v * 1000, 'meter_power');
           await this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
       });

@@ -132,7 +132,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
             this._lastOnoffState = state;
             if (isPhysical) {
               const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
-              (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { return null; } })()
+              (() => { try { this.homey.flow.getDeviceTriggerCard(flowId)?.trigger(this, {}, {}).catch(() => {}); } catch (e) { /* ignore */ } })()
             }
           }
         }
@@ -156,15 +156,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
-        elec.on('attr.activePower', (v) => {
+        elec.on('attr.activePower', async (v) => {
           const scaled = safeMultiply(this._applyScale(v, 10), 'measure_power');
           await this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
       });
-        elec.on('attr.rmsVoltage', (v) => {
+        elec.on('attr.rmsVoltage', async (v) => {
           const scaled = safeMultiply(this._applyScale(v, 10), 'measure_voltage');
           await this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
       });
-        elec.on('attr.rmsCurrent', (v) => {
+        elec.on('attr.rmsCurrent', async (v) => {
           const scaled = this._applyScale(v * 1000, 'measure_current' );
           await this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
       });
@@ -175,7 +175,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Metering cluster (0x0702) - v5.5.422: Apply user scale
     try {
       const meter = ep1.clusters?.seMetering;if (meter?.on) {
-        meter.on('attr.currentSummationDelivered', (v) => {
+        meter.on('attr.currentSummationDelivered', async (v) => {
           const scaled = this._applyScale(v * 1000, 'meter_power');
           await this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
       });
