@@ -70,21 +70,15 @@
         "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_cfv2uyxe",
-        "productId": "TS0002"
-      },
-      {
-        "manufacturerName": "_tz3000_cfv2uyxe",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_tz3000_cfv2uyxe",
-        "productId": "TS0601_repeater"
-      }
+    "manufacturerName": [
+      "_TZ3000_CFV2UYXE",
+      "_tz3000_cfv2uyxe"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0002",
+      "TS0207",
+      "TS0601_repeater"
+    ]
   },
   "settings": [
     {

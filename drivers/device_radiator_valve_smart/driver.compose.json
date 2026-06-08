@@ -38,17 +38,17 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_khah2lkr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_spyvfeti",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE200_KHAH2LKR",
+      "_TZE200_SPYVFETI",
+      "_TZE200_khah2lkr",
+      "_TZE200_spyvfeti",
+      "_tze200_khah2lkr",
+      "_tze200_spyvfeti"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {

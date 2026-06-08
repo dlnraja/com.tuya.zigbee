@@ -60,21 +60,15 @@
         "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0043"
-      },
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0601_wirelesssw"
-      }
+    "manufacturerName": [
+      "_PLACEHOLDER_NEEDS_REAL_MFR",
+      "_placeholder_needs_real_mfr"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0043",
+      "TS0601",
+      "TS0601_wirelesssw"
+    ]
   },
   "settings": [
     {

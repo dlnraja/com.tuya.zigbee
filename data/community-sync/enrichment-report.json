@@ -1,0 +1,2499 @@
+{
+  "timestamp": "2026-06-08T06:49:59.266Z",
+  "dryRun": false,
+  "analysis": {
+    "totalMFRs": 7388,
+    "totalPIDs": 0,
+    "collisions": 756,
+    "orphanedDB": 354,
+    "orphanedDriver": 106,
+    "z2mMissing": 7,
+    "enriched": 0
+  },
+  "issues": [
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_qaaysllp",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyzb01_ftdkanlj",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyzb01_kvwjujy9",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_huzkzqyk",
+      "driverId": "climate_sensor_dimmer",
+      "message": "Driver \"climate_sensor_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz2000_a476raq2",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz2000_xogb73am",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz2000_avdnvykf",
+      "driverId": "air_purifier_quality",
+      "message": "Driver \"air_purifier_quality\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz2000_hjsgdkfl",
+      "driverId": "air_purifier_quality",
+      "message": "Driver \"air_purifier_quality\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyzb01_a476raq2",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyzb01_hjsgdkfl",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_rusu2vzb",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_yd2e749y",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_ywagc4rj",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_itnrsufe",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_bjawzodf",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_3towulqd",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_bh3n6gk8",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze201_ztc6ggyl",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze202_ztc6ggyl",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze203_ztc6ggyl",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_xsm7l9xa",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_wukb7rhc",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_xpq2rzhq",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_holel4dk",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_jva8ink8",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_lyetpprm",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_i8jfiezr",
+      "driverId": "climate_sensor_switch",
+      "message": "Driver \"climate_sensor_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_bguser20",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_8ybe88nf",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_f2bw0b6k",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_dowj6gyi",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_0s1izerx",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_akqdg6g7",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_9cxuhakf",
+      "driverId": "air_purifier_quality",
+      "message": "Driver \"air_purifier_quality\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_aqnazj70",
+      "driverId": "air_purifier_din",
+      "message": "Driver \"air_purifier_din\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-1G3TAWNP",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-1UXX9CCI",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-ABKEHQUS",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-BFQ2I2SY",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-G3GL6CGY",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-GQHXIXYK",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-HAOIUWZY",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-OJMXEIKG",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-OJMXEIKQ",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-PRHS1RSD",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-QUN7VQ14",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-RIUJ5XZS",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-V3UXBUXY",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-VMGH3FXD",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-YG5DCBFU",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYZB01_A476RAQ2",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYZB01_FTDKANLJ",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYZB01_HJSGDKFL",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYZB01_KVWJUJY9",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ2000_A476RAQ2",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ2000_XOGB73AM",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_0S1IZERX",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_8YBE88NF",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_AKQDG6G7",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_BGUSER20",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_BJAWZODF",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_DOWJ6GYI",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_F2BW0B6K",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_ITNRSUFE",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_QAAYSLLP",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_RUSU2VZB",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_YD2E749Y",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_YWAGC4RJ",
+      "driverId": "air_purifier_climate",
+      "message": "Driver \"air_purifier_climate\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC-g3gl6cgy",
+      "driverId": "air_purifier_contact",
+      "message": "Driver \"air_purifier_contact\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_bjzrowv2",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_4vobcgd3",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_nogaemzt",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_pk0sfzvr",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_nueqqe6k",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_xaabybja",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_rmymn92d",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_3i3exuay",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_hsgrhjpf",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_68nvbio9",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_1fuxihti",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_yia0p3tr",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_cf1sl3tj",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_9p5xmj5r",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_xu4a5rhj",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_bjzrowv2",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_4vobcgd3",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_nogaemzt",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_pk0sfzvr",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_nueqqe6k",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_xaabybja",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_rmymn92d",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_3i3exuay",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_hsgrhjpf",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_68nvbio9",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_1fuxihti",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_yia0p3tr",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_cf1sl3tj",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_9p5xmj5r",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_xu4a5rhj",
+      "driverId": "air_purifier_curtain",
+      "message": "Driver \"air_purifier_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_ip2akl4w",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_1agwnems",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_579lguh2",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_vucankjx",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_4mh6tyyo",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_n9ctkb6j",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_9qhuzgo0",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_dcnsggvz",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_zenj4lxv",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_bxoo2swd",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_gwkapsoq",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_fjjbhx9d",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_ip2akl4w",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_1agwnems",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_579lguh2",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_vucankjx",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_4mh6tyyo",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_n9ctkb6j",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_9qhuzgo0",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_dcnsggvz",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_zenj4lxv",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze204_bxoo2swd",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_gwkapsoq",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_fjjbhx9d",
+      "driverId": "air_purifier_dimmer",
+      "message": "Driver \"air_purifier_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_AQNAZJ70",
+      "driverId": "air_purifier_din",
+      "message": "Driver \"air_purifier_din\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_9CXUHAKF",
+      "driverId": "air_purifier_quality",
+      "message": "Driver \"air_purifier_quality\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ2000_AVDNVYKF",
+      "driverId": "air_purifier_quality",
+      "message": "Driver \"air_purifier_quality\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ2000_HJSGDKFL",
+      "driverId": "air_purifier_quality",
+      "message": "Driver \"air_purifier_quality\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_OGX8U9IT",
+      "driverId": "blaster_remote",
+      "message": "Driver \"blaster_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_ogx8u9it",
+      "driverId": "blaster_remote",
+      "message": "Driver \"blaster_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_ngqk6jia",
+      "driverId": "dimmer_wall_water",
+      "message": "Driver \"dimmer_wall_water\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_weaqkhab",
+      "driverId": "dimmer_wall_water",
+      "message": "Driver \"dimmer_wall_water\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_DSE8OGFY",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_dse8ogfy",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EWELINK",
+      "driverId": "device_plug_energy_monitor",
+      "message": "Driver \"device_plug_energy_monitor\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_KDI2O9M6",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_kdi2o9m6",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_232nryqh",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_okbss9dy",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_g8n1n7lg",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyzb01_phjeraqq",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_5f43h46b",
+      "driverId": "button_wireless_usb",
+      "message": "Driver \"button_wireless_usb\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_5f43h46b",
+      "driverId": "remote_button_wireless_usb",
+      "message": "Driver \"remote_button_wireless_usb\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_7ed9cqgi",
+      "driverId": "dimmer_wall_switch",
+      "message": "Driver \"dimmer_wall_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_j9568h44",
+      "driverId": "button_wireless_valve",
+      "message": "Driver \"button_wireless_valve\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_j9568h44",
+      "driverId": "remote_button_wireless_valve",
+      "message": "Driver \"remote_button_wireless_valve\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_dfgbtub0",
+      "driverId": "remote_button_wireless_scene",
+      "message": "Driver \"remote_button_wireless_scene\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_232NRYQH",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_J4PDTZ9V",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_OKBSS9DY",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_G8N1N7LG",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYZB01_PHJERAQQ",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_j4pdtz9v",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_j4pdtz9v",
+      "driverId": "button_wireless_fingerbot",
+      "message": "Driver \"button_wireless_fingerbot\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_5F43H46B",
+      "driverId": "button_wireless_usb",
+      "message": "Driver \"button_wireless_usb\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_5F43H46B",
+      "driverId": "remote_button_wireless_usb",
+      "message": "Driver \"remote_button_wireless_usb\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_J9568H44",
+      "driverId": "button_wireless_valve",
+      "message": "Driver \"button_wireless_valve\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_J9568H44",
+      "driverId": "remote_button_wireless_valve",
+      "message": "Driver \"remote_button_wireless_valve\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_HUZKZQYK",
+      "driverId": "climate_sensor_dimmer",
+      "message": "Driver \"climate_sensor_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE284_7ZAZVLYN",
+      "driverId": "climate_sensor_smart",
+      "message": "Driver \"climate_sensor_smart\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE284_7ZAZVLYN",
+      "driverId": "sensor_climate_smart",
+      "message": "Driver \"sensor_climate_smart\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze284_7zazvlyn",
+      "driverId": "climate_sensor_smart",
+      "message": "Driver \"climate_sensor_smart\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze284_7zazvlyn",
+      "driverId": "sensor_climate_smart",
+      "message": "Driver \"sensor_climate_smart\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_I8JFIEZR",
+      "driverId": "climate_sensor_switch",
+      "message": "Driver \"climate_sensor_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_6oabgtzv",
+      "driverId": "contact_sensor_switch",
+      "message": "Driver \"contact_sensor_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_WPTAYAQR",
+      "driverId": "contact_sensor_curtain",
+      "message": "Driver \"contact_sensor_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_wptayaqr",
+      "driverId": "contact_sensor_curtain",
+      "message": "Driver \"contact_sensor_curtain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_JOWHPXOP",
+      "driverId": "contact_sensor_dimmer",
+      "message": "Driver \"contact_sensor_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_jowhpxop",
+      "driverId": "contact_sensor_dimmer",
+      "message": "Driver \"contact_sensor_dimmer\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_6OABGTZV",
+      "driverId": "contact_sensor_switch",
+      "message": "Driver \"contact_sensor_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_3TOWULQD",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_BH3N6GK8",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_HOLEL4DK",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_JVA8INK8",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_LYETPPRM",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_WUKB7RHC",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_XPQ2RZHQ",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE201_ZTC6GGYL",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE202_ZTC6GGYL",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE203_ZTC6GGYL",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE204_XSM7L9XA",
+      "driverId": "device_air_purifier_motion",
+      "message": "Driver \"device_air_purifier_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SMARTTHINGS",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_5CT6E7YE",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_8N4DN1NE",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_URJF5U18",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_5ct6e7ye",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_8n4dn1ne",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_urjf5u18",
+      "driverId": "dimmer_wall_plug",
+      "message": "Driver \"dimmer_wall_plug\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_7ED9CQGI",
+      "driverId": "dimmer_wall_switch",
+      "message": "Driver \"dimmer_wall_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_2DFY6TOL",
+      "driverId": "dimmer_wall_switch",
+      "message": "Driver \"dimmer_wall_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_TFXWXKLQ",
+      "driverId": "dimmer_wall_switch",
+      "message": "Driver \"dimmer_wall_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_2dfy6tol",
+      "driverId": "dimmer_wall_switch",
+      "message": "Driver \"dimmer_wall_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3210_tfxwxklq",
+      "driverId": "dimmer_wall_switch",
+      "message": "Driver \"dimmer_wall_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_NGQK6JIA",
+      "driverId": "dimmer_wall_water",
+      "message": "Driver \"dimmer_wall_water\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3210_WEAQKHAB",
+      "driverId": "dimmer_wall_water",
+      "message": "Driver \"dimmer_wall_water\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ARDUINO",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC1352",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC1352P",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC2530",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC2531",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC2652",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC2652P",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC2652R",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CC2652RB",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "COD.M",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CONBEE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "COORDINATOR",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "CUSTOM",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DEBUG",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DECONZ",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DEMO",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DEV",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DEVELOPMENT",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DIY",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DIYRUZ",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "DRESDEN ELEKTRONIK",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "E104",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "E18",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "E72",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EBYTE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EFR32",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EFR32MG",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EFR32MG21",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EFR32MG22",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EGONY",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ELECTROLAMA",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESP-IDF",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESP32",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESP32-C6",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESP32-H2",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESP32C6",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESP32H2",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESPIDF",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ESPRESSIF",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "EXAMPLE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "GIO",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "GIO.ZIGBEE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "HOBBY",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "HOMEAUTOMATION",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "HOMEMADE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "HOME_AUTOMATION",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "HUE ESSENTIALS",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "JN5168",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "JN5169",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "LUMI.ROUTER",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "MAKER",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "MODKAM",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "NORDIC",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "NRF52",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "NRF52840",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "NXP",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "OPEN SOURCE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "OPENSOURCE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "PHOSCON",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "PLATFORMIO",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "POPP",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "PROTOTYPE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "PTVO",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "PTVO.INFO",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "PTVO.SWITCH",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "RASPBEE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "RF-STAR",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "RFSTAR",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ROUTER",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SAMPLE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SILABS",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SILICON LABS",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SLAESH",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SLZB-06",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SLZB-07",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "SONOFF ZBBRIDGE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TASMOTA",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TEST",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TEXAS INSTRUMENTS",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TI",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUBE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUBE'S ZB",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "XYZROE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "Z-STACK",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "Z2M",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "Z2T",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZBBRIDGE",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZHA",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE HOME",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE HOME AUTOMATION",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE ROUTER",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE-ROUTER",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE2MQTT",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE2TASMOTA",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEEHOME",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEEROUTER",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGBEE_HOME",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZIGSTAR",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZNRF52",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZSTACK",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZZH",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "ZZH!",
+      "driverId": "diy_custom_zigbee",
+      "message": "Driver \"diy_custom_zigbee\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3290_7V1K4VUFOTPOWP9Z",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3290_ACV1IUSLXI3SHAAJ",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3290_J37ROOAXRCDCQO5N",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3290_OT6EWJVMEJQ5EKHL",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3290_U9XAC5RV",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3290_XJPBCXN92AAXVMLZ",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3290_7v1k4vufotpowp9z",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3290_acv1iuslxi3shaaj",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3290_j37rooaxrcdcqo5n",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3290_ot6ewjvmejq5ekhl",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3290_u9xac5rv",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3290_xjpbcxn92aaxvmlz",
+      "driverId": "ir_remote",
+      "message": "Driver \"ir_remote\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_kmh5qpmb",
+      "driverId": "sensor_climate_motion",
+      "message": "Driver \"sensor_climate_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz3000_pnzfdr9y",
+      "driverId": "plug_smart_switch",
+      "message": "Driver \"plug_smart_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_PNZFDR9Y",
+      "driverId": "plug_smart_switch",
+      "message": "Driver \"plug_smart_switch\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_DFGBTUB0",
+      "driverId": "remote_button_wireless_scene",
+      "message": "Driver \"remote_button_wireless_scene\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ3000_KMH5QPMB",
+      "driverId": "sensor_climate_motion",
+      "message": "Driver \"sensor_climate_motion\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "HOBEIAN",
+      "driverId": "sensor_climate_presence",
+      "message": "Driver \"sensor_climate_presence\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE200_u6x1zyv2",
+      "driverId": "sensor_contact_rain",
+      "message": "Driver \"sensor_contact_rain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze200_u6x1zyv2",
+      "driverId": "sensor_contact_rain",
+      "message": "Driver \"sensor_contact_rain\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE284_HDML1AAV",
+      "driverId": "sensor_lcdtemphumidsensor_soil",
+      "message": "Driver \"sensor_lcdtemphumidsensor_soil\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE284_OITAVOV2",
+      "driverId": "sensor_lcdtemphumidsensor_soil",
+      "message": "Driver \"sensor_lcdtemphumidsensor_soil\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze284_hdml1aav",
+      "driverId": "sensor_lcdtemphumidsensor_soil",
+      "message": "Driver \"sensor_lcdtemphumidsensor_soil\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze284_oitavov2",
+      "driverId": "sensor_lcdtemphumidsensor_soil",
+      "message": "Driver \"sensor_lcdtemphumidsensor_soil\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "LIDL LIVARNO",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "NOUS",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TS",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "TUYATEC",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TY",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYST",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TYZB",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZ",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZB",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZC",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZE",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZF",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZH",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZJ",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZL",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZN",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZQ",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZS",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_TZW",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_ty",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyst",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tyzb",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tz",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzb",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzc",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tze",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzf",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzh",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzj",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzl",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzn",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzq",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzs",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    },
+    {
+      "type": "ORPHANED_DB",
+      "severity": "MEDIUM",
+      "mfr": "_tzw",
+      "driverId": "universal_fallback",
+      "message": "Driver \"universal_fallback\" in database but directory does not exist"
+    }
+  ],
+  "summary": {
+    "totalIssues": 354,
+    "critical": 0,
+    "high": 0,
+    "medium": 354
+  }
+}

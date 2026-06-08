@@ -100,21 +100,15 @@
         "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_pcqjmcud",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tz3000_pcqjmcud",
-        "productId": "TS004F"
-      },
-      {
-        "manufacturerName": "_tz3000_pcqjmcud",
-        "productId": "ZG-101ZD"
-      }
+    "manufacturerName": [
+      "_TZ3000_PCQJMCUD",
+      "_tz3000_pcqjmcud"
     ],
-    "manufacturerName": []
+    "productId": [
+      "ERS-10TZBVK-AA",
+      "TS004F",
+      "ZG-101ZD"
+    ]
   },
   "images": {
     "small": "/drivers/smart_knob_rotary/assets/images/small.png",

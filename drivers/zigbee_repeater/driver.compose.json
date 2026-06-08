@@ -24,29 +24,21 @@
         "en": "Plug in the USB repeater and hold button 5s."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_1mxvlhmq",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_tz3000_gdc3biaj",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_tz3000_hopvlupy",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_tz3000_m0vaazwu",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_tz3000_rku4cnct",
-        "productId": "TS0207"
-      }
+    "manufacturerName": [
+      "_TZ3000_1MXVLHMQ",
+      "_TZ3000_GDC3BIAJ",
+      "_TZ3000_HOPVLUPY",
+      "_TZ3000_M0VAAZWU",
+      "_TZ3000_RKU4CNCT",
+      "_tz3000_1mxvlhmq",
+      "_tz3000_gdc3biaj",
+      "_tz3000_hopvlupy",
+      "_tz3000_m0vaazwu",
+      "_tz3000_rku4cnct"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0207"
+    ]
   },
   "icon": "/drivers/zigbee_repeater/assets/icon.svg",
   "images": {

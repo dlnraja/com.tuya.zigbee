@@ -45,17 +45,14 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_qpn5q17m",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_qpn5q17m",
-        "productId": "TS0601_air_purifier"
-      }
+    "manufacturerName": [
+      "_TZE204_QPN5Q17M",
+      "_tze204_qpn5q17m"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ]
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",

@@ -40,13 +40,13 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_o1jzcxou",
-        "productId": "TS0601_gw"
-      }
+    "manufacturerName": [
+      "_TZ3000_O1JZCXOU",
+      "_tz3000_o1jzcxou"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601_gw"
+    ]
   },
   "settings": [
     {

@@ -46,201 +46,45 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_j9568h44",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3000_j9568h44",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tz3000_j9568h44",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_2wg5qrjy",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_2wg5qrjy",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_2wg5qrjy",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_7ytb3h8u",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_7ytb3h8u",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_7ytb3h8u",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_81isopgh",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_81isopgh",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_81isopgh",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_a7sghmms",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_a7sghmms",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_a7sghmms",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_htnnfasr",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_htnnfasr",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_htnnfasr",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_sh1btabb",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_sh1btabb",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_sh1btabb",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_vuwtqx0t",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_vuwtqx0t",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_vuwtqx0t",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze200_xlppj4f5",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_xlppj4f5",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze200_xlppj4f5",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze204_7ytb3h8u",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze204_7ytb3h8u",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze204_7ytb3h8u",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze204_a7sghmms",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze204_a7sghmms",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze204_a7sghmms",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze284_7ytb3h8u",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze284_7ytb3h8u",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze284_7ytb3h8u",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze284_8zizsafo",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze284_8zizsafo",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze284_8zizsafo",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze284_eaet5qt5",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze284_eaet5qt5",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze284_eaet5qt5",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze284_fhvpaltk",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze284_fhvpaltk",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze284_fhvpaltk",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tze284_vuwtqx0t",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze284_vuwtqx0t",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tze284_vuwtqx0t",
-        "productId": "TS011F"
-      }
+    "manufacturerName": [
+      "_TZ3000_J9568H44",
+      "_TZE200_2WG5QRJY",
+      "_TZE200_7YTB3H8U",
+      "_TZE200_81ISOPGH",
+      "_TZE200_A7SGHMMS",
+      "_TZE200_HTNNFASR",
+      "_TZE200_SH1BTABB",
+      "_TZE200_VUWTQX0T",
+      "_TZE200_XLPPJ4F5",
+      "_TZE204_7YTB3H8U",
+      "_TZE204_A7SGHMMS",
+      "_TZE284_7YTB3H8U",
+      "_TZE284_8ZIZSAFO",
+      "_TZE284_EAET5QT5",
+      "_TZE284_FHVPALTK",
+      "_TZE284_VUWTQX0T",
+      "_tz3000_j9568h44",
+      "_tze200_2wg5qrjy",
+      "_tze200_7ytb3h8u",
+      "_tze200_81isopgh",
+      "_tze200_a7sghmms",
+      "_tze200_htnnfasr",
+      "_tze200_sh1btabb",
+      "_tze200_vuwtqx0t",
+      "_tze200_xlppj4f5",
+      "_tze204_7ytb3h8u",
+      "_tze204_a7sghmms",
+      "_tze284_7ytb3h8u",
+      "_tze284_8zizsafo",
+      "_tze284_eaet5qt5",
+      "_tze284_fhvpaltk",
+      "_tze284_vuwtqx0t"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0001",
+      "TS0111",
+      "TS011F"
+    ]
   },
   "settings": [
     {

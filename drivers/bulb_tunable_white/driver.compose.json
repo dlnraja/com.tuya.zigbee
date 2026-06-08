@@ -40,169 +40,34 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "Classic A60 TW"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "E11-N13"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "E11-N14"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "E12-N13"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "E12-N14"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "GL-B-007Z"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "GL-C-007"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LED1545G12"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LED1546G12"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LTW001"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LTW004"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LTW010"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LTW012"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LTW013"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "LTW015"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "RB 178 T"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "RS 128 T"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "TS0502A"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "TS0502B"
-      },
-      {
-        "manufacturerName": "_tz3000_obacbukl",
-        "productId": "ZBT-CCTLight"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "Classic A60 TW"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "E11-N13"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "E11-N14"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "E12-N13"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "E12-N14"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "GL-B-007Z"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "GL-C-007"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LED1545G12"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LED1546G12"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LTW001"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LTW004"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LTW010"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LTW012"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LTW013"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "LTW015"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "RB 178 T"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "RS 128 T"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "TS0502A"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "TS0502B"
-      },
-      {
-        "manufacturerName": "_tz3210_ngqk6jia",
-        "productId": "ZBT-CCTLight"
-      }
+    "manufacturerName": [
+      "_TZ3000_OBACBUKL",
+      "_TZ3210_NGQK6JIA",
+      "_tz3000_obacbukl",
+      "_tz3210_ngqk6jia"
     ],
-    "manufacturerName": []
+    "productId": [
+      "Classic A60 TW",
+      "E11-N13",
+      "E11-N14",
+      "E12-N13",
+      "E12-N14",
+      "GL-B-007Z",
+      "GL-C-007",
+      "LED1545G12",
+      "LED1546G12",
+      "LTW001",
+      "LTW004",
+      "LTW010",
+      "LTW012",
+      "LTW013",
+      "LTW015",
+      "RB 178 T",
+      "RS 128 T",
+      "TS0502A",
+      "TS0502B",
+      "ZBT-CCTLight"
+    ]
   },
   "settings": [
     {

@@ -37,13 +37,13 @@
         "en": "Power on to enter pairing mode."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_h1jnz6l8",
-        "productId": "TS0505A"
-      }
+    "manufacturerName": [
+      "_TZ3000_H1JNZ6L8",
+      "_tz3000_h1jnz6l8"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0505A"
+    ]
   },
   "class": "light",
   "capabilities": [

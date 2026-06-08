@@ -120,16 +120,14 @@
         "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_hdlpifbk",
-        "productId": "TS0004"
-      },
-      {
-        "manufacturerName": "_tz3000_wkr3jqmr",
-        "productId": "TS0004"
-      }
+    "manufacturerName": [
+      "_TZ3000_HDLPIFBK",
+      "_TZ3000_WKR3JQMR",
+      "_tz3000_hdlpifbk",
+      "_tz3000_wkr3jqmr"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0004"
+    ]
   }
 }

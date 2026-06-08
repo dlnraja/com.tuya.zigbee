@@ -48,17 +48,15 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze284_ibnz7orz",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_rlytpmij",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE284_IBNZ7ORZ",
+      "_TZE284_RLYTPMIJ",
+      "_tze284_ibnz7orz",
+      "_tze284_rlytpmij"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {

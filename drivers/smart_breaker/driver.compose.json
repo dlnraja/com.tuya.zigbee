@@ -45,17 +45,14 @@
         "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_68nvbio9",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_68nvbio9",
-        "productId": "TS0601_breaker"
-      }
+    "manufacturerName": [
+      "_TZE204_68NVBIO9",
+      "_tze204_68nvbio9"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_breaker"
+    ]
   },
   "images": {
     "small": "/drivers/smart_breaker/assets/images/small.png",

@@ -44,84 +44,30 @@
         "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "AM02"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "AM43-0.45/40-ES-EB"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "AM43-0.45/40-ES-EZ"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "DS421"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "DS82"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "E1757"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "FYRTUR"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "KADRILJ"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "lumi.curtain"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "lumi.curtain.acn002"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "lumi.curtain.hagl04"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "TS0105"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "TS0301"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "TS0302"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "TS030F"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "ZBCurtain"
-      },
-      {
-        "manufacturerName": "_tze600_ogyg1y6b",
-        "productId": "ZC-LS02"
-      }
+    "manufacturerName": [
+      "_TZE600_OGYG1Y6B",
+      "_tze600_ogyg1y6b"
     ],
-    "manufacturerName": []
+    "productId": [
+      "AM02",
+      "AM43-0.45/40-ES-EB",
+      "AM43-0.45/40-ES-EZ",
+      "DS421",
+      "DS82",
+      "E1757",
+      "FYRTUR",
+      "KADRILJ",
+      "TS0105",
+      "TS0301",
+      "TS0302",
+      "TS030F",
+      "TS0601",
+      "TS130F",
+      "ZBCurtain",
+      "ZC-LS02",
+      "lumi.curtain",
+      "lumi.curtain.acn002",
+      "lumi.curtain.hagl04"
+    ]
   }
 }

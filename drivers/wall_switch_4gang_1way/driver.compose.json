@@ -120,93 +120,23 @@
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "JZ-ZB-004"
-      },
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "TS0004"
-      },
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "TS0004_power"
-      },
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "TS0004_switch_module"
-      },
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "TS0014"
-      },
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_2ei1fkwb",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "JZ-ZB-004"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "TS0004"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "TS0004_power"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "TS0004_switch_module"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "TS0014"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_hy5lggkg",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "JZ-ZB-004"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "TS0004"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "TS0004_power"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "TS0004_switch_module"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "TS0014"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3002_vaq2bfcu",
-        "productId": "TS0726"
-      }
+    "manufacturerName": [
+      "_TZ3000_2EI1FKWB",
+      "_TZ3000_HY5LGGKG",
+      "_TZ3002_VAQ2BFCU",
+      "_tz3000_2ei1fkwb",
+      "_tz3000_hy5lggkg",
+      "_tz3002_vaq2bfcu"
     ],
-    "manufacturerName": []
+    "productId": [
+      "JZ-ZB-004",
+      "TS0004",
+      "TS0004_power",
+      "TS0004_switch_module",
+      "TS0014",
+      "TS0601",
+      "TS0726"
+    ]
   },
   "settings": [
     {

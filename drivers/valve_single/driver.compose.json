@@ -20,33 +20,17 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_ahxwesag",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3000_ahxwesag",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_ahxwesag",
-        "productId": "TS0601_valve"
-      },
-      {
-        "manufacturerName": "_tze200_vrjkcam9",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tze200_vrjkcam9",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_vrjkcam9",
-        "productId": "TS0601_valve"
-      }
+    "manufacturerName": [
+      "_TZ3000_AHXWESAG",
+      "_TZE200_VRJKCAM9",
+      "_tz3000_ahxwesag",
+      "_tze200_vrjkcam9"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0001",
+      "TS0601",
+      "TS0601_valve"
+    ]
   },
   "images": {
     "small": "/drivers/valve_single/assets/images/small.png",

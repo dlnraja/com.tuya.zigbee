@@ -84,12 +84,12 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_device_floor_heating_thermostat",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZ3000_DEVICE_FLOOR_HEATING_THERMOSTAT",
+      "_tz3000_device_floor_heating_thermostat"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   }
 }

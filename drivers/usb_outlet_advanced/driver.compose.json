@@ -75,97 +75,34 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_8kcqdngy",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_8kcqdngy",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_atp3bews",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_atp3bews",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_j4gg6d1b",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_j4gg6d1b",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_ko6v90pg",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_ko6v90pg",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_qyolrmc9",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_qyolrmc9",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_u5u4caho",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_u5u4caho",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tzb210_2dp1bpqq",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tzb210_2dp1bpqq",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tzb210_hbejzgpj",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tzb210_hbejzgpj",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tzb210_wlbhvabf",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tzb210_wlbhvabf",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_bseed2g",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tze200_bseed2g",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_bseed3g",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tze204_bseed3g",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZ3000_8KCQDNGY",
+      "_TZ3000_ATP3BEWS",
+      "_TZ3000_J4GG6D1B",
+      "_TZ3000_KO6V90PG",
+      "_TZ3000_QYOLRMC9",
+      "_TZ3000_U5U4CAHO",
+      "_TZB210_2DP1BPQQ",
+      "_TZB210_HBEJZGPJ",
+      "_TZB210_WLBHVABF",
+      "_TZE200_BSEED2G",
+      "_TZE204_BSEED3G",
+      "_tz3000_8kcqdngy",
+      "_tz3000_atp3bews",
+      "_tz3000_j4gg6d1b",
+      "_tz3000_ko6v90pg",
+      "_tz3000_qyolrmc9",
+      "_tz3000_u5u4caho",
+      "_tzb210_2dp1bpqq",
+      "_tzb210_hbejzgpj",
+      "_tzb210_wlbhvabf",
+      "_tze200_bseed2g",
+      "_tze204_bseed3g"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0115",
+      "TS0601"
+    ]
   },
   "settings": [
     {

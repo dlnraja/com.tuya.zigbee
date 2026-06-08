@@ -34,13 +34,13 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze20x_xxxxxxxx",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE20X_XXXXXXXX",
+      "_tze20x_xxxxxxxx"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "learnmode": {
     "instruction": {

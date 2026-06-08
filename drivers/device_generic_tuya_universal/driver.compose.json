@@ -56,185 +56,56 @@
         "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "aqara",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "aqara",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "aubess",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "aubess",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "avatto",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "avatto",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "blitzwolf",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "blitzwolf",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "bw-",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "bw-",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "girier",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "girier",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "heiman",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "heiman",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "ikea",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "ikea",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "lidl",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "lidl",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "lonsonho",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "lonsonho",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "lumi",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "lumi",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "nas-",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "nas-",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "neo",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "neo",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "philips",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "philips",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "signify",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "signify",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "silvercrest",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "silvercrest",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "smartthings",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "smartthings",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "tradfri",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "tradfri",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "tuya",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "tuya",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "woox",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "woox",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "xiaomi",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "xiaomi",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "zemismart",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "zemismart",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "AQARA",
+      "AUBESS",
+      "AVATTO",
+      "BLITZWOLF",
+      "BW-",
+      "GIRIER",
+      "HEIMAN",
+      "IKEA",
+      "LIDL",
+      "LONSONHO",
+      "LUMI",
+      "NAS-",
+      "NEO",
+      "PHILIPS",
+      "SIGNIFY",
+      "SILVERCREST",
+      "SMARTTHINGS",
+      "TRADFRI",
+      "TUYA",
+      "WOOX",
+      "XIAOMI",
+      "ZEMISMART",
+      "aqara",
+      "aubess",
+      "avatto",
+      "blitzwolf",
+      "bw-",
+      "girier",
+      "heiman",
+      "ikea",
+      "lidl",
+      "lonsonho",
+      "lumi",
+      "nas-",
+      "neo",
+      "philips",
+      "signify",
+      "silvercrest",
+      "smartthings",
+      "tradfri",
+      "tuya",
+      "woox",
+      "xiaomi",
+      "zemismart"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0203",
+      "TS0601"
+    ]
   },
   "settings": [
     {

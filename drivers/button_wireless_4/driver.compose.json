@@ -121,53 +121,22 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3000_abrsvsou",
-        "productId": "TS004F"
-      },
-      {
-        "manufacturerName": "_tz3000_fvh3pjaz",
-        "productId": "SNZB-01M"
-      },
-      {
-        "manufacturerName": "_tz3000_fvh3pjaz",
-        "productId": "TS0014"
-      },
-      {
-        "manufacturerName": "_tz3000_fvh3pjaz",
-        "productId": "TS0044"
-      },
-      {
-        "manufacturerName": "_tz3000_fvh3pjaz",
-        "productId": "TS004F"
-      },
-      {
-        "manufacturerName": "_tz3000_fvh3pjaz",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tz3000_wkai4ga5",
-        "productId": "SNZB-01M"
-      },
-      {
-        "manufacturerName": "_tz3000_wkai4ga5",
-        "productId": "TS0014"
-      },
-      {
-        "manufacturerName": "_tz3000_wkai4ga5",
-        "productId": "TS0044"
-      },
-      {
-        "manufacturerName": "_tz3000_wkai4ga5",
-        "productId": "TS004F"
-      },
-      {
-        "manufacturerName": "_tz3000_wkai4ga5",
-        "productId": "TS0726"
-      }
+    "manufacturerName": [
+      "_TZ3000_ABRSVSOU",
+      "_TZ3000_FVH3PJAZ",
+      "_TZ3000_WKAI4GA5",
+      "_TZ3000_abrsvsou",
+      "_tz3000_abrsvsou",
+      "_tz3000_fvh3pjaz",
+      "_tz3000_wkai4ga5"
     ],
-    "manufacturerName": []
+    "productId": [
+      "SNZB-01M",
+      "TS0014",
+      "TS0044",
+      "TS004F",
+      "TS0726"
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_4/assets/images/small.png",

@@ -75,25 +75,17 @@
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_sh1btaba",
-        "productId": "TS0041"
-      },
-      {
-        "manufacturerName": "_TZE200_sh1btaba",
-        "productId": "TS0042"
-      },
-      {
-        "manufacturerName": "_TZE200_sh1btaba",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_sh1btaba",
-        "productId": "TS0601_wirelesssw"
-      }
+    "manufacturerName": [
+      "_TZE200_SH1BTABA",
+      "_TZE200_sh1btaba",
+      "_tze200_sh1btaba"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0041",
+      "TS0042",
+      "TS0601",
+      "TS0601_wirelesssw"
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_1/assets/images/small.png",

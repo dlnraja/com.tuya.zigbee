@@ -25,17 +25,14 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_ckud7u2l",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_ckud7u2l",
-        "productId": "TS0601_heater"
-      }
+    "manufacturerName": [
+      "_TZE204_CKUD7U2L",
+      "_tze204_ckud7u2l"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_heater"
+    ]
   },
   "images": {
     "small": "/drivers/smart_heater/assets/images/small.png",

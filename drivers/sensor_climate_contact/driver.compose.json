@@ -40,13 +40,13 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_placeholder",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE200_PLACEHOLDER",
+      "_tze200_placeholder"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {

@@ -55,76 +55,28 @@
         "en": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "014G2461"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "014G2463"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "eTRV0100"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "lumi.airrtc.agl001"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "lumi.airrtc.vrfegl01"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "SEA801-Zigbee"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "SPZB0001"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "SPZB0003"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "STZB402"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "STZB403"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "TRV601"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "TRV602"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "TRVZB"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "TV01-ZB"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "TV02-ZB"
-      },
-      {
-        "manufacturerName": "_TZE200_9XFJIXAP",
-        "productId": "Zen-01"
-      }
+    "manufacturerName": [
+      "_TZE200_9XFJIXAP",
+      "_tze200_9xfjixap"
     ],
-    "manufacturerName": []
+    "productId": [
+      "014G2461",
+      "014G2463",
+      "SEA801-Zigbee",
+      "SPZB0001",
+      "SPZB0003",
+      "STZB402",
+      "STZB403",
+      "TRV601",
+      "TRV602",
+      "TRVZB",
+      "TS0601",
+      "TV01-ZB",
+      "TV02-ZB",
+      "Zen-01",
+      "eTRV0100",
+      "lumi.airrtc.agl001",
+      "lumi.airrtc.vrfegl01"
+    ]
   }
 }

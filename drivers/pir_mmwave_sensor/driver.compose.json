@@ -49,92 +49,32 @@
         "en": "Press the reset button for aprox 5 seconds until the LED blinks."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "CK-BL702-MWS-01"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "CK-BL702-MWS-01(7016)"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "MG1_5RZ"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "SNZB-06P"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "SZLMR10"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "TS0225"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "TS0601_mmwave"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZE"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZH"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZK"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZL"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZM"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZQ"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-204ZV"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-205Z"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-205ZL"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-302ZL"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZG-302ZM"
-      },
-      {
-        "manufacturerName": "_tze204_3towulqd",
-        "productId": "ZP-301Z"
-      }
+    "manufacturerName": [
+      "_TZE204_3TOWULQD",
+      "_tze204_3towulqd"
     ],
-    "manufacturerName": []
+    "productId": [
+      "CK-BL702-MWS-01",
+      "CK-BL702-MWS-01(7016)",
+      "MG1_5RZ",
+      "SNZB-06P",
+      "SZLMR10",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "TS0601_mmwave",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZQ",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "ZP-301Z"
+    ]
   }
 }

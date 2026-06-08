@@ -47,181 +47,34 @@
         "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3210_j4pdtz9v",
-        "productId": [
-          "TS0001",
-          "TS0001_fingerbot"
-        ]
-      },
-      {
-        "manufacturerName": "_TZ3210_dse8ogfy",
-        "productId": [
-          "TS0001",
-          "TS0001_fingerbot"
-        ]
-      },
-      {
-        "manufacturerName": "_TZ3210_232nryqh",
-        "productId": [
-          "TS0001",
-          "TS0001_fingerbot"
-        ]
-      },
-      {
-        "manufacturerName": "_TZ3210_okbss9dy",
-        "productId": [
-          "TS0001",
-          "TS0001_fingerbot"
-        ]
-      },
-      {
-        "manufacturerName": "_tz3210_232nryqh",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3210_232nryqh",
-        "productId": "TS0001_fingerbot"
-      },
-      {
-        "manufacturerName": "_tz3210_232nryqh",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_tz3210_232nryqh",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_tz3210_232nryqh",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_tz3210_232nryqh",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_TZ3210_d3m9v8p6",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_TZ3210_d3m9v8p6",
-        "productId": "TS0001_fingerbot"
-      },
-      {
-        "manufacturerName": "_TZ3210_d3m9v8p6",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3210_d3m9v8p6",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_TZ3210_d3m9v8p6",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_TZ3210_d3m9v8p6",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3210_dse8ogfy",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3210_dse8ogfy",
-        "productId": "TS0001_fingerbot"
-      },
-      {
-        "manufacturerName": "_tz3210_dse8ogfy",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_tz3210_dse8ogfy",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_tz3210_dse8ogfy",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_tz3210_dse8ogfy",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3210_j4pdtz9v",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3210_j4pdtz9v",
-        "productId": "TS0001_fingerbot"
-      },
-      {
-        "manufacturerName": "_tz3210_j4pdtz9v",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_tz3210_j4pdtz9v",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_tz3210_j4pdtz9v",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_tz3210_j4pdtz9v",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3210_okbss9dy",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3210_okbss9dy",
-        "productId": "TS0001_fingerbot"
-      },
-      {
-        "manufacturerName": "_tz3210_okbss9dy",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_tz3210_okbss9dy",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_tz3210_okbss9dy",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_tz3210_okbss9dy",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_TZ3210_pwj6vuj9",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_TZ3210_pwj6vuj9",
-        "productId": "TS0001_fingerbot"
-      },
-      {
-        "manufacturerName": "_TZ3210_pwj6vuj9",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3210_pwj6vuj9",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_TZ3210_pwj6vuj9",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_TZ3210_pwj6vuj9",
-        "productId": "TS011F"
-      }
+    "manufacturerName": [
+      "_TZ3210_232NRYQH",
+      "_TZ3210_232nryqh",
+      "_TZ3210_D3M9V8P6",
+      "_TZ3210_DSE8OGFY",
+      "_TZ3210_J4PDTZ9V",
+      "_TZ3210_OKBSS9DY",
+      "_TZ3210_PWJ6VUJ9",
+      "_TZ3210_d3m9v8p6",
+      "_TZ3210_dse8ogfy",
+      "_TZ3210_j4pdtz9v",
+      "_TZ3210_okbss9dy",
+      "_TZ3210_pwj6vuj9",
+      "_tz3210_232nryqh",
+      "_tz3210_d3m9v8p6",
+      "_tz3210_dse8ogfy",
+      "_tz3210_j4pdtz9v",
+      "_tz3210_okbss9dy",
+      "_tz3210_pwj6vuj9"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0001",
+      "TS0001_fingerbot",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS011F"
+    ]
   },
   "maintenanceActions": [
     {

@@ -32,165 +32,29 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0002"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0012"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0013"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0121"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNEZ",
-        "productId": "TSO121"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0002"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0012"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0013"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0121"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_2XLVLNVP",
-        "productId": "TSO121"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0002"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS000F"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0012"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0013"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0121"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_TYPDPDPG",
-        "productId": "TSO121"
-      }
+    "manufacturerName": [
+      "_TZ3000_2XLVLNEZ",
+      "_TZ3000_2XLVLNVP",
+      "_TZ3000_TYPDPDPG",
+      "_tz3000_2xlvlnez",
+      "_tz3000_2xlvlnvp",
+      "_tz3000_typdpdpg"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0111",
+      "TS0115",
+      "TS011F",
+      "TS0121",
+      "TS0601",
+      "TSO121"
+    ]
   },
   "settings": [
     {

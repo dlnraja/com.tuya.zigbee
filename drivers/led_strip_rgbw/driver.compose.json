@@ -43,37 +43,25 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_keabpigv",
-        "productId": "TS0601_strip_rgbw"
-      },
-      {
-        "manufacturerName": "_tz3210_0zabbfa",
-        "productId": "TS0601_strip_rgbw"
-      },
-      {
-        "manufacturerName": "_tz3210_0zabbfax",
-        "productId": "TS0601_strip_rgbw"
-      },
-      {
-        "manufacturerName": "_tz3210_95txyzbx",
-        "productId": "TS0601_strip_rgbw"
-      },
-      {
-        "manufacturerName": "_tz3210_a5fxguxr",
-        "productId": "TS0601_strip_rgbw"
-      },
-      {
-        "manufacturerName": "_tz3210_trm3l2aw",
-        "productId": "TS0601_strip_rgbw"
-      },
-      {
-        "manufacturerName": "zb-cl01",
-        "productId": "TS0601_strip_rgbw"
-      }
+    "manufacturerName": [
+      "ZB-CL01",
+      "_TZ3000_KEABPIGV",
+      "_TZ3210_0ZABBFA",
+      "_TZ3210_0ZABBFAX",
+      "_TZ3210_95TXYZBX",
+      "_TZ3210_A5FXGUXR",
+      "_TZ3210_TRM3L2AW",
+      "_tz3000_keabpigv",
+      "_tz3210_0zabbfa",
+      "_tz3210_0zabbfax",
+      "_tz3210_95txyzbx",
+      "_tz3210_a5fxguxr",
+      "_tz3210_trm3l2aw",
+      "zb-cl01"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601_strip_rgbw"
+    ]
   },
   "settings": [
     {

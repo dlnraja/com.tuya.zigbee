@@ -37,57 +37,20 @@
         "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_dl4pxp1r",
-        "productId": "TS0503A"
-      },
-      {
-        "manufacturerName": "_tz3000_dl4pxp1r",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3000_dl4pxp1r",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_dl4pxp1r",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3000_qqjaziws",
-        "productId": "TS0503A"
-      },
-      {
-        "manufacturerName": "_tz3000_qqjaziws",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3000_qqjaziws",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_qqjaziws",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3000_ukuvyhaa",
-        "productId": "TS0503A"
-      },
-      {
-        "manufacturerName": "_tz3000_ukuvyhaa",
-        "productId": "TS0503B"
-      },
-      {
-        "manufacturerName": "_tz3000_ukuvyhaa",
-        "productId": "TS0504B"
-      },
-      {
-        "manufacturerName": "_tz3000_ukuvyhaa",
-        "productId": "TS0505B"
-      }
+    "manufacturerName": [
+      "_TZ3000_DL4PXP1R",
+      "_TZ3000_QQJAZIWS",
+      "_TZ3000_UKUVYHAA",
+      "_tz3000_dl4pxp1r",
+      "_tz3000_qqjaziws",
+      "_tz3000_ukuvyhaa"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0503A",
+      "TS0503B",
+      "TS0504B",
+      "TS0505B"
+    ]
   },
   "class": "light",
   "capabilities": [

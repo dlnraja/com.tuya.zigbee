@@ -27,17 +27,14 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_hkdl5fmv",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_hkdl5fmv",
-        "productId": "TS0601_rcbo"
-      }
+    "manufacturerName": [
+      "_TZE204_HKDL5FMV",
+      "_tze204_hkdl5fmv"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_rcbo"
+    ]
   },
   "images": {
     "small": "/drivers/smart_rcbo/assets/images/small.png",

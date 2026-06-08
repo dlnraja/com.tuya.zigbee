@@ -36,149 +36,49 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE284_6ocnqlhn",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3210_402vrq2i",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3210_402vrq2i",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tz3400_402vrq2i",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3400_402vrq2i",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze200_bkkmqmyo",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_bkkmqmyo",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze200_d2zfgtij",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_d2zfgtij",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze200_ewxhg6o9",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_ewxhg6o9",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze200_jt50ea5d",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_jt50ea5d",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze200_s4sa1mcx",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_s4sa1mcx",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze200_x8diwkqb",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_x8diwkqb",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze204_d2zfgtij",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_d2zfgtij",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze204_jrcfsaa3",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_jrcfsaa3",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze204_s4sa1mcx",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_s4sa1mcx",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze204_sdykkwsu",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_sdykkwsu",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze204_ugekduaj",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_ugekduaj",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze204_x8diwkqb",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_x8diwkqb",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze284_d2zfgtij",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_d2zfgtij",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze284_s4sa1mcx",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_s4sa1mcx",
-        "productId": "TS0601_3phase"
-      },
-      {
-        "manufacturerName": "_tze284_x8diwkqb",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_x8diwkqb",
-        "productId": "TS0601_3phase"
-      }
+    "manufacturerName": [
+      "_TZ3210_402VRQ2I",
+      "_TZ3400_402VRQ2I",
+      "_TZE200_BKKMQMYO",
+      "_TZE200_D2ZFGTIJ",
+      "_TZE200_EWXHG6O9",
+      "_TZE200_JT50EA5D",
+      "_TZE200_S4SA1MCX",
+      "_TZE200_X8DIWKQB",
+      "_TZE204_D2ZFGTIJ",
+      "_TZE204_JRCFSAA3",
+      "_TZE204_S4SA1MCX",
+      "_TZE204_SDYKKWSU",
+      "_TZE204_UGEKDUAJ",
+      "_TZE204_X8DIWKQB",
+      "_TZE284_6OCNQLHN",
+      "_TZE284_6ocnqlhn",
+      "_TZE284_D2ZFGTIJ",
+      "_TZE284_S4SA1MCX",
+      "_TZE284_X8DIWKQB",
+      "_tz3210_402vrq2i",
+      "_tz3400_402vrq2i",
+      "_tze200_bkkmqmyo",
+      "_tze200_d2zfgtij",
+      "_tze200_ewxhg6o9",
+      "_tze200_jt50ea5d",
+      "_tze200_s4sa1mcx",
+      "_tze200_x8diwkqb",
+      "_tze204_d2zfgtij",
+      "_tze204_jrcfsaa3",
+      "_tze204_s4sa1mcx",
+      "_tze204_sdykkwsu",
+      "_tze204_ugekduaj",
+      "_tze204_x8diwkqb",
+      "_tze284_6ocnqlhn",
+      "_tze284_d2zfgtij",
+      "_tze284_s4sa1mcx",
+      "_tze284_x8diwkqb"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_3phase"
+    ]
   },
   "images": {
     "small": "/drivers/energy_meter_3phase/assets/images/small.png",

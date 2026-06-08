@@ -33,33 +33,17 @@
         "en": "Hold button 5s until LED flashes."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze284_aaeasoll",
-        "productId": "TS0222"
-      },
-      {
-        "manufacturerName": "_tze284_aaeasoll",
-        "productId": "TS0225"
-      },
-      {
-        "manufacturerName": "_tze284_aaeasoll",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "moes",
-        "productId": "TS0222"
-      },
-      {
-        "manufacturerName": "moes",
-        "productId": "TS0225"
-      },
-      {
-        "manufacturerName": "moes",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "MOES",
+      "_TZE284_AAEASOLL",
+      "_tze284_aaeasoll",
+      "moes"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0222",
+      "TS0225",
+      "TS0601"
+    ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
   "images": {

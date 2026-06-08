@@ -149,44 +149,18 @@
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tyzb01_vkwryfdr",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tyzb01_vkwryfdr",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tyzb01_vkwryfdr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_j1rx47vc",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_j1rx47vc",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3000_j1rx47vc",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_u5u0drof",
-        "productId": "TS0115"
-      },
-      {
-        "manufacturerName": "_tz3000_u5u0drof",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3000_u5u0drof",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TYZB01_VKWRYFDR",
+      "_TZ3000_J1RX47VC",
+      "_TZ3000_U5U0DROF",
+      "_tyzb01_vkwryfdr",
+      "_tz3000_j1rx47vc",
+      "_tz3000_u5u0drof"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0115",
+      "TS011F",
+      "TS0601"
+    ]
   }
 }

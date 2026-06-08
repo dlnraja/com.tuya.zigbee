@@ -42,24 +42,15 @@
         "en": "Press and hold down test switch until the LED blinks green."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_kgaxpvxr",
-        "productId": "TS0205"
-      },
-      {
-        "manufacturerName": "_tze204_kgaxpvxr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_n4ttsck2",
-        "productId": "TS0205"
-      },
-      {
-        "manufacturerName": "_tze284_n4ttsck2",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE204_KGAXPVXR",
+      "_TZE284_N4TTSCK2",
+      "_tze204_kgaxpvxr",
+      "_tze284_n4ttsck2"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0205",
+      "TS0601"
+    ]
   }
 }

@@ -96,21 +96,15 @@
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_1lom3myx",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_tz3000_1lom3myx",
-        "productId": "TS0013"
-      },
-      {
-        "manufacturerName": "_tz3000_1lom3myx",
-        "productId": "TS0043"
-      }
+    "manufacturerName": [
+      "_TZ3000_1LOM3MYX",
+      "_tz3000_1lom3myx"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0003",
+      "TS0013",
+      "TS0043"
+    ]
   },
   "settings": [
     {

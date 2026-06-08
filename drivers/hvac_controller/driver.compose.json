@@ -56,17 +56,15 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_cfczgbss",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_cfczgbss",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE200_CFCZGBSS",
+      "_TZE284_CFCZGBSS",
+      "_tze200_cfczgbss",
+      "_tze284_cfczgbss"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "images": {
     "small": "/drivers/hvac_controller/assets/images/small.png",

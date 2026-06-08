@@ -107,17 +107,15 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tyzb01_7gang001",
-        "productId": "TS0007"
-      },
-      {
-        "manufacturerName": "_tz3000_7gang001",
-        "productId": "TS0007"
-      }
+    "manufacturerName": [
+      "_TYZB01_7GANG001",
+      "_TZ3000_7GANG001",
+      "_tyzb01_7gang001",
+      "_tz3000_7gang001"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0007"
+    ]
   },
   "settings": [
     {

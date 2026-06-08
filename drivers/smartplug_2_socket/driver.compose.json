@@ -71,16 +71,13 @@
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_hdopuwv6",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3000_hdopuwv6",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZ3000_HDOPUWV6",
+      "_tz3000_hdopuwv6"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS011F",
+      "TS0601"
+    ]
   }
 }

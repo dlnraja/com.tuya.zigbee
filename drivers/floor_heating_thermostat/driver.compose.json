@@ -57,49 +57,31 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_2ekuz3dz",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_hue3yfsn",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_ulyn7b1o",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_viy9ihs7",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_cvub6xbb",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_gops3slb",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_lzriup1j",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_p3lqqy2r",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_xnbkhhdr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_cvub6xbb",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE200_2EKUZ3DZ",
+      "_TZE200_HUE3YFSN",
+      "_TZE200_ULYN7B1O",
+      "_TZE200_VIY9IHS7",
+      "_TZE204_CVUB6XBB",
+      "_TZE204_GOPS3SLB",
+      "_TZE204_LZRIUP1J",
+      "_TZE204_P3LQQY2R",
+      "_TZE204_XNBKHHDR",
+      "_TZE284_CVUB6XBB",
+      "_tze200_2ekuz3dz",
+      "_tze200_hue3yfsn",
+      "_tze200_ulyn7b1o",
+      "_tze200_viy9ihs7",
+      "_tze204_cvub6xbb",
+      "_tze204_gops3slb",
+      "_tze204_lzriup1j",
+      "_tze204_p3lqqy2r",
+      "_tze204_xnbkhhdr",
+      "_tze284_cvub6xbb"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",

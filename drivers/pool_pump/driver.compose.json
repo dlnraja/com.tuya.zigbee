@@ -31,33 +31,18 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_ruavtjnq",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_ruavtjnq",
-        "productId": "TS0601_pool"
-      },
-      {
-        "manufacturerName": "_tze204_k6jhsr0q",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_k6jhsr0q",
-        "productId": "TS0601_pool"
-      },
-      {
-        "manufacturerName": "_tze204_ruavtjnq",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_ruavtjnq",
-        "productId": "TS0601_pool"
-      }
+    "manufacturerName": [
+      "_TZE200_RUAVTJNQ",
+      "_TZE204_K6JHSR0Q",
+      "_TZE204_RUAVTJNQ",
+      "_tze200_ruavtjnq",
+      "_tze204_k6jhsr0q",
+      "_tze204_ruavtjnq"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_pool"
+    ]
   },
   "images": {
     "small": "/drivers/pool_pump/assets/images/small.png",

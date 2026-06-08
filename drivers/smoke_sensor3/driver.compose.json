@@ -45,64 +45,25 @@
         "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "GS361A-H04"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "HS1SA"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "HS3SA"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "JTYJ-GD-01LM/BW"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "lumi.sensor_smoke"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "NAS-SD02B0"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "PG-S11Z"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "SA12IZL"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "SD8SC_00.00.03.12TC"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "SMSZB-120"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "SSSQS01LM"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "TS0205"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_uebojraa",
-        "productId": "YG400A"
-      }
+    "manufacturerName": [
+      "_TZE204_UEBOJRAA",
+      "_tze204_uebojraa"
     ],
-    "manufacturerName": []
+    "productId": [
+      "GS361A-H04",
+      "HS1SA",
+      "HS3SA",
+      "JTYJ-GD-01LM/BW",
+      "NAS-SD02B0",
+      "PG-S11Z",
+      "SA12IZL",
+      "SD8SC_00.00.03.12TC",
+      "SMSZB-120",
+      "SSSQS01LM",
+      "TS0205",
+      "TS0601",
+      "YG400A",
+      "lumi.sensor_smoke"
+    ]
   }
 }

@@ -54,13 +54,13 @@
         "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_a7ouggvs",
-        "productId": "TS0043"
-      }
+    "manufacturerName": [
+      "_TZ3000_A7OUGGVS",
+      "_tz3000_a7ouggvs"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0043"
+    ]
   },
   "settings": [
     {

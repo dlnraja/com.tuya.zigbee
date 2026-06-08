@@ -48,29 +48,17 @@
         "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tzb210_zxbtub8r",
-        "productId": "EDM-1ZBA-EU"
-      },
-      {
-        "manufacturerName": "_tzb210_zxbtub8r",
-        "productId": "TRI-C1ZR"
-      },
-      {
-        "manufacturerName": "_tzb210_zxbtub8r",
-        "productId": "TRI-K1ZR"
-      },
-      {
-        "manufacturerName": "_tzb210_zxbtub8r",
-        "productId": "TS004F"
-      },
-      {
-        "manufacturerName": "_tzb210_zxbtub8r",
-        "productId": "TS0501B"
-      }
+    "manufacturerName": [
+      "_TZB210_ZXBTUB8R",
+      "_tzb210_zxbtub8r"
     ],
-    "manufacturerName": []
+    "productId": [
+      "EDM-1ZBA-EU",
+      "TRI-C1ZR",
+      "TRI-K1ZR",
+      "TS004F",
+      "TS0501B"
+    ]
   },
   "settings": [
     {
