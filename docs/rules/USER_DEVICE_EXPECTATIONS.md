@@ -5969,3 +5969,43 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZE200_nkoabg8w + TS0505 | dlnraja/com.tuya.zigbee#336 | device_request |
 | _TZE200_xuzcvlku + TS0203 | dlnraja/com.tuya.zigbee#336 | device_request |
 | _TZE200_xuzcvlku + TS0201 | dlnraja/com.tuya.zigbee#336 | device_request |
+
+
+## Auto-discovered from GitHub (2026-06-08)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_ + TS0042 | dlnraja/com.tuya.zigbee#404 | feature |
+| TS0042 + TS0042 | dlnraja/com.tuya.zigbee#404 | feature |
+| tuya + TS0042 | dlnraja/com.tuya.zigbee#404 | feature |
+| _TZ3210_tgvtvdo + TS0207 | dlnraja/com.tuya.zigbee#388 | bug_report |
+| _TZ3210_ + TS0207 | dlnraja/com.tuya.zigbee#388 | bug_report |
+| vision + TS0207 | dlnraja/com.tuya.zigbee#388 | bug_report |
+| _TZE200_u6x1zyv2 + generic | dlnraja/com.tuya.zigbee#394 | bug_report |
+| _TZE + generic | dlnraja/com.tuya.zigbee#394 | bug_report |
+| _TZE200_ + generic | dlnraja/com.tuya.zigbee#394 | bug_report |
+| _TZE200_9xfjixap + TS0001 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| _TZE200_9xfjixap + TS0002 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| _TZE200_ + TS0001 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| _TZE200_ + TS0002 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| dlnraja + TS0601 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| dlnraja + TS0001 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| dlnraja + TS0002 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| tuya + TS0001 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| tuya + TS0002 | dlnraja/com.tuya.zigbee#395 | bug_report |
+| _TZ3210_ + TS011F | JohanBendz/com.tuya.zigbee#1408 | device_request |
+| router + TS011F | JohanBendz/com.tuya.zigbee#1408 | device_request |
+| _TZE284_pcdmj88b + generic | JohanBendz/com.tuya.zigbee#1409 | device_request |
+| _TZE + generic | JohanBendz/com.tuya.zigbee#1409 | device_request |
+| _TZE284_ + TS0601 | JohanBendz/com.tuya.zigbee#1409 | device_request |
+| _TZE284_ + generic | JohanBendz/com.tuya.zigbee#1409 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1409 | device_request |
+| _TZE284_ + TS0601 | JohanBendz/com.tuya.zigbee#1410 | device_request |
+| example + TS0601 | JohanBendz/com.tuya.zigbee#1410 | device_request |
+| _TZE284_d0ypnbvn + generic | JohanBendz/com.tuya.zigbee#1208 | device_request |
+| _TZE + generic | JohanBendz/com.tuya.zigbee#1208 | device_request |
+| _TZE284_ + TS0601 | JohanBendz/com.tuya.zigbee#1208 | device_request |
+| _TZE284_ + generic | JohanBendz/com.tuya.zigbee#1208 | device_request |
+| example + TS0601 | JohanBendz/com.tuya.zigbee#1208 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1208 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1208 | device_request |
