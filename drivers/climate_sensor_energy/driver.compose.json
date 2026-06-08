@@ -39,113 +39,38 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "CK-TLSR8656-SS5-01(7014)"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "Excellux"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "lumi.sensor_ht"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "lumi.sensor_ht.agl02"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "lumi.weather"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "RH3052"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SM0201"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SNZB-02"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SNZB-02D"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SNZB-02DR2"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SNZB-02LD"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SNZB-02P"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "SNZB-02WD"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "TH01"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "THS317-ET"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "TS0201"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "TS0222"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "TS1201"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "TY0201"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "WSDCGQ01LM"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "WSDCGQ11LM"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "WSDCGQ12LM"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "ZG-227Z"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "ZG-227ZL"
-      },
-      {
-        "manufacturerName": "_tze284_zqq3cipq",
-        "productId": "ZG-303Z"
-      }
+    "manufacturerName": [
+      "_TZE284_ZQQ3CIPQ",
+      "_tze284_zqq3cipq"
     ],
-    "manufacturerName": []
+    "productId": [
+      "CK-TLSR8656-SS5-01(7014)",
+      "Excellux",
+      "RH3052",
+      "SM0201",
+      "SNZB-02",
+      "SNZB-02D",
+      "SNZB-02DR2",
+      "SNZB-02LD",
+      "SNZB-02P",
+      "SNZB-02WD",
+      "TH01",
+      "THS317-ET",
+      "TS0201",
+      "TS0222",
+      "TS0601",
+      "TS1201",
+      "TY0201",
+      "WSDCGQ01LM",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "ZG-303Z",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.weather"
+    ]
   },
   "images": {
     "small": "/drivers/energy_meter_3phase/assets/images/small.png",

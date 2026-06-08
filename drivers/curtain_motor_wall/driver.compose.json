@@ -67,41 +67,27 @@
         "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_8kzqqzu4",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_ctbafvhm",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_dbpmpco1",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_dph3rpss",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_fvhunhxb",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_ltiqubue",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_qa8s8vca",
-        "productId": "TS130F"
-      },
-      {
-        "manufacturerName": "_tz3000_qqdbccb3",
-        "productId": "TS130F"
-      }
+    "manufacturerName": [
+      "_TZ3000_8KZQQZU4",
+      "_TZ3000_CTBAFVHM",
+      "_TZ3000_DBPMPCO1",
+      "_TZ3000_DPH3RPSS",
+      "_TZ3000_FVHUNHXB",
+      "_TZ3000_LTIQUBUE",
+      "_TZ3000_QA8S8VCA",
+      "_TZ3000_QQDBCCB3",
+      "_tz3000_8kzqqzu4",
+      "_tz3000_ctbafvhm",
+      "_tz3000_dbpmpco1",
+      "_tz3000_dph3rpss",
+      "_tz3000_fvhunhxb",
+      "_tz3000_ltiqubue",
+      "_tz3000_qa8s8vca",
+      "_tz3000_qqdbccb3"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS130F"
+    ]
   },
   "settings": [
     {

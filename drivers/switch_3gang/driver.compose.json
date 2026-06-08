@@ -36,21 +36,21 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3000_mw1pqqqt",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3000_famkxci2",
-        "productId": "TS0043"
-      },
-      {
-        "manufacturerName": "_TZ3000_yf8iela1",
-        "productId": "TS0043"
-      }
+    "manufacturerName": [
+      "_TZ3000_FAMKXCI2",
+      "_TZ3000_MW1PQQQT",
+      "_TZ3000_YF8IELA1",
+      "_TZ3000_famkxci2",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_yf8iela1",
+      "_tz3000_famkxci2",
+      "_tz3000_mw1pqqqt",
+      "_tz3000_yf8iela1"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0003",
+      "TS0043"
+    ]
   },
   "images": {
     "small": "/drivers/switch_3gang/assets/images/small.png",

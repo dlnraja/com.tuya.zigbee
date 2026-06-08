@@ -45,12 +45,12 @@
         "en": "Press the reset button for aprox 5 seconds until the LED blinks."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_lf56vpxj",
-        "productId": "TS0202"
-      }
+    "manufacturerName": [
+      "_TZ3000_LF56VPXJ",
+      "_tz3000_lf56vpxj"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0202"
+    ]
   }
 }

@@ -1,0 +1,20 @@
+{
+  "triggers": [
+    {
+      "id": "target_distance_changed",
+      "title": {
+        "en": "Target distance changed"
+      },
+      "tokens": [
+        {
+          "name": "target_distance",
+          "type": "number",
+          "title": {
+            "en": "Target distance"
+          }
+        }
+      ],
+      "args": []
+    }
+  ]
+}

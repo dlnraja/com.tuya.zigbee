@@ -82,32 +82,17 @@
         "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_E3OITDYU",
-        "productId": "TS110E"
-      },
-      {
-        "manufacturerName": "_TZE200_E3OITDYU",
-        "productId": "TS110F"
-      },
-      {
-        "manufacturerName": "_TZE204_BXOO2SWD",
-        "productId": "TS110E"
-      },
-      {
-        "manufacturerName": "_TZE204_BXOO2SWD",
-        "productId": "TS110F"
-      },
-      {
-        "manufacturerName": "_TZE204_ZENJ4LXV",
-        "productId": "TS110E"
-      },
-      {
-        "manufacturerName": "_TZE204_ZENJ4LXV",
-        "productId": "TS110F"
-      }
+    "manufacturerName": [
+      "_TZE200_E3OITDYU",
+      "_TZE204_BXOO2SWD",
+      "_TZE204_ZENJ4LXV",
+      "_tze200_e3oitdyu",
+      "_tze204_bxoo2swd",
+      "_tze204_zenj4lxv"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS110E",
+      "TS110F"
+    ]
   }
 }

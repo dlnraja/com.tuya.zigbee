@@ -74,65 +74,26 @@
         "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_44xpctxy",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_44xpctxy",
-        "productId": "TS0601_dehum"
-      },
-      {
-        "manufacturerName": "_tze200_bgjfxh3o",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_bgjfxh3o",
-        "productId": "TS0601_dehum"
-      },
-      {
-        "manufacturerName": "_tze200_qtbrwrfv",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_qtbrwrfv",
-        "productId": "TS0601_dehum"
-      },
-      {
-        "manufacturerName": "_tze204_44xpctxy",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_44xpctxy",
-        "productId": "TS0601_dehum"
-      },
-      {
-        "manufacturerName": "_tze204_bgjfxh3o",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_bgjfxh3o",
-        "productId": "TS0601_dehum"
-      },
-      {
-        "manufacturerName": "_tze204_oisqyl4o",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_oisqyl4o",
-        "productId": "TS0601_dehum"
-      },
-      {
-        "manufacturerName": "_tze204_qtbrwrfv",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_qtbrwrfv",
-        "productId": "TS0601_dehum"
-      }
+    "manufacturerName": [
+      "_TZE200_44XPCTXY",
+      "_TZE200_BGJFXH3O",
+      "_TZE200_QTBRWRFV",
+      "_TZE204_44XPCTXY",
+      "_TZE204_BGJFXH3O",
+      "_TZE204_OISQYL4O",
+      "_TZE204_QTBRWRFV",
+      "_tze200_44xpctxy",
+      "_tze200_bgjfxh3o",
+      "_tze200_qtbrwrfv",
+      "_tze204_44xpctxy",
+      "_tze204_bgjfxh3o",
+      "_tze204_oisqyl4o",
+      "_tze204_qtbrwrfv"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_dehum"
+    ]
   },
   "metadata": {
     "app": {

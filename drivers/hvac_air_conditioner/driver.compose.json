@@ -121,17 +121,14 @@
         "de": "Halten Sie die WLAN-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze204_zuhszj9s",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_zuhszj9s",
-        "productId": "TS0601_ac"
-      }
+    "manufacturerName": [
+      "_TZE204_ZUHSZJ9S",
+      "_tze204_zuhszj9s"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_ac"
+    ]
   },
   "metadata": {
     "app": {

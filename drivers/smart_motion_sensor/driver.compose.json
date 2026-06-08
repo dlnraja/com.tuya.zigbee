@@ -44,12 +44,12 @@
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 5 seconds until the LED blinks rapidly. If the pairing does not start, press the setup button again for 10-15 seconds until the led stops blinking and then try again."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz1800_fcdjzz3s",
-        "productId": "TY0202"
-      }
+    "manufacturerName": [
+      "_TZ1800_FCDJZZ3S",
+      "_tz1800_fcdjzz3s"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TY0202"
+    ]
   }
 }

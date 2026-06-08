@@ -47,17 +47,15 @@
         "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE204_3Z6HCA0Q",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE284_4AR89TR1",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE204_3Z6HCA0Q",
+      "_TZE284_4AR89TR1",
+      "_tze204_3z6hca0q",
+      "_tze284_4ar89tr1"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {

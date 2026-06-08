@@ -37,141 +37,47 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3210_emqmwtym",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_5e2f3n2h",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tz3000_5e2f3n2h",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_8h73rpe5",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tz3000_8h73rpe5",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_ali1q8p0",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tz3000_ali1q8p0",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_bffkdmp8",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tz3000_bffkdmp8",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_bn4t9du1",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tz3000_bn4t9du1",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_ddcqbtgs",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tz3000_ddcqbtgs",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_2wg5rjgr",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze200_2wg5rjgr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_d0yu2xgi",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze200_d0yu2xgi",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_nlrfgpny",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze200_nlrfgpny",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_t1blo2bj",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze200_t1blo2bj",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_hcxvyxa5",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze204_hcxvyxa5",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_nlrfgpny",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze204_nlrfgpny",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_q76rtoa9",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze204_q76rtoa9",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_t1blo2bj",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze204_t1blo2bj",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_9qhgsdta",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze284_9qhgsdta",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_nlrfgpny",
-        "productId": "TS0211"
-      },
-      {
-        "manufacturerName": "_tze284_nlrfgpny",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZ3000_5E2F3N2H",
+      "_TZ3000_8H73RPE5",
+      "_TZ3000_ALI1Q8P0",
+      "_TZ3000_BFFKDMP8",
+      "_TZ3000_BN4T9DU1",
+      "_TZ3000_DDCQBTGS",
+      "_TZ3210_EMQMWTYM",
+      "_TZ3210_emqmwtym",
+      "_TZE200_2WG5RJGR",
+      "_TZE200_D0YU2XGI",
+      "_TZE200_NLRFGPNY",
+      "_TZE200_T1BLO2BJ",
+      "_TZE204_HCXVYXA5",
+      "_TZE204_NLRFGPNY",
+      "_TZE204_Q76RTOA9",
+      "_TZE204_T1BLO2BJ",
+      "_TZE284_9QHGSDTA",
+      "_TZE284_NLRFGPNY",
+      "_tz3000_5e2f3n2h",
+      "_tz3000_8h73rpe5",
+      "_tz3000_ali1q8p0",
+      "_tz3000_bffkdmp8",
+      "_tz3000_bn4t9du1",
+      "_tz3000_ddcqbtgs",
+      "_tz3210_emqmwtym",
+      "_tze200_2wg5rjgr",
+      "_tze200_d0yu2xgi",
+      "_tze200_nlrfgpny",
+      "_tze200_t1blo2bj",
+      "_tze204_hcxvyxa5",
+      "_tze204_nlrfgpny",
+      "_tze204_q76rtoa9",
+      "_tze204_t1blo2bj",
+      "_tze284_9qhgsdta",
+      "_tze284_nlrfgpny"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0211",
+      "TS0601"
+    ]
   },
   "settings": [
     {

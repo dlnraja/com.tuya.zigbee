@@ -27,17 +27,14 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3210_snzbbgvi",
-        "productId": "TS0222"
-      },
-      {
-        "manufacturerName": "_tz3210_snzbbgvi",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZ3210_SNZBBGVI",
+      "_tz3210_snzbbgvi"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0222",
+      "TS0601"
+    ]
   },
   "images": {
     "small": "/drivers/light_sensor_outdoor/assets/images/small.png",

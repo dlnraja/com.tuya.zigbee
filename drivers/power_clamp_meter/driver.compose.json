@@ -116,73 +116,28 @@
         "fr": "Appuyez sur le bouton d'appairage pendant 5 secondes"
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_81yrt3lo",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_81yrt3lo",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze200_sur36rju",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_sur36rju",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze204_81yrt3l",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_81yrt3l",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze204_d0ypnbvn",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_d0ypnbvn",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze204_ntw1goyd",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_ntw1goyd",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze204_sur36rju",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_sur36rju",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze284_byzdayie",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_byzdayie",
-        "productId": "TS0601_clamp"
-      },
-      {
-        "manufacturerName": "_tze28c1000000_81yrt3lo",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze28c1000000_81yrt3lo",
-        "productId": "TS0601_clamp"
-      }
+    "manufacturerName": [
+      "_TZE200_81YRT3LO",
+      "_TZE200_SUR36RJU",
+      "_TZE204_81YRT3L",
+      "_TZE204_D0YPNBVN",
+      "_TZE204_NTW1GOYD",
+      "_TZE204_SUR36RJU",
+      "_TZE284_BYZDAYIE",
+      "_TZE28C1000000_81YRT3LO",
+      "_tze200_81yrt3lo",
+      "_tze200_sur36rju",
+      "_tze204_81yrt3l",
+      "_tze204_d0ypnbvn",
+      "_tze204_ntw1goyd",
+      "_tze204_sur36rju",
+      "_tze284_byzdayie",
+      "_tze28c1000000_81yrt3lo"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_clamp"
+    ]
   },
   "images": {
     "small": "/drivers/power_clamp_meter/assets/images/small.png",

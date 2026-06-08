@@ -42,89 +42,24 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_u6x1zyv2",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_K1MSAVLX",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_TZ3000_K1MSAVLX",
-        "productId": "TS0207_rain"
-      },
-      {
-        "manufacturerName": "_TZ3000_K1MSAVLX",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_K1MSAVLX",
-        "productId": "ZG-222Z"
-      },
-      {
-        "manufacturerName": "_TZ3000_K1MSAVLX",
-        "productId": "ZG-223Z"
-      },
-      {
-        "manufacturerName": "_TZ3000_OTWPDQ1D",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_TZ3000_OTWPDQ1D",
-        "productId": "TS0207_rain"
-      },
-      {
-        "manufacturerName": "_TZ3000_OTWPDQ1D",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_OTWPDQ1D",
-        "productId": "ZG-222Z"
-      },
-      {
-        "manufacturerName": "_TZ3000_OTWPDQ1D",
-        "productId": "ZG-223Z"
-      },
-      {
-        "manufacturerName": "_TZE200_U6X1ZYV2",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_TZE200_U6X1ZYV2",
-        "productId": "TS0207_rain"
-      },
-      {
-        "manufacturerName": "_TZE200_U6X1ZYV2",
-        "productId": "ZG-222Z"
-      },
-      {
-        "manufacturerName": "_TZE200_U6X1ZYV2",
-        "productId": "ZG-223Z"
-      },
-      {
-        "manufacturerName": "_TZE204_U6X1ZYV2",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_TZE204_U6X1ZYV2",
-        "productId": "TS0207_rain"
-      },
-      {
-        "manufacturerName": "_TZE204_U6X1ZYV2",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE204_U6X1ZYV2",
-        "productId": "ZG-222Z"
-      },
-      {
-        "manufacturerName": "_TZE204_U6X1ZYV2",
-        "productId": "ZG-223Z"
-      }
+    "manufacturerName": [
+      "_TZ3000_K1MSAVLX",
+      "_TZ3000_OTWPDQ1D",
+      "_TZE200_U6X1ZYV2",
+      "_TZE200_u6x1zyv2",
+      "_TZE204_U6X1ZYV2",
+      "_tz3000_k1msavlx",
+      "_tz3000_otwpdq1d",
+      "_tze200_u6x1zyv2",
+      "_tze204_u6x1zyv2"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0207",
+      "TS0207_rain",
+      "TS0601",
+      "ZG-222Z",
+      "ZG-223Z"
+    ]
   },
   "settings": [
     {

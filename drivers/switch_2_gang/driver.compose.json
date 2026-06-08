@@ -70,48 +70,21 @@
         "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0002"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0002_power"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0002_switch_module"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0012"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0013"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "ZG-302Z2"
-      },
-      {
-        "manufacturerName": "_TZ3000_Z1UEZKPI",
-        "productId": "ZG-305Z"
-      }
+    "manufacturerName": [
+      "_TZ3000_Z1UEZKPI",
+      "_tz3000_z1uezkpi"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0002",
+      "TS0002_power",
+      "TS0002_switch_module",
+      "TS0003",
+      "TS0012",
+      "TS0013",
+      "TS0601",
+      "TS0726",
+      "ZG-302Z2",
+      "ZG-305Z"
+    ]
   }
 }

@@ -41,12 +41,12 @@
         "en": "Press the arrow down button for 8s when the thermostat is off."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE204_AOCLFNXZ",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE204_AOCLFNXZ",
+      "_tze204_aoclfnxz"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   }
 }

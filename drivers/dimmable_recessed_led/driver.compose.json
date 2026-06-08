@@ -37,13 +37,13 @@
         "en": "Power on to enter pairing mode."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3210_zdrhqmo0",
-        "productId": "TS0502B"
-      }
+    "manufacturerName": [
+      "_TZ3210_ZDRHQMO0",
+      "_tz3210_zdrhqmo0"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0502B"
+    ]
   },
   "class": "other",
   "capabilities": [

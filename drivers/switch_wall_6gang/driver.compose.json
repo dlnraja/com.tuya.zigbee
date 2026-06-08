@@ -110,93 +110,27 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_cziew6eu",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_tz3000_cziew6eu",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_cziew6eu",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tze204_72bewjky",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_tze204_72bewjky",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_72bewjky",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tze204_ad2jkxwh",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_tze204_ad2jkxwh",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_ad2jkxwh",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tze204_tz32mtza",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_tze204_tz32mtza",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_tz32mtza",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tze284_g1enhdsi",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_tze284_g1enhdsi",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_g1enhdsi",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_tze284_tz32mtza",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_tze284_tz32mtza",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_tz32mtza",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "tze204_7sjncirf",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "tze204_7sjncirf",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "tze204_7sjncirf",
-        "productId": "TS0726"
-      }
+    "manufacturerName": [
+      "TZE204_7SJNCIRF",
+      "_TZ3000_CZIEW6EU",
+      "_TZE204_72BEWJKY",
+      "_TZE204_AD2JKXWH",
+      "_TZE204_TZ32MTZA",
+      "_TZE284_G1ENHDSI",
+      "_TZE284_TZ32MTZA",
+      "_tz3000_cziew6eu",
+      "_tze204_72bewjky",
+      "_tze204_ad2jkxwh",
+      "_tze204_tz32mtza",
+      "_tze284_g1enhdsi",
+      "_tze284_tz32mtza",
+      "tze204_7sjncirf"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0016",
+      "TS0601",
+      "TS0726"
+    ]
   },
   "images": {
     "small": "/drivers/switch_wall_6gang/assets/images/small.png",

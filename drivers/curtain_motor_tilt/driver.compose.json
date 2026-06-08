@@ -26,81 +26,30 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_a8zrneee",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_a8zrneee",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_cpbo62rn",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_cpbo62rn",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_eegnwoyw",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_eegnwoyw",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_lwlvaony",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_lwlvaony",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_ol5jlkkr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_ol5jlkkr",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_pk29mnl3",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_pk29mnl3",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_r0jdjrvi",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_r0jdjrvi",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze200_sbordckq",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_sbordckq",
-        "productId": "TS0601_curtain_tilt"
-      },
-      {
-        "manufacturerName": "_tze204_r0jdjrvi",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_r0jdjrvi",
-        "productId": "TS0601_curtain_tilt"
-      }
+    "manufacturerName": [
+      "_TZE200_A8ZRNEEE",
+      "_TZE200_CPBO62RN",
+      "_TZE200_EEGNWOYW",
+      "_TZE200_LWLVAONY",
+      "_TZE200_OL5JLKKR",
+      "_TZE200_PK29MNL3",
+      "_TZE200_R0JDJRVI",
+      "_TZE200_SBORDCKQ",
+      "_TZE204_R0JDJRVI",
+      "_tze200_a8zrneee",
+      "_tze200_cpbo62rn",
+      "_tze200_eegnwoyw",
+      "_tze200_lwlvaony",
+      "_tze200_ol5jlkkr",
+      "_tze200_pk29mnl3",
+      "_tze200_r0jdjrvi",
+      "_tze200_sbordckq",
+      "_tze204_r0jdjrvi"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_curtain_tilt"
+    ]
   },
   "images": {
     "small": "/drivers/curtain_motor_tilt/assets/images/small.png",

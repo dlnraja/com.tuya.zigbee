@@ -76,16 +76,13 @@
         "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_l6iqph4f",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_l6iqph4f",
-        "productId": "TS130F"
-      }
+    "manufacturerName": [
+      "_TZ3000_L6IQPH4F",
+      "_tz3000_l6iqph4f"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS130F"
+    ]
   }
 }

@@ -39,125 +39,41 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "3300-S"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "3320-L"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "CK-TLSR8656-SS5-01(7003)"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "DoorWindow-Sensor-ZB3.0"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "DS01"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "E1603/E1702"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "Excellux"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "lumi.magnet.ac01"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "lumi.magnet.agl02"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "lumi.sensor_magnet"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "lumi.sensor_magnet.aq2"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "MCCGQ01LM"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "MCCGQ11LM"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "MCCGQ12LM"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "MCCGQ14LM"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "MCT-340 E"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "q9mpfhw"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "RH3001"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "SNZB-04"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "SNZB-04P"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "SNZB-04PR2"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "SNZB-04R2"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "TRADFRI open/close remote"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "TS0021"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "TS0203"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "TS0207"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "ZG-102Z"
-      },
-      {
-        "manufacturerName": "_tz3000_cjrngdr3",
-        "productId": "ZG-102ZL"
-      }
+    "manufacturerName": [
+      "_TZ3000_CJRNGDR3",
+      "_tz3000_cjrngdr3"
     ],
-    "manufacturerName": []
+    "productId": [
+      "3300-S",
+      "3320-L",
+      "CK-TLSR8656-SS5-01(7003)",
+      "DS01",
+      "DoorWindow-Sensor-ZB3.0",
+      "E1603/E1702",
+      "Excellux",
+      "MCCGQ01LM",
+      "MCCGQ11LM",
+      "MCCGQ12LM",
+      "MCCGQ14LM",
+      "MCT-340 E",
+      "RH3001",
+      "SNZB-04",
+      "SNZB-04P",
+      "SNZB-04PR2",
+      "SNZB-04R2",
+      "TRADFRI open/close remote",
+      "TS0021",
+      "TS0203",
+      "TS0207",
+      "TS0601",
+      "ZG-102Z",
+      "ZG-102ZL",
+      "lumi.magnet.ac01",
+      "lumi.magnet.agl02",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2",
+      "q9mpfhw"
+    ]
   },
   "settings": [
     {

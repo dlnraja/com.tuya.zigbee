@@ -143,20 +143,14 @@
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_o005nuxx",
-        "productId": "TS0101"
-      },
-      {
-        "manufacturerName": "_tz3000_o005nuxx",
-        "productId": "TS0111"
-      },
-      {
-        "manufacturerName": "_tz3000_o005nuxx",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZ3000_O005NUXX",
+      "_tz3000_o005nuxx"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0101",
+      "TS0111",
+      "TS0601"
+    ]
   }
 }

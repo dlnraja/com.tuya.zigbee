@@ -44,29 +44,17 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0042"
-      },
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0601_scene2"
-      },
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0601_wirelesssw"
-      },
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS0726"
-      }
+    "manufacturerName": [
+      "_PLACEHOLDER_NEEDS_REAL_MFR",
+      "_placeholder_needs_real_mfr"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0042",
+      "TS0601",
+      "TS0601_scene2",
+      "TS0601_wirelesssw",
+      "TS0726"
+    ]
   },
   "images": {
     "small": "/drivers/scene_switch_2/assets/images/small.png",

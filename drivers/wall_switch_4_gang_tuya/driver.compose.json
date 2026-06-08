@@ -91,12 +91,12 @@
         "en": "Four tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_shkxsgis",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TZE200_SHKXSGIS",
+      "_tze200_shkxsgis"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   }
 }

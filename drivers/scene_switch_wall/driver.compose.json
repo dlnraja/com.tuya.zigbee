@@ -44,17 +44,14 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_dfgbtub0",
-        "productId": "TS0042"
-      },
-      {
-        "manufacturerName": "_tz3000_dfgbtub0",
-        "productId": "TS0043"
-      }
+    "manufacturerName": [
+      "_TZ3000_DFGBTUB0",
+      "_tz3000_dfgbtub0"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0042",
+      "TS0043"
+    ]
   },
   "images": {
     "small": "/drivers/scene_switch_2/assets/images/small.png",

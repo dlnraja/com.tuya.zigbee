@@ -36,21 +36,17 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tyst11_2ekuz3dz",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tyst11_kly8gjlz",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_bhd_5kn9",
-        "productId": "TS0601"
-      }
+    "manufacturerName": [
+      "_TYST11_2EKUZ3DZ",
+      "_TYST11_KLY8GJLZ",
+      "_TZE200_BHD_5KN9",
+      "_tyst11_2ekuz3dz",
+      "_tyst11_kly8gjlz",
+      "_tze200_bhd_5kn9"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "images": {
     "small": "/drivers/radiator_valve_zigbee/assets/images/small.png",

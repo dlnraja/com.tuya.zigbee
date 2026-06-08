@@ -45,25 +45,16 @@
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_hhiodade",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3000_hhiodade",
-        "productId": "TS0011"
-      },
-      {
-        "manufacturerName": "_tz3000_vw40zqp4",
-        "productId": "TS0001"
-      },
-      {
-        "manufacturerName": "_tz3000_vw40zqp4",
-        "productId": "TS0011"
-      }
+    "manufacturerName": [
+      "_TZ3000_HHIODADE",
+      "_TZ3000_VW40ZQP4",
+      "_tz3000_hhiodade",
+      "_tz3000_vw40zqp4"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0001",
+      "TS0011"
+    ]
   },
   "settings": [
     {

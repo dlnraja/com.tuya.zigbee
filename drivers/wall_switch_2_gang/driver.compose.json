@@ -66,21 +66,15 @@
         "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_m5bzwpoh",
-        "productId": "TS0002"
-      },
-      {
-        "manufacturerName": "_tz3000_m5bzwpoh",
-        "productId": "TS0012"
-      },
-      {
-        "manufacturerName": "_tz3000_m5bzwpoh",
-        "productId": "TS0042"
-      }
+    "manufacturerName": [
+      "_TZ3000_M5BZWPOH",
+      "_tz3000_m5bzwpoh"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
   },
   "deprecated": true
 }

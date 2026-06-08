@@ -31,21 +31,15 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_qkixdnon",
-        "productId": "TS011F"
-      },
-      {
-        "manufacturerName": "_tz3000_qkixdnon",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_qkixdnon",
-        "productId": "TS0726"
-      }
+    "manufacturerName": [
+      "_TZ3000_QKIXDNON",
+      "_tz3000_qkixdnon"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS011F",
+      "TS0601",
+      "TS0726"
+    ]
   },
   "images": {
     "small": "/drivers/switch_2gang/assets/images/small.png",

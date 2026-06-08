@@ -47,13 +47,13 @@
         "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_placeholder_needs_real_mfr",
-        "productId": "TS004F"
-      }
+    "manufacturerName": [
+      "_PLACEHOLDER_NEEDS_REAL_MFR",
+      "_placeholder_needs_real_mfr"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS004F"
+    ]
   },
   "settings": [
     {

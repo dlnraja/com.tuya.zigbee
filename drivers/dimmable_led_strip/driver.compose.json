@@ -37,13 +37,13 @@
         "en": "Power on to enter pairing mode."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3210_invesber",
-        "productId": "TS0502B"
-      }
+    "manufacturerName": [
+      "_TZ3210_INVESBER",
+      "_tz3210_invesber"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0502B"
+    ]
   },
   "class": "light",
   "capabilities": [

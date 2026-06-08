@@ -26,13 +26,13 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tzb210_ngnt8kni",
-        "productId": "TS0502"
-      }
+    "manufacturerName": [
+      "_TZB210_NGNT8KNI",
+      "_tzb210_ngnt8kni"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0502"
+    ]
   },
   "images": {
     "small": "/drivers/led_controller_cct/assets/images/small.png",

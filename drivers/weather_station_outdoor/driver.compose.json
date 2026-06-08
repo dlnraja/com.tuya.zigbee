@@ -39,25 +39,16 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_vkibfp3d",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_vkibfp3d",
-        "productId": "TS0601_weather"
-      },
-      {
-        "manufacturerName": "_tze200_wlcyxdky",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_wlcyxdky",
-        "productId": "TS0601_weather"
-      }
+    "manufacturerName": [
+      "_TZE200_VKIBFP3D",
+      "_TZE200_WLCYXDKY",
+      "_tze200_vkibfp3d",
+      "_tze200_wlcyxdky"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_weather"
+    ]
   },
   "settings": [
     {

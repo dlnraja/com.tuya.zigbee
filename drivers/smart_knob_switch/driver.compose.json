@@ -48,25 +48,16 @@
         "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_g9g2xnch",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tz3000_g9g2xnch",
-        "productId": "TS004F"
-      },
-      {
-        "manufacturerName": "_tz3000_r0o2dahu",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tz3000_r0o2dahu",
-        "productId": "TS004F"
-      }
+    "manufacturerName": [
+      "_TZ3000_G9G2XNCH",
+      "_TZ3000_R0O2DAHU",
+      "_tz3000_g9g2xnch",
+      "_tz3000_r0o2dahu"
     ],
-    "manufacturerName": []
+    "productId": [
+      "ERS-10TZBVK-AA",
+      "TS004F"
+    ]
   },
   "settings": [
     {

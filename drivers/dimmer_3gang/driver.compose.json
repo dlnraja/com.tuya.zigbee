@@ -34,25 +34,16 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_1v1dxkck",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_1v1dxkck",
-        "productId": "TS0601_dimmer3"
-      },
-      {
-        "manufacturerName": "_tze204_pdznlbhv",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_pdznlbhv",
-        "productId": "TS0601_dimmer3"
-      }
+    "manufacturerName": [
+      "_TZE200_1V1DXKCK",
+      "_TZE204_PDZNLBHV",
+      "_tze200_1v1dxkck",
+      "_tze204_pdznlbhv"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_dimmer3"
+    ]
   },
   "capabilitiesOptions": {
     "onoff": {

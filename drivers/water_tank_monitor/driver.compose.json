@@ -72,81 +72,30 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tze200_8ygqkfpo",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_8ygqkfpo",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze200_do4ckv7k",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_do4ckv7k",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze200_lvkk0hdg",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_lvkk0hdg",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze200_rgfzq1fl",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_rgfzq1fl",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze200_wcnjrsjf",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_wcnjrsjf",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze204_htnnfasr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_htnnfasr",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze204_lvkk0hdg",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_lvkk0hdg",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze284_lvkk0hdg",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_lvkk0hdg",
-        "productId": "TS0601_tank"
-      },
-      {
-        "manufacturerName": "_tze284_mxujdmxo",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze284_mxujdmxo",
-        "productId": "TS0601_tank"
-      }
+    "manufacturerName": [
+      "_TZE200_8YGQKFPO",
+      "_TZE200_DO4CKV7K",
+      "_TZE200_LVKK0HDG",
+      "_TZE200_RGFZQ1FL",
+      "_TZE200_WCNJRSJF",
+      "_TZE204_HTNNFASR",
+      "_TZE204_LVKK0HDG",
+      "_TZE284_LVKK0HDG",
+      "_TZE284_MXUJDMXO",
+      "_tze200_8ygqkfpo",
+      "_tze200_do4ckv7k",
+      "_tze200_lvkk0hdg",
+      "_tze200_rgfzq1fl",
+      "_tze200_wcnjrsjf",
+      "_tze204_htnnfasr",
+      "_tze204_lvkk0hdg",
+      "_tze284_lvkk0hdg",
+      "_tze284_mxujdmxo"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_tank"
+    ]
   },
   "energy": {
     "batteries": [

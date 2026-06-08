@@ -46,112 +46,37 @@
         "en": "Press the button on the side of the unit for 5 seconds."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "CK-TLSR8656-SS5-01(7014)"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "Excellux"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "lumi.sensor_ht"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "lumi.sensor_ht.agl02"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "lumi.weather"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "RH3052"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SM0201"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SNZB-02"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SNZB-02D"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SNZB-02DR2"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SNZB-02LD"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SNZB-02P"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "SNZB-02WD"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "TH01"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "THS317-ET"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "TS0201"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "TS0222"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "TS1201"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "TY0201"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "WSDCGQ01LM"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "WSDCGQ11LM"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "WSDCGQ12LM"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "ZG-227Z"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "ZG-227ZL"
-      },
-      {
-        "manufacturerName": "_tz3000_rufdtfyv",
-        "productId": "ZG-303Z"
-      }
+    "manufacturerName": [
+      "_TZ3000_RUFDTFYV",
+      "_tz3000_rufdtfyv"
     ],
-    "manufacturerName": []
+    "productId": [
+      "CK-TLSR8656-SS5-01(7014)",
+      "Excellux",
+      "RH3052",
+      "SM0201",
+      "SNZB-02",
+      "SNZB-02D",
+      "SNZB-02DR2",
+      "SNZB-02LD",
+      "SNZB-02P",
+      "SNZB-02WD",
+      "TH01",
+      "THS317-ET",
+      "TS0201",
+      "TS0222",
+      "TS0601",
+      "TS1201",
+      "TY0201",
+      "WSDCGQ01LM",
+      "WSDCGQ11LM",
+      "WSDCGQ12LM",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "ZG-303Z",
+      "lumi.sensor_ht",
+      "lumi.sensor_ht.agl02",
+      "lumi.weather"
+    ]
   }
 }

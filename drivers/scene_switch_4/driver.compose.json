@@ -78,69 +78,23 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_jckxip3g",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tz3000_jckxip3g",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_jckxip3g",
-        "productId": "ZG-101ZS"
-      },
-      {
-        "manufacturerName": "_tz3000_kgvamgxs",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tz3000_kgvamgxs",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tz3000_kgvamgxs",
-        "productId": "ZG-101ZS"
-      },
-      {
-        "manufacturerName": "_tze200_zqtiam9d",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tze200_zqtiam9d",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze200_zqtiam9d",
-        "productId": "ZG-101ZS"
-      },
-      {
-        "manufacturerName": "_tze204_2m38mh6k",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tze204_2m38mh6k",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_2m38mh6k",
-        "productId": "ZG-101ZS"
-      },
-      {
-        "manufacturerName": "_tze204_zqtiam9d",
-        "productId": "ERS-10TZBVK-AA"
-      },
-      {
-        "manufacturerName": "_tze204_zqtiam9d",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_tze204_zqtiam9d",
-        "productId": "ZG-101ZS"
-      }
+    "manufacturerName": [
+      "_TZ3000_JCKXIP3G",
+      "_TZ3000_KGVAMGXS",
+      "_TZE200_ZQTIAM9D",
+      "_TZE204_2M38MH6K",
+      "_TZE204_ZQTIAM9D",
+      "_tz3000_jckxip3g",
+      "_tz3000_kgvamgxs",
+      "_tze200_zqtiam9d",
+      "_tze204_2m38mh6k",
+      "_tze204_zqtiam9d"
     ],
-    "manufacturerName": []
+    "productId": [
+      "ERS-10TZBVK-AA",
+      "TS0601",
+      "ZG-101ZS"
+    ]
   },
   "images": {
     "small": "/drivers/scene_switch_4/assets/images/small.png",

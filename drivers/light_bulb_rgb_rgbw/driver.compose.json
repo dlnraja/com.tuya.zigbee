@@ -44,25 +44,16 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3210_s8lvbbu",
-        "productId": "TS0505A"
-      },
-      {
-        "manufacturerName": "_tz3210_s8lvbbu",
-        "productId": "TS0505B"
-      },
-      {
-        "manufacturerName": "_tz3210_s8lvbbuc",
-        "productId": "TS0505A"
-      },
-      {
-        "manufacturerName": "_tz3210_s8lvbbuc",
-        "productId": "TS0505B"
-      }
+    "manufacturerName": [
+      "_TZ3210_S8LVBBU",
+      "_TZ3210_S8LVBBUC",
+      "_tz3210_s8lvbbu",
+      "_tz3210_s8lvbbuc"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0505A",
+      "TS0505B"
+    ]
   },
   "settings": [
     {

@@ -121,32 +121,16 @@
         "en": "Six tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_9MAHTQTG",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_TZE200_9MAHTQTG",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_9MAHTQTG",
-        "productId": "TS0726"
-      },
-      {
-        "manufacturerName": "_TZE200_R731ZLXK",
-        "productId": "TS0016"
-      },
-      {
-        "manufacturerName": "_TZE200_R731ZLXK",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_R731ZLXK",
-        "productId": "TS0726"
-      }
+    "manufacturerName": [
+      "_TZE200_9MAHTQTG",
+      "_TZE200_R731ZLXK",
+      "_tze200_9mahtqtg",
+      "_tze200_r731zlxk"
     ],
-    "manufacturerName": []
+    "productId": [
+      "TS0016",
+      "TS0601",
+      "TS0726"
+    ]
   }
 }
