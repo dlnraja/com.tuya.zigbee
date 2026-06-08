@@ -31,6 +31,7 @@ const results = {
   emptyPID: [],
   ok: 0,
   wildcards: [],
+  wrongFormat: [], // v8.5.38: detect fingerprints[] format (not supported by homey app compose)
 };
 
 fs.readdirSync(DRIVERS_DIR).forEach(driverId => {
@@ -49,7 +50,12 @@ fs.readdirSync(DRIVERS_DIR).forEach(driverId => {
   if (!compose.zigbee) return; // WiFi/IR driver — skip
   
   results.zigbee++;
-  
+
+  // v8.5.38: Check for unsupported fingerprints[] format
+  if (compose.zigbee.fingerprints && !compose.zigbee.manufacturerName) {
+    results.wrongFormat.push(driverId);
+  }
+
   const mfs = compose.zigbee.manufacturerName || [];
   const pids = compose.zigbee.productId || [];
   
@@ -88,12 +94,24 @@ if (results.wildcards.length > 0) {
   results.wildcards.forEach(w => console.log(`  - ${w.driverId}: "${w.mf}"`));
 }
 
+// v8.5.38: Report wrong format
+if (results.wrongFormat.length > 0) {
+  console.log('\nDrivers avec format fingerprints[] (NON supporté par homey app compose):');
+  results.wrongFormat.forEach(d => console.log('  - ' + d));
+  console.log('  ⚠️  Ce format sera IGNORÉ par homey app compose');
+}
+
 // Gate check
 let exitCode = 0;
 
 if (results.wildcards.length > 0) {
   console.log('\n❌ FAIL: Wildcards détectés dans manufacturerName');
   exitCode = 1;
+}
+
+// v8.5.38: Wrong format is a warning, not a blocker
+if (results.wrongFormat.length > 0) {
+  console.log('\n⚠️  WARNING: Format fingerprints[] détecté (non supporté par homey app compose)');
 }
 
 if (results.emptyMF.length > threshold) {

@@ -162,6 +162,12 @@ _TZ3000_abc + TS0001 → switch_2gang  ❌ CONFLIT (même driver different!)
 - Order matters: first matching driver wins
 - Exact string match required
 
+### ⚠️ Format `fingerprints[]` NON supporté
+- Le format `fingerprints: [{ manufacturerName, productId }]` dans `driver.compose.json` **N'EST PAS supporté** par `homey app compose`
+- Le tool génère TOUJOURS `manufacturerName[]` + `productId[]` dans app.json
+- NE PAS migrer vers le format `fingerprints` — il sera ignoré
+- Utiliser le format actuel: `manufacturerName[]` + `productId[]` séparés
+
 ### When to REMOVE a fingerprint
 - ONLY if SAME manufacturerName + SAME productId in WRONG driver
 - Do NOT remove just because mfr appears in another driver with different productId
