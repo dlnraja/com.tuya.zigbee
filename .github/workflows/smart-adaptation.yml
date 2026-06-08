@@ -1,0 +1,52 @@
+name: Smart Driver Adaptation
+
+on:
+  schedule:
+    # Run weekly on Monday at 06:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no changes)'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  adapt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: smart-adaptation-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run Smart Driver Adaptation
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node scripts/automation/smart-driver-adaptation.js --dry-run --verbose
+          else
+            node scripts/automation/smart-driver-adaptation.js --verbose
+          fi
+
+      - name: Run Validation Scripts
+        run: |
+          node scripts/validation/check-await-without-async.js || true
+          node scripts/validation/check-database-routing.js || true
+          node scripts/validation/check-fingerprint-health.js || true
+
+      - name: Upload Adaptation Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: adaptation-report
+          path: data/community-sync/adaptation-report.json
+          retention-days: 30
