@@ -253,7 +253,7 @@
 | switch_3_gang | 75 | TS0003, TS0013 | onoff |
 | switch_3gang | 59 | TS0003, TS0003_power, TS0003_switch_module, TS0013, TS0040, TS0043, TS0601, ZG-302Z3 | onoff, onoff.gang2, onoff.gang3... |
 | switch_4_gang_metering | 1 | TS0004, TS0601 | onoff, measure_power, meter_power... |
-| switch_4gang | 194 | JZ-ZB-004, TS0004, TS0004_power, TS0004_switch_module, TS0014, TS0601, TS0726 | onoff, onoff.gang2, onoff.gang3... |
+| switch_4gang | 197 | JZ-ZB-004, TS0004, TS0004_power, TS0004_switch_module, TS0014, TS0601, TS0726 | onoff, onoff.gang2, onoff.gang3... |
 | switch_dimmer_1gang | 10 | TS0601 | onoff, dim |
 | switch_plug_1 | 3 | TS0601_sp1 | onoff, measure_power, meter_power |
 | switch_plug_2 | 3 | TS0122 | onoff, onoff.outlet2, measure_power... |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 21114 manufacturer IDs
+**Total:** 315 drivers, 21117 manufacturer IDs
 
-*Generated: 2026-06-07T22:19:39.041Z*
+*Generated: 2026-06-08T01:28:05.345Z*
