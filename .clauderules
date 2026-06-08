@@ -1,0 +1,140 @@
+# Claude Code Rules — Tuya Unified Zigbee (com.dlnraja.tuya.zigbee)
+
+## MANDATORY READING ORDER
+
+Before ANY code modification, read these files IN ORDER:
+1. `AI_CONTEXT_MANDATE.md` — Architecture, 11-layer pipeline, security
+2. `PROJECT_INDEX.md` — 412 drivers, 44594 fingerprints, quality gates
+3. `docs/rules/CRITICAL_MISTAKES.md` — 70+ rules (A1-A13, B1-B10, C1-C7, J1-J10, L1-L8, O1-O24)
+4. `docs/GLOBAL_INVESTIGATION_PLAN.md` — 22-section investigation methodology
+5. `.ai/rules/.windsurfrules` — IDE-specific rules (603 lines)
+
+---
+
+## ARCHITECTURE
+
+- **App ID**: `com.dlnraja.tuya.zigbee` (master) / `com.dlnraja.tuya.zigbee.stable` (stable-v5)
+- **SDK**: Homey SDK v3 + homey-zigbeedriver ^2.2.2
+- **Scale**: 320 Zigbee + 51 WiFi drivers, 44594 fingerprints
+- **Class chain**: Homey.Device → ZigBeeDevice → TuyaZigbeeDevice → TuyaUnifiedDevice → BaseUnifiedDevice → UnifiedSensorBase
+- **Pipeline**: L0 (raw frame) → L1 (throttle) → L2 (route) → L3 (bind) → L4 (DP decode) → L5 (time sync) → L6 (button dedup) → L7 (capability map) → L8 (auto-discovery) → L9 (sessions) → L10 (heartbeat) → L11 (sanity filter)
+
+---
+
+## CRITICAL RULES (NEVER VIOLATE)
+
+### SDK3 Mandatory
+- `async onNodeInit()` — NOT sync onInit
+- `await this.setCapabilityValue()` — ALWAYS awaited
+- `_destroyed` guard in ALL async methods (Rule B5)
+- `_destroyDevice()` in onUninit/onDeleted (Rule B7)
+- Settings keys: snake_case — `zb_model_id` NOT `zb_modelId` (Rule A1)
+- `console.log/error` INTERDIT — use `this.log()`/`this.error()` (Rule A9)
+- `eval()` and `new Function()` INTERDIT (Rule A10)
+
+### Tuya DP Protocol (CRITICAL)
+- **J7**: `sendDP()` DOES NOT EXIST on TuyaEF00Manager — use `sendTuyaDP(dp, dpType, value)` or the `sendDP(dp, value, type)` wrapper
+- **J8**: `requestDPs()` DOES NOT EXIST — use `requestDP(dp)` singular, one DP at a time
+- **J9**: DP12 can be `measure_pressure` OR `measure_luminance` depending on hardware variant — verify per MFR
+- **J10**: Do NOT put DP4 in dpMappings if `_handleBatteryDP` override is needed — parent skips override when DP is mapped
+
+### Fingerprints (Rule L8)
+- **Format `fingerprints[]` is NOT supported** by `homey app compose` — it generates `manufacturerName[]` + `productId[]` regardless
+- ALWAYS use `manufacturerName[]` + `productId[]` arrays in driver.compose.json
+- Fingerprint = manufacturerName + productId COMBINED — both must match
+- Wildcards (`_TZE200_*`, `_TZ3000_`) STRICTLY FORBIDDEN (Rule L6)
+- Case-insensitive matching via CaseInsensitiveMatcher.js (Rule L5)
+- TS0601 collisions are inherent to Tuya — accept and document (Rule L4)
+
+### Battery (Rules B2-C7)
+- Linear formulas like `(voltage - 2.5) / 0.5` STRICTLY BANNED (Rule B2)
+- Use `UnifiedBatteryHandler` with non-linear profiles (CR2032, CR2450, etc.)
+- NEVER combine `measure_battery` + `alarm_battery` on same device (Rule AO)
+- Mains-powered: `get mainsPowered() { return true; }` + remove battery in onNodeInit (Rule B4)
+- DP4 routing: If `_handleBatteryDP` override is needed, do NOT put DP4 in dpMappings — use `batteryConfig.dpId: 4` instead
+
+### Buttons (Rules H1-H7, B10)
+- Mixin order: `PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))` — MANDATORY (Rule A7)
+- `markAppCommand()` BEFORE sending device command — prevents infinite loops (Rule B10)
+- 2000ms timeout for app command pending window (Rule H1)
+- Flow cards: `getDeviceTriggerCard(id).trigger(tokens).catch(() => {})` — MUST call `.trigger()` (Rule A12)
+- `initPhysicalButtonDetection()` called ONCE with zclNode argument (Rule H6)
+
+### Fingerprint Management
+- **NEVER** create driver with `manufacturerName: []` — causes AggregateError (Rule AH)
+- **NEVER** use wildcards in manufacturerName (Rule L6)
+- After fingerprint operations, run `node scripts/validation/check-fingerprint-health.js`
+- Collision resolution: only remove if SAME mfr + SAME productId in incompatible drivers (Rule L3)
+
+---
+
+## VALIDATION SCRIPTS
+
+```bash
+# Pre-commit checks
+node scripts/validation/check-await-without-async.js    # await in non-async functions
+node scripts/validation/check-database-routing.js       # orphaned DB entries
+node scripts/validation/check-mfr-config-completeness.js # missing per-MFR configs
+node scripts/validation/check-fingerprint-health.js     # collisions + format + wildcards
+node scripts/validation/cross-category-collision-gate.js # cross-driver collisions
+
+# Automation
+node scripts/automation/smart-driver-adaptation.js       # MFR database updater (weekly)
+node scripts/community-sync/sync-all.js                  # Z2M/Johan/GitHub sync
+
+# SDK3 validation
+npx homey app validate --level publish                  # full SDK3 validation
+npx homey app compose                                   # regenerate app.json from compose
+node -c <file.js>                                       # syntax check
+```
+
+---
+
+## GIT WORKFLOW
+
+- Commit format: `type: description` (feat/fix/docs/refactor)
+- NEVER `npx homey app publish` locally — use GitHub Actions
+- ALWAYS `git pull --rebase origin master` before push
+- CI validates via `PRE_COMMIT_CHECKS.js` before push
+- Branch separation: master = beta, stable-v5 = production
+
+---
+
+## ISSUE PROTOCOL
+
+- NEVER close issues without user confirmation (Rule from PROJECT_INDEX.md §30)
+- Auto-close template: version, root cause, files modified, test instructions
+- Re-open if user reports issue persists
+- Cross-reference with Z2M/ZHA source code for DP mappings
+- Check `scripts/data/z2m-data.json` for Z2M DP definitions
+
+---
+
+## BIDIRECTIONAL BUTTONS
+
+- PhysicalButtonMixin: per-gang state, 2000ms timeout, flow cards physical only
+- VirtualButtonMixin: `markAppCommand()` BEFORE device command
+- Anti-patterns to AVOID:
+  - Local `_markAppCommand()` that doesn't call `super.markAppCommand()`
+  - `getTriggerCard()` without `.trigger()` call
+  - `initPhysicalButtonDetection()` called twice (first without args)
+  - `onDeleted()` without `clearTimeout()` or `super.onDeleted()`
+
+---
+
+## TUYA DP BATTERY DEVICES
+
+- Battery devices (receiveWhenIdle=false) do NOT send data spontaneously
+- MUST use `requestDP(dp)` to query — Z2M/ZHA "spell_data_query" pattern
+- 5-method fallback chain: raw frame → cluster.dataQuery → command → magic packet → raw magic
+- DP4 battery: Some variants send 0/1 instead of percentage — handle in `_handleBatteryDP` override
+- Do NOT put DP4 in dpMappings if override is needed — parent class skips override
+
+---
+
+## SECURITY
+
+- NEVER token in `.git/config` (Rule R1)
+- NEVER `.env` in repo (Rule R2)
+- NEVER `process.env.CLIENT_ID/SECRET` in runtime (Rule R3)
+- Run `npm run security-scan` before push
