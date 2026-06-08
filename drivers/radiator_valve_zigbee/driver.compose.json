@@ -27,9 +27,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -39,14 +36,19 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_tyst11_2ekuz3dz",
-      "_TYST11_2EKUZ3DZ",
-      "_tyst11_kly8gjlz",
-      "_TYST11_KLY8GJLZ",
-      "_tze200_bhd_5kn9",
-      "_TZE200_bhd_5kn9",
-      "_TZE200_BHD_5KN9"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tyst11_2ekuz3dz",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tyst11_kly8gjlz",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_bhd_5kn9",
+        "productId": "TS0601"
+      }
     ]
   },
   "images": {

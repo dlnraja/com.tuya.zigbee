@@ -96,36 +96,6 @@
     }
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_81yrt3lo",
-      "_TZE200_81yrt3lo",
-      "_TZE200_81YRT3LO",
-      "_tze200_sur36rju",
-      "_TZE200_sur36rju",
-      "_TZE200_SUR36RJU",
-      "_tze204_81yrt3l",
-      "_TZE204_81yrt3l",
-      "_TZE204_81YRT3L",
-      "_tze204_d0ypnbvn",
-      "_TZE204_d0ypnbvn",
-      "_TZE204_D0YPNBVN",
-      "_tze204_ntw1goyd",
-      "_TZE204_ntw1goyd",
-      "_TZE204_NTW1GOYD",
-      "_tze204_sur36rju",
-      "_TZE204_sur36rju",
-      "_TZE204_SUR36RJU",
-      "_tze284_byzdayie",
-      "_TZE284_byzdayie",
-      "_TZE284_BYZDAYIE",
-      "_tze28c1000000_81yrt3lo",
-      "_TZE28C1000000_81yrt3lo",
-      "_TZE28C1000000_81YRT3LO"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_clamp"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -145,7 +115,73 @@
         "en": "Press the pairing button for 5 seconds until LED blinks",
         "fr": "Appuyez sur le bouton d'appairage pendant 5 secondes"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_81yrt3lo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_81yrt3lo",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze200_sur36rju",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_sur36rju",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze204_81yrt3l",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_81yrt3l",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze204_d0ypnbvn",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_d0ypnbvn",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze204_ntw1goyd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_ntw1goyd",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze204_sur36rju",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_sur36rju",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze284_byzdayie",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_byzdayie",
+        "productId": "TS0601_clamp"
+      },
+      {
+        "manufacturerName": "_tze28c1000000_81yrt3lo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze28c1000000_81yrt3lo",
+        "productId": "TS0601_clamp"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/power_clamp_meter/assets/images/small.png",

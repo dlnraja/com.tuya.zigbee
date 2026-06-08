@@ -12,15 +12,6 @@
     "measure_battery"
   ],
   "zigbee": {
-    "productId": [
-      "SWV-ZFE",
-      "SWV-ZFU",
-      "SWV-ZN",
-      "SWV-ZNE",
-      "SWV-ZNU",
-      "TS0601",
-      "TS0601_watervalve"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -29,14 +20,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3290_ixd9mvv4",
-      "_tze200_yltivvzb",
-      "_tze204_wt66haax",
-      "_TZE284_7zazvlyn",
-      "_tze284_wt66haax"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/valve_dual_irrigation/assets/images/small.png",

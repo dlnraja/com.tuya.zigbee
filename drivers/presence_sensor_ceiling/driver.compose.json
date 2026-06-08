@@ -30,27 +30,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_9qayzqa8",
-      "_TZE200_9qayzqa8",
-      "_TZE200_9QAYZQA8",
-      "_tze200_dtzziy1e",
-      "_TZE200_dtzziy1e",
-      "_TZE200_DTZZIY1E",
-      "_tze204_9qayzqa8",
-      "_TZE204_9qayzqa8",
-      "_TZE204_9QAYZQA8",
-      "_tze204_yensya2c",
-      "_TZE204_yensya2c",
-      "_TZE204_YENSYA2C"
-    ],
-    "productId": [
-      "CK-BL702-MWS-01(7016)",
-      "TS0225",
-      "TS0601",
-      "TS0601_ceiling",
-      "ZP-301Z"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -69,7 +48,89 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_9qayzqa8",
+        "productId": "CK-BL702-MWS-01(7016)"
+      },
+      {
+        "manufacturerName": "_tze200_9qayzqa8",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tze200_9qayzqa8",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_9qayzqa8",
+        "productId": "TS0601_ceiling"
+      },
+      {
+        "manufacturerName": "_tze200_9qayzqa8",
+        "productId": "ZP-301Z"
+      },
+      {
+        "manufacturerName": "_tze200_dtzziy1e",
+        "productId": "CK-BL702-MWS-01(7016)"
+      },
+      {
+        "manufacturerName": "_tze200_dtzziy1e",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tze200_dtzziy1e",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_dtzziy1e",
+        "productId": "TS0601_ceiling"
+      },
+      {
+        "manufacturerName": "_tze200_dtzziy1e",
+        "productId": "ZP-301Z"
+      },
+      {
+        "manufacturerName": "_tze204_9qayzqa8",
+        "productId": "CK-BL702-MWS-01(7016)"
+      },
+      {
+        "manufacturerName": "_tze204_9qayzqa8",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tze204_9qayzqa8",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_9qayzqa8",
+        "productId": "TS0601_ceiling"
+      },
+      {
+        "manufacturerName": "_tze204_9qayzqa8",
+        "productId": "ZP-301Z"
+      },
+      {
+        "manufacturerName": "_tze204_yensya2c",
+        "productId": "CK-BL702-MWS-01(7016)"
+      },
+      {
+        "manufacturerName": "_tze204_yensya2c",
+        "productId": "TS0225"
+      },
+      {
+        "manufacturerName": "_tze204_yensya2c",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_yensya2c",
+        "productId": "TS0601_ceiling"
+      },
+      {
+        "manufacturerName": "_tze204_yensya2c",
+        "productId": "ZP-301Z"
+      }
+    ]
   },
   "settings": [
     {

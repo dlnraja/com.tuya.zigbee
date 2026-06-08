@@ -26,27 +26,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_5bsf8vaj",
-      "_TZ3000_5bsf8vaj",
-      "_TZ3000_5BSF8VAJ",
-      "_tz3000_utagpnzs",
-      "_TZ3000_utagpnzs",
-      "_TZ3000_UTAGPNZS",
-      "_tz3000_w58g68s3",
-      "_TZ3000_w58g68s3",
-      "_TZ3000_W58G68S3",
-      "_tz3210_aavhaadb",
-      "_TZ3210_aavhaadb",
-      "_TZ3210_AAVHAADB",
-      "_tz3210_quinzf3w",
-      "_TZ3210_quinzf3w",
-      "_TZ3210_QUINZF3W"
-    ],
-    "productId": [
-      "TS0505B",
-      "TS0601_strip"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,7 +45,49 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_5bsf8vaj",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_5bsf8vaj",
+        "productId": "TS0601_strip"
+      },
+      {
+        "manufacturerName": "_tz3000_utagpnzs",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_utagpnzs",
+        "productId": "TS0601_strip"
+      },
+      {
+        "manufacturerName": "_tz3000_w58g68s3",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_w58g68s3",
+        "productId": "TS0601_strip"
+      },
+      {
+        "manufacturerName": "_tz3210_aavhaadb",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3210_aavhaadb",
+        "productId": "TS0601_strip"
+      },
+      {
+        "manufacturerName": "_tz3210_quinzf3w",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3210_quinzf3w",
+        "productId": "TS0601_strip"
+      }
+    ]
   },
   "settings": [
     {

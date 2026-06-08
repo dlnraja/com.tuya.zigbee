@@ -18,11 +18,6 @@
   ],
   "energy": {},
   "zigbee": {
-    "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0601"
-    ],
     "learnmode": {
       "image": "/drivers/doorbell/assets/learnmode.svg",
       "instruction": {
@@ -37,12 +32,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_TYPDDJYR",
-      "_TZE284_gomuk3dc",
-      "_TZE284_loejka0i"
-    ]
+    }
   },
   "settings": [
     {

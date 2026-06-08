@@ -32,13 +32,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "hobeian",
-      "HOBEIAN"
-    ],
-    "productId": [
-      "ZG-227Z"
-    ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {

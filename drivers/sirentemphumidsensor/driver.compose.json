@@ -37,9 +37,6 @@
     "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -59,10 +56,7 @@
       "instruction": {
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
       }
-    },
-    "manufacturerName": [
-      "_TZE284_vmcgja59"
-    ]
+    }
   },
   "maintenanceActions": [
     {

@@ -26,13 +26,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0005",
-      "TS0006",
-      "TS0601",
-      "TS0601_air_purifier",
-      "TS0601_co2"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -53,18 +46,6 @@
       "instruction": {
         "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_tz3000_krajfo4p",
-      "_tz3000_m7wtqkfw",
-      "_tz3000_tx5b5gp3",
-      "_tz3000_ya9ekqwp",
-      "_tz3000_zhhcsbrz",
-      "_tze200_nnrfa68v",
-      "_tze204_nnrfa68v",
-      "_TZE284_8b9zpaav",
-      "_TZE284_it9utkro"
-    ]
+    }
   }
 }

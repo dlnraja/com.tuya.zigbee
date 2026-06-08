@@ -25,16 +25,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_a082h2cc",
-      "_TZ3000_rufdtfyv",
-      "_TZA226_ueagguan",
-      "_TZ3000_bguser20"
-    ],
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

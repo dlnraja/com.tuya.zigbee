@@ -27,26 +27,6 @@
     "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_JNHU1LLV",
-      "_TZ3000_RUFDTFYV",
-      "_TZ3000_rufdtfyv",
-      "_TZA226_UEAGGUAN",
-      "_TZA226_ueagguan",
-      "_tz3000_jnhu1llv",
-      "_tz3000_rufdtfyv",
-      "_tza226_ueagguan",
-      "_TZ3000_bguser20",
-      "_TZ3000_fllyghyj"
-    ],
-    "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "RH3052",
-      "SNTZ003",
-      "TS0201",
-      "TY0201",
-      "ZG-227Z"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -67,6 +47,32 @@
         "en": "Press and hold the reset button for aprox 10 seconds until the LED blinks rapidly.",
         "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3000_JNHU1LLV",
+        "productId": "CK-TLSR8656-SS5-01(7014)"
+      },
+      {
+        "manufacturerName": "_TZ3000_JNHU1LLV",
+        "productId": "RH3052"
+      },
+      {
+        "manufacturerName": "_TZ3000_JNHU1LLV",
+        "productId": "SNTZ003"
+      },
+      {
+        "manufacturerName": "_TZ3000_JNHU1LLV",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_TZ3000_JNHU1LLV",
+        "productId": "TY0201"
+      },
+      {
+        "manufacturerName": "_TZ3000_JNHU1LLV",
+        "productId": "ZG-227Z"
+      }
+    ]
   }
 }

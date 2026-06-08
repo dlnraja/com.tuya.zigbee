@@ -30,9 +30,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "TS0043"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -57,24 +54,11 @@
         "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
       }
     },
-    "manufacturerName": [
-      "_TYZB02_key8kk7r",
-      "_TYZB02_KEY8KK7R",
-      "_tz3000_a7ouggvs",
-      "_TZ3000_a7ouggvs",
-      "_TZ3000_A7OUGGVS",
-      "_tz3000_gbm10jnj",
-      "_TZ3000_gbm10jnj",
-      "_TZ3000_GBM10JNJ",
-      "_tz3000_sj7jbgks",
-      "_TZ3000_sj7jbgks",
-      "_TZ3000_SJ7JBGKS",
-      "_tz3000_w8jwkczz",
-      "_TZ3000_w8jwkczz",
-      "_TZ3000_W8JWKCZZ",
-      "_tz3000_yw5tvzsk",
-      "_TZ3000_yw5tvzsk",
-      "_TZ3000_YW5TVZSK"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_a7ouggvs",
+        "productId": "TS0043"
+      }
     ]
   },
   "settings": [

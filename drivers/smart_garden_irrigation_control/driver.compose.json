@@ -35,18 +35,6 @@
     "large": "/{{driverAssetsPath}}/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_mq4wujmp",
-      "_TZ3000_mq4wujmp",
-      "_TZ3000_MQ4WUJMP",
-      "_tz3210_eymunffl",
-      "_TZ3210_eymunffl",
-      "_TZ3210_EYMUNFFL"
-    ],
-    "productId": [
-      "TS0049",
-      "TS0101"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

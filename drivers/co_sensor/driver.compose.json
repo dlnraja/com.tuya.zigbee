@@ -21,25 +21,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_nbm3pjii",
-      "_TZ3000_nbm3pjii",
-      "_TZ3000_NBM3PJII",
-      "_tze200_aycxwiau",
-      "_TZE200_aycxwiau",
-      "_TZE200_AYCXWIAU",
-      "_tze200_pbdlrmfb",
-      "_TZE200_pbdlrmfb",
-      "_TZE200_PBDLRMFB",
-      "_TZE200_rjxqso4a",
-      "_tze204_pbdlrmfb",
-      "_TZE204_pbdlrmfb",
-      "_TZE204_PBDLRMFB"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_co"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,7 +28,41 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_nbm3pjii",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_nbm3pjii",
+        "productId": "TS0601_co"
+      },
+      {
+        "manufacturerName": "_tze200_aycxwiau",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_aycxwiau",
+        "productId": "TS0601_co"
+      },
+      {
+        "manufacturerName": "_tze200_pbdlrmfb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_pbdlrmfb",
+        "productId": "TS0601_co"
+      },
+      {
+        "manufacturerName": "_tze204_pbdlrmfb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_pbdlrmfb",
+        "productId": "TS0601_co"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/co_sensor/assets/images/small.png",

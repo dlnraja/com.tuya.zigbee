@@ -19,9 +19,6 @@
     "mains": true
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "learnmode": {
       "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
       "instruction": {
@@ -36,10 +33,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_tze284_4ar89tr1"
-    ]
+    }
   },
   "settings": [
     {

@@ -66,39 +66,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_bczr4e10",
-      "_TZ3000_bczr4e10",
-      "_TZ3000_BCZR4E10",
-      "_tz3000_bi6lpsew",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_BI6LPSEW",
-      "_tz3000_famkxci2",
-      "_TZ3000_famkxci2",
-      "_TZ3000_FAMKXCI2",
-      "_tz3000_fkvaniuu",
-      "_TZ3000_fkvaniuu",
-      "_TZ3000_FKVANIUU",
-      "_tz3000_mjwg6a52",
-      "_TZ3000_mjwg6a52",
-      "_TZ3000_MJWG6A52",
-      "_tz3000_mutfmn4u",
-      "_TZ3000_mutfmn4u",
-      "_TZ3000_MUTFMN4U",
-      "_tz3000_ngsph3oj",
-      "_TZ3000_ngsph3oj",
-      "_TZ3000_NGSPH3OJ",
-      "_tz3000_uyjmm0et",
-      "_TZ3000_uyjmm0et",
-      "_TZ3000_UYJMM0ET",
-      "_tz3000_w3c7ouru",
-      "_TZ3000_w3c7ouru",
-      "_TZ3000_W3C7OURU"
-    ],
-    "productId": [
-      "TS0013",
-      "TS0043"
-    ],
     "learnmode": {
       "image": "/drivers/button_wireless_3/assets/learnmode.svg",
       "instruction": {
@@ -162,7 +129,81 @@
           57344
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_bczr4e10",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_bczr4e10",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_bi6lpsew",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_bi6lpsew",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_famkxci2",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_famkxci2",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_fkvaniuu",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_fkvaniuu",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_mjwg6a52",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_mjwg6a52",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_mutfmn4u",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_mutfmn4u",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_ngsph3oj",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_ngsph3oj",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_uyjmm0et",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_uyjmm0et",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_tz3000_w3c7ouru",
+        "productId": "TS0013"
+      },
+      {
+        "manufacturerName": "_tz3000_w3c7ouru",
+        "productId": "TS0043"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_3/assets/images/small.png",

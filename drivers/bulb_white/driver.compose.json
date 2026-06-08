@@ -20,17 +20,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_gxnstjts",
-      "_TZ3000_gxnstjts",
-      "_TZ3000_GXNSTJTS",
-      "_tz3000_oboryztc",
-      "_TZ3000_oboryztc",
-      "_TZ3000_OBORYZTC"
-    ],
-    "productId": [
-      "TS0501"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -49,7 +38,17 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_gxnstjts",
+        "productId": "TS0501"
+      },
+      {
+        "manufacturerName": "_tz3000_oboryztc",
+        "productId": "TS0501"
+      }
+    ]
   },
   "settings": [
     {

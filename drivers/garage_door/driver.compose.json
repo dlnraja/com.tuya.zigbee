@@ -30,27 +30,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_e3wzdxcx",
-      "_TZ3000_e3wzdxcx",
-      "_TZ3000_E3WZDXCX",
-      "_tz3000_sj7xocbp",
-      "_TZ3000_sj7xocbp",
-      "_TZ3000_SJ7XOCBP",
-      "_tze200_3jbslzh4",
-      "_TZE200_3jbslzh4",
-      "_TZE200_3JBSLZH4",
-      "_tze200_nklqjk62",
-      "_TZE200_nklqjk62",
-      "_TZE200_NKLQJK62",
-      "_tze204_3jbslzh4",
-      "_TZE204_3jbslzh4",
-      "_TZE204_3JBSLZH4"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_garage"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -64,7 +43,49 @@
         "en": "Press and hold the pairing button for 5 seconds",
         "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_e3wzdxcx",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_e3wzdxcx",
+        "productId": "TS0601_garage"
+      },
+      {
+        "manufacturerName": "_tz3000_sj7xocbp",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_sj7xocbp",
+        "productId": "TS0601_garage"
+      },
+      {
+        "manufacturerName": "_tze200_3jbslzh4",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_3jbslzh4",
+        "productId": "TS0601_garage"
+      },
+      {
+        "manufacturerName": "_tze200_nklqjk62",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_nklqjk62",
+        "productId": "TS0601_garage"
+      },
+      {
+        "manufacturerName": "_tze204_3jbslzh4",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_3jbslzh4",
+        "productId": "TS0601_garage"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/garage_door/assets/images/small.png",

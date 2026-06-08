@@ -22,165 +22,6 @@
     "thermostat_mode"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_g9chy2ib",
-      "_TZ3000_g9chy2ib",
-      "_TZ3000_G9CHY2IB",
-      "_tze200_0hg58wyk",
-      "_TZE200_0hg58wyk",
-      "_TZE200_0HG58WYK",
-      "_tze200_2ekuz3dz",
-      "_TZE200_2ekuz3dz",
-      "_TZE200_2EKUZ3DZ",
-      "_tze200_4utwoz2",
-      "_TZE200_4utwoz2",
-      "_TZE200_4UTWOZ2",
-      "_tze200_4utwozi2",
-      "_TZE200_4utwozi2",
-      "_TZE200_4UTWOZI2",
-      "_tze200_68nvbi09",
-      "_TZE200_68nvbi09",
-      "_TZE200_68NVBI09",
-      "_tze200_68nvbio9",
-      "_TZE200_68nvbio9",
-      "_TZE200_68NVBIO9",
-      "_tze200_6rdj8dzm",
-      "_TZE200_6rdj8dzm",
-      "_TZE200_6RDJ8DZM",
-      "_tze200_7yoranx2",
-      "_TZE200_7yoranx2",
-      "_TZE200_7YORANX2",
-      "_tze200_9mjy74mp",
-      "_TZE200_9mjy74mp",
-      "_TZE200_9MJY74MP",
-      "_tze200_9p5xmj5r",
-      "_TZE200_9p5xmj5r",
-      "_TZE200_9P5XMJ5R",
-      "_tze200_bvrlmajk",
-      "_TZE200_bvrlmajk",
-      "_TZE200_BVRLMAJK",
-      "_tze200_bvu2wnxz",
-      "_TZE200_bvu2wnxz",
-      "_TZE200_BVU2WNXZ",
-      "_tze200_cf1sl3tj",
-      "_TZE200_cf1sl3tj",
-      "_TZE200_CF1SL3TJ",
-      "_tze200_d3z1ukqw",
-      "_TZE200_d3z1ukqw",
-      "_TZE200_D3Z1UKQW",
-      "_tze200_dzuqwsyg",
-      "_TZE200_dzuqwsyg",
-      "_TZE200_DZUQWSYG",
-      "_tze200_e9ba97vf",
-      "_TZE200_e9ba97vf",
-      "_TZE200_E9BA97VF",
-      "_tze200_g9a3awaj",
-      "_TZE200_g9a3awaj",
-      "_TZE200_G9A3AWAJ",
-      "_tze200_hvaxb2tc",
-      "_TZE200_hvaxb2tc",
-      "_TZE200_HVAXB2TC",
-      "_tze200_jkfbph7l",
-      "_TZE200_jkfbph7l",
-      "_TZE200_JKFBPH7L",
-      "_tze200_lhzapfg9",
-      "_TZE200_lhzapfg9",
-      "_TZE200_LHZAPFG9",
-      "_tze200_nw1r9hp6",
-      "_TZE200_nw1r9hp6",
-      "_TZE200_NW1R9HP6",
-      "_tze200_ow09xlxm",
-      "_TZE200_ow09xlxm",
-      "_TZE200_OW09XLXM",
-      "_tze200_p3dbf6qs",
-      "_TZE200_p3dbf6qs",
-      "_TZE200_P3DBF6QS",
-      "_tze200_pw7mji0l",
-      "_TZE200_pw7mji0l",
-      "_TZE200_PW7MJI0L",
-      "_tze200_py4cm3he",
-      "_TZE200_py4cm3he",
-      "_TZE200_PY4CM3HE",
-      "_tze200_rk1wojce",
-      "_TZE200_rk1wojce",
-      "_TZE200_RK1WOJCE",
-      "_tze200_rndg81sf",
-      "_TZE200_rndg81sf",
-      "_TZE200_RNDG81SF",
-      "_tze200_rufdtfyv",
-      "_TZE200_rufdtfyv",
-      "_TZE200_RUFDTFYV",
-      "_tze200_rv6iuyxb",
-      "_TZE200_rv6iuyxb",
-      "_TZE200_RV6IUYXB",
-      "_tze200_rxntag7i",
-      "_TZE200_rxntag7i",
-      "_TZE200_RXNTAG7I",
-      "_tze200_rxq4iti9",
-      "_TZE200_rxq4iti9",
-      "_TZE200_RXQ4ITI9",
-      "_tze200_suxywabt",
-      "_TZE200_suxywabt",
-      "_TZE200_SUXYWABT",
-      "_tze200_wsbfwodu",
-      "_TZE200_wsbfwodu",
-      "_TZE200_WSBFWODU",
-      "_tze200_x9axofse",
-      "_TZE200_x9axofse",
-      "_TZE200_X9AXOFSE",
-      "_tze200_yqgbrdyo",
-      "_TZE200_yqgbrdyo",
-      "_TZE200_YQGBRDYO",
-      "_tze200_z1tyspqw",
-      "_TZE200_z1tyspqw",
-      "_TZE200_Z1TYSPQW",
-      "_tze200_zion52ef",
-      "_TZE200_zion52ef",
-      "_TZE200_ZION52EF",
-      "_tze204_0hcjew5p",
-      "_TZE204_0hcjew5p",
-      "_TZE204_0HCJEW5P",
-      "_tze204_9mjy74mp",
-      "_TZE204_9mjy74mp",
-      "_TZE204_9MJY74MP",
-      "_tze204_cvcu2p6e",
-      "_TZE204_cvcu2p6e",
-      "_TZE204_CVCU2P6E",
-      "_tze204_gops3slb",
-      "_TZE204_gops3slb",
-      "_TZE204_GOPS3SLB",
-      "_tze204_o3x45p96",
-      "_TZE204_o3x45p96",
-      "_TZE204_O3X45P96",
-      "_tze204_qyr2m29i",
-      "_TZE204_qyr2m29i",
-      "_TZE204_QYR2M29I",
-      "_tze204_rtrmfadk",
-      "_TZE204_rtrmfadk",
-      "_TZE204_RTRMFADK",
-      "_tze284_c6wv4xyo",
-      "_TZE284_c6wv4xyo",
-      "_TZE284_C6WV4XYO",
-      "_tze284_gops3slb",
-      "_TZE284_gops3slb",
-      "_TZE284_GOPS3SLB",
-      "_tze284_iilebqoo",
-      "_TZE284_iilebqoo",
-      "_TZE284_IILEBQOO",
-      "_tze284_ltwbm23f",
-      "_TZE284_ltwbm23f",
-      "_TZE284_LTWBM23F",
-      "_tze284_o3x45p96",
-      "_TZE284_o3x45p96",
-      "_TZE284_O3X45P96",
-      "_tze284_rv6iuyxb",
-      "_TZE284_rv6iuyxb",
-      "_TZE284_RV6IUYXB"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_thermo4ch"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -191,7 +32,321 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_g9chy2ib",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_g9chy2ib",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_0hg58wyk",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_0hg58wyk",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_4utwoz2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_4utwoz2",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_4utwozi2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_4utwozi2",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_68nvbi09",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_68nvbi09",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_6rdj8dzm",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_6rdj8dzm",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_9mjy74mp",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_9mjy74mp",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_bvrlmajk",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_bvrlmajk",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_bvu2wnxz",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_bvu2wnxz",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_d3z1ukqw",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_d3z1ukqw",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_dzuqwsyg",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_dzuqwsyg",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_g9a3awaj",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_g9a3awaj",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_hvaxb2tc",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_hvaxb2tc",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_jkfbph7l",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_jkfbph7l",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_lhzapfg9",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_lhzapfg9",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_ow09xlxm",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_ow09xlxm",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_p3dbf6qs",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_p3dbf6qs",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_rk1wojce",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_rk1wojce",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_rndg81sf",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_rndg81sf",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_rv6iuyxb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_rv6iuyxb",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_rxntag7i",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_rxntag7i",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_rxq4iti9",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_rxq4iti9",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_suxywabt",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_suxywabt",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_wsbfwodu",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_wsbfwodu",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_x9axofse",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_x9axofse",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_yqgbrdyo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_yqgbrdyo",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze200_z1tyspqw",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_z1tyspqw",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze204_0hcjew5p",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_0hcjew5p",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze204_9mjy74mp",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_9mjy74mp",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze204_cvcu2p6e",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_cvcu2p6e",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze204_o3x45p96",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_o3x45p96",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze204_qyr2m29i",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_qyr2m29i",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze204_rtrmfadk",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_rtrmfadk",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze284_c6wv4xyo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_c6wv4xyo",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze284_gops3slb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_gops3slb",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze284_iilebqoo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_iilebqoo",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze284_ltwbm23f",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_ltwbm23f",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze284_o3x45p96",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_o3x45p96",
+        "productId": "TS0601_thermo4ch"
+      },
+      {
+        "manufacturerName": "_tze284_rv6iuyxb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_rv6iuyxb",
+        "productId": "TS0601_thermo4ch"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/thermostat_4ch/assets/images/small.png",

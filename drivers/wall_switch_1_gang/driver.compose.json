@@ -24,16 +24,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_2mb38mf3",
-      "_TZ3000_2mb38mf3",
-      "_TZ3000_2MB38MF3"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0011",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

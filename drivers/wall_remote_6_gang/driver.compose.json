@@ -33,10 +33,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "TS0046",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -76,7 +72,16 @@
         "en": "Press pair button for aprox 10 seconds."
       }
     },
-    "manufacturerName": ["_placeholder_needs_real_mfr"]
+    "fingerprints": [
+      {
+        "manufacturerName": "_placeholder_needs_real_mfr",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_placeholder_needs_real_mfr",
+        "productId": "TS0601"
+      }
+    ]
   },
   "settings": [
     {

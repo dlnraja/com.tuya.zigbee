@@ -14,18 +14,6 @@
     "measure_power"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_ckud7u2l",
-      "_TZE200_ckud7u2l",
-      "_TZE200_CKUD7U2L",
-      "_tze204_ckud7u2l",
-      "_TZE204_ckud7u2l",
-      "_TZE204_CKUD7U2L"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_heater"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -36,7 +24,17 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze204_ckud7u2l",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_ckud7u2l",
+        "productId": "TS0601_heater"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/smart_heater/assets/images/small.png",

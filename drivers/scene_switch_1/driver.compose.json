@@ -22,53 +22,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_tkusjmue",
-      "_TZ3000_TKUSJMUE"
-    ],
-    "productId": [
-      "3450-L",
-      "E1524/E1810",
-      "E1743",
-      "E1744",
-      "E1812",
-      "E2001/E2002",
-      "E2123",
-      "lumi.remote.b1acn01",
-      "lumi.sensor_switch",
-      "lumi.sensor_switch.aq2",
-      "lumi.sensor_switch.aq3",
-      "ROM001",
-      "RWL020",
-      "RWL021",
-      "RWL022",
-      "SNZB-01",
-      "SNZB-01P",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0041",
-      "TS0041A",
-      "TS0042",
-      "TS0043",
-      "TS004F",
-      "TS011F",
-      "TS0601",
-      "TS0601_scene1",
-      "TS0601_wirelesssw",
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG06LM",
-      "WXKG07LM",
-      "WXKG11LM",
-      "WXKG12LM",
-      "ZG-101ZL"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

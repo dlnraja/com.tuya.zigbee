@@ -106,14 +106,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3400_keyjqthh",
-      "_TZ3400_keyjqthh",
-      "_TZ3400_KEYJQTHH"
-    ],
-    "productId": [
-      "TS0048"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -212,7 +204,13 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3400_keyjqthh",
+        "productId": "TS0048"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_8/assets/images/small.png",

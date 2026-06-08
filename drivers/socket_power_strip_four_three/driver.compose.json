@@ -23,10 +23,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "JZ-ZB-004",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -121,11 +117,6 @@
       "instruction": {
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_TZ3000_y4ona9me",
-      "_TZE284_myd45weu"
-    ]
+    }
   }
 }

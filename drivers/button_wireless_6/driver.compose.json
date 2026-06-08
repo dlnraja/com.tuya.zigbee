@@ -88,19 +88,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_iszegwpd",
-      "_tze200_zxx7mi77",
-      "_TZE200_zxx7mi77",
-      "_TZE200_ZXX7MI77",
-      "_tze204_zxx7mi77",
-      "_TZE204_zxx7mi77",
-      "_TZE204_ZXX7MI77"
-    ],
-    "productId": [
-      "TS0046",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -179,7 +166,25 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_zxx7mi77",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tze200_zxx7mi77",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_zxx7mi77",
+        "productId": "TS0046"
+      },
+      {
+        "manufacturerName": "_tze204_zxx7mi77",
+        "productId": "TS0601"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_6/assets/images/small.png",

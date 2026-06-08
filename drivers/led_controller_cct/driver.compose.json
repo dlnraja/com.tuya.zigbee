@@ -13,32 +13,6 @@
     "light_mode"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_obacbukl",
-      "_TZ3000_obacbukl",
-      "_TZ3000_OBACBUKL",
-      "_tz3000_riwp3k79",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_RIWP3K79",
-      "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI",
-      "_tz3210_p9ao60da",
-      "_TZ3210_p9ao60da",
-      "_TZ3210_P9AO60DA",
-      "_tz3210_r0xgkft5",
-      "_TZ3210_r0xgkft5",
-      "_TZ3210_R0XGKFT5",
-      "_tzb210_endmggws",
-      "_TZB210_endmggws",
-      "_TZB210_ENDMGGWS",
-      "_tzb210_ngnt8kni",
-      "_TZB210_ngnt8kni",
-      "_TZB210_NGNT8KNI"
-    ],
-    "productId": [
-      "TS0502"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -51,7 +25,13 @@
           768
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tzb210_ngnt8kni",
+        "productId": "TS0502"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/led_controller_cct/assets/images/small.png",

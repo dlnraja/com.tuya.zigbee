@@ -40,405 +40,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "3REALITY",
-      "3reality",
-      "ADURO",
-      "ADUROSMART",
-      "AJAX",
-      "ALDI",
-      "ALLEGION",
-      "AONE",
-      "ATSMART",
-      "AUGUST",
-      "AURORA",
-      "AURORA LIGHTING",
-      "BERKER",
-      "BINGOELEC",
-      "BITRON",
-      "BITRON HOME",
-      "BITRON VIDEO",
-      "BOSCH",
-      "BRK",
-      "BROAN",
-      "BTICINO",
-      "BUSCH-JAEGER",
-      "CENTRALITE",
-      "CLIMAX",
-      "CLIMAX TECHNOLOGY",
-      "COMAP",
-      "CONNECTIVITY STANDARDS ALLIANCE",
-      "COOPER",
-      "COSWALL",
-      "CREE INC.",
-      "DANALOCK",
-      "DANFOSS",
-      "DANFOSS A/S",
-      "DAWON",
-      "DAWON DNS",
-      "DE",
-      "DEVELCO",
-      "DEVELCO PRODUCTS A/S",
-      "DIYRUZ",
-      "DOME",
-      "DRESDEN ELEKTRONIK",
-      "EATON",
-      "EATON CORPORATION",
-      "ECOLINK",
-      "ECOSMART",
-      "ECOZY",
-      "EDP",
-      "ELKO",
-      "ELTAKO",
-      "ENBRIGHTEN",
-      "EUROTRONIC",
-      "EUROTRONIC TECHNOLOGY",
-      "FEIT",
-      "FEIT ELECTRIC",
-      "FINDER",
-      "FIRST ALERT",
-      "FRIENT",
-      "FRIENT A/S",
-      "GEWISS",
-      "GIRA",
-      "GLEDOPTO",
-      "GOCONTROL",
-      "HAGER",
-      "HEIMANTECHNOLOGY",
-      "HEIMGARD",
-      "HUE",
-      "IKEA OF SWEDEN",
-      "ILUMINIZE",
-      "ILUX",
-      "INNR",
-      "INNR LIGHTING B.V.",
-      "ITEAD",
-      "JASCO",
-      "JASCO PRODUCTS",
-      "JUNG",
-      "KEEN",
-      "KONKE",
-      "KONYKS",
-      "KOREAKOSS",
-      "KOSS",
-      "KTNNKG",
-      "LEDVANCE",
-      "LEEDARSON",
-      "LEEDARSON LIGHTING",
-      "LEGRAND",
-      "LEVITON MANUFACTURING",
-      "LIFX",
-      "LINEAR",
-      "LINKIND",
-      "LIVARNO",
-      "LIVARNO LUX",
-      "LIVOLO",
-      "LK",
-      "LUTRON ELECTRONICS",
-      "MATTER",
-      "MDT",
-      "MEDION",
-      "MERTEN",
-      "MIBOXER",
-      "MLI",
-      "MONOPRICE",
-      "MULLER LICHT",
-      "MÜLLER LICHT",
-      "NAMRON",
-      "NANOLEAF",
-      "NEO COOLCAM",
-      "NORTEK",
-      "NUKI",
-      "NUTONE",
-      "OSRAM",
-      "PAULMANN",
-      "PAULMANN LICHT",
-      "PAULMANN LICHT GMBH",
-      "PERENIO",
-      "PHILIPS HUE",
-      "PHOSCON",
-      "POPP",
-      "REV",
-      "REVOGNI",
-      "RING LLC",
-      "ROB",
-      "ROBB",
-      "ROBERT BOSCH GMBH",
-      "RYRA",
-      "SALUS",
-      "SAMJIN",
-      "SAMSUNG",
-      "SAMSUNG ELECTRONICS",
-      "SASWELL",
-      "SCHNEIDER ELECTRIC",
-      "SE",
-      "SECURIFI",
-      "SENGLED",
-      "SENGLED INC.",
-      "SENGOKU",
-      "SERCOMM",
-      "SHINASYSTEM",
-      "SIGNIFY NETHERLANDS B.V.",
-      "SINOPE",
-      "SINOPE TECHNOLOGIES",
-      "SITERWELL",
-      "SMARTECH",
-      "SMARTTHINGS INC.",
-      "SMARTVILL",
-      "SPECTRUM BRANDS",
-      "SR-ZG",
-      "STELPRO",
-      "SUNRICHER",
-      "SWANN",
-      "TEDEE",
-      "TERNCY",
-      "THIRD REALITY",
-      "THIRD REALITY, INC",
-      "THREAD",
-      "TINT",
-      "TRUST",
-      "TRUST INTERNATIONAL",
-      "U-TEC",
-      "ULTRALOQ",
-      "UTEC",
-      "VIMAR",
-      "VISION",
-      "WALLPAD",
-      "WEINZIERL",
-      "WINNERS",
-      "WISER",
-      "WIZ",
-      "WOOLLEY",
-      "YAGUSMART",
-      "YALE",
-      "YEELIGHT",
-      "YOOLAX",
-      "ZEN",
-      "ZEN THERMOSTAT",
-      "ZIGBEE ALLIANCE",
-      "ZIGBEE2MQTT",
-      "_TYZB01_ijihzffk",
-      "_TZ3000_2iiimqs9",
-      "_TZ3000_6l1pjfqe",
-      "_TZ3000_7issjl2q",
-      "_TZ3000_GZVNIQJB",
-      "_TZ3000_QEUVNOHG",
-      "_TZ3000_gzvniqjb",
-      "_TZ3000_qeuvnohg",
-      "_TZ3000_ywagc4rj",
-      "_TZ3210_ncw88jfq",
-      "_TZ3210_tfxwxklq",
-      "_TZ3290_7V1K4VUFOTPOWP9Z",
-      "_TZ3290_7v1k4vufotpowp9z",
-      "_TZE200_2imwyigp",
-      "_TZE200_3ejwxpmu",
-      "_TZE200_8eazvzo6",
-      "_TZE200_eo6xhfbo",
-      "_TZE200_ggev5fsl",
-      "_TZE200_iuk8kupi",
-      "_TZE200_kvpwq8z7",
-      "_TZE200_kzm5w4iz",
-      "_TZE200_lvkk0hdg",
-      "_TZE200_nklqjk62",
-      "_TZE200_ogkdpgy2",
-      "_TZE200_pbo8cj0z",
-      "_TZE200_u319yc66",
-      "_TZE204_2imwyigp",
-      "_TZE204_3ejwxpmu",
-      "_TZE204_eaulras5",
-      "_TZE204_eekpf0ft",
-      "_TZE204_iuk8kupi",
-      "_TZE204_kvpwq8z7",
-      "_TZE204_mul9abs3",
-      "_TZE204_q12rv9gj",
-      "_TZE204_xu4a5rhj",
-      "_TZE284_6ocnqlhn",
-      "_TZE284_a14rjslz",
-      "_TZE284_eekpf0ft",
-      "_TZE284_gyzlwu5q",
-      "_tz3000_gzvniqjb",
-      "_tz3000_qeuvnohg",
-      "_tz3290_7v1k4vufotpowp9z",
-      "aduro",
-      "adurosmart",
-      "ajax",
-      "aldi",
-      "allegion",
-      "aone",
-      "atsmart",
-      "august",
-      "aurora",
-      "aurora lighting",
-      "berker",
-      "bingoelec",
-      "bitron",
-      "bitron home",
-      "bitron video",
-      "bosch",
-      "brk",
-      "broan",
-      "bticino",
-      "busch-jaeger",
-      "centralite",
-      "climax",
-      "climax technology",
-      "comap",
-      "connectivity standards alliance",
-      "cooper",
-      "coswall",
-      "cree inc.",
-      "danalock",
-      "danfoss",
-      "danfoss a/s",
-      "dawon",
-      "dawon dns",
-      "de",
-      "develco",
-      "develco products a/s",
-      "diyruz",
-      "dome",
-      "dresden elektronik",
-      "eaton",
-      "eaton corporation",
-      "ecolink",
-      "ecosmart",
-      "ecozy",
-      "edp",
-      "elko",
-      "eltako",
-      "enbrighten",
-      "eurotronic",
-      "eurotronic technology",
-      "feit",
-      "feit electric",
-      "finder",
-      "first alert",
-      "frient",
-      "frient a/s",
-      "gewiss",
-      "gira",
-      "gledopto",
-      "gocontrol",
-      "hager",
-      "heimantechnology",
-      "heimgard",
-      "hue",
-      "ikea of sweden",
-      "iluminize",
-      "ilux",
-      "innr",
-      "innr lighting b.v.",
-      "itead",
-      "jasco",
-      "jasco products",
-      "jung",
-      "keen",
-      "konke",
-      "konyks",
-      "koreakoss",
-      "koss",
-      "ktnnkg",
-      "ledvance",
-      "leedarson",
-      "leedarson lighting",
-      "legrand",
-      "leviton manufacturing",
-      "lifx",
-      "linear",
-      "linkind",
-      "livarno",
-      "livarno lux",
-      "livolo",
-      "lk",
-      "lutron electronics",
-      "matter",
-      "mdt",
-      "medion",
-      "merten",
-      "miboxer",
-      "mli",
-      "monoprice",
-      "muller licht",
-      "müller licht",
-      "namron",
-      "nanoleaf",
-      "neo coolcam",
-      "nortek",
-      "nuki",
-      "nutone",
-      "osram",
-      "paulmann",
-      "paulmann licht",
-      "paulmann licht gmbh",
-      "perenio",
-      "philips hue",
-      "phoscon",
-      "popp",
-      "rev",
-      "revogni",
-      "ring llc",
-      "rob",
-      "robb",
-      "robert bosch gmbh",
-      "ryra",
-      "salus",
-      "samjin",
-      "samsung",
-      "samsung electronics",
-      "saswell",
-      "schneider electric",
-      "se",
-      "securifi",
-      "sengled",
-      "sengled inc.",
-      "sengoku",
-      "sercomm",
-      "shinasystem",
-      "signify netherlands b.v.",
-      "sinope",
-      "sinope technologies",
-      "siterwell",
-      "smartech",
-      "smartthings inc.",
-      "smartvill",
-      "spectrum brands",
-      "sr-zg",
-      "stelpro",
-      "sunricher",
-      "swann",
-      "tedee",
-      "terncy",
-      "third reality",
-      "third reality, inc",
-      "thread",
-      "tint",
-      "trust",
-      "trust international",
-      "u-tec",
-      "ultraloq",
-      "utec",
-      "vimar",
-      "vision",
-      "wallpad",
-      "weinzierl",
-      "winners",
-      "wiser",
-      "wiz",
-      "woolley",
-      "yagusmart",
-      "yale",
-      "yeelight",
-      "yoolax",
-      "zen",
-      "zen thermostat",
-      "zigbee alliance",
-      "zigbee2mqtt"
-    ],
-    "productId": [
-      "TS0203",
-      "TS0601",
-      "TS0601_generic"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -453,7 +54,2073 @@
         "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
         "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "3REALITY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "3REALITY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "3REALITY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ADURO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ADURO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ADURO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ADUROSMART",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ADUROSMART",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ADUROSMART",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "AJAX",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "AJAX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "AJAX",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ALDI",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ALDI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ALDI",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ALLEGION",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ALLEGION",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ALLEGION",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "AONE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "AONE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "AONE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ATSMART",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ATSMART",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ATSMART",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "AUGUST",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "AUGUST",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "AUGUST",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "AURORA",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "AURORA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "AURORA",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "AURORA LIGHTING",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "AURORA LIGHTING",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "AURORA LIGHTING",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BERKER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BERKER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BERKER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BINGOELEC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BINGOELEC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BINGOELEC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BITRON",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BITRON",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BITRON",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BITRON HOME",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BITRON HOME",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BITRON HOME",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BITRON VIDEO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BITRON VIDEO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BITRON VIDEO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BRK",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BRK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BRK",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BROAN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BROAN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BROAN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BTICINO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BTICINO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BTICINO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "BUSCH-JAEGER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "BUSCH-JAEGER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "BUSCH-JAEGER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "CENTRALITE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "CENTRALITE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "CENTRALITE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "CLIMAX",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "CLIMAX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "CLIMAX",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "CLIMAX TECHNOLOGY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "CLIMAX TECHNOLOGY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "CLIMAX TECHNOLOGY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "COMAP",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "COMAP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "COMAP",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "CONNECTIVITY STANDARDS ALLIANCE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "CONNECTIVITY STANDARDS ALLIANCE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "CONNECTIVITY STANDARDS ALLIANCE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "COOPER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "COOPER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "COOPER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "COSWALL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "COSWALL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "COSWALL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "CREE INC.",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "CREE INC.",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "CREE INC.",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DANALOCK",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DANALOCK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DANALOCK",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DANFOSS A/S",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DANFOSS A/S",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DANFOSS A/S",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DAWON",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DAWON",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DAWON",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DAWON DNS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DAWON DNS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DAWON DNS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DEVELCO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DEVELCO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DEVELCO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DEVELCO PRODUCTS A/S",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DEVELCO PRODUCTS A/S",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DEVELCO PRODUCTS A/S",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DIYRUZ",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DIYRUZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DIYRUZ",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DOME",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DOME",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DOME",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "DRESDEN ELEKTRONIK",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "DRESDEN ELEKTRONIK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "DRESDEN ELEKTRONIK",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "EATON",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "EATON",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "EATON",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "EATON CORPORATION",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "EATON CORPORATION",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "EATON CORPORATION",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ECOLINK",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ECOLINK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ECOLINK",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ECOSMART",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ECOSMART",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ECOSMART",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ECOZY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ECOZY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ECOZY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "EDP",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "EDP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "EDP",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ELKO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ELKO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ELKO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ELTAKO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ELTAKO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ELTAKO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ENBRIGHTEN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ENBRIGHTEN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ENBRIGHTEN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "EUROTRONIC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "EUROTRONIC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "EUROTRONIC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "EUROTRONIC TECHNOLOGY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "EUROTRONIC TECHNOLOGY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "EUROTRONIC TECHNOLOGY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "FEIT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "FEIT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "FEIT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "FEIT ELECTRIC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "FEIT ELECTRIC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "FEIT ELECTRIC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "FINDER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "FINDER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "FINDER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "FIRST ALERT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "FIRST ALERT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "FIRST ALERT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "FRIENT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "FRIENT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "FRIENT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "FRIENT A/S",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "FRIENT A/S",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "FRIENT A/S",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "GEWISS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "GEWISS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "GEWISS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "GIRA",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "GIRA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "GIRA",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "GLEDOPTO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "GLEDOPTO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "GLEDOPTO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "GOCONTROL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "GOCONTROL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "GOCONTROL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "HAGER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "HAGER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "HAGER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "HEIMANTECHNOLOGY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "HEIMANTECHNOLOGY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "HEIMANTECHNOLOGY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "HEIMGARD",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "HEIMGARD",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "HEIMGARD",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "HUE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "HUE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "HUE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "IKEA OF SWEDEN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "IKEA OF SWEDEN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "IKEA OF SWEDEN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ILUMINIZE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ILUMINIZE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ILUMINIZE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ILUX",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ILUX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ILUX",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "INNR",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "INNR",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "INNR",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "INNR LIGHTING B.V.",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "INNR LIGHTING B.V.",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "INNR LIGHTING B.V.",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ITEAD",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ITEAD",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ITEAD",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "JASCO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "JASCO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "JASCO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "JASCO PRODUCTS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "JASCO PRODUCTS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "JASCO PRODUCTS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "JUNG",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "JUNG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "JUNG",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "KEEN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "KEEN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "KEEN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "KONKE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "KONKE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "KONKE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "KONYKS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "KONYKS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "KONYKS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "KOREAKOSS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "KOREAKOSS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "KOREAKOSS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "KOSS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "KOSS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "KOSS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "KTNNKG",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "KTNNKG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "KTNNKG",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LEDVANCE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LEDVANCE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LEDVANCE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LEEDARSON",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LEEDARSON",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LEEDARSON",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LEEDARSON LIGHTING",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LEEDARSON LIGHTING",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LEEDARSON LIGHTING",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LEVITON MANUFACTURING",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LEVITON MANUFACTURING",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LEVITON MANUFACTURING",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LIFX",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LIFX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LIFX",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LINEAR",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LINEAR",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LINEAR",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LINKIND",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LINKIND",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LINKIND",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LIVARNO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LIVARNO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LIVARNO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LIVARNO LUX",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LIVARNO LUX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LIVARNO LUX",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LIVOLO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LIVOLO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LIVOLO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LK",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LK",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "LUTRON ELECTRONICS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "LUTRON ELECTRONICS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "LUTRON ELECTRONICS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MATTER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MATTER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MATTER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MDT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MDT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MDT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MEDION",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MEDION",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MEDION",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MERTEN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MERTEN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MERTEN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MIBOXER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MIBOXER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MIBOXER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MLI",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MLI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MLI",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MONOPRICE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MONOPRICE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MONOPRICE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MULLER LICHT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MULLER LICHT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MULLER LICHT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "MÜLLER LICHT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "MÜLLER LICHT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "MÜLLER LICHT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "NAMRON",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "NAMRON",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "NAMRON",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "NANOLEAF",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "NANOLEAF",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "NANOLEAF",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "NEO COOLCAM",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "NEO COOLCAM",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "NEO COOLCAM",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "NORTEK",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "NORTEK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "NORTEK",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "NUKI",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "NUKI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "NUKI",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "NUTONE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "NUTONE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "NUTONE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "OSRAM",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "OSRAM",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "OSRAM",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "PAULMANN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "PAULMANN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "PAULMANN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "PAULMANN LICHT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "PAULMANN LICHT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "PAULMANN LICHT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "PAULMANN LICHT GMBH",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "PAULMANN LICHT GMBH",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "PAULMANN LICHT GMBH",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "PERENIO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "PERENIO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "PERENIO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "PHILIPS HUE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "PHILIPS HUE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "PHILIPS HUE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "PHOSCON",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "PHOSCON",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "PHOSCON",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "POPP",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "POPP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "POPP",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "REV",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "REV",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "REV",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "REVOGNI",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "REVOGNI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "REVOGNI",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "RING LLC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "RING LLC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "RING LLC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ROB",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ROB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ROB",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ROBB",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ROBB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ROBB",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ROBERT BOSCH GMBH",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ROBERT BOSCH GMBH",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ROBERT BOSCH GMBH",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "RYRA",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "RYRA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "RYRA",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SALUS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SALUS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SALUS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SAMJIN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SAMJIN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SAMJIN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SAMSUNG",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SAMSUNG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SAMSUNG",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SAMSUNG ELECTRONICS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SAMSUNG ELECTRONICS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SAMSUNG ELECTRONICS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SASWELL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SASWELL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SASWELL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SECURIFI",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SECURIFI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SECURIFI",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SENGLED",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SENGLED",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SENGLED",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SENGLED INC.",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SENGLED INC.",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SENGLED INC.",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SENGOKU",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SENGOKU",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SENGOKU",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SERCOMM",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SERCOMM",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SERCOMM",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SHINASYSTEM",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SHINASYSTEM",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SHINASYSTEM",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SIGNIFY NETHERLANDS B.V.",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SIGNIFY NETHERLANDS B.V.",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SIGNIFY NETHERLANDS B.V.",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SINOPE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SINOPE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SINOPE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SINOPE TECHNOLOGIES",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SINOPE TECHNOLOGIES",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SINOPE TECHNOLOGIES",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SITERWELL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SITERWELL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SITERWELL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SMARTECH",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SMARTECH",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SMARTECH",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SMARTTHINGS INC.",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SMARTTHINGS INC.",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SMARTTHINGS INC.",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SMARTVILL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SMARTVILL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SMARTVILL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SPECTRUM BRANDS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SPECTRUM BRANDS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SPECTRUM BRANDS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SR-ZG",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SR-ZG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SR-ZG",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "STELPRO",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "STELPRO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "STELPRO",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SUNRICHER",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SUNRICHER",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SUNRICHER",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "SWANN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "SWANN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "SWANN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "TEDEE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "TEDEE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TEDEE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "TERNCY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "TERNCY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TERNCY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "THIRD REALITY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "THIRD REALITY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "THIRD REALITY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "THIRD REALITY, INC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "THIRD REALITY, INC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "THIRD REALITY, INC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "THREAD",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "THREAD",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "THREAD",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "TINT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "TINT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TINT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "TRUST",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "TRUST",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TRUST",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "TRUST INTERNATIONAL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "TRUST INTERNATIONAL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "TRUST INTERNATIONAL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "U-TEC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "U-TEC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "U-TEC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ULTRALOQ",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ULTRALOQ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ULTRALOQ",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "UTEC",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "UTEC",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "UTEC",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "VIMAR",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "VIMAR",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "VIMAR",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "VISION",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "VISION",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "VISION",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "WALLPAD",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "WALLPAD",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "WALLPAD",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "WEINZIERL",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "WEINZIERL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "WEINZIERL",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "WINNERS",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "WINNERS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "WINNERS",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "WIZ",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "WIZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "WIZ",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "WOOLLEY",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "WOOLLEY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "WOOLLEY",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "YAGUSMART",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "YAGUSMART",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "YAGUSMART",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "YALE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "YALE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "YALE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "YEELIGHT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "YEELIGHT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "YEELIGHT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "YOOLAX",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "YOOLAX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "YOOLAX",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ZEN",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ZEN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ZEN",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ZEN THERMOSTAT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ZEN THERMOSTAT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ZEN THERMOSTAT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ZIGBEE ALLIANCE",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ZIGBEE ALLIANCE",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ZIGBEE ALLIANCE",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "ZIGBEE2MQTT",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "ZIGBEE2MQTT",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "ZIGBEE2MQTT",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "_TZ3000_GZVNIQJB",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_TZ3000_GZVNIQJB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_GZVNIQJB",
+        "productId": "TS0601_generic"
+      },
+      {
+        "manufacturerName": "_TZ3000_QEUVNOHG",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_TZ3000_QEUVNOHG",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_QEUVNOHG",
+        "productId": "TS0601_generic"
+      }
+    ]
   },
   "settings": [
     {

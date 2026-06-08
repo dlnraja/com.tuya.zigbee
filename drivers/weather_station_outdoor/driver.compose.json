@@ -28,18 +28,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_vkibfp3d",
-      "_TZE200_vkibfp3d",
-      "_TZE200_VKIBFP3D",
-      "_tze200_wlcyxdky",
-      "_TZE200_wlcyxdky",
-      "_TZE200_WLCYXDKY"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_weather"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,7 +38,25 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze200_vkibfp3d",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_vkibfp3d",
+        "productId": "TS0601_weather"
+      },
+      {
+        "manufacturerName": "_tze200_wlcyxdky",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_wlcyxdky",
+        "productId": "TS0601_weather"
+      }
+    ]
   },
   "settings": [
     {

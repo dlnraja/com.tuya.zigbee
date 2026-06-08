@@ -13,22 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_q50zhdsc",
-      "_TZ3000_q50zhdsc",
-      "_TZ3000_Q50ZHDSC",
-      "_tz3000_qd7hej8u",
-      "_TZ3000_qd7hej8u",
-      "_TZ3000_QD7HEJ8U",
-      "_tz3210_mja6r5ix",
-      "_TZ3210_mja6r5ix",
-      "_TZ3210_MJA6R5IX"
-    ],
-    "productId": [
-      "TS0505A",
-      "TS0505B",
-      "ZB-CL01"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

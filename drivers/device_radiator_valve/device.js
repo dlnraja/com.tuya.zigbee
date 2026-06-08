@@ -49,7 +49,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
         7: { internal: true, type: 'child_lock', writable: true },
-        35: { capability: 'alarm_battery', transform: (v) => v === 1 },
+//         35: { capability: 'alarm_battery', transform: (v) => v === 1 }, // REMOVED - SDK3 Rule AO: never combine measure_battery + alarm_battery
         36: { internal: true, type: 'frost_protection', writable: true },
         39: { internal: true, type: 'anti_scaling', writable: true },
         47: { internal: true, type: 'temp_calibration', writable: true }

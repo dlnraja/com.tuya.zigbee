@@ -79,25 +79,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_gwkzibhs",
-      "_TZ3000_gwkzibhs",
-      "_TZ3000_GWKZIBHS",
-      "_tz3000_pcqjmcud",
-      "_TZ3000_pcqjmcud",
-      "_TZ3000_PCQJMCUD",
-      "_tz3000_rrjr1q0u",
-      "_TZ3000_rrjr1q0u",
-      "_TZ3000_RRJR1Q0U",
-      "_tz3000_ugi8ky6u",
-      "_TZ3000_ugi8ky6u",
-      "_TZ3000_UGI8KY6U"
-    ],
-    "productId": [
-      "ERS-10TZBVK-AA",
-      "TS004F",
-      "ZG-101ZD"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -118,7 +99,21 @@
         "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert.\n\nOpmerking: Sommige modellen vereisen 5 keer snel drukken.",
         "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_pcqjmcud",
+        "productId": "ERS-10TZBVK-AA"
+      },
+      {
+        "manufacturerName": "_tz3000_pcqjmcud",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tz3000_pcqjmcud",
+        "productId": "ZG-101ZD"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/smart_knob_rotary/assets/images/small.png",

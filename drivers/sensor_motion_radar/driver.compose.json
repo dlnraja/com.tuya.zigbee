@@ -29,11 +29,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_ttcovulf",
-      "_TZE200_ttcovulf",
-      "_TZE200_TTCOVULF"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -52,10 +47,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {

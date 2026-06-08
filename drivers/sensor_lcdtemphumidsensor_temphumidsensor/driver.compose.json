@@ -17,25 +17,6 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_a082h2cc",
-      "_TZ2000_A476RAQ2",
-      "_TZ2000_XOGB73AM",
-      "_TZ3000_RUSU2VZB",
-      "_TZA226_UEAGGUAN",
-      "_TZA226_ueagguan",
-      "_tz2000_a476raq2",
-      "_tz2000_xogb73am",
-      "_tz3000_rusu2vzb",
-      "_tza226_ueagguan",
-      "_TZ3000_bguser20"
-    ],
-    "productId": [
-      "TS0201",
-      "TS0601",
-      "TS0601_lcd",
-      "TY0201"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,7 +24,73 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ2000_A476RAQ2",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_TZ2000_A476RAQ2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ2000_A476RAQ2",
+        "productId": "TS0601_lcd"
+      },
+      {
+        "manufacturerName": "_TZ2000_A476RAQ2",
+        "productId": "TY0201"
+      },
+      {
+        "manufacturerName": "_TZ2000_XOGB73AM",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_TZ2000_XOGB73AM",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ2000_XOGB73AM",
+        "productId": "TS0601_lcd"
+      },
+      {
+        "manufacturerName": "_TZ2000_XOGB73AM",
+        "productId": "TY0201"
+      },
+      {
+        "manufacturerName": "_TZ3000_RUSU2VZB",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_TZ3000_RUSU2VZB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_RUSU2VZB",
+        "productId": "TS0601_lcd"
+      },
+      {
+        "manufacturerName": "_TZ3000_RUSU2VZB",
+        "productId": "TY0201"
+      },
+      {
+        "manufacturerName": "_TZA226_UEAGGUAN",
+        "productId": "TS0201"
+      },
+      {
+        "manufacturerName": "_TZA226_UEAGGUAN",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZA226_UEAGGUAN",
+        "productId": "TS0601_lcd"
+      },
+      {
+        "manufacturerName": "_TZA226_UEAGGUAN",
+        "productId": "TY0201"
+      }
+    ]
   },
   "images": {
     "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",

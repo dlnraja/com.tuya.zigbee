@@ -58,196 +58,1039 @@
   "energy": {},
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "A89G12C",
-      "_TZE200_1AGWNEMS",
-      "_TZE200_1agwnems",
-      "_TZE200_4XSYPNEY",
-      "_TZE200_4xsypney",
-      "_TZE200_579LGUH2",
-      "_TZE200_579lguh2",
-      "_TZE200_7UAMWUTW",
-      "_TZE200_7uamwutw",
-      "_TZE200_9CV5TCGQ",
-      "_TZE200_9cv5tcgq",
-      "_TZE200_9i9dt8is",
-      "_TZE200_A0GSPFYZ",
-      "_TZE200_CTQ0K47X",
-      "_TZE200_DNZ6YVL2",
-      "_TZE200_E2BEDVO9",
-      "_TZE200_FQYTFMYK",
-      "_TZE200_FQYTFYMK",
-      "_TZE200_IP2AKL4W",
-      "_TZE200_M6EC2PGJ",
-      "_TZE200_PAY2BYAX",
-      "_TZE200_VUCANKJX",
-      "_TZE200_WQASHYQO",
-      "_TZE200_ZNLLDQL1",
-      "_TZE200_a0gspfyz",
-      "_TZE200_ctq0k47x",
-      "_TZE200_dfxkcots",
-      "_TZE200_dnz6yvl2",
-      "_TZE200_e2bedvo9",
-      "_TZE200_ebwgzdqq",
-      "_TZE200_fqytfmyk",
-      "_TZE200_fqytfymk",
-      "_TZE200_ip2akl4w",
-      "_TZE200_m6ec2pgj",
-      "_TZE200_ojzhk75b",
-      "_TZE200_pay2byax",
-      "_TZE200_swaamsoy",
-      "_TZE200_vucankjx",
-      "_TZE200_w4cryh2i",
-      "_TZE200_wqashyqo",
-      "_TZE200_znlldql1",
-      "_TZE204_4BJIXEFP",
-      "_TZE204_4XSYPNEY",
-      "_TZE204_4bjixefp",
-      "_TZE204_4xsypney",
-      "_TZE204_9QHUZGO0",
-      "_TZE204_9qhuzgo0",
-      "_TZE204_A0GSPFYZ",
-      "_TZE204_FHVDGEUH",
-      "_TZE204_FQYTFMYK",
-      "_TZE204_FQYTFYMK",
-      "_TZE204_WQASHYQO",
-      "_TZE204_a0gspfyz",
-      "_TZE204_fhvdgeuh",
-      "_TZE204_fqytfmyk",
-      "_TZE204_fqytfymk",
-      "_TZE204_vevc4c6g",
-      "_TZE204_wqashyqo",
-      "_TZE21C_dohbhb5k",
-      "_TZE284_0INTS6W",
-      "_TZE284_0INTS6WL",
-      "_TZE284_0ints6w",
-      "_TZE284_0ints6wl",
-      "_TZE284_2NHQASJH",
-      "_TZE284_2SE8EFXH",
-      "_TZE284_2nhqasjh",
-      "_TZE284_2se8efxh",
-      "_TZE284_33BWCGA2",
-      "_TZE284_33bwcga2",
-      "_TZE284_3URSCHQL",
-      "_TZE284_3urschql",
-      "_TZE284_4XSYPNEY",
-      "_TZE284_4xsypney",
-      "_TZE284_9CQCPKGB",
-      "_TZE284_9cqcpkgb",
-      "_TZE284_A0GSPFYZ",
-      "_TZE284_AA03YZHS",
-      "_TZE284_AAO3YZHS",
-      "_TZE284_AP9OWRSA",
-      "_TZE284_AWEPDIWI",
-      "_TZE284_E2BEDVO9",
-      "_TZE284_FQYTFMYK",
-      "_TZE284_FQYTFYMK",
-      "_TZE284_G2E6CPNW",
-      "_TZE284_GA1MAEOF",
-      "_TZE284_HDML1AAV",
-      "_TZE284_IP2AKL4W",
-      "_TZE284_M1CVYNEB",
-      "_TZE284_MYD45WEU",
-      "_TZE284_NHGDF6QR",
-      "_TZE284_NPJ9BUG3",
-      "_TZE284_NT4PQUEF",
-      "_TZE284_OITAVOV2",
-      "_TZE284_RQCUWLSA",
-      "_TZE284_SGABHWA6",
-      "_TZE284_TGRZPQF4",
-      "_TZE284_WCKQZTDQ",
-      "_TZE284_a0gspfyz",
-      "_TZE284_aa03yzhs",
-      "_TZE284_aao3yzhs",
-      "_TZE284_ap9owrsa",
-      "_TZE284_awepdiwi",
-      "_TZE284_e2bedvo9",
-      "_TZE284_fqytfmyk",
-      "_TZE284_fqytfymk",
-      "_TZE284_g2e6cpnw",
-      "_TZE284_ga1maeof",
-      "_TZE284_hdml1aav",
-      "_TZE284_ip2akl4w",
-      "_TZE284_m1cvyneb",
-      "_TZE284_myd45weu",
-      "_TZE284_nhgdf6qr",
-      "_TZE284_npj9bug3",
-      "_TZE284_nt4pquef",
-      "_TZE284_oitavov2",
-      "_TZE284_rqcuwlsa",
-      "_TZE284_sgabhwa6",
-      "_TZE284_tgrzpqf4",
-      "_TZE284_wckqztdq",
-      "_tze200_1agwnems",
-      "_tze200_4xsypney",
-      "_tze200_579lguh2",
-      "_tze200_7uamwutw",
-      "_tze200_9cv5tcgq",
-      "_tze200_a0gspfyz",
-      "_tze200_ctq0k47x",
-      "_tze200_dnz6yvl2",
-      "_tze200_e2bedvo9",
-      "_tze200_fqytfmyk",
-      "_tze200_fqytfymk",
-      "_tze200_ip2akl4w",
-      "_tze200_m6ec2pgj",
-      "_tze200_pay2byax",
-      "_tze200_vucankjx",
-      "_tze200_wqashyqo",
-      "_tze200_znlldql1",
-      "_tze204_4bjixefp",
-      "_tze204_4xsypney",
-      "_tze204_9qhuzgo0",
-      "_tze204_a0gspfyz",
-      "_tze204_fhvdgeuh",
-      "_tze204_fqytfmyk",
-      "_tze204_fqytfymk",
-      "_tze204_wqashyqo",
-      "_tze284_0ints6w",
-      "_tze284_0ints6wl",
-      "_tze284_2nhqasjh",
-      "_tze284_2se8efxh",
-      "_tze284_33bwcga2",
-      "_tze284_3urschql",
-      "_tze284_4xsypney",
-      "_tze284_9cqcpkgb",
-      "_tze284_a0gspfyz",
-      "_tze284_aa03yzhs",
-      "_tze284_aao3yzhs",
-      "_tze284_ap9owrsa",
-      "_tze284_awepdiwi",
-      "_tze284_e2bedvo9",
-      "_tze284_fqytfmyk",
-      "_tze284_fqytfymk",
-      "_tze284_g2e6cpnw",
-      "_tze284_ga1maeof",
-      "_tze284_hdml1aav",
-      "_tze284_ip2akl4w",
-      "_tze284_m1cvyneb",
-      "_tze284_myd45weu",
-      "_tze284_nhgdf6qr",
-      "_tze284_npj9bug3",
-      "_tze284_nt4pquef",
-      "_tze284_oitavov2",
-      "_tze284_rqcuwlsa",
-      "_tze284_sgabhwa6",
-      "_tze284_tgrzpqf4",
-      "_tze284_wckqztdq",
-      "a89g12c"
-    ],
-    "productId": [
-      "Arteco",
-      "CS-201Z",
-      "TS0601",
-      "ZG-303Z"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
           0
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "A89G12C",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "A89G12C",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "A89G12C",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "A89G12C",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_1AGWNEMS",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_1AGWNEMS",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_1AGWNEMS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_1AGWNEMS",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_4XSYPNEY",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_4XSYPNEY",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_4XSYPNEY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_4XSYPNEY",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_579LGUH2",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_579LGUH2",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_579LGUH2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_579LGUH2",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_7UAMWUTW",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_7UAMWUTW",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_7UAMWUTW",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_7UAMWUTW",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_9CV5TCGQ",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_9CV5TCGQ",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_9CV5TCGQ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_9CV5TCGQ",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_9i9dt8is",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_9i9dt8is",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_9i9dt8is",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_9i9dt8is",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_A0GSPFYZ",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_A0GSPFYZ",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_A0GSPFYZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_A0GSPFYZ",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_CTQ0K47X",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_CTQ0K47X",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_CTQ0K47X",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_CTQ0K47X",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_DNZ6YVL2",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_DNZ6YVL2",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_DNZ6YVL2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_DNZ6YVL2",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_E2BEDVO9",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_E2BEDVO9",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_E2BEDVO9",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_E2BEDVO9",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFMYK",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFMYK",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFMYK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFMYK",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFYMK",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFYMK",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFYMK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_FQYTFYMK",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_IP2AKL4W",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_IP2AKL4W",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_IP2AKL4W",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_IP2AKL4W",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_M6EC2PGJ",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_M6EC2PGJ",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_M6EC2PGJ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_M6EC2PGJ",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_PAY2BYAX",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_PAY2BYAX",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_PAY2BYAX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_PAY2BYAX",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_VUCANKJX",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_VUCANKJX",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_VUCANKJX",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_VUCANKJX",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_WQASHYQO",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_WQASHYQO",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_WQASHYQO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_WQASHYQO",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_ZNLLDQL1",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_ZNLLDQL1",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_ZNLLDQL1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_ZNLLDQL1",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_dfxkcots",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_dfxkcots",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_dfxkcots",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_dfxkcots",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_ebwgzdqq",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_ebwgzdqq",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_ebwgzdqq",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_ebwgzdqq",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_ojzhk75b",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_ojzhk75b",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_ojzhk75b",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_ojzhk75b",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_swaamsoy",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_swaamsoy",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_swaamsoy",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_swaamsoy",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE200_w4cryh2i",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE200_w4cryh2i",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE200_w4cryh2i",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_w4cryh2i",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_4BJIXEFP",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_4BJIXEFP",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_4BJIXEFP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_4BJIXEFP",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_4XSYPNEY",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_4XSYPNEY",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_4XSYPNEY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_4XSYPNEY",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_9QHUZGO0",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_9QHUZGO0",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_9QHUZGO0",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_9QHUZGO0",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_A0GSPFYZ",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_A0GSPFYZ",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_A0GSPFYZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_A0GSPFYZ",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_FHVDGEUH",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_FHVDGEUH",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_FHVDGEUH",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_FHVDGEUH",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFMYK",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFMYK",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFMYK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFMYK",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFYMK",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFYMK",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFYMK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_FQYTFYMK",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_WQASHYQO",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_WQASHYQO",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_WQASHYQO",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_WQASHYQO",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE204_vevc4c6g",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE204_vevc4c6g",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE204_vevc4c6g",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_vevc4c6g",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE21C_dohbhb5k",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE21C_dohbhb5k",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE21C_dohbhb5k",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE21C_dohbhb5k",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6W",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6W",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6W",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6W",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6WL",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6WL",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6WL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_0INTS6WL",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_2NHQASJH",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_2NHQASJH",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_2NHQASJH",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_2NHQASJH",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_2SE8EFXH",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_2SE8EFXH",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_2SE8EFXH",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_2SE8EFXH",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_33BWCGA2",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_33BWCGA2",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_33BWCGA2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_33BWCGA2",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_3URSCHQL",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_3URSCHQL",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_3URSCHQL",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_3URSCHQL",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_4XSYPNEY",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_4XSYPNEY",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_4XSYPNEY",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_4XSYPNEY",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_9CQCPKGB",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_9CQCPKGB",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_9CQCPKGB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_9CQCPKGB",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_A0GSPFYZ",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_A0GSPFYZ",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_A0GSPFYZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_A0GSPFYZ",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AA03YZHS",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_AA03YZHS",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AA03YZHS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_AA03YZHS",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AAO3YZHS",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_AAO3YZHS",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AAO3YZHS",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_AAO3YZHS",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AP9OWRSA",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_AP9OWRSA",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AP9OWRSA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_AP9OWRSA",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AWEPDIWI",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_AWEPDIWI",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_AWEPDIWI",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_AWEPDIWI",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_E2BEDVO9",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_E2BEDVO9",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_E2BEDVO9",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_E2BEDVO9",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFMYK",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFMYK",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFMYK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFMYK",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFYMK",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFYMK",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFYMK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_FQYTFYMK",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_G2E6CPNW",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_G2E6CPNW",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_G2E6CPNW",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_G2E6CPNW",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_GA1MAEOF",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_GA1MAEOF",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_GA1MAEOF",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_GA1MAEOF",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_HDML1AAV",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_HDML1AAV",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_HDML1AAV",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_HDML1AAV",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_IP2AKL4W",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_IP2AKL4W",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_IP2AKL4W",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_IP2AKL4W",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_M1CVYNEB",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_M1CVYNEB",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_M1CVYNEB",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_M1CVYNEB",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_MYD45WEU",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_MYD45WEU",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_MYD45WEU",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_MYD45WEU",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_NHGDF6QR",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_NHGDF6QR",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_NHGDF6QR",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_NHGDF6QR",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_NPJ9BUG3",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_NPJ9BUG3",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_NPJ9BUG3",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_NPJ9BUG3",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_NT4PQUEF",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_NT4PQUEF",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_NT4PQUEF",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_NT4PQUEF",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_OITAVOV2",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_OITAVOV2",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_OITAVOV2",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_OITAVOV2",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_RQCUWLSA",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_RQCUWLSA",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_RQCUWLSA",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_RQCUWLSA",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_SGABHWA6",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_SGABHWA6",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_SGABHWA6",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_SGABHWA6",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_TGRZPQF4",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_TGRZPQF4",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_TGRZPQF4",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_TGRZPQF4",
+        "productId": "ZG-303Z"
+      },
+      {
+        "manufacturerName": "_TZE284_WCKQZTDQ",
+        "productId": "Arteco"
+      },
+      {
+        "manufacturerName": "_TZE284_WCKQZTDQ",
+        "productId": "CS-201Z"
+      },
+      {
+        "manufacturerName": "_TZE284_WCKQZTDQ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_WCKQZTDQ",
+        "productId": "ZG-303Z"
+      }
+    ]
   },
   "settings": [
     {

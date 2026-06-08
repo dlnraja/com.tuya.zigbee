@@ -28,9 +28,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,9 +45,6 @@
         "en": "Hold the button for 5 seconds, the button will blink.",
         "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix"
-    ]
+    }
   }
 }

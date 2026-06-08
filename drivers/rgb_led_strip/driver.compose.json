@@ -13,14 +13,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_riwp3k79",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_RIWP3K79"
-    ],
-    "productId": [
-      "TS0505A"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

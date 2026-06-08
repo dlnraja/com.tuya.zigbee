@@ -24,17 +24,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "tuyatec-dxnohkpd",
-      "TUYATEC-DXNOHKPD",
-      "tuyatec-lha8pbwd",
-      "TUYATEC-LHA8PBWD",
-      "tuyatec-zn9wyqtr",
-      "TUYATEC-ZN9WYQTR"
-    ],
-    "productId": [
-      "RH3040"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

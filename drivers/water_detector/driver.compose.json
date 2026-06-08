@@ -25,18 +25,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_6oabgtzv",
-      "_TZ3000_6oabgtzv",
-      "_TZ3000_6OABGTZV",
-      "_tz3000_85czd6fy",
-      "_TZ3000_85czd6fy",
-      "_TZ3000_85CZD6FY"
-    ],
-    "productId": [
-      "q9mpfhw",
-      "TS0207"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

@@ -24,95 +24,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_as7eqiri",
-      "_TZ3000_as7eqiri",
-      "_TZ3000_AS7EQIRI",
-      "_tz3000_dbou1ap4",
-      "_TZ3000_dbou1ap4",
-      "_TZ3000_DBOU1AP4",
-      "_tz3000_fbja4q6h",
-      "_TZ3000_fbja4q6h",
-      "_TZ3000_FBJA4Q6H",
-      "_tz3000_hcm1fqxe",
-      "_TZ3000_hcm1fqxe",
-      "_TZ3000_HCM1FQXE",
-      "_tz3000_keabpigb",
-      "_TZ3000_keabpigb",
-      "_TZ3000_KEABPIGB",
-      "_tz3000_kihkx3cq",
-      "_TZ3000_kihkx3cq",
-      "_TZ3000_KIHKX3CQ",
-      "_tz3000_lzfwt5qx",
-      "_TZ3000_lzfwt5qx",
-      "_TZ3000_LZFWT5QX",
-      "_tz3000_m6u3q8jy",
-      "_TZ3000_m6u3q8jy",
-      "_TZ3000_M6U3Q8JY",
-      "_tz3000_tqlv4yz4",
-      "_TZ3000_tqlv4yz4",
-      "_TZ3000_TQLV4YZ4",
-      "_tz3000_u5u4cakc",
-      "_TZ3000_u5u4cakc",
-      "_TZ3000_U5U4CAKC",
-      "_tz3000_vzopcetz",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_VZOPCETZ",
-      "_tz3000_w2ug5kgu",
-      "_TZ3000_w2ug5kgu",
-      "_TZ3000_W2UG5KGU",
-      "_tz3000_x2fqbdun",
-      "_TZ3000_x2fqbdun",
-      "_TZ3000_X2FQBDUN",
-      "_tz3210_0c4np92r",
-      "_TZ3210_0c4np92r",
-      "_TZ3210_0C4NP92R",
-      "_tz3210_0fc3g9sq",
-      "_TZ3210_0fc3g9sq",
-      "_TZ3210_0FC3G9SQ",
-      "_tz3210_1agihf3z",
-      "_TZ3210_1agihf3z",
-      "_TZ3210_1AGIHF3Z",
-      "_tz3210_4ubylghk",
-      "_TZ3210_4ubylghk",
-      "_TZ3210_4UBYLGHK",
-      "_tz3210_bcplf4ds",
-      "_TZ3210_bcplf4ds",
-      "_TZ3210_BCPLF4DS",
-      "_tz3210_dxrjkpi6",
-      "_TZ3210_dxrjkpi6",
-      "_TZ3210_DXRJKPI6",
-      "_tz3210_h1zvcpwd",
-      "_TZ3210_h1zvcpwd",
-      "_TZ3210_H1ZVCPWD",
-      "_tz3210_jkbdrvvf",
-      "_TZ3210_jkbdrvvf",
-      "_TZ3210_JKBDRVVF",
-      "_tz3210_lezkafxf",
-      "_TZ3210_lezkafxf",
-      "_TZ3210_LEZKAFXF",
-      "_tz3210_lmqquxus",
-      "_TZ3210_lmqquxus",
-      "_TZ3210_LMQQUXUS",
-      "_tz3210_rbgfkwbl",
-      "_TZ3210_rbgfkwbl",
-      "_TZ3210_RBGFKWBL",
-      "_tz3210_s8lvbbu",
-      "_TZ3210_s8lvbbu",
-      "_TZ3210_S8LVBBU",
-      "_tz3210_s8lvbbuc",
-      "_TZ3210_s8lvbbuc",
-      "_TZ3210_S8LVBBUC",
-      "_tz3210_sroezl0s",
-      "_TZ3210_sroezl0s",
-      "_TZ3210_SROEZL0S",
-      "_tz3210_taw0fc13",
-      "_TZ3210_taw0fc13",
-      "_TZ3210_TAW0FC13",
-      "_tz3210_wuheyhvm",
-      "_TZ3210_wuheyhvm",
-      "_TZ3210_WUHEYHVM"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -133,9 +44,23 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0505A",
-      "TS0505B"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3210_s8lvbbu",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3210_s8lvbbu",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3210_s8lvbbuc",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3210_s8lvbbuc",
+        "productId": "TS0505B"
+      }
     ]
   },
   "settings": [

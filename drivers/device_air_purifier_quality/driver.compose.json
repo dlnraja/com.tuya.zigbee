@@ -35,22 +35,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_zhhcsbrz",
-      "_tze200_nnrfa68v",
-      "_tze200_placeholder_generic",
-      "_TZE200_placeholder_generic",
-      "_TZE200_PLACEHOLDER_GENERIC",
-      "_tze204_nnrfa68v",
-      "_TZE284_8b9zpaav",
-      "_TZE284_it9utkro"
-    ],
-    "productId": [
-      "TS0005",
-      "TS0006",
-      "TS0601",
-      "TS0601_air_purifier"
-    ],
     "learnmode": {
       "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
       "instruction": {

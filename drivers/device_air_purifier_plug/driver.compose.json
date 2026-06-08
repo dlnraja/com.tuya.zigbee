@@ -16,10 +16,6 @@
     "measure_pm25"
   ],
   "zigbee": {
-    "productId": [
-      "TS011F",
-      "TS0601"
-    ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
@@ -35,12 +31,15 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_dummy_fix",
-      "_tze204_byzdayie",
-      "_TZE204_BYZDAYIE",
-      "_TZE200_byzdayie",
-      "_TZE200_7bztmfm1"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tze204_byzdayie",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_tze204_byzdayie",
+        "productId": "TS0601"
+      }
     ]
   },
   "settings": [

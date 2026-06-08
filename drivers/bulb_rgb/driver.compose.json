@@ -43,54 +43,743 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "productId": [
-      "E11-G13",
-      "E11-G14",
-      "E11-G23",
-      "GL-C-006",
-      "LCT001",
-      "LCT002",
-      "LCT003",
-      "LCT007",
-      "LCT010",
-      "LCT011",
-      "LCT012",
-      "LCT014",
-      "LCT015",
-      "LCT016",
-      "RB 185 C",
-      "RB 285 C",
-      "TS0503A",
-      "TS0503B",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "ZB-CL01",
-      "ZBT-ColorLight"
-    ],
-    "manufacturerName": [
-      "_tz3000_12sxjap4",
-      "_TZ3000_12sxjap4",
-      "_TZ3000_12SXJAP4",
-      "_tz3000_6zvw8ham",
-      "_TZ3000_6zvw8ham",
-      "_TZ3000_6ZVW8HAM",
-      "_tz3000_gn91mcmz",
-      "_TZ3000_gn91mcmz",
-      "_TZ3000_GN91MCMZ",
-      "_tz3000_hlijwsai",
-      "_TZ3000_hlijwsai",
-      "_TZ3000_HLIJWSAI",
-      "_tz3000_qzjcsmar",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_QZJCSMAR",
-      "ewelight",
-      "eWeLight",
-      "EWELIGHT",
-      "lumi.light.cwopcn02",
-      "LUMI.LIGHT.CWOPCN02",
-      "lumi.light.cwopcn03",
-      "LUMI.LIGHT.CWOPCN03"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "_tz3000_12sxjap4",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "_tz3000_6zvw8ham",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "_tz3000_gn91mcmz",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "_tz3000_hlijwsai",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "_tz3000_qzjcsmar",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "ewelight",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn02",
+        "productId": "ZBT-ColorLight"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "E11-G13"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "E11-G14"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "E11-G23"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "GL-C-006"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT001"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT002"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT003"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT007"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT010"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT011"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT012"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT014"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT015"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "LCT016"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "RB 185 C"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "RB 285 C"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "TS0503A"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "TS0503B"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "TS0504B"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "TS0505A"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "TS0505B"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "ZB-CL01"
+      },
+      {
+        "manufacturerName": "lumi.light.cwopcn03",
+        "productId": "ZBT-ColorLight"
+      }
     ]
   },
   "settings": [

@@ -36,106 +36,1239 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "productId": [
-      "GS361A-H04",
-      "HS1SA",
-      "HS3SA",
-      "JTYJ-GD-01LM/BW",
-      "lumi.sensor_smoke",
-      "NAS-SD02B0",
-      "PG-S11Z",
-      "SA12IZL",
-      "SD8SC_00.00.03.12TC",
-      "SMSZB-120",
-      "SSSQS01LM",
-      "TS0205",
-      "TS0601",
-      "YG400A"
-    ],
-    "manufacturerName": [
-      "_tyzb01_dsjszp0x",
-      "_TYZB01_DSJSZP0X",
-      "_tyzb01_wqcac7lo",
-      "_TYZB01_wqcac7lo",
-      "_TYZB01_WQCAC7LO",
-      "_tz3000_mwd3c2at",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_MWD3C2AT",
-      "_tz3000_qtyyuaq6",
-      "_TZ3000_qtyyuaq6",
-      "_TZ3000_QTYYUAQ6",
-      "_tz3000_tk3s5tyg",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_TK3S5TYG",
-      "_tz3210_up3pngle",
-      "_TZ3210_up3pngle",
-      "_TZ3210_UP3PNGLE",
-      "_tze200_0zaf1cr8",
-      "_TZE200_0zaf1cr8",
-      "_TZE200_0ZAF1CR8",
-      "_tze200_5d3vhjro",
-      "_TZE200_5d3vhjro",
-      "_TZE200_5D3VHJRO",
-      "_tze200_dq1mfjug",
-      "_TZE200_dq1mfjug",
-      "_TZE200_DQ1MFJUG",
-      "_tze200_m9skfctm",
-      "_TZE200_m9skfctm",
-      "_TZE200_M9SKFCTM",
-      "_tze200_ntcy3xu1",
-      "_TZE200_ntcy3xu1",
-      "_TZE200_NTCY3XU1",
-      "_tze200_qcasmfan",
-      "_TZE200_qcasmfan",
-      "_TZE200_QCASMFAN",
-      "_tze200_rccxox8p",
-      "_TZE200_rccxox8p",
-      "_TZE200_RCCXOX8P",
-      "_tze200_t5p1vj8r",
-      "_TZE200_t5p1vj8r",
-      "_TZE200_T5P1VJ8R",
-      "_tze200_uebojraa",
-      "_TZE200_uebojraa",
-      "_TZE200_UEBOJRAA",
-      "_tze200_ux5v4dbd",
-      "_TZE200_ux5v4dbd",
-      "_TZE200_UX5V4DBD",
-      "_tze200_vzekyi4c",
-      "_TZE200_vzekyi4c",
-      "_TZE200_VZEKYI4C",
-      "_tze200_yh7aoahi",
-      "_TZE200_yh7aoahi",
-      "_TZE200_YH7AOAHI",
-      "_tze200_ytibqbra",
-      "_TZE200_ytibqbra",
-      "_TZE200_YTIBQBRA",
-      "_tze204_cjbofhxw",
-      "_TZE204_cjbofhxw",
-      "_TZE204_CJBOFHXW",
-      "_tze204_qaxkdgyt",
-      "_TZE204_qaxkdgyt",
-      "_TZE204_QAXKDGYT",
-      "_tze284_0zaf1cr8",
-      "_TZE284_0zaf1cr8",
-      "_TZE284_0ZAF1CR8",
-      "_tze284_6ycgarab",
-      "_TZE284_6ycgarab",
-      "_TZE284_6YCGARAB",
-      "_tze284_ai4rqhky",
-      "_TZE284_ai4rqhky",
-      "_TZE284_AI4RQHKY",
-      "_tze284_cjbofhxw",
-      "_TZE284_cjbofhxw",
-      "_TZE284_CJBOFHXW",
-      "_tze284_o9ofysmo",
-      "_TZE284_o9ofysmo",
-      "_TZE284_O9OFYSMO",
-      "_tze284_rccxox8p",
-      "_TZE284_rccxox8p",
-      "_TZE284_RCCXOX8P",
-      "_tze284_xc3vwx5a",
-      "_TZE284_xc3vwx5a",
-      "_TZE284_XC3VWX5A"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tyzb01_dsjszp0x",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tyzb01_wqcac7lo",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_mwd3c2at",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_qtyyuaq6",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_tk3s5tyg",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3210_up3pngle",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_0zaf1cr8",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_dq1mfjug",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_m9skfctm",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_ntcy3xu1",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_qcasmfan",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_rccxox8p",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_t5p1vj8r",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_uebojraa",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_vzekyi4c",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_yh7aoahi",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_cjbofhxw",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_qaxkdgyt",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_0zaf1cr8",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_6ycgarab",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_cjbofhxw",
+        "productId": "YG400A"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "GS361A-H04"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "HS1SA"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "HS3SA"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "JTYJ-GD-01LM/BW"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "lumi.sensor_smoke"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "NAS-SD02B0"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "PG-S11Z"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "SA12IZL"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "SD8SC_00.00.03.12TC"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "SMSZB-120"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "SSSQS01LM"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "TS0205"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_rccxox8p",
+        "productId": "YG400A"
+      }
     ]
   },
   "settings": [

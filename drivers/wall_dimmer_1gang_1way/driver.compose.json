@@ -32,21 +32,6 @@
     "large": "/drivers/wall_dimmer_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tzb210_g01ie5wu",
-      "_TZB210_g01ie5wu",
-      "_TZB210_G01IE5WU",
-      "_tzb210_zxbtub8r",
-      "_TZB210_zxbtub8r",
-      "_TZB210_ZXBTUB8R"
-    ],
-    "productId": [
-      "EDM-1ZBA-EU",
-      "TRI-C1ZR",
-      "TRI-K1ZR",
-      "TS004F",
-      "TS0501B"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -62,7 +47,29 @@
         "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
         "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tzb210_zxbtub8r",
+        "productId": "EDM-1ZBA-EU"
+      },
+      {
+        "manufacturerName": "_tzb210_zxbtub8r",
+        "productId": "TRI-C1ZR"
+      },
+      {
+        "manufacturerName": "_tzb210_zxbtub8r",
+        "productId": "TRI-K1ZR"
+      },
+      {
+        "manufacturerName": "_tzb210_zxbtub8r",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tzb210_zxbtub8r",
+        "productId": "TS0501B"
+      }
+    ]
   },
   "settings": [
     {

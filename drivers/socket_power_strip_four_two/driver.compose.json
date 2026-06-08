@@ -23,11 +23,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0101",
-      "TS0111",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -148,10 +143,19 @@
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     },
-    "manufacturerName": [
-      "_tz3000_o005nuxx",
-      "_TZ3000_o005nuxx",
-      "_TZ3000_O005NUXX"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_o005nuxx",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_tz3000_o005nuxx",
+        "productId": "TS0111"
+      },
+      {
+        "manufacturerName": "_tz3000_o005nuxx",
+        "productId": "TS0601"
+      }
     ]
   }
 }

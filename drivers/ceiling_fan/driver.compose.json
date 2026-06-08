@@ -17,18 +17,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_1h2x4akh",
-      "_TZ3000_1h2x4akh",
-      "_TZ3000_1H2X4AKH",
-      "_tz3210_t46srmxd",
-      "_TZ3210_t46srmxd",
-      "_TZ3210_T46SRMXD"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_fan"
-    ],
     "learnmode": {
       "image": "/drivers/ceiling_fan/assets/learnmode.svg",
       "instruction": {
@@ -43,7 +31,25 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_1h2x4akh",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_1h2x4akh",
+        "productId": "TS0601_fan"
+      },
+      {
+        "manufacturerName": "_tz3210_t46srmxd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3210_t46srmxd",
+        "productId": "TS0601_fan"
+      }
+    ]
   },
   "settings": [
     {

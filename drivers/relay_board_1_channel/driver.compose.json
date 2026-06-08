@@ -24,29 +24,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "01MINIZB",
-      "BASICZBR3",
-      "S31ZB",
-      "TS0001",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0001_switch_module",
-      "TS0101",
-      "TS011F",
-      "TS4100",
-      "ZBM5-1C-120",
-      "ZBM5-2C-120",
-      "ZBM5-3C-120",
-      "ZBMINI",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2",
-      "ZG-301Z",
-      "ZG-302Z1"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,12 +43,91 @@
         "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_gzvniqjb",
-      "_TZ3000_m8f08ihs",
-      "_TZE284_XNWXMJ8Z",
-      "_tze284_xnwxmj8z",
-      "_TZ3000_tqlv4ug4"
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "01MINIZB"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "BASICZBR3"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "S31ZB"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS0001"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS0001_power"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS0001_switch"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS0001_switch_module"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS0101"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS011F"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "TS4100"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBM5-1C-120"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBM5-2C-120"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBM5-3C-120"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBMINI"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBMINIL2"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBMINIL2-R2"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBMINIR"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBMINIR2"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZBMINIR2-R2"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZG-301Z"
+      },
+      {
+        "manufacturerName": "_TZE284_XNWXMJ8Z",
+        "productId": "ZG-302Z1"
+      }
     ]
   }
 }

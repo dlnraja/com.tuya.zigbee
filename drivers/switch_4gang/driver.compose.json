@@ -13,13 +13,6 @@
     "button.identify"
   ],
   "zigbee": {
-    "productId": [
-      "JZ-ZB-004",
-      "TS0004",
-      "TS0004_power",
-      "TS0004_switch_module",
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -53,201 +46,867 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_tz3000_3n2minvf",
-      "_TZ3000_3n2minvf",
-      "_TZ3000_3N2MINVF",
-      "_tz3000_4vobcwsc",
-      "_TZ3000_4vobcwsc",
-      "_TZ3000_4VOBCWSC",
-      "_tz3000_5kxl9esg",
-      "_TZ3000_5kxl9esg",
-      "_TZ3000_5KXL9ESG",
-      "_tz3000_a37eix1s",
-      "_TZ3000_a37eix1s",
-      "_TZ3000_A37EIX1S",
-      "_tz3000_aqsjyh1h",
-      "_TZ3000_aqsjyh1h",
-      "_TZ3000_AQSJYH1H",
-      "_tz3000_enmfaave",
-      "_TZ3000_enmfaave",
-      "_TZ3000_ENMFAAVE",
-      "_tz3000_excgg5kb",
-      "_TZ3000_excgg5kb",
-      "_TZ3000_EXCGG5KB",
-      "_tz3000_eyzpwhtc",
-      "_TZ3000_eyzpwhtc",
-      "_TZ3000_EYZPWHTC",
-      "_tz3000_ezqbvrqz",
-      "_TZ3000_ezqbvrqz",
-      "_TZ3000_EZQBVRQZ",
-      "_tz3000_gexniqbq",
-      "_TZ3000_gexniqbq",
-      "_TZ3000_GEXNIQBQ",
-      "_tz3000_imaccztn",
-      "_TZ3000_imaccztn",
-      "_TZ3000_IMACCZTN",
-      "_tz3000_iymfxdis",
-      "_TZ3000_iymfxdis",
-      "_TZ3000_IYMFXDIS",
-      "_tz3000_jwoyqycg",
-      "_TZ3000_jwoyqycg",
-      "_TZ3000_JWOYQYCG",
-      "_tz3000_kfkqkjqe",
-      "_TZ3000_kfkqkjqe",
-      "_TZ3000_KFKQKJQE",
-      "_tz3000_kt6xxa4o",
-      "_TZ3000_kt6xxa4o",
-      "_TZ3000_KT6XXA4O",
-      "_tz3000_lcjsewlo",
-      "_TZ3000_lcjsewlo",
-      "_TZ3000_LCJSEWLO",
-      "_tz3000_m3pafcnk",
-      "_TZ3000_m3pafcnk",
-      "_TZ3000_M3PAFCNK",
-      "_tz3000_mdj7kra9",
-      "_TZ3000_mdj7kra9",
-      "_TZ3000_MDJ7KRA9",
-      "_tz3000_mrduubod",
-      "_TZ3000_mrduubod",
-      "_TZ3000_MRDUUBOD",
-      "_tz3000_ncb6mkx8",
-      "_TZ3000_ncb6mkx8",
-      "_TZ3000_NCB6MKX8",
-      "_tz3000_nivavasg",
-      "_TZ3000_nivavasg",
-      "_TZ3000_NIVAVASG",
-      "_tz3000_noru9tix",
-      "_TZ3000_noru9tix",
-      "_TZ3000_NORU9TIX",
-      "_tz3000_pdvkkcuc",
-      "_TZ3000_pdvkkcuc",
-      "_TZ3000_PDVKKCUC",
-      "_tz3000_qhyadm57",
-      "_TZ3000_qhyadm57",
-      "_TZ3000_QHYADM57",
-      "_tz3000_r9e2w7dn",
-      "_TZ3000_r9e2w7dn",
-      "_TZ3000_R9E2W7DN",
-      "_tz3000_rsylfthg",
-      "_TZ3000_rsylfthg",
-      "_TZ3000_RSYLFTHG",
-      "_tz3000_s6ma1nh4",
-      "_TZ3000_s6ma1nh4",
-      "_TZ3000_S6MA1NH4",
-      "_tz3000_ssup6h68",
-      "_TZ3000_ssup6h68",
-      "_TZ3000_SSUP6H68",
-      "_tz3000_tyg4yiat",
-      "_TZ3000_tyg4yiat",
-      "_TZ3000_TYG4YIAT",
-      "_tz3000_u3oupgdy",
-      "_TZ3000_u3oupgdy",
-      "_TZ3000_U3OUPGDY",
-      "_tz3000_uz6ibhib",
-      "_TZ3000_uz6ibhib",
-      "_TZ3000_UZ6IBHIB",
-      "_tz3000_wopf2sox",
-      "_TZ3000_wopf2sox",
-      "_TZ3000_WOPF2SOX",
-      "_tz3000_wwtnshol",
-      "_TZ3000_wwtnshol",
-      "_TZ3000_WWTNSHOL",
-      "_tz3000_xabckqv1",
-      "_TZ3000_xabckqv1",
-      "_TZ3000_XABCKQV1",
-      "_tz3000_xk5udnd6",
-      "_TZ3000_xk5udnd6",
-      "_TZ3000_XK5UDND6",
-      "_tz3000_z6zplt0y",
-      "_TZ3000_z6zplt0y",
-      "_TZ3000_Z6ZPLT0Y",
-      "_tz3002_9eavto1k",
-      "_TZ3002_9eavto1k",
-      "_TZ3002_9EAVTO1K",
-      "_tz3002_a4kvf6zd",
-      "_TZ3002_a4kvf6zd",
-      "_TZ3002_A4KVF6ZD",
-      "_tz3002_aewsvjcu",
-      "_TZ3002_aewsvjcu",
-      "_TZ3002_AEWSVJCU",
-      "_tz3002_hkaktryd",
-      "_TZ3002_hkaktryd",
-      "_TZ3002_HKAKTRYD",
-      "_tz3002_iedhxgyi",
-      "_TZ3002_iedhxgyi",
-      "_TZ3002_IEDHXGYI",
-      "_tz3002_kq3kqwjt",
-      "_TZ3002_kq3kqwjt",
-      "_TZ3002_KQ3KQWJT",
-      "_tz3002_l8bfzlcd",
-      "_TZ3002_l8bfzlcd",
-      "_TZ3002_L8BFZLCD",
-      "_tz3002_m3pafcnk",
-      "_TZ3002_m3pafcnk",
-      "_TZ3002_M3PAFCNK",
-      "_tz3002_phu8ygaw",
-      "_TZ3002_phu8ygaw",
-      "_TZ3002_PHU8YGAW",
-      "_tz3002_pw4ad2xa",
-      "_TZ3002_pw4ad2xa",
-      "_TZ3002_PW4AD2XA",
-      "_tz3002_rbnycsav",
-      "_TZ3002_rbnycsav",
-      "_TZ3002_RBNYCSAV",
-      "_tz3002_tlsvxhxc",
-      "_TZ3002_tlsvxhxc",
-      "_TZ3002_TLSVXHXC",
-      "_tz3002_u7d3nes3",
-      "_TZ3002_u7d3nes3",
-      "_TZ3002_U7D3NES3",
-      "_tz3002_umdkr64x",
-      "_TZ3002_umdkr64x",
-      "_TZ3002_UMDKR64X",
-      "_tz3002_uu4uircb",
-      "_TZ3002_uu4uircb",
-      "_TZ3002_UU4UIRCB",
-      "_tz3002_xkxgfxsg",
-      "_TZ3002_xkxgfxsg",
-      "_TZ3002_XKXGFXSG",
-      "_tz3002_ybtqbyk3",
-      "_TZ3002_ybtqbyk3",
-      "_TZ3002_YBTQBYK3",
-      "_tz3002_ymv5vytn",
-      "_TZ3002_ymv5vytn",
-      "_TZ3002_YMV5VYTN",
-      "_tz3002_yptomml1",
-      "_TZ3002_yptomml1",
-      "_TZ3002_YPTOMML1",
-      "_tz3002_zjuvw9zf",
-      "_TZ3002_zjuvw9zf",
-      "_TZ3002_ZJUVW9ZF",
-      "_tz3002_zyuajkzz",
-      "_TZ3002_zyuajkzz",
-      "_TZ3002_ZYUAJKZZ",
-      "_tz300a_ohjmifiz",
-      "_TZ300A_ohjmifiz",
-      "_TZ300A_OHJMIFIZ",
-      "_tz300a_rncj86af",
-      "_TZ300A_rncj86af",
-      "_TZ300A_RNCJ86AF",
-      "_tz300a_vkflnsl0",
-      "_TZ300A_vkflnsl0",
-      "_TZ300A_VKFLNSL0",
-      "_tz300a_vqrs45nj",
-      "_TZ300A_vqrs45nj",
-      "_TZ300A_VQRS45NJ",
-      "_tz3210_iymfxdis",
-      "_TZ3210_iymfxdis",
-      "_TZ3210_IYMFXDIS",
-      "_tze204_xibaabmu",
-      "_TZE204_xibaabmu",
-      "_TZE204_XIBAABMU",
-      "_tze284_xibaabmu",
-      "_TZE284_xibaabmu",
-      "_TZE284_XIBAABMU",
-      "lellki",
-      "LELLKI"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_3n2minvf",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_3n2minvf",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_3n2minvf",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_3n2minvf",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_3n2minvf",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_4vobcwsc",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_4vobcwsc",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_4vobcwsc",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_4vobcwsc",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_4vobcwsc",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_a37eix1s",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_a37eix1s",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_a37eix1s",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_a37eix1s",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_a37eix1s",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_aqsjyh1h",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_aqsjyh1h",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_aqsjyh1h",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_aqsjyh1h",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_aqsjyh1h",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_enmfaave",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_enmfaave",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_enmfaave",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_enmfaave",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_enmfaave",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_excgg5kb",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_excgg5kb",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_excgg5kb",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_excgg5kb",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_excgg5kb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_eyzpwhtc",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_eyzpwhtc",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_eyzpwhtc",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_eyzpwhtc",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_eyzpwhtc",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_jwoyqycg",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_jwoyqycg",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_jwoyqycg",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_jwoyqycg",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_jwoyqycg",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_kfkqkjqe",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_kfkqkjqe",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_kfkqkjqe",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_kfkqkjqe",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_kfkqkjqe",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_kt6xxa4o",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_kt6xxa4o",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_kt6xxa4o",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_kt6xxa4o",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_kt6xxa4o",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_lcjsewlo",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_lcjsewlo",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_lcjsewlo",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_lcjsewlo",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_lcjsewlo",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_mrduubod",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_mrduubod",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_mrduubod",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_mrduubod",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_mrduubod",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_pdvkkcuc",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_pdvkkcuc",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_pdvkkcuc",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_pdvkkcuc",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_pdvkkcuc",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_r9e2w7dn",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_r9e2w7dn",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_r9e2w7dn",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_r9e2w7dn",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_r9e2w7dn",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_s6ma1nh4",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_s6ma1nh4",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_s6ma1nh4",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_s6ma1nh4",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_s6ma1nh4",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_ssup6h68",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_ssup6h68",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_ssup6h68",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_ssup6h68",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_ssup6h68",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_tyg4yiat",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_tyg4yiat",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_tyg4yiat",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_tyg4yiat",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_tyg4yiat",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_uz6ibhib",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_uz6ibhib",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_uz6ibhib",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_uz6ibhib",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_uz6ibhib",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_wopf2sox",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_wopf2sox",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_wopf2sox",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_wopf2sox",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_wopf2sox",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_wwtnshol",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_wwtnshol",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_wwtnshol",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_wwtnshol",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_wwtnshol",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_xabckqv1",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_xabckqv1",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_xabckqv1",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_xabckqv1",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_xabckqv1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_xk5udnd6",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_xk5udnd6",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_xk5udnd6",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_xk5udnd6",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_xk5udnd6",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_z6zplt0y",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3000_z6zplt0y",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3000_z6zplt0y",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3000_z6zplt0y",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3000_z6zplt0y",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_9eavto1k",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_9eavto1k",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_9eavto1k",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_9eavto1k",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_9eavto1k",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_a4kvf6zd",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_a4kvf6zd",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_a4kvf6zd",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_a4kvf6zd",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_a4kvf6zd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_hkaktryd",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_hkaktryd",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_hkaktryd",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_hkaktryd",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_hkaktryd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_l8bfzlcd",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_l8bfzlcd",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_l8bfzlcd",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_l8bfzlcd",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_l8bfzlcd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_pw4ad2xa",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_pw4ad2xa",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_pw4ad2xa",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_pw4ad2xa",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_pw4ad2xa",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_tlsvxhxc",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_tlsvxhxc",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_tlsvxhxc",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_tlsvxhxc",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_tlsvxhxc",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_u7d3nes3",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_u7d3nes3",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_u7d3nes3",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_u7d3nes3",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_u7d3nes3",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_uu4uircb",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_uu4uircb",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_uu4uircb",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_uu4uircb",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_uu4uircb",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_xkxgfxsg",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_xkxgfxsg",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_xkxgfxsg",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_xkxgfxsg",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_xkxgfxsg",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_ybtqbyk3",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_ybtqbyk3",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_ybtqbyk3",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_ybtqbyk3",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_ybtqbyk3",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_yptomml1",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_yptomml1",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_yptomml1",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_yptomml1",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_yptomml1",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3002_zyuajkzz",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3002_zyuajkzz",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3002_zyuajkzz",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3002_zyuajkzz",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3002_zyuajkzz",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz300a_ohjmifiz",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz300a_ohjmifiz",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz300a_ohjmifiz",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz300a_ohjmifiz",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz300a_ohjmifiz",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz300a_rncj86af",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz300a_rncj86af",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz300a_rncj86af",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz300a_rncj86af",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz300a_rncj86af",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz300a_vkflnsl0",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz300a_vkflnsl0",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz300a_vkflnsl0",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz300a_vkflnsl0",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz300a_vkflnsl0",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz300a_vqrs45nj",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz300a_vqrs45nj",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz300a_vqrs45nj",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz300a_vqrs45nj",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz300a_vqrs45nj",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3210_iymfxdis",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tz3210_iymfxdis",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tz3210_iymfxdis",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tz3210_iymfxdis",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tz3210_iymfxdis",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_xibaabmu",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tze204_xibaabmu",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tze204_xibaabmu",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tze204_xibaabmu",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tze204_xibaabmu",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze284_xibaabmu",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "_tze284_xibaabmu",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "_tze284_xibaabmu",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "_tze284_xibaabmu",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "_tze284_xibaabmu",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "lellki",
+        "productId": "JZ-ZB-004"
+      },
+      {
+        "manufacturerName": "lellki",
+        "productId": "TS0004"
+      },
+      {
+        "manufacturerName": "lellki",
+        "productId": "TS0004_power"
+      },
+      {
+        "manufacturerName": "lellki",
+        "productId": "TS0004_switch_module"
+      },
+      {
+        "manufacturerName": "lellki",
+        "productId": "TS0601"
+      }
     ]
   },
   "images": {

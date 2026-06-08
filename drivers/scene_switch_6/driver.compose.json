@@ -67,14 +67,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_iszegwpd",
-      "_TZ3000_iszegwpd",
-      "_TZ3000_ISZEGWPD"
-    ],
-    "productId": [
-      "TS0601_scene6"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

@@ -68,9 +68,6 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS0044"
-    ],
     "learnmode": {
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
@@ -120,12 +117,7 @@
           57344
         ]
       }
-    },
-    "manufacturerName": [
-      "_tze200_placeholder_generic",
-      "_TZE200_placeholder_generic",
-      "_TZE200_PLACEHOLDER_GENERIC"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/button_wireless_4/assets/images/small.png",

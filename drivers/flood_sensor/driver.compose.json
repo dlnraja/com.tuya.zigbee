@@ -24,10 +24,6 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "RH3001",
-      "TS0207"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,11 +43,6 @@
       "instruction": {
         "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
       }
-    },
-    "manufacturerName": [
-      "_tze200_placeholder_generic",
-      "_TZE200_placeholder_generic",
-      "_TZE200_PLACEHOLDER_GENERIC"
-    ]
+    }
   }
 }

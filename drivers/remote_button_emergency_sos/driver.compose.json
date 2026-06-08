@@ -32,16 +32,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "CK-TLSR8656-SS5-01(7000)",
-      "SNZB-01",
-      "SNZB-01M",
-      "SNZB-01P",
-      "TS0040",
-      "TS0041",
-      "WB-01",
-      "WB01"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -57,11 +47,7 @@
       "instruction": {
         "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
       }
-    },
-    "manufacturerName": [
-      "_tyzb01_qm6djpta",
-      "_TYZB01_QM6DJPTA"
-    ]
+    }
   },
   "settings": [
     {

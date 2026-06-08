@@ -22,18 +22,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_ycdqsmpd",
-      "_TZ3000_ycdqsmpd",
-      "_TZ3000_YCDQSMPD",
-      "_tze204_nklqjk97",
-      "_TZE204_nklqjk97",
-      "_TZE204_NKLQJK97"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_door"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,7 +36,25 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_ycdqsmpd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_ycdqsmpd",
+        "productId": "TS0601_door"
+      },
+      {
+        "manufacturerName": "_tze204_nklqjk97",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_nklqjk97",
+        "productId": "TS0601_door"
+      }
+    ]
   },
   "settings": [
     {

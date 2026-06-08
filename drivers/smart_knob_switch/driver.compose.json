@@ -29,21 +29,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_402vrq2i",
-      "_TZ3000_402vrq2i",
-      "_TZ3000_402VRQ2I",
-      "_tz3000_g9g2xnch",
-      "_TZ3000_g9g2xnch",
-      "_TZ3000_G9G2XNCH",
-      "_tz3000_r0o2dahu",
-      "_TZ3000_r0o2dahu",
-      "_TZ3000_R0O2DAHU"
-    ],
-    "productId": [
-      "ERS-10TZBVK-AA",
-      "TS004F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -62,7 +47,25 @@
         "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
         "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_g9g2xnch",
+        "productId": "ERS-10TZBVK-AA"
+      },
+      {
+        "manufacturerName": "_tz3000_g9g2xnch",
+        "productId": "TS004F"
+      },
+      {
+        "manufacturerName": "_tz3000_r0o2dahu",
+        "productId": "ERS-10TZBVK-AA"
+      },
+      {
+        "manufacturerName": "_tz3000_r0o2dahu",
+        "productId": "TS004F"
+      }
+    ]
   },
   "settings": [
     {

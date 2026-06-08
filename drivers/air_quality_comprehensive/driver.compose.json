@@ -28,37 +28,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_0ht8dnxj",
-      "_TZ3000_0ht8dnxj",
-      "_TZ3000_0HT8DNXJ",
-      "_tz3000_jr2atpww",
-      "_TZ3000_jr2atpww",
-      "_TZ3000_JR2ATPWW",
-      "_tz3000_kqvb8qa8",
-      "_TZ3000_kqvb8qa8",
-      "_TZ3000_KQVB8QA8",
-      "_tz3000_zhhcsbrz",
-      "_TZ3000_zhhcsbrz",
-      "_TZ3000_ZHHCSBRZ",
-      "_tze200_nnrfa68v",
-      "_TZE200_nnrfa68v",
-      "_TZE200_NNRFA68V",
-      "_tze204_nnrfa68v",
-      "_TZE204_nnrfa68v",
-      "_TZE204_NNRFA68V",
-      "_tze284_8b9zpaav",
-      "_TZE284_8b9zpaav",
-      "_TZE284_8B9ZPAAV",
-      "_tze284_it9utkro",
-      "_TZE284_it9utkro",
-      "_TZE284_IT9UTKRO"
-    ],
-    "productId": [
-      "TS0005",
-      "TS0006",
-      "TS0601"
-    ],
     "learnmode": {
       "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
       "instruction": {
@@ -73,7 +42,153 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3000_0HT8DNXJ",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_0HT8DNXJ",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_0HT8DNXJ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_JR2ATPWW",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_JR2ATPWW",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_JR2ATPWW",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_KQVB8QA8",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_KQVB8QA8",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_KQVB8QA8",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_KRAJFO4P",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_KRAJFO4P",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_KRAJFO4P",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_M7WTQKFW",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_M7WTQKFW",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_M7WTQKFW",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_TX5B5GP3",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_TX5B5GP3",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_TX5B5GP3",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_YA9EKQWP",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_YA9EKQWP",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_YA9EKQWP",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZHHCSBRZ",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZHHCSBRZ",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZ3000_ZHHCSBRZ",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_NNRFA68V",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZE200_NNRFA68V",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZE200_NNRFA68V",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_NNRFA68V",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZE204_NNRFA68V",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZE204_NNRFA68V",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_8B9ZPAAV",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZE284_8B9ZPAAV",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZE284_8B9ZPAAV",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_IT9UTKRO",
+        "productId": "TS0005"
+      },
+      {
+        "manufacturerName": "_TZE284_IT9UTKRO",
+        "productId": "TS0006"
+      },
+      {
+        "manufacturerName": "_TZE284_IT9UTKRO",
+        "productId": "TS0601"
+      }
+    ]
   },
   "settings": [
     {

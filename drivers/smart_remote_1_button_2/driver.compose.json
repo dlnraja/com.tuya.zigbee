@@ -28,9 +28,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "TS004F"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,7 +47,12 @@
         "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
       }
     },
-    "manufacturerName": ["_placeholder_needs_real_mfr"]
+    "fingerprints": [
+      {
+        "manufacturerName": "_placeholder_needs_real_mfr",
+        "productId": "TS004F"
+      }
+    ]
   },
   "settings": [
     {

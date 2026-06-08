@@ -23,46 +23,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_12sxjap4",
-      "_TZ3000_12sxjap4",
-      "_TZ3000_12SXJAP4",
-      "_tz3000_hlijwsai",
-      "_TZ3000_hlijwsai",
-      "_TZ3000_HLIJWSAI",
-      "_tz3000_keabpigv",
-      "_TZ3000_keabpigv",
-      "_TZ3000_KEABPIGV",
-      "_tz3210_0zabbfa",
-      "_TZ3210_0zabbfa",
-      "_TZ3210_0ZABBFA",
-      "_tz3210_0zabbfax",
-      "_TZ3210_0zabbfax",
-      "_TZ3210_0ZABBFAX",
-      "_tz3210_95txyzbx",
-      "_TZ3210_95txyzbx",
-      "_TZ3210_95TXYZBX",
-      "_tz3210_a5fxguxr",
-      "_TZ3210_a5fxguxr",
-      "_TZ3210_A5FXGUXR",
-      "_tz3210_eejm8dcr",
-      "_TZ3210_eejm8dcr",
-      "_TZ3210_EEJM8DCR",
-      "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI",
-      "_tz3210_sroezl0s",
-      "_TZ3210_sroezl0s",
-      "_TZ3210_SROEZL0S",
-      "_tz3210_trm3l2aw",
-      "_TZ3210_trm3l2aw",
-      "_TZ3210_TRM3L2AW",
-      "zb-cl01",
-      "ZB-CL01"
-    ],
-    "productId": [
-      "TS0601_strip_rgbw"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -82,7 +42,37 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_keabpigv",
+        "productId": "TS0601_strip_rgbw"
+      },
+      {
+        "manufacturerName": "_tz3210_0zabbfa",
+        "productId": "TS0601_strip_rgbw"
+      },
+      {
+        "manufacturerName": "_tz3210_0zabbfax",
+        "productId": "TS0601_strip_rgbw"
+      },
+      {
+        "manufacturerName": "_tz3210_95txyzbx",
+        "productId": "TS0601_strip_rgbw"
+      },
+      {
+        "manufacturerName": "_tz3210_a5fxguxr",
+        "productId": "TS0601_strip_rgbw"
+      },
+      {
+        "manufacturerName": "_tz3210_trm3l2aw",
+        "productId": "TS0601_strip_rgbw"
+      },
+      {
+        "manufacturerName": "zb-cl01",
+        "productId": "TS0601_strip_rgbw"
+      }
+    ]
   },
   "settings": [
     {

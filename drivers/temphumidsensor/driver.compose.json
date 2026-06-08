@@ -18,14 +18,6 @@
     ]
   },
   "zigbee": {
-    "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "RH3052",
-      "SNTZ003",
-      "TS0201",
-      "TY0201",
-      "ZG-227Z"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -36,12 +28,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_JNHU1LLV",
-      "_TZE200_vvmbj46n",
-      "TUYATEC-QUN7VQ14"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/temphumidsensor/assets/images/small.png",

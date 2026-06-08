@@ -40,14 +40,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3218_7fiyo3kv",
-      "_TZ3218_7fiyo3kv",
-      "_TZ3218_7FIYO3KV"
-    ],
-    "productId": [
-      "TS0601_tempswitch"
-    ],
     "endpoints": {
       "1": {
         "clusters": [

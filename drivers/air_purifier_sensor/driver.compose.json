@@ -29,16 +29,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_QPN5Q17M",
-      "_TZE200_S8GKRKXK",
-      "_TZE204_S8GKRKXK",
-      "_TZE204_s8gkrkxk",
-      "_tze200_qpn5q17m",
-      "_tze200_s8gkrkxk",
-      "_tze204_s8gkrkxk",
-      "_TZE200_7bztmfm1"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -54,8 +44,19 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0601"
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_QPN5Q17M",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE200_S8GKRKXK",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_S8GKRKXK",
+        "productId": "TS0601"
+      }
     ]
   },
   "settings": [

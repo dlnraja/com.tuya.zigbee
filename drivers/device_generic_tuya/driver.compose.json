@@ -66,20 +66,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_generic",
-      "_TZ3000_generic",
-      "_TZ3000_GENERIC",
-      "_tze200_generic",
-      "_TZE200_generic",
-      "_TZE200_GENERIC",
-      "_tze204_generic",
-      "_TZE204_generic",
-      "_TZE204_GENERIC"
-    ],
-    "productId": [
-      "TS0601"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -94,7 +80,21 @@
         "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
         "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'àce qu'il passe en mode appairage."
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_generic",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze200_generic",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tze204_generic",
+        "productId": "TS0601"
+      }
+    ]
   },
   "images": {
     "large": "/drivers/universal_zigbee/assets/images/large.png",

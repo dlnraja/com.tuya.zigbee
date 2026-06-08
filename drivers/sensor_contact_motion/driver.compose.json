@@ -392,37 +392,6 @@
     }
   ],
   "zigbee": {
-    "productId": [
-      "3300-S",
-      "3320-L",
-      "CK-TLSR8656-SS5-01(7003)",
-      "DoorWindow-Sensor-ZB3.0",
-      "DS01",
-      "E1603/E1702",
-      "Excellux",
-      "lumi.magnet.ac01",
-      "lumi.magnet.agl02",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2",
-      "MCCGQ01LM",
-      "MCCGQ11LM",
-      "MCCGQ12LM",
-      "MCCGQ14LM",
-      "MCT-340 E",
-      "q9mpfhw",
-      "RH3001",
-      "SNZB-04",
-      "SNZB-04P",
-      "SNZB-04PR2",
-      "SNZB-04R2",
-      "TRADFRI open/close remote",
-      "TS0021",
-      "TS0203",
-      "TS0207",
-      "TS0601",
-      "ZG-102Z",
-      "ZG-102ZL"
-    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -431,74 +400,123 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_2mbfxlzr",
-      "_TZ3000_3a9beq8a",
-      "_TZ3000_46t1rvdu",
-      "_TZ3000_4ugnzsli",
-      "_TZ3000_5ng23zjs",
-      "_TZ3000_7d8yme6f",
-      "_TZ3000_8yhypbo7",
-      "_TZ3000_ark8nv4y",
-      "_TZ3000_bhcpnvud",
-      "_TZ3000_decxrtwa",
-      "_TZ3000_dlhhrhs8",
-      "_TZ3000_fdxihpp7",
-      "_TZ3000_gntwytxo",
-      "_TZ3000_i9oy2rdq",
-      "_TZ3000_kycczpw8",
-      "_TZ3000_m9af2l6g",
-      "_TZ3000_mx3vgyea",
-      "_TZ3000_n2egfsli",
-      "_TZ3000_npzfdcof",
-      "_TZ3000_osu834un",
-      "_TZ3000_oxslv1c9",
-      "_TZ3000_pjb1ua0m",
-      "_TZ3000_q6a3tepg",
-      "_TZ3000_qrldbmfn",
-      "_TZ3000_qsp2pwtf",
-      "_TZ3000_rcuyhwe3",
-      "_TZ3000_rid8lzvo",
-      "_TZ3000_rmjr4ufz",
-      "_tz3000_sensor_contact_motion",
-      "_TZ3000_sensor_contact_motion",
-      "_TZ3000_SENSOR_CONTACT_MOTION",
-      "_TZ3000_skueekg3",
-      "_TZ3000_timx9ivq",
-      "_TZ3000_udyjylt7",
-      "_TZ3000_v7chgqso",
-      "_TZ3000_v7gnj3ad",
-      "_TZ3000_yfekcy3n",
-      "_TZ3210_jowhpxop",
-      "_TZE200_2m38mh6k",
-      "_TZE200_bqcqqjpb",
-      "_TZE200_f1pvdgoh",
-      "_TZE200_jfw0a4aa",
-      "_TZE200_pay2byax",
-      "_TZE200_vuwtqx0t",
-      "_TZE200_wfxuhoea",
-      "_TZE200_wzk0x7fq",
-      "_TZE204_jktmrpoj",
-      "_TZE204_nklqjk62",
-      "_TZE204_wfxuhoea",
-      "_TZE284_2baujqot",
-      "_TZE284_nklqjk62",
-      "_TZE284_vuwtqx0t",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2",
-      "tuyatec-0l6xaqmi",
-      "tuyatec-3tipnsrx",
-      "tuyatec-7qunn4gq",
-      "tuyatec-crr8qb0p",
-      "tuyatec-ip9ganvw",
-      "tuyatec-kbqf60nt",
-      "tuyatec-r9hgssol",
-      "tuyatec-rkqiqvcs",
-      "tuyatec-sb6t7ett",
-      "tuyatec-trhrga6p",
-      "visonic",
-      "zbeacon",
-      "ZBEACON"
+    "fingerprints": [
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "3300-S"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "3320-L"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "CK-TLSR8656-SS5-01(7003)"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "DoorWindow-Sensor-ZB3.0"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "DS01"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "E1603/E1702"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "Excellux"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "lumi.magnet.ac01"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "lumi.magnet.agl02"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "lumi.sensor_magnet"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "lumi.sensor_magnet.aq2"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "MCCGQ01LM"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "MCCGQ11LM"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "MCCGQ12LM"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "MCCGQ14LM"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "MCT-340 E"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "q9mpfhw"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "RH3001"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "SNZB-04"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "SNZB-04P"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "SNZB-04PR2"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "SNZB-04R2"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "TRADFRI open/close remote"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "TS0021"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "TS0203"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "TS0207"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "ZG-102Z"
+      },
+      {
+        "manufacturerName": "_tz3000_sensor_contact_motion",
+        "productId": "ZG-102ZL"
+      }
     ]
   }
 }
