@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-08T05:21:33.209Z",
-  "totalNew": 22,
+  "timestamp": "2026-06-08T07:03:47.248Z",
+  "totalNew": 21,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
   "sourceBreakdown": {
     "z2m-issue": 1,
-    "zha-issue": 21
+    "zha-issue": 20
   },
   "newFingerprints": [
     {
@@ -238,18 +238,6 @@
       "reporters": []
     },
     {
-      "fp": "_TZ3000_18ejxno0",
-      "source": "zha-issue",
-      "issue": 5017,
-      "title": "Fix some Moes light switches unresponsiveness",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5017",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
       "fp": "_TZ3000_hhiodade",
       "source": "zha-issue",
       "issue": 5017,
@@ -274,5 +262,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided fingerprints, it appears that there are multiple devices with no specific details available (such as device type, vendor, or DPs). Since there are no DPs or capabilities listed for any of the devices, it is not possible to classify them, suggest existing drivers, or map DPs to Homey capabilities.\n\nHere’s the output in markdown table format, indicating that the information is insufficient for further classification:\n\n| FP                     | Type  | Driver | DPs→Capabilities | Quirks |\n|-----------------------|-------|--------|------------------|--------|\n| _TZE284_iwn0gpzz      |       |        |                  |        |\n| _TZ3210_7vgttna6      |       |        |                  |        |\n| _TZ3210_a04acm9s      |       |        |                  |        |\n| _TZE204_3q3maeoo      |       |        |                  |        |\n| _TZE204_dsagrkvg      |       |        |                  |        |\n| _TZE284_zm8zpwas      |       |        |                  |        |\n| _TZE284_sdvbnmj5      |       |        |                  |        |\n| _TZE284_wtikaxzs      |       |        |                  |        |\n| _TZE284_gnpflcoq      |       |        |                  |        |\n| _TZE284_3urschql      |       |        |                  |        |\n| _TZE204_jktmrpoj      |       |        |                  |        |\n| _TZ3210_tgvtvdoc      |       |        |                  |        |\n| _TZ3000_tvuarksa      |       |        |                  |        |\n| _TZE284_fzo2pocs      |       |        |                  |        |\n| _TZE200_vrcfo4i0      |       |        |                  |        |\n| SONOFF                 |       |        |                  |        |\n| _TZ3000_gjrubzje      |       |        |                  |        |\n| _TZ3000_wn65ixz9      |       |        |                  |        |\n| _TZ3000_pf7swkqp      |       |        |                  |        |\n| _TZ3000_18ejxno0      |       |        |                  |        |\n| _TZ3000_hhiodade      |       |        |                  |        |\n| _TZE284_ft7qqpx3      |       |        |                  |        |\n\n### Summary\n- All devices lack specific details, making it impossible to classify or map capabilities.\n- Further information is required to proceed with the integration of these devices into the Tuya Unified Zigbee Homey app."
+  "aiPlan": "Based on the provided fingerprints, it appears that there are no specific device types, DPs, or capabilities listed for any of the devices. Therefore, I will classify them as unknown devices and suggest a generic driver for each. \n\nHere's the markdown table summarizing the findings:\n\n| FP                     | Type     | Driver                   | DPs→Capabilities | Quirks |\n|-----------------------|----------|--------------------------|-------------------|--------|\n| _TZE284_iwn0gpzz      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3210_7vgttna6      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3210_a04acm9s      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE204_3q3maeoo      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE204_dsagrkvg      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_zm8zpwas      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_sdvbnmj5      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_wtikaxzs      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_gnpflcoq      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_3urschql      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE204_jktmrpoj      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3210_tgvtvdoc      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3000_tvuarksa      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_fzo2pocs      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE200_vrcfo4i0      | Unknown  | Generic Zigbee Device    | None              | None   |\n| SONOFF                | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3000_gjrubzje      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3000_wn65ixz9      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3000_pf7swkqp      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZ3000_hhiodade      | Unknown  | Generic Zigbee Device    | None              | None   |\n| _TZE284_ft7qqpx3      | Unknown  | Generic Zigbee Device    | None              | None   |\n\n### Notes:\n- All devices are classified as \"Unknown\" due to the absence of specific device types and DPs.\n- A generic Zigbee driver is suggested for all devices until more information is available.\n- No quirks or special handling is noted due to lack of data. \n\nIf more details about the devices become available, the classifications and mappings can be updated accordingly."
 }
