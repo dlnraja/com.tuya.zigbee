@@ -140,6 +140,9 @@ Every pull request and manual update must be validated locally or in GitHub Acti
 [Layer 9: Connection Bypass]  ──► Zero direct requires of raw tuyapi (except wifi_camera)
 [Layer 10: Mains Mismatch]    ──► Strict error if mainsPowered has battery capability without pruning
 [Layer 11: Backlight String]  ──► Backlight values must be string representation ("off"/"normal")
+[Layer 12: Await-Without-Async] ──► await in non-async functions crashes Node.js v22+ (check-await-without-async.js)
+[Layer 13: Database Routing]    ──► Orphaned DB entries routing to deleted drivers (check-database-routing.js)
+[Layer 14: MFR Config Map]      ──► Multi-protocol drivers missing per-MFR config entries (check-mfr-config-completeness.js)
 ```
 
 ### Execution Verification Commands:
@@ -152,6 +155,11 @@ node .github/scripts/validate-drivers.js
 
 # 3. Comprehensive SDK3 Athom publish checks
 npx homey app validate --level publish
+
+# 4. New validation scripts (v8.3.0 — 7 bug category prevention)
+node scripts/validation/check-await-without-async.js      # Bug #7: await in non-async
+node scripts/validation/check-database-routing.js         # Bug #2: orphaned DB entries
+node scripts/validation/check-mfr-config-completeness.js  # Bug #3: missing MFR configs
 ```
 
 
@@ -164,7 +172,41 @@ npx homey app validate --level publish
 
 ---
 
-## 📊 Métriques Actuelles (2026-05-26)
+## Bidirectional Button System Fixes (v8.3.0 — 07/06/2026)
+
+Five systemic bugs were found and fixed across the physical/virtual button deduplication system:
+
+| Bug | Root Cause | Fix | Affected Drivers |
+|-----|-----------|-----|------------------|
+| **Memory leak** | `_metricsSyncInterval` not saved/cleared on deletion | Save interval ID, clear in `_cleanupPhysicalButtonDetection()` | All PhysicalButtonMixin users |
+| **Flow cards never trigger** | `getDeviceTriggerCard()` result discarded, `.trigger()` never called | Changed to `.trigger(tokens).catch(() => {})` | plug_smart, device_plug_smart, device_plug_smart_water, sensor_contact_plug |
+| **await without async** | ZCL `attrReport`/`cmd` callbacks used `await` in non-`async` functions | Added `async` keyword to all ZCL callbacks | wall_dimmer_1gang_1way + plug variants |
+| **Timer leak on removal** | `wall_dimmer_1gang_1way` missing `onDeleted()` override | Added `onDeleted()` with cleanup + `super.onDeleted()` | wall_dimmer_1gang_1way |
+| **Duplicate init calls** | `initPhysicalButtonDetection()` called twice (second with no args) | Removed duplicate call | plug_smart variants |
+
+**Validation:** Run `node scripts/validation/check-await-without-async.js` to prevent regression of Bug #3.
+
+---
+
+## Bed Sensor Per-MFR Auto-Adaptation (v8.3.0 — 07/06/2026)
+
+The bed sensor driver (`drivers/bed_sensor/device.js`) now implements a **per-MFR configuration map** (`static get MFR_CONFIGS()`) that auto-detects the protocol at runtime:
+
+- **`_TZE200_seq9cm6u`**: Tuya DP bed pressure sensor (Z2M confirmed) — DP1=contact, DP4=battery, DP12=pressure
+- **`_TZE200_sh11h1f5`**: Inferred same DP layout (not confirmed in Z2M)
+- **`_TYZB01_*` / `TUYATEC-*`**: ZCL PIR motion sensors (IAS Zone, NOT Tuya DP) — different protocol entirely
+
+Key design decisions:
+1. **DP4 excluded from `dpMappings`** — Battery DP handled exclusively by `batteryConfig` + `_handleBatteryDP()` override. When DP is in `dpMappings`, parent class processes it directly and skips the custom handler.
+2. **`_handleBatteryDP()`** maps raw 0/1 values to 10%/100% for hardware variants that send boolean battery state instead of percentage.
+3. **DP12 remapped** from `measure_luminance` to `measure_pressure` — user confirmed device has no light sensor; Z2M label is misleading.
+4. **Dynamic getters** (`dpMappings`, `sensorCapabilities`, `batteryConfig`) delegate to `_mfrConfig` which is resolved at init via `_getMFRConfig()`.
+
+**Validation:** Run `node scripts/validation/check-mfr-config-completeness.js --verbose` to verify all MFRs have config entries.
+
+---
+
+## 📊 Métriques Actuelles (2026-06-07)
 
 | Métrique | Valeur |
 |----------|--------|

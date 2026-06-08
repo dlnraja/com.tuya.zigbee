@@ -1,8 +1,8 @@
 # CRITICAL MISTAKES - Never Repeat (v8.5.0 Phoenix Sovereign + Fleetwood Gateway)
 
-> **Dernière mise à jour :** 28 Mai 2026
-> **Version :** v8.5.36
-> **Architecture :** Phoenix Sovereign + Fleetwood Gateway + UnifiedBatteryHandler + Dual-Layer Gate
+> **Dernière mise à jour :** 07 Juin 2026
+> **Version :** v8.5.37
+> **Architecture :** Phoenix Sovereign + Fleetwood Gateway + UnifiedBatteryHandler + Dual-Layer Gate + Bidirectional Button System
 
 ---
 
@@ -22,6 +22,9 @@
 | A8 | `setCapabilityValue()` DOIT être `await` | Oublier `await` cause des crashes intermittents sur valeurs rapides |
 | A9 | `console.log/error` INTERDIT dans production code | Utiliser `this.homey.log()` / `this.homey.error()` ou logger injectable |
 | A10 | Jamais `eval()` ou `new Function()` pour parsers | Sécurité. Utiliser SafeParser dispatch (voir DriverMappingLoader) |
+| A11 | `await` INTERDIT dans fonctions non-`async` | SyntaxError sur Node.js v22+ — empêche le chargement du module. TOUTE fonction contenant `await` DOIT être déclarée `async`. Valider avec `scripts/validation/check-await-without-async.js` |
+| A12 | Flow card `.trigger()` JAMAIS jeté après `getDeviceTriggerCard()` | Le résultat de `getTriggerCard(id)` DOIT être suivi de `.trigger(tokens).catch(() => {})`. Si `.trigger()` n'est pas appelé, les flows utilisateur ne se déclenchent JAMAIS. Fix: `this.homey.flow.getDeviceTriggerCard(id).trigger(tokens).catch(() => {})` |
+| A13 | Timer/interval JAMAIS non nettoyé dans `onDeleted()`/`onUninit()` | Tout `setInterval()`/`setTimeout()` DOIT être sauvegardé dans une propriété d'instance (ex: `_metricsSyncInterval`) et nettoyé via `.clear()` dans `_cleanupPhysicalButtonDetection()` / `_destroyDevice()`. Sinon = memory leak + crash après re-pair |
 
 ### B. PHOENIX SOVEREIGN v8.5.0 RULES
 
@@ -101,6 +104,8 @@
 | H3 | `isPhysical = reportingEvent AND NOT _appCommandPending` | Logique de détection |
 | H4 | `markAppCommandAll()` pour multi-gang | Firmware broadcast multi-EP |
 | H5 | Dedup: skip same capability+value within 500ms | Anti-flood physique |
+| H6 | `initPhysicalButtonDetection()` JAMAIS appelé deux fois | Le premier appel sans arguments échoue silencieusement. Appeler UNE SEULE FOIS après `super.onNodeInit()` avec les arguments corrects |
+| H7 | `_virtualPhysicalDedup` DOIT être initialisé avant tout press | Le dictionnaire `{ lastVirtualPress: {}, lastPhysicalPress: {}, dedupWindow: 1500 }` DOIT être créé dans `onNodeInit()` AVANT tout listener ZCL. Sinon = null reference crash |
 
 ### I. BSEED ZCL-ONLY RULES
 
@@ -193,6 +198,9 @@
 | O19 | **`category` DOIT être une STRING (pas un array)** — Bien que le schema homey-lib accepte `oneOf: [string, array]` et que la validation locale passe, le **serveur Athom rejette un array** et retourne Processing failed. stable-v5 utilise `"appliances"` (string). JAMAIS `["appliances"]` (array). Source: comparaison stable-v5 vs master |
 | O20 | **Champ `api` + permission `homey:manager:api` causent des delays de review** — La permission `homey:manager:api` déclenche une "thorough review" (homey-lib/lib/App.js) et peut causer des délais ou rejets. La branche stable-v5 n'a pas ce champ. Supprimer `api` et vider `permissions: []` pour aligner sur stable-v5 |
 | O21 | **`README.txt` est OBLIGATOIRE** — SDK App.js:1427 : `throw new Error('Missing file /README.txt')` — erreur bloquante lors du publish. Le fichier doit exister à la racine. Optionnel mais recommandé: `README.nl.txt`, `README.de.txt`, `README.fr.txt` pour les descriptions multilingues dans l'App Store. NE PAS exclure ces fichiers dans `.homeyignore` |
+| O22 | **Database routing validation OBLIGATOIRE** — `driver-mapping-database.json` contient des `mfr_index`, `pid_index`, et `drivers` qui pointent vers des répertoires de drivers. SI un driver est supprimé sans nettoyer la DB, les appareils sont routés vers un driver inexistant = "device not found" ou mauvais driver. Valider avec `node scripts/validation/check-database-routing.js` avant chaque commit |
+| O23 | **Per-MFR configuration maps obligatoires pour drivers multi-protocole** — Quand un même driver gère des MFRs avec des protocoles DIFFERENTS (ex: Tuya DP vs ZCL IAS Zone), utiliser `static get MFR_CONFIGS()` avec map par MFR. NE PAS mettre de DP batteries dans `dpMappings` si un `_handleBatteryDP()` override est nécessaire — le parent ignore l'override si le DP est dans dpMappings |
+| O24 | **Bidirectional button: flow cards avec `.catch()` obligatoire** — `getDeviceTriggerCard(id).trigger(tokens)` DOIT toujours être suivi de `.catch(() => {})` pour éviter les unhandled promise rejections. NE PAS stocker la référence du card sans appeler `.trigger()` |
 
 ### P. DIAGNOSTICS & SUPPORT
 
