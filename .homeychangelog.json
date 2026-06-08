@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "8.1.190": {
+    "en": "Bed sensor DP12 pressure fix, DP4 battery routing, cross-project Z2M/ZHA analysis, MFR collision fixes, button system fixes, architecture bug fixes"
+  },
   "entries": [
     {
       "version": "8.1.181",
