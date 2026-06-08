@@ -59,6 +59,79 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_1lom3myx",
+      "_TZ3000_1lom3myx",
+      "_TZ3000_1LOM3MYX",
+      "_tz3000_2dlwlvex",
+      "_TZ3000_2dlwlvex",
+      "_TZ3000_2DLWLVEX",
+      "_tz3000_5e5ptb24",
+      "_TZ3000_5e5ptb24",
+      "_TZ3000_5E5PTB24",
+      "_tz3000_aezbqpcu",
+      "_TZ3000_aezbqpcu",
+      "_TZ3000_AEZBQPCU",
+      "_tz3000_blhvsaqf",
+      "_TZ3000_blhvsaqf",
+      "_TZ3000_BLHVSAQF",
+      "_tz3000_bseed",
+      "_TZ3000_bseed",
+      "_TZ3000_BSEED",
+      "_tz3000_cdamjqm9",
+      "_TZ3000_cdamjqm9",
+      "_TZ3000_CDAMJQM9",
+      "_tz3000_e98krvvk",
+      "_TZ3000_e98krvvk",
+      "_TZ3000_E98KRVVK",
+      "_tz3000_f09j9qjb",
+      "_TZ3000_f09j9qjb",
+      "_TZ3000_F09J9QJB",
+      "_tz3000_hafsqare",
+      "_TZ3000_hafsqare",
+      "_TZ3000_HAFSQARE",
+      "_tz3000_hlwm8e96",
+      "_TZ3000_hlwm8e96",
+      "_TZ3000_HLWM8E96",
+      "_tz3000_lrgccsxm",
+      "_TZ3000_lrgccsxm",
+      "_TZ3000_LRGCCSXM",
+      "_tz3000_qcdqw8nf",
+      "_TZ3000_qcdqw8nf",
+      "_TZ3000_QCDQW8NF",
+      "_tz3000_qewo8dlz",
+      "_TZ3000_qewo8dlz",
+      "_TZ3000_QEWO8DLZ",
+      "_tz3000_thhxrept",
+      "_TZ3000_thhxrept",
+      "_TZ3000_THHXREPT",
+      "_tz3000_vjhcenzo",
+      "_TZ3000_vjhcenzo",
+      "_TZ3000_VJHCENZO",
+      "_tz3000_vvlivusi",
+      "_TZ3000_vvlivusi",
+      "_TZ3000_VVLIVUSI",
+      "_tz3000_w05exif3",
+      "_TZ3000_w05exif3",
+      "_TZ3000_W05EXIF3",
+      "_tz3000_wyhuocal",
+      "_TZ3000_wyhuocal",
+      "_TZ3000_WYHUOCAL",
+      "_tz3000_xk5udnd6",
+      "_TZ3000_xk5udnd6",
+      "_TZ3000_XK5UDND6",
+      "_tz3000_yervjnlj",
+      "_TZ3000_yervjnlj",
+      "_TZ3000_YERVJNLJ",
+      "_tz3000_ysdv91bk",
+      "_TZ3000_ysdv91bk",
+      "_TZ3000_YSDV91BK"
+    ],
+    "productId": [
+      "TS0003",
+      "TS0013",
+      "TS0043"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -95,16 +168,7 @@
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_1LOM3MYX",
-      "_tz3000_1lom3myx"
-    ],
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ]
+    }
   },
   "settings": [
     {

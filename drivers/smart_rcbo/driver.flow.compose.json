@@ -1,42 +1,4 @@
 {
-  "actions": [
-    {
-      "id": "smart_rcbo_turn_on",
-      "title": {
-        "en": "Turn on"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
-    },
-    {
-      "id": "smart_rcbo_turn_off",
-      "title": {
-        "en": "Turn off"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
-    },
-    {
-      "id": "smart_rcbo_toggle",
-      "title": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
-    }
-  ],
   "triggers": [
     {
       "id": "smart_rcbo_turned_on",
@@ -118,6 +80,44 @@
         "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "smart_rcbo_turn_on",
+      "title": {
+        "en": "Turn on"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
+    },
+    {
+      "id": "smart_rcbo_turn_off",
+      "title": {
+        "en": "Turn off"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
+    },
+    {
+      "id": "smart_rcbo_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       }
     }
   ]

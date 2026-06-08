@@ -1,5 +1,4 @@
 {
-  "id": "IrrigationController",
   "name": {
     "en": "Smart Garden Irrigation Controller",
     "it": "Programmatore per irrigazione smart"
@@ -13,6 +12,7 @@
   ],
   "capabilities": [
     "onoff",
+    "alarm_battery",
     "measure_battery"
   ],
   "capabilitiesOptions": {
@@ -31,10 +31,22 @@
     ]
   },
   "images": {
-    "small": "/{{driverAssetsPath}}/images/small.png",
-    "large": "/{{driverAssetsPath}}/images/large.png"
+    "small": "//drivers/smart_garden_irrigation_control/assets/images/small.png",
+    "large": "//drivers/smart_garden_irrigation_control/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_mq4wujmp",
+      "_TZ3000_mq4wujmp",
+      "_TZ3000_MQ4WUJMP",
+      "_tz3210_eymunffl",
+      "_TZ3210_eymunffl",
+      "_TZ3210_EYMUNFFL"
+    ],
+    "productId": [
+      "TS0049",
+      "TS0101"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -53,12 +65,31 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/smart_garden_irrigation_control/assets/icon.svg",
       "instruction": {
         "en": "Ensure the indicator light is flashing. If the indicator light isn't flashing: press and hold on/off buttons for 5 seconds until the indicator light starts to flashing.",
         "it": "Accertarsi che la spia lampeggi. Se la spia non lampeggia: tenere premuti i pulsanti di accensione/spegnimento per 5 secondi finché la spia non inizia a lampeggiare"
       }
-    },
-    "manufacturerName": []
-  }
+    }
+  },
+  "settings": [
+    {
+      "id": "batteryThreshold",
+      "type": "number",
+      "label": {
+        "en": "Battery Low Alarm Voltage Threshold (%)",
+        "it": "Soglia dell'allarme di batteria scarica "
+      },
+      "hint": {
+        "en": "This setting determines the threshold before a battery alarm is given.",
+        "it": "Quest'impostazione determina la soglia alla quale l'allarme di batteria scarica viene dato"
+      },
+      "value": 20,
+      "attr": {
+        "step": 1,
+        "min": 1,
+        "max": 99
+      }
+    }
+  ]
 }

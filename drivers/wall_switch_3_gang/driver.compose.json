@@ -1,5 +1,4 @@
 {
-  "id": "wall_switch_3_gang",
   "name": {
     "en": "3 Gang Wall Switch"
   },
@@ -14,8 +13,8 @@
     "onoff"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/wall_switch_3_gang/assets/images/large.png",
+    "small": "//drivers/wall_switch_3_gang/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,6 +23,33 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_mwmcqmtb",
+      "_TZ3000_mwmcqmtb",
+      "_TZ3000_MWMCQMTB",
+      "_tz3000_nkl1wxia",
+      "_TZ3000_nkl1wxia",
+      "_TZ3000_NKL1WXIA",
+      "_tz3000_qqrfzboe",
+      "_TZ3000_qqrfzboe",
+      "_TZ3000_QQRFZBOE",
+      "_tz3000_rrjhbuyn",
+      "_TZ3000_rrjhbuyn",
+      "_TZ3000_RRJHBUYN",
+      "_TZ3000_nsar4ife",
+      "_TYZB01_xiuox57i",
+      "_TYZB01_XIUOX57I",
+      "_TYZB01_b8cr31hp",
+      "_TYZB01_B8CR31HP",
+      "_TYZB01_mqel1whf",
+      "_TYZB01_MQEL1WHF",
+      "_TZ3000_18ejxno0"
+    ],
+    "productId": [
+      "TS0003",
+      "TS0013",
+      "TS0043"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -84,35 +110,41 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_switch_3_gang/assets/icon.svg",
       "instruction": {
         "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_tz3000_mwmcqmtb",
-        "productId": "TS0003"
-      },
-      {
-        "manufacturerName": "_tz3000_mwmcqmtb",
-        "productId": "TS0013"
-      },
-      {
-        "manufacturerName": "_tz3000_mwmcqmtb",
-        "productId": "TS0043"
-      }
-    ],
-    "manufacturerName": [
-      "_TZ3000_18ejxno0",
-      "_TZ3000_nsar4ife",
-      "_TZ3000_qqrfzboe",
-      "_TZ3000_rrjhbuyn",
-      "_TZ3000_mwmcqmtb"
-    ],
-    "productId": [
-      "TS0013"
-    ]
+    }
   },
-  "deprecated": true
+  "deprecated": true,
+  "settings": [
+    {
+      "id": "indicator_mode",
+      "type": "radio",
+      "label": {
+        "en": "Indicator mode"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Light Off"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Light on when switch turned on."
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Light on when the switch is turned off."
+          }
+        }
+      ]
+    }
+  ]
 }

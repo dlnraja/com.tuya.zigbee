@@ -238,6 +238,15 @@
     }
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_tze200_shkxsgis",
+      "_tze200_aqnazj70"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -251,8 +260,7 @@
         "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'àce que la LED clignote rapidement"
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "small": "/drivers/din_rail_meter/assets/images/small.png",
@@ -283,6 +291,5 @@
     "cumulative": true,
     "cumulativeImportedCapability": "meter_power",
     "cumulativeExportedCapability": "meter_power.exported"
-  },
-  "id": "device_air_purifier_din"
+  }
 }

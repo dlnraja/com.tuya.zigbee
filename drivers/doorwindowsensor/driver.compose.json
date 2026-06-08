@@ -1,5 +1,4 @@
 {
-  "id": "doorwindowsensor",
   "name": {
     "en": "Door & Window Sensor"
   },
@@ -12,6 +11,7 @@
   ],
   "capabilities": [
     "alarm_contact",
+    "alarm_battery",
     "measure_battery"
   ],
   "energy": {
@@ -20,41 +20,21 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/doorwindowsensor/assets/images/large.png",
+    "small": "//drivers/doorwindowsensor/assets/images/small.png"
   },
   "zigbee": {
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          3,
-          1280
-        ],
-        "bindings": [
-          1,
-          1280
-        ]
-      }
-    },
-    "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
-      "instruction": {
-        "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
-      }
-    },
-    "manufacturerName": [
-      "ZBEACON",
-      "zbeacon"
-    ],
     "productId": [
       "3300-S",
       "3320-L",
       "CK-TLSR8656-SS5-01(7003)",
-      "DS01",
       "DoorWindow-Sensor-ZB3.0",
+      "DS01",
       "E1603/E1702",
+      "lumi.magnet.ac01",
+      "lumi.magnet.agl02",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2",
       "MCCGQ01LM",
       "MCCGQ11LM",
       "MCCGQ12LM",
@@ -71,11 +51,32 @@
       "TS0207",
       "TS0601",
       "ZG-102Z",
-      "ZG-102ZL",
-      "lumi.magnet.ac01",
-      "lumi.magnet.agl02",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
+      "ZG-102ZL"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1280
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/doorwindowsensor/assets/learn.svg",
+      "instruction": {
+        "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
+      }
+    },
+    "manufacturerName": [
+      "ZBEACON",
+      "zbeacon"
     ]
-  }
+  },
+  "settings": []
 }

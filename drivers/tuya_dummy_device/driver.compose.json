@@ -1,5 +1,4 @@
 {
-  "id": "tuya_dummy_driver",
   "name": {
     "en": "Tuya Diagnostic Driver"
   },
@@ -19,10 +18,18 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/tuya_dummy_device/assets/images/large.png",
+    "small": "//drivers/tuya_dummy_device/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze20x_xxxxxxxx",
+      "_TZE20X_xxxxxxxx",
+      "_TZE20X_XXXXXXXX"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -33,14 +40,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE20X_XXXXXXXX",
-      "_tze20x_xxxxxxxx"
-    ],
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "learnmode": {
     "instruction": {

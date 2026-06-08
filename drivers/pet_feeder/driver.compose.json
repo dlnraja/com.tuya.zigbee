@@ -30,6 +30,27 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_arrw4hhc",
+      "_TZE200_arrw4hhc",
+      "_TZE200_ARRW4HHC",
+      "_tze200_nymxy9gq",
+      "_TZE200_nymxy9gq",
+      "_TZE200_NYMXY9GQ",
+      "_tze204_arrw4hhc",
+      "_TZE204_arrw4hhc",
+      "_TZE204_ARRW4HHC",
+      "_tze204_dq1mfjug",
+      "_TZE204_dq1mfjug",
+      "_TZE204_DQ1MFJUG",
+      "_tze204_nymxy9gq",
+      "_TZE204_nymxy9gq",
+      "_TZE204_NYMXY9GQ"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_feeder"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,23 +64,7 @@
         "en": "Press and hold the pairing button for 5 seconds",
         "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
       }
-    },
-    "manufacturerName": [
-      "_TZE200_ARRW4HHC",
-      "_TZE200_NYMXY9GQ",
-      "_TZE204_ARRW4HHC",
-      "_TZE204_DQ1MFJUG",
-      "_TZE204_NYMXY9GQ",
-      "_tze200_arrw4hhc",
-      "_tze200_nymxy9gq",
-      "_tze204_arrw4hhc",
-      "_tze204_dq1mfjug",
-      "_tze204_nymxy9gq"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_feeder"
-    ]
+    }
   },
   "flow": {
     "triggers": [

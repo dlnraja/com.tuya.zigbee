@@ -1,5 +1,4 @@
 {
-  "id": "soilsensor",
   "name": {
     "en": "Soil Sensor",
     "nl": "Vochtigheids Sensor"
@@ -14,11 +13,12 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/soilsensor/assets/images/large.png",
+    "small": "//drivers/soilsensor/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -31,6 +31,9 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,12 +46,15 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/soilsensor/assets/icon.svg",
       "instruction": {
         "en": "Hold the button for 5 seconds, the button will blink.",
         "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZ3000_dummy_fix"
+    ]
+  },
+  "settings": []
 }

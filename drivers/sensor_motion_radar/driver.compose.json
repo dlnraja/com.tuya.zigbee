@@ -13,7 +13,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_luminance",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -29,6 +30,11 @@
   },
   "subDevices": [],
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_ttcovulf",
+      "_TZE200_ttcovulf",
+      "_TZE200_TTCOVULF"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -48,7 +54,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "manufacturerName": []
+    "productId": [
+      "TS0601"
+    ]
   },
   "settings": [
     {

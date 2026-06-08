@@ -1,42 +1,4 @@
 {
-  "actions": [
-    {
-      "id": "valve_dual_irrigation_valve_irrigation_turn_on",
-      "title": {
-        "en": "Turn on"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
-    },
-    {
-      "id": "valve_dual_irrigation_valve_irrigation_turn_off",
-      "title": {
-        "en": "Turn off"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
-    },
-    {
-      "id": "valve_dual_irrigation_valve_irrigation_toggle",
-      "title": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
-    }
-  ],
   "triggers": [
     {
       "id": "valve_dual_irrigation_valve_irrigation_turned_on",
@@ -102,6 +64,44 @@
         "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "valve_dual_irrigation_valve_irrigation_turn_on",
+      "title": {
+        "en": "Turn on"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
+    },
+    {
+      "id": "valve_dual_irrigation_valve_irrigation_turn_off",
+      "title": {
+        "en": "Turn off"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
+    },
+    {
+      "id": "valve_dual_irrigation_valve_irrigation_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       }
     }
   ]

@@ -17,6 +17,43 @@
   ],
   "energy": {},
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_2xlvlnez",
+      "_TZ3000_2xlvlnez",
+      "_TZ3000_2XLVLNEZ",
+      "_tz3000_2xlvlnvp",
+      "_TZ3000_2xlvlnvp",
+      "_TZ3000_2XLVLNVP",
+      "_tz3000_typdpdpg",
+      "_TZ3000_typdpdpg",
+      "_TZ3000_TYPDPDPG",
+      "_tz3000_8kcqdngy",
+      "_tz3000_atp3bews",
+      "_tz3000_j4gg6d1b",
+      "_tz3000_ko6v90pg",
+      "_tz3000_qyolrmc9",
+      "_tz3000_u5u4caho",
+      "_tzb210_2dp1bpqq",
+      "_tzb210_hbejzgpj",
+      "_tzb210_wlbhvabf",
+      "_tze200_bseed2g",
+      "_tze204_bseed3g"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0111",
+      "TS011F",
+      "TS0121",
+      "TSO121",
+      "TS0115",
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
@@ -31,30 +68,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_2XLVLNEZ",
-      "_TZ3000_2XLVLNVP",
-      "_TZ3000_TYPDPDPG",
-      "_tz3000_2xlvlnez",
-      "_tz3000_2xlvlnvp",
-      "_tz3000_typdpdpg"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0111",
-      "TS0115",
-      "TS011F",
-      "TS0121",
-      "TS0601",
-      "TSO121"
-    ]
+    }
   },
   "settings": [
     {

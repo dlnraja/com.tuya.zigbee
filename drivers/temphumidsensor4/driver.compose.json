@@ -1,5 +1,4 @@
 {
-  "id": "temphumidsensor4",
   "name": {
     "en": "Temperature & Humidity Sensor",
     "sv": "Temperatur- och fuktighetssensor"
@@ -8,7 +7,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {},
   "energy": {
@@ -24,10 +24,14 @@
     "zigbee"
   ],
   "images": {
-    "small": "/{{driverAssetsPath}}/images/small.png",
-    "large": "/{{driverAssetsPath}}/images/large.png"
+    "small": "//drivers/temphumidsensor4/assets/images/small.png",
+    "large": "//drivers/temphumidsensor4/assets/images/large.png"
   },
   "zigbee": {
+    "productId": [
+      "TS0201",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,13 +54,57 @@
       }
     },
     "manufacturerName": [
+      "_tyzb01_a082h2cc",
+      "_TYZB01_A082H2CC",
       "_TZA226_ueagguan",
-      "_TYZB01_a082h2cc",
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
       "_TZ3000_bguser20",
       "_TZ3000_i8jfiezr"
-    ],
-    "productId": [
-      "TS0201"
     ]
-  }
+  },
+  "settings": [
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature offset (°C)",
+        "it": "Offset della temperatura (°C)"
+      },
+      "hint": {
+        "en": "Set a value to compensate a temperature offset.\nRange: -10 - 10, step size 0.1, \ndefault: 0 [°C]",
+        "it": "Imposta un valore per compensare lo scostamento della temperatura.\nRange: -10 - 10, step ze 0.1, \ndefault: 0 [°C]",
+        "sv": "Ange ett värde för att korrigera felaktig temperatur.\nIntervall: -10 - 10, steg om 0.1, \nstandard: 0 [°C]"
+      },
+      "value": 0,
+      "attr": {
+        "min": -10,
+        "max": 10,
+        "step": 0.1
+      }
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": {
+        "en": "Humidity offset (%)",
+        "nl": "Luchtvochtigheids compensatie (%)",
+        "it": "Offset dell'umidità (%)",
+        "sv": "Fuktighetskorrigering (%)"
+      },
+      "hint": {
+        "en": "Set a correction to compensate a humidity offset.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]",
+        "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]",
+        "it": "Imposta un valore per compensare lo scostamento dell'umidità.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]",
+        "sv": "Ange ett värde för att korrigera felaktig fuktighet.\nIntervall: -10 - 10, steg om 1, \nstandard: 0 [%]"
+      },
+      "value": 0,
+      "attr": {
+        "min": -10,
+        "max": 10,
+        "step": 1
+      }
+    }
+  ]
 }

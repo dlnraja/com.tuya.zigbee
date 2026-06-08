@@ -41,6 +41,24 @@
     "large": "/drivers/smart_heater_controller/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_dnz2zhqd",
+      "_TZE200_dnz2zhqd",
+      "_TZE200_DNZ2ZHQD",
+      "_tze200_sus6clyh",
+      "_TZE200_sus6clyh",
+      "_TZE200_SUS6CLYH",
+      "_tze204_b6wax7g0",
+      "_TZE204_b6wax7g0",
+      "_TZE204_B6WAX7G0",
+      "_tze204_c88teujp",
+      "_TZE204_c88teujp",
+      "_TZE204_C88TEUJP"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_heatctrl"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -51,21 +69,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_DNZ2ZHQD",
-      "_TZE200_SUS6CLYH",
-      "_TZE204_B6WAX7G0",
-      "_TZE204_C88TEUJP",
-      "_tze200_dnz2zhqd",
-      "_tze200_sus6clyh",
-      "_tze204_b6wax7g0",
-      "_tze204_c88teujp"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_heatctrl"
-    ]
+    }
   },
   "settings": [
     {

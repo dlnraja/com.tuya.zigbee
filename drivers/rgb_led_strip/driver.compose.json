@@ -1,11 +1,27 @@
 {
-  "id": "rgb_led_strip",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/rgb_led_strip/assets/images/large.png",
+    "small": "/drivers/rgb_led_strip/assets/images/small.png"
+  },
   "name": {
     "en": "RGB LED Strip"
   },
-  "$extends": [
-    "light_color_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 0,
@@ -13,6 +29,14 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_riwp3k79",
+      "_TZ3000_riwp3k79",
+      "_TZ3000_RIWP3K79"
+    ],
+    "productId": [
+      "TS0505A"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,20 +56,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/rgb_led_strip/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": []
+    }
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim"
-  ],
-  "images": {
-    "large": "/drivers/rgb_led_strip/assets/images/large.png",
-    "small": "/drivers/rgb_led_strip/assets/images/small.png"
-  }
+  "settings": []
 }

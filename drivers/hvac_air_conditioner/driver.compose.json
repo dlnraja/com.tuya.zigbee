@@ -101,6 +101,15 @@
     "large": "/drivers/hvac_air_conditioner/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze204_zuhszj9s",
+      "_TZE204_zuhszj9s",
+      "_TZE204_ZUHSZJ9S"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_ac"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -120,15 +129,7 @@
         "nl": "Houd de WiFi-knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie die WLAN-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
-    },
-    "manufacturerName": [
-      "_TZE204_ZUHSZJ9S",
-      "_tze204_zuhszj9s"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_ac"
-    ]
+    }
   },
   "metadata": {
     "app": {

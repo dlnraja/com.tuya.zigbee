@@ -1,5 +1,4 @@
 {
-  "id": "FingerBot",
   "name": {
     "en": "Finger Bot",
     "fr": "Robot à doigt",
@@ -17,11 +16,12 @@
   "capabilities": [
     "onoff",
     "button.push",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/fingerbot/assets/images/large.png",
+    "small": "//drivers/fingerbot/assets/images/small.png"
   },
   "energy": {
     "batteries": [
@@ -29,6 +29,34 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3210_232nryqh",
+      "_TZ3210_232nryqh",
+      "_TZ3210_232NRYQH",
+      "_tz3210_dse8ogfy",
+      "_TZ3210_DSE8OGFY",
+      "_tz3210_j4pdtz9v",
+      "_TZ3210_J4PDTZ9V",
+      "_tz3210_okbss9dy",
+      "_TZ3210_okbss9dy",
+      "_TZ3210_OKBSS9DY",
+      "_TZ3210_pwj6vuj9",
+      "_TZ3210_d3m9v8p6",
+      "_TZ3210_j4pdtz9v",
+      "_tz3210_j4pdtz9v",
+      "_TZ3210_J4PDTZ9V",
+      "_TZ3210_dse8ogfy",
+      "_tz3210_dse8ogfy",
+      "_TZ3210_DSE8OGFY"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0001_fingerbot",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS011F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,38 +70,26 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/fingerbot/assets/icon.svg",
       "instruction": {
         "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
       }
     },
-    "manufacturerName": [
-      "_TZ3210_232NRYQH",
-      "_TZ3210_232nryqh",
-      "_TZ3210_D3M9V8P6",
-      "_TZ3210_DSE8OGFY",
-      "_TZ3210_J4PDTZ9V",
-      "_TZ3210_OKBSS9DY",
-      "_TZ3210_PWJ6VUJ9",
-      "_TZ3210_d3m9v8p6",
-      "_TZ3210_dse8ogfy",
-      "_TZ3210_j4pdtz9v",
-      "_TZ3210_okbss9dy",
-      "_TZ3210_pwj6vuj9",
-      "_tz3210_232nryqh",
-      "_tz3210_d3m9v8p6",
-      "_tz3210_dse8ogfy",
-      "_tz3210_j4pdtz9v",
-      "_tz3210_okbss9dy",
-      "_tz3210_pwj6vuj9"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0001_fingerbot",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS011F"
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3210_232nryqh",
+        "productId": [
+          "TS0001",
+          "TS0001_fingerbot"
+        ]
+      },
+      {
+        "manufacturerName": "_TZ3210_okbss9dy",
+        "productId": [
+          "TS0001",
+          "TS0001_fingerbot"
+        ]
+      }
     ]
   },
   "maintenanceActions": [
@@ -83,6 +99,70 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "reverse",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse mode"
+      },
+      "hint": {
+        "en": "Enable reverse operation mode."
+      }
+    },
+    {
+      "id": "lower_limit",
+      "type": "number",
+      "label": {
+        "en": "Lower movement limit (%)"
+      },
+      "hint": {
+        "en": "Set the lower limit of the Finger Bot's movement (in percentage)."
+      },
+      "value": 50,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "id": "upper_limit",
+      "type": "number",
+      "label": {
+        "en": "Upper movement limit (%)"
+      },
+      "hint": {
+        "en": "Set the upper limit of the Finger Bot's movement (in percentage)."
+      },
+      "value": 100,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    {
+      "id": "delay",
+      "type": "number",
+      "label": {
+        "en": "Delay (seconds)"
+      },
+      "hint": {
+        "en": "Set the sustain time for the Finger Bot (in seconds)."
+      },
+      "value": 1,
+      "min": 0,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "id": "touch",
+      "type": "checkbox",
+      "label": {
+        "en": "Touch control"
+      },
+      "hint": {
+        "en": "Enable touch control for the Finger Bot."
       }
     }
   ]

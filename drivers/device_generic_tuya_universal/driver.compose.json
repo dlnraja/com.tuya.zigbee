@@ -14,7 +14,8 @@
   "capabilities": [
     "measure_battery",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -41,6 +42,58 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "aqara",
+      "AQARA",
+      "aubess",
+      "AUBESS",
+      "avatto",
+      "AVATTO",
+      "blitzwolf",
+      "BLITZWOLF",
+      "bw-",
+      "BW-",
+      "girier",
+      "GIRIER",
+      "heiman",
+      "HEIMAN",
+      "ikea",
+      "IKEA",
+      "lidl",
+      "LIDL",
+      "lonsonho",
+      "LONSONHO",
+      "lumi",
+      "LUMI",
+      "nas-",
+      "NAS-",
+      "neo",
+      "NEO",
+      "philips",
+      "PHILIPS",
+      "signify",
+      "SIGNIFY",
+      "silvercrest",
+      "SILVERCREST",
+      "smartthings",
+      "SMARTTHINGS",
+      "tradfri",
+      "TRADFRI",
+      "tuya",
+      "TUYA",
+      "woox",
+      "WOOX",
+      "xiaomi",
+      "XIAOMI",
+      "zemismart",
+      "ZEMISMART",
+      "_TZ3000_kxaow5ki",
+      "_TZ3000_tzvbimpq"
+    ],
+    "productId": [
+      "TS0203",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,57 +108,7 @@
         "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
         "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
       }
-    },
-    "manufacturerName": [
-      "AQARA",
-      "AUBESS",
-      "AVATTO",
-      "BLITZWOLF",
-      "BW-",
-      "GIRIER",
-      "HEIMAN",
-      "IKEA",
-      "LIDL",
-      "LONSONHO",
-      "LUMI",
-      "NAS-",
-      "NEO",
-      "PHILIPS",
-      "SIGNIFY",
-      "SILVERCREST",
-      "SMARTTHINGS",
-      "TRADFRI",
-      "TUYA",
-      "WOOX",
-      "XIAOMI",
-      "ZEMISMART",
-      "aqara",
-      "aubess",
-      "avatto",
-      "blitzwolf",
-      "bw-",
-      "girier",
-      "heiman",
-      "ikea",
-      "lidl",
-      "lonsonho",
-      "lumi",
-      "nas-",
-      "neo",
-      "philips",
-      "signify",
-      "silvercrest",
-      "smartthings",
-      "tradfri",
-      "tuya",
-      "woox",
-      "xiaomi",
-      "zemismart"
-    ],
-    "productId": [
-      "TS0203",
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {

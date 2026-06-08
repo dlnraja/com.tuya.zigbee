@@ -10,7 +10,8 @@
     "alarm_motion",
     "measure_battery",
     "alarm_generic",
-    "onoff"
+    "onoff",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -22,26 +23,14 @@
     }
   },
   "zigbee": {
-    "learnmode": {
-      "image": "/drivers/siren/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-      }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ]
-      }
-    },
     "manufacturerName": [
       "_TYST11_D0YU2XGI",
+      "_TYST11_d0yu2xgi",
       "_TYZB01_B6EAXDLH",
       "_TYZB01_BNGGSFSF",
+      "_TYZB01_sbpc1zrb",
       "_TZ3000_8R5U7WKH",
+      "_TZ3000_8r5u7wkh",
       "_TZ3000_AB7HFUIL",
       "_TZ3000_AOGB3S2T",
       "_TZ3000_D0YL2HSY",
@@ -56,8 +45,44 @@
       "_TZ3000_T13N5ZO0",
       "_TZ3000_T6JSGIZP",
       "_TZ3000_XNH7CQTE",
+      "_TZ3000_ab7hfuil",
+      "_TZ3000_aogb3s2t",
+      "_TZ3000_d0yl2hsy",
+      "_TZ3000_d0yu2xgi",
+      "_TZ3000_fabws1w2",
+      "_TZ3000_fwfwifin",
+      "_TZ3000_fwuelqs5",
+      "_TZ3000_hdr3nfei",
+      "_TZ3000_hv9cqcci",
+      "_TZ3000_kfpsbnoi",
+      "_TZ3000_rkkr4ooa",
+      "_TZ3000_t13n5zo0",
+      "_TZ3000_t6jsgizp",
+      "_TZ3000_xnh7cqte",
+      "_TZE200_NLRFGPNY",
+      "_TZE200_T1BLO2BJ",
       "_TZE200_WNVHLCGL",
+      "_TZE200_ZNZS7YAW",
+      "_TZE200_nlrfgpny",
+      "_TZE200_t1blo2bj",
+      "_TZE200_wnvhlcgl",
+      "_TZE200_znzs7yaw",
       "_TZE204_5SBEBBZS",
+      "_TZE204_5sbebbzs",
+      "_TZE204_EX3RCDHA",
+      "_TZE204_NLRFGPNY",
+      "_TZE204_Q76RTOA9",
+      "_TZE204_T1BLO2BJ",
+      "_TZE204_VMCGJA59",
+      "_TZE204_ex3rcdha",
+      "_TZE204_nlrfgpny",
+      "_TZE204_q76rtoa9",
+      "_TZE204_t1blo2bj",
+      "_TZE204_vmcgja59",
+      "_TZE284_NLRFGPNY",
+      "_TZE284_VMCGJA59",
+      "_TZE284_nlrfgpny",
+      "_TZE284_vmcgja59",
       "_tyst11_d0yu2xgi",
       "_tyzb01_b6eaxdlh",
       "_tyzb01_bnggsfsf",
@@ -76,238 +101,265 @@
       "_tz3000_t13n5zo0",
       "_tz3000_t6jsgizp",
       "_tz3000_xnh7cqte",
+      "_tze200_nlrfgpny",
+      "_tze200_t1blo2bj",
       "_tze200_wnvhlcgl",
-      "_tze204_5sbebbzs"
+      "_tze200_znzs7yaw",
+      "_tze204_5sbebbzs",
+      "_tze204_ex3rcdha",
+      "_tze204_nlrfgpny",
+      "_tze204_q76rtoa9",
+      "_tze204_t1blo2bj",
+      "_tze204_vmcgja59",
+      "_tze284_nlrfgpny",
+      "_tze284_vmcgja59"
     ],
     "productId": [
       "TS0216",
       "TS0219",
       "TS0601"
-    ]
+    ],
+    "learnmode": {
+      "image": "/drivers/siren/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   },
   "settings": [
     {
-      "id": "power_source",
+      "id": "alarmvolume",
       "type": "dropdown",
       "label": {
-        "en": "Power Source",
-        "fr": "Source d'Alimentation"
+        "en": "Alarm volume",
+        "nl": "Alarm volume",
+        "de": "Alarm Lautstärke"
       },
-      "value": "auto",
+      "value": "0",
+      "hint": {
+        "en": "Set the volume of the Alarm sound",
+        "nl": "Aanpassen volume van Alarm geluid",
+        "de": "Einstellen der Lautstärke des Alarmtons"
+      },
       "values": [
         {
-          "id": "auto",
+          "id": "2",
           "label": {
-            "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "en": "Low",
+            "nl": "Laag",
+            "de": "Niedrig"
           }
         },
         {
-          "id": "ac",
+          "id": "1",
           "label": {
-            "en": "AC Powered",
-            "fr": "Alimentation Secteur"
+            "en": "Midle",
+            "nl": "Middelmatig",
+            "de": "Mittel"
           }
         },
         {
-          "id": "dc",
+          "id": "0",
           "label": {
-            "en": "DC Powered",
-            "fr": "Alimentation DC"
-          }
-        },
-        {
-          "id": "battery",
-          "label": {
-            "en": "Battery Powered",
-            "fr": "Sur Batterie"
+            "en": "High (default)",
+            "nl": "Hoog (standaard)",
+            "de": "Hoch (Standard)"
           }
         }
-      ],
-      "hint": {
-        "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
-      }
+      ]
     },
     {
-      "id": "battery_type",
-      "type": "dropdown",
-      "label": {
-        "en": "Battery Type",
-        "fr": "Type de Batterie"
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto Detect",
-            "fr": "Détection Automatique"
-          }
-        },
-        {
-          "id": "CR2032",
-          "label": {
-            "en": "CR2032",
-            "fr": "CR2032 (Pile Bouton 3V)"
-          }
-        },
-        {
-          "id": "CR2450",
-          "label": {
-            "en": "CR2450",
-            "fr": "CR2450 (Pile Bouton 3V)"
-          }
-        },
-        {
-          "id": "AAA",
-          "label": {
-            "en": "AAA",
-            "fr": "AAA"
-          }
-        },
-        {
-          "id": "AA",
-          "label": {
-            "en": "AA",
-            "fr": "AA"
-          }
-        },
-        {
-          "id": "CR123A",
-          "label": {
-            "en": "CR123A",
-            "fr": "CR123A"
-          }
-        }
-      ],
-      "hint": {
-        "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
-      }
-    },
-    {
-      "id": "battery_low_threshold",
+      "id": "alarmsoundtime",
       "type": "number",
-      "label": {
-        "en": "Low Battery Threshold",
-        "fr": "Seuil Batterie Faible (%)"
-      },
-      "value": 20,
-      "min": 0,
-      "max": 50,
-      "step": 5,
-      "hint": {
-        "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
-      }
-    },
-    {
-      "id": "battery_critical_threshold",
-      "type": "number",
-      "label": {
-        "en": "Critical Battery Threshold",
-        "fr": "Seuil Batterie Critique (%)"
-      },
-      "value": 10,
-      "min": 0,
-      "max": 30,
-      "step": 5,
-      "hint": {
-        "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
-      }
-    },
-    {
-      "id": "enable_battery_notifications",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Battery Notifications",
-        "fr": "Activer Notifications Batterie"
-      },
-      "value": true,
-      "hint": {
-        "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
-      }
-    },
-    {
-      "id": "battery_report_interval",
-      "type": "number",
-      "label": {
-        "en": "Battery Report Interval",
-        "fr": "Intervalle Rapport Batterie (heures)"
-      },
-      "value": 24,
+      "value": 120,
       "min": 1,
-      "max": 168,
+      "max": 65535,
       "step": 1,
+      "units": {
+        "en": "Seconds",
+        "de": "Sekunden",
+        "nl": "Seconden"
+      },
+      "label": {
+        "en": "Alarm duration time",
+        "nl": "Alarm duratie",
+        "de": "Alarmdauer"
+      },
       "hint": {
-        "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "en": "Set the duration of the time the siren will sound its alarm music",
+        "nl": "Pas de tijd aan dat de sirene zijn alarm geluid laat horen",
+        "de": "Stellt die Zeitdauer ein, während der die Sirene Alarmton erklingt"
       }
     },
     {
-      "id": "optimization_mode",
+      "id": "alarmtune",
       "type": "dropdown",
       "label": {
-        "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "en": "Alarm sound tune",
+        "nl": "Melodie/geluid alarm",
+        "de": "Alarm Melodie"
       },
-      "value": "balanced",
+      "value": "1",
+      "hint": {
+        "en": "Choose the tune of the alarm sound",
+        "nl": "Kies de melodie die gebruikt wordt bij alarm",
+        "de": "Wählt die Melodie des Alarmtons aus."
+      },
       "values": [
         {
-          "id": "performance",
+          "id": "0",
           "label": {
-            "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "en": "Doorbell Chime",
+            "nl": "Doorbell Chime",
+            "de": "Doorbell Chime"
           }
         },
         {
-          "id": "balanced",
+          "id": "1",
           "label": {
-            "en": "Balanced",
-            "fr": "Équilibré"
+            "en": "For Elise (default)",
+            "nl": "Fur Elise (standaard)",
+            "de": "Fur Elise (Standard)"
           }
         },
         {
-          "id": "power_saving",
+          "id": "2",
           "label": {
-            "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "en": "Westminster Chimes",
+            "nl": "Westminster Chimes",
+            "de": "Westminster Chimes"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "Fast double door bell",
+            "nl": "Fast double door bell",
+            "de": "Fast double door bell"
+          }
+        },
+        {
+          "id": "4",
+          "label": {
+            "en": "William Tell Overture",
+            "nl": "William Tell Overture",
+            "de": "William Tell Overture"
+          }
+        },
+        {
+          "id": "5",
+          "label": {
+            "en": "Turkish March",
+            "nl": "Turkish March",
+            "de": "Turkish March"
+          }
+        },
+        {
+          "id": "6",
+          "label": {
+            "en": "Security Alarm",
+            "nl": "Security Alarm",
+            "de": "Security Alarm"
+          }
+        },
+        {
+          "id": "7",
+          "label": {
+            "en": "Chemical Spill Alert",
+            "nl": "Chemical Spill Alert",
+            "de": "Chemical Spill Alert"
+          }
+        },
+        {
+          "id": "8",
+          "label": {
+            "en": "Piercing Alarm Clock",
+            "nl": "Piercing Alarm Clock",
+            "de": "Piercing Alarm Clock"
+          }
+        },
+        {
+          "id": "9",
+          "label": {
+            "en": "Smoke Alarm",
+            "nl": "Smoke Alarm",
+            "de": "Smoke Alarm"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "Dog Barking",
+            "nl": "Dog Barking",
+            "de": "Dog Barking"
+          }
+        },
+        {
+          "id": "11",
+          "label": {
+            "en": "Police Siren",
+            "nl": "Police Siren",
+            "de": "Police Siren"
+          }
+        },
+        {
+          "id": "12",
+          "label": {
+            "en": "Doorbell Chime (reverb)",
+            "nl": "Doorbell Chime (reverb)",
+            "de": "Doorbell Chime (reverb)"
+          }
+        },
+        {
+          "id": "13",
+          "label": {
+            "en": "Mechanical Telephone",
+            "nl": "Mechanical Telephone",
+            "de": "Mechanical Telephone"
+          }
+        },
+        {
+          "id": "14",
+          "label": {
+            "en": "Fire/Ambulance",
+            "nl": "Fire/Ambulance",
+            "de": "Fire/Ambulance"
+          }
+        },
+        {
+          "id": "15",
+          "label": {
+            "en": "3/1 Elevator",
+            "nl": "3/1 Elevator",
+            "de": "3/1 Elevator"
+          }
+        },
+        {
+          "id": "16",
+          "label": {
+            "en": "Buzzing Alarm Clock",
+            "nl": "Buzzing Alarm Clock",
+            "de": "Buzzing Alarm Clock"
+          }
+        },
+        {
+          "id": "17",
+          "label": {
+            "en": "School Bell",
+            "nl": "School Bell",
+            "de": "School Bell"
           }
         }
-      ],
-      "hint": {
-        "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
-      }
-    },
-    {
-      "id": "enable_power_estimation",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Power Estimation",
-        "fr": "Activer Estimation Puissance"
-      },
-      "value": true,
-      "hint": {
-        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
-      }
+      ]
     }
   ],
   "images": {

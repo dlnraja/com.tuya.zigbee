@@ -14,7 +14,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
@@ -26,6 +27,18 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3210_invesber",
+      "_TZ3210_invesber",
+      "_TZ3210_INVESBER",
+      "_tz3000_dl4pxp1r",
+      "_tz3000_qqjaziws",
+      "_tz3000_i8l0nqdu",
+      "_tz3000_ukuvyhaa",
+      "_tz3000_utagpnzs",
+      "_tz3000_5bsf8vaj",
+      "_TZ3210_EEJM8DCR"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,13 +59,15 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
       }
     },
+    "productId": [
+      "TS0505B"
+    ],
     "capabilities": {
       "light_color_temp": {
         "cluster": "colorControl",
         "attr": "colorTemperature"
       }
-    },
-    "manufacturerName": []
+    }
   },
   "settings": [
     {
@@ -671,6 +686,5 @@
     "homey": {
       "natural_light": true
     }
-  },
-  "id": "light_bulb_rgb_led"
+  }
 }

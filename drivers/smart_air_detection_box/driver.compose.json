@@ -1,5 +1,4 @@
 {
-  "id": "smart_air_detection_box",
   "name": {
     "en": "Smart Air Detection Box"
   },
@@ -22,10 +21,17 @@
     }
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/smart_air_detection_box/assets/images/large.png",
+    "small": "//drivers/smart_air_detection_box/assets/images/small.png"
   },
   "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier",
+      "TS0601_co2",
+      "TS0005",
+      "TS0006"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,11 +48,39 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/smart_air_detection_box/assets/icon.svg",
       "instruction": {
         "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZ3000_dummy_fix",
+      "_TZ3210_guijtl8k",
+      "_TZ3210_hquixjeg",
+      "_TZE200_7bztmfm1",
+      "_TZE200_rbbx5mfq",
+      "_TZE204_7bztmfm1",
+      "_TZE204_ogkdpgy2",
+      "_TZE204_rbbx5mfq",
+      "_tze200_8ikyd92m",
+      "_tze200_ywagc4rj",
+      "_tze204_8ikyd92m",
+      "_tze204_a8sdabtg",
+      "_tze204_ywagc4rj",
+      "_tze204_zl1kmjqx",
+      "_TZE284_8b9zpaav",
+      "_TZE284_it9utkro",
+      "_tz3000_0ht8dnxj",
+      "_tz3000_jr2atpww",
+      "_tz3000_kqvb8qa8",
+      "_tz3000_krajfo4p",
+      "_tz3000_m7wtqkfw",
+      "_tz3000_tx5b5gp3",
+      "_tz3000_ya9ekqwp",
+      "_tz3000_zhhcsbrz",
+      "_tze200_nnrfa68v",
+      "_tze204_nnrfa68v"
+    ]
+  },
+  "settings": []
 }

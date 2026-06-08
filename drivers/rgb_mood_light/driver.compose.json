@@ -1,11 +1,28 @@
 {
-  "id": "rgb_mood_light",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/rgb_mood_light/assets/images/large.png",
+    "small": "/drivers/rgb_mood_light/assets/images/small.png"
+  },
   "name": {
     "en": "RGB Mood Light"
   },
-  "$extends": [
-    "light_color_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 8,
@@ -13,6 +30,10 @@
     }
   },
   "zigbee": {
+    "productId": [
+      "TS0505A",
+      "TS0505B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,21 +53,14 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/rgb_mood_light/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_dummy_fix"
+    ]
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature"
-  ],
-  "images": {
-    "large": "/drivers/rgb_mood_light/assets/images/large.png",
-    "small": "/drivers/rgb_mood_light/assets/images/small.png"
-  }
+  "settings": []
 }

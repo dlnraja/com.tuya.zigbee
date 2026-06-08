@@ -14,7 +14,8 @@
     "measure_battery",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -26,6 +27,10 @@
     "mains": true
   },
   "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
@@ -41,24 +46,13 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_ZION52EF",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_ZION52EF",
-        "productId": "TS0601_air_purifier"
-      }
-    ],
     "manufacturerName": [
-      "_TZE200_9xfjixap",
+      "_TZ3000_dummy_fix",
+      "_TZE200_ZION52EF",
+      "_TZE200_hue3yfsn",
       "_TZE200_ye5jkfsb",
       "_TZE200_zion52ef",
-      "_TZE200_hue3yfsn"
-    ],
-    "productId": [
-      "TS0601"
+      "_tze200_zion52ef"
     ]
   },
   "settings": [
@@ -513,6 +507,5 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  },
-  "id": "device_air_purifier_radiator"
+  }
 }

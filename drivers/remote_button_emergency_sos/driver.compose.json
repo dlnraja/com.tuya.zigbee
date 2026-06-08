@@ -1,5 +1,4 @@
 {
-  "id": "smart_remote_4_buttons",
   "name": {
     "en": "Remote Button Emergency Sos",
     "nl": "Afstandsbediening noodknop SOS",
@@ -20,7 +19,8 @@
     "button.3",
     "button.4",
     "measure_battery",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -32,6 +32,16 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "CK-TLSR8656-SS5-01(7000)",
+      "SNZB-01",
+      "SNZB-01M",
+      "SNZB-01P",
+      "TS0040",
+      "TS0041",
+      "WB-01",
+      "WB01"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,12 +53,15 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/remote_button_emergency_sos/assets/icon.svg",
       "instruction": {
         "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tyzb01_qm6djpta",
+      "_TYZB01_QM6DJPTA"
+    ]
   },
   "settings": [
     {

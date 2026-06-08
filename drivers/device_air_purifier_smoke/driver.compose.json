@@ -15,7 +15,8 @@
     "alarm_generic",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -43,7 +44,14 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'àce que la LED clignote."
       }
     },
-    "manufacturerName": []
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ],
+    "manufacturerName": [
+      "_TZ3000_dummy_fix",
+      "_TZE200_rjxqso4a"
+    ]
   },
   "settings": [
     {
@@ -479,6 +487,5 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  },
-  "id": "device_air_purifier_smoke"
+  }
 }

@@ -1,68 +1,4 @@
 {
-  "actions": [
-    {
-      "id": "led_controller_rgb_turn_on",
-      "title": {
-        "en": "Turn on"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
-    },
-    {
-      "id": "led_controller_rgb_turn_off",
-      "title": {
-        "en": "Turn off"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
-    },
-    {
-      "id": "led_controller_rgb_toggle",
-      "title": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
-    },
-    {
-      "id": "led_controller_rgb_set_brightness",
-      "title": {
-        "en": "Set brightness",
-        "fr": "Régler luminosité",
-        "nl": "Helderheid instellen",
-        "de": "Helligkeit einstellen"
-      },
-      "args": [
-        {
-          "name": "brightness",
-          "type": "range",
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "label": "%",
-          "labelDecimals": 0
-        }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness [[brightness]]",
-        "fr": "Régler luminosité [[brightness]]",
-        "nl": "Helderheid instellen [[brightness]]",
-        "de": "Helligkeit einstellen [[brightness]]"
-      }
-    }
-  ],
   "triggers": [
     {
       "id": "led_controller_rgb_turned_on",
@@ -128,6 +64,70 @@
         "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "led_controller_rgb_turn_on",
+      "title": {
+        "en": "Turn on"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
+    },
+    {
+      "id": "led_controller_rgb_turn_off",
+      "title": {
+        "en": "Turn off"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
+    },
+    {
+      "id": "led_controller_rgb_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "led_controller_rgb_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]",
+        "nl": "Helderheid instellen [[brightness]]",
+        "de": "Helligkeit einstellen [[brightness]]"
       }
     }
   ]

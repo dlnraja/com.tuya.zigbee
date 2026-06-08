@@ -40,6 +40,14 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3218_7fiyo3kv",
+      "_TZ3218_7fiyo3kv",
+      "_TZ3218_7FIYO3KV"
+    ],
+    "productId": [
+      "TS0601_tempswitch"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -58,8 +66,7 @@
         "de": "Schalten Sie 5 mal schnell (innerhalb von 5 Sekunden) bis die LED schnell blinkt.",
         "fr": "Basculez l'interrupteur 5 fois rapidement (en 5 secondes) jusqu'à ce que la LED clignote rapidement."
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "small": "/drivers/switch_temp_sensor/assets/images/small.png",

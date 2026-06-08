@@ -51,6 +51,35 @@
     "large": "/drivers/curtain_motor/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_8kzqqzu4",
+      "_TZ3000_8kzqqzu4",
+      "_TZ3000_8KZQQZU4",
+      "_tz3000_ctbafvhm",
+      "_TZ3000_ctbafvhm",
+      "_TZ3000_CTBAFVHM",
+      "_tz3000_dbpmpco1",
+      "_TZ3000_dbpmpco1",
+      "_TZ3000_DBPMPCO1",
+      "_tz3000_dph3rpss",
+      "_TZ3000_dph3rpss",
+      "_TZ3000_DPH3RPSS",
+      "_tz3000_fvhunhxb",
+      "_TZ3000_fvhunhxb",
+      "_TZ3000_FVHUNHXB",
+      "_tz3000_ltiqubue",
+      "_TZ3000_ltiqubue",
+      "_TZ3000_LTIQUBUE",
+      "_tz3000_qa8s8vca",
+      "_TZ3000_qa8s8vca",
+      "_TZ3000_QA8S8VCA",
+      "_tz3000_qqdbccb3",
+      "_TZ3000_qqdbccb3",
+      "_TZ3000_QQDBCCB3"
+    ],
+    "productId": [
+      "TS130F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,28 +95,7 @@
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_8KZQQZU4",
-      "_TZ3000_CTBAFVHM",
-      "_TZ3000_DBPMPCO1",
-      "_TZ3000_DPH3RPSS",
-      "_TZ3000_FVHUNHXB",
-      "_TZ3000_LTIQUBUE",
-      "_TZ3000_QA8S8VCA",
-      "_TZ3000_QQDBCCB3",
-      "_tz3000_8kzqqzu4",
-      "_tz3000_ctbafvhm",
-      "_tz3000_dbpmpco1",
-      "_tz3000_dph3rpss",
-      "_tz3000_fvhunhxb",
-      "_tz3000_ltiqubue",
-      "_tz3000_qa8s8vca",
-      "_tz3000_qqdbccb3"
-    ],
-    "productId": [
-      "TS130F"
-    ]
+    }
   },
   "settings": [
     {

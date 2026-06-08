@@ -12,7 +12,8 @@
     "measure_battery",
     "windowcoverings_set",
     "windowcoverings_tilt_set",
-    "dim"
+    "dim",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -27,6 +28,10 @@
     }
   },
   "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0601_shutter"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,7 +51,12 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_TZE204_GUVC7PDY"
+    ]
   },
   "settings": [
     {

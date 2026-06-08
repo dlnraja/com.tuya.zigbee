@@ -1,5 +1,4 @@
 {
-  "id": "smart_knob_switch",
   "name": {
     "en": "Smart Knob Switch",
     "sv": "Smart knappdimmer",
@@ -17,7 +16,8 @@
   ],
   "capabilities": [
     "dim",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/smart_knob_switch/assets/images/large.png",
@@ -29,6 +29,24 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_402vrq2i",
+      "_TZ3000_402vrq2i",
+      "_TZ3000_402VRQ2I",
+      "_tz3000_g9g2xnch",
+      "_TZ3000_g9g2xnch",
+      "_TZ3000_G9G2XNCH",
+      "_tz3000_r0o2dahu",
+      "_TZ3000_r0o2dahu",
+      "_TZ3000_R0O2DAHU",
+      "_tz3000_uri7ber7",
+      "_TZ3000_uri7ber7",
+      "_TZ3000_URI7BER7"
+    ],
+    "productId": [
+      "ERS-10TZBVK-AA",
+      "TS004F"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,61 +60,14 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/smart_knob_switch/assets/icon.svg",
       "instruction": {
         "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
         "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_G9G2XNCH",
-      "_TZ3000_R0O2DAHU",
-      "_tz3000_g9g2xnch",
-      "_tz3000_r0o2dahu"
-    ],
-    "productId": [
-      "ERS-10TZBVK-AA",
-      "TS004F"
-    ]
-  },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
     }
-  ],
+  },
+  "settings": [],
   "maintenanceActions": [
     {
       "id": "ota_check",

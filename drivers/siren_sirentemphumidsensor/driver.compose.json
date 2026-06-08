@@ -1,5 +1,4 @@
 {
-  "id": "sirentemphumidsensor",
   "name": {
     "en": "Siren Sirentemphumidsensor",
     "nl": "Sirene Sirenetemphumidsensor",
@@ -14,7 +13,8 @@
     "measure_humidity",
     "alarm_generic",
     "alarm_motion",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -34,10 +34,18 @@
     "zigbee"
   ],
   "images": {
-    "small": "/{{driverAssetsPath}}/images/small.png",
-    "large": "/{{driverAssetsPath}}/images/large.png"
+    "small": "//drivers/siren_sirentemphumidsensor/assets/images/small.png",
+    "large": "//drivers/siren_sirentemphumidsensor/assets/images/large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_d0yu2xgi",
+      "_TZE200_d0yu2xgi",
+      "_TZE200_D0YU2XGI"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -57,8 +65,7 @@
       "instruction": {
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
       }
-    },
-    "manufacturerName": []
+    }
   },
   "maintenanceActions": [
     {

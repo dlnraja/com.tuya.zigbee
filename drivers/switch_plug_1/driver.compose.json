@@ -12,6 +12,14 @@
     "meter_power"
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_typdpbpg",
+      "_TZ3000_typdpbpg",
+      "_TZ3000_TYPDPBPG"
+    ],
+    "productId": [
+      "TS0601_sp1"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -25,8 +33,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": []
+    }
   },
   "images": {
     "small": "/drivers/switch_plug_1/assets/images/small.png",

@@ -16,7 +16,8 @@
     "button.2",
     "button.3",
     "button.4",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -71,6 +72,13 @@
     }
   },
   "zigbee": {
+    "productId": [
+      "SNZB-01M",
+      "TS0014",
+      "TS0044",
+      "TS004F",
+      "TS0726"
+    ],
     "learnmode": {
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
@@ -121,21 +129,25 @@
         ]
       }
     },
+    "fingerprints": [],
     "manufacturerName": [
-      "_TZ3000_ABRSVSOU",
+      "_TZ3000_BI6LPSEW",
       "_TZ3000_FVH3PJAZ",
       "_TZ3000_WKAI4GA5",
+      "_TZ3000_bi6lpsew",
+      "_TZ3000_ee8nrt2l",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_u3nv1jwk",
+      "_TZ3000_wkai4ga5",
+      "_TZ3002_PZAO9LS1",
+      "_TZ3002_pzao9ls1",
+      "_tz3000_bi6lpsew",
+      "_tz3000_fvh3pjaz",
+      "_tz3000_wkai4ga5",
+      "_tz3002_pzao9ls1",
       "_TZ3000_abrsvsou",
       "_tz3000_abrsvsou",
-      "_tz3000_fvh3pjaz",
-      "_tz3000_wkai4ga5"
-    ],
-    "productId": [
-      "SNZB-01M",
-      "TS0014",
-      "TS0044",
-      "TS004F",
-      "TS0726"
+      "_TZ3000_ABRSVSOU"
     ]
   },
   "images": {

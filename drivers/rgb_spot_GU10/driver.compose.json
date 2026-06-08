@@ -1,11 +1,27 @@
 {
-  "id": "rgb_spot_GU10",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/rgb_spot_GU10/assets/images/large.png",
+    "small": "/drivers/rgb_spot_GU10/assets/images/small.png"
+  },
   "name": {
     "en": "RGB Spot GU10"
   },
-  "$extends": [
-    "light_color_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 5,
@@ -13,6 +29,10 @@
     }
   },
   "zigbee": {
+    "productId": [
+      "TS0505A",
+      "TS0505B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,20 +52,14 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/rgb_spot_GU10/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_dummy_fix"
+    ]
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim"
-  ],
-  "images": {
-    "large": "/drivers/rgb_spot_GU10/assets/images/large.png",
-    "small": "/drivers/rgb_spot_GU10/assets/images/small.png"
-  }
+  "settings": []
 }

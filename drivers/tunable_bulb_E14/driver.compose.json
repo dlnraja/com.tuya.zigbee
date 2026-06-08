@@ -1,11 +1,28 @@
 {
-  "id": "tunable_bulb_E14",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/tunable_bulb_E14/assets/images/large.png",
+    "small": "/drivers/tunable_bulb_E14/assets/images/small.png"
+  },
   "name": {
     "en": "Tunable Bulb E14"
   },
-  "$extends": [
-    "light_white_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 7,
@@ -13,6 +30,14 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_oborybow",
+      "_TZ3000_oborybow",
+      "_TZ3000_OBORYBOW"
+    ],
+    "productId": [
+      "TS0502A"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,21 +57,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/tunable_bulb_E14/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": []
+    }
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature"
-  ],
-  "images": {
-    "large": "/drivers/tunable_bulb_E14/assets/images/large.png",
-    "small": "/drivers/tunable_bulb_E14/assets/images/small.png"
-  }
+  "settings": []
 }

@@ -20,6 +20,11 @@
   },
   "subDevices": [],
   "zigbee": {
+    "productId": [
+      "TS0225",
+      "TS0601",
+      "TS0601_gas"
+    ],
     "learnmode": {
       "image": "/drivers/gas_sensor/assets/learnmode.svg",
       "instruction": {
@@ -37,14 +42,35 @@
     },
     "manufacturerName": [
       "_TZ3000_2UOLLQ9D",
+      "_TZ3000_2uollq9d",
       "_TZ3000_CEHUW1LW",
+      "_TZ3000_cehuw1lw",
+      "_TZE200_YOJQA8XN",
+      "_TZE200_gjldowol",
+      "_TZE200_jxyhl4eq",
+      "_TZE200_mby4kbtq",
+      "_TZE200_na5qlzow",
+      "_TZE200_nojsjtj2",
+      "_TZE200_nus5kk3n",
+      "_TZE200_qxyh4r7g",
+      "_TZE200_ttcovulf",
+      "_TZE200_vrcfo4i0",
+      "_TZE200_yojqa8xn",
+      "_TZE204_CHBYV06X",
+      "_TZE204_YOJQA8XN",
+      "_TZE204_chbyv06x",
+      "_TZE204_hiith90n",
+      "_TZE204_mby4kbtq",
+      "_TZE204_uo8qcagc",
+      "_TZE204_v6iczj35",
+      "_TZE204_yojqa8xn",
+      "_TZE204_zougpkpy",
+      "_TZE284_chbyv06x",
       "_tz3000_2uollq9d",
-      "_tz3000_cehuw1lw"
-    ],
-    "productId": [
-      "TS0225",
-      "TS0601",
-      "TS0601_gas"
+      "_tz3000_cehuw1lw",
+      "_tze200_yojqa8xn",
+      "_tze204_chbyv06x",
+      "_tze204_yojqa8xn"
     ]
   },
   "settings": [

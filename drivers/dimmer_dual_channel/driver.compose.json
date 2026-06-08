@@ -20,6 +20,25 @@
     "zigbee"
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_92chsky7",
+      "_TZ3000_92chsky7",
+      "_TZ3000_92CHSKY7",
+      "_tze200_bxoo2swd",
+      "_TZE200_bxoo2swd",
+      "_TZE200_BXOO2SWD",
+      "_tze200_zenj4lxv",
+      "_TZE200_zenj4lxv",
+      "_TZE200_ZENJ4LXV",
+      "_tze200_e3oitdyu",
+      "_tyzb01_v8gtiaed",
+      "_tz3210_pagajpog",
+      "_TZ3210_TKKB1YM8"
+    ],
+    "productId": [
+      "TS0601",
+      "TS1101"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,19 +51,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_92CHSKY7",
-      "_TZE200_BXOO2SWD",
-      "_TZE200_ZENJ4LXV",
-      "_tz3000_92chsky7",
-      "_tze200_bxoo2swd",
-      "_tze200_zenj4lxv"
-    ],
-    "productId": [
-      "TS0601",
-      "TS1101"
-    ]
+    }
   },
   "capabilitiesOptions": {
     "onoff": {

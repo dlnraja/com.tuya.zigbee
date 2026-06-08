@@ -9,9 +9,23 @@
   "capabilities": [
     "onoff",
     "dim.valve",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_ahxwesag",
+      "_TZ3000_ahxwesag",
+      "_TZ3000_AHXWESAG",
+      "_tze200_vrjkcam9",
+      "_TZE200_vrjkcam9",
+      "_TZE200_VRJKCAM9"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0601",
+      "TS0601_valve"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -19,18 +33,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_AHXWESAG",
-      "_TZE200_VRJKCAM9",
-      "_tz3000_ahxwesag",
-      "_tze200_vrjkcam9"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0601",
-      "TS0601_valve"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/valve_single/assets/images/small.png",

@@ -33,6 +33,36 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_5uer6sww",
+      "_TZE200_5uer6sww",
+      "_TZE200_5UER6SWW",
+      "_tze200_c75zqghm",
+      "_TZE200_c75zqghm",
+      "_TZE200_C75ZQGHM",
+      "_tze200_deqnbaux",
+      "_TZE200_deqnbaux",
+      "_TZE200_DEQNBAUX",
+      "_tze204_c75zqghm",
+      "_TZE204_c75zqghm",
+      "_TZE204_C75ZQGHM",
+      "_tze608_c75zqghm",
+      "_TZE608_c75zqghm",
+      "_TZE608_C75ZQGHM",
+      "_tze608_fmemczv1",
+      "_TZE608_fmemczv1",
+      "_TZE608_FMEMCZV1",
+      "_tze608_lapuuoke",
+      "_TZE608_lapuuoke",
+      "_TZE608_LAPUUOKE",
+      "_tze608_xkr8gep3",
+      "_TZE608_xkr8gep3",
+      "_TZE608_XKR8GEP3"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0603"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,29 +70,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_5UER6SWW",
-      "_TZE200_C75ZQGHM",
-      "_TZE200_DEQNBAUX",
-      "_TZE204_C75ZQGHM",
-      "_TZE608_C75ZQGHM",
-      "_TZE608_FMEMCZV1",
-      "_TZE608_LAPUUOKE",
-      "_TZE608_XKR8GEP3",
-      "_tze200_5uer6sww",
-      "_tze200_c75zqghm",
-      "_tze200_deqnbaux",
-      "_tze204_c75zqghm",
-      "_tze608_c75zqghm",
-      "_tze608_fmemczv1",
-      "_tze608_lapuuoke",
-      "_tze608_xkr8gep3"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0603"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/garage_door_opener/assets/images/small.png",

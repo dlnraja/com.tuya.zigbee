@@ -13,7 +13,8 @@
   "capabilities": [
     "measure_battery",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -40,21 +41,6 @@
     }
   },
   "zigbee": {
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/generic_tuya/assets/learnmode.svg",
-      "instruction": {
-        "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
-        "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
-      }
-    },
     "manufacturerName": [
       "3REALITY",
       "3reality",
@@ -73,6 +59,7 @@
       "BITRON",
       "BITRON HOME",
       "BITRON VIDEO",
+      "BOSCH",
       "BRK",
       "BROAN",
       "BTICINO",
@@ -86,6 +73,7 @@
       "COSWALL",
       "CREE INC.",
       "DANALOCK",
+      "DANFOSS",
       "DANFOSS A/S",
       "DAWON",
       "DAWON DNS",
@@ -138,6 +126,7 @@
       "LEDVANCE",
       "LEEDARSON",
       "LEEDARSON LIGHTING",
+      "LEGRAND",
       "LEVITON MANUFACTURING",
       "LIFX",
       "LINEAR",
@@ -182,6 +171,7 @@
       "SAMSUNG",
       "SAMSUNG ELECTRONICS",
       "SASWELL",
+      "SCHNEIDER ELECTRIC",
       "SE",
       "SECURIFI",
       "SENGLED",
@@ -217,6 +207,7 @@
       "WALLPAD",
       "WEINZIERL",
       "WINNERS",
+      "WISER",
       "WIZ",
       "WOOLLEY",
       "YAGUSMART",
@@ -227,10 +218,56 @@
       "ZEN THERMOSTAT",
       "ZIGBEE ALLIANCE",
       "ZIGBEE2MQTT",
+      "_TYZB01_ijihzffk",
+      "_TZ3000_2iiimqs9",
+      "_TZ3000_6l1pjfqe",
+      "_TZ3000_7issjl2q",
       "_TZ3000_GZVNIQJB",
       "_TZ3000_QEUVNOHG",
+      "_TZ3000_gzvniqjb",
+      "_TZ3000_qeuvnohg",
+      "_TZ3000_ywagc4rj",
+      "_TZ3210_3ulg9kpo",
+      "_TZ3210_ncw88jfq",
+      "_TZ3210_tfxwxklq",
+      "_TZ3290_7V1K4VUFOTPOWP9Z",
+      "_TZ3290_7v1k4vufotpowp9z",
+      "_TZE200_2imwyigp",
+      "_TZE200_3ejwxpmu",
+      "_TZE200_8eazvzo6",
+      "_TZE200_eo6xhfbo",
+      "_TZE200_ggev5fsl",
+      "_TZE200_iuk8kupi",
+      "_TZE200_kvpwq8z7",
+      "_TZE200_kzm5w4iz",
+      "_TZE200_lvkk0hdg",
+      "_TZE200_nklqjk62",
+      "_TZE200_ogkdpgy2",
+      "_TZE200_pbo8cj0z",
+      "_TZE200_u319yc66",
+      "_TZE204_2imwyigp",
+      "_TZE204_3ejwxpmu",
+      "_TZE204_eaulras5",
+      "_TZE204_eekpf0ft",
+      "_TZE204_iadro9bf",
+      "_TZE204_iuk8kupi",
+      "_TZE204_kvpwq8z7",
+      "_TZE204_laokfqwu",
+      "_TZE204_mul9abs3",
+      "_TZE204_nbkshs6k",
+      "_TZE204_no6qtgtl",
+      "_TZE204_q12rv9gj",
+      "_TZE204_qasjif9e",
+      "_TZE204_xu4a5rhj",
+      "_TZE204_ztqnh5cg",
+      "_TZE284_6ocnqlhn",
+      "_TZE284_a14rjslz",
+      "_TZE284_eekpf0ft",
+      "_TZE284_gyzlwu5q",
+      "_TZE284_iadro9bf",
       "_tz3000_gzvniqjb",
       "_tz3000_qeuvnohg",
+      "_tz3290_7v1k4vufotpowp9z",
       "aduro",
       "adurosmart",
       "ajax",
@@ -246,6 +283,7 @@
       "bitron",
       "bitron home",
       "bitron video",
+      "bosch",
       "brk",
       "broan",
       "bticino",
@@ -259,6 +297,7 @@
       "coswall",
       "cree inc.",
       "danalock",
+      "danfoss",
       "danfoss a/s",
       "dawon",
       "dawon dns",
@@ -311,6 +350,7 @@
       "ledvance",
       "leedarson",
       "leedarson lighting",
+      "legrand",
       "leviton manufacturing",
       "lifx",
       "linear",
@@ -355,6 +395,7 @@
       "samsung",
       "samsung electronics",
       "saswell",
+      "schneider electric",
       "se",
       "securifi",
       "sengled",
@@ -390,6 +431,7 @@
       "wallpad",
       "weinzierl",
       "winners",
+      "wiser",
       "wiz",
       "woolley",
       "yagusmart",
@@ -405,7 +447,22 @@
       "TS0203",
       "TS0601",
       "TS0601_generic"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/generic_tuya/assets/learnmode.svg",
+      "instruction": {
+        "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
+        "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
+      }
+    }
   },
   "settings": [
     {

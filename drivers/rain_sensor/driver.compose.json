@@ -10,7 +10,8 @@
     "alarm_water",
     "measure_humidity",
     "measure_luminance",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "alarm_water": {
@@ -34,6 +35,33 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_k1msavlx",
+      "_TZ3000_k1msavlx",
+      "_TZ3000_K1MSAVLX",
+      "_tz3000_otwpdq1d",
+      "_TZ3000_otwpdq1d",
+      "_TZ3000_OTWPDQ1D",
+      "_tz3210_tgvtvdoc",
+      "_TZ3210_tgvtvdoc",
+      "_TZ3210_TGVTVDOC",
+      "_tze200_2pddnnrk",
+      "_TZE200_2pddnnrk",
+      "_TZE200_2PDDNNRK",
+      "_tze204_u6x1zyv2",
+      "_TZE204_u6x1zyv2",
+      "_TZE204_U6X1ZYV2",
+      "_TZE200_u6x1zyv2",
+      "_tze200_u6x1zyv2",
+      "_TZE200_U6X1ZYV2"
+    ],
+    "productId": [
+      "TS0207",
+      "TS0207_rain",
+      "TS0601",
+      "ZG-222Z",
+      "ZG-223Z"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,60 +70,23 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_K1MSAVLX",
-      "_TZ3000_OTWPDQ1D",
-      "_TZE200_U6X1ZYV2",
-      "_TZE200_u6x1zyv2",
-      "_TZE204_U6X1ZYV2",
-      "_tz3000_k1msavlx",
-      "_tz3000_otwpdq1d",
-      "_tze200_u6x1zyv2",
-      "_tze204_u6x1zyv2"
-    ],
-    "productId": [
-      "TS0207",
-      "TS0207_rain",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z"
-    ]
+    "fingerprints": []
   },
   "settings": [
     {
-      "id": "sensitivity",
+      "id": "batteryThreshold",
       "type": "number",
       "label": {
-        "en": "Rain Detection Sensitivity (0-9)",
-        "fr": "Sensibilité Détection Pluie (0-9)",
-        "nl": "Regen Gevoeligheid (0-9)"
+        "en": "Battery Low Alarm Voltage Threshold (%)"
       },
-      "value": 5,
-      "min": 0,
-      "max": 9,
-      "step": 1,
       "hint": {
-        "en": "Higher value makes rain detection more sensitive.",
-        "fr": "Des valeurs plus élevées augmentent la sensibilité de détection de la pluie.",
-        "nl": "Hogere waarde maakt de regendetectie gevoeliger."
-      }
-    },
-    {
-      "id": "illuminance_sampling",
-      "type": "number",
-      "label": {
-        "en": "Illuminance Reporting Interval (min)",
-        "fr": "Intervalle de Rapport Lumineux (min)",
-        "nl": "Licht Meetinterval (min)"
+        "en": "This setting determines the threshold before a battery alarm is given."
       },
-      "value": 10,
-      "min": 1,
-      "max": 480,
-      "step": 1,
-      "hint": {
-        "en": "How often the sensor reports light level updates (1 to 480 minutes).",
-        "fr": "Intervalle en minutes pour les rapports de luminosité (1 à 480 min).",
-        "nl": "Hoe vaak de sensor lichtmetingen rapporteert (1 tot 480 minuten)."
+      "value": 20,
+      "attr": {
+        "step": 1,
+        "min": 1,
+        "max": 99
       }
     }
   ],

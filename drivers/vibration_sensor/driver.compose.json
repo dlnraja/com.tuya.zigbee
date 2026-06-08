@@ -10,7 +10,8 @@
     "alarm_motion",
     "measure_temperature",
     "measure_battery",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -20,21 +21,15 @@
   },
   "subDevices": [],
   "zigbee": {
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ]
-      }
-    },
     "manufacturerName": [
       "_TYZB01_3ZV6OLEO",
       "_TYZB01_821SIATI",
+      "_TYZB01_821siati",
       "_TYZB01_GEIGPSY4",
       "_TYZB01_J9XXAHCL",
       "_TYZB01_KULDUHBJ",
       "_TZ3000_8BXRZYXZ",
+      "_TZ3000_8bxrzyxz",
       "_TZ3000_A4OUV4QS",
       "_TZ3000_BMFW11GS",
       "_TZ3000_BMFW9YKL",
@@ -48,11 +43,52 @@
       "_TZ3000_LZDJJFSS",
       "_TZ3000_RCFWRSLT",
       "_TZ3000_WQWDOQIB",
+      "_TZ3000_a4ouv4qs",
+      "_TZ3000_bmfw11gs",
+      "_TZ3000_bmfw9ykl",
+      "_TZ3000_c0epqj4n",
+      "_TZ3000_d9mxcg6g",
+      "_TZ3000_ez2w5nzp",
+      "_TZ3000_fbjnwzko",
+      "_TZ3000_fkxmywjv",
+      "_TZ3000_ky0fq4ho",
+      "_TZ3000_lqpt3mvr",
+      "_TZ3000_lzdjjfss",
+      "_TZ3000_rcfwrslt",
+      "_TZ3000_wqwdoqib",
       "_TZE200_CSCPPKXZ",
+      "_TZE200_FODV6BKR",
       "_TZE200_GNPN9HXB",
+      "_TZE200_GRGOL3XP",
+      "_TZE200_JFW0A4AA",
+      "_TZE200_KHX7NNKA",
+      "_TZE200_ULI8WASJ",
       "_TZE200_VQ5U79U3",
+      "_TZE200_WZK0X7FQ",
+      "_TZE200_YI4JTQQ1",
+      "_TZE200_ahpcyzth",
+      "_TZE200_bfmfhxra",
+      "_TZE200_cscppkxz",
+      "_TZE200_fodv6bkr",
+      "_TZE200_gnpn9hxb",
+      "_TZE200_grgol3xp",
+      "_TZE200_jfw0a4aa",
+      "_TZE200_kccdzaeo",
+      "_TZE200_khx7nnka",
+      "_TZE200_kijxnb8q",
+      "_TZE200_s7rsrtbg",
+      "_TZE200_tmszbtzq",
+      "_TZE200_uli8wasj",
+      "_TZE200_vq5u79u3",
+      "_TZE200_wzk0x7fq",
+      "_TZE200_y8jijhba",
+      "_TZE200_yi4jtqq1",
       "_TZE204_CSCPPKXZ",
+      "_TZE204_KHX7NNKA",
+      "_TZE204_cscppkxz",
+      "_TZE204_khx7nnka",
       "_TZE284_CSCPPKXZ",
+      "_TZE284_cscppkxz",
       "_tyzb01_3zv6oleo",
       "_tyzb01_821siati",
       "_tyzb01_geigpsy4",
@@ -73,9 +109,17 @@
       "_tz3000_rcfwrslt",
       "_tz3000_wqwdoqib",
       "_tze200_cscppkxz",
+      "_tze200_fodv6bkr",
       "_tze200_gnpn9hxb",
+      "_tze200_grgol3xp",
+      "_tze200_jfw0a4aa",
+      "_tze200_khx7nnka",
+      "_tze200_uli8wasj",
       "_tze200_vq5u79u3",
+      "_tze200_wzk0x7fq",
+      "_tze200_yi4jtqq1",
       "_tze204_cscppkxz",
+      "_tze204_khx7nnka",
       "_tze284_cscppkxz"
     ],
     "productId": [
@@ -85,7 +129,15 @@
       "ZG-102ZM",
       "ZG-103Z",
       "ZG-103ZL"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
   },
   "images": {
     "small": "/drivers/vibration_sensor/assets/images/small.png",

@@ -1,5 +1,4 @@
 {
-  "id": "wall_switch_1_gang",
   "name": {
     "en": "1 Gang Wall Switch"
   },
@@ -14,8 +13,8 @@
     "onoff"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/wall_switch_1_gang/assets/images/large.png",
+    "small": "//drivers/wall_switch_1_gang/assets/images/small.png"
   },
   "energy": {
     "approximation": {
@@ -24,6 +23,24 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_2mb38mf3",
+      "_TZ3000_2mb38mf3",
+      "_TZ3000_2MB38MF3",
+      "_TYZB01_qm6djpta",
+      "_TZ3000_b3mgfu0d",
+      "_TYZB01_xfpdrwvc",
+      "_TYZB01_XFPDRWVC",
+      "_TYZB01_qeqvmvti",
+      "_TYZB01_QEQVMVTI",
+      "_TYZB01_seqwasot",
+      "_TYZB01_SEQWASOT"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0011",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -39,12 +56,41 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_switch_1_gang/assets/icon.svg",
       "instruction": {
         "en": "Press the button for 7 seconds (until LED starts blinking)."
       }
-    },
-    "manufacturerName": []
+    }
   },
-  "deprecated": true
+  "deprecated": true,
+  "settings": [
+    {
+      "id": "indicator_mode",
+      "type": "radio",
+      "label": {
+        "en": "Indicator mode"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Light Off"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Light on when switch turned on."
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Light on when the switch is turned off."
+          }
+        }
+      ]
+    }
+  ]
 }

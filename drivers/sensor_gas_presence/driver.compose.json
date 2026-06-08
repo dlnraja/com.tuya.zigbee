@@ -18,7 +18,8 @@
     "alarm_co2",
     "alarm_contact",
     "alarm_gas",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -35,6 +36,54 @@
   },
   "subDevices": [],
   "zigbee": {
+    "manufacturerName": [
+      "_tz3400_tk3s5tyg",
+      "_TZ3400_tk3s5tyg",
+      "_TZ3400_TK3S5TYG",
+      "_tze200_eqpaxqdv",
+      "_TZE200_eqpaxqdv",
+      "_TZE200_EQPAXQDV",
+      "_tze200_vexa5o82",
+      "_TZE200_vexa5o82",
+      "_TZE200_VEXA5O82",
+      "_tze200_wzqkpstm",
+      "_TZE200_wzqkpstm",
+      "_TZE200_WZQKPSTM",
+      "_tze204_ezqy5pvh",
+      "_TZE204_ezqy5pvh",
+      "_TZE204_EZQY5PVH",
+      "_tze204_ggev5fsl",
+      "_TZE204_ggev5fsl",
+      "_TZE204_GGEV5FSL",
+      "_tze204_ux5v4tgb",
+      "_TZE204_ux5v4tgb",
+      "_TZE204_UX5V4TGB",
+      "_tze210_m6lwazh9",
+      "_TZE210_m6lwazh9",
+      "_TZE210_M6LWAZH9",
+      "_tze284_clm4gdw4",
+      "_TZE284_clm4gdw4",
+      "_TZE284_CLM4GDW4",
+      "_tze284_ezqy5pvh",
+      "_TZE284_ezqy5pvh",
+      "_TZE284_EZQY5PVH",
+      "_tze284_ggev5fsl",
+      "_TZE284_ggev5fsl",
+      "_TZE284_GGEV5FSL",
+      "_tze284_nj7sfid2",
+      "_TZE284_nj7sfid2",
+      "_TZE284_NJ7SFID2",
+      "_tze284_rjgdhqqi",
+      "_TZE284_rjgdhqqi",
+      "_TZE284_RJGDHQQI"
+    ],
+    "productId": [
+      "TS0225",
+      "TS0301",
+      "TS0601",
+      "TS0601_gas",
+      "ZG-225Z"
+    ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {
@@ -49,42 +98,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3400_TK3S5TYG",
-      "_TZE200_EQPAXQDV",
-      "_TZE200_VEXA5O82",
-      "_TZE200_WZQKPSTM",
-      "_TZE204_EZQY5PVH",
-      "_TZE204_GGEV5FSL",
-      "_TZE204_UX5V4TGB",
-      "_TZE210_M6LWAZH9",
-      "_TZE284_CLM4GDW4",
-      "_TZE284_EZQY5PVH",
-      "_TZE284_GGEV5FSL",
-      "_TZE284_NJ7SFID2",
-      "_TZE284_RJGDHQQI",
-      "_tz3400_tk3s5tyg",
-      "_tze200_eqpaxqdv",
-      "_tze200_vexa5o82",
-      "_tze200_wzqkpstm",
-      "_tze204_ezqy5pvh",
-      "_tze204_ggev5fsl",
-      "_tze204_ux5v4tgb",
-      "_tze210_m6lwazh9",
-      "_tze284_clm4gdw4",
-      "_tze284_ezqy5pvh",
-      "_tze284_ggev5fsl",
-      "_tze284_nj7sfid2",
-      "_tze284_rjgdhqqi"
-    ],
-    "productId": [
-      "TS0225",
-      "TS0301",
-      "TS0601",
-      "TS0601_gas",
-      "ZG-225Z"
-    ]
+    }
   },
   "settings": [
     {
@@ -813,6 +827,5 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  },
-  "id": "sensor_gas_presence"
+  }
 }

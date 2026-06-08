@@ -1,5 +1,4 @@
 {
-  "id": "smoke_sensor3",
   "name": {
     "en": "Smoke Sensor"
   },
@@ -13,6 +12,7 @@
   "capabilities": [
     "measure_battery",
     "alarm_smoke",
+    "alarm_battery",
     "alarm_generic"
   ],
   "energy": {
@@ -22,10 +22,59 @@
     ]
   },
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.png",
-    "small": "/{{driverAssetsPath}}/images/small.png"
+    "large": "//drivers/smoke_sensor3/assets/images/large.png",
+    "small": "//drivers/smoke_sensor3/assets/images/small.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze204_uebojraa",
+      "_TZE204_uebojraa",
+      "_TZE204_UEBOJRAA",
+      "_TZE200_uebojraa",
+      "_TZE200_rccxox8p",
+      "_TYZB01_wqcac7lo",
+      "_TZ3210_up3pngle",
+      "_TZE200_0zaf1cr8",
+      "_TZE200_5d3vhjro",
+      "_TZE200_dq1mfjug",
+      "_TZE200_m9skfctm",
+      "_TZE200_ntcy3xu1",
+      "_TZE200_qcasmfan",
+      "_TZE200_t5p1vj8r",
+      "_TZE200_ux5v4dbd",
+      "_TZE200_vzekyi4c",
+      "_TZE200_yh7aoahi",
+      "_TZE200_ytibqbra",
+      "_TZE204_cjbofhxw",
+      "_TZE204_qaxkdgyt",
+      "_TZE284_0zaf1cr8",
+      "_TZE284_6ycgarab",
+      "_TZE284_ai4rqhky",
+      "_TZE284_cjbofhxw",
+      "_TZE284_o9ofysmo",
+      "_TZE284_rccxox8p",
+      "_TZE284_xc3vwx5a",
+      "_tyzb01_dsjszp0x",
+      "_tz3000_mwd3c2at",
+      "_tz3000_qtyyuaq6",
+      "_tz3000_tk3s5tyg"
+    ],
+    "productId": [
+      "TS0205",
+      "TS0601",
+      "GS361A-H04",
+      "HS1SA",
+      "HS3SA",
+      "JTYJ-GD-01LM/BW",
+      "lumi.sensor_smoke",
+      "NAS-SD02B0",
+      "PG-S11Z",
+      "SA12IZL",
+      "SD8SC_00.00.03.12TC",
+      "SMSZB-120",
+      "SSSQS01LM",
+      "YG400A"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,30 +89,10 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/smoke_sensor3/assets/icon.svg",
       "instruction": {
         "en": "Press the RESET pinhole on the side of the unit for 5 seconds until LED blinks."
       }
-    },
-    "manufacturerName": [
-      "_TZE204_UEBOJRAA",
-      "_tze204_uebojraa"
-    ],
-    "productId": [
-      "GS361A-H04",
-      "HS1SA",
-      "HS3SA",
-      "JTYJ-GD-01LM/BW",
-      "NAS-SD02B0",
-      "PG-S11Z",
-      "SA12IZL",
-      "SD8SC_00.00.03.12TC",
-      "SMSZB-120",
-      "SSSQS01LM",
-      "TS0205",
-      "TS0601",
-      "YG400A",
-      "lumi.sensor_smoke"
-    ]
+    }
   }
 }

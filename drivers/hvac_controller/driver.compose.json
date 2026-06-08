@@ -48,6 +48,19 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_cfczgbss",
+      "_TZE200_cfczgbss",
+      "_TZE200_CFCZGBSS",
+      "_tze284_cfczgbss",
+      "_TZE284_cfczgbss",
+      "_TZE284_CFCZGBSS",
+      "_TZE200_R32CTEZX",
+      "_TZE204_R32CTEZX"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,16 +68,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_CFCZGBSS",
-      "_TZE284_CFCZGBSS",
-      "_tze200_cfczgbss",
-      "_tze284_cfczgbss"
-    ],
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "images": {
     "small": "/drivers/hvac_controller/assets/images/small.png",

@@ -1,5 +1,4 @@
 {
-  "id": "wall_remote_6_gang",
   "name": {
     "en": "6 Gang Wall Remote",
     "fr": "Télécommande murale 6 boutons",
@@ -21,7 +20,8 @@
     "button.4",
     "button.5",
     "button.6",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/wall_remote_6_gang/assets/images/large.png",
@@ -33,6 +33,42 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_0zrccfgx",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_0ZRCCFGX",
+      "_tz3000_eo3dttwe",
+      "_TZ3000_eo3dttwe",
+      "_TZ3000_EO3DTTWE",
+      "_tz3000_fsiepnrh",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_FSIEPNRH",
+      "_tz3000_itnrsufe",
+      "_TZ3000_itnrsufe",
+      "_TZ3000_ITNRSUFE",
+      "_tz3000_jwcixnrz",
+      "_TZ3000_jwcixnrz",
+      "_TZ3000_JWCIXNRZ",
+      "_tz3000_obacbukl",
+      "_TZ3000_obacbukl",
+      "_TZ3000_OBACBUKL",
+      "_tz3000_p6ju8myv",
+      "_TZ3000_p6ju8myv",
+      "_TZ3000_P6JU8MYV",
+      "_tz3000_ug1vtuzn",
+      "_TZ3000_ug1vtuzn",
+      "_TZ3000_UG1VTUZN",
+      "_tze200_bq5c8xfe",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_BQ5C8XFE",
+      "_tze200_hkdl5fmv",
+      "_TZE200_hkdl5fmv",
+      "_TZE200_HKDL5FMV"
+    ],
+    "productId": [
+      "TS0046",
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -67,58 +103,13 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/wall_remote_6_gang/assets/icon.svg",
       "instruction": {
         "en": "Press pair button for aprox 10 seconds."
       }
-    },
-    "manufacturerName": [
-      "_PLACEHOLDER_NEEDS_REAL_MFR",
-      "_placeholder_needs_real_mfr"
-    ],
-    "productId": [
-      "TS0046",
-      "TS0601"
-    ]
-  },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
     }
-  ],
+  },
+  "settings": [],
   "maintenanceActions": [
     {
       "id": "ota_check",

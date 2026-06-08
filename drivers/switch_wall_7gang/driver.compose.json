@@ -65,6 +65,16 @@
     ]
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_7gang001",
+      "_TYZB01_7GANG001",
+      "_tz3000_7gang001",
+      "_TZ3000_7gang001",
+      "_TZ3000_7GANG001"
+    ],
+    "productId": [
+      "TS0007"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -106,16 +116,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TYZB01_7GANG001",
-      "_TZ3000_7GANG001",
-      "_tyzb01_7gang001",
-      "_tz3000_7gang001"
-    ],
-    "productId": [
-      "TS0007"
-    ]
+    }
   },
   "settings": [
     {

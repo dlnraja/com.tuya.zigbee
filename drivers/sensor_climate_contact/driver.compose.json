@@ -29,6 +29,19 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_placeholder",
+      "_tz3000_85czd6fy",
+      "_tz3000_bpkijo14",
+      "_tz3000_gszjt2xx",
+      "_tz3000_m0vaazab",
+      "_tz3000_misw04hq",
+      "_tz3000_ufttklsz",
+      "_tz3000_wlquqiiz"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -39,14 +52,7 @@
           61184
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZE200_PLACEHOLDER",
-      "_tze200_placeholder"
-    ],
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {

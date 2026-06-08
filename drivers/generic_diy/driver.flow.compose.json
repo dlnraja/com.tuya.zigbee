@@ -24,7 +24,8 @@
       "titleFormatted": {
         "en": "Temperature changed",
         "fr": "Température changée"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_humidity_changed",
@@ -50,7 +51,8 @@
       "titleFormatted": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_motion_detected",
@@ -65,7 +67,8 @@
       "titleFormatted": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_motion_cleared",
@@ -80,7 +83,8 @@
       "titleFormatted": {
         "en": "Motion cleared",
         "fr": "Mouvement terminé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_button_pressed",
@@ -106,7 +110,8 @@
       "titleFormatted": {
         "en": "Button pressed",
         "fr": "Bouton pressé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_button_double_pressed",
@@ -132,7 +137,8 @@
       "titleFormatted": {
         "en": "Button double pressed",
         "fr": "Bouton double-pressé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_button_long_pressed",
@@ -158,7 +164,8 @@
       "titleFormatted": {
         "en": "Button long pressed",
         "fr": "Bouton appui long"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_switch_turned_on",
@@ -184,7 +191,8 @@
       "titleFormatted": {
         "en": "Switch turned on",
         "fr": "Interrupteur activé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_switch_turned_off",
@@ -210,7 +218,8 @@
       "titleFormatted": {
         "en": "Switch turned off",
         "fr": "Interrupteur désactivé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_contact_opened",
@@ -225,7 +234,8 @@
       "titleFormatted": {
         "en": "Contact opened",
         "fr": "Contact ouvert"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_contact_closed",
@@ -240,7 +250,8 @@
       "titleFormatted": {
         "en": "Contact closed",
         "fr": "Contact fermé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_illuminance_changed",
@@ -266,7 +277,8 @@
       "titleFormatted": {
         "en": "Illuminance changed",
         "fr": "Luminosité changée"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_battery_low",
@@ -292,7 +304,8 @@
       "titleFormatted": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_pressure_changed",
@@ -318,7 +331,8 @@
       "titleFormatted": {
         "en": "Pressure changed",
         "fr": "Pression changée"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_analog_changed",
@@ -353,7 +367,8 @@
       "titleFormatted": {
         "en": "Analog value changed",
         "fr": "Valeur analogique changée"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -370,7 +385,8 @@
       "titleFormatted": {
         "en": "DIY switch is on",
         "fr": "Interrupteur DIY est activé"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_motion_active",
@@ -385,7 +401,8 @@
       "titleFormatted": {
         "en": "Motion is detected",
         "fr": "Mouvement détecté"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_contact_open",
@@ -400,7 +417,8 @@
       "titleFormatted": {
         "en": "Contact is open",
         "fr": "Contact est ouvert"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_temperature_above",
@@ -504,7 +522,8 @@
       "titleFormatted": {
         "en": "Turn on DIY switch",
         "fr": "Activer interrupteur DIY"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_turn_off",
@@ -519,7 +538,8 @@
       "titleFormatted": {
         "en": "Turn off DIY switch",
         "fr": "Désactiver interrupteur DIY"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_toggle",
@@ -534,7 +554,8 @@
       "titleFormatted": {
         "en": "Toggle DIY switch",
         "fr": "Basculer interrupteur DIY"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_set_dim",
@@ -577,7 +598,8 @@
       "titleFormatted": {
         "en": "Identify DIY device",
         "fr": "Identifier dispositif DIY"
-      }
+      },
+      "args": []
     },
     {
       "id": "generic_diy_turn_on_endpoint",

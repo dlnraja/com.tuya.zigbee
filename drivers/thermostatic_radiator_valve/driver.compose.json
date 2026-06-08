@@ -4,6 +4,7 @@
   },
   "class": "thermostat",
   "capabilities": [
+    "alarm_battery",
     "target_temperature",
     "alarm_contact",
     "measure_battery"
@@ -28,10 +29,193 @@
     ]
   },
   "images": {
-    "small": "/{{driverAssetsPath}}/images/moes_zigbee_3_small.png",
-    "large": "/{{driverAssetsPath}}/images/moes_zigbee_3_large.png"
+    "small": "//drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_small.png",
+    "large": "//drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_large.png"
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TZE200_KLY8GJLZ",
+      "_TZE200_kly8gjlz",
+      "_TZE284_XNBKHHDR",
+      "_tze200_kly8gjlz",
+      "_TZE200_9xfjixap",
+      "_TZE200_ye5jkfsb",
+      "_TZE200_2atgpdho",
+      "_TZE200_hue3yfsn",
+      "_TZE204_9xfjixap",
+      "_TYST11_2atgpdho",
+      "_TYST11_8daqwrsj",
+      "_TYST11_ckud7u2l",
+      "_TYST11_cwnjrr72",
+      "_TYST11_czk78ptr",
+      "_TYST11_hhrtiq0x",
+      "_TYST11_jeaxp72v",
+      "_TYST11_kfvq6avy",
+      "_TYST11_owwdxjbx",
+      "_TYST11_ps5v5jor",
+      "_TYST11_ywdxldoj",
+      "_TYST11_zivfvd7h",
+      "_TZE204_wc2w9t1s",
+      "_TZE284_noixx2uz",
+      "_tyst11_9gvruqf5",
+      "_tyst11_azqp6ssj",
+      "_tyst11_c88teujp",
+      "_tyst11_caj4jz0i",
+      "_tyst11_qtbrwrfv",
+      "_tyst11_yw7cahqs",
+      "_tyst11_zuhszj9s",
+      "_tz3000_8ykqfsyq",
+      "_tz3000_c3g3pupu",
+      "_tz3000_cduqh1l0",
+      "_tz3000_ckq7u3r4",
+      "_tz3000_cphmq0q7",
+      "_tz3000_cxkjlbxx",
+      "_tz3000_dffvflui",
+      "_tz3000_dksbtrzs",
+      "_tz3000_e3vhyrdz",
+      "_tz3000_egfdwm0f",
+      "_tz3000_exni6swi",
+      "_tz3000_f1bapcit",
+      "_tz3000_femsrftq",
+      "_tz3000_fgwhjm9j",
+      "_tz3000_gp7p1xsn",
+      "_tz3000_gznh2xla",
+      "_tz3000_h1jnz6l9",
+      "_tz3000_hdc8bbhc",
+      "_tz3000_hgpnzgac",
+      "_tz3000_hmitslt3",
+      "_tz3000_i1rw7p4p",
+      "_tz3000_idrffznf",
+      "_tz3000_iv2hvncp",
+      "_tz3000_j34bmidp",
+      "_tz3000_jabbwuie",
+      "_tz3000_jbjz13kn",
+      "_tz3000_jeanjpmj",
+      "_tz3000_jimbwdxd",
+      "_tz3000_jkbrnvhr",
+      "_tz3000_jnihvwo1",
+      "_tz3000_jvvhvqjk",
+      "_tz3000_kas5qbpq",
+      "_tz3000_kgvnspdl",
+      "_tz3000_kksch6ep",
+      "_tz3000_klch39xt",
+      "_tz3000_kmuxjukf",
+      "_tz3000_kud7u2l1",
+      "_tz3000_kvwjujy9",
+      "_tz3000_l6pwxuxm",
+      "_tz3000_ld6g3agd",
+      "_tze200_0hg58epr",
+      "_tze200_1agwnafq",
+      "_tze200_44af8ipg",
+      "_tze200_4hbx5cvx",
+      "_tze200_502zx5sl",
+      "_tze200_56bdwt92",
+      "_tze200_5bdnqwnx",
+      "_tze200_5tgzpccv",
+      "_tze200_6mafo2gv",
+      "_tze200_7rghpoxo",
+      "_tze200_7tdtqgwv",
+      "_tze200_8k8k3t3j",
+      "_tze200_8xtk0cjs",
+      "_tze200_9kqxlpby",
+      "_tze200_a4cjpzdi",
+      "_tze200_ahl6l9k5",
+      "_tze200_amp6tsvy",
+      "_tze200_anv5ujhv",
+      "_tze200_awnadkan",
+      "_tze200_axbpz5wm",
+      "_tze200_azqp6ssj",
+      "_tze200_b8x72kmy",
+      "_tze200_cxakecfo",
+      "_tze200_d5p1kr8z",
+      "_tze200_d8fp6ivb",
+      "_tze200_dcydapr2",
+      "_tze200_dfry6ylv",
+      "_tze200_dmfguuli",
+      "_tze200_e5hpkc6d",
+      "_tze200_fsow0qsk",
+      "_tze200_husqqvux",
+      "_tze200_k1tumq4t",
+      "_tze200_kds0pmmv",
+      "_tze200_lllliz3p",
+      "_tze200_lnbfnyxd",
+      "_tze200_lrznf59v",
+      "_tze200_mudxchsu",
+      "_tze200_oahqgdig",
+      "_tze200_rxypyjkw",
+      "_tze200_sur6q7ko",
+      "_tze200_trv602",
+      "_tze200_zaabefnt",
+      "_tze200_zuhszj9s",
+      "_tze204_0dxrpqxl",
+      "_tze204_7rghpoxo",
+      "_tze204_ca3i8m8p",
+      "_tze204_cg8hdnjv",
+      "_tze204_cmyc8g5i",
+      "_tze204_djurk6p5",
+      "_tze204_e5hpkc6d",
+      "_tze204_eekpf0ft",
+      "_tze204_g9a3awaj",
+      "_tze204_glk6viwg",
+      "_tze204_goecjd1t",
+      "_tze204_hvaxb2tc",
+      "_tze204_k6rdmisz",
+      "_tze204_lnbfnyxd",
+      "_tze204_lnxdk2ch",
+      "_tze204_locansqn",
+      "_tze204_mudxchsu",
+      "_tze204_pay2byax",
+      "_tze204_pisltm67",
+      "_tze204_qdihqf3l",
+      "_tze204_qoy0ekbd",
+      "_tze204_r7brscr6",
+      "_tze204_v6ossqfy",
+      "_tze204_wgrffniy",
+      "_tze204_woww89ip",
+      "_tze204_xby0s3ta",
+      "_tze204_xdtnpp1a",
+      "_tze204_ywdxldoj",
+      "_tze284_cgr0rhza",
+      "_tze284_cgror0rhza",
+      "_tze284_gaj531w3",
+      "_tze284_hcs66axl",
+      "_tze284_hvaxb2tc",
+      "_tze284_k6rdmisz",
+      "_tze200_4eeyebrt",
+      "_tze200_7yoranx2",
+      "_tze200_8thwkzxl",
+      "_tze200_b6wax7g0",
+      "_tze200_cpmgn2cf",
+      "_tze200_cwnjrr72",
+      "_tze200_ckud7u2l",
+      "_tze200_e9ba97vf",
+      "_tze200_kfvq6avy",
+      "_tze200_pvvbommb",
+      "_tze200_py4cm3he",
+      "_tze200_rufdtfyv",
+      "_tze200_xby0s3ta",
+      "_tze200_9xfjixap",
+      "_tze204_9xfjixap"
+    ],
+    "productId": [
+      "TS0601",
+      "014G2461",
+      "014G2463",
+      "eTRV0100",
+      "lumi.airrtc.agl001",
+      "lumi.airrtc.vrfegl01",
+      "SEA801-Zigbee",
+      "SPZB0001",
+      "SPZB0003",
+      "STZB402",
+      "STZB403",
+      "TRV601",
+      "TRV602",
+      "TRVZB",
+      "TV01-ZB",
+      "TV02-ZB",
+      "Zen-01"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,33 +234,191 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/images/moes_zigbee_3_pair.png",
+      "image": "/drivers/thermostatic_radiator_valve/assets/images/moes_zigbee_3_pair.png",
       "instruction": {
         "en": "Press 'Pair' button for 5 seconds until antenna symbol starts to blink."
       }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Temperature Settings"
+      },
+      "children": [
+        {
+          "id": "comfortTemperature",
+          "type": "number",
+          "label": {
+            "en": "Comfort Temperature"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 30,
+          "units": {
+            "en": "°C"
+          }
+        },
+        {
+          "id": "ecoTemperature",
+          "type": "number",
+          "label": {
+            "en": "Eco Temperature"
+          },
+          "value": 16,
+          "min": 5,
+          "max": 30,
+          "units": {
+            "en": "°C"
+          }
+        },
+        {
+          "id": "holidayTemperature",
+          "type": "number",
+          "label": {
+            "en": "Holiday Temperature"
+          },
+          "value": 12,
+          "min": 5,
+          "max": 30,
+          "units": {
+            "en": "°C"
+          }
+        },
+        {
+          "id": "openWindowTemperature",
+          "type": "number",
+          "label": {
+            "en": "Open Window Temperature"
+          },
+          "value": 5,
+          "min": 5,
+          "max": 30,
+          "units": {
+            "en": "°C"
+          }
+        }
+      ]
     },
-    "manufacturerName": [
-      "_TZE200_9XFJIXAP",
-      "_tze200_9xfjixap"
-    ],
-    "productId": [
-      "014G2461",
-      "014G2463",
-      "SEA801-Zigbee",
-      "SPZB0001",
-      "SPZB0003",
-      "STZB402",
-      "STZB403",
-      "TRV601",
-      "TRV602",
-      "TRVZB",
-      "TS0601",
-      "TV01-ZB",
-      "TV02-ZB",
-      "Zen-01",
-      "eTRV0100",
-      "lumi.airrtc.agl001",
-      "lumi.airrtc.vrfegl01"
-    ]
-  }
+    {
+      "type": "group",
+      "label": {
+        "en": "Heatplan"
+      },
+      "children": [
+        {
+          "id": "workingDay",
+          "type": "dropdown",
+          "value": "1",
+          "label": {
+            "en": "Mode for Heatplan"
+          },
+          "hint": {
+            "en": "'Mon-Sun' only considers Monday Schedule for all days. 'Mon-Fri, Sat+Sun' considers Monday Schedule for all working days and Saturday and Sunday Schedule individually. On'Separate' Mode each day is scheduled individually."
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Mon-Sun"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Mon-Fri, Sat+Sun"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Separate"
+              }
+            }
+          ]
+        },
+        {
+          "id": "label",
+          "type": "label",
+          "label": {
+            "en": "Schedule Pattern"
+          },
+          "value": " List of time and temerature ranges 'hh:mm/temp' separated by a space. E.g.: '06:00/16 22:30/20 24:00/16' means: set temperature to 16°C between 00:00am and 06:00am, set temperature to 20°C between 06:00am and 10:30pm, 10:30pm to 12:00am set temperature to 16°C. Last time token must always be 24:00 with temperature."
+        },
+        {
+          "id": "scheduleMonday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Monday"
+          },
+          "hint": {
+            "en": "Required for 'Mon-Sun' and 'Mon-Fri, Sat+Sun' Mode."
+          }
+        },
+        {
+          "id": "scheduleTuesday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Tuesday"
+          }
+        },
+        {
+          "id": "scheduleWednesday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Wednesday"
+          }
+        },
+        {
+          "id": "scheduleThursday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Thursday"
+          }
+        },
+        {
+          "id": "scheduleFriday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Friday"
+          }
+        },
+        {
+          "id": "scheduleSaturday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Saturday"
+          },
+          "hint": {
+            "en": "Required for 'Mon-Fri, Sat+Sun' Mode"
+          }
+        },
+        {
+          "id": "scheduleSunday",
+          "type": "text",
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/16 22:30/20 24:00/16",
+          "label": {
+            "en": "Sunday"
+          },
+          "hint": {
+            "en": "Required for 'Mon-Fri, Sat+Sun' Mode"
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -12,7 +12,8 @@
     "measure_temperature",
     "thermostat_mode",
     "measure_battery",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -23,6 +24,17 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tze200_spyvfeti",
+      "_TZE200_spyvfeti",
+      "_TZE200_SPYVFETI",
+      "_TZE200_khah2lkr",
+      "_tze200_khah2lkr",
+      "_TZE200_KHAH2LKR"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
@@ -38,16 +50,11 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZE200_KHAH2LKR",
-      "_TZE200_SPYVFETI",
-      "_TZE200_khah2lkr",
-      "_TZE200_spyvfeti",
-      "_tze200_khah2lkr",
-      "_tze200_spyvfeti"
-    ],
-    "productId": [
-      "TS0601"
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_spyvfeti",
+        "productId": "TS0601"
+      }
     ]
   },
   "settings": [

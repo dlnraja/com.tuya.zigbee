@@ -1,11 +1,28 @@
 {
-  "id": "rgb_floor_led_light",
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_temperature"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "images": {
+    "large": "/drivers/rgb_floor_led_light/assets/images/large.png",
+    "small": "/drivers/rgb_floor_led_light/assets/images/small.png"
+  },
   "name": {
     "en": "Livarno Lux Atmosphere Floor LED Light"
   },
-  "$extends": [
-    "light_color_ambiance"
-  ],
   "energy": {
     "approximation": {
       "usageOn": 12.5,
@@ -13,6 +30,14 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_tz3000_8uaoilu9",
+      "_TZ3000_8uaoilu9",
+      "_TZ3000_8UAOILU9"
+    ],
+    "productId": [
+      "TS0502A"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -32,21 +57,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "/drivers/rgb_floor_led_light/assets/icon.svg",
       "instruction": {
         "en": "Power on to enter pairing mode."
       }
-    },
-    "manufacturerName": []
+    }
   },
-  "class": "light",
-  "capabilities": [
-    "onoff",
-    "dim",
-    "light_temperature"
-  ],
-  "images": {
-    "large": "/drivers/rgb_floor_led_light/assets/images/large.png",
-    "small": "/drivers/rgb_floor_led_light/assets/images/small.png"
-  }
+  "settings": []
 }

@@ -1,5 +1,4 @@
 {
-  "id": "sr_zs_switch",
   "name": {
     "en": "SR-ZS Switch",
     "pl": "Przełącznik SR-ZS"
@@ -19,6 +18,29 @@
     "small": "/drivers/sr_zs_switch/assets/images/small.png"
   },
   "zigbee": {
+    "productId": [
+      "01MINIZB",
+      "BASICZBR3",
+      "S31ZB",
+      "TS0001",
+      "TS0001_power",
+      "TS0001_switch",
+      "TS0001_switch_module",
+      "TS0002",
+      "TS0101",
+      "TS4100",
+      "ZBM5-1C-120",
+      "ZBM5-2C-120",
+      "ZBM5-3C-120",
+      "ZBMINI",
+      "ZBMINIL2",
+      "ZBMINIL2-R2",
+      "ZBMINIR",
+      "ZBMINIR2",
+      "ZBMINIR2-R2",
+      "ZG-301Z",
+      "ZG-302Z1"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -80,13 +102,88 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_gzvniqjb",
-      "_TZ3000_typddjyr",
+      "_tz3000_gzvniqjb",
+      "_TZ3000_GZVNIQJB",
+      "_TZ3000_TYPDDJYR",
+      "_TZE284_XNWXMJ8Z",
       "_TZ3000_m8f08ihs"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0002"
     ]
-  }
+  },
+  "settings": [
+    {
+      "id": "mode_1",
+      "type": "dropdown",
+      "label": {
+        "en": "Button 1 Mode",
+        "pl": "Tryb przycisku 1"
+      },
+      "value": "switch_1",
+      "values": [
+        {
+          "id": "switch_1",
+          "label": {
+            "en": "Switch",
+            "pl": "Przełącznik"
+          }
+        },
+        {
+          "id": "scene_1",
+          "label": {
+            "en": "Scene",
+            "pl": "Scena"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mode_2",
+      "type": "dropdown",
+      "label": {
+        "en": "Button 2 Mode",
+        "pl": "Tryb przycisku 2"
+      },
+      "value": "switch_2",
+      "values": [
+        {
+          "id": "switch_2",
+          "label": {
+            "en": "Switch",
+            "pl": "Przełącznik"
+          }
+        },
+        {
+          "id": "scene_2",
+          "label": {
+            "en": "Scene",
+            "pl": "Scena"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mode_3",
+      "type": "dropdown",
+      "label": {
+        "en": "Button 3 Mode",
+        "pl": "Tryb przycisku 3"
+      },
+      "value": "switch_3",
+      "values": [
+        {
+          "id": "switch_3",
+          "label": {
+            "en": "Switch",
+            "pl": "Przełącznik"
+          }
+        },
+        {
+          "id": "scene_3",
+          "label": {
+            "en": "Scene",
+            "pl": "Scena"
+          }
+        }
+      ]
+    }
+  ]
 }

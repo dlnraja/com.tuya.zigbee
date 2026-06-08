@@ -46,6 +46,10 @@
     }
   },
   "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0601_air_purifier"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -54,7 +58,10 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_dummy_fix",
+      "_tze200_kly8gjlz"
+    ]
   },
   "images": {
     "small": "/drivers/smart_lcd_thermostat/assets/images/small.png",
@@ -215,6 +222,5 @@
         "fr": "Alerte si le score de santé descend sous cette valeur"
       }
     }
-  ],
-  "id": "device_air_purifier_smart"
+  ]
 }
