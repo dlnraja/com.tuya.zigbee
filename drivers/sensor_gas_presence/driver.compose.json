@@ -18,7 +18,8 @@
     "alarm_co2",
     "alarm_contact",
     "alarm_gas",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {

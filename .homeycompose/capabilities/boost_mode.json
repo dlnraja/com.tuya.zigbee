@@ -1,0 +1,14 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Boost Mode",
+    "fr": "Mode Boost"
+  },
+  "desc": {
+    "en": "Temporarily heat at maximum power",
+    "fr": "Chauffage temporaire à puissance maximale"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle"
+}

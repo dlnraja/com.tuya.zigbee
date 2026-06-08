@@ -11,6 +11,7 @@
   ],
   "capabilities": [
     "alarm_smoke",
+    "alarm_battery",
     "measure_battery"
   ],
   "energy": {
