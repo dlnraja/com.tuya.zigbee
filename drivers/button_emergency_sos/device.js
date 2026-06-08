@@ -298,7 +298,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (type === 'percentage') {
       percent = value > 100 ? Math.round(value / 2) : value;
     } else {
-      const voltage = smartParse(value, null, { capability: 'measure_voltage' });
+      // Voltage to percent: (voltage - 2.0V) / 1.0V * 100%
+      // ZCL batteryVoltage is in units of 100mV (e.g., 28 = 2.8V)
+      const voltage = typeof value === 'number' ? value / 100 : 0;
       percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
     }
 
