@@ -80,7 +80,7 @@ class RainSensorDevice extends UnifiedSensorBase {
       try {
         if (this.tuyaEF00Manager && !this._lastDPReceived) {
           this.log('[RAIN] Polling for DP data...');
-          await this.tuyaEF00Manager.requestDPs?.([1, 2, 4, 102, 104]).catch(() => {});
+          for (const dp of [1, 2, 4, 102, 104]) { await this.tuyaEF00Manager.requestDP(dp).catch(() => {}); }
         }
       } catch (e) {
         this.log('[RAIN] Poll error:', e.message);

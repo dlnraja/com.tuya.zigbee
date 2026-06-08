@@ -27,10 +27,13 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
     await this._setupIlluminanceCluster(zclNode);
 
     // v8.1.131: Add periodic DP request for devices that don't send spontaneously
-    this._pollInterval = setInterval(() => {
+    this._pollInterval = this.homey.setInterval(async () => {
+      if (this._destroyed) return;
       if (this.tuyaEF00Manager && !this._lastLuminance) {
         this.log('[ILLUMINANCE] Polling for luminance data...');
-        this.tuyaEF00Manager.requestDPs?.([3, 4, 12]).catch(() => {});
+        for (const dp of [3, 4, 12]) {
+          await this.tuyaEF00Manager.requestDP(dp).catch(() => {});
+        }
       }
     }, 60000); // Poll every 60 seconds if no data received
 
