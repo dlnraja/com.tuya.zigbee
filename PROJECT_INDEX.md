@@ -372,6 +372,48 @@ if (isPhysical && previousState !== value) {
 }
 ```
 
+### Bidirectional Button Architecture (PhysicalButtonMixin + VirtualButtonMixin)
+
+**Mixin chain (MANDATORY order for switches/dimmers):**
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
+```
+
+**How it works:**
+1. **App command** → VirtualButtonMixin calls `markAppCommand()` BEFORE sending the ZCL/Tuya command
+2. **Device responds** → PhysicalButtonMixin receives the response and checks `!appCommandPending`
+3. **Result**: App commands are ignored, physical presses trigger flow cards
+
+**Per-gang state** (PhysicalButtonMixin):
+```javascript
+this._physicalButtonState = {
+  1: { appCommandPending: false, appCommandTimeout: null, ... },
+  2: { appCommandPending: false, appCommandTimeout: null, ... },
+};
+```
+
+**Flow card triggering** (physical only):
+```javascript
+// In _handleAttributeReport or _handleTuyaDPReport:
+const isPhysical = reportingEvent && !this._physicalButtonState[gang].appCommandPending;
+if (isPhysical) {
+  this._safeTriggerFlow(flowId, this, {}, {});
+}
+```
+
+**Cleanup** (onDeleted/onUninit):
+- Clear all per-gang `appCommandTimeout` and `clickTimeout`
+- Clear `_metricsSyncInterval` (memory leak prevention)
+- Clear `_sceneRecoveryTimer`
+- Call `super.onDeleted()` / `super.onUninit()`
+
+**Known anti-patterns (DO NOT USE):**
+- Local `_markAppCommand()` that doesn't call `super.markAppCommand()` — shadows mixin
+- Local `_appCommandPending` flat boolean — conflicts with per-gang state
+- `getTriggerCard()` without `.trigger()` — flow cards silently broken
+- `initPhysicalButtonDetection()` called without `zclNode` argument
+- `onDeleted()` without `clearTimeout()` or `super.onDeleted()` — timer/memory leaks
+
 ### Mixin Order
 ```javascript
 class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
@@ -1107,4 +1149,41 @@ To ensure that all autonomous improvements, updates, and maintenance tasks are e
 By bridging local-first lazy driver structures with Trellis orchestration loops, the project achieves an ultra-stable, self-healing, and production-ready smart home engine.
 
 ---
+
+## 30. GITHUB ISSUE AUTO-CLOSE PROTOCOL
+
+### When to Close an Issue
+- **ONLY** close when the **original reporter** confirms the fix works
+- Post a detailed resolution comment with version number, root cause, and files modified
+- Never close without user confirmation — re-open if user reports the issue persists
+
+### Auto-Close Template
+```markdown
+## ✅ Fixed in vX.Y.Z
+
+**Root cause:** [brief description]
+**Fix:** [what was changed]
+**Files modified:** [list]
+
+Please update to vX.Y.Z+ and re-pair your device.
+If issues persist, share a new diagnostic report.
+```
+
+### Issue Lifecycle
+1. User reports issue with diagnostic code
+2. Developer investigates (cross-reference Z2M/ZHA, check MFR+PID, verify architecture)
+3. Fix is pushed to master
+4. CI/CD publishes to test channel
+5. User tests and confirms fix works
+6. Developer posts resolution comment with details
+7. **User confirms** → Issue is closed
+8. If user reports still broken → Re-open and investigate further
+
+### NEVER Close Without Confirmation
+- Auto-generated issues (github-actions bot) → Close when pipeline completes
+- User-reported issues → **NEVER** close until user confirms fix works
+- Forum-reported issues → Create GitHub issue, link to forum thread, wait for user confirmation
+
+---
+
 **END OF PROJECT_INDEX.md**
