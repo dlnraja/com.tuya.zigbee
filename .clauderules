@@ -87,7 +87,28 @@ git log --oneline -- drivers/<driver>/device.js
 - Diagnostics: ask user to share via https://tools.developer.homey.app
 
 ## FORUM MONITORING
-- Thread 140352: Universal TUYA Zigbee Device App (2011 posts)
+- Thread 140352: Universal TUYA Zigbee Device App (2011+ posts, last: June 9, 2026)
 - Thread 26439: JohanBendz Tuya Zigbee App (1153 posts, last: May 2026)
 - Use `scripts/automation/enhanced-forum-scraper.js` for automated monitoring
 - Use `scripts/_process_forum.js` for manual post processing
+- Diagnostics: ask user to share via https://tools.developer.homey.app
+
+## DIAGNOSTIC LOG RETRIEVAL
+- **Email script**: `node .github/scripts/fetch-gmail-diagnostics.js` — reads diagnostic reports from Gmail via IMAP
+- **Dev dashboard**: `node .github/scripts/athom-dev-cartographer.js` — checks Athom build status
+- **Device diagnostics**: `node .github/scripts/homey-device-diagnostics.js` — requires HOMEY_PAT
+- **Forum scraping**: `node scripts/automation/enhanced-forum-scraper.js` — extracts diagnostics from forum posts
+- **Manual processing**: `node scripts/_process_forum.js` — processes forum messages with MFR+PID extraction
+
+## CHANGELOG READING (MANDATORY)
+Before fixing ANY issue, ALWAYS:
+1. `cat .homeychangelog.json | head -20` — check version history
+2. `git log --oneline -20` — check recent commits
+3. `git log --oneline -- drivers/<driver>/device.js` — check driver changes
+4. Cross-reference with Z2M source code
+5. Check `scripts/data/z2m-data.json` for DP definitions
+
+## DEV DASHBOARD
+- Build status: `node .github/scripts/athom-build-state-monitor.js`
+- Failed processing: usually archive too large or malformed app.json
+- Fix: ensure app.json < 20MB compressed, no merge conflicts
