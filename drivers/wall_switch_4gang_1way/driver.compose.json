@@ -77,12 +77,6 @@
     "manufacturerName": [
       "_tz3000_2ei1fkwb",
       "_TZ3000_2EI1FKWB",
-      "_tz3000_hy5lggkg",
-      "_TZ3000_HY5LGGKG",
-      "_tz3002_vaq2bfcu",
-      "_TZ3002_vaq2bfcu",
-      "_TZ3002_VAQ2BFCU",
-      "_TZ3000_tyg4yiat",
       "_tz3000_3n2minvf",
       "_tz3000_4vobcwsc",
       "_tz3000_a37eix1s",
@@ -90,6 +84,8 @@
       "_tz3000_enmfaave",
       "_tz3000_excgg5kb",
       "_tz3000_eyzpwhtc",
+      "_tz3000_hy5lggkg",
+      "_TZ3000_HY5LGGKG",
       "_tz3000_jwoyqycg",
       "_tz3000_kfkqkjqe",
       "_tz3000_kt6xxa4o",
@@ -99,6 +95,7 @@
       "_tz3000_r9e2w7dn",
       "_tz3000_s6ma1nh4",
       "_tz3000_ssup6h68",
+      "_TZ3000_tyg4yiat",
       "_tz3000_uz6ibhib",
       "_tz3000_wopf2sox",
       "_tz3000_wwtnshol",
@@ -113,6 +110,9 @@
       "_tz3002_tlsvxhxc",
       "_tz3002_u7d3nes3",
       "_tz3002_uu4uircb",
+      "_tz3002_vaq2bfcu",
+      "_TZ3002_vaq2bfcu",
+      "_TZ3002_VAQ2BFCU",
       "_tz3002_xkxgfxsg",
       "_tz3002_ybtqbyk3",
       "_tz3002_yptomml1",
@@ -124,17 +124,16 @@
       "_tz3210_iymfxdis",
       "_tze204_xibaabmu",
       "_tze284_xibaabmu",
-      "lellki",
-      "_TZ3002_PZAO9LS1"
+      "lellki"
     ],
     "productId": [
-      "TS0004",
-      "TS0014",
-      "TS0726",
       "JZ-ZB-004",
+      "TS0004",
       "TS0004_power",
       "TS0004_switch_module",
-      "TS0601"
+      "TS0014",
+      "TS0601",
+      "TS0726"
     ],
     "endpoints": {
       "1": {
