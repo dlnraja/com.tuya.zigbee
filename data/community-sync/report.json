@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-09T06:21:29.561Z",
-  "currentCount": 10811,
+  "ts": "2026-06-09T07:41:05.695Z",
+  "currentCount": 10812,
   "src": {
     "johan": {
       "count": 650,
@@ -19275,9 +19275,19 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 56,
+      "issueCount": 57,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 409,
+          "title": "[Auto] 3 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh",
+            "_TZE284_sdvbnmj5",
+            "_TZE200_u6x1zyv2"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 408,
@@ -19473,16 +19483,6 @@
           "mfrs": [
             "_TZE200_rhgsbacq",
             "_TZE200_rhgsbacq"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1397,
-          "title": "Device Request - [Radaar sensor /  mmWave] - [TS0601] / [_TZE284_1youk3hj]",
-          "mfrs": [
-            "_TZE284_1youk3hj",
-            "_TZE284_1youk3hj",
-            "_TZE284_1youk3hj"
           ]
         }
       ]
