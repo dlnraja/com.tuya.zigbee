@@ -1,6 +1,6 @@
 {
-  "ts": "2026-06-09T15:56:28.285Z",
-  "currentCount": 10812,
+  "ts": "2026-06-09T16:27:51.327Z",
+  "currentCount": 10814,
   "src": {
     "johan": {
       "count": 650,
@@ -19275,7 +19275,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 58,
+      "issueCount": 57,
       "prCount": 2,
       "deviceRequests": [
         {
@@ -19504,12 +19504,6 @@
     },
     {
       "mfr": "_TZE284_sdvbnmj5",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_u6x1zyv2",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -40003,6 +39997,6 @@
       "driver": null
     }
   ],
-  "newCount": 3,
+  "newCount": 2,
   "enrichedCount": 2213
 }
