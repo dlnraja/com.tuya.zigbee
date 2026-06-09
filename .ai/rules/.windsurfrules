@@ -600,3 +600,25 @@ curl https://apps-api.athom.com/api/v1/app/com.dlnraja.tuya.zigbee | jq '.testVe
 - **Incremental Verification**: Do not attempt to fix 10 things at once. Plan, execute one logical block, test/verify, and reflect on the outcome before proceeding.
 - **Tool-Driven Loop**: Leverage tools intelligently (read files to confirm context, search codebase for dependencies, run validation scripts) before making blind code edits.
 - **Context Mastery**: Assimilate the dual-app context and project architecture fully into your reasoning model before proposing solutions.
+
+// ============================================================================
+// FORUM MONITORING & ISSUE RESOLUTION
+// ============================================================================
+- **Forum Thread 140352**: Universal TUYA Zigbee Device App (2011+ posts). Last activity: June 9, 2026.
+- **Forum Thread 26439**: JohanBendz Tuya Zigbee App (1153 posts). Last activity: May 2026.
+- **Scraping Tools**: Use `scripts/automation/enhanced-forum-scraper.js` for automated monitoring.
+- **Manual Processing**: Use `scripts/_process_forum.js` for manual post processing.
+- **Changelog Reading**: ALWAYS read `.homeychangelog.json` before fixing any issue.
+- **Diagnostics**: Ask user to share via https://tools.developer.homey.app
+- **Resolution Comments**: Post with version number, root cause, files modified, test instructions.
+
+// ============================================================================
+// DEVICE-SPECIFIC RULES (from forum/issues investigation)
+// ============================================================================
+- **Bed Sensor (_TZE200_seq9cm6u)**: DP1=trueFalse0, DP4=batteryConfig (NOT dpMappings), DP12=pressure, requestDP singular, _handleBatteryDP override for 0/1 mapping
+- **Illuminance (_TZE284_aaeasoll)**: DP2=illuminance (Z2M PR #12347), NOT DP3/DP4/DP12
+- **Rain Sensor (_TZE200_u6x1zyv2)**: Hybrid IAS Zone + Tuya DP, both protocols handled
+- **Radiator Valve (_TZE200_9xfjixap)**: Must be in radiator_valve, NOT device_air_purifier_radiator
+- **Soil Sensor (_TZE284_oitavov2)**: DP3=moisture, DP5=temperature (auto-scale), DP14=battery_state enum
+- **4-Button Remote (_TZ3000_u3nv1jwk)**: TS0044 scene mode, 4 endpoints = 4 buttons, only in button_wireless_4
+- **Presence Radar (_TZE200_ka8l86iu)**: DP1=presence, DP106=illuminance, DP110=battery (non-standard DP)
