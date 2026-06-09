@@ -9,7 +9,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -38,9 +39,9 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_JNHU1LLV",
+      "TUYATEC-QUN7VQ14",
       "_TZE200_vvmbj46n",
-      "TUYATEC-QUN7VQ14"
+      "_TZ3000_JNHU1LLV"
     ]
   },
   "images": {

@@ -16,7 +16,8 @@
     "measure_battery",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -30,12 +31,16 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze204_s8gkrkxk",
-      "_TZE204_s8gkrkxk",
-      "_TZE204_S8GKRKXK",
       "_TZE200_7bztmfm1",
+      "_TZE200_QPN5Q17M",
+      "_TZE200_S8GKRKXK",
+      "_TZE200_qpn5q17m",
       "_TZE200_s8gkrkxk",
-      "_TZE200_qpn5q17m"
+      "_TZE204_S8GKRKXK",
+      "_TZE204_s8gkrkxk",
+      "_tze200_qpn5q17m",
+      "_tze200_s8gkrkxk",
+      "_tze204_s8gkrkxk"
     ],
     "endpoints": {
       "1": {

@@ -15,7 +15,8 @@
     "onoff",
     "measure_humidity",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "platforms": [
     "local"
@@ -25,12 +26,18 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_ekd8x5dt",
-      "_TZE200_ekd8x5dt",
+      "_TZE200_AOCLFNXZ",
       "_TZE200_EKD8X5DT",
-      "_TZE200_ztvwu4nk",
+      "_TZE200_ZTVWU4NK",
       "_TZE200_aoclfnxz",
-      "_TZE204_ztvwu4nk"
+      "_TZE200_ekd8x5dt",
+      "_TZE200_ztvwu4nk",
+      "_TZE204_ZTVWU4NK",
+      "_TZE204_ztvwu4nk",
+      "_tze200_aoclfnxz",
+      "_tze200_ekd8x5dt",
+      "_tze200_ztvwu4nk",
+      "_tze204_ztvwu4nk"
     ],
     "productId": [
       "TS0601",

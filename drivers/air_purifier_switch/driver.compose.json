@@ -9,7 +9,8 @@
     "button.toggle",
     "button.identify",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -32,9 +33,9 @@
     },
     "manufacturerName": [
       "_TYST11_d0yu2xgi",
-      "_TZE200_4mh6tyyo",
+      "_TZE200_7bztmfm1",
       "_TZE200_qpn5q17m",
-      "_TZE200_7bztmfm1"
+      "_TZE200_4mh6tyyo"
     ]
   },
   "images": {

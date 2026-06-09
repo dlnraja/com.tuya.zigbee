@@ -18,7 +18,8 @@
     "button.4",
     "button.5",
     "button.6",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -89,13 +90,13 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_iszegwpd",
       "_tze200_zxx7mi77",
       "_TZE200_zxx7mi77",
       "_TZE200_ZXX7MI77",
       "_tze204_zxx7mi77",
       "_TZE204_zxx7mi77",
-      "_TZE204_ZXX7MI77"
+      "_TZE204_ZXX7MI77",
+      "_TZ3000_iszegwpd"
     ],
     "productId": [
       "TS0046",

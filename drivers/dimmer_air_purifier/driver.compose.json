@@ -10,7 +10,8 @@
     "onoff",
     "measure_power",
     "measure_battery",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -38,6 +39,12 @@
       }
     },
     "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_TZE200_3p5ydos3",
+      "_TZE204_n9ctkb6j",
+      "_tze204_3z6hca0q",
       "_tze284_4ar89tr1"
     ]
   },

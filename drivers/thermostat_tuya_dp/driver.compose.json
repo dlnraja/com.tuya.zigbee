@@ -12,7 +12,8 @@
     "thermostat_mode",
     "measure_battery",
     "onoff",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "platforms": [
     "local"
@@ -142,7 +143,6 @@
       "_tze200_xby0s3ta",
       "_TZE200_xby0s3ta",
       "_TZE200_XBY0S3TA",
-      "_TZE200_ye5jkfsb",
       "_tze200_yw7cahqs",
       "_TZE200_yw7cahqs",
       "_TZE200_YW7CAHQS",
@@ -185,7 +185,6 @@
       "_tze204_xyugziqv",
       "_TZE204_xyugziqv",
       "_TZE204_XYUGZIQV",
-      "_TZE204_ye5jkfsb",
       "_tze204_znbl8dj5",
       "_TZE204_znbl8dj5",
       "_TZE204_ZNBL8DJ5",
@@ -212,7 +211,9 @@
       "_TZE284_XNBKHHDR",
       "_tze284_znlqjmih",
       "_TZE284_znlqjmih",
-      "_TZE284_ZNLQJMIH"
+      "_TZE284_ZNLQJMIH",
+      "_TZE200_ye5jkfsb",
+      "_TZE204_ye5jkfsb"
     ],
     "productId": [
       "TS0601",

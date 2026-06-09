@@ -26,7 +26,8 @@
     "windowcoverings_set",
     "windowcoverings_state",
     "target_temperature",
-    "thermostat_mode"
+    "thermostat_mode",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "tuya_dp_value": {

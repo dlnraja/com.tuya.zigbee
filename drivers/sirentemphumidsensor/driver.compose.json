@@ -12,7 +12,8 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_generic",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -60,6 +61,13 @@
       }
     },
     "manufacturerName": [
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_TYZB01_sbpc1zrb",
+      "_TZE200_znzs7yaw",
+      "_TZE204_ex3rcdha",
+      "_TZE204_vmcgja59",
       "_TZE284_vmcgja59"
     ]
   },
