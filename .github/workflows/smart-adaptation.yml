@@ -43,6 +43,17 @@ jobs:
           node scripts/validation/check-database-routing.js || true
           node scripts/validation/check-fingerprint-health.js || true
 
+      - name: Run Homey Dashboard Cartography
+        run: |
+          node .github/scripts/athom-dev-cartographer.js || true
+          node .github/scripts/athom-build-state-monitor.js || true
+        continue-on-error: true
+
+      - name: Check Archive Size
+        run: |
+          node .github/scripts/check-archive-size.js || true
+        continue-on-error: true
+
       - name: Upload Adaptation Report
         if: always()
         uses: actions/upload-artifact@v4
