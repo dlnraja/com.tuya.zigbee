@@ -17,7 +17,7 @@ const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNa
  * ║  Models: TS0601, _TZE200_*, Smart irrigation controller                     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-const INSOMA_MFRS = ['_tze284_fhvpaltk'];
+const INSOMA_MFRS = ['_tze284_fhvpaltk', '_TZE284_fhvpaltk', '_TZE284_FHVPALTK'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
 
 class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
