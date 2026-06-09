@@ -15,7 +15,8 @@
   ],
   "capabilities": [
     "button.1",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/wall_remote_1_gang/assets/images/large.png",
@@ -28,11 +29,11 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB02_keyjqthh",
-      "_TYZB02_KEYJQTHH",
       "_tz3000_tk3s5tyg",
       "_TZ3000_tk3s5tyg",
-      "_TZ3000_TK3S5TYG"
+      "_TZ3000_TK3S5TYG",
+      "_TYZB02_keyjqthh",
+      "_TYZB02_KEYJQTHH"
     ],
     "productId": [
       "TS0041"

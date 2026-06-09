@@ -9,16 +9,17 @@
   "capabilities": [
     "onoff.valve_1",
     "onoff.valve_2",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
+      "TS0601",
       "SWV-ZFE",
       "SWV-ZFU",
       "SWV-ZN",
       "SWV-ZNE",
       "SWV-ZNU",
-      "TS0601",
       "TS0601_watervalve"
     ],
     "endpoints": {
@@ -31,12 +32,26 @@
       }
     },
     "manufacturerName": [
-      "_tz3000_yz38gdra",
+      "_tze200_placeholder_generic",
+      "_TZE200_placeholder_generic",
+      "_TZE200_PLACEHOLDER_GENERIC",
+      "_TZ3000_8n7lqbm0",
+      "_TZ3000_ctftgjwb",
+      "_TZ3000_g8n1n7lg",
+      "_TZ3000_udl7uyd2",
+      "_TZ3218_7fiyo3kv",
       "_TZ3290_ixd9mvv4",
+      "_TZE200_r32ctezx",
+      "_TZE204_r32ctezx",
+      "_TZE284_7zazvlyn",
+      "_TZE284_ajlu4cud",
+      "_TZE284_idn2htgu",
+      "_tz3000_yz38gdra",
       "_tze200_yltivvzb",
       "_tze204_wt66haax",
-      "_TZE284_7zazvlyn",
-      "_tze284_wt66haax"
+      "_tze284_wt66haax",
+      "_TZE284_fhvpaltk",
+      "_TZE284_eaet5qt5"
     ]
   },
   "images": {

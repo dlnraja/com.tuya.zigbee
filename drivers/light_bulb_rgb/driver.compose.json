@@ -14,7 +14,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
@@ -83,7 +84,9 @@
       "_TZB210_LMQQUXUS",
       "_tzb210_quinzf3w",
       "_TZB210_quinzf3w",
-      "_TZB210_QUINZF3W"
+      "_TZB210_QUINZF3W",
+      "ewelight",
+      "EWELIGHT"
     ],
     "endpoints": {
       "1": {

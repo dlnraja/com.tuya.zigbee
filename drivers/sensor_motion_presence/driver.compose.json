@@ -14,7 +14,8 @@
     "measure_humidity",
     "measure_battery",
     "measure_luminance.distance",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -32,8 +33,10 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tyst11_7hfcudw5",
-      "_tyst11_i5j6ifxj",
+      "_tze200_bj9m6v91",
+      "_TZE200_bj9m6v91",
+      "_TZE200_BJ9M6V91",
+      "_TYZB01_5nr7ncpl",
       "_TYZB01_jytabjkb",
       "_TYZB01_yr95mpib",
       "_TYZB01_z2umiwvq",
@@ -81,32 +84,34 @@
       "_TZE200_2pddnnrk",
       "_TZE200_8isdky6j",
       "_TZE200_aj0oxo1i",
-      "_tze200_bj9m6v91",
-      "_TZE200_bj9m6v91",
-      "_TZE200_BJ9M6V91",
       "_TZE200_ghynnvos",
       "_TZE200_iq4ygaai",
       "_TZE200_jsaqgakf",
       "_TZE200_me6wtiqs",
       "_TZE200_p6fuhvez",
       "_TZE200_s6hzw8g2",
-      "_TZE200_u6x1zyv2",
       "_TZE200_wqashyqo",
       "_TZE204_debczeci",
       "_TZE204_oqtpvx51",
       "_TZE204_sooucan5",
-      "_tze284_bquwrqh1",
       "_TZE284_tre6haif",
-      "tuyatec-smmlguju"
+      "PIRIV01",
+      "VABRATE",
+      "_tyst11_7hfcudw5",
+      "_tyst11_i5j6ifxj",
+      "tuyatec-smmlguju",
+      "_tze284_bquwrqh1"
     ],
     "productId": [
+      "Excellux",
+      "TS0225",
+      "TS0601",
       "3305-S",
       "3325-S",
       "3326-L",
       "CK-TLSR8656-SS5-01(7002)",
       "E1525/E1745",
       "E1745",
-      "Excellux",
       "IH012-RT01",
       "lumi.motion.ac02",
       "lumi.motion.agl04",
@@ -124,8 +129,6 @@
       "SNZB-03R2",
       "TRADFRI motion sensor",
       "TS0202",
-      "TS0225",
-      "TS0601",
       "TY0202",
       "ZG-204Z"
     ],

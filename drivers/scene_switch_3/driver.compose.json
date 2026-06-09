@@ -11,7 +11,8 @@
     "button.1",
     "button.2",
     "button.3",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
@@ -41,7 +42,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_famkxci2",
       "_tz3000_nsar4ife",
       "_TZ3000_NSAR4IFE",
       "_tz3000_qdgg10wg",
@@ -49,7 +49,8 @@
       "_TZ3000_QDGG10WG",
       "_tz3002_weh1jmhg",
       "_TZ3002_weh1jmhg",
-      "_TZ3002_WEH1JMHG"
+      "_TZ3002_WEH1JMHG",
+      "_TZ3000_famkxci2"
     ],
     "productId": [
       "TS0043",

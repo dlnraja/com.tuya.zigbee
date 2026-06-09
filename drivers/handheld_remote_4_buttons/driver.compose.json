@@ -15,7 +15,8 @@
   ],
   "capabilities": [
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/handheld_remote_4_buttons/assets/images/large.png",
@@ -73,9 +74,6 @@
       "_tz3000_sqw3qqtc",
       "_TZ3000_sqw3qqtc",
       "_TZ3000_SQW3QQTC",
-      "_tz3000_u3nv1jwk",
-      "_TZ3000_u3nv1jwk",
-      "_TZ3000_U3NV1JWK",
       "_tz3000_uri7ez8u",
       "_TZ3000_uri7ez8u",
       "_TZ3000_URI7EZ8U",
@@ -152,14 +150,7 @@
         "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3000_u3nv1jwk",
-        "productId": [
-          "TS0044"
-        ]
-      }
-    ]
+    "fingerprints": []
   },
   "settings": [
     {

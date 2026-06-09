@@ -17,7 +17,8 @@
     "button.1",
     "button.2",
     "button.3",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "/drivers/wall_remote_3_gang/assets/images/large.png",
@@ -57,8 +58,6 @@
       }
     },
     "manufacturerName": [
-      "_TYZB02_key8kk7r",
-      "_TYZB02_KEY8KK7R",
       "_tz3000_a7ouggvs",
       "_TZ3000_a7ouggvs",
       "_TZ3000_A7OUGGVS",
@@ -73,7 +72,9 @@
       "_TZ3000_W8JWKCZZ",
       "_tz3000_yw5tvzsk",
       "_TZ3000_yw5tvzsk",
-      "_TZ3000_YW5TVZSK"
+      "_TZ3000_YW5TVZSK",
+      "_TYZB02_key8kk7r",
+      "_TYZB02_KEY8KK7R"
     ]
   },
   "settings": [],

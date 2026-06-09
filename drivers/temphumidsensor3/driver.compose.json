@@ -6,6 +6,7 @@
   "class": "sensor",
   "capabilities": [
     "measure_battery",
+    "alarm_battery",
     "measure_humidity",
     "measure_temperature"
   ],
@@ -56,11 +57,11 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_fllyghyj",
       "_tz3000_m0vaazab",
       "_TZ3000_m0vaazab",
       "_TZ3000_M0VAAZAB",
-      "_TZ3000_bguser20"
+      "_TZ3000_bguser20",
+      "_TZ3000_fllyghyj"
     ]
   },
   "settings": [

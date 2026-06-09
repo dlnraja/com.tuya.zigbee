@@ -15,7 +15,8 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "meter_power.exported"
+    "meter_power.exported",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [

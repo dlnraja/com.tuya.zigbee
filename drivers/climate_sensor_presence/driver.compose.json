@@ -25,7 +25,8 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.toggle_3",
-    "button.identify"
+    "button.identify",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -76,8 +77,8 @@
       "_tze200_m9qayzqa8",
       "_TZE200_m9qayzqa8",
       "_TZE200_M9QAYZQA8",
-      "_TZE200_hl0ss9oa",
-      "_TZE204_hl0ss9oa"
+      "_TZE204_hl0ss9oa",
+      "_TZE200_hl0ss9oa"
     ],
     "productId": [
       "TS0601"

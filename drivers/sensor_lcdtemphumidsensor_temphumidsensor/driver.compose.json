@@ -8,7 +8,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -19,10 +20,19 @@
   "zigbee": {
     "manufacturerName": [
       "_TYZB01_a082h2cc",
-      "_tza226_ueagguan",
-      "_TZA226_ueagguan",
+      "_TZ2000_A476RAQ2",
+      "_TZ2000_XOGB73AM",
+      "_TZ2000_a476raq2",
+      "_TZ2000_xogb73am",
+      "_TZ3000_RUSU2VZB",
+      "_TZ3000_bguser20",
+      "_TZ3000_rusu2vzb",
       "_TZA226_UEAGGUAN",
-      "_TZ3000_bguser20"
+      "_TZA226_ueagguan",
+      "_tz2000_a476raq2",
+      "_tz2000_xogb73am",
+      "_tz3000_rusu2vzb",
+      "_tza226_ueagguan"
     ],
     "productId": [
       "TS0201",

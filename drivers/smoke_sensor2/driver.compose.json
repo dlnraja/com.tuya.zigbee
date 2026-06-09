@@ -12,7 +12,8 @@
   "capabilities": [
     "measure_battery",
     "alarm_smoke",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -65,6 +66,9 @@
       "_tz3000_ztc6ggyl",
       "_TZ3000_ztc6ggyl",
       "_TZ3000_ZTC6GGYL",
+      "_tz3210_dse8ogfy",
+      "_TZ3210_dse8ogfy",
+      "_TZ3210_DSE8OGFY",
       "_tz3210_hqunee3s",
       "_TZ3210_hqunee3s",
       "_TZ3210_HQUNEE3S",
@@ -89,9 +93,15 @@
       "_tze204_vafd6gkz",
       "_TZE204_vafd6gkz",
       "_TZE204_VAFD6GKZ",
+      "_tze284_gyzlwu5q",
+      "_TZE284_gyzlwu5q",
+      "_TZE284_GYZLWU5Q",
       "_tze284_n4ttsck2",
       "_TZE284_n4ttsck2",
-      "_TZE284_N4TTSCK2"
+      "_TZE284_N4TTSCK2",
+      "_TZE200_ntcy3xu1",
+      "_TZE200_t5p1vj8r",
+      "_TZE204_ntcy3xu1"
     ],
     "productId": [
       "GS361A-H04",
@@ -105,8 +115,8 @@
       "SD8SC_00.00.03.12TC",
       "SMSZB-120",
       "SSSQS01LM",
-      "TS0601",
-      "YG400A"
+      "YG400A",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

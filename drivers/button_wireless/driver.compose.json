@@ -12,7 +12,8 @@
   },
   "class": "button",
   "capabilities": [
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_battery": {
@@ -31,9 +32,9 @@
       "SNZB-01P",
       "TS0040",
       "TS0041",
-      "TS0044",
       "WB-01",
-      "WB01"
+      "WB01",
+      "TS0044"
     ],
     "endpoints": {
       "1": {
@@ -61,23 +62,25 @@
       }
     },
     "manufacturerName": [
-      "_tyzb01_",
-      "_TYZB01_",
-      "_tz3000_",
-      "_TZ3000_",
-      "_tz3000_2t1g0sdb",
-      "_TZ3000_2t1g0sdb",
-      "_TZ3000_2T1G0SDB",
-      "_tz3400_",
-      "_TZ3400_",
-      "ts0041",
       "TS0041",
-      "ts0042",
       "TS0042",
-      "ts0043",
       "TS0043",
-      "ts0044",
-      "TS0044"
+      "TS0044",
+      "_TYZB01_",
+      "_TYZB02_KEYJQTHH",
+      "_TZ3000_",
+      "_TZ3000_2T1G0SDB",
+      "_TZ3000_2t1g0sdb",
+      "_TZ3400_",
+      "_tyzb01_",
+      "_tyzb02_keyjqthh",
+      "_tz3000_",
+      "_tz3000_2t1g0sdb",
+      "_tz3400_",
+      "ts0041",
+      "ts0042",
+      "ts0043",
+      "ts0044"
     ]
   },
   "images": {

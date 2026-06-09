@@ -14,7 +14,8 @@
   "capabilities": [
     "measure_battery",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -85,7 +86,9 @@
       "xiaomi",
       "XIAOMI",
       "zemismart",
-      "ZEMISMART"
+      "ZEMISMART",
+      "_TZ3000_kxaow5ki",
+      "_TZ3000_tzvbimpq"
     ],
     "productId": [
       "TS0203",
