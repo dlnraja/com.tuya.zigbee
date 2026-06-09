@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-09T19:50:11.032Z",
+  "ts": "2026-06-09T20:19:58.775Z",
   "currentCount": 10814,
   "src": {
     "johan": {
@@ -19296,29 +19296,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 60,
+      "issueCount": 58,
       "prCount": 2,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 413,
-          "title": "[plug_energy_monitor] Bug: \t_TZ3000_wzmuk9ai   \tTS011F",
-          "mfrs": [
-            "_TZ3000_wzmuk9ai",
-            "_TZ3000_wzmuk9ai"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 412,
-          "title": "_TZ3000_yj6k7vfo [button_wireless_smart] Bug: No button press detected again. #334  #410",
-          "mfrs": [
-            "_TZ3000_yj6k7vfo",
-            "_TZ3000_yj6k7vfo",
-            "_TZ3000_yj6k7vfo",
-            "_TZ3000_yj6k7vfo"
-          ]
-        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 411,
@@ -19507,6 +19487,26 @@
             "_TZ3002_pzao9ls1",
             "_TZ3002_pzao9ls1",
             "_TZ3002_pzao9ls1"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1400,
+          "title": "Device Request - [LCD thermometer & humidity sensor ] - [_TZE284_qf5mzewi] / [TS0601]",
+          "mfrs": [
+            "_TZE284_qf5mzewi",
+            "_TZE284_qf5mzewi"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1399,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZE284_uo8qcagc",
+            "_TZE284_uo8qcagc",
+            "_TZE284_uo8qcagc",
+            "_TZE284_uo8qcagc"
           ]
         }
       ]
