@@ -40,10 +40,10 @@
 | climate_sensor_presence | 5 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | co_sensor | 13 | TS0601, TS0601_co | alarm_co, measure_battery, measure_co... |
 | contact_sensor | 116 | 3300-S, 3320-L, CK-TLSR8656-SS5-01(7003), DoorWindow-Sensor-ZB3.0, DS01, E1603/E1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, MCT-340 E, q9mpfhw, RH3001, SNZB-04, SNZB-04P, SNZB-04PR2, SNZB-04R2, TRADFRI open/close remote, TS0021, TS0203, TS0207, TS0601, ZG-102Z, ZG-102ZL | alarm_contact, measure_battery, alarm_generic... |
-| curtain_module | 112 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_set, windowcoverings_state |
-| curtain_module_2_gang | 114 | TS0601, TS130F | windowcoverings_set, windowcoverings_state |
-| curtain_motor | 578 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
-| curtain_motor_shutter | 212 | TS0301, TS0601, AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0302, TS030F, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
+| curtain_module | 111 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_set, windowcoverings_state |
+| curtain_module_2_gang | 113 | TS0601, TS130F | windowcoverings_set, windowcoverings_state |
+| curtain_motor | 577 | AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0301, TS0302, TS030F, TS0601, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
+| curtain_motor_shutter | 211 | TS0301, TS0601, AM02, AM43-0.45/40-ES-EB, AM43-0.45/40-ES-EZ, DS421, DS82, E1757, FYRTUR, KADRILJ, lumi.curtain, lumi.curtain.acn002, lumi.curtain.hagl04, TS0105, TS0302, TS030F, TS130F, ZBCurtain, ZC-LS02 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_tilt | 79 | TS0601, TS0601_curtain_tilt | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_wall | 24 | TS130F | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | device_air_purifier | 37 | TS0601, TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
@@ -162,7 +162,7 @@
 | radar_sensor_2 | 164 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z, CK-BL702-MWS-01(7016), ZP-301Z, CK-BL702-MWS-01, MG1_5RZ, SNZB-06P, SZLMR10, TS0203, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM | measure_luminance, alarm_motion |
 | radar_sensor_ceiling | 297 | 3305-S, 3325-S, 3326-L, CK-TLSR8656-SS5-01(7002), E1525/E1745, E1745, IH012-RT01, lumi.motion.ac02, lumi.motion.agl04, lumi.sensor_motion, lumi.sensor_motion.aq2, MS01, MSO1, RH3040, SML001, SML002, SML003, SML004, SNZB-03, SNZB-03P, SNZB-03R2, TRADFRI motion sensor, TS0202, TS0225, TS0601, TY0202, ZG-204Z | measure_luminance, alarm_motion |
 | radiator_controller | 12 | TS0601, TS0601_rad | onoff, target_temperature, measure_temperature... |
-| radiator_valve | 493 | 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, measure_temperature, thermostat_mode... |
+| radiator_valve | 495 | 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, measure_temperature, thermostat_mode... |
 | radiator_valve_zigbee | 7 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | rain_sensor | 15 | TS0207, TS0207_rain, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_humidity, measure_luminance... |
 | relay_board_1_channel | 5 | 01MINIZB, BASICZBR3, S31ZB, TS0001, TS0001_power, TS0001_switch, TS0001_switch_module, TS0101, TS011F, TS4100, ZBM5-1C-120, ZBM5-2C-120, ZBM5-3C-120, ZBMINI, ZBMINIL2, ZBMINIL2-R2, ZBMINIR, ZBMINIR2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1 | onoff |
@@ -280,10 +280,10 @@
 | usb_dongle_dual_repeater | 9 | TS0002, TS0207, TS0601_repeater | onoff, onoff.usb2, measure_power... |
 | usb_dongle_triple | 75 | S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F | onoff, onoff.usb2, onoff.usb3... |
 | usb_outlet_advanced | 42 | TS0115, TS0601 | onoff, onoff.socket2, onoff.usb1... |
-| valve_dual_irrigation | 20 | TS0601, SWV-ZFE, SWV-ZFU, SWV-ZN, SWV-ZNE, SWV-ZNU, TS0601_watervalve | onoff.valve_1, onoff.valve_2, measure_battery |
+| valve_dual_irrigation | 19 | TS0601, SWV-ZFE, SWV-ZFU, SWV-ZN, SWV-ZNE, SWV-ZNU, TS0601_watervalve | onoff.valve_1, onoff.valve_2, measure_battery |
 | valve_irrigation | 84 | TS0049, TS0601, TS0601_irrigation | dim.valve_1, dim.valve_2, dim.valve_3... |
 | valve_single | 6 | TS0001, TS0601, TS0601_valve | onoff, dim.valve, measure_battery |
-| valvecontroller | 76 | TS0001, TS0111, TS011F | onoff |
+| valvecontroller | 73 | TS0001, TS0111, TS011F | onoff |
 | vibration_sensor | 99 | TS0209, TS0210, TS0601, ZG-102ZM, ZG-103Z, ZG-103ZL | alarm_motion, measure_temperature, measure_battery... |
 | wall_curtain_switch | 3 | TS130F | windowcoverings_set, windowcoverings_state |
 | wall_dimmer_1gang_1way | 6 | EDM-1ZBA-EU, TRI-C1ZR, TRI-K1ZR, TS004F, TS0501B | onoff, dim |
@@ -310,7 +310,7 @@
 | wall_switch_6_gang_tuya | 13 | TS0601, TS0016, TS0726 | onoff |
 | wall_thermostat | 11 | TS0601 | onoff, measure_temperature, target_temperature |
 | water_detector | 6 | q9mpfhw, TS0207 | alarm_contact, alarm_water, measure_battery |
-| water_leak_sensor | 77 | _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, lumi.sensor_wleak.aq1, q9mpfhw, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, SNZB-05, SNZB-05P, SQ510A, TS0207, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_battery, alarm_generic |
+| water_leak_sensor | 74 | _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, lumi.sensor_wleak.aq1, q9mpfhw, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, SNZB-05, SNZB-05P, SQ510A, TS0207, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_battery, alarm_generic |
 | water_leak_sensor_tuya | 112 | _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, 3315-S, 3315-Seu, CK-TLSR8656-SS5-01(7019), HS1WL, LS21001, lumi.sensor_wleak.aq1, q9mpfhw, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, SNZB-05, SNZB-05P, SQ510A, ZG-222Z, ZG-223Z | alarm_water, measure_battery |
 | water_tank_monitor | 30 | TS0601, TS0601_tank | measure_humidity, alarm_water, measure_battery |
 | water_valve_garden | 18 | TS0049 | onoff, measure_battery |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 26624 manufacturer IDs
+**Total:** 315 drivers, 26615 manufacturer IDs
 
-*Generated: 2026-06-09T06:21:28.873Z*
+*Generated: 2026-06-09T07:41:04.985Z*
