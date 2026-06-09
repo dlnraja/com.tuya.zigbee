@@ -188,5 +188,27 @@ module.exports = [
         throw new Error(`Diagnostics failed: ${err.message}`);
       }
     }
+  },
+  {
+    method: 'GET',
+    path: '/drivers',
+    public: true,
+    fn: async function({ homey }) {
+      try {
+        const drivers = [];
+        if (homey.manifest && homey.manifest.drivers) {
+          for (const d of homey.manifest.drivers) {
+            drivers.push({
+              id: d.id,
+              name: d.name.en || d.name
+            });
+          }
+        }
+        return drivers.sort((a, b) => a.name.localeCompare(b.name));
+      } catch (err) {
+        homey.error('[Drivers API] Error:', err);
+        throw new Error(`Failed to fetch drivers: ${err.message}`);
+      }
+    }
   }
 ];

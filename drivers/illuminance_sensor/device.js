@@ -5,9 +5,11 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 class IlluminanceSensorDevice extends UnifiedSensorBase {
 
   // v8.1.131: Tuya DP mappings for TS0601 luminance sensors
-  // _TZE284_aaeasoll and similar send lux via Tuya DPs, not ZCL illuminance cluster
+  // _TZE284_aaeasoll sends illuminance on DP2 (Z2M PR #12347)
+  // Other variants use DP3, DP4, DP12
   get dpMappings() {
     return {
+      2: { capability: 'measure_luminance', divisor: 1 },  // _TZE284_aaeasoll (Z2M PR #12347)
       3: { capability: 'measure_luminance', divisor: 1 },
       4: { capability: 'measure_luminance', divisor: 1 },
       12: { capability: 'measure_luminance', divisor: 1 },
