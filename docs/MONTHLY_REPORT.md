@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-09T20:35:18.361Z*
+*Generated: 2026-06-09T22:00:27.899Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 320 |
-| Manufacturer IDs | 222793 |
-| Collisions | 96783 |
+| Manufacturer IDs | 222730 |
+| Collisions | 96768 |
 
 ## ⚠️ Collisions Detected
 
@@ -35,7 +35,7 @@
 | `_TZE200_gaj531w3|TS0601` | air_purifier, contact_sensor, curtain_motor, doorwindowsensor_2, sensor_contact_motion, sensor_contact_plug, sensor_contact_water |
 | `_TZE200_nw1r9hp6|TS0601` | air_purifier, curtain_motor, device_floor_heating_thermostat, device_radiator_valve, thermostat_4ch |
 
-*...and 96763 more*
+*...and 96748 more*
 
 ## 📋 Action Items
 

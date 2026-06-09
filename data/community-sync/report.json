@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-09T21:49:46.823Z",
+  "ts": "2026-06-09T22:00:28.400Z",
   "currentCount": 10814,
   "src": {
     "johan": {
@@ -19296,9 +19296,21 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 54,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 415,
+          "title": "[Auto] 5 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh",
+            "_TZE200_eatmkx5j",
+            "_TZE204_m5r5nlxc",
+            "_TZE284_sdvbnmj5",
+            "_TZ300A_82iab0pn"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 395,
@@ -19486,17 +19498,6 @@
             "_TZ3000_hyarhbyx",
             "_TZ3000_hyarhbyx",
             "_TZ3000_hyarhbyx"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1393,
-          "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
-          "mfrs": [
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo"
           ]
         }
       ]

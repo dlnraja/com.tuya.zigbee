@@ -21,10 +21,10 @@
 | bulb_white | 6 | TS0501 | dim, light_hue, light_saturation... |
 | button_emergency_sos | 94 | TS0215, ts0215a, TS0215A, TS0218, TS0601, ZBPB10BK | alarm_generic, measure_battery |
 | button_wireless | 19 | CK-TLSR8656-SS5-01(7000), SNZB-01, SNZB-01M, SNZB-01P, TS0040, TS0041, WB-01, WB01, TS0044 | measure_battery |
-| button_wireless_1 | 171 | 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, ROM001, RWL020, RWL021, RWL022, SNZB-01, SNZB-01P, TS0001, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0041, TS0041A, TS0042, TS0043, TS004F, TS011F, TS0601, TS0601_wirelesssw, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL | button.1, measure_battery |
+| button_wireless_1 | 168 | 3450-L, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, ROM001, RWL020, RWL021, RWL022, SNZB-01, SNZB-01P, TS0001, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0041, TS0041A, TS0042, TS0043, TS004F, TS011F, TS0601, TS0601_wirelesssw, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL | button.1, measure_battery |
 | button_wireless_2 | 89 | TS0001, TS0002, TS0003, TS0011, TS0012, TS0013, TS0014, TS0041, TS0042, TS0043, TS0044, TS0111 | button.1, button.2, measure_battery |
 | button_wireless_3 | 27 | TS0013, TS0043 | button.1, button.2, button.3... |
-| button_wireless_4 | 14 | SNZB-01M, TS0014, TS0044, TS004F, TS0726 | button.1, button.2, button.3... |
+| button_wireless_4 | 16 | SNZB-01M, TS0014, TS0044, TS004F, TS0726 | button.1, button.2, button.3... |
 | button_wireless_6 | 7 | TS0046, TS0601 | button.1, button.2, button.3... |
 | button_wireless_8 | 3 | TS0048 | button.1, button.2, button.3... |
 | button_wireless_plug | 20 | TS0001, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0111, TS011F, TS0121, TSO121, TS0115, TS0601 | measure_power, meter_power, measure_voltage... |
@@ -271,7 +271,7 @@
 | temphumidsensor5 | 13 | CK-TLSR8656-SS5-01(7014), RH3052, SNTZ003, TS0201, TY0201, ZG-227Z | measure_temperature, measure_humidity, measure_battery |
 | thermostat_4ch | 153 | TS0601, TS0601_thermo4ch | onoff, onoff.ch2, onoff.ch3... |
 | thermostat_tuya_dp | 191 | TS0601, TS0601_thermo | target_temperature, measure_temperature, thermostat_mode... |
-| thermostatic_radiator_valve | 158 | TS0601, 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, alarm_contact, measure_battery |
+| thermostatic_radiator_valve | 160 | TS0601, 014G2461, 014G2463, eTRV0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TV01-ZB, TV02-ZB, Zen-01 | target_temperature, alarm_contact, measure_battery |
 | tunable_bulb_E14 | 3 | TS0502A | onoff, dim, light_temperature |
 | tunable_bulb_E27 | 3 | TS0502A | onoff, dim, light_temperature |
 | tunable_spot_GU10 | 3 | TS0502A | onoff, dim, light_temperature |
@@ -319,6 +319,6 @@
 | zigbee_repeater | 39 | TS0207 | onoff |
 
 ---
-**Total:** 315 drivers, 26617 manufacturer IDs
+**Total:** 315 drivers, 26618 manufacturer IDs
 
-*Generated: 2026-06-09T20:35:18.310Z*
+*Generated: 2026-06-09T22:00:27.850Z*
