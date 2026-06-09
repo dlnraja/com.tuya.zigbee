@@ -14,8 +14,7 @@
     "measure_humidity",
     "measure_battery",
     "measure_luminance.distance",
-    "alarm_generic",
-    "alarm_battery"
+    "alarm_generic"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
