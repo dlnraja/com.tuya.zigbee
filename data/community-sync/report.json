@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-09T18:09:12.980Z",
+  "ts": "2026-06-09T18:32:05.194Z",
   "currentCount": 10814,
   "src": {
     "johan": {
@@ -11033,7 +11033,7 @@
       "enriched": true
     },
     "z2m": {
-      "count": 1563,
+      "count": 1566,
       "fingerprints": [
         {
           "mfr": "_TZ3000_zl1kmjqx",
@@ -11173,6 +11173,14 @@
         },
         {
           "mfr": "_TZE200_4pm4pekt",
+          "productId": "TS0601",
+          "model": "ZG-204ZE",
+          "description": "10G mw motion detection",
+          "vendor": "HOBEIAN",
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE200_y8jijhba",
           "productId": "TS0601",
           "model": "ZG-204ZE",
           "description": "10G mw motion detection",
@@ -13206,6 +13214,11 @@
         },
         {
           "mfr": "_TZE210_inpjmc0h",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE200_eatmkx5j",
           "productId": null,
           "source": "Z2M"
         },
@@ -15421,6 +15434,11 @@
         },
         {
           "mfr": "_TZE284_pcdmj88b",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE204_m5r5nlxc",
           "productId": null,
           "source": "Z2M"
         },
@@ -18565,11 +18583,6 @@
           "source": "Z2M"
         },
         {
-          "mfr": "_TZE200_y8jijhba",
-          "productId": null,
-          "source": "Z2M"
-        },
-        {
           "mfr": "_TZE200_jsaqgakf",
           "productId": null,
           "source": "Z2M"
@@ -18933,6 +18946,11 @@
           "mfr": "_TZE284_aaeasoll",
           "productId": null,
           "source": "Z2M"
+        },
+        {
+          "mfr": "_TZ300A_82iab0pn",
+          "productId": null,
+          "source": "Z2M"
         }
       ],
       "sample": [
@@ -19074,6 +19092,14 @@
         },
         {
           "mfr": "_TZE200_4pm4pekt",
+          "productId": "TS0601",
+          "model": "ZG-204ZE",
+          "description": "10G mw motion detection",
+          "vendor": "HOBEIAN",
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE200_y8jijhba",
           "productId": "TS0601",
           "model": "ZG-204ZE",
           "description": "10G mw motion detection",
@@ -19262,11 +19288,6 @@
         },
         {
           "mfr": "_TZ3000_4ugnzsli",
-          "productId": null,
-          "source": "Z2M"
-        },
-        {
-          "mfr": "_TZ3000_udyjylt7",
           "productId": null,
           "source": "Z2M"
         }
@@ -19503,7 +19524,25 @@
       "source": "Johan"
     },
     {
+      "mfr": "_TZE200_eatmkx5j",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE204_m5r5nlxc",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZE284_sdvbnmj5",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZ300A_82iab0pn",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -30697,6 +30736,15 @@
       "driver": "motion_sensor"
     },
     {
+      "mfr": "_TZE200_y8jijhba",
+      "productId": "TS0601",
+      "model": "ZG-204ZE",
+      "description": "10G mw motion detection",
+      "vendor": "HOBEIAN",
+      "source": "Z2M",
+      "driver": "motion_sensor"
+    },
+    {
       "mfr": "_TZE284_8se38w3c",
       "productId": "TS0601",
       "model": "TZ-ZT01_GA4",
@@ -33122,6 +33170,12 @@
     },
     {
       "mfr": "_TZE210_inpjmc0h",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE200_eatmkx5j",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -35780,6 +35834,12 @@
     },
     {
       "mfr": "_TZE284_pcdmj88b",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE204_m5r5nlxc",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -39553,12 +39613,6 @@
       "driver": null
     },
     {
-      "mfr": "_TZE200_y8jijhba",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
       "mfr": "_TZE200_jsaqgakf",
       "productId": null,
       "source": "Z2M",
@@ -39995,8 +40049,14 @@
       "productId": null,
       "source": "Z2M",
       "driver": null
+    },
+    {
+      "mfr": "_TZ300A_82iab0pn",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
     }
   ],
-  "newCount": 2,
-  "enrichedCount": 2213
+  "newCount": 5,
+  "enrichedCount": 2216
 }

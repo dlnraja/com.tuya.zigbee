@@ -11186,6 +11186,15 @@
     "driver": "motion_sensor"
   },
   {
+    "mfr": "_TZE200_y8jijhba",
+    "productId": "TS0601",
+    "model": "ZG-204ZE",
+    "description": "10G mw motion detection",
+    "vendor": "HOBEIAN",
+    "source": "Z2M",
+    "driver": "motion_sensor"
+  },
+  {
     "mfr": "_TZE284_8se38w3c",
     "productId": "TS0601",
     "model": "TZ-ZT01_GA4",
@@ -13611,6 +13620,12 @@
   },
   {
     "mfr": "_TZE210_inpjmc0h",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_eatmkx5j",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16269,6 +16284,12 @@
   },
   {
     "mfr": "_TZE284_pcdmj88b",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE204_m5r5nlxc",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -20042,12 +20063,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_y8jijhba",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_jsaqgakf",
     "productId": null,
     "source": "Z2M",
@@ -20481,6 +20496,12 @@
   },
   {
     "mfr": "_TZE284_aaeasoll",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ300A_82iab0pn",
     "productId": null,
     "source": "Z2M",
     "driver": null
