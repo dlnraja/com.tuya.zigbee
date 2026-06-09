@@ -4,9 +4,6 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
-  "8.1.190": {
-    "en": "Bed sensor DP12 pressure fix, DP4 battery routing, cross-project Z2M/ZHA analysis, MFR collision fixes, button system fixes, architecture bug fixes"
-  },
   "entries": [
     {
       "version": "8.1.181",
@@ -82,7 +79,7 @@
   "8.5.39": {
     "en": "v8.5.39: CRITICAL FIX - category must be string not array (Athom server requirement). Remove api field + homey:manager:api permission. Aligns with stable-v5 structure. Root cause of all Processing failed builds."
   },
-  "8.1.190": {
-    "en": "v8.1.189:"
+  "8.1.191": {
+    "en": "v8.1.190:"
   }
 }
