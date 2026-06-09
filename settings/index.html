@@ -364,6 +364,33 @@
   </div>
 
   <div class="card">
+    <h3>White Label Manager (Override)</h3>
+    <p style="font-size:11px;color:#666">Force an unrecognized device to act as a specific device type by overriding its manufacturer ID.</p>
+    
+    <div class="row font-group">
+      <div class="fg">
+        <label for="override-mfr">Manufacturer Name</label>
+        <input id="override-mfr" placeholder="e.g. _TZE204_xxxxxx"/>
+      </div>
+      <div class="fg">
+        <label for="override-driver">Target Driver</label>
+        <select id="override-driver">
+          <option value="">Loading drivers...</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn" id="btn-add-override" disabled onclick="addOverride()">Add Override</button>
+    
+    <div style="margin-top: 12px;">
+      <label>Active Overrides</label>
+      <div id="override-list" style="border: 1px solid #ced4da; border-radius: 6px; padding: 8px; background: #fff; min-height: 50px;">
+        <span style="color:#94a3b8;font-size:11px;">Loading...</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
     <h3>Developer Settings</h3>
     <div class="tr">
       <div>
@@ -607,6 +634,81 @@
       
       // Load and populate devices
       populateDevices();
+      populateDrivers();
+      loadOverrides();
+    }
+
+    /* --- White Label Manager --- */
+    var tuyaOverrides = {};
+    var driverList = [];
+
+    function populateDrivers() {
+      if (!Homey) return;
+      Homey.api('GET', '/drivers', {}, function(err, drivers) {
+        var sel = document.getElementById('override-driver');
+        if (err) {
+          sel.innerHTML = '<option value="">Error loading</option>';
+          return;
+        }
+        driverList = drivers || [];
+        var html = '<option value="">-- Select Target Driver --</option>';
+        driverList.forEach(function(d) {
+          html += '<option value="' + d.id + '">' + d.name + '</option>';
+        });
+        sel.innerHTML = html;
+        document.getElementById('btn-add-override').disabled = false;
+        renderOverrides(); // Ensure rendering handles driver names
+      });
+    }
+
+    function loadOverrides() {
+      if (!Homey) return;
+      Homey.get('tuya_overrides', function(err, val) {
+        tuyaOverrides = val || {};
+        renderOverrides();
+      });
+    }
+
+    function renderOverrides() {
+      var list = document.getElementById('override-list');
+      if (!list) return;
+      var keys = Object.keys(tuyaOverrides);
+      if (keys.length === 0) {
+        list.innerHTML = '<span style="color:#94a3b8;font-size:11px;">No active overrides</span>';
+        return;
+      }
+      var html = '';
+      keys.forEach(function(k) {
+        var drvName = tuyaOverrides[k];
+        var dObj = driverList.find(function(d) { return d.id === drvName; });
+        if (dObj) drvName = dObj.name;
+        html += '<div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:4px 0;">' +
+                '<span style="font-size:12px;"><b>' + k + '</b> ➔ ' + drvName + '</span>' +
+                '<button onclick="removeOverride(\'' + k + '\')" style="background:none;border:none;color:#e74c3c;cursor:pointer;font-size:12px;">Remove</button>' +
+                '</div>';
+      });
+      list.innerHTML = html;
+    }
+
+    function addOverride() {
+      var mfr = document.getElementById('override-mfr').value.trim();
+      var drv = document.getElementById('override-driver').value;
+      if (!mfr || !drv) { alert('Please enter Manufacturer Name and select a driver.'); return; }
+      tuyaOverrides[mfr] = drv;
+      Homey.set('tuya_overrides', tuyaOverrides, function(err) {
+        if (err) { alert('Error saving: ' + err.message); return; }
+        document.getElementById('override-mfr').value = '';
+        document.getElementById('override-driver').value = '';
+        renderOverrides();
+      });
+    }
+
+    function removeOverride(mfr) {
+      delete tuyaOverrides[mfr];
+      Homey.set('tuya_overrides', tuyaOverrides, function(err) {
+        if (err) { alert('Error saving: ' + err.message); return; }
+        renderOverrides();
+      });
     }
   </script>
 </body>
