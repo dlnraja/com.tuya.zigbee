@@ -1,88 +1,11 @@
 {
   "topicId": 140352,
-  "scrapedAt": "2026-06-09T06:31:58.212Z",
-  "totalPosts": 2006,
+  "scrapedAt": "2026-06-09T20:56:51.027Z",
+  "totalPosts": 2011,
   "analyzedPosts": 10,
-  "issuesFound": 7,
+  "issuesFound": 6,
   "devicesTracked": 0,
   "issues": [
-    {
-      "post": 2074,
-      "author": "Peter_van_Werkhoven",
-      "date": "2026-06-05T21:19",
-      "diagnostics": [],
-      "mfrs": [],
-      "pids": [],
-      "versions": [],
-      "images": 1,
-      "interviews": [],
-      "textPreview": "Luminance not going lower than 455 Lx\n10000321331220×2712 271 KB"
-    },
-    {
-      "post": 2075,
-      "author": "Tobias-B",
-      "date": "2026-06-06T06:55",
-      "diagnostics": [
-        "0ed123ea-9195-4a38-b961-ee42328d7611",
-        "e81acce5-e0f0-440f-8a17-f3cd5470fdb4"
-      ],
-      "mfrs": [],
-      "pids": [
-        "TS0601"
-      ],
-      "versions": [
-        "8.1.124",
-        "8.1.133",
-        "26.59.1"
-      ],
-      "images": 0,
-      "interviews": [],
-      "textPreview": "Don’t know of you working on it currently, but to ensure up to date Information, the SmarterCurry Luminance Sensor is not receiving brightness data. Version 8.1.124\n0ed123ea-9195-4a38-b961-ee42328d761"
-    },
-    {
-      "post": 2076,
-      "author": "Peter_van_Werkhoven",
-      "date": "2026-06-06T17:49",
-      "diagnostics": [
-        "8bbdbad4-f0b4-4eb4-96e8-429a7c8b97a6"
-      ],
-      "mfrs": [],
-      "pids": [],
-      "versions": [],
-      "images": 1,
-      "interviews": [],
-      "textPreview": "Hi Dylan Good evening, I’m on Version 8,1,147 now and still no Luminance changing even not after a repair, also no changes for SOS and Smartbutton.\nDiagnostics: 8bbdbad4-f0b4-4eb4-96e8-429a7c8b97a6\n10"
-    },
-    {
-      "post": 2077,
-      "author": "dzsandzsee",
-      "date": "2026-06-07T06:56",
-      "diagnostics": [
-        "950ea50e-07f1-4c97-a46d-86a8baa6b3e7"
-      ],
-      "mfrs": [],
-      "pids": [],
-      "versions": [],
-      "images": 1,
-      "interviews": [],
-      "textPreview": "Hi, my presence sensor has stopped working, i tried to delete and add again but still nothing.\nDiag report:\nIMG_48061206×2622 79.4 KB\n950ea50e-07f1-4c97-a46d-86a8baa6b3e7"
-    },
-    {
-      "post": 2078,
-      "author": "Peter_van_Werkhoven",
-      "date": "2026-06-07T10:14",
-      "diagnostics": [
-        "ff954bd3-027a-4c37-a682-d65759ee8aac"
-      ],
-      "mfrs": [],
-      "pids": [],
-      "versions": [
-        "8.1.160"
-      ],
-      "images": 2,
-      "interviews": [],
-      "textPreview": "Hi Dylan Good afternoon, I’m on Version 8.1.160 now and no changes Lux still not changing and SOS and Smartbutton no response Smartbutton also no battery readings.\nDiagnostics: ff954bd3-027a-4c37-a682"
-    },
     {
       "post": 2079,
       "author": "Jocke_Wallen",
@@ -113,6 +36,54 @@
       "images": 1,
       "interviews": [],
       "textPreview": "Hello Dylan,\nMy Insoma irrigation valve (_TZE284_fhvpaltk - TS0601) can be paired perfectly, but it should have only two on/off capacities. Instead of that, the app shows four dim levels. Re-pairing d"
+    },
+    {
+      "post": 2084,
+      "author": "Jocke_Wallen",
+      "date": "2026-06-09T11:19",
+      "diagnostics": [],
+      "mfrs": [],
+      "pids": [],
+      "versions": [],
+      "images": 1,
+      "interviews": [],
+      "textPreview": "@robertklep  “Hide details” does the trick quite well.\n\n\nSummary\nimage271×146 4.53 KB\n"
+    },
+    {
+      "post": 2085,
+      "author": "robertklep",
+      "date": "2026-06-09T11:41",
+      "diagnostics": [],
+      "mfrs": [],
+      "pids": [],
+      "versions": [],
+      "images": 1,
+      "interviews": [],
+      "textPreview": "The formatting still sucks, though  For one, it mangles quote characters, resulting in invalid JSON code."
+    },
+    {
+      "post": 2086,
+      "author": "DomLAJO",
+      "date": "2026-06-09T15:09",
+      "diagnostics": [],
+      "mfrs": [],
+      "pids": [],
+      "versions": [],
+      "images": 1,
+      "interviews": [],
+      "textPreview": "Hi everyone,\nNobody can help me on my post [APP][Pro] Universal TUYA Zigbee Device App - test - #2067 by DomLAJO\n\n\n\n DomLAJO:\n\nAppareil Zigbee inconnu a4:c1:38:8a:9c:51:ab:a0 14993 (3A91) EndDevice ? "
+    },
+    {
+      "post": 2087,
+      "author": "smarthomesven",
+      "date": "2026-06-09T15:11",
+      "diagnostics": [],
+      "mfrs": [],
+      "pids": [],
+      "versions": [],
+      "images": 2,
+      "interviews": [],
+      "textPreview": "That device is already supported by the Sonoff app:\n\n  \n      \n\n      homey.app\n  \n\n  \n    \n\nSonoff | Homey\n\n  Brings Your Home To Life\n\n\n  \n\n  \n    \n    \n  \n\n  \n\n"
     }
   ],
   "deviceMap": {}
