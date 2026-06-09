@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-09T18:32:05.194Z",
+  "ts": "2026-06-09T19:00:55.229Z",
   "currentCount": 10814,
   "src": {
     "johan": {
@@ -14558,6 +14558,11 @@
           "source": "Z2M"
         },
         {
+          "mfr": "_TZ3000_n6fqajob",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
           "mfr": "_TZ3000_pgq7ormg",
           "productId": null,
           "source": "Z2M"
@@ -16283,11 +16288,6 @@
           "source": "Z2M"
         },
         {
-          "mfr": "_TZE284_aaeaifez",
-          "productId": null,
-          "source": "Z2M"
-        },
-        {
           "mfr": "_TZE204_mwomyz5n",
           "productId": null,
           "source": "Z2M"
@@ -16508,11 +16508,6 @@
           "source": "Z2M"
         },
         {
-          "mfr": "_TZ3000_1fqpj6qz",
-          "productId": null,
-          "source": "Z2M"
-        },
-        {
           "mfr": "_TZE200_hkdl5fmv",
           "productId": null,
           "source": "Z2M"
@@ -16549,6 +16544,11 @@
         },
         {
           "mfr": "_TZ3000_ugi8ky6u",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZ3000_1fqpj6qz",
           "productId": null,
           "source": "Z2M"
         },
@@ -19296,9 +19296,41 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 57,
+      "issueCount": 60,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 413,
+          "title": "[plug_energy_monitor] Bug: \t_TZ3000_wzmuk9ai   \tTS011F",
+          "mfrs": [
+            "_TZ3000_wzmuk9ai",
+            "_TZ3000_wzmuk9ai"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 412,
+          "title": "_TZ3000_yj6k7vfo [button_wireless_smart] Bug: No button press detected again. #334  #410",
+          "mfrs": [
+            "_TZ3000_yj6k7vfo",
+            "_TZ3000_yj6k7vfo",
+            "_TZ3000_yj6k7vfo",
+            "_TZ3000_yj6k7vfo"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 411,
+          "title": "[Auto] 5 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3000_owgcnkrh",
+            "_TZE200_eatmkx5j",
+            "_TZE204_m5r5nlxc",
+            "_TZE284_sdvbnmj5",
+            "_TZ300A_82iab0pn"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 409,
@@ -19475,35 +19507,6 @@
             "_TZ3002_pzao9ls1",
             "_TZ3002_pzao9ls1",
             "_TZ3002_pzao9ls1"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1400,
-          "title": "Device Request - [LCD thermometer & humidity sensor ] - [_TZE284_qf5mzewi] / [TS0601]",
-          "mfrs": [
-            "_TZE284_qf5mzewi",
-            "_TZE284_qf5mzewi"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1399,
-          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-          "mfrs": [
-            "_TZE284_uo8qcagc",
-            "_TZE284_uo8qcagc",
-            "_TZE284_uo8qcagc",
-            "_TZE284_uo8qcagc"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1398,
-          "title": "Device Request - [10G Radarsensor 4in1] - [_TZE200_rhgsbacq] / [TS0601]",
-          "mfrs": [
-            "_TZE200_rhgsbacq",
-            "_TZE200_rhgsbacq"
           ]
         }
       ]
@@ -34783,6 +34786,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZ3000_n6fqajob",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZ3000_pgq7ormg",
       "productId": null,
       "source": "Z2M",
@@ -36853,12 +36862,6 @@
       "driver": null
     },
     {
-      "mfr": "_TZE284_aaeaifez",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
       "mfr": "_TZE204_mwomyz5n",
       "productId": null,
       "source": "Z2M",
@@ -37123,12 +37126,6 @@
       "driver": null
     },
     {
-      "mfr": "_TZ3000_1fqpj6qz",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
       "mfr": "_TZE200_hkdl5fmv",
       "productId": null,
       "source": "Z2M",
@@ -37172,6 +37169,12 @@
     },
     {
       "mfr": "_TZ3000_ugi8ky6u",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZ3000_1fqpj6qz",
       "productId": null,
       "source": "Z2M",
       "driver": null
