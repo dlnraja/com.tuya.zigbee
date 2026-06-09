@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-09T02:14:51.287Z",
+  "ts": "2026-06-09T03:24:06.240Z",
   "currentCount": 10451,
   "src": {
     "johan": {
@@ -19275,9 +19275,31 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 55,
+      "issueCount": 56,
       "prCount": 2,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 408,
+          "title": "[Auto] 37 new fingerprints from community (2026-06)",
+          "mfrs": [
+            "_TZ3210_ncw88jfq",
+            "_TZ3000_8nkb7mof",
+            "_TZ3000_fkp5zyho",
+            "_TZ3000_axpdxqgu",
+            "_TZ3000_f97vq5mn",
+            "_TZ3000_owgcnkrh",
+            "_TZ3210_ncw88jfq",
+            "_TZE204_7bztmfm1",
+            "_TZ3000_nwidmc4n",
+            "_TZ3000_pfc7i3kt",
+            "_TZ3000_iv4eq7eh",
+            "_TZ3000_mzcp0of6",
+            "_TZE204_guvc7pdy",
+            "_TZ3000_avotanj3",
+            "_TZE284_sdvbnmj5"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 407,
@@ -19461,16 +19483,6 @@
             "_TZE284_1youk3hj",
             "_TZE284_1youk3hj",
             "_TZE284_1youk3hj"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1396,
-          "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
-          "mfrs": [
-            "_TZE284_0ints6wl",
-            "_TZE284_0ints6wl",
-            "_TZE284_0ints6wl"
           ]
         }
       ]
