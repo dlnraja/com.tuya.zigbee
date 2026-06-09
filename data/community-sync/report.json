@@ -1,5 +1,5 @@
 {
-  "ts": "2026-06-09T20:19:58.775Z",
+  "ts": "2026-06-09T20:35:19.026Z",
   "currentCount": 10814,
   "src": {
     "johan": {
@@ -19296,70 +19296,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 58,
+      "issueCount": 53,
       "prCount": 2,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 411,
-          "title": "[Auto] 5 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_owgcnkrh",
-            "_TZE200_eatmkx5j",
-            "_TZE204_m5r5nlxc",
-            "_TZE284_sdvbnmj5",
-            "_TZ300A_82iab0pn"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 409,
-          "title": "[Auto] 3 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_owgcnkrh",
-            "_TZE284_sdvbnmj5",
-            "_TZE200_u6x1zyv2"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 408,
-          "title": "[Auto] 37 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3210_ncw88jfq",
-            "_TZ3000_8nkb7mof",
-            "_TZ3000_fkp5zyho",
-            "_TZ3000_axpdxqgu",
-            "_TZ3000_f97vq5mn",
-            "_TZ3000_owgcnkrh",
-            "_TZ3210_ncw88jfq",
-            "_TZE204_7bztmfm1",
-            "_TZ3000_nwidmc4n",
-            "_TZ3000_pfc7i3kt",
-            "_TZ3000_iv4eq7eh",
-            "_TZ3000_mzcp0of6",
-            "_TZE204_guvc7pdy",
-            "_TZ3000_avotanj3",
-            "_TZE284_sdvbnmj5"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 407,
-          "title": "[Auto] 2 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_owgcnkrh",
-            "_TZE284_sdvbnmj5"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 405,
-          "title": "[Auto] 1 new fingerprints from community (2026-06)",
-          "mfrs": [
-            "_TZ3000_owgcnkrh"
-          ]
-        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 395,
@@ -19507,6 +19446,57 @@
             "_TZE284_uo8qcagc",
             "_TZE284_uo8qcagc",
             "_TZE284_uo8qcagc"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1398,
+          "title": "Device Request - [10G Radarsensor 4in1] - [_TZE200_rhgsbacq] / [TS0601]",
+          "mfrs": [
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1397,
+          "title": "Device Request - [Radaar sensor /  mmWave] - [TS0601] / [_TZE284_1youk3hj]",
+          "mfrs": [
+            "_TZE284_1youk3hj",
+            "_TZE284_1youk3hj",
+            "_TZE284_1youk3hj"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1396,
+          "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
+          "mfrs": [
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl",
+            "_TZE284_0ints6wl"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1395,
+          "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
+          "mfrs": [
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx",
+            "_TZ3000_hyarhbyx"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1393,
+          "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
+          "mfrs": [
+            "_TZE204_81yrt3lo",
+            "_TZE204_81yrt3lo",
+            "_TZE204_81yrt3lo",
+            "_TZE204_81yrt3lo"
           ]
         }
       ]
