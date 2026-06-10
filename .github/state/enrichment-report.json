@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-10T00:18:52.863Z",
+  "timestamp": "2026-06-10T05:09:54.591Z",
   "totalNew": 1,
   "withDPs": 0,
   "withPid": 0,
@@ -21,5 +21,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "Based on the provided information, here is the classification and mapping for the device:\n\n| FP               | Type   | Driver          | DPs→Capabilities | Quirks |\n|------------------|--------|------------------|-------------------|--------|\n| _TZE284_sdvbnmj5 | Unknown | N/A              | N/A               | No DPs available, unable to classify further. |\n\n### Notes:\n- The device does not have any available DPs (data points), which makes it difficult to classify its type or suggest a specific Homey driver.\n- Without additional information about the device (such as its intended function or capabilities), it cannot be accurately mapped to any existing Homey capabilities or drivers.\n- Further investigation or additional data may be required to determine the device type and appropriate handling."
+  "aiPlan": "Based on the provided information, here is the classification and mapping for the device:\n\n| FP                | Type   | Driver | DPs→Capabilities | Quirks |\n|-------------------|--------|--------|-------------------|--------|\n| _TZE284_sdvbnmj5  | Unknown| N/A    | None              | None   |\n\n### Notes:\n- **Device Type**: The device type is currently unknown as there are no details provided regarding its functionality or capabilities.\n- **Driver**: Since there is no information about the device type or capabilities, no existing Homey driver can be suggested for this fingerprint.\n- **DPs**: There are no data points (DPs) available for mapping to Homey capabilities.\n- **Quirks**: No quirks or special handling are noted due to the lack of information.\n\n### Recommendation:\nTo proceed with this device, more information is needed regarding its type, capabilities, and any available DPs. Once this information is available, a more detailed classification and mapping can be performed."
 }
