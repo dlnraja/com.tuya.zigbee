@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T06:42:53.480Z",
+  "timestamp": "2026-06-10T06:37:38.393Z",
   "conflicts": [
     {
       "pid": "TS0601_air_purifier",
@@ -41,10 +41,13 @@
         "climate_sensor",
         "climate_sensor_energy",
         "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
         "lcdtemphumidsensor_3",
+        "motion_sensor_2",
         "motion_sensor_switch",
         "sensor_climate_temphumidsensor",
+        "sensor_contact_motion",
         "sensor_contact_plug",
         "sensor_contact_water",
         "sensor_motion_presence"
@@ -62,8 +65,10 @@
         "air_purifier_motion",
         "bed_sensor",
         "gas_sensor",
+        "gas_sensor_switch",
         "illuminance_sensor",
         "motion_sensor",
+        "motion_sensor_2",
         "motion_sensor_switch",
         "pir_mmwave_sensor",
         "presence_sensor_ceiling",
@@ -85,9 +90,498 @@
       "crossClass": true
     },
     {
+      "pid": "3305-S",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "3325-S",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "3326-L",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "CK-TLSR8656-SS5-01(7002)",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "E1525/E1745",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "E1745",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "IH012-RT01",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "lumi.motion.ac02",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "lumi.motion.agl04",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "lumi.sensor_motion",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "lumi.sensor_motion.aq2",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "MS01",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "MSO1",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "RH3040",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "pirsensor",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SML001",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SML002",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SML003",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SML004",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SNZB-03",
+      "drivers": [
+        "air_purifier_motion",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SNZB-03P",
+      "drivers": [
+        "air_purifier_motion",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "SNZB-03R2",
+      "drivers": [
+        "air_purifier_motion",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TRADFRI motion sensor",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0202",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "pir_sensor_2",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence",
+        "slim_motion_sensor"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TY0202",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence",
+        "smart_motion_sensor"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "ZG-204Z",
+      "drivers": [
+        "air_purifier_motion",
+        "bed_sensor",
+        "motion_sensor",
+        "motion_sensor_2",
+        "motion_sensor_switch",
+        "radar_sensor_2",
+        "radar_sensor_ceiling",
+        "sensor_motion_presence"
+      ],
+      "classes": [
+        "fan",
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0601_co2",
+      "drivers": [
+        "air_quality_co2",
+        "smart_air_detection_box"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
       "pid": "TS0005",
       "drivers": [
         "air_quality_comprehensive",
+        "device_air_purifier_quality",
+        "smart_air_detection_box",
         "universal_zigbee"
       ],
       "classes": [
@@ -100,6 +594,8 @@
       "pid": "TS0006",
       "drivers": [
         "air_quality_comprehensive",
+        "device_air_purifier_quality",
+        "smart_air_detection_box",
         "universal_zigbee"
       ],
       "classes": [
@@ -107,335 +603,6 @@
         "other"
       ],
       "crossClass": true
-    },
-    {
-      "pid": "3305-S",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "3325-S",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "3326-L",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "CK-TLSR8656-SS5-01(7002)",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "E1525/E1745",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "E1745",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "IH012-RT01",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "lumi.motion.ac02",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "lumi.motion.agl04",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "lumi.sensor_motion",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "lumi.sensor_motion.aq2",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "MS01",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "MSO1",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "RH3040",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "pirsensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SML001",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SML002",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SML003",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SML004",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SNZB-03",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SNZB-03P",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "SNZB-03R2",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TRADFRI motion sensor",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0202",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "pir_sensor_2",
-        "radar_sensor_2",
-        "radar_sensor_ceiling",
-        "slim_motion_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TY0202",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling",
-        "smart_motion_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ZG-204Z",
-      "drivers": [
-        "bed_sensor",
-        "motion_sensor",
-        "radar_sensor_2",
-        "radar_sensor_ceiling"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
     },
     {
       "pid": "A19 W 10 year",
@@ -607,6 +774,7 @@
       "drivers": [
         "bulb_dimmable",
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_1_gang_tuya",
         "dimmer_wall_1gang",
         "wall_dimmer_tuya"
@@ -650,6 +818,7 @@
       "drivers": [
         "bulb_dimmable",
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_dual_channel",
         "dimmer_wall_1gang",
         "wall_dimmer_tuya"
@@ -686,6 +855,7 @@
         "bulb_dimmable",
         "bulb_dimmable_dimmer",
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_1_gang_tuya",
         "dimmer_2_gang",
         "dimmer_2_gang_tuya",
@@ -1320,6 +1490,7 @@
         "button_wireless",
         "button_wireless_1",
         "remote_button_emergency_sos",
+        "scene_switch_1",
         "smart_button_switch"
       ],
       "classes": [
@@ -1351,6 +1522,7 @@
         "button_wireless",
         "button_wireless_1",
         "remote_button_emergency_sos",
+        "scene_switch_1",
         "smart_button_switch"
       ],
       "classes": [
@@ -1449,25 +1621,169 @@
       "crossClass": true
     },
     {
-      "pid": "TS0014",
+      "pid": "3450-L",
       "drivers": [
-        "button_wireless",
-        "button_wireless_2",
-        "button_wireless_4",
-        "handheld_remote_4_buttons",
-        "switch_4gang",
-        "universal_zigbee",
-        "wall_switch_4_gang",
-        "wall_switch_4gang_1way"
+        "button_wireless_1",
+        "scene_switch_1"
       ],
       "classes": [
-        "button",
-        "sensor",
-        "remote",
-        "socket",
-        "other"
+        "sensor"
       ],
-      "crossClass": true
+      "crossClass": false
+    },
+    {
+      "pid": "E1524/E1810",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "E1743",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "E1744",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "E1812",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "E2001/E2002",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "E2123",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "lumi.remote.b1acn01",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "lumi.sensor_switch",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "lumi.sensor_switch.aq2",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "lumi.sensor_switch.aq3",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ROM001",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "RWL020",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "RWL021",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "RWL022",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
     },
     {
       "pid": "TS0001",
@@ -1480,6 +1796,7 @@
         "fingerbot",
         "fingerbot_switch",
         "relay_board_1_channel",
+        "scene_switch_1",
         "smart_switch",
         "sr_zs_switch",
         "switch_1_gang",
@@ -1510,6 +1827,7 @@
         "device_din_rail_meter",
         "device_plug_energy",
         "relay_board_2_channel",
+        "scene_switch_1",
         "sr_zs_switch",
         "switch_2_gang",
         "switch_2_gang_metering",
@@ -1535,6 +1853,7 @@
         "button_wireless_2",
         "button_wireless_plug",
         "fingerbot",
+        "scene_switch_1",
         "switch_1_gang",
         "switch_2_gang",
         "switch_2_gang_metering",
@@ -1559,6 +1878,7 @@
         "button_wireless_1",
         "button_wireless_plug",
         "fingerbot",
+        "scene_switch_1",
         "switch_1_gang"
       ],
       "classes": [
@@ -1575,8 +1895,10 @@
         "button_wireless_2",
         "button_wireless_plug",
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_wall_1gang",
         "fingerbot",
+        "scene_switch_1",
         "smart_switch",
         "switch_1_gang",
         "universal_zigbee",
@@ -1598,6 +1920,7 @@
         "button_wireless_1",
         "button_wireless_2",
         "button_wireless_plug",
+        "scene_switch_1",
         "switch_2_gang",
         "switch_2_gang_metering",
         "switch_2gang",
@@ -1619,6 +1942,7 @@
         "button_wireless_2",
         "button_wireless_3",
         "button_wireless_plug",
+        "scene_switch_1",
         "switch_2_gang",
         "switch_2_gang_metering",
         "switch_2gang",
@@ -1636,6 +1960,17 @@
       "crossClass": true
     },
     {
+      "pid": "TS0041A",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
       "pid": "TS0042",
       "drivers": [
         "button_wireless_1",
@@ -1644,6 +1979,7 @@
         "button_wireless_smart",
         "button_wireless_wall",
         "remote_button_wireless_wall",
+        "scene_switch_1",
         "scene_switch_2",
         "scene_switch_wall",
         "universal_zigbee",
@@ -1668,6 +2004,7 @@
         "button_wireless_scene",
         "remote_button_wireless",
         "remote_button_wireless_wall",
+        "scene_switch_1",
         "scene_switch_3",
         "scene_switch_wall",
         "switch_3gang",
@@ -1688,97 +2025,9 @@
       "crossClass": true
     },
     {
-      "pid": "TS011F",
-      "drivers": [
-        "button_wireless_1",
-        "button_wireless_plug",
-        "device_air_purifier_plug",
-        "device_din_rail",
-        "double_power_point",
-        "fingerbot",
-        "plug",
-        "plug_energy_monitor",
-        "plug_smart",
-        "relay_board_1_channel",
-        "relay_board_2_channel",
-        "remote_button_wireless",
-        "smartPlug_DinRail",
-        "smartplug_2_socket",
-        "socket_power_strip_four",
-        "switch",
-        "switch_1_gang",
-        "universal_zigbee",
-        "usb_dongle_triple",
-        "valvecontroller"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "doorbell",
-        "button",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0121",
-      "drivers": [
-        "button_wireless_1",
-        "button_wireless_plug",
-        "device_plug_energy",
-        "plug_energy_monitor",
-        "remote_button_wireless",
-        "remote_button_wireless_plug",
-        "smartPlug_DinRail",
-        "smartplug",
-        "universal_zigbee"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TSO121",
-      "drivers": [
-        "button_wireless_1",
-        "button_wireless_plug",
-        "plug_energy_monitor",
-        "remote_button_wireless",
-        "remote_button_wireless_plug",
-        "smartPlug_DinRail",
-        "smartplug"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0111",
-      "drivers": [
-        "button_wireless_1",
-        "button_wireless_2",
-        "button_wireless_plug",
-        "double_power_point",
-        "plug_smart",
-        "socket_power_strip_four_two",
-        "universal_zigbee",
-        "valvecontroller"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "TS004F",
       "drivers": [
+        "button_wireless_1",
         "button_wireless_4",
         "handheld_remote_4_buttons",
         "remote_button_wireless_wall",
@@ -1795,6 +2044,216 @@
         "sensor",
         "remote",
         "other",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_1",
+        "button_wireless_plug",
+        "device_air_purifier_plug",
+        "device_din_rail",
+        "device_plug_energy",
+        "double_power_point",
+        "fingerbot",
+        "outdoor_2_socket",
+        "plug",
+        "plug_energy_monitor",
+        "plug_smart",
+        "relay_board_1_channel",
+        "relay_board_2_channel",
+        "remote_button_wireless",
+        "remote_button_wireless_plug",
+        "scene_switch_1",
+        "smartPlug_DinRail",
+        "smartplug",
+        "smartplug_2_socket",
+        "socket_power_strip",
+        "socket_power_strip_four",
+        "switch",
+        "switch_1_gang",
+        "universal_zigbee",
+        "usb_dongle_triple",
+        "valvecontroller",
+        "wall_socket"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "doorbell",
+        "button",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0601_wirelesssw",
+      "drivers": [
+        "button_wireless_1",
+        "button_wireless_scene",
+        "button_wireless_smart",
+        "button_wireless_switch",
+        "remote_button_wireless",
+        "remote_button_wireless_smart",
+        "scene_switch_1",
+        "scene_switch_2",
+        "smart_remote_4_buttons",
+        "switch_wireless",
+        "wall_remote_4_gang_2",
+        "wall_remote_4_gang_3"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "remote"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "WXKG01LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "WXKG02LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "WXKG03LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "WXKG06LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "WXKG07LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "WXKG11LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "WXKG12LM",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-101ZL",
+      "drivers": [
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TS0014",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4",
+        "handheld_remote_4_buttons",
+        "switch_4gang",
+        "universal_zigbee",
+        "wall_switch_4_gang",
+        "wall_switch_4gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "remote",
+        "socket",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "device_plug_energy",
+        "double_power_point",
+        "plug_smart",
+        "socket_power_strip_four_two",
+        "universal_zigbee",
+        "valvecontroller"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0726",
+      "drivers": [
+        "button_wireless_4",
+        "scene_switch_2",
+        "scene_switch_3",
+        "switch",
+        "switch_2_gang",
+        "switch_2_gang_metering",
+        "switch_2gang",
+        "switch_4gang",
+        "switch_wall_6gang",
+        "wall_switch_4gang_1way",
+        "wall_switch_6_gang_tuya"
+      ],
+      "classes": [
+        "sensor",
         "socket"
       ],
       "crossClass": true
@@ -1827,11 +2286,63 @@
       "crossClass": true
     },
     {
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_plug",
+        "device_plug_energy",
+        "plug_energy_monitor",
+        "remote_button_wireless",
+        "remote_button_wireless_plug",
+        "smartPlug_DinRail",
+        "smartplug",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "socket",
+        "sensor",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TSO121",
+      "drivers": [
+        "button_wireless_plug",
+        "plug_energy_monitor",
+        "remote_button_wireless",
+        "remote_button_wireless_plug",
+        "smartPlug_DinRail",
+        "smartplug"
+      ],
+      "classes": [
+        "socket",
+        "sensor"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0115",
+      "drivers": [
+        "button_wireless_plug",
+        "remote_button_wireless_plug",
+        "socket_power_strip",
+        "socket_power_strip_four",
+        "usb_outlet_advanced"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
       "pid": "CK-TLSR8656-SS5-01(7014)",
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor",
         "temphumidsensor",
         "temphumidsensor3",
@@ -1847,7 +2358,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1860,7 +2374,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1873,7 +2390,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1886,7 +2406,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor",
         "temphumidsensor",
         "temphumidsensor2",
@@ -1903,7 +2426,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1916,7 +2442,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1929,7 +2458,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1942,7 +2474,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1955,7 +2490,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1968,7 +2506,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1981,7 +2522,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -1994,7 +2538,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2007,7 +2554,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2046,7 +2596,9 @@
         "climate_sensor_energy",
         "illuminance_sensor",
         "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "light_sensor_outdoor",
         "sensor_climate_temphumidsensor",
         "universal_zigbee"
@@ -2063,7 +2615,10 @@
         "climate_sensor",
         "climate_sensor_energy",
         "ir_blaster",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2077,8 +2632,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
         "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor",
         "sensor_lcdtemphumidsensor_temphumidsensor",
         "temphumidsensor",
@@ -2095,7 +2652,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2108,7 +2668,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2121,7 +2684,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2134,7 +2700,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor",
         "sensor_contact_presence",
         "temphumidsensor",
@@ -2151,7 +2720,10 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor"
       ],
       "classes": [
@@ -2164,7 +2736,11 @@
       "drivers": [
         "climate_sensor",
         "climate_sensor_energy",
+        "device_air_purifier_soil",
+        "lcdtemphumidluxsensor",
+        "lcdtemphumidsensor",
         "lcdtemphumidsensor_2",
+        "lcdtemphumidsensor_3",
         "sensor_climate_temphumidsensor",
         "soil_sensor"
       ],
@@ -2179,12 +2755,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "3320-L",
@@ -2192,12 +2772,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "CK-TLSR8656-SS5-01(7003)",
@@ -2205,12 +2789,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "DoorWindow-Sensor-ZB3.0",
@@ -2218,12 +2806,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "DS01",
@@ -2232,12 +2824,16 @@
         "doorwindowsensor",
         "doorwindowsensor_2",
         "doorwindowsensor_4",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "E1603/E1702",
@@ -2245,12 +2841,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "lumi.magnet.ac01",
@@ -2258,12 +2858,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "lumi.magnet.agl02",
@@ -2271,12 +2875,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "lumi.sensor_magnet",
@@ -2284,12 +2892,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "lumi.sensor_magnet.aq2",
@@ -2297,12 +2909,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "MCCGQ01LM",
@@ -2310,12 +2926,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "MCCGQ11LM",
@@ -2323,12 +2943,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "MCCGQ12LM",
@@ -2336,12 +2960,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "MCCGQ14LM",
@@ -2349,12 +2977,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "MCT-340 E",
@@ -2362,17 +2994,23 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "q9mpfhw",
       "drivers": [
         "contact_sensor",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
         "sensor_contact_water",
         "sensor_contact_zigbee",
         "universal_zigbee",
@@ -2382,6 +3020,7 @@
       ],
       "classes": [
         "sensor",
+        "socket",
         "other"
       ],
       "crossClass": true
@@ -2393,12 +3032,16 @@
         "doorwindowsensor",
         "doorwindowsensor_2",
         "flood_sensor",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "SNZB-04",
@@ -2406,12 +3049,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "SNZB-04P",
@@ -2419,12 +3066,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "SNZB-04PR2",
@@ -2432,12 +3083,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "SNZB-04R2",
@@ -2445,12 +3100,16 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "TRADFRI open/close remote",
@@ -2458,24 +3117,32 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "TS0021",
       "drivers": [
         "contact_sensor",
         "doorwindowsensor",
-        "doorwindowsensor_2"
+        "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "TS0203",
@@ -2486,14 +3153,21 @@
         "doorwindowsensor_2",
         "doorwindowsensor_3",
         "doorwindowsensor_4",
+        "pir_mmwave_sensor",
         "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
+        "sensor_illuminance_presence",
         "sensor_presence_radar",
         "smart_door_window_sensor",
         "universal_zigbee"
       ],
       "classes": [
         "sensor",
-        "other"
+        "other",
+        "socket"
       ],
       "crossClass": true
     },
@@ -2506,6 +3180,8 @@
         "doorwindowsensor_2",
         "flood_sensor",
         "rain_sensor",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
         "sensor_contact_water",
         "universal_zigbee",
         "usb_dongle_dual_repeater",
@@ -2525,13 +3201,16 @@
       "drivers": [
         "contact_sensor",
         "doorwindowsensor",
-        "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "ZG-102ZL",
@@ -2539,18 +3218,23 @@
         "contact_sensor",
         "doorwindowsensor",
         "doorwindowsensor_2",
+        "sensor_contact_motion",
+        "sensor_contact_plug",
+        "sensor_contact_water",
         "sensor_contact_zigbee"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "AM02",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2561,7 +3245,8 @@
       "pid": "AM43-0.45/40-ES-EB",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2572,7 +3257,8 @@
       "pid": "AM43-0.45/40-ES-EZ",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2583,7 +3269,8 @@
       "pid": "DS421",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2594,7 +3281,8 @@
       "pid": "DS82",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2605,7 +3293,8 @@
       "pid": "E1757",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2616,7 +3305,8 @@
       "pid": "FYRTUR",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2627,7 +3317,8 @@
       "pid": "KADRILJ",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2638,7 +3329,8 @@
       "pid": "lumi.curtain",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2649,7 +3341,8 @@
       "pid": "lumi.curtain.acn002",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2660,7 +3353,8 @@
       "pid": "lumi.curtain.hagl04",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2671,7 +3365,8 @@
       "pid": "TS0105",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2699,6 +3394,7 @@
       "drivers": [
         "curtain_module",
         "curtain_motor",
+        "curtain_motor_shutter",
         "universal_zigbee"
       ],
       "classes": [
@@ -2711,7 +3407,8 @@
       "pid": "TS030F",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2724,6 +3421,7 @@
         "curtain_module",
         "curtain_module_2_gang",
         "curtain_motor",
+        "curtain_motor_shutter",
         "curtain_motor_wall",
         "universal_zigbee",
         "wall_curtain_switch"
@@ -2739,7 +3437,8 @@
       "pid": "ZBCurtain",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2750,7 +3449,8 @@
       "pid": "ZC-LS02",
       "drivers": [
         "curtain_module",
-        "curtain_motor"
+        "curtain_motor",
+        "curtain_motor_shutter"
       ],
       "classes": [
         "windowcoverings"
@@ -2758,9 +3458,125 @@
       "crossClass": false
     },
     {
+      "pid": "Arteco",
+      "drivers": [
+        "device_air_purifier_soil",
+        "soil_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "CS-201Z",
+      "drivers": [
+        "device_air_purifier_soil",
+        "soil_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "S26R2ZB",
+      "drivers": [
+        "device_plug_energy",
+        "double_power_point",
+        "plug_energy_monitor",
+        "plug_smart",
+        "usb_dongle_triple"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "S31 Lite zb",
+      "drivers": [
+        "device_plug_energy",
+        "double_power_point",
+        "plug_energy_monitor",
+        "plug_smart",
+        "usb_dongle_triple"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "S40LITE",
+      "drivers": [
+        "device_plug_energy",
+        "double_power_point",
+        "plug_energy_monitor",
+        "plug_smart",
+        "usb_dongle_triple"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "S60ZBTPF",
+      "drivers": [
+        "device_plug_energy",
+        "double_power_point",
+        "plug_energy_monitor",
+        "plug_smart",
+        "usb_dongle_triple"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "S60ZBTPG",
+      "drivers": [
+        "device_plug_energy",
+        "double_power_point",
+        "plug_energy_monitor",
+        "plug_smart",
+        "usb_dongle_triple"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TS0101",
+      "drivers": [
+        "device_plug_energy",
+        "double_power_point",
+        "outdoor_plug",
+        "plug_smart",
+        "relay_board_1_channel",
+        "smart_garden_irrigation_control",
+        "smart_switch",
+        "socket_power_strip_four_two",
+        "sr_zs_switch",
+        "switch_1gang",
+        "universal_zigbee",
+        "wall_switch_1_gang_tuya",
+        "wall_switch_5_gang_tuya"
+      ],
+      "classes": [
+        "socket",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
       "pid": "TS0601_dim1",
       "drivers": [
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_wall_1gang",
         "wall_dimmer_tuya"
       ],
@@ -2773,6 +3589,7 @@
       "pid": "ZBMINI-DIM",
       "drivers": [
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_wall_1gang",
         "wall_dimmer_tuya"
       ],
@@ -2785,6 +3602,7 @@
       "pid": "ZBMINID",
       "drivers": [
         "dimmer_1_gang",
+        "dimmer_1_gang_2",
         "dimmer_wall_1gang",
         "wall_dimmer_tuya"
       ],
@@ -2818,93 +3636,6 @@
       "crossClass": true
     },
     {
-      "pid": "S26R2ZB",
-      "drivers": [
-        "double_power_point",
-        "plug_energy_monitor",
-        "plug_smart",
-        "usb_dongle_triple"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "S31 Lite zb",
-      "drivers": [
-        "double_power_point",
-        "plug_energy_monitor",
-        "plug_smart",
-        "usb_dongle_triple"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "S40LITE",
-      "drivers": [
-        "double_power_point",
-        "plug_energy_monitor",
-        "plug_smart",
-        "usb_dongle_triple"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "S60ZBTPF",
-      "drivers": [
-        "double_power_point",
-        "plug_energy_monitor",
-        "plug_smart",
-        "usb_dongle_triple"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "S60ZBTPG",
-      "drivers": [
-        "double_power_point",
-        "plug_energy_monitor",
-        "plug_smart",
-        "usb_dongle_triple"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0101",
-      "drivers": [
-        "double_power_point",
-        "outdoor_plug",
-        "plug_smart",
-        "relay_board_1_channel",
-        "smart_garden_irrigation_control",
-        "smart_switch",
-        "socket_power_strip_four_two",
-        "sr_zs_switch",
-        "switch_1gang",
-        "universal_zigbee",
-        "wall_switch_1_gang_tuya",
-        "wall_switch_5_gang_tuya"
-      ],
-      "classes": [
-        "socket",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "TS0204",
       "drivers": [
         "gas_detector",
@@ -2920,12 +3651,14 @@
       "pid": "TS0601_gas",
       "drivers": [
         "gas_sensor",
+        "gas_sensor_switch",
         "sensor_gas_presence"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "socket"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "BASICZBR3",
@@ -2939,6 +3672,17 @@
       ],
       "classes": [
         "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "eTRV0100",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
       ],
       "crossClass": false
     },
@@ -2961,12 +3705,16 @@
     {
       "pid": "SNZB-06P",
       "drivers": [
+        "pir_mmwave_sensor",
         "plug_energy_monitor",
-        "presence_sensor_radar"
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
       ],
       "classes": [
-        "socket",
-        "sensor"
+        "sensor",
+        "socket"
       ],
       "crossClass": true
     },
@@ -3171,11 +3919,24 @@
       "crossClass": false
     },
     {
+      "pid": "TS0601_mmwave",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "pir_mmwave_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
       "pid": "CK-BL702-MWS-01(7016)",
       "drivers": [
         "pir_mmwave_sensor",
         "presence_sensor_ceiling",
         "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
         "sensor_presence_radar"
       ],
       "classes": [
@@ -3189,6 +3950,92 @@
         "pir_mmwave_sensor",
         "presence_sensor_ceiling",
         "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "CK-BL702-MWS-01",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "MG1_5RZ",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SZLMR10",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-204ZE",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-204ZH",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-204ZK",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
         "sensor_presence_radar"
       ],
       "classes": [
@@ -3199,7 +4046,10 @@
     {
       "pid": "ZG-204ZL",
       "drivers": [
+        "pir_mmwave_sensor",
         "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
         "sensor_presence_radar"
       ],
       "classes": [
@@ -3210,7 +4060,24 @@
     {
       "pid": "ZG-204ZM",
       "drivers": [
+        "pir_mmwave_sensor",
         "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-204ZQ",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
         "sensor_presence_radar"
       ],
       "classes": [
@@ -3221,11 +4088,235 @@
     {
       "pid": "ZG-204ZV",
       "drivers": [
+        "pir_mmwave_sensor",
         "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
         "sensor_presence_radar"
       ],
       "classes": [
         "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-205Z",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-205ZL",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-302ZL",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "ZG-302ZM",
+      "drivers": [
+        "pir_mmwave_sensor",
+        "presence_sensor_radar",
+        "radar_sensor_2",
+        "sensor_illuminance_presence",
+        "sensor_presence_radar"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "014G2461",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "014G2463",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "lumi.airrtc.agl001",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "lumi.airrtc.vrfegl01",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SEA801-Zigbee",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SPZB0001",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SPZB0003",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "STZB402",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "STZB403",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TRV601",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TRV602",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TRVZB",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TV01-ZB",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TV02-ZB",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "Zen-01",
+      "drivers": [
+        "radiator_valve",
+        "thermostatic_radiator_valve"
+      ],
+      "classes": [
+        "thermostat"
       ],
       "crossClass": false
     },
@@ -3390,25 +4481,6 @@
       "crossClass": true
     },
     {
-      "pid": "TS0726",
-      "drivers": [
-        "scene_switch_2",
-        "scene_switch_3",
-        "switch",
-        "switch_2_gang",
-        "switch_2_gang_metering",
-        "switch_2gang",
-        "switch_4gang",
-        "switch_wall_6gang",
-        "wall_switch_4gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "ERS-10TZBVK-AA",
       "drivers": [
         "scene_switch_4",
@@ -3450,7 +4522,8 @@
       "pid": "GS361A-H04",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3461,7 +4534,8 @@
       "pid": "HS1SA",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3472,7 +4546,8 @@
       "pid": "HS3SA",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3483,7 +4558,8 @@
       "pid": "JTYJ-GD-01LM/BW",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3494,7 +4570,8 @@
       "pid": "lumi.sensor_smoke",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3505,7 +4582,8 @@
       "pid": "NAS-SD02B0",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3516,7 +4594,8 @@
       "pid": "PG-S11Z",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3527,7 +4606,8 @@
       "pid": "SA12IZL",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3538,7 +4618,8 @@
       "pid": "SD8SC_00.00.03.12TC",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3549,7 +4630,8 @@
       "pid": "SMSZB-120",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3560,7 +4642,8 @@
       "pid": "SSSQS01LM",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3585,7 +4668,8 @@
       "pid": "YG400A",
       "drivers": [
         "smoke_detector_advanced",
-        "smoke_sensor2"
+        "smoke_sensor2",
+        "smoke_sensor3"
       ],
       "classes": [
         "sensor"
@@ -3593,22 +4677,11 @@
       "crossClass": false
     },
     {
-      "pid": "TS0115",
-      "drivers": [
-        "socket_power_strip",
-        "socket_power_strip_four",
-        "usb_outlet_advanced"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "JZ-ZB-004",
       "drivers": [
         "socket_power_strip_four_three",
-        "switch_4gang"
+        "switch_4gang",
+        "wall_switch_4gang_1way"
       ],
       "classes": [
         "socket"
@@ -3664,6 +4737,28 @@
       "crossClass": false
     },
     {
+      "pid": "TS0004_power",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4gang_1way"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TS0004_switch_module",
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_4gang_1way"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
+    },
+    {
       "pid": "TS0015",
       "drivers": [
         "switch_wall_5gang",
@@ -3674,6 +4769,17 @@
         "other"
       ],
       "crossClass": true
+    },
+    {
+      "pid": "TS0016",
+      "drivers": [
+        "switch_wall_6gang",
+        "wall_switch_6_gang_tuya"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false
     },
     {
       "pid": "SNTZ003",
@@ -3710,6 +4816,72 @@
         "sensor"
       ],
       "crossClass": true
+    },
+    {
+      "pid": "SWV-ZFE",
+      "drivers": [
+        "valve_dual_irrigation",
+        "water_valve_smart"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SWV-ZFU",
+      "drivers": [
+        "valve_dual_irrigation",
+        "water_valve_smart"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SWV-ZN",
+      "drivers": [
+        "valve_dual_irrigation",
+        "water_valve_smart"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SWV-ZNE",
+      "drivers": [
+        "valve_dual_irrigation",
+        "water_valve_smart"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "SWV-ZNU",
+      "drivers": [
+        "valve_dual_irrigation",
+        "water_valve_smart"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TS0601_watervalve",
+      "drivers": [
+        "valve_dual_irrigation",
+        "water_valve_smart"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
     },
     {
       "pid": "_tz3000_eit6l5",
@@ -3882,10 +5054,10 @@
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 365,
+    "ourDrivers": 320,
     "johanDrivers": 113,
-    "pidConflicts": 283,
-    "crossClassConflicts": 74,
+    "pidConflicts": 348,
+    "crossClassConflicts": 125,
     "uncoveredFPGroups": 0,
     "missingDriverTypes": 0,
     "scaffolded": 0,
