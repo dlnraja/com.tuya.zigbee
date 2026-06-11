@@ -31,6 +31,16 @@ class ClimateSensorDevice extends UnifiedSensorBase {
   }
 
   get dpMappings() {
+    // Device-specific DP overrides for luminance-only sensors
+    const mfr = this.getManufacturerName?.() || '';
+    if (mfr.includes('AAEASOLL') || mfr.includes('aaeasoll')) {
+      return {
+        2: { capability: 'measure_luminance', divisor: 1 },
+        3: { capability: 'measure_battery', divisor: 1 },
+        4: { capability: 'measure_battery', divisor: 1 }
+      };
+    }
+
     return {
       1: { capability: 'measure_temperature', divisor: 10, useInference: true },
       2: { capability: 'measure_humidity', divisor: 1, useInference: true },
