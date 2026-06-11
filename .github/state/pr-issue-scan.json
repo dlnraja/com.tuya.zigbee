@@ -1,8 +1,8 @@
 {
-  "date": "2026-06-11T11:34:32.875Z",
+  "date": "2026-06-11T13:18:04.362Z",
   "local": {
     "drivers": 412,
-    "fps": 10734
+    "fps": 10778
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -17106,6 +17106,90 @@
     ],
     "issues": [
       {
+        "number": 419,
+        "title": "[Auto] 122 new fingerprints from community (2026-06)",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [
+          "_TZE284_zofmmt9s",
+          "_TZE204_hewlydpz"
+        ],
+        "pids": [
+          "TS0052",
+          "TS1101",
+          "TS0203",
+          "TS0207",
+          "TS0201",
+          "TS0222",
+          "TS0202",
+          "TS0505A",
+          "TS0505B",
+          "TS0215A",
+          "TS0001",
+          "TS0121",
+          "TS0205",
+          "TS0115",
+          "TS0003",
+          "TS0011",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0014",
+          "TS0044"
+        ],
+        "newFPs": [
+          "_TZE284_zofmmt9s",
+          "_TZE204_hewlydpz"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/419"
+      },
+      {
+        "number": 418,
+        "title": "[Auto] 130 new fingerprints from community (2026-06)",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0052",
+          "TS1101",
+          "TS0203",
+          "TS0207",
+          "TS0201",
+          "TS0222",
+          "TS0202",
+          "TS0505A",
+          "TS0505B",
+          "TS0601",
+          "TS0215A",
+          "TS0001",
+          "TS0121",
+          "TS0205",
+          "TS0115",
+          "TS0003",
+          "TS0011",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0111",
+          "TS0041",
+          "TS0042",
+          "TS0043"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/418"
+      },
+      {
         "number": 417,
         "title": "Rainsensor",
         "state": "open",
@@ -29395,6 +29479,16 @@
       }
     ],
     "newFPs": [
+      {
+        "mfr": "_TZE284_zofmmt9s",
+        "source": "Issue #419",
+        "title": "[Auto] 122 new fingerprints from community (2026-06)"
+      },
+      {
+        "mfr": "_TZE204_hewlydpz",
+        "source": "Issue #419",
+        "title": "[Auto] 122 new fingerprints from community (2026-06)"
+      },
       {
         "mfr": "_TZE200_eatmkx5j",
         "source": "Issue #415",
