@@ -1,0 +1,21 @@
+{
+  "wakeInstruction": {
+    "en": "The plug will automatically check for updates when powered on.",
+    "fr": "La prise vérifiera automatiquement les mises à jour sous tension.",
+    "nl": "De stekker controleert automatisch op updates wanneer deze is ingeschakeld."
+  },
+  "updates": [
+    {
+      "changelog": {
+        "en": "Initial OTA support for Tuya TS011F smart plugs.",
+        "fr": "Support OTA initial pour les prises intelligentes Tuya TS011F.",
+        "nl": "Initiële OTA-ondersteuning voor Tuya TS011F slimme stekkers."
+      },
+      "device": {
+        "manufacturerName": "_TZ3000_kdi2o9m6",
+        "productId": ["TS011F"]
+      },
+      "files": []
+    }
+  ]
+}

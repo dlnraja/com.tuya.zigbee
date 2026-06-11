@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sensitivity",
+    "type": "number",
+    "label": {
+      "en": "Sensitivity"
+    },
+    "value": 2,
+    "min": 0,
+    "max": 10
+  },
+  {
+    "id": "occupancy_delay",
+    "type": "number",
+    "label": {
+      "en": "Occupancy delay"
+    },
+    "value": 0,
+    "min": 0,
+    "max": 60,
+    "units": {
+      "en": "seconds"
+    }
+  },
+  {
+    "id": "pressure_offset",
+    "type": "number",
+    "label": {
+      "en": "Pressure offset"
+    },
+    "value": 0,
+    "min": -100,
+    "max": 100,
+    "units": {
+      "en": "mBAR"
+    }
+  }
+]
