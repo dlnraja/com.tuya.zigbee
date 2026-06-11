@@ -1,8 +1,8 @@
 {
-  "date": "2026-06-11T14:16:00.741Z",
+  "date": "2026-06-11T16:54:17.103Z",
   "local": {
     "drivers": 412,
-    "fps": 10778
+    "fps": 10777
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -26182,6 +26182,3300 @@
         "pids": [],
         "newFPs": [],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/186"
+      },
+      {
+        "number": 184,
+        "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601",
+        "state": "closed",
+        "user": "pemikalsen-sudo",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "reopened-by-user",
+          "awaiting-verification",
+          "temperature_sensor",
+          "humidity_sensor"
+        ],
+        "fps": [
+          "_TZE284_8se38w3c"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/184"
+      },
+      {
+        "number": 183,
+        "title": "[Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4",
+        "state": "closed",
+        "user": "Snacker80",
+        "labels": [
+          "device-request",
+          "new-fingerprint",
+          "device_request",
+          "reopened-by-user",
+          "awaiting-verification",
+          "climate_sensor"
+        ],
+        "fps": [
+          "_TZ3000_tsgqxdb4"
+        ],
+        "pids": [
+          "TS0201",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/183"
+      },
+      {
+        "number": 182,
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "new-fingerprint",
+          "Tuya",
+          "device_request",
+          "auto-scan",
+          "zigbee",
+          "awaiting-verification"
+        ],
+        "fps": [
+          "_TZ3000_dojqjapa",
+          "_TZ3000_icoxotza",
+          "_TZ3000_t7ugva7q",
+          "_TZ3000_uyrhiafs",
+          "_TZ3002_vsom92pp",
+          "_TZ3008_reatplte",
+          "_TZ3210_imaccztn",
+          "_TZ3210_vbfp8eyv",
+          "_TZ3210_zifx0xoj",
+          "_TZE200_hbnfokum",
+          "_TZE200_w0ap83qu",
+          "_TZE204_cduqh1l0",
+          "_TZE204_ouy7vpm1",
+          "_TZE284_3regm3h6",
+          "_TZE284_4vbj3fxh",
+          "_TZE284_4vobcgd3",
+          "_TZE284_bw4ayyeh",
+          "_TZE284_mul9abs3",
+          "_TZE284_mvtclclq",
+          "_TZE284_nbv4tdaz",
+          "_TZE284_tgrzpqf4"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/182"
+      },
+      {
+        "number": 179,
+        "title": "Pairing fails for TS0601 presence sensors: create_bindings_failed (zdoInvalidEndpoint)",
+        "state": "closed",
+        "user": "Robsta86",
+        "labels": [
+          "bug",
+          "zigbee",
+          "pairing"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/179"
+      },
+      {
+        "number": 178,
+        "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [
+          "bug",
+          "reopened-by-user",
+          "awaiting-verification",
+          "soil_sensor",
+          "connection_issue"
+        ],
+        "fps": [
+          "_TZE284_oitavov2"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/178"
+      },
+      {
+        "number": 177,
+        "title": "Soil Sensor with fertilizer level A89G12C",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [
+          "bug",
+          "device-request",
+          "new-fingerprint",
+          "awaiting-verification",
+          "soil_sensor",
+          "A89G12C"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/177"
+      },
+      {
+        "number": 176,
+        "title": "[soil_sensor] Bug:",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [
+          "bug",
+          "new-fingerprint",
+          "reopened-by-user",
+          "awaiting-verification",
+          "soil_sensor",
+          "connection_issue"
+        ],
+        "fps": [
+          "_TZE284_hdml1aav"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/176"
+      },
+      {
+        "number": 175,
+        "title": "[soil_sensor] Bug:",
+        "state": "closed",
+        "user": "haadeess",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/175"
+      },
+      {
+        "number": 174,
+        "title": "[DEVICE] Bug report - Identification mismatch for ZG-204ZE (Presence Sensor Radar)",
+        "state": "closed",
+        "user": "Wuma68",
+        "labels": [
+          "bug",
+          "device-request",
+          "device",
+          "needs-info",
+          "awaiting-verification"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/174"
+      },
+      {
+        "number": 173,
+        "title": "Human motion sensor (radar)",
+        "state": "closed",
+        "user": "Wuma68",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "already-supported"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/173"
+      },
+      {
+        "number": 172,
+        "title": "Unable to connect Something went wrong while adding this device, please try again",
+        "state": "closed",
+        "user": "ronaldbok",
+        "labels": [
+          "already-supported"
+        ],
+        "fps": [
+          "_TZE284_oitavov2"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/172"
+      },
+      {
+        "number": 171,
+        "title": "Bseed E-touch series Zigbee 1-Gang",
+        "state": "closed",
+        "user": "vbesteiro",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "new-fingerprint",
+          "reopened-by-user",
+          "zigbee",
+          "BSEED",
+          "E-touch"
+        ],
+        "fps": [
+          "_TZ3002_jn2x20tg"
+        ],
+        "pids": [
+          "TS0726"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/171"
+      },
+      {
+        "number": 170,
+        "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
+        "state": "closed",
+        "user": "Ssssneak",
+        "labels": [
+          "bug",
+          "enhancement",
+          "new-fingerprint",
+          "reopened-by-user",
+          "zigbee",
+          "awaiting-verification",
+          "TS0003",
+          "Flow cards"
+        ],
+        "fps": [
+          "_TZ3000_v4l4b0lp"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170"
+      },
+      {
+        "number": 169,
+        "title": "Device Request - [Wall Plug Zigbee] - [Zbeacon] / [TS011F]",
+        "state": "closed",
+        "user": "cristianoisaac",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "already-supported"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/169"
+      },
+      {
+        "number": 168,
+        "title": "Device Request - [PIR Motion Brightness] - [_TZE284_bquwrqh1] / [TS0601]",
+        "state": "closed",
+        "user": "cristianoisaac",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "already-supported"
+        ],
+        "fps": [
+          "_TZE284_bquwrqh1"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/168"
+      },
+      {
+        "number": 167,
+        "title": "[Auto] 1 new fingerprint(s) from upstream",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "fingerprint",
+          "new-fingerprint",
+          "driver",
+          "auto-triage"
+        ],
+        "fps": [
+          "_TZ3000_kxaow5ki"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/167"
+      },
+      {
+        "number": 166,
+        "title": "[Auto] 3 new fingerprints from forks",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "auto-scan"
+        ],
+        "fps": [
+          "_TZ3000_mrpevh8p",
+          "_TZ3000_xr7itfxq",
+          "_TZ3000_zgyzgdua"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/166"
+      },
+      {
+        "number": 165,
+        "title": "Device Request - Zigbee Light sensor ZG-106Z",
+        "state": "closed",
+        "user": "johnx1971",
+        "labels": [
+          "device-request",
+          "new-fingerprint",
+          "device_request",
+          "reopened-by-user",
+          "zigbee",
+          "awaiting-verification",
+          "ZG-106Z"
+        ],
+        "fps": [
+          "_TZ3000_7y90pany"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/165"
+      },
+      {
+        "number": 164,
+        "title": "[DEVICE]",
+        "state": "closed",
+        "user": "late4marshmellow",
+        "labels": [
+          "device-request",
+          "device_request",
+          "reopened-by-user",
+          "zigbee",
+          "motion_sensor",
+          "awaiting-verification",
+          "REHENTINT"
+        ],
+        "fps": [
+          "_TZ3000_otvn3lne"
+        ],
+        "pids": [
+          "TS0601",
+          "TS0011",
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/164"
+      },
+      {
+        "number": 163,
+        "title": "[DEVICE] Motion Sensor",
+        "state": "closed",
+        "user": "late4marshmellow",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "device_request",
+          "reopened-by-user",
+          "pairing_issue",
+          "motion_sensor",
+          "awaiting-verification"
+        ],
+        "fps": [
+          "_TZE200_kb5noeto",
+          "_TZ3000_xyz"
+        ],
+        "pids": [
+          "TS0601",
+          "ts0601",
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/163"
+      },
+      {
+        "number": 162,
+        "title": "[fingerbot] Bug:",
+        "state": "closed",
+        "user": "dalobalo",
+        "labels": [
+          "bug",
+          "reopened-by-user",
+          "awaiting-verification",
+          "fingerbot"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/162"
+      },
+      {
+        "number": 161,
+        "title": "[fingerbot] Bug:",
+        "state": "closed",
+        "user": "dalobalo",
+        "labels": [
+          "bug",
+          "already-supported",
+          "fingerbot"
+        ],
+        "fps": [
+          "_TZ3210_j4pdtz9v"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/161"
+      },
+      {
+        "number": 159,
+        "title": "[Verify] 136 new fingerprints found",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "auto-scan"
+        ],
+        "fps": [
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZE200_nkoabg8w",
+          "_TZE200_xuzcvlku",
+          "_TZE200_nogaemzt",
+          "_TZE200_r0jdjrvi",
+          "_TZE200_zpzndjez",
+          "_TZE200_wmcdj3aq",
+          "_TZE200_cowvfni3",
+          "_TZE200_rddyvrci",
+          "_TZE200_nueqqe6k",
+          "_TZE200_xaabybja",
+          "_TZE200_rmymn92d",
+          "_TZE200_3i3exuay",
+          "_TZE200_zah67ekd",
+          "_TZE200_hsgrhjpf",
+          "_TZE200_68nvbio9",
+          "_TZ3000_402jjyro",
+          "_TZ3000_yxqnffam",
+          "_TZ3000_a33rw7ou",
+          "_TZ3000_6zvw8ham",
+          "_TZ3000_au2o5e6q",
+          "_TZ3000_osu834un",
+          "_TZ3000_cqlnswn0",
+          "_TZ3000_rusu2vzb",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3000_bjawzodf",
+          "_TZ3210_ncw88jfq",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_keabpigv",
+          "_TZ3000_12sxjap4",
+          "_TZ3000_hlijwsai",
+          "_TZ3000_qd7hej8u",
+          "_TZ3210_mja6r5ix",
+          "_TZ3000_q50zhdsc",
+          "_TZ3000_zmy1waw6",
+          "_TZ3000_4js9lo5d",
+          "_TZ3000_pmz6mjyu",
+          "_TZ3000_llfaquvp"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/159"
+      },
+      {
+        "number": 158,
+        "title": "[Auto] 2 new fingerprint(s) from upstream",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "fingerprint",
+          "new-fingerprint",
+          "driver",
+          "auto-triage"
+        ],
+        "fps": [
+          "_TZ3000_402vrq2i",
+          "_TZE200_rxq4iti9"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/158"
+      },
+      {
+        "number": 156,
+        "title": "[Auto] 115 new fingerprints from forks",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "auto-scan"
+        ],
+        "fps": [
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZ3000_a33rw7ou",
+          "_TZ3000_6zvw8ham",
+          "_TZ3000_au2o5e6q",
+          "_TZ3000_cqlnswn0",
+          "_TZ3000_rusu2vzb",
+          "_TZ3000_yd2e749y",
+          "_TZ3000_ywagc4rj",
+          "_TZ3000_itnrsufe",
+          "_TZ3000_bjawzodf",
+          "_TZ3210_ncw88jfq",
+          "_TZ3000_keabpigv",
+          "_TZ3000_12sxjap4",
+          "_TZ3000_hlijwsai",
+          "_TZ3000_zmy1waw6",
+          "_TZ3000_m9af2l6g",
+          "_TZ3000_ji4araar",
+          "_TZ3000_qmi1cfuq",
+          "_TZ3000_npzfdcof",
+          "_TZ3000_tqlv4ug4",
+          "_TZ3000_rmjr4ufz",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_4js9lo5d",
+          "_TZ3000_fisb3ajo",
+          "_TZ3000_bvrlqyj7",
+          "_TZ3000_jl7qyupf",
+          "_TZ3000_7ed9cqgi",
+          "_TZ3000_llfaquvp",
+          "_TZ3000_lmlsduws",
+          "_TZ3000_qaa59zqd",
+          "_TZ3000_ruxexjfz",
+          "_TZ3000_i8jfiezr",
+          "_TZ3000_bguser20",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_fie1dpkm"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/156"
+      },
+      {
+        "number": 155,
+        "title": "[Alert] Gmail OAuth token EXPIRED — IMAP fallback active",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "automation",
+          "Gmail",
+          "OAuth",
+          "IMAP"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/155"
+      },
+      {
+        "number": 154,
+        "title": "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "automation",
+          "Gmail",
+          "token",
+          "OAuth"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/154"
+      },
+      {
+        "number": 153,
+        "title": "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "automation",
+          "Gmail",
+          "token",
+          "OAuth"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/153"
+      },
+      {
+        "number": 151,
+        "title": "[Info] SOS button IAS enrollment fails on init (sleepy device — expected)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "documentation",
+          "device-request",
+          "needs-info",
+          "info",
+          "sleepy_device",
+          "enrollment",
+          "diagnostic"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/151"
+      },
+      {
+        "number": 150,
+        "title": "[Feature] Soil sensor missing fertilizer/EC value (measure_ec capability)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "enhancement",
+          "feature_request",
+          "already-supported",
+          "soil_sensor",
+          "measure_ec"
+        ],
+        "fps": [
+          "_TZE284_hdml1aav"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/150"
+      },
+      {
+        "number": 149,
+        "title": "[Bug] LCD Temp/Humidity sensor paired as thermostat (wrong driver)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "already-supported",
+          "sensor",
+          "driver_issue"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/149"
+      },
+      {
+        "number": 148,
+        "title": "[Bug] Contact sensor with luminance paired as mmWave radar (wrong driver match)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "device_issue",
+          "driver",
+          "contact_sensor",
+          "mmWave_radar",
+          "driver_issue"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/148"
+      },
+      {
+        "number": 147,
+        "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "fingerprint",
+          "already-supported",
+          "device_recognition",
+          "switch"
+        ],
+        "fps": [
+          "_TZ3000_itb0omhv"
+        ],
+        "pids": [
+          "TS0001",
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/147"
+      },
+      {
+        "number": 146,
+        "title": "[Bug] isTuyaDP ReferenceError in IAS Zone enrollment verification",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "sensor",
+          "high severity",
+          "IAS Zone"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/146"
+      },
+      {
+        "number": 145,
+        "title": "[Alert] Gmail token EXPIRED",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "security",
+          "stale",
+          "token"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/145"
+      },
+      {
+        "number": 144,
+        "title": "[Alert] Gmail token EXPIRED",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "urgent",
+          "security"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/144"
+      },
+      {
+        "number": 143,
+        "title": "[Alert] Gmail token EXPIRED",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "urgent",
+          "security"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/143"
+      },
+      {
+        "number": 142,
+        "title": "[Auto] 14 new fingerprints from community (2026-03)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "community-sync",
+          "fingerprint",
+          "community",
+          "new-fingerprint"
+        ],
+        "fps": [
+          "_TZ3000_iktiy8ue",
+          "_TZ3000_cziew6eu",
+          "_TZE204_d2zfgtij",
+          "_TZE284_d2zfgtij",
+          "_TZE200_d2zfgtij",
+          "_TZE204_wjk6rurm",
+          "_TZE284_wjk6rurm",
+          "_TZE200_wjk6rurm",
+          "_TZE204_s4sa1mcx",
+          "_TZE284_s4sa1mcx",
+          "_TZE200_s4sa1mcx",
+          "_TZE204_x8diwkqb",
+          "_TZE284_x8diwkqb",
+          "_TZE200_x8diwkqb"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/142"
+      },
+      {
+        "number": 141,
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "new-fingerprint",
+          "Tuya",
+          "auto-scan",
+          "device_support"
+        ],
+        "fps": [
+          "_TZ3000_cziew6eu",
+          "_TZ3000_iktiy8ue",
+          "_TZE200_d2zfgtij",
+          "_TZE200_s4sa1mcx",
+          "_TZE200_wjk6rurm",
+          "_TZE200_x8diwkqb",
+          "_TZE204_d2zfgtij",
+          "_TZE204_s4sa1mcx",
+          "_TZE204_wjk6rurm",
+          "_TZE204_x8diwkqb",
+          "_TZE284_d2zfgtij",
+          "_TZE284_s4sa1mcx",
+          "_TZE284_wjk6rurm",
+          "_TZE284_x8diwkqb"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/141"
+      },
+      {
+        "number": 140,
+        "title": "[Auto] 736 new fingerprints from forks",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "fingerprint",
+          "new-fingerprint",
+          "auto-scan",
+          "new",
+          "update"
+        ],
+        "fps": [
+          "_TZ3000_ww6drja5ts011f",
+          "_TZ3000_zutizvykts0203",
+          "_TZ3000_vjhcxjqb",
+          "_TZ3000_otwpdq1d",
+          "_TZe200_01fvxamo",
+          "_TZe200_0hg58wyk",
+          "_TZe200_0j5jma9b",
+          "_TZe200_0u3bj3rc",
+          "_TZe200_1agwnems",
+          "_TZe200_1drr8tab",
+          "_TZe200_1ibpyhdc",
+          "_TZe200_2aaelwxk",
+          "_TZe200_2atgpdho",
+          "_TZe200_2ekuz3dz",
+          "_TZe200_2hf7x9n3",
+          "_TZe200_2imwyigp",
+          "_TZe200_2m38mh6k",
+          "_TZe200_2pddnnrk",
+          "_TZe200_2se8efxh",
+          "_TZe200_2vfxweng",
+          "_TZe200_3ejwxpmu",
+          "_TZe200_3p5ydos3",
+          "_TZe200_3t91nb6k",
+          "_TZe200_3towulqd",
+          "_TZe200_3xfjp0ag",
+          "_TZe200_44af8vyi",
+          "_TZe200_4eeyebrt",
+          "_TZe200_579lguh2",
+          "_TZe200_5d3vhjro",
+          "_TZe200_6wi2mope",
+          "_TZe200_78ioiaml",
+          "_TZe200_7bztmfm1",
+          "_TZe200_7deq70b8",
+          "_TZe200_7fqkphoq",
+          "_TZe200_7sjncirf",
+          "_TZe200_86nbew0j",
+          "_TZe200_8eazvzo6",
+          "_TZe200_8ply8mjj",
+          "_TZe200_8thwkzxl",
+          "_TZe200_8whxpsiw",
+          "_TZe200_8ygsuhe1",
+          "_TZe200_9cqcpkgb",
+          "_TZe200_9i9dt8is",
+          "_TZe200_9p5xmj5r",
+          "_TZe200_9sfg7gm0",
+          "_TZe200_9yapgbuv",
+          "_TZe200_a4bpgplm",
+          "_TZe200_a8sdabtg",
+          "_TZe200_a8z0g46u"
+        ],
+        "pids": [
+          "ts0203"
+        ],
+        "newFPs": [
+          "_TZ3000_zutizvykts0203",
+          "_TZe200_01fvxamo",
+          "_TZe200_0hg58wyk",
+          "_TZe200_0j5jma9b",
+          "_TZe200_0u3bj3rc",
+          "_TZe200_1agwnems",
+          "_TZe200_1drr8tab",
+          "_TZe200_1ibpyhdc",
+          "_TZe200_2aaelwxk",
+          "_TZe200_2atgpdho",
+          "_TZe200_2ekuz3dz",
+          "_TZe200_2hf7x9n3",
+          "_TZe200_2imwyigp",
+          "_TZe200_2m38mh6k",
+          "_TZe200_2pddnnrk",
+          "_TZe200_2se8efxh",
+          "_TZe200_2vfxweng",
+          "_TZe200_3ejwxpmu",
+          "_TZe200_3p5ydos3",
+          "_TZe200_3t91nb6k",
+          "_TZe200_3towulqd",
+          "_TZe200_3xfjp0ag",
+          "_TZe200_44af8vyi",
+          "_TZe200_4eeyebrt",
+          "_TZe200_579lguh2",
+          "_TZe200_5d3vhjro",
+          "_TZe200_6wi2mope",
+          "_TZe200_78ioiaml",
+          "_TZe200_7bztmfm1",
+          "_TZe200_7deq70b8",
+          "_TZe200_7fqkphoq",
+          "_TZe200_7sjncirf",
+          "_TZe200_86nbew0j",
+          "_TZe200_8eazvzo6",
+          "_TZe200_8ply8mjj",
+          "_TZe200_8thwkzxl",
+          "_TZe200_8whxpsiw",
+          "_TZe200_8ygsuhe1",
+          "_TZe200_9cqcpkgb",
+          "_TZe200_9i9dt8is",
+          "_TZe200_9p5xmj5r",
+          "_TZe200_9sfg7gm0",
+          "_TZe200_9yapgbuv",
+          "_TZe200_a4bpgplm",
+          "_TZe200_a8sdabtg",
+          "_TZe200_a8z0g46u"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/140"
+      },
+      {
+        "number": 139,
+        "title": "[Auto] 1 new fingerprints from forks",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "fingerprint",
+          "new-fingerprint",
+          "Tuya",
+          "auto-scan",
+          "request"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/139"
+      },
+      {
+        "number": 138,
+        "title": "[Auto] 736 new fingerprints from forks",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "fingerprint",
+          "new-fingerprint",
+          "device_request",
+          "auto-scan",
+          "new",
+          "request",
+          "update"
+        ],
+        "fps": [
+          "_TZ3000_ww6drja5ts011f",
+          "_TZ3000_zutizvykts0203",
+          "_TZ3000_vjhcxjqb",
+          "_TZ3000_otwpdq1d",
+          "_TZe200_01fvxamo",
+          "_TZe200_0hg58wyk",
+          "_TZe200_0j5jma9b",
+          "_TZe200_0u3bj3rc",
+          "_TZe200_1agwnems",
+          "_TZe200_1drr8tab",
+          "_TZe200_1ibpyhdc",
+          "_TZe200_2aaelwxk",
+          "_TZe200_2atgpdho",
+          "_TZe200_2ekuz3dz",
+          "_TZe200_2hf7x9n3",
+          "_TZe200_2imwyigp",
+          "_TZe200_2m38mh6k",
+          "_TZe200_2pddnnrk",
+          "_TZe200_2se8efxh",
+          "_TZe200_2vfxweng",
+          "_TZe200_3ejwxpmu",
+          "_TZe200_3p5ydos3",
+          "_TZe200_3t91nb6k",
+          "_TZe200_3towulqd",
+          "_TZe200_3xfjp0ag",
+          "_TZe200_44af8vyi",
+          "_TZe200_4eeyebrt",
+          "_TZe200_579lguh2",
+          "_TZe200_5d3vhjro",
+          "_TZe200_6wi2mope",
+          "_TZe200_78ioiaml",
+          "_TZe200_7bztmfm1",
+          "_TZe200_7deq70b8",
+          "_TZe200_7fqkphoq",
+          "_TZe200_7sjncirf",
+          "_TZe200_86nbew0j",
+          "_TZe200_8eazvzo6",
+          "_TZe200_8ply8mjj",
+          "_TZe200_8thwkzxl",
+          "_TZe200_8whxpsiw",
+          "_TZe200_8ygsuhe1",
+          "_TZe200_9cqcpkgb",
+          "_TZe200_9i9dt8is",
+          "_TZe200_9p5xmj5r",
+          "_TZe200_9sfg7gm0",
+          "_TZe200_9yapgbuv",
+          "_TZe200_a4bpgplm",
+          "_TZe200_a8sdabtg",
+          "_TZe200_a8z0g46u"
+        ],
+        "pids": [
+          "ts0203"
+        ],
+        "newFPs": [
+          "_TZ3000_zutizvykts0203",
+          "_TZe200_01fvxamo",
+          "_TZe200_0hg58wyk",
+          "_TZe200_0j5jma9b",
+          "_TZe200_0u3bj3rc",
+          "_TZe200_1agwnems",
+          "_TZe200_1drr8tab",
+          "_TZe200_1ibpyhdc",
+          "_TZe200_2aaelwxk",
+          "_TZe200_2atgpdho",
+          "_TZe200_2ekuz3dz",
+          "_TZe200_2hf7x9n3",
+          "_TZe200_2imwyigp",
+          "_TZe200_2m38mh6k",
+          "_TZe200_2pddnnrk",
+          "_TZe200_2se8efxh",
+          "_TZe200_2vfxweng",
+          "_TZe200_3ejwxpmu",
+          "_TZe200_3p5ydos3",
+          "_TZe200_3t91nb6k",
+          "_TZe200_3towulqd",
+          "_TZe200_3xfjp0ag",
+          "_TZe200_44af8vyi",
+          "_TZe200_4eeyebrt",
+          "_TZe200_579lguh2",
+          "_TZe200_5d3vhjro",
+          "_TZe200_6wi2mope",
+          "_TZe200_78ioiaml",
+          "_TZe200_7bztmfm1",
+          "_TZe200_7deq70b8",
+          "_TZe200_7fqkphoq",
+          "_TZe200_7sjncirf",
+          "_TZe200_86nbew0j",
+          "_TZe200_8eazvzo6",
+          "_TZe200_8ply8mjj",
+          "_TZe200_8thwkzxl",
+          "_TZe200_8whxpsiw",
+          "_TZe200_8ygsuhe1",
+          "_TZe200_9cqcpkgb",
+          "_TZe200_9i9dt8is",
+          "_TZe200_9p5xmj5r",
+          "_TZe200_9sfg7gm0",
+          "_TZe200_9yapgbuv",
+          "_TZe200_a4bpgplm",
+          "_TZe200_a8sdabtg",
+          "_TZe200_a8z0g46u"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/138"
+      },
+      {
+        "number": 137,
+        "title": "Plug Energy Monitor, wrong voltage",
+        "state": "closed",
+        "user": "Lalla80111",
+        "labels": [
+          "bug",
+          "device-request",
+          "reopened-by-user",
+          "plug",
+          "energy_monitor"
+        ],
+        "fps": [
+          "_TZ3210_w0qqde0g"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137"
+      },
+      {
+        "number": 136,
+        "title": "[Auto] 17 new fingerprints from community (2026-02)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "community-sync",
+          "fingerprint",
+          "community",
+          "sync",
+          "new-fingerprint"
+        ],
+        "fps": [
+          "_TZE200_jt50ea5d",
+          "_TZ3210_jaap6jeb",
+          "_TZE284_g1enhdsi",
+          "_TZ3000_qamj2vnn",
+          "_TZ3000_tw4ztbp4",
+          "_TZ3000_avotanj3",
+          "_TZ3290_7v1k4vuf",
+          "_TZ3290_rlkmy85q",
+          "_TZ3290_jxvzqatw",
+          "_TZ3290_lypnqvle",
+          "_TZ3290_nba3knps",
+          "_TZ3290_yac64inu",
+          "_TZE204_2jnoy8dj",
+          "_TZ3210_iymfxdis",
+          "_TZ3002_xkxgfxsg",
+          "_TZ3002_tlsvxhxc",
+          "_TZE200_seq9cm6u"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/136"
+      },
+      {
+        "number": 135,
+        "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
+        "state": "closed",
+        "user": "Domingoso",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "TS0601",
+          "Immax",
+          "reopened-by-user"
+        ],
+        "fps": [
+          "_TZE200_xlppj4f5"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135"
+      },
+      {
+        "number": 133,
+        "title": "[Auto] 14 new fingerprints from community (2026-02)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "community-sync",
+          "fingerprint",
+          "community",
+          "sync",
+          "new-fingerprint"
+        ],
+        "fps": [
+          "_TZE284_g1enhdsi",
+          "_TZ3000_f2bw0b6k",
+          "_TZ3000_qamj2vnn",
+          "_TZ3000_avotanj3",
+          "_TZ3290_7v1k4vuf",
+          "_TZ3290_rlkmy85q",
+          "_TZ3290_jxvzqatw",
+          "_TZ3290_lypnqvle",
+          "_TZ3290_nba3knps",
+          "_TZ3290_yac64inu",
+          "_TZE204_2jnoy8dj",
+          "_TZ3210_iymfxdis",
+          "_TZ3002_xkxgfxsg",
+          "_TZ3002_tlsvxhxc"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/133"
+      },
+      {
+        "number": 132,
+        "title": "Forum Triage: Posts #1442-#1461 (Feb 18-20, 2026)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "device-request",
+          "triage",
+          "forum",
+          "forum_triage",
+          "device_request"
+        ],
+        "fps": [
+          "_TZ3000_tzvbimpq",
+          "_TZ3000_zgyzgdua",
+          "_TZE204_9mjy74mp",
+          "_TZ3002_pzao9ls1"
+        ],
+        "pids": [
+          "TS0042",
+          "TS0041",
+          "TS0601",
+          "TS0726"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/132"
+      },
+      {
+        "number": 131,
+        "title": "[Triage] Forum #1448-#1454 + GitHub activity Feb 2025",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "triage",
+          "forum"
+        ],
+        "fps": [
+          "_TZ3002_pzao9ls1",
+          "_TZ3000_5iixzdo7",
+          "_TZE204_nklqjk62",
+          "_TZ3210_xzhnra8x",
+          "_TZE284_6ycgarab",
+          "_TZE200_u6x1zyv2",
+          "_TZE204_gkfbdvyx",
+          "_TZE204_dwcarsat",
+          "_TZ3000_zutizvyk",
+          "_TZE284_xnbkhhdr",
+          "_TZE200_rhgsbacq",
+          "_TZE284_aao3yzhs",
+          "_TZE284_aa03yzhs"
+        ],
+        "pids": [
+          "TS0726",
+          "TS0601",
+          "TS0203"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/131"
+      },
+      {
+        "number": 130,
+        "title": "[Forum] Responses for posts #1443-#1447",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "device-request",
+          "forum-post",
+          "forum",
+          "responses"
+        ],
+        "fps": [
+          "_TZ3000_tzvbimpq",
+          "_TZ3000_zgyzgdua",
+          "_TZ3000_ja5osu5g"
+        ],
+        "pids": [
+          "TS0042",
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/130"
+      },
+      {
+        "number": 129,
+        "title": "Curtain Motor Switch TS130F_TZ3000_5iixzdo7",
+        "state": "closed",
+        "user": "MitchV94",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "curtain_motor",
+          "pairing_issue"
+        ],
+        "fps": [
+          "_TZ3000_5iixzdo7"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/129"
+      },
+      {
+        "number": 128,
+        "title": "Garagedoor controller",
+        "state": "closed",
+        "user": "Wuma68",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "garage_door",
+          "Tuya",
+          "feature_request",
+          "reopened-by-user"
+        ],
+        "fps": [
+          "_TZE204_nklqjk62"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/128"
+      },
+      {
+        "number": 127,
+        "title": "Presence Sensor (Radar) _TZE204_e5m9c5hl not working correctly",
+        "state": "closed",
+        "user": "Tauno20",
+        "labels": [
+          "bug",
+          "enhancement",
+          "driver improvement"
+        ],
+        "fps": [
+          "_TZE204_e5m9c5hl"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/127"
+      },
+      {
+        "number": 126,
+        "title": "Tuya Door/Window Sensor (Black model)",
+        "state": "closed",
+        "user": "azkysmarthome",
+        "labels": [
+          "device-request",
+          "Tuya",
+          "device_request",
+          "sensor"
+        ],
+        "fps": [
+          "_TZ3000_zutizvyk"
+        ],
+        "pids": [
+          "TS0203",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/126"
+      },
+      {
+        "number": 124,
+        "title": "TZ uppercase for wireless button and temp.sensor",
+        "state": "closed",
+        "user": "Lalla80111",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request"
+        ],
+        "fps": [
+          "_tz3000_fllyghyj",
+          "_TZ3000_fllyghyj",
+          "_tz3000_b4awzgct",
+          "_TZ3000_b4awzgct"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/124"
+      },
+      {
+        "number": 123,
+        "title": "[Auto] 46 new fingerprints from community (2026-02)",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "community-sync",
+          "community",
+          "fingerprint_update"
+        ],
+        "fps": [
+          "_TZ3000_vd43bbfq",
+          "_TZ3000_1dd0d5yi",
+          "_TZ3000_ke7pzj5d",
+          "_TZ3000_fccpjz5z",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_zirycpws",
+          "_TZ3000_femsaaua",
+          "_TZ3000_e3vhyirx",
+          "_TZ3000_jwv3cwak",
+          "_TZ3210_dwytrmda",
+          "_TZ3000_eg7awg6a",
+          "_TZ3000_eafaa66e",
+          "_TZ3000_j1xl73iw",
+          "_TZ3000_l6iqph4f",
+          "_TZE200_5zbp6j0u",
+          "_TZE200_bjzrowv2",
+          "_TZE200_4vobcgd3",
+          "_TZE200_pk0sfzvr",
+          "_TZE200_fdtjuw7u",
+          "_TZE204_1fuxihti",
+          "_TZE200_axgvo9jh",
+          "_TZE200_gaj531w3",
+          "_TZE200_nw1r9hp6",
+          "_TZE200_9p5xmj5r",
+          "_TZ3210_invesber",
+          "_TZ3210_zdrhqmo0",
+          "_TZ3000_lqmvrwa2",
+          "_TZ3210_ncw88jfq",
+          "_TZ3000_isw9u95y",
+          "_TZ3000_yupc0pb7",
+          "_TZ3000_qrldbmfn",
+          "_TZ3000_996rpfy6",
+          "_TZ3000_2mbfxlzr",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_8yhypbo7",
+          "_TZ3000_4ugnzsli",
+          "_TZ3000_udyjylt7",
+          "_TZ3000_v7chgqso",
+          "_TZ3000_timx9ivq",
+          "_TZ3000_rid8lzvo",
+          "_TZ3000_t3vvhrmh",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_osu834un",
+          "_TZE284_vuwtqx0t",
+          "_TZE200_vuwtqx0t",
+          "_TZE284_ajlu4cud"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/123"
+      },
+      {
+        "number": 122,
+        "title": "Longsam mini m3 curtain motor",
+        "state": "closed",
+        "user": "elgato7",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "curtain_motor"
+        ],
+        "fps": [
+          "_TZE204_xu4a5rhj"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/122"
+      },
+      {
+        "number": 121,
+        "title": "_TZ3000_an5rjiwd - not working",
+        "state": "closed",
+        "user": "DAVID9SE",
+        "labels": [
+          "bug",
+          "enhancement",
+          "automation",
+          "device-request",
+          "zigbee",
+          "button",
+          "AliExpress"
+        ],
+        "fps": [
+          "_TZ3000_an5rjiwd"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/121"
+      },
+      {
+        "number": 117,
+        "title": "Longsam mini m3 Smart Curtain",
+        "state": "closed",
+        "user": "elgato7",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "zigbee",
+          "curtain"
+        ],
+        "fps": [
+          "_TZE204_xu4a5rhj"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/117"
+      },
+      {
+        "number": 115,
+        "title": "Temperature & Humidity Sensor",
+        "state": "closed",
+        "user": "Lalla80111",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "sensor",
+          "stale",
+          "temperature",
+          "humidity"
+        ],
+        "fps": [
+          "_TZ3000_fllyghyj"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/115"
+      },
+      {
+        "number": 114,
+        "title": "Smart Button",
+        "state": "closed",
+        "user": "Lalla80111",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
+        ],
+        "fps": [
+          "_TZ3000_b4awzgct"
+        ],
+        "pids": [
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/114"
+      },
+      {
+        "number": 113,
+        "title": "Request for New Zigbee Device - Smart KNobe Scene Switch (Remote Dimmer)",
+        "state": "closed",
+        "user": "Ernst02507",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "zigbee"
+        ],
+        "fps": [
+          "_TZ3000_gwkzibhs",
+          "_TZ3000_xyz"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/113"
+      },
+      {
+        "number": 110,
+        "title": "unknown zigbee-device",
+        "state": "closed",
+        "user": "Pollepa",
+        "labels": [
+          "device-request",
+          "device_request",
+          "reopened-by-user",
+          "supported_device"
+        ],
+        "fps": [
+          "_TZ3210_w0qqde0g"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/110"
+      },
+      {
+        "number": 109,
+        "title": "Request #107 - continuation",
+        "state": "closed",
+        "user": "eskilask-maker",
+        "labels": [
+          "duplicate",
+          "enhancement",
+          "device-request",
+          "device_request"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/109"
+      },
+      {
+        "number": 108,
+        "title": "Request for a Tuya air quality monitor",
+        "state": "closed",
+        "user": "gfi63",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "air_quality_monitor"
+        ],
+        "fps": [
+          "_TZE204_yvx5lh6k"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/108"
+      },
+      {
+        "number": 107,
+        "title": "Climate Sensor (Temp & Humidity) from AliExpress",
+        "state": "closed",
+        "user": "eskilask-maker",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "feature_request",
+          "zigbee",
+          "device",
+          "sensor",
+          "AliExpress",
+          "Climate Sensor"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/107"
+      },
+      {
+        "number": 105,
+        "title": "BSEED 1 button wall switch zigbee with neutral. _TZ3000_ysdv91bk TS0001",
+        "state": "closed",
+        "user": "pjmpessers",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
+        ],
+        "fps": [
+          "_TZ3000_ysdv91bk"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/105"
+      },
+      {
+        "number": 104,
+        "title": "BSEED 1 button wall switch zigbee with neutral. _TZ3000_blhvsaqf TS0001",
+        "state": "closed",
+        "user": "pjmpessers",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
+        ],
+        "fps": [
+          "_TZ3000_blhvsaqf"
+        ],
+        "pids": [
+          "TS0001"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/104"
+      },
+      {
+        "number": 103,
+        "title": "BSEED 2 button wallswitch zigbee with neutral _TZ3000_l9brjwau TS0003",
+        "state": "closed",
+        "user": "pjmpessers",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "zigbee",
+          "BSEED",
+          "wallswitch"
+        ],
+        "fps": [
+          "_TZ3000_l9brjwau",
+          "_TZ3000_qkixdnon"
+        ],
+        "pids": [
+          "TS0003",
+          "TS0002"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/103"
+      },
+      {
+        "number": 102,
+        "title": "BSEED 3 button wall switch zigbee with neutral _TZ3000_qkixdnon TS0003",
+        "state": "closed",
+        "user": "pjmpessers",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "zigbee",
+          "wall_switch",
+          "BSEED"
+        ],
+        "fps": [
+          "_TZ3000_qkixdnon"
+        ],
+        "pids": [
+          "TS0003"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/102"
+      },
+      {
+        "number": 101,
+        "title": "[Device] Tuya Zigbee TS0601 Soil Moisture / Temperature Sensor (_TZE284_aa03yzhs)",
+        "state": "closed",
+        "user": "csmobiel",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "zigbee",
+          "sensor"
+        ],
+        "fps": [
+          "_TZE284_aa03yzhs"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/101"
+      },
+      {
+        "number": 99,
+        "title": "[Device] Sonoff S60ZBTPF",
+        "state": "closed",
+        "user": "fcarrozzo",
+        "labels": [
+          "device-request",
+          "zigbee",
+          "device",
+          "Sonoff",
+          "S60ZBTPF"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/99"
+      },
+      {
+        "number": 98,
+        "title": "[Device] TS0043 LoraTap 3 Button Remote",
+        "state": "closed",
+        "user": "DVMasters",
+        "labels": [
+          "device-request",
+          "device",
+          "TS0043",
+          "LoraTap"
+        ],
+        "fps": [
+          "_TZ3000_famkxci2"
+        ],
+        "pids": [
+          "TS0043",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/98"
+      },
+      {
+        "number": 97,
+        "title": "[DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenzhi cant get any value.",
+        "state": "closed",
+        "user": "NoroddH",
+        "labels": [
+          "bug",
+          "device-request",
+          "reopened-by-user",
+          "presence_sensor",
+          "awaiting-verification"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0225"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/97"
+      },
+      {
+        "number": 96,
+        "title": "Can't add Tuya Zigbee smoke detector (model PG-S11Z)",
+        "state": "closed",
+        "user": "mjolink",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "zigbee",
+          "smoke detector",
+          "pairing issue"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/96"
+      },
+      {
+        "number": 95,
+        "title": "[DEVICE] HOBEIAN ZG-227Z Temperature sensor",
+        "state": "closed",
+        "user": "JeffreyOtten1234",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "device_request"
+        ],
+        "fps": [
+          "_TZ3000_xyz"
+        ],
+        "pids": [
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/95"
+      },
+      {
+        "number": 94,
+        "title": "[Feature] Add direct link to README.md",
+        "state": "closed",
+        "user": "bartagergely",
+        "labels": [
+          "documentation",
+          "enhancement",
+          "zigbee"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/94"
+      },
+      {
+        "number": 93,
+        "title": "Device Request: Moes TRV from Aliexpress",
+        "state": "closed",
+        "user": "Necka44",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee",
+          "Moes_TRV"
+        ],
+        "fps": [
+          "_TZE204_qyr2m29i"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/93"
+      },
+      {
+        "number": 92,
+        "title": "Device request - Tuya smart button HMJ-SC021",
+        "state": "closed",
+        "user": "djfry134",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "HMJ-SC021"
+        ],
+        "fps": [
+          "_TZ3000_b4awzgct"
+        ],
+        "pids": [
+          "TS0041",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/92"
+      },
+      {
+        "number": 91,
+        "title": "[Device] Zigbee IR remote controle (ZS06)",
+        "state": "closed",
+        "user": "snorro80",
+        "labels": [
+          "device-request",
+          "zigbee",
+          "IR remote",
+          "ZS06"
+        ],
+        "fps": [
+          "_TZ3290_7v1k4vufotpowp9z"
+        ],
+        "pids": [
+          "TS1201",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/91"
+      },
+      {
+        "number": 90,
+        "title": "[BUG] can't compile the code due to an error",
+        "state": "closed",
+        "user": "artisare",
+        "labels": [
+          "bug",
+          "enhancement",
+          "zigbee",
+          "curtain_motor",
+          "thermostat",
+          "compilation",
+          "window_open",
+          "compilation-error"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/90"
+      },
+      {
+        "number": 89,
+        "title": "Support Request – eWeLink Mini PIR Sensor (CK-TLSR8656-SS5-01)",
+        "state": "closed",
+        "user": "eskilask-maker",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
+        ],
+        "fps": [
+          "_TZE200_bh3n6gk8"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/89"
+      },
+      {
+        "number": 88,
+        "title": "Bug - Incorrect driver assigned to device - 2 gang dimmer module x climate sensor",
+        "state": "closed",
+        "user": "theunissendave",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "device_issue"
+        ],
+        "fps": [
+          "_TZE200_e3oitdyu"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/88"
+      },
+      {
+        "number": 87,
+        "title": "Device Request - Presence Sensor Radar - _TZE204_mtoaryre / TS0601",
+        "state": "closed",
+        "user": "Verectra",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "presence_sensor"
+        ],
+        "fps": [
+          "_TZE204_mtoaryre",
+          "_TZ3000_xyz"
+        ],
+        "pids": [
+          "TS0601",
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/87"
+      },
+      {
+        "number": 83,
+        "title": "WoodUpp / Tuya 24V LED Driver",
+        "state": "closed",
+        "user": "xSondreBx",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "zigbee",
+          "device_issue"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0501B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/83"
+      },
+      {
+        "number": 82,
+        "title": "Add support for TS0501B / _TZB210_ngnt8kni (Tuya 24V LED Driver)",
+        "state": "closed",
+        "user": "xSondreBx",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0501B",
+          "TS0601",
+          "ts0501b"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/82"
+      },
+      {
+        "number": 80,
+        "title": "Tuya Zigbee Temperature Humidity Sensor with LCD Screen ZTH05Z",
+        "state": "closed",
+        "user": "telenut",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "zigbee",
+          "sensor",
+          "temperature",
+          "humidity",
+          "Temperature Sensor"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/80"
+      },
+      {
+        "number": 79,
+        "title": "Device Request - Curtain motor - Tuya / _TZE200_uj3f4wr5",
+        "state": "closed",
+        "user": "Patrickske1",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "tuya-dp",
+          "Tuya",
+          "device_request",
+          "curtain_motor"
+        ],
+        "fps": [
+          "_TZE200_uj3f4wr5"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/79"
+      },
+      {
+        "number": 78,
+        "title": "[DEVICE] TS0601_TZE200_9yapgbuv incorrectly defined as sound controller",
+        "state": "closed",
+        "user": "tknapstad",
+        "labels": [
+          "bug",
+          "device"
+        ],
+        "fps": [
+          "_TZE200_9yapgbuv"
+        ],
+        "pids": [
+          "TS0601",
+          "TS0011"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/78"
+      },
+      {
+        "number": 77,
+        "title": "[DEVICE] Thermostat Radiator Valve",
+        "state": "closed",
+        "user": "Haellos07",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee",
+          "thermostat"
+        ],
+        "fps": [
+          "_TZE200_hvaxb2tc"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/77"
+      },
+      {
+        "number": 76,
+        "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+        "state": "closed",
+        "user": "jocke-sve-62",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "request",
+          "zigbee",
+          "device"
+        ],
+        "fps": [
+          "_TZ3000_u3nv1jwk"
+        ],
+        "pids": [
+          "TS0044",
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/76"
+      },
+      {
+        "number": 75,
+        "title": "[Device] ZG-204ZL",
+        "state": "closed",
+        "user": "Didiervu91",
+        "labels": [
+          "device-request",
+          "device_request",
+          "zigbee",
+          "HOBEIAN",
+          "ZG-204ZL"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/75"
+      },
+      {
+        "number": 74,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/74"
+      },
+      {
+        "number": 73,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/73"
+      },
+      {
+        "number": 72,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/72"
+      },
+      {
+        "number": 71,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/71"
+      },
+      {
+        "number": 70,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/70"
+      },
+      {
+        "number": 69,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/69"
+      },
+      {
+        "number": 68,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/68"
+      },
+      {
+        "number": 67,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/67"
+      },
+      {
+        "number": 66,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/66"
+      },
+      {
+        "number": 65,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/65"
+      },
+      {
+        "number": 64,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/64"
+      },
+      {
+        "number": 63,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/63"
+      },
+      {
+        "number": 62,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/62"
+      },
+      {
+        "number": 61,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "stale",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/61"
+      },
+      {
+        "number": 60,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "stale",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/60"
+      },
+      {
+        "number": 59,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/59"
+      },
+      {
+        "number": 58,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow",
+          "auto-organize"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/58"
+      },
+      {
+        "number": 57,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/57"
+      },
+      {
+        "number": 56,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/56"
+      },
+      {
+        "number": 55,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/55"
+      },
+      {
+        "number": 54,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/54"
+      },
+      {
+        "number": 53,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/53"
+      },
+      {
+        "number": 52,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/52"
+      },
+      {
+        "number": 51,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/51"
+      },
+      {
+        "number": 50,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/50"
+      },
+      {
+        "number": 49,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/49"
+      },
+      {
+        "number": 48,
+        "title": "🚨 Auto-organize workflow failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "priority-high"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/48"
+      },
+      {
+        "number": 44,
+        "title": "[DEVICE] TS011F Tuya zigbee Smart plug 20 Ampere _TZ3210_fgwhjm9j",
+        "state": "closed",
+        "user": "Rickert1993",
+        "labels": [
+          "device-request",
+          "device_request",
+          "zigbee",
+          "TS011F"
+        ],
+        "fps": [
+          "_TZ3210_fgwhjm9j"
+        ],
+        "pids": [
+          "TS0601",
+          "TS0011"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/44"
+      },
+      {
+        "number": 43,
+        "title": "[Feature] Making pull requests public",
+        "state": "closed",
+        "user": "sinan92",
+        "labels": [
+          "enhancement"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/43"
+      },
+      {
+        "number": 42,
+        "title": "❌ Homey App Store Publish Failed - v3.1.9",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automated",
+          "publish-failure",
+          "Homey",
+          "error",
+          "publish",
+          "app_store"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/42"
+      },
+      {
+        "number": 41,
+        "title": "❌ Homey App Store Publish Failed - v3.1.5",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automated",
+          "publish-failure",
+          "automation",
+          "Homey",
+          "error",
+          "publish",
+          "workflow"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/41"
+      },
+      {
+        "number": 40,
+        "title": "❌ Homey App Store Publish Failed - v3.1.1",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automated",
+          "publish-failure",
+          "automation",
+          "Homey",
+          "publish",
+          "app_store"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/40"
+      },
+      {
+        "number": 39,
+        "title": "❌ Homey App Store Publish Failed - v3.1.0",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automated",
+          "publish-failure",
+          "automation",
+          "Homey",
+          "error",
+          "publish",
+          "app_store"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/39"
+      },
+      {
+        "number": 38,
+        "title": "🔴 System Health Check Failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automated-diagnostic",
+          "health_check"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/38"
+      },
+      {
+        "number": 37,
+        "title": "[DEVICE] TS0201 _TZ3000_1o6x1bl0 Temperature and Humidity Sensor with buzzer and external sensor",
+        "state": "closed",
+        "user": "laborhexe0210",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device"
+        ],
+        "fps": [
+          "_TZ3000_1o6x1bl0",
+          "_TZ3000_xyz"
+        ],
+        "pids": [
+          "TS0201",
+          "TS0601",
+          "TS0202"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/37"
+      },
+      {
+        "number": 36,
+        "title": "🔴 System Health Check Failed",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automated-diagnostic"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/36"
+      },
+      {
+        "number": 35,
+        "title": "[DEVICE] TS0601 MOES CO detector",
+        "state": "closed",
+        "user": "gore-",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "TS0601",
+          "request",
+          "device",
+          "MOES",
+          "CO sensor"
+        ],
+        "fps": [
+          "_TZE284_rjxqso4a"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/35"
+      },
+      {
+        "number": 34,
+        "title": "Device Request Tuya Zigbee 3.0 Smart RGB COLOR LED Strip Controller - _TZ3210_0zabbfa / TS0503B",
+        "state": "closed",
+        "user": "kircuvaloglu",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
+        ],
+        "fps": [
+          "_TZ3210_0zabbfa",
+          "_TZ3210_0zabbfax"
+        ],
+        "pids": [
+          "TS0503B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/34"
+      },
+      {
+        "number": 33,
+        "title": "[BUG]  #26 & #27 implemented but not working",
+        "state": "closed",
+        "user": "gfi63",
+        "labels": [
+          "bug",
+          "zigbee",
+          "device",
+          "vibration_sensor",
+          "internal_error",
+          "socket"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0011",
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/33"
+      },
+      {
+        "number": 32,
+        "title": "[DEVICE] TS0201 Temp and Humidity Sensor with Screen",
+        "state": "closed",
+        "user": "kodalissri",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device"
+        ],
+        "fps": [
+          "_TZ3000_bgsigers"
+        ],
+        "pids": [
+          "TS0201"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/32"
+      },
+      {
+        "number": 31,
+        "title": "[DEVICE] TS0203",
+        "state": "closed",
+        "user": "askseb",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device"
+        ],
+        "fps": [
+          "_TZ3000_okohwwap"
+        ],
+        "pids": [
+          "TS0203"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/31"
+      },
+      {
+        "number": 30,
+        "title": "[DEVICE]  TS0041",
+        "state": "closed",
+        "user": "askseb",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device",
+          "TS0041"
+        ],
+        "fps": [
+          "_TZ3000_yj6k7vfo"
+        ],
+        "pids": [
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/30"
+      },
+      {
+        "number": 29,
+        "title": "[DEVICE] ZG-204ZM PIR radar and illumination sensor",
+        "state": "closed",
+        "user": "kodalissri",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "request",
+          "device"
+        ],
+        "fps": [
+          "_TZE200_2aaelwxk",
+          "_TZE200_kb5noeto",
+          "_TZE200_tyffvoij"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/29"
+      },
+      {
+        "number": 28,
+        "title": "[DEVICE] ZG-204ZV Motion, Temp,Humidity and Illumination Sensor",
+        "state": "closed",
+        "user": "kodalissri",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device"
+        ],
+        "fps": [
+          "_TZE200_uli8wasj",
+          "_TZE200_grgol3xp",
+          "_TZE200_rhgsbacq",
+          "_TZE200_y8jijhba"
+        ],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/28"
+      },
+      {
+        "number": 27,
+        "title": "[DEVICE] TS011F (not recognized by Homey)",
+        "state": "closed",
+        "user": "gfi63",
+        "labels": [
+          "bug",
+          "enhancement",
+          "device",
+          "TS011F",
+          "Homey"
+        ],
+        "fps": [
+          "_TZ3000_npg02xft"
+        ],
+        "pids": [
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/27"
+      },
+      {
+        "number": 26,
+        "title": "[DEVICE] TS0210 vibration sensor",
+        "state": "closed",
+        "user": "gfi63",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "TS0210",
+          "vibration_sensor"
+        ],
+        "fps": [
+          "_TZ3000_lqpt3mvr"
+        ],
+        "pids": [
+          "TS0210",
+          "TS0505B"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/26"
+      },
+      {
+        "number": 25,
+        "title": "Device Request - Aqara precision motion sensor",
+        "state": "closed",
+        "user": "GXA064",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "Aqara",
+          "motion_sensor"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/25"
+      },
+      {
+        "number": 24,
+        "title": "[BUG] Settings screen - spinning wheel",
+        "state": "closed",
+        "user": "l-i-n-k",
+        "labels": [
+          "bug",
+          "settings",
+          "UI"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/24"
+      },
+      {
+        "number": 23,
+        "title": "Device Request - Tuya Smart Temperature And Humidity Sensor- Tuya / CK-TLSR8656-SS5-01(7014)",
+        "state": "closed",
+        "user": "luuk0412-wq",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "zigbee",
+          "temperature",
+          "humidity"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/23"
+      },
+      {
+        "number": 22,
+        "title": "Device Request - [Smart Knob] - [_TZ3000_gwkzibhs] / [TS004F]",
+        "state": "closed",
+        "user": "rsalinger",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "smart_knob"
+        ],
+        "fps": [
+          "_TZ3000_gwkzibhs"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/22"
+      },
+      {
+        "number": 21,
+        "title": "Device Request - ZigBee Smart Inline Switch - 3A Smart Home DE / LXN59-2S7LX1.0",
+        "state": "closed",
+        "user": "MarceloSilvaLeite",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee",
+          "3A Smart Home DE"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/21"
+      },
+      {
+        "number": 20,
+        "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_t9ynfz4x / TS0225",
+        "state": "closed",
+        "user": "MarceloSilvaLeite",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "human_presence_detector",
+          "high_priority"
+        ],
+        "fps": [
+          "_TZ3218_t9ynfz4x"
+        ],
+        "pids": [
+          "TS0225"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/20"
+      },
+      {
+        "number": 19,
+        "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_awarhusb / TS0225",
+        "state": "closed",
+        "user": "MarceloSilvaLeite",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "device_request",
+          "human_presence_detector"
+        ],
+        "fps": [
+          "_TZ3218_awarhusb"
+        ],
+        "pids": [
+          "TS0225"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/19"
+      },
+      {
+        "number": 17,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/17"
+      },
+      {
+        "number": 16,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/16"
+      },
+      {
+        "number": 15,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/15"
+      },
+      {
+        "number": 14,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/14"
+      },
+      {
+        "number": 13,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/13"
+      },
+      {
+        "number": 12,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/12"
+      },
+      {
+        "number": 11,
+        "title": "❌ Validation Failed - MEGA-PROMPT CURSOR ULTIME",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/11"
+      },
+      {
+        "number": 4,
+        "title": "[FIX] Résoudre le rejet du push (rejected master -> master)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "git",
+          "push",
+          "error"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/4"
+      },
+      {
+        "number": 3,
+        "title": "Intégrer les évolutions de code pour les boutons 3 et 4 gangs",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "device-request",
+          "feature_request",
+          "device_support",
+          "code_integration",
+          "code_sync"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/3"
+      },
+      {
+        "number": 2,
+        "title": "[BUG] Le workflow échoue à l'étape de checkout avec une erreur de token liée aux permissions du fork",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/2"
+      },
+      {
+        "number": 1,
+        "title": "Bug: Échec de l'automatisation à cause d'un historique Git conflictuel insoluble",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/1"
       }
     ],
     "newFPs": [
@@ -27169,6 +30463,466 @@
         "mfr": "_TZ3218_sgbsg6mr",
         "source": "Issue #335",
         "title": "[Auto] 51 new fingerprints from community (2026-05)"
+      },
+      {
+        "mfr": "_TZ3000_zutizvykts0203",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_01fvxamo",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_0hg58wyk",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_0j5jma9b",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_0u3bj3rc",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_1agwnems",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_1drr8tab",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_1ibpyhdc",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2aaelwxk",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2atgpdho",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2ekuz3dz",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2hf7x9n3",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2imwyigp",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2m38mh6k",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2pddnnrk",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2se8efxh",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2vfxweng",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3ejwxpmu",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3p5ydos3",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3t91nb6k",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3towulqd",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3xfjp0ag",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_44af8vyi",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_4eeyebrt",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_579lguh2",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_5d3vhjro",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_6wi2mope",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_78ioiaml",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7bztmfm1",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7deq70b8",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7fqkphoq",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7sjncirf",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_86nbew0j",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8eazvzo6",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8ply8mjj",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8thwkzxl",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8whxpsiw",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8ygsuhe1",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9cqcpkgb",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9i9dt8is",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9p5xmj5r",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9sfg7gm0",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9yapgbuv",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_a4bpgplm",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_a8sdabtg",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_a8z0g46u",
+        "source": "Issue #140",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZ3000_zutizvykts0203",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_01fvxamo",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_0hg58wyk",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_0j5jma9b",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_0u3bj3rc",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_1agwnems",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_1drr8tab",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_1ibpyhdc",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2aaelwxk",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2atgpdho",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2ekuz3dz",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2hf7x9n3",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2imwyigp",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2m38mh6k",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2pddnnrk",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2se8efxh",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_2vfxweng",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3ejwxpmu",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3p5ydos3",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3t91nb6k",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3towulqd",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_3xfjp0ag",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_44af8vyi",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_4eeyebrt",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_579lguh2",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_5d3vhjro",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_6wi2mope",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_78ioiaml",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7bztmfm1",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7deq70b8",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7fqkphoq",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_7sjncirf",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_86nbew0j",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8eazvzo6",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8ply8mjj",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8thwkzxl",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8whxpsiw",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_8ygsuhe1",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9cqcpkgb",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9i9dt8is",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9p5xmj5r",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9sfg7gm0",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_9yapgbuv",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_a4bpgplm",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_a8sdabtg",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
+      },
+      {
+        "mfr": "_TZe200_a8z0g46u",
+        "source": "Issue #138",
+        "title": "[Auto] 736 new fingerprints from forks"
       }
     ]
   }
