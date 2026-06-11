@@ -107957,7 +107957,8 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_placeholder_generic"
+          "_TZE200_seq9cm6u",
+          "_TZE200_sh11h1f5"
         ]
       },
       "images": {
@@ -107981,7 +107982,6 @@
           }
         }
       ],
-      "id": "bed_sensor",
       "settings": [
         {
           "id": "sensitivity",
@@ -108019,7 +108019,8 @@
             "en": "mBAR"
           }
         }
-      ]
+      ],
+      "id": "bed_sensor"
     },
     {
       "name": {
@@ -174536,6 +174537,9 @@
           "_TZE200_44AF8IPG",
           "_tze200_4hbx5cvx",
           "_TZE200_4hbx5cvx",
+          "_tze200_9xfjixap",
+          "_TZE200_9xfjixap",
+          "_TZE200_9XFJIXAP",
           "_TZE200_4HBX5CVX",
           "_tze200_502zx5sl",
           "_TZE200_502zx5sl",
@@ -175314,7 +175318,10 @@
           "_TZ3000_OTWPDQ1D",
           "_tze200_2pddnnrk",
           "_TZE200_2pddnnrk",
-          "_TZE200_2PDDNNRK"
+          "_TZE200_2PDDNNRK",
+          "_tz3210_tgvtvdoc",
+          "_TZ3210_tgvtvdoc",
+          "_TZ3210_TGVTVDOC"
         ],
         "productId": [
           "TS0207_rain",
@@ -219550,9 +219557,6 @@
           "_TZ3000_AWVMKAYH",
           "_tyzb01_sqmd19i1",
           "_TYZB01_SQMD19I1",
-          "_tz3210_tgvtvdoc",
-          "_TZ3210_tgvtvdoc",
-          "_TZ3210_TGVTVDOC",
           "_tz3210_p68kms0l",
           "_TZ3210_p68kms0l",
           "_TZ3210_P68KMS0L",
