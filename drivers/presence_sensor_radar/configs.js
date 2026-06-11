@@ -220,6 +220,27 @@ const SENSOR_CONFIGS = {
     }
   },
 
+  // TYPE H: KA8L86IU Battery Presence Sensor (haadeess #374/#382/#399/#406)
+  'KA8L86IU_BATTERY': {
+    configName: 'KA8L86IU_BATTERY',
+    sensors: [
+      '_TZE200_ka8l86iu', '_tze200_ka8l86iu', '_TZE200_KA8L86IU',
+      '_TZE200_zbfmvj13', '_tze200_zbfmvj13', '_TZE200_ZBFMVJ13',
+    ],
+    battery: true,
+    hasIlluminance: true,
+    noTemperature: true,
+    noHumidity: true,
+    needsPolling: true,
+    invertPresence: false,
+    presenceEnumMapping: { 0: true, 1: false },
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_enum', enumMap: { 0: true, 1: false } },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      110: { cap: 'measure_battery', divisor: 1 },
+    }
+  },
+
   // DEFAULT fallback
   'DEFAULT': {
     sensors: [],
@@ -272,9 +293,24 @@ function getSensorConfig(manufacturerName, modelId = null) {
   return SENSOR_CONFIGS.DEFAULT;
 }
 
+function transformPresence(value, type, invertPresence, configName) {
+  if (type === 'presence_bool') {
+    return invertPresence ? !value : !!value;
+  }
+  if (type === 'presence_enum') {
+    const bool = value === 1 || value === true;
+    return invertPresence ? !bool : bool;
+  }
+  if (type === 'motion_state_enum') {
+    return value === 1 || value === 2 || value === 3;
+  }
+  return !!value;
+}
+
 module.exports = {
   SENSOR_CONFIGS,
   getSensorConfig,
+  transformPresence,
   normalize,
   containsCI
 };

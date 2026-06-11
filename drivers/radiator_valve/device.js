@@ -57,17 +57,20 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       };
     }
     if (this.dpProfile === 'me167') {
-      // Profile B: AVATTO ME167/TRV06 DP mapping
+      // Profile B: AVATTO ME167/TRV06 DP mapping (also _TZE200_9xfjixap per haadeess #395)
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
         7: { internal: true, type: 'child_lock', writable: true },
+        14: { internal: true, type: 'window_open', transform: (v) => v === 1 || v === true },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { internal: true, type: 'frost_protection', writable: true },
         39: { internal: true, type: 'anti_scaling', writable: true },
-        47: { internal: true, type: 'temp_calibration', writable: true }
+        47: { internal: true, type: 'temp_calibration', writable: true },
+        101: { capability: 'dim', divisor: 100 },
+        102: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === true }
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
