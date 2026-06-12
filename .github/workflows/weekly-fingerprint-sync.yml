@@ -116,7 +116,7 @@ jobs:
           echo "Checking for case-inconsistent FPs..."
           # Detect lowercase _TZ* patterns that should be uppercase
           BAD=$(grep -rohE '"_TZ[A-Za-z][0-9]{3}_[a-z0-9]{4,16}"' drivers/*/driver.compose.json || true)
-          if [ -n "$BAD" ]; then 
+          if [ -n "$BAD" ]; then
             echo "::warning::Case-inconsistent FPs found: $BAD"
             echo "Running auto-fix..."
             node scripts/automation/fix-case-variants.js || true

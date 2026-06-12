@@ -3,8 +3,8 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UniversalZigbeeDevice = require('../../lib/UniversalZigbeeDevice');
 
 class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
-  async onNodeInit() {
-    await super.onNodeInit();
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this._setupNativeZclListeners();
   }
 
