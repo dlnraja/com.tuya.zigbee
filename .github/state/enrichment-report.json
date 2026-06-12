@@ -1,10 +1,37 @@
 {
-  "timestamp": "2026-05-28T20:12:51.884Z",
-  "totalNew": 0,
+  "timestamp": "2026-06-12T19:38:47.794Z",
+  "totalNew": 2,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "sourceBreakdown": {
+    "zha-issue": 2
+  },
+  "newFingerprints": [
+    {
+      "fp": "_TZE284_sdvbnmj5",
+      "source": "zha-issue",
+      "issue": 5058,
+      "title": "Add Novato ZPV-01 battery powered smart valve quirk",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/5058",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_gnpflcoq",
+      "source": "zha-issue",
+      "issue": 5051,
+      "title": "Add Tuya 4-in-1 mmWave radar sensor `_TZE284_gnpflcoq`",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/5051",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    }
+  ],
+  "aiPlan": "# Device Analysis: Two New _TZE284_ Fingerprints\n\n## Analysis Summary\n\nBoth fingerprints use the **`_TZE284_`** prefix, which is a **newer Tuya MCU firmware variant** (successor to `_TZE200_` and `_TZE204_`). This prefix typically indicates:\n- TS0601 (Tuya DP protocol) devices\n- Often sensors, climate devices, or specialized controllers\n- Requires cluster 0xEF00 parsing\n\n## Critical Limitation\n\n**No DPs, capabilities, or device type information provided.** Without at minimum:\n- Device name/model number\n- DP mappings (from Z2M, ZHA, or Blakadder)\n- Product ID (e.g., TS0601, TS0201)\n- Interview data from Homey Zigbee tool\n\nI cannot make a definitive driver assignment.\n\n## What We Know\n\n| FP | Known Info | Likely Category | Confidence |\n|----|------------|-----------------|------------|\n| `_TZE284_sdvbnmj5` | ZHA issue reference only | Unknown - needs investigation | Low |\n| `_TZE284_gnpflcoq` | ZHA issue reference only | Unknown - needs investigation | Low |\n\n## Required Next Steps\n\nTo properly classify these devices, please provide:\n\n1. **Full device name/model** (e.g., \"Moes MS-105Z thermostat\")\n2. **Product ID** (e.g., TS0601, TS0201)\n3. **DP mappings** from Zigbee2MQTT or ZHA:\n   ```\n   DP1 → onoff (bool)\n   DP2 → temperature (value, /10)\n   DP3 → target_temperature (value, /10)\n   ```\n4. **Homey Zigbee interview** from `tools.developer.homey.app/tools/zigbee`\n\n## Investigation Sources to Check\n\n| Source | URL Pattern |\n|--------|-------------|\n| **Zigbee2MQTT** | `https://github.com/Koenkk/zigbee2mqtt.io/tree/master/docs/devices` |\n| **ZHA** | `https://github.com/zigpy/zha-device-handlers` |\n| **Blakadder** | `https://blakadder.github.io/zigbee2tasmota/` |\n| **Homey Forum** | `https://community.homey.app/t/140352` (dlnraja) |\n\n## Preliminary Driver Candidates (if TS0601)\n\n| Device Type | Driver | Notes |\n|-------------|--------|-------|\n| Thermostat | `thermostat_advanced` | DP1=onoff, DP2=temp, DP3=target, DP4=lock |\n| Climate sensor | `climate_sensor` | DP1=temp, DP2=humidity, DP3=battery |\n| Cover/shutter | `shutter_roller_controller` | DP1=position, DP2=control |\n| Valve | `radiator_valve` | DP1=valve, DP2=temp, DP3=target |\n| Presence sensor | `presence_sensor_radar` | DP1=presence, DP2=illuminance |\n\n**Please provide more data for accurate classification.**"
 }
