@@ -243,6 +243,9 @@ data/archive/collisions.json
 data/archive/icons_grid.html
 data/archive/icons_grid_dark.html
 reference pdf/
-# Fingerprint DB full backup (11MB — not needed at runtime)
+# Fingerprint DB full backup (11MB ï¿½ not needed at runtime)
 data/fingerprints.json.full-backup
 
+
+app.json.pre-compact-backup
+.homeycompose.temp_bak/
