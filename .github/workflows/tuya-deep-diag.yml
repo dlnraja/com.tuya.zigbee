@@ -13,6 +13,13 @@ on:
 env:
   NODE_OPTIONS: "--dns-result-order=ipv4first"
 
+permissions:
+  contents: read
+
+concurrency:
+  group: tuya-deep-diag-${{ github.ref }}
+  cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
@@ -20,6 +27,7 @@ defaults:
 jobs:
   diagnose:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       

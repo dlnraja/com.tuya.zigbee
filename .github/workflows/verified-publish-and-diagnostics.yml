@@ -16,6 +16,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+
 env:
   NODE_OPTIONS: "--dns-result-order=ipv4first"
 
@@ -28,6 +31,7 @@ jobs:
   verify-and-lint:
     name: 🕵️ Vérification & Syntaxe
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
