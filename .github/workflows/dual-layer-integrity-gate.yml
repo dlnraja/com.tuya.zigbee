@@ -31,27 +31,12 @@ name: 🛡️ Dual-Layer Anti-AggregateError Gate
 on:
   push:
     branches: [master, main]
-    paths:
-      - 'app.json'
-      - 'drivers/**/driver.compose.json'
-      - '.homeycompose/**'
-      - 'scripts/master-automation.js'
-      - 'scripts/validation/**'
   pull_request:
     branches: [master, main]
-    paths:
-      - 'app.json'
-      - 'drivers/**/driver.compose.json'
   workflow_dispatch:
-    inputs:
-      auto_fix:
-        description: 'Auto-fix empty manufacturerName'
-        type: boolean
-        default: false
-      verbose:
-        description: 'Verbose output'
-        type: boolean
-        default: true
+
+permissions:
+  contents: read
 
 concurrency:
   group: dual-layer-gate-${{ github.ref }}

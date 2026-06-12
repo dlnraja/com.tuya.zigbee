@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: nightly-auto-process
+  cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
