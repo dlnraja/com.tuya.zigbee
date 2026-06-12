@@ -16,7 +16,7 @@ const { spawnSync } = require('child_process');
 
 const ROOT = process.cwd();
 const TARGET_DIRS = ['lib', 'drivers', 'scripts', '.github/workflows'];
-const IGNORE_DIRS = ['node_modules', '.git', '.homeybuild', 'quarantine', 'tmp', 'temp'];
+const IGNORE_DIRS = ['node_modules', '.git', '.homeybuild', 'quarantine', 'tmp', 'temp', '_temp', 'scripts/temp'];
 
 let errorCount = 0;
 let fileCount = 0;
