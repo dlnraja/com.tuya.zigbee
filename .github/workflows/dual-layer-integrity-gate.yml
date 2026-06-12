@@ -137,7 +137,7 @@ jobs:
               stats.fp += d.zigbee.manufacturerName.length;
 
             if (type === 'zigbee' || type === 'hybrid') {
-              if (!hasMF(d)) {
+              if (!d.zigbee.manufacturerName) {
                 emptyMF.push({ id: d.id, type });
                 errors.push('AGGREGATE_ERROR [' + type + ']: ' + d.id + ' manufacturerName[]');
               }
