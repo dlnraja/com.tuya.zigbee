@@ -3,10 +3,9 @@
 const { safeMultiply, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiLightDevice extends
-
+class WiFiLightDevice extends TuyaLocalDevice {
   get mainsPowered() { return true; }
- TuyaLocalDevice {
+
 
   get dpMappings() {
     return {
