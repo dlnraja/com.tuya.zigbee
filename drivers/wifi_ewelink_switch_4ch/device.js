@@ -1,6 +1,9 @@
 'use strict';
 const EweLinkLocalDevice=require('../../lib/ewelink-local/EweLinkLocalDevice');
-class D extends EweLinkLocalDevice{
+class D extends
+
+  get mainsPowered() { return true; }
+ EweLinkLocalDevice{
   get stateMappings(){return{
     switch_0:{capability:'onoff',transform:v=>v==='on'},
     switch_1:{capability:'onoff.2',transform:v=>v==='on'},

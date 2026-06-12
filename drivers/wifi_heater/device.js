@@ -1,7 +1,10 @@
 'use strict';
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiHeaterDevice extends TuyaLocalDevice {
+class WiFiHeaterDevice extends
+
+  get mainsPowered() { return true; }
+ TuyaLocalDevice {
   get dpMappings() {
     return {
       '1': { capability: 'onoff', writable: true, transform: (v) => v === true || v === 1, reverseTransform: (v) => v === true },

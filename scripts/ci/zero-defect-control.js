@@ -160,8 +160,11 @@ for (const entry of entries) {
 log('====================================================');
 log(`Audit completed. Checked ${filesChecked} driver resource files.`);
 if (errors > 0) {
-  log(`FAILED: Found ${errors} alignment / validation violation(s).`);
+  log(`FAILED: Found ${errors} error(s) and ${warnings} warning(s).`);
   process.exit(1);
+} else if (warnings > 0) {
+  log(`PASSED with ${warnings} warning(s). Consider fixing non-blocking issues.`);
+  process.exit(0);
 } else {
   log('PASSED: 100% Zero-Defect compliance across all drivers.');
   process.exit(0);

@@ -1,7 +1,10 @@
 'use strict';
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiPlugDevice extends TuyaLocalDevice {
+class WiFiPlugDevice extends
+
+  get mainsPowered() { return true; }
+ TuyaLocalDevice {
 
   get dpMappings() {
     return {
