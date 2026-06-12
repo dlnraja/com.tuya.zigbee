@@ -2,7 +2,10 @@
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiSwitch4GangDevice extends TuyaLocalDevice {
+class WiFiSwitch4GangDevice extends
+
+  get mainsPowered() { return true; }
+ TuyaLocalDevice {
 
   get dpMappings() {
     return {

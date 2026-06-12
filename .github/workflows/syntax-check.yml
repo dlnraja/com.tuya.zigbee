@@ -46,8 +46,8 @@ jobs:
 
       - name: Check forbidden patterns
         run: |
-          # PF-01: if/ternary hybrid
-          if grep -rn "if.*return.*:.*null" lib/ --include="*.js"; then
+          # PF-01: if/ternary hybrid (exclude minified files in lib/clusters/)
+          if grep -rn "if.*return.*:.*null" lib/ --include="*.js" --exclude-dir=clusters; then
             echo "❌ PF-01 pattern detected: if/ternary hybrid"
             exit 1
           fi
