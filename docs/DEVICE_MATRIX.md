@@ -23,7 +23,7 @@
 | button_wireless_1 | 66 | TS0041, ZG-101ZL, WXKG01LM, WXKG02LM, WXKG03LM, WXKG11LM, WXKG12LM, WXKG06LM, WXKG07LM, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, lumi.remote.b1acn01, E1524/E1810, E1743, E1812, E1744, E2001/E2002, E2123, RWL020, RWL021, RWL022, ROM001, 3450-L, SNZB-01, SNZB-01P, TS0041A, TS0001 | button.1, measure_battery, alarm_battery |
 | button_wireless_2 | 88 | TS0042, TS0043, TS0044, TS0041, TS0002, TS0012, TS0003, TS0013, TS0014, TS011F, TS0011, TS000F, TS0001, TS0111 | button.1, button.2, measure_battery... |
 | button_wireless_3 | 22 | TS0043, TS0013 | button.1, button.2, button.3... |
-| button_wireless_4 | 9 | TS0044, TS004F, SNZB-01M, TS0014 | button.1, button.2, button.3... |
+| button_wireless_4 | 11 | TS0044, TS004F, SNZB-01M, TS0014 | button.1, button.2, button.3... |
 | button_wireless_6 | 6 | TS0046, TS0601 | button.1, button.2, button.3... |
 | button_wireless_8 | 3 | TS0048 | button.1, button.2, button.3... |
 | button_wireless_plug | 9 | TS011F, TS0121, TSO121, TS0003, TS0011, TS000F, TS0001, TS0012, TS0002, TS0013, TS0111 | measure_power, meter_power, measure_voltage... |
@@ -150,8 +150,8 @@
 | pir_sensor_2 | 9 | TS0202 | alarm_motion, alarm_battery, measure_battery |
 | pirsensor | 6 | RH3040 | alarm_motion, alarm_battery, measure_battery |
 | plug | 3 | TS011F | onoff |
-| plug_energy_monitor | 160 | TS0121, TS011F, A7Z, A11Z, SP-EUC01, SP-EUC02, SP 120, SP 220, SP 222, S60ZBTPF, S60ZBTPG, S60ZBTPE, S31ZB, S31 Lite zb, S26R2ZB, S40ZBTPB, LSPA9, HY0105, HY0104, JZ-ZB-005, ZBMINIL2, lumi.plug.maeu01, lumi.plug.macn01, lumi.plug.mmeu01, E1603/E1702/E1708, TRADFRI control outlet, TS0601, CK-BL702-SWP-01(7020), S40LITE, SA-029-1, SA-028-1, Z111PL0H-1JX, SNZB-06P, SPM01, SPMZBR2, S40ZBTPF, S40ZBTPG, S60ZBTPF-R2, TSO121 | measure_power, meter_power, measure_voltage... |
-| plug_smart | 83 | TS0111, TS0101, TS0601, TS011F, S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG | onoff, measure_power, meter_power... |
+| plug_energy_monitor | 157 | TS0121, TS011F, A7Z, A11Z, SP-EUC01, SP-EUC02, SP 120, SP 220, SP 222, S60ZBTPF, S60ZBTPG, S60ZBTPE, S31ZB, S31 Lite zb, S26R2ZB, S40ZBTPB, LSPA9, HY0105, HY0104, JZ-ZB-005, ZBMINIL2, lumi.plug.maeu01, lumi.plug.macn01, lumi.plug.mmeu01, E1603/E1702/E1708, TRADFRI control outlet, TS0601, CK-BL702-SWP-01(7020), S40LITE, SA-029-1, SA-028-1, Z111PL0H-1JX, SNZB-06P, SPM01, SPMZBR2, S40ZBTPF, S40ZBTPG, S60ZBTPF-R2, TSO121 | measure_power, meter_power, measure_voltage... |
+| plug_smart | 74 | TS0111, TS0101, TS0601, TS011F, S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG | onoff, measure_power, meter_power... |
 | pool_pump | 12 | TS0601_pool, TS0601 | onoff, measure_power, meter_power |
 | power_clamp_meter | 21 | TS0601_clamp, TS0601 | measure_power, meter_power, measure_current... |
 | power_meter | 104 | TS0601, TS0601_meter, PJ-1203A, pj-1203a, Pj-1203A | measure_power, meter_power, measure_voltage... |
@@ -244,7 +244,7 @@
 | switch | 3 | TS0601, TS011F, TS0726 | onoff, onoff.gang2, measure_power... |
 | switch_1_gang | 183 | TS0003, TS011F, TS0011, TS000F, TS0001, TS0601 | onoff |
 | switch_1_gang_metering | 1 | TS0001, TS0601 | onoff, measure_power, meter_power... |
-| switch_1gang | 1354 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS0601, TS000F, ZBMINI, ZBMINIL2, BASICZBR3, S31ZB, S26R2ZB, 01MINIZB, ZBMINIR2, ZBM5-1C-120, ZBMINIR, ZBMINIL2-R2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, TS0101, TS4100, TS011F, ZBM5-2C-120, ZBM5-3C-120, TS0726 | onoff, measure_power, meter_power... |
+| switch_1gang | 1197 | TS0001, TS0011, TS0001_power, TS0001_switch, TS0001_switch_module, TS0601, TS000F, ZBMINI, ZBMINIL2, BASICZBR3, S31ZB, S26R2ZB, 01MINIZB, ZBMINIR2, ZBM5-1C-120, ZBMINIR, ZBMINIL2-R2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, TS0101, TS4100, TS011F, ZBM5-2C-120, ZBM5-3C-120, TS0726 | onoff, measure_power, meter_power... |
 | switch_2_gang | 1 | TS0003, TS0012, TS011F, TS0002, TS0013 | onoff |
 | switch_2_gang_metering | 1 | TS0002, TS011F, TS0601 | onoff, measure_power, meter_power... |
 | switch_2gang | 191 | TS0002, TS0012, TS0002_power, TS0002_switch_module, TS0601, ZG-302Z2, TS011F, ZG-305Z, TS0003, TS0013, TS0726 | onoff, onoff.gang2, measure_power... |
@@ -308,7 +308,7 @@
 | wall_switch_6_gang_tuya | 6 | TS0601 | onoff |
 | wall_thermostat | 9 | TS0601 | onoff, thermostat_programming, measure_temperature... |
 | water_detector | 8 | TS0207, q9mpfhw | alarm_contact, alarm_water, alarm_battery... |
-| water_leak_sensor | 45 | TS0207, q9mpfhw, ZG-222Z, ZG-223Z, LS21001, _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, lumi.sensor_wleak.aq1, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, HS1WL, SNZB-05, 3315-S, 3315-Seu, TS0601, SQ510A, SNZB-05P, CK-TLSR8656-SS5-01(7019) | alarm_water, measure_battery, alarm_tamper... |
+| water_leak_sensor | 43 | TS0207, q9mpfhw, ZG-222Z, ZG-223Z, LS21001, _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, lumi.sensor_wleak.aq1, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, HS1WL, SNZB-05, 3315-S, 3315-Seu, TS0601, SQ510A, SNZB-05P, CK-TLSR8656-SS5-01(7019) | alarm_water, measure_battery, alarm_tamper... |
 | water_leak_sensor_tuya | 149 | TS0207, q9mpfhw, ZG-222Z, ZG-223Z, LS21001, _tz3000_eit6l5, _tz3000_k4ej3ww2, _tz3000_kyb656no, lumi.sensor_wleak.aq1, SJCGQ11LM, SJCGQ12LM, SJCGQ13LM, HS1WL, SNZB-05, 3315-S, 3315-Seu, TS0601, SQ510A, SNZB-05P, CK-TLSR8656-SS5-01(7019) | alarm_water, measure_battery, alarm_battery |
 | water_tank_monitor | 30 | TS0601, TS0601_tank | measure_water_level, measure_water_percentage, alarm_water_low... |
 | water_valve_garden | 18 | TS0049 | onoff, measure_battery, alarm_battery |
@@ -317,6 +317,6 @@
 | zigbee_repeater | 39 | TS0207 |  |
 
 ---
-**Total:** 313 drivers, 13658 manufacturer IDs
+**Total:** 313 drivers, 13489 manufacturer IDs
 
-*Generated: 2026-06-11T17:36:04.445Z*
+*Generated: 2026-06-12T09:14:12.370Z*
