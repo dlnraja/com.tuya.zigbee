@@ -46,7 +46,6 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_seq9cm6u",
       "_TZE200_sh11h1f5"
     ]
   },
@@ -75,20 +74,50 @@
     {
       "id": "sensitivity",
       "type": "dropdown",
-      "label": { "en": "Sensitivity", "fr": "Sensibilité", "nl": "Gevoeligheid" },
-      "hint": { "en": "Adjust motion detection sensitivity", "fr": "Ajuster la sensibilité de détection" },
+      "label": {
+        "en": "Sensitivity",
+        "fr": "Sensibilité",
+        "nl": "Gevoeligheid"
+      },
+      "hint": {
+        "en": "Adjust motion detection sensitivity",
+        "fr": "Ajuster la sensibilité de détection"
+      },
       "value": "middle",
       "values": [
-        { "id": "low", "label": { "en": "Low", "fr": "Bas" } },
-        { "id": "middle", "label": { "en": "Medium", "fr": "Moyen" } },
-        { "id": "high", "label": { "en": "High", "fr": "Haut" } }
+        {
+          "id": "low",
+          "label": {
+            "en": "Low",
+            "fr": "Bas"
+          }
+        },
+        {
+          "id": "middle",
+          "label": {
+            "en": "Medium",
+            "fr": "Moyen"
+          }
+        },
+        {
+          "id": "high",
+          "label": {
+            "en": "High",
+            "fr": "Haut"
+          }
+        }
       ]
     },
     {
       "id": "presence_delay",
       "type": "number",
-      "label": { "en": "Presence Delay (seconds)", "fr": "Délai de présence (secondes)" },
-      "hint": { "en": "Delay before reporting unoccupied (0-3600s)" },
+      "label": {
+        "en": "Presence Delay (seconds)",
+        "fr": "Délai de présence (secondes)"
+      },
+      "hint": {
+        "en": "Delay before reporting unoccupied (0-3600s)"
+      },
       "value": 100,
       "min": 0,
       "max": 3600,
@@ -97,8 +126,13 @@
     {
       "id": "presence_time",
       "type": "number",
-      "label": { "en": "Presence Time (seconds)", "fr": "Temps de présence (secondes)" },
-      "hint": { "en": "Delay before reporting occupied (0-3600s)" },
+      "label": {
+        "en": "Presence Time (seconds)",
+        "fr": "Temps de présence (secondes)"
+      },
+      "hint": {
+        "en": "Delay before reporting occupied (0-3600s)"
+      },
       "value": 100,
       "min": 0,
       "max": 3600,
