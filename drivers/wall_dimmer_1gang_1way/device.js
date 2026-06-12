@@ -26,8 +26,8 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   get gangCount() { return 1; }
 
-  async onNodeInit({ zclNode, ...other }) {
-    await super.onNodeInit({ zclNode, ...other });
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
 
     // v5.11.16: Add missing dim capability
     if (!this.hasCapability('dim')) {

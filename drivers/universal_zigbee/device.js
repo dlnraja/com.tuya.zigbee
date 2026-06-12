@@ -12,14 +12,14 @@ const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHel
  */
 class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
     this.log('-------------------------------------------------------');
     this.log(` [UNIVERSAL DRIVER] UNLEASHING INTELLIGENCE ON: ${this.getName()}`);
     this.log(`   Model: ${getModelId(this)} | Manufacturer: ${getManufacturer(this)}`);
     this.log('-------------------------------------------------------');
 
     // 1. Base Initialization (Standard ZCL + Diagnostics)
-    await super.onNodeInit();
+    await super.onNodeInit({ zclNode });
 
     // 2. Specific Cluster Listeners (Native ZCL Fallbacks)
     this._setupNativeZclListeners();
