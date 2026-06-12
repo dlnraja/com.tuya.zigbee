@@ -1,5 +1,11 @@
 # HOMEYIGNORE - Tuya Zigbee Master Branch
-# Based on working stable-v5 pattern.
+# ╔══════════════════════════════════════════════════════════════╗
+# ║  ARCHIVE SIZE RULES (enforced by athom-archive-audit.js)    ║
+# ║  Target: < 20MB compressed / < 55MB uncompressed            ║
+# ║  Athom hard limit: ~30MB compressed (processing failed if >) ║
+# ║  Root cause v8.1.7+: .diag/ was NOT excluded → 55MB bloat   ║
+# ╚══════════════════════════════════════════════════════════════╝
+#
 # CRITICAL RULE: NO *.json wildcard — it breaks runtime deps.
 # CRITICAL RULE: NO *.md wildcard at root — Homey requires README.md.
 # Only exclude specific dev/CI files, NEVER use broad wildcards.
@@ -12,6 +18,7 @@
 .vscode/
 .idea/
 .vs/
+.agents/
 scripts/
 docs/
 references/
@@ -20,17 +27,23 @@ project-data/
 data/community-sync/
 data/temp_desktop_cleanup/
 data/intel-harvest/
-data/intel-harvest/
 data/archive/
 reimplementation_gateway/
 diagnostics/
 reports/
 logs/
 .archive/
-settings/
 skills/
 scratch/
 tmp_artifacts/
+screenshots/
+
+# === CRITICAL — Diagnostic & CI artifacts (55MB bloat source — DO NOT REMOVE) ===
+.diag/
+.memory/
+.ai/
+.gemini/
+.antigravityignore
 
 # === Dev config files ===
 .cascade
@@ -69,6 +82,20 @@ target/
 temp/
 tmp/
 package-lock.json
+.cache/
+.tmp/
+
+# === Root-level dev artifacts (CRITICAL — causing Processing failed via 65MB+ archive) ===
+stable_app.json
+full_diff.txt
+packed_files.txt
+packed_files_details.txt
+*.backup
+*.backup2
+*.dedup-backup
+*.dedup-backup2
+repomix-*.md
+repomix-*.txt
 
 # === Large dev data JSON files (NOT needed at runtime) ===
 data/bug-fixes-report.json
@@ -100,13 +127,22 @@ lib/data/z2m_devices_full.json
 # === Dev-only engine (not imported by runtime code) ===
 lib/tuya-dp-engine/
 
-# === Documentation ===
+# === Documentation & AI context files (not needed at runtime) ===
 # NOTE: README.txt IS REQUIRED by SDK (App.js:1427 throws if missing)
 # NOTE: README.*.txt ARE required for multilingual App Store descriptions
-# NOTE: README.md is kept for GitHub visibility
 CHANGELOG.md
 CONTRIBUTING.md
+CODE_OF_CONDUCT.md
 LICENSE
+README.md
+PROJECT_INDEX.md
+AI_CONTEXT_MANDATE.md
+GLOBAL_IMPROVEMENT_PLAN.md
+*.md
+!README.txt
+!README.nl.txt
+!README.de.txt
+!README.fr.txt
 # README.txt            ← DO NOT EXCLUDE — REQUIRED BY ATHOM SDK
 # README.nl.txt         ← DO NOT EXCLUDE — App Store NL description
 # README.de.txt         ← DO NOT EXCLUDE — App Store DE description
@@ -162,6 +198,25 @@ assets/README.md
 # === Learnmode SVGs (optional) ===
 **/learnmode.svg
 
+# === Driver PNG images — Archive Budget Control ===
+# FIX (2026-05-30): large.png files are now minuscule copies of small.png (~1KB each)
+# Total impact: 411 drivers × ~1KB = ~411KB (vs 13MB before) → archive stays under 15MB ✅
+# IMPORTANT: large.png MUST stay in repo — Homey CLI validate --level publish requires them
+# STRATEGY: Keep large.png (tiny copies) + exclude xlarge.png (not required by CLI)
+#
+# xlarge.png excluded (not required by Homey CLI validate or App Store)
+drivers/**/assets/images/xlarge.png
+drivers/**/assets/images/*xlarge*.png
+# Root-level xlarge excluded too
+assets/images/xlarge.png
+
+# === Root dev artifact text/diff files ===
+*.txt
+!README.txt
+!README.nl.txt
+!README.de.txt
+!README.fr.txt
+
 # === RUNTIME FILES — DO NOT EXCLUDE (required for App Store & Runtime) ===
 # app.json                          ← Homey manifest
 # package.json                      ← Node package
@@ -178,3 +233,16 @@ assets/README.md
 # drivers/*/assets/icon.svg         ← Required per driver
 # drivers/*/assets/images/small.png ← Required
 # drivers/*/assets/images/large.png ← Required
+
+# === ADDED BY fix-all-blocking.js ===
+
+# Backup file - dev only
+driver-mapping-database.json.dedup-backup
+
+data/archive/collisions.json
+data/archive/icons_grid.html
+data/archive/icons_grid_dark.html
+reference pdf/
+# Fingerprint DB full backup (11MB � not needed at runtime)
+data/fingerprints.json.full-backup
+
