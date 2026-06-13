@@ -22,8 +22,8 @@ child.stdout.on('data', (data) => {
   process.stdout.write(text);
   
   // State-machine auto-answer interactive prompts (exactly once each)
-  if (text.includes("What's new in Tuya Unified") && !answered.changelog) {
-    child.stdin.write('Fix clamp ammeter incoherent watt/voltage scaling, add SONOFF wireless button matching, and ensure SDK3 compliance\n');
+  if ((text.includes("What's new in") || text.includes("Changelog")) && !answered.changelog) {
+    child.stdin.write('Deep YAML/workflow fixes across 78 files, bash logic corrections, publish gate improvements, Node v22 alignment\n');
     answered.changelog = true;
   }
   if (text.includes('Are you sure you want to continue') && !answered.continue) {
