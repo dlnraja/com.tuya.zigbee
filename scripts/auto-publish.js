@@ -8,7 +8,7 @@ console.log('App ID:', require('../app.json').id);
 console.log('Version:', require('../app.json').version);
 
 const child = spawn('npx', ['homey', 'app', 'publish'], {
-  cwd: path.join(__dirname, '..'),
+  cwd: 'c:\\Users\\HP\\Desktop\\homey-publish-temp',
   stdio: ['pipe', 'pipe', 'pipe'],
   shell: true
 });
