@@ -104038,7 +104038,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -108858,7 +108860,9 @@
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -122911,7 +122915,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -130330,7 +130336,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -132702,7 +132710,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -132912,7 +132922,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -138516,7 +138528,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -150215,7 +150229,9 @@
             "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": []
@@ -194959,7 +194975,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0003",
           "TS011F",
