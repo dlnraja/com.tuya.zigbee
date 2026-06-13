@@ -3,9 +3,7 @@
 name: 📅 Monthly Device Enrichment
 
 on:
-  schedule:
-    # Run on 1st of every month at 5 AM UTC (staggered from monthly-enrichment at 3AM)
-    - cron: '0 5 31 2 *'  # Feb 31 = never runs (consolidated into daily-everything)
+  # Schedule removed: consolidated into daily-everything pipeline
   workflow_dispatch:
     inputs:
       dry_run:

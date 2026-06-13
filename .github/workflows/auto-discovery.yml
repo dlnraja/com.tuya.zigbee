@@ -20,6 +20,7 @@ defaults:
 jobs:
   discover-devices:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       # === AI providers — circular chain (ai-helper.js) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
