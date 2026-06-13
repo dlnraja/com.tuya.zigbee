@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * diagnostic-report.js - Comprehensive CI/CD Diagnostic Report
+ * diagnostic-report.js - Comprehensive CI/CD Diagnostic Report with Predictive Health Scoring
  * Generates a full health report covering:
  *   - Build status (app.json validation)
  *   - Driver health (total, valid, invalid, empty manufacturerName)
@@ -8,7 +8,14 @@
  *   - Workflow health (total, pinned actions, missing timeouts, concurrency)
  *   - Security status (secrets exposure, forbidden files)
  *
- * Usage: node scripts/ci/diagnostic-report.js [--json] [--output <path>]
+ * Predictive health scoring:
+ *   - Weighted health score (0-100) across all dimensions
+ *   - Per-dimension sub-scores for targeted analysis
+ *   - Trend analysis via historical state comparison
+ *   - Risk predictions per subsystem
+ *   - Actionable recommendations with priority and effort
+ *
+ * Usage: node scripts/ci/diagnostic-report.js [--json] [--output <path>] [--predictive]
  * Exit code: 0 = clean, 1 = issues found
  */
 'use strict';
@@ -21,21 +28,184 @@ const ROOT = path.resolve(__dirname, '../..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const LIB_DIR = path.join(ROOT, 'lib');
 const WORKFLOWS_DIR = path.join(ROOT, '.github', 'workflows');
+const STATE_DIR = path.join(ROOT, '.github', 'state');
 
 const JSON_OUTPUT = process.argv.includes('--json');
+const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
 const OUTPUT_IDX = process.argv.indexOf('--output');
 const OUTPUT_PATH = OUTPUT_IDX !== -1 ? process.argv[OUTPUT_IDX + 1] : null;
 
 const report = {
   timestamp: new Date().toISOString(),
-  version: '8.6.0',
+  version: '9.0.0',
   build: { status: 'unknown', appVersion: null, appValid: null },
   drivers: { total: 0, valid: 0, invalid: 0, emptyMfrName: 0, invalidJson: 0, missingConnectivity: 0 },
   fingerprints: { total: 0, uniqueMfrNames: 0, duplicates: 0, orphaned: 0, collisionDrivers: [] },
   workflows: { total: 0, unpinnedActions: 0, missingTimeout: 0, missingShell: 0, secretExposure: 0, unpinnedList: [] },
   security: { status: 'clean', forbiddenFiles: 0, gitTokens: 0, hardcodedSecrets: 0 },
+  health: {
+    overallScore: 100,
+    dimensions: {},
+    trend: 'stable',
+    previousScore: null,
+    predictions: [],
+    recommendations: [],
+  },
   overall: 'healthy',
 };
+
+// ---- Predictive health scoring infrastructure ----
+
+/** Load previous state for trend analysis */
+function loadPreviousState() {
+  const statePath = path.join(STATE_DIR, 'diagnostic-report-state.json');
+  try {
+    if (fs.existsSync(statePath)) return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+  } catch { /* no previous state */ }
+  return null;
+}
+
+/** Save current state for future trend analysis */
+function saveState(score, dimensions) {
+  try {
+    if (!fs.existsSync(STATE_DIR)) fs.mkdirSync(STATE_DIR, { recursive: true });
+    fs.writeFileSync(path.join(STATE_DIR, 'diagnostic-report-state.json'),
+      JSON.stringify({ timestamp: new Date().toISOString(), score, dimensions }, null, 2));
+  } catch { /* non-fatal */ }
+}
+
+/** Calculate sub-score for a dimension (0-100) */
+function dimensionScore(issues, maxDeductable = 100) {
+  let score = 100;
+  score -= issues * 5;
+  return Math.max(0, Math.min(100, score));
+}
+
+/** Generate predictive analysis based on report data */
+function generatePredictions(report) {
+  const predictions = [];
+  const recommendations = [];
+
+  // Build prediction: invalid app.json means nothing will work
+  if (report.build.status !== 'valid') {
+    predictions.push({
+      type: 'build-failure',
+      severity: 'critical',
+      dimension: 'build',
+      message: 'app.json is invalid. No deployment or Homey installation will succeed until this is fixed.',
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'build',
+      action: 'Fix app.json structural issues immediately. Run `node scripts/ci/diagnostic-report.js` after fixing to verify.',
+    });
+  }
+
+  // Driver predictions
+  const driverIssueRate = report.drivers.total > 0 ? report.drivers.invalid / report.drivers.total : 0;
+  if (driverIssueRate > 0.1) {
+    predictions.push({
+      type: 'driver-degradation',
+      severity: 'high',
+      dimension: 'drivers',
+      message: `${report.drivers.invalid} of ${report.drivers.total} drivers have issues (${Math.round(driverIssueRate * 100)}%). This rate suggests systemic problems in driver generation or maintenance.`,
+    });
+    recommendations.push({
+      priority: 1,
+      category: 'drivers',
+      action: 'Run `node scripts/automation/validate-drivers.js --json` for detailed per-driver diagnostics.',
+    });
+  }
+  if (report.drivers.emptyMfrName > 0) {
+    predictions.push({
+      type: 'aggregate-error-risk',
+      severity: 'high',
+      dimension: 'drivers',
+      message: `${report.drivers.emptyMfrName} driver(s) have empty manufacturerName arrays. These will cause AggregateError during Zigbee initialization on Homey startup.`,
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'stability',
+      action: 'Populate manufacturerName arrays or remove empty fingerprint entries.',
+    });
+  }
+
+  // Fingerprint predictions
+  if (report.fingerprints.duplicates > 0) {
+    predictions.push({
+      type: 'pairing-conflicts',
+      severity: 'high',
+      dimension: 'fingerprints',
+      message: `${report.fingerprints.duplicates} cross-driver fingerprint collision(s) detected. New devices may bind to the wrong driver, causing incorrect capability handling.`,
+    });
+    recommendations.push({
+      priority: 1,
+      category: 'user-experience',
+      action: 'Run `node scripts/automation/fix-fingerprint-conflicts.js --dry-run` to preview and resolve collisions.',
+    });
+  }
+  if (report.fingerprints.orphaned > report.drivers.total * 0.2) {
+    predictions.push({
+      type: 'orphaned-drivers',
+      severity: 'medium',
+      dimension: 'fingerprints',
+      message: `${report.fingerprints.orphaned} driver(s) have no fingerprints. These drivers cannot be paired with any device.`,
+    });
+  }
+
+  // Workflow predictions
+  if (report.workflows.unpinnedActions > 0) {
+    predictions.push({
+      type: 'supply-chain-risk',
+      severity: 'medium',
+      dimension: 'workflows',
+      message: `${report.workflows.unpinnedActions} GitHub Action(s) use unpinned version tags. A compromised upstream action could inject malicious code.`,
+    });
+    recommendations.push({
+      priority: 1,
+      category: 'security',
+      action: 'Pin all GitHub Actions to full SHA commit hashes instead of version tags.',
+    });
+  }
+  if (report.workflows.secretExposure > 0) {
+    predictions.push({
+      type: 'secret-leak-risk',
+      severity: 'critical',
+      dimension: 'security',
+      message: `${report.workflows.secretExposure} workflow(s) interpolate secrets directly in run blocks. Secret values may appear in CI logs.`,
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'security',
+      action: 'Move secret references to `env:` blocks instead of inline in `run:` blocks.',
+    });
+  }
+
+  // Security predictions
+  if (report.security.hardcodedSecrets > 0) {
+    predictions.push({
+      type: 'exposed-secrets',
+      severity: 'critical',
+      dimension: 'security',
+      message: `${report.security.hardcodedSecrets} potential secret(s) found in committed source code. These may be accessible to anyone with repository access.`,
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'security',
+      action: 'Immediately rotate any exposed tokens and move them to GitHub secrets or environment variables.',
+    });
+  }
+  if (report.security.forbiddenFiles > 0) {
+    predictions.push({
+      type: 'credential-file-risk',
+      severity: 'high',
+      dimension: 'security',
+      message: `${report.security.forbiddenFiles} forbidden file(s) found (.env, credentials, tokens). These may contain sensitive data.`,
+    });
+  }
+
+  return { predictions, recommendations };
+}
 
 // ---- BUILD STATUS ----
 function checkBuildStatus() {
@@ -332,6 +502,48 @@ function main() {
   report.overall = issues.length === 0 ? 'healthy' : 'needs_attention';
   report.issues = issues;
 
+  // ---- Predictive Health Score ----
+  const buildScore = report.build.status === 'valid' ? 100 : report.build.status === 'unknown' ? 50 : 0;
+  const driverScore = report.drivers.total > 0
+    ? Math.round((report.drivers.valid / report.drivers.total) * 100)
+    : 100;
+  const fpIssues = report.fingerprints.duplicates + report.fingerprints.orphaned;
+  const fpScore = dimensionScore(fpIssues, 50);
+  const workflowIssues = report.workflows.unpinnedActions + report.workflows.missingTimeout + report.workflows.secretExposure;
+  const workflowScore = dimensionScore(workflowIssues, 50);
+  const secIssues = report.security.forbiddenFiles + report.security.gitTokens + report.security.hardcodedSecrets;
+  const securityScore = dimensionScore(secIssues * 3, 50);
+
+  // Weighted overall: build 15%, drivers 35%, fingerprints 20%, workflows 15%, security 15%
+  const overallScore = Math.round(
+    buildScore * 0.15 + driverScore * 0.35 + fpScore * 0.20 + workflowScore * 0.15 + securityScore * 0.15
+  );
+
+  report.health.overallScore = overallScore;
+  report.health.dimensions = {
+    build: { score: buildScore, weight: 0.15 },
+    drivers: { score: driverScore, weight: 0.35 },
+    fingerprints: { score: fpScore, weight: 0.20 },
+    workflows: { score: workflowScore, weight: 0.15 },
+    security: { score: securityScore, weight: 0.15 },
+  };
+
+  // Trend analysis
+  const prevState = loadPreviousState();
+  const trend = prevState
+    ? (overallScore > prevState.score + 2 ? 'improving' : overallScore < prevState.score - 2 ? 'degrading' : 'stable')
+    : 'baseline';
+  report.health.trend = trend;
+  report.health.previousScore = prevState?.score || null;
+
+  // Predictions and recommendations
+  const { predictions, recommendations } = generatePredictions(report);
+  report.health.predictions = predictions;
+  report.health.recommendations = recommendations;
+
+  // Save state
+  saveState(overallScore, report.health.dimensions);
+
   if (JSON_OUTPUT) {
     console.log(JSON.stringify(report, null, 2));
   } else {
@@ -383,6 +595,29 @@ function main() {
     console.log('  Git Tokens:         ' + report.security.gitTokens);
     console.log('  Hardcoded Secrets:  ' + report.security.hardcodedSecrets);
 
+    // Predictive health report
+    console.log('\n' + '='.repeat(60));
+    console.log('  PREDICTIVE HEALTH REPORT');
+    console.log('='.repeat(60));
+    console.log(`  Overall Score: ${overallScore}/100 (${overallScore >= 80 ? 'GOOD' : overallScore >= 50 ? 'NEEDS ATTENTION' : 'CRITICAL'})`);
+    console.log(`  Trend:         ${trend.toUpperCase()}${prevState ? ` (was ${prevState.score})` : ' (baseline)'}`);
+    console.log('  Dimension Scores:');
+    for (const [dim, info] of Object.entries(report.health.dimensions)) {
+      const bar = '█'.repeat(Math.round(info.score / 10)) + '░'.repeat(10 - Math.round(info.score / 10));
+      console.log(`    ${dim.padEnd(14)} ${bar} ${info.score}/100 (weight: ${(info.weight * 100).toFixed(0)}%)`);
+    }
+    if (predictions.length > 0) {
+      console.log('\n  Predictions:');
+      for (const p of predictions) {
+        console.log(`    [${p.severity.toUpperCase()}] ${p.message}`);
+      }
+    }
+    if (recommendations.length > 0) {
+      console.log('\n  Recommendations:');
+      for (const r of recommendations) {
+        console.log(`    P${r.priority}: ${r.action}`);
+      }
+    }
     console.log('\n' + '='.repeat(60));
     console.log('  OVERALL: ' + report.overall.toUpperCase());
     if (report.issues.length > 0) {

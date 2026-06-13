@@ -100,7 +100,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
         this.setCapabilityValue('lidl_xmas_mode', 'effect').catch(this.error);
         let es = this.effectMap[args.effect_name];
         const speed = String(args.effect_speed);
-        if (speed.length == 1) es += '0';
+        if (speed.length === 1) es += '0';
         es += speed;
         for (let i=0;i<9;i++) {
             const color = args['effect_color_' + i];

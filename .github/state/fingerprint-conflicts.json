@@ -1,56 +1,18 @@
 {
-  "timestamp": "2026-06-13T06:36:07.734Z",
-  "total": 10,
-  "groups": 5,
+  "timestamp": "2026-06-13T18:58:04.510Z",
+  "total": 2,
+  "groups": 2,
   "caseInsensitive": true,
   "details": {
-    "air_purifier & siren": [
+    "curtain_module_2_gang & device_air_purifier & device_air_purifier_din & device_air_purifier_floor & device_air_purifier_humidifier & device_air_purifier_led & device_air_purifier_presence & device_air_purifier_quality & device_air_purifier_siren & device_air_purifier_smart & device_air_purifier_smoke & device_air_purifier_soil & device_air_purifier_thermostat & device_air_purifier_water & device_floor_heating & double_power_point & lcdtemphumidsensor_2 & smart_air_detection_box & smart_switch": [
       {
-        "mfr": "_tyst11_d0yu2xgi",
+        "mfr": "_tz3000_unknown",
         "pid": "TS0601"
       }
     ],
-    "bulb_rgb_led & rgb_led_strip_controller": [
+    "double_power_point_2 & gas_sensor_switch & lcdtemphumidsensor_3 & outdoor_2_socket & radar_sensor_2 & relay_board_1_channel & sensor_presence_radar & sirentemphumidsensor & switch_1_gang_metering & switch_2_gang_metering & temphumidsensor4 & tuya_dummy_device & valve_dual_irrigation": [
       {
-        "mfr": "_tz3210_eejm8dcr",
-        "pid": "TS0505B"
-      }
-    ],
-    "bulb_rgb_led & rgb_led_light_bar": [
-      {
-        "mfr": "_tz3210_iystcadi",
-        "pid": "TS0505B"
-      }
-    ],
-    "button_wireless_2 & plug_smart": [
-      {
-        "mfr": "_tyzb01_ymcdbl3u",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tyzb01_ymcdbl3u",
-        "pid": "TS0111"
-      },
-      {
-        "mfr": "_tyzb01_4tlksk8a",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tyzb01_4tlksk8a",
-        "pid": "TS0111"
-      },
-      {
-        "mfr": "_tyzb01_hlla45kx",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tyzb01_hlla45kx",
-        "pid": "TS0111"
-      }
-    ],
-    "contact_sensor & remote_button_wireless": [
-      {
-        "mfr": "sonoff",
+        "mfr": "_tze200_placeholder_generic",
         "pid": "TS0601"
       }
     ]

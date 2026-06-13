@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Driver Validation Script - YAML/JS Consistency Checker
- * Run: node scripts/automation/validate-drivers.js [--json]
+ * Driver Validation Script - YAML/JS Consistency Checker with Predictive Validation
+ * Run: node scripts/automation/validate-drivers.js [--json] [--predictive]
  *
  * Validates:
  * - YAML capabilities match JS handlers
@@ -15,6 +15,13 @@
  * - Empty array detection
  * - Invalid JSON detection
  *
+ * Predictive validation:
+ * - Health score per driver (0-100)
+ * - Structural completeness prediction (will this driver work on next SDK update?)
+ * - Trend analysis via historical state
+ * - Regression risk estimation
+ * - Actionable recommendations
+ *
  * Exit codes: 0 = pass, 1 = errors found, 2 = script failure
  */
 'use strict';
@@ -25,7 +32,10 @@ const { loadAllDrivers, DRIVERS_DIR } = require('../lib/drivers');
 const { createLogger } = require('../lib/logger');
 
 const JSON_OUTPUT = process.argv.includes('--json');
+const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
 const { log, summary, errors: _getErrCount } = createLogger('Driver Validation');
+
+const STATE_DIR = path.resolve(__dirname, '../../.github/state');
 
 const SPECIAL_DEVICES = {
   buttons: ['button_wireless', 'scene_switch', 'TS0043', 'TS0044'],
@@ -50,6 +60,174 @@ const KNOWN_CAPABILITIES = new Set([
 
 // Required files for a well-formed driver
 const REQUIRED_DRIVER_FILES = ['driver.compose.json'];
+
+// ---- Predictive validation infrastructure ----
+
+/** Per-driver health profiles */
+const driverHealth = new Map();
+
+/** Aggregate predictive report */
+const predictiveReport = {
+  overallScore: 100,
+  driversAtRisk: [],
+  predictions: [],
+  recommendations: [],
+  trend: 'stable',
+  previousScore: null,
+  structuralCompleteness: { complete: 0, partial: 0, broken: 0 },
+};
+
+/** Calculate health score for a driver (0-100) */
+function calculateDriverHealth(name, issues, config) {
+  let score = 100;
+  for (const issue of issues) {
+    if (issue.severity === 'error') score -= 15;
+    else if (issue.severity === 'warn') score -= 5;
+  }
+  // Bonus for completeness
+  const caps = config?.capabilities || [];
+  const zigbee = config?.zigbee || {};
+  if (caps.length > 0 && zigbee.manufacturerName?.length > 0) score += 5;
+  if (config?.connectivity) score += 3;
+  if (config?.version) score += 2;
+  return Math.max(0, Math.min(100, score));
+}
+
+/** Detect structural completeness for SDK compatibility prediction */
+function assessStructuralCompleteness(name, config) {
+  const checks = {
+    hasId: !!config?.id,
+    hasVersion: !!config?.version,
+    hasCapabilities: Array.isArray(config?.capabilities) && config.capabilities.length > 0,
+    hasConnectivity: !!config?.connectivity,
+    hasZigbee: !!config?.zigbee,
+    hasFingerprints: Array.isArray(config?.zigbee?.fingerprints) && config.zigbee.fingerprints.length > 0,
+    hasManufacturers: Array.isArray(config?.zigbee?.manufacturerName) && config.zigbee.manufacturerName.length > 0,
+    hasClass: !!config?.class,
+    hasComposeJson: true, // we loaded it
+  };
+  const total = Object.keys(checks).length;
+  const passed = Object.values(checks).filter(Boolean).length;
+  return { checks, passed, total, percent: Math.round((passed / total) * 100) };
+}
+
+/** Generate predictive analysis for driver validation */
+function generatePredictions(allIssues, driverHealthMap) {
+  const predictions = [];
+  const recommendations = [];
+
+  // Pattern: drivers missing device.js are at high risk
+  const missingDeviceJs = allIssues.get ? [...allIssues.entries()].filter(([, issues]) =>
+    issues.some(i => i.check === 'missing-device-js')
+  ) : [];
+  if (missingDeviceJs.length > 0) {
+    predictions.push({
+      type: 'incomplete-driver',
+      severity: 'high',
+      message: `${missingDeviceJs.length} driver(s) missing device.js. These drivers cannot handle device events and will appear as non-functional.`,
+      affectedDrivers: missingDeviceJs.map(([name]) => name),
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'completeness',
+      action: 'Create device.js files for each affected driver or remove the driver directory.',
+      affectedCount: missingDeviceJs.length,
+    });
+  }
+
+  // Pattern: button devices with onoff are broken
+  const brokenButtons = allIssues.get ? [...allIssues.entries()].filter(([, issues]) =>
+    issues.some(i => i.check === 'button-onoff')
+  ) : [];
+  if (brokenButtons.length > 0) {
+    predictions.push({
+      type: 'button-stateful-error',
+      severity: 'critical',
+      message: `${brokenButtons.length} button device(s) incorrectly have onoff capability. Button devices must be stateless; having onoff causes undefined behavior.`,
+      affectedDrivers: brokenButtons.map(([name]) => name),
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'correctness',
+      action: 'Remove onoff capability from button device configurations and add button.X capabilities instead.',
+      affectedCount: brokenButtons.length,
+    });
+  }
+
+  // Pattern: empty manufacturerName arrays predict AggregateError on startup
+  const emptyMfrs = allIssues.get ? [...allIssues.entries()].filter(([, issues]) =>
+    issues.some(i => i.check === 'empty-manufacturers')
+  ) : [];
+  if (emptyMfrs.length > 0) {
+    predictions.push({
+      type: 'startup-crash-risk',
+      severity: 'critical',
+      message: `${emptyMfrs.length} driver(s) have empty manufacturerName arrays with fingerprints. This causes AggregateError during Zigbee initialization.`,
+      affectedDrivers: emptyMfrs.map(([name]) => name),
+    });
+    recommendations.push({
+      priority: 0,
+      category: 'stability',
+      action: 'Populate manufacturerName arrays with at least one manufacturer string.',
+      affectedCount: emptyMfrs.length,
+    });
+  }
+
+  // Pattern: climate sensors without time sync will drift
+  const noTimeSync = allIssues.get ? [...allIssues.entries()].filter(([, issues]) =>
+    issues.some(i => i.check === 'climate-timesync')
+  ) : [];
+  if (noTimeSync.length > 0) {
+    predictions.push({
+      type: 'time-drift',
+      severity: 'medium',
+      message: `${noTimeSync.length} LCD climate sensor(s) lack time sync. Time display will drift, potentially showing wrong data.`,
+      affectedDrivers: noTimeSync.map(([name]) => name),
+    });
+    recommendations.push({
+      priority: 2,
+      category: 'feature-completeness',
+      action: 'Implement TimeSync or syncTime handler in affected device.js files.',
+      affectedCount: noTimeSync.length,
+    });
+  }
+
+  // Pattern: drivers at risk (low health score)
+  const atRisk = [];
+  for (const [name, health] of driverHealthMap) {
+    if (health < 60) {
+      atRisk.push({ driver: name, score: health });
+    }
+  }
+  if (atRisk.length > 0) {
+    atRisk.sort((a, b) => a.score - b.score);
+    predictions.push({
+      type: 'driver-health-risk',
+      severity: atRisk[0].score < 40 ? 'high' : 'medium',
+      message: `${atRisk.length} driver(s) have health scores below 60. The lowest is "${atRisk[0].driver}" at ${atRisk[0].score}/100.`,
+    });
+  }
+
+  return { predictions, recommendations };
+}
+
+/** Load previous state for trend analysis */
+function loadPreviousState() {
+  const statePath = path.join(STATE_DIR, 'validate-drivers-state.json');
+  try {
+    if (fs.existsSync(statePath)) return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+  } catch { /* no previous state */ }
+  return null;
+}
+
+/** Save current state for future trend analysis */
+function saveState(score, counts) {
+  try {
+    if (!fs.existsSync(STATE_DIR)) fs.mkdirSync(STATE_DIR, { recursive: true });
+    fs.writeFileSync(path.join(STATE_DIR, 'validate-drivers-state.json'),
+      JSON.stringify({ timestamp: new Date().toISOString(), score, ...counts }, null, 2));
+  } catch { /* non-fatal */ }
+}
 
 function validateDriver(name, d) {
   const issues = [];
@@ -204,9 +382,53 @@ for (const [name, d] of drivers) {
     totalErrors += issues.filter(i => i.severity === 'error').length;
     totalWarnings += issues.filter(i => i.severity === 'warn').length;
   }
+  // Calculate per-driver health
+  const health = calculateDriverHealth(name, issues, d.config);
+  driverHealth.set(name, health);
 }
 
 const s = summary();
+
+// ---- Predictive Health Score ----
+let healthScore = 100;
+healthScore -= totalErrors * 8;
+healthScore -= totalWarnings * 2;
+healthScore = Math.max(0, Math.min(100, healthScore));
+
+// Structural completeness assessment
+let completeCount = 0, partialCount = 0, brokenCount = 0;
+for (const [name, d] of drivers) {
+  const completeness = assessStructuralCompleteness(name, d.config);
+  if (completeness.percent >= 90) completeCount++;
+  else if (completeness.percent >= 50) partialCount++;
+  else brokenCount++;
+}
+predictiveReport.structuralCompleteness = { complete: completeCount, partial: partialCount, broken: brokenCount };
+
+// Drivers at risk
+const atRiskDrivers = [...driverHealth.entries()]
+  .sort((a, b) => a[1] - b[1])
+  .filter(([, score]) => score < 80)
+  .slice(0, 10)
+  .map(([name, score]) => ({ driver: name, score, level: score >= 60 ? 'medium' : score >= 40 ? 'high' : 'critical' }));
+predictiveReport.driversAtRisk = atRiskDrivers;
+
+// Generate predictions
+const { predictions, recommendations } = generatePredictions(allIssues, driverHealth);
+
+// Trend analysis
+const prevState = loadPreviousState();
+const trend = prevState
+  ? (healthScore > prevState.score + 2 ? 'improving' : healthScore < prevState.score - 2 ? 'degrading' : 'stable')
+  : 'baseline';
+predictiveReport.trend = trend;
+predictiveReport.previousScore = prevState?.score || null;
+predictiveReport.overallScore = healthScore;
+predictiveReport.predictions = predictions;
+predictiveReport.recommendations = recommendations;
+
+// Save state
+saveState(healthScore, { errors: totalErrors, warnings: totalWarnings, drivers: drivers.size });
 
 if (JSON_OUTPUT) {
   const output = {
@@ -216,6 +438,7 @@ if (JSON_OUTPUT) {
     totalErrors,
     totalWarnings,
     issues: Object.fromEntries([...allIssues.entries()].map(([k, v]) => [k, v])),
+    health: predictiveReport,
     exitCode: totalErrors > 0 ? 1 : 0,
   };
   console.log(JSON.stringify(output, null, 2));
@@ -225,6 +448,33 @@ if (JSON_OUTPUT) {
   } else {
     console.log(`\nValidation PASSED: ${drivers.size} drivers checked, ${totalWarnings} warning(s).`);
   }
+
+  // Print health report
+  console.log('\n' + '='.repeat(60));
+  console.log('  PREDICTIVE VALIDATION REPORT');
+  console.log('='.repeat(60));
+  console.log(`  Health Score:  ${healthScore}/100 (${healthScore >= 80 ? 'GOOD' : healthScore >= 50 ? 'NEEDS ATTENTION' : 'CRITICAL'})`);
+  console.log(`  Trend:         ${trend.toUpperCase()}${prevState ? ` (was ${prevState.score})` : ' (baseline)'}`);
+  console.log(`  Completeness:  ${completeCount} complete, ${partialCount} partial, ${brokenCount} broken`);
+  if (atRiskDrivers.length > 0) {
+    console.log('\n  Drivers at Risk:');
+    for (const r of atRiskDrivers) {
+      console.log(`    [${r.score}] ${r.driver} (${r.level})`);
+    }
+  }
+  if (predictions.length > 0) {
+    console.log('\n  Predictions:');
+    for (const p of predictions) {
+      console.log(`    [${p.severity.toUpperCase()}] ${p.message}`);
+    }
+  }
+  if (recommendations.length > 0) {
+    console.log('\n  Recommendations:');
+    for (const r of recommendations) {
+      console.log(`    P${r.priority}: ${r.action}`);
+    }
+  }
+  console.log('='.repeat(60));
 }
 
 process.exit(totalErrors > 0 ? 1 : 0);
