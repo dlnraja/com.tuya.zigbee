@@ -100,4 +100,23 @@ if (removedCount > 0) {
   console.log(` — Removed ${removedCount} non-runtime files (JPGs, source maps)`);
 }
 
+// ===== 4. COPY App Store requirements (READMEs + changelog) =====
+const storeFiles = [
+  'README.txt',
+  'README.nl.txt',
+  'README.de.txt',
+  'README.fr.txt',
+  '.homeychangelog.json'
+];
+let copiedStore = 0;
+for (const file of storeFiles) {
+  const src = path.join(ROOT, file);
+  const dst = path.join(BUILD_DIR, file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, dst);
+    copiedStore++;
+  }
+}
+console.log(` — Copied ${copiedStore} App Store metadata files to .homeybuild`);
+
 console.log('✅ Postbuild optimizations complete');
