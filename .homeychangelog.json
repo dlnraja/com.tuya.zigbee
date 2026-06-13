@@ -1,13 +1,11 @@
 {
-  "9.0.3": {
-    "version": "9.0.3",
-    "date": "2026-06-13",
-    "changes": "Comprehensive build fix: 48 drivers connectivity local->zigbee, 347 drivers platforms zigbee->local, 40 empty manufacturerName arrays fixed, 55 YAML workflows optimized with npm cache/timeouts, 250 duplicate manufacturers cleaned, 16 new Zigbee fingerprints, 10 automation scripts enhanced, bot forum accuracy improved, AggregateError fully resolved."
-  },
   "v8_5_30": {
     "version": "8.5.30",
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
+  },
+  "9.0.3": {
+    "en": "v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)"
   },
   "9.0.2": {
     "version": "9.0.2",
@@ -98,5 +96,8 @@
     "version": "8.5.40",
     "date": "2026-05-28",
     "changes": "CRITICAL: Fixed app.json validation errors. Rewrote .homeyignore. Added mandatory README files. Restored 360 Zigbee manufacturerName entries. Resolved 4361 fingerprint conflicts. 114 new fingerprints."
+  },
+  "9.0.4": {
+    "en": "v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)"
   }
 }
