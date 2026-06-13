@@ -76,12 +76,16 @@ jobs:
         id: intelligence_selector
         run: |
           if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then
-          if [ -n "${{ secrets.NVIDIA_API_KEY }}" ]; then
-            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
-            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
+            if [ -n "${{ secrets.NVIDIA_API_KEY }}" ]; then
+              echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+              echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
+            else
+              echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+              echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
+            fi
           else
             echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
-            echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
+            echo "::warning::Pipeline intelligence: RULE_BASED (no GOOGLE_API_KEY)"
           fi
 
       - name: "0b. 🧠 AI Risk Assessment"

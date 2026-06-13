@@ -80,13 +80,17 @@ jobs:
           TARGET_APP_ID: ${{ inputs.app_id }}
         run: node .github/scripts/auto-publish-draft.js
 
+      - name: Get app version
+        id: app_ver
+        run: echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
+
       - name: Post update to Homey Community Forum
         if: steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success'
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: $(node -p "require('./app.json').version")
+          APP_VERSION: ${{ steps.app_ver.outputs.version }}
           CHANGELOG: "Automated promotion from draft to test channel."
         run: node .github/scripts/post-forum-update.js
 
