@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.7": {
+    "en": "v9.0.6:"
+  },
   "9.0.6": {
     "en": "v9.0.5:"
   },
@@ -86,12 +89,7 @@
     "date": "2026-05-28",
     "changes": "Fixed critical app crash (AggregateError) caused by empty manufacturerName[] arrays in 75 drivers. Restored 360 Zigbee manufacturer names. Fixed app.json validation errors. Added 114 new fingerprints. 412 drivers, 13550 fingerprints."
   },
-  "8.5.43": {
-    "version": "8.5.43",
-    "date": "2026-05-28",
-    "changes": "Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor. Added 114 new fingerprints from Z2M/ZHA/community. New soil sensor support: _TZE284_0ints6wl (TS0601)."
-  },
-  "9.0.7": {
-    "en": "v9.0.6:"
+  "9.0.8": {
+    "en": "v9.0.7:"
   }
 }
