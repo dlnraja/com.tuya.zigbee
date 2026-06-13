@@ -6,7 +6,7 @@
 | air_purifier_motion | 2 | TS0601, TS0225, Excellux | onoff, dim, measure_pm25... |
 | air_purifier_presence | 0 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | air_purifier_sensor | 1 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
-| air_purifier_switch | 1 | TS0601 | onoff, measure_battery, measure_power... |
+| air_purifier_switch | 0 | TS0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 6 | TS0601_co2, TS0601 | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 11 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | bed_sensor | 1 | TS0601 | alarm_contact, measure_battery, alarm_battery |
@@ -63,7 +63,7 @@
 | device_air_purifier_water | 1 | TS0601 | measure_water_level, measure_water_percentage, alarm_water_low... |
 | device_din_rail | 5 | TS0601, TS0001, TS0002, TS011F | alarm_motion, alarm_contact, measure_battery... |
 | device_din_rail_meter | 0 | TS0001, TS0002, TS011F | alarm_motion, alarm_contact, alarm_generic... |
-| device_floor_heating | 1 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
+| device_floor_heating | 0 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya | 3 | TS0601 | onoff, dim, measure_temperature... |
 | device_generic_tuya_universal | 22 | TS0203, TS0601 | measure_battery, measure_temperature, measure_humidity... |
 | device_plug_energy | 1 | TS0002, TS0121, TS011F | onoff, measure_power, meter_power... |
@@ -317,6 +317,6 @@
 | zigbee_repeater | 13 | TS0207 |  |
 
 ---
-**Total:** 313 drivers, 4374 manufacturer IDs
+**Total:** 313 drivers, 4372 manufacturer IDs
 
-*Generated: 2026-06-13T16:26:53.538Z*
+*Generated: 2026-06-13T17:39:55.736Z*

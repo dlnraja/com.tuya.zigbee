@@ -1,6 +1,6 @@
 # Monthly Tuya Zigbee Report - 2026-06
 
-*Generated: 2026-06-13T16:26:53.625Z*
+*Generated: 2026-06-13T17:39:55.782Z*
 
 ## 📊 Summary
 
@@ -14,8 +14,8 @@
 
 | ID | Drivers |
 |----|--------|
-| `_TZ3000_unknown|TS0601` | air_purifier_switch, curtain_module, device_air_purifier, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_presence, device_air_purifier_quality, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, double_power_point, lcdtemphumidsensor_2, smart_air_detection_box, smart_switch |
-| `_TZE200_placeholder_generic|TS0601` | device_floor_heating, dimmer_1_gang_2, dimmer_air_purifier, double_power_point_2, gas_sensor_switch, lcdtemphumidsensor_3, outdoor_2_socket, radar_sensor_2, relay_board_1_channel, sensor_presence_radar, sirentemphumidsensor, switch_1_gang_metering, switch_2_gang_metering, temphumidsensor4, tuya_dummy_device, valve_dual_irrigation |
+| `_TZ3000_unknown|TS0601` | curtain_module, device_air_purifier, device_air_purifier_din, device_air_purifier_floor, device_air_purifier_presence, device_air_purifier_quality, device_air_purifier_siren, device_air_purifier_smart, device_air_purifier_smoke, device_air_purifier_soil, device_air_purifier_thermostat, device_air_purifier_water, double_power_point, lcdtemphumidsensor_2, smart_air_detection_box, smart_switch |
+| `_TZE200_placeholder_generic|TS0601` | dimmer_1_gang_2, dimmer_air_purifier, double_power_point_2, gas_sensor_switch, lcdtemphumidsensor_3, outdoor_2_socket, radar_sensor_2, relay_board_1_channel, sensor_presence_radar, sirentemphumidsensor, switch_1_gang_metering, switch_2_gang_metering, temphumidsensor4, tuya_dummy_device, valve_dual_irrigation |
 
 ## 📋 Action Items
 
