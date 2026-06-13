@@ -11,8 +11,8 @@
     "child_lock"
   ],
   "images": {
-    "large": "/{{driverAssetsPath}}/images/large.jpg",
-    "small": "/{{driverAssetsPath}}/images/small.jpg"
+    "large": "/{{driverAssetsPath}}/images/large.png",
+    "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
     "manufacturerName": [
