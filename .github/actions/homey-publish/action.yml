@@ -25,35 +25,10 @@ runs:
       shell: bash
       run: npx homey app build
 
-    - name: Fix large.png (Homey CLI bug workaround)
+    - name: Optimize build (minify app.json + fix large.png)
       shell: bash
       run: |
-        echo "📷 Fixing large.png files..."
-        copied=0
-        
-        # Fix app-level large.png
-        if [ -f "assets/images/large.png" ]; then
-          mkdir -p ".homeybuild/assets/images/"
-          cp "assets/images/large.png" ".homeybuild/assets/images/large.png"
-          copied=$((copied + 1))
-          echo "✅ Copied app-level large.png"
-        fi
-        
-        # Fix driver-level large.png
-        for driver in drivers/*/; do
-          driver_name=$(basename "$driver")
-          for src_path in "assets/images/large.png" "assets/large.png"; do
-            src="drivers/${driver_name}/${src_path}"
-            if [ -f "$src" ]; then
-              dst=".homeybuild/drivers/${driver_name}/assets/images/"
-              mkdir -p "$dst"
-              cp "$src" "${dst}large.png"
-              copied=$((copied + 1))
-              break
-            fi
-          done
-        done
-        echo "✅ Copied $copied large.png files total"
+        node scripts/maintenance/fix-large-images.js
 
     - name: Validate App
       shell: bash
