@@ -268,10 +268,6 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       # 6. PUBLISH
       # ─────────────────────────────────────────────────────────────
-      - name: Optimize build (minify app.json + remove _comment)
-        if: steps.check_pat.outputs.has_pat == 'true'
-        run: node scripts/maintenance/fix-large-images.js
-
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
