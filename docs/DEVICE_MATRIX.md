@@ -6,7 +6,7 @@
 | air_purifier_motion | 2 | TS0601, TS0225, Excellux | onoff, dim, measure_pm25... |
 | air_purifier_presence | 0 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | air_purifier_sensor | 1 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
-| air_purifier_switch | 1 | TS0601 | onoff, measure_battery, measure_power... |
+| air_purifier_switch | 0 | TS0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 6 | TS0601_co2, TS0601 | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 11 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | bed_sensor | 1 | TS0601 | alarm_contact, measure_battery, alarm_battery |
@@ -45,7 +45,7 @@
 | curtain_motor_shutter | 1 | TS0301 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_tilt | 12 | TS0601_curtain_tilt, TS0601 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_wall | 8 | TS130F | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
-| device_air_purifier | 1 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
+| device_air_purifier | 0 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_climate | 1 | TS0601_air_purifier | onoff, dim, measure_pm25... |
 | device_air_purifier_din | 1 | TS0601 | measure_power, meter_power, measure_voltage... |
 | device_air_purifier_floor | 1 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
@@ -73,7 +73,7 @@
 | device_radiator_valve_smart | 1 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | dimmable_led_strip | 1 | TS0502B |  |
 | dimmable_recessed_led | 1 | TS0502B |  |
-| dimmer_1_gang | 1 | TS110F, TS110E, TS0052 | onoff, dim |
+| dimmer_1_gang | 0 | TS110F, TS110E, TS0052 | onoff, dim |
 | dimmer_1_gang_2 | 1 | TS110E, TS0601 | onoff, dim |
 | dimmer_1_gang_tuya | 2 | TS110F, TS110E, TS0052 | onoff, dim |
 | dimmer_2_gang | 3 | TS110F, TS110E | onoff, dim |
@@ -317,6 +317,6 @@
 | zigbee_repeater | 13 | TS0207 |  |
 
 ---
-**Total:** 313 drivers, 4375 manufacturer IDs
+**Total:** 313 drivers, 4372 manufacturer IDs
 
-*Generated: 2026-06-13T09:16:41.008Z*
+*Generated: 2026-06-13T10:15:50.932Z*
