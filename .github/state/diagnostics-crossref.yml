@@ -287,11 +287,11 @@ error_patterns:
   - count: 2
     error: "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b"
   - count: 2
-    error: "(`Cannot send '${e}' because the app instance has been destroyed.\n`+'This may i"
+    error: '(`Cannot send ''${e}'' because the app instance has been destroyed.\n`+''This may i'
   - count: 2
-    error: "(`Cannot access \`this.homey.${t}\` because the app instance has been destroyed."
+    error: '(`Cannot access `this.homey.${t}` because the app instance has been destroyed.'
   - count: 2
-    error: "('Cannot access `this.homey.app` because the app instance has been destroyed.\nT"
+    error: '(''Cannot access `this.homey.app` because the app instance has been destroyed.\nT'
   - count: 2
     error: ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU"
   - count: 2
@@ -299,9 +299,9 @@ error_patterns:
   - count: 2
     error: ")}}}module.exports=Homey;"
   - count: 2
-    error: "send '${e}' because the app instance has been destroyed.\n`+"
+    error: 'send ''${e}'' because the app instance has been destroyed.\n`+'
   - count: 2
-    error: "access \`this.homey.${t}\` because the app instance has been"
+    error: 'access `this.homey.${t}` because the app instance has been'
   - count: 1
     error: "access 'smokeDetectedCondition' before initialization"
   - count: 1

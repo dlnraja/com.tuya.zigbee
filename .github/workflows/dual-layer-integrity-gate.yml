@@ -34,6 +34,11 @@ on:
   pull_request:
     branches: [master, main]
   workflow_dispatch:
+    inputs:
+      auto_fix:
+        description: "Auto-fix empty manufacturerName arrays"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
