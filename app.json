@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.14",
+  "version": "9.0.15",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -131698,9 +131698,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "images": {
         "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
@@ -153013,9 +153011,7 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ]
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/switch_4gang/assets/images/small.png",
