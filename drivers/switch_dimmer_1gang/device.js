@@ -46,7 +46,7 @@ class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
    * handleTuyaDataReport - Hardened DP Processing
    */
   async handleTuyaDataReport(data) {
-    if (!data || data.dp == null) {return;}
+    if (!data || data.dp === null || data.dp === undefined) {return;}
     
     const value = data.data ?? data.value;
     const dpId = data.dp;

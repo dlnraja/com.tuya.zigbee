@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-06-13T18:57:27.146Z",
+  "score": 68,
+  "dimensions": {
+    "build": {
+      "score": 100,
+      "weight": 0.15
+    },
+    "drivers": {
+      "score": 100,
+      "weight": 0.35
+    },
+    "fingerprints": {
+      "score": 0,
+      "weight": 0.2
+    },
+    "workflows": {
+      "score": 35,
+      "weight": 0.15
+    },
+    "security": {
+      "score": 85,
+      "weight": 0.15
+    }
+  }
+}

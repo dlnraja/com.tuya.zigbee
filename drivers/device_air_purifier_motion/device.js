@@ -19,7 +19,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
   }
 
   handleTuyaDataReport(data) {
-    if (!data || data.dp == null) return;
+    if (!data || data.dp === null || data.dp === undefined) return;
     const v = data.data ?? data.value;
     if (data.dp === DP.state) {
       const s = Boolean(v);
