@@ -521,5 +521,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "remote_button_wireless_scene"
+  "id": "remote_button_wireless_scene",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

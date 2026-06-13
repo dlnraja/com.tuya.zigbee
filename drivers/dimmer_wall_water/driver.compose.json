@@ -507,5 +507,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "dimmer_wall_water"
+  "id": "dimmer_wall_water",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

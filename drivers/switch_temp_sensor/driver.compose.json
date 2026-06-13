@@ -41,9 +41,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3218_7fiyo3kv",
-      "_TZ3218_7fiyo3kv",
-      "_TZ3218_7FIYO3KV"
+      "_tz3218_7fiyo3kv"
     ],
     "productId": [
       "TS0601_tempswitch"
@@ -82,5 +80,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "switch_temp_sensor",
+  "version": "1.0.0"
 }

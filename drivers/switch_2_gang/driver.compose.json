@@ -27,8 +27,6 @@
     "productId": [
       "TS0003",
       "TS0012",
-      "TS011F",
-      "TS0002",
       "TS0013"
     ],
     "endpoints": {
@@ -80,5 +78,6 @@
     "manufacturerName": [
       "_TZE200_placeholder_generic"
     ]
-  }
+  },
+  "version": "1.0.0"
 }

@@ -92,15 +92,7 @@
       "_TZ3000_xkap8wtb",
       "_TZE200_HTNNFASR",
       "_TZE200_QQ9MPFHW",
-      "_TZE200_SH1BTABB",
-      "_TZE200_htnnfasr",
-      "_TZE200_qq9mpfhw",
-      "_TZE200_sh1btabb",
-      "_tze200_htnnfasr",
-      "_tze200_qq9mpfhw",
-      "_tze200_sh1btabb",
-      "lumi.sensor_wleak",
-      "lumi.sensor_wleak.aq1"
+      "_TZE200_SH1BTABB"
     ]
   },
   "settings": [
@@ -382,5 +374,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "water_leak_sensor",
+  "version": "1.0.0"
 }

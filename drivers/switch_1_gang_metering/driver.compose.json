@@ -28,7 +28,6 @@
   },
   "zigbee": {
     "productId": [
-      "TS0001",
       "TS0601"
     ],
     "endpoints": {
@@ -67,5 +66,6 @@
     "manufacturerName": [
       "_TZE200_placeholder_generic"
     ]
-  }
+  },
+  "version": "1.0.0"
 }

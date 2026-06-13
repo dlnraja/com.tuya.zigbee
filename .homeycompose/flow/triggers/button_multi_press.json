@@ -1,0 +1,42 @@
+{
+  "id": "button_multi_press",
+  "title": {
+    "en": "Button multi-pressed",
+    "fr": "Bouton multi-cliqué",
+    "nl": "Knop meerdere keren ingedrukt",
+    "de": "Taste mehrfach gedrückt"
+  },
+  "tokens": [
+    {
+      "name": "button",
+      "type": "string",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "example": "1"
+    },
+    {
+      "name": "count",
+      "type": "number",
+      "title": {
+        "en": "Press count",
+        "fr": "Nombre de pressions"
+      },
+      "example": 3
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Button multi-pressed [[device]]",
+    "fr": "Bouton multi-cliqué [[device]]",
+    "nl": "Knop meerdere keren ingedrukt [[device]]",
+    "de": "Taste mehrfach gedrückt [[device]]"
+  }
+}

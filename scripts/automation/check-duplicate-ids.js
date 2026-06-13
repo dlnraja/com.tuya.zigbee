@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const appJsonPath = 'c:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\app.json';
+const appJsonPath = path.join(__dirname, '..', '..', 'app.json');
 const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf8'));
 
 function findDuplicates(type) {

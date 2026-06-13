@@ -26,7 +26,6 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601",
       "TS0603"
     ],
     "endpoints": {
@@ -489,5 +488,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "door_controller_garage"
+  "id": "door_controller_garage",
+  "version": "1.0.0"
 }

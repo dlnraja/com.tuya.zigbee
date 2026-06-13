@@ -32,20 +32,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_arrw4hhc",
-      "_TZE200_arrw4hhc",
-      "_TZE200_ARRW4HHC",
       "_tze200_nymxy9gq",
-      "_TZE200_nymxy9gq",
-      "_TZE200_NYMXY9GQ",
       "_tze204_arrw4hhc",
-      "_TZE204_arrw4hhc",
-      "_TZE204_ARRW4HHC",
       "_tze204_dq1mfjug",
-      "_TZE204_dq1mfjug",
-      "_TZE204_DQ1MFJUG",
-      "_tze204_nymxy9gq",
-      "_TZE204_nymxy9gq",
-      "_TZE204_NYMXY9GQ"
+      "_tze204_nymxy9gq"
     ],
     "productId": [
       "TS0601_feeder",
@@ -67,26 +57,7 @@
     }
   },
   "flow": {
-    "triggers": [
-      {
-        "id": "pet_feeder_fed",
-        "title": {
-          "en": "Pet was fed",
-          "fr": "Animal nourri",
-          "nl": "Huisdier is gevoerd",
-          "de": "Tier wurde gefüttert"
-        }
-      },
-      {
-        "id": "pet_feeder_food_low",
-        "title": {
-          "en": "Food level is low",
-          "fr": "Niveau de nourriture bas",
-          "nl": "Voerniveau is laag",
-          "de": "Futterniveau ist niedrig"
-        }
-      }
-    ],
+    "triggers": [],
     "conditions": [
       {
         "id": "pet_feeder_food_ok",
@@ -98,17 +69,7 @@
         }
       }
     ],
-    "actions": [
-      {
-        "id": "pet_feeder_feed_now",
-        "title": {
-          "en": "Feed now",
-          "fr": "Distribuer maintenant",
-          "nl": "Nu voeren",
-          "de": "Jetzt füttern"
-        }
-      }
-    ]
+    "actions": []
   },
   "images": {
     "small": "/drivers/pet_feeder/assets/images/small.png",
@@ -130,5 +91,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "pet_feeder",
+  "version": "1.0.0"
 }

@@ -39,13 +39,14 @@ env:
 jobs:
   audit_and_intel:
     name: "🔍 AUDIT & INTEL"
+    if: false  # DISABLED — remove this line to re-enable
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -73,12 +74,13 @@ jobs:
 
   repair_and_stabilize:
     name: "🛠️ REPAIR & STABILIZE"
+    if: false  # DISABLED — remove this line to re-enable
     needs: audit_and_intel
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -103,12 +105,12 @@ jobs:
 
   validate_and_publish:
     name: "🚀 VALIDATE & PUBLISH"
+    if: false  # DISABLED — remove this line to re-enable (was: github.ref == 'refs/heads/master')
     needs: repair_and_stabilize
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
@@ -121,17 +123,17 @@ jobs:
           git commit -m "🤖 [Unified Engine] v$(node -p "require('./app.json').version") stabilization sweep [skip ci]" || echo "No changes"
           git push origin master --force || echo "Push failed"
       - name: "🛠️ Homey Validate"
-        uses: athombv/github-action-homey-app-validate@v1
+        uses: athombv/github-action-homey-app-validate@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           level: publish
       - name: "🚀 Homey Publish"
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false')
-        uses: athombv/github-action-homey-app-publish@v1
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
       - name: "🎉 Create Release"
         if: success() && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'))
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
         with:
           tag_name: v${{ github.run_number }}
           generate_release_notes: true

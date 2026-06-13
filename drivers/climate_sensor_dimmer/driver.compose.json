@@ -520,5 +520,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "climate_sensor_dimmer"
+  "id": "climate_sensor_dimmer",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

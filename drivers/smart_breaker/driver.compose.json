@@ -29,9 +29,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze204_68nvbio9",
-      "_TZE204_68nvbio9",
-      "_TZE204_68NVBIO9"
+      "_tze204_68nvbio9"
     ],
     "productId": [
       "TS0601_breaker",
@@ -76,5 +74,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "smart_breaker",
+  "version": "1.0.0"
 }

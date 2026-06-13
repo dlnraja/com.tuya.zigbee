@@ -26,9 +26,7 @@
   },
   "zigbee": {
     "productId": [
-      "RH3001",
-      "TS0203",
-      "TS0203"
+      "RH3001"
     ],
     "endpoints": {
       "1": {
@@ -50,6 +48,9 @@
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZE200_placeholder_generic"
+    ]
+  },
+  "version": "1.0.0"
 }

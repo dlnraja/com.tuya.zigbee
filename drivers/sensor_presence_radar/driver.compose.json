@@ -61,7 +61,10 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZE200_placeholder_generic",
+      "_TZE204_clrdrnya"
+    ]
   },
   "settings": [
     {
@@ -611,5 +614,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "sensor_presence_radar",
+  "version": "1.0.0"
 }

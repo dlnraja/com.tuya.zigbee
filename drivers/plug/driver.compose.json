@@ -24,9 +24,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_cymsnfvf",
-      "_TZ3000_cymsnfvf",
-      "_TZ3000_CYMSNFVF"
+      "_tz3000_cymsnfvf"
     ],
     "productId": [
       "TS011F"
@@ -49,5 +47,6 @@
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

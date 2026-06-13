@@ -33,8 +33,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_4mh6tyyo",
-      "_TZE200_4MH6TYYO"
+      "_TZE200_placeholder_generic"
     ],
     "productId": [
       "TS110E",
@@ -62,5 +61,6 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

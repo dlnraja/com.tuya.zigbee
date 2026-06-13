@@ -26,28 +26,13 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_lq01",
-      "_TZ3000_lq01",
-      "_TZ3000_LQ01",
       "_tz3000_wqxwpita",
-      "_TZ3000_wqxwpita",
-      "_TZ3000_WQXWPITA",
       "_tz3400_key8kk7r",
-      "_TZ3400_key8kk7r",
-      "_TZ3400_KEY8KK7R",
       "_tz3400_keyjhapk",
-      "_TZ3400_keyjhapk",
-      "_TZ3400_KEYJHAPK",
       "_tz3000_yj6k7vfo",
-      "_TZ3000_yj6k7vfo",
-      "_TZ3000_YJ6K7VFO",
       "_tz3000_ja5osu5g",
-      "_TZ3000_ja5osu5g",
-      "_TZ3000_JA5OSU5G",
       "_tyzb02_keyjqtha",
-      "_TYZB02_KEYJQTHA",
-      "_tz3000_1gcuf2uw",
-      "_TZ3000_1gcuf2uw",
-      "_TZ3000_1GCUF2UW"
+      "_tz3000_1gcuf2uw"
     ],
     "productId": [
       "TS0040",
@@ -139,5 +124,6 @@
         "de": "Batterie"
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

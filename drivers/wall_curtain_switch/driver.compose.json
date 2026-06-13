@@ -31,9 +31,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_wptayaqr",
-      "_TZ3000_wptayaqr",
-      "_TZ3000_WPTAYAQR"
+      "_tz3000_wptayaqr"
     ],
     "productId": [
       "TS130F"
@@ -64,5 +62,6 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "version": "1.0.0"
 }

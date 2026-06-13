@@ -31,9 +31,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze204_s8gkrkxk",
-      "_TZE204_s8gkrkxk",
-      "_TZE204_S8GKRKXK"
+      "_tze204_s8gkrkxk"
     ],
     "endpoints": {
       "1": {
@@ -631,5 +629,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "air_purifier_sensor"
+  "id": "air_purifier_sensor",
+  "version": "1.0.0"
 }

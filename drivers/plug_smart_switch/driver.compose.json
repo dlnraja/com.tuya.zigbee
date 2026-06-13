@@ -872,5 +872,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "plug_smart_switch"
+  "id": "plug_smart_switch",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

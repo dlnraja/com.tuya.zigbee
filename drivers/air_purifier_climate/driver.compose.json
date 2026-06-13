@@ -206,5 +206,9 @@
       }
     }
   ],
-  "id": "air_purifier_climate"
+  "id": "air_purifier_climate",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

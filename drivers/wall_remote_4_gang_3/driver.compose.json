@@ -35,11 +35,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_qzjcsmar",
-      "_TZ3000_qzjcsmar",
-      "_TZ3000_QZJCSMAR",
-      "_tz3000_rrjr1q0u",
-      "_TZ3000_rrjr1q0u",
-      "_TZ3000_RRJR1Q0U"
+      "_tz3000_rrjr1q0u"
     ],
     "productId": [
       "TS0043"
@@ -163,5 +159,6 @@
         "de": "Batterie"
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

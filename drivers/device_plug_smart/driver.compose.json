@@ -24,9 +24,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_cjfmu5he",
-      "_TZ3000_cjfmu5he",
-      "_TZ3000_CJFMU5HE"
+      "_tz3000_cjfmu5he"
     ],
     "productId": [
       "TS0601"
@@ -881,5 +879,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "device_plug_smart"
+  "id": "device_plug_smart",
+  "version": "1.0.0"
 }

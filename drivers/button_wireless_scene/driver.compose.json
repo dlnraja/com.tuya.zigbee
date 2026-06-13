@@ -50,9 +50,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_kjplyrn4",
-      "_TZ3000_kjplyrn4",
-      "_TZ3000_KJPLYRN4"
+      "_tz3000_kjplyrn4"
     ],
     "productId": [
       "TS0601",
@@ -570,5 +568,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "button_wireless_scene"
+  "id": "button_wireless_scene",
+  "version": "1.0.0"
 }

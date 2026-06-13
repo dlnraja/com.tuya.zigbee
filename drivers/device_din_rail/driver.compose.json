@@ -29,20 +29,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_gzvniqjb",
-      "_TZ3000_gzvniqjb",
-      "_TZ3000_GZVNIQJB",
       "_tz3000_okaz9tjs",
-      "_TZ3000_okaz9tjs",
-      "_TZ3000_OKAZ9TJS",
       "_tz3000_typddjyr",
-      "_TZ3000_typddjyr",
-      "_TZ3000_TYPDDJYR",
       "_tz3000_m8f08ihs",
-      "_TZ3000_m8f08ihs",
-      "_TZ3000_M8F08IHS",
-      "_tz3210_emqmwtym",
-      "_TZ3210_emqmwtym",
-      "_TZ3210_EMQMWTYM"
+      "_tz3210_emqmwtym"
     ],
     "productId": [
       "TS0601",
@@ -331,5 +321,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "device_din_rail",
+  "version": "1.0.0"
 }

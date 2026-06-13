@@ -225,5 +225,9 @@
       }
     }
   ],
-  "id": "blaster_remote"
+  "id": "blaster_remote",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

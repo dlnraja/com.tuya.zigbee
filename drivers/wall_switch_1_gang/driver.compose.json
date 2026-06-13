@@ -26,10 +26,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tyzb01_qm6djpta",
-      "_TYZB01_QM6DJPTA",
-      "_tz3000_2mb38mf3",
-      "_TZ3000_2mb38mf3",
-      "_TZ3000_2MB38MF3"
+      "_tz3000_2mb38mf3"
     ],
     "productId": [
       "TS0001",
@@ -56,5 +53,6 @@
         "en": "Press the button for 7 seconds (until LED starts blinking)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

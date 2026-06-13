@@ -34,10 +34,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: '22' # Requis pour Homey SDK v3 / Node 22 env
 
@@ -78,7 +78,7 @@ jobs:
     if: ${{ github.event.inputs.run_diagnostics == 'true' }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
       - name: 📥 Traitement du Dump de Crashs (v7.4.8 & v7.4.6)
         run: |
@@ -104,7 +104,7 @@ jobs:
           echo "✅ Rapport généré dans reports/diagnostics/"
 
       - name: Upload Diagnostic Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
         with:
           name: crash-analysis-report
           path: reports/diagnostics/
@@ -116,10 +116,10 @@ jobs:
     needs: verify-and-lint
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with: { node-version: '22' }
 
       - name: Install Homey CLI
@@ -134,18 +134,9 @@ jobs:
           echo "✅ Build simulé pour l'artifact."
 
       - name: 🚀 Publish to Test Channel
-        run: |
-          echo "🔑 Publication sur le Test Channel..."
-          # Note: Requiert le secret HOMEY_PAT configuré dans GitHub
-          if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
-            echo "⚠️ Secret HOMEY_PAT manquant. Publication simulée."
-            echo "✅ (Simulation) Version ${{ github.event.inputs.target_version }} publiée sur Test Channel."
-            exit 0
-          fi
-          
-          # Commande réelle de publication
-          # homey app publish --test --token ${{ secrets.HOMEY_PAT }}
-          echo "✅ Commande de publication exécutée."
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: 🔍 Vérification Post-Publication
         run: |

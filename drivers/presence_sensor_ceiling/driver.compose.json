@@ -32,17 +32,9 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_dtzziy1e",
-      "_TZE200_dtzziy1e",
-      "_TZE200_DTZZIY1E",
       "_tze204_yensya2c",
-      "_TZE204_yensya2c",
-      "_TZE204_YENSYA2C",
       "_tze200_9qayzqa8",
-      "_TZE200_9qayzqa8",
-      "_TZE200_9QAYZQA8",
-      "_tze204_9qayzqa8",
-      "_TZE204_9qayzqa8",
-      "_TZE204_9QAYZQA8"
+      "_tze204_9qayzqa8"
     ],
     "productId": [
       "TS0601_ceiling",
@@ -293,5 +285,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "presence_sensor_ceiling",
+  "version": "1.0.0"
 }

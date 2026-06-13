@@ -853,5 +853,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "device_plug_energy_monitor"
+  "id": "device_plug_energy_monitor",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

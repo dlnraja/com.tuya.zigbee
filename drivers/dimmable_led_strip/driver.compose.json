@@ -14,9 +14,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_invesber",
-      "_TZ3210_invesber",
-      "_TZ3210_INVESBER"
+      "_tz3210_invesber"
     ],
     "productId": [
       "TS0502B"
@@ -45,5 +43,9 @@
         "en": "Power on to enter pairing mode."
       }
     }
-  }
+  },
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

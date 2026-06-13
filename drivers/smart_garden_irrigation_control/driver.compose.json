@@ -38,11 +38,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3210_eymunffl",
-      "_TZ3210_eymunffl",
-      "_TZ3210_EYMUNFFL",
-      "_tz3000_mq4wujmp",
-      "_TZ3000_mq4wujmp",
-      "_TZ3000_MQ4WUJMP"
+      "_tz3000_mq4wujmp"
     ],
     "productId": [
       "TS0101",
@@ -72,5 +68,6 @@
         "it": "Accertarsi che la spia lampeggi. Se la spia non lampeggia: tenere premuti i pulsanti di accensione/spegnimento per 5 secondi finché la spia non inizia a lampeggiare"
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

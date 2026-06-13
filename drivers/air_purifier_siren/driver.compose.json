@@ -225,5 +225,9 @@
         "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
+  ],
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
   ]
 }

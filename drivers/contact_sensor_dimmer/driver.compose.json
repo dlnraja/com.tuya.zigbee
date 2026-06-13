@@ -503,5 +503,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "contact_sensor_dimmer"
+  "id": "contact_sensor_dimmer",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -27,10 +27,7 @@
   },
   "zigbee": {
     "productId": [
-      "SM0201",
-      "TS0601",
-      "TS0201",
-      "Excellux"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -52,6 +49,9 @@
         "en": "Open the backside of the unit and press the button inside for 5 seconds."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
+  },
+  "version": "1.0.0"
 }

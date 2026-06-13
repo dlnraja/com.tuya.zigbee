@@ -29,8 +29,7 @@
       }
     },
     "manufacturerName": [
-      "_tyzb01_dr6sduka",
-      "_TYZB01_DR6SDUKA"
+      "_tyzb01_dr6sduka"
     ],
     "endpoints": {
       "1": {
@@ -905,5 +904,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "motion_sensor_switch"
+  "id": "motion_sensor_switch",
+  "version": "1.0.0"
 }

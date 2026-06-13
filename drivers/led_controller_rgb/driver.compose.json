@@ -16,9 +16,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI"
+      "_tz3210_iystcadi"
     ],
     "productId": [
       "TS0503",
@@ -68,5 +66,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "led_controller_rgb",
+  "version": "1.0.0"
 }

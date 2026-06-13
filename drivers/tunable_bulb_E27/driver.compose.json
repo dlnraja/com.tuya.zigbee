@@ -14,9 +14,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_49qchf10",
-      "_TZ3000_49qchf10",
-      "_TZ3000_49QCHF10"
+      "_tz3000_49qchf10"
     ],
     "productId": [
       "TS0502A"
@@ -45,5 +43,9 @@
         "en": "Power on to enter pairing mode."
       }
     }
-  }
+  },
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

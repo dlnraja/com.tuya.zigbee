@@ -77,14 +77,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3002_vaq2bfcu",
-      "_TZ3002_vaq2bfcu",
-      "_TZ3002_VAQ2BFCU",
       "_tz3000_2ei1fkwb",
-      "_TZ3000_2ei1fkwb",
-      "_TZ3000_2EI1FKWB",
-      "_tz3000_hy5lggkg",
-      "_TZ3000_hy5lggkg",
-      "_TZ3000_HY5LGGKG"
+      "_tz3000_hy5lggkg"
     ],
     "productId": [
       "TS0726",
@@ -329,5 +323,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "wall_switch_4gang_1way",
+  "version": "1.0.0"
 }

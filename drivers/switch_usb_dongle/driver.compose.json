@@ -40,9 +40,7 @@
       }
     },
     "manufacturerName": [
-      "_tz3000_mw1pqqqt",
-      "_TZ3000_mw1pqqqt",
-      "_TZ3000_MW1PQQQT"
+      "_tz3000_mw1pqqqt"
     ]
   },
   "images": {
@@ -150,5 +148,7 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "id": "switch_usb_dongle",
+  "version": "1.0.0"
 }

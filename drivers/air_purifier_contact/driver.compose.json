@@ -794,5 +794,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "air_purifier_contact"
+  "id": "air_purifier_contact",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -26,19 +26,11 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_7hp93xpr",
-      "_TZ3000_7HP93XPR",
       "_tz3000_owmlbbs0",
-      "_TZ3000_owmlbbs0",
-      "_TZ3000_OWMLBBS0",
       "_tz3000_m5bzwpoh",
-      "_TZ3000_m5bzwpoh",
-      "_TZ3000_M5BZWPOH",
       "_tz3000_tqlv4ug4",
-      "_TZ3000_tqlv4ug4",
-      "_TZ3000_TQLV4UG4",
       "_tz3000_gjnozsaz",
-      "_TZ3000_gjnozsaz",
-      "_TZ3000_GJNOZSAZ"
+      "_tz3210_nuenzetq"
     ],
     "productId": [
       "TS0002",
@@ -87,5 +79,6 @@
         "en": "A tile for each button will be created. Remove the front and press the setup button for 10 seconds (the LED should start blinking)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

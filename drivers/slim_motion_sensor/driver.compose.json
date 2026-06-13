@@ -27,9 +27,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_lf56vpxj",
-      "_TZ3000_lf56vpxj",
-      "_TZ3000_LF56VPXJ"
+      "_tz3000_lf56vpxj"
     ],
     "productId": [
       "TS0202"
@@ -49,10 +47,11 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/learn.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press the reset button for aprox 5 seconds until the LED blinks."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

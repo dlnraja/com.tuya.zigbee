@@ -70,9 +70,7 @@
     ],
     "manufacturerName": [
       "lumi.light.cwopcn02",
-      "LUMI.LIGHT.CWOPCN02",
-      "lumi.light.cwopcn03",
-      "LUMI.LIGHT.CWOPCN03"
+      "lumi.light.cwopcn03"
     ]
   },
   "settings": [
@@ -473,5 +471,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "bulb_rgb",
+  "version": "1.0.0"
 }

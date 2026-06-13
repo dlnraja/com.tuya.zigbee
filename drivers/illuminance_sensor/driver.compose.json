@@ -40,17 +40,10 @@
         "en": "Hold button 5s until LED flashes."
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_hl0ss9oa",
-        "productId": "TS0225"
-      }
-    ],
     "manufacturerName": [
       "MOES",
       "_TYZB01_4mdqxxnn",
-      "_TYZB01_m6ec2pgj",
-      "moes"
+      "_TYZB01_m6ec2pgj"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
@@ -74,5 +67,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "illuminance_sensor",
+  "version": "1.0.0"
 }

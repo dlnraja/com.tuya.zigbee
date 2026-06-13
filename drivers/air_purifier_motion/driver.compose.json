@@ -34,11 +34,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3040_bb6xaihh",
-      "_TZ3040_BB6XAIHH",
       "_tz3000_lf56vpxj",
-      "_TZ3000_LF56VPXJ",
-      "_tz3040_6ygjfyll",
-      "_TZ3040_6YGJFYLL"
+      "_tz3040_6ygjfyll"
     ],
     "productId": [
       "TS0601",
@@ -224,5 +221,6 @@
       }
     }
   ],
-  "id": "air_purifier_motion"
+  "id": "air_purifier_motion",
+  "version": "1.0.0"
 }

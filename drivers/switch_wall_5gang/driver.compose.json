@@ -23,9 +23,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_mraovvmm",
-      "_TZ3000_mraovvmm",
-      "_TZ3000_MRAOVVMM"
+      "_tz3000_mraovvmm"
     ],
     "productId": [
       "TS0015",
@@ -604,5 +602,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "switch_wall_5gang",
+  "version": "1.0.0"
 }

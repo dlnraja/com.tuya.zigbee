@@ -20,17 +20,9 @@
   "zigbee": {
     "manufacturerName": [
       "_tz2000_a476raq2",
-      "_TZ2000_a476raq2",
-      "_TZ2000_A476RAQ2",
       "_tz2000_xogb73am",
-      "_TZ2000_xogb73am",
-      "_TZ2000_XOGB73AM",
       "_tz3000_rusu2vzb",
-      "_TZ3000_rusu2vzb",
-      "_TZ3000_RUSU2VZB",
-      "_tz3000_m0vaazab",
-      "_TZ3000_m0vaazab",
-      "_TZ3000_M0VAAZAB"
+      "_tz3000_m0vaazab"
     ],
     "productId": [
       "TS0601_lcd",
@@ -271,5 +263,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_lcdtemphumidsensor_temphumidsensor"
+  "id": "sensor_lcdtemphumidsensor_temphumidsensor",
+  "version": "1.0.0"
 }

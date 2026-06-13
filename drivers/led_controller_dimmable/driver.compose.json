@@ -19,11 +19,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3210_iystcadi",
-      "_TZ3210_iystcadi",
-      "_TZ3210_IYSTCADI",
-      "_tzb210_3dxbg9ks",
-      "_TZB210_3dxbg9ks",
-      "_TZB210_3DXBG9KS"
+      "_tzb210_3dxbg9ks"
     ],
     "productId": [
       "TS0601_led",
@@ -71,5 +67,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "led_controller_dimmable",
+  "version": "1.0.0"
 }

@@ -228,5 +228,9 @@
       }
     }
   ],
-  "id": "device_radiator_valve_thermostat"
+  "id": "device_radiator_valve_thermostat",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

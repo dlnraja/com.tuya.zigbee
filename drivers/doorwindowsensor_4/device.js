@@ -29,7 +29,7 @@ class doorwindowsensor_4 extends ZigBeeDevice {
 
     // measure_battery // alarm_battery
 		zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-		.on('attr.batteryPercentageRemaining', this.onBatteryPercentageRemainingAttributeReport.bind(this));
+		.on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
     }
 
 
@@ -39,7 +39,7 @@ class doorwindowsensor_4 extends ZigBeeDevice {
     this.setCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
   }
 
-  onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
+  handleBatteryPercentageReport(batteryPercentageRemaining) {
 		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
 		this.log("DS01 measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
 		this.setCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);

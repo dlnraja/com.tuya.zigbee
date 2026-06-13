@@ -389,7 +389,15 @@ Max 250 words. Return ONLY the text.`;
             try {
                 const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 2000, complexity: 'high' });
                 if (hRes && hRes.text) {
-                    reply = sanitize(hRes.text);
+                    let ghostText = cleanReply(hRes.text);
+                    // v5.12.16: Re-run quality gate on ghostwriter output so corrections aren't lost
+                    const gwQG = validateReply(ghostText, allOrigText);
+                    if (!gwQG.valid) {
+                        console.log('  Ghostwriter QG:', gwQG.warnings.length, 'warnings');
+                        for (const w of gwQG.warnings) console.log('    ⚠', w);
+                        if (gwQG.corrected) { ghostText = gwQG.corrected; console.log('  Using QG-corrected ghostwriter'); }
+                    }
+                    reply = sanitize(ghostText);
                     console.log('  ✅ Ghostwriter successful (' + (isMerging ? 'merged' : 'new') + ', model: ' + hRes.model + ')');
                 } else {
                     console.log('  ⚠️ Ghostwriter returned empty, using original.');

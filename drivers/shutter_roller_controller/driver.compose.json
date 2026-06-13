@@ -51,7 +51,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_tze204_guvc7pdy"
+    ]
   },
   "settings": [
     {
@@ -318,5 +320,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "shutter_roller_controller",
+  "version": "1.0.0"
 }

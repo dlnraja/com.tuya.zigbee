@@ -103,9 +103,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze204_zuhszj9s",
-      "_TZE204_zuhszj9s",
-      "_TZE204_ZUHSZJ9S"
+      "_tze204_zuhszj9s"
     ],
     "productId": [
       "TS0601_ac",
@@ -396,5 +394,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "hvac_air_conditioner",
+  "version": "1.0.0"
 }

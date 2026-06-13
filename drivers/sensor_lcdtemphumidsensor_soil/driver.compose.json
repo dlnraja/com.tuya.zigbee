@@ -408,5 +408,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_lcdtemphumidsensor_soil"
+  "id": "sensor_lcdtemphumidsensor_soil",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

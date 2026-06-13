@@ -25,17 +25,9 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_1obwwnmq",
-      "_TZ3000_1obwwnmq",
-      "_TZ3000_1OBWWNMQ",
       "_tz3000_vzopcetz",
-      "_TZ3000_vzopcetz",
-      "_TZ3000_VZOPCETZ",
       "_tz3000_vmpbygs5",
-      "_TZ3000_vmpbygs5",
-      "_TZ3000_VMPBYGS5",
-      "_tz3000_oxslv1c9",
-      "_TZ3000_oxslv1c9",
-      "_TZ3000_OXSLV1C9"
+      "_tz3000_oxslv1c9"
     ],
     "productId": [
       "TS011F",
@@ -112,5 +104,6 @@
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

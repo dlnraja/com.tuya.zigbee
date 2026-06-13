@@ -887,5 +887,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "climate_sensor_switch"
+  "id": "climate_sensor_switch",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -365,5 +365,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "button_wireless_usb"
+  "id": "button_wireless_usb",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -15,11 +15,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_vrjkcam9",
-      "_TZE200_vrjkcam9",
-      "_TZE200_VRJKCAM9",
-      "_tz3000_ahxwesag",
-      "_TZ3000_ahxwesag",
-      "_TZ3000_AHXWESAG"
+      "_tz3000_ahxwesag"
     ],
     "productId": [
       "TS0601_valve",
@@ -60,5 +56,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "valve_single",
+  "version": "1.0.0"
 }

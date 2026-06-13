@@ -391,5 +391,10 @@
         "nl": "Controleer op OTA-updates"
       }
     }
+  ],
+  "id": "sensor_contact_motion",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
   ]
 }

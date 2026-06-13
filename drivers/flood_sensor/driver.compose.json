@@ -26,7 +26,6 @@
   },
   "zigbee": {
     "productId": [
-      "RH3001",
       "TS0207"
     ],
     "endpoints": {
@@ -52,5 +51,6 @@
     "manufacturerName": [
       "_TZE200_placeholder_generic"
     ]
-  }
+  },
+  "version": "1.0.0"
 }

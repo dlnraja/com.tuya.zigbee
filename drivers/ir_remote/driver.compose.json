@@ -113,5 +113,10 @@
   "images": {
     "large": "/drivers/ir_remote/assets/images/large.png",
     "small": "/drivers/ir_remote/assets/images/small.png"
-  }
+  },
+  "id": "ir_remote",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

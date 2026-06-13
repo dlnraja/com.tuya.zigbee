@@ -890,5 +890,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "button_wireless_fingerbot"
+  "id": "button_wireless_fingerbot",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

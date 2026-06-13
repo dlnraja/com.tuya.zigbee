@@ -17,41 +17,17 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_7eue9vhc",
-      "_TZE200_7eue9vhc",
-      "_TZE200_7EUE9VHC",
       "_tze200_a8zrneee",
-      "_TZE200_a8zrneee",
-      "_TZE200_A8ZRNEEE",
       "_tze200_cpbo62rn",
-      "_TZE200_cpbo62rn",
-      "_TZE200_CPBO62RN",
       "_tze200_eegnwoyw",
-      "_TZE200_eegnwoyw",
-      "_TZE200_EEGNWOYW",
       "_tze200_ergbiejo",
-      "_TZE200_ergbiejo",
-      "_TZE200_ERGBIEJO",
       "_tze200_fzo2pocs",
-      "_TZE200_fzo2pocs",
-      "_TZE200_FZO2POCS",
       "_tze200_iossyxra",
-      "_TZE200_iossyxra",
-      "_TZE200_IOSSYXRA",
       "_tze200_lwlvaony",
-      "_TZE200_lwlvaony",
-      "_TZE200_LWLVAONY",
       "_tze200_pk29mnl3",
-      "_TZE200_pk29mnl3",
-      "_TZE200_PK29MNL3",
       "_tze200_sbordckq",
-      "_TZE200_sbordckq",
-      "_TZE200_SBORDCKQ",
       "_tze200_zah67ekd",
-      "_TZE200_zah67ekd",
-      "_TZE200_ZAH67EKD",
-      "_tze204_r0jdjrvi",
-      "_TZE204_r0jdjrvi",
-      "_TZE204_R0JDJRVI"
+      "_tze204_r0jdjrvi"
     ],
     "productId": [
       "TS0601_curtain_tilt",
@@ -152,5 +128,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "curtain_motor_tilt",
+  "version": "1.0.0"
 }

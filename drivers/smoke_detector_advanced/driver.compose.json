@@ -55,11 +55,7 @@
     "manufacturerName": [
       "_TYZB01_wqcac7lo",
       "_TZ3000_MWD3C2AT",
-      "_TZ3000_TK3S5TYG",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_tz3000_mwd3c2at",
-      "_tz3000_tk3s5tyg"
+      "_TZ3000_TK3S5TYG"
     ]
   },
   "settings": [
@@ -321,5 +317,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "smoke_detector_advanced",
+  "version": "1.0.0"
 }

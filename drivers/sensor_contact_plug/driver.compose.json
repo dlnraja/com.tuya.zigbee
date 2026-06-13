@@ -27,9 +27,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_cjrngdr3",
-      "_TZ3000_cjrngdr3",
-      "_TZ3000_CJRNGDR3"
+      "_tz3000_cjrngdr3"
     ],
     "productId": [
       "TS0601",
@@ -885,5 +883,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_contact_plug"
+  "id": "sensor_contact_plug",
+  "version": "1.0.0"
 }

@@ -25,9 +25,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_nsar4ife",
-      "_TZ3000_nsar4ife",
-      "_TZ3000_NSAR4IFE"
+      "_tz3000_nsar4ife"
     ],
     "productId": [
       "TS0003",
@@ -104,5 +102,6 @@
         "en": "Three tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

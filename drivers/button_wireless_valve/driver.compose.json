@@ -528,5 +528,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "button_wireless_valve"
+  "id": "button_wireless_valve",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

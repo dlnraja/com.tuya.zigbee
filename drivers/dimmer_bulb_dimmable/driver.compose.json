@@ -25,11 +25,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_0hb4rdnp",
-      "_TZE200_0HB4RDNP",
-      "_tze200_gne0e6mk",
-      "_TZE200_GNE0E6MK",
-      "_tze204_dcnsggvz",
-      "_TZE204_DCNSGGVZ"
+      "_tze200_gne0e6mk"
     ],
     "productId": [
       "TS0601"
@@ -549,5 +545,6 @@
       "natural_light": true
     }
   },
-  "id": "dimmer_bulb_dimmable"
+  "id": "dimmer_bulb_dimmable",
+  "version": "1.0.0"
 }

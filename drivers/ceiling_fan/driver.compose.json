@@ -19,11 +19,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_1h2x4akh",
-      "_TZ3000_1h2x4akh",
-      "_TZ3000_1H2X4AKH",
-      "_tz3210_t46srmxd",
-      "_TZ3210_t46srmxd",
-      "_TZ3210_T46SRMXD"
+      "_tz3210_t46srmxd"
     ],
     "productId": [
       "TS0601_fan",
@@ -310,5 +306,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "ceiling_fan",
+  "version": "1.0.0"
 }

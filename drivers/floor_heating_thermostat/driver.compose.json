@@ -51,11 +51,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_ulyn7b1o",
-      "_TZE200_ulyn7b1o",
-      "_TZE200_ULYN7B1O",
-      "_tze204_ztvwu4nk",
-      "_TZE204_ztvwu4nk",
-      "_TZE204_ZTVWU4NK"
+      "_tze204_ztvwu4nk"
     ],
     "productId": [
       "TS0601"
@@ -94,5 +90,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "floor_heating_thermostat",
+  "version": "1.0.0"
 }

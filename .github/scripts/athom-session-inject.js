@@ -129,8 +129,15 @@ async function launchWithSession(opts = {}) {
   const session = readCliSession();
   console.log('[SESSION] CLI token loaded (expires_in:', session.expires_in, ')');
   
-  // Get delegation token for apps-api
-  const delegationToken = await getDelegationToken(session.access_token);
+  // Get delegation token for apps-api using Athom CLI helper
+  let delegationToken = null;
+  try {
+    const homeyRoot = path.join(process.env.APPDATA || '', 'npm', 'node_modules', 'homey');
+    const AthomApi = require(path.join(homeyRoot, 'services', 'AthomApi'));
+    delegationToken = await AthomApi.createDelegationToken({ audience: 'apps' });
+  } catch (e) {
+    console.log('[SESSION] AthomApi delegation error:', e.message);
+  }
   const effectiveToken  = delegationToken || session.access_token;
   console.log('[SESSION] Delegation token:', delegationToken ? 'obtained ✓' : 'failed, using CLI token');
 
@@ -144,7 +151,25 @@ async function launchWithSession(opts = {}) {
   const page = await browser.newPage();
   page.setDefaultTimeout(30000);
 
-  // Navigate first to set cookies in correct domain context
+  // Navigate first to set cookies/localStorage in correct domain context without redirecting
+  await page.setRequestInterception(true);
+  const tempHandler = req => {
+    try {
+      const url = req.url();
+      if (url === BASE || url === BASE + '/') {
+        req.respond({
+          status: 200,
+          contentType: 'text/html',
+          body: '<html><body>Injected</body></html>'
+        });
+      } else {
+        req.continue();
+      }
+    } catch {
+      try { req.continue(); } catch {}
+    }
+  };
+  page.on('request', tempHandler);
   await page.goto(BASE, { waitUntil: 'domcontentloaded' }).catch(() => {});
   
   // Inject CLI session into browser localStorage to bypass manual login
@@ -156,15 +181,19 @@ async function launchWithSession(opts = {}) {
       refresh_token: refreshTok,
     };
     // Try multiple storage keys that Athom SPA might use
-    const keys = ['homeyApiToken', 'athomToken', 'token', '_token', 'access_token'];
+    const keys = ['homeyApiToken', 'athomToken', 'token', '_token', 'access_token', '__athom_access_token'];
     for (const key of keys) {
       try { localStorage.setItem(key, tok); } catch {}
       try { localStorage.setItem(key + 'Data', JSON.stringify(tokenData)); } catch {}
     }
+    try { localStorage.setItem('homey-api', JSON.stringify({ token: tokenData })); } catch {}
     // Also try sessionStorage
     try { sessionStorage.setItem('homeyApiToken', tok); } catch {}
+    try { sessionStorage.setItem('homey-api', JSON.stringify({ token: tokenData })); } catch {}
     console.log('[INJECT] Session injected into browser storage');
   }, session.access_token, session.refresh_token);
+
+  page.off('request', tempHandler);
 
   // Set Authorization header on all requests
   await page.setExtraHTTPHeaders({
@@ -172,7 +201,6 @@ async function launchWithSession(opts = {}) {
   });
 
   // Intercept requests to add auth header
-  await page.setRequestInterception(true);
   page.on('request', req => {
     try {
       const url = req.url();

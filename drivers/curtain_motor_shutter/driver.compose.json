@@ -54,7 +54,6 @@
   },
   "zigbee": {
     "productId": [
-      "TS0601",
       "TS0301"
     ],
     "endpoints": {
@@ -68,12 +67,14 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/curtain_motor/assets/large.png",
+      "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
         "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
   },
   "settings": [
     {
@@ -405,5 +406,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "curtain_motor_shutter",
+  "version": "1.0.0"
 }

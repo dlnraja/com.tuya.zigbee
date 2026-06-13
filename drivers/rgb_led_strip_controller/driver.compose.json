@@ -15,20 +15,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_dl4pxp1r",
-      "_TZ3000_dl4pxp1r",
-      "_TZ3000_DL4PXP1R",
       "_tz3000_qqjaziws",
-      "_TZ3000_qqjaziws",
-      "_TZ3000_QQJAZIWS",
       "_tz3000_i8l0nqdu",
-      "_TZ3000_i8l0nqdu",
-      "_TZ3000_I8L0NQDU",
       "_tz3000_ukuvyhaa",
-      "_TZ3000_ukuvyhaa",
-      "_TZ3000_UKUVYHAA",
-      "_tz3210_eejm8dcr",
-      "_TZ3210_eejm8dcr",
-      "_TZ3210_EEJM8DCR"
+      "_tz3210_eejm8dcr"
     ],
     "productId": [
       "TS0503A",
@@ -60,5 +50,9 @@
         "en": "Press the setup button for 10 seconds to enter pairing mode (the LED should blink green)."
       }
     }
-  }
+  },
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

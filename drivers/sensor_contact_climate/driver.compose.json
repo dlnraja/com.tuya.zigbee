@@ -653,5 +653,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_contact_climate"
+  "id": "sensor_contact_climate",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -34,14 +34,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_myd45weu",
-      "_TZE200_myd45weu",
-      "_TZE200_MYD45WEU",
       "_tze200_ga1maeof",
-      "_TZE200_ga1maeof",
-      "_TZE200_GA1MAEOF",
-      "_tze284_aao3yzhs",
-      "_TZE284_aao3yzhs",
-      "_TZE284_AAO3YZHS"
+      "_tze284_aao3yzhs"
     ],
     "productId": [
       "TS0601"
@@ -64,5 +58,6 @@
         "nl": "Houd de knop 5 seconden ingedrukt, het knop zal knipperen."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

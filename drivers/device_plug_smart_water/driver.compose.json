@@ -24,9 +24,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_upgcbody",
-      "_TZE200_upgcbody",
-      "_TZE200_UPGCBODY"
+      "_tze200_upgcbody"
     ],
     "productId": [
       "TS0601",
@@ -882,5 +880,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "device_plug_smart_water"
+  "id": "device_plug_smart_water",
+  "version": "1.0.0"
 }

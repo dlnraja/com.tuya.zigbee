@@ -585,5 +585,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_climate_motion"
+  "id": "sensor_climate_motion",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

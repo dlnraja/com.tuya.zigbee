@@ -17,9 +17,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze20x_xxxxxxxx",
-      "_TZE20X_xxxxxxxx",
-      "_TZE20X_XXXXXXXX"
+      "_TZE200_placeholder_generic"
     ],
     "productId": [
       "TS0601"
@@ -40,5 +38,6 @@
     "instruction": {
       "en": "This driver will log all incoming Tuya datapoints. Please share diagnostic reports for analysis."
     }
-  }
+  },
+  "version": "1.0.0"
 }

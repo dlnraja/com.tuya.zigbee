@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       
       - name: "Autonomous Log Recovery"
         env:
@@ -42,11 +42,11 @@ jobs:
       - name: "Architectural Analysis"
         run: |
           echo "🏅 Deep Thinking Analysis..."
-          node scripts/analysis/deep-impact-analyzer.js --file latest_logs.json
+          node scripts/analysis/deep_search.js --file latest_logs.json
           
       - name: "Auto-Patch Proposal"
         run: |
-          node scripts/maintenance/propose-patch.js --issue-id "${{ github.event.inputs.report_id }}"
+          node scripts/automation/mega-fixer.js --issue-id "${{ github.event.inputs.report_id }}"
           
       - name: "Notify Results"
         run: |

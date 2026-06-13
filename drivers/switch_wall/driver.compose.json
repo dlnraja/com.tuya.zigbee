@@ -870,5 +870,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "switch_wall"
+  "id": "switch_wall",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -30,8 +30,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "ewelink",
-      "EWELINK"
+      "ewelink"
     ],
     "productId": [
       "TS0601"
@@ -483,5 +482,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "sensor_climate_contact",
+  "version": "1.0.0"
 }

@@ -19,11 +19,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_7bztmfm1",
-      "_TZE200_7bztmfm1",
-      "_TZE200_7BZTMFM1",
-      "_tze204_byzdayie",
-      "_TZE204_byzdayie",
-      "_TZE204_BYZDAYIE"
+      "_tze204_byzdayie"
     ],
     "productId": [
       "TS011F"
@@ -436,5 +432,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "device_air_purifier_plug"
+  "id": "device_air_purifier_plug",
+  "version": "1.0.0"
 }

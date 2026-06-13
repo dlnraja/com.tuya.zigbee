@@ -134,7 +134,7 @@ const compact = JSON.stringify(app);  // No formatting
 const after = compact.length;
 const saved = before - after;
 
-fs.writeFileSync(INPUT, compact);
+fs.writeFileSync(INPUT, JSON.stringify(app, null, 2));
 
 const beforeMB = (before / 1024 / 1024).toFixed(2);
 const afterMB  = (after  / 1024 / 1024).toFixed(2);

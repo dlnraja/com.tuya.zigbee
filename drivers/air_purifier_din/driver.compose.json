@@ -184,5 +184,9 @@
       }
     }
   ],
-  "id": "air_purifier_din"
+  "id": "air_purifier_din",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

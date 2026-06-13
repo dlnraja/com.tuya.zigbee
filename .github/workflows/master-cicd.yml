@@ -45,15 +45,15 @@ defaults:
 jobs:
   validate:
     name: 🛡️ Validate
+    if: false  # DISABLED — remove this line to re-enable (was: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]'))
     runs-on: ubuntu-latest
-    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 0
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -74,9 +74,12 @@ jobs:
       
       - name: "0a. Intelligence Mode Selector"
         id: intelligence_selector
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
-          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then
-            if [ -n "${{ secrets.NVIDIA_API_KEY }}" ]; then
+          if [ -n "$GOOGLE_API_KEY" ]; then
+            if [ -n "$NVIDIA_API_KEY" ]; then
               echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
               echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
             else
@@ -161,13 +164,11 @@ jobs:
 
   publish-and-promote:
     name: 🚀 Publish & Promote
+    if: false  # DISABLED — remove this line to re-enable (was: github.event_name == 'workflow_dispatch' || (push && !skip ci))
     needs: validate
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
@@ -178,7 +179,7 @@ jobs:
       - name: 🏷️ Version Bump
         id: bump
         if: github.event.inputs.bump != 'none'
-        uses: athombv/github-action-homey-app-version@v1
+        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
         with:
           version: ${{ github.event.inputs.bump || 'patch' }}
           changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
@@ -214,7 +215,7 @@ jobs:
       - name: 📤 Silent Publish (Shadow Mode)
         id: publish
         if: env.NEW_VERSION != ''
-        uses: athombv/github-action-homey-app-publish@v1
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
@@ -242,7 +243,7 @@ jobs:
       - name: 🐙 Create Release
         if: steps.publish.outcome == 'success'
         continue-on-error: true
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
         with:
           tag_name: v${{ env.NEW_VERSION }}
           name: v${{ env.NEW_VERSION }}

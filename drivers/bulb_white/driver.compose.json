@@ -22,11 +22,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_gxnstjts",
-      "_TZ3000_gxnstjts",
-      "_TZ3000_GXNSTJTS",
-      "_tz3000_oboryztc",
-      "_TZ3000_oboryztc",
-      "_TZ3000_OBORYZTC"
+      "_tz3000_oboryztc"
     ],
     "productId": [
       "TS0501"
@@ -320,5 +316,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "bulb_white",
+  "version": "1.0.0"
 }

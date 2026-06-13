@@ -15,20 +15,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_12sxjap4",
-      "_TZ3000_12sxjap4",
-      "_TZ3000_12SXJAP4",
       "_tz3000_hlijwsai",
-      "_TZ3000_hlijwsai",
-      "_TZ3000_HLIJWSAI",
       "_tz3000_qd7hej8u",
-      "_TZ3000_qd7hej8u",
-      "_TZ3000_QD7HEJ8U",
       "_tz3210_mja6r5ix",
-      "_TZ3210_mja6r5ix",
-      "_TZ3210_MJA6R5IX",
-      "_tz3000_q50zhdsc",
-      "_TZ3000_q50zhdsc",
-      "_TZ3000_Q50ZHDSC"
+      "_tz3000_q50zhdsc"
     ],
     "productId": [
       "TS0505A",
@@ -59,5 +49,9 @@
         "en": "Power on to enter pairing mode."
       }
     }
-  }
+  },
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

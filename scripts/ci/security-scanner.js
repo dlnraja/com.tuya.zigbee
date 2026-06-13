@@ -48,6 +48,12 @@ const SECRET_PATTERNS = [
   /password['"]?\s*[:=]\s*['"](?!\*|your-|example|<)[^'"]{4,}['"]/gi,
   // Private keys
   /-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----/g,
+  // JWT tokens (eyJ...)
+  /eyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]+/g,
+  // Connection strings with embedded passwords (mongodb://, postgres://, mysql://, redis://)
+  /(?:mongodb|postgres|mysql|redis|amqp):\/\/[^:]+:[^@]+@[^/\s]+/gi,
+  // Tuya-specific: device keys/secrets in plain text assignments
+  /(?:tuya[_-]?(?:secret|key|token|api[_-]?secret))['"]?\s*[:=]\s*['"][A-Za-z0-9_-]{16,}['"]/gi,
 ];
 
 const FORBIDDEN_FILES = [
@@ -238,17 +244,73 @@ function scanFilesForSecrets() {
   return found;
 }
 
+function checkWorkflowSecretExposure() {
+  let found = false;
+  console.log(`\n${BOLD}[4/4] Checking workflows for secret exposure in shell scripts...${RESET}`);
+
+  // Pattern: secrets directly interpolated into shell conditions or commands
+  // e.g., if [ -n "${{ secrets.HOMEY_PAT }}" ] -- this leaks the secret value into the script
+  const DANGEROUS_PATTERNS = [
+    // Secret value interpolated into shell conditional
+    /\$\{\{\s*secrets\.\w+\s*\}\}/g,
+  ];
+
+  try {
+    const workflowDir = path.join(ROOT, '.github', 'workflows');
+    if (!fs.existsSync(workflowDir)) return found;
+
+    const files = fs.readdirSync(workflowDir).filter(f => f.endsWith('.yml') || f.endsWith('.yaml'));
+    for (const file of files) {
+      const fullPath = path.join(workflowDir, file);
+      const content = fs.readFileSync(fullPath, 'utf8');
+      const lines = content.split('\n');
+
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        // Skip comments and env: blocks (secrets in env are safe)
+        if (line.trim().startsWith('#') || line.trim().startsWith('env:')) continue;
+
+        // Check for secret interpolation in run: blocks (shell commands)
+        // Secret references in 'uses:' with are safe (they are action inputs)
+        // Secret references in 'run:' shell blocks can be dangerous if they expose values
+        if (line.includes('${{ secrets.') && !line.trim().startsWith('uses:')) {
+          // Check if this line is inside a run: block
+          // Simple heuristic: if line has shell syntax or is indented under 'run:'
+          const prevLines = lines.slice(Math.max(0, i - 5), i).join('\n');
+          if (prevLines.includes('run:') || line.includes('if [') || line.includes('echo') || line.includes('$')) {
+            // This is a secret reference inside a shell script -- potential exposure
+            const secretMatch = line.match(/secrets\.(\w+)/);
+            if (secretMatch) {
+              // Exclude safe patterns (env: block assignments are fine)
+              if (!lines.slice(Math.max(0, i - 3), i).some(l => l.trim().startsWith('env:'))) {
+                console.log(`  ${YELLOW}⚠  ${file}:${i + 1} — secret "${secretMatch[1]}" referenced in shell context (use env var instead)${RESET}`);
+                found = true;
+              }
+            }
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.log(`  ${YELLOW}⚠  Workflow scan error: ${err.message}${RESET}`);
+  }
+
+  if (!found) console.log(`  ${GREEN}✓ No secret exposure in workflow shell scripts${RESET}`);
+  return found;
+}
+
 async function main() {
   console.log(`${BOLD}${YELLOW}══════════════════════════════════════${RESET}`);
-  console.log(`${BOLD}${YELLOW}  🔐 Security Scanner v8.5.0          ${RESET}`);
+  console.log(`${BOLD}${YELLOW}  🔐 Security Scanner v8.6.0          ${RESET}`);
   console.log(`${BOLD}${YELLOW}  Universal Tuya Zigbee               ${RESET}`);
   console.log(`${BOLD}${YELLOW}══════════════════════════════════════${RESET}`);
 
   const forbiddenFound = checkForbiddenFiles();
   const gitTokenFound = checkGitConfigForTokens();
   const secretsFound = scanFilesForSecrets();
+  const workflowExposure = checkWorkflowSecretExposure();
 
-  const totalIssues = (forbiddenFound ? 1 : 0) + (gitTokenFound ? 1 : 0) + (secretsFound ? 1 : 0);
+  const totalIssues = (forbiddenFound ? 1 : 0) + (gitTokenFound ? 1 : 0) + (secretsFound ? 1 : 0) + (workflowExposure ? 1 : 0);
 
   console.log(`\n${BOLD}${YELLOW}══════════════════════════════════════${RESET}`);
   console.log(`${BOLD}${totalIssues > 0 ? RED : GREEN}  RESULT: ${totalIssues > 0 ? '⚠  ISSUES FOUND' : '✓ CLEAN'}${RESET}`);

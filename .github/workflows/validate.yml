@@ -46,6 +46,7 @@ env:
 
 jobs:
   validate:
+    if: false # DISABLED — redundant, unified-ci.yml covers all validation
     name: 🔍 Validate
     runs-on: ubuntu-latest
     timeout-minutes: 15

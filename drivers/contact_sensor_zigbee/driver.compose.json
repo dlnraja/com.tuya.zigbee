@@ -503,5 +503,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "contact_sensor_zigbee"
+  "id": "contact_sensor_zigbee",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

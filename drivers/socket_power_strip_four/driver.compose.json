@@ -31,11 +31,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_j1rx47vc",
-      "_TZ3000_j1rx47vc",
-      "_TZ3000_J1RX47VC",
-      "_tz3000_u5u0drof",
-      "_TZ3000_u5u0drof",
-      "_TZ3000_U5U0DROF"
+      "_tz3000_u5u0drof"
     ],
     "productId": [
       "TS0115",
@@ -162,5 +158,6 @@
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

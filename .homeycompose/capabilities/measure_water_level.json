@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Liquid Depth",
+    "fr": "Profondeur Liquide",
+    "nl": "Vloeistofdiepte",
+    "de": "Flüssigkeitstiefe"
+  },
+  "units": {
+    "en": "cm"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true,
+  "decimals": 1,
+  "min": 0,
+  "max": 400
+}

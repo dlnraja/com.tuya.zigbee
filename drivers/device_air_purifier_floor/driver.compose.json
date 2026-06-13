@@ -56,7 +56,6 @@
       "_TZE200_placeholder_generic"
     ],
     "productId": [
-      "TS0601_air_purifier",
       "TS0601"
     ],
     "endpoints": {
@@ -228,5 +227,6 @@
       }
     }
   ],
-  "id": "device_air_purifier_floor"
+  "id": "device_air_purifier_floor",
+  "version": "1.0.0"
 }

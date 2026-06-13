@@ -29,7 +29,7 @@ jobs:
     timeout-minutes: 10
     if: github.event_name == 'issues'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - name: 🔍 Issue analysis
         run: node scripts/maintenance/github-issue-manager.js
         env:
@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 10
     if: github.event_name == 'workflow_dispatch'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - name: ⚙️ Sync Crash Reports
         run: node scripts/maintenance/diagnostic-ingestion.js
         env:
@@ -52,6 +52,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - name: 🏁 Comparison Run
         run: node scripts/benchmark/app-audit-plus.js

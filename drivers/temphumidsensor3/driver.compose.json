@@ -29,12 +29,7 @@
   },
   "zigbee": {
     "productId": [
-      "TY0201",
-      "SNTZ003",
-      "CK-TLSR8656-SS5-01(7014)",
-      "ZG-227Z",
-      "RH3052",
-      "TS0201"
+      "SNTZ003"
     ],
     "endpoints": {
       "1": {
@@ -60,5 +55,6 @@
     "manufacturerName": [
       "_TZE200_placeholder_generic"
     ]
-  }
+  },
+  "version": "1.0.0"
 }

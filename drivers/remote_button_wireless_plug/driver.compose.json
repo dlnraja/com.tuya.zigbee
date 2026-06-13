@@ -19,9 +19,7 @@
   "energy": {},
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_cfnprab5",
-      "_TZ3000_cfnprab5",
-      "_TZ3000_CFNPRAB5"
+      "_tz3000_cfnprab5"
     ],
     "productId": [
       "TS011F",
@@ -513,5 +511,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "remote_button_wireless_plug",
+  "version": "1.0.0"
 }
