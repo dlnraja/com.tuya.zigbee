@@ -6,7 +6,7 @@
 | air_purifier_motion | 2 | TS0601, TS0225, Excellux | onoff, dim, measure_pm25... |
 | air_purifier_presence | 0 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | air_purifier_sensor | 1 | TS0601 | alarm_motion, measure_luminance.distance, measure_temperature... |
-| air_purifier_switch | 0 | TS0601 | onoff, measure_battery, measure_power... |
+| air_purifier_switch | 1 | TS0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 6 | TS0601_co2, TS0601 | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 11 | TS0005, TS0006, TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | bed_sensor | 1 | TS0601 | alarm_contact, measure_battery, alarm_battery |
@@ -39,7 +39,7 @@
 | climate_sensor_presence | 1 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | co_sensor | 4 | TS0601_co, TS0601 | alarm_co, measure_battery, measure_co... |
 | contact_sensor | 18 | TS0203, ZG-102Z, ZG-102ZL, DS01, RH3001, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, lumi.sensor_magnet, lumi.sensor_magnet.aq2, lumi.magnet.ac01, lumi.magnet.agl02, E1603/E1702, TRADFRI open/close remote, 3300-S, 3320-L, SNZB-04, TS0601, SNZB-04P, SNZB-04PR2, CK-TLSR8656-SS5-01(7003), SNZB-04R2, TS0021, DoorWindow-Sensor-ZB3.0, MCT-340 E, TS0207, q9mpfhw | alarm_contact, measure_battery, alarm_tamper... |
-| curtain_module | 0 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
+| curtain_module | 1 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
 | curtain_module_2_gang | 0 | TS130F, TS0601 | windowcoverings_set, windowcoverings_state |
 | curtain_motor | 107 | TS0302, ZC-LS02, TS130F, DS82, DS421, lumi.curtain, lumi.curtain.hagl04, lumi.curtain.acn002, E1757, KADRILJ, FYRTUR, AM02, AM43-0.45/40-ES-EZ, AM43-0.45/40-ES-EB, TS0601, TS0301, ZBCurtain, TS030F, TS0105 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_shutter | 1 | TS0301 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
@@ -47,12 +47,12 @@
 | curtain_motor_wall | 8 | TS130F | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | device_air_purifier | 1 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_climate | 1 | TS0601_air_purifier | onoff, dim, measure_pm25... |
-| device_air_purifier_din | 0 | TS0601 | measure_power, meter_power, measure_voltage... |
-| device_air_purifier_floor | 0 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
+| device_air_purifier_din | 1 | TS0601 | measure_power, meter_power, measure_voltage... |
+| device_air_purifier_floor | 1 | TS0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_air_purifier_humidifier | 0 | TS0601 | onoff, dim, measure_humidity... |
-| device_air_purifier_led | 1 | TS0601 | dim, measure_battery, onoff... |
+| device_air_purifier_led | 0 | TS0601 | dim, measure_battery, onoff... |
 | device_air_purifier_plug | 2 | TS011F | measure_power, meter_power, measure_voltage... |
-| device_air_purifier_presence | 0 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
+| device_air_purifier_presence | 1 | TS0601 | alarm_motion, measure_luminance, measure_temperature... |
 | device_air_purifier_quality | 1 | TS0601 | measure_co2, measure_pm25, measure_pm10... |
 | device_air_purifier_radiator | 1 | TS0601_air_purifier | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_siren | 1 | TS0601 | alarm_motion, measure_battery, alarm_generic... |
@@ -317,6 +317,6 @@
 | zigbee_repeater | 13 | TS0207 |  |
 
 ---
-**Total:** 313 drivers, 4370 manufacturer IDs
+**Total:** 313 drivers, 4374 manufacturer IDs
 
-*Generated: 2026-06-13T14:34:03.357Z*
+*Generated: 2026-06-13T15:17:47.930Z*
