@@ -30,6 +30,7 @@ jobs:
   triage_and_discovery:
     name: "🧠 Triage & Discovery"
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
@@ -71,6 +72,7 @@ jobs:
     name: "🤝 Auto-Merger"
     needs: triage_and_discovery
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5

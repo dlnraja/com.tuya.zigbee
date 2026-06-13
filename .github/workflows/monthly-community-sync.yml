@@ -8,8 +8,7 @@
 name: 🌐 Monthly Community Sync
 
 on:
-  schedule:
-    - cron: '0 4 31 2 *'  # Feb 31 = never runs (consolidated into daily-everything)
+  # Schedule removed: consolidated into daily-everything pipeline
   workflow_dispatch:
     inputs:
       dry_run:

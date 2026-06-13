@@ -67,7 +67,6 @@ jobs:
 
   triage-upstream:
     name: "Triage JohanBendz"
-    needs: stats
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -83,9 +82,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: JohanBendz/com.tuya.zigbee
-          APP_VERSION: ${{ needs.stats.outputs.version }}
-          DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
-          FP_COUNT: ${{ needs.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           SCAN_FORKS: ${{ inputs.scan_forks || 'false' }}
         run: |
@@ -118,7 +114,6 @@ jobs:
 
   triage-dlnraja:
     name: "Triage dlnraja"
-    needs: stats
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -133,9 +128,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: dlnraja/com.tuya.zigbee
-          APP_VERSION: ${{ needs.stats.outputs.version }}
-          DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
-          FP_COUNT: ${{ needs.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           SCAN_FORKS: "false"
         run: node .github/scripts/triage-upstream-enhanced.js
