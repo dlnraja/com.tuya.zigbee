@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T01:27:29.469Z",
+  "timestamp": "2026-06-13T02:20:49.793Z",
   "totalNew": 2,
   "withDPs": 0,
   "withPid": 0,
@@ -33,5 +33,5 @@
       "reporters": []
     }
   ],
-  "aiPlan": "| FP | Type | Driver | DPs → Capabilities | Quirks / Next step |\n|---|---|---|---|---|\n| `_TZE284_sdvbnmj5` | Unknown | Not assignable yet | No DPs/capabilities provided | Needs Homey device interview. `productId` is missing, and Homey fingerprint matching requires `manufacturerName + productId`. `_TZE284_` suggests a Tuya/TS0601-style DP device, but the driver cannot be chosen safely from manufacturer name alone. |\n| `_TZE284_gnpflcoq` | Unknown | Not assignable yet | No DPs/capabilities provided | Same as above. No wildcard support in SDK3, so `_TZE284_*` cannot be added. Need exact `productId`, endpoints/clusters, and DP reports. |\n\nPlease provide a device interview from:\n\nhttps://tools.developer.homey.app/tools/zigbee\n\nAlso helpful:\n\n- ZHA issue URL for each fingerprint\n- `productId` / `modelId`\n- Manufacturer/model name\n- Endpoints and clusters\n- Any `0xEF00` Tuya DP reports\n- What the physical device is: switch, sensor, thermostat, cover, dimmer, plug, etc.\n\nOnce the interview or ZHA logs are available, I can map the DPs to Homey capabilities and suggest the correct existing driver/fingerprint"
+  "aiPlan": "| FP | Type | Driver | DPs→"
 }
