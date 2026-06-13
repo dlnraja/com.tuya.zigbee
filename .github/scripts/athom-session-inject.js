@@ -195,22 +195,9 @@ async function launchWithSession(opts = {}) {
 
   page.off('request', tempHandler);
 
-  // Set Authorization header on all requests
-  await page.setExtraHTTPHeaders({
-    'Authorization': `Bearer ${effectiveToken}`,
-  });
 
-  // Intercept requests to add auth header
-  page.on('request', req => {
-    try {
-      const url = req.url();
-      const headers = { ...req.headers() };
-      if (url.includes('athom.com') || url.includes('homey.app')) {
-        headers['Authorization'] = headers['Authorization'] || `Bearer ${effectiveToken}`;
-      }
-      req.continue({ headers });
-    } catch { try { req.continue(); } catch {} }
-  });
+
+
 
   return { browser, page, token: effectiveToken, session };
 }
