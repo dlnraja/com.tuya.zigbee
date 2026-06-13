@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.4] - 2026-06-13
+## [9.0.5] - 2026-06-13
+
+v9.0.4:
+---
+
+ [9.0.4] - 2026-06-13
 
 v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)
 ---
