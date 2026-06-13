@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.6",
+  "version": "9.0.7",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -106462,7 +106462,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "small": "/drivers/switch_1gang/assets/images/small.png",
@@ -130328,7 +130330,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -131698,7 +131702,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
@@ -132375,9 +132381,7 @@
         }
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -144159,7 +144163,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -150213,9 +150219,7 @@
             "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "settings": []
@@ -169104,7 +169108,9 @@
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -203823,7 +203829,9 @@
             "it": "Tenere premuto il pulsante all'interno del vano batteria per cicrca 5 secondi finchè il LED non lampeggia rapidamente."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [

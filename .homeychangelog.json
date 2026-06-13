@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.6": {
+    "en": "v9.0.5:"
+  },
   "9.0.5": {
     "en": "v9.0.4:"
   },
@@ -88,12 +91,7 @@
     "date": "2026-05-28",
     "changes": "Fixed manufacturer fingerprint restoration for button_wireless_4 and illuminance_sensor. Added 114 new fingerprints from Z2M/ZHA/community. New soil sensor support: _TZE284_0ints6wl (TS0601)."
   },
-  "8.5.42": {
-    "version": "8.5.42",
-    "date": "2026-05-28",
-    "changes": "Fixed manufacturer fingerprints for button_wireless_4 and illuminance_sensor. Added 114 new fingerprints from Z2M/ZHA/community. Resolved 4361 fingerprint conflicts across all 412 drivers."
-  },
-  "9.0.6": {
-    "en": "v9.0.5:"
+  "9.0.7": {
+    "en": "v9.0.6:"
   }
 }
