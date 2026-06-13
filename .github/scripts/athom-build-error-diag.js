@@ -184,60 +184,14 @@ async function main() {
     await snap(page, 'diag-00-initial');
 
     // Step 3: Navigate to versions page (SPA navigation)
-    log('[STEP 3] Navigating to builds/versions page...');
-    // Direct deep-link (faster than SPA nav)
-    await page.goto(BUILDS_URL, { waitUntil: 'networkidle2' });
-    await waitReady(page, 'versions-page', 8000);
-    await snap(page, 'diag-02-versions');
-    log('  URL: ' + page.url());
 
-    // Step 4: Extract build list from page
-    log('[STEP 4] Extracting build list...');
-    const builds = await page.evaluate(() => {
-      const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="build"], [class*="item"]')];
-      return rows.map(row => {
-        const text = row.innerText || '';
-        const links = [...row.querySelectorAll('a')].map(a => ({ href: a.href, text: (a.textContent||'').trim() }));
-        const hasFailed = /processing failed/i.test(text);
-        const versionMatch = text.match(/\d+\.\d+\.\d+/);
-        const buildIdMatch = text.match(/#?(\d{4,6})/);
-        return {
-          text: text.slice(0,200),
-          version: versionMatch?.[0],
-          buildId: buildIdMatch?.[1],
-          failed: hasFailed,
-          links,
-        };
-      }).filter(r => r.buildId || r.failed);
-    });
-
-    log(`  Found ${builds.length} build rows`);
-    builds.forEach(b => log(`  Build ${b.buildId} v${b.version} failed=${b.failed}`));
-
-    // Step 5: For each failed build, navigate to detail and extract error
-    const failedBuilds = builds.filter(b => b.failed || TARGET_BUILD);
-    const targetBuilds = TARGET_BUILD 
-      ? failedBuilds.filter(b => b.buildId === TARGET_BUILD || builds.find(b2 => b2.buildId === TARGET_BUILD))
-      : failedBuilds.slice(0, 5); // Limit to 5 most recent
-
-    log(`\n[STEP 5] Investigating ${targetBuilds.length || 1} failed build(s)...`);
-
-    // If no rows found via SPA, try API-style URL navigation
-    const buildsToCheck = targetBuilds.length > 0 
-      ? targetBuilds 
-      : [{ buildId: TARGET_BUILD || '2202', version: APP_VER, failed: true, links: [] }];
-
-    for (const build of buildsToCheck) {
-      const bid = build.buildId;
-      if (!bid) continue;
-      log(`\n  --- Build #${bid} (v${build.version || '?'}) ---`);
       
       // Navigate to build detail via SUBMISSION link or direct URL
-      const submissionLink = build.links?.find(l => /submission/i.test(l.text) || l.href?.includes('/build/'));
-      const buildUrl = submissionLink?.href || `${BASE}/apps/app/${APP_ID}/build/${bid}`;
+      const bid = TARGET_BUILD;
+      const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${bid}`;
       
       log(`  Navigating to: ${buildUrl}`);
-      await page.goto(buildUrl, { waitUntil: 'networkidle2' });
+      await page.goto(buildUrl, { waitUntil: 'domcontentloaded' });
       await waitReady(page, `build-${bid}`, 8000);
       await snap(page, `diag-03-build-${bid}`);
 
@@ -268,7 +222,7 @@ async function main() {
       log(`  HTML dump saved: screenshots/build-${bid}-dump.html`);
 
       report.builds[bid] = {
-        version: build.version,
+        version: APP_VER,
         errorType: classification.type,
         fix: classification.fix,
         errorLines: errorData.errorLines.slice(0,10),
@@ -278,7 +232,6 @@ async function main() {
         screenshot: `screenshots/diag-03-build-${bid}.png`,
         htmlDump: `screenshots/build-${bid}-dump.html`,
       };
-    }
 
     // Step 6: Save report
     fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });
