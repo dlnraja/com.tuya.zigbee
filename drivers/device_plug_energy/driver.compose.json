@@ -24,9 +24,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_fgwhjm9j",
-      "_TZ3210_fgwhjm9j",
-      "_TZ3210_FGWHJM9J"
+      "_tz3210_fgwhjm9j"
     ],
     "productId": [
       "TS0002",
@@ -883,5 +881,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "device_plug_energy"
+  "id": "device_plug_energy",
+  "version": "1.0.0"
 }

@@ -49,14 +49,8 @@
     ],
     "manufacturerName": [
       "_tz3000_5f43h46b",
-      "_TZ3000_5f43h46b",
-      "_TZ3000_5F43H46B",
       "_tz3000_cfv2uyxe",
-      "_TZ3000_cfv2uyxe",
-      "_TZ3000_CFV2UYXE",
-      "_tz3000_iwtv2jwo",
-      "_TZ3000_iwtv2jwo",
-      "_TZ3000_IWTV2JWO"
+      "_tz3000_iwtv2jwo"
     ],
     "endpoints": {
       "1": {
@@ -219,5 +213,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "usb_dongle_dual_repeater",
+  "version": "1.0.0"
 }

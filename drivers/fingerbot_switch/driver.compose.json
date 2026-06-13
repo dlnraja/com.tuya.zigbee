@@ -25,9 +25,7 @@
       }
     },
     "manufacturerName": [
-      "_tz3210_m2ax2xyk",
-      "_TZ3210_m2ax2xyk",
-      "_TZ3210_M2AX2XYK"
+      "_tz3210_m2ax2xyk"
     ],
     "endpoints": {
       "1": {
@@ -907,5 +905,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "fingerbot_switch"
+  "id": "fingerbot_switch",
+  "version": "1.0.0"
 }

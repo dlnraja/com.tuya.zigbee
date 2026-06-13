@@ -35,11 +35,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tzb210_g01ie5wu",
-      "_TZB210_g01ie5wu",
-      "_TZB210_G01IE5WU",
-      "_tzb210_zxbtub8r",
-      "_TZB210_zxbtub8r",
-      "_TZB210_ZXBTUB8R"
+      "_tzb210_zxbtub8r"
     ],
     "productId": [
       "TS004F",
@@ -218,5 +214,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "wall_dimmer_1gang_1way",
+  "version": "1.0.0"
 }

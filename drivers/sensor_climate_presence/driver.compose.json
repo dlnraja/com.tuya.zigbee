@@ -772,5 +772,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_climate_presence"
+  "id": "sensor_climate_presence",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

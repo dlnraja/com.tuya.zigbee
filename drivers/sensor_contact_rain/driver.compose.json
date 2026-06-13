@@ -505,5 +505,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_contact_rain"
+  "id": "sensor_contact_rain",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

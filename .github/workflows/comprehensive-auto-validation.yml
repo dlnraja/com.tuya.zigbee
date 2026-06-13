@@ -25,6 +25,7 @@ defaults:
 
 jobs:
   fleet-audit:
+    if: false # DISABLED — redundant, unified-ci.yml covers all validation
     name: 🛡️ Fleet Audit & Validation
     runs-on: ubuntu-latest
     timeout-minutes: 15

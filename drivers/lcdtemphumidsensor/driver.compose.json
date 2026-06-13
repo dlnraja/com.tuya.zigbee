@@ -38,11 +38,8 @@
     },
     "manufacturerName": [
       "_tz2000_avdnvykf",
-      "_TZ2000_avdnvykf",
-      "_TZ2000_AVDNVYKF",
       "_tz2000_hjsgdkfl",
-      "_TZ2000_hjsgdkfl",
-      "_TZ2000_HJSGDKFL"
+      "_TZE200_vvmbj46n"
     ]
   },
   "images": {
@@ -93,5 +90,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "lcdtemphumidsensor",
+  "version": "1.0.0"
 }

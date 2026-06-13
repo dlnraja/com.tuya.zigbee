@@ -45,7 +45,6 @@
       "SNZB-02",
       "SNZB-02D",
       "SNZB-02P",
-      "TS0601",
       "ZG-227Z",
       "ZG-227ZL",
       "CK-TLSR8656-SS5-01(7014)",
@@ -67,7 +66,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
   },
   "settings": [
     {
@@ -693,5 +694,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_climate_temphumidsensor"
+  "id": "sensor_climate_temphumidsensor",
+  "version": "1.0.0"
 }

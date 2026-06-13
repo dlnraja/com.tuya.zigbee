@@ -11,44 +11,18 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_1mxvlhmq",
-      "_TZ3000_1mxvlhmq",
-      "_TZ3000_1MXVLHMQ",
       "_tz3000_gdc3biaj",
-      "_TZ3000_gdc3biaj",
-      "_TZ3000_GDC3BIAJ",
       "_tz3000_hopvlupy",
-      "_TZ3000_hopvlupy",
-      "_TZ3000_HOPVLUPY",
       "_tz3000_m0vaazwu",
-      "_TZ3000_m0vaazwu",
-      "_TZ3000_M0VAAZWU",
       "_tz3000_rku4cnct",
-      "_TZ3000_rku4cnct",
-      "_TZ3000_RKU4CNCT",
       "_tz3000_m0vaazab",
-      "_TZ3000_m0vaazab",
-      "_TZ3000_M0VAAZAB",
       "_tz3000_5k5vh43t",
-      "_TZ3000_5k5vh43t",
-      "_TZ3000_5K5VH43T",
       "_tz3000_ufttklsz",
-      "_TZ3000_ufttklsz",
-      "_TZ3000_UFTTKLSZ",
       "_tz3000_gszjt2xx",
-      "_TZ3000_gszjt2xx",
-      "_TZ3000_GSZJT2XX",
       "_tz3000_nkkl7uzv",
-      "_TZ3000_nkkl7uzv",
-      "_TZ3000_NKKL7UZV",
       "_tz3000_nlsszmzl",
-      "_TZ3000_nlsszmzl",
-      "_TZ3000_NLSSZMZL",
       "_tz3000_misw04hq",
-      "_TZ3000_misw04hq",
-      "_TZ3000_MISW04HQ",
-      "_tz3000_wlquqiiz",
-      "_TZ3000_wlquqiiz",
-      "_TZ3000_WLQUQIIZ"
+      "_tz3000_wlquqiiz"
     ],
     "productId": [
       "TS0207"
@@ -93,5 +67,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "zigbee_repeater",
+  "version": "1.0.0"
 }

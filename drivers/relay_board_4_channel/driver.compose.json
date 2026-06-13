@@ -26,11 +26,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_hdlpifbk",
-      "_TZ3000_hdlpifbk",
-      "_TZ3000_HDLPIFBK",
-      "_tz3000_wkr3jqmr",
-      "_TZ3000_wkr3jqmr",
-      "_TZ3000_WKR3JQMR"
+      "_tz3000_wkr3jqmr"
     ],
     "productId": [
       "TS0004"
@@ -131,5 +127,6 @@
         "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

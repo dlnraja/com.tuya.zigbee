@@ -166,70 +166,22 @@ async function main() {
   log(`║  v${APP_VER} | Target: ${TARGET_BUILD || 'ALL FAILED'} | ${new Date().toISOString()}`);
   log('╚══════════════════════════════════════════════════════════════╝\n');
 
-  if (!EMAIL || !PASSWORD) {
-    log('❌ HOMEY_EMAIL and HOMEY_PASSWORD required');
-    log('   Set them as environment variables or GitHub Secrets');
-    process.exit(1);
-  }
-
-  let puppeteer;
-  try { puppeteer = require('puppeteer'); } catch {
-    log('❌ puppeteer not installed. Run: npm install puppeteer --no-save');
-    process.exit(1);
-  }
-
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage'],
-    defaultViewport: { width: 1280, height: 900 },
-  });
-
+  const { launchWithSession } = require('./athom-session-inject');
   const report = { timestamp: new Date().toISOString(), appId: APP_ID, version: APP_VER, builds: {} };
 
+  let browser, page;
   try {
-    const page = await browser.newPage();
-    page.setDefaultTimeout(30000);
-
-    // Intercept network to capture auth token (same as auto-promote-puppeteer.js)
-    const captured = { token: null };
-    page.on('request', req => {
-      try {
-        const auth = req.headers()['authorization'] || '';
-        if (auth && req.url().includes('apps-api')) {
-          captured.token = auth.replace(/^Bearer\s+/i,'');
-          log(`  [NET] Token captured from: ${req.url().split('?')[0]}`);
-        }
-      } catch {}
+    const sessionCtx = await launchWithSession({
+      headless: 'new',
+      launchOptions: {
+        defaultViewport: { width: 1280, height: 900 }
+      }
     });
-
-    // Step 1: Navigate to tools
-    log('[STEP 1] Navigating to Developer Tools...');
-    await page.goto(BASE, { waitUntil: 'networkidle2' });
+    browser = sessionCtx.browser;
+    page = sessionCtx.page;
+    log('[STEP 1] Session successfully injected and browser launched!');
     await waitReady(page, 'initial', 5000);
     await snap(page, 'diag-00-initial');
-
-    // Step 2: Login if needed
-    const pageText = await page.evaluate(() => document.body?.innerText || '');
-    const needsLogin = page.url().includes('accounts.athom') || 
-                       pageText.includes('LOG IN') || pageText.includes('Log in');
-    
-    if (needsLogin) {
-      log('[STEP 2] Login required...');
-      // Click LOG IN if in-page button
-      if (pageText.includes('LOG IN') || pageText.includes('Log in')) {
-        await page.evaluate(() => {
-          const els = [...document.querySelectorAll('a, button')];
-          const btn = els.find(e => /log\s*in|sign\s*in/i.test(e.textContent));
-          if (btn) btn.click();
-        });
-        await page.waitForNavigation({waitUntil:'networkidle2',timeout:15000}).catch(() => {});
-        await waitReady(page, 'after-login-click', 3000);
-      }
-      const ok = await doLogin(page);
-      if (!ok) { log('❌ Login failed'); process.exit(1); }
-    } else {
-      log('[STEP 2] Already logged in');
-    }
 
     // Step 3: Navigate to versions page (SPA navigation)
     log('[STEP 3] Navigating to builds/versions page...');

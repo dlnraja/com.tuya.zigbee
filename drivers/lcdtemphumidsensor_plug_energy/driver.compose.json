@@ -17,8 +17,7 @@
   "energy": {},
   "zigbee": {
     "manufacturerName": [
-      "_tyzb01_iuepbmpv",
-      "_TYZB01_IUEPBMPV"
+      "_tyzb01_iuepbmpv"
     ],
     "productId": [
       "TS0601"
@@ -508,5 +507,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "lcdtemphumidsensor_plug_energy",
+  "version": "1.0.0"
 }

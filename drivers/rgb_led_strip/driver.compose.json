@@ -14,9 +14,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_riwp3k79",
-      "_TZ3000_riwp3k79",
-      "_TZ3000_RIWP3K79"
+      "_tz3000_riwp3k79"
     ],
     "productId": [
       "TS0505A"
@@ -45,5 +43,9 @@
         "en": "Power on to enter pairing mode."
       }
     }
-  }
+  },
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

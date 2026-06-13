@@ -74,14 +74,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_generic",
-      "_TZE200_generic",
-      "_TZE200_GENERIC",
       "_tz3000_generic",
-      "_TZ3000_generic",
-      "_TZ3000_GENERIC",
-      "_tze204_generic",
-      "_TZE204_generic",
-      "_TZE204_GENERIC"
+      "_tze204_generic"
     ],
     "productId": [
       "TS0601"
@@ -240,5 +234,6 @@
         "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
-  ]
+  ],
+  "version": "1.0.0"
 }

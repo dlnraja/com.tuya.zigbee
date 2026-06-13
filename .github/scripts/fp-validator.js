@@ -26,7 +26,8 @@ function extractFPWithBrands(text){
   return[...new Set([...tuya,...brands])];
 }
 function extractPID(text){
-  const a=((text||'').match(/\bTS[0-9A-Fa-f]{3,5}\b/g)||[]).map(m=>m.toUpperCase());
+  // v5.12.16: Also match TS#### with underscore suffixes (TS0601_generic etc.)
+  const a=((text||'').match(/\bTS[0-9A-Fa-f]{3,5}(?:_[a-zA-Z0-9]+)?\b/g)||[]).map(m=>m.toUpperCase());
   const b=(text||'').match(/\b(SNZB-\d{2}\w*|ZBMINI\w*|S[346]1ZB\w*|BASICZBR\d*|TRVZB)\b/g)||[];
   return[...new Set([...a,...b])];
 }

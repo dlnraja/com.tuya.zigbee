@@ -30,7 +30,6 @@
       "TS0001_power",
       "TS0001_switch",
       "TS0001_switch_module",
-      "TS0601",
       "TS000F",
       "ZBMINI",
       "ZBMINIL2",
@@ -72,6 +71,9 @@
         "en": "Switch the unit on and off five times and then hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
+  },
+  "version": "1.0.0"
 }

@@ -364,5 +364,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "air_purifier_quality"
+  "id": "air_purifier_quality",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -34,11 +34,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_gbm10jnj",
-      "_TZ3000_gbm10jnj",
-      "_TZ3000_GBM10JNJ",
-      "_tz3002_6ahhkwyh",
-      "_TZ3002_6ahhkwyh",
-      "_TZ3002_6AHHKWYH"
+      "_tz3002_6ahhkwyh"
     ],
     "productId": [
       "TS0601_scene2",
@@ -124,5 +120,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "scene_switch_2",
+  "version": "1.0.0"
 }

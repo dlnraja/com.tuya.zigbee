@@ -75,9 +75,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_m9qayzqa8",
-      "_TZE200_m9qayzqa8",
-      "_TZE200_M9QAYZQA8"
+      "_tze200_m9qayzqa8"
     ],
     "productId": [
       "TS0601"
@@ -836,5 +834,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "climate_sensor_presence"
+  "id": "climate_sensor_presence",
+  "version": "1.0.0"
 }

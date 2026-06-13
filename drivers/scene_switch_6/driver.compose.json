@@ -69,9 +69,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_iszegwpd",
-      "_TZ3000_iszegwpd",
-      "_TZ3000_ISZEGWPD"
+      "_tz3000_iszegwpd"
     ],
     "productId": [
       "TS0601_scene6"
@@ -154,5 +152,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "scene_switch_6",
+  "version": "1.0.0"
 }

@@ -1,0 +1,8 @@
+{
+  "type": "mdns-sd",
+  "mdns-sd": {
+    "name": "ewelink",
+    "protocol": "tcp"
+  },
+  "id": "{{txt.id}}"
+}

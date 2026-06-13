@@ -88,7 +88,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
 
         // measure_battery and alarm_battery handler
         zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-            .on('attr.batteryPercentageRemaining', this.onBatteryPercentageRemainingAttributeReport.bind(this));
+            .on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
 
         // measure_luminance handler
         zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
@@ -107,7 +107,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
             
             if (batteryData && batteryData.batteryPercentageRemaining !== undefined) {
                 this.log('🔋 Found batteryPercentageRemaining:', batteryData.batteryPercentageRemaining);
-                this.onBatteryPercentageRemainingAttributeReport(batteryData.batteryPercentageRemaining);
+                this.handleBatteryPercentageReport(batteryData.batteryPercentageRemaining);
             }
             
             // Set up periodic battery reading since automatic reporting doesn't work
@@ -115,7 +115,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 try {
                     const battery = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
                     if (battery && battery.batteryPercentageRemaining !== undefined) {
-                        this.onBatteryPercentageRemainingAttributeReport(battery.batteryPercentageRemaining);
+                        this.handleBatteryPercentageReport(battery.batteryPercentageRemaining);
                     }
                 } catch (error) {
                     this.log('🔋 Periodic battery read failed:', error.message);
@@ -126,7 +126,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
             this.log('🔋 Initial battery read failed:', error.message);
             // Fallback: set battery from interview data
             this.log('🔋 Using fallback battery value from interview data (200 -> 100%)');
-            this.onBatteryPercentageRemainingAttributeReport(200);
+            this.handleBatteryPercentageReport(200);
         }
     }
 
@@ -137,7 +137,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
     }
 
     // Handle battery status attribute reports
-    onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
+    handleBatteryPercentageReport(batteryPercentageRemaining) {
         const batteryThreshold = this.getSetting('batteryThreshold') || 20;
         const batteryLevel = batteryPercentageRemaining / 2; // Convert to percentage
         this.log('🔋 Battery handler called! Raw value:', batteryPercentageRemaining, 'Converted:', batteryLevel, '%');

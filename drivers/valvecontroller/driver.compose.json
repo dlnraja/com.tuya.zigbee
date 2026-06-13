@@ -25,9 +25,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_j9568h44",
-      "_TZ3000_j9568h44",
-      "_TZ3000_J9568H44"
+      "_tz3000_j9568h44"
     ],
     "productId": [
       "TS0111",
@@ -56,5 +54,6 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

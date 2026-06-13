@@ -21,8 +21,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tyzb01_bngwdjsr",
-      "_TYZB01_BNGWDJSR"
+      "_tyzb01_bngwdjsr"
     ],
     "productId": [
       "TS1001"
@@ -62,5 +61,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "remote_dimmer",
+  "version": "1.0.0"
 }

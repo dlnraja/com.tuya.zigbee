@@ -14,9 +14,7 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_zloso4jk",
-      "_TZ3000_zloso4jk",
-      "_TZ3000_ZLOSO4JK"
+      "_tz3000_zloso4jk"
     ],
     "productId": [
       "TS0122"
@@ -282,5 +280,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "switch_plug_2",
+  "version": "1.0.0"
 }

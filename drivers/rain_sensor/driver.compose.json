@@ -36,26 +36,12 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_k1msavlx",
-      "_TZ3000_k1msavlx",
-      "_TZ3000_K1MSAVLX",
       "_tze200_u6x1zyv2",
-      "_TZE200_u6x1zyv2",
-      "_TZE200_U6X1ZYV2",
       "_tze204_u6x1zyv2",
-      "_TZE204_u6x1zyv2",
-      "_TZE204_U6X1ZYV2",
       "_tz3000_otwpdq1d",
-      "_TZ3000_otwpdq1d",
-      "_TZ3000_OTWPDQ1D",
       "_tze200_2pddnnrk",
-      "_TZE200_2pddnnrk",
-      "_TZE200_2PDDNNRK",
       "_tz3210_tgvtvdoc",
-      "_TZ3210_tgvtvdoc",
-      "_TZ3210_TGVTVDOC",
-      "_tz3210_p68kms0l",
-      "_TZ3210_p68kms0l",
-      "_TZ3210_P68KMS0L"
+      "_tz3210_p68kms0l"
     ],
     "productId": [
       "TS0207_rain",
@@ -71,13 +57,7 @@
           61184
         ]
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_u6x1zyv2",
-        "productId": "TS0601"
-      }
-    ]
+    }
   },
   "settings": [
     {
@@ -137,5 +117,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "rain_sensor",
+  "version": "1.0.0"
 }

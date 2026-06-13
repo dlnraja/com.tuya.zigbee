@@ -30,14 +30,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3210_fllyghyj",
-      "_TZ3210_fllyghyj",
-      "_TZ3210_FLLYGHYJ",
       "_tz3000_g8fjhjt5",
-      "_TZ3000_g8fjhjt5",
-      "_TZ3000_G8FJHJT5",
-      "_tz3000_8jtgjy0k",
-      "_TZ3000_8jtgjy0k",
-      "_TZ3000_8JTGJY0K"
+      "_tz3000_8jtgjy0k"
     ],
     "productId": [
       "TS0201",
@@ -75,5 +69,6 @@
         "en": "Press the reset button on the top of the unit for 10 seconds."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

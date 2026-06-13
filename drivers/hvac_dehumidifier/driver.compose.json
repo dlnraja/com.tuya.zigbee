@@ -60,26 +60,12 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_44xpctxy",
-      "_TZE200_44xpctxy",
-      "_TZE200_44XPCTXY",
       "_tze200_bgjfxh3o",
-      "_TZE200_bgjfxh3o",
-      "_TZE200_BGJFXH3O",
       "_tze200_qtbrwrfv",
-      "_TZE200_qtbrwrfv",
-      "_TZE200_QTBRWRFV",
       "_tze204_44xpctxy",
-      "_TZE204_44xpctxy",
-      "_TZE204_44XPCTXY",
       "_tze204_bgjfxh3o",
-      "_TZE204_bgjfxh3o",
-      "_TZE204_BGJFXH3O",
       "_tze204_oisqyl4o",
-      "_TZE204_oisqyl4o",
-      "_TZE204_OISQYL4O",
-      "_tze204_qtbrwrfv",
-      "_TZE204_qtbrwrfv",
-      "_TZE204_QTBRWRFV"
+      "_tze204_qtbrwrfv"
     ],
     "productId": [
       "TS0601_dehum",
@@ -367,5 +353,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "hvac_dehumidifier",
+  "version": "1.0.0"
 }

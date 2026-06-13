@@ -21,7 +21,7 @@ class smoke_sensor extends ZigBeeDevice {
 
       // measure_battery
       zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-        .on('attr.batteryPercentageRemaining', this.onBatteryPercentageRemainingAttributeReport.bind(this));
+        .on('attr.batteryPercentageRemaining', this.handleBatteryPercentageReport.bind(this));
     }
 
     onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
@@ -31,7 +31,7 @@ class smoke_sensor extends ZigBeeDevice {
       this.setCapabilityValue('alarm_tamper', zoneStatus.tamper).catch(this.error);
     }
 
-    onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
+    handleBatteryPercentageReport(batteryPercentageRemaining) {
       this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
       this.setCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
     }

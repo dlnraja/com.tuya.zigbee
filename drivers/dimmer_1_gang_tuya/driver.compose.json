@@ -34,10 +34,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tyzb01_qezuin6k",
-      "_TYZB01_QEZUIN6K",
-      "_tz3210_zxbtub8r",
-      "_TZ3210_zxbtub8r",
-      "_TZ3210_ZXBTUB8R"
+      "_tz3210_zxbtub8r"
     ],
     "productId": [
       "TS110F",
@@ -68,5 +65,6 @@
         "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

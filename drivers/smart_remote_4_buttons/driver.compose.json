@@ -34,8 +34,7 @@
   },
   "zigbee": {
     "productId": [
-      "TS0215A",
-      "TS0601"
+      "TS0215A"
     ],
     "endpoints": {
       "1": {
@@ -146,5 +145,6 @@
         "de": "Batterie"
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

@@ -27,11 +27,8 @@
   "zigbee": {
     "manufacturerName": [
       "tuyatec-lha8pbwd",
-      "TUYATEC-LHA8PBWD",
       "tuyatec-zn9wyqtr",
-      "TUYATEC-ZN9WYQTR",
-      "tuyatec-dxnohkpd",
-      "TUYATEC-DXNOHKPD"
+      "tuyatec-dxnohkpd"
     ],
     "productId": [
       "RH3040"
@@ -55,5 +52,6 @@
         "en": "Insert a pin into the single hole on the side of the device and press it gently for aprox 10 seconds until the LED blinks rapidly."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

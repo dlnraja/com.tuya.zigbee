@@ -39,7 +39,6 @@
       "_TZE200_placeholder_generic"
     ],
     "productId": [
-      "TS0601_air_purifier",
       "TS0601"
     ],
     "endpoints": {
@@ -218,5 +217,6 @@
       }
     }
   ],
-  "id": "device_air_purifier_humidifier"
+  "id": "device_air_purifier_humidifier",
+  "version": "1.0.0"
 }

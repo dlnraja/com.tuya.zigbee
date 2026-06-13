@@ -113,7 +113,9 @@ function buildFullIndex(driversDir) {
  */
 function extractAllFP(text, allMfrs, allPids) {
   const mfr = _vFP(text);
-  const pid = [...new Set((text || '').match(/\bTS[0-9]{4}[A-Z]?\b/g) || [])];
+  // v5.12.16: Also capture TS#### with underscore suffixes (TS0601_generic, TS0601_air_purifier etc.)
+  const pidRaw = (text || '').match(/\bTS[0-9]{4}[A-Z]?(?:_[a-zA-Z0-9]+)?\b/g) || [];
+  const pid = [...new Set(pidRaw)];
   // Check for known non-Tuya manufacturers in text
   for (const k of NON_TUYA_KNOWN) {
     if (text && text.includes(k) && !mfr.includes(k)) mfr.push(k);
@@ -123,14 +125,17 @@ function extractAllFP(text, allMfrs, allPids) {
     if (text && text.includes(p) && !pid.includes(p)) pid.push(p);
   }
   // If full index provided, also scan for any exact match of known mfrs/pids
+  // v5.12.16: Use case-insensitive matching so _tze200_abc matches _TZE200_ABC in DB
   if (allMfrs) {
+    const textLower = (text || '').toLowerCase();
     for (const m of allMfrs) {
-      if (m.length >= 4 && text && text.includes(m) && !mfr.includes(m)) mfr.push(m);
+      if (m.length >= 4 && text && (text.includes(m) || textLower.includes(m.toLowerCase())) && !mfr.includes(m)) mfr.push(m);
     }
   }
   if (allPids) {
+    const textLower2 = (text || '').toLowerCase();
     for (const p of allPids) {
-      if (p.length >= 4 && text && text.includes(p) && !pid.includes(p)) pid.push(p);
+      if (p.length >= 4 && text && (text.includes(p) || textLower2.includes(p.toLowerCase())) && !pid.includes(p)) pid.push(p);
     }
   }
   // Fuzzy match: find truncated FPs (e.g. _TZ3000_zgyzgd -> _TZ3000_zgyzgdua)
@@ -150,25 +155,46 @@ function extractAllFP(text, allMfrs, allPids) {
  */
 function fuzzyMatchFPs(extractedFPs, knownSet) {
   const results = [];
-  const known = [...knownSet].filter(k => k.length >= 10);
+  // v5.12.16: Lowered minimum from 10 to 8 to catch truncated _TZE200_XXX strings
+  const known = [...knownSet].filter(k => k.length >= 8);
   for (const fp of extractedFPs) {
     if (knownSet.has(fp)) continue;
-    if (fp.length < 10) continue;
-    
+    if (fp.length < 8) continue;
+
     // Ignore suspicious concatenations (e.g. _TZ3000_zutizvykts0203)
     const fpL = fp.toLowerCase();
     if (fpL.includes('ts0') && fp.length > 18) continue;
     if (/ts\d{4}/i.test(fpL.slice(-6))) continue;
     if ((fp.match(/_/g)||[]).length > 2) continue;
 
+    // 0. v5.12.16: Prefix-only match — user posted just the prefix like _TZE200_ (no suffix)
+    //    Match to ALL known FPs that share that prefix (report all, caller picks)
+    const prefixParts = fp.split('_');
+    if (prefixParts.length >= 2 && prefixParts[2] === '') {
+      const prefixKey = '_' + prefixParts[1] + '_';
+      const prefixMatches = known.filter(k => k.toLowerCase().startsWith(prefixKey.toLowerCase()));
+      for (const m of prefixMatches) {
+        if (!results.some(r => r.match === m)) results.push({original: fp, match: m});
+      }
+      if (results.length) continue;
+    }
+
     // 1. Prefix match: FP is start of a known FP (truncated in forum text)
-    const prefixCands = known.filter(k => k.startsWith(fp) && k.length - fp.length <= 4);
+    // v5.12.16: Increased tolerance from 4 to 8 chars for common truncations
+    const prefixCands = known.filter(k => k.startsWith(fp) && k.length - fp.length <= 8);
     if (prefixCands.length === 1) { results.push({original: fp, match: prefixCands[0]}); continue; }
+    if (prefixCands.length > 1 && prefixCands.length <= 5) {
+      // Multiple prefix matches — add all as fuzzy candidates
+      for (const m of prefixCands) {
+        if (!results.some(r => r.match === m)) results.push({original: fp, match: m});
+      }
+      continue;
+    }
     // 2. Reverse prefix: known is start of extracted (extra chars appended)
-    const revCands = known.filter(k => fp.startsWith(k) && fp.length - k.length <= 4);
+    const revCands = known.filter(k => fp.startsWith(k) && fp.length - k.length <= 8);
     if (revCands.length === 1) { results.push({original: fp, match: revCands[0]}); continue; }
     // 3. Same-length 1-char diff (typo/swap at end): _TZ3000_cehuw1l2 vs _TZ3000_cehuw1lw
-    if (fp.length >= 14) {
+    if (fp.length >= 12) {
       const prefix = fp.substring(0, fp.length - 2);
       const samePrefixCands = known.filter(k => k.length === fp.length && k.startsWith(prefix));
       if (samePrefixCands.length === 1) { results.push({original: fp, match: samePrefixCands[0]}); continue; }

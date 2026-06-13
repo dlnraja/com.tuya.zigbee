@@ -21,9 +21,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_mce9kjpm",
-      "_TZE200_mce9kjpm",
-      "_TZE200_MCE9KJPM"
+      "_tze200_mce9kjpm"
     ],
     "productId": [
       "TS0601_hcho",
@@ -99,5 +97,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "formaldehyde_sensor",
+  "version": "1.0.0"
 }

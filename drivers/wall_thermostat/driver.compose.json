@@ -17,14 +17,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_aoclfnxz",
-      "_TZE200_aoclfnxz",
-      "_TZE200_AOCLFNXZ",
       "_tze204_aoclfnxz",
-      "_TZE204_aoclfnxz",
-      "_TZE204_AOCLFNXZ",
-      "_tze200_ekd8x5dt",
-      "_TZE200_ekd8x5dt",
-      "_TZE200_EKD8X5DT"
+      "_tze200_ekd8x5dt"
     ],
     "productId": [
       "TS0601"
@@ -52,10 +46,15 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/my_driver/assets/icon.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Press the arrow down button for 8s when the thermostat is off."
       }
     }
-  }
+  },
+  "id": "wall_thermostat",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

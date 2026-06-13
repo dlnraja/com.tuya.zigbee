@@ -25,9 +25,7 @@
       }
     },
     "manufacturerName": [
-      "_tz3000_qkixdnon",
-      "_TZ3000_qkixdnon",
-      "_TZ3000_QKIXDNON"
+      "_tz3000_qkixdnon"
     ],
     "endpoints": {
       "1": {
@@ -619,5 +617,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "switch",
+  "version": "1.0.0"
 }

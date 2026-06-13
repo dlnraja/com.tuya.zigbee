@@ -63,7 +63,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZE200_placeholder_generic"
+    ]
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",
@@ -93,5 +95,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "device_floor_heating",
+  "version": "1.0.0"
 }

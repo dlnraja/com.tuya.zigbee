@@ -128,19 +128,9 @@
         ]
       }
     },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZ3000_abrsvsou",
-        "productId": "TS004F"
-      }
-    ],
     "manufacturerName": [
       "_TZ3000_BI6LPSEW",
-      "_TZ3000_FVH3PJAZ",
-      "_TZ3000_bi6lpsew",
-      "_TZ3000_fvh3pjaz",
-      "_tz3000_bi6lpsew",
-      "_tz3000_fvh3pjaz"
+      "_TZ3000_FVH3PJAZ"
     ]
   },
   "images": {
@@ -472,5 +462,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "button_wireless_4",
+  "version": "1.0.0"
 }

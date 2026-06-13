@@ -122,7 +122,11 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZE200_placeholder_generic",
+      "_TZ3000_u3nv1jwk",
+      "_TZ3000_wkai4ga5"
+    ]
   },
   "images": {
     "small": "/drivers/button_wireless_4/assets/images/small.png",
@@ -453,5 +457,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "remote_button_wireless_handheld",
+  "version": "1.0.0"
 }

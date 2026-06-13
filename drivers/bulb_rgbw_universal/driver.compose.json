@@ -71,19 +71,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_inejxewm",
-      "_TZ3000_inejxewm",
-      "_TZ3000_INEJXEWM",
       "_tz3000_hhbizuqb",
-      "_TZ3000_hhbizuqb",
-      "_TZ3000_HHBIZUQB",
       "_tz3000_i5gv74od",
-      "_TZ3000_i5gv74od",
-      "_TZ3000_I5GV74OD",
       "_tyzb01_freedyfyq",
-      "_TYZB01_FREEDYFYQ",
-      "_tz3210_sroezl0k",
-      "_TZ3210_sroezl0k",
-      "_TZ3210_SROEZL0K"
+      "_tz3210_sroezl0k"
     ],
     "productId": [
       "TS0505B",
@@ -326,5 +317,6 @@
         "fr": "Baisse l'intensitÃ© lors de l'allumage nocturne"
       }
     }
-  ]
+  ],
+  "version": "1.0.0"
 }

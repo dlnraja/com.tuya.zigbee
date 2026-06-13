@@ -28,26 +28,7 @@
   },
   "zigbee": {
     "productId": [
-      "CK-BL702-MWS-01",
-      "CK-BL702-MWS-01(7016)",
-      "MG1_5RZ",
-      "SZLMR10",
-      "TS0203",
-      "TS0225",
-      "TS0601",
-      "ZG-204ZH",
-      "ZG-204ZK",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZV",
-      "ZG-205Z",
-      "ZP-301Z",
-      "SNZB-06P",
-      "ZG-204ZE",
-      "ZG-204ZQ",
-      "ZG-205ZL",
-      "ZG-302ZL",
-      "ZG-302ZM"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -71,6 +52,9 @@
         "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZE200_placeholder_generic"
+    ]
+  },
+  "version": "1.0.0"
 }

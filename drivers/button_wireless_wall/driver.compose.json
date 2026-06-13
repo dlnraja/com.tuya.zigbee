@@ -51,9 +51,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_yodvhg4y",
-      "_TZ3000_yodvhg4y",
-      "_TZ3000_YODVHG4Y"
+      "_tz3000_yodvhg4y"
     ],
     "productId": [
       "TS0041",
@@ -568,5 +566,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "button_wireless_wall"
+  "id": "button_wireless_wall",
+  "version": "1.0.0"
 }

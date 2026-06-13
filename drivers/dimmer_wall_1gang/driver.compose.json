@@ -46,13 +46,7 @@
       "_TZ3000_",
       "_TZ3210_",
       "_TZE200_",
-      "_TZE200_4mh6tyyo",
-      "_TZE204_dcnsggvz",
-      "_tz3000_",
-      "_tz3210_",
-      "_tze200_",
-      "ts110e",
-      "ts110f"
+      "_TZE204_dcnsggvz"
     ]
   },
   "settings": [
@@ -367,5 +361,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "dimmer_wall_1gang",
+  "version": "1.0.0"
 }

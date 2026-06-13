@@ -32,6 +32,7 @@ env:
 
 jobs:
   quality:
+    if: false # DISABLED — redundant, unified-ci.yml covers all validation
     name: 🔧 Quality Checks
     runs-on: ubuntu-latest
     timeout-minutes: 10

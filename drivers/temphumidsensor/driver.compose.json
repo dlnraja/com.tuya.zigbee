@@ -38,7 +38,29 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "tuyatec-1g3tawnp",
+      "tuyatec-1uxx9cci",
+      "tuyatec-gqhxixyk",
+      "tuyatec-haoiuwzy",
+      "tuyatec-ojmxeikg",
+      "tuyatec-ojmxeikq",
+      "tuyatec-qun7vq14",
+      "tuyatec-riuj5xzs",
+      "tuyatec-v3uxbuxy",
+      "tuyatec-vmgh3fxd",
+      "_tz3000_jnhu1llv",
+      "tuyatec-g3gl6cgy",
+      "tuyatec-bfq2i2sy",
+      "tuyatec-abkehqus",
+      "tuyatec-yg5dcbfu",
+      "tuyatec-prhs1rsd",
+      "_tz3000_i8jfiezr",
+      "_tz3000_bguser20",
+      "_tz3000_8ybe88nf",
+      "_tz3000_fie1dpkm",
+      "_tz3000_f2bw0b6k"
+    ]
   },
   "images": {
     "small": "/drivers/temphumidsensor/assets/images/small.png",
@@ -88,5 +110,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "temphumidsensor",
+  "version": "1.0.0"
 }

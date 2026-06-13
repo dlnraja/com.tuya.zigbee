@@ -34,20 +34,13 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_do6txrcw",
-      "_TZ3000_do6txrcw",
-      "_TZ3000_DO6TXRCW",
       "zg-106z",
-      "ZG-106Z",
       "_tze200_dwcarsat",
-      "_TZE200_dwcarsat",
-      "_TZE200_DWCARSAT",
       "_tyzb01_jvsojrqx",
-      "_TYZB01_JVSOJRQX",
       "_tze200_jsaqgakf",
-      "_TZE200_jsaqgakf",
-      "_TZE200_JSAQGAKF",
       "ts0222",
-      "TS0222"
+      "_TZE284_zofmmt9s",
+      "_TZE204_hewlydpz"
     ],
     "productId": [
       "TS0222",
@@ -630,5 +623,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "sensor_illuminance_presence",
+  "version": "1.0.0"
 }

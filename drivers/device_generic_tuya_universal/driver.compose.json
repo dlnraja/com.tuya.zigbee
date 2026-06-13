@@ -45,49 +45,27 @@
   "zigbee": {
     "manufacturerName": [
       "aqara",
-      "AQARA",
       "aubess",
-      "AUBESS",
       "avatto",
-      "AVATTO",
       "blitzwolf",
-      "BLITZWOLF",
       "bw-",
-      "BW-",
       "girier",
-      "GIRIER",
       "heiman",
-      "HEIMAN",
       "ikea",
-      "IKEA",
       "lidl",
-      "LIDL",
       "lonsonho",
-      "LONSONHO",
       "lumi",
-      "LUMI",
       "nas-",
-      "NAS-",
       "neo",
-      "NEO",
       "philips",
-      "PHILIPS",
       "signify",
-      "SIGNIFY",
       "silvercrest",
-      "SILVERCREST",
       "smartthings",
-      "SMARTTHINGS",
       "tradfri",
-      "TRADFRI",
       "tuya",
-      "TUYA",
       "woox",
-      "WOOX",
       "xiaomi",
-      "XIAOMI",
-      "zemismart",
-      "ZEMISMART"
+      "zemismart"
     ],
     "productId": [
       "TS0203",
@@ -171,5 +149,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "device_generic_tuya_universal",
+  "version": "1.0.0"
 }

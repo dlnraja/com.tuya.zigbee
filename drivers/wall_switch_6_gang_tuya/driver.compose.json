@@ -26,11 +26,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_r731zlxk",
-      "_TZE200_r731zlxk",
-      "_TZE200_R731ZLXK",
-      "_tze200_9mahtqtg",
-      "_TZE200_9mahtqtg",
-      "_TZE200_9MAHTQTG"
+      "_tze200_9mahtqtg"
     ],
     "productId": [
       "TS0601"
@@ -132,5 +128,6 @@
         "en": "Six tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

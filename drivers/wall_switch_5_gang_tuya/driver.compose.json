@@ -25,12 +25,10 @@
   },
   "zigbee": {
     "productId": [
-      "TS0001",
       "TS0011",
       "TS0001_power",
       "TS0001_switch",
       "TS0001_switch_module",
-      "TS0601",
       "TS000F",
       "ZBMINI",
       "ZBMINIL2",
@@ -47,7 +45,6 @@
       "ZG-302Z1",
       "TS0101",
       "TS4100",
-      "TS011F",
       "ZBM5-2C-120",
       "ZBM5-3C-120",
       "TS0726"
@@ -137,5 +134,6 @@
     "manufacturerName": [
       "_TZE200_placeholder_generic"
     ]
-  }
+  },
+  "version": "1.0.0"
 }

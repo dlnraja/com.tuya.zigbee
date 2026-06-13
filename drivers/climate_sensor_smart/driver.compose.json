@@ -260,5 +260,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "climate_sensor_smart"
+  "id": "climate_sensor_smart",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

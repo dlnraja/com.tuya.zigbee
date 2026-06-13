@@ -23,7 +23,7 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/radiator_controller/assets/learnmode.svg",
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly",
         "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
@@ -31,17 +31,9 @@
     },
     "manufacturerName": [
       "_tze204_2ekuz3dz",
-      "_TZE204_2ekuz3dz",
-      "_TZE204_2EKUZ3DZ",
       "_tze200_eekpf0ft",
-      "_TZE200_eekpf0ft",
-      "_TZE200_EEKPF0FT",
       "_tze200_pcdmj88b",
-      "_TZE200_pcdmj88b",
-      "_TZE200_PCDMJ88B",
-      "_tze200_3regm3h6",
-      "_TZE200_3regm3h6",
-      "_TZE200_3REGM3H6"
+      "_tze200_3regm3h6"
     ]
   },
   "images": {
@@ -550,5 +542,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "radiator_controller",
+  "version": "1.0.0"
 }

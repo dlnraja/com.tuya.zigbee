@@ -47,11 +47,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_fa9mlvja",
-      "_TZ3000_fa9mlvja",
-      "_TZ3000_FA9MLVJA",
-      "_tz3000_qgwcxxws",
-      "_TZ3000_qgwcxxws",
-      "_TZ3000_QGWCXXWS"
+      "_tz3000_qgwcxxws"
     ],
     "productId": [
       "TS0041",
@@ -389,5 +385,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "button_wireless_smart",
+  "version": "1.0.0"
 }

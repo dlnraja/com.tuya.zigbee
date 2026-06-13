@@ -506,5 +506,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "air_purifier_dimmer"
+  "id": "air_purifier_dimmer",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

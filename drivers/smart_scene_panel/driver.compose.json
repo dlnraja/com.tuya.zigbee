@@ -42,11 +42,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze284_ibnz7orz",
-      "_TZE284_ibnz7orz",
-      "_TZE284_IBNZ7ORZ",
-      "_tze284_rlytpmij",
-      "_TZE284_rlytpmij",
-      "_TZE284_RLYTPMIJ"
+      "_tze284_rlytpmij"
     ],
     "productId": [
       "TS0601"
@@ -128,5 +124,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "smart_scene_panel",
+  "version": "1.0.0"
 }

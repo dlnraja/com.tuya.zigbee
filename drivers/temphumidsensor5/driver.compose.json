@@ -29,12 +29,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_jnhu1llv",
-      "_TZ3000_jnhu1llv",
-      "_TZ3000_JNHU1LLV",
-      "_tz3000_i8jfiezr",
-      "_TZ3000_i8jfiezr",
-      "_TZ3000_I8JFIEZR"
+      "_TZE200_placeholder_generic"
     ],
     "productId": [
       "TY0201",
@@ -65,5 +60,6 @@
         "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

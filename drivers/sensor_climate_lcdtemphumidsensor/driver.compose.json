@@ -651,5 +651,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "sensor_climate_lcdtemphumidsensor"
+  "id": "sensor_climate_lcdtemphumidsensor",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

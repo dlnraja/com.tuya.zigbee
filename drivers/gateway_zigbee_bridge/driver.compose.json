@@ -26,9 +26,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_o1jzcxou",
-      "_TZ3000_o1jzcxou",
-      "_TZ3000_O1JZCXOU"
+      "_tz3000_o1jzcxou"
     ],
     "productId": [
       "TS0601_gw"
@@ -315,5 +313,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "gateway_zigbee_bridge",
+  "version": "1.0.0"
 }

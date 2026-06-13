@@ -25,9 +25,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_spyvfeti",
-      "_TZE200_spyvfeti",
-      "_TZE200_SPYVFETI"
+      "_tze200_spyvfeti"
     ],
     "productId": [
       "TS0601"
@@ -46,17 +44,7 @@
           6
         ]
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_khah2lkr",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE200_spyvfeti",
-        "productId": "TS0601"
-      }
-    ]
+    }
   },
   "settings": [
     {
@@ -322,5 +310,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "device_radiator_valve_smart",
+  "version": "1.0.0"
 }

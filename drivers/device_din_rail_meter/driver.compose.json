@@ -21,7 +21,6 @@
   "energy": {},
   "zigbee": {
     "productId": [
-      "TS0601",
       "TS0001",
       "TS0002",
       "TS011F"
@@ -41,7 +40,9 @@
         ]
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZE200_placeholder_generic"
+    ]
   },
   "settings": [
     {
@@ -308,5 +309,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "device_din_rail_meter",
+  "version": "1.0.0"
 }

@@ -411,5 +411,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "air_purifier_soil"
+  "id": "air_purifier_soil",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

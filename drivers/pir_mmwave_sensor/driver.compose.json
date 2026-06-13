@@ -28,11 +28,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_3towulqd",
-      "_TZE200_3towulqd",
-      "_TZE200_3TOWULQD",
-      "_tze204_3towulqd",
-      "_TZE204_3towulqd",
-      "_TZE204_3TOWULQD"
+      "_tze204_3towulqd"
     ],
     "productId": [
       "TS0225",
@@ -63,5 +59,6 @@
         "en": "Press the reset button for aprox 5 seconds until the LED blinks."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

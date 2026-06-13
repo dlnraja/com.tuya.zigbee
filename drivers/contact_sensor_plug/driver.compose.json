@@ -856,5 +856,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "contact_sensor_plug"
+  "id": "contact_sensor_plug",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

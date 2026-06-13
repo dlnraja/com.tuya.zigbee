@@ -46,9 +46,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_kjfzuycl",
-      "_TZ3000_kjfzuycl",
-      "_TZ3000_KJFZUYCL"
+      "_tz3000_kjfzuycl"
     ],
     "productId": [
       "TS0601"
@@ -552,5 +550,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "remote_button_wireless_smart"
+  "id": "remote_button_wireless_smart",
+  "version": "1.0.0"
 }

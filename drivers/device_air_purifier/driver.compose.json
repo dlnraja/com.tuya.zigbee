@@ -25,9 +25,7 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
-      "TS0601_air_purifier",
       "TS0601"
     ],
     "endpoints": {
@@ -37,7 +35,10 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
   },
   "images": {
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
@@ -237,5 +238,6 @@
       }
     }
   ],
-  "id": "device_air_purifier"
+  "id": "device_air_purifier",
+  "version": "1.0.0"
 }

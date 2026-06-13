@@ -34,9 +34,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_bj9m6v91",
-      "_TZE200_bj9m6v91",
-      "_TZE200_BJ9M6V91"
+      "_tze200_bj9m6v91"
     ],
     "productId": [
       "TS0225",
@@ -618,5 +616,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "sensor_motion_presence",
+  "version": "1.0.0"
 }

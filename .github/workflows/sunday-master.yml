@@ -4,6 +4,10 @@
 
 name: "Sunday Master Automation"
 
+# <!-- badges:start -->
+# [![Sunday Master](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sunday-master.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/sunday-master.yml)
+# <!-- badges:end -->
+
 on:
   schedule:
     - cron: '0 7 * * 0'
@@ -39,18 +43,6 @@ jobs:
       version: ${{ steps.s.outputs.version }}
       drivers: ${{ steps.s.outputs.drivers }}
       fps: ${{ steps.s.outputs.fps }}
-    env:
-      # === AI providers — circular chain (ai-helper.js) ===
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
 
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
@@ -77,6 +69,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run triage
         env:
@@ -101,6 +94,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run triage
         env:
@@ -123,6 +117,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Full fork verification (clusters+flows+DPs+caps+FPs)
         id: fork_scan
@@ -176,6 +171,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run gap detection
         run: node .github/scripts/cross-driver-gap.js
@@ -190,6 +186,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - uses: actions/cache@a7833574556fa59680c1b7cb190c1735db73ebf0 # v4
         with:
@@ -242,6 +239,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Gmail diagnostics
         continue-on-error: true
@@ -264,6 +262,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run device diagnostics
         continue-on-error: true
@@ -282,6 +281,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "11-source scan (Z2M+ZHA+Blakadder+deCONZ+Hubitat+HOMEd+SmartThings+HA Forum+Local)"
         continue-on-error: true
@@ -300,6 +300,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Scan GitHub activity
         continue-on-error: true
@@ -320,6 +321,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Manage issues
         continue-on-error: true
@@ -347,6 +349,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Scrape forum activity
         continue-on-error: true
@@ -368,6 +371,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Scan JohanBendz
         continue-on-error: true
@@ -386,6 +390,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Comprehensive scan (forks+PRs+issues)
         continue-on-error: true
@@ -408,6 +413,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Scan Tuya ecosystem repos (Drenso, jurgenheine, heszegi, rebtor, forks)"
         continue-on-error: true
@@ -425,6 +431,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Spam scan
         continue-on-error: true
@@ -454,6 +461,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Pattern Detector (feed resolver)"
         continue-on-error: true
@@ -492,6 +500,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "DP-aware enrichment with device functionality profiles"
         continue-on-error: true
@@ -517,6 +526,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Deep classify FPs via Z2M/Blakadder/CompScan"
         continue-on-error: true
@@ -539,6 +549,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Auto-discover variants + PIDs from Z2M/Blakadder/GitHub"
         continue-on-error: true
@@ -561,6 +572,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Deep research ALL open PRs/issues variants+PIDs"
         continue-on-error: true
@@ -583,6 +595,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Cross-reference ALL sources + AI device implementation"
         continue-on-error: true
@@ -635,6 +648,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Run AI Battle (multi-AI + all sources)"
         continue-on-error: true
@@ -675,6 +689,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Generate AI Changelog
         continue-on-error: true
@@ -707,6 +722,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: "Update forum thread #140352"
         continue-on-error: true
@@ -726,6 +742,7 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
 
       # Tier 1: Browser automation (Puppeteer) — the ONLY reliable method

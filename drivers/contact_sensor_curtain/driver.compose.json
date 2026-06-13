@@ -562,5 +562,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "contact_sensor_curtain"
+  "id": "contact_sensor_curtain",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -31,9 +31,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_tk3s5tyg",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_TK3S5TYG"
+      "_tz3000_tk3s5tyg"
     ],
     "productId": [
       "TS0041"
@@ -118,5 +116,6 @@
         "de": "Batterie"
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

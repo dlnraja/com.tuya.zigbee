@@ -185,5 +185,10 @@
         "nl": "Controleer op OTA-updates"
       }
     }
+  ],
+  "id": "universal_fallback",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
   ]
 }

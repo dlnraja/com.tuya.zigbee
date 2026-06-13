@@ -1,6 +1,11 @@
 # Auto Publish - Official Athom Actions (NO CLI)
 # Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
 name: Auto Publish
+
+# <!-- badges:start -->
+# [![Auto Publish](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/publish.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/publish.yml)
+# <!-- badges:end -->
+
 on:
   workflow_dispatch:
     inputs:
@@ -88,8 +93,10 @@ jobs:
 
       - name: Check HOMEY_PAT
         id: pat
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+          if [ -n "$HOMEY_PAT" ]; then
             echo "ok=true" >> $GITHUB_OUTPUT
           else
             echo "ok=false" >> $GITHUB_OUTPUT

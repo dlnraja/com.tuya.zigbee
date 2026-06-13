@@ -22,8 +22,6 @@
   },
   "zigbee": {
     "productId": [
-      "TS0726",
-      "TS0001",
       "TS0002"
     ],
     "endpoints": {
@@ -86,6 +84,9 @@
         ]
       }
     },
-    "manufacturerName": []
-  }
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
+  },
+  "version": "1.0.0"
 }

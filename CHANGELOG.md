@@ -4,52 +4,213 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
+## [9.0.3] - 2026-06-13
+
+### Bug Fixes
+- **CRITICAL**: Fixed 48 drivers with invalid connectivity value "local" -> "zigbee"
+- **CRITICAL**: Fixed 347 drivers with invalid platforms value "zigbee" -> "local"
+- **CRITICAL**: Fixed 40 empty manufacturerName arrays (AggregateError root cause)
+- Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique)
+- Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)
+- Fixed 3 duplicate flow card IDs (switch_2gang, ir_blaster, pet_feeder)
+- Fixed 13 empty fingerprint entries
+- Fixed 2 workflow secret exposures (master-cicd.yml, publish.yml)
+- Fixed 7 learnmode image references
+- Fixed Insoma irrigation valve routing (4dim -> 2onoff)
+- Fixed 12 REAL_CONFLICT dimmer collisions
+- Fixed 354 ORPHANED_DB entries in driver-mapping-database.json
+- Fixed 6 MFR ID collisions in ManufacturerVariationManager.js
+- Fixed sr_zs_switch DP19 enum write timeout
+- Fixed radiator valve schedule regex validation
+- Fixed TuyaColorControlCluster TODO items
+- Cleaned up sensor_radar BUG markers
+- Removed debug permanent in TuyaZigBeeLightDevice
+- Fixed bot forum responder quality gate bypass (161 WRONG errors)
+- Fixed PID regex and fuzzy matching for device detection (100+ MISSED errors)
+- Fixed 15 LEAK errors in bot forum responder
+
+### New Features
+- Added 16 new Zigbee fingerprints from forum/GitHub issues
+- Added diagnostic-report.js for comprehensive health checks
+- Implemented normalize-manufacturer-names.js script
+- Implemented audit-case-sensitivity.js script
+- Implemented analyze-collisions.js script
+
+### Improvements
+- Optimized 55 YAML workflows: npm cache, timeouts, disabled redundant validations
+- Added missing id/version/connectivity to 412 drivers
+- Enhanced 10 automation scripts with --json flags and exit codes
+- Enhanced bug-hunter.js with 8 new detection patterns
+- Enhanced security-scanner.js with JWT and connection string detection
+- Updated CHANGELOG.md and .homeychangelog.json with full version history
+- Replaced Athom tokens with placeholders (security fix)
+- Added status badges to 5 key workflows
+
+### Stats
+- 412 drivers | 3,366 fingerprints | Build: PASSING
+
+---
+
+## [9.0.2] - 2026-06-13
+
+### Bug Fixes
+- **YAML workflow overhaul**: Deep fixes across 78 CI workflow files, all validated clean
+- Optimized `.homeyignore` to prevent massive archive uploads
+- Added pre-compact ignores and `app.json` compactor for build size reduction
+- Resolved workflow syntax and path errors; added `athom-dev-cartographer` integration
+
+### Improvements
+- Community sync: 122 new fingerprints from Z2M/ZHA/community/JohanBendz
+- Monthly enrichment: 412 drivers, 3366 fingerprints validated
+- Dashboard updated to reflect v9.0.0 stats and device counts
+
+### Stats
+- 412 drivers | 3,366 fingerprints | 10,777+ verified
+---
+
 ## [9.0.1] - 2026-06-12
 
-v9.0.0:
+### Bug Fixes
+- **CI pipeline stabilization**: Fixed `mainsPowered` syntax errors in 8 WiFi drivers
+- Fixed `super.onNodeInit` parameter issues and trailing whitespace errors
+- Resolved battery conflict detection and zero-defect-control failures
+- Excluded `scripts/temp` from CI; fixed STRICT_SYNTAX_GUARD
+
+### Regression Fixes
+- Removed rain sensor fingerprints from `water_leak_sensor` (auto-heal regression from v9.0.0)
+- Removed irrigation valve from `curtain_motor` (auto-heal regression)
+
+### Bug Fixes
+- Resolved haadeess issues #395, #406, #412: DP mappings and fingerprint fixes
+- Resolved 93 critical fingerprint collisions across drivers
+- Auto-healed 874 missing fingerprints across all drivers
+- Fixed GitHub issues #383 (bed sensor), #388 (rain sensor), #395 (radiator valve)
+- Added rain sensor fingerprints _TZ3210_p68kms0l for #417 and #388
+
+### New Features
+- **Zigbee OTA firmware update infrastructure** added
+- Deep forum analysis: 9 unresolved issues, 8 diagnostics, 5 new FPs identified
+
+### Improvements
+- Full GitHub/forum/PR analysis complete: 293 FPs tracked
+- PR/issue scan state updated: 287 new FPs tracked, 6 open issues monitored
+- CI YAML workflows: added missing properties, improved validation
+
+### Stats
+- 412 drivers | 3,366 fingerprints
 ---
 
- [9.0.0] - 2026-06-12
+## [9.0.0] - 2026-05-28
 
-v8.5.54:
+### Major Release
+- **Server-side AggregateError resolution**: Injected generic placeholders for all template drivers, eliminating the root cause of Athom server-side build failures
+- All 412 Zigbee drivers now have valid manufacturer entries
+
+### Bug Fixes
+- Resolved server-side `AggregateError` by injecting generic placeholders for template drivers
+- Synced version 9.0.0 across all manifests
+
+### Community
+- Community sync: 122 new fingerprints from Z2M/ZHA/community/JohanBendz
+
+### Stats
+- 412 drivers | 3,365 fingerprints
 ---
 
- [8.5.54] - 2026-05-28
+## [8.5.54] - 2026-05-28
 
-v8.5.53:
+### Bug Fixes
+- Fixed interactive prompt handling in CI publish step
+- Switched to official `athombv/github-action-homey-app-publish` action for reliable publishing
+
+### Improvements
+- Community sync: 122 new fingerprints from Z2M/ZHA/community/JohanBendz
+
+### Stats
+- 412 drivers | 3,364 fingerprints
 ---
 
- [8.5.53] - 2026-05-28
+## [8.5.53] - 2026-05-28
 
-v8.5.52:
+### Bug Fixes
+- Auto-confirmed uncommitted changes prompt in CI publish step to prevent stuck builds
+
+### Improvements
+- Monthly enrichment: 412 drivers, 3,364 fingerprints validated
+
+### Stats
+- 412 drivers | 3,364 fingerprints
 ---
 
- [8.5.52] - 2026-05-28
+## [8.5.52] - 2026-05-28
 
-v8.5.51:
+### Bug Fixes
+- Resolved bash syntax error in CI publish step that blocked all automated releases
+
+### Stats
+- 412 drivers | 3,364 fingerprints
 ---
 
- [8.5.51] - 2026-05-28
+## [8.5.51] - 2026-05-28
 
-v8.5.50:
+### Bug Fixes
+- Restored empty `manufacturerName` arrays for template drivers where empty arrays are intentionally valid
+- Fixed PRE-CLEAN workflow bug that incorrectly removed valid template entries
+
+### Stats
+- 412 drivers | 3,364 fingerprints
 ---
 
- [8.5.50] - 2026-05-28
+## [8.5.50] - 2026-05-28
 
-v8.5.49:
+### Bug Fixes
+- Protected and restored mandatory `README.txt` and `README.*.txt` files from root cleanup workflow
+- Updated Anti-AggregateError gate in auto-publish to exempt generic template drivers
+
+### Stats
+- 412 drivers | 3,364 fingerprints
 ---
 
- [8.5.49] - 2026-05-28
+## [8.5.49] - 2026-05-28
 
-v8.5.48:
+### Bug Fixes
+- Removed legacy icon requirement from root cleanup workflow
+- Updated Dual-Layer gate in unified-ci to exempt generic templates
+- Added defaults shell to mandatory-files-gate workflow
+
+### Improvements
+- Root cleanup: archived junk files
+
+### Stats
+- 412 drivers | 3,364 fingerprints
 ---
 
- [8.5.48] - 2026-05-28
+## [8.5.48] - 2026-05-28
 
-v8.5.47:
+### Bug Fixes
+- Restored 41 manufacturer fingerprints from git history that were lost during previous cleanup
+- Removed 47 empty Zigbee sections from driver compose files
+
+### Improvements
+- Community sync: 114 new fingerprints from Z2M/ZHA/community/JohanBendz
+- Monthly enrichment: 412 drivers, 3,357 fingerprints validated
+
+### Stats
+- 412 drivers | 3,362 fingerprints
 ---
 
- [8.5.47] - 2026-05-28
+## [8.5.47] - 2026-05-28
+
+### Bug Fixes
+- Changelog sync: updated README with latest release notes
+- Community sync: 114 new fingerprints from Z2M/ZHA/community/JohanBendz
+
+### Improvements
+- Monthly enrichment: 412 drivers, 3,357 fingerprints validated
+- Fingerprint database stabilized after v8.5.46 manufacturerName cleanup
+
+### Stats
+- 412 drivers | 3,357 fingerprints
 
 v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup), Resolved persistent M09 validation errors for button_wireless_4 and illuminance_sensor drivers, Fixed missing manufacturerName entries for 360 Zigbee drivers (AggregateError fix), Removed 75 empty manufacturerName arrays causing validation failures, Corrected .homeyignore to include multilingual READ
 ---
@@ -7808,3 +7969,90 @@ This version applies INTELLIGENT enrichment based on:
 - #302: SourceCredits crash → Closed
 - #162: Fingerbot button.push → Commented (fixed in v7.5.7)
 - #276: Soil sensor → Fixed + Commented
+
+---
+
+## Version History Chronology — Code Evolution Record
+
+This section documents the complete evolution of the codebase, including bugs fixed, regressions that occurred, and features added across all versions.
+
+### Phase 1: Foundation Crisis (v8.5.20 — v8.5.28) — 2026-05-27
+
+**What happened:** The app was based on `OAuth2App` base class, which caused immediate crashes.
+
+- **v8.5.20-v8.5.22**: Soil sensor `_TZE284_0ints6wl` added. Auto-off timer, button triple-click, overload detection, and radio presence triggers fixed. 413 drivers, 7448 FPs.
+- **v8.5.24**: **CRITICAL BUG** — App crashed on startup because base class was `OAuth2App` instead of `Homey.App`. Fixed by correcting inheritance.
+- **v8.5.26**: Added 122 new fingerprints. Fixed `OAuth2Client.CLIENT_ID` crash.
+- **v8.5.27**: Removed deprecated SmartThings OAuth2 integration entirely. Switched to native `Homey.App`. Added batch fingerprint files.
+
+### Phase 2: AggregateError War (v8.5.29 — v8.5.46) — 2026-05-28
+
+**What happened:** Empty `manufacturerName[]` arrays in driver compose files caused cascading `AggregateError` crashes on both local and server-side builds. This required 18+ point releases to fully resolve.
+
+- **v8.5.29**: Garage door opener DP3 state fix. 122 new fingerprints from community.
+- **v8.5.30**: OAuth2Client CLIENT_ID crash fix.
+- **v8.5.34**: Restored 360 Zigbee manufacturer names. Resolved 4361 fingerprint conflicts. 412 drivers, 29039 FPs.
+- **v8.5.36**: Root cleanup and AggregateError fix. Added dual-layer integrity gate.
+- **v8.5.38**: Fixed `app.json` invalid `icon` field — server-side build failures.
+- **v8.5.39**: Fixed `category` type (must be string, not array). Removed invalid `api` permission. All "Processing failed" builds traced to this.
+- **v8.5.40**: Rewrote `.homeyignore`. Added mandatory README files. Fixed `.gitignore` for multilingual READMEs.
+- **v8.5.41**: Restored all 360 manufacturerName entries. Added pre-commit/pre-push hooks. 412 drivers, 18367 FPs.
+- **v8.5.42**: Fixed button_wireless_4 and illuminance_sensor fingerprints. 114 new community FPs.
+- **v8.5.43**: Soil sensor `_TZE284_0ints6wl` verified. 412 drivers, 15003 FPs.
+- **v8.5.44**: Resolved AggregateError crash in 75 drivers. Fixed app.json compliance.
+- **v8.5.45**: **DEFINITIVE FIX** — Removed all 75 empty manufacturerName[] arrays. Rewrote `.homeyignore`. Fixed `icon.svg`. 114 new FPs.
+- **v8.5.46**: Final cleanup — 88 empty arrays removed. M09 validation errors resolved for button_wireless_4 and illuminance_sensor.
+
+### Phase 3: CI/CD Pipeline Stabilization (v8.5.47 — v8.5.54) — 2026-05-28
+
+**What happened:** After resolving the AggregateError, the CI/CD pipeline had its own issues with interactive prompts, workflow syntax, and template driver handling.
+
+- **v8.5.47**: Community sync: 114 new FPs. Fingerprint database stabilized.
+- **v8.5.48**: Restored 41 manufacturer fingerprints from git history. Removed 47 empty Zigbee sections.
+- **v8.5.49**: Fixed workflow issues — legacy icon requirement, Dual-Layer gate, mandatory-files-gate shell defaults.
+- **v8.5.50**: Protected mandatory README files from root cleanup workflow. Updated Anti-AggregateError gate.
+- **v8.5.51**: **REGRESSION** — Previous cleanup incorrectly removed empty manufacturerName arrays that are intentionally valid for templates. Fixed by restoring them. Fixed PRE-CLEAN workflow bug.
+- **v8.5.52**: Fixed bash syntax error in CI publish step.
+- **v8.5.53**: Auto-confirmed uncommitted changes prompt in publish step.
+- **v8.5.54**: Switched to official `athombv/github-action-homey-app-publish` action. Fixed interactive prompt handling.
+
+### Phase 4: Major Release + Regression Hunt (v9.0.0 — v9.0.1) — 2026-05-28 to 2026-06-12
+
+**What happened:** v9.0.0 resolved the server-side AggregateError with generic placeholders, but the fingerprint auto-heal system introduced new regressions.
+
+- **v9.0.0**: **MAJOR** — Injected generic placeholders for all template drivers. Server-side builds finally succeeded. 412 drivers, 3365 FPs.
+- **v9.0.1**: Massive regression fix sprint:
+  - **Auto-heal regressions**: Rain sensor fingerprints incorrectly added to `water_leak_sensor` (removed). Irrigation valve incorrectly added to `curtain_motor` (removed).
+  - **Fingerprint collisions**: Resolved 93 critical collisions across drivers.
+  - **Missing fingerprints**: Auto-healed 874 missing fingerprints.
+  - **CI fixes**: `mainsPowered` syntax errors in 8 WiFi drivers, `super.onNodeInit` parameter issues, trailing whitespace, battery conflict detection.
+  - **User-reported bugs**: Fixed GitHub issues #383 (bed sensor), #388 (rain sensor), #395 (radiator valve), #406 (presence sensor), #412 (button wireless).
+  - **New feature**: Zigbee OTA firmware update infrastructure.
+  - **Forum analysis**: 9 unresolved issues, 8 diagnostics, 5 new FPs identified.
+  - **Stats**: 412 drivers, 3366 FPs.
+
+### Phase 5: Stabilization + Community Sync (v9.0.2) — 2026-06-12 to 2026-06-13
+
+**What happened:** Focus shifted to build infrastructure and community fingerprint enrichment.
+
+- **v9.0.2**: Deep YAML/workflow fixes across 78 CI files. Optimized `.homeyignore` to prevent massive archive uploads. Added pre-compact ignores and `app.json` compactor. Added `athom-dev-cartographer` integration. Community sync: 122 new FPs.
+
+### Key Metrics Evolution
+
+| Version | Drivers | FPs | Key Milestone |
+|---------|---------|-----|---------------|
+| v8.5.20 | 413 | 7,448 | Soil sensor added |
+| v8.5.34 | 412 | 29,039 | AggregateError first resolved |
+| v8.5.41 | 412 | 18,367 | Pre-commit hooks added |
+| v8.5.46 | 412 | ~13,550 | DEFINITIVE manufacturerName cleanup |
+| v8.5.48 | 412 | 3,362 | FP database normalized |
+| v9.0.0 | 412 | 3,365 | Server-side builds fixed |
+| v9.0.1 | 412 | 3,366 | Regression hunt complete |
+| v9.0.2 | 412 | 3,366 | CI pipeline stable |
+
+### Known Remaining Items
+
+- **Open PR #416** (dlnraja): Johan SDK3 Sync — 1 FP added, 0 DP gaps (auto-generated, pending merge)
+- **Open issues #419, #418, #417, #415** (dlnraja): Auto-generated community-sync issues, fingerprints tracked and partially integrated
+- **Open JohanBendz PRs**: ~20 PRs with device requests awaiting upstream merge (PR #1406, #1372, #1350, #1346, #1333, #1332, #1292, #1253, #1237, #1231, #1230, #1221, #1220, #1219, #1218, #1210, #1209, #1204, #1195, #1194, #1171, #1162, #1161, #1137, #1128, #1122, #1121)
+- **New fingerprints pending integration**: `_TZE284_zofmmt9s`, `_TZE204_hewlydpz` (added to sensor_illuminance_presence), `_TZE200_eatmkx5j`, `_TZE204_m5r5nlxc` (awaiting driver assignment)

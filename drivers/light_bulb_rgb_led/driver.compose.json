@@ -28,9 +28,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_invesber",
-      "_TZ3210_invesber",
-      "_TZ3210_INVESBER"
+      "_TZE200_placeholder_generic"
     ],
     "endpoints": {
       "1": {
@@ -680,5 +678,6 @@
       "natural_light": true
     }
   },
-  "id": "light_bulb_rgb_led"
+  "id": "light_bulb_rgb_led",
+  "version": "1.0.0"
 }

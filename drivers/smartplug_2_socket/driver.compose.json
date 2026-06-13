@@ -28,9 +28,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_hdopuwv6",
-      "_TZ3000_hdopuwv6",
-      "_TZ3000_HDOPUWV6"
+      "_tz3000_hdopuwv6"
     ],
     "productId": [
       "TS011F",
@@ -81,5 +79,6 @@
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

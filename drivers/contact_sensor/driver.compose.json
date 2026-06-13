@@ -72,6 +72,7 @@
     "manufacturerName": [
       "LUMI.SENSOR_MAGNET",
       "LUMI.SENSOR_MAGNET.AQ2",
+      "SONOFF",
       "_TZ3000_3a9beq8a",
       "_TZ3000_46t1rvdu",
       "_TZ3000_5ng23zjs",
@@ -87,9 +88,7 @@
       "_TZ3000_qsp2pwtf",
       "_TZ3000_rmjr4ufz",
       "_TZ3000_skueekg3",
-      "_TZ3000_v7gnj3ad",
-      "lumi.sensor_magnet",
-      "lumi.sensor_magnet.aq2"
+      "_TZ3000_v7gnj3ad"
     ]
   },
   "settings": [
@@ -398,5 +397,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "contact_sensor",
+  "version": "1.0.0"
 }

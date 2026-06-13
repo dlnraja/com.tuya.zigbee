@@ -779,5 +779,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "dimmer_wall_switch"
+  "id": "dimmer_wall_switch",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }

@@ -26,9 +26,7 @@
       }
     },
     "manufacturerName": [
-      "_tz3000_adkvzooy",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_ADKVZOOY"
+      "_tz3000_adkvzooy"
     ],
     "endpoints": {
       "1": {
@@ -822,5 +820,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "button_wireless_switch"
+  "id": "button_wireless_switch",
+  "version": "1.0.0"
 }

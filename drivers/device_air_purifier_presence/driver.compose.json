@@ -35,9 +35,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
-      "TS0601_air_purifier",
       "TS0601"
     ],
     "learnmode": {
@@ -54,7 +52,10 @@
           61184
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ]
   },
   "settings": [
     {
@@ -784,5 +785,6 @@
     "conditions": [],
     "actions": []
   },
-  "id": "device_air_purifier_presence"
+  "id": "device_air_purifier_presence",
+  "version": "1.0.0"
 }

@@ -243,7 +243,6 @@
       "_TZE200_placeholder_generic"
     ],
     "productId": [
-      "TS0601_air_purifier",
       "TS0601"
     ],
     "endpoints": {
@@ -291,5 +290,6 @@
     "cumulativeImportedCapability": "meter_power",
     "cumulativeExportedCapability": "meter_power.exported"
   },
-  "id": "device_air_purifier_din"
+  "id": "device_air_purifier_din",
+  "version": "1.0.0"
 }

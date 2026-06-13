@@ -1,4 +1,9 @@
 name: Auto-Publish on Push
+
+# <!-- badges:start -->
+# [![Auto-Publish on Push](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-publish-on-push.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-publish-on-push.yml)
+# <!-- badges:end -->
+
 on:
   push:
     branches: [master, main]
@@ -50,8 +55,10 @@ jobs:
       # ─────────────────────────────────────────────────────────────
       - name: Check HOMEY_PAT availability
         id: check_pat
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+          if [ -n "$HOMEY_PAT" ]; then
             echo "has_pat=true" >> $GITHUB_OUTPUT
             echo "✅ HOMEY_PAT is set — publish will run"
           else
@@ -175,30 +182,84 @@ jobs:
       - name: Athom server requirements check
         run: node scripts/validate/validate-app-json.js
 
-      - name: Anti-AggregateError gate (Zigbee MF check)
+      - name: "Comprehensive Validation Gate (JSON + Schema + Zigbee)"
         run: |
           node - << 'GATE'
           const fs = require('fs');
-          const app = JSON.parse(fs.readFileSync('app.json'));
+          const path = require('path');
+
           const errors = [];
-          (app.drivers || []).forEach(d => {
-            if (!d.zigbee) return;
-            const conn = d.connectivity || [];
-            const isLan = conn.some(c => ['lan', 'cloud'].includes(c));
-            if (!isLan) {
-              const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
-              const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
-              if (hasFp && !hasMf) {
-                errors.push(d.id);
+
+          // 1. Validate app.json structure
+          console.log('Checking app.json structure...');
+          try {
+            const appRaw = fs.readFileSync('app.json', 'utf8');
+            const app = JSON.parse(appRaw); // Will throw on invalid JSON
+
+            if (!app.id) errors.push('app.json: Missing required field "id"');
+            if (!app.version) errors.push('app.json: Missing required field "version"');
+            if (!app.compatibility) errors.push('app.json: Missing required field "compatibility"');
+
+            // 2. Validate drivers
+            (app.drivers || []).forEach(d => {
+              const prefix = `Driver "${d.id || 'unknown'}":`;
+
+              // Basic required fields
+              if (!d.id) errors.push(`${prefix} Missing required field "id"`);
+              if (!d.name) errors.push(`${prefix} Missing required field "name"`);
+
+              // Zigbee specific checks
+              if (d.zigbee) {
+                const conn = d.connectivity || [];
+                const isZigbee = conn.includes('zigbee');
+
+                if (isZigbee) {
+                  const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
+                  const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
+                  const hasPid = d.zigbee.productId && d.zigbee.productId.length > 0;
+
+                  // If it has fingerprints, it MUST have manufacturerName (Anti-AggregateError)
+                  if (hasFp && !hasMf) {
+                    errors.push(`${prefix} Missing/empty "manufacturerName" (has fingerprints)`);
+                  }
+
+                  // If it's a pure Zigbee driver (no Lan/Cloud), it needs at least one identifier
+                  const isLan = conn.some(c => ['lan', 'cloud'].includes(c));
+                  if (!isLan && !hasMf && !hasPid) {
+                    errors.push(`${prefix} No "manufacturerName" or "productId" found`);
+                  }
+                }
               }
-            }
-          });
-          if (errors.length) {
-            console.error('❌ ' + errors.length + ' Zigbee drivers missing manufacturerName:');
-            errors.forEach(e => console.error('  -', e));
-            process.exit(1);
+            });
+          } catch (e) {
+            errors.push(`CRITICAL: app.json parsing failed - ${e.message}`);
           }
-          console.log('✅ All Zigbee drivers have manufacturerName — no AggregateError risk');
+
+          // 3. Check driver compose files for JSON syntax
+          console.log('Checking driver compose files...');
+          const driversDir = path.join(process.cwd(), 'drivers');
+          if (fs.existsSync(driversDir)) {
+            fs.readdirSync(driversDir).forEach(d => {
+              const p = path.join(driversDir, d, 'driver.compose.json');
+              if (fs.existsSync(p)) {
+                try {
+                  const raw = fs.readFileSync(p, 'utf8');
+                  JSON.parse(raw); // Validate syntax
+                } catch (e) {
+                  errors.push(`File "${d}/driver.compose.json": Invalid JSON - ${e.message}`);
+                }
+              }
+            });
+          }
+
+          // Output results
+          if (errors.length > 0) {
+            console.error(`\n❌ Found ${errors.length} validation errors:`);
+            errors.forEach(e => console.error(`  - ${e}`));
+            process.exit(1);
+          } else {
+            console.log('✅ All checks passed: JSON syntax valid, app.json structure correct, Zigbee drivers configured properly.');
+          }
           GATE
 
       - name: Official Homey validator
@@ -210,7 +271,7 @@ jobs:
       - name: Publish to Homey App Store
         id: pub
         if: steps.check_pat.outputs.has_pat == 'true'
-        uses: athombv/github-action-homey-app-publish@master
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 

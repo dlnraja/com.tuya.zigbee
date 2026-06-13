@@ -27,16 +27,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_keabpigv",
-      "_TZ3000_keabpigv",
-      "_TZ3000_KEABPIGV",
       "_tz3210_keabpigv",
-      "_TZ3210_keabpigv",
-      "_TZ3210_KEABPIGV",
       "_tyzb01_keabpigv",
-      "_TYZB01_KEABPIGV",
       "_tz3000_9fvm3mis",
-      "_TZ3000_9fvm3mis",
-      "_TZ3000_9FVM3MIS"
+      "_TZ3210_jtifm80b"
     ],
     "productId": [
       "TS0502A",
@@ -559,5 +553,6 @@
       "natural_light": true
     }
   },
-  "id": "light_bulb_tunable_white"
+  "id": "light_bulb_tunable_white",
+  "version": "1.0.0"
 }

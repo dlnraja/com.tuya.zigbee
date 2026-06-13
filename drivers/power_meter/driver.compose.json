@@ -178,40 +178,16 @@
     "manufacturerName": [
       "_TZ3000_BYFDWKTR",
       "_TZ3000_VSN4QAL7",
-      "_TZ3000_byfdwktr",
-      "_TZ3000_vsn4qal7",
       "_TZE200_81YRT3L",
-      "_TZE200_81yrt3l",
       "_TZE200_DSU7J6DN",
       "_TZE200_LSANAE78",
       "_TZE200_LSANAE86",
       "_TZE200_WJK6RURM",
-      "_TZE200_dsu7j6dn",
-      "_TZE200_lsanae78",
-      "_TZE200_lsanae86",
-      "_TZE200_wjk6rurm",
       "_TZE204_BYZDAYIE",
       "_TZE204_LSANAE78",
       "_TZE204_WJK6RURM",
-      "_TZE204_byzdayie",
-      "_TZE204_lsanae78",
-      "_TZE204_wjk6rurm",
       "_TZE284_81YRT3L",
-      "_TZE284_81yrt3l",
-      "_TZE284_WJK6RURM",
-      "_TZE284_wjk6rurm",
-      "_tz3000_byfdwktr",
-      "_tz3000_vsn4qal7",
-      "_tze200_81yrt3l",
-      "_tze200_dsu7j6dn",
-      "_tze200_lsanae78",
-      "_tze200_lsanae86",
-      "_tze200_wjk6rurm",
-      "_tze204_byzdayie",
-      "_tze204_lsanae78",
-      "_tze204_wjk6rurm",
-      "_tze284_81yrt3l",
-      "_tze284_wjk6rurm"
+      "_TZE284_WJK6RURM"
     ],
     "productId": [
       "TS0601",
@@ -227,17 +203,7 @@
           6
         ]
       }
-    },
-    "fingerprints": [
-      {
-        "manufacturerName": "_TZE200_byzdayie",
-        "productId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZE204_byzdayie",
-        "productId": "TS0601"
-      }
-    ]
+    }
   },
   "images": {
     "small": "/drivers/power_meter/assets/images/small.png",
@@ -259,5 +225,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "power_meter",
+  "version": "1.0.0"
 }

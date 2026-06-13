@@ -28,13 +28,8 @@
   "zigbee": {
     "manufacturerName": [
       "_tyst11_qq9mpfhw",
-      "_TYST11_QQ9MPFHW",
       "_tz3000_85czd6fy",
-      "_TZ3000_85czd6fy",
-      "_TZ3000_85CZD6FY",
-      "_tz3000_6oabgtzv",
-      "_TZ3000_6oabgtzv",
-      "_TZ3000_6OABGTZV"
+      "_tz3000_6oabgtzv"
     ],
     "productId": [
       "TS0207",
@@ -60,5 +55,6 @@
         "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

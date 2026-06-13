@@ -27,11 +27,7 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_m9skfctm",
-      "_TZE200_m9skfctm",
-      "_TZE200_M9SKFCTM",
-      "_tze200_rccxox8p",
-      "_TZE200_rccxox8p",
-      "_TZE200_RCCXOX8P"
+      "_tze200_rccxox8p"
     ],
     "productId": [
       "TS0205",
@@ -55,5 +51,6 @@
         "en": "Press and hold down test switch until the LED blinks green."
       }
     }
-  }
+  },
+  "version": "1.0.0"
 }

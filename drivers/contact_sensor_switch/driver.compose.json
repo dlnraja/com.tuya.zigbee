@@ -875,5 +875,9 @@
     "conditions": [],
     "actions": []
   },
-  "id": "contact_sensor_switch"
+  "id": "contact_sensor_switch",
+  "version": "1.0.0",
+  "connectivity": [
+    "zigbee"
+  ]
 }
