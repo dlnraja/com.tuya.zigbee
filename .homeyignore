@@ -197,6 +197,9 @@ assets/branding/
 assets/templates/
 assets/README.md
 
+# === Non-runtime images (JPGs are never used by Homey SDK) ===
+**/*.jpg
+
 # === Learnmode SVGs (optional) ===
 **/learnmode.svg
 

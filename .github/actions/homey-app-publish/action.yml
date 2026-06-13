@@ -15,26 +15,10 @@ runs:
       shell: bash
       run: npx homey app build
 
-    - name: Fix large.png files (CLI bug workaround)
+    - name: Optimize build (minify app.json + fix large.png)
       shell: bash
       run: |
-        # Copy changelog
-        cp ".homeychangelog.json" ".homeybuild/" 2>/dev/null || true
-        # Copy driver large.png files
-        for driver in drivers/*/; do
-          dn=$(basename "$driver")
-          if [ -f "drivers/${dn}/assets/images/large.png" ]; then
-            mkdir -p ".homeybuild/drivers/${dn}/assets/images/"
-            cp "drivers/${dn}/assets/images/large.png" ".homeybuild/drivers/${dn}/assets/images/"
-            echo "Copied large.png for $dn"
-          fi
-        done
-        # Copy app-level large.png
-        if [ -f "assets/images/large.png" ]; then
-          mkdir -p ".homeybuild/assets/images/"
-          cp "assets/images/large.png" ".homeybuild/assets/images/"
-          echo "Copied app-level large.png"
-        fi
+        node scripts/maintenance/fix-large-images.js
 
     - name: Publish App
       id: publish
@@ -43,10 +27,9 @@ runs:
         HOMEY_HEADLESS: "1"
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
-        # Delete nested .homeybuild if exists to prevent validation issues
-        rm -rf .homeybuild/.homeybuild 2>/dev/null || true
-        # Publish directly - skip validation since already validated in job 1
-        cd .homeybuild
+        # Publish from project root
+        # Note: preprocess() will rebuild .homeybuild/ but that's OK
+        # The CLI reads changelog from project root and packs from .homeybuild/
         npx homey app publish --no-verify
-        APP_ID=$(cat app.json | jq -r .id)
+        APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
