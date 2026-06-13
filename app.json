@@ -104038,7 +104038,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -108860,7 +108862,9 @@
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -122913,7 +122917,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -138518,7 +138524,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -194963,7 +194971,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0003",
           "TS011F",
