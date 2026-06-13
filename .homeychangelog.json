@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.8": {
+    "en": "v9.0.7:"
+  },
   "9.0.7": {
     "en": "v9.0.6:"
   },
@@ -84,12 +87,7 @@
     "date": "2026-05-28",
     "changes": "CRITICAL: Removed 75 empty manufacturerName[] arrays causing AggregateError on startup. Restored missing manufacturerName for button_wireless_4 and illuminance_sensor drivers. Rewrote .homeyignore. Removed invalid icon field from app.json. Fixed app.json permissions. 114 new community fingerprints. Comprehensive mandatory files gate."
   },
-  "8.5.44": {
-    "version": "8.5.44",
-    "date": "2026-05-28",
-    "changes": "Fixed critical app crash (AggregateError) caused by empty manufacturerName[] arrays in 75 drivers. Restored 360 Zigbee manufacturer names. Fixed app.json validation errors. Added 114 new fingerprints. 412 drivers, 13550 fingerprints."
-  },
-  "9.0.8": {
-    "en": "v9.0.7:"
+  "9.0.9": {
+    "en": "v9.0.8:"
   }
 }
