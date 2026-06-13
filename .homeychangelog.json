@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.10": {
+    "en": "v9.0.9:"
+  },
   "9.0.9": {
     "en": "v9.0.8:"
   },
@@ -80,12 +83,7 @@
     "date": "2026-05-28",
     "changes": "Changelog sync and community sync: 114 new FPs from Z2M/ZHA/community/JohanBendz. Monthly enrichment: 412 drivers, 3357 FPs validated. Fingerprint database stabilized after v8.5.46 manufacturerName cleanup."
   },
-  "8.5.46": {
-    "version": "8.5.46",
-    "date": "2026-05-28",
-    "changes": "Fixed 88 empty manufacturerName arrays in driver.compose.json files (DEFINITIVE cleanup). Resolved persistent M09 validation errors for button_wireless_4 and illuminance_sensor drivers. Fixed missing manufacturerName entries for 360 Zigbee drivers (AggregateError fix). Removed 75 empty manufacturerName arrays. Corrected .homeyignore to include multilingual README files."
-  },
-  "9.0.10": {
-    "en": "v9.0.9:"
+  "9.0.11": {
+    "en": "v9.0.10:"
   }
 }
