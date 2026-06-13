@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.12": {
+    "en": "v9.0.11:"
+  },
   "9.0.11": {
     "en": "v9.0.10:"
   },
@@ -76,12 +79,7 @@
     "date": "2026-05-28",
     "changes": "Removed legacy icon requirement from root cleanup workflow. Updated Dual-Layer gate to exempt generic templates. Added defaults shell to mandatory-files-gate. Root cleanup: archived junk files."
   },
-  "8.5.48": {
-    "version": "8.5.48",
-    "date": "2026-05-28",
-    "changes": "Restored 41 manufacturer fingerprints from git history. Removed 47 empty Zigbee sections from driver compose files. Community sync: 114 new FPs."
-  },
-  "9.0.12": {
-    "en": "v9.0.11:"
+  "9.0.13": {
+    "en": "v9.0.12:"
   }
 }
