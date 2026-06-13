@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.4": {
+    "en": "v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)"
+  },
   "9.0.3": {
     "en": "v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)"
   },
@@ -92,12 +95,7 @@
     "date": "2026-05-28",
     "changes": "CRITICAL: Fixed app.json validation (category, permissions, icon). Restored 360 Zigbee manufacturer names. Resolved 4361 fingerprint collisions. 114 new fingerprints. Added pre-commit/pre-push hooks. 412 drivers, 18367 fingerprints."
   },
-  "8.5.40": {
-    "version": "8.5.40",
-    "date": "2026-05-28",
-    "changes": "CRITICAL: Fixed app.json validation errors. Rewrote .homeyignore. Added mandatory README files. Restored 360 Zigbee manufacturerName entries. Resolved 4361 fingerprint conflicts. 114 new fingerprints."
-  },
-  "9.0.4": {
-    "en": "v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)"
+  "9.0.5": {
+    "en": "v9.0.4:"
   }
 }
