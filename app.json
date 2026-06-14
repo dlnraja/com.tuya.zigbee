@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.18",
+  "version": "9.0.19",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -68271,6 +68271,38 @@
         ]
       },
       {
+        "id": "thermostatic_radiator_valve_boost_active",
+        "title": {
+          "en": "Boost mode !{{is|is not}} active"
+        },
+        "hint": {
+          "en": "Checks if the thermostat boost mode is currently active"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostatic_radiator_valve"
+          }
+        ]
+      },
+      {
+        "id": "thermostatic_radiator_valve_child_lock_active",
+        "title": {
+          "en": "Child lock !{{is|is not}} active"
+        },
+        "hint": {
+          "en": "Checks if the child lock is currently engaged"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostatic_radiator_valve"
+          }
+        ]
+      },
+      {
         "id": "usb_dongle_dual_repeater_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -69760,6 +69792,44 @@
         },
         "args": [],
         "callback": "resetEnergyMeter"
+      },
+      {
+        "id": "set_power_on_behavior",
+        "title": {
+          "en": "Set Power On Behavior",
+          "fr": "Définir Comportement à la Mise sous Tension",
+          "nl": "Gedrag bij inschakelen instellen",
+          "de": "Einschaltverhalten einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set Power On Behavior to [[behavior]]",
+          "fr": "Définir Comportement à la Mise sous Tension à [[behavior]]",
+          "nl": "Gedrag bij inschakelen instellen op [[behavior]]",
+          "de": "Einschaltverhalten auf [[behavior]] einstellen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_1gang|driver_id=switch_2gang|driver_id=switch_3gang|driver_id=switch_4gang|driver_id=plug_smart"
+          },
+          {
+            "name": "behavior",
+            "type": "text",
+            "title": {
+              "en": "Behavior",
+              "fr": "Comportement",
+              "nl": "Gedrag",
+              "de": "Verhalten"
+            },
+            "placeholder": {
+              "en": "off / on / previous",
+              "fr": "off / on / previous",
+              "nl": "off / on / previous",
+              "de": "off / on / previous"
+            }
+          }
+        ]
       },
       {
         "id": "set_software_child_lock",
@@ -97794,6 +97864,154 @@
         ]
       },
       {
+        "id": "thermostatic_radiator_valve_set_boost",
+        "title": {
+          "en": "Set boost mode"
+        },
+        "hint": {
+          "en": "Temporarily boost the thermostat to a higher temperature for rapid heating"
+        },
+        "titleFormatted": {
+          "en": "Set boost mode to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostatic_radiator_valve"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thermostatic_radiator_valve_set_frost_protection",
+        "title": {
+          "en": "Set frost protection"
+        },
+        "hint": {
+          "en": "Enable or disable frost protection (maintains minimum temperature to prevent pipe freezing)"
+        },
+        "titleFormatted": {
+          "en": "Set frost protection to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostatic_radiator_valve"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thermostatic_radiator_valve_set_child_lock",
+        "title": {
+          "en": "Set child lock"
+        },
+        "hint": {
+          "en": "Enable or disable child lock to prevent manual changes on the device"
+        },
+        "titleFormatted": {
+          "en": "Set child lock to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostatic_radiator_valve"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On (locked)"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off (unlocked)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thermostatic_radiator_valve_set_window_detection",
+        "title": {
+          "en": "Set window detection"
+        },
+        "hint": {
+          "en": "Enable or disable open window detection (lowers temperature when window is detected open)"
+        },
+        "titleFormatted": {
+          "en": "Set window detection to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostatic_radiator_valve"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "usb_dongle_dual_repeater_turn_on",
         "title": {
           "en": "Turn on"
@@ -103405,9 +103623,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -112341,8 +112557,12 @@
             "clusters": [
               0,
               1,
+              4,
+              5,
+              6,
               1280,
               1281,
+              57344,
               61184
             ]
           }
@@ -112736,7 +112956,10 @@
               0,
               1,
               3,
+              4,
+              5,
               6,
+              8,
               4096,
               61184
             ]
@@ -116894,6 +117117,8 @@
           "1": {
             "clusters": [
               0,
+              4,
+              5,
               6
             ]
           }
@@ -117437,6 +117662,9 @@
           "1": {
             "clusters": [
               0,
+              4,
+              5,
+              6,
               61184
             ]
           },
@@ -118369,11 +118597,15 @@
           "1": {
             "clusters": [
               0,
+              4,
+              5,
               6
             ]
           },
           "2": {
             "clusters": [
+              4,
+              5,
               6
             ]
           }
@@ -119542,7 +119774,10 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              4,
+              5,
+              6
             ]
           }
         }
@@ -120093,7 +120328,10 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              4,
+              5,
+              6
             ]
           }
         }
@@ -120162,6 +120400,9 @@
           "1": {
             "clusters": [
               0,
+              4,
+              5,
+              6,
               61184
             ]
           },
@@ -166615,7 +166856,8 @@
         "measure_power",
         "meter_power",
         "measure_current",
-        "measure_voltage"
+        "measure_voltage",
+        "power_on_behavior"
       ],
       "energy": {
         "batteries": [
@@ -171033,9 +171275,7 @@
             "en": "Press the setup button combined with 1 channel button for 10 seconds (the LED should blink green)."
           }
         },
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "settings": []
@@ -171321,7 +171561,8 @@
         "learnmode": {
           "image": "/drivers/remote_button_emergency_sos/assets/icon.svg",
           "instruction": {
-            "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
+            "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly.",
+            "fr": "Appuyez doucement avec un stylet dans le trou de réinitialisation sur l'arrière de l'unité pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement."
           }
         },
         "manufacturerName": [
@@ -192534,13 +192775,8 @@
             "clusters": [
               0,
               1,
-              4,
-              5,
-              6,
               1280,
-              1281,
-              57344,
-              61184
+              1281
             ]
           }
         },
@@ -195835,6 +196071,7 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
+        "power_on_behavior",
         "button.toggle",
         "button.identify"
       ],
@@ -196951,6 +197188,12 @@
             "fr": "Batterie"
           },
           "preventInsights": false
+        },
+        "power_on_behavior": {
+          "title": {
+            "en": "Power On Behavior",
+            "fr": "Comportement à la mise sous tension"
+          }
         }
       },
       "metadata": {
@@ -197263,6 +197506,7 @@
         "measure_voltage",
         "measure_current",
         "meter_power",
+        "power_on_behavior",
         "button.toggle_1",
         "button.toggle_2",
         "button.identify"
@@ -197895,6 +198139,12 @@
             "en": "Gang 2",
             "fr": "Gang 2"
           }
+        },
+        "power_on_behavior": {
+          "title": {
+            "en": "Power On Behavior",
+            "fr": "Comportement à la mise sous tension"
+          }
         }
       },
       "metadata": {
@@ -198061,6 +198311,7 @@
         "onoff.gang3",
         "measure_power",
         "meter_power",
+        "power_on_behavior",
         "button.toggle_1",
         "button.toggle_2",
         "button.toggle_3",
@@ -198683,6 +198934,12 @@
             "en": "Gang 3",
             "fr": "Gang 3"
           }
+        },
+        "power_on_behavior": {
+          "title": {
+            "en": "Power On Behavior",
+            "fr": "Comportement à la mise sous tension"
+          }
         }
       },
       "metadata": {
@@ -198964,6 +199221,7 @@
         "onoff.gang3",
         "onoff.gang4",
         "measure_power",
+        "power_on_behavior",
         "button.toggle_1",
         "button.toggle_2",
         "button.toggle_3",
@@ -199622,6 +199880,12 @@
           "title": {
             "en": "Gang 4",
             "fr": "Gang 4"
+          }
+        },
+        "power_on_behavior": {
+          "title": {
+            "en": "Power On Behavior",
+            "fr": "Comportement à la mise sous tension"
           }
         }
       },
@@ -205169,7 +205433,7 @@
         }
       },
       "id": "thermostatic_radiator_valve",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "settings": [
         {
           "type": "group",
@@ -205228,6 +205492,50 @@
               "units": {
                 "en": "°C"
               }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Enhanced Features"
+          },
+          "hint": {
+            "en": "These features are dynamically detected from the device. Enable/disable via flow cards or settings."
+          },
+          "children": [
+            {
+              "id": "frost_protection",
+              "type": "checkbox",
+              "label": {
+                "en": "Frost Protection"
+              },
+              "hint": {
+                "en": "Maintains a minimum temperature to prevent pipe freezing (typically 5-8°C)"
+              },
+              "value": false
+            },
+            {
+              "id": "child_lock",
+              "type": "checkbox",
+              "label": {
+                "en": "Child Lock"
+              },
+              "hint": {
+                "en": "Prevent manual changes on the physical device"
+              },
+              "value": false
+            },
+            {
+              "id": "window_detection",
+              "type": "checkbox",
+              "label": {
+                "en": "Window Detection"
+              },
+              "hint": {
+                "en": "Automatically lower temperature when an open window is detected"
+              },
+              "value": true
             }
           ]
         },
@@ -220247,6 +220555,50 @@
       "getable": true,
       "setable": true,
       "uiComponent": "button"
+    },
+    "power_on_behavior": {
+      "type": "enum",
+      "title": {
+        "en": "Power On Behavior",
+        "fr": "Comportement à la mise sous tension",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten"
+      },
+      "desc": {
+        "en": "What happens to the relay after power cycle"
+      },
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "fr": "Éteint",
+            "nl": "Uit",
+            "de": "Aus"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "fr": "Allumé",
+            "nl": "Aan",
+            "de": "Ein"
+          }
+        },
+        {
+          "id": "previous",
+          "title": {
+            "en": "Previous",
+            "fr": "Précédent",
+            "nl": "Vorige",
+            "de": "Vorherig"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
     },
     "soil_moisture": {
       "type": "number",
