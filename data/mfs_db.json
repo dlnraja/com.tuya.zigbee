@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "MFS (Manufacturer Fingerprint Schema) Unified Database - Aggregated from 10+ sources",
+    "generatedAt": "2026-06-13T00:00:00.000Z",
+    "generator": "mfs-aggregator",
+    "schema": {
+      "version": "1.0.0",
+      "fields": {
+        "manufacturerId": "Tuya manufacturer string (e.g. _TZ3000_abc123)",
+        "modelId": "Zigbee model/product ID (e.g. TS0601)",
+        "driverHint": "Suggested driver class for this device",
+        "deviceType": "Semantic device type (switch, sensor, light, etc.)",
+        "sources": "Array of source objects providing evidence for this fingerprint",
+        "confidence": "0.0-1.0 confidence score based on number of agreeing sources",
+        "variants": "Array of known Tuya variant prefixes (_TZE200_, _TZE204_, _TZ3000_, etc.)",
+        "capabilities": "Suggested Homey capabilities for this device type",
+        "powerSource": "battery, mains, or unknown",
+        "lastSeen": "ISO timestamp of last successful fetch"
+      }
+    }
+  },
+  "sources": {
+    "local": {
+      "name": "Local driver.compose.json",
+      "description": "Extracted from existing drivers in the repository",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "z2m": {
+      "name": "Zigbee2MQTT (Koenkk)",
+      "description": "Zigbee2MQTT device definitions from zigbee-herdsman-converters",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "zha": {
+      "name": "Zigbee Home Automation (ZHA)",
+      "description": "Home Assistant ZHA quirks database",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "blakadder": {
+      "name": "Blakadder Zigbee Database",
+      "description": "Community-maintained Zigbee device database",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "deconz": {
+      "name": "deCONZ / Phoscon",
+      "description": "deCONZ REST API plugin database",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "hubitat": {
+      "name": "Hubitat Elevation",
+      "description": "Hubitat Zigbee device drivers",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "smartthings": {
+      "name": "SmartThings (Samsung)",
+      "description": "SmartThings Zigbee device profiles and fingerprints",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "ioBroker": {
+      "name": "ioBroker Zigbee Adapter",
+      "description": "ioBroker community Zigbee adapter definitions",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "domoticz": {
+      "name": "Domoticz Zigbee",
+      "description": "Domoticz Zigbee hardware plugin device list",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "zigpy": {
+      "name": "zigpy / zigpy-znp",
+      "description": "zigpy low-level Zigbee library device database",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    },
+    "community": {
+      "name": "Community Issues & PRs",
+      "description": "Fingerprints submitted via GitHub issues and pull requests",
+      "lastFetched": null,
+      "entryCount": 0,
+      "sha256": null
+    }
+  },
+  "devices": {},
+  "driverMapping": {},
+  "stats": {
+    "totalEntries": 0,
+    "totalVariants": 0,
+    "entriesBySource": {},
+    "entriesByDeviceType": {},
+    "coveragePercent": 0,
+    "lastAggregation": null
+  },
+  "diff": {
+    "lastRun": null,
+    "added": [],
+    "removed": [],
+    "modified": []
+  }
+}

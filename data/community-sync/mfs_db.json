@@ -1,0 +1,1039 @@
+{
+  "metadata": {
+    "lastUpdated": "2026-06-14T12:36:13.521Z",
+    "sources": [
+      "Z2M_TUYA",
+      "BLAKADDER"
+    ],
+    "totalDevices": 79
+  },
+  "manufacturers": {
+    "TS0204": {
+      "mfr": "TS0204",
+      "variants": [
+        {
+          "model": "TS0204",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS020C": {
+      "mfr": "TS020C",
+      "variants": [
+        {
+          "model": "TS020C",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0205": {
+      "mfr": "TS0205",
+      "variants": [
+        {
+          "model": "TS0205",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0111": {
+      "mfr": "TS0111",
+      "variants": [
+        {
+          "model": "TS0111",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0218": {
+      "mfr": "TS0218",
+      "variants": [
+        {
+          "model": "TS0218",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0203": {
+      "mfr": "TS0203",
+      "variants": [
+        {
+          "model": "TS0203",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0505": {
+      "mfr": "TS0505",
+      "variants": [
+        {
+          "model": "TS0505",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0505B": {
+      "mfr": "TS0505B",
+      "variants": [
+        {
+          "model": "TS0505B_1",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0503B": {
+      "mfr": "TS0503B",
+      "variants": [
+        {
+          "model": "TS0503B",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0504B": {
+      "mfr": "TS0504B",
+      "variants": [
+        {
+          "model": "TS0504B",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0501A": {
+      "mfr": "TS0501A",
+      "variants": [
+        {
+          "model": "TS0501A",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0501B": {
+      "mfr": "TS0501B",
+      "variants": [
+        {
+          "model": "TS0501B",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0202": {
+      "mfr": "TS0202",
+      "variants": [
+        {
+          "model": "TS0202",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0207": {
+      "mfr": "TS0207",
+      "variants": [
+        {
+          "model": "TS0207_water_leak_detector",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS130F": {
+      "mfr": "TS130F",
+      "variants": [
+        {
+          "model": "TS130F",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0301": {
+      "mfr": "TS0301",
+      "variants": [
+        {
+          "model": "TS0301",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0503A": {
+      "mfr": "TS0503A",
+      "variants": [
+        {
+          "model": "TYZS1L",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0502A": {
+      "mfr": "TS0502A",
+      "variants": [
+        {
+          "model": "TS0502A",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0502B": {
+      "mfr": "TS0502B",
+      "variants": [
+        {
+          "model": "TS0502B",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0504A": {
+      "mfr": "TS0504A",
+      "variants": [
+        {
+          "model": "TS0504A",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0505A": {
+      "mfr": "TS0505A",
+      "variants": [
+        {
+          "model": "TS0505A",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0201": {
+      "mfr": "TS0201",
+      "variants": [
+        {
+          "model": "TS0201",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZ3000_zl1kmjqx": {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "variants": [
+        {
+          "model": "IH-K009",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0041": {
+      "mfr": "TS0041",
+      "variants": [
+        {
+          "model": "TS0041",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0041A": {
+      "mfr": "TS0041A",
+      "variants": [
+        {
+          "model": "TS0041A",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0042": {
+      "mfr": "TS0042",
+      "variants": [
+        {
+          "model": "TS0042",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0043": {
+      "mfr": "TS0043",
+      "variants": [
+        {
+          "model": "TS0043",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0044": {
+      "mfr": "TS0044",
+      "variants": [
+        {
+          "model": "TS0044",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0001": {
+      "mfr": "TS0001",
+      "variants": [
+        {
+          "model": "TS0001",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0002": {
+      "mfr": "TS0002",
+      "variants": [
+        {
+          "model": "TS0002",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0003": {
+      "mfr": "TS0003",
+      "variants": [
+        {
+          "model": "TS0003",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZ3000_mw1pqqqt": {
+      "mfr": "_TZ3000_mw1pqqqt",
+      "variants": [
+        {
+          "model": "_TZ3000_mw1pqqqt",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0121": {
+      "mfr": "TS0121",
+      "variants": [
+        {
+          "model": "TS0121_plug",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS011F": {
+      "mfr": "TS011F",
+      "variants": [
+        {
+          "model": "TS011F_plug_1",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZ3000_2uollq9d": {
+      "mfr": "_TZ3000_2uollq9d",
+      "variants": [
+        {
+          "model": "TS011F_plug_3",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZ3000_cehuw1lw": {
+      "mfr": "_TZ3000_cehuw1lw",
+      "variants": [
+        {
+          "model": "TS011F_plug_3",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0115": {
+      "mfr": "TS0115",
+      "variants": [
+        {
+          "model": "TS0115",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0011": {
+      "mfr": "TS0011",
+      "variants": [
+        {
+          "model": "TS0011",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0012": {
+      "mfr": "TS0012",
+      "variants": [
+        {
+          "model": "TS0012",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0013": {
+      "mfr": "TS0013",
+      "variants": [
+        {
+          "model": "TS0013",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0014": {
+      "mfr": "TS0014",
+      "variants": [
+        {
+          "model": "TS0014",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0026": {
+      "mfr": "TS0026",
+      "variants": [
+        {
+          "model": "TS0026",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0004": {
+      "mfr": "TS0004",
+      "variants": [
+        {
+          "model": "TS0004",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0006": {
+      "mfr": "TS0006",
+      "variants": [
+        {
+          "model": "TS0006",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0216": {
+      "mfr": "TS0216",
+      "variants": [
+        {
+          "model": "TS0216",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0210": {
+      "mfr": "TS0210",
+      "variants": [
+        {
+          "model": "TS0210",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0046": {
+      "mfr": "TS0046",
+      "variants": [
+        {
+          "model": "TS0046",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZ3000_abrsvsou": {
+      "mfr": "_TZ3000_abrsvsou",
+      "variants": [
+        {
+          "model": "ZG-101Z/D",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0052": {
+      "mfr": "TS0052",
+      "variants": [
+        {
+          "model": "TS0052",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_hl0ss9oa": {
+      "mfr": "_TZE200_hl0ss9oa",
+      "variants": [
+        {
+          "model": "ZG-205ZL",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_y4mdop0b": {
+      "mfr": "_TZE200_y4mdop0b",
+      "variants": [
+        {
+          "model": "ZG-205ZL",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS1201": {
+      "mfr": "TS1201",
+      "variants": [
+        {
+          "model": "ZS06",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_a8sdabtg": {
+      "mfr": "_TZE200_a8sdabtg",
+      "variants": [
+        {
+          "model": "ZG-227ZL",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_vs0skpuc": {
+      "mfr": "_TZE200_vs0skpuc",
+      "variants": [
+        {
+          "model": "ZG-227ZL",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_ehhrv2e3": {
+      "mfr": "_TZE200_ehhrv2e3",
+      "variants": [
+        {
+          "model": "ZG-227ZL",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0049": {
+      "mfr": "TS0049",
+      "variants": [
+        {
+          "model": "TS0049",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0224": {
+      "mfr": "TS0224",
+      "variants": [
+        {
+          "model": "TS0224",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS030F": {
+      "mfr": "TS030F",
+      "variants": [
+        {
+          "model": "TS030F",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE284_6ocnqlhn": {
+      "mfr": "_TZE284_6ocnqlhn",
+      "variants": [
+        {
+          "model": "TO-Q-SYS-JZT",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0105": {
+      "mfr": "TS0105",
+      "variants": [
+        {
+          "model": "TS0105",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_lvkk0hdg": {
+      "mfr": "_TZE200_lvkk0hdg",
+      "variants": [
+        {
+          "model": "TLC2206",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "TS0901": {
+      "mfr": "TS0901",
+      "variants": [
+        {
+          "model": "TS0901",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZ3210_emqmwtym": {
+      "mfr": "_TZ3210_emqmwtym",
+      "variants": [
+        {
+          "model": "EPJ-ZB",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_khah2lkr": {
+      "mfr": "_TZE200_khah2lkr",
+      "variants": [
+        {
+          "model": "HY607W-3A",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE284_0ints6wl": {
+      "mfr": "_TZE284_0ints6wl",
+      "variants": [
+        {
+          "model": "ZS-300Z",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE284_yzr43ayq": {
+      "mfr": "_TZE284_yzr43ayq",
+      "variants": [
+        {
+          "model": "ZS-300Z",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_cq8lu23i": {
+      "mfr": "_TZE200_cq8lu23i",
+      "variants": [
+        {
+          "model": "ZG-204ZE",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_4pm4pekt": {
+      "mfr": "_TZE200_4pm4pekt",
+      "variants": [
+        {
+          "model": "ZG-204ZE",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_y8jijhba": {
+      "mfr": "_TZE200_y8jijhba",
+      "variants": [
+        {
+          "model": "ZG-204ZE",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE284_8se38w3c": {
+      "mfr": "_TZE284_8se38w3c",
+      "variants": [
+        {
+          "model": "TZ-ZT01_GA4",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE200_spyvfeti": {
+      "mfr": "_TZE200_spyvfeti",
+      "variants": [
+        {
+          "model": "HD-T1000",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_gm8h14wy": {
+      "mfr": "_TZE204_gm8h14wy",
+      "variants": [
+        {
+          "model": "TS0601_1gang_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_trwaxi57": {
+      "mfr": "_TZE204_trwaxi57",
+      "variants": [
+        {
+          "model": "TS0601_cover_switch_2",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_ccgyhbvd": {
+      "mfr": "_TZE204_ccgyhbvd",
+      "variants": [
+        {
+          "model": "TS0601_3gang_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_y8ficeai": {
+      "mfr": "_TZE204_y8ficeai",
+      "variants": [
+        {
+          "model": "TS0601_6gang_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE284_7e6v8u9f": {
+      "mfr": "_TZE284_7e6v8u9f",
+      "variants": [
+        {
+          "model": "TS0601_multifunction_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_apiu8k13": {
+      "mfr": "_TZE204_apiu8k13",
+      "variants": [
+        {
+          "model": "TS0601_power_monitoring_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_he9apaui": {
+      "mfr": "_TZE204_he9apaui",
+      "variants": [
+        {
+          "model": "TS0601_2gang_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    },
+    "_TZE204_fhv95pf1": {
+      "mfr": "_TZE204_fhv95pf1",
+      "variants": [
+        {
+          "model": "TS0601_stairwell_switch",
+          "description": "Auto-synced from Z2M"
+        }
+      ],
+      "capabilities": [],
+      "sources": [
+        "Z2M"
+      ]
+    }
+  }
+}
