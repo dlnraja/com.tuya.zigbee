@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T17:29:28.648Z",
+  "timestamp": "2026-06-14T08:47:37.347Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -12,6 +12,14 @@
           27
         ],
         [
+          "VISION",
+          27
+        ],
+        [
+          "SENSOR",
+          18
+        ],
+        [
           "TS0601",
           18
         ],
@@ -20,32 +28,24 @@
           16
         ],
         [
+          "_tze",
+          16
+        ],
+        [
+          "coordinator",
+          16
+        ],
+        [
           "_TZ3000_",
-          14
+          15
         ],
         [
-          "_TZE204_",
-          6
+          "_tz3000_",
+          15
         ],
         [
-          "router",
-          6
-        ],
-        [
-          "test",
-          5
-        ],
-        [
-          "_TZE284_",
-          5
-        ],
-        [
-          "_TZE200_",
-          5
-        ],
-        [
-          "example",
-          3
+          "tuya",
+          13
         ]
       ],
       "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
@@ -60,7 +60,15 @@
       "priority": "high",
       "topFPs": [
         [
+          "tuya",
+          15
+        ],
+        [
           "vision",
+          13
+        ],
+        [
+          "VISION",
           13
         ],
         [
@@ -68,36 +76,28 @@
           12
         ],
         [
-          "router",
+          "_tz3000_",
+          12
+        ],
+        [
+          "coordinator",
+          12
+        ],
+        [
+          "SWITCH",
+          9
+        ],
+        [
+          "RELAY",
+          7
+        ],
+        [
+          "SENSOR",
           6
         ],
         [
-          "_TZE",
-          5
-        ],
-        [
-          "TS0601",
-          5
-        ],
-        [
-          "example",
-          3
-        ],
-        [
-          "generic",
-          3
-        ],
-        [
-          "TS0001",
-          3
-        ],
-        [
-          "_TZE284_",
-          3
-        ],
-        [
-          "_TZ3000_o4mkahkc",
-          2
+          "router",
+          6
         ]
       ],
       "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
@@ -112,6 +112,14 @@
       "priority": "high",
       "topFPs": [
         [
+          "zigbee2mqtt",
+          7
+        ],
+        [
+          "ZIGBEE2MQTT",
+          7
+        ],
+        [
           "test",
           5
         ],
@@ -120,7 +128,15 @@
           5
         ],
         [
+          "TEST",
+          5
+        ],
+        [
           "vision",
+          4
+        ],
+        [
+          "VISION",
           4
         ],
         [
@@ -128,28 +144,12 @@
           3
         ],
         [
-          "_TZ3000_",
+          "_tze",
           3
         ],
         [
-          "_TZE284_fhvpaltk",
-          2
-        ],
-        [
-          "_TZE284_",
-          2
-        ],
-        [
-          "_TZ3210_w0qqde0g",
-          1
-        ],
-        [
-          "_TZ3210_",
-          1
-        ],
-        [
-          "TS011F",
-          1
+          "_TZ3000_",
+          3
         ]
       ],
       "fix": "Check Zigbee mesh, device routing, and cluster bindings",
@@ -162,11 +162,31 @@
       "priority": "high",
       "topFPs": [
         [
+          "tuya",
+          7
+        ],
+        [
           "_TZE",
           3
         ],
         [
+          "example",
+          3
+        ],
+        [
+          "test",
+          3
+        ],
+        [
+          "_tze",
+          3
+        ],
+        [
           "TS0601",
+          3
+        ],
+        [
+          "TEST",
           3
         ],
         [
@@ -178,28 +198,8 @@
           3
         ],
         [
-          "_TZE284_aa03yzhs",
-          2
-        ],
-        [
-          "_TZE284_",
-          2
-        ],
-        [
-          "tuya",
-          2
-        ],
-        [
-          "test",
-          2
-        ],
-        [
-          "generic",
-          2
-        ],
-        [
-          "router",
-          2
+          "_tz3000_",
+          3
         ]
       ],
       "fix": "Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)",
@@ -218,7 +218,15 @@
           5
         ],
         [
+          "VISION",
+          5
+        ],
+        [
           "_TZ3000_",
+          3
+        ],
+        [
+          "_tz3000_",
           3
         ],
         [
@@ -227,6 +235,10 @@
         ],
         [
           "_TZ3000_j1v25l17",
+          2
+        ],
+        [
+          "_tz3000_j1v25l17",
           2
         ],
         [
@@ -239,18 +251,6 @@
         ],
         [
           "_TZE204_",
-          1
-        ],
-        [
-          "router",
-          1
-        ],
-        [
-          "lumi",
-          1
-        ],
-        [
-          "TS0601",
           1
         ]
       ],
@@ -276,32 +276,32 @@
           2
         ],
         [
-          "TS0601",
+          "coordinator",
           2
         ],
         [
-          "_TZE204_qyr2m29i",
-          1
+          "VISION",
+          2
         ],
         [
-          "MOES",
-          1
+          "_tze204_qyr2m29i",
+          2
         ],
         [
-          "tuya",
-          1
+          "_tze",
+          2
         ],
         [
-          "test",
-          1
+          "_tze204_7bztmfm1",
+          2
         ],
         [
-          "_TZE204_clrdrnya",
-          1
+          "_tze204_qpn5q17m",
+          2
         ],
         [
-          "router",
-          1
+          "_tze204_s8gkrkxk",
+          2
         ]
       ],
       "fix": "Check TuyaEF00Manager.js:1912 — skip auto-convert when dpMappings has divisor !== 1",
@@ -320,7 +320,23 @@
           2
         ],
         [
+          "_tz3000_",
+          2
+        ],
+        [
+          "zigbee2mqtt",
+          2
+        ],
+        [
+          "ZIGBEE2MQTT",
+          2
+        ],
+        [
           "TS0601",
+          2
+        ],
+        [
+          "SENSOR",
           2
         ],
         [
@@ -332,27 +348,11 @@
           1
         ],
         [
-          "debug",
+          "SONOFF",
           1
         ],
         [
-          "test",
-          1
-        ],
-        [
-          "TS0201",
-          1
-        ],
-        [
-          "_TZ3000_402vrq2i",
-          1
-        ],
-        [
-          "zigbee2mqtt",
-          1
-        ],
-        [
-          "TS004F",
+          "_TZ3000_TSGQXDB4",
           1
         ]
       ],
@@ -390,6 +390,18 @@
           1
         ],
         [
+          "VISION",
+          1
+        ],
+        [
+          "_tze200_wfxuhoea",
+          1
+        ],
+        [
+          "_tze",
+          1
+        ],
+        [
           "TS0601",
           1
         ]
@@ -419,7 +431,27 @@
           1
         ],
         [
+          "_tz3000_",
+          1
+        ],
+        [
+          "_TZ3000_XR3HTD96",
+          1
+        ],
+        [
+          "tuya",
+          1
+        ],
+        [
+          "VISION",
+          1
+        ],
+        [
           "TS0201",
+          1
+        ],
+        [
+          "SENSOR",
           1
         ]
       ],
@@ -457,7 +489,19 @@
           1
         ],
         [
-          "TS0601",
+          "coordinator",
+          1
+        ],
+        [
+          "VISION",
+          1
+        ],
+        [
+          "_TZE204_CLRDRNYA",
+          1
+        ],
+        [
+          "_tze",
           1
         ]
       ],
