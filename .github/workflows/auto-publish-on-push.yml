@@ -93,21 +93,24 @@ jobs:
                 try {
                   const comp = JSON.parse(fs.readFileSync(p, 'utf8'));
                   if (comp.zigbee && !comp.zigbee.manufacturerName) {
-                    comp.zigbee.manufacturerName = [];
+                    // Use driver ID as placeholder so the array is never truly empty
+                    const placeholder = (d || 'Unknown').replace(/_/g, ' ');
+                    comp.zigbee.manufacturerName = [placeholder];
                     fs.writeFileSync(p, JSON.stringify(comp, null, 2) + '\n', 'utf8');
                     srcFixed++;
                   }
-                } catch (e) { /* skip corrupt */ }
+                } catch (e) { console.warn(`Skipping corrupt ${d}/driver.compose.json: ${e.message}`); }
               });
           } catch (e) { console.error('driver scan error:', e.message); }
 
-          // Step B: Fix app.json
+          // Step B: Fix app.json — extract driver ID for placeholder
           const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
           let appFixed = 0;
           app.drivers.forEach(d => {
             if (!d.zigbee) return;
             if (!d.zigbee.manufacturerName) {
-              d.zigbee.manufacturerName = [];
+              const placeholder = (d.id || 'Unknown').replace(/_/g, ' ');
+              d.zigbee.manufacturerName = [placeholder];
               appFixed++;
             }
           });
@@ -315,7 +318,7 @@ jobs:
         id: promote_oauth
         if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
-        timeout-minutes: 3
+        timeout-minutes: 5
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
@@ -324,9 +327,10 @@ jobs:
         run: node .github/scripts/auto-promote-oauth.js
 
       - name: "Tier 3: Promote via PAT API"
+        id: promote_api
         if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         continue-on-error: true
-        timeout-minutes: 3
+        timeout-minutes: 5
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js

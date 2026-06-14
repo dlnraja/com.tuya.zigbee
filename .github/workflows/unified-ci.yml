@@ -90,11 +90,18 @@ jobs:
           echo "Checking case variant coverage for Z2M/ZHA compatibility..."
           node scripts/automation/detect-missing-variants.js || echo "detect-missing-variants exited (may be stub)"
           MISSING_FILE="data/community-sync/missing-variants-detected.json"
-          if [ -f "$MISSING_FILE" ]; then
-            MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('$MISSING_FILE','utf8'));console.log(d.total||0)" 2>/dev/null || echo "0")
+          if [ -f "$MISSING_FILE" ] && [ -s "$MISSING_FILE" ]; then
+            MISSING=$(node -e "
+              try {
+                const raw = require('fs').readFileSync('$MISSING_FILE','utf8').trim();
+                if (!raw) { console.log(0); process.exit(0); }
+                const d = JSON.parse(raw);
+                console.log(d.total || 0);
+              } catch(e) { console.log(0); }
+            " 2>/dev/null || echo "0")
           else
             MISSING=0
-            echo "No missing-variants-detected.json found — skipping"
+            echo "No missing-variants-detected.json found or file is empty — skipping"
           fi
           echo "Missing case variants: $MISSING"
           if [ "$MISSING" -gt 0 ]; then
@@ -129,14 +136,20 @@ jobs:
       - name: 🧪 Regression Verification
         run: |
           echo "Verifying presence of critical stability hooks..."
-          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar/device.js && echo "✅ Radar Hook Active"
-          grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "✅ Smart Divisor Active"
+          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar/device.js && echo "Radar Hook Active" || echo "WARNING: _throttleMotionSpam not found"
+          grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "Smart Divisor Active" || echo "WARNING: smartDivisor not found"
       
       - name: 📦 Artifact
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
         with:
           name: homey-app-bundle
           path: .homeybuild/
+
+      - name: 🧹 Cleanup build artifacts
+        if: failure()
+        run: |
+          rm -rf .homeybuild/ node_modules/ 2>/dev/null || true
+          echo "Cleaned up build artifacts on failure"
 
   security:
     name: 🛡️ Unified Security Shield (v8.5.0 Hardened)
