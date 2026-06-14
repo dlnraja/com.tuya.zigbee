@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,492+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,319+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-412-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,080-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **4,492+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **4,319+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -34,8 +34,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.26 |
-| **Device Fingerprints** | 4,492+ |
+| **App Version** | v9.0.27 |
+| **Device Fingerprints** | 4,319+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,080 |
@@ -60,16 +60,16 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 8 | `sensor_contact_zigbee` | 123 |
 | 9 | `diy_custom_zigbee` | 103 |
 | 10 | `dimmer_wall_1gang` | 72 |
-| 11 | `socket_power_strip_four_three` | 71 |
-| 12 | `wall_thermostat` | 70 |
-| 13 | `light_bulb_rgb_rgbw` | 65 |
-| 14 | `generic_diy` | 63 |
-| 15 | `sensor_contact_motion` | 62 |
-| 16 | `sensor_contact_plug` | 62 |
-| 17 | `sensor_contact_rain` | 62 |
-| 18 | `switch_4gang` | 62 |
-| 19 | `motion_sensor` | 59 |
-| 20 | `thermostat_tuya_dp` | 51 |
+| 11 | `wall_thermostat` | 69 |
+| 12 | `light_bulb_rgb_rgbw` | 65 |
+| 13 | `generic_diy` | 63 |
+| 14 | `sensor_contact_plug` | 62 |
+| 15 | `sensor_contact_rain` | 62 |
+| 16 | `switch_4gang` | 62 |
+| 17 | `motion_sensor` | 59 |
+| 18 | `thermostat_tuya_dp` | 51 |
+| 19 | `universal_zigbee` | 50 |
+| 20 | `water_leak_sensor_tuya` | 50 |
 
 ### Drivers by Device Class
 
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
+| **v9.0.27** | v9.0.26: |
 | **v9.0.26** | v9.0.25: |
 | **v9.0.25** | v9.0.24: |
 | **v9.0.24** | v9.0.23: |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.16** | v9.0.15: |
 | **v9.0.15** | v9.0.15: Restore all 46 WiFi drivers, use cross-platform publish temp dir, optimize GitHub publish action. |
 | **v9.0.14** | v9.0.13: |
-| **v9.0.13** | v9.0.12: |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 412 Drivers ─ 4,492+ fingerprints
+       └─ 412 Drivers ─ 4,319+ fingerprints
 ```
 
 ---
