@@ -27,10 +27,7 @@
   },
   "zigbee": {
     "productId": [
-      "RH3001",
-      "TS0203",
-      "DoorWindow-Sensor-ZB3.0",
-      "MCT-340 E"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -51,7 +48,9 @@
         "en": "Open the device and press the reset button gently for aprox 10 seconds until the LED blinks rapidly."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_dummy1781425895946"
+    ]
   },
   "version": "1.0.0"
 }

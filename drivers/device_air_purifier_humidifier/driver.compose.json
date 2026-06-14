@@ -35,7 +35,10 @@
     }
   },
   "zigbee": {
-    "manufacturerName": ["_TZ3000_unknown"],
+    "manufacturerName": [
+      "_TZ3000_unknown",
+      "_tze200_mja3fuja"
+    ],
     "productId": [
       "TS0601"
     ],
