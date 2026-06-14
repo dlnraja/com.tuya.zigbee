@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.14] - 2026-06-13
+## [9.0.15] - 2026-06-14
+
+v9.0.15: Restore all 46 WiFi drivers, use cross-platform publish temp dir, optimize GitHub publish action.
+---
+
+ [9.0.14] - 2026-06-13
 
 v9.0.13:
 ---
