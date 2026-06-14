@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.31",
+  "version": "9.0.32",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -103109,7 +103109,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -103636,7 +103638,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -103841,7 +103845,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -104055,7 +104061,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -105453,7 +105461,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -106333,7 +106343,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -106765,7 +106777,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS0001"
@@ -110905,7 +110919,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -117027,7 +117043,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -123859,7 +123877,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS0201",
@@ -124750,7 +124770,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS0201",
@@ -127822,7 +127844,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -128347,7 +128371,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -129225,7 +129251,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -130122,7 +130150,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -130647,7 +130677,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -130875,7 +130907,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -132230,7 +132264,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
@@ -134157,7 +134193,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS0225",
@@ -137736,7 +137774,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -144764,7 +144804,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -144906,7 +144948,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS110F",
           "TS110E",
@@ -150005,7 +150049,9 @@
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -151077,7 +151123,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -151234,7 +151282,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": []
@@ -153349,7 +153399,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [
         {
@@ -156465,7 +156517,9 @@
             "en": "Hold button 5s until LED flashes."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
       "images": {
@@ -157307,7 +157361,9 @@
             "en": "Open the backside of the unit and press the button inside for 5 seconds."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -164020,7 +164076,9 @@
         "small": "//drivers/motion_sensor_2/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS0225",
@@ -165525,7 +165583,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -166149,7 +166209,9 @@
         "small": "//drivers/plug/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS011F"
         ],
@@ -168357,7 +168419,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS011F"
@@ -171301,7 +171365,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0004"
         ],
@@ -175414,7 +175480,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS011F"
@@ -177971,9 +178039,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0042",
           "TS0043"
@@ -187913,7 +187979,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS0001"
@@ -190748,7 +190816,9 @@
             "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "maintenanceActions": [
         {
@@ -191114,7 +191184,9 @@
         "small": "//drivers/smartPlug_DinRail/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0121",
           "TSO121",
@@ -192046,7 +192118,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "small": "/drivers/smart_knob/assets/images/small.png",
@@ -192732,7 +192806,9 @@
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "settings": [],
       "maintenanceActions": [
@@ -193001,7 +193077,9 @@
         "small": "//drivers/smartplug/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0121",
           "TSO121",
@@ -193221,7 +193299,9 @@
         "small": "//drivers/smartplug_2_socket/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS011F",
           "TS0601"
@@ -194549,7 +194629,9 @@
             "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": []
@@ -195056,7 +195138,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -195163,7 +195247,9 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -195884,7 +195970,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -197284,7 +197372,9 @@
         "small": "//drivers/switch_2_gang_metering/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601",
           "TS004F"
@@ -200701,7 +200791,9 @@
             "fr": "Branchez le dongle USB sur une source d'alimentation USB. Appuyez 3 fois rapidement sur le bouton du dongle."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "small": "/drivers/switch_usb_dongle/assets/images/small.png",
@@ -204819,7 +204911,9 @@
             "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -205705,7 +205799,9 @@
         "small": "//drivers/tuya_dummy_device/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -207404,7 +207500,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "images": {
         "small": "/drivers/valve_dual_irrigation/assets/images/small.png",
@@ -207825,7 +207923,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0111",
           "TS0001",
@@ -209064,7 +209164,9 @@
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "maintenanceActions": [
         {
@@ -209156,7 +209258,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0043",
           "TS0601",
@@ -209284,7 +209388,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS0046",
           "TS0601",
@@ -209430,7 +209536,9 @@
         "small": "//drivers/wall_socket/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
         "productId": [
           "TS011F"
         ],
