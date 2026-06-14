@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.17": {
+    "en": "v9.0.16:"
+  },
   "9.0.16": {
     "en": "v9.0.15:"
   },
@@ -66,12 +69,7 @@
     "date": "2026-05-28",
     "changes": "Fixed interactive prompt handling in CI publish step. Switched to official athombv/github-action-homey-app-publish action. Community sync: 122 new FPs."
   },
-  "8.5.53": {
-    "version": "8.5.53",
-    "date": "2026-05-28",
-    "changes": "Auto-confirmed uncommitted changes prompt in CI publish step. Monthly enrichment: 412 drivers, 3364 FPs validated."
-  },
-  "9.0.17": {
-    "en": "v9.0.16:"
+  "9.0.18": {
+    "en": "v9.0.17:"
   }
 }
