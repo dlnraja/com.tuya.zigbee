@@ -44,6 +44,8 @@ jobs:
         run: node .github/scripts/collect-diagnostics.js
 
       - name: Commit diagnostics
+        if: always()
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -70,4 +72,5 @@ jobs:
           name: diagnostics-summary
           path: diagnostics/summary.json
           retention-days: 30
+          if-no-files-found: warn
 

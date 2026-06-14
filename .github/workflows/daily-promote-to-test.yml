@@ -6,7 +6,7 @@ on:
     - cron: '30 15 * * *'  # After daily-everything 14:00 publish
   workflow_dispatch:
   workflow_run:
-    workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
+    workflows: [Auto Publish, Auto-Publish on Push, "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"]
     types: [completed]
 permissions:
   contents: read
@@ -83,6 +83,7 @@ jobs:
 
       # Tier 4: Retry Puppeteer after 30s
       - name: "Tier 4: Verify retry (Puppeteer)"
+        id: retry
         if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
         continue-on-error: true
         timeout-minutes: 5
@@ -115,6 +116,6 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
           echo "## Draft to Test" >> $GITHUB_STEP_SUMMARY
-          echo "v$VER | Puppeteer=${{ steps.puppeteer.outcome }} | OAuth=${{ steps.oauth.outcome }} | API=${{ steps.api.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER | Puppeteer=${{ steps.puppeteer.outcome }} | OAuth=${{ steps.oauth.outcome }} | API=${{ steps.api.outcome }} | Retry=${{ steps.retry.outcome }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "[Test link](https://homey.app/a/$APP_ID/test/) | [Manage](https://tools.developer.homey.app/apps/app/$APP_ID/versions)" >> $GITHUB_STEP_SUMMARY

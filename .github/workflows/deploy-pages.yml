@@ -5,7 +5,7 @@ on:
     - cron: '0 9 * * *'  # Daily 09:00 UTC — keep Device Finder updated
   workflow_dispatch:
   workflow_run:
-    workflows: ["Daily Everything Pipeline"]
+    workflows: ["🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"]
     types: [completed]
   push:
     branches: [master, main]
