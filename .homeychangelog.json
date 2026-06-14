@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.23": {
+    "en": "v9.0.22:"
+  },
   "9.0.22": {
     "en": "v9.0.21:"
   },
@@ -58,10 +61,7 @@
   "9.0.5": {
     "en": "v9.0.4:"
   },
-  "9.0.4": {
-    "en": "v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)"
-  },
-  "9.0.23": {
-    "en": "v9.0.22:"
+  "9.0.24": {
+    "en": "v9.0.23:"
   }
 }
