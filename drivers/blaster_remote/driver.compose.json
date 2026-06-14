@@ -231,7 +231,9 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ],
     "productId": [
       "TS0601",
       "TS1201"
