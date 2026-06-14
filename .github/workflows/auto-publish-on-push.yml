@@ -312,6 +312,7 @@ jobs:
         run: node .github/scripts/auto-promote-puppeteer.js
 
       - name: "Tier 2: Promote via OAuth"
+        id: promote_oauth
         if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         timeout-minutes: 3
@@ -323,8 +324,9 @@ jobs:
         run: node .github/scripts/auto-promote-oauth.js
 
       - name: "Tier 3: Promote via PAT API"
-        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success'
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         continue-on-error: true
+        timeout-minutes: 3
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
