@@ -1,4 +1,4 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 /**
  * 🛡️ zero-defect-control.js - v5.13.6 (Antigravity Enhanced)
  * 
@@ -19,20 +19,33 @@
 const fs = require('fs');
 const path = require('path');
 
+const JSON_OUTPUT = process.argv.includes('--json');
 const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 let errors = 0;
 let filesChecked = 0;
 let warnings = 0;
+const errorDetails = [];
+const warnDetails = [];
 
 // v5.13.6: Antigravity Enhanced Logging
 const LOG_LEVEL = process.env.DEBUG ? 'debug' : 'info';
 
-function log(msg) { console.log(`[ZERO-DEFECT-CONTROL] ${msg}`); }
-function error(msg) { console.error(`[ZERO-DEFECT-CONTROL] ❌ ERROR: ${msg}`); errors++; }
-function warn(msg) { console.warn(`[ZERO-DEFECT-CONTROL] ⚠️ WARNING: ${msg}`); warnings++; }
-function debug(msg) { if (LOG_LEVEL === 'debug') console.log(`[ZERO-DEFECT-CONTROL] 🔍 DEBUG: ${msg}`); }
+function log(msg) { if (!JSON_OUTPUT) console.log(`[ZERO-DEFECT-CONTROL] ${msg}`); }
+function error(msg) {
+  errors++;
+  const entry = { message: msg };
+  errorDetails.push(entry);
+  if (!JSON_OUTPUT) console.error(`[ZERO-DEFECT-CONTROL] ERROR: ${msg}`);
+}
+function warn(msg) {
+  warnings++;
+  const entry = { message: msg };
+  warnDetails.push(entry);
+  if (!JSON_OUTPUT) console.warn(`[ZERO-DEFECT-CONTROL] WARNING: ${msg}`);
+}
+function debug(msg) { if (LOG_LEVEL === 'debug' && !JSON_OUTPUT) console.log(`[ZERO-DEFECT-CONTROL] DEBUG: ${msg}`); }
 
 // v5.13.6: BSEED ZCL-only manufacturers for 3-gang switches (Issue #170)
 const BSEED_ZCL_ONLY_3G = [
@@ -157,15 +170,27 @@ for (const entry of entries) {
   }
 }
 
-log('====================================================');
-log(`Audit completed. Checked ${filesChecked} driver resource files.`);
-if (errors > 0) {
-  log(`FAILED: Found ${errors} error(s) and ${warnings} warning(s).`);
-  process.exit(1);
-} else if (warnings > 0) {
-  log(`PASSED with ${warnings} warning(s). Consider fixing non-blocking issues.`);
-  process.exit(0);
+if (JSON_OUTPUT) {
+  const output = {
+    timestamp: new Date().toISOString(),
+    filesChecked,
+    errors,
+    warnings,
+    errorDetails,
+    warningDetails,
+    exitCode: errors > 0 ? 1 : 0,
+  };
+  console.log(JSON.stringify(output, null, 2));
 } else {
-  log('PASSED: 100% Zero-Defect compliance across all drivers.');
-  process.exit(0);
+  log('====================================================');
+  log(`Audit completed. Checked ${filesChecked} driver resource files.`);
+  if (errors > 0) {
+    log(`FAILED: Found ${errors} error(s) and ${warnings} warning(s).`);
+  } else if (warnings > 0) {
+    log(`PASSED with ${warnings} warning(s). Consider fixing non-blocking issues.`);
+  } else {
+    log('PASSED: 100% Zero-Defect compliance across all drivers.');
+  }
 }
+
+process.exit(errors > 0 ? 1 : 0);
