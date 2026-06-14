@@ -30,26 +30,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (Jun 2026)
-
-| Version | Feature |
-|---------|---------|
-| **vv8_5_30** |  |
-| **v9.0.15** | v9.0.15: Restore all 46 WiFi drivers, use cross-platform publish temp dir, op... |
-| **v9.0.14** | v9.0.13: |
-| **v9.0.13** | v9.0.12: |
-| **v9.0.12** | v9.0.11: |
-| **v9.0.11** | v9.0.10: |
-| **v9.0.10** | v9.0.9: |
-| **v9.0.9** | v9.0.8: |
-| **v9.0.8** | v9.0.7: |
-| **v9.0.7** | v9.0.6: |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
