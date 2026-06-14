@@ -12,7 +12,7 @@ class switch_4_gang_metering extends UnifiedSwitchBase {
   async onNodeInit({zclNode}) {
 
     this.printNode();
-    console.log(zclNode.endpoints);
+    this.log('[SWITCH-4G] Endpoints:', zclNode.endpoints?.length);
 
     const { subDeviceId } = this.getData();
     this.log('Device data: ', subDeviceId);

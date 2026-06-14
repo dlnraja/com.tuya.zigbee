@@ -7,7 +7,7 @@ try {
   UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 } catch (error) {
   // Fallback to direct ZigBeeDevice if UnifiedCoverBase fails
-  console.error('[CURTAIN_MOTOR] Failed to load UnifiedCoverBase, using ZigBeeDevice fallback:', error.message);
+  // UnifiedCoverBase load failed - using ZigBeeDevice fallback
   const { ZigBeeDevice } = require('homey-zigbeedriver');
   UnifiedCoverBase = ZigBeeDevice;
 }

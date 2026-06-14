@@ -14,18 +14,18 @@ const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPr
 let OnOffBoundCluster = null;
 try {
   OnOffBoundCluster = require('../../lib/clusters/OnOffBoundCluster');
-  console.log('[BUTTON1]  OnOffBoundCluster loaded');
+  // OnOffBoundCluster loaded successfully
 } catch (e) {
-  console.log('[BUTTON1]  OnOffBoundCluster not available:', e.message);
+  // OnOffBoundCluster not available - will use fallback
 }
 
 // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - Import LevelControlBoundCluster for rotary dimmer
 let LevelControlBoundCluster = null;
 try {
   LevelControlBoundCluster = require('../../lib/clusters/LevelControlBoundCluster');
-  console.log('[BUTTON1]  LevelControlBoundCluster loaded');
+  // LevelControlBoundCluster loaded successfully
 } catch (e) {
-  console.log('[BUTTON1]  LevelControlBoundCluster not available:', e.message);
+  // LevelControlBoundCluster not available - will use fallback
 }
 
 /**

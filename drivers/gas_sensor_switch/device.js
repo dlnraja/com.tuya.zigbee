@@ -6,7 +6,7 @@ try {
   UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
   if (!UnifiedSwitchBase) throw new Error('UnifiedSwitchBase is undefined');
 } catch (e) {
-  console.error('[switch_4gang] UnifiedSwitchBase load failed:', e.message);
+  // UnifiedSwitchBase load failed - using ZigBeeDevice fallback
   const { ZigBeeDevice } = require('homey-zigbeedriver');
   UnifiedSwitchBase = ZigBeeDevice;
 }

@@ -10,6 +10,9 @@ on:
     branches: [master, stable-v5]
     paths: ['lib/**', 'drivers/**', 'app.js', 'app.json']
 
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -21,6 +24,7 @@ jobs:
   syntax-check:
     if: false  # DISABLED — remove this line to re-enable
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
