@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.27",
+  "version": "9.0.28",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -104055,9 +104055,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -129233,9 +129231,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -182748,68 +182744,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_cjrngdr3",
-          "_TZ3000_qaaysllp",
-          "_TZ3000_npzfdcof",
-          "_TZ3000_decxrtwa",
-          "_TZ3000_26fmupbb",
-          "_TZ3000_qrldbmfn",
-          "_TZ3000_rcuyhwe3",
-          "_TZ3000_996rpfy6",
-          "_TZ3000_7d8yme6f",
-          "_TZ3000_2mbfxlzr",
-          "_TZ3000_n2egfsli",
-          "_TZ3000_yfekcy3n",
-          "_TZ3000_8yhypbo7",
-          "_TZ3000_gntwytxo",
-          "_TZ3000_4ugnzsli",
-          "_TZ3000_udyjylt7",
-          "_TZ3000_v7chgqso",
-          "_TZ3000_timx9ivq",
-          "_TZ3000_rid8lzvo",
-          "_TZ3000_bpkijo14",
-          "_TZ3000_oxslv1c9",
-          "_TZ3000_osu834un",
-          "_TZE284_vuwtqx0t",
-          "_TZE200_vuwtqx0t",
-          "_TZ3210_jowhpxop",
-          "_TZ3000_pjb1ua0m",
-          "_TZ3000_q6a3tepg",
-          "_TZ3000_skueekg3",
-          "_TZ3000_5ng23zjs",
-          "_TZ3000_rmjr4ufz",
-          "_TZ3000_v7gnj3ad",
-          "_TZ3000_3a9beq8a",
-          "_TZ3000_ark8nv4y",
-          "_TZ3000_mx3vgyea",
-          "_TZ3000_fdxihpp7",
-          "_TZ3000_qsp2pwtf",
-          "_TZ3000_kycczpw8",
-          "_TZ3000_46t1rvdu",
-          "_TZ3000_bhcpnvud",
-          "_TZ3000_i9oy2rdq",
-          "_TZ3000_m9af2l6g",
-          "_TZ3000_dlhhrhs8",
-          "_TZE200_bqcqqjpb",
-          "_TZE200_gaj531w3",
-          "_TZE200_p2qzzazi",
-          "_TZE204_nklqjk62",
-          "_TZE204_jktmrpoj",
-          "_TZE284_nklqjk62",
-          "_TZE200_wfxuhoea",
-          "_TZE204_wfxuhoea",
-          "_TZE200_2m38mh6k",
-          "_TZE200_ysm4dsb1",
-          "_TZE200_pay2byax",
-          "_TZE200_ijey4q29",
-          "_TZE200_ykglasuj",
-          "_TZE200_kf2hbko4",
-          "_TZE200_f1pvdgoh",
-          "_TZE200_wzk0x7fq",
-          "_TZE200_jfw0a4aa",
-          "_TZE284_2baujqot",
-          "CAT0001",
-          "DSS0010"
+          "_tz3000_cjrngdr3"
         ],
         "productId": [
           "TS0601",
@@ -191280,9 +191215,7 @@
         "small": "//drivers/smartPlug_DinRail/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0121",
           "TSO121",
@@ -209452,34 +209385,7 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_ug1vtuzn",
-          "_tze200_bq5c8xfe",
-          "_tz3000_p6ju8myv",
-          "_tz3000_0zrccfgx",
-          "_tz3000_fsiepnrh",
-          "_tz3000_eo3dttwe",
-          "_tz3000_jwcixnrz",
-          "_tz3000_obacbukl",
-          "_tze200_hkdl5fmv",
-          "_tz3000_itnrsufe",
-          "_TZE200_bjawzodf",
-          "_TZE200_zl1kmjqx",
-          "_TZE200_44af8vyi",
-          "_TZE204_jygvp6fk",
-          "_TZE200_d7lpruvi",
-          "_TZE204_ksz749x8",
-          "_TZE204_1wnh8bqp",
-          "_TZE284_1wnh8bqp",
-          "_TZ3290_rlkmy85q4pzoxobl",
-          "_TZ3290_uc8lwbi2",
-          "_TZ3290_8xzb2ghn",
-          "_TZ3290_yac64inudpovoaba",
-          "_TZE204_muvkrjr5",
-          "_TZ3000_rul9yxcc",
-          "_TZE284_d4h8j2n6",
-          "_TZ3000_u2bbagu4"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0046",
           "TS0601",
@@ -209625,11 +209531,7 @@
         "small": "//drivers/wall_socket/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_b28wrpvx",
-          "_tz3000_4ux0ondb",
-          "_tz3000_y4ona9me"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS011F"
         ],
