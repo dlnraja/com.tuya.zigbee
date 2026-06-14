@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.19": {
+    "en": "v9.0.18:"
+  },
   "9.0.18": {
     "en": "v9.0.17:"
   },
@@ -62,12 +65,7 @@
     "date": "2026-06-12",
     "changes": "Fixed mainsPowered syntax errors in 8 WiFi drivers. Fixed super.onNodeInit params + trailing whitespace. Resolved 93 critical fingerprint collisions. Auto-healed 874 missing fingerprints. Fixed GitHub issues #383, #388, #395. Added Zigbee OTA firmware update infrastructure. Resolved haadeess issues #395, #406, #412. Fixed auto-heal regressions for rain sensor and irrigation valve."
   },
-  "9.0.0": {
-    "version": "9.0.0",
-    "date": "2026-05-28",
-    "changes": "Major release: resolved server-side AggregateError by injecting generic placeholders for template drivers. All 412 Zigbee drivers now have valid manufacturer entries. Community sync: 122 new FPs."
-  },
-  "9.0.19": {
-    "en": "v9.0.18:"
+  "9.0.20": {
+    "en": "v9.0.19:"
   }
 }
