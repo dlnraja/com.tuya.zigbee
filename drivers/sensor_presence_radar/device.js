@@ -117,7 +117,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   // v5.8.29: CRITICAL FIX (FinnKje forum) - null/undefined ALWAYS = no motion
   // Previously invertPresence turned null into true, causing false triggers every 5min
   if (value === null || value === undefined) {
-    console.log(`[PRESENCE-FIX] âšï¸null/undefined presence for ${configName}, defaulting to false`);
+    console.log(`[PRESENCE-FIX] null/undefined presence for ${configName}, defaulting to false`);
     return false;
   }
 

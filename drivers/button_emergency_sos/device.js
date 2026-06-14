@@ -6,7 +6,7 @@ let IEEEAddressManager = null;
 try {
   IEEEAddressManager = require('../../lib/managers/IEEEAddressManager');
 } catch (e) {
-  console.log('[SOS] IEEEAddressManager import failed:', e.message);
+  // IEEEAddressManager not available - will use fallback
 }
 
 let IasAceBoundCluster = null;
@@ -14,7 +14,7 @@ try {
   const iasAce = require('../../lib/clusters/IasAceCluster');
   IasAceBoundCluster = iasAce.IasAceBoundCluster;
 } catch (e) {
-  console.log('[SOS] IasAceCluster import failed:', e.message);
+  // IasAceCluster not available - will use fallback
 }
 
 /**

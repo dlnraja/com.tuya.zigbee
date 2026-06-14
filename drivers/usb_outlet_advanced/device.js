@@ -226,7 +226,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   _registerButtonFlowTrigger() {
     try {
-      this.homey.flow.getTriggerCard('usb_outlet_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard('usb_outlet_button_pressed')?.trigger(this, {}, {}).catch((err) => this.error(err))
       this.log('[USB-ADV] Button flow trigger registered');
     } catch (err) {
       this.log('[USB-ADV] Button flow trigger not available:', err.message);
