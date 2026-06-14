@@ -6,6 +6,7 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
+    "power_on_behavior",
     "button.toggle",
     "button.identify"
   ],
@@ -1122,6 +1123,12 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "power_on_behavior": {
+      "title": {
+        "en": "Power On Behavior",
+        "fr": "Comportement à la mise sous tension"
+      }
     }
   },
   "metadata": {

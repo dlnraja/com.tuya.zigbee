@@ -27,6 +27,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       7: { internal: true, type: 'child_lock', writable: true },
       9: { internal: true, type: 'countdown', writable: true },
+      14: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       17: { capability: 'measure_current', divisor: 1000 },
       18: { capability: 'measure_power', divisor: 10 },
       19: { capability: 'measure_voltage', divisor: 10 },

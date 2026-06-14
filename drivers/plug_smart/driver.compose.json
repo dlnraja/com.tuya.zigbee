@@ -11,7 +11,8 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "power_on_behavior"
   ],
   "energy": {
     "batteries": [

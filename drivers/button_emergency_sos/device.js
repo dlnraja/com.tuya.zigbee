@@ -62,7 +62,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _ensureCapabilities() {
-    const caps = ['alarm_generic', 'measure_battery'];
+    const caps = ['alarm_generic', 'measure_battery', 'alarm_battery'];
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => { });
@@ -255,16 +255,17 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (now - this._lastTrigger < 2000) {return;}
     this._lastTrigger = now;
 
-    this.log('[SOS] 🆘 SOS BUTTON PRESSED!', JSON.stringify(payload));
+    this.log('[SOS] SOS BUTTON PRESSED!', JSON.stringify(payload));
 
     // Wake up actions
     this._readBatteryNow().catch(() => {});
     this._verifyCieAddress().catch(() => {});
 
-    // Set capability and trigger flow
+    // Set capability and trigger flow with source info
     await this.setCapabilityValue('alarm_generic', true).catch(() => { });
     if (this.driver?.triggerSOS) {
-      await this.driver.triggerSOS(this);
+      const source = (payload && payload.source) || 'unknown';
+      await this.driver.triggerSOS(this, { source });
     }
 
     // Auto-reset
@@ -293,18 +294,33 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
   async _updateBattery(value, type) {
     if (value === undefined || value === null || value === 255) {return;}
-    
+
     let percent;
     if (type === 'percentage') {
       percent = value > 100 ? Math.round(value / 2) : value;
     } else {
-      const voltage = smartParse(value, null, { capability: 'measure_voltage' });
+      // Voltage to percent: interpret raw value (mV or V)
+      let voltage = typeof value === 'number' ? value : parseFloat(value);
+      if (isNaN(voltage)) {return;}
+      // If value looks like millivolts (>300), convert to volts
+      if (voltage > 300) {voltage = voltage / 1000;}
       percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
     }
 
     if (percent >= 0 && percent <= 100) {
       await this.setCapabilityValue('measure_battery', percent).catch(() => { });
       this._updateActivity();
+
+      // v5.5.833: Trigger battery_low flow when below threshold
+      const threshold = this.getSetting('battery_low_threshold') || 20;
+      if (percent <= threshold) {
+        await this.setCapabilityValue('alarm_battery', true).catch(() => { });
+        if (this.driver?.triggerBatteryLow) {
+          await this.driver.triggerBatteryLow(this, { battery_level: percent });
+        }
+      } else {
+        await this.setCapabilityValue('alarm_battery', false).catch(() => { });
+      }
     }
   }
 
@@ -366,6 +382,29 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (ieee) {await iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => { });}
   }
 
+  /**
+   * v5.5.833: Handle settings changes (toggle buttons for battery read / IAS re-enroll)
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('[SOS] Settings changed:', changedKeys);
+
+    for (const key of changedKeys) {
+      if (key === 'refresh_battery' && newSettings.refresh_battery === true) {
+        this.log('[SOS] Manual battery read triggered');
+        await this._readBatteryNow();
+        // Reset the toggle back to false
+        await this.setSettings({ refresh_battery: false }).catch(() => { });
+      }
+
+      if (key === 're_enroll' && newSettings.re_enroll === true) {
+        this.log('[SOS] Manual IAS Zone re-enrollment triggered');
+        await this._verifyCieAddress();
+        // Reset the toggle back to false
+        await this.setSettings({ re_enroll: false }).catch(() => { });
+      }
+    }
+  }
+
   async _getCoordinatorIeee() {
     if (IEEEAddressManager) {
       try {
@@ -377,10 +416,20 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async onEndDeviceAnnounce() {
-    this.log('[SOS] 📡 Device AWAKE');
-    this._updateActivity();
-    await this._readBatteryNow();
-    await this._verifyCieAddress();
+    this.log('[SOS] 📡 Device AWAKE (UDP-like Device Announce)');
+    try {
+      this._updateActivity();
+      
+      // Z2M Heuristics: Many TS0601 SOS buttons ONLY send Device Announce when pressed
+      // We treat this UDP-like MAC packet as an implicit physical alarm trigger
+      this.log('[SOS] 🚨 Device Announce intercepted - Triggering physical alarm fallback');
+      await this._handleAlarm({ source: 'device_announce_udp' });
+      
+      await this._readBatteryNow();
+      await this._verifyCieAddress();
+    } catch (err) {
+      this.error('[SOS] ⚠️ Error during Device Announce processing:', err?.message || err);
+    }
   }
 
   onUninit() {
