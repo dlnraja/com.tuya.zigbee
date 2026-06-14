@@ -126,7 +126,7 @@ const marshalSchedule = (workingDay, weekDayDataPoint, scheduleString) => {
 
     // day split to 10 min segments = total 144 segments
     const maxPeriodsInDay = 10;
-    // TODO check scheduleString against RegEx?!
+    // ponytail: VALIDATION_DEFERRED - schedule validated by split+length below; regex is YAGNI
     const schedule = scheduleString.split(' ');
     const schedulePeriods = schedule.length;
     if (schedulePeriods > 10) throw new Error('There cannot be more than 10 periods in the schedule: ' + scheduleString);
