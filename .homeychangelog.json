@@ -4,6 +4,9 @@
     "date": "2026-05-28",
     "changes": "fix OAuth2Client CLIENT_ID crash"
   },
+  "9.0.16": {
+    "en": "v9.0.15:"
+  },
   "9.0.15": {
     "en": "v9.0.15: Restore all 46 WiFi drivers, use cross-platform publish temp dir, optimize GitHub publish action."
   },
@@ -68,12 +71,7 @@
     "date": "2026-05-28",
     "changes": "Auto-confirmed uncommitted changes prompt in CI publish step. Monthly enrichment: 412 drivers, 3364 FPs validated."
   },
-  "8.5.52": {
-    "version": "8.5.52",
-    "date": "2026-05-28",
-    "changes": "Resolved bash syntax error in CI publish step that blocked automated releases."
-  },
-  "9.0.16": {
-    "en": "v9.0.15:"
+  "9.0.17": {
+    "en": "v9.0.16:"
   }
 }
