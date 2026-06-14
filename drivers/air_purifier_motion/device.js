@@ -28,7 +28,7 @@ class AirPurifierMotionDevice extends TuyaSpecificClusterDevice {
       const s = Boolean(v);
       if (this._lastOnoff !== s) {
         this._lastOnoff = s;
-        this.setCapabilityValue('onoff', s).catch(() => {});
+        this.triggerCapabilityListener('onoff', s).catch(() => {});
       }
     } else if (data.dp === DP.pm25) {
       const pm = safeMultiply(v, 0);

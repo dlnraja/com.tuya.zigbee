@@ -1,0 +1,70 @@
+[
+  {
+    "driver": "dimmer_1_gang_tuya",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "dimmer_2_gang_tuya",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "dimmer_wall_1gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "switch_dimmer_1gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_switch_1_gang_tuya",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_switch_4_gang_tuya",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_switch_5_gang_tuya",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wall_switch_6_gang_tuya",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wifi_switch_2gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wifi_switch_3gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  },
+  {
+    "driver": "wifi_switch_4gang",
+    "issue": "_setGangOnOff missing and does not extend UnifiedSwitchBase"
+  }
+]

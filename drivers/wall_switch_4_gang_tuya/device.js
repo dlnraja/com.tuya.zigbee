@@ -10,6 +10,23 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
 
+  /**
+   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
+   * Maps gang number to the correct Tuya DP and sends the command.
+   * Each sub-device instance overrides its gang via _gangNumber.
+   */
+  async _setGangOnOff(gang, value) {
+    const dpMap = {
+      1: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchOne,
+      2: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchTwo,
+      3: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchThree,
+      4: V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchFour,
+    };
+    const dp = dpMap[gang] || V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchOne;
+    this.log(`[FLOW] _setGangOnOff: gang=${gang} dp=${dp} value=${value}`);
+    await this.writeBool(dp, value);
+  }
+
   async onNodeInit({ zclNode }) {
     this.printNode();
 /*     debug(true);
@@ -81,28 +98,28 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchOne:
         this.log('Received on/off for first gang:', parsedValue);
         if (!this.isSubDevice()) {
-          await this.setCapabilityValue('onoff', parsedValue).catch(this.error);
+          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
         }
         break;
 
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchTwo:
         this.log('Received on/off for second gang:', parsedValue);
         if (subDeviceId === 'secondGang') {
-          await this.setCapabilityValue('onoff', parsedValue).catch(this.error);
+          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
         }
         break;
 
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchThree:
         this.log('Received on/off for third gang:', parsedValue);
         if (subDeviceId === 'thirdGang') {
-          await this.setCapabilityValue('onoff', parsedValue).catch(this.error);
+          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
         }
         break;
 
       case V1_MULTI_SWITCH_DATA_POINTS.onOffSwitchFour:
         this.log('Received on/off for fourth gang:', parsedValue);
         if (subDeviceId === 'fourthGang') {
-          await this.setCapabilityValue('onoff', parsedValue).catch(this.error);
+          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
         }
         break;
 

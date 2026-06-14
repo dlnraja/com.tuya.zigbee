@@ -1,8 +1,9 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
-class Dimmer3GangDevice extends ZigBeeDevice {
+class Dimmer3GangDevice extends UnifiedSwitchBase {
   _appCommandPending = false;
   _appCommandTimeout = null;
   _lastStates = {};

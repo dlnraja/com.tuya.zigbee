@@ -1,0 +1,86 @@
+[
+  {
+    "driver": "air_purifier_curtain",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "button_wireless_6",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "contact_sensor_curtain",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "curtain_motor_tilt",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "device_air_purifier_led",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "dimmer_wall_water",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "door_controller",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "energy_meter_3phase",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "ir_remote",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "remote_button_wireless",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "scene_switch_1",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "scene_switch_2",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "scene_switch_3",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "scene_switch_4",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "sensor_contact_rain",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "sensor_contact_zigbee",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "shutter_roller_controller",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "smart_rcbo",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "valve_single",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  },
+  {
+    "driver": "weather_station_outdoor",
+    "reason": "TS0601 device does not implement TuyaEF00Manager or DP handlers"
+  }
+]

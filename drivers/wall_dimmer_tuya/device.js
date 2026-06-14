@@ -74,7 +74,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         if (brightness > 0 && !this.getCapabilityValue('onoff')) {
           this.log('Dim level is greater than 0, turning on device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, true);
-          await this.setCapabilityValue('onoff', true);
+          await this.triggerCapabilityListener('onoff', true);
         }
     
         // Set the brightness
@@ -84,7 +84,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
         if (brightness === 0) {
           this.log('Dim level is 0, turning off device');
           await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, false);
-          await this.setCapabilityValue('onoff', false);
+          await this.triggerCapabilityListener('onoff', false);
         }
       } catch (err) {
         this.error('Error when writing brightness:', err);
@@ -105,12 +105,12 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
     switch (dp) {
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff:
         this.log('Received on/off:', parsedValue);
-        await this.setCapabilityValue('onoff', parsedValue === true || parsedValue === 1).catch(this.error);
+        await this.triggerCapabilityListener('onoff', parsedValue === true || parsedValue === 1).catch(this.error);
         break;
 
       case V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.brightness:
         this.log('Received dim level:', parsedValue);
-        await this.setCapabilityValue('dim', parsedValue / 1000).catch(this.error);
+        await this.triggerCapabilityListener('dim', parsedValue / 1000).catch(this.error);
         break;
 
       default:

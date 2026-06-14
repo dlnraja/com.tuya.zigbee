@@ -1,12 +1,13 @@
 'use strict';
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
 /**
  * 4 Gang Wall Remote (Type 2)
  * v5.13.2: Migrated to TuyaZigbeeDevice with standardized onZigBeeMessage hook
  */
-class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
+class wall_remote_4_gang_2 extends UnifiedSwitchBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');

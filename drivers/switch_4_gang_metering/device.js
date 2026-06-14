@@ -1,12 +1,13 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { CLUSTER, Cluster, ZCLDataTypes} = require('zigbee-clusters');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 
 Cluster.addCluster(TuyaOnOffCluster);
 
-class switch_4_gang_metering extends ZigBeeDevice {
+class switch_4_gang_metering extends UnifiedSwitchBase {
 
   async onNodeInit({zclNode}) {
 

@@ -30,6 +30,30 @@ const BaseClass = typeof UnifiedSwitchBase === 'function'
 class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
 
+  /**
+   * v9.7.4: _setGangOnOff for flow card compatibility in ZCL-only mode.
+   * When isZclOnlyDevice is true, super.onNodeInit() is bypassed, so the
+   * capability listeners from UnifiedSwitchBase._registerCapabilityListeners()
+   * are never registered. The flow card switch_multi_gang_turn_on/off calls
+   * _setGangOnOff() directly, which must work in both modes.
+   */
+  async _setGangOnOff(gang, value) {
+    if (this.isZclOnlyDevice) {
+      const getOnOffCluster = (epNum) => {
+        const ep = this.zclNode?.endpoints?.[epNum];
+        return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      };
+      const onOff = getOnOffCluster(gang);
+      if (onOff && typeof onOff.writeAttributes === 'function') {
+        await onOff.writeAttributes({ onOff: value ? true : false });
+      } else if (onOff) {
+        await onOff[value ? 'setOn' : 'setOff']();
+      }
+      return true;
+    }
+    return super._setGangOnOff(gang, value);
+  }
+
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
 
   async setSceneMode(mode) {
@@ -147,9 +171,20 @@ class Switch4GangDevice extends BaseClass {
           this._zclState.lastState[epNum] = value;
           this.setCapabilityValue(capName, value).catch(() => {});
 
+          // v9.7.4: FIXED - "magic" mode previously set capability without sending to hardware (fake capability).
+          // Now sends the inverted command to hardware AND updates Homey.
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            const invertedValue = !value;
+            this.setCapabilityValue(capName, invertedValue).catch(() => {});
+            const invertedCluster = getOnOffCluster(epNum);
+            if (invertedCluster) {
+              if (typeof invertedCluster.writeAttributes === 'function') {
+                await invertedCluster.writeAttributes({ onOff: invertedValue }).catch(() => {});
+              } else {
+                await invertedCluster[invertedValue ? 'setOn' : 'setOff']().catch(() => {});
+              }
+            }
           }
 
           if (isPhysical && (mode === 'auto' || mode === 'both')) {

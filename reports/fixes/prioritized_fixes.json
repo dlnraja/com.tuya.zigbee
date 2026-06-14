@@ -1,0 +1,1196 @@
+[
+  {
+    "file": "drivers/dimmer_1_gang_tuya/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/dimmer_2_gang_tuya/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/dimmer_wall_1gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/switch_dimmer_1gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_remote_1_gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_remote_2_gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_remote_3_gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_remote_4_gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_remote_4_gang_3/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_remote_6_gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_switch_1_gang_tuya/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_switch_4_gang_tuya/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_switch_5_gang_tuya/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wall_switch_6_gang_tuya/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wifi_switch_2gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wifi_switch_3gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/wifi_switch_4gang/device.js",
+    "problem": "_setGangOnOff missing and does not extend UnifiedSwitchBase",
+    "severity": "CRITICAL",
+    "recommended_fix": "Implement _setGangOnOff(gang, value) mapping to Tuya DPs or extend UnifiedSwitchBase."
+  },
+  {
+    "file": "drivers/air_purifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_climate/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_climate/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_lcdtemphumidsensor/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_lcdtemphumidsensor/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_motion/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_motion/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_sensor/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_siren/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/blaster_remote/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/blaster_remote/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgb/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgb/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgb_led/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgb_led/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/bulb_rgb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/christmas_lights/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/christmas_lights/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/christmas_lights/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/climate_sensor_device/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/climate_sensor_device/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/climate_sensor_device/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/climate_sensor_device/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/climate_sensor_device/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_climate/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_climate/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_humidifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_humidifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_humidifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_motion/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_motion/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_radiator/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_radiator/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_radiator/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_radiator/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_radiator/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_air_purifier_siren/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve_smart/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve_smart/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve_smart/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve_smart/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/device_radiator_valve_smart/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_1_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_1_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_2_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_2_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_2_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_2_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/dimmer_ts110e/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/fan_controller/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/fan_controller/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/fingerbot/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/fingerbot/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/fingerbot/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/garage_door_opener/device.js",
+    "problem": "Listener updates Homey state but sends no hardware command (fake capability)",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/humidifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/humidifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/humidifier/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/ir_blaster/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/ir_blaster/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/ir_blaster/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/ir_blaster/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/ir_remote/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/led_controller_dimmable/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/led_controller_dimmable/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/light_bulb_rgb/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/light_bulb_rgb/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/light_bulb_rgb_led/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/light_bulb_rgb_led/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/light_bulb_rgb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/light_bulb_rgb_rgbw/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/pet_feeder/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/pet_feeder_zigbee/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/presence_sensor_ceiling/device.js",
+    "problem": "Listener updates Homey state but sends no hardware command (fake capability)",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_controller/device.js",
+    "problem": "Listener updates Homey state but sends no hardware command (fake capability)",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_controller/device.js",
+    "problem": "Listener updates Homey state but sends no hardware command (fake capability)",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_controller/device.js",
+    "problem": "Listener updates Homey state but sends no hardware command (fake capability)",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve/device.js",
+    "problem": "Listener updates Homey state but sends no hardware command (fake capability)",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve_zigbee/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve_zigbee/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve_zigbee/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve_zigbee/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/radiator_valve_zigbee/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/sensor_motion_radar/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/siren/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/sirentemphumidsensor/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/siren_sirentemphumidsensor/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/smart_garden_irrigation_control/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/sr_zs_switch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/switch_dimmer_1gang/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/switch_usb_dongle/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/thermostatic_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/thermostatic_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/thermostatic_radiator_valve/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_curtain_switch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_curtain_switch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_dimmer_1gang_1way/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_dimmer_1gang_1way/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_dimmer_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_dimmer_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_switch_1_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_switch_4_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_switch_5_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_switch_6_gang_tuya/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_thermostat/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_thermostat/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_thermostat/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_thermostat/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wall_thermostat/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_bulb/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_bulb/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_dimmer/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_dimmer/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_fan/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_fan/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_fan/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_led/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_led/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_plug/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_pow/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch_2ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch_2ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch_4ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch_4ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch_4ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_switch_4ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_ewelink_th/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_basicr4/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_dualr3/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_dualr3/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_micro/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_minir3/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_minir4/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_pow_elite/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_smate2/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_thr316d/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_thr316d/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_tx_1ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_tx_2ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_tx_2ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_tx_3ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_tx_3ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/wifi_sonoff_tx_3ch/device.js",
+    "problem": "Listener does not appear to send hardware command",
+    "severity": "HIGH",
+    "recommended_fix": "Replace setCapabilityValue with sendDP or triggerCapabilityListener."
+  },
+  {
+    "file": "drivers/air_purifier_dimmer/device.js",
+    "problem": "DP handler found but never calls setCapabilityValue or equivalent",
+    "severity": "HIGH",
+    "recommended_fix": "Map incoming DP values to setCapabilityValue to update UI."
+  },
+  {
+    "file": "drivers/dimmer_wall_1gang/device.js",
+    "problem": "DP handler found but never calls setCapabilityValue or equivalent",
+    "severity": "HIGH",
+    "recommended_fix": "Map incoming DP values to setCapabilityValue to update UI."
+  },
+  {
+    "file": "drivers/fan_controller/device.js",
+    "problem": "DP handler found but never calls setCapabilityValue or equivalent",
+    "severity": "HIGH",
+    "recommended_fix": "Map incoming DP values to setCapabilityValue to update UI."
+  },
+  {
+    "file": "drivers/handheld_remote_4_buttons/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/ir_remote/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/remote_button_emergency_sos/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/remote_button_wireless/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/remote_button_wireless_handheld/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/remote_button_wireless_usb/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/scene_switch_1/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/scene_switch_2/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/scene_switch_3/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/scene_switch_4/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/scene_switch_6/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/scene_switch_wall/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/smart_remote_1_button/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/smart_remote_1_button_2/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/smart_remote_4_buttons/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wall_remote_1_gang/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wall_remote_2_gang/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wall_remote_3_gang/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wall_remote_4_gang/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wall_remote_4_gang_3/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wall_remote_6_gang/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  },
+  {
+    "file": "drivers/wifi_ir_remote/device.js",
+    "problem": "No trigger cards found for scene buttons",
+    "severity": "HIGH",
+    "recommended_fix": "Implement this.homey.flow.getDeviceTriggerCard(\"scene\").trigger(this, {}, {})."
+  }
+]

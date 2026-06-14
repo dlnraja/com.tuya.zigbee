@@ -1,0 +1,610 @@
+[
+  {
+    "driver": "air_purifier",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_climate",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_contact",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_din",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_lcdtemphumidsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_motion",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_siren",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_purifier_soil",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "air_quality_co2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "bed_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "blaster_remote",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "bulb_rgb",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "bulb_rgb_rgbw",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "button_emergency_sos",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "button_wireless",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "button_wireless_plug",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "button_wireless_usb",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "christmas_lights",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "climate_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "climate_sensor_device",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "climate_sensor_gas",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "climate_sensor_plug",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "climate_sensor_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "climate_sensor_smart",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "contact_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "contact_sensor_curtain",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "contact_sensor_dimmer",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "contact_sensor_plug",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "contact_sensor_zigbee",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "co_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "curtain_module",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "curtain_motor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "curtain_motor_shutter",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "curtain_motor_wall",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_climate",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_din",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_humidifier",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_motion",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_plug",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_soil",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_air_purifier_water",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_plug_energy",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_plug_energy_monitor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_plug_smart",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_plug_smart_water",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_radiator_valve",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "device_radiator_valve_smart",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "dimmer_wall_plug",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "dimmer_wall_switch",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "doorwindowsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "doorwindowsensor_2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "doorwindowsensor_3",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "doorwindowsensor_4",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "fingerbot",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "flood_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "garage_door",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "garage_door_opener",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "gas_detector",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "generic_tuya",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "humidifier",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "illuminance_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "ir_blaster",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "lcdtemphumidluxsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "lcdtemphumidsensor_2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "lcdtemphumidsensor_3",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "light_bulb_rgb",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "light_bulb_rgb_led",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "light_bulb_rgb_rgbw",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "light_sensor_outdoor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "motion_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "motion_sensor_radar_mmwave",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "pet_feeder",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "pirsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "pir_mmwave_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "pir_sensor_2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "plug_smart",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "power_clamp_meter",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "presence_sensor_ceiling",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "presence_sensor_radar",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "radar_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "radar_sensor_2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "radar_sensor_ceiling",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "radiator_controller",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "radiator_valve",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "rain_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "remote_button_wireless_usb",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "remote_button_wireless_wall",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "remote_dimmer",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_climate_contact",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_climate_lcdtemphumidsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_climate_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_climate_smart",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_climate_temphumidsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_climate",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_motion",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_plug",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_rain",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_water",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_contact_zigbee",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_gas_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_illuminance_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_lcdtemphumidsensor_soil",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_motion_presence",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_motion_radar",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sensor_presence_radar",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "siren_sirentemphumidsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "slim_motion_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_air_detection_box",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_door_window_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_garden_irrigation_control",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_heater_controller",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_knob_rotary",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_motion_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smart_scene_panel",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smoke_detector_advanced",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smoke_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smoke_sensor2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "smoke_sensor3",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "soilsensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "soilsensor_2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "soil_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "sr_zs_switch",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "switch_temp_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "temphumidsensor2",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "temphumidsensor3",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "temphumidsensor4",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "temphumidsensor5",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "thermostatic_radiator_valve",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "usb_dongle_dual_repeater",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "usb_dongle_triple",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "usb_outlet_advanced",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "vibration_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "wall_thermostat",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "water_detector",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "water_leak_sensor_tuya",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "water_tank_monitor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "water_valve_garden",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "water_valve_smart",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "weather_station_outdoor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "wifi_camera",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "wifi_led_strip",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "wifi_light",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "wifi_sonoff_pow_elite",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  },
+  {
+    "driver": "wifi_water_tank_monitor",
+    "reason": "Capability updated but no flow triggers (triggerDPReceived/triggerSubCapabilityChanged) called"
+  }
+]

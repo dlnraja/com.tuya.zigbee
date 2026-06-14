@@ -362,9 +362,20 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           this.setCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
+          // v9.7.4: FIXED - "magic" mode previously set capability without sending to hardware (fake capability).
+          // Now sends the inverted command to hardware AND updates Homey.
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            const invertedValue = !value;
+            this.setCapabilityValue(capName, invertedValue).catch(() => {});
+            const invertedCluster = getOnOffCluster(epNum);
+            if (invertedCluster) {
+              if (typeof invertedCluster.writeAttributes === 'function') {
+                await invertedCluster.writeAttributes({ onOff: invertedValue }).catch(() => {});
+              } else {
+                await invertedCluster[invertedValue ? 'setOn' : 'setOff']().catch(() => {});
+              }
+            }
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;

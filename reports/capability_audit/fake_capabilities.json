@@ -1,0 +1,787 @@
+[
+  {
+    "driver": "air_purifier",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_climate",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_climate",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_lcdtemphumidsensor",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_lcdtemphumidsensor",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_motion",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_motion",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_sensor",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "air_purifier_siren",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "blaster_remote",
+    "capability": "button.learn_ir",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "blaster_remote",
+    "capability": "ir_send_code",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgb",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgb",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgbw",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgbw",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgbw",
+    "capability": "light_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgb_led",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgb_led",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgb_rgbw",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "bulb_rgb_rgbw",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "christmas_lights",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "christmas_lights",
+    "capability": "lidl_xmas_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "christmas_lights",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "climate_sensor_device",
+    "capability": "button_boost",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "climate_sensor_device",
+    "capability": "button_child_lock",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "climate_sensor_device",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "climate_sensor_device",
+    "capability": "thermostat_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "climate_sensor_device",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_climate",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_climate",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_humidifier",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_humidifier",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_humidifier",
+    "capability": "dim.humidity",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_motion",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_motion",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "capability": "button_boost",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "capability": "button_child_lock",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "capability": "thermostat_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_radiator",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_air_purifier_siren",
+    "capability": "volume_set",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve",
+    "capability": "button_boost",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve",
+    "capability": "button_child_lock",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve",
+    "capability": "thermostat_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve_smart",
+    "capability": "button_boost",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve_smart",
+    "capability": "button_child_lock",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve_smart",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve_smart",
+    "capability": "thermostat_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "device_radiator_valve_smart",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_1_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_1_gang_tuya",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_2_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_2_gang_tuya",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_2_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_2_gang_tuya",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "dimmer_ts110e",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "fan_controller",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "fan_controller",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "fingerbot",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "fingerbot",
+    "capability": "button.push",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "fingerbot",
+    "capability": "finger_bot_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "garage_door_opener",
+    "capability": "garagedoor_closed",
+    "reason": "Listener updates Homey state but sends no hardware command (fake capability)"
+  },
+  {
+    "driver": "humidifier",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "humidifier",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "humidifier",
+    "capability": "dim.humidity",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "button.learn_ir",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "ir_protocol",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "ir_blaster",
+    "capability": "ir_frequency",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "ir_remote",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "led_controller_dimmable",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "led_controller_dimmable",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "light_bulb_rgb",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "light_bulb_rgb",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "light_bulb_rgb_led",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "light_bulb_rgb_led",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "light_bulb_rgb_rgbw",
+    "capability": "light_hue",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "light_bulb_rgb_rgbw",
+    "capability": "light_saturation",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "pet_feeder",
+    "capability": "button.feed",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "pet_feeder_zigbee",
+    "capability": "button",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "presence_sensor_ceiling",
+    "capability": "onoff",
+    "reason": "Listener updates Homey state but sends no hardware command (fake capability)"
+  },
+  {
+    "driver": "radiator_controller",
+    "capability": "onoff",
+    "reason": "Listener updates Homey state but sends no hardware command (fake capability)"
+  },
+  {
+    "driver": "radiator_controller",
+    "capability": "target_temperature",
+    "reason": "Listener updates Homey state but sends no hardware command (fake capability)"
+  },
+  {
+    "driver": "radiator_controller",
+    "capability": "thermostat_mode",
+    "reason": "Listener updates Homey state but sends no hardware command (fake capability)"
+  },
+  {
+    "driver": "radiator_valve",
+    "capability": "button_boost",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve",
+    "capability": "button_child_lock",
+    "reason": "Listener updates Homey state but sends no hardware command (fake capability)"
+  },
+  {
+    "driver": "radiator_valve",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve",
+    "capability": "thermostat_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve_zigbee",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve_zigbee",
+    "capability": "thermostat_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve_zigbee",
+    "capability": "boost_mode",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve_zigbee",
+    "capability": "window_detection",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "radiator_valve_zigbee",
+    "capability": "child_lock",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "sensor_motion_radar",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "siren",
+    "capability": "volume_set",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "siren_sirentemphumidsensor",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "smart_garden_irrigation_control",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "sr_zs_switch",
+    "capability": "onoff_${switchId}",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "switch_dimmer_1gang",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "switch_usb_dongle",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "thermostatic_radiator_valve",
+    "capability": "window_open",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "thermostatic_radiator_valve",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "thermostatic_radiator_valve",
+    "capability": "thermostat_preset",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "capability": "windowcoverings_set",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "capability": "windowcoverings_state",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_dimmer_1gang_1way",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_dimmer_1gang_1way",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_dimmer_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_dimmer_tuya",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_switch_1_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_switch_4_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_switch_5_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_switch_6_gang_tuya",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_thermostat",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_thermostat",
+    "capability": "thermostat_programming",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_thermostat",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_thermostat",
+    "capability": "measure_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wall_thermostat",
+    "capability": "child_lock",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_bulb",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_bulb",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_dimmer",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_dimmer",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_fan",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_fan",
+    "capability": "onoff.2",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_fan",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_led",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_led",
+    "capability": "dim",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_plug",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_pow",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch_2ch",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch_2ch",
+    "capability": "onoff.2",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch_4ch",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch_4ch",
+    "capability": "onoff.2",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch_4ch",
+    "capability": "onoff.3",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_switch_4ch",
+    "capability": "onoff.4",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_ewelink_th",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_basicr4",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_dualr3",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_dualr3",
+    "capability": "onoff.2",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_micro",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_minir3",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_minir4",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_pow_elite",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_smate2",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_thr316d",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_thr316d",
+    "capability": "target_temperature",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_tx_1ch",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_tx_2ch",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_tx_2ch",
+    "capability": "onoff.2",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_tx_3ch",
+    "capability": "onoff",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_tx_3ch",
+    "capability": "onoff.2",
+    "reason": "Listener does not appear to send hardware command"
+  },
+  {
+    "driver": "wifi_sonoff_tx_3ch",
+    "capability": "onoff.3",
+    "reason": "Listener does not appear to send hardware command"
+  }
+]

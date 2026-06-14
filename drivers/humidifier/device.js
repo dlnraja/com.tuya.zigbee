@@ -64,7 +64,7 @@ class HumidifierDevice extends TuyaZigbeeDevice {
 
     switch (dp) {
       case 1: // On/Off
-        await this.setCapabilityValue('onoff', !!value).catch(this.error);
+        await this.triggerCapabilityListener('onoff', !!value).catch(this.error);
         break;
 
       case 2: // Target humidity
@@ -81,7 +81,7 @@ class HumidifierDevice extends TuyaZigbeeDevice {
 
       case 5: // Mist level (0-3)
         const dim = value / 3;
-        await this.setCapabilityValue('dim', dim).catch(this.error);
+        await this.triggerCapabilityListener('dim', dim).catch(this.error);
         break;
 
       case 12: // Water shortage
