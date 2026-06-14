@@ -34,9 +34,10 @@ const SUM          = process.env.GITHUB_STEP_SUMMARY || null;
 const REPORT_PATH  = path.join(__dirname,'..','..','screenshots','build-error-report.json');
 const DRY          = process.env.DRY_RUN === 'true';
 
-function log(m) { 
-  console.log(m); 
-  if (SUM) try { fs.appendFileSync(SUM, m+'\n'); } catch {} 
+function log(m) {
+  console.log(m);
+  // ponytail: SUMMARY_APPEND - best-effort; failure is non-fatal for a diagnostic script
+  if (SUM) try { fs.appendFileSync(SUM, m+'\n'); } catch { /* ponytail: best-effort summary */ }
 }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
@@ -50,7 +51,8 @@ async function snap(page, name) {
 
 async function waitReady(page, label, ms = 5000) {
   await sleep(ms);
-  try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 8000 }); } catch {}
+  // ponytail: NETWORK_IDLE - timeout is expected for slow loads; non-fatal
+  try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 8000 }); } catch { /* ponytail: timeout OK */ }
   const len = await page.evaluate(() => document.body?.innerText?.length || 0);
   log(`  [wait:${label}] ${len} chars`);
 }
@@ -64,7 +66,8 @@ async function doLogin(page) {
   const emailSelectors = ['input[type="email"]','input[name="email"]','input[name="username"]','#email'];
   let emailField = null;
   for (const s of emailSelectors) {
-    try { emailField = await page.waitForSelector(s, {visible:true,timeout:5000}); if(emailField) break; } catch {}
+    // ponytail: SELECTOR_PROBE - try multiple selectors, timeout means "not found"
+    try { emailField = await page.waitForSelector(s, {visible:true,timeout:5000}); if(emailField) break; } catch { /* ponytail: probe */ }
   }
   if (!emailField) { log('[LOGIN] ❌ Email field not found'); return false; }
   
@@ -74,7 +77,8 @@ async function doLogin(page) {
 
   let pwField = null;
   for (const s of ['input[type="password"]','input[name="password"]','#password']) {
-    try { pwField = await page.$(s); if(pwField) break; } catch {}
+    // ponytail: SELECTOR_PROBE - $() never throws, catch is defensive
+    try { pwField = await page.$(s); if(pwField) break; } catch { /* ponytail: defensive */ }
   }
   if (!pwField) {
     // Email-first flow
@@ -83,7 +87,8 @@ async function doLogin(page) {
     await page.waitForNavigation({waitUntil:'networkidle2',timeout:12000}).catch(() => {});
     await waitReady(page, 'after-email', 3000);
     for (const s of ['input[type="password"]','input[name="password"]']) {
-      try { pwField = await page.waitForSelector(s, {visible:true,timeout:8000}); if(pwField) break; } catch {}
+      // ponytail: SELECTOR_PROBE - timeout means "not found"
+      try { pwField = await page.waitForSelector(s, {visible:true,timeout:8000}); if(pwField) break; } catch { /* ponytail: probe */ }
     }
   }
   if (!pwField) { log('[LOGIN] ❌ Password field not found'); return false; }
@@ -94,7 +99,8 @@ async function doLogin(page) {
   if (btn2) await btn2.click(); else await page.keyboard.press('Enter');
   log('[LOGIN] Submitted');
 
-  try { await page.waitForNavigation({waitUntil:'networkidle2',timeout:30000}); } catch {}
+  // ponytail: NAVIGATION_WAIT - SPA may already be navigated; non-fatal
+  try { await page.waitForNavigation({waitUntil:'networkidle2',timeout:30000}); } catch { /* ponytail: already navigated */ }
   await waitReady(page, 'post-login', 5000);
   log('[LOGIN] Final URL: ' + page.url());
   return page.url().includes('tools.developer.homey.app');
@@ -183,12 +189,11 @@ async function main() {
     await waitReady(page, 'initial', 5000);
     await snap(page, 'diag-00-initial');
 
-    // Step 3: Navigate to versions page (SPA navigation)
+    // Step 3: Navigate to build detail
+    if (!TARGET_BUILD) { log('[ERROR] No build ID specified. Usage: node athom-build-error-diag.js <buildId>'); return; }
 
-      
-      // Navigate to build detail via SUBMISSION link or direct URL
-      const bid = TARGET_BUILD;
-      const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${bid}`;
+    const bid = TARGET_BUILD;
+    const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${bid}`;
       
       log(`  Navigating to: ${buildUrl}`);
       await page.goto(buildUrl, { waitUntil: 'domcontentloaded' });

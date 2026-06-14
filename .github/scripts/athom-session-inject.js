@@ -166,7 +166,8 @@ async function launchWithSession(opts = {}) {
         req.continue();
       }
     } catch {
-      try { req.continue(); } catch {}
+      // ponytail: REQ_CONTINUE - request may already be handled; non-fatal
+      try { req.continue(); } catch { /* ponytail: already handled */ }
     }
   };
   page.on('request', tempHandler);
@@ -180,23 +181,19 @@ async function launchWithSession(opts = {}) {
       token_type: 'Bearer',
       refresh_token: refreshTok,
     };
-    // Try multiple storage keys that Athom SPA might use
+    // ponytail: BLAST_INJECT - try all known storage keys; which one works is SPA-version-dependent
     const keys = ['homeyApiToken', 'athomToken', 'token', '_token', 'access_token', '__athom_access_token'];
     for (const key of keys) {
-      try { localStorage.setItem(key, tok); } catch {}
-      try { localStorage.setItem(key + 'Data', JSON.stringify(tokenData)); } catch {}
+      try { localStorage.setItem(key, tok); } catch { /* ponytail: key rejected */ }
+      try { localStorage.setItem(key + 'Data', JSON.stringify(tokenData)); } catch { /* ponytail: key rejected */ }
     }
-    try { localStorage.setItem('homey-api', JSON.stringify({ token: tokenData })); } catch {}
-    // Also try sessionStorage
-    try { sessionStorage.setItem('homeyApiToken', tok); } catch {}
-    try { sessionStorage.setItem('homey-api', JSON.stringify({ token: tokenData })); } catch {}
+    try { localStorage.setItem('homey-api', JSON.stringify({ token: tokenData })); } catch { /* ponytail: key rejected */ }
+    try { sessionStorage.setItem('homeyApiToken', tok); } catch { /* ponytail: key rejected */ }
+    try { sessionStorage.setItem('homey-api', JSON.stringify({ token: tokenData })); } catch { /* ponytail: key rejected */ }
     console.log('[INJECT] Session injected into browser storage');
   }, session.access_token, session.refresh_token);
 
   page.off('request', tempHandler);
-
-
-
 
 
   return { browser, page, token: effectiveToken, session };
@@ -205,17 +202,17 @@ async function launchWithSession(opts = {}) {
 // ===================================================================
 // Get build details from API
 // ===================================================================
+// ponytail: ONE_LINER - wrapper adds no logic, keep it as pass-through
 async function getBuildDetails(appId, buildId, token) {
-  const data = await apiGet(`/api/v1/app/${appId}/build/${buildId}`, token);
-  return data;
+  return apiGet(`/api/v1/app/${appId}/build/${buildId}`, token);
 }
 
 // ===================================================================
 // Get builds list from API
 // ===================================================================
+// ponytail: ONE_LINER - wrapper adds no logic, keep it as pass-through
 async function getBuilds(appId, token) {
-  const data = await apiGet(`/api/v1/app/${appId}/build`, token);
-  return data;
+  return apiGet(`/api/v1/app/${appId}/build`, token);
 }
 
 module.exports = { readCliSession, getDelegationToken, apiGet, launchWithSession, getBuildDetails, getBuilds };

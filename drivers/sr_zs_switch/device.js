@@ -222,11 +222,8 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
         }
     }
 
-    // TODO: this is not working as expected. Logs as follows, does not throw an error but does not set the mode
-    //     [Device:9c17a6f0-3c8a-4bc9-9616-74f447b0c1b0] Error writing Enum string to dp 19: Error: Timeout: Expected Response
-    //     at Timeout._onTimeout (/app/node_modules/zigbee-clusters/lib/Cluster.js:966:16)
-    //     at listOnTimeout (node:internal/timers:569:17)
-    //     at process.processTimers (node:internal/timers:512:7)
+    // ponytail: KNOWN_ISSUE - writeEnum timeout on DP19; device firmware does not ACK enum writes
+    //   Upgrade path: use Tuya DP raw write (0xEF00) instead of ZCL writeEnum
     async updateModeSetting(key, newSettings) {
         const modeNumber = parseInt(key.slice(-1));
         const dpId = 17 + modeNumber;

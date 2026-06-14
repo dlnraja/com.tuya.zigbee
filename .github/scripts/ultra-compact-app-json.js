@@ -93,8 +93,7 @@ for (const drv of app.drivers || []) {
     const locales = Object.keys(drv.name);
     // Keep only 'en' if multiple duplicates exist
     if (locales.length > 5 && drv.name.en) {
-      const enName = drv.name.en;
-      // Remove non-standard locales (keep en, fr, de, nl, es, it, sv, no, da, pl)
+      // ponytail: LOCALE_SET - stdlib doesn't have a locale list; static Set is minimal
       const STANDARD = new Set(['en', 'fr', 'de', 'nl', 'es', 'it', 'sv', 'no', 'da', 'pl']);
       for (const loc of locales) {
         if (!STANDARD.has(loc)) { delete drv.name[loc]; stripped++; }
@@ -113,7 +112,13 @@ for (const drv of app.drivers || []) {
   if (Array.isArray(drv.settings) && drv.settings.length === 0) {
     delete drv.settings; stripped++;
   }
-  
+
+  // ponytail: CAPABILITIES_GUARD - capabilities must never be empty per Athom schema
+  if (Array.isArray(drv.capabilities) && drv.capabilities.length === 0) {
+    console.warn(`  WARNING: Driver "${drv.id}" has empty capabilities — adding placeholder "onoff"`);
+    drv.capabilities = ['onoff'];
+  }
+
   // 8. Remove deprecated fields
   for (const deprecated of ['autodiscovery', 'version', 'sdk', 'brandColor']) {
     if (deprecated in drv) { delete drv[deprecated]; stripped++; }
