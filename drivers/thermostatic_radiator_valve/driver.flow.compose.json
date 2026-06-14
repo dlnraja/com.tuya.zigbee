@@ -6,6 +6,24 @@
       "title": {
         "en": "Window !{{is|is not}} open"
       }
+    },
+    {
+      "id": "thermostatic_radiator_valve_boost_active",
+      "title": {
+        "en": "Boost mode !{{is|is not}} active"
+      },
+      "hint": {
+        "en": "Checks if the thermostat boost mode is currently active"
+      }
+    },
+    {
+      "id": "thermostatic_radiator_valve_child_lock_active",
+      "title": {
+        "en": "Child lock !{{is|is not}} active"
+      },
+      "hint": {
+        "en": "Checks if the child lock is currently engaged"
+      }
     }
   ],
   "actions": [
@@ -24,6 +42,134 @@
           "title": {
             "en": "Open"
           }
+        }
+      ]
+    },
+    {
+      "id": "thermostatic_radiator_valve_set_boost",
+      "title": {
+        "en": "Set boost mode"
+      },
+      "hint": {
+        "en": "Temporarily boost the thermostat to a higher temperature for rapid heating"
+      },
+      "titleFormatted": {
+        "en": "Set boost mode to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "On"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thermostatic_radiator_valve_set_frost_protection",
+      "title": {
+        "en": "Set frost protection"
+      },
+      "hint": {
+        "en": "Enable or disable frost protection (maintains minimum temperature to prevent pipe freezing)"
+      },
+      "titleFormatted": {
+        "en": "Set frost protection to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "On"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thermostatic_radiator_valve_set_child_lock",
+      "title": {
+        "en": "Set child lock"
+      },
+      "hint": {
+        "en": "Enable or disable child lock to prevent manual changes on the device"
+      },
+      "titleFormatted": {
+        "en": "Set child lock to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "On (locked)"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off (unlocked)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thermostatic_radiator_valve_set_window_detection",
+      "title": {
+        "en": "Set window detection"
+      },
+      "hint": {
+        "en": "Enable or disable open window detection (lowers temperature when window is detected open)"
+      },
+      "titleFormatted": {
+        "en": "Set window detection to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "On"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off"
+              }
+            }
+          ]
         }
       ]
     }

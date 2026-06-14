@@ -6,6 +6,7 @@
     "onoff.gang3",
     "onoff.gang4",
     "measure_power",
+    "power_on_behavior",
     "button.toggle_1",
     "button.toggle_2",
     "button.toggle_3",
@@ -664,6 +665,12 @@
       "title": {
         "en": "Gang 4",
         "fr": "Gang 4"
+      }
+    },
+    "power_on_behavior": {
+      "title": {
+        "en": "Power On Behavior",
+        "fr": "Comportement à la mise sous tension"
       }
     }
   },

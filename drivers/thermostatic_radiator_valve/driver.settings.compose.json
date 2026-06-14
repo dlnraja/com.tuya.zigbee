@@ -62,6 +62,50 @@
     {
         "type": "group",
         "label": {
+            "en": "Enhanced Features"
+        },
+        "hint": {
+            "en": "These features are dynamically detected from the device. Enable/disable via flow cards or settings."
+        },
+        "children": [
+            {
+                "id": "frost_protection",
+                "type": "checkbox",
+                "label": {
+                    "en": "Frost Protection"
+                },
+                "hint": {
+                    "en": "Maintains a minimum temperature to prevent pipe freezing (typically 5-8°C)"
+                },
+                "value": false
+            },
+            {
+                "id": "child_lock",
+                "type": "checkbox",
+                "label": {
+                    "en": "Child Lock"
+                },
+                "hint": {
+                    "en": "Prevent manual changes on the physical device"
+                },
+                "value": false
+            },
+            {
+                "id": "window_detection",
+                "type": "checkbox",
+                "label": {
+                    "en": "Window Detection"
+                },
+                "hint": {
+                    "en": "Automatically lower temperature when an open window is detected"
+                },
+                "value": true
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
             "en": "Heatplan"
         },
         "children": [

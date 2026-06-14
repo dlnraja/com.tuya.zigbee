@@ -59,7 +59,14 @@ const THERMOSTAT_DATA_POINTS = {
     scheduleTuesday: 112,
     scheduleThursday: 113,
     scheduleSaturday: 114,
-    workingDay: 31
+    workingDay: 31,
+    // Enhanced thermostat modes (dynamically detected)
+    boostMode: 101,
+    childLock: 40,
+    windowDetection: 8,
+    windowOpen: 14,
+    systemMode: 4,
+    boostTime: 9,
 }
 
 const dataPointTodayByte = {

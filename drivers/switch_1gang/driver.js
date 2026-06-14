@@ -12,7 +12,7 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('switch_1gang_is_on');
@@ -126,6 +126,20 @@ async onInit() {
         });
       }
     } catch (err) { this.error(`Action switch_1gang_set_scene_mode: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('set_power_on_behavior');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          const validValues = ['off', 'on', 'previous'];
+          const behavior = validValues.includes(args.behavior) ? args.behavior : 'previous';
+          await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() => {});
+          this.log('[FLOW] Action set_power_on_behavior triggered:', behavior);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action set_power_on_behavior: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

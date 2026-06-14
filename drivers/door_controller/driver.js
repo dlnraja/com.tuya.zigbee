@@ -12,7 +12,7 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('door_controller_is_open');
@@ -60,8 +60,13 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
           this.log('[FLOW] Action door_controller_open triggered for', args.device.getName());
+          // Send Tuya DP command: DP1 enum value 0 = open
+          if (args.device.tuyaEF00Manager) {
+            await args.device.tuyaEF00Manager.sendDP(1, 0, 'enum');
+          } else if (args.device._sendTuyaDP) {
+            await args.device._sendTuyaDP(1, 0, 'enum');
+          }
           return true;
         });
       }
@@ -72,8 +77,13 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
           this.log('[FLOW] Action door_controller_close triggered for', args.device.getName());
+          // Send Tuya DP command: DP1 enum value 2 = close
+          if (args.device.tuyaEF00Manager) {
+            await args.device.tuyaEF00Manager.sendDP(1, 2, 'enum');
+          } else if (args.device._sendTuyaDP) {
+            await args.device._sendTuyaDP(1, 2, 'enum');
+          }
           return true;
         });
       }
@@ -84,8 +94,13 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
           this.log('[FLOW] Action door_controller_lock triggered for', args.device.getName());
+          // Send Tuya DP command: DP1 bool true = lock
+          if (args.device.tuyaEF00Manager) {
+            await args.device.tuyaEF00Manager.sendDP(1, true, 'bool');
+          } else if (args.device._sendTuyaDP) {
+            await args.device._sendTuyaDP(1, true, 'bool');
+          }
           return true;
         });
       }
@@ -96,8 +111,13 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          // Generic action handler
           this.log('[FLOW] Action door_controller_unlock triggered for', args.device.getName());
+          // Send Tuya DP command: DP1 bool false = unlock
+          if (args.device.tuyaEF00Manager) {
+            await args.device.tuyaEF00Manager.sendDP(1, false, 'bool');
+          } else if (args.device._sendTuyaDP) {
+            await args.device._sendTuyaDP(1, false, 'bool');
+          }
           return true;
         });
       }

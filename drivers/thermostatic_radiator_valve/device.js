@@ -6,29 +6,30 @@ const { Cluster, debug, CLUSTER, TimeCluster } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster')
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue, parseSchedule, marshalSchedule, THERMOSTAT_DATA_POINTS } = require("./helpers");
+const TuyaThermostatEnhancedMixin = require('../../lib/mixins/TuyaThermostatEnhancedMixin');
 
 
 Cluster.addCluster(TuyaSpecificCluster);
 
 /**
 * Sources:
-* 
+*
 * - PR with simple impl.:  https://github.com/danielgajdos/com.tuya.zigbee/blob/SDK3/drivers/thermostatic_radiator_valve/device.js
 * - Datapoint Zigbee2MQTT: https://github.com/Koenkk/zigbee-herdsman-converters/blob/v15.116.0/src/devices/tuya.ts#L2802-L2831
 * - Zigbee2MQTT Device description: https://www.zigbee2mqtt.io/devices/TV02-Zigbee.html
-* 
+*
+* v2.0.0: Enhanced with TuyaThermostatEnhancedMixin for dynamic mode injection
+*         (boost mode, frost protection, child lock, window detection)
 */
-class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
+class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecificClusterDevice) {
 
     async onNodeInit({ zclNode }) {
 
         this.printNode();
-/*     debug(true);
-    this.enableDebug(); */
 
         this.registerCapabilityListener('window_open', async (value, opts) => {
             this.debug('window_open:', value);
-            await this.writeBool(THERMOSTAT_DATA_POINTS.openWindow, value);
+            await this.writeBool(THERMOSTAT_DATA_POINTS.windowDetection, value);
         });
 
         this.registerCapabilityListener("target_temperature", async (value, opts) => {
@@ -51,7 +52,7 @@ class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
 
     setWindowOpen(state) {
         this.debug("Window open action received on '" + this.getName() + "' Value:", state);
-        this.writeBool(THERMOSTAT_DATA_POINTS.openWindow, state)
+        this.writeBool(THERMOSTAT_DATA_POINTS.windowDetection, state)
             .catch(this.log);
     }
 
@@ -124,6 +125,12 @@ class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
         this.log("report", data);
         const dp = data.dp;
         const parsedValue = getDataValue(data);
+
+        // v2.0.0: Route enhanced DP values to the mixin handler first
+        if (this.handleEnhancedDP) {
+            const handled = await this.handleEnhancedDP(dp, parsedValue);
+            if (handled) return;
+        }
 
         switch (dp) {
             case THERMOSTAT_DATA_POINTS.currentTemperature:
@@ -207,6 +214,12 @@ class ThermostaticRadiatorValve extends TuyaSpecificClusterDevice {
 
     async processDatapoint(data) {
         this.debug("datapoint", data);
+
+        // v2.0.0: Route enhanced DPs from datapoint events too
+        if (this.handleEnhancedDP && data && typeof data.dp === 'number') {
+            const parsedValue = getDataValue(data);
+            await this.handleEnhancedDP(data.dp, parsedValue);
+        }
     }
 
     onDeleted() {

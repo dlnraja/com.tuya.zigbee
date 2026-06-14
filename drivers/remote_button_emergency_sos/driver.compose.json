@@ -1,5 +1,5 @@
 {
-  "id": "smart_remote_4_buttons",
+  "id": "remote_button_emergency_sos",
   "name": {
     "en": "Remote Button Emergency Sos",
     "nl": "Afstandsbediening noodknop SOS",
@@ -24,9 +24,9 @@
     "alarm_battery"
   ],
   "images": {
-    "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
-    "small": "/drivers/smart_remote_4_buttons/assets/images/small.png",
-    "xlarge": "/drivers/smart_remote_4_buttons/assets/images/xlarge.png"
+    "large": "/drivers/remote_button_emergency_sos/assets/images/large.png",
+    "small": "/drivers/remote_button_emergency_sos/assets/images/small.png",
+    "xlarge": "/drivers/remote_button_emergency_sos/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [
@@ -49,15 +49,21 @@
         "clusters": [
           0,
           1,
+          4,
+          5,
+          6,
           1280,
-          1281
+          1281,
+          57344,
+          61184
         ]
       }
     },
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
+        "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly.",
+        "fr": "Appuyez doucement avec un stylet dans le trou de réinitialisation sur l'arrière de l'unité pendant environ 10 secondes jusqu'à ce que la LED clignote rapidement."
       }
     },
     "manufacturerName": [

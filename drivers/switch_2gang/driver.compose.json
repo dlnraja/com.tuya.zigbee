@@ -7,6 +7,7 @@
     "measure_voltage",
     "measure_current",
     "meter_power",
+    "power_on_behavior",
     "button.toggle_1",
     "button.toggle_2",
     "button.identify"
@@ -638,6 +639,12 @@
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
+      }
+    },
+    "power_on_behavior": {
+      "title": {
+        "en": "Power On Behavior",
+        "fr": "Comportement à la mise sous tension"
       }
     }
   },

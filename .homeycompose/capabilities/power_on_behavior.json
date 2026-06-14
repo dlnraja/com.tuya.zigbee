@@ -1,0 +1,44 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Power On Behavior",
+    "fr": "Comportement à la mise sous tension",
+    "nl": "Gedrag bij inschakelen",
+    "de": "Einschaltverhalten"
+  },
+  "desc": {
+    "en": "What happens to the relay after power cycle"
+  },
+  "values": [
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "fr": "Éteint",
+        "nl": "Uit",
+        "de": "Aus"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "fr": "Allumé",
+        "nl": "Aan",
+        "de": "Ein"
+      }
+    },
+    {
+      "id": "previous",
+      "title": {
+        "en": "Previous",
+        "fr": "Précédent",
+        "nl": "Vorige",
+        "de": "Vorherig"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker"
+}

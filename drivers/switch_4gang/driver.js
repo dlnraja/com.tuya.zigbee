@@ -97,6 +97,21 @@ async onInit() {
         }
       } catch (err) { this.error(`Action ${act.id} failed:`, err.message); }
     });
+
+    // Power On Behavior action
+    try {
+      const card = this._getFlowCard('set_power_on_behavior', 'action');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) {return false;}
+          const validValues = ['off', 'on', 'previous'];
+          const behavior = validValues.includes(args.behavior) ? args.behavior : 'previous';
+          await args.device.setCapabilityValue('power_on_behavior', behavior).catch(() => {});
+          this.log('[FLOW] Action set_power_on_behavior triggered:', behavior);
+          return true;
+        });
+      }
+    } catch (e) { this.error('Action set_power_on_behavior failed:', e.message); }
   }
 }
 
