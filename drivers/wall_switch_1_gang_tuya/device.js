@@ -12,6 +12,15 @@ Cluster.addCluster(TuyaOnOffCluster)
 
 class wall_switch_1_gang_tuya extends TuyaSpecificClusterDevice {
 
+  /**
+   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
+   * Single-gang: always writes DP 1.
+   */
+  async _setGangOnOff(gang, value) {
+    this.log(`[FLOW] _setGangOnOff: gang=${gang} value=${value}`);
+    await this.writeBool(1, value);
+  }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
@@ -46,7 +55,7 @@ async processResponse(data) {
 
           this.log('Wall switch on/off received', parsedValue);
           try {
-            await this.setCapabilityValue('onoff', parsedValue);
+            await this.triggerCapabilityListener('onoff', parsedValue);
           } catch (e) {
               this.log("Failed to set on/off", e);
           }

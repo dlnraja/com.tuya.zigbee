@@ -1,0 +1,14 @@
+[
+  {
+    "driver": "air_purifier_dimmer",
+    "reason": "DP handler found but never calls setCapabilityValue or equivalent"
+  },
+  {
+    "driver": "dimmer_wall_1gang",
+    "reason": "DP handler found but never calls setCapabilityValue or equivalent"
+  },
+  {
+    "driver": "fan_controller",
+    "reason": "DP handler found but never calls setCapabilityValue or equivalent"
+  }
+]

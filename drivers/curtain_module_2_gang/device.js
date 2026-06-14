@@ -1,6 +1,7 @@
 "use strict";
 
-const { ZigBeeDevice } = require("homey-zigbeedriver");
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { Cluster, debug, CLUSTER } = require("zigbee-clusters");
 const TuyaWindowCoveringCluster = require("../../lib/TuyaWindowCoveringCluster");
 const { mapValueRange } = require("../../lib/util");
@@ -11,7 +12,7 @@ const UP_OPEN = "upOpen";
 const DOWN_CLOSE = "downClose";
 const REPORT_DEBOUNCER = 5000;
 
-class curtain_module_2_gang extends ZigBeeDevice {
+class curtain_module_2_gang extends UnifiedSwitchBase {
     invertPercentageLiftValue = false;
 
     constructor(...args) {

@@ -54,13 +54,13 @@ class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     switch (dpId) {
       case DP.state: {
         const state = Boolean(value);
-        await this.setCapabilityValue('onoff', state);
+        await this.triggerCapabilityListener('onoff', state);
         break; }
 
       case DP.brightness: {
         const raw = typeof value === 'number' ? value : parseInt(value);
         const dim = Math.max(0, Math.min(1, (raw - 10) / 990));
-        await this.setCapabilityValue('dim', dim);
+        await this.triggerCapabilityListener('dim', dim);
         break;
       }
 

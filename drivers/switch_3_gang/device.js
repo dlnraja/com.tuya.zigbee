@@ -2,9 +2,10 @@
 
 const Homey = require('homey');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { debug, CLUSTER } = require('zigbee-clusters');
 
-class switch_3_gang extends ZigBeeDevice {
+class switch_3_gang extends UnifiedSwitchBase {
 
     async onNodeInit({zclNode}) {
 

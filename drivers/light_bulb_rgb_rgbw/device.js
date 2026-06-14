@@ -121,9 +121,9 @@ class RGBBulbDevice extends UnifiedLightBase {
       const h = parseInt(raw.substring(0, safeMultiply(4), 16));
       const s = parseInt(raw.substring(4, safeMultiply(8), 16));
       const v = parseInt(raw.substring(8, safeMultiply(12), 16));
-      this.setCapabilityValue('light_hue', safeMultiply(h, 360)).catch(() => { });
-      this.setCapabilityValue('light_saturation', s * 1000).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, v * 1000)).catch(() => { });
+      this.triggerCapabilityListener('light_hue', safeMultiply(h, 360)).catch(() => { });
+      this.triggerCapabilityListener('light_saturation', s * 1000).catch(() => { });
+      this.triggerCapabilityListener('dim', Math.max(0.01, v * 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -134,8 +134,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', safeMultiply(v, 254)).catch(() => { }));
-        colorCluster.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', safeMultiply(v, 254)).catch(() => { }));
+        colorCluster.on('attr.currentHue', (v) => this.triggerCapabilityListener('light_hue', safeMultiply(v, 254)).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', (v) => this.triggerCapabilityListener('light_saturation', safeMultiply(v, 254)).catch(() => { }));
         this.log('[RGB]  Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
@@ -191,7 +191,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(6, sceneData, 'raw');
 
     // Turn on if not already
-    await this.setCapabilityValue('onoff', true).catch(() => { });
+    await this.triggerCapabilityListener('onoff', true).catch(() => { });
   }
 
   /**
@@ -218,7 +218,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(4, tuyaValue, 'value');
 
     // Update Homey capability
-    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
+    await this.triggerCapabilityListener('light_temperature', parseFloat(homeyValue)).catch(() => { });
     await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 
