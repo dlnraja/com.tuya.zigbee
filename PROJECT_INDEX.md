@@ -1,7 +1,7 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 8.5.36 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
-> **412 drivers** (360 Zigbee + 51 WiFi + 1 Virtual) | **44594 fingerprints** | **SDK v3** | **Zero AggregateError**
+> **Version**: 9.0.22 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
+> **412 drivers** (360 Zigbee + 51 WiFi + 1 Virtual) | **2520 fingerprints** | **SDK v3** | **Zero AggregateError**
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
@@ -42,6 +42,9 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 25. [Deep Diagnostic & Cross-Referencing Mandate](#25-deep-diagnostic--cross-referencing-mandate-ai-agents)
 26. [Autonomous Agent Reflection & Logic Mode](#26-autonomous-agent-reflection--logic-mode)
 27. [Dynamic Heuristics & Adaptive Capabilities](#27-dynamic-heuristics--adaptive-capabilities)
+28. [Dual-Layer Pairing Architecture & Aggregate Error Prevention](#28-dual-layer-pairing-architecture--aggregate-error-prevention-v8534)
+29. [Session Changelog v9.0.22 (June 2026)](#29-session-changelog-v9022-june-2026)
+30. [Pre-Commit Automation & Validation Gates](#30-pre-commit-automation--validation-gates)
 
 ---
 
@@ -427,7 +430,9 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | scripts/ai/ | AI research, analysis, driver generation |
 | scripts/maintenance/ | Image fixing, cleanup, battery fixes |
 | scripts/validation/ | Schema validation, collision checking |
-| .github/scripts/ | GitHub Actions scripts (forum, github, triage) |
+| scripts/ci/ | CI gate scripts (security, YAML, syntax, flow ID checks) |
+| .github/scripts/ | GitHub Actions scripts (forum, github, triage, Athom automation) |
+| .githooks/ | Git hooks (pre-commit, pre-push) |
 
 ### Documentation
 | File | Purpose |
@@ -590,6 +595,9 @@ npx homey app validate --level publish  # SUCCESS
 | triage-upstream-enhanced.js | Enhanced issue triage |
 | nightly-processor.js | Nightly batch (23KB) |
 | monthly-comprehensive.js | Monthly deep scan (18KB) |
+| athom-build-error-diag.js | Puppeteer diagnostic: extract real error from "Processing failed" builds |
+| athom-session-inject.js | Injects Athom CLI OAuth session into Puppeteer (no email/password needed) |
+| ultra-compact-app-json.js | Reduces app.json to minimum to avoid processing_failed (<2MB) |
 
 ### AI Provider Chain
 ```
@@ -638,6 +646,8 @@ APIFREELLM_KEY  → ApiFreeLLM (free, unlimited)
 ### Key Versions
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| v9.0.22 | 2026-06-14 | 412 drivers, 2520 FPs, Athom build diagnostics, session injection, app.json compaction, security scan |
+| v9.0.21 | 2026-06-14 | Forum processing (93 interviews), YAML workflow optimization, CI script --json support, console.log cleanup in 13 drivers |
 | v8.3.0 | 2026-05-23 | Case-Insensitive Brand & Taxonomy Hardening for all core brands |
 | v5.11.212 | 2026-05-08 | 3784 duplicate fingerprints removed, 4 drivers |
 | v5.11.211 | 2026-05 | DeviceIdentificationDatabase crash fix |
@@ -1052,4 +1062,111 @@ node scripts/validation/check-fingerprint-health.js   # Verify
 | Validation level | **publish ✅** |
 
 ---
+
+## 29. SESSION CHANGELOG v9.0.22 (June 2026)
+
+### New Files Created
+
+| File | Purpose | Commit |
+|------|---------|--------|
+| `.github/scripts/athom-build-error-diag.js` | Puppeteer-based Athom build error diagnostic — navigates to failing builds, clicks SUBMISSION, extracts real error messages, screenshots, and structured JSON report | `c43fa30d8` |
+| `.github/scripts/athom-session-inject.js` | Injects Athom CLI OAuth session from `%APPDATA%/athom-cli/settings.json` into Puppeteer — enables authenticated scraping without email/password | `c43fa30d8` |
+| `.github/scripts/ultra-compact-app-json.js` | Strips app.json to Athom-required minimum (removes connectivity, settings, platforms, pair, null/empty fields) — target <2MB for <20MB compressed archive | `c43fa30d8` |
+
+### Fixes Applied
+
+| Fix | Details | Driver(s) | Commit |
+|-----|---------|-----------|--------|
+| HOBEIAN water leak sensor | Added `HOBEIAN` to `manufacturerName` for ZG-222Z (Peter #2090) | `water_leak_sensor` | `5815bec65` |
+| SOS button fingerprint routing | Moved `_TZ3000_0dumfk2z` from `dimmer_wall_1gang` to `button_emergency_sos` | `button_emergency_sos`, `dimmer_wall_1gang` | `7c4d68e75` |
+| LCD sensor collision | Removed `_TZE200/_TZE284_vvmbj46n` from `climate_sensor_plug` to prevent thermostat vs LCD routing error | `climate_sensor_plug` | `7c4d68e75` |
+| Multisensor routing | Added `_TZE200_3towulqd` to `motion_sensor_2` (was only in `sensor_gas_presence`) | `motion_sensor_2`, `sensor_gas_presence` | `7c4d68e75` |
+| Forum fingerprint routing | Fixed 5 device fingerprint routing issues from 93 interview files | `switch_1gang`, `power_meter`, `button_wireless_4`, `plug_energy_monitor`, `garage_door_opener` | `3c6e1d1e7` |
+| App.json compaction | Reduced app.json from 3.58MB to <2MB (Athom processing_failed fix) | root `app.json` | `c43fa30d8` |
+
+### Security Improvements
+
+| Check | Result | Commit |
+|-------|--------|--------|
+| CLAUDE-FABLE-5 prompt audit | No malicious content found (safe system prompt) | `7c4d68e75` |
+| GitHub AI skills audit | No relevant skills for this project | `7c4d68e75` |
+| MiMo-Skills audit | Not relevant (TTS tool, not IoT) | `7c4d68e75` |
+| Local skills audit | Safe (2 JS scripts with hardcoded local paths) | `7c4d68e75` |
+| Console.log cleanup | Removed `console.log` violations from 13 drivers | `3c6e1d1e7` |
+| CI script hardening | Fixed zero-defect-control.js shebang, added --json support to validate-all-yaml.js, find-bloat.js, check-flow-ids.js | `3c6e1d1e7` |
+
+### Documentation Updates
+
+| File | Change | Commit |
+|------|--------|--------|
+| `README.md` | Updated to reflect 412 drivers, 2520 FPs | `b7f763332`, `c43fa30d8` |
+| `docs/CONTRIBUTING.md` | Deduplicated content, added CI validation references | `3c6e1d1e7` |
+| `docs/PROJECT_STATUS.md` | Updated statistics to 412 drivers, 2520 FPs | `b7f763332` |
+| `.homeychangelog.json` | Added v9.0.22 release entry | `c43fa30d8` |
+| `.github/workflows/auto-publish-on-push.yml` | Added permissions block | `3c6e1d1e7` |
+| `.github/workflows/syntax-purity-gate.yml` | Added permissions block | `3c6e1d1e7` |
+| `.github/workflows/syntax-validation.yml` | Added permissions block | `3c6e1d1e7` |
+| `.github/workflows/test-api-keys.yml` | Added permissions block | `3c6e1d1e7` |
+| `.github/workflows/weekly-fingerprint-sync.yml` | Added permissions block | `3c6e1d1e7` |
+
+### CI/YAML Workflows Updated
+
+| Workflow | Change |
+|----------|--------|
+| `auto-publish-on-push.yml` | Added `permissions:` block, SHA version comments |
+| `syntax-purity-gate.yml` | Added `permissions:` block |
+| `syntax-validation.yml` | Added `permissions:` block |
+| `test-api-keys.yml` | Added `permissions:` block |
+| `weekly-fingerprint-sync.yml` | Added `permissions:` block |
+
+---
+
+## 30. PRE-COMMIT AUTOMATION & VALIDATION GATES
+
+> **Upgraded in v9.0.22** -- The pre-commit hook at `.githooks/pre-commit` now runs 8 validation layers.
+
+### Pre-Commit Hook Layers (`.githooks/pre-commit`)
+
+| # | Check | What it does | Failure action |
+|---|-------|--------------|----------------|
+| 1 | **Mandatory file check** | Runs `homey-mandatory-check.js` for complete file integrity | `npm run check:fix` |
+| 2 | **JSON syntax** | Validates all staged `.json` files parse correctly | Fix JSON syntax |
+| 3 | **Version consistency** | Auto-syncs `package.json` version with `app.json` | Auto-fixed |
+| 4 | **Homeyignore safety** | Blocks `*.json` wildcard, `README.txt` exclusion, `data/fingerprints.json` exclusion | Edit `.homeyignore` |
+| 5 | **Empty manufacturerName** | Scans staged `driver.compose.json` for `manufacturerName: []` -- prevents AggregateError | Add fingerprints or remove driver |
+| 6 | **Missing driver assets** | Checks that `driver.js`, `device.js`, and `driver.compose.json` all exist in staged driver directories | Create missing files |
+| 7 | **Console.log in drivers** | Flags `console.log` / `console.warn` / `console.error` in `drivers/**/*.js` | Remove or use Homey logger |
+| 8 | **Security scan** | Runs `security-scanner.js` for secrets, eval(), hardcoded tokens in staged `.js` files | Remove secrets |
+
+### Install / Uninstall
+
+```bash
+# Install (one-time or after pull)
+npm run hooks:install
+# Or manually:
+git config core.hooksPath .githooks
+
+# Uninstall
+npm run hooks:uninstall
+```
+
+### CI Pipeline Integration
+
+```bash
+# Pre-commit (local, automatic via hook)
+node scripts/PRE_COMMIT_CHECKS.js       # JS syntax + workflow + SDK compliance
+node scripts/ci/security-scanner.js     # Secrets, eval, hardcoded tokens
+node .githooks/pre-commit               # Full 8-layer gate
+
+# CI/CD (GitHub Actions)
+npx homey app validate --level publish  # Athom SDK validation
+node scripts/ci/validate-all-yaml.js    # YAML syntax + permissions blocks
+node scripts/ci/check-flow-ids.js       # Flow card ID uniqueness
+node scripts/ci/find-bloat.js           # Bundle size analysis
+```
+
+---
+
+**Last Updated**: 2026-06-14 | **Version**: 9.0.22
+**Generated by**: Antigravity AI | **Author**: dlnraja
 **END OF PROJECT_INDEX.md**
