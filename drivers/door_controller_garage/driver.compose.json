@@ -26,7 +26,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0603"
+      "TS0603",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -44,7 +45,12 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_placeholder_generic"
+      "_TZE200_placeholder_generic",
+      "_TZE608_c75zqghm",
+      "_TZE608_fmemczv1",
+      "_TZE608_xkr8gep3",
+      "_TZE608_lapuuoke",
+      "_TZE204_NKLQJK62"
     ]
   },
   "settings": [

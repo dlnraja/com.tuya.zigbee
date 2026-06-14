@@ -63,7 +63,10 @@
         ]
       }
     },
-    "manufacturerName": ["_TZ3000_unknown"]
+    "manufacturerName": [
+      "_TZ3000_unknown",
+      "_TZE200_RUFDTFYV"
+    ]
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",

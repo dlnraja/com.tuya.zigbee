@@ -47,7 +47,8 @@
       "TS4100",
       "ZBM5-2C-120",
       "ZBM5-3C-120",
-      "TS0726"
+      "TS0726",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -132,7 +133,10 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_placeholder_generic"
+      "_TZE200_placeholder_generic",
+      "_TZE204_ad2jkxwh",
+      "_TZE204_72bewjky",
+      "TZE204_7sjncirf"
     ]
   },
   "version": "1.0.0"
