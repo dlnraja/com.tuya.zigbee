@@ -18,7 +18,9 @@
   ],
   "energy": {},
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ],
     "productId": [
       "TS011F",
       "TS0121",

@@ -32,7 +32,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ],
     "productId": [
       "TS110F",
       "TS110E",
