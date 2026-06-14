@@ -5,7 +5,7 @@
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
-1. **Read [AI_GLOBAL_ACTION_PLAN.md](AI_GLOBAL_ACTION_PLAN.md)** — immediate plan of action and token-saving offline intelligence aggregator methodology.
+1. **Read [AI_GLOBAL_ACTION_PLAN.md](.archive/root-cleanup-2026-05-28/AI_GLOBAL_ACTION_PLAN.md)** — immediate plan of action and token-saving offline intelligence aggregator methodology.
 2. **Read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)** — 22-section deep diagnostic methodology covering forums, logs, emails, and external Z2M/ZHA/Domoticz cross-references.
 3. **Understand the Single-MFR Multi-Variant Rule** — A single `manufacturerName` can map to dozens of different product variants (PIDs). Check `productId` combinations!
 4. **Leverage the Local Arsenal** — Use Antigravity Skills in `.agents/skills/` and local Claude Code tools for automated audits.
@@ -386,7 +386,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ```
 
 ### Post-Promotion Documentation & Registry Sync
-- On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
+- On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `.archive/root-cleanup-2026-05-28/FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
 - **Comment robustness in CI/CD pipeline checks**: When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
 - **Draft script isolation in STRICT_SYNTAX_GUARD**: The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
 - **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `UnifiedSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
@@ -427,7 +427,6 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | Path | Purpose |
 |------|---------|
 | scripts/automation/ | CI/CD, auto-update, pre-push checks |
-| scripts/ai/ | AI research, analysis, driver generation |
 | scripts/maintenance/ | Image fixing, cleanup, battery fixes |
 | scripts/validation/ | Schema validation, collision checking |
 | scripts/ci/ | CI gate scripts (security, YAML, syntax, flow ID checks) |
@@ -457,7 +456,6 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | sunday-master | Sun 07:00 | ALL secrets |
 | nightly-auto-process | 03:30 daily | ALL secrets |
 | weekly-fingerprint-sync | Mon 06:00 | GH_PAT |
-| forum-auto-responder | 2x/day | HOMEY_EMAIL/PASSWORD |
 | publish | manual | HOMEY_PAT |
 | auto-publish-on-push | on complete | HOMEY_PAT |
 
@@ -739,7 +737,7 @@ Our codebase is protected by a state-of-the-art **9-Layer Quality Gateway** run 
 | **L4** | PR #116 Manufacturer | Validates the registration of exact manufacturer target string `_TZ3000_blhvsaqf` in a driver. |
 | **L5** | PR #111 Wall Dimmer | Ensures the wall touch dimmer driver exists, compiles, and is registered within the index. |
 | **L6** | Suffix Cleanup Rules | Detects and flags any folder or driver config suffixing with `_hybrid` or `_hybride` to avoid namespace pollution. |
-| **L7** | Match Integrity | Scans for manual `.toLowerCase()` calls on manufacturer names and flags them, ensuring exclusive usage of the case-insensitive [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/CaseInsensitiveMatcher.js). |
+| **L7** | Match Integrity | Scans for manual `.toLowerCase()` calls on manufacturer names and flags them, ensuring exclusive usage of the case-insensitive [CaseInsensitiveMatcher.js](lib/utils/CaseInsensitiveMatcher.js). |
 | **L8** | Memory Leak Watchdog | Scans local WiFi driver classes to verify they correctly inherit from `TuyaLocalDevice` (gaining inherited `onUninit()` hooks) or implement explicit `onUninit()` resource cleanups. |
 | **L9** | Direct TuyAPI Bypass | Verifies that no drivers bypass the local connection pool queue and direct require `tuyapi` directly, maintaining queueing integrity. |
 
@@ -853,7 +851,7 @@ The project behavior is governed by multiple rule files and dotfiles. If you nee
 - **`.github/WORKFLOW_GUIDELINES.md`**: Strict instructions on how to handle YML files and GitHub Actions limits.
 - **`.homeyignore`**: Controls what goes into the Homey bundle. *WARNING: Do not ignore `data/fingerprints.json` or you will cause a `MODULE_NOT_FOUND` runtime crash!*
 - **`.gitignore`**: Standard Git ignores.
-- **`.context_memory.json` / `.context_checkpoint.md`**: Short-term AI agent memory storage.
+- **`.archive/root-cleanup-2026-05-28/.context_checkpoint.md`**: Short-term AI agent memory storage.
 
 ### 1.5. Global Investigation Plan (MANDATORY READ)
 
@@ -874,8 +872,8 @@ If you need to understand *how* the engine works before modifying it, read these
 - **`.ai/IR_UI_UX_PAIRING.md`**: Documentation for implementing HTML/JS pairing wizards for Universal Remotes (Xiaomi Mi Remote / SmartIR emulation).
 - **`.ai/SYSTEM_CHANGELOG.md`**: A living record of deep engine hardening (e.g. ButtonRemoteManager multi-endpoint logic, Universal Protocol base64 translations).
 - **`docs/ARCHITECTURE.md`**: In-depth explanation of the Zigbee SDK3 implementation and Tuya protocol structures.
-- **`MEGA_PROMPT_UNIVERSAL_TUYA_ZIGBEE.md`**: The supreme "Opus 4.6" directive for driver enrichment and zero-defect coding.
-- **`MASTER-V7-SKELETON.md` / `STABLE-V5-SKELETON.md`**: Architectural skeleton maps outlining structural differences between major versions.
+- **`.archive/root-cleanup-2026-05-28/MEGA_PROMPT_UNIVERSAL_TUYA_ZIGBEE.md`**: The supreme "Opus 4.6" directive for driver enrichment and zero-defect coding.
+- **`.archive/root-cleanup-2026-05-28/MASTER-V7-SKELETON.md` / `.archive/root-cleanup-2026-05-28/STABLE-V5-SKELETON.md`**: Architectural skeleton maps outlining structural differences between major versions.
 - **`docs/PROJECT_STATUS.md`**: Real-time tracker for the number of drivers, devices, and current build.
 - **`.ai/SKILL_REGISTRY.md`**: **MASTER CATALOG** of all Antigravity Advanced Agentic Skills available in the project.
 
@@ -921,7 +919,6 @@ This repository contains a massive suite of Node.js scripts to pull external dat
 To trigger operations without running local scripts, you can use the `gh` CLI to trigger workflows:
 - `gh workflow run daily-promote-to-test.yml` -> Forces Draft to Test promotion (using Puppeteer/OAuth).
 - `gh workflow run collect-diagnostics.yml` -> Runs email extraction via GitHub Actions.
-- `gh workflow run forum-auto-responder.yml` -> Runs forum logic.
 - `gh workflow run validate.yml` -> Comprehensive project validation (npx homey app validate).
 
 **Last Updated**: 2026-05-26 | **Version**: 9.0.0+
