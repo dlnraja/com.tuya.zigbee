@@ -631,4 +631,253 @@ To secure all future developments against regression:
    - **ZCL-Only Early Return Violations**: Scans for drivers calling ZCL-Only initialization that omit the early `return` in `onNodeInit()`.
 2. **Continuous Compliance**: These gates prevent sub-standard code from bypassing pre-commit or pre-push controls, maintaining a zero-defect baseline across all 413 drivers.
 
+## 37. AI Agent Integration Patterns
 
+### 37.1 CLAUDE.md Skill-Based Architecture
+
+The project implements a skill-based AI agent system with specialized modules for different development tasks:
+
+| Skill | Purpose | Usage |
+|-------|---------|-------|
+| **HOMEY_SDK3_EXPERT** | SDK3 patterns, anti-patterns, lifecycle | Driver development, migration |
+| **TUYA_ARCHITECT_SOP** | 5 Levels of Interpretation | Architecture decisions |
+| **TUYA_DP_MASTER** | DP mapping, protocol detection | New device support |
+| **SYNC_PROTOCOL** | Upstream synchronization | Z2M/ZHA/community sync |
+
+### 37.2 Universal CLAUDE.md Patterns
+
+**Token Efficiency Rules**:
+- Read files only when needed (don't load entire codebase)
+- Use targeted searches (`Grep`, `Glob`) over full file reads
+- Summarize findings in structured formats
+- Cache frequently accessed patterns
+
+**Config Health Monitoring**:
+- Validate `app.json` structure before changes
+- Check `.homeyignore` for bundle size compliance
+- Verify GitHub Secrets availability in workflows
+- Monitor `.env` files for credential leaks
+
+**Tech Debt Detection**:
+- Scan for deprecated SDK2 patterns
+- Identify linear battery formulas (banned)
+- Detect raw `console.log` usage
+- Flag missing `_destroyed` guards
+
+### 37.3 CLAUDE-FABLE-5 Behavior Rules
+
+**Behavioral Directives**:
+1. **Always read AI_CONTEXT_MANDATE.md first** - No exceptions
+2. **Follow 11-Layer Pipeline** - Never bypass layers
+3. **Use hardened methods** - `safesetCapability()` over raw `setCapabilityValue()`
+4. **Idempotent initialization** - Check `_initialized` flag
+5. **Defensive importing** - Wrap `require()` in try/catch
+
+**Anti-Hallucination Rules**:
+- Verify all SDK3 methods exist before using
+- Check file paths against actual structure
+- Validate code patterns against working examples
+- Cross-reference with official Homey SDK documentation
+
+### 37.4 System Prompt Best Practices
+
+**Structured Thinking**:
+```
+1. Read context files
+2. Analyze current state
+3. Identify dependencies
+4. Plan changes
+5. Execute incrementally
+6. Verify each step
+7. Document decisions
+```
+
+**Tool Usage Patterns**:
+- Use `Read` for specific file sections (not full files)
+- Use `Grep` for pattern searching
+- Use `Glob` for file discovery
+- Use `Edit` for precise modifications
+- Use `Bash` for validation commands only
+
+## 38. Security Architecture
+
+### 38.1 Multi-Layer Security
+
+| Layer | Component | Purpose |
+|-------|-----------|---------|
+| L1 | `.gitignore` | Prevent credential commits |
+| L2 | Security Scanner | Detect secrets in code |
+| L3 | GitHub Secrets | Secure credential storage |
+| L4 | Workflow Guards | Validate secret availability |
+| L5 | Runtime Isolation | Zero cloud calls |
+
+### 38.2 Credential Management
+
+**Required Secrets**:
+```
+HOMEY_PAT          - Athom App Store publishing
+HOMEY_PAT_API      - Homey Cloud API
+DISCOURSE_API_KEY  - Forum authentication
+GH_PAT             - Cross-repo access
+GOOGLE_API_KEY     - AI analysis
+GMAIL_EMAIL        - Diagnostic email
+GMAIL_APP_PASSWORD - IMAP access
+```
+
+**Secret Rotation Schedule**:
+- GitHub tokens: 90 days
+- Athom tokens: On compromise
+- Gmail App Passwords: Permanent
+
+### 38.3 Sensitive File Protection
+
+**Blocked Patterns**:
+- `*.key`, `*.pem`
+- `config.json`, `secrets.json`
+- `credentials.json`, `token.json`
+- `.env*` files
+- `client_secret*.json`
+
+**Detection Script**: `scripts/ci/security-scanner.js`
+
+## 39. Performance Optimization Patterns
+
+### 39.1 Memory Management
+
+**Buffer-Based Loading**:
+```javascript
+// CRITICAL: Avoid UTF-16 string allocation
+const data = JSON.parse(fs.readFileSync(fpath));  // Buffer
+// NOT: JSON.parse(fs.readFileSync(fpath, 'utf8'))  // String
+```
+
+**Garbage Collection**:
+```javascript
+// Force GC after large operations
+if (global.gc) {
+  global.gc();
+}
+```
+
+### 39.2 Throttling Strategy
+
+| Direction | Limit | Purpose |
+|-----------|-------|---------|
+| RX (Incoming) | 120 msg/min | Prevent device flooding |
+| TX (Outgoing) | 30 cmd/min | Protect Tuya MCU |
+| Energy Updates | Batched | Save CPU cycles |
+
+### 39.3 Deduplication Windows
+
+| Event Type | Window | Purpose |
+|------------|--------|---------|
+| Button Press | 200ms | Debounce |
+| State Change | 1.5s | Prevent duplicates |
+| Battery Report | 5min/2% | Reduce noise |
+
+## 40. Local-First Architecture
+
+### 40.1 Runtime Isolation
+
+**Zero Cloud Calls**:
+- All device control local
+- No external API calls at runtime
+- Offline-capable operation
+- Homey Pro hub only
+
+**Bundle Constraints**:
+- 7MB maximum size
+- Exclude development files
+- Defensive importing required
+- Safe require patterns
+
+### 40.2 Offline Capability
+
+**Data Sources**:
+- Static manifests in bundle
+- Dynamic JSON databases
+- Local fingerprint matching
+- Cached device profiles
+
+**Fallback Patterns**:
+```javascript
+let data;
+try {
+  data = require('./lib/data/SourceCredits');
+} catch (err) {
+  data = { credits: [] };  // Graceful fallback
+}
+```
+
+## 41. Development Workflow Integration
+
+### 41.1 Pre-Commit Validation
+
+```bash
+# 1. Syntax check
+node --check lib/**/*.js drivers/**/*.js
+
+# 2. Validation
+npm run validate:recursive
+
+# 3. Security scan
+npm run security-scan
+
+# 4. Size check
+npm run check-build
+```
+
+### 41.2 Pre-Push Validation
+
+```bash
+# 1. Full validation
+npm run precommit:full
+
+# 2. Integration test
+npm test
+
+# 3. Documentation update
+npm run build-docs
+```
+
+### 41.3 Post-Push Monitoring
+
+1. Monitor CI pipeline
+2. Check draft publication
+3. Verify test channel
+4. Update documentation
+
+## 42. Emergency Procedures
+
+### 42.1 App Crash on Boot
+
+1. **Check Safe Require**: Wrap all `require()` in try/catch
+2. **Validate app.json**: `node scripts/validate/homey-mandatory-check.js`
+3. **Check bundle size**: < 7MB
+4. **Review recent commits**: Identify breaking changes
+
+### 42.2 Device Not Responding
+
+1. **Check fingerprint matching**: manufacturerName + productId
+2. **Verify DP mappings**: `lib/tuya/EnrichedDPMappings.js`
+3. **Check throttle limits**: UniversalThrottleManager
+4. **Review health monitor logs**: ZigbeeHealthMonitor
+
+### 42.3 Memory Leak
+
+1. **Check `_destroyed` guard**: Device lifecycle
+2. **Verify `_destroyDevice()`**: Cleanup method
+3. **Review timer/interval cleanup**: All setTimeout/setInterval
+4. **Check for unclosed sockets**: TuyaLocalClient
+
+### 42.4 OOM Crash
+
+1. **Identify large JSON files**: `data/fingerprints.json` (11.8MB)
+2. **Verify Buffer-based loading**: Not UTF-16 string
+3. **Check heap limit**: 64MB on Homey Pro
+4. **Review memory usage**: Node.js process
+
+---
+
+*Generated by Claude Code - 14 June 2026*
+*Architecture Reference - Version 9.0.0*
