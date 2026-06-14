@@ -3,12 +3,14 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
+const os = require('os');
+
 console.log('Starting interactive homey app publish...');
 console.log('App ID:', require('../app.json').id);
 console.log('Version:', require('../app.json').version);
 
 const child = spawn('npx', ['homey', 'app', 'publish'], {
-  cwd: 'c:\\Users\\HP\\Desktop\\homey-publish-temp',
+  cwd: path.join(os.tmpdir(), 'homey-publish-temp'),
   stdio: ['pipe', 'pipe', 'pipe'],
   shell: true
 });

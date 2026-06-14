@@ -657,5 +657,20 @@
   "version": "1.0.0",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    }
+  }
 }

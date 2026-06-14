@@ -3,8 +3,9 @@
 const fs = require('fs-extra');
 const path = require('path');
 
+const os = require('os');
 const srcDir = path.join(__dirname, '..', '.homeybuild');
-const destDir = 'c:\\Users\\HP\\Desktop\\homey-publish-temp';
+const destDir = path.join(os.tmpdir(), 'homey-publish-temp');
 
 console.log(`Copying built files from ${srcDir} to ${destDir}...`);
 
