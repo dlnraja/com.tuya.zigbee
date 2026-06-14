@@ -148,7 +148,7 @@ jobs:
 
       - name: Bump version
         id: bump
-        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3
+        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
         with:
           version: ${{ steps.bump_level.outputs.level }}
           changelog: ${{ steps.cl.outputs.text }}
@@ -281,7 +281,7 @@ jobs:
       - name: Create GitHub Release
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
         with:
           tag_name: v${{ steps.info.outputs.version }}
           name: v${{ steps.info.outputs.version }}

@@ -21,6 +21,9 @@ concurrency:
   group: weekly-fingerprint-sync
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 defaults:
   run:
     shell: bash
