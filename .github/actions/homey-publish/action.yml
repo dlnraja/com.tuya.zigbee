@@ -36,6 +36,10 @@ runs:
         cd .homeybuild
         npx homey app validate --level publish
 
+    - name: Prepare Publish Directory
+      shell: bash
+      run: npm run prepare-publish
+
     - name: Publish App
       id: publish
       shell: bash
@@ -44,8 +48,6 @@ runs:
       run: |
         # Login with token via env var (avoids secret exposure in command line)
         echo "$HOMEY_PAT" | homey login --token 2>/dev/null || true
-        # Publish from .homeybuild (optimized) - NOT from project root
-        # homey app publish rebuilds .homeybuild, undoing postbuild optimizations
-        # So we publish the optimized .homeybuild directly
-        echo "n" | homey app publish --path .homeybuild 2>&1 || echo "Publish attempted"
+        # Run our custom interactive shell automation to handle the homey CLI dialogs
+        npm run auto-publish
         echo "url=https://tools.developer.homey.app" >> $GITHUB_OUTPUT

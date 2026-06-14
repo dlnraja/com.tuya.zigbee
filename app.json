@@ -101751,7 +101751,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -102553,7 +102568,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -102850,7 +102880,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -103364,7 +103409,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -103556,7 +103616,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -103757,7 +103832,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -105141,7 +105231,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -106008,7 +106113,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -106427,7 +106547,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "class": "socket",
@@ -108255,7 +108390,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -110709,7 +110859,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -116669,7 +116834,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -119357,7 +119537,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -119893,7 +120088,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -122839,7 +123049,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -123428,7 +123653,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -124304,7 +124544,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -125411,7 +125666,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "class": "socket",
@@ -126306,7 +126576,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -127345,7 +127630,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -127856,7 +128156,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -128720,7 +129035,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "class": "socket",
@@ -129603,7 +129933,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -130114,7 +130459,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "id": "curtain_module",
@@ -130328,7 +130688,9 @@
             "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -133623,7 +133985,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -138971,7 +139348,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "id": "device_generic_diy_universal",
@@ -139185,7 +139577,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "id": "device_generic_tuya",
@@ -141326,7 +141733,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -143964,7 +144386,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "class": "light",
@@ -146882,7 +147319,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "class": "socket",
@@ -147669,7 +148121,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -148184,7 +148651,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -156287,7 +156769,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "id": "lcdtemphumidluxsensor",
@@ -167710,7 +168207,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -172294,7 +172806,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -173801,7 +174328,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -174729,7 +175271,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -175265,7 +175822,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -178494,7 +179066,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -179087,7 +179674,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -179867,7 +180469,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -180135,7 +180752,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -181495,7 +182127,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -181895,7 +182542,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -183918,7 +184580,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -187088,7 +187765,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -200830,7 +201522,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -205084,7 +205791,22 @@
       "version": "1.0.0",
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_unknown"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
+      }
     },
     {
       "id": "universal_zigbee",

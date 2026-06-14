@@ -19,7 +19,16 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
-async onInit() {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
+  async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
@@ -43,82 +52,94 @@ async onInit() {
    * Jolink forum: "flow cards give an error" - cards were defined but not registered
    */
   _registerFlowCards() {
-    // 
+    //
     // CONDITION: Smoke is/is not detected
-    // 
+    //
     try {
       const smokeDetectedCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected');
 
-      smokeDetectedCondition.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Condition: Device not available');
-          return false;
-        }
-        const smokeDetected = device.getCapabilityValue('alarm_smoke');
-        this.log(`[FLOW] Condition smoke_detected: ${smokeDetected}`);
-        return smokeDetected === true;
-      });
-      this.log('[FLOW]  Registered: smoke_detector_advanced_smoke_detected');
+      if (!smokeDetectedCondition) {
+        this.log('[FLOW] Condition smoke_detector_advanced_smoke_detected not defined in app.json - skipping');
+      } else {
+        smokeDetectedCondition.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Condition: Device not available');
+            return false;
+          }
+          const smokeDetected = device.getCapabilityValue('alarm_smoke');
+          this.log(`[FLOW] Condition smoke_detected: ${smokeDetected}`);
+          return smokeDetected === true;
+        });
+        this.log('[FLOW]  Registered: smoke_detector_advanced_smoke_detected');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register smoke_detected condition: ${err.message}`);
     }
 
-    // 
+    //
     // CONDITION: Battery is/is not above threshold
-    // 
+    //
     try {
       const batteryAboveCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above');
 
-      batteryAboveCondition.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Condition: Device not available');
-          return false;
-        }
-        const battery = device.getCapabilityValue('measure_battery') || 0;
-        const threshold = args.threshold || 20;
-        const isAbove = battery > threshold;
-        this.log(`[FLOW] Condition battery_above: ${battery}% > ${threshold}% = ${isAbove}`);
-        return isAbove;
-      });
-      this.log('[FLOW]  Registered: smoke_detector_advanced_battery_above');
+      if (!batteryAboveCondition) {
+        this.log('[FLOW] Condition smoke_detector_advanced_battery_above not defined in app.json - skipping');
+      } else {
+        batteryAboveCondition.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Condition: Device not available');
+            return false;
+          }
+          const battery = device.getCapabilityValue('measure_battery') || 0;
+          const threshold = args.threshold || 20;
+          const isAbove = battery > threshold;
+          this.log(`[FLOW] Condition battery_above: ${battery}% > ${threshold}% = ${isAbove}`);
+          return isAbove;
+        });
+        this.log('[FLOW]  Registered: smoke_detector_advanced_battery_above');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register battery_above condition: ${err.message}`);
     }
 
-    // 
+    //
     // ACTION: Test the alarm
-    // 
+    //
     try {
       const testAlarmAction = this.homey.flow.getActionCard('smoke_detector_advanced_test_alarm');
 
-      testAlarmAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        
-        this.log('[FLOW] Action test_alarm: Triggering self-test');
-        
-        // Try to send self-test command via Tuya DP
-        try {
-          if (device._tuyaEF00Manager) {
-            // DP8 = self_test on many smoke detectors
-            await device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
-            this.log('[FLOW]  Self-test command sent via Tuya DP8');
-            return true;
-          } else {
-            this.log('[FLOW]  Tuya manager not available - device may not support remote test');
+      if (!testAlarmAction) {
+        this.log('[FLOW] Action smoke_detector_advanced_test_alarm not defined in app.json - skipping');
+      } else {
+        testAlarmAction.registerRunListener(async (args) => {
+          const device = args.device;
+          if (!device) {
+            this.log('[FLOW] Action: Device not available');
+            return false;
+          }
+
+          this.log('[FLOW] Action test_alarm: Triggering self-test');
+
+          // Try to send self-test command via Tuya DP
+          try {
+            if (device._tuyaEF00Manager) {
+              // DP8 = self_test on many smoke detectors
+              await device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
+              this.log('[FLOW]  Self-test command sent via Tuya DP8');
+              return true;
+            } else {
+              this.log('[FLOW]  Tuya manager not available - device may not support remote test');
+              return true; // Return true to not break the flow
+            }
+          } catch (err) {
+            this.log(`[FLOW]  Self-test failed: ${err.message}`);
             return true; // Return true to not break the flow
           }
-        } catch (err) {
-          this.log(`[FLOW]  Self-test failed: ${err.message}`);
-          return true; // Return true to not break the flow
-        }
-      });
-      this.log('[FLOW]  Registered: smoke_detector_advanced_test_alarm');
+        });
+        this.log('[FLOW]  Registered: smoke_detector_advanced_test_alarm');
+      }
     } catch (err) {
       this.log(`[FLOW]  Could not register test_alarm action: ${err.message}`);
     }

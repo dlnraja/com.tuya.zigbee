@@ -11,26 +11,17 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - name: Build App
+    - name: Prepare Publish Directory
       shell: bash
-      run: npx homey app build
-
-    - name: Optimize build (minify app.json + fix large.png)
-      shell: bash
-      run: |
-        node scripts/maintenance/fix-large-images.js
+      run: npm run prepare-publish
 
     - name: Publish App
       id: publish
       shell: bash
       env:
-        HOMEY_HEADLESS: "1"
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
-        # Publish from .homeybuild (optimized) - NOT from project root
-        # homey app publish rebuilds .homeybuild, undoing postbuild optimizations
-        # So we publish the optimized .homeybuild directly
-        cd .homeybuild
-        npx homey app publish --no-verify
+        echo "$HOMEY_PAT" | homey login --token 2>/dev/null || true
+        npm run auto-publish
         APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT

@@ -75,7 +75,15 @@
     "date": "2026-05-28",
     "changes": "Restored empty manufacturerName arrays for template drivers. Fixed PRE-CLEAN workflow bug."
   },
+  "8.5.50": {
+    "version": "8.5.50",
+    "date": "2026-05-28",
+    "changes": "Protected mandatory README.txt and multilingual README.*.txt files from root cleanup. Updated Anti-AggregateError gate to exempt generic template drivers."
+  },
+  "9.0.14": {
+    "en": "v9.0.13:"
+  },
   "9.0.15": {
-    "en": "v9.0.14:"
+    "en": "v9.0.15: Restore all 46 WiFi drivers, use cross-platform publish temp dir, optimize GitHub publish action."
   }
 }
