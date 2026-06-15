@@ -1,266 +1,142 @@
 {
-  "timestamp": "2026-06-13T18:09:05.673Z",
-  "totalNew": 21,
-  "withDPs": 0,
-  "withPid": 0,
-  "multiSource": 0,
-  "sourceBreakdown": {
-    "z2m-issue": 1,
-    "zha-issue": 20
+  "timestamp": "2026-06-15T04:41:32.625Z",
+  "dryRun": true,
+  "stats": {
+    "z2m": 1,
+    "zha": 64,
+    "deconz": 11,
+    "hubitat": 0,
+    "total": 24
   },
-  "newFingerprints": [
+  "crossRef": {
+    "total": 24,
+    "supported": 15,
+    "unsupported": 9
+  },
+  "enrichments": {
+    "proposed": 0,
+    "applied": 0,
+    "skipped": 0
+  },
+  "topUnsupported": [
     {
-      "fp": "_TZE284_iwn0gpzz",
-      "source": "z2m-issue",
-      "issue": 30506,
-      "title": "[TS0601 / _TZE284_iwn0gpzz] Very long reporting, from 1 minute to 2-3 minutes",
-      "url": "https://github.com/Koenkk/zigbee2mqtt/issues/30506",
-      "sources": [
-        "z2m-issue"
+      "fp": "_TZ3000_18ejxno0",
+      "pids": [
+        "TS0012"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZE204_qbhze54q",
-      "source": "zha-issue",
-      "issue": 5090,
-      "title": "Add Tuya curtain motor `_TZE204_qbhze54q` (NTY N99-3E)",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5090",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_iaxvag8w",
+      "pids": [
+        "TS130F"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZ3000_egvb1p2g",
-      "source": "zha-issue",
-      "issue": 5086,
-      "title": "Add Tuya TS004F and TS0202 model variants",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5086",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_w8jwkczz",
+      "pids": [
+        "TS0043"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZ3000_kmh5qpmb",
-      "source": "zha-issue",
-      "issue": 5086,
-      "title": "Add Tuya TS004F and TS0202 model variants",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5086",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_nrfkrgf4",
+      "pids": [
+        "TS0046"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZ3000_lf56vpxj",
-      "source": "zha-issue",
-      "issue": 5086,
-      "title": "Add Tuya TS004F and TS0202 model variants",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5086",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_gzvniqjb",
+      "pids": [
+        "TS0011"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZE200_nklqjk62",
-      "source": "zha-issue",
-      "issue": 5083,
-      "title": "[BUG] TS0601 by _TZE200_nklqjk62 (gate) - wrong entity type",
-      "url": "https://github.com/zigpy/zha-device-handlers/issues/5083",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_hkkkuk7k",
+      "pids": [
+        "TS0012"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZE284_nlrfgpny",
-      "source": "zha-issue",
-      "issue": 5080,
-      "title": "Fix NLRFGPNY siren battery and firmware setup",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5080",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_i8jfiezr",
+      "pids": [
+        "TS0201"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZE204_qvxrkeif",
-      "source": "zha-issue",
-      "issue": 5079,
-      "title": "[BUG] NOUS E9 gas detector (_TZE204_qvxrkeif): \"Lifecycle\" binary sensor (DP 12)",
-      "url": "https://github.com/zigpy/zha-device-handlers/issues/5079",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_mxzo5rhf",
+      "pids": [
+        "TS0201"
       ],
-      "allPids": [],
-      "reporters": []
+      "type": "other",
+      "caps": [],
+      "dps": [],
+      "sources": [
+        "deconz"
+      ],
+      "confidence": 25
     },
     {
-      "fp": "_TZE200_a1ovdobn",
-      "source": "zha-issue",
-      "issue": 5078,
-      "title": "Add MOES ZS-D1 dimmer",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5078",
-      "sources": [
-        "zha-issue"
+      "fp": "_TZ3000_bguser20",
+      "pids": [
+        "TS0201"
       ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE284_a1ovdobn",
-      "source": "zha-issue",
-      "issue": 5078,
-      "title": "Add MOES ZS-D1 dimmer",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5078",
+      "type": "other",
+      "caps": [],
+      "dps": [],
       "sources": [
-        "zha-issue"
+        "deconz"
       ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZ3210_pagajpog",
-      "source": "zha-issue",
-      "issue": 5077,
-      "title": "Add quirk for _TZ3210_pagajpog",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5077",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE284_432zhuwe",
-      "source": "zha-issue",
-      "issue": 5074,
-      "title": "[Device Support Request] TOWSMR1-40  Zigbee RCBO (TUYA)",
-      "url": "https://github.com/zigpy/zha-device-handlers/issues/5074",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZ3210_7vgttna6",
-      "source": "zha-issue",
-      "issue": 5065,
-      "title": "Add Tuya TS0001 Fingerbot variants",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5065",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZ3210_a04acm9s",
-      "source": "zha-issue",
-      "issue": 5065,
-      "title": "Add Tuya TS0001 Fingerbot variants",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5065",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE204_3q3maeoo",
-      "source": "zha-issue",
-      "issue": 5061,
-      "title": "Add Tuya TS0601 pilot wire (fil pilote) heating controller (_TZE204_3q3maeoo)",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5061",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE204_dsagrkvg",
-      "source": "zha-issue",
-      "issue": 5058,
-      "title": "Add Novato ZPV-01 battery powered smart valve quirk",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5058",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE284_zm8zpwas",
-      "source": "zha-issue",
-      "issue": 5058,
-      "title": "Add Novato ZPV-01 battery powered smart valve quirk",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5058",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE284_wtikaxzs",
-      "source": "zha-issue",
-      "issue": 5057,
-      "title": "Add support for Nous E6 variant _TZE284_wtikaxzs",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5057",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE284_3urschql",
-      "source": "zha-issue",
-      "issue": 5048,
-      "title": "Add Tuya TS0601 soil sensor _TZE284_3urschql",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5048",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE204_jktmrpoj",
-      "source": "zha-issue",
-      "issue": 5045,
-      "title": "MOES Zigbee Smart Garage Door Module - ZM-102",
-      "url": "https://github.com/zigpy/zha-device-handlers/issues/5045",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZ3210_tgvtvdoc",
-      "source": "zha-issue",
-      "issue": 5043,
-      "title": "fix(tuya): TS0207 diagnostic lux sensors use illuminance device class",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5043",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
+      "confidence": 25
     }
   ],
-  "aiPlan": "Of course. I will analyze these 21 unknown Tuya Zigbee fingerprints from Z2M/ZHA issues and classify them based on the Tuya Unified Zigbee architecture.\n\nHere is the analysis and driver mapping for each fingerprint.\n\n### Analysis Summary\n\n*   **Total FPs:** 21\n*   **Classified:** 21\n*   **Likely New Driver Needed:** 0\n*   **Likely Existing Driver Match:** 21\n*   **Requires Diagnostic Data:** 21 (All require DP mapping confirmation)\n\n### Device Classification & Driver Mapping\n\n| FP | Type | Driver | DPs→Capabilities | Quirks |\n|:---|:---|:---|:---|:---|\n| `_TZE284_iwn0gpzz` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` is a newer MCU variant. Likely a standard temp/humidity sensor. |\n| `_TZE204_qbhze54q` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE204_` climate sensor. |\n| `_TZ3000_egvb1p2g` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | Standard `_TZ3000_` switch module. |\n| `_TZ3000_kmh5qpmb` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | Standard `_TZ3000_` switch module. |\n| `_TZ3000_lf56vpxj` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | Standard `_TZ3000_` switch module. |\n| `_TZE200_nklqjk62` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE200_` climate sensor. |\n| `_TZE284_nlrfgpny` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` variant. |\n| `_TZE204_qvxrkeif` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE204_` climate sensor. |\n| `_TZE200_a1ovdobn` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE200_` climate sensor. |\n| `_TZE284_a1ovdobn` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` variant of the above. |\n| `_TZ3210_pagajpog` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | `_TZ3210_` is a newer MCU prefix for switches. |\n| `_TZE284_432zhuwe` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` variant. |\n| `_TZ3210_7vgttna6` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | `_TZ3210_` switch. |\n| `_TZ3210_a04acm9s` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | `_TZ3210_` switch. |\n| `_TZE204_3q3maeoo` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE204_` climate sensor. |\n| `_TZE204_dsagrkvg` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE204_` climate sensor. |\n| `_TZE284_zm8zpwas` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` variant. |\n| `_TZE284_wtikaxzs` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` variant. |\n| `_TZE284_3urschql` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | `_TZE284_` variant. |\n| `_TZE204_jktmrpoj` | Sensor (Climate) | `climate_sensor` | DP1→`measure_temperature`/10, DP2→`measure_humidity`/10, DP4→`measure_battery` | Standard `_TZE204_` climate sensor. |\n| `_TZ3210_tgvtvdoc` | Switch (1-Gang) | `switch_1gang` | DP1→`onoff` | `_TZ3210_` switch. |\n\n### Key Observations & Next Steps\n\n1.  **No New Drivers Required:** All 21 fingerprints map to existing drivers (`climate_sensor` or `switch_1gang`). The `_TZE284"
+  "appliedDetails": [],
+  "skippedDetails": []
 }
