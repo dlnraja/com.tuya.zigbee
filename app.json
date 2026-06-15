@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.33",
+  "version": "9.0.34",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -103636,9 +103636,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -113683,7 +113681,6 @@
           "_TZ3000_w0qqde0g",
           "_TZ3000_u5u4cakc",
           "_TZ3000_typdpdpg",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_amdymr7l",
           "_TZ3000_amdymr71",
           "_TZ3000_typdpbpg",
@@ -113703,10 +113700,8 @@
           "_TZ3000_r6buo8ba",
           "_TZ3000_2putqrmw",
           "_TZ3000_5ity3zyu",
-          "_TZ3000_okaz9tjs",
           "_TZ3000_eyzb8yg3",
           "_TZ3000_nkcobies",
-          "_TZ3000_j1v25l17",
           "_TZ3000_waho4jtj",
           "_TZ3000_3uimvkn6",
           "_TZ3000_pjcqjtev",
@@ -124764,9 +124759,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0201",
@@ -137764,9 +137757,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -151264,9 +151255,7 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "settings": []
@@ -152963,7 +152952,8 @@
           "_tze608_c75zqghm",
           "_tze608_fmemczv1",
           "_tze608_xkr8gep3",
-          "_tze608_lapuuoke"
+          "_tze608_lapuuoke",
+          "_tze200_wfxuhoea"
         ],
         "productId": [
           "TS0601",
@@ -153381,9 +153371,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -164058,9 +164046,7 @@
         "small": "//drivers/motion_sensor_2/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0225",
@@ -166260,6 +166246,9 @@
           "_tz3000_vtscrpmx",
           "_tz3000_waho4ber",
           "_tz3000_wamqdr3f",
+          "_tz3000_gjnozsaz",
+          "_tz3000_okaz9tjs",
+          "_tz3000_j1v25l17",
           "_tz3210_2uollq9d",
           "_tz3210_4ux0ondb",
           "_tz3210_cehuw1lw",
@@ -169312,7 +169301,6 @@
           "_TZE284_81YRT3LO",
           "_TZE284_9OVSKA9W",
           "_TZE284_AR5PRZMW",
-          "_TZE284_BQUWRQH1",
           "_TZE284_CHCNJ5ST",
           "_TZE284_DEBCZECI",
           "_TZE284_FT7QQPX3",
@@ -171685,7 +171673,8 @@
           "sonoff",
           "_tz3000_fa9mlvja",
           "_tz3000_rco1yzb1",
-          "_tz3000_an5rjiwd"
+          "_tz3000_an5rjiwd",
+          "_tz3000_xwh1e22x"
         ],
         "productId": [
           "TS0043",
@@ -174515,9 +174504,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0215A"
@@ -185273,7 +185260,6 @@
           "_TZE200_bqcqqjpb",
           "_TZE200_gaj531w3",
           "_TZE204_nklqjk62",
-          "_TZE200_wfxuhoea",
           "_TZE204_wfxuhoea",
           "_TZE200_2m38mh6k"
         ],
@@ -186952,7 +186938,8 @@
           "_tyzb01_jvsojrqx",
           "ts0222",
           "_TZE284_zofmmt9s",
-          "_TZE204_hewlydpz"
+          "_TZE204_hewlydpz",
+          "_TZE284_BQUWRQH1"
         ],
         "productId": [
           "TS0222",
@@ -192096,9 +192083,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/smart_knob/assets/images/small.png",
@@ -195114,9 +195099,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "settings": [
@@ -195223,9 +195206,7 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -196360,7 +196341,6 @@
           "_TZ3002_9VCEKKP1",
           "_TZ3002_FDXIHPP7",
           "_TZ3002_JN2X20TG",
-          "_TZ3002_PZAO9LS1",
           "_TZ3002_SAL078G8",
           "_TZ3002_SFH0JTZ0",
           "_TZ3002_SVDY5TTE",
@@ -211177,7 +211157,8 @@
           "_tz3002_vaq2bfcu",
           "_tz3000_2ei1fkwb",
           "_tz3000_hy5lggkg",
-          "_TZ3000_tyg4yiat"
+          "_TZ3000_tyg4yiat",
+          "_TZ3002_PZAO9LS1"
         ],
         "productId": [
           "TS0726",
