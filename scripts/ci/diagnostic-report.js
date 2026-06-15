@@ -320,7 +320,8 @@ function checkDriverHealth() {
     report.fingerprints.total += drivers.length;
   }
 
-  // Orphaned: drivers with no fingerprints at all
+  // Orphaned: drivers with no fingerprints AND no manufacturerName/productId
+  // Drivers using manufacturerName+productId arrays are NOT orphaned (standard Tuya pattern)
   for (const dir of dirs) {
     const composePath = path.join(DRIVERS_DIR, dir, 'driver.compose.json');
     if (!fs.existsSync(composePath)) {
@@ -329,7 +330,11 @@ function checkDriverHealth() {
     }
     try {
       const comp = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      if (!comp.zigbee || !comp.zigbee.fingerprints || comp.zigbee.fingerprints.length === 0) {
+      const hasExplicitFP = comp.zigbee && comp.zigbee.fingerprints && comp.zigbee.fingerprints.length > 0;
+      const hasMFR = comp.zigbee && comp.zigbee.manufacturerName && comp.zigbee.manufacturerName.length > 0;
+      const hasPID = comp.zigbee && comp.zigbee.productId && comp.zigbee.productId.length > 0;
+      // Driver is orphaned only if it has NO fingerprints AND NO manufacturerName AND NO productId
+      if (!hasExplicitFP && !hasMFR && !hasPID) {
         report.fingerprints.orphaned++;
       }
     } catch {
