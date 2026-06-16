@@ -1,0 +1,89 @@
+{
+  "id": "condition_all_met",
+  "title": {
+    "en": "All conditions met"
+  },
+  "hint": {
+    "en": "Checks if multiple conditions are all satisfied (AND logic)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim"
+    },
+    {
+      "name": "condition_1_cap",
+      "type": "text",
+      "title": {
+        "en": "Condition 1 - Capability"
+      },
+      "placeholder": {
+        "en": "measure_temperature"
+      }
+    },
+    {
+      "name": "condition_1_op",
+      "type": "enum",
+      "title": {
+        "en": "Condition 1 - Operator"
+      },
+      "values": [
+        { "id": "==", "label": { "en": "equals" } },
+        { "id": "!=", "label": { "en": "not equals" } },
+        { "id": ">", "label": { "en": "greater than" } },
+        { "id": "<", "label": { "en": "less than" } },
+        { "id": ">=", "label": { "en": "greater or equal" } },
+        { "id": "<=", "label": { "en": "less or equal" } }
+      ]
+    },
+    {
+      "name": "condition_1_val",
+      "type": "text",
+      "title": {
+        "en": "Condition 1 - Value"
+      }
+    },
+    {
+      "name": "condition_2_cap",
+      "type": "text",
+      "title": {
+        "en": "Condition 2 - Capability"
+      },
+      "placeholder": {
+        "en": "measure_humidity"
+      }
+    },
+    {
+      "name": "condition_2_op",
+      "type": "enum",
+      "title": {
+        "en": "Condition 2 - Operator"
+      },
+      "values": [
+        { "id": "==", "label": { "en": "equals" } },
+        { "id": "!=", "label": { "en": "not equals" } },
+        { "id": ">", "label": { "en": "greater than" } },
+        { "id": "<", "label": { "en": "less than" } },
+        { "id": ">=", "label": { "en": "greater or equal" } },
+        { "id": "<=", "label": { "en": "less or equal" } }
+      ]
+    },
+    {
+      "name": "condition_2_val",
+      "type": "text",
+      "title": {
+        "en": "Condition 2 - Value"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "all_met",
+      "type": "boolean",
+      "title": {
+        "en": "All conditions met"
+      }
+    }
+  ]
+}

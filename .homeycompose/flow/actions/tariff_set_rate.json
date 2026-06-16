@@ -1,0 +1,70 @@
+{
+  "id": "tariff_set_rate",
+  "title": {
+    "en": "Set tariff rate"
+  },
+  "hint": {
+    "en": "Change the active energy tariff at runtime"
+  },
+  "args": [
+    {
+      "name": "preset",
+      "type": "enum",
+      "title": {
+        "en": "Tariff preset"
+      },
+      "values": [
+        { "id": "custom", "label": { "en": "Custom rate" } },
+        { "id": "FLAT", "label": { "en": "Flat Rate" } },
+        { "id": "TOU_DAY_NIGHT", "label": { "en": "Day/Night" } },
+        { "id": "TOU_PEAK_SHOULDER_OFFPEAK", "label": { "en": "Peak/Shoulder/Off-Peak" } },
+        { "id": "UK_ECONOMY_7", "label": { "en": "UK Economy 7" } }
+      ]
+    },
+    {
+      "name": "custom_rate_kwh",
+      "type": "number",
+      "title": {
+        "en": "Custom rate (per kWh)"
+      },
+      "min": 0,
+      "max": 5,
+      "step": 0.01,
+      "value": 0.25
+    },
+    {
+      "name": "daily_charge",
+      "type": "number",
+      "title": {
+        "en": "Daily fixed charge"
+      },
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "value": 0
+    },
+    {
+      "name": "tax_rate",
+      "type": "number",
+      "title": {
+        "en": "Tax rate (e.g. 0.20 for 20%)"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0
+    },
+    {
+      "name": "currency",
+      "type": "enum",
+      "title": {
+        "en": "Currency"
+      },
+      "values": [
+        { "id": "EUR", "label": { "en": "EUR" } },
+        { "id": "GBP", "label": { "en": "GBP" } },
+        { "id": "USD", "label": { "en": "USD" } }
+      ]
+    }
+  ]
+}

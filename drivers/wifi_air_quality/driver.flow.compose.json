@@ -13,10 +13,7 @@
             "en": "CO2 (ppm)"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "CO2 level is high"
-      }
+      ]
     },
     {
       "id": "wifi_air_quality_pm25_high",
@@ -31,10 +28,7 @@
             "en": "PM2.5"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "PM2.5 level is high"
-      }
+      ]
     }
   ]
 }

@@ -8,13 +8,7 @@
         "nl": "Geopend",
         "de": "Geöffnet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Opened",
-        "fr": "Ouvert",
-        "nl": "Geopend",
-        "de": "Geöffnet"
-      }
+      "args": []
     },
     {
       "id": "garage_door_opener_closed",
@@ -24,13 +18,7 @@
         "nl": "Gesloten",
         "de": "Geschlossen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Closed",
-        "fr": "Fermé",
-        "nl": "Gesloten",
-        "de": "Geschlossen"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -42,13 +30,7 @@
         "nl": "Garagedeur !{{is|is niet}} gesloten",
         "de": "Garagentor !{{ist|ist nicht}} geschlossen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Garage door !{{is|is not}} closed",
-        "fr": "Porte de garage !{{est|n'est pas}} fermée",
-        "nl": "Garagedeur !{{is|is niet}} gesloten",
-        "de": "Garagentor !{{ist|ist nicht}} geschlossen"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -60,13 +42,7 @@
         "nl": "Openen",
         "de": "Öffnen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Open",
-        "fr": "Ouvrir",
-        "nl": "Openen",
-        "de": "Öffnen"
-      }
+      "args": []
     },
     {
       "id": "garage_door_opener_close",
@@ -76,13 +52,7 @@
         "nl": "Sluiten",
         "de": "Schließen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Close",
-        "fr": "Fermer",
-        "nl": "Sluiten",
-        "de": "Schließen"
-      }
+      "args": []
     }
   ]
 }

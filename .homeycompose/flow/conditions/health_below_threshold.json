@@ -1,0 +1,43 @@
+{
+  "id": "health_below_threshold",
+  "title": {
+    "en": "Device health below [[threshold]]"
+  },
+  "hint": {
+    "en": "Checks if the device health score is below a given threshold"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|measure_temperature"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Health threshold (0-100)"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "value": 50
+    }
+  ],
+  "tokens": [
+    {
+      "name": "health_score",
+      "type": "number",
+      "title": {
+        "en": "Current health score"
+      }
+    },
+    {
+      "name": "health_status",
+      "type": "string",
+      "title": {
+        "en": "Health status"
+      }
+    }
+  ]
+}

@@ -8,13 +8,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [],
@@ -26,12 +20,6 @@
         "fr": "RÃ©gler position",
         "nl": "Positie instellen",
         "de": "Position einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set position to [[position]]%",
-        "fr": "RÃ©gler position Ã [[position]]%",
-        "nl": "Positie op [[position]]%",
-        "de": "Position auf [[position]]%"
       },
       "args": [
         {
@@ -53,13 +41,7 @@
         "nl": "Openen",
         "de": "Ã–ffnen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Open",
-        "fr": "Ouvrir",
-        "nl": "Openen",
-        "de": "Ã–ffnen"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_curtain_curtain_motor_tilt_close",
@@ -69,13 +51,7 @@
         "nl": "Sluiten",
         "de": "SchlieÃŸen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Close",
-        "fr": "Fermer",
-        "nl": "Sluiten",
-        "de": "SchlieÃŸen"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_curtain_curtain_motor_tilt_stop",
@@ -85,13 +61,7 @@
         "nl": "Stoppen",
         "de": "Stoppen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Stop",
-        "fr": "ArrÃªter",
-        "nl": "Stoppen",
-        "de": "Stoppen"
-      }
+      "args": []
     }
   ]
 }

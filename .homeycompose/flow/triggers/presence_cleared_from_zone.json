@@ -1,0 +1,40 @@
+{
+  "id": "presence_cleared_from_zone",
+  "title": {
+    "en": "Presence cleared from zone"
+  },
+  "hint": {
+    "en": "Triggers when the Virtual Presence Detector determines a zone is no longer occupied"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=presence_detector"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "zone_name",
+      "type": "string",
+      "title": {
+        "en": "Zone name"
+      },
+      "example": "Living Room"
+    },
+    {
+      "name": "was_present_minutes",
+      "type": "number",
+      "title": {
+        "en": "Was present for (minutes)"
+      }
+    },
+    {
+      "name": "final_confidence",
+      "type": "number",
+      "title": {
+        "en": "Final confidence (0-100)"
+      }
+    }
+  ]
+}

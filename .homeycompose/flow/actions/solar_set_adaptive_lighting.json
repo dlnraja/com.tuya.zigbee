@@ -1,0 +1,52 @@
+{
+  "id": "solar_set_adaptive_lighting",
+  "title": {
+    "en": "Set adaptive lighting mode"
+  },
+  "hint": {
+    "en": "Sets the adaptive lighting mode based on current solar position"
+  },
+  "args": [
+    {
+      "name": "mode",
+      "type": "enum",
+      "title": {
+        "en": "Mode"
+      },
+      "values": [
+        { "id": "auto", "label": { "en": "Auto (follow sun)" } },
+        { "id": "day", "label": { "en": "Daylight (6500K)" } },
+        { "id": "warm", "label": { "en": "Warm (2700K)" } },
+        { "id": "golden", "label": { "en": "Golden hour (3200K)" } },
+        { "id": "night", "label": { "en": "Night (2200K)" } }
+      ]
+    },
+    {
+      "name": "transition_seconds",
+      "type": "number",
+      "title": {
+        "en": "Transition duration (seconds)"
+      },
+      "min": 0,
+      "max": 3600,
+      "step": 30,
+      "value": 300
+    }
+  ],
+  "tokens": [
+    {
+      "name": "elevation",
+      "type": "number",
+      "title": {
+        "en": "Current solar elevation"
+      }
+    },
+    {
+      "name": "color_temp",
+      "type": "number",
+      "title": {
+        "en": "Target color temperature (K)"
+      }
+    }
+  ]
+}

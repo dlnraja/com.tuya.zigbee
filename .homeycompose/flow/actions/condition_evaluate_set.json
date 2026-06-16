@@ -1,0 +1,42 @@
+{
+  "id": "condition_evaluate_set",
+  "title": {
+    "en": "Evaluate condition set"
+  },
+  "hint": {
+    "en": "Evaluate a named condition set and trigger if all conditions are met"
+  },
+  "args": [
+    {
+      "name": "condition_set_id",
+      "type": "text",
+      "title": {
+        "en": "Condition set name"
+      },
+      "placeholder": {
+        "en": "home_away_check"
+      }
+    },
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "result",
+      "type": "boolean",
+      "title": {
+        "en": "Evaluation result"
+      }
+    },
+    {
+      "name": "condition_set_id",
+      "type": "string",
+      "title": {
+        "en": "Condition set evaluated"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "transition_in_progress",
+  "title": {
+    "en": "Transition in progress"
+  },
+  "hint": {
+    "en": "Checks if any smooth transition is currently running on the device"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "active_count",
+      "type": "number",
+      "title": {
+        "en": "Active transition count"
+      }
+    }
+  ]
+}

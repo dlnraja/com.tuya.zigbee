@@ -1,0 +1,43 @@
+{
+  "id": "tariff_period_changed",
+  "title": {
+    "en": "Tariff period changed"
+  },
+  "hint": {
+    "en": "Triggers when the active tariff period changes (e.g., from off-peak to peak)"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "new_period",
+      "type": "string",
+      "title": {
+        "en": "New period"
+      },
+      "example": "peak"
+    },
+    {
+      "name": "old_period",
+      "type": "string",
+      "title": {
+        "en": "Previous period"
+      },
+      "example": "off_peak"
+    },
+    {
+      "name": "rate_per_kwh",
+      "type": "number",
+      "title": {
+        "en": "Rate per kWh"
+      }
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "title": {
+        "en": "Currency"
+      },
+      "example": "EUR"
+    }
+  ]
+}

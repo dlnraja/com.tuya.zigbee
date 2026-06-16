@@ -21,13 +21,7 @@
           "example": 45
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil moisture changed",
-        "nl": "Bodemvochtigheid veranderd",
-        "fr": "Humidité sol changée",
-        "de": "Bodenfeuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_temperature_changed",
@@ -50,13 +44,7 @@
           "example": 18
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil temperature changed",
-        "nl": "Bodemtemperatuur veranderd",
-        "fr": "Température sol changée",
-        "de": "Bodentemperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_soil_dry",
@@ -73,13 +61,7 @@
         "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil is dry - needs water",
-        "nl": "Grond is droog - heeft water nodig",
-        "fr": "Sol sec - besoin d'eau",
-        "de": "Boden ist trocken - braucht Wasser"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_soil_wet",
@@ -95,13 +77,7 @@
         "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil is wet",
-        "nl": "Grond is nat",
-        "fr": "Sol humide",
-        "de": "Boden ist nass"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_soil_optimal",
@@ -117,13 +93,7 @@
         "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil moisture is optimal",
-        "nl": "Bodemvochtigheid is optimaal",
-        "fr": "Humidité du sol optimale",
-        "de": "Bodenfeuchtigkeit ist optimal"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_frost_warning",
@@ -139,13 +109,7 @@
         "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
         "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Frost warning",
-        "nl": "Vorstwaarschwing",
-        "fr": "Alerte gel",
-        "de": "Frostwarnung"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_battery_changed",
@@ -168,13 +132,7 @@
           "example": 75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_battery_low",
@@ -184,13 +142,7 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_temp_changed",
@@ -200,13 +152,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_humidity_changed",
@@ -216,13 +162,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_water_alarm",
@@ -232,13 +172,7 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water alarm",
-        "fr": "Alarme eau",
-        "nl": "Wateralarm",
-        "de": "Wasseralarm"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_ec_changed",
@@ -267,13 +201,7 @@
           "example": 1200
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Fertilizer / EC level changed",
-        "nl": "Bemesting / EC-niveau veranderd",
-        "fr": "Niveau d'engrais / EC changé",
-        "de": "Dünger / EC-Wert geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_ec_high",
@@ -302,13 +230,7 @@
           "example": 2000
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Fertilizer / EC level is high",
-        "nl": "Bemesting / EC-niveau is hoog",
-        "fr": "Niveau d'engrais / EC est élevé",
-        "de": "Dünger / EC-Wert ist hoch"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -331,13 +253,7 @@
             "en": "30"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Soil moisture !{{is|is not}} below [[moisture]]",
-        "nl": "Bodemvochtigheid !{{is|is niet}} onder [[moisture]]",
-        "fr": "Humidité sol !{{est|n'est pas}} en dessous de [[moisture]]",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter [[moisture]]"
-      }
+      ]
     },
     {
       "id": "soil_sensor_moisture_above",
@@ -358,13 +274,7 @@
             "en": "40"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Soil moisture !{{is|is not}} above [[moisture]]",
-        "nl": "Bodemvochtigheid !{{is|is niet}} boven [[moisture]]",
-        "fr": "Humidité sol !{{est|n'est pas}} au-dessus de [[moisture]]",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über [[moisture]]"
-      }
+      ]
     },
     {
       "id": "soil_sensor_temperature_above",
@@ -385,13 +295,7 @@
             "en": "5"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Soil temperature !{{is|is not}} above [[temp]]",
-        "nl": "Bodemtemperatuur !{{is|is niet}} boven [[temp]]",
-        "fr": "Température sol !{{est|n'est pas}} au-dessus de [[temp]]",
-        "de": "Bodentemperatur !{{ist|ist nicht}} über [[temp]]"
-      }
+      ]
     },
     {
       "id": "soil_sensor_needs_water",
@@ -401,13 +305,7 @@
         "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
         "de": "Boden !{{braucht|braucht kein}} Wasser"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil !{{needs|does not need}} water",
-        "nl": "Grond !{{heeft|heeft geen}} water nodig",
-        "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
-        "de": "Boden !{{braucht|braucht kein}} Wasser"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_battery_above",
@@ -428,13 +326,7 @@
             "en": "20"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Battery !{{is|is not}} above [[threshold]]",
-        "nl": "Batterij !{{is|is niet}} boven [[threshold]]",
-        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]"
-      }
+      ]
     },
     {
       "id": "soil_sensor_water_detected",
@@ -444,13 +336,7 @@
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
-        "nl": "Water !{{is|is niet}} gedetecteerd",
-        "de": "Wasser !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_ec_above",
@@ -471,13 +357,7 @@
             "en": "1500"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Fertilizer / EC level !{{is|is not}} above [[ec_threshold]]",
-        "nl": "Bemesting / EC-niveau !{{is|is niet}} boven [[ec_threshold]]",
-        "fr": "Niveau d'engrais / EC !{{est|n'est pas}} au-dessus de [[ec_threshold]]",
-        "de": "Dünger / EC-Wert !{{ist|ist nicht}} über [[ec_threshold]]"
-      }
+      ]
     }
   ]
 }

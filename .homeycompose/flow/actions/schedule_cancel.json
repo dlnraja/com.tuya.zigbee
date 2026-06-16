@@ -1,0 +1,21 @@
+{
+  "id": "schedule_cancel",
+  "title": {
+    "en": "Cancel schedule"
+  },
+  "hint": {
+    "en": "Cancel (delete) a schedule by its name or ID"
+  },
+  "args": [
+    {
+      "name": "schedule_id",
+      "type": "text",
+      "title": {
+        "en": "Schedule ID or name"
+      },
+      "placeholder": {
+        "en": "sched_1 or Morning lights"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "schedule_toggled",
+  "title": {
+    "en": "Schedule activated/deactivated"
+  },
+  "hint": {
+    "en": "Triggers when a schedule is enabled or disabled"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "schedule_id",
+      "type": "string",
+      "title": {
+        "en": "Schedule ID"
+      }
+    },
+    {
+      "name": "schedule_name",
+      "type": "string",
+      "title": {
+        "en": "Schedule name"
+      }
+    },
+    {
+      "name": "enabled",
+      "type": "boolean",
+      "title": {
+        "en": "Is enabled"
+      }
+    }
+  ]
+}

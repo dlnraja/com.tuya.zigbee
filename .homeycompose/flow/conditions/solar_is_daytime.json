@@ -1,0 +1,38 @@
+{
+  "id": "solar_is_daytime",
+  "title": {
+    "en": "It is daytime"
+  },
+  "hint": {
+    "en": "Checks if the sun elevation is above the horizon (sun is up)"
+  },
+  "args": [
+    {
+      "name": "elevation_threshold",
+      "type": "number",
+      "title": {
+        "en": "Elevation threshold (degrees)"
+      },
+      "min": -6,
+      "max": 10,
+      "step": 1,
+      "value": 0
+    }
+  ],
+  "tokens": [
+    {
+      "name": "elevation",
+      "type": "number",
+      "title": {
+        "en": "Current elevation (degrees)"
+      }
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "title": {
+        "en": "Elevation category"
+      }
+    }
+  ]
+}

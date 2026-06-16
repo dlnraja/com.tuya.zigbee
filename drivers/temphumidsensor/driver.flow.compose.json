@@ -8,13 +8,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "temphumidsensor_humidity_changed",
@@ -24,13 +18,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "temphumidsensor_battery_low",
@@ -40,13 +28,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -63,10 +45,7 @@
           "max": 80,
           "step": 0.5
         }
-      ],
-      "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]]"
-      }
+      ]
     },
     {
       "id": "temphumidsensor_humidity_above",
@@ -81,10 +60,7 @@
           "max": 100,
           "step": 1
         }
-      ],
-      "titleFormatted": {
-        "en": "Humidity !{{is|is not}} above [[humidity]]"
-      }
+      ]
     }
   ],
   "actions": []

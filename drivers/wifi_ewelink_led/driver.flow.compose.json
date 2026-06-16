@@ -4,17 +4,11 @@
       "id": "wifi_ewelink_led_turned_on",
       "title": {
         "en": "Turned on"
-      },
-      "titleFormatted": {
-        "en": "Turned on"
       }
     },
     {
       "id": "wifi_ewelink_led_turned_off",
       "title": {
-        "en": "Turned off"
-      },
-      "titleFormatted": {
         "en": "Turned off"
       }
     }
@@ -23,9 +17,6 @@
     {
       "id": "wifi_ewelink_led_is_on",
       "title": {
-        "en": "Is on"
-      },
-      "titleFormatted": {
         "en": "Is on"
       }
     }
@@ -45,10 +36,7 @@
           "step": 1,
           "label": "%"
         }
-      ],
-      "titleFormatted": {
-        "en": "Set dim level [[dim]]"
-      }
+      ]
     },
     {
       "id": "wifi_ewelink_led_set_light_temperature",
@@ -64,10 +52,7 @@
           "step": 100,
           "label": "K"
         }
-      ],
-      "titleFormatted": {
-        "en": "Set light temperature [[light_temperature]]"
-      }
+      ]
     }
   ]
 }

@@ -17,11 +17,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_double_press",
@@ -40,11 +36,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_long_press",
@@ -63,11 +55,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_multi_press",
@@ -95,11 +83,7 @@
           "example": 3
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_1_pressed",
@@ -107,11 +91,7 @@
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_1_double",
@@ -119,11 +99,7 @@
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_1_long",
@@ -131,11 +107,7 @@
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_1_triple",
@@ -143,11 +115,7 @@
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliqué"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_button_1gang_button_1_release",
@@ -155,11 +123,7 @@
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relâché - après maintien"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 relâché - après maintien"
-      }
+      "args": []
     },
     {
       "id": "remote_button_wireless_wall_battery_low",
@@ -169,13 +133,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ]
 }

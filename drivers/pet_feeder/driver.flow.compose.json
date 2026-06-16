@@ -4,17 +4,11 @@
       "id": "pet_feeder_fed",
       "title": {
         "en": "Pet was fed"
-      },
-      "titleFormatted": {
-        "en": "Pet was fed"
       }
     },
     {
       "id": "pet_feeder_food_low",
       "title": {
-        "en": "Food level is low"
-      },
-      "titleFormatted": {
         "en": "Food level is low"
       }
     }
@@ -24,9 +18,6 @@
       "id": "pet_feeder_food_ok",
       "title": {
         "en": "Food level is OK"
-      },
-      "titleFormatted": {
-        "en": "Food level is OK"
       }
     }
   ],
@@ -34,9 +25,6 @@
     {
       "id": "pet_feeder_feed_now",
       "title": {
-        "en": "Feed now"
-      },
-      "titleFormatted": {
         "en": "Feed now"
       }
     }

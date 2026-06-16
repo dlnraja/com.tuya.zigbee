@@ -9,13 +9,7 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté",
-        "nl": "Beweging gedetecteerd",
-        "de": "Bewegung erkannt"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_2_motion_cleared",
@@ -25,13 +19,7 @@
         "nl": "Beweging voorbij",
         "de": "Bewegung beendet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion cleared",
-        "fr": "Mouvement terminé",
-        "nl": "Beweging voorbij",
-        "de": "Bewegung beendet"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_2_tamper_detected",
@@ -41,13 +29,7 @@
         "nl": "Sabotage alarm geactiveerd",
         "de": "Manipulationsalarm ausgelöst"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
-        "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -59,13 +41,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -77,13 +53,7 @@
         "nl": "Alarm resetten",
         "de": "Alarm zurücksetzen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Reset alarm",
-        "fr": "Réinitialiser l'alarme",
-        "nl": "Alarm resetten",
-        "de": "Alarm zurücksetzen"
-      }
+      "args": []
     }
   ]
 }

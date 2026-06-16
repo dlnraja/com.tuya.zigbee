@@ -1,0 +1,73 @@
+{
+  "id": "schedule_create",
+  "title": {
+    "en": "Create schedule"
+  },
+  "hint": {
+    "en": "Create a new schedule for a device"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim|target_temperature"
+    },
+    {
+      "name": "schedule_name",
+      "type": "text",
+      "title": {
+        "en": "Schedule name"
+      }
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability to set"
+      },
+      "placeholder": {
+        "en": "onoff"
+      }
+    },
+    {
+      "name": "capability_value",
+      "type": "text",
+      "title": {
+        "en": "Value to set"
+      }
+    },
+    {
+      "name": "cron_expression",
+      "type": "text",
+      "title": {
+        "en": "Cron expression (min hour dom month dow)"
+      },
+      "placeholder": {
+        "en": "0 7 * * *"
+      },
+      "hint": {
+        "en": "5-field cron: minute hour day-of-month month day-of-week. Example: '0 7 * * *' = daily at 7:00"
+      }
+    },
+    {
+      "name": "interval_minutes",
+      "type": "number",
+      "title": {
+        "en": "Interval (minutes, 0 = use cron)"
+      },
+      "min": 0,
+      "max": 1440,
+      "step": 5,
+      "value": 0
+    }
+  ],
+  "tokens": [
+    {
+      "name": "schedule_id",
+      "type": "string",
+      "title": {
+        "en": "Created schedule ID"
+      }
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+const { includesCI } = require('../../../lib/utils/CaseInsensitiveMatcher');
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
@@ -188,7 +189,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw',   // Matsee Plus variant (Z2M #15359)
       '_TZE28C1000000_81yrt3lo'                  // New variant (Issue #329, Z2M #26403)
     ];
-    return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
+    return pj1203aIds.some(id => includesCI(pj1203aIds, id)) ? 'pj1203a' : '3phase';
   }
 
   _handleDP(dp, value) {

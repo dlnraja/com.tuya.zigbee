@@ -15,13 +15,7 @@
         "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
         "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Presence detected",
-        "nl": "Aanwezigheid gedetecteerd",
-        "fr": "Présence détectée",
-        "de": "Anwesenheit erkannt"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_presence_cleared",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
         "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Presence cleared",
-        "nl": "Aanwezigheid opgeheven",
-        "fr": "Présence terminée",
-        "de": "Anwesenheit beendet"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_motion_detected",
@@ -59,13 +47,7 @@
         "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
         "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "nl": "Beweging gedetecteerd",
-        "fr": "Mouvement détecté",
-        "de": "Bewegung erkannt"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_illuminance_changed",
@@ -88,13 +70,7 @@
           "example": 150
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Illuminance changed",
-        "nl": "Lichtsterkte veranderd",
-        "fr": "Luminosité changée",
-        "de": "Helligkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_distance_changed",
@@ -117,13 +93,7 @@
           "example": 200
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Detection distance changed",
-        "nl": "Detectieafstand veranderd",
-        "fr": "Distance de détection changée",
-        "de": "Erkennungsabstand geändert"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_lux_changed",
@@ -133,13 +103,7 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_battery_low",
@@ -149,13 +113,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -167,13 +125,7 @@
         "fr": "Quelqu'un !{{est|n'est pas}} présent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Someone !{{is|is not}} present",
-        "nl": "Iemand !{{is|is niet}} aanwezig",
-        "fr": "Quelqu'un !{{est|n'est pas}} présent",
-        "de": "Jemand !{{ist|ist nicht}} anwesend"
-      }
+      "args": []
     },
     {
       "id": "sensor_presence_radar_illuminance_above",
@@ -194,13 +146,7 @@
             "en": "100"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Illuminance !{{is|is not}} above [[lux]]",
-        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
-        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]]",
-        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]]"
-      }
+      ]
     },
     {
       "id": "sensor_presence_radar_distance_within",
@@ -221,13 +167,7 @@
             "en": "300"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Target !{{is|is not}} within distance [[distance]]",
-        "nl": "Doel !{{is|is niet}} binnen afstand [[distance]]",
-        "fr": "Cible !{{est|n'est pas}} dans la distance [[distance]]",
-        "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung [[distance]]"
-      }
+      ]
     },
     {
       "id": "sensor_presence_radar_motion_active",
@@ -237,13 +177,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ]
 }

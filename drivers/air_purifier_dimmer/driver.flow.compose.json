@@ -5,18 +5,12 @@
       "args": [],
       "title": {
         "en": "Turned on - physical button"
-      },
-      "titleFormatted": {
-        "en": "Turned on - physical button"
       }
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_physical_off",
       "args": [],
       "title": {
-        "en": "Turned off - physical button"
-      },
-      "titleFormatted": {
         "en": "Turned off - physical button"
       }
     },
@@ -35,10 +29,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Brightness increased - physical"
-      }
+      ]
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_physical_brightness_down",
@@ -55,10 +46,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Brightness decreased - physical"
-      }
+      ]
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turned_on",
@@ -66,11 +54,7 @@
         "en": "Turned on",
         "fr": "AllumÃ©"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turned_off",
@@ -78,11 +62,7 @@
         "en": "Turned off",
         "fr": "Ã‰teint"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_dim_changed",
@@ -101,11 +81,7 @@
           "example": 0.75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "LuminositÃ© changÃ©e"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_turned_on",
@@ -115,13 +91,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_turned_off",
@@ -131,13 +101,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_power_changed",
@@ -147,23 +111,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changÃ©e",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
-      }
+      "args": []
     }
   ],
   "conditions": [
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_is_on",
       "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}"
-      },
-      "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
@@ -177,13 +131,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -193,11 +141,7 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_turn_off",
@@ -205,11 +149,7 @@
         "en": "Turn off",
         "fr": "Ã‰teindre"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Ã‰teindre"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_toggle",
@@ -217,11 +157,7 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_dimmer_1gang_set_dim",
@@ -243,11 +179,7 @@
             "fr": "LuminositÃ©"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "RÃ©gler la luminositÃ© Ã [[brightness]]%"
-      }
+      ]
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_turn_on",
@@ -257,13 +189,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_turn_off",
@@ -273,13 +199,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Ã‰teindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_toggle",
@@ -289,13 +209,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_dimmer_dimmer_wall_1gang_set_brightness",
@@ -304,12 +218,6 @@
         "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
-        "nl": "Helderheid op [[brightness]]%",
-        "de": "Helligkeit auf [[brightness]]%"
       },
       "args": [
         {

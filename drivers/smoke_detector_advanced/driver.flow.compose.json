@@ -15,13 +15,7 @@
         "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
         "de": "Wird ausgelöst, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke detected",
-        "nl": "Rook gedetecteerd",
-        "fr": "Fumée détectée",
-        "de": "Rauch erkannt"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_alarm_smoke_false",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand la fumée n'est plus détectée",
         "de": "Wird ausgelöst, wenn kein Rauch mehr erkannt wird"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke cleared",
-        "nl": "Rook opgeheven",
-        "fr": "Fumée dissipée",
-        "de": "Rauch verschwunden"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_alarm_tamper_true",
@@ -59,13 +47,7 @@
         "fr": "Se déclenche quand le détecteur a été saboté",
         "de": "Wird ausgelöst, wenn der Melder manipuliert wurde"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alert",
-        "nl": "Sabotage alarm",
-        "fr": "Alerte sabotage",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_battery_low",
@@ -81,13 +63,7 @@
         "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_test_triggered",
@@ -103,13 +79,7 @@
         "fr": "Se déclenche quand le bouton test est pressé sur le détecteur",
         "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Test button pressed",
-        "nl": "Testknop ingedrukt",
-        "fr": "Bouton test pressé",
-        "de": "Testtaste gedrückt"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_smoke_alarm",
@@ -119,13 +89,7 @@
         "nl": "Rook gedetecteerd",
         "de": "Rauch erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke detected",
-        "fr": "Fumée détectée",
-        "nl": "Rook gedetecteerd",
-        "de": "Rauch erkannt"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_temp_changed",
@@ -135,13 +99,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_humidity_changed",
@@ -151,13 +109,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_tamper_alarm",
@@ -167,13 +119,7 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm",
-        "fr": "Alarme sabotage",
-        "nl": "Sabotagealarm",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -185,13 +131,7 @@
         "fr": "Fumée !{{est|n'est pas}} détectée",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
-        "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
-        "de": "Rauch !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_battery_above",
@@ -212,13 +152,7 @@
             "en": "20"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Battery !{{is|is not}} above [[threshold]]",
-        "nl": "Batterij !{{is|is niet}} boven [[threshold]]",
-        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]"
-      }
+      ]
     },
     {
       "id": "smoke_detector_advanced_smoke_active",
@@ -228,13 +162,7 @@
         "nl": "Rook !{{is|is niet}} gedetecteerd",
         "de": "Rauch !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
-        "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "de": "Rauch !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "smoke_detector_advanced_tamper_active",
@@ -244,13 +172,7 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper !{{is|is not}} active",
-        "fr": "Sabotage !{{est|n'est pas}} actif",
-        "nl": "Sabotage !{{is|is niet}} actief",
-        "de": "Manipulation !{{ist|ist nicht}} aktiv"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -268,13 +190,7 @@
         "fr": "Déclenche un test sur le détecteur de fumée (si supporté par l'appareil)",
         "de": "Löst einen Test am Rauchmelder aus (falls vom Gerät unterstützt)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Test the alarm",
-        "nl": "Test het alarm",
-        "fr": "Tester l'alarme",
-        "de": "Alarm testen"
-      }
+      "args": []
     }
   ]
 }

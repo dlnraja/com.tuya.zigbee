@@ -1,0 +1,53 @@
+{
+  "id": "health_run_prediction",
+  "title": {
+    "en": "Run health prediction"
+  },
+  "hint": {
+    "en": "Trigger an immediate health prediction analysis for a device"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|measure_temperature"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "health_score",
+      "type": "number",
+      "title": {
+        "en": "Health score (0-100)"
+      }
+    },
+    {
+      "name": "health_status",
+      "type": "string",
+      "title": {
+        "en": "Health status"
+      }
+    },
+    {
+      "name": "signal_quality",
+      "type": "string",
+      "title": {
+        "en": "Signal quality"
+      }
+    },
+    {
+      "name": "battery_days_remaining",
+      "type": "number",
+      "title": {
+        "en": "Battery days remaining"
+      }
+    },
+    {
+      "name": "error_rate",
+      "type": "number",
+      "title": {
+        "en": "Error rate (%)"
+      }
+    }
+  ]
+}

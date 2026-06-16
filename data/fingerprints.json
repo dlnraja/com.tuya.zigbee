@@ -1,1 +1,18 @@
-{}
+{
+  "_TZE200_npj9bug3": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_seq9cm6u": {
+    "driverId": "bed_sensor",
+    "type": "sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  }
+}

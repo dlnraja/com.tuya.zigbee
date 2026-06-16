@@ -8,13 +8,7 @@
         "nl": "Rook gedetecteerd",
         "de": "Rauch erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke detected",
-        "fr": "Fumée détectée",
-        "nl": "Rook gedetecteerd",
-        "de": "Rauch erkannt"
-      }
+      "args": []
     },
     {
       "id": "smoke_sensor3_alarm_smoke_false",
@@ -24,13 +18,7 @@
         "nl": "Rook verdwenen",
         "de": "Rauch verschwunden"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke cleared",
-        "fr": "Fumée dissipée",
-        "nl": "Rook verdwenen",
-        "de": "Rauch verschwunden"
-      }
+      "args": []
     },
     {
       "id": "smoke_sensor3_alarm_tamper_true",
@@ -40,13 +28,7 @@
         "nl": "Sabotagealarm geactiveerd",
         "de": "Manipulationsalarm ausgelöst"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
-        "nl": "Sabotagealarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
-      }
+      "args": []
     },
     {
       "id": "smoke_sensor3_alarm_tamper_false",
@@ -56,13 +38,7 @@
         "nl": "Sabotagealarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm cleared",
-        "fr": "Alarme sabotage effacée",
-        "nl": "Sabotagealarm opgeheven",
-        "de": "Manipulationsalarm beendet"
-      }
+      "args": []
     },
     {
       "id": "smoke_sensor3_battery_low",
@@ -72,13 +48,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -90,13 +60,7 @@
         "nl": "Rook !{{is|is niet}} gedetecteerd",
         "de": "Rauch !{{wird|wird nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Smoke !{{is|is not}} detected",
-        "fr": "Fumée !{{est|n'est pas}} détectée",
-        "nl": "Rook !{{is|is niet}} gedetecteerd",
-        "de": "Rauch !{{wird|wird nicht}} erkannt"
-      }
+      "args": []
     }
   ]
 }

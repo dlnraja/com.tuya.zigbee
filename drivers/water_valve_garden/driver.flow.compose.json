@@ -6,30 +6,21 @@
       "title": {
         "en": "Valve opened"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Valve opened"
-      }
+      "args": []
     },
     {
       "id": "water_valve_garden_closed",
       "title": {
         "en": "Valve closed"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Valve closed"
-      }
+      "args": []
     },
     {
       "id": "water_valve_garden_battery_low",
       "title": {
         "en": "Battery is low"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -38,10 +29,7 @@
       "title": {
         "en": "Valve !{{is|is not}} open"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Valve !{{is|is not}} open"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -50,30 +38,21 @@
       "title": {
         "en": "Open valve"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Open valve"
-      }
+      "args": []
     },
     {
       "id": "water_valve_garden_close",
       "title": {
         "en": "Close valve"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Close valve"
-      }
+      "args": []
     },
     {
       "id": "water_valve_garden_toggle",
       "title": {
         "en": "Toggle valve"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle valve"
-      }
+      "args": []
     }
   ]
 }

@@ -5,9 +5,6 @@
       "title": {
         "en": "Scene activated"
       },
-      "titleFormatted": {
-        "en": "Scene [[scene]] activated"
-      },
       "args": [
         {
           "type": "dropdown",
@@ -45,17 +42,11 @@
       "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_1_changed",
       "title": {
         "en": "Switch 1 changed"
-      },
-      "titleFormatted": {
-        "en": "Switch 1 changed"
       }
     },
     {
       "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_2_changed",
       "title": {
-        "en": "Switch 2 changed"
-      },
-      "titleFormatted": {
         "en": "Switch 2 changed"
       }
     },
@@ -63,17 +54,11 @@
       "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_3_changed",
       "title": {
         "en": "Switch 3 changed"
-      },
-      "titleFormatted": {
-        "en": "Switch 3 changed"
       }
     },
     {
       "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_4_changed",
       "title": {
-        "en": "Switch 4 changed"
-      },
-      "titleFormatted": {
         "en": "Switch 4 changed"
       }
     }
@@ -83,9 +68,6 @@
       "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_set_switch_1",
       "title": {
         "en": "Set switch 1"
-      },
-      "titleFormatted": {
-        "en": "Set switch 1 to [[state]]"
       },
       "args": [
         {
@@ -99,9 +81,6 @@
       "title": {
         "en": "Set switch 2"
       },
-      "titleFormatted": {
-        "en": "Set switch 2 to [[state]]"
-      },
       "args": [
         {
           "type": "checkbox",
@@ -114,9 +93,6 @@
       "title": {
         "en": "Set switch 3"
       },
-      "titleFormatted": {
-        "en": "Set switch 3 to [[state]]"
-      },
       "args": [
         {
           "type": "checkbox",
@@ -128,9 +104,6 @@
       "id": "sensor_climate_smart_climate_sensor_smart_smart_scene_panel_set_switch_4",
       "title": {
         "en": "Set switch 4"
-      },
-      "titleFormatted": {
-        "en": "Set switch 4 to [[state]]"
       },
       "args": [
         {

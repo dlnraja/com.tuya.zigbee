@@ -36,17 +36,11 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Scene activated [[scene]]"
-      }
+      ]
     },
     {
       "id": "smart_scene_panel_switch_1_changed",
       "title": {
-        "en": "Switch 1 changed"
-      },
-      "titleFormatted": {
         "en": "Switch 1 changed"
       }
     },
@@ -54,26 +48,17 @@
       "id": "smart_scene_panel_switch_2_changed",
       "title": {
         "en": "Switch 2 changed"
-      },
-      "titleFormatted": {
-        "en": "Switch 2 changed"
       }
     },
     {
       "id": "smart_scene_panel_switch_3_changed",
       "title": {
         "en": "Switch 3 changed"
-      },
-      "titleFormatted": {
-        "en": "Switch 3 changed"
       }
     },
     {
       "id": "smart_scene_panel_switch_4_changed",
       "title": {
-        "en": "Switch 4 changed"
-      },
-      "titleFormatted": {
         "en": "Switch 4 changed"
       }
     }
@@ -89,10 +74,7 @@
           "type": "checkbox",
           "name": "state"
         }
-      ],
-      "titleFormatted": {
-        "en": "Set switch 1 [[state]]"
-      }
+      ]
     },
     {
       "id": "smart_scene_panel_set_switch_2",
@@ -104,10 +86,7 @@
           "type": "checkbox",
           "name": "state"
         }
-      ],
-      "titleFormatted": {
-        "en": "Set switch 2 [[state]]"
-      }
+      ]
     },
     {
       "id": "smart_scene_panel_set_switch_3",
@@ -119,10 +98,7 @@
           "type": "checkbox",
           "name": "state"
         }
-      ],
-      "titleFormatted": {
-        "en": "Set switch 3 [[state]]"
-      }
+      ]
     },
     {
       "id": "smart_scene_panel_set_switch_4",
@@ -134,10 +110,7 @@
           "type": "checkbox",
           "name": "state"
         }
-      ],
-      "titleFormatted": {
-        "en": "Set switch 4 [[state]]"
-      }
+      ]
     }
   ]
 }

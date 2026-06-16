@@ -1,0 +1,47 @@
+{
+  "id": "presence_detected_in_zone",
+  "title": {
+    "en": "Presence detected in zone"
+  },
+  "hint": {
+    "en": "Triggers when the Virtual Presence Detector determines a zone is occupied"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=presence_detector"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "zone_name",
+      "type": "string",
+      "title": {
+        "en": "Zone name"
+      },
+      "example": "Living Room"
+    },
+    {
+      "name": "confidence",
+      "type": "number",
+      "title": {
+        "en": "Confidence (0-100)"
+      }
+    },
+    {
+      "name": "monitored_devices",
+      "type": "number",
+      "title": {
+        "en": "Number of signal sources"
+      }
+    },
+    {
+      "name": "duration_minutes",
+      "type": "number",
+      "title": {
+        "en": "Duration (minutes)"
+      }
+    }
+  ]
+}

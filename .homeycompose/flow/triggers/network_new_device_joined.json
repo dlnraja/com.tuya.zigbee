@@ -1,0 +1,63 @@
+{
+  "id": "network_new_device_joined",
+  "title": {
+    "en": "New device joined network"
+  },
+  "hint": {
+    "en": "Triggers when a new device joins the Zigbee network"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "ieee_addr",
+      "type": "string",
+      "title": {
+        "en": "IEEE address"
+      },
+      "example": "0x00158d0001234567"
+    },
+    {
+      "name": "device_type",
+      "type": "string",
+      "title": {
+        "en": "Device type"
+      },
+      "example": "end_device"
+    },
+    {
+      "name": "model_id",
+      "type": "string",
+      "title": {
+        "en": "Model ID"
+      }
+    },
+    {
+      "name": "manufacturer",
+      "type": "string",
+      "title": {
+        "en": "Manufacturer"
+      }
+    },
+    {
+      "name": "rssi",
+      "type": "number",
+      "title": {
+        "en": "Signal strength (dBm)"
+      }
+    },
+    {
+      "name": "lqi",
+      "type": "number",
+      "title": {
+        "en": "Link quality (0-255)"
+      }
+    },
+    {
+      "name": "total_devices",
+      "type": "number",
+      "title": {
+        "en": "Total network devices"
+      }
+    }
+  ]
+}

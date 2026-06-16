@@ -1,0 +1,67 @@
+{
+  "id": "transition_start_smooth",
+  "title": {
+    "en": "Start smooth transition"
+  },
+  "hint": {
+    "en": "Start a smooth transition on a numeric capability (e.g., dim, color_temperature)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim"
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability"
+      },
+      "placeholder": {
+        "en": "dim"
+      }
+    },
+    {
+      "name": "from_value",
+      "type": "number",
+      "title": {
+        "en": "From value"
+      }
+    },
+    {
+      "name": "to_value",
+      "type": "number",
+      "title": {
+        "en": "To value"
+      }
+    },
+    {
+      "name": "duration_seconds",
+      "type": "number",
+      "title": {
+        "en": "Duration (seconds)"
+      },
+      "min": 0.5,
+      "max": 3600,
+      "step": 0.5,
+      "value": 2
+    },
+    {
+      "name": "easing",
+      "type": "enum",
+      "title": {
+        "en": "Easing"
+      },
+      "values": [
+        { "id": "linear", "label": { "en": "Linear" } },
+        { "id": "easeIn", "label": { "en": "Ease In" } },
+        { "id": "easeOut", "label": { "en": "Ease Out" } },
+        { "id": "easeInOut", "label": { "en": "Ease In-Out" } },
+        { "id": "cubicIn", "label": { "en": "Cubic In" } },
+        { "id": "cubicOut", "label": { "en": "Cubic Out" } },
+        { "id": "cubicInOut", "label": { "en": "Cubic In-Out" } }
+      ]
+    }
+  ]
+}

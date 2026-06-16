@@ -6,11 +6,7 @@
         "en": "Switch turned on",
         "fr": "Interrupteur allumé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Switch turned on",
-        "fr": "Interrupteur allumé"
-      }
+      "args": []
     },
     {
       "id": "hybrid_switch_sensor_turned_off",
@@ -18,11 +14,7 @@
         "en": "Switch turned off",
         "fr": "Interrupteur éteint"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Switch turned off",
-        "fr": "Interrupteur éteint"
-      }
+      "args": []
     },
     {
       "id": "hybrid_switch_sensor_temperature_changed",

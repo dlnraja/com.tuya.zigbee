@@ -17,11 +17,7 @@
           "example": 21
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "TempÃ©rature cible changÃ©e"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_measure_temperature_changed",
@@ -40,11 +36,7 @@
           "example": 20.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_temp_changed",
@@ -54,13 +46,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_battery_low",
@@ -70,13 +56,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -98,11 +78,7 @@
             "fr": "TempÃ©rature"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set temperature to [[temperature]]Â°C",
-        "fr": "RÃ©gler la tempÃ©rature Ã [[temperature]]Â°C"
-      }
+      ]
     },
     {
       "id": "device_air_purifier_radiator_radiator_valve_set_temperature",
@@ -111,12 +87,6 @@
         "fr": "RÃ©gler tempÃ©rature",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set temperature to [[temperature]]Â°C",
-        "fr": "RÃ©gler Ã [[temperature]]Â°C",
-        "nl": "Instellen op [[temperature]]Â°C",
-        "de": "Auf [[temperature]]Â°C einstellen"
       },
       "args": [
         {

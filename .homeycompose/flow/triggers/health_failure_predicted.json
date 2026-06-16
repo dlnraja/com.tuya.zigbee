@@ -1,0 +1,48 @@
+{
+  "id": "health_failure_predicted",
+  "title": {
+    "en": "Device failure predicted"
+  },
+  "hint": {
+    "en": "Triggers when the health engine predicts a likely device failure based on trend analysis"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|measure_temperature|measure_humidity"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "health_score",
+      "type": "number",
+      "title": {
+        "en": "Health score (0-100)"
+      }
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "title": {
+        "en": "Health status"
+      },
+      "example": "critical"
+    },
+    {
+      "name": "failure_type",
+      "type": "string",
+      "title": {
+        "en": "Likely failure type"
+      },
+      "example": "signal_degradation"
+    },
+    {
+      "name": "days_until_failure",
+      "type": "number",
+      "title": {
+        "en": "Estimated days until failure"
+      }
+    }
+  ]
+}

@@ -13,10 +13,7 @@
             "en": "Temperature"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Temperature changed"
-      }
+      ]
     }
   ],
   "conditions": [],
@@ -34,10 +31,7 @@
           "max": 35,
           "step": 0.5
         }
-      ],
-      "titleFormatted": {
-        "en": "Set temperature [[temperature]]"
-      }
+      ]
     }
   ]
 }

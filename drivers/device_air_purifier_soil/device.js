@@ -1,3 +1,4 @@
+const { includesCI } = require('../../../lib/utils/CaseInsensitiveMatcher');
 'use strict';
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
@@ -436,7 +437,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         return;
       }
       let temp = parsedValue;
-      const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
+      const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';const rawCelsius = includesCI(mfr, '_tze284_oitavov2') || includesCI(mfr, '_tze200_oitavov2');
       if (rawCelsius) { /* already Â°C */ }
       else if (temp > 1000) temp = temp * 100;
       else if (temp > 100) temp = safeMultiply(temp, 10);

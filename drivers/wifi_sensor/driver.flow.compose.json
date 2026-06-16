@@ -13,10 +13,7 @@
             "en": "Temperature"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Temperature changed"
-      }
+      ]
     },
     {
       "id": "wifi_sensor_hum_changed",
@@ -31,10 +28,7 @@
             "en": "Humidity"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Humidity changed"
-      }
+      ]
     }
   ],
   "conditions": [],

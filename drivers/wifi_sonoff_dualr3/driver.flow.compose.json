@@ -9,13 +9,7 @@
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumé",
-        "nl": "Gang 1 aangezet",
-        "de": "Gang 1 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_gang1_turned_off",
@@ -25,13 +19,7 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 turned off",
-        "fr": "Gang 1 éteint",
-        "nl": "Gang 1 uitgezet",
-        "de": "Gang 1 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_gang2_turned_on",
@@ -41,13 +29,7 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumé",
-        "nl": "Gang 2 aangezet",
-        "de": "Gang 2 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_gang2_turned_off",
@@ -57,13 +39,7 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 turned off",
-        "fr": "Gang 2 éteint",
-        "nl": "Gang 2 uitgezet",
-        "de": "Gang 2 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_measure_power_changed",
@@ -81,11 +57,7 @@
           "example": 100
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_measure_voltage_changed",
@@ -103,11 +75,7 @@
           "example": 230
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changée"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_measure_current_changed",
@@ -125,11 +93,7 @@
           "example": 0.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changé"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -141,13 +105,7 @@
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumé|éteint}}",
-        "nl": "Gang 1 is !{{aan|uit}}",
-        "de": "Gang 1 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_gang2_is_on",
@@ -157,13 +115,7 @@
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumé|éteint}}",
-        "nl": "Gang 2 is !{{aan|uit}}",
-        "de": "Gang 2 ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -175,13 +127,7 @@
         "nl": "Gang 1 aanzetten",
         "de": "Gang 1 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 1",
-        "fr": "Allumer gang 1",
-        "nl": "Gang 1 aanzetten",
-        "de": "Gang 1 einschalten"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_turn_off_gang1",
@@ -191,13 +137,7 @@
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 1",
-        "fr": "Éteindre gang 1",
-        "nl": "Gang 1 uitzetten",
-        "de": "Gang 1 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_turn_on_gang2",
@@ -207,13 +147,7 @@
         "nl": "Gang 2 aanzetten",
         "de": "Gang 2 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 2",
-        "fr": "Allumer gang 2",
-        "nl": "Gang 2 aanzetten",
-        "de": "Gang 2 einschalten"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_turn_off_gang2",
@@ -223,13 +157,7 @@
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 2",
-        "fr": "Éteindre gang 2",
-        "nl": "Gang 2 uitzetten",
-        "de": "Gang 2 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_toggle_gang1",
@@ -239,13 +167,7 @@
         "nl": "Gang 1 wisselen",
         "de": "Gang 1 umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 1",
-        "fr": "Basculer gang 1",
-        "nl": "Gang 1 wisselen",
-        "de": "Gang 1 umschalten"
-      }
+      "args": []
     },
     {
       "id": "wifi_sonoff_dualr3_toggle_gang2",
@@ -255,13 +177,7 @@
         "nl": "Gang 2 wisselen",
         "de": "Gang 2 umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 2",
-        "fr": "Basculer gang 2",
-        "nl": "Gang 2 wisselen",
-        "de": "Gang 2 umschalten"
-      }
+      "args": []
     }
   ]
 }

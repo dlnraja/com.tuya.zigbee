@@ -1,5 +1,6 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
@@ -120,7 +121,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_yxqnffam',
       '_TZ3000_996rpfy6',
       '_TZE200_pay2byax',
-    ].some(id => mfr.toLowerCase().includes(id.toLowerCase()));
+    ].some(id => includesCI(mfr, id));
     
     this._invertedByDefault = invertedByDefault;
     if (invertedByDefault) {
