@@ -1,0 +1,81 @@
+{
+  "id": "battery_health_changed",
+  "title": {
+    "en": "Battery health changed",
+    "fr": "Santé de la batterie modifiée",
+    "nl": "Batterij gezondheid gewijzigd",
+    "de": "Batteriezustand geändert"
+  },
+  "hint": {
+    "en": "Triggers when the battery health score changes to a new status level",
+    "fr": "Se déclenche lorsque le score de santé de la batterie change de niveau",
+    "nl": "Activeert wanneer de batterij gezondheidsscore naar een nieuw niveau wijzigt",
+    "de": "Wird ausgelöst, wenn sich der Batteriezustandsscore auf ein neues Niveau ändert"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery_health"
+    },
+    {
+      "name": "health_status",
+      "type": "enum",
+      "title": {
+        "en": "Health Status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Gesundheitsstatus"
+      },
+      "values": [
+        { "id": "excellent", "label": { "en": "Excellent", "fr": "Excellent", "nl": "Uitstekend", "de": "Ausgezeichnet" } },
+        { "id": "good", "label": { "en": "Good", "fr": "Bon", "nl": "Goed", "de": "Gut" } },
+        { "id": "fair", "label": { "en": "Fair", "fr": "Passable", "nl": "Redelijk", "de": "Befriedigend" } },
+        { "id": "poor", "label": { "en": "Poor", "fr": "Mauvais", "nl": "Slecht", "de": "Schlecht" } },
+        { "id": "replace", "label": { "en": "Replace", "fr": "Remplacer", "nl": "Vervangen", "de": "Ersetzen" } }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "health_score",
+      "type": "number",
+      "title": {
+        "en": "Health Score",
+        "fr": "Score de santé",
+        "nl": "Gezondheidsscore",
+        "de": "Gesundheitsscore"
+      }
+    },
+    {
+      "name": "health_status",
+      "type": "string",
+      "title": {
+        "en": "Health Status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Gesundheitsstatus"
+      }
+    },
+    {
+      "name": "battery_type",
+      "type": "string",
+      "title": {
+        "en": "Battery Type",
+        "fr": "Type de batterie",
+        "nl": "Batterijtype",
+        "de": "Batterietyp"
+      }
+    },
+    {
+      "name": "estimated_remaining_days",
+      "type": "number",
+      "title": {
+        "en": "Estimated Remaining Days",
+        "fr": "Jours restants estimés",
+        "nl": "Geschatte resterende dagen",
+        "de": "Geschätzte Resttage"
+      }
+    }
+  ]
+}

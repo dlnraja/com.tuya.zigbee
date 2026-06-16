@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Battery Health",
+    "fr": "Santé de la batterie",
+    "nl": "Batterij gezondheid",
+    "de": "Batteriezustand"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "insights": true,
+  "min": 0,
+  "max": 100
+}

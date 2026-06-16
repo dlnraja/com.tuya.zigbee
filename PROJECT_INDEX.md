@@ -1,6 +1,6 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 9.0.36 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
+> **Version**: 9.0.38 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
 > **412 drivers** (361 Zigbee + 51 WiFi) | **4,304 fingerprints** | **4,138 flow cards** | **156 capabilities** | **SDK v3**
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
@@ -1134,9 +1134,86 @@ node scripts/validation/check-fingerprint-health.js   # Verify
 
 ---
 
-## 29. SESSION CHANGELOG v9.0.22 (June 2026)
+## 29. SESSION CHANGELOG v9.0.37 (June 2026)
 
-### New Files Created
+### New Advanced Feature Modules
+
+| Module | File | Purpose |
+|--------|------|---------|
+| **Virtual Presence Detection** | `lib/presence/PresenceConfidenceScorer.js` | Multi-factor Bayesian presence scoring with temporal decay |
+| **Battery Health Intelligence** | `lib/battery/BatteryHealthMonitor.js` | Long-term battery degradation tracking, RUL estimation, predictive replacement alerts |
+| **Device Group Management** | `lib/groups/DeviceGroupManager.js` | Coordinate actions across device groups, synchronized execution, scene persistence |
+| **Advanced Multi-Condition Flows** | `lib/features/AdvancedMultiConditionFlows.js` | Complex conditional logic: AND/OR/NOT, time constraints, value ranges, cooldowns |
+| **Diagnostic Report Export** | `lib/features/DiagnosticReportExport.js` | Generate shareable JSON/PDF reports for GitHub issues, network topology, battery history |
+| **Network Topology Trigger** | `lib/features/NetworkTopologyTrigger.js` | Flow triggers based on mesh health: router availability, link quality, heal recommendations |
+| **Configuration Backup/Restore** | `lib/features/ConfigurationBackupRestore.js` | Export/import device settings, DP mappings, and capability configurations |
+| **State History Trigger** | `lib/features/StateHistoryTrigger.js` | Trigger flows based on historical state patterns and anomalies |
+| **Capability Export/Import** | `lib/features/CapabilityExportImport.js` | Transfer capability configurations between devices of the same class |
+| **Device Migration Wizard** | `lib/features/DeviceMigrationWizard.js` | Guided migration when replacing devices, preserving flows and automations |
+| **Custom Capability Templates** | `lib/features/CustomCapabilityTemplates.js` | Pre-built capability sets for common device combinations |
+| **Tuya Cloud Scene Sync** | `lib/features/TuyaCloudSceneSync.js` | Bidirectional sync with Tuya cloud scenes (when cloud access is available) |
+| **Device Group Scene Manager** | `lib/features/DeviceGroupSceneManager.js` | Advanced scene management with group-aware transitions |
+
+### New Infrastructure Modules
+
+| Module | File | Purpose |
+|--------|------|---------|
+| **Auto-Detection Pairing Wizard** | `lib/pairing/AutoDetectionPairingWizard.js` | Enhanced pairing flow with automatic device type detection |
+| **Pre-Pairing Compatibility Check** | `lib/ux/PrePairingCompatibilityCheck.js` | Validate device compatibility before pairing attempt |
+| **Real-Time Communication Monitor** | `lib/ux/RealTimeCommunicationMonitor.js` | Live Zigbee traffic visualization and debugging |
+| **Settings UI Tooltips** | `lib/ux/SettingsUITooltips.js` | Contextual help for device settings in Homey app |
+| **Visual Battery Health Indicator** | `lib/ux/VisualBatteryHealthIndicator.js` | Battery status visualization with degradation warnings |
+| **Centralized DP Registry** | `lib/registry/CentralizedDPRegistry.js` | Unified DP definition database with versioning |
+| **Config Schema Validator** | `lib/validation/ConfigSchemaValidator.js` | JSON Schema validation for all configuration files |
+| **User-Friendly Errors** | `lib/errors/UserFriendlyErrors.js` | Human-readable error messages with troubleshooting hints |
+| **Test Framework** | `lib/testing/TestFramework.js` | Device simulation and integration testing framework |
+
+### New Performance Optimizations
+
+| Module | File | Purpose |
+|--------|------|---------|
+| **Startup Time Profiler** | `lib/performance/StartupTimeProfiler.js` | Measure and optimize app startup time |
+| **Memory Leak Detector** | `lib/performance/MemoryLeakDetector.js` | Runtime memory leak detection and reporting |
+| **Fragment Buffer Memory Limiter** | `lib/performance/FragmentBufferMemoryLimiter.js` | Prevent memory exhaustion from fragmented packets |
+| **Smart Cluster Engine Throttling** | `lib/performance/SmartClusterEngineThrottling.js` | Intelligent rate limiting for cluster operations |
+| **Auto-Discovery Polling Optimizer** | `lib/performance/AutoDiscoveryPollingOptimizer.js` | Optimize polling intervals for device discovery |
+| **Tuya DP Compression** | `lib/performance/TuyaDPCompression.js` | Compress DP payloads for reduced memory usage |
+| **Diagnostic Logger Rotation** | `lib/performance/DiagnosticLoggerRotation.js` | Prevent log file bloat with automatic rotation |
+
+### New Security Enhancements
+
+| Module | File | Purpose |
+|--------|------|---------|
+| **Command Rate Limiter** | `lib/security/CommandRateLimiter.js` | Prevent command flooding attacks |
+| **DP Value Input Validator** | `lib/security/DPValueInputValidator.js` | Sanitize DP values before device transmission |
+| **Local Key Validator** | `lib/security/LocalKeyValidator.js` | Validate encryption keys for WiFi devices |
+| **UDP Discovery Key Rotation** | `lib/security/UDPDiscoveryKeyRotation.js` | Rotate keys for UDP discovery protocol |
+
+### New Protocol Enhancements
+
+| Module | File | Purpose |
+|--------|------|---------|
+| **Binding Persistence** | `lib/protocol/BindingPersistence.js` | Persist ZCL bindings across device restarts |
+| **Bitmap Multi-Field Parser** | `lib/protocol/BitmapMultiFieldParser.js` | Parse complex bitmap fields in ZCL attributes |
+| **DP Fragmentation Hardening** | `lib/protocol/DPFragmentationHardening.js` | Handle fragmented DP payloads robustly |
+| **Occupancy Sensing Enhancement** | `lib/protocol/OccupancySensingEnhancement.js` | Advanced occupancy detection with PIR + radar fusion |
+| **Schedule Data Encoder** | `lib/protocol/ScheduleDataEncoder.js` | Encode/decode complex thermostat schedules |
+
+### Updated Statistics
+
+| Metric | v9.0.36 | v9.0.37 | Change |
+|--------|---------|---------|--------|
+| Total drivers | 412 | 412 | 0 |
+| Fingerprints | 4,304 | 4,304 | 0 |
+| Flow cards | 4,138 | 4,138 | 0 |
+| Capabilities | 156 | 156 | 0 |
+| Library modules | 218 | 267 | +49 |
+| Automation scripts | 126 | 134 | +8 |
+| **New features** | 0 | 13 | **+13** |
+
+---
+
+### New Files Created (v9.0.22)
 
 | File | Purpose | Commit |
 |------|---------|--------|
@@ -1238,6 +1315,6 @@ node scripts/ci/find-bloat.js           # Bundle size analysis
 
 ---
 
-**Last Updated**: 2026-06-15 | **Version**: 9.0.36
+**Last Updated**: 2026-06-15 | **Version**: 9.0.38
 **Generated by**: Antigravity AI | **Author**: dlnraja
 **END OF PROJECT_INDEX.md**

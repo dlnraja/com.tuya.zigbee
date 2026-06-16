@@ -1,0 +1,233 @@
+{
+  "name": {
+    "en": "Virtual Presence Detector",
+    "nl": "Virtuele Aanwezigheidsdetector",
+    "fr": "Détecteur de Présence Virtuel",
+    "de": "Virtueller Anwesenheitssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_presence_confidence",
+    "measure_presence_duration"
+  ],
+  "capabilitiesOptions": {
+    "alarm_motion": {
+      "title": {
+        "en": "Room Occupied",
+        "nl": "Kamer Bezet",
+        "fr": "Pièce Occupée",
+        "de": "Raum Besetzt"
+      }
+    },
+    "measure_presence_confidence": {
+      "title": {
+        "en": "Presence Confidence",
+        "nl": "Aanwezigheid Vertrouwen",
+        "fr": "Confiance de Présence",
+        "de": "Anwesenheitsvertrauen"
+      },
+      "units": {
+        "en": "%"
+      }
+    },
+    "measure_presence_duration": {
+      "title": {
+        "en": "Presence Duration",
+        "nl": "Aanwezigheidsduur",
+        "fr": "Durée de Présence",
+        "de": "Anwesenheitsdauer"
+      },
+      "units": {
+        "en": "min"
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "monitored_devices",
+      "type": "text",
+      "label": {
+        "en": "Monitored Device IDs",
+        "nl": "Gemonitorde Apparaat-ID's",
+        "fr": "ID d'Appareils Surveillés",
+        "de": "Überwachte Geräte-IDs"
+      },
+      "value": "",
+      "hint": {
+        "en": "Comma-separated list of Homey device IDs to monitor for presence signals (configure via flow or settings)",
+        "nl": "Komma-gescheiden lijst van Homey apparaat-ID's om te monitoren voor aanwezigheidssignalen",
+        "fr": "Liste d'ID d'appareils Homey séparés par des virgules à surveiller pour les signaux de présence",
+        "de": "Kommaseparierte Liste der Homey-Geräte-IDs zur Überwachung auf Anwesenheitssignale"
+      }
+    },
+    {
+      "id": "presence_threshold",
+      "type": "number",
+      "label": {
+        "en": "Presence Threshold",
+        "nl": "Aanwezigheidsdrempel",
+        "fr": "Seuil de Présence",
+        "de": "Anwesenheitsschwelle"
+      },
+      "value": 40,
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "hint": {
+        "en": "Confidence score above which room is considered occupied (0-100)",
+        "nl": "Vertrouwensscore waarboven de kamer als bezet wordt beschouwd",
+        "fr": "Score de confiance au-dessus duquel la pièce est considérée comme occupée",
+        "de": "Vertrauenswert, oberhalb dessen der Raum als besetzt gilt"
+      }
+    },
+    {
+      "id": "absence_threshold",
+      "type": "number",
+      "label": {
+        "en": "Absence Threshold",
+        "nl": "Afwezigheidsdrempel",
+        "fr": "Seuil d'Absence",
+        "de": "Abwesenheitsschwelle"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Confidence score below which room is considered empty (0-100)",
+        "nl": "Vertrouwensscore waaronder de kamer als leeg wordt beschouwd",
+        "fr": "Score de confiance en dessous duquel la pièce est considérée comme vide",
+        "de": "Vertrauenswert, unterhalb dessen der Raum als leer gilt"
+      }
+    },
+    {
+      "id": "timeout_minutes",
+      "type": "number",
+      "label": {
+        "en": "Auto-Clear Timeout",
+        "nl": "Auto-Wis Timeout",
+        "fr": "Délai d'Effacement Automatique",
+        "de": "Auto-Lösch Timeout"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Minutes after last signal before presence is auto-cleared",
+        "nl": "Minuten na laatste signaal voordat aanwezigheid automatisch wordt gewist",
+        "fr": "Minutes après le dernier signal avant que la présence ne soit effacée",
+        "de": "Minuten nach dem letzten Signal, bevor die Anwesenheit automatisch gelöscht wird"
+      }
+    },
+    {
+      "id": "decay_half_life_seconds",
+      "type": "number",
+      "label": {
+        "en": "Signal Decay Half-Life",
+        "nl": "Signaal Verval Halfwaardetijd",
+        "fr": "Demi-vie de Déclin du Signal",
+        "de": "Signal-Verfall Halbwertszeit"
+      },
+      "value": 300,
+      "min": 30,
+      "max": 3600,
+      "step": 30,
+      "hint": {
+        "en": "Seconds before a signal's contribution decays to half (default 5 min)",
+        "nl": "Seconden voordat een signaal bijdraagt aan de helft (standaard 5 min)",
+        "fr": "Secondes avant qu'un signal ne décroisse de moitié (défaut 5 min)",
+        "de": "Sekunden bevor ein Signal auf die Hälfte abklingt (Standard 5 min)"
+      }
+    },
+    {
+      "id": "time_of_day_enabled",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time-of-Day Modulation",
+        "nl": "Tijd-van-dag Modulatie Inschakelen",
+        "fr": "Activer la Modulation Horaire",
+        "de": "Tageszeit-Modulation Aktivieren"
+      },
+      "value": false,
+      "hint": {
+        "en": "Reduce signal weights during night hours for more accurate detection",
+        "nl": "Verminder signaalgewichten tijdens nachturen voor nauwkeurigere detectie",
+        "fr": "Réduire les poids des signaux pendant les heures de nuit pour une détection plus précise",
+        "de": "Signalgewichte während Nachtstunden reduzieren für genauere Erkennung"
+      }
+    },
+    {
+      "id": "night_start_hour",
+      "type": "number",
+      "label": {
+        "en": "Night Start Hour",
+        "nl": "Nacht Start Uur",
+        "fr": "Heure de Début de Nuit",
+        "de": "Nacht-Start-Stunde"
+      },
+      "value": 23,
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "hint": {
+        "en": "Hour when night mode begins (0-23)",
+        "nl": "Uur waarop nachtmodus begint",
+        "fr": "Heure de début du mode nuit",
+        "de": "Stunde, ab der der Nachtmodus beginnt"
+      }
+    },
+    {
+      "id": "night_end_hour",
+      "type": "number",
+      "label": {
+        "en": "Night End Hour",
+        "nl": "Nacht Eind Uur",
+        "fr": "Heure de Fin de Nuit",
+        "de": "Nacht-Ende-Stunde"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "hint": {
+        "en": "Hour when night mode ends (0-23)",
+        "nl": "Uur waarop nachtmodus eindigt",
+        "fr": "Heure de fin du mode nuit",
+        "de": "Stunde, bis der Nachtmodus endet"
+      }
+    },
+    {
+      "id": "night_multiplier",
+      "type": "number",
+      "label": {
+        "en": "Night Signal Multiplier",
+        "nl": "Nacht Signaal Vermenigvuldiger",
+        "fr": "Multiplicateur de Signal Nocturne",
+        "de": "Nacht-Signal-Multiplikator"
+      },
+      "value": 0.7,
+      "min": 0.1,
+      "max": 1.0,
+      "step": 0.1,
+      "hint": {
+        "en": "Multiplier applied to all signal weights during night hours (0.1-1.0)",
+        "nl": "Vermenigvuldiger toegepast op alle signaalgewichten tijdens nachturen",
+        "fr": "Multiplicateur appliqué à tous les poids de signal pendant les heures de nuit",
+        "de": "Multiplikator, der auf alle Signalgewichte während Nachtstunden angewendet wird"
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/presence_detector/assets/images/small.png",
+    "large": "/drivers/presence_detector/assets/images/large.png",
+    "xlarge": "/drivers/presence_detector/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [],
+  "id": "presence_detector",
+  "version": "1.0.0"
+}

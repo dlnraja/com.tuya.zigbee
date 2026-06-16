@@ -1,0 +1,19 @@
+{
+  "id": "measure_presence_confidence",
+  "type": "number",
+  "format": "percentage",
+  "title": {
+    "en": "Presence Confidence",
+    "nl": "Aanwezigheid Vertrouwen",
+    "fr": "Confiance de Présence",
+    "de": "Anwesenheitsvertrauen"
+  },
+  "units": {
+    "en": "%"
+  },
+  "min": 0,
+  "max": 100,
+  "decimals": 0,
+  "getable": true,
+  "setable": false
+}

@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Battery Status",
+    "fr": "État de la batterie",
+    "nl": "Batterijstatus",
+    "de": "Batteriestatus"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "text",
+  "insights": true
+}

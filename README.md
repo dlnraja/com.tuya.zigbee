@@ -10,15 +10,9 @@
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **4,205+ device fingerprints**.
 A community-driven Homey app that brings local control to Tuya Zigbee devices -- no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **4,304+ device fingerprints**.
 
 **Key features:**
-- **Local-only** — everything runs on your Homey, nothing goes to the cloud
-- **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
-- **Smart battery** — voltage-based fallback when devices don't report percentage
-- **4,174+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
-- **SDK3** — built on the latest Homey platform
 - **Local-only** -- everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** -- auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** -- voltage-based fallback when devices don't report percentage
@@ -27,6 +21,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices --
 - **23 time sync formats** -- comprehensive MCU time synchronization for LCD sensors, TRVs, weather stations
 - **MCU format guessing** -- 6-heuristic auto-detection for unknown device time formats
 - **8 external scanners** -- Z2M, ZHA, deCONZ, Blakadder, Hubitat, SmartThings, openHAB, Domoticz
+- **Virtual presence detection** -- multi-factor Bayesian scoring with temporal decay
+- **Battery health intelligence** -- predictive replacement alerts and degradation tracking
+- **Device groups** -- coordinate actions across multiple devices with synchronized execution
+- **Advanced flow conditions** -- AND/OR/NOT logic, time constraints, value ranges, cooldowns
+- **Network topology awareness** -- flow triggers based on Zigbee mesh health
+- **Diagnostic reports** -- shareable JSON/PDF exports for GitHub issues
 
 ---
 
@@ -44,14 +44,10 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices --
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.37 |
-| **Device Fingerprints** | 4,205+ |
-| **App Version** | v9.0.36 |
+| **App Version** | v9.0.38 |
 | **Device Fingerprints** | 4,304 |
 | **Unique Manufacturer Names** | 4,035 |
 | **Unique Product IDs** | 566 |
-| **Drivers** | 412 (362 Zigbee + 50 WiFi) |
-| **Flow Cards** | 4,174 |
 | **Drivers** | 412 (361 Zigbee + 51 WiFi) |
 | **Flow Cards** | 4,138 |
 | **Unique Capabilities** | 156 |
@@ -60,8 +56,25 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices --
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **GitHub Workflows** | 63 |
-| **Automation Scripts** | 126 (95 auto + 20 CI + 11 validation) |
-| **Last Updated** | 2026-06-16 |
+| **Automation Scripts** | 134 (103 auto + 20 CI + 11 validation) |
+| **Library Modules** | 267 |
+| **New Features (v9.0.37)** | 13 advanced modules |
+| **Last Updated** | 2026-06-15 |
+
+### New in v9.0.37 (Advanced Feature Modules)
+
+| Category | New Modules | Key Capabilities |
+|----------|-------------|------------------|
+| **Presence Detection** | 1 | Multi-factor Bayesian scoring, temporal decay, sensor fusion |
+| **Battery Intelligence** | 1 | Degradation tracking, predictive alerts, RUL estimation |
+| **Device Groups** | 2 | Synchronized execution, scene persistence, group energy |
+| **Advanced Flows** | 4 | Multi-device conditions, time constraints, value ranges, cooldowns |
+| **Diagnostics** | 2 | JSON/PDF export, network visualization, battery history |
+| **Performance** | 7 | Startup profiling, memory leak detection, DP compression |
+| **Security** | 4 | Rate limiting, input validation, key rotation |
+| **Protocol** | 5 | Binding persistence, bitmap parsing, fragmentation hardening |
+| **UX** | 5 | Pre-pairing checks, real-time monitor, visual indicators |
+| **Infrastructure** | 4 | Pairing wizard, config validator, test framework, error handling |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -149,11 +162,13 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices --
 - 8 battery chemistries supported
 - 4 calculation algorithms
 - Voltage-based fallback when percentage unavailable
+- **Battery Health Intelligence** - Predictive replacement alerts, degradation tracking, remaining useful life estimation
 
 ### Energy Monitoring
 - Full kWh, W, V, A support
 - Configurable ZCL energy divisors
 - Auto-removal of unused energy capabilities after 15 min
+- **Device Group Energy Aggregation** - Combine energy readings across device groups
 
 ### Physical Button Detection
 - 2000ms timeout-based detection
@@ -166,6 +181,42 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices --
 - MCU UART protocol versions v3.1 through v3.5
 - ZT08 DP17 commit trigger for weather stations
 - Fallback chain when primary format fails
+
+### Virtual Presence Detection
+- Multi-factor Bayesian confidence scoring
+- Temporal decay for presence state
+- Integration with motion, door/window, and ambient light sensors
+- Triggers `presence_detected` / `presence_cleared` capabilities
+
+### Device Group Management
+- Dynamic group creation based on device capabilities
+- Synchronized command execution with jitter for ZLL/ZHA
+- Group-level energy aggregation
+- Scene persistence and recall
+
+### Advanced Flow Capabilities
+- Multi-device AND/OR/NOT conditions
+- Time-based constraints (sunrise/sunset, weekdays)
+- Value range triggers (e.g., temperature between 18-22°C)
+- Cooldown periods to prevent flow spam
+
+### Network Topology Awareness
+- Router availability monitoring
+- Direct child count tracking
+- Link quality degradation alerts
+- Automatic heal recommendation
+
+### Diagnostic & Troubleshooting
+- **Diagnostic Report Export** - Generate shareable JSON/PDF reports for GitHub issues
+- **Real-Time Communication Monitor** - Live Zigbee traffic visualization
+- **Network Topology Visualization** - Mesh connection mapping
+- **Battery History Graphs** - Long-term degradation tracking
+
+### Security Enhancements
+- Command rate limiting to prevent flooding attacks
+- DP value input validation
+- Local key validation for WiFi devices
+- UDP discovery key rotation
 
 ---
 
@@ -209,13 +260,18 @@ Homey Pro
        │    ├─ L4: DP Decoding (TuyaEF00Manager + TuyaDPParser)
        │    ├─ L5: Time Sync (GlobalTimeSyncEngine + 23 Formats)
        │    └─ L11: Noise Filtering (SanityFilter)
+       ├─ Advanced Feature Modules (13 new in v9.0.37)
+       │    ├─ Virtual Presence Detection (Bayesian scoring)
+       │    ├─ Battery Health Intelligence (RUL estimation)
+       │    ├─ Device Group Management (synchronized execution)
+       │    ├─ Advanced Multi-Condition Flows (AND/OR/NOT logic)
+       │    ├─ Network Topology Trigger (mesh health awareness)
+       │    └─ Diagnostic Report Export (JSON/PDF)
        ├─ DeviceProfileRegistry (7 profile categories)
        │    └─ Per-fingerprint: DP mappings, quirks, timing
-       ├─ BatteryManager (8 chemistries, voltage fallback)
-       ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 412 Drivers ─ 4,205+ fingerprints
-       ├─ MCU Time Sync (23 formats, auto-detection, fallback chains)
+       ├─ BatteryManager (8 chemistries, voltage fallback, health tracking)
        ├─ PhysicalButtonMixin + VirtualButtonMixin (2000ms detection)
+       ├─ Security Layer (rate limiting, input validation, key rotation)
        └─ 412 Drivers -- 4,304+ fingerprints, 4,138 flow cards
 ```
 
@@ -401,4 +457,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-06-15*
+*Last updated: 2026-06-15 | Version 9.0.38*

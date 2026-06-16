@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Battery Temperature",
+    "fr": "Température de la batterie",
+    "nl": "Batterijtemperatuur",
+    "de": "Batterietemperatur"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 1,
+  "insights": true
+}

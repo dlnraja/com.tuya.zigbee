@@ -1,0 +1,16 @@
+{
+  "id": "virtual_presence_force_clear_all",
+  "title": {
+    "en": "Clear all rooms",
+    "nl": "Alle kamers wissen",
+    "fr": "Effacer toutes les pièces",
+    "de": "Alle Räume löschen"
+  },
+  "hint": {
+    "en": "Force clear the presence state for all Virtual Presence Detectors",
+    "nl": "Forceer het wissen van aanwezigheidsstatus voor alle virtuele aanwezigheidsdetectors",
+    "fr": "Forcer l'effacement de l'état de présence pour tous les détecteurs de présence virtuels",
+    "de": "Das Löschen des Anwesenheitsstatus für alle virtuellen Anwesenheitssensoren erzwingen"
+  },
+  "args": []
+}
