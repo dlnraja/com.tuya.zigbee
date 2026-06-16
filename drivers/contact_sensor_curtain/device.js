@@ -26,7 +26,7 @@ class ContactSensorCurtainDevice extends ZigBeeDevice {
       }, 500);
 
       const triggerCard = (() => {
-        try { return this.homey.flow.getTriggerCard('contact_button_pressed'); }
+        try { return this.homey.flow.getDeviceTriggerCard('contact_button_pressed'); }
         catch (e) { return null; }
       })();
       

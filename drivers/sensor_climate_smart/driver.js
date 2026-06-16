@@ -7,7 +7,7 @@ class ClimateSmartDriver extends Driver {
     this.log('Climate Smart Driver initialized');
 
     try {
-      const card = this.homey.flow.getTriggerCard('climate_scene_triggered');
+      const card = this.homey.flow.getDeviceTriggerCard('climate_scene_triggered');
       if (card) {
         // rule-19 logic
       }

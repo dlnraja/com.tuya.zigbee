@@ -73,7 +73,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
   async setupFlowCards() {
     try {
-        const modeChanged = (() => { try { return this.homey.flow.getTriggerCard('radiator_mode_changed'); } catch (e) { return null; } })();
+        const modeChanged = (() => { try { return this.homey.flow.getDeviceTriggerCard('radiator_mode_changed'); } catch (e) { return null; } })();
         this._radiatorModeChangedTrigger = modeChanged;
     } catch (e) {
         this.log('radiator_mode_changed trigger not available');

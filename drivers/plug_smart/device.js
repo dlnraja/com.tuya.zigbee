@@ -129,7 +129,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
             this._lastOnoffState = state;
             if (isPhysical) {
               const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
-              (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { return null; } })()
+              (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { return null; } })()
             }
           }
         }

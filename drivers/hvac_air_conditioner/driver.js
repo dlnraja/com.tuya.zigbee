@@ -13,14 +13,14 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_temp_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_battery_low'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_turned_on'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_turned_off'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_turned_on'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_turned_off'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_air_conditioner_battery_low'); } catch (e) {}
 
     // CONDITIONS
     try {

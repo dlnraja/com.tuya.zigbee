@@ -275,7 +275,7 @@ async onInit() {
   async _registerEnhancedTriggers() {
     // Learning started trigger
     try {
-      (() => { try { return this.homey.flow.getTriggerCard('ir_blaster_learning_started'); } catch (e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_learning_started'); } catch (e) { return null; } })();
       this.log(' ir_blaster_learning_started trigger registered');
     } catch (err) {
       this.log(' ir_blaster_learning_started not available:', err.message);
@@ -283,7 +283,7 @@ async onInit() {
 
     // Learning state changed trigger
     try {
-      (() => { try { return this.homey.flow.getTriggerCard('ir_blaster_learning_state_changed'); } catch (e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_learning_state_changed'); } catch (e) { return null; } })();
       this.log(' ir_blaster_learning_state_changed trigger registered');
     } catch (err) {
       this.log(' ir_blaster_learning_state_changed not available:', err.message);
@@ -291,7 +291,7 @@ async onInit() {
 
     // Code learned trigger (legacy compatibility)
     try {
-      (() => { try { return this.homey.flow.getTriggerCard('ir_blaster_code_learned'); } catch (e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_code_learned'); } catch (e) { return null; } })();
       this.log(' ir_blaster_code_learned trigger registered');
     } catch (err) {
       this.log(' ir_blaster_code_learned not available:', err.message);
@@ -299,7 +299,7 @@ async onInit() {
 
     // Code analyzed trigger
     try {
-      (() => { try { return this.homey.flow.getTriggerCard('ir_blaster_code_analyzed'); } catch (e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_code_analyzed'); } catch (e) { return null; } })();
       this.log(' ir_blaster_code_analyzed trigger registered');
     } catch (err) {
       this.log(' ir_blaster_code_analyzed not available:', err.message);

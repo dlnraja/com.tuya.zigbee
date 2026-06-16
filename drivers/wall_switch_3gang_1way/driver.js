@@ -20,7 +20,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
 
     for (const id of triggers) {
       try {
-        this.homey.flow.getTriggerCard(id);
+        this.homey.flow.getDeviceTriggerCard(id);
       } catch (err) {
         this.error(`Trigger ${id} registration error: ${err.message}`);
       }

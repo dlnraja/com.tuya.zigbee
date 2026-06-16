@@ -1,0 +1,70 @@
+{
+  "triggers": [
+    {
+      "id": "water_leak_sensor_tuya_alarm_water_true",
+      "title": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée",
+        "nl": "Waterlekkage gedetecteerd",
+        "de": "Wasserleck erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée",
+        "nl": "Waterlekkage gedetecteerd",
+        "de": "Wasserleck erkannt"
+      }
+    },
+    {
+      "id": "water_leak_sensor_tuya_alarm_water_false",
+      "title": {
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau résolue",
+        "nl": "Waterlekkage opgelost",
+        "de": "Wasserleck behoben"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau résolue",
+        "nl": "Waterlekkage opgelost",
+        "de": "Wasserleck behoben"
+      }
+    },
+    {
+      "id": "water_leak_sensor_tuya_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "water_leak_sensor_tuya_alarm_water_active",
+      "title": {
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+        "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+        "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+        "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+        "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+      }
+    }
+  ]
+}

@@ -11,7 +11,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {
       try {
-        this.homey.flow.getTriggerCard(id);
+        this.homey.flow.getDeviceTriggerCard(id);
       } catch (e) {
         this.error(`Trigger ${id} registration error: ${e.message}`);
       }

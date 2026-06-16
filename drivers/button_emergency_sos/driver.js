@@ -23,7 +23,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     this._flowCards = {};
     for (const cardId of triggerCards) {
       try {
-        const card = this.homey.flow.getTriggerCard(cardId);
+        const card = this.homey.flow.getDeviceTriggerCard(cardId);
         if (card) {
           card.registerRunListener(async (args, state) => {
             this.log(`[FLOW] RunListener called for ${cardId} - returning true`);
@@ -89,7 +89,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     } else {
       // Fallback: re-fetch card from runtime
       try {
-        const fallbackCard = this.homey.flow.getTriggerCard(cardId);
+        const fallbackCard = this.homey.flow.getDeviceTriggerCard(cardId);
         if (fallbackCard) {
           await fallbackCard.trigger(device, tokens, state);
           this.log(`[FLOW] ${cardId} triggered (fallback)`);

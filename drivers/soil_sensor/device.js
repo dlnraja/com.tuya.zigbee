@@ -240,7 +240,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   _getFlowCardSafe(id) {
-    try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; }
+    try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; }
   }
 
   _triggerMoistureFlows(moisture) {

@@ -13,12 +13,12 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('generic_tuya_measure_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('generic_tuya_measure_humidity_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('generic_tuya_dp_received'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('generic_tuya_battery_low'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('generic_tuya_temp_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('generic_tuya_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('generic_tuya_measure_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('generic_tuya_measure_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('generic_tuya_dp_received'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('generic_tuya_battery_low'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('generic_tuya_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('generic_tuya_humidity_changed'); } catch (e) {}
 
     // CONDITIONS
     try {
