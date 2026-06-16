@@ -63,6 +63,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._inference = new IntelligentPresenceInference(this);
     this._discovery = new IntelligentDPAutoDiscovery(this);
 
+    // Idea #21: Initialize multi-zone capabilities if config supports it
+    await this._initMultiZoneCapabilities();
+
     try {
       const appVersion = this.getStoreValue('appVersion') || this.zclNode?.endpoints?.[1]?.clusters?.basic?.appVersion;
       if (appVersion) {this._inference.setFirmwareInfo(appVersion);}
@@ -109,7 +112,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
       let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
-      
+
       // Integrate with inference engine if needed
       if (mapping.useInference) {
         presence = this._inference.updatePresenceDP(value);
@@ -123,6 +126,23 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       return;
     }
 
+    // A2. Idea #21: Handle multi-zone presence DPs (alarm_motion.zone1/zone2/zone3)
+    if (mapping.cap && mapping.cap.startsWith('alarm_motion.zone')) {
+      let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
+      if (presence !== null) {
+        this.log(`[RADAR] Zone ${mapping.zone} presence: ${presence}`);
+        return this.setCapabilityValue(mapping.cap, presence).catch(() => {});
+      }
+      return;
+    }
+
+    // A3. Idea #21: Handle movement classification DP
+    if (mapping.cap === 'measure_motion.classification') {
+      const classification = transformPresence(value, mapping.type, false, config.configName);
+      this.log(`[RADAR] Movement classification: ${classification} (raw=${value})`);
+      return this.setCapabilityValue('measure_motion.classification', classification).catch(() => {});
+    }
+
     // B. Handle distance DPs (feed inference)
     if (mapping.cap === 'measure_luminance.distance') {
       let distance;
@@ -134,6 +154,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       this._inference.updateDistance(distance);
       return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+    }
+
+    // B2. Idea #21: Handle multi-zone distance DPs (measure_luminance.distance.zone1/zone2/zone3)
+    if (mapping.cap && mapping.cap.startsWith('measure_luminance.distance.zone')) {
+      let distance;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        distance = smartParse(value, dpId, { capability: mapping.cap });
+      } else {
+        distance = value / (mapping.divisor || 100);
+      }
+      this.log(`[RADAR] Zone ${mapping.zone} distance: ${distance}m`);
+      return this.setCapabilityValue(mapping.cap, distance).catch(() => {});
     }
 
     // C. Handle illuminance DPs
@@ -152,7 +185,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // D. Handle battery DPs - ignore for mains-powered radars
     if (mapping.cap === 'measure_battery') {
       if (this.mainsPowered) {
-        this.log(`[RADAR] ⏭️ Ignoring battery DP${dpId} on mains-powered radar`);
+        this.log(`[RADAR] Ignoring battery DP${dpId} on mains-powered radar`);
         return;
       }
       let battery;
@@ -232,6 +265,42 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     } catch (e) {
       this.error('[RADAR] DP refresh failed:', e.message);
     }
+  }
+
+  /**
+   * Idea #21: Initialize multi-zone presence capabilities dynamically.
+   * Only adds zone DPs if the device config declares hasMultiZone.
+   */
+  async _initMultiZoneCapabilities() {
+    const config = this._getRadarConfig();
+    if (!config || !config.hasMultiZone) return;
+
+    // Zone presence capabilities (alarm_motion.zone1, zone2, zone3)
+    const zoneCaps = [
+      'alarm_motion.zone1',
+      'alarm_motion.zone2',
+      'alarm_motion.zone3',
+    ];
+    // Zone distance capabilities (measure_luminance.distance.zone1, zone2, zone3)
+    const zoneDistanceCaps = [
+      'measure_luminance.distance.zone1',
+      'measure_luminance.distance.zone2',
+      'measure_luminance.distance.zone3',
+    ];
+    // Movement classification capability
+    const classificationCap = 'measure_motion.classification';
+
+    for (const cap of [...zoneCaps, ...zoneDistanceCaps, classificationCap]) {
+      if (!this.hasCapability(cap)) {
+        await this.addCapability(cap).catch(() => {});
+      }
+    }
+
+    // Initialize zone state tracker
+    this._zoneState = { 1: false, 2: false, 3: false };
+    this._movementClassification = 'none';
+
+    this.log('[RADAR] Multi-zone capabilities initialized');
   }
 
   /**

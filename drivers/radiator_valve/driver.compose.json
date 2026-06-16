@@ -373,6 +373,52 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Weekly Schedule (Idea #22)"
+      },
+      "hint": {
+        "en": "Configure heating schedules. Format: 'HH:MM/TT HH:MM/TT ...' where TT is temperature in C. Up to 10 periods. Last period must be 24:00."
+      },
+      "children": [
+        {
+          "id": "schedule_enabled",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Schedule Mode"
+          },
+          "hint": {
+            "en": "Switch the TRV to schedule/program mode instead of manual mode"
+          },
+          "value": false
+        },
+        {
+          "id": "schedule_weekday",
+          "type": "text",
+          "label": {
+            "en": "Weekday Schedule (Mon-Fri)"
+          },
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]\\/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "06:00/20 22:00/16 24:00/16",
+          "hint": {
+            "en": "Time/temp pairs for weekdays. Example: 06:00/20 means at 06:00 set 20C. Up to 10 periods."
+          }
+        },
+        {
+          "id": "schedule_weekend",
+          "type": "text",
+          "label": {
+            "en": "Weekend Schedule (Sat-Sun)"
+          },
+          "pattern": "^(([01][0-9]|[2][0-4]):[0-5][0-9]\\/([0-2][0-9]|30)\\s{0,1})+$",
+          "value": "08:00/20 22:00/16 24:00/16",
+          "hint": {
+            "en": "Time/temp pairs for weekends. Example: 08:00/20 means at 08:00 set 20C. Up to 10 periods."
+          }
+        }
+      ]
     }
   ],
   "images": {

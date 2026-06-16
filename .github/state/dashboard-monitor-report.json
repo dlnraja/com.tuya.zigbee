@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-16T07:29:33.353Z",
+  "totalBuilds": 2472,
+  "successful": 2240,
+  "failed": 224,
+  "drafts": 1277,
+  "inTest": 963,
+  "latestBuild": {
+    "id": 2472,
+    "version": "9.0.19",
+    "state": "processing_failed"
+  },
+  "successRate": "90.6%"
+}

@@ -51,6 +51,15 @@ const SessionManager = require('./lib/session/SessionManager');
 const HealthMonitor = require('./lib/health/HealthMonitor');
 const SanityFilter = require('./lib/filter/SanityFilter');
 
+// v9.1.0: New feature modules (Ideas #41, #44, #86, #87, #96, #98, #99)
+const DeviceGroupManager = require('./lib/groups/DeviceGroupManager');
+const DeviceHealthDashboard = require('./lib/health/DeviceHealthDashboard');
+const AutoDetectionPairingWizard = require('./lib/pairing/AutoDetectionPairingWizard');
+const UserFriendlyErrors = require('./lib/errors/UserFriendlyErrors');
+const { TestFramework } = require('./lib/testing');
+const ConfigSchemaValidator = require('./lib/validation/ConfigSchemaValidator');
+const CentralizedDPRegistry = require('./lib/registry/CentralizedDPRegistry');
+
 class TuyaUnifiedZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
   flowCardManager = null;
@@ -73,6 +82,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   sessionManager = null;
   healthMonitor = null;
   sanityFilter = null;
+
+  // v9.1.0: New feature managers (Ideas #41, #44, #86, #87, #96, #98, #99)
+  groupManager = null;
+  healthDashboard = null;
+  pairingWizard = null;
+  errorTranslator = null;
+  configValidator = null;
+  dpRegistry = null;
 
   async onInit() {
     this.initializeSettings();
@@ -178,6 +195,13 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     try {
       this.otaManager = new OTAUpdateManager(this.homey);
       this.log('✅ OTA Update Manager initialized');
+      // Idea #42: Start automatic Z2M OTA firmware update discovery (6h interval)
+      try {
+        this.otaManager.startAutoDiscovery(6 * 60 * 60 * 1000);
+        this.log('✅ OTA Auto-Discovery started (6h interval)');
+      } catch (e) {
+        this.log('⚠️ OTA Auto-Discovery failed to start (non-critical):', e.message);
+      }
     } catch (err) { this.error('⚠️ OTA Manager failed:', err.message); }
 
     try {
@@ -240,6 +264,51 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.log('✅ L12-L14 Architectural Layers initialized');
     } catch (err) {
       this.error('❌ Failed to initialize architectural layers:', err.message);
+    }
+
+    // v9.1.0: Initialize new feature modules (Ideas #41, #44, #86, #87, #96, #98, #99)
+    try {
+      this.groupManager = new DeviceGroupManager(this.homey);
+      await this.groupManager.initialize();
+      this.log('✅ Device Group Manager initialized (Idea #41)');
+    } catch (err) {
+      this.error('⚠️ GroupManager failed (non-critical):', err.message);
+    }
+
+    try {
+      this.healthDashboard = new DeviceHealthDashboard(this.homey, this.healthMonitor);
+      this.log('✅ Device Health Dashboard initialized (Idea #44)');
+    } catch (err) {
+      this.error('⚠️ HealthDashboard failed (non-critical):', err.message);
+    }
+
+    try {
+      this.pairingWizard = new AutoDetectionPairingWizard(this.homey);
+      this.log('✅ Auto-Detection Pairing Wizard initialized (Idea #86)');
+    } catch (err) {
+      this.error('⚠️ PairingWizard failed (non-critical):', err.message);
+    }
+
+    try {
+      this.errorTranslator = new UserFriendlyErrors();
+      this.log('✅ User-Friendly Error Translator initialized (Idea #87)');
+    } catch (err) {
+      this.error('⚠️ ErrorTranslator failed (non-critical):', err.message);
+    }
+
+    try {
+      this.configValidator = new ConfigSchemaValidator();
+      this.log('✅ Config Schema Validator initialized (Idea #98)');
+    } catch (err) {
+      this.error('⚠️ ConfigValidator failed (non-critical):', err.message);
+    }
+
+    try {
+      this.dpRegistry = new CentralizedDPRegistry();
+      const stats = this.dpRegistry.getStats();
+      this.log(`✅ Centralized DP Registry initialized (Idea #99): ${stats.totalDPs} DPs, ${Object.keys(stats.byDeviceType).length} device types`);
+    } catch (err) {
+      this.error('⚠️ DPRegistry failed (non-critical):', err.message);
     }
 
     try {
@@ -356,6 +425,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   getOTAManager() { return this.otaManager; }
   getQuirksDatabase() { return this.quirksDatabase; }
 
+  // v9.1.0: Getters for new feature modules (Ideas #41, #44, #86, #87, #98, #99)
+  getGroupManager() { return this.groupManager; }
+  getHealthDashboard() { return this.healthDashboard; }
+  getPairingWizard() { return this.pairingWizard; }
+  getErrorTranslator() { return this.errorTranslator; }
+  getConfigValidator() { return this.configValidator; }
+  getDPRegistry() { return this.dpRegistry; }
+
   async initializeInsights() {
     this.log('📊 Initializing Homey Insights...');
     try {
@@ -391,6 +468,15 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     try { if (this.analytics?.destroy) { this.analytics.destroy(); this.analytics = null; } } catch (e) {}
     try { if (this.healthMonitor?.destroy) { this.healthMonitor.destroy(); this.healthMonitor = null; } } catch (e) {}
     try { if (this.discovery?.stop) { await this.discovery.stop(); this.discovery = null; } } catch (e) {}
+
+    // v9.1.0: Cleanup new feature modules
+    try { if (this.groupManager?.destroy) { this.groupManager.destroy(); this.groupManager = null; } } catch (e) {}
+    try { if (this.healthDashboard?.destroy) { this.healthDashboard.destroy(); this.healthDashboard = null; } } catch (e) {}
+    this.pairingWizard = null;
+    this.errorTranslator = null;
+    this.configValidator = null;
+    this.dpRegistry = null;
+
     this.flowCardManager = null;
     this.capabilityManager = null;
     this.optimizer = null;
@@ -400,6 +486,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.diagnosticAPI = null;
     this.logBuffer = null;
     this.suggestionEngine = null;
+    try { if (this.otaManager?.cleanup) { this.otaManager.cleanup(); } } catch (e) {}
     this.otaManager = null;
     this.quirksDatabase = null;
     this.sessionManager = null;

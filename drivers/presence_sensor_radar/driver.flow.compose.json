@@ -156,6 +156,68 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "presence_sensor_radar_zone1_presence",
+      "title": {
+        "en": "Zone 1 presence detected"
+      },
+      "hint": {
+        "en": "Triggers when presence is detected in Zone 1 (near field)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Zone 1 presence detected"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_zone2_presence",
+      "title": {
+        "en": "Zone 2 presence detected"
+      },
+      "hint": {
+        "en": "Triggers when presence is detected in Zone 2 (mid field)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Zone 2 presence detected"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_zone3_presence",
+      "title": {
+        "en": "Zone 3 presence detected"
+      },
+      "hint": {
+        "en": "Triggers when presence is detected in Zone 3 (far field)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Zone 3 presence detected"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_movement_classification_changed",
+      "title": {
+        "en": "Movement classification changed"
+      },
+      "hint": {
+        "en": "Triggers when the type of detected movement changes (none/stationary/micro/small/large)"
+      },
+      "tokens": [
+        {
+          "name": "classification",
+          "type": "string",
+          "title": {
+            "en": "Classification"
+          },
+          "example": "large_motion"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Movement classification changed"
+      }
     }
   ],
   "conditions": [
@@ -243,6 +305,54 @@
         "fr": "Mouvement !{{est|n'est pas}} détecté",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_zone_active",
+      "title": {
+        "en": "Zone !{{1|2|3}} presence !{{is|is not}} detected"
+      },
+      "hint": {
+        "en": "Check if a specific detection zone has active presence"
+      },
+      "args": [
+        {
+          "name": "zone",
+          "type": "dropdown",
+          "values": [
+            { "id": "1", "label": { "en": "Zone 1 (Near)" } },
+            { "id": "2", "label": { "en": "Zone 2 (Mid)" } },
+            { "id": "3", "label": { "en": "Zone 3 (Far)" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Zone [[zone]] presence !{{is|is not}} detected"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_movement_is",
+      "title": {
+        "en": "Movement type !{{is|is not}}"
+      },
+      "hint": {
+        "en": "Check the current movement classification (none, stationary, micro_motion, small_motion, large_motion)"
+      },
+      "args": [
+        {
+          "name": "classification",
+          "type": "dropdown",
+          "values": [
+            { "id": "none", "label": { "en": "None" } },
+            { "id": "stationary", "label": { "en": "Stationary" } },
+            { "id": "micro_motion", "label": { "en": "Micro Motion (breathing)" } },
+            { "id": "small_motion", "label": { "en": "Small Motion (limb)" } },
+            { "id": "large_motion", "label": { "en": "Large Motion (walking)" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Movement type !{{is|is not}} [[classification]]"
       }
     }
   ]
