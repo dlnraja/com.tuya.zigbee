@@ -1,0 +1,134 @@
+{
+  "name": {
+    "en": "Hybrid Light + Button Sensor",
+    "fr": "Hybride Lumière + Capteur Bouton",
+    "nl": "Hybride Licht + Knop Sensor",
+    "de": "Hybrid Licht + Tastensensor"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "button.1",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Brightness",
+        "fr": "Luminosité"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "getable": false,
+      "setable": true
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_U5U4CAKC",
+      "_TZ3000_VZOPCETZ",
+      "_TZ3000_OBACBUKL",
+      "_TZ3000_QZJCSMAR",
+      "_TZ3210_DSE8OGFY",
+      "_TZ3210_7VGTTLA6",
+      "_TZ3210_A04ACM9S",
+      "_TZ3210_CM9MBPR1",
+      "_TYZB01_BNGWDJSR",
+      "SONOFF"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0041",
+      "TS0042",
+      "TS0001",
+      "TS000F",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          257,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode Scène (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press."
+      }
+    }
+  ],
+  "images": {
+    "small": "/drivers/hybrid_light_sensor/assets/images/small.png",
+    "large": "/drivers/hybrid_light_sensor/assets/images/large.png",
+    "xlarge": "/drivers/hybrid_light_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ],
+  "id": "hybrid_light_sensor",
+  "version": "1.0.0"
+}

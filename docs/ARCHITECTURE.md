@@ -54,8 +54,10 @@ Each driver lives in `drivers/{type}/` with:
 | **Plugs/Energy** | plug_smart, plug_energy_monitor, din_rail_*, power_meter | HybridPlugBase |
 | **Climate** | thermostat_*, radiator_valve, smart_heater* | HybridThermostatBase |
 | **Security** | lock_smart, siren, smoke_detector*, gas_sensor | HybridSensorBase |
-| **Buttons** | button_wireless_*, scene_switch_* | ButtonDevice |
-| **IR** | ir_blaster, wifi_ir_remote | TuyaZigbeeDevice |
+| **Buttons** | button_wireless_*, scene_switch_*, button_emergency_sos | ButtonDevice |
+| **IR** | ir_blaster, wifi_ir_remote, blaster_remote | TuyaZigbeeDevice |
+| **Air Purifiers** | air_purifier_climate, air_purifier_sensor, air_purifier_quality | HybridSensorBase |
+| **Radar/Presence** | presence_sensor_radar, presence_sensor_mmwave | HybridSensorBase |
 | **WiFi** | wifi_plug, wifi_switch*, wifi_light, wifi_thermostat... | TuyaHybridDevice |
 | **Special** | fingerbot, pet_feeder, garage_door, valve_*, pool_pump | Various |
 
@@ -128,7 +130,7 @@ Common DPs: DP1-8=gang states, DP14=power-on, DP15=backlight, DP101=child_lock
 | **DeviceFingerprintDB.js** | 215KB | Complete fingerprint database (all mfr+pid combos) |
 | **EnrichedDPMappings.js** | 51KB | DP-to-capability enriched mappings |
 | **TuyaDataPointsZ2M.js** | 43KB | DP definitions from Zigbee2MQTT |
-| **TuyaTimeSyncFormats.js** | 32KB | All Tuya time sync format variants |
+| **TuyaTimeSyncFormats.js** | 32KB | 23 time sync format variants + MCU format guessing |
 | **TuyaTimeSyncManager.js** | 24KB | Time sync coordination |
 | **TuyaGatewayEmulator.js** | 23KB | Gateway protocol emulation |
 | **TuyaSpecificClusterDevice.js** | 20KB | Cluster-specific device handling |

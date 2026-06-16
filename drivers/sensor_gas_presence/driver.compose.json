@@ -644,7 +644,48 @@
   "flow": {
     "triggers": [],
     "conditions": [],
-    "actions": []
+    "actions": [
+      {
+        "id": "sensor_gas_presence_run_self_test",
+        "title": {
+          "en": "Run self-test",
+          "fr": "Lancer auto-test"
+        },
+        "args": [
+          {
+            "name": "test_type",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "smoke",
+                "label": {
+                  "en": "Smoke Test",
+                  "fr": "Test Fumée"
+                }
+              },
+              {
+                "id": "co",
+                "label": {
+                  "en": "CO Test",
+                  "fr": "Test CO"
+                }
+              },
+              {
+                "id": "all",
+                "label": {
+                  "en": "Full Test",
+                  "fr": "Test Complet"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": {
+          "en": "Run [[test_type]] self-test on [[device]]",
+          "fr": "Lancer auto-test [[test_type]] sur [[device]]"
+        }
+      }
+    ]
   },
   "id": "sensor_gas_presence",
   "version": "1.0.0"

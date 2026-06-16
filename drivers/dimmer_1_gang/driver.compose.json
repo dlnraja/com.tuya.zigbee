@@ -21,6 +21,138 @@
       }
     }
   },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Brightness Limits",
+        "fr": "Limites de Luminosité"
+      },
+      "children": [
+        {
+          "id": "minBrightness",
+          "type": "number",
+          "label": {
+            "en": "Minimum Brightness (%)",
+            "de": "Minimale Helligkeit"
+          },
+          "value": 1,
+          "attr": {
+            "step": 1,
+            "min": 1,
+            "max": 255
+          }
+        },
+        {
+          "id": "maxBrightness",
+          "type": "number",
+          "label": {
+            "en": "Maximum Brightness (%)",
+            "de": "Maximale Helligkeit"
+          },
+          "value": 255,
+          "attr": {
+            "step": 1,
+            "min": 1,
+            "max": 255
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Enhanced Features (v9.1)",
+        "fr": "Fonctionnalités Améliorées (v9.1)"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "fr": "Comportement à la Mise Sous Tension"
+          },
+          "hint": {
+            "en": "What the device does after power restoration",
+            "fr": "Comportement après restauration du courant"
+          },
+          "value": "memory",
+          "values": [
+            { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
+            { "id": "on", "label": { "en": "On", "fr": "Allumé" } },
+            { "id": "memory", "label": { "en": "Last State", "fr": "Dernier état" } }
+          ]
+        },
+        {
+          "id": "dimmer_transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time (x100ms, 0=instant)",
+            "fr": "Durée de Transition (x100ms, 0=instantané)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "hint": {
+            "en": "Smooth transition when changing brightness (0 = instant)",
+            "fr": "Transition fluide lors du changement de luminosité (0 = instantané)"
+          }
+        },
+        {
+          "id": "smart_dimmer_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          },
+          "hint": {
+            "en": "Leading edge for LED/inductive, trailing edge for resistive",
+            "fr": "Front montant pour LED/inductif, front descendant pour résistif"
+          },
+          "value": "auto",
+          "values": [
+            { "id": "auto", "label": { "en": "Auto", "fr": "Automatique" } },
+            { "id": "leading_edge", "label": { "en": "Leading Edge", "fr": "Front Montant" } },
+            { "id": "trailing_edge", "label": { "en": "Trailing Edge", "fr": "Front Descendant" } }
+          ]
+        },
+        {
+          "id": "dimmer_step_size",
+          "type": "number",
+          "label": {
+            "en": "Dimmer Step Size (%)",
+            "fr": "Taille du Pas du Variateur (%)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 25,
+          "step": 1,
+          "hint": {
+            "en": "Step size when adjusting brightness via step commands",
+            "fr": "Taille du pas lors de l'ajustement de la luminosité"
+          }
+        },
+        {
+          "id": "availability_timeout",
+          "type": "number",
+          "label": {
+            "en": "Offline Timeout (minutes, 0=disabled)",
+            "fr": "Délai Hors Ligne (minutes, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "step": 5,
+          "hint": {
+            "en": "Minutes without messages before marking device as offline",
+            "fr": "Minutes sans messages avant de marquer l'appareil comme hors ligne"
+          }
+        }
+      ]
+    }
+  ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
@@ -59,7 +191,7 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": ["_TZ3000_unknown"]
   },
   "version": "1.0.0"
 }

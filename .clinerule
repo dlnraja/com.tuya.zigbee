@@ -75,6 +75,16 @@
 - **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
 - **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
 
+## MCU Time Sync Formats (TuyaTimeSyncFormats.js v6.0.0)
+- 23 time sync format variants for Tuya MCU devices
+- **Location**: `lib/tuya/TuyaTimeSyncFormats.js`
+- **Auto-detection**: `TuyaTimeSyncFormats.guessFormat(deviceInfo)` uses 6 heuristics
+- **Key formats**: TUYA_DUAL_2000 (LCD sensors), TUYA_MCU (MCU devices), TUYA_SEQ_10 (v3.3+), TUYA_FULL_TZ (thermostats)
+- **MCU protocol versions**: v3.1 (8-byte), v3.2 (8-byte), v3.3 (10-byte seq REQUIRED), v3.4 (+DP17 commit), v3.5 (extended TZ)
+- **RULE**: Always use guessFormat() for unknown devices; never hardcode a single format
+- **RULE**: ZT08 weather stations require DP17 commit trigger after time sync
+- **RULE**: Check MCU version from device before selecting format
+
 // ============================================================================
 // AUTONOMOUS AGENT REFLECTION & LOGIC MODE
 // ============================================================================

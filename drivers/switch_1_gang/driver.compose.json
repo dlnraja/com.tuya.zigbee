@@ -13,6 +13,83 @@
   "capabilities": [
     "onoff"
   ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Enhanced Features (v9.1)",
+        "fr": "Fonctionnalités Améliorées (v9.1)"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "fr": "Comportement à la Mise Sous Tension"
+          },
+          "hint": {
+            "en": "What the device does after a power outage is restored",
+            "fr": "Le comportement de l'appareil après une coupure de courant"
+          },
+          "value": "memory",
+          "values": [
+            { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
+            { "id": "on", "label": { "en": "On", "fr": "Allumé" } },
+            { "id": "memory", "label": { "en": "Last State", "fr": "Dernier état" } }
+          ]
+        },
+        {
+          "id": "standby_power_threshold",
+          "type": "number",
+          "label": {
+            "en": "Standby Power Threshold (W, 0=disabled)",
+            "fr": "Seuil Puissance Veille (W, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "hint": {
+            "en": "Power level above which flow card triggers. 0 = disabled.",
+            "fr": "Niveau de puissance au-dessus duquel la carte de flow se déclenche. 0 = désactivé."
+          }
+        },
+        {
+          "id": "availability_timeout",
+          "type": "number",
+          "label": {
+            "en": "Offline Timeout (minutes, 0=disabled)",
+            "fr": "Délai Hors Ligne (minutes, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "step": 5,
+          "hint": {
+            "en": "Minutes without messages before marking device as offline",
+            "fr": "Minutes sans messages avant de marquer l'appareil comme hors ligne"
+          }
+        },
+        {
+          "id": "energy_cost_per_kwh",
+          "type": "number",
+          "label": {
+            "en": "Energy Cost (per kWh, 0=disabled)",
+            "fr": "Coût énergétique (par kWh, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 5.000,
+          "step": 0.001,
+          "hint": {
+            "en": "Cost per kWh for energy expense tracking",
+            "fr": "Coût par kWh pour le suivi des dépenses énergétiques"
+          }
+        }
+      ]
+    }
+  ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
@@ -24,7 +101,7 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": ["_TZ3000_unknown"],
     "productId": [
       "TS0003",
       "TS011F",

@@ -1,0 +1,125 @@
+{
+  "name": {
+    "en": "Hybrid Heater + Thermostat",
+    "fr": "Hybride Chauffage + Thermostat",
+    "nl": "Hybride Verwarming + Thermostaat",
+    "de": "Hybrid Heizung + Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Current Temperature",
+        "fr": "Température Actuelle"
+      }
+    },
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible"
+      },
+      "min": 5,
+      "max": 45,
+      "step": 0.5
+    },
+    "dim": {
+      "title": {
+        "en": "Heater Level",
+        "fr": "Niveau Chauffage"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_C88TEUJP",
+      "_TYST11_C88TEUJP",
+      "_TZE200_C88TEUJP"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          513,
+          1026,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)",
+        "fr": "Décalage Température (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1
+    },
+    {
+      "id": "min_set_point",
+      "type": "number",
+      "label": {
+        "en": "Minimum Set Point (°C)",
+        "fr": "Point de Consigne Min (°C)"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 15,
+      "step": 0.5
+    },
+    {
+      "id": "max_set_point",
+      "type": "number",
+      "label": {
+        "en": "Maximum Set Point (°C)",
+        "fr": "Point de Consigne Max (°C)"
+      },
+      "value": 45,
+      "min": 20,
+      "max": 60,
+      "step": 0.5
+    }
+  ],
+  "images": {
+    "small": "/drivers/hybrid_heater_thermostat/assets/images/small.png",
+    "large": "/drivers/hybrid_heater_thermostat/assets/images/large.png",
+    "xlarge": "/drivers/hybrid_heater_thermostat/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ],
+  "id": "hybrid_heater_thermostat",
+  "version": "1.0.0"
+}

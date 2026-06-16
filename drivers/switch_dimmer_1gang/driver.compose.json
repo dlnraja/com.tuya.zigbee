@@ -154,6 +154,91 @@
               }
             }
           ]
+        },
+        {
+          "id": "max_brightness",
+          "type": "number",
+          "label": {
+            "en": "Maximum Brightness (%)",
+            "fr": "Luminosité Maximale (%)"
+          },
+          "hint": {
+            "en": "Maximum brightness level (1-100)",
+            "fr": "Niveau de luminosité maximum (1-100)"
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100,
+          "units": {
+            "en": "%",
+            "fr": "%"
+          }
+        },
+        {
+          "id": "dimmer_transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time (x100ms, 0=instant)",
+            "fr": "Durée de Transition (x100ms, 0=instantané)"
+          },
+          "hint": {
+            "en": "Smooth transition when changing brightness",
+            "fr": "Transition fluide lors du changement de luminosité"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 50,
+          "step": 1
+        },
+        {
+          "id": "smart_dimmer_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          },
+          "hint": {
+            "en": "Leading edge for LED/inductive, trailing edge for resistive",
+            "fr": "Front montant pour LED/inductif, front descendant pour résistif"
+          },
+          "value": "auto",
+          "values": [
+            { "id": "auto", "label": { "en": "Auto", "fr": "Automatique" } },
+            { "id": "leading_edge", "label": { "en": "Leading Edge", "fr": "Front Montant" } },
+            { "id": "trailing_edge", "label": { "en": "Trailing Edge", "fr": "Front Descendant" } }
+          ]
+        },
+        {
+          "id": "dimmer_step_size",
+          "type": "number",
+          "label": {
+            "en": "Dimmer Step Size (%)",
+            "fr": "Taille du Pas du Variateur (%)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 25,
+          "step": 1,
+          "hint": {
+            "en": "Step size when adjusting brightness",
+            "fr": "Taille du pas lors de l'ajustement"
+          }
+        },
+        {
+          "id": "standby_power_threshold",
+          "type": "number",
+          "label": {
+            "en": "Standby Power Threshold (W, 0=disabled)",
+            "fr": "Seuil Puissance Veille (W, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "hint": {
+            "en": "Power above which flow card triggers",
+            "fr": "Puissance au-dessus duquel la carte flow se déclenche"
+          }
         }
       ]
     }

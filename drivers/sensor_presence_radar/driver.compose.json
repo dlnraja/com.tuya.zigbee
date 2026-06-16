@@ -556,6 +556,47 @@
         "en": "Enable/disable the LED indicator on the sensor",
         "fr": "Activer/désactiver l'indicateur LED"
       }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Enhanced Features (v9.1)",
+        "fr": "Fonctionnalités Améliorées (v9.1)"
+      },
+      "children": [
+        {
+          "id": "battery_check_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Check Interval (hours)",
+            "fr": "Intervalle Vérification Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to poll battery status",
+            "fr": "Fréquence de vérification de la batterie"
+          }
+        },
+        {
+          "id": "availability_timeout",
+          "type": "number",
+          "label": {
+            "en": "Offline Timeout (minutes, 0=disabled)",
+            "fr": "Délai Hors Ligne (minutes, 0=désactivé)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "step": 5,
+          "hint": {
+            "en": "Minutes without messages before marking device as offline",
+            "fr": "Minutes sans messages avant de marquer l'appareil comme hors ligne"
+          }
+        }
+      ]
     }
   ],
   "images": {

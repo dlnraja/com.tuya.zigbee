@@ -1,0 +1,137 @@
+{
+  "name": {
+    "en": "Hybrid Fan + Sensor",
+    "fr": "Hybride Ventilateur + Capteur",
+    "nl": "Hybride Ventilator + Sensor",
+    "de": "Hybrid Lüfter + Sensor"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_pm25",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse Ventilateur"
+      }
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "ug/m3"
+    },
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "fr": "Température"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "fr": "Humidité"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ],
+    "approximation": {
+      "usageOn": 50,
+      "usageOff": 1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "TUYATEC-1G3TAWNP",
+      "TUYATEC-1UXX9CCI",
+      "TUYATEC-ABKEHQUS",
+      "TUYATEC-BFQ2I2SY",
+      "TUYATEC-GQHXIXYK",
+      "TUYATEC-HAOIUWZY",
+      "TUYATEC-OJMXEIKG",
+      "TUYATEC-OJMXEIKQ",
+      "TUYATEC-PRHS1RSD",
+      "TUYATEC-QUN7VQ14",
+      "TUYATEC-RIUJ5XZS",
+      "TUYATEC-V3UXBUXY",
+      "TUYATEC-VMGH3FXD",
+      "TUYATEC-YG5DCBFU"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8,
+          1026,
+          1029,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)",
+        "fr": "Décalage Température (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1
+    },
+    {
+      "id": "humidity_calibration",
+      "type": "number",
+      "label": {
+        "en": "Humidity Offset (%)",
+        "fr": "Décalage Humidité (%)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 1
+    }
+  ],
+  "images": {
+    "small": "/drivers/hybrid_fan_sensor/assets/images/small.png",
+    "large": "/drivers/hybrid_fan_sensor/assets/images/large.png",
+    "xlarge": "/drivers/hybrid_fan_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ],
+  "id": "hybrid_fan_sensor",
+  "version": "1.0.0"
+}

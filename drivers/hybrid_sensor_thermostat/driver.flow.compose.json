@@ -1,0 +1,179 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_sensor_thermostat_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_sensor_thermostat_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_sensor_thermostat_mode_changed",
+      "title": {
+        "en": "Thermostat mode changed",
+        "fr": "Mode thermostat changé"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "example": "heat"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_sensor_thermostat_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_sensor_thermostat_mode_is",
+      "title": {
+        "en": "Thermostat mode is",
+        "fr": "Mode thermostat est"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "enum",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } },
+            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
+            { "id": "cool", "label": { "en": "Cool", "fr": "Refroidissement" } },
+            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hybrid_sensor_thermostat_temperature_above",
+      "title": {
+        "en": "Temperature is above",
+        "fr": "Température supérieure à"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hybrid_sensor_thermostat_temperature_below",
+      "title": {
+        "en": "Temperature is below",
+        "fr": "Température inférieure à"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_sensor_thermostat_set_mode",
+      "title": {
+        "en": "Set thermostat mode",
+        "fr": "Définir mode thermostat"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "enum",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } },
+            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
+            { "id": "cool", "label": { "en": "Cool", "fr": "Refroidissement" } },
+            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hybrid_sensor_thermostat_set_temperature",
+      "title": {
+        "en": "Set target temperature",
+        "fr": "Définir température cible"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          }
+        }
+      ]
+    }
+  ]
+}
