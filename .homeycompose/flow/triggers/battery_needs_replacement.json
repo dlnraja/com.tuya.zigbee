@@ -1,0 +1,74 @@
+{
+  "id": "battery_needs_replacement",
+  "title": {
+    "en": "Battery needs replacement",
+    "fr": "La batterie doit être remplacée",
+    "nl": "Batterij moet worden vervangen",
+    "de": "Batterie muss ersetzt werden"
+  },
+  "hint": {
+    "en": "Triggers when battery health drops to replacement level or a replacement is detected",
+    "fr": "Se déclenche lorsque la santé de la batterie descend au niveau de remplacement",
+    "nl": "Activeert wanneer de batterij gezondheid daalt tot vervangingsniveau",
+    "de": "Wird ausgelöst, wenn der Batteriezustand das Ersetzungsniveau erreicht"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery_health"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "health_score",
+      "type": "number",
+      "title": {
+        "en": "Health Score",
+        "fr": "Score de santé",
+        "nl": "Gezondheidsscore",
+        "de": "Gesundheitsscore"
+      }
+    },
+    {
+      "name": "health_status",
+      "type": "string",
+      "title": {
+        "en": "Health Status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Gesundheitsstatus"
+      }
+    },
+    {
+      "name": "battery_type",
+      "type": "string",
+      "title": {
+        "en": "Battery Type",
+        "fr": "Type de batterie",
+        "nl": "Batterijtype",
+        "de": "Batterietyp"
+      }
+    },
+    {
+      "name": "degradation_percent",
+      "type": "number",
+      "title": {
+        "en": "Degradation %",
+        "fr": "Dégradation %",
+        "nl": "Degradering %",
+        "de": "Degradation %"
+      }
+    },
+    {
+      "name": "cycle_count",
+      "type": "number",
+      "title": {
+        "en": "Cycle Count",
+        "fr": "Nombre de cycles",
+        "nl": "Aantal cycli",
+        "de": "Zyklenanzahl"
+      }
+    }
+  ]
+}

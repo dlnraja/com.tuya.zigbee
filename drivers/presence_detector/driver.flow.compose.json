@@ -1,0 +1,234 @@
+{
+  "triggers": [
+    {
+      "id": "virtual_presence_detected",
+      "highlight": true,
+      "title": {
+        "en": "Presence detected in room",
+        "nl": "Aanwezigheid gedetecteerd in kamer",
+        "fr": "Présence détectée dans la pièce",
+        "de": "Anwesenheit im Raum erkannt"
+      },
+      "hint": {
+        "en": "Triggers when the virtual presence detector determines the room is occupied",
+        "nl": "Triggert wanneer de virtuele aanwezigheidsdetector bepaalt dat de kamer bezet is",
+        "fr": "Se déclenche quand le détecteur de présence virtuel détermine que la pièce est occupée",
+        "de": "Wird ausgelöst, wenn der virtuelle Anwesenheitssensor feststellt, dass der Raum besetzt ist"
+      },
+      "tokens": [
+        {
+          "name": "confidence",
+          "type": "number",
+          "title": {
+            "en": "Confidence (%)",
+            "fr": "Confiance (%)",
+            "nl": "Vertrouwen (%)",
+            "de": "Vertrauen (%)"
+          },
+          "example": 75
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "title": {
+            "en": "Timestamp",
+            "fr": "Horodatage",
+            "nl": "Tijdstempel",
+            "de": "Zeitstempel"
+          },
+          "example": "2026-06-15T14:30:00.000Z"
+        }
+      ],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        }
+      ]
+    },
+    {
+      "id": "virtual_presence_cleared",
+      "title": {
+        "en": "Presence cleared in room",
+        "nl": "Aanwezigheid opgeheven in kamer",
+        "fr": "Présence terminée dans la pièce",
+        "de": "Anwesenheit im Raum beendet"
+      },
+      "hint": {
+        "en": "Triggers when the room is determined to be empty after timeout",
+        "nl": "Triggert wanneer de kamer als leeg wordt bepaald na timeout",
+        "fr": "Se déclenche quand la pièce est déterminée comme vide après le délai",
+        "de": "Wird ausgelöst, wenn der Raum nach dem Timeout als leer bestimmt wird"
+      },
+      "tokens": [
+        {
+          "name": "duration_minutes",
+          "type": "number",
+          "title": {
+            "en": "Presence Duration (minutes)",
+            "fr": "Durée de Présence (minutes)",
+            "nl": "Aanwezigheidsduur (minuten)",
+            "de": "Anwesenheitsdauer (Minuten)"
+          },
+          "example": 45
+        },
+        {
+          "name": "timestamp",
+          "type": "string",
+          "title": {
+            "en": "Timestamp",
+            "fr": "Horodatage",
+            "nl": "Tijdstempel",
+            "de": "Zeitstempel"
+          },
+          "example": "2026-06-15T15:15:00.000Z"
+        }
+      ],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        }
+      ]
+    },
+    {
+      "id": "virtual_presence_confidence_changed",
+      "title": {
+        "en": "Confidence changed",
+        "nl": "Vertrouwen gewijzigd",
+        "fr": "Confiance changée",
+        "de": "Vertrauen geändert"
+      },
+      "hint": {
+        "en": "Triggers when the presence confidence score changes",
+        "nl": "Triggert wanneer de aanwezigheidsvertrouwen score wijzigt",
+        "fr": "Se déclenche quand le score de confiance de présence change",
+        "de": "Wird ausgelöst, wenn sich der Anwesenheits-Vertrauenswert ändert"
+      },
+      "tokens": [
+        {
+          "name": "confidence",
+          "type": "number",
+          "title": {
+            "en": "Confidence (%)",
+            "fr": "Confiance (%)",
+            "nl": "Vertrouwen (%)",
+            "de": "Vertrauen (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "virtual_presence_is_occupied",
+      "title": {
+        "en": "Room !{{is|is not}} occupied",
+        "nl": "Kamer !{{is|is niet}} bezet",
+        "fr": "La pièce !{{est|n'est pas}} occupée",
+        "de": "Raum !{{ist|ist nicht}} besetzt"
+      },
+      "hint": {
+        "en": "Check if the virtual presence detector considers the room occupied",
+        "nl": "Controleer of de virtuele aanwezigheidsdetector de kamer als bezet beschouwt",
+        "fr": "Vérifier si le détecteur de présence virtuel considère la pièce comme occupée",
+        "de": "Prüfen, ob der virtuelle Anwesenheitssensor den Raum als besetzt betrachtet"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        }
+      ]
+    },
+    {
+      "id": "virtual_presence_confidence_above",
+      "title": {
+        "en": "Confidence !{{is above|is not above}}",
+        "nl": "Vertrouwen !{{is boven|is niet boven}}",
+        "fr": "Confiance !{{est au-dessus|n'est pas au-dessus}}",
+        "de": "Vertrauen !{{ist über|ist nicht über}}"
+      },
+      "hint": {
+        "en": "Check if the confidence score exceeds a threshold",
+        "nl": "Controleer of de vertrouwensscore een drempel overschrijdt",
+        "fr": "Vérifier si le score de confiance dépasse un seuil",
+        "de": "Prüfen, ob der Vertrauenswert einen Schwellenwert überschreitet"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        },
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "50"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "virtual_presence_force_present",
+      "title": {
+        "en": "Force presence in room",
+        "nl": "Aanwezigheid forceren in kamer",
+        "fr": "Forcer la présence dans la pièce",
+        "de": "Anwesenheit im Raum erzwingen"
+      },
+      "hint": {
+        "en": "Manually trigger presence detection for the room",
+        "nl": "Handmatig aanwezigheidsdetectie activeren voor de kamer",
+        "fr": "Déclencher manuellement la détection de présence pour la pièce",
+        "de": "Die Anwesenheitserkennung für den Raum manuell auslösen"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        }
+      ]
+    },
+    {
+      "id": "virtual_presence_force_clear",
+      "title": {
+        "en": "Clear presence in room",
+        "nl": "Aanwezigheid wissen in kamer",
+        "fr": "Effacer la présence dans la pièce",
+        "de": "Anwesenheit im Raum löschen"
+      },
+      "hint": {
+        "en": "Manually clear the presence state for the room",
+        "nl": "Handmatig de aanwezigheidsstatus van de kamer wissen",
+        "fr": "Effacer manuellement l'état de présence de la pièce",
+        "de": "Den Anwesenheitsstatus des Raums manuell löschen"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driverId=presence_detector"
+        }
+      ]
+    }
+  ]
+}

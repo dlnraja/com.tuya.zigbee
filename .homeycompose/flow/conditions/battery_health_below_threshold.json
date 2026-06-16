@@ -1,0 +1,57 @@
+{
+  "id": "battery_health_below_threshold",
+  "title": {
+    "en": "Battery health is below [[threshold]]",
+    "fr": "La santé de la batterie est inférieure à [[threshold]]",
+    "nl": "Batterij gezondheid is onder [[threshold]]",
+    "de": "Batteriezustand ist unter [[threshold]]"
+  },
+  "hint": {
+    "en": "Check if the battery health score is below a given threshold",
+    "fr": "Vérifie si le score de santé de la batterie est inférieur à un seuil donné",
+    "nl": "Controleert of de batterij gezondheidsscore onder een drempelwaarde ligt",
+    "de": "Prüft ob der Batteriezustandsscore unter einem Schwellenwert liegt"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery_health"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold (0-100)",
+        "fr": "Seuil (0-100)",
+        "nl": "Drempelwaarde (0-100)",
+        "de": "Schwellenwert (0-100)"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 5
+    }
+  ],
+  "tokens": [
+    {
+      "name": "health_score",
+      "type": "number",
+      "title": {
+        "en": "Current Health Score",
+        "fr": "Score de santé actuel",
+        "nl": "Huidige gezondheidsscore",
+        "de": "Aktueller Gesundheitsscore"
+      }
+    },
+    {
+      "name": "health_status",
+      "type": "string",
+      "title": {
+        "en": "Health Status",
+        "fr": "État de santé",
+        "nl": "Gezondheidsstatus",
+        "de": "Gesundheitsstatus"
+      }
+    }
+  ]
+}

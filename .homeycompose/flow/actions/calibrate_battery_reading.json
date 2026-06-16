@@ -1,0 +1,56 @@
+{
+  "id": "calibrate_battery_reading",
+  "title": {
+    "en": "Calibrate battery reading",
+    "fr": "Calibrer la lecture de la batterie",
+    "nl": "Batterij uitlezing kalibreren",
+    "de": "Batterieablesung kalibrieren"
+  },
+  "hint": {
+    "en": "Set a calibration reference point using a known accurate voltage and percentage",
+    "fr": "Définit un point de référence de calibration avec une tension et un pourcentage connus",
+    "nl": "Stelt een kalibratie referentiepunt in met een bekende nauwkeurige spanning en percentage",
+    "de": "Legt einen Kalibrierungspunkt mit bekannter Spannung und Prozentwert fest"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_battery_health"
+    },
+    {
+      "name": "reference_voltage",
+      "type": "number",
+      "title": {
+        "en": "Reference Voltage (V)",
+        "fr": "Tension de référence (V)",
+        "nl": "Referentiespanning (V)",
+        "de": "Referenzspannung (V)"
+      },
+      "hint": {
+        "en": "The known accurate voltage measured with a multimeter",
+        "fr": "La tension connue mesurée avec un multimètre",
+        "nl": "De bekende nauwkeurige spanning gemeten met een multimeter",
+        "de": "Die bekannte genaue Spannung, gemessen mit einem Multimeter"
+      }
+    },
+    {
+      "name": "reference_percentage",
+      "type": "number",
+      "title": {
+        "en": "Reference Percentage (%)",
+        "fr": "Pourcentage de référence (%)",
+        "nl": "Referentie percentage (%)",
+        "de": "Referenzprozentwert (%)"
+      },
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "The actual battery percentage at the measured voltage",
+        "fr": "Le pourcentage réel de la batterie à la tension mesurée",
+        "nl": "Het werkelijke batterijpercentage bij de gemeten spanning",
+        "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
+      }
+    }
+  ]
+}

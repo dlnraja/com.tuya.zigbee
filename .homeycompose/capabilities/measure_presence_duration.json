@@ -1,0 +1,19 @@
+{
+  "id": "measure_presence_duration",
+  "type": "number",
+  "format": "integer",
+  "title": {
+    "en": "Presence Duration",
+    "nl": "Aanwezigheidsduur",
+    "fr": "Durée de Présence",
+    "de": "Anwesenheitsdauer"
+  },
+  "units": {
+    "en": "min"
+  },
+  "min": 0,
+  "max": 1440,
+  "decimals": 0,
+  "getable": true,
+  "setable": false
+}

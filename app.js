@@ -341,6 +341,14 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       await this.initializeInsights();
     } catch (err) { this.error('⚠️ Insights failed:', err.message); }
 
+    // v9.1.0: Virtual Presence Detection System (no dedicated sensor required)
+    try {
+      this._registerPresenceFlowCards();
+      this.log('✅ Virtual Presence Detection flow cards registered');
+    } catch (err) {
+      this.error('⚠️ Presence flow cards failed (non-critical):', err.message);
+    }
+
     this.log('✅ Tuya Unified Zigbee App has been initialized');
     this._scanForPhantomDevices();
     this._clearMigrationQueue();
@@ -432,6 +440,44 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   getErrorTranslator() { return this.errorTranslator; }
   getConfigValidator() { return this.configValidator; }
   getDPRegistry() { return this.dpRegistry; }
+
+  /**
+   * v9.1.0: Register app-level flow card listeners for Virtual Presence Detection.
+   * These complement the driver-level listeners in PresenceDetectorDriver.
+   */
+  _registerPresenceFlowCards() {
+    // Condition: Any room is occupied
+    this.homey.flow.getConditionCard('virtual_presence_any_room_occupied')
+      .registerRunListener(async (args) => {
+        try {
+          const driver = this.homey.drivers.getDriver('presence_detector');
+          if (!driver) return false;
+          const devices = driver.getDevices() || [];
+          return devices.some(d => typeof d.isPresent === 'function' && d.isPresent());
+        } catch (err) {
+          return false;
+        }
+      });
+
+    // Action: Force clear ALL rooms
+    this.homey.flow.getActionCard('virtual_presence_force_clear_all')
+      .registerRunListener(async () => {
+        try {
+          const driver = this.homey.drivers.getDriver('presence_detector');
+          if (!driver) return false;
+          const devices = driver.getDevices() || [];
+          for (const device of devices) {
+            if (typeof device.forceClear === 'function') {
+              await device.forceClear();
+            }
+          }
+          return true;
+        } catch (err) {
+          this.error('[PRESENCE] Force clear all failed:', err.message);
+          return false;
+        }
+      });
+  }
 
   async initializeInsights() {
     this.log('📊 Initializing Homey Insights...');
