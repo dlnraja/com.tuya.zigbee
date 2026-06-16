@@ -111,7 +111,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
             }
             
             // Set up periodic battery reading since automatic reporting doesn't work
-            this.batteryInterval = setInterval(async () => {
+            this.batteryInterval = this.homey.setInterval(async () => {
                 try {
                     const battery = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
                     if (battery && battery.batteryPercentageRemaining !== undefined) {

@@ -292,11 +292,11 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   async safeSetCapabilityValue(capabilityId, value) {
-    try { await this.setCapabilityValue(capabilityId, value); } catch (error) { }
+    try { await this.setCapabilityValue(capabilityId, value); } catch (error) { this.error(`[SAFE-SET] ${capabilityId} failed:`, error.message); }
   }
 
   async safeSetSettings(settings) {
-    try { await this.setSettings(settings); } catch (error) { }
+    try { await this.setSettings(settings); } catch (error) { this.error('[SAFE-SET] setSettings failed:', error.message); }
   }
 
   reportHumidityCapacity(measuredValue) {

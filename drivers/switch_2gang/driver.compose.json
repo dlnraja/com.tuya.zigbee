@@ -78,7 +78,8 @@
       "_TZE200_WUNUFSIL",
       "_TZE204_G1IB5LDV",
       "_TZE204_WUNUFSIL",
-      "_TZE204_ZPVUSBTV"
+      "_TZE204_ZPVUSBTV",
+      "_TZE284_zpvusbtv"
     ],
     "endpoints": {
       "1": {
@@ -500,19 +501,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

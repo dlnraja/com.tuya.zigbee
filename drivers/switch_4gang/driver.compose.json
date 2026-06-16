@@ -116,9 +116,12 @@
       "_TZ300A_RNCJ86AF",
       "_TZ300A_VKFLNSL0",
       "_TZ300A_VQRS45NJ",
+      "_TZ300A_82iab0pn",
       "_TZ3210_IYMFXDIS",
       "_TZE204_XIBAABMU",
-      "_TZE284_XIBAABMU"
+      "_TZE284_XIBAABMU",
+      "_TZ3000_ltt60asa",
+      "_TZ3210_imaccztn"
     ]
   },
   "images": {
@@ -527,19 +530,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

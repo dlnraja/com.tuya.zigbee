@@ -62,7 +62,8 @@
       "_TZ3000_KXAOW5KI",
       "_TZ3000_VN88EZAR",
       "_TZ3000_XKWALGNE",
-      "_TZ3210_AMLEYEEJ"
+      "_TZ3210_AMLEYEEJ",
+      "_TZ3000_yj6k7vfo"
     ],
     "productId": [
       "TS0041",
@@ -336,19 +337,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

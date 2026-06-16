@@ -6,11 +6,11 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '2':  { capability: 'measure_co2' },
-      '18': { capability: 'measure_temperature', divisor: 10 },
-      '19': { capability: 'measure_humidity', divisor: 10 },
+      '18': { capability: 'measure_temperature', smartDivisor: true },
+      '19': { capability: 'measure_humidity', smartDivisor: true },
       '20': { capability: 'measure_pm25' },
       '21': { capability: 'measure_voc' },
-      '22': { capability: 'measure_formaldehyde', divisor: 100 },
+      '22': { capability: 'measure_formaldehyde', smartDivisor: true },
     };
   }
 

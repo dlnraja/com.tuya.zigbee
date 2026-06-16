@@ -46,8 +46,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
-        4: { capability: 'target_temperature', divisor: 10 },
-        5: { capability: 'measure_temperature', divisor: 10 },
+        4: { capability: 'target_temperature', smartDivisor: true },
+        5: { capability: 'measure_temperature', smartDivisor: true },
         7: { internal: true, type: 'child_lock', writable: true },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { internal: true, type: 'frost_protection', writable: true },
@@ -59,8 +59,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true || v === 'on' },
       2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'heat', 1: 'auto', 2: 'off' }[v] ?? 'heat') },
-      3: { capability: 'target_temperature', divisor: 10 },
-      4: { capability: 'measure_temperature', divisor: 10 },
+      3: { capability: 'target_temperature', smartDivisor: true },
+      4: { capability: 'measure_temperature', smartDivisor: true },
       7: { internal: true, type: 'child_lock', writable: true },
       8: { internal: true, type: 'frost_protection', writable: true },
       9: { internal: true, type: 'eco_temp', divisor: 10, writable: true },

@@ -185,7 +185,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       15: { capability: 'measure_battery', divisor: 1 },
       3: { capability: 'measure_battery', divisor: 1 },
       5: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
-      2: { capability: 'measure_temperature', divisor: 10 },
+      2: { capability: 'measure_temperature', smartDivisor: true },
       6: { capability: null, internal: 'battery_voltage' },
       9: { capability: null, setting: 'sensitivity' },
     };

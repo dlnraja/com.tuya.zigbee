@@ -11,10 +11,10 @@ class PowerMeterDevice extends UnifiedPlugBase {
 
   get dpMappings() {
     return {
-      17: { capability: 'measure_current', divisor: 1000 },
-      18: { capability: 'measure_power', divisor: 10 },
-      19: { capability: 'measure_voltage', divisor: 10 },
-      20: { capability: 'meter_power', divisor: 100 }
+      17: { capability: 'measure_current', smartDivisor: true },
+      18: { capability: 'measure_power', smartDivisor: true },
+      19: { capability: 'measure_voltage', smartDivisor: true },
+      20: { capability: 'meter_power', smartDivisor: true }
     };
   }
 

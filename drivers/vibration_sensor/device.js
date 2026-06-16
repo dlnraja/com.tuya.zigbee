@@ -20,8 +20,8 @@ class VibrationSensorDevice extends UnifiedSensorBase {
       2: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
       4: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 },
-      18: { capability: 'measure_temperature', divisor: 10 },
-      19: { capability: 'measure_temperature', divisor: 10 }
+      18: { capability: 'measure_temperature', smartDivisor: true },
+      19: { capability: 'measure_temperature', smartDivisor: true }
     };
   }
 
@@ -48,7 +48,19 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     // 1. Process via static mappings first
     const mapping = this.dpMappings[dpId];
     if (mapping) {
-      const val = mapping.transform ? mapping.transform(value) : mapping.divisor ? value / mapping.divisor : value;
+      let val;
+      if (mapping.transform) {
+        val = mapping.transform(value);
+      } else if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        val = smartParse(value, dpId, {
+          manufacturerName: this.getSetting('zb_manufacturer_name') || '',
+          capability: mapping.capability,
+          deviceId: this.getData()?.id || '',
+        });
+      } else {
+        val = mapping.divisor ? value / mapping.divisor : value;
+      }
       if (mapping.capability) {
         return this.setCapabilityValue(mapping.capability, val).catch(() => {});
       }

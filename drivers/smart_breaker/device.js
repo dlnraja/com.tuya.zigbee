@@ -35,11 +35,11 @@ class SmartBreakerDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedP
       16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       9: { capability: 'alarm_generic', transform: (v) => !!v },  // Trip alarm
       26: { capability: 'alarm_generic', transform: (v) => !!v }, // Alternative trip alarm
-      17: { capability: 'measure_current', divisor: 1000 },
-      20: { capability: 'measure_current', divisor: 1000 },
+      17: { capability: 'measure_current', smartDivisor: true },
+      20: { capability: 'measure_current', smartDivisor: true },
       18: { capability: 'measure_power', divisor: 1 },
-      19: { capability: 'measure_voltage', divisor: 10 },
-      101: { capability: 'meter_power', divisor: 100 }
+      19: { capability: 'measure_voltage', smartDivisor: true },
+      101: { capability: 'meter_power', smartDivisor: true }
     };
   }
 

@@ -72,7 +72,8 @@
       "_TZ3000_MJWG6A52",
       "_TZ3000_MUTFMN4U",
       "_TZ3000_NGSPH3OJ",
-      "_TZ3000_UYJMM0ET"
+      "_TZ3000_UYJMM0ET",
+      "_TZ3000_famkxci2"
     ],
     "productId": [
       "TS0043",
@@ -353,19 +354,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

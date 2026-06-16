@@ -56,7 +56,9 @@
       "_TZE284_VUWTQX0T",
       "_TZE284_WT66HAAX",
       "_TZE284_sdvbnmj5",
-      "_TZE200_a7sghmms"
+      "_TZE200_a7sghmms",
+      "_tze204_a7sghmms",
+      "_tyzb01_a7sghmms"
     ],
     "learnmode": {
       "image": "/drivers/water_valve_smart/assets/learnmode.svg",
@@ -243,68 +245,6 @@
       "hint": {
         "en": "How often to request battery status updates",
         "fr": "Fréquence de demande des mises à jour d'état de batterie"
-      }
-    },
-    {
-      "id": "optimization_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
-      },
-      "value": "balanced",
-      "values": [
-        {
-          "id": "performance",
-          "label": {
-            "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
-          }
-        },
-        {
-          "id": "balanced",
-          "label": {
-            "en": "Balanced",
-            "fr": "Équilibré"
-          }
-        },
-        {
-          "id": "power_saving",
-          "label": {
-            "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
-          }
-        }
-      ],
-      "hint": {
-        "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
-      }
-    },
-    {
-      "id": "enable_power_estimation",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Power Estimation",
-        "fr": "Activer Estimation Puissance"
-      },
-      "value": true,
-      "hint": {
-        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
     }
   ],

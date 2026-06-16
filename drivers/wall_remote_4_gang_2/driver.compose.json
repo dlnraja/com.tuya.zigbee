@@ -141,5 +141,11 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0043, TS0601, TS0215A"
+    }
+  }
 }

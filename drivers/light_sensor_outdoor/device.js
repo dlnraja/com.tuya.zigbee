@@ -41,7 +41,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     if (illum?.on) {
       illum.on('attr.measuredValue', (val) => {
         const lux = Math.pow(10, val - 1 * 10000 );
-        this.setCapabilityValue('measure_luminance', Math.round(lux));
+        this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => {});
       });
     }
 

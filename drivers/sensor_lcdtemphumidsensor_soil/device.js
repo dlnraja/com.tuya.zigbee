@@ -172,7 +172,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // 
       // FALLBACK DPs for other soil sensor variants
       // 
-      1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
+      1: { capability: 'measure_temperature', smartDivisor: true },  // Some variants
       4: { capability: 'measure_ec', divisor: 1 },             // EC/fertilizer (GitHub #150 _TZE284_hdml1aav)
       // v5.9.22: Z2M #28270 - DP101=ambient_humidity for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       // HOBEIAN ZG-303Z uses DP109 for air humidity instead

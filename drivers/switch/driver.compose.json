@@ -448,19 +448,6 @@
       }
     },
     {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
-      }
-    },
-    {
       "id": "power_on_behavior",
       "type": "dropdown",
       "label": {
@@ -580,6 +567,10 @@
         "min": 3,
         "max": 3
       }
+    },
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F, TS0726"
     }
   },
   "energy": {

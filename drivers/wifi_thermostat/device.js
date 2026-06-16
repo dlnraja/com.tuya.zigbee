@@ -8,8 +8,8 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability: 'target_temperature', writable: true, divisor: 10 },
-      '3':  { capability: 'measure_temperature', divisor: 10 },
+      '2':  { capability: 'target_temperature', writable: true, smartDivisor: true },
+      '3':  { capability: 'measure_temperature', smartDivisor: true },
       '4':  { capability: 'thermostat_mode', writable: true,
         transform: (v) => {
           if (typeof v === 'string') {return MODE_MAP[Object.keys(MODE_REV).indexOf(v)] || v;}
@@ -19,7 +19,7 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
       '5':  { capability: 'unknown' }, // system mode
       '12': { capability: 'unknown' }, // child_lock
       '13': { capability: 'unknown' }, // fault
-      '14': { capability: 'measure_temperature.floor', divisor: 10 },
+      '14': { capability: 'measure_temperature.floor', smartDivisor: true },
       '15': { capability: 'unknown' }, // max_temp
       '19': { capability: 'unknown' }, // temp_correction
       '24': { capability: 'measure_humidity' },

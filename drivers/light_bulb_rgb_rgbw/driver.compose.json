@@ -89,7 +89,8 @@
       "_TZB210_6EED09B9",
       "_TZB210_LNNKH3F9",
       "_TZB210_RWY5HEXP",
-      "_TZB210_ZMPPWAWA"
+      "_TZB210_ZMPPWAWA",
+      "_tz3000_jd3z4yig"
     ],
     "endpoints": {
       "1": {
@@ -441,19 +442,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

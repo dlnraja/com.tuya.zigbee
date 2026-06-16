@@ -23,11 +23,11 @@ class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unified
       ...super.dpMappings,
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      17: { capability: 'measure_current', divisor: 1000 }, // A * 1000
+      17: { capability: 'measure_current', smartDivisor: true }, // A * 1000
       18: { capability: 'measure_power', divisor: 1 },      // W
-      19: { capability: 'measure_voltage', divisor: 10 },    // V * 10
-      20: { capability: 'measure_current', divisor: 1000 }, // A * 1000
-      101: { capability: 'meter_power', divisor: 100 }     // kWh * 100
+      19: { capability: 'measure_voltage', smartDivisor: true },    // V * 10
+      20: { capability: 'measure_current', smartDivisor: true }, // A * 1000
+      101: { capability: 'meter_power', smartDivisor: true }     // kWh * 100
     };
   }
 

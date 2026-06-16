@@ -15,7 +15,7 @@ class WiFiAirPurifierDevice extends TuyaLocalDevice {
       '11': { capability: null },
       '14': { capability: null },
       '19': { capability: null },
-      '21': { capability: 'measure_temperature', divisor: 10 },
+      '21': { capability: 'measure_temperature', smartDivisor: true },
       '22': { capability: 'measure_humidity' },
     };
   }

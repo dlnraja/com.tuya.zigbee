@@ -12,10 +12,10 @@ class WiFiPlugDevice extends TuyaLocalDevice {
       '14': { capability: 'unknown' },
       '15': { capability: 'unknown' },
       '16': { capability: 'unknown' },
-      '17': { capability: 'meter_power', divisor: 100 },
-      '18': { capability: 'measure_current', divisor: 1000 },
-      '19': { capability: 'measure_power', divisor: 10 },
-      '20': { capability: 'measure_voltage', divisor: 10 },
+      '17': { capability: 'meter_power', smartDivisor: true },
+      '18': { capability: 'measure_current', smartDivisor: true },
+      '19': { capability: 'measure_power', smartDivisor: true },
+      '20': { capability: 'measure_voltage', smartDivisor: true },
       '38': { capability: 'unknown' },
     };
   }

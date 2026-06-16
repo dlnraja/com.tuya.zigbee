@@ -52,7 +52,8 @@
       "_tze200_0ble7ow3",
       "_tze200_kzm5w4iz",
       "_tze284_3qhgndv6",
-      "_tz3000_8utxxtzr"
+      "_tz3000_8utxxtzr",
+      "_TZ3210_iystcadi"
     ],
     "productId": [
       "ZBPB10BK",
@@ -316,19 +317,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

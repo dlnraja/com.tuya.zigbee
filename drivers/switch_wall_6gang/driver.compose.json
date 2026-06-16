@@ -70,7 +70,8 @@
       "_TZ3000_CZIEW6EU",
       "_TZE200_TZ32MTZA",
       "_TZE204_TZ32MTZA",
-      "_TZE284_TZ32MTZA"
+      "_TZE284_TZ32MTZA",
+      "_TZ3002_vaq2bfcu"
     ],
     "productId": [
       "TS0016",
@@ -534,19 +535,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

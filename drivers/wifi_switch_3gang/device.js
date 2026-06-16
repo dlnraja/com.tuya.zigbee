@@ -18,10 +18,10 @@ class WiFiSwitch3GangDevice extends TuyaLocalDevice {
       '14': { capability: 'unknown' }, // power-on status: off/on/memory
       '15': { capability: 'unknown' }, // indicator: none/relay/pos
       '16': { capability: 'unknown' }, // backlight switch
-      '20': { capability: 'measure_power', divisor: 10 },
-      '21': { capability: 'measure_current', divisor: 1000 },
-      '22': { capability: 'measure_voltage', divisor: 10 },
-      '23': { capability: 'meter_power', divisor: 100 },
+      '20': { capability: 'measure_power', smartDivisor: true },
+      '21': { capability: 'measure_current', smartDivisor: true },
+      '22': { capability: 'measure_voltage', smartDivisor: true },
+      '23': { capability: 'meter_power', smartDivisor: true },
     };
   }
 

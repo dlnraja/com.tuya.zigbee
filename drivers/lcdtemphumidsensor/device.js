@@ -34,9 +34,9 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     const isVVM = this.isUniversalModel;
     return {
       // Temperature (Standard DP 1 or 18 or 101)
-      1: { capability: 'measure_temperature', divisor: 10 },
-      18: { capability: 'measure_temperature', divisor: 10 },
-      101: { capability: 'measure_temperature', divisor: 10 },
+      1: { capability: 'measure_temperature', smartDivisor: true },
+      18: { capability: 'measure_temperature', smartDivisor: true },
+      101: { capability: 'measure_temperature', smartDivisor: true },
 
       // Humidity (DP 2 or 102)
       // v7.4.4: Research shows _TZE284_vvmbj46n does NOT use divisor 10 for humidity!

@@ -19,8 +19,8 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === true || v === 1 },
-      2: { capability: 'target_temperature', divisor: 10 },
-      3: { capability: 'measure_temperature', divisor: 10 },
+      2: { capability: 'target_temperature', smartDivisor: true },
+      3: { capability: 'measure_temperature', smartDivisor: true },
       4: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off', 3: 'eco', 4: 'boost' }[v] || 'auto') },
       5: { capability: 'eco_mode', transform: (v) => v === true || v === 1 },
       6: { capability: 'alarm_contact', transform: (v) => v === true || v === 1 },
@@ -31,9 +31,9 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       13: { capability: 'measure_battery', divisor: 1 },
       14: { internal: true, type: 'min_temp', divisor: 10 },
       15: { internal: true, type: 'max_temp', divisor: 10 },
-      16: { capability: 'target_temperature', divisor: 2 },
+      16: { capability: 'target_temperature', smartDivisor: true },
       17: { internal: true, type: 'deadzone', divisor: 10 },
-      24: { capability: 'target_temperature', divisor: 2 },
+      24: { capability: 'target_temperature', smartDivisor: true },
       35: { capability: 'measure_humidity', divisor: 1 },
       36: { capability: 'heating', transform: (v) => v === 1 || v === true },
       101: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te

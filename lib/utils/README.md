@@ -463,7 +463,7 @@ async onDeleted() {
 
 ## References
 
-- [Homey SDK3 Zigbee Docs](https://apps.developer.homey.app/the-basics/zigbee)
+- [Homey SDK3 Zigbee Docs](https://apps.developer.homey.app/wireless/zigbee)
 - [athombv/node-homey-zigbeedriver](https://github.com/athombv/node-homey-zigbeedriver)
 - [athombv/node-zigbee-clusters](https://github.com/athombv/node-zigbee-clusters)
 - [JohanBendz community apps](https://github.com/JohanBendz)
@@ -933,7 +933,7 @@ async onDeleted() {
 
 ## References
 
-- [Homey SDK3 Zigbee Docs](https://apps.developer.homey.app/the-basics/zigbee)
+- [Homey SDK3 Zigbee Docs](https://apps.developer.homey.app/wireless/zigbee)
 - [athombv/node-homey-zigbeedriver](https://github.com/athombv/node-homey-zigbeedriver)
 - [athombv/node-zigbee-clusters](https://github.com/athombv/node-zigbee-clusters)
 - [JohanBendz community apps](https://github.com/JohanBendz)

@@ -93,7 +93,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         alsoSets: { 'alarm_human': (v) => v === 1 || v === true }
       },
       2: { capability: 'measure_humidity', divisor: 1 },
-      3: { capability: 'measure_temperature', divisor: 10 },
+      3: { capability: 'measure_temperature', smartDivisor: true },
       4: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 },
       9: { capability: 'radar_sensitivity', isSetting: true },
@@ -128,8 +128,8 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       3: { capability: 'shield_range', isSetting: true },
       4: { capability: 'detection_range', isSetting: true },
       6: { capability: 'equipment_status', internal: true },
-      9: { capability: 'measure_luminance.distance', divisor: 100 },
-      104: { capability: 'measure_luminance', divisor: 10 },
+      9: { capability: 'measure_luminance.distance', smartDivisor: true },
+      104: { capability: 'measure_luminance', smartDivisor: true },
       107: { capability: 'breaker_mode', isSetting: true },
       108: {
         capability: 'onoff',
@@ -259,7 +259,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
   _setupPeriodicLuminanceQuery() {
     if (this._luminanceQueryTimer) clearInterval(this._luminanceQueryTimer);
-    this._luminanceQueryTimer = setInterval(async () => {
+    this._luminanceQueryTimer = this.homey.setInterval(async () => {
       try {
         if (this.safeTuyaDataQuery) {
           await this.safeTuyaDataQuery([12, 103], {
@@ -291,7 +291,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
   _setupOfflineCheck() {
     if (this._offlineCheckTimer) clearInterval(this._offlineCheckTimer);
-    this._offlineCheckTimer = setInterval(() => {
+    this._offlineCheckTimer = this.homey.setInterval(() => {
       const elapsed = Date.now() - this._lastEventTime;
       const threshold = MotionSensorRadarDevice.OFFLINE_CHECK_MS;
       if (elapsed > threshold) {

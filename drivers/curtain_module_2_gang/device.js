@@ -77,7 +77,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
                         await this.setCapabilityValue(
                             "windowcoverings_set",
                             value
-                        );
+                        ).catch(() => {});
                         return null;
                     }
 

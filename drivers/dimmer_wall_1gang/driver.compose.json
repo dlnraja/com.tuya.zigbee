@@ -119,7 +119,18 @@
       "_TZ3000_hurauima",
       "_TZ3002_tdf2m4ch",
       "_TZE200_bxoo2swd",
-      "_TZ3000_sfibawtr"
+      "_TZ3000_sfibawtr",
+      "_TZE200_la2c2uo9",
+      "_TZE200_ykgar0ow",
+      "_TZE200_e3oitdyu",
+      "_TZE200_drs6j6m5",
+      "_TZE204_pisltm67",
+      "_tze200_pisltm67",
+      "_TZE204_lawxy9e2",
+      "_tze204_bxoo2swd",
+      "_tze204_la2c2uo9",
+      "_TZE200_dcnsggvz",
+      "_TZE284_dcnsggvz"
     ]
   },
   "settings": [
@@ -318,19 +329,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

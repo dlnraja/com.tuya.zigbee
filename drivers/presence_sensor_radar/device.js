@@ -7,37 +7,80 @@ const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoD
 const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
 
 /**
+ * Known mains-powered mmWave radar manufacturers (230V AC ceiling/wall radars).
+ * These devices report battery DPs but are actually mains-powered.
+ */
+const MAINS_POWERED_RADARS = new Set([
+  '_tze204_clrdrnya',
+  '_tze200_clrdrnya',
+  '_tze200_lyetpprm',
+  '_tze204_lyetpprm',
+  '_tze200_wukb7rhc',
+  '_tze204_wukb7rhc',
+  '_tze200_jva8ink8',
+  '_tze204_jva8ink8',
+]);
+
+/**
  * PresenceSensorRadarDevice - v8.0.0 ULTIMATE
  * Universal Radar/mmWave sensor driver with intelligent inference and auto-discovery.
  */
 class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
+  /**
+   * Override: Mains-powered radars should not be treated as battery devices.
+   * This suppresses battery polling, periodic dataQuery, and adjusts reporting intervals.
+   */
+  get mainsPowered() {
+    const config = this._getRadarConfig();
+    if (config && config.mainsPowered) return true;
+    const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
+    return MAINS_POWERED_RADARS.has(mfr);
+  }
+
+  /**
+   * Cache the radar config lookup to avoid repeated calls.
+   */
+  _getRadarConfig() {
+    if (!this._cachedRadarConfig) {
+      this._cachedRadarConfig = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
+    }
+    return this._cachedRadarConfig;
+  }
+
   async onNodeInit({ zclNode }) {
     // v5.11.139: Call super.onNodeInit() FIRST to initialize TuyaZigbeeDevice base class
     // which provides _safeInvoke and other L14 features
-    await super.onNodeInit({ zclNode });
-    
-    this.log('[RADAR] 🚀 v8.0.0 Ultimate Initializing...');
-    
+    try {
+      await super.onNodeInit({ zclNode });
+    } catch (err) {
+      this.log('[RADAR] Base init error:', err.message);
+    }
+
+    this.log('[RADAR] v8.0.0 Ultimate Initializing...');
+
     // Initialize v8 components
     this._inference = new IntelligentPresenceInference(this);
     this._discovery = new IntelligentDPAutoDiscovery(this);
 
-      // Detect firmware version for inference tuning
-      const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
+    try {
+      const appVersion = this.getStoreValue('appVersion') || this.zclNode?.endpoints?.[1]?.clusters?.basic?.appVersion;
       if (appVersion) {this._inference.setFirmwareInfo(appVersion);}
+    } catch (e) {
+      this.log('[RADAR] Firmware detection failed:', e.message);
+    }
 
-      // Start polling/refresh cycle
-      this._startInitializationCycle(zclNode);
+    // Start polling/refresh cycle
+    this._startInitializationCycle(zclNode);
 
-      this.log('[RADAR] ✅ Ready');
+    this.log('[RADAR] Ready');
   }
 
   /**
    * Main Tuya DP processing entry point
    */
   onTuyaDP(dpId, value, dpType) {
-    const config = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
+    const config = this._getRadarConfig();
     const mapping = config.dpMap?.[dpId];
 
     // 1. Process via static config if matched
@@ -82,7 +125,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // B. Handle distance DPs (feed inference)
     if (mapping.cap === 'measure_luminance.distance') {
-      const distance = value / (mapping.divisor || 100);
+      let distance;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        distance = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
+      } else {
+        distance = value / (mapping.divisor || 100);
+      }
       this._inference.updateDistance(distance);
       return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
@@ -91,15 +140,28 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.cap === 'measure_luminance') {
       let lux = value;
       if (mapping.type === 'lux_direct') {lux = value;}
-      else if (mapping.divisor) {lux = value / mapping.divisor;}
-      
+      else if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        lux = smartParse(value, dpId, { capability: 'measure_luminance' });
+      } else if (mapping.divisor) {lux = value / mapping.divisor;}
+
       this._inference.updateLux(lux);
       return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
-    // D. Handle battery DPs
+    // D. Handle battery DPs - ignore for mains-powered radars
     if (mapping.cap === 'measure_battery') {
-      const battery = value / (mapping.divisor || 1);
+      if (this.mainsPowered) {
+        this.log(`[RADAR] ⏭️ Ignoring battery DP${dpId} on mains-powered radar`);
+        return;
+      }
+      let battery;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        battery = smartParse(value, dpId, { capability: 'measure_battery' });
+      } else {
+        battery = value / (mapping.divisor || 1);
+      }
       return this.setCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
     }
   }
@@ -108,6 +170,22 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Initialize polling and time sync
    */
   _startInitializationCycle(zclNode) {
+    if (!zclNode?.endpoints?.[1]) {
+      this.log('[RADAR] No endpoint 1 available - deferring initialization');
+      // Retry after delay for connection failures
+      setTimeout(() => {
+        if (this._destroyed) {return;}
+        this.log('[RADAR] Retrying initialization after connection delay...');
+        try {
+          this._sendTimeSync(zclNode);
+          this._requestDPRefresh(zclNode);
+        } catch (e) {
+          this.log('[RADAR] Deferred init failed:', e.message);
+        }
+      }, 5000);
+      return;
+    }
+
     // 1. Time Sync
     this.homey.setTimeout(() => this._sendTimeSync(zclNode), 2000);
 
@@ -162,7 +240,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (super.onSettings) {await super.onSettings({ oldSettings, newSettings, changedKeys });}
     
-    const config = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
+    const config = this._getRadarConfig();
     if (!config.dpMap) {return;}
 
     for (const key of changedKeys) {

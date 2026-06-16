@@ -87,17 +87,17 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
 
     // TRV-specific DP mappings
     this.dpMappings = {
-      1: { capability: 'target_temperature', divisor: 10, dataType: 2 },
-      2: { capability: 'measure_temperature', divisor: 10, dataType: 2 },
+      1: { capability: 'target_temperature', smartDivisor: true, dataType: 2 },
+      2: { capability: 'measure_temperature', smartDivisor: true, dataType: 2 },
       3: { capability: 'onoff', dataType: 1 }, // Valve open/close
       4: { capability: 'thermostat_mode', dataType: 4 }, // manual/auto/eco/boost
       5: { capability: 'measure_battery', divisor: 1, dataType: 2 },
       7: { capability: 'child_lock', dataType: 1 },
       8: { capability: 'window_detection', dataType: 1 },
       10: { capability: 'frost_protection_temperature', divisor: 10, dataType: 2 },
-      16: { capability: 'target_temperature', divisor: 10, dataType: 2 }, // Some variants
+      16: { capability: 'target_temperature', smartDivisor: true, dataType: 2 }, // Some variants
       19: { capability: 'boost_mode', dataType: 1 },
-      24: { capability: 'measure_temperature', divisor: 10, dataType: 2 }, // Alt local temp
+      24: { capability: 'measure_temperature', smartDivisor: true, dataType: 2 }, // Alt local temp
       27: { capability: 'temperature_calibration', divisor: 10, dataType: 2 },
       28: { capability: 'eco_temperature', divisor: 10, dataType: 2 },
       31: { capability: 'valve_position', divisor: 1, dataType: 2 }, // 0-100%

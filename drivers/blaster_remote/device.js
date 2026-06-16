@@ -8,8 +8,8 @@ const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmi
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 
 // Ensure clusters are registered
-try { Cluster.addCluster(ZosungIRTransmitCluster); } catch (e) {}
-try { Cluster.addCluster(ZosungIRControlCluster); } catch (e) {}
+try { Cluster.addCluster(ZosungIRTransmitCluster); } catch (e) { /* Cluster may already be registered */ }
+try { Cluster.addCluster(ZosungIRControlCluster); } catch (e) { /* Cluster may already be registered */ }
 
 /**
  * Zigbee IR Remote  Moes UFO-R11, Aubess ZXZIR-02, WMUN ZS05 (TS1201)
@@ -58,7 +58,7 @@ class IRRemoteDevice extends ZigBeeDevice {
       const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
       if (mfr) await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
       if (mdl) await this.setSettings({ zb_model_id: mdl }).catch(() => {});
-    } catch (e) {}
+    } catch (e) { this.error('[IR] Store device info failed:', e.message); }
 
     this._zclNode = zclNode;
     const ep = zclNode.endpoints[1];

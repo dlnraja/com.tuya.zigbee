@@ -26,8 +26,8 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
   get dpMappings() {
     return {
       // Temperature
-      1: { capability: 'measure_temperature', divisor: 10 },
-      18: { capability: 'measure_temperature', divisor: 10 },
+      1: { capability: 'measure_temperature', smartDivisor: true },
+      18: { capability: 'measure_temperature', smartDivisor: true },
 
       // Humidity
       2: { capability: 'measure_humidity', divisor: 1 },

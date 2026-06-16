@@ -148,19 +148,21 @@ OpenRouter (fallback libre)
 ### Architecture Runtime
 ```
 app.js (init)
-  └── drivers/ (100+ drivers Zigbee + WiFi)
+  └── drivers/ (412 drivers Zigbee + WiFi)
        └── device.js (onNodeInit)
             ├── HybridSwitchBase / UnifiedSwitchBase
             ├── HybridSensorBase / UnifiedSensorBase
             ├── BaseUnifiedDevice (L14 Hardened)
             │    ├── TuyaZigbeeDevice (L12-L14)
             │    │    ├── TuyaEF00Manager (DP Engine)
+            │    │    ├── TuyaDPParser (Multi-DP + MCU UART)
             │    │    ├── TuyaCommandSender (Queue 200ms)
             │    │    └── DataRecoveryManager
             │    ├── UnifiedBatteryHandler (Runtime Probe)
             │    └── IntelligentFrameAnalyzer
             ├── PhysicalButtonMixin
-            └── VirtualButtonMixin
+            ├── VirtualButtonMixin
+            └── TuyaDataQuery (Periodic DP Query)
 ```
 
 ### Ce que le Runtime PEUT faire

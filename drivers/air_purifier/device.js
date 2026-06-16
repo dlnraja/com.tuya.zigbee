@@ -54,7 +54,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
       case DP.pm25: {
         const pm25 = typeof value === 'number' ? value : parseInt(value);
         this.log(`[AirPurifier] 📥 PM2.5: ${pm25}`);
-        await this.setCapabilityValue('measure_pm25', pm25);
+        await this.setCapabilityValue('measure_pm25', pm25).catch(() => {});
         break;
       }
 

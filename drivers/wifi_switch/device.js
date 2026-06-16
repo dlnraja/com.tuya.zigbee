@@ -17,10 +17,10 @@ class WiFiSwitchDevice extends TuyaLocalDevice {
       '17': { capability: 'unknown' }, // cycle timing
       '18': { capability: 'unknown' }, // random timing
       '19': { capability: 'unknown' }, // inching switch
-      '20': { capability: 'measure_power', divisor: 10 },
-      '21': { capability: 'measure_current', divisor: 1000 },
-      '22': { capability: 'measure_voltage', divisor: 10 },
-      '23': { capability: 'meter_power', divisor: 100 },
+      '20': { capability: 'measure_power', smartDivisor: true },
+      '21': { capability: 'measure_current', smartDivisor: true },
+      '22': { capability: 'measure_voltage', smartDivisor: true },
+      '23': { capability: 'meter_power', smartDivisor: true },
     };
   }
 

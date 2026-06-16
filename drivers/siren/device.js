@@ -53,7 +53,7 @@ class SirenDevice extends UnifiedPlugBase {
       104: { capability: 'onoff', transform: (v) => !!v },
       116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v * 100)) },
       103: { setting: 'duration', writable: true },
-      101: { capability: 'measure_temperature', divisor: 10 },
+      101: { capability: 'measure_temperature', smartDivisor: true },
       102: { capability: 'measure_humidity', divisor: 1 },
 
       // 

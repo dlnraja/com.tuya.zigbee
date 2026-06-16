@@ -77,29 +77,29 @@ class SmartAirDetectionBox extends TuyaSpecificClusterDevice {
             case dataPoints.tsFormaldehyde:
                 // Formaldehyde data point
                 this.log("Formaldehyde: ", value);
-                this.setCapabilityValue("measure_formaldehyde", value);
+                this.setCapabilityValue("measure_formaldehyde", value).catch(() => {});
                 break;
             case dataPoints.tsVOC:
                 // VOC data point
                 this.log("VOC: ", value);
-                this.setCapabilityValue("measure_voc", value);
+                this.setCapabilityValue("measure_voc", value).catch(() => {});
                 break;
             case dataPoints.tsCO2:
                 // CO2 data point
                 this.log("CO2: ", value);
-                this.setCapabilityValue("measure_co2", value);
+                this.setCapabilityValue("measure_co2", value).catch(() => {});
                 break;
             case dataPoints.tsTemperature:
                 // Temperature data point
                 const temperatureValue = value / 10.0;
                 this.log("Temperature: ", temperatureValue);
-                this.setCapabilityValue("measure_temperature", temperatureValue);
+                this.setCapabilityValue("measure_temperature", temperatureValue).catch(() => {});
                 break;
             case dataPoints.tsHumidity:
                 // Humidity data point
                 const humidityValue = value / 10.0;
                 this.log("Humidity: ", humidityValue);
-                this.setCapabilityValue("measure_humidity", humidityValue);
+                this.setCapabilityValue("measure_humidity", humidityValue).catch(() => {});
                 break;
             // Add additional cases as necessary
             default:

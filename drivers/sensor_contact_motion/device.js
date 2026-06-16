@@ -240,9 +240,9 @@ class MotionSensorDevice extends UnifiedSensorBase {
         }
         return { 
           name: 'PERMISSIVE_VARIANT',
-          dp3: 'measure_temperature', dp3_divisor: 10,
+          dp3: 'measure_temperature', dp3_smartDivisor: true,
           dp4: 'measure_humidity', dp4_multiplier: 10,
-          dp5: 'measure_temperature', dp5_divisor: 10,
+          dp5: 'measure_temperature', dp5_smartDivisor: true,
           dp6: 'measure_humidity', dp6_divisor: 1,
           dp9: 'measure_luminance',
           isPermissive: true, hasTemp: true, hasHumidity: true,
@@ -256,7 +256,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       this._defaultProfileLogged = true;
     }
     return { name: 'DEFAULT', dp4: 'measure_battery', dp5: 'measure_temperature', 
-      dp6: 'measure_humidity', dp5_divisor: 10, dp6_divisor: 1 };
+      dp6: 'measure_humidity', dp5_smartDivisor: true, dp6_divisor: 1 };
   }
 
   /**
@@ -1227,7 +1227,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Periodic poll every 5 minutes for variant devices
     if (isVariant) {
-      this._dpPollingInterval = setInterval(async () => {
+      this._dpPollingInterval = this.homey.setInterval(async () => {
         this.log('[MOTION-DP] 🔄 Periodic DP poll...');
         await requestDP(3);  // Temperature
         await requestDP(4);  // Humidity
@@ -1427,7 +1427,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
-        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+        const battery = UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
         this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
         if (this.hasCapability('measure_battery')) {
           await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
@@ -1591,7 +1591,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       clearInterval(this._luxReportTimer);
     }
 
-    this._luxReportTimer = setInterval(() => {
+    this._luxReportTimer = this.homey.setInterval(() => {
       this._requestLuxUpdate();
     }, this._luxSmartReporting.luxReportInterval);
 

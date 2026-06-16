@@ -65,7 +65,6 @@
   "zigbee": {
     "manufacturerName": [
       "SONOFF",
-      "sonoff",
       "_tz3000_fa9mlvja",
       "_tz3000_rco1yzb1",
       "_tz3000_an5rjiwd",
@@ -351,19 +350,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

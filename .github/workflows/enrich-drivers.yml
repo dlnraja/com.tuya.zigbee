@@ -1,5 +1,5 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
-# Re-enable by removing 'if: false' below
+# Enrich Drivers v9.0.34 — Weekly fingerprint enrichment
+# Sources: Blakadder, Z2M, ZHA community databases
 name: 🌐 Enrich Drivers (Blakadder + Z2M + ZHA)
 
 on:
@@ -36,13 +36,13 @@ jobs:
 
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: 22
           cache: 'npm'
@@ -90,10 +90,8 @@ jobs:
       # ──────────────────────────────────────
 
       - name: 🤖 AI-powered enrichment
-        if: env.XIAOMI_MIMO_API_KEY != '' || env.NVIDIA_API_KEY != ''
+        if: env.NVIDIA_API_KEY != ''
         env:
-          XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
-          MIMO_ENDPOINT: https://token-plan-ams.xiaomimimo.com/v1
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           if [ -f ".github/scripts/ai-helper.js" ]; then

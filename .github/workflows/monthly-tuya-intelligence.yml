@@ -1,5 +1,5 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
-# Re-enable by removing 'if: false' below
+# Monthly Tuya Intelligence & URL Audit v9.0.34
+# Monthly URL audit and intelligence enrichment
 name: 🌙 Monthly Tuya Intelligence & URL Audit
 
 on:
@@ -20,10 +20,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: 🛰️ Checkout Repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '22'
           cache: 'npm'
@@ -37,7 +37,6 @@ jobs:
       - name: "🟠 Step 2: Run Intelligent Enrichment Engine"
         run: node .github/scripts/ai-enrichment-engine.js
         env:
-          XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

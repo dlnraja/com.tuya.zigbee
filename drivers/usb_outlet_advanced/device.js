@@ -85,15 +85,15 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       // 
       // POWER MEASUREMENT (Z2M: value in 0.1W or 0.01W depending on model)
       // 
-      16: { capability: 'measure_power', divisor: 10 },      // Power W (value/10)
-      17: { capability: 'measure_current', divisor: 1000 },  // Current A (value/1000)
-      18: { capability: 'measure_voltage', divisor: 10 },    // Voltage V (value/10)
-      19: { capability: 'meter_power', divisor: 100 },       // Energy kWh (value/100)
+      16: { capability: 'measure_power', smartDivisor: true },      // Power W (value/10)
+      17: { capability: 'measure_current', smartDivisor: true },  // Current A (value/1000)
+      18: { capability: 'measure_voltage', smartDivisor: true },    // Voltage V (value/10)
+      19: { capability: 'meter_power', smartDivisor: true },       // Energy kWh (value/100)
 
       // Some models use different DPs
-      104: { capability: 'measure_power', divisor: 10 },     // Alt power DP
-      105: { capability: 'measure_current', divisor: 1000 }, // Alt current DP
-      106: { capability: 'measure_voltage', divisor: 10 },   // Alt voltage DP
+      104: { capability: 'measure_power', smartDivisor: true },     // Alt power DP
+      105: { capability: 'measure_current', smartDivisor: true }, // Alt current DP
+      106: { capability: 'measure_voltage', smartDivisor: true },   // Alt voltage DP
 
       // 
       // BUTTON PRESS DETECTION - v5.5.19: Uses flow trigger instead of capability

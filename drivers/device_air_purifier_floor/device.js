@@ -71,9 +71,9 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     this.dpMappings = {
       1: { capability: 'onoff', converter: v => !!v },
       2: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
-      16: { capability: 'target_temperature', divisor: 10 },
-      24: { capability: 'measure_temperature', divisor: 10 },
-      101: { capability: 'measure_temperature.floor', divisor: 10 },
+      16: { capability: 'target_temperature', smartDivisor: true },
+      24: { capability: 'measure_temperature', smartDivisor: true },
+      101: { capability: 'measure_temperature.floor', smartDivisor: true },
     };
 
     this.registerCapabilityListener('onoff', async (value) => {

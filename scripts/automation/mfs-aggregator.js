@@ -129,7 +129,7 @@ const SOURCES = {
     name: 'Blakadder Zigbee DB',
     fn: 'fetchBlakadder',
     urls: {
-      devices: 'https://raw.githubusercontent.com/blakadder/blakadder.github.io/master/_data/devices.json',
+      devices: 'https://zigbee.blakadder.com/all.html',
     },
   },
   deconz: {
@@ -140,24 +140,25 @@ const SOURCES = {
     },
   },
   hubitat: {
-    name: 'Hubitat Elevation',
+    name: 'Hubitat Drivers (kkossev)',
     fn: 'fetchHubitat',
     urls: {
-      index: 'https://raw.githubusercontent.com/hubitat/zigbee-library/master/device-library.md',
+      tuyaSwitches: 'https://api.github.com/repos/kkossev/Hubitat/git/trees/main?recursive=1',
     },
   },
   smartthings: {
-    name: 'SmartThings',
+    name: 'SmartThings Edge Drivers',
     fn: 'fetchSmartThings',
     urls: {
-      profiles: 'https://raw.githubusercontent.com/SmartThingsCommunity/SmartThingsEdgeDrivers/main/drivers/ikea-smart-control/zigbee/manufacturer-specific.yaml',
+      tree: 'https://api.github.com/repos/SmartThingsCommunity/SmartThingsEdgeDrivers/git/trees/main?recursive=1',
+      ikea: 'https://raw.githubusercontent.com/SmartThingsCommunity/SmartThingsEdgeDrivers/main/drivers/ikea-smart-control/zigbee/manufacturer-specific.yaml',
     },
   },
   ioBroker: {
     name: 'ioBroker Zigbee',
     fn: 'fetchIoBroker',
     urls: {
-      devices: 'https://raw.githubusercontent.com/ioBroker/ioBroker.zigbee/master/lib/devices.js',
+      devices: 'https://raw.githubusercontent.com/ioBroker/ioBroker.zigbee/main/lib/devices.js',
     },
   },
   domoticz: {
@@ -178,6 +179,13 @@ const SOURCES = {
     name: 'Community Issues & PRs',
     fn: 'fetchCommunity',
     urls: {},
+  },
+  phoscon: {
+    name: 'Phoscon Compatibility (1,090+ devices)',
+    fn: 'fetchPhoscon',
+    urls: {
+      compatible: 'https://www.phoscon.de/en/conbee2/compatible',
+    },
   },
 };
 
@@ -432,28 +440,63 @@ async function fetchZHA(cache) {
 }
 
 /**
- * 4. BLAKADDER - Community Zigbee database
+ * 4. BLAKADDER - Community Zigbee database (HTML scraping)
  */
 async function fetchBlakadder(cache) {
   const entries = [];
   try {
     const res = await cache.fetchOrGet('blakadder-devices', SOURCES.blakadder.urls.devices);
-    const devices = JSON.parse(res.data);
+    const html = res.data;
 
-    for (const dev of (Array.isArray(devices) ? devices : [])) {
-      const mfr = dev.manufacturer || dev.vendor || '';
-      const model = dev.model || dev.modelId || '';
-      if (!mfr) continue;
+    // Extract table rows from HTML: look for <td> elements with manufacturer/model data
+    // Blakadder HTML format: rows in <table> with manufacturer, model, device type columns
+    const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rowMatch;
+    while ((rowMatch = rowRe.exec(html)) !== null) {
+      const rowHtml = rowMatch[1];
+      const cells = [];
+      const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+      let cellMatch;
+      while ((cellMatch = cellRe.exec(rowHtml)) !== null) {
+        // Strip HTML tags from cell content
+        cells.push(cellMatch[1].replace(/<[^>]+>/g, '').trim());
+      }
 
-      entries.push({
-        manufacturerId: mfr.toLowerCase(),
-        modelId: model,
-        driverHint: 'unknown',
-        deviceType: categorizeBlakadderType(dev),
-        capabilities: [],
-        source: 'blakadder',
-        raw: { original: dev },
-      });
+      if (cells.length >= 2) {
+        const mfr = cells[0] || '';
+        const model = cells[1] || '';
+        const category = cells[2] || '';
+        if (!mfr || mfr.length < 2) continue;
+
+        entries.push({
+          manufacturerId: mfr.toLowerCase(),
+          modelId: model,
+          driverHint: 'unknown',
+          deviceType: categorizeBlakadderType({ category }),
+          capabilities: [],
+          source: 'blakadder',
+          raw: { cells },
+        });
+      }
+    }
+
+    // Also try JSON parsing (fallback if page structure changed back)
+    if (entries.length === 0 && html.trim().startsWith('[')) {
+      const devices = JSON.parse(html);
+      for (const dev of (Array.isArray(devices) ? devices : [])) {
+        const mfr = dev.manufacturer || dev.vendor || '';
+        const model = dev.model || dev.modelId || '';
+        if (!mfr) continue;
+        entries.push({
+          manufacturerId: mfr.toLowerCase(),
+          modelId: model,
+          driverHint: 'unknown',
+          deviceType: categorizeBlakadderType(dev),
+          capabilities: [],
+          source: 'blakadder',
+          raw: { original: dev },
+        });
+      }
     }
   } catch (e) {
     log(C.Y, `[Blakadder] fetch failed: ${e.message}`);
@@ -503,23 +546,44 @@ async function fetchDeconz(cache) {
 }
 
 /**
- * 6. HUBITAT - Zigbee device library
+ * 6. HUBITAT - kkossev Hubitat drivers (GitHub API tree)
  */
 async function fetchHubitat(cache) {
   const entries = [];
   try {
-    const res = await cache.fetchOrGet('hubitat-lib', SOURCES.hubitat.urls.index);
+    const res = await cache.fetchOrGet('hubitat-tree', SOURCES.hubitat.urls.tuyaSwitches);
+    const tree = JSON.parse(res.data);
+
+    // Find Groovy driver files that likely contain Tuya manufacturer IDs
+    const tuyaFiles = (tree.tree || [])
+      .filter(item => item.path && item.type === 'blob' &&
+        item.path.endsWith('.groovy') &&
+        (item.path.toLowerCase().includes('tuya') ||
+         item.path.toLowerCase().includes('switch') ||
+         item.path.toLowerCase().includes('blind') ||
+         item.path.toLowerCase().includes('cover') ||
+         item.path.toLowerCase().includes('curtain')));
     const tzRe = /['"](_T[SEZ][A-Z0-9]{4}_[a-zA-Z0-9]+)['"]/g;
-    let m;
-    while ((m = tzRe.exec(res.data)) !== null) {
-      entries.push({
-        manufacturerId: m[1],
-        modelId: 'TS0601',
-        driverHint: 'unknown',
-        deviceType: 'unknown',
-        capabilities: [],
-        source: 'hubitat',
-      });
+
+    for (const file of tuyaFiles.slice(0, 50)) { // Limit to 50 files to avoid rate limits
+      try {
+        const rawUrl = `https://raw.githubusercontent.com/kkossev/Hubitat/main/${file.path}`;
+        const fileRes = await cache.fetchOrGet(`hubitat-${file.path.replace(/[^a-zA-Z0-9]/g, '_')}`, rawUrl);
+        let m;
+        while ((m = tzRe.exec(fileRes.data)) !== null) {
+          entries.push({
+            manufacturerId: m[1],
+            modelId: 'TS0601',
+            driverHint: path.basename(file.path, '.groovy'),
+            deviceType: inferTypeFromPath(file.path),
+            capabilities: [],
+            source: 'hubitat',
+            raw: { file: file.path },
+          });
+        }
+      } catch {
+        /* skip individual file fetch failures */
+      }
     }
   } catch (e) {
     log(C.Y, `[Hubitat] fetch failed: ${e.message}`);
@@ -527,27 +591,83 @@ async function fetchHubitat(cache) {
   return entries;
 }
 
+function inferTypeFromPath(filePath) {
+  const lower = filePath.toLowerCase();
+  if (lower.includes('switch') || lower.includes('relay')) return 'switch';
+  if (lower.includes('blind') || lower.includes('cover') || lower.includes('curtain')) return 'cover';
+  if (lower.includes('light') || lower.includes('bulb') || lower.includes('dimmer')) return 'light';
+  if (lower.includes('sensor') || lower.includes('temp')) return 'sensor';
+  if (lower.includes('thermostat') || lower.includes('climate')) return 'thermostat';
+  return 'unknown';
+}
+
 /**
- * 7. SMARTTHINGS - Zigbee device profiles
+ * 7. SMARTTHINGS - SmartThingsEdgeDrivers (GitHub API tree)
  */
 async function fetchSmartThings(cache) {
   const entries = [];
+  const seen = new Set();
+
+  // First, try fetching the IKEA manufacturer-specific.yaml (existing approach)
   try {
-    const res = await cache.fetchOrGet('smartthings-profiles', SOURCES.smartthings.urls.profiles);
+    const res = await cache.fetchOrGet('smartthings-ikea', SOURCES.smartthings.urls.ikea);
     const tzRe = /['"](_T[SEZ][A-Z0-9]{4}_[a-zA-Z0-9]+)['"]/g;
     let m;
     while ((m = tzRe.exec(res.data)) !== null) {
-      entries.push({
-        manufacturerId: m[1],
-        modelId: 'TS0601',
-        driverHint: 'unknown',
-        deviceType: 'unknown',
-        capabilities: [],
-        source: 'smartthings',
-      });
+      if (!seen.has(m[1])) {
+        seen.add(m[1]);
+        entries.push({
+          manufacturerId: m[1],
+          modelId: 'TS0601',
+          driverHint: 'ikea-smart-control',
+          deviceType: 'unknown',
+          capabilities: [],
+          source: 'smartthings',
+          raw: { file: 'ikea-smart-control/.../manufacturer-specific.yaml' },
+        });
+      }
     }
   } catch (e) {
-    log(C.Y, `[SmartThings] fetch failed: ${e.message}`);
+    log(C.Y, `[SmartThings] ikea yaml fetch failed: ${e.message}`);
+  }
+
+  // Then fetch the repo tree to find all YAML files in zigbee directories
+  try {
+    const res = await cache.fetchOrGet('smartthings-tree', SOURCES.smartthings.urls.tree);
+    const tree = JSON.parse(res.data);
+
+    const yamlFiles = (tree.tree || [])
+      .filter(item => item.path && item.type === 'blob' &&
+        item.path.endsWith('.yaml') &&
+        item.path.includes('zigbee') &&
+        (item.path.includes('manufacturer') || item.path.includes('profile')));
+    const tzRe = /['"](_T[SEZ][A-Z0-9]{4}_[a-zA-Z0-9]+)['"]/g;
+
+    for (const file of yamlFiles.slice(0, 100)) { // Limit to avoid rate limits
+      try {
+        const rawUrl = `https://raw.githubusercontent.com/SmartThingsCommunity/SmartThingsEdgeDrivers/main/${file.path}`;
+        const fileRes = await cache.fetchOrGet(`smartthings-${file.path.replace(/[^a-zA-Z0-9]/g, '_')}`, rawUrl);
+        let m;
+        while ((m = tzRe.exec(fileRes.data)) !== null) {
+          if (!seen.has(m[1])) {
+            seen.add(m[1]);
+            entries.push({
+              manufacturerId: m[1],
+              modelId: 'TS0601',
+              driverHint: file.path.split('/').slice(-2, -1)[0] || 'unknown',
+              deviceType: 'unknown',
+              capabilities: [],
+              source: 'smartthings',
+              raw: { file: file.path },
+            });
+          }
+        }
+      } catch {
+        /* skip individual file failures */
+      }
+    }
+  } catch (e) {
+    log(C.Y, `[SmartThings] tree fetch failed: ${e.message}`);
   }
   return entries;
 }
@@ -634,6 +754,66 @@ async function fetchZigpy(cache) {
     }
   } catch (e) {
     log(C.Y, `[zigpy] fetch failed: ${e.message}`);
+  }
+  return entries;
+}
+
+/**
+ * 12. PHOSCON - ConBee/deCONZ compatible devices (HTML scraping)
+ */
+async function fetchPhoscon(cache) {
+  const entries = [];
+  try {
+    const res = await cache.fetchOrGet('phoscon-compatible', SOURCES.phoscon.urls.compatible);
+    const html = res.data;
+
+    // Extract manufacturer IDs from the compatibility page
+    // Look for _T patterns in the HTML content
+    const tzRe = /['"](_T[SEZ][A-Z0-9]{4}_[a-zA-Z0-9]+)['"]/g;
+    let m;
+    const seen = new Set();
+    while ((m = tzRe.exec(html)) !== null) {
+      if (seen.has(m[1])) continue;
+      seen.add(m[1]);
+      entries.push({
+        manufacturerId: m[1],
+        modelId: 'TS0601',
+        driverHint: 'phoscon',
+        deviceType: 'unknown',
+        capabilities: [],
+        source: 'phoscon',
+      });
+    }
+
+    // Also extract from table rows (Phoscon uses HTML tables for device listings)
+    const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rowMatch;
+    while ((rowMatch = rowRe.exec(html)) !== null) {
+      const cells = [];
+      const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+      let cellMatch;
+      while ((cellMatch = cellRe.exec(rowMatch[1])) !== null) {
+        cells.push(cellMatch[1].replace(/<[^>]+>/g, '').trim());
+      }
+      if (cells.length >= 2) {
+        const mfr = cells[0] || '';
+        const model = cells[1] || '';
+        if (mfr && mfr.length > 2 && !seen.has(mfr.toLowerCase())) {
+          seen.add(mfr.toLowerCase());
+          entries.push({
+            manufacturerId: mfr.toLowerCase(),
+            modelId: model,
+            driverHint: 'phoscon',
+            deviceType: 'unknown',
+            capabilities: [],
+            source: 'phoscon',
+            raw: { cells },
+          });
+        }
+      }
+    }
+  } catch (e) {
+    log(C.Y, `[Phoscon] fetch failed: ${e.message}`);
   }
   return entries;
 }
@@ -1051,7 +1231,7 @@ async function main() {
 module.exports = {
   fetchLocal, fetchZ2M, fetchZHA, fetchBlakadder, fetchDeconz,
   fetchHubitat, fetchSmartThings, fetchIoBroker, fetchDomoticz,
-  fetchZigpy, fetchCommunity,
+  fetchZigpy, fetchCommunity, fetchPhoscon,
   mergeEntries, computeDiff, buildStats, extractVariantPrefixes,
 };
 

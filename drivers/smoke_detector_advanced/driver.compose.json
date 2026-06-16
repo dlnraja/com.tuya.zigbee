@@ -55,7 +55,10 @@
     "manufacturerName": [
       "_TZ3000_MWD3C2AT",
       "_TZ3000_TK3S5TYG",
-      "_TYST11_d0yu2xgi"
+      "_TYST11_d0yu2xgi",
+      "_tz3400_tk3s5tyg",
+      "_TZ3000_d0yu2xgi",
+      "_tze200_d0yu2xgi"
     ]
   },
   "settings": [
@@ -254,19 +257,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

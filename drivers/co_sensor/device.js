@@ -43,8 +43,15 @@ class COSensorDevice extends UnifiedSensorBase {
     const mapping = this.dpMappings[dpId];
     if (mapping && mapping.capability) {
       let finalValue = value;
-      if (mapping.divisor) {finalValue = value / mapping.divisor;}
-      
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        finalValue = smartParse(value, dpId, {
+          manufacturerName: this.getSetting('zb_manufacturer_name') || '',
+          capability: mapping.capability,
+          deviceId: this.getData()?.id || '',
+        });
+      } else if (mapping.divisor) {finalValue = value / mapping.divisor;}
+
       this.log(`[CO] DP${dpId} → ${mapping.capability}: ${finalValue}`);
       return this.setCapabilityValue(mapping.capability, finalValue).catch(() => {});
     }

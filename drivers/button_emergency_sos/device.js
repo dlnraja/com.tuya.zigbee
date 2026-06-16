@@ -304,7 +304,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       if (isNaN(voltage)) {return;}
       // If value looks like millivolts (>300), convert to volts
       if (voltage > 300) {voltage = voltage / 1000;}
-      percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+      percent = UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
     }
 
     if (percent >= 0 && percent <= 100) {

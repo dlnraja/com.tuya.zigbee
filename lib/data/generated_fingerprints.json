@@ -285,12 +285,28 @@
       "_TZ3000_wmlc9p9z",
       "_TZ3000_shopg9ss",
       "_TZ3000_n0lphcok",
-      "_TZ3000_r80pzsb9",
+      "_TZ3000_r80pzsb9"
+    ],
+    "productNames": [
+      "Water leak detector"
+    ],
+    "source": "zigbee2mqtt",
+    "vendor": "Tuya"
+  },
+  "Tuya_rain_sensor_TZ3210": {
+    "driverId": "rain_sensor",
+    "type": "rain_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0207",
+      "TS0601"
+    ],
+    "manufacturerNames": [
       "_TZ3210_tgvtvdoc",
       "_TZ3210_p68kms0l"
     ],
     "productNames": [
-      "Water leak detector"
+      "Rain sensor"
     ],
     "source": "zigbee2mqtt",
     "vendor": "Tuya"

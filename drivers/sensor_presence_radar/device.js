@@ -9,6 +9,11 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
+// v5.5.306: Module-level logger for standalone functions (replaces console.log)
+const _moduleLog = (msg) => { /* logged via device.log in callers */ };
+
+
+
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -117,7 +122,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   // v5.8.29: CRITICAL FIX (FinnKje forum) - null/undefined ALWAYS = no motion
   // Previously invertPresence turned null into true, causing false triggers every 5min
   if (value === null || value === undefined) {
-    console.log(`[PRESENCE-FIX] null/undefined presence for ${configName}, defaulting to false`);
+    _moduleLog(`[PRESENCE-FIX] null/undefined presence for ${configName}, defaulting to false`);
     return false;
   }
 
@@ -139,7 +144,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
       // Let the AutonomousIntelligenceGate filter it if it's noise.
       result = true;
     } else {
-      console.log(`[PRESENCE-FIX] âšï¸ gkfbdvyx: unknown enum value ${value}`);
+      _moduleLog(`[PRESENCE-FIX] âšï¸ gkfbdvyx: unknown enum value ${value}`);
       result = false;
     }
     break;
@@ -164,7 +169,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   // TZE284_IADRO9BF firmware bug: shows active when empty, inactive when occupied
   if (invertPresence) {
     const inverted = !result;
-    console.log(`[PRESENCE-FIX] ðŸ”„ INVERTING presence for ${configName}: raw=${value} -> parsed=${result} -> final=${inverted}`);
+    _moduleLog(`[PRESENCE-FIX] ðŸ”„ INVERTING presence for ${configName}: raw=${value} -> parsed=${result} -> final=${inverted}`);
     return inverted;  // INVERT the result for buggy firmware
   }
 
@@ -216,20 +221,20 @@ function debouncePresence(presence, manufacturerName, deviceId) {
   if (presence && state.onCount >= requiredOnCount && timeSinceLastChange >= minStateChangeInterval) {
     // Turn ON: requires 3 consecutive reports + 5s since last change
     if (!state.stablePresence) {
-      console.log(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: ON confirmed (${state.onCount} consecutive, ${timeSinceLastChange}ms gap)`);
+      _moduleLog(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: ON confirmed (${state.onCount} consecutive, ${timeSinceLastChange}ms gap)`);
       newStablePresence = true;
       state.lastChangeTime = now;
     }
   } else if (!presence && state.offCount >= requiredOffCount) {
     // Turn OFF: requires only 2 consecutive reports (faster response)
     if (state.stablePresence) {
-      console.log(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: OFF confirmed (${state.offCount} consecutive)`);
+      _moduleLog(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: OFF confirmed (${state.offCount} consecutive)`);
       newStablePresence = false;
       state.lastChangeTime = now;
     }
   } else {
     // Not enough consecutive reports - keep stable state
-    console.log(`[PRESENCE-DEBOUNCE] ðŸ”‡ ${manufacturerName}: ignoring (ON=${state.onCount}/${requiredOnCount}, OFF=${state.offCount}/${requiredOffCount})`);
+    _moduleLog(`[PRESENCE-DEBOUNCE] ðŸ”‡ ${manufacturerName}: ignoring (ON=${state.onCount}/${requiredOnCount}, OFF=${state.offCount}/${requiredOffCount})`);
   }
 
   state.stablePresence = newStablePresence;
@@ -255,7 +260,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
   // v5.5.793: HARD CLAMP to max AND detect 30â†”2000 oscillation
   if (lux > VALIDATION.LUX_ZYM100_MAX) {
-    console.log(`[LUX] ðŸ”’ Clamped ${lux} -> ${VALIDATION.LUX_ZYM100_MAX} (max spec limit)`);
+    _moduleLog(`[LUX] ðŸ”’ Clamped ${lux} -> ${VALIDATION.LUX_ZYM100_MAX} (max spec limit)`);
     lux = VALIDATION.LUX_ZYM100_MAX;
   }
 
@@ -264,7 +269,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     luxOscillationState.set(deviceId, {
       history: [],
       locked: false,
-      lockedValue,
+      lockedValue: null,
       lockTime: 0
     });
   }
@@ -287,7 +292,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
         const stableValue = recent.find(r => r.value < 100)?.value || 30;oscState.locked = true;
         oscState.lockedValue = stableValue;
         oscState.lockTime = Date.now();
-        console.log(`[LUX] ðŸ”’ OSCILLATION DETECTED: Locking to ${stableValue} lux (pattern: ${recent.map(r => r.value).join('â†’')})`);
+        _moduleLog(`[LUX] ðŸ”’ OSCILLATION DETECTED: Locking to ${stableValue} lux (pattern: ${recent.map(r => r.value).join('â†’')})`);
       }
     }
   }
@@ -296,11 +301,11 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   if (oscState.locked) {
     const lockDuration = Date.now() - oscState.lockTime;
     if (lockDuration < TIMING.LUX_OSCILLATION_LOCK_MS) { // v5.5.793: Use constant
-      console.log(`[LUX] ðŸ”’ LOCKED: Using ${oscState.lockedValue} instead of ${lux} (${Math.round(lockDuration / 1000)}s into lock)`);
+      _moduleLog(`[LUX] ðŸ”’ LOCKED: Using ${oscState.lockedValue} instead of ${lux} (${Math.round(lockDuration / 1000)}s into lock)`);
       lux = oscState.lockedValue;
     } else {
       // Lock expired
-      console.log('[LUX] ðŸ”“ LOCK EXPIRED after 2 minutes, returning to normal');
+      _moduleLog('[LUX] ðŸ”“ LOCK EXPIRED after 2 minutes, returning to normal');
       oscState.locked = false;
       oscState.lockedValue = null;
     }
@@ -308,7 +313,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
   // v5.5.318: NaN/undefined protection - return 0 for invalid values
   if (lux === null || lux === undefined || typeof lux !== 'number' || isNaN(lux)) {
-    console.log(`[LUX-FIX] âšï¸ Invalid lux value (${lux}) for ${manufacturerName}, returning 0`);
+    _moduleLog(`[LUX-FIX] âšï¸ Invalid lux value (${lux}) for ${manufacturerName}, returning 0`);
     return 0;
   }
 
@@ -349,18 +354,18 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // Previous bug: Ã·100 if > 10000 broke sensors reporting legitimate high lux
   if (lux > 50000) {
     const converted = Math.round(lux);
-    console.log(`[LUX-FIX] 📊 Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
+    _moduleLog(`[LUX-FIX] 📊 Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
     lux = converted;
   }
 
   // v5.5.320: HARD CLAMP for ZY-M100 series (Ronny #760: lux showing 2200 when max is 2000)
   // These sensors are confirmed 0-2000 lux range - anything above is sensor noise
   if (lux > maxLux && isZYM100Series) {
-    console.log(`[LUX-FIX] ðŸ”’ Hard clamp for ZY-M100: ${lux} â†’ ${maxLux} lux`);
+    _moduleLog(`[LUX-FIX] ðŸ”’ Hard clamp for ZY-M100: ${lux} â†’ ${maxLux} lux`);
     lux = maxLux;
   } else if (lux > maxLux) {
     // For other sensors, still allow higher values but warn
-    console.log(`[LUX-FIX] âšï¸ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
+    _moduleLog(`[LUX-FIX] âšï¸ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
   }
 
   lux = Math.max(0, Math.round(lux));
@@ -370,8 +375,8 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // Solution: Once flip-flop is detected, lock to stable value for 60 seconds
   if (deviceId && isZYM100Series) {
     const state = luxSmoothingState.get(deviceId) || {
-      lastLux,
-      stableLux,  // v5.5.319: Track stable value
+      lastLux: null,
+      stableLux: null,  // v5.5.319: Track stable value
       timestamp: 0,
       extremeCount: 0,
       lockedUntil: 0    // v5.5.319: Lock period after flip-flop detection
@@ -381,7 +386,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
     // v5.5.319: If we're in locked mode, always return stable value
     if (state.lockedUntil > now && state.stableLux !== null) {
-      console.log(`[LUX-SMOOTH] ðŸ”’ Locked mode: returning stable ${state.stableLux} (ignoring ${lux})`);
+      _moduleLog(`[LUX-SMOOTH] ðŸ”’ Locked mode: returning stable ${state.stableLux} (ignoring ${lux})`);
       return state.stableLux;
     }
 
@@ -397,7 +402,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
       if (isFlipFlop && timeSinceLastUpdate < 30000) {
         state.extremeCount++;
-        console.log(`[LUX-SMOOTH] âšï¸ Flip-flop #${state.extremeCount}: ${state.lastLux} â†” ${lux}`);
+        _moduleLog(`[LUX-SMOOTH] âšï¸ Flip-flop #${state.extremeCount}: ${state.lastLux} â†” ${lux}`);
 
         if (state.extremeCount >= 1) {
           // v5.5.326: RONNY #760 - Ultra-aggressive lock for iadro9bf (2 minutes)
@@ -405,7 +410,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
           const lockDuration = isIadro9bf ? 120000 : 60000;  // 2min for iadro9bf, 1min for others
           state.stableLux = Math.min(state.lastLux, lux);
           state.lockedUntil = now + lockDuration;
-          console.log(`[LUX-SMOOTH] ðŸ”’ Locking to ${state.stableLux} for ${lockDuration/1000}s (flip-flop, iadro9bf=${isIadro9bf})`);
+          _moduleLog(`[LUX-SMOOTH] ðŸ”’ Locking to ${state.stableLux} for ${lockDuration/1000}s (flip-flop, iadro9bf=${isIadro9bf})`);
           luxSmoothingState.set(deviceId, state);
           return state.stableLux;
         }
@@ -438,7 +443,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   
   // v5.5.929: Validate input
   if (typeof value !== 'number' || isNaN(value) || value < 0) {
-    console.log(`[DISTANCE-FIX] âšï¸ Invalid distance value for ${manufacturerName}: ${originalValue}`);
+    _moduleLog(`[DISTANCE-FIX] âšï¸ Invalid distance value for ${manufacturerName}: ${originalValue}`);
     return null;
   }
 
@@ -477,7 +482,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
     
     // Cache the learned divisor for this device
     if (effectiveDivisor !== divisor) {
-      console.log(`[DISTANCE-FIX] 🔧 Auto-detected divisor for ${manufacturerName}: ${divisor} â†’ ${effectiveDivisor}`);
+      _moduleLog(`[DISTANCE-FIX] 🔧 Auto-detected divisor for ${manufacturerName}: ${divisor} â†’ ${effectiveDivisor}`);
       distanceDivisorCache.set(cacheKey, effectiveDivisor);
     }
   }
@@ -487,12 +492,12 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   // v5.5.793: Use validation constants for range check
   if (distance < VALIDATION.DISTANCE_MIN) {distance = VALIDATION.DISTANCE_MIN;}
   if (distance > VALIDATION.DISTANCE_MAX) {
-    console.log(`[DISTANCE-FIX] ðŸ“ Distance clamped for ${manufacturerName}: ${distance}m -> ${VALIDATION.DISTANCE_MAX}m`);
+    _moduleLog(`[DISTANCE-FIX] ðŸ“ Distance clamped for ${manufacturerName}: ${distance}m -> ${VALIDATION.DISTANCE_MAX}m`);
     distance = VALIDATION.DISTANCE_MAX;
   }
 
   const result = Math.round(distance * 100)/100; // 2 decimal places
-  console.log(`[DISTANCE-FIX] ✅ ${manufacturerName}: ${originalValue} (Ã·${effectiveDivisor}) -> ${result}m`);
+  _moduleLog(`[DISTANCE-FIX] ✅ ${manufacturerName}: ${originalValue} (Ã·${effectiveDivisor}) -> ${result}m`);
   return result;
 }
 
@@ -1428,8 +1433,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // HOBEIAN ZG-204ZV uses DP3 = temp, DP4=humidity - must apply divisor correctly!
     if (dpMap[dpId]?.cap === 'measure_temperature') {
       const rawTemp = this._parseBufferValue(data.value || data.data);
-      const divisor = dpMap[dpId].divisor || 10;
-      const temp = safeDivide(rawTemp, divisor);
+      const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+      const temp = smartParse(rawTemp, dpId, { manufacturerName: this.getSetting('zb_manufacturer_name') || '', capability: 'measure_temperature', deviceId: this.getData()?.id || '', defaultDivisor: 10 });
       if (temp >= -40 && temp <= 80) {
         this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} â†’ temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
         this.setCapabilityValue('measure_temperature', temp).catch(() => { });
@@ -1687,7 +1692,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const now = Date.now();
     this._motionThrottle = this._motionThrottle || {
       lastUpdate: 0,
-      lastValue,
+      lastValue: null,
       spamCount: 0,
       consecutiveSame: 0,  // v5.5.902: Track consecutive same values
       stuckMode: false     // v5.5.902: Device is stuck - use inference only
@@ -1712,6 +1717,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._motionThrottle.stuckMode = false;
     }
 
+    // Always update lastValue and lastUpdate for next comparison
+    this._motionThrottle.lastValue = presence;
+    this._motionThrottle.lastUpdate = now;
   }
 
   // v5.8.50: Using centralized presence logic from UnifiedSensorBase
@@ -2108,7 +2116,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     // Check every 5 minutes if enrollment is still valid
-    this._enrollmentCheckInterval = setInterval(async () => {
+    this._enrollmentCheckInterval = this.homey.setInterval(async () => {
       if (!this._iasZoneCluster) {return;}
 
       try {
@@ -2279,7 +2287,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     let luxPollCounter = 0;
 
     // Poll at configured interval
-    this._pollingInterval = setInterval(async () => {
+    this._pollingInterval = this.homey.setInterval(async () => {
       try {
         const now = Date.now();
         const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);

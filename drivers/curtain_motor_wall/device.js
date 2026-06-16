@@ -130,7 +130,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // Clear any existing interval
     if (this._healthInterval) {clearInterval(this._healthInterval);}
 
-    this._healthInterval = setInterval(async () => {
+    this._healthInterval = this.homey.setInterval(async () => {
       // Skip if device had recent successful communication
       if (Date.now() - (this._lastCommSuccess || 0) < 300000) {return;}
       

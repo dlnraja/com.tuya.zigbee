@@ -121,7 +121,13 @@
       "_TZE204_p6vz3wzt",
       "_TZE284_waa352qv",
       "_TZE2841000000_0ints6wl",
-      "_TZE284_mvtclclq"
+      "_TZE284_mvtclclq",
+      "_TZ3210_ol1uhvza",
+      "_TZE284_0ints6wl",
+      "_TZ3000_42ha4rsc",
+      "_TZE200_wmcdj3aq",
+      "_TZE200_mvtclclq",
+      "_TZE204_mvtclclq"
     ]
   },
   "settings": [
@@ -381,19 +387,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

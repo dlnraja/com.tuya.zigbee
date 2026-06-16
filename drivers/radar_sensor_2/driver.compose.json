@@ -59,5 +59,11 @@
     },
     "manufacturerName": []
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, CK-BL702-MWS-01(7016), ZP-301Z, TS110E, TS0004"
+    }
+  }
 }
