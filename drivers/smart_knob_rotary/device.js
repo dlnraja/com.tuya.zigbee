@@ -325,7 +325,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         this.setCapabilityValue('button.rotate_left', false).catch(this.error);
       }, 100);
     }
-    const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
+    const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
     }
@@ -338,7 +338,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         this.setCapabilityValue('button.rotate_right', false).catch(this.error);
       }, 100);
     }
-    const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
+    const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
     }
@@ -352,7 +352,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       }, 100);
     }
     try {
-      const genericTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
+      const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }
@@ -369,7 +369,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        const triggerCard = this.homey.flow.getTriggerCard(specificCardId, 'trigger');
+        const triggerCard = this.homey.flow.getDeviceTriggerCard(specificCardId, 'trigger');
         if (triggerCard) {
             await triggerCard.trigger(this, { action }).catch(() => {});
         }

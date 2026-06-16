@@ -13,20 +13,20 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_humidity_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_temp_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_power_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_water_alarm'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('hvac_dehumidifier_battery_low'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_turned_on'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_turned_off'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_turned_on'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_turned_off'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_power_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_water_alarm'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('hvac_dehumidifier_battery_low'); } catch (e) {}
 
     // CONDITIONS
     try {

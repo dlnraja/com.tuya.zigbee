@@ -13,12 +13,12 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_formaldehyde_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_voc_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_air_quality_alert'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_battery_low'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_temp_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('formaldehyde_sensor_formaldehyde_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('formaldehyde_sensor_voc_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('formaldehyde_sensor_air_quality_alert'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('formaldehyde_sensor_battery_low'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('formaldehyde_sensor_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('formaldehyde_sensor_humidity_changed'); } catch (e) {}
 
     // CONDITIONS
     try {

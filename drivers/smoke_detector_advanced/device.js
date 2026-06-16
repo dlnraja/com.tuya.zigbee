@@ -32,7 +32,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
             device.log(`[SMOKE]  Smoke alarm: ${isAlarm ? ' TRIGGERED!' : ' clear'}`);
             // Trigger flow cards
             const triggerId = isAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
-            device.driver?.homey?.flow?.getTriggerCard(triggerId)?.trigger(device, {}).catch(() => {});
+            device.driver?.homey?.flow?.getDeviceTriggerCard(triggerId)?.trigger(device, {}).catch(() => {});
           }
           return isAlarm;
         }
@@ -48,7 +48,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
             if (device) {
               device.log(`[SMOKE] DP4 as tamper: ${isTampered}`);
               if (isTampered) {
-                device.driver?.homey?.flow?.getTriggerCard('smoke_detector_advanced_alarm_tamper_true')?.trigger(device, {}).catch(() => {});
+                device.driver?.homey?.flow?.getDeviceTriggerCard('smoke_detector_advanced_alarm_tamper_true')?.trigger(device, {}).catch(() => {});
               }
             }
             return isTampered;
@@ -57,7 +57,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
             if (device) {
               device.log(`[SMOKE] DP4 as battery: ${battery}%`);
               if (battery < 20) {
-                device.driver?.homey?.flow?.getTriggerCard('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
+                device.driver?.homey?.flow?.getDeviceTriggerCard('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
               }
             }
             device.setCapabilityValue('measure_battery', battery).catch(() => {});

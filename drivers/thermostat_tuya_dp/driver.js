@@ -13,16 +13,16 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_target_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_mode_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_heating_started'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_heating_stopped'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_temp_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_battery_low'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_target_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_mode_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_heating_started'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_heating_stopped'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_turned_on'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_turned_off'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_battery_low'); } catch (e) {}
+    try { this.homey.flow.getDeviceTriggerCard('thermostat_tuya_dp_humidity_changed'); } catch (e) {}
 
     // CONDITIONS
     try {

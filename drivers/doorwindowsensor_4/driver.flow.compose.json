@@ -1,0 +1,70 @@
+{
+  "triggers": [
+    {
+      "id": "doorwindowsensor_4_alarm_contact_true",
+      "title": {
+        "en": "Contact detected (opened)",
+        "fr": "Contact détecté (ouvert)",
+        "nl": "Contact gedetecteerd (geopend)",
+        "de": "Kontakt erkannt (geöffnet)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact detected (opened)",
+        "fr": "Contact détecté (ouvert)",
+        "nl": "Contact gedetecteerd (geopend)",
+        "de": "Kontakt erkannt (geöffnet)"
+      }
+    },
+    {
+      "id": "doorwindowsensor_4_alarm_contact_false",
+      "title": {
+        "en": "Contact cleared (closed)",
+        "fr": "Contact libéré (fermé)",
+        "nl": "Contact vrijgegeven (gesloten)",
+        "de": "Kontakt freigegeben (geschlossen)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact cleared (closed)",
+        "fr": "Contact libéré (fermé)",
+        "nl": "Contact vrijgegeven (gesloten)",
+        "de": "Kontakt freigegeben (geschlossen)"
+      }
+    },
+    {
+      "id": "doorwindowsensor_4_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "doorwindowsensor_4_alarm_contact_active",
+      "title": {
+        "en": "Contact !{{is|is not}} detected (opened)",
+        "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+        "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+        "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact !{{is|is not}} detected (opened)",
+        "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+        "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+        "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+      }
+    }
+  ]
+}

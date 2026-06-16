@@ -81,7 +81,47 @@ jobs:
       
       - name: 🧹 Metadata Consistency Check
         run: node scripts/maintenance/validate-driver-manifests.js
-      
+
+      - name: 🔍 Fingerprint Collision Check
+        run: |
+          echo "Checking fingerprint collisions (manufacturerName + productId)..."
+          node -e "
+            const fs=require('fs'),path=require('path');
+            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
+            const map=new Map();
+            for(const d of dirs){
+              const f=path.join('drivers',d,'driver.compose.json');
+              if(!fs.existsSync(f))continue;
+              try{
+                const j=JSON.parse(fs.readFileSync(f,'utf8'));
+                const z=j.zigbee;
+                if(!z||!z.manufacturerName||!z.productId)continue;
+                for(const mfr of z.manufacturerName){
+                  for(const pid of z.productId){
+                    const key=mfr.toLowerCase()+'|'+pid;
+                    if(!map.has(key))map.set(key,[]);
+                    map.get(key).push(d);
+                  }
+                }
+              }catch(e){}
+            }
+            let col=0;
+            const collisions=[];
+            for(const [k,v] of map){
+              if(v.length>1){
+                collisions.push({key:k,drivers:v});
+                col++;
+                console.log('::warning::COLLISION '+k+' -> '+v.join(', '));
+              }
+            }
+            if(col>0){
+              console.log('ERROR: '+col+' fingerprint collision(s) found!');
+              collisions.slice(0,10).forEach(c=>console.log('  '+c.key+' in: '+c.drivers.join(', ')));
+              process.exit(1);
+            }
+            console.log('No fingerprint collisions ('+map.size+' unique combos checked)');
+          "
+
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
         run: node scripts/maintenance/zero-defect-architect-audit.js
       

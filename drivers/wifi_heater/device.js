@@ -42,7 +42,7 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
 
   _fireFlowTriggers(changes) {
     const cf = this.homey.flow;
-    const getTrigger = (id) => { try { return cf.getTriggerCard(id); } catch (e) { return null; } };
+    const getTrigger = (id) => { try { return cf.getDeviceTriggerCard(id); } catch (e) { return null; } };
 
     if (changes.onoff) {
       const cardId = changes.onoff.to ? 'wifi_heater_turned_on' : 'wifi_heater_turned_off';

@@ -8,7 +8,7 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
 
     const safeGetTrigger = (id) => {
       try {
-        return this.homey.flow.getTriggerCard(id);
+        return this.homey.flow.getDeviceTriggerCard(id);
       } catch (err) {
         this.log(`[FLOW] Trigger '${id}' not defined: ${err.message}`);
         return null;
