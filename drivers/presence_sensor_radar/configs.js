@@ -160,7 +160,7 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // TYPE D: TZE284_IADRO9BF (Low DP)
+  // TYPE D: TZE284_IADRO9BF (Low DP) — with multi-zone support (Idea #21)
   'TZE284_IADRO9BF': {
     configName: 'TZE284_IADRO9BF',
     sensors: [
@@ -187,6 +187,7 @@ const SENSOR_CONFIGS = {
     mainsPowered: true,
     noBatteryCapability: true,
     hasIlluminance: true,
+    hasMultiZone: true,
     noTemperature: true,
     noHumidity: true,
     needsPolling: false,
@@ -210,6 +211,14 @@ const SENSOR_CONFIGS = {
       6: { cap: null, internal: 'self_test' },
       9: { cap: 'measure_luminance.distance', smartDivisor: true, feedInference: true, primaryInference: true },
       12: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
+      // Idea #21: Multi-zone presence detection DPs
+      13: { cap: 'alarm_motion.zone1', type: 'presence_bool', zone: 1 },
+      14: { cap: 'alarm_motion.zone2', type: 'presence_bool', zone: 2 },
+      15: { cap: 'alarm_motion.zone3', type: 'presence_bool', zone: 3 },
+      16: { cap: 'measure_luminance.distance.zone1', smartDivisor: true, zone: 1 },
+      17: { cap: 'measure_luminance.distance.zone2', smartDivisor: true, zone: 2 },
+      18: { cap: 'measure_luminance.distance.zone3', smartDivisor: true, zone: 3 },
+      19: { cap: 'measure_motion.classification', type: 'movement_enum', zone: 0 },
       101: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
       102: { cap: null, setting: 'fading_time', divisor: 10, min: 5, max: 15000 },
       104: { cap: 'alarm_motion', type: 'presence_enum', enumMap: { 0: false, 1: true, 2: true } },
@@ -274,12 +283,13 @@ const SENSOR_CONFIGS = {
     }
   },
 
-  // DEFAULT fallback
+  // DEFAULT fallback — with multi-zone support (Idea #21)
   'DEFAULT': {
     sensors: [],
     configName: 'DEFAULT',
     battery: false,
     hasIlluminance: true,
+    hasMultiZone: true,
     needsPolling: true,
     noTemperature: true,
     noHumidity: true,
@@ -287,6 +297,14 @@ const SENSOR_CONFIGS = {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       9: { cap: 'measure_luminance.distance', smartDivisor: true },
       12: { cap: 'measure_luminance', type: 'lux_direct' },
+      // Idea #21: Multi-zone presence DPs (generic Tuya mmWave zone mapping)
+      13: { cap: 'alarm_motion.zone1', type: 'presence_bool', zone: 1 },
+      14: { cap: 'alarm_motion.zone2', type: 'presence_bool', zone: 2 },
+      15: { cap: 'alarm_motion.zone3', type: 'presence_bool', zone: 3 },
+      16: { cap: 'measure_luminance.distance.zone1', smartDivisor: true, zone: 1 },
+      17: { cap: 'measure_luminance.distance.zone2', smartDivisor: true, zone: 2 },
+      18: { cap: 'measure_luminance.distance.zone3', smartDivisor: true, zone: 3 },
+      19: { cap: 'measure_motion.classification', type: 'movement_enum', zone: 0 },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_enum' },
       109: { cap: 'measure_luminance.distance', smartDivisor: true },
@@ -336,6 +354,12 @@ function transformPresence(value, type, invertPresence, configName) {
   }
   if (type === 'motion_state_enum') {
     return value === 1 || value === 2 || value === 3;
+  }
+  // Idea #21: Movement classification enum
+  // 0=none, 1=stationary, 2=micro-motion (breathing), 3=small motion (limb), 4=large motion (walking)
+  if (type === 'movement_enum') {
+    const MOVEMENT_LABELS = ['none', 'stationary', 'micro_motion', 'small_motion', 'large_motion'];
+    return MOVEMENT_LABELS[value] || 'unknown';
   }
   return !!value;
 }

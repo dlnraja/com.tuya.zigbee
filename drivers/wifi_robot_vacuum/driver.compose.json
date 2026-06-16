@@ -11,8 +11,140 @@
     "onoff",
     "vacuumcleaner_state",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "vacuum_mode",
+    "vacuum_fan_speed",
+    "vacuum_cleaning_mode",
+    "vacuum_clean_area",
+    "vacuum_clean_time",
+    "vacuum_water_level",
+    "vacuum_main_brush_life",
+    "vacuum_filter_life",
+    "vacuum_side_brush_life",
+    "vacuum_fault",
+    "vacuum_dnd_mode",
+    "vacuum_volume",
+    "vacuum_carpet_mode",
+    "vacuum_find_robot",
+    "vacuum_edge_clean",
+    "vacuum_repeat_count",
+    "vacuum_main_brush_hours",
+    "vacuum_side_brush_hours",
+    "vacuum_filter_hours",
+    "vacuum_sensor_clean_reminder"
   ],
+  "capabilitiesOptions": {
+    "vacuum_mode": {
+      "title": {
+        "en": "Vacuum Mode"
+      }
+    },
+    "vacuum_fan_speed": {
+      "title": {
+        "en": "Fan Speed / Suction"
+      }
+    },
+    "vacuum_cleaning_mode": {
+      "title": {
+        "en": "Cleaning Mode"
+      }
+    },
+    "vacuum_clean_area": {
+      "title": {
+        "en": "Cleaned Area"
+      },
+      "units": { "en": "m2" }
+    },
+    "vacuum_clean_time": {
+      "title": {
+        "en": "Clean Time"
+      },
+      "units": { "en": "min" }
+    },
+    "vacuum_water_level": {
+      "title": {
+        "en": "Water Tank Level"
+      },
+      "units": { "en": "%" }
+    },
+    "vacuum_main_brush_life": {
+      "title": {
+        "en": "Main Brush Life"
+      },
+      "units": { "en": "%" }
+    },
+    "vacuum_filter_life": {
+      "title": {
+        "en": "Filter Life"
+      },
+      "units": { "en": "%" }
+    },
+    "vacuum_side_brush_life": {
+      "title": {
+        "en": "Side Brush Life"
+      },
+      "units": { "en": "%" }
+    },
+    "vacuum_fault": {
+      "title": {
+        "en": "Fault Code"
+      }
+    },
+    "vacuum_dnd_mode": {
+      "title": {
+        "en": "Do Not Disturb"
+      }
+    },
+    "vacuum_volume": {
+      "title": {
+        "en": "Volume"
+      },
+      "units": { "en": "%" }
+    },
+    "vacuum_carpet_mode": {
+      "title": {
+        "en": "Carpet Mode (Auto Boost)"
+      }
+    },
+    "vacuum_find_robot": {
+      "title": {
+        "en": "Find Robot"
+      }
+    },
+    "vacuum_edge_clean": {
+      "title": {
+        "en": "Edge Clean Mode"
+      }
+    },
+    "vacuum_repeat_count": {
+      "title": {
+        "en": "Repeat Count"
+      }
+    },
+    "vacuum_main_brush_hours": {
+      "title": {
+        "en": "Main Brush Runtime"
+      },
+      "units": { "en": "h" }
+    },
+    "vacuum_side_brush_hours": {
+      "title": {
+        "en": "Side Brush Runtime"
+      },
+      "units": { "en": "h" }
+    },
+    "vacuum_filter_hours": {
+      "title": {
+        "en": "Filter Runtime"
+      },
+      "units": { "en": "h" }
+    },
+    "vacuum_sensor_clean_reminder": {
+      "title": {
+        "en": "Sensor Clean Reminder"
+      }
+    }
+  },
   "pair": [
     {
       "id": "configure",
@@ -101,6 +233,61 @@
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Vacuum Settings (Idea #25)"
+      },
+      "hint": {
+        "en": "Configure vacuum cleaning preferences"
+      },
+      "children": [
+        {
+          "id": "default_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Default Vacuum Mode"
+          },
+          "value": "standard",
+          "values": [
+            { "id": "silent", "label": { "en": "Silent" } },
+            { "id": "standard", "label": { "en": "Standard" } },
+            { "id": "strong", "label": { "en": "Strong" } },
+            { "id": "super", "label": { "en": "Super" } }
+          ],
+          "hint": {
+            "en": "Default suction power when starting a clean cycle"
+          }
+        },
+        {
+          "id": "default_clean_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Default Cleaning Mode"
+          },
+          "value": "sweep_and_mop",
+          "values": [
+            { "id": "sweep", "label": { "en": "Sweep Only" } },
+            { "id": "mop", "label": { "en": "Mop Only" } },
+            { "id": "sweep_and_mop", "label": { "en": "Sweep + Mop" } }
+          ],
+          "hint": {
+            "en": "Default cleaning mode (requires robot with mopping capability)"
+          }
+        },
+        {
+          "id": "auto_dock_after_clean",
+          "type": "checkbox",
+          "label": {
+            "en": "Auto Return to Dock"
+          },
+          "value": true,
+          "hint": {
+            "en": "Automatically return to charging dock after cleaning completes"
+          }
         }
       ]
     }

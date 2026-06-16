@@ -1,5 +1,244 @@
 {
-  "triggers": [],
-  "conditions": [],
-  "actions": []
+  "triggers": [
+    {
+      "id": "wifi_robot_vacuum_cleaning_started",
+      "title": {
+        "en": "Cleaning started"
+      },
+      "hint": {
+        "en": "Triggers when the vacuum starts a cleaning cycle"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_cleaning_finished",
+      "title": {
+        "en": "Cleaning finished"
+      },
+      "hint": {
+        "en": "Triggers when the vacuum completes a cleaning cycle"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_battery_low",
+      "title": {
+        "en": "Battery low"
+      },
+      "hint": {
+        "en": "Triggers when vacuum battery drops below threshold"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_fault_detected",
+      "title": {
+        "en": "Fault detected"
+      },
+      "hint": {
+        "en": "Triggers when the vacuum reports a fault or error"
+      },
+      "tokens": [
+        {
+          "name": "fault_code",
+          "type": "number",
+          "title": {
+            "en": "Fault Code"
+          },
+          "example": 1
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_brush_needs_replacement",
+      "title": {
+        "en": "Brush needs replacement"
+      },
+      "hint": {
+        "en": "Triggers when main brush life drops below 10%"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_filter_needs_replacement",
+      "title": {
+        "en": "Filter needs replacement"
+      },
+      "hint": {
+        "en": "Triggers when filter life drops below 10%"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_water_tank_empty",
+      "title": {
+        "en": "Water tank low"
+      },
+      "hint": {
+        "en": "Triggers when water tank level drops below 10%"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_robot_vacuum_is_cleaning",
+      "title": {
+        "en": "Vacuum !{{is|is not}} cleaning"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_is_docked",
+      "title": {
+        "en": "Vacuum !{{is|is not}} docked"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above"
+      },
+      "args": [
+        {
+          "name": "level",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": { "en": "20" }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[level]]%"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_robot_vacuum_start_clean",
+      "title": {
+        "en": "Start cleaning"
+      },
+      "hint": {
+        "en": "Start a standard cleaning cycle"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_stop_clean",
+      "title": {
+        "en": "Stop cleaning"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_pause_clean",
+      "title": {
+        "en": "Pause cleaning"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_return_to_dock",
+      "title": {
+        "en": "Return to dock"
+      },
+      "hint": {
+        "en": "Send the vacuum back to the charging dock"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_find_robot",
+      "title": {
+        "en": "Find robot"
+      },
+      "hint": {
+        "en": "Make the vacuum beep to help locate it"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_robot_vacuum_set_mode",
+      "title": {
+        "en": "Set vacuum mode"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "silent", "label": { "en": "Silent" } },
+            { "id": "standard", "label": { "en": "Standard" } },
+            { "id": "strong", "label": { "en": "Strong" } },
+            { "id": "super", "label": { "en": "Super" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set vacuum mode to [[mode]]"
+      }
+    },
+    {
+      "id": "wifi_robot_vacuum_set_clean_mode",
+      "title": {
+        "en": "Set cleaning mode"
+      },
+      "args": [
+        {
+          "name": "clean_mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "sweep", "label": { "en": "Sweep" } },
+            { "id": "mop", "label": { "en": "Mop" } },
+            { "id": "sweep_and_mop", "label": { "en": "Sweep + Mop" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set cleaning mode to [[clean_mode]]"
+      }
+    },
+    {
+      "id": "wifi_robot_vacuum_set_dnd",
+      "title": {
+        "en": "Set Do Not Disturb"
+      },
+      "args": [
+        {
+          "name": "enabled",
+          "type": "dropdown",
+          "values": [
+            { "id": "on", "label": { "en": "On" } },
+            { "id": "off", "label": { "en": "Off" } }
+          ]
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set DND to [[enabled]]"
+      }
+    },
+    {
+      "id": "wifi_robot_vacuum_set_volume",
+      "title": {
+        "en": "Set volume"
+      },
+      "args": [
+        {
+          "name": "volume",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "placeholder": { "en": "50" }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set volume to [[volume]]%"
+      }
+    }
+  ]
 }

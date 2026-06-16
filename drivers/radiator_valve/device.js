@@ -6,6 +6,64 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
 
+// Idea #22: TRV Schedule encoding/decoding helpers
+const TRV_SCHEDULE_DPS = {
+  scheduleMonday: 104,
+  scheduleTuesday: 105,
+};
+
+/**
+ * Decode a raw schedule buffer from a TRV DP into a human-readable string.
+ * Format: "HH:MM/TT HH:MM/TT ... HH:MM/TT" where TT is temperature x10.
+ * Each period = 3 bytes: [time_segment, temp_high, temp_low]
+ * time_segment * 10 = minutes from midnight.
+ */
+function decodeTRVSchedule(buffer) {
+  if (!buffer || !Buffer.isBuffer(buffer) || buffer.length < 3) return '';
+  const maxPeriods = Math.min(Math.floor(buffer.length / 3), 10);
+  const periods = [];
+  for (let i = 0; i < maxPeriods; i++) {
+    const timeSegment = buffer[i * 3];
+    const totalMinutes = timeSegment * 10;
+    if (totalMinutes > 1440) break; // beyond 24:00 = sentinel
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    const tempRaw = (buffer[i * 3 + 1] << 8) | buffer[i * 3 + 2];
+    const temp = tempRaw / 10;
+    periods.push(`${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}/${temp}`);
+    if (hours === 24) break;
+  }
+  return periods.join(' ');
+}
+
+/**
+ * Encode a human-readable schedule string into a raw buffer for a TRV DP.
+ * Input: "HH:MM/TT HH:MM/TT ..."
+ * Output: Buffer of 30 bytes (10 periods x 3 bytes each)
+ */
+function encodeTRVSchedule(scheduleString) {
+  if (!scheduleString || typeof scheduleString !== 'string') return null;
+  const periods = scheduleString.trim().split(/\s+/).filter(Boolean);
+  const maxPeriods = 10;
+  const buf = Buffer.alloc(maxPeriods * 3, 0);
+
+  for (let i = 0; i < Math.min(periods.length, maxPeriods); i++) {
+    const [timePart, tempPart] = periods[i].split('/');
+    if (!timePart || tempPart === undefined) continue;
+    const [h, m] = timePart.split(':').map(Number);
+    const temp = parseFloat(tempPart);
+    if (isNaN(h) || isNaN(m) || isNaN(temp)) continue;
+    const totalMinutes = h * 60 + m;
+    const timeSegment = Math.round(totalMinutes / 10);
+    const tempRaw = Math.round(temp * 10);
+    buf[i * 3] = timeSegment & 0xFF;
+    buf[i * 3 + 1] = (tempRaw >> 8) & 0xFF;
+    buf[i * 3 + 2] = tempRaw & 0xFF;
+  }
+
+  return buf;
+}
+
 /**
  * 
  *       RADIATOR VALVE (TRV) - v5.6.0 + Bidirectional Buttons                  
@@ -89,8 +147,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       101: { capability: 'alarm_contact', transform: (v) => v === 1 || v === true },
       102: { capability: 'dim', divisor: 100 },
       103: { internal: true, type: 'boost_mode', writable: true },
-      104: { internal: true, type: 'temp_offset', divisor: 10, writable: true },
-      105: { internal: true, type: 'min_temp', divisor: 10, writable: true },
+      // Idea #22: Schedule DPs 104/105 (weekly schedule data)
+      104: { internal: true, type: 'schedule_weekday', writable: true, scheduleDP: true },
+      105: { internal: true, type: 'schedule_weekend', writable: true, scheduleDP: true },
       106: { internal: true, type: 'max_temp', divisor: 10, writable: true },
       107: { internal: true, type: 'away_mode', writable: true },
       108: { internal: true, type: 'away_temp', divisor: 10, writable: true },
@@ -143,6 +202,50 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         await this._sendTuyaDP(7, !currentLock, 'bool');
         this.setStoreValue('child_lock', !currentLock).catch(() => {});
       });
+    }
+  }
+
+  /**
+   * Idea #22: Handle schedule-related settings changes.
+   * DP 104 = weekday schedule, DP 105 = weekend schedule.
+   * Schedule format: "HH:MM/TT HH:MM/TT ..." (up to 10 periods).
+   */
+  _handleScheduleSettings(settings, keys) {
+    if (keys.includes('schedule_weekday')) {
+      const buf = encodeTRVSchedule(settings.schedule_weekday);
+      if (buf) {
+        this.log('[TRV] Sending weekday schedule:', settings.schedule_weekday);
+        this._sendTuyaDP(104, buf, 'raw').catch(e => this.error('[TRV] Schedule send failed:', e.message));
+      }
+    }
+    if (keys.includes('schedule_weekend')) {
+      const buf = encodeTRVSchedule(settings.schedule_weekend);
+      if (buf) {
+        this.log('[TRV] Sending weekend schedule:', settings.schedule_weekend);
+        this._sendTuyaDP(105, buf, 'raw').catch(e => this.error('[TRV] Schedule send failed:', e.message));
+      }
+    }
+    if (keys.includes('schedule_enabled')) {
+      const enabled = settings.schedule_enabled ? 1 : 0;
+      this.log('[TRV] Schedule mode:', enabled ? 'enabled' : 'disabled');
+      // DP 101 (alarm_contact / schedule mode) as schedule enable toggle
+      this._sendTuyaDP(101, enabled, 'value').catch(() => {});
+    }
+  }
+
+  /**
+   * Idea #22: Process incoming schedule DP values from the device.
+   * DP 104 = weekday schedule buffer, DP 105 = weekend schedule buffer.
+   */
+  _processScheduleDP(dp, value) {
+    if (dp === 104 && Buffer.isBuffer(value)) {
+      const decoded = decodeTRVSchedule(value);
+      this.log('[TRV] Weekday schedule received:', decoded);
+      this.setSettings({ schedule_weekday: decoded }).catch(() => {});
+    } else if (dp === 105 && Buffer.isBuffer(value)) {
+      const decoded = decodeTRVSchedule(value);
+      this.log('[TRV] Weekend schedule received:', decoded);
+      this.setSettings({ schedule_weekend: decoded }).catch(() => {});
     }
   }
 
@@ -199,6 +302,18 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     } catch (e) {}
   }
 
+
+  /**
+   * Idea #22: Handle settings changes including schedule updates
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    // Delegate schedule-related settings to the schedule handler
+    this._handleScheduleSettings(newSettings, changedKeys);
+    // Call parent onSettings if it exists
+    if (super.onSettings) {
+      await super.onSettings({ oldSettings, newSettings, changedKeys });
+    }
+  }
 
   /**
    * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)

@@ -10,7 +10,14 @@
     "alarm_motion",
     "onoff",
     "measure_luminance",
-    "measure_luminance.distance"
+    "measure_luminance.distance",
+    "alarm_motion.zone1",
+    "alarm_motion.zone2",
+    "alarm_motion.zone3",
+    "measure_luminance.distance.zone1",
+    "measure_luminance.distance.zone2",
+    "measure_luminance.distance.zone3",
+    "measure_motion.classification"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -25,6 +32,44 @@
       },
       "insightsTitleFalse": {
         "en": "Relay turned off"
+      }
+    },
+    "alarm_motion.zone1": {
+      "title": {
+        "en": "Zone 1 Presence"
+      }
+    },
+    "alarm_motion.zone2": {
+      "title": {
+        "en": "Zone 2 Presence"
+      }
+    },
+    "alarm_motion.zone3": {
+      "title": {
+        "en": "Zone 3 Presence"
+      }
+    },
+    "measure_luminance.distance.zone1": {
+      "title": {
+        "en": "Zone 1 Distance"
+      },
+      "units": { "en": "m" }
+    },
+    "measure_luminance.distance.zone2": {
+      "title": {
+        "en": "Zone 2 Distance"
+      },
+      "units": { "en": "m" }
+    },
+    "measure_luminance.distance.zone3": {
+      "title": {
+        "en": "Zone 3 Distance"
+      },
+      "units": { "en": "m" }
+    },
+    "measure_motion.classification": {
+      "title": {
+        "en": "Movement Classification"
       }
     }
   },

@@ -1,0 +1,3687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universal Tuya Zigbee - Coverage Map</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+    background: #0a0e17; color: #c9d1d9; padding: 20px;
+  }
+  h1 { color: #58a6ff; margin-bottom: 5px; }
+  h2 { color: #79c0ff; margin: 24px 0 12px; border-bottom: 1px solid #21262d; padding-bottom: 6px; }
+  .subtitle { color: #8b949e; margin-bottom: 20px; }
+  .summary-bar { display: flex; gap: 24px; margin: 16px 0; flex-wrap: wrap; }
+  .summary-item { font-size: 0.95em; }
+  .summary-item strong { color: #f0f6fc; }
+  .treemap { display: flex; flex-wrap: wrap; gap: 2px; margin: 16px 0; }
+  .treemap-cell {
+    border-radius: 6px; padding: 10px; text-align: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    min-height: 60px; transition: transform 0.15s;
+    cursor: default; overflow: hidden;
+  }
+  .treemap-cell:hover { transform: scale(1.03); z-index: 2; }
+  .treemap-num { font-size: 1.6em; font-weight: 700; color: #fff; }
+  .treemap-label { font-size: 0.75em; color: rgba(255,255,255,0.8); margin-top: 2px; }
+  .treemap-fp { font-size: 0.65em; color: rgba(255,255,255,0.6); }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #21262d; font-size: 0.9em; }
+  th { color: #79c0ff; }
+  .bar { height: 14px; background: #21262d; border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .health-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 0.8em; font-weight: 600; color: #fff;
+  }
+  .health-good { background: #238636; }
+  .health-mid { background: #9e6a03; }
+  .health-bad { background: #da3633; }
+  .tag { display: inline-block; padding: 1px 6px; border-radius: 10px; font-size: 0.75em; margin: 1px; }
+  .tag-err { background: #da3633; color: #fff; }
+  .tag-warn { background: #9e6a03; color: #fff; }
+  .tag-info { background: #1f6feb; color: #fff; }
+  .gap-list { max-height: 300px; overflow-y: auto; }
+  .gap-item { padding: 4px 0; border-left: 3px solid #30363d; padding-left: 8px; margin: 4px 0 4px 6px; }
+  .gap-err { border-color: #da3633; }
+  .gap-warn { border-color: #9e6a03; }
+  .gap-info { border-color: #1f6feb; }
+  .category-detail { margin: 12px 0; padding: 12px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; }
+  .category-detail h3 { color: #79c0ff; margin-bottom: 6px; }
+  .driver-chip {
+    display: inline-block; padding: 3px 8px; margin: 2px;
+    background: #21262d; border-radius: 4px; font-size: 0.8em;
+    border: 1px solid #30363d;
+  }
+  .driver-chip.issue { border-color: #da3633; }
+  pre { background: #161b22; padding: 12px; border-radius: 6px; border: 1px solid #30363d; font-size: 0.85em; overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<h1>Coverage Map</h1>
+<p class="subtitle">Universal Tuya Zigbee - Driver Category & Fingerprint Coverage | 2026-06-16 07:20:32</p>
+
+<div class="summary-bar">
+  <div class="summary-item"><strong>419</strong> drivers</div>
+  <div class="summary-item"><strong>0</strong> fingerprints</div>
+  <div class="summary-item"><strong>4203</strong> flow cards</div>
+  <div class="summary-item"><strong>21</strong> active categories</div>
+  <div class="summary-item"><strong>0</strong> errors</div>
+  <div class="summary-item"><strong>440</strong> warnings</div>
+</div>
+
+<!-- Treemap -->
+<h2>Visual Coverage Treemap</h2>
+<div class="treemap">
+  
+  <div class="treemap-cell" style="flex:1.9809069212410502;background:#58a6ff;min-width:80px">
+    <div class="treemap-num">83</div>
+    <div class="treemap-label">Sensors</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:1.5990453460620524;background:#3fb950;min-width:80px">
+    <div class="treemap-num">67</div>
+    <div class="treemap-label">Switches & Relays</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.954653937947494;background:#f85149;min-width:80px">
+    <div class="treemap-num">40</div>
+    <div class="treemap-label">Buttons & Remotes</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.9307875894988067;background:#f0883e;min-width:80px">
+    <div class="treemap-num">39</div>
+    <div class="treemap-label">Lights & Bulbs</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.8353221957040573;background:#6e7681;min-width:80px">
+    <div class="treemap-num">35</div>
+    <div class="treemap-label">Uncategorized</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.6443914081145585;background:#d29922;min-width:80px">
+    <div class="treemap-num">27</div>
+    <div class="treemap-label">Dimmers</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.6205250596658711;background:#3fb950;min-width:80px">
+    <div class="treemap-num">26</div>
+    <div class="treemap-label">Air Quality & Purifier</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5966587112171837;background:#3fb950;min-width:80px">
+    <div class="treemap-num">25</div>
+    <div class="treemap-label">Plugs & Outlets</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#ff7b72;min-width:80px">
+    <div class="treemap-num">16</div>
+    <div class="treemap-label">Climate & HVAC</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#8b949e;min-width:80px">
+    <div class="treemap-num">10</div>
+    <div class="treemap-label">Generic / Universal</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#bc8cff;min-width:80px">
+    <div class="treemap-num">9</div>
+    <div class="treemap-label">Covers & Blinds</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#79c0ff;min-width:80px">
+    <div class="treemap-num">8</div>
+    <div class="treemap-label">Valves</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#58a6ff;min-width:80px">
+    <div class="treemap-num">6</div>
+    <div class="treemap-label">Leak Sensors</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#58a6ff;min-width:80px">
+    <div class="treemap-num">6</div>
+    <div class="treemap-label">Energy Meters</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#58a6ff;min-width:80px">
+    <div class="treemap-num">5</div>
+    <div class="treemap-label">Door Controllers</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#79c0ff;min-width:80px">
+    <div class="treemap-num">4</div>
+    <div class="treemap-label">Fans</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#f85149;min-width:80px">
+    <div class="treemap-num">4</div>
+    <div class="treemap-label">Sirens & Alarms</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#d29922;min-width:80px">
+    <div class="treemap-num">3</div>
+    <div class="treemap-label">Locks</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#8b949e;min-width:80px">
+    <div class="treemap-num">3</div>
+    <div class="treemap-label">Gateways & Bridges</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#f85149;min-width:80px">
+    <div class="treemap-num">2</div>
+    <div class="treemap-label">Safety (Smoke/CO/Gas)</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+  <div class="treemap-cell" style="flex:0.5;background:#f0883e;min-width:80px">
+    <div class="treemap-num">1</div>
+    <div class="treemap-label">IR Blasters</div>
+    <div class="treemap-fp">0 FP</div>
+  </div>
+</div>
+
+<!-- Category Details Table -->
+<h2>Category Breakdown</h2>
+<table>
+  <thead>
+    <tr><th>Category</th><th>Drivers</th><th>Fingerprints</th><th>Flow Cards</th><th>Health</th><th>Coverage</th></tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#58a6ff;margin-right:6px;vertical-align:middle"></span>Sensors</td>
+      <td>83</td>
+      <td>0</td>
+      <td>674</td>
+      <td>
+        <span class="health-badge health-mid">55%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:100%;background:#58a6ff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3fb950;margin-right:6px;vertical-align:middle"></span>Switches & Relays</td>
+      <td>67</td>
+      <td>0</td>
+      <td>1158</td>
+      <td>
+        <span class="health-badge health-mid">51%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:80.72289156626506%;background:#3fb950"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f85149;margin-right:6px;vertical-align:middle"></span>Buttons & Remotes</td>
+      <td>40</td>
+      <td>0</td>
+      <td>552</td>
+      <td>
+        <span class="health-badge health-mid">59%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:48.19277108433735%;background:#f85149"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f0883e;margin-right:6px;vertical-align:middle"></span>Lights & Bulbs</td>
+      <td>39</td>
+      <td>0</td>
+      <td>257</td>
+      <td>
+        <span class="health-badge health-bad">48%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:46.98795180722892%;background:#f0883e"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#6e7681;margin-right:6px;vertical-align:middle"></span>Uncategorized</td>
+      <td>35</td>
+      <td>0</td>
+      <td>219</td>
+      <td>
+        <span class="health-badge health-mid">55%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:42.168674698795186%;background:#6e7681"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#d29922;margin-right:6px;vertical-align:middle"></span>Dimmers</td>
+      <td>27</td>
+      <td>0</td>
+      <td>257</td>
+      <td>
+        <span class="health-badge health-mid">50%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:32.53012048192771%;background:#d29922"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3fb950;margin-right:6px;vertical-align:middle"></span>Air Quality & Purifier</td>
+      <td>26</td>
+      <td>0</td>
+      <td>229</td>
+      <td>
+        <span class="health-badge health-mid">55%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:31.32530120481928%;background:#3fb950"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#3fb950;margin-right:6px;vertical-align:middle"></span>Plugs & Outlets</td>
+      <td>25</td>
+      <td>0</td>
+      <td>149</td>
+      <td>
+        <span class="health-badge health-bad">44%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:30.120481927710845%;background:#3fb950"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#ff7b72;margin-right:6px;vertical-align:middle"></span>Climate & HVAC</td>
+      <td>16</td>
+      <td>0</td>
+      <td>212</td>
+      <td>
+        <span class="health-badge health-mid">56%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:19.27710843373494%;background:#ff7b72"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#8b949e;margin-right:6px;vertical-align:middle"></span>Generic / Universal</td>
+      <td>10</td>
+      <td>0</td>
+      <td>56</td>
+      <td>
+        <span class="health-badge health-bad">45%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:12.048192771084338%;background:#8b949e"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#bc8cff;margin-right:6px;vertical-align:middle"></span>Covers & Blinds</td>
+      <td>9</td>
+      <td>0</td>
+      <td>89</td>
+      <td>
+        <span class="health-badge health-mid">60%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:10.843373493975903%;background:#bc8cff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#79c0ff;margin-right:6px;vertical-align:middle"></span>Valves</td>
+      <td>8</td>
+      <td>0</td>
+      <td>55</td>
+      <td>
+        <span class="health-badge health-mid">56%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:9.63855421686747%;background:#79c0ff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#58a6ff;margin-right:6px;vertical-align:middle"></span>Leak Sensors</td>
+      <td>6</td>
+      <td>0</td>
+      <td>40</td>
+      <td>
+        <span class="health-badge health-mid">55%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:7.228915662650602%;background:#58a6ff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#58a6ff;margin-right:6px;vertical-align:middle"></span>Energy Meters</td>
+      <td>6</td>
+      <td>0</td>
+      <td>53</td>
+      <td>
+        <span class="health-badge health-mid">60%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:7.228915662650602%;background:#58a6ff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#58a6ff;margin-right:6px;vertical-align:middle"></span>Door Controllers</td>
+      <td>5</td>
+      <td>0</td>
+      <td>42</td>
+      <td>
+        <span class="health-badge health-mid">60%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:6.024096385542169%;background:#58a6ff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#79c0ff;margin-right:6px;vertical-align:middle"></span>Fans</td>
+      <td>4</td>
+      <td>0</td>
+      <td>26</td>
+      <td>
+        <span class="health-badge health-mid">53%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:4.819277108433735%;background:#79c0ff"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f85149;margin-right:6px;vertical-align:middle"></span>Sirens & Alarms</td>
+      <td>4</td>
+      <td>0</td>
+      <td>34</td>
+      <td>
+        <span class="health-badge health-mid">53%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:4.819277108433735%;background:#f85149"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#d29922;margin-right:6px;vertical-align:middle"></span>Locks</td>
+      <td>3</td>
+      <td>0</td>
+      <td>19</td>
+      <td>
+        <span class="health-badge health-mid">60%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:3.614457831325301%;background:#d29922"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#8b949e;margin-right:6px;vertical-align:middle"></span>Gateways & Bridges</td>
+      <td>3</td>
+      <td>0</td>
+      <td>21</td>
+      <td>
+        <span class="health-badge health-mid">50%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:3.614457831325301%;background:#8b949e"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f85149;margin-right:6px;vertical-align:middle"></span>Safety (Smoke/CO/Gas)</td>
+      <td>2</td>
+      <td>0</td>
+      <td>29</td>
+      <td>
+        <span class="health-badge health-mid">60%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:2.4096385542168677%;background:#f85149"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f0883e;margin-right:6px;vertical-align:middle"></span>IR Blasters</td>
+      <td>1</td>
+      <td>0</td>
+      <td>32</td>
+      <td>
+        <span class="health-badge health-mid">60%</span>
+      </td>
+      <td>
+        <div class="bar" style="width:150px;display:inline-block;vertical-align:middle">
+          <div class="bar-fill" style="width:1.2048192771084338%;background:#f0883e"></div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Coverage Gaps -->
+<h2>Coverage Gaps (448 found)</h2>
+<div class="gap-list">
+  
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Soil Sensors" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Presence Sensors" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Motion Sensors" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Contact & Door/Window" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Light Sensors" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Ceiling Fans" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Holiday Lights" has no drivers</span>
+    </div>
+    <div class="gap-item gap-info">
+      <span class="tag tag-info">EMPTY_CATEGORY</span>
+      <span>Category "Bed Sensors" has no drivers</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>67 drivers in "Switches & Relays" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>27 drivers in "Dimmers" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>39 drivers in "Lights & Bulbs" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>83 drivers in "Sensors" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>25 drivers in "Plugs & Outlets" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>9 drivers in "Covers & Blinds" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>40 drivers in "Buttons & Remotes" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>16 drivers in "Climate & HVAC" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>3 drivers in "Locks" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>4 drivers in "Fans" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>1 drivers in "IR Blasters" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>3 drivers in "Gateways & Bridges" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>4 drivers in "Sirens & Alarms" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>26 drivers in "Air Quality & Purifier" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>2 drivers in "Safety (Smoke/CO/Gas)" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>6 drivers in "Leak Sensors" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>6 drivers in "Energy Meters" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>8 drivers in "Valves" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>5 drivers in "Door Controllers" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>10 drivers in "Generic / Universal" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>35 drivers in "Uncategorized" have zero fingerprints</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "contact_sensor_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_wall_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "din_rail_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "fingerbot_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "gas_sensor_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_switch_sensor" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "module_mini_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "motion_sensor_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "plug_smart_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "relay_board_1_channel" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "relay_board_2_channel" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "relay_board_4_channel" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "scene_switch_1" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "scene_switch_2" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "scene_switch_3" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "scene_switch_4" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "scene_switch_6" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "scene_switch_wall" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_button_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_knob_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sr_zs_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_1gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_1_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_1_gang_metering" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_2gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_2_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_2_gang_metering" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_3gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_3_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_4gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_4_gang_metering" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_dimmer_1gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_plug_1" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_plug_2" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_temp_sensor" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_usb_dongle" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_wall" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_wall_5gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_wall_6gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_wall_7gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_wall_8gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "switch_wireless" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_curtain_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_1gang_1way" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_1_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_1_gang_tuya" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_2gang_1way" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_2_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_3gang_1way" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_3_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_4gang_1way" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_4_gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_4_gang_tuya" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_5_gang_tuya" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_switch_6_gang_tuya" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_switch_2ch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_switch_4ch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_switch" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_switch_2gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_switch_3gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_switch_4gang" in "Switches & Relays": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_dimmable" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_dimmable_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "contact_sensor_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmable_led_strip" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmable_recessed_led" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_1_gang" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_1_gang_2" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_1_gang_tuya" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_2_gang" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_2_gang_tuya" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_3gang" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_air_purifier" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_bulb_dimmable" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_dual_channel" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_ts110e" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_wall_1gang" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_wall_plug" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "dimmer_wall_water" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "led_controller_dimmable" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "light_bulb_dimmable_tunable" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_dimmer_1gang_1way" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_dimmer_tuya" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_dimmer" in "Dimmers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_rgb" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_rgbw" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_rgbw_universal" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_rgb_led" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_rgb_rgbw" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_tunable_white" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bulb_white" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "christmas_lights" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_led" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_light_sensor" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_light_windowcoverings" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "led_controller_cct" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "led_controller_rgb" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "led_strip" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "led_strip_advanced" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "led_strip_rgbw" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "light_bulb_rgb" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "light_bulb_rgb_led" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "light_bulb_rgb_rgbw" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "light_bulb_tunable_white" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "light_sensor_outdoor" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "power_clamp_meter" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_bulb_E14" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_bulb_E27" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_ceiling_led_light" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_floor_led_light" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_led_light_bar" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_led_strip" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_led_strip_controller" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_mood_light" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_spot_GardenLight" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_spot_GU10" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rgb_wall_led_light" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "tunable_bulb_E14" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "tunable_bulb_E27" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_bulb" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_led" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_led_strip" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_light" in "Lights & Bulbs": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_lcdtemphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "bed_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_device" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_energy" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_gas" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_plug" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_presence" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "climate_sensor_smart" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "contact_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "contact_sensor_curtain" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "contact_sensor_plug" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "contact_sensor_zigbee" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "co_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "doorwindowsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "doorwindowsensor_2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "doorwindowsensor_3" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "doorwindowsensor_4" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "flood_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "formaldehyde_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "gas_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_fan_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_garage_door_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_sensor_thermostat" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "illuminance_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "lcdtemphumidluxsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "lcdtemphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "lcdtemphumidsensor_2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "lcdtemphumidsensor_3" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "lcdtemphumidsensor_plug_energy" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "motion_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "motion_sensor_2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "motion_sensor_radar_mmwave" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "pirsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "pir_mmwave_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "pir_sensor_2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "presence_sensor_ceiling" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "presence_sensor_radar" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radar_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radar_sensor_2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radar_sensor_ceiling" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "rain_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_climate_contact" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_climate_lcdtemphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_climate_motion" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_climate_presence" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_climate_smart" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_climate_temphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_climate" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_motion" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_plug" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_presence" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_rain" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_water" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_contact_zigbee" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_gas_presence" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_illuminance_presence" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_lcdtemphumidsensor_soil" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_lcdtemphumidsensor_temphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_motion_presence" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_motion_radar" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sensor_presence_radar" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "sirentemphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "siren_sirentemphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "slim_motion_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_door_window_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_motion_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smoke_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smoke_sensor2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smoke_sensor3" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "soilsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "soilsensor_2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "soil_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "temphumidsensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "temphumidsensor2" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "temphumidsensor3" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "temphumidsensor4" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "temphumidsensor5" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "vibration_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "water_leak_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "water_leak_sensor_tuya" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sensor" in "Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_plug_energy" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_plug_energy_monitor" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_plug_smart" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_plug_smart_water" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "double_power_point" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "double_power_point_2" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "outdoor_2_socket" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "outdoor_plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "plug_energy_monitor" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "plug_smart" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smartplug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smartplug_2_socket" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smartPlug_DinRail" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "socket_power_strip" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "socket_power_strip_four" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "socket_power_strip_four_three" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "socket_power_strip_four_two" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "usb_outlet_advanced" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_socket" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_plug" in "Plugs & Outlets": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_curtain" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "curtain_module" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "curtain_module_2_gang" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "curtain_motor" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "curtain_motor_shutter" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "curtain_motor_tilt" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "curtain_motor_wall" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "shutter_roller_controller" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_cover" in "Covers & Blinds": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "blaster_remote" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_emergency_sos" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_1" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_2" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_3" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_4" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_6" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_8" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_fingerbot" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_scene" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_smart" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_usb" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_valve" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "button_wireless_wall" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "handheld_remote_4_buttons" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "ir_remote" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_emergency_sos" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_fingerbot" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_handheld" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_scene" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_smart" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_usb" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_valve" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "remote_button_wireless_wall" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_knob" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_knob_rotary" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_remote_1_button" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_remote_1_button_2" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_remote_4_buttons" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_scene_panel" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_1_gang" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_2_gang" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_3_gang" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_4_gang" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_4_gang_2" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_4_gang_3" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_remote_6_gang" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ir_remote" in "Buttons & Remotes": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_climate" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_climate" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_floor_heating_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_radiator_valve_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "floor_heating_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hvac_air_conditioner" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hvac_controller" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hvac_dehumidifier" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "hybrid_heater_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_lcd_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "thermostatic_radiator_valve" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "thermostat_4ch" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "thermostat_tuya_dp" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wall_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_thermostat" in "Climate & HVAC": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "fingerprint_lock" in "Locks": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "lock_smart" in "Locks": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_door_lock" in "Locks": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "ceiling_fan" in "Fans": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "fan_controller" in "Fans": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_fan" in "Fans": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_fan" in "Fans": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "ir_blaster" in "IR Blasters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "gateway_zigbee_bridge" in "Gateways & Bridges": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "usb_dongle_dual_repeater" in "Gateways & Bridges": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "zigbee_repeater" in "Gateways & Bridges": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_siren" in "Sirens & Alarms": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_siren" in "Sirens & Alarms": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "siren" in "Sirens & Alarms": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_siren" in "Sirens & Alarms": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_contact" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_din" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_motion" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_presence" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_quality" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_purifier_soil" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_quality_co2" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "air_quality_comprehensive" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_din" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_floor" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_humidifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_motion" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_presence" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_quality" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_radiator" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_smart" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_smoke" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_soil" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_air_purifier_water" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "humidifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_air_purifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_air_quality" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_dehumidifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_humidifier" in "Air Quality & Purifier": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "gas_detector" in "Safety (Smoke/CO/Gas)": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smoke_detector_advanced" in "Safety (Smoke/CO/Gas)": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "water_detector" in "Leak Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "water_tank_monitor" in "Leak Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "water_valve_garden" in "Leak Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "water_valve_smart" in "Leak Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_water_tank_monitor" in "Leak Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_water_valve" in "Leak Sensors": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_din_rail" in "Energy Meters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_din_rail_meter" in "Energy Meters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "din_rail_meter" in "Energy Meters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "energy_meter_3phase" in "Energy Meters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "power_meter" in "Energy Meters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_power_strip" in "Energy Meters": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_radiator_valve" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_radiator_valve_smart" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radiator_valve" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radiator_valve_zigbee" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "valvecontroller" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "valve_dual_irrigation" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "valve_irrigation" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "valve_single" in "Valves": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "door_controller" in "Door Controllers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "door_controller_garage" in "Door Controllers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "garage_door" in "Door Controllers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "garage_door_opener" in "Door Controllers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_garage_door" in "Door Controllers": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_generic_diy_universal" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_generic_tuya" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_generic_tuya_universal" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "diy_custom_zigbee" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "generic_diy" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "generic_tuya" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "tuya_dummy_device" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "universal_fallback" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "universal_zigbee" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_generic" in "Generic / Universal": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "device_floor_heating" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "doorbell" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "fingerbot" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "pet_feeder" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "pet_feeder_zigbee" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "pool_pump" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radiator_controller" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "radiator_wifi_tuya" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_air_detection_box" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_breaker" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_garden_irrigation_control" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_heater" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_heater_controller" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "smart_rcbo" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "tunable_spot_GU10" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "usb_dongle_triple" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "weather_station_outdoor" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_camera" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_doorbell" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_pow" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_ewelink_th" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_heater" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_pet_feeder" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_robot_vacuum" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_basicr4" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_dualr3" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_micro" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_minir3" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_minir4" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_pow_elite" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_smate2" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_thr316d" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_tx_1ch" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_tx_2ch" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+    <div class="gap-item gap-warn">
+      <span class="tag tag-warn">NO_FINGERPRINTS</span>
+      <span>Driver "wifi_sonoff_tx_3ch" in "Uncategorized": NO_FINGERPRINTS</span>
+    </div>
+</div>
+
+<!-- Per-Category Driver Lists -->
+<h2>Driver Details by Category</h2>
+
+<div class="category-detail">
+  <h3><span style="color:#58a6ff">&#9632;</span> Sensors (83 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier_lcdtemphumidsensor: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_lcdtemphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_sensor: 0 FP, 23 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bed_sensor: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      bed_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_device: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_device <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_energy: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_energy <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_gas: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_gas <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_plug: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_smart: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="contact_sensor: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      contact_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="contact_sensor_curtain: 0 FP, 18 flow cards | ISSUES: NO_FINGERPRINTS">
+      contact_sensor_curtain <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="contact_sensor_plug: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      contact_sensor_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="contact_sensor_zigbee: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      contact_sensor_zigbee <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="co_sensor: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      co_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="doorwindowsensor: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      doorwindowsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="doorwindowsensor_2: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      doorwindowsensor_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="doorwindowsensor_3: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      doorwindowsensor_3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="doorwindowsensor_4: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      doorwindowsensor_4 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="flood_sensor: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      flood_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="formaldehyde_sensor: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      formaldehyde_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="gas_sensor: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      gas_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_fan_sensor: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_fan_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_garage_door_sensor: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_garage_door_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_sensor_thermostat: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_sensor_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="illuminance_sensor: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      illuminance_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="lcdtemphumidluxsensor: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      lcdtemphumidluxsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="lcdtemphumidsensor: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      lcdtemphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="lcdtemphumidsensor_2: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      lcdtemphumidsensor_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="lcdtemphumidsensor_3: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      lcdtemphumidsensor_3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="lcdtemphumidsensor_plug_energy: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      lcdtemphumidsensor_plug_energy <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="motion_sensor: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      motion_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="motion_sensor_2: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      motion_sensor_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="motion_sensor_radar_mmwave: 0 FP, 23 flow cards | ISSUES: NO_FINGERPRINTS">
+      motion_sensor_radar_mmwave <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="pirsensor: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      pirsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="pir_mmwave_sensor: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      pir_mmwave_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="pir_sensor_2: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      pir_sensor_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="presence_sensor_ceiling: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      presence_sensor_ceiling <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="presence_sensor_radar: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      presence_sensor_radar <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radar_sensor: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      radar_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radar_sensor_2: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      radar_sensor_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radar_sensor_ceiling: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      radar_sensor_ceiling <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rain_sensor: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      rain_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_climate_contact: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_climate_contact <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_climate_lcdtemphumidsensor: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_climate_lcdtemphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_climate_motion: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_climate_motion <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_climate_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_climate_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_climate_smart: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_climate_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_climate_temphumidsensor: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_climate_temphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_climate: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_climate <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_motion: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_motion <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_plug: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_rain: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_rain <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_water: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_water <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_contact_zigbee: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_contact_zigbee <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_gas_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_gas_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_illuminance_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_illuminance_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_lcdtemphumidsensor_soil: 0 FP, 17 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_lcdtemphumidsensor_soil <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_lcdtemphumidsensor_temphumidsensor: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_lcdtemphumidsensor_temphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_motion_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_motion_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_motion_radar: 0 FP, 23 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_motion_radar <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sensor_presence_radar: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      sensor_presence_radar <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sirentemphumidsensor: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      sirentemphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="siren_sirentemphumidsensor: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      siren_sirentemphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="slim_motion_sensor: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      slim_motion_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_door_window_sensor: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_door_window_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_motion_sensor: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_motion_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smoke_sensor: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      smoke_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smoke_sensor2: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      smoke_sensor2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smoke_sensor3: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      smoke_sensor3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="soilsensor: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      soilsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="soilsensor_2: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      soilsensor_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="soil_sensor: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      soil_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="temphumidsensor: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      temphumidsensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="temphumidsensor2: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      temphumidsensor2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="temphumidsensor3: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      temphumidsensor3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="temphumidsensor4: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      temphumidsensor4 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="temphumidsensor5: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      temphumidsensor5 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="vibration_sensor: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      vibration_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="water_leak_sensor: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      water_leak_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="water_leak_sensor_tuya: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      water_leak_sensor_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sensor: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sensor <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#3fb950">&#9632;</span> Switches & Relays (67 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier_switch: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_switch: 0 FP, 29 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_switch: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="contact_sensor_switch: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      contact_sensor_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_wall_switch: 0 FP, 29 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_wall_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="din_rail_switch: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      din_rail_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="fingerbot_switch: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      fingerbot_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="gas_sensor_switch: 0 FP, 65 flow cards | ISSUES: NO_FINGERPRINTS">
+      gas_sensor_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_switch_sensor: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_switch_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="module_mini_switch: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      module_mini_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="motion_sensor_switch: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      motion_sensor_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="plug_smart_switch: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      plug_smart_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="relay_board_1_channel: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      relay_board_1_channel <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="relay_board_2_channel: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      relay_board_2_channel <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="relay_board_4_channel: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      relay_board_4_channel <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="scene_switch_1: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      scene_switch_1 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="scene_switch_2: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      scene_switch_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="scene_switch_3: 0 FP, 19 flow cards | ISSUES: NO_FINGERPRINTS">
+      scene_switch_3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="scene_switch_4: 0 FP, 45 flow cards | ISSUES: NO_FINGERPRINTS">
+      scene_switch_4 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="scene_switch_6: 0 FP, 34 flow cards | ISSUES: NO_FINGERPRINTS">
+      scene_switch_6 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="scene_switch_wall: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      scene_switch_wall <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_button_switch: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_button_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_knob_switch: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_knob_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_switch: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smart_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="sr_zs_switch: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      sr_zs_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch: 0 FP, 30 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_1gang: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_1gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_1_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      switch_1_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_1_gang_metering: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      switch_1_gang_metering <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_2gang: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_2gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_2_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      switch_2_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_2_gang_metering: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      switch_2_gang_metering <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_3gang: 0 FP, 24 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_3gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_3_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      switch_3_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_4gang: 0 FP, 32 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_4gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_4_gang_metering: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      switch_4_gang_metering <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_dimmer_1gang: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_dimmer_1gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_plug_1: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_plug_1 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_plug_2: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_plug_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_temp_sensor: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_temp_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_usb_dongle: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_usb_dongle <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_wall: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_wall <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_wall_5gang: 0 FP, 77 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_wall_5gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_wall_6gang: 0 FP, 90 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_wall_6gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_wall_7gang: 0 FP, 103 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_wall_7gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_wall_8gang: 0 FP, 116 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_wall_8gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="switch_wireless: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      switch_wireless <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_curtain_switch: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_curtain_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_1gang_1way: 0 FP, 19 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_switch_1gang_1way <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_1_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_1_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_1_gang_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_1_gang_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_2gang_1way: 0 FP, 24 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_switch_2gang_1way <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_2_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_2_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_3gang_1way: 0 FP, 30 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_switch_3gang_1way <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_3_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_3_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_4gang_1way: 0 FP, 38 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_switch_4gang_1way <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_4_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_4_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_4_gang_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_4_gang_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_5_gang_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_5_gang_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_switch_6_gang_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_switch_6_gang_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_switch: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_switch_2ch: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_switch_2ch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_switch_4ch: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_switch_4ch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_switch: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_switch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_switch_2gang: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_switch_2gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_switch_3gang: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_switch_3gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_switch_4gang: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_switch_4gang <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#f85149">&#9632;</span> Buttons & Remotes (40 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="blaster_remote: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      blaster_remote <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_emergency_sos: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_emergency_sos <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_1: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_1 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_2: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_3: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_4: 0 FP, 25 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_4 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_6: 0 FP, 35 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_6 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_8: 0 FP, 45 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_8 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_fingerbot: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_fingerbot <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_scene: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_scene <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_smart: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_usb: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_usb <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_valve: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_valve <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="button_wireless_wall: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_wall <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="handheld_remote_4_buttons: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      handheld_remote_4_buttons <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="ir_remote: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      ir_remote <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_emergency_sos: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_emergency_sos <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_fingerbot: 0 FP, 21 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_fingerbot <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_handheld: 0 FP, 25 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_handheld <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_scene: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_scene <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_smart: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_usb: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_usb <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_valve: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_valve <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_wall: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_wall <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_knob: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smart_knob <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_knob_rotary: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_knob_rotary <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_remote_1_button: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_remote_1_button <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_remote_1_button_2: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_remote_1_button_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_remote_4_buttons: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_remote_4_buttons <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_scene_panel: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_scene_panel <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_1_gang: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_1_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_2_gang: 0 FP, 1 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_2_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_3_gang: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_3_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_4_gang: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_4_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_4_gang_2: 0 FP, 1 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_4_gang_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_4_gang_3: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_4_gang_3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_remote_6_gang: 0 FP, 30 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_remote_6_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ir_remote: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_ir_remote <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#f0883e">&#9632;</span> Lights & Bulbs (39 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="bulb_rgb: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_rgb <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_rgbw: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_rgbw <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_rgbw_universal: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      bulb_rgbw_universal <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_rgb_led: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_rgb_led <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_rgb_rgbw: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_rgb_rgbw <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_tunable_white: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_tunable_white <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_white: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_white <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="christmas_lights: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      christmas_lights <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_led: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_led <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_light_sensor: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_light_sensor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_light_windowcoverings: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_light_windowcoverings <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="led_controller_cct: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      led_controller_cct <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="led_controller_rgb: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      led_controller_rgb <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="led_strip: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      led_strip <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="led_strip_advanced: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      led_strip_advanced <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="led_strip_rgbw: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      led_strip_rgbw <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="light_bulb_rgb: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      light_bulb_rgb <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="light_bulb_rgb_led: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      light_bulb_rgb_led <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="light_bulb_rgb_rgbw: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      light_bulb_rgb_rgbw <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="light_bulb_tunable_white: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      light_bulb_tunable_white <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="light_sensor_outdoor: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      light_sensor_outdoor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="power_clamp_meter: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      power_clamp_meter <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_bulb_E14: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_bulb_E14 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_bulb_E27: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_bulb_E27 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_ceiling_led_light: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_ceiling_led_light <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_floor_led_light: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_floor_led_light <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_led_light_bar: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_led_light_bar <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_led_strip: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_led_strip <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_led_strip_controller: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_led_strip_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_mood_light: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_mood_light <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_spot_GardenLight: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_spot_GardenLight <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_spot_GU10: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_spot_GU10 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="rgb_wall_led_light: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      rgb_wall_led_light <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="tunable_bulb_E14: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      tunable_bulb_E14 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="tunable_bulb_E27: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      tunable_bulb_E27 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_bulb: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_bulb <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_led: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_led <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_led_strip: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_led_strip <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_light: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_light <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#6e7681">&#9632;</span> Uncategorized (35 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="device_floor_heating: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      device_floor_heating <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="doorbell: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      doorbell <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="fingerbot: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      fingerbot <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="pet_feeder: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      pet_feeder <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="pet_feeder_zigbee: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      pet_feeder_zigbee <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="pool_pump: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      pool_pump <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radiator_controller: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      radiator_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radiator_wifi_tuya: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      radiator_wifi_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_air_detection_box: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smart_air_detection_box <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_breaker: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_breaker <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_garden_irrigation_control: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smart_garden_irrigation_control <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_heater: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_heater <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_heater_controller: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_heater_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_rcbo: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_rcbo <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="tunable_spot_GU10: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      tunable_spot_GU10 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="usb_dongle_triple: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      usb_dongle_triple <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="weather_station_outdoor: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      weather_station_outdoor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_camera: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_camera <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_doorbell: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_doorbell <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_pow: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_pow <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_th: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_th <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_heater: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_heater <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_pet_feeder: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_pet_feeder <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_robot_vacuum: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_robot_vacuum <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_basicr4: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_basicr4 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_dualr3: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_dualr3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_micro: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_micro <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_minir3: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_minir3 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_minir4: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_minir4 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_pow_elite: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_pow_elite <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_smate2: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_smate2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_thr316d: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_thr316d <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_tx_1ch: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_tx_1ch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_tx_2ch: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_tx_2ch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_sonoff_tx_3ch: 0 FP, 18 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_sonoff_tx_3ch <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#d29922">&#9632;</span> Dimmers (27 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier_dimmer: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_dimmable: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_dimmable <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="bulb_dimmable_dimmer: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      bulb_dimmable_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="climate_sensor_dimmer: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      climate_sensor_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="contact_sensor_dimmer: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      contact_sensor_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmable_led_strip: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmable_led_strip <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmable_recessed_led: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmable_recessed_led <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_1_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmer_1_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_1_gang_2: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmer_1_gang_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_1_gang_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmer_1_gang_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_2_gang: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmer_2_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_2_gang_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmer_2_gang_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_3gang: 0 FP, 19 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_3gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_air_purifier: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_air_purifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_bulb_dimmable: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_bulb_dimmable <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_dual_channel: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_dual_channel <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_ts110e: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      dimmer_ts110e <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_wall_1gang: 0 FP, 22 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_wall_1gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_wall_plug: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_wall_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="dimmer_wall_water: 0 FP, 20 flow cards | ISSUES: NO_FINGERPRINTS">
+      dimmer_wall_water <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="led_controller_dimmable: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      led_controller_dimmable <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="light_bulb_dimmable_tunable: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      light_bulb_dimmable_tunable <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_dimmer: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_dimmer_1gang_1way: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      wall_dimmer_1gang_1way <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_dimmer_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_dimmer_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_dimmer: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_dimmer: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_dimmer <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#3fb950">&#9632;</span> Air Quality & Purifier (26 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_contact: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_contact <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_din: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_din <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_motion: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_motion <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_quality: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_quality <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_purifier_soil: 0 FP, 17 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_soil <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_quality_co2: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_quality_co2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="air_quality_comprehensive: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_quality_comprehensive <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier: 0 FP, 28 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_din: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_din <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_floor: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      device_air_purifier_floor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_humidifier: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_humidifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_motion: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_motion <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_presence: 0 FP, 11 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_presence <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_quality: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_quality <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_radiator: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_radiator <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_smart: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      device_air_purifier_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_smoke: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_smoke <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_soil: 0 FP, 17 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_soil <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_water: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_water <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="humidifier: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      humidifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_air_purifier: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_air_purifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_air_quality: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_air_quality <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_dehumidifier: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_dehumidifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_humidifier: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_humidifier <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#3fb950">&#9632;</span> Plugs & Outlets (25 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="button_wireless_plug: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      button_wireless_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_plug: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_plug_energy: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_plug_energy <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_plug_energy_monitor: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_plug_energy_monitor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_plug_smart: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_plug_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_plug_smart_water: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_plug_smart_water <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="double_power_point: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      double_power_point <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="double_power_point_2: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      double_power_point_2 <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="outdoor_2_socket: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      outdoor_2_socket <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="outdoor_plug: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      outdoor_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="plug: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="plug_energy_monitor: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      plug_energy_monitor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="plug_smart: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      plug_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="remote_button_wireless_plug: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      remote_button_wireless_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smartplug: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smartplug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smartplug_2_socket: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smartplug_2_socket <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smartPlug_DinRail: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      smartPlug_DinRail <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="socket_power_strip: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      socket_power_strip <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="socket_power_strip_four: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      socket_power_strip_four <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="socket_power_strip_four_three: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      socket_power_strip_four_three <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="socket_power_strip_four_two: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      socket_power_strip_four_two <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="usb_outlet_advanced: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      usb_outlet_advanced <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_socket: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_socket <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_plug: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_plug <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_plug: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_plug <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#ff7b72">&#9632;</span> Climate & HVAC (16 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier_climate: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_climate <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_climate: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_climate <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_thermostat: 0 FP, 28 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_floor_heating_thermostat: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      device_floor_heating_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_radiator_valve_thermostat: 0 FP, 28 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_radiator_valve_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="floor_heating_thermostat: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      floor_heating_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hvac_air_conditioner: 0 FP, 18 flow cards | ISSUES: NO_FINGERPRINTS">
+      hvac_air_conditioner <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hvac_controller: 0 FP, 13 flow cards | ISSUES: NO_FINGERPRINTS">
+      hvac_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hvac_dehumidifier: 0 FP, 24 flow cards | ISSUES: NO_FINGERPRINTS">
+      hvac_dehumidifier <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="hybrid_heater_thermostat: 0 FP, 13 flow cards | ISSUES: NO_FINGERPRINTS">
+      hybrid_heater_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smart_lcd_thermostat: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      smart_lcd_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="thermostatic_radiator_valve: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      thermostatic_radiator_valve <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="thermostat_4ch: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      thermostat_4ch <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="thermostat_tuya_dp: 0 FP, 28 flow cards | ISSUES: NO_FINGERPRINTS">
+      thermostat_tuya_dp <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wall_thermostat: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wall_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_thermostat: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_thermostat <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#8b949e">&#9632;</span> Generic / Universal (10 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="device_generic_diy_universal: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      device_generic_diy_universal <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_generic_tuya: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      device_generic_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_generic_tuya_universal: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_generic_tuya_universal <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="diy_custom_zigbee: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      diy_custom_zigbee <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="generic_diy: 0 FP, 28 flow cards | ISSUES: NO_FINGERPRINTS">
+      generic_diy <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="generic_tuya: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      generic_tuya <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="tuya_dummy_device: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      tuya_dummy_device <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="universal_fallback: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      universal_fallback <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="universal_zigbee: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      universal_zigbee <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_generic: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_generic <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#bc8cff">&#9632;</span> Covers & Blinds (9 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier_curtain: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      air_purifier_curtain <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="curtain_module: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      curtain_module <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="curtain_module_2_gang: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      curtain_module_2_gang <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="curtain_motor: 0 FP, 17 flow cards | ISSUES: NO_FINGERPRINTS">
+      curtain_motor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="curtain_motor_shutter: 0 FP, 18 flow cards | ISSUES: NO_FINGERPRINTS">
+      curtain_motor_shutter <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="curtain_motor_tilt: 0 FP, 8 flow cards | ISSUES: NO_FINGERPRINTS">
+      curtain_motor_tilt <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="curtain_motor_wall: 0 FP, 18 flow cards | ISSUES: NO_FINGERPRINTS">
+      curtain_motor_wall <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="shutter_roller_controller: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      shutter_roller_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_cover: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_cover <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#79c0ff">&#9632;</span> Valves (8 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="device_radiator_valve: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_radiator_valve <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_radiator_valve_smart: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_radiator_valve_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radiator_valve: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      radiator_valve <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="radiator_valve_zigbee: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      radiator_valve_zigbee <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="valvecontroller: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      valvecontroller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="valve_dual_irrigation: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      valve_dual_irrigation <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="valve_irrigation: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      valve_irrigation <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="valve_single: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      valve_single <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#58a6ff">&#9632;</span> Leak Sensors (6 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="water_detector: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      water_detector <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="water_tank_monitor: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      water_tank_monitor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="water_valve_garden: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      water_valve_garden <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="water_valve_smart: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      water_valve_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_water_tank_monitor: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_water_tank_monitor <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_water_valve: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_water_valve <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#58a6ff">&#9632;</span> Energy Meters (6 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="device_din_rail: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_din_rail <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_din_rail_meter: 0 FP, 24 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_din_rail_meter <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="din_rail_meter: 0 FP, 6 flow cards | ISSUES: NO_FINGERPRINTS">
+      din_rail_meter <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="energy_meter_3phase: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      energy_meter_3phase <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="power_meter: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      power_meter <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_power_strip: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_power_strip <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#58a6ff">&#9632;</span> Door Controllers (5 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="door_controller: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      door_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="door_controller_garage: 0 FP, 16 flow cards | ISSUES: NO_FINGERPRINTS">
+      door_controller_garage <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="garage_door: 0 FP, 2 flow cards | ISSUES: NO_FINGERPRINTS">
+      garage_door <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="garage_door_opener: 0 FP, 5 flow cards | ISSUES: NO_FINGERPRINTS">
+      garage_door_opener <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_garage_door: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_garage_door <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#79c0ff">&#9632;</span> Fans (4 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="ceiling_fan: 0 FP, 10 flow cards | ISSUES: NO_FINGERPRINTS">
+      ceiling_fan <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="fan_controller: 0 FP, 12 flow cards | ISSUES: NO_FINGERPRINTS">
+      fan_controller <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_ewelink_fan: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_ewelink_fan <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_fan: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      wifi_fan <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#f85149">&#9632;</span> Sirens & Alarms (4 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="air_purifier_siren: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      air_purifier_siren <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="device_air_purifier_siren: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      device_air_purifier_siren <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="siren: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      siren <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_siren: 0 FP, 4 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_siren <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#d29922">&#9632;</span> Locks (3 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="fingerprint_lock: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      fingerprint_lock <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="lock_smart: 0 FP, 9 flow cards | ISSUES: NO_FINGERPRINTS">
+      lock_smart <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="wifi_door_lock: 0 FP, 3 flow cards | ISSUES: NO_FINGERPRINTS">
+      wifi_door_lock <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#8b949e">&#9632;</span> Gateways & Bridges (3 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="gateway_zigbee_bridge: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      gateway_zigbee_bridge <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="usb_dongle_dual_repeater: 0 FP, 7 flow cards | ISSUES: NO_FINGERPRINTS">
+      usb_dongle_dual_repeater <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="zigbee_repeater: 0 FP, 0 flow cards | ISSUES: NO_FINGERPRINTS, NO_FLOW_CARDS">
+      zigbee_repeater <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#f85149">&#9632;</span> Safety (Smoke/CO/Gas) (2 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="gas_detector: 0 FP, 15 flow cards | ISSUES: NO_FINGERPRINTS">
+      gas_detector <span style="color:#f85149">[0]</span>
+    </span>
+    <span class="driver-chip issue" title="smoke_detector_advanced: 0 FP, 14 flow cards | ISSUES: NO_FINGERPRINTS">
+      smoke_detector_advanced <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+<div class="category-detail">
+  <h3><span style="color:#f0883e">&#9632;</span> IR Blasters (1 drivers, 0 FP)</h3>
+  <div>
+    
+    <span class="driver-chip issue" title="ir_blaster: 0 FP, 32 flow cards | ISSUES: NO_FINGERPRINTS">
+      ir_blaster <span style="color:#f85149">[0]</span>
+    </span>
+  </div>
+</div>
+
+<pre>
+=== Coverage Map Summary ===
+Total Drivers: 419
+Total Fingerprints: 0
+Active Categories: 21/29
+Gaps: 0 errors, 440 warnings
+Generated: 2026-06-16 07:20:32
+</pre>
+
+</body>
+</html>

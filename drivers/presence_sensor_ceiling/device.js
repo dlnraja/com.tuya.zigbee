@@ -40,6 +40,23 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       }
     }
 
+    // Idea #21: Add multi-zone capabilities for ceiling sensors
+    const zoneCaps = [
+      'alarm_motion.zone1',
+      'alarm_motion.zone2',
+      'alarm_motion.zone3',
+      'measure_luminance.distance.zone1',
+      'measure_luminance.distance.zone2',
+      'measure_luminance.distance.zone3',
+      'measure_motion.classification',
+    ];
+    for (const cap of zoneCaps) {
+      if (!this.hasCapability(cap)) {
+        await this.addCapability(cap).catch(() => {});
+      }
+    }
+    this._zoneState = { 1: false, 2: false, 3: false };
+
     // Register onoff capability listener for relay control
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[CEILING] Relay control: ${value}`);
@@ -81,6 +98,33 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
           return this.triggerCapabilityListener('onoff', value).catch(() => {});
         }
         break;
+
+      // Idea #21: Multi-zone DPs for ceiling mmWave sensors
+      case 13: // Zone 1 presence
+      case 14: // Zone 2 presence
+      case 15: // Zone 3 presence
+        const zoneNum = dpId - 12; // DP13->zone1, DP14->zone2, DP15->zone3
+        const zonePresence = value === 1 || value === true;
+        this._zoneState[zoneNum] = zonePresence;
+        await this.setCapabilityValue(`alarm_motion.zone${zoneNum}`, zonePresence).catch(() => {});
+        this.log(`[CEILING] Zone ${zoneNum} presence: ${zonePresence}`);
+        return;
+
+      case 16: // Zone 1 distance
+      case 17: // Zone 2 distance
+      case 18: // Zone 3 distance
+        const distZoneNum = dpId - 15; // DP16->zone1, DP17->zone2, DP18->zone3
+        const zoneDistance = smartParse(value, null, { capability: `measure_luminance.distance.zone${distZoneNum}` });
+        await this.setCapabilityValue(`measure_luminance.distance.zone${distZoneNum}`, zoneDistance).catch(() => {});
+        this.log(`[CEILING] Zone ${distZoneNum} distance: ${zoneDistance}m`);
+        return;
+
+      case 19: // Movement classification
+        const MOVEMENT_LABELS = ['none', 'stationary', 'micro_motion', 'small_motion', 'large_motion'];
+        const classification = MOVEMENT_LABELS[value] || 'unknown';
+        await this.setCapabilityValue('measure_motion.classification', classification).catch(() => {});
+        this.log(`[CEILING] Movement classification: ${classification}`);
+        return;
     }
 
     // 2. Fallback: Intelligent Auto-Discovery
