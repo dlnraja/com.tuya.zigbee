@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.36",
+  "version": "9.0.37",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -21036,6 +21036,270 @@
         }
       },
       {
+        "id": "doorwindowsensor_alarm_contact_true",
+        "title": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_alarm_contact_false",
+        "title": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "doorwindowsensor_2_alarm_contact_true",
+        "title": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_2_alarm_contact_false",
+        "title": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_2_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "doorwindowsensor_3_alarm_contact_true",
+        "title": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_3_alarm_contact_false",
+        "title": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_3_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "doorwindowsensor_4_alarm_contact_true",
+        "title": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_4_alarm_contact_false",
+        "title": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_4_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
         "id": "energy_meter_3phase_power_changed",
         "title": {
           "en": "Power changed",
@@ -21683,6 +21947,72 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=fingerprint_lock"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "flood_sensor_alarm_water_true",
+        "title": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlekkage gedetecteerd",
+          "de": "Wasserleck erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flood_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlekkage gedetecteerd",
+          "de": "Wasserleck erkannt"
+        }
+      },
+      {
+        "id": "flood_sensor_alarm_water_false",
+        "title": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau résolue",
+          "nl": "Waterlekkage opgelost",
+          "de": "Wasserleck behoben"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flood_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau résolue",
+          "nl": "Waterlekkage opgelost",
+          "de": "Wasserleck behoben"
+        }
+      },
+      {
+        "id": "flood_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flood_sensor"
           }
         ],
         "titleFormatted": {
@@ -28094,6 +28424,138 @@
           "fr": "Alarme anti-sabotage déclenchée",
           "nl": "Sabotage alarm geactiveerd",
           "de": "Manipulationsalarm ausgelöst"
+        }
+      },
+      {
+        "id": "pir_sensor_2_alarm_motion_true",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_sensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        }
+      },
+      {
+        "id": "pir_sensor_2_alarm_motion_false",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_sensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        }
+      },
+      {
+        "id": "pir_sensor_2_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_sensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "pirsensor_alarm_motion_true",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pirsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        }
+      },
+      {
+        "id": "pirsensor_alarm_motion_false",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pirsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        }
+      },
+      {
+        "id": "pirsensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pirsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
         }
       },
       {
@@ -40599,6 +41061,72 @@
         ]
       },
       {
+        "id": "slim_motion_sensor_alarm_motion_true",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=slim_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        }
+      },
+      {
+        "id": "slim_motion_sensor_alarm_motion_false",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=slim_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        }
+      },
+      {
+        "id": "slim_motion_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=slim_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
         "id": "smart_breaker_turned_on",
         "title": {
           "en": "Turned on",
@@ -40753,6 +41281,72 @@
             "filter": "driver_id=smart_button_switch"
           }
         ]
+      },
+      {
+        "id": "smart_door_window_sensor_alarm_contact_true",
+        "title": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_door_window_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact detected (opened)",
+          "fr": "Contact détecté (ouvert)",
+          "nl": "Contact gedetecteerd (geopend)",
+          "de": "Kontakt erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "smart_door_window_sensor_alarm_contact_false",
+        "title": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_door_window_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact cleared (closed)",
+          "fr": "Contact libéré (fermé)",
+          "nl": "Contact vrijgegeven (gesloten)",
+          "de": "Kontakt freigegeben (geschlossen)"
+        }
+      },
+      {
+        "id": "smart_door_window_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_door_window_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
       },
       {
         "id": "smart_heater_turned_on",
@@ -41441,6 +42035,116 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "smart_motion_sensor_alarm_motion_true",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        }
+      },
+      {
+        "id": "smart_motion_sensor_alarm_motion_false",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging beëindigd",
+          "de": "Bewegung beendet"
+        }
+      },
+      {
+        "id": "smart_motion_sensor_alarm_tamper_true",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotagealarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotagealarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        }
+      },
+      {
+        "id": "smart_motion_sensor_alarm_tamper_false",
+        "title": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme sabotage effacée",
+          "nl": "Sabotagealarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme sabotage effacée",
+          "nl": "Sabotagealarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        }
+      },
+      {
+        "id": "smart_motion_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_motion_sensor"
           }
         ],
         "titleFormatted": {
@@ -42415,6 +43119,292 @@
           "fr": "Alarme sabotage",
           "nl": "Sabotagealarm",
           "de": "Manipulationsalarm"
+        }
+      },
+      {
+        "id": "smoke_sensor_alarm_smoke_true",
+        "title": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        }
+      },
+      {
+        "id": "smoke_sensor_alarm_smoke_false",
+        "title": {
+          "en": "Smoke cleared",
+          "fr": "Fumée dissipée",
+          "nl": "Rook verdwenen",
+          "de": "Rauch verschwunden"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke cleared",
+          "fr": "Fumée dissipée",
+          "nl": "Rook verdwenen",
+          "de": "Rauch verschwunden"
+        }
+      },
+      {
+        "id": "smoke_sensor_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "smoke_sensor2_alarm_smoke_true",
+        "title": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        }
+      },
+      {
+        "id": "smoke_sensor2_alarm_smoke_false",
+        "title": {
+          "en": "Smoke cleared",
+          "fr": "Fumée dissipée",
+          "nl": "Rook verdwenen",
+          "de": "Rauch verschwunden"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke cleared",
+          "fr": "Fumée dissipée",
+          "nl": "Rook verdwenen",
+          "de": "Rauch verschwunden"
+        }
+      },
+      {
+        "id": "smoke_sensor2_alarm_tamper_true",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotagealarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotagealarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        }
+      },
+      {
+        "id": "smoke_sensor2_alarm_tamper_false",
+        "title": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme sabotage effacée",
+          "nl": "Sabotagealarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme sabotage effacée",
+          "nl": "Sabotagealarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        }
+      },
+      {
+        "id": "smoke_sensor2_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "smoke_sensor3_alarm_smoke_true",
+        "title": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke detected",
+          "fr": "Fumée détectée",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt"
+        }
+      },
+      {
+        "id": "smoke_sensor3_alarm_smoke_false",
+        "title": {
+          "en": "Smoke cleared",
+          "fr": "Fumée dissipée",
+          "nl": "Rook verdwenen",
+          "de": "Rauch verschwunden"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke cleared",
+          "fr": "Fumée dissipée",
+          "nl": "Rook verdwenen",
+          "de": "Rauch verschwunden"
+        }
+      },
+      {
+        "id": "smoke_sensor3_alarm_tamper_true",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotagealarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotagealarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        }
+      },
+      {
+        "id": "smoke_sensor3_alarm_tamper_false",
+        "title": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme sabotage effacée",
+          "nl": "Sabotagealarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme sabotage effacée",
+          "nl": "Sabotagealarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        }
+      },
+      {
+        "id": "smoke_sensor3_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
         }
       },
       {
@@ -54102,6 +55092,116 @@
         }
       },
       {
+        "id": "water_detector_alarm_water_true",
+        "title": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlekkage gedetecteerd",
+          "de": "Wasserleck erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_detector"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlekkage gedetecteerd",
+          "de": "Wasserleck erkannt"
+        }
+      },
+      {
+        "id": "water_detector_alarm_water_false",
+        "title": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau résolue",
+          "nl": "Waterlekkage opgelost",
+          "de": "Wasserleck behoben"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_detector"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau résolue",
+          "nl": "Waterlekkage opgelost",
+          "de": "Wasserleck behoben"
+        }
+      },
+      {
+        "id": "water_detector_alarm_contact_true",
+        "title": {
+          "en": "Contact detected",
+          "fr": "Contact détecté",
+          "nl": "Contact gedetecteerd",
+          "de": "Kontakt erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_detector"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact detected",
+          "fr": "Contact détecté",
+          "nl": "Contact gedetecteerd",
+          "de": "Kontakt erkannt"
+        }
+      },
+      {
+        "id": "water_detector_alarm_contact_false",
+        "title": {
+          "en": "Contact cleared",
+          "fr": "Contact libéré",
+          "nl": "Contact vrijgegeven",
+          "de": "Kontakt freigegeben"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_detector"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact cleared",
+          "fr": "Contact libéré",
+          "nl": "Contact vrijgegeven",
+          "de": "Kontakt freigegeben"
+        }
+      },
+      {
+        "id": "water_detector_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_detector"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
         "id": "water_leak_sensor_alarm_water_true",
         "highlight": true,
         "title": {
@@ -54256,6 +55356,72 @@
           "fr": "Alarme sabotage",
           "nl": "Sabotagealarm",
           "de": "Manipulationsalarm"
+        }
+      },
+      {
+        "id": "water_leak_sensor_tuya_alarm_water_true",
+        "title": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlekkage gedetecteerd",
+          "de": "Wasserleck erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor_tuya"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlekkage gedetecteerd",
+          "de": "Wasserleck erkannt"
+        }
+      },
+      {
+        "id": "water_leak_sensor_tuya_alarm_water_false",
+        "title": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau résolue",
+          "nl": "Waterlekkage opgelost",
+          "de": "Wasserleck behoben"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor_tuya"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau résolue",
+          "nl": "Waterlekkage opgelost",
+          "de": "Wasserleck behoben"
+        }
+      },
+      {
+        "id": "water_leak_sensor_tuya_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor_tuya"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
         }
       },
       {
@@ -62153,6 +63319,94 @@
         }
       },
       {
+        "id": "doorwindowsensor_alarm_contact_active",
+        "title": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_2_alarm_contact_active",
+        "title": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_3_alarm_contact_active",
+        "title": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        }
+      },
+      {
+        "id": "doorwindowsensor_4_alarm_contact_active",
+        "title": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorwindowsensor_4"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        }
+      },
+      {
         "id": "energy_meter_3phase_power_above",
         "title": {
           "en": "Power !{{is|is not}} above"
@@ -62314,6 +63568,28 @@
           "fr": "Sabotage !{{est|n'est pas}} actif",
           "nl": "Sabotage !{{is|is niet}} actief",
           "de": "Manipulation !{{ist|ist nicht}} aktiv"
+        }
+      },
+      {
+        "id": "flood_sensor_alarm_water_active",
+        "title": {
+          "en": "Water leak !{{is|is not}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+          "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=flood_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak !{{is|is not}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+          "de": "Wasserleck !{{wird|wird nicht}} erkannt"
         }
       },
       {
@@ -64243,6 +65519,50 @@
           "fr": "Présence !{{est|n'est pas}} détectée",
           "nl": "Aanwezigheid !{{is|is niet}} gedetecteerd",
           "de": "Anwesenheit !{{ist|ist nicht}} erkannt"
+        }
+      },
+      {
+        "id": "pir_sensor_2_alarm_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_sensor_2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        }
+      },
+      {
+        "id": "pirsensor_alarm_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pirsensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
         }
       },
       {
@@ -66954,6 +68274,28 @@
         }
       },
       {
+        "id": "slim_motion_sensor_alarm_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=slim_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        }
+      },
+      {
         "id": "smart_breaker_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -66973,6 +68315,28 @@
           "fr": "Est !{{allumé|éteint}}",
           "nl": "Is !{{aan|uit}}",
           "de": "Ist !{{ein|aus}}"
+        }
+      },
+      {
+        "id": "smart_door_window_sensor_alarm_contact_active",
+        "title": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_door_window_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Contact !{{is|is not}} detected (opened)",
+          "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
+          "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
+          "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
         }
       },
       {
@@ -67159,6 +68523,28 @@
         }
       },
       {
+        "id": "smart_motion_sensor_alarm_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_motion_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{wird|wird nicht}} erkannt"
+        }
+      },
+      {
         "id": "smart_rcbo_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -67276,6 +68662,72 @@
           "fr": "Sabotage !{{est|n'est pas}} actif",
           "nl": "Sabotage !{{is|is niet}} actief",
           "de": "Manipulation !{{ist|ist nicht}} aktiv"
+        }
+      },
+      {
+        "id": "smoke_sensor_alarm_smoke_active",
+        "title": {
+          "en": "Smoke !{{is|is not}} detected",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "de": "Rauch !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke !{{is|is not}} detected",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "de": "Rauch !{{wird|wird nicht}} erkannt"
+        }
+      },
+      {
+        "id": "smoke_sensor2_alarm_smoke_active",
+        "title": {
+          "en": "Smoke !{{is|is not}} detected",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "de": "Rauch !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor2"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke !{{is|is not}} detected",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "de": "Rauch !{{wird|wird nicht}} erkannt"
+        }
+      },
+      {
+        "id": "smoke_sensor3_alarm_smoke_active",
+        "title": {
+          "en": "Smoke !{{is|is not}} detected",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "de": "Rauch !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_sensor3"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Smoke !{{is|is not}} detected",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "de": "Rauch !{{wird|wird nicht}} erkannt"
         }
       },
       {
@@ -69236,6 +70688,28 @@
         }
       },
       {
+        "id": "water_detector_alarm_water_active",
+        "title": {
+          "en": "Water leak !{{is|is not}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+          "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_detector"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak !{{is|is not}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+          "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+        }
+      },
+      {
         "id": "water_leak_sensor_water_detected",
         "title": {
           "en": "Water !{{is|is not}} detected",
@@ -69309,6 +70783,28 @@
           "fr": "Sabotage !{{est|n'est pas}} actif",
           "nl": "Sabotage !{{is|is niet}} actief",
           "de": "Manipulation !{{ist|ist nicht}} aktiv"
+        }
+      },
+      {
+        "id": "water_leak_sensor_tuya_alarm_water_active",
+        "title": {
+          "en": "Water leak !{{is|is not}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+          "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor_tuya"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Water leak !{{is|is not}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+          "de": "Wasserleck !{{wird|wird nicht}} erkannt"
         }
       },
       {
@@ -104521,9 +106017,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -118154,7 +119648,6 @@
           "_TZ3000_ZFIRRI2D",
           "_TZ3000_ZGTBI4OY",
           "_TZ3000_ZIGISUYH",
-          "_TZ3000_ZL1KMJQX",
           "_TZ3210_6PWPEZ2J",
           "_TZ3210_8N4DN1NE",
           "_TZ3210_ALXKWN0H",
@@ -118691,8 +120184,6 @@
           "_TZE200_znbl8dj5",
           "_TZE200_qoy0ekbd",
           "_TZE204_a8sdabtg",
-          "_TZE204_zl1kmjqx",
-          "_TZE200_zl1kmjqx",
           "_tze204_nnrfa68v",
           "_tze204_seq9cm6u",
           "_tz2000_a476raq2",
@@ -119259,10 +120750,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tze204_seq9cm6u",
-          "_TZE200_seq9cm6u"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -124471,9 +125959,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -125824,14 +127310,12 @@
         "manufacturerName": [
           "_TZ3000_vd43bbhf",
           "_TZ3000_4naa57is",
-          "_TZ3000_5ajpkyq6",
           "_TZ3000_jtdamlu5",
           "_TZ3000_hsahoqgp",
           "_TZ3000_1dd0d5mi",
           "_TZ3000_8kzqqm4a",
           "_TZ3000_k6j8rwct",
           "_TZ3000_5gey1ohq",
-          "_TZ3000_9hpxg80k",
           "_TZ3000_obyifevw"
         ]
       },
@@ -126253,14 +127737,12 @@
           "_TZE200_jhkttplm",
           "_TZE200_5nldle7w",
           "_TZE200_uj3f4wr5",
-          "_TYST11_wmcdj3aq",
           "_TZE210_inpjmc0h",
           "_TZE28C1000000_alh14edn",
           "_TZE204_p6vz3wzt",
           "_TZE284_waa352qv",
           "_TZ3210_ol1uhvza",
-          "_TZ3000_42ha4rsc",
-          "_TZE200_wmcdj3aq"
+          "_TZ3000_42ha4rsc"
         ]
       },
       "settings": [
@@ -126607,15 +128089,11 @@
           "_tze200_cpbo62rn",
           "_tze200_eegnwoyw",
           "_tze200_ergbiejo",
-          "_tze200_fzo2pocs",
           "_tze200_iossyxra",
           "_tze200_lwlvaony",
           "_tze200_pk29mnl3",
           "_tze200_sbordckq",
-          "_tze200_zah67ekd",
-          "_TZE284_fzo2pocs",
-          "_TZE204_fzo2pocs",
-          "_TYST11_fzo2pocs"
+          "_tze200_zah67ekd"
         ],
         "productId": [
           "TS0601_curtain_tilt",
@@ -139146,14 +140624,10 @@
           "_tz3000_3r9fthmw",
           "_tz3000_7y5ikxwq",
           "_tz3000_fjm6mjrj",
-          "_tz3000_rjxqso4a",
           "_tze200_fjb98hbq",
           "_tze204_aqnazj70",
           "_tze204_fjb98hbq",
-          "_tze200_aqnazj70",
-          "_TZE200_rjxqso4a",
-          "_TZE284_rjxqso4a",
-          "_tze204_rjxqso4a"
+          "_tze200_aqnazj70"
         ],
         "productId": [
           "TS0001_din",
@@ -142672,8 +144146,7 @@
           "_tze608_c75zqghm",
           "_tze608_fmemczv1",
           "_tze608_xkr8gep3",
-          "_tze608_lapuuoke",
-          "_tze200_wfxuhoea"
+          "_tze608_lapuuoke"
         ],
         "productId": [
           "TS0601",
@@ -151879,10 +153352,8 @@
           "_TZE200_XQ4HGAFZ",
           "_TZE204_BJF8QUM1",
           "_TZE204_MCHXVE9O",
-          "_TZE204_N8DLJORX",
           "_TZE204_SNDKANFR",
-          "_TZE284_0ZSE7XQG",
-          "_TZE200_n8dljorx"
+          "_TZE284_0ZSE7XQG"
         ],
         "productId": [
           "TS0202",
@@ -154386,7 +155857,6 @@
           "_tze284_dcnsggvz",
           "E-WELINK",
           "_TZ3000_oxv67pno",
-          "_TZE200_dcnsggvz",
           "_TZE204_dcnsggvz"
         ],
         "productId": [
@@ -156216,9 +157686,7 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS011F"
@@ -156643,10 +158111,6 @@
           "_TZE204_WJK6RURM",
           "_TZE284_81YRT3L",
           "_TZE284_WJK6RURM",
-          "_TZE204_81yrt3lo",
-          "_TZE284_81yrt3lo",
-          "_tze200_81yrt3lo",
-          "_TZE28C1000000_81yrt3lo",
           "_tze204_81yrt3l",
           "_TZE284_byzdayie"
         ],
@@ -157058,7 +158522,6 @@
           "_TZE200_PPUJ1VEM",
           "_TZE200_QASJIF9E",
           "_TZE200_QOMXLRYD",
-          "_TZE200_QOY0EKBD",
           "_TZE200_RHGSBACQ",
           "_TZE200_SFIY5TFS",
           "_TZE200_SFIY8PUU",
@@ -157070,7 +158533,6 @@
           "_TZE200_Y8JIJHBA",
           "_TZE200_YA4FT0W4",
           "_TZE200_YBWA4X5A",
-          "_TZE200_ZNBL8DJ5",
           "_TZE200_ZTC6GGYL",
           "_TZE200_ZTQNH5CG",
           "_TZE201_ZTC6GGYL",
@@ -157151,14 +158613,8 @@
           "_TZE28C1000000_81yrt3lo",
           "_TZ3000_3n2minvf",
           "_TZE200_4PM4PEKT",
-          "_TZE200_v6ossqfy",
           "_TZE200_ttcovulf",
           "_TZE200_gjldowol",
-          "_TZE204_v6ossqfy",
-          "_TZE284_qoy0ekbd",
-          "_TZE204_qoy0ekbd",
-          "_TZE284_znbl8dj5",
-          "_tze204_znbl8dj5",
           "_TZE204_kb5noeto",
           "_TZE284_mrf6vtua",
           "_TZE200_holel4dk",
@@ -158332,7 +159788,6 @@
           "_TZ3000_KLCH39XT",
           "_TZ3000_KMUXJUKF",
           "_TZ3000_KUD7U2L1",
-          "_TZ3000_KVWJUJY9",
           "_TZ3000_L6PWXUXM",
           "_TZ3000_LD6G3AGD",
           "_TZE200_0HG58EPR",
@@ -158345,7 +159800,6 @@
           "_TZE200_5TGZPCCV",
           "_TZE200_6MAFO2GV",
           "_TZE200_7RGHPOXO",
-          "_TZE200_7TDTQGWV",
           "_TZE200_8K8K3T3J",
           "_TZE200_8XTK0CJS",
           "_TZE200_9KQXLPBY",
@@ -158384,14 +159838,12 @@
           "_TZE204_CMYC8G5I",
           "_TZE204_DJURK6P5",
           "_TZE204_E5HPKC6D",
-          "_TZE204_EEKPF0FT",
           "_TZE204_GLK6VIWG",
           "_TZE204_GOECJD1T",
           "_TZE204_K6RDMISZ",
           "_TZE204_LNBFNYXD",
           "_TZE204_LNXDK2CH",
           "_TZE204_MUDXCHSU",
-          "_TZE204_PISLTM67",
           "_TZE204_R7BRSCR6",
           "_TZE204_WGRFFNIY",
           "_TZE204_WOWW89IP",
@@ -158401,15 +159853,6 @@
           "_TZE284_CGROR0RHZA",
           "_TZE284_HCS66AXL",
           "_TZE284_K6RDMISZ",
-          "_TZE200_2ekuz3dz",
-          "_TYZB01_kvwjujy9",
-          "_TZE284_eekpf0ft",
-          "_tze200_eekpf0ft",
-          "_TZE204_7tdtqgwv",
-          "_TYST11_pisltm67",
-          "_tze200_pisltm67",
-          "_tze204_2ekuz3dz",
-          "_tyst11_2ekuz3dz",
           "_tze204_zuhszj9s",
           "_TZE200_qtbrwrfv"
         ],
@@ -170878,11 +172321,9 @@
           "_TZ3000_bpkijo14",
           "_TZ3000_dlhhrhs8",
           "_TZE200_bqcqqjpb",
-          "_TZE200_gaj531w3",
           "_TZE204_nklqjk62",
           "_TZE204_wfxuhoea",
           "_TZE200_2m38mh6k",
-          "_TZE284_gaj531w3",
           "_tze200_nklqjk62",
           "_tze204_2m38mh6k",
           "_TZE200_wfxuhoea"
@@ -171978,8 +173419,7 @@
           "_tyzb01_jvsojrqx",
           "ts0222",
           "_TZE284_zofmmt9s",
-          "_TZE204_hewlydpz",
-          "_TZE284_BQUWRQH1"
+          "_TZE204_hewlydpz"
         ],
         "productId": [
           "TS0222",
@@ -172865,10 +174305,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz2000_a476raq2",
           "_tz2000_xogb73am",
-          "_tz3000_rusu2vzb",
-          "_TYZB01_a476raq2"
+          "_tz3000_rusu2vzb"
         ],
         "productId": [
           "TS0601_lcd",
@@ -175026,12 +176464,10 @@
           "_TZE200_NLRFGPNY",
           "_TZE200_T1BLO2BJ",
           "_TZE200_WNVHLCGL",
-          "_TZE204_5SBEBBZS",
           "_TZE204_NLRFGPNY",
           "_TZE204_Q76RTOA9",
           "_TZE204_T1BLO2BJ",
-          "_TZE284_NLRFGPNY",
-          "_TZE200_5sbebbzs"
+          "_TZE284_NLRFGPNY"
         ],
         "productId": [
           "TS0216",
@@ -175367,10 +176803,7 @@
         "large": "//drivers/siren_sirentemphumidsensor/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tze200_d0yu2xgi",
-          "_TZ3000_d0yu2xgi"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -175471,8 +176904,7 @@
           }
         },
         "manufacturerName": [
-          "_TZ3000_unknown",
-          "_TYST11_d0yu2xgi"
+          "_TZ3000_unknown"
         ]
       },
       "maintenanceActions": [
@@ -176138,10 +177570,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tze204_68nvbio9",
-          "_TZE200_68nvbio9"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601_breaker",
           "TS0601"
@@ -176556,10 +177985,7 @@
       "zigbee": {
         "manufacturerName": [
           "_tze200_dnz2zhqd",
-          "_tze200_sus6clyh",
-          "_tze204_c88teujp",
-          "_TYST11_c88teujp",
-          "_tze200_c88teujp"
+          "_tze200_sus6clyh"
         ],
         "productId": [
           "TS0601_heatctrl",
@@ -177068,9 +178494,6 @@
         "manufacturerName": [
           "_tze200_b6wax7g0",
           "_tze200_c88teujp",
-          "_tze204_p3dbf6qs",
-          "_TZE284_p3dbf6qs",
-          "_TZE200_p3dbf6qs",
           "_TYST11_c88teujp",
           "_tze204_c88teujp",
           "_tze204_b6wax7g0"
@@ -178678,8 +180101,6 @@
           "_TZE200_0zaf1cr8",
           "_TZE284_0zaf1cr8",
           "_TZE200_m9skfctm",
-          "_TZE200_rccxox8p",
-          "_TZE284_rccxox8p",
           "_TZE200_t5p1vj8r",
           "_TZE200_uebojraa",
           "_TZE200_vzekyi4c",
@@ -178691,8 +180112,6 @@
           "_TZE200_qcasmfan",
           "_TZE204_qaxkdgyt",
           "_TZ3000_qtyyuaq6",
-          "_TZE283_rccxox8p",
-          "_tze204_rccxox8p",
           "_tze204_dq1mfjug",
           "_TZE200_cjbofhxw"
         ],
@@ -179620,11 +181039,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tze200_myd45weu",
           "_tze200_ga1maeof",
           "_tze284_aao3yzhs",
-          "_TZE204_myd45weu",
-          "_TZE284_myd45weu",
           "_TZE284_ga1maeof"
         ],
         "productId": [
@@ -181139,9 +182555,7 @@
           "_TZE200_yjryxpot",
           "_TZE200_afycb3cg",
           "_TZ3210_sgb0xhwn",
-          "_TZE204_cduqh1l0",
           "_TZE284_g1enhdsi",
-          "_TZE284_r731zlxk",
           "_TZ3000_pxfjrzyj",
           "_TZ3000_dershnvx",
           "_TZ3000_iv4eq7eh",
@@ -181202,15 +182616,9 @@
           "_TZ3000_X3EWPZYR",
           "_TZ3000_XKAP8WTB",
           "_TZE200_amp6tsvy",
-          "_TZE200_oisqyl4o",
           "_TZ3000_uim07oem",
           "_TZE200_wfxuhoea",
           "_TZE200_7tdtqgwv",
-          "_TZE200_cduqh1l0",
-          "_TZ3000_cduqh1l0",
-          "_tze204_oisqyl4o",
-          "_TZE204_r731zlxk",
-          "_tze200_r731zlxk",
           "_TZE284_fzo2pocs",
           "_TZE204_fzo2pocs",
           "_TZE200_fzo2pocs",
@@ -183669,14 +185077,11 @@
           "_tz3000_qja6nq5z",
           "_tz3000_402vrq2i",
           "_tz3000_gwkzibhs",
-          "_tze204_ac0fhfiq",
           "_tze200_rks0sgb7",
           "_tze204_q9xty0ad",
           "_TZ3000_ugi8ky6u",
           "_TZ3000_1fqpj6qz",
           "_TZE284_kow4ok3t",
-          "_TZE284_ac0fhfiq",
-          "_tze200_ac0fhfiq",
           "_tze204_eaac7dkw",
           "_tze204_fsb6zw01",
           "_tz3210_402vrq2i",
@@ -189609,10 +191014,8 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_tze200_0dvm9mva",
           "_tze200_1ibpyhdc",
           "_tze200_1n2zev06",
-          "_tze200_3yp57tby",
           "_tze200_5toc8efa",
           "_tze200_8whxpsiw",
           "_tze200_9gvruqf5",
@@ -189642,10 +191045,8 @@
           "_tze200_wlosfena",
           "_tze200_xby0s3ta",
           "_tze200_yw7cahqs",
-          "_tze200_ywdxldoj",
           "_tze200_znlqjmih",
           "_tze200_ztvwu4nk",
-          "_tze204_0dvm9mva",
           "_tze204_5toc8efa",
           "_tze204_dwvkjfwr",
           "_tze204_p3lqqy2r",
@@ -189656,8 +191057,6 @@
           "_tze200_hue3yfsn",
           "_tze200_0j6pth9y",
           "_tze204_s8gkrkxk",
-          "_TZE284_0dvm9mva",
-          "_TZE284_3yp57tby",
           "_TYST11_pisltm67",
           "_TZE204_pisltm67",
           "_tze204_ztvwu4nk",
@@ -191253,7 +192652,6 @@
           "_TZ3210_ph1joc22",
           "_TZ3000_pl5v1yyy",
           "_TZ3000_fgwhjm9j",
-          "_TZE200_mvtclclq",
           "_TZE284_mvtclclq"
         ],
         "productId": [
@@ -191840,7 +193238,6 @@
           "_tze200_2wg5qrjy",
           "_tze200_81isopgh",
           "_tze200_akjefhj5",
-          "_tze200_d0ypnbvn",
           "_tze200_fphxkxue",
           "_tze200_yxcgyjf1",
           "_tze204_4fblxpma",
@@ -191858,9 +193255,7 @@
           "_tze204_loejka0i",
           "_tze204_ugekduaj",
           "_tze284_gomuk3dc",
-          "_tze284_loejka0i",
-          "_TZE284_d0ypnbvn",
-          "_tze204_d0ypnbvn"
+          "_tze284_loejka0i"
         ],
         "productId": [
           "TS0601_irrigation",
@@ -193348,9 +194743,7 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_unknown"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0043",
           "TS0601",
@@ -196441,10 +197834,7 @@
           "_tz3000_sgpbz53b",
           "_tz3000_abaplimj",
           "_tz3000_awvmkayh",
-          "_tyzb01_a7sghmms",
           "_tz3000_e6ekbxts",
-          "_tze204_a7sghmms",
-          "_TZE200_a7sghmms",
           "_tyst11_qq9mpfhw",
           "_TZE200_qq9mpfhw"
         ],
