@@ -79,9 +79,27 @@
           },
           "value": "memory",
           "values": [
-            { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
-            { "id": "on", "label": { "en": "On", "fr": "Allumé" } },
-            { "id": "memory", "label": { "en": "Last State", "fr": "Dernier état" } }
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier état"
+              }
+            }
           ]
         },
         {
@@ -113,9 +131,27 @@
           },
           "value": "auto",
           "values": [
-            { "id": "auto", "label": { "en": "Auto", "fr": "Automatique" } },
-            { "id": "leading_edge", "label": { "en": "Leading Edge", "fr": "Front Montant" } },
-            { "id": "trailing_edge", "label": { "en": "Trailing Edge", "fr": "Front Descendant" } }
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Automatique"
+              }
+            },
+            {
+              "id": "leading_edge",
+              "label": {
+                "en": "Leading Edge",
+                "fr": "Front Montant"
+              }
+            },
+            {
+              "id": "trailing_edge",
+              "label": {
+                "en": "Trailing Edge",
+                "fr": "Front Descendant"
+              }
+            }
           ]
         },
         {
@@ -191,7 +227,7 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     },
-    "manufacturerName": ["_TZ3000_unknown"]
+    "manufacturerName": []
   },
   "version": "1.0.0"
 }
