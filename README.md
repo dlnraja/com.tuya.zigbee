@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Jun 2026)
+
+| Version | Feature |
+|---------|---------|
+| **vv8_5_30** |  |
+| **v9.0.40** | v9.0.39: |
+| **v9.0.39** | v9.0.37: |
+| **v9.0.38** | v9.0.37: Virtual presence detection, battery health intelligence, 49 new libr... |
+| **v9.0.37** | v9.0.36: |
+| **v9.0.36** | v9.0.35: |
+| **v9.0.35** | v9.0.34: |
+| **v9.0.34** | v9.0.33: |
+| **v9.0.33** | v9.0.32: |
+| **v9.0.32** | v9.0.31: |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
