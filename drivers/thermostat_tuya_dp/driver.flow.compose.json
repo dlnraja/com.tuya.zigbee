@@ -17,11 +17,7 @@
           "example": 21
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temperature_changed",
@@ -40,11 +36,7 @@
           "example": 22.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_mode_changed",
@@ -63,11 +55,7 @@
           "example": "heat"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Mode changed",
-        "fr": "Mode changé"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_heating_started",
@@ -75,11 +63,7 @@
         "en": "Heating started",
         "fr": "Chauffage démarré"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Heating started",
-        "fr": "Chauffage démarré"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_heating_stopped",
@@ -87,11 +71,7 @@
         "en": "Heating stopped",
         "fr": "Chauffage arrêté"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_turned_on",
@@ -101,13 +81,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_turned_off",
@@ -117,13 +91,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temp_changed",
@@ -133,13 +101,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_battery_low",
@@ -149,13 +111,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_humidity_changed",
@@ -165,13 +121,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -181,11 +131,7 @@
         "en": "Thermostat is !{{heating|not heating}}",
         "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Thermostat is !{{heating|not heating}}",
-        "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temperature_above_target",
@@ -193,11 +139,7 @@
         "en": "Temperature is above target",
         "fr": "Température supérieure à la cible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature is above target",
-        "fr": "Température supérieure à la cible"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temperature_below_target",
@@ -205,11 +147,7 @@
         "en": "Temperature is below target",
         "fr": "Température inférieure à la cible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature is below target",
-        "fr": "Température inférieure à la cible"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_mode_is",
@@ -252,11 +190,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Mode is [[mode]]",
-        "fr": "Mode est [[mode]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_child_lock_is",
@@ -264,11 +198,7 @@
         "en": "Child lock is !{{enabled|disabled}}",
         "fr": "Verrouillage enfant !{{activé|désactivé}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activé|désactivé}}"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_is_on",
@@ -278,13 +208,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -306,11 +230,7 @@
             "fr": "Température"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set target temperature [[temperature]]",
-        "fr": "Définir température cible [[temperature]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_set_mode",
@@ -346,11 +266,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set mode [[mode]]",
-        "fr": "Définir mode [[mode]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_increase_temperature",
@@ -370,11 +286,7 @@
             "fr": "Degrés"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Increase temperature [[degrees]]",
-        "fr": "Augmenter température [[degrees]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_decrease_temperature",
@@ -394,11 +306,7 @@
             "fr": "Degrés"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Decrease temperature [[degrees]]",
-        "fr": "Diminuer température [[degrees]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_set_child_lock",
@@ -427,11 +335,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set child lock [[enabled]]",
-        "fr": "Définir verrouillage enfant [[enabled]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_set_comfort_preset",
@@ -484,13 +388,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set comfort preset [[preset]]",
-        "fr": "Définir préréglage confort [[preset]]",
-        "nl": "Comfort preset instellen [[preset]]",
-        "de": "Komfort-Voreinstellung [[preset]]"
-      }
+      ]
     },
     {
       "id": "thermostat_tuya_dp_schedule_on",
@@ -500,13 +398,7 @@
         "nl": "Schema inschakelen",
         "de": "Zeitplan aktivieren"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Enable schedule",
-        "fr": "Activer programmation",
-        "nl": "Schema inschakelen",
-        "de": "Zeitplan aktivieren"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_schedule_off",
@@ -516,13 +408,7 @@
         "nl": "Schema uitschakelen",
         "de": "Zeitplan deaktivieren"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Disable schedule",
-        "fr": "Désactiver programmation",
-        "nl": "Schema uitschakelen",
-        "de": "Zeitplan deaktivieren"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_turn_on",
@@ -532,13 +418,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_turn_off",
@@ -548,13 +428,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_toggle",
@@ -564,13 +438,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_set_temperature",
@@ -590,13 +458,7 @@
           "label": "°C",
           "labelDecimals": 1
         }
-      ],
-      "titleFormatted": {
-        "en": "Set temperature [[temperature]]",
-        "fr": "Régler température [[temperature]]",
-        "nl": "Temperatuur instellen [[temperature]]",
-        "de": "Temperatur einstellen [[temperature]]"
-      }
+      ]
     }
   ]
 }

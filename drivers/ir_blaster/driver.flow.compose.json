@@ -37,13 +37,7 @@
           }
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "IR Learning Started",
-        "nl": "IR Leren Gestart",
-        "de": "IR-Lernen Gestartet",
-        "fr": "IR Learning Started"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_learning_state_changed",
@@ -73,13 +67,7 @@
           }
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "IR Learning State Changed",
-        "nl": "IR Leer Status Gewijzigd",
-        "de": "IR-Lern Status Geändert",
-        "fr": "IR Learning State Changed"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_code_learned",
@@ -100,13 +88,7 @@
           }
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "IR Code Learned",
-        "nl": "IR Code Geleerd",
-        "de": "IR-Code Gelernt",
-        "fr": "IR Code Learned"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_code_analyzed",
@@ -154,13 +136,7 @@
           }
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "IR Code Analyzed",
-        "nl": "IR Code Geanalyseerd",
-        "de": "IR-Code Analysiert",
-        "fr": "IR Code Analyzed"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_turned_on",
@@ -170,13 +146,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_turned_off",
@@ -186,13 +156,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -204,13 +168,7 @@
         "de": "IR-Lernen ist aktiv",
         "fr": "IR learning is active"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "IR learning is active",
-        "nl": "IR leren is actief",
-        "de": "IR-Lernen ist aktiv",
-        "fr": "IR learning is active"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_code_exists",
@@ -235,13 +193,7 @@
             "de": "power_on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "IR code exists [[code_name]]",
-        "nl": "IR code bestaat [[code_name]]",
-        "de": "IR-Code existiert [[code_name]]",
-        "fr": "IR code exists [[code_name]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_protocol_detected",
@@ -320,13 +272,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "IR protocol detected [[code_name]] [[protocol]]",
-        "nl": "IR protocol gedetecteerd [[code_name]] [[protocol]]",
-        "de": "IR-Protokoll erkannt [[code_name]] [[protocol]]",
-        "fr": "IR protocol detected [[code_name]] [[protocol]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_is_on",
@@ -336,13 +282,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -484,13 +424,7 @@
             "de": "TV-Fernbedienung"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-        "nl": "Leer IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-        "de": "IR-Code Lernen [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-        "fr": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_send_code",
@@ -620,13 +554,7 @@
             "de": "1"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
-        "nl": "Verstuur IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
-        "de": "IR-Code Senden [[ir_code]] [[protocol]] [[frequency]] [[repeat]]",
-        "fr": "Send IR Code [[ir_code]] [[protocol]] [[frequency]] [[repeat]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_send_by_category",
@@ -669,13 +597,7 @@
             "de": "power_on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send IR Code by Category [[category]] [[code_name]]",
-        "nl": "Verstuur IR Code per Categorie [[category]] [[code_name]]",
-        "de": "IR-Code nach Kategorie Senden [[category]] [[code_name]]",
-        "fr": "Send IR Code by Category [[category]] [[code_name]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_send_ac_command",
@@ -778,13 +700,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]",
-        "nl": "Verstuur Airco Commando [[mode]] [[temperature]] [[fan_speed]]",
-        "de": "AC-Befehl Senden [[mode]] [[temperature]] [[fan_speed]]",
-        "fr": "Send AC Command [[mode]] [[temperature]] [[fan_speed]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_send_by_brand",
@@ -826,11 +742,7 @@
             "en": "Power, Volume Up..."
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send IR Code by Brand [[brand]] [[device_type]] [[function_name]]",
-        "fr": "Envoyer Code IR par Marque [[brand]] [[device_type]] [[function_name]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_turn_on",
@@ -840,13 +752,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_turn_off",
@@ -856,13 +762,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_toggle",
@@ -872,13 +772,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_send_learned",
@@ -905,13 +799,7 @@
             "en": "Select a learned code..."
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send Learned IR Command [[code_name]]",
-        "fr": "Envoyer Commande IR Apprise [[code_name]]",
-        "nl": "Verstuur Geleerde IR Opdracht [[code_name]]",
-        "de": "Gelernten IR-Befehl Senden [[code_name]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_delete_code",
@@ -935,13 +823,7 @@
             "en": "Select code to delete..."
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Delete Stored IR Code [[code_name]]",
-        "fr": "Supprimer Code IR [[code_name]]",
-        "nl": "Verwijder IR Code [[code_name]]",
-        "de": "IR-Code Löschen [[code_name]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_send_raw",
@@ -1000,13 +882,7 @@
             "en": "1"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Send Raw IR Code [[raw_code]] [[frequency]] [[repeat]]",
-        "fr": "Envoyer Code IR Brut [[raw_code]] [[frequency]] [[repeat]]",
-        "nl": "Verstuur Raw IR Code [[raw_code]] [[frequency]] [[repeat]]",
-        "de": "Raw IR-Code Senden [[raw_code]] [[frequency]] [[repeat]]"
-      }
+      ]
     },
     {
       "id": "ir_blaster_tv_power",
@@ -1014,11 +890,7 @@
         "en": "TV Power",
         "fr": "Alimentation TV"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "TV Power",
-        "fr": "Alimentation TV"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_vol_up",
@@ -1026,11 +898,7 @@
         "en": "Volume Up",
         "fr": "Volume +"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Volume Up",
-        "fr": "Volume +"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_vol_down",
@@ -1038,11 +906,7 @@
         "en": "Volume Down",
         "fr": "Volume -"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Volume Down",
-        "fr": "Volume -"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_mute",
@@ -1050,11 +914,7 @@
         "en": "Mute",
         "fr": "Muet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Mute",
-        "fr": "Muet"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_ch_up",
@@ -1062,11 +922,7 @@
         "en": "Channel Up",
         "fr": "Chaine +"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Channel Up",
-        "fr": "Chaine +"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_ch_down",
@@ -1074,11 +930,7 @@
         "en": "Channel Down",
         "fr": "Chaine -"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Channel Down",
-        "fr": "Chaine -"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_input",
@@ -1086,11 +938,7 @@
         "en": "Input/Source",
         "fr": "Source"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Input/Source",
-        "fr": "Source"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_menu",
@@ -1098,11 +946,7 @@
         "en": "Menu",
         "fr": "Menu"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Menu",
-        "fr": "Menu"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_ok",
@@ -1110,11 +954,7 @@
         "en": "OK/Enter",
         "fr": "OK/Entrer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "OK/Enter",
-        "fr": "OK/Entrer"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_back",
@@ -1122,11 +962,7 @@
         "en": "Back",
         "fr": "Retour"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Back",
-        "fr": "Retour"
-      }
+      "args": []
     },
     {
       "id": "ir_blaster_tv_play",
@@ -1134,11 +970,7 @@
         "en": "Play/Pause",
         "fr": "Lecture/Pause"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Play/Pause",
-        "fr": "Lecture/Pause"
-      }
+      "args": []
     }
   ]
 }

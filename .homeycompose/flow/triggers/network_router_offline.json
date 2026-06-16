@@ -1,0 +1,40 @@
+{
+  "id": "network_router_offline",
+  "title": {
+    "en": "Router offline"
+  },
+  "hint": {
+    "en": "Triggers when a router device goes offline, potentially disrupting mesh connectivity"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "ieee_addr",
+      "type": "string",
+      "title": {
+        "en": "Router IEEE address"
+      }
+    },
+    {
+      "name": "model_id",
+      "type": "string",
+      "title": {
+        "en": "Model ID"
+      }
+    },
+    {
+      "name": "orphaned_devices",
+      "type": "number",
+      "title": {
+        "en": "Orphaned device count"
+      }
+    },
+    {
+      "name": "coverage_score",
+      "type": "number",
+      "title": {
+        "en": "Network coverage score"
+      }
+    }
+  ]
+}

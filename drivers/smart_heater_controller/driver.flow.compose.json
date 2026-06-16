@@ -5,20 +5,14 @@
       "title": {
         "en": "Turn on"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
+      "args": []
     },
     {
       "id": "smart_heater_controller_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
+      "args": []
     },
     {
       "id": "smart_heater_controller_toggle",
@@ -28,13 +22,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "smart_heater_controller_set_temperature",
@@ -54,13 +42,7 @@
           "label": "°C",
           "labelDecimals": 1
         }
-      ],
-      "titleFormatted": {
-        "en": "Set temperature [[temperature]]",
-        "fr": "Régler température [[temperature]]",
-        "nl": "Temperatuur instellen [[temperature]]",
-        "de": "Temperatur einstellen [[temperature]]"
-      }
+      ]
     }
   ],
   "triggers": [
@@ -72,13 +54,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "smart_heater_controller_turned_off",
@@ -88,13 +64,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "smart_heater_controller_temp_changed",
@@ -104,13 +74,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "smart_heater_controller_power_changed",
@@ -120,13 +84,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -138,13 +96,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ]
 }

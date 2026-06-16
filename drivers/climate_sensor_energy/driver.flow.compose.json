@@ -18,11 +18,7 @@
           "example": 22.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_energy_humidity_changed",
@@ -41,11 +37,7 @@
           "example": 55
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_energy_power_changed",
@@ -64,11 +56,7 @@
           "example": 150
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Power consumption changed",
-        "fr": "Consommation changée"
-      }
+      "args": []
     }
   ]
 }

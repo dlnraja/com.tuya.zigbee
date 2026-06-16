@@ -1,0 +1,54 @@
+{
+  "id": "transition_completed",
+  "title": {
+    "en": "Transition completed"
+  },
+  "hint": {
+    "en": "Triggers when a smooth device transition finishes"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=onoff|dim"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "from_value",
+      "type": "number",
+      "title": {
+        "en": "From value"
+      }
+    },
+    {
+      "name": "to_value",
+      "type": "number",
+      "title": {
+        "en": "To value"
+      }
+    },
+    {
+      "name": "duration_ms",
+      "type": "number",
+      "title": {
+        "en": "Duration (ms)"
+      }
+    },
+    {
+      "name": "cancelled",
+      "type": "boolean",
+      "title": {
+        "en": "Was cancelled"
+      }
+    },
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability"
+      },
+      "example": "dim"
+    }
+  ]
+}

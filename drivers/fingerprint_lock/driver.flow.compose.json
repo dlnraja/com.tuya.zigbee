@@ -8,13 +8,7 @@
         "nl": "Slot gewijzigd",
         "de": "Schloss geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Lock changed",
-        "fr": "Serrure changée",
-        "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
-      }
+      "args": []
     },
     {
       "id": "fingerprint_lock_tamper_alarm",
@@ -24,13 +18,7 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm",
-        "fr": "Alarme sabotage",
-        "nl": "Sabotagealarm",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     },
     {
       "id": "fingerprint_lock_battery_low",
@@ -40,13 +28,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -58,13 +40,7 @@
         "nl": "Slot !{{is|is niet}} vergrendeld",
         "de": "Schloss !{{ist|ist nicht}} gesperrt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Lock !{{is|is not}} locked",
-        "fr": "Serrure !{{est|n'est pas}} verrouillée",
-        "nl": "Slot !{{is|is niet}} vergrendeld",
-        "de": "Schloss !{{ist|ist nicht}} gesperrt"
-      }
+      "args": []
     },
     {
       "id": "fingerprint_lock_tamper_active",
@@ -74,13 +50,7 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper !{{is|is not}} active",
-        "fr": "Sabotage !{{est|n'est pas}} actif",
-        "nl": "Sabotage !{{is|is niet}} actief",
-        "de": "Manipulation !{{ist|ist nicht}} aktiv"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -92,13 +62,7 @@
         "nl": "Vergrendelen",
         "de": "Sperren"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Lock",
-        "fr": "Verrouiller",
-        "nl": "Vergrendelen",
-        "de": "Sperren"
-      }
+      "args": []
     },
     {
       "id": "fingerprint_lock_unlock",
@@ -108,13 +72,7 @@
         "nl": "Ontgrendelen",
         "de": "Entsperren"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Unlock",
-        "fr": "Déverrouiller",
-        "nl": "Ontgrendelen",
-        "de": "Entsperren"
-      }
+      "args": []
     }
   ]
 }

@@ -15,13 +15,7 @@
         "fr": "Se dÃ©clenche quand du gaz combustible est dÃ©tectÃ© - Ã©vacuez immÃ©diatement !",
         "de": "Wird ausgelÃ¶st, wenn brennbares Gas erkannt wird - sofort evakuieren!"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gas detected!",
-        "nl": "Gas gedetecteerd!",
-        "fr": "Gaz dÃ©tectÃ© !",
-        "de": "Gas erkannt!"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_gas_cleared",
@@ -31,13 +25,7 @@
         "fr": "Alarme gaz terminÃ©e",
         "de": "Gasalarm aufgehoben"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gas alarm cleared",
-        "nl": "Gas alarm opgeheven",
-        "fr": "Alarme gaz terminÃ©e",
-        "de": "Gasalarm aufgehoben"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_co_detected",
@@ -54,13 +42,7 @@
         "fr": "Se dÃ©clenche quand du CO est dÃ©tectÃ© - Ã©vacuez immÃ©diatement !",
         "de": "Wird ausgelÃ¶st, wenn CO erkannt wird - sofort evakuieren!"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Carbon monoxide detected!",
-        "nl": "Koolmonoxide gedetecteerd!",
-        "fr": "Monoxyde de carbone dÃ©tectÃ© !",
-        "de": "Kohlenmonoxid erkannt!"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_co_cleared",
@@ -70,13 +52,7 @@
         "fr": "Alarme CO terminÃ©e",
         "de": "CO-Alarm aufgehoben"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "CO alarm cleared",
-        "nl": "CO alarm opgeheven",
-        "fr": "Alarme CO terminÃ©e",
-        "de": "CO-Alarm aufgehoben"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_tamper_true",
@@ -86,13 +62,7 @@
         "fr": "Alerte sabotage",
         "de": "Manipulationsalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alert",
-        "nl": "Sabotage alarm",
-        "fr": "Alerte sabotage",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_battery_changed",
@@ -115,13 +85,7 @@
           "example": 75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changÃ©",
-        "de": "Batteriestand geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_battery_low",
@@ -131,13 +95,7 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_co_alarm",
@@ -147,13 +105,7 @@
         "nl": "CO alarm",
         "de": "CO-Alarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "CO alarm",
-        "fr": "Alarme CO",
-        "nl": "CO alarm",
-        "de": "CO-Alarm"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_gas_alarm",
@@ -163,13 +115,7 @@
         "nl": "Gasalarm",
         "de": "Gasalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gas alarm",
-        "fr": "Alarme gaz",
-        "nl": "Gasalarm",
-        "de": "Gasalarm"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -181,13 +127,7 @@
         "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gas !{{is|is not}} detected",
-        "nl": "Gas !{{is|is niet}} gedetecteerd",
-        "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
-        "de": "Gas !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_co_is_detected",
@@ -197,13 +137,7 @@
         "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "CO !{{is|is not}} detected",
-        "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
-        "de": "CO !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_co_active",
@@ -213,13 +147,7 @@
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
-        "nl": "CO !{{is|is niet}} gedetecteerd",
-        "de": "CO !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_gas_active",
@@ -229,13 +157,7 @@
         "nl": "Gas !{{is|is niet}} gedetecteerd",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gas !{{is|is not}} detected",
-        "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
-        "nl": "Gas !{{is|is niet}} gedetecteerd",
-        "de": "Gas !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -247,13 +169,7 @@
         "fr": "Tester le dÃ©tecteur",
         "de": "Detektor testen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Test the detector",
-        "nl": "Detector testen",
-        "fr": "Tester le dÃ©tecteur",
-        "de": "Detektor testen"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_gas_gas_detector_mute",
@@ -263,13 +179,7 @@
         "fr": "Couper l'alarme",
         "de": "Alarm stummschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Mute alarm",
-        "nl": "Alarm dempen",
-        "fr": "Couper l'alarme",
-        "de": "Alarm stummschalten"
-      }
+      "args": []
     }
   ]
 }

@@ -24,13 +24,7 @@
           "example": 50
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Rotated left",
-        "fr": "Rotation gauche",
-        "nl": "Naar links gedraaid",
-        "de": "Nach links gedreht"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotary_rotate_right",
@@ -56,13 +50,7 @@
           "example": 50
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Rotated right",
-        "fr": "Rotation droite",
-        "nl": "Naar rechts gedraaid",
-        "de": "Nach rechts gedreht"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotary_pressed",
@@ -88,13 +76,7 @@
           "example": "single"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé",
-        "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotary_single_press",
@@ -104,13 +86,7 @@
         "nl": "Enkele druk",
         "de": "Einfacher Druck"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Single press",
-        "fr": "Appui simple",
-        "nl": "Enkele druk",
-        "de": "Einfacher Druck"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotary_double_press",
@@ -120,13 +96,7 @@
         "nl": "Dubbele druk",
         "de": "Doppelter Druck"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Double press",
-        "fr": "Double appui",
-        "nl": "Dubbele druk",
-        "de": "Doppelter Druck"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotary_long_press",
@@ -136,13 +106,7 @@
         "nl": "Lange druk",
         "de": "Langer Druck"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Long press",
-        "fr": "Appui long",
-        "nl": "Lange druk",
-        "de": "Langer Druck"
-      }
+      "args": []
     },
     {
       "id": "smart_knob_rotary_battery_low",
@@ -152,13 +116,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -180,11 +138,7 @@
             "fr": "Niveau"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Brightness level is above... [[level]]",
-        "fr": "Niveau de luminosité supérieur à... [[level]]"
-      }
+      ]
     }
   ],
   "actions": [
@@ -206,13 +160,7 @@
           "label": "%",
           "labelDecimals": 0
         }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness [[brightness]]",
-        "fr": "Régler luminosité [[brightness]]",
-        "nl": "Helderheid instellen [[brightness]]",
-        "de": "Helligkeit einstellen [[brightness]]"
-      }
+      ]
     }
   ]
 }

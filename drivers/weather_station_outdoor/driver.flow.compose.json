@@ -17,11 +17,7 @@
           "example": 15
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Outdoor temperature changed",
-        "fr": "Température extérieure changée"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_outdoor_humidity_changed",
@@ -40,11 +36,7 @@
           "example": 65
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Outdoor humidity changed",
-        "fr": "Humidité extérieure changée"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_pressure_changed",
@@ -63,11 +55,7 @@
           "example": 1013
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Barometric pressure changed",
-        "fr": "Pression atmosphérique changée"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_weather_battery_low",
@@ -75,11 +63,7 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_temp_changed",
@@ -89,13 +73,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_humidity_changed",
@@ -105,13 +83,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_lux_changed",
@@ -121,13 +93,7 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_battery_low",
@@ -137,13 +103,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -160,11 +120,7 @@
           "min": -40,
           "max": 60
         }
-      ],
-      "titleFormatted": {
-        "en": "Outdoor temperature above [[temperature]]",
-        "fr": "Température extérieure supérieure à [[temperature]]"
-      }
+      ]
     },
     {
       "id": "weather_station_outdoor_outdoor_temp_below",
@@ -179,11 +135,7 @@
           "min": -40,
           "max": 60
         }
-      ],
-      "titleFormatted": {
-        "en": "Outdoor temperature below [[temperature]]",
-        "fr": "Température extérieure inférieure à [[temperature]]"
-      }
+      ]
     },
     {
       "id": "weather_station_outdoor_pressure_rising",
@@ -191,11 +143,7 @@
         "en": "Pressure is rising - good weather",
         "fr": "Pression en hausse - beau temps"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Pressure is rising - good weather",
-        "fr": "Pression en hausse - beau temps"
-      }
+      "args": []
     },
     {
       "id": "weather_station_outdoor_pressure_falling",
@@ -203,11 +151,7 @@
         "en": "Pressure is falling - bad weather",
         "fr": "Pression en baisse - mauvais temps"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Pressure is falling - bad weather",
-        "fr": "Pression en baisse - mauvais temps"
-      }
+      "args": []
     }
   ]
 }

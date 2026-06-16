@@ -6,10 +6,6 @@
         "en": "Switch state changed",
         "pl": "Stan przełącznika zmienił się"
       },
-      "titleFormatted": {
-        "en": "[[switch]] was [[state]]",
-        "pl": "[[switch]] został [[state]]"
-      },
       "args": [
         {
           "name": "switch",
@@ -65,10 +61,6 @@
       "title": {
         "en": "Scene triggered",
         "pl": "Uruchomiono scenę"
-      },
-      "titleFormatted": {
-        "en": "[[scene]] was triggered",
-        "pl": "[[scene]] została uruchomiona"
       },
       "args": [
         {
@@ -129,10 +121,6 @@
         "en": "Set switch state",
         "pl": "Ustaw stan przełącznika"
       },
-      "titleFormatted": {
-        "en": "Set [[switch]] to [[state]]",
-        "pl": "Ustaw [[switch]] na [[state]]"
-      },
       "args": [
         {
           "name": "switch",
@@ -190,10 +178,6 @@
       "title": {
         "en": "Switch # is !{{on|off}}",
         "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
-      },
-      "titleFormatted": {
-        "en": "[[switch]] is !{{on|off}}",
-        "pl": "[[switch]] jest !{{włączony|wyłączony}}"
       },
       "args": [
         {

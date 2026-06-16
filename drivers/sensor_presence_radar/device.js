@@ -77,7 +77,7 @@ const SENSOR_CONFIGS = require('../../lib/data/SensorConfigs');
 const MANUFACTURER_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   for (const mfr of config.sensors) {
-    MANUFACTURER_CONFIG_MAP[mfr.toLowerCase()] = { ...config, configName };
+    MANUFACTURER_CONFIG_MAP[normalize(mfr)] = { ...config, configName };
   }
 }
 
@@ -1684,8 +1684,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const mfr = this._getManufacturerName();
 
     // Only apply to problematic sensors (case-insensitive)
-    const mfrLower = (mfr || '').toLowerCase();
-    if (!mfrLower.includes('iadro9bf') && !mfrLower.includes('qasjif9e')) {
+    if (!CI.includesCI(mfr, 'iadro9bf') && !CI.includesCI(mfr, 'qasjif9e')) {
       return presence;
     }
 

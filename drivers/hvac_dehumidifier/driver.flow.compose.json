@@ -6,11 +6,7 @@
         "en": "Turned on",
         "fr": "Allumé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_turned_off",
@@ -18,11 +14,7 @@
         "en": "Turned off",
         "fr": "Éteint"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_measure_humidity_changed",
@@ -41,11 +33,7 @@
           "example": 65
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_measure_temperature_changed",
@@ -64,11 +52,7 @@
           "example": 20.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_measure_power_changed",
@@ -87,11 +71,7 @@
           "example": 100
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_alarm_water_true",
@@ -99,11 +79,7 @@
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water leak detected",
-        "fr": "Fuite d'eau détectée"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_alarm_water_false",
@@ -111,11 +87,7 @@
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "No water leak",
-        "fr": "Aucune fuite d'eau"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_turned_on",
@@ -125,13 +97,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_turned_off",
@@ -141,13 +107,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_humidity_changed",
@@ -157,13 +117,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_temp_changed",
@@ -173,13 +127,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_power_changed",
@@ -189,13 +137,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_water_alarm",
@@ -205,13 +147,7 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water alarm",
-        "fr": "Alarme eau",
-        "nl": "Wateralarm",
-        "de": "Wasseralarm"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_battery_low",
@@ -221,13 +157,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -237,11 +167,7 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_is_on",
@@ -251,13 +177,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_water_detected",
@@ -267,13 +187,7 @@
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
-        "nl": "Water !{{is|is niet}} gedetecteerd",
-        "de": "Wasser !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -283,11 +197,7 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_turn_off",
@@ -295,11 +205,7 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_toggle",
@@ -307,11 +213,7 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_turn_on",
@@ -321,13 +223,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_turn_off",
@@ -337,13 +233,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_toggle",
@@ -353,13 +243,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_set_temperature",
@@ -379,13 +263,7 @@
           "label": "°C",
           "labelDecimals": 1
         }
-      ],
-      "titleFormatted": {
-        "en": "Set temperature [[temperature]]",
-        "fr": "Régler température [[temperature]]",
-        "nl": "Temperatuur instellen [[temperature]]",
-        "de": "Temperatur einstellen [[temperature]]"
-      }
+      ]
     }
   ]
 }

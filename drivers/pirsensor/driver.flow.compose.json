@@ -8,13 +8,7 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté",
-        "nl": "Beweging gedetecteerd",
-        "de": "Bewegung erkannt"
-      }
+      "args": []
     },
     {
       "id": "pirsensor_alarm_motion_false",
@@ -24,13 +18,7 @@
         "nl": "Beweging beëindigd",
         "de": "Bewegung beendet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion cleared",
-        "fr": "Mouvement terminé",
-        "nl": "Beweging beëindigd",
-        "de": "Bewegung beendet"
-      }
+      "args": []
     },
     {
       "id": "pirsensor_battery_low",
@@ -40,13 +28,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -58,13 +40,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{wird|wird nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{wird|wird nicht}} erkannt"
-      }
+      "args": []
     }
   ]
 }

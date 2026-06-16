@@ -21,13 +21,7 @@
           "example": 21
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "radiator_wifi_tuya_target_temperature_changed",
@@ -50,13 +44,7 @@
           "example": 22
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée",
-        "nl": "Doeltemperatuur gewijzigd",
-        "de": "Zieltemperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "radiator_wifi_tuya_battery_low",
@@ -66,13 +54,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -98,13 +80,7 @@
             "de": "Temperatur (°C)"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set target temperature to... [[temperature]]",
-        "fr": "Régler la température cible à... [[temperature]]",
-        "nl": "Doeltemperatuur instellen op... [[temperature]]",
-        "de": "Zieltemperatur einstellen auf... [[temperature]]"
-      }
+      ]
     }
   ]
 }

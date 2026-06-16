@@ -8,13 +8,7 @@
         "nl": "Contact gedetecteerd (geopend)",
         "de": "Kontakt erkannt (geöffnet)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact detected (opened)",
-        "fr": "Contact détecté (ouvert)",
-        "nl": "Contact gedetecteerd (geopend)",
-        "de": "Kontakt erkannt (geöffnet)"
-      }
+      "args": []
     },
     {
       "id": "doorwindowsensor_4_alarm_contact_false",
@@ -24,13 +18,7 @@
         "nl": "Contact vrijgegeven (gesloten)",
         "de": "Kontakt freigegeben (geschlossen)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact cleared (closed)",
-        "fr": "Contact libéré (fermé)",
-        "nl": "Contact vrijgegeven (gesloten)",
-        "de": "Kontakt freigegeben (geschlossen)"
-      }
+      "args": []
     },
     {
       "id": "doorwindowsensor_4_battery_low",
@@ -40,13 +28,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -58,13 +40,7 @@
         "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
         "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact !{{is|is not}} detected (opened)",
-        "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
-        "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
-        "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
-      }
+      "args": []
     }
   ]
 }

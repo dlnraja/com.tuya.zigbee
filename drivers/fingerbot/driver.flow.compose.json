@@ -14,13 +14,7 @@
         "nl": "Fingerbot drukknop geactiveerd",
         "de": "Fingerbot-Taste aktiviert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton pressé",
-        "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
-      }
+      "args": []
     },
     {
       "id": "fingerbot_turned_on",
@@ -30,13 +24,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "fingerbot_turned_off",
@@ -46,13 +34,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "fingerbot_battery_low",
@@ -62,13 +44,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -80,13 +56,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -104,13 +74,7 @@
         "nl": "Activeer de drukactie",
         "de": "Fingerbot-Drückaktion aktivieren"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Push",
-        "fr": "Pousser",
-        "nl": "Drukken",
-        "de": "Drücken"
-      }
+      "args": []
     },
     {
       "id": "fingerbot_turn_on",
@@ -120,13 +84,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "fingerbot_turn_off",
@@ -136,13 +94,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "fingerbot_toggle",
@@ -152,13 +104,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     }
   ]
 }

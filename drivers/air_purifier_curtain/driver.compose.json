@@ -39,10 +39,6 @@
           "en": "Calibrate curtain motor",
           "nl": "Kalibreer gordijnmotor"
         },
-        "titleFormatted": {
-          "en": "Calibrate",
-          "nl": "Kalibreer"
-        },
         "hint": {
           "en": "Run full open/close cycle for position calibration",
           "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
@@ -53,10 +49,6 @@
         "title": {
           "en": "Reset position to 0%",
           "nl": "Reset positie naar 0%"
-        },
-        "titleFormatted": {
-          "en": "Reset position",
-          "nl": "Reset positie"
         },
         "hint": {
           "en": "Reset current position to fully closed",
@@ -70,10 +62,6 @@
           "nl": "Gordijn positie vasthouden",
           "fr": "Maintenir position rideau"
         },
-        "titleFormatted": {
-          "en": "Hold at current position",
-          "nl": "Houd huidige positie"
-        },
         "hint": {
           "en": "Stop curtain movement and hold at current position",
           "nl": "Stop gordijn beweging en houd huidige positie vast"
@@ -85,10 +73,6 @@
           "en": "Open curtain partially",
           "nl": "Gordijn gedeeltelijk openen",
           "fr": "Ouvrir rideau partiellement"
-        },
-        "titleFormatted": {
-          "en": "Open to [[position]]%",
-          "nl": "Open naar [[position]]%"
         },
         "args": [
           {
@@ -152,7 +136,9 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_unknown"
+    ],
     "productId": [
       "TS0601"
     ],

@@ -1,6 +1,7 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * Rain Sensor Device
@@ -20,10 +21,9 @@ class RainSensorDevice extends UnifiedSensorBase {
 
     get dpMappings() {
     const mfr = typeof this.getSetting === 'function' ? (this.getSetting('zb_manufacturer_name') || '') : '';
-    const mfrLower = mfr.toLowerCase();
 
     // ── TS0601 HOBEIAN variants (ZG-223Z) ──
-    if (mfrLower.includes('u6x1zyv2') || mfrLower.includes('jsaqgakf') || mfrLower.includes('2pddnnrk')) {
+    if (includesCI(mfr, 'u6x1zyv2') || includesCI(mfr, 'jsaqgakf') || includesCI(mfr, '2pddnnrk')) {
       return {
         1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
         2: { capability: 'measure_humidity', divisor: 1 },
@@ -39,7 +39,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     // Per Z2M: DP4=battery, DP101=solar mV, DP102=avg20min mV,
     //   DP103=maxToday mV, DP104=cleaning reminder, DP105=rain intensity mV
     // Rain detection itself uses IAS Zone (cluster 0x0500, zoneType "rain")
-    if (mfrLower.includes('tgvtvdoc') || mfrLower.includes('p68kms0l')) {
+    if (includesCI(mfr, 'tgvtvdoc') || includesCI(mfr, 'p68kms0l')) {
       return {
         4:  { capability: 'measure_battery', divisor: 1 },                    // Battery %
         101: { capability: 'measure_voltage', divisor: 1 },                   // Solar voltage (mV)

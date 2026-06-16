@@ -32,9 +32,6 @@
       "title": {
         "en": "Set window open status"
       },
-      "titleFormatted": {
-        "en": "Set window open status to [[window_open_status]]"
-      },
       "args": [
         {
           "type": "checkbox",
@@ -52,9 +49,6 @@
       },
       "hint": {
         "en": "Temporarily boost the thermostat to a higher temperature for rapid heating"
-      },
-      "titleFormatted": {
-        "en": "Set boost mode to [[mode]]"
       },
       "args": [
         {
@@ -85,9 +79,6 @@
       "hint": {
         "en": "Enable or disable frost protection (maintains minimum temperature to prevent pipe freezing)"
       },
-      "titleFormatted": {
-        "en": "Set frost protection to [[mode]]"
-      },
       "args": [
         {
           "name": "mode",
@@ -117,9 +108,6 @@
       "hint": {
         "en": "Enable or disable child lock to prevent manual changes on the device"
       },
-      "titleFormatted": {
-        "en": "Set child lock to [[mode]]"
-      },
       "args": [
         {
           "name": "mode",
@@ -148,9 +136,6 @@
       },
       "hint": {
         "en": "Enable or disable open window detection (lowers temperature when window is detected open)"
-      },
-      "titleFormatted": {
-        "en": "Set window detection to [[mode]]"
       },
       "args": [
         {

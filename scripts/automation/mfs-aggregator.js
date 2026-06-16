@@ -1074,8 +1074,14 @@ async function main() {
         if (typeof fn === 'function') {
           entries = await fn(cache);
         } else {
-          // Direct eval for self-contained script
-          entries = await eval(`${srcDef.fn}(cache)`);
+          // Resolve function by name from module scope (no eval)
+          const fnRef = typeof globalThis[srcDef.fn] === 'function' ? globalThis[srcDef.fn] : null;
+          if (fnRef) {
+            entries = await fnRef(cache);
+          } else {
+            log(C.R, `    SKIP: Unknown source function "${srcDef.fn}"`);
+            entries = [];
+          }
         }
       }
 

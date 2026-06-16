@@ -1,0 +1,59 @@
+{
+  "id": "network_weak_signal_detected",
+  "title": {
+    "en": "Weak signal detected"
+  },
+  "hint": {
+    "en": "Triggers when a device's signal quality drops below acceptable levels"
+  },
+  "args": [
+    {
+      "name": "lqi_threshold",
+      "type": "number",
+      "title": {
+        "en": "LQI threshold"
+      },
+      "min": 0,
+      "max": 255,
+      "step": 10,
+      "value": 50
+    }
+  ],
+  "tokens": [
+    {
+      "name": "ieee_addr",
+      "type": "string",
+      "title": {
+        "en": "IEEE address"
+      }
+    },
+    {
+      "name": "model_id",
+      "type": "string",
+      "title": {
+        "en": "Model ID"
+      }
+    },
+    {
+      "name": "rssi",
+      "type": "number",
+      "title": {
+        "en": "RSSI (dBm)"
+      }
+    },
+    {
+      "name": "lqi",
+      "type": "number",
+      "title": {
+        "en": "LQI (0-255)"
+      }
+    },
+    {
+      "name": "device_type",
+      "type": "string",
+      "title": {
+        "en": "Device type"
+      }
+    }
+  ]
+}

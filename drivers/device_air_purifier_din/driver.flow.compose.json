@@ -8,13 +8,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changÃ©e",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_din_din_rail_meter_voltage_changed",
@@ -32,11 +26,7 @@
           "example": 230
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Voltage changed",
-        "fr": "Tension changÃ©e"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_din_din_rail_meter_current_changed",
@@ -54,11 +44,7 @@
           "example": 0.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Current changed",
-        "fr": "Courant changÃ©"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_din_din_rail_meter_energy_changed",
@@ -76,11 +62,7 @@
           "example": 10
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Energy consumption changed",
-        "fr": "Consommation changÃ©e"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -88,9 +70,6 @@
       "id": "device_air_purifier_din_din_rail_meter_power_above",
       "title": {
         "en": "Power !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]] W"
       },
       "args": [
         {
@@ -107,9 +86,6 @@
     {
       "id": "device_air_purifier_din_din_rail_meter_reset_meter",
       "title": {
-        "en": "Reset energy meter"
-      },
-      "titleFormatted": {
         "en": "Reset energy meter"
       }
     }

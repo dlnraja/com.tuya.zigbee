@@ -18,7 +18,7 @@ const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHel
 const MANUFACTURER_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   for (const mfr of config.sensors) {
-    MANUFACTURER_CONFIG_MAP[mfr.toLowerCase()] = { ...config, configName };
+    MANUFACTURER_CONFIG_MAP[normalize(mfr)] = { ...config, configName };
   }
 }
 

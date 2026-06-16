@@ -1,0 +1,42 @@
+{
+  "id": "schedule_action_executed",
+  "title": {
+    "en": "Scheduled action executed"
+  },
+  "hint": {
+    "en": "Triggers when a scheduled action fires"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "schedule_id",
+      "type": "string",
+      "title": {
+        "en": "Schedule ID"
+      },
+      "example": "sched_1"
+    },
+    {
+      "name": "schedule_name",
+      "type": "string",
+      "title": {
+        "en": "Schedule name"
+      },
+      "example": "Morning lights"
+    },
+    {
+      "name": "success",
+      "type": "boolean",
+      "title": {
+        "en": "Execution success"
+      }
+    },
+    {
+      "name": "execution_count",
+      "type": "number",
+      "title": {
+        "en": "Total executions"
+      }
+    }
+  ]
+}

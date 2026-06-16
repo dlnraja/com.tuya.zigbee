@@ -6,11 +6,7 @@
         "en": "Turned on",
         "fr": "Allumé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_smart_bulb_rgb_turned_off",
@@ -18,11 +14,7 @@
         "en": "Turned off",
         "fr": "Éteint"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_smart_bulb_rgb_dim_changed",
@@ -41,11 +33,7 @@
           "example": 0.75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "Luminosité changée"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_turned_on",
@@ -55,13 +43,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_turned_off",
@@ -71,13 +53,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_battery_low",
@@ -87,13 +63,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -103,11 +73,7 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_is_on",
@@ -117,13 +83,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -133,11 +93,7 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_smart_bulb_rgb_turn_off",
@@ -145,11 +101,7 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_smart_bulb_rgb_toggle",
@@ -157,11 +109,7 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_smart_bulb_rgb_set_dim",
@@ -183,11 +131,7 @@
             "fr": "Luminosité"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness to... [[brightness]]",
-        "fr": "Régler la luminosité à... [[brightness]]"
-      }
+      ]
     },
     {
       "id": "bulb_rgb_turn_on",
@@ -197,13 +141,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_turn_off",
@@ -213,13 +151,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_toggle",
@@ -229,13 +161,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "bulb_rgb_set_brightness",
@@ -255,13 +181,7 @@
           "label": "%",
           "labelDecimals": 0
         }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness [[brightness]]",
-        "fr": "Régler luminosité [[brightness]]",
-        "nl": "Helderheid instellen [[brightness]]",
-        "de": "Helligkeit einstellen [[brightness]]"
-      }
+      ]
     }
   ]
 }

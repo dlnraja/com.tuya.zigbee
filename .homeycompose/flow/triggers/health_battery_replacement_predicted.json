@@ -1,0 +1,47 @@
+{
+  "id": "health_battery_replacement_predicted",
+  "title": {
+    "en": "Battery replacement predicted"
+  },
+  "hint": {
+    "en": "Triggers when the engine predicts battery needs replacement based on drain rate"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "capabilities=measure_battery|battery"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "current_battery",
+      "type": "number",
+      "title": {
+        "en": "Current battery %"
+      }
+    },
+    {
+      "name": "drain_rate_per_day",
+      "type": "number",
+      "title": {
+        "en": "Drain rate (%/day)"
+      }
+    },
+    {
+      "name": "days_remaining",
+      "type": "number",
+      "title": {
+        "en": "Estimated days remaining"
+      }
+    },
+    {
+      "name": "battery_type",
+      "type": "string",
+      "title": {
+        "en": "Battery type"
+      },
+      "example": "3V_CR2032"
+    }
+  ]
+}

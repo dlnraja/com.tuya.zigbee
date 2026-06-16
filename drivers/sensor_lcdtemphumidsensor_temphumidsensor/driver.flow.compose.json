@@ -8,13 +8,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_humidity_changed",
@@ -24,13 +18,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_battery_low",
@@ -40,13 +28,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -54,9 +36,6 @@
       "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_temp_above",
       "title": {
         "en": "Temperature !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]] Â°C"
       },
       "args": [
         {
@@ -72,9 +51,6 @@
       "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_humidity_above",
       "title": {
         "en": "Humidity !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "Humidity !{{is|is not}} above [[humidity]] %"
       },
       "args": [
         {

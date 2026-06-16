@@ -1,3 +1,4 @@
+const { includesCI } = require('../../../lib/utils/CaseInsensitiveMatcher');
 'use strict';
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
@@ -36,7 +37,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
       '_TZE204_o3x45p96', '_tze204_o3x45p96'
     ];
-    return me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'me167' : 'standard';
+    return me167Ids.some(id => includesCI(me167Ids, id)) ? 'me167' : 'standard';
   }
 
   get dpMappings() {

@@ -5,20 +5,14 @@
       "title": {
         "en": "Turn on"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_humidifier_humidifier_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_humidifier_humidifier_toggle",
@@ -28,13 +22,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_humidifier_humidifier_set_brightness",
@@ -43,12 +31,6 @@
         "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
-        "nl": "Helderheid op [[brightness]]%",
-        "de": "Helligkeit auf [[brightness]]%"
       },
       "args": [
         {
@@ -72,13 +54,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_humidifier_humidifier_turned_off",
@@ -88,13 +64,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_humidifier_humidifier_humidity_changed",
@@ -104,13 +74,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -122,13 +86,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ]
 }

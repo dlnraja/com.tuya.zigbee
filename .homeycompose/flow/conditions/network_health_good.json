@@ -1,0 +1,63 @@
+{
+  "id": "network_health_good",
+  "title": {
+    "en": "Network health good"
+  },
+  "hint": {
+    "en": "Checks if the Zigbee network health score is above a threshold"
+  },
+  "args": [
+    {
+      "name": "min_coverage",
+      "type": "number",
+      "title": {
+        "en": "Min coverage score (%)"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "value": 80
+    },
+    {
+      "name": "max_orphaned",
+      "type": "number",
+      "title": {
+        "en": "Max orphaned devices"
+      },
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "value": 2
+    }
+  ],
+  "tokens": [
+    {
+      "name": "coverage_score",
+      "type": "number",
+      "title": {
+        "en": "Coverage score"
+      }
+    },
+    {
+      "name": "total_devices",
+      "type": "number",
+      "title": {
+        "en": "Total devices"
+      }
+    },
+    {
+      "name": "orphaned_devices",
+      "type": "number",
+      "title": {
+        "en": "Orphaned devices"
+      }
+    },
+    {
+      "name": "average_lqi",
+      "type": "number",
+      "title": {
+        "en": "Average LQI"
+      }
+    }
+  ]
+}

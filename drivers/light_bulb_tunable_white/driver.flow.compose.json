@@ -6,11 +6,7 @@
         "en": "Turned on",
         "fr": "AllumÃ©"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©"
-      }
+      "args": []
     },
     {
       "id": "light_bulb_tunable_white_turned_off",
@@ -18,11 +14,7 @@
         "en": "Turned off",
         "fr": "Ã‰teint"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint"
-      }
+      "args": []
     },
     {
       "id": "light_bulb_tunable_white_dim_changed",
@@ -41,21 +33,13 @@
           "example": 0.75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness changed",
-        "fr": "LuminositÃ© changÃ©e"
-      }
+      "args": []
     }
   ],
   "conditions": [
     {
       "id": "light_bulb_tunable_white_is_on",
       "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}"
-      },
-      "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
@@ -69,11 +53,7 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
-      }
+      "args": []
     },
     {
       "id": "light_bulb_tunable_white_turn_off",
@@ -81,11 +61,7 @@
         "en": "Turn off",
         "fr": "Ã‰teindre"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Ã‰teindre"
-      }
+      "args": []
     },
     {
       "id": "light_bulb_tunable_white_toggle",
@@ -93,11 +69,7 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
-      }
+      "args": []
     },
     {
       "id": "light_bulb_tunable_white_set_dim",
@@ -119,11 +91,7 @@
             "fr": "LuminositÃ©"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "RÃ©gler la luminositÃ© Ã [[brightness]]%"
-      }
+      ]
     }
   ]
 }

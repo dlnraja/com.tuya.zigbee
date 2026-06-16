@@ -1,0 +1,54 @@
+{
+  "id": "energy_weekly_summary_ready",
+  "title": {
+    "en": "Weekly energy summary ready"
+  },
+  "hint": {
+    "en": "Triggers when the weekly energy usage summary is calculated"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "total_energy_kwh",
+      "type": "number",
+      "title": {
+        "en": "Total energy (kWh)"
+      }
+    },
+    {
+      "name": "avg_daily_kwh",
+      "type": "number",
+      "title": {
+        "en": "Average daily energy (kWh)"
+      }
+    },
+    {
+      "name": "avg_power_w",
+      "type": "number",
+      "title": {
+        "en": "Average power (W)"
+      }
+    },
+    {
+      "name": "peak_power_w",
+      "type": "number",
+      "title": {
+        "en": "Peak power (W)"
+      }
+    },
+    {
+      "name": "device_count",
+      "type": "number",
+      "title": {
+        "en": "Device count"
+      }
+    },
+    {
+      "name": "week_start",
+      "type": "string",
+      "title": {
+        "en": "Week start date"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "solar_is_golden_hour",
+  "title": {
+    "en": "It is golden hour"
+  },
+  "hint": {
+    "en": "Checks if the sun elevation is between 0 and 18 degrees (golden hour / civil twilight)"
+  },
+  "args": [
+    {
+      "name": "min_elevation",
+      "type": "number",
+      "title": {
+        "en": "Min elevation (degrees)"
+      },
+      "min": 0,
+      "max": 18,
+      "step": 1,
+      "value": 0
+    },
+    {
+      "name": "max_elevation",
+      "type": "number",
+      "title": {
+        "en": "Max elevation (degrees)"
+      },
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "value": 18
+    }
+  ],
+  "tokens": [
+    {
+      "name": "elevation",
+      "type": "number",
+      "title": {
+        "en": "Current elevation (degrees)"
+      }
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "title": {
+        "en": "Elevation category"
+      }
+    }
+  ]
+}

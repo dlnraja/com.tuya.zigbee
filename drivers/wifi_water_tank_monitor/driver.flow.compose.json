@@ -20,13 +20,7 @@
           }
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Liquid state changed",
-        "nl": "Vloeistofstatus veranderd",
-        "fr": "Etat liquide change",
-        "de": "Flussigkeitsstatus geandert"
-      }
+      "args": []
     },
     {
       "id": "wifi_water_tank_monitor_level_changed",
@@ -54,13 +48,7 @@
           "example": 75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Liquid level changed",
-        "nl": "Vloeistofniveau veranderd",
-        "fr": "Niveau liquide change",
-        "de": "Flussigkeitsstand geandert"
-      }
+      "args": []
     },
     {
       "id": "wifi_water_tank_monitor_low",
@@ -71,13 +59,7 @@
         "fr": "Niveau liquide bas",
         "de": "Flussigkeitsstand niedrig"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Liquid level is low",
-        "nl": "Vloeistofniveau is laag",
-        "fr": "Niveau liquide bas",
-        "de": "Flussigkeitsstand niedrig"
-      }
+      "args": []
     },
     {
       "id": "wifi_water_tank_monitor_high",
@@ -87,13 +69,7 @@
         "fr": "Niveau liquide haut",
         "de": "Flussigkeitsstand hoch"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Liquid level is high",
-        "nl": "Vloeistofniveau is hoog",
-        "fr": "Niveau liquide haut",
-        "de": "Flussigkeitsstand hoch"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -116,13 +92,7 @@
             "en": "20"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Fill level !{{is|is not}} above [[level]]",
-        "nl": "Vulniveau !{{is|is niet}} boven [[level]]",
-        "fr": "Niveau !{{est|n'est pas}} au-dessus de [[level]]",
-        "de": "Fullstand !{{ist|ist nicht}} uber [[level]]"
-      }
+      ]
     },
     {
       "id": "wifi_water_tank_monitor_state_is",
@@ -157,13 +127,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Liquid state !{{is|is not}} [[state]]",
-        "nl": "Vloeistofstatus !{{is|is niet}} [[state]]",
-        "fr": "Etat liquide !{{est|n'est pas}} [[state]]",
-        "de": "Flussigkeitsstatus !{{ist|ist nicht}} [[state]]"
-      }
+      ]
     }
   ]
 }

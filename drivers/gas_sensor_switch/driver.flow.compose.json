@@ -8,13 +8,7 @@
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumÃ©",
-        "nl": "Gang 1 aangezet",
-        "de": "Gang 1 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang1_turned_off",
@@ -24,13 +18,7 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 turned off",
-        "fr": "Gang 1 Ã©teint",
-        "nl": "Gang 1 uitgezet",
-        "de": "Gang 1 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang2_turned_on",
@@ -40,13 +28,7 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumÃ©",
-        "nl": "Gang 2 aangezet",
-        "de": "Gang 2 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang2_turned_off",
@@ -56,13 +38,7 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 turned off",
-        "fr": "Gang 2 Ã©teint",
-        "nl": "Gang 2 uitgezet",
-        "de": "Gang 2 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang3_turned_on",
@@ -72,13 +48,7 @@
         "nl": "Gang 3 aangezet",
         "de": "Gang 3 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 turned on",
-        "fr": "Gang 3 allumÃ©",
-        "nl": "Gang 3 aangezet",
-        "de": "Gang 3 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang3_turned_off",
@@ -88,13 +58,7 @@
         "nl": "Gang 3 uitgezet",
         "de": "Gang 3 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 turned off",
-        "fr": "Gang 3 Ã©teint",
-        "nl": "Gang 3 uitgezet",
-        "de": "Gang 3 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang4_turned_on",
@@ -104,13 +68,7 @@
         "nl": "Gang 4 aangezet",
         "de": "Gang 4 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 turned on",
-        "fr": "Gang 4 allumÃ©",
-        "nl": "Gang 4 aangezet",
-        "de": "Gang 4 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang4_turned_off",
@@ -120,13 +78,7 @@
         "nl": "Gang 4 uitgezet",
         "de": "Gang 4 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 turned off",
-        "fr": "Gang 4 Ã©teint",
-        "nl": "Gang 4 uitgezet",
-        "de": "Gang 4 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang1_on",
@@ -136,13 +88,7 @@
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 1 ON",
-        "fr": "Physique gang 1 ON",
-        "nl": "Fysiek gang 1 AAN",
-        "de": "Physisch gang 1 EIN"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang1_off",
@@ -152,13 +98,7 @@
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 1 OFF",
-        "fr": "Physique gang 1 OFF",
-        "nl": "Fysiek gang 1 UIT",
-        "de": "Physisch gang 1 AUS"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang2_on",
@@ -168,13 +108,7 @@
         "nl": "Fysiek gang 2 AAN",
         "de": "Physisch gang 2 EIN"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 2 ON",
-        "fr": "Physique gang 2 ON",
-        "nl": "Fysiek gang 2 AAN",
-        "de": "Physisch gang 2 EIN"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang2_off",
@@ -184,13 +118,7 @@
         "nl": "Fysiek gang 2 UIT",
         "de": "Physisch gang 2 AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 2 OFF",
-        "fr": "Physique gang 2 OFF",
-        "nl": "Fysiek gang 2 UIT",
-        "de": "Physisch gang 2 AUS"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang3_on",
@@ -200,13 +128,7 @@
         "nl": "Fysiek gang 3 AAN",
         "de": "Physisch gang 3 EIN"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 3 ON",
-        "fr": "Physique gang 3 ON",
-        "nl": "Fysiek gang 3 AAN",
-        "de": "Physisch gang 3 EIN"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang3_off",
@@ -216,13 +138,7 @@
         "nl": "Fysiek gang 3 UIT",
         "de": "Physisch gang 3 AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 3 OFF",
-        "fr": "Physique gang 3 OFF",
-        "nl": "Fysiek gang 3 UIT",
-        "de": "Physisch gang 3 AUS"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang4_on",
@@ -232,13 +148,7 @@
         "nl": "Fysiek gang 4 AAN",
         "de": "Physisch gang 4 EIN"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 4 ON",
-        "fr": "Physique gang 4 ON",
-        "nl": "Fysiek gang 4 AAN",
-        "de": "Physisch gang 4 EIN"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang4_off",
@@ -248,13 +158,7 @@
         "nl": "Fysiek gang 4 UIT",
         "de": "Physisch gang 4 AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical gang 4 OFF",
-        "fr": "Physique gang 4 OFF",
-        "nl": "Fysiek gang 4 UIT",
-        "de": "Physisch gang 4 AUS"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang1_single",
@@ -262,11 +166,7 @@
         "en": "Gang 1 single press - physical",
         "fr": "Gang 1 appui simple - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 single press (physical)",
-        "fr": "Gang 1 appui simple (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang1_double",
@@ -274,11 +174,7 @@
         "en": "Gang 1 double press - physical",
         "fr": "Gang 1 double appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 double press (physical)",
-        "fr": "Gang 1 double appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang1_triple",
@@ -286,11 +182,7 @@
         "en": "Gang 1 triple press - physical",
         "fr": "Gang 1 triple appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 triple press (physical)",
-        "fr": "Gang 1 triple appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang1_long_press",
@@ -298,11 +190,7 @@
         "en": "Gang 1 long press - physical",
         "fr": "Gang 1 appui long - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 long press (physical)",
-        "fr": "Gang 1 appui long (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang2_single",
@@ -310,11 +198,7 @@
         "en": "Gang 2 single press - physical",
         "fr": "Gang 2 appui simple - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 single press (physical)",
-        "fr": "Gang 2 appui simple (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang2_double",
@@ -322,11 +206,7 @@
         "en": "Gang 2 double press - physical",
         "fr": "Gang 2 double appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 double press (physical)",
-        "fr": "Gang 2 double appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang2_triple",
@@ -334,11 +214,7 @@
         "en": "Gang 2 triple press - physical",
         "fr": "Gang 2 triple appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 triple press (physical)",
-        "fr": "Gang 2 triple appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang2_long_press",
@@ -346,11 +222,7 @@
         "en": "Gang 2 long press - physical",
         "fr": "Gang 2 appui long - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 long press (physical)",
-        "fr": "Gang 2 appui long (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang3_single",
@@ -358,11 +230,7 @@
         "en": "Gang 3 single press - physical",
         "fr": "Gang 3 appui simple - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 single press (physical)",
-        "fr": "Gang 3 appui simple (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang3_double",
@@ -370,11 +238,7 @@
         "en": "Gang 3 double press - physical",
         "fr": "Gang 3 double appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 double press (physical)",
-        "fr": "Gang 3 double appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang3_triple",
@@ -382,11 +246,7 @@
         "en": "Gang 3 triple press - physical",
         "fr": "Gang 3 triple appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 triple press (physical)",
-        "fr": "Gang 3 triple appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang3_long_press",
@@ -394,11 +254,7 @@
         "en": "Gang 3 long press - physical",
         "fr": "Gang 3 appui long - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 long press (physical)",
-        "fr": "Gang 3 appui long (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang4_single",
@@ -406,11 +262,7 @@
         "en": "Gang 4 single press - physical",
         "fr": "Gang 4 appui simple - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 single press (physical)",
-        "fr": "Gang 4 appui simple (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang4_double",
@@ -418,11 +270,7 @@
         "en": "Gang 4 double press - physical",
         "fr": "Gang 4 double appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 double press (physical)",
-        "fr": "Gang 4 double appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang4_triple",
@@ -430,11 +278,7 @@
         "en": "Gang 4 triple press - physical",
         "fr": "Gang 4 triple appui - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 triple press (physical)",
-        "fr": "Gang 4 triple appui (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_physical_gang4_long_press",
@@ -442,11 +286,7 @@
         "en": "Gang 4 long press - physical",
         "fr": "Gang 4 appui long - physique"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 long press (physical)",
-        "fr": "Gang 4 appui long (physique)"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turned_on",
@@ -456,13 +296,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turned_off",
@@ -472,13 +306,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_power_changed",
@@ -488,13 +316,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changÃ©e",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang1_scene",
@@ -513,10 +335,7 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 1 scene triggered"
-      }
+      ]
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang2_scene",
@@ -535,10 +354,7 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 2 scene triggered"
-      }
+      ]
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang3_scene",
@@ -557,10 +373,7 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 3 scene triggered"
-      }
+      ]
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang4_scene",
@@ -579,10 +392,7 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 4 scene triggered"
-      }
+      ]
     }
   ],
   "conditions": [
@@ -594,13 +404,7 @@
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumÃ©|Ã©teint}}",
-        "nl": "Gang 1 is !{{aan|uit}}",
-        "de": "Gang 1 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang2_is_on",
@@ -610,13 +414,7 @@
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumÃ©|Ã©teint}}",
-        "nl": "Gang 2 is !{{aan|uit}}",
-        "de": "Gang 2 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang3_is_on",
@@ -626,13 +424,7 @@
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 3 is !{{on|off}}",
-        "fr": "Gang 3 est !{{allumÃ©|Ã©teint}}",
-        "nl": "Gang 3 is !{{aan|uit}}",
-        "de": "Gang 3 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_gang4_is_on",
@@ -642,13 +434,7 @@
         "nl": "Gang 4 is !{{aan|uit}}",
         "de": "Gang 4 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 4 is !{{on|off}}",
-        "fr": "Gang 4 est !{{allumÃ©|Ã©teint}}",
-        "nl": "Gang 4 is !{{aan|uit}}",
-        "de": "Gang 4 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_is_on",
@@ -658,13 +444,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -676,13 +456,7 @@
         "nl": "Gang 1 aanzetten",
         "de": "Gang 1 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 1",
-        "fr": "Allumer gang 1",
-        "nl": "Gang 1 aanzetten",
-        "de": "Gang 1 einschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_off_gang1",
@@ -692,13 +466,7 @@
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 1",
-        "fr": "Ã‰teindre gang 1",
-        "nl": "Gang 1 uitzetten",
-        "de": "Gang 1 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_on_gang2",
@@ -708,13 +476,7 @@
         "nl": "Gang 2 aanzetten",
         "de": "Gang 2 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 2",
-        "fr": "Allumer gang 2",
-        "nl": "Gang 2 aanzetten",
-        "de": "Gang 2 einschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_off_gang2",
@@ -724,13 +486,7 @@
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 2",
-        "fr": "Ã‰teindre gang 2",
-        "nl": "Gang 2 uitzetten",
-        "de": "Gang 2 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_on_gang3",
@@ -740,13 +496,7 @@
         "nl": "Gang 3 aanzetten",
         "de": "Gang 3 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 3",
-        "fr": "Allumer gang 3",
-        "nl": "Gang 3 aanzetten",
-        "de": "Gang 3 einschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_off_gang3",
@@ -756,13 +506,7 @@
         "nl": "Gang 3 uitzetten",
         "de": "Gang 3 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 3",
-        "fr": "Ã‰teindre gang 3",
-        "nl": "Gang 3 uitzetten",
-        "de": "Gang 3 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_on_gang4",
@@ -772,13 +516,7 @@
         "nl": "Gang 4 aanzetten",
         "de": "Gang 4 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 4",
-        "fr": "Allumer gang 4",
-        "nl": "Gang 4 aanzetten",
-        "de": "Gang 4 einschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_off_gang4",
@@ -788,13 +526,7 @@
         "nl": "Gang 4 uitzetten",
         "de": "Gang 4 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 4",
-        "fr": "Ã‰teindre gang 4",
-        "nl": "Gang 4 uitzetten",
-        "de": "Gang 4 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_toggle_gang1",
@@ -802,11 +534,7 @@
         "en": "Toggle gang 1",
         "nl": "Gang 1 wisselen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 1",
-        "nl": "Gang 1 wisselen"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_toggle_gang2",
@@ -814,11 +542,7 @@
         "en": "Toggle gang 2",
         "nl": "Gang 2 wisselen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 2",
-        "nl": "Gang 2 wisselen"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_toggle_gang3",
@@ -826,11 +550,7 @@
         "en": "Toggle gang 3",
         "nl": "Gang 3 wisselen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 3",
-        "nl": "Gang 3 wisselen"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_toggle_gang4",
@@ -838,11 +558,7 @@
         "en": "Toggle gang 4",
         "nl": "Gang 4 wisselen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 4",
-        "nl": "Gang 4 wisselen"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_on_all",
@@ -850,11 +566,7 @@
         "en": "Turn on all gangs",
         "nl": "Alle gangs aanzetten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on all gangs",
-        "nl": "Alle gangs aanzetten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_off_all",
@@ -862,21 +574,13 @@
         "en": "Turn off all gangs",
         "nl": "Alle gangs uitzetten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off all gangs",
-        "nl": "Alle gangs uitzetten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
         "fr": "Mode rÃ©troÃ©clairage LED"
-      },
-      "titleFormatted": {
-        "en": "Set LED backlight to [[mode]]",
-        "fr": "DÃ©finir le rÃ©troÃ©clairage sur [[mode]]"
       },
       "hint": {
         "en": "Control the switch LED indicator (requires Tuya DP15 support)"
@@ -916,10 +620,6 @@
       "title": {
         "en": "Set LED color",
         "fr": "Couleur LED"
-      },
-      "titleFormatted": {
-        "en": "Set LED [[color]] when [[state]]",
-        "fr": "Couleur LED [[color]] quand [[state]]"
       },
       "args": [
         {
@@ -978,10 +678,6 @@
         "en": "Set LED brightness",
         "fr": "LuminositÃ© LED"
       },
-      "titleFormatted": {
-        "en": "Set LED brightness to [[brightness]]%",
-        "fr": "LuminositÃ© LED Ã [[brightness]]%"
-      },
       "args": [
         {
           "type": "range",
@@ -1003,13 +699,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_turn_off",
@@ -1019,13 +709,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Ã‰teindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_toggle",
@@ -1035,22 +719,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "gas_sensor_switch_switch_4gang_set_scene_mode",
       "title": {
         "en": "Set scene mode",
         "fr": "Definir le mode scene"
-      },
-      "titleFormatted": {
-        "en": "Set scene mode to [[mode]]"
       },
       "args": [
         {

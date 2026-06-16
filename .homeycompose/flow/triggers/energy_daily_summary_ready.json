@@ -1,0 +1,55 @@
+{
+  "id": "energy_daily_summary_ready",
+  "title": {
+    "en": "Daily energy summary ready"
+  },
+  "hint": {
+    "en": "Triggers when the daily energy usage summary is calculated"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "total_energy_wh",
+      "type": "number",
+      "title": {
+        "en": "Total energy (Wh)"
+      }
+    },
+    {
+      "name": "total_energy_kwh",
+      "type": "number",
+      "title": {
+        "en": "Total energy (kWh)"
+      }
+    },
+    {
+      "name": "avg_power_w",
+      "type": "number",
+      "title": {
+        "en": "Average power (W)"
+      }
+    },
+    {
+      "name": "peak_power_w",
+      "type": "number",
+      "title": {
+        "en": "Peak power (W)"
+      }
+    },
+    {
+      "name": "device_count",
+      "type": "number",
+      "title": {
+        "en": "Device count"
+      }
+    },
+    {
+      "name": "date",
+      "type": "string",
+      "title": {
+        "en": "Date"
+      },
+      "example": "2026-06-15"
+    }
+  ]
+}

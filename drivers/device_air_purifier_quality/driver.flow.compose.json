@@ -17,11 +17,7 @@
           "example": 20.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
@@ -40,11 +36,7 @@
           "example": 65
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_temp_changed",
@@ -54,13 +46,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "TempÃ©rature changÃ©e",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_changed",
@@ -70,13 +56,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "HumiditÃ© changÃ©e",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "device_air_purifier_quality_air_quality_comprehensive_battery_low",
@@ -86,13 +66,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -100,9 +74,6 @@
       "id": "device_air_purifier_quality_air_quality_comprehensive_co2_above",
       "title": {
         "en": "CO !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "CO !{{is|is not}} above [[co2]] ppm"
       },
       "args": [
         {
@@ -119,9 +90,6 @@
       "title": {
         "en": "Temperature !{{is|is not}} above"
       },
-      "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]] Â°C"
-      },
       "args": [
         {
           "name": "temperature",
@@ -136,9 +104,6 @@
       "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_above",
       "title": {
         "en": "Humidity !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "Humidity !{{is|is not}} above [[humidity]] %"
       },
       "args": [
         {

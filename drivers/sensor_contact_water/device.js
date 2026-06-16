@@ -1,5 +1,6 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
@@ -197,7 +198,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
       '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
-    ].some(id => mfr.toLowerCase().includes(id.toLowerCase()));
+    ].some(id => includesCI(mfr, id));
     // v5.12.3: XOR  default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
     if (invertedByDefault) {

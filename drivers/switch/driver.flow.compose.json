@@ -8,13 +8,7 @@
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumÃ©",
-        "nl": "Gang 1 aangezet",
-        "de": "Gang 1 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_gang1_turned_off_switch",
@@ -24,13 +18,7 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 turned off",
-        "fr": "Gang 1 Ã©teint",
-        "nl": "Gang 1 uitgezet",
-        "de": "Gang 1 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_gang2_turned_on_switch",
@@ -40,13 +28,7 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumÃ©",
-        "nl": "Gang 2 aangezet",
-        "de": "Gang 2 eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_gang2_turned_off_switch",
@@ -56,13 +38,7 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 turned off",
-        "fr": "Gang 2 Ã©teint",
-        "nl": "Gang 2 uitgezet",
-        "de": "Gang 2 ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_physical_gang1_on_switch",
@@ -78,13 +54,7 @@
         "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
         "de": "Wird nur ausgelÃ¶st, wenn physische Taste gang 1 einschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical button gang 1 ON",
-        "fr": "Bouton physique gang 1 ON",
-        "nl": "Fysieke knop gang 1 AAN",
-        "de": "Physische Taste gang 1 EIN"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_physical_gang1_off_switch",
@@ -94,13 +64,7 @@
         "nl": "Fysieke knop gang 1 UIT",
         "de": "Physische Taste gang 1 AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical button gang 1 OFF",
-        "fr": "Bouton physique gang 1 OFF",
-        "nl": "Fysieke knop gang 1 UIT",
-        "de": "Physische Taste gang 1 AUS"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_physical_gang2_on_switch",
@@ -110,13 +74,7 @@
         "nl": "Fysieke knop gang 2 AAN",
         "de": "Physische Taste gang 2 EIN"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical button gang 2 ON",
-        "fr": "Bouton physique gang 2 ON",
-        "nl": "Fysieke knop gang 2 AAN",
-        "de": "Physische Taste gang 2 EIN"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_physical_gang2_off_switch",
@@ -126,13 +84,7 @@
         "nl": "Fysieke knop gang 2 UIT",
         "de": "Physische Taste gang 2 AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical button gang 2 OFF",
-        "fr": "Bouton physique gang 2 OFF",
-        "nl": "Fysieke knop gang 2 UIT",
-        "de": "Physische Taste gang 2 AUS"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turned_on_switch",
@@ -142,13 +94,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turned_off_switch",
@@ -158,13 +104,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_power_changed_switch",
@@ -174,13 +114,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changÃ©e",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_gang1_scene_switch",
@@ -199,10 +133,7 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 1 scene triggered"
-      }
+      ]
     },
     {
       "id": "switch_switch_2gang_gang2_scene_switch",
@@ -221,20 +152,14 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 2 scene triggered"
-      }
+      ]
     },
     {
       "id": "switch_switch_2gang_gangX_scene",
       "title": {
         "en": "Dynamic card switch_2gang_gangX_scene"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Dynamic card switch_2gang_gangX_scene"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -246,13 +171,7 @@
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 1 is !{{on|off}}",
-        "fr": "Gang 1 est !{{allumÃ©|Ã©teint}}",
-        "nl": "Gang 1 is !{{aan|uit}}",
-        "de": "Gang 1 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_gang2_is_on_switch",
@@ -262,13 +181,7 @@
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gang 2 is !{{on|off}}",
-        "fr": "Gang 2 est !{{allumÃ©|Ã©teint}}",
-        "nl": "Gang 2 is !{{aan|uit}}",
-        "de": "Gang 2 ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_is_on_switch",
@@ -278,13 +191,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -296,13 +203,7 @@
         "nl": "Gang 1 aanzetten",
         "de": "Gang 1 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 1",
-        "fr": "Allumer gang 1",
-        "nl": "Gang 1 aanzetten",
-        "de": "Gang 1 einschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turn_off_gang1_switch",
@@ -312,13 +213,7 @@
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 1",
-        "fr": "Ã‰teindre gang 1",
-        "nl": "Gang 1 uitzetten",
-        "de": "Gang 1 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turn_on_gang2_switch",
@@ -328,13 +223,7 @@
         "nl": "Gang 2 aanzetten",
         "de": "Gang 2 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on gang 2",
-        "fr": "Allumer gang 2",
-        "nl": "Gang 2 aanzetten",
-        "de": "Gang 2 einschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turn_off_gang2_switch",
@@ -344,13 +233,7 @@
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off gang 2",
-        "fr": "Ã‰teindre gang 2",
-        "nl": "Gang 2 uitzetten",
-        "de": "Gang 2 ausschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_toggle_gang1_switch",
@@ -366,13 +249,7 @@
         "nl": "Wissel de status van gang 1",
         "de": "Status von Gang 1 umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 1",
-        "fr": "Basculer gang 1",
-        "nl": "Gang 1 wisselen",
-        "de": "Gang 1 umschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_toggle_gang2_switch",
@@ -382,13 +259,7 @@
         "nl": "Gang 2 wisselen",
         "de": "Gang 2 umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle gang 2",
-        "fr": "Basculer gang 2",
-        "nl": "Gang 2 wisselen",
-        "de": "Gang 2 umschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turn_on_all_switch",
@@ -404,13 +275,7 @@
         "nl": "Gang 1 en gang 2 aanzetten",
         "de": "Gang 1 und Gang 2 einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on all gangs",
-        "fr": "Allumer tous les gangs",
-        "nl": "Alle gangs aanzetten",
-        "de": "Alle Gangs einschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turn_off_all_switch",
@@ -420,13 +285,7 @@
         "nl": "Alle gangs uitzetten",
         "de": "Alle Gangs ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off all gangs",
-        "fr": "Ã‰teindre tous les gangs",
-        "nl": "Alle gangs uitzetten",
-        "de": "Alle Gangs ausschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_set_backlight_switch",
@@ -435,12 +294,6 @@
         "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
         "nl": "LED achtergrondverlichting instellen",
         "de": "LED-Hintergrundbeleuchtung einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set LED backlight to [[mode]]",
-        "fr": "DÃ©finir le rÃ©troÃ©clairage sur [[mode]]",
-        "nl": "Stel LED achtergrondverlichting in op [[mode]]",
-        "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
       },
       "hint": {
         "en": "Control the switch LED indicator (requires Tuya DP15 support)",
@@ -498,13 +351,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_turn_off_switch",
@@ -514,13 +361,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Ã‰teindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_toggle_switch",
@@ -530,21 +371,12 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_switch_2gang_set_scene_mode_switch",
       "title": {
         "en": "Set scene mode"
-      },
-      "titleFormatted": {
-        "en": "Set scene mode to [[mode]]"
       },
       "args": [
         {

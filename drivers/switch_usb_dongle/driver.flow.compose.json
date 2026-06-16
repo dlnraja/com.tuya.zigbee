@@ -8,11 +8,7 @@
         "fr": "Le port USB 1 est allumé"
       },
       "tokens": [],
-      "args": [],
-      "titleFormatted": {
-        "en": "USB Port 1 is turned on",
-        "fr": "Le port USB 1 est allumé"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_port1_turned_off",
@@ -21,11 +17,7 @@
         "fr": "Le port USB 1 est éteint"
       },
       "tokens": [],
-      "args": [],
-      "titleFormatted": {
-        "en": "USB Port 1 is turned off",
-        "fr": "Le port USB 1 est éteint"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_port2_turned_on",
@@ -34,11 +26,7 @@
         "fr": "Le port USB 2 est allumé"
       },
       "tokens": [],
-      "args": [],
-      "titleFormatted": {
-        "en": "USB Port 2 is turned on",
-        "fr": "Le port USB 2 est allumé"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_port2_turned_off",
@@ -47,11 +35,7 @@
         "fr": "Le port USB 2 est éteint"
       },
       "tokens": [],
-      "args": [],
-      "titleFormatted": {
-        "en": "USB Port 2 is turned off",
-        "fr": "Le port USB 2 est éteint"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -61,11 +45,7 @@
         "en": "USB Port 1 is on",
         "fr": "Le port USB 1 est allumé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "USB Port 1 is on",
-        "fr": "Le port USB 1 est allumé"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_port2_is_on",
@@ -73,11 +53,7 @@
         "en": "USB Port 2 is on",
         "fr": "Le port USB 2 est allumé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "USB Port 2 is on",
-        "fr": "Le port USB 2 est allumé"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -87,11 +63,7 @@
         "en": "Turn USB Port 1 on",
         "fr": "Allumer le port USB 1"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn USB Port 1 on",
-        "fr": "Allumer le port USB 1"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_turn_off_port1",
@@ -99,11 +71,7 @@
         "en": "Turn USB Port 1 off",
         "fr": "Éteindre le port USB 1"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn USB Port 1 off",
-        "fr": "Éteindre le port USB 1"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_toggle_port1",
@@ -111,11 +79,7 @@
         "en": "Toggle USB Port 1",
         "fr": "Inverser le port USB 1"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle USB Port 1",
-        "fr": "Inverser le port USB 1"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_turn_on_port2",
@@ -123,11 +87,7 @@
         "en": "Turn USB Port 2 on",
         "fr": "Allumer le port USB 2"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn USB Port 2 on",
-        "fr": "Allumer le port USB 2"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_turn_off_port2",
@@ -135,11 +95,7 @@
         "en": "Turn USB Port 2 off",
         "fr": "Éteindre le port USB 2"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn USB Port 2 off",
-        "fr": "Éteindre le port USB 2"
-      }
+      "args": []
     },
     {
       "id": "switch_usb_dongle_toggle_port2",
@@ -147,11 +103,7 @@
         "en": "Toggle USB Port 2",
         "fr": "Inverser le port USB 2"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle USB Port 2",
-        "fr": "Inverser le port USB 2"
-      }
+      "args": []
     }
   ]
 }

@@ -20,6 +20,7 @@ const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
+const FeatureFlowCards = require('./lib/flow/FeatureFlowCards');
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
@@ -34,6 +35,16 @@ const { processMigrationQueue } = require('./lib/utils/migration-queue');
 const OTAUpdateManager = require('./lib/ota/OTAUpdateManager');
 const QuirksDatabase = require('./lib/quirks/QuirksDatabase');
 const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix');
+
+// v9.1.0: Feature modules for flow cards (SolarElevation, TransitionEngine, etc.)
+const SolarElevation = require('./lib/features/SolarElevation');
+const TransitionEngine = require('./lib/features/TransitionEngine');
+const EnergyHistoryStore = require('./lib/features/EnergyHistoryStore');
+const TariffCalculator = require('./lib/features/TariffCalculator');
+const ScheduleManager = require('./lib/features/ScheduleManager');
+const ConditionEngine = require('./lib/features/ConditionEngine');
+const PredictiveHealthEngine = require('./lib/features/PredictiveHealthEngine');
+const NetworkTopologyCollector = require('./lib/features/NetworkTopologyCollector');
 
 let SourceCredits = {};
 try {
@@ -90,6 +101,17 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   errorTranslator = null;
   configValidator = null;
   dpRegistry = null;
+
+  // v9.1.0: Feature module instances for flow cards
+  featureFlowCards = null;
+  solarElevation = null;
+  transitionEngine = null;
+  energyHistoryStore = null;
+  tariffCalculator = null;
+  scheduleManager = null;
+  conditionEngine = null;
+  predictiveHealthEngine = null;
+  networkTopologyCollector = null;
 
   async onInit() {
     this.initializeSettings();
@@ -349,6 +371,37 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.error('⚠️ Presence flow cards failed (non-critical):', err.message);
     }
 
+    // v9.1.0: Initialize feature modules and register their flow cards
+    try {
+      this.solarElevation = new SolarElevation({ logger: this.log.bind(this) });
+      this.transitionEngine = new TransitionEngine();
+      this.energyHistoryStore = new EnergyHistoryStore(this.homey);
+      await this.energyHistoryStore.initialize();
+      this.tariffCalculator = new TariffCalculator({ logger: this.log.bind(this) });
+      this.scheduleManager = new ScheduleManager(this.homey);
+      this.scheduleManager.start();
+      this.conditionEngine = new ConditionEngine(this.homey);
+      this.predictiveHealthEngine = new PredictiveHealthEngine(this.homey);
+      this.predictiveHealthEngine.start();
+      this.networkTopologyCollector = new NetworkTopologyCollector(this.homey);
+      this.solarElevation.startObserving();
+
+      // Register feature flow cards
+      this.featureFlowCards = new FeatureFlowCards(this.homey);
+      this.featureFlowCards.setSolarElevation(this.solarElevation);
+      this.featureFlowCards.setTransitionEngine(this.transitionEngine);
+      this.featureFlowCards.setEnergyHistoryStore(this.energyHistoryStore);
+      this.featureFlowCards.setTariffCalculator(this.tariffCalculator);
+      this.featureFlowCards.setScheduleManager(this.scheduleManager);
+      this.featureFlowCards.setConditionEngine(this.conditionEngine);
+      this.featureFlowCards.setPredictiveHealthEngine(this.predictiveHealthEngine);
+      this.featureFlowCards.setNetworkTopologyCollector(this.networkTopologyCollector);
+      this.featureFlowCards.registerAll();
+      this.log('✅ Feature modules and flow cards initialized');
+    } catch (err) {
+      this.error('⚠️ Feature modules failed (non-critical):', err.message);
+    }
+
     this.log('✅ Tuya Unified Zigbee App has been initialized');
     this._scanForPhantomDevices();
     this._clearMigrationQueue();
@@ -522,6 +575,26 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     this.errorTranslator = null;
     this.configValidator = null;
     this.dpRegistry = null;
+
+    // v9.1.0: Cleanup feature flow cards and modules
+    try { if (this.featureFlowCards?.destroy) { this.featureFlowCards.destroy(); } } catch (e) {}
+    try { if (this.solarElevation?.destroy) { this.solarElevation.destroy(); } } catch (e) {}
+    try { if (this.transitionEngine?.destroy) { this.transitionEngine.destroy(); } } catch (e) {}
+    try { if (this.energyHistoryStore?.destroy) { this.energyHistoryStore.destroy(); } } catch (e) {}
+    try { if (this.tariffCalculator?.destroy) { this.tariffCalculator.destroy(); } } catch (e) {}
+    try { if (this.scheduleManager?.destroy) { this.scheduleManager.destroy(); } } catch (e) {}
+    try { if (this.conditionEngine?.destroy) { this.conditionEngine.destroy(); } } catch (e) {}
+    try { if (this.predictiveHealthEngine?.destroy) { this.predictiveHealthEngine.destroy(); } } catch (e) {}
+    try { if (this.networkTopologyCollector?.destroy) { this.networkTopologyCollector.destroy(); } } catch (e) {}
+    this.featureFlowCards = null;
+    this.solarElevation = null;
+    this.transitionEngine = null;
+    this.energyHistoryStore = null;
+    this.tariffCalculator = null;
+    this.scheduleManager = null;
+    this.conditionEngine = null;
+    this.predictiveHealthEngine = null;
+    this.networkTopologyCollector = null;
 
     this.flowCardManager = null;
     this.capabilityManager = null;

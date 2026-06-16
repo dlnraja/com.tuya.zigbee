@@ -108,12 +108,11 @@
           "min": 0,
           "max": 100,
           "step": 5,
-          "placeholder": { "en": "20" }
+          "placeholder": {
+            "en": "20"
+          }
         }
-      ],
-      "titleFormatted": {
-        "en": "Battery !{{is|is not}} above [[level]]%"
-      }
+      ]
     }
   ],
   "actions": [
@@ -171,16 +170,33 @@
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "silent", "label": { "en": "Silent" } },
-            { "id": "standard", "label": { "en": "Standard" } },
-            { "id": "strong", "label": { "en": "Strong" } },
-            { "id": "super", "label": { "en": "Super" } }
+            {
+              "id": "silent",
+              "label": {
+                "en": "Silent"
+              }
+            },
+            {
+              "id": "standard",
+              "label": {
+                "en": "Standard"
+              }
+            },
+            {
+              "id": "strong",
+              "label": {
+                "en": "Strong"
+              }
+            },
+            {
+              "id": "super",
+              "label": {
+                "en": "Super"
+              }
+            }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set vacuum mode to [[mode]]"
-      }
+      ]
     },
     {
       "id": "wifi_robot_vacuum_set_clean_mode",
@@ -192,15 +208,27 @@
           "name": "clean_mode",
           "type": "dropdown",
           "values": [
-            { "id": "sweep", "label": { "en": "Sweep" } },
-            { "id": "mop", "label": { "en": "Mop" } },
-            { "id": "sweep_and_mop", "label": { "en": "Sweep + Mop" } }
+            {
+              "id": "sweep",
+              "label": {
+                "en": "Sweep"
+              }
+            },
+            {
+              "id": "mop",
+              "label": {
+                "en": "Mop"
+              }
+            },
+            {
+              "id": "sweep_and_mop",
+              "label": {
+                "en": "Sweep + Mop"
+              }
+            }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set cleaning mode to [[clean_mode]]"
-      }
+      ]
     },
     {
       "id": "wifi_robot_vacuum_set_dnd",
@@ -212,14 +240,21 @@
           "name": "enabled",
           "type": "dropdown",
           "values": [
-            { "id": "on", "label": { "en": "On" } },
-            { "id": "off", "label": { "en": "Off" } }
+            {
+              "id": "on",
+              "label": {
+                "en": "On"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off"
+              }
+            }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set DND to [[enabled]]"
-      }
+      ]
     },
     {
       "id": "wifi_robot_vacuum_set_volume",
@@ -233,12 +268,11 @@
           "min": 0,
           "max": 100,
           "step": 10,
-          "placeholder": { "en": "50" }
+          "placeholder": {
+            "en": "50"
+          }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set volume to [[volume]]%"
-      }
+      ]
     }
   ]
 }

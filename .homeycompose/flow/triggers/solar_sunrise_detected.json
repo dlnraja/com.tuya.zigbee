@@ -1,0 +1,53 @@
+{
+  "id": "solar_sunrise_detected",
+  "title": {
+    "en": "Sunrise detected"
+  },
+  "hint": {
+    "en": "Triggers when the sun rises above the horizon based on your location"
+  },
+  "args": [
+    {
+      "name": "elevation_threshold",
+      "type": "number",
+      "title": {
+        "en": "Elevation threshold (degrees)"
+      },
+      "min": -6,
+      "max": 10,
+      "step": 1,
+      "value": 0
+    }
+  ],
+  "tokens": [
+    {
+      "name": "elevation",
+      "type": "number",
+      "title": {
+        "en": "Solar elevation (degrees)"
+      }
+    },
+    {
+      "name": "azimuth",
+      "type": "number",
+      "title": {
+        "en": "Solar azimuth (degrees)"
+      }
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "title": {
+        "en": "Elevation category"
+      },
+      "example": "day"
+    },
+    {
+      "name": "timestamp",
+      "type": "string",
+      "title": {
+        "en": "Event timestamp"
+      }
+    }
+  ]
+}

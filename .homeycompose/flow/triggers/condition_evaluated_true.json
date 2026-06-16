@@ -1,0 +1,33 @@
+{
+  "id": "condition_evaluated_true",
+  "title": {
+    "en": "Condition evaluated true"
+  },
+  "hint": {
+    "en": "Triggers when a condition set evaluates to true"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "condition_set_id",
+      "type": "string",
+      "title": {
+        "en": "Condition set ID"
+      }
+    },
+    {
+      "name": "result",
+      "type": "boolean",
+      "title": {
+        "en": "Evaluation result"
+      }
+    },
+    {
+      "name": "evaluated_at",
+      "type": "string",
+      "title": {
+        "en": "Evaluation timestamp"
+      }
+    }
+  ]
+}

@@ -15,21 +15,14 @@
             "fr": "Code IR"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "An IR code was learned",
-        "fr": "Un code IR a Ã©tÃ© appris"
-      }
+      ]
     },
     {
       "id": "blaster_remote_ir_code_received",
       "title": {
         "en": "ir code received"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "ir code received"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -38,10 +31,6 @@
       "title": {
         "en": "Send an IR code",
         "fr": "Envoyer un code IR"
-      },
-      "titleFormatted": {
-        "en": "Send IR code [[ir_code]]",
-        "fr": "Envoyer code IR [[ir_code]]"
       },
       "args": [
         {
@@ -60,10 +49,6 @@
     {
       "id": "blaster_remote_ir_remote_start_learning",
       "title": {
-        "en": "Start learning an IR code",
-        "fr": "Commencer l'apprentissage d'un code IR"
-      },
-      "titleFormatted": {
         "en": "Start learning an IR code",
         "fr": "Commencer l'apprentissage d'un code IR"
       }

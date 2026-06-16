@@ -1,0 +1,52 @@
+{
+  "id": "energy_usage_above_threshold",
+  "title": {
+    "en": "Energy usage above [[threshold]] kWh"
+  },
+  "hint": {
+    "en": "Checks if the tracked energy usage exceeds a threshold within a time window"
+  },
+  "args": [
+    {
+      "name": "threshold_kwh",
+      "type": "number",
+      "title": {
+        "en": "Threshold (kWh)"
+      },
+      "min": 0,
+      "max": 1000,
+      "step": 0.1,
+      "value": 10
+    },
+    {
+      "name": "period",
+      "type": "enum",
+      "title": {
+        "en": "Time period"
+      },
+      "values": [
+        { "id": "today", "label": { "en": "Today" } },
+        { "id": "yesterday", "label": { "en": "Yesterday" } },
+        { "id": "this_week", "label": { "en": "This week" } },
+        { "id": "last_24h", "label": { "en": "Last 24 hours" } },
+        { "id": "last_7d", "label": { "en": "Last 7 days" } }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "actual_usage_kwh",
+      "type": "number",
+      "title": {
+        "en": "Actual usage (kWh)"
+      }
+    },
+    {
+      "name": "threshold_kwh",
+      "type": "number",
+      "title": {
+        "en": "Threshold (kWh)"
+      }
+    }
+  ]
+}

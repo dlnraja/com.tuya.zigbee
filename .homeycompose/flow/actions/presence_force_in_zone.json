@@ -1,0 +1,43 @@
+{
+  "id": "presence_force_in_zone",
+  "title": {
+    "en": "Force presence in zone"
+  },
+  "hint": {
+    "en": "Force presence state in a Virtual Presence Detector zone (present or clear)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=presence_detector"
+    },
+    {
+      "name": "force_state",
+      "type": "enum",
+      "title": {
+        "en": "Force state"
+      },
+      "values": [
+        { "id": "present", "label": { "en": "Present" } },
+        { "id": "clear", "label": { "en": "Clear" } }
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "name": "zone_name",
+      "type": "string",
+      "title": {
+        "en": "Zone name"
+      }
+    },
+    {
+      "name": "new_state",
+      "type": "string",
+      "title": {
+        "en": "New state"
+      }
+    }
+  ]
+}

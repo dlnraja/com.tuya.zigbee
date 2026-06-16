@@ -1,0 +1,33 @@
+{
+  "id": "schedule_is_active",
+  "title": {
+    "en": "Schedule is active"
+  },
+  "hint": {
+    "en": "Checks if the schedule manager is running and has active schedules"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "total_schedules",
+      "type": "number",
+      "title": {
+        "en": "Total schedules"
+      }
+    },
+    {
+      "name": "active_schedules",
+      "type": "number",
+      "title": {
+        "en": "Active schedules"
+      }
+    },
+    {
+      "name": "total_executions",
+      "type": "number",
+      "title": {
+        "en": "Total executions"
+      }
+    }
+  ]
+}

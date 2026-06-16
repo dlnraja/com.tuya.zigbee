@@ -10,11 +10,7 @@
         "en": "Triggered when the switch is turned on using the physical button",
         "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on - physical button",
-        "nl": "Aangezet - fysieke knop"
-      }
+      "args": []
     },
     {
       "id": "wall_switch_1gang_1way_turned_off",
@@ -26,11 +22,7 @@
         "en": "Triggered when the switch is turned off using the physical button",
         "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off - physical button",
-        "nl": "Uitgezet - fysieke knop"
-      }
+      "args": []
     },
     {
       "id": "wall_switch_1gang_1way_gang1_scene",
@@ -50,20 +42,12 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Scene triggered",
-        "nl": "Scène geactiveerd"
-      }
+      ]
     },
     {
       "id": "wall_switch_1gang_1way_physical_on",
       "args": [],
       "title": {
-        "nl": "Fysiek AAN",
-        "en": "Physical ON"
-      },
-      "titleFormatted": {
         "nl": "Fysiek AAN",
         "en": "Physical ON"
       }
@@ -74,10 +58,6 @@
       "title": {
         "nl": "Fysiek UIT",
         "en": "Physical OFF"
-      },
-      "titleFormatted": {
-        "nl": "Fysiek UIT",
-        "en": "Physical OFF"
       }
     },
     {
@@ -86,20 +66,12 @@
       "title": {
         "nl": "Enkele druk",
         "en": "Single press"
-      },
-      "titleFormatted": {
-        "nl": "Enkele druk",
-        "en": "Single press"
       }
     },
     {
       "id": "wall_switch_1gang_1way_physical_double",
       "args": [],
       "title": {
-        "nl": "Dubbele druk",
-        "en": "Double press"
-      },
-      "titleFormatted": {
         "nl": "Dubbele druk",
         "en": "Double press"
       }
@@ -119,11 +91,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "nl": "Lange druk",
-        "en": "Long press"
-      }
+      ]
     },
     {
       "id": "wall_switch_1gang_1way_physical_triple",
@@ -140,19 +108,12 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "nl": "Drievoudige druk",
-        "en": "Triple press"
-      }
+      ]
     },
     {
       "id": "wall_switch_1gang_1way_physical_gang1_on",
       "args": [],
       "title": {
-        "en": "Turned on - physical (Gang 1)"
-      },
-      "titleFormatted": {
         "en": "Turned on - physical (Gang 1)"
       }
     },
@@ -160,9 +121,6 @@
       "id": "wall_switch_1gang_1way_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Turned off - physical (Gang 1)"
-      },
-      "titleFormatted": {
         "en": "Turned off - physical (Gang 1)"
       }
     }
@@ -206,11 +164,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set LED indicator mode [[mode]]",
-        "nl": "Stel LED-indicator modus in [[mode]]"
-      }
+      ]
     },
     {
       "id": "wall_switch_1gang_1way_turn_on",
@@ -220,13 +174,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "wall_switch_1gang_1way_turn_off",
@@ -236,13 +184,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "wall_switch_1gang_1way_toggle",
@@ -252,13 +194,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "wall_switch_1gang_1way_set_power_on_behavior",
@@ -296,13 +232,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set power-on behavior [[mode]]",
-        "nl": "Stel inschakelgedrag in [[mode]]",
-        "de": "Einschaltverhalten einstellen [[mode]]",
-        "fr": "Définir le comportement à la mise sous tension [[mode]]"
-      }
+      ]
     },
     {
       "id": "wall_switch_1gang_1way_set_switch_mode",
@@ -340,13 +270,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set external switch type [[mode]]",
-        "nl": "Stel extern schakelaartype in [[mode]]",
-        "de": "Externen Schaltertyp einstellen [[mode]]",
-        "fr": "Définir le type d'interrupteur externe [[mode]]"
-      }
+      ]
     },
     {
       "id": "wall_switch_1gang_1way_set_scene_mode",
@@ -379,11 +303,7 @@
             }
           ]
         }
-      ],
-      "titleFormatted": {
-        "en": "Set scene mode [[mode]]",
-        "nl": "Stel scènemodus in [[mode]]"
-      }
+      ]
     }
   ],
   "conditions": [
@@ -395,13 +315,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ]
 }

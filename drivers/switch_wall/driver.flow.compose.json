@@ -8,13 +8,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "AllumÃ©",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_turned_off",
@@ -24,13 +18,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Ã‰teint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_physical_on",
@@ -46,13 +34,7 @@
         "nl": "Fysieke knop schakelt in",
         "de": "Physische Taste schaltet ein"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical ON",
-        "fr": "Physique ON",
-        "nl": "Fysiek AAN",
-        "de": "Physisch EIN"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_physical_off",
@@ -62,13 +44,7 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Physical OFF",
-        "fr": "Physique OFF",
-        "nl": "Fysiek UIT",
-        "de": "Physisch AUS"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_physical_single",
@@ -84,13 +60,7 @@
         "nl": "Enkele druk op fysieke knop",
         "de": "Einfacher Druck auf physische Taste"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Single press",
-        "fr": "Simple pression",
-        "nl": "Enkele druk",
-        "de": "Einfacher Druck"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_physical_double",
@@ -106,13 +76,7 @@
         "nl": "Dubbele druk op fysieke knop",
         "de": "Doppelter Druck auf physische Taste"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Double press",
-        "fr": "Double pression",
-        "nl": "Dubbele druk",
-        "de": "Doppelter Druck"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_physical_long_press",
@@ -138,13 +102,7 @@
           "example": 1200
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Long press",
-        "fr": "Pression longue",
-        "nl": "Lange druk",
-        "de": "Langer Druck"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_physical_triple",
@@ -170,13 +128,7 @@
           "example": 3
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Triple press",
-        "fr": "Triple pression",
-        "nl": "Drievoudige druk",
-        "de": "Dreifacher Druck"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_battery_low",
@@ -186,13 +138,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_power_changed",
@@ -202,13 +148,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changÃ©e",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geÃ¤ndert"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_gang1_scene",
@@ -227,10 +167,7 @@
             "en": "on"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 1 scene triggered"
-      }
+      ]
     }
   ],
   "conditions": [
@@ -242,13 +179,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumÃ©|Ã©teint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -260,13 +191,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_turn_off",
@@ -276,13 +201,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Ã‰teindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_toggle",
@@ -298,13 +217,7 @@
         "nl": "Wissel de status (aanuit, uitaan)",
         "de": "Status umschalten (einaus, ausein)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "switch_wall_switch_1gang_set_backlight",
@@ -313,12 +226,6 @@
         "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
         "nl": "LED achtergrondverlichting instellen",
         "de": "LED-Hintergrundbeleuchtung einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set LED backlight to [[mode]]",
-        "fr": "DÃ©finir le rÃ©troÃ©clairage sur [[mode]]",
-        "nl": "Stel LED achtergrondverlichting in op [[mode]]",
-        "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
       },
       "hint": {
         "en": "Control the switch LED indicator (DP15)",
@@ -372,12 +279,6 @@
         "fr": "DÃ©finir la couleur LED",
         "nl": "LED kleur instellen",
         "de": "LED-Farbe einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set [[state]] LED color to [[color]]",
-        "fr": "DÃ©finir couleur LED [[state]] sur [[color]]",
-        "nl": "Stel [[state]] LED kleur in op [[color]]",
-        "de": "Setze [[state]] LED-Farbe auf [[color]]"
       },
       "hint": {
         "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
@@ -513,12 +414,6 @@
         "nl": "LED helderheid instellen",
         "de": "LED-Helligkeit einstellen"
       },
-      "titleFormatted": {
-        "en": "Set LED brightness to [[brightness]]%",
-        "fr": "DÃ©finir luminositÃ© LED Ã [[brightness]]%",
-        "nl": "Stel LED helderheid in op [[brightness]]%",
-        "de": "LED-Helligkeit auf [[brightness]]% setzen"
-      },
       "hint": {
         "en": "Set LED backlight brightness 0-100% (DP102)",
         "fr": "LuminositÃ© rÃ©troÃ©clairage 0-100% (DP102)",
@@ -544,12 +439,6 @@
         "fr": "DÃ©finir minuterie",
         "nl": "Afteltimer instellen",
         "de": "Countdown-Timer setzen"
-      },
-      "titleFormatted": {
-        "en": "Turn off after [[seconds]] seconds",
-        "fr": "Ã‰teindre aprÃ¨s [[seconds]] secondes",
-        "nl": "Uitschakelen na [[seconds]] seconden",
-        "de": "Nach [[seconds]] Sekunden ausschalten"
       },
       "hint": {
         "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
@@ -577,12 +466,6 @@
         "fr": "DÃ©finir verrouillage enfant",
         "nl": "Kinderslot instellen",
         "de": "Kindersicherung setzen"
-      },
-      "titleFormatted": {
-        "en": "Set child lock to [[locked]]",
-        "fr": "DÃ©finir verrouillage sur [[locked]]",
-        "nl": "Stel kinderslot in op [[locked]]",
-        "de": "Kindersicherung auf [[locked]] setzen"
       },
       "hint": {
         "en": "Lock/unlock physical buttons (DP101)",
@@ -624,9 +507,6 @@
       "id": "switch_wall_switch_1gang_set_scene_mode",
       "title": {
         "en": "Set scene mode"
-      },
-      "titleFormatted": {
-        "en": "Set scene mode to [[mode]]"
       },
       "args": [
         {

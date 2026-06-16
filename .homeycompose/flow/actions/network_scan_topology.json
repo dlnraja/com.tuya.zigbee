@@ -1,0 +1,68 @@
+{
+  "id": "network_scan_topology",
+  "title": {
+    "en": "Scan network topology"
+  },
+  "hint": {
+    "en": "Trigger a scan of the Zigbee mesh network topology to discover devices and paths"
+  },
+  "args": [],
+  "tokens": [
+    {
+      "name": "total_devices",
+      "type": "number",
+      "title": {
+        "en": "Total devices found"
+      }
+    },
+    {
+      "name": "routers",
+      "type": "number",
+      "title": {
+        "en": "Router count"
+      }
+    },
+    {
+      "name": "end_devices",
+      "type": "number",
+      "title": {
+        "en": "End device count"
+      }
+    },
+    {
+      "name": "coverage_score",
+      "type": "number",
+      "title": {
+        "en": "Coverage score"
+      }
+    },
+    {
+      "name": "average_lqi",
+      "type": "number",
+      "title": {
+        "en": "Average LQI"
+      }
+    },
+    {
+      "name": "weak_signal_devices",
+      "type": "number",
+      "title": {
+        "en": "Weak signal devices"
+      }
+    },
+    {
+      "name": "orphaned_devices",
+      "type": "number",
+      "title": {
+        "en": "Orphaned devices"
+      }
+    },
+    {
+      "name": "max_depth",
+      "type": "number",
+      "title": {
+        "en": "Max network depth"
+      }
+    }
+  ]
+}

@@ -18,13 +18,7 @@
           "example": 250
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "illuminance_sensor_battery_low",
@@ -34,13 +28,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -62,13 +50,7 @@
             "en": "200"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Luminance !{{is|is not}} above [[threshold]]",
-        "fr": "Luminance !{{est|n'est pas}} au-dessus [[threshold]]",
-        "nl": "Lichtsterkte !{{is|is niet}} boven [[threshold]]",
-        "de": "Helligkeit !{{ist|ist nicht}} über [[threshold]]"
-      }
+      ]
     }
   ]
 }
