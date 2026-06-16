@@ -21,10 +21,10 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      17: { cap: 'measure_current', divisor: 1000 },
-      18: { cap: 'measure_power', divisor: 10 },
-      19: { cap: 'measure_voltage', divisor: 10 },
-      20: { cap: 'meter_power', divisor: 100 },
+      17: { cap: 'measure_current', smartDivisor: true },
+      18: { cap: 'measure_power', smartDivisor: true },
+      19: { cap: 'measure_voltage', smartDivisor: true },
+      20: { cap: 'meter_power', smartDivisor: true },
     }
   },
   'TUYA_DP_ALT': {
@@ -32,12 +32,12 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      9: { cap: 'meter_power', divisor: 100 },
+      9: { cap: 'meter_power', smartDivisor: true },
       16: { cap: 'onoff', type: 'bool' },
-      17: { cap: 'meter_power', divisor: 100 },
-      18: { cap: 'measure_power', divisor: 10 },
-      19: { cap: 'measure_current', divisor: 1000 },
-      20: { cap: 'measure_voltage', divisor: 10 },
+      17: { cap: 'meter_power', smartDivisor: true },
+      18: { cap: 'measure_power', smartDivisor: true },
+      19: { cap: 'measure_current', smartDivisor: true },
+      20: { cap: 'measure_voltage', smartDivisor: true },
     }
   },
   'ZCL_ELECTRICAL': {
@@ -71,10 +71,10 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      9: { cap: 'meter_power', divisor: 100 },
-      17: { cap: 'measure_voltage', divisor: 10 },
-      18: { cap: 'measure_current', divisor: 1000 },
-      19: { cap: 'measure_power', divisor: 10 },
+      9: { cap: 'meter_power', smartDivisor: true },
+      17: { cap: 'measure_voltage', smartDivisor: true },
+      18: { cap: 'measure_current', smartDivisor: true },
+      19: { cap: 'measure_power', smartDivisor: true },
     }
   },
   'TUYA_3PHASE': {
@@ -83,15 +83,15 @@ const ENERGY_DEVICE_CONFIGS = {
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
       6: { cap: null, internal: 'report_interval' },
-      101: { cap: 'measure_power', divisor: 10 },
-      102: { cap: 'measure_power.phase_a', divisor: 10 },
-      103: { cap: 'measure_power.phase_b', divisor: 10 },
-      104: { cap: 'measure_power.phase_c', divisor: 10 },
-      105: { cap: 'measure_voltage', divisor: 10 },
-      106: { cap: 'measure_voltage.phase_a', divisor: 10 },
-      107: { cap: 'measure_voltage.phase_b', divisor: 10 },
-      108: { cap: 'measure_voltage.phase_c', divisor: 10 },
-      109: { cap: 'meter_power', divisor: 100 },
+      101: { cap: 'measure_power', smartDivisor: true },
+      102: { cap: 'measure_power.phase_a', smartDivisor: true },
+      103: { cap: 'measure_power.phase_b', smartDivisor: true },
+      104: { cap: 'measure_power.phase_c', smartDivisor: true },
+      105: { cap: 'measure_voltage', smartDivisor: true },
+      106: { cap: 'measure_voltage.phase_a', smartDivisor: true },
+      107: { cap: 'measure_voltage.phase_b', smartDivisor: true },
+      108: { cap: 'measure_voltage.phase_c', smartDivisor: true },
+      109: { cap: 'meter_power', smartDivisor: true },
     }
   },
 };
@@ -265,7 +265,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
         if (a?.currentSummDelivered !== undefined) {
           this.setCapabilityValue('meter_power', parseFloat(parseE(a.currentSummDelivered))).catch(() => { });
         }
-      } catch (_) { }
+      } catch (_) { /* Meter read failed, will retry on next interval */ }
     }, 120000);
   }
 

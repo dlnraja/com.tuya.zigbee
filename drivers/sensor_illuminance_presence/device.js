@@ -83,7 +83,13 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
 
     // Distance tracking
     if (mapping.cap === 'measure_luminance.distance') {
-      const distance = value / (mapping.divisor || 100);
+      let distance;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        distance = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
+      } else {
+        distance = value / (mapping.divisor || 100);
+      }
       this._inference.updateDistance(distance);
       return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
@@ -91,17 +97,28 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
     // Illuminance / Lux
     if (mapping.cap === 'measure_luminance') {
       let lux = value;
-      if (mapping.type !== 'lux_direct' && mapping.divisor) {
-        lux = value / mapping.divisor;
+      if (mapping.type !== 'lux_direct') {
+        if (mapping.smartDivisor === true) {
+          const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+          lux = smartParse(value, dpId, { capability: 'measure_luminance' });
+        } else if (mapping.divisor) {
+          lux = value / mapping.divisor;
+        }
       }
-      
+
       this._inference.updateLux(lux);
       return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
     // Standard capability updates
     if (mapping.cap) {
-      const finalValue = mapping.divisor ? value / mapping.divisor : value;
+      let finalValue;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        finalValue = smartParse(value, dpId, { capability: mapping.cap });
+      } else {
+        finalValue = mapping.divisor ? value / mapping.divisor : value;
+      }
       return this.setCapabilityValue(mapping.cap, finalValue).catch(() => {});
     }
   }

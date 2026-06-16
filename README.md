@@ -214,7 +214,14 @@ Homey Pro
 | **[Blakadder](https://zigbee.blakadder.com)** | Cross-checking rebranded Tuya devices |
 | **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
-| **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
+| **[TinyTuya](https://github.com/jasonacox/tinytuya)** | Tuya DP type definitions, device categories |
+| **[Tuya-Local](https://github.com/make-all/tuya-local)** | YAML config DP mappings, entity types |
+| **[Hubitat Drivers](https://github.com/kkossev/Hubitat)** | Groovy Tuya Zigbee drivers |
+| **[SmartThings Edge](https://github.com/SmartThingsCommunity)** | YAML fingerprint files |
+| **[openHAB](https://github.com/openhab/openhab-addons)** | Zigbee XML thing definitions |
+| **[Domoticz-Zigbee](https://github.com/pipiche38/Domoticz-Zigbee)** | Lua/Python Zigbee plugins |
+| **[Xiaomi MIoT](https://home.miot-spec.com)** | Xiaomi device specifications |
+| **[CSA-IoT](https://csa-iot.org)** | Zigbee 3.0 certified products |
 | **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
 | **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
 
@@ -352,11 +359,61 @@ This app is developed in my free time, powered by passion and coffee!
 ## Credits & Thanks
 
 A massive thank you to the maintainers and contributors of:
-- **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
-- **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- The **zigpy / ZHA / zha-device-handlers** maintainers
-- The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
+
+### Zigbee Ecosystem
+- **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT** — primary device database
+- **[zigpy](https://github.com/zigpy)** and **zha-device-handlers** — ZHA quirks and protocol handling
+- **[dresden-elektronik](https://github.com/dresden-elektronik)** — deCONZ REST plugin device database
+- **[blakadder](https://github.com/blakadder)** — Zigbee Device Compatibility Repository
+- **[CSA-IoT](https://csa-iot.org)** — Zigbee specifications and certification
+
+### Tuya Protocol & WiFi
+- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** — Tuya local protocol documentation
+- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** — HA Tuya DP mappings
+- **[tuya/tuya-connector-nodejs](https://github.com/tuya/tuya-connector-nodejs)** — Official Tuya SDK
+- **[tuya/tuya-homebridge](https://github.com/tuya/tuya-homebridge)** — Tuya device categories
+
+### Alternative Zigbee Platforms
+- **[kkossev/Hubitat](https://github.com/kkossev/Hubitat)** — Hubitat Zigbee drivers
+- **[jw2100/Hubitat-Code](https://github.com/jw2100/Hubitat-Code)** — Hubitat community drivers
+- **[bravenel/Hubitat](https://github.com/bravenel/Hubitat)** — Hubitat core Zigbee drivers
+- **[fison67/TS-Kite](https://github.com/fison67/TS-Kite)** — SmartThings Edge Tuya drivers
+- **[w35l3y/SmartThingsEdgeDrivers](https://github.com/w35l3y/SmartThingsEdgeDrivers)** — SmartThings Edge collection
+- **[openhab/addons](https://github.com/openhab/openhab-addons)** — openHAB Zigbee binding
+- **[pipiche38/Domoticz-Zigbee](https://github.com/pipiche38/Domoticz-Zigbee)** — Domoticz Zigbee plugin
+- **[danielealbano/domoticz-zigbee2mqtt-plugin](https://github.com/danielealbano/domoticz-zigbee2mqtt-plugin)** — Domoticz Z2M plugin
+- **[ziga-laj/Domoticz-Zigate](https://github.com/ziga-laj/Domoticz-Zigate)** — Domoticz Zigate plugin
+- **[ioBroker/ioBroker.zigbee](https://github.com/ioBroker/ioBroker.zigbee)** — ioBroker Zigbee adapter
+- **[Smanar/Zigbee-for-Domoticz](https://github.com/Smanar/Zigbee-for-Domoticz)** — Domoticz deCONZ plugin
+
+### Firmware & Reverse Engineering
+- **[openshwprojects/OpenBK7231T](https://github.com/openshwprojects/OpenBK7231T)** — Open-source Tuya firmware
+- **[esphome/esphome](https://github.com/esphome/esphome)** — ESPHome Tuya component
+- **[arendst/Tasmota](https://github.com/arendst/Tasmota)** — Tasmota TuyaMCU docs
+- **[ct-Open-Source/tuya-convert](https://github.com/ct-Open-Source/tuya-convert)** — Tuya protocol reverse engineering
+
+### Manufacturer Documentation
+- **[Xiaomi MIoT Spec](https://home.miot-spec.com)** — Xiaomi device specifications
+- **[miot-spec.org](https://miot-spec.org)** — MIoT specification database
+- **[Avenitos/zha_xiaomi](https://github.com/Avenitos/zha_xiaomi)** — Xiaomi ZHA fingerprints
+- **[Sonoff/eWeLink](https://docs.iteadstudio.com)** — eWeLink developer docs
+- **[Legrand](https://developer.legrand.com)** — Legrand local interoperability
+- **[Schneider Electric](https://developer.se.com)** — Wiser platform docs
+
+### CSA-IoT & Certification
+- **[CSA-IoT](https://csa-iot.org)** — Connectivity Standards Alliance certified products
+- **[csa-iot/connected-things-data](https://github.com/csa-iot/connected-things-data)** — CSA product data mirrors
+- **[project-chip/connectedhomeip](https://github.com/project-chip/connectedhomeip)** — Matter/CHIP connected home data
+
+### Community
 - All developers and testers who share device logs, diagnostics, and fingerprints
+- The Homey community for bug reports and device requests
+- The Z2M, ZHA, and deCONZ communities for cross-platform device support
+
+### Automated Data Collection
+- **8 external scanners** continuously cross-reference device fingerprints across the Zigbee ecosystem
+- Sources include TinyTuya, Tuya-Local, Hubitat, SmartThings, openHAB, Domoticz, Xiaomi MIoT, and CSA-IoT
+- Intelligent caching with TTL-based expiry minimizes API calls while keeping data fresh
 
 ---
 
@@ -370,9 +427,17 @@ A massive thank you to the maintainers and contributors of:
 | ZHA | Apache-2.0 |
 | Blakadder | MIT |
 | deCONZ | BSD-3-Clause |
+| tinytuya | MIT |
+| tuya-local | MIT |
+| Hubitat drivers | Apache-2.0 |
+| SmartThings drivers | Apache-2.0 |
+| openHAB addons | EPL-2.0 |
+| Domoticz-Zigbee | GPL-3.0 |
+| CSA-IoT | Apache-2.0 |
+| Xiaomi MIoT Spec | Apache-2.0 |
 
 ---
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-06-15*
+*Last updated: 2026-06-16*

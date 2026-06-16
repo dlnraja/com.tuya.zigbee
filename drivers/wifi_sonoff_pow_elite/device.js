@@ -4,8 +4,8 @@ class D extends E{
   get stateMappings(){return{
     switch:{capability:'onoff',transform:v=>v==='on'},
     power:{capability:'measure_power',divisor:1},
-    voltage:{capability:'measure_voltage',divisor:100},
-    current:{capability:'measure_current',divisor:1000}
+    voltage:{capability:'measure_voltage',smartDivisor: true},
+    current:{capability:'measure_current',smartDivisor: true}
   };}
   async _registerCapListeners(){
     this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, v);}await this._client.setSwitch(v);});

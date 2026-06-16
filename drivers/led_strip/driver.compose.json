@@ -29,7 +29,8 @@
     "manufacturerName": [
       "_tz3000_w58g68s3",
       "_tz3210_aavhaadb",
-      "_tz3210_quinzf3w"
+      "_tz3210_quinzf3w",
+      "_tzb210_quinzf3w"
     ],
     "productId": [
       "TS0601_strip",
@@ -252,19 +253,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

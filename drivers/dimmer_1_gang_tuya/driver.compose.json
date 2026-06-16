@@ -72,5 +72,11 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS110F, TS110E, TS0052, TS0601, TS0505B, TS0215A, TS0002, TS0003, TS0012, TS0013, TS0001, TS0726"
+    }
+  }
 }

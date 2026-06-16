@@ -78,8 +78,8 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
     // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
     this.dpMappings = {
       1: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
-      2: { capability: 'target_temperature', divisor: 10 },
-      3: { capability: 'measure_temperature', divisor: 10 },
+      2: { capability: 'target_temperature', smartDivisor: true },
+      3: { capability: 'measure_temperature', smartDivisor: true },
       4: { capability: 'measure_humidity', divisor: 1 },
     };
 

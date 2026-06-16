@@ -280,7 +280,23 @@
       "_TZ3000_aezbqpcu",
       "_TZ3000_okoz9tjs",
       "_TZE200_eatmkx5j",
-      "_TZE204_m5r5nlxc"
+      "_TZE204_m5r5nlxc",
+      "_TZE204_zl1kmjqx",
+      "_TZ3000_zl1kmjqx",
+      "_TZ3000_xiuox57i",
+      "_tz3400_key8kk7r",
+      "_TZ3000_b3mgfu0d",
+      "_TZE204_d7lpruvi",
+      "_TZE284_d7lpruvi",
+      "_tze204_hkdl5fmv",
+      "_tz3210_w0qqde0g",
+      "_tz3210_cehuw1lw",
+      "_tz3210_2putqrmw",
+      "_tzn3000_cfnprab5",
+      "_TZ3210_tqlv4ug4",
+      "_tz3210_4ux0ondb",
+      "_tz3210_5ct6e7ye",
+      "_TZ3210_nuenzetq"
     ],
     "productId": [
       "TS0042",
@@ -549,19 +565,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

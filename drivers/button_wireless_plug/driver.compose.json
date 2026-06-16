@@ -252,19 +252,6 @@
       }
     },
     {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
-      }
-    },
-    {
       "id": "enable_power_estimation",
       "type": "checkbox",
       "label": {
@@ -419,66 +406,6 @@
       "hint": {
         "en": "Adjust if total energy (kWh) readings are way off.",
         "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
-      }
-    },
-    {
-      "id": "power_compensation",
-      "type": "number",
-      "label": {
-        "en": "Power Compensation",
-        "fr": "power compensation"
-      },
-      "value": 0,
-      "min": -10,
-      "max": 10,
-      "step": 0.1,
-      "hint": {
-        "en": "Adjust power compensation (supports decimals)"
-      }
-    },
-    {
-      "id": "voltage_calibration",
-      "type": "number",
-      "label": {
-        "en": "Voltage Calibration",
-        "fr": "voltage calibration"
-      },
-      "value": 0,
-      "min": -50,
-      "max": 50,
-      "step": 0.1,
-      "hint": {
-        "en": "Adjust voltage calibration (supports decimals)"
-      }
-    },
-    {
-      "id": "current_calibration",
-      "type": "number",
-      "label": {
-        "en": "Current Calibration",
-        "fr": "current calibration"
-      },
-      "value": 0,
-      "min": -5,
-      "max": 5,
-      "step": 0.01,
-      "hint": {
-        "en": "Adjust current calibration (supports decimals)"
-      }
-    },
-    {
-      "id": "power_calibration",
-      "type": "number",
-      "label": {
-        "en": "Power Calibration",
-        "fr": "power calibration"
-      },
-      "value": 0,
-      "min": -100,
-      "max": 100,
-      "step": 0.1,
-      "hint": {
-        "en": "Adjust power calibration (supports decimals)"
       }
     }
   ],

@@ -9,7 +9,7 @@ class WiFiSirenDevice extends TuyaLocalDevice {
       '5':   { capability: 'unknown' },
       '6':   { capability: 'alarm_generic', transform: (v) => !!v },
       '7':   { capability: 'unknown' },
-      '9':   { capability: 'measure_temperature', divisor: 10 },
+      '9':   { capability: 'measure_temperature', smartDivisor: true },
       '10':  { capability: 'measure_humidity' },
       '13':  { capability: 'measure_battery' },
       '15':  { capability: 'unknown' },

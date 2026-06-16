@@ -111,7 +111,14 @@ jobs:
         
       - name: 🔧 Apply Antigravity Patterns
         run: node scripts/automation/apply-antigravity.js
-        
+
+      - name: 🩹 Auto-Fix Architectural Violations
+        run: |
+          node scripts/automation/auto-fix-patterns.js --verbose
+          node scripts/automation/fix-console-log.js --verbose
+          node scripts/automation/fix-empty-catches.js --verbose
+        continue-on-error: true
+
       - name: 📦 Validate Homey App
         run: npx homey app validate --level publish
 
@@ -129,6 +136,6 @@ jobs:
       - name: 🔄 Commit Changes
         uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
         with:
-          commit_message: "chore(auto): nightly architectural hardening and stabilization [skip ci]"
+          commit_message: "chore(auto): nightly architectural hardening and auto-fixes [skip ci]"
           branch: master
           file_pattern: 'drivers/**/*.js drivers/**/*.json lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'

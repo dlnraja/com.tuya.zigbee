@@ -30,7 +30,7 @@ class dimmer_1_gang extends UnifiedSwitchBase {
                     );
                 }
 
-                await this.setCapabilityValue('onoff', value > 0);
+                await this.setCapabilityValue('onoff', value > 0).catch(() => {});
 
                 return {
                     level,

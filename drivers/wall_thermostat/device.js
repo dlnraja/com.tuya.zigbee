@@ -59,8 +59,11 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
         });
 
         this.registerCapabilityListener('target_temperature', async (targetTemperature) => {
-            await this.writeData32(THERMOSTAT_DATA_POINTS.targetTemperature, targetTemperature)
-            this.log('Target temperature set', targetTemperature)
+            // BHT-002 expects temperature in decidegrees (e.g. 230 for 23.0C)
+            // Z2M reference: divideBy10 converter for DP16
+            const rawValue = Math.round(targetTemperature * 10);
+            await this.writeData32(THERMOSTAT_DATA_POINTS.targetTemperature, rawValue);
+            this.log('Target temperature set', targetTemperature, '(raw:', rawValue, ')');
         });
 
         this.registerCapabilityListener('measure_temperature', async (currentTemperature) => {
@@ -122,7 +125,9 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
                 this.log('Target Temperature received', parsedValue);
 
                 try {
-                    await this.setCapabilityValue('target_temperature', parsedValue);
+                    // BHT-002 sends temperature in decidegrees (e.g. 230 = 23.0C)
+                    // Z2M reference: divideBy10 converter for DP16
+                    await this.setCapabilityValue('target_temperature', parsedValue / 10);
                 } catch (e) {
                     this.log("Failed to set target temperature", e);
                 }

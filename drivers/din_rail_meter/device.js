@@ -34,15 +34,15 @@ class DinRailMeterDevice extends UnifiedPlugBase {
 
     return {
       ...super.dpMappings,
-      1: { capability: 'meter_power', divisor: 100 },       // Total energy (kWh * 100)
+      1: { capability: 'meter_power', smartDivisor: true },       // Total energy (kWh * 100)
       6: { 
         capability: bidirectional ? 'meter_power.exported' : null, 
         divisor: 100 
       }, // Exported energy (kWh * 100)
       18: { capability: 'measure_power', divisor: 1 / powerScale }, // Power (W)
-      19: { capability: 'measure_voltage', divisor: 10 },    // Voltage (V * 10)
-      20: { capability: 'measure_current', divisor: 1000 },  // Current (A * 1000)
-      17: { capability: 'measure_current', divisor: 1000 },  // Alternative Current DP
+      19: { capability: 'measure_voltage', smartDivisor: true },    // Voltage (V * 10)
+      20: { capability: 'measure_current', smartDivisor: true },  // Current (A * 1000)
+      17: { capability: 'measure_current', smartDivisor: true },  // Alternative Current DP
       101: { capability: null, internal: 'power_factor' },
       102: { capability: null, internal: 'frequency', divisor: 100 }
     };

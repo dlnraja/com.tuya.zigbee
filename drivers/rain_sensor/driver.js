@@ -12,14 +12,14 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('rain_sensor_is_raining');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('onoff') === true;
+          return args.device.getCapabilityValue('alarm_water') === true;
         });
       }
     } catch (err) { this.error(`Condition rain_sensor_is_raining: ${err.message}`); }
@@ -29,7 +29,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          const val = args.device.getCapabilityValue('measure_humidity') || 0;
           return val > (args.threshold || 400);
       });
       }
@@ -40,7 +40,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          return args.device.getCapabilityValue('alarm_gas') === true;
+          return args.device.getCapabilityValue('alarm_water') === true;
         });
       }
     } catch (err) { this.error(`Condition rain_sensor_water_detected: ${err.message}`); }

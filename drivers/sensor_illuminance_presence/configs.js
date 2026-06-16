@@ -35,14 +35,14 @@ const SENSOR_CONFIGS = {
     hasHumidity: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
-      3: { cap: 'measure_temperature', divisor: 10 },
+      3: { cap: 'measure_temperature', smartDivisor: true },
       4: { cap: 'measure_humidity', divisor: 1 },
       9: { cap: 'measure_luminance', type: 'lux_direct' },
       10: { cap: 'measure_battery', divisor: 1 },
       101: { cap: 'measure_humidity', divisor: 1 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
-      111: { cap: 'measure_temperature', divisor: 10 },
+      111: { cap: 'measure_temperature', smartDivisor: true },
       2: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       11: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 19 },
       102: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
@@ -141,7 +141,7 @@ const SENSOR_CONFIGS = {
       3: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 950 },
       4: { cap: null, setting: 'max_range', divisor: 100, feedInference: true, min: 0, max: 950 },
       6: { cap: null, internal: 'self_test' },
-      9: { cap: 'measure_luminance.distance', divisor: 100, feedInference: true, primaryInference: true },
+      9: { cap: 'measure_luminance.distance', smartDivisor: true, feedInference: true, primaryInference: true },
       12: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
       101: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
       102: { cap: null, setting: 'fading_time', divisor: 10, min: 5, max: 15000 },
@@ -170,7 +170,7 @@ const SENSOR_CONFIGS = {
       106: { cap: null, setting: 'radar_sensitivity', min: 1, max: 9 },
       107: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 1000 },
       108: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 1000 },
-      109: { cap: 'measure_luminance.distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', smartDivisor: true },
       110: { cap: null, setting: 'fading_time', divisor: 10, min: 50, max: 15000 },
       111: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
       112: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -192,7 +192,7 @@ const SENSOR_CONFIGS = {
       106: { cap: null, setting: 'radar_sensitivity', min: 1, max: 9 },
       107: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 1000 },
       108: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 1000 },
-      109: { cap: 'measure_luminance.distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', smartDivisor: true },
       110: { cap: null, setting: 'fading_time', divisor: 10, min: 50, max: 15000 },
       111: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
     }
@@ -208,7 +208,7 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       2: { cap: null, internal: 'sensitivity' },
-      101: { cap: 'measure_luminance.distance', divisor: 100 },
+      101: { cap: 'measure_luminance.distance', smartDivisor: true },
       102: { cap: 'measure_luminance', divisor: 1 },
       112: { cap: 'alarm_motion', type: 'presence_enum' },
     }
@@ -225,7 +225,7 @@ const SENSOR_CONFIGS = {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       6: { cap: null, internal: 'fading_time' },
       9: { cap: 'measure_luminance', divisor: 1 },
-      101: { cap: 'measure_luminance.distance', divisor: 100 },
+      101: { cap: 'measure_luminance.distance', smartDivisor: true },
     }
   },
 
@@ -241,7 +241,7 @@ const SENSOR_CONFIGS = {
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
       3: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 950 },
       4: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 950 },
-      9: { cap: 'measure_luminance.distance', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', smartDivisor: true },
       103: { cap: 'measure_luminance', divisor: 1 },
       104: { cap: null, setting: 'interval_time', min: 1, max: 720 },
       105: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
@@ -262,7 +262,7 @@ const SENSOR_CONFIGS = {
       103: { cap: 'measure_luminance', divisor: 1 },
       110: { cap: null, internal: 'keep_sensitivity' },
       114: { cap: null, internal: 'trigger_sensitivity' },
-      182: { cap: 'measure_luminance.distance', divisor: 10 },
+      182: { cap: 'measure_luminance.distance', smartDivisor: true },
     }
   },
 
@@ -278,7 +278,7 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
-      109: { cap: 'measure_luminance.distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', smartDivisor: true },
     }
   },
 
@@ -300,7 +300,7 @@ const SENSOR_CONFIGS = {
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       121: { cap: 'measure_battery', divisor: 1 },
       2: { cap: null, setting: 'large_motion_sensitivity', min: 0, max: 10 },
-      3: { cap: 'measure_luminance.distance', divisor: 100 },
+      3: { cap: 'measure_luminance.distance', smartDivisor: true },
       4: { cap: null, setting: 'large_motion_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       104: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
@@ -333,11 +333,11 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       2: { cap: null, setting: 'sensitivity', min: 0, max: 10 },
-      101: { cap: 'measure_humidity', divisor: 10 },
+      101: { cap: 'measure_humidity', smartDivisor: true },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
-      111: { cap: 'measure_temperature', divisor: 10 },
+      111: { cap: 'measure_temperature', smartDivisor: true },
       103: { cap: null, setting: 'temperature_unit' },
       104: { cap: null, setting: 'temperature_calibration', min: -20, max: 20 },
       105: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
@@ -422,9 +422,9 @@ const SENSOR_CONFIGS = {
     noHumidity: true,
     needsMagicPacket: true,
     dpMap: {
-      107: { cap: 'measure_luminance', divisor: 10, type: 'lux_direct' },
-      109: { cap: 'measure_luminance.distance', divisor: 100 },
-      119: { cap: 'measure_luminance.distance', divisor: 100 },
+      107: { cap: 'measure_luminance', smartDivisor: true, type: 'lux_direct' },
+      109: { cap: 'measure_luminance.distance', smartDivisor: true },
+      119: { cap: 'measure_luminance.distance', smartDivisor: true },
       101: { cap: null, setting: 'entry_sensitivity', min: 10, max: 100 },
       102: { cap: null, setting: 'entry_distance', divisor: 100, min: 0, max: 10 },
       103: { cap: null, setting: 'departure_delay', min: 5, max: 7200 },
@@ -471,11 +471,11 @@ const SENSOR_CONFIGS = {
     noHumidity: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
-      9: { cap: 'measure_luminance.distance', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', smartDivisor: true },
       12: { cap: 'measure_luminance', type: 'lux_direct' },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_enum' },
-      109: { cap: 'measure_luminance.distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', smartDivisor: true },
       112: { cap: 'alarm_motion', type: 'presence_bool' },
       119: { cap: 'alarm_motion', type: 'presence_bool' },
     }

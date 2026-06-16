@@ -44,11 +44,11 @@ class AirQualityCO2Device extends SensorBase {
         divisor: 1,
         transform: (v) => this._trackVOC(v)
       },
-      18: { capability: 'measure_temperature', divisor: 10 },
-      19: { capability: 'measure_humidity', divisor: 10 },
+      18: { capability: 'measure_temperature', smartDivisor: true },
+      19: { capability: 'measure_humidity', smartDivisor: true },
       // v5.5.317: VOC with inference tracking
       // v5.11.26: DP22=HCHO per Z2M (was incorrectly mapped to VOC)
-      22: { capability: 'measure_formaldehyde', divisor: 100 },
+      22: { capability: 'measure_formaldehyde', smartDivisor: true },
       14: { capability: 'measure_battery', divisor: 1 },
       15: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       1: { capability: 'alarm_generic', transform: (v) => v === true || v === 1 }

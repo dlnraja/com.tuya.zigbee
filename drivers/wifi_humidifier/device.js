@@ -9,7 +9,7 @@ class WiFiHumidifierDevice extends TuyaLocalDevice {
       '3':  { capability: 'unknown' },
       '4':  { capability: 'unknown' },
       '6':  { capability: 'measure_humidity' },
-      '7':  { capability: 'measure_temperature', divisor: 10 },
+      '7':  { capability: 'measure_temperature', smartDivisor: true },
       '11': { capability: 'unknown' },
       '12': { capability: 'unknown' },
       '13': { capability: 'unknown' },

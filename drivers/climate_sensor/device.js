@@ -42,13 +42,13 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     }
 
     return {
-      1: { capability: 'measure_temperature', divisor: 10, useInference: true },
+      1: { capability: 'measure_temperature', smartDivisor: true, useInference: true },
       2: { capability: 'measure_humidity', divisor: 1, useInference: true },
       3: { capability: 'measure_battery', divisor: 1 },
       4: { capability: 'measure_battery', divisor: 1 },
       5: { capability: 'measure_luminance', divisor: 1 },
       12: { capability: 'measure_luminance', divisor: 1 },
-      38: { capability: 'measure_temperature.probe', divisor: 10, dynamicAdd: true }
+      38: { capability: 'measure_temperature.probe', smartDivisor: true, dynamicAdd: true }
     };
   }
 
@@ -60,7 +60,17 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     const mapping = this.dpMappings[dpId];
     if (mapping) {
-      let val = value / (mapping.divisor || 1);
+      let val;
+      if (mapping.smartDivisor === true) {
+        const { smartParse } = require('../../lib/managers/SmartDivisorManager');
+        val = smartParse(value, dpId, {
+          manufacturerName: this.getSetting('zb_manufacturer_name') || '',
+          capability: mapping.capability,
+          deviceId: this.getData()?.id || '',
+        });
+      } else {
+        val = value / (mapping.divisor || 1);
+      }
 
       if (mapping.capability === 'measure_temperature' || mapping.capability === 'measure_temperature.probe') {
         val = this._climateInference.validateTemperature(val);

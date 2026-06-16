@@ -94,7 +94,45 @@
       "_TZE204_ZC2OWU5K",
       "_TZE204_ZPZNDJEZ",
       "_TZE284_HBJWGKDH",
-      "_TZE284_LNYZ4A6V"
+      "_TZE284_LNYZ4A6V",
+      "_TZE200_cowvfni3",
+      "_TZE200_ba69l9ol",
+      "_TZE200_3i3exuay",
+      "_TZE200_wmcdj3aq",
+      "_TZE200_zah67ekd",
+      "_TZE200_nueqqe6k",
+      "_TZE200_5sbebbzs",
+      "_TZE200_hsgrhjpf",
+      "_TZE200_68nvbio9",
+      "_TZE200_ergbiejo",
+      "_TZE200_nhyj64w2",
+      "_TZE200_cf1sl3tj",
+      "_TZE200_7eue9vhc",
+      "_TZE200_bv1jcqqu",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_gaj531w3",
+      "_TZE200_icka1clh",
+      "_TZE200_1vxgqfba",
+      "_TZE200_fctwhugx",
+      "_TZE200_iossyxra",
+      "_TZE200_pw7mji0l",
+      "_TZE200_9vpe3fl1",
+      "_TZE200_sq6affpe",
+      "_TZE200_fzo2pocs",
+      "_TZE200_vdiuwbkq",
+      "_TZE284_zofmmt9s",
+      "_TZE200_xu4a5rhj",
+      "_TZE284_fzo2pocs",
+      "_TYST11_fzo2pocs",
+      "_TZB000_42ha4rsc",
+      "_tze200_2imwyigp",
+      "_TZE200_7tdtqgwv",
+      "_TYST11_wmcdj3aq",
+      "_TZE204_5sbebbzs",
+      "_tze204_68nvbio9",
+      "_TZE284_gaj531w3",
+      "_TZE200_xuzcvlku",
+      "_TZE200_zpzndjez"
     ],
     "productId": [
       "TS0302",
@@ -392,19 +430,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

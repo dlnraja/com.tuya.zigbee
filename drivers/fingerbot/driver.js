@@ -40,16 +40,16 @@ async onInit() {
       await device.triggerPush();
       });
     reg('getActionCard', 'fingerbot_turn_on', async ({ device }) => {
-      await device.setCapabilityValue('onoff', true);
+      await device.setCapabilityValue('onoff', true).catch(() => {});
       await device.sendTuyaDP(1, 'bool', true);
       });
     reg('getActionCard', 'fingerbot_turn_off', async ({ device }) => {
-      await device.setCapabilityValue('onoff', false);
+      await device.setCapabilityValue('onoff', false).catch(() => {});
       await device.sendTuyaDP(1, 'bool', false);
       });
     reg('getActionCard', 'fingerbot_toggle', async ({ device }) => {
       const cur = device.getCapabilityValue('onoff');
-      await device.setCapabilityValue('onoff', !cur);
+      await device.setCapabilityValue('onoff', !cur).catch(() => {});
       await device.sendTuyaDP(1, 'bool', !cur);
       });
     reg('getConditionCard', 'fingerbot_is_on', async ({ device }) => {

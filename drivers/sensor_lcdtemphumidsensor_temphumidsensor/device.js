@@ -31,13 +31,13 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   get dpMappings() {
     return {
       // Temperature
-      1: { capability: 'measure_temperature', divisor: 10 },
-      18: { capability: 'measure_temperature', divisor: 10 },
-      101: { capability: 'measure_temperature', divisor: 10 }, // v6.1.6: fallback for _TZE284_
+      1: { capability: 'measure_temperature', smartDivisor: true },
+      18: { capability: 'measure_temperature', smartDivisor: true },
+      101: { capability: 'measure_temperature', smartDivisor: true }, // v6.1.6: fallback for _TZE284_
 
       // Humidity (Ã·10 for TZE200 variants like _TZE200_vvmbj46n)
-      2: { capability: 'measure_humidity', divisor: 10 },
-      102: { capability: 'measure_humidity', divisor: 10 }, // v6.1.6: fallback for _TZE284_
+      2: { capability: 'measure_humidity', smartDivisor: true },
+      102: { capability: 'measure_humidity', smartDivisor: true }, // v6.1.6: fallback for _TZE284_
 
       // Battery
       // v5.12.3: DP3 battery enum for _TZE200_vvmbj46n (TH05Z: 0=low, 1=medium, 2=high)

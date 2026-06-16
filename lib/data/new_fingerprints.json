@@ -1448,20 +1448,22 @@
   },
   {
     "manufacturerName": "_TZ3210_tgvtvdoc",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "rain_sensor",
+    "type": "rain_sensor",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0207"
+      "TS0207",
+      "TS0601"
     ]
   },
   {
     "manufacturerName": "_TZ3210_p68kms0l",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "rain_sensor",
+    "type": "rain_sensor",
+    "powerSource": "battery",
     "modelIds": [
-      "TS0207"
+      "TS0207",
+      "TS0601"
     ]
   },
   {

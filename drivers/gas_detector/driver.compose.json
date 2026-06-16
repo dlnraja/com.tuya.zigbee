@@ -37,7 +37,15 @@
       "_tze204_rjxqso4a",
       "_tz3000_8nysnv3b",
       "_tze204_uc0iv1hb",
-      "_tz3000_ywagc4rj"
+      "_tz3000_ywagc4rj",
+      "_TZE200_ywagc4rj",
+      "_TZE204_ywagc4rj",
+      "_TZE200_aao6qtcs",
+      "_TZE200_rjxqso4a",
+      "_TZE284_rjxqso4a",
+      "_tz3000_rjxqso4a",
+      "_tze204_ggev5fsl",
+      "_tze284_ggev5fsl"
     ],
     "learnmode": {
       "image": "/drivers/gas_detector/assets/learnmode.svg",
@@ -255,19 +263,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

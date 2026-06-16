@@ -303,19 +303,6 @@
       }
     },
     {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
-      }
-    },
-    {
       "id": "enable_power_estimation",
       "type": "checkbox",
       "label": {

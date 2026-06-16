@@ -239,6 +239,76 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       }
+    },
+    {
+      "id": "soil_sensor_ec_changed",
+      "title": {
+        "en": "Fertilizer / EC level changed",
+        "nl": "Bemesting / EC-niveau veranderd",
+        "fr": "Niveau d'engrais / EC changé",
+        "de": "Dünger / EC-Wert geändert"
+      },
+      "hint": {
+        "en": "Triggers when the soil EC (Electrical Conductivity / Fertilizer) level changes",
+        "nl": "Triggert wanneer het bodem EC-niveau (Elektrische Geleidbaarheid / Bemesting) verandert",
+        "fr": "Se déclenche lorsque le niveau d'EC du sol (Conductivité Électrique / Engrais) change",
+        "de": "Wird ausgelöst, wenn sich der Boden-EC-Wert (Elektrische Leitfähigkeit / Dünger) ändert"
+      },
+      "tokens": [
+        {
+          "name": "ec",
+          "type": "number",
+          "title": {
+            "en": "EC Level (µS/cm)",
+            "nl": "EC-niveau (µS/cm)",
+            "fr": "Niveau EC (µS/cm)",
+            "de": "EC-Wert (µS/cm)"
+          },
+          "example": 1200
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Fertilizer / EC level changed",
+        "nl": "Bemesting / EC-niveau veranderd",
+        "fr": "Niveau d'engrais / EC changé",
+        "de": "Dünger / EC-Wert geändert"
+      }
+    },
+    {
+      "id": "soil_sensor_ec_high",
+      "title": {
+        "en": "Fertilizer / EC level is high",
+        "nl": "Bemesting / EC-niveau is hoog",
+        "fr": "Niveau d'engrais / EC est élevé",
+        "de": "Dünger / EC-Wert ist hoch"
+      },
+      "hint": {
+        "en": "Triggers when the soil EC level exceeds the threshold",
+        "nl": "Triggert wanneer het bodem EC-niveau de drempel overschrijdt",
+        "fr": "Se déclenche quand le niveau d'EC du sol dépasse le seuil",
+        "de": "Wird ausgelöst, wenn der Boden-EC-Wert den Schwellenwert überschreitet"
+      },
+      "tokens": [
+        {
+          "name": "ec",
+          "type": "number",
+          "title": {
+            "en": "EC Level (µS/cm)",
+            "nl": "EC-niveau (µS/cm)",
+            "fr": "Niveau EC (µS/cm)",
+            "de": "EC-Wert (µS/cm)"
+          },
+          "example": 2000
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Fertilizer / EC level is high",
+        "nl": "Bemesting / EC-niveau is hoog",
+        "fr": "Niveau d'engrais / EC est élevé",
+        "de": "Dünger / EC-Wert ist hoch"
+      }
     }
   ],
   "conditions": [
@@ -380,6 +450,33 @@
         "fr": "Eau !{{est|n'est pas}} détectée",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "soil_sensor_ec_above",
+      "title": {
+        "en": "Fertilizer / EC level !{{is|is not}} above",
+        "nl": "Bemesting / EC-niveau !{{is|is niet}} boven",
+        "fr": "Niveau d'engrais / EC !{{est|n'est pas}} au-dessus de",
+        "de": "Dünger / EC-Wert !{{ist|ist nicht}} über"
+      },
+      "args": [
+        {
+          "name": "ec_threshold",
+          "type": "number",
+          "min": 0,
+          "max": 10000,
+          "step": 100,
+          "placeholder": {
+            "en": "1500"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Fertilizer / EC level !{{is|is not}} above [[ec_threshold]]",
+        "nl": "Bemesting / EC-niveau !{{is|is niet}} boven [[ec_threshold]]",
+        "fr": "Niveau d'engrais / EC !{{est|n'est pas}} au-dessus de [[ec_threshold]]",
+        "de": "Dünger / EC-Wert !{{ist|ist nicht}} über [[ec_threshold]]"
       }
     }
   ]

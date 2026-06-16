@@ -20,16 +20,20 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  *   - TS0601 / _TZE284_aao3yzhs : Soil sensor variant                           
  *   - TS0601 / _TZE284_hdml1aav : Flower Care Fertilizer sensor (EC)          
  *                                                                               
- *   DP MAPPINGS:                                                 
- *   - DP3: soil_moisture %                                                      
- *   - DP4: fertilizer_ec                                        
- *   - DP5: temperature / 10                                                      
- *   - DP14: battery_state enum (0=low, 1=med, 2=high)                           
- *   - DP15: battery_percent %                                                   
- *   - DP101: ambient_humidity %                                          
- *   - DP102: illuminance lux                                                   
- *   - DP106: fertilizer_ec (advanced variants)                                  
- *   - DP112: soil_fertility_ec (TZE284 specific)                                
+ *   DP MAPPINGS:
+ *   - DP1: temperature / 10 (alt)
+ *   - DP2: soil_moisture % (alt, Z2M mapping)
+ *   - DP3: soil_moisture %
+ *   - DP4: fertilizer_ec
+ *   - DP5: temperature / 10
+ *   - DP14: battery_state enum (0=low, 1=med, 2=high)
+ *   - DP15: battery_percent %
+ *   - DP20: EC (Electrical Conductivity) - Z2M DP mapping
+ *   - DP22: EC (Fertilizer level) - Z2M DP mapping
+ *   - DP101: ambient_humidity %
+ *   - DP102: illuminance lux
+ *   - DP106: fertilizer_ec (advanced variants)
+ *   - DP112: soil_fertility_ec (TZE284 specific)
  */
 class SoilSensorDevice extends TuyaUnifiedDevice {
 
@@ -73,7 +77,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    */
   get dpMappings() {
     return {
+      1: { capability: 'measure_temperature', smartDivisor: true },
+      2: { capability: 'measure_humidity.soil', divisor: 1 }, // Alt moisture (Z2M DP mapping)
       3: { capability: 'measure_humidity.soil', divisor: 1 },
+      4: { capability: 'measure_ec', divisor: 1 }, // EC (Fertilizer level)
       5: {
         capability: 'measure_temperature',
         transform: (v) => {
@@ -82,47 +89,67 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
           // Handle various Tuya temperature formats (x10, x100, or raw)
           if (Math.abs(num) > 1000) {return num * 100;}
           if (Math.abs(num) > 100) {return safeMultiply(num, 10);}
-          return num; 
+          return num;
         }
       },
-      109: { capability: 'measure_humidity', divisor: 1 },
-      15: { capability: 'measure_battery', divisor: 1 },
-      14: { 
-        capability: 'measure_battery', 
-        transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) 
+      14: {
+        capability: 'measure_battery',
+        transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v)
       },
+      15: { capability: 'measure_battery', divisor: 1 },
+      20: { capability: 'measure_ec', divisor: 1 }, // EC (Electrical Conductivity) - Z2M DP mapping
+      22: { capability: 'measure_ec', divisor: 1 }, // EC (Fertilizer level) - Z2M DP mapping
+      101: { capability: 'measure_humidity', divisor: 1 },
       102: { capability: 'measure_luminance', divisor: 1 },
       103: { setting: 'report_interval', min: 30, max: 1200 },
       104: { setting: 'soil_calibration', min: -30, max: 30 },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
+      106: { capability: 'measure_ec', divisor: 1 },
       107: { setting: 'temperature_calibration', min: -20, max: 20 },
+      109: { capability: 'measure_humidity', divisor: 1 },
       110: { setting: 'soil_warning', min: 0, max: 100 },
-      111: { 
-        capability: 'measure_humidity.soil', 
+      111: {
+        capability: 'measure_humidity.soil',
         divisor: 1,
         transform: (v) => {
-          const mfr = this.getSetting?.('zb_manufacturer_name') || '';if (mfr.includes('npj9bug3')) {return v;}
+          const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+          if (mfr.includes('npj9bug3')) {return v;}
           return v === 1; // Fallback to alarm_water
         }
       },
       112: { capability: 'measure_ec', divisor: 1 }, // Soil Conductivity -> EC
       113: { setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
       114: { setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
-      1: { capability: 'measure_temperature', divisor: 10 },
-      4: { capability: 'measure_ec', divisor: 1 },
-      101: { capability: 'measure_humidity', divisor: 1 },
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
-      106: { capability: 'measure_ec', divisor: 1 },
     };
   }
 
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
-    try {
-      await super.onNodeInit({ zclNode });
-    } catch (err) {
-      this.log('[SOIL] Base init error:', err.message);
+    // v5.5.317: Soil sensors ARE battery-powered - do NOT remove battery capabilities.
+    // Only remove if the device is actually mains-powered (some variants may be).
+    if (this.mainsPowered) {
+      this.log('[SOIL] Mains-powered variant detected, removing battery capabilities');
+      await this.removeCapability('measure_battery').catch(() => {});
+      await this.removeCapability('alarm_battery').catch(() => {});
+    }
+
+    // v5.5.564: Retry init with backoff for pairing failures (e.g. _TZE284_oitavov2)
+    let initAttempts = 0;
+    const maxInitAttempts = 3;
+    while (initAttempts < maxInitAttempts) {
+      try {
+        await super.onNodeInit({ zclNode });
+        break; // Success
+      } catch (err) {
+        initAttempts++;
+        this.log(`[SOIL] Base init attempt ${initAttempts}/${maxInitAttempts} failed: ${err.message}`);
+        if (initAttempts < maxInitAttempts) {
+          const delay = initAttempts * 1000; // 1s, 2s backoff
+          this.log(`[SOIL] Retrying in ${delay}ms...`);
+          await new Promise(r => setTimeout(r, delay));
+        } else {
+          this.log('[SOIL] All init attempts exhausted - device may have limited functionality');
+        }
+      }
     }
 
     this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} Stabilized`);
@@ -132,12 +159,22 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       dryThreshold: 20,
       wetThreshold: 80
     });
-    
+
     this._initFlowTriggers();
 
     this._previousMoisture = null;
     this._previousTemperature = null;
     this._previousBattery = null;
+
+    // v5.5.564: Schedule a delayed DP query for battery devices that may not
+    // report immediately after pairing (fix for _TZE284_oitavov2 binding issues)
+    setTimeout(() => {
+      if (this._destroyed) {return;}
+      this.log('[SOIL] Delayed DP query for battery device stabilization...');
+      this.requestAllDPs().catch((e) => {
+        this.log('[SOIL] Delayed DP query failed:', e.message);
+      });
+    }, 5000);
   }
 
   _updateWaterAlarm() {
@@ -159,14 +196,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       else if (value.length === 1) {parsedValue = value.readUInt8(0);}
     }
 
-    // Conductivity / EC
-    if (dp === 112 || dp === 4 || dp === 106) {
+    // Conductivity / EC (DP 4, 20, 22, 106, 112)
+    if (dp === 4 || dp === 20 || dp === 22 || dp === 106 || dp === 112) {
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
       this.setCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => { });
+      this._triggerECFlows(parsedValue);
       return;
     }
 
-    if (dp === 3 || dp === 109 || dp === 105) {
+    if (dp === 2 || dp === 3 || dp === 109 || dp === 105) {
       this.log(`[SOIL] Moisture DP${dp} = ${parsedValue}%`);
       let moisture = parsedValue;
       if (dp === 105 && moisture > 100) {moisture = safeMultiply(moisture, 10);}
@@ -198,6 +236,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._flowTriggerMoistureChanged = this._getFlowCardSafe('soil_sensor_moisture_changed');
     this._flowTriggerSoilDry = this._getFlowCardSafe('soil_sensor_soil_dry');
     this._flowTriggerSoilWet = this._getFlowCardSafe('soil_sensor_soil_wet');
+    this._flowTriggerECChanged = this._getFlowCardSafe('soil_sensor_ec_changed');
   }
 
   _getFlowCardSafe(id) {
@@ -221,6 +260,12 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   _triggerTemperatureFlows(temperature) {
     this._previousTemperature = temperature;
+  }
+
+  _triggerECFlows(ecValue) {
+    if (this._flowTriggerECChanged) {
+      this._flowTriggerECChanged.trigger(this, { ec: ecValue }).catch(this.error);
+    }
   }
 
   async onEndDeviceAnnounce() {

@@ -30,10 +30,10 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      17: { cap: 'measure_current', divisor: 1000 },     // mA -> A
-      18: { cap: 'measure_power', divisor: 10 },         // dW -> W
-      19: { cap: 'measure_voltage', divisor: 10 },       // dV -> V
-      20: { cap: 'meter_power', divisor: 100 },          // Wh*100 -> kWh
+      17: { cap: 'measure_current', smartDivisor: true },     // mA -> A
+      18: { cap: 'measure_power', smartDivisor: true },         // dW -> W
+      19: { cap: 'measure_voltage', smartDivisor: true },       // dV -> V
+      20: { cap: 'meter_power', smartDivisor: true },          // Wh*100 -> kWh
     }
   },
 
@@ -46,12 +46,12 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      9: { cap: 'meter_power', divisor: 100 },           // Total energy
+      9: { cap: 'meter_power', smartDivisor: true },           // Total energy
       16: { cap: 'onoff', type: 'bool' },                // Switch state alt
-      17: { cap: 'meter_power', divisor: 100 },          // Energy channel
-      18: { cap: 'measure_power', divisor: 10 },         // Power
-      19: { cap: 'measure_current', divisor: 1000 },     // Current mA
-      20: { cap: 'measure_voltage', divisor: 10 },       // Voltage
+      17: { cap: 'meter_power', smartDivisor: true },          // Energy channel
+      18: { cap: 'measure_power', smartDivisor: true },         // Power
+      19: { cap: 'measure_current', smartDivisor: true },     // Current mA
+      20: { cap: 'measure_voltage', smartDivisor: true },       // Voltage
     }
   },
 
@@ -108,10 +108,10 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      9: { cap: 'meter_power', divisor: 100 },
-      17: { cap: 'measure_voltage', divisor: 10 },       // Voltage first
-      18: { cap: 'measure_current', divisor: 1000 },     // Then current
-      19: { cap: 'measure_power', divisor: 10 },         // Then power
+      9: { cap: 'meter_power', smartDivisor: true },
+      17: { cap: 'measure_voltage', smartDivisor: true },       // Voltage first
+      18: { cap: 'measure_current', smartDivisor: true },     // Then current
+      19: { cap: 'measure_power', smartDivisor: true },         // Then power
     }
   },
 
@@ -124,15 +124,15 @@ const ENERGY_DEVICE_CONFIGS = {
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
       6: { cap: null, internal: 'report_interval' },
-      101: { cap: 'measure_power', divisor: 10 },        // Total power
-      102: { cap: 'measure_power.phase_a', divisor: 10 },
-      103: { cap: 'measure_power.phase_b', divisor: 10 },
-      104: { cap: 'measure_power.phase_c', divisor: 10 },
-      105: { cap: 'measure_voltage', divisor: 10 },
-      106: { cap: 'measure_voltage.phase_a', divisor: 10 },
-      107: { cap: 'measure_voltage.phase_b', divisor: 10 },
-      108: { cap: 'measure_voltage.phase_c', divisor: 10 },
-      109: { cap: 'meter_power', divisor: 100 },
+      101: { cap: 'measure_power', smartDivisor: true },        // Total power
+      102: { cap: 'measure_power.phase_a', smartDivisor: true },
+      103: { cap: 'measure_power.phase_b', smartDivisor: true },
+      104: { cap: 'measure_power.phase_c', smartDivisor: true },
+      105: { cap: 'measure_voltage', smartDivisor: true },
+      106: { cap: 'measure_voltage.phase_a', smartDivisor: true },
+      107: { cap: 'measure_voltage.phase_b', smartDivisor: true },
+      108: { cap: 'measure_voltage.phase_c', smartDivisor: true },
+      109: { cap: 'meter_power', smartDivisor: true },
     }
   },
 };

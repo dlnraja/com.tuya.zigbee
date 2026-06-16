@@ -36,10 +36,10 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
     return {
       ...parentMappings,
-      17: { capability: 'measure_current', divisor: 1000, unit: 'A' },
-      18: { capability: 'measure_power', divisor: 10, unit: 'W' },
-      19: { capability: 'measure_voltage', divisor: 10, unit: 'V' },
-      20: { capability: 'meter_power', divisor: 100, unit: 'kWh' }
+      17: { capability: 'measure_current', smartDivisor: true, unit: 'A' },
+      18: { capability: 'measure_power', smartDivisor: true, unit: 'W' },
+      19: { capability: 'measure_voltage', smartDivisor: true, unit: 'V' },
+      20: { capability: 'meter_power', smartDivisor: true, unit: 'kWh' }
     };
   }
 

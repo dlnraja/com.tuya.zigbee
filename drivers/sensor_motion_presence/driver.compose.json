@@ -63,7 +63,6 @@
       "_TZE200_p6fuhvez",
       "_TZE200_aj0oxo1i",
       "_TZE200_s6hzw8g2",
-      "_TZ3210_j4pdtz9v",
       "_TZ3210_7vgttna6",
       "_TZE200_jsaqgakf",
       "_TZE200_u6x1zyv2",
@@ -73,7 +72,12 @@
       "PIRIV01",
       "VABRATE",
       "_TZ3210_a04acm9s",
-      "_TZ3210_cm9mbpr1"
+      "_TZ3210_cm9mbpr1",
+      "_TZE284_bquwrqh1",
+      "_TZ3040_o4mkahkc",
+      "_TZ3000_bb6xaihh",
+      "_tze204_u6x1zyv2",
+      "_TZE284_debczeci"
     ],
     "productId": [
       "TS0225",
@@ -297,19 +301,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

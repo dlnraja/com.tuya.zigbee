@@ -196,7 +196,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
   _setupPeriodicLuminanceQuery() {
     if (this._luminanceQueryTimer) {clearInterval(this._luminanceQueryTimer);}
     const interval = this.mainsPowered ? 60000 : 300000;
-    this._luminanceQueryTimer = setInterval(async () => {
+    this._luminanceQueryTimer = this.homey.setInterval(async () => {
       if (this.safeTuyaDataQuery) {await this.safeTuyaDataQuery([12, 103]).catch(() => {});}
     }, interval);
   }
@@ -211,7 +211,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
 
   _setupOfflineCheck() {
     if (this._offlineCheckTimer) {clearInterval(this._offlineCheckTimer);}
-    this._offlineCheckTimer = setInterval(() => {
+    this._offlineCheckTimer = this.homey.setInterval(() => {
       const elapsed = Date.now() - this._lastEventTime;
       if (elapsed > MotionRadarHybridDevice.OFFLINE_CHECK_MS) {
         this.setUnavailable('Pas de signal depuis 60+ minutes').catch(() => {});

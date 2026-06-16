@@ -61,7 +61,6 @@
       "_TZE200_HYHL5Y36",
       "_TZE200_IKVNCLUO",
       "_TZE200_JUZAGO6I",
-      "_TZE200_KA8L86IU",
       "_TZE200_KB5NOETO",
       "_TZE200_LAOKFQWU",
       "_TZE200_LU01T0ZL",
@@ -169,7 +168,36 @@
       "_TZ3210_cyuyd5az",
       "_TZE28C1000000_81yrt3lo",
       "_TZ3000_3n2minvf",
-      "_TZE200_4PM4PEKT"
+      "_TZE200_4PM4PEKT",
+      "_TZE200_v6ossqfy",
+      "_TZE200_mx6u6l4y",
+      "_TZE200_0u3bj3rc",
+      "_TZE200_qxyh4r7g",
+      "_TZE200_ttcovulf",
+      "_TZE200_gjldowol",
+      "_TZE200_jxyhl4eq",
+      "_TZE200_na5qlzow",
+      "_TZE200_auin8mzr",
+      "_TZE200_clm4gdw4",
+      "_TZE200_sbyx0lm6",
+      "_TZE204_v6ossqfy",
+      "_TZE204_iadro9bf",
+      "_TZE284_qoy0ekbd",
+      "_TZE204_qoy0ekbd",
+      "_TZE284_znbl8dj5",
+      "_tze204_znbl8dj5",
+      "_TZE204_kb5noeto",
+      "_TZE284_mrf6vtua",
+      "_TZE200_holel4dk",
+      "_TZE200_jva8ink8",
+      "_tze200_81yrt3lo",
+      "_tze200_dtzziy1e",
+      "_tzb210_zxbtub8r",
+      "_tz3000_ztc6ggyl",
+      "_tze200_wukb7rhc",
+      "_tze204_xsm7l9xa",
+      "_TZE200_lyetpprm",
+      "_TZE204_debczeci"
     ],
     "productId": [
       "CK-BL702-MWS-01",
@@ -407,19 +435,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

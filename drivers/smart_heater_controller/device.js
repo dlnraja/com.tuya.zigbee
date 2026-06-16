@@ -226,12 +226,12 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
    */
   async _handlePowerState(powerOn) {
     const isOn = Boolean(powerOn);
-    await this.setCapabilityValue('onoff', isOn);
+    await this.setCapabilityValue('onoff', isOn).catch(() => {});
     this.log(`[HEATER]  Power: ${isOn ? 'ON' : 'OFF'}`);
 
     // Update thermostat mode if turned off
     if (!isOn) {
-      await this.setCapabilityValue('thermostat_mode', 'off');
+      await this.setCapabilityValue('thermostat_mode', 'off').catch(() => {});
     }
   }
 
@@ -242,7 +242,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     if (typeof temperature === 'number' && temperature >= 5 && temperature <= 35) {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
-      await this.setCapabilityValue('target_temperature', parseFloat(calibratedTemp));
+      await this.setCapabilityValue('target_temperature', parseFloat(calibratedTemp)).catch(() => {});
       this.log(`[HEATER]  Target temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
     } else {
       this.log(`[HEATER]  Invalid target temperature: ${temperature}`);
@@ -256,17 +256,17 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     if (typeof temperature === 'number' && temperature >= -40 && temperature <= 80) {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
-      await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp));
+      await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => {});
       this.log(`[HEATER]  Current temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
 
       // Check overheat protection
       if (temperature >= this._overheatProtection) {
         this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}Â°C >= ${this._overheatProtection}Â°C`);
-        await this.setCapabilityValue('alarm_generic', true);
+        await this.setCapabilityValue('alarm_generic', true).catch(() => {});
         // Trigger emergency shutdown
         await this._emergencyShutdown();
       } else {
-        await this.setCapabilityValue('alarm_generic', false);
+        await this.setCapabilityValue('alarm_generic', false).catch(() => {});
       }
     } else {
       this.log(`[HEATER]  Invalid temperature reading: ${temperature}`);
@@ -278,7 +278,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
    */
   async _handleThermostatMode(modeValue) {
     const modeName = this._thermostatModeNames[modeValue] || 'manual';
-    await this.setCapabilityValue('thermostat_mode', modeName);
+    await this.setCapabilityValue('thermostat_mode', modeName).catch(() => {});
     this.log(`[HEATER]  Thermostat mode: ${modeName} (${modeValue})`);
   }
 
@@ -287,13 +287,13 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
    */
   async _handlePowerConsumption(power) {
     if (typeof power === 'number' && power >= 0 && power <= 5000) {
-      await this.setCapabilityValue('measure_power', parseFloat(power));
+      await this.setCapabilityValue('measure_power', parseFloat(power)).catch(() => {});
       this.log(`[HEATER]  Power consumption: ${power}W`);
 
       // Check power limit
       if (power > this._powerLimit) {
         this.log(`[HEATER]  POWER LIMIT EXCEEDED: ${power}W > ${this._powerLimit}W`);
-        await this.setCapabilityValue('alarm_generic', true);
+        await this.setCapabilityValue('alarm_generic', true).catch(() => {});
       }
     } else {
       this.log(`[HEATER]  Invalid power reading: ${power}`);
@@ -307,7 +307,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     if (typeof energy === 'number' && energy >= 0) {
       // Convert to kWh if needed
       const energyKwh = energy > 1000 ? energy * 1000 : energy;
-      await this.setCapabilityValue('meter_power', parseFloat(energyKwh));
+      await this.setCapabilityValue('meter_power', parseFloat(energyKwh)).catch(() => {});
       this.log(`[HEATER]  Energy consumed: ${energyKwh} kWh`);
     }
   }
@@ -326,7 +326,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
    */
   async _handleOverheatProtection(triggered) {
     const isTriggered = Boolean(triggered);
-    await this.setCapabilityValue('alarm_generic', isTriggered);
+    await this.setCapabilityValue('alarm_generic', isTriggered).catch(() => {});
     this.log(`[HEATER]  Overheat protection: ${isTriggered ? 'TRIGGERED' : 'NORMAL'}`);
 
     if (isTriggered) {

@@ -189,7 +189,7 @@ class WiFiCameraDevice extends Homey.Device {
 
   _startRTSPRefresh() {
     if (this._rtspRefreshTimer) {clearInterval(this._rtspRefreshTimer);}
-    this._rtspRefreshTimer = setInterval(() => {
+    this._rtspRefreshTimer = this.homey.setInterval(() => {
       this._allocateCloudRTSP().catch(e => this.error(e));
     }, RTSP_REFRESH_INTERVAL);
   }

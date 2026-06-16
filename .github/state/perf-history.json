@@ -1,0 +1,146 @@
+[
+  {
+    "timestamp": "2026-06-16T02:41:56.148Z",
+    "memory": {
+      "start": 4611408,
+      "end": 5143680,
+      "delta": 532272,
+      "rss": 43175936
+    },
+    "stats": {
+      "filesAnalyzed": 183,
+      "scriptsAnalyzed": 91,
+      "driversProfiled": 412
+    },
+    "bundle": {
+      "appJsonSize": 6094903,
+      "totalProjectSize": 49781001,
+      "libSize": 5523245,
+      "driversSize": 40494957,
+      "scriptsSize": 3762799,
+      "appJsonLimitMB": 7,
+      "projectSizeMB": 47.47,
+      "nearLimit": true
+    }
+  },
+  {
+    "timestamp": "2026-06-16T03:47:22.328Z",
+    "memory": {
+      "start": 4611408,
+      "end": 6200280,
+      "delta": 1588872,
+      "rss": 42184704
+    },
+    "stats": {
+      "filesAnalyzed": 184,
+      "scriptsAnalyzed": 92,
+      "driversProfiled": 412
+    },
+    "bundle": {
+      "appJsonSize": 6094903,
+      "totalProjectSize": 49865525,
+      "libSize": 5627027,
+      "driversSize": 40343483,
+      "scriptsSize": 3895015,
+      "appJsonLimitMB": 7,
+      "projectSizeMB": 47.56,
+      "nearLimit": true
+    }
+  },
+  {
+    "timestamp": "2026-06-16T03:47:33.775Z",
+    "memory": {
+      "start": 4612240,
+      "end": 6228624,
+      "delta": 1616384,
+      "rss": 41594880
+    },
+    "stats": {
+      "filesAnalyzed": 184,
+      "scriptsAnalyzed": 92,
+      "driversProfiled": 412
+    },
+    "bundle": {
+      "appJsonSize": 6094903,
+      "totalProjectSize": 49868261,
+      "libSize": 5627027,
+      "driversSize": 40346219,
+      "scriptsSize": 3895015,
+      "appJsonLimitMB": 7,
+      "projectSizeMB": 47.56,
+      "nearLimit": true
+    }
+  },
+  {
+    "timestamp": "2026-06-16T03:47:44.529Z",
+    "memory": {
+      "start": 4611408,
+      "end": 6343760,
+      "delta": 1732352,
+      "rss": 42438656
+    },
+    "stats": {
+      "filesAnalyzed": 184,
+      "scriptsAnalyzed": 92,
+      "driversProfiled": 412
+    },
+    "bundle": {
+      "appJsonSize": 6095173,
+      "totalProjectSize": 49868261,
+      "libSize": 5627027,
+      "driversSize": 40346219,
+      "scriptsSize": 3895015,
+      "appJsonLimitMB": 7,
+      "projectSizeMB": 47.56,
+      "nearLimit": true
+    }
+  },
+  {
+    "timestamp": "2026-06-16T03:51:57.300Z",
+    "memory": {
+      "start": 4611408,
+      "end": 6290096,
+      "delta": 1678688,
+      "rss": 42684416
+    },
+    "stats": {
+      "filesAnalyzed": 184,
+      "scriptsAnalyzed": 92,
+      "driversProfiled": 412
+    },
+    "bundle": {
+      "appJsonSize": 6095113,
+      "totalProjectSize": 49546870,
+      "libSize": 5626558,
+      "driversSize": 40025297,
+      "scriptsSize": 3895015,
+      "appJsonLimitMB": 7,
+      "projectSizeMB": 47.25,
+      "nearLimit": true
+    }
+  },
+  {
+    "timestamp": "2026-06-16T03:52:47.282Z",
+    "memory": {
+      "start": 4611408,
+      "end": 5443872,
+      "delta": 832464,
+      "rss": 42205184
+    },
+    "stats": {
+      "filesAnalyzed": 184,
+      "scriptsAnalyzed": 92,
+      "driversProfiled": 412
+    },
+    "bundle": {
+      "appJsonSize": 6095113,
+      "totalProjectSize": 49546828,
+      "libSize": 5626516,
+      "driversSize": 40025297,
+      "scriptsSize": 3895015,
+      "appJsonLimitMB": 7,
+      "projectSizeMB": 47.25,
+      "nearLimit": true
+    }
+  }
+]

@@ -51,7 +51,7 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
       6: { capability: null, internal: 'month_consumption' },
       7: { capability: null, internal: 'daily_consumption' },
       9: { capability: null, internal: 'flow_rate' },
-      10: { capability: 'measure_temperature', divisor: 10 },
+      10: { capability: 'measure_temperature', smartDivisor: true },
       11: { capability: 'measure_battery', transform: (v) => { 
         if (v > 3000) {return 100;}
         if (v < 2700) {return 0;}

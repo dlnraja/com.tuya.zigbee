@@ -243,19 +243,6 @@
       }
     },
     {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
-      }
-    },
-    {
       "id": "enable_power_estimation",
       "type": "checkbox",
       "label": {
@@ -311,5 +298,11 @@
     }
   ],
   "id": "device_din_rail_meter",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0001, TS0002, TS011F, TS0601, TS004F"
+    }
+  }
 }

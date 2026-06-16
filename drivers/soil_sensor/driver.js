@@ -73,6 +73,8 @@ class SoilSensorDriver extends ZigBeeDriver {
     this._soilOptimalTrigger = safeGetTrigger('soil_sensor_soil_optimal');
     this._frostWarningTrigger = safeGetTrigger('soil_sensor_frost_warning');
     this._batteryChangedTrigger = safeGetTrigger('soil_sensor_battery_changed');
+    this._ecChangedTrigger = safeGetTrigger('soil_sensor_ec_changed');
+    this._ecHighTrigger = safeGetTrigger('soil_sensor_ec_high');
 
     // Register condition cards with run listeners
     // v5.7.52: Added soil_sensor_moisture_below (was missing, caused crash)
@@ -137,10 +139,23 @@ class SoilSensorDriver extends ZigBeeDriver {
       });
     }
 
+    const ecAboveCondition = safeGetCondition('soil_sensor_ec_above');
+    if (ecAboveCondition) {
+      ecAboveCondition.registerRunListener(async (args) => {
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
+        const ec = args.device.getCapabilityValue('measure_ec');
+        return ec !== null && ec > args.ec_threshold;
+      });
+    }
+
     const triggers = [this._moistureChangedTrigger, this._soilDryTrigger, this._soilWetTrigger,
-      this._tempChangedTrigger, this._batteryLowTrigger].filter(Boolean).length;
-    const conditions = [moistureBelowCondition, moistureAboveCondition, tempAboveCondition, 
-      needsWaterCondition, batteryAboveCondition].filter(Boolean).length;
+      this._tempChangedTrigger, this._batteryLowTrigger, this._ecChangedTrigger,
+      this._ecHighTrigger].filter(Boolean).length;
+    const conditions = [moistureBelowCondition, moistureAboveCondition, tempAboveCondition,
+      needsWaterCondition, batteryAboveCondition, ecAboveCondition].filter(Boolean).length;
     this.log(`Soil Sensor  ${triggers} triggers + ${conditions} conditions registered`);
   }
 

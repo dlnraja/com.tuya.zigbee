@@ -4,7 +4,7 @@ const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 class WiFiSensorDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
-      '1':  { capability: 'measure_temperature', divisor: 10 },
+      '1':  { capability: 'measure_temperature', smartDivisor: true },
       '2':  { capability: 'measure_humidity' },
       '3':  { capability: 'unknown' },
       '4':  { capability: 'measure_battery' },

@@ -37,7 +37,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
           return isAlarm;
         }
       },
-      2: { capability: 'measure_temperature', divisor: 10, optional: true },
+      2: { capability: 'measure_temperature', smartDivisor: true, optional: true },
       3: { capability: 'measure_humidity', divisor: 1, optional: true },
       4: {
         capability: 'alarm_tamper',

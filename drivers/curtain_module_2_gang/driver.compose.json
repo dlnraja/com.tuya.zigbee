@@ -81,7 +81,25 @@
         "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
       }
     },
-    "manufacturerName": []
+    "manufacturerName": [
+      "_TZ3000_vd43bbhf",
+      "_TZ3000_4naa57is",
+      "_TZ3000_5ajpkyq6",
+      "_TZ3000_jtdamlu5",
+      "_TZ3000_hsahoqgp",
+      "_TZ3000_1dd0d5mi",
+      "_TZ3000_8kzqqm4a",
+      "_TZ3000_k6j8rwct",
+      "_TZ3000_5gey1ohq",
+      "_TZ3000_9hpxg80k",
+      "_TZ3000_obyifevw"
+    ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS130F, TS0601, TS0726"
+    }
+  }
 }

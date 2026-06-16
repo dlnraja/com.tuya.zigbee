@@ -5,10 +5,43 @@ const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 
 /**
+ * Known mains-powered mmWave radar manufacturers (230V AC ceiling/wall radars).
+ * These devices report battery DP values but are actually mains-powered.
+ */
+const MAINS_POWERED_RADARS = new Set([
+  '_tze204_clrdrnya',
+  '_tze200_clrdrnya',
+  '_tze200_lyetpprm',
+  '_tze204_lyetpprm',
+  '_tze200_wukb7rhc',
+  '_tze204_wukb7rhc',
+  '_tze200_jva8ink8',
+  '_tze204_jva8ink8',
+]);
+
+/**
  * Motion Sensor Radar mmWave Device - v8.0.0 MODERNIZED
  * Advanced mmWave radar driver with decoupled inference and autonomous discovery.
  */
 class MotionSensorRadarDevice extends UnifiedSensorBase {
+
+  /**
+   * Override: Mains-powered radars should not be treated as battery devices.
+   * This suppresses battery polling, periodic dataQuery, and adjusts reporting intervals.
+   */
+  get mainsPowered() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || this._manufacturerName || '').toLowerCase();
+    return MAINS_POWERED_RADARS.has(mfr);
+  }
+
+  get sensorCapabilities() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || this._manufacturerName || '').toLowerCase();
+    const isMainsRadar = MAINS_POWERED_RADARS.has(mfr);
+    if (isMainsRadar) {
+      return ['alarm_motion', 'measure_luminance.distance', 'measure_luminance'];
+    }
+    return ['alarm_motion', 'measure_luminance.distance', 'measure_luminance', 'measure_battery'];
+  }
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
@@ -50,10 +83,6 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     }
   }
 
-  get sensorCapabilities() {
-    return ['alarm_motion', 'measure_luminance.distance', 'measure_luminance', 'measure_battery'];
-  }
-
   /**
    * Main Tuya DP processing
    */
@@ -78,8 +107,12 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
         this._inference.updateLux(lux);
         return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
 
-      case 4: // Battery
+      case 4: // Battery - ignore for mains-powered radars
       case 15:
+        if (this.mainsPowered) {
+          this.log(`[MMWAVE] ⏭️ Ignoring battery DP${dpId} on mains-powered radar`);
+          return;
+        }
         return this.setCapabilityValue('measure_battery', value).catch(() => {});
     }
 

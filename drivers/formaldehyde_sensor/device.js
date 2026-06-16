@@ -15,8 +15,8 @@ class FormaldehydeSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
     return {
-      1: { capability: 'measure_temperature', divisor: 10 },
-      2: { capability: 'measure_humidity', divisor: 10 },
+      1: { capability: 'measure_temperature', smartDivisor: true },
+      2: { capability: 'measure_humidity', smartDivisor: true },
       18: { capability: 'measure_pm25', divisor: 1 },      // PM2.5
       19: { capability: 'measure_co2', divisor: 1 },       // CO2 ppm
       20: { capability: 'measure_voc', divisor: 1 },       // VOC

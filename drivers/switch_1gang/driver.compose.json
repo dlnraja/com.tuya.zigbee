@@ -500,7 +500,58 @@
       "_TZ3000_WN65IXZ9",
       "_TZ3000_X3EWPZYR",
       "_TZ3000_XKAP8WTB",
-      "_TZE21C_DOHBHB5K"
+      "_TZE21C_DOHBHB5K",
+      "_TZE200_amp6tsvy",
+      "_TZE200_oisqyl4o",
+      "_TZ3000_uim07oem",
+      "_TZE200_wfxuhoea",
+      "_TZE200_tviaymwx",
+      "_TZE204_ptaqh9tk",
+      "_TZE200_7tdtqgwv",
+      "_tyzb01_xiuox57i",
+      "_tyzb01_b3mgfu0d",
+      "_TZ3000_tqlv4ug4",
+      "_TZE200_1fuxihti",
+      "_TZE200_cduqh1l0",
+      "_TZ3000_cduqh1l0",
+      "_tze204_oisqyl4o",
+      "_TZE200_udank5zs",
+      "_TZE284_udank5zs",
+      "_TZE204_6fk3gewc",
+      "_TZE204_dohbhb5k",
+      "_TZE204_nh9m9emk",
+      "_TZE204_r731zlxk",
+      "_tze200_r731zlxk",
+      "_TZE284_fzo2pocs",
+      "_TZE204_fzo2pocs",
+      "_TZE200_fzo2pocs",
+      "_TZE284_vjpaih9f",
+      "_TYST11_cowvfni3",
+      "_TZE204_7tdtqgwv",
+      "_TYST11_wmcdj3aq",
+      "_TZE204_5sbebbzs",
+      "_TZE200_gaj531w3",
+      "_tze204_r0jdjrvi",
+      "_tz3000_v8gtiaed",
+      "_tz3210_ok0ggpk7",
+      "_tz3040_bb6xaihh",
+      "_tze200_3regm3h6",
+      "_tze210_m6lwazh9",
+      "_tz1800_ejwkn2h2",
+      "_TZE200_m6ec2pgj",
+      "_tz3210_4whigl8i",
+      "_tz3210_c7nc9w3c",
+      "_tze204_9qhuzgo0",
+      "_tze204_hlx9tnzb",
+      "_tze204_n9ctkb6j",
+      "TZE204_7sjncirf",
+      "_tz3000_sgb0xhwn",
+      "_TZE200_mexisfik",
+      "_TZE200_yrugsphv",
+      "_TZE204_tdhnhhiy",
+      "_TZE200_nvxorhcj",
+      "_TZE200_dzuqwsyg",
+      "_TZE200_tgeqdjgk"
     ],
     "endpoints": {
       "1": {
@@ -917,19 +968,6 @@
       "hint": {
         "en": "Balance between responsiveness and battery life",
         "fr": "Équilibre entre réactivité et durée de vie de la batterie"
-      }
-    },
-    {
-      "id": "show_voltage",
-      "type": "checkbox",
-      "label": {
-        "en": "Show Battery Voltage",
-        "fr": "Afficher Tension Batterie"
-      },
-      "value": false,
-      "hint": {
-        "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
       }
     },
     {

@@ -11,7 +11,7 @@ class PoolPumpDevice extends UnifiedPlugBase {
       1: { capability: 'onoff', transform: (v) => !!v },
       16: { capability: 'onoff', transform: (v) => !!v },
       18: { capability: 'measure_power', divisor: 1 },
-      101: { capability: 'meter_power', divisor: 100 }
+      101: { capability: 'meter_power', smartDivisor: true }
     };
   }
 

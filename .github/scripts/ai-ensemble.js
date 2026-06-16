@@ -4,7 +4,7 @@ const ft=(u,o,ms)=>{ms=ms||25000;const c=new AbortController();const t=setTimeou
 const hd=k=>({'Content-Type':'application/json','Authorization':'Bearer '+k});
 // Zero-billing: shared rate state with ai-helper.js
 const _rtF=path.join(__dirname,'..','state','ai-rate-state.json');
-const _CAP={deepseek:100,mistral:30,together:200,kimi:50};
+const _CAP={deepseek:100,mistral:30,together:200,kimi:50,'xiaomi-mimo':200};
 function _budgetOk(id){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));if(j.dd!==new Date().toISOString().slice(0,10))return true;return(j.d?.[id]||0)<(_CAP[id]||500)}catch{return true}}
 // Provider profiles: strengths per task type (0=bad,3=best), arch for diversity
 const P={
@@ -18,6 +18,7 @@ const P={
   mistral:{k:'MISTRAL_API_KEY',url:'https://api.mistral.ai/v1/chat/completions',m:'open-mistral-nemo',arch:'mistral',sl:6000,tl:10000,s:{analyze:2,generate:2,classify:3,merge:2,lookup:2,code:2,reasoning:1}},
   together:{k:'TOGETHER_API_KEY',url:'https://api.together.xyz/v1/chat/completions',m:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',arch:'llama70b-tg',sl:6000,tl:10000,s:{analyze:2,generate:3,classify:2,merge:2,lookup:1}},
   kimi:{k:'KIMI_API_KEY',url:'https://api.moonshot.cn/v1/chat/completions',m:'moonshot-v1-8k',arch:'kimi',sl:6000,tl:6000,s:{analyze:2,generate:2,classify:2,merge:2,lookup:1,code:1,reasoning:2}},
+  'xiaomi-mimo':{k:'XIAOMI_MIMO_API_KEY',url:'https://token-plan-ams.xiaomimimo.com/v1/chat/completions',m:'mimo-v2.5-pro',arch:'mimo',sl:8000,tl:12000,s:{analyze:3,generate:3,classify:2,merge:2,lookup:2,code:3,reasoning:2}},
 };
 // HF Task-routing: pick best model per task type
 const HF_MODELS={code:'Qwen/Qwen2.5-Coder-32B-Instruct',reasoning:'Qwen/Qwen2.5-72B-Instruct',analyze:'ibm-granite/granite-3.3-8b-instruct',default:'meta-llama/Llama-3.1-8B-Instruct'};

@@ -1,7 +1,7 @@
 /**
  * AI Helper - Multi-provider with project rules injection
  * Orchestrated for Free Tiers, Prioritizing Intelligent Aggregators.
- * Chain: OpenRouter → HuggingFace → Cerebras → Together → Groq → DeepSeek → Gemini → GitHub Models → OpenAI → Mistral → Kimi
+ * Chain: OpenRouter → HuggingFace → Cerebras → Together → Groq → DeepSeek → Gemini → GitHub Models → OpenAI → Mistral → Kimi → XiaomiMiMo
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -237,6 +237,22 @@ async function callAI(text,sysPrompt,opts={}){
         'kimi'
       );
       if (res) return res;
+    }
+
+    // 12. XiaomiMiMo (Priority for driver generation / DP mapping / auto-fix)
+    if (process.env.XIAOMI_MIMO_API_KEY && cbOk('xiaomi-mimo')) {
+      const mimoUsed = _rt.d['xiaomi-mimo'] || 0;
+      if (mimoUsed < 200) {
+        console.log('  Trying XiaomiMiMo...');
+        const mimoModel = tk.type === 'code' || tk.type === 'analyze' ? 'mimo-v2.5-pro' : 'mimo-v2.5-lite';
+        const res = await callAIEngine(
+          'https://token-plan-ams.xiaomimimo.com/v1/chat/completions',
+          {'Authorization': 'Bearer ' + process.env.XIAOMI_MIMO_API_KEY, 'Content-Type': 'application/json'},
+          {model: mimoModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+          'xiaomi-mimo'
+        );
+        if (res) return res;
+      } else console.log('  XiaomiMiMo daily cap reached.');
     }
 
     console.log(`  [Waiter] All AI engines exhausted on attempt ${globalAttempts + 1}/${maxGlobalAttempts}.`);
