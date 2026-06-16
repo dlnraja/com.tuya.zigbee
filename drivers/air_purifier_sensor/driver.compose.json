@@ -30,10 +30,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze204_s8gkrkxk",
-      "_tze200_s8gkrkxk"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
