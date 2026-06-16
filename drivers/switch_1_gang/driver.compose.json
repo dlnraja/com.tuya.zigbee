@@ -34,9 +34,27 @@
           },
           "value": "memory",
           "values": [
-            { "id": "off", "label": { "en": "Off", "fr": "Éteint" } },
-            { "id": "on", "label": { "en": "On", "fr": "Allumé" } },
-            { "id": "memory", "label": { "en": "Last State", "fr": "Dernier état" } }
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "On",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "fr": "Dernier état"
+              }
+            }
           ]
         },
         {
@@ -80,7 +98,7 @@
           },
           "value": 0,
           "min": 0,
-          "max": 5.000,
+          "max": 5,
           "step": 0.001,
           "hint": {
             "en": "Cost per kWh for energy expense tracking",
@@ -101,7 +119,7 @@
     }
   },
   "zigbee": {
-    "manufacturerName": ["_TZ3000_unknown"],
+    "manufacturerName": [],
     "productId": [
       "TS0003",
       "TS011F",
