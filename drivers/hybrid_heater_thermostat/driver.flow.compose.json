@@ -1,0 +1,211 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_heater_thermostat_turned_on",
+      "title": {
+        "en": "Heater turned on",
+        "fr": "Chauffage allumé"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_turned_off",
+      "title": {
+        "en": "Heater turned off",
+        "fr": "Chauffage éteint"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_mode_changed",
+      "title": {
+        "en": "Heater mode changed",
+        "fr": "Mode chauffage changé"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "example": "heat"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_power_changed",
+      "title": {
+        "en": "Power consumption changed",
+        "fr": "Consommation changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 1500
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_heater_thermostat_is_on",
+      "title": {
+        "en": "Heater is on",
+        "fr": "Chauffage est allumé"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_mode_is",
+      "title": {
+        "en": "Heater mode is",
+        "fr": "Mode chauffage est"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "enum",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } },
+            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
+            { "id": "cool", "label": { "en": "Cool", "fr": "Refroidissement" } },
+            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hybrid_heater_thermostat_temperature_above",
+      "title": {
+        "en": "Temperature is above",
+        "fr": "Température supérieure à"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hybrid_heater_thermostat_temperature_below",
+      "title": {
+        "en": "Temperature is below",
+        "fr": "Température inférieure à"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_heater_thermostat_turn_on",
+      "title": {
+        "en": "Turn on heater",
+        "fr": "Allumer chauffage"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_turn_off",
+      "title": {
+        "en": "Turn off heater",
+        "fr": "Éteindre chauffage"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_heater_thermostat_set_mode",
+      "title": {
+        "en": "Set heater mode",
+        "fr": "Définir mode chauffage"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "enum",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "values": [
+            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } },
+            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
+            { "id": "cool", "label": { "en": "Cool", "fr": "Refroidissement" } },
+            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hybrid_heater_thermostat_set_temperature",
+      "title": {
+        "en": "Set target temperature",
+        "fr": "Définir température cible"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 45,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          }
+        }
+      ]
+    }
+  ]
+}

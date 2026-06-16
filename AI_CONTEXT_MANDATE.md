@@ -77,7 +77,7 @@ Every frame received (RX) from a physical Zigbee device or sent (TX) from Homey 
 | **L2** | `IntelligentProtocolRouter.js` | **Intelligent Routing**: Determines if a packet belongs to standard ZCL (Zigbee Cluster Library), Tuya DP (`0xEF00`), or custom brand overlays. |
 | **L3** | `TuyaBoundCluster.js` / `TuyaE000BoundCluster.js` | **Binding & Command Capture**: Attaches listeners to endpoints to receive cmd0-cmd6 physical button state changes. |
 | **L4** | `TuyaEF00Manager.js` / `AdaptiveDataParser.js` | **DataPoint (DP) Decoding**: Parses bytes into logical JS types, automatically dividing/multiplying values (e.g., `/10` or `/100` for temperature). |
-| **L5** | `GlobalTimeSyncEngine.js` | **Time Synchronization**: Responds to wake-up time sync requests (`0x24`) for LCD devices that lose their clocks. |
+| **L5** | `GlobalTimeSyncEngine.js` | **Time Synchronization**: Responds to wake-up time sync requests (`0x24`) for LCD devices that lose their clocks. Supports 23 time format variants via `TuyaTimeSyncFormats.js` (v6.0.0). |
 | **L6** | `PhysicalButtonMixin.js` | **Physical Button Deduplication**: Decouples physical presses from software feedback loops using the `appCommandPending` flag. |
 | **L7** | `BaseHybridDevice.js` | **Applicative Capability Mapping**: Binds normalized DPs to official Homey capabilities (e.g., `measure_temperature`) and updates the UI. |
 | **L8** | `DynamicCapabilityManager.js` | **Dynamic Auto-Discovery**: Heuristically registers unrecognized DPs as generic `tuya_dp_{id}` capabilities for user custom flow cards. |
@@ -136,6 +136,22 @@ Every frame received (RX) from a physical Zigbee device or sent (TX) from Homey 
 - **Context:** The "Double-Division Bug" caused temperature/humidity values to be divided twice (once by AdaptiveDataParser, once by dpMappings divisor).
 - **Fix:** `SmartDivisorManager.js` in `lib/managers/` provides `smartDivisorDetect()` and `smartParse()` with a fallback chain: Known DB → Auto-detect range → defaultDivisor → 1.
 - **Rule:** Use `smartDivisorDetect(rawValue, dpId, options)` for `measure_temperature` and `measure_humidity` parsing. Never hardcode `value / 100` or `value / 10`.
+
+### 8. MCU Time Synchronization (23 Formats, v6.0.0)
+- **Context:** Tuya MCU devices (LCD climate sensors, TRVs, weather stations) lose their clocks on power cycles and request time sync via cluster 0xEF00 command 0x24. Different MCU firmware versions expect different payload formats.
+- **Architecture:** `TuyaTimeSyncFormats.js` (32KB) defines 23 format variants:
+  - **Epoch-based** (7 formats): ZIGBEE_2000, UNIX_1970, etc. (4-8 bytes)
+  - **Dual timestamp** (4 formats): TUYA_DUAL_2000, Z2M_DUAL_1970, etc. (8 bytes)
+  - **MCU UART protocol** (3 formats): TUYA_MCU (9 bytes), TUYA_MCU_HDR_10/8 (8-10 bytes)
+  - **Sequence-echo** (2 formats): TUYA_SEQ_10 (10 bytes, v3.3+ required)
+  - **Minimal/Date-string** (6 formats): ZCL_5, TUYA_STANDARD, TUYA_FULL_TZ, etc. (5-12 bytes)
+  - **Commit-trigger** (1 format): ZT08_DP17_COMMIT (DP17 write after sync)
+- **Auto-detection:** `guessFormat()` uses 6 heuristics (manufacturer prefix, product ID, endpoint clusters, driver class, known patterns, model ID) with confidence scoring.
+- **Fallback chain:** `getFallbackChain()` provides ordered alternatives when primary format fails.
+- **MCU Protocol Versions:** v3.1 (8-byte, no seq), v3.2 (8-byte, optional seq), v3.3 (10-byte, seq REQUIRED), v3.4 (+DP17 commit), v3.5 (extended TZ).
+- **Rule:** Always use `guessFormat()` for unknown devices; never hardcode a single time format.
+- **Rule:** ZT08 weather stations MUST receive DP17 commit trigger after time sync.
+- **Rule:** Check MCU version from device before selecting format; v3.3+ requires 10-byte response.
 
 ---
 

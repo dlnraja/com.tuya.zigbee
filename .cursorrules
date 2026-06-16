@@ -55,6 +55,18 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 - Cache automatique par (manufacturerName + dpId + capability)
 - Chaîne de fallback: Known DB → Auto-detect range → defaultDivisor param → 1
 
+## MCU Time Sync Formats (TuyaTimeSyncFormats.js v6.0.0)
+- 23 time sync format variants for Tuya MCU devices
+- **Location**: `lib/tuya/TuyaTimeSyncFormats.js`
+- **Usage**: `TuyaTimeSyncFormats.buildPayload(format, options)` to build time payloads
+- **Auto-detection**: `TuyaTimeSyncFormats.guessFormat(deviceInfo)` with 6 heuristics
+- **Fallback chain**: `TuyaTimeSyncFormats.getFallbackChain(primaryFormat, deviceInfo)`
+- **Key formats**: TUYA_DUAL_2000 (LCD sensors), TUYA_MCU (MCU devices), TUYA_SEQ_10 (v3.3+), TUYA_FULL_TZ (thermostats)
+- **MCU protocol versions**: v3.1 (8-byte), v3.2 (8-byte), v3.3 (10-byte seq REQUIRED), v3.4 (+DP17 commit), v3.5 (extended TZ)
+- **RULE**: Always use guessFormat() for unknown devices; never hardcode a single format
+- **RULE**: ZT08 weather stations require DP17 commit trigger after time sync
+- **RULE**: Check MCU version from device before selecting format; v3.3+ needs 10-byte response
+
 ## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
 - FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
 - `BATTERY_SPECS` statique: 15+ types (CR2032, CR2450, CR2477, CR123A, CR1632, AAA, AA, C, D, 9V, 2xAAA, 2xAA, 4xAAA, Li-ion, Li-polymer, 18650)

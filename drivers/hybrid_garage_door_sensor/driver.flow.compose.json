@@ -1,0 +1,83 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_garage_door_sensor_opened",
+      "title": {
+        "en": "Garage door opened",
+        "fr": "Porte garage ouverte"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_garage_door_sensor_closed",
+      "title": {
+        "en": "Garage door closed",
+        "fr": "Porte garage fermée"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_garage_door_sensor_contact_changed",
+      "title": {
+        "en": "Contact sensor changed",
+        "fr": "Capteur contact changé"
+      },
+      "tokens": [
+        {
+          "name": "contact",
+          "type": "boolean",
+          "title": {
+            "en": "Contact Open",
+            "fr": "Contact Ouvert"
+          },
+          "example": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_garage_door_sensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_garage_door_sensor_is_open",
+      "title": {
+        "en": "Garage door is open",
+        "fr": "Porte garage est ouverte"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_garage_door_sensor_is_closed",
+      "title": {
+        "en": "Garage door is closed",
+        "fr": "Porte garage est fermée"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_garage_door_sensor_open",
+      "title": {
+        "en": "Open garage door",
+        "fr": "Ouvrir porte garage"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_garage_door_sensor_close",
+      "title": {
+        "en": "Close garage door",
+        "fr": "Fermer porte garage"
+      },
+      "args": []
+    }
+  ]
+}

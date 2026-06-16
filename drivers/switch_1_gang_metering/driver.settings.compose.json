@@ -78,7 +78,78 @@
         "min": 10,
         "max": 86400
       }
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Enhanced Features (v9.1)"
+      },
+      "children": [
+        {
+          "id": "standby_power_threshold",
+          "type": "number",
+          "label": {
+            "en": "Standby Power Threshold (W, 0=disabled)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 20,
+          "step": 0.1,
+          "hint": {
+            "en": "Power level above which the standby flow card triggers. 0 = disabled."
+          }
+        },
+        {
+          "id": "energy_cost_per_kwh",
+          "type": "number",
+          "label": {
+            "en": "Energy Cost (per kWh, 0=disabled)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 5.000,
+          "step": 0.001,
+          "hint": {
+            "en": "Cost per kWh for energy expense tracking"
+          }
+        },
+        {
+          "id": "energy_currency",
+          "type": "dropdown",
+          "label": {
+            "en": "Currency"
+          },
+          "value": "EUR",
+          "values": [
+            { "id": "EUR", "label": { "en": "EUR" } },
+            { "id": "USD", "label": { "en": "USD" } },
+            { "id": "GBP", "label": { "en": "GBP" } },
+            { "id": "NOK", "label": { "en": "NOK" } },
+            { "id": "SEK", "label": { "en": "SEK" } },
+            { "id": "DKK", "label": { "en": "DKK" } },
+            { "id": "CHF", "label": { "en": "CHF" } },
+            { "id": "PLN", "label": { "en": "PLN" } },
+            { "id": "CZK", "label": { "en": "CZK" } }
+          ],
+          "hint": {
+            "en": "Currency for energy cost calculations"
+          }
+        },
+        {
+          "id": "availability_timeout",
+          "type": "number",
+          "label": {
+            "en": "Offline Timeout (minutes, 0=disabled)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1440,
+          "step": 5,
+          "hint": {
+            "en": "Minutes without messages before marking device as offline"
+          }
+        }
+      ]
     }
-
   ]
   

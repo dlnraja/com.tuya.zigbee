@@ -1,7 +1,7 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 9.0.22 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
-> **412 drivers** (360 Zigbee + 51 WiFi + 1 Virtual) | **2520 fingerprints** | **SDK v3** | **Zero AggregateError**
+> **Version**: 9.0.36 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
+> **412 drivers** (361 Zigbee + 51 WiFi) | **4,304 fingerprints** | **4,138 flow cards** | **156 capabilities** | **SDK v3**
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
@@ -113,30 +113,44 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         app.js (43KB)                           │
-│  - registerCustomClusters (0xEF00, 0xE000, 0xE001)             │
-│  - FlowCardManager                                               │
-│  - UniversalFlowCardLoader                                       │
-│  - SmartDeviceDiscovery                                           │
-│  - UnknownDeviceHandler                                           │
+│                         app.js                                  │
+│  - registerCustomClusters (0xEF00, 0xE000, 0xE001-E003)        │
+│  - FlowCardManager + UniversalFlowCardLoader                    │
+│  - SmartDeviceDiscovery + UnknownDeviceHandler                  │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      drivers/ (218 drivers)                      │
-│  ├── zigbee/ (switches, sensors, covers, climate, etc.)        │
-│  ├── wifi/ (smartlife, ewelink, sonoff, tuya local)              │
-│  └──/ (multi-protocol devices)                            │
+│              drivers/ (412 drivers: 361 Zigbee + 51 WiFi)       │
+│  ├── 339 drivers with flow cards (4,138 total)                  │
+│  ├── 7 profile classes: switch, sensor, cover, light,           │
+│  │   plug, thermostat, button                                   │
+│  ├── 17 Homey device classes (sensor:122, socket:113, etc.)     │
+│  └── 156 unique capabilities                                    │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                        lib/ (core library)                      │
-│  ├── devices/ (Base classes:Switch, Sensor, Cover...)   │
-│  ├── mixins/ (PhysicalButton, VirtualButton, TuyaDevice)        │
-│  ├── tuya/ (TuyaEF00Manager, TuyaUnifiedParser, fingerprints) │
-│  ├── battery/ (UnifiedBatteryHandler, BatteryCalculator)     │
-│  └── managers/ (SmartDriverAdaptation, CapabilityFallback)      │
+│                    lib/ (core library, 12+ subdirs)              │
+│  ├── tuya/     (57 files) Tuya protocol, DP parsing            │
+│  │   └── TuyaTimeSyncFormats.js (23 time formats, MCU guessing)│
+│  ├── devices/  (17 files) BaseUnifiedDevice, UnifiedSwitchBase │
+│  ├── mixins/   (18 files) PhysicalButton, VirtualButton         │
+│  ├── managers/ (23 files) SmartDivisor, DynamicCapability       │
+│  ├── utils/    (50 files) AdaptiveDataParser, CaseMatcher      │
+│  ├── battery/  (12 files) UnifiedBatteryHandler                 │
+│  ├── clusters/ (28 files) OnOff, LevelControl, Tuya, ZosungIR  │
+│  ├── protocol/ (5 files)  HybridProtocol, IntelligentRouter    │
+│  ├── zigbee/   (20+ files) HealthMonitor, DataQuery, GreenPower│
+│  └── registry/ (8 files)  DeviceProfileRegistry, 7 profiles    │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    scripts/ (126 total)                          │
+│  ├── automation/ (95 files) validate-all, driver-health, etc.   │
+│  ├── ci/         (20 files) pre-commit, security, CI gates     │
+│  └── validation/ (11 files) fingerprint, collision, schema      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -222,6 +236,20 @@ DP Payload: [status:1][transId:1][dp:1][type:1][lenHi:1][lenLo:1][data:N]
 - Cause: AdaptiveDataParser auto-converts (/100) THEN dpMappings divisor divides again
 - Fix: TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
 
+### 23 Time Sync Formats (MCU Time Synchronization)
+The `TuyaTimeSyncFormats.js` (v6.0.0) library defines 23 distinct time sync format variants for Tuya MCU devices. Time sync is critical for LCD climate sensors, TRVs, and weather stations that lose their clocks on power cycles.
+
+**Epoch-Based (7 formats):** ZIGBEE_2000, ZIGBEE_2000_LOCAL, ZIGBEE_2000_LE, UNIX_1970, UNIX_1970_LOCAL, UNIX_1970_LE, UNIX_1970_MS
+**Dual Timestamp (4 formats):** TUYA_DUAL_2000, TUYA_DUAL_1970, Z2M_DUAL_1970, Z2M_DUAL_2000
+**MCU UART Protocol (3 formats):** TUYA_MCU (9 bytes), TUYA_MCU_HDR_10 (10 bytes), TUYA_MCU_HDR_8 (8 bytes)
+**Sequence-Echo (2 formats):** TUYA_SEQ_10, TUYA_SEQ_10_E2K
+**Minimal & Date-String (6 formats):** ZCL_5, TUYA_STANDARD, TUYA_UTC, TUYA_EXTENDED_TZ, TUYA_FULL_TZ, TUYA_GATEWAY
+**Commit-Trigger (1 format):** ZT08_DP17_COMMIT (DP17 bool write after time sync)
+
+**MCU Format Guessing** (`guessFormat()`): Uses 6 heuristics (manufacturer prefix, product ID, endpoint clusters, driver class, known patterns, model ID) to auto-detect the correct format for unknown devices with confidence scoring.
+
+**MCU UART Protocol Versions:** v3.1 (8-byte, no seq), v3.2 (8-byte, optional seq), v3.3 (10-byte, seq REQUIRED), v3.4 (+ DP17 commit), v3.5 (extended TZ)
+
 ---
 
 ## 6. DEVICE CLASS HIERARCHY
@@ -229,27 +257,35 @@ DP Payload: [status:1][transId:1][dp:1][type:1][lenHi:1][lenLo:1][data:N]
 ```
 Homey.Device (SDK3)
   └── ZigBeeDevice (homey-zigbeedriver)
-        └── TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
+        └── TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js) [45.6KB]
               └── TuyaUnifiedDevice (lib/devices/TuyaUnifiedDevice.js)
-                    └── BaseUnifiedDevice (lib/devices/BaseUnifiedDevice.js) [182KB]
-                          ├──UnifiedSwitchBase (40KB)
+                    └── BaseUnifiedDevice (lib/devices/BaseUnifiedDevice.js) [182.1KB]
+                          ├── UnifiedSensorBase [193.8KB] (largest)
+                          ├── UnifiedPlugBase [41.2KB]
+                          ├── UnifiedCoverBase [34.9KB]
+                          ├── UnifiedThermostatBase [34.7KB]
+                          ├── UnifiedLightBase [31.4KB]
+                          ├── UnifiedSwitchBase [~30KB]
                           │     └── + PhysicalButtonMixin + VirtualButtonMixin
-                          ├──UnifiedSensorBase (207KB)
-                          ├──UnifiedCoverBase (35KB)
-                          ├──UnifiedLightBase (29KB)
-                          ├──UnifiedPlugBase (37KB)
-                          ├──UnifiedThermostatBase
-                          └── ButtonDevice (80KB)
+                          └── ButtonDevice
 ```
 
-### Base Class Sizes
+### Base Class Sizes (Current)
 | File | Size | Purpose |
 |------|------|---------|
-| DeviceFingerprintDB.js | 215KB | Complete fingerprint database |
-|SensorBase.js | 207KB | All sensor logic |
-| BaseUnifiedDevice.js | 182KB | Master base device |
-| TuyaEF00Manager.js | 93KB | DP protocol handler |
-| ButtonDevice.js | 80KB | Button/scene device |
+| UnifiedSensorBase.js | 193.8KB | All sensor logic (largest) |
+| BaseUnifiedDevice.js | 182.1KB | Master base device |
+| UnifiedBatteryHandler.js | 59.5KB | Non-linear battery calculation |
+| TuyaZigbeeDevice.js | 45.6KB | Base device class, frame interception |
+| UnifiedPlugBase.js | 41.2KB | Smart plug logic |
+| UnifiedCoverBase.js | 34.9KB | Cover/curtain logic |
+| UnifiedThermostatBase.js | 34.7KB | Thermostat logic |
+| UnifiedLightBase.js | 31.4KB | Light device logic |
+| TuyaEF00Manager.js | 97.6KB | DP protocol handler |
+| SmartDivisorManager.js | 16.7KB | Smart divisor auto-detection |
+| DynamicCapabilityManager.js | 11.7KB | Auto-discovery & phantom pruning |
+| TuyaDPParser.js | 6.3KB | Multi-DP parser with MCU UART detection |
+| SanityFilter.js | 3.4KB | EMA + ROC noise filtering |
 | CapabilityFallbackManager.js | 3KB | **CRITICAL:** Intercepts and sanitizes all capabilities |
 
 ### Import Paths (CRITICAL)
@@ -416,22 +452,31 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ### Library Files
 | Path | Files | Purpose |
 |------|-------|---------|
-| lib/devices/ |SwitchBase,SensorBase, etc. | Device base classes |
-| lib/mixins/ | PhysicalButton, VirtualButton, TuyaDevice | Mixins |
-| lib/tuya/ | TuyaEF00Manager, TuyaUnifiedParser, etc. | Tuya protocol |
-| lib/utils/ | ManufacturerNameHelper, CaseInsensitiveMatcher | Brand normalization & utilities |
-| lib/battery/ | UnifiedBatteryHandler, BatteryCalculator | Battery management |
-| lib/managers/ | SmartDriverAdaptation, IASZoneManager | Managers |
+| lib/devices/ | 17 files | Device base classes (BaseUnifiedDevice, Unified*Base, HybridSwitchBase) |
+| lib/mixins/ | 18 files | Reusable behavior (PhysicalButton, VirtualButton, Sonoff*, Thermostat) |
+| lib/tuya/ | 57 files | Tuya protocol (TuyaEF00Manager, TuyaDPParser, SanityFilter, TimeSync) |
+| lib/utils/ | 50 files | Utilities (AdaptiveDataParser, CaseInsensitiveMatcher, CacheManager) |
+| lib/battery/ | 12 files | Battery management (UnifiedBatteryHandler, Calculator, Monitor) |
+| lib/managers/ | 23 files | Services (SmartDivisor, DynamicCapability, Energy, IASZone, IEEE) |
+| lib/clusters/ | 28 files | ZCL clusters (OnOff, LevelControl, Tuya*, ZosungIR*) |
+| lib/protocol/ | 5 files | Protocol management (HybridProtocol, IntelligentRouter) |
+| lib/zigbee/ | 20+ files | Zigbee helpers (HealthMonitor, DataQuery, GreenPower) |
+| lib/registry/ | 8 files | Device profiles registry (7 profile categories) |
+| lib/adapters/ | 6 files | External adapters (Z2M, ZHA, Security) |
+| lib/analytics/ | 3 files | Analytics (Advanced, Standard) |
+| lib/session/ | 1 file | IR session management |
+| lib/health/ | 1 file | Device health monitoring |
 
 ### Scripts
-| Path | Purpose |
-|------|---------|
-| scripts/automation/ | CI/CD, auto-update, pre-push checks |
-| scripts/maintenance/ | Image fixing, cleanup, battery fixes |
-| scripts/validation/ | Schema validation, collision checking |
-| scripts/ci/ | CI gate scripts (security, YAML, syntax, flow ID checks) |
-| .github/scripts/ | GitHub Actions scripts (forum, github, triage, Athom automation) |
-| .githooks/ | Git hooks (pre-commit, pre-push) |
+| Path | Files | Purpose |
+|------|-------|---------|
+| scripts/automation/ | 95 files | CI/CD, auto-update, validate-all, driver-health, mega-audit |
+| scripts/ci/ | 20 files | Pre-commit checks, security scanner, CI health gate |
+| scripts/validation/ | 11 files | Fingerprint health, collision checking, schema validation |
+| scripts/ | 109 files (root) | Maintenance, fixes, fingerprint scans |
+| .github/scripts/ | 50+ files | GitHub Actions: forum, github, triage, Athom automation |
+| .github/workflows/ | 63 YAML files | CI/CD pipelines (daily, weekly, monthly) |
+| .githooks/ | -- | Git hooks (pre-commit, pre-push) |
 
 ### Documentation
 | File | Purpose |
@@ -448,7 +493,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 
 ## 12. YML WORKFLOWS
 
-### 39 Workflows (see .github/WORKFLOW_GUIDELINES.md for full list)
+### 63 Workflows (see .github/WORKFLOW_GUIDELINES.md for full list)
 
 | Workflow | Schedule | Key Secrets |
 |----------|----------|-------------|
@@ -479,7 +524,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 
 ## 13. DRIVER CATEGORIES
 
-### Zigbee Drivers (168)
+### Zigbee Drivers (361)
 | Category | Drivers | Examples |
 |----------|---------|----------|
 | Switches | 30+ | switch_1gang..8gang, wall_switch_*, module_mini_switch |
@@ -493,8 +538,11 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | Buttons | 25+ | button_wireless_*, scene_switch_* |
 | Remote | 5+ | ir_remote (virtual), zigbee_remote_*, scene_switch_* |
 | Special | 10+ | fingerbot, pet_feeder, garage_door, valve_*, ir_blaster |
+| Air Purifiers | 10+ | air_purifier_climate, air_purifier_sensor, air_purifier_quality |
+| Radar/Presence | 5+ | presence_sensor_radar, presence_sensor_mmwave |
+| Soil Sensors | 3+ | soil_sensor, device_air_purifier_soil |
 
-### WiFi Drivers (50)
+### WiFi Drivers (51)
 | Category | Examples |
 |----------|----------|
 | SmartLife | wifi_plug, wifi_switch_*, wifi_light, wifi_thermostat |
@@ -502,13 +550,36 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | Sonoff | wifi_sonoff_minir3, wifi_sonoff_pow_elite |
 | Generic | wifi_generic, wifi_sensor |
 
-### Drivers
+### Homey Device Class Distribution (17 classes)
+| Class | Count | Description |
+|-------|-------|-------------|
+| sensor | 122 | Temp, humidity, motion, contact, water, smoke, air quality, presence radar |
+| socket | 113 | Smart plugs, energy monitors, power strips, DIN rail |
+| other | 44 | Mixed-purpose, DIY, generic Tuya |
+| light | 42 | RGB, RGBW, CCT bulbs, LED strips, tunable white |
+| thermostat | 25 | TRVs, floor heating, wall thermostats |
+| remote | 18 | Scene switches, button remotes, IR blasters |
+| fan | 16 | Ceiling fans, tower fans, exhaust fans |
+| windowcoverings | 9 | Curtain motors, roller blinds, shutters |
+| lock | 5 | Smart door locks, fingerprint locks |
+| doorbell | 4 | Video doorbells, wired chimes |
+| heater | 4 | Space heaters, radiator valves |
+| garagedoor | 3 | Garage door openers |
+| button | 2 | Scene triggers, emergency SOS |
+| curtain | 2 | Curtain-specific motors |
+| camera | 1 | IP cameras |
+| vacuumcleaner | 1 | Robot vacuums |
+| speaker | 1 | Smart speakers |
+
+### Notable Drivers
 | Driver | Features |
 |--------|----------|
 | device_floor_heating | Floor heating + thermostat |
 | device_radiator_valve | Radiator valve + TRV |
 | dimmer_dual_channel | Dual channel dimmer |
 | sensor_presence_radar | Radar presence + contact |
+| air_purifier_sensor | Multi-sensor air quality monitor |
+| button_wireless_fingerbot | Fingerbot touch actuator |
 
 ---
 
@@ -644,6 +715,7 @@ APIFREELLM_KEY  → ApiFreeLLM (free, unlimited)
 ### Key Versions
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| v9.0.36 | 2026-06-16 | 412 drivers, 4304 FPs, 4138 flow cards, 156 capabilities, 63 workflows, 23 time sync formats, MCU format guessing |
 | v9.0.22 | 2026-06-14 | 412 drivers, 2520 FPs, Athom build diagnostics, session injection, app.json compaction, security scan |
 | v9.0.21 | 2026-06-14 | Forum processing (93 interviews), YAML workflow optimization, CI script --json support, console.log cleanup in 13 drivers |
 | v8.3.0 | 2026-05-23 | Case-Insensitive Brand & Taxonomy Hardening for all core brands |
@@ -1046,17 +1118,19 @@ node scripts/restore-master-only-hybrid-mfs.js
 node scripts/validation/check-fingerprint-health.js   # Verify
 ```
 
-### Fingerprint Statistics (v8.5.34)
+### Fingerprint Statistics (v9.0.36)
 
 | Metric | Value |
 |--------|-------|
-| Total drivers | 412 |
-| Zigbee drivers | 360 |
+| Total drivers | 412 (361 Zigbee + 51 WiFi) |
+| Total fingerprint entries | 4,304 |
+| Unique manufacturerNames | 4,035 |
+| Unique productIds | 566 |
 | Drivers with MF = 0 | **0** (was: 99) |
 | Wildcards | **0** |
-| MFs injected from stable-v5 | **1053** |
-| Hybrid drivers restored | **90** |
-| Validation level | **publish ✅** |
+| Validation level | **publish** |
+| Pre-commit checks | PASSED |
+| Driver health average | 81/100 |
 
 ---
 
@@ -1164,6 +1238,6 @@ node scripts/ci/find-bloat.js           # Bundle size analysis
 
 ---
 
-**Last Updated**: 2026-06-14 | **Version**: 9.0.22
+**Last Updated**: 2026-06-15 | **Version**: 9.0.36
 **Generated by**: Antigravity AI | **Author**: dlnraja
 **END OF PROJECT_INDEX.md**

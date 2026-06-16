@@ -1,0 +1,134 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_switch_sensor_turned_on",
+      "title": {
+        "en": "Switch turned on",
+        "fr": "Interrupteur allumé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch turned on",
+        "fr": "Interrupteur allumé"
+      }
+    },
+    {
+      "id": "hybrid_switch_sensor_turned_off",
+      "title": {
+        "en": "Switch turned off",
+        "fr": "Interrupteur éteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch turned off",
+        "fr": "Interrupteur éteint"
+      }
+    },
+    {
+      "id": "hybrid_switch_sensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_switch_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_switch_sensor_is_on",
+      "title": {
+        "en": "Switch is on",
+        "fr": "Interrupteur est allumé"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_switch_sensor_temperature_above",
+      "title": {
+        "en": "Temperature is above",
+        "fr": "Température supérieure à"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hybrid_switch_sensor_temperature_below",
+      "title": {
+        "en": "Temperature is below",
+        "fr": "Température inférieure à"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_switch_sensor_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_switch_sensor_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      },
+      "args": []
+    }
+  ]
+}

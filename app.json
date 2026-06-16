@@ -58648,6 +58648,167 @@
           "fr": "Niveau liquide haut",
           "de": "Flussigkeitsstand hoch"
         }
+      },
+      {
+        "id": "standby_power_exceeded",
+        "title": {
+          "en": "Standby power threshold exceeded",
+          "fr": "Seuil puissance veille dépassé"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 2.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_power"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Standby power exceeded on [[device]]",
+          "fr": "Seuil puissance veille dépassé sur [[device]]"
+        }
+      },
+      {
+        "id": "signal_quality_changed",
+        "title": {
+          "en": "Signal quality changed",
+          "fr": "Qualité du signal changée"
+        },
+        "tokens": [
+          {
+            "name": "lqi",
+            "type": "number",
+            "title": {
+              "en": "LQI",
+              "fr": "LQI"
+            },
+            "example": 200
+          },
+          {
+            "name": "quality",
+            "type": "string",
+            "title": {
+              "en": "Quality",
+              "fr": "Qualité"
+            },
+            "example": "Good"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Signal quality changed on [[device]]",
+          "fr": "Qualité du signal changée sur [[device]]"
+        }
+      },
+      {
+        "id": "firmware_version_changed",
+        "title": {
+          "en": "Firmware version changed",
+          "fr": "Version firmware changée"
+        },
+        "tokens": [
+          {
+            "name": "firmware_version",
+            "type": "string",
+            "title": {
+              "en": "Firmware Version",
+              "fr": "Version Firmware"
+            },
+            "example": "v2.1.0"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Firmware version changed on [[device]]",
+          "fr": "Version firmware changée sur [[device]]"
+        }
+      },
+      {
+        "id": "smoke_co_test_completed",
+        "title": {
+          "en": "Self-test completed",
+          "fr": "Auto-test terminé"
+        },
+        "tokens": [
+          {
+            "name": "result",
+            "type": "string",
+            "title": {
+              "en": "Result",
+              "fr": "Résultat"
+            },
+            "example": "passed"
+          },
+          {
+            "name": "alarm_type",
+            "type": "string",
+            "title": {
+              "en": "Type",
+              "fr": "Type"
+            },
+            "example": "smoke"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_smoke"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Self-test completed on [[device]]",
+          "fr": "Auto-test terminé sur [[device]]"
+        }
+      },
+      {
+        "id": "valve_position_changed",
+        "title": {
+          "en": "Valve position changed",
+          "fr": "Position de vanne changée"
+        },
+        "tokens": [
+          {
+            "name": "position",
+            "type": "number",
+            "title": {
+              "en": "Position (%)",
+              "fr": "Position (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_valve_position"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Valve position changed on [[device]]",
+          "fr": "Position de vanne changée sur [[device]]"
+        }
       }
     ],
     "conditions": [
@@ -71811,6 +71972,63 @@
           "nl": "Vloeistofstatus !{{is|is niet}} [[state]]",
           "fr": "Etat liquide !{{est|n'est pas}} [[state]]",
           "de": "Flussigkeitsstatus !{{ist|ist nicht}} [[state]]"
+        }
+      },
+      {
+        "id": "power_factor_below",
+        "title": {
+          "en": "Power factor is below threshold",
+          "fr": "Facteur de puissance inférieur au seuil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_power_factor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "title": {
+              "en": "Threshold",
+              "fr": "Seuil"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Power factor on [[device]] below [[threshold]]",
+          "fr": "Facteur de puissance sur [[device]] inférieur à [[threshold]]"
+        }
+      },
+      {
+        "id": "energy_cost_exceeds",
+        "title": {
+          "en": "Energy cost exceeds threshold",
+          "fr": "Coût énergétique dépasse le seuil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=meter_power"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "step": 0.01,
+            "title": {
+              "en": "Cost threshold",
+              "fr": "Seuil de coût"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Energy cost on [[device]] exceeds [[threshold]]",
+          "fr": "Coût énergétique sur [[device]] dépasse [[threshold]]"
         }
       }
     ],
@@ -103750,6 +103968,117 @@
         ],
         "titleFormatted": {
           "en": "Set temperature [[temperature]]"
+        }
+      },
+      {
+        "id": "run_smoke_co_self_test",
+        "title": {
+          "en": "Run self-test on smoke/CO detector",
+          "fr": "Lancer auto-test sur détecteur fumée/CO"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_smoke"
+          },
+          {
+            "name": "test_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Test Type",
+              "fr": "Type de Test"
+            },
+            "values": [
+              {
+                "id": "smoke",
+                "label": {
+                  "en": "Smoke Test",
+                  "fr": "Test Fumée"
+                }
+              },
+              {
+                "id": "co",
+                "label": {
+                  "en": "CO Test",
+                  "fr": "Test CO"
+                }
+              },
+              {
+                "id": "all",
+                "label": {
+                  "en": "Full Test",
+                  "fr": "Test Complet"
+                }
+              }
+            ]
+          }
+        ],
+        "titleFormatted": {
+          "en": "Run [[test_type]] self-test on [[device]]",
+          "fr": "Lancer auto-test [[test_type]] sur [[device]]"
+        }
+      },
+      {
+        "id": "set_temperature_offset",
+        "title": {
+          "en": "Set temperature calibration offset",
+          "fr": "Régler le décalage de calibration température"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_temperature"
+          },
+          {
+            "name": "offset",
+            "type": "number",
+            "min": -10,
+            "max": 10,
+            "step": 0.1,
+            "title": {
+              "en": "Offset (°C)",
+              "fr": "Décalage (°C)"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Set temperature offset [[offset]] on [[device]]",
+          "fr": "Régler décalage température [[offset]] sur [[device]]"
+        }
+      },
+      {
+        "id": "set_custom_number_value",
+        "title": {
+          "en": "Set custom numeric value",
+          "fr": "Régler valeur numérique personnalisée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device"
+          },
+          {
+            "name": "parameter",
+            "type": "text",
+            "title": {
+              "en": "Parameter Name",
+              "fr": "Nom du Paramètre"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ],
+        "titleFormatted": {
+          "en": "Set [[parameter]] to [[value]] on [[device]]",
+          "fr": "Régler [[parameter]] à [[value]] sur [[device]]"
         }
       }
     ]

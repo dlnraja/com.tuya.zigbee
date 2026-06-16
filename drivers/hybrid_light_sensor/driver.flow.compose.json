@@ -1,0 +1,76 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_light_sensor_turned_on",
+      "title": {
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_light_sensor_turned_off",
+      "title": {
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_light_sensor_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_light_sensor_is_on",
+      "title": {
+        "en": "Light is on",
+        "fr": "Lumière est allumée"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_light_sensor_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_light_sensor_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_light_sensor_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Brightness (%)",
+            "fr": "Luminosité (%)"
+          }
+        }
+      ]
+    }
+  ]
+}

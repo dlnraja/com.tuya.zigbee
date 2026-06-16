@@ -1,0 +1,158 @@
+{
+  "name": {
+    "en": "Hybrid Sensor + Thermostat",
+    "fr": "Hybride Capteur + Thermostat",
+    "nl": "Hybride Sensor + Thermostaat",
+    "de": "Hybrid Sensor + Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "target_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Current Temperature",
+        "fr": "Température Actuelle"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Current Humidity",
+        "fr": "Humidité Actuelle"
+      }
+    },
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible"
+      },
+      "min": 5,
+      "max": 35,
+      "step": 0.5
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_0DVM9MVA",
+      "_TZE204_0DVM9MVA",
+      "_TZE284_0DVM9MVA",
+      "_TZE200_3YP57TBY",
+      "_TZE284_3YP57TBY",
+      "_TZE200_EEKPF0FT",
+      "_TZE204_EEKPF0FT",
+      "_TZE284_EEKPF0FT",
+      "_TZE200_SEQ9CM6U",
+      "_TZE204_SEQ9CM6U",
+      "_TZE200_P3DBF6QS",
+      "_TZE204_P3DBF6QS",
+      "_TZE284_P3DBF6QS",
+      "_TYZB01_KVWJUJY9",
+      "_TZ3000_KVWJUJY9",
+      "_TZ3000_KVWJUJY9"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0201"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029,
+          513,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "temperature_calibration",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset (°C)",
+        "fr": "Décalage Température (°C)"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Add or subtract from temperature reading"
+      }
+    },
+    {
+      "id": "humidity_calibration",
+      "type": "number",
+      "label": {
+        "en": "Humidity Offset (%)",
+        "fr": "Décalage Humidité (%)"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "step": 1
+    },
+    {
+      "id": "min_set_point",
+      "type": "number",
+      "label": {
+        "en": "Minimum Set Point (°C)",
+        "fr": "Point de Consigne Min (°C)"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 15,
+      "step": 0.5
+    },
+    {
+      "id": "max_set_point",
+      "type": "number",
+      "label": {
+        "en": "Maximum Set Point (°C)",
+        "fr": "Point de Consigne Max (°C)"
+      },
+      "value": 35,
+      "min": 20,
+      "max": 45,
+      "step": 0.5
+    }
+  ],
+  "images": {
+    "small": "/drivers/hybrid_sensor_thermostat/assets/images/small.png",
+    "large": "/drivers/hybrid_sensor_thermostat/assets/images/large.png",
+    "xlarge": "/drivers/hybrid_sensor_thermostat/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ],
+  "id": "hybrid_sensor_thermostat",
+  "version": "1.0.0"
+}

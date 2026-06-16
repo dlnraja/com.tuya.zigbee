@@ -190,6 +190,38 @@
       }
     },
     {
+      "id": "cover_travel_time_up",
+      "type": "number",
+      "label": {
+        "en": "Travel Time Open (seconds)",
+        "fr": "Temps de Voyage Ouverture (secondes)"
+      },
+      "value": 15,
+      "min": 1,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time for cover to travel from fully closed to fully open. Used for position estimation.",
+        "fr": "Temps pour le volet de voyager de fermé à ouvert. Utilisé pour l'estimation de position."
+      }
+    },
+    {
+      "id": "cover_travel_time_down",
+      "type": "number",
+      "label": {
+        "en": "Travel Time Close (seconds)",
+        "fr": "Temps de Voyage Fermeture (secondes)"
+      },
+      "value": 15,
+      "min": 1,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time for cover to travel from fully open to fully closed",
+        "fr": "Temps pour le volet de voyager de ouvert à fermé"
+      }
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {

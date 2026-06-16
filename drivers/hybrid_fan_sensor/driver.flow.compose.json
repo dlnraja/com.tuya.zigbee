@@ -1,0 +1,109 @@
+{
+  "triggers": [
+    {
+      "id": "hybrid_fan_sensor_turned_on",
+      "title": {
+        "en": "Fan turned on",
+        "fr": "Ventilateur allumé"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_fan_sensor_turned_off",
+      "title": {
+        "en": "Fan turned off",
+        "fr": "Ventilateur éteint"
+      },
+      "args": []
+    },
+    {
+      "id": "hybrid_fan_sensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_fan_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "hybrid_fan_sensor_pm25_changed",
+      "title": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changée"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5 (ug/m3)",
+            "fr": "PM2.5 (ug/m3)"
+          },
+          "example": 35
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hybrid_fan_sensor_is_on",
+      "title": {
+        "en": "Fan is on",
+        "fr": "Ventilateur est allumé"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "hybrid_fan_sensor_set_speed",
+      "title": {
+        "en": "Set fan speed",
+        "fr": "Régler vitesse ventilateur"
+      },
+      "args": [
+        {
+          "name": "speed",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Speed (%)",
+            "fr": "Vitesse (%)"
+          }
+        }
+      ]
+    }
+  ]
+}
