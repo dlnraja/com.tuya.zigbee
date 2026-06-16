@@ -2,20 +2,20 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,157+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,304+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-412-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,080-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-4,106-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **4,157+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **412 drivers** and **4,304+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **4,080+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,106+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -55,42 +55,42 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.35 |
-| **Device Fingerprints** | 4,157+ |
+| **App Version** | v9.0.36 |
+| **Device Fingerprints** | 4,304+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 412 (362 Zigbee + 50 WiFi) |
-| **Flow Cards** | 4,080 |
+| **Flow Cards** | 4,106 |
 | **Unique Capabilities** | 156 |
 | **SVG Icons** | 711 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-06-15 |
+| **Last Updated** | 2026-06-16 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 641 |
-| 2 | `switch_1gang` | 452 |
-| 3 | `button_wireless_2` | 227 |
-| 4 | `generic_tuya` | 170 |
-| 5 | `presence_sensor_radar` | 138 |
+| 1 | `climate_sensor` | 733 |
+| 2 | `switch_1gang` | 477 |
+| 3 | `button_wireless_2` | 243 |
+| 4 | `generic_tuya` | 171 |
+| 5 | `presence_sensor_radar` | 153 |
 | 6 | `wall_dimmer_tuya` | 130 |
-| 7 | `radiator_valve` | 123 |
+| 7 | `radiator_valve` | 117 |
 | 8 | `diy_custom_zigbee` | 103 |
-| 9 | `sensor_contact_zigbee` | 92 |
-| 10 | `dimmer_wall_1gang` | 72 |
-| 11 | `wall_thermostat` | 69 |
-| 12 | `light_bulb_rgb_rgbw` | 65 |
-| 13 | `generic_diy` | 63 |
-| 14 | `switch_4gang` | 62 |
-| 15 | `motion_sensor` | 59 |
-| 16 | `thermostat_tuya_dp` | 51 |
+| 9 | `sensor_contact_zigbee` | 96 |
+| 10 | `wall_thermostat` | 77 |
+| 11 | `dimmer_wall_1gang` | 67 |
+| 12 | `light_bulb_rgb_rgbw` | 66 |
+| 13 | `generic_diy` | 64 |
+| 14 | `switch_4gang` | 64 |
+| 15 | `thermostat_tuya_dp` | 56 |
+| 16 | `water_leak_sensor_tuya` | 53 |
 | 17 | `universal_zigbee` | 50 |
-| 18 | `water_leak_sensor_tuya` | 50 |
-| 19 | `usb_dongle_triple` | 48 |
-| 20 | `curtain_motor_shutter` | 47 |
+| 18 | `curtain_motor_shutter` | 48 |
+| 19 | `motion_sensor` | 47 |
+| 20 | `usb_dongle_triple` | 46 |
 
 ### Drivers by Device Class
 
@@ -123,6 +123,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **vv8_5_30** | [object Object] |
+| **v9.0.36** | v9.0.35: |
 | **v9.0.35** | v9.0.34: |
 | **v9.0.34** | v9.0.33: |
 | **v9.0.33** | v9.0.32: |
@@ -136,7 +137,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v9.0.25** | v9.0.24: |
 | **v9.0.24** | v9.0.23: |
 | **v9.0.23** | v9.0.22: |
-| **v9.0.22** | v9.0.21: |
 
 <!-- CHANGELOG_END -->
 
@@ -202,7 +202,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 412 Drivers ─ 4,157+ fingerprints
+       └─ 412 Drivers ─ 4,304+ fingerprints
 ```
 
 ---
@@ -215,14 +215,7 @@ Homey Pro
 | **[Blakadder](https://zigbee.blakadder.com)** | Cross-checking rebranded Tuya devices |
 | **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
-| **[TinyTuya](https://github.com/jasonacox/tinytuya)** | Tuya DP type definitions, device categories |
-| **[Tuya-Local](https://github.com/make-all/tuya-local)** | YAML config DP mappings, entity types |
-| **[Hubitat Drivers](https://github.com/kkossev/Hubitat)** | Groovy Tuya Zigbee drivers |
-| **[SmartThings Edge](https://github.com/SmartThingsCommunity)** | YAML fingerprint files |
-| **[openHAB](https://github.com/openhab/openhab-addons)** | Zigbee XML thing definitions |
-| **[Domoticz-Zigbee](https://github.com/pipiche38/Domoticz-Zigbee)** | Lua/Python Zigbee plugins |
-| **[Xiaomi MIoT](https://home.miot-spec.com)** | Xiaomi device specifications |
-| **[CSA-IoT](https://csa-iot.org)** | Zigbee 3.0 certified products |
+| **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
 | **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
 | **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
 
@@ -360,61 +353,11 @@ This app is developed in my free time, powered by passion and coffee!
 ## Credits & Thanks
 
 A massive thank you to the maintainers and contributors of:
-
-### Zigbee Ecosystem
-- **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT** — primary device database
-- **[zigpy](https://github.com/zigpy)** and **zha-device-handlers** — ZHA quirks and protocol handling
-- **[dresden-elektronik](https://github.com/dresden-elektronik)** — deCONZ REST plugin device database
-- **[blakadder](https://github.com/blakadder)** — Zigbee Device Compatibility Repository
-- **[CSA-IoT](https://csa-iot.org)** — Zigbee specifications and certification
-
-### Tuya Protocol & WiFi
-- **[jasonacox/tinytuya](https://github.com/jasonacox/tinytuya)** — Tuya local protocol documentation
-- **[make-all/tuya-local](https://github.com/make-all/tuya-local)** — HA Tuya DP mappings
-- **[tuya/tuya-connector-nodejs](https://github.com/tuya/tuya-connector-nodejs)** — Official Tuya SDK
-- **[tuya/tuya-homebridge](https://github.com/tuya/tuya-homebridge)** — Tuya device categories
-
-### Alternative Zigbee Platforms
-- **[kkossev/Hubitat](https://github.com/kkossev/Hubitat)** — Hubitat Zigbee drivers
-- **[jw2100/Hubitat-Code](https://github.com/jw2100/Hubitat-Code)** — Hubitat community drivers
-- **[bravenel/Hubitat](https://github.com/bravenel/Hubitat)** — Hubitat core Zigbee drivers
-- **[fison67/TS-Kite](https://github.com/fison67/TS-Kite)** — SmartThings Edge Tuya drivers
-- **[w35l3y/SmartThingsEdgeDrivers](https://github.com/w35l3y/SmartThingsEdgeDrivers)** — SmartThings Edge collection
-- **[openhab/addons](https://github.com/openhab/openhab-addons)** — openHAB Zigbee binding
-- **[pipiche38/Domoticz-Zigbee](https://github.com/pipiche38/Domoticz-Zigbee)** — Domoticz Zigbee plugin
-- **[danielealbano/domoticz-zigbee2mqtt-plugin](https://github.com/danielealbano/domoticz-zigbee2mqtt-plugin)** — Domoticz Z2M plugin
-- **[ziga-laj/Domoticz-Zigate](https://github.com/ziga-laj/Domoticz-Zigate)** — Domoticz Zigate plugin
-- **[ioBroker/ioBroker.zigbee](https://github.com/ioBroker/ioBroker.zigbee)** — ioBroker Zigbee adapter
-- **[Smanar/Zigbee-for-Domoticz](https://github.com/Smanar/Zigbee-for-Domoticz)** — Domoticz deCONZ plugin
-
-### Firmware & Reverse Engineering
-- **[openshwprojects/OpenBK7231T](https://github.com/openshwprojects/OpenBK7231T)** — Open-source Tuya firmware
-- **[esphome/esphome](https://github.com/esphome/esphome)** — ESPHome Tuya component
-- **[arendst/Tasmota](https://github.com/arendst/Tasmota)** — Tasmota TuyaMCU docs
-- **[ct-Open-Source/tuya-convert](https://github.com/ct-Open-Source/tuya-convert)** — Tuya protocol reverse engineering
-
-### Manufacturer Documentation
-- **[Xiaomi MIoT Spec](https://home.miot-spec.com)** — Xiaomi device specifications
-- **[miot-spec.org](https://miot-spec.org)** — MIoT specification database
-- **[Avenitos/zha_xiaomi](https://github.com/Avenitos/zha_xiaomi)** — Xiaomi ZHA fingerprints
-- **[Sonoff/eWeLink](https://docs.iteadstudio.com)** — eWeLink developer docs
-- **[Legrand](https://developer.legrand.com)** — Legrand local interoperability
-- **[Schneider Electric](https://developer.se.com)** — Wiser platform docs
-
-### CSA-IoT & Certification
-- **[CSA-IoT](https://csa-iot.org)** — Connectivity Standards Alliance certified products
-- **[csa-iot/connected-things-data](https://github.com/csa-iot/connected-things-data)** — CSA product data mirrors
-- **[project-chip/connectedhomeip](https://github.com/project-chip/connectedhomeip)** — Matter/CHIP connected home data
-
-### Community
+- **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
+- **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
+- The **zigpy / ZHA / zha-device-handlers** maintainers
+- The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
 - All developers and testers who share device logs, diagnostics, and fingerprints
-- The Homey community for bug reports and device requests
-- The Z2M, ZHA, and deCONZ communities for cross-platform device support
-
-### Automated Data Collection
-- **8 external scanners** continuously cross-reference device fingerprints across the Zigbee ecosystem
-- Sources include TinyTuya, Tuya-Local, Hubitat, SmartThings, openHAB, Domoticz, Xiaomi MIoT, and CSA-IoT
-- Intelligent caching with TTL-based expiry minimizes API calls while keeping data fresh
 
 ---
 
@@ -428,14 +371,6 @@ A massive thank you to the maintainers and contributors of:
 | ZHA | Apache-2.0 |
 | Blakadder | MIT |
 | deCONZ | BSD-3-Clause |
-| tinytuya | MIT |
-| tuya-local | MIT |
-| Hubitat drivers | Apache-2.0 |
-| SmartThings drivers | Apache-2.0 |
-| openHAB addons | EPL-2.0 |
-| Domoticz-Zigbee | GPL-3.0 |
-| CSA-IoT | Apache-2.0 |
-| Xiaomi MIoT Spec | Apache-2.0 |
 
 ---
 
