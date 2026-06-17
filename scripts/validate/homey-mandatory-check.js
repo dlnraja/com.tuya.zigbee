@@ -289,10 +289,18 @@ if (fs.existsSync(pkgPath)) {
 }
 // ─── M14 — changelog has current version entry ───────────────────────────────
 if (changelog) {
-  if (!changelog[app.version]) {
+  // Support both old format (version key) and new format (changelog array)
+  let hasEntry = false;
+  if (changelog[app.version]) {
+    hasEntry = true;
+  } else if (changelog.changelog && Array.isArray(changelog.changelog)) {
+    hasEntry = changelog.changelog.some(entry => entry.version === app.version);
+  }
+
+  if (!hasEntry) {
     fail('M14', `No changelog entry for v${app.version} in .homeychangelog.json`);
   } else {
-    ok('M14', `Changelog entry for v${app.version}: "${String(changelog[app.version].en || changelog[app.version]).substring(0, 60)}"`);
+    ok('M14', `Changelog entry for v${app.version} found`);
   }
 }
 
