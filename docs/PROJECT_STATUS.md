@@ -1,28 +1,28 @@
 # Project Status
 
-> Auto-generated on 2026-06-16
+> Auto-generated on 2026-06-18
 
 ## Overview
 
 | Metric | Value |
 |--------|-------|
 | Version | v9.0.40 |
-| Drivers | 420 |
-| Fingerprints | 4,189 |
-| Last Updated | 2026-06-16 |
+| Drivers | 429 |
+| Fingerprints | 4,683 |
+| Last Updated | 2026-06-18 |
 
 ## Drivers by Category
 
 | Category | Count |
 |----------|-------|
-| sensor | 123 |
-| socket | 114 |
+| sensor | 125 |
+| socket | 117 |
+| light | 45 |
 | other | 44 |
-| light | 43 |
 | thermostat | 27 |
-| remote | 18 |
+| remote | 19 |
 | fan | 17 |
-| windowcoverings | 10 |
+| windowcoverings | 11 |
 | lock | 5 |
 | doorbell | 4 |
 | garagedoor | 4 |
