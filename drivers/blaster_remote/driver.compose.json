@@ -88,7 +88,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS1201"
@@ -100,6 +99,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_blaster_remote_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

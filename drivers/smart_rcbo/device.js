@@ -23,6 +23,8 @@ class SmartRCBODevice extends UnifiedPlugBase {
   }
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     await super.onNodeInit({ zclNode });
     this.log('Device deleted, cleaning up');
   }

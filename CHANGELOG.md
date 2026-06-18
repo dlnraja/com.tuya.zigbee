@@ -10,6 +10,163 @@ v9.0.37:
 ---
 
  [9.0.37] - 2026-06-16
+## [9.0.44] - 2026-06-18
+
+### Documentation Update v7.0
+
+#### KNOWLEDGE_CACHE.json v7.0
+- Updated to version 7.0 with 42 modules documented (up from 10)
+- Added R43-R58 enrichment rules (16 new rules for advanced feature modules)
+- Updated project statistics: 429 drivers, 4304 FPs, 4138 flow cards, 156 capabilities
+- Added presence detection, battery health intelligence, and feature module coverage
+- Updated lib file count to 468 and script count to 93
+
+#### CORE_RULES.md v4.0
+- Added R43: Presence Confidence Scoring (multi-factor presence detection with Bayesian scoring)
+- Added R44: Battery Health Intelligence (degradation tracking, capacity fade, RUL estimation)
+- Added R45: Device Group Management (coordinated multi-device actions with synchronized commands)
+- Added R46: Advanced Flow Conditions (multi-device AND/OR/NOT with time constraints)
+- Added R47: Diagnostic Report Export (shareable support reports with topology)
+- Added R48: Network Topology Awareness (Zigbee mesh health triggers)
+- Added R49: Predictive Health Engine (proactive failure prediction)
+- Added R50: Energy History Store (persistent consumption tracking)
+- Added R51: Signal Triangulation for Presence (Zigbee signal strength positioning)
+- Added R52: Room Signal Aggregation (room-level occupancy consolidation)
+- Added R53: Schedule Manager (cron-like scheduling with holiday awareness)
+- Added R54: Transition Engine (smooth capability value transitions)
+- Added R55: Solar Elevation Calculations (sun-position-based automation)
+- Added R56: Tariff Calculator (time-of-use energy cost calculations)
+- Added R57: Configuration Backup/Restore (device settings migration)
+- Added R58: Battery Hybrid Manager (dual-power source devices)
+- Added AP13: Deprecated HybridSwitchBase anti-pattern
+- Added AP14: Missing positionInvert check on curtains anti-pattern
+
+#### New Documentation Files
+- **docs/ARCHITECTURE.md**: Comprehensive architecture overview with 11-layer pipeline, class hierarchy, protocols
+- **docs/MODULES.md**: Complete documentation of 42 modules across 10 categories with usage examples
+- **docs/WORKFLOWS.md**: All 40 GitHub Actions workflows documented with schedules and purposes
+- **docs/SCRIPTS.md**: All 93 scripts documented with categories and usage examples
+
+#### Updated Statistics
+| Metric | Old | New |
+|--------|-----|-----|
+| KNOWLEDGE_CACHE version | 6.1 | 7.0 |
+| CORE_RULES version | 3.0.0 | 4.0.0 |
+| Total rules | 42 | 58 |
+| Modules documented | 10 | 42 |
+| Documentation files | 323 | 447 |
+
+---
+
+## [9.0.40-TITAN-V5] - 2026-06-16
+
+### TITAN V5: Documentation, Credits & CI/CD Enrichment
+
+#### Credits & Acknowledgments
+- **Created CREDITS.md** with full acknowledgments for:
+  - Core framework (Athom BV, Homey SDK3)
+  - Tuya protocol references (JohanBendz, Koenkk/Z2M, zigpy/ZHA, jasonacox/tinytuya, make-all/tuya-local, dresden-elektronik/deCONZ)
+  - Community contributors (AreAArseth, drenso, gpmachado, andiwirz, rebtor, jurgenheine, robertklep, codetheweb, blakadder)
+  - Device databases (zigbee.blakadder.com, Z2M supported devices, CSA IoT)
+
+#### KNOWLEDGE_CACHE.json
+- **Added `credits` section** to `.ai/KNOWLEDGE_CACHE.json` with structured credit entries for all upstream references and community contributors
+
+#### CI/CD Workflow Enrichment (TITAN v5 checks added)
+- **code-quality.yml**: Added TITAN v5 integrity checks:
+  - Bare setTimeout/setInterval detection in drivers/ and lib/
+  - Missing `_destroyed` guard review for async callbacks
+  - Flow card duplicate ID detection (globally unique)
+- **syntax-check.yml**: Added TITAN v5 lifecycle pattern checks:
+  - Bare setTimeout/setInterval in drivers (must use `this.homey.setTimeout`)
+  - Bare setTimeout/setInterval in lib (must use `this.homey.setTimeout` or `this.device.homey.setTimeout`)
+  - assertZCLNode guard verification in TuyaZigbeeDevice
+- **daily-maintenance.yml**: Expanded health check from 8 to 10 checks:
+  - Added bare setTimeout/setInterval detection for drivers/
+  - Added bare setTimeout/setInterval detection for lib/
+  - Updated all workflow headers from "TITAN v2" to "TITAN v5"
+
+### Files Modified/Created
+| File | Action | Description |
+|------|--------|-------------|
+| CREDITS.md | Created | Full credits and acknowledgments |
+| .ai/KNOWLEDGE_CACHE.json | Modified | Added credits section |
+| .github/workflows/code-quality.yml | Modified | TITAN v5 integrity checks |
+| .github/workflows/syntax-check.yml | Modified | TITAN v5 lifecycle checks |
+| .github/workflows/daily-maintenance.yml | Modified | Expanded health check (10 checks) |
+| CHANGELOG.md | Modified | This entry |
+
+---
+
+## [9.0.40] - 2026-06-17
+
+### Phase 1: Fix Global setTimeout/setInterval (CRITICAL)
+- **Fixed 81 bare setTimeout/setInterval calls in 54 device files**
+- **Fixed 76 bare setTimeout/setInterval calls in 51 lib files**
+- **Fixed 89 Promise-based setTimeout patterns in 44 lib files**
+- **Total: 246 fixes across 149 files**
+- All device code now uses `this.homey.setTimeout/setInterval`
+- Exception: Fallback patterns `(this.homey?.setTimeout ?? setTimeout)` are acceptable
+- Exception: Promise-based delays `new Promise(r => this.homey.setTimeout(r, x))` are acceptable
+
+### Phase 2: Add assertClusterSpecification Guards
+- **Added `assertZCLNode` guard to TuyaZigbeeDevice.onNodeInit()**
+- **Added `assertZCLNode` guard to BaseUnifiedDevice.onNodeInit()**
+- Imported from `lib/util/index.js`
+- Throws descriptive errors if zclNode is invalid
+
+### Phase 3: Defer Heavy Initialization
+- **Deferred scanUnknownClusters() in TuyaZigbeeDevice** - now runs 1s after init
+- **Deferred enforceClusterBindings() in TuyaZigbeeDevice** - now runs 1s after init
+- **Deferred queryAllDatapoints() in TuyaZigbeeDevice** - now runs 1s after init
+- **Deferred scanUnknownClusters() in BaseUnifiedDevice** - now runs 1s after init
+- Improves device responsiveness during initialization
+
+### Phase 4: Add registerMultipleCapabilities
+- **Added registerMultipleCapabilities to UnifiedLightBase**
+- Handles onoff + dim + light_temperature + light_hue + light_saturation together
+- Prevents rapid sequential commands when multiple capabilities change together
+- Added comment in UnifiedSwitchBase for future optimization
+
+### Phase 5: Enhance onEndDeviceAnnounce
+- **Added `_reconfigureAttributeReporting()` method to TuyaZigbeeDevice**
+- Re-configures attribute reporting for temperature, humidity, battery, and onoff sensors
+- Ensures sensors continue to report properly after device wake-up
+- Added queryAllDatapoints() call for Tuya DP devices after rejoin
+
+### Phase 6: Update Documentation
+- **Updated CORE_RULES.md** with 5 new rules:
+  - R32: this.homey.setTimeout/setInterval
+  - R33: assertZCLNode Guard
+  - R34: Deferred Heavy Initialization
+  - R35: registerMultipleCapabilities
+  - R36: onEndDeviceAnnounce Re-configuration
+- **Updated CHANGELOG.md** with v9.0.40 changes
+
+### Files Modified
+| Category | Files | Changes |
+|----------|-------|---------|
+| Device files | 54 | setTimeout/setInterval fixes |
+| Lib files | 95 | setTimeout/setInterval fixes |
+| TuyaZigbeeDevice.js | 1 | assertZCLNode + deferred init + onEndDeviceAnnounce |
+| BaseUnifiedDevice.js | 1 | assertZCLNode + deferred init |
+| UnifiedLightBase.js | 1 | registerMultipleCapabilities |
+| UnifiedSwitchBase.js | 1 | Multi-capability comment |
+| CORE_RULES.md | 1 | 5 new rules |
+| CHANGELOG.md | 1 | v9.0.40 entry |
+
+### Validation Commands
+```bash
+# Check for remaining bare setTimeout/setInterval
+grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval"
+
+# Check for remaining bare setTimeout/setInterval in lib
+grep -rn "setTimeout\|setInterval" lib/ --include="*.js" | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval"
+```
+
+---
+
+## [9.0.37] - 2026-06-16
 
 v9.0.36:
 ---

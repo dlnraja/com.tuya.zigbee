@@ -1,0 +1,56 @@
+{
+  "name": {
+    "en": "DIN Rail Energy Meter",
+    "fr": "Compteur Énergie Rail DIN"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "measure_frequency"
+  ],
+  "capabilitiesOptions": {
+    "measure_frequency": {
+      "title": {
+        "en": "Frequency",
+        "fr": "Fréquence"
+      },
+      "units": {
+        "en": "Hz"
+      }
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_energy_meter_din_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/energy_meter_din/assets/images/small.png",
+    "large": "/drivers/energy_meter_din/assets/images/large.png",
+    "xlarge": "/drivers/energy_meter_din/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "energy_meter_din",
+  "version": "1.0.0"
+}

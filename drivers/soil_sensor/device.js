@@ -145,7 +145,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         if (initAttempts < maxInitAttempts) {
           const delay = initAttempts * 1000; // 1s, 2s backoff
           this.log(`[SOIL] Retrying in ${delay}ms...`);
-          await new Promise(r => setTimeout(r, delay));
+          await new Promise(r => this.homey.setTimeout(r, delay));
         } else {
           this.log('[SOIL] All init attempts exhausted - device may have limited functionality');
         }
@@ -168,7 +168,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     // v5.5.564: Schedule a delayed DP query for battery devices that may not
     // report immediately after pairing (fix for _TZE284_oitavov2 binding issues)
-    setTimeout(() => {
+    this.homey.setTimeout(() => {
       if (this._destroyed) {return;}
       this.log('[SOIL] Delayed DP query for battery device stabilization...');
       this.requestAllDPs().catch((e) => {
@@ -182,7 +182,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const threshold = this.getSetting('soil_warning_threshold') || 30;
     if (moisture !== null && this.hasCapability('alarm_water')) {
       const alarm = moisture < threshold;
-      this.setCapabilityValue('alarm_water', alarm).catch(() => { });
+      this.safeSetCapabilityValue('alarm_water', alarm).catch(() => { });
     }
   }
 
@@ -199,7 +199,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     // Conductivity / EC (DP 4, 20, 22, 106, 112)
     if (dp === 4 || dp === 20 || dp === 22 || dp === 106 || dp === 112) {
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
-      this.setCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => { });
+      this.safeSetCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => { });
       this._triggerECFlows(parsedValue);
       return;
     }
@@ -210,7 +210,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       if (dp === 105 && moisture > 100) {moisture = safeMultiply(moisture, 10);}
       
       const targetCap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
-      this.setCapabilityValue(targetCap, parseFloat(moisture)).catch(() => { });
+      this.safeSetCapabilityValue(targetCap, parseFloat(moisture)).catch(() => { });
       this._updateWaterAlarm();
       this._triggerMoistureFlows(moisture);
       return;
@@ -224,7 +224,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         else if (Math.abs(temp) > 100) {temp = safeMultiply(temp, 10);}
       }
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
-      this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+      this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
       this._triggerTemperatureFlows(temp);
       return;
     }

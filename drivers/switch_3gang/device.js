@@ -141,9 +141,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = setTimeout(() => {
-          this._zclState.pending[epNum] = false;
-        }, 2000);
+        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
         
         // v5.11.29: Use writeAttributes instead of setOn/setOff (Z2M #27167, ZHA #2443)
         // TS0726 FW broadcasts ZCL commands to all EPs but routes attr writes per-EP
@@ -192,7 +190,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          this.safeSetCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
           // v9.7.4: FIXED - "magic" mode previously set capability without sending to hardware (fake capability).
@@ -200,7 +198,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const mode = this.sceneMode;
           if (mode === 'magic') {
             const invertedValue = !value;
-            this.setCapabilityValue(capName, invertedValue).catch(() => {});
+            this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {
               if (typeof invertedCluster.writeAttributes === 'function') {
@@ -258,7 +256,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           if (state.onOff !== undefined) {
             const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
             this._zclState.lastState[epNum] = state.onOff;
-            await this.setCapabilityValue(capName, state.onOff).catch(() => {});
+            await this.safeSetCapabilityValue(capName, state.onOff).catch(() => {});
             this.log(`[BSEED-3G] EP${epNum} initial state: ${state.onOff ? 'ON' : 'OFF'}`);
           }
         } catch (err) {

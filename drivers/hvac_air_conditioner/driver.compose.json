@@ -100,9 +100,9 @@
     "small": "/drivers/hvac_air_conditioner/assets/images/small.png",
     "large": "/drivers/hvac_air_conditioner/assets/images/large.png",
     "xlarge": "/drivers/hvac_air_conditioner/assets/images/xlarge.png"
+  
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601_ac",
       "TS0601"
@@ -127,6 +127,8 @@
         "de": "Halten Sie die WLAN-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_hvac_air_conditioner_needs_device_assignment"]
   },
   "metadata": {
     "app": {

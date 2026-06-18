@@ -35,9 +35,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601"
     ],
@@ -55,6 +52,8 @@
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_device_air_purifier_humidifier_needs_device_assignment"]
   },
   "images": {
     "small": "/drivers/humidifier/assets/images/small.png",

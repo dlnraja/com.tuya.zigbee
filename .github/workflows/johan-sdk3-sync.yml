@@ -5,6 +5,11 @@
 
 name: "Johan SDK3 Auto-Sync"
 
+# <!-- badges:start -->
+# [![Johan SDK3 Auto-Sync](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/johan-sdk3-sync.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/johan-sdk3-sync.yml)
+# <!-- badges:end -->
+
+
 on:
   schedule:
     - cron: '0 5 * * 3'
@@ -51,11 +56,11 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v8.1.1
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v8.1.1
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -94,7 +99,7 @@ jobs:
 
       - name: Create Pull Request
         if: (steps.sync.outputs.has_changes == 'true' || steps.scaffold.outputs.has_changes == 'true') && inputs.dry_run != true
-        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "auto: sync Johan SDK3 FPs (${{ steps.sync.outputs.added }} added) [skip ci]"
@@ -149,7 +154,7 @@ jobs:
 
       - name: Upload report
         if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: johan-sdk3-sync-report
           path: |

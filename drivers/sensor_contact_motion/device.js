@@ -2,6 +2,9 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
+
+let UnifiedBatteryHandler = null;
+try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const { containsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -512,7 +515,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_temperature'))
                 {this.addCapability('measure_temperature').catch(() => {});}
-              await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
             }
@@ -540,7 +543,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_humidity'))
                 {this.addCapability('measure_humidity').catch(() => {});}
-              await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
@@ -560,7 +563,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_luminance'))
                 {this.addCapability('measure_luminance').catch(() => {});}
-              await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
@@ -595,7 +598,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // v5.8.7: Permissive - auto-add capability from ZCL data
             if (!this.hasCapability('measure_battery'))
               {this.addCapability('measure_battery').catch(() => {});}
-            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -958,6 +961,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // v5.8.32: Delayed cleanup - remove temp/humidity if no DP data received in 5 min
       // Fixes PIR-only variants (e.g. _TZE200_3towulqd ZG-204ZL) showing bogus values
       this._permissiveCleanupTimeout = this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           if (!this._hasReceivedTempDP && this.hasCapability('measure_temperature')) {
             const val = this.getCapabilityValue('measure_temperature');
@@ -1097,7 +1101,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log(`[ZCL-DATA] motion_sensor.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.safeSetCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.18: Trigger flow card
@@ -1129,7 +1133,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status} → alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.safeSetCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.104: Also read temp/humidity on this event
@@ -1208,8 +1212,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     };
 
     // Initial poll after 3 seconds
-    setTimeout(async () => {
-      this.log('[MOTION-DP] 🔄 Initial DP poll...');
+    this.homey.setTimeout(async () => { if (this._destroyed) return; this.log('[MOTION-DP] 🔄 Initial DP poll...');
       // Request all DPs that might contain temp/humidity/battery
       await requestDP(3);   // Temperature (ZG-204ZV)
       await requestDP(4);   // Humidity or Battery
@@ -1222,12 +1225,12 @@ class MotionSensorDevice extends UnifiedSensorBase {
       if (tuyaCluster.dataQuery) {
         await tuyaCluster.dataQuery().catch(() => {});
         this.log('[MOTION-DP] 📡 Generic DP refresh requested');
-      }
-    }, 3000);
+      } }, 3000);
 
     // Periodic poll every 5 minutes for variant devices
     if (isVariant) {
       this._dpPollingInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         this.log('[MOTION-DP] 🔄 Periodic DP poll...');
         await requestDP(3);  // Temperature
         await requestDP(4);  // Humidity
@@ -1275,7 +1278,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
           }
-          await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Temperature invalid: ${data?.measuredValue}`);
         }
@@ -1307,7 +1310,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           if (!this.hasCapability('measure_humidity')) {
             await this.addCapability('measure_humidity').catch(() => { });
           }
-          await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Humidity invalid: ${data?.measuredValue}`);
         }
@@ -1336,10 +1339,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Auto-sleep after 10 seconds of inactivity
     clearTimeout(this._sleepTimer);
-    this._sleepTimer = setTimeout(() => {
-      this._isDeviceAwake = false;
-      this.log('[SLEEPY] 💤 Device assumed sleeping (timeout)');
-    }, 10000);
+    this._sleepTimer = this.homey.setTimeout(() => { if (this._destroyed) return; this._isDeviceAwake = false;
+      this.log('[SLEEPY] 💤 Device assumed sleeping (timeout)'); }, 10000);
   }
 
   /**
@@ -1366,7 +1367,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       const data = await Promise.race([
         cluster.readAttributes(attributes),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Smart timeout')), timeout))
+        new Promise((_, reject) => this.homey.setTimeout(() => { if (this._destroyed) return; reject(new Error('Smart timeout')); }, timeout))
       ]);
 
       this._pendingZclReads.delete(readId);
@@ -1421,16 +1422,18 @@ class MotionSensorDevice extends UnifiedSensorBase {
         const battery = Math.round(data.batteryPercentageRemaining / 2);
         this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
-        const battery = UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
+        const battery = UnifiedBatteryHandler
+          ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
+          : UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
         this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else {
         this.log('[MOTION-BATTERY] Battery data invalid:', data);
@@ -1516,6 +1519,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * When PIR is unreliable, use lux changes to infer motion
    */
   async _handleLuxForMotionInference(lux) {
+    if (this._destroyed) return;
     if (!this._motionLuxInference) {return;}
 
     // Feed lux to inference engine
@@ -1532,7 +1536,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       // Only update if confidence is high enough
       if (confidence >= 50) {
-        await this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
 
         // Trigger flow if motion detected
         if (inferredMotion && this.driver?.motionTrigger) {
@@ -1592,6 +1596,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     }
 
     this._luxReportTimer = this.homey.setInterval(() => {
+      if (this._destroyed) return;
       this._requestLuxUpdate();
     }, this._luxSmartReporting.luxReportInterval);
 
@@ -1646,6 +1651,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * Process smart lux update with intelligent reporting logic
    */
   async _processSmartLuxUpdate(luxValue) {
+    if (this._destroyed) return;
     const now = Date.now();
     const config = this._luxSmartReporting;
 
@@ -1687,7 +1693,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     if (shouldReport) {
       this.log(`[LUX-SMART] 💡 Smart lux update: ${luxValue} lux (${reason})`);
-      await this.setCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
+      await this.safeSetCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
 
       config.lastLuxValue = luxValue;
       config.lastLuxTime = now;
@@ -1726,6 +1732,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Enhanced cleanup on device destroy
    */
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     // v5.5.930: Clear DP polling interval
     if (this._dpPollingInterval) {
       clearInterval(this._dpPollingInterval);

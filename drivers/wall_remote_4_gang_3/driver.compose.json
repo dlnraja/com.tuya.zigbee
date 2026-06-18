@@ -26,6 +26,7 @@
     "large": "/drivers/wall_remote_4_gang_3/assets/images/large.png",
     "small": "/drivers/wall_remote_4_gang_3/assets/images/small.png",
     "xlarge": "/drivers/wall_remote_4_gang_3/assets/images/xlarge.png"
+  
   },
   "energy": {
     "batteries": [
@@ -33,7 +34,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0043",
       "TS0601",
@@ -68,6 +68,8 @@
         "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_wall_remote_4_gang_3_needs_device_assignment"]
   },
   "settings": [
     {

@@ -62,6 +62,7 @@ async processResponse(data) {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('1 Gang Wall GPP Switch removed');
   }
 

@@ -24,12 +24,12 @@ Hybrid: Tuya DP cluster (0xEF00) + Standard ZCL clusters
 ### Imports
 ```javascript
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 ```
 
 ### Mixins
 ```javascript
-class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ```
 
 ### Physical Detection (PR #120)
@@ -44,7 +44,7 @@ this._appCommandPending = false;
 `_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`
 
 ## KEY FILES
-- lib/devices/HybridSwitchBase.js
+- lib/devices/UnifiedSwitchBase.js
 - lib/mixins/PhysicalButtonMixin.js
 - drivers/{type}/driver.flow.compose.json
 

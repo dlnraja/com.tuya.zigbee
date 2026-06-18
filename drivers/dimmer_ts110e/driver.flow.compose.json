@@ -1,0 +1,92 @@
+{
+  "triggers": [
+    {
+      "id": "dimmer_ts110e_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmer_ts110e_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmer_ts110e_dim_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosite changee"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "dim",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosite"
+          },
+          "example": 0.75
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "dimmer_ts110e_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "dimmer_ts110e_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmer_ts110e_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmer_ts110e_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmer_ts110e_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Regler luminosite"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%"
+        }
+      ]
+    }
+  ]
+}

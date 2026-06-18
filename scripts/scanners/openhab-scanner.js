@@ -38,16 +38,21 @@ const SEARCH_QUERIES = [
   '_TZE200 zigbee thing type language:XML',
 ];
 
+// ── GitHub API authentication ────────────────────────────────────────────
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_HEADERS = {
+  'User-Agent': 'HomeyTuyaScanner/1.0',
+  'Accept': 'application/vnd.github.v3+json',
+  ...(GH_TOKEN ? { Authorization: `token ${GH_TOKEN}` } : {}),
+};
+
 // ── HTTP helpers ─────────────────────────────────────────────────────────
 function githubGet(urlPath) {
   return new Promise((resolve, reject) => {
     const opts = {
       hostname: 'api.github.com',
       path: urlPath,
-      headers: {
-        'User-Agent': 'HomeyTuyaScanner/1.0',
-        'Accept': 'application/vnd.github.v3+json',
-      },
+      headers: GH_HEADERS,
       timeout: 30000,
     };
     https.get(opts, (res) => {

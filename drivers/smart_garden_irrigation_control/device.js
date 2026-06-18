@@ -23,6 +23,7 @@ class IrrigationController extends ZigBeeDevice {
       if (value && options.duration != undefined ){
         await zclNode.endpoints[1].clusters['onOff'].setOn();
         this._onOffTimeout = this.homey.setTimeout(async () => {
+          if (this._destroyed) return;
           await zclNode.endpoints[1].clusters['onOff'].setOff();
         }, options.duration);
       } else if(value && options.duration === undefined){
@@ -49,11 +50,11 @@ class IrrigationController extends ZigBeeDevice {
         const batteryThreshold = this.getSetting('batteryThreshold') || 20;
         this.log('Battery percentage received:', batteryPercentage);
 
-        this.setCapabilityValue('measure_battery', batteryPercentage).catch((err) => {
+        this.safeSetCapabilityValue('measure_battery', batteryPercentage).catch((err) => {
           this.error('Failed to update battery level', err);
         });
 
-        this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+        this.safeSetCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
 
       }
     });
@@ -61,6 +62,8 @@ class IrrigationController extends ZigBeeDevice {
   }
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Smart irrigation controller removed');
   }
 

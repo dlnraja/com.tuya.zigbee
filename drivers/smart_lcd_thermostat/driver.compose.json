@@ -10,7 +10,8 @@
     "target_temperature",
     "measure_temperature",
     "measure_humidity",
-    "thermostat_mode"
+    "thermostat_mode",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

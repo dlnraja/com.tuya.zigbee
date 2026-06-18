@@ -14,7 +14,7 @@ const LightBase = require('../../lib/devices/UnifiedLightBase');
  * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+class RGBWBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
 
   get mainsPowered() { return true; }
 
@@ -30,8 +30,8 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
       4: { capability: 'light_temperature', transform: (v) => 1 - (v / 1000) },
       5: { capability: null, internal: 'hsv', transform: (v) => this._parseHSV(v) },
       6: { capability: null, internal: 'scene_data' },
-      7: { capability: null, internal: 'countdown', writable: true },
-      21: { capability: null, internal: 'power_on_behavior', writable: true },
+      7: { capability: 'countdown_remaining' },
+      21: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       24: { capability: null, internal: 'hsv_alt', transform: (v) => this._parseHSV(v) },
       25: { capability: 'dim', transform: (v) => Math.max(0.01, v / 1000) },
       26: { capability: 'light_temperature', transform: (v) => 1 - (v / 1000) }
@@ -134,6 +134,7 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

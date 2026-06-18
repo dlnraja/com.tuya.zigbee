@@ -4,19 +4,24 @@
       "id": "wifi_dehumidifier_water_full",
       "title": {
         "en": "Water tank is full"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_dehumidifier_turned_on",
       "title": {
         "en": "Dehumidifier turned on"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_dehumidifier_turned_off",
       "title": {
         "en": "Dehumidifier turned off"
-      }
+      },
+      "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

@@ -2,6 +2,7 @@
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
  * Rain Sensor Device
@@ -38,22 +39,22 @@ class RainSensorDevice extends UnifiedSensorBase {
     // _TZ3210_tgvtvdoc / _TZ3210_p68kms0l
     // Per Z2M: DP4=battery, DP101=solar mV, DP102=avg20min mV,
     //   DP103=maxToday mV, DP104=cleaning reminder, DP105=rain intensity mV
-    // Rain detection itself uses IAS Zone (cluster 0x0500, zoneType "rain")
+    // Rain detection: IAS Zone (cluster 0x0500, zoneType "rain") + DP105 fallback
+    // v9.0.40 FIX (#417): Map solar voltage to measure_luminance (declared capability),
+    //   use measure_humidity for rain intensity, keep alarm_water from DP105 + IAS Zone
     if (includesCI(mfr, 'tgvtvdoc') || includesCI(mfr, 'p68kms0l')) {
       return {
         4:  { capability: 'measure_battery', divisor: 1 },                    // Battery %
-        101: { capability: 'measure_voltage', divisor: 1 },                   // Solar voltage (mV)
-        102: { capability: 'measure_voltage.20min', divisor: 1 },             // Solar voltage avg 20min (mV)
-        103: { capability: 'measure_voltage.peak', divisor: 1 },              // Solar voltage max today (mV)
-        104: { capability: 'alarm_cleaning', transform: (v) => v === true || v === 1 }, // Cleaning reminder
-        105: { capability: 'alarm_water', transform: (v) => typeof v === 'number' ? v > 0 : (v !== 0 && v !== false) } // Rain intensity triggers rain alarm
+        101: { capability: 'measure_luminance', divisor: 1 },                 // Solar voltage (mV) -> illuminance
+        102: { capability: 'measure_humidity', divisor: 1 },                  // Avg 20min solar mV -> humidity (secondary metric)
+        105: { capability: 'alarm_water', transform: (v) => typeof v === 'number' ? v > 50 : !!v } // Rain intensity > 50mV = raining
       };
     }
 
     // ── TS0601 generic fallback ──
     return {
       // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
-      1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain alarm boolean
+      1: { capability: 'alarm_water', transform: boolean() }, // Rain alarm boolean
       2: { capability: 'measure_humidity', divisor: 1 }, // Rain level 0-100% (mapped as humidity)
       4: { capability: 'measure_battery', divisor: 1 },  // Battery %
       // TS0207 and some TS0601 variants
@@ -99,9 +100,12 @@ class RainSensorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * v5.5.889/v9.7.5: IAS Zone setup for TS0207 devices
+   * v5.5.889/v9.7.5/v9.7.6: IAS Zone setup for TS0207 devices
    * These devices use IAS Zone cluster (0x0500) for rain detection
    * Z2M reference: extend: [m.iasZoneAlarm({zoneType: "rain", zoneAttributes: ["alarm_1"]})]
+   *
+   * v9.7.6: Added onReport listener for zoneStatus attribute reports
+   *         which is the primary mechanism for TS0207 rain detection
    */
   async _setupIASZone(zclNode) {
     try {
@@ -120,6 +124,19 @@ class RainSensorDevice extends UnifiedSensorBase {
           this.log('[RAIN-IAS] IAS Zone cluster bound successfully');
         } catch (bindErr) {
           this.log('[RAIN-IAS] IAS Zone bind attempt:', bindErr.message);
+        }
+      }
+
+      // v9.7.6: Also try binding via numeric cluster ID (0x0500 = 1280)
+      if (!iasCluster && typeof endpoint.bind === 'function') {
+        try {
+          await endpoint.bind(1280);
+          iasCluster = endpoint.clusters?.iasZone || endpoint.clusters?.ssIasZone;
+          if (iasCluster) {
+            this.log('[RAIN-IAS] IAS Zone cluster bound via numeric ID');
+          }
+        } catch (bindErr) {
+          this.log('[RAIN-IAS] IAS Zone bind via numeric ID attempt:', bindErr.message);
         }
       }
 
@@ -180,6 +197,21 @@ class RainSensorDevice extends UnifiedSensorBase {
       });
 
       this.log('[RAIN-IAS] IAS Zone listeners configured');
+
+      // v9.7.6: Also try to configure attribute reporting for zoneStatus
+      // This ensures the device sends zone status updates periodically
+      try {
+        await this.configureAttributeReporting([{
+          cluster: 'iasZone',
+          attributeName: 'zoneStatus',
+          minInterval: 1,
+          maxInterval: 300,
+          minChange: 1,
+        }]);
+        this.log('[RAIN-IAS] Zone status attribute reporting configured');
+      } catch (reportErr) {
+        this.log('[RAIN-IAS] Zone status reporting config (may not be supported):', reportErr.message);
+      }
     } catch (err) {
       this.log('[RAIN-IAS] Setup error:', err.message);
     }
@@ -187,6 +219,8 @@ class RainSensorDevice extends UnifiedSensorBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

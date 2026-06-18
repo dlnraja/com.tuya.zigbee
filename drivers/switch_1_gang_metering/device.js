@@ -118,6 +118,7 @@ class switch_1_gang_metering extends UnifiedSwitchBase {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log("1 Gang Switch with metering removed");
   }
 

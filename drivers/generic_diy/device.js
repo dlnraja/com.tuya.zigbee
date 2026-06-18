@@ -319,6 +319,8 @@ class GenericDIYDevice extends ZigBeeDevice {
   }
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

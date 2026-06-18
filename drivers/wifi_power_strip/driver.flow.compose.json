@@ -4,13 +4,15 @@
       "id": "wifi_power_strip_socket1_on",
       "title": {
         "en": "Socket 1 turned on"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_power_strip_socket1_off",
       "title": {
         "en": "Socket 1 turned off"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -88,5 +90,6 @@
         }
       ]
     }
-  ]
+  ],
+  "conditions": []
 }

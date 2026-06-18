@@ -13,7 +13,9 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "onoff"
+    "onoff",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "energy": {
     "approximation": {
@@ -21,6 +23,18 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TZE200_dqolcpcm",
+      "_TZE200_7htkb1dy",
+      "_TZE200_9cgnbjrq",
+      "_TZE200_mrffaeds",
+      "_TZE200_h1pqutdd",
+      "_TZE200_kgax5nux",
+      "_TZE200_n9ctkb4j",
+      "_TZE200_lxnn3emz",
+      "_TZE200_n9hhdpmu",
+      "_TZE200_gz3kfwkn"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -43,8 +57,7 @@
     },
     "productId": [
       "TS0505B"
-    ],
-    "manufacturerName": []
+    ]
   },
   "settings": [
     {

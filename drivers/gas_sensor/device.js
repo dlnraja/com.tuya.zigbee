@@ -1,6 +1,7 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
  * 
@@ -26,16 +27,16 @@ class GasSensorDevice extends UnifiedSensorBase {
       // 
       // GAS ALARM & MEASUREMENT
       // 
-      1: { capability: 'alarm_gas', transform: (v) => v === 1 || v === true || v === 'alarm' },
+      1: { capability: 'alarm_gas', transform: boolean() },
       2: { capability: 'measure_gas', divisor: 1 }, // Gas value (LEL)
-      3: { capability: 'alarm_co', transform: (v) => v === 1 || v === true },
+      3: { capability: 'alarm_co', transform: boolean() },
 
       // 
       // BATTERY & STATUS
       // 
       4: { capability: 'measure_battery', divisor: 1 },
-      9: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === 'fault' },
-      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
+      9: { capability: 'alarm_tamper', transform: boolean() },
+      14: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolÃ¨te
 
       // 
       // v5.5.130: CONTROL FEATURES from Zigbee2MQTT
@@ -43,7 +44,7 @@ class GasSensorDevice extends UnifiedSensorBase {
       // Preheat indicator (device warming up)
       10: { internal: true, type: 'preheat' },
       // Fault alarm status
-      11: { capability: 'alarm_generic', transform: (v) => v !== 0 && v !== 'normal' },
+      11: { capability: 'alarm_generic', transform: boolean() },
       // Silence the alarm (writable)
       13: { setting: 'silence', writable: true },
       // Sensitivity setting
@@ -102,6 +103,8 @@ class GasSensorDevice extends UnifiedSensorBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

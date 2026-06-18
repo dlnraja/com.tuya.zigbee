@@ -136,7 +136,7 @@ const SOURCES = {
     name: 'deCONZ / Phoscon',
     fn: 'fetchDeconz',
     urls: {
-      devices: 'https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/devices.json',
+      devices: 'https://api.github.com/repos/dresden-elektronik/deconz-rest-plugin/contents/devices/tuya',
     },
   },
   hubitat: {

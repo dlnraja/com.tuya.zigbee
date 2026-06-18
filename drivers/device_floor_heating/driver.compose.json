@@ -14,7 +14,8 @@
     "thermostat_mode",
     "onoff",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -63,9 +64,7 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_device_floor_heating_needs_device_assignment"]
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",

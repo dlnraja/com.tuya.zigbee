@@ -107,7 +107,7 @@ const SOURCES = {
   },
   'deconz-devices': {
     name: 'deCONZ devices.json',
-    url: 'https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/devices.json',
+    url: 'https://api.github.com/repos/dresden-elektronik/deconz-rest-plugin/contents/devices/tuya',
     ttl: 24 * 60 * 60 * 1000,
     category: 'deconz',
     parser: 'json',

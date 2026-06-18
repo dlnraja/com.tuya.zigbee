@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "Ultrasonic Water Meter",
+    "fr": "Compteur d'Eau Ultrasonique"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_water",
+    "meter_water",
+    "alarm_battery",
+    "alarm_fault"
+  ],
+  "capabilitiesOptions": {
+    "measure_water": {
+      "title": {
+        "en": "Current Flow",
+        "fr": "Débit Actuel"
+      }
+    },
+    "meter_water": {
+      "title": {
+        "en": "Total Flow",
+        "fr": "Débit Total"
+      }
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_ultrasonic_water_meter_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/ultrasonic_water_meter/assets/images/small.png",
+    "large": "/drivers/ultrasonic_water_meter/assets/images/large.png",
+    "xlarge": "/drivers/ultrasonic_water_meter/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "id": "ultrasonic_water_meter",
+  "version": "1.0.0"
+}

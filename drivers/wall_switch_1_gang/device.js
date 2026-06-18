@@ -33,6 +33,7 @@ class wall_switch_1_gang extends UnifiedSwitchBase {
   }
 
   onDeleted(){
+    super.onDeleted();
 		this.log("1 Gang Wall Switch removed")
 	}
 

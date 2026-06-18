@@ -722,7 +722,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS011F"
@@ -734,5 +733,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_plug_smart_switch_needs_device_assignment"]
   }
 }

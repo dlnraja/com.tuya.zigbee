@@ -8,12 +8,13 @@ const DEFAULT_TIMEOUT = 30000;
 const MAX_RETRIES = 3;
 
 function fetch(url, options = {}) {
-  const { timeout = DEFAULT_TIMEOUT, retries = MAX_RETRIES } = options;
+  const { timeout = DEFAULT_TIMEOUT, retries = MAX_RETRIES, headers: customHeaders } = options;
+  const headers = { 'User-Agent': 'TuyaUnifiedSync/1.0', ...customHeaders };
 
   return new Promise((resolve, reject) => {
     const attempt = (n) => {
       const req = https.get(url, {
-        headers: { 'User-Agent': 'TuyaUnifiedSync/1.0' },
+        headers,
         timeout,
       }, (res) => {
         if (res.statusCode === 301 || res.statusCode === 302) {

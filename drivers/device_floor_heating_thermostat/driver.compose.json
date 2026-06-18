@@ -14,7 +14,8 @@
     "thermostat_mode",
     "onoff",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -83,9 +84,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601"
     ],
@@ -96,5 +94,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_device_floor_heating_thermostat_needs_device_assignment"]
   }
 }

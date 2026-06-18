@@ -13,7 +13,9 @@
     "onoff.socket3",
     "onoff.socket4",
     "measure_power",
-    "meter_power"
+    "meter_power",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "capabilitiesOptions": {
     "onoff": {

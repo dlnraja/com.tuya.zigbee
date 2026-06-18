@@ -107,16 +107,10 @@ function collectAllDrivers() {
         const caps = Array.isArray(compose.capabilities) ? compose.capabilities : [];
         info.capabilities = caps;
 
-        // Extract fingerprints from all capability entries
-        for (const cap of caps) {
-          if (typeof cap === 'object' && cap !== null && cap.fingerprints) {
-            info.fingerprintCount += cap.fingerprints.length;
-          }
-        }
-
-        // Also check top-level fingerprints section
-        if (compose.fingerprints && Array.isArray(compose.fingerprints)) {
-          info.fingerprintCount += compose.fingerprints.length;
+        // Extract fingerprints from zigbee.manufacturerName (the standard location)
+        if (compose.zigbee && Array.isArray(compose.zigbee.manufacturerName)) {
+          info.fingerprintCount = compose.zigbee.manufacturerName.length;
+          info.manufacturerNames = compose.zigbee.manufacturerName.slice(0, 5);
         }
       }
     }

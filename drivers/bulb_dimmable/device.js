@@ -24,8 +24,8 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: 'dim', transform: (v) => Math.max(0.01, v / 1000) },
       3: { capability: null, internal: 'min_brightness', writable: true },
-      4: { capability: null, internal: 'countdown', writable: true },
-      21: { capability: null, internal: 'power_on_behavior', writable: true },
+      4: { capability: 'countdown_remaining' },
+      21: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       101: { capability: 'dim', divisor: 100 }
     };
   }

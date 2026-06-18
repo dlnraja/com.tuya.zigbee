@@ -2,6 +2,11 @@
 # Monthly URL audit and intelligence enrichment
 name: 🌙 Monthly Tuya Intelligence & URL Audit
 
+# <!-- badges:start -->
+# [![🌙 Monthly Tuya Intelligence & URL Audit](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/monthly-tuya-intelligence.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/monthly-tuya-intelligence.yml)
+# <!-- badges:end -->
+
+
 on:
   schedule:
     - cron: '0 0 1 * *' # Once a month on the 1st
@@ -9,6 +14,11 @@ on:
 
 permissions:
   contents: read
+
+
+concurrency:
+  group: monthly-tuya-intelligence-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -20,10 +30,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: 🛰️ Checkout Repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v6.0.3
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v6.4.0
         with:
           node-version: '22'
           cache: 'npm'
@@ -32,9 +42,11 @@ jobs:
         run: npm install axios cheerio
 
       - name: "🔴 Step 1: Challenge All URLs"
+        continue-on-error: true
         run: node .github/scripts/challenge-all-urls.js
 
       - name: "🟠 Step 2: Run Intelligent Enrichment Engine"
+        continue-on-error: true
         run: node .github/scripts/ai-enrichment-engine.js
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -42,9 +54,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: "🟡 Step 3: Run Ultimate Validation"
+        continue-on-error: true
         run: node scripts/ULTIMATE_CHECK.js
 
       - name: "📝 Step 4: Generate Monthly Intelligence Summary"
+        continue-on-error: true
         run: |
           echo "# 🌙 Monthly Intelligence Summary - $(date +'%Y-%m')" > reports/MONTHLY_SUMMARY.md
           echo "## 📊 Stats" >> reports/MONTHLY_SUMMARY.md
@@ -53,6 +67,7 @@ jobs:
           jq -r '.data[] | "* [" + .title + "](" + .url + ") - " + .description' data/enriched_intelligence.json >> reports/MONTHLY_SUMMARY.md
 
       - name: "🟢 Step 5: Commit and Push Changes"
+        continue-on-error: true
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

@@ -34,6 +34,7 @@ class relay_board_2_channel extends ZigBeeDevice {
     }
 
     onDeleted(){
+      super.onDeleted();
 		this.log("2 Channel Relay Board, channel ", subDeviceId, " removed")
 	}
 

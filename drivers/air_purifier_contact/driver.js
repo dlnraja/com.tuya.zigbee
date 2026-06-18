@@ -22,28 +22,32 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["air_purifier_contact_contact_sensor_opened","air_purifier_contact_contact_sensor_closed","air_purifier_contact_contact_sensor_tamper_true","air_purifier_contact_contact_sensor_battery_changed","air_purifier_contact_contact_sensor_battery_low","air_purifier_contact_contact_sensor_left_open","air_purifier_contact_contact_sensor_contact_alarm","air_purifier_contact_contact_sensor_tamper_alarm"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_hybrid_contact_sensor_is_open');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_is_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_contact_hybrid_contact_sensor_is_open: ${err.message}`); }
+    } catch (err) { this.error(`Condition air_purifier_contact_contact_sensor_is_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_hybrid_contact_sensor_battery_above');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,27 +55,27 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
           return battery > (args.threshold || 20);
       });
       }
-    } catch (err) { this.error(`Condition air_purifier_contact_hybrid_contact_sensor_battery_above: ${err.message}`); }
+    } catch (err) { this.error(`Condition air_purifier_contact_contact_sensor_battery_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_hybrid_contact_sensor_contact_open');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_contact_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_contact_hybrid_contact_sensor_contact_open: ${err.message}`); }
+    } catch (err) { this.error(`Condition air_purifier_contact_contact_sensor_contact_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_contact_hybrid_contact_sensor_tamper_active');
+      const card = this.homey.flow.getConditionCard('air_purifier_contact_contact_sensor_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_contact_hybrid_contact_sensor_tamper_active: ${err.message}`); }
+    } catch (err) { this.error(`Condition air_purifier_contact_contact_sensor_tamper_active: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

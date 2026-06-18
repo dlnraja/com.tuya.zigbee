@@ -356,7 +356,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -367,6 +366,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_air_purifier_dimmer_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

@@ -12,7 +12,9 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "onoff"
+    "onoff",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "energy": {
     "approximation": {
@@ -25,7 +27,6 @@
       "_TZ3000_9EVM3OTQ",
       "_TZ3000_AS7EQIRI",
       "_TZ3000_FBJA4Q6H",
-      "_TZ3000_H1IPGKWN",
       "_TZ3000_HCM1FQXE",
       "_TZ3000_KEABPIGB",
       "_TZ3000_KIHKX3CQ",

@@ -1,0 +1,559 @@
+{
+  "version": "7.0",
+  "lastUpdated": "2026-06-18T00:00:00Z",
+  "lastAudit": "2026-06-18T00:00:00Z",
+  "auditEngine": "documentation-updater-v7.0",
+  "project": {
+    "name": "com.dlnraja.tuya.zigbee",
+    "version": "9.0.40",
+    "drivers": 429,
+    "zigbeeDrivers": 378,
+    "wifiDrivers": 51,
+    "fingerprints": 4304,
+    "flowCards": 4138,
+    "capabilities": 156,
+    "timeSyncFormats": 23,
+    "pipelineLayers": 11,
+    "scripts": 93,
+    "workflows": 40,
+    "docs": 443,
+    "libFiles": 468
+  },
+  "sdk3Rules": {
+    "lifecycle": {
+      "onInit": "Primary setup point. Register capability listeners here.",
+      "onAdded": "Synchronous only - no async operations.",
+      "onDeleted": "MUST call super.onDeleted() for WiFi. Set _destroyed = true before cleanup.",
+      "onUninit": "Async cleanup. Clear timers, intervals, connections. Call super.onUninit().",
+      "onSettings": "Only triggered by user-initiated changes, NOT setSettings()."
+    },
+    "capabilities": {
+      "setCapabilityValue": "BANNED in async callbacks after device init. Triggers registered listeners.",
+      "safeSetCapabilityValue": "REQUIRED everywhere. Checks _destroyed flag before calling SDK.",
+      "addCapability": "Expensive - use only in onInit().",
+      "removeCapability": "Breaks flows depending on it."
+    },
+    "flowCards": {
+      "registerInDriver": "Register flow cards in Driver.onInit(), not Device.onInit().",
+      "getDeviceTriggerCard": "Use this, not getTriggerCard() for device-specific triggers.",
+      "noTitleFormatted": "Never use titleFormatted with [[device]] - causes manual device selection bug.",
+      "globalUniqueness": "Flow card IDs must be globally unique across ALL drivers."
+    },
+    "antiPatterns": [
+      "console.log in drivers - use this.log()/this.error()",
+      "Raw setCapabilityValue after destroy - use safeSetCapabilityValue",
+      "Overwriting constructor - use onInit()",
+      "Blocking main thread in onInit - use async/await",
+      "Linear battery formulas - use UnifiedBatteryHandler",
+      "UTF-16 JSON loading - use Buffer-based loading (JSON.parse(fs.readFileSync(fpath)))",
+      "Missing super.onDeleted() in WiFi drivers - leaks TCP connections",
+      "Missing _destroyed guard in async callbacks",
+      "Wildcards in manufacturerName arrays (_TZE200_* FORBIDDEN)",
+      "Empty manufacturerName arrays [] - causes AggregateError",
+      "Using deprecated HybridSwitchBase - use UnifiedSwitchBase instead",
+      "Missing positionInvert check on curtain/cover devices"
+    ]
+  },
+  "localFirstRules": {
+    "wifi": {
+      "superOnDeleted": "MANDATORY in base class - leaks TCP connections without it",
+      "capabilityMapCache": "Cache in onInit(), don't recompute per _onData()",
+      "commandTimeout": "10s timeout per command to prevent queue stall",
+      "heartbeat": "15s interval, 3 missed = reconnect",
+      "protocolAutoDetect": "Try 3.3, 3.4, 3.5, 3.2, 3.1 on auth error",
+      "ipSelfHealing": "Dynamic IP resolution via UDP cache",
+      "circuitBreaker": "Required on TuyaCloudAPI - 5 failures = open, 30s reset",
+      "connectionStateTracker": "Track connection state with history, uptime stats, state persistence"
+    },
+    "zigbee": {
+      "destroyedGuard": "Check _destroyed in all async callbacks",
+      "markAppCommand": "Call before physical commands to prevent ghost presses",
+      "mixinOrder": "PhysicalButtonMixin(VirtualButtonMixin(BaseClass))",
+      "safeClusters": "17 clusters for auto-discovery",
+      "multiDP": "Use TuyaDPParser.parseMultiple() - never assume 1 frame = 1 DP",
+      "smartDivisor": "Check SmartDivisorManager for auto-detection - never assume 1:1",
+      "retryWithBackoff": "Use RetryWithBackoff.forDevice() for DP queries and ZCL reads"
+    }
+  },
+  "rules": {
+    "sdk3": [
+      {"id": "R1", "title": "safeSetCapabilityValue", "severity": "critical", "description": "Always use safeSetCapabilityValue() in async callbacks. Checks _destroyed flag."},
+      {"id": "R2", "title": "super.onDeleted() WiFi", "severity": "critical", "description": "WiFi devices MUST call await super.onDeleted() to prevent TCP leaks."},
+      {"id": "R3", "title": "Mixin Order", "severity": "critical", "description": "PhysicalButtonMixin(VirtualButtonMixin(BaseClass)) - never reverse."},
+      {"id": "R4", "title": "Buffer-Based JSON", "severity": "high", "description": "Use JSON.parse(fs.readFileSync(fpath)) without 'utf8' to avoid 2x memory."},
+      {"id": "R5", "title": "_destroyed Guard", "severity": "high", "description": "Check this._destroyed at the start of all async callbacks."},
+      {"id": "R6", "title": "No console.log in Drivers", "severity": "medium", "description": "Use this.log()/this.error()/this.warn() - never console.log/error."},
+      {"id": "R7", "title": "UnifiedBatteryHandler", "severity": "high", "description": "Never use linear battery formulas. Always use UnifiedBatteryHandler.calculateFromVoltage()."},
+      {"id": "R8", "title": "markAppCommand Before Physical", "severity": "high", "description": "Always call markAppCommand() before sending physical commands to prevent ghost presses."},
+      {"id": "R9", "title": "No titleFormatted [[device]]", "severity": "medium", "description": "Never use titleFormatted with [[device]] in flow cards - causes manual device selection bug."},
+      {"id": "R10", "title": "Backlight String Values", "severity": "medium", "description": "Backlight values must be strings: 'off', 'normal', 'inverted'. Never numeric."},
+      {"id": "R11", "title": "Settings Key Naming", "severity": "medium", "description": "Use zb_model_id and zb_manufacturer_name (snake_case with zb_ prefix)."},
+      {"id": "R12", "title": "Wildcard Fingerprints Forbidden", "severity": "critical", "description": "Never use wildcard patterns like '_TZE200_*' in manufacturerName arrays."},
+      {"id": "R13", "title": "Import Paths from lib/tuya/", "severity": "medium", "description": "Use correct import paths: require('../../lib/tuya/TuyaZigbeeDevice') not require('../../lib/TuyaZigbeeDevice')."},
+      {"id": "R14", "title": "Fingerprint Matching Combined", "severity": "medium", "description": "manufacturerName + productId COMBINED must match. Same mfr in multiple drivers is NORMAL if productId differs."},
+      {"id": "R15", "title": "Flow Card ID Uniqueness", "severity": "medium", "description": "Pattern: {driver}_physical_gang{N}_{on|off}. Must be globally unique across ALL drivers."},
+      {"id": "R16", "title": "Multi-DP Frame Parsing", "severity": "medium", "description": "Use TuyaDPParser.parseMultiple() - never assume one frame = one DP."},
+      {"id": "R17", "title": "Curtain Position Invert", "severity": "medium", "description": "Some curtains report 0=open, 100=closed. Use positionInvert: true in cover profile."},
+      {"id": "R18", "title": "Smart Divisor Calibration", "severity": "medium", "description": "Never assume 1:1 scaling. Check SmartDivisorManager for auto-detection."},
+      {"id": "R19", "title": "Centralised Converters", "severity": "medium", "description": "Use ValueConverterRegistry: numeric(), enumMap(), boolean(), positionInvert() for DP transforms."},
+      {"id": "R20", "title": "TuyaQuirk for Device Fixes", "severity": "medium", "description": "Use QuirkRegistry.applyAll(this) for device-specific overrides."},
+      {"id": "R21", "title": "ErrorClassifier for Error Handling", "severity": "medium", "description": "Use readAttrCatch() and classify() for structured error handling with retry logic."},
+      {"id": "R22", "title": "CapabilityMigrator for Updates", "severity": "medium", "description": "Use migrateCapabilities() for driver update capability migrations."},
+      {"id": "R23", "title": "Circuit Breaker for APIs", "severity": "high", "description": "CircuitBreaker with 5-failure threshold, 30s reset for external API calls."},
+      {"id": "R24", "title": "CapabilityMapCache", "severity": "medium", "description": "Cache capabilityMap in onInit() via CapabilityMapCache.warmup(). Invalidate on capability change."},
+      {"id": "R25", "title": "WiFi Smart Divisor Protocol", "severity": "medium", "description": "WiFi devices MUST pass protocol: 'wifi' for correct divisor lookup."},
+      {"id": "R26", "title": "_destroyed Guard in All Async Callbacks", "severity": "high", "description": "Check this._destroyed at the start of all async callbacks and event handlers."},
+      {"id": "R27", "title": "Offline Command Queuing", "severity": "medium", "description": "WiFi devices automatically queue commands when offline. Commands >5min dropped on reconnect."},
+      {"id": "R28", "title": "DPCache for Offline Fallback", "severity": "medium", "description": "Per-device DP value cache with 5min TTL and LRU eviction."},
+      {"id": "R29", "title": "ErrorClassifier Retry Logic", "severity": "medium", "description": "Use withRetry() for automatic retry with exponential backoff."},
+      {"id": "R30", "title": "Batch Capability Updates", "severity": "medium", "description": "Use BatchCapabilityUpdater with 50ms window to batch multiple capability updates."},
+      {"id": "R31", "title": "Safe Logger for Utilities", "severity": "medium", "description": "Use createSafeLogger() in lib/ utilities instead of console.log fallbacks."},
+      {"id": "R32", "title": "this.homey.setTimeout/setInterval", "severity": "high", "description": "Use Homey SDK timers, not global setTimeout/setInterval in device code."},
+      {"id": "R33", "title": "assertZCLNode Guard", "severity": "high", "description": "Call assertZCLNode(zclNode) in onNodeInit for Zigbee devices."},
+      {"id": "R34", "title": "Deferred Heavy Initialization", "severity": "medium", "description": "Defer non-critical init to avoid blocking device startup."},
+      {"id": "R35", "title": "registerMultipleCapabilities", "severity": "medium", "description": "Use registerMultipleCapabilities for lights and multi-capability devices."},
+      {"id": "R36", "title": "onEndDeviceAnnounce Re-configuration", "severity": "medium", "description": "Re-configure attribute reporting when battery devices wake up."},
+      {"id": "R37", "title": "ConnectionStateTracker for WiFi", "severity": "high", "description": "Track connection state for WiFi devices with history and uptime stats."},
+      {"id": "R38", "title": "RetryWithBackoff for Critical Ops", "severity": "high", "description": "Use RetryWithBackoff.forDevice() for DP queries and ZCL reads."},
+      {"id": "R39", "title": "ConnectionState Persistence", "severity": "medium", "description": "Persist connection stats via toJSON()/fromJSON() for diagnostics."},
+      {"id": "R40", "title": "Connection Uptime Monitoring", "severity": "medium", "description": "Monitor uptime percentage and excessive reconnects."},
+      {"id": "R41", "title": "ErrorClassifier Integration", "severity": "high", "description": "Use readAttrCatch() to wrap cluster attribute listeners and classify() for retry decisions."},
+      {"id": "R42", "title": "CrashPrevention Utilities", "severity": "critical", "description": "Use CrashPrevention for all async operations: safeAsync, safePromise, guardDestroyed, safeTimeout, safeInterval, safeCleanup, safeSetCapability, safeTriggerFlow, safeSendCommand, withRetry."},
+      {"id": "R43", "title": "Presence Confidence Scoring", "severity": "medium", "description": "Use PresenceConfidenceScorer for multi-factor presence detection. Bayesian scoring with temporal decay."},
+      {"id": "R44", "title": "Battery Health Intelligence", "severity": "medium", "description": "Use BatteryHealthIntelligence for long-term degradation tracking and predictive replacement alerts."},
+      {"id": "R45", "title": "Device Group Management", "severity": "medium", "description": "Use DeviceGroupManager for coordinated multi-device actions with synchronized command execution."},
+      {"id": "R46", "title": "Advanced Flow Conditions", "severity": "medium", "description": "Use AdvancedMultiConditionFlows for multi-device AND/OR/NOT conditions with time-based constraints."},
+      {"id": "R47", "title": "Diagnostic Report Export", "severity": "low", "description": "Use DiagnosticReportExport for shareable diagnostic reports with network topology and battery history."},
+      {"id": "R48", "title": "Network Topology Awareness", "severity": "low", "description": "Use NetworkTopologyTrigger for flow triggers based on Zigbee mesh health and router availability."},
+      {"id": "R49", "title": "Predictive Health Engine", "severity": "medium", "description": "Use PredictiveHealthEngine for proactive device health monitoring and failure prediction."},
+      {"id": "R50", "title": "Energy History Store", "severity": "low", "description": "Use EnergyHistoryStore for persistent energy consumption tracking with historical data."},
+      {"id": "R51", "title": "Signal Triangulation for Presence", "severity": "low", "description": "Use SignalTriangulation for location-aware presence detection using Zigbee signal strength."},
+      {"id": "R52", "title": "Room Signal Aggregation", "severity": "low", "description": "Use RoomSignalAggregator for room-level presence consolidation from multiple sensors."},
+      {"id": "R53", "title": "Schedule Manager", "severity": "low", "description": "Use ScheduleManager for cron-like device scheduling with holiday awareness."},
+      {"id": "R54", "title": "Transition Engine", "severity": "low", "description": "Use TransitionEngine for smooth capability value transitions (e.g., gradual dimming)."},
+      {"id": "R55", "title": "Solar Elevation Calculations", "severity": "low", "description": "Use SolarElevation for sun-position-based automation triggers."},
+      {"id": "R56", "title": "Tariff Calculator", "severity": "low", "description": "Use TariffCalculator for time-of-use energy cost calculations."},
+      {"id": "R57", "title": "Configuration Backup/Restore", "severity": "low", "description": "Use ConfigurationBackupRestore for device settings backup and restore across migrations."},
+      {"id": "R58", "title": "Battery Hybrid Manager", "severity": "medium", "description": "Use BatteryHybridManager for devices with both battery and mains power sources."}
+    ],
+    "antiPatterns": [
+      {"id": "AP01", "pattern": "Linear battery formulas", "fix": "Use UnifiedBatteryHandler.calculateFromVoltage()", "frequency": "high"},
+      {"id": "AP02", "pattern": "Raw setCapabilityValue after destroy", "fix": "Use safeSetCapabilityValue()", "frequency": "high"},
+      {"id": "AP03", "pattern": "console.log in drivers/", "fix": "Use this.log()/this.error()", "frequency": "medium"},
+      {"id": "AP04", "pattern": "UTF-16 JSON loading", "fix": "Use Buffer-based JSON.parse(fs.readFileSync())", "frequency": "medium"},
+      {"id": "AP05", "pattern": "Overwriting constructor", "fix": "Use onInit()", "frequency": "low"},
+      {"id": "AP06", "pattern": "Blocking main thread in onInit", "fix": "Use async/await", "frequency": "low"},
+      {"id": "AP07", "pattern": "Missing super.onDeleted() in WiFi", "fix": "Add await super.onDeleted()", "frequency": "high"},
+      {"id": "AP08", "pattern": "Wildcard manufacturerName", "fix": "Use exact manufacturer names only", "frequency": "low"},
+      {"id": "AP09", "pattern": "Empty manufacturerName arrays", "fix": "Filter out empty arrays; causes AggregateError", "frequency": "medium"},
+      {"id": "AP10", "pattern": "capabilityMap recomputed per _onData()", "fix": "Cache in onInit()", "frequency": "medium"},
+      {"id": "AP11", "pattern": "Missing markAppCommand()", "fix": "Call before physical commands", "frequency": "medium"},
+      {"id": "AP12", "pattern": "Double-division bug", "fix": "Use SmartDivisorManager; don't divide in both parser and mappings", "frequency": "low"},
+      {"id": "AP13", "pattern": "Using deprecated HybridSwitchBase", "fix": "Use UnifiedSwitchBase directly", "frequency": "low"},
+      {"id": "AP14", "pattern": "Missing positionInvert check on curtains", "fix": "Check cover profile for positionInvert quirk", "frequency": "low"}
+    ],
+    "mandatory": [
+      "11-layer Zigbee pipeline must be respected (L0-L11)",
+      "Fingerprints: manufacturerName + productId combined match (case-insensitive)",
+      "Settings keys: zb_model_id, zb_manufacturer_name (snake_case with zb_ prefix)",
+      "Flow card IDs must be globally unique across ALL drivers",
+      "Import paths from lib/tuya/ not lib/ directly",
+      "CaseInsensitiveMatcher for all manufacturer name comparisons",
+      "After fingerprint changes: run check-fingerprint-health.js",
+      "Multi-DP frames: always use parseMultiple(), never assume one frame = one DP",
+      "WiFi devices: super.onDeleted() is MANDATORY",
+      "Presence detection: use PresenceConfidenceScorer for multi-factor scoring",
+      "Battery health: use BatteryHealthIntelligence for degradation tracking",
+      "Device groups: use DeviceGroupManager for coordinated actions"
+    ],
+    "naming": [
+      "Settings: zb_model_id, zb_manufacturer_name (snake_case with zb_ prefix)",
+      "Flow IDs: {driver}_physical_gang{N}_{on|off}",
+      "Driver dirs: drivers/{type}/ with device.js, driver.js, driver.compose.json",
+      "Capabilities: 156 unique - check DynamicCapabilityManager before adding new",
+      "Lib structure: lib/tuya/, lib/devices/, lib/mixins/, lib/managers/, lib/utils/, lib/clusters/, lib/presence/, lib/battery/, lib/features/, lib/groups/"
+    ],
+    "security": [
+      "Never commit tokens to .git/config",
+      "Use GH_PAT secret for cross-repo access",
+      "Block *.key, *.pem, config.json, secrets.json, credentials.json",
+      "Never commit .env files",
+      "GITHUB_TOKEN for current repo only",
+      "client_secret*.json must never be committed",
+      "oauth2.keys.json must never be committed"
+    ],
+    "crashPrevention": [
+      {"id": "CP1", "title": "Use CrashPrevention for All Async Operations", "severity": "critical", "description": "Wrap all async operations with CrashPrevention.safeAsync()."},
+      {"id": "CP2", "title": "Guard All Async Callbacks with _destroyed Check", "severity": "critical", "description": "Check _destroyed flag at the start of all async callbacks."},
+      {"id": "CP3", "title": "Use SafeTimeout and SafeInterval", "severity": "high", "description": "Use CrashPrevention.safeTimeout/safeInterval instead of raw setTimeout/setInterval."},
+      {"id": "CP4", "title": "Always Cleanup Resources on Delete", "severity": "critical", "description": "Clean up all resources in onDeleted: clearTimeout, clearInterval, safeCleanup, super.onDeleted()."},
+      {"id": "CP5", "title": "Use SafePromise for Unhandled Promises", "severity": "high", "description": "Wrap unhandled promises with CrashPrevention.safePromise()."},
+      {"id": "CP6", "title": "Use GuardDestroyed for Device Operations", "severity": "critical", "description": "Guard all device operations with CrashPrevention.guardDestroyed()."},
+      {"id": "CP7", "title": "Use SafeSetCapability for Capability Updates", "severity": "critical", "description": "Use CrashPrevention.safeSetCapability() instead of direct setCapabilityValue."},
+      {"id": "CP8", "title": "Use SafeTriggerFlow for Flow Triggers", "severity": "high", "description": "Use CrashPrevention.safeTriggerFlow() instead of direct flow trigger."},
+      {"id": "CP9", "title": "Use SafeSendCommand for Zigbee Commands", "severity": "high", "description": "Use CrashPrevention.safeSendCommand() instead of direct cluster command."},
+      {"id": "CP10", "title": "Use WithRetry for Critical Operations", "severity": "high", "description": "Use CrashPrevention.withRetry() with maxRetries and delay for critical operations."}
+    ],
+    "imageConformity": {
+      "svgStandards": {
+        "viewBox": "960x960 for Homey capability icons, 100x100 for app icon",
+        "noGradients": true,
+        "noRasterImages": true,
+        "format": "SVG only (no PNG/JPG embedded)",
+        "colors": "Flat design, single-color preferred",
+        "background": "Transparent or single solid fill"
+      },
+      "appIcon": {
+        "viewBox": "0 0 100 100",
+        "size": 1212,
+        "hasGradients": false,
+        "hasRaster": false,
+        "compliant": true
+      },
+      "driverIcons": {
+        "totalDrivers": 429,
+        "driversWithSvg": 429,
+        "driversWithoutSvg": 0,
+        "regenScript": "scripts/regen-images.js",
+        "imageSizes": ["small.png (75x75)", "large.png (500x500)", "xlarge.png (1000x1000)"],
+        "compressionLevel": 9,
+        "backgroundFill": "white (r:255, g:255, b:255, alpha:1)"
+      },
+      "conformityAchieved": true,
+      "lastAudit": "2026-06-18T00:00:00Z"
+    }
+  },
+  "architecture": {
+    "pipeline": [
+      {"layer": "L0", "name": "TuyaZigbeeDevice.handleFrame", "file": "lib/tuya/TuyaZigbeeDevice.js", "purpose": "Raw frame interception"},
+      {"layer": "L1", "name": "UniversalThrottleManager", "file": "lib/utils/UniversalThrottleManager.js", "purpose": "Flow control (120 RX/min, 30 TX/min)"},
+      {"layer": "L2", "name": "IntelligentProtocolRouter", "file": "lib/protocol/IntelligentProtocolRouter.js", "purpose": "Route ZCL vs Tuya DP"},
+      {"layer": "L3", "name": "TuyaBoundCluster", "file": "lib/clusters/TuyaBoundCluster.js", "purpose": "Binding & command capture"},
+      {"layer": "L4", "name": "TuyaEF00Manager/TuyaDPParser", "file": "lib/tuya/TuyaEF00Manager.js", "purpose": "Multi-DP decoding"},
+      {"layer": "L5", "name": "GlobalTimeSyncEngine", "file": "lib/tuya/GlobalTimeSyncEngine.js", "purpose": "Time sync (0x24)"},
+      {"layer": "L6", "name": "PhysicalButtonMixin", "file": "lib/mixins/PhysicalButtonMixin.js", "purpose": "Button deduplication"},
+      {"layer": "L7", "name": "BaseUnifiedDevice", "file": "lib/devices/BaseUnifiedDevice.js", "purpose": "Capability mapping"},
+      {"layer": "L8", "name": "DynamicCapabilityManager", "file": "lib/managers/DynamicCapabilityManager.js", "purpose": "Auto-discovery & phantom pruning"},
+      {"layer": "L9", "name": "SessionManager", "file": "lib/session/SessionManager.js", "purpose": "Fragmented IR packets"},
+      {"layer": "L10", "name": "HealthMonitor", "file": "lib/health/HealthMonitor.js", "purpose": "Heartbeat tracking"},
+      {"layer": "L11", "name": "SanityFilter", "file": "lib/tuya/SanityFilter.js", "purpose": "EMA + ROC noise filtering"}
+    ],
+    "classHierarchy": [
+      "Homey.Device (SDK3)",
+      "  ZigBeeDevice (homey-zigbeedriver)",
+      "    TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)",
+      "      BaseUnifiedDevice (lib/devices/BaseUnifiedDevice.js)",
+      "        UnifiedSensorBase (lib/devices/UnifiedSensorBase.js)",
+      "        UnifiedCoverBase (lib/devices/UnifiedCoverBase.js)",
+      "        UnifiedLightBase (lib/devices/UnifiedLightBase.js)",
+      "        UnifiedPlugBase (lib/devices/UnifiedPlugBase.js)",
+      "        UnifiedThermostatBase (lib/devices/UnifiedThermostatBase.js)",
+      "        UnifiedSwitchBase (lib/devices/UnifiedSwitchBase.js)",
+      "          HybridSwitchBase (adds PhysicalButtonMixin + VirtualButtonMixin)",
+      "        ButtonDevice (lib/devices/ButtonDevice.js)",
+      "  TuyaLocalDevice (lib/tuya-local/TuyaLocalDevice.js)",
+      "  EweLinkLocalDevice (lib/ewelink-local/EweLinkLocalDevice.js)"
+    ],
+    "protocols": ["Zigbee (Tuya DP 0xEF00 + ZCL)", "WiFi (TuyaLocalClient)", "WiFi (EweLinkLocal)"],
+    "moduleDirectories": {
+      "lib/tuya/": "Tuya protocol: DP parsing, time sync, sanity filtering (57 files)",
+      "lib/devices/": "Device base classes: switch, sensor, cover, light, plug, thermostat (17 files)",
+      "lib/mixins/": "Reusable behavior: PhysicalButton, VirtualButton, Sonoff, Thermostat (18 files)",
+      "lib/managers/": "Services: SmartDivisor, DynamicCapability, Energy, IASZone, IEEE (23 files)",
+      "lib/utils/": "Utilities: AdaptiveDataParser, CaseInsensitiveMatcher, cache (50 files)",
+      "lib/battery/": "Battery: UnifiedHandler, Calculator, Monitor, Health, Hybrid (13 files)",
+      "lib/clusters/": "ZCL clusters: OnOff, LevelControl, Tuya, ZosungIR (28 files)",
+      "lib/protocol/": "Protocol: HybridProtocol, IntelligentRouter, KnownProtocols (5 files)",
+      "lib/presence/": "Presence: ConfidenceScorer, SignalTriangulation, VirtualPresence (7 files)",
+      "lib/features/": "Features: Flows, Conditions, Energy, Topology, Backup (19 files)",
+      "lib/groups/": "Groups: DeviceGroupManager (2 files)",
+      "lib/registry/": "Device profiles: switches, sensors, covers, lights, plugs, thermostats (8 files)"
+    }
+  },
+  "knownBugs": {
+    "resolved": [
+      {"id": "BUG-001", "version": "v9.0.40", "description": "TuyaShadowPulsar crash at import (this.homey undefined)", "fix": "Lazy-init homey reference"},
+      {"id": "BUG-002", "version": "v9.0.40", "description": "43 WiFi drivers TCP leak (missing super.onDeleted())", "fix": "Added super.onDeleted() to all WiFi devices"},
+      {"id": "BUG-003", "version": "v9.0.40", "description": "14 files mixin order reversed", "fix": "Corrected to PhysicalButtonMixin(VirtualButtonMixin(Base))"},
+      {"id": "BUG-004", "version": "v9.0.40", "description": "159 drivers using raw setCapabilityValue", "fix": "Batch-migrated to safeSetCapabilityValue"},
+      {"id": "BUG-005", "version": "v9.0.31", "description": "74 empty manufacturerName arrays causing AggregateError", "fix": "Filtered out empty arrays"},
+      {"id": "BUG-006", "version": "v9.0.0", "description": "OOM crash from fingerprints.json UTF-16 loading", "fix": "Buffer-based JSON loading"},
+      {"id": "BUG-007", "version": "v9.0.3", "description": "250 duplicate manufacturer names across drivers", "fix": "Deduplication with case-insensitive matching"},
+      {"id": "BUG-008", "version": "v9.0.35", "description": "Rain sensor in wrong driver (water_leak vs rain_sensor)", "fix": "Moved to correct driver (Issue #388)"},
+      {"id": "BUG-009", "version": "v9.0.35", "description": "MMWave radar missing from motion_sensor_radar_mmwave", "fix": "Added fingerprint (Issue #420)"},
+      {"id": "BUG-010", "version": "v9.0.40-titan", "description": "TuyaLocalDevice.onDeleted() missing super.onDeleted() - ALL WiFi drivers", "fix": "Added if (super.onDeleted) { await super.onDeleted(); }"},
+      {"id": "BUG-011", "version": "v9.0.40-titan", "description": "EweLinkLocalDevice.onDeleted() missing super.onDeleted() - ALL eWeLink drivers", "fix": "Added if(super.onDeleted){await super.onDeleted();}"},
+      {"id": "BUG-012", "version": "v9.0.40-titan", "description": "TuyaCloudAPI missing CircuitBreaker for fault tolerance", "fix": "Integrated CircuitBreaker with 5-failure threshold, 30s reset"},
+      {"id": "BUG-013", "version": "v9.0.40-titan", "description": "28 redundant/disabled GitHub Actions workflows wasting resources", "fix": "Archived to .archive/workflows-disabled/"}
+    ],
+    "open": [],
+    "patterns": [
+      {"pattern": "post-destroy crash", "rootCause": "Missing _destroyed guard in async callback", "frequency": "high", "fix": "Add if (this._destroyed) return; at start of callback"},
+      {"pattern": "ghost button press", "rootCause": "Missing markAppCommand() before physical command", "frequency": "medium", "fix": "Call this.markAppCommand(1, value) before send"},
+      {"pattern": "double-division bug", "rootCause": "AdaptiveDataParser + dpMappings both dividing value", "frequency": "low", "fix": "Use SmartDivisorManager; set dpMappings divisor to 1"},
+      {"pattern": "curtain position inverted", "rootCause": "Some curtains report 0=open, 100=closed", "frequency": "low", "fix": "Use positionInvert: true in cover profile"},
+      {"pattern": "phantom capabilities", "rootCause": "Fallback to feature-bloated configs", "frequency": "medium", "fix": "Use robust device profiles from DeviceProfileRegistry"},
+      {"pattern": "empty manufacturerName AggregateError", "rootCause": "Automated enrichment leaving empty arrays", "frequency": "medium", "fix": "Filter out [] before writing driver.compose.json"},
+      {"pattern": "TCP connection leak on WiFi delete", "rootCause": "Missing super.onDeleted()", "frequency": "high", "fix": "Ensure all WiFi devices call await super.onDeleted()"},
+      {"pattern": "MQTT reconnect infinite loop", "rootCause": "No backoff on reconnect failure", "frequency": "low", "fix": "Add exponential backoff with max retries"},
+      {"pattern": "presence false positive", "rootCause": "Single-sensor presence detection without confidence scoring", "frequency": "medium", "fix": "Use PresenceConfidenceScorer for multi-factor scoring"},
+      {"pattern": "battery prediction inaccurate", "rootCause": "Linear battery formula without degradation tracking", "frequency": "medium", "fix": "Use BatteryHealthIntelligence with capacity fade detection"}
+    ]
+  },
+  "modulesCreated": [
+    {"name": "CircuitBreaker", "file": "lib/utils/CircuitBreaker.js", "lines": 251, "purpose": "Fault tolerance for external APIs (CLOSED/OPEN/HALF_OPEN states)"},
+    {"name": "ValueConverterRegistry", "file": "lib/converters/ValueConverterRegistry.js", "lines": 483, "purpose": "Centralised DP value converters (numeric, enumMap, boolean, bitfield, positionInvert)"},
+    {"name": "CapabilityMapCache", "file": "lib/utils/CapabilityMapCache.js", "lines": 151, "purpose": "WeakMap-based capabilityMap caching to reduce GC pressure"},
+    {"name": "BatchCapabilityUpdater", "file": "lib/managers/BatchCapabilityUpdater.js", "lines": 104, "purpose": "Batch capability updates with 50ms window"},
+    {"name": "DPCache", "file": "lib/managers/DPCache.js", "lines": 162, "purpose": "Per-device DP value cache for offline fallback (5min TTL, LRU)"},
+    {"name": "safeLogger", "file": "lib/utils/safeLogger.js", "lines": 38, "purpose": "Safe logger replacing console.log fallbacks in lib/ utilities"},
+    {"name": "ConnectionStateTracker", "file": "lib/utils/ConnectionStateTracker.js", "lines": 303, "purpose": "WiFi connection state tracking with history, uptime stats, state persistence"},
+    {"name": "RetryWithBackoff", "file": "lib/utils/RetryWithBackoff.js", "lines": 278, "purpose": "Exponential backoff retry for DP queries and ZCL reads"},
+    {"name": "CrashPrevention", "file": "lib/utils/CrashPrevention.js", "lines": 398, "purpose": "Comprehensive crash prevention: safeAsync, safePromise, guardDestroyed, safeTimeout, safeInterval, safeCleanup, safeSetCapability, safeTriggerFlow, safeSendCommand, withRetry"},
+    {"name": "ErrorClassifier", "file": "lib/utils/ErrorClassifier.js", "lines": 225, "purpose": "Structured error handling with readAttrCatch, classify, isRetryable, getRetryDelay, withRetry"},
+    {"name": "PresenceConfidenceScorer", "file": "lib/presence/PresenceConfidenceScorer.js", "lines": 222, "purpose": "Multi-factor presence scoring using motion, door/window, and ambient light sensors. Bayesian confidence with temporal decay."},
+    {"name": "SignalTriangulation", "file": "lib/presence/SignalTriangulation.js", "lines": 295, "purpose": "Location-aware presence detection using Zigbee signal strength triangulation."},
+    {"name": "AdvancedPresenceEngine", "file": "lib/presence/AdvancedPresenceEngine.js", "lines": 464, "purpose": "Advanced presence engine combining all presence detection modules."},
+    {"name": "VirtualPresenceDetector", "file": "lib/presence/VirtualPresenceDetector.js", "lines": 360, "purpose": "Virtual presence detection using indirect signals (light, motion, door sensors)."},
+    {"name": "NetworkPresenceCorrelation", "file": "lib/presence/NetworkPresenceCorrelation.js", "lines": 297, "purpose": "Network-level presence correlation using device connectivity patterns."},
+    {"name": "RoomSignalAggregator", "file": "lib/presence/RoomSignalAggregator.js", "lines": 313, "purpose": "Room-level presence consolidation from multiple sensors."},
+    {"name": "SignalCartography", "file": "lib/presence/SignalCartography.js", "lines": 315, "purpose": "Signal strength mapping for indoor positioning."},
+    {"name": "BatteryHealthIntelligence", "file": "lib/battery/BatteryHealthIntelligence.js", "lines": 1499, "purpose": "Long-term battery degradation tracking: capacity fade, self-discharge, temperature compensation, RUL estimation."},
+    {"name": "BatteryHybridManager", "file": "lib/battery/BatteryHybridManager.js", "lines": 428, "purpose": "Devices with both battery and mains power sources."},
+    {"name": "BatteryMonitoringSystem", "file": "lib/battery/BatteryMonitoringSystem.js", "lines": 229, "purpose": "Continuous battery monitoring with alert system."},
+    {"name": "BatteryIconDetector", "file": "lib/battery/BatteryIconDetector.js", "lines": 118, "purpose": "Battery icon selection based on charge level and health."},
+    {"name": "BatteryManagerV3", "file": "lib/battery/BatteryManagerV3.js", "lines": 241, "purpose": "Battery manager v3 with improved calculation engine."},
+    {"name": "BatterySystem", "file": "lib/battery/BatterySystem.js", "lines": 390, "purpose": "Unified battery system integrating all battery modules."},
+    {"name": "DeviceGroupManager", "file": "lib/groups/DeviceGroupManager.js", "lines": 384, "purpose": "Coordinate actions across multiple devices with synchronized commands and jitter."},
+    {"name": "AdvancedMultiConditionFlows", "file": "lib/features/AdvancedMultiConditionFlows.js", "lines": 327, "purpose": "Multi-device AND/OR/NOT conditions with time-based constraints and cooldown periods."},
+    {"name": "DiagnosticReportExport", "file": "lib/features/DiagnosticReportExport.js", "lines": 230, "purpose": "Shareable diagnostic reports with aggregated logs and battery history."},
+    {"name": "NetworkTopologyTrigger", "file": "lib/features/NetworkTopologyTrigger.js", "lines": 262, "purpose": "Flow triggers based on Zigbee mesh health and router availability."},
+    {"name": "PredictiveHealthEngine", "file": "lib/features/PredictiveHealthEngine.js", "lines": 395, "purpose": "Proactive device health monitoring and failure prediction."},
+    {"name": "ConditionEngine", "file": "lib/features/ConditionEngine.js", "lines": 352, "purpose": "Complex condition evaluation engine for flows."},
+    {"name": "StateHistoryTrigger", "file": "lib/features/StateHistoryTrigger.js", "lines": 235, "purpose": "Flow triggers based on historical state patterns."},
+    {"name": "ScheduleManager", "file": "lib/features/ScheduleManager.js", "lines": 319, "purpose": "Cron-like device scheduling with holiday awareness."},
+    {"name": "SolarElevation", "file": "lib/features/SolarElevation.js", "lines": 299, "purpose": "Sun-position-based automation triggers."},
+    {"name": "TransitionEngine", "file": "lib/features/TransitionEngine.js", "lines": 196, "purpose": "Smooth capability value transitions (e.g., gradual dimming)."},
+    {"name": "EnergyHistoryStore", "file": "lib/features/EnergyHistoryStore.js", "lines": 265, "purpose": "Persistent energy consumption tracking with historical data."},
+    {"name": "TariffCalculator", "file": "lib/features/TariffCalculator.js", "lines": 250, "purpose": "Time-of-use energy cost calculations."},
+    {"name": "TuyaCloudSceneSync", "file": "lib/features/TuyaCloudSceneSync.js", "lines": 176, "purpose": "Synchronize scenes between Homey and Tuya Cloud."},
+    {"name": "DeviceMigrationWizard", "file": "lib/features/DeviceMigrationWizard.js", "lines": 235, "purpose": "Guided device migration between drivers."},
+    {"name": "ConfigurationBackupRestore", "file": "lib/features/ConfigurationBackupRestore.js", "lines": 197, "purpose": "Device settings backup and restore."},
+    {"name": "CapabilityExportImport", "file": "lib/features/CapabilityExportImport.js", "lines": 221, "purpose": "Export and import device capabilities for migration."},
+    {"name": "CustomCapabilityTemplates", "file": "lib/features/CustomCapabilityTemplates.js", "lines": 274, "purpose": "Template-based custom capability creation."},
+    {"name": "NetworkTopologyCollector", "file": "lib/features/NetworkTopologyCollector.js", "lines": 388, "purpose": "Collect and visualize Zigbee mesh network topology."},
+    {"name": "DynamicFlowCardManager", "file": "lib/dynamic/DynamicFlowCardManager.js", "purpose": "Dynamic flow card creation and management."},
+    {"name": "GreenPowerManager", "file": "lib/zigbee/GreenPowerManager.js", "purpose": "Zigbee Green Power device support."}
+  ],
+  "bugsFixed": {
+    "v9.0.40_titan": [
+      "TuyaLocalDevice.onDeleted() missing super.onDeleted() - ALL WiFi drivers affected",
+      "EweLinkLocalDevice.onDeleted() missing super.onDeleted() - ALL eWeLink drivers affected",
+      "159 driver files using raw setCapabilityValue instead of safeSetCapabilityValue",
+      "KNOWLEDGE_CACHE.json containing incorrect placeholder URLs",
+      "TuyaLocalDevice._onData() using raw setCapabilityValue instead of safeSetCapabilityValue",
+      "console.log fallback patterns in TuyaTimeSync, TuyaDataQuery, TuyaGatewayEmulator, DataRecoveryManager"
+    ],
+    "v9.0.40": [
+      "TuyaShadowPulsar crash at import (this.homey undefined)",
+      "TuyaLocalClient heartbeat crash (this.homey undefined)",
+      "TuyaUDPDiscovery crash at start (this.homey undefined)",
+      "43 WiFi drivers TCP leak (missing super.onDeleted())",
+      "TuyaLocalDevice._onData() post-destroy crash",
+      "TuyaCloudAPI HTTP timeout missing",
+      "TuyaCloudAPI token expire calculation wrong",
+      "TuyaCloudAPI.sendCommand() missing token refresh",
+      "Key recovery unlimited retries",
+      "14 files mixin order reversed",
+      "3 files missing VirtualButtonMixin imports",
+      "TuyaLocalDriver missing onUninit cleanup",
+      "Command queue stall (no timeout)",
+      "MQTT reconnect infinite loop (no backoff)",
+      "capabilityMap recomputed on every _onData()",
+      "TuyaZigbeeDevice mixin order reversed"
+    ]
+  },
+  "communityApps": {
+    "analyzed": 9,
+    "keyPatterns": {
+      "johanBendz": "TuyaSpecificClusterDevice, DP constants, sub-devices",
+      "gpmachado": "Cluster registry, availability manager, rejoin detection, error utils",
+      "andiwirz": "Protocol auto-detect, DP discovery tool",
+      "rebtor": "TuyAPI local control",
+      "drenso": "TypeScript, OAuth2",
+      "jurgenheine": "Cloud API patterns"
+    }
+  },
+  "z2mPatterns": {
+    "converters": "toHomey/toDevice/validate interface",
+    "modernExtend": "Composable capability extensions - potential to reduce Unified*Base file sizes",
+    "faultBitmapDecoding": "Bitfield fault codes for protection devices",
+    "mcuVersionRequest": "Standard init sequence for TS0601",
+    "negativePower": "Solar export handling",
+    "tuyaUtils": "Centralized DP type definitions, data point parsing"
+  },
+  "zhaPatterns": {
+    "quirks": "Device-specific overrides via zhaquirks/tuya/",
+    "dpToCluster": "Map Tuya DPs to ZCL clusters for standard attribute reporting",
+    "tuyaMcuCluster": "TuyaNewManufCluster - handles 0xEF00 protocol"
+  },
+  "externalReferences": {
+    "homeyDocs": [
+      "https://apps.developer.homey.app/",
+      "https://apps.developer.homey.app/the-basics/devices/",
+      "https://apps.developer.homey.app/the-basics/devices/best-practices/battery-status",
+      "https://apps.developer.homey.app/wireless/zigbee",
+      "https://apps.developer.homey.app/wireless/zigbee#3-zigbee-api",
+      "https://apps.developer.homey.app/the-basics/zigbee/pairing",
+      "https://developers.homey.app/cli/",
+      "https://developers.homey.app/sdk/",
+      "https://developers.homey.app/the-basics/app-manifest"
+    ],
+    "athombv": [
+      "https://github.com/athombv/node-homey-zigbeedriver",
+      "https://github.com/athombv/node-zigbee-clusters",
+      "https://github.com/athombv/com.ikea.tradfri",
+      "https://github.com/athombv/homey-apps-sdk-issues",
+      "https://github.com/athombv/node-homey-apps-sdk-v3-types",
+      "https://athombv.github.io/node-zigbee-clusters/"
+    ],
+    "z2m": [
+      "https://github.com/Koenkk/zigbee-herdsman-converters",
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts",
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/tuya.ts",
+      "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/modernExtend.ts",
+      "https://github.com/Koenkk/zigbee-herdsman",
+      "https://www.zigbee2mqtt.io/advanced/support-new-devices/02_support_new_tuya_devices.html"
+    ],
+    "zha": [
+      "https://github.com/zigpy/zha-device-handlers",
+      "https://github.com/zigpy/zha-device-handlers/tree/dev/zhaquirks/tuya"
+    ],
+    "tuya": [
+      "https://developer.tuya.com/en/docs/iot/",
+      "https://developer.tuya.com/en/docs/iot/dps",
+      "https://developer.tuya.com/en/docs/iot/zigbee-cluster-introduction"
+    ],
+    "blakadder": [
+      "https://zigbee.blakadder.com",
+      "https://github.com/blakadder/zigbee"
+    ],
+    "deconz": [
+      "https://github.com/dresden-elektronik/deconz-rest-plugin",
+      "https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Tuya-Data-Point-Protocol"
+    ]
+  },
+  "auditHistory": {
+    "last30Days": {
+      "commits": 50,
+      "filesChanged": 1352,
+      "insertions": 573975,
+      "deletions": 621544
+    },
+    "previousAudits": []
+  },
+  "titanSession": {
+    "date": "2026-06-18",
+    "version": "v7-documentation-update",
+    "filesCreated": 4,
+    "filesModified": 5,
+    "newCodeLines": 0,
+    "modulesDocumented": 42,
+    "rulesAdded": 16,
+    "totalRules": 58,
+    "coreRulesVersion": "4.0.0",
+    "knowledgeCacheVersion": "7.0"
+  },
+  "knownIssues": [
+    "Some drivers may still use deprecated TuyaDeviceDiscovery vs TuyaUDPDiscovery",
+    "SmartDivisorManager not yet extended to WiFi devices",
+    "CapabilityMapCache not yet integrated into BaseUnifiedDevice.onInit()",
+    "ValueConverterRegistry not yet used in existing drivers (available for new drivers)",
+    "BatchCapabilityUpdater not yet integrated into BaseUnifiedDevice (available for new drivers)",
+    "ConnectionStateTracker not yet integrated into WiFi device base classes",
+    "RetryWithBackoff not yet used in all DP query paths",
+    "PresenceConfidenceScorer not yet integrated into sensor drivers",
+    "BatteryHealthIntelligence not yet integrated into battery reporting drivers",
+    "DeviceGroupManager not yet exposed through flow cards"
+  ],
+  "missingDeviceTypes": [
+    "ultrasonic_water_meter",
+    "ultrasonic_heat_meter",
+    "soil_sensor_ec",
+    "energy_meter_din",
+    "smart_irrigation_valve",
+    "smart_screen_switch",
+    "dimmer_0_10v",
+    "scene_switch_6ch",
+    "dimmer_4ch",
+    "boiler_switch_energy"
+  ],
+  "credits": {
+    "coreFramework": [
+      {"name": "Athom BV", "contribution": "Homey SDK3, node-homey-zigbeedriver, node-zigbee-clusters"},
+      {"name": "Homey Developer Documentation", "contribution": "apps.developer.homey.app"}
+    ],
+    "svgIcons": [
+      {"name": "athombv/homey-vectors-public", "contribution": "Official Homey SVG vector icons for device capabilities"},
+      {"name": "Joolee/Homey-SVG-Icons", "contribution": "Community-maintained SVG capability icons for Homey devices"}
+    ],
+    "tuyaProtocolReferences": [
+      {"name": "JohanBendz/com.tuya.zigbee", "contribution": "Original Tuya Zigbee app for Homey (TuyaSpecificClusterDevice, DP constants, sub-devices)"},
+      {"name": "Koenkk/zigbee-herdsman-converters", "contribution": "Z2M device definitions and Tuya converters"},
+      {"name": "zigpy/zha-device-handlers", "contribution": "ZHA Tuya quirks (zhaquirks/tuya/)"},
+      {"name": "jasonacox/tinytuya", "contribution": "Tuya local protocol implementation"},
+      {"name": "make-all/tuya-local", "contribution": "Tuya Local for Home Assistant (YAML config DP mappings)"},
+      {"name": "dresden-elektronik/deconz-rest-plugin", "contribution": "deCONZ Tuya support and Data Point Protocol documentation"}
+    ],
+    "communityContributors": [
+      {"name": "AreAArseth/com.hobeian", "contribution": "Hobeian Zigbee devices"},
+      {"name": "drenso/com.tuya2", "contribution": "TypeScript Tuya cloud app (OAuth2 patterns)"},
+      {"name": "gpmachado", "contribution": "Cluster registry, availability manager, rejoin detection"},
+      {"name": "andiwirz", "contribution": "Protocol auto-detect, DP discovery tool"},
+      {"name": "rebtor", "contribution": "TuyAPI local control"},
+      {"name": "jurgenheine", "contribution": "Cloud API patterns"},
+      {"name": "robertklep/homey-tuya-zigbee", "contribution": "Community Tuya Zigbee"},
+      {"name": "codetheweb/tuyapi", "contribution": "Node.js Tuya API"},
+      {"name": "blakadder/zigbee", "contribution": "Zigbee device database"}
+    ],
+    "deviceDatabases": [
+      {"name": "zigbee.blakadder.com", "contribution": "Cross-platform device fingerprints"},
+      {"name": "Zigbee2MQTT Supported Devices", "contribution": "5473+ devices from 577+ vendors"},
+      {"name": "CSA IoT", "contribution": "Zigbee certified products (csa-iot.org)"}
+    ],
+    "homeyCommunity": [
+      {"name": "Homey Community Forum", "contribution": "Device reports, issue tracking, feature requests"},
+      {"name": "dlnraja", "contribution": "App author, primary maintainer, TITAN Protocol architect"}
+    ]
+  },
+  "gitHistory": {
+    "recentCommits": [
+      "933caf9da fix: forum issues #2091 #5472 + protection scripts + flow card integrity",
+      "0eb0ad79b v9.0.39: 420 drivers, 2403 FPs [skip ci]",
+      "45eae3fd6 chore: bump version to v9.0.38, update changelog",
+      "4e655fb87 feat: virtual presence detection + battery health intelligence",
+      "e650d834d @ v9.0.36: 419 drivers, 7 new hybrid drivers, pipeline hardening",
+      "53688db3d fix: comprehensive button evolution + stable-v5 port + regression fixes",
+      "ee5dd956d fix: comprehensive quality sweep - 607 files, zero violations",
+      "2c415f6c4 fix: GitHub issues #388 #383 #420 #417 + fingerprint additions",
+      "bc73e3a1f fix: forum posts processed - 8 device routing fixes + 4 fingerprint additions",
+      "40dcf9452 fix: fix 74 remaining empty manufacturerName arrays (AggregateError root cause)"
+    ],
+    "keyDecisions": [
+      "v8.5.0: Added _destroyed guard, safeSetCapabilityValue, UnifiedBatteryHandler",
+      "v9.0.0: Buffer-based JSON loading for fingerprints.json (OOM fix)",
+      "v9.0.3: Fixed 250 duplicate manufacturer names",
+      "v9.0.31: Fixed 74+ empty manufacturerName arrays",
+      "v9.0.40: Added virtual presence detection + battery health intelligence",
+      "v9.0.40 TITAN: Fixed super.onDeleted() in WiFi base classes, batch-fixed 159 drivers setCapabilityValue",
+      "v9.0.41: Added ConnectionStateTracker for WiFi devices, CORE_RULES updated to R41 with R37-R41 enrichment rules",
+      "v9.0.42: Added CrashPrevention utilities with CP1-CP10 crash prevention rules"
+    ],
+    "stats30Days": {
+      "commits": 50,
+      "filesChanged": 1352,
+      "insertions": 573975,
+      "deletions": 621544
+    }
+  }
+}

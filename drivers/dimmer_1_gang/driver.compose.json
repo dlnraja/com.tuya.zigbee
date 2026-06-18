@@ -200,6 +200,15 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_estfrmup",
+      "_TZ3210_c2iwsgbm",
+      "_TZ3210_dwytrmda",
+      "_TZ3210_zfb5rsau",
+      "_TZ3210_wnjciwjk",
+      "_TZ3210_pwev4iyd",
+      "_TZ3210_fwpt0tcx"
+    ],
     "productId": [
       "TS110F",
       "TS110E",
@@ -226,8 +235,7 @@
       "instruction": {
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
-    },
-    "manufacturerName": []
+    }
   },
   "version": "1.0.0"
 }

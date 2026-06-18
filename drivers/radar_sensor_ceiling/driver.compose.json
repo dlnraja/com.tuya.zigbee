@@ -17,6 +17,7 @@
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
+  
   },
   "energy": {
     "approximation": {
@@ -75,8 +76,9 @@
       "instruction": {
         "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_tze200_2aaelwxk"]
   },
   "version": "1.0.0",
   "metadata": {

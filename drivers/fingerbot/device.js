@@ -323,6 +323,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
       // Reset GUI shortly after success.
       this.homey.setTimeout(() => {
+        if (this._destroyed) return;
         this._setCapabilitySafe(
           'onoff',
           false,
@@ -343,6 +344,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     }
 
     this._guiPulseTimeout = this.homey.setTimeout(() => {
+      if (this._destroyed) return;
       this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state' );
     }, MOMENTARY_GUI_PULSE_MS);
   }
@@ -506,7 +508,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
   async _setCapabilitySafe(capabilityId, value, errorMessage) {
     try {
-      await this.setCapabilityValue(capabilityId, value);
+      await this.safeSetCapabilityValue(capabilityId, value);
     } catch (err) {
       this.error(errorMessage, err);
     }
@@ -538,6 +540,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     if (this._guiPulseTimeout) {
       this.homey.clearTimeout(this._guiPulseTimeout);
     }

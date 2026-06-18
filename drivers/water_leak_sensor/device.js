@@ -2,6 +2,7 @@
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { startsWithCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
@@ -32,6 +33,11 @@ const WATER_SENSOR_PROFILES = {
     type: 'tuya_dp', productId: 'TS0601',
     dpMappings: { 1: 'alarm_water', 4: 'measure_battery' },
     notes: 'Tuya DP water sensor with temperature'
+  },
+  '_TZE200_jthf7vb6': {
+    type: 'tuya_dp', productId: 'TS0601',
+    dpMappings: { 1: 'alarm_water', 4: 'measure_battery' },
+    notes: 'Smart water leak alarm (forum request)'
   },
   '_TZE204_qq9mpfhw': {
     type: 'tuya_dp', productId: 'TS0601',
@@ -177,14 +183,14 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
     return {
-      1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true || v === 'alarm' },
-      101: { capability: 'alarm_water', transform: (v) => v === 1 || v === true },
-      19: { capability: 'alarm_water', transform: (v) => v === 1 || v === true },
+      1: { capability: 'alarm_water', transform: boolean() },
+      101: { capability: 'alarm_water', transform: boolean() },
+      19: { capability: 'alarm_water', transform: boolean() },
       4: { capability: 'measure_battery', divisor: 1 },
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      14: { capability: null, internal: 'battery_low', transform: boolean() },
       15: { capability: 'measure_battery', divisor: 1 },
       3: { capability: 'measure_battery', divisor: 1 },
-      5: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
+      5: { capability: 'alarm_tamper', transform: boolean() },
       2: { capability: 'measure_temperature', smartDivisor: true },
       6: { capability: null, internal: 'battery_voltage' },
       9: { capability: null, setting: 'sensitivity' },
@@ -230,14 +236,12 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       await this._forceInitialAlarmRead(zclNode);
 
       // Delayed secondary read for sleepy sensors
-      this.homey.setTimeout(async () => {
-        try {
+      this.homey.setTimeout(async () => { if (this._destroyed) return; try {
           this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
           await this._forceInitialAlarmRead(zclNode);
         } catch (e) {
           this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
-        }
-      }, 5000);
+        } }, 5000);
 
       this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
     }, 'onNodeInit');
@@ -254,7 +258,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         try {
           const attrs = await Promise.race([
             iasCluster.readAttributes(['zoneStatus', 'zoneState']),
-            new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
+            new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) return; rej(new Error('timeout')); }, 5000))
           ]);
           if (attrs?.zoneStatus !== undefined && typeof this._handleIASZoneStatus === 'function') {
             this._handleIASZoneStatus(attrs.zoneStatus);
@@ -307,6 +311,8 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     if (this._iasFallback) {
       this._iasFallback.destroy();
     }

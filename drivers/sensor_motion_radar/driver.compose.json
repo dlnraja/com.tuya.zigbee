@@ -30,7 +30,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -53,6 +52,8 @@
     "productId": [
       "TS0601"
     ]
+  ,
+    "manufacturerName": ["_hybrid_sensor_motion_radar_needs_device_assignment"]
   },
   "settings": [
     {

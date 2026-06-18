@@ -48,6 +48,7 @@ class wall_switch_3_gang extends UnifiedSwitchBase {
     } */
 
   onDeleted(){
+    super.onDeleted();
 	  this.log("3 Gang Wall Switch, channel ", subDeviceId, " removed")
 	}
 

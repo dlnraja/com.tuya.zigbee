@@ -7,6 +7,13 @@ const { fetch } = require("./lib/fetch");
 const fs = require("fs");
 const path = require("path");
 
+// ── Intelligent Cache Integration ────────────────────────────────────────
+let ScannerCache;
+try {
+  ScannerCache = require('../scanners/scanner-cache').ScannerCache;
+} catch { /* fallback: no caching */ }
+const CACHE_ID = 'deconz';
+
 const OUT = path.join(__dirname, "data");
 
 const URLS = [
@@ -20,6 +27,18 @@ const PID_RE = /["'](TS[0-9A-F]{3,5}[A-Z]?)["']/;
 
 async function crawlDeCONZ() {
   console.log("[DECONZ] Fetching source files...");
+
+  // Check cache first
+  let cache;
+  if (ScannerCache) {
+    cache = new ScannerCache(CACHE_ID);
+    if (cache.isValid()) {
+      console.log(`[DECONZ] Cache HIT (${cache.getAge()} old)`);
+      const cached = cache.load();
+      if (cached) return cached;
+    }
+  }
+
   const allFps = new Map();
   let fetched = 0;
   for (const url of URLS) {
@@ -42,6 +61,13 @@ async function crawlDeCONZ() {
   const result = { date: new Date().toISOString(), source: "deconz-rest-plugin", filesFetched: fetched, uniqueFingerprints: fps.length, fingerprints: fps };
   fs.writeFileSync(path.join(OUT, "deconz.json"), JSON.stringify(result, null, 2));
   console.log("[DECONZ] " + fetched + " files, " + fps.length + " unique Tuya fps");
+
+  // Save to cache
+  if (cache) {
+    cache.save(result);
+    console.log("[DECONZ] Cache SAVED");
+  }
+
   return result;
 }
 

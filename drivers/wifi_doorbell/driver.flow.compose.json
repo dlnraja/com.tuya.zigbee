@@ -4,13 +4,17 @@
       "id": "wifi_doorbell_ring",
       "title": {
         "en": "Doorbell pressed"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_doorbell_motion",
       "title": {
         "en": "Motion detected"
-      }
+      },
+      "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

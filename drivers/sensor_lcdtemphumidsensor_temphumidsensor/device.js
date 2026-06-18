@@ -57,6 +57,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -72,6 +73,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -127,16 +129,16 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     this.log('[LCD]  Data received:', JSON.stringify(status));
     super.onTuyaStatus(status);
 
-    setTimeout(() => {
-      const temp = this.getCapabilityValue('measure_temperature');
+    this.homey.setTimeout(() => { if (this._destroyed) return; const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[LCD]  Temperature:', temp, 'Â°C Humidity:', hum, '% Battery:', bat, '%');
-    }, 100);
+      this.log('[LCD]  Temperature:', temp, 'Â°C Humidity:', hum, '% Battery:', bat, '%'); }, 100);
   }
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

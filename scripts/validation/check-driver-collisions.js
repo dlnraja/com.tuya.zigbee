@@ -16,7 +16,7 @@ const driversDir = path.join(__dirname, '../../drivers');
 const combinations = new Map();
 
 // Drivers that are allowed to have collisions (fallback/catch-all)
-const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya'];
+const FALLBACK_DRIVERS = ['universal_fallback', 'generic_tuya', 'universal_zigbee', 'device_generic_tuya_universal'];
 
 // Invalid wildcard patterns that should never be used
 const INVALID_PATTERNS = [
@@ -42,13 +42,15 @@ fs.readdirSync(driversDir).filter(d =>
     const mfrs = compose.zigbee.manufacturerName || [];
     const pids = compose.zigbee.productId || [];
     
-    // Check for invalid wildcards
-    mfrs.forEach(mfr => {
-      if (INVALID_PATTERNS.includes(mfr)) {
-        console.log(`❌ INVALID WILDCARD: ${driverName} has "${mfr}" (must use full ID)`);
-        hasErrors = true;
-      }
-    });
+    // Check for invalid wildcards (skip fallback drivers - they intentionally use wildcards)
+    if (!FALLBACK_DRIVERS.includes(driverName)) {
+      mfrs.forEach(mfr => {
+        if (INVALID_PATTERNS.includes(mfr)) {
+          console.log(`❌ INVALID WILDCARD: ${driverName} has "${mfr}" (must use full ID)`);
+          hasErrors = true;
+        }
+      });
+    }
     
     // Build combinations
     mfrs.forEach(mfr => {

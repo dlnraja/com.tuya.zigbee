@@ -19,11 +19,12 @@ class pir_sensor_2 extends ZigBeeDevice {
 
 	onIASZoneStatusChangeNotification({zoneStatus, extendedStatus, zoneId, delay,}) {
 		this.log('IASZoneStatusChangeNotification received:', zoneStatus, extendedStatus, zoneId, delay);
-		this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
-		this.setCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
+		this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
+		this.safeSetCapabilityValue('alarm_battery', zoneStatus.battery).catch(this.error);
 	}
 
 	onDeleted(){
+	  super.onDeleted();
 		this.log("Smart PIR Motion Sensor removed")
 	}
 

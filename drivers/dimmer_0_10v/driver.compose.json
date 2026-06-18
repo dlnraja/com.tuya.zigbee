@@ -1,0 +1,92 @@
+{
+  "name": {
+    "en": "0-10V Dimmer",
+    "fr": "Variateur 0-10V"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "countdown_remaining"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Brightness Limits",
+        "fr": "Limites de Luminosité"
+      },
+      "children": [
+        {
+          "id": "minBrightness",
+          "type": "number",
+          "label": {
+            "en": "Minimum Brightness (%)"
+          },
+          "value": 0,
+          "attr": {
+            "step": 1,
+            "min": 0,
+            "max": 100
+          }
+        },
+        {
+          "id": "maxBrightness",
+          "type": "number",
+          "label": {
+            "en": "Maximum Brightness (%)"
+          },
+          "value": 100,
+          "attr": {
+            "step": 1,
+            "min": 0,
+            "max": 100
+          }
+        }
+      ]
+    }
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_dimmer_0_10v_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/dimmer_0_10v/assets/images/small.png",
+    "large": "/drivers/dimmer_0_10v/assets/images/large.png",
+    "xlarge": "/drivers/dimmer_0_10v/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "dimmer_0_10v",
+  "version": "1.0.0"
+}

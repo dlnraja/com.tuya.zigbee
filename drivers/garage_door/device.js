@@ -37,17 +37,17 @@ class GarageDoorDevice extends BaseUnifiedDevice {
     switch (dpId) {
       case 2: {
         const closed = value === 0 || value === false;
-        await this.setCapabilityValue('garagedoor_closed', closed).catch(() => {});
+        await this.safeSetCapabilityValue('garagedoor_closed', closed).catch(() => {});
         if (this.hasCapability('alarm_contact')) {
-          await this.setCapabilityValue('alarm_contact', !closed).catch(() => {}); }
+          await this.safeSetCapabilityValue('alarm_contact', !closed).catch(() => {}); }
         break;
       }
 
       case 12: {
         const open = value === 1 || value === true;
-        await this.setCapabilityValue('garagedoor_closed', !open).catch(() => {});
+        await this.safeSetCapabilityValue('garagedoor_closed', !open).catch(() => {});
         if (this.hasCapability('alarm_contact')) {
-          await this.setCapabilityValue('alarm_contact', open).catch(() => {});
+          await this.safeSetCapabilityValue('alarm_contact', open).catch(() => {});
         }
         break;
       }

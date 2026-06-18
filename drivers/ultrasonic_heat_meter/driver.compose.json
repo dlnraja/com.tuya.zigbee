@@ -1,0 +1,57 @@
+{
+  "name": {
+    "en": "Ultrasonic Heat Meter",
+    "fr": "Compteur de Chaleur Ultrasonique"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "meter_power",
+    "measure_power",
+    "alarm_battery"
+  ],
+  "capabilitiesOptions": {
+    "meter_power": {
+      "title": {
+        "en": "Total Energy",
+        "fr": "Énergie Totale"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Current Power",
+        "fr": "Puissance Actuelle"
+      }
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_ultrasonic_heat_meter_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/ultrasonic_heat_meter/assets/images/small.png",
+    "large": "/drivers/ultrasonic_heat_meter/assets/images/large.png",
+    "xlarge": "/drivers/ultrasonic_heat_meter/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "ultrasonic_heat_meter",
+  "version": "1.0.0"
+}

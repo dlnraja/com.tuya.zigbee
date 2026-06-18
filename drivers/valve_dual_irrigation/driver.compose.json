@@ -10,7 +10,8 @@
     "onoff.valve_1",
     "onoff.valve_2",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining"
   ],
   "zigbee": {
     "productId": [
@@ -26,7 +27,7 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_unknown"
+      "_TZE284_8zizsafo"
     ]
   },
   "images": {

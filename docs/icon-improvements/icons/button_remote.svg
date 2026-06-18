@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Remote body -->
+  <rect x="280" y="150" width="400" height="660" rx="80" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Top button (large) -->
+  <circle cx="480" cy="320" r="80" stroke="black" stroke-width="35" fill="none"/>
+  <!-- Button icons -->
+  <path d="M480 280 L480 360 M440 320 L520 320" stroke="black" stroke-width="25" stroke-linecap="round"/>
+  <!-- Middle buttons row -->
+  <circle cx="380" cy="500" r="50" stroke="black" stroke-width="30" fill="none"/>
+  <circle cx="580" cy="500" r="50" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Bottom buttons row -->
+  <circle cx="380" cy="650" r="50" stroke="black" stroke-width="30" fill="none"/>
+  <circle cx="580" cy="650" r="50" stroke="black" stroke-width="30" fill="none"/>
+  <!-- LED indicator -->
+  <circle cx="480" cy="180" r="15" fill="black"/>
+</svg>

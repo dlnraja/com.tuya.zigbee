@@ -75,7 +75,7 @@ class BedSensorDevice extends UnifiedSensorBase {
         batteryValue = 100; // fallback
       }
       this.log(`[BED] Battery DP4: raw=${value} -> ${batteryValue}%`);
-      this.setCapabilityValue('measure_battery', batteryValue).catch(() => {});
+      if (!this._destroyed) this.safeSetCapabilityValue('measure_battery', batteryValue).catch(() => {});
       this._lastDPReceived = true;
       return;
     }
@@ -88,6 +88,7 @@ class BedSensorDevice extends UnifiedSensorBase {
    * The parent class only handles DP1->alarm_motion, not alarm_contact
    */
   async _handleCommonDP(dp, rawValue) {
+    if (this._destroyed) return;
     const value = this._parseValue(rawValue);
 
     // Handle DP1 for alarm_contact (bed sensor specific)
@@ -95,7 +96,7 @@ class BedSensorDevice extends UnifiedSensorBase {
     if (dp === 1 && this.hasCapability('alarm_contact')) {
       const occupied = value === 0;
       this.log(`[BED] Presence: ${occupied ? 'OCCUPIED' : 'VACANT'} (DP1=${value})`);
-      this.setCapabilityValue('alarm_contact', occupied).catch(() => {});
+      if (!this._destroyed) this.safeSetCapabilityValue('alarm_contact', occupied).catch(() => {});
       this._lastDPReceived = true;
 
       // Fire flow triggers
@@ -131,7 +132,7 @@ class BedSensorDevice extends UnifiedSensorBase {
    */
   _setupDPolling() {
     // Delayed initial query (3s after init)
-    this._initQueryTimeout = setTimeout(async () => {
+    this._initQueryTimeout = this.homey.setTimeout(async () => {
       if (this._destroyed) return;
       try {
         this.log('[BED] Requesting initial DP data...');
@@ -144,7 +145,7 @@ class BedSensorDevice extends UnifiedSensorBase {
           } else if (typeof this.requestDP === 'function') {
             await this.requestDP(dp).catch(() => {});
           }
-          await new Promise(r => setTimeout(r, 500)); // 500ms between requests
+          await new Promise(r => this.homey.setTimeout(r, 500)); // 500ms between requests
         }
       } catch (err) {
         this.error('[BED] Initial DP query failed:', err.message);

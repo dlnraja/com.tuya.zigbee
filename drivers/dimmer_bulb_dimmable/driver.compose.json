@@ -14,7 +14,9 @@
     "onoff",
     "measure_battery",
     "measure_power",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "energy": {
     "mains": true,
@@ -23,9 +25,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601",
       "TS0052"
@@ -55,6 +54,8 @@
         "attr": "colorTemperature"
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_dimmer_bulb_dimmable_needs_device_assignment"]
   },
   "settings": [
     {

@@ -10,7 +10,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * Migrated to PhysicalButtonMixin for 8-layer detection stack.
  * Standardized battery management via BatteryMixin.
  */
-class SmartButtonSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaZigbeeDevice)) {
+class SmartButtonSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
 
   get mainsPowered() { return true; }
 

@@ -12,7 +12,9 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "power_on_behavior"
+    "power_on_behavior",
+    "countdown_remaining",
+    "child_lock"
   ],
   "energy": {
     "batteries": [
@@ -47,8 +49,9 @@
           6
         ]
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_plug_smart_needs_device_assignment"]
   },
   "settings": [
     {

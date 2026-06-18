@@ -18,8 +18,11 @@ class D extends E{
     await super.onInit(); }
 
 
-  onDeleted() {
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 module.exports = D;

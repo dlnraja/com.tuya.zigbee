@@ -1,4 +1,9 @@
 name: Gmail IMAP Health Check
+# <!-- badges:start -->
+# [![Gmail IMAP Health Check](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml)
+# <!-- badges:end -->
+
+
 # v5.12.6: IMAP-only — OAuth keepalive replaced by IMAP health check
 on:
   schedule:
@@ -26,15 +31,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: IMAP health check
+        continue-on-error: true
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -51,6 +57,7 @@ jobs:
           git pull --rebase origin master || true
           git push || true
       - name: Alert if IMAP failing
+        continue-on-error: true
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}

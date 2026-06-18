@@ -4,6 +4,7 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -151,7 +152,7 @@ function getEnergyConfig(manufacturerName) {
 }
 
 
-class RemoteButtonWirelessPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class RemoteButtonWirelessPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
   // v9.7.3: Specialized Energy Monitoring Plug
@@ -277,6 +278,7 @@ class RemoteButtonWirelessPlugDevice extends VirtualButtonMixin(PhysicalButtonMi
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

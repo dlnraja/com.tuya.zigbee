@@ -1,31 +1,20 @@
-# Tuya Unified Zigbee - Validation Workflow
-# v5.8.88 - Updated 2026-02-10
-# Runs on pull requests to validate app before merge
-
+# TITAN Protocol v2 — Validate Homey App
+# Restored and improved 2026-06-16
 name: 🔍 Validate Homey App
 
 on:
   schedule:
-    - cron: '0 12 * * *'  # Daily 12:00 UTC — validation sanity check
+    - cron: '0 12 * * *'  # Daily 12:00 UTC
   pull_request:
-    branches:
-      - master
-      - main
-    paths:
-      - '**.js'
-      - '**.json'
-      - 'drivers/**'
-      - 'lib/**'
+    branches: [master, main, stable-v5]
+    paths: ['**.js', '**.json', 'drivers/**', 'lib/**']
   workflow_dispatch:
     inputs:
       level:
         description: "Validation level"
         required: false
         type: choice
-        options:
-          - debug
-          - publish
-          - verified
+        options: [debug, publish, verified]
         default: publish
 
 permissions:
@@ -40,42 +29,24 @@ defaults:
   run:
     shell: bash
 
-env:
-  NODE_VERSION: "22"
-  # APP_VERSION read dynamically from app.json
-
 jobs:
   validate:
-    if: false # DISABLED — redundant, unified-ci.yml covers all validation
     name: 🔍 Validate
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        uses: actions/checkout@v4
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: '20'
           cache: npm
 
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-
-      - name: 🔄 Check driver/app.json sync
-        id: sync
-        run: |
-          node scripts/maintenance/sync-app-json.js 2>&1 || true
-          if git diff --quiet app.json 2>/dev/null; then
-            echo "synced=true" >> $GITHUB_OUTPUT
-          else
-            echo "synced=false" >> $GITHUB_OUTPUT
-            echo "⚠️ app.json is out of sync with drivers!"
-          fi
-
-      - name: 🔨 Build app
-        run: npx homey app build
 
       - name: 📦 Get App Info
         id: info
@@ -88,6 +59,9 @@ jobs:
           echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
           echo "📦 $NAME v$VERSION - $DRIVERS drivers"
 
+      - name: 🔨 Build app
+        run: npx homey app build
+
       - name: 🔍 JS Syntax Check
         run: |
           FAIL=0
@@ -97,7 +71,7 @@ jobs:
               FAIL=1
             fi
           done
-          echo "JS syntax: $([[ $FAIL -eq 0 ]] && echo OK || echo FAILED)"
+          [ $FAIL -eq 0 ] && echo "✅ All JS files pass syntax check" || exit 1
 
       - name: 🔍 Fingerprint Collision Check
         run: |
@@ -108,7 +82,7 @@ jobs:
             for(const d of dirs){
               const f=path.join('drivers',d,'driver.compose.json');
               if(!fs.existsSync(f))continue;
-              const j=JSON.parse(fs.readFileSync(f,'utf8'));
+              const j=JSON.parse(fs.readFileSync(f));
               const z=j.zigbee;
               if(!z||!z.manufacturerName||!z.productId)continue;
               for(const mfr of z.manufacturerName){
@@ -121,7 +95,7 @@ jobs:
             }
             let col=0;
             for(const [k,v] of map){if(v.length>1){console.log('⚠️ Collision:',k,'in',v.join(', '));col++;}}
-            console.log(col?col+' collision(s) found':'No fingerprint collisions');
+            console.log(col?col+' collision(s) found':'✅ No fingerprint collisions');
           "
 
       - name: 🖼️ Driver Images Pre-Check
@@ -133,104 +107,23 @@ jobs:
               [ ! -f "$d/assets/images/$S.png" ] && { echo "::error::$DR missing $S.png"; MISS=$((MISS+1)); }
             done
           done
-          [ $MISS -gt 0 ] && echo "::warning::$MISS missing driver images — will fail publish validation"
-          echo "$MISS missing image(s)"
+          [ $MISS -gt 0 ] && echo "::warning::$MISS missing driver images"
+          echo "✅ $MISS missing image(s)"
 
-      - name: 🔌 Multi-Gang Endpoint Routing Check
-        run: |
-          node -e "
-            const fs=require('fs'),path=require('path');
-            let issues=0;
-            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
-            for(const d of dirs){
-              const f=path.join('drivers',d,'driver.compose.json');
-              if(!fs.existsSync(f))continue;
-              const j=JSON.parse(fs.readFileSync(f,'utf8'));
-              const caps=j.capabilities||[];
-              const eps=j.zigbee?.endpoints||{};
-              // Check: every onoff.gangN must have endpoint N declared
-              for(const cap of caps){
-                const m=cap.match(/^onoff\.gang(\d+)$/);
-                if(m){
-                  const epNum=m[1];
-                  if(!eps[epNum]){
-                    console.log('⚠️ '+d+': '+cap+' has NO endpoint '+epNum+' declared');
-                    issues++;
-                  } else {
-                    const clusters=eps[epNum].clusters||[];
-                    // Cluster 6 = genOnOff — required for switch endpoints
-                    if(!clusters.includes(6)&&!clusters.includes(0x0006)){
-                      console.log('⚠️ '+d+': EP'+epNum+' missing onOff cluster (6)');
-                      issues++;
-                    }
-                  }
-                }
-              }
-            }
-            console.log(issues?issues+' endpoint routing issue(s)':'✅ All multi-gang endpoints properly declared');
-          "
-
-      - name: 📡 TX/RX Protocol Coverage Check
-        run: |
-          node -e "
-            const fs=require('fs'),path=require('path');
-            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
-            let switchDrivers=0,withFallback=0;
-            for(const d of dirs){
-              const devFile=path.join('drivers',d,'device.js');
-              if(!fs.existsSync(devFile))continue;
-              const code=fs.readFileSync(devFile,'utf8');
-              // Only check switch/socket drivers
-              if(!d.includes('switch')&&!d.includes('plug')&&!d.includes('socket'))continue;
-              switchDrivers++;
-              // Check for TX fallback pattern (either writeAttributes or sendDP fallback)
-              const hasTXFallback=code.includes('TX-FALLBACK')||code.includes('writeAttributes')||code.includes('sendDP');
-              if(hasTXFallback)withFallback++;
-            }
-            console.log('Switch/socket drivers: '+switchDrivers+', with TX fallback: '+withFallback);
-          "
-
-      - name: 🧪 Run Tuya Unified Multi-Layer Quality Gate
-        run: node scripts/_verify_prs.js
-
-      - name: 🛡️ Check Git Conflicts
-        run: npm run validate:conflicts
-
-      - name: 🔍 Verify Fingerprints Integrity
-        continue-on-error: false
-        run: npm run validate:fingerprints
-
-      - name: 🔍 Validate (npx primary)
+      - name: 🔍 Validate (npx)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
-
-      - name: 🛡️ Fleetwood Integrity & Manifest Gateway
-        run: node scripts/PRE_COMMIT_CHECKS.js
-
-      - name: 🔍 Validate (Athom Docker)
-        continue-on-error: true
-        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
-        with:
-          level: ${{ inputs.level || 'publish' }}
 
       - name: ✅ Summary
         if: success()
         run: |
           echo "## ✅ ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Validation Level | ${{ inputs.level || 'publish' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Sync Status | ${{ steps.sync.outputs.synced == 'true' && '✅ Synced' || '⚠️ Out of sync' }} |" >> $GITHUB_STEP_SUMMARY
 
       - name: ❌ Failed
         if: failure()
         run: |
           echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Run \`homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🛠️ Quick Fixes" >> $GITHUB_STEP_SUMMARY
-          echo "1. \`node scripts/maintenance/sync-app-json.js\`" >> $GITHUB_STEP_SUMMARY
-          echo "2. \`npx homey app build\`" >> $GITHUB_STEP_SUMMARY
-          echo "3. \`npx homey app validate --level publish\`" >> $GITHUB_STEP_SUMMARY
+          echo "Run \`npx homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY

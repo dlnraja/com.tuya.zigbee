@@ -49,6 +49,7 @@ class dimmer_1_gang_2 extends UnifiedSwitchBase {
     }
 
     onDeleted() {
+      super.onDeleted();
         this.log("1 Gang Dimmer removed successfully.");
     }
 }

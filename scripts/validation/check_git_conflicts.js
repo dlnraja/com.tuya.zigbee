@@ -1,10 +1,15 @@
+#!/usr/bin/env node
+'use strict';
 const fs = require('fs');
 const path = require('path');
 
 /**
- * git_conflict_scanner.js
- * Scans all source files recursively for unresolved git conflict markers (<<<<<<<, =======, >>>>>>>, |||||||)
+ * check_git_conflicts.js
+ * Scans all source files recursively for unresolved git conflict markers
+ * (<<<<<<<, =======, >>>>>>>, |||||||)
  * Designed to catch git merge errors before `homey app build` crashes
+ *
+ * Exit codes: 0 = no conflicts, 1 = conflicts found
  */
 
 const markers = ['<<<<<<< HEAD', '=======', '>>>>>>>', '|||||||'];

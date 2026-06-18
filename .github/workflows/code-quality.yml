@@ -1,19 +1,15 @@
-# Tuya Unified Zigbee - Code Quality Checks
-# v5.8.88 - Updated 2026-02-10
-# Checks for common bugs and code patterns
-
+# TITAN Protocol v5 — Code Quality Check
+# Updated with TITAN v5 integrity checks
 name: 🔍 Code Quality Check
 
 on:
   schedule:
-    - cron: '0 3 * * 3'  # Weekly Wednesday 03:00 UTC — periodic quality check
+    - cron: '0 3 * * 3'  # Weekly Wednesday 03:00 UTC
   pull_request:
-    branches: [master, main]
+    branches: [master, main, stable-v5]
   push:
-    branches: [master, main]
-    paths:
-      - '**.js'
-      - 'drivers/**/*.json'
+    branches: [master, main, stable-v5]
+    paths: ['**.js', 'drivers/**/*.json']
   workflow_dispatch:
 
 permissions:
@@ -27,199 +23,130 @@ defaults:
   run:
     shell: bash
 
-env:
-  NODE_VERSION: "22"
-
 jobs:
   quality:
-    if: false # DISABLED — redundant, unified-ci.yml covers all validation
     name: 🔧 Quality Checks
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v4
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: '20'
           cache: npm
 
-      - name: 🛡️ Run STRICT_SYNTAX_GUARD
-        run: node scripts/ci/STRICT_SYNTAX_GUARD.js
+      - name: 📦 Install dependencies
+        run: npm ci || npm install
 
-      - name: 🛡️ Run Zero-Defect Control
-        run: node scripts/ci/zero-defect-control.js
-
-      - name: 🔍 Resolve Fingerprint Collisions Automatically
-        run: node scripts/ci/resolve-collisions.js
-
-      - name: 🔍 Validate Homey App (publish)
-        id: homey_validate
-        env:
-          NODE_OPTIONS: "--no-deprecation"
+      - name: 🔍 TITAN v2 Pattern Checks
         run: |
-          if npx homey app validate --level publish 2>&1; then
-            echo "result=✅ Passed" >> $GITHUB_OUTPUT
-            echo "✅ Homey app validate passed" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "result=❌ Failed" >> $GITHUB_OUTPUT
-            echo "❌ homey app validate --level publish FAILED" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
+          echo "## 🔍 TITAN v2 Code Quality" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
 
-      - name: 🔍 Check Common Bugs
-        run: |
-          echo "## 🔍 Code Quality" >> $GITHUB_STEP_SUMMARY
+          # 1. Raw setCapabilityValue
+          raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          [ "$raw_set" -eq 0 ] && echo "✅ Raw setCapabilityValue: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Raw setCapabilityValue: $raw_set" >> $GITHUB_STEP_SUMMARY
 
-          npm ci
-          # Settings keys bug
-          if grep -rq "zb_modelId\|zb_manufacturerName" lib/ drivers/ --include="*.js" 2>/dev/null; then
-            echo "❌ Wrong settings keys (use zb_model_id)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Settings keys OK" >> $GITHUB_STEP_SUMMARY
-          fi
+          # 2. console.log in drivers
+          console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          [ "$console" -eq 0 ] && echo "✅ console.log in drivers: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ console.log in drivers: $console" >> $GITHUB_STEP_SUMMARY
 
-          # Flow card bug
-          if grep -rq "titleFormatted.*\[\[device\]\]" drivers/ --include="*.json" 2>/dev/null; then
-            echo "❌ titleFormatted [[device]] bug" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Flow cards OK" >> $GITHUB_STEP_SUMMARY
-          fi
+          # 3. Empty manufacturerName
+          empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          [ "$empty_mfr" -eq 0 ] && echo "✅ Empty manufacturerName: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Empty manufacturerName: $empty_mfr" >> $GITHUB_STEP_SUMMARY
 
-          # Import bug
-          if grep -rq "require.*TuyaZigbeeDriver" drivers/ --include="*.js" 2>/dev/null; then
-            echo "❌ Wrong TuyaZigbeeDriver import" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Imports OK" >> $GITHUB_STEP_SUMMARY
-          fi
+          # 4. Wildcard fingerprints
+          wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          [ "$wildcards" -eq 0 ] && echo "✅ Wildcard fingerprints: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Wildcard fingerprints: $wildcards" >> $GITHUB_STEP_SUMMARY
 
-      - name: 🔍 Check getConditionCard vs getDeviceConditionCard
-        run: |
-          # Check for wrong flow card method usage
-          WRONG_METHOD=$(grep -rn "getConditionCard" drivers/ --include="*.js" 2>/dev/null | grep -v "getDeviceConditionCard" | wc -l || true)
-          if [ "$WRONG_METHOD" -gt 0 ]; then
-            echo "⚠️ Found $WRONG_METHOD uses of getConditionCard (check if should be getDeviceConditionCard)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Flow card methods OK" >> $GITHUB_STEP_SUMMARY
-          fi
+          # 5. titleFormatted [[device]]
+          title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          [ "$title_fmt" -eq 0 ] && echo "✅ titleFormatted [[device]]: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ titleFormatted [[device]]: $title_fmt" >> $GITHUB_STEP_SUMMARY
 
-      - name: 🔍 Deep Bug Checks
-        run: |
-          echo "### Deep Checks" >> $GITHUB_STEP_SUMMARY
-          BAD=$(grep -rl "require.*lib/TuyaZigbeeDevice'" drivers/ --include="*.js" 2>/dev/null | wc -l || true)
-          [ "$BAD" -gt 0 ] && echo "❌ Wrong TuyaZigbeeDevice path ($BAD files)" >> $GITHUB_STEP_SUMMARY || echo "✅ Import paths OK" >> $GITHUB_STEP_SUMMARY
-          DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l || true)
-          [ "$DUP" -gt 0 ] && echo "⚠️ $DUP duplicate fingerprints across drivers" >> $GITHUB_STEP_SUMMARY || echo "✅ No duplicate FPs" >> $GITHUB_STEP_SUMMARY
+          # 6. Wrong import paths
+          wrong_import=$(grep -r "require('../../lib/TuyaZigbeeDevice')" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          [ "$wrong_import" -eq 0 ] && echo "✅ Wrong import paths: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Wrong import paths: $wrong_import" >> $GITHUB_STEP_SUMMARY
 
-      - name: 🔄 Critical Guards
-        run: |
-          echo "### Guards" >> $GITHUB_STEP_SUMMARY
-          grep -q '_inConfigureAttrReportingLegacy' lib/zigbee/ZigbeeHelpers.js 2>/dev/null && echo "✅ Recursion guard" >> $GITHUB_STEP_SUMMARY || echo "❌ Recursion guard missing" >> $GITHUB_STEP_SUMMARY
+          # 7. Linear battery formulas
+          linear_bat=$(grep -r "(voltage - 2\.\|voltage - 3\." drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          [ "$linear_bat" -eq 0 ] && echo "✅ Linear battery formulas: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Linear battery formulas: $linear_bat" >> $GITHUB_STEP_SUMMARY
 
-      - name: 🖼️ Driver Images
-        run: |
-          echo "### Images" >> $GITHUB_STEP_SUMMARY
-          for d in drivers/*/; do DR=$(basename "$d"); for S in small large xlarge; do if [ ! -f "$d/assets/images/$S.png" ]; then echo "❌ $DR: $S.png" >> $GITHUB_STEP_SUMMARY; fi; done; done
-          echo "✅ Image check done" >> $GITHUB_STEP_SUMMARY
-
-      - name: 🌡️ Sensor Checks
-        run: |
-          echo "### Sensor Checks" >> $GITHUB_STEP_SUMMARY
-          for d in soil_sensor air_quality temp_hum_sensor; do
-            [ -f "drivers/$d/device.js" ] && grep -q "_handleDP" "drivers/$d/device.js" 2>/dev/null \
-              && echo "✅ $d DP OK" >> $GITHUB_STEP_SUMMARY \
-              || echo "⚠️ $d no DP" >> $GITHUB_STEP_SUMMARY
-          done
+          # 8. UTF-16 JSON loading
+          utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l)
+          [ "$utf16" -eq 0 ] && echo "✅ UTF-16 JSON loading: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ UTF-16 JSON loading: $utf16" >> $GITHUB_STEP_SUMMARY
 
       - name: 🔍 JSON Validation
         run: |
           echo "### JSON Validation" >> $GITHUB_STEP_SUMMARY
           FAIL=0
           for f in drivers/*/driver.compose.json; do
-            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f'))" 2>/dev/null; then
               echo "❌ Invalid JSON: $f" >> $GITHUB_STEP_SUMMARY
               FAIL=1
             fi
           done
           [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY
 
-      - name: ⚡ Mains-Powered Battery Check
+      - name: 🔍 TITAN v5 Integrity Checks
         run: |
-          echo "### Mains-Powered Battery Check" >> $GITHUB_STEP_SUMMARY
-          echo "_Note: Many Tuya devices support dual power (mains + battery backup). These are warnings only._" >> $GITHUB_STEP_SUMMARY
-          ISSUES=0
-          for d in drivers/*/device.js; do
-            DRIVER=$(basename "$(dirname "$d")")
-            if grep -q "mainsPowered" "$d" 2>/dev/null; then
-              IS_MAINS=$(node -e "const c=require('fs').readFileSync('$d','utf8');const m=c.match(/get mainsPowered\(\)\s*\{\s*return (true|false)/);console.log(m?m[1]:'unknown')" 2>/dev/null || true)
-              if [ "$IS_MAINS" = "true" ]; then
-                HAS_REMOVE=$(grep -c "removeCapability.*measure_battery" "$d" 2>/dev/null || true)
-                DC="drivers/$DRIVER/driver.compose.json"
-                HAS_BATT=$(node -e "try{const c=JSON.parse(require('fs').readFileSync('$DC','utf8'));console.log((c.capabilities||[]).includes('measure_battery'))}catch{console.log(false)}" 2>/dev/null || true)
-                if [ "$HAS_BATT" = "true" ] && [ "$HAS_REMOVE" = "0" ]; then
-                  echo "⚠️ $DRIVER: mains-powered but has measure_battery (dual-power?)" >> $GITHUB_STEP_SUMMARY
-                  ISSUES=$((ISSUES+1))
-                fi
-              fi
-            fi
-          done
-          if [ $ISSUES -eq 0 ]; then
-            echo "✅ All mains devices OK" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "ℹ️ $ISSUES driver(s) with dual-power pattern detected (non-blocking)" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔍 TITAN v5 Integrity Checks" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # 9. Bare setTimeout/setInterval in device files
+          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          [ "$bare_timeout" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in drivers: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in drivers: $bare_timeout" >> $GITHUB_STEP_SUMMARY
+
+          # 10. Bare setTimeout/setInterval in lib files
+          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          [ "$bare_timeout_lib" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in lib: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in lib: $bare_timeout_lib" >> $GITHUB_STEP_SUMMARY
+
+          # 11. Missing _destroyed guard in async callbacks
+          missing_guard=$(grep -rn "async.*(" drivers/ --include="device.js" 2>/dev/null | grep -v "_destroyed" | grep -v "// " | head -5 | wc -l)
+          echo "ℹ️  Async callbacks without _destroyed guard (review needed): $missing_guard" >> $GITHUB_STEP_SUMMARY
+
+          # 12. Flow card duplicate IDs across drivers
+          if [ -f scripts/ci/check-flow-ids.js ]; then
+            node scripts/ci/check-flow-ids.js 2>/dev/null && echo "✅ Flow card IDs: globally unique" >> $GITHUB_STEP_SUMMARY || echo "❌ Flow card ID conflicts detected" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: 🛡️ Sensor Fallback Safety Check
-        run: |
-          echo "### Fallbacks Strategy Check" >> $GITHUB_STEP_SUMMARY
-          if grep -ri "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null | grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*' | grep -q .; then
-            echo "❌ Dangerous HOBEIAN_10G_MULTI_FALLBACK fallback detected. Use ZG204ZM instead." >> $GITHUB_STEP_SUMMARY
-            exit 1
+          # 13. TS0601 catchall detection
+          if [ -f scripts/validation/check-ts0601-catchall.js ]; then
+            node scripts/validation/check-ts0601-catchall.js --json 2>/dev/null | tee /tmp/ts0601.json > /dev/null
+            ts0601_violations=$(jq -r '.totalViolations // 0' /tmp/ts0601.json 2>/dev/null || echo "?")
+            [ "$ts0601_violations" = "0" ] && echo "✅ TS0601 catchall violations: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ TS0601 catchall violations: $ts0601_violations" >> $GITHUB_STEP_SUMMARY
           else
-            echo "✅ Fallback safety verified" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️  TS0601 catchall script not found" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: 🔑 Empty Fingerprint Check
-        run: |
-          echo "### Empty Fingerprint Check" >> $GITHUB_STEP_SUMMARY
-          EMPTY=0
-          for f in drivers/*/driver.compose.json; do
-            DRIVER=$(basename "$(dirname "$f")")
-            RESULT=$(node -e "const c=JSON.parse(require('fs').readFileSync('$f','utf8'));const z=c.zigbee;if(z&&(!z.manufacturerName||!z.manufacturerName.length||!z.productId||!z.productId.length))console.log('EMPTY')" 2>/dev/null || true)
-            if [ "$RESULT" = "EMPTY" ]; then
-              echo "⚠️ $DRIVER: empty manufacturerName or productId" >> $GITHUB_STEP_SUMMARY
-              EMPTY=$((EMPTY+1))
-            fi
-          done
-          [ $EMPTY -eq 0 ] && echo "✅ All drivers have fingerprints" >> $GITHUB_STEP_SUMMARY
+          # 14. Fingerprint collision detection
+          if [ -f scripts/validation/check-driver-collisions.js ]; then
+            node scripts/validation/check-driver-collisions.js 2>/dev/null && echo "✅ Fingerprint collisions: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Fingerprint collisions detected" >> $GITHUB_STEP_SUMMARY
+          fi
 
-      - name: �🔍 Dead Code Detection
-        run: |
-          echo "### Dead Code" >> $GITHUB_STEP_SUMMARY
-          DEAD=0
-          for f in lib/*.js; do
-            NAME=$(basename "$f" .js)
-            if grep -q '@deprecated' "$f" 2>/dev/null; then
-              REFS=$(grep -rl "$NAME" lib/ drivers/ --include='*.js' 2>/dev/null | grep -v "$f" | wc -l || true)
-              if [ "$REFS" -eq 0 ]; then
-                echo "⚠️ Deprecated + unused: $f" >> $GITHUB_STEP_SUMMARY
-                DEAD=$((DEAD+1))
-              fi
-            fi
-          done
-          [ $DEAD -eq 0 ] && echo "✅ No dead code found" >> $GITHUB_STEP_SUMMARY || echo "$DEAD deprecated file(s) can be removed" >> $GITHUB_STEP_SUMMARY
+          # 15. Energy divisor validation
+          if [ -f scripts/validation/check-energy-divisor.js ]; then
+            node scripts/validation/check-energy-divisor.js --json 2>/dev/null | tee /tmp/energy-divisor.json > /dev/null
+            energy_violations=$(jq -r '.totalViolations // 0' /tmp/energy-divisor.json 2>/dev/null || echo "?")
+            [ "$energy_violations" = "0" ] && echo "✅ Energy divisor violations: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Energy divisor violations: $energy_violations" >> $GITHUB_STEP_SUMMARY
+          fi
 
-      - name: � SDK Compliance
-        run: |
-          echo "### SDK Compliance" >> $GITHUB_STEP_SUMMARY
-          PAREN=$(node -e "const fs=require('fs'),p=require('path');let c=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'driver.flow.compose.json');if(!fs.existsSync(f))continue;const j=JSON.parse(fs.readFileSync(f,'utf8'));for(const t of['triggers','conditions','actions'])for(const cd of(j[t]||[]))if((cd.title?.en||'').includes('('))c++;}console.log(c)")
-          [ "$PAREN" -gt 0 ] && echo "❌ $PAREN flow titles with parentheses" >> $GITHUB_STEP_SUMMARY || echo "✅ No parentheses in titles" >> $GITHUB_STEP_SUMMARY
-          NOTF=$(node -e "const fs=require('fs'),p=require('path');let c=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'driver.flow.compose.json');if(!fs.existsSync(f))continue;const j=JSON.parse(fs.readFileSync(f,'utf8'));for(const t of['triggers','conditions','actions'])for(const cd of(j[t]||[]))if(!cd.titleFormatted&&cd.title)c++;}console.log(c)")
-          [ "$NOTF" -gt 0 ] && echo "⚠️ $NOTF cards missing titleFormatted" >> $GITHUB_STEP_SUMMARY || echo "✅ All cards have titleFormatted" >> $GITHUB_STEP_SUMMARY
-          [ -f README.txt ] && echo "✅ README.txt present" >> $GITHUB_STEP_SUMMARY || echo "⚠️ Missing README.txt" >> $GITHUB_STEP_SUMMARY
+          # 16. Flow card ID validation
+          if [ -f scripts/ci/check-flow-ids.js ]; then
+            node scripts/ci/check-flow-ids.js --json 2>/dev/null | tee /tmp/flowids.json > /dev/null
+            flow_dupes=$(jq -r '.duplicates // 0' /tmp/flowids.json 2>/dev/null || echo "?")
+            [ "$flow_dupes" = "0" ] && echo "✅ Flow card ID duplicates: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Flow card ID duplicates: $flow_dupes" >> $GITHUB_STEP_SUMMARY
+          fi
 
-      - name: �📊 Stats
+      - name: 🔍 TITAN Pre-Commit Gate
+        run: node scripts/ci/titan-pre-commit.js --json
+
+      - name: 🔍 Validate (npx)
+        run: npx homey app validate --level publish
+
+      - name: 📊 Stats
         run: |
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           MFRS=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
@@ -230,6 +157,3 @@ jobs:
           echo "| Drivers | $DRIVERS |" >> $GITHUB_STEP_SUMMARY
           echo "| Manufacturer IDs | $MFRS |" >> $GITHUB_STEP_SUMMARY
           echo "| Flow Cards | $FLOWCARDS |" >> $GITHUB_STEP_SUMMARY
-
-      - name: 👮 Enforce Windsurf Rules
-        run: node .github/scripts/enforce-rules.js

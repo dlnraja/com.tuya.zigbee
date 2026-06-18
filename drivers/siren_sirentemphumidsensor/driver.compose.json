@@ -38,9 +38,9 @@
   "images": {
     "small": "/{{driverAssetsPath}}/images/small.png",
     "large": "/{{driverAssetsPath}}/images/large.png"
+  
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -64,6 +64,8 @@
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_siren_sirentemphumidsensor_needs_device_assignment"]
   },
   "maintenanceActions": [
     {

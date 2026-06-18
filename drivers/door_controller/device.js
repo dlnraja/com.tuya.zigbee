@@ -33,6 +33,8 @@ class DoorControllerDevice extends UnifiedPlugBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

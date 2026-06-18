@@ -40,7 +40,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -57,6 +56,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_TZE204_5toc8eks", "_TZE200_s5zhaolp", "_TZE284_1ratpdm5", "_TZE284_1575pmw0", "_TZE284_lnbfy"]
   },
   "settings": [
     {

@@ -183,7 +183,22 @@ class dimmer_2_gang_tuya extends TuyaSpecificClusterDevice {
     }
   }
 
+  /**
+   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
+   * Maps gang number to the correct Tuya DP for dimmer on/off control.
+   */
+  async _setGangOnOff(gang, value) {
+    const dpMap = {
+      1: V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.onOffGangOne,
+      2: V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.onOffGangTwo,
+    };
+    const dp = dpMap[gang] || V1_MULTI_GANG_DIMMER_SWITCH_DATA_POINTS.onOffGangOne;
+    this.log(`[FLOW] _setGangOnOff: gang=${gang} dp=${dp} value=${value}`);
+    await this.writeBool(dp, value);
+  }
+
   onDeleted() {
+    super.onDeleted();
     this.log('2 Gang dimmer module removed');
   }
 }

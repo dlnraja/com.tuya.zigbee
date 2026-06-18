@@ -77,28 +77,29 @@ class soilsensor extends TuyaSpecificClusterDevice {
       case dataPoints.humidity:
         this.log("Humidity: " + value);
 
-        this.setCapabilityValue('measure_humidity', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_humidity', value).catch(this.error);
         break;
       case dataPoints.temperature:
         this.log("Temparature: " + value);
 
-        this.setCapabilityValue('measure_temperature', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_temperature', value).catch(this.error);
         break;
       case dataPoints.battery:
         this.log("Battery: " + value);
 
-        this.setCapabilityValue('measure_battery', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_battery', value).catch(this.error);
         break;
       case dataPoints.battery_state:
         this.log("Battery state: " + value);
         var batAlarm = value === 0 ? true : false;
 
-        this.setCapabilityValue('alarm_battery', batAlarm).catch(this.error);
+        this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this.error);
         break;
     }
   }
 
   onDeleted(){
+    super.onDeleted();
 		this.log("Soil sensor removed");
 	}
 }

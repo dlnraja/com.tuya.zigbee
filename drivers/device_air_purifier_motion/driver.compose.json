@@ -70,7 +70,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0225",
@@ -85,6 +84,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_device_air_purifier_motion_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

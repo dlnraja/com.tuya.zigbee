@@ -30,6 +30,8 @@ class SwitchPlug2Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPl
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

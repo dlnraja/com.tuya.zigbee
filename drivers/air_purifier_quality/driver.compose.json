@@ -227,7 +227,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -238,5 +237,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_tze200_8ygsuhe1", "_tze200_ywagc4rj", "_tze200_zl1kmjqx"]
   }
 }

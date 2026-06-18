@@ -1,0 +1,41 @@
+{
+  "triggers": [
+    {
+      "id": "radar_sensor_ceiling_luminance_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminance changee"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "luminance",
+          "type": "number",
+          "title": {
+            "en": "Luminance",
+            "fr": "Luminance"
+          },
+          "example": 300
+        }
+      ]
+    },
+    {
+      "id": "radar_sensor_ceiling_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement detecte"
+      },
+      "args": []
+    },
+    {
+      "id": "radar_sensor_ceiling_motion_off",
+      "title": {
+        "en": "Motion ended",
+        "fr": "Mouvement termine"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

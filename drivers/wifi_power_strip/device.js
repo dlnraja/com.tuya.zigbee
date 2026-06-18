@@ -11,8 +11,8 @@ class WiFiPowerStripDevice extends TuyaLocalDevice {
       '5':  { capability: 'onoff.socket5', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '6':  { capability: 'onoff.socket6', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '7':  { capability: 'onoff.usb', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '9':  { capability: 'unknown' }, // countdown_1
-      '14': { capability: 'unknown' }, // power-on behavior
+      '9':  { capability: 'countdown_remaining' },
+      '14': { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       '17': { capability: 'meter_power', smartDivisor: true },
       '18': { capability: 'measure_current', smartDivisor: true },
       '19': { capability: 'measure_power', smartDivisor: true },
@@ -34,7 +34,10 @@ class WiFiPowerStripDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

@@ -115,7 +115,7 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
         }
         this.debug("set capability '" + capName + "' to value:", capValue);
         try {
-            await this.setCapabilityValue(capName, capValue);
+            await this.safeSetCapabilityValue(capName, capValue);
         } catch (e) {
             this.log("Failed to set capability", e);
         }
@@ -223,6 +223,7 @@ class ThermostaticRadiatorValve extends TuyaThermostatEnhancedMixin(TuyaSpecific
     }
 
     onDeleted() {
+      super.onDeleted();
         this.log("Thermostatic Radiator Valve removed:", this.getName());
     }
 }

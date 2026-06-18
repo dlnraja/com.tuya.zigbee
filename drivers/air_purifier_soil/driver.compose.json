@@ -274,7 +274,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0001"
@@ -286,6 +285,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_air_purifier_soil_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

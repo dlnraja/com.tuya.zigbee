@@ -25,6 +25,7 @@ class plug extends ZigBeeDevice {
   }
 
 	onDeleted(){
+	  super.onDeleted();
 		this.log("Plug removed")
 	}
 

@@ -1,6 +1,36 @@
 {
   "changelog": [
     {
+      "version": "9.0.44",
+      "date": "2026-06-18",
+      "summary": "Documentation v7.0 - KNOWLEDGE_CACHE v7.0, CORE_RULES v4.0 (R1-R58), 4 new docs, 42 modules documented",
+      "changes": [
+        {"type": "feat", "description": "KNOWLEDGE_CACHE.json v7.0: 42 modules documented, R1-R58 rules, presence/battery health/features module coverage"},
+        {"type": "feat", "description": "CORE_RULES.md v4.0: Added R43-R58 enrichment rules (presence, battery health, groups, features, energy)"},
+        {"type": "feat", "description": "docs/ARCHITECTURE.md: Comprehensive architecture overview with 11-layer pipeline, class hierarchy, protocols"},
+        {"type": "feat", "description": "docs/MODULES.md: Complete documentation of 42 modules across 10 categories"},
+        {"type": "feat", "description": "docs/WORKFLOWS.md: All 40 GitHub Actions workflows documented with schedules and purposes"},
+        {"type": "feat", "description": "docs/SCRIPTS.md: All 93 scripts documented with categories and usage"},
+        {"type": "chore", "description": "Updated project statistics: 429 drivers, 4304 FPs, 4138 flow cards, 156 capabilities"},
+        {"type": "chore", "description": "Added 16 new rules: R43-R58 for advanced feature modules"},
+        {"type": "chore", "description": "Added 2 new anti-patterns: AP13 (deprecated HybridSwitchBase), AP14 (missing positionInvert)"},
+        {"type": "chore", "description": "Updated CREDITS.md with new module sources and Homey Community Forum"}
+      ]
+    },
+    {
+      "version": "9.0.43",
+      "date": "2026-06-17",
+      "summary": "TITAN V5 GOD-MODE Final - Image conformity, documentation enrichment, R1-R42 + CP1-CP10 + IC1-IC4",
+      "changes": [
+        {"type": "feat", "description": "KNOWLEDGE_CACHE.json v6.0: All 10 modules documented, R1-R42 rules, CP1-CP10 crash prevention, IC1-IC4 image conformity"},
+        {"type": "feat", "description": "CORE_RULES.md v3.0: Added IC1-IC4 image conformity rules (SVG 960x960 viewBox, no gradients, no rasters)"},
+        {"type": "feat", "description": "TITAN_FINAL_REPORT.md: Comprehensive final report with all phases, modules, fixes, and conformities"},
+        {"type": "feat", "description": "CREDITS.md: Added athombv/homey-vectors-public, Joolee/Homey-SVG-Icons, Homey Community Forum"},
+        {"type": "chore", "description": "Image conformity audit: 430/430 drivers with SVG icons, app icon compliant (100x100, no gradients, no rasters)"},
+        {"type": "chore", "description": "All 10 TITAN modules verified: CircuitBreaker, ValueConverterRegistry, CapabilityMapCache, BatchCapabilityUpdater, DPCache, safeLogger, ConnectionStateTracker, RetryWithBackoff, CrashPrevention, ErrorClassifier"}
+      ]
+    },
+    {
       "version": "9.0.42",
       "date": "2026-06-17",
       "summary": "CrashPrevention utilities - Comprehensive crash prevention for all async operations",

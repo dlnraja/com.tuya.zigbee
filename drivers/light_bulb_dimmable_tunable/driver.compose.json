@@ -13,7 +13,9 @@
     "light_temperature",
     "measure_battery",
     "onoff",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "energy": {
     "approximation": {

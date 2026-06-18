@@ -23,27 +23,33 @@ class PlugSmartDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["device_plug_energy_monitor_plug_smart_turned_on","device_plug_energy_monitor_plug_smart_turned_off","device_plug_energy_monitor_plug_smart_power_restored","device_plug_energy_monitor_plug_smart_power_changed","device_plug_energy_monitor_plug_smart_power_threshold","device_plug_energy_monitor_plug_smart_battery_low"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_plug_energy_monitor_hybrid_plug_smart_is_on');
+      const card = this.homey.flow.getConditionCard('device_plug_energy_monitor_plug_smart_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_plug_energy_monitor_hybrid_plug_smart_is_on: ${err.message}`); }
+    } catch (err) { this.error(`Condition device_plug_energy_monitor_plug_smart_is_on: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_on');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,10 +57,10 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_on: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_off');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,10 +68,10 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_off: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_toggle');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,10 +80,10 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_toggle: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_on_delay');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_turn_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,10 +91,10 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_on_delay: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_on_delay: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_off_delay');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_turn_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -96,22 +102,22 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_off_delay: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_turn_off_delay: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_set_indicator');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_set_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Generic action handler
-          this.log('[FLOW] Action device_plug_energy_monitor_hybrid_plug_smart_set_indicator triggered for', args.device.getName());
+          this.log('[FLOW] Action device_plug_energy_monitor_plug_smart_set_indicator triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_set_indicator: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_set_indicator: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_set_power_on');
+      const card = this.homey.flow.getActionCard('device_plug_energy_monitor_plug_smart_set_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -119,7 +125,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_set_power_on: ${err.message}`); }
+    } catch (err) { this.error(`Action device_plug_energy_monitor_plug_smart_set_power_on: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

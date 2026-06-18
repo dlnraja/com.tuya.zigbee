@@ -26,6 +26,7 @@
     "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
     "small": "/drivers/smart_remote_4_buttons/assets/images/small.png",
     "xlarge": "/drivers/smart_remote_4_buttons/assets/images/xlarge.png"
+  
   },
   "energy": {
     "batteries": [
@@ -52,8 +53,9 @@
       "instruction": {
         "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_smart_remote_4_buttons_needs_device_assignment"]
   },
   "settings": [
     {

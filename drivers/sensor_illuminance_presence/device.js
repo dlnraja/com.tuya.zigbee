@@ -52,7 +52,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       const result = this._discovery.applyDiscoveredValue(dpId, value);
       if (result) {
         this.log(`[RADAR] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => { });
+        return this.safeSetCapabilityValue(result.capability, result.value).catch(() => { });
       }
     }
 
@@ -76,7 +76,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       }
 
       if (presence !== null) {
-        return this.setCapabilityValue('alarm_motion', presence).catch(() => {});
+        return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => {});
       }
       return;
     }
@@ -91,7 +91,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
         distance = value / (mapping.divisor || 100);
       }
       this._inference.updateDistance(distance);
-      return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
     // Illuminance / Lux
@@ -107,7 +107,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       }
 
       this._inference.updateLux(lux);
-      return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
     // Standard capability updates
@@ -119,7 +119,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       } else {
         finalValue = mapping.divisor ? value / mapping.divisor : value;
       }
-      return this.setCapabilityValue(mapping.cap, finalValue).catch(() => {});
+      return this.safeSetCapabilityValue(mapping.cap, finalValue).catch(() => {});
     }
   }
 
@@ -128,15 +128,13 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
    */
   _startRadarCycle(zclNode) {
     // Time sync after 2s
-    this.homey.setTimeout(() => this._syncTime(zclNode), 2000);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this._syncTime(zclNode); }, 2000);
 
     // Initial DP query after 3s
-    this.homey.setTimeout(() => this._refreshDPs(zclNode), 3000);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this._refreshDPs(zclNode); }, 3000);
 
     // Maintenance interval (60s)
-    this._maintenanceTimer = this.homey.setInterval(() => {
-      this._refreshDPs(zclNode);
-    }, 60000);
+    this._maintenanceTimer = this.homey.setInterval(() => { if (this._destroyed) return; this._refreshDPs(zclNode); }, 60000);
   }
 
   async _syncTime(zclNode) {

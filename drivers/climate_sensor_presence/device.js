@@ -138,26 +138,31 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
 
     if (presence) {
       if (this._intelGate) this._intelGate.process('alarm_motion', true);
-      this.setCapabilityValue('alarm_motion', true).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
-      this.setCapabilityValue('alarm_motion', false).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
       this._triggerPresenceFlows(false);
     }
   }
 
   async _triggerPresenceFlows(detected) {
-    const prefix = 'climate_sensor_presence_hybrid_';
-    const cardId = detected ? prefix + 'sensor_presence_radar_hybrid_presence_detected' : prefix + 'sensor_presence_radar_hybrid_presence_cleared';
-    
+    if (this._destroyed) return;
+    const prefix = 'climate_sensor_presence_';
+    const cardId = detected ? prefix + 'sensor_presence_radar_presence_detected' : prefix + 'sensor_presence_radar_presence_cleared';
+
     try {
       await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
-    } catch (e) {}
+    } catch (err) {
+      this.error('[PRESENCE] Flow trigger error:', err.message);
+    }
 
     if (detected) {
       try {
-        await this.homey.flow.getDeviceTriggerCard(prefix + 'presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid').trigger(this, {}).catch(() => {});
-      } catch (e) {}
+        await this.homey.flow.getDeviceTriggerCard(prefix + 'presence_sensor_radar_motion_detected').trigger(this, {}).catch(() => {});
+      } catch (err) {
+        this.error('[PRESENCE] Flow trigger error:', err.message);
+      }
     }
   }
 
@@ -168,21 +173,21 @@ class ClimateSensorPresenceDevice extends UnifiedSensorBase {
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (v) => {
-        this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {});
+        if (!this._destroyed) this.safeSetCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {});
       });
     }
 
     const temp = ep1.clusters?.msTemperatureMeasurement;
     if (temp?.on) {
       temp.on('attr.measuredValue', (v) => {
-        this.setCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
+        if (!this._destroyed) this.safeSetCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
       });
     }
 
     const hum = ep1.clusters?.msRelativeHumidity;
     if (hum?.on) {
       hum.on('attr.measuredValue', (v) => {
-        this.setCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
+        if (!this._destroyed) this.safeSetCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
       });
     }
   }

@@ -1,4 +1,9 @@
 name: Gmail Diagnostics Auto-Analysis
+# <!-- badges:start -->
+# [![Gmail Diagnostics Auto-Analysis](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-diagnostics.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-diagnostics.yml)
+# <!-- badges:end -->
+
+
 on:
   schedule:
     - cron: '0 22 * * 0'    # Weekly sweep (Sunday 22:00 UTC)
@@ -24,10 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -51,6 +56,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
       - name: Commit state
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -80,6 +86,7 @@ jobs:
         run: node .github/scripts/collect-diagnostics.js
 
       - name: Commit all diagnostics
+        continue-on-error: true
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -117,6 +124,7 @@ jobs:
         run: node .github/scripts/resolution-summary.js
 
       - name: Commit resolver state
+        continue-on-error: true
         if: always()
         run: |
           git add .github/state/resolver-*.json .github/state/pattern-*.json 2>/dev/null || true
@@ -126,7 +134,7 @@ jobs:
 
       - name: Upload diagnostics
         if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: diagnostics-report
           path: |

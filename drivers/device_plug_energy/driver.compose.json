@@ -14,7 +14,9 @@
     "measure_current",
     "measure_voltage",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining",
+    "child_lock"
   ],
   "energy": {
     "batteries": [
@@ -23,7 +25,13 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_3zofvcaa",
+      "_TZ3000_pvlvoxvt",
+      "_TZ3000_lqb7lcq9",
+      "_TZ3210_urjf5u18",
+      "_TZ3210_8n4dn1ne"
+    ],
     "productId": [
       "TS0002",
       "TS0121",

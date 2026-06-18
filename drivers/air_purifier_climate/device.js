@@ -34,7 +34,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
       const pm = safeMultiply(v, 0);
       if (this._lastPm25 !== pm) {
         this._lastPm25 = pm;
-        this.setCapabilityValue('measure_pm25', pm).catch(() => {});
+        this.safeSetCapabilityValue('measure_pm25', pm).catch(() => {});
       }
     } else if (data.dp === DP.speed ) {
       const spd = safeMultiply(v, 0);

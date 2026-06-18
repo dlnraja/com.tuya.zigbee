@@ -36,6 +36,7 @@ const ENERGY_DEVICE_CONFIGS = {
       18: { cap: 'measure_power', smartDivisor: true },         // dW -> W
       19: { cap: 'measure_voltage', smartDivisor: true },       // dV -> V
       20: { cap: 'meter_power', smartDivisor: true },          // Wh*100 -> kWh
+      23: { cap: 'meter_power.exported', divisor: 100 },       // Energy produced/exported (kWh ÷ 100)
     }
   },
 
@@ -54,6 +55,7 @@ const ENERGY_DEVICE_CONFIGS = {
       18: { cap: 'measure_power', smartDivisor: true },         // Power
       19: { cap: 'measure_current', smartDivisor: true },     // Current mA
       20: { cap: 'measure_voltage', smartDivisor: true },       // Voltage
+      23: { cap: 'meter_power.exported', divisor: 100 },       // Energy produced/exported (kWh ÷ 100)
     }
   },
 
@@ -114,6 +116,7 @@ const ENERGY_DEVICE_CONFIGS = {
       17: { cap: 'measure_voltage', smartDivisor: true },       // Voltage first
       18: { cap: 'measure_current', smartDivisor: true },     // Then current
       19: { cap: 'measure_power', smartDivisor: true },         // Then power
+      23: { cap: 'meter_power.exported', divisor: 100 },       // Energy produced/exported (kWh ÷ 100)
     }
   },
 
@@ -130,6 +133,7 @@ const ENERGY_DEVICE_CONFIGS = {
       8: { cap: 'measure_current', smartDivisor: true },     // Current in mA -> A
       9: { cap: 'meter_power', smartDivisor: true },          // Energy consumed in Wh*100 -> kWh
       11: { cap: null, internal: 'power_factor' },      // Power factor / status indicator
+      23: { cap: 'meter_power.exported', divisor: 100 },       // Energy produced/exported (kWh ÷ 100)
     }
   },
 
@@ -151,6 +155,7 @@ const ENERGY_DEVICE_CONFIGS = {
       107: { cap: 'measure_voltage.phase_b', smartDivisor: true },
       108: { cap: 'measure_voltage.phase_c', smartDivisor: true },
       109: { cap: 'meter_power', smartDivisor: true },
+      23: { cap: 'meter_power.exported', divisor: 100 },       // Energy produced/exported (kWh ÷ 100)
     }
   },
 };
@@ -294,6 +299,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

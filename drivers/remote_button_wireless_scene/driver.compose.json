@@ -371,7 +371,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0215A"
@@ -383,6 +382,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_remote_button_wireless_scene_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

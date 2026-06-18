@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bell body -->
+  <path d="M480 150C480 150 280 170 280 450V550H200V600H760V550H680V450C680 170 480 150 480 150Z"
+        stroke="black" stroke-width="40" fill="none" stroke-linejoin="round"/>
+  <!-- Bell top -->
+  <circle cx="480" cy="150" r="30" fill="black"/>
+  <!-- Clapper -->
+  <circle cx="480" cy="650" r="50" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Sound waves -->
+  <path d="M150 400 C170 350 170 300 150 250" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <path d="M100 430 C130 350 130 280 100 200" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <path d="M810 400 C790 350 790 300 810 250" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <path d="M860 430 C830 350 830 280 860 200" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <!-- Mounting bracket -->
+  <rect x="430" y="80" width="100" height="40" rx="10" fill="black"/>
+</svg>

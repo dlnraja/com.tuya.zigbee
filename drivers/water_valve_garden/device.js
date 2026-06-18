@@ -13,7 +13,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class WaterValveGardenDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   
   get plugCapabilities() { return ['onoff', 'measure_battery']; }
 
@@ -37,7 +37,7 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unif
         if (v > 100) {return Math.min(100, Math.round(((v - 2000) / 1000) * 100));} // raw mV conversion fallback
         return v;
       }},
-      11: { capability: null, internal: 'countdown', writable: true },
+      11: { capability: 'countdown_remaining' },
       15: { capability: 'measure_battery', transform: (v) => {
         if (v > 100) {return Math.min(100, Math.round(((v - 2000) / 1000) * 100));} // raw mV conversion fallback
         return v;
@@ -108,6 +108,7 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unif
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

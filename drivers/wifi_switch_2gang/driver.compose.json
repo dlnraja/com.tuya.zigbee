@@ -9,7 +9,9 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2"
+    "onoff.gang2",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "pair": [
     {

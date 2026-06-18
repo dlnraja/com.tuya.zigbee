@@ -24,7 +24,6 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -38,6 +37,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_tz3000_blhvsaqf", "_tz3000_e98krvvk", "_tz3000_hafsqare", "_tz3000_iedbgyxt", "_tz3000_jl7qyupf", "_tz3000_l9brjwau", "_tz3000_ysdv91bk"]
   },
   "images": {
     "small": "/drivers/switch_2gang/assets/images/small.png",

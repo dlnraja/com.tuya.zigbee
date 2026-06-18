@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+'use strict';
 const fs = require('fs');
 const path = require('path');
 
@@ -55,6 +57,10 @@ function main() {
 
     console.log('--- Summary ---');
     console.log(`Hardcoded Divisions Found: ${hardcodedDivisions}`);
+
+    if (batteryConflicts > 0) {
+        process.exit(1);
+    }
 }
 
 main();

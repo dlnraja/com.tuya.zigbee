@@ -16,6 +16,7 @@
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
+  
   },
   "energy": {
     "approximation": {
@@ -74,9 +75,7 @@
         "en": "Switch the unit on and off five times and then hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_wall_switch_1_gang_tuya_needs_device_assignment"]
   },
   "version": "1.0.0"
 }

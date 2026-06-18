@@ -1,0 +1,64 @@
+{
+  "name": {
+    "en": "Smart Screen Switch",
+    "fr": "Interrupteur Écran Intelligent"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "measure_luminance",
+    "measure_temperature",
+    "alarm_motion"
+  ],
+  "capabilitiesOptions": {
+    "measure_luminance": {
+      "title": {
+        "en": "Luminance",
+        "fr": "Luminosité"
+      }
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion Detected",
+        "fr": "Mouvement Détecté"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 2,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_smart_screen_switch_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/smart_screen_switch/assets/images/small.png",
+    "large": "/drivers/smart_screen_switch/assets/images/large.png",
+    "xlarge": "/drivers/smart_screen_switch/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "smart_screen_switch",
+  "version": "1.0.0"
+}

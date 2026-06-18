@@ -33,7 +33,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const g = dp - 23;
       const cap = `onoff.gang${g}`;
       if (this.hasCapability(cap)) {
-        this.setCapabilityValue(cap, !!value).catch(this.error);
+        this.safeSetCapabilityValue(cap, !!value).catch(this.error);
       }
       const flowCardId = `smart_scene_panel_switch_${g}_changed`;
       this.homey.flow.getDeviceTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
@@ -67,6 +67,8 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

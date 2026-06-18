@@ -96,7 +96,7 @@ const ENERGY_DEVICE_CONFIGS = {
   },
 };
 
-class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
 
@@ -223,19 +223,19 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
       if (zclAttrs.power) {
         const pDiv = this.zclEnergyDivisors.power;
         elecCluster.on('attr.activePower', (value) => {
-          this.setCapabilityValue('measure_power', parseFloat(Math.max(0, value / pDiv))).catch(() => { });
+          this.safeSetCapabilityValue('measure_power', parseFloat(Math.max(0, value / pDiv))).catch(() => { });
         });
       }
       if (zclAttrs.voltage) {
         const vDiv = this.zclEnergyDivisors.voltage;
         elecCluster.on('attr.rmsVoltage', (value) => {
-          this.setCapabilityValue('measure_voltage', parseFloat(value / vDiv)).catch(() => { });
+          this.safeSetCapabilityValue('measure_voltage', parseFloat(value / vDiv)).catch(() => { });
         });
       }
       if (zclAttrs.current) {
         const cDiv = this.zclEnergyDivisors.current;
         elecCluster.on('attr.rmsCurrent', (value) => {
-          this.setCapabilityValue('measure_current', parseFloat(value / cDiv)).catch(() => { });
+          this.safeSetCapabilityValue('measure_current', parseFloat(value / cDiv)).catch(() => { });
         });
       }
     }
@@ -249,7 +249,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
         return (raw / baseEDiv) * eScale;
       };
       mc.on('attr.currentSummDelivered', (v) => {
-        this.setCapabilityValue('meter_power', parseFloat(parseE(v))).catch(() => { });
+        this.safeSetCapabilityValue('meter_power', parseFloat(parseE(v))).catch(() => { });
       });
       
       // Poll fallback
@@ -260,10 +260,11 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
   _pollMetering(mc, parseE) {
     if (!mc.readAttributes) {return;}
     this._meterPoll = this.homey.setInterval(async () => {
+      if (this._destroyed) return;
       try {
         const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
         if (a?.currentSummDelivered !== undefined) {
-          this.setCapabilityValue('meter_power', parseFloat(parseE(a.currentSummDelivered))).catch(() => { });
+          this.safeSetCapabilityValue('meter_power', parseFloat(parseE(a.currentSummDelivered))).catch(() => { });
         }
       } catch (_) { /* Meter read failed, will retry on next interval */ }
     }, 120000);

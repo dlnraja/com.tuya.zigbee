@@ -4,13 +4,15 @@
       "id": "wifi_camera_motion_detected",
       "title": {
         "en": "Motion detected"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_camera_motion_cleared",
       "title": {
         "en": "Motion cleared"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -110,5 +112,6 @@
         }
       ]
     }
-  ]
+  ],
+  "conditions": []
 }

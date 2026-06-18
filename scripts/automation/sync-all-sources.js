@@ -22,7 +22,7 @@ const REPORT_DIR = path.join(ROOT, 'data', 'community-sync');
 // URLs
 const Z2M_TUYA_URL = 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts';
 const ZHA_URL = 'https://raw.githubusercontent.com/zigpy/zha-device-handlers/master/zhaquirks/tuya';
-const DECONZ_URL = 'https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/devices.json';
+const DECONZ_URL = 'https://api.github.com/repos/dresden-elektronik/deconz-rest-plugin/contents/devices/tuya';
 
 // Helpers
 const log = (msg) => console.log(`[SYNC] ${msg}`);

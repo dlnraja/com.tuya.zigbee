@@ -104,6 +104,7 @@ class smartplug_2_socket extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     const { subDeviceId } = this.getData();
 
     this.log("Double Socket Smart Plug, channel ", subDeviceId, " removed");

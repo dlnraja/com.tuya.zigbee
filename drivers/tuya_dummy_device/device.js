@@ -60,6 +60,7 @@ class TuyaDiagnosticDevice extends require('homey-zigbeedriver').ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Tuya Diagnostic Device removed');
   }
 }

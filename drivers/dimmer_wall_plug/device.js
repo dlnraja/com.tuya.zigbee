@@ -353,7 +353,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.activePower', (value) => {
             const power = safeDivide(value, pDiv);
             this.log(`[ENERGY-ZCL] Power: ${power}W (raw=${value} div=${pDiv})`);
-            this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
+            this.safeSetCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
       });
         }
 
@@ -363,7 +363,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.rmsVoltage', (value) => {
             const voltage = safeDivide(value, vDiv);
             this.log(`[ENERGY-ZCL] Voltage: ${voltage}V (raw=${value} div=${vDiv})`);
-            this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
+            this.safeSetCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
       });
         }
 
@@ -373,7 +373,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.rmsCurrent', (value) => {
             const current = safeDivide(value, cDiv);
             this.log(`[ENERGY-ZCL] Current: ${current}A (raw=${value} div=${cDiv})`);
-            this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
+            this.safeSetCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
       });
         }
 
@@ -409,17 +409,18 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           mc.on('attr.currentSummDelivered', (v) => {
             const e = parseE(v);
             this.log(`[ENERGY-ZCL] Energy: ${e}kWh`);
-            this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
+            this.safeSetCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
       });
         }
         // v5.11.26: Poll metering  many TS011F don't auto-report energy
         if (mc.readAttributes) {
           this._meterPoll = this.homey.setInterval(async () => {
+            if (this._destroyed) return;
             try {
               const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
               if (a?.currentSummDelivered !== undefined) {
                 const e = parseE(a.currentSummDelivered);
-                await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
+                await this.safeSetCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
               }
             } catch (_) {}
           }); // v5.12.12: increased from 60s to 120s
@@ -438,6 +439,8 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     // Clean up timers to prevent memory leaks
     if (this._interval) { clearInterval(this._interval); this._interval = null; }
     if (this._timer) { clearTimeout(this._timer); this._timer = null; }

@@ -4,13 +4,15 @@
       "id": "wifi_door_lock_wifi_lock_locked",
       "title": {
         "en": "Locked"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_door_lock_wifi_lock_unlocked",
       "title": {
         "en": "Unlocked"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -18,7 +20,8 @@
       "id": "wifi_door_lock_wifi_lock_is_locked",
       "title": {
         "en": "Is locked"
-      }
+      },
+      "args": []
     }
   ],
   "actions": []

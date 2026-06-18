@@ -104,7 +104,7 @@ class HybridSensorThermostatDevice extends UnifiedSensorBase {
       }
 
       if (val !== null && val !== undefined) {
-        return this.setCapabilityValue(mapping.capability, val).catch(() => {});
+        return this.safeSetCapabilityValue(mapping.capability, val).catch(() => {});
       }
     }
 

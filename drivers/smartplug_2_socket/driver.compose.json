@@ -15,21 +15,20 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "measure_power": {
       "approximated": true
     }
+  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS011F",
       "TS0601"
@@ -79,6 +78,8 @@
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_smartplug_2_socket_needs_device_assignment"]
   },
   "version": "1.0.0"
 }

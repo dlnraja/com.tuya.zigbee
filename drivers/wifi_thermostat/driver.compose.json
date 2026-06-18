@@ -11,7 +11,8 @@
     "onoff",
     "target_temperature",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "child_lock"
   ],
   "pair": [
     {

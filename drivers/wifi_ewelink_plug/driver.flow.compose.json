@@ -4,13 +4,15 @@
       "id": "wifi_ewelink_plug_turned_on",
       "title": {
         "en": "Turned on"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_ewelink_plug_turned_off",
       "title": {
         "en": "Turned off"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_ewelink_plug_power_changed",
@@ -26,7 +28,8 @@
           },
           "example": 100
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -34,7 +37,8 @@
       "id": "wifi_ewelink_plug_is_on",
       "title": {
         "en": "Is on"
-      }
+      },
+      "args": []
     }
   ],
   "actions": []

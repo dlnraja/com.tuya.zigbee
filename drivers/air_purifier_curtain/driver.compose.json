@@ -136,7 +136,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -147,11 +146,13 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_air_purifier_curtain_needs_device_assignment"]
   },
   "metadata": {
     "driver": {
       "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0601"
+      "reason": "Fallback for unmatched curtain devices with PID: TS0601"
     }
   }
 }

@@ -49,9 +49,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   async _setupElectricalMeasurement(zclNode) {
@@ -64,31 +62,35 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
 
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
+          if (this._destroyed) return;
           const power = safeMultiply(value, 10);
-          this.setCapabilityValue('measure_power', power).catch(this.error);
-      });
+          this.safeSetCapabilityValue('measure_power', power).catch(this.error);
+        });
       }
 
       if (this.hasCapability('measure_voltage')) {
         emCluster.on('attr.rmsVoltage', (value) => {
+          if (this._destroyed) return;
           const voltage = safeMultiply(value, 10);
-          this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
-      });
+          this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
+        });
       }
 
       if (this.hasCapability('measure_current')) {
-        emCluster.on('attr.rmsCurrent', (value ) => {
+        emCluster.on('attr.rmsCurrent', (value) => {
+          if (this._destroyed) return;
           const current = value * 1000;
-          this.setCapabilityValue('measure_current', current).catch(this.error);
-      });
+          this.safeSetCapabilityValue('measure_current', current).catch(this.error);
+        });
       }
     }
 
     const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794];
     if (meteringCluster && this.hasCapability('meter_power')) {
-      meteringCluster.on('attr.currentSummationDelivered', (value ) => {
+      meteringCluster.on('attr.currentSummationDelivered', (value) => {
+        if (this._destroyed) return;
         const energy = value * 1000;
-        this.setCapabilityValue('meter_power', energy).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
       });
     }
   }
@@ -120,31 +122,31 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
     switch (dp) {
     case 1: //On/Off state
     case 16:
-      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      this.safeSetCapabilityValue('onoff', !!value).catch(this.error);
       break;
 
     case 17: //Total current (A*1000)
     case 20:
       if (this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', value * 1000).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', value * 1000).catch(this.error);
       }
       break;
 
     case 18: // Power (W)
       if (this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', value).catch(this.error);
       }
       break;
 
     case 19: //Voltage (V*10)
       if (this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       }
       break;
 
     case 101: //Energy (kWh*100)
       if (this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', value * 100).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', value * 100).catch(this.error);
       }
       break;
     }
@@ -152,6 +154,8 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

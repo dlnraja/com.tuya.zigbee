@@ -1,6 +1,7 @@
 'use strict';
 
 const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
  * Vibration Sensor Device - v8.0.0 MODERNIZED
@@ -16,8 +17,8 @@ class VibrationSensorDevice extends UnifiedSensorBase {
 
   get dpMappings() {
     return {
-      1: { capability: 'alarm_vibration', transform: (v) => v === 1 || v === true },
-      2: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
+      1: { capability: 'alarm_vibration', transform: boolean() },
+      2: { capability: 'alarm_tamper', transform: boolean() },
       4: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 },
       18: { capability: 'measure_temperature', smartDivisor: true },
@@ -50,7 +51,9 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     if (mapping) {
       let val;
       if (mapping.transform) {
-        val = mapping.transform(value);
+        const _xf = typeof mapping.transform === 'object' && typeof mapping.transform.fromDevice === 'function'
+          ? mapping.transform.fromDevice : mapping.transform;
+        val = _xf(value);
       } else if (mapping.smartDivisor === true) {
         const { smartParse } = require('../../lib/managers/SmartDivisorManager');
         val = smartParse(value, dpId, {
@@ -62,7 +65,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
         val = mapping.divisor ? value / mapping.divisor : value;
       }
       if (mapping.capability) {
-        return this.setCapabilityValue(mapping.capability, val).catch(() => {});
+        return this.safeSetCapabilityValue(mapping.capability, val).catch(() => {});
       }
     }
 

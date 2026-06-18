@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Curtain track/rail -->
+  <rect x="100" y="150" width="760" height="60" rx="30" fill="black"/>
+  <!-- Track ends -->
+  <circle cx="130" cy="180" r="30" fill="black"/>
+  <circle cx="830" cy="180" r="30" fill="black"/>
+  <!-- Left curtain panel -->
+  <path d="M 130 210 L 130 800 C 180 780 230 790 280 800 L 280 210"
+        stroke="black" stroke-width="30" fill="none" stroke-linejoin="round"/>
+  <!-- Right curtain panel -->
+  <path d="M 680 210 L 680 800 C 730 780 780 790 830 800 L 830 210"
+        stroke="black" stroke-width="30" fill="none" stroke-linejoin="round"/>
+  <!-- Curtain folds left -->
+  <path d="M 180 210 C 180 400 230 400 230 210" stroke="black" stroke-width="15" fill="none"/>
+  <!-- Curtain folds right -->
+  <path d="M 730 210 C 730 400 780 400 780 210" stroke="black" stroke-width="15" fill="none"/>
+  <!-- Opening in middle showing light -->
+  <line x1="480" y1="250" x2="480" y2="750" stroke="black" stroke-width="5" stroke-dasharray="20 20"/>
+</svg>

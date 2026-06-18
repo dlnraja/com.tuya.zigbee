@@ -1,6 +1,7 @@
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
+const { boolean, enumMap } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
  * 
@@ -18,15 +19,15 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
 
   get dpMappings() {
     return {
-      1: { capability: 'onoff', transform: (v) => v === true || v === 1 },
+      1: { capability: 'onoff', transform: boolean() },
       2: { capability: 'target_temperature', smartDivisor: true },
       3: { capability: 'measure_temperature', smartDivisor: true },
-      4: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off', 3: 'eco', 4: 'boost' }[v] || 'auto') },
-      5: { capability: 'eco_mode', transform: (v) => v === true || v === 1 },
-      6: { capability: 'alarm_contact', transform: (v) => v === true || v === 1 },
-      7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+      4: { capability: 'thermostat_mode', transform: enumMap({ 0: 'auto', 1: 'heat', 2: 'off', 3: 'eco', 4: 'boost' }, 'auto') },
+      5: { capability: 'eco_mode', transform: boolean() },
+      6: { capability: 'alarm_contact', transform: boolean() },
+      7: { capability: 'child_lock', transform: boolean() },
       8: { capability: 'valve_position', divisor: 1 },
-      9: { capability: 'boost_mode', transform: (v) => v === true || v === 1 },
+      9: { capability: 'boost_mode', transform: boolean() },
       10: { internal: true, type: 'sound', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
       14: { internal: true, type: 'min_temp', divisor: 10 },
@@ -35,8 +36,9 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       17: { internal: true, type: 'deadzone', divisor: 10 },
       24: { capability: 'target_temperature', smartDivisor: true },
       35: { capability: 'measure_humidity', divisor: 1 },
-      36: { capability: 'heating', transform: (v) => v === 1 || v === true },
-      101: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
+      36: { capability: 'heating', transform: boolean() },
+      101: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolÃ¨te
+      108: { capability: 'thermostat_mode', transform: enumMap({ 0: 'auto', 1: 'manual', 2: 'eco', 3: 'boost' }, 'auto') }
     };
   }
 
@@ -50,6 +52,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -65,6 +68,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -116,6 +120,8 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

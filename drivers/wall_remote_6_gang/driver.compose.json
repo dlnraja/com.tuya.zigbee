@@ -28,6 +28,7 @@
     "large": "/drivers/wall_remote_6_gang/assets/images/large.png",
     "small": "/drivers/wall_remote_6_gang/assets/images/small.png",
     "xlarge": "/drivers/wall_remote_6_gang/assets/images/xlarge.png"
+  
   },
   "energy": {
     "batteries": [
@@ -35,9 +36,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0046",
       "TS0601",
@@ -82,6 +80,8 @@
         "en": "Press pair button for aprox 10 seconds."
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_wall_remote_6_gang_needs_device_assignment"]
   },
   "settings": [
     {

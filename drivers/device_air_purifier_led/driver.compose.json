@@ -25,9 +25,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601"
     ],
@@ -51,6 +48,8 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_device_air_purifier_led_needs_device_assignment"]
   },
   "settings": [
     {

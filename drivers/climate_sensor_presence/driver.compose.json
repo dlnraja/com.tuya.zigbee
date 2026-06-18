@@ -74,7 +74,6 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -93,6 +92,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_climate_sensor_presence_needs_device_assignment"]
   },
   "settings": [
     {

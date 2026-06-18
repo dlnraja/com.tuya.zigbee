@@ -1,5 +1,10 @@
 # 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌1‌7‌ — ENABLED
 name: Collect Diagnostics
+# <!-- badges:start -->
+# [![Collect Diagnostics](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/collect-diagnostics.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/collect-diagnostics.yml)
+# <!-- badges:end -->
+
+
 on:
   schedule:
     - cron: '15 10 * * 1'
@@ -26,16 +31,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Collect diagnostics from all sources
+        continue-on-error: true
         env:
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -44,6 +50,7 @@ jobs:
         run: node .github/scripts/collect-diagnostics.js
 
       - name: Commit diagnostics
+        continue-on-error: true
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -74,13 +81,14 @@ jobs:
 
       - name: Upload diagnostics artifact
         if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: diagnostics-summary-${{ github.run_id }}
           path: diagnostics/summary.json
           retention-days: 30
           if-no-files-found: warn
       - name: Verify artifact upload
+        continue-on-error: true
         if: always()
         run: |
           if [ -f "diagnostics/summary.json" ]; then

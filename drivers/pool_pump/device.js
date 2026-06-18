@@ -22,6 +22,7 @@ class PoolPumpDevice extends UnifiedPlugBase {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

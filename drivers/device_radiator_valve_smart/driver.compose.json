@@ -13,7 +13,9 @@
     "thermostat_mode",
     "measure_battery",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "child_lock",
+    "frost_protection"
   ],
   "energy": {
     "batteries": [

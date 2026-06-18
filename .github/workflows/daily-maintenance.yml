@@ -1,6 +1,6 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
-# Re-enable by removing 'if: false' below
-name: Weekly Self-Healing Maintenance
+# TITAN Protocol v5 — Weekly Self-Healing Maintenance
+# Updated with TITAN v5 integrity checks
+name: 🔩 Weekly Self-Healing Maintenance
 
 on:
   schedule:
@@ -22,95 +22,169 @@ defaults:
 jobs:
   heal:
     name: Self-Heal & Validate
-    if: false  # DISABLED — remove this line to re-enable
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
-      SHADOW_MODE: "true"
+
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          cache: npm
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: 🧠 Run Autonomous Maintenance Orchestrator
-        run: node scripts/maintenance/autonomous-maintenance-orchestrator.js
-
-      # Z2M/ZHA case variant compatibility
-      - name: 🔄 Case Variant Sync
+      - name: 🔍 TITAN v5 Health Check
         run: |
-          echo "Syncing case variants for Z2M/ZHA compatibility..."
-          node scripts/automation/detect-missing-variants.js
-          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
-          if [ "$MISSING" -gt 0 ]; then
-            echo "Auto-fixing $MISSING missing variants..."
-            node scripts/automation/fix-detected-variants.js
+          echo "## 🔍 TITAN v5 Health Check" >> $GITHUB_STEP_SUMMARY
+
+          # Run all 10 checks (8 original + 2 new v5 checks)
+          raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          wrong_import=$(grep -r "require('../../lib/TuyaZigbeeDevice')" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          linear_bat=$(grep -r "(voltage - 2\.\|voltage - 3\." drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l)
+          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+
+          TOTAL=$((raw_set + console + empty_mfr + wildcards + title_fmt + wrong_import + linear_bat + utf16 + bare_timeout + bare_timeout_lib))
+
+          echo "| Check | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Raw setCapabilityValue | $raw_set |" >> $GITHUB_STEP_SUMMARY
+          echo "| console.log in drivers | $console |" >> $GITHUB_STEP_SUMMARY
+          echo "| Empty manufacturerName | $empty_mfr |" >> $GITHUB_STEP_SUMMARY
+          echo "| Wildcard fingerprints | $wildcards |" >> $GITHUB_STEP_SUMMARY
+          echo "| titleFormatted [[device]] | $title_fmt |" >> $GITHUB_STEP_SUMMARY
+          echo "| Wrong import paths | $wrong_import |" >> $GITHUB_STEP_SUMMARY
+          echo "| Linear battery formulas | $linear_bat |" >> $GITHUB_STEP_SUMMARY
+          echo "| UTF-16 JSON loading | $utf16 |" >> $GITHUB_STEP_SUMMARY
+          echo "| Bare setTimeout/setInterval (drivers) | $bare_timeout |" >> $GITHUB_STEP_SUMMARY
+          echo "| Bare setTimeout/setInterval (lib) | $bare_timeout_lib |" >> $GITHUB_STEP_SUMMARY
+          echo "| **TOTAL** | **$TOTAL** |" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$TOTAL" -gt 0 ]; then
+            echo "❌ Found $TOTAL violations" >> $GITHUB_STEP_SUMMARY
+            exit 1
           else
-            echo "✓ All variants synced"
+            echo "✅ ZERO VIOLATIONS" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: 🕵️ ZERO DEFECT AUDIT & HARDENING
+      - name: 🔍 JSON Validation
         run: |
-          node scripts/automation/fix-fingerprint-conflicts.js
-          node scripts/remediation/emergency-repair-hardener-corruption.js
-          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
-          node scripts/shadow_sanitizer.js
-          node scripts/maintenance/zero-defect-architect-audit.js
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f'))" 2>/dev/null; then
+              echo "❌ Invalid JSON: $f"
+              FAIL=1
+            fi
+          done
+          [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid"
 
+      - name: 🔍 Fingerprint Health Check
+        run: |
+          if [ -f scripts/validation/check-fingerprint-health.js ]; then
+            node scripts/validation/check-fingerprint-health.js
+          else
+            echo "⚠️ Fingerprint health check script not found"
+          fi
 
-      - name: Commit & Push Changes (Robust)
+      - name: 🔍 TS0601 Catchall Detection
+        run: |
+          echo "## 🔍 TS0601 Catchall Check" >> $GITHUB_STEP_SUMMARY
+          if [ -f scripts/validation/check-ts0601-catchall.js ]; then
+            node scripts/validation/check-ts0601-catchall.js --json 2>/dev/null | tee /tmp/ts0601.json > /dev/null
+            ts0601_total=$(jq -r '.totalDrivers // 0' /tmp/ts0601.json 2>/dev/null || echo "0")
+            ts0601_violations=$(jq -r '.totalViolations // 0' /tmp/ts0601.json 2>/dev/null || echo "0")
+            echo "| TS0601 Drivers | $ts0601_total |" >> $GITHUB_STEP_SUMMARY
+            echo "| TS0601 Violations | $ts0601_violations |" >> $GITHUB_STEP_SUMMARY
+            if [ "$ts0601_violations" != "0" ]; then
+              echo "❌ Found $ts0601_violations TS0601 catchall violations"
+              exit 1
+            else
+              echo "✅ No TS0601 catchall violations"
+            fi
+          else
+            echo "⚠️ TS0601 catchall check script not found" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🔍 Fingerprint Collision Detection
+        run: |
+          echo "## 🔍 Fingerprint Collisions" >> $GITHUB_STEP_SUMMARY
+          if [ -f scripts/validation/check-driver-collisions.js ]; then
+            node scripts/validation/check-driver-collisions.js 2>/dev/null && echo "✅ No fingerprint collisions" >> $GITHUB_STEP_SUMMARY || echo "❌ Fingerprint collisions detected" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🔍 Energy Divisor Validation
+        run: |
+          echo "## 🔍 Energy Divisor Validation" >> $GITHUB_STEP_SUMMARY
+          if [ -f scripts/validation/check-energy-divisor.js ]; then
+            node scripts/validation/check-energy-divisor.js --json 2>/dev/null | tee /tmp/energy-divisor.json > /dev/null
+            energy_total=$(jq -r '.totalDrivers // 0' /tmp/energy-divisor.json 2>/dev/null || echo "0")
+            energy_violations=$(jq -r '.totalViolations // 0' /tmp/energy-divisor.json 2>/dev/null || echo "0")
+            echo "| Energy Drivers | $energy_total |" >> $GITHUB_STEP_SUMMARY
+            echo "| Divisor Violations | $energy_violations |" >> $GITHUB_STEP_SUMMARY
+            if [ "$energy_violations" != "0" ]; then
+              echo "⚠️ Found $energy_violations energy drivers without proper divisor"
+            fi
+          else
+            echo "⚠️ Energy divisor check script not found" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🔍 Image Conformity Check
+        run: |
+          echo "## 🔍 Image Conformity" >> $GITHUB_STEP_SUMMARY
+          MISSING_ICON=0
+          MISSING_SMALL=0
+          MISSING_LARGE=0
+          TOTAL_DRIVERS=0
+          for dir in drivers/*/; do
+            driver=$(basename "$dir")
+            TOTAL_DRIVERS=$((TOTAL_DRIVERS + 1))
+            [ ! -f "$dir/assets/icon.svg" ] && MISSING_ICON=$((MISSING_ICON + 1))
+            if [ ! -f "$dir/assets/images/small.png" ] && [ ! -f "$dir/assets/small.png" ]; then
+              MISSING_SMALL=$((MISSING_SMALL + 1))
+            fi
+            if [ ! -f "$dir/assets/images/large.png" ] && [ ! -f "$dir/assets/large.png" ]; then
+              MISSING_LARGE=$((MISSING_LARGE + 1))
+            fi
+          done
+          echo "| Total Drivers | $TOTAL_DRIVERS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Missing icon.svg | $MISSING_ICON |" >> $GITHUB_STEP_SUMMARY
+          echo "| Missing small.png | $MISSING_SMALL |" >> $GITHUB_STEP_SUMMARY
+          echo "| Missing large.png | $MISSING_LARGE |" >> $GITHUB_STEP_SUMMARY
+
+      - name: 📊 Project Stats
+        run: |
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          LIB_FILES=$(find lib -name "*.js" 2>/dev/null | wc -l)
+          WORKFLOWS=$(ls .github/workflows/*.yml 2>/dev/null | wc -l)
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Project Stats" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | $DRIVERS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Lib Files | $LIB_FILES |" >> $GITHUB_STEP_SUMMARY
+          echo "| Workflows | $WORKFLOWS |" >> $GITHUB_STEP_SUMMARY
+
+      - name: Commit & Push Changes
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "✅ No changes to commit"
           else
-            git commit -m "v${VER}: daily self-healing (collisions + hygiene + flows + linter) [skip ci]"
-            
-            # Intelligent Push with Retry/Rebase
-            MAX_RETRIES=5
-            RETRY_COUNT=0
-            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
-            do
-              git pull --rebase origin master && git push origin master && break
-              RETRY_COUNT=$((RETRY_COUNT+1))
-              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
-              sleep $((RANDOM % 10 + 5))
-            done
-          fi
-      
-      # NEW: Check for invalid paths (spaces in require/import)
-      - name: 🔍 Check Invalid Paths
-        id: check-paths
-        run: |
-          echo "🔍 Checking for invalid paths (spaces in require/import)..."
-          echo ""
-          
-          # Quick grep check for the specific pattern
-          INVALID_COUNT=$(grep -rn "'.* / " --include="*.js" --include="*.json" . 2>/dev/null | \
-            grep -v "node_modules" | \
-            grep -v ".git" | \
-            grep -v "// " | \
-            grep -v "\"/" | \
-            wc -l)
-          
-          if [ "$INVALID_COUNT" -gt 0 ]; then
-            echo "::error::Found $INVALID_COUNT potential invalid path(s) with spaces"
-            grep -rn "'.* / " --include="*.js" --include="*.json" . 2>/dev/null | \
-              grep -v "node_modules" | \
-              grep -v ".git" | \
-              head -20
-            exit 1
-          else
-            echo "✅ No invalid paths found"
+            VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+            git commit -m "maintenance: weekly health check v$VER [skip ci]"
+            git push
+            echo "✅ Changes committed and pushed"
           fi

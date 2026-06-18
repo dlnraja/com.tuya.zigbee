@@ -228,7 +228,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS011F"
@@ -243,6 +242,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_tz3000_m0vaazab"]
   },
   "metadata": {
     "driver": {

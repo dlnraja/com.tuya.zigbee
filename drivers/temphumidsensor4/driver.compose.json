@@ -27,6 +27,7 @@
   "images": {
     "small": "/{{driverAssetsPath}}/images/small.png",
     "large": "/{{driverAssetsPath}}/images/large.png"
+  
   },
   "zigbee": {
     "productId": [
@@ -53,9 +54,7 @@
         "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_temphumidsensor4_needs_device_assignment"]
   },
   "version": "1.0.0"
 }

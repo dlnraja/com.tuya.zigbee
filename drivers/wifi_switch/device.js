@@ -9,9 +9,9 @@ class WiFiSwitchDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '7':  { capability: 'unknown' }, // countdown_1 (seconds)
+      '7':  { capability: 'countdown_remaining' },
       '13': { capability: 'unknown' }, // master switch
-      '14': { capability: 'unknown' }, // power-on status: off/on/memory
+      '14': { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       '15': { capability: 'unknown' }, // indicator: none/relay/pos
       '16': { capability: 'unknown' }, // backlight switch
       '17': { capability: 'unknown' }, // cycle timing
@@ -36,7 +36,10 @@ class WiFiSwitchDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

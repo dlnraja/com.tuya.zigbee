@@ -17,7 +17,9 @@
     "alarm_contact",
     "alarm_tamper",
     "measure_luminance",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining",
+    "child_lock"
   ],
   "energy": {
     "batteries": [
@@ -646,7 +648,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "Excellux"
@@ -658,5 +659,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_contact_sensor_plug_needs_device_assignment"]
   }
 }

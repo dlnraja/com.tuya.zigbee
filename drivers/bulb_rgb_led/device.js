@@ -3,7 +3,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const LightBase = require('../../lib/devices/UnifiedLightBase');
 
-class RGBBulbLedDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+class RGBBulbLedDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
   get mainsPowered() { return true; }
 
   get lightCapabilities() {
@@ -18,8 +18,8 @@ class RGBBulbLedDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)
       4: { capability: 'light_temperature', transform: (v) => 1 - (v / 1000) },
       5: { capability: null, internal: 'hsv', transform: (v) => this._parseHSV(v) },
       6: { capability: null, internal: 'scene_data' },
-      7: { capability: null, internal: 'countdown', writable: true },
-      21: { capability: null, internal: 'power_on_behavior', writable: true },
+      7: { capability: 'countdown_remaining' },
+      21: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       24: { capability: null, internal: 'hsv_alt', transform: (v) => this._parseHSV(v) },
       25: { capability: 'dim', transform: (v) => Math.max(0.01, v / 1000) },
       26: { capability: 'light_temperature', transform: (v) => 1 - (v / 1000) }

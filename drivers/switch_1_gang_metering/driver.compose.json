@@ -21,6 +21,7 @@
     "measure_power": {
       "approximated": true
     }
+  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -63,8 +64,9 @@
       "instruction": {
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_tz3000_prits6g4"]
   },
   "version": "1.0.0"
 }

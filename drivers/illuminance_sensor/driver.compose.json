@@ -39,8 +39,9 @@
       "instruction": {
         "en": "Hold button 5s until LED flashes."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_illuminance_sensor_needs_device_assignment"]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
   "images": {

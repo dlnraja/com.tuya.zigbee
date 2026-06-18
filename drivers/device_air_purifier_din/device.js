@@ -54,19 +54,19 @@ class DinRailMeterDevice extends ZigBeeDevice {
       emCluster.on('attr.activePower', (value) => {
         const power =((value * safeParse)(this._powerScale) * 10);
         this.log(`[EM] Power: ${power}W`);
-        this.setCapabilityValue('measure_power', power).catch(this.error);
+        this.safeSetCapabilityValue('measure_power', power).catch(this.error);
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
         const voltage = safeMultiply(value, 10);
         this.log(`[EM] Voltage: ${voltage}V`);
-        this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+        this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
         const current = value * 1000;
         this.log(`[EM] Current: ${current}A`);
-        this.setCapabilityValue('measure_current', current).catch(this.error);
+        this.safeSetCapabilityValue('measure_current', current).catch(this.error);
       });
     }
 
@@ -77,7 +77,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
         const energy = value * 1000;
         this.log(`[METERING] Energy: ${energy}kWh`);
-        this.setCapabilityValue('meter_power', energy).catch(this.error);
+        this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
       });
     }
   }
@@ -116,39 +116,39 @@ class DinRailMeterDevice extends ZigBeeDevice {
     case 1: //Total energy consumed (kWh*100)
       const energy = value * 100;
       this.log(`[DP1] Energy consumed: ${energy}kWh`);
-      this.setCapabilityValue('meter_power', energy).catch(this.error);
+      this.safeSetCapabilityValue('meter_power', energy).catch(this.error);
       break;
 
     case 6: //Total energy exported (kWh*100) - for bidirectional meters
       if (this._bidirectional && this.hasCapability('meter_power.exported')) {
         const exported = value * 100;
         this.log(`[DP6] Energy exported: ${exported}kWh`);
-        this.setCapabilityValue('meter_power.exported', exported).catch(this.error);
+        this.safeSetCapabilityValue('meter_power.exported', exported).catch(this.error);
       }
       break;
 
     case 18: // Power (W)
       const power =safeMultiply(value, this)._powerScale;
       this.log(`[DP18] Power: ${power}W`);
-      this.setCapabilityValue('measure_power', power).catch(this.error);
+      this.safeSetCapabilityValue('measure_power', power).catch(this.error);
       break;
 
     case 19: //Voltage (V*10)
       const voltage = safeMultiply(value, 10);
       this.log(`[DP19] Voltage: ${voltage}V`);
-      this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+      this.safeSetCapabilityValue('measure_voltage', voltage).catch(this.error);
       break;
 
     case 20: //Current (A*1000)
       const current = value * 1000;
       this.log(`[DP20] Current: ${current}A`);
-      this.setCapabilityValue('measure_current', current).catch(this.error);
+      this.safeSetCapabilityValue('measure_current', current).catch(this.error);
       break;
 
     case 17: // Total current for some models
       const totalCurrent = value * 1000;
       this.log(`[DP17] Total current: ${totalCurrent}A`);
-      this.setCapabilityValue('measure_current', totalCurrent).catch(this.error);
+      this.safeSetCapabilityValue('measure_current', totalCurrent).catch(this.error);
       break;
 
     case 101: // Power factor (some models)
@@ -174,6 +174,8 @@ class DinRailMeterDevice extends ZigBeeDevice {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

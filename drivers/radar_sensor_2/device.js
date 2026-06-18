@@ -63,7 +63,7 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
     switch (dp) {
       case V2_RADAR_SENSOR_DATA_POINTS.presenceState:
         this.log('Received presence state:', parsedValue);
-        await this.setCapabilityValue('alarm_motion', parsedValue === true || parsedValue === 1).catch(this.error);
+        await this.safeSetCapabilityValue('alarm_motion', parsedValue === true || parsedValue === 1).catch(this.error);
         break;
 
       case V2_RADAR_SENSOR_DATA_POINTS.radarSensitivity:
@@ -78,7 +78,7 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
       case V2_RADAR_SENSOR_DATA_POINTS.targetDistance:
         const distanceUpdateInterval = this.getSetting('distance_update_interval') ?? 10;
         if (new Date().getSeconds() % distanceUpdateInterval === 0) {
-          this.setCapabilityValue('target_distance', parsedValue / 100).catch(this.error); // converting to meters
+          this.safeSetCapabilityValue('target_distance', parsedValue / 100).catch(this.error); // converting to meters
           // Trigger the custom flow card for target distance change
           await this.targetDistanceTrigger.trigger(this, { target_distance: parsedValue / 100 }).catch(this.error);
         }
@@ -113,10 +113,11 @@ class radarSensor2 extends TuyaSpecificClusterDevice {
 
   onIlluminanceMeasuredAttributeReport(measuredValue) {
     this.log('measure_luminance | Luminance - measuredValue (lux):', measuredValue);
-    this.setCapabilityValue('measure_luminance', measuredValue).catch(this.error);
+    this.safeSetCapabilityValue('measure_luminance', measuredValue).catch(this.error);
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Radar sensor removed');
   }
 }

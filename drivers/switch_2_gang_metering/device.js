@@ -110,6 +110,7 @@ class switch_2_gang_metering extends UnifiedSwitchBase {
   }
 
   onDeleted(){
+    super.onDeleted();
   this.log("2 Gang Switch, channel ", subDeviceId, " removed")
 	}
 

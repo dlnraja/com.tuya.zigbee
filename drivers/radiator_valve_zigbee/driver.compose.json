@@ -15,7 +15,8 @@
     "onoff",
     "window_detection",
     "child_lock",
-    "alarm_battery"
+    "alarm_battery",
+    "frost_protection_temperature"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

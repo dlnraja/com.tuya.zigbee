@@ -7,5 +7,6 @@ class D extends EweLinkLocalDevice{
       });
   }
   async onInit(){await super.onInit();this.log('[EWE-PLUG] Ready - S20/S26/S26R2');}
+  async onDeleted(){if(this._destroyed)return;this._destroyed=true;await super.onDeleted();}
 }
 module.exports=D;

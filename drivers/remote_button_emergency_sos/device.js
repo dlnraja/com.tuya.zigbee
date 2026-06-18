@@ -18,6 +18,7 @@ class SmartRemote4ButtonsDevice extends ButtonDevice {
 
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

@@ -32,7 +32,9 @@ function loadDrivers() {
           productIds: compose.zigbee.productId || []
         });
       }
-    } catch (e) {}
+    } catch (e) {
+      console.warn(`[WARN] Error parsing ${composePath}: ${e.message}`);
+    }
   }
   return drivers;
 }

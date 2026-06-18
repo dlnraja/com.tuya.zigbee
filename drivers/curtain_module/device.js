@@ -40,6 +40,7 @@ class curtain_module extends ZigBeeDevice {
                       this._reportPercentageDebounce.refresh();
                     } else {
                       this._reportPercentageDebounce = this.homey.setTimeout(() => {
+                        if (this._destroyed) return;
                         this._reportDebounceEnabled = false;
                         this._reportPercentageDebounce = null;
                       }, REPORT_DEBOUNCER);
@@ -59,7 +60,7 @@ class curtain_module extends ZigBeeDevice {
                       await this.zclNode.endpoints[windowCoveringEndpoint].clusters
                         .windowCovering[windowCoveringCommand]();
 
-                      await this.setCapabilityValue('windowcoverings_set', value).catch(() => {});
+                      await this.safeSetCapabilityValue('windowcoverings_set', value).catch(() => {});
                       return null;
                     }
 
@@ -166,6 +167,7 @@ class curtain_module extends ZigBeeDevice {
     }
 
     onDeleted() {
+      super.onDeleted();
         this.log("Curtain Module removed");
     }
 

@@ -16,6 +16,7 @@
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
+  
   },
   "energy": {
     "approximation": {
@@ -44,9 +45,7 @@
         "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_smart_switch_needs_device_assignment"]
   },
   "version": "1.0.0"
 }

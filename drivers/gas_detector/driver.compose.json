@@ -31,12 +31,15 @@
       "_tyzb01_0w3d5uw3",
       "_tze200_m6kdujme",
       "_tze204_chbyv06",
+      "_tze204_chbyv06x",
+      "_TZE284_chbyv06x",
       "_tze200_ioxkjvuz",
       "_tz3000_8nysnv3b",
       "_tze204_uc0iv1hb",
       "_tz3000_ywagc4rj",
       "_TZE200_ywagc4rj",
-      "_TZE204_ywagc4rj"
+      "_TZE204_ywagc4rj",
+      "_TZE204_qvxrkeif"
     ],
     "learnmode": {
       "image": "/drivers/gas_detector/assets/learnmode.svg",
@@ -267,6 +270,19 @@
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "invert_alarm",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Gas Alarm Logic",
+        "fr": "Inverser la logique d'alarme gaz"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if sensor reports gas alarm inverted (true when no gas, false when gas detected). Fixes NOUS E9 and similar devices.",
+        "fr": "Activez si le capteur signale l'alarme gaz inversée (vrai quand pas de gaz, faux quand gaz détecté). Corrige NOUS E9 et appareils similaires."
       }
     }
   ],

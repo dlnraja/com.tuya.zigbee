@@ -25,8 +25,8 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: 'dim', transform: (v) => Math.max(0.01, v * 1000) },
       3: { internal: true, type: 'min_brightness', writable: true },
-      4: { internal: true, type: 'countdown', writable: true },
-      21: { internal: true, type: 'power_on_behavior', writable: true },
+      4: { capability: 'countdown_remaining' },
+      21: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       101: { capability: 'dim', divisor: 100 }
     };
   }
@@ -57,6 +57,8 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

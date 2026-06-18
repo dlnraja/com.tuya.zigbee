@@ -16,7 +16,9 @@
     "measure_battery",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining",
+    "child_lock"
   ],
   "energy": {
     "batteries": [
@@ -645,7 +647,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0201",
@@ -658,6 +659,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_climate_sensor_plug_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

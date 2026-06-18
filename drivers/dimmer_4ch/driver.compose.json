@@ -1,0 +1,79 @@
+{
+  "name": {
+    "en": "4-Channel Dimmer",
+    "fr": "Variateur 4 Canaux"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "onoff.2",
+    "dim.2",
+    "onoff.3",
+    "dim.3",
+    "onoff.4",
+    "dim.4"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": { "duration": true }
+    },
+    "dim.2": {
+      "title": { "en": "Brightness Channel 2" },
+      "opts": { "duration": true }
+    },
+    "dim.3": {
+      "title": { "en": "Brightness Channel 3" },
+      "opts": { "duration": true }
+    },
+    "dim.4": {
+      "title": { "en": "Brightness Channel 4" },
+      "opts": { "duration": true }
+    },
+    "onoff.2": {
+      "title": { "en": "On/Off Channel 2" }
+    },
+    "onoff.3": {
+      "title": { "en": "On/Off Channel 3" }
+    },
+    "onoff.4": {
+      "title": { "en": "On/Off Channel 4" }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_dimmer_4ch_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/dimmer_4ch/assets/images/small.png",
+    "large": "/drivers/dimmer_4ch/assets/images/large.png",
+    "xlarge": "/drivers/dimmer_4ch/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "dimmer_4ch",
+  "version": "1.0.0"
+}

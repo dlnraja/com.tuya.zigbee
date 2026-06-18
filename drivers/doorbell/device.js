@@ -1,13 +1,14 @@
 'use strict';
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 class DoorbellDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['alarm_generic', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {
     return {
-      1: { capability: 'alarm_generic', transform: (v) => v === 1 || v === true },
-      4: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
+      1: { capability: 'alarm_generic', transform: boolean() },
+      4: { capability: 'alarm_tamper', transform: boolean() },
       15: { capability: 'measure_battery', divisor: 1 }
     };
   }
@@ -42,6 +43,8 @@ class DoorbellDevice extends UnifiedSensorBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

@@ -290,7 +290,7 @@ class IRRemoteDevice extends ZigBeeDevice {
       } catch (e) { /* raw code */ }
 
       // Update capability
-      this.setCapabilityValue('ir_learned_code', keyCode).catch(this.error);
+      this.safeSetCapabilityValue('ir_learned_code', keyCode).catch(this.error);
 
       // Trigger flow
       const card = this.homey.flow.getDeviceTriggerCard('ir_code_received');
@@ -346,7 +346,10 @@ class IRRemoteDevice extends ZigBeeDevice {
     return { position: pos, msgpart: chunk, msgpartcrc: d[d.length - 1] };
   }
 
-  onDeleted() { this.log('[IR] Device deleted'); }
+  onDeleted() {
+    super.onDeleted();
+    this.log('[IR] Device deleted');
+  }
 }
 
 module.exports = IRRemoteDevice;

@@ -127,6 +127,7 @@ class switch_4_gang_metering extends UnifiedSwitchBase {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log(`Double Power Point removed`);
   }
 

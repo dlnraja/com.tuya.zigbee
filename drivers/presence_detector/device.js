@@ -152,7 +152,7 @@ class PresenceDetectorDevice extends Homey.Device {
   async safesetCapability(capability, value) {
     if (this._destroyed) return;
     try {
-      await this.setCapabilityValue(capability, value);
+      await this.safeSetCapabilityValue(capability, value);
     } catch (err) {
       if (!this._destroyed) {
         this.error(`[PRESENCE_DEVICE] Failed to set ${capability}:`, err.message);
@@ -213,6 +213,8 @@ class PresenceDetectorDevice extends Homey.Device {
    * onDeleted is called when the user deletes the device.
    */
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this._destroyed = true;
     if (this._detector) {
       await this._detector.stop();

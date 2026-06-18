@@ -12,10 +12,11 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
+
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_set_windowcoverings_set_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_windowcoverings_set');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -23,34 +24,34 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_set_windowcoverings_set_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_set_windowcoverings_set: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_open_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_windowcoverings_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_open_curtain_motor_shutter_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_windowcoverings_open triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_open_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_windowcoverings_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_close_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_windowcoverings_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_close_curtain_motor_shutter_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_windowcoverings_close triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_close_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_windowcoverings_close: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_set_dim_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -58,34 +59,34 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_set_dim_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_set_dim: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_stop_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_stop');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_hybrid_curtain_motor_stop_curtain_motor_shutter_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_stop triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_stop_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_stop: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_set_favorite_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_favorite');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_hybrid_curtain_motor_set_favorite_curtain_motor_shutter_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_set_favorite triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_set_favorite_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_set_favorite: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_set_brightness_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -93,10 +94,10 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_set_brightness_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_set_brightness: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_set_position_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_set_position');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -104,31 +105,31 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_set_position_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_set_position: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_open_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_hybrid_curtain_motor_open_curtain_motor_shutter_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_open triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_open_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_curtain_motor_close_curtain_motor_shutter_hybrid');
+      const card = this.homey.flow.getActionCard('curtain_motor_shutter_curtain_motor_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action curtain_motor_shutter_hybrid_curtain_motor_close_curtain_motor_shutter_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action curtain_motor_shutter_curtain_motor_close triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action curtain_motor_shutter_hybrid_curtain_motor_close_curtain_motor_shutter_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action curtain_motor_shutter_curtain_motor_close: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

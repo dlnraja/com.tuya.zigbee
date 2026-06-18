@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Water droplet -->
+  <path d="M480 180C480 180 320 400 320 520C320 610 390 700 480 700C570 700 640 610 640 520C640 400 480 180 480 180Z"
+        stroke="black" stroke-width="40" fill="none" stroke-linejoin="round"/>
+  <!-- Water level inside -->
+  <path d="M400 600C420 580 460 580 480 600C500 580 540 580 560 600L560 680C560 690 550 700 480 700C410 700 400 690 400 680Z"
+        fill="black"/>
+  <!-- Alert symbol -->
+  <circle cx="480" cy="500" r="50" stroke="black" stroke-width="25" fill="none"/>
+  <line x1="480" y1="470" x2="480" y2="510" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <circle cx="480" cy="530" r="8" fill="black"/>
+</svg>

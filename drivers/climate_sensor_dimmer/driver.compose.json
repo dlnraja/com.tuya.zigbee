@@ -357,7 +357,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0201",
@@ -370,6 +369,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_climate_sensor_dimmer_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

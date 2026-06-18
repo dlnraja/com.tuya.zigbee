@@ -843,6 +843,35 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
          └───────────────────────┘ └───────────────────────┘
 ```
 
+### WiFi Device Lifecycle
+```
+TuyaLocalDevice.onInit()
+  -> TuyaLocalClient.connect()        [TCP socket, adaptive handshake]
+  -> registerCapabilityListener()     [onoff, dim, hue_sat, etc.]
+  -> startHeartbeatWatchdog()         [missed heartbeat detection]
+  -> Command Queue (200ms rate limit) [anti-flood protection]
+
+TuyaLocalDevice.onUninit()
+  -> client.destroy()                 [close socket, clear intervals]
+  -> removeAllListeners()             [prevent memory leaks]
+  -> this._destroyed = true           [guard against late callbacks]
+```
+
+### Zigbee Device Lifecycle
+```
+TuyaZigbeeDevice.onNodeInit()
+  -> _initCustomClusters()            [0xEF00, 0xE000, 0xE001-E003]
+  -> _setupUniversalHybridMode()      [ZCL + Tuya DP listeners]
+  -> registerCapabilityListener()     [per capability]
+  -> SmartDivisorManager.detect()     [auto-divisor detection]
+  -> TimeSyncEngine.sync()            [if time-dependent device]
+
+TuyaZigbeeDevice.onDeleted() / onUninit()
+  -> this._destroyed = true
+  -> _destroyDevice()                 [cleanup timers, listeners]
+  -> unsubscribeFromClusterReports()  [prevent ghost reports]
+```
+
 ### Key Structural Pillars
 1. **Delegated Connection Pool**: Individual device classes do not instantiate `tuyapi` directly. They instantiate `TuyaLocalClient` which unifies all connection handling, encryption, and socket states.
 2. **200ms Queue Throttle**: Commands sent via `.setDP()` or `.setDPs()` are added to a rate-limited queue, ensuring a `200ms` window between frame writes. This keeps cheaper Tuya WiFi chips from dropping connections due to packet flooding.
@@ -876,6 +905,23 @@ To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached h
 To support offline/local functionality while avoiding startup OOM, a two-layer design was implemented:
 - **Static Matching Layer (Pairing Time)**: Device manufacturer names (mfs) and `modelId` / `deviceId` strings must be statically defined in the driver's `driver.compose.json` and the central `app.json` fingerprints. This allows the Homey Pro Z-Wave/Zigbee pairing wizard to match the device and successfully bind it locally.
 - **Dynamic Refinement Layer (Runtime)**: Dynamic database files (like `fingerprints.json` and `driver-mapping-database.json`) must remain in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capability mappings and DP values dynamically at runtime.
+
+### 22.3. MCU Format Guessing (TuyaTimeSyncFormats.guessFormat())
+When encountering an unknown device, the time sync engine uses 6 heuristics to rank time format candidates:
+1. **Manufacturer prefix**: `_TZE200/204/284` -> TUYA_DUAL_2000 (MCU-based); `_TZ3000/3210` -> ZIGBEE_2000 (ZCL)
+2. **Product ID**: `TS0601` -> TUYA_DUAL_2000; `TS0201` -> ZIGBEE_2000; `TS130F` -> TUYA_STANDARD
+3. **Endpoint clusters**: 0xEF00 present -> MCU device; 0x000A present -> ZCL time cluster
+4. **Driver class**: Thermostat -> TUYA_FULL_TZ; Sensor -> TUYA_DUAL_2000; Cover -> TUYA_STANDARD
+5. **Known device patterns**: Specific manufacturer IDs mapped to proven formats
+6. **Model ID patterns**: 'th'/'temp' -> dual; 'trv'/'valve' -> full TZ; 'lcd'/'display' -> dual
+
+### 22.4. Smart Calibration (SmartDivisorManager)
+- **Auto-detection**: SmartDivisorManager (`lib/managers/SmartDivisorManager.js`, 16.7KB) auto-detects DP value divisors at runtime
+- **Known divisor DPs**: DP18 (temp/10), DP19 (humidity/10), DP22 (formaldehyde/100)
+- **Double-division prevention**: TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
+- **Never assume 1:1 scaling**; always check SmartDivisorManager for auto-detection
+- **Validation**: Values are checked against VALID_RANGES before capability updates
+- **Cache**: Automatic caching per (manufacturerName + dpId + capability)
 
 ### 22.3. Promise-Chaining Trigger Card Crash Prevention (v9.5.0+)
 To prevent runtime type errors and crashes (e.g. `TypeError: card.trigger is not a function`) when triggering device-specific cards in multi-gang BSEED or standard switch drivers, the trigger handling pattern is strictly isolated:
@@ -1118,7 +1164,7 @@ node scripts/restore-master-only-hybrid-mfs.js
 node scripts/validation/check-fingerprint-health.js   # Verify
 ```
 
-### Fingerprint Statistics (v9.0.36)
+### Fingerprint Statistics (v9.0.39)
 
 | Metric | Value |
 |--------|-------|
@@ -1131,6 +1177,9 @@ node scripts/validation/check-fingerprint-health.js   # Verify
 | Validation level | **publish** |
 | Pre-commit checks | PASSED |
 | Driver health average | 81/100 |
+| Time sync formats | 23 |
+| MCU protocol versions | 5 (v3.1-v3.5) |
+| Smart calibration DPs | 8 (temp, humidity, CO2, formaldehyde, power, voltage, current, battery) |
 
 ---
 
@@ -1315,6 +1364,7 @@ node scripts/ci/find-bloat.js           # Bundle size analysis
 
 ---
 
-**Last Updated**: 2026-06-15 | **Version**: 9.0.38
+**Last Updated**: 2026-06-15 | **Version**: 9.0.39
 **Generated by**: Antigravity AI | **Author**: dlnraja
+**Updated**: WiFi/Zigbee Lifecycle, MCU Format Guessing, Smart Calibration, Button Flow Cards
 **END OF PROJECT_INDEX.md**

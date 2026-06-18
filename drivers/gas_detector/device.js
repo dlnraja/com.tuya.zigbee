@@ -1,5 +1,6 @@
 'use strict';
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
  * Gas Detector Device - TS0601 Tuya DP Protocol
@@ -25,9 +26,13 @@ class GasDetectorDevice extends UnifiedSensorBase {
     const device = this;
     return {
       // DP1: Gas alarm (primary)
-      1: { 
-        capability: 'alarm_gas', 
-        transform: (v) => v === 1 || v === true || v === 'alarm'
+      1: {
+        capability: 'alarm_gas',
+        transform: (v) => {
+          const boolVal = (v === 1 || v === true);
+          const invert = device.getSetting('invert_alarm') || false;
+          return invert ? !boolVal : boolVal;
+        }
       },
       // DP2: Gas concentration value (LEL %)
       2: { internal: true, type: 'gas_value',
@@ -118,6 +123,8 @@ class GasDetectorDevice extends UnifiedSensorBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

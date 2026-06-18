@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Plug body -->
+  <rect x="250" y="300" width="460" height="460" rx="60" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Power prongs -->
+  <rect x="360" y="180" width="60" height="160" rx="15" fill="black"/>
+  <rect x="540" y="180" width="60" height="160" rx="15" fill="black"/>
+  <!-- Ground pin -->
+  <rect x="450" y="200" width="60" height="120" rx="15" fill="black"/>
+  <!-- Power indicator -->
+  <circle cx="480" cy="530" r="40" stroke="black" stroke-width="25" fill="none"/>
+  <!-- Lightning bolt -->
+  <path d="M490 490 L470 530 L490 530 L470 570" stroke="black" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

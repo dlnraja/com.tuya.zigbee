@@ -9,7 +9,9 @@
   "capabilities": [
     "dim",
     "onoff",
-    "measure_power"
+    "measure_power",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "energy": {},
   "zigbee": {

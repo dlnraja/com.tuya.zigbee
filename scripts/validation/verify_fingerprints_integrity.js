@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+'use strict';
 const fs = require('fs');
 const path = require('path');
 
@@ -6,12 +8,15 @@ const path = require('path');
  * Automatically verifies that:
  * 1. Every fingerprint listed in `fingerprints.json` maps to a valid existing driver
  * 2. Every fingerprint in `fingerprints.json` is correctly embedded in its target `driver.compose.json`
- * 
- * Usage: node verify_fingerprints_integrity.js [--fix]
+ *
+ * Usage: node scripts/validation/verify_fingerprints_integrity.js [--fix]
+ * Exit codes: 0 = pass, 1 = failures found, 2 = script error
  */
 
 const projectRoot = path.join(__dirname, '../..');
-const fingerprintsPath = path.join(projectRoot, 'lib/tuya/fingerprints.json');
+const fingerprintsPath = fs.existsSync(path.join(projectRoot, 'data/fingerprints.json'))
+  ? path.join(projectRoot, 'data/fingerprints.json')
+  : path.join(projectRoot, 'lib/tuya/fingerprints.json');
 const driversDir = path.join(projectRoot, 'drivers');
 const isFixMode = process.argv.includes('--fix');
 

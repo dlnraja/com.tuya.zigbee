@@ -5,35 +5,42 @@
       "title": {
         "fr": "Bouton appuyé",
         "en": "Button pressed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_remote_1_button_button_1gang_button_1_double",
       "title": {
         "fr": "Bouton double-appui",
         "en": "Button double-pressed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_remote_1_button_button_1gang_button_1_long",
       "title": {
         "fr": "Bouton appui long",
         "en": "Button long-pressed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_remote_1_button_button_1gang_button_1_triple",
       "title": {
         "fr": "Bouton triple-appui",
         "en": "Button triple-pressed"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_remote_1_button_button_1gang_button_1_release",
       "title": {
         "fr": "Bouton relâché",
         "en": "Button released"
-      }
+      },
+      "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

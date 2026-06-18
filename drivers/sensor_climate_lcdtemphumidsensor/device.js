@@ -518,6 +518,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         // DP-capable device  start 5-minute observation window
         this._probeObservationSamples = [];
         this._probeObservationTimer = this.homey.setTimeout(() => {
+          if (this._destroyed) return;
           this._evaluateProbeDedup();
         },5 * 60 * 1000); // 5 minutes
         this.log('[CLIMATE]  Probe observation started (5min window for dedup check)');
@@ -610,6 +611,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
       // Daily sync (ultra battery-safe)
       this._dailyZclSyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         this.log('[CLIMATE]  Daily ZCL Time sync...');
         const result = await this.zigbeeTimeSync.sync();
         this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
@@ -640,7 +642,8 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       // LCD devices are passive and may miss the first sync attempts
       const lcdSyncDelays = [3000, 10000, 30000, 60000, 120000]; // 3s, 10s, 30s, 1m, 2m
       lcdSyncDelays.forEach((delay, index) => {
-        setTimeout(async () => {
+        this.homey.setTimeout(async () => {
+          if (this._destroyed) return;
           try {
             this.log(`[CLIMATE]  LCD time sync attempt ${index + 1}/${lcdSyncDelays.length}...`);
             await this._sendForcedTimeSync();
@@ -653,6 +656,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
       // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
       this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         this.log('[CLIMATE]  Hourly LCD Tuya EF00 time sync...');
         await this._sendForcedTimeSync().catch(e => this.log('[CLIMATE] LCD sync failed:', e.message));
       },60 * 60 * 1000); // 1 hour
@@ -661,6 +665,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     // Legacy time sync for non-RTC devices (keep existing behavior)
     if (!TuyaDeviceClassifier.hasRtcScreen(this) && !this.isLCDClimateDevice()) {
       this._hourlySyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         this.log('[CLIMATE]  Hourly time sync (non-RTC device)...');
         await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
       },60 * 60 * 1000); // 1 hour
@@ -1091,7 +1096,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
             const battery = Math.round(value);
             this.log(`[ZCL]  Battery: ${battery}%`);
-            this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
+            this.safeSetCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
       });
           this.log('[ZCL-SETUP]  Battery listener active');
         }
@@ -1132,7 +1137,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
               this.log(`[ZCL]  Temperature: ${calibratedTemp}Â°C`);
-              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
+              this.safeSetCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP]  Temperature listener active');
@@ -1178,7 +1183,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
               // v5.5.793: Apply calibration offset
               const calibratedHum = this._applyHumOffset(hum);
               this.log(`[ZCL]  Humidity: ${calibratedHum}%`);
-              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
+              this.safeSetCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP]  Humidity listener active');
@@ -1210,7 +1215,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         if (attrs.batteryPercentageRemaining !== undefined) {
           const battery = Math.round(attrs.batteryPercentageRemaining);
           this.log(`[ZCL-READ]  Battery: ${battery}%`);
-          await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
+          await this.safeSetCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
         }
       } catch (e) {
         this.log('[ZCL-READ] Battery read failed:', e.message);
@@ -1226,7 +1231,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           const temp = attrs.measuredValue * 100;
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ]  Temperature: ${temp}Â°C`);
-            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       } catch (e) {
@@ -1243,7 +1248,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           const hum = attrs.measuredValue * 100;
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ]  Humidity: ${hum}%`);
-            await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+            await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
           }
         }
       } catch (e) {
@@ -1269,6 +1274,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     intervals.forEach((delay, index) => {
       const timer = this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         this.log(`[CLIMATE]  DP request attempt ${index + 1}/${intervals.length}`);
 
         const zclNode = this._zclNode;
@@ -1339,7 +1345,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           this.log('[MAGIC-PACKET]  mcuVersionRequest not available');
         }
 
-        await new Promise(r => setTimeout(r, 200));
+        await new Promise(r => this.homey.setTimeout(r, 200));
 
         this.log('[MAGIC-PACKET]  Sending Data Query (0x03)...');
         if (typeof tuyaCluster.dataQuery === 'function') {
@@ -1388,7 +1394,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           this.log('[MAGIC-PACKET-RAW] MCU Version via command failed:', e.message);
         }
 
-        await new Promise(r => setTimeout(r, 200));
+        await new Promise(r => this.homey.setTimeout(r, 200));
 
         // Send Data Query (Command 0x03)
         try {
@@ -1470,6 +1476,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    * Merged from climate_box_vvmbj46n - LCD devices need time sync when they wake
    */
   async _handleDP(dp, value, dataType) {
+    if (this._destroyed) return;
     // Device is awake! Trigger time sync for LCD displays
         if (CI.containsCI(getManufacturer(this), '_tze284')) {
       this._sendTimeSync().catch(() => { });
@@ -1481,19 +1488,19 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       if (dp === 5) {
         const temp = safeMultiply(this._applyTempOffset(value, 10));
         this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
-        await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+        await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         return;
       }
       if (dp === 3) {
         const moisture = value > 100 ? Math.round(value) : value;
         this.log(`[SOIL] DP3 soil_moisture raw=${value}  ${moisture}%`);
-        await this.setCapabilityValue('measure_humidity', moisture).catch(() => {});
+        await this.safeSetCapabilityValue('measure_humidity', moisture).catch(() => {});
         return;
       }
       if (dp === 15) {
         const bat = Math.min(100, value);
         this.log(`[SOIL] DP15 battery raw=${value}  ${bat}%`);
-        await this.setCapabilityValue('measure_battery', bat).catch(() => {});
+        await this.safeSetCapabilityValue('measure_battery', bat).catch(() => {});
         return;
       }
     }
@@ -1604,14 +1611,12 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     super.onTuyaStatus(status);
 
     // Log final capability values after processing
-    this.homey.setTimeout(() => {
-      const temp = this.getCapabilityValue('measure_temperature');
+    this.homey.setTimeout(() => { if (this._destroyed) return; const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
       if (temp !== null || hum !== null || bat !== null) {
         this.log(`[CLIMATE]  CAPABILITIES: temp=${temp}Â°C humidity=${hum}% battery=${bat}%`);
-      }
-    }, 100);
+      } }, 100);
   }
 
   /**
@@ -1683,6 +1688,8 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('[CLIMATE] Device deleted');
     await this.onUninit();
     if (super.onDeleted) {

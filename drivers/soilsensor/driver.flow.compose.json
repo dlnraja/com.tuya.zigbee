@@ -1,0 +1,54 @@
+{
+  "triggers": [
+    {
+      "id": "soilsensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Temperature"
+          },
+          "example": 21.5
+        }
+      ]
+    },
+    {
+      "id": "soilsensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidite changee"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidite"
+          },
+          "example": 55
+        }
+      ]
+    },
+    {
+      "id": "soilsensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

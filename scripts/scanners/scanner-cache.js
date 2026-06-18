@@ -101,6 +101,38 @@ const SCANNER_CONFIG = {
     volatility: 'very-stable',
     description: 'CSA certified Zigbee products',
   },
+  blakadder: {
+    name: 'Blakadder',
+    outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
+    outputFile: 'blakadder-results.json',
+    ttl: 24 * 60 * 60 * 1000,    // 24 hours
+    volatility: 'standard',
+    description: 'zigbee.blakadder.com Zigbee device database',
+  },
+  z2m: {
+    name: 'Z2M',
+    outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
+    outputFile: 'z2m-results.json',
+    ttl: 24 * 60 * 60 * 1000,    // 24 hours
+    volatility: 'standard',
+    description: 'zigbee-herdsman-converters Tuya fingerprints',
+  },
+  zha: {
+    name: 'ZHA',
+    outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
+    outputFile: 'zha-results.json',
+    ttl: 24 * 60 * 60 * 1000,    // 24 hours
+    volatility: 'standard',
+    description: 'zha-device-handlers Tuya quirks',
+  },
+  deconz: {
+    name: 'deCONZ',
+    outputDir: path.join(REPO_ROOT, 'data', 'scanners'),
+    outputFile: 'deconz-results.json',
+    ttl: 48 * 60 * 60 * 1000,    // 48 hours (stable upstream)
+    volatility: 'stable',
+    description: 'deconz-rest-plugin Tuya fingerprints',
+  },
 };
 
 // ── Colours ───────────────────────────────────────────────────────────────

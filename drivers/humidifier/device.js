@@ -59,6 +59,7 @@ class HumidifierDevice extends TuyaZigbeeDevice {
   }
 
   async _handleDP(dp, value) {
+    if (this._destroyed) return;
     if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
@@ -69,13 +70,13 @@ class HumidifierDevice extends TuyaZigbeeDevice {
 
       case 2: // Target humidity
         if (this.hasCapability('dim.humidity')) {
-          await this.setCapabilityValue('dim.humidity', value).catch(this.error);
+          await this.safeSetCapabilityValue('dim.humidity', value).catch(this.error);
         }
         break;
 
       case 3: // Current humidity
         if (this.hasCapability('measure_humidity')) {
-          await this.setCapabilityValue('measure_humidity', value).catch(this.error);
+          await this.safeSetCapabilityValue('measure_humidity', value).catch(this.error);
         }
         break;
 
@@ -91,6 +92,7 @@ class HumidifierDevice extends TuyaZigbeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

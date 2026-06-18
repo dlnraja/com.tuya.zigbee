@@ -1,15 +1,21 @@
+#!/usr/bin/env node
 'use strict';
 /**
  * scripts/validation/check-fingerprint-health.js
- * 
- * GARDE-FOU CI : Vérifie que les manufacturerName statiques sont présents
- * dans tous les driver.compose.json avec zigbee.
- * 
- * Règle: §22.2 PROJECT_INDEX.md — Static Matching Layer OBLIGATOIRE
- * 
+ *
+ * GARDE-FOU CI : Verifies that static manufacturerName arrays are present
+ * in all driver.compose.json files with zigbee sections.
+ *
+ * Rule: Static Matching Layer REQUIRED for pairing.
+ *
  * Usage:
- *   node scripts/validation/check-fingerprint-health.js [--fail-on-empty]
+ *   node scripts/validation/check-fingerprint-health.js [--fail-on-empty] [--json]
  *   node scripts/validation/check-fingerprint-health.js --threshold 10
+ *
+ * Exit codes:
+ *   0 = all drivers healthy
+ *   1 = violations found
+ *   2 = script failure
  */
 
 const fs = require('fs');
@@ -20,9 +26,10 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 const args = process.argv.slice(2);
 const FAIL_ON_EMPTY = args.includes('--fail-on-empty');
+const JSON_OUTPUT = args.includes('--json');
 const threshold = parseInt((args.find(a => a.startsWith('--threshold=')) || '').replace('--threshold=', '') || '10');
 
-console.log('=== FINGERPRINT HEALTH CHECK ===\n');
+if (!JSON_OUTPUT) console.log('=== FINGERPRINT HEALTH CHECK ===\n');
 
 const results = {
   total: 0,
@@ -33,13 +40,18 @@ const results = {
   wildcards: [],
 };
 
+if (!fs.existsSync(DRIVERS_DIR)) {
+  console.error('Drivers directory not found: ' + DRIVERS_DIR);
+  process.exit(2);
+}
+
 fs.readdirSync(DRIVERS_DIR).forEach(driverId => {
   const cp = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
   if (!fs.existsSync(cp)) return;
   
   let compose;
   try {
-    compose = JSON.parse(fs.readFileSync(cp, 'utf8'));
+    compose = JSON.parse(fs.readFileSync(cp));
   } catch (e) {
     return;
   }
@@ -54,11 +66,14 @@ fs.readdirSync(DRIVERS_DIR).forEach(driverId => {
   const pids = compose.zigbee.productId || [];
   
   // Vérifier les wildcards (interdits)
-  mfs.forEach(mf => {
-    if (mf.includes('*') || mf === '_TZE200_' || mf === '_TZ3000_') {
-      results.wildcards.push({ driverId, mf });
-    }
-  });
+  // universal_zigbee is an intentional catch-all driver — skip wildcard checks for it
+  if (driverId !== 'universal_zigbee') {
+    mfs.forEach(mf => {
+      if (mf.includes('*') || mf === '_TZE200_' || mf === '_TZ3000_') {
+        results.wildcards.push({ driverId, mf });
+      }
+    });
+  }
   
   if (mfs.length === 0) {
     results.emptyMF.push(driverId);

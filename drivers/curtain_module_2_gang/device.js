@@ -43,12 +43,8 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
                     if (this._reportPercentageDebounce) {
                         this._reportPercentageDebounce.refresh();
                     } else {
-                        this._reportPercentageDebounce = this.homey.setTimeout(
-                            () => {
-                                this._reportDebounceEnabled = false;
-                                this._reportPercentageDebounce = null;
-                            },
-                            REPORT_DEBOUNCER
+                        this._reportPercentageDebounce = this.homey.setTimeout(() => { if (this._destroyed) return; this._reportDebounceEnabled = false;
+                                this._reportPercentageDebounce = null; }, REPORT_DEBOUNCER
                         );
                     }
 
@@ -74,7 +70,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
                             windowCoveringEndpoint
                         ].clusters.windowCovering[windowCoveringCommand]();
 
-                        await this.setCapabilityValue(
+                        await this.safeSetCapabilityValue(
                             "windowcoverings_set",
                             value
                         ).catch(() => {});
@@ -196,6 +192,7 @@ class curtain_module_2_gang extends UnifiedSwitchBase {
     }
 
     onDeleted() {
+      super.onDeleted();
         this.log("Curtain Module removed");
     }
 

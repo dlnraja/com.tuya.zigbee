@@ -4,13 +4,15 @@
       "id": "wifi_cover_opened",
       "title": {
         "en": "Opened"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_cover_closed",
       "title": {
         "en": "Closed"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [],
@@ -19,19 +21,22 @@
       "id": "wifi_cover_open",
       "title": {
         "en": "Open"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_cover_close",
       "title": {
         "en": "Close"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_cover_stop",
       "title": {
         "en": "Stop"
-      }
+      },
+      "args": []
     }
   ]
 }

@@ -4,13 +4,15 @@
       "id": "wifi_led_strip_turned_on",
       "title": {
         "en": "Light turned on"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_led_strip_turned_off",
       "title": {
         "en": "Light turned off"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -26,5 +28,6 @@
         }
       ]
     }
-  ]
+  ],
+  "conditions": []
 }

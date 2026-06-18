@@ -412,7 +412,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "Excellux"
@@ -424,5 +423,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_contact_sensor_curtain_needs_device_assignment"]
   }
 }

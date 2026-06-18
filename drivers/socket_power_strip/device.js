@@ -30,6 +30,7 @@ class socket_power_strip extends ZigBeeDevice {
   }
 
 	onDeleted(){
+	  super.onDeleted();
 		this.log("Power Strip removed")
 	}
 

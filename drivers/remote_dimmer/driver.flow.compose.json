@@ -5,21 +5,24 @@
       "title": {
         "en": "ON button pressed",
         "fr": "Bouton ON appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "remote_dimmer_button_off",
       "title": {
         "en": "OFF button pressed",
         "fr": "Bouton OFF appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "remote_dimmer_button_toggle",
       "title": {
         "en": "Toggle button pressed",
         "fr": "Bouton Toggle appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "remote_dimmer_brightness_up",
@@ -35,7 +38,8 @@
             "en": "Step size"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "remote_dimmer_brightness_down",
@@ -51,14 +55,16 @@
             "en": "Step size"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "remote_dimmer_brightness_stop",
       "title": {
         "en": "Brightness adjustment stopped",
         "fr": "Ajustement luminosité arrêté"
-      }
+      },
+      "args": []
     },
     {
       "id": "remote_dimmer_brightness_set",
@@ -74,7 +80,8 @@
             "en": "Level (%)"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "remote_dimmer_scene",
@@ -90,7 +97,10 @@
             "en": "Scene ID"
           }
         }
-      ]
+      ],
+      "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

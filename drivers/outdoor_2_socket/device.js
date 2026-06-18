@@ -86,6 +86,7 @@ class outdoor2socket_1 extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log("Double Outdoor Smart 2 Socket removed");
   }
 }

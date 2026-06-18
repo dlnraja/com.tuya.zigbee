@@ -2,6 +2,13 @@
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
+let UnifiedBatteryHandler = null;
+try {
+  UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler');
+} catch (e) {
+  // UnifiedBatteryHandler not available - will use fallback
+}
+
 let IEEEAddressManager = null;
 try {
   IEEEAddressManager = require('../../lib/managers/IEEEAddressManager');
@@ -68,7 +75,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         await this.addCapability(cap).catch(() => { });
       }
     }
-    await this.setCapabilityValue('alarm_generic', false).catch(() => { });
+    await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
   }
 
   /**
@@ -174,11 +181,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _handleTuyaDP(dp, value) {
+    if (this._destroyed) return;
     // Battery DPs
     if (dp === 4 || dp === 15 || (dp === 101 && typeof value === 'number')) {
       const battery = Math.min(100, Math.max(0, parseInt(value, 10)));
       if (!isNaN(battery)) {
-        await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
         this._updateActivity();
       }
       return;
@@ -249,6 +257,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * Alarm Handling
    */
   async _handleAlarm(payload) {
+    if (this._destroyed) return;
     this._updateActivity();
 
     const now = Date.now();
@@ -262,7 +271,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     this._verifyCieAddress().catch(() => {});
 
     // Set capability and trigger flow with source info
-    await this.setCapabilityValue('alarm_generic', true).catch(() => { });
+    await this.safeSetCapabilityValue('alarm_generic', true).catch(() => { });
     if (this.driver?.triggerSOS) {
       const source = (payload && payload.source) || 'unknown';
       await this.driver.triggerSOS(this, { source });
@@ -271,7 +280,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     // Auto-reset
     if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
     this._resetTimeout = this.homey.setTimeout(async () => {
-      await this.setCapabilityValue('alarm_generic', false).catch(() => { });
+      if (this._destroyed) return;
+      await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
     }, 5000);
   }
@@ -293,6 +303,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async _updateBattery(value, type) {
+    if (this._destroyed) return;
     if (value === undefined || value === null || value === 255) {return;}
 
     let percent;
@@ -304,22 +315,24 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       if (isNaN(voltage)) {return;}
       // If value looks like millivolts (>300), convert to volts
       if (voltage > 300) {voltage = voltage / 1000;}
-      percent = UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
+      percent = UnifiedBatteryHandler
+        ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
+        : UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
     }
 
     if (percent >= 0 && percent <= 100) {
-      await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+      await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
       this._updateActivity();
 
       // v5.5.833: Trigger battery_low flow when below threshold
       const threshold = this.getSetting('battery_low_threshold') || 20;
       if (percent <= threshold) {
-        await this.setCapabilityValue('alarm_battery', true).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_battery', true).catch(() => { });
         if (this.driver?.triggerBatteryLow) {
           await this.driver.triggerBatteryLow(this, { battery_level: percent });
         }
       } else {
-        await this.setCapabilityValue('alarm_battery', false).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_battery', false).catch(() => { });
       }
     }
   }
@@ -332,7 +345,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const result = await Promise.race([
         powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), 1500))
+        new Promise((_, r) => this.homey.setTimeout(() => { if (this._destroyed) return; r(new Error('Timeout')); }, 1500))
       ]).catch(() => ({}));
 
       if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
@@ -348,6 +361,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   _setupHeartbeatMonitor() {
     this._lastActivity = Date.now();
     this._heartbeatInterval = this.homey.setInterval(() => {
+      if (this._destroyed) return;
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
         this.log('[SOS] ⚠️ No activity for', Math.round(hours), 'hours');
@@ -438,6 +452,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('[SOS] Device deleted');
   }
 }

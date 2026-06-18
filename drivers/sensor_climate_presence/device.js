@@ -105,30 +105,30 @@ class ClimatePresenceHybridDevice extends UnifiedSensorBase {
     if (presence === current) return;
     if (presence) {
       if (this._intelGate) this._intelGate.process('alarm_motion', true);
-      this.setCapabilityValue('alarm_motion', true).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
-      this.setCapabilityValue('alarm_motion', false).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
       this._triggerPresenceFlows(false);
     }
   }
   async _triggerPresenceFlows(detected) {
-    const prefix = 'sensor_climate_presence_hybrid_';
-    const cardId = detected ? prefix + 'sensor_presence_radar_hybrid_presence_detected' : prefix + 'sensor_presence_radar_hybrid_presence_cleared';
+    const prefix = 'sensor_climate_presence_';
+    const cardId = detected ? prefix + 'sensor_presence_radar_presence_detected' : prefix + 'sensor_presence_radar_presence_cleared';
     try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
     if (detected) {
-      try { await this.homey.flow.getDeviceTriggerCard(prefix + 'presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid').trigger(this, {}).catch(() => {}); } catch (e) {}
+      try { await this.homey.flow.getDeviceTriggerCard(prefix + 'presence_sensor_radar_motion_detected').trigger(this, {}).catch(() => {}); } catch (e) {}
     }
   }
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) return;
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
-    if (power?.on) power.on('attr.batteryPercentageRemaining', (v) => this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));
+    if (power?.on) power.on('attr.batteryPercentageRemaining', (v) => this.safeSetCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));
     const temp = ep1.clusters?.msTemperatureMeasurement;
-    if (temp?.on) temp.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {}));
+    if (temp?.on) temp.on('attr.measuredValue', (v) => this.safeSetCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {}));
     const hum = ep1.clusters?.msRelativeHumidity;
-    if (hum?.on) hum.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {}));
+    if (hum?.on) hum.on('attr.measuredValue', (v) => this.safeSetCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {}));
   }
   _setupTuyaDPListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];

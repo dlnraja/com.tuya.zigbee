@@ -20,6 +20,7 @@ class smart_switch extends ZigBeeDevice {
     }
 
     onDeleted(){
+      super.onDeleted();
 		this.log("Smart Switch removed")
 	}
 

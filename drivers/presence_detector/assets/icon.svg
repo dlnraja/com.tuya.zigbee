@@ -1,8 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="15" fill="#1a233a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960">
+  <g transform="translate(0.00,0.00) scale(9.600000)">
+  <rect width="960" height="960" rx="15" fill="#1a233a"/>
   <circle cx="50" cy="35" r="12" fill="#00E6A0" opacity="0.9"/>
   <path d="M30 65 Q50 80 70 65" stroke="#00E6A0" stroke-width="3" fill="none" opacity="0.7"/>
   <path d="M20 55 Q50 75 80 55" stroke="#00E6A0" stroke-width="2" fill="none" opacity="0.4"/>
   <path d="M10 48 Q50 72 90 48" stroke="#00E6A0" stroke-width="1.5" fill="none" opacity="0.2"/>
   <text x="50" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ffffff" opacity="0.6">PRESENCE</text>
+
+  </g>
 </svg>

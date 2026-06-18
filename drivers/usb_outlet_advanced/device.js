@@ -1,5 +1,6 @@
 'use strict';
 const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -61,26 +62,26 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       // 
       // SOCKET/RELAY CONTROL
       // 
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'onoff.socket2', transform: (v) => v === 1 || v === true },
-      7: { capability: 'onoff', transform: (v) => v === 1 || v === true }, // Alt DP for some models
+      1: { capability: 'onoff', transform: boolean() },
+      2: { capability: 'onoff.socket2', transform: boolean() },
+      7: { capability: 'onoff', transform: boolean() }, // Alt DP for some models
 
-      // 
+      //
       // USB PORTS CONTROL - Multiple possible DPs depending on model
-      // 
-      9: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true },
-      10: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true },
+      //
+      9: { capability: 'onoff.usb1', transform: boolean() },
+      10: { capability: 'onoff.usb2', transform: boolean() },
       // v5.5.35: Additional USB DPs found in some models
-      3: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true }, // Alt USB1 DP
-      4: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true }, // Alt USB2 DP
-      11: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true }, // Alt USB1 DP
-      12: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true }, // Alt USB2 DP
+      3: { capability: 'onoff.usb1', transform: boolean() }, // Alt USB1 DP
+      4: { capability: 'onoff.usb2', transform: boolean() }, // Alt USB2 DP
+      11: { capability: 'onoff.usb1', transform: boolean() }, // Alt USB1 DP
+      12: { capability: 'onoff.usb2', transform: boolean() }, // Alt USB2 DP
 
-      // 
+      //
       // LED INDICATOR CONTROL
-      // 
-      13: { capability: 'onoff.led', transform: (v) => v === 1 || v === true },
-      101: { capability: 'onoff.led', transform: (v) => v === 1 || v === true }, // Alt DP
+      //
+      13: { capability: 'onoff.led', transform: boolean() },
+      101: { capability: 'onoff.led', transform: boolean() }, // Alt DP
 
       // 
       // POWER MEASUREMENT (Z2M: value in 0.1W or 0.01W depending on model)
@@ -176,7 +177,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         ep2.clusters.onOff.on('attr.onOff', (value) => {
           this.log(`[USB-ADV] EP2 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.socket2')) {
-            this.setCapabilityValue('onoff.socket2', value).catch(this.error);
+            this.safeSetCapabilityValue('onoff.socket2', value).catch(this.error);
           }
         });
       }
@@ -194,7 +195,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         ep3.clusters.onOff.on('attr.onOff', (value) => {
           this.log(`[USB-ADV] EP3 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.usb1')) {
-            this.setCapabilityValue('onoff.usb1', value).catch(this.error);
+            this.safeSetCapabilityValue('onoff.usb1', value).catch(this.error);
           }
         });
       }
@@ -209,6 +210,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   async _requestInitialStates() {
     // Wait a bit for device to be fully ready
     this.homey.setTimeout(async () => {
+      if (this._destroyed) return;
       if (this.safeTuyaDataQuery) {
         // All relevant control DPs
         const controlDPs = [1, 2, 3, 4, 7, 9, 10, 11, 12, 13, 101];
@@ -373,6 +375,8 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

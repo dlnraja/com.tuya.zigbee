@@ -9,6 +9,13 @@ const { fetchJSON } = require("./lib/fetch");
 const fs = require("fs");
 const path = require("path");
 
+// ── Intelligent Cache Integration ────────────────────────────────────────
+let ScannerCache;
+try {
+  ScannerCache = require('../scanners/scanner-cache').ScannerCache;
+} catch { /* fallback: no caching */ }
+const CACHE_ID = 'blakadder';
+
 const URL = "https://zigbee.blakadder.com/all.json";
 const OUT = path.join(__dirname, "data");
 
@@ -16,6 +23,18 @@ const TUYA_MFR = /^(_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATE
 
 async function crawlBlakadder() {
   console.log("[BLAKADDER] Fetching all.json...");
+
+  // Check cache first
+  let cache;
+  if (ScannerCache) {
+    cache = new ScannerCache(CACHE_ID);
+    if (cache.isValid()) {
+      console.log(`[BLAKADDER] Cache HIT (${cache.getAge()} old)`);
+      const cached = cache.load();
+      if (cached) return cached;
+    }
+  }
+
   const data = await fetchJSON(URL);
   // data is array of device objects or object keyed by model
   const devices = Array.isArray(data) ? data : Object.values(data);
@@ -53,6 +72,13 @@ async function crawlBlakadder() {
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, "blakadder.json"), JSON.stringify(result, null, 2));
   console.log("[BLAKADDER] " + fps.size + " unique Tuya fingerprints");
+
+  // Save to cache
+  if (cache) {
+    cache.save(result);
+    console.log("[BLAKADDER] Cache SAVED");
+  }
+
   return result;
 }
 

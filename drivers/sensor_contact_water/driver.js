@@ -12,20 +12,21 @@ async onInit() {
   }
 
   _registerFlowCards() {
-    // TRIGGERS
+    // TRIGGERS
+
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('sensor_contact_water_hybrid_contact_sensor_is_open');
+      const card = this.homey.flow.getConditionCard('sensor_contact_water_is_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_contact_water_hybrid_contact_sensor_is_open: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_contact_water_is_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_contact_water_hybrid_contact_sensor_battery_above');
+      const card = this.homey.flow.getConditionCard('sensor_contact_water_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -33,27 +34,27 @@ async onInit() {
           return battery > (args.threshold || 20);
       });
       }
-    } catch (err) { this.error(`Condition sensor_contact_water_hybrid_contact_sensor_battery_above: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_contact_water_battery_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_contact_water_hybrid_contact_sensor_contact_open');
+      const card = this.homey.flow.getConditionCard('sensor_contact_water_contact_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_contact_water_hybrid_contact_sensor_contact_open: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_contact_water_contact_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_contact_water_hybrid_contact_sensor_tamper_active');
+      const card = this.homey.flow.getConditionCard('sensor_contact_water_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_contact_water_hybrid_contact_sensor_tamper_active: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_contact_water_tamper_active: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

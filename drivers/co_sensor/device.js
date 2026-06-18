@@ -53,7 +53,7 @@ class COSensorDevice extends UnifiedSensorBase {
       } else if (mapping.divisor) {finalValue = value / mapping.divisor;}
 
       this.log(`[CO] DP${dpId} → ${mapping.capability}: ${finalValue}`);
-      return this.setCapabilityValue(mapping.capability, finalValue).catch(() => {});
+      return this.safeSetCapabilityValue(mapping.capability, finalValue).catch(() => {});
     }
     
     this.log(`[CO] Unhandled DP${dpId} [${dpType}] = ${value}`);

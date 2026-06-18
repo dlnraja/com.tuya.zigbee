@@ -129,6 +129,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('4 Gang Wall Switch removed');
   }
 }

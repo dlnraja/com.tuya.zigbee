@@ -2,6 +2,8 @@
 /**
  * enrich-from-user-feedback.js
  * Add missing fingerprints/MFs based on user feedback and Z2M community data
+ * Operates on individual driver.compose.json files (NOT app.json) for safety.
+ *
  * Fixes:
  * 1. TS0044 4-button scene switch (_TZ3000_vp6clf9d) → scene_switch_4
  * 2. BSEED touch glass switches → wall_switch_1gang / wall_switch_2gang_1way / etc.
@@ -14,50 +16,85 @@
 const fs = require('fs');
 const path = require('path');
 
-const APP_JSON = path.join(__dirname, '../../app.json');
-const app = JSON.parse(fs.readFileSync(APP_JSON, 'utf8'));
+const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 
 let fixCount = 0;
 const log = (msg) => console.log(msg);
 
+// ─── Helper: load driver.compose.json ───────────────────────────────────────
+function loadCompose(driverId) {
+  const composePath = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
+  if (!fs.existsSync(composePath)) {
+    log(`WARN  Driver compose not found: ${driverId}`);
+    return null;
+  }
+  try {
+    return { path: composePath, data: JSON.parse(fs.readFileSync(composePath, 'utf8')) };
+  } catch (e) {
+    log(`WARN  Failed to parse ${composePath}: ${e.message}`);
+    return null;
+  }
+}
+
+// ─── Helper: save driver.compose.json ───────────────────────────────────────
+function saveCompose(driverId, compose) {
+  fs.writeFileSync(compose.path, JSON.stringify(compose.data, null, 2) + '\n', 'utf8');
+}
+
 // ─── Helper: add MFs to a driver without duplicates ──────────────────────────
 function addMFs(driverId, newMFs, label) {
-  const driver = app.drivers.find(d => d.id === driverId);
-  if (!driver) { log(`⚠️  Driver not found: ${driverId}`); return; }
-  if (!driver.zigbee) { log(`⚠️  Driver ${driverId} has no zigbee section`); return; }
-  if (!driver.zigbee.manufacturerName) driver.zigbee.manufacturerName = [];
-  const existing = new Set(driver.zigbee.manufacturerName.map(m => m.toLowerCase()));
+  const compose = loadCompose(driverId);
+  if (!compose) return;
+  const data = compose.data;
+
+  if (!data.zigbee) { log(`WARN  Driver ${driverId} has no zigbee section`); return; }
+  if (!data.zigbee.manufacturerName) data.zigbee.manufacturerName = [];
+
+  const existing = new Set(data.zigbee.manufacturerName.map(m => m.toLowerCase()));
   const toAdd = newMFs.filter(m => !existing.has(m.toLowerCase()));
   if (toAdd.length === 0) {
-    log(`✅ ${driverId}: all ${newMFs.length} MFs already present (${label})`);
+    log(`OK    ${driverId}: all ${newMFs.length} MFs already present (${label})`);
     return;
   }
-  driver.zigbee.manufacturerName.push(...toAdd);
+  data.zigbee.manufacturerName.push(...toAdd);
+  saveCompose(driverId, compose);
   fixCount++;
-  log(`🔧 ${driverId}: added ${toAdd.length} MFs from ${label}: ${toAdd.join(', ')}`);
+  log(`FIX   ${driverId}: added ${toAdd.length} MFs from ${label}: ${toAdd.join(', ')}`);
 }
 
 // ─── Helper: add fingerprints to a driver ────────────────────────────────────
 function addFingerprints(driverId, newFPs, label) {
-  const driver = app.drivers.find(d => d.id === driverId);
-  if (!driver) { log(`⚠️  Driver not found: ${driverId}`); return; }
-  if (!driver.zigbee) { log(`⚠️  Driver ${driverId} has no zigbee section`); return; }
-  if (!driver.zigbee.fingerprints) driver.zigbee.fingerprints = [];
-  const existing = new Set(driver.zigbee.fingerprints.map(fp => `${fp.manufacturerName}|${fp.productId}`));
+  const compose = loadCompose(driverId);
+  if (!compose) return;
+  const data = compose.data;
+
+  if (!data.zigbee) { log(`WARN  Driver ${driverId} has no zigbee section`); return; }
+  if (!data.zigbee.fingerprints) data.zigbee.fingerprints = [];
+
+  const existing = new Set(data.zigbee.fingerprints.map(fp => `${fp.manufacturerName}|${fp.productId}`));
   const toAdd = newFPs.filter(fp => !existing.has(`${fp.manufacturerName}|${fp.productId}`));
   if (toAdd.length === 0) {
-    log(`✅ ${driverId}: all fingerprints already present (${label})`);
+    log(`OK    ${driverId}: all fingerprints already present (${label})`);
     return;
   }
-  driver.zigbee.fingerprints.push(...toAdd);
+  data.zigbee.fingerprints.push(...toAdd);
   // Also add MFs from fingerprints
   const mfsFromFPs = [...new Set(toAdd.map(fp => fp.manufacturerName).filter(Boolean))];
-  if (mfsFromFPs.length > 0) addMFs(driverId, mfsFromFPs, `${label} (from fingerprints)`);
-  else fixCount++;
-  log(`🔧 ${driverId}: added ${toAdd.length} fingerprints from ${label}`);
+  if (mfsFromFPs.length > 0) {
+    const existingMFs = new Set((data.zigbee.manufacturerName || []).map(m => m.toLowerCase()));
+    const newMFs = mfsFromFPs.filter(m => !existingMFs.has(m.toLowerCase()));
+    if (newMFs.length > 0) {
+      if (!data.zigbee.manufacturerName) data.zigbee.manufacturerName = [];
+      data.zigbee.manufacturerName.push(...newMFs);
+    }
+  }
+  saveCompose(driverId, compose);
+  fixCount++;
+  log(`FIX   ${driverId}: added ${toAdd.length} fingerprints from ${label}`);
 }
 
 log('\n=== ENRICHMENT FROM USER FEEDBACK + COMMUNITY DATA ===\n');
+log(`Target: individual driver.compose.json files in ${DRIVERS_DIR}\n`);
 
 // ─── FIX 1: TS0044 4-button scene switch (_TZ3000_vp6clf9d) ─────────────────
 // User: "kan deze: Tuya _TZ3000_vp6clf9d TS0044 4 buttons scene switch worden toegevoegd?"
@@ -176,15 +213,5 @@ const glass1MFs = [
 ];
 addMFs('wall_switch_1_gang', glass1MFs, 'Glass switch 1-gang user feedback');
 
-// ─── Write updated app.json ──────────────────────────────────────────────────
-if (fixCount > 0) {
-  fs.writeFileSync(APP_JSON, JSON.stringify(app, null, 2), 'utf8');
-  log(`\n✅ DONE: Applied ${fixCount} enrichments to app.json`);
-} else {
-  log('\n✅ DONE: All fingerprints already present — no changes needed');
-}
-
-// Summary
-const totalMFs = app.drivers.reduce((s, d) => s + ((d.zigbee && d.zigbee.manufacturerName) ? d.zigbee.manufacturerName.length : 0), 0);
-const totalFPs = app.drivers.reduce((s, d) => s + ((d.zigbee && d.zigbee.fingerprints) ? d.zigbee.fingerprints.length : 0), 0);
-log(`\nStats: ${app.drivers.length} drivers | ${totalMFs} MFs | ${totalFPs} fingerprints`);
+// ─── Summary ─────────────────────────────────────────────────────────────────
+log(`\n=== DONE: Applied ${fixCount} enrichments to driver.compose.json files ===`);

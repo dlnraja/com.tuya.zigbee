@@ -17,7 +17,7 @@ class Dimmer3GangDevice extends UnifiedSwitchBase {
   _markAppCommand() {
     this._appCommandPending = true;
     if (this._appCommandTimeout) {clearTimeout(this._appCommandTimeout);}
-    this._appCommandTimeout = setTimeout(() => { this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   async _registerCapabilityListeners() {
