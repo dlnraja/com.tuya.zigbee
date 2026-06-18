@@ -122,7 +122,10 @@
       "instruction": {
         "en": "Four tiles will be created, one for each channel of the device. Press the setup button combined with 1 channel button for 10 seconds (the LED should blink blue)."
       }
-    }
+    },
+    "manufacturerName": [
+      "relay board 4 channel"
+    ]
   },
   "version": "1.0.0",
   "metadata": {
