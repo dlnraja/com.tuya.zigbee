@@ -298,6 +298,7 @@ class LcdTempHumidSensorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixi
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

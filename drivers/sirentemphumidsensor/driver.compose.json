@@ -36,6 +36,7 @@
   "images": {
     "small": "/{{driverAssetsPath}}/images/small.png",
     "large": "/{{driverAssetsPath}}/images/large.png"
+  
   },
   "zigbee": {
     "productId": [
@@ -61,9 +62,7 @@
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_sirentemphumidsensor_needs_device_assignment"]
   },
   "maintenanceActions": [
     {

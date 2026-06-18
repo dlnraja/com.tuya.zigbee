@@ -42,18 +42,19 @@ class smart_motion_sensor extends ZigBeeDevice {
 	onZoneStatusAttributeReport(status) {
 		this.log("Motion status: ", status.alarm1);
 		this.log("Tamper status: ", status.tamper);
-		this.setCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
-		this.setCapabilityValue('alarm_tamper', status.tamper).catch(this.error);
+		this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
+		this.safeSetCapabilityValue('alarm_tamper', status.tamper).catch(this.error);
 	}
 
 	handleBatteryPercentageReport(batteryPercentageRemaining) {
 		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
 		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
-		this.setCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
-		this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+		this.safeSetCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
+		this.safeSetCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
 	}
 
 	onDeleted(){
+	  super.onDeleted();
 		this.log("Smart Motion Sensor removed")
 	}
 

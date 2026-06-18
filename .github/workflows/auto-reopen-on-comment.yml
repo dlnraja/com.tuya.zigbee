@@ -5,6 +5,11 @@
 
 name: "Auto-Reopen on Comment"
 
+# <!-- badges:start -->
+# [![Auto-Reopen on Comment](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-reopen-on-comment.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/auto-reopen-on-comment.yml)
+# <!-- badges:end -->
+
+
 on:
   issue_comment:
     types: [created]
@@ -38,7 +43,7 @@ jobs:
       github.event.comment.user.login != 'dlnraja' &&
       github.event.comment.user.type != 'Bot'
     steps:
-      - uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+      - uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
         with:
           script: |
             const issue = context.payload.issue;

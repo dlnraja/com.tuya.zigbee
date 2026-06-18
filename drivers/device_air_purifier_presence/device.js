@@ -136,17 +136,17 @@ class GenericAirPurifierPresenceDevice extends UnifiedSensorBase {
 
     if (presence) {
       if (this._intelGate) this._intelGate.process('alarm_motion', true);
-      this.setCapabilityValue('alarm_motion', true).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
-      this.setCapabilityValue('alarm_motion', false).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
       this._triggerPresenceFlows(false);
     }
   }
 
   async _triggerPresenceFlows(detected) {
-    const prefix = 'device_air_purifier_presence_hybrid_';
-    const cardId = detected ? prefix + 'sensor_presence_radar_hybrid_presence_detected' : prefix + 'sensor_presence_radar_hybrid_presence_cleared';
+    const prefix = 'device_air_purifier_presence_';
+    const cardId = detected ? prefix + 'sensor_presence_radar_presence_detected' : prefix + 'sensor_presence_radar_presence_cleared';
     
     try {
       await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {});
@@ -160,14 +160,14 @@ class GenericAirPurifierPresenceDevice extends UnifiedSensorBase {
     const temp = ep1.clusters?.msTemperatureMeasurement;
     if (temp?.on) {
       temp.on('attr.measuredValue', (v) => {
-        this.setCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
+        this.safeSetCapabilityValue('measure_temperature', safeDivide(v, 100)).catch(() => {});
       });
     }
 
     const hum = ep1.clusters?.msRelativeHumidity;
     if (hum?.on) {
       hum.on('attr.measuredValue', (v) => {
-        this.setCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
+        this.safeSetCapabilityValue('measure_humidity', safeDivide(v, 100)).catch(() => {});
       });
     }
   }

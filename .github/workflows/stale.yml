@@ -1,5 +1,10 @@
 name: "Stale Issues & PRs"
 
+# <!-- badges:start -->
+# [![Stale Issues & PRs](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/stale.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/stale.yml)
+# <!-- badges:end -->
+
+
 on:
   schedule:
     - cron: '0 5 * * 1'  # Weekly Monday 05:00 UTC

@@ -8,6 +8,13 @@ const { fetch } = require("./lib/fetch");
 const fs = require("fs");
 const path = require("path");
 
+// ── Intelligent Cache Integration ────────────────────────────────────────
+let ScannerCache;
+try {
+  ScannerCache = require('../scanners/scanner-cache').ScannerCache;
+} catch { /* fallback: no caching */ }
+const CACHE_ID = 'zha';
+
 const RAW = "https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/zhaquirks/";
 const OUT = path.join(__dirname, "data");
 const TUYA_MFR = /(_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]+)/;
@@ -65,6 +72,17 @@ function parseQuirks(src, filepath) {
 
 async function crawlZHA() {
   console.log("[ZHA] Fetching " + ALL_FILES.length + " known quirk files (raw URLs)...");
+
+  // Check cache first
+  let cache;
+  if (ScannerCache) {
+    cache = new ScannerCache(CACHE_ID);
+    if (cache.isValid()) {
+      console.log(`[ZHA] Cache HIT (${cache.getAge()} old)`);
+      const cached = cache.load();
+      if (cached) return cached;
+    }
+  }
   const allFps = [];
   let fetched = 0, skipped = 0;
   for (const f of ALL_FILES) {
@@ -82,6 +100,13 @@ async function crawlZHA() {
   const result = { date: new Date().toISOString(), source: "zha-device-handlers (raw)", filesFetched: fetched, totalRaw: allFps.length, uniqueFingerprints: unique.length, fingerprints: unique };
   fs.writeFileSync(path.join(OUT, "zha.json"), JSON.stringify(result, null, 2));
   console.log("[ZHA] " + unique.length + " unique Tuya fingerprints");
+
+  // Save to cache
+  if (cache) {
+    cache.save(result);
+    console.log("[ZHA] Cache SAVED");
+  }
+
   return result;
 }
 

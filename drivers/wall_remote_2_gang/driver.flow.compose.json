@@ -12,9 +12,6 @@
           "title": {
             "en": "Button Action"
           },
-          "titleFormatted": {
-            "en": "The [[action]]"
-          },
           "values": [
             {
               "id": "left-oneClick",
@@ -56,5 +53,7 @@
         }
       ]
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

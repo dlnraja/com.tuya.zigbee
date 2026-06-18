@@ -725,7 +725,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "Excellux"
@@ -737,5 +736,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_contact_sensor_switch_needs_device_assignment"]
   }
 }

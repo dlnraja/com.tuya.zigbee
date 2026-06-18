@@ -100,7 +100,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       await Promise.race([
         cluster[method](),
         new Promise((_, reject) =>
-          this.homey.setTimeout(() => reject(new Error(`OnOff.${method} timed out after ${timeoutMs}ms`)), timeoutMs)
+          this.homey.setTimeout(() => { if (this._destroyed) return; reject(new Error(`OnOff.${method} timed out after ${timeoutMs}ms`)); }, timeoutMs)
         )
       ]);
     } catch (err) {
@@ -379,7 +379,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
       // v5.5.357: FORUM FIX - Persist button state ON
       if (this.hasCapability('button.learn_ir')) {
-        await this.setCapabilityValue('button.learn_ir', true).catch(() => { });
+        await this.safeSetCapabilityValue('button.learn_ir', true).catch(() => { });
       }
 
       // v5.11.17: Use stored cluster instances (includes manual fallback from _setupAdvancedIRClusters)
@@ -434,6 +434,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       // v5.5.357: FORUM FIX - Extend timeout to 60s (was 30s)
       const extendedDuration = Math.max(duration, 60);
       this._learnTimeout = this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           await this._disableLearnMode();
           this._learningState = LEARNING_STATES.TIMEOUT;
@@ -504,6 +505,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
       // Auto-disable after specified duration
       this._learnTimeout = this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           await this._disableLearnMode();
           this.log(`Learn mode auto-disabled after ${duration}s timeout`);
@@ -544,7 +546,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
       // v5.5.357: FORUM FIX - Reset button state OFF
       if (this.hasCapability('button.learn_ir')) {
-        await this.setCapabilityValue('button.learn_ir', false).catch(() => { });
+        await this.safeSetCapabilityValue('button.learn_ir', false).catch(() => { });
       }
 
       // v5.11.17: Use stored cluster instance (includes manual fallback)
@@ -579,7 +581,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         this.log(`Last learned code: ${this._lastLearnedCode.substring(0, 50)}...`);
         // Update capability if available
         if (this.hasCapability('ir_blaster_code_received')) {
-          this.setCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
+          this.safeSetCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
         }
         // Trigger flow
         this.driver.codeLearnedTrigger?.trigger(this, { ir_code: this._lastLearnedCode }, {}).catch(() => { });
@@ -692,11 +694,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Wait for acknowledgment and data requests
     // The device will request chunks via codeDataRequest events
     return new Promise((resolve, reject) => {
-      const timeout = this.homey.setTimeout(() => {
-        delete this._pendingIRMessage;
+      const timeout = this.homey.setTimeout(() => { if (this._destroyed) return; delete this._pendingIRMessage;
         delete this._pendingIRSeq;
-        reject(new Error('IR transmission timeout'));
-      }, 10000);
+        reject(new Error('IR transmission timeout')); }, 10000);
 
       this._irTransmitResolve = () => {
         this.homey.clearTimeout(timeout);
@@ -956,6 +956,7 @@ class IrBlasterDevice extends ZigBeeDevice {
    * v5.5.362: Handle received code chunk during learning
    */
   async _handleReceivedCodeChunk(data) {
+    if (this._destroyed) return;
     const seq = data.seq ?? data.sequenceNumber;
     const position = data.position ?? 0;
     let chunkData = data.msgpart ?? data.data;
@@ -1034,7 +1035,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     this.log(`[IR-RX] Learned IR code: ${irCode.substring(0, 80)}...`);
     this._handleLearnedCode(irCode);
     if (this.hasCapability('ir_blaster_code_received')) {
-      await this.setCapabilityValue('ir_blaster_code_received', irCode).catch(() => {});
+      await this.safeSetCapabilityValue('ir_blaster_code_received', irCode).catch(() => {});
     }
     // Z2M: stop learning with {"study":1}
     const ctrl = this._irControlCluster;
@@ -1232,6 +1233,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   // v5.5.361: Handle code data request for chunked transmission
   async _handleCodeDataRequest(data) {
+    if (this._destroyed) return;
     if (!this._pendingIRMessage) {return;}
 
     // v5.9.14: Z2M-compatible field names
@@ -1269,6 +1271,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   // v5.12.0: Handle Code04 from device (sending complete) — respond with Code05 per Z2M
   async _handleTransmitComplete(data) {
+    if (this._destroyed) return;
     const seq = data.seq ?? data.sequenceNumber;
     // Z2M: send Code05 (doneReceiving) back to device
     const cl = this._irTransmitCluster;
@@ -1358,7 +1361,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     for (let i = 0; i < repeat; i++) {
       await this.sendIRCode(code);
       if (i < repeat - 1) {
-        await new Promise(resolve => setTimeout(resolve, 100)); // 100ms between repeats
+        await new Promise(resolve => this.homey.setTimeout(resolve, 100)); // 100ms between repeats
       }
     }
   }
@@ -1403,6 +1406,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('IR Blaster device deleted');
 
     // Cleanup timeouts

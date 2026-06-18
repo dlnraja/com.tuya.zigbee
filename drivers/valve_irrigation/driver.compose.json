@@ -12,7 +12,9 @@
     "dim.valve_3",
     "dim.valve_4",
     "onoff",
-    "onoff.gang2"
+    "onoff.gang2",
+    "countdown_remaining",
+    "frost_protection"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -37,7 +39,10 @@
       "_tze204_loejka0i",
       "_tze204_ugekduaj",
       "_tze284_gomuk3dc",
-      "_tze284_loejka0i"
+      "_tze284_loejka0i",
+      "_TZE284_d0ypnbvn",
+      "_TZE200_d0ypnbvn",
+      "_TZE204_d0ypnbvn"
     ],
     "productId": [
       "TS0601_irrigation",

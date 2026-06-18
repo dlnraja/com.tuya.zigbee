@@ -25,9 +25,16 @@
     }
   },
   "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_zirycmlo",
+      "_TZ3000_fccfkzca",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_46baxdwz",
+      "_TZ3000_fikry1lq",
+      "_TZ3000_5gey0bov"
+    ],
     "productId": [
       "TS130F",
-      "TS0601",
       "TS0726"
     ],
     "endpoints": {
@@ -48,8 +55,7 @@
       "instruction": {
         "en": "Press the setup button for 10 seconds or power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping)."
       }
-    },
-    "manufacturerName": []
+    }
   },
   "version": "1.0.0",
   "metadata": {

@@ -97,7 +97,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const result = this._discovery.applyDiscoveredValue(dpId, value);
       if (result) {
         this.log(`[RADAR] 🧠 Auto-Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => { });
+        return this.safeSetCapabilityValue(result.capability, result.value).catch(() => { });
       }
     }
 
@@ -111,7 +111,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   _handleStaticDP(dpId, value, mapping, config) {
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
-      let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
+      // v9.7.6: Use enumMap from mapping if available (e.g., gkfbdvyx: {0:false, 1:true, 2:true})
+      let presence;
+      if (mapping.enumMap) {
+        presence = mapping.enumMap[value] !== undefined ? mapping.enumMap[value] : !!value;
+        if (config.invertPresence) { presence = !presence; }
+      } else {
+        presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
+      }
 
       // Integrate with inference engine if needed
       if (mapping.useInference) {
@@ -121,7 +128,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
 
       if (presence !== null) {
-        return this.setCapabilityValue('alarm_motion', presence).catch(() => {});
+        return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => {});
       }
       return;
     }
@@ -131,7 +138,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
       if (presence !== null) {
         this.log(`[RADAR] Zone ${mapping.zone} presence: ${presence}`);
-        return this.setCapabilityValue(mapping.cap, presence).catch(() => {});
+        return this.safeSetCapabilityValue(mapping.cap, presence).catch(() => {});
       }
       return;
     }
@@ -140,7 +147,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (mapping.cap === 'measure_motion.classification') {
       const classification = transformPresence(value, mapping.type, false, config.configName);
       this.log(`[RADAR] Movement classification: ${classification} (raw=${value})`);
-      return this.setCapabilityValue('measure_motion.classification', classification).catch(() => {});
+      return this.safeSetCapabilityValue('measure_motion.classification', classification).catch(() => {});
     }
 
     // B. Handle distance DPs (feed inference)
@@ -153,7 +160,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         distance = value / (mapping.divisor || 100);
       }
       this._inference.updateDistance(distance);
-      return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
     // B2. Idea #21: Handle multi-zone distance DPs (measure_luminance.distance.zone1/zone2/zone3)
@@ -166,7 +173,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         distance = value / (mapping.divisor || 100);
       }
       this.log(`[RADAR] Zone ${mapping.zone} distance: ${distance}m`);
-      return this.setCapabilityValue(mapping.cap, distance).catch(() => {});
+      return this.safeSetCapabilityValue(mapping.cap, distance).catch(() => {});
     }
 
     // C. Handle illuminance DPs
@@ -179,7 +186,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
       this._inference.updateLux(lux);
-      return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
     // D. Handle battery DPs - ignore for mains-powered radars
@@ -195,7 +202,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } else {
         battery = value / (mapping.divisor || 1);
       }
-      return this.setCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
+      return this.safeSetCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
     }
   }
 
@@ -206,7 +213,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (!zclNode?.endpoints?.[1]) {
       this.log('[RADAR] No endpoint 1 available - deferring initialization');
       // Retry after delay for connection failures
-      setTimeout(() => {
+      this.homey.setTimeout(() => {
         if (this._destroyed) {return;}
         this.log('[RADAR] Retrying initialization after connection delay...');
         try {
@@ -220,13 +227,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     // 1. Time Sync
-    this.homey.setTimeout(() => this._sendTimeSync(zclNode), 2000);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this._sendTimeSync(zclNode); }, 2000);
 
     // 2. DP Refresh
-    this.homey.setTimeout(() => this._requestDPRefresh(zclNode), 3000);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this._requestDPRefresh(zclNode); }, 3000);
 
     // 3. Periodic polling (60s)
     this._pollingInterval = this.homey.setInterval(() => {
+      if (this._destroyed) { return; }
       this._requestDPRefresh(zclNode);
     }, 60000);
   }

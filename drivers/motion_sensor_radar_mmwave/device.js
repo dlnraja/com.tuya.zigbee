@@ -93,19 +93,19 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     switch (dpId) {
       case 1: // Presence / Motion
         const presence = this._inference.updatePresenceDP(value);
-        return this.setCapabilityValue('alarm_motion', presence).catch(() => { });
+        return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => { });
 
       case 9: // Distance (cm to m)
       case 102:
         const distance = smartParse(value, null, { capability: 'measure_temperature' });
         this._inference.updateDistance(distance);
-        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+        return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
 
       case 12: // Illuminance
       case 104:
         const lux = value;
         this._inference.updateLux(lux);
-        return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+        return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
 
       case 4: // Battery - ignore for mains-powered radars
       case 15:
@@ -113,7 +113,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
           this.log(`[MMWAVE] ⏭️ Ignoring battery DP${dpId} on mains-powered radar`);
           return;
         }
-        return this.setCapabilityValue('measure_battery', value).catch(() => {});
+        return this.safeSetCapabilityValue('measure_battery', value).catch(() => {});
     }
 
     // 2. Fallback to heuristic discovery (handled by base class)

@@ -31,6 +31,7 @@ class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPl
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

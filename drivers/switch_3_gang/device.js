@@ -28,6 +28,7 @@ class switch_3_gang extends UnifiedSwitchBase {
     }
 
     onDeleted(){
+      super.onDeleted();
 		this.log("3 Gang Switch, channel ", subDeviceId, " removed")
 	}
 

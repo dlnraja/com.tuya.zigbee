@@ -29,16 +29,16 @@ async onInit() {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid');
+      const card = this.homey.flow.getActionCard('device_generic_tuya_universal_generic_tuya_request_dp');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           // Generic action handler
-          this.log('[FLOW] Action device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid triggered for', args.device.getName());
+          this.log('[FLOW] Action device_generic_tuya_universal_generic_tuya_request_dp triggered for', args.device.getName());
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid: ${err.message}`); }
+    } catch (err) { this.error(`Action device_generic_tuya_universal_generic_tuya_request_dp: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
     }

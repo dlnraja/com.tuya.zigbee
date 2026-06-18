@@ -1,885 +1,356 @@
-# Tuya Unified Zigbee - Architecture Reference
+# Architecture Overview
 
-> **App**: `com.dlnraja.tuya.zigbee` | **SDK**: Homey SDK3 | **Entry**: `app.js`
+> Tuya Unified Zigbee for Homey Pro
+> Version: 9.0.40 | Last Updated: 2026-06-18
 
----
+## Project Overview
 
-> **318+ drivers** | **22,400+ fingerprints** | Zigbee + WiFi
+The Tuya Unified Zigbee app is a comprehensive Homey SDK3 application supporting **429 drivers** (378 Zigbee + 51 WiFi) for Tuya-compatible smart home devices. It implements an **11-layer Zigbee pipeline**, **23 time sync formats**, and **42 utility modules** for maximum device compatibility and reliability.
 
----
-
-## 1. App Entry Point (app.js)
-
-`UniversalTuyaZigbeeApp extends Homey.App` initializes in order:
-
-1. **registerCustomClusters** - Tuya 0xEF00, 0xE000/E001, Zosung IR clusters
-2. **FlowCardManager** - Global action/condition/trigger cards
-3. **UniversalFlowCardLoader** - Sub-capability + generic DP flow cards
-4. **AdvancedAnalytics** - Device usage analytics
-5. **SmartDeviceDiscovery** - Auto-detect new devices
-6. **PerformanceOptimizer** - Cache + throttle (10MB limit)
-7. **UnknownDeviceHandler** - Fallback for unrecognized devices
-8. **DiagnosticAPI** - MCP/AI integration endpoint
-9. **LogBuffer** - Structured log capture (ManagerSettings accessible)
-10. **SuggestionEngine** - Non-destructive Smart-Adapt
-11. **OTAUpdateManager** - Firmware OTA updates
-12. **QuirksDatabase** - Per-device behavioral quirks
-13. **TuyaUDPDiscovery** - WiFi local device discovery
-
-Settings: `developerDebugMode` (verbose logs), `experimentalSmartAdapt` (capability modifications opt-in).
-
----
-
-## 2. Driver Architecture
-
-Each driver lives in `drivers/{type}/` with:
-
-| File | Purpose |
-|------|---------|
-| `driver.compose.json` | Capabilities, fingerprints (manufacturerName + productId), images, energy |
-| `driver.js` | Driver class - flow card registration, pairing logic |
-| `device.js` | Device class - DP handling, capability listeners, init |
-| `driver.flow.compose.json` | Trigger/condition/action flow cards for this driver |
-| `assets/images/` | small.png (75x75) + large.png (500x500) |
-
-### Driver Categories (130+)
-
-| Category | Drivers | Base Class |
-|----------|---------|------------|
-| **Switches** | switch_1gang..8gang, wall_switch_*, module_mini_switch | HybridSwitchBase |
-| **Dimmers** | dimmer_*, bulb_dimmable, wall_dimmer_* | HybridSwitchBase / HybridLightBase |
-| **Lights** | bulb_rgb, bulb_rgbw, bulb_tunable_white, led_strip* | HybridLightBase |
-| **Covers** | curtain_motor, curtain_motor_tilt, shutter_roller_controller | HybridCoverBase |
-| **Sensors** | motion_sensor, contact_sensor, climate_sensor, soil_sensor, presence_sensor_* | HybridSensorBase |
-| **Plugs/Energy** | plug_smart, plug_energy_monitor, din_rail_*, power_meter | HybridPlugBase |
-| **Climate** | thermostat_*, radiator_valve, smart_heater* | HybridThermostatBase |
-| **Security** | lock_smart, siren, smoke_detector*, gas_sensor | HybridSensorBase |
-| **Buttons** | button_wireless_*, scene_switch_*, button_emergency_sos | ButtonDevice |
-| **IR** | ir_blaster, wifi_ir_remote, blaster_remote | TuyaZigbeeDevice |
-| **Air Purifiers** | air_purifier_climate, air_purifier_sensor, air_purifier_quality | HybridSensorBase |
-| **Radar/Presence** | presence_sensor_radar, presence_sensor_mmwave | HybridSensorBase |
-| **WiFi** | wifi_plug, wifi_switch*, wifi_light, wifi_thermostat... | TuyaHybridDevice |
-| **Special** | fingerbot, pet_feeder, garage_door, valve_*, pool_pump | Various |
-
----
-
-## 3. Device Class Hierarchy
-
-`
-Homey.Device (SDK3)
-   ZigBeeDevice (homey-zigbeedriver)
-         TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
-               TuyaHybridDevice (lib/devices/TuyaHybridDevice.js)
-                     BaseHybridDevice (lib/devices/BaseHybridDevice.js) [182KB - master base]
-                           HybridSwitchBase (lib/devices/HybridSwitchBase.js)
-                                + PhysicalButtonMixin + VirtualButtonMixin
-                           HybridSensorBase (lib/devices/HybridSensorBase.js) [207KB - largest]
-                           HybridCoverBase (lib/devices/HybridCoverBase.js)
-                           HybridLightBase (lib/devices/HybridLightBase.js)
-                           HybridPlugBase (lib/devices/HybridPlugBase.js)
-                           HybridThermostatBase (lib/devices/HybridThermostatBase.js)
-                           ButtonDevice (lib/devices/ButtonDevice.js) [80KB]
-`
-
-### Key Base Classes
-
-- **BaseHybridDevice** (182KB): Master base - DP handling, capability management, settings, diagnostics, health monitoring, manufacturer variation handling
-- **HybridSensorBase** (207KB): Biggest file - all sensor types, IAS Zone, Tuya DP sensors, dynamic dpMappings builder, compound frame parsing, inference engines
-- **HybridSwitchBase** (40KB): Multi-gang on/off, power-on behavior, backlight, child lock
-- **HybridCoverBase** (35KB): Position control, tilt, curtain motor DPs
-- **HybridPlugBase** (37KB): Energy monitoring, power metering, USB outlets
-- **HybridLightBase** (29KB): RGB, RGBW, CCT, dimming, color temperature, scenes
-- **ButtonDevice** (80KB): Wireless buttons, scene switches, press types
-
----
-
-## 4. Tuya Protocol Stack
-
-### 4.1 Cluster 0xEF00 (Tuya DP Protocol)
-
-`
-ZCL Frame: [frameCtrl:1][seqNum:1][cmdId:1][payload:N]
-DP Payload: [status:1][transId:1][dp:1][type:1][lenHi:1][lenLo:1][data:N]
-`
-
-| Cmd | Direction | Purpose |
-|-----|-----------|---------|
-| 0x00 | Gw->Dev | dataRequest (send DP) |
-| 0x01 | Dev->Gw | dataResponse (DP reply) |
-| 0x02 | Dev->Gw | dataReport (proactive) |
-| 0x03 | Gw->Dev | dataQuery (query all DPs) |
-| 0x10 | Gw->Dev | mcuVersionRequest |
-| 0x11 | Dev->Gw | mcuVersionResponse |
-| 0x24 | Both | mcuSyncTime (10-byte seq-aware) |
-
-**mcuSyncTime (0x24) Standard**:
-- **Format**: `[seq:2][UTC:4][Local:4]` (10 bytes)
-- **Rule**: GW MUST echo the `seqNum` from the device request.
-- **PayloadSize**: 10 (Critical for modern TZE284 firmware).
-
-DP Types: 0=Raw, 1=Bool, 2=Value(4B), 3=String, 4=Enum, 5=Bitmap
-
-Common DPs: DP1-8=gang states, DP14=power-on, DP15=backlight, DP101=child_lock
-
-### 4.2 Core Tuya Files (lib/tuya/)
-
-| File | Size | Role |
-|------|------|------|
-| **TuyaEF00Manager.js** | 93KB | Main DP report handler, AdaptiveDataParser, compound frames |
-| **UniversalTuyaParser.js** | 71KB | Frame parsing, ZCL header routing, MCU version handling |
-| **DeviceFingerprintDB.js** | 215KB | Complete fingerprint database (all mfr+pid combos) |
-| **EnrichedDPMappings.js** | 51KB | DP-to-capability enriched mappings |
-| **TuyaDataPointsZ2M.js** | 43KB | DP definitions from Zigbee2MQTT |
-| **TuyaTimeSyncFormats.js** | 32KB | 23 time sync format variants + MCU format guessing |
-| **TuyaTimeSyncManager.js** | 24KB | Time sync coordination |
-| **TuyaGatewayEmulator.js** | 23KB | Gateway protocol emulation |
-| **TuyaSpecificClusterDevice.js** | 20KB | Cluster-specific device handling |
-| **TuyaZigbeeDevice.js** | 17KB | Base Tuya Zigbee device class |
-| **TuyaDPUltimate.js** | 43KB | Ultimate DP processing engine |
-
-### 4.3 DP Flow: Report -> Capability
-
-`
-Device receives ZCL frame on cluster 0xEF00
-  -> TuyaSpecificCluster / TuyaBoundCluster parses frame
-  -> TuyaEF00Manager.handleDataReport(dp, type, data)
-    -> AdaptiveDataParser converts raw data (bool, value, enum, etc.)
-    -> dpMappings lookup: dp -> { capability, divisor, valueMap }
-    -> ProductValueValidator validates range
-    -> setCapabilityValue(capability, convertedValue)
-    -> Flow triggers fire if applicable
-`
-
-### 4.4 Double-Division Bug (FIXED v5.11.15)
-- AdaptiveDataParser auto-converts (e.g. temp /100)
-- Then dpMappings divisor divides again -> wrong values
-- Fix: TuyaEF00Manager line ~1912 skips auto-conversion when dpMappings divisor !== 1
-
----
-
-## 5. Mixins
-
-### PhysicalButtonMixin (lib/mixins/PhysicalButtonMixin.js - 35KB)
-- Detects physical button presses vs app commands (2000ms window)
-- Single/double/triple/long press detection
-- Manufacturer profiles (BSEED, Zemismart, Moes, Lonsonho)
-- State tracking: `_lastOnoffState`, `_appCommandPending`, `_appCommandTimeout`
-- Pattern: `markAppCommand()` before sending, check `!_appCommandPending` on report
-
-### VirtualButtonMixin (lib/mixins/VirtualButtonMixin.js - 16KB)
-- Virtual button support for flow-only actions
-
-### TuyaDeviceMixin (lib/mixins/TuyaDeviceMixin.js - 13KB)
-- Common Tuya device initialization patterns
-
-### PeriodicAutoEnricherMixin (lib/mixins/PeriodicAutoEnricherMixin.js - 4KB)
-- Periodic device data enrichment
-
-Mixin order: `PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))`
-
----
-
-## 6. Zigbee Layer (lib/zigbee/)
-
-| File | Role |
-|------|------|
-| **registerClusters.js** | Registers all custom Zigbee clusters at app init |
-| **ZigbeeClusterManager** | Cluster binding and configuration |
-| **ZigbeeHealthMonitor** | Connection health tracking |
-| **ZigbeeErrorCodes** | Error code catalog and recovery |
-| **ZigbeeDataQuery** | Data querying from clusters |
-| **GreenPowerManager** | Green Power protocol support |
-| **MatterCompatibilityLayer** | Future Matter bridge compatibility |
-| **zigbee-cluster-map.js** | Cluster ID -> name/handler mapping |
-
-### Custom Clusters (lib/clusters/)
-
-| Cluster | File | Purpose |
-|---------|------|---------|
-| 0xEF00 | TuyaSpecificCluster.js, TuyaBoundCluster.js | Main Tuya DP protocol |
-| 0xE000 | TuyaE000Cluster.js, TuyaE000BoundCluster.js | BSEED custom cluster |
-| 0xE001 | TuyaE001Cluster.js | BSEED extended cluster |
-| 0xE002 | TuyaE002Cluster.js | Tuya extended |
-| IAS ACE | IasAceCluster.js | Security panel |
-| Zosung | ZosungIRControlCluster.js, ZosungIRTransmitCluster.js | IR blaster |
-
----
-
-## 7. Managers (lib/managers/)
-
-| Manager | Role |
-|---------|------|
-| **SmartDriverAdaptation** (48KB) | Runtime driver adaptation based on device capabilities |
-| **AutonomousMigrationManager** (24KB) | Auto-migrate devices between driver versions |
-| **IASZoneManager** (23KB) | IAS Zone enrollment, status parsing, alarm routing |
-| **IEEEAddressManager** (19KB) | IEEE address tracking and neighbor tables |
-| **IntelligentDataManager** (17KB) | Smart data caching and retrieval |
-| **UniversalHybridEnricher** (15KB) | Post-pair capability enrichment |
-| **EnergyManager** (13KB) | Energy monitoring aggregation |
-| **PowerManager** (12KB) | Power state management |
-| **DriverMigrationManager** (11KB) | Driver version migrations |
-| **DynamicCapabilityManager** (9KB) | Runtime capability add/remove |
-| **CountdownTimerManager** (6KB) | Countdown timer DPs |
-| **MultiEndpointManager** (6KB) | Multi-endpoint device handling |
-| **OTAManager** (5KB) | OTA update coordination |
-
----
-
-## 8. Utilities (lib/utils/)
-
-| Utility | Role |
-|---------|------|
-| **DriverMappingLoader** (41KB) | Load and parse driver DP mappings from compose files |
-| **AdaptiveDataParser** (14KB) | Smart data type conversion for DP values |
-| **battery-reporting-manager** (18KB) | Battery reporting configuration |
-| **cluster-configurator** (17KB) | ZCL cluster binding and reporting setup |
-| **data-collector** (14KB) | Device data collection for diagnostics |
-| **DriverUtils** (15KB) | Driver utility functions |
-| **UniversalThrottleManager** (8KB) | Rate limiting for device commands |
-| **RetryWithBackoff** (8KB) | Exponential backoff retry logic |
-| **ZigbeeRetry** (5KB) | Zigbee-specific retry with re-enrollment |
-| **migration-queue** (12KB) | Queued device migration system |
-| **TuyaDataPointUtils** (7KB) | DP encoding/decoding utilities |
-
----
-
-## 9. Helpers (lib/helpers/)
-
-| Helper | Role |
-|--------|------|
-| **DeviceHintsDatabase** (21KB) | Device identification hints for pairing |
-| **device_helpers** (19KB) | Common device helper functions |
-| **UniversalCapabilityDetector** (16KB) | Auto-detect capabilities from clusters |
-| **RawDataParser** (13KB) | Parse raw Tuya data frames |
-| **DeviceIdentificationDatabase** (12KB) | Fingerprint -> device type mapping |
-| **FallbackSystem** (12KB) | Multi-level fallback for unknown devices |
-| **UnknownDeviceHandler** (11KB) | Handle completely unknown devices |
-| **BatteryRouter** (10KB) | Route battery data to correct capability |
-| **CustomPairingHelper** (8KB) | Custom pairing flows |
-| **ManufacturerNameHelper** (8KB) | Manufacturer name normalization |
-
----
-
-## 10. Flow Cards System (lib/flow/)
-
-| File | Role |
-|------|------|
-| **AdvancedFlowCardManager** (17KB) | Advanced flow cards (conditions, actions, triggers) |
-| **FlowCardManager** (5KB) | Basic flow card registration |
-| **FlowTriggerHelpers** (8KB) | Trigger helper utilities |
-| **UniversalFlowCardLoader** (5KB) | Dynamic flow card loading from compose files |
-
-Flow card IDs follow pattern: `{driver}_physical_gang{N}_{on|off}`
-
----
-
-## 11. Diagnostics (lib/diagnostics/)
-
-| File | Role |
-|------|------|
-| **SystemLogsCollector** (19KB) | Collect structured system logs |
-| **DeviceDiagnostics** (16KB) | Per-device diagnostic data |
-| **HealthCheck** (15KB) | Device health monitoring |
-| **DiagnosticLogsCollector** (11KB) | Aggregate diagnostic logs |
-| **DiagnosticAPI** (9KB) | REST API for MCP/AI integration |
-| **DeviceHealth** (5KB) | Health state tracking |
-
----
-
-## 12. Battery System (lib/battery/)
-
-| File | Role |
-|------|------|
-| **BatteryCalculator** (21KB) | Battery % calculation from voltage curves |
-| **BatteryProfileDatabase** (20KB) | Per-device battery profiles (CR2032, AA, etc.) |
-| **BatteryHybridManager** (15KB) | Hybrid battery source management |
-| **BatteryManager** (14KB) | Core battery management |
-| **BatterySystem** (12KB) | Battery system orchestration |
-| **UnifiedBatteryHandler** (12KB) | Unified battery reporting |
-| **BatteryMonitoringMixin** (10KB) | Battery monitoring mixin for devices |
-
----
-
-## 13. Protocol Detection (lib/protocol/)
-
-| File | Role |
-|------|------|
-| **ZigbeeProtocolComplete** (40KB) | Complete ZCL protocol implementation |
-| **HybridProtocolManager** (21KB) | Decide ZCL vs Tuya DP per device |
-| **IntelligentProtocolRouter** (17KB) | Smart routing based on device behavior |
-| **KnownProtocolsDatabase** (15KB) | Known manufacturer protocol preferences |
-| **HardwareDetectionShim** (11KB) | Hardware capability detection |
-
----
-
-## 14. Intelligent Systems
-
-| File | Role |
-|------|------|
-| **IntelligentDeviceLearner** (22KB) | Learn device behavior over time |
-| **IntelligentSensorInference** (21KB) | Infer sensor types from DP patterns |
-| **ProductValueValidator** (22KB) | Validate sensor value ranges (CO2 min=0, temp -40..100) |
-| **ManufacturerVariationManager** (36KB) | Handle per-manufacturer DP variations |
-| **UniversalDataHandler** (39KB) | Universal DP->capability conversion |
-
----
-
-## 15. Tuya DP Engine (lib/tuya-dp-engine/)
-
-Self-contained DP processing engine with:
-- `index.js` (8KB) - Engine entry point
-- `capability-map.json` (8KB) - DP to capability mapping
-- `profiles.json` (9KB) - Device profiles
-- `fingerprints.json` (6KB) - Fingerprint DB
-- `converters/` - Type-specific converters
-
----
-
-## 16. Tuya Engine (lib/tuya-engine/)
-
-Secondary engine with:
-- `index.js` (5KB) - Engine entry point
-- `enhanced-dp-handler.js` (9KB) - Enhanced DP processing
-- `dp-database.json` (10KB) - DP definitions
-- `profiles.json` (9KB) - Device type profiles
-- `converters/` - Data converters
-- `traits/` - Device behavior traits
-
----
-
-## 17. Pairing System (lib/pairing/)
-
-| File | Role |
-|------|------|
-| **UniversalPairingManager** (10KB) | Orchestrate pairing flow |
-| **PermissiveMatchingEngine** (6KB) | Fuzzy fingerprint matching |
-| **EnrichmentScheduler** (5KB) | Post-pair enrichment scheduling |
-| **TwoPhaseEnrichment** (3KB) | Two-phase capability enrichment |
-| **DynamicEndpointDiscovery** (2KB) | Discover endpoints during pair |
-| **TuyaTimeSyncEngine** (3KB) | Time sync during pairing |
-
----
-
-## 18. Data Files
-
-| Path | Content |
-|------|---------|
-| `lib/tuya/DeviceFingerprintDB.js` | 215KB - Complete fingerprint database |
-| `lib/tuya/EnrichedDPMappings.js` | 51KB - DP enrichment data |
-| `lib/tuya/TuyaDataPointsZ2M.js` | 43KB - Z2M DP definitions |
-| `lib/data/SourceCredits.js` | Source attribution data |
-| `lib/helpers/DeviceHintsDatabase.js` | 21KB - Pairing hints |
-| `data/` | Runtime state files |
-
----
-
-## 19. GitHub Automation (.github/)
-
-### 19.1 Scripts (.github/scripts/)
-
-| Script | Role |
-|--------|------|
-| **ai-helper.js** | Multi-provider AI fallback: Gemini->OpenAI->Groq->Granite->Mistral->OpenRouter->ApiFreeLLM |
-| **project-rules.js** | Condensed project rules injected into all AI prompts |
-| **forum-responder.js** | Auto-respond to Homey forum topics using AI |
-| **forum-respond-requests.js** | Process forum device request threads |
-| **forum-updater.js** | Post forum summary updates |
-| **github-scanner.js** | Scan GitHub issues/PRs for device requests |
-| **enrichment-scanner.js** | Scan for device enrichment opportunities |
-| **nightly-processor.js** (23KB) | Nightly batch processing |
-| **monthly-comprehensive.js** (18KB) | Monthly deep scan all sources |
-| **triage-upstream-enhanced.js** | Enhanced issue triage |
-| **scan-forum.js** | Scan Homey forum for device topics |
-| **scan-forks.js** | Scan fork repos for new fingerprints |
-| **cross-driver-gap.js** | Detect cross-driver fingerprint gaps |
-| **load-fingerprints.js** | Load and validate fingerprints |
-
-### 19.2 AI Provider Chain
-
-`
-GOOGLE_API_KEY  -> Gemini 2.0 Flash / Flash Lite (free)
-OPENAI_API_KEY  -> GPT-4o-mini
-GROQ_API_KEY    -> Llama 3.3 70B (free, fast)
-HF_TOKEN        -> IBM Granite 3.3 8B (HuggingFace, free)
-MISTRAL_API_KEY -> Mistral Small (free experiment)
-OPENROUTER_API_KEY -> Llama 3.3 8B free models
-APIFREELLM_KEY  -> ApiFreeLLM (free, unlimited)
-`
-
-All providers get `PROJECT_RULES` injected into system prompt via `project-rules.js`.
-
-### 19.3 Workflows (.github/workflows/)
-
-| Workflow | Schedule | Purpose |
-|----------|----------|---------|
-| **tuya-automation-hub.yml** | Dispatch | Master hub: forum-responder, github-scanner, enrichment-scanner, forum-updater |
-| **sunday-master.yml** | Weekly Sun | Triage issues, scan forks, scan forum, auto-respond |
-| **nightly-auto-process.yml** | Daily | Nightly batch processing |
-| **monthly-comprehensive-sync.yml** | Monthly | Deep scan all sources |
-| **forum-auto-responder.yml** | 6h | Auto-respond to forum topics |
-| **weekly-fingerprint-sync.yml** | Weekly | Fetch + validate fingerprints |
-| **auto-respond.yml** | Issue/PR trigger | Auto-respond to new issues/PRs |
-| **upstream-auto-triage.yml** | Schedule | Triage upstream issues |
-
-### 19.4 GitHub Secrets Required
-
-`
-GOOGLE_API_KEY, OPENAI_API_KEY, GROQ_API_KEY, HF_TOKEN,
-MISTRAL_API_KEY, OPENROUTER_API_KEY, APIFREELLM_KEY,
-HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT
-`
-
----
-
-## 20. Key Design Patterns
-
-### 20.1 Fingerprint Matching
-- Fingerprint = `manufacturerName` + `productId` (COMBINED)
-- Same mfr in multiple drivers is NORMAL if productId differs
-- Defined in `driver.compose.json` -> `zigbee.manufacturerName[]` + `zigbee.productId[]`
-
-### 20.2 DP Mappings
-- Static: defined in device.js `get dpMappings()`
-- Dynamic: built at runtime from sensor config (presence_sensor_radar)
-- Enriched: from `EnrichedDPMappings.js` database
-
-### 20.3 Settings Keys
-- `zb_model_id` NOT `zb_modelId`
-- `zb_manufacturer_name` NOT `zb_manufacturerName`
-
-### 20.4 Flow Card Rules
-- IDs: `{driver}_physical_gang{N}_{on|off}`
-- NO `titleFormatted` with `[[device]]` (causes manual selection bug)
-- Use `title` field instead
-
-### 20.5 Physical Button Detection
-`
-_markAppCommand() -> set _appCommandPending=true, timeout 2s
-On DP report: isPhysical = reportingEvent && !_appCommandPending
-if (isPhysical && previousState !== value) -> trigger flow card
-`
-
-### 20.6 Backlight Values
-Strings: `"off"`, `"normal"`, `"inverted"` (NOT numbers)
-
-### 20.7 Mains-Powered Sensors
-- `get mainsPowered() { return true; }` in device.js
-- Remove `measure_battery` in `onNodeInit`
-
-### 20.8 Import Paths
-`javascript
-// CORRECT:
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-
-// WRONG:
-const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
-`
-
----
-
-## 21. Configuration Files
-
-| File | Purpose |
-|------|---------|
-| `app.json` (2.1MB) | Homey app manifest (auto-generated from compose) |
-| `package.json` | NPM config, scripts, dependencies |
-| `.homeycompose/app.json` | Base app compose config |
-| `.homeycompose/capabilities/` | Custom capability definitions |
-| `.homeycompose/flow/` | Global flow card definitions |
-| `locales/` | i18n translations (en, nl, de, fr, etc.) |
-| `settings/` | App settings page |
-| `.env.example` | Environment variable template |
-
----
-
-## 22. Scripts (scripts/)
-
-Utility and maintenance scripts:
-- `scripts/automation/` - CI/CD, auto-update, pre-push checks
-- `scripts/ai/` - AI research, analysis, driver generation
-- `scripts/maintenance/` - Image fixing, cleanup
-- `scripts/fixes/` - One-off fix scripts
-- `scripts/docs/` - Documentation generation
-- `scripts/images/` - Image generation and verification
-- `scripts/validation/` - Schema validation
-
----
-
-## 23. External Data Sources
-
-| Source | Usage |
+### Key Statistics
+| Metric | Value |
 |--------|-------|
-| **Zigbee2MQTT** | Fingerprints, DP definitions, device configs |
-| **ZHA (zigpy)** | Device handlers, quirks |
-| **Blakadder** | Device database cross-reference |
-| **JohanBendz fork** | Upstream fingerprints (com.tuya.zigbee) |
-| **Homey Forum** | User device requests, diagnostic reports |
-| **GitHub Issues** | Bug reports, device support requests |
+| Total drivers | 429 |
+| Zigbee drivers | 378 |
+| WiFi drivers | 51 |
+| Fingerprints | 4,304 |
+| Flow cards | 4,138 |
+| Unique capabilities | 156 |
+| Time sync formats | 23 |
+| MCU protocol versions | 5 (v3.1-v3.5) |
+| Pipeline layers | 11 |
+| Lib files | 468 |
+| Scripts | 93 |
+| Workflows | 40 |
 
 ---
 
-## 24. Windsurf Workflows (.windsurf/workflows/)
+## 11-Layer Zigbee Pipeline
 
-| Workflow | Purpose |
+The core of the app is an 11-layer processing pipeline that handles all Zigbee communication:
+
+```
+Layer 0: TuyaZigbeeDevice.handleFrame     [Raw frame interception]
+    |
+Layer 1: UniversalThrottleManager          [Flow control: 120 RX/min, 30 TX/min]
+    |
+Layer 2: IntelligentProtocolRouter         [Route ZCL vs Tuya DP]
+    |
+Layer 3: TuyaBoundCluster                  [Binding & command capture]
+    |
+Layer 4: TuyaEF00Manager/TuyaDPParser     [Multi-DP decoding]
+    |
+Layer 5: GlobalTimeSyncEngine              [Time sync (0x24)]
+    |
+Layer 6: PhysicalButtonMixin               [Button deduplication]
+    |
+Layer 7: BaseUnifiedDevice                 [Capability mapping]
+    |
+Layer 8: DynamicCapabilityManager          [Auto-discovery & phantom pruning]
+    |
+Layer 9: SessionManager                    [Fragmented IR packets]
+    |
+Layer 10: HealthMonitor                    [Heartbeat tracking]
+    |
+Layer 11: SanityFilter                     [EMA + ROC noise filtering]
+```
+
+### Layer Details
+
+#### L0: TuyaZigbeeDevice.handleFrame
+- **File**: `lib/tuya/TuyaZigbeeDevice.js` (45.6KB)
+- **Purpose**: Raw Zigbee frame interception and initial routing
+- **Handles**: All incoming Zigbee frames before any processing
+
+#### L1: UniversalThrottleManager
+- **File**: `lib/utils/UniversalThrottleManager.js`
+- **Purpose**: Flow control to prevent device overload
+- **Limits**: 120 RX messages/min, 30 TX commands/min per device
+
+#### L2: IntelligentProtocolRouter
+- **File**: `lib/protocol/IntelligentProtocolRouter.js`
+- **Purpose**: Routes frames to ZCL or Tuya DP handlers
+- **Decision**: Based on cluster ID (0xEF00 = Tuya DP, others = ZCL)
+
+#### L3: TuyaBoundCluster
+- **File**: `lib/clusters/TuyaBoundCluster.js` (+ 14 cluster files)
+- **Purpose**: Cluster binding and command capture
+- **Supports**: 17 safe clusters for auto-discovery
+
+#### L4: TuyaEF00Manager/TuyaDPParser
+- **Files**: `lib/tuya/TuyaEF00Manager.js` (97.6KB), `lib/tuya/TuyaDPParser.js` (6.3KB)
+- **Purpose**: Multi-DP decoding (single and multi-frame)
+- **Features**: MCU UART header detection (0x55 0xAA), parseMultiple()
+
+#### L5: GlobalTimeSyncEngine
+- **File**: `lib/tuya/GlobalTimeSyncEngine.js`
+- **Purpose**: Time synchronization with 23 format support
+- **Formats**: 23 distinct time sync formats (see Time Sync section)
+
+#### L6: PhysicalButtonMixin
+- **File**: `lib/mixins/PhysicalButtonMixin.js`
+- **Purpose**: Button deduplication with 2000ms window
+- **Prevents**: Ghost button presses from hardware echoes
+
+#### L7: BaseUnifiedDevice
+- **File**: `lib/devices/BaseUnifiedDevice.js` (182.1KB)
+- **Purpose**: Core capability mapping and device lifecycle
+- **Features**: safeSetCapabilityValue, markAppCommand, lifecycle management
+
+#### L8: DynamicCapabilityManager
+- **File**: `lib/managers/DynamicCapabilityManager.js` (11.7KB)
+- **Purpose**: Auto-discovery of capabilities and phantom pruning
+- **Features**: Automatic capability detection from DP reports
+
+#### L9: SessionManager
+- **File**: `lib/session/SessionManager.js`
+- **Purpose**: Fragmented IR packet reassembly
+- **For**: IR blaster devices with multi-packet commands
+
+#### L10: HealthMonitor
+- **Files**: `lib/health/HealthMonitor.js`, `lib/zigbee/ZigbeeHealthMonitor.js`
+- **Purpose**: Device heartbeat tracking and health monitoring
+- **Features**: Offline detection, connection quality metrics
+
+#### L11: SanityFilter
+- **File**: `lib/tuya/SanityFilter.js` (3.4KB)
+- **Purpose**: Noise filtering using EMA and ROC algorithms
+- **Prevents**: Spurious value spikes from sensor readings
+
+---
+
+## Device Class Hierarchy
+
+```
+Homey.Device (SDK3)
+  |
+  +-- ZigBeeDevice (homey-zigbeedriver)
+  |     |
+  |     +-- TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
+  |           |
+  |           +-- BaseUnifiedDevice (lib/devices/BaseUnifiedDevice.js)
+  |                 |
+  |                 +-- UnifiedSensorBase (lib/devices/UnifiedSensorBase.js)
+  |                 |     [122 sensor drivers]
+  |                 |
+  |                 +-- UnifiedCoverBase (lib/devices/UnifiedCoverBase.js)
+  |                 |     [9 windowcoverings + 2 curtain + 3 garagedoor]
+  |                 |
+  |                 +-- UnifiedLightBase (lib/devices/UnifiedLightBase.js)
+  |                 |     [42 light + 16 fan drivers]
+  |                 |
+  |                 +-- UnifiedPlugBase (lib/devices/UnifiedPlugBase.js)
+  |                 |     [113 socket drivers]
+  |                 |
+  |                 +-- UnifiedThermostatBase (lib/devices/UnifiedThermostatBase.js)
+  |                 |     [25 thermostat + 4 heater drivers]
+  |                 |
+  |                 +-- UnifiedSwitchBase (lib/devices/UnifiedSwitchBase.js)
+  |                 |     |
+  |                 |     +-- HybridSwitchBase (adds PhysicalButtonMixin + VirtualButtonMixin)
+  |                 |
+  |                 +-- ButtonDevice (lib/devices/ButtonDevice.js)
+  |                       [18 remote + 4 doorbell + 2 button drivers]
+  |
+  +-- TuyaLocalDevice (lib/tuya-local/TuyaLocalDevice.js)
+  |     [29 WiFi Tuya drivers]
+  |
+  +-- EweLinkLocalDevice (lib/ewelink-local/EweLinkLocalDevice.js)
+        [22 WiFi eWeLink drivers]
+```
+
+### Driver Categories
+| Category | Count | Protocol | Base Class |
+|----------|-------|----------|------------|
+| sensor | 122 | ZCL + Tuya DP | UnifiedSensorBase |
+| socket | 113 | ZCL + Tuya DP | UnifiedPlugBase |
+| other | 44 | Mixed | Various |
+| light | 42 | ZCL + Tuya DP | UnifiedLightBase |
+| thermostat | 25 | Tuya DP | UnifiedThermostatBase |
+| remote | 18 | ZCL | ButtonDevice |
+| fan | 16 | ZCL + Tuya DP | UnifiedLightBase |
+| windowcoverings | 9 | Tuya DP + ZCL | UnifiedCoverBase |
+| lock | 5 | Tuya DP | UnifiedSensorBase |
+| doorbell | 4 | ZCL | ButtonDevice |
+| heater | 4 | Tuya DP | UnifiedThermostatBase |
+| garagedoor | 3 | Tuya DP | UnifiedCoverBase |
+| button | 2 | ZCL | ButtonDevice |
+| curtain | 2 | Tuya DP | UnifiedCoverBase |
+| camera | 1 | Mixed | Various |
+| vacuumcleaner | 1 | Mixed | Various |
+| speaker | 1 | Mixed | Various |
+
+---
+
+## Protocols
+
+### Zigbee (Tuya DP 0xEF00 + ZCL)
+- **Primary protocol** for 378 drivers
+- **Tuya DP**: Custom Data Point protocol on cluster 0xEF00
+- **ZCL**: Standard Zigbee Cluster Library for on/off, level control, etc.
+- **Multi-DP**: Single frame can contain multiple data points
+
+### WiFi (TuyaLocalClient)
+- **29 WiFi drivers** using Tuya protocol
+- **TCP socket** connection with adaptive handshake
+- **Protocol versions**: 3.1, 3.2, 3.3, 3.4, 3.5
+- **Features**: Offline command queuing, heartbeat monitoring, IP self-healing
+
+### WiFi (EweLinkLocal)
+- **22 WiFi drivers** using eWeLink protocol
+- **Similar architecture** to TuyaLocalClient
+- **Features**: Circuit breaker, connection state tracking
+
+---
+
+## Module Directory Structure
+
+```
+lib/
+  tuya/          [57 files] Tuya protocol: DP parsing, time sync, sanity filtering
+  devices/       [17 files] Device base classes: switch, sensor, cover, light, plug, thermostat
+  mixins/        [18 files] Reusable behavior: PhysicalButton, VirtualButton, Sonoff, Thermostat
+  managers/      [23 files] Services: SmartDivisor, DynamicCapability, Energy, IASZone, IEEE
+  utils/         [50 files] Utilities: AdaptiveDataParser, CaseInsensitiveMatcher, cache
+  battery/       [13 files] Battery: UnifiedHandler, Calculator, Monitor, Health, Hybrid
+  clusters/      [28 files] ZCL clusters: OnOff, LevelControl, Tuya, ZosungIR
+  protocol/      [5 files]  Protocol: HybridProtocol, IntelligentRouter, KnownProtocols
+  presence/      [7 files]  Presence: ConfidenceScorer, SignalTriangulation, VirtualPresence
+  features/      [19 files] Features: Flows, Conditions, Energy, Topology, Backup
+  groups/        [2 files]  Groups: DeviceGroupManager
+  registry/      [8 files]  Device profiles: switches, sensors, covers, lights, plugs, thermostats
+```
+
+---
+
+## Data Flow
+
+### Zigbee Device Communication
+```
+Device sends Zigbee frame
+    |
+    v
+L0: handleFrame() intercepts
+    |
+    v
+L1: ThrottleManager checks rate limits
+    |
+    v
+L2: ProtocolRouter decides ZCL vs Tuya DP
+    |
+    v
+L3: BoundCluster captures command
+    |
+    v
+L4: TuyaEF00Manager decodes DPs (may have multiple)
+    |
+    v
+L5: TimeSyncEngine handles time DPs
+    |
+    v
+L6: PhysicalButtonMixin deduplicates button presses
+    |
+    v
+L7: BaseUnifiedDevice maps to capabilities
+    |
+    v
+L8: DynamicCapabilityManager auto-discovers new caps
+    |
+    v
+L11: SanityFilter smooths noisy values
+    |
+    v
+Homey UI updates
+```
+
+### WiFi Device Communication
+```
+Device sends TCP packet
+    |
+    v
+TuyaLocalClient receives and decrypts
+    |
+    v
+TuyaLocalDevice._onData() processes
+    |
+    v
+Capability mapping via dpMappings
+    |
+    v
+safeSetCapabilityValue() updates Homey
+```
+
+---
+
+## Time Sync Formats
+
+The app supports 23 distinct time synchronization formats:
+
+### Epoch-Based (4-8 bytes)
+- ZIGBEE_2000, ZIGBEE_2000_LOCAL, ZIGBEE_2000_LE
+- UNIX_1970, UNIX_1970_LOCAL, UNIX_1970_LE, UNIX_1970_MS
+
+### Dual Timestamp (8 bytes)
+- TUYA_DUAL_2000, TUYA_DUAL_1970
+- Z2M_DUAL_1970, Z2M_DUAL_2000
+
+### MCU UART Protocol (8-10 bytes)
+- TUYA_MCU, TUYA_MCU_HDR_10, TUYA_MCU_HDR_8
+
+### Sequence-Echo (10 bytes)
+- TUYA_SEQ_10, TUYA_SEQ_10_E2K
+
+### Minimal & Date-String (5-12 bytes)
+- ZCL_5, TUYA_STANDARD, TUYA_UTC
+- TUYA_EXTENDED_TZ, TUYA_FULL_TZ, TUYA_GATEWAY
+
+### Commit-Trigger
+- ZT08_DP17_COMMIT
+
+---
+
+## Security Model
+
+### Local-First Architecture
+- **100% local execution** on Homey Pro
+- **Zero cloud calls** during normal operation
+- **Heap limit**: < 64MB
+- **Bundle limit**: < 7MB
+
+### Token Security
+- GitHub tokens never committed to .git/config
+- GH_PAT secret for cross-repo access
+- GITHUB_TOKEN for current repo only
+
+### Sensitive Files Blocked
+`*.key`, `*.pem`, `config.json`, `secrets.json`, `credentials.json`, `token.json`, `oauth2.keys.json`, `client_secret*.json`
+
+---
+
+## CI/CD Pipeline
+
+### GitHub Actions (40 workflows)
+- **Validation**: Syntax, JSON schema, security scanning
+- **Building**: Bundle size check, SDK publish validation
+- **Publishing**: Auto-publish draft, stable release
+- **Maintenance**: Daily maintenance, monthly enrichment
+- **Quality**: Code quality, fingerprint health, flow card integrity
+
+### Pre-Commit Checklist
+1. Syntax check: `node --check <files>`
+2. SDK validation: `npx homey app validate --level publish`
+3. Security scan: `node scripts/ci/security-scanner.js`
+4. Size check: < 7MB bundle
+
+---
+
+## Related Documentation
+
+| Document | Purpose |
 |----------|---------|
-| `cross-reference-session.md` | Cross-reference all sources at each prompt |
-| `diagnose-device-issues.md` | Diagnose Tuya device issues from diagnostic logs |
-| `monthly-fingerprint-sync.md` | Monthly comprehensive fingerprint sync |
-| `sunday-automation.md` | Sunday triage: GitHub, forks, forum |
-
----
-
-## 25. File Size Reference (largest files)
-
-| File | Size | Notes |
-|------|------|-------|
-| `lib/tuya/DeviceFingerprintDB.js` | 215KB | Fingerprint database |
-| `lib/devices/HybridSensorBase.js` | 207KB | All sensor logic |
-| `lib/devices/BaseHybridDevice.js` | 182KB | Master base device |
-| `lib/tuya/TuyaEF00Manager.js` | 93KB | DP protocol handler |
-| `lib/devices/ButtonDevice.js` | 80KB | Button/scene device |
-| `lib/devices/TuyaHybridDevice.js` | 79KB | Hybrid device base |
-| `lib/tuya/UniversalTuyaParser.js` | 71KB | Frame parser |
-| `lib/tuya/EnrichedDPMappings.js` | 51KB | DP enrichment DB |
-| `lib/managers/SmartDriverAdaptation.js` | 48KB | Runtime adaptation |
-| `app.js` | 43KB | App entry point |
-
----
-
-## 26. Identity Resolution Resilience
-
-To handle manufacturer variations and accidental case sensitivity issues, the identity resolution engine now implements:
-- **Case-Insensitive Normalization**: All `manufacturerName` and `productId` lookups are normalized to lowercase before matching.
-- **Composite Identity Mapping**: Uses `lib/tuya/UniversalTuyaParser.js` to resolve manufacturer names across all internal logic.
-
-## 27. Tuya EF00 Time Sync (10-byte Standard)
-
-Modern Tuya devices (specifically TZE284 LCD clocks) require a specific time sync response:
-- **Unified Method**: `_respondToTimeSync(sequenceNumber)` in `BaseHybridDevice`.
-- **Logic**: Delegated to `lib/tuya/TuyaTimeSync.js`.
-- **Compatibility**: Supports both direct cluster calls and `TuyaEF00Manager` routing.
-
-## 28. Data Sanitization (NaN Hardening)
-
-Autonomous data processing pipelines now include floating-point sanitization:
-- **Rule**: `SemanticConverter.js` and `AdaptiveDataParser.js` must validate numeric output.
-- **NaN Prevention**: Non-numeric results from divisors or scaling are blocked before reaching `setCapabilityValue` to prevent Homey interface crashes.
-
-## 29. CI/CD Silencing & Zero-Defect Maintenance
-
-To maintain a "Zero-Defect" state without polluting public activity logs, the CI/CD pipeline implements:
-- **Actor-Based Filtering**: Workflows (`unified-ci.yml`, `code-quality.yml`) exclude automated bot activity (e.g., `dependabot`, `github-actions`) from status reporting.
-- **Silent Maintenance**: Autonomous maintenance scripts (e.g., `weekly-fingerprint-sync.yml`) execute in the background with silenced logging for minor metadata updates.
-- **Stale-Bot Neutralization**: Disabled automated closure of issues to preserve community research context.
-
-## 30. TZE284 Fertilizer Sensor Implementation
-
-Specific handling for the `_TZE284_hdml1aav` fertilizer sensor:
-- **Exhaustive DP Mapping**: DP3 (Moisture), DP4 (EC/Fertility), DP5 (Temp), DP15 (Battery), DP101 (Air Humidity), DP102 (Luminance), DP112 (Soil Fertility).
-- **Sub-Capability Pattern**: Uses `measure_humidity.soil` for moisture to distinguish from air `measure_humidity`.
-- **Adaptive Conversion**: Temperature logic automatically detects scale variant (÷10 or ÷100) via `SoilSensorDevice.js` override.
-
-## 31. Dynamic Mains-Battery Capability Pruning
-
-To support hybrid and variants of drivers (like `air_quality_co2` or scene panels) under Homey Pro's strict SDK3 pairing rules, the system dynamically manages mains vs battery capabilities:
-- **Rule**: Mains-powered devices must never present battery capabilities to the Homey interface.
-- **Implementation**: True mains-powered drivers that declare `measure_battery` inside their compose configurations dynamically detect `this.mainsPowered` on initialization inside `onNodeInit()` and execute `this.removeCapability('measure_battery').catch(() => {})`.
-- **Drivers Updated**: `air_quality_co2`, `blaster_remote`, `climate_sensor_gas`, `climate_sensor_smart`, `device_air_purifier_quality`, and `sensor_climate_smart`.
-
-## 32. Quality Gate Layer 10 (Mains-Battery Enforcer Check)
-
-To prevent regression during future automated synchronization or community fingerprint additions:
-- **Automated Check**: Layer 10 of the multi-layer quality gateway (`.github/scripts/enforce-rules.js`) verifies that if a driver's `device.js` returns `true` from the `mainsPowered` getter, it must contain a strict `removeCapability('measure_battery')` pruning block.
-- **Outcome**: Bypasses or violations are treated as blocking errors that prevent local or GitHub push validation from succeeding.
-
-## 33. Scene Panel Flow Card Action & Trigger Auto-Alignment
-
-To resolve silent flow listener failures and mismatches:
-- **Mismatches Solved**: Aligned Javascript trigger IDs in `_handleDP` (like `sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_${g}_changed`) with the exact `driver.flow.compose.json` schema declarations.
-- **Actions Registered**: Automatically maps and registers action card listeners (e.g., `set_switch_1` to `set_switch_4`) to control relay and button states via `onoff.gang{N}` and send DP commands directly to the hardware.
-
-## 34. Dynamic RAM Optimization & Buffer-Based JSON Parsing (v9.0.0+)
-
-To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached heap limit Allocation failed`) when parsing large JSON files like `data/fingerprints.json` (11.8MB) in Homey Pro (which has a strict 64MB heap limit), the database database loading layers have been optimized to bypass standard UTF-16 string allocation:
-1. **Buffer-Based File Ingestion**: Instead of using `fs.readFileSync(fpath, 'utf8')` (which creates a massive UTF-16 JavaScript string in V8 memory consuming ~24MB of JS heap for a 12MB file), the database is loaded directly as a raw Node.js **Buffer** (`fs.readFileSync(fpath)`).
-2. **Direct Buffer JSON Parsing**: Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. Parsing the Buffer directly avoids allocating the intermediate UTF-16 string on the JS heap, instantly cutting the peak memory overhead by **50%**!
-3. **Active Garbage Collection Triggers**: Defensive V8 garbage collection sweeps (`global.gc()`) are triggered before and after parsing (if exposed) to instantly flush transient memory fragments and keep the heap clean.
-4. **Resilient Error Interception**: If parsing fails due to heap limits or corrupted files, the parser catches the error gracefully and falls back to an empty object `{}` rather than crashing the Homey Pro box, guaranteeing runtime execution safety.
-5. **Static-vs-Dynamic Dual-Layer Pairing Protocol**:
-   - **Static manifests (`driver.compose.json` / `app.json`)**: Manufacturer names and pairing `modelId` definitions remain statically defined to allow local pairing on the box.
-   - **Dynamic database files (`fingerprints.json` / `driver-mapping-database.json`)**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capabilities dynamically at runtime.
-
-## 35. Bidirectional Switch & Scene Panel Optimizations (v9.5.0+)
-
-To solve critical multi-gang switch synchronization and physical flow triggers on SDK3, the switch layer integrates the following technical refinements:
-1. **Promise Chaining Trigger Card Crash Prevention**: We resolved a fatal `TypeError: card.trigger is not a function` crash. When triggering flow cards in ZCL-only mode (BSEED), the method `.trigger()` returns a Promise. The code now separates card fetching from trigger invocation with explicit asynchrony and error containment, ensuring tokens are transmitted safely without V8 crashes:
-   ```javascript
-   const card = this.homey.flow.getDeviceTriggerCard(flowId);
-   if (card) {
-     await card.trigger(this, { gang: epNum, state: value }, {}).catch(err => this.error(err));
-   }
-   ```
-2. **Device-Scoped SDK3 Compliance**: Standardized on `this.homey.flow.getDeviceTriggerCard(flowId)` instead of the deprecated global `getTriggerCard(flowId)` for driver-specific button and scene events, conforming with Athom SDK3 runtime standards.
-3. **ZCL-Only Duplicate Listener Blocker**: Introduced early returns immediately after `_initZclOnlyMode()` in `onNodeInit()` under conditional blocks. This ensures standard capability listeners and mixin hooks are not registered concurrently, resolving double-triggering events and toggle feedback cascades.
-4. **ZCL Command Broadcast Filtering (Zemismart/BSEED TS0726 Bug)**: Multi-gang switches often broadcast `onOff` state changes on Endpoint 1-4 across all channels. We track the target commanded gang (`this._lastCommandedGang`) and command timestamp (`this._lastCommandTime`) in a 2000ms sliding filter window to ignore duplicate/fake internal hardware echoes.
-
-## 36. Enhanced Pre-Commit Checks & Zero-Defect Gateway (v9.5.0+)
-
-To secure all future developments against regression:
-1. **Automated Blocker Checks**: The Fleetwood Quality Gateway (`scripts/PRE_COMMIT_CHECKS.js`) and Zero Defect Audit (`scripts/maintenance/zero-defect-architect-audit.js`) have been enriched with strict AST/string checking to immediately block commits containing:
-   - **Promise Chaining Trigger Crashes**: Scans for variables assigned to `.trigger()` and called with `.trigger()` again.
-   - **ZCL-Only Early Return Violations**: Scans for drivers calling ZCL-Only initialization that omit the early `return` in `onNodeInit()`.
-2. **Continuous Compliance**: These gates prevent sub-standard code from bypassing pre-commit or pre-push controls, maintaining a zero-defect baseline across all 413 drivers.
-
-## 37. AI Agent Integration Patterns
-
-### 37.1 CLAUDE.md Skill-Based Architecture
-
-The project implements a skill-based AI agent system with specialized modules for different development tasks:
-
-| Skill | Purpose | Usage |
-|-------|---------|-------|
-| **HOMEY_SDK3_EXPERT** | SDK3 patterns, anti-patterns, lifecycle | Driver development, migration |
-| **TUYA_ARCHITECT_SOP** | 5 Levels of Interpretation | Architecture decisions |
-| **TUYA_DP_MASTER** | DP mapping, protocol detection | New device support |
-| **SYNC_PROTOCOL** | Upstream synchronization | Z2M/ZHA/community sync |
-
-### 37.2 Universal CLAUDE.md Patterns
-
-**Token Efficiency Rules**:
-- Read files only when needed (don't load entire codebase)
-- Use targeted searches (`Grep`, `Glob`) over full file reads
-- Summarize findings in structured formats
-- Cache frequently accessed patterns
-
-**Config Health Monitoring**:
-- Validate `app.json` structure before changes
-- Check `.homeyignore` for bundle size compliance
-- Verify GitHub Secrets availability in workflows
-- Monitor `.env` files for credential leaks
-
-**Tech Debt Detection**:
-- Scan for deprecated SDK2 patterns
-- Identify linear battery formulas (banned)
-- Detect raw `console.log` usage
-- Flag missing `_destroyed` guards
-
-### 37.3 CLAUDE-FABLE-5 Behavior Rules
-
-**Behavioral Directives**:
-1. **Always read AI_CONTEXT_MANDATE.md first** - No exceptions
-2. **Follow 11-Layer Pipeline** - Never bypass layers
-3. **Use hardened methods** - `safesetCapability()` over raw `setCapabilityValue()`
-4. **Idempotent initialization** - Check `_initialized` flag
-5. **Defensive importing** - Wrap `require()` in try/catch
-
-**Anti-Hallucination Rules**:
-- Verify all SDK3 methods exist before using
-- Check file paths against actual structure
-- Validate code patterns against working examples
-- Cross-reference with official Homey SDK documentation
-
-### 37.4 System Prompt Best Practices
-
-**Structured Thinking**:
-```
-1. Read context files
-2. Analyze current state
-3. Identify dependencies
-4. Plan changes
-5. Execute incrementally
-6. Verify each step
-7. Document decisions
-```
-
-**Tool Usage Patterns**:
-- Use `Read` for specific file sections (not full files)
-- Use `Grep` for pattern searching
-- Use `Glob` for file discovery
-- Use `Edit` for precise modifications
-- Use `Bash` for validation commands only
-
-## 38. Security Architecture
-
-### 38.1 Multi-Layer Security
-
-| Layer | Component | Purpose |
-|-------|-----------|---------|
-| L1 | `.gitignore` | Prevent credential commits |
-| L2 | Security Scanner | Detect secrets in code |
-| L3 | GitHub Secrets | Secure credential storage |
-| L4 | Workflow Guards | Validate secret availability |
-| L5 | Runtime Isolation | Zero cloud calls |
-
-### 38.2 Credential Management
-
-**Required Secrets**:
-```
-HOMEY_PAT          - Athom App Store publishing
-HOMEY_PAT_API      - Homey Cloud API
-DISCOURSE_API_KEY  - Forum authentication
-GH_PAT             - Cross-repo access
-GOOGLE_API_KEY     - AI analysis
-GMAIL_EMAIL        - Diagnostic email
-GMAIL_APP_PASSWORD - IMAP access
-```
-
-**Secret Rotation Schedule**:
-- GitHub tokens: 90 days
-- Athom tokens: On compromise
-- Gmail App Passwords: Permanent
-
-### 38.3 Sensitive File Protection
-
-**Blocked Patterns**:
-- `*.key`, `*.pem`
-- `config.json`, `secrets.json`
-- `credentials.json`, `token.json`
-- `.env*` files
-- `client_secret*.json`
-
-**Detection Script**: `scripts/ci/security-scanner.js`
-
-## 39. Performance Optimization Patterns
-
-### 39.1 Memory Management
-
-**Buffer-Based Loading**:
-```javascript
-// CRITICAL: Avoid UTF-16 string allocation
-const data = JSON.parse(fs.readFileSync(fpath));  // Buffer
-// NOT: JSON.parse(fs.readFileSync(fpath, 'utf8'))  // String
-```
-
-**Garbage Collection**:
-```javascript
-// Force GC after large operations
-if (global.gc) {
-  global.gc();
-}
-```
-
-### 39.2 Throttling Strategy
-
-| Direction | Limit | Purpose |
-|-----------|-------|---------|
-| RX (Incoming) | 120 msg/min | Prevent device flooding |
-| TX (Outgoing) | 30 cmd/min | Protect Tuya MCU |
-| Energy Updates | Batched | Save CPU cycles |
-
-### 39.3 Deduplication Windows
-
-| Event Type | Window | Purpose |
-|------------|--------|---------|
-| Button Press | 200ms | Debounce |
-| State Change | 1.5s | Prevent duplicates |
-| Battery Report | 5min/2% | Reduce noise |
-
-## 40. Local-First Architecture
-
-### 40.1 Runtime Isolation
-
-**Zero Cloud Calls**:
-- All device control local
-- No external API calls at runtime
-- Offline-capable operation
-- Homey Pro hub only
-
-**Bundle Constraints**:
-- 7MB maximum size
-- Exclude development files
-- Defensive importing required
-- Safe require patterns
-
-### 40.2 Offline Capability
-
-**Data Sources**:
-- Static manifests in bundle
-- Dynamic JSON databases
-- Local fingerprint matching
-- Cached device profiles
-
-**Fallback Patterns**:
-```javascript
-let data;
-try {
-  data = require('./lib/data/SourceCredits');
-} catch (err) {
-  data = { credits: [] };  // Graceful fallback
-}
-```
-
-## 41. Development Workflow Integration
-
-### 41.1 Pre-Commit Validation
-
-```bash
-# 1. Syntax check
-node --check lib/**/*.js drivers/**/*.js
-
-# 2. Validation
-npm run validate:recursive
-
-# 3. Security scan
-npm run security-scan
-
-# 4. Size check
-npm run check-build
-```
-
-### 41.2 Pre-Push Validation
-
-```bash
-# 1. Full validation
-npm run precommit:full
-
-# 2. Integration test
-npm test
-
-# 3. Documentation update
-npm run build-docs
-```
-
-### 41.3 Post-Push Monitoring
-
-1. Monitor CI pipeline
-2. Check draft publication
-3. Verify test channel
-4. Update documentation
-
-## 42. Emergency Procedures
-
-### 42.1 App Crash on Boot
-
-1. **Check Safe Require**: Wrap all `require()` in try/catch
-2. **Validate app.json**: `node scripts/validate/homey-mandatory-check.js`
-3. **Check bundle size**: < 7MB
-4. **Review recent commits**: Identify breaking changes
-
-### 42.2 Device Not Responding
-
-1. **Check fingerprint matching**: manufacturerName + productId
-2. **Verify DP mappings**: `lib/tuya/EnrichedDPMappings.js`
-3. **Check throttle limits**: UniversalThrottleManager
-4. **Review health monitor logs**: ZigbeeHealthMonitor
-
-### 42.3 Memory Leak
-
-1. **Check `_destroyed` guard**: Device lifecycle
-2. **Verify `_destroyDevice()`**: Cleanup method
-3. **Review timer/interval cleanup**: All setTimeout/setInterval
-4. **Check for unclosed sockets**: TuyaLocalClient
-
-### 42.4 OOM Crash
-
-1. **Identify large JSON files**: `data/fingerprints.json` (11.8MB)
-2. **Verify Buffer-based loading**: Not UTF-16 string
-3. **Check heap limit**: 64MB on Homey Pro
-4. **Review memory usage**: Node.js process
-
----
-
-*Generated by Claude Code - 14 June 2026*
-*Architecture Reference - Version 9.0.0*
+| `CLAUDE.md` | Full project reference for AI agents |
+| `CORE_RULES.md` | Single source of truth for all rules (R1-R58) |
+| `docs/MODULES.md` | Module documentation |
+| `docs/WORKFLOWS.md` | Workflow documentation |
+| `docs/SCRIPTS.md` | Script documentation |
+| `.ai/KNOWLEDGE_CACHE.json` | Machine-readable knowledge base |

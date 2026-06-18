@@ -5,7 +5,8 @@
       "id": "thermostatic_radiator_valve_window_open_status_get",
       "title": {
         "en": "Window !{{is|is not}} open"
-      }
+      },
+      "args": []
     },
     {
       "id": "thermostatic_radiator_valve_boost_active",
@@ -14,7 +15,8 @@
       },
       "hint": {
         "en": "Checks if the thermostat boost mode is currently active"
-      }
+      },
+      "args": []
     },
     {
       "id": "thermostatic_radiator_valve_child_lock_active",
@@ -23,7 +25,8 @@
       },
       "hint": {
         "en": "Checks if the child lock is currently engaged"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [

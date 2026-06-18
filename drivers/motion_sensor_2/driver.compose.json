@@ -24,13 +24,13 @@
     "batteries": [
       "CR2450"
     ]
+  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0225",
@@ -60,6 +60,8 @@
         "en": "Press the reset button for aprox 5 seconds until the LED blinks."
       }
     }
+  ,
+    "manufacturerName": ["_tze200_3towulqd"]
   },
   "version": "1.0.0",
   "metadata": {

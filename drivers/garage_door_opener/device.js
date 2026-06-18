@@ -61,9 +61,9 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
       // DP1 is a relay pulse (0→1 within ~100ms) — intentionally not listened.
       this.tuyaEF00Manager.on('dp-3', (value) => {
         const isOpen = !!value;
-        this.setCapabilityValue('alarm_contact', isOpen)
+        this.safeSetCapabilityValue('alarm_contact', isOpen)
           .catch(err => this.error(`[GarageOpener] alarm_contact set failed: ${err.message}`));
-        this.setCapabilityValue('garagedoor_closed', !isOpen)
+        this.safeSetCapabilityValue('garagedoor_closed', !isOpen)
           .catch(err => this.error(`[GarageOpener] garagedoor_closed set failed: ${err.message}`));
         this.log(`[GarageOpener] DP3 → door ${isOpen ? 'OPEN' : 'CLOSED'} (raw=${value})`);
       });
@@ -129,8 +129,8 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     // Device is edge-triggered and passive (no active query), so this is the only
     // reliable way to provide a sane initial state before the first sensor change.
     if (this.getCapabilityValue('alarm_contact') === null) {
-      await this.setCapabilityValue('alarm_contact', false).catch(() => {});
-      await this.setCapabilityValue('garagedoor_closed', true).catch(() => {});
+      await this.safeSetCapabilityValue('alarm_contact', false).catch(() => {});
+      await this.safeSetCapabilityValue('garagedoor_closed', true).catch(() => {});
       this.log('[GarageOpener] alarm_contact was null: defaulted to CLOSED (background init)');
     }
 
@@ -138,7 +138,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     // This device is passive-mode only so requestDP may return "no active query method"
     // but we still attempt it; some firmware versions respond.
     if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.requestDP === 'function') {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => this.homey.setTimeout(r, 2000));
       await this.tuyaEF00Manager.requestDP(3).catch(() => {});
       this.log('[GarageOpener] DP3 state requested for initial sync');
     }

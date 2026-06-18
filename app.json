@@ -87507,8 +87507,8 @@
       }
     ]
   },
-  "drivers": [
-    {
+  "drivers": {
+    "0": {
       "name": {
         "en": "Air Purifier",
         "fr": "Purificateur d'Air",
@@ -87595,7 +87595,7 @@
       "id": "air_purifier",
       "version": "1.0.0"
     },
-    {
+    "1": {
       "name": {
         "en": "Air Purifier Climate",
         "nl": "Luchtzuiveraar Klimaat",
@@ -87667,7 +87667,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_climate_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -87680,7 +87682,7 @@
         }
       }
     },
-    {
+    "2": {
       "name": {
         "en": "Air Purifier Contact",
         "nl": "Air Purifier Contact",
@@ -88061,7 +88063,19 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_26fmupbb",
+          "_tz3000_2mbfxlzr",
+          "_tz3000_402jjyro",
+          "_tz3000_996rpfy6",
+          "_tz3000_bpkijo14",
+          "_tz3000_bzxloft2",
+          "_tz3000_n2egfsli",
+          "_tz3000_oxslv1c9",
+          "_tz3000_x8q36xwf",
+          "_tz3000_yxqnffam",
+          "_tze200_pay2byax"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -88081,7 +88095,7 @@
         }
       }
     },
-    {
+    "3": {
       "name": {
         "en": "Air Purifier Curtain",
         "nl": "Luchtzuiverende Gordijn",
@@ -88219,7 +88233,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_curtain_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -88238,7 +88254,7 @@
         }
       }
     },
-    {
+    "4": {
       "name": {
         "en": "Air Purifier Dimmer",
         "nl": "Lichtsensor Luchtreiniger",
@@ -88596,7 +88612,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_dimmer_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -88615,7 +88633,7 @@
         }
       }
     },
-    {
+    "5": {
       "name": {
         "en": "Air Purifier Din",
         "nl": "Luchtreiniger Din",
@@ -88678,7 +88696,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_din_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -88691,7 +88711,7 @@
         }
       }
     },
-    {
+    "6": {
       "name": {
         "en": "Air Purifier Lcdtemphumidsensor",
         "nl": "Luchtzuiveraar Lcdtemphumidsensor",
@@ -88763,7 +88783,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -88776,7 +88798,7 @@
         }
       }
     },
-    {
+    "7": {
       "name": {
         "en": "Air Purifier Motion",
         "nl": "luchtreiniger en bewegingssensor",
@@ -88810,7 +88832,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_motion_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0225",
@@ -88877,7 +88901,7 @@
         }
       }
     },
-    {
+    "8": {
       "name": {
         "en": "Air Purifier Presence",
         "nl": "Luchtreiniger Aanwezigheid",
@@ -89510,7 +89534,7 @@
       "id": "air_purifier_presence",
       "version": "1.0.0"
     },
-    {
+    "9": {
       "name": {
         "en": "Air Purifier Quality",
         "nl": "Luchtreiniger kwaliteit",
@@ -89739,7 +89763,11 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tze200_8ygsuhe1",
+          "_tze200_ywagc4rj",
+          "_tze200_zl1kmjqx"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -89752,483 +89780,7 @@
         }
       }
     },
-    {
-      "name": {
-        "en": "Air Purifier Sensor",
-        "nl": "sensor voor luchtreiniger",
-        "fr": "Capteur pour purificateur d'air",
-        "de": "Hybrider Sensor fÃ¼r Luftreiniger",
-        "es": "Sensor para purificador de aire"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "alarm_motion",
-        "measure_luminance.distance",
-        "measure_temperature",
-        "measure_humidity",
-        "measure_luminance",
-        "measure_battery",
-        "onoff",
-        "dim",
-        "measure_pm25",
-        "alarm_battery"
-      ],
-      "energy": {
-        "batteries": [
-          "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
-        "mains": true
-      },
-      "subDevices": [],
-      "zigbee": {
-        "manufacturerName": [],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              61184
-            ]
-          }
-        },
-        "learnmode": {
-          "image": "/drivers/motion_sensor_radar_mmwave/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
-          }
-        },
-        "productId": [
-          "TS0601"
-        ]
-      },
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": " Radar Detection (FP300-like)",
-            "fr": " DÃ©tection Radar (FP300-like)"
-          },
-          "children": [
-            {
-              "id": "radar_sensitivity",
-              "type": "number",
-              "label": {
-                "en": "Radar Sensitivity",
-                "fr": "SensibilitÃ© Radar"
-              },
-              "value": 7,
-              "min": 0,
-              "max": 9,
-              "step": 1,
-              "hint": {
-                "en": "Detection sensitivity (0=lowest, 9=highest). Higher values detect smaller movements.",
-                "fr": "SensibilitÃ© de dÃ©tection (0=min, 9=max). Valeurs Ã©levÃ©es dÃ©tectent les petits mouvements."
-              }
-            },
-            {
-              "id": "minimum_range",
-              "type": "number",
-              "label": {
-                "en": "Minimum Range (m)",
-                "fr": "Distance Minimum (m)"
-              },
-              "value": 0,
-              "min": 0,
-              "max": 9.5,
-              "step": 0.5,
-              "hint": {
-                "en": "Minimum detection distance in meters. Objects closer will be ignored.",
-                "fr": "Distance minimale de dÃ©tection en mÃ¨tres. Objets plus proches seront ignorÃ©s."
-              }
-            },
-            {
-              "id": "maximum_range",
-              "type": "number",
-              "label": {
-                "en": "Maximum Range (m)",
-                "fr": "Distance Maximum (m)"
-              },
-              "value": 6,
-              "min": 0.5,
-              "max": 9.5,
-              "step": 0.5,
-              "hint": {
-                "en": "Maximum detection distance in meters (up to 9.5m for most sensors).",
-                "fr": "Distance maximale de dÃ©tection en mÃ¨tres (jusqu'Ã 9.5m pour la plupart)."
-              }
-            },
-            {
-              "id": "detection_delay",
-              "type": "number",
-              "label": {
-                "en": "Detection Delay (s)",
-                "fr": "DÃ©lai de DÃ©tection (s)"
-              },
-              "value": 0,
-              "min": 0,
-              "max": 10,
-              "step": 0.5,
-              "hint": {
-                "en": "Delay before reporting presence (0=instant). Helps avoid false positives.",
-                "fr": "DÃ©lai avant de signaler une prÃ©sence (0=instantanÃ©). Ã‰vite les faux positifs."
-              }
-            },
-            {
-              "id": "fading_time",
-              "type": "number",
-              "label": {
-                "en": "Absence Delay / Fading Time (s)",
-                "fr": "DÃ©lai d'Absence (s)"
-              },
-              "value": 60,
-              "min": 0.5,
-              "max": 1500,
-              "step": 5,
-              "hint": {
-                "en": "Time before clearing presence after no movement detected. Like FP300 absence delay.",
-                "fr": "Temps avant de signaler l'absence aprÃ¨s aucun mouvement. Similaire au dÃ©lai FP300."
-              }
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": " Calibration (v5.5.28)",
-            "fr": " Calibration (v5.5.28)"
-          },
-          "children": [
-            {
-              "id": "temperature_calibration",
-              "type": "number",
-              "label": {
-                "en": "Temperature Offset (Â°C)",
-                "fr": "DÃ©calage TempÃ©rature (Â°C)"
-              },
-              "value": 0,
-              "min": -10,
-              "max": 10,
-              "step": 0.1,
-              "hint": {
-                "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low, negative if too high.",
-                "fr": "Ajouter ou soustraire de la tempÃ©rature lue. Valeur positive si capteur lit trop bas, nÃ©gative si trop haut."
-              }
-            },
-            {
-              "id": "humidity_calibration",
-              "type": "number",
-              "label": {
-                "en": "Humidity Offset (%)",
-                "fr": "DÃ©calage HumiditÃ© (%)"
-              },
-              "value": 0,
-              "min": -20,
-              "max": 20,
-              "step": 1,
-              "hint": {
-                "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low, negative if too high.",
-                "fr": "Ajouter ou soustraire de l'humiditÃ© lue. Valeur positive si capteur lit trop bas, nÃ©gative si trop haut."
-              }
-            }
-          ]
-        },
-        {
-          "id": "power_source",
-          "type": "dropdown",
-          "label": {
-            "en": "Power Source",
-            "fr": "Source d'Alimentation"
-          },
-          "value": "auto",
-          "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto Detect",
-                "fr": "DÃ©tection Automatique"
-              }
-            },
-            {
-              "id": "ac",
-              "label": {
-                "en": "AC Powered",
-                "fr": "Alimentation Secteur"
-              }
-            },
-            {
-              "id": "dc",
-              "label": {
-                "en": "DC Powered",
-                "fr": "Alimentation DC"
-              }
-            },
-            {
-              "id": "battery",
-              "label": {
-                "en": "Battery Powered",
-                "fr": "Sur Batterie"
-              }
-            }
-          ],
-          "hint": {
-            "en": "Select power source manually or use auto-detection",
-            "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
-          }
-        },
-        {
-          "id": "battery_type",
-          "type": "dropdown",
-          "label": {
-            "en": "Battery Type",
-            "fr": "Type de Batterie"
-          },
-          "value": "auto",
-          "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto Detect",
-                "fr": "DÃ©tection Automatique"
-              }
-            },
-            {
-              "id": "CR2032",
-              "label": {
-                "en": "CR2032",
-                "fr": "CR2032 (Pile Bouton 3V)"
-              }
-            },
-            {
-              "id": "CR2450",
-              "label": {
-                "en": "CR2450",
-                "fr": "CR2450 (Pile Bouton 3V)"
-              }
-            },
-            {
-              "id": "AAA",
-              "label": {
-                "en": "AAA",
-                "fr": "AAA"
-              }
-            },
-            {
-              "id": "AA",
-              "label": {
-                "en": "AA",
-                "fr": "AA"
-              }
-            },
-            {
-              "id": "CR123A",
-              "label": {
-                "en": "CR123A",
-                "fr": "CR123A"
-              }
-            }
-          ],
-          "hint": {
-            "en": "Select battery type manually or use auto-detection based on voltage",
-            "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
-          }
-        },
-        {
-          "id": "battery_low_threshold",
-          "type": "number",
-          "label": {
-            "en": "Low Battery Threshold",
-            "fr": "Seuil Batterie Faible (%)"
-          },
-          "value": 20,
-          "min": 0,
-          "max": 50,
-          "step": 5,
-          "hint": {
-            "en": "Trigger low battery warning when below this percentage",
-            "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
-          }
-        },
-        {
-          "id": "battery_critical_threshold",
-          "type": "number",
-          "label": {
-            "en": "Critical Battery Threshold",
-            "fr": "Seuil Batterie Critique (%)"
-          },
-          "value": 10,
-          "min": 0,
-          "max": 30,
-          "step": 5,
-          "hint": {
-            "en": "Trigger critical battery warning when below this percentage",
-            "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
-          }
-        },
-        {
-          "id": "enable_battery_notifications",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Battery Notifications",
-            "fr": "Activer Notifications Batterie"
-          },
-          "value": true,
-          "hint": {
-            "en": "Send flow notifications for battery events",
-            "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
-          }
-        },
-        {
-          "id": "battery_report_interval",
-          "type": "number",
-          "label": {
-            "en": "Battery Report Interval",
-            "fr": "Intervalle Rapport Batterie (heures)"
-          },
-          "value": 24,
-          "min": 1,
-          "max": 168,
-          "step": 1,
-          "hint": {
-            "en": "How often to request battery status updates",
-            "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
-          }
-        },
-        {
-          "id": "optimization_mode",
-          "type": "dropdown",
-          "label": {
-            "en": "Energy Optimization Mode",
-            "fr": "Mode Optimisation Ã‰nergÃ©tique"
-          },
-          "value": "balanced",
-          "values": [
-            {
-              "id": "performance",
-              "label": {
-                "en": "Performance (More responsive)",
-                "fr": "Performance (Plus rÃ©actif)"
-              }
-            },
-            {
-              "id": "balanced",
-              "label": {
-                "en": "Balanced",
-                "fr": "Ã‰quilibrÃ©"
-              }
-            },
-            {
-              "id": "power_saving",
-              "label": {
-                "en": "Power Saving (Longer battery)",
-                "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
-              }
-            }
-          ],
-          "hint": {
-            "en": "Balance between responsiveness and battery life",
-            "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
-          }
-        },
-        {
-          "id": "enable_power_estimation",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Power Estimation",
-            "fr": "Activer Estimation Puissance"
-          },
-          "value": true,
-          "hint": {
-            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-            "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
-          }
-        },
-        {
-          "id": "enable_radio_sensing",
-          "type": "checkbox",
-          "label": {
-            "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
-          },
-          "value": false,
-          "hint": {
-            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
-          }
-        },
-        {
-          "id": "radio_sensitivity",
-          "type": "number",
-          "label": {
-            "en": "Radio Presence Sensitivity",
-            "fr": "SensibilitÃ© PrÃ©sence Radio"
-          },
-          "value": 15,
-          "min": 5,
-          "max": 50,
-          "hint": {
-            "en": "LQI variance threshold (higher = less sensitive)",
-            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-          }
-        }
-      ],
-      "images": {
-        "small": "/drivers/motion_sensor_radar_mmwave/assets/images/small.png",
-        "large": "/drivers/motion_sensor_radar_mmwave/assets/images/large.png"
-      },
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "pair": [
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "select_driver"
-          }
-        },
-        {
-          "id": "select_driver",
-          "navigation": {
-            "next": "add_devices"
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "maintenanceActions": [
-        {
-          "id": "ota_check",
-          "title": {
-            "en": "Check Zigbee OTA Update",
-            "fr": "VÃ©rifier MÃJ OTA",
-            "nl": "Controleer op OTA-updates"
-          }
-        }
-      ],
-      "capabilitiesOptions": {
-        "measure_luminance.distance": {
-          "title": {
-            "en": "Luminance distance"
-          }
-        }
-      },
-      "flow": {
-        "triggers": [],
-        "conditions": [],
-        "actions": []
-      },
-      "id": "air_purifier_sensor",
-      "version": "1.0.0"
-    },
-    {
+    "10": {
       "id": "air_purifier_siren",
       "name": {
         "en": "Air Purifier Siren",
@@ -90318,7 +89870,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_siren_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -90331,7 +89885,7 @@
         }
       }
     },
-    {
+    "11": {
       "name": {
         "en": "Air Purifier Soil",
         "nl": "Luchtreiniger voor de bodem",
@@ -90607,7 +90161,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_air_purifier_soil_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0001"
@@ -90627,7 +90183,7 @@
         }
       }
     },
-    {
+    "12": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -91375,7 +90931,7 @@
       "id": "air_purifier_switch",
       "version": "1.0.0"
     },
-    {
+    "13": {
       "name": {
         "en": "Zigbee Air Quality / CO2 Sensor",
         "fr": "Capteur qualité air / CO2 Zigbee",
@@ -91591,7 +91147,7 @@
       "id": "air_quality_co2",
       "version": "1.0.0"
     },
-    {
+    "14": {
       "name": {
         "en": "Comprehensive Air Monitor",
         "fr": "Comprehensive Air Monitor",
@@ -91935,7 +91491,7 @@
       "id": "air_quality_comprehensive",
       "version": "1.0.0"
     },
-    {
+    "15": {
       "name": {
         "en": "Bed Sensor",
         "fr": "Capteur de Lit",
@@ -92049,7 +91605,7 @@
       "id": "bed_sensor",
       "version": "1.0.0"
     },
-    {
+    "16": {
       "name": {
         "en": "Blaster Remote",
         "nl": "Blaster Afstandsbediening",
@@ -92139,7 +91695,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_blaster_remote_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS1201"
@@ -92159,7 +91717,7 @@
         }
       }
     },
-    {
+    "17": {
       "name": {
         "en": "Smart Bulb Dimmer",
         "fr": "Smart Bulb Dimmer",
@@ -92522,7 +92080,7 @@
       "id": "bulb_dimmable",
       "version": "1.0.0"
     },
-    {
+    "18": {
       "name": {
         "en": "Bulb Dimmable Dimmer",
         "nl": "Dimbare Lamp Dimmer",
@@ -92840,7 +92398,7 @@
         }
       }
     },
-    {
+    "19": {
       "name": {
         "en": "Smart Bulb Rgb",
         "fr": "Smart Bulb Rgb",
@@ -93310,7 +92868,7 @@
       "id": "bulb_rgb",
       "version": "1.0.0"
     },
-    {
+    "20": {
       "name": {
         "en": "Bulb Rgb Led",
         "nl": "Rgb Led-lamp",
@@ -93753,7 +93311,7 @@
         }
       }
     },
-    {
+    "21": {
       "name": {
         "en": "Bulb Rgb Rgbw",
         "nl": "Bulb Rgb Rgbw",
@@ -94222,7 +93780,7 @@
         }
       }
     },
-    {
+    "22": {
       "name": {
         "en": "Smart RGB/RGBW Bulb",
         "fr": "Ampoule Connectée RGB/RGBW",
@@ -94565,7 +94123,7 @@
       "id": "bulb_rgbw",
       "version": "1.0.0"
     },
-    {
+    "23": {
       "id": "bulb_rgbw_universal",
       "name": {
         "en": "Bulb Rgbw Universal",
@@ -94744,7 +94302,7 @@
       ],
       "version": "1.0.0"
     },
-    {
+    "24": {
       "name": {
         "en": "Bulb Tunable",
         "fr": "Bulb Tunable",
@@ -95075,7 +94633,7 @@
       "id": "bulb_tunable_white",
       "version": "1.0.0"
     },
-    {
+    "25": {
       "name": {
         "en": "Smart Bulb White",
         "fr": "Smart Bulb White",
@@ -95384,7 +94942,7 @@
       "id": "bulb_white",
       "version": "1.0.0"
     },
-    {
+    "26": {
       "name": {
         "en": "Sos Emergency Button",
         "fr": "Sos Emergency Button",
@@ -95795,7 +95353,7 @@
       "id": "button_emergency_sos",
       "version": "1.0.0"
     },
-    {
+    "27": {
       "name": {
         "en": "Wireless Button (Universal)",
         "fr": "Bouton Sans Fil (Universel)",
@@ -96122,7 +95680,7 @@
       "id": "button_wireless",
       "version": "1.0.0"
     },
-    {
+    "28": {
       "name": {
         "en": "1-Buttons Wireless Controller",
         "fr": "1-Boutons Contrôleur Sans Fil",
@@ -96544,7 +96102,7 @@
       "id": "button_wireless_1",
       "version": "1.0.0"
     },
-    {
+    "29": {
       "name": {
         "en": "2-Buttons Wireless Controller",
         "fr": "2-Boutons Contrôleur Sans Fil",
@@ -97195,7 +96753,7 @@
       "id": "button_wireless_2",
       "version": "1.0.0"
     },
-    {
+    "30": {
       "name": {
         "en": "3-Button Wireless Controller",
         "fr": "Contrôleur Sans Fil 3 Boutons",
@@ -97669,7 +97227,7 @@
       "id": "button_wireless_3",
       "version": "1.0.0"
     },
-    {
+    "31": {
       "name": {
         "en": "4-Buttons Wireless Controller",
         "fr": "4-Boutons Contrôleur Sans Fil",
@@ -98135,7 +97693,7 @@
       "id": "button_wireless_4",
       "version": "1.0.0"
     },
-    {
+    "32": {
       "name": {
         "en": "6-Buttons Wireless Controller",
         "fr": "6-Boutons Contrôleur Sans Fil",
@@ -98605,7 +98163,7 @@
       "id": "button_wireless_6",
       "version": "1.0.0"
     },
-    {
+    "33": {
       "name": {
         "en": "8-Buttons Wireless Controller",
         "fr": "8-Boutons Contrôleur Sans Fil",
@@ -99111,7 +98669,7 @@
       "id": "button_wireless_8",
       "version": "1.0.0"
     },
-    {
+    "34": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -99868,7 +99426,7 @@
         }
       }
     },
-    {
+    "35": {
       "name": {
         "en": "Button Wireless Plug",
         "nl": "Knop Stopcontactloos",
@@ -100323,7 +99881,7 @@
       "id": "button_wireless_plug",
       "version": "1.0.0"
     },
-    {
+    "36": {
       "name": {
         "en": "Button Wireless Scene",
         "nl": "Draadloze scÃ¨ne knop",
@@ -100744,7 +100302,7 @@
       "id": "button_wireless_scene",
       "version": "1.0.0"
     },
-    {
+    "37": {
       "name": {
         "en": "Button Wireless Smart",
         "nl": "Draadloze slimme knop",
@@ -101123,7 +100681,7 @@
       "id": "button_wireless_smart",
       "version": "1.0.0"
     },
-    {
+    "38": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -101151,7 +100709,14 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_blhvsaqf",
+          "_tz3000_e98krvvk",
+          "_tz3000_hafsqare",
+          "_tz3000_iedbgyxt",
+          "_tz3000_l9brjwau",
+          "_tz3000_ysdv91bk"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -101799,7 +101364,7 @@
       "id": "button_wireless_switch",
       "version": "1.0.0"
     },
-    {
+    "39": {
       "name": {
         "en": "Button Wireless Usb",
         "nl": "Draadloze USB- knop",
@@ -102029,7 +101594,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_m0vaazab"
+        ],
         "productId": [
           "TS0601",
           "TS011F"
@@ -102052,7 +101619,7 @@
         }
       }
     },
-    {
+    "40": {
       "name": {
         "en": "Button Wireless Valve",
         "nl": "Draadloze Ventiel Knop",
@@ -102450,7 +102017,7 @@
         }
       }
     },
-    {
+    "41": {
       "name": {
         "en": "Button Wireless Wall",
         "nl": "Draadloze wandhybride knop",
@@ -102868,7 +102435,7 @@
       "id": "button_wireless_wall",
       "version": "1.0.0"
     },
-    {
+    "42": {
       "name": {
         "en": "Ceiling Fan",
         "fr": "Ceiling Fan",
@@ -103166,7 +102733,7 @@
       "id": "ceiling_fan",
       "version": "1.0.0"
     },
-    {
+    "43": {
       "id": "christmas_lights",
       "name": {
         "en": "Christmas Lights"
@@ -103228,7 +102795,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "44": {
       "name": {
         "en": "Climate Sensor",
         "fr": "Capteur Climatique",
@@ -104444,7 +104011,7 @@
       "id": "climate_sensor",
       "version": "1.0.0"
     },
-    {
+    "45": {
       "name": {
         "en": "Device Radiator Valve Smart",
         "nl": "Slimme radiatorkraan",
@@ -104470,7 +104037,15 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tze200_p3dbf6qs",
+          "_tze204_o3x45p96",
+          "_tze284_c6wv4xyo",
+          "_tze284_hvaxb2tc",
+          "_tze284_o3x45p96",
+          "_tze284_p3dbf6qs",
+          "_tze284_rv6iuyxb"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -104745,7 +104320,7 @@
       "id": "climate_sensor_device",
       "version": "1.0.0"
     },
-    {
+    "46": {
       "name": {
         "en": "Climate Sensor Dimmer",
         "nl": "Klimaatsensor Dimmer",
@@ -105104,7 +104679,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_climate_sensor_dimmer_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0201",
@@ -105125,7 +104702,7 @@
         }
       }
     },
-    {
+    "47": {
       "name": {
         "en": "Climate Sensor Energy",
         "nl": "Klimaatsensor energie",
@@ -105196,7 +104773,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_climate_sensor_energy_needs_device_assignment"
+        ]
       },
       "images": {
         "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -105228,7 +104807,7 @@
         }
       }
     },
-    {
+    "48": {
       "name": {
         "en": "Climate Sensor Gas",
         "nl": "Klimaatsensor gas",
@@ -105552,7 +105131,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tze204_chbyv06x"
+        ],
         "productId": [
           "TS0601",
           "TS0201",
@@ -105573,7 +105154,7 @@
         }
       }
     },
-    {
+    "49": {
       "name": {
         "en": "Climate Sensor Plug",
         "nl": "Klimaatsensor Plug",
@@ -106220,7 +105801,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_climate_sensor_plug_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0201",
@@ -106241,7 +105824,7 @@
         }
       }
     },
-    {
+    "50": {
       "name": {
         "en": "Climate Sensor Presence",
         "nl": "Klimaatsensor Aanwezigheid",
@@ -106317,7 +105900,9 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_climate_sensor_presence_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -106909,7 +106494,7 @@
       "id": "climate_sensor_presence",
       "version": "1.0.0"
     },
-    {
+    "51": {
       "name": {
         "en": "Climate Sensor Smart",
         "nl": "Slimme Klimaatsensor",
@@ -107051,7 +106636,7 @@
         }
       }
     },
-    {
+    "52": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -107792,7 +107377,7 @@
         }
       }
     },
-    {
+    "53": {
       "name": {
         "en": "CO Sensor",
         "fr": "Capteur CO",
@@ -107859,7 +107444,7 @@
       "id": "co_sensor",
       "version": "1.0.0"
     },
-    {
+    "54": {
       "name": {
         "en": "Contact Sensor",
         "fr": "Capteur de Contact",
@@ -108234,7 +107819,7 @@
       "id": "contact_sensor",
       "version": "1.0.0"
     },
-    {
+    "55": {
       "name": {
         "en": "Contact Sensor Curtain",
         "nl": "Contactsensor gordijn",
@@ -108648,7 +108233,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_contact_sensor_curtain_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -108662,7 +108249,7 @@
         }
       }
     },
-    {
+    "56": {
       "name": {
         "en": "Contact Sensor Dimmer",
         "nl": "Contactsensor dimmer",
@@ -109017,7 +108604,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_contact_sensor_dimmer_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -109031,7 +108620,7 @@
         }
       }
     },
-    {
+    "57": {
       "name": {
         "en": "Contact Sensor Plug",
         "nl": "contactsensor",
@@ -109679,7 +109268,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_contact_sensor_plug_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -109693,7 +109284,7 @@
         }
       }
     },
-    {
+    "58": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -110420,7 +110011,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_contact_sensor_switch_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -110434,7 +110027,7 @@
         }
       }
     },
-    {
+    "59": {
       "name": {
         "en": "Contact Sensor Zigbee",
         "nl": "Contactsensor Zigbee",
@@ -110803,7 +110396,7 @@
         }
       }
     },
-    {
+    "60": {
       "id": "curtain_module",
       "name": {
         "en": "Curtain Module"
@@ -110940,7 +110533,7 @@
         }
       ]
     },
-    {
+    "61": {
       "id": "curtain_module_2_gang",
       "name": {
         "en": "2 Gang Curtain Module"
@@ -111117,7 +110710,7 @@
         }
       ]
     },
-    {
+    "62": {
       "name": {
         "en": "Cover Controller",
         "fr": "Contrôleur de Volet",
@@ -111336,7 +110929,7 @@
       "id": "curtain_motor",
       "version": "1.0.0"
     },
-    {
+    "63": {
       "name": {
         "en": "Curtain Motor Shutter",
         "nl": "Gordijnmotor rolluik",
@@ -111772,7 +111365,7 @@
       "id": "curtain_motor_shutter",
       "version": "1.0.0"
     },
-    {
+    "64": {
       "name": {
         "en": "Curtain Motor with Tilt",
         "fr": "Moteur Volet avec Inclinaison",
@@ -111904,7 +111497,7 @@
       "id": "curtain_motor_tilt",
       "version": "1.0.0"
     },
-    {
+    "65": {
       "name": {
         "en": "Curtain Motor Wall",
         "nl": "Gordijnmotor muur",
@@ -112309,7 +111902,7 @@
       "id": "curtain_motor_wall",
       "version": "1.0.0"
     },
-    {
+    "66": {
       "name": {
         "en": "Device Air Purifier",
         "nl": "luchtreiniger",
@@ -112409,7 +112002,7 @@
       "id": "device_air_purifier",
       "version": "1.0.0"
     },
-    {
+    "67": {
       "name": {
         "en": "Device Air Purifier Climate",
         "nl": "Device Air Purifier Climate",
@@ -112500,7 +112093,7 @@
       "id": "device_air_purifier_climate",
       "version": "1.0.0"
     },
-    {
+    "68": {
       "name": {
         "en": "Device Air Purifier Din",
         "nl": "Luchtreiniger Din",
@@ -112667,7 +112260,7 @@
       "id": "device_air_purifier_din",
       "version": "1.0.0"
     },
-    {
+    "69": {
       "name": {
         "en": "Device Air Purifier Floor",
         "nl": "luchtzuiveraar voor op de vloer",
@@ -112770,7 +112363,7 @@
       "id": "device_air_purifier_floor",
       "version": "1.0.0"
     },
-    {
+    "70": {
       "name": {
         "en": "Device Air Purifier Humidifier",
         "nl": "Luchtzuiveraar luchtbevochtiger",
@@ -112863,7 +112456,7 @@
       "id": "device_air_purifier_humidifier",
       "version": "1.0.0"
     },
-    {
+    "71": {
       "name": {
         "en": "Device Air Purifier Led",
         "nl": "Device Air Purifier Led",
@@ -113209,7 +112802,7 @@
       "id": "device_air_purifier_led",
       "version": "1.0.0"
     },
-    {
+    "72": {
       "name": {
         "en": "Device Air Purifier Motion",
         "nl": "Luchtzuiveraar met beweging",
@@ -113281,7 +112874,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_device_air_purifier_motion_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0225",
@@ -113304,7 +112899,7 @@
         }
       }
     },
-    {
+    "73": {
       "name": {
         "en": "Device Air Purifier Plug",
         "nl": "Luchtzuiveraar Stekker",
@@ -113556,7 +113151,7 @@
       "id": "device_air_purifier_plug",
       "version": "1.0.0"
     },
-    {
+    "74": {
       "name": {
         "en": "Device Air Purifier Presence",
         "nl": "luchtzuiveraar met aanwezigheid",
@@ -114190,7 +113785,7 @@
       "id": "device_air_purifier_presence",
       "version": "1.0.0"
     },
-    {
+    "75": {
       "name": {
         "en": "Device Air Purifier Quality",
         "nl": "Kwaliteits luchtzuiveraar",
@@ -114567,7 +114162,7 @@
       "id": "device_air_purifier_quality",
       "version": "1.0.0"
     },
-    {
+    "76": {
       "name": {
         "en": "Device Air Purifier Radiator",
         "nl": "luchtzuiveraar met radiator",
@@ -114905,7 +114500,7 @@
       "id": "device_air_purifier_radiator",
       "version": "1.0.0"
     },
-    {
+    "77": {
       "name": {
         "en": "Device Air Purifier Siren",
         "nl": "luchtzuiveraar met sirene",
@@ -115194,7 +114789,7 @@
       "id": "device_air_purifier_siren",
       "version": "1.0.0"
     },
-    {
+    "78": {
       "name": {
         "en": "Device Air Purifier Smart",
         "nl": "Slimme luchtzuiveraar",
@@ -115291,7 +114886,7 @@
       "id": "device_air_purifier_smart",
       "version": "1.0.0"
     },
-    {
+    "79": {
       "name": {
         "en": "Device Air Purifier Smoke",
         "nl": "Luchtreiniger tegen rook",
@@ -115626,7 +115221,7 @@
       "id": "device_air_purifier_smoke",
       "version": "1.0.0"
     },
-    {
+    "80": {
       "name": {
         "en": "Device Air Purifier Soil",
         "nl": "luchtzuiveraar voor de bodem",
@@ -115710,7 +115305,16 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tze200_npj9bug3",
+          "_tze200_oitavov2",
+          "_tze200_wqashyqo",
+          "_tze284_aao3yzhs",
+          "_tze284_hdml1aav",
+          "_tze284_o9ofysmo",
+          "_tze284_sgabhwa6",
+          "_tze284_xc3vwx5a"
+        ]
       },
       "settings": [
         {
@@ -115922,7 +115526,7 @@
         }
       }
     },
-    {
+    "81": {
       "name": {
         "en": "Device Air Purifier Thermostat",
         "nl": "Luchtzuiveraar Thermostaat",
@@ -116022,7 +115626,7 @@
       "id": "device_air_purifier_thermostat",
       "version": "1.0.0"
     },
-    {
+    "82": {
       "name": {
         "en": "Device Air Purifier Water",
         "nl": "luchtzuiveraar met water",
@@ -116248,7 +115852,7 @@
       "id": "device_air_purifier_water",
       "version": "1.0.0"
     },
-    {
+    "83": {
       "name": {
         "en": "Device Din Rail",
         "nl": "Apparaat DIN-rail",
@@ -116561,7 +116165,7 @@
       "id": "device_din_rail",
       "version": "1.0.0"
     },
-    {
+    "84": {
       "name": {
         "en": "Device Din Rail Meter",
         "nl": "DIN-rail meter",
@@ -116605,7 +116209,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_device_din_rail_meter_needs_device_assignment"
+        ]
       },
       "settings": [
         {
@@ -116869,7 +116475,7 @@
         }
       }
     },
-    {
+    "85": {
       "name": {
         "en": "Device Floor Heating",
         "nl": "Apparaat vloerverwarming",
@@ -116970,7 +116576,7 @@
       "id": "device_floor_heating",
       "version": "1.0.0"
     },
-    {
+    "86": {
       "name": {
         "en": "Device Floor Heating Thermostat",
         "nl": "Apparaat vloerverwarming thermostaat",
@@ -117070,7 +116676,7 @@
         }
       }
     },
-    {
+    "87": {
       "id": "device_generic_diy_universal",
       "name": {
         "en": "Device Generic Diy Universal",
@@ -117170,7 +116776,7 @@
         }
       }
     },
-    {
+    "88": {
       "id": "device_generic_tuya",
       "name": {
         "en": "Device Generic Tuya",
@@ -117280,7 +116886,7 @@
       "settings": [],
       "version": "1.0.0"
     },
-    {
+    "89": {
       "name": {
         "en": "Device Generic Tuya Universal",
         "nl": "Apparaat generiek Tuya universeel",
@@ -117427,7 +117033,7 @@
       "id": "device_generic_tuya_universal",
       "version": "1.0.0"
     },
-    {
+    "90": {
       "name": {
         "en": "Device Plug Energy",
         "nl": "Energie Stekker",
@@ -118101,7 +117707,7 @@
         }
       }
     },
-    {
+    "91": {
       "name": {
         "en": "Device Plug Energy Monitor",
         "nl": "energie-monitor voor stekker",
@@ -118746,7 +118352,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_device_plug_energy_monitor_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS004F"
@@ -118766,7 +118374,7 @@
         }
       }
     },
-    {
+    "92": {
       "name": {
         "en": "Device Plug Smart",
         "nl": "Slimme Stekker",
@@ -119436,7 +119044,7 @@
       "id": "device_plug_smart",
       "version": "1.0.0"
     },
-    {
+    "93": {
       "name": {
         "en": "Device Plug Smart Water",
         "nl": "Slimme Water Stekker",
@@ -120105,7 +119713,7 @@
       "id": "device_plug_smart_water",
       "version": "1.0.0"
     },
-    {
+    "94": {
       "name": {
         "en": "Device Radiator Valve",
         "nl": "Radiatorkraan",
@@ -120408,7 +120016,7 @@
       "id": "device_radiator_valve",
       "version": "1.0.0"
     },
-    {
+    "95": {
       "name": {
         "en": "Device Radiator Valve Smart",
         "nl": "Slimme radiatorkraan",
@@ -120711,7 +120319,7 @@
       "id": "device_radiator_valve_smart",
       "version": "1.0.0"
     },
-    {
+    "96": {
       "name": {
         "en": "Device Radiator Valve Thermostat",
         "nl": "Device Radiator Valve Thermostat",
@@ -120806,7 +120414,7 @@
         }
       }
     },
-    {
+    "97": {
       "class": "light",
       "platforms": [
         "local"
@@ -120873,7 +120481,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "98": {
       "class": "light",
       "platforms": [
         "local"
@@ -120940,7 +120548,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "99": {
       "id": "dimmer_1_gang",
       "name": {
         "en": "1 Gang Dimmer Module"
@@ -121035,7 +120643,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "100": {
       "id": "dimmer_1_gang_2",
       "name": {
         "en": "1 Gang Dimmer Module"
@@ -121069,7 +120677,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_dimmer_1_gang_2_needs_device_assignment"
+        ],
         "productId": [
           "TS110E",
           "TS0601",
@@ -121115,7 +120725,7 @@
       },
       "settings": []
     },
-    {
+    "101": {
       "id": "dimmer_1_gang_tuya",
       "name": {
         "en": "1 Gang Dimmer Module"
@@ -121149,7 +120759,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_dimmer_1_gang_tuya_needs_device_assignment"
+        ],
         "productId": [
           "TS110F",
           "TS110E",
@@ -121198,7 +120810,7 @@
       },
       "settings": []
     },
-    {
+    "102": {
       "id": "dimmer_2_gang",
       "name": {
         "en": "2 Gang Dimmer Module"
@@ -121295,7 +120907,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "103": {
       "id": "dimmer_2_gang_tuya",
       "name": {
         "en": "2 Gang Dimmer Module"
@@ -121384,7 +120996,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "104": {
       "name": {
         "en": "3-Gang Dimmer Module",
         "fr": "Module Variateur 3 Canaux",
@@ -121490,7 +121102,7 @@
       "id": "dimmer_3gang",
       "version": "1.0.0"
     },
-    {
+    "105": {
       "name": {
         "en": "Dimmer Air Purifier",
         "nl": "Dimmer Air Purifier",
@@ -121869,7 +121481,7 @@
       "id": "dimmer_air_purifier",
       "version": "1.0.0"
     },
-    {
+    "106": {
       "name": {
         "en": "Dimmer Bulb Dimmable",
         "nl": "Dimmer Bulb Dimmable",
@@ -122224,7 +121836,7 @@
       "id": "dimmer_bulb_dimmable",
       "version": "1.0.0"
     },
-    {
+    "107": {
       "name": {
         "en": "2-Channel Dimmer Module",
         "da": "2-kanals dæmpermodul",
@@ -122317,7 +121929,7 @@
       "id": "dimmer_dual_channel",
       "version": "1.0.0"
     },
-    {
+    "108": {
       "id": "dimmer_ts110e",
       "name": {
         "en": "Tuya Dimmer Module TS110E",
@@ -122423,7 +122035,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "109": {
       "name": {
         "en": "Dimmer 1gang",
         "fr": "Dimmer 1gang",
@@ -122845,7 +122457,7 @@
       "id": "dimmer_wall_1gang",
       "version": "1.0.0"
     },
-    {
+    "110": {
       "name": {
         "en": "Dimmer Wall Plug",
         "nl": "Dimmer Wandstopcontact",
@@ -123092,7 +122704,7 @@
         }
       }
     },
-    {
+    "111": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -123738,7 +123350,7 @@
         }
       }
     },
-    {
+    "112": {
       "name": {
         "en": "Dimmer Wall Water",
         "nl": "Dimmer Wand Water",
@@ -124112,7 +123724,7 @@
         }
       }
     },
-    {
+    "113": {
       "name": {
         "en": "DIN Rail Energy Meter",
         "fr": "Compteur DIN Rail",
@@ -124289,7 +123901,7 @@
       "id": "din_rail_meter",
       "version": "1.0.0"
     },
-    {
+    "114": {
       "name": {
         "en": "DIN Rail Switch",
         "fr": "Interrupteur DIN Rail",
@@ -124382,7 +123994,7 @@
       "id": "din_rail_switch",
       "version": "1.0.0"
     },
-    {
+    "115": {
       "name": {
         "en": "DIY Custom Zigbee Device",
         "fr": "Appareil Zigbee DIY Personnalisé",
@@ -124886,7 +124498,7 @@
       "id": "diy_custom_zigbee",
       "version": "1.0.0"
     },
-    {
+    "116": {
       "name": {
         "en": "Door Controller",
         "fr": "Door Controller",
@@ -125191,7 +124803,7 @@
       "id": "door_controller",
       "version": "1.0.0"
     },
-    {
+    "117": {
       "name": {
         "en": "Door Controller Garage",
         "nl": "Deurcontroller Garage",
@@ -125529,7 +125141,7 @@
       "id": "door_controller_garage",
       "version": "1.0.0"
     },
-    {
+    "118": {
       "name": {
         "en": "Doorbell Doorbell",
         "fr": "Doorbell Doorbell",
@@ -125841,7 +125453,7 @@
       "id": "doorbell",
       "version": "1.0.0"
     },
-    {
+    "119": {
       "id": "doorwindowsensor",
       "name": {
         "en": "Door & Window Sensor"
@@ -125901,7 +125513,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "120": {
       "id": "doorwindowsensor_2",
       "name": {
         "en": "Door & Window Sensor"
@@ -125958,7 +125570,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "121": {
       "id": "doorwindowsensor_3",
       "name": {
         "en": "Door & Window Sensor"
@@ -126019,7 +125631,7 @@
       },
       "settings": []
     },
-    {
+    "122": {
       "id": "doorwindowsensor_4",
       "name": {
         "en": "Door & Window Sensor"
@@ -126076,7 +125688,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "123": {
       "id": "double_power_point",
       "name": {
         "en": "Double Power Point - With Metering"
@@ -126151,7 +125763,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_double_power_point_needs_device_assignment"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -126243,7 +125857,7 @@
         }
       ]
     },
-    {
+    "124": {
       "id": "double_power_point_2",
       "name": {
         "en": "Double Power Point"
@@ -126314,12 +125928,14 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_double_power_point_2_needs_device_assignment"
+        ]
       },
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "125": {
       "name": {
         "en": "Energy Meter 3-Phase",
         "fr": "Compteur Triphasé",
@@ -126402,7 +126018,7 @@
       "id": "energy_meter_3phase",
       "version": "1.0.0"
     },
-    {
+    "126": {
       "name": {
         "en": "Fan Speed Controller",
         "fr": "Contrôleur Ventilateur",
@@ -126497,7 +126113,7 @@
       "id": "fan_controller",
       "version": "1.0.0"
     },
-    {
+    "127": {
       "id": "fingerbot",
       "name": {
         "en": "Finger Bot",
@@ -126637,7 +126253,7 @@
         }
       ]
     },
-    {
+    "128": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -127391,7 +127007,7 @@
       "id": "fingerbot_switch",
       "version": "1.0.0"
     },
-    {
+    "129": {
       "name": {
         "en": "Fingerprint Smart Lock",
         "fr": "Serrure Empreinte Digitale",
@@ -127473,7 +127089,7 @@
       "id": "fingerprint_lock",
       "version": "1.0.0"
     },
-    {
+    "130": {
       "id": "flood_sensor",
       "name": {
         "en": "Flood sensor"
@@ -127530,7 +127146,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "131": {
       "name": {
         "en": "Floor Heating Thermostat",
         "fr": "Thermostat de Chauffage au Sol",
@@ -127625,7 +127241,7 @@
       "id": "floor_heating_thermostat",
       "version": "1.0.0"
     },
-    {
+    "132": {
       "name": {
         "en": "Zigbee Formaldehyde/VOC Sensor",
         "fr": "Capteur formaldéhyde/VOC Zigbee",
@@ -127728,7 +127344,7 @@
       "id": "formaldehyde_sensor",
       "version": "1.0.0"
     },
-    {
+    "133": {
       "name": {
         "en": "Garage Door Controller",
         "fr": "Contrôleur Porte Garage",
@@ -127809,7 +127425,7 @@
       "id": "garage_door",
       "version": "1.0.0"
     },
-    {
+    "134": {
       "name": {
         "en": "Garage Door Opener",
         "fr": "Ouvre-porte de Garage",
@@ -127897,7 +127513,7 @@
       "id": "garage_door_opener",
       "version": "1.0.0"
     },
-    {
+    "135": {
       "name": {
         "en": "Gas Detector",
         "fr": "Gas Detector",
@@ -128212,7 +127828,7 @@
       "id": "gas_detector",
       "version": "1.0.0"
     },
-    {
+    "136": {
       "name": {
         "en": "Gas Sensor Ts0601",
         "fr": "Gas Sensor Ts0601",
@@ -128256,7 +127872,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_gas_sensor_needs_device_assignment"
+        ]
       },
       "settings": [
         {
@@ -128520,7 +128138,7 @@
         }
       }
     },
-    {
+    "137": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -129213,7 +128831,7 @@
       "id": "gas_sensor_switch",
       "version": "1.0.0"
     },
-    {
+    "138": {
       "name": {
         "en": "Zbbridge",
         "fr": "Zbbridge",
@@ -129470,7 +129088,7 @@
       "id": "gateway_zigbee_bridge",
       "version": "1.0.0"
     },
-    {
+    "139": {
       "name": {
         "en": "Generic DIY Zigbee Device",
         "fr": "Appareil Zigbee DIY Générique",
@@ -129717,7 +129335,7 @@
       "id": "generic_diy",
       "version": "1.0.0"
     },
-    {
+    "140": {
       "name": {
         "en": "Generic Tuya Device (TS0601)",
         "fr": "Appareil Tuya Générique (TS0601)",
@@ -130021,7 +129639,7 @@
       "id": "generic_tuya",
       "version": "1.0.0"
     },
-    {
+    "141": {
       "id": "handheld_remote_4_buttons",
       "name": {
         "en": "4 Button Remote",
@@ -130155,7 +129773,7 @@
       ],
       "version": "1.0.0"
     },
-    {
+    "142": {
       "name": {
         "en": "Smart Humidifier",
         "fr": "Humidificateur Connecté",
@@ -130251,7 +129869,7 @@
       "id": "humidifier",
       "version": "1.0.0"
     },
-    {
+    "143": {
       "name": {
         "en": "Air Conditioner (Smart)",
         "fr": "Climatiseur (Smart)",
@@ -130355,7 +129973,9 @@
         "xlarge": "/drivers/hvac_air_conditioner/assets/images/xlarge.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_hvac_air_conditioner_needs_device_assignment"
+        ],
         "productId": [
           "TS0601_ac",
           "TS0601"
@@ -130636,7 +130256,7 @@
       "id": "hvac_air_conditioner",
       "version": "1.0.0"
     },
-    {
+    "144": {
       "name": {
         "en": "HVAC Controller",
         "fr": "Contrôleur HVAC",
@@ -130731,7 +130351,7 @@
       "id": "hvac_controller",
       "version": "1.0.0"
     },
-    {
+    "145": {
       "name": {
         "en": "Dehumidifier (Smart)",
         "fr": "Déshumidificateur (Smart)",
@@ -131075,7 +130695,7 @@
       "id": "hvac_dehumidifier",
       "version": "1.0.0"
     },
-    {
+    "146": {
       "name": {
         "en": "Hybrid Fan + Sensor",
         "fr": "Hybride Ventilateur + Capteur",
@@ -131212,7 +130832,7 @@
       "id": "hybrid_fan_sensor",
       "version": "1.0.0"
     },
-    {
+    "147": {
       "name": {
         "en": "Hybrid Garage Door + Sensor",
         "fr": "Hybride Porte Garage + Capteur",
@@ -131248,7 +130868,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_hybrid_garage_door_sensor_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0001"
@@ -131321,7 +130943,7 @@
       "id": "hybrid_garage_door_sensor",
       "version": "1.0.0"
     },
-    {
+    "148": {
       "name": {
         "en": "Hybrid Heater + Thermostat",
         "fr": "Hybride Chauffage + Thermostat",
@@ -131363,7 +130985,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_hybrid_heater_thermostat_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -131442,7 +131066,7 @@
       "id": "hybrid_heater_thermostat",
       "version": "1.0.0"
     },
-    {
+    "149": {
       "name": {
         "en": "Hybrid Light + Button Sensor",
         "fr": "Hybride Lumière + Capteur Bouton",
@@ -131568,7 +131192,7 @@
       "id": "hybrid_light_sensor",
       "version": "1.0.0"
     },
-    {
+    "150": {
       "name": {
         "en": "Hybrid Light + Window Covering",
         "fr": "Hybride Lumière + Store",
@@ -131679,7 +131303,7 @@
       "id": "hybrid_light_windowcoverings",
       "version": "1.0.0"
     },
-    {
+    "151": {
       "name": {
         "en": "Hybrid Sensor + Thermostat",
         "fr": "Hybride Capteur + Thermostat",
@@ -131726,7 +131350,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_hybrid_sensor_thermostat_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0201"
@@ -131820,7 +131446,7 @@
       "id": "hybrid_sensor_thermostat",
       "version": "1.0.0"
     },
-    {
+    "152": {
       "name": {
         "en": "Hybrid Switch + Sensor",
         "fr": "Hybride Interrupteur + Capteur",
@@ -131937,7 +131563,7 @@
       "id": "hybrid_switch_sensor",
       "version": "1.0.0"
     },
-    {
+    "153": {
       "name": {
         "en": "Illuminance Sensor",
         "fr": "Capteur d'éclairement",
@@ -131979,7 +131605,9 @@
             "en": "Hold button 5s until LED flashes."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_illuminance_sensor_needs_device_assignment"
+        ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
       "images": {
@@ -132006,7 +131634,7 @@
       "id": "illuminance_sensor",
       "version": "1.0.0"
     },
-    {
+    "154": {
       "name": {
         "en": "IR Blaster Remote",
         "nl": "IR Afstandsbediening",
@@ -132310,7 +131938,7 @@
       "id": "ir_blaster",
       "version": "1.0.0"
     },
-    {
+    "155": {
       "name": {
         "en": "Virtual IR Remote",
         "fr": "Télécommande IR Virtuelle"
@@ -132453,7 +132081,7 @@
         }
       }
     },
-    {
+    "156": {
       "id": "lcdtemphumidluxsensor",
       "name": {
         "en": "LCD Temperature, Humidity and Luminance Sensor"
@@ -132610,7 +132238,7 @@
         }
       ]
     },
-    {
+    "157": {
       "name": {
         "en": "LCD Temperature & Humidity Sensor",
         "fr": "Capteur de Température et Humidité LCD",
@@ -132768,7 +132396,7 @@
       "id": "lcdtemphumidsensor",
       "version": "1.0.0"
     },
-    {
+    "158": {
       "id": "lcdtemphumidsensor_2",
       "name": {
         "en": "LCD Temperature & Humidity Sensor"
@@ -132915,7 +132543,7 @@
         }
       ]
     },
-    {
+    "159": {
       "id": "lcdtemphumidsensor_3",
       "name": {
         "en": "LCD Temperature & Humidity Sensor"
@@ -133015,7 +132643,7 @@
         }
       ]
     },
-    {
+    "160": {
       "name": {
         "en": "Lcdtemphumidsensor Plug Energy",
         "nl": "LCD-temperatuur- en vochtigheidssensor stekker",
@@ -133455,7 +133083,7 @@
       "id": "lcdtemphumidsensor_plug_energy",
       "version": "1.0.0"
     },
-    {
+    "161": {
       "name": {
         "en": "LED Controller CCT",
         "fr": "Contrôleur LED CCT",
@@ -133531,7 +133159,7 @@
       "id": "led_controller_cct",
       "version": "1.0.0"
     },
-    {
+    "162": {
       "name": {
         "en": "LED Controller Dimmable",
         "fr": "Contrôleur LED Dimmable",
@@ -133605,7 +133233,7 @@
       "id": "led_controller_dimmable",
       "version": "1.0.0"
     },
-    {
+    "163": {
       "name": {
         "en": "LED Controller RGB",
         "fr": "Contrôleur LED RGB",
@@ -133678,7 +133306,7 @@
       "id": "led_controller_rgb",
       "version": "1.0.0"
     },
-    {
+    "164": {
       "name": {
         "en": "LED Strip Led Strip",
         "fr": "LED Strip Led Strip",
@@ -133995,7 +133623,7 @@
       "id": "led_strip",
       "version": "1.0.0"
     },
-    {
+    "165": {
       "name": {
         "en": "Led Strip Advanced",
         "fr": "Led Strip Advanced",
@@ -134309,7 +133937,7 @@
       "id": "led_strip_advanced",
       "version": "1.0.0"
     },
-    {
+    "166": {
       "name": {
         "en": "Led Strip Rgbw",
         "fr": "Led Strip Rgbw",
@@ -134668,7 +134296,7 @@
       "id": "led_strip_rgbw",
       "version": "1.0.0"
     },
-    {
+    "167": {
       "name": {
         "en": "Light Bulb Dimmable Tunable",
         "nl": "Light Bulb Dimmable Tunable",
@@ -135111,7 +134739,7 @@
       "id": "light_bulb_dimmable_tunable",
       "version": "1.0.0"
     },
-    {
+    "168": {
       "name": {
         "en": "Light Bulb Rgb",
         "nl": "Rgb Lamp",
@@ -135644,7 +135272,7 @@
       "id": "light_bulb_rgb",
       "version": "1.0.0"
     },
-    {
+    "169": {
       "name": {
         "en": "Light Bulb Rgb Led",
         "nl": "Lichtbulb Rgb Led",
@@ -136135,7 +135763,7 @@
       "id": "light_bulb_rgb_led",
       "version": "1.0.0"
     },
-    {
+    "170": {
       "name": {
         "en": "Light Bulb Rgb Rgbw",
         "nl": "Lamp RGB RGBW",
@@ -136643,7 +136271,7 @@
       "id": "light_bulb_rgb_rgbw",
       "version": "1.0.0"
     },
-    {
+    "171": {
       "name": {
         "en": "Light Bulb Tunable White",
         "nl": "Light Bulb Tunable White",
@@ -137006,7 +136634,7 @@
       "id": "light_bulb_tunable_white",
       "version": "1.0.0"
     },
-    {
+    "172": {
       "name": {
         "en": "Outdoor Light Sensor",
         "fr": "Capteur de Luminosité Extérieur",
@@ -137074,7 +136702,7 @@
       "id": "light_sensor_outdoor",
       "version": "1.0.0"
     },
-    {
+    "173": {
       "name": {
         "en": "Lock Smart",
         "fr": "Lock Smart",
@@ -137387,7 +137015,7 @@
       "id": "lock_smart",
       "version": "1.0.0"
     },
-    {
+    "174": {
       "name": {
         "en": "Mini Switch",
         "fr": "Mini Switch",
@@ -137850,7 +137478,7 @@
       "id": "module_mini_switch",
       "version": "1.0.0"
     },
-    {
+    "175": {
       "name": {
         "en": "Motion Sensor",
         "fr": "Capteur de Mouvement",
@@ -138330,7 +137958,7 @@
       "id": "motion_sensor",
       "version": "1.0.0"
     },
-    {
+    "176": {
       "id": "motion_sensor_2",
       "name": {
         "en": "Motion Sensor",
@@ -138362,7 +137990,9 @@
         "small": "//drivers/motion_sensor_2/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tze200_3towulqd"
+        ],
         "productId": [
           "TS0601",
           "TS0225",
@@ -138419,7 +138049,7 @@
         }
       ]
     },
-    {
+    "177": {
       "name": {
         "en": "Presence Sensor (Radar)",
         "fr": "Capteur de Présence (Radar)",
@@ -138874,7 +138504,7 @@
       "id": "motion_sensor_radar_mmwave",
       "version": "1.0.0"
     },
-    {
+    "178": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -139629,7 +139259,7 @@
       "id": "motion_sensor_switch",
       "version": "1.0.0"
     },
-    {
+    "179": {
       "id": "outdoor_2_socket",
       "name": {
         "en": "Outdoor Smart Socket"
@@ -139701,7 +139331,9 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_outdoor_2_socket_needs_device_assignment"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -139787,7 +139419,7 @@
         }
       ]
     },
-    {
+    "180": {
       "id": "outdoor_plug",
       "name": {
         "en": "Outdoor Plug without metering"
@@ -139844,7 +139476,7 @@
       },
       "settings": []
     },
-    {
+    "181": {
       "name": {
         "en": "Smart Pet Feeder",
         "fr": "Distributeur Croquettes Connecté",
@@ -139940,7 +139572,7 @@
       "id": "pet_feeder",
       "version": "1.0.0"
     },
-    {
+    "182": {
       "name": {
         "en": "Pet Feeder (Zigbee)",
         "fr": "Distributeur de Nourriture (Zigbee)",
@@ -140022,7 +139654,7 @@
       "id": "pet_feeder_zigbee",
       "version": "1.0.0"
     },
-    {
+    "183": {
       "id": "pir_mmwave_sensor",
       "name": {
         "en": "PIR MMWave Sensor"
@@ -140188,7 +139820,7 @@
         }
       ]
     },
-    {
+    "184": {
       "id": "pir_sensor_2",
       "name": {
         "en": "Smart PIR Motion Sensor"
@@ -140253,7 +139885,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "185": {
       "id": "pirsensor",
       "name": {
         "en": "PIR Sensor"
@@ -140315,7 +139947,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "186": {
       "id": "plug",
       "name": {
         "en": "Smart Plug without metering"
@@ -140368,7 +140000,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "187": {
       "name": {
         "en": "Plug Energy Monitor",
         "fr": "Plug Energy Monitor",
@@ -140879,7 +140511,7 @@
       "id": "plug_energy_monitor",
       "version": "1.0.0"
     },
-    {
+    "188": {
       "name": {
         "en": "Smart Plug with Energy Monitoring",
         "fr": "Prise Connectée avec Mesure Énergie",
@@ -140929,7 +140561,9 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_plug_smart_needs_device_assignment"
+        ]
       },
       "settings": [
         {
@@ -141526,7 +141160,7 @@
         }
       }
     },
-    {
+    "189": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -142250,7 +141884,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_plug_smart_switch_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS011F"
@@ -142264,7 +141900,7 @@
         }
       }
     },
-    {
+    "190": {
       "name": {
         "en": "Pool/Spa Pump Controller",
         "fr": "Contrôleur Pompe Piscine",
@@ -142332,7 +141968,7 @@
       "id": "pool_pump",
       "version": "1.0.0"
     },
-    {
+    "191": {
       "name": {
         "en": "CT Clamp Power Meter",
         "fr": "Compteur Pince Ampèremétrique",
@@ -142485,7 +142121,7 @@
       "id": "power_clamp_meter",
       "version": "1.0.0"
     },
-    {
+    "192": {
       "name": {
         "en": "Power Meter",
         "fr": "Compteur Électrique",
@@ -142719,7 +142355,7 @@
       "id": "power_meter",
       "version": "1.0.0"
     },
-    {
+    "193": {
       "name": {
         "en": "Virtual Presence Detector",
         "nl": "Virtuele Aanwezigheidsdetector",
@@ -142952,7 +142588,7 @@
       "id": "presence_detector",
       "version": "1.0.0"
     },
-    {
+    "194": {
       "name": {
         "en": "Ceiling Presence Sensor (230V)",
         "fr": "Capteur de Présence Plafond (230V)",
@@ -143296,7 +142932,7 @@
       "id": "presence_sensor_ceiling",
       "version": "1.0.0"
     },
-    {
+    "195": {
       "name": {
         "en": "Presence Sensor Radar",
         "fr": "Presence Sensor Radar",
@@ -143645,7 +143281,7 @@
       "id": "presence_sensor_radar",
       "version": "1.0.0"
     },
-    {
+    "196": {
       "id": "radar_sensor",
       "name": {
         "en": "Radar Sensor",
@@ -143794,7 +143430,7 @@
         }
       ]
     },
-    {
+    "197": {
       "id": "radar_sensor_2",
       "name": {
         "en": "Radar Sensor",
@@ -143853,7 +143489,9 @@
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_radar_sensor_2_needs_device_assignment"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -143951,7 +143589,7 @@
         }
       ]
     },
-    {
+    "198": {
       "id": "radar_sensor_ceiling",
       "name": {
         "en": "Radar Sensor ceiling"
@@ -144029,7 +143667,9 @@
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tze200_2aaelwxk"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -144103,7 +143743,7 @@
         }
       ]
     },
-    {
+    "199": {
       "class": "heater",
       "capabilities": [
         "onoff",
@@ -144134,7 +143774,9 @@
             "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_radiator_controller_needs_device_assignment"
+        ]
       },
       "images": {
         "small": "/drivers/radiator_controller/assets/images/small.png",
@@ -144646,7 +144288,7 @@
       "id": "radiator_controller",
       "version": "1.0.0"
     },
-    {
+    "200": {
       "name": {
         "en": "Radiator Valve",
         "fr": "Radiator Valve",
@@ -145112,7 +144754,7 @@
       "id": "radiator_valve",
       "version": "1.0.0"
     },
-    {
+    "201": {
       "name": {
         "en": "Radiator Valve (TRV) Zigbee",
         "fr": "Vanne de radiateur (TRV) Zigbee",
@@ -145185,7 +144827,7 @@
         "zigbee"
       ]
     },
-    {
+    "202": {
       "name": {
         "en": "Radiator WiFi Tuya (Local)",
         "fr": "Radiateur WiFi Tuya (Local)",
@@ -145306,7 +144948,7 @@
       "id": "radiator_wifi_tuya",
       "version": "1.0.0"
     },
-    {
+    "203": {
       "name": {
         "en": "Zigbee Rain Sensor",
         "fr": "Capteur de pluie Zigbee",
@@ -145412,7 +145054,7 @@
       "id": "rain_sensor",
       "version": "1.0.0"
     },
-    {
+    "204": {
       "id": "relay_board_1_channel",
       "name": {
         "en": "1 Channel Relay Board"
@@ -145467,7 +145109,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "205": {
       "id": "relay_board_2_channel",
       "name": {
         "en": "2 Channel Relay Board"
@@ -145551,7 +145193,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "206": {
       "id": "relay_board_4_channel",
       "name": {
         "en": "4 Channel Relay Board"
@@ -145687,7 +145329,7 @@
       },
       "settings": []
     },
-    {
+    "207": {
       "id": "remote_button_emergency_sos",
       "name": {
         "en": "Remote Button Emergency Sos",
@@ -145851,7 +145493,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "208": {
       "name": {
         "en": "Remote Button Wireless",
         "nl": "Afstandsbediening draadloos",
@@ -146322,7 +145964,7 @@
       "id": "remote_button_wireless",
       "version": "1.0.0"
     },
-    {
+    "209": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -147077,7 +146719,7 @@
         }
       }
     },
-    {
+    "210": {
       "name": {
         "en": "Remote Button Wireless Handheld",
         "nl": "Draadloze handbediende afstandsbedieningsknop",
@@ -147525,7 +147167,7 @@
       "id": "remote_button_wireless_handheld",
       "version": "1.0.0"
     },
-    {
+    "211": {
       "name": {
         "en": "Remote Button Wireless Plug",
         "nl": "Draadloze stekkerknop",
@@ -147973,7 +147615,7 @@
         }
       }
     },
-    {
+    "212": {
       "name": {
         "en": "Remote Button Wireless Scene",
         "nl": "Draadloze Afstandsbediening Scene",
@@ -148346,7 +147988,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_remote_button_wireless_scene_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "TS0215A"
@@ -148366,7 +148010,7 @@
         }
       }
     },
-    {
+    "213": {
       "name": {
         "en": "Remote Button Wireless Smart",
         "nl": "Draadloze Slimme Afstandsbediening",
@@ -148766,7 +148410,7 @@
       "id": "remote_button_wireless_smart",
       "version": "1.0.0"
     },
-    {
+    "214": {
       "name": {
         "en": "Remote Button Wireless Usb",
         "nl": "Draadloze Usb Afstandsbediening",
@@ -148996,7 +148640,9 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_m0vaazab"
+        ],
         "productId": [
           "TS0601",
           "TS011F"
@@ -149010,7 +148656,7 @@
         }
       }
     },
-    {
+    "215": {
       "name": {
         "en": "Remote Button Wireless Valve",
         "nl": "Draadloze klep met afstandsbediening",
@@ -149405,7 +149051,7 @@
         }
       }
     },
-    {
+    "216": {
       "name": {
         "en": "Remote Button Wireless Wall",
         "nl": "Draadloze wandknop op afstand",
@@ -149791,7 +149437,7 @@
       "id": "remote_button_wireless_wall",
       "version": "1.0.0"
     },
-    {
+    "217": {
       "name": {
         "en": "Remote Control Dimmer (Lidl/Tuya)",
         "fr": "Télécommande Variateur (Lidl/Tuya)",
@@ -149858,7 +149504,7 @@
       "id": "remote_dimmer",
       "version": "1.0.0"
     },
-    {
+    "218": {
       "class": "light",
       "platforms": [
         "local"
@@ -149928,7 +149574,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "219": {
       "class": "light",
       "platforms": [
         "local"
@@ -150005,7 +149651,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "220": {
       "class": "light",
       "platforms": [
         "local"
@@ -150075,7 +149721,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "221": {
       "class": "light",
       "platforms": [
         "local"
@@ -150145,7 +149791,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "222": {
       "class": "light",
       "platforms": [
         "local"
@@ -150218,7 +149864,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "223": {
       "class": "light",
       "platforms": [
         "local"
@@ -150288,7 +149934,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "224": {
       "class": "light",
       "platforms": [
         "local"
@@ -150364,7 +150010,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "225": {
       "class": "light",
       "platforms": [
         "local"
@@ -150436,7 +150082,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "226": {
       "class": "light",
       "platforms": [
         "local"
@@ -150508,7 +150154,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "227": {
       "class": "light",
       "platforms": [
         "local"
@@ -150578,7 +150224,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "228": {
       "class": "light",
       "platforms": [
         "local"
@@ -150649,7 +150295,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "229": {
       "name": {
         "en": "Scene Switch 1-Gang",
         "fr": "Interrupteur de scène 1 bouton",
@@ -150766,7 +150412,7 @@
       "id": "scene_switch_1",
       "version": "1.0.0"
     },
-    {
+    "230": {
       "name": {
         "en": "Scene Switch 2-Gang",
         "fr": "Interrupteur de scène 2 gangs",
@@ -150892,7 +150538,7 @@
       "id": "scene_switch_2",
       "version": "1.0.0"
     },
-    {
+    "231": {
       "name": {
         "en": "Scene Switch 3-Gang",
         "fr": "Interrupteur de scène 3 gangs",
@@ -151030,7 +150676,7 @@
       "id": "scene_switch_3",
       "version": "1.0.0"
     },
-    {
+    "232": {
       "name": {
         "en": "Scene Switch 4-Gang",
         "fr": "Interrupteur de scène 4 boutons",
@@ -151193,7 +150839,7 @@
       "id": "scene_switch_4",
       "version": "1.0.0"
     },
-    {
+    "233": {
       "name": {
         "en": "Scene Switch 6-Gang",
         "fr": "Interrupteur de scène 6 boutons",
@@ -151351,7 +150997,7 @@
       "id": "scene_switch_6",
       "version": "1.0.0"
     },
-    {
+    "234": {
       "name": {
         "en": "Scene Switch Wall",
         "nl": "Scène schakelaar wand",
@@ -151478,7 +151124,7 @@
         }
       }
     },
-    {
+    "235": {
       "name": {
         "en": "Sensor Climate Contact",
         "nl": "Sensor Klimaat Contact",
@@ -151966,7 +151612,7 @@
       "id": "sensor_climate_contact",
       "version": "1.0.0"
     },
-    {
+    "236": {
       "name": {
         "en": "Sensor Climate Lcdtemphumidsensor",
         "nl": "Sensor Klimaat Lcdtemphumidsensor",
@@ -152484,7 +152130,7 @@
         }
       }
     },
-    {
+    "237": {
       "name": {
         "en": "Sensor Climate Motion",
         "nl": "Klimaatbeweging Sensor",
@@ -152927,7 +152573,7 @@
         }
       }
     },
-    {
+    "238": {
       "name": {
         "en": "Sensor Climate Presence",
         "nl": "Sensor Klimaat Aanwezigheid",
@@ -153553,7 +153199,7 @@
         }
       }
     },
-    {
+    "239": {
       "name": {
         "en": "Sensor Climate Smart",
         "nl": "Slimme Klimaatsensor",
@@ -153695,7 +153341,7 @@
         }
       }
     },
-    {
+    "240": {
       "name": {
         "en": "Sensor Climate Temphumidsensor",
         "nl": "Sensor Klimaat TempHumiSensor",
@@ -154295,7 +153941,7 @@
       "id": "sensor_climate_temphumidsensor",
       "version": "1.0.0"
     },
-    {
+    "241": {
       "name": {
         "en": "Sensor Contact Climate",
         "nl": "Sensor Contact Climate",
@@ -154816,7 +154462,7 @@
         }
       }
     },
-    {
+    "242": {
       "name": {
         "en": "Sensor Contact Motion",
         "nl": "Sensor Contact Beweging",
@@ -155219,7 +154865,7 @@
         }
       }
     },
-    {
+    "243": {
       "name": {
         "en": "Sensor Contact Plug",
         "nl": "Sensor Contact Plug",
@@ -155247,7 +154893,9 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_sensor_contact_plug_needs_device_assignment"
+        ],
         "productId": [
           "TS0601",
           "Excellux"
@@ -155889,7 +155537,7 @@
       "id": "sensor_contact_plug",
       "version": "1.0.0"
     },
-    {
+    "244": {
       "name": {
         "en": "Sensor Contact Presence",
         "nl": "Sensor contact aanwezigheid",
@@ -156499,7 +156147,7 @@
       "id": "sensor_contact_presence",
       "version": "1.0.0"
     },
-    {
+    "245": {
       "name": {
         "en": "Sensor Contact Rain",
         "nl": "Sensor Contact Regen",
@@ -156873,7 +156521,7 @@
         }
       }
     },
-    {
+    "246": {
       "name": {
         "en": "Sensor Contact Water",
         "nl": "Watercontactsensor",
@@ -157223,7 +156871,7 @@
       "id": "sensor_contact_water",
       "version": "1.0.0"
     },
-    {
+    "247": {
       "name": {
         "en": "Sensor Contact Zigbee",
         "nl": "Zigbee Contactsensor",
@@ -157745,7 +157393,7 @@
       "id": "sensor_contact_zigbee",
       "version": "1.0.0"
     },
-    {
+    "248": {
       "name": {
         "en": "Sensor Gas Presence",
         "nl": "Gasaanwezigheidssensor",
@@ -158433,7 +158081,7 @@
       "id": "sensor_gas_presence",
       "version": "1.0.0"
     },
-    {
+    "249": {
       "name": {
         "en": "Sensor Illuminance Presence",
         "nl": "Aanwezigheidssensor met verlichtingssterkte",
@@ -159051,7 +158699,7 @@
       "id": "sensor_illuminance_presence",
       "version": "1.0.0"
     },
-    {
+    "250": {
       "name": {
         "en": "Sensor Lcdtemphumidsensor Soil",
         "nl": "Sensor Lcdtemphumidsensor Bodem",
@@ -159324,7 +158972,16 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tze200_npj9bug3",
+          "_tze200_oitavov2",
+          "_tze200_wqashyqo",
+          "_tze284_aao3yzhs",
+          "_tze284_hdml1aav",
+          "_tze284_o9ofysmo",
+          "_tze284_sgabhwa6",
+          "_tze284_xc3vwx5a"
+        ],
         "productId": [
           "TS0601",
           "TS0001"
@@ -159338,7 +158995,7 @@
         }
       }
     },
-    {
+    "251": {
       "name": {
         "en": "Sensor Lcdtemphumidsensor Temphumidsensor",
         "nl": "Sensor Lcdtemphumidsensor Temphumidsensor",
@@ -159461,7 +159118,7 @@
       "id": "sensor_lcdtemphumidsensor_temphumidsensor",
       "version": "1.0.0"
     },
-    {
+    "252": {
       "name": {
         "en": "Sensor Motion Presence",
         "nl": "Sensor Bewegingsaanwezigheid",
@@ -160111,7 +159768,7 @@
       "id": "sensor_motion_presence",
       "version": "1.0.0"
     },
-    {
+    "253": {
       "name": {
         "en": "Sensor Motion Radar",
         "nl": "Radar bewegingssensor",
@@ -160143,7 +159800,9 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_sensor_motion_radar_needs_device_assignment"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -160552,7 +160211,7 @@
       "id": "sensor_motion_radar",
       "version": "1.0.0"
     },
-    {
+    "254": {
       "name": {
         "en": "Sensor Presence Radar",
         "nl": "Radar aanwezigheidssensor",
@@ -161201,7 +160860,7 @@
       "id": "sensor_presence_radar",
       "version": "1.0.0"
     },
-    {
+    "255": {
       "name": {
         "en": "Roller Shutter Controller",
         "fr": "Roller Shutter Controller",
@@ -161514,7 +161173,7 @@
       "id": "shutter_roller_controller",
       "version": "1.0.0"
     },
-    {
+    "256": {
       "name": {
         "en": "Siren / Alarm",
         "fr": "Sirène / Alarme",
@@ -161856,7 +161515,7 @@
       "id": "siren",
       "version": "1.0.0"
     },
-    {
+    "257": {
       "id": "siren_sirentemphumidsensor",
       "name": {
         "en": "Siren Sirentemphumidsensor",
@@ -161898,7 +161557,9 @@
         "large": "//drivers/siren_sirentemphumidsensor/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_siren_sirentemphumidsensor_needs_device_assignment"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -161935,7 +161596,7 @@
       ],
       "version": "1.0.0"
     },
-    {
+    "258": {
       "id": "sirentemphumidsensor",
       "name": {
         "en": "Siren, Temperature & Humidity Sensor",
@@ -162279,7 +161940,7 @@
         }
       ]
     },
-    {
+    "259": {
       "id": "slim_motion_sensor",
       "name": {
         "en": "Slim motion sensor"
@@ -162337,7 +161998,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "260": {
       "id": "smartPlug_DinRail",
       "name": {
         "en": "Smart Plug DIN Rail"
@@ -162570,7 +162231,7 @@
         }
       ]
     },
-    {
+    "261": {
       "id": "smart_air_detection_box",
       "name": {
         "en": "Smart Air Detection Box"
@@ -162635,7 +162296,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "262": {
       "name": {
         "en": "Smart Circuit Breaker",
         "fr": "Disjoncteur Intelligent",
@@ -162665,7 +162326,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_4ma5pufe"
+        ],
         "productId": [
           "TS0601_breaker",
           "TS0601"
@@ -162713,7 +162376,7 @@
       "id": "smart_breaker",
       "version": "1.0.0"
     },
-    {
+    "263": {
       "id": "smart_button_switch",
       "name": {
         "en": "Smart Button Switch",
@@ -162805,7 +162468,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "264": {
       "id": "smart_door_window_sensor",
       "name": {
         "en": "Smart Door & Window Sensor (Lidl)"
@@ -162883,7 +162546,7 @@
         }
       ]
     },
-    {
+    "265": {
       "id": "smart_garden_irrigation_control",
       "name": {
         "en": "Smart Garden Irrigation Controller",
@@ -162976,7 +162639,7 @@
         }
       ]
     },
-    {
+    "266": {
       "name": {
         "en": "Smart Heater",
         "fr": "Chauffage Connecté",
@@ -162992,7 +162655,9 @@
         "measure_power"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_smart_heater_needs_device_assignment"
+        ],
         "productId": [
           "TS0601_heater",
           "TS0601"
@@ -163034,7 +162699,7 @@
       "id": "smart_heater",
       "version": "1.0.0"
     },
-    {
+    "267": {
       "name": {
         "en": "Smart Heater Controller",
         "fr": "Contrôleur Radiateur Intelligent",
@@ -163247,7 +162912,7 @@
       "id": "smart_heater_controller",
       "version": "1.0.0"
     },
-    {
+    "268": {
       "name": {
         "en": "Smart Knob",
         "fr": "Bouton Rotatif Intelligent",
@@ -163297,7 +162962,10 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_qja6nq5z",
+          "_TZ3000_kaflzta4"
+        ]
       },
       "images": {
         "small": "/drivers/smart_knob/assets/images/small.png",
@@ -163334,7 +163002,7 @@
         }
       }
     },
-    {
+    "269": {
       "name": {
         "en": "Smart Knob / Scene Switch",
         "fr": "Bouton Rotatif Intelligent",
@@ -163467,7 +163135,7 @@
       "id": "smart_knob_rotary",
       "version": "1.0.0"
     },
-    {
+    "270": {
       "id": "smart_knob_switch",
       "name": {
         "en": "Smart Knob Switch",
@@ -163542,7 +163210,7 @@
       ],
       "version": "1.0.0"
     },
-    {
+    "271": {
       "name": {
         "en": "Smart LCD Thermostat",
         "fr": "Thermostat LCD Intelligent",
@@ -163634,7 +163302,7 @@
       "id": "smart_lcd_thermostat",
       "version": "1.0.0"
     },
-    {
+    "272": {
       "id": "smart_motion_sensor",
       "name": {
         "en": "Smart Motion Sensor (Lidl)"
@@ -163708,7 +163376,7 @@
         }
       ]
     },
-    {
+    "273": {
       "name": {
         "en": "Smart RCBO",
         "fr": "Disjoncteur Différentiel Connecté",
@@ -163727,7 +163395,9 @@
         "alarm_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE284_6ocnqlhn"
+        ],
         "productId": [
           "TS0601_rcbo",
           "TS0601"
@@ -163774,7 +163444,7 @@
       "id": "smart_rcbo",
       "version": "1.0.0"
     },
-    {
+    "274": {
       "id": "smart_remote_1_button",
       "name": {
         "en": "1 button Smart Remote Controller",
@@ -163845,7 +163515,7 @@
       ],
       "version": "1.0.0"
     },
-    {
+    "275": {
       "id": "smart_remote_1_button_2",
       "name": {
         "en": "1 button Smart Remote Controller",
@@ -163934,7 +163604,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "276": {
       "id": "smart_remote_4_buttons",
       "name": {
         "en": "4 button Smart Remote Controller",
@@ -163989,7 +163659,9 @@
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_smart_remote_4_buttons_needs_device_assignment"
+        ]
       },
       "settings": [],
       "maintenanceActions": [
@@ -164046,7 +163718,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "277": {
       "name": {
         "en": "Smart Scene Panel",
         "fr": "Panneau de scène intelligent",
@@ -164176,7 +163848,7 @@
       "id": "smart_scene_panel",
       "version": "1.0.0"
     },
-    {
+    "278": {
       "id": "smart_switch",
       "name": {
         "en": "Smart Switch"
@@ -164229,7 +163901,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "279": {
       "id": "smartplug",
       "name": {
         "en": "Smart Plug with metering"
@@ -164449,7 +164121,7 @@
         }
       ]
     },
-    {
+    "280": {
       "id": "smartplug_2_socket",
       "name": {
         "en": "Double Socket Smart Plug"
@@ -164693,7 +164365,7 @@
         }
       ]
     },
-    {
+    "281": {
       "name": {
         "en": "Smart Smoke Detector Advanced",
         "fr": "Smart Smoke Detector Advanced",
@@ -165006,7 +164678,7 @@
       "id": "smoke_detector_advanced",
       "version": "1.0.0"
     },
-    {
+    "282": {
       "id": "smoke_sensor",
       "name": {
         "en": "Smoke Sensor"
@@ -165061,7 +164733,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "283": {
       "id": "smoke_sensor2",
       "name": {
         "en": "Smoke Sensor"
@@ -165158,7 +164830,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "284": {
       "id": "smoke_sensor3",
       "name": {
         "en": "Smoke Sensor"
@@ -165234,7 +164906,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "285": {
       "id": "socket_power_strip",
       "name": {
         "en": "3 Socket Power Strip"
@@ -165341,7 +165013,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "286": {
       "id": "socket_power_strip_four",
       "name": {
         "en": "Power Strip Socket 1/4"
@@ -165505,7 +165177,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "287": {
       "id": "socket_power_strip_four_three",
       "name": {
         "en": "Power Strip 4 Sockets"
@@ -165641,7 +165313,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "288": {
       "id": "socket_power_strip_four_two",
       "name": {
         "en": "Power Strip 4 Sockets"
@@ -165797,7 +165469,9 @@
             "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_socket_power_strip_four_two_needs_device_assignment"
+        ]
       },
       "version": "1.0.0",
       "metadata": {
@@ -165808,7 +165482,7 @@
       },
       "settings": []
     },
-    {
+    "289": {
       "name": {
         "en": "Soil Moisture Sensor",
         "fr": "Capteur d'Humidité du Sol",
@@ -166097,7 +165771,7 @@
       "id": "soil_sensor",
       "version": "1.0.0"
     },
-    {
+    "290": {
       "id": "soilsensor",
       "name": {
         "en": "Soil Sensor",
@@ -166161,7 +165835,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "291": {
       "id": "soilsensor_2",
       "name": {
         "en": "Soil Sensor",
@@ -166221,7 +165895,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "292": {
       "id": "sr_zs_switch",
       "name": {
         "en": "SR-ZS Switch",
@@ -166394,7 +166068,7 @@
         }
       ]
     },
-    {
+    "293": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -166420,7 +166094,15 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_tz3000_blhvsaqf",
+          "_tz3000_e98krvvk",
+          "_tz3000_hafsqare",
+          "_tz3000_iedbgyxt",
+          "_tz3000_jl7qyupf",
+          "_tz3000_l9brjwau",
+          "_tz3000_ysdv91bk"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -167006,7 +166688,7 @@
       "id": "switch",
       "version": "1.0.0"
     },
-    {
+    "294": {
       "id": "switch_1_gang",
       "name": {
         "en": "1 Gang Switch Module"
@@ -167033,7 +166715,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_switch_1_gang_needs_device_assignment"
+        ],
         "productId": [
           "TS0003",
           "TS011F",
@@ -167066,7 +166750,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "295": {
       "id": "switch_1_gang_metering",
       "name": {
         "en": "1 Gang Switch Module with metering"
@@ -167132,7 +166816,9 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_tz3000_prits6g4"
+        ]
       },
       "version": "1.0.0",
       "settings": [
@@ -167335,7 +167021,7 @@
         }
       ]
     },
-    {
+    "296": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -168534,7 +168220,7 @@
       "id": "switch_1gang",
       "version": "1.0.0"
     },
-    {
+    "297": {
       "id": "switch_2_gang",
       "name": {
         "en": "2 Gang Switch Module"
@@ -168619,7 +168305,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "298": {
       "id": "switch_2_gang_metering",
       "name": {
         "en": "2 Gang Switch Module with metering"
@@ -168789,7 +168475,7 @@
         }
       ]
     },
-    {
+    "299": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -169456,7 +169142,7 @@
       "id": "switch_2gang",
       "version": "1.0.0"
     },
-    {
+    "300": {
       "id": "switch_3_gang",
       "name": {
         "en": "3 Gang Switch Module"
@@ -169564,7 +169250,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "301": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -170237,7 +169923,7 @@
       "id": "switch_3gang",
       "version": "1.0.0"
     },
-    {
+    "302": {
       "id": "switch_4_gang_metering",
       "name": {
         "en": "4 Gang Switch Module with metering"
@@ -170460,7 +170146,7 @@
         }
       ]
     },
-    {
+    "303": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -171169,7 +170855,7 @@
       "id": "switch_4gang",
       "version": "1.0.0"
     },
-    {
+    "304": {
       "name": {
         "en": "Switch Touch Dimmer (1 Gang)",
         "nl": "Switch Touch Dimmer (1 Gang)",
@@ -171445,7 +171131,7 @@
       "id": "switch_dimmer_1gang",
       "version": "1.0.0"
     },
-    {
+    "305": {
       "name": {
         "en": "Smart Plug 1-Gang",
         "fr": "Prise Connectée 1 Gang",
@@ -171716,7 +171402,7 @@
       "id": "switch_plug_1",
       "version": "1.0.0"
     },
-    {
+    "306": {
       "name": {
         "en": "Smart Plug 2-Gang",
         "fr": "Prise Connectée 2 Gangs",
@@ -172002,7 +171688,7 @@
       "id": "switch_plug_2",
       "version": "1.0.0"
     },
-    {
+    "307": {
       "name": {
         "en": "Smart Switch with Temperature Sensor",
         "nl": "Slimme Schakelaar met Temperatuursensor",
@@ -172088,7 +171774,7 @@
       "id": "switch_temp_sensor",
       "version": "1.0.0"
     },
-    {
+    "308": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -172240,7 +171926,7 @@
       "id": "switch_usb_dongle",
       "version": "1.0.0"
     },
-    {
+    "309": {
       "class": "socket",
       "capabilities": [
         "onoff",
@@ -172977,7 +172663,7 @@
         }
       }
     },
-    {
+    "310": {
       "name": {
         "en": "Wall Switch 5gang",
         "fr": "Wall Switch 5gang",
@@ -173572,7 +173258,7 @@
       "id": "switch_wall_5gang",
       "version": "1.0.0"
     },
-    {
+    "311": {
       "name": {
         "en": "6-Gang Wall Switch",
         "fr": "Interrupteur Mural 6 Gang",
@@ -174188,7 +173874,7 @@
       "id": "switch_wall_6gang",
       "version": "1.0.0"
     },
-    {
+    "312": {
       "name": {
         "en": "Wall Switch 7-Gang",
         "fr": "Interrupteur mural 7 gangs",
@@ -174624,7 +174310,7 @@
       "id": "switch_wall_7gang",
       "version": "1.0.0"
     },
-    {
+    "313": {
       "name": {
         "en": "Wall Switch 8-Gang",
         "fr": "Interrupteur mural 8 gangs",
@@ -175019,7 +174705,7 @@
       "id": "switch_wall_8gang",
       "version": "1.0.0"
     },
-    {
+    "314": {
       "name": {
         "en": "Wireless Switch",
         "fr": "Wireless Switch",
@@ -175525,7 +175211,7 @@
       "id": "switch_wireless",
       "version": "1.0.0"
     },
-    {
+    "315": {
       "name": {
         "en": "TUYATEC Temperature & Humidity Sensor",
         "fr": "Capteur de Température et Humidité TUYATEC",
@@ -175696,7 +175382,7 @@
       "id": "temphumidsensor",
       "version": "1.0.0"
     },
-    {
+    "316": {
       "id": "temphumidsensor2",
       "name": {
         "en": "Temperature & Humidity Sensor"
@@ -175842,7 +175528,7 @@
         }
       ]
     },
-    {
+    "317": {
       "id": "temphumidsensor3",
       "name": {
         "en": "Temperature & Humidity Sensor",
@@ -175996,7 +175682,7 @@
         }
       ]
     },
-    {
+    "318": {
       "id": "temphumidsensor4",
       "name": {
         "en": "Temperature & Humidity Sensor",
@@ -176100,7 +175786,7 @@
         }
       ]
     },
-    {
+    "319": {
       "id": "temphumidsensor5",
       "name": {
         "en": "Temperature & Humidity Sensor",
@@ -176208,7 +175894,7 @@
         }
       ]
     },
-    {
+    "320": {
       "name": {
         "en": "Thermostat 4-Channel",
         "fr": "Thermostat 4 Canaux",
@@ -176298,7 +175984,7 @@
       "id": "thermostat_4ch",
       "version": "1.0.0"
     },
-    {
+    "321": {
       "name": {
         "en": "Thermostat / TRV",
         "fr": "Thermostat / Vanne",
@@ -176498,7 +176184,7 @@
       "id": "thermostat_tuya_dp",
       "version": "1.0.0"
     },
-    {
+    "322": {
       "name": {
         "en": "Thermostatic Radiator Valve"
       },
@@ -176808,7 +176494,7 @@
         }
       ]
     },
-    {
+    "323": {
       "class": "light",
       "platforms": [
         "local"
@@ -176875,7 +176561,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "324": {
       "class": "light",
       "platforms": [
         "local"
@@ -176942,7 +176628,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "325": {
       "class": "light",
       "platforms": [
         "local"
@@ -177009,7 +176695,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "326": {
       "id": "tuya_dummy_device",
       "name": {
         "en": "Tuya Diagnostic Driver"
@@ -177052,7 +176738,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "327": {
       "name": {
         "en": "Universal Zigbee/Tuya Device",
         "fr": "Appareil Zigbee/Tuya Universel",
@@ -177261,7 +176947,7 @@
         }
       }
     },
-    {
+    "328": {
       "id": "universal_zigbee",
       "name": {
         "en": "Generic Zigbee Device",
@@ -177486,7 +177172,7 @@
       "settings": [],
       "version": "1.0.0"
     },
-    {
+    "329": {
       "name": {
         "en": "USB Dongle Dual Repeater",
         "fr": "Dongle USB Double Répéteur",
@@ -177704,7 +177390,7 @@
       "id": "usb_dongle_dual_repeater",
       "version": "1.0.0"
     },
-    {
+    "330": {
       "name": {
         "en": "USB Dongle Triple (3-Port)",
         "fr": "Dongle USB Triple (3 ports)",
@@ -177973,7 +177659,7 @@
       "id": "usb_dongle_triple",
       "version": "1.0.0"
     },
-    {
+    "331": {
       "name": {
         "en": "Multi-Gang USB Socket",
         "fr": "Prise Multi-Gang USB",
@@ -178500,7 +178186,7 @@
       "id": "usb_outlet_advanced",
       "version": "1.0.0"
     },
-    {
+    "332": {
       "name": {
         "en": "Smart Valve 2-Way",
         "fr": "Vanne ConnectÃ©e 2 Voies",
@@ -178613,7 +178299,7 @@
       "id": "valve_dual_irrigation",
       "version": "1.0.0"
     },
-    {
+    "333": {
       "name": {
         "en": "Smart Valve 4-Way",
         "fr": "Vanne Connectée 4 Voies",
@@ -178713,7 +178399,7 @@
       "id": "valve_irrigation",
       "version": "1.0.0"
     },
-    {
+    "334": {
       "name": {
         "en": "Smart Valve 1-Way",
         "fr": "Vanne Connectée 1 Voie",
@@ -178775,7 +178461,7 @@
       "id": "valve_single",
       "version": "1.0.0"
     },
-    {
+    "335": {
       "id": "valvecontroller",
       "name": {
         "en": "Valve Controller"
@@ -178861,7 +178547,7 @@
         }
       ]
     },
-    {
+    "336": {
       "name": {
         "en": "Vibration Sensor",
         "fr": "Capteur de Vibration",
@@ -178962,7 +178648,7 @@
       "id": "vibration_sensor",
       "version": "1.0.0"
     },
-    {
+    "337": {
       "id": "wall_curtain_switch",
       "name": {
         "en": "Wall mounted Curtain Switch",
@@ -179105,7 +178791,7 @@
         }
       ]
     },
-    {
+    "338": {
       "name": {
         "en": "Wall Dimmer 1-Gang 1-Way",
         "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg",
@@ -179326,7 +179012,7 @@
       "id": "wall_dimmer_1gang_1way",
       "version": "1.0.0"
     },
-    {
+    "339": {
       "id": "wall_dimmer_tuya",
       "name": {
         "en": "Wall Dimmer"
@@ -179527,7 +179213,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "340": {
       "id": "wall_remote_1_gang",
       "name": {
         "en": "1 Gang Wall Remote",
@@ -179612,7 +179298,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "341": {
       "id": "wall_remote_2_gang",
       "name": {
         "en": "2 Gang Wall Remote",
@@ -179712,7 +179398,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "342": {
       "id": "wall_remote_3_gang",
       "name": {
         "en": "3 Gang Wall Remote",
@@ -179824,7 +179510,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "343": {
       "id": "wall_remote_4_gang",
       "name": {
         "en": "4 Gang Wall Remote",
@@ -179953,7 +179639,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "344": {
       "id": "wall_remote_4_gang_2",
       "name": {
         "en": "4 Gang Wall Remote",
@@ -180042,7 +179728,9 @@
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_hybrid_wall_remote_4_gang_2_needs_device_assignment"
+        ]
       },
       "maintenanceActions": [
         {
@@ -180105,7 +179793,7 @@
       },
       "settings": []
     },
-    {
+    "345": {
       "id": "wall_remote_4_gang_3",
       "name": {
         "en": "4 Gang Wall Remote",
@@ -180140,7 +179828,9 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_hybrid_wall_remote_4_gang_3_needs_device_assignment"
+        ],
         "productId": [
           "TS0043",
           "TS0601",
@@ -180231,7 +179921,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "346": {
       "id": "wall_remote_6_gang",
       "name": {
         "en": "6 Gang Wall Remote",
@@ -180387,7 +180077,7 @@
       },
       "version": "1.0.0"
     },
-    {
+    "347": {
       "id": "wall_socket",
       "name": {
         "en": "Wall Socket with metering"
@@ -180607,7 +180297,7 @@
         }
       ]
     },
-    {
+    "348": {
       "id": "wall_switch_1_gang",
       "name": {
         "en": "1 Gang Wall Switch"
@@ -180699,7 +180389,7 @@
         }
       ]
     },
-    {
+    "349": {
       "id": "wall_switch_1_gang_tuya",
       "name": {
         "en": "1 Gang Wall Switch"
@@ -180782,7 +180472,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "350": {
       "name": {
         "en": "Wall Switch 1-Gang 1-Way",
         "nl": "Muurschakelaar 1-Gang 1-Weg",
@@ -180905,7 +180595,7 @@
       "id": "wall_switch_1gang_1way",
       "version": "1.0.0"
     },
-    {
+    "351": {
       "id": "wall_switch_2_gang",
       "name": {
         "en": "2 Gang Wall Switch"
@@ -181015,7 +180705,7 @@
         }
       ]
     },
-    {
+    "352": {
       "name": {
         "en": "Wall Switch 2-Gang 1-Way (BSEED)",
         "nl": "Wandschakelaar 2-groeps 1-weg (BSEED)",
@@ -181299,7 +180989,7 @@
       "id": "wall_switch_2gang_1way",
       "version": "1.0.0"
     },
-    {
+    "353": {
       "id": "wall_switch_3_gang",
       "name": {
         "en": "3 Gang Wall Switch"
@@ -181434,7 +181124,7 @@
         }
       ]
     },
-    {
+    "354": {
       "name": {
         "en": "Wall Switch 3-Gang 1-Way (BSEED)",
         "nl": "Wandschakelaar 3-groep 1-weg (BSEED)",
@@ -181741,7 +181431,7 @@
       "id": "wall_switch_3gang_1way",
       "version": "1.0.0"
     },
-    {
+    "355": {
       "id": "wall_switch_4_gang",
       "name": {
         "en": "Wall Switch (1/4 Gang)"
@@ -181898,7 +181588,7 @@
         }
       ]
     },
-    {
+    "356": {
       "id": "wall_switch_4_gang_tuya",
       "name": {
         "en": "4 Gang Wall Switch"
@@ -182001,7 +181691,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "357": {
       "name": {
         "en": "Wall Switch 4-Gang 1-Way (BSEED)",
         "nl": "Wandschakelaar 4-groep 1-weg (BSEED)",
@@ -182332,7 +182022,7 @@
       "id": "wall_switch_4gang_1way",
       "version": "1.0.0"
     },
-    {
+    "358": {
       "id": "wall_switch_5_gang_tuya",
       "name": {
         "en": "5 Gang Wall Switch"
@@ -182473,7 +182163,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "359": {
       "id": "wall_switch_6_gang_tuya",
       "name": {
         "en": "6 Gang Wall Switch"
@@ -182607,7 +182297,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "360": {
       "name": {
         "en": "Wall Thermostat"
       },
@@ -182739,7 +182429,7 @@
       ],
       "settings": []
     },
-    {
+    "361": {
       "id": "water_detector",
       "name": {
         "en": "Water Detector"
@@ -182799,7 +182489,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "362": {
       "name": {
         "en": "Water Leak Sensor",
         "fr": "Water Leak Sensor",
@@ -183153,7 +182843,7 @@
       "id": "water_leak_sensor",
       "version": "1.0.0"
     },
-    {
+    "363": {
       "id": "water_leak_sensor_tuya",
       "name": {
         "en": "Water Leak Sensor"
@@ -183277,7 +182967,7 @@
       "version": "1.0.0",
       "settings": []
     },
-    {
+    "364": {
       "name": {
         "en": "Liquid Level Sensor",
         "fr": "Capteur Niveau Liquide",
@@ -183506,7 +183196,7 @@
       "id": "water_tank_monitor",
       "version": "1.0.0"
     },
-    {
+    "365": {
       "name": {
         "en": "Garden Water Valve",
         "fr": "Vanne d'Arrosage",
@@ -183604,7 +183294,7 @@
       "id": "water_valve_garden",
       "version": "1.0.0"
     },
-    {
+    "366": {
       "name": {
         "en": "Water Valve Smart",
         "fr": "Water Valve Smart",
@@ -183897,7 +183587,7 @@
       "id": "water_valve_smart",
       "version": "1.0.0"
     },
-    {
+    "367": {
       "name": {
         "en": "Zigbee Weather Station (Outdoor)",
         "fr": "Station météo Zigbee (Extérieur)",
@@ -184036,7 +183726,7 @@
       "id": "weather_station_outdoor",
       "version": "1.0.0"
     },
-    {
+    "368": {
       "name": {
         "en": "WiFi Air Purifier (Tuya Local)",
         "fr": "Purificateur d'air WiFi (Tuya Local)",
@@ -184168,7 +183858,7 @@
       "id": "wifi_air_purifier",
       "version": "1.0.0"
     },
-    {
+    "369": {
       "name": {
         "en": "WiFi Air Quality Monitor (Tuya Local)",
         "fr": "Moniteur de qualité d'air WiFi (Tuya Local)",
@@ -184299,7 +183989,7 @@
       "id": "wifi_air_quality",
       "version": "1.0.0"
     },
-    {
+    "370": {
       "name": {
         "en": "WiFi Camera (Tuya Local)",
         "fr": "Caméra WiFi (Tuya Local)",
@@ -184604,7 +184294,7 @@
       "id": "wifi_camera",
       "version": "1.0.0"
     },
-    {
+    "371": {
       "name": {
         "en": "WiFi Curtain Motor (Tuya Local)",
         "fr": "Moteur de rideau WiFi (Tuya Local)",
@@ -184733,7 +184423,7 @@
       "id": "wifi_cover",
       "version": "1.0.0"
     },
-    {
+    "372": {
       "name": {
         "en": "WiFi Dehumidifier (Tuya Local)",
         "fr": "Déshumidificateur WiFi (Tuya Local)",
@@ -184865,7 +184555,7 @@
       "id": "wifi_dehumidifier",
       "version": "1.0.0"
     },
-    {
+    "373": {
       "name": {
         "en": "WiFi Dimmer (Tuya Local)",
         "fr": "Variateur WiFi (Tuya Local)",
@@ -184994,7 +184684,7 @@
       "id": "wifi_dimmer",
       "version": "1.0.0"
     },
-    {
+    "374": {
       "name": {
         "en": "WiFi Door Lock (Tuya Local)",
         "fr": "Serrure de porte WiFi (Tuya Local)",
@@ -185131,7 +184821,7 @@
       "id": "wifi_door_lock",
       "version": "1.0.0"
     },
-    {
+    "375": {
       "name": {
         "en": "WiFi Doorbell / Camera (Tuya Local)",
         "fr": "Sonnette WiFi / Caméra (Tuya Local)",
@@ -185260,7 +184950,7 @@
       "id": "wifi_doorbell",
       "version": "1.0.0"
     },
-    {
+    "376": {
       "name": {
         "en": "eWeLink Bulb (SONOFF B02/B05)",
         "fr": "Ampoule eWeLink (SONOFF B02/B05)",
@@ -185365,7 +185055,7 @@
       "id": "wifi_ewelink_bulb",
       "version": "1.0.0"
     },
-    {
+    "377": {
       "name": {
         "en": "eWeLink Dimmer (SONOFF D1)",
         "fr": "Variateur eWeLink (SONOFF D1)",
@@ -185469,7 +185159,7 @@
       "id": "wifi_ewelink_dimmer",
       "version": "1.0.0"
     },
-    {
+    "378": {
       "name": {
         "en": "eWeLink Fan Controller (SONOFF iFan)",
         "fr": "Contrôleur de ventilateur eWeLink (SONOFF iFan)",
@@ -185591,7 +185281,7 @@
       "id": "wifi_ewelink_fan",
       "version": "1.0.0"
     },
-    {
+    "379": {
       "name": {
         "en": "eWeLink LED Strip (SONOFF L1/L2)",
         "fr": "Ruban LED eWeLink (SONOFF L1/L2)",
@@ -185695,7 +185385,7 @@
       "id": "wifi_ewelink_led",
       "version": "1.0.0"
     },
-    {
+    "380": {
       "name": {
         "en": "eWeLink Plug (SONOFF)",
         "fr": "Prise eWeLink (SONOFF)",
@@ -185798,7 +185488,7 @@
       "id": "wifi_ewelink_plug",
       "version": "1.0.0"
     },
-    {
+    "381": {
       "name": {
         "en": "eWeLink Power Monitor (SONOFF)",
         "fr": "Moniteur de puissance eWeLink (SONOFF)",
@@ -185904,7 +185594,7 @@
       "id": "wifi_ewelink_pow",
       "version": "1.0.0"
     },
-    {
+    "382": {
       "name": {
         "en": "eWeLink Switch (SONOFF)",
         "fr": "Interrupteur eWeLink (SONOFF)",
@@ -186007,7 +185697,7 @@
       "id": "wifi_ewelink_switch",
       "version": "1.0.0"
     },
-    {
+    "383": {
       "name": {
         "en": "eWeLink Switch 2-Channel (SONOFF)",
         "fr": "Interrupteur eWeLink 2 canaux (SONOFF)",
@@ -186123,7 +185813,7 @@
       "id": "wifi_ewelink_switch_2ch",
       "version": "1.0.0"
     },
-    {
+    "384": {
       "name": {
         "en": "eWeLink Switch 4-Channel (SONOFF)",
         "fr": "Interrupteur eWeLink 4 canaux (SONOFF)",
@@ -186251,7 +185941,7 @@
       "id": "wifi_ewelink_switch_4ch",
       "version": "1.0.0"
     },
-    {
+    "385": {
       "name": {
         "en": "eWeLink TH Sensor Switch (SONOFF)",
         "fr": "Interrupteur capteur TH eWeLink (SONOFF)",
@@ -186354,7 +186044,7 @@
       "id": "wifi_ewelink_th",
       "version": "1.0.0"
     },
-    {
+    "386": {
       "name": {
         "en": "WiFi Fan (Tuya Local)",
         "fr": "Ventilateur WiFi (Tuya Local)",
@@ -186483,7 +186173,7 @@
       "id": "wifi_fan",
       "version": "1.0.0"
     },
-    {
+    "387": {
       "name": {
         "en": "WiFi Garage Door (Tuya Local)",
         "fr": "Porte de garage WiFi (Tuya Local)",
@@ -186612,7 +186302,7 @@
       "id": "wifi_garage_door",
       "version": "1.0.0"
     },
-    {
+    "388": {
       "name": {
         "en": "WiFi Device (Tuya Local)",
         "fr": "Appareil WiFi (Tuya Local)",
@@ -186759,7 +186449,7 @@
       "id": "wifi_generic",
       "version": "1.0.0"
     },
-    {
+    "389": {
       "name": {
         "en": "WiFi Heater (Tuya Local)",
         "fr": "Radiateur WiFi (Tuya Local)",
@@ -186910,7 +186600,7 @@
       "id": "wifi_heater",
       "version": "1.0.0"
     },
-    {
+    "390": {
       "name": {
         "en": "WiFi Humidifier (Tuya Local)",
         "fr": "Humidificateur WiFi (Tuya Local)",
@@ -187041,7 +186731,7 @@
       "id": "wifi_humidifier",
       "version": "1.0.0"
     },
-    {
+    "391": {
       "name": {
         "en": "WiFi IR Remote (Tuya Local)",
         "fr": "Télécommande IR WiFi (Tuya Local)",
@@ -187169,7 +186859,7 @@
       "id": "wifi_ir_remote",
       "version": "1.0.0"
     },
-    {
+    "392": {
       "name": {
         "en": "WiFi LED Strip RGBCW (Tuya Local)",
         "fr": "Ruban LED WiFi RGBCW (Tuya Local)",
@@ -187302,7 +186992,7 @@
       "id": "wifi_led_strip",
       "version": "1.0.0"
     },
-    {
+    "393": {
       "name": {
         "en": "WiFi Light RGBCW (Tuya Local)",
         "fr": "Lumière WiFi RGBCW (Tuya Local)",
@@ -187435,7 +187125,7 @@
       "id": "wifi_light",
       "version": "1.0.0"
     },
-    {
+    "394": {
       "name": {
         "en": "WiFi Pet Feeder (Tuya Local)",
         "fr": "Distributeur de nourriture pour animaux WiFi (Tuya Local)",
@@ -187570,7 +187260,7 @@
       "id": "wifi_pet_feeder",
       "version": "1.0.0"
     },
-    {
+    "395": {
       "name": {
         "en": "WiFi Smart Plug (Tuya Local)",
         "fr": "Prise intelligente WiFi (Tuya Local)",
@@ -187702,7 +187392,7 @@
       "id": "wifi_plug",
       "version": "1.0.0"
     },
-    {
+    "396": {
       "name": {
         "en": "WiFi Power Strip (Tuya Local)",
         "fr": "Multiprise WiFi (Tuya Local)",
@@ -187857,7 +187547,7 @@
       "id": "wifi_power_strip",
       "version": "1.0.0"
     },
-    {
+    "397": {
       "name": {
         "en": "WiFi Robot Vacuum (Tuya Local)",
         "fr": "Aspirateur robot WiFi (Tuya Local)",
@@ -188235,7 +187925,7 @@
       "id": "wifi_robot_vacuum",
       "version": "1.0.0"
     },
-    {
+    "398": {
       "name": {
         "en": "WiFi Sensor (Tuya Local)",
         "fr": "Capteur WiFi (Tuya Local)",
@@ -188371,7 +188061,7 @@
       "id": "wifi_sensor",
       "version": "1.0.0"
     },
-    {
+    "399": {
       "name": {
         "en": "WiFi Siren (Tuya Local)",
         "fr": "Sirène WiFi (Tuya Local)",
@@ -188509,7 +188199,7 @@
       "id": "wifi_siren",
       "version": "1.0.0"
     },
-    {
+    "400": {
       "pair": [
         {
           "id": "configure",
@@ -188612,7 +188302,7 @@
       "id": "wifi_sonoff_basicr4",
       "version": "1.0.0"
     },
-    {
+    "401": {
       "pair": [
         {
           "id": "configure",
@@ -188731,7 +188421,7 @@
       "id": "wifi_sonoff_dualr3",
       "version": "1.0.0"
     },
-    {
+    "402": {
       "pair": [
         {
           "id": "configure",
@@ -188834,7 +188524,7 @@
       "id": "wifi_sonoff_micro",
       "version": "1.0.0"
     },
-    {
+    "403": {
       "pair": [
         {
           "id": "configure",
@@ -188937,7 +188627,7 @@
       "id": "wifi_sonoff_minir3",
       "version": "1.0.0"
     },
-    {
+    "404": {
       "pair": [
         {
           "id": "configure",
@@ -189040,7 +188730,7 @@
       "id": "wifi_sonoff_minir4",
       "version": "1.0.0"
     },
-    {
+    "405": {
       "pair": [
         {
           "id": "configure",
@@ -189147,7 +188837,7 @@
       "id": "wifi_sonoff_pow_elite",
       "version": "1.0.0"
     },
-    {
+    "406": {
       "pair": [
         {
           "id": "configure",
@@ -189250,7 +188940,7 @@
       "id": "wifi_sonoff_smate2",
       "version": "1.0.0"
     },
-    {
+    "407": {
       "pair": [
         {
           "id": "configure",
@@ -189356,7 +189046,7 @@
       "id": "wifi_sonoff_thr316d",
       "version": "1.0.0"
     },
-    {
+    "408": {
       "pair": [
         {
           "id": "configure",
@@ -189459,7 +189149,7 @@
       "id": "wifi_sonoff_tx_1ch",
       "version": "1.0.0"
     },
-    {
+    "409": {
       "pair": [
         {
           "id": "configure",
@@ -189575,7 +189265,7 @@
       "id": "wifi_sonoff_tx_2ch",
       "version": "1.0.0"
     },
-    {
+    "410": {
       "pair": [
         {
           "id": "configure",
@@ -189697,7 +189387,7 @@
       "id": "wifi_sonoff_tx_3ch",
       "version": "1.0.0"
     },
-    {
+    "411": {
       "name": {
         "en": "WiFi Switch (Tuya Local)",
         "fr": "Interrupteur WiFi (Tuya Local)",
@@ -189825,7 +189515,7 @@
       "id": "wifi_switch",
       "version": "1.0.0"
     },
-    {
+    "412": {
       "name": {
         "en": "WiFi 2-Gang Switch",
         "fr": "Interrupteur WiFi 2 gangs",
@@ -189966,7 +189656,7 @@
       "id": "wifi_switch_2gang",
       "version": "1.0.0"
     },
-    {
+    "413": {
       "name": {
         "en": "WiFi 3-Gang Switch",
         "fr": "Interrupteur WiFi 3 gangs",
@@ -190113,7 +189803,7 @@
       "id": "wifi_switch_3gang",
       "version": "1.0.0"
     },
-    {
+    "414": {
       "name": {
         "en": "WiFi 4-Gang Switch",
         "fr": "Interrupteur WiFi 4 gangs",
@@ -190266,7 +189956,7 @@
       "id": "wifi_switch_4gang",
       "version": "1.0.0"
     },
-    {
+    "415": {
       "name": {
         "en": "WiFi Thermostat (Tuya Local)",
         "fr": "Thermostat WiFi (Tuya Local)",
@@ -190397,7 +190087,7 @@
       "id": "wifi_thermostat",
       "version": "1.0.0"
     },
-    {
+    "416": {
       "name": {
         "en": "WiFi Liquid Level Sensor",
         "fr": "Capteur de niveau de liquide WiFi",
@@ -190614,7 +190304,7 @@
       "id": "wifi_water_tank_monitor",
       "version": "1.0.0"
     },
-    {
+    "417": {
       "name": {
         "en": "WiFi Water Valve (Tuya Local)",
         "fr": "Vanne d'eau WiFi (Tuya Local)",
@@ -190749,7 +190439,7 @@
       "id": "wifi_water_valve",
       "version": "1.0.0"
     },
-    {
+    "418": {
       "name": {
         "en": "Zigbee Signal Repeater",
         "fr": "Répéteur de signal Zigbee",
@@ -190822,8 +190512,460 @@
       "id": "zigbee_repeater",
       "version": "1.0.0",
       "settings": []
+    },
+    "419": {
+      "name": {
+        "en": "Boiler Switch with Energy Monitoring",
+        "fr": "Interrupteur Chaudière avec Monitoring Énergie",
+        "nl": "Boiler Switch with Energy Monitoring",
+        "de": "Boiler Switch with Energy Monitoring",
+        "es": "Boiler Switch with Energy Monitoring"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power",
+        "measure_temperature"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_boiler_switch_energy_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/boiler_switch_energy/assets/images/small.png",
+        "large": "/drivers/boiler_switch_energy/assets/images/large.png",
+        "xlarge": "/drivers/boiler_switch_energy/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "boiler_switch_energy",
+      "version": "1.0.0"
+    },
+    "420": {
+      "name": {
+        "en": "0-10V Dimmer",
+        "fr": "Variateur 0-10V",
+        "nl": "0-10V Dimmer",
+        "de": "0-10V Dimmer",
+        "es": "0-10V Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "countdown_remaining"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_dimmer_0_10v_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/dimmer_0_10v/assets/images/small.png",
+        "large": "/drivers/dimmer_0_10v/assets/images/large.png",
+        "xlarge": "/drivers/dimmer_0_10v/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "dimmer_0_10v",
+      "version": "1.0.0"
+    },
+    "421": {
+      "name": {
+        "en": "4-Channel Dimmer",
+        "fr": "Variateur 4 Canaux",
+        "nl": "4-Channel Dimmer",
+        "de": "4-Channel Dimmer",
+        "es": "4-Channel Dimmer"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "onoff.2",
+        "dim.2",
+        "onoff.3",
+        "dim.3",
+        "onoff.4",
+        "dim.4"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_dimmer_4ch_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/dimmer_4ch/assets/images/small.png",
+        "large": "/drivers/dimmer_4ch/assets/images/large.png",
+        "xlarge": "/drivers/dimmer_4ch/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "dimmer_4ch",
+      "version": "1.0.0"
+    },
+    "422": {
+      "name": {
+        "en": "DIN Rail Energy Meter",
+        "fr": "Compteur Énergie Rail DIN",
+        "nl": "DIN Rail Energy Meter",
+        "de": "DIN Rail Energy Meter",
+        "es": "DIN Rail Energy Meter"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power",
+        "measure_frequency"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_energy_meter_din_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/energy_meter_din/assets/images/small.png",
+        "large": "/drivers/energy_meter_din/assets/images/large.png",
+        "xlarge": "/drivers/energy_meter_din/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "energy_meter_din",
+      "version": "1.0.0"
+    },
+    "423": {
+      "name": {
+        "en": "6-Channel Scene Switch",
+        "fr": "Interrupteur Scène 6 Canaux",
+        "nl": "6-Channel Scene Switch",
+        "de": "6-Channel Scene Switch",
+        "es": "6-Channel Scene Switch"
+      },
+      "class": "remote",
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_scene_switch_6ch_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/scene_switch_6ch/assets/images/small.png",
+        "large": "/drivers/scene_switch_6ch/assets/images/large.png",
+        "xlarge": "/drivers/scene_switch_6ch/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "scene_switch_6ch",
+      "version": "1.0.0"
+    },
+    "424": {
+      "name": {
+        "en": "Smart Irrigation Valve",
+        "fr": "Vanbe d'Irrigation Intelligente",
+        "nl": "Smart Irrigation Valve",
+        "de": "Smart Irrigation Valve",
+        "es": "Smart Irrigation Valve"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_water",
+        "countdown_remaining",
+        "alarm_fault"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_smart_irrigation_valve_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/smart_irrigation_valve/assets/images/small.png",
+        "large": "/drivers/smart_irrigation_valve/assets/images/large.png",
+        "xlarge": "/drivers/smart_irrigation_valve/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "smart_irrigation_valve",
+      "version": "1.0.0"
+    },
+    "425": {
+      "name": {
+        "en": "Smart Screen Switch",
+        "fr": "Interrupteur Écran Intelligent",
+        "nl": "Smart Screen Switch",
+        "de": "Smart Screen Switch",
+        "es": "Smart Screen Switch"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state",
+        "measure_luminance",
+        "measure_temperature",
+        "alarm_motion"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_smart_screen_switch_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/smart_screen_switch/assets/images/small.png",
+        "large": "/drivers/smart_screen_switch/assets/images/large.png",
+        "xlarge": "/drivers/smart_screen_switch/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "smart_screen_switch",
+      "version": "1.0.0"
+    },
+    "426": {
+      "name": {
+        "en": "Soil EC Sensor",
+        "fr": "Capteur de Sol EC",
+        "nl": "Soil EC Sensor",
+        "de": "Soil EC Sensor",
+        "es": "Soil EC Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_conductivity",
+        "measure_battery"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_soil_sensor_ec_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/soil_sensor_ec/assets/images/small.png",
+        "large": "/drivers/soil_sensor_ec/assets/images/large.png",
+        "xlarge": "/drivers/soil_sensor_ec/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "soil_sensor_ec",
+      "version": "1.0.0"
+    },
+    "427": {
+      "name": {
+        "en": "Ultrasonic Heat Meter",
+        "fr": "Compteur de Chaleur Ultrasonique",
+        "nl": "Ultrasonic Heat Meter",
+        "de": "Ultrasonic Heat Meter",
+        "es": "Ultrasonic Heat Meter"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "meter_power",
+        "measure_power",
+        "alarm_battery"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_ultrasonic_heat_meter_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/ultrasonic_heat_meter/assets/images/small.png",
+        "large": "/drivers/ultrasonic_heat_meter/assets/images/large.png",
+        "xlarge": "/drivers/ultrasonic_heat_meter/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "ultrasonic_heat_meter",
+      "version": "1.0.0"
+    },
+    "428": {
+      "name": {
+        "en": "Ultrasonic Water Meter",
+        "fr": "Compteur d'Eau Ultrasonique",
+        "nl": "Ultrasonic Water Meter",
+        "de": "Ultrasonic Water Meter",
+        "es": "Ultrasonic Water Meter"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_water",
+        "meter_water",
+        "alarm_battery",
+        "alarm_fault"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_hybrid_ultrasonic_water_meter_needs_device_assignment"
+        ]
+      },
+      "images": {
+        "small": "/drivers/ultrasonic_water_meter/assets/images/small.png",
+        "large": "/drivers/ultrasonic_water_meter/assets/images/large.png",
+        "xlarge": "/drivers/ultrasonic_water_meter/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "ultrasonic_water_meter",
+      "version": "1.0.0"
     }
-  ],
+  },
   "capabilities": {
     "alarm_cleaning": {
       "type": "boolean",

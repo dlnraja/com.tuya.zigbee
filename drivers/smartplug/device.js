@@ -123,6 +123,7 @@ class smartplug extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log("Smart Plug removed")
   }
 

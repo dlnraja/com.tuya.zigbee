@@ -63,11 +63,9 @@ for (const driverId of drivers) {
     }
   }
 
-  // Battery Check
-  if (content.includes('Battery') || driverId.includes('sensor')) {
-    if (!content.includes('BatteryMixin')) {
-      warn(`Sensor driver '${driverId}' might be missing BatteryMixin.`);
-    }
+  // Battery Check (BatteryMixin is DEPRECATED - should use UnifiedBatteryHandler)
+  if (content.includes('BatteryMixin')) {
+    error(`Driver '${driverId}' uses DEPRECATED BatteryMixin. Use UnifiedBatteryHandler or BaseUnifiedDevice.`);
   }
 }
 
@@ -75,8 +73,8 @@ for (const driverId of drivers) {
 const tuyaSpecificPath = path.join(LIB_DIR, 'tuya', 'TuyaSpecificClusterDevice.js');
 if (fs.existsSync(tuyaSpecificPath)) {
   const tuyaSpec = fs.readFileSync(tuyaSpecificPath, 'utf8');
-  if (!tuyaSpec.includes('v5.5.999') && !tuyaSpec.includes('v6.0.0')) {
-    warn('TuyaSpecificClusterDevice.js is outdated.');
+  if (!tuyaSpec.includes('v9.0.') && !tuyaSpec.includes('v8.')) {
+    warn('TuyaSpecificClusterDevice.js may be outdated (no v8+/v9+ marker found).');
   }
 }
 

@@ -61,9 +61,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       this._timeSyncEngine.setupListener(zclNode);
       
       // Perform initial sync after 5 seconds
-      this.homey.setTimeout(async () => {
-        await this._timeSyncEngine.syncTime(zclNode).catch(() => {});
-      }, 5000);
+      this.homey.setTimeout(async () => { if (this._destroyed) return; await this._timeSyncEngine.syncTime(zclNode).catch(() => {}); }, 5000);
       
       // Periodic sync every 4 hours for battery sensors
       this._timeSyncEngine.schedulePeriodicSync(zclNode,4 * 60 * 60 * 1000);

@@ -20,6 +20,7 @@
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
+  
   },
   "zigbee": {
     "productId": [
@@ -69,8 +70,9 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_outdoor_2_socket_needs_device_assignment"]
   },
   "version": "1.0.0"
 }

@@ -69,6 +69,18 @@ class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     }
   }
 
+  /**
+   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
+   * Single-gang dimmer: always writes DP 1 (state).
+   */
+  async _setGangOnOff(gang, value) {
+    this.log(`[FLOW] _setGangOnOff: gang=${gang} value=${value}`);
+    if (typeof this.markAppCommand === 'function') {
+      this.markAppCommand(1, value);
+    }
+    return this.sendTuyaCommand(DP.state, value, 'bool');
+  }
+
   async onSettings({ newSettings, changedKeys }) {
     for (const key of changedKeys) {
       switch (key) {

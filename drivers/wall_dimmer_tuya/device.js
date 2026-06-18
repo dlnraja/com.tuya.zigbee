@@ -119,6 +119,7 @@ class wall_dimmer_tuya extends TuyaSpecificClusterDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Wall Dimmer removed');
   }
 

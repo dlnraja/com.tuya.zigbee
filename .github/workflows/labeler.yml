@@ -1,5 +1,10 @@
 name: "PR Labeler"
 
+# <!-- badges:start -->
+# [![PR Labeler](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/labeler.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/labeler.yml)
+# <!-- badges:end -->
+
+
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]

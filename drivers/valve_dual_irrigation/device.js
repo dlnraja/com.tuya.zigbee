@@ -18,14 +18,18 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       // Valve 1
       1: { capability: 'onoff.valve_1', transform: (v) => v === 1 || v === true },
       104: { capability: 'onoff.valve_1', transform: (v) => v === 1 || v === 0 }, // Status reporting
-      13: { internal: 'countdown_1' },
+      13: { capability: 'countdown_remaining' },
       25: { internal: 'duration_1' },
 
       // Valve 2
       2: { capability: 'onoff.valve_2', transform: (v) => v === 1 || v === true },
       105: { capability: 'onoff.valve_2', transform: (v) => v === 1 || v === 0 }, // Status reporting
-      14: { internal: 'countdown_2' },
+      14: { capability: 'countdown_remaining' },
       26: { internal: 'duration_2' },
+
+      // GIEX 2-zone (DP3=countdown, DP5=battery)
+      3: { capability: 'countdown_remaining' },
+      5: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(100, Math.max(0, v)) },
 
       // Battery (Research research shows DP 59 for these dual valves, DP 101/15 as fallback)
       59: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(100, Math.max(0, v)) },

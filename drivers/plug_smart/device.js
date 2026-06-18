@@ -1,5 +1,6 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { boolean, enumMap } = require('../../lib/converters/ValueConverterRegistry');
 
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
@@ -24,10 +25,10 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 
   get dpMappings() {
     return {
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      7: { internal: true, type: 'child_lock', writable: true },
-      9: { internal: true, type: 'countdown', writable: true },
-      14: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
+      1: { capability: 'onoff', transform: boolean() },
+      7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+      9: { capability: 'countdown_remaining' },
+      14: { capability: 'power_on_behavior', transform: enumMap({ 0: 'off', 1: 'on', 2: 'previous' }, 'previous') },
       17: { capability: 'measure_current', smartDivisor: true },
       18: { capability: 'measure_power', smartDivisor: true },
       19: { capability: 'measure_voltage', smartDivisor: true },
@@ -141,9 +142,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   async _setupEnergyMonitoring(zclNode) {
@@ -154,18 +153,21 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
+          if (this._destroyed) return;
           const scaled = this._applyScale(v, 'measure_power');
-          this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
+          this.safeSetCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsVoltage', (v) => {
+          if (this._destroyed) return;
           const scaled = this._applyScale(v, 'measure_voltage');
-          this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
+          this.safeSetCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsCurrent', (v) => {
+          if (this._destroyed) return;
           const scaledCurrent = this._applyScale(v * 1000, 'measure_current');
-          this.setCapabilityValue('measure_current', parseFloat(scaledCurrent)).catch(() => { });
+          this.safeSetCapabilityValue('measure_current', parseFloat(scaledCurrent)).catch(() => { });
           const scaledPower = this._applyScale(v * 1000, 'meter_power');
-          this.setCapabilityValue('meter_power', parseFloat(scaledPower)).catch(() => { });
+          this.safeSetCapabilityValue('meter_power', parseFloat(scaledPower)).catch(() => { });
         });
         this.log('[PLUG]  ZCL Metering configured (with scale support)');
       }
@@ -174,6 +176,8 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

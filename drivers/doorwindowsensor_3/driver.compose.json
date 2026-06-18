@@ -26,7 +26,13 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_pjb1ua0m",
+      "_TZ3000_n2egfsli",
+      "_TZ3000_t3vvhrmh",
+      "_TZ3000_oxslv1c9",
+      "_TZ3000_jowhpxop"
+    ],
     "productId": [
       "TS0203"
     ],

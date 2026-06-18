@@ -164,10 +164,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('onoff', async value => {
       await this.writeBool(dataPoints.ALARM, value);
-      this.homey.setTimeout(() => this.queryAll().catch(this.error), 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 1200);
     });
 
-    this.homey.setTimeout(() => this.bootstrap().catch(this.error), 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this.bootstrap().catch(this.error); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -235,12 +235,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       payload.writeUInt32BE(utcSeconds >>> 0, 0);
       payload.writeUInt32BE(localSeconds >>> 0, 4);
       await this.zclNode.endpoints[1].clusters.tuya.timeSync({ payload });
-      this.homey.setTimeout(() => this.queryAll().catch(this.error), 500);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
     } catch (error) { this.error('Failed to respond to Tuya timeSync request', error); }
   }
 
   async onMcuVersionResponse(data) {
-    this.homey.setTimeout(() => this.queryAll().catch(this.error), 500);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
   }
 
   async processTuyaMessage(source, data) {
@@ -249,7 +249,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     switch (dp) {
     case dataPoints.ALARM:
       await this.triggerCapabilityListener('onoff', !!measuredValue).catch(() => {});
-      await this.setCapabilityValue('alarm_siren', !!measuredValue).catch(() => {});
+      await this.safeSetCapabilityValue('alarm_siren', !!measuredValue).catch(() => {});
       break;
     case dataPoints.TEMPERATURE: this.reportTemperatureCapacity(measuredValue); break;
     case dataPoints.HUMIDITY: this.reportHumidityCapacity(measuredValue); break;
@@ -261,17 +261,17 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   handlePowerMode(measuredValue) {
-    this.setCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
+    this.safeSetCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
   }
 
   reportHumidityCapacity(measuredValue) {
     const humidityOffset = Number(this.getSetting('humidity_offset') || 0);
-    this.setCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
+    this.safeSetCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
   }
 
   reportTemperatureCapacity(measuredValue) {
     const temperatureOffset = Number(this.getSetting('temperature_offset') || 0);
-    this.setCapabilityValue('measure_temperature', (Number(measuredValue) / 10) + temperatureOffset).catch(() => {});
+    this.safeSetCapabilityValue('measure_temperature', (Number(measuredValue) / 10) + temperatureOffset).catch(() => {});
   }
 
   async onEndDeviceAnnounce() {

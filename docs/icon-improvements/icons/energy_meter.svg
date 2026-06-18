@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Meter housing -->
+  <rect x="180" y="180" width="600" height="600" rx="60" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Display window -->
+  <rect x="250" y="280" width="460" height="200" rx="20" stroke="black" stroke-width="25" fill="none"/>
+  <!-- Display digits (simplified) -->
+  <rect x="290" y="320" width="60" height="80" rx="5" fill="black"/>
+  <rect x="370" y="320" width="60" height="80" rx="5" fill="black"/>
+  <rect x="450" y="320" width="60" height="80" rx="5" fill="black"/>
+  <rect x="540" y="320" width="80" height="80" rx="5" stroke="black" stroke-width="15" fill="none"/>
+  <!-- Lightning bolt symbol -->
+  <path d="M480 550 L430 650 L470 650 L420 750 L530 620 L490 620 L540 550 Z"
+        stroke="black" stroke-width="25" fill="none" stroke-linejoin="round"/>
+  <!-- Pulse indicator -->
+  <path d="M250 230 L350 230 L380 200 L420 260 L460 200 L500 260 L530 230 L710 230"
+        stroke="black" stroke-width="20" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

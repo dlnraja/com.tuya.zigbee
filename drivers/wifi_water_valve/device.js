@@ -3,7 +3,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalDevice)) {
+class WiFiWaterValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaLocalDevice)) {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
@@ -33,9 +33,11 @@ class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLo
     this.log('[WIFI-WATER-VALVE] Ready');
   }
 
-  onDeleted() {
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
-    if (super.onDeleted) {super.onDeleted();}
+    await super.onDeleted();
   }
 }
 

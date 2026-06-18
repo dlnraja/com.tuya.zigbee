@@ -116,8 +116,10 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _scheduleReconnect() {
-    if (this._reconnectTimer) {clearTimeout(this._reconnectTimer);}
-    this._reconnectTimer = setTimeout(async () => {
+    if (this._destroyed) return;
+    if (this._reconnectTimer) {this.homey.clearTimeout(this._reconnectTimer);}
+    this._reconnectTimer = this.homey.setTimeout(async () => {
+      if (this._destroyed) return;
       if (this._tuyaDevice && !this._tuyaDevice.isConnected()) {
         try {
           await this._tuyaDevice.find({ timeout: 10000 });
@@ -138,13 +140,13 @@ class WiFiCameraDevice extends Homey.Device {
       const now = Date.now();
       if (motion && now - this._lastMotionTime > 5000) {
         this._lastMotionTime = now;
-        this.setCapabilityValue('alarm_motion', true).catch(() => {});
-        setTimeout(() => this.setCapabilityValue('alarm_motion', false).catch(() => {}), 30000);
+        this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+        this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('alarm_motion', false).catch(() => {}); }, 30000);
       }
     }
 
     if (dps[DP.PRIVACY_MODE] !== undefined) {
-      this.setCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
+      this.safeSetCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
     }
   }
 
@@ -295,6 +297,7 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   async onDeleted() {
+    await super.onDeleted();
     this._stopTimers();
     this._destroyLocalConnection();
   }
@@ -310,7 +313,7 @@ class WiFiCameraDevice extends Homey.Device {
       const ptzCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch (e) { return null; } })();
       if (ptzCard) {ptzCard.registerRunListener(async (args) => {
         await this._setDP(DP.PTZ_CONTROL, args.direction);
-        setTimeout(() => this._setDP(DP.PTZ_STOP, true).catch(() => {}), 1000);
+        this.homey.setTimeout(() => { if (this._destroyed) return; this._setDP(DP.PTZ_STOP, true).catch(() => {}); }, 1000);
       });}
     } catch (e) { this.error('[WIFI-CAM] Flow card registration:', e.message); }
   }

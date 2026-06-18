@@ -2,6 +2,8 @@
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -12,7 +14,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  v9.7.3: purged manual listeners in favor of centralized dpMappings         ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
 
@@ -21,8 +23,8 @@ class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unified
   get dpMappings() {
     return {
       ...super.dpMappings,
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      1: { capability: 'onoff', transform: boolean() },
+      16: { capability: 'onoff', transform: boolean() },
       17: { capability: 'measure_current', smartDivisor: true }, // A * 1000
       18: { capability: 'measure_power', divisor: 1 },      // W
       19: { capability: 'measure_voltage', smartDivisor: true },    // V * 10
@@ -44,7 +46,8 @@ class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unified
   }
 
   async onDeleted() {
-    await super.onNodeInit({ zclNode });
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

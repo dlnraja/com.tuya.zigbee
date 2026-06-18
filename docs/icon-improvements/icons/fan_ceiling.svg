@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fan mount -->
+  <rect x="440" y="100" width="80" height="150" rx="20" fill="black"/>
+  <!-- Center hub -->
+  <circle cx="480" cy="350" r="60" stroke="black" stroke-width="35" fill="none"/>
+  <!-- Fan blade 1 (top) -->
+  <path d="M480 290 L480 150 C520 140 560 160 560 200 L540 290" stroke="black" stroke-width="25" fill="none" stroke-linejoin="round"/>
+  <!-- Fan blade 2 (right) -->
+  <path d="M540 350 L680 350 C690 390 670 430 630 430 L540 410" stroke="black" stroke-width="25" fill="none" stroke-linejoin="round"/>
+  <!-- Fan blade 3 (bottom) -->
+  <path d="M480 410 L480 550 C440 560 400 540 400 500 L420 410" stroke="black" stroke-width="25" fill="none" stroke-linejoin="round"/>
+  <!-- Fan blade 4 (left) -->
+  <path d="M420 350 L280 350 C270 310 290 270 330 270 L420 290" stroke="black" stroke-width="25" fill="none" stroke-linejoin="round"/>
+  <!-- Light fixture -->
+  <circle cx="480" cy="500" r="30" stroke="black" stroke-width="20" fill="none"/>
+  <!-- Air flow indicators -->
+  <path d="M200 500 C250 520 300 500 350 520" stroke="black" stroke-width="15" fill="none" stroke-linecap="round"/>
+  <path d="M610 500 C660 520 710 500 760 520" stroke="black" stroke-width="15" fill="none" stroke-linecap="round"/>
+</svg>

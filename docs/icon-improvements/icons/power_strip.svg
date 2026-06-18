@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Strip body -->
+  <rect x="100" y="350" width="760" height="260" rx="40" stroke="black" stroke-width="35" fill="none"/>
+  <!-- Outlet 1 -->
+  <rect x="200" y="410" width="50" height="80" rx="10" fill="black"/>
+  <rect x="200" y="510" width="50" height="40" rx="10" fill="black"/>
+  <!-- Outlet 2 -->
+  <rect x="350" y="410" width="50" height="80" rx="10" fill="black"/>
+  <rect x="350" y="510" width="50" height="40" rx="10" fill="black"/>
+  <!-- Outlet 3 -->
+  <rect x="500" y="410" width="50" height="80" rx="10" fill="black"/>
+  <rect x="500" y="510" width="50" height="40" rx="10" fill="black"/>
+  <!-- Outlet 4 -->
+  <rect x="650" y="410" width="50" height="80" rx="10" fill="black"/>
+  <rect x="650" y="510" width="50" height="40" rx="10" fill="black"/>
+  <!-- Power switch -->
+  <circle cx="780" cy="480" r="30" stroke="black" stroke-width="20" fill="none"/>
+  <line x1="780" y1="450" x2="780" y2="480" stroke="black" stroke-width="15" stroke-linecap="round"/>
+  <!-- Power cord -->
+  <path d="M100 480 L50 480 C30 480 30 500 50 500 L80 500" stroke="black" stroke-width="25" fill="none" stroke-linecap="round"/>
+  <!-- Surge indicator -->
+  <path d="M480 310 L460 350 L490 350 L470 390" stroke="black" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

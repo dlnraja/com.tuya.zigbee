@@ -22,54 +22,59 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["sensor_gas_presence_presence_sensor_radar_presence_detected","sensor_gas_presence_presence_sensor_radar_presence_cleared","sensor_gas_presence_presence_sensor_radar_motion_detected","sensor_gas_presence_presence_sensor_radar_illuminance_changed","sensor_gas_presence_presence_sensor_radar_distance_changed","sensor_gas_presence_presence_sensor_radar_lux_changed","sensor_gas_presence_presence_sensor_radar_battery_low"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_hybrid_presence_sensor_radar_is_present');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_is_present');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_gas_presence_hybrid_presence_sensor_radar_is_present: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_is_present: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_hybrid_presence_sensor_radar_illuminance_above');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_illuminance_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_gas_presence_hybrid_presence_sensor_radar_illuminance_above: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_illuminance_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_hybrid_presence_sensor_radar_distance_within');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_distance_within');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_gas_presence_hybrid_presence_sensor_radar_distance_within: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_distance_within: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('sensor_gas_presence_hybrid_presence_sensor_radar_motion_active');
+      const card = this.homey.flow.getConditionCard('sensor_gas_presence_presence_sensor_radar_motion_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_gas_presence_hybrid_presence_sensor_radar_motion_active: ${err.message}`); }
+    } catch (err) { this.error(`Condition sensor_gas_presence_presence_sensor_radar_motion_active: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

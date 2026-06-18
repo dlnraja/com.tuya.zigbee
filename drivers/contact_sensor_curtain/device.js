@@ -10,7 +10,7 @@ class ContactSensorCurtainDevice extends ZigBeeDevice {
 
   async _safeSetCapability(capability, value) {
     try {
-      return await this.setCapabilityValue(capability, value);
+      return await this.safeSetCapabilityValue(capability, value);
     } catch (err) {
       this.error(`[SAFE-SET] ${capability}=${value} failed:`, err.message);
       return null;
@@ -18,10 +18,12 @@ class ContactSensorCurtainDevice extends ZigBeeDevice {
   }
 
   async _handleButtonPress(value) {
+    if (this._destroyed) return;
     this.log(`[CONTACT] Button pressed: ${value}`);
     try {
       await this._safeSetCapability('button', true).catch(() => { });
-      setTimeout(() => {
+      this.homey.setTimeout(() => {
+        if (this._destroyed) return;
         this._safeSetCapability('button', false).catch(() => { });
       }, 500);
 

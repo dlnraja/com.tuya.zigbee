@@ -15,29 +15,6 @@ async onInit() {
     // TRIGGERS
     this.log('[FLOW] RadiatorValveDriver flow cards initializing');
 
-    // ACTIONS
-    try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid: ${err.message}`); }
-
-    try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_hybrid_radiator_valve_set_temperature_device_radiator_valve_hybrid');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action device_radiator_valve_hybrid_radiator_valve_set_temperature_device_radiator_valve_hybrid: ${err.message}`); }
-
     this.log('[FLOW] All flow cards registered');
   }
 }

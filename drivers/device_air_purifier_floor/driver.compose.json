@@ -14,7 +14,8 @@
     "thermostat_mode",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -52,9 +53,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601"
     ],
@@ -66,6 +64,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_device_air_purifier_floor_needs_device_assignment"]
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",

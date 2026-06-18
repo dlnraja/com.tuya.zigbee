@@ -173,10 +173,10 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
     this.registerCapabilityListener('onoff', async value => {
       await this.writeBool(dataPoints.ALARM, value);
-      this.homey.setTimeout(() => this.queryAll().catch(this.error), 1200);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 1200);
     });
 
-    this.homey.setTimeout(() => this.bootstrap().catch(this.error), 5000);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this.bootstrap().catch(this.error); }, 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
@@ -249,12 +249,12 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       payload.writeUInt32BE(localSeconds >>> 0, 4);
       const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya) await tuya.timeSync({ payload });
-      this.homey.setTimeout(() => this.queryAll().catch(this.error), 500);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
     } catch (error) { }
   }
 
   async onMcuVersionResponse(data) {
-    this.homey.setTimeout(() => this.queryAll().catch(this.error), 500);
+    this.homey.setTimeout(() => { if (this._destroyed) return; this.queryAll().catch(this.error); }, 500);
   }
 
   async processTuyaMessage(source, data) {
@@ -292,7 +292,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   async safeSetCapabilityValue(capabilityId, value) {
-    try { await this.setCapabilityValue(capabilityId, value); } catch (error) { this.error(`[SAFE-SET] ${capabilityId} failed:`, error.message); }
+    try { await super.safeSetCapabilityValue(capabilityId, value); } catch (error) { this.error(`[SAFE-SET] ${capabilityId} failed:`, error.message); }
   }
 
   async safeSetSettings(settings) {
@@ -310,7 +310,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   reportAlarmBatteryCapacity(measuredValue) {
-    this.setCapabilityValue('alarm_battery', measuredValue).catch(this.error);
+    this.safeSetCapabilityValue('alarm_battery', measuredValue).catch(this.error);
   }
 
   async onSettings({ newSettings, changedKeys }) {

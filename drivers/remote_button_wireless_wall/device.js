@@ -8,6 +8,9 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+
+let UnifiedBatteryHandler = null;
+try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
 const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
 
 // v5.5.733: HOBEIAN ZG-101ZL FIX - Import OnOffBoundCluster for outputCluster command reception
@@ -766,7 +769,7 @@ class Button1GangDevice extends ButtonDevice {
             this.log(`[BUTTON1-BATTERY]  Battery report: ${battery}%`);
             // v5.5.519: Check capability exists before setting (fix HOBEIAN AC-powered button error)
             if (this.hasCapability('measure_battery')) {
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }
           }
         });
@@ -774,11 +777,13 @@ class Button1GangDevice extends ButtonDevice {
         this._powerCluster.on('attr.batteryVoltage', async (value) => {
           if (value !== undefined && value > 0) {
             const voltage = safeMultiply(value, 10);
-            const battery = UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
+            const battery = UnifiedBatteryHandler
+              ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
+              : UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
             this.log(`[BUTTON1-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }
           }
         });
@@ -802,6 +807,7 @@ class Button1GangDevice extends ButtonDevice {
     // Device is awake after button press - try to read battery
     if (this._powerCluster && typeof this._powerCluster.readAttributes === 'function') {
       this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
@@ -809,7 +815,7 @@ class Button1GangDevice extends ButtonDevice {
             this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }
           }
         } catch (err) {
@@ -891,6 +897,8 @@ class Button1GangDevice extends ButtonDevice {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Button1GangDevice deleted');
 
     // Cleanup timers

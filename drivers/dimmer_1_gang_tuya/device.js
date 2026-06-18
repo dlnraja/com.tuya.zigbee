@@ -116,7 +116,17 @@ class dimmer_1_gang_tuya extends TuyaSpecificClusterDevice {
     }
   }
 
+  /**
+   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
+   * Single-gang dimmer: always writes DP 1.
+   */
+  async _setGangOnOff(gang, value) {
+    this.log(`[FLOW] _setGangOnOff: gang=${gang} value=${value}`);
+    await this.writeBool(V1_SINGLE_GANG_DIMMER_SWITCH_DATA_POINTS.onOff, value);
+  }
+
   onDeleted() {
+    super.onDeleted();
     this.log('1 Gang Dimmer removed');
   }
 }

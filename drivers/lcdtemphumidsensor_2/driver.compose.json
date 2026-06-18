@@ -20,6 +20,7 @@
     "batteries": [
       "CR2450"
     ]
+  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -51,9 +52,7 @@
         "en": "Open the backside of the unit and press the button inside for 5 seconds."
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_lcdtemphumidsensor_2_needs_device_assignment"]
   },
   "version": "1.0.0"
 }

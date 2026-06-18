@@ -22,14 +22,22 @@ class WaterTankMonitorDriver extends Homey {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["device_air_purifier_water_water_tank_monitor_state_changed","device_air_purifier_water_water_tank_monitor_level_changed","device_air_purifier_water_water_tank_monitor_low","device_air_purifier_water_water_tank_monitor_high"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_water_hybrid_water_tank_monitor_level_above');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_level_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -37,17 +45,17 @@ class WaterTankMonitorDriver extends Homey {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition device_air_purifier_water_hybrid_water_tank_monitor_level_above: ${err.message}`); }
+    } catch (err) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_water_hybrid_water_tank_monitor_state_is');
+      const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_state_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_air_purifier_water_hybrid_water_tank_monitor_state_is: ${err.message}`); }
+    } catch (err) { this.error(`Condition device_air_purifier_water_water_tank_monitor_state_is: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

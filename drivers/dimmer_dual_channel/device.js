@@ -13,7 +13,7 @@ const { CLUSTER } = require('zigbee-clusters');
  * Channel 1: Endpoint 1 (onoff, dim)
  * Channel 2: Endpoint 2 (onoff.channel2, dim.channel2)
  */
-class DimmerDualChannelDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaZigbeeDevice)) {
+class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
 
   get mainsPowered() { return true; }
 
@@ -62,6 +62,7 @@ class DimmerDualChannelDevice extends VirtualButtonMixin(PhysicalButtonMixin(Tuy
 
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

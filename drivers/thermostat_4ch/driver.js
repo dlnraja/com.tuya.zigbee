@@ -13,7 +13,7 @@ class Thermostat4chDriver extends ZigBeeDriver {
     reg('thermostat_4ch_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
     reg('thermostat_4ch_set_temperature',async({device,...args})=>{
       if(args.temperature!==undefined){
-        await device.setCapabilityValue('target_temperature',args.temperature);
+        await device.setCapabilityValue('target_temperature',args.temperature).catch(err => device.error('[Flow] set target_temperature failed:', err.message));
         if(typeof device.sendTuyaDP==='function') {await device.sendTuyaDP(2,'value',Math.round(args.temperature*10));}
       }
       return true;

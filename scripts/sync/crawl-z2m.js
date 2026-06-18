@@ -9,6 +9,16 @@ const { fetch, fetchJSON } = require("./lib/fetch");
 const fs = require("fs");
 const path = require("path");
 
+// ── Intelligent Cache Integration ────────────────────────────────────────
+let ScannerCache;
+try {
+  ScannerCache = require('../scanners/scanner-cache').ScannerCache;
+} catch { /* fallback: no caching */ }
+const CACHE_ID = 'z2m';
+
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_HEADERS = GH_TOKEN ? { Authorization: `token ${GH_TOKEN}`, Accept: 'application/vnd.github.v3+json' } : { Accept: 'application/vnd.github.v3+json' };
+
 const API = "https://api.github.com/repos/Koenkk/zigbee-herdsman-converters/contents/src/devices";
 const RAW = "https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/";
 const OUT = path.join(__dirname, "data");
@@ -79,9 +89,20 @@ function parseFile(src, filename) {
 
 async function crawlZ2M() {
   console.log("[Z2M] Listing ALL device files...");
+
+  // Check cache first
+  let cache;
+  if (ScannerCache) {
+    cache = new ScannerCache(CACHE_ID);
+    if (cache.isValid()) {
+      console.log(`[Z2M] Cache HIT (${cache.getAge()} old)`);
+      const cached = cache.load();
+      if (cached) return cached;
+    }
+  }
   let fileList;
   try {
-    fileList = await fetchJSON(API);
+    fileList = await fetchJSON(API, { headers: GH_HEADERS });
   } catch (e) {
     console.log("[Z2M] API failed, falling back to tuya.ts only");
     fileList = [{ name: "tuya.ts", download_url: RAW + "tuya.ts" }];
@@ -117,6 +138,13 @@ async function crawlZ2M() {
   const result = { date: new Date().toISOString(), source: "zigbee-herdsman-converters (ALL files)", filesScanned: scanned, errors, uniqueFingerprints: fps.length, fingerprints: fps };
   fs.writeFileSync(path.join(OUT, "z2m.json"), JSON.stringify(result, null, 2));
   console.log("[Z2M] " + scanned + " files scanned, " + fps.length + " unique Tuya fingerprints");
+
+  // Save to cache
+  if (cache) {
+    cache.save(result);
+    console.log("[Z2M] Cache SAVED");
+  }
+
   return result;
 }
 

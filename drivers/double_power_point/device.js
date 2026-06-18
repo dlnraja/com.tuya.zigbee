@@ -136,6 +136,7 @@ class doublepowerpoint extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Double Power Point removed');
   }
 

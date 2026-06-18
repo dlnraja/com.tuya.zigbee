@@ -128,7 +128,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const watts = smartParse(value, null, { capability: 'measure_power' });
           this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+            this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
         });
 
@@ -137,7 +137,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const volts = smartParse(value, null, { capability: 'measure_voltage' });
           this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
-            this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+            this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
         });
 
@@ -146,7 +146,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const amps = smartParse(value, null, { capability: 'measure_current' }) || 0;
           this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
-            this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+            this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
         });
       }
@@ -175,7 +175,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+            this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }
         });
       }
@@ -267,17 +267,18 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         'activePower', 'rmsVoltage', 'rmsCurrent'
       ]).catch(() => ({}));
 
+      if (this._destroyed) return;
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
         const watts = smartParse(attrs.activePower, null, { capability: 'measure_power' });
-        this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+        this.safeSetCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
         const volts = smartParse(attrs.rmsVoltage, null, { capability: 'measure_voltage' });
-        this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+        this.safeSetCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
         const amps = smartParse(attrs.rmsCurrent, null, { capability: 'measure_current' });
-        this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+        this.safeSetCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -294,9 +295,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         'currentSummationDelivered'
       ]).catch(() => ({}));
 
+      if (this._destroyed) return;
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
         const kwh = smartParse(attrs.currentSummationDelivered, null, { capability: 'meter_power' });
-        this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+        this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {
@@ -359,7 +361,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          this.safeSetCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
           // v9.7.4: FIXED - "magic" mode previously set capability without sending to hardware (fake capability).
@@ -367,7 +369,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const mode = this.sceneMode;
           if (mode === 'magic') {
             const invertedValue = !value;
-            this.setCapabilityValue(capName, invertedValue).catch(() => {});
+            this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {
               if (typeof invertedCluster.writeAttributes === 'function') {
@@ -426,7 +428,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           if (state.onOff !== undefined) {
             const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
             this._zclState.lastState[epNum] = state.onOff;
-            await this.setCapabilityValue(capName, state.onOff).catch(() => {});
+            await this.safeSetCapabilityValue(capName, state.onOff).catch(() => {});
             this.log(`[BSEED-2G] EP${epNum} initial state: ${state.onOff ? 'ON' : 'OFF'}`);
           }
         } catch (err) {

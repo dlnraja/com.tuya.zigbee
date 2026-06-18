@@ -5,7 +5,7 @@
 > 
 > **MANDATORY SECOND STEP**: After reading this mandate, you **MUST** read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. It is the operational companion to this architectural mandate.
 > 
-> **MANDATORY V8.5.5 UPDATE**: This mandate includes all v8.5.0–v8.5.5 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safesetCapability()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 26/05/2026. See section 9 for the complete changelog.
+> **MANDATORY V9.0.39 UPDATE**: This mandate includes all v8.5.0–v9.0.39 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safeSetCapabilityValue()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 15/06/2026. See section 9 for the complete changelog.
 
 ---
 
@@ -47,7 +47,7 @@ graph TD
         F --> G[Pure JavaScript Stack]
         F --> H[11-Layer RX/TX Pipeline]
         F -->|Strict Local Isolated Execution| I[No Cloud / No External Calls]
-        F --> J[safesetCapability() / _destroyed Guard v8.5.0]
+        F --> J[safeSetCapabilityValue() / _destroyed Guard v8.5.0]
     end
 
     style Shadow_Engine fill:#1a233a,stroke:#3b82f6,stroke-width:2px,color:#fff
@@ -89,14 +89,14 @@ Every frame received (RX) from a physical Zigbee device or sent (TX) from Homey 
 
 ## 🧬 4. Core Features & Code Evolutions (Never Lose)
 
-### v8.5.0 — Added Safeties: `_destroyed` Guard, `_safeHomey`, `safesetCapability()`, `_destroyDevice()`
+### v8.5.0 — Added Safeties: `_destroyed` Guard, `_safeHomey`, `safeSetCapabilityValue()`, `_destroyDevice()`
 - **Context:** Device lifecycle issues (race conditions on `onDeleted()`/`onUninit()`, resource leaks after app reload, `this.homey` undefined after destroy).
 - **New Guards (TuyaZigbeeDevice.js)**:
   - `_safeHomey` getter — Returns `this.homey` only if device is not destroyed, else returns a no-op proxy to prevent crashes.
-  - `safesetCapability(cap, value)` — Wraps `setCapabilityValue()` with `_destroyed` check + L14 SanityFilter bypass for safe operations.
+  - `safeSetCapabilityValue(cap, value)` — Wraps `setCapabilityValue()` with `_destroyed` check + L14 SanityFilter bypass for safe operations.
   - `_destroyed` boolean — Set to `true` immediately when `onDeleted()` or `onUninit()` is called, preventing all subsequent capability updates.
   - `_destroyDevice()` — Central cleanup method called by both `onDeleted()` and `onUninit()` to clear timeouts, listeners, and TCP sockets.
-- **Rule:** All driver classes MUST use `safesetCapability()` instead of raw `this.setCapabilityValue()` when there is any risk of calling after destruction (e.g., in timers, delayed promises, or async callbacks).
+- **Rule:** All driver classes MUST use `safeSetCapabilityValue()` instead of raw `this.setCapabilityValue()` when there is any risk of calling after destruction (e.g., in timers, delayed promises, or async callbacks).
 
 ### v8.5.0 — UnifiedBatteryHandler (Replaces linear battery formulas)
 - **Context:** Linear formulas like `(voltage - 2.5) / 0.5` produced inaccurate battery percentages. The old `battery_voltage_to_percent` parser in `DriverMappingLoader.js` was a linear calculation.
@@ -286,9 +286,9 @@ All CI workflows include a `security` job that validates:
 ### 🔧 Runtime Safety Guards (TuyaZigbeeDevice.js v8.5.0)
 - `_destroyed` guard → Prevents capability updates after destruction
 - `_safeHomey` getter → Returns no-op proxy when destroyed
-- `safesetCapability()` → Safe capability update wrapper
+- `safeSetCapabilityValue()` → Safe capability update wrapper
 - `_destroyDevice()` → Centralized cleanup method
-- **Rule:** ALL driver classes MUST use `safesetCapability()` in async callbacks, timers, and delayed promises
+- **Rule:** ALL driver classes MUST use `safeSetCapabilityValue()` in async callbacks, timers, and delayed promises
 
 ### 🔄 UnifiedBatteryHandler Migration (v8.5.0)
 - `DriverMappingLoader.js` → Replaced `battery_voltage_to_percent` linear parser with `UnifiedBatteryHandler.calculateFromVoltage()`
@@ -360,7 +360,7 @@ All CI workflows include a `security` job that validates:
 - [x] Issue #338: `_TZ3000_v4l4b0lp` mixed case → switch_3gang
 
 ### 🟡 Code Improvements
-- [x] `TuyaZigbeeDevice.js`: Added `_destroyed` guard, `_safeHomey` getter, `safesetCapability()`, `_destroyDevice()`
+- [x] `TuyaZigbeeDevice.js`: Added `_destroyed` guard, `_safeHomey` getter, `safeSetCapabilityValue()`, `_destroyDevice()`
 - [x] `DriverMappingLoader.js`: Replaced linear battery parser with `UnifiedBatteryHandler`
 - [x] `DriverMappingLoader.js`: Replaced `console.log/error` with injectable logger
 - [x] `CRITICAL_MISTAKES.md`: Updated to v8.5.0 complete

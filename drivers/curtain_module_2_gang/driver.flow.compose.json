@@ -5,14 +5,18 @@
       "title": {
         "en": "Open",
         "de": "Öffnen"
-      }
+      },
+      "args": []
     },
     {
       "id": "curtain_module_2_gang_move_close_2gang",
       "title": {
         "en": "Close",
         "de": "Schließen"
-      }
+      },
+      "args": []
     }
-  ]
+  ],
+  "triggers": [],
+  "conditions": []
 }

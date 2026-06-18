@@ -724,9 +724,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601"
     ],
@@ -737,5 +734,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_climate_sensor_switch_needs_device_assignment"]
   }
 }

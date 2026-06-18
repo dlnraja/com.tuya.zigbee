@@ -64,13 +64,13 @@ class HumidifierDevice extends ZigBeeDevice {
 
     case 2: // Target humidity
       if (this.hasCapability('dim.humidity')) {
-        this.setCapabilityValue('dim.humidity', value).catch(this.error);
+        this.safeSetCapabilityValue('dim.humidity', value).catch(this.error);
       }
       break;
 
     case 3: // Current humidity
       if (this.hasCapability('measure_humidity')) {
-        this.setCapabilityValue('measure_humidity', value).catch(this.error);
+        this.safeSetCapabilityValue('measure_humidity', value).catch(this.error);
       }
       break;
 
@@ -87,6 +87,8 @@ class HumidifierDevice extends ZigBeeDevice {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

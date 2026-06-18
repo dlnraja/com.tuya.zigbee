@@ -32,8 +32,8 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
       3: { capability: null, internal: 'min_brightness', writable: true },
       4: { capability: null, internal: 'max_brightness', writable: true },
       5: { capability: null, internal: 'dimmer_mode', writable: true },
-      7: { capability: null, internal: 'countdown', writable: true },
-      9: { capability: null, internal: 'power_on_state', writable: true },
+      7: { capability: 'countdown_remaining' },
+      9: { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       14: { capability: null, internal: 'indicator_mode', writable: true },
       101: { capability: 'dim', divisor: 100 },
       102: { capability: null, internal: 'fade_time', writable: true }
@@ -72,7 +72,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => { this._appCommandPending = false; }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
@@ -106,9 +106,21 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
     }
   }
 
-  onDeleted() { 
-    clearTimeout(this._appCommandTimeout); 
-    if (super.onDeleted) {super.onDeleted();} 
+  /**
+   * v9.7.4: _setGangOnOff for switch_multi_gang flow card compatibility.
+   * Single-gang dimmer: delegates to onoff capability listener.
+   */
+  async _setGangOnOff(gang, value) {
+    this.log(`[FLOW] _setGangOnOff: gang=${gang} value=${value}`);
+    if (typeof this.markAppCommand === 'function') {
+      this.markAppCommand(1, value);
+    }
+    await this.triggerCapabilityListener('onoff', value);
+  }
+
+  onDeleted() {
+    clearTimeout(this._appCommandTimeout);
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

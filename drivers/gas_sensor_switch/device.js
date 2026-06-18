@@ -124,9 +124,7 @@ class Switch4GangDevice extends BaseClass {
         this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = setTimeout(() => {
-          this._zclState.pending[epNum] = false;
-        }, 2000);
+        this._zclState.timeout[epNum] = this.homey.setTimeout(() => { if (this._destroyed) return; this._zclState.pending[epNum] = false; }, 2000);
         
         const onOff = getOnOffCluster(epNum);
         if (onOff && typeof onOff.writeAttributes === 'function') {
@@ -170,14 +168,14 @@ class Switch4GangDevice extends BaseClass {
 
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          this.safeSetCapabilityValue(capName, value).catch(() => {});
 
           // v9.7.4: FIXED - "magic" mode previously set capability without sending to hardware (fake capability).
           // Now sends the inverted command to hardware AND updates Homey.
           const mode = this.sceneMode;
           if (mode === 'magic') {
             const invertedValue = !value;
-            this.setCapabilityValue(capName, invertedValue).catch(() => {});
+            this.safeSetCapabilityValue(capName, invertedValue).catch(() => {});
             const invertedCluster = getOnOffCluster(epNum);
             if (invertedCluster) {
               if (typeof invertedCluster.writeAttributes === 'function') {

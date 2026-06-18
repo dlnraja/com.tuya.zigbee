@@ -34,6 +34,7 @@ class switch_2_gang extends UnifiedSwitchBase {
     }
 
     onDeleted(){
+      super.onDeleted();
         const { subDeviceId } = this.getData();
         this.log("2 Gang Switch, channel ", subDeviceId, " removed");
     }

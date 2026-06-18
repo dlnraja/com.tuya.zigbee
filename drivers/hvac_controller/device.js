@@ -20,6 +20,7 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -35,6 +36,7 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -106,6 +108,8 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

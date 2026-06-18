@@ -13,7 +13,8 @@
             "en": "CO2 (ppm)"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "wifi_air_quality_pm25_high",
@@ -28,7 +29,10 @@
             "en": "PM2.5"
           }
         }
-      ]
+      ],
+      "args": []
     }
-  ]
+  ],
+  "conditions": [],
+  "actions": []
 }

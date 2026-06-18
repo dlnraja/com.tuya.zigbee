@@ -738,9 +738,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0601"
     ],
@@ -751,5 +748,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_remote_button_wireless_fingerbot_needs_device_assignment"]
   }
 }

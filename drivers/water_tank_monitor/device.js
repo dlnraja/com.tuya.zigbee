@@ -24,6 +24,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
    * Handle Tuya datapoints — Z2M TLC2206 verified mapping
    */
   async _handleDP(dp, value) {
+    if (this._destroyed) return;
     this.log(`[LIQUID] DP${dp}: ${value}`);
 
     try {
@@ -67,6 +68,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidState(value) {
+    if (this._destroyed) return;
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const stateName = LIQUID_STATE[parsed] || 'normal';
     this._lastState = stateName;
@@ -76,13 +78,13 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
     const isHigh = parsed === 2;
 
     if (this.hasCapability('alarm_water_low')) {
-      await this.setCapabilityValue('alarm_water_low', isLow).catch(() => { });
+      await this.safeSetCapabilityValue('alarm_water_low', isLow).catch(() => { });
     }
     if (this.hasCapability('alarm_water_high')) {
-      await this.setCapabilityValue('alarm_water_high', isHigh).catch(() => { });
+      await this.safeSetCapabilityValue('alarm_water_high', isHigh).catch(() => { });
     }
     if (this.hasCapability('alarm_water')) {
-      await this.setCapabilityValue('alarm_water', isLow || isHigh).catch(() => { });
+      await this.safeSetCapabilityValue('alarm_water', isLow || isHigh).catch(() => { });
     }
 
     // Trigger flows
@@ -98,13 +100,14 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidDepth(value) {
+    if (this._destroyed) return;
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const depthCm = parsed;
     this._lastDepth = depthCm;
     this.log(`[LIQUID] Depth: ${depthCm} cm`);
 
     if (this.hasCapability('measure_water_level')) {
-      await this.setCapabilityValue('measure_water_level', depthCm).catch(() => { });
+      await this.safeSetCapabilityValue('measure_water_level', depthCm).catch(() => { });
     }
 
     if (this.driver.levelChangedTrigger) {
@@ -116,13 +119,14 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   async _handleLiquidPercent(value) {
+    if (this._destroyed) return;
     const parsed = typeof value === 'number' ? value : parseInt(value) || 0;
     const percent = Math.max(0, Math.min(100, parsed));
     this._lastPercent = percent;
     this.log(`[LIQUID] Fill: ${percent}%`);
 
     if (this.hasCapability('measure_water_percentage')) {
-      await this.setCapabilityValue('measure_water_percentage', percent).catch(() => { });
+      await this.safeSetCapabilityValue('measure_water_percentage', percent).catch(() => { });
     }
   }
 
@@ -157,6 +161,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('[LIQUID] Liquid level sensor deleted');
   }
 }

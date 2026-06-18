@@ -12,9 +12,10 @@ const path = require('path');
 
 function ingestIntel() {
     console.log('--- Starting Community Intel Ingestion ---');
-    const scriptPath = path.join(__dirname, '..', '..', 'scripts', 'maintenance', 'autonomous-community-ingestor.js');
+    // Use the sync crawlers as the canonical data source
+    const syncDir = path.join(__dirname, '..', '..', 'scripts', 'sync');
     try {
-        const output = execSync(`node "${scriptPath}"`, { encoding: 'utf8' });
+        const output = execSync(`node "${path.join(syncDir, 'crawl-z2m.js')}"`, { encoding: 'utf8' });
         console.log(output);
         return { success: true };
     } catch (error) {

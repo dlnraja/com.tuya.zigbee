@@ -21,6 +21,7 @@
     "measure_power": {
       "approximated": true
     }
+  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -72,8 +73,9 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_double_power_point_needs_device_assignment"]
   },
   "version": "1.0.0",
   "metadata": {

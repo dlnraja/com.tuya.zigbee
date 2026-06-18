@@ -17,7 +17,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
         reverseTransform: (v) => Math.round(v * 1000) },
       '24': { capability: '_dp24_color_hsv', writable: true },
       '25': { capability: '_dp25' }, // scene_data
-      '26': { capability: '_dp26' }, // countdown
+      '26': { capability: 'countdown_remaining' },
       '28': { capability: '_dp28' }, // music_data
       '29': { capability: '_dp29' }, // control_data
       '30': { capability: '_dp30' }, // sleep_mode
@@ -58,8 +58,8 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
         const s = parseInt(hex.substring(4, safeMultiply(8), 16));
         const v = parseInt(hex.substring(8, safeMultiply(12), 16));
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-          this.setCapabilityValue('light_hue', safeMultiply(h, 360)).catch(this.error);
-          this.setCapabilityValue('light_saturation', s * 1000).catch(this.error);
+          this.safeSetCapabilityValue('light_hue', safeMultiply(h, 360)).catch(this.error);
+          this.safeSetCapabilityValue('light_saturation', s * 1000).catch(this.error);
           this.log(`[WIFI-LED] DP24 color H=${  h  } S=${  s  } V=${  v}`);
         }
       } catch (e) { /* ignore */ }
@@ -73,7 +73,10 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

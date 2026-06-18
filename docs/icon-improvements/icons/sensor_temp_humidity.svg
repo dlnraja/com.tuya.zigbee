@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Thermometer body -->
+  <rect x="380" y="150" width="200" height="500" rx="100" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Thermometer bulb -->
+  <circle cx="480" cy="700" r="120" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Mercury fill -->
+  <rect x="420" y="400" width="120" height="250" rx="60" fill="black"/>
+  <circle cx="480" cy="700" r="80" fill="black"/>
+  <!-- Temperature marks -->
+  <line x1="580" y1="300" x2="630" y2="300" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <line x1="580" y1="400" x2="630" y2="400" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <line x1="580" y1="500" x2="630" y2="500" stroke="black" stroke-width="20" stroke-linecap="round"/>
+  <!-- Humidity droplet -->
+  <path d="M 750 550 C 750 550 810 470 810 430 C 810 400 790 380 770 380 C 750 380 730 400 730 430 C 730 470 750 550 750 550 Z"
+        stroke="black" stroke-width="30" fill="none" stroke-linejoin="round"/>
+</svg>

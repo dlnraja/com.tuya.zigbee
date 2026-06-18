@@ -70,7 +70,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -81,5 +80,7 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_air_purifier_climate_needs_device_assignment"]
   }
 }

@@ -12,6 +12,23 @@ async onInit() {
   }
 
   _registerFlowCards() {
+    // TRIGGERS
+    const triggers = [
+      'bed_sensor_occupied',
+      'bed_sensor_vacant',
+    ];
+    for (const id of triggers) {
+      try {
+        const card = this._getFlowCard(id, 'trigger');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit(`flow:${id}`, args);
+          });
+        }
+      } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
+    }
+
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('bed_sensor_is_occupied');

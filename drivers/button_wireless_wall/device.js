@@ -166,6 +166,8 @@ class Button2GangDevice extends ButtonDevice {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Button2GangDevice deleted');
     if (this._clickState) {
       if (this._clickState.clickTimer) clearTimeout(this._clickState.clickTimer);

@@ -17,6 +17,7 @@
     "measure_power": {
       "approximated": true
     }
+  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -153,8 +154,9 @@
       "instruction": {
         "en": "A tile for each socket will be created. Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_socket_power_strip_four_two_needs_device_assignment"]
   },
   "version": "1.0.0",
   "metadata": {

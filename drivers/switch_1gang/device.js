@@ -99,6 +99,8 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

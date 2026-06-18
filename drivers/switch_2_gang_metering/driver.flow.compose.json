@@ -1,0 +1,56 @@
+{
+  "triggers": [
+    {
+      "id": "switch_2_gang_metering_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_2_gang_metering_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "switch_2_gang_metering_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "switch_2_gang_metering_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_2_gang_metering_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_2_gang_metering_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": []
+    }
+  ]
+}

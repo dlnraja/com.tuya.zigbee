@@ -97,8 +97,6 @@ class PresenceDetectorDriver extends Driver {
    * @private
    */
   _registerFlowCards() {
-    const app = this.homey.app;
-
     // Action: Force presence in room
     this.homey.flow.getActionCard('virtual_presence_force_present')
       .registerRunListener(async (args) => {

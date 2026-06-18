@@ -49,9 +49,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', smartDivisor: true },
         5: { capability: 'measure_temperature', smartDivisor: true },
-        7: { internal: true, type: 'child_lock', writable: true },
+        7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
-        36: { internal: true, type: 'frost_protection', writable: true },
+        36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
         47: { internal: true, type: 'temp_calibration', writable: true }
       };
@@ -62,8 +62,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'heat', 1: 'auto', 2: 'off' }[v] ?? 'heat') },
       3: { capability: 'target_temperature', smartDivisor: true },
       4: { capability: 'measure_temperature', smartDivisor: true },
-      7: { internal: true, type: 'child_lock', writable: true },
-      8: { internal: true, type: 'frost_protection', writable: true },
+      7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+      8: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
       9: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       10: { internal: true, type: 'comfort_temp', divisor: 10, writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
@@ -104,6 +104,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync({ force: true });
           if (result.success) {
@@ -119,6 +120,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync();
           if (!result.success && result.reason === 'no_rtc') {
@@ -218,9 +220,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   _markAppCommand() {
     this._appCommandPending = true;
     clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
+    this._appCommandTimeout = this.homey.setTimeout(() => { if (this._destroyed) return; this._appCommandPending = false; }, 2000);
   }
 
   async _setupThermostatCluster(zclNode) {
@@ -229,8 +229,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
     try {
       const thermo = ep1.clusters?.hvacThermostat;if (thermo?.on) {
-        thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
-        thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', v * 100).catch(() => { }));
+        thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
+        thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v * 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
           if (this.hasCapability('dim')) this.triggerCapabilityListener('dim', v * 100).catch(() => { });
       });
@@ -290,6 +290,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

@@ -218,7 +218,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
           fn: async () => {
             if (value > 0) {
               await this._sendTuyaDP(TUYA_DP.ON_OFF, true, 'bool');
-              await new Promise(r => setTimeout(r, 100));
+              await new Promise(r => this.homey.setTimeout(r, 100));
             }
             await this._sendTuyaDP(TUYA_DP.BRIGHTNESS, tuyaBrightness, 'value');
           }
@@ -238,7 +238,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
             fn: async () => {
               if (value > 0 && this._onOffCluster) {
                 await this._onOffCluster.setOn();
-                await new Promise(r => setTimeout(r, 200));
+                await new Promise(r => this.homey.setTimeout(r, 200));
               }
               await this._levelCluster.moveToLevel?.({ level, transitionTime: 10 });
             }
@@ -365,6 +365,8 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

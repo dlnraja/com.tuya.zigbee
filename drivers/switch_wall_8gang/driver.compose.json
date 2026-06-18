@@ -14,7 +14,8 @@
     "onoff.gang5",
     "onoff.gang6",
     "onoff.gang7",
-    "onoff.gang8"
+    "onoff.gang8",
+    "power_on_behavior"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -76,7 +77,9 @@
       "_tze200_8gang001",
       "_tze200_ws8g8u0b",
       "_tze204_8gang001",
-      "_tze204_ws8g8u0b"
+      "_tze204_ws8g8u0b",
+      "_TZE200_wktrysab",
+      "_TZE204_wktrysab"
     ],
     "productId": [
       "TS0601_8gang",
@@ -143,180 +146,180 @@
           "type": "dropdown",
           "label": {
             "en": "Connected Device Type",
-            "fr": "Type d'Appareil Connecté"
+            "fr": "Type d'Appareil Connect\u00e9"
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+            "fr": "S\u00e9lectionnez le type d'appareil connect\u00e9 \u00e0 ce module. Radiateur inversera la logique MARCHE/ARR\u00caT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": "💡 Éclairage",
-                "fr": "💡 Éclairage"
+                "en": "\ud83d\udca1 \u00c9clairage",
+                "fr": "\ud83d\udca1 \u00c9clairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": "🏡 Éclairage extérieur",
-                "fr": "🏡 Éclairage extérieur"
+                "en": "\ud83c\udfe1 \u00c9clairage ext\u00e9rieur",
+                "fr": "\ud83c\udfe1 \u00c9clairage ext\u00e9rieur"
               }
             },
             {
               "id": "radiator",
               "label": {
-                "en": "🔥 Radiateur (fil pilote)",
-                "fr": "🔥 Radiateur (fil pilote)"
+                "en": "\ud83d\udd25 Radiateur (fil pilote)",
+                "fr": "\ud83d\udd25 Radiateur (fil pilote)"
               }
             },
             {
               "id": "water_heater",
               "label": {
-                "en": "🚿 Chauffe-eau / Cumulus",
-                "fr": "🚿 Chauffe-eau / Cumulus"
+                "en": "\ud83d\udebf Chauffe-eau / Cumulus",
+                "fr": "\ud83d\udebf Chauffe-eau / Cumulus"
               }
             },
             {
               "id": "boiler",
               "label": {
-                "en": "🏠 Chaudière",
-                "fr": "🏠 Chaudière"
+                "en": "\ud83c\udfe0 Chaudi\u00e8re",
+                "fr": "\ud83c\udfe0 Chaudi\u00e8re"
               }
             },
             {
               "id": "underfloor_heating",
               "label": {
-                "en": "🦶 Plancher chauffant",
-                "fr": "🦶 Plancher chauffant"
+                "en": "\ud83e\uddb6 Plancher chauffant",
+                "fr": "\ud83e\uddb6 Plancher chauffant"
               }
             },
             {
               "id": "fan",
               "label": {
-                "en": "🌀 Ventilateur / VMC",
-                "fr": "🌀 Ventilateur / VMC"
+                "en": "\ud83c\udf00 Ventilateur / VMC",
+                "fr": "\ud83c\udf00 Ventilateur / VMC"
               }
             },
             {
               "id": "ac",
               "label": {
-                "en": "❄️ Climatisation",
-                "fr": "❄️ Climatisation"
+                "en": "\u2744\ufe0f Climatisation",
+                "fr": "\u2744\ufe0f Climatisation"
               }
             },
             {
               "id": "extractor",
               "label": {
-                "en": "💨 Extracteur / Hotte",
-                "fr": "💨 Extracteur / Hotte"
+                "en": "\ud83d\udca8 Extracteur / Hotte",
+                "fr": "\ud83d\udca8 Extracteur / Hotte"
               }
             },
             {
               "id": "shutter",
               "label": {
-                "en": "🪟 Volet roulant / Store",
-                "fr": "🪟 Volet roulant / Store"
+                "en": "\ud83e\ude9f Volet roulant / Store",
+                "fr": "\ud83e\ude9f Volet roulant / Store"
               }
             },
             {
               "id": "gate",
               "label": {
-                "en": "🚗 Portail / Garage",
-                "fr": "🚗 Portail / Garage"
+                "en": "\ud83d\ude97 Portail / Garage",
+                "fr": "\ud83d\ude97 Portail / Garage"
               }
             },
             {
               "id": "door_lock",
               "label": {
-                "en": "🔐 Gâche / Serrure",
-                "fr": "🔐 Gâche / Serrure"
+                "en": "\ud83d\udd10 G\u00e2che / Serrure",
+                "fr": "\ud83d\udd10 G\u00e2che / Serrure"
               }
             },
             {
               "id": "pump",
               "label": {
-                "en": "💧 Pompe",
-                "fr": "💧 Pompe"
+                "en": "\ud83d\udca7 Pompe",
+                "fr": "\ud83d\udca7 Pompe"
               }
             },
             {
               "id": "irrigation",
               "label": {
-                "en": "🌱 Arrosage",
-                "fr": "🌱 Arrosage"
+                "en": "\ud83c\udf31 Arrosage",
+                "fr": "\ud83c\udf31 Arrosage"
               }
             },
             {
               "id": "pool",
               "label": {
-                "en": "🏊 Équipement piscine",
-                "fr": "🏊 Équipement piscine"
+                "en": "\ud83c\udfca \u00c9quipement piscine",
+                "fr": "\ud83c\udfca \u00c9quipement piscine"
               }
             },
             {
               "id": "socket",
               "label": {
-                "en": "🔌 Prise commandée",
-                "fr": "🔌 Prise commandée"
+                "en": "\ud83d\udd0c Prise command\u00e9e",
+                "fr": "\ud83d\udd0c Prise command\u00e9e"
               }
             },
             {
               "id": "appliance",
               "label": {
-                "en": "🧺 Électroménager",
-                "fr": "🧺 Électroménager"
+                "en": "\ud83e\uddfa \u00c9lectrom\u00e9nager",
+                "fr": "\ud83e\uddfa \u00c9lectrom\u00e9nager"
               }
             },
             {
               "id": "coffee_machine",
               "label": {
-                "en": "☕ Machine à café",
-                "fr": "☕ Machine à café"
+                "en": "\u2615 Machine \u00e0 caf\u00e9",
+                "fr": "\u2615 Machine \u00e0 caf\u00e9"
               }
             },
             {
               "id": "alarm",
               "label": {
-                "en": "🚨 Alarme / Sirène",
-                "fr": "🚨 Alarme / Sirène"
+                "en": "\ud83d\udea8 Alarme / Sir\u00e8ne",
+                "fr": "\ud83d\udea8 Alarme / Sir\u00e8ne"
               }
             },
             {
               "id": "camera",
               "label": {
-                "en": "📹 Caméra",
-                "fr": "📹 Caméra"
+                "en": "\ud83d\udcf9 Cam\u00e9ra",
+                "fr": "\ud83d\udcf9 Cam\u00e9ra"
               }
             },
             {
               "id": "tv",
               "label": {
-                "en": "📺 TV / Écran",
-                "fr": "📺 TV / Écran"
+                "en": "\ud83d\udcfa TV / \u00c9cran",
+                "fr": "\ud83d\udcfa TV / \u00c9cran"
               }
             },
             {
               "id": "audio",
               "label": {
-                "en": "🔊 Audio / Hifi",
-                "fr": "🔊 Audio / Hifi"
+                "en": "\ud83d\udd0a Audio / Hifi",
+                "fr": "\ud83d\udd0a Audio / Hifi"
               }
             },
             {
               "id": "fountain",
               "label": {
-                "en": "⛲ Fontaine",
-                "fr": "⛲ Fontaine"
+                "en": "\u26f2 Fontaine",
+                "fr": "\u26f2 Fontaine"
               }
             },
             {
               "id": "other",
               "label": {
-                "en": "⚙️ Autre appareil",
-                "fr": "⚙️ Autre appareil"
+                "en": "\u2699\ufe0f Autre appareil",
+                "fr": "\u2699\ufe0f Autre appareil"
               }
             }
           ]
@@ -330,7 +333,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARR\u00caT ind\u00e9pendamment du type (utilisateurs avanc\u00e9s uniquement)"
           },
           "value": false
         }
@@ -385,7 +388,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "V\u00e9rifier M\u00e0J OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

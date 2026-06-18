@@ -4,7 +4,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiDimmerDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalDevice)) {
+class WiFiDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaLocalDevice)) {
 
   get mainsPowered() { return true; }
   get dpMappings() {
@@ -27,8 +27,11 @@ class WiFiDimmerDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalD
   }
 
 
-  onDeleted() {
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

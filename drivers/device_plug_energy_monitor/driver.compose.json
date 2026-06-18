@@ -14,7 +14,9 @@
     "measure_current",
     "measure_voltage",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "countdown_remaining",
+    "child_lock"
   ],
   "energy": {
     "batteries": [
@@ -643,7 +645,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS004F"
@@ -655,6 +656,8 @@
         ]
       }
     }
+  ,
+    "manufacturerName": ["_hybrid_device_plug_energy_monitor_needs_device_assignment"]
   },
   "metadata": {
     "driver": {

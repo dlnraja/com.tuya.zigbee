@@ -25,6 +25,7 @@
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
+  
   },
   "energy": {
     "batteries": [
@@ -86,8 +87,9 @@
       "instruction": {
         "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
       }
-    },
-    "manufacturerName": []
+    }
+  ,
+    "manufacturerName": ["_hybrid_wall_remote_4_gang_2_needs_device_assignment"]
   },
   "maintenanceActions": [
     {

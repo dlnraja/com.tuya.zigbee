@@ -22,9 +22,6 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ],
     "productId": [
       "TS0015",
       "TS0601"
@@ -33,7 +30,7 @@
       "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'\u00e0 ce que la LED clignote."
       }
     },
     "endpoints": {
@@ -67,7 +64,14 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_tz3000_blhvsaqf",
+      "_tz3000_hafsqare",
+      "_tz3000_ysdv91bk",
+      "_TZE200_jwsjbxjs",
+      "_TZE200_leaqthqq"
+    ]
   },
   "settings": [
     {
@@ -82,180 +86,180 @@
           "type": "dropdown",
           "label": {
             "en": "Connected Device Type",
-            "fr": "Type d'Appareil Connecté"
+            "fr": "Type d'Appareil Connect\u00e9"
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+            "fr": "S\u00e9lectionnez le type d'appareil connect\u00e9 \u00e0 ce module. Radiateur inversera la logique MARCHE/ARR\u00caT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": "💡 Éclairage",
-                "fr": "💡 Éclairage"
+                "en": "\ud83d\udca1 \u00c9clairage",
+                "fr": "\ud83d\udca1 \u00c9clairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": "🏡 Éclairage extérieur",
-                "fr": "🏡 Éclairage extérieur"
+                "en": "\ud83c\udfe1 \u00c9clairage ext\u00e9rieur",
+                "fr": "\ud83c\udfe1 \u00c9clairage ext\u00e9rieur"
               }
             },
             {
               "id": "radiator",
               "label": {
-                "en": "🔥 Radiateur (fil pilote)",
-                "fr": "🔥 Radiateur (fil pilote)"
+                "en": "\ud83d\udd25 Radiateur (fil pilote)",
+                "fr": "\ud83d\udd25 Radiateur (fil pilote)"
               }
             },
             {
               "id": "water_heater",
               "label": {
-                "en": "🚿 Chauffe-eau / Cumulus",
-                "fr": "🚿 Chauffe-eau / Cumulus"
+                "en": "\ud83d\udebf Chauffe-eau / Cumulus",
+                "fr": "\ud83d\udebf Chauffe-eau / Cumulus"
               }
             },
             {
               "id": "boiler",
               "label": {
-                "en": "🏠 Chaudière",
-                "fr": "🏠 Chaudière"
+                "en": "\ud83c\udfe0 Chaudi\u00e8re",
+                "fr": "\ud83c\udfe0 Chaudi\u00e8re"
               }
             },
             {
               "id": "underfloor_heating",
               "label": {
-                "en": "🦶 Plancher chauffant",
-                "fr": "🦶 Plancher chauffant"
+                "en": "\ud83e\uddb6 Plancher chauffant",
+                "fr": "\ud83e\uddb6 Plancher chauffant"
               }
             },
             {
               "id": "fan",
               "label": {
-                "en": "🌀 Ventilateur / VMC",
-                "fr": "🌀 Ventilateur / VMC"
+                "en": "\ud83c\udf00 Ventilateur / VMC",
+                "fr": "\ud83c\udf00 Ventilateur / VMC"
               }
             },
             {
               "id": "ac",
               "label": {
-                "en": "❄️ Climatisation",
-                "fr": "❄️ Climatisation"
+                "en": "\u2744\ufe0f Climatisation",
+                "fr": "\u2744\ufe0f Climatisation"
               }
             },
             {
               "id": "extractor",
               "label": {
-                "en": "💨 Extracteur / Hotte",
-                "fr": "💨 Extracteur / Hotte"
+                "en": "\ud83d\udca8 Extracteur / Hotte",
+                "fr": "\ud83d\udca8 Extracteur / Hotte"
               }
             },
             {
               "id": "shutter",
               "label": {
-                "en": "🪟 Volet roulant / Store",
-                "fr": "🪟 Volet roulant / Store"
+                "en": "\ud83e\ude9f Volet roulant / Store",
+                "fr": "\ud83e\ude9f Volet roulant / Store"
               }
             },
             {
               "id": "gate",
               "label": {
-                "en": "🚗 Portail / Garage",
-                "fr": "🚗 Portail / Garage"
+                "en": "\ud83d\ude97 Portail / Garage",
+                "fr": "\ud83d\ude97 Portail / Garage"
               }
             },
             {
               "id": "door_lock",
               "label": {
-                "en": "🔐 Gâche / Serrure",
-                "fr": "🔐 Gâche / Serrure"
+                "en": "\ud83d\udd10 G\u00e2che / Serrure",
+                "fr": "\ud83d\udd10 G\u00e2che / Serrure"
               }
             },
             {
               "id": "pump",
               "label": {
-                "en": "💧 Pompe",
-                "fr": "💧 Pompe"
+                "en": "\ud83d\udca7 Pompe",
+                "fr": "\ud83d\udca7 Pompe"
               }
             },
             {
               "id": "irrigation",
               "label": {
-                "en": "🌱 Arrosage",
-                "fr": "🌱 Arrosage"
+                "en": "\ud83c\udf31 Arrosage",
+                "fr": "\ud83c\udf31 Arrosage"
               }
             },
             {
               "id": "pool",
               "label": {
-                "en": "🏊 Équipement piscine",
-                "fr": "🏊 Équipement piscine"
+                "en": "\ud83c\udfca \u00c9quipement piscine",
+                "fr": "\ud83c\udfca \u00c9quipement piscine"
               }
             },
             {
               "id": "socket",
               "label": {
-                "en": "🔌 Prise commandée",
-                "fr": "🔌 Prise commandée"
+                "en": "\ud83d\udd0c Prise command\u00e9e",
+                "fr": "\ud83d\udd0c Prise command\u00e9e"
               }
             },
             {
               "id": "appliance",
               "label": {
-                "en": "🧺 Électroménager",
-                "fr": "🧺 Électroménager"
+                "en": "\ud83e\uddfa \u00c9lectrom\u00e9nager",
+                "fr": "\ud83e\uddfa \u00c9lectrom\u00e9nager"
               }
             },
             {
               "id": "coffee_machine",
               "label": {
-                "en": "☕ Machine à café",
-                "fr": "☕ Machine à café"
+                "en": "\u2615 Machine \u00e0 caf\u00e9",
+                "fr": "\u2615 Machine \u00e0 caf\u00e9"
               }
             },
             {
               "id": "alarm",
               "label": {
-                "en": "🚨 Alarme / Sirène",
-                "fr": "🚨 Alarme / Sirène"
+                "en": "\ud83d\udea8 Alarme / Sir\u00e8ne",
+                "fr": "\ud83d\udea8 Alarme / Sir\u00e8ne"
               }
             },
             {
               "id": "camera",
               "label": {
-                "en": "📹 Caméra",
-                "fr": "📹 Caméra"
+                "en": "\ud83d\udcf9 Cam\u00e9ra",
+                "fr": "\ud83d\udcf9 Cam\u00e9ra"
               }
             },
             {
               "id": "tv",
               "label": {
-                "en": "📺 TV / Écran",
-                "fr": "📺 TV / Écran"
+                "en": "\ud83d\udcfa TV / \u00c9cran",
+                "fr": "\ud83d\udcfa TV / \u00c9cran"
               }
             },
             {
               "id": "audio",
               "label": {
-                "en": "🔊 Audio / Hifi",
-                "fr": "🔊 Audio / Hifi"
+                "en": "\ud83d\udd0a Audio / Hifi",
+                "fr": "\ud83d\udd0a Audio / Hifi"
               }
             },
             {
               "id": "fountain",
               "label": {
-                "en": "⛲ Fontaine",
-                "fr": "⛲ Fontaine"
+                "en": "\u26f2 Fontaine",
+                "fr": "\u26f2 Fontaine"
               }
             },
             {
               "id": "other",
               "label": {
-                "en": "⚙️ Autre appareil",
-                "fr": "⚙️ Autre appareil"
+                "en": "\u2699\ufe0f Autre appareil",
+                "fr": "\u2699\ufe0f Autre appareil"
               }
             }
           ]
@@ -269,7 +273,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARR\u00caT ind\u00e9pendamment du type (utilisateurs avanc\u00e9s uniquement)"
           },
           "value": false
         }
@@ -288,7 +292,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "D\u00e9tection Automatique"
           }
         },
         {
@@ -315,7 +319,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "S\u00e9lectionnez la source d'alimentation manuellement ou utilisez la d\u00e9tection automatique"
       }
     },
     {
@@ -331,7 +335,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "D\u00e9tection Automatique"
           }
         },
         {
@@ -372,7 +376,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "S\u00e9lectionnez le type de batterie manuellement ou utilisez la d\u00e9tection automatique bas\u00e9e sur la tension"
       }
     },
     {
@@ -388,7 +392,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "D\u00e9clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -404,7 +408,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "D\u00e9clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -417,7 +421,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les \u00e9v\u00e9nements de batterie"
       }
     },
     {
@@ -433,7 +437,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "Fr\u00e9quence de demande des mises \u00e0 jour d'\u00e9tat de batterie"
       }
     },
     {
@@ -441,7 +445,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation \u00c9nerg\u00e9tique"
       },
       "value": "balanced",
       "values": [
@@ -449,27 +453,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus r\u00e9actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "\u00c9quilibr\u00e9"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "\u00c9conomie d'\u00e9nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "\u00c9quilibre entre r\u00e9activit\u00e9 et dur\u00e9e de vie de la batterie"
       }
     },
     {
@@ -482,7 +486,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure r\u00e9elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -585,7 +589,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "V\u00e9rifier M\u00e0J OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

@@ -1,0 +1,134 @@
+{
+  "triggers": [
+    {
+      "id": "tunable_spot_GU10_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "tunable_spot_GU10_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "tunable_spot_GU10_dim_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosite changee"
+      },
+      "tokens": [
+        {
+          "name": "dim",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosite"
+          },
+          "example": 0.75
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "tunable_spot_GU10_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "tunable_spot_GU10_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "tunable_spot_GU10_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "tunable_spot_GU10_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "tunable_spot_GU10_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "tunable_spot_GU10_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Regler luminosite",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "tunable_spot_GU10_set_color_temperature",
+      "title": {
+        "en": "Set color temperature",
+        "fr": "Regler temperature de couleur"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 2700,
+          "max": 6500,
+          "step": 1,
+          "label": "K"
+        }
+      ]
+    }
+  ]
+}

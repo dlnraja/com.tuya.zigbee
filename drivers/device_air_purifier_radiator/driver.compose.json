@@ -15,7 +15,9 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "child_lock",
+    "frost_protection"
   ],
   "energy": {
     "batteries": [
@@ -44,10 +46,7 @@
           6
         ]
       }
-    },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    }
   },
   "settings": [
     {

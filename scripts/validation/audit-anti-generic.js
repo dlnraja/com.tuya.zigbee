@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 /**
  * ANTI-GENERIC AUDIT SCRIPT v5.5.779

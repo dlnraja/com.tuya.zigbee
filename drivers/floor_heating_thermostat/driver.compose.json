@@ -11,7 +11,8 @@
     "measure_temperature",
     "measure_temperature.floor",
     "thermostat_mode",
-    "onoff"
+    "onoff",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

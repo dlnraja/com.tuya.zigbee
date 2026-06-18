@@ -16,7 +16,8 @@
     "measure_humidity",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "child_lock"
   ],
   "platforms": [
     "local"
@@ -36,9 +37,7 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_device_air_purifier_thermostat_needs_device_assignment"]
   },
   "images": {
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",

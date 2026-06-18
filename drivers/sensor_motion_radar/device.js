@@ -186,7 +186,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
           measuredValue: { minInterval: 30, maxInterval: 300, minChange: 50 }
         }).catch(() => {});
         illumCluster.on('attr.measuredValue', async (v) => {
-          if (v !== null && v !== undefined && v >= 0) {await this.setCapabilityValue('measure_luminance', parseFloat(v)).catch(() => {});}
+          if (v !== null && v !== undefined && v >= 0) {await this.safeSetCapabilityValue('measure_luminance', parseFloat(v)).catch(() => {});}
         });
       }
       this._setupPeriodicLuminanceQuery();
@@ -197,6 +197,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
     if (this._luminanceQueryTimer) {clearInterval(this._luminanceQueryTimer);}
     const interval = this.mainsPowered ? 60000 : 300000;
     this._luminanceQueryTimer = this.homey.setInterval(async () => {
+      if (this._destroyed) return;
       if (this.safeTuyaDataQuery) {await this.safeTuyaDataQuery([12, 103]).catch(() => {});}
     }, interval);
   }
@@ -211,18 +212,16 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
 
   _setupOfflineCheck() {
     if (this._offlineCheckTimer) {clearInterval(this._offlineCheckTimer);}
-    this._offlineCheckTimer = this.homey.setInterval(() => {
-      const elapsed = Date.now() - this._lastEventTime;
+    this._offlineCheckTimer = this.homey.setInterval(() => { if (this._destroyed) return; const elapsed = Date.now() - this._lastEventTime;
       if (elapsed > MotionRadarHybridDevice.OFFLINE_CHECK_MS) {
         this.setUnavailable('Pas de signal depuis 60+ minutes').catch(() => {});
       } else {
         this.setAvailable().catch(() => {});
-      }
-    }, 600000);
+      } }, 600000);
   }
 
   async _sendInitialDataQuery() {
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => this.homey.setTimeout(resolve, 2000));
     await this._sendTuyaDataQuery?.().catch(() => {});
   }
 
@@ -237,8 +236,9 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       const occCluster = endpoint?.clusters?.occupancySensing || endpoint?.clusters?.msOccupancySensing;
       if (occCluster) {
         occCluster.on('attr.occupancy', (v) => {
+          if (this._destroyed) return;
           this._updateLastEventTime();
-          if (this.hasCapability('alarm_motion')) {this.setCapabilityValue('alarm_motion', v > 0).catch(() => {});}
+          if (this.hasCapability('alarm_motion')) {this.safeSetCapabilityValue('alarm_motion', v > 0).catch(() => {});}
         });
       }
     } catch (e) {}
@@ -250,9 +250,10 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone;
       if (iasCluster) {
         iasCluster.onZoneStatusChangeNotification = (p) => {
+          if (this._destroyed) return;
           this._updateLastEventTime();
           const parsed = this._parseIASZoneStatus(p?.zoneStatus);
-          if (this.hasCapability('alarm_motion')) {this.setCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});}
+          if (this.hasCapability('alarm_motion')) {this.safeSetCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});}
         };
       }
     } catch (e) {}
@@ -268,6 +269,8 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     if (this._offlineCheckTimer) {clearInterval(this._offlineCheckTimer);}
     if (this._luminanceQueryTimer) {clearInterval(this._luminanceQueryTimer);}
     await super.onDeleted?.();

@@ -19,7 +19,8 @@
             "de": "Modus"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "wifi_heater_turned_on",
@@ -28,7 +29,8 @@
         "fr": "Radiateur allumé",
         "nl": "Verwarming ingeschakeld",
         "de": "Heizung eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_heater_turned_off",
@@ -37,7 +39,8 @@
         "fr": "Radiateur éteint",
         "nl": "Verwarming uitgeschakeld",
         "de": "Heizung ausgeschaltet"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -48,7 +51,8 @@
         "fr": "Radiateur est allumé",
         "nl": "Verwarming is aan",
         "de": "Heizung ist an"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_heater_mode_is",

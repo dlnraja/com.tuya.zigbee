@@ -28,7 +28,7 @@ class RGBBulbDevice extends UnifiedLightBase {
       4: { capability: 'light_temperature', transform: (v) => safeDivide(v, 1000) },
       5: { internal: true, type: 'hsv', transform: (v) => this._parseHSV(v) },
       6: { internal: true, type: 'scene_data' },
-      7: { internal: true, type: 'countdown', writable: true },
+      7: { capability: 'countdown_remaining' },
       8: { internal: true, type: 'music_sync' },
       21: { setting: 'power_on_behavior' },
       26: { setting: 'do_not_disturb' },
@@ -103,7 +103,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(2, 0, 'enum');
     await this._sendTuyaDP(4, tuyaValue, 'value');
     await this.triggerCapabilityListener('light_temperature', parseFloat(homeyValue)).catch(() => { });
-    await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
+    await this.safeSetCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
   async onSettings({ newSettings, changedKeys }) {
     for (const key of changedKeys) {

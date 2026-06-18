@@ -1,5 +1,6 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 // A8: NaN Safety - use safeDivide/safeMultiply
   require('../../lib/devices/UnifiedPlugBase');
@@ -26,8 +27,8 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       // ALARM CONTROL
       // 
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      13: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      1: { capability: 'onoff', transform: boolean() },
+      13: { capability: 'onoff', transform: boolean() },
 
       // 
       // v5.5.130: VOLUME & SOUND from Zigbee2MQTT
@@ -44,13 +45,13 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       // BATTERY
       // 
-      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', transform: boolean() }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', divisor: 1 },
 
       // 
       // ENVIRONMENTAL (some sirens have T/H sensors)
       // 
-      104: { capability: 'onoff', transform: (v) => !!v },
+      104: { capability: 'onoff', transform: boolean() },
       116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v * 100)) },
       103: { setting: 'duration', writable: true },
       101: { capability: 'measure_temperature', smartDivisor: true },
@@ -62,7 +63,7 @@ class SirenDevice extends UnifiedPlugBase {
       // Strobe light control
       6: { setting: 'strobe' },
       // Tamper alarm
-      4: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
+      4: { capability: 'alarm_tamper', transform: boolean() },
     };
   }
 
@@ -160,6 +161,8 @@ class SirenDevice extends UnifiedPlugBase {
   }
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

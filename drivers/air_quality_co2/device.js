@@ -29,6 +29,19 @@ class AirQualityCO2Device extends SensorBase {
   }
 
   get dpMappings() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || '').toUpperCase();
+    const is8b9zpaav = mfr.includes('8B9ZPAAV');
+
+    // _TZE284_8b9zpaav uses a different DP layout: DP1=CO2, DP2=HCHO, DP3=temp, DP4=humidity
+    if (is8b9zpaav) {
+      return {
+        1: { capability: 'measure_co2', divisor: 1, transform: (v) => this._validateCO2(v) },
+        2: { capability: 'measure_formaldehyde', smartDivisor: true },
+        3: { capability: 'measure_temperature', smartDivisor: true },
+        4: { capability: 'measure_humidity', smartDivisor: true },
+      };
+    }
+
     return {
       // v5.5.317: CO2 with inference validation
       2: {
@@ -155,7 +168,7 @@ class AirQualityCO2Device extends SensorBase {
         temp.on('attr.measuredValue', (v) => {
           const t = parseFloat(v) / 100;
           if (t >= -40 && t <= 80) {
-            this.setCapabilityValue('measure_temperature', t).catch(() => { });
+            this.safeSetCapabilityValue('measure_temperature', t).catch(() => { });
           } else {
             this.log('[CO2] ZCL temp rejected:', t);
           }
@@ -166,7 +179,7 @@ class AirQualityCO2Device extends SensorBase {
         hum.on('attr.measuredValue', (v) => {
           const h = parseFloat(v) / 100;
           if (h >= 0 && h <= 100) {
-            this.setCapabilityValue('measure_humidity', h).catch(() => { });
+            this.safeSetCapabilityValue('measure_humidity', h).catch(() => { });
           } else {
             this.log('[CO2] ZCL hum rejected:', h);
           }

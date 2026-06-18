@@ -2,7 +2,21 @@
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
-  get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current']; }
+  get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current', 'measure_power.phase_total']; }
+
+  /**
+   * Override dpMappings to add 3-phase specific DPs
+   * DP 23: Energy produced/exported (kWh ÷ 100)
+   * DP 29: Total active power (W ÷ 10)
+   */
+  get dpMappings() {
+    const base = super.dpMappings || {};
+    return {
+      ...base,
+      23: { capability: 'meter_power.exported', divisor: 100 },
+      29: { capability: 'measure_power.phase_total', divisor: 10 },
+    };
+  }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
@@ -47,6 +61,8 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

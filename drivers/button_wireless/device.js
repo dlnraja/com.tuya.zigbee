@@ -53,14 +53,14 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         this.log('[BUTTON-WIRELESS] 🔋 Forcing initial battery read...');
         const attrs = await Promise.race([
           powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-          new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 2000))
+          new Promise((_, rej) => this.homey.setTimeout(() => { if (this._destroyed) return; rej(new Error('timeout')); }, 2000))
         ]).catch(() => null);
         
         if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
           const battery = Math.round(attrs.batteryPercentageRemaining / 2);
           this.log(`[BUTTON-WIRELESS] 🔋 Battery: ${battery}%`);
           if (this.hasCapability('measure_battery')) {
-            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+            await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
           }
         }
       }

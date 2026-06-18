@@ -22,18 +22,19 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["plug_smart_switch_switch_1gang_turned_on","plug_smart_switch_switch_1gang_turned_off","plug_smart_switch_switch_1gang_physical_on","plug_smart_switch_switch_1gang_physical_off","plug_smart_switch_switch_1gang_physical_single","plug_smart_switch_switch_1gang_physical_double","plug_smart_switch_switch_1gang_physical_long_press","plug_smart_switch_switch_1gang_physical_triple","plug_smart_switch_switch_1gang_battery_low","plug_smart_switch_switch_1gang_power_changed","plug_smart_switch_switch_1gang_gang1_scene"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('plug_smart_switch_switch_1gang_is_on');

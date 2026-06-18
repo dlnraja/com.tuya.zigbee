@@ -20,6 +20,7 @@ class valvecontroller extends ZigBeeDevice {
     }
 
     onDeleted(){
+      super.onDeleted();
 		this.log("Valve Controller removed")
 	}
 

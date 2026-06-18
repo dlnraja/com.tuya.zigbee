@@ -19,21 +19,21 @@ Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) +
 - ID pattern: `{driver}_physical_gang{N}_{on|off}`
 - NO `titleFormatted` with `[[device]]` - causes bugs
 - Always check driver.flow.compose.json for exact IDs
-- Virtual buttons MUST use `this.setCapabilityValue()` to route through the v5 hardening pipeline in `TuyaZigbeeDevice.js`. This ensures flow triggers map optimally and are protected by the L14 SanityFilter.
+- Virtual buttons MUST use `this.safeSetCapabilityValue()` to route through the v5 hardening pipeline in `TuyaZigbeeDevice.js`. This ensures flow triggers map optimally and are protected by the L14 SanityFilter.
 
 ## Imports
 ```javascript
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 ```
 
 ## Switch Mixin Order
 ```javascript
-class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ```
 
 ## L14 Hardened Telemetry (v5.13.6+)
-- **Unified Engine**: ALL capability updates MUST use `this.setCapabilityValue()`.
+- **Unified Engine**: ALL capability updates MUST use `this.safeSetCapabilityValue()`.
 - **Inheritance**: Drivers must inherit from `TuyaZigbeeDevice` (or `UnifiedBase`) to benefit from L14.
 - **SanityFilter**: Automatically active. Filters EMA (noise) and ROC (spikes).
 - **Anti-Flood**: Throttling is managed at the base class level.
@@ -66,6 +66,34 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 - **RULE**: Always use guessFormat() for unknown devices; never hardcode a single format
 - **RULE**: ZT08 weather stations require DP17 commit trigger after time sync
 - **RULE**: Check MCU version from device before selecting format; v3.3+ needs 10-byte response
+
+## MCU Format Guessing Rules (TuyaTimeSyncFormats.guessFormat())
+When encountering an unknown device, the system uses 6 heuristics to rank time format candidates:
+1. **Manufacturer prefix**: `_TZE200/204/284` -> TUYA_DUAL_2000 (MCU-based); `_TZ3000/3210` -> ZIGBEE_2000 (ZCL)
+2. **Product ID**: `TS0601` -> TUYA_DUAL_2000; `TS0201` -> ZIGBEE_2000; `TS130F` -> TUYA_STANDARD
+3. **Endpoint clusters**: 0xEF00 present -> MCU device; 0x000A present -> ZCL time cluster
+4. **Driver class**: Thermostat -> TUYA_FULL_TZ; Sensor -> TUYA_DUAL_2000; Cover -> TUYA_STANDARD
+5. **Known device patterns**: Specific manufacturer IDs mapped to proven formats
+6. **Model ID patterns**: 'th'/'temp' -> dual; 'trv'/'valve' -> full TZ; 'lcd'/'display' -> dual
+
+## Smart Calibration Rules (SmartDivisorManager)
+- **Location**: `lib/managers/SmartDivisorManager.js` (16.7KB)
+- **Auto-detection**: SmartDivisorManager auto-detects DP value divisors at runtime
+- **Known divisor DPs**: DP18 (temp/10), DP19 (humidity/10), DP22 (formaldehyde/100)
+- **Double-division prevention**: TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
+- **RULE**: Never assume 1:1 scaling; always check SmartDivisorManager for auto-detection
+- **RULE**: Values are checked against VALID_RANGES before capability updates
+- **RULE**: Use `smartDivisorDetect(rawValue, dpId, options)` for intelligent detection
+- **RULE**: Use `smartParse(rawValue, dpId, options)` for complete parse wrapper
+
+## Button Flow Card Rules
+- **Physical button**: `{driver}_physical_gang{N}_{on|off}` triggered by PhysicalButtonMixin
+- **Virtual button**: Uses `this.safeSetCapabilityValue()` through VirtualButtonMixin
+- **Deduplication**: 200ms debounce + 1.5s sliding window
+- **markAppCommand**: Always call before sending commands to prevent ghost triggers
+- **RULE**: IDs must be globally unique across ALL drivers
+- **RULE**: NO `titleFormatted` with `[[device]]` (causes manual device selection bug)
+- **RULE**: Virtual buttons MUST use `this.safeSetCapabilityValue()` through VirtualButtonMixin hardening
 
 ## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
 - FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
@@ -101,7 +129,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 - Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
 
 ## Key Files
-- `lib/devices/HybridSwitchBase.js` - Base switch class
+- `lib/devices/UnifiedSwitchBase.js` - Base switch class
 - `lib/mixins/PhysicalButtonMixin.js` - Physical detection
 - `drivers/{type}/driver.flow.compose.json` - Flow definitions
 
@@ -145,7 +173,7 @@ Do NOT remove just because mfr appears in another driver with different productI
 ## SDK v3 OFFICIAL RULES (apps-sdk-v3.developer.homey.app)
 - Managers via `this.homey.<managerId>`: `this.homey.drivers`, `this.homey.flow`, `this.homey.settings`
 - Zigbee init: `async onNodeInit()` (NOT sync onInit)
-- `await this.setCapabilityValue()` — ALWAYS use this; it is hardened in `TuyaZigbeeDevice.js` to provide L14 SanityFiltering and Anti-Flood protection.
+- `await this.safeSetCapabilityValue()` — ALWAYS use this; it is hardened in `TuyaZigbeeDevice.js` to provide L14 SanityFiltering and Anti-Flood protection.
 - Memory: idempotent listeners, clear timeouts in `onDeleted()`/`onUninit()`
 - NO v2 patterns: `this.homey.zigbee.getDevice()`, global Manager*
 

@@ -194,7 +194,7 @@ class SRZSSwitch extends TuyaSpecificClusterDevice {
 
     async updateSwitchState(endpointId, value) {
         this.log("setting capability value on endpoint", endpointId, value);
-        await this.setCapabilityValue(`onoff_${endpointId}`, value)
+        await this.safeSetCapabilityValue(`onoff_${endpointId}`, value)
             .catch(err => this.error(`Error setting capability value for onoff_${endpointId}:`, err));
 
         // Trigger configurable card

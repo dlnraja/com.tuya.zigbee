@@ -1,0 +1,63 @@
+{
+  "name": {
+    "en": "Soil EC Sensor",
+    "fr": "Capteur de Sol EC"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_conductivity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_conductivity": {
+      "title": {
+        "en": "Soil Conductivity",
+        "fr": "Conductivité du Sol"
+      },
+      "units": {
+        "en": "µS/cm"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_soil_sensor_ec_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/soil_sensor_ec/assets/images/small.png",
+    "large": "/drivers/soil_sensor_ec/assets/images/large.png",
+    "xlarge": "/drivers/soil_sensor_ec/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "soil_sensor_ec",
+  "version": "1.0.0"
+}

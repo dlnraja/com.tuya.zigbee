@@ -103,7 +103,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
                 this.log('Thermostat mode received', parsedValue);
 
                 try {
-                    await this.setCapabilityValue('thermostat_programming', (parsedValue === 0 ? "0" : "1"));
+                    await this.safeSetCapabilityValue('thermostat_programming', (parsedValue === 0 ? "0" : "1"));
                 } catch (e) {
                     this.log("Failed to set mode", e);
                 }
@@ -114,7 +114,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
                 this.log('Current temperature received', parsedValue);
 
                 try {
-                    await this.setCapabilityValue('measure_temperature', parsedValue / 10)
+                    await this.safeSetCapabilityValue('measure_temperature', parsedValue / 10)
                 } catch (e) {
                     this.log("Failed to set current temperature", e);
                 }
@@ -127,7 +127,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
                 try {
                     // BHT-002 sends temperature in decidegrees (e.g. 230 = 23.0C)
                     // Z2M reference: divideBy10 converter for DP16
-                    await this.setCapabilityValue('target_temperature', parsedValue / 10);
+                    await this.safeSetCapabilityValue('target_temperature', parsedValue / 10);
                 } catch (e) {
                     this.log("Failed to set target temperature", e);
                 }
@@ -138,7 +138,7 @@ class WallThermostatDevice extends TuyaSpecificClusterDevice {
                 this.log('Thermostat childlock received', parsedValue);
 
                 try {
-                    await this.setCapabilityValue('child_lock', parsedValue);
+                    await this.safeSetCapabilityValue('child_lock', parsedValue);
                 } catch (e) {
                     this.log("Failed to set childlock", e);
                 }

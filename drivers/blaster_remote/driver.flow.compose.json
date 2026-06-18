@@ -15,7 +15,8 @@
             "fr": "Code IR"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "blaster_remote_ir_code_received",
@@ -51,7 +52,9 @@
       "title": {
         "en": "Start learning an IR code",
         "fr": "Commencer l'apprentissage d'un code IR"
-      }
+      },
+      "args": []
     }
-  ]
+  ],
+  "conditions": []
 }

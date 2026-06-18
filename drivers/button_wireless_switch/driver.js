@@ -22,54 +22,53 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["button_wireless_switch_switch_2gang_gang1_turned_on","button_wireless_switch_switch_2gang_gang1_turned_off","button_wireless_switch_switch_2gang_gang2_turned_on","button_wireless_switch_switch_2gang_gang2_turned_off","button_wireless_switch_switch_2gang_physical_gang1_on","button_wireless_switch_switch_2gang_physical_gang1_off","button_wireless_switch_switch_2gang_physical_gang2_on","button_wireless_switch_switch_2gang_physical_gang2_off","button_wireless_switch_switch_2gang_turned_on","button_wireless_switch_switch_2gang_turned_off","button_wireless_switch_switch_2gang_power_changed","button_wireless_switch_switch_2gang_gang1_scene","button_wireless_switch_switch_2gang_gang2_scene"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('button_wireless_switch_hybrid_switch_2gang_gang1_is_on');
+      const card = this.homey.flow.getConditionCard('button_wireless_switch_switch_2gang_gang1_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition button_wireless_switch_hybrid_switch_2gang_gang1_is_on: ${err.message}`); }
+    } catch (err) { this.error(`Condition button_wireless_switch_switch_2gang_gang1_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('button_wireless_switch_hybrid_switch_2gang_gang2_is_on');
+      const card = this.homey.flow.getConditionCard('button_wireless_switch_switch_2gang_gang2_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition button_wireless_switch_hybrid_switch_2gang_gang2_is_on: ${err.message}`); }
+    } catch (err) { this.error(`Condition button_wireless_switch_switch_2gang_gang2_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('button_wireless_switch_hybrid_switch_2gang_is_on');
+      const card = this.homey.flow.getConditionCard('button_wireless_switch_switch_2gang_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition button_wireless_switch_hybrid_switch_2gang_is_on: ${err.message}`); }
+    } catch (err) { this.error(`Condition button_wireless_switch_switch_2gang_is_on: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_on_gang1');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_on_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,10 +76,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_on_gang1: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_on_gang1: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_off_gang1');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_off_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -88,10 +87,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_off_gang1: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_off_gang1: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_on_gang2');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_on_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -99,10 +98,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_on_gang2: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_on_gang2: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_off_gang2');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_off_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -110,10 +109,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_off_gang2: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_off_gang2: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_toggle_gang1');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_toggle_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -122,10 +121,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_toggle_gang1: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_toggle_gang1: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_toggle_gang2');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_toggle_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -134,10 +133,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_toggle_gang2: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_toggle_gang2: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_on_all');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_on_all');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -146,10 +145,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_on_all: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_on_all: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_off_all');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_off_all');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -158,10 +157,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_off_all: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_off_all: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_set_backlight');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_set_backlight');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -169,10 +168,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_set_backlight: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_set_backlight: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_on');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -180,10 +179,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_on: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_turn_off');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -191,10 +190,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_turn_off: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_toggle');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -203,10 +202,10 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_toggle: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('button_wireless_switch_hybrid_switch_2gang_set_scene_mode');
+      const card = this.homey.flow.getActionCard('button_wireless_switch_switch_2gang_set_scene_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -214,7 +213,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action button_wireless_switch_hybrid_switch_2gang_set_scene_mode: ${err.message}`); }
+    } catch (err) { this.error(`Action button_wireless_switch_switch_2gang_set_scene_mode: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

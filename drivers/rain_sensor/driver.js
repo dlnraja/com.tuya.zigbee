@@ -1,8 +1,8 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-class RainSensorDriver extends ZigBeeDriver {
+class RainSensorDriver extends BaseZigBeeDriver {
 async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}
@@ -13,6 +13,24 @@ async onInit() {
 
   _registerFlowCards() {
     // TRIGGERS
+    const triggers = [
+      'rain_sensor_rain_detected',
+      'rain_sensor_rain_stopped',
+      'rain_sensor_rain_intensity_changed',
+      'rain_sensor_battery_low',
+    ];
+    for (const id of triggers) {
+      try {
+        const card = this._getFlowCard(id, 'trigger');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit(`flow:${id}`, args);
+          });
+        }
+      } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
+    }
+
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('rain_sensor_is_raining');

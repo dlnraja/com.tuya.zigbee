@@ -31,6 +31,14 @@ const CSA_ENDPOINTS = {
   products: '/api/v1/certifiedproducts',
 };
 
+// ── GitHub API authentication ────────────────────────────────────────────
+const GH_TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+const GH_HEADERS = {
+  'User-Agent': 'HomeyTuyaScanner/1.0',
+  'Accept': 'application/vnd.github.v3+json',
+  ...(GH_TOKEN ? { Authorization: `token ${GH_TOKEN}` } : {}),
+};
+
 // ── HTTP helpers ─────────────────────────────────────────────────────────
 function httpGet(url, options = {}) {
   return new Promise((resolve, reject) => {
@@ -77,10 +85,7 @@ function githubGet(urlPath) {
     const opts = {
       hostname: 'api.github.com',
       path: urlPath,
-      headers: {
-        'User-Agent': 'HomeyTuyaScanner/1.0',
-        'Accept': 'application/vnd.github.v3+json',
-      },
+      headers: GH_HEADERS,
       timeout: 30000,
     };
     https.get(opts, (res) => {

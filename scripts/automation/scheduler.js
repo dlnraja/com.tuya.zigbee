@@ -81,6 +81,7 @@ const REFRESH_ONLY = OPT('refresh-only');
 const DO_ENRICH = FLAG('enrich');
 const DO_UPDATE_DRIVERS = FLAG('update-drivers');
 const DO_AUTO_FIX = FLAG('auto-fix');
+const DO_FLOW_CHECK = FLAG('flow-check');
 const FORCE = FLAG('force');
 const STATUS = FLAG('status');
 const RESET = FLAG('reset');
@@ -167,6 +168,13 @@ function loadState() {
     lastEnrich: null,
     lastUpdate: null,
     lastAutoFix: null,
+    lastFlowCheck: null,
+    flowCheckStats: {
+      totalRuns: 0,
+      lastScore: null,
+      lastErrors: 0,
+      lastWarnings: 0,
+    },
     autoFixStats: {
       totalRuns: 0,
       totalFixed: 0,
@@ -297,10 +305,18 @@ function showStatus() {
 
   console.log('  Pipeline Status:');
   console.log('  ' + '-'.repeat(66));
-  console.log(`  Last check:     ${state.lastCheck || 'NEVER'}`);
-  console.log(`  Last enrich:    ${state.lastEnrich || 'NEVER'}`);
-  console.log(`  Last update:    ${state.lastUpdate || 'NEVER'}`);
-  console.log(`  Last auto-fix:  ${state.lastAutoFix || 'NEVER'}`);
+  console.log(`  Last check:       ${state.lastCheck || 'NEVER'}`);
+  console.log(`  Last enrich:      ${state.lastEnrich || 'NEVER'}`);
+  console.log(`  Last update:      ${state.lastUpdate || 'NEVER'}`);
+  console.log(`  Last auto-fix:    ${state.lastAutoFix || 'NEVER'}`);
+  console.log(`  Last flow check:  ${state.lastFlowCheck || 'NEVER'}`);
+
+  if (state.flowCheckStats && state.flowCheckStats.totalRuns > 0) {
+    console.log('  Flow Card Stats:');
+    console.log(`    Total runs:     ${state.flowCheckStats.totalRuns}`);
+    console.log(`    Last errors:    ${state.flowCheckStats.lastErrors || 0}`);
+    console.log(`    Last warnings:  ${state.flowCheckStats.lastWarnings || 0}`);
+  }
 
   if (state.autoFixStats && state.autoFixStats.totalRuns > 0) {
     console.log('  Auto-Fix Stats:');
@@ -473,6 +489,10 @@ async function refreshPipeline() {
     fixed: autoFixTotalFixed,
   });
 
+  // Step 6: Run flow card integrity check
+  log(C.B, '\n--- Step 5: Flow Card Integrity Check ---');
+  await flowCheckPipeline();
+
   // Step 6: Run stale scanners (cache-aware)
   if (needsRefresh.includes('scanners') && getStaleScanners) {
     log(C.B, '\n--- Step 4: External Scanners (cache-aware) ---');
@@ -643,6 +663,100 @@ async function autoFixPipeline() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// FLOW CARD CHECK PIPELINE
+// ═══════════════════════════════════════════════════════════════════════════════
+
+async function flowCheckPipeline() {
+  const startTime = Date.now();
+  const state = loadState();
+
+  console.log(`\n${'='.repeat(70)}`);
+  console.log(`  FLOW CARD CHECK PIPELINE ${DRY_RUN ? '(DRY RUN)' : ''}`);
+  console.log(`${'='.repeat(70)}\n`);
+
+  // Step 1: Run flow card watchdog (validation)
+  log(C.B, '\n--- Step 1: Flow Card Watchdog (Validation) ---');
+  const watchdogResult = runScript('flow-card-watchdog.js', '--json');
+
+  let watchdogReport = null;
+  if (watchdogResult.success && watchdogResult.output) {
+    try {
+      // Find the JSON object in the output (may have log lines before it)
+      const lines = watchdogResult.output.trim().split('\n');
+      const jsonStart = lines.findIndex(l => l.trim().startsWith('{'));
+      if (jsonStart >= 0) {
+        watchdogReport = JSON.parse(lines.slice(jsonStart).join('\n'));
+      }
+    } catch { /* JSON parse failed, continue */ }
+  }
+
+  // Step 2: Run flow card repair
+  log(C.B, '\n--- Step 2: Flow Card Auto-Repair ---');
+  const repairResult = runScript('flow-card-repair.js', '--json');
+
+  let repairReport = null;
+  if (repairResult.success && repairResult.output) {
+    try {
+      const lines = repairResult.output.trim().split('\n');
+      const jsonStart = lines.findIndex(l => l.trim().startsWith('{'));
+      if (jsonStart >= 0) {
+        repairReport = JSON.parse(lines.slice(jsonStart).join('\n'));
+      }
+    } catch { /* JSON parse failed, continue */ }
+  }
+
+  // Step 3: Re-run watchdog after repair to confirm
+  if (repairReport && repairReport.summary.totalRepairs > 0) {
+    log(C.B, '\n--- Step 3: Post-Repair Validation ---');
+    runScript('flow-card-watchdog.js', '--json');
+  }
+
+  // Update state
+  const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  state.lastFlowCheck = new Date().toISOString();
+  state.flowCheckStats.totalRuns++;
+  state.flowCheckStats.lastRun = new Date().toISOString();
+  if (watchdogReport) {
+    state.flowCheckStats.lastScore = watchdogReport.summary ? null : null;
+    state.flowCheckStats.lastErrors = watchdogReport.summary?.errors || 0;
+    state.flowCheckStats.lastWarnings = watchdogReport.summary?.warnings || 0;
+  }
+
+  addHistoryEntry(state, {
+    action: 'flow-check',
+    success: !watchdogReport || (watchdogReport.summary?.errors || 0) === 0,
+    duration: Date.now() - startTime,
+    errors: watchdogReport?.summary?.errors || 0,
+    warnings: watchdogReport?.summary?.warnings || 0,
+    repairs: repairReport?.summary?.totalRepairs || 0,
+  });
+
+  saveState(state);
+
+  // Summary
+  console.log(`\n${'='.repeat(70)}`);
+  console.log(`  FLOW CARD CHECK COMPLETE (${elapsed}s)`);
+  console.log(`${'='.repeat(70)}`);
+  console.log(`  Watchdog:  ${watchdogReport ? (watchdogReport.summary?.errors > 0 ? C.R + 'ISSUES FOUND' : C.G + 'PASSED') : C.Y + 'SKIPPED'}${C.X}`);
+  console.log(`  Repair:    ${repairReport ? `${C.G}${repairReport.summary?.totalRepairs || 0} repairs${C.X}` : C.Y + 'SKIPPED'}`);
+  if (watchdogReport?.summary) {
+    console.log(`  Errors:    ${watchdogReport.summary.errors > 0 ? C.R : C.G}${watchdogReport.summary.errors}${C.X}`);
+    console.log(`  Warnings:  ${watchdogReport.summary.warnings > 0 ? C.Y : C.G}${watchdogReport.summary.warnings}${C.X}`);
+  }
+  console.log('');
+
+  // Alert on critical issues
+  if (watchdogReport && watchdogReport.summary && watchdogReport.summary.errors > 0) {
+    log(C.R, `ALERT: ${watchdogReport.summary.errors} flow card error(s) detected!`);
+    // Output for CI
+    if (process.env.GITHUB_OUTPUT) {
+      const output = `flow_card_issues=true\nflow_card_errors=${watchdogReport.summary.errors}`;
+      fs.appendFileSync(process.env.GITHUB_OUTPUT, output + '\n');
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // CLI ENTRY POINT
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -684,6 +798,11 @@ async function cli() {
     return;
   }
 
+  if (DO_FLOW_CHECK) {
+    await flowCheckPipeline();
+    return;
+  }
+
   if (DO_REFRESH || FORCE) {
     await refreshPipeline();
     return;
@@ -698,6 +817,7 @@ async function cli() {
   console.log('  node scheduler.js --enrich          Run enrichment only');
   console.log('  node scheduler.js --update-drivers  Run driver updates only');
   console.log('  node scheduler.js --auto-fix        Run auto-fix pipeline');
+  console.log('  node scheduler.js --flow-check      Run flow card integrity check');
   console.log('  node scheduler.js --force --refresh Force refresh all resources');
   console.log('  node scheduler.js --reset           Reset all timestamps');
 }

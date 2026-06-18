@@ -51,7 +51,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
         // Handler for color
         this.registerMultipleCapabilityListener(['light_hue','light_saturation'],(values,options) => {
             // When choosing a color, actually switch to color mode
-            this.setCapabilityValue('lidl_xmas_mode','color').catch(this.error);
+            this.safeSetCapabilityValue('lidl_xmas_mode','color').catch(this.error);
             // Then set the color based on newly selected value
             return this.setColor(values);
         },500);
@@ -97,7 +97,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
     async StartEffect(args) {
         // Switch to effect mode
         await this.writeEnum(2,2);
-        this.setCapabilityValue('lidl_xmas_mode', 'effect').catch(this.error);
+        this.safeSetCapabilityValue('lidl_xmas_mode', 'effect').catch(this.error);
         let es = this.effectMap[args.effect_name];
         const speed = String(args.effect_speed);
         if (speed.length === 1) es += '0';
@@ -121,6 +121,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
     }
 
     onDeleted(){
+      super.onDeleted();
 		this.log("Christmas Lights removed")
 	}
 

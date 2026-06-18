@@ -129,6 +129,7 @@ class wall_socket extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log("Wall Socket removed")
   }
 

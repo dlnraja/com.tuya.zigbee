@@ -4,13 +4,15 @@
       "id": "wifi_dimmer_turned_on",
       "title": {
         "en": "Turned on"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_dimmer_turned_off",
       "title": {
         "en": "Turned off"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [],

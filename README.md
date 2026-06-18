@@ -58,15 +58,23 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |--------|-------|
 | **App Version** | v9.0.40 |
 | **Device Fingerprints** | 4,189+ |
+| **App Version** | v9.0.39 |
+| **Device Fingerprints** | 4,304 |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 420 (370 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,313 |
 | **Unique Capabilities** | 186 |
+| **Drivers** | 412 (361 Zigbee + 51 WiFi) |
+| **Flow Cards** | 4,138 |
+| **Unique Capabilities** | 156 |
 | **SVG Icons** | 712 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-06-16 |
+| **Time Sync Formats** | 23 |
+| **MCU Protocol Versions** | 5 (v3.1-v3.5) |
+| **Smart Calibration DPs** | 8 (temp, humidity, CO2, formaldehyde, power, voltage, current, battery) |
+| **Last Updated** | 2026-06-15 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -164,6 +172,24 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 - 2000ms timeout-based detection
 - Flow triggers for physical button presses per gang
 - Deduplication to prevent duplicate triggers
+
+### Smart Calibration (SmartDivisorManager)
+- Auto-detects DP value divisors at runtime
+- Prevents double-division bugs (AdaptiveDataParser + dpMappings)
+- Known divisor DPs: DP18 (temp/10), DP19 (humidity/10), DP22 (formaldehyde/100)
+- Validates values against VALID_RANGES before capability updates
+
+### MCU Time Sync (23 Formats)
+- 23 distinct time synchronization formats for Tuya MCU devices
+- Auto-detection via 6 heuristics (manufacturer, productId, clusters, driver class)
+- MCU UART protocol versions v3.1-v3.5 with sequence echo support
+- ZT08 weather station DP17 commit trigger support
+
+### WiFi Local Control
+- Enterprise-grade TCP connection management with adaptive handshake
+- 200ms command queue rate limiting (anti-flood protection)
+- Protocol auto-rotation (v3.1-v3.5 handshake formats)
+- Lifecycle resource cleaning (sockets, intervals, listeners)
 
 ---
 
@@ -312,6 +338,31 @@ This is usually a double-division bug. The app auto-detects divisors from Tuya D
 </details>
 
 <details>
+<summary><strong>Device clock shows wrong time (56-year offset)</strong></summary>
+
+This is a time sync format mismatch. The app supports 23 time sync formats with auto-detection. Check the device's manufacturerName and ensure it's mapped to the correct format in TuyaTimeSyncFormats.js. Common fix: re-pair the device to trigger format re-detection.
+</details>
+
+<details>
+<summary><strong>WiFi device disconnects frequently</strong></summary>
+
+WiFi devices use TCP connections with adaptive handshake. If disconnects are frequent:
+1. Check WiFi signal strength at device location
+2. Ensure device is not too far from router
+3. Check if device supports local control (some are cloud-only)
+4. The app uses 200ms command queue to prevent flooding
+</details>
+
+<details>
+<summary><strong>Physical button presses not triggering flows</strong></summary>
+
+Ensure `markAppCommand()` is called before sending commands. The PhysicalButtonMixin uses a 2000ms window to distinguish physical vs app commands. Check:
+1. Driver extends PhysicalButtonMixin(VirtualButtonMixin(...))
+2. Flow card IDs follow pattern: `{driver}_physical_gang{N}_{on|off}`
+3. No duplicate flow triggers (200ms debounce + 1.5s dedup window)
+</details>
+
+<details>
 <summary><strong>How to get the test version?</strong></summary>
 
 Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) â€” this is auto-promoted from draft builds daily.
@@ -377,4 +428,5 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-06-16*
+*Last updated: 2026-06-15 | Version 9.0.39*
+*Updated: Smart Calibration, MCU Time Sync, WiFi Local Control, Troubleshooting Guide*

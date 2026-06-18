@@ -1,0 +1,63 @@
+{
+  "name": {
+    "en": "Smart Irrigation Valve",
+    "fr": "Vanbe d'Irrigation Intelligente"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_water",
+    "countdown_remaining",
+    "alarm_fault"
+  ],
+  "capabilitiesOptions": {
+    "measure_water": {
+      "title": {
+        "en": "Water Flow",
+        "fr": "Débit d'Eau"
+      }
+    },
+    "countdown_remaining": {
+      "title": {
+        "en": "Countdown Remaining",
+        "fr": "Temps Restant"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  ,
+    "manufacturerName": ["_hybrid_smart_irrigation_valve_needs_device_assignment"]
+  },
+  "images": {
+    "small": "/drivers/smart_irrigation_valve/assets/images/small.png",
+    "large": "/drivers/smart_irrigation_valve/assets/images/large.png",
+    "xlarge": "/drivers/smart_irrigation_valve/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "id": "smart_irrigation_valve",
+  "version": "1.0.0"
+}

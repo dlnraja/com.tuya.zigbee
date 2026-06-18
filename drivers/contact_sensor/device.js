@@ -320,6 +320,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
         // Set timer to apply after debounce window
         state.timer = this.homey.setTimeout(async () => {
+          if (this._destroyed) return;
           this.log(`[CONTACT]  Debounce complete - applying: ${finalValue}`);
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
@@ -353,6 +354,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
           // Double debounce for problematic openclosed transitions
           state.timer = this.homey.setTimeout(async () => {
+            if (this._destroyed) return;
             this.log(`[CONTACT]  Extended debounce complete - applying: ${finalValue}`);
             state.lastValue = finalValue;
             state.confirmedValue = finalValue;
@@ -390,6 +392,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Override setCapabilityValue for battery throttling
    */
   async _handleBatteryUpdate(value) {
+    if (this._destroyed) return;
     const now = Date.now();
     if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) {
       return; // Skip - too soon since last report
@@ -421,6 +424,8 @@ class ContactSensorDevice extends UnifiedSensorBase {
    * v5.5.793: Cleanup on device delete
    */
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     if (this._contactState?.timer) {
       this.homey.clearTimeout(this._contactState.timer );
       this._contactState.timer = null;

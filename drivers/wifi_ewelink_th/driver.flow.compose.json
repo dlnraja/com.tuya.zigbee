@@ -14,7 +14,8 @@
           },
           "example": 25.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "wifi_ewelink_th_humidity_changed",
@@ -30,7 +31,8 @@
           },
           "example": 60
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [],

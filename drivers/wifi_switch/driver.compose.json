@@ -8,7 +8,9 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "countdown_remaining",
+    "power_on_behavior"
   ],
   "pair": [
     {

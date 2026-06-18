@@ -15,7 +15,8 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "measure_power": {
@@ -28,7 +29,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_unknown"
+      "_TZ3210_4ux0ondb"
     ],
     "productId": [
       "TS011F"

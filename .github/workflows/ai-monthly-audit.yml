@@ -1,0 +1,858 @@
+name: AI Monthly Audit (TITAN Protocol v2)
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 1st of every month at 00:00 UTC
+  workflow_dispatch:
+    inputs:
+      analysis_depth:
+        description: 'Analysis depth: quick | standard | deep'
+        required: false
+        default: 'standard'
+      force_pr:
+        description: 'Force PR creation even if no issues found'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ai-monthly-audit
+  cancel-in-progress: true
+
+env:
+  CACHE_FILE: .ai/KNOWLEDGE_CACHE.json
+  REPORT_DIR: .ai/audit-reports
+  # AI_MODEL defaults to claude-sonnet-4-20250514 if not set in secrets
+
+jobs:
+  ai-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      # ──────────────────────────────────────────────
+      # LAYER 1: Full history checkout
+      # ──────────────────────────────────────────────
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci --production 2>/dev/null || npm install --production
+
+      # ──────────────────────────────────────────────
+      # LAYER 2: Load Knowledge Cache
+      # ──────────────────────────────────────────────
+      - name: Load Knowledge Cache
+        id: cache
+        run: |
+          if [ -f "$CACHE_FILE" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "version=$(jq -r '.version // "unknown"' "$CACHE_FILE")" >> $GITHUB_OUTPUT
+            echo "last_audit=$(jq -r '.lastAudit // "never"' "$CACHE_FILE")" >> $GITHUB_OUTPUT
+            echo "Known bugs tracked: $(jq '[.knownBugs.open[]?] | length' "$CACHE_FILE")"
+            echo "Rules tracked: $(jq '[.rules.sdk3[]?] | length' "$CACHE_FILE")"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "No knowledge cache found - will bootstrap"
+          fi
+
+      # ──────────────────────────────────────────────
+      # LAYER 3: Git diff analysis (30 days)
+      # ──────────────────────────────────────────────
+      - name: Generate 30-day delta analysis
+        id: deltas
+        run: |
+          SINCE=$(date -d '30 days ago' '+%Y-%m-%d' 2>/dev/null || date -v-30d '+%Y-%m-%d')
+          echo "since=$SINCE" >> $GITHUB_OUTPUT
+
+          # Commit stats
+          COMMIT_COUNT=$(git log --since="$SINCE" --oneline 2>/dev/null | wc -l || echo "0")
+          echo "commit_count=$COMMIT_COUNT" >> $GITHUB_OUTPUT
+
+          # File change stats
+          CHANGED_FILES=$(git diff --name-only "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | wc -l || echo "0")
+          echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
+
+          # Insertion/deletion stats
+          STATS=$(git diff --stat "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | tail -1)
+          INSERTIONS=$(echo "$STATS" | grep -oP '\d+(?= insertion)' || echo "0")
+          DELETIONS=$(echo "$STATS" | grep -oP '\d+(?= deletion)' || echo "0")
+          echo "insertions=$INSERTIONS" >> $GITHUB_OUTPUT
+          echo "deletions=$DELETIONS" >> $GITHUB_OUTPUT
+
+          # Extract unique new URLs from changed files
+          git diff "HEAD~${COMMIT_COUNT:-50}" HEAD -- '*.md' '*.js' '*.json' '*.yml' 2>/dev/null | \
+            grep -oP 'https?://[^\s\)\">\x27]+' | sort -u > /tmp/new_urls.txt || true
+          NEW_URLS=$(wc -l < /tmp/new_urls.txt)
+          echo "new_urls=$NEW_URLS" >> $GITHUB_OUTPUT
+
+          # Identify most-changed directories
+          git diff --name-only "HEAD~${COMMIT_COUNT:-50}" HEAD 2>/dev/null | \
+            awk -F/ '{if(NF>1) print $1"/"$2; else print $1}' | sort | uniq -c | sort -rn | head -10 > /tmp/hot_dirs.txt || true
+
+          echo "delta_summary=Commits: $COMMIT_COUNT | Files: $CHANGED_FILES | +$INSERTIONS -$DELETIONS | URLs: $NEW_URLS" >> $GITHUB_OUTPUT
+
+      # ──────────────────────────────────────────────
+      # LAYER 4: Run validation suite
+      # ──────────────────────────────────────────────
+      - name: Run comprehensive validation
+        id: validation
+        run: |
+          mkdir -p /tmp/audit-validation
+
+          # Mixin order check
+          if [ -f scripts/validation/check-mixin-order.js ]; then
+            node scripts/validation/check-mixin-order.js 2>&1 | tail -5 > /tmp/audit-validation/mixin.txt || true
+            MIXIN=$(grep -c "PASSED" /tmp/audit-validation/mixin.txt || echo "0")
+          else
+            MIXIN=-1
+            echo "SKIPPED - script not found" > /tmp/audit-validation/mixin.txt
+          fi
+          echo "mixin_passed=$MIXIN" >> $GITHUB_OUTPUT
+
+          # WiFi lifecycle check
+          if [ -f scripts/validation/check-wifi-lifecycle.js ]; then
+            node scripts/validation/check-wifi-lifecycle.js 2>&1 | tail -5 > /tmp/audit-validation/wifi.txt || true
+            WIFI=$(grep -c "PASSED" /tmp/audit-validation/wifi.txt || echo "0")
+          else
+            WIFI=-1
+            echo "SKIPPED - script not found" > /tmp/audit-validation/wifi.txt
+          fi
+          echo "wifi_passed=$WIFI" >> $GITHUB_OUTPUT
+
+          # Fingerprint health check
+          if [ -f scripts/validation/check-fingerprint-health.js ]; then
+            node scripts/validation/check-fingerprint-health.js 2>&1 | tail -5 > /tmp/audit-validation/fingerprint.txt || true
+            FP=$(grep -c "PASSED" /tmp/audit-validation/fingerprint.txt || echo "0")
+          else
+            FP=-1
+            echo "SKIPPED - script not found" > /tmp/audit-validation/fingerprint.txt
+          fi
+          echo "fingerprint_passed=$FP" >> $GITHUB_OUTPUT
+
+          # Flow card ID uniqueness
+          if [ -f scripts/ci/check-flow-ids.js ]; then
+            node scripts/ci/check-flow-ids.js 2>&1 | tail -5 > /tmp/audit-validation/flowids.txt || true
+            FLOW=$(grep -c "PASSED" /tmp/audit-validation/flowids.txt || echo "0")
+          else
+            FLOW=-1
+            echo "SKIPPED - script not found" > /tmp/audit-validation/flowids.txt
+          fi
+          echo "flowids_passed=$FLOW" >> $GITHUB_OUTPUT
+
+          # Security scan
+          if [ -f scripts/ci/security-scanner.js ]; then
+            node scripts/ci/security-scanner.js 2>&1 | tail -5 > /tmp/audit-validation/security.txt || true
+            SEC=$(grep -c "PASSED" /tmp/audit-validation/security.txt || echo "0")
+          else
+            SEC=-1
+            echo "SKIPPED - script not found" > /tmp/audit-validation/security.txt
+          fi
+          echo "security_passed=$SEC" >> $GITHUB_OUTPUT
+
+          # Syntax check (drivers only, fast)
+          if [ -f scripts/validation/check-syntax-drivers.js ]; then
+            node scripts/validation/check-syntax-drivers.js 2>&1 | tail -5 > /tmp/audit-validation/syntax.txt || true
+            SYNTAX=$(grep -c "PASSED" /tmp/audit-validation/syntax.txt || echo "0")
+          else
+            SYNTAX=-1
+            echo "SKIPPED" > /tmp/audit-validation/syntax.txt
+          fi
+          echo "syntax_passed=$SYNTAX" >> $GITHUB_OUTPUT
+
+          # TS0601 catchall analysis
+          if [ -f scripts/validation/check-ts0601-catchall.js ]; then
+            node scripts/validation/check-ts0601-catchall.js --json > /tmp/audit-validation/ts0601.json 2>/dev/null || true
+            TS0601_V=$(jq -r '.totalViolations // 0' /tmp/audit-validation/ts0601.json 2>/dev/null || echo "0")
+            TS0601_T=$(jq -r '.totalDrivers // 0' /tmp/audit-validation/ts0601.json 2>/dev/null || echo "0")
+            [ "$TS0601_V" = "0" ] && echo "PASSED" > /tmp/audit-validation/ts0601.txt || echo "FAILED: $TS0601_V violations" > /tmp/audit-validation/ts0601.txt
+            echo "ts0601_drivers=$TS0601_T" >> $GITHUB_OUTPUT
+            echo "ts0601_violations=$TS0601_V" >> $GITHUB_OUTPUT
+          else
+            echo "SKIPPED" > /tmp/audit-validation/ts0601.txt
+            echo "ts0601_drivers=0" >> $GITHUB_OUTPUT
+            echo "ts0601_violations=0" >> $GITHUB_OUTPUT
+          fi
+
+          # Fingerprint collision analysis
+          if [ -f scripts/validation/check-driver-collisions.js ]; then
+            node scripts/validation/check-driver-collisions.js > /tmp/audit-validation/collisions.txt 2>&1 || true
+            COLL=$(grep -c "PASSED" /tmp/audit-validation/collisions.txt || echo "0")
+            collision_count=$(grep -oP 'COLLISIONS FOUND: \K\d+' /tmp/audit-validation/collisions.txt 2>/dev/null || echo "0")
+            echo "collisions_passed=$COLL" >> $GITHUB_OUTPUT
+            echo "collision_count=$collision_count" >> $GITHUB_OUTPUT
+          else
+            echo "SKIPPED" > /tmp/audit-validation/collisions.txt
+            echo "collisions_passed=0" >> $GITHUB_OUTPUT
+            echo "collision_count=0" >> $GITHUB_OUTPUT
+          fi
+
+          # Energy divisor analysis
+          if [ -f scripts/validation/check-energy-divisor.js ]; then
+            node scripts/validation/check-energy-divisor.js --json > /tmp/audit-validation/energy-divisor.json 2>/dev/null || true
+            ENERGY_V=$(jq -r '.totalViolations // 0' /tmp/audit-validation/energy-divisor.json 2>/dev/null || echo "0")
+            ENERGY_T=$(jq -r '.totalDrivers // 0' /tmp/audit-validation/energy-divisor.json 2>/dev/null || echo "0")
+            [ "$ENERGY_V" = "0" ] && echo "PASSED" > /tmp/audit-validation/energy-divisor.txt || echo "FAILED: $ENERGY_V violations" > /tmp/audit-validation/energy-divisor.txt
+            echo "energy_drivers=$ENERGY_T" >> $GITHUB_OUTPUT
+            echo "energy_violations=$ENERGY_V" >> $GITHUB_OUTPUT
+          else
+            echo "SKIPPED" > /tmp/audit-validation/energy-divisor.txt
+            echo "energy_drivers=0" >> $GITHUB_OUTPUT
+            echo "energy_violations=0" >> $GITHUB_OUTPUT
+          fi
+
+          # Image conformity analysis
+          MISSING_ICON=0
+          MISSING_IMG=0
+          IMG_TOTAL=0
+          for dir in drivers/*/; do
+            [ ! -d "$dir" ] && continue
+            IMG_TOTAL=$((IMG_TOTAL + 1))
+            [ ! -f "$dir/assets/icon.svg" ] && MISSING_ICON=$((MISSING_ICON + 1))
+            if [ ! -f "$dir/assets/images/small.png" ] && [ ! -f "$dir/assets/images/large.png" ] && \
+               [ ! -f "$dir/assets/small.png" ] && [ ! -f "$dir/assets/large.png" ]; then
+              MISSING_IMG=$((MISSING_IMG + 1))
+            fi
+          done
+          [ "$MISSING_ICON" = "0" ] && [ "$MISSING_IMG" = "0" ] && echo "PASSED" > /tmp/audit-validation/images.txt || echo "FAILED: $MISSING_ICON missing icon, $MISSING_IMG missing images" > /tmp/audit-validation/images.txt
+          echo "img_total=$IMG_TOTAL" >> $GITHUB_OUTPUT
+          echo "img_missing_icon=$MISSING_ICON" >> $GITHUB_OUTPUT
+          echo "img_missing_images=$MISSING_IMG" >> $GITHUB_OUTPUT
+
+          TOTAL_PASS=0
+          TOTAL_FAIL=0
+          for f in /tmp/audit-validation/*.txt; do
+            p=$(grep -c "PASSED" "$f" 2>/dev/null || echo "0")
+            TOTAL_PASS=$((TOTAL_PASS + p))
+          done
+          echo "total_passed=$TOTAL_PASS" >> $GITHUB_OUTPUT
+
+      # ──────────────────────────────────────────────
+      # LAYER 4.5: Temporal Consciousness Analysis
+      # ──────────────────────────────────────────────
+      - name: Run temporal consciousness analysis
+        id: temporal
+        run: |
+          if [ -f scripts/temporal/generate-timeline.js ]; then
+            node scripts/temporal/generate-timeline.js --days 90 --quiet 2>&1 || true
+
+            if [ -f .ai/timeline.json ]; then
+              # Extract key temporal metrics
+              T_COMMITS=$(jq '.timeline.commitsCollected // 0' .ai/timeline.json 2>/dev/null || echo "0")
+              T_RELEASES=$(jq '.timeline.releasesCollected // 0' .ai/timeline.json 2>/dev/null || echo "0")
+              T_REGRESSIONS=$(jq '.regressions.summary.total // 0' .ai/timeline.json 2>/dev/null || echo "0")
+              T_CRITICAL=$(jq '.regressions.summary.critical // 0' .ai/timeline.json 2>/dev/null || echo "0")
+              T_ANOMALIES=$(jq '[.evolution.anomalies[]?] | length' .ai/timeline.json 2>/dev/null || echo "0")
+
+              echo "temporal_commits=$T_COMMITS" >> $GITHUB_OUTPUT
+              echo "temporal_releases=$T_RELEASES" >> $GITHUB_OUTPUT
+              echo "temporal_regressions=$T_REGRESSIONS" >> $GITHUB_OUTPUT
+              echo "temporal_critical=$T_CRITICAL" >> $GITHUB_OUTPUT
+              echo "temporal_anomalies=$T_ANOMALIES" >> $GITHUB_OUTPUT
+              echo "temporal_available=true" >> $GITHUB_OUTPUT
+              echo "Temporal analysis complete: $T_COMMITS commits, $T_REGRESSIONS regressions, $T_ANOMALIES anomalies"
+            else
+              echo "temporal_available=false" >> $GITHUB_OUTPUT
+              echo "Temporal analysis produced no output"
+            fi
+          else
+            echo "temporal_available=false" >> $GITHUB_OUTPUT
+            echo "Temporal scripts not found - skipping"
+          fi
+
+      # ──────────────────────────────────────────────
+      # LAYER 5: AI-powered deep analysis
+      # ──────────────────────────────────────────────
+      - name: Prepare AI analysis context
+        id: ai_context
+        run: |
+          mkdir -p /tmp/ai-context
+
+          # 1. Knowledge cache (full)
+          if [ -f "$CACHE_FILE" ]; then
+            cp "$CACHE_FILE" /tmp/ai-context/knowledge_cache.json
+          else
+            echo '{}' > /tmp/ai-context/knowledge_cache.json
+          fi
+
+          # 2. Git diff (last 30 days, condensed)
+          SINCE="${{ steps.deltas.outputs.since }}"
+          git log --since="$SINCE" --oneline --no-merges > /tmp/ai-context/recent_commits.txt || true
+
+          # 3. Changed files list with stats
+          git log --since="$SINCE" --name-status --no-merges --pretty=format:"" 2>/dev/null | \
+            sort | uniq -c | sort -rn | head -50 > /tmp/ai-context/most_changed_files.txt || true
+
+          # 4. Current project structure (top-level + driver count)
+          echo "## Driver count by category" > /tmp/ai-context/structure.txt
+          for dir in drivers/*/; do
+            count=$(find "$dir" -name "device.js" 2>/dev/null | wc -l)
+            echo "$dir: $count devices" >> /tmp/ai-context/structure.txt
+          done
+
+          # 5. New URLs found
+          cp /tmp/new_urls.txt /tmp/ai-context/new_urls.txt 2>/dev/null || true
+
+          # 6. Validation results
+          for f in /tmp/audit-validation/*.txt; do
+            echo "=== $(basename $f .txt) ===" >> /tmp/ai-context/validation_results.txt
+            cat "$f" >> /tmp/ai-context/validation_results.txt 2>/dev/null
+            echo "" >> /tmp/ai-context/validation_results.txt
+          done
+
+          # 7. CORE_RULES.md
+          if [ -f CORE_RULES.md ]; then
+            cp CORE_RULES.md /tmp/ai-context/core_rules.md
+          fi
+
+          # 8. Hot directories
+          cp /tmp/hot_dirs.txt /tmp/ai-context/hot_dirs.txt 2>/dev/null || true
+
+          # 9. Temporal analysis (if available)
+          if [ -f .ai/timeline.json ]; then
+            cp .ai/timeline.json /tmp/ai-context/timeline.json
+            jq '.regressions.alerts[]? | "- [\(.severity)] \(.message)"' .ai/timeline.json > /tmp/ai-context/temporal_regressions.txt 2>/dev/null || true
+          fi
+
+          # Build the combined prompt file
+          cat > /tmp/ai-context/prompt.txt << 'AIPROMPT'
+          You are performing a monthly code audit for the Tuya Unified Zigbee Homey Pro app.
+
+          Analyze the provided context and generate a structured audit report covering:
+
+          1. **BUGS**: New bugs introduced in the last 30 days (compare patterns against known anti-patterns)
+          2. **SECURITY**: Security issues (token leaks, missing guards, unsafe operations)
+          3. **SDK3 VIOLATIONS**: Any violations of Homey SDK3 lifecycle rules
+          4. **ANTI-PATTERNS**: Code patterns that match known anti-patterns from KNOWLEDGE_CACHE
+          5. **OPTIMIZATION**: Performance and memory optimization opportunities
+          6. **NEW RULES**: Any new patterns that should become rules in CORE_RULES.md
+          7. **DRIFT**: Architecture drift from the documented 11-layer pipeline
+          8. **DEPENDENCY**: External dependency issues or outdated references
+
+          Output MUST be valid JSON with this structure:
+          {
+            "summary": "string",
+            "bugs": [{"file": "path", "line": N, "severity": "critical|high|medium|low", "description": "...", "fix": "..."}],
+            "security": [{"file": "path", "severity": "...", "description": "...", "fix": "..."}],
+            "sdk3Violations": [{"file": "path", "rule": "...", "description": "..."}],
+            "antiPatterns": [{"file": "path", "pattern": "...", "description": "..."}],
+            "optimizations": [{"area": "...", "description": "...", "impact": "high|medium|low"}],
+            "newRules": [{"id": "R_N", "title": "...", "description": "...", "example": "..."}],
+            "drift": [{"area": "...", "expected": "...", "actual": "..."}],
+            "dependencies": [{"item": "...", "issue": "...", "recommendation": "..."}],
+            "riskScore": 0-100,
+            "confidence": 0.0-1.0
+          }
+          AIPROMPT
+
+          echo "context_prepared=true" >> $GITHUB_OUTPUT
+
+      - name: Run AI analysis
+        id: ai_analysis
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_AI_KEY: ${{ secrets.GOOGLE_AI_KEY }}
+        run: |
+          # Try Claude first, then OpenAI, then Gemini, then fallback
+          ANALYSIS_FILE="/tmp/ai-context/analysis.json"
+          echo '{"summary":"Analysis pending","riskScore":0,"confidence":0}' > "$ANALYSIS_FILE"
+
+          # Build context blob for API call
+          CONTEXT=$(cat /tmp/ai-context/knowledge_cache.json /tmp/ai-context/recent_commits.txt \
+                    /tmp/ai-context/validation_results.txt /tmp/ai-context/core_rules.md 2>/dev/null | \
+                    head -c 15000)
+
+          PROMPT=$(cat /tmp/ai-context/prompt.txt)
+
+          # Attempt Claude API
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            echo "Attempting Claude analysis..."
+            RESPONSE=$(curl -s --max-time 120 https://api.anthropic.com/v1/messages \
+              -H "x-api-key: $ANTHROPIC_API_KEY" \
+              -H "anthropic-version: 2023-06-01" \
+              -H "content-type: application/json" \
+              -d "{
+                \"model\": \"claude-sonnet-4-20250514\",
+                \"max_tokens\": 4096,
+                \"messages\": [{
+                  \"role\": \"user\",
+                  \"content\": \"$PROMPT\n\nCONTEXT:\n$CONTEXT\"
+                }]
+              }" 2>/dev/null)
+
+            # Extract JSON from response
+            RESULT=$(echo "$RESPONSE" | jq -r '.content[0].text // empty' 2>/dev/null)
+            if [ -n "$RESULT" ]; then
+              echo "$RESULT" | grep -o '{.*}' > "$ANALYSIS_FILE" 2>/dev/null || true
+              if jq -e '.summary' "$ANALYSIS_FILE" >/dev/null 2>&1; then
+                echo "ai_engine=claude" >> $GITHUB_OUTPUT
+                echo "Claude analysis complete"
+              fi
+            fi
+          fi
+
+          # Fallback: Use node to run local validation-based analysis
+          if ! jq -e '.summary' "$ANALYSIS_FILE" >/dev/null 2>&1; then
+            echo "Using local validation-based analysis fallback..."
+            cat > "$ANALYSIS_FILE" << FALLBACK
+            {
+              "summary": "Local validation analysis (no AI API available). Validation suite results used as proxy.",
+              "bugs": [],
+              "security": [],
+              "sdk3Violations": [],
+              "antiPatterns": [],
+              "optimizations": [],
+              "newRules": [],
+              "drift": [],
+              "dependencies": [],
+              "riskScore": ${{ steps.validation.outputs.total_passed || 0 }},
+              "confidence": 0.5,
+              "engine": "local-fallback",
+              "validationResults": {
+                "mixin": "${{ steps.validation.outputs.mixin_passed }}",
+                "wifi": "${{ steps.validation.outputs.wifi_passed }}",
+                "fingerprint": "${{ steps.validation.outputs.fingerprint_passed }}",
+                "flowids": "${{ steps.validation.outputs.flowids_passed }}",
+                "security": "${{ steps.validation.outputs.security_passed }}"
+              }
+            }
+            FALLBACK
+            echo "ai_engine=local-fallback" >> $GITHUB_OUTPUT
+          fi
+
+          echo "analysis_file=$ANALYSIS_FILE" >> $GITHUB_OUTPUT
+
+      # ──────────────────────────────────────────────
+      # LAYER 6: Generate structured audit report
+      # ──────────────────────────────────────────────
+      - name: Generate audit report
+        id: report
+        run: |
+          mkdir -p "$REPORT_DIR"
+          REPORT_FILE="$REPORT_DIR/AUDIT_$(date +%Y-%m).md"
+          echo "report_file=$REPORT_FILE" >> $GITHUB_OUTPUT
+
+          ANALYSIS="/tmp/ai-context/analysis.json"
+          ENGINE=$(jq -r '.engine // "unknown"' "$ANALYSIS" 2>/dev/null || echo "unknown")
+          RISK=$(jq -r '.riskScore // "N/A"' "$ANALYSIS" 2>/dev/null || echo "N/A")
+          CONF=$(jq -r '.confidence // "N/A"' "$ANALYSIS" 2>/dev/null || echo "N/A")
+
+          cat > "$REPORT_FILE" << HEADER
+          # AI Monthly Audit Report — $(date +%B %Y)
+          > Generated by TITAN Protocol v2 | Engine: $ENGINE | Risk Score: $RISK | Confidence: $CONF
+
+          ## Summary
+          HEADER
+
+          echo "- **Date**: $(date -u '+%Y-%m-%d %H:%M UTC')" >> "$REPORT_FILE"
+          echo "- **Analysis Engine**: $ENGINE" >> "$REPORT_FILE"
+          echo "- **Risk Score**: $RISK / 100" >> "$REPORT_FILE"
+          echo "- **Confidence**: $CONF" >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+
+          echo "## 30-Day Delta" >> "$REPORT_FILE"
+          echo "- Commits: ${{ steps.deltas.outputs.commit_count }}" >> "$REPORT_FILE"
+          echo "- Files changed: ${{ steps.deltas.outputs.changed_files }}" >> "$REPORT_FILE"
+          echo "- Insertions: +${{ steps.deltas.outputs.insertions }}" >> "$REPORT_FILE"
+          echo "- Deletions: -${{ steps.deltas.outputs.deletions }}" >> "$REPORT_FILE"
+          echo "- New URLs: ${{ steps.deltas.outputs.new_urls }}" >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+
+          echo "## Validation Results" >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+          echo "| Check | Status |" >> "$REPORT_FILE"
+          echo "|-------|--------|" >> "$REPORT_FILE"
+          declare -A RESULTS=(
+            [mixin]="${{ steps.validation.outputs.mixin_passed }}"
+            [wifi]="${{ steps.validation.outputs.wifi_passed }}"
+            [fingerprint]="${{ steps.validation.outputs.fingerprint_passed }}"
+            [flowids]="${{ steps.validation.outputs.flowids_passed }}"
+            [security]="${{ steps.validation.outputs.security_passed }}"
+            [syntax]="${{ steps.validation.outputs.syntax_passed }}"
+            [ts0601]="$([ '${{ steps.validation.outputs.ts0601_violations }}' = '0' ] && echo 1 || echo 0)"
+            [collisions]="${{ steps.validation.outputs.collisions_passed }}"
+            [energy_divisor]="$([ '${{ steps.validation.outputs.energy_violations }}' = '0' ] && echo 1 || echo 0)"
+            [images]="$([ '${{ steps.validation.outputs.img_missing_icon }}' = '0' ] && echo 1 || echo 0)"
+          )
+          for check in mixin wifi fingerprint flowids security syntax ts0601 collisions energy_divisor images; do
+            val="${RESULTS[$check]}"
+            if [ "$val" = "1" ]; then
+              echo "| $check | PASS |" >> "$REPORT_FILE"
+            elif [ "$val" = "0" ]; then
+              echo "| $check | FAIL |" >> "$REPORT_FILE"
+            else
+              echo "| $check | SKIP |" >> "$REPORT_FILE"
+            fi
+          done
+          echo "" >> "$REPORT_FILE"
+
+          # AI findings
+          echo "## AI Findings" >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+
+          BUG_COUNT=$(jq '[.bugs[]?] | length' "$ANALYSIS" 2>/dev/null || echo "0")
+          SEC_COUNT=$(jq '[.security[]?] | length' "$ANALYSIS" 2>/dev/null || echo "0")
+          SDK_COUNT=$(jq '[.sdk3Violations[]?] | length' "$ANALYSIS" 2>/dev/null || echo "0")
+          OPT_COUNT=$(jq '[.optimizations[]?] | length' "$ANALYSIS" 2>/dev/null || echo "0")
+
+          echo "| Category | Count |" >> "$REPORT_FILE"
+          echo "|----------|-------|" >> "$REPORT_FILE"
+          echo "| Bugs | $BUG_COUNT |" >> "$REPORT_FILE"
+          echo "| Security | $SEC_COUNT |" >> "$REPORT_FILE"
+          echo "| SDK3 Violations | $SDK_COUNT |" >> "$REPORT_FILE"
+          echo "| Optimizations | $OPT_COUNT |" >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+
+          # Append detailed findings if non-zero
+          if [ "$BUG_COUNT" != "0" ]; then
+            echo "### Bugs" >> "$REPORT_FILE"
+            jq -r '.bugs[] | "- **\(.severity)** [\(.file):\(.line)] \(.description) — Fix: \(.fix)"' "$ANALYSIS" >> "$REPORT_FILE" 2>/dev/null
+            echo "" >> "$REPORT_FILE"
+          fi
+
+          if [ "$SEC_COUNT" != "0" ]; then
+            echo "### Security" >> "$REPORT_FILE"
+            jq -r '.security[] | "- **\(.severity)** [\(.file)] \(.description)"' "$ANALYSIS" >> "$REPORT_FILE" 2>/dev/null
+            echo "" >> "$REPORT_FILE"
+          fi
+
+          if [ "$SDK_COUNT" != "0" ]; then
+            echo "### SDK3 Violations" >> "$REPORT_FILE"
+            jq -r '.sdk3Violations[] | "- [\(.file)] \(.rule): \(.description)"' "$ANALYSIS" >> "$REPORT_FILE" 2>/dev/null
+            echo "" >> "$REPORT_FILE"
+          fi
+
+          # New rules proposed
+          RULE_COUNT=$(jq '[.newRules[]?] | length' "$ANALYSIS" 2>/dev/null || echo "0")
+          if [ "$RULE_COUNT" != "0" ]; then
+            echo "### Proposed New Rules" >> "$REPORT_FILE"
+            jq -r '.newRules[] | "- **\(.id)** \(.title): \(.description)"' "$ANALYSIS" >> "$REPORT_FILE" 2>/dev/null
+            echo "" >> "$REPORT_FILE"
+          fi
+
+          # TITAN v5 structural findings
+          echo "## TITAN v5 Structural Analysis" >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+          echo "| Analysis | Count | Status |" >> "$REPORT_FILE"
+          echo "|----------|-------|--------|" >> "$REPORT_FILE"
+          echo "| TS0601 Drivers | ${{ steps.validation.outputs.ts0601_drivers }} | ${{ steps.validation.outputs.ts0601_violations }} violations |" >> "$REPORT_FILE"
+          echo "| Fingerprint Collisions | - | ${{ steps.validation.outputs.collision_count }} collisions |" >> "$REPORT_FILE"
+          echo "| Energy Drivers (no divisor) | ${{ steps.validation.outputs.energy_drivers }} | ${{ steps.validation.outputs.energy_violations }} violations |" >> "$REPORT_FILE"
+          echo "| Drivers Total | ${{ steps.validation.outputs.img_total }} | ${{ steps.validation.outputs.img_missing_icon }} missing icon.svg |" >> "$REPORT_FILE"
+
+          # Hot directories
+          echo "## Hot Directories (Most Changed)" >> "$REPORT_FILE"
+          echo '```' >> "$REPORT_FILE"
+          cat /tmp/hot_dirs.txt >> "$REPORT_FILE" 2>/dev/null || echo "No data" >> "$REPORT_FILE"
+          echo '```' >> "$REPORT_FILE"
+          echo "" >> "$REPORT_FILE"
+
+          # Temporal Consciousness section
+          if [ "${{ steps.temporal.outputs.temporal_available }}" = "true" ]; then
+            echo "## Temporal Consciousness Analysis" >> "$REPORT_FILE"
+            echo "" >> "$REPORT_FILE"
+            echo "- Commits analyzed: ${{ steps.temporal.outputs.temporal_commits }}" >> "$REPORT_FILE"
+            echo "- Releases tracked: ${{ steps.temporal.outputs.temporal_releases }}" >> "$REPORT_FILE"
+            echo "- Regression alerts: ${{ steps.temporal.outputs.temporal_regressions }}" >> "$REPORT_FILE"
+            echo "- Critical regressions: ${{ steps.temporal.outputs.temporal_critical }}" >> "$REPORT_FILE"
+            echo "- Evolution anomalies: ${{ steps.temporal.outputs.temporal_anomalies }}" >> "$REPORT_FILE"
+            echo "" >> "$REPORT_FILE"
+
+            # Append regression details if any
+            if [ -f /tmp/ai-context/temporal_regressions.txt ] && [ -s /tmp/ai-context/temporal_regressions.txt ]; then
+              echo "### Regression Alerts" >> "$REPORT_FILE"
+              cat /tmp/ai-context/temporal_regressions.txt >> "$REPORT_FILE" 2>/dev/null
+              echo "" >> "$REPORT_FILE"
+            fi
+          fi
+
+          # Recent commits
+          echo "## Recent Commits (30 days)" >> "$REPORT_FILE"
+          echo '```' >> "$REPORT_FILE"
+          git log --since="${{ steps.deltas.outputs.since }}" --oneline --no-merges | head -25 >> "$REPORT_FILE"
+          echo '```' >> "$REPORT_FILE"
+
+          echo "Report generated: $REPORT_FILE"
+
+      # ──────────────────────────────────────────────
+      # LAYER 7: Update Knowledge Cache
+      # ──────────────────────────────────────────────
+      - name: Update Knowledge Cache to v2.0
+        id: cache_update
+        run: |
+          ANALYSIS="/tmp/ai-context/analysis.json"
+          NOW=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
+
+          # Get current project version from package.json
+          PKG_VERSION=$(jq -r '.version // "9.0.40"' package.json 2>/dev/null || echo "9.0.40")
+
+          # Count current drivers
+          DRIVER_COUNT=$(find drivers -name "device.js" 2>/dev/null | wc -l || echo "430")
+
+          # Build the comprehensive v2.0 cache
+          cat > "$CACHE_FILE" << CACHEEOF
+          {
+            "version": "2.0",
+            "lastAudit": "$NOW",
+            "auditEngine": "$(jq -r '.engine // "local-fallback"' "$ANALYSIS" 2>/dev/null)",
+            "project": {
+              "name": "com.dlnraja.tuya.zigbee",
+              "version": "$PKG_VERSION",
+              "drivers": $DRIVER_COUNT,
+              "fingerprints": 4304,
+              "flowCards": 4138,
+              "capabilities": 156
+            },
+            "rules": {
+              "sdk3": [
+                {"id": "R1", "title": "safeSetCapabilityValue", "severity": "critical", "description": "Always use safeSetCapabilityValue() in async callbacks. Checks _destroyed flag."},
+                {"id": "R2", "title": "super.onDeleted() WiFi", "severity": "critical", "description": "WiFi devices MUST call await super.onDeleted() to prevent TCP leaks."},
+                {"id": "R3", "title": "Mixin Order", "severity": "critical", "description": "PhysicalButtonMixin(VirtualButtonMixin(BaseClass)) - never reverse."},
+                {"id": "R4", "title": "Buffer-Based JSON", "severity": "high", "description": "Use JSON.parse(fs.readFileSync(fpath)) without 'utf8' to avoid 2x memory."},
+                {"id": "R5", "title": "_destroyed Guard", "severity": "high", "description": "Check this._destroyed at the start of all async callbacks."},
+                {"id": "R6", "title": "No console.log in Drivers", "severity": "medium", "description": "Use this.log()/this.error()/this.warn() - never console.log/error."},
+                {"id": "R7", "title": "UnifiedBatteryHandler", "severity": "high", "description": "Never use linear battery formulas. Always use UnifiedBatteryHandler.calculateFromVoltage()."},
+                {"id": "R8", "title": "markAppCommand Before Physical", "severity": "high", "description": "Always call markAppCommand() before sending physical commands to prevent ghost presses."},
+                {"id": "R9", "title": "No titleFormatted [[device]]", "severity": "medium", "description": "Never use titleFormatted with [[device]] in flow cards - causes manual device selection bug."},
+                {"id": "R10", "title": "Backlight String Values", "severity": "medium", "description": "Backlight values must be strings: 'off', 'normal', 'inverted'. Never numeric."}
+              ],
+              "antiPatterns": [
+                "Linear battery formulas - use UnifiedBatteryHandler",
+                "Raw setCapabilityValue after destroy - use safeSetCapabilityValue",
+                "console.log in drivers/ - use this.log()/this.error()",
+                "UTF-16 JSON loading - use Buffer-based loading",
+                "Overwriting constructor - use onInit()",
+                "Blocking main thread in onInit - use async/await",
+                "Missing super.onDeleted() in WiFi devices - leaks TCP",
+                "Wildcard manufacturerName arrays - strictly forbidden",
+                "Empty manufacturerName arrays - causes AggregateError",
+                "capabilityMap recomputed on every _onData() - cache in onInit()"
+              ],
+              "mandatory": [
+                "11-layer Zigbee pipeline must be respected",
+                "Fingerprints: manufacturerName + productId combined match",
+                "Settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name",
+                "Flow card IDs must be globally unique across ALL drivers",
+                "Import paths from lib/tuya/ not lib/ directly",
+                "CaseInsensitiveMatcher for all manufacturer name comparisons"
+              ],
+              "naming": [
+                "Settings: zb_model_id, zb_manufacturer_name (snake_case with zb_ prefix)",
+                "Flow IDs: {driver}_physical_gang{N}_{on|off}",
+                "Driver dirs: drivers/{type}/ with device.js, driver.js, driver.compose.json",
+                "Capabilities: 156 unique - check DynamicCapabilityManager before adding new"
+              ],
+              "security": [
+                "Never commit tokens to .git/config",
+                "Use GH_PAT secret for cross-repo access",
+                "Block *.key, *.pem, config.json, secrets.json, credentials.json",
+                "Never commit .env files",
+                "GITHUB_TOKEN for current repo only"
+              ]
+            },
+            "architecture": {
+              "pipeline": [
+                {"layer": 0, "name": "TuyaZigbeeDevice.handleFrame", "file": "lib/tuya/TuyaZigbeeDevice.js", "purpose": "Raw frame interception"},
+                {"layer": 1, "name": "UniversalThrottleManager", "file": "lib/utils/UniversalThrottleManager.js", "purpose": "Flow control 120RX/30TX per min"},
+                {"layer": 2, "name": "IntelligentProtocolRouter", "file": "lib/protocol/IntelligentProtocolRouter.js", "purpose": "Route ZCL vs Tuya DP"},
+                {"layer": 3, "name": "TuyaBoundCluster", "file": "lib/clusters/TuyaBoundCluster.js", "purpose": "Binding and command capture"},
+                {"layer": 4, "name": "TuyaEF00Manager", "file": "lib/tuya/TuyaEF00Manager.js", "purpose": "Multi-DP decoding"},
+                {"layer": 5, "name": "GlobalTimeSyncEngine", "file": "lib/tuya/GlobalTimeSyncEngine.js", "purpose": "Time sync (23 formats)"},
+                {"layer": 6, "name": "PhysicalButtonMixin", "file": "lib/mixins/PhysicalButtonMixin.js", "purpose": "Button deduplication"},
+                {"layer": 7, "name": "BaseUnifiedDevice", "file": "lib/devices/BaseUnifiedDevice.js", "purpose": "Capability mapping"},
+                {"layer": 8, "name": "DynamicCapabilityManager", "file": "lib/managers/DynamicCapabilityManager.js", "purpose": "Auto-discovery and phantom pruning"},
+                {"layer": 9, "name": "SessionManager", "file": "lib/session/SessionManager.js", "purpose": "Fragmented IR packets"},
+                {"layer": 10, "name": "HealthMonitor", "file": "lib/health/HealthMonitor.js", "purpose": "Heartbeat tracking"},
+                {"layer": 11, "name": "SanityFilter", "file": "lib/tuya/SanityFilter.js", "purpose": "EMA and ROC noise filtering"}
+              ],
+              "classHierarchy": [
+                "Homey.Device -> ZigBeeDevice -> TuyaZigbeeDevice -> BaseUnifiedDevice -> UnifiedSensorBase",
+                "Homey.Device -> ZigBeeDevice -> TuyaZigbeeDevice -> BaseUnifiedDevice -> UnifiedSwitchBase -> HybridSwitchBase",
+                "Homey.Device -> ZigBeeDevice -> TuyaZigbeeDevice -> BaseUnifiedDevice -> UnifiedCoverBase",
+                "Homey.Device -> ZigBeeDevice -> TuyaZigbeeDevice -> BaseUnifiedDevice -> UnifiedLightBase",
+                "Homey.Device -> ZigBeeDevice -> TuyaZigbeeDevice -> BaseUnifiedDevice -> UnifiedPlugBase",
+                "Homey.Device -> ZigBeeDevice -> TuyaZigbeeDevice -> BaseUnifiedDevice -> UnifiedThermostatBase",
+                "Homey.Device -> TuyaLocalDevice (WiFi)"
+              ],
+              "protocols": ["ZCL", "Tuya DP 0xEF00", "MCU UART", "TuyaLocalClient TCP"]
+            },
+            "knownBugs": {
+              "resolved": [
+                {"id": "BUG-001", "version": "v9.0.40", "description": "TuyaShadowPulsar crash at import (this.homey undefined)", "fix": "Lazy-init homey reference"},
+                {"id": "BUG-002", "version": "v9.0.40", "description": "43 WiFi drivers TCP leak (missing super.onDeleted())", "fix": "Added super.onDeleted() to all WiFi devices"},
+                {"id": "BUG-003", "version": "v9.0.40", "description": "14 files mixin order reversed", "fix": "Corrected to PhysicalButtonMixin(VirtualButtonMixin(Base))"},
+                {"id": "BUG-004", "version": "v9.0.31", "description": "74 empty manufacturerName arrays causing AggregateError", "fix": "Filtered out empty arrays in all driver.compose.json"},
+                {"id": "BUG-005", "version": "v9.0.0", "description": "OOM crash on startup from fingerprints.json UTF-16 loading", "fix": "Buffer-based JSON loading"}
+              ],
+              "open": [],
+              "patterns": [
+                {"pattern": "post-destroy crash", "rootCause": "Missing _destroyed guard in async callback", "frequency": "high"},
+                {"pattern": "ghost button press", "rootCause": "Missing markAppCommand() before physical command", "frequency": "medium"},
+                {"pattern": "double-division bug", "rootCause": "AdaptiveDataParser + dpMappings both dividing", "frequency": "low"},
+                {"pattern": "curtain position inverted", "rootCause": "Some curtains report 0=open, 100=closed", "frequency": "low"}
+              ]
+            },
+            "externalReferences": {
+              "athombv": [
+                "https://github.com/athombv/node-homey-zigbeedriver",
+                "https://github.com/athombv/node-zigbee-clusters",
+                "https://github.com/athombv/homey-apps-sdk-docs"
+              ],
+              "z2m": [
+                "https://github.com/Koenkk/zigbee-herdsman-converters",
+                "https://www.zigbee2mqtt.io/supported-devices/"
+              ],
+              "zha": [
+                "https://github.com/zigpy/zha-device-handlers",
+                "https://github.com/zigpy/zhaquirks"
+              ],
+              "tuya": [
+                "https://github.com/jasonacox/tinytuya",
+                "https://github.com/make-all/tuya-local"
+              ],
+              "homeyDocs": [
+                "https://apps.developer.homey.app/",
+                "https://apps.developer.homey.app/the-basics/devices/",
+                "https://apps.developer.homey.app/wireless/zigbee",
+                "https://developers.homey.app/sdk/"
+              ]
+            },
+            "auditHistory": {
+              "last30Days": {
+                "commits": ${{ steps.deltas.outputs.commit_count || 0 }},
+                "filesChanged": ${{ steps.deltas.outputs.changed_files || 0 }},
+                "insertions": ${{ steps.deltas.outputs.insertions || 0 }},
+                "deletions": ${{ steps.deltas.outputs.deletions || 0 }},
+                "newUrls": ${{ steps.deltas.outputs.new_urls || 0 }}
+              },
+              "currentAudit": {
+                "date": "$NOW",
+                "engine": "$(jq -r '.engine // "local-fallback"' "$ANALYSIS" 2>/dev/null)",
+                "riskScore": $(jq -r '.riskScore // 0' "$ANALYSIS" 2>/dev/null),
+                "confidence": $(jq -r '.confidence // 0' "$ANALYSIS" 2>/dev/null)
+              }
+            }
+          }
+          CACHEEOF
+
+          # Validate JSON
+          if jq . "$CACHE_FILE" > /dev/null 2>&1; then
+            echo "cache_valid=true" >> $GITHUB_OUTPUT
+            echo "Knowledge cache updated and validated"
+          else
+            echo "cache_valid=false" >> $GITHUB_OUTPUT
+            echo "WARNING: Knowledge cache JSON is invalid"
+          fi
+
+      # ──────────────────────────────────────────────
+      # LAYER 8: Update CORE_RULES.md if new rules
+      # ──────────────────────────────────────────────
+      - name: Update CORE_RULES.md with new rules
+        id: rules_update
+        run: |
+          ANALYSIS="/tmp/ai-context/analysis.json"
+          NEW_RULES=$(jq '[.newRules[]?] | length' "$ANALYSIS" 2>/dev/null || echo "0")
+
+          if [ "$NEW_RULES" != "0" ] && [ -f CORE_RULES.md ]; then
+            echo "" >> CORE_RULES.md
+            echo "## Auto-Discovered Rules (AI Audit $(date +%Y-%m))" >> CORE_RULES.md
+            echo "" >> CORE_RULES.md
+            jq -r '.newRules[] | "### \(.id): \(.title)\n\(.description)\n\`\`\`js\n\(.example)\n\`\`\`\n"' "$ANALYSIS" >> CORE_RULES.md 2>/dev/null
+            echo "rules_added=$NEW_RULES" >> $GITHUB_OUTPUT
+            echo "Added $NEW_RULES new rules to CORE_RULES.md"
+          else
+            echo "rules_added=0" >> $GITHUB_OUTPUT
+            echo "No new rules to add"
+          fi
+
+      # ──────────────────────────────────────────────
+      # LAYER 9: Create Pull Request
+      # ──────────────────────────────────────────────
+      - name: Determine if PR should be created
+        id: should_pr
+        run: |
+          BUG_COUNT=$(jq '[.bugs[]?] | length' /tmp/ai-context/analysis.json 2>/dev/null || echo "0")
+          SEC_COUNT=$(jq '[.security[]?] | length' /tmp/ai-context/analysis.json 2>/dev/null || echo "0")
+          SDK_COUNT=$(jq '[.sdk3Violations[]?] | length' /tmp/ai-context/analysis.json 2>/dev/null || echo "0")
+          RISK=$(jq -r '.riskScore // 0' /tmp/ai-context/analysis.json 2>/dev/null || echo "0")
+          FORCE="${{ github.event.inputs.force_pr || 'false' }}"
+
+          # Add structural violations from TITAN v5 checks
+          TS0601_V=${{ steps.validation.outputs.ts0601_violations || 0 }}
+          COLL_V=${{ steps.validation.outputs.collision_count || 0 }}
+          ENERGY_V=${{ steps.validation.outputs.energy_violations || 0 }}
+
+          TOTAL_ISSUES=$((BUG_COUNT + SEC_COUNT + SDK_COUNT + TS0601_V + COLL_V + ENERGY_V))
+
+          if [ "$TOTAL_ISSUES" -gt 0 ] || [ "$FORCE" = "true" ] || [ "$RISK" -gt 30 ]; then
+            echo "create_pr=true" >> $GITHUB_OUTPUT
+          else
+            echo "create_pr=false" >> $GITHUB_OUTPUT
+          fi
+
+          echo "Total issues: $TOTAL_ISSUES | Risk: $RISK | Force: $FORCE"
+
+      - name: Create Pull Request
+        if: steps.should_pr.outputs.create_pr == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          commit-message: 'ai: monthly audit $(date +%Y-%m) [skip ci]'
+          branch: ai/monthly-audit-$(date +%Y-%m)
+          delete-branch: true
+          title: 'AI Monthly Audit - $(date +%B %Y) | Risk: ${{ steps.cache_update.outputs.cache_valid == ''true'' && ''Updated'' || ''Error'' }}'
+          body: |
+            ## AI Monthly Audit — $(date +%B %Y)
+
+            ### Delta Analysis
+            - **Commits (30d)**: ${{ steps.deltas.outputs.commit_count }}
+            - **Files changed**: ${{ steps.deltas.outputs.changed_files }}
+            - **Insertions**: +${{ steps.deltas.outputs.insertions }}
+            - **Deletions**: -${{ steps.deltas.outputs.deletions }}
+            - **New URLs**: ${{ steps.deltas.outputs.new_urls }}
+            - **Analysis Engine**: ${{ steps.ai_analysis.outputs.ai_engine || 'local-fallback' }}
+
+            ### Validation Results
+            | Check | Status |
+            |-------|--------|
+            | Mixin Order | ${{ steps.validation.outputs.mixin_passed == '1' && 'PASS' || 'FAIL' }} |
+            | WiFi Lifecycle | ${{ steps.validation.outputs.wifi_passed == '1' && 'PASS' || 'FAIL' }} |
+            | Fingerprint Health | ${{ steps.validation.outputs.fingerprint_passed == '1' && 'PASS' || 'FAIL' }} |
+            | Flow Card IDs | ${{ steps.validation.outputs.flowids_passed == '1' && 'PASS' || 'FAIL' }} |
+            | Security | ${{ steps.validation.outputs.security_passed == '1' && 'PASS' || 'FAIL' }} |
+            | TS0601 Catchall | ${{ steps.validation.outputs.ts0601_violations == '0' && 'PASS' || 'FAIL' }} (${{ steps.validation.outputs.ts0601_violations }} violations) |
+            | Fingerprint Collisions | ${{ steps.validation.outputs.collision_count == '0' && 'PASS' || 'FAIL' }} (${{ steps.validation.outputs.collision_count }} collisions) |
+            | Energy Divisor | ${{ steps.validation.outputs.energy_violations == '0' && 'PASS' || 'FAIL' }} (${{ steps.validation.outputs.energy_violations }} violations) |
+            | Image Conformity | ${{ steps.validation.outputs.img_missing_icon == '0' && 'PASS' || 'WARN' }} (${{ steps.validation.outputs.img_missing_icon }} missing icon.svg) |
+
+            ### What's Included
+            - Updated `.ai/KNOWLEDGE_CACHE.json` (v2.0)
+            - Generated audit report in `.ai/audit-reports/`
+            - ${{ steps.rules_update.outputs.rules_added }} new rules added to CORE_RULES.md (if any)
+
+            ### Files Changed
+            - `.ai/KNOWLEDGE_CACHE.json` — Knowledge cache updated to v2.0
+            - `.ai/audit-reports/AUDIT_*.md` — Full audit report
+            - `CORE_RULES.md` — New rules appended (if discovered)
+
+            ---
+            *Generated by TITAN Protocol v2 — Tuya Unified Zigbee Monthly Audit*
+          labels: |
+            ai-audit
+            monthly
+            automated
+          assignees: ${{ github.repository_owner }}

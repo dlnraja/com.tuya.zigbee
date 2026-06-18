@@ -112,6 +112,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
             
             // Set up periodic battery reading since automatic reporting doesn't work
             this.batteryInterval = this.homey.setInterval(async () => {
+              if (this._destroyed) return;
                 try {
                     const battery = await zclNode.endpoints[1].clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']);
                     if (battery && battery.batteryPercentageRemaining !== undefined) {
@@ -133,7 +134,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
     // Handle motion status attribute reports
     onZoneStatusAttributeReport(status) {
         this.log("Motion status: ", status.alarm1);
-        this.setCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
+        this.safeSetCapabilityValue('alarm_motion', status.alarm1).catch(this.error);
     }
 
     // Handle battery status attribute reports
@@ -141,15 +142,15 @@ class pir_mmwave_sensor extends ZigBeeDevice {
         const batteryThreshold = this.getSetting('batteryThreshold') || 20;
         const batteryLevel = batteryPercentageRemaining / 2; // Convert to percentage
         this.log('🔋 Battery handler called! Raw value:', batteryPercentageRemaining, 'Converted:', batteryLevel, '%');
-        this.setCapabilityValue('measure_battery', batteryLevel).catch(this.error);
-        this.setCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);
+        this.safeSetCapabilityValue('measure_battery', batteryLevel).catch(this.error);
+        this.safeSetCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);
     }
 
     // Handle illuminance attribute reports
     onIlluminanceMeasuredAttributeReport(measuredValue) {
         const luxValue = Math.round(Math.pow(10, (measuredValue - 1) / 10000)); // Convert measured value to lux
         this.log('measure_luminance | Illuminance (lux):', luxValue);
-        this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
+        this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this.error);
     }
 
     // Process Tuya-specific data points
@@ -163,11 +164,11 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 // Presence/Motion detection - can be boolean or number (1/0)
                 this.log('Motion detected via Tuya DP1:', measuredValue);
                 if (typeof measuredValue === 'boolean') {
-                    this.setCapabilityValue('alarm_motion', measuredValue).catch(this.error);
+                    this.safeSetCapabilityValue('alarm_motion', measuredValue).catch(this.error);
                 } else if (typeof measuredValue === 'number') {
                     const motionDetected = measuredValue === 1;
                     this.log('Motion state:', motionDetected ? 'DETECTED' : 'CLEAR');
-                    this.setCapabilityValue('alarm_motion', motionDetected).catch(this.error);
+                    this.safeSetCapabilityValue('alarm_motion', motionDetected).catch(this.error);
                 }
                 break;
 
@@ -219,9 +220,9 @@ class pir_mmwave_sensor extends ZigBeeDevice {
                 // Battery percentage
                 if (typeof measuredValue === 'number') {
                     this.log('🔋 Battery via Tuya DP110:', measuredValue, '%');
-                    this.setCapabilityValue('measure_battery', measuredValue).catch(this.error);
+                    this.safeSetCapabilityValue('measure_battery', measuredValue).catch(this.error);
                     const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-                    this.setCapabilityValue('alarm_battery', measuredValue < batteryThreshold).catch(this.error);
+                    this.safeSetCapabilityValue('alarm_battery', measuredValue < batteryThreshold).catch(this.error);
                 }
                 break;
 
@@ -323,6 +324,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
 
     // Handle device removal
     onDeleted() {
+      super.onDeleted();
         this.log('PIR MMWave Sensor removed');
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);

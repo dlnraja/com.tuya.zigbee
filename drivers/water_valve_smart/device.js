@@ -17,7 +17,7 @@ const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1b
  * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   
   get plugCapabilities() { return ['onoff', 'measure_battery', 'measure_temperature', 'meter_water', 'alarm_water']; }
 
@@ -149,6 +149,7 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

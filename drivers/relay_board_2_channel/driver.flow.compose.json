@@ -1,0 +1,56 @@
+{
+  "triggers": [
+    {
+      "id": "relay_board_2_channel_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": []
+    },
+    {
+      "id": "relay_board_2_channel_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "relay_board_2_channel_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "relay_board_2_channel_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": []
+    },
+    {
+      "id": "relay_board_2_channel_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": []
+    },
+    {
+      "id": "relay_board_2_channel_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": []
+    }
+  ]
+}

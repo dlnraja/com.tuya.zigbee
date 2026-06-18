@@ -14,7 +14,8 @@
     "thermostat_mode",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -57,9 +58,7 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_hybrid_device_air_purifier_smart_needs_device_assignment"]
   },
   "images": {
     "small": "/drivers/smart_lcd_thermostat/assets/images/small.png",

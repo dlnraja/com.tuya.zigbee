@@ -10,10 +10,10 @@ class WiFiSwitch2GangDevice extends TuyaLocalDevice {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2':  { capability: 'onoff.gang2', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '7':  { capability: 'unknown' }, // countdown_1 (seconds)
-      '8':  { capability: 'unknown' }, // countdown_2 (seconds)
+      '7':  { capability: 'countdown_remaining' },
+      '8':  { capability: 'countdown_remaining' },
       '13': { capability: 'unknown' }, // master switch
-      '14': { capability: 'unknown' }, // power-on status: off/on/memory
+      '14': { capability: 'power_on_behavior', transform: (v) => ({ 0: 'off', 1: 'on', 2: 'previous' }[v] ?? 'previous') },
       '15': { capability: 'unknown' }, // indicator: none/relay/pos
       '16': { capability: 'unknown' }, // backlight switch
       '20': { capability: 'measure_power', smartDivisor: true },
@@ -35,7 +35,10 @@ class WiFiSwitch2GangDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

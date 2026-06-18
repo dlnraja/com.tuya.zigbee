@@ -1,18 +1,19 @@
 'use strict';
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { boolean } = require('../../lib/converters/ValueConverterRegistry');
 
 class FingerprintLockDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['locked', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {
     return {
-      1: { capability: 'locked', transform: (v) => v === 1 || v === true },
+      1: { capability: 'locked', transform: boolean() },
       3: { capability: 'measure_battery', divisor: 1 },
-      8: { capability: 'locked', transform: (v) => v === 1 || v === true },
-      9: { capability: 'alarm_tamper', transform: (v) => !!v },
+      8: { capability: 'locked', transform: boolean() },
+      9: { capability: 'alarm_tamper', transform: boolean() },
       10: { capability: 'measure_battery', divisor: 1 },
-      13: { capability: 'alarm_tamper', transform: (v) => !!v },
-      35: { capability: 'alarm_tamper', transform: (v) => !!v }
+      13: { capability: 'alarm_tamper', transform: boolean() },
+      35: { capability: 'alarm_tamper', transform: boolean() }
     };
   }
   async onNodeInit({ zclNode }) {
@@ -39,6 +40,8 @@ class FingerprintLockDevice extends UnifiedSensorBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 

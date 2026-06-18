@@ -13,7 +13,9 @@
     "thermostat_mode",
     "measure_battery",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "child_lock",
+    "frost_protection"
   ],
   "energy": {
     "batteries": [
@@ -42,9 +44,7 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TZ3000_unknown"
-    ]
+    "manufacturerName": ["_tze200_p3dbf6qs", "_tze204_o3x45p96", "_tze284_c6wv4xyo", "_tze284_hvaxb2tc", "_tze284_o3x45p96", "_tze284_p3dbf6qs", "_tze284_rv6iuyxb"]
   },
   "settings": [
     {

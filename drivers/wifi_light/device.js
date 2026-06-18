@@ -60,6 +60,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
   }
 
   async _onData(data) {
+    if (this._destroyed) return;
     if (data && data.dps) {
       const dps = data.dps;
       
@@ -72,8 +73,8 @@ class WiFiLightDevice extends TuyaLocalDevice {
           const v = parseInt(hex.substring(8, 12), 16);
 
           if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-            await this.setCapabilityValue('light_hue', safeDivide(h, 360)).catch(this.error);
-            await this.setCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(this.error);
+            await this.safeSetCapabilityValue('light_hue', safeDivide(h, 360)).catch(this.error);
+            await this.safeSetCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(this.error);
             this.log(`[WIFI-LIGHT] DP24 color parsed: H=${h} S=${s} V=${v}`);
           }
         } catch (e) {
@@ -86,6 +87,8 @@ class WiFiLightDevice extends TuyaLocalDevice {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
     await super.onDeleted();
   }

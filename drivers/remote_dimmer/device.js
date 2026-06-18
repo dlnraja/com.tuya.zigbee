@@ -87,8 +87,8 @@ class RemoteDimmerDevice extends ZigBeeDevice {
         powerCfg.on('attr.batteryPercentageRemaining', (value) => {
           const pct = Math.round(value / 2);
           this.log('[RemoteDimmer] Battery:', pct, '%');
-          this.setCapabilityValue('measure_battery', pct).catch(this.error);
-          this.setCapabilityValue('alarm_battery', pct < 20).catch(this.error);
+          this.safeSetCapabilityValue('measure_battery', pct).catch(this.error);
+          this.safeSetCapabilityValue('alarm_battery', pct < 20).catch(this.error);
         });
 
         // Try to configure reporting
@@ -143,6 +143,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('[RemoteDimmer] Device deleted');
   }
 }

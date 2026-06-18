@@ -22,24 +22,33 @@ class BulbTunableDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
+    const _triggerIds = ["light_bulb_tunable_white_turned_on","light_bulb_tunable_white_turned_off","light_bulb_tunable_white_dim_changed"];
+    for (const _tid of _triggerIds) {
+      try {
+        const _card = this._getFlowCard(_tid, "trigger");
+        if (_card) {
+          _card.registerRunListener(async (args) => {
+            if (!args.device) return;
+            args.device.emit("flow:" + _tid, args);
+          });
+        }
+      } catch (_err) { this.error("Trigger " + _tid + ": " + _err.message); }
+    }
+    // END TRIGGERS
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('light_bulb_tunable_white_hybrid_is_on');
+      const card = this.homey.flow.getConditionCard('light_bulb_tunable_white_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition light_bulb_tunable_white_hybrid_is_on: ${err.message}`); }
+    } catch (err) { this.error(`Condition light_bulb_tunable_white_is_on: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_turn_on');
+      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -47,10 +56,10 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_turn_on: ${err.message}`); }
+    } catch (err) { this.error(`Action light_bulb_tunable_white_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_turn_off');
+      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,10 +67,10 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_turn_off: ${err.message}`); }
+    } catch (err) { this.error(`Action light_bulb_tunable_white_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_toggle');
+      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -70,10 +79,10 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_toggle: ${err.message}`); }
+    } catch (err) { this.error(`Action light_bulb_tunable_white_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_set_dim');
+      const card = this.homey.flow.getActionCard('light_bulb_tunable_white_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -81,7 +90,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_set_dim: ${err.message}`); }
+    } catch (err) { this.error(`Action light_bulb_tunable_white_set_dim: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }

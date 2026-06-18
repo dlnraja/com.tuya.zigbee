@@ -3,6 +3,7 @@ const { includesCI } = require('../../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
+const { boolean, enumMap } = require('../../lib/converters/ValueConverterRegistry');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
@@ -108,44 +109,44 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   get dpMappings() {
     if (this.dpProfile === 'nedis') {
       return {
-        1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-        2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
+        1: { capability: 'onoff', transform: boolean() },
+        2: { capability: 'thermostat_mode', transform: enumMap({ 0: 'auto', 1: 'heat', 2: 'off' }, 'heat') },
         16: { capability: 'target_temperature', smartDivisor: true },
         24: { capability: 'measure_temperature', smartDivisor: true },
-        40: { internal: true, type: 'child_lock', writable: true }
+        40: { capability: 'child_lock', transform: (v) => v === true || v === 1 }
       };
     }
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 DP mapping (also _TZE200_9xfjixap per haadeess #395)
       return {
-        2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
-        3: { internal: true, type: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
+        2: { capability: 'thermostat_mode', transform: enumMap({ 0: 'auto', 1: 'heat', 2: 'off' }, 'heat') },
+        3: { internal: true, type: 'running_state', transform: enumMap({ 0: 'heat', 1: 'idle' }, 'idle') },
         4: { capability: 'target_temperature', smartDivisor: true },
         5: { capability: 'measure_temperature', smartDivisor: true },
-        7: { internal: true, type: 'child_lock', writable: true },
-        14: { internal: true, type: 'window_open', transform: (v) => v === 1 || v === true },
-        35: { capability: 'alarm_battery', transform: (v) => v === 1 },
-        36: { internal: true, type: 'frost_protection', writable: true },
+        7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+        14: { internal: true, type: 'window_open', transform: boolean() },
+        35: { capability: 'alarm_battery', transform: boolean() },
+        36: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
         39: { internal: true, type: 'anti_scaling', writable: true },
         47: { internal: true, type: 'temp_calibration', divisor: 10, writable: true },
         101: { capability: 'dim', divisor: 100 },
-        102: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === true }
+        102: { internal: true, type: 'battery_low', transform: boolean() }
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
     return {
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true || v === 'on' },
-      2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'heat', 1: 'auto', 2: 'off' }[v] ?? 'heat') },
+      1: { capability: 'onoff', transform: boolean() },
+      2: { capability: 'thermostat_mode', transform: enumMap({ 0: 'heat', 1: 'auto', 2: 'off' }, 'heat') },
       3: { capability: 'target_temperature', smartDivisor: true },
       4: { capability: 'measure_temperature', smartDivisor: true },
-      7: { internal: true, type: 'child_lock', writable: true },
-      8: { internal: true, type: 'frost_protection', writable: true },
+      7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
+      8: { capability: 'frost_protection', transform: (v) => v === true || v === 1 },
       9: { internal: true, type: 'eco_temp', divisor: 10, writable: true },
       10: { internal: true, type: 'comfort_temp', divisor: 10, writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === true },
+      14: { internal: true, type: 'battery_low', transform: boolean() },
       15: { capability: 'measure_battery', divisor: 1 },
-      101: { capability: 'alarm_contact', transform: (v) => v === 1 || v === true },
+      101: { capability: 'alarm_contact', transform: boolean() },
       102: { capability: 'dim', divisor: 100 },
       103: { internal: true, type: 'boost_mode', writable: true },
       // Idea #22: Schedule DPs 104/105 (weekly schedule data)
@@ -154,7 +155,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       106: { internal: true, type: 'max_temp', divisor: 10, writable: true },
       107: { internal: true, type: 'away_mode', writable: true },
       108: { internal: true, type: 'away_temp', divisor: 10, writable: true },
-      109: { capability: 'alarm_generic', transform: (v) => v === 1 || v === true }
+      109: { capability: 'alarm_generic', transform: boolean() }
     };
   }
 
@@ -171,6 +172,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 3600000 });
       this.homey.setTimeout(async () => {
+        if (this._destroyed) return;
         try {
           const result = await this._timeSync.sync({ force: true });
           if (!result.success && result.reason === 'no_rtc') {await this._tuyaTimeSyncFallback();}
@@ -253,8 +255,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   async _setupThermostatCluster(zclNode) {
     const thermo = zclNode?.endpoints?.[1]?.clusters?.hvacThermostat;
     if (thermo?.on) {
-      thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
-      thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', v * 100).catch(() => { }));
+      thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
+      thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v * 100).catch(() => { }));
     }
   }
 

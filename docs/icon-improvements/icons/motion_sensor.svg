@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sensor housing -->
+  <circle cx="480" cy="480" r="280" stroke="black" stroke-width="40" fill="none"/>
+  <!-- PIR lens pattern (Fresnel rings) -->
+  <circle cx="480" cy="480" r="200" stroke="black" stroke-width="20" fill="none"/>
+  <circle cx="480" cy="480" r="140" stroke="black" stroke-width="15" fill="none"/>
+  <circle cx="480" cy="480" r="80" stroke="black" stroke-width="15" fill="none"/>
+  <!-- Detection waves -->
+  <path d="M 200 200 C 250 300 250 400 200 500" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <path d="M 760 200 C 710 300 710 400 760 500" stroke="black" stroke-width="20" fill="none" stroke-linecap="round"/>
+  <!-- Center sensor dot -->
+  <circle cx="480" cy="480" r="30" fill="black"/>
+</svg>

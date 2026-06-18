@@ -73,14 +73,14 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
   // Handle motion status alarms
   async onZoneStatusChangeNotification({ zoneStatus }) {
     this.log('Motion status:', zoneStatus.alarm1);
-    await this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
+    await this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
   }
 
   // Handle illuminance attribute reports
   async onIlluminanceMeasuredAttributeReport(measuredValue) {
     const luxValue = Math.round(Math.pow(10, (measuredValue - 1) / 10000));
     this.log('measure_luminance | Illuminance (lux):', luxValue);
-    await this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
+    await this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this.error);
   }
 
   // Process Tuya-specific data (if any)
@@ -90,6 +90,8 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   // Handle device removal with cleanup
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Motion Sensor removed');
     try {
       await super.onDeleted();

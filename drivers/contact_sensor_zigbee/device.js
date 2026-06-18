@@ -194,6 +194,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       if (state.lastValue !== null && timeSinceLastChange < this._debounceMs) {
         if (state.timer) this.homey.clearTimeout(state.timer);
         state.timer = this.homey.setTimeout(async () => {
+          if (this._destroyed) return;
           this.log(`[CONTACT] Debounce complete - applying: ${finalValue}`);
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
@@ -213,6 +214,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           }
           if (state.timer) this.homey.clearTimeout(state.timer);
           state.timer = this.homey.setTimeout(async () => {
+            if (this._destroyed) return;
             this.log(`[CONTACT] Extended debounce complete - applying: ${finalValue}`);
             state.lastValue = finalValue;
             state.confirmedValue = finalValue;
@@ -241,6 +243,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
   }
 
   async _handleBatteryUpdate(value) {
+    if (this._destroyed) return;
     const now = Date.now();
     if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) return;
     this._lastBatteryReportTime = now;
@@ -257,6 +260,8 @@ class ContactSensorDevice extends UnifiedSensorBase {
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     if (this._contactState?.timer) {
       this.homey.clearTimeout(this._contactState.timer);
       this._contactState.timer = null;

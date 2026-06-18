@@ -22,6 +22,7 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
   }
 
   async _processDPUpdate(dps) {
+    if (this._destroyed) return;
     super._processDPUpdate(dps);
     this.log('[WIFI-TANK] Raw DPs:', JSON.stringify(dps));
     
@@ -35,13 +36,13 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
       const isHigh = parsed === 2;
 
       if (this.hasCapability('alarm_water_low')) {
-        await this.setCapabilityValue('alarm_water_low', isLow).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_water_low', isLow).catch(() => { });
       }
       if (this.hasCapability('alarm_water_high')) {
-        await this.setCapabilityValue('alarm_water_high', isHigh).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_water_high', isHigh).catch(() => { });
       }
       if (this.hasCapability('alarm_water')) {
-        await this.setCapabilityValue('alarm_water', isLow || isHigh).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_water', isLow || isHigh).catch(() => { });
       }
 
       const driver = this.homey.drivers.getDriver('wifi_water_tank_monitor');
@@ -89,9 +90,11 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
     }
   }
 
-  onDeleted() {
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('[WIFI-TANK] Sensor deleted');
-    if (super.onDeleted) {super.onDeleted();}
+    await super.onDeleted();
   }
 }
 

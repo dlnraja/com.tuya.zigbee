@@ -20,7 +20,7 @@ const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNa
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
 
-class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get plugCapabilities() { 
     return ['onoff', 'measure_battery', 'meter_water']; 
@@ -43,7 +43,7 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
       return {
         1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
         2: { capability: 'onoff.gang2', transform: (v) => v === 1 || v === true },
-        5: { capability: null, internal: 'countdown_timer', writable: true },
+        5: { capability: 'countdown_remaining' },
         6: { capability: null, internal: 'remaining_time' },
         13: { capability: 'measure_battery', divisor: 1 },
         14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
@@ -52,7 +52,7 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
 
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      5: { capability: null, internal: 'countdown_timer', writable: true },
+      5: { capability: 'countdown_remaining' },
       6: { capability: null, internal: 'remaining_time' },
       7: { capability: 'meter_water', divisor: 1 },
       11: { capability: null, internal: 'weather_delay', writable: true },
@@ -131,12 +131,14 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
   }
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     // Clean up timers to prevent memory leaks (inherited from UnifiedPlugBase if needed, but keeping for safety)
     if (this._interval) { clearInterval(this._interval); this._interval = null; }
     if (this._timer) { clearTimeout(this._timer); this._timer = null; }
     if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
-    await super.onDeleted();
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

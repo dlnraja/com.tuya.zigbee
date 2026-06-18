@@ -101,6 +101,44 @@
   - **Static Manifests**: The manufacturer name, ZCL clusters, and `modelId` must remain statically registered in `driver.compose.json` / `app.json` to allow the Homey Pro box to match the hardware and complete the pairing flow locally.
   - **Dynamic JSON Databases**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine capabilities and custom DP parser operations dynamically at runtime, ensuring offline capability mapping continues to work perfectly.
 
+## MCU Time Sync Formats (TuyaTimeSyncFormats.js v6.0.0)
+- 23 time sync format variants for Tuya MCU devices
+- **Location**: `lib/tuya/TuyaTimeSyncFormats.js`
+- **Auto-detection**: `TuyaTimeSyncFormats.guessFormat(deviceInfo)` uses 6 heuristics
+- **Key formats**: TUYA_DUAL_2000 (LCD sensors), TUYA_MCU (MCU devices), TUYA_SEQ_10 (v3.3+), TUYA_FULL_TZ (thermostats)
+- **MCU protocol versions**: v3.1 (8-byte), v3.2 (8-byte), v3.3 (10-byte seq REQUIRED), v3.4 (+DP17 commit), v3.5 (extended TZ)
+- **RULE**: Always use guessFormat() for unknown devices; never hardcode a single format
+- **RULE**: ZT08 weather stations require DP17 commit trigger after time sync
+- **RULE**: Check MCU version from device before selecting format
+
+## MCU Format Guessing Rules (TuyaTimeSyncFormats.guessFormat())
+When encountering an unknown device, the system uses 6 heuristics to rank time format candidates:
+1. **Manufacturer prefix**: `_TZE200/204/284` -> TUYA_DUAL_2000 (MCU-based); `_TZ3000/3210` -> ZIGBEE_2000 (ZCL)
+2. **Product ID**: `TS0601` -> TUYA_DUAL_2000; `TS0201` -> ZIGBEE_2000; `TS130F` -> TUYA_STANDARD
+3. **Endpoint clusters**: 0xEF00 present -> MCU device; 0x000A present -> ZCL time cluster
+4. **Driver class**: Thermostat -> TUYA_FULL_TZ; Sensor -> TUYA_DUAL_2000; Cover -> TUYA_STANDARD
+5. **Known device patterns**: Specific manufacturer IDs mapped to proven formats
+6. **Model ID patterns**: 'th'/'temp' -> dual; 'trv'/'valve' -> full TZ; 'lcd'/'display' -> dual
+
+## Smart Calibration Rules (SmartDivisorManager)
+- **Location**: `lib/managers/SmartDivisorManager.js` (16.7KB)
+- **Auto-detection**: SmartDivisorManager auto-detects DP value divisors at runtime
+- **Known divisor DPs**: DP18 (temp/10), DP19 (humidity/10), DP22 (formaldehyde/100)
+- **Double-division prevention**: TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
+- **RULE**: Never assume 1:1 scaling; always check SmartDivisorManager for auto-detection
+- **RULE**: Values are checked against VALID_RANGES before capability updates
+- **RULE**: Use `smartDivisorDetect(rawValue, dpId, options)` for intelligent detection
+- **RULE**: Use `smartParse(rawValue, dpId, options)` for complete parse wrapper
+
+## Button Flow Card Rules
+- **Physical button**: `{driver}_physical_gang{N}_{on|off}` triggered by PhysicalButtonMixin
+- **Virtual button**: Uses `this.safeSetCapabilityValue()` through VirtualButtonMixin
+- **Deduplication**: 200ms debounce + 1.5s sliding window
+- **markAppCommand**: Always call before sending commands to prevent ghost triggers
+- **RULE**: IDs must be globally unique across ALL drivers
+- **RULE**: NO `titleFormatted` with `[[device]]` (causes manual device selection bug)
+- **RULE**: Virtual buttons MUST use `this.safeSetCapabilityValue()` through VirtualButtonMixin hardening
+
 ## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
 - **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
 - **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.

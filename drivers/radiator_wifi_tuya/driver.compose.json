@@ -11,7 +11,8 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "onoff"
+    "onoff",
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

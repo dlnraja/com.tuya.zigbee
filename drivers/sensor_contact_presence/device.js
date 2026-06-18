@@ -97,22 +97,22 @@ class ContactPresenceHybridDevice extends UnifiedSensorBase {
     if (presence === current) {return;}
     if (presence) {
       if (this._intelGate) {this._intelGate.process('alarm_motion', true);}
-      this.setCapabilityValue('alarm_motion', true).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
-      this.setCapabilityValue('alarm_motion', false).catch(() => {});
+      this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
       this._triggerPresenceFlows(false);
     }
   }
   async _triggerPresenceFlows(detected) {
-    const cardId = detected ? 'sensor_contact_presence_hybrid_presence_detected' : 'sensor_contact_presence_hybrid_presence_cleared';
+    const cardId = detected ? 'sensor_contact_presence_presence_detected' : 'sensor_contact_presence_presence_cleared';
     try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
   }
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {return;}
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
-    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));}
+    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => this.safeSetCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));}
   }
   _setupTuyaDPListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];

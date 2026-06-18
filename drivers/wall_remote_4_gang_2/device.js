@@ -57,6 +57,7 @@ class wall_remote_4_gang_2 extends UnifiedSwitchBase {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('4 Gang Wall Remote removed');
     if (typeof super.onDeleted === 'function') {super.onNodeInit({ zclNode });}
   }

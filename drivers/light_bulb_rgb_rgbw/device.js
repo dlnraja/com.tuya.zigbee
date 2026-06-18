@@ -64,7 +64,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
       // Extended features
       6: { internal: true, type: 'scene_data' },
-      7: { internal: true, type: 'countdown', writable: true },
+      7: { capability: 'countdown_remaining' },
       8: { internal: true, type: 'music_sync' }, // Music sync mode
 
       // Settings
@@ -219,7 +219,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
     // Update Homey capability
     await this.triggerCapabilityListener('light_temperature', parseFloat(homeyValue)).catch(() => { });
-    await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
+    await this.safeSetCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 
   /**
@@ -276,6 +276,8 @@ class RGBBulbDevice extends UnifiedLightBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

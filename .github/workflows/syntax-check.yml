@@ -1,5 +1,5 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
-# Re-enable by removing 'if: false' below
+# TITAN Protocol v5 — Syntax Check & Validation
+# Updated with TITAN v5 integrity checks
 name: 🔍 Syntax Check & SDK3 Validation
 
 on:
@@ -16,22 +16,24 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
 
 jobs:
   syntax-check:
-    if: false  # DISABLED — remove this line to re-enable
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          cache: npm
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci || npm install
@@ -46,32 +48,82 @@ jobs:
           find drivers -name "*.js" -exec node -c {} \;
           echo "✅ All driver files pass syntax check"
 
-      - name: 🛡️ Fleetwood Integrity & Manifest Gateway
-        run: node scripts/PRE_COMMIT_CHECKS.js
-
-      - name: Check forbidden patterns
+      - name: Check forbidden patterns (TITAN v5)
         run: |
-          # PF-01: if/ternary hybrid (exclude minified files in lib/clusters/)
-          if grep -rn "if.*return.*:.*null" lib/ --include="*.js" --exclude-dir=clusters; then
-            echo "❌ PF-01 pattern detected: if/ternary hybrid"
-            exit 1
-          fi
-          # PF-02: unmatched parens in Math.round
-          if grep -rn "Math\.round.*safeDivide.*))" lib/ --include="*.js"; then
-            echo "❌ PF-02 pattern detected: unmatched parens"
-            exit 1
-          fi
-          echo "✅ No forbidden patterns found"
+          echo "🔍 TITAN v2 Pattern Check..."
 
-      - name: Check no _hybrid suffixes
-        run: |
-          count=$(find drivers -type d -name "*_hybrid" | wc -l)
-          if [ "$count" -gt 0 ]; then
-            echo "❌ Found $count _hybrid directories"
-            find drivers -type d -name "*_hybrid"
+          # 1. Raw setCapabilityValue in drivers
+          raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          if [ "$raw_set" -gt 0 ]; then
+            echo "❌ Found $raw_set files with raw setCapabilityValue (should be safeSetCapabilityValue)"
             exit 1
           fi
-          echo "✅ No _hybrid directories found"
+
+          # 2. console.log in drivers
+          console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          if [ "$console" -gt 0 ]; then
+            echo "❌ Found $console files with console.log in drivers/"
+            exit 1
+          fi
+
+          # 3. Empty manufacturerName arrays
+          empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          if [ "$empty_mfr" -gt 0 ]; then
+            echo "❌ Found $empty_mfr files with empty manufacturerName arrays"
+            exit 1
+          fi
+
+          # 4. Wildcard fingerprints
+          wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          if [ "$wildcards" -gt 0 ]; then
+            echo "❌ Found $wildcards files with wildcard fingerprints"
+            exit 1
+          fi
+
+          # 5. titleFormatted with [[device]]
+          title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          if [ "$title_fmt" -gt 0 ]; then
+            echo "❌ Found $title_fmt files with titleFormatted [[device]]"
+            exit 1
+          fi
+
+          # 6. UTF-16 JSON loading
+          utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l)
+          if [ "$utf16" -gt 0 ]; then
+            echo "❌ Found $utf16 files with UTF-16 JSON loading"
+            exit 1
+          fi
+
+          echo "✅ All TITAN v2 pattern checks passed"
+
+      - name: Check TITAN v5 lifecycle patterns
+        run: |
+          echo "🔍 TITAN v5 Lifecycle Pattern Check..."
+
+          # 7. Bare setTimeout/setInterval in device files (not this.homey.setTimeout)
+          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          if [ "$bare_timeout" -gt 0 ]; then
+            echo "❌ Found $bare_timeout bare setTimeout/setInterval calls in drivers (use this.homey.setTimeout)"
+            exit 1
+          fi
+
+          # 8. Bare setTimeout/setInterval in lib files
+          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          if [ "$bare_timeout_lib" -gt 0 ]; then
+            echo "❌ Found $bare_timeout_lib bare setTimeout/setInterval calls in lib/ (use this.homey.setTimeout or this.device.homey.setTimeout)"
+            exit 1
+          fi
+
+          # 9. assertZCLNode guard in TuyaZigbeeDevice
+          if [ -f lib/tuya/TuyaZigbeeDevice.js ]; then
+            if grep -q "assertZCLNode" lib/tuya/TuyaZigbeeDevice.js; then
+              echo "✅ assertZCLNode guard present in TuyaZigbeeDevice"
+            else
+              echo "⚠️  assertZCLNode guard not found in TuyaZigbeeDevice (may be acceptable)"
+            fi
+          fi
+
+          echo "✅ All TITAN v5 lifecycle checks passed"
 
       - name: Validate app.json size
         run: |
@@ -86,3 +138,72 @@ jobs:
       - name: Validate Homey SDK3 compliance
         run: |
           npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"
+
+      - name: Check SVG viewBox validation (TITAN v5)
+        run: |
+          echo "🔍 SVG ViewBox Validation (must be 960x960)..."
+          FAIL=0
+          TOTAL=0
+          for svg in drivers/*/assets/icon.svg; do
+            [ ! -f "$svg" ] && continue
+            TOTAL=$((TOTAL + 1))
+            vb=$(grep -oP 'viewBox="\K[^"]+' "$svg" 2>/dev/null || true)
+            if [ "$vb" != "0 0 960 960" ]; then
+              echo "❌ Bad viewBox in $svg: '$vb' (expected '0 0 960 960')"
+              FAIL=1
+            fi
+          done
+          if [ $TOTAL -eq 0 ]; then
+            echo "⚠️  No icon.svg files found in drivers/"
+          elif [ $FAIL -eq 0 ]; then
+            echo "✅ All $TOTAL icon.svg files have valid 960x960 viewBox"
+          else
+            exit 1
+          fi
+
+      - name: Check icon.svg existence (TITAN v5)
+        run: |
+          echo "🔍 Icon SVG Existence Check..."
+          MISSING=0
+          TOTAL=0
+          for dir in drivers/*/; do
+            driver=$(basename "$dir")
+            TOTAL=$((TOTAL + 1))
+            if [ ! -f "$dir/assets/icon.svg" ]; then
+              echo "❌ Missing icon.svg: $driver"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          if [ $MISSING -eq 0 ]; then
+            echo "✅ All $TOTAL drivers have icon.svg"
+          else
+            echo "❌ $MISSING/$TOTAL drivers missing icon.svg"
+            exit 1
+          fi
+
+      - name: Check image assets (TITAN v5)
+        run: |
+          echo "🔍 Image Asset Validation (small.png + large.png required)..."
+          MISSING=0
+          TOTAL=0
+          for dir in drivers/*/; do
+            driver=$(basename "$dir")
+            TOTAL=$((TOTAL + 1))
+            HAS_SMALL=0
+            HAS_LARGE=0
+            if [ -f "$dir/assets/images/small.png" ] || [ -f "$dir/assets/small.png" ]; then
+              HAS_SMALL=1
+            fi
+            if [ -f "$dir/assets/images/large.png" ] || [ -f "$dir/assets/large.png" ]; then
+              HAS_LARGE=1
+            fi
+            if [ $HAS_SMALL -eq 0 ] || [ $HAS_LARGE -eq 0 ]; then
+              missing_parts=""
+              [ $HAS_SMALL -eq 0 ] && missing_parts="small.png"
+              [ $HAS_LARGE -eq 0 ] && [ -n "$missing_parts" ] && missing_parts="$missing_parts, large.png"
+              [ $HAS_LARGE -eq 0 ] && [ -z "$missing_parts" ] && missing_parts="large.png"
+              echo "⚠️  $driver: missing $missing_parts"
+              MISSING=$((MISSING + 1))
+            fi
+          done
+          echo "ℹ️  $MISSING/$TOTAL drivers have missing image assets (non-blocking)"

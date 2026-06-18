@@ -25,6 +25,7 @@ class RainContactSensorDevice extends UnifiedSensorBase {
       if (state.lastValue !== null && timeSinceLastChange < this._debounceMs) {
         if (state.timer) this.homey.clearTimeout(state.timer);
         state.timer = this.homey.setTimeout(async () => {
+          if (this._destroyed) return;
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
           state.lastChangeTime = Date.now();

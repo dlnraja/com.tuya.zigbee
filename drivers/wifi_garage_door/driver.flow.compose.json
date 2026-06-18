@@ -4,13 +4,15 @@
       "id": "wifi_garage_door_wifi_garage_opened",
       "title": {
         "en": "Garage opened"
-      }
+      },
+      "args": []
     },
     {
       "id": "wifi_garage_door_wifi_garage_closed",
       "title": {
         "en": "Garage closed"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -18,7 +20,8 @@
       "id": "wifi_garage_door_wifi_garage_is_open",
       "title": {
         "en": "Garage is open"
-      }
+      },
+      "args": []
     }
   ],
   "actions": []

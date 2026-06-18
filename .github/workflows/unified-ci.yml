@@ -33,9 +33,9 @@ jobs:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
       - name: Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
           node-version: '22'
           cache: 'npm'
@@ -151,15 +151,42 @@ jobs:
             echo "All drivers have complete case variant coverage"
           fi
 
+      - name: 🔧 Flow Card Integrity Watchdog (Pre-Publish Gate)
+        run: |
+          echo "Running flow card integrity watchdog..."
+          node scripts/automation/flow-card-watchdog.js --ci --json > /tmp/flow-watchdog-report.json 2>&1 || EXIT_CODE=$?
+          cat /tmp/flow-watchdog-report.json | node -e "
+            const d=require('fs').readFileSync(0,'utf8');
+            try {
+              const j=JSON.parse(d);
+              const s=j.summary||{};
+              console.log('Flow Card Watchdog Results:');
+              console.log('  Drivers scanned: '+(s.driversScanned||0));
+              console.log('  Flow files: '+(s.driversWithFlowFiles||0));
+              console.log('  Total flow cards: '+(s.totalFlowCards||0));
+              console.log('  Errors: '+(s.errors||0));
+              console.log('  Warnings: '+(s.warnings||0));
+              if(s.errors>0) {
+                console.log('::error::Flow card watchdog found '+s.errors+' error(s)');
+                process.exit(1);
+              }
+              console.log('Flow card integrity: PASS');
+            } catch(e) { console.log('Flow card watchdog output parse skipped'); }
+          "
+          if [ "${EXIT_CODE:-0}" -ne 0 ]; then
+            echo "::error::Flow card integrity watchdog failed"
+            exit 1
+          fi
+
   build:
     name: 🏗️ Production Build & Optimize
     needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
       - name: Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
           node-version: '22'
           cache: 'npm'
@@ -180,7 +207,7 @@ jobs:
           grep -q "smartDivisor" lib/devices/UnifiedSensorBase.js && echo "Smart Divisor Active" || echo "WARNING: smartDivisor not found"
       
       - name: 📦 Artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: homey-app-bundle
           path: .homeybuild/
@@ -197,7 +224,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
       - name: 🕵️ Deep Credential & Token Leak Detection
         run: |
           echo "🔐 [1/5] Checking for .env and forbidden files..."

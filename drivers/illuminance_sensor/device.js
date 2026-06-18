@@ -48,7 +48,7 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
           illuminanceCluster.on('attr.measuredValue', async (value) => {
             const lux = this._convertToLux(value);
             this.log(`[ILLUMINANCE] Received: raw=${value}, lux=${lux}`);
-            await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
+            await this.safeSetCapabilityValue('measure_luminance', lux).catch(this.error);
           });
         }
 
@@ -74,6 +74,8 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 
 
   async onDeleted() {
+    this._destroyed = true;
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

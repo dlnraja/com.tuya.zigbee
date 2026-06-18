@@ -26,7 +26,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Set initial dim value
     if (this.hasCapability('dim')) {
-      await this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
+      await this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
 
     // v5.5.976: Enable TS004F scene mode (critical for button events)
@@ -118,7 +118,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
           const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining  / 2);
-          await this.setCapabilityValue('measure_battery', batteryValue).catch(this.error);
+          await this.safeSetCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }
       }
@@ -291,6 +291,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   async _handleRotation(direction, rate) {
+    if (this._destroyed) return;
     const delta = direction === 'up' ? 0.1 : -0.1;
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
@@ -301,6 +302,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
+    if (this._destroyed) return;
     const delta = direction === 'up' ? stepSize / 254 : -(stepSize / 254);
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
@@ -313,17 +315,15 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   _updateSimulatedBrightness(delta) {
     this._simulatedBrightness = Math.max(0, Math.min(1, this._simulatedBrightness + delta));
     if (this.hasCapability('dim')) {
-      this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
+      this.safeSetCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
     this.log('Simulated brightness:', Math.round(this._simulatedBrightness * 100), '%');
   }
 
   async _triggerRotateLeft() {
     if (this.hasCapability('button.rotate_left')) {
-      await this.setCapabilityValue('button.rotate_left', true).catch(this.error);
-      this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.rotate_left', false).catch(this.error);
-      }, 100);
+      await this.safeSetCapabilityValue('button.rotate_left', true).catch(this.error);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_left', false).catch(this.error); }, 100);
     }
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
@@ -333,10 +333,8 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async _triggerRotateRight() {
     if (this.hasCapability('button.rotate_right')) {
-      await this.setCapabilityValue('button.rotate_right', true).catch(this.error);
-      this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.rotate_right', false).catch(this.error);
-      }, 100);
+      await this.safeSetCapabilityValue('button.rotate_right', true).catch(this.error);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error); }, 100);
     }
     const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
@@ -346,10 +344,8 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async _triggerButtonPress(action) {
     if (this.hasCapability('button.press')) {
-      await this.setCapabilityValue('button.press', true).catch(this.error);
-      this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.press', false).catch(this.error);
-      }, 100);
+      await this.safeSetCapabilityValue('button.press', true).catch(this.error);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);
     }
     try {
       const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
@@ -400,6 +396,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Smart Knob Rotary device deleted');
   }
 

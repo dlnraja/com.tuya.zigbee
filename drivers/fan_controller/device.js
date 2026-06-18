@@ -154,6 +154,7 @@ class FanControllerDevice extends ZigBeeDevice {
   }
 
   async _handleDP(dp, value) {
+    if (this._destroyed) return;
     if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
@@ -186,6 +187,7 @@ class FanControllerDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

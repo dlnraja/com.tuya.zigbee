@@ -74,7 +74,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     switch (dpId) {
       case 1: // Presence
         const presence = this._inference.updatePresenceDP(value);
-        await this.setCapabilityValue('alarm_motion', presence).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_motion', presence).catch(() => { });
         
         // Auto relay control
         if (this.getSetting('relay_mode') === 'auto') {
@@ -85,12 +85,12 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       case 9: // Target Distance
         const distance = smartParse(value, null, { capability: 'measure_temperature' });
         this._inference.updateDistance(distance);
-        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => { });
+        return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => { });
 
       case 104: // Illuminance
         const lux = Math.max(0, value + (this.getSetting('illuminance_calibration') || 0));
         this._inference.updateLux(lux);
-        return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+        return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
 
       case 101: // Relay / Detection Delay
       case 16:  // Relay Alt
@@ -106,7 +106,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
         const zoneNum = dpId - 12; // DP13->zone1, DP14->zone2, DP15->zone3
         const zonePresence = value === 1 || value === true;
         this._zoneState[zoneNum] = zonePresence;
-        await this.setCapabilityValue(`alarm_motion.zone${zoneNum}`, zonePresence).catch(() => {});
+        await this.safeSetCapabilityValue(`alarm_motion.zone${zoneNum}`, zonePresence).catch(() => {});
         this.log(`[CEILING] Zone ${zoneNum} presence: ${zonePresence}`);
         return;
 
@@ -115,14 +115,14 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       case 18: // Zone 3 distance
         const distZoneNum = dpId - 15; // DP16->zone1, DP17->zone2, DP18->zone3
         const zoneDistance = smartParse(value, null, { capability: `measure_luminance.distance.zone${distZoneNum}` });
-        await this.setCapabilityValue(`measure_luminance.distance.zone${distZoneNum}`, zoneDistance).catch(() => {});
+        await this.safeSetCapabilityValue(`measure_luminance.distance.zone${distZoneNum}`, zoneDistance).catch(() => {});
         this.log(`[CEILING] Zone ${distZoneNum} distance: ${zoneDistance}m`);
         return;
 
       case 19: // Movement classification
         const MOVEMENT_LABELS = ['none', 'stationary', 'micro_motion', 'small_motion', 'large_motion'];
         const classification = MOVEMENT_LABELS[value] || 'unknown';
-        await this.setCapabilityValue('measure_motion.classification', classification).catch(() => {});
+        await this.safeSetCapabilityValue('measure_motion.classification', classification).catch(() => {});
         this.log(`[CEILING] Movement classification: ${classification}`);
         return;
     }
@@ -132,7 +132,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       const result = this._discovery.analyzeDP(dpId, value);
       if (result && result.confidence >= 80) {
         this.log(`[CEILING] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value}`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => {});
+        return this.safeSetCapabilityValue(result.capability, result.value).catch(() => {});
       }
     }
   }
@@ -149,11 +149,13 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   }
 
   async _handleAutoRelay(presence) {
+    if (this._destroyed) return;
     const delay = presence ? this.getSetting('relay_delay_on') || 0 : this.getSetting('relay_delay_off') || 0;
     
     if (this._relayTimeout) {this.homey.clearTimeout(this._relayTimeout);}
     
     this._relayTimeout = this.homey.setTimeout(async () => { 
+      if (this._destroyed) return;
       await this._setRelay(presence);  
     }, delay * 1000);
   }

@@ -1,5 +1,10 @@
 name: "Upstream Auto-Triage & Redirect"
 
+# <!-- badges:start -->
+# [![Upstream Auto-Triage & Redirect](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/upstream-auto-triage.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/upstream-auto-triage.yml)
+# <!-- badges:end -->
+
+
 on:
   schedule:
     - cron: '30 6 * * 1'  # Weekly on Monday 06:30 UTC
@@ -55,7 +60,7 @@ jobs:
       KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
 
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
       - id: s
         run: |
           V=$(node -p "require('./app.json').version")
@@ -66,13 +71,15 @@ jobs:
           echo "fps=$F" >> "$GITHUB_OUTPUT"
 
   triage-upstream:
+    if: false  # DISABLED - Do not auto-reply on external repos (JohanBendz)
     name: "Triage JohanBendz"
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
+          cache: npm
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Triage issues and PRs
@@ -91,7 +98,7 @@ jobs:
           fi
       - name: Create tracking issue for new FPs
         if: steps.triage_run.outputs.has_new_fps == 'true'
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7.1.0
         with:
           script: |
             const fs=require('fs');
@@ -117,9 +124,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
+          cache: npm
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Triage issues and PRs

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Radiator body -->
+  <rect x="200" y="250" width="560" height="450" rx="20" stroke="black" stroke-width="40" fill="none"/>
+  <!-- Radiator channels -->
+  <line x1="320" y1="250" x2="320" y2="700" stroke="black" stroke-width="25"/>
+  <line x1="440" y1="250" x2="440" y2="700" stroke="black" stroke-width="25"/>
+  <line x1="560" y1="250" x2="560" y2="700" stroke="black" stroke-width="25"/>
+  <line x1="680" y1="250" x2="680" y2="700" stroke="black" stroke-width="25"/>
+  <!-- Valve body (right side) -->
+  <rect x="700" y="350" width="150" height="250" rx="30" stroke="black" stroke-width="30" fill="none"/>
+  <!-- Valve wheel -->
+  <circle cx="775" cy="400" r="50" stroke="black" stroke-width="25" fill="none"/>
+  <line x1="775" y1="360" x2="775" y2="440" stroke="black" stroke-width="15"/>
+  <line x1="735" y1="400" x2="815" y2="400" stroke="black" stroke-width="15"/>
+  <!-- Pipe connections -->
+  <rect x="730" y="620" width="90" height="100" rx="10" stroke="black" stroke-width="20" fill="none"/>
+  <rect x="730" y="230" width="90" height="120" rx="10" stroke="black" stroke-width="20" fill="none"/>
+</svg>

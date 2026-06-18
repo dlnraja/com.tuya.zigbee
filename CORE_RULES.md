@@ -1,6 +1,7 @@
 # CORE RULES — Tuya Unified Zigbee for Homey Pro
 > Single source of truth for all AI agents, developers, and CI/CD pipelines
-> Version: 2.0.0 | Last Updated: 2026-06-16 (TITAN Protocol v2)
+> Version: 4.0.0 | Last Updated: 2026-06-18 (Documentation Update v7.0)
+> Rules: R1-R58 (58 enrichment rules) + CP1-CP10 (10 crash prevention rules) + IC1-IC4 (4 image conformity rules)
 
 ## 🎯 Vision
 **LOCAL-FIRST** — 100% local execution on Homey Pro. Zero cloud calls during normal operation.
@@ -735,6 +736,52 @@ const result = await CrashPrevention.withRetry(async () => {
 }, { maxRetries: 3, delay: 1000, context: this });
 ```
 
+## 🖼️ Image Conformity Rules
+
+### IC1: SVG Standards (All Driver Icons)
+```xml
+<!-- REQUIRED - All driver SVG icons must conform to Homey standards: -->
+<!-- viewBox: 960x960 for Homey capability icons -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" width="960" height="960">
+  <!-- Flat design, single-color preferred -->
+  <!-- NO gradients (linearGradient, radialGradient) -->
+  <!-- NO raster images (embedded PNG, JPG, base64) -->
+  <!-- Transparent or single solid fill background -->
+</svg>
+```
+
+### IC2: App Icon Standards
+```xml
+<!-- REQUIRED - App icon at assets/icon.svg: -->
+<!-- viewBox: 0 0 100 100 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Current: 1212 bytes, no gradients, no rasters, fully compliant -->
+</svg>
+```
+
+### IC3: Image Generation
+```bash
+# REQUIRED - Use regen-images.js for driver images:
+node scripts/regen-images.js          # Generate all images
+node scripts/regen-images.js --check  # Check conformity only
+
+# Image sizes generated:
+# small.png  (75x75)   - Device list thumbnail
+# large.png  (500x500) - Device detail view
+# xlarge.png (1000x1000) - High-res display
+# Compression: level 9, white background (r:255, g:255, b:255, alpha:1)
+```
+
+### IC4: Image Conformity Audit Results
+| Metric | Value |
+|--------|-------|
+| Total drivers | 430 |
+| Drivers with SVG | 430 (100%) |
+| Drivers without SVG | 0 |
+| App icon compliant | Yes (100x100, no gradients, no rasters) |
+| Regen script | `scripts/regen-images.js` |
+| Last audit | 2026-06-17 |
+
 ## 📊 Crash Pattern Analysis Summary
 
 ### Identified Crash Patterns (v9.0.41)
@@ -793,17 +840,19 @@ const result = await CrashPrevention.withRetry(async () => {
 | 3 | 🔴 CRITICAL | 159 drivers using raw `setCapabilityValue` | 159 driver files |
 | 4 | 🟡 MEDIUM | Incorrect placeholder URLs in KNOWLEDGE_CACHE.json | 1 file |
 
-### New Modules Created
-| Module | File | Purpose |
-|--------|------|---------|
-| CircuitBreaker | `lib/utils/CircuitBreaker.js` | Fault tolerance for external APIs |
-| ValueConverterRegistry | `lib/converters/ValueConverterRegistry.js` | Centralized DP value converters (Z2M-inspired) |
-| CapabilityMapCache | `lib/utils/CapabilityMapCache.js` | Cache capabilityMap in onInit() |
-| BatchCapabilityUpdater | `lib/managers/BatchCapabilityUpdater.js` | Batch capability updates (50ms window) |
-| DPCache | `lib/managers/DPCache.js` | Per-device DP value cache for offline fallback |
-| safeLogger | `lib/utils/safeLogger.js` | Safe logger replacing console.log fallbacks |
-| ConnectionStateTracker | `lib/utils/ConnectionStateTracker.js` | WiFi connection state tracking with history and uptime stats |
-| RetryWithBackoff | `lib/utils/RetryWithBackoff.js` | Exponential backoff retry for DP queries and ZCL reads |
+### New Modules Created (10 Total)
+| Module | File | Size | Purpose |
+|--------|------|------|---------|
+| CircuitBreaker | `lib/utils/CircuitBreaker.js` | 7.3KB | Fault tolerance for external APIs (CLOSED/OPEN/HALF_OPEN) |
+| ValueConverterRegistry | `lib/converters/ValueConverterRegistry.js` | 16.2KB | Centralized DP value converters (Z2M-inspired) |
+| CapabilityMapCache | `lib/utils/CapabilityMapCache.js` | 3.8KB | WeakMap-based capabilityMap caching |
+| BatchCapabilityUpdater | `lib/managers/BatchCapabilityUpdater.js` | 4.2KB | Batch capability updates (50ms window) |
+| DPCache | `lib/managers/DPCache.js` | 3.5KB | Per-device DP value cache for offline fallback |
+| safeLogger | `lib/utils/safeLogger.js` | 1.8KB | Safe logger replacing console.log fallbacks |
+| ConnectionStateTracker | `lib/utils/ConnectionStateTracker.js` | 6.1KB | WiFi connection state tracking with history and uptime stats |
+| RetryWithBackoff | `lib/utils/RetryWithBackoff.js` | 5.4KB | Exponential backoff retry for DP queries and ZCL reads |
+| CrashPrevention | `lib/utils/CrashPrevention.js` | 8.2KB | Comprehensive crash prevention utilities (safeAsync, safePromise, guardDestroyed, safeTimeout, safeInterval, safeCleanup, safeSetCapability, safeTriggerFlow, safeSendCommand, withRetry) |
+| ErrorClassifier | `lib/utils/ErrorClassifier.js` | 4.7KB | Structured error handling (readAttrCatch, classify, isRetryable, getRetryDelay, withRetry) |
 
 ### Integrations Completed
 | Integration | File | Status |
@@ -827,6 +876,274 @@ node scripts/validation/check-super-ondeleted.js  # super.onDeleted()
 node scripts/validation/check-circuit-breaker.js  # CircuitBreaker integration
 ```
 
+## 🧠 Advanced Feature Module Rules
+
+### R43: Presence Confidence Scoring (v9.0.40)
+```js
+// REQUIRED - Use PresenceConfidenceScorer for multi-factor presence detection:
+const PresenceConfidenceScorer = require('../../lib/presence/PresenceConfidenceScorer');
+const scorer = new PresenceConfidenceScorer({ deviceId: this.getId() });
+
+// Feed sensor data:
+scorer.addSignal('motion', { detected: true, timestamp: Date.now() });
+scorer.addSignal('door', { open: true, timestamp: Date.now() });
+
+// Get confidence (0-100):
+const confidence = scorer.getConfidence();
+if (confidence > 80) {
+  this.safeSetCapabilityValue('presence_detected', true);
+}
+```
+
+### R44: Battery Health Intelligence (v9.0.40)
+```js
+// REQUIRED - Use BatteryHealthIntelligence for long-term degradation tracking:
+const BatteryHealthIntelligence = require('../../lib/battery/BatteryHealthIntelligence');
+const health = new BatteryHealthIntelligence({ deviceId: this.getId() });
+
+// Record voltage readings over time:
+health.recordVoltage(3.0, Date.now());
+
+// Get health assessment:
+const assessment = health.getAssessment();
+// { capacityFade, selfDischargeRate, remainingUsefulLife, recommendation }
+```
+
+### R45: Device Group Management (v9.0.40)
+```js
+// RECOMMENDED - Use DeviceGroupManager for coordinated multi-device actions:
+const DeviceGroupManager = require('../../lib/groups/DeviceGroupManager');
+const groupManager = new DeviceGroupManager(this.homey);
+
+// Create a group:
+const group = await groupManager.createGroup('Living Room Lights', [
+  deviceId1, deviceId2, deviceId3
+]);
+
+// Synchronized command with jitter:
+await group.setAll('onoff', true, { jitterMs: 50 });
+```
+
+### R46: Advanced Flow Conditions (v9.0.40)
+```js
+// RECOMMENDED - Use AdvancedMultiConditionFlows for complex flow logic:
+const AdvancedMultiConditionFlows = require('../../lib/features/AdvancedMultiConditionFlows');
+const conditions = new AdvancedMultiConditionFlows();
+
+// Multi-device AND/OR/NOT conditions:
+const result = await conditions.evaluate({
+  logic: 'AND',
+  conditions: [
+    { capability: 'measure_temperature', operator: '>', value: 22 },
+    { capability: 'presence_detected', operator: '==', value: true },
+    { timeConstraint: { after: '08:00', before: '22:00' } }
+  ]
+});
+```
+
+### R47: Diagnostic Report Export (v9.0.40)
+```js
+// RECOMMENDED - Use DiagnosticReportExport for support diagnostics:
+const DiagnosticReportExport = require('../../lib/features/DiagnosticReportExport');
+const exporter = new DiagnosticReportExport(this.homey);
+
+// Generate report:
+const report = await exporter.generate({
+  includeDevices: true,
+  includeTopology: true,
+  includeBatteryHistory: true,
+  format: 'json' // or 'pdf'
+});
+```
+
+### R48: Network Topology Awareness (v9.0.40)
+```js
+// RECOMMENDED - Use NetworkTopologyTrigger for mesh health flows:
+const NetworkTopologyTrigger = require('../../lib/features/NetworkTopologyTrigger');
+const topo = new NetworkTopologyTrigger(this.homey);
+
+// Monitor router availability:
+topo.on('routerLost', (router) => {
+  this.log(`Router ${router.ieeeAddr} lost`);
+});
+
+// Check mesh health:
+const health = topo.getMeshHealth();
+// { totalRouters, onlineRouters, avgLqi, orphanedDevices }
+```
+
+### R49: Predictive Health Engine (v9.0.40)
+```js
+// RECOMMENDED - Use PredictiveHealthEngine for proactive monitoring:
+const PredictiveHealthEngine = require('../../lib/features/PredictiveHealthEngine');
+const engine = new PredictiveHealthEngine(this.homey);
+
+// Register device for monitoring:
+engine.trackDevice(deviceId, {
+  checkInterval: 3600000, // 1 hour
+  thresholds: { battery: 20, lqi: 50 }
+});
+
+// Get predictions:
+const predictions = engine.getPredictions(deviceId);
+// { failureProbability, recommendedAction, timeToFailure }
+```
+
+### R50: Energy History Store (v9.0.40)
+```js
+// RECOMMENDED - Use EnergyHistoryStore for consumption tracking:
+const EnergyHistoryStore = require('../../lib/features/EnergyHistoryStore');
+const store = new EnergyHistoryStore(this.homey);
+
+// Record consumption:
+store.record(deviceId, { power: 150, energy: 0.15, timestamp: Date.now() });
+
+// Query history:
+const history = store.query(deviceId, { from: '7d', granularity: 'hourly' });
+```
+
+### R51: Signal Triangulation for Presence (v9.0.40)
+```js
+// RECOMMENDED - Use SignalTriangulation for location-aware presence:
+const SignalTriangulation = require('../../lib/presence/SignalTriangulation');
+const triangulation = new SignalTriangulation(this.homey);
+
+// Register sensor positions:
+triangulation.addSensor('sensor1', { x: 0, y: 0, floor: 0 });
+triangulation.addSensor('sensor2', { x: 5, y: 0, floor: 0 });
+
+// Get estimated position:
+const position = triangulation.estimate(deviceId);
+// { x, y, floor, confidence }
+```
+
+### R52: Room Signal Aggregation (v9.0.40)
+```js
+// RECOMMENDED - Use RoomSignalAggregator for room-level presence:
+const RoomSignalAggregator = require('../../lib/presence/RoomSignalAggregator');
+const aggregator = new RoomSignalAggregator();
+
+// Add sensors to room:
+aggregator.addSensorToRoom('living_room', 'motion_sensor_1');
+aggregator.addSensorToRoom('living_room', 'door_sensor_1');
+
+// Get room occupancy:
+const occupancy = aggregator.getRoomOccupancy('living_room');
+// { occupied: true, confidence: 95, lastActivity: timestamp }
+```
+
+### R53: Schedule Manager (v9.0.40)
+```js
+// RECOMMENDED - Use ScheduleManager for cron-like scheduling:
+const ScheduleManager = require('../../lib/features/ScheduleManager');
+const scheduler = new ScheduleManager(this.homey);
+
+// Create schedule:
+scheduler.addSchedule('morning_lights', {
+  cron: '0 7 * * 1-5', // 7am weekdays
+  action: () => device.setCapabilityValue('onoff', true),
+  holidays: 'skip' // Skip on holidays
+});
+```
+
+### R54: Transition Engine (v9.0.40)
+```js
+// RECOMMENDED - Use TransitionEngine for smooth value changes:
+const TransitionEngine = require('../../lib/features/TransitionEngine');
+const transition = new TransitionEngine();
+
+// Gradual dimming:
+await transition.execute({
+  device,
+  capability: 'dim',
+  from: 0,
+  to: 1,
+  duration: 5000, // 5 seconds
+  steps: 50,
+  easing: 'easeInOut'
+});
+```
+
+### R55: Solar Elevation Calculations (v9.0.40)
+```js
+// RECOMMENDED - Use SolarElevation for sun-based automation:
+const SolarElevation = require('../../lib/features/SolarElevation');
+const solar = new SolarElevation({ latitude: 52.37, longitude: 4.89 });
+
+// Get current sun position:
+const position = solar.getPosition();
+// { elevation: 45, azimuth: 180, isDay: true }
+
+// Schedule by sun event:
+solar.on('sunset', () => {
+  device.setCapabilityValue('onoff', true); // Turn on lights at sunset
+});
+```
+
+### R56: Tariff Calculator (v9.0.40)
+```js
+// RECOMMENDED - Use TariffCalculator for energy cost tracking:
+const TariffCalculator = require('../../lib/features/TariffCalculator');
+const tariff = new TariffCalculator({
+  peak: 0.25,    // EUR/kWh
+  offPeak: 0.15, // EUR/kWh
+  peakHours: { start: '07:00', end: '23:00' }
+});
+
+// Calculate cost:
+const cost = tariff.calculate(energyKwh, timestamp);
+// { cost, period: 'peak'|'offPeak', rate }
+```
+
+### R57: Configuration Backup/Restore (v9.0.40)
+```js
+// RECOMMENDED - Use ConfigurationBackupRestore for device migration:
+const ConfigurationBackupRestore = require('../../lib/features/ConfigurationBackupRestore');
+const backup = new ConfigurationBackupRestore(this.homey);
+
+// Backup device settings:
+const data = await backup.backupDevice(deviceId);
+
+// Restore to new device:
+await backup.restoreDevice(newDeviceId, data);
+```
+
+### R58: Battery Hybrid Manager (v9.0.40)
+```js
+// RECOMMENDED - Use BatteryHybridManager for dual-power devices:
+const BatteryHybridManager = require('../../lib/battery/BatteryHybridManager');
+const hybrid = new BatteryHybridManager({ deviceId: this.getId() });
+
+// Track power source:
+hybrid.setPowerSource('mains'); // or 'battery'
+const effectiveBattery = hybrid.getEffectiveBattery();
+// Returns 100 when on mains, actual battery level when on battery
+```
+
+### New Anti-Patterns
+
+### AP13: Using Deprecated HybridSwitchBase
+```js
+// BANNED - HybridSwitchBase is deprecated:
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+
+// REQUIRED - Use UnifiedSwitchBase directly:
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {}
+```
+
+### AP14: Missing positionInvert Check on Curtains
+```js
+// BANNED - Assuming all curtains have same position mapping:
+const position = rawValue; // May be inverted
+
+// REQUIRED - Check cover profile for positionInvert quirk:
+const { getCoverProfile } = require('../../lib/registry/profiles/covers');
+const profile = getCoverProfile(this);
+const position = profile.positionInvert ? (100 - rawValue) : rawValue;
+```
+
 ---
-*Generated by TITAN Protocol v2 -- June 2026*
+*Generated by Documentation Updater v7.0 -- June 2026*
 *Synthesized from: CLAUDE.md, .cursorrules, .clinerules, .cascade, ARCHITECTURE_AI.md, Z2M, ZHA, athombv repos*
+*Final enrichment: R1-R58 + CP1-CP10 + IC1-IC4 + 42 modules + image conformity + presence + battery health*

@@ -12,9 +12,9 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature' },
       '11': { capability: 'alarm_water', transform: (v) => !!v },
-      '12': { capability: 'unknown' }, // child_lock
+      '12': { capability: 'child_lock', transform: (v) => v === true || v === 1 },
       '13': { capability: 'unknown' }, // anion (ionizer)
-      '14': { capability: 'unknown' }, // countdown
+      '14': { capability: 'countdown_remaining' },
       '101': { capability: 'unknown' }, // defrost
       '102': { capability: 'unknown' }, // filter_reset
     };
@@ -32,7 +32,10 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
 
 
   async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
     this.log('Device deleted, cleaning up');
+    await super.onDeleted();
   }
 }
 

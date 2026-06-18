@@ -12,7 +12,9 @@
     "measure_humidity",
     "measure_temperature",
     "target_humidity",
-    "alarm_water"
+    "alarm_water",
+    "countdown_remaining",
+    "child_lock"
   ],
   "pair": [
     {

@@ -13,7 +13,8 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "onoff"
+    "onoff",
+    "countdown_remaining"
   ],
   "energy": {
     "approximation": {

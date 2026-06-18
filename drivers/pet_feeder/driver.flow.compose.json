@@ -4,13 +4,15 @@
       "id": "pet_feeder_fed",
       "title": {
         "en": "Pet was fed"
-      }
+      },
+      "args": []
     },
     {
       "id": "pet_feeder_food_low",
       "title": {
         "en": "Food level is low"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -18,7 +20,8 @@
       "id": "pet_feeder_food_ok",
       "title": {
         "en": "Food level is OK"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -26,7 +29,8 @@
       "id": "pet_feeder_feed_now",
       "title": {
         "en": "Feed now"
-      }
+      },
+      "args": []
     }
   ]
 }

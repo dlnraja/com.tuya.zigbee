@@ -54,6 +54,13 @@ class RadiatorWifiTuyaDevice extends TuyaLocalDevice {
     await super.onInit();
     this.log('[RADIATOR-WIFI] Initialized successfully');
   }
+
+  async onDeleted() {
+    if (this._destroyed) return;
+    this._destroyed = true;
+    this.log('[RADIATOR-WIFI] Device deleted, cleaning up');
+    await super.onDeleted();
+  }
 }
 
 module.exports = RadiatorWifiTuyaDevice;

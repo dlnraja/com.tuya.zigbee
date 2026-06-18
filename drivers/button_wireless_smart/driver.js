@@ -5,7 +5,7 @@ const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 /**
  * v5.5.533: Button 1-Gang Driver - FIXED flow card IDs to match driver.flow.compose.json
  * v5.5.114: Original - used FlowCardHelper which generated WRONG IDs
- * 
+ *
  * CRITICAL: Flow card IDs MUST match driver.flow.compose.json exactly!
  * - Correct: button_wireless_1_button_1gang_button_pressed
  * - Wrong:   button_wireless_1_button_pressed (what FlowCardHelper generated)
@@ -24,16 +24,11 @@ class Button1GangDriver extends BaseZigBeeDriver {
     }
   }
 
-async onInit() {
+  async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) {return;}
+    if (this._flowCardsRegistered) { return; }
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) {return;}
-    this._flowCardsRegistered = true;
-
-     // v5.5.533: SDK3 CRITICAL - must call super first!
     this.log('Button1GangDriver v5.5.533 initialized');
 
     // v5.5.533: Register flow cards with CORRECT IDs matching driver.flow.compose.json
@@ -48,27 +43,19 @@ async onInit() {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card =
-      this._getFlowCard(triggerId, 'trigger');
+          const card = this._getFlowCard(triggerId, 'trigger');
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId
-  
-  
-  
-  
-  
-  
-  }`);
+                this.error(`[FLOW] Device not found for ${triggerId}`);
                 return false;
               }
               return true;
             });
-            this.log(`[FLOW]  ${triggerId}`);
+            this.log(`[FLOW] Registered ${triggerId}`);
           }
         } catch (e) {
-          this.log(`[FLOW]  ${triggerId} not found`);
+          this.log(`[FLOW] ${triggerId} not found`);
         }
       }
 
@@ -81,8 +68,7 @@ async onInit() {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card =
-      this._getFlowCard(triggerId, 'trigger');
+          const card = this._getFlowCard(triggerId, 'trigger');
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -91,22 +77,21 @@ async onInit() {
               }
               return true;
             });
-            this.log(`[FLOW]  ${triggerId}`);
+            this.log(`[FLOW] Registered ${triggerId}`);
           }
         } catch (e) {
-          this.log(`[FLOW]  ${triggerId} not found`);
+          this.log(`[FLOW] ${triggerId} not found`);
         }
       }
 
       // Battery trigger
       try {
-        // 
+        const batteryCard = this._getFlowCard('button_wireless_1_battery_alarm', 'trigger');
         if (batteryCard) {
           batteryCard.registerRunListener(async (args, state) => {
-            if (!args.device) {return false;}
+            if (!args.device) { return false; }
             return true;
           });
-          // 
         }
       } catch (e) {
         // Optional
@@ -119,4 +104,3 @@ async onInit() {
 }
 
 module.exports = Button1GangDriver;
-

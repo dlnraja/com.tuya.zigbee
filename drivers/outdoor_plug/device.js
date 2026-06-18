@@ -25,6 +25,7 @@ class outdoorplug extends ZigBeeDevice {
   }
 
 	onDeleted(){
+	  super.onDeleted();
 		this.log("Outdoor plug removed")
 	}
 

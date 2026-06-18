@@ -1,0 +1,56 @@
+{
+  "triggers": [
+    {
+      "id": "double_power_point_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": []
+    },
+    {
+      "id": "double_power_point_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "double_power_point_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "double_power_point_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      },
+      "args": []
+    },
+    {
+      "id": "double_power_point_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      },
+      "args": []
+    },
+    {
+      "id": "double_power_point_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      },
+      "args": []
+    }
+  ]
+}

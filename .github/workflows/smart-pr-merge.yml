@@ -1,5 +1,10 @@
 name: Smart PR Auto-Merge
 
+# <!-- badges:start -->
+# [![Smart PR Auto-Merge](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/smart-pr-merge.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/smart-pr-merge.yml)
+# <!-- badges:end -->
+
+
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -52,12 +57,12 @@ jobs:
       KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
 
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -91,6 +96,7 @@ jobs:
         run: node .github/scripts/smart-pr-merge.js "${{ steps.pr.outputs.mode }}" "${{ steps.pr.outputs.number }}"
 
       - name: "Commit merge results"
+        continue-on-error: true
         if: steps.merge.outputs.merged == 'true'
         run: |
           git config user.name "github-actions[bot]"
