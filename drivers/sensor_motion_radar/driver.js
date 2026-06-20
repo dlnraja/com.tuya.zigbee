@@ -33,7 +33,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid');
@@ -44,7 +44,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid');
@@ -54,7 +54,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid');
@@ -65,7 +65,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid');
@@ -75,7 +75,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid');
@@ -85,7 +85,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -98,7 +98,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid');
@@ -110,7 +110,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid');
@@ -122,7 +122,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid');
@@ -134,7 +134,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

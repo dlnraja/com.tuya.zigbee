@@ -38,7 +38,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid');
@@ -48,7 +48,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition light_bulb_rgb_rgbw_hybrid_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition light_bulb_rgb_rgbw_hybrid_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -60,7 +60,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid');
@@ -71,7 +71,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid');
@@ -83,7 +83,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid');
@@ -94,7 +94,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid');
@@ -105,7 +105,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid');
@@ -116,7 +116,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid');
@@ -128,7 +128,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid');
@@ -139,7 +139,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

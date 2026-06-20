@@ -46,7 +46,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_hybrid_switch_2gang_gang1_is_on_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_hybrid_switch_2gang_gang1_is_on_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_hybrid_switch_2gang_gang2_is_on_switch_hybrid');
@@ -56,7 +56,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_hybrid_switch_2gang_gang2_is_on_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_hybrid_switch_2gang_gang2_is_on_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_hybrid_switch_2gang_is_on_switch_hybrid');
@@ -66,7 +66,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_hybrid_switch_2gang_is_on_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_hybrid_switch_2gang_is_on_switch_hybrid: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -78,7 +78,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_on_gang1_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_on_gang1_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_off_gang1_switch_hybrid');
@@ -89,7 +89,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_off_gang1_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_off_gang1_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_on_gang2_switch_hybrid');
@@ -100,7 +100,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_on_gang2_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_on_gang2_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_off_gang2_switch_hybrid');
@@ -111,7 +111,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_off_gang2_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_off_gang2_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_toggle_gang1_switch_hybrid');
@@ -123,7 +123,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_toggle_gang1_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_toggle_gang1_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_toggle_gang2_switch_hybrid');
@@ -135,7 +135,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_toggle_gang2_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_toggle_gang2_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_on_all_switch_hybrid');
@@ -147,7 +147,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_on_all_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_on_all_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_off_all_switch_hybrid');
@@ -159,7 +159,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_off_all_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_off_all_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_set_backlight_switch_hybrid');
@@ -170,7 +170,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_set_backlight_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_set_backlight_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_on_switch_hybrid');
@@ -181,7 +181,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_on_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_on_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_turn_off_switch_hybrid');
@@ -192,7 +192,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_turn_off_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_turn_off_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_toggle_switch_hybrid');
@@ -204,7 +204,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_toggle_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_toggle_switch_hybrid: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_hybrid_switch_2gang_set_scene_mode_switch_hybrid');
@@ -215,7 +215,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_hybrid_switch_2gang_set_scene_mode_switch_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_hybrid_switch_2gang_set_scene_mode_switch_hybrid: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

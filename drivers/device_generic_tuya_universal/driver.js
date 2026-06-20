@@ -33,7 +33,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
           return battery > (args.threshold || 20);
       });
       }
-    } catch (err) { this.error(`Condition device_generic_tuya_universal_hybrid_generic_tuya_battery_above_device_generic_tuya_universal_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_generic_tuya_universal_hybrid_generic_tuya_battery_above_device_generic_tuya_universal_hybrid: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -46,7 +46,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

@@ -33,14 +33,14 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_hybrid_is_on');
+      const card = this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition hvac_air_conditioner_air_conditioner_hybrid_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hvac_air_conditioner_air_conditioner_hybrid_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('hvac_air_conditioner_is_on');
@@ -54,7 +54,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_on');
+      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,10 +62,10 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_turn_on: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_off');
+      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,10 +73,10 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_turn_off: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_toggle');
+      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,10 +85,10 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_toggle: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature');
+      const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_set_target_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -96,7 +96,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_turn_on');

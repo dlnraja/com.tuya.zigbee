@@ -32,7 +32,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_power_above');
@@ -43,7 +43,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_power_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_power_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_energy_above');
@@ -54,7 +54,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_energy_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_energy_above: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -66,7 +66,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_turn_off');
@@ -77,7 +77,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_toggle');
@@ -89,7 +89,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_reset_meter');
@@ -101,7 +101,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_reset_meter: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_reset_meter: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }
