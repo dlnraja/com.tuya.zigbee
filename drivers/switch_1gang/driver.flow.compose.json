@@ -131,6 +131,41 @@
           "filter": "driver_id=switch_1gang"
         }
       ]
+    },
+    {
+      "id": "switch_1gang_set_backlight",
+      "title": { "en": "Set backlight mode" },
+      "args": [{ "name": "mode", "type": "dropdown", "values": [{ "id": "off", "label": "Off" }, { "id": "normal", "label": "Normal" }, { "id": "inverted", "label": "Inverted" }], "title": { "en": "Backlight mode" } }]
+    },
+    {
+      "id": "switch_1gang_set_backlight_color",
+      "title": { "en": "Set backlight color" },
+      "args": [{ "name": "color", "type": "dropdown", "values": [{ "id": "white", "label": "White" }, { "id": "red", "label": "Red" }, { "id": "blue", "label": "Blue" }, { "id": "green", "label": "Green" }], "title": { "en": "Backlight color" } }]
+    },
+    {
+      "id": "switch_1gang_set_backlight_brightness",
+      "title": { "en": "Set backlight brightness" },
+      "args": [{ "name": "brightness", "type": "range", "min": 0, "max": 100, "step": 1, "label": "%", "title": { "en": "Brightness" } }]
+    },
+    {
+      "id": "switch_1gang_set_countdown",
+      "title": { "en": "Set countdown timer" },
+      "args": [{ "name": "seconds", "type": "number", "title": { "en": "Countdown (seconds)" } }]
+    },
+    {
+      "id": "switch_1gang_set_child_lock",
+      "title": { "en": "Set child lock" },
+      "args": [{ "name": "enabled", "type": "boolean", "title": { "en": "Enabled" } }]
+    },
+    {
+      "id": "switch_1gang_set_scene_mode",
+      "title": { "en": "Set scene mode" },
+      "args": [{ "name": "mode", "type": "number", "title": { "en": "Scene mode" } }]
+    },
+    {
+      "id": "switch_1gang_set_power_on_behavior",
+      "title": { "en": "Set power-on behavior" },
+      "args": [{ "name": "behavior", "type": "dropdown", "values": [{ "id": "off", "label": "Off" }, { "id": "on", "label": "On" }, { "id": "previous", "label": "Previous state" }], "title": { "en": "Behavior" } }]
     }
   ]
 }

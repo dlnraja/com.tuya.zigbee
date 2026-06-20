@@ -23,6 +23,11 @@
         "de": "Umschalten"
       },
       "args": []
+    },
+    {
+      "id": "switch_temp_sensor_set_temperature",
+      "title": { "en": "Set target temperature" },
+      "args": [{ "name": "temperature", "type": "number", "title": { "en": "Temperature (°C)" } }]
     }
   ],
   "triggers": [
