@@ -1,23 +1,20 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button 4 Gang - Universal Hardened Driver (v10.0.0)
+ * Button4GangDevice - v10.0.0 Universal Standard
+ * v5.11.218 FIX CRITICAL (même bug que button_wireless_3) :
+ * super.on() → super.onNodeInit({ zclNode }), extends ButtonDevice.
  */
-class Button4GangDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
+class Button4GangDevice extends ButtonDevice {
 
-  async onNodeInit() {
-    await super.on();
-    
+  async onNodeInit({ zclNode }) {
     this.buttonCount = 4;
-    this.gangCount = 4; // Needed for PhysicalButtonMixin
-    
-    // Initialize physical button detection v5.13.6
-    await this.initPhysicalButtonDetection(this.zclNode);
-    
-    this.log('[BUTTON4] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
+
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+
+    this.log('[BUTTON_WIRELESS_4] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }
