@@ -1,9 +1,12 @@
 'use strict';
 
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SmartKnobRotaryDriver extends Homey {
+// v5.11.217 FIX CRITICAL : "Class extends value #" crash au runtime.
+// Le driver étendait Homey (instance App) au lieu de ZigBeeDriver (classe Driver).
+// Homey n'est pas un constructeur de Driver valide → TypeError au chargement.
+class SmartKnobRotaryDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
