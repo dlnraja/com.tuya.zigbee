@@ -573,10 +573,13 @@
       ]
     }
   ],
+  "9.0.54": {
+    "en": "v9.0.53: v9.0.53: app.json + docs + scripts + tests + , v9.0.53: drivers+docs+scripts+tests (30+ root causes), v9.0.53: lib/ fixes (boutons+batterie+arch), Resolved issues + patterns update [skip ci], New device variants + driver updates [skip ci]"
+  },
   "9.0.53": {
     "en": "v9.0.53: v9.0.53: app.json + docs + scripts + tests +"
   },
-  "9.0.54": {
-    "en": "v9.0.53: v9.0.53: app.json + docs + scripts + tests + , v9.0.53: drivers+docs+scripts+tests (30+ root causes), v9.0.53: lib/ fixes (boutons+batterie+arch), Resolved issues + patterns update [skip ci], New device variants + driver updates [skip ci]"
+  "9.0.55": {
+    "en": "v9.0.54:"
   }
 }
