@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.53",
+  "version": "9.0.54",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -92,6 +92,7 @@
   "brandColor": "#00E6A0",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "sdkVersion": 3,
   "flow": {
     "triggers": [
       {
@@ -96462,19 +96463,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tz3000_26fmupbb",
-          "_tz3000_2mbfxlzr",
-          "_tz3000_402jjyro",
-          "_tz3000_996rpfy6",
-          "_tz3000_bpkijo14",
-          "_tz3000_bzxloft2",
-          "_tz3000_n2egfsli",
-          "_tz3000_oxslv1c9",
-          "_tz3000_x8q36xwf",
-          "_tz3000_yxqnffam",
-          "_tze200_pay2byax"
-        ]
+        "manufacturerName": []
       },
       "metadata": {
         "driver": {
@@ -98245,11 +98234,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tze200_8ygsuhe1",
-          "_tze200_ywagc4rj",
-          "_tze200_zl1kmjqx"
-        ]
+        "manufacturerName": []
       }
     },
     {
@@ -98711,9 +98696,7 @@
         },
         "manufacturerName": [
           "_TZ3000_dummy1781425895945",
-          "_tz3000_dummy1781425895945",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_dummy1781425895945"
         ]
       },
       "images": {
@@ -99521,7 +99504,6 @@
         "manufacturerName": [
           "_TZE200_8IKYD92M",
           "_TZE204_8IKYD92M",
-          "_TZE284_8b9zpaav",
           "_tze200_8ikyd92m",
           "_tze204_8ikyd92m"
         ],
@@ -100076,7 +100058,6 @@
         },
         "manufacturerName": [
           "_TZE200_sh11h1f5",
-          "_TZE200_seq9cm6u",
           "_TZE204_sh11h1f5",
           "_TZE284_sh11h1f5",
           "_TZE204_seq9cm6u",
@@ -104226,9 +104207,7 @@
           "ts0042",
           "ts0043",
           "ts0044",
-          "_tz3400_",
-          "_TZ3000_mrpevh8p",
-          "_TZ3000_b4awzgct"
+          "_tz3400_"
         ]
       },
       "images": {
@@ -108323,10 +108302,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -109736,11 +109712,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tz3000_hafsqare",
-          "HOBEIAN",
-          "hobeian"
-        ]
+        "manufacturerName": []
       },
       "images": {
         "small": "/drivers/switch_2gang/assets/images/small.png",
@@ -110636,9 +110608,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tz3000_m0vaazab"
-        ]
+        "manufacturerName": []
       },
       "metadata": {
         "driver": {
@@ -111811,8 +111781,7 @@
           "_tzb210_zdgnbgus",
           "_tz3000_hiuyt5mq",
           "_tz3000_jd3z4yig",
-          "_TZ3210_jd3z4yig",
-          "_TZE200_s8gkrkxk"
+          "_TZ3210_jd3z4yig"
         ],
         "productId": [
           "TS0601",
@@ -112582,12 +112551,6 @@
           "_TZE204_wbhaespm",
           "_TZE204_zpvusbtv",
           "_TZE284_qf5mzewi",
-          "_TZE204_d7lpruvi",
-          "_TZE204_jygvp6fk",
-          "_TZE200_d7lpruvi",
-          "_TZE284_d7lpruvi",
-          "_TZE204_ksz749x8",
-          "_TZE204_1wnh8bqp",
           "_TZE284_1wnh8bqp",
           "_TZE284_9ern5sfh",
           "_TZE284_8b9zpaav",
@@ -112602,12 +112565,6 @@
           "_tze200_8ygsuhe1",
           "_tze284_8b9zpaav",
           "_tze200_seq9cm6u",
-          "_tze204_jygvp6fk",
-          "_tze200_d7lpruvi",
-          "_tze204_ksz749x8",
-          "_tze204_1wnh8bqp",
-          "_tze204_d7lpruvi",
-          "_tze284_d7lpruvi",
           "dht0001",
           "dhta001",
           "ntcht01",
@@ -113725,15 +113682,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tze200_p3dbf6qs",
-          "_tze204_o3x45p96",
-          "_tze284_c6wv4xyo",
-          "_tze284_hvaxb2tc",
-          "_tze284_o3x45p96",
-          "_tze284_p3dbf6qs",
-          "_tze284_rv6iuyxb"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -114856,9 +114805,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tze204_chbyv06x"
-        ]
+        "manufacturerName": []
       },
       "metadata": {
         "driver": {
@@ -117312,20 +117259,6 @@
         "manufacturerName": [
           "LUMI.SENSOR_MAGNET",
           "LUMI.SENSOR_MAGNET.AQ2",
-          "_TZ3000_ZUTIZVYK",
-          "_TZE200_pay2byax",
-          "_TZ3000_996rpfy6",
-          "_TZE200_nvups4nh",
-          "_TZE200_n8dljorx",
-          "_TZE200_ijey4q29",
-          "_TZE200_ykglasuj",
-          "_TZE200_kf2hbko4",
-          "CAT0001",
-          "_tze200_ijey4q29",
-          "_tze200_kf2hbko4",
-          "_tze200_n8dljorx",
-          "_tze200_nvups4nh",
-          "_tze200_ykglasuj",
           "lumi.sensor_magnet",
           "lumi.sensor_magnet.aq2"
         ]
@@ -119893,9 +119826,7 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_switch_needs_device_assignment",
-          "HOBEIAN",
-          "hobeian"
+          "_hybrid_contact_sensor_switch_needs_device_assignment"
         ]
       }
     },
@@ -120735,16 +120666,10 @@
           "_TZ3210_ZANA8D08",
           "_TZE200_4HBX5COR",
           "_TZE200_BDBLIDQ3",
-          "_TZE200_CQTAMHH5",
-          "_TZE200_DF04GHRB",
           "_TZE200_DQ8BU0PT",
           "_TZE200_J1XL73IW",
-          "_TZE200_KHZBKLYH",
-          "_TZE200_LLVWKKDE",
           "_TZE200_MLGLXWP3",
           "_TZE200_SWHWV3K3",
-          "_TZE200_TOELDCKG",
-          "_TZE200_XLNZK169",
           "_TZE200_ZAH67EKH",
           "_TZE200_ZC2OWU5K",
           "_TZE204_BDBLIDQ3",
@@ -120759,7 +120684,6 @@
           "_TZE284_HBJWGKDH",
           "_TZE284_LNYZ4A6V",
           "_TZE200_gubdgai2",
-          "_TZE204_r0jdjrvi",
           "_TZE200_nv6nxo0c",
           "_TZE204_bjzrowv2",
           "_TZE200_f91miyhj",
@@ -125180,9 +125104,7 @@
         "productId": [
           "TS0601"
         ],
-        "manufacturerName": [
-          "_tze284_rccxox8p"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -125570,16 +125492,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tze200_npj9bug3",
-          "_tze200_oitavov2",
-          "_tze200_wqashyqo",
-          "_tze284_aao3yzhs",
-          "_tze284_hdml1aav",
-          "_tze284_o9ofysmo",
-          "_tze284_sgabhwa6",
-          "_tze284_xc3vwx5a"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -125999,11 +125912,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tze200_81isopgh",
-          "_tze200_htnnfasr",
-          "_tze200_lvkk0hdg"
-        ]
+        "manufacturerName": []
       },
       "energy": {
         "batteries": [
@@ -127115,9 +127024,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       }
     },
     {
@@ -130902,6 +130809,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -130973,6 +130883,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -132983,14 +132896,6 @@
         "manufacturerName": [
           "_TZ3000_9hpxg1rf",
           "_TZ3000_8n7lpom4",
-          "_TZ3210_ngqk6jia",
-          "_TZ3210_weaqkhab",
-          "_TZ3210_k1msuvg6",
-          "_TZ3210_ysfo0wla",
-          "_TZE200_ubgdwsnr",
-          "_TZ3210_guijtl8k",
-          "_TZ3210_hquixjeg",
-          "_TZ3210_vfwhhldz",
           "_tz3000_9hpxg1rf",
           "_tz3000_8n7lpom4"
         ],
@@ -133140,14 +133045,12 @@
           "_TZ3000_n",
           "_TZ3000_t9qqxn70",
           "_TZ3000_j6adk9id",
-          "_TZE200_vhy3iakz",
           "_TZE204_unsxl4ir",
           "_TZE200_nvodulvi",
           "_TZE204_k7mfgaen",
           "_TZE204_fncxk3ob",
           "_TZE284_fncxk3ob",
           "_TZE204_atdqo4nj",
-          "_TZE200_oc7xqqbs",
           "_TZE200_4mh6tyyo",
           "_tyzb01_qezuin6k",
           "_TZ3000_49QCHF10",
@@ -133797,58 +133700,7 @@
           }
         },
         "manufacturerName": [
-          "_tz3000_1obwwnmq",
-          "_tz3000_5f43h46b",
-          "_tz3000_cehuw1lw",
-          "_tz3000_cphmq0q7",
-          "_tz3000_dpo1ysak",
-          "_tz3000_ew3ldmgx",
-          "_tz3000_g5xawfcq",
-          "_tz3000_ga5shatp",
-          "_tz3000_gjnozsaz",
-          "_tz3000_gvn91tmx",
-          "_tz3000_hdopuwv6",
-          "_tz3000_hkuahi4e",
-          "_tz3000_iv6ph5tr",
-          "_tz3000_jvovfwyk",
-          "_tz3000_kdi2o9m6",
-          "_tz3000_ksw8qtmt",
-          "_tz3000_mlswgkc3",
-          "_tz3000_mraovvmm",
-          "_tz3000_okaz9tjs",
-          "_tz3000_ps3dmato",
-          "_tz3000_qeuvnohg",
-          "_tz3000_rdtixbnu",
-          "_tz3000_ss98ec5d",
-          "_tz3000_typdpbpg",
-          "_tz3000_u5u4cakc",
-          "_tz3000_upjrsxh1",
-          "_tz3000_uwkja6z1",
-          "_tz3000_vtscrpmw",
-          "_tz3000_w0qqde0g",
-          "_tz3000_waho4ber",
-          "_tz3000_wzmuk9ai",
-          "_tz3000_yujkchbz",
-          "_tz3000_zloso4jk",
-          "_tz3210_w0qqde0g",
-          "_tz3210_xzhnra8x",
-          "_tze200_bkkmqmyo",
-          "_tze200_byzdayie",
-          "_tze200_eaac7dkw",
-          "_tze200_ewxhg6o9",
-          "_tze200_fsb6zw01",
-          "_tze200_lsanae15",
-          "_tze200_nkjintbl",
-          "_tze200_nphsqjnz",
-          "_tze200_tz32mtza",
-          "_tze200_v9hkz2up",
-          "_tze200_wfxuhoea",
-          "_tze204_bkkmqmyo",
-          "_tze204_byzdayie",
-          "_tze204_fsb6zw01",
-          "_tze204_lsanae15",
-          "_tze204_nkjintbl",
-          "_tze204_nphsqjnz"
+          "_tz3000_ga5shatp"
         ]
       }
     },
@@ -135166,7 +135018,6 @@
           "_tze200_fjb98hbq",
           "_tze204_aqnazj70",
           "_tze204_fjb98hbq",
-          "_tze200_aqnazj70",
           "HOBEIAN",
           "hobeian"
         ],
@@ -137316,8 +137167,7 @@
           "_tze204_x8diwkqb",
           "_tze284_d2zfgtij",
           "_tze284_s4sa1mcx",
-          "_tze284_x8diwkqb",
-          "_tze284_6ocnqlhn"
+          "_tze284_x8diwkqb"
         ],
         "productId": [
           "TS0601",
@@ -137747,9 +137597,7 @@
           }
         },
         "manufacturerName": [
-          "_tz3210_m2ax2xyk",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3210_m2ax2xyk"
         ],
         "endpoints": {
           "1": {
@@ -138616,9 +138464,7 @@
         "small": "//drivers/flood_sensor/assets/images/small.png"
       },
       "zigbee": {
-        "productId": [
-          "TS0207"
-        ],
+        "productId": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -139787,10 +139633,7 @@
           }
         },
         "manufacturerName": [
-          "_tz3000_bseed",
           "_tz3000_hafsqare",
-          "_tz3000_xk5udnd6",
-          "_tz3002_pzao9ls1",
           "_tz3002_vaq2bfcu",
           "HOBEIAN",
           "hobeian"
@@ -140790,9 +140633,7 @@
           "_tze284_kow4ok3t",
           "_tze284_mvtclclq",
           "_tze284_nbv4tdaz",
-          "_tze284_o9ofysmo",
           "_tze284_tgrzpqf4",
-          "_tze284_xc3vwx5a",
           "_tze200_2atgpdho",
           "_tze200_2imwyigp",
           "_tze200_2se8efxh",
@@ -141504,7 +141345,6 @@
       "zigbee": {
         "manufacturerName": [
           "_tz3000_j70oanab",
-          "_tz3000_kaflzta4",
           "_tz3000_lxw3kcw2",
           "_tz3000_rrjr1dsk",
           "_tz3000_sqw3qqtc",
@@ -143454,9 +143294,7 @@
           "_TZ3000_CYMSNVF",
           "_TZ3000_FZO2POCS",
           "_tz3000_cymsnvf",
-          "_tz3000_fzo2pocs",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_fzo2pocs"
         ],
         "productId": [
           "TS0601",
@@ -148989,9 +148827,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3210_snzbbgvi",
-          "_TZE284_aaeasoll",
-          "_tze284_aaeasoll"
+          "_tz3210_snzbbgvi"
         ],
         "productId": [
           "TS0601",
@@ -149394,9 +149230,7 @@
           "_tz3000_hswqnljz",
           "_tz3000_jd3u8dkz",
           "_tz3000_tqlv4uj4",
-          "_tz3000_vmpbygs5",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_vmpbygs5"
         ],
         "productId": [
           "ZBMINI",
@@ -149893,7 +149727,6 @@
           "_TZ3000_Y56PGPGS",
           "_TZ3000_YKWCWXMZ",
           "_TZ3210_JIJR1SSS",
-          "_TZE200_7HFCUDW5",
           "_TZE200_8VIYDIWR",
           "_TZE200_ARGE1PTM",
           "_TZE200_BH4N9CLUK",
@@ -149905,7 +149738,6 @@
           "_TZE204_MCHXVE9O",
           "_TZE204_SNDKANFR",
           "_TZE284_0ZSE7XQG",
-          "_TZE200_mgxy2d9f",
           "tuyatec-bd5faf9p",
           "tuyatec-smmlguju",
           "tuyatec-zw6hxafz",
@@ -150435,9 +150267,7 @@
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
         },
-        "manufacturerName": [
-          "_tze200_3towulqd"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "metadata": {
@@ -150985,9 +150815,7 @@
           }
         },
         "manufacturerName": [
-          "_tyzb01_dr6sduka",
-          "HOBEIAN",
-          "hobeian"
+          "_tyzb01_dr6sduka"
         ],
         "endpoints": {
           "1": {
@@ -152196,9 +152024,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tze204_3towulqd",
           "_TZ3000_3towulqd",
-          "_TZE284_tre6haif",
           "_tz3000_3towulqd"
         ],
         "productId": [
@@ -152610,7 +152436,6 @@
           "_tz3000_waho4ber",
           "_tz3000_wamqdr3f",
           "_tz3000_gjnozsaz",
-          "_TZ3000_gnjozsaz",
           "_tz3000_okaz9tjs",
           "_tz3000_j1v25l17",
           "_tz3210_xzhnra8x",
@@ -152622,18 +152447,13 @@
           "E-WELINK",
           "_TZ3000_oxv67pno",
           "_TZE204_dcnsggvz",
-          "_TZ3210_jlf1nepw",
           "_TZ3210_cehuw1lw",
           "_TZ3000_fukaa7nc",
           "_TZ3210_5CT6E7YE",
-          "_TZ3210_4UX0ONDB",
           "_TZ3000_CEHUW1LW",
           "_TZ3000_U5U4CAKC",
-          "_TZ3000_WW6DRJA5",
           "_TZ3000_QYSTBCJG",
           "_tz3000_u5u4cakc",
-          "_tz3000_gnjozsaz",
-          "_tz3000_ww6drja5",
           "_tz3000_cehuw1lw",
           "e-welink",
           "_tz3000_oxv67pno",
@@ -154431,18 +154251,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -155881,63 +155695,21 @@
           "_TZE200_lyetpprm",
           "_TZE204_debczeci",
           "_TZE200_y8jijhba",
-          "_TZE284_1youk3hj",
           "_TZE200_ka8l86iu",
           "_TZE284_ka8l86iu",
           "_TZE204_iadro9bf",
           "_TZE284_iadro9bf",
           "_TZE200_zcl6go6a",
-          "_TZE284_1lvln0x6",
-          "_TZE200_vrfecyku",
-          "_TZE200_ypprdwsl",
-          "_TZE200_jkbljri7",
           "_TZE200_me6wtiqs",
           "_TZE200_ghynnvos",
           "_TZE200_3towulqd",
           "_TZE200_1ibpyhdc",
           "_TZE200_bh3n6gk8",
           "_TZE200_s6hzw8g2",
-          "_TZE200_jxyhl4eq",
-          "_TZE200_qxyh4r7g",
-          "_TZE200_na5qlzow",
-          "_TZE200_yflzeeqj",
-          "_TZE204_e9ajs4ft",
-          "_TZE204_mhxn2jso",
           "_TZE200_mgxy2d9f",
-          "_TZE204_muvkrjr5",
-          "_TZE204_uxllnywp",
-          "_TZE204_eaulras5",
           "_TZE200_oc7xqqbs",
-          "_TZE200_uli8wasj",
-          "_TZE200_grgol3xp",
-          "_TZE200_vuqzj1ej",
-          "_TZE200_hdih4foa",
-          "_TZE200_zbfmvj13",
-          "_TZE200_sbyx0lm6",
-          "_TZE204_sbyx0lm6",
           "_TZE200_xpq2rzhq",
-          "_tze204_muvkrjr5",
-          "_tze200_grgol3xp",
-          "_tze200_hdih4foa",
-          "_tze200_jkbljri7",
-          "_tze200_jxyhl4eq",
           "_tze200_mgxy2d9f",
-          "_tze200_na5qlzow",
-          "_tze200_qxyh4r7g",
-          "_tze200_sbyx0lm6",
-          "_tze200_uli8wasj",
-          "_tze200_vrfecyku",
-          "_tze200_vuqzj1ej",
-          "_tze200_yflzeeqj",
-          "_tze200_ypprdwsl",
-          "_tze200_zbfmvj13",
-          "_tze204_e9ajs4ft",
-          "_tze204_eaulras5",
-          "_tze204_mhxn2jso",
-          "_tze204_uxllnywp",
-          "_tze284_1lvln0x6",
-          "_tze284_1youk3hj",
-          "_tze204_sbyx0lm6",
           "_tze200_oc7xqqbs",
           "_tze200_3towulqd",
           "b3876m9",
@@ -156584,9 +156356,7 @@
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
         },
-        "manufacturerName": [
-          "_tze200_2aaelwxk"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "metadata": {
@@ -157357,7 +157127,6 @@
           "_TZE284_CGROR0RHZA",
           "_TZE284_HCS66AXL",
           "_TZE284_K6RDMISZ",
-          "_TZE284_pcdmj88b",
           "_tze204_zuhszj9s",
           "_TZE200_qtbrwrfv",
           "_TZE200_7YORZG8V",
@@ -159854,10 +159623,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -160440,9 +160206,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -162790,6 +162554,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -162861,6 +162628,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -162940,6 +162710,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163011,6 +162784,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163082,6 +162858,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163156,6 +162935,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163227,6 +163009,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163305,6 +163090,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163378,6 +163166,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163451,6 +163242,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163522,6 +163316,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -163610,9 +163407,7 @@
       "zigbee": {
         "manufacturerName": [
           "_tz3000_peszejy7",
-          "_tz3000_5bpeda8u",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_5bpeda8u"
         ],
         "productId": [
           "TS0601_scene1",
@@ -163739,9 +163534,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3002_6ahhkwyh",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3002_6ahhkwyh"
         ],
         "productId": [
           "TS0601_scene2",
@@ -163881,9 +163674,7 @@
         "manufacturerName": [
           "_tz3000_qdgg10wg",
           "_tz3002_weh1jmhg",
-          "_tz3000_nsar4ife",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_nsar4ife"
         ],
         "productId": [
           "TS0601_scene3",
@@ -164053,9 +163844,7 @@
           "_tz3000_wkai4ga5",
           "_tz3000_zgyzgdua",
           "_tze200_zqtiam9d",
-          "_tze204_zqtiam9d",
-          "HOBEIAN",
-          "hobeian"
+          "_tze204_zqtiam9d"
         ],
         "productId": [
           "TS0601",
@@ -165634,19 +165423,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tze200_2se8efxh",
-          "_tze200_9cqcpkgb",
-          "_tze200_ga1maeof",
-          "_tze200_locansqn",
-          "_tze200_myd45weu",
-          "_tze284_1wnh8bqp",
-          "_tze284_8se38w3c",
-          "_tze284_aao6qtcs",
-          "_tze284_myd45weu",
-          "_tze284_qoy0ekbd",
-          "_tze284_znph9215"
-        ]
+        "manufacturerName": []
       },
       "capabilitiesOptions": {
         "button.1": {
@@ -168022,14 +167799,7 @@
           "_tze200_2se8efxh",
           "_tze200_9cqcpkgb",
           "_tze200_ga1maeof",
-          "_tze200_locansqn",
-          "_tze200_myd45weu",
-          "_tze284_1wnh8bqp",
-          "_tze284_8se38w3c",
-          "_tze284_aao6qtcs",
-          "_tze284_myd45weu",
-          "_tze284_qoy0ekbd",
-          "_tze284_znph9215"
+          "_tze284_myd45weu"
         ]
       },
       "capabilitiesOptions": {
@@ -168444,15 +168214,10 @@
           }
         },
         "manufacturerName": [
-          "_tze200_1ibpyhdc",
           "_tze200_2aaelwxk",
           "_tze200_3to",
           "_tze200_7hfcudw5",
-          "_tze200_bh3n6gk8",
-          "_tze200_kb5noeto",
           "_tze200_myd45weu",
-          "_tze200_nlrfgpny",
-          "_tze200_ppuj1vem",
           "_tze200_rxqls8v0",
           "_tze204_2aaelwxk",
           "_tze204_3towulqd",
@@ -170213,16 +169978,9 @@
           }
         },
         "manufacturerName": [
-          "_tz3000_26fmupbb",
-          "_tz3000_2mbfxlzr",
-          "_tz3000_402jjyro",
           "_tz3000_996rpfy6",
-          "_tz3000_bpkijo14",
-          "_tz3000_bzxloft2",
           "_tz3000_n2egfsli",
           "_tz3000_oxslv1c9",
-          "_tz3000_x8q36xwf",
-          "_tz3000_yxqnffam",
           "_tze200_pay2byax"
         ]
       },
@@ -171133,10 +170891,8 @@
           "_tze284_rjgdhqqi",
           "_tze200_yojqa8xn",
           "_TZ3000_2uollq9d",
-          "_TZE200_bh3n6gk8",
           "_tze200_ggev5fsl",
           "_tz3210_2uollq9d",
-          "_tze200_bh3n6gk8",
           "_tz3000_2uollq9d"
         ],
         "productId": [
@@ -172912,12 +172668,9 @@
           "_TZ3040_msl6wxk9",
           "_TZ3000_6ygjfyll",
           "_TZ3040_6ygjfyll",
-          "_TZE200_me6wtiqs",
-          "_TZE200_ghynnvos",
           "_TZE200_8isdky6j",
           "_TZE200_p6fuhvez",
           "_TZE200_aj0oxo1i",
-          "_TZE200_s6hzw8g2",
           "_TZ3210_7vgttna6",
           "_TZE200_jsaqgakf",
           "_TZE200_2pddnnrk",
@@ -172937,9 +172690,6 @@
           "_tz3040_6ygjfyll",
           "_tyzb01_jytabjkb",
           "_tz3000_6ygjfyll",
-          "_tze200_me6wtiqs",
-          "_tze200_ghynnvos",
-          "_tze200_s6hzw8g2",
           "_tz3000_mcxw5ehu",
           "_tz3000_msl6wxk9",
           "_tz3000_o4mkahkc",
@@ -176172,8 +175922,6 @@
         "manufacturerName": [
           "_TZE200_7bztmfm1",
           "_TZE204_7bztmfm1",
-          "_TZE284_it9utkro",
-          "_tze284_it9utkro",
           "_tze200_7bztmfm1",
           "_tze204_7bztmfm1"
         ]
@@ -176315,9 +176063,7 @@
           "_tz3000_yj6k7vfo",
           "_tz3000_ja5osu5g",
           "_tyzb02_keyjqtha",
-          "_tz3000_1gcuf2uw",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_1gcuf2uw"
         ],
         "productId": [
           "TS0040",
@@ -177001,7 +176747,6 @@
           }
         },
         "manufacturerName": [
-          "_TZ3000_qja6nq5z",
           "_TZ3000_kaflzta4",
           "_tz3000_kaflzta4"
         ]
@@ -178975,9 +178720,7 @@
         "small": "//drivers/smoke_sensor/assets/images/small.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZE284_gyzlwu5q"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0205",
           "TS0601"
@@ -179171,23 +178914,7 @@
           "_TZ3000_qtyyuaq6",
           "_tze204_dq1mfjug",
           "_TZE200_cjbofhxw",
-          "_TZE204_ntcy3xu1",
-          "_TZE200_ntcy3xu1",
-          "_TZE284_ai4rqhky",
-          "_TZE200_rccxox8p",
           "_TZE284_rccxox8p",
-          "_TZE200_ux5v4dbd",
-          "_TZE200_ytibqbra",
-          "_TZE200_e2bedvo9",
-          "_TZE200_dnz6yvl2",
-          "_TZE284_e2bedvo9",
-          "_tze200_dnz6yvl2",
-          "_tze200_e2bedvo9",
-          "_tze200_ux5v4dbd",
-          "_tze200_ytibqbra",
-          "_tze284_ai4rqhky",
-          "_tze284_e2bedvo9",
-          "_tze200_rccxox8p",
           "_tze284_rccxox8p",
           "_tz3210_up3pngle",
           "_tyzb01_wqcac7lo",
@@ -179945,9 +179672,7 @@
           "_TZE200_A0GSPFYZ",
           "_TZE200_FQYTFMYK",
           "_TZE200_FQYTFYMK",
-          "_TZE200_NPJ9BUG3",
           "_TZE200_PAY2BYAX",
-          "_TZE200_WQASHYQO",
           "_TZE200_ZNLLDQL1",
           "_TZE204_4XSYPNEY",
           "_TZE204_A0GSPFYZ",
@@ -179957,13 +179682,11 @@
           "_TZE284_2NHQASJH",
           "_TZE284_2SE8EFXH",
           "_TZE284_4XSYPNEY",
-          "_TZE284_65GZCSS7",
           "_TZE284_9CQCPKGB",
           "_TZE284_A0GSPFYZ",
           "_TZE284_AA03YZHS",
           "_TZE284_FQYTFMYK",
           "_TZE284_FQYTFYMK",
-          "_TZE284_HDML1AAV",
           "_TZE284_NPJ9BUG3",
           "_TZE284_OITAVOV2",
           "_TZE284_tgrzpqf4",
@@ -179972,17 +179695,8 @@
           "_TZE2841000000_hdml1aav",
           "_TZE200_SH8V7FHD",
           "_TZE204_SH8V7FHD",
-          "_TZE284_O9OFYSMO",
-          "_TZE284_XC3VWX5A",
           "_TZE204_pay2byax",
-          "_TZE284_hdml1aav",
           "_tze200_pay2byax",
-          "_tze284_o9ofysmo",
-          "_tze284_xc3vwx5a",
-          "_tze200_wqashyqo",
-          "_tze200_npj9bug3",
-          "_tze284_65gzcss7",
-          "_tze284_hdml1aav",
           "_tze284_tgrzpqf4",
           "_tze200_2se8efxh",
           "_tze200_9cqcpkgb",
@@ -180518,11 +180232,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy",
-          "HOBEIAN",
-          "hobeian"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "metadata": {
@@ -180661,8 +180371,6 @@
           }
         },
         "manufacturerName": [
-          "_tz3000_hafsqare",
-          "_tz3000_jl7qyupf",
           "HOBEIAN",
           "hobeian"
         ]
@@ -181193,26 +180901,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -181329,9 +181017,7 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_switch_1_gang_needs_device_assignment",
-          "HOBEIAN",
-          "hobeian"
+          "_hybrid_switch_1_gang_needs_device_assignment"
         ]
       },
       "version": "1.0.0",
@@ -181441,7 +181127,6 @@
           }
         },
         "manufacturerName": [
-          "_tz3000_prits6g4",
           "HOBEIAN",
           "hobeian"
         ]
@@ -182064,7 +181749,6 @@
           "_TZE200_dzuqwsyg",
           "_TZE200_tgeqdjgk",
           "_TZ3000_kqvb5akv",
-          "_TZE200_oisqyl4o",
           "_TZ3000_HAFSQARE",
           "_tz3000_9evm3otq",
           "_tz3000_keabpigb",
@@ -182076,7 +181760,6 @@
           "_tz3000_et7afzxz",
           "_tz3000_nuombroo",
           "_tz3000_xabckq1v",
-          "_tze200_oisqyl4o",
           "_tz3000_estfrmup",
           "_tyzb01_v8gtiaed",
           "_tze200_nkjintbl",
@@ -183126,16 +182809,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -183271,9 +182944,7 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_placeholder_generic",
-          "HOBEIAN",
-          "hobeian"
+          "_TZE200_placeholder_generic"
         ]
       },
       "version": "1.0.0",
@@ -183596,7 +183267,6 @@
           "_TZE200_WUNUFSIL",
           "_TZE204_G1IB5LDV",
           "_TZE204_WUNUFSIL",
-          "_TZE204_WVOVWE9H",
           "_TZ3210_NUENZETQ",
           "_TZ3000_LMLSDUWS",
           "_TZ3000_ZMY4LSLW",
@@ -183607,12 +183277,10 @@
           "_TZ3000_PTJCJISE",
           "_TZ3000_L9BRJWAU",
           "_TZ3000_MTNPT6WS",
-          "_TZ3000_HAFSQARE",
           "_tz3000_18ejxno0",
           "_tz3000_bi6lpsew",
           "_tz3000_jcspr0tp",
           "_tz3000_jl7qyupf",
-          "_tze204_wvovwe9h",
           "_tz3000_01gpyda5",
           "_tz3000_4js6g1cw",
           "_tz3000_4xfqlgqo",
@@ -184229,21 +183897,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -185125,26 +184778,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -185301,9 +184934,7 @@
           "_tz3400_402vrq2i",
           "_tze284_kow4ok3t",
           "_tz3000_ugi8ky6u",
-          "_tz3000_1fqpj6qz",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_1fqpj6qz"
         ],
         "productId": [
           "TS0004",
@@ -185559,7 +185190,6 @@
           "_TZ3000_LCJSEWLO",
           "_TZ3000_M3PAFCNK",
           "_TZ3000_MDJ7KRA9",
-          "_TZ3000_MRDUUBOD",
           "_TZ3000_NCB6MKX8",
           "_TZ3000_NIVAVASG",
           "_TZ3000_NORU9TIX",
@@ -185605,13 +185235,10 @@
           "_TZE204_XIBAABMU",
           "_TZE284_XIBAABMU",
           "_TZ3210_imaccztn",
-          "_TZ3002_pzao9ls1",
           "_TZ3000_nsa76jai",
           "_TZ3000_mmkbptmx",
           "_TZE200_aqnazj70",
-          "_TZE200_1ozguk6x",
           "_tyzb01_bagt1e4o",
-          "_tze200_1ozguk6x",
           "_tze200_aqnazj70",
           "_tz3210_imaccztn",
           "_tz3000_imaccztn",
@@ -185676,9 +185303,7 @@
           "_tze204_xibaabmu",
           "_tze284_xibaabmu",
           "_tz3000_nsa76jai",
-          "_tz3000_mmkbptmx",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_mmkbptmx"
         ]
       },
       "images": {
@@ -186259,31 +185884,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -188184,18 +187784,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -188356,10 +187950,6 @@
         },
         "manufacturerName": [
           "_tz3000_hafsqare",
-          "_TZE200_jwsjbxjs",
-          "_TZE200_leaqthqq",
-          "_tze200_jwsjbxjs",
-          "_tze200_leaqthqq",
           "HOBEIAN",
           "hobeian"
         ]
@@ -189083,11 +188673,7 @@
           "_TZE200_TZ32MTZA",
           "_TZE204_TZ32MTZA",
           "_TZE284_TZ32MTZA",
-          "_TZE200_9mahtqtg",
-          "_TZE200_wnp4d4va",
-          "_tze200_9mahtqtg",
           "_tze200_tz32mtza",
-          "_tze200_wnp4d4va",
           "_tz3000_cziew6eu",
           "_tze204_tz32mtza",
           "_tze284_tz32mtza",
@@ -190322,10 +189908,6 @@
           "_tze200_ws8g8u0b",
           "_tze204_8gang001",
           "_tze204_ws8g8u0b",
-          "_TZE200_wktrysab",
-          "_TZE204_wktrysab",
-          "_tze200_wktrysab",
-          "_tze204_wktrysab",
           "HOBEIAN",
           "hobeian"
         ],
@@ -192318,8 +191900,6 @@
           "_TZE284_ne4pikwm",
           "_TZE200_ne4pikwm",
           "_TZE204_xalsoe3m",
-          "_TZE284_9ern5sfh",
-          "_tze284_9ern5sfh",
           "_tyst11_2atgpdho",
           "_tyst11_kfvq6avy",
           "_tyst11_ckud7u2l",
@@ -192605,6 +192185,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -192676,6 +192259,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -192747,6 +192333,9 @@
         "button.1"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -197103,9 +196692,7 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_switch_1_gang_tuya_needs_device_assignment",
-          "HOBEIAN",
-          "hobeian"
+          "_hybrid_wall_switch_1_gang_tuya_needs_device_assignment"
         ]
       },
       "version": "1.0.0",
@@ -199786,7 +199373,6 @@
       "subDevices": [],
       "zigbee": {
         "productId": [
-          "TS0207",
           "q9mpfhw",
           "ZG-222Z",
           "ZG-223Z",
@@ -199832,10 +199418,6 @@
           "_TZ3000_zojh9vz7",
           "_TZ3000_gsat0axs",
           "_tze204_sh1btabb",
-          "_TZ3000_baeiitad",
-          "_TZE200_jthf7vb6",
-          "_tze200_jthf7vb6",
-          "_tz3000_baeiitad",
           "lumi.sensor_wleak",
           "lumi.sensor_wleak.aq1",
           "_tyzb01_sqmd19i1",
@@ -200958,10 +200540,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_RHGSBACQ",
           "_tze200_vkibfp3d",
-          "_tze200_wlcyxdky",
-          "_tze200_rhgsbacq"
+          "_tze200_wlcyxdky"
         ],
         "productId": [
           "TS0601_weather",
@@ -209767,6 +209347,5 @@
       },
       "id": "{{txt.id}}"
     }
-  },
-  "sdkVersion": 3
+  }
 }
