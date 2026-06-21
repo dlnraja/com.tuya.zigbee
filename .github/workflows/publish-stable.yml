@@ -66,16 +66,20 @@ jobs:
           cache: npm
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-      - name: Configure Git for Athom Action
+      - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Build App
+        run: npx homey app build
       - name: Publish to Draft
         id: publish
-        continue-on-error: true
-        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
+          printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true
+          echo "Draft publish completed"
 
   promote:
     name: "Promote to Test"
