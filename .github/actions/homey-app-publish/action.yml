@@ -1,5 +1,5 @@
 name: 'Homey App Publish (Fixed)'
-description: 'Publish Homey App with large.png fix for CLI bug'
+description: 'Publish Homey App with build + npm install'
 inputs:
   personal_access_token:
     description: 'Homey Personal Access Token'
@@ -11,9 +11,18 @@ outputs:
 runs:
   using: 'composite'
   steps:
+    - name: Build App
+      shell: bash
+      run: npx homey app build
+
     - name: Prepare Publish Directory
       shell: bash
       run: npm run prepare-publish
+
+    - name: Install deps in publish dir
+      shell: bash
+      run: npm install --omit=dev --no-audit --no-fund
+      working-directory: ${{ runner.temp }}/homey-publish-temp
 
     - name: Publish App
       id: publish
@@ -21,7 +30,7 @@ runs:
       env:
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
-        echo "$HOMEY_PAT" | homey login --token 2>/dev/null || true
+        echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
         npm run auto-publish
         APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
