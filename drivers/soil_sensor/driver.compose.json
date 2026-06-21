@@ -13,7 +13,8 @@
     "measure_luminance",
     "alarm_water",
     "measure_ec",
-    "measure_conductivity"
+    "measure_conductivity",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {
@@ -55,6 +56,15 @@
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {},
@@ -99,7 +109,45 @@
       "_TZE284_O9OFYSMO",
       "_TZE284_XC3VWX5A",
       "_TZE204_pay2byax",
-      "_TZE284_hdml1aav"
+      "_TZE284_hdml1aav",
+      "_tze200_pay2byax",
+      "_tze284_o9ofysmo",
+      "_tze284_xc3vwx5a",
+      "_tze200_wqashyqo",
+      "_tze200_npj9bug3",
+      "_tze284_65gzcss7",
+      "_tze284_hdml1aav",
+      "_tze284_tgrzpqf4",
+      "_tze200_2se8efxh",
+      "_tze200_9cqcpkgb",
+      "_tze284_2se8efxh",
+      "_tze284_9cqcpkgb",
+      "a89g12c",
+      "_tze200_4xsypney",
+      "_tze200_9cv5tcgq",
+      "_tze200_a0gspfyz",
+      "_tze200_fqytfmyk",
+      "_tze200_fqytfymk",
+      "_tze200_znlldql1",
+      "_tze204_4xsypney",
+      "_tze204_a0gspfyz",
+      "_tze204_fqytfmyk",
+      "_tze204_fqytfymk",
+      "_tze284_0ints6w",
+      "_tze284_2nhqasjh",
+      "_tze284_4xsypney",
+      "_tze284_a0gspfyz",
+      "_tze284_aa03yzhs",
+      "_tze284_fqytfmyk",
+      "_tze284_fqytfymk",
+      "_tze284_npj9bug3",
+      "_tze284_oitavov2",
+      "_tze200_itp8dt7f",
+      "_tze21c_i2ij4rb3",
+      "_tze2841000000_hdml1aav",
+      "_tze200_sh8v7fhd",
+      "_tze204_sh8v7fhd",
+      "_tze204_pay2byax"
     ],
     "productId": [
       "ZG-303Z",

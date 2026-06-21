@@ -11,7 +11,8 @@
     "measure_battery",
     "alarm_generic",
     "onoff",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -46,7 +47,30 @@
       "_TZE204_NLRFGPNY",
       "_TZE204_Q76RTOA9",
       "_TZE204_T1BLO2BJ",
-      "_TZE284_NLRFGPNY"
+      "_TZE284_NLRFGPNY",
+      "_tze200_nlrfgpny",
+      "_tyzb01_b6eaxdlh",
+      "_tyzb01_bnggsfsf",
+      "_tz3000_8r5u7wkh",
+      "_tz3000_ab7hfuil",
+      "_tz3000_aogb3s2t",
+      "_tz3000_d0yl2hsy",
+      "_tz3000_fabws1w2",
+      "_tz3000_fwfwifin",
+      "_tz3000_fwuelqs5",
+      "_tz3000_hdr3nfei",
+      "_tz3000_hv9cqcci",
+      "_tz3000_kfpsbnoi",
+      "_tz3000_rkkr4ooa",
+      "_tz3000_t13n5zo0",
+      "_tz3000_t6jsgizp",
+      "_tz3000_xnh7cqte",
+      "_tze200_t1blo2bj",
+      "_tze200_wnvhlcgl",
+      "_tze204_nlrfgpny",
+      "_tze204_q76rtoa9",
+      "_tze204_t1blo2bj",
+      "_tze284_nlrfgpny"
     ],
     "productId": [
       "TS0216",
@@ -262,7 +286,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

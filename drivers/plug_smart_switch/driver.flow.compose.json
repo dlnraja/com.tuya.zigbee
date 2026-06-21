@@ -243,7 +243,7 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Ã‰teint",
                 "nl": "Uit",
@@ -252,7 +252,7 @@
             },
             {
               "id": "normal",
-              "label": {
+              "title": {
                 "en": "Normal (LED when ON)",
                 "fr": "Normal (LED quand allumÃ©)",
                 "nl": "Normaal (LED bij AAN)",
@@ -261,7 +261,7 @@
             },
             {
               "id": "inverted",
-              "label": {
+              "title": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "InversÃ© (LED quand Ã©teint)",
                 "nl": "Omgekeerd (LED bij UIT)",
@@ -296,7 +296,7 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "ON state",
                 "fr": "Ã‰tat ON",
                 "nl": "AAN staat",
@@ -305,7 +305,7 @@
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "OFF state",
                 "fr": "Ã‰tat OFF",
                 "nl": "UIT staat",
@@ -323,7 +323,7 @@
           "values": [
             {
               "id": "red",
-              "label": {
+              "title": {
                 "en": "Red",
                 "fr": "Rouge",
                 "nl": "Rood",
@@ -332,7 +332,7 @@
             },
             {
               "id": "blue",
-              "label": {
+              "title": {
                 "en": "Blue",
                 "fr": "Bleu",
                 "nl": "Blauw",
@@ -341,7 +341,7 @@
             },
             {
               "id": "green",
-              "label": {
+              "title": {
                 "en": "Green",
                 "fr": "Vert",
                 "nl": "Groen",
@@ -350,7 +350,7 @@
             },
             {
               "id": "white",
-              "label": {
+              "title": {
                 "en": "White",
                 "fr": "Blanc",
                 "nl": "Wit",
@@ -359,7 +359,7 @@
             },
             {
               "id": "yellow",
-              "label": {
+              "title": {
                 "en": "Yellow",
                 "fr": "Jaune",
                 "nl": "Geel",
@@ -368,7 +368,7 @@
             },
             {
               "id": "magenta",
-              "label": {
+              "title": {
                 "en": "Magenta",
                 "fr": "Magenta",
                 "nl": "Magenta",
@@ -377,7 +377,7 @@
             },
             {
               "id": "cyan",
-              "label": {
+              "title": {
                 "en": "Cyan",
                 "fr": "Cyan",
                 "nl": "Cyaan",
@@ -386,7 +386,7 @@
             },
             {
               "id": "warm_white",
-              "label": {
+              "title": {
                 "en": "Warm White",
                 "fr": "Blanc Chaud",
                 "nl": "Warm Wit",
@@ -395,7 +395,7 @@
             },
             {
               "id": "warm_yellow",
-              "label": {
+              "title": {
                 "en": "Warm Yellow",
                 "fr": "Jaune Chaud",
                 "nl": "Warm Geel",
@@ -483,7 +483,7 @@
           "values": [
             {
               "id": "true",
-              "label": {
+              "title": {
                 "en": "Locked",
                 "fr": "VerrouillÃ©",
                 "nl": "Vergrendeld",
@@ -492,7 +492,7 @@
             },
             {
               "id": "false",
-              "label": {
+              "title": {
                 "en": "Unlocked",
                 "fr": "DÃ©verrouillÃ©",
                 "nl": "Ontgrendeld",
@@ -515,19 +515,19 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto (Normal + flows)"
               }
             },
             {
               "id": "magic",
-              "label": {
+              "title": {
                 "en": "Magic (Scene only)"
               }
             },
             {
               "id": "both",
-              "label": {
+              "title": {
                 "en": "Both (Load + scene)"
               }
             }

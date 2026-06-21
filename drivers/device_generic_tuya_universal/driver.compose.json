@@ -16,7 +16,8 @@
     "measure_battery",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -30,6 +31,15 @@
         "en": "Humidity",
         "fr": "Humidité"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -57,7 +67,9 @@
       "smartthings",
       "TRADFRI",
       "tuya",
-      "woox"
+      "woox",
+      "ikea",
+      "tradfri"
     ],
     "productId": [
       "TS0203",

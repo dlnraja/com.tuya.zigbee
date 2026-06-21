@@ -14,7 +14,8 @@
     "measure_humidity",
     "measure_voc",
     "measure_formaldehyde",
-    "alarm_generic"
+    "alarm_generic",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {
@@ -22,6 +23,15 @@
         "en": "Air Quality Alert",
         "fr": "Alerte Qualité Air"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {

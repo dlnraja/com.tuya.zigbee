@@ -11,7 +11,9 @@
     "onoff",
     "dim",
     "onoff.channel2",
-    "dim.channel2"
+    "dim.channel2",
+    "measure_battery",
+    "button.1"
   ],
   "platforms": [
     "local"
@@ -65,6 +67,23 @@
         "en": "Brightness 2",
         "da": "Lysstyrke 2"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "images": {
@@ -76,7 +95,10 @@
     "approximation": {
       "usageOn": 60,
       "usageOff": 0.5
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "maintenanceActions": [
     {

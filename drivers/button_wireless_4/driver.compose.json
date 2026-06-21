@@ -26,7 +26,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -34,7 +35,8 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
       "title": {
@@ -42,7 +44,8 @@
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.4": {
       "title": {
@@ -50,7 +53,8 @@
         "fr": "Bouton 4"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -134,6 +138,7 @@
       "_TZ3000_11PG3IMA",
       "_TZ3000_A4XYCPRS",
       "_TZ3000_BGTZM4NY",
+      "_TZ3000_5TQXPINE",
       "_TZ3000_CZUYT8LZ",
       "_TZ3000_ET7AFZXZ",
       "_TZ3000_NUOMBROO",
@@ -142,7 +147,10 @@
       "_TZ3000_VP6CLF9D",
       "_TZ3040_FWXUZCF4",
       "_TZ3290_IXD9MVV4",
-      "_TZ3000_xabckq1v"
+      "_TZ3000_xabckq1v",
+      "_tz3000_bgtzm4ny",
+      "_tz3000_5tqxpine",
+      "_tz3000_uri7oadn"
     ]
   },
   "images": {

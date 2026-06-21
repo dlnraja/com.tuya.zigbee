@@ -17,7 +17,8 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {
@@ -25,11 +26,21 @@
         "en": "Trip Alarm",
         "fr": "Alarme Déclenchement"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_4ma5pufe"
+      "_TZE200_4ma5pufe",
+      "_tze200_4ma5pufe"
     ],
     "productId": [
       "TS0601_breaker",

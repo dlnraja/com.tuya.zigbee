@@ -13,7 +13,8 @@
     "windowcoverings_set",
     "windowcoverings_tilt_set",
     "dim",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -51,7 +52,9 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "manufacturerName": ["_hybrid_shutter_roller_controller_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_shutter_roller_controller_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -295,7 +298,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

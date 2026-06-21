@@ -15,7 +15,8 @@
     "meter_power.exported",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_power": {
@@ -52,6 +53,15 @@
         "fr": "Courant"
       },
       "units": "A"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "settings": [
@@ -127,9 +137,10 @@
         "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
         "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_device_air_purifier_din_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_din_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/din_rail_meter/assets/images/small.png",

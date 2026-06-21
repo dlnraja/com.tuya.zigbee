@@ -14,7 +14,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -44,7 +45,9 @@
         ]
       }
     },
-    "manufacturerName": ["_hybrid_device_air_purifier_siren_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_siren_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -266,7 +269,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

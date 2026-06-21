@@ -7,11 +7,12 @@
   },
   "class": "garagedoor",
   "capabilities": [
-    "garagedoor_opener",
+    "garagedoor_closed",
     "onoff",
     "measure_battery",
     "alarm_battery",
-    "alarm_contact"
+    "alarm_contact",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "garagedoor_opener": {
@@ -25,6 +26,15 @@
         "en": "Door Contact",
         "fr": "Contact Porte"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -49,9 +59,19 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_TZE608_2wg235cx", "_TZE608_rwhg6ykp", "_TZE608_dgtklgxf", "_TZE608_qxlvbq2m", "_TZE608_o8gmu7lo"]
+    },
+    "manufacturerName": [
+      "_TZE608_2wg235cx",
+      "_TZE608_rwhg6ykp",
+      "_TZE608_dgtklgxf",
+      "_TZE608_qxlvbq2m",
+      "_TZE608_o8gmu7lo",
+      "_tze608_2wg235cx",
+      "_tze608_rwhg6ykp",
+      "_tze608_dgtklgxf",
+      "_tze608_qxlvbq2m",
+      "_tze608_o8gmu7lo"
+    ]
   },
   "settings": [
     {

@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_motion",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -32,7 +33,11 @@
       "TUYATEC-53o41joc",
       "TUYATEC-deetibst",
       "TUYATEC-dgtxmihe",
-      "TUYATEC-b5g40alm"
+      "TUYATEC-b5g40alm",
+      "tuyatec-53o41joc",
+      "tuyatec-deetibst",
+      "tuyatec-dgtxmihe",
+      "tuyatec-b5g40alm"
     ],
     "productId": [
       "RH3040"
@@ -57,5 +62,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

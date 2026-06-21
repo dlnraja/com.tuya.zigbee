@@ -18,7 +18,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -31,6 +32,15 @@
       "units": {
         "en": "m"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "subDevices": [],
@@ -53,7 +63,9 @@
         ]
       }
     },
-    "manufacturerName": ["_hybrid_device_air_purifier_presence_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_presence_needs_device_assignment"
+    ]
   },
   "settings": [
     {

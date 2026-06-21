@@ -109,19 +109,19 @@
           "values": [
             {
               "id": "low",
-              "label": {
+              "title": {
                 "en": "Low"
               }
             },
             {
               "id": "normal",
-              "label": {
+              "title": {
                 "en": "Normal"
               }
             },
             {
               "id": "high",
-              "label": {
+              "title": {
                 "en": "High"
               }
             }

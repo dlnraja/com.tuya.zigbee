@@ -39,7 +39,7 @@
       }
     },
     "manufacturerName": [
-      "remote button wireless plug"
+      "_TZE200_dummy"
     ]
   },
   "settings": [
@@ -428,7 +428,22 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

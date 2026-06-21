@@ -10,7 +10,8 @@
     "button",
     "dim",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "button": {
@@ -29,6 +30,15 @@
       "min": 0,
       "max": 1,
       "step": 0.01
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -50,7 +60,8 @@
     },
     "manufacturerName": [
       "_TZ3000_qja6nq5z",
-      "_TZ3000_kaflzta4"
+      "_TZ3000_kaflzta4",
+      "_tz3000_kaflzta4"
     ]
   },
   "images": {

@@ -17,7 +17,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_water_level": {
@@ -59,6 +60,15 @@
         "nl": "Niveau Alarm",
         "de": "Standmeldung"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "platforms": [
@@ -83,7 +93,11 @@
         ]
       }
     },
-    "manufacturerName": ["_tze200_81isopgh", "_tze200_htnnfasr", "_tze200_lvkk0hdg"]
+    "manufacturerName": [
+      "_tze200_81isopgh",
+      "_tze200_htnnfasr",
+      "_tze200_lvkk0hdg"
+    ]
   },
   "energy": {
     "batteries": [

@@ -13,7 +13,8 @@
     "measure_humidity",
     "measure_luminance",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -37,7 +38,15 @@
       "_TZE284_0WFZACEL",
       "_TZE284_ZY6WJM01",
       "_TZE284_gnpflcoq",
-      "_TZ3218_T9YNFZ"
+      "_TZ3218_T9YNFZ",
+      "_tz3218_awarhusb",
+      "_tz3218_t9ynfz4x",
+      "_tze200_1ibpyhon",
+      "_tze204_1ibpyhon",
+      "_tze284_0wfzacel",
+      "_tze284_zy6wjm01",
+      "_tze284_gnpflcoq",
+      "_tz3218_t9ynfz"
     ],
     "endpoints": {
       "1": {
@@ -451,5 +460,16 @@
     }
   ],
   "id": "motion_sensor_radar_mmwave",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

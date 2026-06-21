@@ -27,7 +27,8 @@
     "button.toggle_2",
     "button.toggle_3",
     "button.identify",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -54,22 +55,43 @@
     "button.toggle_1": {
       "title": {
         "en": "1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.toggle_2": {
       "title": {
         "en": "2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.toggle_3": {
       "title": {
         "en": "3"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "subDevices": [],
@@ -91,9 +113,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_climate_sensor_presence_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_climate_sensor_presence_needs_device_assignment"
+    ]
   },
   "settings": [
     {

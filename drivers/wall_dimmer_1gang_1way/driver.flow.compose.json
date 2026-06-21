@@ -103,21 +103,21 @@
           "values": [
             {
               "id": "0",
-              "label": {
+              "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
               }
             },
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "On when Light ON (Normal)",
                 "nl": "Aan wanneer Licht AAN (Normaal)"
               }
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "On when Light OFF (Inverted)",
                 "nl": "Aan wanneer Licht UIT (Omgekeerd)"
               }

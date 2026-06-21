@@ -265,10 +265,30 @@
             "fr": "Mode"
           },
           "values": [
-            "auto",
-            "heat",
-            "cool",
-            "off"
+            {
+              "id": "auto",
+              "title": {
+                "en": "auto"
+              }
+            },
+            {
+              "id": "heat",
+              "title": {
+                "en": "heat"
+              }
+            },
+            {
+              "id": "cool",
+              "title": {
+                "en": "cool"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "off"
+              }
+            }
           ]
         }
       ]

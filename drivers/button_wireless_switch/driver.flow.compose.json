@@ -307,7 +307,7 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Ã‰teint",
                 "nl": "Uit",
@@ -316,7 +316,7 @@
             },
             {
               "id": "normal",
-              "label": {
+              "title": {
                 "en": "Normal (LED when ON)",
                 "fr": "Normal (LED quand allumÃ©)",
                 "nl": "Normaal (LED bij AAN)",
@@ -325,7 +325,7 @@
             },
             {
               "id": "inverted",
-              "label": {
+              "title": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "InversÃ© (LED quand Ã©teint)",
                 "nl": "Omgekeerd (LED bij UIT)",
@@ -378,19 +378,19 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto (Normal + flows)"
               }
             },
             {
               "id": "magic",
-              "label": {
+              "title": {
                 "en": "Magic (Scene only)"
               }
             },
             {
               "id": "both",
-              "label": {
+              "title": {
                 "en": "Both (Load + scene)"
               }
             }

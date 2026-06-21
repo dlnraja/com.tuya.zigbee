@@ -13,7 +13,15 @@
     "onoff.gang4",
     "onoff.gang5",
     "onoff.gang6",
-    "onoff.gang7"
+    "onoff.gang7",
+    "measure_battery",
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5",
+    "button.6",
+    "button.7"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -57,6 +65,77 @@
         "en": "Gang 7",
         "fr": "Gang 7"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.5": {
+      "title": {
+        "en": "Button 5",
+        "fr": "Bouton 5"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.6": {
+      "title": {
+        "en": "Button 6",
+        "fr": "Bouton 6"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.7": {
+      "title": {
+        "en": "Button 7",
+        "fr": "Bouton 7"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "energy": {
@@ -67,7 +146,9 @@
   "zigbee": {
     "manufacturerName": [
       "_tyzb01_7gang001",
-      "_tz3000_7gang001"
+      "_tz3000_7gang001",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0007"

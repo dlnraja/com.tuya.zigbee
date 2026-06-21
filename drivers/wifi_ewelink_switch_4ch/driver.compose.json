@@ -11,7 +11,8 @@
     "onoff",
     "onoff.2",
     "onoff.3",
-    "onoff.4"
+    "onoff.4",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -33,6 +34,15 @@
       "title": {
         "en": "Channel 4"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "pair": [

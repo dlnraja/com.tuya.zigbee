@@ -14,7 +14,8 @@
     "measure_battery",
     "alarm_contact",
     "alarm_battery",
-    "alarm_tamper"
+    "alarm_tamper",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -56,5 +57,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

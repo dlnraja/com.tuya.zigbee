@@ -28,13 +28,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "Privacy ON (camera off)"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Privacy OFF (camera on)"
               }
             }
@@ -54,19 +54,19 @@
           "values": [
             {
               "id": "0",
-              "label": {
+              "title": {
                 "en": "Auto"
               }
             },
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "On"
               }
             }
@@ -86,25 +86,25 @@
           "values": [
             {
               "id": "0",
-              "label": {
+              "title": {
                 "en": "Up"
               }
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "Right"
               }
             },
             {
               "id": "4",
-              "label": {
+              "title": {
                 "en": "Down"
               }
             },
             {
               "id": "6",
-              "label": {
+              "title": {
                 "en": "Left"
               }
             }

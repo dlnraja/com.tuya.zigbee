@@ -7,12 +7,12 @@ class ClimateSmartDriver extends Driver {
     this.log('Climate Smart Driver initialized');
 
     try {
-      const card = this.homey.flow.getDeviceTriggerCard('climate_scene_triggered');
+      const card = this.homey.flow.getDeviceTriggerCard('sensor_climate_smart_climate_sensor_smart_smart_scene_panel_scene_activated');
       if (card) {
-        // rule-19 logic
+        this.log('[FLOW] Scene activated trigger registered');
       }
     } catch (e) {
-      this.error('Error registering climate_scene_triggered:', e.message);
+      this.error('[FLOW] Error registering scene_activated:', e.message);
     }
   }
 }

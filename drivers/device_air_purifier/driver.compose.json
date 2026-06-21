@@ -17,7 +17,8 @@
     "dim",
     "measure_pm25",
     "alarm_battery",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "platforms": [
     "local"
@@ -37,7 +38,9 @@
         ]
       }
     },
-    "manufacturerName": ["_hybrid_device_air_purifier_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_needs_device_assignment"
+    ]
   },
   "images": {
     "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
@@ -95,5 +98,16 @@
     }
   ],
   "id": "device_air_purifier",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -132,7 +132,7 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto",
                 "fr": "Auto",
                 "nl": "Auto",
@@ -141,7 +141,7 @@
             },
             {
               "id": "manual",
-              "label": {
+              "title": {
                 "en": "Manual",
                 "fr": "Manuel",
                 "nl": "Handmatig",
@@ -150,7 +150,7 @@
             },
             {
               "id": "eco",
-              "label": {
+              "title": {
                 "en": "Eco",
                 "fr": "Éco",
                 "nl": "Eco",
@@ -159,7 +159,7 @@
             },
             {
               "id": "boost",
-              "label": {
+              "title": {
                 "en": "Boost",
                 "fr": "Boost",
                 "nl": "Boost",
@@ -168,7 +168,7 @@
             },
             {
               "id": "away",
-              "label": {
+              "title": {
                 "en": "Away",
                 "fr": "Absent",
                 "nl": "Afwezig",
@@ -177,7 +177,7 @@
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Arrêt",
                 "nl": "Uit",
@@ -245,7 +245,7 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto",
                 "fr": "Auto",
                 "nl": "Auto",
@@ -254,7 +254,7 @@
             },
             {
               "id": "manual",
-              "label": {
+              "title": {
                 "en": "Manual",
                 "fr": "Manuel",
                 "nl": "Handmatig",
@@ -263,7 +263,7 @@
             },
             {
               "id": "eco",
-              "label": {
+              "title": {
                 "en": "Eco",
                 "fr": "Éco",
                 "nl": "Eco",
@@ -272,7 +272,7 @@
             },
             {
               "id": "boost",
-              "label": {
+              "title": {
                 "en": "Boost",
                 "fr": "Boost",
                 "nl": "Boost",
@@ -281,7 +281,7 @@
             },
             {
               "id": "away",
-              "label": {
+              "title": {
                 "en": "Away",
                 "fr": "Absent",
                 "nl": "Afwezig",
@@ -290,7 +290,7 @@
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Arrêt",
                 "nl": "Uit",

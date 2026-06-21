@@ -32,7 +32,8 @@
     "tuya_dp_string",
     "tuya_dp_raw",
     "tuya_cluster_event",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "tuya_dp_value": {
@@ -54,6 +55,15 @@
       "title": {
         "en": "Last Cluster Event"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "platforms": [
@@ -94,7 +104,7 @@
       }
     },
     "manufacturerName": [
-      "device generic diy universal"
+      "_TZE200_dummy"
     ]
   }
 }

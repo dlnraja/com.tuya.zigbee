@@ -18,7 +18,8 @@
   "capabilities": [
     "dim",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "images": {
     "large": "/drivers/smart_knob_switch/assets/images/large.png",
@@ -32,7 +33,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_uri7ber7"
+      "_tz3000_uri7ber7",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS004F",
@@ -108,5 +111,16 @@
       }
     }
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -16,12 +16,31 @@
   ],
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
       "opts": {
         "duration": true
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },
@@ -33,7 +52,10 @@
     "approximation": {
       "usageOn": 5,
       "usageOff": 0.5
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "settings": [
     {
@@ -64,7 +86,15 @@
       "_TZ3000_9hpxg1rf",
       "_TZ3000_8n7lpom4",
       "_TZ3210_ngqk6jia",
-      "_TZ3210_weaqkhab"
+      "_TZ3210_weaqkhab",
+      "_TZ3210_k1msuvg6",
+      "_TZ3210_ysfo0wla",
+      "_TZE200_ubgdwsnr",
+      "_TZ3210_guijtl8k",
+      "_TZ3210_hquixjeg",
+      "_TZ3210_vfwhhldz",
+      "_tz3000_9hpxg1rf",
+      "_tz3000_8n7lpom4"
     ],
     "productId": [
       "TS0601",

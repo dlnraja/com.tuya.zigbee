@@ -8,7 +8,7 @@
     "measure_water",
     "meter_water",
     "alarm_battery",
-    "alarm_fault"
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_water": {
@@ -22,6 +22,15 @@
         "en": "Total Flow",
         "fr": "Débit Total"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -37,9 +46,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_ultrasonic_water_meter_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_ultrasonic_water_meter_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/ultrasonic_water_meter/assets/images/small.png",
@@ -55,7 +65,10 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "AA"
+    ]
   },
   "id": "ultrasonic_water_meter",
   "version": "1.0.0"

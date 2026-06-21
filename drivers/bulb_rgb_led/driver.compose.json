@@ -14,8 +14,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -33,7 +33,17 @@
       "_TZE200_n9ctkb4j",
       "_TZE200_lxnn3emz",
       "_TZE200_n9hhdpmu",
-      "_TZE200_gz3kfwkn"
+      "_TZE200_gz3kfwkn",
+      "_tze200_dqolcpcm",
+      "_tze200_7htkb1dy",
+      "_tze200_9cgnbjrq",
+      "_tze200_mrffaeds",
+      "_tze200_h1pqutdd",
+      "_tze200_kgax5nux",
+      "_tze200_n9ctkb4j",
+      "_tze200_lxnn3emz",
+      "_tze200_n9hhdpmu",
+      "_tze200_gz3kfwkn"
     ],
     "endpoints": {
       "1": {
@@ -433,6 +443,15 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

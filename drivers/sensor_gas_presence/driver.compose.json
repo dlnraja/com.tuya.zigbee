@@ -20,7 +20,8 @@
     "alarm_contact",
     "alarm_gas",
     "alarm_tamper",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -33,6 +34,15 @@
       "units": {
         "en": "m"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "subDevices": [],
@@ -49,7 +59,9 @@
       "_TZ3000_2uollq9d",
       "_TZE200_bh3n6gk8",
       "_tze200_ggev5fsl",
-      "_tz3210_2uollq9d"
+      "_tz3210_2uollq9d",
+      "_tze200_bh3n6gk8",
+      "_tz3000_2uollq9d"
     ],
     "productId": [
       "TS0601_gas",
@@ -658,21 +670,21 @@
             "values": [
               {
                 "id": "smoke",
-                "label": {
+                "title": {
                   "en": "Smoke Test",
                   "fr": "Test Fumée"
                 }
               },
               {
                 "id": "co",
-                "label": {
+                "title": {
                   "en": "CO Test",
                   "fr": "Test CO"
                 }
               },
               {
                 "id": "all",
-                "label": {
+                "title": {
                   "en": "Full Test",
                   "fr": "Test Complet"
                 }

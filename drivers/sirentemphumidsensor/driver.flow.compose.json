@@ -35,7 +35,7 @@
           "values": [
             {
               "id": "off/disable",
-              "label": {
+              "title": {
                 "en": "Silence alarm",
                 "nl": "Alarm stil",
                 "de": "Stiller Alarm"
@@ -43,7 +43,7 @@
             },
             {
               "id": "on/enable",
-              "label": {
+              "title": {
                 "en": "Sound alarm",
                 "nl": "Alarm luiden",
                 "de": "Akustischer Alarm"
@@ -102,7 +102,7 @@
           "values": [
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "Low",
                 "nl": "Laag",
                 "de": "Niedrig"
@@ -110,7 +110,7 @@
             },
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "Midle",
                 "nl": "Middelmatig",
                 "de": "Mittel"
@@ -118,7 +118,7 @@
             },
             {
               "id": "0",
-              "label": {
+              "title": {
                 "en": "High (default)",
                 "nl": "Hoog (standaard)",
                 "de": "Hoch (Standard)"
@@ -147,7 +147,7 @@
           "values": [
             {
               "id": "0",
-              "label": {
+              "title": {
                 "en": "Doorbell 1",
                 "nl": "Doorbell 1",
                 "de": "Doorbell 1"
@@ -155,7 +155,7 @@
             },
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "For Elise (default)",
                 "nl": "Fur Elise (standaard)",
                 "de": "Fur Elise (Standard)"
@@ -163,7 +163,7 @@
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "Westminster",
                 "nl": "Westminster",
                 "de": "Westminster"
@@ -171,7 +171,7 @@
             },
             {
               "id": "3",
-              "label": {
+              "title": {
                 "en": "4 Key Chime",
                 "nl": "4 Key Chime",
                 "de": "4 Key Chime"
@@ -179,7 +179,7 @@
             },
             {
               "id": "4",
-              "label": {
+              "title": {
                 "en": "William Tell",
                 "nl": "William Tell",
                 "de": "William Tell"
@@ -187,7 +187,7 @@
             },
             {
               "id": "5",
-              "label": {
+              "title": {
                 "en": "Mozart Piano",
                 "nl": "Mozart Piano",
                 "de": "Mozart Piano"
@@ -195,7 +195,7 @@
             },
             {
               "id": "6",
-              "label": {
+              "title": {
                 "en": "Space Alarm",
                 "nl": "Space Alarm",
                 "de": "Space Alarm"
@@ -203,7 +203,7 @@
             },
             {
               "id": "7",
-              "label": {
+              "title": {
                 "en": "Klaxon",
                 "nl": "Klaxon",
                 "de": "Klaxon"
@@ -211,7 +211,7 @@
             },
             {
               "id": "8",
-              "label": {
+              "title": {
                 "en": "Meep meep",
                 "nl": "Meep meep",
                 "de": "Meep meep"
@@ -219,7 +219,7 @@
             },
             {
               "id": "9",
-              "label": {
+              "title": {
                 "en": "Wheep",
                 "nl": "Wheep",
                 "de": "Wheep"
@@ -227,7 +227,7 @@
             },
             {
               "id": "10",
-              "label": {
+              "title": {
                 "en": "Barking dog",
                 "nl": "Barking dog",
                 "de": "Barking dog"
@@ -235,7 +235,7 @@
             },
             {
               "id": "11",
-              "label": {
+              "title": {
                 "en": "Alarm Siren",
                 "nl": "Alarm Siren",
                 "de": "Alarm Siren"
@@ -243,7 +243,7 @@
             },
             {
               "id": "12",
-              "label": {
+              "title": {
                 "en": "Doorbell 2",
                 "nl": "Doorbell 2",
                 "de": "Doorbell 2"
@@ -251,7 +251,7 @@
             },
             {
               "id": "13",
-              "label": {
+              "title": {
                 "en": "Old Phone",
                 "nl": "Old Phone",
                 "de": "Old Phone"
@@ -259,7 +259,7 @@
             },
             {
               "id": "14",
-              "label": {
+              "title": {
                 "en": "Police Siren",
                 "nl": "Police Siren",
                 "de": "Police Siren"
@@ -267,7 +267,7 @@
             },
             {
               "id": "15",
-              "label": {
+              "title": {
                 "en": "Evacuation bell",
                 "nl": "Evacuation bell",
                 "de": "Evacuation bell"
@@ -275,7 +275,7 @@
             },
             {
               "id": "16",
-              "label": {
+              "title": {
                 "en": "Clock alarm",
                 "nl": "Clock alarm",
                 "de": "Clock alarm"
@@ -283,7 +283,7 @@
             },
             {
               "id": "17",
-              "label": {
+              "title": {
                 "en": "Fire alarm",
                 "nl": "Fire alarm",
                 "de": "Fire alarm"

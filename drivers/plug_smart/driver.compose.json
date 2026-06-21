@@ -13,8 +13,8 @@
     "measure_current",
     "measure_voltage",
     "power_on_behavior",
-    "countdown_remaining",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -49,9 +49,10 @@
           6
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_plug_smart_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_plug_smart_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -645,6 +646,17 @@
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0111, TS0101, TS0601, TS011F, S26R2ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS0002, TS0121"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

@@ -15,12 +15,12 @@
     "meter_power",
     "measure_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
-  
   },
   "zigbee": {
     "productId": [
@@ -70,9 +70,21 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the WiFi icon blinks rapidly."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_outdoor_2_socket_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_outdoor_2_socket_needs_device_assignment"
+    ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

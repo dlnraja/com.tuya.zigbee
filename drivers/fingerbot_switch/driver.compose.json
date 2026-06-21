@@ -11,7 +11,8 @@
     "button.identify",
     "button.push",
     "finger_bot_mode",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -25,7 +26,9 @@
       }
     },
     "manufacturerName": [
-      "_tz3210_m2ax2xyk"
+      "_tz3210_m2ax2xyk",
+      "HOBEIAN",
+      "hobeian"
     ],
     "endpoints": {
       "1": {
@@ -685,17 +688,35 @@
     "button.toggle": {
       "title": {
         "en": "toggle"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.push": {
       "title": {
         "en": "push"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {

@@ -1,155 +1,118 @@
 [
-    {
-      "id": "metering_offset",
-      "type": "number",
-      "label": {
-        "en": "Metering Correction Factor"
-      },
-      "hint": {
-        "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
-      },
-      "value": 1,
-      "attr": {
-        "min": 0.8,
-        "max": 1.2,
-        "step": 0.1
-      }
+  {
+    "id": "metering_offset",
+    "type": "number",
+    "label": {
+      "en": "Metering Correction Factor"
     },
-    {
-      "id": "measure_offset",
-      "type": "number",
-      "label": {
-        "en": "Measure Correction Factor"
-      },
-      "hint": {
-        "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
-      },
-      "value": 1,
-      "attr": {
-        "min": 0.8,
-        "max": 1.2,
-        "step": 0.1
-      }
+    "hint": {
+      "en": "Set a value to compensate if you experience that the Metered Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
     },
-    {
-      "id": "minReportPower",
-      "type": "number",
-      "label": {
-        "en": "Min report interval for power (s)"
-      },
-      "hint": {
-        "en": "Min interval before a report is sent to Homey (s)"
-      },
-      "value": 60,
-      "attr": {
-        "step": 1,
-        "min": 10,
-        "max": 86400
-      }
-    },
-    {
-      "id": "minReportCurrent",
-      "type": "number",
-      "label": {
-        "en": "Min report interval for current (s)"
-      },
-      "hint": {
-        "en": "Min interval before a report is sent to Homey (s)"
-      },
-      "value": 60,
-      "attr": {
-        "step": 1,
-        "min": 10,
-        "max": 86400
-      }
-    },
-    {
-      "id": "minReportVoltage",
-      "type": "number",
-      "label": {
-        "en": "Min report interval for voltage (s)"
-      },
-      "hint": {
-        "en": "Min interval before a report is sent to Homey (s)"
-      },
-      "value": 60,
-      "attr": {
-        "step": 1,
-        "min": 10,
-        "max": 86400
-      }
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Enhanced Features (v9.1)"
-      },
-      "children": [
-        {
-          "id": "standby_power_threshold",
-          "type": "number",
-          "label": {
-            "en": "Standby Power Threshold (W, 0=disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 20,
-          "step": 0.1,
-          "hint": {
-            "en": "Power level above which the standby flow card triggers. 0 = disabled."
-          }
-        },
-        {
-          "id": "energy_cost_per_kwh",
-          "type": "number",
-          "label": {
-            "en": "Energy Cost (per kWh, 0=disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 5.000,
-          "step": 0.001,
-          "hint": {
-            "en": "Cost per kWh for energy expense tracking"
-          }
-        },
-        {
-          "id": "energy_currency",
-          "type": "dropdown",
-          "label": {
-            "en": "Currency"
-          },
-          "value": "EUR",
-          "values": [
-            { "id": "EUR", "label": { "en": "EUR" } },
-            { "id": "USD", "label": { "en": "USD" } },
-            { "id": "GBP", "label": { "en": "GBP" } },
-            { "id": "NOK", "label": { "en": "NOK" } },
-            { "id": "SEK", "label": { "en": "SEK" } },
-            { "id": "DKK", "label": { "en": "DKK" } },
-            { "id": "CHF", "label": { "en": "CHF" } },
-            { "id": "PLN", "label": { "en": "PLN" } },
-            { "id": "CZK", "label": { "en": "CZK" } }
-          ],
-          "hint": {
-            "en": "Currency for energy cost calculations"
-          }
-        },
-        {
-          "id": "availability_timeout",
-          "type": "number",
-          "label": {
-            "en": "Offline Timeout (minutes, 0=disabled)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 1440,
-          "step": 5,
-          "hint": {
-            "en": "Minutes without messages before marking device as offline"
-          }
-        }
-      ]
+    "value": 1,
+    "attr": {
+      "min": 0.8,
+      "max": 1.2,
+      "step": 0.1
     }
-  ]
-  
+  },
+  {
+    "id": "measure_offset",
+    "type": "number",
+    "label": {
+      "en": "Measure Correction Factor"
+    },
+    "hint": {
+      "en": "Set a value to compensate if you experience that the Measured Power is not correct.\nRange: 0.8 - 1.2, step size 0.1, \ndefault: 1"
+    },
+    "value": 1,
+    "attr": {
+      "min": 0.8,
+      "max": 1.2,
+      "step": 0.1
+    }
+  },
+  {
+    "id": "minReportPower",
+    "type": "number",
+    "label": {
+      "en": "Min report interval for power (s)"
+    },
+    "hint": {
+      "en": "Min interval before a report is sent to Homey (s)"
+    },
+    "value": 60,
+    "attr": {
+      "step": 1,
+      "min": 10,
+      "max": 86400
+    }
+  },
+  {
+    "id": "minReportCurrent",
+    "type": "number",
+    "label": {
+      "en": "Min report interval for current (s)"
+    },
+    "hint": {
+      "en": "Min interval before a report is sent to Homey (s)"
+    },
+    "value": 60,
+    "attr": {
+      "step": 1,
+      "min": 10,
+      "max": 86400
+    }
+  },
+  {
+    "id": "minReportVoltage",
+    "type": "number",
+    "label": {
+      "en": "Min report interval for voltage (s)"
+    },
+    "hint": {
+      "en": "Min interval before a report is sent to Homey (s)"
+    },
+    "value": 60,
+    "attr": {
+      "step": 1,
+      "min": 10,
+      "max": 86400
+    }
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Enhanced Features (v9.1)"
+    },
+    "children": [
+      {
+        "id": "standby_power_threshold",
+        "type": "number",
+        "label": {
+          "en": "Standby Power Threshold (W, 0=disabled)"
+        },
+        "value": 0,
+        "min": 0,
+        "max": 20,
+        "step": 0.1,
+        "hint": {
+          "en": "Power level above which the standby flow card triggers. 0 = disabled."
+        }
+      },
+      {
+        "id": "availability_timeout",
+        "type": "number",
+        "label": {
+          "en": "Offline Timeout (minutes, 0=disabled)"
+        },
+        "value": 0,
+        "min": 0,
+        "max": 1440,
+        "step": 5,
+        "hint": {
+          "en": "Minutes without messages before marking device as offline"
+        }
+      }
+    ]
+  }
+]

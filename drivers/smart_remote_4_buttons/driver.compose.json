@@ -26,7 +26,6 @@
     "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
     "small": "/drivers/smart_remote_4_buttons/assets/images/small.png",
     "xlarge": "/drivers/smart_remote_4_buttons/assets/images/xlarge.png"
-  
   },
   "energy": {
     "batteries": [
@@ -53,9 +52,10 @@
       "instruction": {
         "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_smart_remote_4_buttons_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_smart_remote_4_buttons_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -112,7 +112,10 @@
         "fr": "Bouton 1",
         "nl": "Knop 1",
         "de": "Taste 1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.2": {
       "title": {
@@ -120,7 +123,10 @@
         "fr": "Bouton 2",
         "nl": "Knop 2",
         "de": "Taste 2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.3": {
       "title": {
@@ -128,7 +134,10 @@
         "fr": "Bouton 3",
         "nl": "Knop 3",
         "de": "Taste 3"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.4": {
       "title": {
@@ -136,7 +145,10 @@
         "fr": "Bouton 4",
         "nl": "Knop 4",
         "de": "Taste 4"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "measure_battery": {
       "title": {

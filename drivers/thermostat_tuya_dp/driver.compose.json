@@ -14,7 +14,8 @@
     "onoff",
     "measure_humidity",
     "alarm_battery",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "platforms": [
     "local"
@@ -75,7 +76,15 @@
       "_TZE204_qdihqf3l",
       "_TZE204_xby0s3ta",
       "_TZE200_A4B6TRRS",
-      "_TZE204_A4B6TRRS"
+      "_TZE204_A4B6TRRS",
+      "_tyst11_pisltm67",
+      "_tze204_pisltm67",
+      "_tyst11_9gvruqf5",
+      "_tyst11_yw7cahqs",
+      "_tze204_qdihqf3l",
+      "_tze204_xby0s3ta",
+      "_tze200_a4b6trrs",
+      "_tze204_a4b6trrs"
     ],
     "productId": [
       "TS0601_thermo",
@@ -199,5 +208,16 @@
     }
   ],
   "id": "thermostat_tuya_dp",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

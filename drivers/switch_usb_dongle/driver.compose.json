@@ -4,7 +4,9 @@
     "onoff",
     "onoff.l2",
     "measure_power",
-    "meter_power"
+    "meter_power",
+    "measure_battery",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -40,7 +42,9 @@
       }
     },
     "manufacturerName": [
-      "switch usb dongle"
+      "_TZE200_dummy",
+      "HOBEIAN",
+      "hobeian"
     ]
   },
   "images": {
@@ -123,6 +127,23 @@
         "en": "Cumulative Energy",
         "fr": "Énergie cumulée"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "metadata": {
@@ -150,5 +171,10 @@
     }
   ],
   "id": "switch_usb_dongle",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

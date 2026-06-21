@@ -14,11 +14,13 @@
     "measure_current",
     "measure_voltage",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZE284_6ocnqlhn"
+      "_TZE284_6ocnqlhn",
+      "_tze284_6ocnqlhn"
     ],
     "productId": [
       "TS0601_rcbo",
@@ -64,5 +66,16 @@
     }
   ],
   "id": "smart_rcbo",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

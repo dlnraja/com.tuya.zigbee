@@ -7,16 +7,23 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_generic"
+    "alarm_generic",
+    "measure_battery",
+    "button.1"
   ],
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_ixla93vd"
+      "_tz3000_ixla93vd",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601_wirelesssw",
@@ -490,7 +497,25 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

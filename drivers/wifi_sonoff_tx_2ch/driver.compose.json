@@ -82,7 +82,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.2"
+    "onoff.2",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -94,6 +95,15 @@
       "title": {
         "en": "Gang 2"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {

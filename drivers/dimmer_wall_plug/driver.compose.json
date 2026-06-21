@@ -15,7 +15,7 @@
     "onoff",
     "dim",
     "measure_battery",
-    "alarm_battery"
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -208,7 +208,25 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",
@@ -239,8 +257,60 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tz3000_1obwwnmq", "_tz3000_5f43h46b", "_tz3000_cehuw1lw", "_tz3000_cphmq0q7", "_tz3000_dpo1ysak", "_tz3000_ew3ldmgx", "_tz3000_g5xawfcq", "_tz3000_ga5shatp", "_tz3000_gjnozsaz", "_tz3000_gvn91tmx", "_tz3000_hdopuwv6", "_tz3000_hkuahi4e", "_tz3000_iv6ph5tr", "_tz3000_jvovfwyk", "_tz3000_kdi2o9m6", "_tz3000_ksw8qtmt", "_tz3000_mlswgkc3", "_tz3000_mraovvmm", "_tz3000_okaz9tjs", "_tz3000_ps3dmato", "_tz3000_qeuvnohg", "_tz3000_rdtixbnu", "_tz3000_ss98ec5d", "_tz3000_typdpbpg", "_tz3000_u5u4cakc", "_tz3000_upjrsxh1", "_tz3000_uwkja6z1", "_tz3000_vtscrpmw", "_tz3000_w0qqde0g", "_tz3000_waho4ber", "_tz3000_wzmuk9ai", "_tz3000_yujkchbz", "_tz3000_zloso4jk", "_tz3210_w0qqde0g", "_tz3210_xzhnra8x", "_tze200_bkkmqmyo", "_tze200_byzdayie", "_tze200_eaac7dkw", "_tze200_ewxhg6o9", "_tze200_fsb6zw01", "_tze200_lsanae15", "_tze200_nkjintbl", "_tze200_nphsqjnz", "_tze200_tz32mtza", "_tze200_v9hkz2up", "_tze200_wfxuhoea", "_tze204_bkkmqmyo", "_tze204_byzdayie", "_tze204_fsb6zw01", "_tze204_lsanae15", "_tze204_nkjintbl", "_tze204_nphsqjnz"]
+    },
+    "manufacturerName": [
+      "_tz3000_1obwwnmq",
+      "_tz3000_5f43h46b",
+      "_tz3000_cehuw1lw",
+      "_tz3000_cphmq0q7",
+      "_tz3000_dpo1ysak",
+      "_tz3000_ew3ldmgx",
+      "_tz3000_g5xawfcq",
+      "_tz3000_ga5shatp",
+      "_tz3000_gjnozsaz",
+      "_tz3000_gvn91tmx",
+      "_tz3000_hdopuwv6",
+      "_tz3000_hkuahi4e",
+      "_tz3000_iv6ph5tr",
+      "_tz3000_jvovfwyk",
+      "_tz3000_kdi2o9m6",
+      "_tz3000_ksw8qtmt",
+      "_tz3000_mlswgkc3",
+      "_tz3000_mraovvmm",
+      "_tz3000_okaz9tjs",
+      "_tz3000_ps3dmato",
+      "_tz3000_qeuvnohg",
+      "_tz3000_rdtixbnu",
+      "_tz3000_ss98ec5d",
+      "_tz3000_typdpbpg",
+      "_tz3000_u5u4cakc",
+      "_tz3000_upjrsxh1",
+      "_tz3000_uwkja6z1",
+      "_tz3000_vtscrpmw",
+      "_tz3000_w0qqde0g",
+      "_tz3000_waho4ber",
+      "_tz3000_wzmuk9ai",
+      "_tz3000_yujkchbz",
+      "_tz3000_zloso4jk",
+      "_tz3210_w0qqde0g",
+      "_tz3210_xzhnra8x",
+      "_tze200_bkkmqmyo",
+      "_tze200_byzdayie",
+      "_tze200_eaac7dkw",
+      "_tze200_ewxhg6o9",
+      "_tze200_fsb6zw01",
+      "_tze200_lsanae15",
+      "_tze200_nkjintbl",
+      "_tze200_nphsqjnz",
+      "_tze200_tz32mtza",
+      "_tze200_v9hkz2up",
+      "_tze200_wfxuhoea",
+      "_tze204_bkkmqmyo",
+      "_tze204_byzdayie",
+      "_tze204_fsb6zw01",
+      "_tze204_lsanae15",
+      "_tze204_nkjintbl",
+      "_tze204_nphsqjnz"
+    ]
   }
 }

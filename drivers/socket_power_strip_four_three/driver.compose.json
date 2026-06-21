@@ -11,11 +11,21 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_power": {
       "approximated": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {
@@ -28,7 +38,11 @@
       "_TYZB01_mtunwanm",
       "_TZ3000_9tg32trw",
       "_TZ3000_djgzdba9",
-      "_TZE200_ntcy3xu1"
+      "_TZE200_ntcy3xu1",
+      "_tze200_ntcy3xu1",
+      "_tyzb01_mtunwanm",
+      "_tz3000_9tg32trw",
+      "_tz3000_djgzdba9"
     ],
     "productId": [
       "JZ-ZB-004",

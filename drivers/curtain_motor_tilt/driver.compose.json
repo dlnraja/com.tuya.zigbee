@@ -12,7 +12,8 @@
     "windowcoverings_tilt_set",
     "alarm_generic",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -128,5 +129,16 @@
     }
   ],
   "id": "curtain_motor_tilt",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_contact",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -31,7 +32,9 @@
       "_TZ3000_n2egfsli",
       "_TZ3000_t3vvhrmh",
       "_TZ3000_oxslv1c9",
-      "_TZ3000_jowhpxop"
+      "_TZ3000_jowhpxop",
+      "_tz3000_t3vvhrmh",
+      "_tz3000_jowhpxop"
     ],
     "productId": [
       "TS0203"
@@ -61,6 +64,17 @@
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0203"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

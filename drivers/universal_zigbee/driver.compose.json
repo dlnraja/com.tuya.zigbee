@@ -33,7 +33,8 @@
     "tuya_dp_string",
     "tuya_dp_raw",
     "tuya_cluster_event",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "tuya_dp_value": {
@@ -55,6 +56,15 @@
       "title": {
         "en": "Last Cluster Event"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "platforms": [
@@ -123,7 +133,38 @@
       "_TZ3210_",
       "_TZE200_",
       "_TZE204_",
-      "_TZE284_"
+      "_TZE284_",
+      "legrand",
+      "schneider electric",
+      "danfoss",
+      "ewelink",
+      "aqara",
+      "aubess",
+      "avatto",
+      "bitron",
+      "eco-dim",
+      "ecodim",
+      "eurotronic",
+      "heiman",
+      "ikea of sweden",
+      "lidl home",
+      "moes",
+      "philips",
+      "robb smarrt",
+      "signify netherlands b.v.",
+      "silvercrest",
+      "sunricher",
+      "xiaomi",
+      "zemismart",
+      "_tyzb01_",
+      "_tyzb02_",
+      "_tz3000_",
+      "_tz3000_ox96m1m4",
+      "_tz3000_vm9p7o5f",
+      "_tz3210_",
+      "_tze200_",
+      "_tze204_",
+      "_tze284_"
     ],
     "productId": [
       "TS0001",

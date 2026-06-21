@@ -10,7 +10,8 @@
     "alarm_water",
     "measure_battery",
     "alarm_tamper",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "alarm_water": {
@@ -18,6 +19,15 @@
         "en": "Water Detected",
         "fr": "Eau Détectée"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -33,7 +43,6 @@
   "subDevices": [],
   "zigbee": {
     "productId": [
-      "TS0207",
       "q9mpfhw",
       "ZG-222Z",
       "ZG-223Z",
@@ -80,7 +89,16 @@
       "_TZ3000_gsat0axs",
       "_tze204_sh1btabb",
       "_TZ3000_baeiitad",
-      "_TZE200_jthf7vb6"
+      "_TZE200_jthf7vb6",
+      "_tze200_jthf7vb6",
+      "_tz3000_baeiitad",
+      "lumi.sensor_wleak",
+      "lumi.sensor_wleak.aq1",
+      "_tyzb01_sqmd19i1",
+      "_tyzb01_ttvdudvx",
+      "_tze200_sh1btabb",
+      "_tz3000_zojh9vz7",
+      "_tz3000_gsat0axs"
     ]
   },
   "settings": [

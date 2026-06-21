@@ -12,7 +12,8 @@
     "measure_pressure",
     "measure_luminance",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -20,6 +21,15 @@
         "en": "Outdoor Temperature",
         "fr": "Température extérieure"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -32,7 +42,8 @@
     "manufacturerName": [
       "_TZE200_RHGSBACQ",
       "_tze200_vkibfp3d",
-      "_tze200_wlcyxdky"
+      "_tze200_wlcyxdky",
+      "_tze200_rhgsbacq"
     ],
     "productId": [
       "TS0601_weather",

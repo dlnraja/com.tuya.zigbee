@@ -24,7 +24,8 @@
         "de": "Taste 1"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -34,7 +35,8 @@
         "de": "Taste 2"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
       "title": {
@@ -44,7 +46,8 @@
         "de": "Taste 3"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.4": {
       "title": {
@@ -54,7 +57,8 @@
         "de": "Taste 4"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -72,7 +76,9 @@
       "_tz3000_wkai4ga5",
       "_tz3000_zgyzgdua",
       "_tze200_zqtiam9d",
-      "_tze204_zqtiam9d"
+      "_tze204_zqtiam9d",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601",

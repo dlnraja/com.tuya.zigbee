@@ -12,13 +12,42 @@
   ],
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery",
+    "button.1",
+    "button.2"
   ],
   "capabilitiesOptions": {
     "dim": {
       "opts": {
         "duration": true
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {
@@ -29,7 +58,10 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "productId": [
@@ -90,7 +122,10 @@
       "_TZ3000_5f43h46b",
       "_TZE200_92t1xwwa",
       "_TZE200_fco1mkys",
-      "_TZE200_bxoo2swd"
+      "_TZE200_bxoo2swd",
+      "_tze200_92t1xwwa",
+      "_tze200_fco1mkys",
+      "_tze200_bxoo2swd"
     ]
   },
   "version": "1.0.0"

@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_1gang_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_1gang_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -34,7 +34,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_turn_off');
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_toggle');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_backlight');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_set_backlight: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_backlight: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_backlight_color');
@@ -79,7 +79,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_set_backlight_color: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_backlight_color: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_backlight_brightness');
@@ -90,7 +90,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_set_backlight_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_backlight_brightness: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_countdown');
@@ -102,7 +102,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_set_countdown: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_countdown: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_child_lock');
@@ -114,7 +114,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_set_child_lock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_child_lock: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_1gang_set_scene_mode');
@@ -125,10 +125,10 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_1gang_set_scene_mode: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_1gang_set_scene_mode: ${err.message}`); }; }
 
     try {
-      const card = this.homey.flow.getActionCard('set_power_on_behavior');
+      const card = this.homey.flow.getActionCard('switch_1gang_set_power_on_behavior');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
@@ -139,7 +139,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action set_power_on_behavior: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_power_on_behavior: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

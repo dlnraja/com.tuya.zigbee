@@ -15,7 +15,8 @@
     "alarm_human",
     "measure_battery",
     "measure_luminance.distance",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -28,6 +29,15 @@
       "units": {
         "en": "m"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "subDevices": [],
@@ -38,7 +48,9 @@
       "_tyzb01_jvsojrqx",
       "ts0222",
       "_TZE284_zofmmt9s",
-      "_TZE204_hewlydpz"
+      "_TZE204_hewlydpz",
+      "_tze284_zofmmt9s",
+      "_tze204_hewlydpz"
     ],
     "productId": [
       "TS0222",

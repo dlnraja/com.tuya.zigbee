@@ -10,7 +10,9 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilities": [],
+  "capabilities": [
+    "button.1"
+  ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
@@ -31,7 +33,7 @@
       }
     },
     "manufacturerName": [
-      "tuya dummy device"
+      "_TZE200_dummy"
     ]
   },
   "learnmode": {
@@ -39,5 +41,16 @@
       "en": "This driver will log all incoming Tuya datapoints. Please share diagnostic reports for analysis."
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

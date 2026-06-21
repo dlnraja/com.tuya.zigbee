@@ -15,7 +15,8 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -47,6 +48,15 @@
         "en": "LED Indicator",
         "fr": "Indicateur LED"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -74,7 +84,26 @@
       "_TZ3210_ph1joc22",
       "_TZ3000_pl5v1yyy",
       "_TZ3000_fgwhjm9j",
-      "_TZE284_mvtclclq"
+      "_TZE284_mvtclclq",
+      "_tze284_mvtclclq",
+      "_tze204_mvtclclq",
+      "_tyzb01_vkwryfdr",
+      "_tz3000_8kcqdngy",
+      "_tz3000_atp3bews",
+      "_tz3000_j4gg6d1b",
+      "_tz3000_ko6v90pg",
+      "_tz3000_qyolrmc9",
+      "_tz3000_u5u4caho",
+      "_tzb210_2dp1bpqq",
+      "_tzb210_hbejzgpj",
+      "_tzb210_wlbhvabf",
+      "_tze200_bseed2g",
+      "_tze204_bseed3g",
+      "_tz3000_8gs8h2e4",
+      "_tz3210_fgwhjm9j",
+      "_tz3210_ph1joc22",
+      "_tz3000_pl5v1yyy",
+      "_tz3000_fgwhjm9j"
     ],
     "productId": [
       "TS0115",

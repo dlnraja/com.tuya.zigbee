@@ -162,28 +162,28 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "ArrÃªt"
               }
             },
             {
               "id": "heat",
-              "label": {
+              "title": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
             },
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto",
                 "fr": "Auto"
               }
             },
             {
               "id": "cool",
-              "label": {
+              "title": {
                 "en": "Cool",
                 "fr": "Refroidissement"
               }
@@ -245,21 +245,21 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "ArrÃªt"
               }
             },
             {
               "id": "heat",
-              "label": {
+              "title": {
                 "en": "Heat",
                 "fr": "Chauffage"
               }
             },
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto",
                 "fr": "Auto"
               }
@@ -321,14 +321,14 @@
           "values": [
             {
               "id": "true",
-              "label": {
+              "title": {
                 "en": "Enabled",
                 "fr": "ActivÃ©"
               }
             },
             {
               "id": "false",
-              "label": {
+              "title": {
                 "en": "Disabled",
                 "fr": "DÃ©sactivÃ©"
               }
@@ -353,35 +353,35 @@
           "values": [
             {
               "id": "comfort",
-              "label": {
+              "title": {
                 "en": "Comfort (21Â°C)",
                 "fr": "Confort (21Â°C)"
               }
             },
             {
               "id": "eco",
-              "label": {
+              "title": {
                 "en": "Eco (18Â°C)",
                 "fr": "Ã‰co (18Â°C)"
               }
             },
             {
               "id": "away",
-              "label": {
+              "title": {
                 "en": "Away (15Â°C)",
                 "fr": "Absent (15Â°C)"
               }
             },
             {
               "id": "sleep",
-              "label": {
+              "title": {
                 "en": "Sleep (19Â°C)",
                 "fr": "Nuit (19Â°C)"
               }
             },
             {
               "id": "boost",
-              "label": {
+              "title": {
                 "en": "Boost (25Â°C)",
                 "fr": "Boost (25Â°C)"
               }

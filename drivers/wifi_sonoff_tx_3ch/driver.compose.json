@@ -83,7 +83,8 @@
   "capabilities": [
     "onoff",
     "onoff.2",
-    "onoff.3"
+    "onoff.3",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -100,6 +101,15 @@
       "title": {
         "en": "Gang 3"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {

@@ -11,7 +11,11 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery",
+    "button.1",
+    "button.2",
+    "button.3"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -21,14 +25,19 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
       "_tz3000_qqrfzboe",
       "_tz3000_rrjhbuyn",
       "_tz3000_mwmcqmtb",
-      "_tz3000_nkl1wxia"
+      "_tz3000_nkl1wxia",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0003",
@@ -101,5 +110,42 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

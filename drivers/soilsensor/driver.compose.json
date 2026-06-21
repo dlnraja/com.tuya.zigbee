@@ -15,7 +15,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -35,7 +36,8 @@
     "manufacturerName": [
       "_tze200_ga1maeof",
       "_tze284_aao3yzhs",
-      "_TZE284_ga1maeof"
+      "_TZE284_ga1maeof",
+      "_tze284_ga1maeof"
     ],
     "productId": [
       "TS0601"
@@ -59,5 +61,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

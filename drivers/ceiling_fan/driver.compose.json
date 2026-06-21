@@ -9,7 +9,8 @@
   "capabilities": [
     "dim",
     "onoff",
-    "dim.speed"
+    "dim.speed",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -282,7 +283,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

@@ -13,7 +13,8 @@
     "onoff",
     "measure_humidity",
     "alarm_battery",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "platforms": [
     "local"
@@ -88,8 +89,20 @@
           0
         ]
       }
+    },
+    "manufacturerName": [
+      "_hybrid_device_radiator_valve_thermostat_needs_device_assignment"
+    ]
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
-  ,
-    "manufacturerName": ["_hybrid_device_radiator_valve_thermostat_needs_device_assignment"]
   }
 }

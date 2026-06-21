@@ -19,7 +19,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -46,7 +47,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_sh1btaba"
+      "_TZE200_sh1btaba",
+      "_tze200_sh1btaba"
     ],
     "productId": [
       "TS0041",

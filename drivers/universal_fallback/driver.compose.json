@@ -8,9 +8,20 @@
   "class": "other",
   "capabilities": [
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "energy": {
     "batteries": [
       "OTHER"
@@ -203,7 +214,7 @@
       }
     },
     "manufacturerName": [
-      "universal fallback"
+      "_TZE200_dummy"
     ]
   }
 }

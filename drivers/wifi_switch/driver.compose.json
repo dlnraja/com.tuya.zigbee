@@ -9,8 +9,8 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "pair": [
     {
@@ -126,5 +126,16 @@
     }
   ],
   "id": "wifi_switch",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

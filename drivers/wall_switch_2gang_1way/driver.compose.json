@@ -9,13 +9,19 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2"
+    "onoff.gang2",
+    "measure_battery",
+    "button.1",
+    "button.2"
   ],
   "energy": {
     "approximation": {
       "usageOn": 100,
       "usageOff": 1
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "platforms": [
     "local"
@@ -47,7 +53,9 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_xk5udnd6",
-      "_tz3000_z1uezkpi"
+      "_tz3000_z1uezkpi",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0002",
@@ -280,5 +288,33 @@
     }
   ],
   "id": "wall_switch_2gang_1way",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }

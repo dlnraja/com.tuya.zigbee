@@ -11,7 +11,8 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "onoff"
+    "onoff",
+    "button.1"
   ],
   "energy": {},
   "zigbee": {
@@ -40,6 +41,7 @@
       "_tz3000_waho4ber",
       "_tz3000_wamqdr3f",
       "_tz3000_gjnozsaz",
+      "_TZ3000_gnjozsaz",
       "_tz3000_okaz9tjs",
       "_tz3000_j1v25l17",
       "_tz3210_xzhnra8x",
@@ -59,7 +61,18 @@
       "_TZ3000_CEHUW1LW",
       "_TZ3000_U5U4CAKC",
       "_TZ3000_WW6DRJA5",
-      "_TZ3000_QYSTBCJG"
+      "_TZ3000_QYSTBCJG",
+      "_tz3000_u5u4cakc",
+      "_tz3000_gnjozsaz",
+      "_tz3000_ww6drja5",
+      "_tz3000_cehuw1lw",
+      "e-welink",
+      "_tz3000_oxv67pno",
+      "_tze204_dcnsggvz",
+      "_tz3210_cehuw1lw",
+      "_tz3000_fukaa7nc",
+      "_tz3210_5ct6e7ye",
+      "_tz3000_qystbcjg"
     ],
     "productId": [
       "TS0121",
@@ -503,7 +516,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

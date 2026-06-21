@@ -15,37 +15,37 @@
           "values": [
             {
               "id": "left-oneClick",
-              "label": {
+              "title": {
                 "en": "left button was pressed 1 time"
               }
             },
             {
               "id": "left-twoClicks",
-              "label": {
+              "title": {
                 "en": "left button was pressed 2 times"
               }
             },
             {
               "id": "left-longPress",
-              "label": {
+              "title": {
                 "en": "left button was held down"
               }
             },
             {
               "id": "right-oneClick",
-              "label": {
+              "title": {
                 "en": "right button was pressed 1 time"
               }
             },
             {
               "id": "right-twoClicks",
-              "label": {
+              "title": {
                 "en": "right button was pressed 2 times"
               }
             },
             {
               "id": "right-longPress",
-              "label": {
+              "title": {
                 "en": "right button was held down"
               }
             }

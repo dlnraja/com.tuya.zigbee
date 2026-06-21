@@ -7,7 +7,8 @@
   "capabilities": [
     "onoff",
     "onoff.ir_learn",
-    "button.ir_test"
+    "button.ir_test",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -22,6 +23,20 @@
         "fr": "Mode Apprentissage"
       },
       "icon": "/assets/icons/learn.svg"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.ir_test": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "settings": [
@@ -126,7 +141,13 @@
       "_TZ3290_J37ROOAXRCDCQO5N",
       "_TZ3290_OT6EWJVMEJQ5EKHL",
       "_TZ3290_U9XAC5RV",
-      "_TZ3290_XJPBCXN92AAXVMLZ"
+      "_TZ3290_XJPBCXN92AAXVMLZ",
+      "_tz3290_ot6ewjvmejq5ekhl",
+      "_tz3290_j37rooaxrcdcqo5n",
+      "_tz3290_7v1k4vufotpowp9z",
+      "_tz3290_acv1iuslxi3shaaj",
+      "_tz3290_u9xac5rv",
+      "_tz3290_xjpbcxn92aaxvmlz"
     ],
     "productId": [
       "TS0601"

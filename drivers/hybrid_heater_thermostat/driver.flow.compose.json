@@ -92,16 +92,40 @@
       "args": [
         {
           "name": "mode",
-          "type": "enum",
+          "type": "dropdown",
           "title": {
             "en": "Mode",
             "fr": "Mode"
           },
           "values": [
-            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } },
-            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
-            { "id": "cool", "label": { "en": "Cool", "fr": "Refroidissement" } },
-            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } }
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "heat",
+              "title": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "cool",
+              "title": {
+                "en": "Cool",
+                "fr": "Refroidissement"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "fr": "Arrêt"
+              }
+            }
           ]
         }
       ]
@@ -173,16 +197,40 @@
       "args": [
         {
           "name": "mode",
-          "type": "enum",
+          "type": "dropdown",
           "title": {
             "en": "Mode",
             "fr": "Mode"
           },
           "values": [
-            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } },
-            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
-            { "id": "cool", "label": { "en": "Cool", "fr": "Refroidissement" } },
-            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } }
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "heat",
+              "title": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "cool",
+              "title": {
+                "en": "Cool",
+                "fr": "Refroidissement"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Off",
+                "fr": "Arrêt"
+              }
+            }
           ]
         }
       ]

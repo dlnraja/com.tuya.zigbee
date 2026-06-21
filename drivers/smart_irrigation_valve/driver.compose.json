@@ -7,8 +7,7 @@
   "capabilities": [
     "onoff",
     "measure_water",
-    "countdown_remaining",
-    "alarm_fault"
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_water": {
@@ -22,6 +21,15 @@
         "en": "Countdown Remaining",
         "fr": "Temps Restant"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -43,9 +51,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_smart_irrigation_valve_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_smart_irrigation_valve_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/smart_irrigation_valve/assets/images/small.png",

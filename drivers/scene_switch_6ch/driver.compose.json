@@ -16,37 +16,64 @@
   ],
   "capabilitiesOptions": {
     "button.1": {
-      "title": { "en": "Button 1", "fr": "Bouton 1" },
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
-      "title": { "en": "Button 2", "fr": "Bouton 2" },
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
-      "title": { "en": "Button 3", "fr": "Bouton 3" },
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.4": {
-      "title": { "en": "Button 4", "fr": "Bouton 4" },
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.5": {
-      "title": { "en": "Button 5", "fr": "Bouton 5" },
+      "title": {
+        "en": "Button 5",
+        "fr": "Bouton 5"
+      },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.6": {
-      "title": { "en": "Button 6", "fr": "Bouton 6" },
+      "title": {
+        "en": "Button 6",
+        "fr": "Bouton 6"
+      },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
-      "title": { "en": "Battery", "fr": "Batterie" }
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      }
     }
   },
   "energy": {
@@ -72,9 +99,12 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_scene_switch_6ch_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_scene_switch_6ch_needs_device_assignment",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
   "images": {
     "small": "/drivers/scene_switch_6ch/assets/images/small.png",

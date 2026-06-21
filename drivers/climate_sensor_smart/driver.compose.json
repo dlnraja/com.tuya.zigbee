@@ -15,7 +15,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff.gang1": {
@@ -41,6 +42,15 @@
         "en": "Switch 4",
         "fr": "Interrupteur 4"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "settings": [
@@ -134,8 +144,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_climate_sensor_smart_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_climate_sensor_smart_needs_device_assignment"
+    ]
   }
 }

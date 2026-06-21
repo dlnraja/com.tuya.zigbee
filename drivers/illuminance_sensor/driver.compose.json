@@ -10,7 +10,8 @@
   "capabilities": [
     "measure_luminance",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -39,9 +40,10 @@
       "instruction": {
         "en": "Hold button 5s until LED flashes."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_illuminance_sensor_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_illuminance_sensor_needs_device_assignment"
+    ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",
   "images": {
@@ -66,5 +68,16 @@
     }
   ],
   "id": "illuminance_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

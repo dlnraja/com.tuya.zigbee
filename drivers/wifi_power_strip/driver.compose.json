@@ -14,8 +14,8 @@
     "onoff.socket4",
     "measure_power",
     "meter_power",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -37,6 +37,15 @@
       "title": {
         "en": "Socket 4"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "pair": [

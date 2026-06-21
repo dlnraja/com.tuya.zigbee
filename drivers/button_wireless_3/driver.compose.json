@@ -25,7 +25,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -33,7 +34,8 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
       "title": {
@@ -41,7 +43,8 @@
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -72,7 +75,12 @@
       "_TZ3000_MJWG6A52",
       "_TZ3000_MUTFMN4U",
       "_TZ3000_NGSPH3OJ",
-      "_TZ3000_UYJMM0ET"
+      "_TZ3000_UYJMM0ET",
+      "_tz3000_bczr4e10",
+      "_tz3000_mjwg6a52",
+      "_tz3000_mutfmn4u",
+      "_tz3000_ngsph3oj",
+      "_tz3000_uyjmm0et"
     ],
     "productId": [
       "TS0043",

@@ -10,7 +10,8 @@
     "alarm_smoke",
     "measure_temperature",
     "measure_humidity",
-    "alarm_tamper"
+    "alarm_tamper",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -58,7 +59,10 @@
       "_TYST11_d0yu2xgi",
       "_tz3400_tk3s5tyg",
       "_TZ3000_d0yu2xgi",
-      "_tze200_d0yu2xgi"
+      "_tze200_d0yu2xgi",
+      "_tz3000_mwd3c2at",
+      "_tyst11_d0yu2xgi",
+      "_tz3000_d0yu2xgi"
     ]
   },
   "settings": [
@@ -297,7 +301,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

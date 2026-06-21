@@ -11,7 +11,8 @@
     "target_temperature",
     "thermostat_mode",
     "measure_temperature",
-    "measure_power"
+    "measure_power",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -28,9 +29,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_smart_heater_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_smart_heater_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/smart_heater/assets/images/small.png",
@@ -55,5 +57,16 @@
     }
   ],
   "id": "smart_heater",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

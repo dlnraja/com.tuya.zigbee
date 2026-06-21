@@ -11,7 +11,8 @@
     "alarm_co2",
     "alarm_contact",
     "alarm_gas",
-    "alarm_tamper"
+    "alarm_tamper",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -41,9 +42,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_gas_sensor_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_gas_sensor_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -287,7 +289,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

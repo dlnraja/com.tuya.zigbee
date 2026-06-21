@@ -8,7 +8,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_conductivity",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_conductivity": {
@@ -19,6 +20,15 @@
       "units": {
         "en": "µS/cm"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -43,9 +53,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_soil_sensor_ec_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_soil_sensor_ec_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/soil_sensor_ec/assets/images/small.png",

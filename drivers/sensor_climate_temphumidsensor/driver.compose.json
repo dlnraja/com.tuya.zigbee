@@ -11,7 +11,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -67,7 +68,9 @@
       }
     },
     "manufacturerName": [
-      "_tz3210_ncw88jfq"
+      "_tz3210_ncw88jfq",
+      "_TZ3000_ywagc4rj",
+      "_tz3000_ywagc4rj"
     ]
   },
   "settings": [
@@ -550,22 +553,6 @@
             "en": "Minutes without messages before marking device as offline (0 = use default)",
             "fr": "Minutes sans messages avant de marquer l'appareil comme hors ligne (0 = par défaut)"
           }
-        },
-        {
-          "id": "energy_cost_per_kwh",
-          "type": "number",
-          "label": {
-            "en": "Energy Cost (per kWh)",
-            "fr": "Coût énergétique (par kWh)"
-          },
-          "value": 0.25,
-          "min": 0.001,
-          "max": 5.000,
-          "step": 0.001,
-          "hint": {
-            "en": "Cost per kWh for energy tracking",
-            "fr": "Coût par kWh pour le suivi énergétique"
-          }
         }
       ]
     }
@@ -596,5 +583,16 @@
     "actions": []
   },
   "id": "sensor_climate_temphumidsensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

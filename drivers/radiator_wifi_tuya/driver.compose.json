@@ -12,7 +12,8 @@
     "measure_temperature",
     "thermostat_mode",
     "onoff",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -20,6 +21,15 @@
       "max": 35,
       "step": 0.5,
       "decimals": 1
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "connectivity": [

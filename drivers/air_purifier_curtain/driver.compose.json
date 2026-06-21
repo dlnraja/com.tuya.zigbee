@@ -16,7 +16,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "images": {
     "small": "/drivers/curtain_motor_tilt/assets/images/small.png",
@@ -145,14 +146,26 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_air_purifier_curtain_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_air_purifier_curtain_needs_device_assignment"
+    ]
   },
   "metadata": {
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched curtain devices with PID: TS0601"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

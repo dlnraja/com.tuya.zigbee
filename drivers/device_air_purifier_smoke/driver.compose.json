@@ -16,7 +16,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -47,7 +48,9 @@
     "productId": [
       "TS0601"
     ],
-    "manufacturerName": ["_tze284_rccxox8p"]
+    "manufacturerName": [
+      "_tze284_rccxox8p"
+    ]
   },
   "settings": [
     {
@@ -312,7 +315,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

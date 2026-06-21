@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_water",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -25,9 +26,7 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "productId": [
-      "TS0207"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -52,5 +51,16 @@
       "_TZE200_placeholder_generic"
     ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

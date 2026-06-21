@@ -14,7 +14,8 @@
     "measure_battery",
     "measure_luminance",
     "alarm_motion",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -29,6 +30,15 @@
         "fr": "PM2.5"
       },
       "units": "Âµg/mÂ³"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -51,9 +61,10 @@
         "en": "Press and hold the power button for 5 seconds",
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_air_purifier_motion_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_air_purifier_motion_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/air_purifier/assets/images/small.png",

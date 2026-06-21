@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_motion",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -34,7 +35,10 @@
       "_TYZB01_geepvxsy",
       "_TYZB01_jytabjkb",
       "_TZ3000_6ygjfyll",
-      "_TZ3000_bb6xaihh"
+      "_TZ3000_bb6xaihh",
+      "_tyzb01_dr6sduka",
+      "_tyzb01_dl7cejts",
+      "_tyzb01_geepvxsy"
     ],
     "productId": [
       "TS0202"
@@ -60,5 +64,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

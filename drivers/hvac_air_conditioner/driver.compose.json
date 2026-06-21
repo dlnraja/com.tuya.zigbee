@@ -11,7 +11,8 @@
     "measure_temperature",
     "thermostat_mode",
     "dim.speed",
-    "onoff"
+    "onoff",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -83,6 +84,15 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -100,7 +110,6 @@
     "small": "/drivers/hvac_air_conditioner/assets/images/small.png",
     "large": "/drivers/hvac_air_conditioner/assets/images/large.png",
     "xlarge": "/drivers/hvac_air_conditioner/assets/images/xlarge.png"
-  
   },
   "zigbee": {
     "productId": [
@@ -126,9 +135,10 @@
         "nl": "Houd de WiFi-knop 5 seconden ingedrukt totdat de LED snel knippert",
         "de": "Halten Sie die WLAN-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_hvac_air_conditioner_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_hvac_air_conditioner_needs_device_assignment"
+    ]
   },
   "metadata": {
     "app": {

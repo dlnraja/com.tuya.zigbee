@@ -85,7 +85,8 @@
     "onoff.2",
     "measure_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -97,6 +98,15 @@
       "title": {
         "en": "Channel 2"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {

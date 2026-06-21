@@ -23,7 +23,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -62,7 +63,20 @@
       "_TZ3000_KXAOW5KI",
       "_TZ3000_VN88EZAR",
       "_TZ3000_XKWALGNE",
-      "_TZ3210_AMLEYEEJ"
+      "_TZ3210_AMLEYEEJ",
+      "_tz3000_b4awzgct",
+      "_tz3000_0cxtpylt",
+      "_tz3000_22ugzkme",
+      "_tz3000_adndolvx",
+      "_tz3000_arfwfgre",
+      "_tz3000_bsvqrux3",
+      "_tz3000_ebar5p3z",
+      "_tz3000_ee9s2k4d",
+      "_tz3000_ke_x0oo3",
+      "_tz3000_kxaow5ki",
+      "_tz3000_vn88ezar",
+      "_tz3000_xkwalgne",
+      "_tz3210_amleyeej"
     ],
     "productId": [
       "TS0041",

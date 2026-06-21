@@ -85,7 +85,8 @@
     "measure_power",
     "measure_voltage",
     "measure_current",
-    "meter_power"
+    "meter_power",
+    "button.1"
   ],
   "images": {
     "small": "/drivers/wifi_sonoff_pow_elite/assets/images/small.png",
@@ -103,5 +104,16 @@
     }
   ],
   "id": "wifi_sonoff_pow_elite",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

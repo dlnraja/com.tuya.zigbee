@@ -10,7 +10,8 @@
   "capabilities": [
     "onoff",
     "onoff.2",
-    "dim"
+    "dim",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -27,6 +28,15 @@
       "title": {
         "en": "Fan Speed"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "pair": [

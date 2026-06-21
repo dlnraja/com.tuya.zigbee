@@ -11,7 +11,8 @@
     "button.identify",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -32,7 +33,10 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_dummy1781425895945"
+      "_TZ3000_dummy1781425895945",
+      "_tz3000_dummy1781425895945",
+      "HOBEIAN",
+      "hobeian"
     ]
   },
   "images": {
@@ -684,12 +688,27 @@
     "button.toggle": {
       "title": {
         "en": "toggle"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {

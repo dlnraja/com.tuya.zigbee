@@ -14,7 +14,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -30,7 +31,8 @@
       "_tza226_ueagguan",
       "_tyzb01_a082h2cc",
       "_tz3000_rufdtfyv",
-      "TUYATEC-qun7vq14"
+      "TUYATEC-qun7vq14",
+      "tuyatec-qun7vq14"
     ],
     "productId": [
       "RH3052",
@@ -58,5 +60,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -11,7 +11,8 @@
     "measure_battery",
     "measure_co",
     "alarm_tamper",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -26,7 +27,11 @@
       "_TZ3000_NBM3PJII",
       "_TZE200_AYCXWIAU",
       "_TZE200_PBDLRMFB",
-      "_TZE204_PBDLRMFB"
+      "_TZE204_PBDLRMFB",
+      "_tz3000_nbm3pjii",
+      "_tze200_aycxwiau",
+      "_tze200_pbdlrmfb",
+      "_tze204_pbdlrmfb"
     ],
     "productId": [
       "TS0601_co",
@@ -63,5 +68,16 @@
     }
   ],
   "id": "co_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

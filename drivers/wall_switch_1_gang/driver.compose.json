@@ -11,7 +11,9 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -21,12 +23,17 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
       "_tyzb01_qm6djpta",
-      "_tz3000_2mb38mf3"
+      "_tz3000_2mb38mf3",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0001",
@@ -58,5 +65,24 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }

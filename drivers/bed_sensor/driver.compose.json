@@ -15,7 +15,8 @@
     "alarm_contact",
     "measure_battery",
     "alarm_battery",
-    "measure_luminance"
+    "measure_luminance",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -52,7 +53,12 @@
       "_TZE204_sh11h1f5",
       "_TZE284_sh11h1f5",
       "_TZE204_seq9cm6u",
-      "_TZE284_seq9cm6u"
+      "_TZE284_seq9cm6u",
+      "_tze200_sh11h1f5",
+      "_tze204_sh11h1f5",
+      "_tze284_sh11h1f5",
+      "_tze204_seq9cm6u",
+      "_tze284_seq9cm6u"
     ]
   },
   "images": {
@@ -146,5 +152,16 @@
     }
   ],
   "id": "bed_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

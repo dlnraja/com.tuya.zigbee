@@ -12,7 +12,8 @@
     "alarm_tamper",
     "measure_battery",
     "measure_luminance",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -118,7 +119,13 @@
       "_TZE204_wfxuhoea",
       "_TZE200_2m38mh6k",
       "_tze200_nklqjk62",
-      "_tze204_2m38mh6k"
+      "_tze204_2m38mh6k",
+      "_tz3000_bpkijo14",
+      "_tz3000_dlhhrhs8",
+      "_tze200_bqcqqjpb",
+      "_tze204_nklqjk62",
+      "_tze204_wfxuhoea",
+      "_tze200_2m38mh6k"
     ],
     "productId": [
       "TS0203",
@@ -518,5 +525,16 @@
     "actions": []
   },
   "id": "sensor_contact_zigbee",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

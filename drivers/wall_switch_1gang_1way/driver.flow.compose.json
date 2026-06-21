@@ -143,21 +143,21 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
               }
             },
             {
               "id": "normal",
-              "label": {
+              "title": {
                 "en": "On when Switch ON (Normal)",
                 "nl": "Aan wanneer Schakelaar AAN (Normaal)"
               }
             },
             {
               "id": "inverted",
-              "label": {
+              "title": {
                 "en": "On when Switch OFF (Inverted)",
                 "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
               }
@@ -211,21 +211,21 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Always Off",
                 "nl": "Altijd Uit"
               }
             },
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "Always On",
                 "nl": "Altijd Aan"
               }
             },
             {
               "id": "memory",
-              "label": {
+              "title": {
                 "en": "Last State",
                 "nl": "Laatste status"
               }
@@ -249,21 +249,21 @@
           "values": [
             {
               "id": "toggle",
-              "label": {
+              "title": {
                 "en": "Toggle",
                 "nl": "Tuimelschakelaar"
               }
             },
             {
               "id": "state",
-              "label": {
+              "title": {
                 "en": "State (Rocker)",
                 "nl": "Status (Wipschakelaar)"
               }
             },
             {
               "id": "momentary",
-              "label": {
+              "title": {
                 "en": "Momentary (Push Button)",
                 "nl": "Pulsdrukknop"
               }
@@ -285,19 +285,19 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto (Normal + flows)"
               }
             },
             {
               "id": "magic",
-              "label": {
+              "title": {
                 "en": "Magic (Scene only)"
               }
             },
             {
               "id": "both",
-              "label": {
+              "title": {
                 "en": "Both (Load + scene)"
               }
             }

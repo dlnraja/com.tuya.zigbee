@@ -172,25 +172,25 @@
           "values": [
             {
               "id": "silent",
-              "label": {
+              "title": {
                 "en": "Silent"
               }
             },
             {
               "id": "standard",
-              "label": {
+              "title": {
                 "en": "Standard"
               }
             },
             {
               "id": "strong",
-              "label": {
+              "title": {
                 "en": "Strong"
               }
             },
             {
               "id": "super",
-              "label": {
+              "title": {
                 "en": "Super"
               }
             }
@@ -210,19 +210,19 @@
           "values": [
             {
               "id": "sweep",
-              "label": {
+              "title": {
                 "en": "Sweep"
               }
             },
             {
               "id": "mop",
-              "label": {
+              "title": {
                 "en": "Mop"
               }
             },
             {
               "id": "sweep_and_mop",
-              "label": {
+              "title": {
                 "en": "Sweep + Mop"
               }
             }
@@ -242,13 +242,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "On"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             }

@@ -14,11 +14,21 @@
     "measure_humidity",
     "alarm_siren",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
       "greyout": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -36,7 +46,6 @@
   "images": {
     "small": "/{{driverAssetsPath}}/images/small.png",
     "large": "/{{driverAssetsPath}}/images/large.png"
-  
   },
   "zigbee": {
     "productId": [
@@ -62,7 +71,9 @@
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
       }
     },
-    "manufacturerName": ["_hybrid_sirentemphumidsensor_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_sirentemphumidsensor_needs_device_assignment"
+    ]
   },
   "maintenanceActions": [
     {

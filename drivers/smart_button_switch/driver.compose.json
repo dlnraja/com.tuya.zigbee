@@ -30,7 +30,9 @@
       "_tz3000_yj6k7vfo",
       "_tz3000_ja5osu5g",
       "_tyzb02_keyjqtha",
-      "_tz3000_1gcuf2uw"
+      "_tz3000_1gcuf2uw",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0040",
@@ -114,7 +116,10 @@
         "fr": "Bouton 1",
         "nl": "Knop 1",
         "de": "Taste 1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "measure_battery": {
       "title": {

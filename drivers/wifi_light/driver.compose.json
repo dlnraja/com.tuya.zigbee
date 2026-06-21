@@ -13,7 +13,8 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "button.1"
   ],
   "pair": [
     {
@@ -129,5 +130,16 @@
     }
   ],
   "id": "wifi_light",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

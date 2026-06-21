@@ -10,7 +10,7 @@
     "onoff",
     "measure_battery",
     "alarm_battery",
-    "countdown_remaining"
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -20,6 +20,15 @@
         "nl": "Klep",
         "de": "Ventil"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -40,7 +49,9 @@
       "_TZE284_7ytb3h8u",
       "_TZE200_htnnfasr",
       "_tze200_7ytb3h8u",
-      "_tze204_7ytb3h8u"
+      "_tze204_7ytb3h8u",
+      "_tze200_htnnfasr",
+      "_tze284_7ytb3h8u"
     ],
     "productId": [
       "TS0049"
