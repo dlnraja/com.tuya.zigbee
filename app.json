@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.55",
+  "version": "9.0.56",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -117091,9 +117091,7 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_switch_needs_device_assignment",
-          "HOBEIAN",
-          "hobeian"
+          "_hybrid_climate_sensor_switch_needs_device_assignment"
         ]
       }
     },
@@ -169899,11 +169897,7 @@
             ]
           }
         },
-        "manufacturerName": [
-          "_tz3000_n2egfsli",
-          "_tz3000_oxslv1c9",
-          "_tze200_pay2byax"
-        ]
+        "manufacturerName": []
       },
       "settings": [
         {
@@ -177854,9 +177848,7 @@
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
         },
-        "manufacturerName": [
-          "_TZE200_dummy"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "settings": [
@@ -181030,10 +181022,7 @@
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
         },
-        "manufacturerName": [
-          "HOBEIAN",
-          "hobeian"
-        ]
+        "manufacturerName": []
       },
       "version": "1.0.0",
       "energy": {
@@ -184100,7 +184089,6 @@
           "_tz3000_amdymr85",
           "_TZ3210_n0wbkysi",
           "_TZ3000_qkixdnon",
-          "_TZE200_tz32mtza",
           "_TZE200_vhy3iakz",
           "_TZ3000_V4L4B0LP",
           "_TZ3000_EQSAIR32",
@@ -184112,9 +184100,7 @@
           "_tz3000_v4l4b0lp",
           "_tz3000_eqsair32",
           "_tz3000_mw1pqqqt",
-          "_tz3000_hbic3ka3",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_hbic3ka3"
         ]
       },
       "images": {
@@ -187849,7 +187835,6 @@
           }
         },
         "manufacturerName": [
-          "_tz3000_hafsqare",
           "HOBEIAN",
           "hobeian"
         ]
@@ -188576,9 +188561,7 @@
           "_tze200_tz32mtza",
           "_tz3000_cziew6eu",
           "_tze204_tz32mtza",
-          "_tze284_tz32mtza",
-          "HOBEIAN",
-          "hobeian"
+          "_tze284_tz32mtza"
         ],
         "productId": [
           "TS0016",
@@ -196649,9 +196632,7 @@
         "manufacturerName": [
           "_tz3000_vw40zqp4",
           "_tz3000_ovyaisip",
-          "_tz3000_pk8tgtdb",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_pk8tgtdb"
         ],
         "productId": [
           "TS0001",
@@ -196960,9 +196941,7 @@
       "zigbee": {
         "manufacturerName": [
           "_tz3000_xk5udnd6",
-          "_tz3000_z1uezkpi",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_z1uezkpi"
         ],
         "productId": [
           "TS0002",
@@ -198223,9 +198202,7 @@
           "_TZ3000_mrduubod",
           "_tz3002_pzao9ls1",
           "_tz3000_mrduubod",
-          "_tz3000_tyg4yiat",
-          "HOBEIAN",
-          "hobeian"
+          "_tz3000_tyg4yiat"
         ],
         "productId": [
           "TS0726",
