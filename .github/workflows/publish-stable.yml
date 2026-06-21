@@ -42,7 +42,7 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: SDK3 Validation
         run: |
-          SDK=$(node -p "require('./app.json').sdk")
+          SDK=$(node -p "require('./app.json').sdkVersion")
           if [ "$SDK" != "3" ]; then
             echo "::error::Invalid SDK: $SDK (expected 3)"
             exit 1
