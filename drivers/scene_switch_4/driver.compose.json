@@ -16,7 +16,6 @@
     "alarm_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
@@ -25,7 +24,8 @@
         "de": "Taste 1"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -35,7 +35,8 @@
         "de": "Taste 2"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
       "title": {
@@ -45,7 +46,8 @@
         "de": "Taste 3"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.4": {
       "title": {
@@ -55,7 +57,8 @@
         "de": "Taste 4"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -100,7 +103,9 @@
       "_TZE204_ZQTIAM9D",
       "_tze284_tgeqdjgk",
       "_TZE284_tgeqdjgk",
-      "_TZE284_TGEQDJGK"
+      "_TZE284_TGEQDJGK",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601",

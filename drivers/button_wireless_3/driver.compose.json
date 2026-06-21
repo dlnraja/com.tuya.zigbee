@@ -19,14 +19,14 @@
     "alarm_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -34,7 +34,8 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
       "title": {
@@ -42,7 +43,8 @@
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {

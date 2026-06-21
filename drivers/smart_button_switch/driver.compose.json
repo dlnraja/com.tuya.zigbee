@@ -30,7 +30,10 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "HOBEIAN",
+      "hobeian"
+    ],
     "productId": [
       "TS0041"
     ],
@@ -104,7 +107,10 @@
         "fr": "Bouton 1",
         "nl": "Knop 1",
         "de": "Taste 1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "measure_battery": {
       "title": {

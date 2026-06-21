@@ -14,14 +14,14 @@
     "alarm_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -29,7 +29,8 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     }
   },
   "zigbee": {
@@ -39,7 +40,9 @@
       "_TZ3000_DFGBTUB0",
       "_tz3000_w8jwkczz",
       "_TZ3000_w8jwkczz",
-      "_TZ3000_W8JWKCZZ"
+      "_TZ3000_W8JWKCZZ",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0042",

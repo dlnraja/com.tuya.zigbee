@@ -20,7 +20,10 @@
       "title": {
         "en": "Feed Now",
         "fr": "Distribuer"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "alarm_generic": {
       "title": {

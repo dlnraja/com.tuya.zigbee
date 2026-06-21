@@ -22,6 +22,11 @@
         "fr": "Mode Apprentissage"
       },
       "icon": "/assets/icons/learn.svg"
+    },
+    "button.ir_test": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "settings": [
@@ -55,11 +60,41 @@
         "fr": "Catégorie d'appareil"
       },
       "values": [
-        { "id": "TV", "label": { "en": "TV", "fr": "TV" } },
-        { "id": "AC", "label": { "en": "AC", "fr": "Climatiseur" } },
-        { "id": "Fan", "label": { "en": "Fan", "fr": "Ventilateur" } },
-        { "id": "Audio", "label": { "en": "Audio", "fr": "Audio" } },
-        { "id": "Light", "label": { "en": "Light", "fr": "Lumière" } }
+        {
+          "id": "TV",
+          "label": {
+            "en": "TV",
+            "fr": "TV"
+          }
+        },
+        {
+          "id": "AC",
+          "label": {
+            "en": "AC",
+            "fr": "Climatiseur"
+          }
+        },
+        {
+          "id": "Fan",
+          "label": {
+            "en": "Fan",
+            "fr": "Ventilateur"
+          }
+        },
+        {
+          "id": "Audio",
+          "label": {
+            "en": "Audio",
+            "fr": "Audio"
+          }
+        },
+        {
+          "id": "Light",
+          "label": {
+            "en": "Light",
+            "fr": "Lumière"
+          }
+        }
       ],
       "value": "TV"
     }

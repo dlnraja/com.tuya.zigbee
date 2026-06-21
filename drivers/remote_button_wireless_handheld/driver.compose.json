@@ -23,7 +23,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -31,7 +32,8 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.3": {
       "title": {
@@ -39,7 +41,8 @@
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.4": {
       "title": {
@@ -47,7 +50,8 @@
         "fr": "Bouton 4"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {

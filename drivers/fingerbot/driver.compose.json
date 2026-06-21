@@ -81,5 +81,12 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.push": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    }
+  }
 }

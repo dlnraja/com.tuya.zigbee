@@ -23,7 +23,8 @@
         "de": "Links drehen"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.rotate_right": {
       "title": {
@@ -33,7 +34,8 @@
         "de": "Rechts drehen"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.press": {
       "title": {
@@ -43,7 +45,8 @@
         "de": "Drücken"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "dim": {
       "title": {

@@ -31,7 +31,10 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "HOBEIAN",
+      "hobeian"
+    ],
     "productId": [
       "TS004F"
     ],

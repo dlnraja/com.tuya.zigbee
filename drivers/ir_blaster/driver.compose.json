@@ -24,7 +24,10 @@
         "en": "Learn IR Code",
         "nl": "Leer IR Code",
         "de": "IR-Code lernen"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "onoff": {
       "title": {
@@ -33,10 +36,38 @@
         "de": "Ein/Aus"
       }
     },
-    "button.mute": { "title": { "en": "Mute" } },
-    "button.source": { "title": { "en": "Source/Input" } },
-    "button.menu": { "title": { "en": "Menu" } },
-    "button.enter": { "title": { "en": "OK/Enter" } }
+    "button.mute": {
+      "title": {
+        "en": "Mute"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.source": {
+      "title": {
+        "en": "Source/Input"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.menu": {
+      "title": {
+        "en": "Menu"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.enter": {
+      "title": {
+        "en": "OK/Enter"
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    }
   },
   "settings": [
     {
@@ -64,9 +95,24 @@
             "en": "Device Category"
           },
           "values": [
-            { "id": "TV", "label": { "en": "TV" } },
-            { "id": "Audio", "label": { "en": "Audio/Soundbar" } },
-            { "id": "AC", "label": { "en": "Air Conditioner" } }
+            {
+              "id": "TV",
+              "label": {
+                "en": "TV"
+              }
+            },
+            {
+              "id": "Audio",
+              "label": {
+                "en": "Audio/Soundbar"
+              }
+            },
+            {
+              "id": "AC",
+              "label": {
+                "en": "Air Conditioner"
+              }
+            }
           ]
         }
       ]
@@ -238,21 +284,96 @@
             "name": "command",
             "type": "dropdown",
             "values": [
-              { "id": "Power", "title": { "en": "Power" } },
-              { "id": "Volume Up", "title": { "en": "Volume Up" } },
-              { "id": "Volume Down", "title": { "en": "Volume Down" } },
-              { "id": "Mute", "title": { "en": "Mute" } },
-              { "id": "Channel Up", "title": { "en": "Channel Up" } },
-              { "id": "Channel Down", "title": { "en": "Channel Down" } },
-              { "id": "Source", "title": { "en": "Source" } },
-              { "id": "Menu", "title": { "en": "Menu" } },
-              { "id": "OK/Enter", "title": { "en": "OK/Enter" } },
-              { "id": "Up", "title": { "en": "Up" } },
-              { "id": "Down", "title": { "en": "Down" } },
-              { "id": "Left", "title": { "en": "Left" } },
-              { "id": "Right", "title": { "en": "Right" } },
-              { "id": "Back", "title": { "en": "Back" } },
-              { "id": "Home", "title": { "en": "Home" } }
+              {
+                "id": "Power",
+                "title": {
+                  "en": "Power"
+                }
+              },
+              {
+                "id": "Volume Up",
+                "title": {
+                  "en": "Volume Up"
+                }
+              },
+              {
+                "id": "Volume Down",
+                "title": {
+                  "en": "Volume Down"
+                }
+              },
+              {
+                "id": "Mute",
+                "title": {
+                  "en": "Mute"
+                }
+              },
+              {
+                "id": "Channel Up",
+                "title": {
+                  "en": "Channel Up"
+                }
+              },
+              {
+                "id": "Channel Down",
+                "title": {
+                  "en": "Channel Down"
+                }
+              },
+              {
+                "id": "Source",
+                "title": {
+                  "en": "Source"
+                }
+              },
+              {
+                "id": "Menu",
+                "title": {
+                  "en": "Menu"
+                }
+              },
+              {
+                "id": "OK/Enter",
+                "title": {
+                  "en": "OK/Enter"
+                }
+              },
+              {
+                "id": "Up",
+                "title": {
+                  "en": "Up"
+                }
+              },
+              {
+                "id": "Down",
+                "title": {
+                  "en": "Down"
+                }
+              },
+              {
+                "id": "Left",
+                "title": {
+                  "en": "Left"
+                }
+              },
+              {
+                "id": "Right",
+                "title": {
+                  "en": "Right"
+                }
+              },
+              {
+                "id": "Back",
+                "title": {
+                  "en": "Back"
+                }
+              },
+              {
+                "id": "Home",
+                "title": {
+                  "en": "Home"
+                }
+              }
             ]
           }
         ]
@@ -273,14 +394,54 @@
             "name": "command",
             "type": "dropdown",
             "values": [
-              { "id": "Power On", "title": { "en": "Power On" } },
-              { "id": "Power Off", "title": { "en": "Power Off" } },
-              { "id": "Cool 20", "title": { "en": "Cool 20°C" } },
-              { "id": "Cool 22", "title": { "en": "Cool 22°C" } },
-              { "id": "Cool 24", "title": { "en": "Cool 24°C" } },
-              { "id": "Heat 20", "title": { "en": "Heat 20°C" } },
-              { "id": "Heat 22", "title": { "en": "Heat 22°C" } },
-              { "id": "Heat 24", "title": { "en": "Heat 24°C" } }
+              {
+                "id": "Power On",
+                "title": {
+                  "en": "Power On"
+                }
+              },
+              {
+                "id": "Power Off",
+                "title": {
+                  "en": "Power Off"
+                }
+              },
+              {
+                "id": "Cool 20",
+                "title": {
+                  "en": "Cool 20°C"
+                }
+              },
+              {
+                "id": "Cool 22",
+                "title": {
+                  "en": "Cool 22°C"
+                }
+              },
+              {
+                "id": "Cool 24",
+                "title": {
+                  "en": "Cool 24°C"
+                }
+              },
+              {
+                "id": "Heat 20",
+                "title": {
+                  "en": "Heat 20°C"
+                }
+              },
+              {
+                "id": "Heat 22",
+                "title": {
+                  "en": "Heat 22°C"
+                }
+              },
+              {
+                "id": "Heat 24",
+                "title": {
+                  "en": "Heat 24°C"
+                }
+              }
             ]
           }
         ]

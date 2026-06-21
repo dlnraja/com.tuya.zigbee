@@ -113,7 +113,10 @@
         "fr": "Bouton 1",
         "nl": "Knop 1",
         "de": "Taste 1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "measure_battery": {
       "title": {
