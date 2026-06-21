@@ -4,7 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## v9.0.52 (2026-06-21) — Investigation Forensique Boutons + Batterie
+## [9.0.53] - 2026-06-21
+
+- v9.0.53: app.json + docs + scripts + tests + workflows
+- v9.0.53: drivers+docs+scripts+tests (30+ root causes)
+- v9.0.53: lib/ fixes (boutons+batterie+arch)
+- Resolved issues + patterns update [skip ci]
+- New device variants + driver updates [skip ci]
+---
+
+ v9.0.52 (2026-06-21) — Investigation Forensique Boutons + Batterie
 
 ### 🔴 CRITICAL Fixes
 - **Missing Capability Listener button.1/2/3** : `setable:false` + `maintenanceAction:true` sur 89 drivers boutons+switches (master 56 + stable-v5 33). Root cause : `setable:true` obligeait Homey à exiger un listener inexistant.
