@@ -838,6 +838,21 @@
         "en": "Gang 2",
         "fr": "Gang 2"
       }
+    },
+    "button.toggle_1": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.toggle_2": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.identify": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "metadata": {

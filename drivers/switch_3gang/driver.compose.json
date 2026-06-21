@@ -776,6 +776,26 @@
         "en": "Gang 3",
         "fr": "Gang 3"
       }
+    },
+    "button.toggle_1": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.toggle_2": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.toggle_3": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.identify": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "metadata": {

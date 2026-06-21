@@ -1669,6 +1669,16 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "button.toggle": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.identify": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "metadata": {
