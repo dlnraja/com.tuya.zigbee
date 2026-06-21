@@ -64,5 +64,12 @@
   },
   "5.11.216": {
     "en": "Fix diagnostic UI bugs, parse Tuya alarm payloads, auto-sync 80 community fingerprints, correct ZCL dividers"
-  }
+  },
+  "changelog": [
+    {
+      "version": "5.11.218",
+      "en": "CRITICAL: sdkVersion fix, Missing Capability Listener (setable:false), timer fallback, ButtonDevice pattern (16 drivers), _updateBattery + onEndDeviceAnnounce, HOBEIAN ZG-301Z, NFKD normalize",
+      "fr": "CRITIQUE: sdkVersion, Missing Capability Listener, fallback timer, ButtonDevice, batterie, HOBEIAN, NFKD"
+    }
+  ]
 }
