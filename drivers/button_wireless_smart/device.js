@@ -1,26 +1,21 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button1GangDevice - v9.5.0 Universal Standard
- * (Formerly button_wireless_smart)
- * 
- * Migrated to PhysicalButtonMixin for 8-layer detection stack.
- * Supports Smart Knobs (rotary), HOBEIAN (OnOff Bound), and 0xFD multi-press.
+ * v5.11.219 FIX : extends ButtonDevice pour _registerButtonCapabilityListeners.
+ * Fix "Missing Capability Listener button.X" sur stable-v5.
  */
-class Button1GangDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class ButtonWirelessSmartDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 1;
-      await super.onNodeInit({ zclNode });
-      this.log('[ButtonSmart] ✅ Initialized with Mixin architecture');
-    }, 'onNodeInit');
+    this.buttonCount = 1;
+
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+
+    this.log('[button_wireless_smart] v10.0.0 initialized via ButtonDevice');
   }
 
 }
 
-module.exports = Button1GangDevice;
+module.exports = ButtonWirelessSmartDevice;

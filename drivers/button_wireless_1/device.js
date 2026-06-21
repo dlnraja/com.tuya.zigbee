@@ -1,28 +1,20 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button 1 Gang - Universal Hardened Driver (v10.0.0)
- * 
- * Standardized on TuyaZigbeeDevice + PhysicalButtonMixin for:
- * - 9-Layer Architecture (L1-L9)
- * - Intelligent Battery Management
- * - Scene Mode Auto-Switching & Recovery
+ * Button1GangDevice - v10.0.0 Universal Standard
+ * v5.11.219 FIX : extends ButtonDevice (pas PhysicalButtonMixin) pour avoir
+ * _registerButtonCapabilityListeners → fix "Missing Capability Listener button.1".
  */
-class Button1GangDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
+class Button1GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-    
     this.buttonCount = 1;
-    this.gangCount = 1;
-    
-    // Initialize hardened physical button detection
-    await this.initPhysicalButtonDetection(zclNode);
-    
-    this.log('[BUTTON1] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
+
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+
+    this.log('[BUTTON_WIRELESS_1] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }

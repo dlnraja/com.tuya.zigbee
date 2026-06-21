@@ -1,22 +1,20 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button8GangDevice - v9.5.0 Universal Standard
- * 
- * Migrated to PhysicalButtonMixin for 8-layer detection stack.
- * Standardized battery management via BatteryMixin.
+ * Button8GangDevice - v10.0.0 Universal Standard
+ * v5.11.219 FIX : extends ButtonDevice (pas PhysicalButtonMixin) pour avoir
+ * _registerButtonCapabilityListeners → fix "Missing Capability Listener button.1-8".
  */
-class Button8GangDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class Button8GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { this.buttonCount = 8;
-      await super.onNodeInit({ zclNode  });
-      this.log('[Button8Gang] ✅ Initialized with Mixin architecture');
-    }, 'onNodeInit');
+    this.buttonCount = 8;
+
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+
+    this.log('[BUTTON_WIRELESS_8] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }
