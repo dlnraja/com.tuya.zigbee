@@ -11,13 +11,21 @@
     "onoff",
     "onoff.gang2",
     "onoff.gang3",
-    "onoff.gang4"
+    "onoff.gang4",
+    "measure_battery",
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4"
   ],
   "energy": {
     "approximation": {
       "usageOn": 100,
       "usageOff": 1
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "platforms": [
     "local"
@@ -81,7 +89,12 @@
       "_tz3000_hy5lggkg",
       "_TZ3000_tyg4yiat",
       "_TZ3002_PZAO9LS1",
-      "_TZ3000_mrduubod"
+      "_TZ3000_mrduubod",
+      "_tz3002_pzao9ls1",
+      "_tz3000_mrduubod",
+      "_tz3000_tyg4yiat",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0726",
@@ -328,5 +341,51 @@
     }
   ],
   "id": "wall_switch_4gang_1way",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }

@@ -12,7 +12,8 @@
     "measure_battery",
     "alarm_tamper",
     "measure_luminance",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -363,8 +364,30 @@
           0
         ]
       }
+    },
+    "manufacturerName": [
+      "_tz3000_26fmupbb",
+      "_tz3000_2mbfxlzr",
+      "_tz3000_402jjyro",
+      "_tz3000_996rpfy6",
+      "_tz3000_bpkijo14",
+      "_tz3000_bzxloft2",
+      "_tz3000_n2egfsli",
+      "_tz3000_oxslv1c9",
+      "_tz3000_x8q36xwf",
+      "_tz3000_yxqnffam",
+      "_tze200_pay2byax"
+    ]
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
-  ,
-    "manufacturerName": ["_tz3000_26fmupbb", "_tz3000_2mbfxlzr", "_tz3000_402jjyro", "_tz3000_996rpfy6", "_tz3000_bpkijo14", "_tz3000_bzxloft2", "_tz3000_n2egfsli", "_tz3000_oxslv1c9", "_tz3000_x8q36xwf", "_tz3000_yxqnffam", "_tze200_pay2byax"]
   }
 }

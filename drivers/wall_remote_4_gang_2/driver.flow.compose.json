@@ -15,25 +15,25 @@
           "values": [
             {
               "id": "leftUp",
-              "label": {
+              "title": {
                 "en": "Upper Left Button Pressed"
               }
             },
             {
               "id": "rightUp",
-              "label": {
+              "title": {
                 "en": "Upper Right Button Pressed"
               }
             },
             {
               "id": "leftDown",
-              "label": {
+              "title": {
                 "en": "Lower Left Button Pressed"
               }
             },
             {
               "id": "rightDown",
-              "label": {
+              "title": {
                 "en": "Lower Right Button Pressed"
               }
             }

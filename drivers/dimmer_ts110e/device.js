@@ -7,7 +7,7 @@ const { Cluster, CLUSTER, ZCLDataTypes } = require("zigbee-clusters");
  * Tuya Dimmer Module TS110E - v5.12.0
  * 
  * Supports proprietary Tuya dimming commands on Cluster 0x0008.
- * Manufacturers: _TZ3210_ngqk6jia, _TZ3210_weaqkhab
+ * Manufacturers: _TZ3210_ngqk6jia, _TZ3210_weaqkhab, _TZ3210_k1msuvg6, _TZ3210_ysfo0wla, _TZE200_ubgdwsnr, _TZ3210_guijtl8k, _TZ3210_hquixjeg, _TZ3210_vfwhhldz
  */
 
 // 1. Define the custom cluster with a UNIQUE name

@@ -17,7 +17,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -30,6 +31,15 @@
       "units": {
         "en": "m"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "subDevices": [],
@@ -53,7 +63,8 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_dummy1781425895942"
+      "_TZ3000_dummy1781425895942",
+      "_tz3000_dummy1781425895942"
     ]
   },
   "settings": [

@@ -13,7 +13,8 @@
     "windowcoverings_tilt_set",
     "measure_luminance",
     "button",
-    "dim"
+    "dim",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "windowcoverings_set": {
@@ -38,6 +39,15 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "platforms": [

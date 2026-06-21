@@ -14,7 +14,8 @@
     "alarm_motion",
     "measure_battery",
     "alarm_battery",
-    "measure_luminance"
+    "measure_luminance",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -29,7 +30,8 @@
     "manufacturerName": [
       "_tze204_3towulqd",
       "_TZ3000_3towulqd",
-      "_TZE284_tre6haif"
+      "_TZE284_tre6haif",
+      "_tz3000_3towulqd"
     ],
     "productId": [
       "TS0225",
@@ -64,5 +66,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

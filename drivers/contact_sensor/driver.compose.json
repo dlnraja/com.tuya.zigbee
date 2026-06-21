@@ -11,7 +11,8 @@
     "measure_battery",
     "alarm_tamper",
     "measure_luminance",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -73,7 +74,7 @@
     "manufacturerName": [
       "LUMI.SENSOR_MAGNET",
       "LUMI.SENSOR_MAGNET.AQ2",
-      "_TZ3000_ZUTIZVYKTS0203",
+      "_TZ3000_ZUTIZVYK",
       "_TZE200_pay2byax",
       "_TZ3000_996rpfy6",
       "_TZE200_nvups4nh",
@@ -81,7 +82,14 @@
       "_TZE200_ijey4q29",
       "_TZE200_ykglasuj",
       "_TZE200_kf2hbko4",
-      "CAT0001"
+      "CAT0001",
+      "_tze200_ijey4q29",
+      "_tze200_kf2hbko4",
+      "_tze200_n8dljorx",
+      "_tze200_nvups4nh",
+      "_tze200_ykglasuj",
+      "lumi.sensor_magnet",
+      "lumi.sensor_magnet.aq2"
     ]
   },
   "settings": [
@@ -379,5 +387,16 @@
     }
   ],
   "id": "contact_sensor",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -14,7 +14,8 @@
     "measure_current",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -231,7 +232,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

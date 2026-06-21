@@ -16,7 +16,8 @@
     "window_detection",
     "child_lock",
     "alarm_battery",
-    "frost_protection_temperature"
+    "frost_protection_temperature",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -27,6 +28,15 @@
     },
     "measure_temperature": {
       "decimals": 1
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {

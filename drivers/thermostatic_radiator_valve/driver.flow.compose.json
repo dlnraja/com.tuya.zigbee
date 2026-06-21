@@ -60,13 +60,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "On"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             }
@@ -89,13 +89,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "On"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             }
@@ -118,13 +118,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "On (locked)"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off (unlocked)"
               }
             }
@@ -147,13 +147,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "On"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             }

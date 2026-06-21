@@ -16,7 +16,8 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "meter_power.exported"
+    "meter_power.exported",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_power": {
@@ -53,6 +54,15 @@
         "fr": "Courant"
       },
       "units": "A"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "settings": [
@@ -125,7 +135,11 @@
       "_TZE204_81YRT3LO",
       "_TZE284_81YRT3LO",
       "_TZE28C1000000_81yrt3lo",
-      "_TZE200_81YRT3LO"
+      "_TZE200_81YRT3LO",
+      "_tze204_81yrt3lo",
+      "_tze284_81yrt3lo",
+      "_tze28c1000000_81yrt3lo",
+      "_tze200_81yrt3lo"
     ],
     "productId": [
       "SPM01-1Z2",

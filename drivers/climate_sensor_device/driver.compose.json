@@ -15,7 +15,8 @@
     "measure_humidity",
     "alarm_battery",
     "child_lock",
-    "frost_protection"
+    "frost_protection",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -43,9 +44,16 @@
           6
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tze200_p3dbf6qs", "_tze204_o3x45p96", "_tze284_c6wv4xyo", "_tze284_hvaxb2tc", "_tze284_o3x45p96", "_tze284_p3dbf6qs", "_tze284_rv6iuyxb"]
+    },
+    "manufacturerName": [
+      "_tze200_p3dbf6qs",
+      "_tze204_o3x45p96",
+      "_tze284_c6wv4xyo",
+      "_tze284_hvaxb2tc",
+      "_tze284_o3x45p96",
+      "_tze284_p3dbf6qs",
+      "_tze284_rv6iuyxb"
+    ]
   },
   "settings": [
     {
@@ -300,5 +308,16 @@
     }
   ],
   "id": "climate_sensor_device",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

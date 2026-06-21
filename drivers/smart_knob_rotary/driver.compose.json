@@ -12,7 +12,8 @@
     "button.press",
     "dim",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "button.rotate_left": {
@@ -23,7 +24,8 @@
         "de": "Links drehen"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.rotate_right": {
       "title": {
@@ -33,7 +35,8 @@
         "de": "Rechts drehen"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.press": {
       "title": {
@@ -43,7 +46,8 @@
         "de": "Drücken"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "dim": {
       "title": {
@@ -62,6 +66,15 @@
         "nl": "Batterij",
         "de": "Batterie"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {

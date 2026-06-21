@@ -15,11 +15,60 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "measure_battery",
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4"
   ],
   "capabilitiesOptions": {
     "measure_power": {
       "approximated": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {
@@ -52,7 +101,12 @@
       "_tze204_eaac7dkw",
       "_tze204_fsb6zw01",
       "_tz3210_402vrq2i",
-      "_tz3400_402vrq2i"
+      "_tz3400_402vrq2i",
+      "_tze284_kow4ok3t",
+      "_tz3000_ugi8ky6u",
+      "_tz3000_1fqpj6qz",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0004",
@@ -137,5 +191,10 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
 }

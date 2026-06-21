@@ -21,7 +21,8 @@
     "measure_power_factor",
     "measure_power.phase1",
     "measure_power.phase2",
-    "measure_power.phase3"
+    "measure_power.phase3",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_power": {
@@ -78,6 +79,15 @@
         "fr": "Courant B"
       },
       "units": "A"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "settings": [

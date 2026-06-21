@@ -13,7 +13,8 @@
   "class": "button",
   "capabilities": [
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_battery": {
@@ -22,6 +23,15 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {

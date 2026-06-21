@@ -18,7 +18,8 @@
     "measure_voltage",
     "measure_current",
     "meter_power.exported",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -297,7 +298,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

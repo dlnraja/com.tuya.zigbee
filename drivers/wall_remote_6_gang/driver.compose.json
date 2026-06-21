@@ -28,7 +28,6 @@
     "large": "/drivers/wall_remote_6_gang/assets/images/large.png",
     "small": "/drivers/wall_remote_6_gang/assets/images/small.png",
     "xlarge": "/drivers/wall_remote_6_gang/assets/images/xlarge.png"
-  
   },
   "energy": {
     "batteries": [
@@ -79,9 +78,10 @@
       "instruction": {
         "en": "Press pair button for aprox 10 seconds."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_wall_remote_6_gang_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_wall_remote_6_gang_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -138,7 +138,10 @@
         "fr": "Bouton 1",
         "nl": "Knop 1",
         "de": "Taste 1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.2": {
       "title": {
@@ -146,7 +149,10 @@
         "fr": "Bouton 2",
         "nl": "Knop 2",
         "de": "Taste 2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.3": {
       "title": {
@@ -154,7 +160,10 @@
         "fr": "Bouton 3",
         "nl": "Knop 3",
         "de": "Taste 3"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.4": {
       "title": {
@@ -162,7 +171,10 @@
         "fr": "Bouton 4",
         "nl": "Knop 4",
         "de": "Taste 4"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.5": {
       "title": {
@@ -170,7 +182,10 @@
         "fr": "Bouton 5",
         "nl": "Knop 5",
         "de": "Taste 5"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.6": {
       "title": {
@@ -178,7 +193,10 @@
         "fr": "Bouton 6",
         "nl": "Knop 6",
         "de": "Taste 6"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "measure_battery": {
       "title": {

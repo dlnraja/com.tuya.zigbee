@@ -12,7 +12,8 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -56,6 +57,15 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

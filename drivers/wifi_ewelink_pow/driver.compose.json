@@ -11,7 +11,8 @@
     "onoff",
     "measure_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.1"
   ],
   "pair": [
     {
@@ -102,5 +103,16 @@
     }
   ],
   "id": "wifi_ewelink_pow",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

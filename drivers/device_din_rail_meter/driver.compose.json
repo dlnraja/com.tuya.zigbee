@@ -16,7 +16,8 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "meter_power.exported"
+    "meter_power.exported",
+    "button.1"
   ],
   "energy": {},
   "zigbee": {
@@ -41,9 +42,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_device_din_rail_meter_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_device_din_rail_meter_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -287,7 +289,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

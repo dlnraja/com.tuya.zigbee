@@ -10,8 +10,9 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1",
+    "button.2"
   ],
   "pair": [
     {
@@ -126,6 +127,24 @@
       "title": {
         "en": "Switch 2"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

@@ -224,7 +224,7 @@
           "values": [
             {
               "id": "NEC",
-              "label": {
+              "title": {
                 "en": "NEC",
                 "nl": "NEC",
                 "de": "NEC"
@@ -232,7 +232,7 @@
             },
             {
               "id": "RC5",
-              "label": {
+              "title": {
                 "en": "RC5",
                 "nl": "RC5",
                 "de": "RC5"
@@ -240,7 +240,7 @@
             },
             {
               "id": "RC6",
-              "label": {
+              "title": {
                 "en": "RC6",
                 "nl": "RC6",
                 "de": "RC6"
@@ -248,7 +248,7 @@
             },
             {
               "id": "SONY",
-              "label": {
+              "title": {
                 "en": "Sony",
                 "nl": "Sony",
                 "de": "Sony"
@@ -256,7 +256,7 @@
             },
             {
               "id": "SAMSUNG",
-              "label": {
+              "title": {
                 "en": "Samsung",
                 "nl": "Samsung",
                 "de": "Samsung"
@@ -264,7 +264,7 @@
             },
             {
               "id": "PRONTOHEX",
-              "label": {
+              "title": {
                 "en": "ProntoHex",
                 "nl": "ProntoHex",
                 "de": "ProntoHex"
@@ -337,7 +337,7 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto-detect",
                 "nl": "Auto-detectie",
                 "de": "Auto-Erkennung"
@@ -345,7 +345,7 @@
             },
             {
               "id": "NEC",
-              "label": {
+              "title": {
                 "en": "NEC",
                 "nl": "NEC",
                 "de": "NEC"
@@ -353,7 +353,7 @@
             },
             {
               "id": "RC5",
-              "label": {
+              "title": {
                 "en": "RC5",
                 "nl": "RC5",
                 "de": "RC5"
@@ -361,7 +361,7 @@
             },
             {
               "id": "RC6",
-              "label": {
+              "title": {
                 "en": "RC6",
                 "nl": "RC6",
                 "de": "RC6"
@@ -369,7 +369,7 @@
             },
             {
               "id": "SONY",
-              "label": {
+              "title": {
                 "en": "Sony",
                 "nl": "Sony",
                 "de": "Sony"
@@ -377,7 +377,7 @@
             },
             {
               "id": "SAMSUNG",
-              "label": {
+              "title": {
                 "en": "Samsung",
                 "nl": "Samsung",
                 "de": "Samsung"
@@ -385,7 +385,7 @@
             },
             {
               "id": "PRONTOHEX",
-              "label": {
+              "title": {
                 "en": "ProntoHex",
                 "nl": "ProntoHex",
                 "de": "ProntoHex"
@@ -464,7 +464,7 @@
           "values": [
             {
               "id": "",
-              "label": {
+              "title": {
                 "en": "Auto (recommended)",
                 "nl": "Auto (aanbevolen)",
                 "de": "Auto (empfohlen)"
@@ -472,7 +472,7 @@
             },
             {
               "id": "NEC",
-              "label": {
+              "title": {
                 "en": "NEC",
                 "nl": "NEC",
                 "de": "NEC"
@@ -480,7 +480,7 @@
             },
             {
               "id": "RC5",
-              "label": {
+              "title": {
                 "en": "RC5",
                 "nl": "RC5",
                 "de": "RC5"
@@ -488,7 +488,7 @@
             },
             {
               "id": "RC6",
-              "label": {
+              "title": {
                 "en": "RC6",
                 "nl": "RC6",
                 "de": "RC6"
@@ -496,7 +496,7 @@
             },
             {
               "id": "SONY",
-              "label": {
+              "title": {
                 "en": "Sony",
                 "nl": "Sony",
                 "de": "Sony"
@@ -504,7 +504,7 @@
             },
             {
               "id": "SAMSUNG",
-              "label": {
+              "title": {
                 "en": "Samsung",
                 "nl": "Samsung",
                 "de": "Samsung"
@@ -512,7 +512,7 @@
             },
             {
               "id": "PRONTOHEX",
-              "label": {
+              "title": {
                 "en": "ProntoHex",
                 "nl": "ProntoHex",
                 "de": "ProntoHex"
@@ -621,37 +621,37 @@
           "values": [
             {
               "id": "cool",
-              "label": {
+              "title": {
                 "en": "Cool"
               }
             },
             {
               "id": "heat",
-              "label": {
+              "title": {
                 "en": "Heat"
               }
             },
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto"
               }
             },
             {
               "id": "dry",
-              "label": {
+              "title": {
                 "en": "Dry"
               }
             },
             {
               "id": "fan_only",
-              "label": {
+              "title": {
                 "en": "Fan Only"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             }
@@ -676,25 +676,25 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto"
               }
             },
             {
               "id": "low",
-              "label": {
+              "title": {
                 "en": "Low"
               }
             },
             {
               "id": "medium",
-              "label": {
+              "title": {
                 "en": "Medium"
               }
             },
             {
               "id": "high",
-              "label": {
+              "title": {
                 "en": "High"
               }
             }

@@ -244,19 +244,19 @@
           "values": [
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "Zone 1 (Near)"
               }
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "Zone 2 (Mid)"
               }
             },
             {
               "id": "3",
-              "label": {
+              "title": {
                 "en": "Zone 3 (Far)"
               }
             }
@@ -279,31 +279,31 @@
           "values": [
             {
               "id": "none",
-              "label": {
+              "title": {
                 "en": "None"
               }
             },
             {
               "id": "stationary",
-              "label": {
+              "title": {
                 "en": "Stationary"
               }
             },
             {
               "id": "micro_motion",
-              "label": {
+              "title": {
                 "en": "Micro Motion (breathing)"
               }
             },
             {
               "id": "small_motion",
-              "label": {
+              "title": {
                 "en": "Small Motion (limb)"
               }
             },
             {
               "id": "large_motion",
-              "label": {
+              "title": {
                 "en": "Large Motion (walking)"
               }
             }

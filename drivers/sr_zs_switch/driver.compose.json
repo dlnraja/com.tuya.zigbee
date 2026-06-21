@@ -8,7 +8,8 @@
   "capabilities": [
     "onoff_1",
     "onoff_2",
-    "onoff_3"
+    "onoff_3",
+    "button.1"
   ],
   "platforms": [
     "local"
@@ -85,7 +86,9 @@
       }
     },
     "manufacturerName": [
-      "sr zs switch"
+      "_TZE200_dummy",
+      "HOBEIAN",
+      "hobeian"
     ]
   },
   "version": "1.0.0",
@@ -93,6 +96,17 @@
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0002"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

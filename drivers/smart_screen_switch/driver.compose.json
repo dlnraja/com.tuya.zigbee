@@ -9,7 +9,8 @@
     "windowcoverings_state",
     "measure_luminance",
     "measure_temperature",
-    "alarm_motion"
+    "alarm_motion",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance": {
@@ -23,6 +24,15 @@
         "en": "Motion Detected",
         "fr": "Mouvement Détecté"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -44,9 +54,12 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_smart_screen_switch_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_smart_screen_switch_needs_device_assignment",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
   "images": {
     "small": "/drivers/smart_screen_switch/assets/images/small.png",

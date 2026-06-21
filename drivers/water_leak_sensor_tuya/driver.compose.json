@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_water",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -75,7 +76,8 @@
       "_tz3000_awvmkayh",
       "_tz3000_e6ekbxts",
       "_tyst11_qq9mpfhw",
-      "_TZE200_qq9mpfhw"
+      "_TZE200_qq9mpfhw",
+      "_tze200_qq9mpfhw"
     ],
     "productId": [
       "TS0207",
@@ -119,5 +121,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -22,7 +22,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -30,7 +31,8 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     },
     "measure_battery": {
       "title": {
@@ -387,8 +389,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_remote_button_wireless_valve_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_remote_button_wireless_valve_needs_device_assignment"
+    ]
   }
 }

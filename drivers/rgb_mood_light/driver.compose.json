@@ -49,5 +49,19 @@
   "version": "1.0.0",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilities": [
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

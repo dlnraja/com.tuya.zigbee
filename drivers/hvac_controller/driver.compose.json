@@ -10,7 +10,8 @@
     "onoff",
     "target_temperature",
     "measure_temperature",
-    "thermostat_mode"
+    "thermostat_mode",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -45,6 +46,15 @@
           }
         }
       ]
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {

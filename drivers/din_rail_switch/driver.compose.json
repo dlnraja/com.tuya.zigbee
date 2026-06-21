@@ -16,7 +16,8 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_power": {
@@ -32,6 +33,15 @@
         "fr": "Énergie"
       },
       "units": "kWh"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -42,7 +52,9 @@
       "_tze200_fjb98hbq",
       "_tze204_aqnazj70",
       "_tze204_fjb98hbq",
-      "_tze200_aqnazj70"
+      "_tze200_aqnazj70",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0001_din",

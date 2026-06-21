@@ -8,7 +8,8 @@
     "measure_temperature",
     "meter_power",
     "measure_power",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "meter_power": {
@@ -22,6 +23,15 @@
         "en": "Current Power",
         "fr": "Puissance Actuelle"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -37,9 +47,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_ultrasonic_heat_meter_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_ultrasonic_heat_meter_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/ultrasonic_heat_meter/assets/images/small.png",
@@ -53,5 +64,10 @@
     "zigbee"
   ],
   "id": "ultrasonic_heat_meter",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  }
 }

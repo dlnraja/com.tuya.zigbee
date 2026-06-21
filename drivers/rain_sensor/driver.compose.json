@@ -10,7 +10,8 @@
     "alarm_water",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "alarm_water": {
@@ -25,6 +26,15 @@
         "fr": "Niveau pluie"
       },
       "units": "%"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -40,7 +50,11 @@
       "_TZ3210_tgvtvdoc",
       "_TZ3210_p68kms0l",
       "_TZE200_u6x1zyv2",
-      "_TZE204_u6x1zyv2"
+      "_TZE204_u6x1zyv2",
+      "_tz3210_tgvtvdoc",
+      "_tz3210_p68kms0l",
+      "_tze200_u6x1zyv2",
+      "_tze204_u6x1zyv2"
     ],
     "productId": [
       "TS0207_rain",

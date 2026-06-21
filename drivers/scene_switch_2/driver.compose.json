@@ -20,7 +20,8 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     },
     "button.2": {
       "title": {
@@ -28,12 +29,15 @@
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     }
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3002_6ahhkwyh"
+      "_tz3002_6ahhkwyh",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601_scene2",

@@ -9,7 +9,8 @@
   "class": "camera",
   "capabilities": [
     "alarm_motion",
-    "onoff"
+    "onoff",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -22,6 +23,15 @@
       "title": {
         "en": "Motion Detected"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "pair": [

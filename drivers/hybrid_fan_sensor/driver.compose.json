@@ -13,7 +13,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -40,6 +41,15 @@
         "en": "Humidity",
         "fr": "Humidité"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {

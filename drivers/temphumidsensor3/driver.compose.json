@@ -9,7 +9,8 @@
     "measure_battery",
     "alarm_battery",
     "measure_humidity",
-    "measure_temperature"
+    "measure_temperature",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -56,8 +57,23 @@
       "_TZE200_a8sdabtg",
       "_TZE204_a8sdabtg",
       "_TZE200_qoy0ekbd",
-      "_TZE204_qoy0ekbd"
+      "_TZE204_qoy0ekbd",
+      "_tze200_a8sdabtg",
+      "_tze200_qoy0ekbd",
+      "_tze204_a8sdabtg",
+      "_tze204_qoy0ekbd"
     ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

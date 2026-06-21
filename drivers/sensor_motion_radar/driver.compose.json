@@ -14,7 +14,8 @@
     "measure_humidity",
     "measure_luminance",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -51,9 +52,10 @@
     },
     "productId": [
       "TS0601"
+    ],
+    "manufacturerName": [
+      "_hybrid_sensor_motion_radar_needs_device_assignment"
     ]
-  ,
-    "manufacturerName": ["_hybrid_sensor_motion_radar_needs_device_assignment"]
   },
   "settings": [
     {
@@ -438,5 +440,16 @@
     }
   ],
   "id": "sensor_motion_radar",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

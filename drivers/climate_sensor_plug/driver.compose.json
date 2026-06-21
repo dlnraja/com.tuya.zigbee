@@ -17,8 +17,8 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "countdown_remaining",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -658,14 +658,26 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_climate_sensor_plug_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_climate_sensor_plug_needs_device_assignment"
+    ]
   },
   "metadata": {
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0201, Excellux"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

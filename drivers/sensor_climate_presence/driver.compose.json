@@ -18,7 +18,8 @@
     "alarm_contact",
     "alarm_tamper",
     "alarm_water",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -31,6 +32,15 @@
       "units": {
         "en": "m"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "subDevices": [],
@@ -618,8 +628,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_sensor_climate_presence_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_sensor_climate_presence_needs_device_assignment"
+    ]
   }
 }

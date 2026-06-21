@@ -595,19 +595,19 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             },
             {
               "id": "normal",
-              "label": {
+              "title": {
                 "en": "Normal (LED when ON)"
               }
             },
             {
               "id": "inverted",
-              "label": {
+              "title": {
                 "en": "Inverted (LED when OFF)"
               }
             }
@@ -631,13 +631,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "When ON"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "When OFF"
               }
             }
@@ -652,19 +652,19 @@
           "values": [
             {
               "id": "blue",
-              "label": {
+              "title": {
                 "en": "Blue"
               }
             },
             {
               "id": "red",
-              "label": {
+              "title": {
                 "en": "Red"
               }
             },
             {
               "id": "green",
-              "label": {
+              "title": {
                 "en": "Green"
               }
             }
@@ -734,19 +734,19 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto (Normal + flows)"
               }
             },
             {
               "id": "magic",
-              "label": {
+              "title": {
                 "en": "Magic (Scene only)"
               }
             },
             {
               "id": "both",
-              "label": {
+              "title": {
                 "en": "Both (Load + scene)"
               }
             }

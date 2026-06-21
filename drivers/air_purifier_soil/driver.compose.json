@@ -19,7 +19,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {
@@ -61,6 +62,15 @@
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -284,9 +294,10 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_air_purifier_soil_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_air_purifier_soil_needs_device_assignment"
+    ]
   },
   "metadata": {
     "driver": {

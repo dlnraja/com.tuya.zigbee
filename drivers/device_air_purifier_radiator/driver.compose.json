@@ -17,7 +17,8 @@
     "measure_pm25",
     "alarm_battery",
     "child_lock",
-    "frost_protection"
+    "frost_protection",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -48,7 +49,7 @@
       }
     },
     "manufacturerName": [
-      "device air purifier radiator"
+      "_TZE200_dummy"
     ]
   },
   "settings": [
@@ -336,5 +337,16 @@
     "actions": []
   },
   "id": "device_air_purifier_radiator",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

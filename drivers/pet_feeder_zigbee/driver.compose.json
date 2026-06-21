@@ -9,7 +9,8 @@
   "capabilities": [
     "button",
     "measure_weight",
-    "alarm_generic"
+    "alarm_generic",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "button": {
@@ -32,6 +33,15 @@
         "en": "Food Empty",
         "fr": "Nourriture Vide"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {

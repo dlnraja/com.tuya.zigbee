@@ -15,7 +15,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -50,6 +51,15 @@
           }
         }
       ]
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -63,9 +73,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_device_air_purifier_floor_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_floor_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/floor_heating_thermostat/assets/images/small.png",

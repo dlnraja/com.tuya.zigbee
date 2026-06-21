@@ -13,7 +13,8 @@
     "light_mode",
     "onoff",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -30,7 +31,8 @@
       "_tz3210_keabpigv",
       "_tyzb01_keabpigv",
       "_tz3000_9fvm3mis",
-      "_TZ3210_jtifm80b"
+      "_TZ3210_jtifm80b",
+      "_tz3210_jtifm80b"
     ],
     "productId": [
       "TS0502A",
@@ -336,6 +338,15 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

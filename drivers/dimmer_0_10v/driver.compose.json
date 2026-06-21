@@ -7,12 +7,30 @@
   "capabilities": [
     "onoff",
     "dim",
-    "countdown_remaining"
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
       "opts": {
         "duration": true
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },
@@ -57,7 +75,10 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "productId": [
@@ -72,9 +93,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_dimmer_0_10v_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_dimmer_0_10v_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/dimmer_0_10v/assets/images/small.png",

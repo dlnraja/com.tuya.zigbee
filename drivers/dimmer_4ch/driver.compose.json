@@ -12,39 +12,81 @@
     "onoff.3",
     "dim.3",
     "onoff.4",
-    "dim.4"
+    "dim.4",
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
-      "opts": { "duration": true }
+      "opts": {
+        "duration": true
+      }
     },
     "dim.2": {
-      "title": { "en": "Brightness Channel 2" },
-      "opts": { "duration": true }
+      "title": {
+        "en": "Brightness Channel 2"
+      },
+      "opts": {
+        "duration": true
+      }
     },
     "dim.3": {
-      "title": { "en": "Brightness Channel 3" },
-      "opts": { "duration": true }
+      "title": {
+        "en": "Brightness Channel 3"
+      },
+      "opts": {
+        "duration": true
+      }
     },
     "dim.4": {
-      "title": { "en": "Brightness Channel 4" },
-      "opts": { "duration": true }
+      "title": {
+        "en": "Brightness Channel 4"
+      },
+      "opts": {
+        "duration": true
+      }
     },
     "onoff.2": {
-      "title": { "en": "On/Off Channel 2" }
+      "title": {
+        "en": "On/Off Channel 2"
+      }
     },
     "onoff.3": {
-      "title": { "en": "On/Off Channel 3" }
+      "title": {
+        "en": "On/Off Channel 3"
+      }
     },
     "onoff.4": {
-      "title": { "en": "On/Off Channel 4" }
+      "title": {
+        "en": "On/Off Channel 4"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "energy": {
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "productId": [
@@ -59,9 +101,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_dimmer_4ch_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_dimmer_4ch_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/dimmer_4ch/assets/images/small.png",

@@ -14,7 +14,7 @@
     "measure_battery",
     "alarm_water",
     "alarm_tamper",
-    "alarm_battery"
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -334,6 +334,23 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "maintenanceActions": [
@@ -366,8 +383,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_dimmer_wall_water_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_dimmer_wall_water_needs_device_assignment"
+    ]
   }
 }

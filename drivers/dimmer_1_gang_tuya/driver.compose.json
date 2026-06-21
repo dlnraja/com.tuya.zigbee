@@ -12,15 +12,33 @@
   ],
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
       "opts": {
         "duration": true
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
-  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -30,7 +48,10 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "productId": [
@@ -70,9 +91,10 @@
       "instruction": {
         "en": "Press the reset switch rapidly 10 times until the unit make a continously beep sound to enter pairing mode."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_dimmer_1_gang_tuya_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_dimmer_1_gang_tuya_needs_device_assignment"
+    ]
   },
   "version": "1.0.0",
   "metadata": {

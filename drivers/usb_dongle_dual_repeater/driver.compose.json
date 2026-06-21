@@ -12,7 +12,8 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -38,6 +39,15 @@
         "en": "Energy",
         "fr": "Énergie"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {},
@@ -49,7 +59,8 @@
     ],
     "manufacturerName": [
       "_tz3000_cfv2uyxe",
-      "_TZ3290_cfv2uyxe"
+      "_TZ3290_cfv2uyxe",
+      "_tz3290_cfv2uyxe"
     ],
     "endpoints": {
       "1": {

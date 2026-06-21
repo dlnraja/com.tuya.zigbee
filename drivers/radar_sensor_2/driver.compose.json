@@ -14,12 +14,12 @@
   "capabilities": [
     "measure_luminance",
     "alarm_motion",
-    "target_distance"
+    "target_distance",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
-  
   },
   "energy": {
     "approximation": {
@@ -57,15 +57,27 @@
         "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
         "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_radar_sensor_2_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_radar_sensor_2_needs_device_assignment"
+    ]
   },
   "version": "1.0.0",
   "metadata": {
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, CK-BL702-MWS-01(7016), ZP-301Z, TS110E, TS0004"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

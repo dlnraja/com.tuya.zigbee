@@ -15,7 +15,8 @@
     "measure_formaldehyde",
     "alarm_generic",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "subDevices": [],
   "capabilitiesOptions": {
@@ -51,6 +52,15 @@
         "en": "Air Quality Alert",
         "fr": "Alerte Qualité Air"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -67,7 +77,9 @@
     "manufacturerName": [
       "_TZE200_8IKYD92M",
       "_TZE204_8IKYD92M",
-      "_TZE284_8b9zpaav"
+      "_TZE284_8b9zpaav",
+      "_tze200_8ikyd92m",
+      "_tze204_8ikyd92m"
     ],
     "productId": [
       "TS0601_co2",

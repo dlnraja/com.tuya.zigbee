@@ -8,7 +8,8 @@
     "thermostat_programming",
     "measure_temperature",
     "target_temperature",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -88,7 +89,72 @@
       "_TZE204_g9a3awaj",
       "_TZE204_hvaxb2tc",
       "_TZE284_hvaxb2tc",
-      "_TZE284_aoclfnxz"
+      "_TZE284_aoclfnxz",
+      "_tze204_o3x45p96",
+      "_tze284_c6wv4xyo",
+      "_tze284_hvaxb2tc",
+      "_tze284_o3x45p96",
+      "_tze284_rv6iuyxb",
+      "_tze200_9p5xmj5r",
+      "_tze200_a4bpgplm",
+      "_tze284_pcdmj88b",
+      "_tze200_hvaxb2tc",
+      "_tze200_6rdj8dzm",
+      "_tze200_rufdtfyv",
+      "_tze200_rk1wojce",
+      "_tze200_rndg81sf",
+      "_tze200_68nvbio9",
+      "_tze200_pw7mji0l",
+      "_tze200_cf1sl3tj",
+      "_tze200_nw1r9hp6",
+      "_tze200_68nvbi09",
+      "_tze200_e9ba97vf",
+      "_tze200_7yoranx2",
+      "_tze200_py4cm3he",
+      "_tze200_wsbfwodu",
+      "_tze200_x9axofse",
+      "_tze200_lhzapfg9",
+      "_tze200_0hg58wyk",
+      "_tze200_cpmgn2cf",
+      "_tze200_bvu2wnxz",
+      "_tze200_jkfbph7l",
+      "_tze200_rxntag7i",
+      "_tze200_4utwozi2",
+      "_tze200_yqgbrdyo",
+      "_tze200_rxq4iti9",
+      "_tze204_ogx8u5z6",
+      "_tze200_4utwoz2",
+      "_tze284_ogx8u5z6",
+      "_tze200_ow09xlxm",
+      "_tze200_rv6iuyxb",
+      "_tze200_suxywabt",
+      "_tze200_d3z1ukqw",
+      "_tze204_pcdmj88b",
+      "_tze200_z1tyspqw",
+      "_tze200_bvrlmajk",
+      "_tze204_rtrmfadk",
+      "_tze204_cvcu2p6e",
+      "_tze204_9mjy74mp",
+      "_tze200_9mjy74mp",
+      "_tze204_qyr2m29i",
+      "_tze200_g9a3awaj",
+      "_tze200_2ekuz3dz",
+      "_tze200_viy9ihs7",
+      "_tze204_lzriup1j",
+      "_tze204_xnbkhhdr",
+      "_tze284_xnbkhhdr",
+      "_tze204_gops3slb",
+      "_tze284_gops3slb",
+      "_tze204_cvub6xbb",
+      "_tze284_cvub6xbb",
+      "_tze284_iilebqoo",
+      "_tz3000_g9chy2ib",
+      "_tze204_0hcjew5p",
+      "_tze200_vexa5o82",
+      "_tze204_pw7mji0l",
+      "_tze204_g9a3awaj",
+      "_tze204_hvaxb2tc",
+      "_tze284_aoclfnxz"
     ],
     "productId": [
       "TS0601"
@@ -126,5 +192,16 @@
   "version": "1.0.0",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

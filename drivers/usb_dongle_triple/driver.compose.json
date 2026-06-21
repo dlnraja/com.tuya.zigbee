@@ -14,7 +14,8 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -34,6 +35,15 @@
         "en": "USB Port 3",
         "fr": "Port USB 3"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "platforms": [

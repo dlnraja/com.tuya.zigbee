@@ -8,17 +8,39 @@
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim"
+    "dim",
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "energy": {
     "approximation": {
       "usageConstant": 5
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "platforms": [
     "local"
@@ -34,7 +56,11 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE204_3Z6HCA0Q",
-      "_TZE284_4AR89TR1"
+      "_TZE284_4AR89TR1",
+      "_tze204_3z6hca0q",
+      "_tze284_4ar89tr1",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601"
@@ -203,9 +229,27 @@
           },
           "value": "auto",
           "values": [
-            { "id": "auto", "label": { "en": "Auto", "fr": "Automatique" } },
-            { "id": "leading_edge", "label": { "en": "Leading Edge", "fr": "Front Montant" } },
-            { "id": "trailing_edge", "label": { "en": "Trailing Edge", "fr": "Front Descendant" } }
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Automatique"
+              }
+            },
+            {
+              "id": "leading_edge",
+              "label": {
+                "en": "Leading Edge",
+                "fr": "Front Montant"
+              }
+            },
+            {
+              "id": "trailing_edge",
+              "label": {
+                "en": "Trailing Edge",
+                "fr": "Front Descendant"
+              }
+            }
           ]
         },
         {

@@ -9,9 +9,20 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",
@@ -27,7 +38,6 @@
   "images": {
     "small": "/{{driverAssetsPath}}/images/small.png",
     "large": "/{{driverAssetsPath}}/images/large.png"
-  
   },
   "zigbee": {
     "productId": [
@@ -54,7 +64,9 @@
         "sv": "Tryck in nollnings-knappen under ca 10 sekunder tills LED-lampan binkar snabbt"
       }
     },
-    "manufacturerName": ["_hybrid_temphumidsensor4_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_temphumidsensor4_needs_device_assignment"
+    ]
   },
   "version": "1.0.0"
 }

@@ -5,7 +5,8 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "frost_protection"
+    "frost_protection",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -29,9 +30,10 @@
         "en": "Turn the switch on/off 3 times quickly",
         "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_radiator_controller_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_radiator_controller_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/radiator_controller/assets/images/small.png",
@@ -305,6 +307,15 @@
         "fr": "Mode Chauffage"
       },
       "preventInsights": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {

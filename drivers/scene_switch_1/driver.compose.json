@@ -19,13 +19,16 @@
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": false
+      "setable": false,
+      "maintenanceAction": true
     }
   },
   "zigbee": {
     "manufacturerName": [
       "_tz3000_peszejy7",
-      "_tz3000_5bpeda8u"
+      "_tz3000_5bpeda8u",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601_scene1",

@@ -14,7 +14,8 @@
     "alarm_water",
     "onoff",
     "target_temperature",
-    "dim.speed"
+    "dim.speed",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -43,6 +44,15 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {},

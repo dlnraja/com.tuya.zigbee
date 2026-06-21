@@ -1,19 +1,133 @@
 {
   "triggers": [
-    { "id": "dimmable_recessed_led_dimmable_turned_on", "title": { "en": "Turned on", "fr": "Allume" }, "args": [] },
-    { "id": "dimmable_recessed_led_dimmable_turned_off", "title": { "en": "Turned off", "fr": "Eteint" }, "args": [] },
-    { "id": "dimmable_recessed_led_dimmable_dim_changed", "title": { "en": "Brightness changed", "fr": "Luminosite changee" }, "tokens": [{ "name": "dim", "type": "number", "title": { "en": "Brightness", "fr": "Luminosite" }, "example": 0.75 }], "args": [] },
-    { "id": "dimmable_recessed_led_turned_on", "title": { "en": "Turned on", "fr": "Allume", "nl": "Aangezet", "de": "Eingeschaltet" }, "args": [] },
-    { "id": "dimmable_recessed_led_turned_off", "title": { "en": "Turned off", "fr": "Eteint", "nl": "Uitgezet", "de": "Ausgeschaltet" }, "args": [] },
-    { "id": "dimmable_recessed_led_battery_low", "title": { "en": "Battery low", "fr": "Batterie faible", "nl": "Batterij laag", "de": "Batterie schwach" }, "args": [] }
+    {
+      "id": "dimmable_recessed_led_dimmable_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_dimmable_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_dimmable_dim_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosite changee"
+      },
+      "tokens": [
+        {
+          "name": "dim",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosite"
+          },
+          "example": 0.75
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allume",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Eteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
   ],
   "conditions": [
-    { "id": "dimmable_recessed_led_is_on", "title": { "en": "Is turned !{{on|off}}", "fr": "Est !{{allume|eteint}}", "nl": "Is !{{aan|uit}}", "de": "Ist !{{ein|aus}}" }, "args": [] }
+    {
+      "id": "dimmable_recessed_led_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": []
+    }
   ],
   "actions": [
-    { "id": "dimmable_recessed_led_turn_on", "title": { "en": "Turn on", "fr": "Allumer", "nl": "Aanzetten", "de": "Einschalten" }, "args": [] },
-    { "id": "dimmable_recessed_led_turn_off", "title": { "en": "Turn off", "fr": "Eteindre", "nl": "Uitzetten", "de": "Ausschalten" }, "args": [] },
-    { "id": "dimmable_recessed_led_toggle", "title": { "en": "Toggle", "fr": "Basculer", "nl": "Wisselen", "de": "Umschalten" }, "args": [] },
-    { "id": "dimmable_recessed_led_set_brightness", "title": { "en": "Set brightness", "fr": "Regler luminosite", "nl": "Helderheid instellen", "de": "Helligkeit einstellen" }, "args": [{ "name": "brightness", "type": "range", "min": 0, "max": 100, "step": 1, "label": "%", "labelDecimals": 0 }] }
+    {
+      "id": "dimmable_recessed_led_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Eteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmable_recessed_led_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Regler luminosite",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    }
   ]
 }

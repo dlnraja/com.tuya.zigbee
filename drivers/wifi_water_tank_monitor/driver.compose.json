@@ -12,7 +12,8 @@
     "measure_water_percentage",
     "alarm_water_low",
     "alarm_water_high",
-    "alarm_water"
+    "alarm_water",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_water_level": {
@@ -39,6 +40,15 @@
       "title": {
         "en": "Level Alert"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "pair": [

@@ -16,8 +16,8 @@
     "onoff",
     "onoff.channel2",
     "dim.channel2",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -37,7 +37,18 @@
       "_TZ3210_zf0zkkng",
       "_TZ3210_c57gzrgg",
       "_TZ3210_odyg1qwk",
-      "_TZ3000_18ejxno0"
+      "_TZ3000_18ejxno0",
+      "_tz3210_hkdljrsj",
+      "_tz3210_mzkxkrcs",
+      "_tz3210_hxk3rkyr",
+      "_tz3210_nwbkkbes",
+      "_tz3210_ngqkxj2v",
+      "_tz3210_b5msjwaa",
+      "_tz3210_lzrihomi",
+      "_tz3210_5fngeq6g",
+      "_tz3210_zf0zkkng",
+      "_tz3210_c57gzrgg",
+      "_tz3210_odyg1qwk"
     ],
     "productId": [
       "TS1101",
@@ -310,6 +321,15 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

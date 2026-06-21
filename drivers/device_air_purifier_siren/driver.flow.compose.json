@@ -148,7 +148,7 @@
           "values": [
             {
               "id": "low",
-              "label": {
+              "title": {
                 "en": "Low",
                 "nl": "Laag",
                 "fr": "Bas",
@@ -157,7 +157,7 @@
             },
             {
               "id": "medium",
-              "label": {
+              "title": {
                 "en": "Medium",
                 "nl": "Gemiddeld",
                 "fr": "Moyen",
@@ -166,7 +166,7 @@
             },
             {
               "id": "high",
-              "label": {
+              "title": {
                 "en": "High",
                 "nl": "Hoog",
                 "fr": "Haut",
@@ -223,126 +223,126 @@
           "values": [
             {
               "id": "0",
-              "label": {
+              "title": {
                 "en": "Doorbell Chime",
                 "fr": "Sonnette"
               }
             },
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "FÃ¼r Elise",
                 "fr": "Pour Ã‰lise"
               }
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "Westminster Chimes",
                 "fr": "Carillon Westminster"
               }
             },
             {
               "id": "3",
-              "label": {
+              "title": {
                 "en": "4-Key Chime",
                 "fr": "Carillon 4 notes"
               }
             },
             {
               "id": "4",
-              "label": {
+              "title": {
                 "en": "William Tell Overture",
                 "fr": "Guillaume Tell"
               }
             },
             {
               "id": "5",
-              "label": {
+              "title": {
                 "en": "Mozart Piano",
                 "fr": "Mozart Piano"
               }
             },
             {
               "id": "6",
-              "label": {
+              "title": {
                 "en": "Space Alarm",
                 "fr": "Alarme Spatiale"
               }
             },
             {
               "id": "7",
-              "label": {
+              "title": {
                 "en": "Klaxon",
                 "fr": "Klaxon"
               }
             },
             {
               "id": "8",
-              "label": {
+              "title": {
                 "en": "Meep Meep",
                 "fr": "Bip Bip"
               }
             },
             {
               "id": "9",
-              "label": {
+              "title": {
                 "en": "Wheep",
                 "fr": "Sifflement"
               }
             },
             {
               "id": "10",
-              "label": {
+              "title": {
                 "en": "Barking Dog",
                 "fr": "Chien qui aboie"
               }
             },
             {
               "id": "11",
-              "label": {
+              "title": {
                 "en": "Alarm Siren",
                 "fr": "SirÃ¨ne d'alarme"
               }
             },
             {
               "id": "12",
-              "label": {
+              "title": {
                 "en": "Doorbell 2",
                 "fr": "Sonnette 2"
               }
             },
             {
               "id": "13",
-              "label": {
+              "title": {
                 "en": "Old Phone",
                 "fr": "Vieux tÃ©lÃ©phone"
               }
             },
             {
               "id": "14",
-              "label": {
+              "title": {
                 "en": "Police Siren",
                 "fr": "SirÃ¨ne Police"
               }
             },
             {
               "id": "15",
-              "label": {
+              "title": {
                 "en": "Evacuation Bell",
                 "fr": "Cloche Ã‰vacuation"
               }
             },
             {
               "id": "16",
-              "label": {
+              "title": {
                 "en": "Clock Alarm",
                 "fr": "RÃ©veil"
               }
             },
             {
               "id": "17",
-              "label": {
+              "title": {
                 "en": "Fire Alarm",
                 "fr": "Alarme Incendie"
               }

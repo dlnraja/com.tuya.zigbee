@@ -19,7 +19,8 @@
       "_tz3000_qd7hej8u",
       "_tz3210_mja6r5ix",
       "_tz3000_q50zhdsc",
-      "eWeLight"
+      "eWeLight",
+      "ewelight"
     ],
     "productId": [
       "TS0505A",
@@ -54,5 +55,19 @@
   "version": "1.0.0",
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "capabilities": [
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

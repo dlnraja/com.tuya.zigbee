@@ -19,7 +19,8 @@
     "onoff",
     "dim",
     "measure_power",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "subDevices": [],
   "capabilitiesOptions": {
@@ -55,6 +56,15 @@
         "en": "Air Quality Alert",
         "fr": "Alerte QualitÃ© Air"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -236,8 +246,11 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tze200_8ygsuhe1", "_tze200_ywagc4rj", "_tze200_zl1kmjqx"]
+    },
+    "manufacturerName": [
+      "_tze200_8ygsuhe1",
+      "_tze200_ywagc4rj",
+      "_tze200_zl1kmjqx"
+    ]
   }
 }

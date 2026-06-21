@@ -12,7 +12,8 @@
     "measure_voltage",
     "measure_current",
     "onoff",
-    "meter_power"
+    "meter_power",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -31,7 +32,9 @@
       "_tz3000_hswqnljz",
       "_tz3000_jd3u8dkz",
       "_tz3000_tqlv4uj4",
-      "_tz3000_vmpbygs5"
+      "_tz3000_vmpbygs5",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "ZBMINI",
@@ -447,7 +450,17 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

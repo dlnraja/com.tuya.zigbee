@@ -11,7 +11,8 @@
     "button.identify",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",
@@ -659,12 +660,27 @@
     "button.toggle": {
       "title": {
         "en": "toggle"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {
@@ -733,8 +749,11 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_climate_sensor_switch_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_climate_sensor_switch_needs_device_assignment",
+      "HOBEIAN",
+      "hobeian"
+    ]
   }
 }

@@ -9,11 +9,15 @@
   "capabilities": [
     "onoff",
     "measure_power",
-    "meter_power"
+    "meter_power",
+    "measure_battery",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_typdpbpg"
+      "_tz3000_typdpbpg",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601_sp1"
@@ -267,5 +271,24 @@
     }
   ],
   "id": "switch_plug_1",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }

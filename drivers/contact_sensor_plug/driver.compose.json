@@ -18,8 +18,8 @@
     "alarm_tamper",
     "measure_luminance",
     "alarm_battery",
-    "countdown_remaining",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -658,8 +658,20 @@
           0
         ]
       }
+    },
+    "manufacturerName": [
+      "_hybrid_contact_sensor_plug_needs_device_assignment"
+    ]
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
-  ,
-    "manufacturerName": ["_hybrid_contact_sensor_plug_needs_device_assignment"]
   }
 }

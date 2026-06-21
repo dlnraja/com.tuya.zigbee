@@ -28,43 +28,43 @@
           "values": [
             {
               "id": "1",
-              "label": {
+              "title": {
                 "en": "Socket 1"
               }
             },
             {
               "id": "2",
-              "label": {
+              "title": {
                 "en": "Socket 2"
               }
             },
             {
               "id": "3",
-              "label": {
+              "title": {
                 "en": "Socket 3"
               }
             },
             {
               "id": "4",
-              "label": {
+              "title": {
                 "en": "Socket 4"
               }
             },
             {
               "id": "5",
-              "label": {
+              "title": {
                 "en": "Socket 5"
               }
             },
             {
               "id": "6",
-              "label": {
+              "title": {
                 "en": "Socket 6"
               }
             },
             {
               "id": "usb",
-              "label": {
+              "title": {
                 "en": "USB"
               }
             }
@@ -76,13 +76,13 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "On"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off"
               }
             }

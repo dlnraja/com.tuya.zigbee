@@ -15,7 +15,8 @@
     "measure_voc",
     "measure_co2",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -55,8 +56,22 @@
     "manufacturerName": [
       "_TZE200_7bztmfm1",
       "_TZE204_7bztmfm1",
-      "_TZE284_it9utkro"
+      "_TZE284_it9utkro",
+      "_tze284_it9utkro",
+      "_tze200_7bztmfm1",
+      "_tze204_7bztmfm1"
     ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

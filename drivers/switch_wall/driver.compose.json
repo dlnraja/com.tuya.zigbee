@@ -9,7 +9,7 @@
     "measure_current",
     "button.toggle",
     "button.identify",
-    "alarm_battery"
+    "button.1"
   ],
   "images": {
     "small": "/drivers/switch_1gang/assets/images/small.png",
@@ -661,6 +661,15 @@
       "title": {
         "en": "identify"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {
@@ -729,8 +738,11 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_switch_wall_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_switch_wall_needs_device_assignment",
+      "HOBEIAN",
+      "hobeian"
+    ]
   }
 }

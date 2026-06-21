@@ -13,8 +13,8 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -328,6 +328,15 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

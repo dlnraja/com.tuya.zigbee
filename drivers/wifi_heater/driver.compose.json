@@ -12,13 +12,23 @@
     "measure_temperature",
     "wifi_heater_mode",
     "child_lock",
-    "eco_mode"
+    "eco_mode",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
       "min": 5,
       "max": 35,
       "step": 1
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "pair": [

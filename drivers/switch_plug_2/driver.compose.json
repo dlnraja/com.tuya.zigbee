@@ -10,11 +10,15 @@
     "onoff",
     "onoff.outlet2",
     "measure_power",
-    "meter_power"
+    "meter_power",
+    "measure_battery",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_zloso4jk"
+      "_tz3000_zloso4jk",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0122"
@@ -61,6 +65,23 @@
       "title": {
         "en": "Outlet 2",
         "fr": "Prise 2"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },

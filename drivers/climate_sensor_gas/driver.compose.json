@@ -15,7 +15,8 @@
     "measure_battery",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {
@@ -23,6 +24,15 @@
         "en": "Gas Alarm",
         "fr": "Alarme Gaz"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -333,9 +343,10 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tze204_chbyv06x"]
+    },
+    "manufacturerName": [
+      "_tze204_chbyv06x"
+    ]
   },
   "metadata": {
     "driver": {

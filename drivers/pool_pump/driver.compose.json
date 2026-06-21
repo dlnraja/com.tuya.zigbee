@@ -14,7 +14,8 @@
   "capabilities": [
     "onoff",
     "measure_power",
-    "meter_power"
+    "meter_power",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -64,5 +65,16 @@
     }
   ],
   "id": "pool_pump",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -13,20 +13,33 @@
   "class": "other",
   "capabilities": [
     "button.feed",
-    "alarm_generic"
+    "alarm_generic",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "button.feed": {
       "title": {
         "en": "Feed Now",
         "fr": "Distribuer"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "alarm_generic": {
       "title": {
         "en": "Food Low",
         "fr": "Niveau Bas"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {

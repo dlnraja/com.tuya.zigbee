@@ -11,7 +11,8 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -124,7 +125,7 @@
       }
     },
     "manufacturerName": [
-      "relay board 4 channel"
+      "_TZE200_dummy"
     ]
   },
   "version": "1.0.0",
@@ -132,6 +133,17 @@
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0004"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

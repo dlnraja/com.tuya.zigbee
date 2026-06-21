@@ -658,12 +658,18 @@
     "button.toggle": {
       "title": {
         "en": "toggle"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.push": {
       "title": {
@@ -673,12 +679,18 @@
     "button.1": {
       "title": {
         "en": "1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.2": {
       "title": {
         "en": "2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "metadata": {
@@ -747,8 +759,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_remote_button_wireless_fingerbot_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment"
+    ]
   }
 }

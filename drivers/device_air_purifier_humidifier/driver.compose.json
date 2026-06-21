@@ -12,7 +12,8 @@
     "dim",
     "measure_humidity",
     "dim.humidity",
-    "measure_pm25"
+    "measure_pm25",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -32,6 +33,15 @@
       "min": 30,
       "max": 80,
       "step": 5
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -51,9 +61,10 @@
         "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",
         "fr": "Maintenez le bouton power pendant 5 secondes"
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_device_air_purifier_humidifier_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_humidifier_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/humidifier/assets/images/small.png",

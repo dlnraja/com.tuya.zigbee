@@ -11,7 +11,13 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery",
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -21,7 +27,10 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "productId": [
@@ -41,7 +50,6 @@
       "ZBMINIR",
       "ZBMINIL2-R2",
       "ZBMINIR2-R2",
-      "ZG-301Z",
       "ZG-302Z1",
       "TS0101",
       "TS4100",
@@ -133,8 +141,66 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_placeholder_generic"
+      "_TZE200_placeholder_generic",
+      "_tze200_placeholder_generic",
+      "HOBEIAN",
+      "hobeian"
     ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.5": {
+      "title": {
+        "en": "Button 5",
+        "fr": "Bouton 5"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

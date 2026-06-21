@@ -11,7 +11,8 @@
     "measure_temperature",
     "measure_humidity",
     "thermostat_mode",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -40,6 +41,15 @@
           }
         }
       ]
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -48,7 +58,8 @@
       "_tze200_c88teujp",
       "_TYST11_c88teujp",
       "_tze204_c88teujp",
-      "_tze204_b6wax7g0"
+      "_tze204_b6wax7g0",
+      "_tyst11_c88teujp"
     ],
     "productId": [
       "TS0601"

@@ -11,12 +11,12 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
-  
   },
   "energy": {
     "approximation": {
@@ -45,7 +45,22 @@
         "en": "Press the setup button for approx 10 seconds to enter pairing mode (the LED should blink)."
       }
     },
-    "manufacturerName": ["_hybrid_smart_switch_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_smart_switch_needs_device_assignment",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -10,7 +10,8 @@
     "alarm_generic",
     "alarm_co",
     "alarm_co2",
-    "alarm_gas"
+    "alarm_gas",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {
@@ -18,6 +19,15 @@
         "en": "Gas Alarm",
         "fr": "Alarme Gaz"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -36,10 +46,13 @@
       "_tze200_ioxkjvuz",
       "_tz3000_8nysnv3b",
       "_tze204_uc0iv1hb",
-      "_tz3000_ywagc4rj",
       "_TZE200_ywagc4rj",
       "_TZE204_ywagc4rj",
-      "_TZE204_qvxrkeif"
+      "_TZE204_qvxrkeif",
+      "_tze200_ywagc4rj",
+      "_tze284_chbyv06x",
+      "_tze204_ywagc4rj",
+      "_tze204_qvxrkeif"
     ],
     "learnmode": {
       "image": "/drivers/gas_detector/assets/learnmode.svg",

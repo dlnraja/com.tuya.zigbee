@@ -15,7 +15,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -33,7 +34,11 @@
       "_tze284_sgabhwa6",
       "_tze284_g2e6cpnw",
       "_TZE284_myd45weu",
-      "_TZE200_myd45weu"
+      "_TZE200_myd45weu",
+      "_TZE204_myd45weu",
+      "_tze200_myd45weu",
+      "_tze284_myd45weu",
+      "_tze204_myd45weu"
     ],
     "productId": [
       "TS0601"
@@ -57,5 +62,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -47,12 +47,18 @@
     "button.1": {
       "title": {
         "en": "1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.2": {
       "title": {
         "en": "2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "energy": {
@@ -238,8 +244,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tz3000_m0vaazab"]
+    },
+    "manufacturerName": [
+      "_tz3000_m0vaazab"
+    ]
   }
 }

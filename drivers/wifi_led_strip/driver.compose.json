@@ -14,7 +14,7 @@
     "light_saturation",
     "light_temperature",
     "light_mode",
-    "countdown_remaining"
+    "button.1"
   ],
   "pair": [
     {
@@ -130,5 +130,16 @@
     }
   ],
   "id": "wifi_led_strip",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

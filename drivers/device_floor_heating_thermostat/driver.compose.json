@@ -15,7 +15,8 @@
     "onoff",
     "measure_battery",
     "alarm_battery",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -50,6 +51,15 @@
           }
         }
       ]
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "images": {
@@ -93,8 +103,9 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_device_floor_heating_thermostat_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_device_floor_heating_thermostat_needs_device_assignment"
+    ]
   }
 }

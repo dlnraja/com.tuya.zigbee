@@ -26,7 +26,8 @@
         "fr": "Bouton"
       },
       "getable": false,
-      "setable": true
+      "setable": false,
+      "maintenanceAction": true
     }
   },
   "energy": {
@@ -38,7 +39,8 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3210_7VGTTLA6",
-      "_TYZB01_BNGWDJSR"
+      "_TYZB01_BNGWDJSR",
+      "_tz3210_7vgttla6"
     ],
     "productId": [
       "TS0601",

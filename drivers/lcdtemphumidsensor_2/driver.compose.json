@@ -14,13 +14,13 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
       "CR2450"
     ]
-  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -52,7 +52,20 @@
         "en": "Open the backside of the unit and press the button inside for 5 seconds."
       }
     },
-    "manufacturerName": ["_hybrid_lcdtemphumidsensor_2_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_lcdtemphumidsensor_2_needs_device_assignment"
+    ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

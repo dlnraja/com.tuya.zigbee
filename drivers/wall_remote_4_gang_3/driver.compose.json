@@ -26,7 +26,6 @@
     "large": "/drivers/wall_remote_4_gang_3/assets/images/large.png",
     "small": "/drivers/wall_remote_4_gang_3/assets/images/small.png",
     "xlarge": "/drivers/wall_remote_4_gang_3/assets/images/xlarge.png"
-  
   },
   "energy": {
     "batteries": [
@@ -67,9 +66,10 @@
       "instruction": {
         "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_wall_remote_4_gang_3_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_wall_remote_4_gang_3_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -126,7 +126,10 @@
         "fr": "Bouton 1",
         "nl": "Knop 1",
         "de": "Taste 1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.2": {
       "title": {
@@ -134,7 +137,10 @@
         "fr": "Bouton 2",
         "nl": "Knop 2",
         "de": "Taste 2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.3": {
       "title": {
@@ -142,7 +148,10 @@
         "fr": "Bouton 3",
         "nl": "Knop 3",
         "de": "Taste 3"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.4": {
       "title": {
@@ -150,7 +159,10 @@
         "fr": "Bouton 4",
         "nl": "Knop 4",
         "de": "Taste 4"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "measure_battery": {
       "title": {

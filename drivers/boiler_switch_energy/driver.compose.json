@@ -10,7 +10,8 @@
     "measure_voltage",
     "measure_current",
     "meter_power",
-    "measure_temperature"
+    "measure_temperature",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -18,6 +19,15 @@
         "en": "Temperature",
         "fr": "Température"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -33,9 +43,12 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_boiler_switch_energy_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_boiler_switch_energy_needs_device_assignment",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
   "images": {
     "small": "/drivers/boiler_switch_energy/assets/images/small.png",

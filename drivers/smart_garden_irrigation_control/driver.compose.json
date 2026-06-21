@@ -14,13 +14,23 @@
   "capabilities": [
     "onoff",
     "alarm_battery",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "onoff": {
       "opts": {
         "duration": true
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {

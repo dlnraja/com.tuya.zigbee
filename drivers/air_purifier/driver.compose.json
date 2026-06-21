@@ -14,7 +14,8 @@
   "capabilities": [
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -29,6 +30,15 @@
         "fr": "PM2.5"
       },
       "units": "µg/m³"
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {

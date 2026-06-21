@@ -19,7 +19,8 @@
     "measure_temperature.ch2",
     "measure_temperature.ch3",
     "measure_temperature.ch4",
-    "thermostat_mode"
+    "thermostat_mode",
+    "button.1"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -73,6 +74,15 @@
       "title": {
         "en": "Zone 4"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

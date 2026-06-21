@@ -13,7 +13,8 @@
     "thermostat_mode",
     "measure_power",
     "meter_power",
-    "alarm_generic"
+    "alarm_generic",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -28,6 +29,15 @@
         "nl": "Oververhitting Bescherming",
         "de": "Überhitzungsschutz"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "platforms": [

@@ -16,7 +16,8 @@
     "alarm_water",
     "measure_ec",
     "measure_conductivity",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {
@@ -58,6 +59,15 @@
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -281,8 +291,16 @@
           0
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tze200_npj9bug3", "_tze200_oitavov2", "_tze200_wqashyqo", "_tze284_aao3yzhs", "_tze284_hdml1aav", "_tze284_o9ofysmo", "_tze284_sgabhwa6", "_tze284_xc3vwx5a"]
+    },
+    "manufacturerName": [
+      "_tze200_npj9bug3",
+      "_tze200_oitavov2",
+      "_tze200_wqashyqo",
+      "_tze284_aao3yzhs",
+      "_tze284_hdml1aav",
+      "_tze284_o9ofysmo",
+      "_tze284_sgabhwa6",
+      "_tze284_xc3vwx5a"
+    ]
   }
 }

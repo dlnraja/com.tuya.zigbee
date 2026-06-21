@@ -13,8 +13,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "energy": {
     "approximation": {
@@ -56,7 +56,12 @@
       "_TZ3210_WUHEYHVM",
       "_TZ3210_YLUVWHJC",
       "_TZ3000_9CPUACA6",
-      "_TZ3000_DBOU1AP4"
+      "_TZ3000_DBOU1AP4",
+      "_tz3210_ebbfkvoy",
+      "_tz3210_hzdhb62z",
+      "_tz3210_lfbz816s",
+      "_tz3210_v5yquxma",
+      "_tz3210_yluvwhjc"
     ],
     "productId": [
       "TS0501A",
@@ -347,6 +352,15 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [

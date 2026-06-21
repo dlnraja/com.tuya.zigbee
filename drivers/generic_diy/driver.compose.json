@@ -11,7 +11,9 @@
     "large": "/drivers/generic_diy/assets/images/large.png",
     "xlarge": "/drivers/generic_diy/assets/images/xlarge.png"
   },
-  "capabilities": [],
+  "capabilities": [
+    "button.1"
+  ],
   "energy": {
     "approximation": {
       "usageConstant": 1
@@ -82,7 +84,8 @@
       "_TZE284_2se8efxh",
       "_TZE284_9cqcpkgb",
       "_TZE204_mvtclclq",
-      "_TZ3000_imaccztn"
+      "_TZ3000_imaccztn",
+      "_tz3000_2putqrmw"
     ],
     "productId": [
       "BUTTON",
@@ -243,5 +246,16 @@
     }
   ],
   "id": "generic_diy",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

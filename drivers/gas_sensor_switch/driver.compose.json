@@ -17,7 +17,8 @@
     "alarm_contact",
     "alarm_gas",
     "alarm_tamper",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -52,7 +53,15 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": ["_tz3000_blhvsaqf", "_tz3000_bseed", "_tz3000_e98krvvk", "_tz3000_hafsqare", "_tz3000_qkixdnon", "_tz3000_xk5udnd6", "_tz3000_ysdv91bk", "_tz3002_pzao9ls1", "_tz3002_vaq2bfcu"]
+    "manufacturerName": [
+      "_tz3000_bseed",
+      "_tz3000_hafsqare",
+      "_tz3000_xk5udnd6",
+      "_tz3002_pzao9ls1",
+      "_tz3002_vaq2bfcu",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
   "images": {
     "small": "/drivers/switch_4gang/assets/images/small.png",
@@ -612,27 +621,51 @@
     "button.toggle_1": {
       "title": {
         "en": "1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.toggle_2": {
       "title": {
         "en": "2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.toggle_3": {
       "title": {
         "en": "3"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.toggle_4": {
       "title": {
         "en": "4"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {

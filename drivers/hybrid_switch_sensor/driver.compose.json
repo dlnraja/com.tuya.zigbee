@@ -11,7 +11,8 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {
@@ -25,6 +26,15 @@
         "en": "Humidity",
         "fr": "Humidité"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "energy": {
@@ -36,7 +46,11 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_CYMSNVF",
-      "_TZ3000_FZO2POCS"
+      "_TZ3000_FZO2POCS",
+      "_tz3000_cymsnvf",
+      "_tz3000_fzo2pocs",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "TS0601",

@@ -17,15 +17,14 @@ async onInit() {
 
     // CONDITIONS
     try {
-      // A8: NaN Safety - use safeDivide/safeMultiply
-  const card = null;
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_is_presence_detected');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) {return false;}
+          if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid: ${err.message}`); }
+    } catch (err) { this.error('[FLOW] Condition is_presence_detected:', err.message); }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_above');
@@ -36,7 +35,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_below');
@@ -46,7 +45,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_below: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_below: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_temperature_above');
@@ -57,7 +56,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_temperature_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_temperature_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_less_than');
@@ -67,7 +66,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_less_than: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_less_than: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_radar_motion_sensor_radar_mmwave_motion_active');
@@ -77,7 +76,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_motion_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_radar_motion_sensor_radar_mmwave_motion_active: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -90,7 +89,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_radar_sensitivity: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_radar_sensitivity: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_range');
@@ -102,7 +101,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_range: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_range: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('sensor_motion_radar_motion_sensor_radar_mmwave_set_fading_time');
@@ -114,7 +113,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_fading_time: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_fading_time: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_delay');
@@ -126,7 +125,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_delay: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_delay: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

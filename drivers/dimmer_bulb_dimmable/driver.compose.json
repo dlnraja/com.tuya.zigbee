@@ -14,9 +14,8 @@
     "onoff",
     "measure_battery",
     "measure_power",
-    "alarm_battery",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1"
   ],
   "energy": {
     "mains": true,
@@ -53,9 +52,10 @@
         "cluster": "colorControl",
         "attr": "colorTemperature"
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_dimmer_bulb_dimmable_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_dimmer_bulb_dimmable_needs_device_assignment"
+    ]
   },
   "settings": [
     {
@@ -329,6 +329,23 @@
   "capabilitiesOptions": {
     "onoff": {
       "setOnDim": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
     }
   },
   "maintenanceActions": [

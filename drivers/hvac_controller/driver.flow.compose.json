@@ -148,28 +148,28 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto",
                 "fr": "Auto"
               }
             },
             {
               "id": "cool",
-              "label": {
+              "title": {
                 "en": "Cool",
                 "fr": "Froid"
               }
             },
             {
               "id": "heat",
-              "label": {
+              "title": {
                 "en": "Heat",
                 "fr": "Chaud"
               }
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Arrêt"
               }
@@ -194,28 +194,28 @@
           "values": [
             {
               "id": "low",
-              "label": {
+              "title": {
                 "en": "Low",
                 "fr": "Faible"
               }
             },
             {
               "id": "medium",
-              "label": {
+              "title": {
                 "en": "Medium",
                 "fr": "Moyen"
               }
             },
             {
               "id": "high",
-              "label": {
+              "title": {
                 "en": "High",
                 "fr": "Élevé"
               }
             },
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto",
                 "fr": "Auto"
               }

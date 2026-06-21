@@ -38,63 +38,63 @@
           "values": [
             {
               "id": "Power",
-              "label": {
+              "title": {
                 "en": "Power",
                 "fr": "Alimentation"
               }
             },
             {
               "id": "Mute",
-              "label": {
+              "title": {
                 "en": "Mute",
                 "fr": "Sourdine"
               }
             },
             {
               "id": "Volume Up",
-              "label": {
+              "title": {
                 "en": "Volume Up",
                 "fr": "Volume +"
               }
             },
             {
               "id": "Volume Down",
-              "label": {
+              "title": {
                 "en": "Volume Down",
                 "fr": "Volume -"
               }
             },
             {
               "id": "Channel Up",
-              "label": {
+              "title": {
                 "en": "Channel Up",
                 "fr": "Chaîne +"
               }
             },
             {
               "id": "Channel Down",
-              "label": {
+              "title": {
                 "en": "Channel Down",
                 "fr": "Chaîne -"
               }
             },
             {
               "id": "Source",
-              "label": {
+              "title": {
                 "en": "Source",
                 "fr": "Source"
               }
             },
             {
               "id": "Menu",
-              "label": {
+              "title": {
                 "en": "Menu",
                 "fr": "Menu"
               }
             },
             {
               "id": "OK",
-              "label": {
+              "title": {
                 "en": "OK",
                 "fr": "OK"
               }

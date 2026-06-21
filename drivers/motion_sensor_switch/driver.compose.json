@@ -14,7 +14,8 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_tamper",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -31,7 +32,9 @@
       }
     },
     "manufacturerName": [
-      "_tyzb01_dr6sduka"
+      "_tyzb01_dr6sduka",
+      "HOBEIAN",
+      "hobeian"
     ],
     "endpoints": {
       "1": {
@@ -691,12 +694,27 @@
     "button.toggle": {
       "title": {
         "en": "toggle"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {

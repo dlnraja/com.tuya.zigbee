@@ -9,7 +9,8 @@
   "capabilities": [
     "measure_luminance",
     "measure_battery",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_luminance": {
@@ -17,12 +18,22 @@
         "en": "Luminance",
         "fr": "Luminosité"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
     "manufacturerName": [
       "_tz3210_snzbbgvi",
-      "_TZE284_aaeasoll"
+      "_TZE284_aaeasoll",
+      "_tze284_aaeasoll"
     ],
     "productId": [
       "TS0601",

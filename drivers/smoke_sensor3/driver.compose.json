@@ -14,7 +14,8 @@
     "measure_battery",
     "alarm_smoke",
     "alarm_battery",
-    "alarm_tamper"
+    "alarm_tamper",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -56,7 +57,32 @@
       "_TZE200_ytibqbra",
       "_TZE200_e2bedvo9",
       "_TZE200_dnz6yvl2",
-      "_TZE284_e2bedvo9"
+      "_TZE284_e2bedvo9",
+      "_tze200_dnz6yvl2",
+      "_tze200_e2bedvo9",
+      "_tze200_ux5v4dbd",
+      "_tze200_ytibqbra",
+      "_tze284_ai4rqhky",
+      "_tze284_e2bedvo9",
+      "_tze200_rccxox8p",
+      "_tze284_rccxox8p",
+      "_tz3210_up3pngle",
+      "_tyzb01_wqcac7lo",
+      "_tze200_0zaf1cr8",
+      "_tze284_0zaf1cr8",
+      "_tze200_m9skfctm",
+      "_tze200_t5p1vj8r",
+      "_tze200_uebojraa",
+      "_tze200_vzekyi4c",
+      "_tze200_yh7aoahi",
+      "_tze200_dq1mfjug",
+      "_tze284_6ycgarab",
+      "_tze204_cjbofhxw",
+      "_tze284_cjbofhxw",
+      "_tze200_qcasmfan",
+      "_tze204_qaxkdgyt",
+      "_tz3000_qtyyuaq6",
+      "_tze200_cjbofhxw"
     ],
     "productId": [
       "TS0205",
@@ -82,5 +108,16 @@
       }
     }
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

@@ -42,9 +42,12 @@
           6
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tz3000_blhvsaqf", "_tz3000_e98krvvk", "_tz3000_hafsqare", "_tz3000_iedbgyxt", "_tz3000_l9brjwau", "_tz3000_ysdv91bk"]
+    },
+    "manufacturerName": [
+      "_tz3000_hafsqare",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
   "images": {
     "small": "/drivers/switch_2gang/assets/images/small.png",
@@ -594,27 +597,42 @@
     "button.toggle_1": {
       "title": {
         "en": "1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.toggle_2": {
       "title": {
         "en": "2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.1": {
       "title": {
         "en": "1"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.2": {
       "title": {
         "en": "2"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "metadata": {

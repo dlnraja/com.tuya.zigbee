@@ -18,7 +18,8 @@
     "measure_battery",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery"
+    "alarm_battery",
+    "button.1"
   ],
   "energy": {
     "batteries": [
@@ -68,9 +69,10 @@
           61184
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_climate_sensor_energy_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_climate_sensor_energy_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/energy_meter_3phase/assets/images/small.png",
@@ -99,6 +101,17 @@
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0201, TS0222, TH01, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, SM0201, SNZB-02, SNZB-02D, SNZB-02P, ZG-227Z, ZG-227ZL, CK-TLSR8656-SS5-01(7014), SNZB-02DR2, SNZB-02LD, SNZB-02WD, THS317-ET, ZG-303Z, TY0201, TS1201, RH3052, Excellux, TS0601"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   }
 }

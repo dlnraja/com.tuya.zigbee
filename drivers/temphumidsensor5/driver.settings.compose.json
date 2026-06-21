@@ -31,7 +31,7 @@
       "en": "Set a correction to compensate a humidity offset.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]",
       "nl": "Stel een correctiewaarde in om een Luchtvochtigheids verschil te compenseren.\nBereik: -10 - 10, stap grootte 1, \nstandaard: 0 [%]",
       "it": "Imposta un valore per compensare lo scostamento dell'umidità.\nRange: -10 - 10, step size 1, \ndefault: 0 [%]",
-      "sv":"Ange ett värde för att korrigera felaktig fuktighet.\nIntervall: -10 - 10, steg om 1, \nstandard: 0 [%]"
+      "sv": "Ange ett värde för att korrigera felaktig fuktighet.\nIntervall: -10 - 10, steg om 1, \nstandard: 0 [%]"
     },
     "value": 0,
     "attr": {

@@ -11,7 +11,10 @@
     "zigbee"
   ],
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery",
+    "button.1",
+    "button.2"
   ],
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -21,7 +24,10 @@
     "approximation": {
       "usageOn": 0,
       "usageOff": 0
-    }
+    },
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "productId": [
@@ -77,8 +83,38 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_placeholder_generic"
+      "_TZE200_placeholder_generic",
+      "HOBEIAN",
+      "hobeian"
     ]
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

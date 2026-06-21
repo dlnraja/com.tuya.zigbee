@@ -15,7 +15,8 @@
     "onoff",
     "dim",
     "measure_pm25",
-    "child_lock"
+    "child_lock",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "target_temperature": {
@@ -44,6 +45,15 @@
           }
         }
       ]
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "zigbee": {
@@ -58,7 +68,9 @@
         ]
       }
     },
-    "manufacturerName": ["_hybrid_device_air_purifier_smart_needs_device_assignment"]
+    "manufacturerName": [
+      "_hybrid_device_air_purifier_smart_needs_device_assignment"
+    ]
   },
   "images": {
     "small": "/drivers/smart_lcd_thermostat/assets/images/small.png",

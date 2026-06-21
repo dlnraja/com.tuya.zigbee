@@ -10,7 +10,8 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "button.toggle"
+    "button.toggle",
+    "button.1"
   ],
   "zigbee": {
     "productId": [
@@ -36,9 +37,13 @@
           6
         ]
       }
-    }
-  ,
-    "manufacturerName": ["_tz3000_blhvsaqf", "_tz3000_e98krvvk", "_tz3000_hafsqare", "_tz3000_iedbgyxt", "_tz3000_jl7qyupf", "_tz3000_l9brjwau", "_tz3000_ysdv91bk"]
+    },
+    "manufacturerName": [
+      "_tz3000_hafsqare",
+      "_tz3000_jl7qyupf",
+      "HOBEIAN",
+      "hobeian"
+    ]
   },
   "images": {
     "small": "/drivers/switch_2gang/assets/images/small.png",
@@ -557,6 +562,15 @@
         "en": "Gang 2",
         "fr": "Gang 2"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "metadata": {

@@ -11,7 +11,8 @@
     "onoff",
     "measure_humidity",
     "measure_temperature",
-    "alarm_water"
+    "alarm_water",
+    "button.1"
   ],
   "pair": [
     {
@@ -127,5 +128,16 @@
     }
   ],
   "id": "wifi_humidifier",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

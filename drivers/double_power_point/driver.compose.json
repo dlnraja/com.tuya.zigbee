@@ -15,13 +15,22 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "button.1"
   ],
   "capabilitiesOptions": {
     "measure_power": {
       "approximated": true
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
-  
   },
   "images": {
     "large": "/{{driverAssetsPath}}/images/large.png",
@@ -73,9 +82,10 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    }
-  ,
-    "manufacturerName": ["_hybrid_double_power_point_needs_device_assignment"]
+    },
+    "manufacturerName": [
+      "_hybrid_double_power_point_needs_device_assignment"
+    ]
   },
   "version": "1.0.0",
   "metadata": {

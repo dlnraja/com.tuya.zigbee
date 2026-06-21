@@ -11,8 +11,10 @@
     "onoff",
     "onoff.gang2",
     "onoff.gang3",
-    "countdown_remaining",
-    "power_on_behavior"
+    "power_on_behavior",
+    "button.1",
+    "button.2",
+    "button.3"
   ],
   "pair": [
     {
@@ -132,6 +134,33 @@
       "title": {
         "en": "S3"
       }
+    },
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
     }
   },
   "maintenanceActions": [
