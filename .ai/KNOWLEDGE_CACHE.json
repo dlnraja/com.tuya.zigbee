@@ -1,23 +1,23 @@
 {
-  "version": "7.0",
-  "lastUpdated": "2026-06-18T00:00:00Z",
-  "lastAudit": "2026-06-18T00:00:00Z",
-  "auditEngine": "documentation-updater-v7.0",
+  "version": "8.0",
+  "lastUpdated": "2026-06-18T12:00:00Z",
+  "lastAudit": "2026-06-18T12:00:00Z",
+  "auditEngine": "documentation-finalizer-v8.0",
   "project": {
     "name": "com.dlnraja.tuya.zigbee",
     "version": "9.0.40",
-    "drivers": 429,
-    "zigbeeDrivers": 378,
+    "drivers": 430,
+    "zigbeeDrivers": 379,
     "wifiDrivers": 51,
     "fingerprints": 4304,
     "flowCards": 4138,
     "capabilities": 156,
     "timeSyncFormats": 23,
     "pipelineLayers": 11,
-    "scripts": 93,
+    "scripts": 565,
     "workflows": 40,
-    "docs": 443,
-    "libFiles": 468
+    "docs": 334,
+    "libFiles": 533
   },
   "sdk3Rules": {
     "lifecycle": {
@@ -284,7 +284,10 @@
       {"id": "BUG-010", "version": "v9.0.40-titan", "description": "TuyaLocalDevice.onDeleted() missing super.onDeleted() - ALL WiFi drivers", "fix": "Added if (super.onDeleted) { await super.onDeleted(); }"},
       {"id": "BUG-011", "version": "v9.0.40-titan", "description": "EweLinkLocalDevice.onDeleted() missing super.onDeleted() - ALL eWeLink drivers", "fix": "Added if(super.onDeleted){await super.onDeleted();}"},
       {"id": "BUG-012", "version": "v9.0.40-titan", "description": "TuyaCloudAPI missing CircuitBreaker for fault tolerance", "fix": "Integrated CircuitBreaker with 5-failure threshold, 30s reset"},
-      {"id": "BUG-013", "version": "v9.0.40-titan", "description": "28 redundant/disabled GitHub Actions workflows wasting resources", "fix": "Archived to .archive/workflows-disabled/"}
+      {"id": "BUG-013", "version": "v9.0.40-titan", "description": "28 redundant/disabled GitHub Actions workflows wasting resources", "fix": "Archived to .archive/workflows-disabled/"},
+      {"id": "BUG-014", "version": "v9.0.40", "description": "Fingerbot fingerprints colliding with plug and button_wireless_2 drivers", "fix": "Reverted conflicting fingerprints"},
+      {"id": "BUG-015", "version": "v9.0.40", "description": "Forum issues #2091 #5472 - device routing and flow card integrity", "fix": "Protection scripts + flow card integrity validation"},
+      {"id": "BUG-016", "version": "v9.0.40", "description": "Driver compose JSON inconsistencies from forum analysis", "fix": "Forum analysis - driver compose fixes and improvements"}
     ],
     "open": [],
     "patterns": [
@@ -383,6 +386,35 @@
       "drenso": "TypeScript, OAuth2",
       "jurgenheine": "Cloud API patterns"
     }
+  },
+  "forumFindings": {
+    "lastUpdated": "2026-06-18",
+    "issuesProcessed": [
+      {"id": "#2091", "description": "Device routing fix", "status": "resolved", "version": "v9.0.40"},
+      {"id": "#5472", "description": "Flow card integrity fix", "status": "resolved", "version": "v9.0.40"},
+      {"id": "#2090", "description": "HOBEIAN water leak sensor ZG-222Z", "status": "resolved", "version": "v9.0.22"},
+      {"id": "#388", "description": "Rain sensor misclassification", "status": "resolved", "version": "v9.0.35"},
+      {"id": "#383", "description": "Bed sensor verification", "status": "resolved", "version": "v9.0.35"},
+      {"id": "#420", "description": "MMWave radar addition", "status": "resolved", "version": "v9.0.35"},
+      {"id": "#417", "description": "Fingerprint additions", "status": "resolved", "version": "v9.0.35"}
+    ],
+    "deviceAdditions": [
+      {"device": "HOBEIAN ZG-222Z water leak sensor", "driver": "water_leak_sensor", "reporter": "Peter", "forumId": "#2090"},
+      {"device": "MMWave radar motion sensor", "driver": "motion_sensor_radar_mmwave", "reporter": "Community", "forumId": "#420"},
+      {"device": "Bed sensor", "driver": "bed_sensor", "reporter": "Community", "forumId": "#383"},
+      {"device": "Rain sensor _TZ3210_tgvtvdoc", "driver": "rain_sensor", "reporter": "Community", "forumId": "#388"}
+    ],
+    "bugFixes": [
+      {"issue": "Fingerbot fingerprint collisions", "fix": "Reverted conflicting fingerprints with plug and button_wireless_2", "version": "v9.0.40"},
+      {"issue": "Driver compose JSON inconsistencies", "fix": "Forum analysis - driver compose fixes and improvements", "version": "v9.0.40"},
+      {"issue": "Protection scripts missing", "fix": "Added protection scripts + flow card integrity validation", "version": "v9.0.40"}
+    ],
+    "patterns": [
+      "Forum users report device model IDs that don't match existing fingerprints",
+      "Multi-manufacturer support: same device model sold under different brands",
+      "One manufacturer can have thousands of device variants with different productIds",
+      "Community reports help identify misclassified devices (rain vs water_leak, climate vs presence)"
+    ]
   },
   "z2mPatterns": {
     "converters": "toHomey/toDevice/validate interface",
@@ -528,16 +560,16 @@
   },
   "gitHistory": {
     "recentCommits": [
+      "fd3302924 feat: Z2M/ZHA pattern alignment - 7 new converters, 5 fault bitmap types, 7 fingerprints added",
+      "15578cc18 feat: Device Capabilities flow cards - generic capability watch, historical value, zone setter, app lifecycle",
+      "a0ee52ae5 fix: revert fingerbot fingerprints that collide with plug and button_wireless_2 drivers",
+      "e02bce3cb fix: forum analysis - driver compose fixes and improvements",
+      "53234799d feat: TITAN V5 GOD-MODE - 430 drivers, 0 violations, 170+ sources analyzed",
+      "20dfddb67 feat: add CrashPrevention utilities and update CORE_RULES.md",
       "933caf9da fix: forum issues #2091 #5472 + protection scripts + flow card integrity",
       "0eb0ad79b v9.0.39: 420 drivers, 2403 FPs [skip ci]",
       "45eae3fd6 chore: bump version to v9.0.38, update changelog",
-      "4e655fb87 feat: virtual presence detection + battery health intelligence",
-      "e650d834d @ v9.0.36: 419 drivers, 7 new hybrid drivers, pipeline hardening",
-      "53688db3d fix: comprehensive button evolution + stable-v5 port + regression fixes",
-      "ee5dd956d fix: comprehensive quality sweep - 607 files, zero violations",
-      "2c415f6c4 fix: GitHub issues #388 #383 #420 #417 + fingerprint additions",
-      "bc73e3a1f fix: forum posts processed - 8 device routing fixes + 4 fingerprint additions",
-      "40dcf9452 fix: fix 74 remaining empty manufacturerName arrays (AggregateError root cause)"
+      "4e655fb87 feat: virtual presence detection + battery health intelligence"
     ],
     "keyDecisions": [
       "v8.5.0: Added _destroyed guard, safeSetCapabilityValue, UnifiedBatteryHandler",
@@ -547,7 +579,11 @@
       "v9.0.40: Added virtual presence detection + battery health intelligence",
       "v9.0.40 TITAN: Fixed super.onDeleted() in WiFi base classes, batch-fixed 159 drivers setCapabilityValue",
       "v9.0.41: Added ConnectionStateTracker for WiFi devices, CORE_RULES updated to R41 with R37-R41 enrichment rules",
-      "v9.0.42: Added CrashPrevention utilities with CP1-CP10 crash prevention rules"
+      "v9.0.42: Added CrashPrevention utilities with CP1-CP10 crash prevention rules",
+      "v9.0.44: Documentation v7.0 - KNOWLEDGE_CACHE v7.0, CORE_RULES v4.0 (R1-R58), 4 new docs",
+      "v9.0.45: Forum analysis fixes - fingerbot collision revert, driver compose improvements",
+      "v9.0.46: Device Capabilities flow cards - generic capability watch, historical value, zone setter",
+      "v9.0.47: Z2M/ZHA pattern alignment - 7 new converters, 5 fault bitmap types"
     ],
     "stats30Days": {
       "commits": 50,
@@ -555,5 +591,38 @@
       "insertions": 573975,
       "deletions": 621544
     }
+  },
+  "multiManufacturerRules": {
+    "description": "One manufacturer can produce thousands of device variants with different productIds",
+    "rules": [
+      "Same manufacturerName in multiple drivers is NORMAL when productId differs",
+      "Never use wildcards in manufacturerName arrays (_TZE200_* FORBIDDEN)",
+      "CaseInsensitiveMatcher must be used for all manufacturer name comparisons",
+      "After fingerprint changes: run check-fingerprint-health.js validation",
+      "Multi-manufacturer devices: same device model sold under different brands requires separate fingerprints"
+    ],
+    "examples": [
+      {"manufacturer": "_TZE200_gubdgai2", "drivers": ["curtain_motor", "cover_roller"], "note": "Same mfr, different productIds"},
+      {"manufacturer": "_TZ3000_abc123", "drivers": ["switch_1gang", "switch_2gang"], "note": "Same mfr, different TS models"}
+    ]
+  },
+  "forumBasedDeviceAdditionRules": {
+    "description": "Rules for adding devices based on Homey Community Forum reports",
+    "workflow": [
+      "1. Monitor forum for device support requests and issue reports",
+      "2. Extract device model ID, manufacturer name, and productId from forum posts",
+      "3. Cross-reference with Z2M/ZHA databases for DP mappings",
+      "4. Verify manufacturerName + productId combination doesn't exist in another driver",
+      "5. Add fingerprint to appropriate driver with CaseInsensitiveMatcher",
+      "6. Run check-fingerprint-health.js validation",
+      "7. Test with actual device if possible",
+      "8. Document in CHANGELOG.md with forum issue reference"
+    ],
+    "validation": [
+      "Fingerprint health check must PASS",
+      "No collisions with existing fingerprints",
+      "manufacturerName array must not be empty",
+      "productId must be specific (no wildcards)"
+    ]
   }
 }

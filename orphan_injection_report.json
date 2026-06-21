@@ -1,0 +1,304 @@
+{
+  "timestamp": "2026-06-20T05:44:30.673Z",
+  "applied": true,
+  "driversModified": 29,
+  "totalInjected": 87,
+  "totalSkippedDup": 56,
+  "unmapped": [
+    "_TYZB01_tvjnodlq",
+    "_TZ3000_uri7ez5r",
+    "_TZE200_abcdefgh"
+  ],
+  "details": [
+    {
+      "driverId": "plug_smart",
+      "injected": 2,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_00mk2xzy",
+        "_TZ3000_yujkchbz"
+      ]
+    },
+    {
+      "driverId": "climate_sensor",
+      "injected": 3,
+      "skipped": 5,
+      "added": [
+        "_TZ3000_vjhcenzo",
+        "_TZE200_rjxqso4a",
+        "_TZE284_rjxqso4a"
+      ]
+    },
+    {
+      "driverId": "contact_sensor",
+      "injected": 22,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_26fmupbb",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_402jjyro",
+        "_TZ3000_4ugnzsli",
+        "_TZ3000_7d8yme6f",
+        "_TZ3000_7tbsruql",
+        "_TZ3000_9eeavbk5",
+        "_TZ3000_a33rw7ou",
+        "_TZ3000_au1rjicn",
+        "_TZ3000_bmg14ax2",
+        "_TZ3000_bzxlofth",
+        "_TZ3000_decxrtwa",
+        "_TZ3000_ebar6ljy",
+        "_TZ3000_hgu1dlak",
+        "_TZ3000_hkcpblrs",
+        "_TZ3000_k4ej3ww2",
+        "_TZ3000_kyb656no",
+        "_TZ3000_msl2rxjn",
+        "_TZ3000_osu834un",
+        "_TZ3000_rgchmad8",
+        "_TZ3000_yxqnffam",
+        "_TZ3000_zgrffiwg"
+      ]
+    },
+    {
+      "driverId": "bulb_tunable_white",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_49qchf10"
+      ]
+    },
+    {
+      "driverId": "button_wireless_4",
+      "injected": 7,
+      "skipped": 1,
+      "added": [
+        "_TZ3000_4fjiwweb",
+        "_TZ3000_abrsvsou",
+        "_TZ3000_dku2cfsc",
+        "_TZ3000_dziaict4",
+        "_TZ3000_ixla93vd",
+        "_TZ3000_kjfzuycl",
+        "_TZ3000_uri7ongn"
+      ]
+    },
+    {
+      "driverId": "switch_2gang",
+      "injected": 1,
+      "skipped": 7,
+      "added": [
+        "_TZ3000_aaifmpuq"
+      ]
+    },
+    {
+      "driverId": "button_wireless_1",
+      "injected": 4,
+      "skipped": 3,
+      "added": [
+        "_TZ3000_5bpeda8u",
+        "_TZ3000_csflgqj2",
+        "_TZ3000_tk3s5tyg",
+        "_TZ3000_yj6k7vfo"
+      ]
+    },
+    {
+      "driverId": "bulb_dimmable_dimmer",
+      "injected": 2,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_7ysdnebc",
+        "_TZ3000_mgusv51k"
+      ]
+    },
+    {
+      "driverId": "plug_energy_monitor",
+      "injected": 3,
+      "skipped": 3,
+      "added": [
+        "_TZ3000_8bxrzyxz",
+        "_TZ3000_rk2yzt0u",
+        "_TZ3000_wxtp7c5y"
+      ]
+    },
+    {
+      "driverId": "bulb_dimmable",
+      "injected": 2,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_92chsky7",
+        "_TZ3000_ktuoyvt5"
+      ]
+    },
+    {
+      "driverId": "button_wireless_switch",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_adkvzooy"
+      ]
+    },
+    {
+      "driverId": "button_wireless",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_arfwfgoa"
+      ]
+    },
+    {
+      "driverId": "button_wireless_3",
+      "injected": 1,
+      "skipped": 1,
+      "added": [
+        "_TZ3000_bi6lpsew"
+      ]
+    },
+    {
+      "driverId": "air_purifier",
+      "injected": 15,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_bguser20",
+        "_TZ3000_qaaysllp",
+        "_TZ3000_xr3htd96",
+        "_TZE200_9cxuhakf",
+        "_TZE200_aoclfnxz",
+        "_TZE200_d0yu2xgi",
+        "_TZE200_ga1maeof",
+        "_TZE200_locansqn",
+        "_TZE200_ryfmq5rl",
+        "_TZE200_whpb9yts",
+        "_TZE200_wukb7rhc",
+        "_TZE200_yvx5lh6k",
+        "_TZE204_upagmta9",
+        "_TZE284_aao3yzhs",
+        "_TZE284_sgabhwa6"
+      ]
+    },
+    {
+      "driverId": "wall_switch_1gang_1way",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_blhvsaqf"
+      ]
+    },
+    {
+      "driverId": "button_wireless_2",
+      "injected": 4,
+      "skipped": 1,
+      "added": [
+        "_TZ3000_cehuw1lw",
+        "_TZ3000_jl7qyupf",
+        "_TZ3000_okaz9tjs",
+        "_TZ3000_zmy4lslw"
+      ]
+    },
+    {
+      "driverId": "smart_knob_rotary",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_gwkzibhs"
+      ]
+    },
+    {
+      "driverId": "bulb_rgb",
+      "injected": 2,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_i8l0nqdu",
+        "_TZ3000_kdpxju99"
+      ]
+    },
+    {
+      "driverId": "motion_sensor",
+      "injected": 1,
+      "skipped": 3,
+      "added": [
+        "_TZ3000_kmh5qpmb"
+      ]
+    },
+    {
+      "driverId": "curtain_motor",
+      "injected": 2,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_ltiqubue",
+        "_TZ3000_vd43bbfq"
+      ]
+    },
+    {
+      "driverId": "gas_sensor",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_mwd3c2at"
+      ]
+    },
+    {
+      "driverId": "switch_3gang",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_nnwehhst"
+      ]
+    },
+    {
+      "driverId": "button_wireless_smart",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZ3000_pcqjmcud"
+      ]
+    },
+    {
+      "driverId": "thermostat_tuya_dp",
+      "injected": 2,
+      "skipped": 3,
+      "added": [
+        "_TZE200_ar0slwnd",
+        "_TZE200_kfvq6avy"
+      ]
+    },
+    {
+      "driverId": "smart_heater",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZE200_ckud7u2l"
+      ]
+    },
+    {
+      "driverId": "motion_sensor_radar_mmwave",
+      "injected": 2,
+      "skipped": 0,
+      "added": [
+        "_TZE200_mrf6vtua",
+        "_TZE200_sfiy5tfs"
+      ]
+    },
+    {
+      "driverId": "dimmer_wall_1gang",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZE200_mvtclclq"
+      ]
+    },
+    {
+      "driverId": "pet_feeder_zigbee",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZE200_sh1btabb"
+      ]
+    },
+    {
+      "driverId": "air_quality_comprehensive",
+      "injected": 1,
+      "skipped": 0,
+      "added": [
+        "_TZE204_nnrfa68v"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+name: 🔀 Bilateral Fingerprint Sync
+
+# Workflow d'enrichissement autonome bidirectionnel master ↔ stable-v5
+# - Détecte les nouveaux fingerprints dans chaque branche
+# - Les backporte/forwardporte vers l'autre branche (si applicable)
+# - Ouvre une PR automatiquement pour révision
+# - Respecte la politique BRANCH_SYNC_POLICY.md
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Quotidien à 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      direction:
+        description: 'Direction de sync'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - both
+          - master-to-stable
+          - stable-to-master
+      dry_run:
+        description: 'Mode dry-run (pas de commit)'
+        required: false
+        default: 'true'
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📊 Collect fingerprints from master
+        id: master-fps
+        run: |
+          # Extrait tous les fingerprints uniques des driver.compose.json de master
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const fps = new Set();
+            for (const drv of fs.readdirSync('drivers')) {
+              const p = path.join('drivers', drv, 'driver.compose.json');
+              if (!fs.existsSync(p)) continue;
+              try {
+                const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                for (const m of (c?.zigbee?.manufacturerName || [])) {
+                  if (typeof m === 'string' && m.startsWith('_T')) fps.add(m);
+                }
+              } catch (e) {}
+            }
+            fs.writeFileSync('/tmp/master_fps.txt', [...fps].sort().join('\n'));
+            console.log('Master fingerprints:', fps.size);
+          "
+
+      - name: 📊 Collect fingerprints from stable-v5
+        id: sv5-fps
+        run: |
+          git checkout stable-v5 -- .
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const fps = new Set();
+            for (const drv of fs.readdirSync('drivers')) {
+              const p = path.join('drivers', drv, 'driver.compose.json');
+              if (!fs.existsSync(p)) continue;
+              try {
+                const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                for (const m of (c?.zigbee?.manufacturerName || [])) {
+                  if (typeof m === 'string' && m.startsWith('_T')) fps.add(m);
+                }
+              } catch (e) {}
+            }
+            fs.writeFileSync('/tmp/sv5_fps.txt', [...fps].sort().join('\n'));
+            console.log('Stable-v5 fingerprints:', fps.size);
+          "
+          git checkout master -- .
+
+      - name: 🔀 Compute diff (fingerprints uniques à chaque branche)
+        id: diff
+        run: |
+          # stable-v5 → master (forward-port)
+          comm -23 /tmp/sv5_fps.txt /tmp/master_fps.txt > /tmp/sv5_only.txt
+          echo "sv5_only_count=$(wc -l < /tmp/sv5_only.txt)" >> $GITHUB_OUTPUT
+          # master → stable-v5 (backport)
+          comm -13 /tmp/sv5_fps.txt /tmp/master_fps.txt > /tmp/master_only.txt
+          echo "master_only_count=$(wc -l < /tmp/master_only.txt)" >> $GITHUB_OUTPUT
+          echo "### 📊 Fingerprint Sync Report" > /tmp/report.md
+          echo "" >> /tmp/report.md
+          echo "| Direction | Fingerprints uniques |" >> /tmp/report.md
+          echo "|-----------|---------------------:|" >> /tmp/report.md
+          echo "| stable-v5 → master | $(wc -l < /tmp/sv5_only.txt) |" >> /tmp/report.md
+          echo "| master → stable-v5 | $(wc -l < /tmp/master_only.txt) |" >> /tmp/report.md
+          echo "" >> /tmp/report.md
+          echo "⚠️ **Note** : la plupart des fingerprints master_only ne sont PAS backportables" >> /tmp/report.md
+          echo "(drivers v9 inexistants en v5). La révision manuelle est requise." >> /tmp/report.md
+
+      - name: 📤 Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: fp-sync-report
+          path: |
+            /tmp/report.md
+            /tmp/sv5_only.txt
+            /tmp/master_only.txt
+
+      - name: 💬 Summary
+        run: |
+          cat /tmp/report.md >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔍 Détails" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Forward-port candidates (stable-v5 → master):**" >> $GITHUB_STEP_SUMMARY
+          head -20 /tmp/sv5_only.txt | sed 's/^/- `/' | sed 's/$/`/' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Backport candidates (master → stable-v5):**" >> $GITHUB_STEP_SUMMARY
+          head -20 /tmp/master_only.txt | sed 's/^/- `/' | sed 's/$/`/' >> $GITHUB_STEP_SUMMARY

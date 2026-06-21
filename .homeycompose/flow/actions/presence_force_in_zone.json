@@ -14,13 +14,13 @@
     },
     {
       "name": "force_state",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Force state"
       },
       "values": [
-        { "id": "present", "label": { "en": "Present" } },
-        { "id": "clear", "label": { "en": "Clear" } }
+        { "id": "present", "title": { "en": "Present" } },
+        { "id": "clear", "title": { "en": "Clear" } }
       ]
     }
   ],

@@ -1,7 +1,7 @@
 # Architecture Overview
 
 > Tuya Unified Zigbee for Homey Pro
-> Version: 9.0.40 | Last Updated: 2026-06-18
+> Version: 9.0.53 | Last Updated: 2026-06-18
 
 ## Project Overview
 
@@ -311,11 +311,17 @@ The app supports 23 distinct time synchronization formats:
 
 ## Security Model
 
-### Local-First Architecture
+### Local-First Architecture & Zero-Touch Updates
 - **100% local execution** on Homey Pro
 - **Zero cloud calls** during normal operation
+- **Autonomous Enricher (v9.0.53)**: The `mfs_db.json` database is loaded as the primary source of truth locally. The remote Tuya Github master is only used as a weekly fallback, eliminating cloud dependencies while keeping fingerprints updated.
+- **Intelligent Fingerprinting**: Case-insensitive heuristics natively cross-reference manufacturer names (`includesCI`) allowing autonomous mapping of variations.
 - **Heap limit**: < 64MB
 - **Bundle limit**: < 7MB
+
+### Bi-Directional Button Architecture
+- **Ghost Press Prevention**: The `PhysicalButtonMixin` and `VirtualButtonMixin` prototype chain securely propagates `markAppCommand()` to accurately decouple physical button presses from app/virtual flow commands.
+- **Legacy Compatibility**: A fallback Boolean tracker (`this._appCommandPending`) is preserved ensuring 30+ legacy single-gang switch drivers maintain backwards compatibility without breaking dual/multi-gang implementations.
 
 ### Token Security
 - GitHub tokens never committed to .git/config

@@ -20,16 +20,16 @@
     },
     {
       "name": "period",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Time period"
       },
       "values": [
-        { "id": "today", "label": { "en": "Today" } },
-        { "id": "yesterday", "label": { "en": "Yesterday" } },
-        { "id": "this_week", "label": { "en": "This week" } },
-        { "id": "last_24h", "label": { "en": "Last 24 hours" } },
-        { "id": "last_7d", "label": { "en": "Last 7 days" } }
+        { "id": "today", "title": { "en": "Today" } },
+        { "id": "yesterday", "title": { "en": "Yesterday" } },
+        { "id": "this_week", "title": { "en": "This week" } },
+        { "id": "last_24h", "title": { "en": "Last 24 hours" } },
+        { "id": "last_7d", "title": { "en": "Last 7 days" } }
       ]
     }
   ],

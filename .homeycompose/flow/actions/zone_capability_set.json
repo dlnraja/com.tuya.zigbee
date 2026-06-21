@@ -1,0 +1,59 @@
+{
+  "id": "zone_capability_set",
+  "title": {
+    "en": "Set capability for all devices in zone",
+    "nl": "Capaciteit instellen voor alle apparaten in zone",
+    "de": "Fähigkeit für alle Geräte in Zone setzen",
+    "fr": "Définir la capacité pour tous les appareils de la zone"
+  },
+  "hint": {
+    "en": "Set a capability value across all devices in a zone. Inspired by Device Capabilities app.",
+    "nl": "Stel een capaciteitswaarde in voor alle apparaten in een zone. Geinspireerd door Device Capabilities app."
+  },
+  "args": [
+    {
+      "type": "autocomplete",
+      "name": "zone",
+      "title": {
+        "en": "Zone",
+        "nl": "Zone"
+      }
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability",
+        "nl": "Capaciteit"
+      },
+      "placeholder": {
+        "en": "e.g. onoff, dim, windowcoverings_set",
+        "nl": "bijv. onoff, dim, windowcoverings_set"
+      }
+    },
+    {
+      "name": "value",
+      "type": "text",
+      "title": {
+        "en": "Value",
+        "nl": "Waarde"
+      },
+      "placeholder": {
+        "en": "e.g. true, false, 0.5",
+        "nl": "bijv. true, false, 0.5"
+      }
+    },
+    {
+      "name": "include_subzones",
+      "type": "checkbox",
+      "title": {
+        "en": "Include subzones",
+        "nl": "Inclusief subzones"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Set [[capability]] to [[value]] for all devices in [[zone]] (subzones: [[include_subzones]])",
+    "nl": "Stel [[capability]] in op [[value]] voor alle apparaten in [[zone]] (subzones: [[include_subzones]])"
+  }
+}

@@ -1,7 +1,8 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 9.0.38 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
-> **412 drivers** (361 Zigbee + 51 WiFi) | **4,304 fingerprints** | **4,138 flow cards** | **156 capabilities** | **SDK v3**
+> **Version**: 9.0.52 | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
+> **429 drivers** (378 Zigbee + 51 WiFi) | **4,189+ fingerprints** | **4,313 flow cards** | **186 capabilities** | **SDK v3**
+> **Session 2026-06-21** : Investigation forensique complète — 20 root causes résolues (boutons+batterie+devices)
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:

@@ -20,7 +20,7 @@
     },
     {
       "name": "health_status",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Health Status",
         "fr": "État de santé",
@@ -28,11 +28,11 @@
         "de": "Gesundheitsstatus"
       },
       "values": [
-        { "id": "excellent", "label": { "en": "Excellent", "fr": "Excellent", "nl": "Uitstekend", "de": "Ausgezeichnet" } },
-        { "id": "good", "label": { "en": "Good", "fr": "Bon", "nl": "Goed", "de": "Gut" } },
-        { "id": "fair", "label": { "en": "Fair", "fr": "Passable", "nl": "Redelijk", "de": "Befriedigend" } },
-        { "id": "poor", "label": { "en": "Poor", "fr": "Mauvais", "nl": "Slecht", "de": "Schlecht" } },
-        { "id": "replace", "label": { "en": "Replace", "fr": "Remplacer", "nl": "Vervangen", "de": "Ersetzen" } }
+        { "id": "excellent", "title": { "en": "Excellent", "fr": "Excellent", "nl": "Uitstekend", "de": "Ausgezeichnet" } },
+        { "id": "good", "title": { "en": "Good", "fr": "Bon", "nl": "Goed", "de": "Gut" } },
+        { "id": "fair", "title": { "en": "Fair", "fr": "Passable", "nl": "Redelijk", "de": "Befriedigend" } },
+        { "id": "poor", "title": { "en": "Poor", "fr": "Mauvais", "nl": "Slecht", "de": "Schlecht" } },
+        { "id": "replace", "title": { "en": "Replace", "fr": "Remplacer", "nl": "Vervangen", "de": "Ersetzen" } }
       ]
     }
   ],

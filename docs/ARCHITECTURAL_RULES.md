@@ -45,6 +45,29 @@
 - **Continuous Lifecycle Sweep:** On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep.
 - **Components of the Loop:** This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
 
+## R27: Button Capability setable:false (Rule 27) — v9.0.52
+- **OBLIGATOIRE** : Toutes les capabilities `button.X` dans les `driver.compose.json` doivent avoir `setable: false` + `maintenanceAction: true` + `getable: false`.
+- **RAISON** : Si `setable: true`, Homey SDK3 **exige** un `registerCapabilityListener('button.X', ...)`. Si absent → erreur "Missing Capability Listener button.1 button.2".
+- **EXCEPTION** : Les switches qui utilisent `button.toggle` pour le toggle virtuel DOIVENT soit avoir `setable: false` (event-only) soit enregistrer un listener explicite.
+- **VALIDATION** : `node scripts/validation/fix-button-capability-options.js` corrige automatiquement.
+- **DOC** : Voir `docs/BUTTON_CAPABILITY_GUIDE.md` pour les détails.
+
+## R28: Timer Fallback Pattern (Rule 28) — v9.0.49
+- **OBLIGATOIRE** : Tous les `this.homey.setTimeout(...)` et `this.homey.setInterval(...)` doivent utiliser le pattern fallback `(this.homey?.set* || set*)`.
+- **RAISON** : Quand `this.homey` est `undefined` (early init, certains contextes SDK3), la création du timer **échoue silencieusement** → `appCommandPending` reste bloqué `true` → boutons physiques non détectés.
+- **PATTERN** :
+  ```javascript
+  const safeSetTimeout = this.homey?.setTimeout || setTimeout;
+  state.appCommandTimeout = safeSetTimeout(() => { ... }, ms);
+  ```
+- **VALIDATION** : `grep -rE "this\.homey\.set(Timer|Interval)\(" lib/` doit retourner 0 résultat non protégé (hors `?.`).
+
+## R29: NFKD Unicode Normalization Compliance (Rule 29) — v9.0.51
+- **R24 précisé** : La normalisation NFKD (`String.normalize('NFKD')`) doit être appliquée dans `CaseInsensitiveMatcher.normalize()` pour stripper accents, diacritiques, et emojis.
+- **ÉTAPES** : (1) NFKD decomposition → (2) retirer combining marks `\u0300-\u036f` → (3) retirer surrogate pairs `\uD800-\uDFFF` (emojis) → (4) retirer contrôles → (5) lowercase + trim.
+- **VALIDATION** : `_TZE200_KB5NOETO` = `_tze200_kb5noeto` = `_Tze200_Kb5noeto` doivent tous mappar vers la même clé normalisée.
+- **ATTENTION Regex** : Ne JAMAIS utiliser `\u1F000` (5 hex digits invalide en JS `\u`). Utiliser `\uD800-\uDFFF` (surrogate pairs) pour les emojis.
+
 
 # Universal Tuya Architectural Rules (v7.2.0)
 

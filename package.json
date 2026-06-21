@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.40",
+  "version": "9.0.53",
   "description": "Tuya Unified Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -123,6 +123,8 @@
   "dependencies": {
     "color-space": "1.15.0",
     "homey-zigbeedriver": "^2.2.2",
+    "imap-simple": "^5.1.0",
+    "mailparser": "^3.9.11",
     "punycode": "^2.3.1",
     "qrcode": "^1.5.4",
     "tuyapi": "^7.7.1",

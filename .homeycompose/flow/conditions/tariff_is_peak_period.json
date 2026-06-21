@@ -9,16 +9,16 @@
   "args": [
     {
       "name": "period_type",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Period type to check"
       },
       "values": [
-        { "id": "peak", "label": { "en": "Peak" } },
-        { "id": "shoulder", "label": { "en": "Shoulder" } },
-        { "id": "off_peak", "label": { "en": "Off-Peak" } },
-        { "id": "day", "label": { "en": "Day" } },
-        { "id": "night", "label": { "en": "Night" } }
+        { "id": "peak", "title": { "en": "Peak" } },
+        { "id": "shoulder", "title": { "en": "Shoulder" } },
+        { "id": "off_peak", "title": { "en": "Off-Peak" } },
+        { "id": "day", "title": { "en": "Day" } },
+        { "id": "night", "title": { "en": "Night" } }
       ]
     }
   ],

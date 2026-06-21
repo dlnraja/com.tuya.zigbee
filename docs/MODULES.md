@@ -1,7 +1,7 @@
 # Module Documentation
 
 > Tuya Unified Zigbee for Homey Pro
-> Version: 9.0.40 | Last Updated: 2026-06-18
+> Version: 9.0.53 | Last Updated: 2026-06-18
 > Total Modules: 42
 
 ---

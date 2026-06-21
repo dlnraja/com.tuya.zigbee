@@ -1,0 +1,55 @@
+{
+  "id": "capability_value_changed_generic",
+  "title": {
+    "en": "Any capability value changed",
+    "nl": "Elke capaciteitswaarde gewijzigd",
+    "de": "Jeder Fähigkeitswert geändert",
+    "fr": "Toute valeur de capacité changée"
+  },
+  "hint": {
+    "en": "Triggers when any capability on any device changes value. Inspired by Device Capabilities app.",
+    "nl": "Activeert wanneer een capaciteitswaarde op een apparaat wijzigt. Geinspireerd door Device Capabilities app."
+  },
+  "tokens": [
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "nl": "Capaciteit"
+      },
+      "example": "onoff"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "title": {
+        "en": "New value",
+        "nl": "Nieuwe waarde"
+      },
+      "example": "true"
+    },
+    {
+      "name": "old_value",
+      "type": "string",
+      "title": {
+        "en": "Previous value",
+        "nl": "Vorige waarde"
+      },
+      "example": "false"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff"
+    }
+  ],
+  "titleFormatted": {
+    "en": "Any capability changed on [[device]]",
+    "nl": "Elke capaciteit gewijzigd op [[device]]",
+    "de": "Jede Fähigkeit geändert auf [[device]]",
+    "fr": "Toute capacité changée sur [[device]]"
+  }
+}

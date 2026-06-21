@@ -33,6 +33,9 @@ jobs:
   ai-audit:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    defaults:
+      run:
+        shell: bash
 
     steps:
       # ──────────────────────────────────────────────

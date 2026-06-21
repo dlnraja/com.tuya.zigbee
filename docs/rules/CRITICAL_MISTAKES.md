@@ -240,3 +240,28 @@
 - **Architecture AI**: docs/ARCHITECTURE_AI.md
 - **Post-Promotion Protocol**: docs/rules/POST_PROMOTION_PROTOCOL.md
 - **Global Investigation Plan**: docs/GLOBAL_INVESTIGATION_PLAN.md
+
+---
+
+## v9.0.52 Nouvelles Règles (Session Investigation Forensique)
+
+### A11: Button Capability `setable:false` OBLIGATOIRE
+- **Règle** : Toutes les capabilities `button.X` dans `driver.compose.json` doivent avoir `setable: false` + `maintenanceAction: true`.
+- **Si `setable: true`** : Homey SDK3 exige `registerCapabilityListener('button.X')`. Si absent → "Missing Capability Listener button.1".
+- **Fix** : `node scripts/validation/fix-button-capability-options.js --apply`
+- **Validé** : 0 driver avec `setable:true` sur les 2 branches (session 2026-06-21).
+
+### R33: Timer Fallback Pattern OBLIGATOIRE
+- **Règle** : `this.homey.setTimeout(...)` → `(this.homey?.setTimeout || setTimeout)(...)`.
+- **Si pas de fallback** : `this.homey` undefined au early init → timer jamais créé → `appCommandPending` bloqué → boutons cassés.
+- **Validé** : 0 timer non protégé dans PhysicalButtonMixin (session 2026-06-21).
+
+### R34: NFKD Unicode Normalization
+- **Règle** : `CaseInsensitiveMatcher.normalize()` doit utiliser NFKD + accent stripping + emoji removal.
+- **Bug regex** : `\u1F000` est INVALIDE en JS (5 hex digits). Utiliser `\uD800-\uDFFF` (surrogate pairs).
+- **Validé** : `_TZE200_KB5NOETO` = `_tze200_kb5noeto` via NFKD (session 2026-06-21).
+
+### R35: HOBEIAN ProductId Isolation
+- **Règle** : Ne JAMAIS forcer `HOBEIAN` globalement dans `BOT_FORCED_DISCOVERY.json`. Router par `productId` (ZG-301Z → switch_1gang, ZG-204ZM → presence_sensor_radar).
+- **Bug** : Le forçage global causait la prolifération HOBEIAN dans 64 drivers.
+- **Validé** : HOBEIAN retiré du BOT_FORCED_DISCOVERY (session 2026-06-21).

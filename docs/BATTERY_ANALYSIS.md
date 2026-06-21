@@ -212,6 +212,7 @@ async checkMainsPowered() {
 - ✅ Falls back to `registerAttrReportListener()` when cluster not interviewed
 - ⚠️ `_setupZclBattery()` uses `cluster.readAttributes()` which may fail for sleepy devices (handled gracefully)
 - ⚠️ `_setupIasZoneBattery()` uses `onZoneStatusChangeNotification` which is non-standard alias
+- 🚨 **SDK v3 Validation**: Any driver that can potentially be battery-powered MUST have `"energy": { "batteries": ["CR2032"] }` (or similar) defined in `driver.compose.json` if `measure_battery` or `alarm_battery` is listed in capabilities, even if it is dynamically added/removed at runtime.
 
 ---
 
