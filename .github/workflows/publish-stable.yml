@@ -79,7 +79,8 @@ jobs:
 
   promote:
     name: "Promote to Test"
-    needs: publish
+    needs: [pre-validation, publish]
+    if: always() && needs.pre-validation.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
