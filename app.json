@@ -100,6 +100,7 @@
   "brandColor": "#00E6A0",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "sdkVersion": 3,
   "flow": {
     "triggers": [
       {
@@ -40938,6 +40939,196 @@
         ]
       },
       {
+        "id": "switch_1gang_set_backlight",
+        "title": {
+          "en": "Set backlight mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": "Off"
+              },
+              {
+                "id": "normal",
+                "label": "Normal"
+              },
+              {
+                "id": "inverted",
+                "label": "Inverted"
+              }
+            ],
+            "title": {
+              "en": "Backlight mode"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_backlight_color",
+        "title": {
+          "en": "Set backlight color"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "color",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "white",
+                "label": "White"
+              },
+              {
+                "id": "red",
+                "label": "Red"
+              },
+              {
+                "id": "blue",
+                "label": "Blue"
+              },
+              {
+                "id": "green",
+                "label": "Green"
+              }
+            ],
+            "title": {
+              "en": "Backlight color"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_backlight_brightness",
+        "title": {
+          "en": "Set backlight brightness"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "title": {
+              "en": "Brightness"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_countdown",
+        "title": {
+          "en": "Set countdown timer"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "seconds",
+            "type": "number",
+            "title": {
+              "en": "Countdown (seconds)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_child_lock",
+        "title": {
+          "en": "Set child lock"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "enabled",
+            "type": "checkbox",
+            "title": {
+              "en": "Enabled"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_scene_mode",
+        "title": {
+          "en": "Set scene mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "mode",
+            "type": "number",
+            "title": {
+              "en": "Scene mode"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_power_on_behavior",
+        "title": {
+          "en": "Set power-on behavior"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "behavior",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": "Off"
+              },
+              {
+                "id": "on",
+                "label": "On"
+              },
+              {
+                "id": "previous",
+                "label": "Previous state"
+              }
+            ],
+            "title": {
+              "en": "Behavior"
+            }
+          }
+        ]
+      },
+      {
         "id": "switch_2gang_turn_on_gang1",
         "title": {
           "en": "Turn on gang 1",
@@ -41700,6 +41891,26 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_temp_sensor"
+          }
+        ]
+      },
+      {
+        "id": "switch_temp_sensor_set_temperature",
+        "title": {
+          "en": "Set target temperature"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_temp_sensor"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)"
+            }
           }
         ]
       },
@@ -46270,6 +46481,26 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_set_valve",
+        "title": {
+          "en": "Set valve state"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": {
+              "en": "Open"
+            }
           }
         ]
       },
@@ -52073,7 +52304,6 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -52557,7 +52787,6 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -53638,7 +53867,6 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -54133,7 +54361,6 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -64346,7 +64573,9 @@
           "_TZE204_RHBLGY0Z",
           "_tze200_byzdayie",
           "_TZE200_byzdayie",
-          "_TZE200_BYZDAYIE"
+          "_TZE200_BYZDAYIE",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0001_din",
@@ -73043,7 +73272,9 @@
           "sonoff",
           "SONOFF",
           "ewelink",
-          "EWELINK"
+          "EWELINK",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "ZBMINI",
@@ -80463,7 +80694,6 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -82483,7 +82713,9 @@
           "_TZ3000_QZJCSMAR",
           "_tz3000_tkusjmue",
           "_TZ3000_tkusjmue",
-          "_TZ3000_TKUSJMUE"
+          "_TZ3000_TKUSJMUE",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_scene1"
@@ -82584,14 +82816,14 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.2": {
           "title": {
@@ -82599,7 +82831,8 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         }
       },
       "zigbee": {
@@ -82609,7 +82842,9 @@
           "_TZ3000_GBM10JNJ",
           "_tz3002_6ahhkwyh",
           "_TZ3002_6ahhkwyh",
-          "_TZ3002_6AHHKWYH"
+          "_TZ3002_6AHHKWYH",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_scene2",
@@ -82714,14 +82949,14 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.2": {
           "title": {
@@ -82729,7 +82964,8 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.3": {
           "title": {
@@ -82737,7 +82973,8 @@
             "fr": "Bouton 3"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         }
       },
       "zigbee": {
@@ -82753,7 +82990,9 @@
           "_TZ3000_FAMKXCI2",
           "_tz3000_w8jwkczz",
           "_TZ3000_w8jwkczz",
-          "_TZ3000_W8JWKCZZ"
+          "_TZ3000_W8JWKCZZ",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_scene3",
@@ -82859,7 +83098,6 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
@@ -82868,7 +83106,8 @@
             "de": "Taste 1"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.2": {
           "title": {
@@ -82878,7 +83117,8 @@
             "de": "Taste 2"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.3": {
           "title": {
@@ -82888,7 +83128,8 @@
             "de": "Taste 3"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.4": {
           "title": {
@@ -82898,7 +83139,8 @@
             "de": "Taste 4"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "measure_battery": {
           "title": {
@@ -82943,7 +83185,9 @@
           "_TZE204_ZQTIAM9D",
           "_tze284_tgeqdjgk",
           "_TZE284_tgeqdjgk",
-          "_TZE284_TGEQDJGK"
+          "_TZE284_TGEQDJGK",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601",
@@ -83051,14 +83295,14 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.2": {
           "title": {
@@ -83066,7 +83310,8 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.3": {
           "title": {
@@ -83074,7 +83319,8 @@
             "fr": "Bouton 3"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.4": {
           "title": {
@@ -83082,7 +83328,8 @@
             "fr": "Bouton 4"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.5": {
           "title": {
@@ -83090,7 +83337,8 @@
             "fr": "Bouton 5"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.6": {
           "title": {
@@ -83098,14 +83346,17 @@
             "fr": "Bouton 6"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         }
       },
       "zigbee": {
         "manufacturerName": [
           "_tz3000_iszegwpd",
           "_TZ3000_iszegwpd",
-          "_TZ3000_ISZEGWPD"
+          "_TZ3000_ISZEGWPD",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_scene6"
@@ -83207,14 +83458,14 @@
         "alarm_battery"
       ],
       "capabilitiesOptions": {
-        "maintenanceAction": true,
         "button.1": {
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.2": {
           "title": {
@@ -83222,7 +83473,8 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         }
       },
       "zigbee": {
@@ -83232,7 +83484,9 @@
           "_TZ3000_DFGBTUB0",
           "_tz3000_w8jwkczz",
           "_TZ3000_w8jwkczz",
-          "_TZ3000_W8JWKCZZ"
+          "_TZ3000_W8JWKCZZ",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0042",
@@ -88538,7 +88792,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "hobeian",
+          "HOBEIAN"
+        ],
         "productId": [
           "TS0041"
         ],
@@ -89038,7 +89295,8 @@
             "de": "Links drehen"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.rotate_right": {
           "title": {
@@ -89048,7 +89306,8 @@
             "de": "Rechts drehen"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "button.press": {
           "title": {
@@ -89058,7 +89317,8 @@
             "de": "Drücken"
           },
           "getable": false,
-          "setable": false
+          "setable": false,
+          "maintenanceAction": true
         },
         "dim": {
           "title": {
@@ -89192,7 +89452,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "hobeian",
+          "HOBEIAN"
+        ],
         "productId": [
           "TS004F"
         ],
@@ -90791,7 +91054,9 @@
         "manufacturerName": [
           "_tz3000_qkixdnon",
           "_TZ3000_qkixdnon",
-          "_TZ3000_QKIXDNON"
+          "_TZ3000_QKIXDNON",
+          "hobeian",
+          "HOBEIAN"
         ],
         "endpoints": {
           "1": {
@@ -92435,8 +92700,8 @@
           "_TZ3000_L9BRJWAU",
           "bseed",
           "BSEED",
-          "HOBEIAN",
-          "hobeian"
+          "hobeian",
+          "HOBEIAN"
         ],
         "endpoints": {
           "1": {
@@ -93429,7 +93694,9 @@
           "_TZ3002_OVSW7U2P",
           "_tz3000_tzvbimpq",
           "_TZ3000_tzvbimpq",
-          "_TZ3000_TZVBIMPQ"
+          "_TZ3000_TZVBIMPQ",
+          "hobeian",
+          "HOBEIAN"
         ],
         "endpoints": {
           "1": {
@@ -94308,7 +94575,9 @@
           "_TZ3210_N0WBKYSI",
           "_tz3000_qkixdnon",
           "_TZ3000_qkixdnon",
-          "_TZ3000_QKIXDNON"
+          "_TZ3000_QKIXDNON",
+          "hobeian",
+          "HOBEIAN"
         ]
       },
       "images": {
@@ -95210,7 +95479,9 @@
           "_TZE204_XIBAABMU",
           "_tze284_xibaabmu",
           "_TZE284_xibaabmu",
-          "_TZE284_XIBAABMU"
+          "_TZE284_XIBAABMU",
+          "hobeian",
+          "HOBEIAN"
         ]
       },
       "images": {
@@ -95871,7 +96142,9 @@
           "_TZE284_4AR89TR1",
           "_tze204_dcnsggvz",
           "_TZE204_dcnsggvz",
-          "_TZE204_DCNSGGVZ"
+          "_TZE204_DCNSGGVZ",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601"
@@ -96026,7 +96299,9 @@
         "manufacturerName": [
           "_tz3000_typdpbpg",
           "_TZ3000_typdpbpg",
-          "_TZ3000_TYPDPBPG"
+          "_TZ3000_TYPDPBPG",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_sp1"
@@ -96301,7 +96576,9 @@
         "manufacturerName": [
           "_tz3000_zloso4jk",
           "_TZ3000_zloso4jk",
-          "_TZ3000_ZLOSO4JK"
+          "_TZ3000_ZLOSO4JK",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0122"
@@ -96617,7 +96894,9 @@
         "manufacturerName": [
           "_tz3218_7fiyo3kv",
           "_TZ3218_7fiyo3kv",
-          "_TZ3218_7FIYO3KV"
+          "_TZ3218_7FIYO3KV",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_tempswitch"
@@ -96706,7 +96985,10 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "hobeian",
+          "HOBEIAN"
+        ]
       },
       "images": {
         "small": "drivers/switch_3gang/assets/images/small.png",
@@ -97342,7 +97624,9 @@
         "manufacturerName": [
           "_tz3000_mraovvmm",
           "_TZ3000_mraovvmm",
-          "_TZ3000_MRAOVVMM"
+          "_TZ3000_MRAOVVMM",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0015",
@@ -98018,7 +98302,9 @@
           "_TZE284_TZ32MTZA",
           "_tz3000_cvis4qmw",
           "_TZ3000_cvis4qmw",
-          "_TZ3000_CVIS4QMW"
+          "_TZ3000_CVIS4QMW",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0016",
@@ -98648,7 +98934,9 @@
           "_TYZB01_7GANG001",
           "_tz3000_7gang001",
           "_TZ3000_7gang001",
-          "_TZ3000_7GANG001"
+          "_TZ3000_7GANG001",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0007"
@@ -99105,7 +99393,9 @@
           "_TZE204_8GANG001",
           "_tze204_ws8g8u0b",
           "_TZE204_ws8g8u0b",
-          "_TZE204_WS8G8U0B"
+          "_TZE204_WS8G8U0B",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_8gang",
@@ -99449,7 +99739,9 @@
           "_TZ3000_DFGBTUB0",
           "_tz3000_ixla93vd",
           "_TZ3000_ixla93vd",
-          "_TZ3000_IXLA93VD"
+          "_TZ3000_IXLA93VD",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0601_wirelesssw"
@@ -102210,7 +102502,9 @@
         "manufacturerName": [
           "_tz3000_wptayaqr",
           "_TZ3000_wptayaqr",
-          "_TZ3000_WPTAYAQR"
+          "_TZ3000_WPTAYAQR",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS130F"
@@ -103656,7 +103950,9 @@
           "_TZ3000_OVYAISIP",
           "_tz3000_pk8tgtdb",
           "_TZ3000_pk8tgtdb",
-          "_TZ3000_PK8TGTDB"
+          "_TZ3000_PK8TGTDB",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0001",
@@ -103836,7 +104132,9 @@
           "_TZ3000_P8ALO7QA",
           "_tz3000_s8r1qoyq",
           "_TZ3000_s8r1qoyq",
-          "_TZ3000_S8R1QOYQ"
+          "_TZ3000_S8R1QOYQ",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0002",
@@ -104198,7 +104496,9 @@
           "_TZ3000_VJHCENZO",
           "_tz3000_yervjnlj",
           "_TZ3000_yervjnlj",
-          "_TZ3000_YERVJNLJ"
+          "_TZ3000_YERVJNLJ",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0003",
@@ -104520,7 +104820,9 @@
           "_TZ3002_PZAO9LS1",
           "_tz3002_vaq2bfcu",
           "_TZ3002_vaq2bfcu",
-          "_TZ3002_VAQ2BFCU"
+          "_TZ3002_VAQ2BFCU",
+          "hobeian",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0726"
@@ -113444,6 +113746,5 @@
       },
       "id": "{{txt.id}}"
     }
-  },
-  "sdkVersion": 3
+  }
 }

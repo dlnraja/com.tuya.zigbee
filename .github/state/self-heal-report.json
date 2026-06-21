@@ -1,8 +1,133 @@
 {
-  "timestamp": "2026-06-02T03:44:05.271Z",
+  "timestamp": "2026-06-21T18:04:10.481Z",
   "totalFiles": 0,
-  "totalFixes": 198,
+  "totalFixes": 246,
   "rules": {
+    "fingerprint-case": {
+      "count": 30,
+      "files": [
+        {
+          "file": "drivers/din_rail_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/module_mini_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_3/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_4/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_6/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_button_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_knob_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_2gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_3gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_4gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_dimmer_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_plug_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_plug_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_temp_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_usb_dongle/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_5gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_6gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_7gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_8gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wireless/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_curtain_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_1gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_2gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_3gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_4gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        }
+      ]
+    },
     "flow-card-try-catch": {
       "count": 31,
       "files": [
@@ -100,7 +225,7 @@
         },
         {
           "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 1783: getDeviceTriggerCard without try-catch"
+          "detail": "Line 1846: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
@@ -128,7 +253,7 @@
         },
         {
           "file": "lib/mixins/PhysicalButtonMixin.js",
-          "detail": "Line 869: getDeviceTriggerCard without try-catch"
+          "detail": "Line 871: getDeviceTriggerCard without try-catch"
         }
       ]
     },
@@ -258,7 +383,7 @@
         },
         {
           "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 478: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 541: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/devices/UnifiedPlugBase.js",
@@ -306,7 +431,7 @@
         },
         {
           "file": "lib/mixins/PhysicalButtonMixin.js",
-          "detail": "Line 476: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 478: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/protocol/IntelligentProtocolRouter.js",
@@ -347,7 +472,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 115,
+      "count": 133,
       "files": [
         {
           "file": "drivers",
@@ -755,6 +880,10 @@
         },
         {
           "file": "drivers",
+          "detail": "hobeian|ts0601 found in: din_rail_switch, presence_sensor_radar, scene_switch_4, sensor_presence_radar, switch, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang"
+        },
+        {
+          "file": "drivers",
           "detail": "_tze204_81yrt3lo|ts0601 found in: energy_meter_3phase, power_clamp_meter"
         },
         {
@@ -771,11 +900,39 @@
         },
         {
           "file": "drivers",
-          "detail": "hobeian|ts0203 found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "hobeian|zbmini found in: module_mini_switch, switch_1gang"
         },
         {
           "file": "drivers",
-          "detail": "hobeian|ts0601 found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "hobeian|zbminil2 found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zbminir2 found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|01minizb found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zbm5-1c-120 found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zbminir found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zbminil2-r2 found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zbminir2-r2 found in: module_mini_switch, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0203 found in: presence_sensor_radar, sensor_presence_radar"
         },
         {
           "file": "drivers",
@@ -791,11 +948,27 @@
         },
         {
           "file": "drivers",
+          "detail": "hobeian|ts0726 found in: scene_switch_2, scene_switch_3, switch, switch_1gang, switch_2gang, switch_4gang, switch_wall_6gang, wall_switch_4gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0042 found in: scene_switch_2, scene_switch_wall, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_w8jwkczz|ts0043 found in: scene_switch_3, scene_switch_wall"
         },
         {
           "file": "drivers",
+          "detail": "hobeian|ts0043 found in: scene_switch_3, scene_switch_wall, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_qkixdnon|ts0601 found in: switch, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts011f found in: switch, switch_1gang, switch_2gang"
         },
         {
           "file": "drivers",
@@ -808,6 +981,30 @@
         {
           "file": "drivers",
           "detail": "_tz3000_l9brjwau|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0001 found in: switch_1gang, wall_switch_1gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0011 found in: switch_1gang, wall_switch_1gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0003 found in: switch_2gang, switch_3gang, switch_usb_dongle, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0013 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
         }
       ]
     },
