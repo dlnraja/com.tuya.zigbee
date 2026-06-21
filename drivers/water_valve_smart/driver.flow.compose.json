@@ -139,8 +139,18 @@
     },
     {
       "id": "water_valve_smart_set_valve",
-      "title": { "en": "Set valve state" },
-      "args": [{ "name": "value", "type": "boolean", "title": { "en": "Open" } }]
+      "title": {
+        "en": "Set valve state"
+      },
+      "args": [
+        {
+          "name": "value",
+          "type": "checkbox",
+          "title": {
+            "en": "Open"
+          }
+        }
+      ]
     }
   ]
 }
