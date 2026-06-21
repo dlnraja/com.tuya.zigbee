@@ -1,0 +1,47 @@
+{
+  "id": "capability_historical_value",
+  "title": {
+    "en": "Retrieve historical capability value",
+    "nl": "Historische capaciteitswaarde ophalen",
+    "de": "Historischen Fähigkeitswert abrufen",
+    "fr": "Récupérer la valeur historique de la capacité"
+  },
+  "hint": {
+    "en": "Retrieve a capability value from X minutes ago. Inspired by Device Capabilities app.",
+    "nl": "Haal een capaciteitswaarde op van X minuten geleden. Geinspireerd door Device Capabilities app."
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability",
+        "nl": "Capaciteit"
+      },
+      "placeholder": {
+        "en": "e.g. measure_temperature, onoff, dim",
+        "nl": "bijv. measure_temperature, onoff, dim"
+      }
+    },
+    {
+      "name": "minutes_ago",
+      "type": "number",
+      "title": {
+        "en": "Minutes ago (0=current)",
+        "nl": "Minuten geleden (0=huidig)"
+      },
+      "min": 0,
+      "max": 1440,
+      "step": 1
+    }
+  ],
+  "titleFormatted": {
+    "en": "Retrieve [[capability]] from [[device]] [[minutes_ago]] minutes ago",
+    "nl": "Haal [[capability]] van [[device]] [[minutes_ago]] minuten geleden op"
+  }
+}

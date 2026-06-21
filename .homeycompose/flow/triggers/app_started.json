@@ -1,0 +1,44 @@
+{
+  "id": "app_started",
+  "title": {
+    "en": "App is started",
+    "nl": "App is gestart",
+    "de": "App wurde gestartet",
+    "fr": "L'application est démarrée"
+  },
+  "hint": {
+    "en": "Triggers when a Homey app is started. Inspired by Device Capabilities app.",
+    "nl": "Activeert wanneer een Homey app wordt gestart. Geinspireerd door Device Capabilities app."
+  },
+  "tokens": [
+    {
+      "name": "app_name",
+      "type": "string",
+      "title": {
+        "en": "App name",
+        "nl": "App naam"
+      },
+      "example": "com.dlnraja.tuya.zigbee"
+    }
+  ],
+  "args": [
+    {
+      "name": "app_id",
+      "type": "text",
+      "title": {
+        "en": "App ID (leave empty for any)",
+        "nl": "App ID (laat leeg voor elke)"
+      },
+      "placeholder": {
+        "en": "e.g. com.dlnraja.tuya.zigbee",
+        "nl": "bijv. com.dlnraja.tuya.zigbee"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "App [[app_id]] is started",
+    "nl": "App [[app_id]] is gestart",
+    "de": "App [[app_id]] wurde gestartet",
+    "fr": "L'application [[app_id]] est démarrée"
+  }
+}

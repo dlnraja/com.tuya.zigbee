@@ -9,26 +9,26 @@
   "args": [
     {
       "name": "format",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Export format"
       },
       "values": [
-        { "id": "json", "label": { "en": "JSON" } },
-        { "id": "summary", "label": { "en": "Summary only" } }
+        { "id": "json", "title": { "en": "JSON" } },
+        { "id": "summary", "title": { "en": "Summary only" } }
       ]
     },
     {
       "name": "period",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Time period"
       },
       "values": [
-        { "id": "today", "label": { "en": "Today" } },
-        { "id": "this_week", "label": { "en": "This week" } },
-        { "id": "this_month", "label": { "en": "This month" } },
-        { "id": "all", "label": { "en": "All data" } }
+        { "id": "today", "title": { "en": "Today" } },
+        { "id": "this_week", "title": { "en": "This week" } },
+        { "id": "this_month", "title": { "en": "This month" } },
+        { "id": "all", "title": { "en": "All data" } }
       ]
     }
   ],

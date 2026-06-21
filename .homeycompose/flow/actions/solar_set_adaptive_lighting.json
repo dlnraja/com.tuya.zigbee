@@ -9,16 +9,16 @@
   "args": [
     {
       "name": "mode",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Mode"
       },
       "values": [
-        { "id": "auto", "label": { "en": "Auto (follow sun)" } },
-        { "id": "day", "label": { "en": "Daylight (6500K)" } },
-        { "id": "warm", "label": { "en": "Warm (2700K)" } },
-        { "id": "golden", "label": { "en": "Golden hour (3200K)" } },
-        { "id": "night", "label": { "en": "Night (2200K)" } }
+        { "id": "auto", "title": { "en": "Auto (follow sun)" } },
+        { "id": "day", "title": { "en": "Daylight (6500K)" } },
+        { "id": "warm", "title": { "en": "Warm (2700K)" } },
+        { "id": "golden", "title": { "en": "Golden hour (3200K)" } },
+        { "id": "night", "title": { "en": "Night (2200K)" } }
       ]
     },
     {

@@ -10,9 +10,33 @@
   "setable": true,
   "uiComponent": "picker",
   "values": [
-    { "id": "manual", "title": { "en": "Manual", "fr": "Manuel", "nl": "Handmatig", "de": "Manuell" } },
-    { "id": "program", "title": { "en": "Program", "fr": "Programme", "nl": "Programma", "de": "Programm" } },
-    { "id": "eco", "title": { "en": "Eco", "fr": "Éco", "nl": "Eco", "de": "Eco" } }
+    {
+      "id": "manual",
+      "title": {
+        "en": "Manual",
+        "fr": "Manuel",
+        "nl": "Handmatig",
+        "de": "Manuell"
+      }
+    },
+    {
+      "id": "program",
+      "title": {
+        "en": "Program",
+        "fr": "Programme",
+        "nl": "Programma",
+        "de": "Programm"
+      }
+    },
+    {
+      "id": "eco",
+      "title": {
+        "en": "Eco",
+        "fr": "Éco",
+        "nl": "Eco",
+        "de": "Eco"
+      }
+    }
   ],
   "insights": true
 }

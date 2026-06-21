@@ -24,17 +24,17 @@
     },
     {
       "name": "condition_1_op",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Condition 1 - Operator"
       },
       "values": [
-        { "id": "==", "label": { "en": "equals" } },
-        { "id": "!=", "label": { "en": "not equals" } },
-        { "id": ">", "label": { "en": "greater than" } },
-        { "id": "<", "label": { "en": "less than" } },
-        { "id": ">=", "label": { "en": "greater or equal" } },
-        { "id": "<=", "label": { "en": "less or equal" } }
+        { "id": "==", "title": { "en": "equals" } },
+        { "id": "!=", "title": { "en": "not equals" } },
+        { "id": ">", "title": { "en": "greater than" } },
+        { "id": "<", "title": { "en": "less than" } },
+        { "id": ">=", "title": { "en": "greater or equal" } },
+        { "id": "<=", "title": { "en": "less or equal" } }
       ]
     },
     {
@@ -56,17 +56,17 @@
     },
     {
       "name": "condition_2_op",
-      "type": "enum",
+      "type": "dropdown",
       "title": {
         "en": "Condition 2 - Operator"
       },
       "values": [
-        { "id": "==", "label": { "en": "equals" } },
-        { "id": "!=", "label": { "en": "not equals" } },
-        { "id": ">", "label": { "en": "greater than" } },
-        { "id": "<", "label": { "en": "less than" } },
-        { "id": ">=", "label": { "en": "greater or equal" } },
-        { "id": "<=", "label": { "en": "less or equal" } }
+        { "id": "==", "title": { "en": "equals" } },
+        { "id": "!=", "title": { "en": "not equals" } },
+        { "id": ">", "title": { "en": "greater than" } },
+        { "id": "<", "title": { "en": "less than" } },
+        { "id": ">=", "title": { "en": "greater or equal" } },
+        { "id": "<=", "title": { "en": "less or equal" } }
       ]
     },
     {

@@ -28,37 +28,37 @@
       "values": [
         {
           "id": "raw",
-          "label": {
+          "title": {
             "en": "Raw"
           }
         },
         {
           "id": "bool",
-          "label": {
+          "title": {
             "en": "Bool"
           }
         },
         {
           "id": "value",
-          "label": {
+          "title": {
             "en": "Value"
           }
         },
         {
           "id": "string",
-          "label": {
+          "title": {
             "en": "String"
           }
         },
         {
           "id": "enum",
-          "label": {
+          "title": {
             "en": "Enum"
           }
         },
         {
           "id": "bitmap",
-          "label": {
+          "title": {
             "en": "Bitmap"
           }
         }

@@ -34,6 +34,18 @@
 - **Community members** - All forum contributors who reported issues #2091, #5472, #388, #383, #420, #417 and requested device support
 - **Reddit communities** - r/homey, r/zigbee, r/homeautomation for cross-platform device knowledge
 
+## Forum-Based Device Reporters
+- **Peter** - HOBEIAN ZG-222Z water leak sensor (Issue #2090)
+- **Community** - MMWave radar motion sensor (Issue #420)
+- **Community** - Bed sensor verification (Issue #383)
+- **Community** - Rain sensor _TZ3210_tgvtvdoc (Issue #388)
+- **Community** - Multiple fingerprint additions (Issue #417)
+
+## Multi-Manufacturer Device Support
+- **Tuya ecosystem** - One manufacturer produces thousands of device variants
+- **Z2M/ZHA communities** - Cross-reference database for DP mappings
+- **Homey Community Forum** - Real-world device reports and testing
+
 ## Repositories Studied
 - **JohanBendz/com.tuya.zigbee** - TuyaSpecificClusterDevice, DP constants, sub-devices
 - **Koenkk/zigbee-herdsman-converters** - Z2M Tuya converters, modernExtend patterns

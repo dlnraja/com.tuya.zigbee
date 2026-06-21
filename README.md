@@ -6,7 +6,7 @@
 [![Drivers](https://img.shields.io/badge/drivers-429-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-4,795-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices â€” no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **429 drivers** and **4,683+ device fingerprints**.
@@ -30,21 +30,44 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
+## ðŸš€ Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### âœ¨ Recent Changes (Jun 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v9.0.40** | TITAN V5: Documentation, Credits & CI/CD Enrichment |
+| **v9.0.37** | Virtual presence detection, battery health intelligence, 49 new library modules |
+<!-- CHANGELOG_END -->
+
+
+
+
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
 | **App Version** | v9.0.40 |
 | **Device Fingerprints** | 4,683+ |
+| **Device Fingerprints** | 4,304 |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 429 (379 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,795 |
 | **Unique Capabilities** | 194 |
 | **SVG Icons** | 727 |
+| **Drivers** | 420 (370 Zigbee + 50 WiFi) |
+| **Flow Cards** | 4,313 |
+| **Unique Capabilities** | 186 |
+| **SVG Icons** | 712 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2026-06-18 |
+| **Time Sync Formats** | 23 |
+| **MCU Protocol Versions** | 5 (v3.1-v3.5) |
+| **Smart Calibration DPs** | 8 (temp, humidity, CO2, formaldehyde, power, voltage, current, battery) |
+| **Last Updated** | 2026-06-19 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +125,10 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.40** | TITAN V5: Documentation, Credits & CI/CD Enrichment |
+| **v9.0.37** | Virtual presence detection, battery health intelligence, 49 new library modules |
+| **v8.5.54** | Fix interactive prompt handling in CI publish step |
+| **v8.5.46** | Definitive cleanup: 88 empty manufacturerName arrays fixed |
 
 <!-- CHANGELOG_END -->
 
@@ -328,7 +355,7 @@ A massive thank you to the maintainers and contributors of:
 
 ## License
 
-**GPL-3.0** - See [LICENSE](./LICENSE) file
+**MIT License** - See [LICENSE](./LICENSE) file
 
 | Project | License |
 |---------|---------|
@@ -342,3 +369,5 @@ A massive thank you to the maintainers and contributors of:
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
 *Last updated: 2026-06-18*
+*Last updated: 2026-06-19 | Version 9.0.40*
+*Updated: Smart Calibration, MCU Time Sync, WiFi Local Control, Troubleshooting Guide*

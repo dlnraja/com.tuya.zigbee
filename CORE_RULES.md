@@ -1,7 +1,7 @@
 # CORE RULES — Tuya Unified Zigbee for Homey Pro
 > Single source of truth for all AI agents, developers, and CI/CD pipelines
-> Version: 4.0.0 | Last Updated: 2026-06-18 (Documentation Update v7.0)
-> Rules: R1-R58 (58 enrichment rules) + CP1-CP10 (10 crash prevention rules) + IC1-IC4 (4 image conformity rules)
+> Version: 5.0.0 | Last Updated: 2026-06-18 (Documentation Finalizer v8.0)
+> Rules: R1-R61 (61 enrichment rules) + CP1-CP10 (10 crash prevention rules) + IC1-IC4 (4 image conformity rules) + FM1-FM3 (3 forum/multi-manufacturer rules)
 
 ## 🎯 Vision
 **LOCAL-FIRST** — 100% local execution on Homey Pro. Zero cloud calls during normal operation.
@@ -10,14 +10,14 @@
 - 100% Homey SDK3 compliant
 - Maximum fault tolerance
 
-## 📊 Project Stats (v9.0.40)
+## 📊 Project Stats (v9.0.53)
 - **430 drivers** (379 Zigbee + 51 WiFi)
 - **4,304 fingerprints** (4,035 unique manufacturerNames)
 - **4,138 flow cards** (across 339 drivers)
 - **156 unique capabilities**
 - **23 time sync formats** (5 MCU protocol versions)
 - **11-layer pipeline** (L0-L11)
-- **586 lib files** | **613 scripts** | **66 workflows** | **323 docs**
+- **533 lib files** | **565 scripts** | **40 workflows** | **334 docs**
 - **667 URLs** tracked in Knowledge Base
 
 ## 🔴 CRITICAL RULES (Never Violate)
@@ -248,7 +248,7 @@ _onData(data) {
 }
 ```
 
-### R27: Offline Command Queuing (v9.0.40)
+### R27: Offline Command Queuing (v9.0.53)
 ```js
 // WiFi devices automatically queue commands when offline
 // TuyaLocalClient handles offline queuing transparently
@@ -259,7 +259,7 @@ this._client.on('connection-state', (state) => {
 });
 ```
 
-### R28: DPCache for Offline Fallback (v9.0.40)
+### R28: DPCache for Offline Fallback (v9.0.53)
 ```js
 const { getDeviceCache } = require('../../lib/managers/DPCache');
 const cache = getDeviceCache(deviceId);
@@ -267,7 +267,7 @@ cache.updateFromDps(data.dps);  // Cache incoming DP values
 const cached = cache.get(dpId); // Returns { value, age } or null
 ```
 
-### R29: ErrorClassifier Retry Logic (v9.0.40)
+### R29: ErrorClassifier Retry Logic (v9.0.53)
 ```js
 const { withRetry, isRetryable } = require('../../lib/utils/ErrorClassifier');
 const result = await withRetry(() => device.setDP(1, true), {
@@ -276,7 +276,7 @@ const result = await withRetry(() => device.setDP(1, true), {
 });
 ```
 
-### R30: Batch Capability Updates (v9.0.40)
+### R30: Batch Capability Updates (v9.0.53)
 ```js
 const BatchCapabilityUpdater = require('../../lib/managers/BatchCapabilityUpdater');
 const batcher = new BatchCapabilityUpdater(device, { windowMs: 50 });
@@ -285,7 +285,7 @@ batcher.queue('measure_humidity', 65);
 // Both applied together after 50ms window
 ```
 
-### R31: Safe Logger for Utilities (v9.0.40)
+### R31: Safe Logger for Utilities (v9.0.53)
 ```js
 // BANNED in lib/ utilities:
 device.log?.(msg) || console.log(msg);
@@ -296,7 +296,7 @@ const _log = createSafeLogger(device, 'PREFIX');
 _log.log(msg); // Uses device.log if available, silent otherwise
 ```
 
-### R32: this.homey.setTimeout/setInterval (v9.0.40)
+### R32: this.homey.setTimeout/setInterval (v9.0.53)
 ```js
 // BANNED - global setTimeout/setInterval in device code:
 setTimeout(() => { ... }, 1000);
@@ -313,7 +313,7 @@ await new Promise(r => this.homey.setTimeout(r, 100));
 (this.homey?.setTimeout ?? setTimeout)(() => { ... }, 1000);
 ```
 
-### R33: assertZCLNode Guard (v9.0.40)
+### R33: assertZCLNode Guard (v9.0.53)
 ```js
 // REQUIRED in onNodeInit for Zigbee devices:
 const { assertZCLNode } = require('../../lib/util');
@@ -325,7 +325,7 @@ async onNodeInit({ zclNode }) {
 }
 ```
 
-### R34: Deferred Heavy Initialization (v9.0.40)
+### R34: Deferred Heavy Initialization (v9.0.53)
 ```js
 // REQUIRED - Defer non-critical initialization to avoid blocking device startup:
 async onNodeInit({ zclNode }) {
@@ -342,7 +342,7 @@ async onNodeInit({ zclNode }) {
 }
 ```
 
-### R35: registerMultipleCapabilities (v9.0.40)
+### R35: registerMultipleCapabilities (v9.0.53)
 ```js
 // RECOMMENDED for lights and multi-capability devices:
 const multiCaps = [];
@@ -360,7 +360,7 @@ if (multiCaps.length >= 2) {
 }
 ```
 
-### R36: onEndDeviceAnnounce Re-configuration (v9.0.40)
+### R36: onEndDeviceAnnounce Re-configuration (v9.0.53)
 ```js
 // REQUIRED - Re-configure attribute reporting when battery devices wake up:
 async onEndDeviceAnnounce() {
@@ -878,7 +878,7 @@ node scripts/validation/check-circuit-breaker.js  # CircuitBreaker integration
 
 ## 🧠 Advanced Feature Module Rules
 
-### R43: Presence Confidence Scoring (v9.0.40)
+### R43: Presence Confidence Scoring (v9.0.53)
 ```js
 // REQUIRED - Use PresenceConfidenceScorer for multi-factor presence detection:
 const PresenceConfidenceScorer = require('../../lib/presence/PresenceConfidenceScorer');
@@ -895,7 +895,7 @@ if (confidence > 80) {
 }
 ```
 
-### R44: Battery Health Intelligence (v9.0.40)
+### R44: Battery Health Intelligence (v9.0.53)
 ```js
 // REQUIRED - Use BatteryHealthIntelligence for long-term degradation tracking:
 const BatteryHealthIntelligence = require('../../lib/battery/BatteryHealthIntelligence');
@@ -909,7 +909,7 @@ const assessment = health.getAssessment();
 // { capacityFade, selfDischargeRate, remainingUsefulLife, recommendation }
 ```
 
-### R45: Device Group Management (v9.0.40)
+### R45: Device Group Management (v9.0.53)
 ```js
 // RECOMMENDED - Use DeviceGroupManager for coordinated multi-device actions:
 const DeviceGroupManager = require('../../lib/groups/DeviceGroupManager');
@@ -924,7 +924,7 @@ const group = await groupManager.createGroup('Living Room Lights', [
 await group.setAll('onoff', true, { jitterMs: 50 });
 ```
 
-### R46: Advanced Flow Conditions (v9.0.40)
+### R46: Advanced Flow Conditions (v9.0.53)
 ```js
 // RECOMMENDED - Use AdvancedMultiConditionFlows for complex flow logic:
 const AdvancedMultiConditionFlows = require('../../lib/features/AdvancedMultiConditionFlows');
@@ -941,7 +941,7 @@ const result = await conditions.evaluate({
 });
 ```
 
-### R47: Diagnostic Report Export (v9.0.40)
+### R47: Diagnostic Report Export (v9.0.53)
 ```js
 // RECOMMENDED - Use DiagnosticReportExport for support diagnostics:
 const DiagnosticReportExport = require('../../lib/features/DiagnosticReportExport');
@@ -956,7 +956,7 @@ const report = await exporter.generate({
 });
 ```
 
-### R48: Network Topology Awareness (v9.0.40)
+### R48: Network Topology Awareness (v9.0.53)
 ```js
 // RECOMMENDED - Use NetworkTopologyTrigger for mesh health flows:
 const NetworkTopologyTrigger = require('../../lib/features/NetworkTopologyTrigger');
@@ -972,7 +972,114 @@ const health = topo.getMeshHealth();
 // { totalRouters, onlineRouters, avgLqi, orphanedDevices }
 ```
 
-### R49: Predictive Health Engine (v9.0.40)
+## 🏠 Forum-Based Device Addition Rules
+
+### R59: Forum Device Addition Workflow (v8.0)
+```js
+// REQUIRED - Follow this workflow when adding devices from forum reports:
+// 1. Monitor Homey Community Forum for device support requests
+// 2. Extract device model ID, manufacturer name, productId from forum posts
+// 3. Cross-reference with Z2M/ZHA databases for DP mappings
+// 4. Verify manufacturerName + productId doesn't exist in another driver
+// 5. Add fingerprint to appropriate driver with CaseInsensitiveMatcher
+// 6. Run check-fingerprint-health.js validation
+// 7. Document in CHANGELOG.md with forum issue reference
+```
+
+### R60: Multi-Manufacturer Support (v8.0)
+```js
+// REQUIRED - Handle multi-manufacturer devices correctly:
+// Same device model sold under different brands = separate fingerprints
+// Example: Device X sold as "Brand A" and "Brand B"
+// Both need fingerprints in the same driver
+
+// CORRECT:
+manufacturerName: ['_TZE200_abc123', '_TZE200_def456']
+
+// WRONG - missing second manufacturer:
+manufacturerName: ['_TZE200_abc123']
+```
+
+### R61: One Manufacturer = Thousands of Devices (v8.0)
+```js
+// REQUIRED - Understand manufacturer scale:
+// One manufacturerName can produce thousands of device variants
+// Each variant may have different productId
+// Same manufacturerName in multiple drivers is NORMAL when productId differs
+
+// Example: _TZE200_gubdgai2 appears in:
+// - curtain_motor (productId: TS0601)
+// - cover_roller (productId: TS130F)
+// This is NOT a collision - it's correct multi-product support
+```
+
+## 🏭 Forum & Multi-Manufacturer Rules (FM1-FM3)
+
+### FM1: Forum-Based Device Addition Workflow
+```js
+// REQUIRED - Follow this structured workflow for forum-reported devices:
+// 1. MONITOR: Watch Homey Community Forum for device requests
+// 2. EXTRACT: Get model ID, manufacturer name, productId from posts
+// 3. CROSS-REF: Check Z2M/ZHA databases for DP mappings
+// 4. VERIFY: Ensure manufacturerName + productId not in another driver
+// 5. ADD: Fingerprint to appropriate driver with CaseInsensitiveMatcher
+// 6. VALIDATE: Run check-fingerprint-health.js
+// 7. DOCUMENT: Add to CHANGELOG.md with forum issue reference
+
+// Example forum report:
+// "I have a _TZE204_clrdrnya TS0601 motion sensor that doesn't work"
+// -> Check Z2M for DP mappings
+// -> Verify not in another driver
+// -> Add to motion_sensor_radar_mmwave
+// -> Validate and document
+```
+
+### FM2: Multi-Manufacturer Device Support
+```js
+// REQUIRED - Same device sold under multiple brands:
+// Each brand may have different manufacturerName but same functionality
+// All variants must be in the same driver's manufacturerName array
+
+// CORRECT - All variants listed:
+manufacturerName: [
+  '_TZE200_abc123',  // Brand A
+  '_TZE200_def456',  // Brand B
+  '_TZE204_ghi789'   // Brand C (newer module)
+]
+
+// WRONG - Missing variants:
+manufacturerName: ['_TZE200_abc123']  // Brand B and C won't work
+
+// VALIDATION: After adding, run:
+// node scripts/validation/check-fingerprint-health.js
+```
+
+### FM3: One Manufacturer = Thousands of Devices
+```js
+// REQUIRED - Understand manufacturer scale:
+// One manufacturerName (e.g., _TZE200_gubdgai2) can produce:
+// - Multiple device types (sensors, switches, covers)
+// - Multiple product IDs (TS0601, TS130F, TS0001)
+// - Multiple firmware versions
+
+// SAME MANUFACTURER IN MULTIPLE DRIVERS = NORMAL
+// This is NOT a collision when productId differs:
+
+// Driver: switch_1gang
+manufacturerName: ['_TZ3000_abc']
+productId: ['TS0001']
+
+// Driver: switch_2gang
+manufacturerName: ['_TZ3000_abc']
+productId: ['TS0002']
+
+// Both are correct - same manufacturer, different products
+
+// ANTI-PATTERN: Using wildcards
+manufacturerName: ['_TZE200_*']  // BANNED - causes false matches
+```
+
+### R49: Predictive Health Engine (v9.0.53)
 ```js
 // RECOMMENDED - Use PredictiveHealthEngine for proactive monitoring:
 const PredictiveHealthEngine = require('../../lib/features/PredictiveHealthEngine');
@@ -989,7 +1096,7 @@ const predictions = engine.getPredictions(deviceId);
 // { failureProbability, recommendedAction, timeToFailure }
 ```
 
-### R50: Energy History Store (v9.0.40)
+### R50: Energy History Store (v9.0.53)
 ```js
 // RECOMMENDED - Use EnergyHistoryStore for consumption tracking:
 const EnergyHistoryStore = require('../../lib/features/EnergyHistoryStore');
@@ -1002,7 +1109,7 @@ store.record(deviceId, { power: 150, energy: 0.15, timestamp: Date.now() });
 const history = store.query(deviceId, { from: '7d', granularity: 'hourly' });
 ```
 
-### R51: Signal Triangulation for Presence (v9.0.40)
+### R51: Signal Triangulation for Presence (v9.0.53)
 ```js
 // RECOMMENDED - Use SignalTriangulation for location-aware presence:
 const SignalTriangulation = require('../../lib/presence/SignalTriangulation');
@@ -1017,7 +1124,7 @@ const position = triangulation.estimate(deviceId);
 // { x, y, floor, confidence }
 ```
 
-### R52: Room Signal Aggregation (v9.0.40)
+### R52: Room Signal Aggregation (v9.0.53)
 ```js
 // RECOMMENDED - Use RoomSignalAggregator for room-level presence:
 const RoomSignalAggregator = require('../../lib/presence/RoomSignalAggregator');
@@ -1032,7 +1139,7 @@ const occupancy = aggregator.getRoomOccupancy('living_room');
 // { occupied: true, confidence: 95, lastActivity: timestamp }
 ```
 
-### R53: Schedule Manager (v9.0.40)
+### R53: Schedule Manager (v9.0.53)
 ```js
 // RECOMMENDED - Use ScheduleManager for cron-like scheduling:
 const ScheduleManager = require('../../lib/features/ScheduleManager');
@@ -1046,7 +1153,7 @@ scheduler.addSchedule('morning_lights', {
 });
 ```
 
-### R54: Transition Engine (v9.0.40)
+### R54: Transition Engine (v9.0.53)
 ```js
 // RECOMMENDED - Use TransitionEngine for smooth value changes:
 const TransitionEngine = require('../../lib/features/TransitionEngine');
@@ -1064,7 +1171,7 @@ await transition.execute({
 });
 ```
 
-### R55: Solar Elevation Calculations (v9.0.40)
+### R55: Solar Elevation Calculations (v9.0.53)
 ```js
 // RECOMMENDED - Use SolarElevation for sun-based automation:
 const SolarElevation = require('../../lib/features/SolarElevation');
@@ -1080,7 +1187,7 @@ solar.on('sunset', () => {
 });
 ```
 
-### R56: Tariff Calculator (v9.0.40)
+### R56: Tariff Calculator (v9.0.53)
 ```js
 // RECOMMENDED - Use TariffCalculator for energy cost tracking:
 const TariffCalculator = require('../../lib/features/TariffCalculator');
@@ -1095,7 +1202,7 @@ const cost = tariff.calculate(energyKwh, timestamp);
 // { cost, period: 'peak'|'offPeak', rate }
 ```
 
-### R57: Configuration Backup/Restore (v9.0.40)
+### R57: Configuration Backup/Restore (v9.0.53)
 ```js
 // RECOMMENDED - Use ConfigurationBackupRestore for device migration:
 const ConfigurationBackupRestore = require('../../lib/features/ConfigurationBackupRestore');
@@ -1108,7 +1215,7 @@ const data = await backup.backupDevice(deviceId);
 await backup.restoreDevice(newDeviceId, data);
 ```
 
-### R58: Battery Hybrid Manager (v9.0.40)
+### R58: Battery Hybrid Manager (v9.0.53)
 ```js
 // RECOMMENDED - Use BatteryHybridManager for dual-power devices:
 const BatteryHybridManager = require('../../lib/battery/BatteryHybridManager');

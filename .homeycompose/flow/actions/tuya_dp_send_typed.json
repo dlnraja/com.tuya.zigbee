@@ -32,37 +32,37 @@
       "values": [
         {
           "id": "bool",
-          "label": {
+          "title": {
             "en": "Bool (true/false)"
           }
         },
         {
           "id": "value",
-          "label": {
+          "title": {
             "en": "Value (integer)"
           }
         },
         {
           "id": "enum",
-          "label": {
+          "title": {
             "en": "Enum (0-255)"
           }
         },
         {
           "id": "string",
-          "label": {
+          "title": {
             "en": "String (text)"
           }
         },
         {
           "id": "raw",
-          "label": {
+          "title": {
             "en": "Raw (hex bytes)"
           }
         },
         {
           "id": "bitmap",
-          "label": {
+          "title": {
             "en": "Bitmap (bitmask)"
           }
         }

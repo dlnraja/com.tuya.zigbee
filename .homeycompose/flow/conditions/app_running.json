@@ -1,0 +1,33 @@
+{
+  "id": "app_running",
+  "title": {
+    "en": "App is running",
+    "nl": "App draait",
+    "de": "App läuft",
+    "fr": "L'application est en cours d'exécution"
+  },
+  "hint": {
+    "en": "Checks whether a Homey app is currently running. Inspired by Device Capabilities app.",
+    "nl": "Controleert of een Homey app momenteel draait. Geinspireerd door Device Capabilities app."
+  },
+  "args": [
+    {
+      "name": "app_id",
+      "type": "text",
+      "title": {
+        "en": "App ID",
+        "nl": "App ID"
+      },
+      "placeholder": {
+        "en": "e.g. com.dlnraja.tuya.zigbee",
+        "nl": "bijv. com.dlnraja.tuya.zigbee"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "App [[app_id]] is running",
+    "nl": "App [[app_id]] draait",
+    "de": "App [[app_id]] läuft",
+    "fr": "L'application [[app_id]] est en cours d'exécution"
+  }
+}

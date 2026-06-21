@@ -141,6 +141,15 @@ If you need a virtual button widget:
 
 ### Capability Configuration
 
+**v9.0.52 UPDATE** : Tous les drivers boutons purs ET switches utilisent maintenant
+`setable: false` + `maintenanceAction: true` pour les capabilities `button.X`.
+Cela évite l'erreur "Missing Capability Listener" quand Homey exige un listener
+pour une capability `setable: true` qui n'en a pas.
+
+**Règle** : Si une capability `button.X` a `setable: true`, Homey **exige** un
+`registerCapabilityListener('button.X', ...)`. Si aucun listener n'est enregistré
+→ erreur "Missing Capability Listener button.1". La solution : `setable: false`.
+
 ```json
 {
   "capabilities": ["button.1", "measure_battery"],
@@ -148,7 +157,7 @@ If you need a virtual button widget:
     "button.1": {
       "maintenanceAction": true,  // Hidden from main UI
       "getable": false,            // Cannot read current state
-      "setable": false             // Cannot set state programmatically
+      "setable": false             // v9.0.52: FIX Missing Capability Listener
     }
   }
 }
@@ -332,6 +341,15 @@ If you need a virtual button widget:
 
 ### Capability Configuration
 
+**v9.0.52 UPDATE** : Tous les drivers boutons purs ET switches utilisent maintenant
+`setable: false` + `maintenanceAction: true` pour les capabilities `button.X`.
+Cela évite l'erreur "Missing Capability Listener" quand Homey exige un listener
+pour une capability `setable: true` qui n'en a pas.
+
+**Règle** : Si une capability `button.X` a `setable: true`, Homey **exige** un
+`registerCapabilityListener('button.X', ...)`. Si aucun listener n'est enregistré
+→ erreur "Missing Capability Listener button.1". La solution : `setable: false`.
+
 ```json
 {
   "capabilities": ["button.1", "measure_battery"],
@@ -339,7 +357,7 @@ If you need a virtual button widget:
     "button.1": {
       "maintenanceAction": true,  // Hidden from main UI
       "getable": false,            // Cannot read current state
-      "setable": false             // Cannot set state programmatically
+      "setable": false             // v9.0.52: FIX Missing Capability Listener
     }
   }
 }

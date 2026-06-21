@@ -4,12 +4,108 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.39] - 2026-06-16
+## v9.0.52 (2026-06-21) — Investigation Forensique Boutons + Batterie
 
-v9.0.37:
+### 🔴 CRITICAL Fixes
+- **Missing Capability Listener button.1/2/3** : `setable:false` + `maintenanceAction:true` sur 89 drivers boutons+switches (master 56 + stable-v5 33). Root cause : `setable:true` obligeait Homey à exiger un listener inexistant.
+- **Boutons physiques cassés** : `this.homey.setTimeout` sans fallback → `(this.homey?.set* || set*)` sur 7 sites PhysicalButtonMixin + ButtonDevice. Root cause : `this.homey` undefined au early init → timer jamais créé → `appCommandPending` bloqué.
+- **`_registerButtonCapabilityListeners` supprimé** (commit TITAN V5) → restauré depuis v5.11.205-stable.
+- **`_isDebounced()` sans arg gang** → `_isDebounced(gang)` : multi-gang cassé (gang 2/3/4 toujours bloqués).
+- **`super.on()` au lieu de `onNodeInit({zclNode})`** sur 16 drivers stable-v5 → tous restaurés vers ButtonDevice.
+- **Batterie '?' permanent** : `_updateBattery()` + `onEndDeviceAnnounce()` perdus → restaurés (lecture batterie au wake des sleepy devices).
+- **package.json path cassé** : `require('../../../package.json')` → `require('../../package.json')` → reporting batterie jamais reconfiguré après update.
+- **SanityFilter `_getROCLimit()` manquant** : TypeError sur chaque relevé capteur → filtrage L14 inopérant.
+- **Smart_knob_rotary crash** : `extends Homey` → `extends ZigBeeDriver`.
+
+### 🟡 HIGH Fixes
+- **HOBEIAN ZG-301Z non reconnu** : absent du `app.json` compilé → injecté. Retiré des drivers multi-gang (uniquement switch_1gang).
+- **BOT_FORCED_DISCOVERY** : forçait HOBEIAN vers radar → causait prolifération dans 64 drivers → retiré.
+- **Formules batterie linéaires B2** : XiaomiSpecialHandler + DataRecoveryManager → courbes CR2032 non-linéaires.
+- **Flow cards `_hybrid_` invalides** : 18 IDs corrigés sur stable-v5.
+- **DP double-processing** : `_processedDPs` Map 500ms dans TuyaEF00Manager.
+- **9 patterns OnOff** : portés de stable-v5 (toggle/on/off + commandOn/Off/Toggle + setOn/setOff + command).
+- **0xFD match étendu** : 6 variantes (0xFD/tuyaAction/253/fd/commandTuyaAction/unknown).
+- **TSN recyclage 8-bit** : fenêtre temporelle 5s + nettoyage Map.
+- **Debounce par-gang** : Map `_lastReportTimestampPerGang` (pas global).
+- **setupButtonDetection + handleButtonCommand** : LegacyButtonDetectionMixin créé.
+- **EventDeduplicationLayer** : re-porté de stable-v5 (règle d'or 1 action = 1 event).
+- **Memory leaks** : UnifiedLightBase/UnifiedSwitchBase/TuyaUnifiedDevice + VirtualEnergyMeterMixin/TuyaModernExtend/EnergyEstimator cleanup.
+- **JSON.parse non gardés** : TuyaDeviceDiscovery + TuyaUDPDiscovery.
+- **Timers nus** : OTAUpdateManager + PerformanceOptimizer tracking.
+
+### 🟢 Architecture & Enrichment
+- **NFKD Unicode normalize** (R24/R29) : CaseInsensitiveMatcher NFKD + accent stripping + emoji removal.
+- **Consequence tiering** (inspiré Polos) : DriverConsequenceTiering.js (6 classes read→financial).
+- **Validateur structurel Polos** : validate-driver-mesh.js (429 drivers, 0 erreur critique).
+- **UnifiedButtonEngine** : module compact L1-L5 (314 lignes, 7 root causes résolues).
+- **StableV5Compat** : registre 11 modules + factory singleton.
+- **87 fingerprints orphelins restaurés** : script inject-orphan-fingerprints.js.
+- **Pre-commit checks** : pre-commit-fp-sync.js + hobeian-consistency-check.js.
+- **15 commits stable-v5** : backports bidirectionnels (master↔stable-v5).
+
 ---
 
- [9.0.37] - 2026-06-16
+## [9.0.46] - 2026-06-19
+
+### Bi-Directional Dual Virtual & Physical Button Architecture Stabilized
+- **Virtual Button Loop Fixed**: Repaired a deep regression in the prototype chain where `PhysicalButtonMixin` swallowed `markAppCommand()`, causing virtual app interactions to loop infinitely as physical button presses across 30+ older switch drivers.
+- **Legacy Boolean Compatibility**: Restored safe fallback to `this._appCommandPending` as a boolean alongside the map object logic, preserving multi-gang functionality without breaking original drivers.
+
+### Local-First Zero-Touch Updates
+- **Autonomous Enricher Local-First**: The `AutonomousEnricher` now prioritizes a local static JSON map (`data/mfs_db.json`) avoiding direct remote API dependencies during initialization.
+- **Intelligent Case-Insensitive Matching**: Upgraded the `AutonomousEnricher.getDynamicMapping()` logic to natively employ case-insensitive (`includesCI` style) verification for mapping unseen `manufacturerName` variations to DPs autonomously. Retroactively applied `CaseInsensitiveMatcher` to all core framework base classes (`UniversalDriverInit`, legacy Sonoff devices like `SonoffEnergyMixin`, `SonoffSensorMixin`, `SonoffTRVZBMixin`) guaranteeing 100% standard string comparison safety over generic `.toUpperCase()` methods.
+- **Weekly Fallback Loop**: Reduced Github Cloud polling from 24-hours to 7-days strictly acting as a fallback when local definitions are completely unknown.
+- **Static Pairing Phase Enrichment via MFS**: Deployed the `inject_mfs_to_compose.js` script to systematically parse `data/mfs_db.json` and inject 4,100+ unique Tuya variants directly into the `driver.compose.json` mappings of 112 drivers. This ensures all drivers inherently benefit from global community fingerprints during the static, initial pairing phase.
+- **Flow Validation Schema Fixes**: Fixed `app.json` and flow schema definitions replacing legacy `label` properties with `title` in Enums (`tariff_set_rate`, `transition_start_smooth`) and replacing invalid `zone` arguments with `autocomplete` type for full validation pipeline stability.
+
+## [9.0.45] - 2026-06-18
+
+### Documentation Finalizer v8.0 - Forum Analysis & Multi-Manufacturer Rules
+
+#### KNOWLEDGE_CACHE.json v8.0
+- Added `forumFindings` section with processed issues (#2091, #5472, #2090, #388, #383, #420, #417)
+- Added `multiManufacturerRules` section with rules and examples
+- Added `forumBasedDeviceAdditionRules` section with workflow and validation
+- Updated project statistics: 430 drivers, 533 lib files, 565 scripts, 334 docs
+- Added 3 new bugs fixed: BUG-014 (fingerbot collision), BUG-015 (forum issues), BUG-016 (compose fixes)
+- Updated git history with latest commits and key decisions
+
+#### CORE_RULES.md v5.0
+- Added R59: Forum Device Addition Workflow (structured 7-step process)
+- Added R60: Multi-Manufacturer Support (same device under different brands)
+- Added R61: One Manufacturer = Thousands of Devices (manufacturer scale understanding)
+- Added FM1: Forum-Based Device Addition Workflow (with example)
+- Added FM2: Multi-Manufacturer Device Support (with validation)
+- Added FM3: One Manufacturer = Thousands of Devices (with anti-patterns)
+- Updated project statistics: 533 lib files, 565 scripts, 40 workflows, 334 docs
+
+#### Forum Analysis Findings
+- **Issue #2091**: Device routing fix - resolved in v9.0.40
+- **Issue #5472**: Flow card integrity fix - resolved in v9.0.40
+- **Issue #2090**: HOBEIAN water leak sensor ZG-222Z (Peter) - resolved in v9.0.22
+- **Issue #388**: Rain sensor misclassification - resolved in v9.0.35
+- **Issue #383**: Bed sensor verification - resolved in v9.0.35
+- **Issue #420**: MMWave radar addition - resolved in v9.0.35
+- **Issue #417**: Fingerprint additions - resolved in v9.0.35
+
+#### Bug Fixes
+- **Fingerbot fingerprint collisions**: Reverted conflicting fingerprints with plug and button_wireless_2 drivers
+- **Driver compose JSON inconsistencies**: Forum analysis - driver compose fixes and improvements
+- **Protection scripts missing**: Added protection scripts + flow card integrity validation
+
+#### Updated Statistics
+| Metric | Old | New |
+|--------|-----|-----|
+| KNOWLEDGE_CACHE version | 7.0 | 8.0 |
+| CORE_RULES version | 4.0.0 | 5.0.0 |
+| Total rules | 58 | 61 + 3 FM rules |
+| Lib files | 468 | 533 |
+| Scripts | 93 | 565 |
+| Docs | 443 | 334 |
+| Workflows | 40 | 40 |
+
+---
+
 ## [9.0.44] - 2026-06-18
 
 ### Documentation Update v7.0
@@ -168,170 +264,42 @@ grep -rn "setTimeout\|setInterval" lib/ --include="*.js" | grep -v "this\.homey\
 
 ## [9.0.37] - 2026-06-16
 
-v9.0.36:
----
 
- [9.0.36] - 2026-06-16
 
-v9.0.35:
----
 
- [9.0.35] - 2026-06-16
 
-v9.0.34:
----
 
- [9.0.34] - 2026-06-15
 
-v9.0.33:
----
 
- [9.0.33] - 2026-06-15
 
-v9.0.32:
----
 
- [9.0.32] - 2026-06-15
 
-v9.0.31:
----
 
- [9.0.31] - 2026-06-14
 
-v9.0.30:
----
 
- [9.0.30] - 2026-06-14
 
-v9.0.29:
----
 
- [9.0.29] - 2026-06-14
 
-v9.0.28:
----
 
- [9.0.28] - 2026-06-14
 
-v9.0.27:
----
 
- [9.0.27] - 2026-06-14
 
-v9.0.26:
----
 
- [9.0.26] - 2026-06-14
-
-v9.0.25:
----
-
- [9.0.25] - 2026-06-14
-
-v9.0.24:
----
-
- [9.0.24] - 2026-06-14
-
-v9.0.23:
----
-
- [9.0.23] - 2026-06-14
-
-v9.0.22:
----
-
- [9.0.22] - 2026-06-14
-
-v9.0.21:
----
-
- [9.0.21] - 2026-06-14
-
-v9.0.20:
----
-
- [9.0.20] - 2026-06-14
-
-v9.0.19:
----
-
- [9.0.19] - 2026-06-14
-
-v9.0.18:
----
-
- [9.0.18] - 2026-06-14
-
-v9.0.17:
----
-
- [9.0.17] - 2026-06-14
-
-v9.0.16:
----
-
- [9.0.16] - 2026-06-14
-
-v9.0.15:
----
-
- [9.0.15] - 2026-06-14
 
 v9.0.15: Restore all 46 WiFi drivers, use cross-platform publish temp dir, optimize GitHub publish action.
 ---
 
  [9.0.14] - 2026-06-13
 
-v9.0.13:
----
 
- [9.0.13] - 2026-06-13
 
-v9.0.12:
----
 
- [9.0.12] - 2026-06-13
 
-v9.0.11:
----
 
- [9.0.11] - 2026-06-13
 
-v9.0.10:
----
 
- [9.0.10] - 2026-06-13
 
-v9.0.9:
----
 
- [9.0.9] - 2026-06-13
-
-v9.0.8:
----
-
- [9.0.8] - 2026-06-13
-
-v9.0.7:
----
-
- [9.0.7] - 2026-06-13
-
-v9.0.6:
----
-
- [9.0.6] - 2026-06-13
-
-v9.0.5:
----
-
- [9.0.5] - 2026-06-13
-
-v9.0.4:
----
-
- [9.0.4] - 2026-06-13
 
 v9.0.3: CRITICAL, CRITICAL, CRITICAL, Fixed 250 duplicate manufacturer names across drivers (3960 -> 1384 unique), Fixed 9 legacy crashy battery handlers (onBatteryPercentageRemainingAttributeReport)
 ---
