@@ -55143,7 +55143,18 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {},
+      "capabilitiesOptions": {
+        "button.1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        }
+      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -65978,7 +65989,14 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.push": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        }
+      }
     },
     {
       "name": {
@@ -69953,6 +69971,11 @@
             "fr": "Mode Apprentissage"
           },
           "icon": "/assets/icons/learn.svg"
+        },
+        "button.ir_test": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "settings": [
@@ -81875,7 +81898,18 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {},
+      "capabilitiesOptions": {
+        "button.1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        }
+      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -91303,6 +91337,26 @@
             "en": "Gang 2",
             "fr": "Gang 2"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -93021,6 +93075,16 @@
             "fr": "Batterie"
           },
           "preventInsights": false
+        },
+        "button.toggle": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -93908,6 +93972,21 @@
             "en": "Gang 2",
             "fr": "Gang 2"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -94765,6 +94844,26 @@
             "en": "Gang 3",
             "fr": "Gang 3"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_3": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -95653,6 +95752,31 @@
             "en": "Gang 4",
             "fr": "Gang 4"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_3": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_4": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -97118,6 +97242,26 @@
             "en": "Gang 3",
             "fr": "Gang 3"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_3": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
