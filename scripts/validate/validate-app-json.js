@@ -60,11 +60,20 @@ if (Array.isArray(app.permissions) && app.permissions.includes('homey:manager:ap
 }
 
 // Required fields check
-const required = ['id', 'version', 'sdkVersion', 'name', 'category', 'images', 'compatibility', 'platforms', 'author'];
+// v9.0.75: SDK field is canonically `sdk` (number) in SDK3 per the official
+// manifest reference. Accept EITHER `sdk` OR legacy `sdkVersion`.
+const required = ['id', 'version', 'name', 'category', 'images', 'compatibility', 'platforms', 'author'];
 required.forEach(field => {
   if (!app[field]) fail(`MISSING required field: ${field}`);
   else ok(`Required field: ${field} = ${JSON.stringify(app[field]).substring(0,50)}`);
 });
+// SDK field check (sdk OR sdkVersion)
+const sdkValue = app.sdk !== undefined ? app.sdk : app.sdkVersion;
+if (sdkValue === undefined) {
+  fail('MISSING required field: sdk (set "sdk": 3 for SDK3, or legacy "sdkVersion": 3)');
+} else {
+  ok(`Required field: sdk = ${sdkValue}`);
+}
 
 // ─── 2. assets/icon.svg check ────────────────────────────────────────────────
 const iconPath = path.join(ROOT, 'assets', 'icon.svg');
