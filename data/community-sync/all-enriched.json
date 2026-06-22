@@ -11051,6 +11051,15 @@
     "driver": "plug"
   },
   {
+    "mfr": "_TZ3000_9ni6xxld",
+    "productId": "TS011F",
+    "model": "TS011F_plug_3",
+    "description": "Smart plug (with power monitoring by polling)",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": "plug"
+  },
+  {
     "mfr": "_TZ3000_cehuw1lw",
     "productId": "TS011F",
     "model": "TS011F_plug_3",
@@ -11106,6 +11115,60 @@
   },
   {
     "mfr": "_TZE200_ehhrv2e3",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_qoy0ekbd",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_znbl8dj5",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_dikkika5",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_3xfjp0ag",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_lhqtjwax",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_y8wkaq6w",
     "productId": "ZG-227Z",
     "model": "ZG-227ZL",
     "description": "Temperature & humidity LCD sensor",
@@ -14555,6 +14618,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_pftj0i7z",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_r0o2dahu",
     "productId": null,
     "source": "Z2M",
@@ -16535,6 +16604,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3008_1a8m8wd6",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_gjnozsaz",
     "productId": null,
     "source": "Z2M",
@@ -17039,6 +17114,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_excgg5kb",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_mdj7kra9",
     "productId": null,
     "source": "Z2M",
@@ -17417,13 +17498,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_8bxrzyxz",
+    "mfr": "_TZ3210_kjafhwd2",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_ky0fq4ho",
+    "mfr": "_TZ3000_8bxrzyxz",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17454,6 +17535,12 @@
   },
   {
     "mfr": "_TZ3000_viqwamhn",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_ky0fq4ho",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17789,6 +17876,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZE284_xpq2rzhq",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZE284_atuj3i0w",
     "productId": null,
     "source": "Z2M",
@@ -17928,42 +18021,6 @@
   },
   {
     "mfr": "_TZE200_mx6u6l4y",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_qoy0ekbd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_znbl8dj5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_dikkika5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_3xfjp0ag",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_lhqtjwax",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_y8wkaq6w",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -19307,6 +19364,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3210_wts1g2oh",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3210_iymfxdis",
     "productId": null,
     "source": "Z2M",
@@ -19518,6 +19581,12 @@
   },
   {
     "mfr": "_TZE284_9xstqowh",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE284_kv1nvirl",
     "productId": null,
     "source": "Z2M",
     "driver": null

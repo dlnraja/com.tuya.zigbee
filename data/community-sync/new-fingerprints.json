@@ -35,22 +35,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_1dd0d5yi",
-    "productId": [
-      "TS130F"
-    ],
-    "driver": "curtain_module",
-    "deviceType": "windowcoverings",
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set, windowcoverings_state",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_ke7pzj5d",
     "productId": [
       "TS130F"
@@ -100,86 +84,6 @@
   },
   {
     "mfr": "_TZ3000_zirycpws",
-    "productId": [
-      "TS130F"
-    ],
-    "driver": "curtain_module",
-    "deviceType": "windowcoverings",
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set, windowcoverings_state",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_femsaaua",
-    "productId": [
-      "TS130F"
-    ],
-    "driver": "curtain_module",
-    "deviceType": "windowcoverings",
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set, windowcoverings_state",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_e3vhyirx",
-    "productId": [
-      "TS130F"
-    ],
-    "driver": "curtain_module",
-    "deviceType": "windowcoverings",
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set, windowcoverings_state",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_jwv3cwak",
-    "productId": [
-      "TS130F"
-    ],
-    "driver": "curtain_module",
-    "deviceType": "windowcoverings",
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set, windowcoverings_state",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_dwytrmda",
-    "productId": [
-      "TS130F"
-    ],
-    "driver": "curtain_module",
-    "deviceType": "windowcoverings",
-    "capabilities": [
-      "windowcoverings_set",
-      "windowcoverings_state"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set, windowcoverings_state",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_ol1uhvza",
     "productId": [
       "TS130F"
     ],
@@ -259,157 +163,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_wmcdj3aq",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_cowvfni3",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_zah67ekd",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_68nvbio9",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_pw7mji0l",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_uj3f4wr5",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_gaj531w3",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_nw1r9hp6",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_cf1sl3tj",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_9p5xmj5r",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "curtain_motor",
-    "deviceType": "curtain",
-    "capabilities": [
-      "windowcoverings_set"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "windowcoverings_set",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE204_xu4a5rhj",
     "productId": [
       "TS0601"
     ],
@@ -487,24 +241,6 @@
   },
   {
     "mfr": "_TZ3000_ktuoyvt5",
-    "productId": [
-      "TS110F",
-      "TS110E",
-      "TS0052"
-    ],
-    "driver": "dimmer_1_gang",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_zxbtub8r",
     "productId": [
       "TS110F",
       "TS110E",
@@ -673,22 +409,6 @@
   },
   {
     "mfr": "_TZE200_vucankjx",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "dimmer_1_gang_tuya",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_4mh6tyyo",
     "productId": [
       "TS0601"
     ],
@@ -958,60 +678,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "TUYATEC-g3gl6cgy",
-    "productId": [
-      "RH3001",
-      "TS0203",
-      "SNZB-04"
-    ],
-    "driver": "doorwindowsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-Bfq2i2Sy",
-    "productId": [
-      "RH3001",
-      "TS0203",
-      "SNZB-04"
-    ],
-    "driver": "doorwindowsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-abkehqus",
-    "productId": [
-      "RH3001",
-      "TS0203",
-      "SNZB-04"
-    ],
-    "driver": "doorwindowsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "TUYATEC-sb6t7ett",
     "productId": [
       "RH3001",
@@ -1264,24 +930,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_oxslv1c9",
-    "productId": [
-      "RH3001",
-      "TS0203",
-      "SNZB-04"
-    ],
-    "driver": "doorwindowsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_bzxlofth",
     "productId": [
       "RH3001",
@@ -1301,24 +949,6 @@
   },
   {
     "mfr": "_TZ3000_bzxloft",
-    "productId": [
-      "RH3001",
-      "TS0203",
-      "SNZB-04"
-    ],
-    "driver": "doorwindowsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_n2egfsli",
     "productId": [
       "RH3001",
       "TS0203",
@@ -1463,24 +1093,6 @@
   },
   {
     "mfr": "_TZ3000_9eeavbk5",
-    "productId": [
-      "RH3001",
-      "TS0203",
-      "SNZB-04"
-    ],
-    "driver": "doorwindowsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_rcuyhwe3",
     "productId": [
       "RH3001",
       "TS0203",
@@ -1836,22 +1448,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_bpkijo14",
-    "productId": [
-      "TS0203"
-    ],
-    "driver": "doorwindowsensor_3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_contact",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_uvti8nkd",
     "productId": [
       "TS0203"
@@ -1865,25 +1461,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "alarm_contact, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_7jnk7l3k",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "double_power_point",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
     "source": "Johan"
   },
   {
@@ -1906,58 +1483,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3210_j4pdtz9v",
-    "productId": [
-      "TS0001",
-      "TS0001_fingerbot"
-    ],
-    "driver": "fingerbot",
-    "deviceType": "button",
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3210_dse8ogfy",
-    "productId": [
-      "TS0001",
-      "TS0001_fingerbot"
-    ],
-    "driver": "fingerbot",
-    "deviceType": "button",
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_232nryqh",
-    "productId": [
-      "TS0001",
-      "TS0001_fingerbot"
-    ],
-    "driver": "fingerbot",
-    "deviceType": "button",
-    "capabilities": [
-      "onoff",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_okbss9dy",
     "productId": [
       "TS0001",
       "TS0001_fingerbot"
@@ -2056,21 +1582,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "alarm_water, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_u3nv1jwk",
-    "productId": [
-      "TS0044"
-    ],
-    "driver": "handheld_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [
-      "button"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "button",
     "source": "Johan"
   },
   {
@@ -2325,44 +1836,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_ywagc4rj",
-    "productId": [
-      "TS0201",
-      "TY0201"
-    ],
-    "driver": "lcdtemphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_itnrsufe",
-    "productId": [
-      "TS0201",
-      "TY0201"
-    ],
-    "driver": "lcdtemphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_bjawzodf",
     "productId": [
       "TS0201",
@@ -2419,61 +1892,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_bjawzodf",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "lcdtemphumidsensor_3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_zl1kmjqx",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "lcdtemphumidsensor_3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_locansqn",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "lcdtemphumidsensor_3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_bq5c8xfe",
     "productId": [
       "TS0601"
     ],
@@ -2527,24 +1946,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_44af8vyi",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "lcdtemphumidsensor_3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "TUYATEC-bd5faf9p",
     "productId": [
       "RH3040"
@@ -2574,78 +1975,6 @@
     "hasBattery": true,
     "vendor": null,
     "description": "alarm_motion, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_3towulqd",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "motion_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "measure_luminance",
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, measure_luminance, alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_bh3n6gk8",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "motion_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "measure_luminance",
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, measure_luminance, alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_1ibpyhdc",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "motion_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "measure_luminance",
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, measure_luminance, alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_ttcovulf",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "motion_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "measure_luminance",
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, measure_luminance, alarm_motion, alarm_battery",
     "source": "Johan"
   },
   {
@@ -2698,38 +2027,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TYZB01_jytabjkb",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYZB01_dl7cejts",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_mmtwjmaq",
     "productId": [
       "TS0202"
@@ -2762,151 +2059,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_msl6wxk9",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_mcxw5ehu",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_otvn3lne",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_6ygjfyll",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3040_6ygjfyll",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3040_bb6xaihh",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_nss8amz9",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_bsvqrxru",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYZB01_dr6sduka",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_o4mkahkc",
     "productId": [
       "TS0202"
     ],
@@ -2938,55 +2091,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3040_wqmtjsyk",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_mg4dy6z6",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_y56pgpgs",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "pir_sensor_2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TYZB01_geepvxsy",
     "productId": [
       "TS0202"
     ],
@@ -3034,70 +2139,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "TUYATEC-53o41joc",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-deetibst",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-dgtxmihe",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-b5g40alm",
-    "productId": [
-      "RH3040"
-    ],
-    "driver": "pirsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "TUYATEC-dxnohkpd",
     "productId": [
       "RH3040"
@@ -3114,97 +2155,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_kdi2o9m6",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_ew31dmgx",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_dpo1ysak",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_plyvnuf5",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_hyfvrar3",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_cymsnfvf",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_upjrsxh1",
     "productId": [
       "TS011F"
     ],
@@ -3387,74 +2338,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_xpq2rzhq",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "radar_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_luminance",
-      "alarm_motion",
-      "target_distance"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_luminance, alarm_motion, target_distance",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_holel4dk",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "radar_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_luminance",
-      "alarm_motion",
-      "target_distance"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_luminance, alarm_motion, target_distance",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_jva8ink8",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "radar_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_luminance",
-      "alarm_motion",
-      "target_distance"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_luminance, alarm_motion, target_distance",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_lyetpprm",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "radar_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_luminance",
-      "alarm_motion",
-      "target_distance"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "measure_luminance, alarm_motion, target_distance",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_ikvncluo",
     "productId": [
       "TS0601"
@@ -3556,73 +2439,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3210_tgvtvdoc",
-    "productId": [
-      "TS0207"
-    ],
-    "driver": "rain_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_battery",
-      "alarm_water",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_battery, alarm_water, alarm_cleaning, measure_luminance",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_g8n1n7lg",
-    "productId": [
-      "TS0001"
-    ],
-    "driver": "relay_board_1_channel",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_nuenzetq",
-    "productId": [
-      "TS0002"
-    ],
-    "driver": "relay_board_2_channel",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ruldv5dt",
-    "productId": [
-      "TS0002"
-    ],
-    "driver": "relay_board_2_channel",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_hdlpifbk",
     "productId": [
       "TS0004"
@@ -3680,34 +2496,6 @@
     "hasBattery": false,
     "vendor": null,
     "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_imaccztn",
-    "productId": [
-      "TS0004"
-    ],
-    "driver": "relay_board_4_channel",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_odygigth",
-    "productId": [
-      "TS0505A"
-    ],
-    "driver": "rgb_bulb_E14",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
     "source": "Johan"
   },
   {
@@ -3816,53 +2604,11 @@
     "source": "Johan"
   },
   {
-    "mfr": "eWeLight",
-    "productId": [
-      "TS0505A",
-      "TS0505B",
-      "ZB-CL01"
-    ],
-    "driver": "rgb_bulb_E27",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3210_x13bu7za",
     "productId": [
       "TS0505B"
     ],
     "driver": "rgb_ceiling_led_light",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_8uaoilu9",
-    "productId": [
-      "TS0502A"
-    ],
-    "driver": "rgb_floor_led_light",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_gek6snaj",
-    "productId": [
-      "TS0505A",
-      "TS0505B"
-    ],
-    "driver": "rgb_led_light_bar",
     "deviceType": null,
     "capabilities": [],
     "hasBattery": false,
@@ -3890,22 +2636,6 @@
       "TS0505A"
     ],
     "driver": "rgb_led_strip",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_obacbukl",
-    "productId": [
-      "TS0503A",
-      "TS0503B",
-      "TS0505B",
-      "TS0504B"
-    ],
-    "driver": "rgb_led_strip_controller",
     "deviceType": null,
     "capabilities": [],
     "hasBattery": false,
@@ -4109,42 +2839,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TYST11_d0yu2xgi",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "sirentemphumidsensor",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "measure_temperature",
-      "measure_humidity",
-      "alarm_battery",
-      "alarm_siren"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, measure_temperature, measure_humidity, alarm_battery, alarm_siren",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_lf56vpxj",
-    "productId": [
-      "TS0202"
-    ],
-    "driver": "slim_motion_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_motion",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_motion, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_6l1pjfqe",
+    "mfr": "_TZ3000_qystbcjg",
     "productId": [
       "TS0121",
       "TSO121",
@@ -4318,25 +3013,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_rcuyhwe3",
-    "productId": [
-      "TY0203",
-      "TS0203"
-    ],
-    "driver": "smart_door_window_sensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_contact",
-      "alarm_battery",
-      "alarm_tamper"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_contact, alarm_battery, alarm_tamper",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3210_eymunffl",
     "productId": [
       "TS0101",
@@ -4356,24 +3032,6 @@
   },
   {
     "mfr": "_TZ3000_cjfmu5he",
-    "productId": [
-      "TS0101",
-      "TS0049"
-    ],
-    "driver": "smart_garden_irrigation_control",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff",
-      "alarm_battery",
-      "measure_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "onoff, alarm_battery, measure_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_kz1anoi8",
     "productId": [
       "TS0101",
       "TS0049"
@@ -4560,46 +3218,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_fsiepnrh",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_qm6djpta",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_p6ju8myv",
-    "productId": [
-      "TS0215A"
-    ],
-    "driver": "smart_remote_4_buttons",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_eo3dttwe",
     "productId": [
       "TS0215A"
     ],
@@ -4627,27 +3246,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_3ooaz3ng",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_iuepbmpv",
     "productId": [
       "TS0121",
@@ -4669,154 +3267,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_g5xawfcq",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_vtscrpmw",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_rdtixbnu",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_8nkb7mof",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_cphmq0q7",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ew3ldmgx",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_dpo1ysak",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_w0qqde0g",
     "productId": [
       "TS0121",
       "TSO121",
@@ -4879,27 +3330,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_typdpdpg",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_gjnozsaz",
     "productId": [
       "TS0121",
@@ -4921,91 +3351,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_amdymr7l",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_amdymr71",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_typdpbpg",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ksw8qtmt",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_zloso4jk",
+    "mfr": "_TZ3000_cehuw1lw",
     "productId": [
       "TS0121",
       "TSO121",
@@ -5047,175 +3393,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_ynmowqk2",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_kx0pris5",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_hdopuwv6",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_bfn1w0mm",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_0zfrhq4i",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_gznh2xla",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ss98ec5d",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_gnjozsaz",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_gvn91tmx",
     "productId": [
       "TS0121",
       "TSO121",
@@ -5257,91 +3435,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_r6buo8ba",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_2putqrmw",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_5ity3zyu",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_okaz9tjs",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_eyzb8yg3",
     "productId": [
       "TS0121",
       "TSO121",
@@ -5383,91 +3477,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_nkcobies",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_j1v25l17",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_waho4jtj",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_3uimvkn6",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_pjcqjtev",
     "productId": [
       "TS0121",
       "TSO121",
@@ -5509,27 +3519,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_fukaa7nc",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_88iqnhvd",
     "productId": [
       "TS0121",
@@ -5551,7 +3540,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_3ias4w4o",
+    "mfr": "_TZ3000_wzmuk9ai",
     "productId": [
       "TS0121",
       "TSO121",
@@ -5607,78 +3596,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_ntcy3xu1",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_m9skfctm",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_rccxox8p",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_vzekyi4c",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE204_ntcy3xu1",
     "productId": [
       "TS0601"
@@ -5697,124 +3614,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_t5p1vj8r",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_uebojraa",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_yh7aoahi",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "smoke_sensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_tamper",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_tamper, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3210_up3pngle",
-    "productId": [
-      "TS0205"
-    ],
-    "driver": "smoke_sensor3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_smoke",
-      "alarm_battery",
-      "alarm_tamper"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_smoke, alarm_battery, alarm_tamper",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_1obwwnmq",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "socket_power_strip",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_vzopcetz",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "socket_power_strip",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_4uf3d0ax",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "socket_power_strip",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_wzauvbcs",
     "productId": [
       "TS011F"
     ],
@@ -5859,54 +3659,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_o005nuxx",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "socket_power_strip_four_two",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_cfnprab5",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "socket_power_strip_four_two",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_myd45weu",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "soilsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_ga1maeof",
     "productId": [
       "TS0601"
@@ -5926,24 +3678,6 @@
   },
   {
     "mfr": "_TZE200_9cqcpkgb",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "soilsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE204_myd45weu",
     "productId": [
       "TS0601"
     ],
@@ -6071,216 +3805,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_zmy1waw6",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_pmvbt5hh",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_sjpl9eg3",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ji4araar",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qmi1cfuq",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_tqlv4ug4",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_majwnphg",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_6axxqqi2",
-    "productId": [
-      "TS0003",
-      "TS011F",
-      "TS0011",
-      "TS000F",
-      "TS0001"
-    ],
-    "driver": "switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_prits6g4",
-    "productId": [
-      "TS0001"
-    ],
-    "driver": "switch_1_gang_metering",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_zsl6z0pw",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_4js9lo5d",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_pmz6mjyu",
     "productId": [
       "TS0003",
       "TS0012",
@@ -6318,83 +3843,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_fisb3ajo",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_bvrlqyj7",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_jl7qyupf",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_7ed9cqgi",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_llfaquvp",
     "productId": [
       "TS0003",
       "TS0012",
@@ -6432,82 +3881,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_qaa59zqd",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qcgw8qfa",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_jcfje0kb",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_ruxexjfz",
-    "productId": [
-      "TS0003",
-      "TS0012",
-      "TS011F",
-      "TS0002",
-      "TS0013"
-    ],
-    "driver": "switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_zmy4lslw",
     "productId": [
       "TS0002",
@@ -6525,127 +3898,6 @@
     "hasBattery": false,
     "vendor": null,
     "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_odzoiovu",
-    "productId": [
-      "TS0003"
-    ],
-    "driver": "switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_lvhy15ix",
-    "productId": [
-      "TS0003"
-    ],
-    "driver": "switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_4o16jdca",
-    "productId": [
-      "TS0003"
-    ],
-    "driver": "switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_mmkbptmx",
-    "productId": [
-      "TS0004"
-    ],
-    "driver": "switch_4_gang_metering",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-g3gl6cgy",
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
-    "driver": "temphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-Bfq2i2Sy",
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
-    "driver": "temphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
-    "mfr": "TUYATEC-abkehqus",
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
-    "driver": "temphumidsensor",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
     "source": "Johan"
   },
   {
@@ -6991,25 +4243,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "TUYATEC-qun7vq14",
-    "productId": [
-      "RH3052",
-      "TS0201"
-    ],
-    "driver": "temphumidsensor2",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_temperature",
-      "measure_humidity",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_akqdg6g7",
     "productId": [
       "RH3052",
@@ -7086,45 +4319,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_a8sdabtg",
-    "productId": [
-      "TS0201",
-      "TS0601"
-    ],
-    "driver": "temphumidsensor3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_battery",
-      "measure_humidity",
-      "measure_temperature"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_battery, measure_humidity, measure_temperature",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_utwgoauk",
-    "productId": [
-      "TS0201",
-      "TS0601"
-    ],
-    "driver": "temphumidsensor3",
-    "deviceType": "sensor",
-    "capabilities": [
-      "measure_battery",
-      "alarm_battery",
-      "measure_humidity",
-      "measure_temperature"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "measure_battery, alarm_battery, measure_humidity, measure_temperature",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_zl1kmjqx",
     "productId": [
       "TS0201",
       "TS0601"
@@ -7450,42 +4645,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_7yoranx2",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "thermostatic_radiator_valve",
-    "deviceType": "thermostat",
-    "capabilities": [
-      "alarm_battery",
-      "target_temperature",
-      "thermostat_preset",
-      "window_open"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_battery, target_temperature, thermostat_preset, window_open",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_e9ba97vf",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "thermostatic_radiator_valve",
-    "deviceType": "thermostat",
-    "capabilities": [
-      "alarm_battery",
-      "target_temperature",
-      "thermostat_preset",
-      "window_open"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_battery, target_temperature, thermostat_preset, window_open",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_kds0pmmv",
     "productId": [
       "TS0601"
@@ -7505,24 +4664,6 @@
   },
   {
     "mfr": "_TZE200_kly8gjlz",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "thermostatic_radiator_valve",
-    "deviceType": "thermostat",
-    "capabilities": [
-      "alarm_battery",
-      "target_temperature",
-      "thermostat_preset",
-      "window_open"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_battery, target_temperature, thermostat_preset, window_open",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_py4cm3he",
     "productId": [
       "TS0601"
     ],
@@ -7566,19 +4707,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_el5kt5im",
-    "productId": [
-      "TS0502A"
-    ],
-    "driver": "tunable_spot_GU10",
-    "deviceType": null,
-    "capabilities": [],
-    "hasBattery": false,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE20X_xxxxxxxx",
     "productId": [
       "TS0601"
@@ -7609,92 +4737,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_o4cjetlm",
-    "productId": [
-      "TS0111",
-      "TS0001",
-      "TS011F"
-    ],
-    "driver": "valvecontroller",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_4tlksk8a",
-    "productId": [
-      "TS0111",
-      "TS0001",
-      "TS011F"
-    ],
-    "driver": "valvecontroller",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_j9568h44",
-    "productId": [
-      "TS0111",
-      "TS0001",
-      "TS011F"
-    ],
-    "driver": "valvecontroller",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_iedbgyxt",
-    "productId": [
-      "TS0111",
-      "TS0001",
-      "TS011F"
-    ],
-    "driver": "valvecontroller",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_w0ypwa1f",
-    "productId": [
-      "TS0111",
-      "TS0001",
-      "TS011F"
-    ],
-    "driver": "valvecontroller",
-    "deviceType": "other",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_5ucujjts",
     "productId": [
       "TS0111",
       "TS0001",
@@ -8031,22 +5074,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_p0gzbqct",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "wall_dimmer_tuya",
-    "deviceType": "light",
-    "capabilities": [
-      "onoff",
-      "dim"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, dim",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE204_vevc4c6g",
     "productId": [
       "TS0601"
@@ -8222,72 +5249,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_owgcnkrh",
-    "productId": [
-      "TS0042"
-    ],
-    "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB02_keyjhapk",
-    "productId": [
-      "TS0042"
-    ],
-    "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_oikiyf3b",
-    "productId": [
-      "TS0042"
-    ],
-    "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_dfgbtub0",
-    "productId": [
-      "TS0042"
-    ],
-    "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_h1c2eamp",
-    "productId": [
-      "TS0042"
-    ],
-    "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3400_keyjhapk",
     "productId": [
       "TS0042"
     ],
@@ -8305,32 +5267,6 @@
       "TS0042"
     ],
     "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_fkvaniuu",
-    "productId": [
-      "TS0042"
-    ],
-    "driver": "wall_remote_2_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_a7ouggvs",
-    "productId": [
-      "TS0043"
-    ],
-    "driver": "wall_remote_3_gang",
     "deviceType": "remote",
     "capabilities": [],
     "hasBattery": true,
@@ -8365,59 +5301,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_rrjr1q0u",
-    "productId": [
-      "TS0043"
-    ],
-    "driver": "wall_remote_3_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_w8jwkczz",
-    "productId": [
-      "TS0043"
-    ],
-    "driver": "wall_remote_3_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_gbm10jnj",
-    "productId": [
-      "TS0043"
-    ],
-    "driver": "wall_remote_3_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_yw5tvzsk",
-    "productId": [
-      "TS0043"
-    ],
-    "driver": "wall_remote_3_gang",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_sj7jbgks",
     "productId": [
       "TS0043"
     ],
@@ -8483,19 +5367,6 @@
   },
   {
     "mfr": "_TZ3000_nuombroo",
-    "productId": [
-      "TS004F"
-    ],
-    "driver": "wall_remote_4_gang_2",
-    "deviceType": "remote",
-    "capabilities": [],
-    "hasBattery": true,
-    "vendor": null,
-    "description": null,
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_b3mgfu0d",
     "productId": [
       "TS004F"
     ],
@@ -8586,131 +5457,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_b28wrpvx",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "wall_socket",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_4ux0ondb",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "wall_socket",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_y4ona9me",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "wall_socket",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_5ct6e7ye",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "wall_socket",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_xfpdrwvc",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_9hpxg80k",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_f8tmviy0",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_gidy6sjs",
     "productId": [
       "TS0001",
       "TS0011"
@@ -8758,54 +5505,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_yl3zuyaw",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_3wkqni6o",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_oex7egmt",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_hafsqare",
     "productId": [
       "TS0001",
@@ -8822,87 +5521,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_oaq83gqc",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_hhiodade",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_6eyydfyg",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_ysdv91bk",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_7jx5ypra",
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
-    "driver": "wall_switch_1_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_3u4hripk",
     "productId": [
       "TS0001",
       "TS0011"
@@ -8967,40 +5586,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_fvh3pjaz",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_svoqrno4",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "TUYATEC-O6SNCwd6",
     "productId": [
       "TS0002",
@@ -9035,74 +5620,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_nta0gb8h",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_lupfd8zu",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_yhagrqmd",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_5vujyute",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_2athzhfr",
     "productId": [
       "TS0002",
@@ -9120,109 +5637,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_56bdyj21",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_e98krvvk",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_18ejxno0",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_atp7xmd9",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_mrqea2uu",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_mklgayek",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_p8alo7qa",
     "productId": [
       "TS0002",
       "TS0012",
@@ -9257,23 +5672,6 @@
   },
   {
     "mfr": "TUYATEC-nzrrvgco",
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
-    "driver": "wall_switch_2_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qn8qvk9y",
     "productId": [
       "TS0002",
       "TS0012",
@@ -9341,211 +5739,7 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_wyhuocal",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_cdamjqm9",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TYZB01_mqel1whf",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_hlwm8e96",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_thhxrept",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_2dlwlvex",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qcdqw8nf",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_vvlivusi",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_5e5ptb24",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_lrgccsxm",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_w05exif3",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_qewo8dlz",
-    "productId": [
-      "TS0003",
-      "TS0013",
-      "TS0043"
-    ],
-    "driver": "wall_switch_3_gang",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZ3000_aezbqpcu",
     "productId": [
       "TS0003",
       "TS0013",
@@ -9642,21 +5836,6 @@
   },
   {
     "mfr": "_TZE204_aagrxlbd",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "wall_switch_4_gang_tuya",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_aqnazj70",
     "productId": [
       "TS0601"
     ],
@@ -9796,25 +5975,6 @@
   },
   {
     "mfr": "_TZE204_aoclfnxz",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "wall_thermostat",
-    "deviceType": "thermostat",
-    "capabilities": [
-      "onoff",
-      "thermostat_programming",
-      "measure_temperature",
-      "target_temperature",
-      "child_lock"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, thermostat_programming, measure_temperature, target_temperature, child_lock",
-    "source": "Johan"
-  },
-  {
-    "mfr": "_TZE200_2ekuz3dz",
     "productId": [
       "TS0601"
     ],
@@ -10085,23 +6245,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZE200_qq9mpfhw",
-    "productId": [
-      "TS0601"
-    ],
-    "driver": "water_leak_sensor_tuya",
-    "deviceType": "sensor",
-    "capabilities": [
-      "alarm_water",
-      "measure_battery",
-      "alarm_battery"
-    ],
-    "hasBattery": true,
-    "vendor": null,
-    "description": "alarm_water, measure_battery, alarm_battery",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZE200_jthf7vb6",
     "productId": [
       "TS0601"
@@ -10223,15 +6366,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_zl1kmjqx",
-    "productId": null,
-    "model": "IH-K009",
-    "description": "Temperature & humidity sensor",
-    "vendor": "Tuya",
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_mw1pqqqt",
     "productId": "TS0003",
     "model": "_TZ3000_mw1pqqqt",
@@ -10239,6 +6373,24 @@
     "vendor": "Tuya",
     "source": "Z2M",
     "driver": "switch_3gang"
+  },
+  {
+    "mfr": "_TZ3000_9ni6xxld",
+    "productId": "TS011F",
+    "model": "TS011F_plug_3",
+    "description": "Smart plug (with power monitoring by polling)",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": "plug"
+  },
+  {
+    "mfr": "_TZ3000_cehuw1lw",
+    "productId": "TS011F",
+    "model": "TS011F_plug_3",
+    "description": "Smart plug (with power monitoring by polling)",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": "plug"
   },
   {
     "mfr": "_TZE200_hl0ss9oa",
@@ -10254,15 +6406,6 @@
     "productId": "CK-BL702-MWS-01(7016)",
     "model": "ZG-205ZL",
     "description": "24Ghz/5.8GHz human presence sensor",
-    "vendor": "Tuya",
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_a8sdabtg",
-    "productId": "ZG-227Z",
-    "model": "ZG-227ZL",
-    "description": "Temperature & humidity LCD sensor",
     "vendor": "Tuya",
     "source": "Z2M",
     "driver": null
@@ -10286,11 +6429,29 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_6ocnqlhn",
-    "productId": "TS0601",
-    "model": "TO-Q-SYS-JZT",
-    "description": "Din rail smart meter",
-    "vendor": "Tongou",
+    "mfr": "_TZE200_dikkika5",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_3xfjp0ag",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE200_lhqtjwax",
+    "productId": "ZG-227Z",
+    "model": "ZG-227ZL",
+    "description": "Temperature & humidity LCD sensor",
+    "vendor": "Tuya",
     "source": "Z2M",
     "driver": null
   },
@@ -10350,15 +6511,6 @@
   },
   {
     "mfr": "_TZE200_4pm4pekt",
-    "productId": "TS0601",
-    "model": "ZG-204ZE",
-    "description": "10G mw motion detection",
-    "vendor": "HOBEIAN",
-    "source": "Z2M",
-    "driver": "motion_sensor"
-  },
-  {
-    "mfr": "_TZE200_y8jijhba",
     "productId": "TS0601",
     "model": "ZG-204ZE",
     "description": "10G mw motion detection",
@@ -10481,12 +6633,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_ywagc4rj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_isw9u95y",
     "productId": null,
     "source": "Z2M",
@@ -10505,19 +6651,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_up3pngle",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_qrldbmfn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_rcuyhwe3",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10536,12 +6670,6 @@
   },
   {
     "mfr": "_TZ3000_2mbfxlzr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_n2egfsli",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10601,43 +6729,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_bpkijo14",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_t3vvhrmh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_26fmupbb",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_oxslv1c9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_osu834un",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_vuwtqx0t",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_vuwtqx0t",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10661,25 +6759,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_rkbxtclc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_7ytnacie",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_jowhpxop",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_pjb1ua0m",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10691,31 +6771,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_bq5c8xfe",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_bjawzodf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_qyflbnbj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_44af8vyi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_zl1kmjqx",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10734,18 +6790,6 @@
   },
   {
     "mfr": "_TZE200_mfamvsdb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_dhke3p9w",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_dhke3p9w",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10805,12 +6849,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_d7lpruvi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_upagmta9",
     "productId": null,
     "source": "Z2M",
@@ -10818,12 +6856,6 @@
   },
   {
     "mfr": "_TZE204_yjjdcqsq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_jygvp6fk",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10841,43 +6873,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_d7lpruvi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_hdyjyqjm",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE284_d7lpruvi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_upagmta9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_ksz749x8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_1wnh8bqp",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_1wnh8bqp",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10896,12 +6898,6 @@
   },
   {
     "mfr": "_TZE284_kdqrazmy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_9ern5sfh",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -10985,18 +6981,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_8b9zpaav",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_it9utkro",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_rbbx5mfq",
     "productId": null,
     "source": "Z2M",
@@ -11004,12 +6988,6 @@
   },
   {
     "mfr": "_TZE204_rbbx5mfq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_dwcarsat",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11046,18 +7024,6 @@
   },
   {
     "mfr": "_TZE204_ogkdpgy2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_7bztmfm1",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_7bztmfm1",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11106,12 +7072,6 @@
   },
   {
     "mfr": "_TZE204_yojqa8xn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_chbyv06x",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11171,7 +7131,67 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_dlhhrhs8",
+    "mfr": "_TZ3000_q6a3tepg",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_skueekg3",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_5ng23zjs",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_v7gnj3ad",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_3a9beq8a",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_ark8nv4y",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_fdxihpp7",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_qsp2pwtf",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_kycczpw8",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_bhcpnvud",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_i9oy2rdq",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11201,18 +7221,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_ph1joc22",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_sgb0xhwn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_46vasa5h",
     "productId": null,
     "source": "Z2M",
@@ -11225,37 +7233,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_o4cjetlm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_iedbgyxt",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_h3noz0a5",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_5ucujjts",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_h8ngtlxy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_w0ypwa1f",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11279,43 +7263,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_j0gtlepx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_iivsrikg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_v1srfw9x",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_gb5gaeca",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_r0xgkft5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_umi6vbsz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_p9ao60da",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11333,24 +7281,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_quqaeew6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_th6zqqy6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_wr6g6olr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_q50zhdsc",
     "productId": null,
     "source": "Z2M",
@@ -11358,18 +7288,6 @@
   },
   {
     "mfr": "_TZ3000_qd7hej8u",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_bwlvyjwk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_taspddvq",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11393,12 +7311,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_zbabx9wh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_c0s1xloa",
     "productId": null,
     "source": "Z2M",
@@ -11412,12 +7324,6 @@
   },
   {
     "mfr": "_TZ3210_cieijuw1",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_7hcgjxpc",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11442,12 +7348,6 @@
   },
   {
     "mfr": "_TZ3210_dkul5xix",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_s9lumfhn",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11573,12 +7473,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_jd3z4yig",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_r5afgmkl",
     "productId": null,
     "source": "Z2M",
@@ -11657,30 +7551,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_j2w1dw29",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_nosnx7im",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_7dcddnye",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_nbnmw9nc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZB210_rkgngb5o",
     "productId": null,
     "source": "Z2M",
@@ -11693,145 +7563,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_dxroobu3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_dbilpfqk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_juq7i1fr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3218_ofguu6mz",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3210_cwamkvua",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_lltemgsf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_mg4dy6z6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_bsvqrxru",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3040_wqmtjsyk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_otvn3lne",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_h4wnrtck",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3040_bb6xaihh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_qomxlryd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_jmrgyl7o",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_lf56vpxj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3040_o4mkahkc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_nss8amz9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3040_fwxuzcf4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3040_msl6wxk9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_mcxw5ehu",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_6ygjfyll",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3040_6ygjfyll",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_msl6wxk9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_o4mkahkc",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11903,6 +7641,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_n0lphcok",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_r80pzsb9",
     "productId": null,
     "source": "Z2M",
@@ -11910,6 +7654,12 @@
   },
   {
     "mfr": "_TZ3000_sgpbz53b",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_wn65ixz9",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -11993,18 +7743,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_tgvtvdoc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_p68kms0l",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_tfxwxklq",
     "productId": null,
     "source": "Z2M",
@@ -12012,12 +7750,6 @@
   },
   {
     "mfr": "_TZ3210_2dfy6tol",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_myd45weu",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12035,18 +7767,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_myd45weu",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_myd45weu",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_oitavov2",
     "productId": null,
     "source": "Z2M",
@@ -12054,12 +7774,6 @@
   },
   {
     "mfr": "_TZE284_2nhqasjh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_2se8efxh",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12119,18 +7833,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_tgrzpqf4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_noixx2uz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_nbv4tdaz",
     "productId": null,
     "source": "Z2M",
@@ -12174,12 +7876,6 @@
   },
   {
     "mfr": "_TZE200_vucankjx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_4mh6tyyo",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12311,12 +8007,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_itp8dt7f",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_whpb9yts",
     "productId": null,
     "source": "Z2M",
@@ -12383,12 +8073,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_bxoo2swd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_bxoo2swd",
     "productId": null,
     "source": "Z2M",
@@ -12402,12 +8086,6 @@
   },
   {
     "mfr": "_TZE200_dcnsggvz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_p0gzbqct",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12443,12 +8121,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_estfrmup",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_ktuoyvt5",
     "productId": null,
     "source": "Z2M",
@@ -12467,85 +8139,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_bs93npae",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_dojqjapa",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_8h7wgocw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_e3vhyirx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_femsaaua",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_5iixzdo7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_yruungrl",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_jwv3cwak",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_74hsp7qy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_dwytrmda",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_vw8pawxa",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_xbpt8ewc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_cet6ch1r",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_1dd0d5yi",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12558,12 +8152,6 @@
   },
   {
     "mfr": "_TZE200_oisqyl4o",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_uim07oem",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12587,31 +8175,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_9caxna4s",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE210_m6lwazh9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE210_inpjmc0h",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_eatmkx5j",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_aqnazj70",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12713,12 +8277,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_cduqh1l0",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_emxxanvi",
     "productId": null,
     "source": "Z2M",
@@ -12743,12 +8301,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_tdhnhhiy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_wskr3up8",
     "productId": null,
     "source": "Z2M",
@@ -12756,18 +8308,6 @@
   },
   {
     "mfr": "_TZE204_gxbdnfrh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_g1enhdsi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_r731zlxk",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -12845,12 +8385,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_nh9m9emk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_kyfqmmyl",
     "productId": null,
     "source": "Z2M",
@@ -12881,12 +8415,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_2imwyigp",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_2imwyigp",
     "productId": null,
     "source": "Z2M",
@@ -12899,115 +8427,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_4fsgukof",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_wr2ucaj9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_zsh6uat3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_tj4pwzzm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_2izubafb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_pkfazisv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_0dumfk2z",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ssp0maqm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_p3fph1go",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_9r5jaajv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_nxdziqzc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_irwuzilv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_p6ju8myv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_0zrccfgx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_fsiepnrh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ug1vtuzn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_eo3dttwe",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_jwcixnrz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_u2bbagu4",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13019,19 +8439,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_obacbukl",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_oborybow",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_el5kt5im",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13055,25 +8463,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_8uaoilu9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZB210_lmqquxus",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_zw7wr5uo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_g1glzzfk",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13085,49 +8475,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3210_frm6149r",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_xwqng7ol",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZB210_ue01a0s2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZB210_ayx58ft5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZB210_eiwanbeb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZB210_0bkzabht",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_c2iwpxf1",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_09hzmirw",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13151,12 +8499,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_odygigth",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_kdpxju99",
     "productId": null,
     "source": "Z2M",
@@ -13170,12 +8512,6 @@
   },
   {
     "mfr": "_TZ3000_9cpuaca6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_gek6snaj",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13313,36 +8649,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_3zofvcaa",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_pvlvoxvt",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_lqb7lcq9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_urjf5u18",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_8n4dn1ne",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_bep7ccew",
     "productId": null,
     "source": "Z2M",
@@ -13397,12 +8703,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_dfgbtub0",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_cllghx1k",
     "productId": null,
     "source": "Z2M",
@@ -13439,7 +8739,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_u3nv1jwk",
+    "mfr": "_TZ3000_5tqxpine",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13481,12 +8781,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_b3mgfu0d",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_11pg3ima",
     "productId": null,
     "source": "Z2M",
@@ -13494,6 +8788,12 @@
   },
   {
     "mfr": "_TZ3000_et7afzxz",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_pftj0i7z",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13511,19 +8811,97 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_dzuqwsyg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_qq9mpfhw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_jthf7vb6",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_xkap8wtb",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_qnejhcsu",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_x3ewpzyr",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_mkhkxx1p",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_tgddllx4",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_q8r0bbvy",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_g92baclx",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_qlai3277",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_qaabwu5c",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_qorepo2x",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_ikuxinvo",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_hzlsaltw",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_jsfzkftc",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_0ghwhypc",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_1adss9de",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13536,18 +8914,6 @@
   },
   {
     "mfr": "_TZ3000_iktiy8ue",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_zojh9vz7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_gsat0axs",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13571,12 +8937,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_pxfjrzyj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_ctftgjwb",
     "productId": null,
     "source": "Z2M",
@@ -13584,12 +8944,6 @@
   },
   {
     "mfr": "_TZ3000_8n7lqbm0",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_g8n1n7lg",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13637,25 +8991,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_bvrlqyj7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_7ed9cqgi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_zmy4lslw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ruxexjfz",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13674,12 +9010,6 @@
   },
   {
     "mfr": "_TZ3000_eei0ubpy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_qaa59zqd",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13710,12 +9040,6 @@
   },
   {
     "mfr": "_TZ3210_6smingw0",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_fisb3ajo",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13769,12 +9093,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_dershnvx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_criiahcg",
     "productId": null,
     "source": "Z2M",
@@ -13806,18 +9124,6 @@
   },
   {
     "mfr": "_TZ3000_lugaswf8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_nuenzetq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ruldv5dt",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -13949,43 +9255,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_4o16jdca",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_odzoiovu",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_hbic3ka3",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_lvhy15ix",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_mhhxxjrs",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_iv4eq7eh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_mzcp0of6",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14015,18 +9291,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_tqlv4ug4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_tqlv4ug4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_gjrubzje",
     "productId": null,
     "source": "Z2M",
@@ -14051,19 +9315,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_prits6g4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_xfxpoxe0",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_9hbau615",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14099,37 +9351,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_mmkbptmx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_liygxtcq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_4vobcgd3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_wmcdj3aq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_cowvfni3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_bqcqqjpb",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14153,19 +9375,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_guvc7pdy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_1fuxihti",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_1fuxihti",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14243,18 +9453,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_gaj531w3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_gaj531w3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_rsj5pu8y",
     "productId": null,
     "source": "Z2M",
@@ -14315,37 +9513,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_wzre8hu2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_odlldrxx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_m6lwazh9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_swlgvdlh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_2jwrgrro",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_xu4a5rhj",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14357,25 +9525,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE600_ogyg1y6b",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_cpbo62rn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_libht6ua",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_libht6ua",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14400,18 +9550,6 @@
   },
   {
     "mfr": "_TZE204_g5xqosu7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_fzo2pocs",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_9vpe3fl1",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14442,12 +9580,6 @@
   },
   {
     "mfr": "_TZE284_1lvln0x6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_debczeci",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14495,12 +9627,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_clm4gdw4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_ax8a8ahx",
     "productId": null,
     "source": "Z2M",
@@ -14520,12 +9646,6 @@
   },
   {
     "mfr": "_TZE200_ckud7u2l",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ywdxldoj",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14597,25 +9717,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_rufdtfyv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_lpwgshtl",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_rk1wojce",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_rndg81sf",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14628,12 +9730,6 @@
   },
   {
     "mfr": "_TZE200_xby0s3ta",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_cpmgn2cf",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14663,36 +9759,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_68nvbio9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_pw7mji0l",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_cf1sl3tj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_nw1r9hp6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_9p5xmj5r",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_eevqq1uv",
     "productId": null,
     "source": "Z2M",
@@ -14711,18 +9777,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_68nvbi09",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_vexa5o82",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_sfqyhvpv",
     "productId": null,
     "source": "Z2M",
@@ -14735,12 +9789,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_icka1clh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_sur6q7ko",
     "productId": null,
     "source": "Z2M",
@@ -14748,12 +9796,6 @@
   },
   {
     "mfr": "_TZE200_hue3yfsn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_e9ba97vf",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14789,37 +9831,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_7yoranx2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_kds0pmmv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_py4cm3he",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_wsbfwodu",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_x9axofse",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_lhzapfg9",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14831,151 +9843,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_0hg58wyk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_bvu2wnxz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_6rdj8dzm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_9xfjixap",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_jkfbph7l",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_rxntag7i",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_4utwozi2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_yqgbrdyo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_p3dbf6qs",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE200_rxq4iti9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_ogx8u5z6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_ogx8u5z6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_o3x45p96",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_c6wv4xyo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_o3x45p96",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ow09xlxm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_rv6iuyxb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_rv6iuyxb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_suxywabt",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_d3z1ukqw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_pcdmj88b",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_pcdmj88b",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_m5r5nlxc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_p3dbf6qs",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_hvaxb2tc",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -14993,43 +9867,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_a4bpgplm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_dv8abrrz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_z1tyspqw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_bvrlmajk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_rtrmfadk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_cvcu2p6e",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_9mjy74mp",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15041,55 +9879,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_9mjy74mp",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_qyr2m29i",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_ltwbm23f",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE284_ltwbm23f",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_xalsoe3m",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_ymldrmzx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_4ux0ondb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_b28wrpvx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_4ux0ondb",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15119,19 +9915,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_2putqrmw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_2putqrmw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ksw8qtmt",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15143,31 +9927,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_ss98ec5d",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_okaz9tjs",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_y4ona9me",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_266azbg3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_3ias4w4o",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15192,6 +9958,12 @@
   },
   {
     "mfr": "_TZ3008_reatplte",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3008_1a8m8wd6",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15227,37 +9999,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_amdymr7l",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_zloso4jk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_w0qqde0g",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_0zfrhq4i",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_typdpbpg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_hyfvrar3",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15270,12 +10012,6 @@
   },
   {
     "mfr": "_TZ3000_8a833yls",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_bfn1w0mm",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15335,31 +10071,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_9tg32trw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_0zaf1cr8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_ntcy3xu1",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_0zaf1cr8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ntcy3xu1",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15377,73 +10089,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_m9skfctm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_rccxox8p",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_rccxox8p",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_ux5v4dbd",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE200_t5p1vj8r",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_uebojraa",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_vzekyi4c",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_yh7aoahi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_dq1mfjug",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_ytibqbra",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_o9ofysmo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_xc3vwx5a",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15467,25 +10119,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_6ycgarab",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_5d3vhjro",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_cjbofhxw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_cjbofhxw",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15510,18 +10144,6 @@
   },
   {
     "mfr": "_TZE204_m64smti7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_wbhaespm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_wbhaespm",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15552,12 +10174,6 @@
   },
   {
     "mfr": "_TZE204_rhblgy0z",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_byzdayie",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15599,31 +10215,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_qmi1cfuq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_txpirhfq",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_ji4araar",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_tw4ztbp4",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_18ejxno0",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15701,6 +10299,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_excgg5kb",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_mdj7kra9",
     "productId": null,
     "source": "Z2M",
@@ -15708,18 +10312,6 @@
   },
   {
     "mfr": "_TZ3000_u3oupgdy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_imaccztn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_imaccztn",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15851,24 +10443,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3002_uu4uircb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3002_yptomml1",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3002_pw4ad2xa",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3002_sal078g8",
     "productId": null,
     "source": "Z2M",
@@ -15876,18 +10450,6 @@
   },
   {
     "mfr": "_TZ3002_sfh0jtz0",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_cumqn2av",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ300A_fhbcipep",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15905,73 +10467,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_g9a3awaj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_6kijc7nd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_6kijc7nd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_2ekuz3dz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_agcxaw3f",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE200_viy9ihs7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_lzriup1j",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_xnbkhhdr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_xnbkhhdr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_oh8y8pv8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_gops3slb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_gops3slb",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -15990,18 +10492,6 @@
   },
   {
     "mfr": "_TZE204_mwomyz5n",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_cvub6xbb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_cvub6xbb",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16037,12 +10527,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_t9qqxn70",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_do6txrcw",
     "productId": null,
     "source": "Z2M",
@@ -16067,37 +10551,19 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_j6adk9id",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_lzdjjfss",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
+    "mfr": "_TZ3210_kjafhwd2",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_8bxrzyxz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ky0fq4ho",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_vbfp8eyv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_6l1pjfqe",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16110,6 +10576,12 @@
   },
   {
     "mfr": "_TZ3000_viqwamhn",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_ky0fq4ho",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16133,12 +10605,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_nklqjk62",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_jktmrpoj",
     "productId": null,
     "source": "Z2M",
@@ -16152,12 +10618,6 @@
   },
   {
     "mfr": "_TZE200_wfxuhoea",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_wfxuhoea",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16247,12 +10707,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_hkdl5fmv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_4fjiwweb",
     "productId": null,
     "source": "Z2M",
@@ -16284,18 +10738,6 @@
   },
   {
     "mfr": "_TZ3000_gwkzibhs",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_ugi8ky6u",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_1fqpj6qz",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16337,12 +10779,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_2m38mh6k",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_mgusv51k",
     "productId": null,
     "source": "Z2M",
@@ -16361,43 +10797,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_sfibawtr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_ikvncluo",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE200_lyetpprm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_jva8ink8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_xpq2rzhq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_holel4dk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_xpq2rzhq",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16445,6 +10851,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZE284_xpq2rzhq",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZE284_atuj3i0w",
     "productId": null,
     "source": "Z2M",
@@ -16482,18 +10894,6 @@
   },
   {
     "mfr": "_TZE204_ztqnh5cg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_iadro9bf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_iadro9bf",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16541,18 +10941,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3290_uc8lwbi2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3290_8xzb2ghn",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3290_s6ezpa3j",
     "productId": null,
     "source": "Z2M",
@@ -16560,12 +10948,6 @@
   },
   {
     "mfr": "_TZ3290_acv1iusl",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_itnrsufe",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16584,42 +10966,6 @@
   },
   {
     "mfr": "_TZE200_mx6u6l4y",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_qoy0ekbd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_znbl8dj5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_dikkika5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_3xfjp0ag",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_lhqtjwax",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_y8wkaq6w",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16668,72 +11014,6 @@
   },
   {
     "mfr": "_TZE200_f1pvdgoh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_me6wtiqs",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ghynnvos",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_8isdky6j",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_p6fuhvez",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_aj0oxo1i",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_3towulqd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_1ibpyhdc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_bh3n6gk8",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ttcovulf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_gjldowol",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_s6hzw8g2",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16794,18 +11074,6 @@
   },
   {
     "mfr": "_TZE200_juzago6i",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_zxbtub8r",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_cyuyd5az",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16949,19 +11217,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_lawxy9e2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_lawxy9e2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_ikul00sx",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -16973,7 +11229,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_yi0n4xfd",
+    "mfr": "_TZ3000_qystbcjg",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17021,12 +11277,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_5rpu3r0d",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_65ajyxua",
     "productId": null,
     "source": "Z2M",
@@ -17064,48 +11314,6 @@
   },
   {
     "mfr": "_TZE200_hewlydpz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_p6vz3wzt",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_p6vz3wzt",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_uqfph8ah",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_waa352qv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZB000_42ha4rsc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_jhkttplm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_5nldle7w",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17351,12 +11559,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_ac0fhfiq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_ac0fhfiq",
     "productId": null,
     "source": "Z2M",
@@ -17405,31 +11607,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_ad2jkxwh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_72bewjky",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_kow4ok3t",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_adlblwab",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_7sjncirf",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17459,61 +11637,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_cfnprab5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_o005nuxx",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_gdyjfvgm",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZ3000_pl5v1yyy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_djgzdba9",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3210_dse8ogfy",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_j4pdtz9v",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_7vgttna6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_a04acm9s",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3210_cm9mbpr1",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17537,31 +11667,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_vhy3iakz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_k6jhsr0q",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_unsxl4ir",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_nvodulvi",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_nvodulvi",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17621,30 +11727,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_drs6j6m5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_k7mfgaen",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_fncxk3ob",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_fncxk3ob",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_vmcgja59",
     "productId": null,
     "source": "Z2M",
@@ -17694,12 +11776,6 @@
   },
   {
     "mfr": "_TZE204_e9ajs4ft",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_sbyx0lm6",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -17783,12 +11859,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_mpbki2zm",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_mhxn2jso",
     "productId": null,
     "source": "Z2M",
@@ -17855,12 +11925,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_muvkrjr5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_5ajpkyq6",
     "productId": null,
     "source": "Z2M",
@@ -17873,13 +11937,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_3n2minvf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_tyg4yiat",
+    "mfr": "_TZ3210_wts1g2oh",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18041,12 +12099,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_tre6haif",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_uxllnywp",
     "productId": null,
     "source": "Z2M",
@@ -18095,6 +12147,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZE284_kv1nvirl",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZE204_nbkshs6k",
     "productId": null,
     "source": "Z2M",
@@ -18138,108 +12196,6 @@
   },
   {
     "mfr": "_TZE284_zqq3cipq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_iba1ckek",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_hggxgsjj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_yjryxpot",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_afycb3cg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_kccdzaeo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_s7rsrtbg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_tmszbtzq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_bfmfhxra",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ahpcyzth",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_kijxnb8q",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_khzbklyh",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_df04ghrb",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_toeldckg",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_cqtamhh5",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_xlnzk169",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_llvwkkde",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_wqashyqo",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18329,18 +12285,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_8zizsafo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_iilebqoo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_eaulras5",
     "productId": null,
     "source": "Z2M",
@@ -18366,12 +12310,6 @@
   },
   {
     "mfr": "_TZE204_3q3maeoo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_eekpf0ft",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18408,18 +12346,6 @@
   },
   {
     "mfr": "_TZE284_a14rjslz",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_atdqo4nj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_g9chy2ib",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18545,12 +12471,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_r2fgo9ks",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_rsylfthg",
     "productId": null,
     "source": "Z2M",
@@ -18582,24 +12502,6 @@
   },
   {
     "mfr": "_TZ3002_eda6eitk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_hurauima",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3002_tdf2m4ch",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_oc7xqqbs",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18647,31 +12549,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_jsaqgakf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_u6x1zyv2",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_2pddnnrk",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_no6qtgtl",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_gubdgai2",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18683,37 +12561,13 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_npj9bug3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_wrmhp6b3",
     "productId": null,
     "source": "Z2M",
     "driver": null
   },
   {
-    "mfr": "_TZE21C_i2ij4rb3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_5ys44kzo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_rul9yxcc",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_tgeqdjgk",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18767,25 +12621,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_0hcjew5p",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_6vwfjkcj",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_3regm3h6",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_ouy7vpm1",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18821,25 +12657,7 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_65gzcss7",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_ka8l86iu",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_zbfmvj13",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_kz1anoi8",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18863,24 +12681,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE204_mvtclclq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_mvtclclq",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_vjpaih9f",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE284_vjpaih9f",
     "productId": null,
     "source": "Z2M",
@@ -18888,12 +12688,6 @@
   },
   {
     "mfr": "_TZE200_snfdqllf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_gyzlwu5q",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18918,12 +12712,6 @@
   },
   {
     "mfr": "_TZE284_iwyqtclw",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_d4h8j2n6",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18959,12 +12747,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE200_qcasmfan",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_byzdayie",
     "productId": null,
     "source": "Z2M",
@@ -18972,12 +12754,6 @@
   },
   {
     "mfr": "_TZE200_fphxkxue",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_wc2w9t1s",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -18996,18 +12772,6 @@
   },
   {
     "mfr": "_TZE284_who1jxwd",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE284_hdml1aav",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_qaxkdgyt",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -19062,12 +12826,6 @@
   },
   {
     "mfr": "_TZE284_aaeasoll",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ300A_82iab0pn",
     "productId": null,
     "source": "Z2M",
     "driver": null
