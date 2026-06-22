@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.66",
+  "version": "9.0.67",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -97276,7 +97276,6 @@
           "TS0601",
           "TS0225",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "endpoints": {
@@ -100066,9 +100065,7 @@
           "_tze204_sh11h1f5",
           "_tze284_sh11h1f5",
           "_tze204_seq9cm6u",
-          "_tze284_seq9cm6u",
-          "_TZE200_seq9cm6u",
-          "_tze200_seq9cm6u"
+          "_tze284_seq9cm6u"
         ]
       },
       "images": {
@@ -117233,7 +117230,6 @@
           "TS0021",
           "DoorWindow-Sensor-ZB3.0",
           "MCT-340 E",
-          "TS0207",
           "q9mpfhw",
           "Excellux"
         ],
@@ -122962,7 +122958,6 @@
           "TS0601",
           "TS0225",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "endpoints": {
@@ -129381,8 +129376,7 @@
           "_tze200_upgcbody"
         ],
         "productId": [
-          "TS0601",
-          "TS0207"
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/plug_smart/assets/learnmode.svg",
@@ -149739,7 +149733,6 @@
           "CK-TLSR8656-SS5-01(7002)",
           "SNZB-03R2",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "learnmode": {
@@ -150169,7 +150162,6 @@
           "TS0601",
           "TS0225",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "endpoints": {
@@ -150732,7 +150724,6 @@
           "TS0601",
           "TS0225",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "learnmode": {
@@ -165788,7 +165779,6 @@
           "TS0601",
           "TS0225",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "endpoints": {
@@ -169871,7 +169861,6 @@
       "zigbee": {
         "productId": [
           "TS0601",
-          "TS0207",
           "q9mpfhw",
           "Excellux"
         ],
@@ -170355,7 +170344,6 @@
           "TS0021",
           "DoorWindow-Sensor-ZB3.0",
           "MCT-340 E",
-          "TS0207",
           "q9mpfhw",
           "Excellux"
         ],
@@ -172619,7 +172607,6 @@
           "TS0225",
           "TS0601",
           "Excellux",
-          "TS0207",
           "TS0001"
         ],
         "learnmode": {
@@ -189767,9 +189754,7 @@
           "_tze200_8gang001",
           "_tze200_ws8g8u0b",
           "_tze204_8gang001",
-          "_tze204_ws8g8u0b",
-          "HOBEIAN",
-          "hobeian"
+          "_tze204_ws8g8u0b"
         ],
         "productId": [
           "TS0601_8gang",
@@ -192874,7 +192859,6 @@
           "TS0204",
           "TS0205",
           "TS0206",
-          "TS0207",
           "TS0208",
           "TS0209",
           "TS0210",
@@ -192997,7 +192981,6 @@
       "energy": {},
       "zigbee": {
         "productId": [
-          "TS0207",
           "TS0601_repeater",
           "TS0002"
         ],
@@ -199129,7 +199112,6 @@
           "_tz3000_6oabgtzv"
         ],
         "productId": [
-          "TS0207",
           "q9mpfhw"
         ],
         "endpoints": {
@@ -199618,7 +199600,6 @@
           "_tze200_qq9mpfhw"
         ],
         "productId": [
-          "TS0207",
           "q9mpfhw",
           "ZG-222Z",
           "ZG-223Z",
@@ -207846,9 +207827,7 @@
           "_tz3000_misw04hq",
           "_tz3000_wlquqiiz"
         ],
-        "productId": [
-          "TS0207"
-        ],
+        "productId": [],
         "endpoints": {
           "1": {
             "clusters": [
