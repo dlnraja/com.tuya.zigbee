@@ -94,10 +94,11 @@ if (!app) { exitWithResults(); process.exit(1); }
 
 // ─── M05 — Required fields ────────────────────────────────────────────────────
 section('M05 — Required Fields');
+// v9.0.69: SDK3 uses 'sdkVersion' instead of 'sdk'. Accept either.
 const REQUIRED_FIELDS = [
   ['id', 'string'],
   ['version', 'string'],
-  ['sdk', 'number'],
+  ['sdkVersion', 'number'],   // SDK3 format (replaces 'sdk')
   ['name', 'object'],
   ['category', null],         // validated separately
   ['images', 'object'],
