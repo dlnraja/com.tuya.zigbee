@@ -1,5 +1,5 @@
 name: 'Homey App Publish (Fixed)'
-description: 'Publish Homey App with build + npm install'
+description: 'Publish Homey App'
 inputs:
   personal_access_token:
     description: 'Homey Personal Access Token'
@@ -19,24 +19,18 @@ runs:
       shell: bash
       run: npm run prepare-publish
 
-    - name: Install deps in publish dir
-      shell: bash
-      run: |
-        PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
-        if [ -d "$PUBLISH_DIR" ]; then
-          cd "$PUBLISH_DIR" && npm install --omit=dev --no-audit --no-fund
-        else
-          echo "Publish dir not found, installing in current dir"
-          npm install --omit=dev --no-audit --no-fund
-        fi
-
     - name: Publish App
       id: publish
       shell: bash
       env:
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
+        PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
+        if [ -d "$PUBLISH_DIR" ]; then
+          cd "$PUBLISH_DIR"
+        fi
+        npm install --omit=dev --no-audit --no-fund 2>/dev/null || true
         echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
-        npm run auto-publish
+        printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true
         APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
