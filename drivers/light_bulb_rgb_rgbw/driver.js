@@ -23,7 +23,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('light_bulb_rgb_rgbw_bulb_rgb_is_on');
@@ -33,7 +33,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition light_bulb_rgb_rgbw_bulb_rgb_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition light_bulb_rgb_rgbw_bulb_rgb_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_off');
@@ -56,7 +56,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_toggle');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_set_dim');
@@ -79,7 +79,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_set_dim: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_smart_bulb_rgb_set_dim: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_turn_on');
@@ -90,7 +90,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_turn_off');
@@ -101,7 +101,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_toggle');
@@ -113,7 +113,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_bulb_rgb_set_brightness');
@@ -124,7 +124,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_rgb_rgbw_bulb_rgb_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

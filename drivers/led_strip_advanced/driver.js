@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition led_strip_advanced_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition led_strip_advanced_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -34,7 +34,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action led_strip_advanced_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_advanced_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('led_strip_advanced_turn_off');
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action led_strip_advanced_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_advanced_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('led_strip_advanced_toggle');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action led_strip_advanced_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_advanced_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('led_strip_advanced_set_dim');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action led_strip_advanced_set_dim: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_advanced_set_dim: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('led_strip_advanced_set_brightness');
@@ -79,7 +79,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action led_strip_advanced_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action led_strip_advanced_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

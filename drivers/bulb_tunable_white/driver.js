@@ -25,7 +25,7 @@ class BulbTunableDriver extends ZigBeeDriver {
         });
       }
     } catch (err) {
-      this.error(`Condition card ${P}_is_on registration error: ${err.message}`);
+      if (this.developerDebugMode) { this.error(`Condition card ${P}_is_on registration error: ${err.message}`); };
     }
 
     const actions = [
@@ -73,7 +73,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           });
         }
       } catch (err) {
-        this.error(`Action card ${id} registration error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`Action card ${id} registration error: ${err.message}`); };
       }
     }
 

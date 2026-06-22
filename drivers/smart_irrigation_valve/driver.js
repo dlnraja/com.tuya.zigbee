@@ -47,7 +47,7 @@ class SmartIrrigationValveDriver extends ZigBeeDriver {
           });
         }
       } catch (e) {
-        this.error(`Action ${id} registration error: ${e.message}`);
+        if (this.developerDebugMode) { this.error(`Action ${id} registration error: ${e.message}`); };
       }
     }
 

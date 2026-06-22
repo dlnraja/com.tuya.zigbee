@@ -31,7 +31,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition hvac_air_conditioner_air_conditioner_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hvac_air_conditioner_air_conditioner_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('hvac_air_conditioner_is_on');
@@ -41,7 +41,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition hvac_air_conditioner_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hvac_air_conditioner_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -53,7 +53,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_off');
@@ -64,7 +64,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_toggle');
@@ -76,7 +76,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_set_target_temperature');
@@ -87,7 +87,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_set_target_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_air_conditioner_set_target_temperature: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_turn_on');
@@ -98,7 +98,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_turn_off');
@@ -109,7 +109,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_toggle');
@@ -121,7 +121,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_air_conditioner_set_temperature');
@@ -132,7 +132,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_air_conditioner_set_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_air_conditioner_set_temperature: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

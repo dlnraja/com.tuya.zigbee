@@ -45,7 +45,7 @@ class IRRemoteDriver extends Driver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action blaster_remote_ir_remote_send_code: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action blaster_remote_ir_remote_send_code: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('blaster_remote_ir_remote_start_learning');
@@ -56,7 +56,7 @@ class IRRemoteDriver extends Driver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action blaster_remote_ir_remote_start_learning: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action blaster_remote_ir_remote_start_learning: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

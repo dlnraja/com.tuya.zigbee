@@ -23,7 +23,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_presence_is_present: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_presence_is_present: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_presence_illuminance_above');
@@ -33,7 +33,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_presence_illuminance_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_presence_illuminance_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_presence_distance_within');
@@ -43,7 +43,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_presence_distance_within: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_presence_distance_within: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_motion_presence_motion_active');
@@ -53,7 +53,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_motion_presence_motion_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_motion_presence_motion_active: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

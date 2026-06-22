@@ -43,7 +43,7 @@ class TuyaComprehensiveAirMonitorDriver extends ZigBeeDriver {
           });
         }
       } catch (err) {
-        this.error(`Condition card ${id} registration error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`Condition card ${id} registration error: ${err.message}`); };
       }
     }
   }

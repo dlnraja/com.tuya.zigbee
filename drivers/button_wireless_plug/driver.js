@@ -45,7 +45,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           this.log(`[FLOW] ✅ Condition ${id} registered`);
         }
       } catch (err) {
-        this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`); };
       }
     }
 
@@ -95,7 +95,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
           this.log(`[FLOW] ✅ Action ${id} registered`);
         }
       } catch (err) {
-        this.error(`[FLOW] ⚠️ Action ${id} registration error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`[FLOW] ⚠️ Action ${id} registration error: ${err.message}`); };
       }
     }
 

@@ -19,7 +19,7 @@ class SwitchTempSensorDriver extends Homey.Driver {
         });
       }
     } catch (err) {
-      this.error(`Flow card error: ${err.message}`);
+      if (this.developerDebugMode) { this.error(`Flow card error: ${err.message}`); };
     }
   }
 

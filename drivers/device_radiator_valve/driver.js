@@ -25,7 +25,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_radiator_valve_set_target_temperature_device_radiator_valve: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_radiator_valve_set_target_temperature_device_radiator_valve: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_radiator_valve_set_temperature_device_radiator_valve');
@@ -36,7 +36,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_radiator_valve_set_temperature_device_radiator_valve: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_radiator_valve_set_temperature_device_radiator_valve: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

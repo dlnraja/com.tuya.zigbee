@@ -24,7 +24,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_power_above');
@@ -35,7 +35,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition lcdtemphumidsensor_plug_energy_power_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_power_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('lcdtemphumidsensor_plug_energy_energy_above');
@@ -46,7 +46,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition lcdtemphumidsensor_plug_energy_energy_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lcdtemphumidsensor_plug_energy_energy_above: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -58,7 +58,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lcdtemphumidsensor_plug_energy_turn_off');
@@ -69,7 +69,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lcdtemphumidsensor_plug_energy_toggle');
@@ -81,7 +81,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lcdtemphumidsensor_plug_energy_reset_meter');
@@ -93,7 +93,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lcdtemphumidsensor_plug_energy_reset_meter: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lcdtemphumidsensor_plug_energy_reset_meter: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition lock_smart_is_locked: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_is_locked: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('lock_smart_tamper_active');
@@ -32,7 +32,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition lock_smart_tamper_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition lock_smart_tamper_active: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lock_smart_lock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_lock: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('lock_smart_unlock');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action lock_smart_unlock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action lock_smart_unlock: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

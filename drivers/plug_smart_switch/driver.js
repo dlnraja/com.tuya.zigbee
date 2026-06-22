@@ -44,7 +44,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition plug_smart_switch_switch_1gang_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition plug_smart_switch_switch_1gang_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -56,7 +56,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_turn_off');
@@ -67,7 +67,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_toggle');
@@ -79,7 +79,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_set_backlight');
@@ -90,7 +90,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_set_backlight: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_set_backlight: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_set_backlight_color');
@@ -101,7 +101,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_set_backlight_color: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_set_backlight_color: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_set_backlight_brightness');
@@ -112,7 +112,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_set_backlight_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_set_backlight_brightness: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_set_countdown');
@@ -124,7 +124,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_set_countdown: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_set_countdown: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_set_child_lock');
@@ -136,7 +136,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_set_child_lock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_set_child_lock: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('plug_smart_switch_switch_1gang_set_scene_mode');
@@ -147,7 +147,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action plug_smart_switch_switch_1gang_set_scene_mode: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action plug_smart_switch_switch_1gang_set_scene_mode: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

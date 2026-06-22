@@ -40,7 +40,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_water') === true;
         });
       }
-    } catch (err) { this.error(`Condition rain_sensor_is_raining: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition rain_sensor_is_raining: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('rain_sensor_rain_intensity_above');
@@ -51,7 +51,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition rain_sensor_rain_intensity_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition rain_sensor_rain_intensity_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('rain_sensor_water_detected');
@@ -61,7 +61,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_water') === true;
         });
       }
-    } catch (err) { this.error(`Condition rain_sensor_water_detected: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition rain_sensor_water_detected: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

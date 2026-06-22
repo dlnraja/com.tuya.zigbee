@@ -33,7 +33,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_co2_below');
@@ -43,7 +43,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_quality_air_quality_co2_co2_below: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_co2_below: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_quality_air_quality_co2_air_quality_good');
@@ -53,7 +53,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_quality_air_quality_co2_air_quality_good: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_quality_air_quality_co2_air_quality_good: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

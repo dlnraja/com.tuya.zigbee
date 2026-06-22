@@ -38,7 +38,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition bed_sensor_is_occupied: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition bed_sensor_is_occupied: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

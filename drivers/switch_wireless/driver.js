@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wireless_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wireless_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -34,7 +34,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wireless_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wireless_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wireless_turn_off');
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wireless_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wireless_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wireless_toggle');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wireless_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wireless_toggle: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }
