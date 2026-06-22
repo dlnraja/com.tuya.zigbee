@@ -42,6 +42,7 @@ export interface TuyaClosuresWindowCovering {
         tuyaCalibration: number;
         tuyaMotorReversal: number;
         moesCalibrationTime: number;
+        tuyaSwitchType: number;
     };
     commands: never;
     commandResponses: never;
@@ -1946,7 +1947,7 @@ export const valueConverter = {
     lockUnlock: valueConverterBasic.lookup({LOCK: true, UNLOCK: false}),
     localTempCalibration1: {
         from: (v: number) => {
-            if (v > 55) v -= 0x100000000;
+            if (v > 0x7fffffff) v -= 0x100000000;
             return v / 10;
         },
         to: (v: number) => {
@@ -3904,19 +3905,16 @@ const tuyaFz = {
                                 (c) => c.cluster.name === "haElectricalMeasurement" && c.attribute.name === lookup[key],
                             );
                             const time = (configuredReporting ? configuredReporting.minimumReportInterval : 5) * 2 + 1;
-                            globalStore.putValue(
-                                msg.endpoint,
-                                key,
-                                setTimeout(() => {
-                                    const payload = {[key]: value};
-                                    // Device takes a lot of time to report power 0 in some cases. When current == 0 we can assume power == 0
-                                    // https://github.com/Koenkk/zigbee2mqtt/discussions/19680#discussioncomment-7868445
-                                    if (key === "current") {
-                                        payload.power = 0;
-                                    }
-                                    publish(payload);
-                                }, time * 1000),
-                            );
+                            const timer = setTimeout(() => {
+                                const payload = {[key]: value};
+                                // Device takes a lot of time to report power 0 in some cases. When current == 0 we can assume power == 0
+                                // https://github.com/Koenkk/zigbee2mqtt/discussions/19680#discussioncomment-7868445
+                                if (key === "current") {
+                                    payload.power = 0;
+                                }
+                                publish(payload);
+                            }, time * 1000).unref();
+                            globalStore.putValue(msg.endpoint, key, timer);
                             delete result[key];
                         }
                     }
@@ -4505,7 +4503,7 @@ const tuyaModernExtend = {
                                     if (globalStore.getValue(event.data.device.ieeeAddr, "query_interval") === timer) {
                                         setTimer();
                                     }
-                                }, queryIntervalSeconds * 1000);
+                                }, queryIntervalSeconds * 1000).unref();
                                 globalStore.putValue(event.data.device.ieeeAddr, "query_interval", timer);
                             };
                             setTimer();
@@ -5086,6 +5084,16 @@ const tuyaModernExtend = {
 
         return {exposes: [exp], fromZigbee: newFromZigbee, isModernExtend: true};
     },
+    tuyaCoverSwitchType: (args?: Partial<modernExtend.EnumLookupArgs<"closuresWindowCovering">>) =>
+        modernExtend.enumLookup<"closuresWindowCovering", TuyaClosuresWindowCovering>({
+            name: "switch_type",
+            lookup: {momentary: 0, toggle: 1},
+            cluster: "closuresWindowCovering",
+            attribute: "tuyaSwitchType",
+            description: "Type of the installed switch",
+            entityCategory: "config",
+            ...args,
+        }),
     tuyaSwitchMode: (args?: Partial<modernExtend.EnumLookupArgs<"manuSpecificTuya3">>) =>
         modernExtend.enumLookup<"manuSpecificTuya3", ManuSpecificTuya3>({
             name: "switch_mode",
@@ -5283,7 +5291,8 @@ const tuyaClusters = {
                 tuyaMovingState: {name: "tuyaMovingState", ID: 0xf000, type: Zcl.DataType.ENUM8, write: true, max: 0xff},
                 tuyaCalibration: {name: "tuyaCalibration", ID: 0xf001, type: Zcl.DataType.ENUM8, write: true, max: 0xff},
                 tuyaMotorReversal: {name: "tuyaMotorReversal", ID: 0xf002, type: Zcl.DataType.ENUM8, write: true, max: 0xff},
-                moesCalibrationTime: {name: "moesCalibrationTime", ID: 0xf003, type: Zcl.DataType.UINT16, write: true, max: 0xffff},
+                moesCalibrationTime: {name: "moesCalibrationTime", ID: 0xf003, type: Zcl.DataType.ENUM8, write: true, max: 0xffff},
+                tuyaSwitchType: {name: "tuyaSwitchType", ID: 0x8000, type: Zcl.DataType.ENUM8, write: true, max: 0xff},
             },
             commands: {},
             commandsResponse: {},
