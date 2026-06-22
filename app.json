@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.63",
+  "version": "9.0.64",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -185866,9 +185866,7 @@
           "_TZE204_3Z6HCA0Q",
           "_TZE284_4AR89TR1",
           "_tze204_3z6hca0q",
-          "_tze284_4ar89tr1",
-          "HOBEIAN",
-          "hobeian"
+          "_tze284_4ar89tr1"
         ],
         "productId": [
           "TS0601"
