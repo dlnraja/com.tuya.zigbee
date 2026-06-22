@@ -129,7 +129,7 @@ function phase1a_validateAppJson(app) {
   const warnings  = [];
 
   // Top-level SDK3 requis
-  const REQUIRED  = ['id','version','compatibility','sdk','name','description','category','permissions','images','author'];
+  const REQUIRED  = ['id','version','compatibility','sdkVersion','name','description','category','permissions','images','author'];
   REQUIRED.forEach(k => { if (!app[k]) errors.push('TOP: champ manquant: ' + k); });
   if (app.sdk !== 3) errors.push('SDK doit être 3, trouvé: ' + app.sdk);
   if (!app.brandColor)           warnings.push('brandColor absent');
