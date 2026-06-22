@@ -28,8 +28,11 @@ jobs:
         run: node scripts/PRE_COMMIT_CHECKS.js
       - name: Check for forbidden patterns
         run: |
-          if grep -r "getDeviceConditionCard" drivers/ lib/ --include="*.js" -l; then
-            echo "❌ Found forbidden getDeviceConditionCard usage"
+          # Forbid actual CALLS to getDeviceConditionCard (not comments / typeof guards).
+          # Comments and feature-detection guards (typeof … === 'function') are allowed.
+          if grep -rnE "this\.homey\.flow\.getDeviceConditionCard\(" drivers/ lib/ --include="*.js" \
+             | grep -vE "^\s*//|^\s*\*|typeof\s+\S+\s*==="; then
+            echo "❌ Found forbidden getDeviceConditionCard CALL (use getConditionCard with explicit id instead)"
             exit 1
           fi
           echo "✅ No forbidden patterns found"

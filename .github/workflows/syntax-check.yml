@@ -45,9 +45,13 @@ jobs:
 
       - name: Check forbidden patterns
         run: |
-          # PF-01: if/ternary hybrid
-          if grep -rn "if.*return.*:.*null" lib/ --include="*.js"; then
-            echo "❌ PF-01 pattern detected: if/ternary hybrid"
+          # PF-01: if/ternary hybrid anti-pattern — an `if(...)` whose body is a
+          # return statement using a ternary `? ... : null`. The hybrid is
+          # ambiguous (should be either a pure if/else OR a pure ternary).
+          # Pattern requires: if(...) return <expr> ? <expr> : null  on one line.
+          # Does NOT match a plain ternary-return-null without a preceding if.
+          if grep -rnE "if\s*\([^)]*\)\s*return\s+[^;]*\?[^;]*:\s*null" lib/ --include="*.js"; then
+            echo "❌ PF-01 pattern detected: if/ternary hybrid (if(...) return ? : null)"
             exit 1
           fi
           # PF-02: unmatched parens in Math.round
