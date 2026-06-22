@@ -1,17 +1,49 @@
 # Z2M Fingerprint Sync Report
 
-**Date:** 2026-03-30T06:33:50.766Z
+**Date:** 2026-06-22T12:02:33.751Z
 
 | Metric | Local | Z2M | Missing |
 |---|---|---|---|
-| Manufacturer Names | 4001 | 26 | 2 |
-| Product IDs | 559 | 1664 | 1468 |
+| Manufacturer Names | 6722 | 50 | 34 |
+| Product IDs | 566 | 1714 | 1517 |
 
 ## Missing Manufacturer Names
 
 | Value | Z2M Source | Suggested Driver |
 |---|---|---|
+| AOYAN   | tuya | generic_diy |
+| AOYAN | tuya | generic_diy |
+| _TZ3000_mw1pqqqt | tuya | generic_diy |
+| _TZ3000_9ni6xxld | tuya | generic_diy |
+| _TZ3000_cehuw1lw | tuya | generic_diy |
+| _TZ3000_abrsvsou | tuya | generic_diy |
+| _TZE200_hl0ss9oa | tuya | generic_diy |
+| _TZE200_y4mdop0b | tuya | generic_diy |
+| _TZE200_vs0skpuc | tuya | generic_diy |
+| _TZE200_ehhrv2e3 | tuya | generic_diy |
+| _TZE200_dikkika5 | tuya | generic_diy |
+| _TZE200_3xfjp0ag | tuya | generic_diy |
+| _TZE200_lhqtjwax | tuya | generic_diy |
+| AOYAN  | tuya | generic_diy |
+| _TZE200_lvkk0hdg | tuya | generic_diy |
+| _TZ3210_emqmwtym | tuya | generic_diy |
+| _TZE200_khah2lkr | tuya | generic_diy |
+| _TZE284_0ints6wl | tuya | generic_diy |
+| _TZE284_yzr43ayq | tuya | generic_diy |
+| _TZE200_cq8lu23i | tuya | generic_diy |
+| _TZE200_4pm4pekt | tuya | generic_diy |
 | TELINK | tuya | generic_diy |
+| _TZE284_8se38w3c | tuya | generic_diy |
+| _TZE200_spyvfeti | tuya | generic_diy |
+| _TZE204_gm8h14wy | tuya | generic_diy |
+| _TZE204_trwaxi57 | tuya | generic_diy |
+| _TZE204_ccgyhbvd | tuya | generic_diy |
+| _TZE204_y8ficeai | tuya | generic_diy |
+| _TZE284_7e6v8u9f | tuya | generic_diy |
+| _TZE204_apiu8k13 | tuya | generic_diy |
+| _TZE204_he9apaui | tuya | generic_diy |
+| _TZE204_fhv95pf1 | tuya | generic_diy |
+| DTS1XM9 | tuya | generic_diy |
 |  Legrand\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 | legrand | generic_diy |
 
 ## Missing Product IDs
@@ -21,10 +53,13 @@
 | TS020C | tuya | generic_diy |
 | CK-BL702-AL-01(7009_Z102LG04-1) | tuya | generic_diy |
 | CK-BL702-AL-01(7009_Z102LG04-2) | tuya | generic_diy |
+| CK-BL702-AL-01(7008_Z102LG01-1) | tuya | generic_diy |
 | SM0001 | tuya | generic_diy |
 | FNB54-WTS08ML1.0 | tuya | generic_diy |
 | qnazj70 | tuya | generic_diy |
 | kjintbl | tuya | generic_diy |
+| ZG-301Z-2CH | tuya | generic_diy |
+| ZG-301Z-3CH | tuya | generic_diy |
 | owvfni3\u0000 | tuya | generic_diy |
 | owvfni3 | tuya | generic_diy |
 | u1rkty3 | tuya | generic_diy |
@@ -40,14 +75,19 @@
 | HY0080 | tuya | generic_diy |
 | 6dfgetq | tuya | generic_diy |
 | E220-KR4N0Z0-HA | tuya | generic_diy |
+| AY-204Z | tuya | generic_diy |
 | SM0202 | tuya | generic_diy |
 | ZG-101Z | tuya | generic_diy |
 | 5rta89nj | tuya | generic_diy |
+| AY-303Z | tuya | generic_diy |
+| AY-302Z | tuya | generic_diy |
 | ZS-304Z | tuya | generic_diy |
 | ZG-226Z | tuya | generic_diy |
 | ZG-228Z | tuya | generic_diy |
 | ZG-229Z | tuya | generic_diy |
 | ZG-204ZX | tuya | generic_diy |
+| ZG-IR01 | tuya | generic_diy |
+| ZG-301Z-MOTO | tuya | generic_diy |
 | NSPanelP-Router | sonoff | generic_diy |
 | Cuber ZLI Router | sonoff | generic_diy |
 | KF01 | sonoff | generic_diy |
@@ -56,6 +96,7 @@
 | DONGLE-E_R | sonoff | generic_diy |
 | Dongle-M_ZBRouter | sonoff | generic_diy |
 | Dongle-LMG21_ZBRouter | sonoff | generic_diy |
+| TRV-ZBT | sonoff | generic_diy |
 | SWV | sonoff | water_valve_smart |
 | ZBMicro | sonoff | generic_diy |
 | MINI-ZBD | sonoff | generic_diy |
@@ -66,6 +107,16 @@
 | MINI-ZB2GS | sonoff | generic_diy |
 | MINI-ZB2GS-L | sonoff | generic_diy |
 | MINI-ZBDIM | sonoff | generic_diy |
+| SWV-ZF2 | sonoff | water_valve_smart |
+| SNZB-02B | sonoff | climate_sensor |
+| SNZB-02M | sonoff | climate_sensor |
+| BASIC-ZB1GSP | sonoff | generic_diy |
+| SNZB-06P24 | sonoff | presence_sensor_radar |
+| MINI-ZB1GSP | sonoff | generic_diy |
+| MINI-ZB1GP | sonoff | generic_diy |
+| SNZB-09P | sonoff | generic_diy |
+| SNZB-03PR2 | sonoff | motion_sensor |
+| devi_f | danfoss | generic_diy |
 | W564100 | schneider_electric | generic_diy |
 | PUCK/SHUTTER/1 | schneider_electric | generic_diy |
 | NHPB/SHUTTER/1 | schneider_electric | generic_diy |
@@ -99,25 +150,6 @@
 | LK Switch | schneider_electric | generic_diy |
 | LK Dimmer | schneider_electric | generic_diy |
 | FLS/AIRLINK/4 | schneider_electric | generic_diy |
-| EH-ZB-SPD-V2 | schneider_electric | generic_diy |
-| EH-ZB-LMACT | schneider_electric | generic_diy |
-| 2GANG/SWITCH/2 | schneider_electric | generic_diy |
-| 2GANG/SWITCH/1 | schneider_electric | generic_diy |
-| EH-ZB-VACT | schneider_electric | generic_diy |
-| EH-ZB-RTS | schneider_electric | generic_diy |
-| EH-ZB-HACT | schneider_electric | generic_diy |
-| FLS/SYSTEM-M/4 | schneider_electric | generic_diy |
-| SOCKET/OUTLET/2 | schneider_electric | generic_diy |
-| SOCKET/OUTLET/1 | schneider_electric | generic_diy |
-| LK/OUTLET/1 | schneider_electric | generic_diy |
-| EVSCKT/OUTLET/1 | schneider_electric | generic_diy |
-| NHMOTION/SWITCH/1 | schneider_electric | generic_diy |
-| CCT595011_AS | schneider_electric | generic_diy |
-| CH/Socket/2 | schneider_electric | generic_diy |
-| CCT592011_AS | schneider_electric | generic_diy |
-| W599001 | schneider_electric | generic_diy |
-| W599501 | schneider_electric | generic_diy |
-| 755WSA | schneider_electric | generic_diy |
 
-*...and 1368 more*
+*...and 1417 more*
 

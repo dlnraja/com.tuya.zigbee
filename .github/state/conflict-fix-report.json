@@ -1,9 +1,1104 @@
 {
-  "timestamp": "2026-06-13T06:36:02.926Z",
-  "before": 10,
-  "resolved": 0,
-  "mfrsRemoved": 0,
+  "timestamp": "2026-06-22T12:04:50.283Z",
+  "before": 2337,
+  "after": 1833,
+  "resolved": 488,
+  "mfrsRemoved": 294,
   "pidsRemoved": 0,
-  "unresolved": 10,
-  "dryRun": false
+  "unresolved": 1849,
+  "dryRun": false,
+  "health": {
+    "overallScore": 0,
+    "trend": "degrading",
+    "previousScore": 96,
+    "conflictCount": 2337,
+    "highRiskCount": 36,
+    "topRisks": [
+      {
+        "mfr": "hobeian",
+        "pid": "TS0601",
+        "drivers": [
+          "presence_sensor_radar",
+          "switch_1gang",
+          "switch_wireless",
+          "wall_switch_4_gang_tuya",
+          "wall_switch_6_gang_tuya"
+        ],
+        "riskScore": 80
+      },
+      {
+        "mfr": "_tyzb01_dsjszp0x",
+        "pid": "TS0601",
+        "drivers": [
+          "smoke_detector_advanced",
+          "smoke_sensor2"
+        ],
+        "riskScore": 75
+      },
+      {
+        "mfr": "_tze200_s8gkrkxk",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "thermostat_tuya_dp"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze200_zah67ekd",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "curtain_motor_tilt"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze200_ztc6ggyl",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "presence_sensor_radar"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze201_ztc6ggyl",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "presence_sensor_radar"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze202_ztc6ggyl",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "presence_sensor_radar"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze203_ztc6ggyl",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "presence_sensor_radar"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze204_ztc6ggyl",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "presence_sensor_radar"
+        ],
+        "riskScore": 65
+      },
+      {
+        "mfr": "_tze204_qasjif9e",
+        "pid": "TS0601",
+        "drivers": [
+          "air_purifier",
+          "presence_sensor_radar"
+        ],
+        "riskScore": 65
+      }
+    ],
+    "driverFingerprintHealth": {
+      "air_purifier": 0,
+      "air_purifier_motion": 0,
+      "air_quality_co2": 0,
+      "bulb_dimmable": 0,
+      "bulb_rgb": 0,
+      "bulb_tunable_white": 0,
+      "button_wireless": 0,
+      "button_wireless_2": 0,
+      "button_wireless_4": 0,
+      "climate_sensor": 0
+    },
+    "predictions": [
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "11 unresolved conflicts in \"hvac+thermostat\" category pair. Devices in this category have 6x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "22 unresolved conflicts in \"dimmer+hvac\" category pair. Devices in this category have 11x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "51 unresolved conflicts in \"hvac+switch\" category pair. Devices in this category have 26x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "191 unresolved conflicts in \"hvac+sensor\" category pair. Devices in this category have 96x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "16 unresolved conflicts in \"hvac+radar\" category pair. Devices in this category have 8x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "252 unresolved conflicts in \"button+hvac\" category pair. Devices in this category have 126x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "11 unresolved conflicts in \"fan+hvac\" category pair. Devices in this category have 6x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "49 unresolved conflicts in \"dimmer+light\" category pair. Devices in this category have 25x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "115 unresolved conflicts in \"light\" category pair. Devices in this category have 58x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "125 unresolved conflicts in \"button+switch\" category pair. Devices in this category have 63x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "50 unresolved conflicts in \"button\" category pair. Devices in this category have 25x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "28 unresolved conflicts in \"button+plug\" category pair. Devices in this category have 14x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "18 unresolved conflicts in \"diy+sensor\" category pair. Devices in this category have 9x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "1277 unresolved conflicts in \"sensor\" category pair. Devices in this category have 639x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "24 unresolved conflicts in \"cover\" category pair. Devices in this category have 12x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "35 unresolved conflicts in \"diy+switch\" category pair. Devices in this category have 18x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "7 unresolved conflicts in \"radar+switch\" category pair. Devices in this category have 4x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "5 unresolved conflicts in \"plug+valve\" category pair. Devices in this category have 3x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "batch-pairing-ambiguity",
+        "severity": "high",
+        "message": "14 unresolved conflicts in \"safety\" category pair. Devices in this category have 7x higher chance of binding to wrong driver."
+      },
+      {
+        "type": "ts0601-instability",
+        "severity": "high",
+        "message": "272 TS0601 conflict(s) detected. TS0601 is used by ~60% of Tuya Zigbee devices. These conflicts will affect most new device pairings."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze200_vs0skpuc\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_dse8ogfy\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_phjeraqq\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_ncutbjdi\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_aneiicmq\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_zsl6z0pw\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_digziiav\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_jl7qyupf\" appears in 6 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_lmlsduws\" appears in 6 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_zmy4lslw\" appears in 6 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_ymcdbl3u\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_4tlksk8a\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_xfpdrwvc\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_qeqvmvti\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_seqwasot\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_hafsqare\" appears in 7 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ysdv91bk\" appears in 7 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_mtlhqn48\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_6sadkhcy\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-o6sncwd6\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_vzrytttn\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_2athzhfr\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_e98krvvk\" appears in 6 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_6g8b7at8\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-nzrrvgco\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_s8r1qoyq\" appears in 6 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_xiuox57i\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_b8cr31hp\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_mqel1whf\" appears in 12 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_qaaysllp\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_ftdkanlj\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_kvwjujy9\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz2000_a476raq2\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz2000_xogb73am\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz2000_avdnvykf\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz2000_hjsgdkfl\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_a476raq2\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_hjsgdkfl\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_rusu2vzb\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_yd2e749y\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_bjawzodf\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_ncw88jfq\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-yg5dcbfu\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-prhs1rsd\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-gqhxixyk\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-vmgh3fxd\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-ojmxeikg\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-ojmxeikq\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-1g3tawnp\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_i8jfiezr\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-v3uxbuxy\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_bguser20\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_8ybe88nf\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_fie1dpkm\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-riuj5xzs\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-1uxx9cci\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_f2bw0b6k\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-haoiuwzy\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_dowj6gyi\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_0s1izerx\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_akqdg6g7\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_qezuin6k\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_ngqk6jia\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ktuoyvt5\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_weaqkhab\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_k1msuvg6\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_mgusv51k\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_92chsky7\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_wdexaypg\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_3mpwqzuu\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_pagajpog\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_4ubylghk\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_7ysdnebc\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_keabpigv\" appears in 23 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_12sxjap4\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_hlijwsai\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_qd7hej8u\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_mja6r5ix\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_q50zhdsc\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_dl4pxp1r\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_qqjaziws\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_i8l0nqdu\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ukuvyhaa\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_k1pe6ibm\" appears in 23 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3210_zdrhqmo0\" appears in 20 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_yj6k7vfo\" appears in 10 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_abrsvsou\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_rco1yzb1\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_yirp2pgd\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ja5osu5g\" appears in 11 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_peszejy7\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_nuombroo\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_11pg3ima\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_et7afzxz\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_uwkja6z1\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ew31dmgx\" appears in 8 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_wamqdr3f\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_qystbcjg\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_u5u4cakc\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_gjnozsaz\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_cehuw1lw\" appears in 8 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_okaz9tjs\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_j1v25l17\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_wzmuk9ai\" appears in 8 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_w8jwkczz\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_vp6clf9d\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ufhtxr59\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ee8nrt2l\" appears in 8 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_a4xycprs\" appears in 10 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_uaa99arv\" appears in 4 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_jcspr0tp\" appears in 10 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_r0pmi2p3\" appears in 10 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_dku2cfsc\" appears in 10 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_fjt5218m\" appears in 10 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-sb6t7ett\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-rkqiqvcs\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-crr8qb0p\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_ebar6ljy\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-kbqf60nt\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-r9hgssol\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-trhrga6p\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-ip9ganvw\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_xph99wvr\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_2mbfxlzr\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_402jjyro\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_6jeesvrt\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_26fmupbb\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_bmg14ax2\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_bzxlofth\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_bzxloft\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_7d8yme6f\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_rgchmad8\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_au1rjicn\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_4ugnzsli\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-7qunn4gq\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_decxrtwa\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_yxqnffam\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_9eeavbk5\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_a33rw7ou\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_6zvw8ham\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_yfekcy3n\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_cea5xugq\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_1bwpjvlz\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_au2o5e6q\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_v7chgqso\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_qrldbmfn\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_gntwytxo\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-0l6xaqmi\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_7tbsruql\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_osu834un\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"immax\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"visonic\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_hkcpblrs\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_8yhypbo7\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_cqlnswn0\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_zgrffiwg\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_uvti8nkd\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"tuyatec-3tipnsrx\" appears in 28 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz1800_ejwkn2h2\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze204_gm8h14wy\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze204_ccgyhbvd\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze204_y8ficeai\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze284_7e6v8u9f\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze204_apiu8k13\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze204_he9apaui\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tze204_fhv95pf1\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3000_kmh5qpmb\" appears in 5 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tz3040_bb6xaihh\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_dsjszp0x\" appears in 14 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "rebranding-pattern",
+        "severity": "medium",
+        "message": "Manufacturer \"_tyzb01_vkwryfdr\" appears in 3 conflict(s). This may indicate a Tuya rebranding that needs a dedicated driver."
+      },
+      {
+        "type": "massive-cleanup",
+        "severity": "medium",
+        "message": "225 manufacturer removals planned across 49 drivers. Verify no unintended side effects with `--dry-run` first."
+      }
+    ],
+    "recommendations": [
+      {
+        "priority": 1,
+        "category": "pairing-stability",
+        "action": "Prioritize TS0601 conflict resolution as it has the widest blast radius."
+      },
+      {
+        "priority": 1,
+        "category": "safety",
+        "action": "Always run with --dry-run first. Review all changes before applying."
+      },
+      {
+        "priority": 2,
+        "category": "maintenance",
+        "action": "Consider implementing fingerprint versioning or driver-specific productId ranges to prevent future conflicts."
+      },
+      {
+        "priority": 3,
+        "category": "monitoring",
+        "action": "Add this script to CI pipeline to detect new conflicts before merge."
+      }
+    ]
+  },
+  "exitCode": 1
 }
