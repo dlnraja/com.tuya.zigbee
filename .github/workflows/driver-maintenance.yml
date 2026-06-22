@@ -131,8 +131,12 @@ jobs:
           for d in drivers/*/driver.compose.json; do
             DIR=$(dirname "$d")
             DRIVER=$(basename "$DIR")
-            node -e "const j=JSON.parse(require('fs').readFileSync('$d','utf8'));if(!j.connectivity)console.log('⚠️ '+process.argv[1]+': missing connectivity')" "$DRIVER" >> $GITHUB_STEP_SUMMARY
-            [ ! -f "$DIR/assets/icon.svg" ] && echo "⚠️ $DRIVER: missing icon.svg" >> $GITHUB_STEP_SUMMARY
+            node -e "const j=JSON.parse(require('fs').readFileSync('$d','utf8'));if(!j.connectivity)console.log('⚠️ '+process.argv[1]+': missing connectivity')" "$DRIVER" >> $GITHUB_STEP_SUMMARY || true
+            # `|| true` is REQUIRED: with `set -e`, a `[ ! -f ... ]` that evaluates
+            # false (file exists) returns exit 1, which would abort the whole step.
+            if [ ! -f "$DIR/assets/icon.svg" ]; then
+              echo "⚠️ $DRIVER: missing icon.svg" >> $GITHUB_STEP_SUMMARY
+            fi
           done
 
       - name: Validate Homey App (publish)
