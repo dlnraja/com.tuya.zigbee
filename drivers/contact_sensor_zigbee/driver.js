@@ -45,7 +45,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition contact_sensor_zigbee_contact_sensor_is_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition contact_sensor_zigbee_contact_sensor_is_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('contact_sensor_zigbee_contact_sensor_battery_above');
@@ -56,7 +56,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
           return battery > (args.threshold || 20);
       });
       }
-    } catch (err) { this.error(`Condition contact_sensor_zigbee_contact_sensor_battery_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition contact_sensor_zigbee_contact_sensor_battery_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('contact_sensor_zigbee_contact_sensor_contact_open');
@@ -66,7 +66,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition contact_sensor_zigbee_contact_sensor_contact_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition contact_sensor_zigbee_contact_sensor_contact_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('contact_sensor_zigbee_contact_sensor_tamper_active');
@@ -76,7 +76,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition contact_sensor_zigbee_contact_sensor_tamper_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition contact_sensor_zigbee_contact_sensor_tamper_active: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

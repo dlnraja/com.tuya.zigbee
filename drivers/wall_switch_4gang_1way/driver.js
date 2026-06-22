@@ -75,7 +75,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
           });
         }
       } catch (err) {
-        this.error(`Action ${id} error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`Action ${id} error: ${err.message}`); };
       }
     }
 
@@ -115,7 +115,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
           });
         }
       } catch (err) {
-        this.error(`Action ${id} error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`Action ${id} error: ${err.message}`); };
       }
     }
 
@@ -140,7 +140,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
           });
         }
       } catch (err) {
-        this.error(`Action ${id} error: ${err.message}`);
+        if (this.developerDebugMode) { this.error(`Action ${id} error: ${err.message}`); };
       }
     }
 

@@ -23,7 +23,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition shutter_roller_controller_is_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition shutter_roller_controller_is_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('shutter_roller_controller_position_above');
@@ -34,7 +34,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition shutter_roller_controller_position_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition shutter_roller_controller_position_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('shutter_roller_controller_is_moving');
@@ -44,7 +44,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition shutter_roller_controller_is_moving: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition shutter_roller_controller_is_moving: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action shutter_roller_controller_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action shutter_roller_controller_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('shutter_roller_controller_close');
@@ -69,7 +69,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action shutter_roller_controller_close: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action shutter_roller_controller_close: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('shutter_roller_controller_stop');
@@ -81,7 +81,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action shutter_roller_controller_stop: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action shutter_roller_controller_stop: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('shutter_roller_controller_set_position');
@@ -92,7 +92,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action shutter_roller_controller_set_position: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action shutter_roller_controller_set_position: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('shutter_roller_controller_set_brightness');
@@ -103,7 +103,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action shutter_roller_controller_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action shutter_roller_controller_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

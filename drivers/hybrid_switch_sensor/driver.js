@@ -21,7 +21,7 @@ class HybridSwitchSensorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hybrid_switch_sensor_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hybrid_switch_sensor_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_switch_sensor_turn_off');
@@ -32,7 +32,7 @@ class HybridSwitchSensorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hybrid_switch_sensor_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hybrid_switch_sensor_turn_off: ${err.message}`); }; }
 
     // CONDITIONS
     try {
@@ -43,7 +43,7 @@ class HybridSwitchSensorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition hybrid_switch_sensor_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hybrid_switch_sensor_is_on: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

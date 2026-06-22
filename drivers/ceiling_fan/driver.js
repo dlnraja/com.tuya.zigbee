@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition ceiling_fan_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition ceiling_fan_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -34,7 +34,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action ceiling_fan_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action ceiling_fan_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('ceiling_fan_turn_off');
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action ceiling_fan_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action ceiling_fan_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('ceiling_fan_toggle');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action ceiling_fan_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action ceiling_fan_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('ceiling_fan_set_dim');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action ceiling_fan_set_dim: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action ceiling_fan_set_dim: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('ceiling_fan_set_brightness');
@@ -79,7 +79,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action ceiling_fan_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action ceiling_fan_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

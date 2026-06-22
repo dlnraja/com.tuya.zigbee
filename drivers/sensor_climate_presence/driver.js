@@ -44,7 +44,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_is_present_sensor_presence_radar: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar');
@@ -54,7 +54,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_illuminance_above_sensor_presence_radar: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar');
@@ -64,7 +64,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_distance_within_sensor_presence_radar: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar');
@@ -74,7 +74,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition sensor_climate_presence_presence_sensor_radar_motion_active_sensor_presence_radar: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

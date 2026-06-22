@@ -44,7 +44,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_switch_switch_4gang_gang1_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_switch_switch_4gang_gang1_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_switch_switch_4gang_gang2_is_on');
@@ -54,7 +54,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_switch_switch_4gang_gang2_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_switch_switch_4gang_gang2_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_switch_switch_4gang_gang3_is_on');
@@ -64,7 +64,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_switch_switch_4gang_gang3_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_switch_switch_4gang_gang3_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_switch_switch_4gang_gang4_is_on');
@@ -74,7 +74,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_switch_switch_4gang_gang4_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_switch_switch_4gang_gang4_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_switch_switch_4gang_is_on');
@@ -84,7 +84,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_switch_switch_4gang_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_switch_switch_4gang_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -96,7 +96,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang1: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang1: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_off_gang1');
@@ -107,7 +107,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang1: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang1: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_on_gang2');
@@ -118,7 +118,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang2: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang2: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_off_gang2');
@@ -129,7 +129,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang2: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang2: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_on_gang3');
@@ -140,7 +140,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang3: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang3: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_off_gang3');
@@ -151,7 +151,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang3: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang3: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_on_gang4');
@@ -162,7 +162,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang4: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_gang4: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_off_gang4');
@@ -173,7 +173,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang4: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_gang4: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_toggle_gang1');
@@ -185,7 +185,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang1: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang1: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_toggle_gang2');
@@ -197,7 +197,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang2: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang2: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_toggle_gang3');
@@ -209,7 +209,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang3: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang3: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_toggle_gang4');
@@ -221,7 +221,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang4: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_toggle_gang4: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_on_all');
@@ -233,7 +233,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_all: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on_all: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_off_all');
@@ -245,7 +245,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_all: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off_all: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_set_backlight');
@@ -256,7 +256,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_set_backlight: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_set_backlight: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_set_backlight_color');
@@ -267,7 +267,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_set_backlight_color: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_set_backlight_color: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_set_backlight_brightness');
@@ -278,7 +278,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_set_backlight_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_set_backlight_brightness: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_on');
@@ -289,7 +289,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_turn_off');
@@ -300,7 +300,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_toggle');
@@ -312,7 +312,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_switch_switch_4gang_set_scene_mode');
@@ -323,7 +323,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_switch_switch_4gang_set_scene_mode: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_switch_switch_4gang_set_scene_mode: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

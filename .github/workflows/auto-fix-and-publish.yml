@@ -1,0 +1,101 @@
+name: 🤖 Auto-Fix + Publish Pipeline
+
+on:
+  push:
+    branches: [master, stable-v5]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: 🤖 Run auto-fix-all
+        run: node scripts/validation/auto-fix-all.js || true
+
+      - name: 📊 Dashboard monitor
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: timeout 30 node scripts/automation/dashboard-monitor.js --latest || true
+
+      - name: 📋 Check processing_failed builds
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          # If last build is processing_failed, trigger a new publish
+          LAST_STATE=$(node -e "
+          const report = require('./.github/state/dashboard-monitor-report.json');
+          const latest = report.latestBuilds?.[0];
+          if (latest && latest.state === 'processing_failed') {
+            console.log('FAILED');
+          } else {
+            console.log('OK');
+          }
+          " 2>/dev/null || echo "UNKNOWN")
+          echo "Last build state: $LAST_STATE"
+          if [ "$LAST_STATE" = "FAILED" ]; then
+            echo "⚠️ Last build processing_failed — will trigger publish"
+            echo "trigger_publish=true" >> $GITHUB_ENV
+          fi
+
+      - name: 💾 Commit fixes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
+          git push || true
+
+      - name: 🚀 Publish if needed
+        if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          npx homey app build
+          npm run prepare-publish
+          PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
+          if [ -d "$PUBLISH_DIR" ]; then cd "$PUBLISH_DIR"; fi
+          npm install --omit=dev --no-audit --no-fund 2>/dev/null || true
+          echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
+          printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true
+
+      - name: 📊 Post-publish dashboard check
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          sleep 60
+          timeout 20 node scripts/automation/dashboard-monitor.js --latest || true
+
+      - name: 🔔 Notify on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 420,
+              body: `⚠️ Auto-Fix pipeline failed. Check [run #${context.runId}](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+            });

@@ -25,7 +25,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_smart_hybrid_set_target_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_smart_hybrid_set_target_temperature: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_smart_set_temperature');
@@ -36,7 +36,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_smart_set_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_smart_set_temperature: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

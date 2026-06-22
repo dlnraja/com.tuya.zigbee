@@ -42,7 +42,8 @@
       }
     },
     "manufacturerName": [
-      "_hybrid_illuminance_sensor_needs_device_assignment"
+      "_hybrid_illuminance_sensor_needs_device_assignment",
+      "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
     ]
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",

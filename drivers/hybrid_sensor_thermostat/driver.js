@@ -22,7 +22,7 @@ class HybridSensorThermostatDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action set_mode: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_mode: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_sensor_thermostat_set_temperature');
@@ -34,7 +34,7 @@ class HybridSensorThermostatDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action set_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_temperature: ${err.message}`); }; }
 
     // CONDITIONS
     try {
@@ -45,7 +45,7 @@ class HybridSensorThermostatDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('thermostat_mode') === args.mode;
         });
       }
-    } catch (err) { this.error(`Condition mode_is: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition mode_is: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

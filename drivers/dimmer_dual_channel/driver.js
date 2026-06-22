@@ -23,7 +23,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition dimmer_dual_channel_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_dual_channel_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('dimmer_dual_channel_dim_above');
@@ -34,7 +34,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition dimmer_dual_channel_dim_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition dimmer_dual_channel_dim_above: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -46,7 +46,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_dual_channel_turn_off');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_dual_channel_toggle');
@@ -69,7 +69,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_dual_channel_set_dim');
@@ -80,7 +80,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_set_dim: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_set_dim: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_dual_channel_dim_up');
@@ -92,7 +92,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_dim_up: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_dim_up: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_dual_channel_dim_down');
@@ -104,7 +104,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_dim_down: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_dim_down: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('dimmer_dual_channel_set_brightness');
@@ -115,7 +115,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action dimmer_dual_channel_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action dimmer_dual_channel_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

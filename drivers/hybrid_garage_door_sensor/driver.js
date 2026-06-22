@@ -20,7 +20,7 @@ class HybridGarageDoorSensorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_garage_door_sensor_close');
@@ -31,7 +31,7 @@ class HybridGarageDoorSensorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action close: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action close: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('hybrid_garage_door_sensor_is_open');
@@ -41,7 +41,7 @@ class HybridGarageDoorSensorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition is_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition is_open: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

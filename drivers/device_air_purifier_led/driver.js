@@ -44,7 +44,7 @@ class LedStripDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_air_purifier_led_led_strip_led_strip_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_led_led_strip_led_strip_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_air_purifier_led_led_strip_is_on');
@@ -54,7 +54,7 @@ class LedStripDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_air_purifier_led_led_strip_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_led_led_strip_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -66,7 +66,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_led_strip_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_led_strip_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_led_strip_turn_off');
@@ -77,7 +77,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_led_strip_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_led_strip_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_led_strip_toggle');
@@ -89,7 +89,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_led_strip_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_led_strip_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_turn_on');
@@ -100,7 +100,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_turn_off');
@@ -111,7 +111,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_toggle');
@@ -123,7 +123,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_air_purifier_led_led_strip_set_brightness');
@@ -134,7 +134,7 @@ class LedStripDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_air_purifier_led_led_strip_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_air_purifier_led_led_strip_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

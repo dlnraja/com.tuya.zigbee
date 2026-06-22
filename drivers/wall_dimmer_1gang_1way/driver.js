@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition wall_dimmer_1gang_1way_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition wall_dimmer_1gang_1way_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -34,7 +34,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action wall_dimmer_1gang_1way_set_backlight: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action wall_dimmer_1gang_1way_set_backlight: ${err.message}`); }; }
 
     try {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_turn_on', 'action');
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action wall_dimmer_1gang_1way_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action wall_dimmer_1gang_1way_turn_on: ${err.message}`); }; }
 
     try {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_turn_off', 'action');
@@ -56,7 +56,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action wall_dimmer_1gang_1way_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action wall_dimmer_1gang_1way_turn_off: ${err.message}`); }; }
 
     try {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_toggle', 'action');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action wall_dimmer_1gang_1way_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action wall_dimmer_1gang_1way_toggle: ${err.message}`); }; }
 
     try {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_set_brightness', 'action');
@@ -79,7 +79,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action wall_dimmer_1gang_1way_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action wall_dimmer_1gang_1way_set_brightness: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

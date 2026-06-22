@@ -23,7 +23,7 @@ async onInit() {
           return battery > (args.threshold || 20);
       });
       }
-    } catch (err) { this.error(`Condition doorbell_battery_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_battery_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('doorbell_motion_active');
@@ -33,7 +33,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition doorbell_motion_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_motion_active: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('doorbell_contact_open');
@@ -43,7 +43,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition doorbell_contact_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_contact_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('doorbell_tamper_active');
@@ -53,7 +53,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition doorbell_tamper_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition doorbell_tamper_active: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -66,7 +66,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action doorbell_ring_chime: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action doorbell_ring_chime: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

@@ -46,7 +46,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_set_windowcoverings_set: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_windowcoverings_set: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_windowcoverings_open');
@@ -58,7 +58,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_windowcoverings_close');
@@ -70,7 +70,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_close: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_windowcoverings_close: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_dim');
@@ -81,7 +81,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_set_dim: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_dim: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_stop');
@@ -93,7 +93,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_stop: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_stop: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_favorite');
@@ -105,7 +105,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_set_favorite: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_favorite: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_brightness');
@@ -116,7 +116,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_set_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_brightness: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_set_position');
@@ -127,7 +127,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_set_position: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_set_position: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_open');
@@ -139,7 +139,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_curtain_curtain_motor_close');
@@ -151,7 +151,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_curtain_curtain_motor_close: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_curtain_curtain_motor_close: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

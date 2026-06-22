@@ -32,7 +32,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_above_target');
@@ -43,7 +43,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_above_target: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_above_target: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_below_target');
@@ -53,7 +53,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_below_target: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_temperature_below_target: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_mode_is');
@@ -63,7 +63,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_mode_is: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_mode_is: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_child_lock_is');
@@ -73,7 +73,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_child_lock_is: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_child_lock_is: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_is_on');
@@ -83,7 +83,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_radiator_valve_thermostat_thermostat_tuya_dp_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -95,7 +95,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_target_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_target_temperature: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode');
@@ -107,7 +107,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_mode: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature');
@@ -119,7 +119,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_increase_temperature: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature');
@@ -131,7 +131,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_decrease_temperature: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock');
@@ -143,7 +143,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_child_lock: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_comfort_preset');
@@ -155,7 +155,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_on');
@@ -166,7 +166,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_off');
@@ -177,7 +177,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_schedule_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_turn_on');
@@ -188,7 +188,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_turn_off');
@@ -199,7 +199,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_toggle');
@@ -211,7 +211,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_thermostat_tuya_dp_set_temperature');
@@ -222,7 +222,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action device_radiator_valve_thermostat_thermostat_tuya_dp_set_temperature: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
     }

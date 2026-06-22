@@ -44,7 +44,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition light_bulb_tunable_white_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition light_bulb_tunable_white_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -56,7 +56,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_tunable_white_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_tunable_white_turn_off');
@@ -67,7 +67,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_tunable_white_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_tunable_white_toggle');
@@ -79,7 +79,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_tunable_white_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('light_bulb_tunable_white_set_dim');
@@ -90,7 +90,7 @@ class BulbTunableDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_bulb_tunable_white_set_dim: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_bulb_tunable_white_set_dim: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

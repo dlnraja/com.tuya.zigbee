@@ -46,7 +46,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition contact_sensor_plug_plug_smart_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition contact_sensor_plug_plug_smart_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -58,7 +58,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_plug_plug_smart_turn_off');
@@ -69,7 +69,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_plug_plug_smart_toggle');
@@ -81,7 +81,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_plug_plug_smart_turn_on_delay');
@@ -92,7 +92,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_turn_on_delay: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_turn_on_delay: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_plug_plug_smart_turn_off_delay');
@@ -103,7 +103,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_turn_off_delay: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_turn_off_delay: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_plug_plug_smart_set_indicator');
@@ -115,7 +115,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_set_indicator: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_set_indicator: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('contact_sensor_plug_plug_smart_set_power_on');
@@ -126,7 +126,7 @@ class PlugSmartDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action contact_sensor_plug_plug_smart_set_power_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action contact_sensor_plug_plug_smart_set_power_on: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

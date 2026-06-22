@@ -44,7 +44,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_presence_presence_sensor_radar_is_present: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_is_present: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_illuminance_above');
@@ -54,7 +54,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_presence_presence_sensor_radar_illuminance_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_illuminance_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_distance_within');
@@ -64,7 +64,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_presence_presence_sensor_radar_distance_within: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_distance_within: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('air_purifier_presence_presence_sensor_radar_motion_active');
@@ -74,7 +74,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
       }
-    } catch (err) { this.error(`Condition air_purifier_presence_presence_sensor_radar_motion_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition air_purifier_presence_presence_sensor_radar_motion_active: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

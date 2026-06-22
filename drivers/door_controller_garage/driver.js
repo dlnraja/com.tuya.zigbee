@@ -44,7 +44,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
       }
-    } catch (err) { this.error(`Condition door_controller_garage_door_controller_is_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_is_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_is_locked');
@@ -54,7 +54,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition door_controller_garage_door_controller_is_locked: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_is_locked: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_motion_active');
@@ -64,7 +64,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition door_controller_garage_door_controller_motion_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_motion_active: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('door_controller_garage_door_controller_contact_open');
@@ -74,7 +74,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition door_controller_garage_door_controller_contact_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition door_controller_garage_door_controller_contact_open: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -87,7 +87,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action door_controller_garage_door_controller_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('door_controller_garage_door_controller_close');
@@ -99,7 +99,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action door_controller_garage_door_controller_close: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_close: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('door_controller_garage_door_controller_lock');
@@ -111,7 +111,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action door_controller_garage_door_controller_lock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_lock: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('door_controller_garage_door_controller_unlock');
@@ -123,7 +123,7 @@ class DoorControllerDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action door_controller_garage_door_controller_unlock: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action door_controller_garage_door_controller_unlock: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

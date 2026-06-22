@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang1_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang1_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_gang2_is_on');
@@ -32,7 +32,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang2_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang2_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_gang3_is_on');
@@ -42,7 +42,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang3_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang3_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_gang4_is_on');
@@ -52,7 +52,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang4_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang4_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_gang5_is_on');
@@ -62,7 +62,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang5_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang5_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_gang6_is_on');
@@ -72,7 +72,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang6_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang6_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_gang7_is_on');
@@ -82,7 +82,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_gang7_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_gang7_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_7gang_is_on');
@@ -92,7 +92,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_7gang_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition switch_wall_7gang_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -104,7 +104,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang1: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang1: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang1');
@@ -115,7 +115,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang1: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang1: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_gang2');
@@ -126,7 +126,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang2: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang2: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang2');
@@ -137,7 +137,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang2: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang2: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_gang3');
@@ -148,7 +148,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang3: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang3: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang3');
@@ -159,7 +159,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang3: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang3: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_gang4');
@@ -170,7 +170,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang4: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang4: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang4');
@@ -181,7 +181,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang4: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang4: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_gang5');
@@ -192,7 +192,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang5: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang5: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang5');
@@ -203,7 +203,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang5: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang5: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_gang6');
@@ -214,7 +214,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang6: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang6: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang6');
@@ -225,7 +225,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang6: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang6: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_gang7');
@@ -236,7 +236,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_gang7: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_gang7: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_gang7');
@@ -247,7 +247,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_gang7: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_gang7: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang1');
@@ -259,7 +259,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang1: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang1: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang2');
@@ -271,7 +271,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang2: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang2: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang3');
@@ -283,7 +283,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang3: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang3: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang4');
@@ -295,7 +295,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang4: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang4: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang5');
@@ -307,7 +307,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang5: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang5: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang6');
@@ -319,7 +319,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang6: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang6: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle_gang7');
@@ -331,7 +331,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle_gang7: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle_gang7: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on_all');
@@ -343,7 +343,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on_all: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on_all: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off_all');
@@ -355,7 +355,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off_all: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off_all: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_set_backlight');
@@ -366,7 +366,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_set_backlight: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_set_backlight: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_set_backlight_color');
@@ -377,7 +377,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_set_backlight_color: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_set_backlight_color: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_set_backlight_brightness');
@@ -388,7 +388,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_set_backlight_brightness: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_set_backlight_brightness: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_on');
@@ -399,7 +399,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_turn_off');
@@ -410,7 +410,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_toggle');
@@ -422,7 +422,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('switch_wall_7gang_set_scene_mode');
@@ -433,7 +433,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_7gang_set_scene_mode: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action switch_wall_7gang_set_scene_mode: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

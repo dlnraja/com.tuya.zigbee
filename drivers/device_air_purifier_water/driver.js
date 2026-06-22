@@ -45,7 +45,7 @@ class WaterTankMonitorDriver extends Homey {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_level_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('device_air_purifier_water_water_tank_monitor_state_is');
@@ -55,7 +55,7 @@ class WaterTankMonitorDriver extends Homey {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition device_air_purifier_water_water_tank_monitor_state_is: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition device_air_purifier_water_water_tank_monitor_state_is: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gateway_zigbee_bridge_is_connected: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gateway_zigbee_bridge_is_connected: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_on');
@@ -32,7 +32,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition gateway_zigbee_bridge_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gateway_zigbee_bridge_is_on: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -45,7 +45,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gateway_zigbee_bridge_permit_join: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gateway_zigbee_bridge_permit_join: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_disable_join');
@@ -57,7 +57,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gateway_zigbee_bridge_disable_join: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gateway_zigbee_bridge_disable_join: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_turn_on');
@@ -68,7 +68,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gateway_zigbee_bridge_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gateway_zigbee_bridge_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_turn_off');
@@ -79,7 +79,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gateway_zigbee_bridge_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gateway_zigbee_bridge_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_toggle');
@@ -91,7 +91,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gateway_zigbee_bridge_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gateway_zigbee_bridge_toggle: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

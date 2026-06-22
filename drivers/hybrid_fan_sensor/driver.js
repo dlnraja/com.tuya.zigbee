@@ -20,7 +20,7 @@ class HybridFanSensorDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action set_speed: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_speed: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('hybrid_fan_sensor_is_on');
@@ -30,7 +30,7 @@ class HybridFanSensorDriver extends ZigBeeDriver {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition is_on: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

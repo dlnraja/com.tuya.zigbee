@@ -30,7 +30,7 @@ async onInit() {
           return battery > (args.threshold || 20);
         });
       }
-    } catch (err) { this.error(`Condition generic_tuya_battery_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition generic_tuya_battery_above: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -43,7 +43,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action generic_tuya_request_dp: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action generic_tuya_request_dp: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

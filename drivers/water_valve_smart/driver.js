@@ -22,7 +22,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
         });
       }
     } catch (err) {
-      this.error(`Flow card error: ${err.message}`);
+      if (this.developerDebugMode) { this.error(`Flow card error: ${err.message}`); };
     }
     this.log('[FLOW] WaterValveSmart flow cards registered');
   }

@@ -30,7 +30,7 @@ async onInit() {
           return val > (args.threshold || 400);
         });
       }
-    } catch (err) { this.error(`Condition formaldehyde_sensor_formaldehyde_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition formaldehyde_sensor_formaldehyde_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('formaldehyde_sensor_air_quality_good');
@@ -40,7 +40,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition formaldehyde_sensor_air_quality_good: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition formaldehyde_sensor_air_quality_good: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

@@ -20,7 +20,7 @@ class HybridLightWindowCoveringsDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_light_windowcoverings_close');
@@ -31,7 +31,7 @@ class HybridLightWindowCoveringsDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action close: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action close: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_light_windowcoverings_set_position');
@@ -42,7 +42,7 @@ class HybridLightWindowCoveringsDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action set_position: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action set_position: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_light_windowcoverings_light_on');
@@ -53,7 +53,7 @@ class HybridLightWindowCoveringsDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hybrid_light_windowcoverings_light_off');
@@ -64,7 +64,7 @@ class HybridLightWindowCoveringsDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action light_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action light_off: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

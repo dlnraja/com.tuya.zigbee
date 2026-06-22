@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_gas_detected: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_gas_detected: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_co_detected');
@@ -32,7 +32,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_co_detected: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_co_detected: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_level_above');
@@ -43,7 +43,7 @@ async onInit() {
           return val > (args.threshold || 400);
       });
       }
-    } catch (err) { this.error(`Condition gas_sensor_level_above: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_level_above: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_co_active');
@@ -53,7 +53,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_co_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_co_active: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_contact_open');
@@ -63,7 +63,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_contact_open: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_contact_open: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_gas_active');
@@ -73,7 +73,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_gas_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_gas_active: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('gas_sensor_tamper_active');
@@ -83,7 +83,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition gas_sensor_tamper_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition gas_sensor_tamper_active: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -96,7 +96,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_mute_alarm: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_mute_alarm: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('gas_sensor_self_test');
@@ -108,7 +108,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action gas_sensor_self_test: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action gas_sensor_self_test: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

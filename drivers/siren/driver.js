@@ -22,7 +22,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_generic') === true || args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition siren_is_sounding: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition siren_is_sounding: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('siren_is_on');
@@ -32,7 +32,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition siren_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition siren_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('siren_motion_active');
@@ -42,7 +42,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition siren_motion_active: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition siren_motion_active: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -54,7 +54,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action siren_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action siren_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('siren_turn_off');
@@ -65,7 +65,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action siren_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action siren_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('siren_set_volume');
@@ -76,7 +76,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action siren_set_volume: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action siren_set_volume: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('siren_set_duration');
@@ -87,7 +87,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action siren_set_duration: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action siren_set_duration: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('siren_set_melody');
@@ -98,7 +98,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action siren_set_melody: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action siren_set_melody: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('siren_toggle');
@@ -110,7 +110,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action siren_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action siren_toggle: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }

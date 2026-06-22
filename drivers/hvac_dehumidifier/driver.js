@@ -37,7 +37,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition hvac_dehumidifier_dehumidifier_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hvac_dehumidifier_dehumidifier_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('hvac_dehumidifier_is_on');
@@ -47,7 +47,7 @@ async onInit() {
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition hvac_dehumidifier_is_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hvac_dehumidifier_is_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getConditionCard('hvac_dehumidifier_water_detected');
@@ -57,7 +57,7 @@ async onInit() {
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
-    } catch (err) { this.error(`Condition hvac_dehumidifier_water_detected: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Condition hvac_dehumidifier_water_detected: ${err.message}`); }; }
 
     // ACTIONS
     try {
@@ -69,7 +69,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_dehumidifier_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_dehumidifier_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_turn_off');
@@ -80,7 +80,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_dehumidifier_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_dehumidifier_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_toggle');
@@ -92,7 +92,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_dehumidifier_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_dehumidifier_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_turn_on');
@@ -103,7 +103,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_turn_on: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_turn_on: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_turn_off');
@@ -114,7 +114,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_turn_off: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_turn_off: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_toggle');
@@ -126,7 +126,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_toggle: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_toggle: ${err.message}`); }; }
 
     try {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_set_temperature');
@@ -137,7 +137,7 @@ async onInit() {
           return true;
         });
       }
-    } catch (err) { this.error(`Action hvac_dehumidifier_set_temperature: ${err.message}`); }
+    } catch (err) { if (this.developerDebugMode) { this.error(`Action hvac_dehumidifier_set_temperature: ${err.message}`); }; }
 
     this.log('[FLOW] All flow cards registered');
   }
