@@ -3,6 +3,11 @@ const { safeMultiply, safeParse, safeDivide } = require('../../lib/utils/tuyaUti
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiLedStripDevice extends TuyaLocalDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   get dpMappings() {
     return {
       '20': { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },

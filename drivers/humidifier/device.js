@@ -14,6 +14,10 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class HumidifierDevice extends TuyaZigbeeDevice {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });

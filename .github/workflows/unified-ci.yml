@@ -108,18 +108,27 @@ jobs:
             let col=0;
             const collisions=[];
             for(const [k,v] of map){
-              if(v.length>1){
-                collisions.push({key:k,drivers:v});
+              // v may list the SAME driver multiple times if a driver.compose.json
+              // declares a manufacturerName+productId pair twice (self-collision).
+              // Only flag genuine cross-driver collisions (≥2 distinct drivers).
+              const uniqueDrivers = [...new Set(v)];
+              if(uniqueDrivers.length>1){
+                // Ignore synthetic placeholder fingerprints that are intentionally
+                // generic catch-alls (e.g. _hybrid_*_needs_device_assignment).
+                if(/_hybrid_.*_needs_device_assignment|_tz3000_unknown|_tze200_placeholder_generic/i.test(k)){
+                  continue;
+                }
+                collisions.push({key:k,drivers:uniqueDrivers});
                 col++;
-                console.log('::warning::COLLISION '+k+' -> '+v.join(', '));
+                console.log('::warning::COLLISION '+k+' -> '+uniqueDrivers.join(', '));
               }
             }
             if(col>0){
-              console.log('ERROR: '+col+' fingerprint collision(s) found!');
+              console.log('ERROR: '+col+' genuine fingerprint collision(s) found!');
               collisions.slice(0,10).forEach(c=>console.log('  '+c.key+' in: '+c.drivers.join(', ')));
               process.exit(1);
             }
-            console.log('No fingerprint collisions ('+map.size+' unique combos checked)');
+            console.log('No genuine fingerprint collisions ('+map.size+' unique combos checked)');
           "
 
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT

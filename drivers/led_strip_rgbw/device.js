@@ -3,6 +3,11 @@
   require('../../lib/devices/UnifiedLightBase');
 
 class LEDStripRGBWDevice extends UnifiedLightBase {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---

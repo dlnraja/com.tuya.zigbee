@@ -2,6 +2,11 @@
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiCoverDevice extends TuyaLocalDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   get dpMappings() {
     return {
       '1': { capability: 'windowcoverings_state', writable: true,

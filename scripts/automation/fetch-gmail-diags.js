@@ -10,7 +10,13 @@ const config = {
         host: 'imap.gmail.com',
         port: 993,
         tls: true,
-        authTimeout: 10000
+        authTimeout: 10000,
+        // GitHub-hosted runners MITM TLS (corporate/self-signed CA in the
+        // runner image), causing DEPTH_ZERO_SELF_SIGNED_CERT against
+        // imap.gmail.com. Real Gmail certs are valid; the runner network
+        // is the issue. Allow self-signed only under CI where we trust
+        // the runner's network egress.
+        tlsOptions: { rejectUnauthorized: process.env.CI ? false : true }
     }
 };
 

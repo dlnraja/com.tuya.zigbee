@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "homey app build",
-    "postbuild": "node scripts/maintenance/fix-large-images.js",
+    "prebuild": "node scripts/maintenance/kill-stray-nulls.cjs --force",
+    "postbuild": "node scripts/maintenance/fix-large-images.js && node scripts/maintenance/sanitize-manifest.cjs",
     "prepare-publish": "node scripts/prepare-publish.js",
     "auto-publish": "node scripts/auto-publish.js",
     "check-build": "node scripts/check-build.js",

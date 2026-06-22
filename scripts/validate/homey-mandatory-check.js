@@ -94,11 +94,14 @@ if (!app) { exitWithResults(); process.exit(1); }
 
 // ─── M05 — Required fields ────────────────────────────────────────────────────
 section('M05 — Required Fields');
-// v9.0.69: SDK3 uses 'sdkVersion' instead of 'sdk'. Accept either.
+// v9.0.75: Athom SDK3 manifest canonical field is `sdk` (number), per the
+// official manifest reference (apps.developer.homey.app/the-basics/app/manifest)
+// and the known-good build #2469. Accept EITHER `sdk` OR `sdkVersion` for
+// backward compatibility, but prefer `sdk`. Do NOT hard-require `sdkVersion`
+// (that was a misconception — `sdk` is the canonical SDK3 field).
 const REQUIRED_FIELDS = [
   ['id', 'string'],
   ['version', 'string'],
-  ['sdkVersion', 'number'],   // SDK3 format (replaces 'sdk')
   ['name', 'object'],
   ['category', null],         // validated separately
   ['images', 'object'],
@@ -107,6 +110,15 @@ const REQUIRED_FIELDS = [
   ['author', 'object'],
   ['description', 'object'],
 ];
+// SDK field: accept `sdk` (canonical) or `sdkVersion` (legacy), type number.
+if (!('sdk' in app) && !('sdkVersion' in app)) {
+  fail('M05', `app.json missing required SDK field: set "sdk": 3 (canonical SDK3) or "sdkVersion": 3 (legacy)`);
+} else {
+  const sdkValue = app.sdk !== undefined ? app.sdk : app.sdkVersion;
+  if (typeof sdkValue !== 'number') {
+    fail('M05', `app.json SDK field must be a number (got ${typeof sdkValue})`);
+  }
+}
 REQUIRED_FIELDS.forEach(([field, type]) => {
   if (!(field in app)) {
     fail('M05', `app.json missing required field: "${field}"`);

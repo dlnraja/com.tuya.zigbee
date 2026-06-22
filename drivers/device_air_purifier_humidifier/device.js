@@ -15,6 +15,10 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  */
 class HumidifierDevice extends ZigBeeDevice {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     this.log('Smart Humidifier initializing...');
 

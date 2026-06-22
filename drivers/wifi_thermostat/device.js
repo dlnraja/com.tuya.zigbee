@@ -5,6 +5,11 @@ const MODE_MAP = { 0: 'off', 1: 'heat', 2: 'auto', 3: 'eco' };
 const MODE_REV = { off: 0, heat: 1, auto: 2, eco: 3 };
 
 class WiFiThermostatDevice extends TuyaLocalDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
