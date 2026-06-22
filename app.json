@@ -100,6 +100,7 @@
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "sdkVersion": 3,
+  "sdk": 3,
   "flow": {
     "triggers": [
       {
@@ -113745,6 +113746,5 @@
       },
       "id": "{{txt.id}}"
     }
-  },
-  "sdk": 3
+  }
 }
