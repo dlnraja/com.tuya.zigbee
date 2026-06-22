@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.69",
+  "version": "9.0.70",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -96065,7 +96065,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_climate_needs_device_assignment"
+          "_hybrid_air_purifier_climate_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_CLIMATE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -96632,7 +96633,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_curtain_needs_device_assignment"
+          "_hybrid_air_purifier_curtain_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_CURTAIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -97032,7 +97034,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_dimmer_needs_device_assignment"
+          "_hybrid_air_purifier_dimmer_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -97126,7 +97129,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_din_needs_device_assignment"
+          "_hybrid_air_purifier_din_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -97223,7 +97227,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment"
+          "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_LCDTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -97291,7 +97296,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_motion_needs_device_assignment"
+          "_hybrid_air_purifier_motion_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -98346,7 +98352,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_siren_needs_device_assignment"
+          "_hybrid_air_purifier_siren_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -98648,7 +98655,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_soil_needs_device_assignment"
+          "_hybrid_air_purifier_soil_needs_device_assignment",
+          "_HYBRID_AIR_PURIFIER_SOIL_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -100255,7 +100263,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_blaster_remote_needs_device_assignment"
+          "_hybrid_blaster_remote_needs_device_assignment",
+          "_HYBRID_BLASTER_REMOTE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -100312,7 +100321,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_boiler_switch_energy_needs_device_assignment"
+          "_hybrid_boiler_switch_energy_needs_device_assignment",
+          "_HYBRID_BOILER_SWITCH_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -101139,7 +101149,9 @@
           "_TZ3210_CM9MBPR1",
           "_TZ3210_DDIGCA5N",
           "_TZ3210_JLF1NEPW",
-          "_TZ3210_RWMITWJ4"
+          "_TZ3210_RWMITWJ4",
+          "LUMI.LIGHT.CWOPCN02",
+          "LUMI.LIGHT.CWOPCN03"
         ]
       },
       "settings": [
@@ -102490,7 +102502,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_bulb_rgb_rgbw_needs_device_assignment"
+          "_hybrid_bulb_rgb_rgbw_needs_device_assignment",
+          "_HYBRID_BULB_RGB_RGBW_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -102541,7 +102554,8 @@
           "_tzb210_u3ri0968",
           "_tzb210_uoiqhjqe",
           "_tz3210_b3kiq1i0",
-          "_tz3000_evag0pvn"
+          "_tz3000_evag0pvn",
+          "sonoff"
         ],
         "productId": [
           "generic",
@@ -104203,7 +104217,11 @@
           "ts0042",
           "ts0043",
           "ts0044",
-          "_tz3400_"
+          "_tz3400_",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
         ]
       },
       "images": {
@@ -105320,7 +105338,9 @@
           "_tz3000_zl1kmjqx",
           "_tz3000_xiuox57i",
           "_tz3000_b3mgfu0d",
-          "_tz3210_tqlv4ug4"
+          "_tz3210_tqlv4ug4",
+          "TUYATEC-O6SNCWD6",
+          "TUYATEC-NZRRVGCO"
         ],
         "productId": [
           "TS0042",
@@ -108298,10 +108318,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -108388,7 +108405,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_button_wireless_fingerbot_needs_device_assignment"
+          "_hybrid_button_wireless_fingerbot_needs_device_assignment",
+          "_HYBRID_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -111012,7 +111030,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_button_wireless_valve_needs_device_assignment"
+          "_hybrid_button_wireless_valve_needs_device_assignment",
+          "_HYBRID_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -114328,7 +114347,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_dimmer_needs_device_assignment"
+          "_hybrid_climate_sensor_dimmer_needs_device_assignment",
+          "_HYBRID_CLIMATE_SENSOR_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -114411,7 +114431,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_energy_needs_device_assignment"
+          "_hybrid_climate_sensor_energy_needs_device_assignment",
+          "_HYBRID_CLIMATE_SENSOR_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -115472,7 +115493,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_plug_needs_device_assignment"
+          "_hybrid_climate_sensor_plug_needs_device_assignment",
+          "_HYBRID_CLIMATE_SENSOR_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -115610,7 +115632,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_presence_needs_device_assignment"
+          "_hybrid_climate_sensor_presence_needs_device_assignment",
+          "_HYBRID_CLIMATE_SENSOR_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -116333,7 +116356,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_smart_needs_device_assignment"
+          "_hybrid_climate_sensor_smart_needs_device_assignment",
+          "_HYBRID_CLIMATE_SENSOR_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -117090,7 +117114,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_switch_needs_device_assignment"
+          "_hybrid_climate_sensor_switch_needs_device_assignment",
+          "_HYBRID_CLIMATE_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -118000,7 +118025,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_curtain_needs_device_assignment"
+          "_hybrid_contact_sensor_curtain_needs_device_assignment",
+          "_HYBRID_CONTACT_SENSOR_CURTAIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -118372,7 +118398,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_dimmer_needs_device_assignment"
+          "_hybrid_contact_sensor_dimmer_needs_device_assignment",
+          "_HYBRID_CONTACT_SENSOR_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "capabilitiesOptions": {
@@ -119049,7 +119076,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_plug_needs_device_assignment"
+          "_hybrid_contact_sensor_plug_needs_device_assignment",
+          "_HYBRID_CONTACT_SENSOR_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "capabilitiesOptions": {
@@ -119819,7 +119847,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_switch_needs_device_assignment"
+          "_hybrid_contact_sensor_switch_needs_device_assignment",
+          "_HYBRID_CONTACT_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -121951,7 +121980,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_needs_device_assignment"
+          "_hybrid_device_air_purifier_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -122265,7 +122295,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_din_needs_device_assignment"
+          "_hybrid_device_air_purifier_din_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -122378,7 +122409,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_floor_needs_device_assignment"
+          "_hybrid_device_air_purifier_floor_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_FLOOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -122480,7 +122512,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_humidifier_needs_device_assignment"
+          "_hybrid_device_air_purifier_humidifier_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_HUMIDIFIER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -122570,7 +122603,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_led_needs_device_assignment"
+          "_hybrid_device_air_purifier_led_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_LED_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -122970,7 +123004,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_motion_needs_device_assignment"
+          "_hybrid_device_air_purifier_motion_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -123309,7 +123344,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_presence_needs_device_assignment"
+          "_hybrid_device_air_purifier_presence_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -123958,7 +123994,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_quality_needs_device_assignment"
+          "_hybrid_device_air_purifier_quality_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_QUALITY_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -124674,7 +124711,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_siren_needs_device_assignment"
+          "_hybrid_device_air_purifier_siren_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -124997,7 +125035,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_smart_needs_device_assignment"
+          "_hybrid_device_air_purifier_smart_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -125725,7 +125764,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_thermostat_needs_device_assignment"
+          "_hybrid_device_air_purifier_thermostat_needs_device_assignment",
+          "_HYBRID_DEVICE_AIR_PURIFIER_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -126401,7 +126441,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_din_rail_meter_needs_device_assignment"
+          "_hybrid_device_din_rail_meter_needs_device_assignment",
+          "_HYBRID_DEVICE_DIN_RAIL_METER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -126753,7 +126794,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_floor_heating_needs_device_assignment"
+          "_hybrid_device_floor_heating_needs_device_assignment",
+          "_HYBRID_DEVICE_FLOOR_HEATING_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -126895,7 +126937,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_floor_heating_thermostat_needs_device_assignment"
+          "_hybrid_device_floor_heating_thermostat_needs_device_assignment",
+          "_HYBRID_DEVICE_FLOOR_HEATING_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -127198,7 +127241,19 @@
           "tuya",
           "woox",
           "ikea",
-          "tradfri"
+          "tradfri",
+          "BLITZWOLF",
+          "BW-",
+          "GIRIER",
+          "LIDL",
+          "LONSONHO",
+          "LUMI",
+          "NAS-",
+          "NEO",
+          "SIGNIFY",
+          "SMARTTHINGS",
+          "TUYA",
+          "WOOX"
         ],
         "productId": [
           "TS0203",
@@ -128643,7 +128698,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_plug_energy_monitor_needs_device_assignment"
+          "_hybrid_device_plug_energy_monitor_needs_device_assignment",
+          "_HYBRID_DEVICE_PLUG_ENERGY_MONITOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -130755,7 +130811,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_radiator_valve_thermostat_needs_device_assignment"
+          "_hybrid_device_radiator_valve_thermostat_needs_device_assignment",
+          "_HYBRID_DEVICE_RADIATOR_VALVE_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "capabilitiesOptions": {
@@ -131015,7 +131072,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_0_10v_needs_device_assignment"
+          "_hybrid_dimmer_0_10v_needs_device_assignment",
+          "_HYBRID_DIMMER_0_10V_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -131255,7 +131313,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_1_gang_2_needs_device_assignment"
+          "_hybrid_dimmer_1_gang_2_needs_device_assignment",
+          "_HYBRID_DIMMER_1_GANG_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -131362,7 +131421,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_1_gang_tuya_needs_device_assignment"
+          "_hybrid_dimmer_1_gang_tuya_needs_device_assignment",
+          "_HYBRID_DIMMER_1_GANG_TUYA_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -131881,7 +131941,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_4ch_needs_device_assignment"
+          "_hybrid_dimmer_4ch_needs_device_assignment",
+          "_HYBRID_DIMMER_4CH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -131939,7 +132000,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_air_purifier_needs_device_assignment"
+          "_hybrid_dimmer_air_purifier_needs_device_assignment",
+          "_HYBRID_DIMMER_AIR_PURIFIER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -132350,7 +132412,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_bulb_dimmable_needs_device_assignment"
+          "_hybrid_dimmer_bulb_dimmable_needs_device_assignment",
+          "_HYBRID_DIMMER_BULB_DIMMABLE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -134345,7 +134408,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_wall_switch_needs_device_assignment"
+          "_hybrid_dimmer_wall_switch_needs_device_assignment",
+          "_HYBRID_DIMMER_WALL_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -134736,7 +134800,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_wall_water_needs_device_assignment"
+          "_hybrid_dimmer_wall_water_needs_device_assignment",
+          "_HYBRID_DIMMER_WALL_WATER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -135192,7 +135257,109 @@
           "znrf52",
           "zstack",
           "zzh",
-          "zzh!"
+          "zzh!",
+          "ARDUINO",
+          "CC1352",
+          "CC1352P",
+          "CC2530",
+          "CC2531",
+          "CC2652",
+          "CC2652P",
+          "CC2652R",
+          "CC2652RB",
+          "COD.M",
+          "CONBEE",
+          "COORDINATOR",
+          "CUSTOM",
+          "DEBUG",
+          "DECONZ",
+          "DEMO",
+          "DEV",
+          "DEVELOPMENT",
+          "DIY",
+          "DIYRUZ",
+          "DRESDEN ELEKTRONIK",
+          "E104",
+          "E18",
+          "E72",
+          "EBYTE",
+          "EFR32",
+          "EFR32MG",
+          "EFR32MG21",
+          "EFR32MG22",
+          "EGONY",
+          "ELECTROLAMA",
+          "ESP-IDF",
+          "ESP32",
+          "ESP32-C6",
+          "ESP32-H2",
+          "ESP32C6",
+          "ESP32H2",
+          "ESPIDF",
+          "ESPRESSIF",
+          "EXAMPLE",
+          "GIO",
+          "GIO.ZIGBEE",
+          "HOBBY",
+          "HOME_AUTOMATION",
+          "HOMEAUTOMATION",
+          "HOMEMADE",
+          "HUE ESSENTIALS",
+          "JN5168",
+          "JN5169",
+          "LUMI.ROUTER",
+          "MAKER",
+          "MODKAM",
+          "NORDIC",
+          "NRF52",
+          "NRF52840",
+          "NXP",
+          "OPEN SOURCE",
+          "OPENSOURCE",
+          "PHOSCON",
+          "PLATFORMIO",
+          "POPP",
+          "PROTOTYPE",
+          "PTVO",
+          "PTVO.INFO",
+          "PTVO.SWITCH",
+          "RASPBEE",
+          "RF-STAR",
+          "RFSTAR",
+          "ROUTER",
+          "SAMPLE",
+          "SILABS",
+          "SILICON LABS",
+          "SLAESH",
+          "SLZB-06",
+          "SLZB-07",
+          "SMARTTHINGS",
+          "SONOFF ZBBRIDGE",
+          "TASMOTA",
+          "TEST",
+          "TEXAS INSTRUMENTS",
+          "TUBE",
+          "TUBE'S ZB",
+          "XYZROE",
+          "Z-STACK",
+          "Z2M",
+          "Z2T",
+          "ZBBRIDGE",
+          "ZHA",
+          "ZIGBEE HOME",
+          "ZIGBEE HOME AUTOMATION",
+          "ZIGBEE ROUTER",
+          "ZIGBEE_HOME",
+          "ZIGBEE-ROUTER",
+          "ZIGBEE2MQTT",
+          "ZIGBEE2TASMOTA",
+          "ZIGBEEHOME",
+          "ZIGBEEROUTER",
+          "ZIGSTAR",
+          "ZNRF52",
+          "ZSTACK",
+          "ZZH",
+          "ZZH!"
         ],
         "productId": [
           "ARDUINO_ZIGBEE",
@@ -135915,7 +136082,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_door_controller_garage_needs_device_assignment"
+          "_hybrid_door_controller_garage_needs_device_assignment",
+          "_HYBRID_DOOR_CONTROLLER_GARAGE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -136594,7 +136762,10 @@
           "_TZE200_placeholder_generic",
           "TUYATEC-g3gl6cgy",
           "TUYATEC-Bfq2i2Sy",
-          "TUYATEC-abkehqus"
+          "TUYATEC-abkehqus",
+          "tuyatec-g3gl6cgy",
+          "tuyatec-bfq2i2sy",
+          "tuyatec-abkehqus"
         ]
       },
       "version": "1.0.0",
@@ -136917,7 +137088,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_double_power_point_needs_device_assignment"
+          "_hybrid_double_power_point_needs_device_assignment",
+          "_HYBRID_DOUBLE_POWER_POINT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -137092,7 +137264,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_double_power_point_2_needs_device_assignment"
+          "_hybrid_double_power_point_2_needs_device_assignment",
+          "_HYBRID_DOUBLE_POWER_POINT_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -137242,7 +137415,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_energy_meter_din_needs_device_assignment"
+          "_hybrid_energy_meter_din_needs_device_assignment",
+          "_HYBRID_ENERGY_METER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -139271,7 +139445,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_gas_sensor_needs_device_assignment"
+          "_hybrid_gas_sensor_needs_device_assignment",
+          "_HYBRID_GAS_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -140617,7 +140792,30 @@
           "_TZE284_9cqcpkgb",
           "_TZE204_mvtclclq",
           "_TZ3000_imaccztn",
-          "_tz3000_2putqrmw"
+          "_tz3000_2putqrmw",
+          "DLN",
+          "DLN-DIY",
+          "DLNRAJA",
+          "EFEKTA",
+          "LEGRAND",
+          " LEGRAND",
+          "LUMI ROUTER",
+          "SLZB",
+          "SONOFFZIGBEE",
+          "SCHNEIDER ELECTRIC",
+          "SCHNEIDER",
+          "WISER",
+          "DANFOSS",
+          "BOSCH",
+          "RBSH",
+          "NIKO",
+          "NIKO NV",
+          "D5X84YU",
+          "NETATMO",
+          "TI ROUTER",
+          "TI.ROUTER",
+          "ZIG-A-ZIG-AH",
+          "ZIGFRED"
         ],
         "productId": [
           "BUTTON",
@@ -141187,7 +141385,8 @@
           "zen thermostat",
           "zigbee alliance",
           "_tz3210_jaap6jeb",
-          "mãœller licht"
+          "mãœller licht",
+          "MÃŒLLER LICHT"
         ],
         "productId": [
           "TS0203",
@@ -141667,7 +141866,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_hvac_air_conditioner_needs_device_assignment"
+          "_hybrid_hvac_air_conditioner_needs_device_assignment",
+          "_HYBRID_HVAC_AIR_CONDITIONER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -142463,7 +142663,21 @@
           "TUYATEC-RIUJ5XZS",
           "TUYATEC-V3UXBUXY",
           "TUYATEC-VMGH3FXD",
-          "TUYATEC-YG5DCBFU"
+          "TUYATEC-YG5DCBFU",
+          "tuyatec-1g3tawnp",
+          "tuyatec-1uxx9cci",
+          "tuyatec-abkehqus",
+          "tuyatec-bfq2i2sy",
+          "tuyatec-gqhxixyk",
+          "tuyatec-haoiuwzy",
+          "tuyatec-ojmxeikg",
+          "tuyatec-ojmxeikq",
+          "tuyatec-prhs1rsd",
+          "tuyatec-qun7vq14",
+          "tuyatec-riuj5xzs",
+          "tuyatec-v3uxbuxy",
+          "tuyatec-vmgh3fxd",
+          "tuyatec-yg5dcbfu"
         ],
         "productId": [
           "TS0601"
@@ -143383,7 +143597,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_illuminance_sensor_needs_device_assignment"
+          "_hybrid_illuminance_sensor_needs_device_assignment",
+          "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
@@ -144343,7 +144558,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_lcdtemphumidsensor_2_needs_device_assignment"
+          "_hybrid_lcdtemphumidsensor_2_needs_device_assignment",
+          "_HYBRID_LCDTEMPHUMIDSENSOR_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -151546,7 +151762,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_outdoor_2_socket_needs_device_assignment"
+          "_hybrid_outdoor_2_socket_needs_device_assignment",
+          "_HYBRID_OUTDOOR_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -152210,7 +152427,14 @@
           "tuyatec-53o41joc",
           "tuyatec-deetibst",
           "tuyatec-dgtxmihe",
-          "tuyatec-b5g40alm"
+          "tuyatec-b5g40alm",
+          "TUYATEC-LHA8PBWD",
+          "TUYATEC-ZN9WYQTR",
+          "TUYATEC-DXNOHKPD",
+          "TUYATEC-53O41JOC",
+          "TUYATEC-DEETIBST",
+          "TUYATEC-DGTXMIHE",
+          "TUYATEC-B5G40ALM"
         ],
         "productId": [
           "RH3040"
@@ -152381,7 +152605,8 @@
           "_tz3210_cehuw1lw",
           "_tz3000_fukaa7nc",
           "_tz3210_5ct6e7ye",
-          "_tz3000_qystbcjg"
+          "_tz3000_qystbcjg",
+          "CK-BL702-SWP-01(7020)"
         ],
         "productId": [
           "TS0121",
@@ -152902,7 +153127,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_plug_smart_needs_device_assignment"
+          "_hybrid_plug_smart_needs_device_assignment",
+          "_HYBRID_PLUG_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -154171,18 +154397,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -154263,7 +154483,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_plug_smart_switch_needs_device_assignment"
+          "_hybrid_plug_smart_switch_needs_device_assignment",
+          "_HYBRID_PLUG_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -155768,7 +155989,8 @@
           "_tze204_iadro9bf",
           "_tze284_iadro9bf",
           "_tze200_zcl6go6a",
-          "_tze200_xpq2rzhq"
+          "_tze200_xpq2rzhq",
+          "hobeian"
         ],
         "productId": [
           "CK-BL702-MWS-01",
@@ -156089,7 +156311,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_radar_sensor_2_needs_device_assignment"
+          "_hybrid_radar_sensor_2_needs_device_assignment",
+          "_HYBRID_RADAR_SENSOR_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -156397,7 +156620,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_radiator_controller_needs_device_assignment"
+          "_hybrid_radiator_controller_needs_device_assignment",
+          "_HYBRID_RADIATOR_CONTROLLER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -159545,10 +159769,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -159635,7 +159856,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment"
+          "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
+          "_HYBRID_REMOTE_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -160941,7 +161163,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_remote_button_wireless_scene_needs_device_assignment"
+          "_hybrid_remote_button_wireless_scene_needs_device_assignment",
+          "_HYBRID_REMOTE_BUTTON_WIRELESS_SCENE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "metadata": {
@@ -161997,7 +162220,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_remote_button_wireless_valve_needs_device_assignment"
+          "_hybrid_remote_button_wireless_valve_needs_device_assignment",
+          "_HYBRID_REMOTE_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -162588,7 +162812,8 @@
           "_tz3210_mja6r5ix",
           "_tz3000_q50zhdsc",
           "eWeLight",
-          "ewelight"
+          "ewelight",
+          "EWELIGHT"
         ],
         "productId": [
           "TS0505A",
@@ -164127,7 +164352,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_scene_switch_6ch_needs_device_assignment"
+          "_hybrid_scene_switch_6ch_needs_device_assignment",
+          "_HYBRID_SCENE_SWITCH_6CH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -166444,7 +166670,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sensor_climate_presence_needs_device_assignment"
+          "_hybrid_sensor_climate_presence_needs_device_assignment",
+          "_HYBRID_SENSOR_CLIMATE_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -166596,7 +166823,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sensor_climate_smart_needs_device_assignment"
+          "_hybrid_sensor_climate_smart_needs_device_assignment",
+          "_HYBRID_SENSOR_CLIMATE_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -168199,7 +168427,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sensor_contact_plug_needs_device_assignment"
+          "_hybrid_sensor_contact_plug_needs_device_assignment",
+          "_HYBRID_SENSOR_CONTACT_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -170326,7 +170555,22 @@
           "_tze200_bqcqqjpb",
           "_tze204_nklqjk62",
           "_tze204_wfxuhoea",
-          "_tze200_2m38mh6k"
+          "_tze200_2m38mh6k",
+          "TUYATEC-KTGE2VQT",
+          "CAT0001",
+          "DSS0010",
+          "TUYATEC-0L6XAQMI",
+          "TUYATEC-7QUNN4GQ",
+          "TUYATEC-CRR8QB0P",
+          "TUYATEC-IP9GANVW",
+          "TUYATEC-KBQF60NT",
+          "TUYATEC-R9HGSSOL",
+          "TUYATEC-RKQIQVCS",
+          "TUYATEC-SB6T7ETT",
+          "TUYATEC-TRHRGA6P",
+          "IMMAX",
+          "VISONIC",
+          "TUYATEC-3TIPNSRX"
         ],
         "productId": [
           "TS0203",
@@ -171488,7 +171732,9 @@
           "_TZE284_zofmmt9s",
           "_TZE204_hewlydpz",
           "_tze284_zofmmt9s",
-          "_tze204_hewlydpz"
+          "_tze204_hewlydpz",
+          "ZG-106Z",
+          "TS0222"
         ],
         "productId": [
           "TS0222",
@@ -173242,7 +173488,8 @@
           "TS0601"
         ],
         "manufacturerName": [
-          "_hybrid_sensor_motion_radar_needs_device_assignment"
+          "_hybrid_sensor_motion_radar_needs_device_assignment",
+          "_HYBRID_SENSOR_MOTION_RADAR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -174356,7 +174603,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_shutter_roller_controller_needs_device_assignment"
+          "_hybrid_shutter_roller_controller_needs_device_assignment",
+          "_HYBRID_SHUTTER_ROLLER_CONTROLLER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [
@@ -175077,7 +175325,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_siren_sirentemphumidsensor_needs_device_assignment"
+          "_hybrid_siren_sirentemphumidsensor_needs_device_assignment",
+          "_HYBRID_SIREN_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "maintenanceActions": [
@@ -175166,7 +175415,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sirentemphumidsensor_needs_device_assignment"
+          "_hybrid_sirentemphumidsensor_needs_device_assignment",
+          "_HYBRID_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "maintenanceActions": [
@@ -176248,7 +176498,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_heater_needs_device_assignment"
+          "_hybrid_smart_heater_needs_device_assignment",
+          "_HYBRID_SMART_HEATER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -176565,7 +176816,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_irrigation_valve_needs_device_assignment"
+          "_hybrid_smart_irrigation_valve_needs_device_assignment",
+          "_HYBRID_SMART_IRRIGATION_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -177417,7 +177669,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_remote_4_buttons_needs_device_assignment"
+          "_hybrid_smart_remote_4_buttons_needs_device_assignment",
+          "_HYBRID_SMART_REMOTE_4_BUTTONS_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [],
@@ -177685,7 +177938,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_screen_switch_needs_device_assignment"
+          "_hybrid_smart_screen_switch_needs_device_assignment",
+          "_HYBRID_SMART_SCREEN_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -177750,7 +178004,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_switch_needs_device_assignment"
+          "_hybrid_smart_switch_needs_device_assignment",
+          "_HYBRID_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -178088,7 +178343,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smartplug_2_socket_needs_device_assignment"
+          "_hybrid_smartplug_2_socket_needs_device_assignment",
+          "_HYBRID_SMARTPLUG_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -179464,7 +179720,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_socket_power_strip_four_two_needs_device_assignment"
+          "_hybrid_socket_power_strip_four_two_needs_device_assignment",
+          "_HYBRID_SOCKET_POWER_STRIP_FOUR_TWO_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -179858,7 +180115,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_soil_sensor_ec_needs_device_assignment"
+          "_hybrid_soil_sensor_ec_needs_device_assignment",
+          "_HYBRID_SOIL_SENSOR_EC_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -180783,26 +181041,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -180919,7 +181157,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_switch_1_gang_needs_device_assignment"
+          "_hybrid_switch_1_gang_needs_device_assignment",
+          "_HYBRID_SWITCH_1_GANG_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -182065,7 +182304,9 @@
           "_tze200_tgeqdjgk",
           "_tz3000_kqvb5akv",
           "HOBEIAN",
-          "hobeian"
+          "hobeian",
+          "ZBEACON",
+          "TZE204_7SJNCIRF"
         ],
         "endpoints": {
           "1": {
@@ -182708,16 +182949,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -182999,7 +183230,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_switch_2_gang_metering_needs_device_assignment"
+          "_hybrid_switch_2_gang_metering_needs_device_assignment",
+          "_HYBRID_SWITCH_2_GANG_METERING_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -183802,21 +184034,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -184693,26 +184910,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -185819,31 +186016,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -187740,18 +187912,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -187831,7 +187997,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_switch_wall_needs_device_assignment"
+          "_hybrid_switch_wall_needs_device_assignment",
+          "_HYBRID_SWITCH_WALL_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
     },
@@ -190768,7 +190935,21 @@
           "_tz3000_bguser20",
           "_tz3000_8ybe88nf",
           "_tz3000_fie1dpkm",
-          "_tz3000_f2bw0b6k"
+          "_tz3000_f2bw0b6k",
+          "TUYATEC-1G3TAWNP",
+          "TUYATEC-1UXX9CCI",
+          "TUYATEC-GQHXIXYK",
+          "TUYATEC-HAOIUWZY",
+          "TUYATEC-OJMXEIKG",
+          "TUYATEC-OJMXEIKQ",
+          "TUYATEC-RIUJ5XZS",
+          "TUYATEC-V3UXBUXY",
+          "TUYATEC-VMGH3FXD",
+          "TUYATEC-G3GL6CGY",
+          "TUYATEC-BFQ2I2SY",
+          "TUYATEC-ABKEHQUS",
+          "TUYATEC-YG5DCBFU",
+          "TUYATEC-PRHS1RSD"
         ]
       },
       "images": {
@@ -190924,7 +191105,8 @@
           "_tyzb01_a082h2cc",
           "_tz3000_rufdtfyv",
           "TUYATEC-qun7vq14",
-          "tuyatec-qun7vq14"
+          "tuyatec-qun7vq14",
+          "TUYATEC-QUN7VQ14"
         ],
         "productId": [
           "RH3052",
@@ -191289,7 +191471,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_temphumidsensor4_needs_device_assignment"
+          "_hybrid_temphumidsensor4_needs_device_assignment",
+          "_HYBRID_TEMPHUMIDSENSOR4_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -192449,7 +192632,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_ultrasonic_heat_meter_needs_device_assignment"
+          "_hybrid_ultrasonic_heat_meter_needs_device_assignment",
+          "_HYBRID_ULTRASONIC_HEAT_METER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -192521,7 +192705,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_ultrasonic_water_meter_needs_device_assignment"
+          "_hybrid_ultrasonic_water_meter_needs_device_assignment",
+          "_HYBRID_ULTRASONIC_WATER_METER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "images": {
@@ -192932,7 +193117,32 @@
           "_tz3210_",
           "_tze200_",
           "_tze204_",
-          "_tze284_"
+          "_tze284_",
+          "LIDL LIVARNO",
+          "NOUS",
+          "TUYATEC",
+          "LEGRAND",
+          "SCHNEIDER ELECTRIC",
+          "DANFOSS",
+          "EWELINK",
+          "AQARA",
+          "AUBESS",
+          "AVATTO",
+          "BITRON",
+          "ECO-DIM",
+          "ECODIM",
+          "EUROTRONIC",
+          "HEIMAN",
+          "IKEA OF SWEDEN",
+          "LIDL HOME",
+          "MOES",
+          "PHILIPS",
+          "ROBB SMARRT",
+          "SIGNIFY NETHERLANDS B.V.",
+          "SILVERCREST",
+          "SUNRICHER",
+          "XIAOMI",
+          "ZEMISMART"
         ],
         "productId": [
           "TS0001",
@@ -195816,7 +196026,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_remote_4_gang_2_needs_device_assignment"
+          "_hybrid_wall_remote_4_gang_2_needs_device_assignment",
+          "_HYBRID_WALL_REMOTE_4_GANG_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "maintenanceActions": [
@@ -195962,7 +196173,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_remote_4_gang_3_needs_device_assignment"
+          "_hybrid_wall_remote_4_gang_3_needs_device_assignment",
+          "_HYBRID_WALL_REMOTE_4_GANG_3_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [],
@@ -196114,7 +196326,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_remote_6_gang_needs_device_assignment"
+          "_hybrid_wall_remote_6_gang_needs_device_assignment",
+          "_HYBRID_WALL_REMOTE_6_GANG_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "settings": [],
@@ -196635,7 +196848,8 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_switch_1_gang_tuya_needs_device_assignment"
+          "_hybrid_wall_switch_1_gang_tuya_needs_device_assignment",
+          "_HYBRID_WALL_SWITCH_1_GANG_TUYA_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
       "version": "1.0.0",
@@ -198045,9 +198259,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tze200_shkxsgis",
-          "HOBEIAN",
-          "hobeian"
+          "_tze200_shkxsgis"
         ],
         "productId": [
           "TS0601"
@@ -199702,7 +199914,10 @@
           "_tz3000_e6ekbxts",
           "_tyst11_qq9mpfhw",
           "_TZE200_qq9mpfhw",
-          "_tze200_qq9mpfhw"
+          "_tze200_qq9mpfhw",
+          "TUYATEC-BDUZ1XXP",
+          "TUYATEC-H4WNRTCK",
+          "TUYATEC-KTEV3UWQ"
         ],
         "productId": [
           "q9mpfhw",
