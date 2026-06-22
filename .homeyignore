@@ -254,3 +254,11 @@ data/fingerprints.json.full-backup
 
 app.json.pre-compact-backup
 .homeycompose.temp_bak/
+
+# v9.0.54: Reduce archive size
+assets/branding/
+tests/
+*.backup*
+orphan_*.json
+orphan_*.txt
+*.patch
