@@ -9,6 +9,11 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  *       DP6=child_lock, DP28=schedule
  */
 class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---

@@ -37,6 +37,10 @@ const TUYA_DP = {
  */
 class LEDControllerDimmableDevice extends ZigBeeDevice {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     // Prevent double init

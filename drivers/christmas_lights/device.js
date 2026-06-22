@@ -8,6 +8,10 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 class christmas_lights extends TuyaSpecificClusterDevice {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
     async onNodeInit({ zclNode }) {
         
         this.printNode();

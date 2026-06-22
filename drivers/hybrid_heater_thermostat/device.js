@@ -18,6 +18,10 @@ const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
  */
 class HybridHeaterThermostatDevice extends UnifiedSensorBase {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   get dpMappings() {
     return {
       // Heater on/off

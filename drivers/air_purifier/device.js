@@ -17,6 +17,10 @@ const DP = {
  */
 class AirPurifierDevice extends BaseUnifiedDevice {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     this.log('[AirPurifier] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });

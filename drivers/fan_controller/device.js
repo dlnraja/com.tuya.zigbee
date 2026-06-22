@@ -14,6 +14,10 @@ const { CLUSTER } = require('zigbee-clusters');
  */
 class FanControllerDevice extends ZigBeeDevice {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     try {
       await super.onNodeInit({ zclNode });

@@ -180,6 +180,35 @@ backup-*
 **/*.backup*
 **/*.bak
 
+# === Windows reserved-name junk (PowerShell redirection pollution) — DO NOT REMOVE ===
+# These names cannot exist as files on Windows (they are device names), but a
+# broken `Out-File NUL` / `> NUL` redirection can create a real file that
+# fs.unlinkSync cannot delete. A NUL inside .homeybuild hangs tar-stream and
+# produces a 0-byte / corrupt archive = root cause of Athom "processing_failed".
+# Excluding them here is a last-resort guard if one slips back in.
+NUL
+CON
+PRN
+AUX
+COM1
+COM2
+COM3
+COM4
+COM5
+COM6
+COM7
+COM8
+COM9
+LPT1
+LPT2
+LPT3
+LPT4
+LPT5
+LPT6
+LPT7
+LPT8
+LPT9
+
 # === OS files ===
 .DS_Store
 Thumbs.db

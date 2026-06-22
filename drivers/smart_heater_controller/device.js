@@ -32,6 +32,10 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
  */
 class SmartHeaterControllerDevice extends UnifiedThermostatBase {
 
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.

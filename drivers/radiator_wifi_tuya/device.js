@@ -7,6 +7,11 @@ const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils');
  * Local WiFi control for (Tuya / Besterm) radiators using unified TuyaLocalDevice base
  */
 class RadiatorWifiTuyaDevice extends TuyaLocalDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
   get dpMappings() {
     const mappings = {
       '1': { 

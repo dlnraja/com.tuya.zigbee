@@ -35,6 +35,11 @@ const THERMOSTAT_DATA_POINTS = {
  * - This code is using the Tuya cluster to receive and send Tuya data points back and forth between Homey and the Wall Thermostat.
  */
 class WallThermostatDevice extends TuyaSpecificClusterDevice {
+
+  // v9.0.74: This device is mains-powered. Declare it so UnifiedBatteryHandler
+  // does not add a false measure_battery capability (fixes false-battery reports).
+  get mainsPowered() { return true; }
+
     async onNodeInit({zclNode}) {
         this.printNode();
 /*     debug(true);
