@@ -60,7 +60,7 @@ if (Array.isArray(app.permissions) && app.permissions.includes('homey:manager:ap
 }
 
 // Required fields check
-const required = ['id', 'version', 'sdk', 'name', 'category', 'images', 'compatibility', 'platforms', 'author'];
+const required = ['id', 'version', 'sdkVersion', 'name', 'category', 'images', 'compatibility', 'platforms', 'author'];
 required.forEach(field => {
   if (!app[field]) fail(`MISSING required field: ${field}`);
   else ok(`Required field: ${field} = ${JSON.stringify(app[field]).substring(0,50)}`);
