@@ -331,7 +331,14 @@
   "connectivity": [
     "zigbee"
   ],
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0201, Excellux"
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0201",
@@ -343,12 +350,6 @@
           0
         ]
       }
-    }
-  },
-  "metadata": {
-    "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0201, Excellux"
     }
   }
 }

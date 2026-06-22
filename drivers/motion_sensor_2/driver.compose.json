@@ -30,7 +30,26 @@
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0225",
@@ -58,24 +77,6 @@
       "instruction": {
         "en": "Press the reset button for aprox 5 seconds until the LED blinks."
       }
-    }
-  },
-  "version": "1.0.0",
-  "metadata": {
-    "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
-    }
-  },
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
     }
   }
 }

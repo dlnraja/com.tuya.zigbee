@@ -130,9 +130,9 @@ if [ -n "$STAGED_DRIVERS" ]; then
   done <<< "$STAGED_DRIVERS"
 fi
 if [ $MFR_ERRORS -gt 0 ]; then
-  echo -e "${RED}  COMMIT BLOCKED — $MFR_ERRORS driver(s) with empty manufacturerName!${RESET}"
-  echo -e "${YELLOW}  Fix: Add fingerprints or remove the driver${RESET}"
-  ERRORS=$((ERRORS + 1))
+  echo -e "${YELLOW}  WARNING — $MFR_ERRORS driver(s) with empty manufacturerName (warning only)${RESET}"
+  echo -e "${YELLOW}  NOTE: empty manufacturerName:[] is accepted by 'homey app validate --level publish'.${RESET}"
+  echo -e "${YELLOW}  The earlier AggregateError link was disproven by the A/B test (good build also fails).${RESET}"
 else
   echo -e "${GREEN}  PASSED: No empty manufacturerName arrays${RESET}"
 fi

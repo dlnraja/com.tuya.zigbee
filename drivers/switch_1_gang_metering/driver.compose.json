@@ -45,7 +45,14 @@
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
+  "version": "1.0.0",
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS004F"
@@ -83,11 +90,5 @@
         "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
       }
     }
-  },
-  "version": "1.0.0",
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
   }
 }

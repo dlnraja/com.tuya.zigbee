@@ -21,7 +21,26 @@
     "large": "/drivers/sr_zs_switch/assets/images/large.png",
     "small": "/drivers/sr_zs_switch/assets/images/small.png"
   },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0002"
+    }
+  },
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0002"
     ],
@@ -84,24 +103,6 @@
           6
         ]
       }
-    }
-  },
-  "version": "1.0.0",
-  "metadata": {
-    "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0002"
-    }
-  },
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
     }
   }
 }

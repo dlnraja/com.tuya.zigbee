@@ -353,7 +353,19 @@
   "connectivity": [
     "zigbee"
   ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0601",
       "Excellux"
@@ -364,17 +376,6 @@
           0
         ]
       }
-    }
-  },
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
     }
   }
 }

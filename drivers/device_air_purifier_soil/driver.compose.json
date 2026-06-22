@@ -80,19 +80,6 @@
     "mains": true
   },
   "subDevices": [],
-  "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0001"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0
-        ]
-      }
-    }
-  },
   "settings": [
     {
       "type": "group",
@@ -300,6 +287,20 @@
     "driver": {
       "catchall": true,
       "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0001"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "productId": [
+      "TS0601",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
     }
   }
 }

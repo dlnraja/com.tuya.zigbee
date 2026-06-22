@@ -25,7 +25,20 @@
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0205",
       "TS0601"
@@ -47,18 +60,6 @@
       "instruction": {
         "en": "Press and hold down test switch until the LED blinks green."
       }
-    }
-  },
-  "version": "1.0.0",
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
-      "setable": false
     }
   }
 }

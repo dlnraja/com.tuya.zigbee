@@ -233,7 +233,14 @@
   "connectivity": [
     "zigbee"
   ],
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F"
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS011F"
@@ -247,12 +254,6 @@
           6
         ]
       }
-    }
-  },
-  "metadata": {
-    "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F"
     }
   }
 }

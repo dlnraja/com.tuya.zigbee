@@ -37,7 +37,9 @@
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
+  "version": "1.0.0",
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0121",
       "TSO121",
@@ -65,6 +67,5 @@
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
     }
-  },
-  "version": "1.0.0"
+  }
 }

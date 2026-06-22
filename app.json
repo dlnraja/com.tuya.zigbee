@@ -96451,20 +96451,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "zigbee": {
-        "productId": [
-          "TS0601",
-          "Excellux"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "metadata": {
         "driver": {
           "catchall": true,
@@ -96480,6 +96466,20 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601",
+          "Excellux"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
         }
       }
     },
@@ -98228,6 +98228,7 @@
         "zigbee"
       ],
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -98237,8 +98238,7 @@
               0
             ]
           }
-        },
-        "manufacturerName": []
+        }
       }
     },
     {
@@ -108318,10 +108318,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -109704,36 +109701,6 @@
         "button.2",
         "alarm_battery"
       ],
-      "zigbee": {
-        "productId": [
-          "TS0601",
-          "TS0215A"
-        ],
-        "learnmode": {
-          "image": "/drivers/switch_2gang/assets/learnmode.svg",
-          "instruction": {
-            "en": "Turn the switch on/off 3 times quickly"
-          }
-        },
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              4,
-              5,
-              6
-            ]
-          },
-          "2": {
-            "clusters": [
-              4,
-              5,
-              6
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "images": {
         "small": "/drivers/switch_2gang/assets/images/small.png",
         "large": "/drivers/switch_2gang/assets/images/large.png"
@@ -110376,7 +110343,37 @@
         "actions": []
       },
       "id": "button_wireless_switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601",
+          "TS0215A"
+        ],
+        "learnmode": {
+          "image": "/drivers/switch_2gang/assets/learnmode.svg",
+          "instruction": {
+            "en": "Turn the switch on/off 3 times quickly"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -110613,7 +110610,14 @@
       "connectivity": [
         "zigbee"
       ],
+      "metadata": {
+        "driver": {
+          "catchall": true,
+          "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F"
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS011F"
@@ -110627,13 +110631,6 @@
               6
             ]
           }
-        },
-        "manufacturerName": []
-      },
-      "metadata": {
-        "driver": {
-          "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS0601, TS011F"
         }
       }
     },
@@ -113681,27 +113678,6 @@
           "usageConstant": 0.5
         }
       },
-      "zigbee": {
-        "productId": [
-          "TS0601"
-        ],
-        "learnmode": {
-          "image": "/drivers/radiator_valve/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-          }
-        },
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              6
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "settings": [
         {
           "id": "power_source",
@@ -113965,6 +113941,27 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/radiator_valve/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ]
+          }
         }
       }
     },
@@ -114812,7 +114809,14 @@
       "connectivity": [
         "zigbee"
       ],
+      "metadata": {
+        "driver": {
+          "catchall": true,
+          "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0201, Excellux"
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0201",
@@ -114824,13 +114828,6 @@
               0
             ]
           }
-        },
-        "manufacturerName": []
-      },
-      "metadata": {
-        "driver": {
-          "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0201, Excellux"
         }
       }
     },
@@ -120210,7 +120207,19 @@
       "connectivity": [
         "zigbee"
       ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -120221,18 +120230,6 @@
               0
             ]
           }
-        },
-        "manufacturerName": []
-      },
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
         }
       }
     },
@@ -125107,27 +125104,6 @@
         "mains": true
       },
       "subDevices": [],
-      "zigbee": {
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              61184
-            ]
-          }
-        },
-        "learnmode": {
-          "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
-          }
-        },
-        "productId": [
-          "TS0601"
-        ],
-        "manufacturerName": []
-      },
       "settings": [
         {
           "id": "power_source",
@@ -125418,7 +125394,28 @@
         "actions": []
       },
       "id": "device_air_purifier_smoke",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "zigbee": {
+        "manufacturerName": [],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
+          }
+        },
+        "productId": [
+          "TS0601"
+        ]
+      }
     },
     {
       "name": {
@@ -125502,20 +125499,6 @@
         "mains": true
       },
       "subDevices": [],
-      "zigbee": {
-        "productId": [
-          "TS0601",
-          "TS0001"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "settings": [
         {
           "type": "group",
@@ -125724,6 +125707,20 @@
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0001"
         }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601",
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
       }
     },
     {
@@ -125923,20 +125920,6 @@
         "small": "/drivers/water_tank_monitor/assets/images/small.png",
         "large": "/drivers/water_tank_monitor/assets/images/large.png"
       },
-      "zigbee": {
-        "productId": [
-          "TS0601"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              61184
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "energy": {
         "batteries": [
           "AAA",
@@ -126072,7 +126055,21 @@
         "actions": []
       },
       "id": "device_air_purifier_water",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -127040,6 +127037,7 @@
         "zigbee"
       ],
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -127049,8 +127047,7 @@
               0
             ]
           }
-        },
-        "manufacturerName": []
+        }
       }
     },
     {
@@ -150381,7 +150378,26 @@
         "large": "//drivers/motion_sensor_2/assets/images/large.png",
         "small": "//drivers/motion_sensor_2/assets/images/small.png"
       },
+      "version": "1.0.0",
+      "metadata": {
+        "driver": {
+          "catchall": true,
+          "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
+        }
+      },
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0225",
@@ -150409,25 +150425,6 @@
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
-        },
-        "manufacturerName": []
-      },
-      "version": "1.0.0",
-      "metadata": {
-        "driver": {
-          "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS0601, TS0225, Excellux, TS0207, TS0001"
-        }
-      },
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
         }
       },
       "settings": [
@@ -154403,18 +154400,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -156461,7 +156452,26 @@
           "usageOff": 0
         }
       },
+      "version": "1.0.0",
+      "metadata": {
+        "driver": {
+          "catchall": true,
+          "reason": "Fallback for unmatched devices with PIDs: CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZV, ZG-205Z, ZP-301Z, SNZB-06P, ZG-204ZE, ZG-204ZQ, ZG-205ZL, ZG-302ZL, ZG-302ZM, TS0601, TS110E, TS0004"
+        }
+      },
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
@@ -156512,25 +156522,6 @@
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
-        },
-        "manufacturerName": []
-      },
-      "version": "1.0.0",
-      "metadata": {
-        "driver": {
-          "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SZLMR10, TS0203, TS0225, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZV, ZG-205Z, ZP-301Z, SNZB-06P, ZG-204ZE, ZG-204ZQ, ZG-205ZL, ZG-302ZL, ZG-302ZM, TS0601, TS110E, TS0004"
-        }
-      },
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
         }
       },
       "settings": [
@@ -159781,10 +159772,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -160347,29 +160335,6 @@
         "button.2"
       ],
       "energy": {},
-      "zigbee": {
-        "productId": [
-          "TS011F",
-          "TS0121",
-          "TSO121"
-        ],
-        "learnmode": {
-          "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-          }
-        },
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              6
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "settings": [
         {
           "id": "power_source",
@@ -160788,6 +160753,29 @@
         "driver": {
           "catchall": true,
           "reason": "Fallback for unmatched devices with PIDs: TS011F, TS0121, TSO121"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS011F",
+          "TS0121",
+          "TSO121"
+        ],
+        "learnmode": {
+          "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ]
+          }
         }
       }
     },
@@ -165574,19 +165562,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "zigbee": {
-        "productId": [
-          "TS0601"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "capabilitiesOptions": {
         "button.1": {
           "title": {
@@ -165596,6 +165571,19 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
         }
       }
     },
@@ -167946,7 +167934,19 @@
       "connectivity": [
         "zigbee"
       ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -167957,18 +167957,6 @@
               0
             ]
           }
-        },
-        "manufacturerName": []
-      },
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
         }
       }
     },
@@ -170113,28 +170101,6 @@
         }
       },
       "subDevices": [],
-      "zigbee": {
-        "productId": [
-          "TS0601",
-          "q9mpfhw",
-          "Excellux"
-        ],
-        "learnmode": {
-          "image": "/drivers/contact_sensor/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-          }
-        },
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "settings": [
         {
           "id": "power_source",
@@ -170440,6 +170406,28 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601",
+          "q9mpfhw",
+          "Excellux"
+        ],
+        "learnmode": {
+          "image": "/drivers/contact_sensor/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
         }
       }
     },
@@ -175820,7 +175808,15 @@
         "large": "//drivers/smartPlug_DinRail/assets/images/large.png",
         "small": "//drivers/smartPlug_DinRail/assets/images/small.png"
       },
+      "version": "1.0.0",
+      "metadata": {
+        "driver": {
+          "catchall": true,
+          "reason": "Fallback for unmatched devices with PIDs: TS0121, TSO121, TS011F"
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0121",
           "TSO121",
@@ -175854,14 +175850,6 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
-        },
-        "manufacturerName": []
-      },
-      "version": "1.0.0",
-      "metadata": {
-        "driver": {
-          "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS0121, TSO121, TS011F"
         }
       },
       "settings": [
@@ -178076,7 +178064,9 @@
         "large": "//drivers/smartplug/assets/images/large.png",
         "small": "//drivers/smartplug/assets/images/small.png"
       },
+      "version": "1.0.0",
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0121",
           "TSO121",
@@ -178103,10 +178093,8 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
-        },
-        "manufacturerName": []
+        }
       },
-      "version": "1.0.0",
       "settings": [
         {
           "id": "metering_offset",
@@ -178878,6 +178866,18 @@
         "large": "//drivers/smoke_sensor/assets/images/large.png",
         "small": "//drivers/smoke_sensor/assets/images/small.png"
       },
+      "version": "1.0.0",
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "zigbee": {
         "manufacturerName": [],
         "productId": [
@@ -178901,18 +178901,6 @@
           "instruction": {
             "en": "Press and hold down test switch until the LED blinks green."
           }
-        }
-      },
-      "version": "1.0.0",
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
         }
       }
     },
@@ -180326,7 +180314,26 @@
         "large": "/drivers/sr_zs_switch/assets/images/large.png",
         "small": "/drivers/sr_zs_switch/assets/images/small.png"
       },
+      "version": "1.0.0",
+      "metadata": {
+        "driver": {
+          "catchall": true,
+          "reason": "Fallback for unmatched devices with PIDs: TS0002"
+        }
+      },
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0002"
         ],
@@ -180389,25 +180396,6 @@
               6
             ]
           }
-        },
-        "manufacturerName": []
-      },
-      "version": "1.0.0",
-      "metadata": {
-        "driver": {
-          "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS0002"
-        }
-      },
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1"
-          },
-          "maintenanceAction": true,
-          "getable": false,
-          "setable": false
         }
       },
       "settings": [
@@ -180503,33 +180491,6 @@
         "button.toggle",
         "button.1"
       ],
-      "zigbee": {
-        "productId": [
-          "TS0601",
-          "TS011F",
-          "TS0726"
-        ],
-        "learnmode": {
-          "image": "/drivers/switch_2gang/assets/learnmode.svg",
-          "instruction": {
-            "en": "Turn the switch on/off 3 times quickly"
-          }
-        },
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              6
-            ]
-          },
-          "2": {
-            "clusters": [
-              6
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "images": {
         "small": "/drivers/switch_2gang/assets/images/small.png",
         "large": "/drivers/switch_2gang/assets/images/large.png",
@@ -181056,26 +181017,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -181128,7 +181069,34 @@
         }
       ],
       "id": "switch",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601",
+          "TS011F",
+          "TS0726"
+        ],
+        "learnmode": {
+          "image": "/drivers/switch_2gang/assets/learnmode.svg",
+          "instruction": {
+            "en": "Turn the switch on/off 3 times quickly"
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          }
+        }
+      }
     },
     {
       "id": "switch_1_gang",
@@ -181264,7 +181232,14 @@
         "large": "//drivers/switch_1_gang_metering/assets/images/large.png",
         "small": "//drivers/switch_1_gang_metering/assets/images/small.png"
       },
+      "version": "1.0.0",
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
       "zigbee": {
+        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS004F"
@@ -181301,14 +181276,7 @@
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        },
-        "manufacturerName": []
-      },
-      "version": "1.0.0",
-      "energy": {
-        "batteries": [
-          "CR2032"
-        ]
+        }
       },
       "settings": [
         {
@@ -182982,16 +182950,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -184077,21 +184035,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -184968,26 +184911,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -186094,31 +186017,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -188015,18 +187913,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -188139,52 +188031,6 @@
         "batteries": [
           "OTHER"
         ]
-      },
-      "zigbee": {
-        "productId": [
-          "TS0015",
-          "TS0601"
-        ],
-        "learnmode": {
-          "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
-          "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-          }
-        },
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              3,
-              4,
-              5,
-              6,
-              61184
-            ]
-          },
-          "2": {
-            "clusters": [
-              6
-            ]
-          },
-          "3": {
-            "clusters": [
-              6
-            ]
-          },
-          "4": {
-            "clusters": [
-              6
-            ]
-          },
-          "5": {
-            "clusters": [
-              6
-            ]
-          }
-        },
-        "manufacturerName": []
       },
       "settings": [
         {
@@ -188761,7 +188607,53 @@
         }
       ],
       "id": "switch_wall_5gang",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0015",
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ]
+          }
+        }
+      }
     },
     {
       "name": {
@@ -192655,23 +192547,6 @@
         "large": "//drivers/tuya_dummy_device/assets/images/large.png",
         "small": "//drivers/tuya_dummy_device/assets/images/small.png"
       },
-      "zigbee": {
-        "productId": [
-          "TS0601"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              61184
-            ],
-            "bindings": [
-              61184
-            ]
-          }
-        },
-        "manufacturerName": []
-      },
       "learnmode": {
         "instruction": {
           "en": "This driver will log all incoming Tuya datapoints. Please share diagnostic reports for analysis."
@@ -192687,6 +192562,23 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
         }
       }
     },
