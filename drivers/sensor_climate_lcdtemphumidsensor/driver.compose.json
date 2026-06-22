@@ -501,18 +501,6 @@
   "connectivity": [
     "zigbee"
   ],
-  "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0
-        ]
-      }
-    }
-  },
   "capabilitiesOptions": {
     "button.1": {
       "title": {
@@ -522,6 +510,19 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
     }
   }
 }

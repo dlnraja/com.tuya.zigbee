@@ -41,16 +41,19 @@ try {
 
 let changes = 0;
 
-// 1) Strip empty manufacturerName arrays (root cause of Zigbee AggregateError).
-let strippedMfr = 0;
+// 1) Report empty manufacturerName arrays (informational, NOT stripped).
+// NOTE: deleting the manufacturerName property breaks `homey app validate
+// --level publish` (the schema requires manufacturerName when zigbee is
+// present). The empty array is accepted by the validator; only the Athom
+// build server's processing_failed error has been linked to it — and the
+// A/B test proved that error is external. So we REPORT but do NOT strip.
+let emptyMfr = 0;
 for (const d of (manifest.drivers || [])) {
   if (d.zigbee && Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0) {
-    delete d.zigbee.manufacturerName;
-    strippedMfr++;
-    changes++;
+    emptyMfr++;
   }
 }
-if (strippedMfr > 0) log(`stripped ${strippedMfr} empty manufacturerName[] array(s).`);
+if (emptyMfr > 0) log(`found ${emptyMfr} empty manufacturerName[] array(s) — reported only (kept, since validate requires the field).`);
 
 // 2) Normalize sdkVersion → sdk if the build emitted the legacy field name.
 //    Athom SDK3 manifest spec uses `sdk` (number), not `sdkVersion`.

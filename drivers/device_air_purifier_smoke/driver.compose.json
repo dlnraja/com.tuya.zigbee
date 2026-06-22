@@ -29,26 +29,6 @@
     "mains": true
   },
   "subDevices": [],
-  "zigbee": {
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    },
-    "learnmode": {
-      "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
-      }
-    },
-    "productId": [
-      "TS0601"
-    ]
-  },
   "settings": [
     {
       "id": "power_source",
@@ -339,5 +319,26 @@
     "actions": []
   },
   "id": "device_air_purifier_smoke",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "zigbee": {
+    "manufacturerName": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
+      }
+    },
+    "productId": [
+      "TS0601"
+    ]
+  }
 }

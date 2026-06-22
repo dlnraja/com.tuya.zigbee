@@ -37,7 +37,15 @@
     "large": "/{{driverAssetsPath}}/images/large.png",
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
+  "version": "1.0.0",
+  "metadata": {
+    "driver": {
+      "catchall": true,
+      "reason": "Fallback for unmatched devices with PIDs: TS0121, TSO121, TS011F"
+    }
+  },
   "zigbee": {
+    "manufacturerName": [],
     "productId": [
       "TS0121",
       "TSO121",
@@ -71,13 +79,6 @@
       "instruction": {
         "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
       }
-    }
-  },
-  "version": "1.0.0",
-  "metadata": {
-    "driver": {
-      "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0121, TSO121, TS011F"
     }
   }
 }

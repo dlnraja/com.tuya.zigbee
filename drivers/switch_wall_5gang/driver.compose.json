@@ -27,51 +27,6 @@
       "OTHER"
     ]
   },
-  "zigbee": {
-    "productId": [
-      "TS0015",
-      "TS0601"
-    ],
-    "learnmode": {
-      "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-      }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          61184
-        ]
-      },
-      "2": {
-        "clusters": [
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          6
-        ]
-      },
-      "5": {
-        "clusters": [
-          6
-        ]
-      }
-    }
-  },
   "settings": [
     {
       "type": "group",
@@ -647,5 +602,51 @@
     }
   ],
   "id": "switch_wall_5gang",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "zigbee": {
+    "manufacturerName": [],
+    "productId": [
+      "TS0015",
+      "TS0601"
+    ],
+    "learnmode": {
+      "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
+        ]
+      },
+      "2": {
+        "clusters": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          6
+        ]
+      },
+      "5": {
+        "clusters": [
+          6
+        ]
+      }
+    }
+  }
 }

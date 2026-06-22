@@ -81,19 +81,6 @@
     "small": "/drivers/water_tank_monitor/assets/images/small.png",
     "large": "/drivers/water_tank_monitor/assets/images/large.png"
   },
-  "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ]
-      }
-    }
-  },
   "energy": {
     "batteries": [
       "AAA",
@@ -229,5 +216,19 @@
     "actions": []
   },
   "id": "device_air_purifier_water",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "zigbee": {
+    "manufacturerName": [],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  }
 }
