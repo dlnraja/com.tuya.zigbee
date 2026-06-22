@@ -21,8 +21,14 @@ runs:
 
     - name: Install deps in publish dir
       shell: bash
-      run: npm install --omit=dev --no-audit --no-fund
-      working-directory: ${{ runner.temp }}/homey-publish-temp
+      run: |
+        PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
+        if [ -d "$PUBLISH_DIR" ]; then
+          cd "$PUBLISH_DIR" && npm install --omit=dev --no-audit --no-fund
+        else
+          echo "Publish dir not found, installing in current dir"
+          npm install --omit=dev --no-audit --no-fund
+        fi
 
     - name: Publish App
       id: publish
