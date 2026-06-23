@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.75",
+  "version": "9.0.76",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -96469,7 +96469,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -96480,7 +96479,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_AIR_PURIFIER_CONTACT"
+        ]
       }
     },
     {
@@ -98228,7 +98230,6 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -98238,7 +98239,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_AIR_PURIFIER_QUALITY"
+        ]
       }
     },
     {
@@ -110348,7 +110352,6 @@
       "id": "button_wireless_switch",
       "version": "1.0.0",
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0215A"
@@ -110375,7 +110378,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_BUTTON_WIRELESS_SWITCH"
+        ]
       }
     },
     {
@@ -110620,7 +110626,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS011F"
@@ -110634,7 +110639,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_BUTTON_WIRELESS_USB"
+        ]
       }
     },
     {
@@ -113943,7 +113951,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -113961,7 +113968,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_CLIMATE_SENSOR_DEVICE"
+        ]
       }
     },
     {
@@ -114815,7 +114825,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0201",
@@ -114827,7 +114836,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_CLIMATE_SENSOR_GAS"
+        ]
       }
     },
     {
@@ -120218,7 +120230,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -120229,7 +120240,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_CONTACT_SENSOR_ZIGBEE"
+        ]
       }
     },
     {
@@ -125395,7 +125409,6 @@
       "id": "device_air_purifier_smoke",
       "version": "1.0.0",
       "zigbee": {
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -125413,6 +125426,9 @@
         },
         "productId": [
           "TS0601"
+        ],
+        "manufacturerName": [
+          "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE"
         ]
       }
     },
@@ -125708,7 +125724,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0001"
@@ -125719,7 +125734,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_DEVICE_AIR_PURIFIER_SOIL"
+        ]
       }
     },
     {
@@ -126056,7 +126074,6 @@
       "id": "device_air_purifier_water",
       "version": "1.0.0",
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -126067,7 +126084,10 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_DEVICE_AIR_PURIFIER_WATER"
+        ]
       }
     },
     {
@@ -127036,7 +127056,6 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -127046,7 +127065,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL"
+        ]
       }
     },
     {
@@ -150396,7 +150418,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS0225",
@@ -150424,7 +150445,10 @@
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_MOTION_SENSOR_2"
+        ]
       },
       "settings": [
         {
@@ -156476,7 +156500,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
@@ -156527,7 +156550,10 @@
           "instruction": {
             "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_RADAR_SENSOR_CEILING"
+        ]
       },
       "settings": [
         {
@@ -160764,7 +160790,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS011F",
           "TS0121",
@@ -160784,7 +160809,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG"
+        ]
       }
     },
     {
@@ -165582,7 +165610,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -165592,7 +165619,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR"
+        ]
       }
     },
     {
@@ -167954,7 +167984,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "Excellux"
@@ -167965,7 +167994,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SENSOR_CONTACT_CLIMATE"
+        ]
       }
     },
     {
@@ -170417,7 +170449,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "q9mpfhw",
@@ -170436,7 +170467,10 @@
               0
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SENSOR_CONTACT_WATER"
+        ]
       }
     },
     {
@@ -175824,7 +175858,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0121",
           "TSO121",
@@ -175858,7 +175891,10 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SMARTPLUG_DINRAIL"
+        ]
       },
       "settings": [
         {
@@ -178074,7 +178110,6 @@
       },
       "version": "1.0.0",
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0121",
           "TSO121",
@@ -178101,7 +178136,10 @@
           "instruction": {
             "en": "Press and hold down on/off switch for aprox 5 seconds until the LED blinks rapidly."
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SMARTPLUG"
+        ]
       },
       "settings": [
         {
@@ -178887,7 +178925,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0205",
           "TS0601"
@@ -178909,7 +178946,10 @@
           "instruction": {
             "en": "Press and hold down test switch until the LED blinks green."
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SMOKE_SENSOR"
+        ]
       }
     },
     {
@@ -180342,7 +180382,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0002"
         ],
@@ -180405,7 +180444,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SR_ZS_SWITCH"
+        ]
       },
       "settings": [
         {
@@ -181100,7 +181142,6 @@
       "id": "switch",
       "version": "1.0.0",
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS011F",
@@ -181124,7 +181165,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SWITCH"
+        ]
       }
     },
     {
@@ -181268,7 +181312,6 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601",
           "TS004F"
@@ -181305,7 +181348,10 @@
           "instruction": {
             "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SWITCH_1_GANG_METERING"
+        ]
       },
       "settings": [
         {
@@ -188714,7 +188760,6 @@
       "id": "switch_wall_5gang",
       "version": "1.0.0",
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0015",
           "TS0601"
@@ -188757,7 +188802,10 @@
               6
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_SWITCH_WALL_5GANG"
+        ]
       }
     },
     {
@@ -192670,7 +192718,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -192684,7 +192731,10 @@
               61184
             ]
           }
-        }
+        },
+        "manufacturerName": [
+          "_GENERIC_TUYA_DUMMY_DEVICE"
+        ]
       }
     },
     {
