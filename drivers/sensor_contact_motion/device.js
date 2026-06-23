@@ -387,7 +387,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // No temperature received → ZG-204ZL PIR-only → DP4 is battery
             if (v >= 0 && v <= 100) {
               device._dynamicCapabilityFromDP?.(4, v, 'measure_battery');
-              device.setCapabilityValue('measure_battery', Math.round(v)).catch(() => {});
+              device.safeSetCapabilityValue('measure_battery', Math.round(v)).catch(() => {});
               device.log?.(`[MOTION-DP] 🔋 DP4=${v} → battery (no temp DP3 received, ZG-204ZL pattern)`);
             }
             return null; // Not humidity

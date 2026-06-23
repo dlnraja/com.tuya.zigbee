@@ -1163,7 +1163,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       lastPermBattValue = b;
       if (!self.hasCapability('measure_battery'))
         {await self.addCapability('measure_battery').catch(() => {});}
-      self.setCapabilityValue('measure_battery', b).catch(() => {});
+      self.safeSetCapabilityValue('measure_battery', b).catch(() => {});
       });
   }
 

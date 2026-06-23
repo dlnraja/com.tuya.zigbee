@@ -60,7 +60,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
                 device.driver?.homey?.flow?.getDeviceTriggerCard('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
               }
             }
-            device.setCapabilityValue('measure_battery', battery).catch(() => {});
+            device.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
             return null;
           }
           return v;
