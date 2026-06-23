@@ -515,7 +515,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "Excellux"
@@ -526,6 +525,9 @@
           0
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_SENSOR_CONTACT_CLIMATE"
+    ]
   }
 }

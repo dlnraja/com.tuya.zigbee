@@ -438,7 +438,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS011F",
       "TS0121",
@@ -458,6 +457,9 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG"
+    ]
   }
 }

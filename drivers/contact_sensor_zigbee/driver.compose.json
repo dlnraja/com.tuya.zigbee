@@ -365,7 +365,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "Excellux"
@@ -376,6 +375,9 @@
           0
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_CONTACT_SENSOR_ZIGBEE"
+    ]
   }
 }

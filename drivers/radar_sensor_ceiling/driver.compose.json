@@ -44,7 +44,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "CK-BL702-MWS-01",
       "CK-BL702-MWS-01(7016)",
@@ -95,6 +94,9 @@
       "instruction": {
         "en": "Press and hold the reset button for 5 seconds. When the indicator light flashes it is in pairing mode."
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_RADAR_SENSOR_CEILING"
+    ]
   }
 }

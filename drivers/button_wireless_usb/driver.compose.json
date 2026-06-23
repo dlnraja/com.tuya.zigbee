@@ -240,7 +240,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS011F"
@@ -254,6 +253,9 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_BUTTON_WIRELESS_USB"
+    ]
   }
 }

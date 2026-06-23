@@ -604,7 +604,6 @@
   "id": "switch_wall_5gang",
   "version": "1.0.0",
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0015",
       "TS0601"
@@ -647,6 +646,9 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_SWITCH_WALL_5GANG"
+    ]
   }
 }

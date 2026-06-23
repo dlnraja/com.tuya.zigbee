@@ -338,7 +338,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0201",
@@ -350,6 +349,9 @@
           0
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_CLIMATE_SENSOR_GAS"
+    ]
   }
 }

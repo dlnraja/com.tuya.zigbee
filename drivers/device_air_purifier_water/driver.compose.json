@@ -218,7 +218,6 @@
   "id": "device_air_purifier_water",
   "version": "1.0.0",
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -229,6 +228,9 @@
           61184
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_DEVICE_AIR_PURIFIER_WATER"
+    ]
   }
 }
