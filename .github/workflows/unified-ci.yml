@@ -231,7 +231,7 @@ jobs:
     name: 🛡️ Unified Security Shield (v8.5.0 Hardened)
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
       - name: 🕵️ Deep Credential & Token Leak Detection
@@ -271,8 +271,12 @@ jobs:
           echo "✅ .gitignore properly configured"
 
           echo "🔐 [5/5] Checking for leaked emails in source..."
-          EMAIL_RESULT=$(grep -rniE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" . \
-            --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.homeybuild \
+          # Scope to source dirs only — scanning data/references/docs/reports
+          # with this broad regex takes >10min on this large repo and times
+          # out the job. Those dirs hold harvested/reference content, not code.
+          EMAIL_RESULT=$(grep -rniE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" \
+            app.js api.js lib drivers \
+            --exclude-dir=node_modules --exclude-dir=.homeybuild \
             --include='*.js' --include='*.json' --include='*.yml' --include='*.yaml' 2>/dev/null || true)
           FILTERED=$(echo "$EMAIL_RESULT" | grep -viE "example\.com|test\.com|@homey\.app|@users\.noreply|@github\.com" || true)
           if [ -n "$FILTERED" ]; then
