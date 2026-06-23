@@ -659,7 +659,6 @@
   "id": "button_wireless_switch",
   "version": "1.0.0",
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0215A"
@@ -686,6 +685,9 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_BUTTON_WIRELESS_SWITCH"
+    ]
   }
 }

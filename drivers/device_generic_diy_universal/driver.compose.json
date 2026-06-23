@@ -93,7 +93,6 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -103,6 +102,9 @@
           0
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL"
+    ]
   }
 }

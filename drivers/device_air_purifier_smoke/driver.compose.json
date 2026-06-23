@@ -321,7 +321,6 @@
   "id": "device_air_purifier_smoke",
   "version": "1.0.0",
   "zigbee": {
-    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -339,6 +338,9 @@
     },
     "productId": [
       "TS0601"
+    ],
+    "manufacturerName": [
+      "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE"
     ]
   }
 }

@@ -35,7 +35,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],
@@ -49,6 +48,9 @@
           61184
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_TUYA_DUMMY_DEVICE"
+    ]
   }
 }

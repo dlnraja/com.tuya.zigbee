@@ -593,7 +593,6 @@
   "id": "switch",
   "version": "1.0.0",
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS011F",
@@ -617,6 +616,9 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_SWITCH"
+    ]
   }
 }

@@ -40,7 +40,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0002"
     ],
@@ -103,6 +102,9 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_SR_ZS_SWITCH"
+    ]
   }
 }

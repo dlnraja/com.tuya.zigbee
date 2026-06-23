@@ -91,6 +91,7 @@
   "brandColor": "#00E6A0",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
+  "sdk": 3,
   "flow": {
     "triggers": [
       {
@@ -108317,10 +108318,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -112371,7 +112369,6 @@
           "_TZE204_ZXKWAZTM",
           "_TZE283_RCCXOX8P",
           "_TZE284_0DVM9MVA",
-          "_TZE284_0INTS6WL",
           "_TZE284_16M4BGSV",
           "_TZE284_1DI7UJZP",
           "_TZE284_1EMHI5MM",
@@ -112544,7 +112541,6 @@
           "_TZE284_rccxox8p",
           "_TZE200_0dvm9mva",
           "_tze204_0dvm9mva",
-          "_TZE2841000000_0ints6wl",
           "_TZE200_3yp57tby",
           "_tze200_ac0fhfiq",
           "_TZE204_ac0fhfiq",
@@ -113032,7 +113028,6 @@
           "_tze204_zxkwaztm",
           "_tze283_rccxox8p",
           "_tze284_0dvm9mva",
-          "_tze284_0ints6wl",
           "_tze284_16m4bgsv",
           "_tze284_1di7ujzp",
           "_tze284_1emhi5mm",
@@ -113174,7 +113169,6 @@
           "_tze200_nh9m9emk",
           "_tze284_r731zlxk",
           "_tze200_0dvm9mva",
-          "_tze2841000000_0ints6wl",
           "_tze200_3yp57tby",
           "_tze204_ac0fhfiq",
           "_tze204_eekpf0ft",
@@ -154402,18 +154396,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -159780,10 +159768,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -179883,7 +179868,8 @@
           "_tze2841000000_hdml1aav",
           "_tze200_sh8v7fhd",
           "_tze204_sh8v7fhd",
-          "_tze204_pay2byax"
+          "_tze204_pay2byax",
+          "_TZE284_0INTS6WL"
         ],
         "productId": [
           "ZG-303Z",
@@ -181028,26 +181014,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -182981,16 +182947,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -184076,21 +184032,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -184967,26 +184908,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -186093,31 +186014,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -188014,18 +187910,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -209591,6 +209481,5 @@
       },
       "id": "{{txt.id}}"
     }
-  },
-  "sdk": 3
+  }
 }

@@ -290,7 +290,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
     "productId": [
       "TS0601",
       "TS0001"
@@ -301,6 +300,9 @@
           0
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_GENERIC_DEVICE_AIR_PURIFIER_SOIL"
+    ]
   }
 }
