@@ -39,16 +39,29 @@ console.log('══════════════════════�
 console.log('  🤖 AUTO-FIX-ALL — Automated Fixes Pipeline');
 console.log('═══════════════════════════════════════════════\n');
 
-// 1. Fix sdk/sdkVersion conflict
-fixJSON('sdk/sdkVersion conflict', () => {
+// 1. Fix sdk/sdkVersion conflict — canonical SDK3 field is `sdk` (number),
+//    per apps.developer.homey.app/the-basics/app/manifest. The earlier
+//    "fix" DELETED `sdk` (treating it as the wrong field) which broke
+//    validation. Correct behavior: keep `sdk`, drop legacy `sdkVersion`.
+fixJSON('sdk/sdkVersion normalization', () => {
   for (const p of ['.homeycompose/app.json', 'app.json']) {
     const fp = path.join(ROOT, p);
     if (!fs.existsSync(fp)) continue;
     const c = JSON.parse(fs.readFileSync(fp, 'utf8'));
-    if ('sdk' in c) {
-      delete c.sdk;
-      fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
+    let changed = false;
+    if ('sdkVersion' in c && !('sdk' in c)) {
+      c.sdk = c.sdkVersion; // promote legacy sdkVersion -> sdk
+      delete c.sdkVersion;
+      changed = true;
+    } else if ('sdkVersion' in c && 'sdk' in c) {
+      delete c.sdkVersion; // both present: keep sdk, drop sdkVersion
+      changed = true;
+    } else if (!('sdk' in c) && !('sdkVersion' in c)) {
+      c.sdk = 3; // neither present: default to SDK3
+      changed = true;
     }
+    // Do NOT delete sdk — it is the canonical field.
+    if (changed) fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
   }
 });
 
