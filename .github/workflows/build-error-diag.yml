@@ -17,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d2797a4c9af683 # v5
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@49933ea5a8e9c067d7826f1ce0b7cf16c2ae0b27 # v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 20
 
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload screenshots + report
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540549e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@v4
         with:
           name: build-error-diag
           path: |
