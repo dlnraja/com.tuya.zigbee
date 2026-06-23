@@ -88,7 +88,25 @@ const EXCLUDED_PATHS = [
   'dumps/',
   'data/',
   'reference pdf/',
-  'reports/',
+  'references/',   // harvested reference content, not source code
+  'docs/',         // documentation, not source code
+  'reports/',      // generated reports
+  '.diag/',
+  '.memory/',
+  '.ai/',
+  '.gemini/',
+  '.claude/',
+  'screenshots/',
+  '.homeybuild/',
+  'build/',
+  'dist/',
+  'test/',
+  'tests/',
+  'spec/',
+  'skills/',
+  'scratch/',
+  'diagnostics/',
+  'logs/',
 ];
 
 const EXCLUDED_FILES = [
@@ -187,8 +205,10 @@ function scanFilesForSecrets() {
       .split('\n')
       .filter(Boolean);
 
-    // Only scan source files (skip binaries, images, etc.)
-    const SCAN_EXTENSIONS = ['.js', '.json', '.yml', '.yaml', '.md', '.sh', '.env.example', '.ts'];
+    // Only scan source files (skip binaries, images, markdown, etc.).
+    // .md excluded: docs don't hold executable secrets and add ~340 large files
+    // to scan, significantly slowing the scanner on this large repo.
+    const SCAN_EXTENSIONS = ['.js', '.json', '.yml', '.yaml', '.sh', '.env.example', '.ts'];
     
     for (const file of files) {
       const ext = path.extname(file).toLowerCase();

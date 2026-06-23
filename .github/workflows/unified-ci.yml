@@ -231,7 +231,7 @@ jobs:
     name: 🛡️ Unified Security Shield (v8.5.0 Hardened)
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
       - name: 🕵️ Deep Credential & Token Leak Detection
