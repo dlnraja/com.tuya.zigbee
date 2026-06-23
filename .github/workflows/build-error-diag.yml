@@ -29,17 +29,14 @@ jobs:
       - name: Install Puppeteer + deps
         run: npm install puppeteer athom-api --no-save
 
-      - name: Run full diagnostic (login + navigate + extract error + screenshot)
+      - name: Run diagnostic v2 (API-first + Puppeteer fallback + HTML dump)
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           BUILD_ID: ${{ github.event.inputs.build_id }}
         run: |
-          echo "## 🔍 Build Error Diagnostic" >> $GITHUB_STEP_SUMMARY
-          # Run the diag script; pass build_id arg if provided
-          ARGS=""
-          if [ -n "$BUILD_ID" ]; then ARGS="$BUILD_ID"; fi
-          node .github/scripts/athom-build-error-diag.js $ARGS || true
+          echo "## 🔍 Build Error Diagnostic v2" >> $GITHUB_STEP_SUMMARY
+          node .github/scripts/build-error-diag-v2.js || true
 
       - name: Upload screenshots + report
         if: always()
