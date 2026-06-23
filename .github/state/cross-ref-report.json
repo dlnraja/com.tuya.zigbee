@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-26T15:54:44.798Z",
+  "ts": "2026-06-23T00:05:21.542Z",
   "correlations": [],
   "actionable": [
     {
@@ -81,6 +81,10 @@
       "actions": 3
     },
     {
+      "driver": "christmas_lights",
+      "actions": 4
+    },
+    {
       "driver": "device_air_purifier",
       "actions": 12
     },
@@ -101,8 +105,76 @@
       "actions": 7
     },
     {
+      "driver": "dimmable_led_strip",
+      "actions": 4
+    },
+    {
+      "driver": "dimmable_recessed_led",
+      "actions": 4
+    },
+    {
+      "driver": "dimmer_1_gang",
+      "actions": 4
+    },
+    {
+      "driver": "dimmer_1_gang_2",
+      "actions": 4
+    },
+    {
+      "driver": "dimmer_1_gang_tuya",
+      "actions": 4
+    },
+    {
+      "driver": "dimmer_2_gang",
+      "actions": 4
+    },
+    {
+      "driver": "dimmer_2_gang_tuya",
+      "actions": 4
+    },
+    {
+      "driver": "dimmer_ts110e",
+      "actions": 4
+    },
+    {
+      "driver": "double_power_point",
+      "actions": 3
+    },
+    {
+      "driver": "double_power_point_2",
+      "actions": 3
+    },
+    {
       "driver": "energy_meter_3phase",
       "actions": 1
+    },
+    {
+      "driver": "floor_heating_thermostat",
+      "actions": 4
+    },
+    {
+      "driver": "hvac_controller",
+      "actions": 7
+    },
+    {
+      "driver": "motion_sensor_2",
+      "actions": 1
+    },
+    {
+      "driver": "outdoor_2_socket",
+      "actions": 3
+    },
+    {
+      "driver": "outdoor_plug",
+      "actions": 3
+    },
+    {
+      "driver": "pet_feeder_zigbee",
+      "actions": 1
+    },
+    {
+      "driver": "plug",
+      "actions": 3
     },
     {
       "driver": "power_clamp_meter",
@@ -113,20 +185,208 @@
       "actions": 1
     },
     {
+      "driver": "radiator_valve_zigbee",
+      "actions": 7
+    },
+    {
       "driver": "radiator_wifi_tuya",
       "actions": 1
+    },
+    {
+      "driver": "relay_board_1_channel",
+      "actions": 3
+    },
+    {
+      "driver": "relay_board_2_channel",
+      "actions": 3
+    },
+    {
+      "driver": "relay_board_4_channel",
+      "actions": 3
     },
     {
       "driver": "remote_button_wireless_usb",
       "actions": 3
     },
     {
-      "driver": "thermostatic_radiator_valve",
-      "actions": 1
+      "driver": "rgb_bulb_E14",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_bulb_E27",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_ceiling_led_light",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_floor_led_light",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_led_light_bar",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_led_strip",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_led_strip_controller",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_mood_light",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_spot_GU10",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_spot_GardenLight",
+      "actions": 6
+    },
+    {
+      "driver": "rgb_wall_led_light",
+      "actions": 6
+    },
+    {
+      "driver": "sirentemphumidsensor",
+      "actions": 4
+    },
+    {
+      "driver": "smartPlug_DinRail",
+      "actions": 3
+    },
+    {
+      "driver": "smart_garden_irrigation_control",
+      "actions": 3
+    },
+    {
+      "driver": "smart_lcd_thermostat",
+      "actions": 6
+    },
+    {
+      "driver": "smart_switch",
+      "actions": 3
+    },
+    {
+      "driver": "smartplug",
+      "actions": 3
+    },
+    {
+      "driver": "smartplug_2_socket",
+      "actions": 3
+    },
+    {
+      "driver": "socket_power_strip",
+      "actions": 3
+    },
+    {
+      "driver": "socket_power_strip_four",
+      "actions": 3
+    },
+    {
+      "driver": "socket_power_strip_four_three",
+      "actions": 3
+    },
+    {
+      "driver": "socket_power_strip_four_two",
+      "actions": 3
+    },
+    {
+      "driver": "switch_1_gang",
+      "actions": 3
+    },
+    {
+      "driver": "switch_1_gang_metering",
+      "actions": 3
+    },
+    {
+      "driver": "switch_2_gang",
+      "actions": 3
+    },
+    {
+      "driver": "switch_2_gang_metering",
+      "actions": 3
+    },
+    {
+      "driver": "switch_3_gang",
+      "actions": 3
+    },
+    {
+      "driver": "switch_4_gang_metering",
+      "actions": 3
+    },
+    {
+      "driver": "tunable_bulb_E14",
+      "actions": 5
+    },
+    {
+      "driver": "tunable_bulb_E27",
+      "actions": 5
+    },
+    {
+      "driver": "tunable_spot_GU10",
+      "actions": 5
+    },
+    {
+      "driver": "universal_zigbee",
+      "actions": 6
     },
     {
       "driver": "valve_dual_irrigation",
       "actions": 3
+    },
+    {
+      "driver": "valvecontroller",
+      "actions": 3
+    },
+    {
+      "driver": "wall_dimmer_tuya",
+      "actions": 4
+    },
+    {
+      "driver": "wall_socket",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_1_gang",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_1_gang_tuya",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_2_gang",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_3_gang",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_4_gang",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_4_gang_tuya",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_5_gang_tuya",
+      "actions": 3
+    },
+    {
+      "driver": "wall_switch_6_gang_tuya",
+      "actions": 3
+    },
+    {
+      "driver": "wall_thermostat",
+      "actions": 5
     },
     {
       "driver": "wifi_ewelink_bulb",
@@ -155,6 +415,10 @@
     {
       "driver": "wifi_power_strip",
       "actions": 1
+    },
+    {
+      "driver": "wifi_robot_vacuum",
+      "actions": 9
     },
     {
       "driver": "wifi_sonoff_basicr4",
@@ -205,5 +469,10 @@
       "actions": 1
     }
   ],
-  "mainsBatteryIssues": []
+  "mainsBatteryIssues": [
+    "dimmer_0_10v",
+    "dimmer_4ch",
+    "motion_sensor_radar_mmwave",
+    "presence_sensor_radar"
+  ]
 }
