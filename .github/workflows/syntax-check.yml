@@ -53,59 +53,53 @@ jobs:
           echo "🔍 TITAN v2 Pattern Check..."
           FAIL=0
 
+          # v9.0.81: Fixed counting — grep -c . on empty input returns 1 (counts empty line)
+          # Use grep -l | wc -l instead for accurate counts
+
           # 1. Raw setCapabilityValue in drivers
-          raw_set_files=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null)
-          raw_set=$(echo "$raw_set_files" | grep -c . )
+          raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
           if [ "$raw_set" -gt 0 ]; then
             echo "❌ Found $raw_set files with raw setCapabilityValue (should be safeSetCapabilityValue):"
-            echo "$raw_set_files" | sed 's/^/    /'
+            grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | sed 's/^/    /'
             FAIL=1
           fi
 
           # 2. console.log in drivers
-          console_files=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null)
-          console=$(echo "$console_files" | grep -c . )
+          console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
           if [ "$console" -gt 0 ]; then
             echo "❌ Found $console files with console.log in drivers/:"
-            echo "$console_files" | sed 's/^/    /'
+            grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | sed 's/^/    /'
             FAIL=1
           fi
 
           # 3. Empty manufacturerName arrays — REPORT only (warning, not fatal).
-          # The schema requires the manufacturerName field when zigbee is present,
-          # so an empty array is the valid "no known manufacturer" sentinel.
-          # `homey app validate --level publish` accepts it. Do not block CI.
-          empty_mfr_files=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null)
-          empty_mfr=$(echo "$empty_mfr_files" | grep -c . )
+          empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
           if [ "$empty_mfr" -gt 0 ]; then
             echo "⚠️  Found $empty_mfr files with empty manufacturerName arrays (warning only — accepted by validate):"
-            echo "$empty_mfr_files" | sed 's/^/    /'
+            grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | sed 's/^/    /'
           fi
 
           # 4. Wildcard fingerprints
-          wildcards_files=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null)
-          wildcards=$(echo "$wildcards_files" | grep -c . )
+          wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l)
           if [ "$wildcards" -gt 0 ]; then
             echo "❌ Found $wildcards files with wildcard fingerprints:"
-            echo "$wildcards_files" | sed 's/^/    /'
+            grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | sed 's/^/    /'
             FAIL=1
           fi
 
           # 5. titleFormatted with [[device]]
-          title_fmt_files=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null)
-          title_fmt=$(echo "$title_fmt_files" | grep -c . )
+          title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
           if [ "$title_fmt" -gt 0 ]; then
             echo "❌ Found $title_fmt files with titleFormatted [[device]]:"
-            echo "$title_fmt_files" | sed 's/^/    /'
+            grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | sed 's/^/    /'
             FAIL=1
           fi
 
           # 6. UTF-16 JSON loading (readFileSync 'utf8' forces V8 to decode; use Buffer for big JSON)
-          utf16_files=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null)
-          utf16=$(echo "$utf16_files" | grep -c . )
+          utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l)
           if [ "$utf16" -gt 0 ]; then
             echo "❌ Found $utf16 files with UTF-16/utf8 JSON loading (use Buffer):"
-            echo "$utf16_files" | sed 's/^/    /'
+            grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | sed 's/^/    /'
             FAIL=1
           fi
 
