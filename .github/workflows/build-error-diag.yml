@@ -11,6 +11,9 @@ on:
     # Run nightly at 02:17 UTC to capture the latest build error
     - cron: '17 2 * * *'
 
+permissions:
+  contents: read
+
 jobs:
   diagnose:
     name: 🔍 Extract real build error from dashboard
