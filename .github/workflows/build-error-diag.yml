@@ -1,0 +1,61 @@
+name: 🔍 Build Error Diagnostic (Puppeteer)
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_id:
+        description: 'Specific build ID to diagnose (optional — defaults to latest failed)'
+        required: false
+        default: ''
+  schedule:
+    # Run nightly at 02:17 UTC to capture the latest build error
+    - cron: '17 2 * * *'
+
+jobs:
+  diagnose:
+    name: 🔍 Extract real build error from dashboard
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d2797a4c9af683 # v5
+
+      - uses: actions/setup-node@49933ea5a8e9c067d7826f1ce0b7cf16c2ae0b27 # v5
+        with:
+          node-version: 20
+
+      - name: Install Puppeteer + deps
+        run: npm install puppeteer athom-api --no-save
+
+      - name: Run full diagnostic (login + navigate + extract error + screenshot)
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          BUILD_ID: ${{ github.event.inputs.build_id }}
+        run: |
+          echo "## 🔍 Build Error Diagnostic" >> $GITHUB_STEP_SUMMARY
+          # Run the diag script; pass build_id arg if provided
+          ARGS=""
+          if [ -n "$BUILD_ID" ]; then ARGS="$BUILD_ID"; fi
+          node .github/scripts/athom-build-error-diag.js $ARGS || true
+
+      - name: Upload screenshots + report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540549e92b4886f43607fa02 # v4
+        with:
+          name: build-error-diag
+          path: |
+            screenshots/
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Print report (latest error)
+        if: always()
+        run: |
+          echo "### 📋 Build Error Report" >> $GITHUB_STEP_SUMMARY
+          if [ -f screenshots/build-error-report.json ]; then
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat screenshots/build-error-report.json >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "_No report file produced — check screenshots artifact._" >> $GITHUB_STEP_SUMMARY
+          fi
