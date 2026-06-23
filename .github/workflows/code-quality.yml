@@ -30,10 +30,10 @@ jobs:
     timeout-minutes: 15
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
@@ -107,8 +107,8 @@ jobs:
           bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
           [ "$bare_timeout_lib" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in lib: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in lib: $bare_timeout_lib" >> $GITHUB_STEP_SUMMARY
 
-          # 11. Missing _destroyed guard in async callbacks
-          missing_guard=$(grep -rn "async.*(" drivers/ --include="device.js" 2>/dev/null | grep -v "_destroyed" | grep -v "// " | head -5 | wc -l)
+          # 11. Missing _destroyed guard in async callbacks (informational only)
+          missing_guard=$(grep -rn "async.*.(" drivers/ --include="device.js" 2>/dev/null | grep -v "_destroyed" | grep -v "// " | wc -l || echo 0)
           echo "ℹ️  Async callbacks without _destroyed guard (review needed): $missing_guard" >> $GITHUB_STEP_SUMMARY
 
           # 12. Flow card duplicate IDs across drivers

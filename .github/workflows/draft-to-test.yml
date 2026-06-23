@@ -1,4 +1,4 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — ENABLED
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌1‌ — ENABLED
 name: Draft to Test Promotion
 # <!-- badges:start -->
 # [![Draft to Test Promotion](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/draft-to-test.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/draft-to-test.yml)
@@ -9,15 +9,23 @@ on:
   workflow_dispatch:
     inputs:
       app_id:
-        description: "App ID to promote (leave empty for auto-detect)"
+        description: "App ID to promote (leave empty for auto-detect from app.json)"
         required: false
         default: ""
+      branch:
+        description: "Branch to promote from (master or stable-v5)"
+        required: false
+        default: "master"
+        type: choice
+        options:
+          - master
+          - stable-v5
 
 permissions:
   contents: read
 
 concurrency:
-  group: promote-to-test
+  group: promote-to-test-${{ inputs.branch || 'master' }}
   cancel-in-progress: true
 
 env:
@@ -29,25 +37,43 @@ defaults:
 
 jobs:
   promote:
-    name: Promote Draft to Test
+    name: Promote Draft to Test (${{ inputs.branch || 'master' }})
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
         with:
+          ref: ${{ inputs.branch || 'master' }}
           submodules: false
+
       - uses: actions/setup-node@v5
         with:
           node-version: "22"
           cache: npm
+
+      - name: Detect App ID
+        id: app_id
+        run: |
+          # Use provided app_id or auto-detect from app.json
+          if [ -n "${{ inputs.app_id }}" ]; then
+            APP_ID="${{ inputs.app_id }}"
+          else
+            APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
+          fi
+          echo "app_id=$APP_ID" >> $GITHUB_OUTPUT
+          echo "Promoting app: $APP_ID from branch: ${{ inputs.branch || 'master' }}"
+
       - run: npm ci --prefer-offline --no-audit || npm install
-      
+
       - name: Install Puppeteer Dependencies
         continue-on-error: true
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libgbm-dev libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libpango-1.0-0 libcairo2 libxshmfence1 || echo "Apt failed, proceeding anyway"
-
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            libgbm-dev libnss3 libatk1.0-0 libatk-bridge2.0-0 \
+            libcups2 libdrm2 libxkbcommon0 libxcomposite1 \
+            libxdamage1 libxrandr2 libpango-1.0-0 libcairo2 \
+            libxshmfence1 2>/dev/null || echo "Apt failed, proceeding anyway"
 
       - name: Install promotion tools
         continue-on-error: true
@@ -56,25 +82,25 @@ jobs:
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         id: promote_puppeteer
         continue-on-error: true
-        timeout-minutes: 5
+        timeout-minutes: 8
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: 'false'
-          TARGET_APP_ID: ${{ inputs.app_id }}
+          TARGET_APP_ID: ${{ steps.app_id.outputs.app_id }}
         run: node .github/scripts/auto-promote-puppeteer.js
 
       - name: "Tier 2: Promote via OAuth (headless)"
         if: steps.promote_puppeteer.outcome != 'success'
         id: promote_oauth
         continue-on-error: true
-        timeout-minutes: 3
+        timeout-minutes: 5
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
           ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
-          TARGET_APP_ID: ${{ inputs.app_id }}
+          TARGET_APP_ID: ${{ steps.app_id.outputs.app_id }}
         run: node .github/scripts/auto-promote-oauth.js
 
       - name: "Tier 3: Promote via API (PAT fallback)"
@@ -83,7 +109,7 @@ jobs:
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          TARGET_APP_ID: ${{ inputs.app_id }}
+          TARGET_APP_ID: ${{ steps.app_id.outputs.app_id }}
         run: node .github/scripts/auto-publish-draft.js
 
       - name: Get app version
@@ -97,13 +123,17 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.app_ver.outputs.version }}
-          CHANGELOG: "Automated promotion from draft to test channel."
+          APP_ID: ${{ steps.app_id.outputs.app_id }}
+          CHANGELOG: "Automated promotion from draft to test channel (branch: ${{ inputs.branch || 'master' }})."
         run: node .github/scripts/post-forum-update.js
 
       - name: Summary
         if: always()
         run: |
-          echo "## Promotion Results" >> $GITHUB_STEP_SUMMARY
+          echo "## Promotion Results — ${{ inputs.branch || 'master' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **App ID**: ${{ steps.app_id.outputs.app_id }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch**: ${{ inputs.branch || 'master' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version**: ${{ steps.app_ver.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "- Puppeteer: ${{ steps.promote_puppeteer.outcome }}" >> $GITHUB_STEP_SUMMARY
           echo "- OAuth: ${{ steps.promote_oauth.outcome }}" >> $GITHUB_STEP_SUMMARY
           echo "- API: ${{ steps.promote_api.outcome }}" >> $GITHUB_STEP_SUMMARY
