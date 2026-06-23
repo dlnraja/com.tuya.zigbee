@@ -319,7 +319,6 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Initialize base class
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
 
     // Setup protocol-specific listeners
     if (config.protocol === 'zcl') {

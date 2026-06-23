@@ -84,7 +84,6 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
     // UnifiedSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
     
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();

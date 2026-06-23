@@ -167,7 +167,6 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection();
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 3600000 });
