@@ -122,6 +122,21 @@ try {
   }
   console.log('Success: app.json is under the 4MB Athom limit.');
 
+  // 4b) Permanent sdk:3 guard — Athom API REQUIRES this field.
+  //     Auto-fix tooling has deleted it 4+ times (commits 160e58b83, b3311caa2, 5449d20f4, etc.)
+  try {
+    const manifest = JSON.parse(fs.readFileSync(destAppJson));
+    if (manifest.sdk !== 3) {
+      manifest.sdk = 3;
+      fs.writeFileSync(destAppJson, JSON.stringify(manifest));
+      console.log('[GUARD] Restored sdk:3 field in app.json (was missing or wrong)');
+    } else {
+      console.log('[GUARD] sdk:3 field present ✓');
+    }
+  } catch (e) {
+    console.warn('Warning: could not verify sdk field:', e.message);
+  }
+
   // 5) Sanitize drivers: strip empty manufacturerName arrays.
   // An empty manufacturerName:[] on a zigbee driver triggers an AggregateError
   // during Athom's Zigbee init on the build server → processing_failed.
