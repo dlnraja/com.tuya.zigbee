@@ -44,7 +44,6 @@ class ModuleMiniSwitchDevice extends PhysicalButtonMixin(UnifiedSwitchBase) {
     }
 
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
     await setupSonoffEwelink(this, zclNode);
     this.log('[MINI-SWITCH]  Ready');

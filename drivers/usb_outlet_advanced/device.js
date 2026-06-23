@@ -107,7 +107,6 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
