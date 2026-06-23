@@ -43,40 +43,44 @@ jobs:
 
       - name: 🔍 TITAN v2 Pattern Checks
         run: |
+          set +e  # Don't exit on test failures — we want to run ALL checks
           echo "## 🔍 TITAN v2 Code Quality" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          FAIL=0
 
           # 1. Raw setCapabilityValue
           raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
-          [ "$raw_set" -eq 0 ] && echo "✅ Raw setCapabilityValue: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Raw setCapabilityValue: $raw_set" >> $GITHUB_STEP_SUMMARY
+          if [ "$raw_set" -eq 0 ]; then echo "✅ Raw setCapabilityValue: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Raw setCapabilityValue: $raw_set" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 2. console.log in drivers
           console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
-          [ "$console" -eq 0 ] && echo "✅ console.log in drivers: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ console.log in drivers: $console" >> $GITHUB_STEP_SUMMARY
+          if [ "$console" -eq 0 ]; then echo "✅ console.log in drivers: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ console.log in drivers: $console" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 3. Empty manufacturerName
           empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
-          [ "$empty_mfr" -eq 0 ] && echo "✅ Empty manufacturerName: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Empty manufacturerName: $empty_mfr" >> $GITHUB_STEP_SUMMARY
+          if [ "$empty_mfr" -eq 0 ]; then echo "✅ Empty manufacturerName: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Empty manufacturerName: $empty_mfr" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 4. Wildcard fingerprints
           wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l)
-          [ "$wildcards" -eq 0 ] && echo "✅ Wildcard fingerprints: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Wildcard fingerprints: $wildcards" >> $GITHUB_STEP_SUMMARY
+          if [ "$wildcards" -eq 0 ]; then echo "✅ Wildcard fingerprints: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Wildcard fingerprints: $wildcards" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 5. titleFormatted [[device]]
           title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
-          [ "$title_fmt" -eq 0 ] && echo "✅ titleFormatted [[device]]: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ titleFormatted [[device]]: $title_fmt" >> $GITHUB_STEP_SUMMARY
+          if [ "$title_fmt" -eq 0 ]; then echo "✅ titleFormatted [[device]]: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ titleFormatted [[device]]: $title_fmt" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 6. Wrong import paths
           wrong_import=$(grep -r "require('../../lib/TuyaZigbeeDevice')" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
-          [ "$wrong_import" -eq 0 ] && echo "✅ Wrong import paths: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Wrong import paths: $wrong_import" >> $GITHUB_STEP_SUMMARY
+          if [ "$wrong_import" -eq 0 ]; then echo "✅ Wrong import paths: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Wrong import paths: $wrong_import" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 7. Linear battery formulas
           linear_bat=$(grep -r "(voltage - 2\.\|voltage - 3\." drivers/ --include="device.js" -l 2>/dev/null | wc -l)
-          [ "$linear_bat" -eq 0 ] && echo "✅ Linear battery formulas: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Linear battery formulas: $linear_bat" >> $GITHUB_STEP_SUMMARY
+          if [ "$linear_bat" -eq 0 ]; then echo "✅ Linear battery formulas: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Linear battery formulas: $linear_bat" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 8. UTF-16 JSON loading
           utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l)
-          [ "$utf16" -eq 0 ] && echo "✅ UTF-16 JSON loading: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ UTF-16 JSON loading: $utf16" >> $GITHUB_STEP_SUMMARY
+          if [ "$utf16" -eq 0 ]; then echo "✅ UTF-16 JSON loading: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ UTF-16 JSON loading: $utf16" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
+
+          exit $FAIL
 
       - name: 🔍 JSON Validation
         run: |
