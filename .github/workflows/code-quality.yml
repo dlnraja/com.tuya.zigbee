@@ -49,35 +49,35 @@ jobs:
           FAIL=0
 
           # 1. Raw setCapabilityValue
-          raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          raw_set=$(grep -r "this\.setCapabilityValue(" drivers/ --include="device.js" -l 2>/dev/null | wc -l || true)
           if [ "$raw_set" -eq 0 ]; then echo "✅ Raw setCapabilityValue: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Raw setCapabilityValue: $raw_set" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 2. console.log in drivers
-          console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l || true)
           if [ "$console" -eq 0 ]; then echo "✅ console.log in drivers: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ console.log in drivers: $console" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 3. Empty manufacturerName
-          empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l || true)
           if [ "$empty_mfr" -eq 0 ]; then echo "✅ Empty manufacturerName: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Empty manufacturerName: $empty_mfr" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 4. Wildcard fingerprints
-          wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l || true)
           if [ "$wildcards" -eq 0 ]; then echo "✅ Wildcard fingerprints: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Wildcard fingerprints: $wildcards" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 5. titleFormatted [[device]]
-          title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l)
+          title_fmt=$(grep -r 'titleFormatted.*\[\[device\]\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l || true)
           if [ "$title_fmt" -eq 0 ]; then echo "✅ titleFormatted [[device]]: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ titleFormatted [[device]]: $title_fmt" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 6. Wrong import paths
-          wrong_import=$(grep -r "require('../../lib/TuyaZigbeeDevice')" drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          wrong_import=$(grep -r "require('../../lib/TuyaZigbeeDevice')" drivers/ --include="device.js" -l 2>/dev/null | wc -l || true)
           if [ "$wrong_import" -eq 0 ]; then echo "✅ Wrong import paths: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Wrong import paths: $wrong_import" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 7. Linear battery formulas
-          linear_bat=$(grep -r "(voltage - 2\.\|voltage - 3\." drivers/ --include="device.js" -l 2>/dev/null | wc -l)
+          linear_bat=$(grep -r "(voltage - 2\.\|voltage - 3\." drivers/ --include="device.js" -l 2>/dev/null | wc -l || true)
           if [ "$linear_bat" -eq 0 ]; then echo "✅ Linear battery formulas: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Linear battery formulas: $linear_bat" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           # 8. UTF-16 JSON loading
-          utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l)
+          utf16=$(grep -r "JSON\.parse(fs\.readFileSync.*'utf8'" lib/ --include="*.js" -l 2>/dev/null | wc -l || true)
           if [ "$utf16" -eq 0 ]; then echo "✅ UTF-16 JSON loading: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ UTF-16 JSON loading: $utf16" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
           exit $FAIL
@@ -100,11 +100,11 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
 
           # 9. Bare setTimeout/setInterval in device files
-          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l || true)
           [ "$bare_timeout" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in drivers: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in drivers: $bare_timeout" >> $GITHUB_STEP_SUMMARY
 
           # 10. Bare setTimeout/setInterval in lib files
-          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l)
+          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l || true)
           [ "$bare_timeout_lib" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in lib: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in lib: $bare_timeout_lib" >> $GITHUB_STEP_SUMMARY
 
           # 11. Missing _destroyed guard in async callbacks (informational only)
@@ -152,7 +152,7 @@ jobs:
 
       - name: 📊 Stats
         run: |
-          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l || true)
           MFRS=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           FLOWCARDS=$(grep -c '"id":' drivers/*/driver.flow.compose.json 2>/dev/null | awk -F: '{sum+=$2} END {print sum}' || true)
           echo "" >> $GITHUB_STEP_SUMMARY
