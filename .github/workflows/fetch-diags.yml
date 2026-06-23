@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # Allow manual trigger
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   fetch-diags:
@@ -17,16 +17,17 @@ jobs:
         shell: bash
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
-        run: npm install imap-simple mailparser
-        working-directory: scripts/automation
+        run: npm install imap-simple mailparser --no-save
 
       - name: Fetch Diagnostics from Gmail
         env:

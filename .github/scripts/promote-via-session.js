@@ -1,6 +1,15 @@
 #!/usr/bin/env node
 'use strict';
-const APP = 'com.dlnraja.tuya.zigbee';
+const fs = require('fs');
+const path = require('path');
+
+// Read App ID dynamically from app.json
+let APP = 'com.dlnraja.tuya.zigbee';
+try {
+  const appJson = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'app.json')));
+  if (appJson.id) APP = appJson.id;
+} catch {}
+
 const BASE = 'https://apps-api.athom.com/api/v1';
 
 async function promoteViaBrowserSession(page, log, dry, capturedToken) {

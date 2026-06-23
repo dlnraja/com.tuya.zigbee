@@ -185,7 +185,7 @@ async function main() {
       process.exitCode = 1;
     }
   } finally {
-    await browser.close();
+    if (browser) await browser.close().catch(() => {});
   }
 }
 

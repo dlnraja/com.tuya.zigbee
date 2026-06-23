@@ -39,10 +39,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout Code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
+        uses: actions/setup-node@v5
         with:
           cache: npm
           node-version: '22' # Requis pour Homey SDK v3 / Node 22 env
@@ -84,7 +84,7 @@ jobs:
     if: ${{ github.event.inputs.run_diagnostics == 'true' }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
+        uses: actions/checkout@v5
 
       - name: 📥 Traitement du Dump de Crashs (v7.4.8 & v7.4.6)
         run: |
@@ -110,7 +110,7 @@ jobs:
           echo "✅ Rapport généré dans reports/diagnostics/"
 
       - name: Upload Diagnostic Report
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@v4
         with:
           name: crash-analysis-report
           path: reports/diagnostics/
@@ -122,10 +122,10 @@ jobs:
     needs: verify-and-lint
     steps:
       - name: Checkout Code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm

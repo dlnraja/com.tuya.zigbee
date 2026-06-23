@@ -40,15 +40,15 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: 🔧 Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: 📊 Collect fingerprints from master
         id: master-fps
@@ -75,7 +75,13 @@ jobs:
       - name: 📊 Collect fingerprints from stable-v5
         id: sv5-fps
         run: |
-          git checkout stable-v5 -- .
+          # Use origin/stable-v5 to avoid needing a local branch
+          if ! git rev-parse --verify origin/stable-v5 >/dev/null 2>&1; then
+            echo "⚠️ origin/stable-v5 branch not found — skipping sync"
+            touch /tmp/sv5_fps.txt
+            exit 0
+          fi
+          git checkout origin/stable-v5 -- drivers/
           node -e "
             const fs = require('fs');
             const path = require('path');
@@ -93,7 +99,7 @@ jobs:
             fs.writeFileSync('/tmp/sv5_fps.txt', [...fps].sort().join('\n'));
             console.log('Stable-v5 fingerprints:', fps.size);
           "
-          git checkout master -- .
+          git checkout master -- drivers/
 
       - name: 🔀 Compute diff (fingerprints uniques à chaque branche)
         id: diff
