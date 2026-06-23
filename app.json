@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.76",
+  "version": "9.0.77",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -96481,7 +96481,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_AIR_PURIFIER_CONTACT"
+          "_GENERIC_AIR_PURIFIER_CONTACT",
+          "_generic_air_purifier_contact"
         ]
       }
     },
@@ -98241,7 +98242,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_AIR_PURIFIER_QUALITY"
+          "_GENERIC_AIR_PURIFIER_QUALITY",
+          "_generic_air_purifier_quality"
         ]
       }
     },
@@ -108322,10 +108324,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -110380,7 +110379,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_BUTTON_WIRELESS_SWITCH"
+          "_GENERIC_BUTTON_WIRELESS_SWITCH",
+          "_generic_button_wireless_switch"
         ]
       }
     },
@@ -110641,7 +110641,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_BUTTON_WIRELESS_USB"
+          "_GENERIC_BUTTON_WIRELESS_USB",
+          "_generic_button_wireless_usb"
         ]
       }
     },
@@ -113970,7 +113971,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_CLIMATE_SENSOR_DEVICE"
+          "_GENERIC_CLIMATE_SENSOR_DEVICE",
+          "_generic_climate_sensor_device"
         ]
       }
     },
@@ -114838,7 +114840,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_CLIMATE_SENSOR_GAS"
+          "_GENERIC_CLIMATE_SENSOR_GAS",
+          "_generic_climate_sensor_gas"
         ]
       }
     },
@@ -120242,7 +120245,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_CONTACT_SENSOR_ZIGBEE"
+          "_GENERIC_CONTACT_SENSOR_ZIGBEE",
+          "_generic_contact_sensor_zigbee"
         ]
       }
     },
@@ -125428,7 +125432,8 @@
           "TS0601"
         ],
         "manufacturerName": [
-          "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE"
+          "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE",
+          "_generic_device_air_purifier_smoke"
         ]
       }
     },
@@ -125736,7 +125741,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_DEVICE_AIR_PURIFIER_SOIL"
+          "_GENERIC_DEVICE_AIR_PURIFIER_SOIL",
+          "_generic_device_air_purifier_soil"
         ]
       }
     },
@@ -126086,7 +126092,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_DEVICE_AIR_PURIFIER_WATER"
+          "_GENERIC_DEVICE_AIR_PURIFIER_WATER",
+          "_generic_device_air_purifier_water"
         ]
       }
     },
@@ -127067,7 +127074,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL"
+          "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL",
+          "_generic_device_generic_diy_universal"
         ]
       }
     },
@@ -150447,7 +150455,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_MOTION_SENSOR_2"
+          "_GENERIC_MOTION_SENSOR_2",
+          "_generic_motion_sensor_2"
         ]
       },
       "settings": [
@@ -154423,18 +154432,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -156552,7 +156555,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_RADAR_SENSOR_CEILING"
+          "_GENERIC_RADAR_SENSOR_CEILING",
+          "_generic_radar_sensor_ceiling"
         ]
       },
       "settings": [
@@ -159803,10 +159807,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -160811,7 +160812,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG"
+          "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG",
+          "_generic_remote_button_wireless_plug"
         ]
       }
     },
@@ -165621,7 +165623,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR"
+          "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR",
+          "_generic_sensor_climate_lcdtemphumidsensor"
         ]
       }
     },
@@ -167996,7 +167999,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SENSOR_CONTACT_CLIMATE"
+          "_GENERIC_SENSOR_CONTACT_CLIMATE",
+          "_generic_sensor_contact_climate"
         ]
       }
     },
@@ -170469,7 +170473,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SENSOR_CONTACT_WATER"
+          "_GENERIC_SENSOR_CONTACT_WATER",
+          "_generic_sensor_contact_water"
         ]
       }
     },
@@ -175893,7 +175898,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SMARTPLUG_DINRAIL"
+          "_GENERIC_SMARTPLUG_DINRAIL",
+          "_generic_smartplug_dinrail"
         ]
       },
       "settings": [
@@ -178138,7 +178144,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SMARTPLUG"
+          "_GENERIC_SMARTPLUG",
+          "_generic_smartplug"
         ]
       },
       "settings": [
@@ -178948,7 +178955,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SMOKE_SENSOR"
+          "_GENERIC_SMOKE_SENSOR",
+          "_generic_smoke_sensor"
         ]
       }
     },
@@ -180446,7 +180454,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SR_ZS_SWITCH"
+          "_GENERIC_SR_ZS_SWITCH",
+          "_generic_sr_zs_switch"
         ]
       },
       "settings": [
@@ -181068,26 +181077,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -181167,7 +181156,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SWITCH"
+          "_GENERIC_SWITCH",
+          "_generic_switch"
         ]
       }
     },
@@ -181350,7 +181340,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SWITCH_1_GANG_METERING"
+          "_GENERIC_SWITCH_1_GANG_METERING",
+          "_generic_switch_1_gang_metering"
         ]
       },
       "settings": [
@@ -183025,16 +183016,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -184120,21 +184101,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -185011,26 +184977,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -186137,31 +186083,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -188058,18 +187979,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -188804,7 +188719,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SWITCH_WALL_5GANG"
+          "_GENERIC_SWITCH_WALL_5GANG",
+          "_generic_switch_wall_5gang"
         ]
       }
     },
@@ -192733,7 +192649,8 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_TUYA_DUMMY_DEVICE"
+          "_GENERIC_TUYA_DUMMY_DEVICE",
+          "_generic_tuya_dummy_device"
         ]
       }
     },
