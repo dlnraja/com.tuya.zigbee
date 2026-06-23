@@ -172,29 +172,70 @@ async function main() {
   log(`║  v${APP_VER} | Target: ${TARGET_BUILD || 'ALL FAILED'} | ${new Date().toISOString()}`);
   log('╚══════════════════════════════════════════════════════════════╝\n');
 
-  const { launchWithSession } = require('./athom-session-inject');
+  // Determine the target build. If none provided, auto-detect the latest
+  // processing_failed build via the Athom Apps API (no Puppeteer needed for that).
+  let targetBuild = TARGET_BUILD;
+  if (!targetBuild) {
+    log('[STEP 0] No build ID provided — auto-detecting latest failed build via API...');
+    try {
+      const HOMEY_CLI_ROOT = require('path').join(__dirname, '..', '..');
+      const AthomApi = require(require('path').join(HOMEY_CLI_ROOT, 'node_modules', 'homey', 'services', 'AthomApi'));
+      const AthomAppsAPI = require(require('path').join(HOMEY_CLI_ROOT, 'node_modules', 'homey-api', 'lib', 'AthomAppsAPI'));
+      const token = await AthomApi.createDelegationToken({ audience: 'apps' });
+      const api = new AthomAppsAPI({ token });
+      const builds = await api.getBuilds({ $token: token, appId: APP_ID, query: { limit: 50 } });
+      const list = Array.isArray(builds) ? builds : (builds.data || builds || []);
+      const failed = list.find(b => b.state === 'processing_failed' || b.state === 'error' || b.state === 'revoked');
+      if (failed) {
+        targetBuild = String(failed.id || failed.buildId);
+        log(`[STEP 0] Auto-detected latest failed build: #${targetBuild} (state=${failed.state}, v${failed.version})`);
+      } else {
+        log('[STEP 0] No failed build found in last 50 — nothing to diagnose.');
+        return;
+      }
+    } catch (apiErr) {
+      log(`[STEP 0] API auto-detect failed: ${apiErr.message}`);
+      log('[STEP 0] Pass a build ID explicitly: node athom-build-error-diag.js <buildId>');
+      return;
+    }
+  }
+
   const report = { timestamp: new Date().toISOString(), appId: APP_ID, version: APP_VER, builds: {} };
 
   let browser, page;
   try {
-    const sessionCtx = await launchWithSession({
-      headless: 'new',
-      launchOptions: {
-        defaultViewport: { width: 1280, height: 900 }
-      }
-    });
-    browser = sessionCtx.browser;
-    page = sessionCtx.page;
-    log('[STEP 1] Session successfully injected and browser launched!');
+    // Try CLI session injection first (works on Windows local where `homey login` ran).
+    // Fall back to email/password login on CI runners (no CLI settings.json).
+    let sessionCtx = null;
+    try {
+      const { launchWithSession } = require('./athom-session-inject');
+      sessionCtx = await launchWithSession({
+        headless: 'new',
+        launchOptions: { defaultViewport: { width: 1280, height: 900 } }
+      });
+      browser = sessionCtx.browser;
+      page = sessionCtx.page;
+      log('[STEP 1] CLI session injected — browser launched.');
+    } catch (sessionErr) {
+      log(`[STEP 1] CLI session unavailable (${sessionErr.message.split('\n')[0]}). Falling back to email/password login.`);
+      const puppeteer = require('puppeteer');
+      browser = await puppeteer.launch({
+        headless: 'new',
+        defaultViewport: { width: 1280, height: 900 },
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
+      page = await browser.newPage();
+      await page.goto(`${BASE}/apps/app/${APP_ID}/versions`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      const loggedIn = await doLogin(page);
+      if (!loggedIn) { log('[LOGIN] ❌ Login failed — check HOMEY_EMAIL/HOMEY_PASSWORD secrets'); return; }
+      log('[STEP 1] Email/password login successful.');
+    }
     await waitReady(page, 'initial', 5000);
     await snap(page, 'diag-00-initial');
 
-    // Step 3: Navigate to build detail
-    if (!TARGET_BUILD) { log('[ERROR] No build ID specified. Usage: node athom-build-error-diag.js <buildId>'); return; }
-
-    const bid = TARGET_BUILD;
+    const bid = targetBuild;
     const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${bid}`;
-      
+
       log(`  Navigating to: ${buildUrl}`);
       await page.goto(buildUrl, { waitUntil: 'domcontentloaded' });
       await waitReady(page, `build-${bid}`, 8000);
