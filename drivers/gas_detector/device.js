@@ -41,7 +41,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
           // Store for diagnostics, trigger alarm if high
           device._gasValue = v;
           if (v > 10) { // High gas level threshold
-            device.setCapabilityValue('alarm_gas', true).catch(() => {});
+            device.safeSetCapabilityValue('alarm_gas', true).catch(() => {});
           }
           return v;
         }
