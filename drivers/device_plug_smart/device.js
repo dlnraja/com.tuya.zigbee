@@ -122,8 +122,8 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
    * v5.6.0: Setup physical button flow detection (packetninja pattern)
    */
   _setupPhysicalButtonFlowDetection() {
-    const originalHandler = this._handleTuyaDatapoint?.bind(this );if (originalHandler) {
-      this._handleTuyaDatapoint = (dp, data, reportingEvent = false) => {
+    const originalHandler = this._handleDP?.bind(this );if (originalHandler) {
+      this._handleDP = (dp, data, reportingEvent = false) => {
         if (dp === 1) {
           const state = Boolean(data?.value ?? data);
           const isPhysical = reportingEvent && !this._appCommandPending;
