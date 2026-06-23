@@ -2595,6 +2595,29 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
        this._dataRecoveryManager?.forceRecovery?.();
     }
   }
+
+  // v9.0.79: Reimplemented — was called 6 times but never defined (runtime TypeError)
+  // Copied from sensor_motion_presence/device.js with adapted flow card IDs
+  _handlePresenceWithDebounce(presence, dpId) {
+    const current = this.getCapabilityValue('alarm_motion');
+    if (presence === current) return;
+    if (presence) {
+      if (this._intelGate) this._intelGate.process('alarm_motion', true);
+      this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+      this._triggerPresenceFlows(true);
+    } else {
+      this.safeSetCapabilityValue('alarm_motion', false).catch(() => {});
+      this._triggerPresenceFlows(false);
+    }
+  }
+
+  async _triggerPresenceFlows(detected) {
+    const cardId = detected ? 'sensor_presence_radar_presence_detected' : 'sensor_presence_radar_presence_cleared';
+    try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
+    if (detected) {
+      try { await this.homey.flow.getDeviceTriggerCard('sensor_presence_radar_motion_detected').trigger(this, {}).catch(() => {}); } catch (e) {}
+    }
+  }
 }
 
 module.exports = PresenceSensorRadarDevice;
