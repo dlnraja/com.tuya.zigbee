@@ -100,7 +100,18 @@ try {
   console.log('Mandatory manifests present: app.json, package.json');
 
   // 4) Validate app.json size (Athom rejects > 4MB — hard fail, not warning).
+  //    Compact whitespace first — the raw file may be prettified.
   const destAppJson = path.join(destDir, 'app.json');
+  try {
+    const raw = JSON.parse(fs.readFileSync(destAppJson));
+    const compact = JSON.stringify(raw);
+    if (compact.length < fs.statSync(destAppJson).size) {
+      fs.writeFileSync(destAppJson, compact);
+      console.log(`Compacted app.json: ${(fs.statSync(destAppJson).size/1024/1024).toFixed(2)} MB (was ${(compact.length > 0 ? 'whitespace' : 'already compact')})`);
+    }
+  } catch (e) {
+    console.warn('Warning: could not compact app.json:', e.message);
+  }
   const stats = fs.statSync(destAppJson);
   const sizeMB = stats.size / (1024 * 1024);
   console.log(`Target app.json size: ${sizeMB.toFixed(2)} MB`);

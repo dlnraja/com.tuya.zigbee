@@ -19,15 +19,18 @@ jobs:
     name: 🔍 Extract real build error from dashboard
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: '22'
 
       - name: Install Puppeteer + deps
-        run: npm install puppeteer athom-api --no-save
+        run: npm install puppeteer homey-api --no-save
 
       - name: Run diagnostic v2 (API-first + Puppeteer fallback + HTML dump)
         env:

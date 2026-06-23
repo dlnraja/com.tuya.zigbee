@@ -17,7 +17,23 @@ const fs   = require('fs');
 const path = require('path');
 const https = require('https');
 
-const SETTINGS_PATH = path.join(process.env.APPDATA || '', 'athom-cli', 'settings.json');
+// Cross-platform CLI settings path
+function getCliSettingsPath() {
+  const appData = process.env.APPDATA;
+  if (appData) return path.join(appData, 'athom-cli', 'settings.json'); // Windows
+  const home = process.env.HOME || process.env.USERPROFILE || '';
+  // Linux/macOS: try XDG config, then home, then .config
+  const candidates = [
+    path.join(home, '.config', 'athom-cli', 'settings.json'),
+    path.join(home, '.athom-cli', 'settings.json'),
+    path.join(home, 'athom-cli', 'settings.json'),
+  ];
+  for (const p of candidates) {
+    if (fs.existsSync(p)) return p;
+  }
+  return candidates[0]; // default to XDG path
+}
+const SETTINGS_PATH = getCliSettingsPath();
 const BASE = 'https://tools.developer.homey.app';
 const API_BASE = 'https://apps-api.athom.com';
 

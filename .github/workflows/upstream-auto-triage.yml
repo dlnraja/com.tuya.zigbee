@@ -60,7 +60,7 @@ jobs:
       KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
 
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
+      - uses: actions/checkout@v5
       - id: s
         run: |
           V=$(node -p "require('./app.json').version")
@@ -76,8 +76,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           cache: npm
           node-version: ${{ env.NODE_VERSION }}
@@ -124,8 +124,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           cache: npm
           node-version: ${{ env.NODE_VERSION }}

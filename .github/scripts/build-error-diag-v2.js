@@ -47,10 +47,27 @@ async function tier1Api() {
   try {
     HOMEY_CLI_ROOT = path.dirname(require.resolve('homey/package.json'));
   } catch {
-    HOMEY_CLI_ROOT = 'C:/Users/HP/AppData/Roaming/npm/node_modules/homey';
+    // Cross-platform fallback: find homey CLI in global node_modules
+    try {
+      const { execSync } = require('child_process');
+      const globalRoot = execSync('npm root -g', { encoding: 'utf8', timeout: 5000 }).trim();
+      HOMEY_CLI_ROOT = path.join(globalRoot, 'homey');
+    } catch {
+      log('TIER 1: homey CLI not found — skipping API diagnostic');
+      report.tier1_api = { error: 'homey CLI not installed' };
+      return;
+    }
   }
-  const AthomApi = require(path.join(HOMEY_CLI_ROOT, 'services/AthomApi'));
-  const AthomAppsAPI = require(path.join(HOMEY_CLI_ROOT, 'node_modules/homey-api/lib/AthomAppsAPI'));
+
+  let AthomApi, AthomAppsAPI;
+  try {
+    AthomApi = require(path.join(HOMEY_CLI_ROOT, 'services/AthomApi'));
+    AthomAppsAPI = require(path.join(HOMEY_CLI_ROOT, 'node_modules/homey-api/lib/AthomAppsAPI'));
+  } catch (e) {
+    log('TIER 1: failed to load homey API modules:', e.message.slice(0, 80));
+    report.tier1_api = { error: 'API modules not loadable: ' + e.message.slice(0, 100) };
+    return;
+  }
 
   const token = await AthomApi.createDelegationToken({ audience: 'apps' });
   const api = new AthomAppsAPI({ token });
@@ -112,25 +129,26 @@ async function tier2Puppeteer() {
   try { puppeteer = require('puppeteer'); }
   catch { log('puppeteer not installed — skipping'); return; }
 
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  });
-  const page = await browser.newPage();
-  await page.setDefaultTimeout(10000);
-  await page.setDefaultNavigationTimeout(15000);
-  report.tier2_puppeteer = { steps: [] };
-
-  // Hard overall cap: race against a 90s timer that force-closes.
-  const deadline = Date.now() + 90000;
-  const overTime = () => Date.now() > deadline;
-
+  let browser;
   try {
+    browser = await puppeteer.launch({
+      headless: 'new',
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+    });
+    const page = await browser.newPage();
+    await page.setDefaultTimeout(10000);
+    await page.setDefaultNavigationTimeout(15000);
+    report.tier2_puppeteer = { steps: [] };
+
+    // Hard overall cap: race against a 90s timer that force-closes.
+    const deadline = Date.now() + 90000;
+    const overTime = () => Date.now() > deadline;
+
     // Build-detail page (may be partially visible without login).
-    const url = `https://developer.homey.app/apps/app/${APP_ID}/build/${report.buildId}`;
+    const url = `https://tools.developer.homey.app/apps/app/${APP_ID}/build/${report.buildId}`;
     log('navigating:', url);
     await page.goto(url, { waitUntil: 'domcontentloaded' }).catch(() => {});
-    await page.waitForTimeout(3000);
+    await new Promise(r => setTimeout(r, 3000));
     await page.screenshot({ path: path.join(SCREENSHOTS_DIR, `diag-build-${report.buildId}.png`), fullPage: false }).catch(() => {});
 
     // Capture page text + any error-looking elements.
@@ -149,9 +167,9 @@ async function tier2Puppeteer() {
           page.waitForNavigation({ waitUntil: 'domcontentloaded' }).catch(() => {}),
           page.keyboard.press('Enter').catch(() => {}),
         ]);
-        await page.waitForTimeout(4000);
+        await new Promise(r => setTimeout(r, 4000));
         await page.goto(url, { waitUntil: 'domcontentloaded' }).catch(() => {});
-        await page.waitForTimeout(3000);
+        await new Promise(r => setTimeout(r, 3000));
         await page.screenshot({ path: path.join(SCREENSHOTS_DIR, `diag-build-${report.buildId}-after-login.png`), fullPage: false }).catch(() => {});
         const afterLoginText = await page.evaluate(() => document?.body?.innerText?.slice(0, 5000) || '').catch(() => '');
         report.tier2_puppeteer.afterLoginText = afterLoginText.slice(0, 2000);
@@ -164,10 +182,11 @@ async function tier2Puppeteer() {
     report.tier2_puppeteer.htmlBytes = html.length;
     log('Puppeteer done. HTML bytes:', html.length);
   } catch (e) {
+    report.tier2_puppeteer = report.tier2_puppeteer || {};
     report.tier2_puppeteer.error = e.message;
     logErr('puppeteer error:', e.message.slice(0, 100));
   } finally {
-    await browser.close().catch(() => {});
+    if (browser) await browser.close().catch(() => {});
   }
 }
 
