@@ -41,13 +41,13 @@
   "metadata": {
     "driver": {
       "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS0121, TSO121, TS011F"
+      "reason": "Fallback for unmatched devices with PIDs: TS0121, TS0121, TS011F"
     }
   },
   "zigbee": {
     "productId": [
       "TS0121",
-      "TSO121",
+      "TS0121",
       "TS011F"
     ],
     "endpoints": {

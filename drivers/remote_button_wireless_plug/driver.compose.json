@@ -434,14 +434,14 @@
   "metadata": {
     "driver": {
       "catchall": true,
-      "reason": "Fallback for unmatched devices with PIDs: TS011F, TS0121, TSO121"
+      "reason": "Fallback for unmatched devices with PIDs: TS011F, TS0121, TS0121"
     }
   },
   "zigbee": {
     "productId": [
       "TS011F",
       "TS0121",
-      "TSO121"
+      "TS0121"
     ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
