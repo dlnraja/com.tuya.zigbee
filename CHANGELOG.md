@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.82] - 2026-06-23
+## [9.0.83] - 2026-06-24
+
+v9.0.82:
+---
+
+ [9.0.82] - 2026-06-23
 
 v9.0.81:
 ---
