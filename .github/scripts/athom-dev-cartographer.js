@@ -26,7 +26,9 @@ const path      = require('path');
 const fs        = require('fs');
 const https     = require('https');
 
-const APP_ID     = 'com.dlnraja.tuya.zigbee';
+let APP_JSON = {};
+try { APP_JSON = JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')); } catch(e) {}
+const APP_ID     = process.env.TARGET_APP_ID || APP_JSON.id || 'com.dlnraja.tuya.zigbee';
 const BASE_URL   = 'https://tools.developer.homey.app';
 const EMAIL      = process.env.HOMEY_EMAIL    || '';
 const PASSWORD   = process.env.HOMEY_PASSWORD || '';

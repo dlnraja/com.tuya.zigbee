@@ -92,20 +92,21 @@ jobs:
               FAIL=1
             fi
           done
-          [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY
+          if [ $FAIL -eq 0 ]; then echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY; fi
 
       - name: 🔍 TITAN v5 Integrity Checks
         run: |
+          set +e  # Don't exit on test failures — we want to run ALL checks
           echo "## 🔍 TITAN v5 Integrity Checks" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           # 9. Bare setTimeout/setInterval in device files
           bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l || true)
-          [ "$bare_timeout" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in drivers: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in drivers: $bare_timeout" >> $GITHUB_STEP_SUMMARY
+          if [ "$bare_timeout" -eq 0 ]; then echo "✅ Bare setTimeout/setInterval in drivers: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Bare setTimeout/setInterval in drivers: $bare_timeout" >> $GITHUB_STEP_SUMMARY; fi
 
           # 10. Bare setTimeout/setInterval in lib files
           bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l || true)
-          [ "$bare_timeout_lib" -eq 0 ] && echo "✅ Bare setTimeout/setInterval in lib: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Bare setTimeout/setInterval in lib: $bare_timeout_lib" >> $GITHUB_STEP_SUMMARY
+          if [ "$bare_timeout_lib" -eq 0 ]; then echo "✅ Bare setTimeout/setInterval in lib: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Bare setTimeout/setInterval in lib: $bare_timeout_lib" >> $GITHUB_STEP_SUMMARY; fi
 
           # 11. Missing _destroyed guard in async callbacks (informational only)
           missing_guard=$(grep -rn "async.*.(" drivers/ --include="device.js" 2>/dev/null | grep -v "_destroyed" | grep -v "// " | wc -l || echo 0)
@@ -120,7 +121,7 @@ jobs:
           if [ -f scripts/validation/check-ts0601-catchall.js ]; then
             node scripts/validation/check-ts0601-catchall.js --json 2>/dev/null | tee /tmp/ts0601.json > /dev/null
             ts0601_violations=$(jq -r '.totalViolations // 0' /tmp/ts0601.json 2>/dev/null || echo "?")
-            [ "$ts0601_violations" = "0" ] && echo "✅ TS0601 catchall violations: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ TS0601 catchall violations: $ts0601_violations" >> $GITHUB_STEP_SUMMARY
+            if [ "$ts0601_violations" = "0" ]; then echo "✅ TS0601 catchall violations: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ TS0601 catchall violations: $ts0601_violations" >> $GITHUB_STEP_SUMMARY; fi
           else
             echo "⚠️  TS0601 catchall script not found" >> $GITHUB_STEP_SUMMARY
           fi
@@ -134,14 +135,14 @@ jobs:
           if [ -f scripts/validation/check-energy-divisor.js ]; then
             node scripts/validation/check-energy-divisor.js --json 2>/dev/null | tee /tmp/energy-divisor.json > /dev/null
             energy_violations=$(jq -r '.totalViolations // 0' /tmp/energy-divisor.json 2>/dev/null || echo "?")
-            [ "$energy_violations" = "0" ] && echo "✅ Energy divisor violations: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Energy divisor violations: $energy_violations" >> $GITHUB_STEP_SUMMARY
+            if [ "$energy_violations" = "0" ]; then echo "✅ Energy divisor violations: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Energy divisor violations: $energy_violations" >> $GITHUB_STEP_SUMMARY; fi
           fi
 
           # 16. Flow card ID validation
           if [ -f scripts/ci/check-flow-ids.js ]; then
             node scripts/ci/check-flow-ids.js --json 2>/dev/null | tee /tmp/flowids.json > /dev/null
             flow_dupes=$(jq -r '.duplicates // 0' /tmp/flowids.json 2>/dev/null || echo "?")
-            [ "$flow_dupes" = "0" ] && echo "✅ Flow card ID duplicates: 0" >> $GITHUB_STEP_SUMMARY || echo "❌ Flow card ID duplicates: $flow_dupes" >> $GITHUB_STEP_SUMMARY
+            if [ "$flow_dupes" = "0" ]; then echo "✅ Flow card ID duplicates: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Flow card ID duplicates: $flow_dupes" >> $GITHUB_STEP_SUMMARY; fi
           fi
 
       - name: 🔍 TITAN Pre-Commit Gate

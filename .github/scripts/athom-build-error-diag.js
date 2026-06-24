@@ -21,8 +21,9 @@
 const fs   = require('fs');
 const path = require('path');
 
-const APP_JSON = JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8'));
-const APP_ID   = APP_JSON.id || 'com.dlnraja.tuya.zigbee';
+let APP_JSON = {};
+try { APP_JSON = JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')); } catch(e) {}
+const APP_ID   = process.env.TARGET_APP_ID || APP_JSON.id || 'com.dlnraja.tuya.zigbee';
 const APP_VER  = APP_JSON.version || 'unknown';
 const TARGET_BUILD = process.argv[2] || null; // optional specific build ID
 
