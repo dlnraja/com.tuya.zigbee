@@ -114,14 +114,14 @@ jobs:
           echo "🔍 TITAN v5 Lifecycle Pattern Check..."
 
           # 7. Bare setTimeout/setInterval in device files (not this.homey.setTimeout)
-          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l || true)
+          bare_timeout=$(grep -rn "setTimeout\|setInterval" drivers/ --include="device.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "clearTimeout\|clearInterval" | grep -v "// " | grep -v "^\s*\*" | wc -l || true)
           if [ "$bare_timeout" -gt 0 ]; then
             echo "❌ Found $bare_timeout bare setTimeout/setInterval calls in drivers (use this.homey.setTimeout)"
             exit 1
           fi
 
           # 8. Bare setTimeout/setInterval in lib files
-          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | wc -l || true)
+          bare_timeout_lib=$(grep -rn "setTimeout\|setInterval" lib/ --include="*.js" 2>/dev/null | grep -v "this\.homey\." | grep -v "this\.device\.homey\." | grep -v "homey\.setTimeout\|homey\.setInterval" | grep -v "clearTimeout\|clearInterval" | grep -v "// " | grep -v "^\s*\*" | wc -l || true)
           if [ "$bare_timeout_lib" -gt 0 ]; then
             echo "❌ Found $bare_timeout_lib bare setTimeout/setInterval calls in lib/ (use this.homey.setTimeout or this.device.homey.setTimeout)"
             exit 1
