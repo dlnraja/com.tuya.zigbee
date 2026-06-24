@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T08:08:13.548Z",
+  "timestamp": "2026-06-24T08:35:23.878Z",
   "totalFiles": 0,
   "totalFixes": 216,
   "rules": {
@@ -108,7 +108,7 @@
         },
         {
           "file": "lib/devices/UnifiedSwitchBase.js",
-          "detail": "Line 812: getDeviceTriggerCard without try-catch"
+          "detail": "Line 847: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/WallTouchDevice.js",
@@ -128,7 +128,7 @@
         },
         {
           "file": "lib/mixins/PhysicalButtonMixin.js",
-          "detail": "Line 871: getDeviceTriggerCard without try-catch"
+          "detail": "Line 781: getDeviceTriggerCard without try-catch"
         }
       ]
     },
@@ -306,7 +306,7 @@
         },
         {
           "file": "lib/mixins/PhysicalButtonMixin.js",
-          "detail": "Line 478: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 712: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/protocol/IntelligentProtocolRouter.js",
