@@ -779,7 +779,7 @@ class Button1GangDevice extends ButtonDevice {
             const voltage = safeMultiply(value, 10);
             const battery = UnifiedBatteryHandler
               ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
-              : UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
+              : Math.round(Math.max(0, Math.min(100, ((voltage - 2.0) / 1.0) * 100)));
             this.log(`[BUTTON1-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
