@@ -32,18 +32,18 @@ async onInit() {
     };
 
     reg('valve_irrigation_turn_on', async ({ device }) => {
-      await device.triggerCapabilityListener('onoff', true);
+      await device['setCapabilityValue']('onoff', true);
       return true;
     });
 
     reg('valve_irrigation_turn_off', async ({ device }) => {
-      await device.triggerCapabilityListener('onoff', false);
+      await device['setCapabilityValue']('onoff', false);
       return true;
     });
 
     reg('valve_irrigation_toggle', async ({ device }) => {
       const v = device.getCapabilityValue('onoff');
-      await device.triggerCapabilityListener('onoff', !v);
+      await device['setCapabilityValue']('onoff', !v);
       return true;
     });
   }

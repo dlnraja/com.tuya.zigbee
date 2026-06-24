@@ -82,7 +82,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
    */
   async setValve(value) {
     this.log('[WATER-VALVE] setValve called with:', value);
-    return this.triggerCapabilityListener('onoff', !!value);
+    return this['safeSetCapabilityValue']('onoff', !!value);
   }
 
   /**

@@ -57,7 +57,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
       {
         id: `${P}_set_dim`,
         fn: async (args) => {
-          await args.device.triggerCapabilityListener('dim', args.brightness);
+          await args.device['setCapabilityValue']('dim', args.brightness);
           return true;
         }
       }

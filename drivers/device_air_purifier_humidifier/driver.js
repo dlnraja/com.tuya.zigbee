@@ -33,16 +33,16 @@ class HumidifierDriver extends Driver {
     };
 
     reg('humidifier_turn_on', async ({ device }) => { 
-      await device.triggerCapabilityListener('onoff', true); 
+      await device['setCapabilityValue']('onoff', true); 
       return true; 
     });
     reg('humidifier_turn_off', async ({ device }) => { 
-      await device.triggerCapabilityListener('onoff', false); 
+      await device['setCapabilityValue']('onoff', false); 
       return true; 
     });
     reg('humidifier_toggle', async ({ device }) => { 
       const v = device.getCapabilityValue('onoff'); 
-      await device.triggerCapabilityListener('onoff', !v); 
+      await device['setCapabilityValue']('onoff', !v); 
       return true; 
     });
   }

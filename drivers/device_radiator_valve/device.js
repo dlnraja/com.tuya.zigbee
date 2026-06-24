@@ -232,7 +232,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         thermo.on('attr.localTemperature', (v) => this.safeSetCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
         thermo.on('attr.occupiedHeatingSetpoint', (v) => this.safeSetCapabilityValue('target_temperature', v * 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
-          if (this.hasCapability('dim')) {this.triggerCapabilityListener('dim', v * 100).catch(() => { });}
+          if (this.hasCapability('dim')) {this['safeSetCapabilityValue']('dim', v * 100).catch(() => { });}
       });
         this.log('[TRV]  ZCL Thermostat configured');
       }

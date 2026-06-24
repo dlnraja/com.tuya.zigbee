@@ -78,7 +78,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
       {
         id: 'button_wireless_plug_reset_meter',
         fn: async (args) => {
-          await args.device.triggerCapabilityListener('meter_power', 0);
+          await args.device['setCapabilityValue']('meter_power', 0);
           return true;
         }
       }

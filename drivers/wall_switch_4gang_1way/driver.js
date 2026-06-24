@@ -59,9 +59,9 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
 
     // Virtual control
     const simpleActions = [
-      { id: `${P}_turn_on`, fn: async (d) => { await d.triggerCapabilityListener('onoff', true); } },
-      { id: `${P}_turn_off`, fn: async (d) => { await d.triggerCapabilityListener('onoff', false); } },
-      { id: `${P}_toggle`, fn: async (d) => { const v = d.getCapabilityValue('onoff'); await d.triggerCapabilityListener('onoff', !v); } },
+      { id: `${P}_turn_on`, fn: async (d) => { await d['setCapabilityValue']('onoff', true); } },
+      { id: `${P}_turn_off`, fn: async (d) => { await d['setCapabilityValue']('onoff', false); } },
+      { id: `${P}_toggle`, fn: async (d) => { const v = d.getCapabilityValue('onoff'); await d['setCapabilityValue']('onoff', !v); } },
     ];
 
     for (const { id, fn } of simpleActions) {
@@ -104,9 +104,9 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
             const cap = ep === 1 ? 'onoff' : `onoff.gang${  ep}`;
             try {
               if (val === 'toggle') {
-                await args.device.triggerCapabilityListener(cap, !args.device.getCapabilityValue(cap));
+                await args.device['setCapabilityValue'](cap, !args.device.getCapabilityValue(cap));
               } else {
-                await args.device.triggerCapabilityListener(cap, val);
+                await args.device['setCapabilityValue'](cap, val);
               }
             } catch (e) {
               args.device.error('Flow Action Error:', e);
@@ -134,7 +134,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
             const numGangs = 4;
             for (let ep = 1; ep <= numGangs; ep++) {
               const cap = ep === 1 ? 'onoff' : `onoff.gang${  ep}`;
-              await args.device.triggerCapabilityListener(cap, val).catch(() => {});
+              await args.device['setCapabilityValue'](cap, val).catch(() => {});
             }
             return true;
           });

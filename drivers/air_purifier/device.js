@@ -52,7 +52,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
       case DP.state: {
         const state = Boolean(value);
         this.log(`[AirPurifier] 📥 State: ${state}`);
-        await this.triggerCapabilityListener('onoff', state);
+        await this['safeSetCapabilityValue']('onoff', state);
         break; }
 
       case DP.pm25: {
@@ -65,7 +65,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
       case DP.speed: {
         const speed = typeof value === 'number' ? value : parseInt(value);
         this.log(`[AirPurifier] 📥 Speed: ${speed}`);
-        await this.triggerCapabilityListener('dim', Math.min(1, Math.max(0, speed / 100)));
+        await this['safeSetCapabilityValue']('dim', Math.min(1, Math.max(0, speed / 100)));
         break;
       }
 

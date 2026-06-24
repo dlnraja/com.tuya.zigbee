@@ -70,7 +70,7 @@ async onInit() {
       if (card) {card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           const dim = safeParse(args.brightness, 100);
-          await args.device.triggerCapabilityListener('dim', dim);
+          await args.device['setCapabilityValue']('dim', dim);
           return true;
         });}
       this.log('Action: set_brightness');
@@ -108,7 +108,7 @@ async onInit() {
       if (card) {card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
           const cur = args.device.getCapabilityValue('onoff');
-          await args.device.triggerCapabilityListener('onoff', !cur);
+          await args.device['setCapabilityValue']('onoff', !cur);
           return true;
         });}
       this.log('Action: toggle');

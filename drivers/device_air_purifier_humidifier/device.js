@@ -63,7 +63,7 @@ class HumidifierDevice extends ZigBeeDevice {
 
     switch (dp) {
     case 1: //On/Off
-      this.triggerCapabilityListener('onoff', !!value).catch(this.error);
+      this['safeSetCapabilityValue']('onoff', !!value).catch(this.error);
       break;
 
     case 2: // Target humidity
@@ -80,7 +80,7 @@ class HumidifierDevice extends ZigBeeDevice {
 
     case 5: // Mist level (0-3)
       const dim = safeMultiply(value, 3);
-      this.triggerCapabilityListener('dim', dim).catch(this.error);
+      this['safeSetCapabilityValue']('dim', dim).catch(this.error);
       break;
 
     case 12: // Water shortage

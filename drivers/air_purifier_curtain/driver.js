@@ -33,16 +33,16 @@ class CurtainMotorTiltDriver extends ZigBeeDriver {
     };
 
     reg('curtain_motor_tilt_turn_on', async ({ device }) => { 
-      await device.triggerCapabilityListener('onoff', true); 
+      await device['setCapabilityValue']('onoff', true); 
       return true; 
     });
     reg('curtain_motor_tilt_turn_off', async ({ device }) => { 
-      await device.triggerCapabilityListener('onoff', false); 
+      await device['setCapabilityValue']('onoff', false); 
       return true; 
     });
     reg('curtain_motor_tilt_toggle', async ({ device }) => { 
       const v = device.getCapabilityValue('onoff'); 
-      await device.triggerCapabilityListener('onoff', !v); 
+      await device['setCapabilityValue']('onoff', !v); 
       return true; 
     });
   }

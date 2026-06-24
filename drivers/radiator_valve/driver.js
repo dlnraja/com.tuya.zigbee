@@ -23,7 +23,7 @@ async onInit() {
           card.registerRunListener(async (args) => {
             if (!args.device) {return false;}
             const val = args.temperature || args.target_temperature || args.value;
-            await args.device.triggerCapabilityListener('target_temperature', val);
+            await args.device['setCapabilityValue']('target_temperature', val);
             return true;
           });
           this.log(`[FLOW] Registered: ${id}`);
