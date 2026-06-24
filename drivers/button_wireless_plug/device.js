@@ -96,7 +96,7 @@ const ENERGY_DEVICE_CONFIGS = {
   },
 };
 
-class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
 

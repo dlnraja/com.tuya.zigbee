@@ -14,7 +14,7 @@ const { CLUSTER } = require('zigbee-clusters');
  * Channel 1: Endpoint 1 (onoff, dim)
  * Channel 2: Endpoint 2 (onoff.channel2, dim.channel2)
  */
-class DimmerDualChannelDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
+class DimmerDualChannelDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
 
   get mainsPowered() { return true; }
 

@@ -7,7 +7,7 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  * 1-button battery knob switch using ZCL scenes/onOff clusters
  * v5.12.0: Converted from log-only stub to full ButtonDevice
  */
-class SmartKnobSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(ButtonDevice)) {
+class SmartKnobSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ButtonDevice)) {
 
   get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {

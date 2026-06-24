@@ -3,7 +3,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const LightBase = require('../../lib/devices/UnifiedLightBase');
 
-class RGBBulbLedDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+class RGBBulbLedDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
   get mainsPowered() { return true; }
 
   get lightCapabilities() {

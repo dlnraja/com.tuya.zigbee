@@ -12,7 +12,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  v9.7.3: purged manual listeners in favor of centralized dpMappings         ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
 

@@ -152,7 +152,7 @@ function getEnergyConfig(manufacturerName) {
 }
 
 
-class RemoteButtonWirelessPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class RemoteButtonWirelessPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(BatteryMixin(UnifiedPlugBase))) {
 
   get mainsPowered() { return true; }
   // v9.7.3: Specialized Energy Monitoring Plug

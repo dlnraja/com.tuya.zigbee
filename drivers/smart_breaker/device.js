@@ -16,7 +16,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * ║    Tuya DP/ZCL hybrid support.                                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmartBreakerDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class SmartBreakerDevice extends PhysicalButtonMixin(VirtualButtonMixin(BatteryMixin(UnifiedPlugBase))) {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.

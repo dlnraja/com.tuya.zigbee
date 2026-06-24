@@ -20,7 +20,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
 
-class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class ValveIrrigationDevice extends PhysicalButtonMixin(VirtualButtonMixin(BatteryMixin(UnifiedPlugBase))) {
 
   get plugCapabilities() { 
     return ['onoff', 'measure_battery', 'meter_water']; 

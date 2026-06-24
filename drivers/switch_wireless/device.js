@@ -10,7 +10,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * - PhysicalButtonMixin (tuya/v9.7.3) for button press detection (ZCL/Tuya)
  * - BatteryMixin (tuya/v9.6.0) for standard battery monitoring
  */
-class SwitchWirelessDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(ZigBeeDevice))) {
+class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(BatteryMixin(ZigBeeDevice))) {
 
   get mainsPowered() { return true; }
 

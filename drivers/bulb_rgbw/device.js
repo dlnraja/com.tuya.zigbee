@@ -14,7 +14,7 @@ const LightBase = require('../../lib/devices/UnifiedLightBase');
  * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+class RGBWBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
 
   get mainsPowered() { return true; }
 

@@ -10,7 +10,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * Migrated to PhysicalButtonMixin for 8-layer detection stack.
  * Standardized battery management via BatteryMixin.
  */
-class SmartButtonSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(ZigBeeDevice))) {
+class SmartButtonSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(BatteryMixin(ZigBeeDevice))) {
 
   get mainsPowered() { return true; }
 
