@@ -36,13 +36,13 @@ class WiFiWaterTankMonitorDevice extends BatteryMixin(TuyaLocalDevice) {
       const isHigh = parsed === 2;
 
       if (this.hasCapability('alarm_water_low')) {
-        await this.setCapabilityValue('alarm_water_low', isLow).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_water_low', isLow).catch(() => { });
       }
       if (this.hasCapability('alarm_water_high')) {
-        await this.setCapabilityValue('alarm_water_high', isHigh).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_water_high', isHigh).catch(() => { });
       }
       if (this.hasCapability('alarm_water')) {
-        await this.setCapabilityValue('alarm_water', isLow || isHigh).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_water', isLow || isHigh).catch(() => { });
       }
 
       const driver = this.homey.drivers.getDriver('wifi_water_tank_monitor');

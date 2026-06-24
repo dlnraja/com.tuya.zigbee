@@ -247,8 +247,8 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     const measuredValue = getDataValue(data);
     switch (dp) {
     case dataPoints.ALARM:
-      await this.setCapabilityValue('onoff', !!measuredValue).catch(() => {});
-      await this.setCapabilityValue('alarm_siren', !!measuredValue).catch(() => {});
+      await this.safeSetCapabilityValue('onoff', !!measuredValue).catch(() => {});
+      await this.safeSetCapabilityValue('alarm_siren', !!measuredValue).catch(() => {});
       break;
     case dataPoints.TEMPERATURE: this.reportTemperatureCapacity(measuredValue); break;
     case dataPoints.HUMIDITY: this.reportHumidityCapacity(measuredValue); break;
@@ -260,17 +260,17 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   handlePowerMode(measuredValue) {
-    this.setCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
+    this.safeSetCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
   }
 
   reportHumidityCapacity(measuredValue) {
     const humidityOffset = Number(this.getSetting('humidity_offset') || 0);
-    this.setCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
+    this.safeSetCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
   }
 
   reportTemperatureCapacity(measuredValue) {
     const temperatureOffset = Number(this.getSetting('temperature_offset') || 0);
-    this.setCapabilityValue('measure_temperature', (Number(measuredValue) / 10) + temperatureOffset).catch(() => {});
+    this.safeSetCapabilityValue('measure_temperature', (Number(measuredValue) / 10) + temperatureOffset).catch(() => {});
   }
 
   async onEndDeviceAnnounce() {

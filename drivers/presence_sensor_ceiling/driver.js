@@ -14,17 +14,17 @@ class CeilingPresenceSensorDriver extends ZigBeeDriver {
     const actionCards = [
       {
         id: 'presence_sensor_ceiling_turn_on',
-        fn: async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; }
+        fn: async ({ device }) => { await device['setCapabilityValue']('onoff', true); return true; }
       },
       {
         id: 'presence_sensor_ceiling_turn_off',
-        fn: async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; }
+        fn: async ({ device }) => { await device['setCapabilityValue']('onoff', false); return true; }
       },
       {
         id: 'presence_sensor_ceiling_toggle',
         fn: async ({ device }) => { 
           const v = device.getCapabilityValue('onoff'); 
-          await device.triggerCapabilityListener('onoff', !v); 
+          await device['setCapabilityValue']('onoff', !v); 
           return true; 
         }
       }

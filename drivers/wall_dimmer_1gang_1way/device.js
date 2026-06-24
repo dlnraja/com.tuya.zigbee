@@ -267,7 +267,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         
         this._lastOnoffState = state;
-        this.setCapabilityValue('onoff', state).catch(this.error);
+        this.safeSetCapabilityValue('onoff', state).catch(this.error);
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
@@ -302,7 +302,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
         
         this._lastBrightnessValue = brightnessRaw;
-        this.setCapabilityValue('dim', brightness).catch(this.error);
+        this.safeSetCapabilityValue('dim', brightness).catch(this.error);
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {

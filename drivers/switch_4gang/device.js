@@ -91,7 +91,7 @@ class Switch4GangDevice extends BaseClass {
       onOff.on('attr.onOff', (value) => {
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          this.safeSetCapabilityValue(capName, value).catch(() => {});
         }
       });
     }

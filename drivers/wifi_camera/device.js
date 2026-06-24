@@ -138,13 +138,13 @@ class WiFiCameraDevice extends Homey.Device {
       const now = Date.now();
       if (motion && now - this._lastMotionTime > 5000) {
         this._lastMotionTime = now;
-        this.setCapabilityValue('alarm_motion', true).catch(() => {});
-        setTimeout(() => this.setCapabilityValue('alarm_motion', false).catch(() => {}), 30000);
+        this.safeSetCapabilityValue('alarm_motion', true).catch(() => {});
+        setTimeout(() => this.safeSetCapabilityValue('alarm_motion', false).catch(() => {}), 30000);
       }
     }
 
     if (dps[DP.PRIVACY_MODE] !== undefined) {
-      this.setCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
+      this.safeSetCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
     }
   }
 

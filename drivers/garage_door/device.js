@@ -37,17 +37,17 @@ class GarageDoorDevice extends TuyaZigbeeDevice {
     switch (dpId) {
       case 2: {
         const closed = value === 0 || value === false;
-        await this.setCapabilityValue('garagedoor_closed', closed);
+        await this.safeSetCapabilityValue('garagedoor_closed', closed);
         if (this.hasCapability('alarm_contact')) {
-          await this.setCapabilityValue('alarm_contact', !closed); }
+          await this.safeSetCapabilityValue('alarm_contact', !closed); }
         break;
       }
 
       case 12: {
         const open = value === 1 || value === true;
-        await this.setCapabilityValue('garagedoor_closed', !open);
+        await this.safeSetCapabilityValue('garagedoor_closed', !open);
         if (this.hasCapability('alarm_contact')) {
-          await this.setCapabilityValue('alarm_contact', open);
+          await this.safeSetCapabilityValue('alarm_contact', open);
         }
         break;
       }

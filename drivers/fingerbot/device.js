@@ -504,7 +504,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
   async _setCapabilitySafe(capabilityId, value, errorMessage) {
     try {
-      await this.setCapabilityValue(capabilityId, value);
+      await this.safeSetCapabilityValue(capabilityId, value);
     } catch (err) {
       this.error(errorMessage, err);
     }

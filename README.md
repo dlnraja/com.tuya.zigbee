@@ -9,13 +9,16 @@
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,869+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **429 drivers** and **7,300+ device fingerprints**.
+
+> **Note on App Versions:**
+> This repository (`v5` branch) represents the **Modern Architecture** of the app. It features the fully refactored `UnifiedSwitchBase` which consolidates multi-gang switches, eliminates `isSubDevice()`, and includes advanced battery management and physical button detections out-of-the-box. Use this version for the best performance and standard compliance on modern Homey Pro devices. For legacy backwards compatibility, refer to the `master` branch.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **2,453+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **4,809+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---

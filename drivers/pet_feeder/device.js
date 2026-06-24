@@ -59,7 +59,7 @@ class PetFeederDevice extends ZigBeeDevice {
     switch (dp) {
     case 6: // Food level alarm
       if (this.hasCapability('alarm_generic')) {
-        this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
+        this.safeSetCapabilityValue('alarm_generic', !!value).catch(this.error);
       }
       break;
 

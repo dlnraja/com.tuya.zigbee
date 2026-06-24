@@ -58,12 +58,12 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => this._setTargetTemperature(v));
-      await this.setCapabilityValue('target_temperature', 20).catch(() => {});
+      await this.safeSetCapabilityValue('target_temperature', 20).catch(() => {});
     }
 
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => this._setHeatingMode(v));
-      await this.setCapabilityValue('thermostat_mode', this.currentMode).catch(() => {});
+      await this.safeSetCapabilityValue('thermostat_mode', this.currentMode).catch(() => {});
     }
   }
 
@@ -111,7 +111,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     this.log(`Set mode: ${mode}`);
     try {
       await this._sendPilotWireSignal(mode);
-      await this.setCapabilityValue('thermostat_mode', mode).catch(() => {});
+      await this.safeSetCapabilityValue('thermostat_mode', mode).catch(() => {});
       this.currentMode = mode;
       if (this._radiatorModeChangedTrigger) {
         this._radiatorModeChangedTrigger.trigger(this, { mode }).catch(() => {});

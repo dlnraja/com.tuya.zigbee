@@ -98,19 +98,19 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
     // DP mapping for Besterm and common Tuya radiators
     // DP1: Power (true/false)
     if (typeof dps['1'] !== 'undefined') {
-      this.setCapabilityValue('onoff', dps['1']).catch(() => {});
+      this.safeSetCapabilityValue('onoff', dps['1']).catch(() => {});
     }
 
     // DP2: Target temperature (in 0.5Â°C steps, multiply by 2)
     if (typeof dps['2'] !== 'undefined') {
       const temp = parseFloat(dps['2'] );
-      this.setCapabilityValue('target_temperature', temp).catch(() => {});
+      this.safeSetCapabilityValue('target_temperature', temp).catch(() => {});
     }
 
     // DP3: Current temperature
     if (typeof dps['3'] !== 'undefined') {
       const temp = parseFloat(dps['3'] );
-      this.setCapabilityValue('measure_temperature', temp).catch(() => {});
+      this.safeSetCapabilityValue('measure_temperature', temp).catch(() => {});
     }
 
     // DP4: Mode (auto/manual/eco/boost)
@@ -122,20 +122,20 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
         '3': 'boost'
       };
       const mode = modeMap[String(dps['4'])] || 'manual';
-      this.setCapabilityValue('thermostat_mode', mode).catch(() => {});
+      this.safeSetCapabilityValue('thermostat_mode', mode).catch(() => {});
     }
 
     // DP5: Child lock
     if (typeof dps['5'] !== 'undefined') {
       if (this.hasCapability('child_lock')) {
-        this.setCapabilityValue('child_lock', dps['5']).catch(() => {});
+        this.safeSetCapabilityValue('child_lock', dps['5']).catch(() => {});
       }
     }
 
     // DP6: Window detection
     if (typeof dps['6'] !== 'undefined') {
       if (this.hasCapability('window_detection')) {
-        this.setCapabilityValue('window_detection', dps['6']).catch(() => {});
+        this.safeSetCapabilityValue('window_detection', dps['6']).catch(() => {});
       }
     }
   }

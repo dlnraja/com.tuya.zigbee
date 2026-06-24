@@ -129,7 +129,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       if (this.hasCapability(capability)) {
         const current = this.getCapabilityValue(capability);
         if (current === null || current === undefined) {
-          await this.setCapabilityValue(capability, defaultValue).catch(() => { });
+          await this.safeSetCapabilityValue(capability, defaultValue).catch(() => { });
           this.log(`[GENERIC] Set default ${capability} = ${defaultValue}`);
         }
       }
@@ -245,7 +245,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     // Parse and set value
     try {
       const parsedValue = parser(value);
-      await this.setCapabilityValue(capability, parsedValue);
+      await this.safeSetCapabilityValue(capability, parsedValue);
       this.log(`[GENERIC]  DP${dp}  ${capability} = ${parsedValue} (CONFIDENCE: ${confidence})`);
 
       // Emit event for flow triggers

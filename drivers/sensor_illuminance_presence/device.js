@@ -52,7 +52,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       const result = this._discovery.applyDiscoveredValue(dpId, value);
       if (result) {
         this.log(`[RADAR] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => { });
+        return this.safeSetCapabilityValue(result.capability, result.value).catch(() => { });
       }
     }
 
@@ -76,7 +76,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       }
 
       if (presence !== null) {
-        return this.setCapabilityValue('alarm_motion', presence).catch(() => {});
+        return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => {});
       }
       return;
     }
@@ -85,7 +85,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
     if (mapping.cap === 'measure_luminance.distance') {
       const distance = value / (mapping.divisor || 100);
       this._inference.updateDistance(distance);
-      return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
     // Illuminance / Lux
@@ -96,13 +96,13 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
       }
       
       this._inference.updateLux(lux);
-      return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+      return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
     }
 
     // Standard capability updates
     if (mapping.cap) {
       const finalValue = mapping.divisor ? value / mapping.divisor : value;
-      return this.setCapabilityValue(mapping.cap, finalValue).catch(() => {});
+      return this.safeSetCapabilityValue(mapping.cap, finalValue).catch(() => {});
     }
   }
 

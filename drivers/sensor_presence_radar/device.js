@@ -841,11 +841,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
               const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining));
               this.log(`[RADAR] ðŸ”‹ Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
-              this.setCapabilityValue('measure_battery', battery).catch(() => {});
+              this.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
               const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - safeMultiply(20, 10))));
               this.log(`[RADAR] ðŸ”‹ Battery voltage: ${attrs.batteryVoltage/10}V -> ${battery}%`);
-              this.setCapabilityValue('measure_battery', battery).catch(() => {});
+              this.safeSetCapabilityValue('measure_battery', battery).catch(() => {});
             }
           }
           // Also try Tuya dataQuery to get all DPs including DP110
@@ -1051,7 +1051,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           const rawOccupied = (v & 0x01) !== 0;
           const occupied = this._applyPresenceInversion(rawOccupied);
           this.log(`[RADAR] Occupancy: raw=${rawOccupied} â†’ ${occupied}`);
-          this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+          this.safeSetCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
       });
         this.log('[RADAR] ✅ Passive occupancy listener configured');
@@ -1072,7 +1072,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
             return;
           }
           this.log(`[RADAR] IAS zoneStatus: ${sn} â†’ ${motion}`);
-          this.setCapabilityValue('alarm_motion', motion).catch(() => {});
+          this.safeSetCapabilityValue('alarm_motion', motion).catch(() => {});
           this._triggerPresenceFlows(motion);
       });
         if (!iasZone.onZoneStatusChangeNotification) {
@@ -1084,7 +1084,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
               return;
             }
             this.log(`[RADAR] IAS notification: ${s} â†’ ${motion}`);
-            this.setCapabilityValue('alarm_motion', motion).catch(() => {});
+            this.safeSetCapabilityValue('alarm_motion', motion).catch(() => {});
             this._triggerPresenceFlows(motion);
           };
         }
@@ -1356,13 +1356,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
           // Apply to capability
           if (this.hasCapability(discovered.capability)) {
-            this.setCapabilityValue(discovered.capability, discovered.value).catch(() => { });
+            this.safeSetCapabilityValue(discovered.capability, discovered.value).catch(() => { });
 
             // Trigger flows for presence
             if (discovered.capability === 'alarm_motion') {
               this._triggerPresenceFlows(discovered.value);
               if (this.hasCapability('alarm_human')) {
-                this.setCapabilityValue('alarm_human', discovered.value).catch(() => { });
+                this.safeSetCapabilityValue('alarm_human', discovered.value).catch(() => { });
               }
             }
             return;  // Handled by auto-discovery
@@ -1412,7 +1412,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this.log(`[RADAR-LUX] â˜€ï¸ DP${dpId} â†’ ${finalLux} lux`);
       }
       
-      this.setCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
+      this.safeSetCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
 
       // v5.5.315: Feed lux to intelligent inference engine
       if (dpMap[dpId].feedInference) {
@@ -1429,7 +1429,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const temp = safeDivide(rawTemp, divisor);
       if (temp >= -40 && temp <= 80) {
         this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} â†’ temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
-        this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+        this.safeSetCapabilityValue('measure_temperature', temp).catch(() => { });
       } else {
         this.log(`[RADAR] âšï¸ DP${dpId} temperature out of range: ${temp}Â°C (raw: ${rawTemp})`);
       }
@@ -1449,7 +1449,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       }
       if (humidity >= 0 && humidity <= 100) {
         this.log(`[RADAR] ðŸ’§ DP${dpId} â†’ humidity = ${humidity}% (raw: ${rawHumid}, Ã·${divisor}, Ã—${multiplier})`);
-        this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+        this.safeSetCapabilityValue('measure_humidity', humidity).catch(() => { });
       } else {
         this.log(`[RADAR] âšï¸ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
       }
@@ -1473,7 +1473,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // Only update if: significant change (>5%) OR enough time passed OR first report
         if (batteryChange >= 5 || (now - lastBatteryUpdate) > throttleMs || lastBatteryUpdate === 0) {
           this.log(`[RADAR] ðŸ”‹ DP${dpId} â†’ battery = ${battery}% (change: ${batteryChange}%)`);
-          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
           this._lastBatteryUpdate = now;
         } else {
           // Suppress spam - don't log to reduce noise
@@ -1489,7 +1489,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const dist = Math.round(rawDist/divisor * 100) * 100;
       if (dist >= 0 && dist <= 20) {
         this.log('[RADAR] ðŸ“ DP' + dpId + ' distance=' + dist + 'm (raw:' + rawDist + ')');
-        this.setCapabilityValue('measure_luminance.distance', dist).catch(() => {});
+        this.safeSetCapabilityValue('measure_luminance.distance', dist).catch(() => {});
       }
       return;
     }
@@ -1596,7 +1596,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // Always update distance capability
     const divisor = config.dpMap?.[9]?.divisor || 100;
     const distanceMeters = safeDivide(rawDistance, divisor);
-    this.setCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters)).catch(() => { });
+    this.safeSetCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters)).catch(() => { });
     this.log(`[RADAR] ðŸ“ Distance: ${distanceMeters}m (raw: ${rawDistance})`);
 
     // v5.5.315: Feed distance to intelligent inference engine
@@ -1749,7 +1749,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           lastZclBatteryUpdate = now;
           lastZclBatteryValue = battery;
           this.log(`[RADAR] ðŸ”‹ ZCL Battery: ${v} -> ${battery}%`);
-          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
       });
         powerCluster.on('attr.batteryVoltage', (v) => {
           // Backup: calculate from voltage if percentage not available
@@ -1757,7 +1757,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (v && !this.getCapabilityValue('measure_battery')) {
             const battery = Math.min(100, Math.max(0, Math.round(v - 20)));
             this.log(`[RADAR] ðŸ”‹ ZCL Battery voltage: ${v/10}V -> ${battery}%`);
-            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+            this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
           }
         });
         this.log('[RADAR] ✅ PowerConfiguration cluster configured (5min throttle + 5% minChange)');
@@ -1806,7 +1806,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           this._luxLastUpdateSource.zcl = now;
           lastLuxUpdate = now;
           lastLuxValue = roundedLux;
-          this.setCapabilityValue('measure_luminance', roundedLux).catch(() => { });
+          this.safeSetCapabilityValue('measure_luminance', roundedLux).catch(() => { });
       });
         this.log('[RADAR] ✅ Illuminance cluster configured (30s throttle + 15% minChange)');
       }
@@ -1822,7 +1822,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           const temp = v * 100;
           if (temp > -40 && temp < 100) { // Sanity check
             this.log(`[RADAR] ðŸŒ¡ï¸ ZCL Temperature: ${v} -> ${temp}Â°C`);
-            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            this.safeSetCapabilityValue('measure_temperature', temp).catch(() => { });
           }
         });
         this.log('[RADAR] ✅ Temperature cluster (0x0402) configured - ZG-204ZV fix');
@@ -1838,7 +1838,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           const humidity = v * 100;
           if (humidity >= 0 && humidity <= 100) { // Sanity check
             this.log(`[RADAR] ðŸ’§ ZCL Humidity: ${v} -> ${humidity}%`);
-            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+            this.safeSetCapabilityValue('measure_humidity', humidity).catch(() => { });
           }
         });
         this.log('[RADAR] ✅ Humidity cluster (0x0405) configured - ZG-204ZV fix');
@@ -1852,7 +1852,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           const rawOccupied = (v & 0x01) !== 0;
           const occupied = this._applyPresenceInversion(rawOccupied);
           this.log(`[RADAR] Occupancy: raw=${rawOccupied} â†’ ${occupied}`);
-          this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+          this.safeSetCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
       });
         this.log('[RADAR] ✅ Occupancy cluster configured (with inversion support)');
@@ -2028,7 +2028,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         return;
       }
       this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> raw=${rawMotion} -> ${motion}`);
-      this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+      this.safeSetCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
       });
 
@@ -2042,7 +2042,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         return;
       }
       this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> raw=${rawMotion} -> ${motion}`);
-      this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+      this.safeSetCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
     };
 

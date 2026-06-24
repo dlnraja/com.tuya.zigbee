@@ -766,7 +766,7 @@ class Button1GangDevice extends ButtonDevice {
             this.log(`[BUTTON1-BATTERY]  Battery report: ${battery}%`);
             // v5.5.519: Check capability exists before setting (fix HOBEIAN AC-powered button error)
             if (this.hasCapability('measure_battery')) {
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }
           }
         });
@@ -778,7 +778,7 @@ class Button1GangDevice extends ButtonDevice {
             this.log(`[BUTTON1-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }
           }
         });
@@ -809,7 +809,7 @@ class Button1GangDevice extends ButtonDevice {
             this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
             }
           }
         } catch (err) {

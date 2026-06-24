@@ -166,12 +166,12 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          this.safeSetCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            this.safeSetCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
@@ -214,7 +214,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (state.onOff !== undefined) {
             const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
             this._zclState.lastState[epNum] = state.onOff;
-            await this.setCapabilityValue(capName, state.onOff).catch(() => {});
+            await this.safeSetCapabilityValue(capName, state.onOff).catch(() => {});
             this.log(`[BSEED-3G] EP${epNum} initial state: ${state.onOff ? 'ON' : 'OFF'}`);
           }
         } catch (err) {

@@ -85,11 +85,11 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         const isPhysical = !this._zclState.pending[epNum];
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          this.safeSetCapabilityValue(capName, value).catch(() => {});
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            this.safeSetCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;

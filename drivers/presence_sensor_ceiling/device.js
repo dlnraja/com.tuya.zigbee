@@ -56,7 +56,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     switch (dpId) {
       case 1: // Presence
         const presence = this._inference.updatePresenceDP(value);
-        await this.setCapabilityValue('alarm_motion', presence).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_motion', presence).catch(() => { });
         
         // Auto relay control
         if (this.getSetting('relay_mode') === 'auto') {
@@ -67,17 +67,17 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       case 9: // Target Distance
         const distance = value / 100;
         this._inference.updateDistance(distance);
-        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => { });
+        return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => { });
 
       case 104: // Illuminance
         const lux = Math.max(0, value + (this.getSetting('illuminance_calibration') || 0));
         this._inference.updateLux(lux);
-        return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+        return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
 
       case 101: // Relay / Detection Delay
       case 16:  // Relay Alt
         if (dpType === 'bool' || typeof value === 'boolean') {
-          return this.setCapabilityValue('onoff', value).catch(() => {});
+          return this.safeSetCapabilityValue('onoff', value).catch(() => {});
         }
         break;
     }
@@ -87,7 +87,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       const result = this._discovery.analyzeDP(dpId, value);
       if (result && result.confidence >= 80) {
         this.log(`[CEILING] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value}`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => {});
+        return this.safeSetCapabilityValue(result.capability, result.value).catch(() => {});
       }
     }
   }
@@ -97,7 +97,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     if (onOffCluster) {
       onOffCluster.on('attr.onOff', async (value) => {
         this.log(`[CEILING] Relay state (ZCL): ${value}`);
-        await this.setCapabilityValue('onoff', value).catch(() => { });
+        await this.safeSetCapabilityValue('onoff', value).catch(() => { });
       });
       this._onOffCluster = onOffCluster;
     }
@@ -124,7 +124,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
           await this.sendTuyaCommand(101, value, 'bool').catch(() => this.sendTuyaCommand(16, value, 'bool'));
         }
       }
-      await this.setCapabilityValue('onoff', value).catch(() => { });
+      await this.safeSetCapabilityValue('onoff', value).catch(() => { });
       return true;
     } catch (err) {
       this.error('[CEILING] Relay set failed:', err.message);

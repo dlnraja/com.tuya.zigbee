@@ -57,9 +57,9 @@ class RGBBulbDevice extends UnifiedLightBase {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
       const v = parseInt(raw.substring(8, 12), 16);
-      this.setCapabilityValue('light_hue', safeDivide(h, 360)).catch(() => { });
-      this.setCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, safeDivide(v, 1000))).catch(() => { });
+      this.safeSetCapabilityValue('light_hue', safeDivide(h, 360)).catch(() => { });
+      this.safeSetCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(() => { });
+      this.safeSetCapabilityValue('dim', Math.max(0.01, safeDivide(v, 1000))).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -68,8 +68,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     if (!ep1) return;
     const color = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
     if (color?.on) {
-      color.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', safeDivide(v, 254)).catch(() => { }));
-      color.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', safeDivide(v, 254)).catch(() => { }));
+      color.on('attr.currentHue', (v) => this.safeSetCapabilityValue('light_hue', safeDivide(v, 254)).catch(() => { }));
+      color.on('attr.currentSaturation', (v) => this.safeSetCapabilityValue('light_saturation', safeDivide(v, 254)).catch(() => { }));
     }
   }
   _setupHueListeners() {
@@ -93,7 +93,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     if (!sceneData) return;
     await this._sendTuyaDP(2, 2, 'enum');
     await this._sendTuyaDP(6, sceneData, 'raw');
-    await this.setCapabilityValue('onoff', true).catch(() => { });
+    await this.safeSetCapabilityValue('onoff', true).catch(() => { });
   }
   async setColorTemperatureKelvin(kelvin) {
     kelvin = Math.max(2000, Math.min(6500, kelvin));
@@ -101,8 +101,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     const homeyValue = safeDivide(kelvin - 2000, 4500);
     await this._sendTuyaDP(2, 0, 'enum');
     await this._sendTuyaDP(4, tuyaValue, 'value');
-    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
-    await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
+    await this.safeSetCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
+    await this.safeSetCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
   async onSettings({ newSettings, changedKeys }) {
     for (const key of changedKeys) {

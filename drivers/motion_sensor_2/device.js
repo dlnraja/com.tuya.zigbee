@@ -60,7 +60,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
   // Handle motion status alarms
   async onZoneStatusChangeNotification({ zoneStatus }) {
     this.log('Motion status: ', zoneStatus.alarm1);
-    await this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
+    await this.safeSetCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
   }
 
 	
@@ -68,7 +68,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
   async onIlluminanceMeasuredAttributeReport(measuredValue) {
     const luxValue = Math.round(Math.pow(10, ((measuredValue - 1) / 10000))); // Convert measured value to lux
     this.log('measure_luminance | Illuminance (lux):', luxValue);
-    await this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
+    await this.safeSetCapabilityValue('measure_luminance', luxValue).catch(this.error);
   }
 
   // Process Tuya-specific data

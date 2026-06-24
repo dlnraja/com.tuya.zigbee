@@ -511,7 +511,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_temperature'))
                 this.addCapability('measure_temperature').catch(() => {});
-              await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
             }
@@ -539,7 +539,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_humidity'))
                 this.addCapability('measure_humidity').catch(() => {});
-              await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
@@ -559,7 +559,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_luminance'))
                 this.addCapability('measure_luminance').catch(() => {});
-              await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+              await this.safeSetCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
@@ -594,7 +594,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
             // v5.8.7: Permissive - auto-add capability from ZCL data
             if (!this.hasCapability('measure_battery'))
               this.addCapability('measure_battery').catch(() => {});
-            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -1093,7 +1093,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
         this.log(`[ZCL-DATA] motion_sensor.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.safeSetCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.18: Trigger flow card
@@ -1125,7 +1125,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status} → alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.safeSetCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.104: Also read temp/humidity on this event
@@ -1271,7 +1271,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
           }
-          await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Temperature invalid: ${data?.measuredValue}`);
         }
@@ -1303,7 +1303,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
           if (!this.hasCapability('measure_humidity')) {
             await this.addCapability('measure_humidity').catch(() => { });
           }
-          await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Humidity invalid: ${data?.measuredValue}`);
         }
@@ -1418,7 +1418,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
         const battery = Math.round(data.batteryPercentageRemaining / 2);
         this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
         this._lastBatteryReportTime = now;
@@ -1427,7 +1427,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
         const battery = ((v) => { const C = [[3000,100],[2950,90],[2900,75],[2850,55],[2800,40],[2750,25],[2700,15],[2600,5],[2500,0]]; const mv = Math.round(v*1000); if(mv>=C[0][0]) return 100; for(let i=0;i<C.length-1;i++) if(mv>=C[i+1][0]&&mv<=C[i][0]) return Math.round(C[i+1][1]+((mv-C[i+1][0])/(C[i][0]-C[i+1][0]))*(C[i][1]-C[i+1][1])); return 0; })(voltage);
         this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+          await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else {
         this.log('[MOTION-BATTERY] Battery data invalid:', data);
@@ -1529,7 +1529,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
 
       // Only update if confidence is high enough
       if (confidence >= 50) {
-        await this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
+        await this.safeSetCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
 
         // Trigger flow if motion detected
         if (inferredMotion && this.driver?.motionTrigger) {
@@ -1684,7 +1684,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
 
     if (shouldReport) {
       this.log(`[LUX-SMART] 💡 Smart lux update: ${luxValue} lux (${reason})`);
-      await this.setCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
+      await this.safeSetCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
 
       config.lastLuxValue = luxValue;
       config.lastLuxTime = now;

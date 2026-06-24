@@ -65,24 +65,24 @@ await this._safeInvoke(async () => {
 
     switch (dp) {
     case 1: // On/Off
-      await this.setCapabilityValue('onoff', !!value).catch(this.error);
+      await this.safeSetCapabilityValue('onoff', !!value).catch(this.error);
       break;
 
     case 2: // Target humidity
       if (this.hasCapability('dim.humidity')) {
-        await this.setCapabilityValue('dim.humidity', value).catch(this.error);
+        await this.safeSetCapabilityValue('dim.humidity', value).catch(this.error);
       }
       break;
 
     case 3: // Current humidity
       if (this.hasCapability('measure_humidity')) {
-        await this.setCapabilityValue('measure_humidity', value).catch(this.error);
+        await this.safeSetCapabilityValue('measure_humidity', value).catch(this.error);
       }
       break;
 
     case 5: // Mist level (0-3)
       const dim = value / 3;
-      await this.setCapabilityValue('dim', dim).catch(this.error);
+      await this.safeSetCapabilityValue('dim', dim).catch(this.error);
       break;
 
     case 12: // Water shortage

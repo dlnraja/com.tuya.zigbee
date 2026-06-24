@@ -54,7 +54,7 @@ class FanControllerDevice extends ZigBeeDevice {
     if (setSpeedCard) {
       setSpeedCard.registerRunListener(async (args) => {
         const speed = args.speed / 100;
-        await this.setCapabilityValue('dim', speed);
+        await this.safeSetCapabilityValue('dim', speed);
         await this._setFanSpeed(speed);
         return true;
       });
@@ -66,7 +66,7 @@ class FanControllerDevice extends ZigBeeDevice {
       speedUpCard.registerRunListener(async () => {
         const current = this.getCapabilityValue('dim') || 0;
         const newSpeed = Math.min(1, current + 0.25);
-        await this.setCapabilityValue('dim', newSpeed);
+        await this.safeSetCapabilityValue('dim', newSpeed);
         await this._setFanSpeed(newSpeed);
         return true;
       });
@@ -78,7 +78,7 @@ class FanControllerDevice extends ZigBeeDevice {
       speedDownCard.registerRunListener(async () => {
         const current = this.getCapabilityValue('dim') || 0;
         const newSpeed = Math.max(0, current - 0.25);
-        await this.setCapabilityValue('dim', newSpeed);
+        await this.safeSetCapabilityValue('dim', newSpeed);
         await this._setFanSpeed(newSpeed);
         return true;
       });
@@ -160,7 +160,7 @@ class FanControllerDevice extends ZigBeeDevice {
     switch (dp) {
       case 1: { // On/Off
         const wasOn = this.getCapabilityValue('onoff');
-        await this.setCapabilityValue('onoff', !!value).catch(this.error);
+        await this.safeSetCapabilityValue('onoff', !!value).catch(this.error);
         if (!!value && !wasOn) {
           const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on');
           if (trigger) trigger.trigger(this).catch(this.error);
@@ -173,7 +173,7 @@ class FanControllerDevice extends ZigBeeDevice {
 
       case 3: { // Speed (0-4)
         const dim = value / 4;
-        await this.setCapabilityValue('dim', dim).catch(this.error);
+        await this.safeSetCapabilityValue('dim', dim).catch(this.error);
         const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed');
         if (trigger) trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
         break;

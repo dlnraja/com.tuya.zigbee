@@ -383,7 +383,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
             const temp = this._applyTempOffset(rawTemp);
             this.log(`[ZCL]  Temperature: ${temp}Â°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -412,7 +412,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
             const humidity = this._applyHumOffset(rawHum);
             this.log(`[ZCL]  Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+            this.safeSetCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
           }
         }
       },
@@ -440,7 +440,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
             
             this.log(`[ZCL]  Battery: ${battery}%`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -1018,7 +1018,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
             const battery = Math.round(value);
             this.log(`[ZCL]  Battery: ${battery}%`);
-            this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
+            this.safeSetCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
       });
           this.log('[ZCL-SETUP]  Battery listener active');
         }
@@ -1059,7 +1059,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
               this.log(`[ZCL]  Temperature: ${calibratedTemp}Â°C`);
-              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
+              this.safeSetCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP]  Temperature listener active');
@@ -1105,7 +1105,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
               // v5.5.793: Apply calibration offset
               const calibratedHum = this._applyHumOffset(hum);
               this.log(`[ZCL]  Humidity: ${calibratedHum}%`);
-              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
+              this.safeSetCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP]  Humidity listener active');
@@ -1137,7 +1137,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         if (attrs.batteryPercentageRemaining !== undefined) {
           const battery = Math.round(attrs.batteryPercentageRemaining);
           this.log(`[ZCL-READ]  Battery: ${battery}%`);
-          await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
+          await this.safeSetCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
         }
       } catch (e) {
         this.log('[ZCL-READ] Battery read failed:', e.message);
@@ -1153,7 +1153,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           const temp = attrs.measuredValue * 100;
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ]  Temperature: ${temp}Â°C`);
-            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       } catch (e) {
@@ -1170,7 +1170,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
           const hum = attrs.measuredValue * 100;
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ]  Humidity: ${hum}%`);
-            await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+            await this.safeSetCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
           }
         }
       } catch (e) {
@@ -1408,19 +1408,19 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       if (dp === 5) {
         const temp = safeMultiply(this._applyTempOffset(value, 10));
         this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
-        await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+        await this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         return;
       }
       if (dp === 3) {
         const moisture = value > 100 ? Math.round(value) : value;
         this.log(`[SOIL] DP3 soil_moisture raw=${value}  ${moisture}%`);
-        await this.setCapabilityValue('measure_humidity', moisture).catch(() => {});
+        await this.safeSetCapabilityValue('measure_humidity', moisture).catch(() => {});
         return;
       }
       if (dp === 15) {
         const bat = Math.min(100, value);
         this.log(`[SOIL] DP15 battery raw=${value}  ${bat}%`);
-        await this.setCapabilityValue('measure_battery', bat).catch(() => {});
+        await this.safeSetCapabilityValue('measure_battery', bat).catch(() => {});
         return;
       }
     }

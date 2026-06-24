@@ -135,7 +135,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           for (let i = 2; i <= 3; i++) {
             if (args.device.hasCapability(`onoff.gang${i}`)) {
-              await args.device.triggerCapabilityListener(`onoff.gang${i}`, true).catch(() => {});
+              await args.device['setCapabilityValue'](`onoff.gang${i}`, true).catch(() => {});
             }
           }
           return true;
@@ -155,7 +155,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           for (let i = 2; i <= 3; i++) {
             if (args.device.hasCapability(`onoff.gang${i}`)) {
-              await args.device.triggerCapabilityListener(`onoff.gang${i}`, false).catch(() => {});
+              await args.device['setCapabilityValue'](`onoff.gang${i}`, false).catch(() => {});
             }
           }
           return true;

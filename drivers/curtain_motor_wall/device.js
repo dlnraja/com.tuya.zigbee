@@ -203,14 +203,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
     // Luminance (lux) - DP14 or DP104
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+      this.safeSetCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
       this.log(`[CURTAIN] 💡 Lux: ${lux}`);
     }
 
     // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
+      this.safeSetCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
       this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
     }
 
@@ -227,10 +227,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
     this.log(`[CURTAIN] 🔘 Button pressed: ${value}`);
     try {
       // Set button capability to trigger flows
-      await this.setCapabilityValue('button', true).catch(() => { });
+      await this.safeSetCapabilityValue('button', true).catch(() => { });
       // Reset after short delay
       setTimeout(() => {
-        this.setCapabilityValue('button', false).catch(() => { });
+        this.safeSetCapabilityValue('button', false).catch(() => { });
       }, 500);
 
       // Trigger flow card if available

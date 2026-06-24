@@ -39,9 +39,9 @@ class USBHubDualDriver extends ZigBeeDriver {
   
   
   }catch(e){this.log('[Flow]',i,e.message);}};
-    r('usb_dongle_dual_repeater_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
-    r('usb_dongle_dual_repeater_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
-    r('usb_dongle_dual_repeater_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
+    r('usb_dongle_dual_repeater_turn_on',async({device})=>{await device['setCapabilityValue']('onoff',true);return true;});
+    r('usb_dongle_dual_repeater_turn_off',async({device})=>{await device['setCapabilityValue']('onoff',false);return true;});
+    r('usb_dongle_dual_repeater_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device['setCapabilityValue']('onoff',!v);return true;});
   }
 }
 

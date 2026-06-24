@@ -186,7 +186,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
           measuredValue: { minInterval: 30, maxInterval: 300, minChange: 50 }
         }).catch(() => {});
         illumCluster.on('attr.measuredValue', async (v) => {
-          if (v !== null && v !== undefined && v >= 0) await this.setCapabilityValue('measure_luminance', parseFloat(v)).catch(() => {});
+          if (v !== null && v !== undefined && v >= 0) await this.safeSetCapabilityValue('measure_luminance', parseFloat(v)).catch(() => {});
         });
       }
       this._setupPeriodicLuminanceQuery();
@@ -238,7 +238,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
       if (occCluster) {
         occCluster.on('attr.occupancy', (v) => {
           this._updateLastEventTime();
-          if (this.hasCapability('alarm_motion')) this.setCapabilityValue('alarm_motion', v > 0).catch(() => {});
+          if (this.hasCapability('alarm_motion')) this.safeSetCapabilityValue('alarm_motion', v > 0).catch(() => {});
         });
       }
     } catch (e) {}
@@ -252,7 +252,7 @@ class MotionRadarHybridDevice extends UnifiedSensorBase {
         iasCluster.onZoneStatusChangeNotification = (p) => {
           this._updateLastEventTime();
           const parsed = this._parseIASZoneStatus(p?.zoneStatus);
-          if (this.hasCapability('alarm_motion')) this.setCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});
+          if (this.hasCapability('alarm_motion')) this.safeSetCapabilityValue('alarm_motion', parsed.alarm1 || parsed.alarm2).catch(() => {});
         };
       }
     } catch (e) {}

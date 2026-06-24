@@ -68,7 +68,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         await this.addCapability(cap).catch(() => { });
       }
     }
-    await this.setCapabilityValue('alarm_generic', false).catch(() => { });
+    await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
   }
 
   /**
@@ -172,7 +172,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     if (dp === 4 || dp === 15 || (dp === 101 && typeof value === 'number')) {
       const battery = Math.min(100, Math.max(0, parseInt(value, 10)));
       if (!isNaN(battery)) {
-        await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        await this.safeSetCapabilityValue('measure_battery', battery).catch(() => { });
         this._updateActivity();
       }
       return;
@@ -256,7 +256,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     this._verifyCieAddress().catch(() => {});
 
     // Set capability and trigger flow
-    await this.setCapabilityValue('alarm_generic', true).catch(() => { });
+    await this.safeSetCapabilityValue('alarm_generic', true).catch(() => { });
     if (this.driver?.triggerSOS) {
       await this.driver.triggerSOS(this);
     }
@@ -264,7 +264,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // Auto-reset
     if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
     this._resetTimeout = this.homey.setTimeout(async () => {
-      await this.setCapabilityValue('alarm_generic', false).catch(() => { });
+      await this.safeSetCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
     }, 5000);
   }
@@ -297,7 +297,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
 
     if (percent >= 0 && percent <= 100) {
-      await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+      await this.safeSetCapabilityValue('measure_battery', percent).catch(() => { });
       this._updateActivity();
     }
   }
