@@ -1433,9 +1433,10 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
+        // v9.0.85: Fix ternary fallback — both branches were identical (crash on null)
         const battery = UnifiedBatteryHandler
           ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
-          : UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100");
+          : Math.round(Math.max(0, Math.min(100, ((voltage - 2.0) / 1.0) * 100)));
         this.log(`[MOTION-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         if (this.hasCapability('measure_battery')) {
           await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
