@@ -18,7 +18,7 @@ try {
 } catch (e) {
   console.error('Warning: could not read app.json:', e.message);
 }
-const APP_ID = appJson.id || 'com.dlnraja.tuya.zigbee';
+const APP_ID = process.env.TARGET_APP_ID || appJson.id || 'com.dlnraja.tuya.zigbee';
 
 const BASE = 'https://tools.developer.homey.app';
 const VERSIONS_URL = `${BASE}/apps/app/${APP_ID}/versions`;
