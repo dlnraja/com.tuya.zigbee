@@ -1,3 +1,5 @@
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');

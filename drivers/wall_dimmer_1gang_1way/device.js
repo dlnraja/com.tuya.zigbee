@@ -1,3 +1,5 @@
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
