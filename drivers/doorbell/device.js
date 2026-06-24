@@ -38,6 +38,17 @@ class DoorbellDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
+
+    // v9.0.88: Register doorbell button trigger flow card
+    this.registerCapabilityListener('alarm_generic', async (value) => {
+      if (value) {
+        try {
+          const card = this.homey.flow.getDeviceTriggerCard('doorbell_button_pressed');
+          if (card) await card.trigger(this, {}).catch(() => {});
+        } catch {}
+      }
+    });
+
     this.log('[DOORBELL]  Ready');
   }
 

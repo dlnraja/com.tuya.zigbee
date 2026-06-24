@@ -1,8 +1,9 @@
 'use strict';
 const { safeParse, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-class DimmerWallSwitchDevice extends ZigBeeDevice {
+class DimmerWallSwitchDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
