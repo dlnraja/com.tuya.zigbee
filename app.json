@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.93",
+  "version": "9.0.94",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -108446,7 +108446,7 @@
         "productId": [
           "TS011F",
           "TS0121",
-          "TSO121",
+          "TS0121",
           "TS0003",
           "TS0011",
           "TS000F",
@@ -117273,7 +117273,6 @@
           "TS0021",
           "DoorWindow-Sensor-ZB3.0",
           "MCT-340 E",
-          "q9mpfhw",
           "Excellux"
         ],
         "learnmode": {
@@ -152683,7 +152682,7 @@
           "S40ZBTPF",
           "S40ZBTPG",
           "S60ZBTPF-R2",
-          "TSO121"
+          "TS0121"
         ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -158742,7 +158741,7 @@
           "TS0043",
           "TS011F",
           "TS0121",
-          "TSO121",
+          "TS0121",
           "TS0601",
           "TS0215A"
         ],
@@ -160796,14 +160795,14 @@
       "metadata": {
         "driver": {
           "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS011F, TS0121, TSO121"
+          "reason": "Fallback for unmatched devices with PIDs: TS011F, TS0121, TS0121"
         }
       },
       "zigbee": {
         "productId": [
           "TS011F",
           "TS0121",
-          "TSO121"
+          "TS0121"
         ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -170464,7 +170463,6 @@
       "zigbee": {
         "productId": [
           "TS0601",
-          "q9mpfhw",
           "Excellux"
         ],
         "learnmode": {
@@ -170658,7 +170656,6 @@
           "TS0021",
           "DoorWindow-Sensor-ZB3.0",
           "MCT-340 E",
-          "q9mpfhw",
           "Excellux"
         ],
         "learnmode": {
@@ -175871,13 +175868,13 @@
       "metadata": {
         "driver": {
           "catchall": true,
-          "reason": "Fallback for unmatched devices with PIDs: TS0121, TSO121, TS011F"
+          "reason": "Fallback for unmatched devices with PIDs: TS0121, TS0121, TS011F"
         }
       },
       "zigbee": {
         "productId": [
           "TS0121",
-          "TSO121",
+          "TS0121",
           "TS011F"
         ],
         "endpoints": {
@@ -178130,7 +178127,7 @@
       "zigbee": {
         "productId": [
           "TS0121",
-          "TSO121",
+          "TS0121",
           "TS011F"
         ],
         "endpoints": {
@@ -193393,8 +193390,7 @@
           "TS0601",
           "TS110E",
           "TS110F",
-          "TS130F",
-          "q9mpfhw"
+          "TS130F"
         ],
         "endpoints": {
           "1": {
@@ -199609,9 +199605,7 @@
           "_tz3000_85czd6fy",
           "_tz3000_6oabgtzv"
         ],
-        "productId": [
-          "q9mpfhw"
-        ],
+        "productId": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -199692,7 +199686,6 @@
       "subDevices": [],
       "zigbee": {
         "productId": [
-          "q9mpfhw",
           "ZG-222Z",
           "ZG-223Z",
           "LS21001",
