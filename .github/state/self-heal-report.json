@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-24T10:15:49.697Z",
+  "timestamp": "2026-06-24T18:58:56.506Z",
   "totalFiles": 0,
-  "totalFixes": 216,
+  "totalFixes": 217,
   "rules": {
     "flow-card-try-catch": {
       "count": 31,
@@ -182,7 +182,7 @@
       ]
     },
     "case-insensitive-matching": {
-      "count": 40,
+      "count": 41,
       "files": [
         {
           "file": "drivers/climate_sensor_device/device.js",
@@ -331,6 +331,10 @@
         {
           "file": "lib/utils/DriverMappingLoader.js",
           "detail": "Line 1036: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/utils/cluster-configurator.js",
+          "detail": "Line 406: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/utils/tuyaUtils.js",
