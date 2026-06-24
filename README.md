@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.83 |
+| **App Version** | v9.0.84 |
 | **Device Fingerprints** | 7,300+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 429 (379 Zigbee + 50 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-06-23 |
+| **Last Updated** | 2026-06-24 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.84** | v9.0.83: |
 | **v9.0.83** | v9.0.82: |
 | **v9.0.82** | v9.0.81: |
 | **v9.0.81** | v9.0.80: |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.73** | v9.0.71: |
 | **v9.0.72** | v9.0.71: |
 | **v9.0.71** | v9.0.70: |
-| **v9.0.70** | v9.0.69: |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-06-23*
+*Last updated: 2026-06-24*
