@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.86 |
+| **App Version** | v9.0.87 |
 | **Device Fingerprints** | 7,300+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 429 (379 Zigbee + 50 WiFi) |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.87** | v9.0.86: |
 | **v9.0.86** | v9.0.85: |
 | **v9.0.85** | v9.0.84: |
 | **v9.0.84** | v9.0.83: |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.76** | v9.0.75: |
 | **v9.0.75** | v9.0.74: |
 | **v9.0.74** | v9.0.73: |
-| **v9.0.73** | v9.0.71: |
 
 <!-- CHANGELOG_END -->
 
