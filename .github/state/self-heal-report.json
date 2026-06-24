@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-22T14:47:28.984Z",
+  "timestamp": "2026-06-24T07:24:34.051Z",
   "totalFiles": 0,
   "totalFixes": 216,
   "rules": {
@@ -84,19 +84,19 @@
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2653: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2654: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2667: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2668: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2701: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2702: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2831: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2832: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/ButtonDevice.js",
