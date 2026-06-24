@@ -16161,6 +16161,38 @@
         ]
       },
       {
+        "id": "dimmer_2_gang_tuya_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2_gang_tuya"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_2_gang_tuya_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_2_gang_tuya"
+          }
+        ]
+      },
+      {
         "id": "dimmer_3gang_physical_gang1_on",
         "args": [
           {
@@ -18543,6 +18575,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=double_power_point_2"
+          }
+        ]
+      },
+      {
+        "id": "double_power_point_2_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=double_power_point_2"
+          }
+        ]
+      },
+      {
+        "id": "double_power_point_2_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -37935,6 +37999,38 @@
         ]
       },
       {
+        "id": "smartplug_2_socket_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smartplug_2_socket"
+          }
+        ]
+      },
+      {
+        "id": "smartplug_2_socket_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smartplug_2_socket"
+          }
+        ]
+      },
+      {
         "id": "smoke_detector_advanced_alarm_smoke_true",
         "highlight": true,
         "title": {
@@ -38374,6 +38470,38 @@
         ]
       },
       {
+        "id": "socket_power_strip_four_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=socket_power_strip_four"
+          }
+        ]
+      },
+      {
+        "id": "socket_power_strip_four_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=socket_power_strip_four"
+          }
+        ]
+      },
+      {
         "id": "socket_power_strip_four_three_turned_on",
         "title": {
           "en": "Turned on",
@@ -38402,6 +38530,38 @@
         ]
       },
       {
+        "id": "socket_power_strip_four_three_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=socket_power_strip_four_three"
+          }
+        ]
+      },
+      {
+        "id": "socket_power_strip_four_three_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=socket_power_strip_four_three"
+          }
+        ]
+      },
+      {
         "id": "socket_power_strip_four_two_turned_on",
         "title": {
           "en": "Turned on",
@@ -38420,6 +38580,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=socket_power_strip_four_two"
+          }
+        ]
+      },
+      {
+        "id": "socket_power_strip_four_two_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=socket_power_strip_four_two"
+          }
+        ]
+      },
+      {
+        "id": "socket_power_strip_four_two_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -39414,6 +39606,38 @@
         ]
       },
       {
+        "id": "switch_2_gang_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2_gang_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2_gang"
+          }
+        ]
+      },
+      {
         "id": "switch_2_gang_metering_turned_on",
         "title": {
           "en": "Turned on",
@@ -39432,6 +39656,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2_gang_metering"
+          }
+        ]
+      },
+      {
+        "id": "switch_2_gang_metering_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2_gang_metering"
+          }
+        ]
+      },
+      {
+        "id": "switch_2_gang_metering_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -39588,6 +39844,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3_gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3_gang_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3_gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3_gang_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -48141,6 +48429,38 @@
         ]
       },
       {
+        "id": "wall_switch_2_gang_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2_gang_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2_gang"
+          }
+        ]
+      },
+      {
         "id": "wall_switch_2gang_1way_turned_on",
         "title": {
           "en": "Turned on",
@@ -48295,6 +48615,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3_gang_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3_gang_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -48523,6 +48875,38 @@
         ]
       },
       {
+        "id": "wall_switch_4_gang_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4_gang_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4_gang"
+          }
+        ]
+      },
+      {
         "id": "wall_switch_4_gang_tuya_turned_on",
         "title": {
           "en": "Turned on",
@@ -48541,6 +48925,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4_gang_tuya"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4_gang_tuya_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4_gang_tuya"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4_gang_tuya_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -48851,6 +49267,38 @@
         ]
       },
       {
+        "id": "wall_switch_5_gang_tuya_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_5_gang_tuya"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_5_gang_tuya_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_5_gang_tuya"
+          }
+        ]
+      },
+      {
         "id": "wall_switch_6_gang_tuya_turned_on",
         "title": {
           "en": "Turned on",
@@ -48869,6 +49317,38 @@
         "title": {
           "en": "Turned off",
           "fr": "Eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_6_gang_tuya"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_6_gang_tuya_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_6_gang_tuya"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_6_gang_tuya_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         },
         "args": [
           {
@@ -122113,9 +122593,6 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ],
         "productId": [
           "TS0601_air_purifier"
         ],
@@ -136789,7 +137266,6 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_placeholder_generic",
           "TUYATEC-g3gl6cgy",
           "TUYATEC-Bfq2i2Sy",
           "TUYATEC-abkehqus",
@@ -138660,10 +139136,7 @@
           "instruction": {
             "en": "Push the button for aprox 10 seconds until the LED blinks rapidly. If nothing happens; put two fingers against the detectors and repeat."
           }
-        },
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ]
+        }
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -147568,7 +148041,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_placeholder_generic",
           "_tz3000_utagpnzs",
           "_tz3000_5bsf8vaj",
           "_TZ3210_INVESBER"
@@ -160035,7 +160507,6 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_placeholder_generic",
           "_tz3000_u3nv1jwk"
         ]
       },
@@ -183190,10 +183661,7 @@
           "instruction": {
             "en": "Two tiles will be created, one for each channel of the device. Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode (the LED should blink green)."
           }
-        },
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ]
+        }
       },
       "version": "1.0.0",
       "capabilitiesOptions": {
@@ -191738,9 +192206,6 @@
         "large": "//drivers/temphumidsensor5/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZE200_placeholder_generic"
-        ],
         "productId": [
           "TY0201",
           "SNTZ003",
@@ -199090,11 +199555,7 @@
           "instruction": {
             "en": "Five tiles will be created, one for each channel of the device. Switch the unit on and off five times and hold for 5 seconds to enter pairing mode (the LED should flash red and blue)."
           }
-        },
-        "manufacturerName": [
-          "_TZE200_placeholder_generic",
-          "_tze200_placeholder_generic"
-        ]
+        }
       },
       "version": "1.0.0",
       "capabilitiesOptions": {

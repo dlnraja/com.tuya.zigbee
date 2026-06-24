@@ -11,6 +11,9 @@
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **429 drivers** and **7,300+ device fingerprints**.
 
+> **Note on App Versions:**
+> This repository (`master` branch) represents the **Stable / Legacy Architecture** of the app. It is designed to maintain backwards compatibility with existing users' setups (especially older Homey Pro 2019 devices and legacy multi-gang switches). It includes targeted fixes (like battery deep-sleep recovery and physical button triggers) while preventing regressions. For new installations or the fully refactored modern architecture, refer to the `v5` branch.
+
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL

@@ -34,6 +34,26 @@
           "example": 0.75
         }
       ]
+    },
+    {
+      "id": "dimmer_2_gang_tuya_physical_on",
+      "title": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      },
+      "args": []
+    },
+    {
+      "id": "dimmer_2_gang_tuya_physical_off",
+      "title": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      },
+      "args": []
     }
   ],
   "conditions": [

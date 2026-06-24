@@ -15,6 +15,26 @@
         "fr": "Eteint"
       },
       "args": []
+    },
+    {
+      "id": "wall_switch_5_gang_tuya_physical_on",
+      "title": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_switch_5_gang_tuya_physical_off",
+      "title": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      },
+      "args": []
     }
   ],
   "conditions": [
