@@ -75,7 +75,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
       // Also trigger dim state if needed
       if (value && this.getCapabilityValue('dim') === 0) {
-        this.triggerCapabilityListener('dim', 0.5).catch(() => {});
+        this['safeSetCapabilityValue']('dim', 0.5).catch(() => {});
       }
     });
 
@@ -89,9 +89,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
       // Sync onoff state based on dim level
       if (dimVal === 0) {
-        this.triggerCapabilityListener('onoff', false).catch(() => {});
+        this['safeSetCapabilityValue']('onoff', false).catch(() => {});
       } else {
-        this.triggerCapabilityListener('onoff', true).catch(() => {});
+        this['safeSetCapabilityValue']('onoff', true).catch(() => {});
       }
     });
   }
@@ -218,7 +218,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       if (this._lastOnoffState !== state) {
         this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         this._lastOnoffState = state;
-        this.triggerCapabilityListener('onoff', state).catch(this.error);
+        this['safeSetCapabilityValue']('onoff', state).catch(this.error);
         
         if (isPhysicalPress) {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
@@ -251,7 +251,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
         
         this._lastBrightnessValue = brightnessRaw;
-        this.triggerCapabilityListener('dim', brightness).catch(this.error);
+        this['safeSetCapabilityValue']('dim', brightness).catch(this.error);
         
         if (isPhysicalPress) {
           if (brightnessIncreased) {

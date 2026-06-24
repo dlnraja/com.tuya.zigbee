@@ -74,7 +74,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          await args.device['setCapabilityValue']('onoff', true).catch(() => {});
           return true;
         });
       }
@@ -85,7 +85,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          await args.device['setCapabilityValue']('onoff', false).catch(() => {});
           return true;
         });
       }
@@ -97,7 +97,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          await args.device['setCapabilityValue']('onoff', !current).catch(() => {});
           return true;
         });
       }

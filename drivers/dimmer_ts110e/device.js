@@ -62,7 +62,7 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
 
             // Turn on if dragging from 0
             if (value > 0 && !this.getCapabilityValue("onoff")) {
-                await this.triggerCapabilityListener('onoff', true).catch(() => {});
+                await this['safeSetCapabilityValue']('onoff', true).catch(() => {});
             }
 
             // Send command via custom cluster
@@ -83,7 +83,7 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
                 const maxB = this.getSetting("maxBrightness") || 1000;
                 const homeyDimValue = Math.max(0, Math.min(1, ((parsedValue - minB) * (1 - 0)) / (maxB - minB) + 0));
                 
-                this.triggerCapabilityListener('dim', homeyDimValue).catch(this.error);
+                this['safeSetCapabilityValue']('dim', homeyDimValue).catch(this.error);
       });
             
             // Attempt to sync the slider state on start

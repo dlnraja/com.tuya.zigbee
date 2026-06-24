@@ -29,7 +29,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
+          await args.device['setCapabilityValue']('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });
       }
@@ -40,7 +40,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
+          await args.device['setCapabilityValue']('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });
       }

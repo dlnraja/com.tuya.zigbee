@@ -21,7 +21,7 @@ class AirPurifierDriver extends ZigBeeDriver {
       {
         id: 'air_purifier_set_fan_speed',
         fn: async (args) => {
-          await args.device.triggerCapabilityListener('dim', args.speed / 100);
+          await args.device['setCapabilityValue']('dim', args.speed / 100);
           return true;
         }
       },
@@ -44,14 +44,14 @@ class AirPurifierDriver extends ZigBeeDriver {
       {
         id: 'air_purifier_toggle',
         fn: async (args) => {
-          await args.device.triggerCapabilityListener('onoff', !args.device.getCapabilityValue('onoff'));
+          await args.device['setCapabilityValue']('onoff', !args.device.getCapabilityValue('onoff'));
           return true;
         }
       },
       {
         id: 'air_purifier_set_brightness',
         fn: async (args) => {
-          await args.device.triggerCapabilityListener('dim', args.brightness / 100);
+          await args.device['setCapabilityValue']('dim', args.brightness / 100);
           return true;
         }
       }

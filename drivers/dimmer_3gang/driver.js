@@ -48,13 +48,13 @@ async onInit() {
   
   
   } catch (e) { this.log('[Flow]', id, e.message); } };
-    reg('dimmer_3gang_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
+    reg('dimmer_3gang_turn_on', async ({ device }) => { await device['setCapabilityValue']('onoff', true); return true; });
     // v5.13.3: Condition handler
 
 
 
-    reg('dimmer_3gang_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
-    reg('dimmer_3gang_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });
+    reg('dimmer_3gang_turn_off', async ({ device }) => { await device['setCapabilityValue']('onoff', false); return true; });
+    reg('dimmer_3gang_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device['setCapabilityValue']('onoff', !v); return true; });
 
   }
 }

@@ -34,14 +34,14 @@ class GarageDoorOpenerDriver extends BaseZigBeeDriver {
     // Open garage door action
     reg('garage_door_opener_open', async ({ device }) => {
       this.log('[GarageDriver][Flow] Open garage door');
-      await device.triggerCapabilityListener('garagedoor_closed', false);
+      await device['setCapabilityValue']('garagedoor_closed', false);
       return true;
     });
 
     // Close garage door action
     reg('garage_door_opener_close', async ({ device }) => {
       this.log('[GarageDriver][Flow] Close garage door');
-      await device.triggerCapabilityListener('garagedoor_closed', true);
+      await device['setCapabilityValue']('garagedoor_closed', true);
       return true;
     });
   }

@@ -88,7 +88,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device.triggerCapabilityListener('windowcoverings_set', args.position || args.value || 0).catch(() => {});
+          await args.device['setCapabilityValue']('windowcoverings_set', args.position || args.value || 0).catch(() => {});
           return true;
         });
       }
@@ -99,7 +99,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
+          await args.device['setCapabilityValue']('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
       }

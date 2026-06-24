@@ -52,7 +52,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
         if (card) {
           card.registerRunListener(async (args) => {
             if (args.device) {
-              await args.device.triggerCapabilityListener(`onoff.gang${g}`, args.state);
+              await args.device['setCapabilityValue'](`onoff.gang${g}`, args.state);
               if (args.device.sendDP) {
                 await args.device.sendDP(23 + g, 1, args.state ? 1 : 0);
               }

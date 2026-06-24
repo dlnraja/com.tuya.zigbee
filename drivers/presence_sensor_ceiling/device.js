@@ -95,7 +95,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
       case 101: // Relay / Detection Delay
       case 16:  // Relay Alt
         if (dpType === 'bool' || typeof value === 'boolean') {
-          return this.triggerCapabilityListener('onoff', value).catch(() => {});
+          return this['safeSetCapabilityValue']('onoff', value).catch(() => {});
         }
         break;
 
@@ -142,7 +142,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     if (onOffCluster) {
       onOffCluster.on('attr.onOff', async (value) => {
         this.log(`[CEILING] Relay state (ZCL): ${value}`);
-        await this.triggerCapabilityListener('onoff', value).catch(() => { });
+        await this['safeSetCapabilityValue']('onoff', value).catch(() => { });
       });
       this._onOffCluster = onOffCluster;
     }
@@ -171,7 +171,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
           await this.sendTuyaCommand(101, value, 'bool').catch(() => this.sendTuyaCommand(16, value, 'bool'));
         }
       }
-      await this.triggerCapabilityListener('onoff', value).catch(() => { });
+      await this['safeSetCapabilityValue']('onoff', value).catch(() => { });
       return true;
     } catch (err) {
       this.error('[CEILING] Relay set failed:', err.message);

@@ -248,7 +248,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     const measuredValue = getDataValue(data);
     switch (dp) {
     case dataPoints.ALARM:
-      await this.triggerCapabilityListener('onoff', !!measuredValue).catch(() => {});
+      await this['safeSetCapabilityValue']('onoff', !!measuredValue).catch(() => {});
       await this.safeSetCapabilityValue('alarm_siren', !!measuredValue).catch(() => {});
       break;
     case dataPoints.TEMPERATURE: this.reportTemperatureCapacity(measuredValue); break;

@@ -31,7 +31,7 @@ class AirPurifierDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', args.speed * 100);
+          await args.device['setCapabilityValue']('dim', args.speed * 100);
           return true;
         });
       }
@@ -60,7 +60,7 @@ class AirPurifierDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', !args.device.getCapabilityValue('onoff'));
+          await args.device['setCapabilityValue']('onoff', !args.device.getCapabilityValue('onoff'));
           return true;
         });
       }
@@ -69,7 +69,7 @@ class AirPurifierDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', args.brightness * 100);
+          await args.device['setCapabilityValue']('dim', args.brightness * 100);
           return true;
         });
       }

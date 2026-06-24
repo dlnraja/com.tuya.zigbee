@@ -28,7 +28,7 @@ class AirPurifierLCDDevice extends TuyaSpecificClusterDevice {
       const s = Boolean(v);
       if (this._lastOnoff !== s) {
         this._lastOnoff = s;
-        this.triggerCapabilityListener('onoff', s).catch(() => {});
+        this['safeSetCapabilityValue']('onoff', s).catch(() => {});
       }
     } else if (data.dp === DP.pm25) {
       const pm = safeMultiply(v, 0);

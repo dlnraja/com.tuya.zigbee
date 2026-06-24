@@ -115,7 +115,7 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
     if (typeof this.markAppCommand === 'function') {
       this.markAppCommand(1, value);
     }
-    await this.triggerCapabilityListener('onoff', value);
+    await this['safeSetCapabilityValue']('onoff', value);
   }
 
   onDeleted() {

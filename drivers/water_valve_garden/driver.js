@@ -53,7 +53,7 @@ class WaterValveGardenDriver extends BaseZigBeeDriver {
         if (!args.device) {return false;}
         const cur = args.device.getCapabilityValue('onoff');
         if (typeof args.device.triggerCapabilityListener === 'function') {
-            await args.device.triggerCapabilityListener('onoff', !cur).catch(() => {});
+            await args.device['setCapabilityValue']('onoff', !cur).catch(() => {});
         }
         return true;
     });

@@ -102,7 +102,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received on/off for first gang:', parsedValue);
         if (!this.isSubDevice()) {
           if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
-          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
+          await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
 
@@ -110,7 +110,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received on/off for second gang:', parsedValue);
         if (subDeviceId === 'secondGang') {
           if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
-          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
+          await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
 
@@ -118,7 +118,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received on/off for third gang:', parsedValue);
         if (subDeviceId === 'thirdGang') {
           if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
-          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
+          await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
 
@@ -126,7 +126,7 @@ class wall_switch_4_gang_tuya extends TuyaSpecificClusterDevice {
         this.log('Received on/off for fourth gang:', parsedValue);
         if (subDeviceId === 'fourthGang') {
           if (typeof this._triggerPhysicalFlow === 'function') this._triggerPhysicalFlow(parsedValue);
-          await this.triggerCapabilityListener('onoff', parsedValue).catch(this.error);
+          await this['safeSetCapabilityValue']('onoff', parsedValue).catch(this.error);
         }
         break;
 

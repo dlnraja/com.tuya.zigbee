@@ -57,7 +57,7 @@ async processResponse(data) {
 
           this.log('Wall switch on/off received', parsedValue);
           try {
-            await this.triggerCapabilityListener('onoff', parsedValue);
+            await this['safeSetCapabilityValue']('onoff', parsedValue);
           } catch (e) {
               this.log("Failed to set on/off", e);
           }

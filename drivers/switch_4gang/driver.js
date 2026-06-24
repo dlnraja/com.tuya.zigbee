@@ -53,7 +53,7 @@ async onInit() {
               card.registerRunListener(async (args) => {
                 if (!args.device) {return false;}
                 const val = action === 'turn_on' ? true : action === 'turn_off' ? false : !args.device.getCapabilityValue(cap);
-                await args.device.triggerCapabilityListener(cap, val);
+                await args.device['setCapabilityValue'](cap, val);
                 return true;
               });
             }
@@ -72,7 +72,7 @@ async onInit() {
             for (let i = 1; i <= 4; i++) {
               const cap = i === 1 ? 'onoff' : `onoff.gang${i}`;
               if (args.device.hasCapability(cap)) {
-                await args.device.triggerCapabilityListener(cap, action === 'turn_on_all').catch(() => {});
+                await args.device['setCapabilityValue'](cap, action === 'turn_on_all').catch(() => {});
               }
             }
             return true;

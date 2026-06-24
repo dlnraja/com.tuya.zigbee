@@ -123,7 +123,7 @@ async onInit() {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) {return false;}
-          await args.device.triggerCapabilityListener('meter_power', 0).catch(() => {});
+          await args.device['setCapabilityValue']('meter_power', 0).catch(() => {});
           return true;
         });
         this.log('[FLOW]  Registered: plug_energy_monitor_reset_meter');

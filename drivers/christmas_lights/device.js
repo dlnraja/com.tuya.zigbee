@@ -32,7 +32,7 @@ class christmas_lights extends TuyaSpecificClusterDevice {
                     return this.setColor({});
                 case 'white':
                     // Update light_saturation such that color in App is white
-                    await this.triggerCapabilityListener('light_saturation', 0).catch(this.error);
+                    await this['safeSetCapabilityValue']('light_saturation', 0).catch(this.error);
                     return this.setWhiteDim({});
                 case 'effect':
                     return this.writeString(6,'0e32ff0000fe7023ffc836d4ff421efe4312d3fc004ef9e80ff9');
