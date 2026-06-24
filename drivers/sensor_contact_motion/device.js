@@ -1424,7 +1424,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
-        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+        const battery = ((v) => { const C = [[3000,100],[2950,90],[2900,75],[2850,55],[2800,40],[2750,25],[2700,15],[2600,5],[2500,0]]; const mv = Math.round(v*1000); if(mv>=C[0][0]) return 100; for(let i=0;i<C.length-1;i++) if(mv>=C[i+1][0]&&mv<=C[i][0]) return Math.round(C[i+1][1]+((mv-C[i+1][0])/(C[i][0]-C[i+1][0]))*(C[i][1]-C[i+1][1])); return 0; })(voltage);
         this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
         if (this.hasCapability('measure_battery')) {
           await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });

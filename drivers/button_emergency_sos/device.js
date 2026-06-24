@@ -293,7 +293,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       percent = value > 100 ? Math.round(value / 2) : value;
     } else {
       const voltage = value / 10;
-      percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+      percent = ((v) => { const C = [[3000,100],[2950,90],[2900,75],[2850,55],[2800,40],[2750,25],[2700,15],[2600,5],[2500,0]]; const mv = Math.round(v*1000); if(mv>=C[0][0]) return 100; for(let i=0;i<C.length-1;i++) if(mv>=C[i+1][0]&&mv<=C[i][0]) return Math.round(C[i+1][1]+((mv-C[i+1][0])/(C[i][0]-C[i+1][0]))*(C[i][1]-C[i+1][1])); return 0; })(voltage);
     }
 
     if (percent >= 0 && percent <= 100) {
