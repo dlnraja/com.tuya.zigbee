@@ -6,7 +6,11 @@
         "en": "ON button pressed",
         "fr": "Bouton ON appuyé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "ON button pressed",
+        "fr": "Bouton ON appuyé"
+      }
     },
     {
       "id": "remote_dimmer_button_off",
@@ -14,7 +18,11 @@
         "en": "OFF button pressed",
         "fr": "Bouton OFF appuyé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "OFF button pressed",
+        "fr": "Bouton OFF appuyé"
+      }
     },
     {
       "id": "remote_dimmer_button_toggle",
@@ -22,7 +30,11 @@
         "en": "Toggle button pressed",
         "fr": "Bouton Toggle appuyé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle button pressed",
+        "fr": "Bouton Toggle appuyé"
+      }
     },
     {
       "id": "remote_dimmer_brightness_up",
@@ -39,7 +51,11 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness up pressed",
+        "fr": "Luminosité + appuyé"
+      }
     },
     {
       "id": "remote_dimmer_brightness_down",
@@ -56,7 +72,11 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness down pressed",
+        "fr": "Luminosité - appuyé"
+      }
     },
     {
       "id": "remote_dimmer_brightness_stop",
@@ -64,7 +84,11 @@
         "en": "Brightness adjustment stopped",
         "fr": "Ajustement luminosité arrêté"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness adjustment stopped",
+        "fr": "Ajustement luminosité arrêté"
+      }
     },
     {
       "id": "remote_dimmer_brightness_set",
@@ -81,7 +105,11 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness level set",
+        "fr": "Niveau de luminosité défini"
+      }
     },
     {
       "id": "remote_dimmer_scene",
@@ -98,7 +126,11 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Scene button pressed",
+        "fr": "Bouton scène appuyé"
+      }
     }
   ],
   "conditions": [],

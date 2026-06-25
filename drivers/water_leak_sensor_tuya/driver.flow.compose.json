@@ -8,7 +8,13 @@
         "nl": "Waterlekkage gedetecteerd",
         "de": "Wasserleck erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée",
+        "nl": "Waterlekkage gedetecteerd",
+        "de": "Wasserleck erkannt"
+      }
     },
     {
       "id": "water_leak_sensor_tuya_alarm_water_false",
@@ -18,7 +24,13 @@
         "nl": "Waterlekkage opgelost",
         "de": "Wasserleck behoben"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak cleared",
+        "fr": "Fuite d'eau résolue",
+        "nl": "Waterlekkage opgelost",
+        "de": "Wasserleck behoben"
+      }
     },
     {
       "id": "water_leak_sensor_tuya_battery_low",
@@ -28,7 +40,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -40,7 +58,13 @@
         "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
         "de": "Wasserleck !{{wird|wird nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak !{{is|is not}} detected",
+        "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+        "nl": "Waterlekkage !{{is|is niet}} gedetecteerd",
+        "de": "Wasserleck !{{wird|wird nicht}} erkannt"
+      }
     }
   ]
 }

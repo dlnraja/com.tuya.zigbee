@@ -15,7 +15,13 @@
         "fr": "Se dÃ©clenche quand la prise est allumÃ©e",
         "de": "Wird ausgelÃ¶st, wenn der Stecker eingeschaltet wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "nl": "Ingeschakeld",
+        "fr": "AllumÃ©",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_turned_off",
@@ -31,7 +37,13 @@
         "fr": "Se dÃ©clenche quand la prise est Ã©teinte",
         "de": "Wird ausgelÃ¶st, wenn der Stecker ausgeschaltet wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "nl": "Uitgeschakeld",
+        "fr": "Ã‰teint",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_power_restored",
@@ -47,7 +59,13 @@
         "fr": "Se dÃ©clenche quand l'alimentation est rÃ©tablie aprÃ¨s une coupure",
         "de": "Wird ausgelÃ¶st, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power restored",
+        "nl": "Stroom hersteld",
+        "fr": "Alimentation rÃ©tablie",
+        "de": "Stromversorgung wiederhergestellt"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_power_changed",
@@ -92,7 +110,13 @@
           "example": 0.65
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power consumption changed",
+        "nl": "Stroomverbruik gewijzigd",
+        "fr": "Consommation changÃ©e",
+        "de": "Stromverbrauch geÃ¤ndert"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_power_threshold",
@@ -123,7 +147,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Power exceeds threshold [[threshold]]",
+        "nl": "Vermogen overschrijdt drempel [[threshold]]",
+        "fr": "Puissance dÃ©passe seuil [[threshold]]",
+        "de": "Leistung Ã¼berschreitet Schwelle [[threshold]]"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_battery_low",
@@ -133,7 +163,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -145,7 +181,13 @@
         "fr": "Prise !{{est|n'est pas}} allumÃ©e",
         "de": "Stecker !{{ist|ist nicht}} an"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Plug !{{is|is not}} on",
+        "nl": "Stekker !{{is|is niet}} aan",
+        "fr": "Prise !{{est|n'est pas}} allumÃ©e",
+        "de": "Stecker !{{ist|ist nicht}} an"
+      }
     }
   ],
   "actions": [
@@ -157,7 +199,13 @@
         "fr": "Allumer",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "nl": "Inschakelen",
+        "fr": "Allumer",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_turn_off",
@@ -167,7 +215,13 @@
         "fr": "Ã‰teindre",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "nl": "Uitschakelen",
+        "fr": "Ã‰teindre",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_toggle",
@@ -177,7 +231,13 @@
         "fr": "Basculer",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "nl": "Schakelen",
+        "fr": "Basculer",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_turn_on_delay",
@@ -198,7 +258,13 @@
             "en": "10"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Turn on after delay [[delay]]",
+        "nl": "Inschakelen na vertraging [[delay]]",
+        "fr": "Allumer aprÃ¨s dÃ©lai [[delay]]",
+        "de": "Nach VerzÃ¶gerung einschalten [[delay]]"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_turn_off_delay",
@@ -219,7 +285,13 @@
             "en": "10"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Turn off after delay [[delay]]",
+        "nl": "Uitschakelen na vertraging [[delay]]",
+        "fr": "Ã‰teindre aprÃ¨s dÃ©lai [[delay]]",
+        "de": "Nach VerzÃ¶gerung ausschalten [[delay]]"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_set_indicator",
@@ -281,7 +353,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set LED indicator mode [[mode]]",
+        "fr": "DÃ©finir le mode LED [[mode]]",
+        "nl": "LED indicator instellen [[mode]]",
+        "de": "LED-Anzeige einstellen [[mode]]"
+      }
     },
     {
       "id": "sensor_contact_plug_contact_sensor_plug_plug_smart_set_power_on",
@@ -334,7 +412,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set power-on behavior [[behavior]]",
+        "fr": "DÃ©finir comportement dÃ©marrage [[behavior]]",
+        "nl": "Opstart gedrag instellen [[behavior]]",
+        "de": "Einschaltverhalten setzen [[behavior]]"
+      }
     }
   ]
 }

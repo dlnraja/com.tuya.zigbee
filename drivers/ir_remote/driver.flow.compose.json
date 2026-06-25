@@ -19,7 +19,11 @@
             "fr": "Alimentation, Volume +, OK..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Command [[command]]",
+        "fr": "Envoyer commande IR [[command]]"
+      }
     },
     {
       "id": "ir_remote_send_custom",
@@ -101,7 +105,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send Custom Key [[key]]",
+        "fr": "Envoyer touche personnalisée [[key]]"
+      }
     }
   ]
 }

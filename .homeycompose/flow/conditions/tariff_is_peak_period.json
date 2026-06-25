@@ -14,11 +14,36 @@
         "en": "Period type to check"
       },
       "values": [
-        { "id": "peak", "title": { "en": "Peak" } },
-        { "id": "shoulder", "title": { "en": "Shoulder" } },
-        { "id": "off_peak", "title": { "en": "Off-Peak" } },
-        { "id": "day", "title": { "en": "Day" } },
-        { "id": "night", "title": { "en": "Night" } }
+        {
+          "id": "peak",
+          "title": {
+            "en": "Peak"
+          }
+        },
+        {
+          "id": "shoulder",
+          "title": {
+            "en": "Shoulder"
+          }
+        },
+        {
+          "id": "off_peak",
+          "title": {
+            "en": "Off-Peak"
+          }
+        },
+        {
+          "id": "day",
+          "title": {
+            "en": "Day"
+          }
+        },
+        {
+          "id": "night",
+          "title": {
+            "en": "Night"
+          }
+        }
       ]
     }
   ],
@@ -38,5 +63,8 @@
         "en": "Current rate per kWh"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Currently in peak period [[period_type]]"
+  }
 }

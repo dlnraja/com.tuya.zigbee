@@ -6,7 +6,11 @@
         "en": "Turned on",
         "fr": "Allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "fr": "Éteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_power_changed",
@@ -33,7 +41,11 @@
           "example": 100
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_voltage_changed",
@@ -52,7 +64,11 @@
           "example": 230
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_measure_current_changed",
@@ -71,7 +87,11 @@
           "example": 0.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_meter_power_changed",
@@ -90,7 +110,11 @@
           "example": 1.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation énergétique changée"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_power_changed",
@@ -100,7 +124,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_battery_low",
@@ -110,7 +140,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -122,7 +158,13 @@
         "fr": "Prise !{{est|n'est pas}} allumée",
         "de": "Stecker !{{ist|ist nicht}} an"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Plug !{{is|is not}} on",
+        "nl": "Stekker !{{is|is niet}} aan",
+        "fr": "Prise !{{est|n'est pas}} allumée",
+        "de": "Stecker !{{ist|ist nicht}} an"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_power_above",
@@ -143,7 +185,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]]",
+        "nl": "Vermogen !{{is|is niet}} boven [[power]]",
+        "fr": "Puissance !{{est|n'est pas}} au-dessus de [[power]]",
+        "de": "Leistung !{{ist|ist nicht}} über [[power]]"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_energy_above",
@@ -164,7 +212,13 @@
             "en": "10"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Energy !{{is|is not}} above [[energy]]",
+        "nl": "Energie !{{is|is niet}} boven [[energy]]",
+        "fr": "Énergie !{{est|n'est pas}} au-dessus de [[energy]]",
+        "de": "Energie !{{ist|ist nicht}} über [[energy]]"
+      }
     }
   ],
   "actions": [
@@ -176,7 +230,13 @@
         "fr": "Allumer",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "nl": "Inschakelen",
+        "fr": "Allumer",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_turn_off",
@@ -186,7 +246,13 @@
         "fr": "Éteindre",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "nl": "Uitschakelen",
+        "fr": "Éteindre",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_toggle",
@@ -196,7 +262,13 @@
         "fr": "Basculer",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "nl": "Schakelen",
+        "fr": "Basculer",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "lcdtemphumidsensor_plug_energy_reset_meter",
@@ -212,7 +284,13 @@
         "fr": "Réinitialise le compteur de consommation à 0 kWh",
         "de": "Setzt den Energieverbrauchszähler auf 0 kWh zurück"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Reset energy meter",
+        "nl": "Energiemeter resetten",
+        "fr": "Réinitialiser compteur",
+        "de": "Energiezähler zurücksetzen"
+      }
     }
   ]
 }

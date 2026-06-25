@@ -8,7 +8,13 @@
         "nl": "Rook gedetecteerd",
         "de": "Rauch erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke detected",
+        "fr": "Fumée détectée",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      }
     },
     {
       "id": "smoke_sensor_alarm_smoke_false",
@@ -18,7 +24,13 @@
         "nl": "Rook verdwenen",
         "de": "Rauch verschwunden"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke cleared",
+        "fr": "Fumée dissipée",
+        "nl": "Rook verdwenen",
+        "de": "Rauch verschwunden"
+      }
     },
     {
       "id": "smoke_sensor_battery_low",
@@ -28,7 +40,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -40,7 +58,13 @@
         "nl": "Rook !{{is|is niet}} gedetecteerd",
         "de": "Rauch !{{wird|wird nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{wird|wird nicht}} erkannt"
+      }
     }
   ]
 }

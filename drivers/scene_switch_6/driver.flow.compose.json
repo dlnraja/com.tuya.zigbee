@@ -70,7 +70,13 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[button]]",
+        "fr": "Bouton appuyé [[button]]",
+        "nl": "Knop ingedrukt [[button]]",
+        "de": "Taste gedrückt [[button]]"
+      }
     },
     {
       "id": "scene_switch_6_button_double_press",
@@ -142,7 +148,13 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button double-pressed [[button]]",
+        "fr": "Bouton double-cliqué [[button]]",
+        "nl": "Knop dubbel ingedrukt [[button]]",
+        "de": "Taste doppelt gedrückt [[button]]"
+      }
     },
     {
       "id": "scene_switch_6_button_long_press",
@@ -214,7 +226,13 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button long-pressed [[button]]",
+        "fr": "Bouton appui long [[button]]",
+        "nl": "Knop lang ingedrukt [[button]]",
+        "de": "Taste lang gedrückt [[button]]"
+      }
     },
     {
       "id": "scene_switch_6_battery_low",
@@ -224,7 +242,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_1_pressed",
@@ -232,7 +256,11 @@
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuye"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuye"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_1_double",
@@ -240,7 +268,11 @@
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_1_long",
@@ -248,7 +280,11 @@
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 appui long"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 appui long"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_1_triple",
@@ -256,7 +292,11 @@
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_1_release",
@@ -264,7 +304,11 @@
         "en": "Button 1 released",
         "fr": "Bouton 1 relache"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 released",
+        "fr": "Bouton 1 relache"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_2_pressed",
@@ -272,7 +316,11 @@
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuye"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuye"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_2_double",
@@ -280,7 +328,11 @@
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_2_long",
@@ -288,7 +340,11 @@
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 appui long"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 appui long"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_2_triple",
@@ -296,7 +352,11 @@
         "en": "Button 2 triple-pressed",
         "fr": "Bouton 2 triple-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 triple-pressed",
+        "fr": "Bouton 2 triple-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_2_release",
@@ -304,7 +364,11 @@
         "en": "Button 2 released",
         "fr": "Bouton 2 relache"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 released",
+        "fr": "Bouton 2 relache"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_3_pressed",
@@ -312,7 +376,11 @@
         "en": "Button 3 pressed",
         "fr": "Bouton 3 appuye"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 appuye"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_3_double",
@@ -320,7 +388,11 @@
         "en": "Button 3 double-pressed",
         "fr": "Bouton 3 double-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 double-pressed",
+        "fr": "Bouton 3 double-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_3_long",
@@ -328,7 +400,11 @@
         "en": "Button 3 long-pressed",
         "fr": "Bouton 3 appui long"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 long-pressed",
+        "fr": "Bouton 3 appui long"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_3_triple",
@@ -336,7 +412,11 @@
         "en": "Button 3 triple-pressed",
         "fr": "Bouton 3 triple-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 triple-pressed",
+        "fr": "Bouton 3 triple-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_3_release",
@@ -344,7 +424,11 @@
         "en": "Button 3 released",
         "fr": "Bouton 3 relache"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 released",
+        "fr": "Bouton 3 relache"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_4_pressed",
@@ -352,7 +436,11 @@
         "en": "Button 4 pressed",
         "fr": "Bouton 4 appuye"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 appuye"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_4_double",
@@ -360,7 +448,11 @@
         "en": "Button 4 double-pressed",
         "fr": "Bouton 4 double-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 double-pressed",
+        "fr": "Bouton 4 double-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_4_long",
@@ -368,7 +460,11 @@
         "en": "Button 4 long-pressed",
         "fr": "Bouton 4 appui long"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 long-pressed",
+        "fr": "Bouton 4 appui long"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_4_triple",
@@ -376,7 +472,11 @@
         "en": "Button 4 triple-pressed",
         "fr": "Bouton 4 triple-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 triple-pressed",
+        "fr": "Bouton 4 triple-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_4_release",
@@ -384,7 +484,11 @@
         "en": "Button 4 released",
         "fr": "Bouton 4 relache"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 released",
+        "fr": "Bouton 4 relache"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_5_pressed",
@@ -392,7 +496,11 @@
         "en": "Button 5 pressed",
         "fr": "Bouton 5 appuye"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 pressed",
+        "fr": "Bouton 5 appuye"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_5_double",
@@ -400,7 +508,11 @@
         "en": "Button 5 double-pressed",
         "fr": "Bouton 5 double-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 double-pressed",
+        "fr": "Bouton 5 double-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_5_long",
@@ -408,7 +520,11 @@
         "en": "Button 5 long-pressed",
         "fr": "Bouton 5 appui long"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 long-pressed",
+        "fr": "Bouton 5 appui long"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_5_triple",
@@ -416,7 +532,11 @@
         "en": "Button 5 triple-pressed",
         "fr": "Bouton 5 triple-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 triple-pressed",
+        "fr": "Bouton 5 triple-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_5_release",
@@ -424,7 +544,11 @@
         "en": "Button 5 released",
         "fr": "Bouton 5 relache"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 released",
+        "fr": "Bouton 5 relache"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_6_pressed",
@@ -432,7 +556,11 @@
         "en": "Button 6 pressed",
         "fr": "Bouton 6 appuye"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 pressed",
+        "fr": "Bouton 6 appuye"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_6_double",
@@ -440,7 +568,11 @@
         "en": "Button 6 double-pressed",
         "fr": "Bouton 6 double-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 double-pressed",
+        "fr": "Bouton 6 double-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_6_long",
@@ -448,7 +580,11 @@
         "en": "Button 6 long-pressed",
         "fr": "Bouton 6 appui long"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 long-pressed",
+        "fr": "Bouton 6 appui long"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_6_triple",
@@ -456,7 +592,11 @@
         "en": "Button 6 triple-pressed",
         "fr": "Bouton 6 triple-appui"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 triple-pressed",
+        "fr": "Bouton 6 triple-appui"
+      }
     },
     {
       "id": "scene_switch_6_button_6gang_button_6_release",
@@ -464,7 +604,11 @@
         "en": "Button 6 released",
         "fr": "Bouton 6 relache"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 released",
+        "fr": "Bouton 6 relache"
+      }
     }
   ]
 }

@@ -53,7 +53,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "Set [[capability]] to [[value]] for all devices in [[zone]] (subzones: [[include_subzones]])",
-    "nl": "Stel [[capability]] in op [[value]] voor alle apparaten in [[zone]] (subzones: [[include_subzones]])"
+    "en": "Set capability for all devices in zone [[zone]] [[capability]] [[value]] [[include_subzones]]",
+    "nl": "Capaciteit instellen voor alle apparaten in zone [[zone]] [[capability]] [[value]] [[include_subzones]]",
+    "de": "Fähigkeit für alle Geräte in Zone setzen [[zone]] [[capability]] [[value]] [[include_subzones]]",
+    "fr": "Définir la capacité pour tous les appareils de la zone [[zone]] [[capability]] [[value]] [[include_subzones]]"
   }
 }

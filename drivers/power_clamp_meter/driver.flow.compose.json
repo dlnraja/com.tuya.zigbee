@@ -8,7 +8,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
     }
   ],
   "conditions": [
@@ -25,7 +31,10 @@
           "max": 30000,
           "step": 50
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]]"
+      }
     }
   ],
   "actions": [
@@ -34,7 +43,10 @@
       "title": {
         "en": "Reset energy meter"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Reset energy meter"
+      }
     }
   ]
 }

@@ -17,7 +17,11 @@
           "example": 500
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminosité changée"
+      }
     }
   ],
   "conditions": [
@@ -29,7 +33,13 @@
         "nl": "Batterij !{{is|is niet}} laag",
         "de": "Batterie !{{ist|ist nicht}} schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} low",
+        "fr": "Batterie !{{est|n'est pas}} faible",
+        "nl": "Batterij !{{is|is niet}} laag",
+        "de": "Batterie !{{ist|ist nicht}} schwach"
+      }
     }
   ]
 }

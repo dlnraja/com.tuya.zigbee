@@ -8,7 +8,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "switch_1gang_turned_off",
@@ -18,7 +24,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "switch_1gang_physical_on",
@@ -28,7 +40,13 @@
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      }
     },
     {
       "id": "switch_1gang_physical_off",
@@ -38,12 +56,21 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      }
     },
     {
       "id": "switch_1gang_physical_gang1_on",
       "args": [],
       "title": {
+        "en": "Turned on - physical (Gang 1)"
+      },
+      "titleFormatted": {
         "en": "Turned on - physical (Gang 1)"
       }
     },
@@ -51,6 +78,9 @@
       "id": "switch_1gang_physical_gang1_off",
       "args": [],
       "title": {
+        "en": "Turned off - physical (Gang 1)"
+      },
+      "titleFormatted": {
         "en": "Turned off - physical (Gang 1)"
       }
     }
@@ -64,7 +94,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -76,7 +112,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "switch_1gang_turn_off",
@@ -86,7 +128,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "switch_1gang_toggle",
@@ -96,7 +144,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "switch_1gang_set_backlight",
@@ -125,7 +179,10 @@
             "en": "Backlight mode"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set backlight mode [[mode]]"
+      }
     },
     {
       "id": "switch_1gang_set_backlight_color",
@@ -158,7 +215,10 @@
             "en": "Backlight color"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set backlight color [[color]]"
+      }
     },
     {
       "id": "switch_1gang_set_backlight_brightness",
@@ -177,7 +237,10 @@
             "en": "Brightness"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set backlight brightness [[brightness]]"
+      }
     },
     {
       "id": "switch_1gang_set_countdown",
@@ -192,7 +255,10 @@
             "en": "Countdown (seconds)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set countdown timer [[seconds]]"
+      }
     },
     {
       "id": "switch_1gang_set_child_lock",
@@ -207,7 +273,10 @@
             "en": "Enabled"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set child lock [[enabled]]"
+      }
     },
     {
       "id": "switch_1gang_set_scene_mode",
@@ -222,7 +291,10 @@
             "en": "Scene mode"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set scene mode [[mode]]"
+      }
     },
     {
       "id": "switch_1gang_set_power_on_behavior",
@@ -251,7 +323,10 @@
             "en": "Behavior"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set power-on behavior [[behavior]]"
+      }
     }
   ]
 }

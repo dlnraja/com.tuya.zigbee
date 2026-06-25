@@ -6,7 +6,11 @@
         "en": "Turned on",
         "fr": "AllumÃ©"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "AllumÃ©"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "fr": "Ã‰teint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_measure_power_changed",
@@ -33,7 +41,11 @@
           "example": 100
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changÃ©e"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_measure_voltage_changed",
@@ -52,7 +64,11 @@
           "example": 230
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed",
+        "fr": "Tension changÃ©e"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_measure_current_changed",
@@ -71,7 +87,11 @@
           "example": 0.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed",
+        "fr": "Courant changÃ©"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_meter_power_changed",
@@ -90,7 +110,11 @@
           "example": 1.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation Ã©nergÃ©tique changÃ©e"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_power_changed",
@@ -100,7 +124,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changÃ©e",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geÃ¤ndert"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_battery_low",
@@ -110,7 +140,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -122,7 +158,13 @@
         "fr": "Prise !{{est|n'est pas}} allumÃ©e",
         "de": "Stecker !{{ist|ist nicht}} an"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Plug !{{is|is not}} on",
+        "nl": "Stekker !{{is|is niet}} aan",
+        "fr": "Prise !{{est|n'est pas}} allumÃ©e",
+        "de": "Stecker !{{ist|ist nicht}} an"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_power_above",
@@ -143,7 +185,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]]",
+        "nl": "Vermogen !{{is|is niet}} boven [[power]]",
+        "fr": "Puissance !{{est|n'est pas}} au-dessus de [[power]]",
+        "de": "Leistung !{{ist|ist nicht}} Ã¼ber [[power]]"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_energy_above",
@@ -164,7 +212,13 @@
             "en": "10"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Energy !{{is|is not}} above [[energy]]",
+        "nl": "Energie !{{is|is niet}} boven [[energy]]",
+        "fr": "Ã‰nergie !{{est|n'est pas}} au-dessus de [[energy]]",
+        "de": "Energie !{{ist|ist nicht}} Ã¼ber [[energy]]"
+      }
     }
   ],
   "actions": [
@@ -176,7 +230,13 @@
         "fr": "Allumer",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "nl": "Inschakelen",
+        "fr": "Allumer",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_turn_off",
@@ -186,7 +246,13 @@
         "fr": "Ã‰teindre",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "nl": "Uitschakelen",
+        "fr": "Ã‰teindre",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_toggle",
@@ -196,7 +262,13 @@
         "fr": "Basculer",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "nl": "Schakelen",
+        "fr": "Basculer",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "dimmer_wall_plug_plug_energy_monitor_reset_meter",
@@ -212,7 +284,13 @@
         "fr": "RÃ©initialise le compteur de consommation Ã 0 kWh",
         "de": "Setzt den EnergieverbrauchszÃ¤hler auf 0 kWh zurÃ¼ck"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Reset energy meter",
+        "nl": "Energiemeter resetten",
+        "fr": "RÃ©initialiser compteur",
+        "de": "EnergiezÃ¤hler zurÃ¼cksetzen"
+      }
     }
   ]
 }

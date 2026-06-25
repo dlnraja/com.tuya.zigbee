@@ -25,9 +25,9 @@
     }
   ],
   "titleFormatted": {
-    "en": "App [[app_id]] is running",
-    "nl": "App [[app_id]] draait",
-    "de": "App [[app_id]] läuft",
-    "fr": "L'application [[app_id]] est en cours d'exécution"
+    "en": "App is running [[app_id]]",
+    "nl": "App draait [[app_id]]",
+    "de": "App läuft [[app_id]]",
+    "fr": "L'application est en cours d'exécution [[app_id]]"
   }
 }

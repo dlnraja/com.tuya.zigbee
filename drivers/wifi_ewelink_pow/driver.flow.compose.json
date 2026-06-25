@@ -5,14 +5,20 @@
       "title": {
         "en": "Turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "wifi_ewelink_pow_turned_off",
       "title": {
         "en": "Turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off"
+      }
     },
     {
       "id": "wifi_ewelink_pow_power_changed",
@@ -29,7 +35,10 @@
           "example": 100
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed"
+      }
     },
     {
       "id": "wifi_ewelink_pow_voltage_changed",
@@ -46,7 +55,10 @@
           "example": 230
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed"
+      }
     },
     {
       "id": "wifi_ewelink_pow_current_changed",
@@ -63,7 +75,10 @@
           "example": 0.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed"
+      }
     }
   ],
   "conditions": [
@@ -72,7 +87,10 @@
       "title": {
         "en": "Is on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is on"
+      }
     }
   ],
   "actions": []

@@ -26,7 +26,11 @@
           "example": "pressed"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_windowcoverings_set_changed",
@@ -45,7 +49,11 @@
           "example": 0.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_dim_changed",
@@ -64,7 +72,11 @@
           "example": 0.75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_battery_low",
@@ -74,7 +86,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_physical_on",
@@ -92,7 +110,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physically opened",
+        "fr": "Ouvert physiquement"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_physical_off",
@@ -110,7 +132,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physically closed",
+        "fr": "Fermé physiquement"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_physical_single",
@@ -128,7 +154,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physically pressed",
+        "fr": "Pressé physiquement"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_lux_changed",
@@ -138,7 +168,13 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      }
     }
   ],
   "actions": [
@@ -162,7 +198,11 @@
             "fr": "Position"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set position to... [[position]]",
+        "fr": "Régler la position à... [[position]]"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_windowcoverings_open",
@@ -170,7 +210,11 @@
         "en": "Open",
         "fr": "Ouvrir"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_windowcoverings_close",
@@ -178,7 +222,11 @@
         "en": "Close",
         "fr": "Fermer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_set_dim",
@@ -200,7 +248,11 @@
             "fr": "Luminosité"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness to... [[brightness]]",
+        "fr": "Régler la luminosité à... [[brightness]]"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_stop",
@@ -210,7 +262,13 @@
         "nl": "Stoppen",
         "de": "Stoppen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_set_favorite",
@@ -224,7 +282,13 @@
         "en": "Move to the saved favorite position (if supported)",
         "fr": "Aller à la position favorite enregistrée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Go to favorite position",
+        "fr": "Aller position favorite",
+        "nl": "Ga naar favoriete positie",
+        "de": "Zur Lieblingsposition"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_set_brightness",
@@ -244,7 +308,13 @@
           "label": "%",
           "labelDecimals": 0
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]",
+        "nl": "Helderheid instellen [[brightness]]",
+        "de": "Helligkeit einstellen [[brightness]]"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_set_position",
@@ -264,7 +334,13 @@
           "label": "%",
           "labelDecimals": 0
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set position [[position]]",
+        "fr": "Régler position [[position]]",
+        "nl": "Positie instellen [[position]]",
+        "de": "Position einstellen [[position]]"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_open",
@@ -274,7 +350,13 @@
         "nl": "Openen",
         "de": "Öffnen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      }
     },
     {
       "id": "curtain_motor_wall_curtain_motor_close",
@@ -284,7 +366,13 @@
         "nl": "Sluiten",
         "de": "Schließen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      }
     }
   ]
 }

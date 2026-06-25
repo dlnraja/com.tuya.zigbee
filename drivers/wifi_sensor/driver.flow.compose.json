@@ -14,7 +14,10 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed"
+      }
     },
     {
       "id": "wifi_sensor_hum_changed",
@@ -30,7 +33,10 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed"
+      }
     }
   ],
   "conditions": [],

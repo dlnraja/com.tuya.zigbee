@@ -4,10 +4,6 @@
     "en": "Overload detected (Safety Cutoff)",
     "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©)"
   },
-  "titleFormatted": {
-    "en": "Overload detected on [[device]]",
-    "fr": "Surcharge dÃ©tectÃ©e sur [[device]]"
-  },
   "args": [
     {
       "name": "device",
@@ -24,5 +20,9 @@
         "fr": "Puissance actuelle (W)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Overload detected (Safety Cutoff) [[device]]",
+    "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©) [[device]]"
+  }
 }

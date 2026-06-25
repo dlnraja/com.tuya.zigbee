@@ -5,28 +5,40 @@
       "title": {
         "en": "Gang 1 turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 turned on"
+      }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang1_turned_off",
       "title": {
         "en": "Gang 1 turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 turned off"
+      }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 turned on"
+      }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 turned off"
+      }
     }
   ],
   "conditions": [
@@ -35,14 +47,20 @@
       "title": {
         "en": "Gang 1 is on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 is on"
+      }
     },
     {
       "id": "wifi_ewelink_switch_2ch_gang2_is_on",
       "title": {
         "en": "Gang 2 is on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 is on"
+      }
     }
   ],
   "actions": []

@@ -5,14 +5,20 @@
       "title": {
         "en": "Turn on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
     },
     {
       "id": "presence_sensor_ceiling_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
     },
     {
       "id": "presence_sensor_ceiling_toggle",
@@ -22,7 +28,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     }
   ],
   "triggers": [
@@ -34,7 +46,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "presence_sensor_ceiling_turned_off",
@@ -44,7 +62,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "presence_sensor_ceiling_motion_detected",
@@ -54,7 +78,13 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
     },
     {
       "id": "presence_sensor_ceiling_lux_changed",
@@ -64,7 +94,13 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "presence_sensor_ceiling_distance_changed",
@@ -74,7 +110,13 @@
         "nl": "Afstand gewijzigd",
         "de": "Entfernung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Distance changed",
+        "fr": "Distance changée",
+        "nl": "Afstand gewijzigd",
+        "de": "Entfernung geändert"
+      }
     }
   ],
   "conditions": [
@@ -86,7 +128,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     },
     {
       "id": "presence_sensor_ceiling_motion_active",
@@ -96,7 +144,13 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
     }
   ]
 }

@@ -6,7 +6,11 @@
         "en": "Fan turned on",
         "fr": "Ventilateur allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan turned on",
+        "fr": "Ventilateur allumé"
+      }
     },
     {
       "id": "hybrid_fan_sensor_turned_off",
@@ -14,7 +18,11 @@
         "en": "Fan turned off",
         "fr": "Ventilateur éteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan turned off",
+        "fr": "Ventilateur éteint"
+      }
     },
     {
       "id": "hybrid_fan_sensor_temperature_changed",
@@ -33,7 +41,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "hybrid_fan_sensor_humidity_changed",
@@ -52,7 +64,11 @@
           "example": 55
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "hybrid_fan_sensor_pm25_changed",
@@ -71,7 +87,11 @@
           "example": 35
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changée"
+      }
     }
   ],
   "conditions": [
@@ -81,7 +101,11 @@
         "en": "Fan is on",
         "fr": "Ventilateur est allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan is on",
+        "fr": "Ventilateur est allumé"
+      }
     }
   ],
   "actions": [
@@ -103,7 +127,11 @@
             "fr": "Vitesse (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set fan speed [[speed]]",
+        "fr": "Régler vitesse ventilateur [[speed]]"
+      }
     }
   ]
 }

@@ -14,7 +14,10 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 level is high"
+      }
     },
     {
       "id": "wifi_air_quality_pm25_high",
@@ -30,7 +33,10 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 level is high"
+      }
     }
   ],
   "conditions": [],

@@ -4,14 +4,14 @@
     "en": "Auto-Off Timer triggered",
     "fr": "Minuterie Auto-Off dÃ©clenchÃ©e"
   },
-  "titleFormatted": {
-    "en": "Auto-Off Timer triggered on [[device]]",
-    "fr": "Minuterie Auto-Off dÃ©clenchÃ©e sur [[device]]"
-  },
   "args": [
     {
       "name": "device",
       "type": "device"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Auto-Off Timer triggered [[device]]",
+    "fr": "Minuterie Auto-Off dÃ©clenchÃ©e [[device]]"
+  }
 }

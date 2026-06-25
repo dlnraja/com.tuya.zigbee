@@ -1,7 +1,7 @@
 {
   "id": "energy_usage_above_threshold",
   "title": {
-    "en": "Energy usage above [[threshold]] kWh"
+    "en": "Energy usage above [[threshold_kwh]] kWh"
   },
   "hint": {
     "en": "Checks if the tracked energy usage exceeds a threshold within a time window"
@@ -25,11 +25,36 @@
         "en": "Time period"
       },
       "values": [
-        { "id": "today", "title": { "en": "Today" } },
-        { "id": "yesterday", "title": { "en": "Yesterday" } },
-        { "id": "this_week", "title": { "en": "This week" } },
-        { "id": "last_24h", "title": { "en": "Last 24 hours" } },
-        { "id": "last_7d", "title": { "en": "Last 7 days" } }
+        {
+          "id": "today",
+          "title": {
+            "en": "Today"
+          }
+        },
+        {
+          "id": "yesterday",
+          "title": {
+            "en": "Yesterday"
+          }
+        },
+        {
+          "id": "this_week",
+          "title": {
+            "en": "This week"
+          }
+        },
+        {
+          "id": "last_24h",
+          "title": {
+            "en": "Last 24 hours"
+          }
+        },
+        {
+          "id": "last_7d",
+          "title": {
+            "en": "Last 7 days"
+          }
+        }
       ]
     }
   ],
@@ -48,5 +73,8 @@
         "en": "Threshold (kWh)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Energy usage above [[threshold_kwh]] kWh [[period]]"
+  }
 }

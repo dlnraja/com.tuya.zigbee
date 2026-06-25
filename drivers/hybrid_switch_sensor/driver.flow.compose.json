@@ -6,7 +6,11 @@
         "en": "Switch turned on",
         "fr": "Interrupteur allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch turned on",
+        "fr": "Interrupteur allumé"
+      }
     },
     {
       "id": "hybrid_switch_sensor_turned_off",
@@ -14,7 +18,11 @@
         "en": "Switch turned off",
         "fr": "Interrupteur éteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch turned off",
+        "fr": "Interrupteur éteint"
+      }
     },
     {
       "id": "hybrid_switch_sensor_temperature_changed",
@@ -33,7 +41,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "hybrid_switch_sensor_humidity_changed",
@@ -52,7 +64,11 @@
           "example": 55
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     }
   ],
   "conditions": [
@@ -62,7 +78,11 @@
         "en": "Switch is on",
         "fr": "Interrupteur est allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch is on",
+        "fr": "Interrupteur est allumé"
+      }
     },
     {
       "id": "hybrid_switch_sensor_temperature_above",
@@ -82,7 +102,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is above [[temp]]",
+        "fr": "Température supérieure à [[temp]]"
+      }
     },
     {
       "id": "hybrid_switch_sensor_temperature_below",
@@ -102,7 +126,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is below [[temp]]",
+        "fr": "Température inférieure à [[temp]]"
+      }
     }
   ],
   "actions": [
@@ -112,7 +140,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "hybrid_switch_sensor_turn_off",
@@ -120,7 +152,11 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
     }
   ]
 }

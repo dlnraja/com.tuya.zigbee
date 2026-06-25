@@ -5,14 +5,20 @@
       "title": {
         "en": "Turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "wifi_light_turned_off",
       "title": {
         "en": "Turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off"
+      }
     }
   ],
   "conditions": [],

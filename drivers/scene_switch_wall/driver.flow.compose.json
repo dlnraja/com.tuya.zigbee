@@ -46,7 +46,13 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed [[button]]",
+        "fr": "Bouton appuyé [[button]]",
+        "nl": "Knop ingedrukt [[button]]",
+        "de": "Taste gedrückt [[button]]"
+      }
     },
     {
       "id": "scene_switch_wall_button_double_press",
@@ -94,7 +100,13 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button double-pressed [[button]]",
+        "fr": "Bouton double-cliqué [[button]]",
+        "nl": "Knop dubbel ingedrukt [[button]]",
+        "de": "Taste doppelt gedrückt [[button]]"
+      }
     },
     {
       "id": "scene_switch_wall_button_long_press",
@@ -142,7 +154,13 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button long-pressed [[button]]",
+        "fr": "Bouton appui long [[button]]",
+        "nl": "Knop lang ingedrukt [[button]]",
+        "de": "Taste lang gedrückt [[button]]"
+      }
     },
     {
       "id": "scene_switch_wall_battery_low",
@@ -152,7 +170,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ]
 }
