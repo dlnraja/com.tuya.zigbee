@@ -23,5 +23,11 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Button released",
+    "fr": "[[device]] Bouton relâché",
+    "nl": "[[device]] Knop losgelaten",
+    "de": "[[device]] Taste losgelassen"
+  }
 }

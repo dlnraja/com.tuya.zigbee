@@ -48,5 +48,11 @@
         "fr": "onoff.gang2"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Sub-capability changed [[capability]]",
+    "fr": "[[device]] Sous-capacité changée [[capability]]",
+    "nl": "[[device]] Sub-capability gewijzigd [[capability]]",
+    "de": "[[device]] Sub-Fähigkeit geändert [[capability]]"
+  }
 }

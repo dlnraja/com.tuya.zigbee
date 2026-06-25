@@ -4,11 +4,17 @@
       "id": "wifi_light_turned_on",
       "title": {
         "en": "Turned on"
+      },
+      "titleFormatted": {
+        "en": "Turned on"
       }
     },
     {
       "id": "wifi_light_turned_off",
       "title": {
+        "en": "Turned off"
+      },
+      "titleFormatted": {
         "en": "Turned off"
       }
     }

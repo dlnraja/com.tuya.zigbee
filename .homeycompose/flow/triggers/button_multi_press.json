@@ -32,5 +32,11 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Button multi-pressed",
+    "fr": "[[device]] Bouton multi-cliqué",
+    "nl": "[[device]] Knop meerdere keren ingedrukt",
+    "de": "[[device]] Taste mehrfach gedrückt"
+  }
 }

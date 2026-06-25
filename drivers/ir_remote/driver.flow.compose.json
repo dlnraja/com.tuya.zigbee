@@ -19,7 +19,11 @@
             "fr": "Alimentation, Volume +, OK..."
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send IR Command [[command]]",
+        "fr": "Envoyer commande IR [[command]]"
+      }
     },
     {
       "id": "ir_remote_send_custom",
@@ -36,18 +40,76 @@
             "fr": "Touche"
           },
           "values": [
-            { "id": "Power", "label": { "en": "Power", "fr": "Alimentation" } },
-            { "id": "Mute", "label": { "en": "Mute", "fr": "Sourdine" } },
-            { "id": "Volume Up", "label": { "en": "Volume Up", "fr": "Volume +" } },
-            { "id": "Volume Down", "label": { "en": "Volume Down", "fr": "Volume -" } },
-            { "id": "Channel Up", "label": { "en": "Channel Up", "fr": "Chaîne +" } },
-            { "id": "Channel Down", "label": { "en": "Channel Down", "fr": "Chaîne -" } },
-            { "id": "Source", "label": { "en": "Source", "fr": "Source" } },
-            { "id": "Menu", "label": { "en": "Menu", "fr": "Menu" } },
-            { "id": "OK", "label": { "en": "OK", "fr": "OK" } }
+            {
+              "id": "Power",
+              "label": {
+                "en": "Power",
+                "fr": "Alimentation"
+              }
+            },
+            {
+              "id": "Mute",
+              "label": {
+                "en": "Mute",
+                "fr": "Sourdine"
+              }
+            },
+            {
+              "id": "Volume Up",
+              "label": {
+                "en": "Volume Up",
+                "fr": "Volume +"
+              }
+            },
+            {
+              "id": "Volume Down",
+              "label": {
+                "en": "Volume Down",
+                "fr": "Volume -"
+              }
+            },
+            {
+              "id": "Channel Up",
+              "label": {
+                "en": "Channel Up",
+                "fr": "Chaîne +"
+              }
+            },
+            {
+              "id": "Channel Down",
+              "label": {
+                "en": "Channel Down",
+                "fr": "Chaîne -"
+              }
+            },
+            {
+              "id": "Source",
+              "label": {
+                "en": "Source",
+                "fr": "Source"
+              }
+            },
+            {
+              "id": "Menu",
+              "label": {
+                "en": "Menu",
+                "fr": "Menu"
+              }
+            },
+            {
+              "id": "OK",
+              "label": {
+                "en": "OK",
+                "fr": "OK"
+              }
+            }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Send Custom Key [[key]]",
+        "fr": "Envoyer touche personnalisée [[key]]"
+      }
     }
   ]
 }

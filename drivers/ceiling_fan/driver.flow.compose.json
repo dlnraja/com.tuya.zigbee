@@ -6,7 +6,11 @@
         "en": "Turned on",
         "fr": "Allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
     },
     {
       "id": "ceiling_fan_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "fr": "Éteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
     },
     {
       "id": "ceiling_fan_dim_changed",
@@ -33,7 +41,11 @@
           "example": 0.75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      }
     },
     {
       "id": "ceiling_fan_battery_low",
@@ -43,7 +55,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -53,7 +71,11 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      }
     }
   ],
   "actions": [
@@ -63,7 +85,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "ceiling_fan_turn_off",
@@ -71,7 +97,11 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
     },
     {
       "id": "ceiling_fan_toggle",
@@ -79,7 +109,11 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle on or off",
+        "fr": "Basculer"
+      }
     },
     {
       "id": "ceiling_fan_set_dim",
@@ -88,8 +122,8 @@
         "fr": "Régler la luminosité à..."
       },
       "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler la luminosité à [[brightness]]%"
+        "en": "Set brightness to... [[brightness]]",
+        "fr": "Régler la luminosité à... [[brightness]]"
       },
       "args": [
         {
@@ -116,10 +150,10 @@
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler la luminosité à [[brightness]]%",
-        "nl": "Helderheid instellen op [[brightness]]%",
-        "de": "Helligkeit einstellen auf [[brightness]]%"
+        "en": "Set brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]",
+        "nl": "Helderheid instellen [[brightness]]",
+        "de": "Helligkeit einstellen [[brightness]]"
       },
       "args": [
         {

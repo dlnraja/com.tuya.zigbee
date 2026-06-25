@@ -5,14 +5,20 @@
       "title": {
         "en": "Turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "usb_dongle_triple_turned_off",
       "title": {
         "en": "Turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off"
+      }
     },
     {
       "id": "usb_dongle_triple_power_changed",
@@ -29,7 +35,10 @@
           "example": 5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed"
+      }
     }
   ],
   "conditions": [
@@ -38,7 +47,10 @@
       "title": {
         "en": "Port 1 !{{is|is not}} on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Port 1 !{{is|is not}} on"
+      }
     },
     {
       "id": "usb_dongle_triple_power_above",
@@ -53,7 +65,10 @@
           "max": 100,
           "step": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]]"
+      }
     }
   ],
   "actions": [
@@ -62,14 +77,20 @@
       "title": {
         "en": "Turn on all ports"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on all ports"
+      }
     },
     {
       "id": "usb_dongle_triple_all_off",
       "title": {
         "en": "Turn off all ports"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off all ports"
+      }
     }
   ]
 }

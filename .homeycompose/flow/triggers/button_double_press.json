@@ -23,5 +23,11 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Button double-pressed",
+    "fr": "[[device]] Bouton double-cliqué",
+    "nl": "[[device]] Knop dubbel ingedrukt",
+    "de": "[[device]] Taste doppelt gedrückt"
+  }
 }

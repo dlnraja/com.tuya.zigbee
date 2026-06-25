@@ -26,5 +26,9 @@
         "fr": "onoff.gang2"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Sub-capability [[capability]] is on",
+    "fr": "[[device]] Sous-capacité [[capability]] est active"
+  }
 }

@@ -72,5 +72,11 @@
         "fr": "Valeur seuil"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] DP threshold crossed [[dp]] [[threshold]]",
+    "fr": "[[device]] Seuil DP franchi [[dp]] [[threshold]]",
+    "nl": "[[device]] DP drempel overschreden [[dp]] [[threshold]]",
+    "de": "[[device]] DP Schwellwert überschritten [[dp]] [[threshold]]"
+  }
 }

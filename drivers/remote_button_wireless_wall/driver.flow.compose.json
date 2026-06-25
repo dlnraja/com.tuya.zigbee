@@ -17,7 +17,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_double_press_dup_9wdli",
@@ -36,7 +40,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_long_press_dup_lnaf8",
@@ -55,7 +63,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_multi_press_dup_mdmy2",
@@ -83,7 +95,11 @@
           "example": 3
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button multi-pressed",
+        "fr": "Bouton multi-cliqué"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_pressed_dup_xt270",
@@ -91,7 +107,11 @@
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_double_dup_ir66a",
@@ -99,7 +119,11 @@
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_long_dup_ehxex",
@@ -107,7 +131,11 @@
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_triple_dup_3oihw",
@@ -115,7 +143,11 @@
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliqué"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-cliqué"
+      }
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_release_dup_1a8jh",
@@ -123,7 +155,11 @@
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relâché - après maintien"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 released - after hold",
+        "fr": "Bouton 1 relâché - après maintien"
+      }
     },
     {
       "id": "button_wireless_1_battery_low_dup_9ul0y",
@@ -133,7 +169,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ]
 }

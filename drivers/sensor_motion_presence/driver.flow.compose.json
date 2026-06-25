@@ -88,7 +88,13 @@
           "example": 150
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed",
+        "nl": "Lichtsterkte veranderd",
+        "fr": "Luminosité changée",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "sensor_motion_presence_distance_changed",
@@ -111,7 +117,13 @@
           "example": 200
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Detection distance changed",
+        "nl": "Detectieafstand veranderd",
+        "fr": "Distance de détection changée",
+        "de": "Erkennungsabstand geändert"
+      }
     },
     {
       "id": "sensor_motion_presence_lux_changed",
@@ -121,7 +133,13 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "sensor_motion_presence_battery_low",
@@ -131,7 +149,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -144,10 +168,10 @@
         "de": "Jemand ist anwesend"
       },
       "titleFormatted": {
-        "en": "Someone !{{is|is not}} present",
-        "nl": "Iemand !{{is|is niet}} aanwezig",
-        "fr": "Quelqu'un !{{est|n'est pas}} présent",
-        "de": "Jemand !{{ist|ist nicht}} anwesend"
+        "en": "Someone is present",
+        "nl": "Iemand is aanwezig",
+        "fr": "Quelqu'un est présent",
+        "de": "Jemand ist anwesend"
       },
       "args": []
     },
@@ -170,7 +194,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Illuminance !{{is|is not}} above [[lux]]",
+        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
+        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]]",
+        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]]"
+      }
     },
     {
       "id": "sensor_motion_presence_distance_within",
@@ -191,7 +221,13 @@
             "en": "300"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Target !{{is|is not}} within distance [[distance]]",
+        "nl": "Doel !{{is|is niet}} binnen afstand [[distance]]",
+        "fr": "Cible !{{est|n'est pas}} dans la distance [[distance]]",
+        "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung [[distance]]"
+      }
     },
     {
       "id": "sensor_motion_presence_motion_active",
@@ -201,7 +237,13 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
     }
   ]
 }

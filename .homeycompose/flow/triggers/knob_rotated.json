@@ -41,5 +41,11 @@
       "name": "device",
       "filter": "driver_id=smart_knob,capabilities=dim"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Knob rotated",
+    "fr": "[[device]] Molette tournée",
+    "nl": "[[device]] Draaiknop gedraaid",
+    "de": "[[device]] Drehknopf gedreht"
+  }
 }

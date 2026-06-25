@@ -40,5 +40,9 @@
       "name": "device",
       "filter": "capabilities=tuya_cluster_event|onoff"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Zigbee cluster event received",
+    "fr": "[[device]] Événement cluster Zigbee reçu"
+  }
 }

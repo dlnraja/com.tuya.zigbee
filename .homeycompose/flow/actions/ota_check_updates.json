@@ -16,5 +16,10 @@
       "type": "device",
       "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "[[device]] Check Device OTA Firmware Updates",
+    "fr": "[[device]] Vérifier Mises à Jour (OTA) de l'appareil",
+    "nl": "[[device]] OTA firmware updates controleren"
+  }
 }
