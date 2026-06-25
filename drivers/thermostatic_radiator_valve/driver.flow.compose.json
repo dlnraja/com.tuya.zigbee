@@ -6,7 +6,10 @@
       "title": {
         "en": "Window !{{is|is not}} open"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Window !{{is|is not}} open"
+      }
     },
     {
       "id": "thermostatic_radiator_valve_boost_active",
@@ -16,7 +19,10 @@
       "hint": {
         "en": "Checks if the thermostat boost mode is currently active"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Boost mode !{{is|is not}} active"
+      }
     },
     {
       "id": "thermostatic_radiator_valve_child_lock_active",
@@ -26,7 +32,10 @@
       "hint": {
         "en": "Checks if the child lock is currently engaged"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Child lock !{{is|is not}} active"
+      }
     }
   ],
   "actions": [
@@ -43,7 +52,10 @@
             "en": "Open"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set window open status [[window_open_status]]"
+      }
     },
     {
       "id": "thermostatic_radiator_valve_set_boost",
@@ -72,7 +84,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set boost mode [[mode]]"
+      }
     },
     {
       "id": "thermostatic_radiator_valve_set_frost_protection",
@@ -101,7 +116,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set frost protection [[mode]]"
+      }
     },
     {
       "id": "thermostatic_radiator_valve_set_child_lock",
@@ -130,7 +148,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set child lock [[mode]]"
+      }
     },
     {
       "id": "thermostatic_radiator_valve_set_window_detection",
@@ -159,7 +180,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set window detection [[mode]]"
+      }
     }
   ]
 }

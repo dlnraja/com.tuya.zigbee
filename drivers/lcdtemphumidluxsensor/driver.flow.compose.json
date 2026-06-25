@@ -17,7 +17,11 @@
           },
           "example": 300
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changee"
+      }
     },
     {
       "id": "lcdtemphumidluxsensor_temperature_changed",
@@ -36,7 +40,11 @@
           },
           "example": 21.5
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      }
     },
     {
       "id": "lcdtemphumidluxsensor_humidity_changed",
@@ -55,7 +63,11 @@
           },
           "example": 55
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidite changee"
+      }
     },
     {
       "id": "lcdtemphumidluxsensor_battery_low",
@@ -65,7 +77,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [],

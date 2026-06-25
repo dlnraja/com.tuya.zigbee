@@ -12,7 +12,12 @@
         "nl": "Deze kaart wordt alleen geactiveerd wanneer de sirene actief is.",
         "de": "Diese Karte wird ausgelöst, wenn die Sirene aktiviert wird."
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren Alarm",
+        "nl": "Sirene Alarm",
+        "de": "Sirenenalarm"
+      }
     }
   ],
   "actions": [
@@ -51,7 +56,12 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Change the alarm state [[alarm_state]]",
+        "nl": "Verander de alarm toestand [[alarm_state]]",
+        "de": "Ändern des Alarmstatus [[alarm_state]]"
+      }
     },
     {
       "id": "sirentemphumidsensor_alarm_duration",
@@ -81,7 +91,12 @@
             "nl": "Duur van het alarm in seconden"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Switch on siren for X Seconds [[duration]]",
+        "de": "Sirene für X Sekunden einschalten [[duration]]",
+        "nl": "Zet sirene aan voor X seconden [[duration]]"
+      }
     },
     {
       "id": "sirentemphumidsensor_siren_volume",
@@ -126,7 +141,12 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set volume of siren [[siren_volume]]",
+        "nl": "Zet het volume van de sirene [[siren_volume]]",
+        "de": "Einstellen der Lautstärke der Sirene [[siren_volume]]"
+      }
     },
     {
       "id": "sirentemphumidsensor_alarm_tune",
@@ -291,7 +311,12 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set the alarm tune [[alarm_tune]]",
+        "nl": "Stel de alarm melodie in [[alarm_tune]]",
+        "de": "Einstellen des Alarmtons [[alarm_tune]]"
+      }
     }
   ]
 }

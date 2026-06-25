@@ -14,11 +14,36 @@
         "en": "Tariff preset"
       },
       "values": [
-        { "id": "custom", "title": { "en": "Custom rate" } },
-        { "id": "FLAT", "title": { "en": "Flat Rate" } },
-        { "id": "TOU_DAY_NIGHT", "title": { "en": "Day/Night" } },
-        { "id": "TOU_PEAK_SHOULDER_OFFPEAK", "title": { "en": "Peak/Shoulder/Off-Peak" } },
-        { "id": "UK_ECONOMY_7", "title": { "en": "UK Economy 7" } }
+        {
+          "id": "custom",
+          "title": {
+            "en": "Custom rate"
+          }
+        },
+        {
+          "id": "FLAT",
+          "title": {
+            "en": "Flat Rate"
+          }
+        },
+        {
+          "id": "TOU_DAY_NIGHT",
+          "title": {
+            "en": "Day/Night"
+          }
+        },
+        {
+          "id": "TOU_PEAK_SHOULDER_OFFPEAK",
+          "title": {
+            "en": "Peak/Shoulder/Off-Peak"
+          }
+        },
+        {
+          "id": "UK_ECONOMY_7",
+          "title": {
+            "en": "UK Economy 7"
+          }
+        }
       ]
     },
     {
@@ -61,10 +86,28 @@
         "en": "Currency"
       },
       "values": [
-        { "id": "EUR", "title": { "en": "EUR" } },
-        { "id": "GBP", "title": { "en": "GBP" } },
-        { "id": "USD", "title": { "en": "USD" } }
+        {
+          "id": "EUR",
+          "title": {
+            "en": "EUR"
+          }
+        },
+        {
+          "id": "GBP",
+          "title": {
+            "en": "GBP"
+          }
+        },
+        {
+          "id": "USD",
+          "title": {
+            "en": "USD"
+          }
+        }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Set tariff rate [[preset]] [[custom_rate_kwh]] [[daily_charge]] [[tax_rate]] [[currency]]"
+  }
 }

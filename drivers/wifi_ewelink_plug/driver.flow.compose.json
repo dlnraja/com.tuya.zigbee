@@ -5,14 +5,20 @@
       "title": {
         "en": "Turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "wifi_ewelink_plug_turned_off",
       "title": {
         "en": "Turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off"
+      }
     },
     {
       "id": "wifi_ewelink_plug_power_changed",
@@ -29,7 +35,10 @@
           "example": 100
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed"
+      }
     }
   ],
   "conditions": [
@@ -38,7 +47,10 @@
       "title": {
         "en": "Is on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is on"
+      }
     }
   ],
   "actions": []

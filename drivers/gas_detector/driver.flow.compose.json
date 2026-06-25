@@ -15,7 +15,13 @@
         "fr": "Se déclenche quand du gaz combustible est détecté - évacuez immédiatement !",
         "de": "Wird ausgelöst, wenn brennbares Gas erkannt wird - sofort evakuieren!"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gas detected!",
+        "nl": "Gas gedetecteerd!",
+        "fr": "Gaz détecté !",
+        "de": "Gas erkannt!"
+      }
     },
     {
       "id": "gas_detector_gas_cleared",
@@ -25,7 +31,13 @@
         "fr": "Alarme gaz terminée",
         "de": "Gasalarm aufgehoben"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gas alarm cleared",
+        "nl": "Gas alarm opgeheven",
+        "fr": "Alarme gaz terminée",
+        "de": "Gasalarm aufgehoben"
+      }
     },
     {
       "id": "gas_detector_co_detected",
@@ -42,7 +54,13 @@
         "fr": "Se déclenche quand du CO est détecté - évacuez immédiatement !",
         "de": "Wird ausgelöst, wenn CO erkannt wird - sofort evakuieren!"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Carbon monoxide detected!",
+        "nl": "Koolmonoxide gedetecteerd!",
+        "fr": "Monoxyde de carbone détecté !",
+        "de": "Kohlenmonoxid erkannt!"
+      }
     },
     {
       "id": "gas_detector_co_cleared",
@@ -52,7 +70,13 @@
         "fr": "Alarme CO terminée",
         "de": "CO-Alarm aufgehoben"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO alarm cleared",
+        "nl": "CO alarm opgeheven",
+        "fr": "Alarme CO terminée",
+        "de": "CO-Alarm aufgehoben"
+      }
     },
     {
       "id": "gas_detector_tamper_true",
@@ -62,7 +86,13 @@
         "fr": "Alerte sabotage",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
     },
     {
       "id": "gas_detector_battery_changed",
@@ -85,7 +115,13 @@
           "example": 75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      }
     },
     {
       "id": "gas_detector_battery_low",
@@ -95,7 +131,13 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "gas_detector_co_alarm",
@@ -105,7 +147,13 @@
         "nl": "CO alarm",
         "de": "CO-Alarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO alarm",
+        "fr": "Alarme CO",
+        "nl": "CO alarm",
+        "de": "CO-Alarm"
+      }
     },
     {
       "id": "gas_detector_gas_alarm",
@@ -115,7 +163,13 @@
         "nl": "Gasalarm",
         "de": "Gasalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gas alarm",
+        "fr": "Alarme gaz",
+        "nl": "Gasalarm",
+        "de": "Gasalarm"
+      }
     }
   ],
   "conditions": [
@@ -127,7 +181,13 @@
         "fr": "Gaz !{{est|n'est pas}} détecté",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gas !{{is|is not}} detected",
+        "nl": "Gas !{{is|is niet}} gedetecteerd",
+        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "de": "Gas !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "gas_detector_co_is_detected",
@@ -137,7 +197,13 @@
         "fr": "CO !{{est|n'est pas}} détecté",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO !{{is|is not}} detected",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "gas_detector_co_active",
@@ -147,7 +213,13 @@
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO !{{is|is not}} detected",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "gas_detector_gas_active",
@@ -157,7 +229,13 @@
         "nl": "Gas !{{is|is niet}} gedetecteerd",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gas !{{is|is not}} detected",
+        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "nl": "Gas !{{is|is niet}} gedetecteerd",
+        "de": "Gas !{{ist|ist nicht}} erkannt"
+      }
     }
   ],
   "actions": [
@@ -169,7 +247,13 @@
         "fr": "Tester le détecteur",
         "de": "Detektor testen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Test the detector",
+        "nl": "Detector testen",
+        "fr": "Tester le détecteur",
+        "de": "Detektor testen"
+      }
     },
     {
       "id": "gas_detector_mute",
@@ -179,7 +263,13 @@
         "fr": "Couper l'alarme",
         "de": "Alarm stummschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Mute alarm",
+        "nl": "Alarm dempen",
+        "fr": "Couper l'alarme",
+        "de": "Alarm stummschalten"
+      }
     }
   ]
 }

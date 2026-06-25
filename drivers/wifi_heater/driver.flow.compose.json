@@ -20,7 +20,13 @@
           }
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater mode changed",
+        "fr": "Mode chauffage modifié",
+        "nl": "Verwarmingsmodus gewijzigd",
+        "de": "Heizmodus geändert"
+      }
     },
     {
       "id": "wifi_heater_turned_on",
@@ -30,7 +36,13 @@
         "nl": "Verwarming ingeschakeld",
         "de": "Heizung eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater turned on",
+        "fr": "Radiateur allumé",
+        "nl": "Verwarming ingeschakeld",
+        "de": "Heizung eingeschaltet"
+      }
     },
     {
       "id": "wifi_heater_turned_off",
@@ -40,7 +52,13 @@
         "nl": "Verwarming uitgeschakeld",
         "de": "Heizung ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater turned off",
+        "fr": "Radiateur éteint",
+        "nl": "Verwarming uitgeschakeld",
+        "de": "Heizung ausgeschaltet"
+      }
     }
   ],
   "conditions": [
@@ -52,7 +70,13 @@
         "nl": "Verwarming is aan",
         "de": "Heizung ist an"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater is on",
+        "fr": "Radiateur est allumé",
+        "nl": "Verwarming is aan",
+        "de": "Heizung ist an"
+      }
     },
     {
       "id": "wifi_heater_mode_is",
@@ -87,7 +111,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Heater mode is... [[mode]]",
+        "fr": "Mode chauffage est... [[mode]]",
+        "nl": "Verwarmingsmodus is... [[mode]]",
+        "de": "Heizmodus ist... [[mode]]"
+      }
     }
   ],
   "actions": [
@@ -124,7 +154,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set heater mode [[mode]]",
+        "fr": "Définir mode chauffage [[mode]]",
+        "nl": "Stel verwarmingsmodus in [[mode]]",
+        "de": "Heizmodus einstellen [[mode]]"
+      }
     },
     {
       "id": "wifi_heater_set_temperature",
@@ -144,7 +180,13 @@
           "label": "°C",
           "labelDecimals": 0
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set target temperature [[temperature]]",
+        "fr": "Définir température cible [[temperature]]",
+        "nl": "Stel doeltemperatuur in [[temperature]]",
+        "de": "Zieltemperatur einstellen [[temperature]]"
+      }
     }
   ]
 }

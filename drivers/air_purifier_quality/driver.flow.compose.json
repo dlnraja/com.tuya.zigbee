@@ -17,7 +17,11 @@
           "example": 800
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 level changed",
+        "fr": "Niveau CO2 changÃ©"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_co2_alert_on",
@@ -25,7 +29,11 @@
         "en": "CO2 alert triggered",
         "fr": "Alerte CO2 dÃ©clenchÃ©e"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 alert triggered",
+        "fr": "Alerte CO2 dÃ©clenchÃ©e"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_co2_alert_off",
@@ -33,7 +41,11 @@
         "en": "CO2 returned to normal",
         "fr": "CO2 revenu Ã la normale"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 returned to normal",
+        "fr": "CO2 revenu Ã la normale"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_air_temperature_changed",
@@ -52,7 +64,11 @@
           "example": 22
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_air_humidity_changed",
@@ -71,7 +87,11 @@
           "example": 50
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_pm25_changed",
@@ -90,7 +110,11 @@
           "example": 25
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 level changed",
+        "fr": "Niveau PM2.5 changÃ©"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_temp_changed",
@@ -100,7 +124,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geÃ¤ndert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_humidity_changed",
@@ -110,7 +140,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geÃ¤ndert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_battery_low",
@@ -120,7 +156,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -137,7 +179,11 @@
           "min": 400,
           "max": 5000
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "CO2 level is above [[co2]]",
+        "fr": "Niveau CO2 supÃ©rieur Ã [[co2]]"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_co2_below",
@@ -152,7 +198,11 @@
           "min": 400,
           "max": 5000
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "CO2 level is below [[co2]]",
+        "fr": "Niveau CO2 infÃ©rieur Ã [[co2]]"
+      }
     },
     {
       "id": "air_purifier_quality_air_quality_co2_air_quality_good",
@@ -160,7 +210,11 @@
         "en": "Air quality is good",
         "fr": "QualitÃ© air bonne"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality is good",
+        "fr": "QualitÃ© air bonne"
+      }
     }
   ]
 }

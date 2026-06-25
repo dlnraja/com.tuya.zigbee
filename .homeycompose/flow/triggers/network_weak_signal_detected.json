@@ -55,5 +55,8 @@
         "en": "Device type"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Weak signal detected [[lqi_threshold]]"
+  }
 }

@@ -12,5 +12,11 @@
     "fr": "Vérifier si un détecteur de présence virtuel considère la pièce comme occupée",
     "de": "Prüfen, ob ein virtueller Anwesenheitssensor seinen Raum als besetzt betrachtet"
   },
-  "args": []
+  "args": [],
+  "titleFormatted": {
+    "en": "Any room !{{is|is not}} occupied",
+    "nl": "Een kamer !{{is|is niet}} bezet",
+    "fr": "Une pièce !{{est|n'est pas}} occupée",
+    "de": "Ein Raum !{{ist|ist nicht}} besetzt"
+  }
 }

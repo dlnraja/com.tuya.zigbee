@@ -6,7 +6,11 @@
         "en": "Light turned on",
         "fr": "Lumière allumée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
+      }
     },
     {
       "id": "hybrid_light_sensor_turned_off",
@@ -14,7 +18,11 @@
         "en": "Light turned off",
         "fr": "Lumière éteinte"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
+      }
     },
     {
       "id": "hybrid_light_sensor_button_pressed",
@@ -22,7 +30,11 @@
         "en": "Button pressed",
         "fr": "Bouton appuyé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
     }
   ],
   "conditions": [
@@ -32,7 +44,11 @@
         "en": "Light is on",
         "fr": "Lumière est allumée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light is on",
+        "fr": "Lumière est allumée"
+      }
     }
   ],
   "actions": [
@@ -42,7 +58,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "hybrid_light_sensor_turn_off",
@@ -50,7 +70,11 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
     },
     {
       "id": "hybrid_light_sensor_set_brightness",
@@ -70,7 +94,11 @@
             "fr": "Luminosité (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]"
+      }
     }
   ]
 }

@@ -17,7 +17,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "device_generic_tuya_universal_generic_tuya_measure_humidity_changed",
@@ -36,7 +40,11 @@
           "example": 65
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "device_generic_tuya_universal_generic_tuya_dp_received",
@@ -64,7 +72,11 @@
           "example": "100"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Data Point received",
+        "fr": "Point de données reçu"
+      }
     },
     {
       "id": "device_generic_tuya_universal_generic_tuya_battery_low",
@@ -74,7 +86,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "device_generic_tuya_universal_generic_tuya_temp_changed",
@@ -84,7 +102,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "device_generic_tuya_universal_generic_tuya_humidity_changed",
@@ -94,7 +118,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     }
   ],
   "conditions": [
@@ -116,7 +146,11 @@
             "fr": "Niveau (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery is above... [[level]]",
+        "fr": "Batterie au-dessus de... [[level]]"
+      }
     }
   ],
   "actions": [
@@ -138,7 +172,11 @@
             "fr": "Numéro DP"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Request Data Point [[dp]]",
+        "fr": "Demander Point de Données [[dp]]"
+      }
     }
   ]
 }

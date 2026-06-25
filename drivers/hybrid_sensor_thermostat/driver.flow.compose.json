@@ -17,7 +17,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "hybrid_sensor_thermostat_humidity_changed",
@@ -36,7 +40,11 @@
           "example": 55
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "hybrid_sensor_thermostat_mode_changed",
@@ -55,7 +63,11 @@
           "example": "heat"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Thermostat mode changed",
+        "fr": "Mode thermostat changé"
+      }
     },
     {
       "id": "hybrid_sensor_thermostat_battery_low",
@@ -63,7 +75,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     }
   ],
   "conditions": [
@@ -112,7 +128,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Thermostat mode is [[mode]]",
+        "fr": "Mode thermostat est [[mode]]"
+      }
     },
     {
       "id": "hybrid_sensor_thermostat_temperature_above",
@@ -132,7 +152,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is above [[temp]]",
+        "fr": "Température supérieure à [[temp]]"
+      }
     },
     {
       "id": "hybrid_sensor_thermostat_temperature_below",
@@ -152,7 +176,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is below [[temp]]",
+        "fr": "Température inférieure à [[temp]]"
+      }
     }
   ],
   "actions": [
@@ -201,7 +229,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set thermostat mode [[mode]]",
+        "fr": "Définir mode thermostat [[mode]]"
+      }
     },
     {
       "id": "hybrid_sensor_thermostat_set_temperature",
@@ -221,7 +253,11 @@
             "fr": "Température (°C)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set target temperature [[temperature]]",
+        "fr": "Définir température cible [[temperature]]"
+      }
     }
   ]
 }

@@ -6,7 +6,11 @@
         "fr": "Bouton appuyé",
         "en": "Button pressed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "fr": "Bouton appuyé",
+        "en": "Button pressed"
+      }
     },
     {
       "id": "smart_knob_switch_button_1gang_button_1_double",
@@ -14,7 +18,11 @@
         "fr": "Bouton double-appui",
         "en": "Button double-pressed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "fr": "Bouton double-appui",
+        "en": "Button double-pressed"
+      }
     },
     {
       "id": "smart_knob_switch_button_1gang_button_1_long",
@@ -22,7 +30,11 @@
         "fr": "Bouton appui long",
         "en": "Button long-pressed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "fr": "Bouton appui long",
+        "en": "Button long-pressed"
+      }
     },
     {
       "id": "smart_knob_switch_button_1gang_button_1_triple",
@@ -30,7 +42,11 @@
         "fr": "Bouton triple-appui",
         "en": "Button triple-pressed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "fr": "Bouton triple-appui",
+        "en": "Button triple-pressed"
+      }
     },
     {
       "id": "smart_knob_switch_button_1gang_button_1_release",
@@ -38,7 +54,11 @@
         "fr": "Bouton relâché",
         "en": "Button released"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "fr": "Bouton relâché",
+        "en": "Button released"
+      }
     }
   ],
   "conditions": [],

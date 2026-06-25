@@ -5,14 +5,20 @@
       "title": {
         "en": "Light turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned on"
+      }
     },
     {
       "id": "wifi_led_strip_turned_off",
       "title": {
         "en": "Light turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned off"
+      }
     }
   ],
   "actions": [
@@ -26,7 +32,10 @@
           "name": "color",
           "type": "color"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set color [[color]]"
+      }
     }
   ],
   "conditions": []

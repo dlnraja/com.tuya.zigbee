@@ -14,11 +14,36 @@
         "en": "Mode"
       },
       "values": [
-        { "id": "auto", "title": { "en": "Auto (follow sun)" } },
-        { "id": "day", "title": { "en": "Daylight (6500K)" } },
-        { "id": "warm", "title": { "en": "Warm (2700K)" } },
-        { "id": "golden", "title": { "en": "Golden hour (3200K)" } },
-        { "id": "night", "title": { "en": "Night (2200K)" } }
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto (follow sun)"
+          }
+        },
+        {
+          "id": "day",
+          "title": {
+            "en": "Daylight (6500K)"
+          }
+        },
+        {
+          "id": "warm",
+          "title": {
+            "en": "Warm (2700K)"
+          }
+        },
+        {
+          "id": "golden",
+          "title": {
+            "en": "Golden hour (3200K)"
+          }
+        },
+        {
+          "id": "night",
+          "title": {
+            "en": "Night (2200K)"
+          }
+        }
       ]
     },
     {
@@ -48,5 +73,8 @@
         "en": "Target color temperature (K)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Set adaptive lighting mode [[mode]] [[transition_seconds]]"
+  }
 }

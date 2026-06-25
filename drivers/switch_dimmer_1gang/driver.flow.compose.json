@@ -8,7 +8,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "switch_dimmer_1gang_turned_off",
@@ -18,7 +24,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "switch_dimmer_1gang_dim_changed",
@@ -38,7 +50,13 @@
           "example": 75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée",
+        "nl": "Helderheid gewijzigd",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "switch_dimmer_1gang_brightness_increased",
@@ -55,7 +73,10 @@
           "example": 0.75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness increased - physical"
+      }
     },
     {
       "id": "switch_dimmer_1gang_brightness_decreased",
@@ -72,12 +93,18 @@
           "example": 0.25
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness decreased - physical"
+      }
     },
     {
       "id": "switch_dimmer_1gang_physical_gang1_on",
       "args": [],
       "title": {
+        "en": "Turned on - physical (Gang 1)"
+      },
+      "titleFormatted": {
         "en": "Turned on - physical (Gang 1)"
       }
     },
@@ -85,6 +112,9 @@
       "id": "switch_dimmer_1gang_physical_gang1_off",
       "args": [],
       "title": {
+        "en": "Turned off - physical (Gang 1)"
+      },
+      "titleFormatted": {
         "en": "Turned off - physical (Gang 1)"
       }
     }
@@ -98,7 +128,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -110,7 +146,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "switch_dimmer_1gang_turn_off",
@@ -120,7 +162,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "switch_dimmer_1gang_toggle",
@@ -130,7 +178,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "switch_dimmer_1gang_set_brightness",
@@ -150,7 +204,13 @@
           "label": "%",
           "labelDecimals": 0
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]",
+        "nl": "Helderheid instellen [[brightness]]",
+        "de": "Helligkeit einstellen [[brightness]]"
+      }
     }
   ]
 }

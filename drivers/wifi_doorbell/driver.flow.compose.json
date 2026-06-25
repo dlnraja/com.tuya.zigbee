@@ -5,14 +5,20 @@
       "title": {
         "en": "Doorbell pressed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Doorbell pressed"
+      }
     },
     {
       "id": "wifi_doorbell_motion",
       "title": {
         "en": "Motion detected"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected"
+      }
     }
   ],
   "conditions": [],

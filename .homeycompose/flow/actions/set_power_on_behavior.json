@@ -6,12 +6,6 @@
     "nl": "Gedrag bij inschakelen instellen",
     "de": "Einschaltverhalten einstellen"
   },
-  "titleFormatted": {
-    "en": "Set Power On Behavior to [[behavior]]",
-    "fr": "Définir Comportement à la Mise sous Tension à [[behavior]]",
-    "nl": "Gedrag bij inschakelen instellen op [[behavior]]",
-    "de": "Einschaltverhalten auf [[behavior]] einstellen"
-  },
   "args": [
     {
       "name": "device",
