@@ -3,13 +3,14 @@
 require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
-class SmartKnobRotaryDevice extends ZigBeeDevice {
+class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('Smart Knob Rotary device initialized');
     
     // Store zclNode for later use
@@ -207,7 +208,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   _setupCommandListeners(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
-      if (!endpoint) return;
+      if (!endpoint) {return;}
 
       endpoint.on('command', (clusterId, commandId, payload) => {
         if (clusterId === 18) { 
@@ -223,7 +224,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _setupScenesCluster(zclNode) {
     try {
       const ep = zclNode.endpoints[1];
-      if (!ep) return;
+      if (!ep) {return;}
 
       const sc = ep.clusters?.scenes || ep.clusters?.[5] || 
                  ep.bindings?.scenes || ep.bindings?.[5];
@@ -290,6 +291,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   async _handleRotation(direction, rate) {
+    if (this._destroyed) return;
     const delta = direction === 'up' ? 0.1 : -0.1;
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
@@ -300,7 +302,8 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
-    const delta = direction === 'up' ? (stepSize / 254) : -(stepSize / 254);
+    if (this._destroyed) return;
+    const delta = direction === 'up' ? stepSize / 254 : -(stepSize / 254);
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
       await this._triggerRotateRight();
@@ -320,11 +323,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _triggerRotateLeft() {
     if (this.hasCapability('button.rotate_left')) {
       await this.safeSetCapabilityValue('button.rotate_left', true).catch(this.error);
-      this.homey.setTimeout(() => {
-        this.safeSetCapabilityValue('button.rotate_left', false).catch(this.error);
-      }, 100);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_left', false).catch(this.error); }, 100);
     }
-    const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
+    const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
     }
@@ -333,11 +334,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _triggerRotateRight() {
     if (this.hasCapability('button.rotate_right')) {
       await this.safeSetCapabilityValue('button.rotate_right', true).catch(this.error);
-      this.homey.setTimeout(() => {
-        this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error);
-      }, 100);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.rotate_right', false).catch(this.error); }, 100);
     }
-    const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
+    const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
     }
@@ -346,12 +345,10 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _triggerButtonPress(action) {
     if (this.hasCapability('button.press')) {
       await this.safeSetCapabilityValue('button.press', true).catch(this.error);
-      this.homey.setTimeout(() => {
-        this.safeSetCapabilityValue('button.press', false).catch(this.error);
-      }, 100);
+      this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);
     }
     try {
-      const genericTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
+      const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }
@@ -368,7 +365,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        const triggerCard = this.homey.flow.getTriggerCard(specificCardId, 'trigger');
+        const triggerCard = this.homey.flow.getDeviceTriggerCard(specificCardId, 'trigger');
         if (triggerCard) {
             await triggerCard.trigger(this, { action }).catch(() => {});
         }
@@ -378,7 +375,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async _setupE000Detection(zclNode) {
     try {
-      const ep = zclNode?.endpoints?.[1]; if (!ep ) return;
+      const ep = zclNode?.endpoints?.[1]; if (!ep ) {return;}
       const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344];
       if (e?.on) {
         e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000')); });
@@ -392,19 +389,20 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _setupTuyaDPDetection(zclNode) {
     try {
       const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
-      if (!tc?.on) return;
+      if (!tc?.on) {return;}
       tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
       tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
     } catch (e) { this.log('[TUYA-DP] Error:', e.message); }
   }
 
   onDeleted() {
+    super.onDeleted();
     this.log('Smart Knob Rotary device deleted');
   }
 
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager?.forceRecovery?.();
     }
