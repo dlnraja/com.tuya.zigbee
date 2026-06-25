@@ -19,8 +19,18 @@
         "en": "Force state"
       },
       "values": [
-        { "id": "present", "title": { "en": "Present" } },
-        { "id": "clear", "title": { "en": "Clear" } }
+        {
+          "id": "present",
+          "title": {
+            "en": "Present"
+          }
+        },
+        {
+          "id": "clear",
+          "title": {
+            "en": "Clear"
+          }
+        }
       ]
     }
   ],

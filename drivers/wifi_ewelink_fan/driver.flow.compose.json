@@ -5,14 +5,20 @@
       "title": {
         "en": "Turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "wifi_ewelink_fan_turned_off",
       "title": {
         "en": "Turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off"
+      }
     }
   ],
   "conditions": [
@@ -21,7 +27,10 @@
       "title": {
         "en": "Is on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is on"
+      }
     }
   ],
   "actions": [
@@ -39,7 +48,10 @@
           "step": 1,
           "label": "%"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set fan speed [[dim]]"
+      }
     }
   ]
 }

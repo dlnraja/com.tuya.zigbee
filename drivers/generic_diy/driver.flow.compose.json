@@ -21,7 +21,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "generic_diy_humidity_changed",
@@ -44,7 +48,11 @@
           "example": 65
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "generic_diy_motion_detected",
@@ -56,7 +64,11 @@
         "en": "When the DIY sensor detects motion",
         "fr": "Quand le capteur DIY détecte un mouvement"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
     },
     {
       "id": "generic_diy_motion_cleared",
@@ -68,7 +80,11 @@
         "en": "When no more motion is detected",
         "fr": "Quand plus aucun mouvement n'est détecté"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
+      }
     },
     {
       "id": "generic_diy_button_pressed",
@@ -91,7 +107,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
     },
     {
       "id": "generic_diy_button_double_pressed",
@@ -114,7 +134,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double pressed",
+        "fr": "Bouton double-pressé"
+      }
     },
     {
       "id": "generic_diy_button_long_pressed",
@@ -137,7 +161,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long pressed",
+        "fr": "Bouton appui long"
+      }
     },
     {
       "id": "generic_diy_switch_turned_on",
@@ -160,7 +188,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch turned on",
+        "fr": "Interrupteur activé"
+      }
     },
     {
       "id": "generic_diy_switch_turned_off",
@@ -183,7 +215,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Switch turned off",
+        "fr": "Interrupteur désactivé"
+      }
     },
     {
       "id": "generic_diy_contact_opened",
@@ -195,7 +231,11 @@
         "en": "When the DIY contact sensor opens",
         "fr": "Quand le capteur de contact DIY s'ouvre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact opened",
+        "fr": "Contact ouvert"
+      }
     },
     {
       "id": "generic_diy_contact_closed",
@@ -207,7 +247,11 @@
         "en": "When the DIY contact sensor closes",
         "fr": "Quand le capteur de contact DIY se ferme"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact closed",
+        "fr": "Contact fermé"
+      }
     },
     {
       "id": "generic_diy_illuminance_changed",
@@ -230,7 +274,11 @@
           "example": 500
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité changée"
+      }
     },
     {
       "id": "generic_diy_battery_low",
@@ -253,7 +301,11 @@
           "example": 15
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "generic_diy_pressure_changed",
@@ -276,7 +328,11 @@
           "example": 1013
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Pressure changed",
+        "fr": "Pression changée"
+      }
     },
     {
       "id": "generic_diy_analog_changed",
@@ -308,7 +364,11 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Analog value changed",
+        "fr": "Valeur analogique changée"
+      }
     }
   ],
   "conditions": [
@@ -322,7 +382,11 @@
         "en": "Check if the DIY switch is on",
         "fr": "Vérifie si l'interrupteur DIY est activé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "DIY switch is on",
+        "fr": "Interrupteur DIY est activé"
+      }
     },
     {
       "id": "generic_diy_motion_active",
@@ -334,7 +398,11 @@
         "en": "Check if motion is currently detected",
         "fr": "Vérifie si un mouvement est actuellement détecté"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion is detected",
+        "fr": "Mouvement détecté"
+      }
     },
     {
       "id": "generic_diy_contact_open",
@@ -346,7 +414,11 @@
         "en": "Check if the contact sensor is open",
         "fr": "Vérifie si le capteur de contact est ouvert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact is open",
+        "fr": "Contact est ouvert"
+      }
     },
     {
       "id": "generic_diy_temperature_above",
@@ -371,7 +443,11 @@
             "fr": "25"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is above... [[temperature]]",
+        "fr": "Température supérieure à... [[temperature]]"
+      }
     },
     {
       "id": "generic_diy_humidity_above",
@@ -396,7 +472,11 @@
             "fr": "60"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Humidity is above... [[humidity]]",
+        "fr": "Humidité supérieure à... [[humidity]]"
+      }
     },
     {
       "id": "generic_diy_battery_below",
@@ -421,7 +501,11 @@
             "fr": "20"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery is below... [[battery]]",
+        "fr": "Batterie inférieure à... [[battery]]"
+      }
     }
   ],
   "actions": [
@@ -435,7 +519,11 @@
         "en": "Turn on the DIY switch",
         "fr": "Active l'interrupteur DIY"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on DIY switch",
+        "fr": "Activer interrupteur DIY"
+      }
     },
     {
       "id": "generic_diy_turn_off",
@@ -447,7 +535,11 @@
         "en": "Turn off the DIY switch",
         "fr": "Désactive l'interrupteur DIY"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off DIY switch",
+        "fr": "Désactiver interrupteur DIY"
+      }
     },
     {
       "id": "generic_diy_toggle",
@@ -459,7 +551,11 @@
         "en": "Toggle the DIY switch state",
         "fr": "Bascule l'état de l'interrupteur DIY"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle DIY switch",
+        "fr": "Basculer interrupteur DIY"
+      }
     },
     {
       "id": "generic_diy_set_dim",
@@ -483,7 +579,11 @@
           "max": 1,
           "step": 0.01
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set DIY dimmer level [[level]]",
+        "fr": "Définir niveau variateur DIY [[level]]"
+      }
     },
     {
       "id": "generic_diy_identify",
@@ -495,7 +595,11 @@
         "en": "Make the DIY device blink/beep to identify it",
         "fr": "Fait clignoter/biper le dispositif DIY pour l'identifier"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Identify DIY device",
+        "fr": "Identifier dispositif DIY"
+      }
     },
     {
       "id": "generic_diy_turn_on_endpoint",
@@ -518,7 +622,11 @@
           "min": 1,
           "max": 8
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Turn on endpoint... [[endpoint]]",
+        "fr": "Activer endpoint... [[endpoint]]"
+      }
     },
     {
       "id": "generic_diy_turn_off_endpoint",
@@ -541,7 +649,11 @@
           "min": 1,
           "max": 8
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Turn off endpoint... [[endpoint]]",
+        "fr": "Désactiver endpoint... [[endpoint]]"
+      }
     }
   ]
 }

@@ -7,7 +7,11 @@
         "en": "Motion detected",
         "fr": "Mouvement détecté"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_motion_cleared",
@@ -15,7 +19,11 @@
         "en": "Motion cleared",
         "fr": "Mouvement terminé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_battery_low",
@@ -23,7 +31,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_battery_changed",
@@ -42,7 +54,11 @@
           "example": 75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_tamper_true",
@@ -52,7 +68,13 @@
         "nl": "Sabotage alarm geactiveerd",
         "de": "Manipulationsalarm ausgelöst"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_tamper_false",
@@ -62,7 +84,13 @@
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme anti-sabotage terminée",
+        "nl": "Sabotage alarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_lux_changed",
@@ -102,7 +130,13 @@
           "example": "smart_reporting"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte veranderd",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_tamper_alarm",
@@ -112,7 +146,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -122,7 +162,11 @@
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté"
+      }
     },
     {
       "id": "sensor_contact_motion_motion_sensor_tamper_active",
@@ -132,7 +176,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ]
 }

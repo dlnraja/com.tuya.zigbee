@@ -5,14 +5,20 @@
       "title": {
         "en": "Motion detected"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected"
+      }
     },
     {
       "id": "wifi_camera_motion_cleared",
       "title": {
         "en": "Motion cleared"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion cleared"
+      }
     }
   ],
   "actions": [
@@ -40,7 +46,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set privacy mode [[mode]]"
+      }
     },
     {
       "id": "wifi_camera_set_night_vision",
@@ -72,7 +81,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set night vision [[mode]]"
+      }
     },
     {
       "id": "wifi_camera_ptz_move",
@@ -110,7 +122,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "PTZ move camera [[direction]]"
+      }
     }
   ],
   "conditions": []

@@ -5,14 +5,20 @@
       "title": {
         "en": "Pet was fed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Pet was fed"
+      }
     },
     {
       "id": "pet_feeder_food_low",
       "title": {
         "en": "Food level is low"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Food level is low"
+      }
     }
   ],
   "conditions": [
@@ -21,7 +27,10 @@
       "title": {
         "en": "Food level is OK"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Food level is OK"
+      }
     }
   ],
   "actions": [
@@ -30,7 +39,10 @@
       "title": {
         "en": "Feed now"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Feed now"
+      }
     }
   ]
 }

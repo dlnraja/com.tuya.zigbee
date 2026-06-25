@@ -29,12 +29,42 @@
         "en": "Condition 1 - Operator"
       },
       "values": [
-        { "id": "==", "title": { "en": "equals" } },
-        { "id": "!=", "title": { "en": "not equals" } },
-        { "id": ">", "title": { "en": "greater than" } },
-        { "id": "<", "title": { "en": "less than" } },
-        { "id": ">=", "title": { "en": "greater or equal" } },
-        { "id": "<=", "title": { "en": "less or equal" } }
+        {
+          "id": "==",
+          "title": {
+            "en": "equals"
+          }
+        },
+        {
+          "id": "!=",
+          "title": {
+            "en": "not equals"
+          }
+        },
+        {
+          "id": ">",
+          "title": {
+            "en": "greater than"
+          }
+        },
+        {
+          "id": "<",
+          "title": {
+            "en": "less than"
+          }
+        },
+        {
+          "id": ">=",
+          "title": {
+            "en": "greater or equal"
+          }
+        },
+        {
+          "id": "<=",
+          "title": {
+            "en": "less or equal"
+          }
+        }
       ]
     },
     {
@@ -61,12 +91,42 @@
         "en": "Condition 2 - Operator"
       },
       "values": [
-        { "id": "==", "title": { "en": "equals" } },
-        { "id": "!=", "title": { "en": "not equals" } },
-        { "id": ">", "title": { "en": "greater than" } },
-        { "id": "<", "title": { "en": "less than" } },
-        { "id": ">=", "title": { "en": "greater or equal" } },
-        { "id": "<=", "title": { "en": "less or equal" } }
+        {
+          "id": "==",
+          "title": {
+            "en": "equals"
+          }
+        },
+        {
+          "id": "!=",
+          "title": {
+            "en": "not equals"
+          }
+        },
+        {
+          "id": ">",
+          "title": {
+            "en": "greater than"
+          }
+        },
+        {
+          "id": "<",
+          "title": {
+            "en": "less than"
+          }
+        },
+        {
+          "id": ">=",
+          "title": {
+            "en": "greater or equal"
+          }
+        },
+        {
+          "id": "<=",
+          "title": {
+            "en": "less or equal"
+          }
+        }
       ]
     },
     {
@@ -85,5 +145,8 @@
         "en": "All conditions met"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "All conditions met [[device]] [[condition_1_cap]] [[condition_1_op]] [[condition_1_val]] [[condition_2_cap]] [[condition_2_op]] [[condition_2_val]]"
+  }
 }

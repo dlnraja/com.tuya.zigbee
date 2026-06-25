@@ -21,7 +21,13 @@
           "example": 5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Feeding completed",
+        "fr": "Distribution terminée",
+        "nl": "Voeding voltooid",
+        "de": "Fütterung abgeschlossen"
+      }
     },
     {
       "id": "pet_feeder_zigbee_battery_low",
@@ -31,7 +37,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -43,7 +55,13 @@
         "nl": "!{{Is|Is niet}} aan",
         "de": "!{{Ist|Ist nicht}} eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      }
     }
   ],
   "actions": [
@@ -69,7 +87,13 @@
             "de": "Menge"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Feed [[amount]]",
+        "fr": "Nourrir [[amount]]",
+        "nl": "Voeden [[amount]]",
+        "de": "Füttern [[amount]]"
+      }
     }
   ]
 }

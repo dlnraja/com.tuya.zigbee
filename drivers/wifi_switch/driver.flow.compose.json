@@ -5,14 +5,20 @@
       "title": {
         "en": "Turned on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "wifi_switch_turned_off",
       "title": {
         "en": "Turned off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off"
+      }
     }
   ],
   "conditions": [
@@ -21,7 +27,10 @@
       "title": {
         "en": "Is on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is on"
+      }
     }
   ],
   "actions": [
@@ -30,7 +39,10 @@
       "title": {
         "en": "Toggle on/off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle on/off"
+      }
     }
   ]
 }

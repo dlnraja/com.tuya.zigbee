@@ -6,7 +6,11 @@
         "en": "Open",
         "de": "Öffnen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "de": "Öffnen"
+      }
     },
     {
       "id": "curtain_module_2_gang_move_close_2gang",
@@ -14,7 +18,11 @@
         "en": "Close",
         "de": "Schließen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "de": "Schließen"
+      }
     }
   ],
   "triggers": [],

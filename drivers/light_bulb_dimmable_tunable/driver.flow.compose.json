@@ -6,7 +6,11 @@
         "en": "Turned on",
         "fr": "AllumÃ©"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "AllumÃ©"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "fr": "Ã‰teint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_dim_changed",
@@ -33,7 +41,11 @@
           "example": 0.75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "LuminositÃ© changÃ©e"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turned_on",
@@ -43,7 +55,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "AllumÃ©",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turned_off",
@@ -53,7 +71,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_battery_low",
@@ -63,7 +87,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -73,7 +103,11 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_is_on",
@@ -83,7 +117,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -93,7 +133,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_turn_off",
@@ -101,7 +145,11 @@
         "en": "Turn off",
         "fr": "Ã‰teindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Ã‰teindre"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_toggle",
@@ -109,7 +157,11 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle on or off",
+        "fr": "Basculer"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_smart_bulb_dimmer_set_dim",
@@ -131,7 +183,11 @@
             "fr": "LuminositÃ©"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness to... [[brightness]]",
+        "fr": "RÃ©gler la luminositÃ© Ã... [[brightness]]"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turn_on",
@@ -141,7 +197,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_turn_off",
@@ -151,7 +213,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Ã‰teindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_toggle",
@@ -161,7 +229,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "light_bulb_dimmable_tunable_bulb_dimmable_set_brightness",
@@ -181,7 +255,13 @@
           "label": "%",
           "labelDecimals": 0
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "RÃ©gler luminositÃ© [[brightness]]",
+        "nl": "Helderheid instellen [[brightness]]",
+        "de": "Helligkeit einstellen [[brightness]]"
+      }
     }
   ]
 }

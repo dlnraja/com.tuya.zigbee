@@ -6,7 +6,11 @@
         "en": "Turned on",
         "fr": "Allume"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allume"
+      }
     },
     {
       "id": "universal_zigbee_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "fr": "Eteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      }
     },
     {
       "id": "universal_zigbee_dim_changed",
@@ -33,7 +41,11 @@
           },
           "example": 0.75
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "Luminosite changee"
+      }
     },
     {
       "id": "universal_zigbee_temperature_changed",
@@ -52,7 +64,11 @@
           },
           "example": 21.5
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      }
     },
     {
       "id": "universal_zigbee_humidity_changed",
@@ -71,7 +87,11 @@
           },
           "example": 55
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidite changee"
+      }
     },
     {
       "id": "universal_zigbee_luminance_changed",
@@ -90,7 +110,11 @@
           },
           "example": 300
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changee"
+      }
     },
     {
       "id": "universal_zigbee_motion_detected",
@@ -98,7 +122,11 @@
         "en": "Motion detected",
         "fr": "Mouvement detecte"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement detecte"
+      }
     },
     {
       "id": "universal_zigbee_motion_off",
@@ -106,7 +134,11 @@
         "en": "Motion ended",
         "fr": "Mouvement termine"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion ended",
+        "fr": "Mouvement termine"
+      }
     },
     {
       "id": "universal_zigbee_contact_open",
@@ -114,7 +146,11 @@
         "en": "Contact opened",
         "fr": "Contact ouvert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact opened",
+        "fr": "Contact ouvert"
+      }
     },
     {
       "id": "universal_zigbee_contact_closed",
@@ -122,7 +158,11 @@
         "en": "Contact closed",
         "fr": "Contact ferme"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact closed",
+        "fr": "Contact ferme"
+      }
     },
     {
       "id": "universal_zigbee_battery_low",
@@ -132,7 +172,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "universal_zigbee_position_changed",
@@ -151,7 +197,11 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Position changed",
+        "fr": "Position changee"
+      }
     },
     {
       "id": "universal_zigbee_thermostat_mode_changed",
@@ -170,7 +220,11 @@
           },
           "example": "auto"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Thermostat mode changed",
+        "fr": "Mode thermostat change"
+      }
     }
   ],
   "conditions": [
@@ -180,7 +234,11 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      }
     },
     {
       "id": "universal_zigbee_thermostat_mode_is",
@@ -188,7 +246,11 @@
         "en": "Thermostat mode is !{{auto|heat|cool|off}}",
         "fr": "Mode thermostat est !{{auto|chaud|froid|eteint}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Thermostat mode is !{{auto|heat|cool|off}}",
+        "fr": "Mode thermostat est !{{auto|chaud|froid|eteint}}"
+      }
     }
   ],
   "actions": [
@@ -198,7 +260,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "universal_zigbee_turn_off",
@@ -206,7 +272,11 @@
         "en": "Turn off",
         "fr": "Eteindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      }
     },
     {
       "id": "universal_zigbee_toggle",
@@ -214,7 +284,11 @@
         "en": "Toggle",
         "fr": "Basculer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
     },
     {
       "id": "universal_zigbee_set_brightness",
@@ -231,7 +305,11 @@
           "step": 1,
           "label": "%"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Regler luminosite [[brightness]]"
+      }
     },
     {
       "id": "universal_zigbee_set_position",
@@ -248,7 +326,11 @@
           "step": 1,
           "label": "%"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set position [[position]]",
+        "fr": "Regler position [[position]]"
+      }
     },
     {
       "id": "universal_zigbee_set_thermostat_mode",
@@ -291,7 +373,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set thermostat mode [[mode]]",
+        "fr": "Regler mode thermostat [[mode]]"
+      }
     }
   ]
 }

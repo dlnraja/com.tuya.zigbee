@@ -49,5 +49,8 @@
         "en": "Event timestamp"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Sunrise detected [[elevation_threshold]]"
+  }
 }

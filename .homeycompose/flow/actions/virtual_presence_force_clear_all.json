@@ -12,5 +12,11 @@
     "fr": "Forcer l'effacement de l'état de présence pour tous les détecteurs de présence virtuels",
     "de": "Das Löschen des Anwesenheitsstatus für alle virtuellen Anwesenheitssensoren erzwingen"
   },
-  "args": []
+  "args": [],
+  "titleFormatted": {
+    "en": "Clear all rooms",
+    "nl": "Alle kamers wissen",
+    "fr": "Effacer toutes les pièces",
+    "de": "Alle Räume löschen"
+  }
 }

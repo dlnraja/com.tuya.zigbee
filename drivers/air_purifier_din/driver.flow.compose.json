@@ -5,14 +5,20 @@
       "title": {
         "en": "Turn on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_toggle",
@@ -22,7 +28,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     }
   ],
   "triggers": [
@@ -34,7 +46,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "AllumÃ©",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_turned_off",
@@ -44,7 +62,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_physical_on",
@@ -54,7 +78,13 @@
         "nl": "Aangezet - fysieke knop",
         "de": "Eingeschaltet - physische Taste"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on - physical button",
+        "fr": "AllumÃ© - bouton physique",
+        "nl": "Aangezet - fysieke knop",
+        "de": "Eingeschaltet - physische Taste"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_physical_off",
@@ -64,7 +94,13 @@
         "nl": "Uitgezet - fysieke knop",
         "de": "Ausgeschaltet - physische Taste"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off - physical button",
+        "fr": "Ã‰teint - bouton physique",
+        "nl": "Uitgezet - fysieke knop",
+        "de": "Ausgeschaltet - physische Taste"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_physical_single",
@@ -72,7 +108,11 @@
         "en": "Single press - physical",
         "fr": "Appui simple - physique"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Single press - physical",
+        "fr": "Appui simple - physique"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_physical_double",
@@ -80,7 +120,11 @@
         "en": "Double press - physical",
         "fr": "Double appui - physique"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Double press - physical",
+        "fr": "Double appui - physique"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_physical_long_press",
@@ -88,7 +132,11 @@
         "en": "Long press - physical",
         "fr": "Appui long - physique"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Long press - physical",
+        "fr": "Appui long - physique"
+      }
     },
     {
       "id": "air_purifier_din_din_rail_switch_power_changed",
@@ -98,7 +146,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geÃ¤ndert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changÃ©e",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geÃ¤ndert"
+      }
     }
   ],
   "conditions": [
@@ -110,7 +164,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ]
 }

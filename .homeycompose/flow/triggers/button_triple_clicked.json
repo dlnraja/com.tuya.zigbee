@@ -4,14 +4,14 @@
     "en": "Button was triple-clicked (Software)",
     "fr": "Bouton triple-cliquÃ© (Logiciel)"
   },
-  "titleFormatted": {
-    "en": "[[device]] button was triple-clicked",
-    "fr": "Bouton de [[device]] triple-cliquÃ©"
-  },
   "args": [
     {
       "name": "device",
       "type": "device"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button was triple-clicked (Software) [[device]]",
+    "fr": "Bouton triple-cliquÃ© (Logiciel) [[device]]"
+  }
 }

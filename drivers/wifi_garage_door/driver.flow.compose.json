@@ -5,14 +5,20 @@
       "title": {
         "en": "Garage opened"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage opened"
+      }
     },
     {
       "id": "wifi_garage_door_wifi_garage_closed",
       "title": {
         "en": "Garage closed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage closed"
+      }
     }
   ],
   "conditions": [
@@ -21,7 +27,10 @@
       "title": {
         "en": "Garage is open"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage is open"
+      }
     }
   ],
   "actions": []

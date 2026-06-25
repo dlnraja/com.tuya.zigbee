@@ -6,7 +6,11 @@
         "en": "Garage door opened",
         "fr": "Porte garage ouverte"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage door opened",
+        "fr": "Porte garage ouverte"
+      }
     },
     {
       "id": "hybrid_garage_door_sensor_closed",
@@ -14,7 +18,11 @@
         "en": "Garage door closed",
         "fr": "Porte garage fermée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage door closed",
+        "fr": "Porte garage fermée"
+      }
     },
     {
       "id": "hybrid_garage_door_sensor_contact_changed",
@@ -33,7 +41,11 @@
           "example": true
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact sensor changed",
+        "fr": "Capteur contact changé"
+      }
     },
     {
       "id": "hybrid_garage_door_sensor_battery_low",
@@ -41,7 +53,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     }
   ],
   "conditions": [
@@ -51,7 +67,11 @@
         "en": "Garage door is open",
         "fr": "Porte garage est ouverte"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage door is open",
+        "fr": "Porte garage est ouverte"
+      }
     },
     {
       "id": "hybrid_garage_door_sensor_is_closed",
@@ -59,7 +79,11 @@
         "en": "Garage door is closed",
         "fr": "Porte garage est fermée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Garage door is closed",
+        "fr": "Porte garage est fermée"
+      }
     }
   ],
   "actions": [
@@ -69,7 +93,11 @@
         "en": "Open garage door",
         "fr": "Ouvrir porte garage"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open garage door",
+        "fr": "Ouvrir porte garage"
+      }
     },
     {
       "id": "hybrid_garage_door_sensor_close",
@@ -77,7 +105,11 @@
         "en": "Close garage door",
         "fr": "Fermer porte garage"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close garage door",
+        "fr": "Fermer porte garage"
+      }
     }
   ]
 }

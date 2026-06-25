@@ -8,7 +8,10 @@
       "hint": {
         "en": "Triggers when the vacuum starts a cleaning cycle"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Cleaning started"
+      }
     },
     {
       "id": "wifi_robot_vacuum_cleaning_finished",
@@ -18,7 +21,10 @@
       "hint": {
         "en": "Triggers when the vacuum completes a cleaning cycle"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Cleaning finished"
+      }
     },
     {
       "id": "wifi_robot_vacuum_battery_low",
@@ -28,7 +34,10 @@
       "hint": {
         "en": "Triggers when vacuum battery drops below threshold"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low"
+      }
     },
     {
       "id": "wifi_robot_vacuum_fault_detected",
@@ -48,7 +57,10 @@
           "example": 1
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fault detected"
+      }
     },
     {
       "id": "wifi_robot_vacuum_brush_needs_replacement",
@@ -58,7 +70,10 @@
       "hint": {
         "en": "Triggers when main brush life drops below 10%"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brush needs replacement"
+      }
     },
     {
       "id": "wifi_robot_vacuum_filter_needs_replacement",
@@ -68,7 +83,10 @@
       "hint": {
         "en": "Triggers when filter life drops below 10%"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Filter needs replacement"
+      }
     },
     {
       "id": "wifi_robot_vacuum_water_tank_empty",
@@ -78,7 +96,10 @@
       "hint": {
         "en": "Triggers when water tank level drops below 10%"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water tank low"
+      }
     }
   ],
   "conditions": [
@@ -87,14 +108,20 @@
       "title": {
         "en": "Vacuum !{{is|is not}} cleaning"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Vacuum !{{is|is not}} cleaning"
+      }
     },
     {
       "id": "wifi_robot_vacuum_is_docked",
       "title": {
         "en": "Vacuum !{{is|is not}} docked"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Vacuum !{{is|is not}} docked"
+      }
     },
     {
       "id": "wifi_robot_vacuum_battery_above",
@@ -112,7 +139,10 @@
             "en": "20"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[level]]"
+      }
     }
   ],
   "actions": [
@@ -124,21 +154,30 @@
       "hint": {
         "en": "Start a standard cleaning cycle"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Start cleaning"
+      }
     },
     {
       "id": "wifi_robot_vacuum_stop_clean",
       "title": {
         "en": "Stop cleaning"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop cleaning"
+      }
     },
     {
       "id": "wifi_robot_vacuum_pause_clean",
       "title": {
         "en": "Pause cleaning"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Pause cleaning"
+      }
     },
     {
       "id": "wifi_robot_vacuum_return_to_dock",
@@ -148,7 +187,10 @@
       "hint": {
         "en": "Send the vacuum back to the charging dock"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Return to dock"
+      }
     },
     {
       "id": "wifi_robot_vacuum_find_robot",
@@ -158,7 +200,10 @@
       "hint": {
         "en": "Make the vacuum beep to help locate it"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Find robot"
+      }
     },
     {
       "id": "wifi_robot_vacuum_set_mode",
@@ -196,7 +241,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set vacuum mode [[mode]]"
+      }
     },
     {
       "id": "wifi_robot_vacuum_set_clean_mode",
@@ -228,7 +276,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set cleaning mode [[clean_mode]]"
+      }
     },
     {
       "id": "wifi_robot_vacuum_set_dnd",
@@ -254,7 +305,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set Do Not Disturb [[enabled]]"
+      }
     },
     {
       "id": "wifi_robot_vacuum_set_volume",
@@ -272,7 +326,10 @@
             "en": "50"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set volume [[volume]]"
+      }
     }
   ]
 }

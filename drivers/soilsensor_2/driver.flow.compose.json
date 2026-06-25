@@ -17,7 +17,11 @@
           },
           "example": 21.5
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      }
     },
     {
       "id": "soilsensor_2_humidity_changed",
@@ -36,7 +40,11 @@
           },
           "example": 55
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidite changee"
+      }
     },
     {
       "id": "soilsensor_2_battery_low",
@@ -46,7 +54,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [],
