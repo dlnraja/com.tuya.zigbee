@@ -1,3 +1,5 @@
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -17,7 +19,7 @@ const ScenesBoundCluster = require('../../lib/clusters/ScenesBoundCluster');
  *
  * Endpoint 1 output clusters: 6, 8, 5, 4, 3, 25(OTA), 10(time), 4096(touchlink)
  */
-class RemoteDimmerDevice extends ZigBeeDevice {
+class RemoteDimmerDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

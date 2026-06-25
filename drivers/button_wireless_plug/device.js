@@ -259,6 +259,8 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
   _pollMetering(mc, parseE) {
     if (!mc.readAttributes) {return;}
+    // v9.0.98: Increased from 120s to 600s — battery drain prevention
+    // 120s polling on a battery device causes excessive wake-ups
     this._meterPoll = this.homey.setInterval(async () => {
       if (this._destroyed) return;
       try {
@@ -267,7 +269,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           this.safeSetCapabilityValue('meter_power', parseFloat(parseE(a.currentSummDelivered))).catch(() => { });
         }
       } catch (_) { /* Meter read failed, will retry on next interval */ }
-    }, 120000);
+    }, 600000);
   }
 
   onDeleted() {
