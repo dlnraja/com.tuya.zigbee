@@ -5,14 +5,20 @@
       "title": {
         "en": "Opened"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Opened"
+      }
     },
     {
       "id": "wifi_cover_closed",
       "title": {
         "en": "Closed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Closed"
+      }
     }
   ],
   "conditions": [],
@@ -22,21 +28,30 @@
       "title": {
         "en": "Open"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open"
+      }
     },
     {
       "id": "wifi_cover_close",
       "title": {
         "en": "Close"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close"
+      }
     },
     {
       "id": "wifi_cover_stop",
       "title": {
         "en": "Stop"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop"
+      }
     }
   ]
 }

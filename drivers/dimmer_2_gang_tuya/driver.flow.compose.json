@@ -6,7 +6,11 @@
         "en": "Turned on",
         "fr": "Allume"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allume"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "fr": "Eteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Eteint"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_dim_changed",
@@ -33,7 +41,11 @@
           },
           "example": 0.75
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "Luminosite changee"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_physical_on",
@@ -43,7 +55,13 @@
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_physical_off",
@@ -53,7 +71,13 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      }
     }
   ],
   "conditions": [
@@ -63,7 +87,11 @@
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allume|eteint}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allume|eteint}}"
+      }
     }
   ],
   "actions": [
@@ -73,7 +101,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_turn_off",
@@ -81,7 +113,11 @@
         "en": "Turn off",
         "fr": "Eteindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Eteindre"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_toggle",
@@ -89,7 +125,11 @@
         "en": "Toggle",
         "fr": "Basculer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer"
+      }
     },
     {
       "id": "dimmer_2_gang_tuya_set_brightness",
@@ -106,7 +146,11 @@
           "step": 1,
           "label": "%"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set brightness [[brightness]]",
+        "fr": "Regler luminosite [[brightness]]"
+      }
     }
   ]
 }

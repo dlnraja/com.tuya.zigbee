@@ -21,7 +21,13 @@
           "example": 21
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "radiator_valve_zigbee_target_temperature_changed",
@@ -44,7 +50,13 @@
           "example": 22
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
+      }
     },
     {
       "id": "radiator_valve_zigbee_mode_changed",
@@ -67,7 +79,13 @@
           "example": "auto"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Mode changed",
+        "fr": "Mode changé",
+        "nl": "Modus gewijzigd",
+        "de": "Modus geändert"
+      }
     },
     {
       "id": "radiator_valve_zigbee_turned_on",
@@ -77,7 +95,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "radiator_valve_zigbee_turned_off",
@@ -87,7 +111,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "radiator_valve_zigbee_battery_low",
@@ -97,7 +127,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -109,7 +145,13 @@
         "nl": "!{{Is|Is niet}} aan",
         "de": "!{{Ist|Ist nicht}} eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      }
     },
     {
       "id": "radiator_valve_zigbee_mode_is",
@@ -186,7 +228,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Mode !{{is|is not}} [[mode]]",
+        "fr": "Mode !{{est|n'est pas}} [[mode]]",
+        "nl": "Modus !{{is|is niet}} [[mode]]",
+        "de": "Modus !{{ist|ist nicht}} [[mode]]"
+      }
     },
     {
       "id": "radiator_valve_zigbee_is_heating",
@@ -196,7 +244,13 @@
         "nl": "!{{Verwarmt|Verwarmt niet}}",
         "de": "!{{Heizt|Heizt nicht}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "!{{Is|Is not}} heating",
+        "fr": "!{{Chauffe|Ne chauffe pas}}",
+        "nl": "!{{Verwarmt|Verwarmt niet}}",
+        "de": "!{{Heizt|Heizt nicht}}"
+      }
     }
   ],
   "actions": [
@@ -222,7 +276,13 @@
             "de": "Temperatur (°C)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set target temperature to... [[temperature]]",
+        "fr": "Régler la température cible à... [[temperature]]",
+        "nl": "Doeltemperatuur instellen op... [[temperature]]",
+        "de": "Zieltemperatur einstellen auf... [[temperature]]"
+      }
     },
     {
       "id": "radiator_valve_zigbee_set_mode",
@@ -299,7 +359,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set mode to... [[mode]]",
+        "fr": "Régler le mode sur... [[mode]]",
+        "nl": "Modus instellen op... [[mode]]",
+        "de": "Modus einstellen auf... [[mode]]"
+      }
     },
     {
       "id": "radiator_valve_zigbee_turn_on",
@@ -309,7 +375,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "radiator_valve_zigbee_turn_off",
@@ -319,7 +391,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "radiator_valve_zigbee_toggle",
@@ -329,7 +407,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "radiator_valve_zigbee_set_child_lock",
@@ -350,7 +434,13 @@
             "de": "Aktiviert"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set child lock [[enabled]]",
+        "fr": "Activer verrouillage enfant [[enabled]]",
+        "nl": "Kinderslot instellen [[enabled]]",
+        "de": "Kindersicherung einstellen [[enabled]]"
+      }
     },
     {
       "id": "radiator_valve_zigbee_set_window_detection",
@@ -371,7 +461,13 @@
             "de": "Aktiviert"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set window detection [[enabled]]",
+        "fr": "Activer détection fenêtre [[enabled]]",
+        "nl": "Raamdetectie instellen [[enabled]]",
+        "de": "Fenstererkennung einstellen [[enabled]]"
+      }
     }
   ]
 }

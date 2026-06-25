@@ -5,14 +5,20 @@
       "title": {
         "en": "Locked"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Locked"
+      }
     },
     {
       "id": "wifi_door_lock_wifi_lock_unlocked",
       "title": {
         "en": "Unlocked"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Unlocked"
+      }
     }
   ],
   "conditions": [
@@ -21,7 +27,10 @@
       "title": {
         "en": "Is locked"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is locked"
+      }
     }
   ],
   "actions": []

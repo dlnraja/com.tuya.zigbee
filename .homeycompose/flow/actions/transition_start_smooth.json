@@ -54,13 +54,48 @@
         "en": "Easing"
       },
       "values": [
-        { "id": "linear", "title": { "en": "Linear" } },
-        { "id": "easeIn", "title": { "en": "Ease In" } },
-        { "id": "easeOut", "title": { "en": "Ease Out" } },
-        { "id": "easeInOut", "title": { "en": "Ease In-Out" } },
-        { "id": "cubicIn", "title": { "en": "Cubic In" } },
-        { "id": "cubicOut", "title": { "en": "Cubic Out" } },
-        { "id": "cubicInOut", "title": { "en": "Cubic In-Out" } }
+        {
+          "id": "linear",
+          "title": {
+            "en": "Linear"
+          }
+        },
+        {
+          "id": "easeIn",
+          "title": {
+            "en": "Ease In"
+          }
+        },
+        {
+          "id": "easeOut",
+          "title": {
+            "en": "Ease Out"
+          }
+        },
+        {
+          "id": "easeInOut",
+          "title": {
+            "en": "Ease In-Out"
+          }
+        },
+        {
+          "id": "cubicIn",
+          "title": {
+            "en": "Cubic In"
+          }
+        },
+        {
+          "id": "cubicOut",
+          "title": {
+            "en": "Cubic Out"
+          }
+        },
+        {
+          "id": "cubicInOut",
+          "title": {
+            "en": "Cubic In-Out"
+          }
+        }
       ]
     }
   ]

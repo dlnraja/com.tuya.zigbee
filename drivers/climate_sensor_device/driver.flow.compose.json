@@ -18,7 +18,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "climate_sensor_device_humidity_changed",
@@ -37,7 +41,11 @@
           "example": 55
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     }
   ]
 }

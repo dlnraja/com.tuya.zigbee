@@ -6,7 +6,11 @@
         "en": "Heater turned on",
         "fr": "Chauffage allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater turned on",
+        "fr": "Chauffage allumé"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_turned_off",
@@ -14,7 +18,11 @@
         "en": "Heater turned off",
         "fr": "Chauffage éteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater turned off",
+        "fr": "Chauffage éteint"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_temperature_changed",
@@ -33,7 +41,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_mode_changed",
@@ -52,7 +64,11 @@
           "example": "heat"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater mode changed",
+        "fr": "Mode chauffage changé"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_power_changed",
@@ -71,7 +87,11 @@
           "example": 1500
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power consumption changed",
+        "fr": "Consommation changée"
+      }
     }
   ],
   "conditions": [
@@ -81,7 +101,11 @@
         "en": "Heater is on",
         "fr": "Chauffage est allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Heater is on",
+        "fr": "Chauffage est allumé"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_mode_is",
@@ -128,7 +152,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Heater mode is [[mode]]",
+        "fr": "Mode chauffage est [[mode]]"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_temperature_above",
@@ -148,7 +176,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is above [[temp]]",
+        "fr": "Température supérieure à [[temp]]"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_temperature_below",
@@ -168,7 +200,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature is below [[temp]]",
+        "fr": "Température inférieure à [[temp]]"
+      }
     }
   ],
   "actions": [
@@ -178,7 +214,11 @@
         "en": "Turn on heater",
         "fr": "Allumer chauffage"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on heater",
+        "fr": "Allumer chauffage"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_turn_off",
@@ -186,7 +226,11 @@
         "en": "Turn off heater",
         "fr": "Éteindre chauffage"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off heater",
+        "fr": "Éteindre chauffage"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_set_mode",
@@ -233,7 +277,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set heater mode [[mode]]",
+        "fr": "Définir mode chauffage [[mode]]"
+      }
     },
     {
       "id": "hybrid_heater_thermostat_set_temperature",
@@ -253,7 +301,11 @@
             "fr": "Température (°C)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set target temperature [[temperature]]",
+        "fr": "Définir température cible [[temperature]]"
+      }
     }
   ]
 }

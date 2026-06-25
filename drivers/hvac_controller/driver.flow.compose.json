@@ -18,7 +18,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "hvac_controller_target_temperature_changed",
@@ -37,7 +41,11 @@
           "example": 21
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée"
+      }
     },
     {
       "id": "hvac_controller_turned_on",
@@ -47,7 +55,13 @@
         "nl": "Ingeschakeld",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Ingeschakeld",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "hvac_controller_turned_off",
@@ -57,7 +71,13 @@
         "nl": "Uitgeschakeld",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgeschakeld",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "hvac_controller_fan_speed_changed",
@@ -76,7 +96,11 @@
           "example": "auto"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan speed changed",
+        "fr": "Vitesse de ventilateur changée"
+      }
     }
   ],
   "conditions": [
@@ -88,7 +112,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -110,7 +140,11 @@
             "fr": "Température"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set temperature to... [[temperature]]",
+        "fr": "Régler la température à... [[temperature]]"
+      }
     },
     {
       "id": "hvac_controller_set_temperature",
@@ -130,7 +164,13 @@
           "label": "°C",
           "labelDecimals": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set temperature [[temperature]]",
+        "fr": "Régler température [[temperature]]",
+        "nl": "Temperatuur instellen [[temperature]]",
+        "de": "Temperatur einstellen [[temperature]]"
+      }
     },
     {
       "id": "hvac_controller_set_mode",
@@ -176,7 +216,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set mode [[mode]]",
+        "fr": "Définir mode [[mode]]"
+      }
     },
     {
       "id": "hvac_controller_set_fan_speed",
@@ -222,7 +266,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set fan speed [[fan_speed]]",
+        "fr": "Définir vitesse ventilateur [[fan_speed]]"
+      }
     },
     {
       "id": "hvac_controller_turn_on",
@@ -232,7 +280,13 @@
         "nl": "Inschakelen",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Inschakelen",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "hvac_controller_turn_off",
@@ -242,7 +296,13 @@
         "nl": "Uitschakelen",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitschakelen",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "hvac_controller_toggle",
@@ -252,7 +312,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     }
   ]
 }

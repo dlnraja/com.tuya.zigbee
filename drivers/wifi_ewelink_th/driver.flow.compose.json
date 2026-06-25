@@ -15,7 +15,10 @@
           "example": 25.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed"
+      }
     },
     {
       "id": "wifi_ewelink_th_humidity_changed",
@@ -32,7 +35,10 @@
           "example": 60
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed"
+      }
     }
   ],
   "conditions": [],

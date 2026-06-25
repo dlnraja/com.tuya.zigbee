@@ -17,7 +17,11 @@
           },
           "example": 300
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changee"
+      }
     },
     {
       "id": "radar_sensor_ceiling_motion_detected",
@@ -25,7 +29,11 @@
         "en": "Motion detected",
         "fr": "Mouvement detecte"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement detecte"
+      }
     },
     {
       "id": "radar_sensor_ceiling_motion_off",
@@ -33,7 +41,11 @@
         "en": "Motion ended",
         "fr": "Mouvement termine"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion ended",
+        "fr": "Mouvement termine"
+      }
     }
   ],
   "conditions": [],

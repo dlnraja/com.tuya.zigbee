@@ -15,7 +15,13 @@
         "fr": "Se dÃ©clenche quand le radar mmWave dÃ©tecte une prÃ©sence humaine (mÃªme immobile)",
         "de": "Wird ausgelÃ¶st, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationÃ¤r)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Presence detected",
+        "nl": "Aanwezigheid gedetecteerd",
+        "fr": "PrÃ©sence dÃ©tectÃ©e",
+        "de": "Anwesenheit erkannt"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_presence_cleared",
@@ -31,7 +37,13 @@
         "fr": "Se dÃ©clenche quand aucune prÃ©sence humaine n'est dÃ©tectÃ©e pendant le dÃ©lai configurÃ©",
         "de": "Wird ausgelÃ¶st, wenn fÃ¼r die konfigurierte ZeitÃ¼berschreitung keine menschliche Anwesenheit erkannt wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Presence cleared",
+        "nl": "Aanwezigheid opgeheven",
+        "fr": "PrÃ©sence terminÃ©e",
+        "de": "Anwesenheit beendet"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_motion_detected",
@@ -47,7 +59,13 @@
         "fr": "Se dÃ©clenche quand un mouvement actif est dÃ©tectÃ© (marche, mouvement)",
         "de": "Wird ausgelÃ¶st, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "nl": "Beweging gedetecteerd",
+        "fr": "Mouvement dÃ©tectÃ©",
+        "de": "Bewegung erkannt"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_illuminance_changed",
@@ -70,7 +88,13 @@
           "example": 150
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Illuminance changed",
+        "nl": "Lichtsterkte veranderd",
+        "fr": "LuminositÃ© changÃ©e",
+        "de": "Helligkeit geÃ¤ndert"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_distance_changed",
@@ -93,7 +117,13 @@
           "example": 200
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Detection distance changed",
+        "nl": "Detectieafstand veranderd",
+        "fr": "Distance de dÃ©tection changÃ©e",
+        "de": "Erkennungsabstand geÃ¤ndert"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_lux_changed",
@@ -103,7 +133,13 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geÃ¤ndert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changÃ©e",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geÃ¤ndert"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_battery_low",
@@ -113,7 +149,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -125,7 +167,13 @@
         "fr": "Quelqu'un !{{est|n'est pas}} prÃ©sent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Someone !{{is|is not}} present",
+        "nl": "Iemand !{{is|is niet}} aanwezig",
+        "fr": "Quelqu'un !{{est|n'est pas}} prÃ©sent",
+        "de": "Jemand !{{ist|ist nicht}} anwesend"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_illuminance_above",
@@ -146,7 +194,13 @@
             "en": "100"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Illuminance !{{is|is not}} above [[lux]]",
+        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]]",
+        "fr": "LuminositÃ© !{{est|n'est pas}} au-dessus de [[lux]]",
+        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber [[lux]]"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_distance_within",
@@ -167,7 +221,13 @@
             "en": "300"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Target !{{is|is not}} within distance [[distance]]",
+        "nl": "Doel !{{is|is niet}} binnen afstand [[distance]]",
+        "fr": "Cible !{{est|n'est pas}} dans la distance [[distance]]",
+        "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung [[distance]]"
+      }
     },
     {
       "id": "sensor_gas_presence_presence_sensor_radar_motion_active",
@@ -177,7 +237,13 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
     }
   ]
 }

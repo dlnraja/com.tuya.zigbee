@@ -8,7 +8,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "temphumidsensor3_humidity_changed",
@@ -27,7 +33,11 @@
           },
           "example": 55
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidite changee"
+      }
     },
     {
       "id": "temphumidsensor3_temperature_changed",
@@ -46,7 +56,11 @@
           },
           "example": 21.5
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Temperature changee"
+      }
     }
   ],
   "conditions": [],

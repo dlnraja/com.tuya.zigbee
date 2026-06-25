@@ -8,7 +8,13 @@
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 turned on",
+        "fr": "Gang 1 allumé",
+        "nl": "Gang 1 aangezet",
+        "de": "Gang 1 eingeschaltet"
+      }
     },
     {
       "id": "switch_2gang_gang1_turned_off",
@@ -18,7 +24,13 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 turned off",
+        "fr": "Gang 1 éteint",
+        "nl": "Gang 1 uitgezet",
+        "de": "Gang 1 ausgeschaltet"
+      }
     },
     {
       "id": "switch_2gang_gang2_turned_on",
@@ -28,7 +40,13 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 turned on",
+        "fr": "Gang 2 allumé",
+        "nl": "Gang 2 aangezet",
+        "de": "Gang 2 eingeschaltet"
+      }
     },
     {
       "id": "switch_2gang_gang2_turned_off",
@@ -38,7 +56,13 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 turned off",
+        "fr": "Gang 2 éteint",
+        "nl": "Gang 2 uitgezet",
+        "de": "Gang 2 ausgeschaltet"
+      }
     },
     {
       "id": "switch_2gang_physical_gang1_on",
@@ -48,7 +72,13 @@
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      }
     },
     {
       "id": "switch_2gang_physical_gang1_off",
@@ -58,7 +88,13 @@
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      }
     },
     {
       "id": "switch_2gang_physical_gang2_on",
@@ -68,7 +104,13 @@
         "nl": "Fysiek gang 2 AAN",
         "de": "Physisch gang 2 EIN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 2 ON",
+        "fr": "Physique gang 2 ON",
+        "nl": "Fysiek gang 2 AAN",
+        "de": "Physisch gang 2 EIN"
+      }
     },
     {
       "id": "switch_2gang_physical_gang2_off",
@@ -78,7 +120,13 @@
         "nl": "Fysiek gang 2 UIT",
         "de": "Physisch gang 2 AUS"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Physique gang 2 OFF",
+        "nl": "Fysiek gang 2 UIT",
+        "de": "Physisch gang 2 AUS"
+      }
     }
   ],
   "conditions": [
@@ -90,7 +138,13 @@
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
+      }
     },
     {
       "id": "switch_2gang_gang2_is_on",
@@ -100,7 +154,13 @@
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 is !{{on|off}}",
+        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "nl": "Gang 2 is !{{aan|uit}}",
+        "de": "Gang 2 ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -112,7 +172,13 @@
         "nl": "Gang 1 aanzetten",
         "de": "Gang 1 einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
+      }
     },
     {
       "id": "switch_2gang_turn_off_gang1",
@@ -122,7 +188,13 @@
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
+      }
     },
     {
       "id": "switch_2gang_turn_on_gang2",
@@ -132,7 +204,13 @@
         "nl": "Gang 2 aanzetten",
         "de": "Gang 2 einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 2",
+        "fr": "Allumer gang 2",
+        "nl": "Gang 2 aanzetten",
+        "de": "Gang 2 einschalten"
+      }
     },
     {
       "id": "switch_2gang_turn_off_gang2",
@@ -142,7 +220,13 @@
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 2",
+        "fr": "Éteindre gang 2",
+        "nl": "Gang 2 uitzetten",
+        "de": "Gang 2 ausschalten"
+      }
     },
     {
       "id": "switch_2gang_toggle_gang1",
@@ -152,7 +236,13 @@
         "nl": "Gang 1 wisselen",
         "de": "Gang 1 umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 1",
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
+      }
     },
     {
       "id": "switch_2gang_toggle_gang2",
@@ -162,7 +252,13 @@
         "nl": "Gang 2 wisselen",
         "de": "Gang 2 umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 2",
+        "fr": "Basculer gang 2",
+        "nl": "Gang 2 wisselen",
+        "de": "Gang 2 umschalten"
+      }
     }
   ]
 }

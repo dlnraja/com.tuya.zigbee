@@ -14,8 +14,18 @@
         "en": "Export format"
       },
       "values": [
-        { "id": "json", "title": { "en": "JSON" } },
-        { "id": "summary", "title": { "en": "Summary only" } }
+        {
+          "id": "json",
+          "title": {
+            "en": "JSON"
+          }
+        },
+        {
+          "id": "summary",
+          "title": {
+            "en": "Summary only"
+          }
+        }
       ]
     },
     {
@@ -25,10 +35,30 @@
         "en": "Time period"
       },
       "values": [
-        { "id": "today", "title": { "en": "Today" } },
-        { "id": "this_week", "title": { "en": "This week" } },
-        { "id": "this_month", "title": { "en": "This month" } },
-        { "id": "all", "title": { "en": "All data" } }
+        {
+          "id": "today",
+          "title": {
+            "en": "Today"
+          }
+        },
+        {
+          "id": "this_week",
+          "title": {
+            "en": "This week"
+          }
+        },
+        {
+          "id": "this_month",
+          "title": {
+            "en": "This month"
+          }
+        },
+        {
+          "id": "all",
+          "title": {
+            "en": "All data"
+          }
+        }
       ]
     }
   ],
@@ -54,5 +84,8 @@
         "en": "Total energy (kWh)"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Export energy data [[format]] [[period]]"
+  }
 }

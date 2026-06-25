@@ -15,7 +15,13 @@
         "fr": "Se dÃ©clenche quand l'aimant se sÃ©pare du capteur",
         "de": "Wird ausgelÃ¶st, wenn der Magnet vom Sensor getrennt wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window opened",
+        "nl": "Deur/raam geopend",
+        "fr": "Porte/fenÃªtre ouverte",
+        "de": "TÃ¼r/Fenster geÃ¶ffnet"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_closed",
@@ -31,7 +37,13 @@
         "fr": "Se dÃ©clenche quand l'aimant touche le capteur",
         "de": "Wird ausgelÃ¶st, wenn der Magnet den Sensor berÃ¼hrt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window closed",
+        "nl": "Deur/raam gesloten",
+        "fr": "Porte/fenÃªtre fermÃ©e",
+        "de": "TÃ¼r/Fenster geschlossen"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_tamper_true",
@@ -47,7 +59,13 @@
         "fr": "Se dÃ©clenche quand le capteur a Ã©tÃ© sabotÃ©",
         "de": "Wird ausgelÃ¶st, wenn der Sensor manipuliert wurde"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_battery_changed",
@@ -70,7 +88,13 @@
           "example": 75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changÃ©",
+        "de": "Batteriestand geÃ¤ndert"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_battery_low",
@@ -86,7 +110,13 @@
         "fr": "Se dÃ©clenche quand la batterie passe sous le seuil",
         "de": "Wird ausgelÃ¶st, wenn die Batterie unter den Schwellenwert fÃ¤llt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_left_open",
@@ -115,7 +145,13 @@
           "example": 5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Left open for duration",
+        "nl": "Te lang open gelaten",
+        "fr": "RestÃ© ouvert trop longtemps",
+        "de": "Zu lange offen gelassen"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_contact_alarm",
@@ -125,7 +161,13 @@
         "nl": "Contact gewijzigd",
         "de": "Kontakt geÃ¤ndert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact changed",
+        "fr": "Contact changÃ©",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geÃ¤ndert"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_tamper_alarm",
@@ -135,7 +177,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -147,7 +195,13 @@
         "fr": "Porte/fenÃªtre !{{est|n'est pas}} ouverte",
         "de": "TÃ¼r/Fenster !{{ist|ist nicht}} offen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window !{{is|is not}} open",
+        "nl": "Deur/raam !{{is|is niet}} open",
+        "fr": "Porte/fenÃªtre !{{est|n'est pas}} ouverte",
+        "de": "TÃ¼r/Fenster !{{ist|ist nicht}} offen"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_battery_above",
@@ -168,7 +222,13 @@
             "en": "20"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]",
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_contact_open",
@@ -178,7 +238,13 @@
         "nl": "Contact !{{is|is niet}} open",
         "de": "Kontakt !{{ist|ist nicht}} offen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      }
     },
     {
       "id": "contact_sensor_zigbee_contact_sensor_tamper_active",
@@ -188,7 +254,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ]
 }

@@ -54,7 +54,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Switch state changed [[switch]] [[state]]",
+        "pl": "Stan przełącznika zmienił się [[switch]] [[state]]"
+      }
     },
     {
       "id": "sr_zs_switch_scene_triggered_configurable",
@@ -111,7 +115,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Scene triggered [[scene]]",
+        "pl": "Uruchomiono scenę [[scene]]"
+      }
     }
   ],
   "actions": [
@@ -169,7 +177,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set switch state [[switch]] [[state]]",
+        "pl": "Ustaw stan przełącznika [[switch]] [[state]]"
+      }
     }
   ],
   "conditions": [
@@ -207,7 +219,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Switch # is !{{on|off}} [[switch]]",
+        "pl": "Przełącznik # jest !{{włączony|wyłączony}} [[switch]]"
+      }
     }
   ]
 }

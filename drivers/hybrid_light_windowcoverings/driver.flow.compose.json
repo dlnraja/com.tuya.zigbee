@@ -6,7 +6,11 @@
         "en": "Light turned on",
         "fr": "Lumière allumée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned on",
+        "fr": "Lumière allumée"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_light_turned_off",
@@ -14,7 +18,11 @@
         "en": "Light turned off",
         "fr": "Lumière éteinte"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light turned off",
+        "fr": "Lumière éteinte"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_position_changed",
@@ -33,7 +41,11 @@
           "example": 50
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Cover position changed",
+        "fr": "Position store changée"
+      }
     }
   ],
   "conditions": [
@@ -43,7 +55,11 @@
         "en": "Light is on",
         "fr": "Lumière est allumée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Light is on",
+        "fr": "Lumière est allumée"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_position_above",
@@ -63,7 +79,11 @@
             "fr": "Position (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Cover position is above [[position]]",
+        "fr": "Position store supérieure à [[position]]"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_position_below",
@@ -83,7 +103,11 @@
             "fr": "Position (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Cover position is below [[position]]",
+        "fr": "Position store inférieure à [[position]]"
+      }
     }
   ],
   "actions": [
@@ -93,7 +117,11 @@
         "en": "Open cover",
         "fr": "Ouvrir store"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open cover",
+        "fr": "Ouvrir store"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_close",
@@ -101,7 +129,11 @@
         "en": "Close cover",
         "fr": "Fermer store"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close cover",
+        "fr": "Fermer store"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_set_position",
@@ -121,7 +153,11 @@
             "fr": "Position (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set cover position [[position]]",
+        "fr": "Régler position store [[position]]"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_light_on",
@@ -129,7 +165,11 @@
         "en": "Turn light on",
         "fr": "Allumer lumière"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn light on",
+        "fr": "Allumer lumière"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_light_off",
@@ -137,7 +177,11 @@
         "en": "Turn light off",
         "fr": "Éteindre lumière"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn light off",
+        "fr": "Éteindre lumière"
+      }
     },
     {
       "id": "hybrid_light_windowcoverings_set_brightness",
@@ -157,7 +201,11 @@
             "fr": "Luminosité (%)"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set light brightness [[brightness]]",
+        "fr": "Régler luminosité [[brightness]]"
+      }
     }
   ]
 }
