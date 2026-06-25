@@ -3,11 +3,11 @@
 require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
-class SmartKnobRotaryDevice extends ZigBeeDevice {
+class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
