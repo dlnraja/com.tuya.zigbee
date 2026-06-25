@@ -5,9 +5,11 @@ const path = require('path');
 
 // Read App ID dynamically from app.json
 let APP = 'com.dlnraja.tuya.zigbee';
+let APP_VERSION = null;
 try {
   const appJson = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'app.json')));
   if (appJson.id) APP = appJson.id;
+  if (appJson.version) APP_VERSION = appJson.version;
 } catch {}
 
 const BASE = 'https://apps-api.athom.com/api/v1';
@@ -47,8 +49,15 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   const drafts=builds.filter(b=>/draft/i.test(b.channel||b.status||b.state||''));
   if(!drafts.length) return 'no-draft';
   drafts.sort((a,b)=>(b.id||0)-(a.id||0));
-  const draft=drafts[0];
-  log('  [SessAPI] Draft: id='+draft.id+' v='+draft.version+' ('+drafts.length+' drafts)');
+  // Prefer draft matching current app version, fallback to newest by ID
+  let draft=drafts[0];
+  if(APP_VERSION){
+    const vMatch=drafts.find(d=>d.version===APP_VERSION);
+    if(vMatch){draft=vMatch;log('  [SessAPI] Matched draft to current version '+APP_VERSION);}
+  }
+  log('  [SessAPI] Draft: id='+draft.id+' v='+draft.version+' state='+draft.state+' ('+drafts.length+' drafts)');
+  // Log top 3 drafts for debugging
+  drafts.slice(0,3).forEach((d,i)=>log('  [SessAPI]   #'+(i+1)+': id='+d.id+' v='+d.version+' state='+d.state));
   if(dry) return false;
   const pid=draft.id||draft._id;
   log('  [SessAPI] Using build id='+pid);
