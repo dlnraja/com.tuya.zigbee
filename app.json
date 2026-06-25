@@ -9177,38 +9177,6 @@
         }
       },
       {
-        "id": "garage_door_opener_opened",
-        "title": {
-          "en": "Opened",
-          "fr": "Ouvert",
-          "nl": "Geopend",
-          "de": "Geöffnet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=garage_door_opener"
-          }
-        ]
-      },
-      {
-        "id": "garage_door_opener_closed",
-        "title": {
-          "en": "Closed",
-          "fr": "Fermé",
-          "nl": "Gesloten",
-          "de": "Geschlossen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=garage_door_opener"
-          }
-        ]
-      },
-      {
         "id": "gas_detector_gas_detected",
         "highlight": true,
         "title": {
@@ -37434,22 +37402,6 @@
         }
       },
       {
-        "id": "garage_door_opener_is_closed",
-        "title": {
-          "en": "Garage door !{{is|is not}} closed",
-          "fr": "Porte de garage !{{est|n'est pas}} fermée",
-          "nl": "Garagedeur !{{is|is niet}} gesloten",
-          "de": "Garagentor !{{ist|ist nicht}} geschlossen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=garage_door_opener"
-          }
-        ]
-      },
-      {
         "id": "gas_detector_gas_is_detected",
         "title": {
           "en": "Gas !{{is|is not}} detected",
@@ -46800,38 +46752,6 @@
           "nl": "Sluiten",
           "de": "Schließen"
         }
-      },
-      {
-        "id": "garage_door_opener_open",
-        "title": {
-          "en": "Open",
-          "fr": "Ouvrir",
-          "nl": "Openen",
-          "de": "Öffnen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=garage_door_opener"
-          }
-        ]
-      },
-      {
-        "id": "garage_door_opener_close",
-        "title": {
-          "en": "Close",
-          "fr": "Fermer",
-          "nl": "Sluiten",
-          "de": "Schließen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=garage_door_opener"
-          }
-        ]
       },
       {
         "id": "gas_detector_test",
