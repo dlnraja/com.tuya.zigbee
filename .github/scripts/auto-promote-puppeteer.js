@@ -284,7 +284,7 @@ async function findAndPromote(page, captured) {
     await waitReady(p, 'my-apps-page', 8000);
     await snap(p,'05a-apps');
     log('  3b: App');
-    const ok=await p.evaluate(id=>{const a=[...document.querySelectorAll('a')].find(l=>l.href&&l.href.includes(id));if(a){a.click();return true;}return false;},APP_ID);
+    const ok=await p.evaluate(id=>{const a=[...document.querySelectorAll('a')].find(l=>{if(!l.href)return false;const m=l.href.match(/\/app\/([^/?#]+)/);return m&&m[1]===id;});if(a){a.click();return true;}return false;},APP_ID);
     if(!ok) await p.goto(BASE+'/apps/app/'+APP_ID,{waitUntil:'networkidle2'});
     await waitReady(p, 'app-page', 8000);
     await snap(p,'05b-app');
