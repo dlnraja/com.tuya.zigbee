@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-25T18:20:05.823Z",
+  "timestamp": "2026-06-25T19:07:05.357Z",
   "totalFiles": 0,
-  "totalFixes": 217,
+  "totalFixes": 216,
   "rules": {
     "flow-card-try-catch": {
       "count": 31,
@@ -100,7 +100,7 @@
         },
         {
           "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 1846: getDeviceTriggerCard without try-catch"
+          "detail": "Line 1167: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
@@ -182,7 +182,7 @@
       ]
     },
     "case-insensitive-matching": {
-      "count": 41,
+      "count": 40,
       "files": [
         {
           "file": "drivers/climate_sensor_device/device.js",
@@ -255,10 +255,6 @@
         {
           "file": "lib/clusters/TuyaSpecificCluster.js",
           "detail": "Line 410: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 541: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/devices/UnifiedPlugBase.js",
