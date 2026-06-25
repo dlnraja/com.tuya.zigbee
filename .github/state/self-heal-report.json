@@ -1,17 +1,8 @@
 {
-  "timestamp": "2026-06-25T05:20:24.946Z",
+  "timestamp": "2026-06-25T07:45:59.633Z",
   "totalFiles": 0,
-  "totalFixes": 218,
+  "totalFixes": 217,
   "rules": {
-    "fingerprint-case": {
-      "count": 1,
-      "files": [
-        {
-          "file": "drivers/garage_door_opener/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 31,
       "files": [
