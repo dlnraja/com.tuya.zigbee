@@ -10,6 +10,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const DDIR = path.join(process.cwd(), 'drivers');
 
@@ -44,7 +45,7 @@ function deduplicateMfrs(drivers) {
     const seenMfrs = new Set();
     for (const mfr of origMfrs) {
       if (!mfr) continue;
-      const lower = mfr.toLowerCase();
+      const lower = CI.normalize(mfr);
       if (!seenMfrs.has(lower)) {
         seenMfrs.add(lower);
         uniqueMfrs.push(mfr);
@@ -55,7 +56,7 @@ function deduplicateMfrs(drivers) {
     const seenPids = new Set();
     for (const pid of origPids) {
       if (!pid) continue;
-      const lower = pid.toLowerCase();
+      const lower = CI.normalize(pid);
       if (!seenPids.has(lower)) {
         seenPids.add(lower);
         uniquePids.push(pid);
@@ -97,8 +98,8 @@ function main() {
     for (const driver of drivers) {
       const origMfrs = driver.mfrs;
       const origPids = driver.pids;
-      const newMfrs = driver.content.zigbee.manufacturerName;
-      const newPids = driver.content.zigbee.productId;
+      const newMfrs = driver.content.zigbee.manufacturerName || [];
+      const newPids = driver.content.zigbee.productId || [];
       
       if (origMfrs.length !== newMfrs.length || origPids.length !== newPids.length) {
         fs.writeFileSync(driver.file, JSON.stringify(driver.content, null, 2) + '\n');

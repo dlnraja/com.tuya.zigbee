@@ -11,6 +11,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const driversDir = path.join(__dirname, '../../drivers');
 const combinations = new Map();
@@ -55,7 +56,7 @@ fs.readdirSync(driversDir).filter(d =>
     // Build combinations
     mfrs.forEach(mfr => {
       pids.forEach(pid => {
-        const key = `${mfr}|${pid}`;
+        const key = `${CI.normalize(mfr)}|${CI.normalize(pid)}`;
         if (!combinations.has(key)) combinations.set(key, []);
         combinations.get(key).push(driverName);
       });
