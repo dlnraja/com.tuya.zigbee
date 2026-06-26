@@ -1,115 +1,4 @@
 {
-  "B3876M9": {
-    "driverId": "presence_sensor_radar",
-    "type": "radar",
-    "powerSource": "battery",
-    "modelIds": [
-      "ZP-301Z"
-    ],
-    "dps": {
-      "1": {
-        "name": "presence",
-        "converter": "boolean",
-        "capability": "alarm_motion"
-      },
-      "14": {
-        "name": "battery_value",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "20": {
-        "name": "illuminance",
-        "converter": "raw",
-        "capability": "measure_luminance"
-      },
-      "102": {
-        "name": "presence_time",
-        "converter": "raw"
-      }
-    }
-  },
-  "CAT0001": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      },
-      "7": {
-        "name": "contact",
-        "capability": "alarm_contact"
-      }
-    }
-  },
-  "DHT0001": {
-    "driverId": "climate_sensor",
-    "type": "climate",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "5": {
-        "name": "temperature",
-        "converter": "divideBy10",
-        "capability": "measure_temperature"
-      },
-      "118": {
-        "name": "humidity",
-        "converter": "raw",
-        "capability": "measure_humidity"
-      }
-    }
-  },
-  "DHTA001": {
-    "driverId": "climate_sensor",
-    "type": "climate",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "5": {
-        "name": "temperature",
-        "converter": "divideBy10",
-        "capability": "measure_temperature"
-      },
-      "118": {
-        "name": "humidity",
-        "converter": "raw",
-        "capability": "measure_humidity"
-      }
-    }
-  },
-  "DSS0010": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      }
-    }
-  },
   "Immax": {
     "driverId": "doorwindowsensor_2",
     "type": "doorwindowsensor_2",
@@ -120,32 +9,6 @@
       "DoorWindow-Sensor-ZB3.0",
       "MCT-340 E"
     ]
-  },
-  "NTCHT01": {
-    "driverId": "climate_sensor",
-    "type": "climate",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ]
-  },
-  "PIRIV01": {
-    "driverId": "motion_sensor",
-    "type": "motion_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "1": {
-        "name": "presence",
-        "capability": "alarm_motion"
-      },
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      }
-    }
   },
   "TUYATEC-0l6xaqmi": {
     "driverId": "doorwindowsensor_2",
@@ -345,24 +208,6 @@
     "modelIds": [
       "TS0601"
     ]
-  },
-  "VABRATE": {
-    "driverId": "motion_sensor",
-    "type": "motion_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "3": {
-        "name": "vibration",
-        "capability": "alarm_motion"
-      },
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      }
-    }
   },
   "Visonic": {
     "driverId": "doorwindowsensor_2",
@@ -3447,14 +3292,6 @@
   "_TZ3000_myaaknbq": {
     "driverId": "switch_1gang",
     "type": "switch",
-    "powerSource": "mains",
-    "modelIds": [
-      "TS0601"
-    ]
-  },
-  "_TZ3000_n": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
     "powerSource": "mains",
     "modelIds": [
       "TS0601"
