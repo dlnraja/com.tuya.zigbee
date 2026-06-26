@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
  * Fix Duplicate Fingerprints in Same Driver
- * v1.0.0 - Fixes false positive collisions (same driver listed twice)
+ * v2.0.0 - Independently deduplicate manufacturerName and productId arrays
  * 
- * Pattern detected: `_tz3000_yz38gdra|ts0601 → water_valve_smart, water_valve_smart`
- * = Same mfr+pid+driver appearing twice in collision list = duplicate entry in driver.compose.json
+ * Homey uses Cartesian matching (any MFR + any PID). Duplicate entries in either
+ * array cause AggregateErrors during build. This script simply makes both arrays
+ * contain only unique strings, solving the self-collision and build errors.
  */
 'use strict';
 const fs = require('fs');
@@ -19,8 +20,9 @@ function loadDrivers() {
     if (!fs.existsSync(f)) continue;
     try {
       const c = JSON.parse(fs.readFileSync(f, 'utf8'));
-      const mfrs = [].concat(c.zigbee?.manufacturerName || []);
-      const pids = [].concat(c.zigbee?.productId || []);
+      if (!c.zigbee) continue;
+      const mfrs = [].concat(c.zigbee.manufacturerName || []);
+      const pids = [].concat(c.zigbee.productId || []);
       drivers.push({ name: d, mfrs, pids, file: f, content: c });
     } catch(e) {
       console.log(`  ⚠️ Error reading ${d}: ${e.message}`);
@@ -34,46 +36,45 @@ function deduplicateMfrs(drivers) {
   let driversModified = 0;
 
   for (const driver of drivers) {
-    const mfrs = driver.mfrs;
-    const seen = new Map();
-    const duplicates = [];
+    const origMfrs = driver.mfrs;
+    const origPids = driver.pids;
     
-    // Find duplicates (case-insensitive for fingerprints)
-    mfrs.forEach((mfr, idx) => {
-      if (!mfr) return;
+    // Case-insensitive deduplication, keeping the first capitalization encountered
+    const uniqueMfrs = [];
+    const seenMfrs = new Set();
+    for (const mfr of origMfrs) {
+      if (!mfr) continue;
       const lower = mfr.toLowerCase();
-      if (seen.has(lower)) {
-        duplicates.push({ idx, mfr, existingIdx: seen.get(lower) });
-      } else {
-        seen.set(lower, idx);
+      if (!seenMfrs.has(lower)) {
+        seenMfrs.add(lower);
+        uniqueMfrs.push(mfr);
       }
-    });
+    }
 
-    if (duplicates.length > 0) {
-      console.log(`\n${driver.name}: ${duplicates.length} duplicate(s) found`);
-      duplicates.forEach(d => {
-        console.log(`  - "${d.mfr}" (index ${d.idx}) duplicates index ${d.existingIdx}`);
-      });
+    const uniquePids = [];
+    const seenPids = new Set();
+    for (const pid of origPids) {
+      if (!pid) continue;
+      const lower = pid.toLowerCase();
+      if (!seenPids.has(lower)) {
+        seenPids.add(lower);
+        uniquePids.push(pid);
+      }
+    }
 
-      // Remove duplicates (keep first occurrence)
-      const unique = [];
-      const seenLower = new Set();
-      mfrs.forEach((mfr, idx) => {
-        if (!mfr) return;
-        const lower = mfr.toLowerCase();
-        if (!seenLower.has(lower)) {
-          unique.push(mfr);
-          seenLower.add(lower);
-        }
-      });
+    const removedMfrs = origMfrs.length - uniqueMfrs.length;
+    const removedPids = origPids.length - uniquePids.length;
 
-      // Update content
-      driver.content.zigbee.manufacturerName = unique;
-      const removed = mfrs.length - unique.length;
-      totalRemoved += removed;
+    if (removedMfrs > 0 || removedPids > 0) {
+      console.log(`\n${driver.name}:`);
+      if (removedMfrs > 0) console.log(`  - Removed ${removedMfrs} duplicate manufacturerNames`);
+      if (removedPids > 0) console.log(`  - Removed ${removedPids} duplicate productIds`);
+      
+      driver.content.zigbee.manufacturerName = uniqueMfrs;
+      driver.content.zigbee.productId = uniquePids;
+      
+      totalRemoved += (removedMfrs + removedPids);
       driversModified++;
-
-      console.log(`  Removed ${removed} duplicate(s), keeping ${unique.length}`);
     }
   }
 
@@ -86,17 +87,20 @@ function main() {
   const drivers = loadDrivers();
   console.log(`Loaded ${drivers.length} drivers\n`);
 
-  // Phase 1: Deduplicate manufacturerNames in same driver
-  console.log('--- Phase 1: Deduplicate manufacturerNames ---');
+  console.log('--- Phase 1: Deduplicate Arrays ---');
   const result1 = deduplicateMfrs(drivers);
-  console.log(`\n✅ Removed ${result1.totalRemoved} duplicates from ${result1.driversModified} drivers`);
+  console.log(`\n✅ Removed ${result1.totalRemoved} duplicate items from ${result1.driversModified} drivers`);
 
-  // Phase 2: Save changes
   if (result1.driversModified > 0) {
     console.log('\n--- Phase 2: Saving changes ---');
     let saved = 0;
     for (const driver of drivers) {
-      if (driver.content.zigbee && driver.content.zigbee.manufacturerName && driver.content.zigbee.manufacturerName.length !== driver.mfrs.length) {
+      const origMfrs = driver.mfrs;
+      const origPids = driver.pids;
+      const newMfrs = driver.content.zigbee.manufacturerName;
+      const newPids = driver.content.zigbee.productId;
+      
+      if (origMfrs.length !== newMfrs.length || origPids.length !== newPids.length) {
         fs.writeFileSync(driver.file, JSON.stringify(driver.content, null, 2) + '\n');
         saved++;
         console.log(`  💾 Saved ${driver.name}`);
@@ -105,9 +109,8 @@ function main() {
     console.log(`\n✅ Saved ${saved} driver.compose.json files`);
   }
 
-  // Phase 3: Verify with lint-collisions
   console.log('\n--- Phase 3: Verification ---');
-  console.log('Run: node scripts/automation/lint-collisions.js');
+  console.log('Run: node scripts/validation/check-driver-collisions.js');
   console.log('Expected: 0 collisions after fix');
 
   console.log('\n=== FIX COMPLETE ===');
