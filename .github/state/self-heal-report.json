@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-06-26T06:43:11.453Z",
+  "timestamp": "2026-06-26T07:10:24.018Z",
   "totalFiles": 0,
-  "totalFixes": 371,
+  "totalFixes": 234,
   "rules": {
     "fingerprint-case": {
-      "count": 155,
+      "count": 151,
       "files": [
         {
           "file": "drivers/air_purifier/driver.compose.json",
@@ -56,7 +56,7 @@
         },
         {
           "file": "drivers/button_wireless_1/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 53)"
+          "detail": "Expanded fingerprints with robust casing variants (added 51)"
         },
         {
           "file": "drivers/button_wireless_2/driver.compose.json",
@@ -64,7 +64,7 @@
         },
         {
           "file": "drivers/button_wireless_3/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
         },
         {
           "file": "drivers/button_wireless_4/driver.compose.json",
@@ -88,7 +88,7 @@
         },
         {
           "file": "drivers/climate_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1343)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1320)"
         },
         {
           "file": "drivers/co_sensor/driver.compose.json",
@@ -96,11 +96,11 @@
         },
         {
           "file": "drivers/contact_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 175)"
+          "detail": "Expanded fingerprints with robust casing variants (added 173)"
         },
         {
           "file": "drivers/curtain_motor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 240)"
+          "detail": "Expanded fingerprints with robust casing variants (added 238)"
         },
         {
           "file": "drivers/curtain_motor_shutter/driver.compose.json",
@@ -115,16 +115,12 @@
           "detail": "Expanded fingerprints with robust casing variants (added 16)"
         },
         {
-          "file": "drivers/device_din_rail/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
           "file": "drivers/device_floor_heating/driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
           "file": "drivers/device_generic_tuya_universal/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+          "detail": "Expanded fingerprints with robust casing variants (added 23)"
         },
         {
           "file": "drivers/device_radiator_valve/driver.compose.json",
@@ -144,7 +140,7 @@
         },
         {
           "file": "drivers/dimmer_wall_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 258)"
+          "detail": "Expanded fingerprints with robust casing variants (added 256)"
         },
         {
           "file": "drivers/din_rail_meter/driver.compose.json",
@@ -152,7 +148,7 @@
         },
         {
           "file": "drivers/din_rail_switch/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 29)"
+          "detail": "Expanded fingerprints with robust casing variants (added 28)"
         },
         {
           "file": "drivers/diy_custom_zigbee/driver.compose.json",
@@ -168,7 +164,7 @@
         },
         {
           "file": "drivers/energy_meter_3phase/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 30)"
+          "detail": "Expanded fingerprints with robust casing variants (added 28)"
         },
         {
           "file": "drivers/fan_controller/driver.compose.json",
@@ -236,7 +232,7 @@
         },
         {
           "file": "drivers/illuminance_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 15)"
+          "detail": "Expanded fingerprints with robust casing variants (added 11)"
         },
         {
           "file": "drivers/ir_blaster/driver.compose.json",
@@ -284,7 +280,7 @@
         },
         {
           "file": "drivers/module_mini_switch/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 15)"
+          "detail": "Expanded fingerprints with robust casing variants (added 14)"
         },
         {
           "file": "drivers/motion_sensor/driver.compose.json",
@@ -332,7 +328,7 @@
         },
         {
           "file": "drivers/presence_sensor_radar/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 197)"
+          "detail": "Expanded fingerprints with robust casing variants (added 196)"
         },
         {
           "file": "drivers/radiator_controller/driver.compose.json",
@@ -368,15 +364,15 @@
         },
         {
           "file": "drivers/scene_switch_2/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 5)"
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
         },
         {
           "file": "drivers/scene_switch_3/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 9)"
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
         },
         {
           "file": "drivers/scene_switch_4/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 23)"
+          "detail": "Expanded fingerprints with robust casing variants (added 22)"
         },
         {
           "file": "drivers/scene_switch_6/driver.compose.json",
@@ -384,7 +380,7 @@
         },
         {
           "file": "drivers/scene_switch_wall/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 5)"
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
         },
         {
           "file": "drivers/sensor_climate_contact/driver.compose.json",
@@ -397,10 +393,6 @@
         {
           "file": "drivers/sensor_motion_radar/driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
-          "file": "drivers/sensor_presence_radar/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/shutter_roller_controller/driver.compose.json",
@@ -471,28 +463,24 @@
           "detail": "Expanded fingerprints with robust casing variants (added 65)"
         },
         {
-          "file": "drivers/switch/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 3)"
-        },
-        {
           "file": "drivers/switch_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 649)"
+          "detail": "Expanded fingerprints with robust casing variants (added 646)"
         },
         {
           "file": "drivers/switch_2gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 173)"
+          "detail": "Expanded fingerprints with robust casing variants (added 172)"
         },
         {
           "file": "drivers/switch_3gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 127)"
+          "detail": "Expanded fingerprints with robust casing variants (added 126)"
         },
         {
           "file": "drivers/switch_4gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 158)"
+          "detail": "Expanded fingerprints with robust casing variants (added 157)"
         },
         {
           "file": "drivers/switch_dimmer_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 7)"
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
         },
         {
           "file": "drivers/switch_plug_1/driver.compose.json",
@@ -507,16 +495,12 @@
           "detail": "Expanded fingerprints with robust casing variants (added 3)"
         },
         {
-          "file": "drivers/switch_usb_dongle/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
-        },
-        {
           "file": "drivers/switch_wall_5gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
           "file": "drivers/switch_wall_6gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 17)"
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
         },
         {
           "file": "drivers/switch_wall_7gang/driver.compose.json",
@@ -968,543 +952,6 @@
         {
           "file": "lib/utils/tuyaUtils.js",
           "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        }
-      ]
-    },
-    "duplicate-fingerprints": {
-      "count": 133,
-      "files": [
-        {
-          "file": "drivers",
-          "detail": "_tz3000_yj6k7vfo|ts0041 found in: button_wireless_1, button_wireless_smart"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_famkxci2|ts0043 found in: button_wireless_3, scene_switch_3"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_seq9cm6u|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_aaeasoll|ts0222 found in: climate_sensor, illuminance_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_aaeasoll|ts0601 found in: climate_sensor, illuminance_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_ftdkanlj|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_ftdkanlj|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_ftdkanlj|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_kvwjujy9|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_kvwjujy9|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_kvwjujy9|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_a476raq2|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_a476raq2|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_a476raq2|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hjsgdkfl|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hjsgdkfl|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hjsgdkfl|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_do6txrcw|ts0601 found in: contact_sensor, illuminance_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_vd43bbfq|ts0601 found in: curtain_motor, fingerprint_lock"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3210_emqmwtym|ts0601 found in: device_din_rail, doorbell"
-        },
-        {
-          "file": "drivers",
-          "detail": "bseed|ts0601 found in: device_generic_tuya_universal, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_aetquff4|ts0601 found in: dimmer_wall_1gang, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_aetquff4|ts0011 found in: dimmer_wall_1gang, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0601 found in: din_rail_switch, presence_sensor_radar, scene_switch_4, sensor_presence_radar, switch, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze204_81yrt3lo|ts0601 found in: energy_meter_3phase, power_clamp_meter"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_4mdqxxnn|ts0601 found in: illuminance_sensor, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_m6ec2pgj|ts0601 found in: illuminance_sensor, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_jsaqgakf|ts0601 found in: illuminance_sensor, rain_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbmini found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbminil2 found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbminir2 found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|01minizb found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbm5-1c-120 found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbminir found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbminil2-r2 found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zbminir2-r2 found in: module_mini_switch, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0203 found in: presence_sensor_radar, sensor_presence_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zg-204zl found in: presence_sensor_radar, sensor_presence_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zg-204zm found in: presence_sensor_radar, sensor_presence_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|zg-204zv found in: presence_sensor_radar, sensor_presence_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0726 found in: scene_switch_2, scene_switch_3, switch, switch_1gang, switch_2gang, switch_4gang, switch_wall_6gang, wall_switch_4gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0042 found in: scene_switch_2, scene_switch_wall, wall_switch_2gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_w8jwkczz|ts0043 found in: scene_switch_3, scene_switch_wall"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0043 found in: scene_switch_3, scene_switch_wall, wall_switch_3gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_qkixdnon|ts0601 found in: switch, switch_3gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts011f found in: switch, switch_1gang, switch_2gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_l9brjwau|ts0601 found in: switch_1gang, switch_2gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_l9brjwau|ts011f found in: switch_1gang, switch_2gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_l9brjwau|ts0726 found in: switch_1gang, switch_2gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0001 found in: switch_1gang, wall_switch_1gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0011 found in: switch_1gang, wall_switch_1gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0003 found in: switch_2gang, switch_3gang, switch_usb_dongle, wall_switch_3gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "hobeian|ts0013 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
         }
       ]
     },
