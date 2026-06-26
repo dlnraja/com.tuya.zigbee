@@ -6876,8 +6876,8 @@
     ]
   },
   "_TZE200_clrdrnya": {
-    "driverId": "motion_sensor_radar_mmwave",
-    "type": "motion",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "mains",
     "modelIds": [
       "TS0601"
@@ -9977,8 +9977,8 @@
     ]
   },
   "_TZE204_clrdrnya": {
-    "driverId": "motion_sensor_radar_mmwave",
-    "type": "motion",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
     "powerSource": "mains",
     "modelIds": [
       "TS0601"
