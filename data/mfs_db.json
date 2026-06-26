@@ -139644,5 +139644,200 @@
   "_tz3000_wlquqiiz": {
     "driverId": "zigbee_repeater",
     "source": "auto-sync"
+  },
+  "_TZ3000_n2egfsli": {
+    "driverId": "air_purifier_contact",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.171Z"
+  },
+  "_TZE200_8ygsuhe1": {
+    "driverId": "air_quality_co2",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.171Z"
+  },
+  "_TZ3000_l9brjwau": {
+    "driverId": "button_wireless_switch",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.174Z"
+  },
+  "_TZ3000_wzmuk9ai": {
+    "driverId": "device_air_purifier_plug",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_TZE204_81YRT3LO": {
+    "driverId": "din_rail_meter",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_TZE284_81YRT3LO": {
+    "driverId": "din_rail_meter",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_TZE200_81YRT3LO": {
+    "driverId": "din_rail_meter",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.178Z"
+  },
+  "_TZ3002_pzao9ls1": {
+    "driverId": "gas_sensor_switch",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.179Z"
+  },
+  "_TZ3000_xk5udnd6": {
+    "driverId": "gas_sensor_switch",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.179Z"
+  },
+  "_TZ3000_bseed": {
+    "driverId": "gas_sensor_switch",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.179Z"
+  },
+  "_TZE204_3towulqd": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE200_7hfcudw5": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE200_myd45weu": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE200_rxqls8v0": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE204_rxqls8v0": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE200_2aaelwxk": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE204_2aaelwxk": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE200_kb5noeto": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_TZE200_ppuj1vem": {
+    "driverId": "motion_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze204_clrdrnya": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze200_clrdrnya": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze200_lyetpprm": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze204_lyetpprm": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze204_wukb7rhc": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze200_jva8ink8": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze204_jva8ink8": {
+    "driverId": "motion_sensor_radar_mmwave",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.180Z"
+  },
+  "_tze200_ne4pikwm": {
+    "driverId": "radiator_valve",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.183Z"
+  },
+  "_TZ3000_ky0fq4ho": {
+    "driverId": "sensor_illuminance_presence",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.184Z"
+  },
+  "_TZE200_SH1BTABB": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZE204_qq9mpfhw": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_k4ej3ww2": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_upgcbody": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_kstbkt6a": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_fvm13j8w": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_kyb656no": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_mugyhz0q": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_t6jriawg": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_js34cuma": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_TZ3000_rurvxhcx": {
+    "driverId": "water_leak_sensor",
+    "source": "auto-sync",
+    "addedAt": "2026-06-26T14:42:09.191Z"
   }
 }
