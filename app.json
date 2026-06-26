@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.113",
+  "version": "9.0.114",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -173578,11 +173578,7 @@
           "_TZE284_0WFZACEL",
           "_TZE284_ZY6WJM01",
           "_TZE284_gnpflcoq",
-          "_TZ3218_T9YNFZ",
-          "_TZE204_clrdrnya",
-          "_TZE204_CLRDRNYA",
-          "_TZE200_clrdrnya",
-          "_TZE200_CLRDRNYA"
+          "_TZ3218_T9YNFZ"
         ],
         "endpoints": {
           "1": {
@@ -178919,7 +178915,23 @@
           "_TZE200_xpq2rzhq",
           "b3876m9",
           "zg-204ze",
-          "zgaf-205l"
+          "zgaf-205l",
+          "_TZE204_clrdrnya",
+          "_TZE200_clrdrnya",
+          "_TZE204_r0jdjrvi",
+          "_TZE204_R0JDJRVI",
+          "_TZE204_grgol3xp",
+          "_TZE204_GRGOL3XP",
+          "_TZE204_uli8wasj",
+          "_TZE204_ULI8WASJ",
+          "_TZE284_ztqnh5cg",
+          "_TZE284_ZTQNH5CG",
+          "_TZE284_sbyx0lm6",
+          "_TZE284_SBYX0LM6",
+          "_TZE284_rlytpmij",
+          "_TZE284_RLYTPMIJ",
+          "_TZE284_bquwrqh1",
+          "_TZE284_BQUWRQH1"
         ],
         "productId": [
           "CK-BL702-MWS-01",
@@ -195608,7 +195620,6 @@
           "VABRATE",
           "_TZ3210_a04acm9s",
           "_TZ3210_cm9mbpr1",
-          "_TZE284_bquwrqh1",
           "_TZ3040_o4mkahkc",
           "piriv01",
           "vabrate"
@@ -200518,8 +200529,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tze284_ibnz7orz",
-          "_tze284_rlytpmij"
+          "_tze284_ibnz7orz"
         ],
         "productId": [
           "TS0601"
@@ -204571,7 +204581,6 @@
           "_TZE204_7tdtqgwv",
           "_TYST11_wmcdj3aq",
           "_TZE204_5sbebbzs",
-          "_tze204_r0jdjrvi",
           "_tz3000_v8gtiaed",
           "_tz3210_ok0ggpk7",
           "_tz3040_bb6xaihh",
