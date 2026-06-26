@@ -12805,5 +12805,13 @@
       "TS0505B",
       "ZB-CL01"
     ]
+  },
+  "_TZE200_seq9cm6u": {
+    "driverId": "bed_sensor",
+    "type": "zigbee",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
   }
 }
