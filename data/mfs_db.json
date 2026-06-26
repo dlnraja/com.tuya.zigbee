@@ -143711,5 +143711,161 @@
     "driverId": "zigbee_repeater",
     "source": "auto-sync",
     "addedAt": "2026-06-26T14:42:09.191Z"
+  },
+  "_tz3000_n2egfsli": {
+    "driverId": "button_wireless_2",
+    "source": "auto-sync"
+  },
+  "_TZE200_8YGSUHE1": {
+    "driverId": "climate_sensor",
+    "source": "auto-sync"
+  },
+  "_TZE284_81yrt3lo": {
+    "driverId": "power_clamp_meter",
+    "source": "auto-sync"
+  },
+  "_TZE204_81yrt3lo": {
+    "driverId": "power_clamp_meter",
+    "source": "auto-sync"
+  },
+  "_TZE200_81yrt3lo": {
+    "driverId": "power_clamp_meter",
+    "source": "auto-sync"
+  },
+  "_TZE200_2AAELWXK": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE200_KB5NOETO": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE200_PPUJ1VEM": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE204_JVA8INK8": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE204_LYETPPRM": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE204_WUKB7RHC": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE200_jva8ink8": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE200_lyetpprm": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE204_clrdrnya": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_TZE200_clrdrnya": {
+    "driverId": "presence_sensor_radar",
+    "source": "auto-sync"
+  },
+  "_tze200_myd45weu": {
+    "driverId": "sensor_climate_contact",
+    "source": "auto-sync"
+  },
+  "_tze200_7hfcudw5": {
+    "driverId": "sensor_contact_motion",
+    "source": "auto-sync"
+  },
+  "_tze200_rxqls8v0": {
+    "driverId": "sensor_contact_motion",
+    "source": "auto-sync"
+  },
+  "_tze204_2aaelwxk": {
+    "driverId": "sensor_contact_motion",
+    "source": "auto-sync"
+  },
+  "_tze204_3towulqd": {
+    "driverId": "sensor_contact_motion",
+    "source": "auto-sync"
+  },
+  "_tze204_rxqls8v0": {
+    "driverId": "sensor_contact_motion",
+    "source": "auto-sync"
+  },
+  "_TZ3000_BSEED": {
+    "driverId": "switch_1gang",
+    "source": "auto-sync"
+  },
+  "_tz3000_wzmuk9ai": {
+    "driverId": "switch_1gang",
+    "source": "auto-sync"
+  },
+  "_TZ3000_L9BRJWAU": {
+    "driverId": "switch_2gang",
+    "source": "auto-sync"
+  },
+  "_TZ3000_XK5UDND6": {
+    "driverId": "switch_4gang",
+    "source": "auto-sync"
+  },
+  "_TZE200_ne4pikwm": {
+    "driverId": "thermostatic_radiator_valve",
+    "source": "auto-sync"
+  },
+  "_TZ3000_KY0FQ4HO": {
+    "driverId": "vibration_sensor",
+    "source": "auto-sync"
+  },
+  "_TZ3002_PZAO9LS1": {
+    "driverId": "wall_switch_4gang_1way",
+    "source": "auto-sync"
+  },
+  "_tz3000_fvm13j8w": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_js34cuma": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_kstbkt6a": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_mugyhz0q": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_rurvxhcx": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_t6jriawg": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tze204_qq9mpfhw": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_k4ej3ww2": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_kyb656no": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tz3000_upgcbody": {
+    "driverId": "water_leak_sensor_tuya",
+    "source": "auto-sync"
+  },
+  "_tze200_sh1btabb": {
+    "driverId": "water_valve_smart",
+    "source": "auto-sync"
   }
 }

@@ -12133,5 +12133,675 @@
     "modelIds": [
       "TS0041"
     ]
+  },
+  "Immax": {
+    "driverId": "doorwindowsensor_2",
+    "type": "doorwindowsensor_2",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "DoorWindow-Sensor-ZB3.0",
+      "MCT-340 E"
+    ]
+  },
+  "TUYATEC-0l6xaqmi": {
+    "driverId": "doorwindowsensor_2",
+    "type": "doorwindowsensor_2",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "DoorWindow-Sensor-ZB3.0",
+      "MCT-340 E"
+    ]
+  },
+  "TUYATEC-3tipnsrx": {
+    "driverId": "flood_sensor",
+    "type": "flood_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0207"
+    ]
+  },
+  "TUYATEC-53o41joc": {
+    "driverId": "pirsensor",
+    "type": "pirsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3040"
+    ]
+  },
+  "TUYATEC-7qunn4gq": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-Bfq2i2Sy": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-O6SNCwd6": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "TUYATEC-abkehqus": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-b5g40alm": {
+    "driverId": "pirsensor",
+    "type": "pirsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3040"
+    ]
+  },
+  "TUYATEC-crr8qb0p": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-deetibst": {
+    "driverId": "pirsensor",
+    "type": "pirsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3040"
+    ]
+  },
+  "TUYATEC-dgtxmihe": {
+    "driverId": "pirsensor",
+    "type": "pirsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3040"
+    ]
+  },
+  "TUYATEC-g3gl6cgy": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-ip9ganvw": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-kbqf60nt": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-nzrrvgco": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "TUYATEC-qun7vq14": {
+    "driverId": "temphumidsensor2",
+    "type": "temphumidsensor2",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3052",
+      "TS0201"
+    ]
+  },
+  "TUYATEC-r9hgssol": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-rkqiqvcs": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-sb6t7ett": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "TUYATEC-trhrga6p": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "Visonic": {
+    "driverId": "doorwindowsensor_2",
+    "type": "doorwindowsensor_2",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "DoorWindow-Sensor-ZB3.0",
+      "MCT-340 E"
+    ]
+  },
+  "_TYZB01_2athzhfr": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "_TYZB01_6g8b7at8": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "_TYZB01_6sadkhcy": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "_TYZB01_a476raq2": {
+    "driverId": "lcdtemphumidsensor",
+    "type": "lcdtemphumidsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201",
+      "TY0201"
+    ]
+  },
+  "_TYZB01_aneiicmq": {
+    "driverId": "switch_1_gang",
+    "type": "switch_1_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS011F",
+      "TS0011",
+      "TS000F",
+      "TS0001"
+    ]
+  },
+  "_TYZB01_b8cr31hp": {
+    "driverId": "wall_switch_3_gang",
+    "type": "wall_switch_3_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS0013",
+      "TS0043"
+    ]
+  },
+  "_TYZB01_bagt1e4o": {
+    "driverId": "wall_switch_4_gang",
+    "type": "wall_switch_4_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0014",
+      "TS0044"
+    ]
+  },
+  "_TYZB01_digziiav": {
+    "driverId": "switch_2_gang",
+    "type": "switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS0012",
+      "TS011F",
+      "TS0002",
+      "TS0013"
+    ]
+  },
+  "_TYZB01_dl7cejts": {
+    "driverId": "pir_sensor_2",
+    "type": "pir_sensor_2",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TYZB01_dr6sduka": {
+    "driverId": "pir_sensor_2",
+    "type": "pir_sensor_2",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TYZB01_dsjszp0x": {
+    "driverId": "smoke_sensor",
+    "type": "smoke_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0205"
+    ]
+  },
+  "_TYZB01_ftdkanlj": {
+    "driverId": "lcdtemphumidluxsensor",
+    "type": "lcdtemphumidluxsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201",
+      "TS0222"
+    ]
+  },
+  "_TYZB01_geepvxsy": {
+    "driverId": "pir_sensor_2",
+    "type": "pir_sensor_2",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0202"
+    ]
+  },
+  "_TYZB01_hjsgdkfl": {
+    "driverId": "lcdtemphumidsensor",
+    "type": "lcdtemphumidsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201",
+      "TY0201"
+    ]
+  },
+  "_TYZB01_iuepbmpv": {
+    "driverId": "lcdtemphumidsensor",
+    "type": "lcdtemphumidsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201",
+      "TY0201"
+    ]
+  },
+  "_TYZB01_kvwjujy9": {
+    "driverId": "lcdtemphumidluxsensor",
+    "type": "lcdtemphumidluxsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0201",
+      "TS0222"
+    ]
+  },
+  "_TYZB01_mqel1whf": {
+    "driverId": "wall_switch_3_gang",
+    "type": "wall_switch_3_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS0013",
+      "TS0043"
+    ]
+  },
+  "_TYZB01_mtlhqn48": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "_TYZB01_ncutbjdi": {
+    "driverId": "switch_1_gang",
+    "type": "switch_1_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS011F",
+      "TS0011",
+      "TS000F",
+      "TS0001"
+    ]
+  },
+  "_TYZB01_phjeraqq": {
+    "driverId": "smart_switch",
+    "type": "smart_switch",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001"
+    ]
+  },
+  "_TYZB01_qeqvmvti": {
+    "driverId": "wall_switch_1_gang",
+    "type": "wall_switch_1_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001",
+      "TS0011"
+    ]
+  },
+  "_TYZB01_qezuin6k": {
+    "driverId": "dimmer_1_gang",
+    "type": "dimmer_1_gang",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS110F",
+      "TS110E",
+      "TS0052"
+    ]
+  },
+  "_TYZB01_qm6djpta": {
+    "driverId": "smart_remote_4_buttons",
+    "type": "smart_remote_4_buttons",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0215A"
+    ]
+  },
+  "_TYZB01_seqwasot": {
+    "driverId": "wall_switch_1_gang",
+    "type": "wall_switch_1_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001",
+      "TS0011"
+    ]
+  },
+  "_TYZB01_v8gtiaed": {
+    "driverId": "dimmer_2_gang",
+    "type": "dimmer_2_gang",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS110F",
+      "TS110E",
+      "TS1101"
+    ]
+  },
+  "_TYZB01_vkwryfdr": {
+    "driverId": "socket_power_strip_four",
+    "type": "socket_power_strip_four",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0115"
+    ]
+  },
+  "_TYZB01_vzrytttn": {
+    "driverId": "wall_switch_2_gang",
+    "type": "wall_switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0002",
+      "TS0012",
+      "TS0042"
+    ]
+  },
+  "_TYZB01_xfpdrwvc": {
+    "driverId": "wall_switch_1_gang",
+    "type": "wall_switch_1_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0001",
+      "TS0011"
+    ]
+  },
+  "_TYZB01_xiuox57i": {
+    "driverId": "wall_switch_3_gang",
+    "type": "wall_switch_3_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS0013",
+      "TS0043"
+    ]
+  },
+  "_TYZB01_xph99wvr": {
+    "driverId": "doorwindowsensor",
+    "type": "doorwindowsensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ]
+  },
+  "_TYZB01_zsl6z0pw": {
+    "driverId": "switch_2_gang",
+    "type": "switch_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0003",
+      "TS0012",
+      "TS011F",
+      "TS0002",
+      "TS0013"
+    ]
+  },
+  "_TYZB02_key8kk7r": {
+    "driverId": "wall_remote_3_gang",
+    "type": "wall_remote_3_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0043"
+    ]
+  },
+  "_TYZB02_keyjhapk": {
+    "driverId": "wall_remote_2_gang",
+    "type": "wall_remote_2_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0042"
+    ]
+  },
+  "_TYZB02_keyjqthh": {
+    "driverId": "wall_remote_1_gang",
+    "type": "wall_remote_1_gang",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0041"
+    ]
+  },
+  "_TZ3000_aetquff4": {
+    "driverId": "switch_1gang",
+    "type": "wall_switch_1_gang",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0011"
+    ]
+  },
+  "_TZ3000_baeiitad": {
+    "driverId": "water_leak_sensor",
+    "type": "water_leak_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0207"
+    ]
+  },
+  "_TZ3000_kaflzta4": {
+    "driverId": "smart_knob",
+    "type": "button",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS004F"
+    ]
+  },
+  "_TZE200_1ibpyhdc": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_bh3n6gk8": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_cqtamhh5": {
+    "driverId": "vibration_sensor",
+    "type": "presence_switch",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_df04ghrb": {
+    "driverId": "vibration_sensor",
+    "type": "presence_switch",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_khzbklyh": {
+    "driverId": "vibration_sensor",
+    "type": "presence_switch",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_llvwkkde": {
+    "driverId": "vibration_sensor",
+    "type": "presence_switch",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_toeldckg": {
+    "driverId": "vibration_sensor",
+    "type": "presence_switch",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_xlnzk169": {
+    "driverId": "vibration_sensor",
+    "type": "presence_switch",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_zbfmvj13": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE200_zcl6go6a": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence_sensor",
+    "powerSource": "ac",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_1youk3hj": {
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_aaeasoll": {
+    "driverId": "light_sensor_outdoor",
+    "type": "light_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZE284_qf5mzewi": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "eWeLight": {
+    "driverId": "rgb_bulb_E27",
+    "type": "rgb_bulb_E27",
+    "powerSource": "unknown",
+    "modelIds": [
+      "TS0505A",
+      "TS0505B",
+      "ZB-CL01"
+    ]
   }
 }
