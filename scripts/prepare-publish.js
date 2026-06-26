@@ -137,29 +137,32 @@ try {
     console.warn('Warning: could not verify sdk field:', e.message);
   }
 
-  // 5) Sanitize drivers: strip empty manufacturerName arrays.
-  // An empty manufacturerName:[] on a zigbee driver triggers an AggregateError
-  // during Athom's Zigbee init on the build server → processing_failed.
-  // The good build #2469 had ZERO such drivers; the build process itself
-  // regresses and re-injects empty arrays (~25-44 of them), so we strip them
-  // here as a deterministic post-build step instead of blocking the publish.
+  // 5) Sanitize drivers: strip empty manufacturerName AND productId arrays.
+  // An empty manufacturerName:[] or productId:[] on a zigbee driver triggers
+  // an AggregateError during Athom's Zigbee init on the build server → processing_failed.
   try {
     const manifest = JSON.parse(fs.readFileSync(destAppJson, 'utf8'));
     let stripped = 0;
     for (const d of (manifest.drivers || [])) {
-      if (d.zigbee && Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0) {
-        delete d.zigbee.manufacturerName;
-        stripped++;
+      if (d.zigbee) {
+        if (Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0) {
+          delete d.zigbee.manufacturerName;
+          stripped++;
+        }
+        if (Array.isArray(d.zigbee.productId) && d.zigbee.productId.length === 0) {
+          delete d.zigbee.productId;
+          stripped++;
+        }
       }
     }
     if (stripped > 0) {
       fs.writeFileSync(destAppJson, JSON.stringify(manifest, null, 2));
-      console.log(`Sanitized: stripped ${stripped} empty manufacturerName[] array(s) from app.json.`);
+      console.log(`Sanitized: stripped ${stripped} empty array(s) from app.json.`);
     } else {
-      console.log(`OK: 0 empty-manufacturerName drivers across ${(manifest.drivers || []).length} drivers.`);
+      console.log(`OK: 0 empty arrays across ${(manifest.drivers || []).length} drivers.`);
     }
   } catch (valErr) {
-    console.error('FATAL: could not sanitize driver manufacturerName:', valErr.message);
+    console.error('FATAL: could not sanitize driver arrays:', valErr.message);
     process.exit(1);
   }
 
