@@ -2725,14 +2725,6 @@
       "TS0601"
     ]
   },
-  "_TZ3000_n": {
-    "driverId": "bulb_dimmable",
-    "type": "light",
-    "powerSource": "mains",
-    "modelIds": [
-      "TS0601"
-    ]
-  },
   "_TZ3000_n0lphcok": {
     "driverId": "motion_sensor",
     "type": "motion_sensor",
@@ -12110,143 +12102,6 @@
       "TS0603"
     ]
   },
-  "B3876M9": {
-    "driverId": "presence_sensor_radar",
-    "type": "radar",
-    "powerSource": "battery",
-    "modelIds": [
-      "ZP-301Z"
-    ],
-    "dps": {
-      "1": {
-        "name": "presence",
-        "converter": "boolean",
-        "capability": "alarm_motion"
-      },
-      "14": {
-        "name": "battery_value",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "20": {
-        "name": "illuminance",
-        "converter": "raw",
-        "capability": "measure_luminance"
-      },
-      "102": {
-        "name": "presence_time",
-        "converter": "raw"
-      }
-    }
-  },
-  "CAT0001": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      },
-      "7": {
-        "name": "contact",
-        "capability": "alarm_contact"
-      }
-    }
-  },
-  "DHT0001": {
-    "driverId": "climate_sensor",
-    "type": "climate",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "5": {
-        "name": "temperature",
-        "converter": "divideBy10",
-        "capability": "measure_temperature"
-      },
-      "118": {
-        "name": "humidity",
-        "converter": "raw",
-        "capability": "measure_humidity"
-      }
-    }
-  },
-  "DHTA001": {
-    "driverId": "climate_sensor",
-    "type": "climate",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "converter": "raw",
-        "capability": "measure_battery"
-      },
-      "5": {
-        "name": "temperature",
-        "converter": "divideBy10",
-        "capability": "measure_temperature"
-      },
-      "118": {
-        "name": "humidity",
-        "converter": "raw",
-        "capability": "measure_humidity"
-      }
-    }
-  },
-  "DSS0010": {
-    "driverId": "contact_sensor",
-    "type": "contact_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      }
-    }
-  },
-  "NTCHT01": {
-    "driverId": "climate_sensor",
-    "type": "climate",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ]
-  },
-  "PIRIV01": {
-    "driverId": "motion_sensor",
-    "type": "motion_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "1": {
-        "name": "presence",
-        "capability": "alarm_motion"
-      },
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      }
-    }
-  },
   "TZE204_7sjncirf": {
     "driverId": "switch_wall_6gang",
     "type": "switch_wall_6gang",
@@ -12254,24 +12109,6 @@
     "modelIds": [
       "TS0601"
     ]
-  },
-  "VABRATE": {
-    "driverId": "motion_sensor",
-    "type": "motion_sensor",
-    "powerSource": "battery",
-    "modelIds": [
-      "Excellux"
-    ],
-    "dps": {
-      "3": {
-        "name": "vibration",
-        "capability": "alarm_motion"
-      },
-      "4": {
-        "name": "battery",
-        "capability": "measure_battery"
-      }
-    }
   },
   "_TZE200_seq9cm6u": {
     "driverId": "bed_sensor",
