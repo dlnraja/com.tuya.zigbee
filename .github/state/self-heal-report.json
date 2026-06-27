@@ -1,8 +1,617 @@
 {
-  "timestamp": "2026-06-26T08:05:04.981Z",
+  "timestamp": "2026-06-27T06:11:39.658Z",
   "totalFiles": 0,
-  "totalFixes": 83,
+  "totalFixes": 1094,
   "rules": {
+    "fingerprint-case": {
+      "count": 151,
+      "files": [
+        {
+          "file": "drivers/air_purifier/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 13)"
+        },
+        {
+          "file": "drivers/air_quality_co2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 20)"
+        },
+        {
+          "file": "drivers/air_quality_comprehensive/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 34)"
+        },
+        {
+          "file": "drivers/bulb_dimmable/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 83)"
+        },
+        {
+          "file": "drivers/bulb_dimmable_dimmer/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 28)"
+        },
+        {
+          "file": "drivers/bulb_rgb/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 53)"
+        },
+        {
+          "file": "drivers/bulb_rgb_led/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 26)"
+        },
+        {
+          "file": "drivers/bulb_rgbw/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 172)"
+        },
+        {
+          "file": "drivers/bulb_tunable_white/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 100)"
+        },
+        {
+          "file": "drivers/bulb_white/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/button_emergency_sos/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 76)"
+        },
+        {
+          "file": "drivers/button_wireless/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 15)"
+        },
+        {
+          "file": "drivers/button_wireless_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 53)"
+        },
+        {
+          "file": "drivers/button_wireless_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 423)"
+        },
+        {
+          "file": "drivers/button_wireless_3/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+        },
+        {
+          "file": "drivers/button_wireless_4/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 92)"
+        },
+        {
+          "file": "drivers/button_wireless_6/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/button_wireless_8/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/button_wireless_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+        },
+        {
+          "file": "drivers/ceiling_fan/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/climate_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1523)"
+        },
+        {
+          "file": "drivers/co_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/contact_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 176)"
+        },
+        {
+          "file": "drivers/curtain_motor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 270)"
+        },
+        {
+          "file": "drivers/curtain_motor_shutter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 76)"
+        },
+        {
+          "file": "drivers/curtain_motor_tilt/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 56)"
+        },
+        {
+          "file": "drivers/curtain_motor_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+        },
+        {
+          "file": "drivers/device_floor_heating/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/device_generic_tuya_universal/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 23)"
+        },
+        {
+          "file": "drivers/device_radiator_valve/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/device_radiator_valve_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 11)"
+        },
+        {
+          "file": "drivers/dimmer_3gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/dimmer_dual_channel/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+        },
+        {
+          "file": "drivers/dimmer_wall_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 383)"
+        },
+        {
+          "file": "drivers/din_rail_meter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 48)"
+        },
+        {
+          "file": "drivers/din_rail_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 28)"
+        },
+        {
+          "file": "drivers/diy_custom_zigbee/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 103)"
+        },
+        {
+          "file": "drivers/door_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/doorbell/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+        },
+        {
+          "file": "drivers/energy_meter_3phase/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 28)"
+        },
+        {
+          "file": "drivers/fan_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 34)"
+        },
+        {
+          "file": "drivers/fingerbot/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+        },
+        {
+          "file": "drivers/fingerprint_lock/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+        },
+        {
+          "file": "drivers/floor_heating_thermostat/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/formaldehyde_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/garage_door/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+        },
+        {
+          "file": "drivers/garage_door_opener/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+        },
+        {
+          "file": "drivers/gas_detector/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 33)"
+        },
+        {
+          "file": "drivers/gas_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 41)"
+        },
+        {
+          "file": "drivers/gateway_zigbee_bridge/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/generic_diy/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 95)"
+        },
+        {
+          "file": "drivers/generic_tuya/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 184)"
+        },
+        {
+          "file": "drivers/humidifier/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+        },
+        {
+          "file": "drivers/hvac_air_conditioner/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/hvac_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+        },
+        {
+          "file": "drivers/hvac_dehumidifier/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+        },
+        {
+          "file": "drivers/illuminance_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+        },
+        {
+          "file": "drivers/ir_blaster/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 64)"
+        },
+        {
+          "file": "drivers/lcdtemphumidsensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 36)"
+        },
+        {
+          "file": "drivers/led_controller_cct/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+        },
+        {
+          "file": "drivers/led_controller_dimmable/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/led_controller_rgb/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/led_strip/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+        },
+        {
+          "file": "drivers/led_strip_advanced/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/led_strip_rgbw/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 26)"
+        },
+        {
+          "file": "drivers/light_bulb_rgb_rgbw/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 138)"
+        },
+        {
+          "file": "drivers/light_sensor_outdoor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/lock_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+        },
+        {
+          "file": "drivers/module_mini_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+        },
+        {
+          "file": "drivers/motion_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 176)"
+        },
+        {
+          "file": "drivers/motion_sensor_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 5)"
+        },
+        {
+          "file": "drivers/motion_sensor_radar_mmwave/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 52)"
+        },
+        {
+          "file": "drivers/pet_feeder/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+        },
+        {
+          "file": "drivers/pet_feeder_zigbee/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+        },
+        {
+          "file": "drivers/plug_energy_monitor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 358)"
+        },
+        {
+          "file": "drivers/plug_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 63)"
+        },
+        {
+          "file": "drivers/pool_pump/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+        },
+        {
+          "file": "drivers/power_clamp_meter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+        },
+        {
+          "file": "drivers/power_meter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 28)"
+        },
+        {
+          "file": "drivers/presence_sensor_ceiling/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+        },
+        {
+          "file": "drivers/presence_sensor_radar/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 326)"
+        },
+        {
+          "file": "drivers/radiator_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 11)"
+        },
+        {
+          "file": "drivers/radiator_valve/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 415)"
+        },
+        {
+          "file": "drivers/radiator_valve_zigbee/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/rain_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 22)"
+        },
+        {
+          "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/remote_button_wireless_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 44)"
+        },
+        {
+          "file": "drivers/remote_dimmer/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 9)"
+        },
+        {
+          "file": "drivers/scene_switch_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/scene_switch_3/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+        },
+        {
+          "file": "drivers/scene_switch_4/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 22)"
+        },
+        {
+          "file": "drivers/scene_switch_6/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/scene_switch_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 30)"
+        },
+        {
+          "file": "drivers/sensor_climate_contact/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 25)"
+        },
+        {
+          "file": "drivers/sensor_contact_presence/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers/sensor_motion_radar/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/shutter_roller_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/siren/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 50)"
+        },
+        {
+          "file": "drivers/siren_sirentemphumidsensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/smart_breaker/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/smart_button_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+        },
+        {
+          "file": "drivers/smart_heater/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 5)"
+        },
+        {
+          "file": "drivers/smart_heater_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/smart_knob/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/smart_knob_rotary/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+        },
+        {
+          "file": "drivers/smart_knob_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/smart_lcd_thermostat/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 13)"
+        },
+        {
+          "file": "drivers/smart_rcbo/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/smart_remote_1_button/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/smart_remote_1_button_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/smart_scene_panel/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/smoke_detector_advanced/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 83)"
+        },
+        {
+          "file": "drivers/soil_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 89)"
+        },
+        {
+          "file": "drivers/switch_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 969)"
+        },
+        {
+          "file": "drivers/switch_2gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 188)"
+        },
+        {
+          "file": "drivers/switch_3gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 144)"
+        },
+        {
+          "file": "drivers/switch_4gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 182)"
+        },
+        {
+          "file": "drivers/switch_dimmer_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/switch_plug_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/switch_plug_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/switch_temp_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/switch_wall_5gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 9)"
+        },
+        {
+          "file": "drivers/switch_wall_6gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 22)"
+        },
+        {
+          "file": "drivers/switch_wall_7gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+        },
+        {
+          "file": "drivers/switch_wall_8gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 17)"
+        },
+        {
+          "file": "drivers/switch_wireless/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 5)"
+        },
+        {
+          "file": "drivers/temphumidsensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 27)"
+        },
+        {
+          "file": "drivers/thermostat_4ch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers/thermostat_tuya_dp/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 155)"
+        },
+        {
+          "file": "drivers/universal_fallback/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 21)"
+        },
+        {
+          "file": "drivers/usb_dongle_dual_repeater/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/usb_outlet_advanced/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 37)"
+        },
+        {
+          "file": "drivers/valve_irrigation/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 72)"
+        },
+        {
+          "file": "drivers/valve_single/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/vibration_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 75)"
+        },
+        {
+          "file": "drivers/wall_curtain_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers/wall_dimmer_1gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/wall_remote_1_gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/wall_remote_2_gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/wall_remote_3_gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+        },
+        {
+          "file": "drivers/wall_switch_1gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 15)"
+        },
+        {
+          "file": "drivers/wall_switch_2gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 33)"
+        },
+        {
+          "file": "drivers/wall_switch_3gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 45)"
+        },
+        {
+          "file": "drivers/wall_switch_4gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 13)"
+        },
+        {
+          "file": "drivers/water_leak_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 102)"
+        },
+        {
+          "file": "drivers/water_tank_monitor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 22)"
+        },
+        {
+          "file": "drivers/water_valve_garden/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+        },
+        {
+          "file": "drivers/water_valve_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 35)"
+        },
+        {
+          "file": "drivers/weather_station_outdoor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers/zigbee_repeater/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 26)"
+        }
+      ]
+    },
     "flow-card-try-catch": {
       "count": 31,
       "files": [
@@ -343,6 +952,3451 @@
         {
           "file": "lib/utils/tuyaUtils.js",
           "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        }
+      ]
+    },
+    "duplicate-fingerprints": {
+      "count": 860,
+      "files": [
+        {
+          "file": "drivers",
+          "detail": "_tze200_4mh6tyyo|ts0601 found in: air_purifier, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_d0yu2xgi|ts0601 found in: air_purifier, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ryfmq5rl|ts0601 found in: air_quality_co2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_yvx5lh6k|ts0601 found in: air_quality_co2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ywagc4rj|ts0601 found in: air_quality_co2, gas_detector"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_a8sdabtg|ts0601 found in: air_quality_co2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ywagc4rj|ts0601 found in: air_quality_co2, gas_detector"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_c2fmom5z|ts0601 found in: air_quality_co2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz2000_avdnvykf|ts0601 found in: air_quality_comprehensive, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz2000_hjsgdkfl|ts0601 found in: air_quality_comprehensive, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_0ht8dnxj|ts0601 found in: air_quality_comprehensive, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8gs8h2e4|ts0601 found in: air_quality_comprehensive, usb_outlet_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_8ygsuhe1|ts0601 found in: air_quality_comprehensive, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_dwcarsat|ts0601 found in: air_quality_comprehensive, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nnrfa68v|ts0601 found in: air_quality_comprehensive, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_nnrfa68v|ts0601 found in: air_quality_comprehensive, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_8b9zpaav|ts0601 found in: air_quality_comprehensive, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_it9utkro|ts0601 found in: air_quality_comprehensive, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_7dcddnye|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_7dcddnye|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_7dcddnye|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_j2w1dw29|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_j2w1dw29|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_j2w1dw29|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_juq7i1fr|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_juq7i1fr|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_juq7i1fr|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nbnmw9nc|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nbnmw9nc|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nbnmw9nc|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nosnx7im|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nosnx7im|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nosnx7im|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dbilpfqk|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dbilpfqk|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dbilpfqk|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dxroobu3|ts110e found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dxroobu3|ts110f found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dxroobu3|ts0052 found in: bulb_dimmable, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_r5afgmkl|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_r5afgmkl|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_b8jdosxo|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_b8jdosxo|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_c0s1xloa|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_c0s1xloa|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_cieijuw1|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_cieijuw1|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dn5higyl|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dn5higyl|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dwzfzfjc|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dwzfzfjc|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_hicxa0rh|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_hicxa0rh|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_hxtfthp5|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_hxtfthp5|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_ifga63rg|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_ifga63rg|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_it1u8ahz|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_it1u8ahz|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_iw0zkcu8|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_iw0zkcu8|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jd3z4yig|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jd3z4yig|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jicmoite|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jicmoite|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jjqdqxfq|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jjqdqxfq|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_ljoasixl|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_ljoasixl|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_rcggc0ys|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_rcggc0ys|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sln7ah6r|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sln7ah6r|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sw9uxoea|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sw9uxoea|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_wbsgmojq|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_wbsgmojq|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_wxa85bwk|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_wxa85bwk|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_z1vlyufu|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_z1vlyufu|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_zrvxvydd|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_zrvxvydd|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_3zfp8mki|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_3zfp8mki|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_417ikxay|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_417ikxay|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_6eed09b9|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_6eed09b9|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_endmggws|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_endmggws|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_gj0ccsar|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_gj0ccsar|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_lnnkh3f9|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_lnnkh3f9|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_rs0ufzwg|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_rs0ufzwg|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_rwy5hexp|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_rwy5hexp|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_w9hcix2r|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_w9hcix2r|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_wxazcmsh|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_wxazcmsh|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_wy1pyu1q|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_wy1pyu1q|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_yatkpuha|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_yatkpuha|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_zmppwawa|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_zmppwawa|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_ue01a0s2|ts0505a found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_ue01a0s2|ts0505b found in: bulb_rgbw, light_bulb_rgb_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2izubafb|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_4fsgukof|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pkfazisv|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ssp0maqm|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wr2ucaj9|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_p3fph1go|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tj4pwzzm|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zsh6uat3|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_9r5jaajv|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_irwuzilv|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nxdziqzc|ts0601 found in: button_emergency_sos, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ja5osu5g|ts0041 found in: button_wireless_1, smart_button_switch"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_owgcnkrh|ts0041 found in: button_wireless_1, button_wireless_2"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qzjcsmar|ts0043 found in: button_wireless_2, wall_remote_3_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qzjcsmar|ts0044 found in: button_wireless_2, button_wireless_4"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_dfgbtub0|ts0042 found in: button_wireless_2, scene_switch_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_dfgbtub0|ts0043 found in: button_wireless_2, scene_switch_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fkvaniuu|ts0043 found in: button_wireless_2, button_wireless_3"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_a7ouggvs|ts0042 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_a7ouggvs|ts0043 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_a7ouggvs|ts0044 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_a7ouggvs|ts0041 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_rrjr1q0u|ts0043 found in: button_wireless_2, wall_remote_3_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_gbm10jnj|ts0042 found in: button_wireless_2, scene_switch_2"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yw5tvzsk|ts0042 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yw5tvzsk|ts0043 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yw5tvzsk|ts0044 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yw5tvzsk|ts0041 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sj7jbgks|ts0042 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sj7jbgks|ts0043 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sj7jbgks|ts0044 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sj7jbgks|ts0041 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fvh3pjaz|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_svoqrno4|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nta0gb8h|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lupfd8zu|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yhagrqmd|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5vujyute|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_56bdyj21|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_p8alo7qa|ts0042 found in: button_wireless_2, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wyhuocal|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cdamjqm9|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hlwm8e96|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_thhxrept|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2dlwlvex|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qcdqw8nf|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vvlivusi|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5e5ptb24|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lrgccsxm|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_w05exif3|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qewo8dlz|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_aezbqpcu|ts0043 found in: button_wireless_2, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_b3mgfu0d|ts0044 found in: button_wireless_2, button_wireless_4"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_kaflzta4|ts004f found in: button_wireless_4, smart_knob"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_bagt1e4o|ts0014 found in: button_wireless_4, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_11pg3ima|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_11pg3ima|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_a4xycprs|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_a4xycprs|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_et7afzxz|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_et7afzxz|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nuombroo|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nuombroo|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ufhtxr59|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ufhtxr59|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vp6clf9d|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vp6clf9d|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_xabckq1v|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_xabckq1v|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yj6k7vfo|ts0041 found in: button_wireless_smart, smart_button_switch"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_fzo2pocs|ts0601 found in: climate_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_pisltm67|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_85czd6fy|ts0601 found in: climate_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bpkijo14|ts0601 found in: climate_sensor, contact_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fukaa7nc|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iv6ph5tr|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_j6adk9id|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mlswgkc3|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nsa76jai|ts0601 found in: climate_sensor, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_t9qqxn70|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_fgwhjm9j|ts0601 found in: climate_sensor, usb_outlet_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_dhke3p9w|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_grgol3xp|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_lawxy9e2|ts0601 found in: climate_sensor, fan_controller"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ne4pikwm|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nvodulvi|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_oc7xqqbs|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_rjxqso4a|ts0601 found in: climate_sensor, co_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_uli8wasj|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_vhy3iakz|ts0601 found in: climate_sensor, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_7ytnacie|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_atdqo4nj|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_fncxk3ob|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_iadro9bf|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_k7mfgaen|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_myd45weu|ts0601 found in: climate_sensor, sensor_climate_contact"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_qvxrkeif|ts0601 found in: climate_sensor, gas_detector"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_rkbxtclc|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_unsxl4ir|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_0ints6wl|ts0601 found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_0ints6wl|zg-303z found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_chbyv06x|ts0601 found in: climate_sensor, gas_detector"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_d0ypnbvn|ts0601 found in: climate_sensor, valve_irrigation"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_dhke3p9w|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_fncxk3ob|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_fzo2pocs|ts0601 found in: climate_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_ne4pikwm|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_p3dbf6qs|ts0601 found in: climate_sensor, device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_qoy0ekbd|ts0601 found in: climate_sensor, sensor_climate_contact"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_vvmbj46n|ts0601 found in: climate_sensor, sensor_climate_contact"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_znph9215|ts0601 found in: climate_sensor, sensor_climate_contact"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_a476raq2|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_a476raq2|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_a476raq2|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_ftdkanlj|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_ftdkanlj|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_ftdkanlj|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hjsgdkfl|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hjsgdkfl|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hjsgdkfl|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_kvwjujy9|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_kvwjujy9|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_kvwjujy9|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_3zofvcaa|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8uxxzz4b|ts0222 found in: climate_sensor, illuminance_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8uxxzz4b|ts0601 found in: climate_sensor, illuminance_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bgsigers|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bgsigers|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bgsigers|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bjawzodf|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bjawzodf|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bjawzodf|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_l8fsgo6p|ts0601 found in: climate_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lqb7lcq9|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pvlvoxvt|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ww6drja5|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yd2e749y|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yd2e749y|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yd2e749y|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_8n4dn1ne|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_urjf5u18|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_a8sdabtg|ts0601 found in: climate_sensor, curtain_motor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_auin8mzr|ts0601 found in: climate_sensor, gas_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_mja3fuja|ts0601 found in: climate_sensor, humidifier"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_n8dljorx|ts0601 found in: climate_sensor, contact_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_v6ossqfy|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_vvmbj46n|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_vvmbj46n|ts0601 found in: climate_sensor, lcdtemphumidsensor, sensor_climate_contact"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_vvmbj46n|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_xpvamyfz|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_uxllnywp|ts0601 found in: climate_sensor, presence_sensor_ceiling"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_aaeasoll|ts0222 found in: climate_sensor, illuminance_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_aaeasoll|ts0601 found in: climate_sensor, illuminance_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_xpvamyfz|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_znbl8dj5|ts0601 found in: climate_sensor, curtain_motor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_qoy0ekbd|ts0601 found in: climate_sensor, curtain_motor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz2000_a476raq2|ts0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz2000_a476raq2|ts0601 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz2000_a476raq2|ty0201 found in: climate_sensor, lcdtemphumidsensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_kvwjujy9|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_1fuxihti|ts0601 found in: climate_sensor, curtain_motor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_8daqwrsj|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_aao6qtcs|ts0601 found in: climate_sensor, gas_detector, sensor_climate_contact"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_auin8mzr|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cduqh1l0|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_clm4gdw4|ts0601 found in: climate_sensor, gas_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_czk78ptr|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ezqy5pvh|ts0601 found in: climate_sensor, gas_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_ezqy5pvh|ts0601 found in: climate_sensor, gas_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_hhrtiq0x|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_jeaxp72v|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_mgstdyz3|ts0601 found in: climate_sensor, lock_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_mja3fuja|ts0601 found in: climate_sensor, humidifier"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_n8dljorx|ts0601 found in: climate_sensor, motion_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_oisqyl4o|ts0601 found in: climate_sensor, hvac_dehumidifier"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_ps5v5jor|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_sbyx0lm6|ts0601 found in: climate_sensor, presence_sensor_ceiling, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ux5v4tgb|ts0601 found in: climate_sensor, gas_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_v6ossqfy|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_zivfvd7h|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_6fk3gewc|ts0601 found in: climate_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_9mahtqtg|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_dapwryy7|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze21c_dohbhb5k|ts0601 found in: climate_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_ltwbm23f|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nh9m9emk|ts0601 found in: climate_sensor, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_r731zlxk|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_v5xjyphj|ts0601 found in: climate_sensor, valve_irrigation"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_rccxox8p|ts0601 found in: climate_sensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_rccxox8p|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_rccxox8p|ts0601 found in: climate_sensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_0dvm9mva|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_0dvm9mva|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3yp57tby|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ac0fhfiq|ts0601 found in: climate_sensor, din_rail_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ac0fhfiq|ts0601 found in: climate_sensor, din_rail_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_eekpf0ft|ts0601 found in: climate_sensor, radiator_controller"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_eekpf0ft|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_khah2lkr|ts0601 found in: climate_sensor, device_radiator_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_qoy0ekbd|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_v9hkz2yn|ts0601 found in: climate_sensor, power_clamp_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_v9hkz2yn|ts0601 found in: climate_sensor, power_clamp_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ves1ycwx|ts0601 found in: climate_sensor, din_rail_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ves1ycwx|ts0601 found in: climate_sensor, din_rail_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_vjpaih9f|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_znbl8dj5|ts0601 found in: climate_sensor, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_locansqn|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_owwdxjbx|ts0601 found in: climate_sensor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_ahwvlkpy|ts0601 found in: climate_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_jtbgusdc|ts0601 found in: climate_sensor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_tdhnhhiy|ts0601 found in: climate_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wbhaespm|ts0601 found in: climate_sensor, smart_breaker"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_wbhaespm|ts0601 found in: climate_sensor, smart_breaker"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_zpvusbtv|ts0601 found in: climate_sensor, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_o9ofysmo|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_xc3vwx5a|ts0601 found in: climate_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wqashyqo|ts0601 found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wqashyqo|zg-303z found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_npj9bug3|ts0601 found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_npj9bug3|zg-303z found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_65gzcss7|ts0601 found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_65gzcss7|zg-303z found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_gyzlwu5q|ts0601 found in: climate_sensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_hdml1aav|ts0601 found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_hdml1aav|zg-303z found in: climate_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz1800_ejwkn2h2|ts0601 found in: contact_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_s8r1qoyq|ts0601 found in: contact_sensor, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_pay2byax|ts0601 found in: contact_sensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pjb1ua0m|ts0601 found in: contact_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_sqmd19i1|ts0601 found in: contact_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_sqmd19i1|ts0207 found in: contact_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_sqmd19i1|q9mpfhw found in: contact_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1dd0d5yi|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_42ha4rsc|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5iixzdo7|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_74hsp7qy|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8h7wgocw|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bs93npae|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e3vhyirx|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_femsaaua|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_jwv3cwak|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vw8pawxa|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yruungrl|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dwytrmda|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_ol1uhvza|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_xbpt8ewc|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb000_42ha4rsc|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_5nldle7w|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_9caxna4s|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_9p5xmj5r|ts0105 found in: curtain_motor, generic_diy"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_9vpe3fl1|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_icka1clh|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_jhkttplm|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_libht6ua|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_p6vz3wzt|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_uj3f4wr5|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_zxxfv8wi|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_57hjqelq|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_7tdtqgwv|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_lh3arisb|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_vvvtcehj|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_wzre8hu2|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ycke4deo|ts0601 found in: curtain_motor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_yrugsphv|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_zuq5xxib|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_koxaopnk|ts0601 found in: curtain_motor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_libht6ua|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_uqfph8ah|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_waa352qv|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze600_ogyg1y6b|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze210_inpjmc0h|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_wmcdj3aq|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_0bkzabht|ts0601 found in: curtain_motor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_ayx58ft5|ts0601 found in: curtain_motor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_eiwanbeb|ts0601 found in: curtain_motor, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb210_lmqquxus|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_cowvfni3|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_2imwyigp|ts0601 found in: curtain_motor, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_2imwyigp|ts0105 found in: curtain_motor, generic_diy"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ahpcyzth|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_bfmfhxra|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_cqtamhh5|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_df04ghrb|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_go3tvswy|ts0601 found in: curtain_motor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_kccdzaeo|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_khzbklyh|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_kijxnb8q|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_llvwkkde|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_s7rsrtbg|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_tmszbtzq|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_toeldckg|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_xlnzk169|ts0601 found in: curtain_motor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_2imwyigp|ts0601 found in: curtain_motor, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_2imwyigp|ts0105 found in: curtain_motor, generic_diy"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cet6ch1r|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_gubdgai2|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_f91miyhj|ts0601 found in: curtain_motor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nkoabg8w|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_xuzcvlku|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nogaemzt|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_r0jdjrvi|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_zpzndjez|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wmcdj3aq|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_cowvfni3|ts0601 found in: curtain_motor, curtain_motor_shutter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_rddyvrci|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nueqqe6k|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_xaabybja|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_rmymn92d|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3i3exuay|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hsgrhjpf|ts0601 found in: curtain_motor, curtain_motor_tilt"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_5sbebbzs|ts0601 found in: curtain_motor_tilt, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_fctwhugx|ts0601 found in: curtain_motor_tilt, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_fzo2pocs|ts0601 found in: curtain_motor_tilt, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ol5jlkkr|ts0601 found in: curtain_motor_tilt, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_r0jdjrvi|ts0601 found in: curtain_motor_tilt, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_p3dbf6qs|ts0601 found in: device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_o3x45p96|ts0601 found in: device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_rv6iuyxb|ts0601 found in: device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_c6wv4xyo|ts0601 found in: device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_hvaxb2tc|ts0601 found in: device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_o3x45p96|ts0601 found in: device_radiator_valve, device_radiator_valve_smart, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_kdi2o9m6|ts0601 found in: dimmer_wall_1gang, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_4whigl8i|ts0601 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_4whigl8i|ts0011 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_zxbtub8r|ts0601 found in: dimmer_wall_1gang, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_hlx9tnzb|ts0601 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_hlx9tnzb|ts0011 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_n9ctkb6j|ts0601 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_n9ctkb6j|ts0011 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_tgeqdjgk|ts0601 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_tgeqdjgk|ts0011 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_9qhuzgo0|ts0601 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_9qhuzgo0|ts0011 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_estfrmup|ts0601 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_estfrmup|ts0011 found in: dimmer_wall_1gang, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_0hb4rdnp|ts0052 found in: dimmer_wall_1gang, generic_diy"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_gne0e6mk|ts0052 found in: dimmer_wall_1gang, generic_diy"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_bkkmqmyo|ts0601 found in: din_rail_meter, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_eaac7dkw|ts0601 found in: din_rail_meter, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_lsanae15|ts0601 found in: din_rail_meter, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_byzdayie|ts0601 found in: din_rail_meter, plug_energy_monitor, power_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_fsb6zw01|ts0601 found in: din_rail_meter, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_lsanae15|ts0601 found in: din_rail_meter, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5f43h46b|ts0601 found in: din_rail_switch, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_aqnazj70|ts0601 found in: din_rail_switch, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ewxhg6o9|ts0601 found in: din_rail_switch, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_fsb6zw01|ts0601 found in: din_rail_switch, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_byzdayie|ts0601 found in: din_rail_switch, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_6ocnqlhn|ts0601 found in: energy_meter_3phase, smart_rcbo"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_dzuqwsyg|ts0601 found in: fan_controller, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_ikul00sx|ts0601 found in: fan_controller, humidifier"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wfxuhoea|ts0601 found in: garage_door, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mwd3c2at|ts0601 found in: gas_sensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tk3s5tyg|ts0601 found in: gas_sensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3400_tk3s5tyg|ts0601 found in: gas_sensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze210_m6lwazh9|ts0601 found in: gas_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2putqrmw|snzb-06p found in: generic_diy, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2putqrmw|s26r2zb found in: generic_diy, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2putqrmw|s31zb found in: generic_diy, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2putqrmw|s40zbtpb found in: generic_diy, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_2putqrmw|zbminil2 found in: generic_diy, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_2atgpdho|etrv0100 found in: generic_diy, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_zuhszj9s|ts0601 found in: hvac_air_conditioner, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_r32ctezx|ts0601 found in: hvac_controller, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_r32ctezx|ts0601 found in: hvac_controller, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_qtbrwrfv|ts0601 found in: hvac_dehumidifier, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hl0ss9oa|ts0225 found in: illuminance_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hl0ss9oa|ts0601 found in: illuminance_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_ikvncluo|ts0601 found in: ir_blaster, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1obwwnmq|ts0601 found in: motion_sensor, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_uim07oem|ts0601 found in: motion_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3040_bb6xaihh|ts0601 found in: motion_sensor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_4pm4pekt|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_4pm4pekt|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ghynnvos|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ghynnvos|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_gjldowol|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_gjldowol|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_kb5noeto|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_kb5noeto|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_me6wtiqs|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_me6wtiqs|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_s6hzw8g2|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_s6hzw8g2|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_debczeci|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_debczeci|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_kb5noeto|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_kb5noeto|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_mrf6vtua|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_mrf6vtua|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3towulqd|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3towulqd|ts0601 found in: motion_sensor, motion_sensor_2, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_1ibpyhdc|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_1ibpyhdc|ts0601 found in: motion_sensor, presence_sensor_radar, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_bh3n6gk8|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_bh3n6gk8|ts0601 found in: motion_sensor, motion_sensor_2, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_myd45weu|ts0601 found in: motion_sensor, sensor_climate_contact, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nlrfgpny|ts0601 found in: motion_sensor, siren"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_2aaelwxk|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_2aaelwxk|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ppuj1vem|ts0225 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ppuj1vem|ts0601 found in: motion_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_5b5noeto|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_clrdrnya|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_holel4dk|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_jva8ink8|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_lu01t0zl|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_lyetpprm|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_mrf6vtua|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_sfiy5tfs|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wukb7rhc|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_xpq2rzhq|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze201_ztc6ggyl|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze202_ztc6ggyl|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze203_ztc6ggyl|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_clrdrnya|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_fwondbzy|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_lbbg34rj|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_pfayrzcw|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_xsm7l9xa|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_sh1btabb|ts0601 found in: pet_feeder_zigbee, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_sh1btabb|ts0601 found in: pet_feeder_zigbee, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1hwjutgo|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1hwjutgo|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1hwjutgo|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1hwjutgo|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1hwjutgo|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_303avxxt|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_303avxxt|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_303avxxt|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_303avxxt|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_303avxxt|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_6s5dc9lx|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_6s5dc9lx|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_6s5dc9lx|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_6s5dc9lx|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_6s5dc9lx|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8bxrzyxz|ts0601 found in: plug_energy_monitor, presence_sensor_radar, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8bxrzyxz|snzb-06p found in: plug_energy_monitor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8fdayfch|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8fdayfch|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8fdayfch|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8fdayfch|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8fdayfch|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_92qd4sqa|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_92qd4sqa|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_92qd4sqa|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_92qd4sqa|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_92qd4sqa|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_czuyt8lz|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_czuyt8lz|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_czuyt8lz|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_czuyt8lz|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_czuyt8lz|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_helyqdvs|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_helyqdvs|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_helyqdvs|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_helyqdvs|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_helyqdvs|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ibefeicf|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ibefeicf|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ibefeicf|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ibefeicf|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ibefeicf|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_k6fvknrr|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_k6fvknrr|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_k6fvknrr|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_k6fvknrr|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_k6fvknrr|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ky0fq4ho|ts0601 found in: plug_energy_monitor, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lnggrqqi|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lnggrqqi|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lnggrqqi|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lnggrqqi|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lnggrqqi|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mvn6jl7x|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mvn6jl7x|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mvn6jl7x|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mvn6jl7x|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mvn6jl7x|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qlmnxmac|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qlmnxmac|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qlmnxmac|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qlmnxmac|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qlmnxmac|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_raviyuvk|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_raviyuvk|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_raviyuvk|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_raviyuvk|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_raviyuvk|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sgb0xhwn|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sgb0xhwn|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sgb0xhwn|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sgb0xhwn|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_sgb0xhwn|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wzmuk9ai|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wzmuk9ai|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wzmuk9ai|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wzmuk9ai|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wzmuk9ai|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zjchz7pd|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zjchz7pd|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zjchz7pd|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zjchz7pd|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zjchz7pd|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zrm3oxsh|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zrm3oxsh|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zrm3oxsh|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zrm3oxsh|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zrm3oxsh|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zv6x8bt2|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zv6x8bt2|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zv6x8bt2|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zv6x8bt2|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zv6x8bt2|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zwaadvus|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zwaadvus|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zwaadvus|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zwaadvus|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zwaadvus|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_ph1joc22|ts0601 found in: plug_energy_monitor, usb_outlet_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sgb0xhwn|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sgb0xhwn|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sgb0xhwn|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sgb0xhwn|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sgb0xhwn|ts0601 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_bkkmqmyo|ts0601 found in: plug_energy_monitor, smart_rcbo"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_tz32mtza|ts0601 found in: plug_energy_monitor, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cphmq0q7|ts0601 found in: plug_energy_monitor, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mraovvmm|ts0601 found in: plug_energy_monitor, switch_wall_5gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|ts011f found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|s60zbtpf found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|s60zbtpg found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|s31 lite zb found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|s26r2zb found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|ts0601 found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yujkchbz|s40lite found in: plug_energy_monitor, plug_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nkjintbl|ts011f found in: plug_energy_monitor, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nkjintbl|ts0601 found in: plug_energy_monitor, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_dcnsggvz|ts0601 found in: plug_energy_monitor, switch_dimmer_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pl5v1yyy|ts0601 found in: plug_smart, usb_outlet_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_c7nc9w3c|ts0101 found in: plug_smart, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_c7nc9w3c|ts0601 found in: plug_smart, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_c7nc9w3c|ts011f found in: plug_smart, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_c7nc9w3c|s26r2zb found in: plug_smart, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_d0ypnbvn|ts0601 found in: power_clamp_meter, valve_irrigation"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_byzdayie|ts0601 found in: power_clamp_meter, power_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_81yrt3l|ts0601 found in: power_clamp_meter, power_meter"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_dtzziy1e|ts0601 found in: presence_sensor_ceiling, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_dtzziy1e|ts0601 found in: presence_sensor_ceiling, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_rlytpmij|ts0601 found in: presence_sensor_radar, smart_scene_panel"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5ajpkyq6|ts0601 found in: presence_sensor_radar, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_knoj8lpk|ts0601 found in: presence_sensor_radar, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ar0slwnd|ts0601 found in: presence_sensor_radar, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_mp902om5|ts0601 found in: presence_sensor_radar, smart_heater_controller"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_3n2minvf|ts0601 found in: presence_sensor_radar, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ttcovulf|ts0601 found in: presence_sensor_radar, sensor_motion_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3regm3h6|ts0601 found in: radiator_controller, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_3regm3h6|ts0601 found in: radiator_controller, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_9gvruqf5|ts0601 found in: radiator_valve, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_c88teujp|ts0601 found in: radiator_valve, smart_lcd_thermostat"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_yw7cahqs|ts0601 found in: radiator_valve, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fgwhjm9j|ts0601 found in: radiator_valve, usb_outlet_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_0j5jma9b|ts0601 found in: radiator_valve, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_7tdtqgwv|ts0601 found in: radiator_valve, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_amp6tsvy|ts0601 found in: radiator_valve, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_dzuqwsyg|ts0601 found in: radiator_valve, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hue3yfsn|ts0601 found in: radiator_valve, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_pay2byax|ts0601 found in: radiator_valve, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_pisltm67|ts0601 found in: radiator_valve, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_qdihqf3l|ts0601 found in: radiator_valve, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_xby0s3ta|ts0601 found in: radiator_valve, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_gaj531w3|ts0601 found in: radiator_valve, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_famkxci2|ts0726 found in: scene_switch_3, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_xabckq1v|ts0601 found in: scene_switch_4, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_tgeqdjgk|ts0601 found in: scene_switch_4, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_w8jwkczz|ts0043 found in: scene_switch_wall, wall_remote_3_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_oitavov2|ts0601 found in: sensor_climate_contact, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ga1maeof|ts0601 found in: sensor_climate_contact, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_9cqcpkgb|ts0601 found in: sensor_climate_contact, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_myd45weu|ts0601 found in: sensor_climate_contact, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_2se8efxh|ts0601 found in: sensor_climate_contact, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_guvc7pdy|ts0601 found in: shutter_roller_controller, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_d0yu2xgi|ts0601 found in: siren, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_5sbebbzs|ts0601 found in: siren, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_hcxvyxa5|ts0601 found in: siren, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_d0yu2xgi|ts0601 found in: siren_sirentemphumidsensor, smoke_detector_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_b6wax7g0|ts0601 found in: smart_heater_controller, smart_lcd_thermostat"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_c88teujp|ts0601 found in: smart_heater_controller, smart_lcd_thermostat"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_uri7ber7|ts004f found in: smart_knob, smart_knob_switch"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_7zazvlyn|ts0601 found in: smart_scene_panel, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0601 found in: soil_sensor, switch_wall_8gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts0601 found in: switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts0726 found in: switch_1gang, switch_2gang, switch_4gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts0601 found in: switch_1gang, switch_2gang, switch_3gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts0726 found in: switch_1gang, switch_2gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts0601 found in: switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts0726 found in: switch_1gang, switch_2gang, switch_4gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iedbgyxt|ts0601 found in: switch_1gang, switch_2gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iedbgyxt|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iedbgyxt|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ptjcjise|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ptjcjise|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ptjcjise|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts0601 found in: switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts0726 found in: switch_1gang, switch_2gang, switch_4gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bseed|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bseed|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_u9kkqh5o|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_54hjn4vs|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_54hjn4vs|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_54hjn4vs|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5gey1ohx|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5gey1ohx|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5gey1ohx|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_aaifmpuq|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_aaifmpuq|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_aaifmpuq|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_biakwrag|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_biakwrag|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_biakwrag|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cvis4qmw|ts0601 found in: switch_1gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cvis4qmw|ts0726 found in: switch_1gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_dyzkbcip|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_etufnltx|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_etufnltx|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_huvxrx4i|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_huvxrx4i|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_huvxrx4i|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_i9w5mehz|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_i9w5mehz|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_i9w5mehz|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_in5qxhtt|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_in5qxhtt|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_in5qxhtt|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_irrmjcgi|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_irrmjcgi|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_irrmjcgi|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ju82pu2b|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_liygxtcq|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_liygxtcq|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ltt60asa|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ltt60asa|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_m4ah6bcz|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_m4ah6bcz|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mhhxxjrs|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mufwv0ry|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mufwv0ry|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mufwv0ry|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nnwehhst|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ogpla3lh|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ogpla3lh|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ogpla3lh|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ok0ggpk7|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ouwfc1qj|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pf7swkqp|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_s678wazd|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_s678wazd|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vsasbzkf|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wsspgtcd|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wsspgtcd|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_9vcekkp1|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_9vcekkp1|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_sal078g8|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_sal078g8|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_sfh0jtz0|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_sfh0jtz0|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_2hf7x9n3|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3t91nb6k|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3t91nb6k|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_3t91nb6k|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_atpwqgml|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_bynnczcb|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ji1gn7rw|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ji1gn7rw|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_ji1gn7rw|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_kyfqmmyl|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wvovwe9h|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wvovwe9h|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_wvovwe9h|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_3t91nb6k|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_3t91nb6k|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_3t91nb6k|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_atpwqgml|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_wvovwe9h|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_wvovwe9h|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_wvovwe9h|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_7sjncirf|ts0601 found in: switch_1gang, thermostat_tuya_dp"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_iba1ckek|ts0601 found in: switch_1gang, vibration_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hggxgsjj|ts0601 found in: switch_1gang, valve_irrigation"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_yjryxpot|ts0601 found in: switch_1gang, valve_irrigation"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_afycb3cg|ts0601 found in: switch_1gang, valve_irrigation"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_g1enhdsi|ts0601 found in: switch_1gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_g1enhdsi|ts0726 found in: switch_1gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pxfjrzyj|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pxfjrzyj|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pxfjrzyj|ts0726 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iv4eq7eh|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mzcp0of6|ts0601 found in: switch_1gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_uu4uircb|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_uu4uircb|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_yptomml1|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_yptomml1|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_pw4ad2xa|ts0601 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_pw4ad2xa|ts0726 found in: switch_1gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_v8gtiaed|ts0601 found in: switch_1gang, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "tze204_7sjncirf|ts0601 found in: switch_1gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "tze204_7sjncirf|ts0726 found in: switch_1gang, switch_wall_6gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_nvxorhcj|ts0601 found in: switch_1gang, switch_wall_8gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts0003 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf|ts0013 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts0003 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ysdv91bk|ts0013 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts0003 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hafsqare|ts0013 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts0003 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_e98krvvk|ts0013 found in: switch_2gang, switch_3gang, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iedbgyxt|ts0003 found in: switch_2gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iedbgyxt|ts0013 found in: switch_2gang, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_s8r1qoyq|ts0002 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_s8r1qoyq|ts0012 found in: switch_2gang, wall_switch_2gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qkixdnon|ts0601 found in: switch_3gang, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mrduubod|ts0726 found in: switch_4gang, wall_switch_4gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tyg4yiat|ts0726 found in: switch_4gang, wall_switch_4gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_vaq2bfcu|ts0726 found in: switch_4gang, wall_switch_4gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_qq9mpfhw|ts0601 found in: thermostat_tuya_dp, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_7ytb3h8u|ts0049 found in: valve_irrigation, water_valve_garden"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_a7sghmms|ts0601 found in: valve_irrigation, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_fphxkxue|ts0601 found in: valve_irrigation, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_htnnfasr|ts0601 found in: valve_irrigation, water_tank_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_htnnfasr|ts0049 found in: valve_irrigation, water_valve_garden"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_7ytb3h8u|ts0049 found in: valve_irrigation, water_valve_garden"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze204_a7sghmms|ts0601 found in: valve_irrigation, water_valve_smart"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_7ytb3h8u|ts0049 found in: valve_irrigation, water_valve_garden"
         }
       ]
     },

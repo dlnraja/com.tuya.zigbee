@@ -32,7 +32,10 @@
   "zigbee": {
     "manufacturerName": [
       "_tze200_ttcovulf",
-      "_hybrid_sensor_motion_radar_needs_device_assignment"
+      "_TZE200_ttcovulf",
+      "_TZE200_TTCOVULF",
+      "_hybrid_sensor_motion_radar_needs_device_assignment",
+      "_HYBRID_SENSOR_MOTION_RADAR_NEEDS_DEVICE_ASSIGNMENT"
     ],
     "endpoints": {
       "1": {
