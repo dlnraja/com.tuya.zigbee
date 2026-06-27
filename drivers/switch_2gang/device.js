@@ -19,7 +19,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  *   - Physical button detection: single / double/long / triple per gang
  *   - BSEED ZCL-only mode: _TZ3000_l9brjwau (Pieter_Pessers forum)
  *   v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
- *   v8.1.0: Fixed setTimeout syntax bugs in reporting retry logic
+ *   v8.1.0: Fixed timer scheduling bugs in reporting retry logic
  * 
  */
 
@@ -192,7 +192,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   /**
    * v8.1.0: Configure electrical reporting with retry on Zigbee startup
-   * FIXED: setTimeout syntax — delay was being multiplied into the callback return value
+   * FIXED: timer scheduling — delay was being multiplied into the callback return value
    */
   async _configureElectricalReporting(retryCount = 0) {
     try {
@@ -236,7 +236,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   /**
    * v8.1.0: Configure metering reporting with retry on Zigbee startup
-   * FIXED: setTimeout syntax — delay was being multiplied into the callback return value
+   * FIXED: timer scheduling — delay was being multiplied into the callback return value
    */
   async _configureMeteringReporting(retryCount = 0) {
     try {
