@@ -2,12 +2,13 @@
 'use strict';
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const{fetchWithRetry}=require('./retry-helper');
+const privacy=require('./privacy-redactor');
 const ROOT=path.join(__dirname,'..','..'),DD=path.join(ROOT,'diagnostics');
 const RD=path.join(DD,'reports'),SD=path.join(__dirname,'..','state');
 const DDIR=path.join(ROOT,'drivers');
 const anonId=id=>id?crypto.createHash('sha256').update(id).digest('hex').slice(0,12):'unk';
 const loadJ=f=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
-const saveJ=(f,d)=>{fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,JSON.stringify(d,null,2))};
+const saveJ=(f,d)=>{const safe=privacy.redactObject(d);privacy.assertNoLeaks(safe,f);fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,JSON.stringify(safe,null,2))};
 
 function buildIdx(){
   const idx=new Map();
@@ -68,16 +69,16 @@ async function main(){
           const mfr=d.settings?.zb_manufacturer_name||'';
           const model=d.settings?.zb_model_id||'';
           const drv=d.driverUri?.split(':').pop()||'?';
-          const report={id:anonId(d.id),name:d.name,mfr,model,driver:drv,
+          const report={id:anonId(d.id),name:privacy.alias('device',d.name||d.id),mfr,model,driver:drv,
             online:!!d.available,
             caps:d.capabilitiesObj?Object.keys(d.capabilitiesObj).sort():[],
             warning:d.warning||null,matched:idx.has(mfr),
             drivers:idx.get(mfr)||[],multiDriver:(idx.get(mfr)||[]).length>1};
           saveJ(path.join(RD,anonId(d.id)+'.json'),report);
-          if(!idx.has(mfr)&&mfr) summary.unmatchedFPs.push({fp:mfr,model,name:d.name,source:'live_api'});
+          if(!idx.has(mfr)&&mfr) summary.unmatchedFPs.push({fp:mfr,model,name:privacy.alias('device',d.name||d.id),source:'live_api'});
         }
       }
-    }catch(e){console.error('Live API:',e.message)}
+    }catch(e){console.error('Live API:',privacy.redact(e.message))}
   }
 
   // Deduplicate unmatched FPs
@@ -107,4 +108,4 @@ async function main(){
   console.log('Sources:',JSON.stringify(summary.sources));
   if(issMap.length) console.log('Issue mappings:',issMap.length);
 }
-main().catch(e=>{console.error(e.message);process.exit(1)});
+main().catch(e=>{console.error(privacy.redact(e.message));process.exit(1)});

@@ -50,6 +50,7 @@
     "validate:recursive": "node scripts/validation/comprehensive-recursive-validator.js",
     "fix:auto": "node scripts/validation/auto-fix-common-issues.js",
     "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive",
+    "security:diagnostics": "node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/gmail-token-health.json diagnostics",
     "generate-driver": "node .github/scripts/generate-driver.js"
   },
   "keywords": [

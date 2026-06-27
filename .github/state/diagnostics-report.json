@@ -26,7 +26,7 @@
       "date": "2026-04-19T03:46:15.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -47,8 +47,8 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n26104dd4d287987b9de658c4518b5bb907bffbab  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/274/changes/75a66e0c2289d2e92196e[REDACTED_PHONE]a811cfff2..26104dd4d287987b9de658c4518b5bb907bffbab\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/274/before/75a66e0c2289d2e92196e[REDACTED_PHONE]a811cfff2/after/[REDAC"
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
+        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n[REDACTED_HEX]  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/274/changes/75a66e0c2289d2e92196e[REDACTED_PHONE]a811cfff2..[REDACTED_HEX]\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/274/before/75a66e0c2289d2e92196e[REDACTED_PHONE]a811cfff2/after/[REDAC"
       },
       "forumInfo": null,
       "crashInfo": null,
@@ -156,7 +156,7 @@
       "date": "2026-04-19T14:39:37.000Z",
       "pseudo": {
         "source": "github",
-        "username": "Snacker80"
+        "username": "[REDACTED_USERNAME:14a2ecc9a8]"
       },
       "fps": {
         "mfr": [],
@@ -178,7 +178,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "Snacker80",
+        "author": "[REDACTED_AUTHOR:14a2ecc9a8]",
         "bodyExcerpt": "Snacker80 left a comment (dlnraja/com.tuya.zigbee#183)\r\n\r\nStops showing measurements, so i remove device and connected again.. AND now its unknown Zigbee device again, not working anymore.\r\nSended Daignostic report\r\n\r\n9000dcb1-c8ed-4671-8d9f-2e388cb651be\r\n\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/183#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you modified the open/close state.\r\n\r\nMessage ID: <dlnraja/com.tuya."
       },
       "forumInfo": null,
@@ -197,7 +197,7 @@
       "date": "2026-04-20T03:46:31.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -218,7 +218,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#278 ð Universal Maintenance: Device Variants Synchronisation as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/278#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/278/issue_event/[REDACTED_EMAIL]>\r\n"
       },
       "forumInfo": null,
@@ -237,7 +237,7 @@
       "date": "2026-04-20T03:46:32.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -259,8 +259,8 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "## ð Maintenance Report\r\nThis PR automatically synchronizes new device variants and improves compatibility.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/278?email_source=notifications&amp;email_token=ACK"
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
+        "bodyExcerpt": "## ð Maintenance Report\r\nThis PR automatically synchronizes new device variants and improves compatibility.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/278?email_source=notifications&amp;email_token=[REDACTED_SECRET]"
       },
       "forumInfo": null,
       "crashInfo": null,
@@ -576,7 +576,7 @@
       "date": "2026-04-20T12:00:22.000Z",
       "pseudo": {
         "source": "user",
-        "username": "I.I."
+        "username": "[REDACTED_USERNAME:21ff35fd4b]"
       },
       "fps": {
         "mfr": [],
@@ -602,7 +602,7 @@
       "date": "2026-04-20T12:01:27.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.G."
+        "username": "[REDACTED_USERNAME:60b202dfa5]"
       },
       "fps": {
         "mfr": [],
@@ -882,7 +882,7 @@
       "date": "2026-04-20T19:06:17.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -911,7 +911,7 @@
       "date": "2026-04-20T20:18:14.000Z",
       "pseudo": {
         "source": "user",
-        "username": "F.L."
+        "username": "[REDACTED_USERNAME:baa0e983b9]"
       },
       "fps": {
         "mfr": [],
@@ -937,7 +937,7 @@
       "date": "2026-04-20T20:33:57.000Z",
       "pseudo": {
         "source": "user",
-        "username": "V.J."
+        "username": "[REDACTED_USERNAME:78f832bd3c]"
       },
       "fps": {
         "mfr": [],
@@ -963,7 +963,7 @@
       "date": "2026-04-20T20:44:27.000Z",
       "pseudo": {
         "source": "user",
-        "username": "P.W."
+        "username": "[REDACTED_USERNAME:121a07502f]"
       },
       "fps": {
         "mfr": [],
@@ -989,7 +989,7 @@
       "date": "2026-04-20T21:25:15.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.R."
+        "username": "[REDACTED_USERNAME:6435979041]"
       },
       "fps": {
         "mfr": [],
@@ -1119,7 +1119,7 @@
       "date": "2026-04-21T03:07:51.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.G."
+        "username": "[REDACTED_USERNAME:a061100d4e]"
       },
       "fps": {
         "mfr": [],
@@ -1145,7 +1145,7 @@
       "date": "2026-04-21T03:44:46.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -1166,8 +1166,8 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n15a59f187c6b2b382f8c6e44256ea7228cac0aee  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/278/changes/7040d8838a3cf87778f0a72d196e334eb59a9c3f..15a59f187c6b2b382f8c6e44256ea7228cac0aee\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/278/before/7040d8838a3cf87778f0a72d196e334eb59a9c3f/after/[REDACTED_EMAIL]>\r"
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
+        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n[REDACTED_HEX]  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/278/changes/[REDACTED_HEX]..[REDACTED_HEX]\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/278/before/[REDACTED_HEX]/after/[REDACTED_EMAIL]>\r"
       },
       "forumInfo": null,
       "crashInfo": null,
@@ -1367,7 +1367,7 @@
       "date": "2026-04-21T06:59:02.000Z",
       "pseudo": {
         "source": "user",
-        "username": "P.W."
+        "username": "[REDACTED_USERNAME:121a07502f]"
       },
       "fps": {
         "mfr": [],
@@ -1479,7 +1479,7 @@
       "date": "2026-04-21T09:48:49.000Z",
       "pseudo": {
         "source": "user",
-        "username": "M.P."
+        "username": "[REDACTED_USERNAME:f79a135062]"
       },
       "fps": {
         "mfr": [],
@@ -1568,7 +1568,7 @@
       "date": "2026-04-21T12:05:42.000Z",
       "pseudo": {
         "source": "user",
-        "username": "S.L."
+        "username": "[REDACTED_USERNAME:1832d79e55]"
       },
       "fps": {
         "mfr": [],
@@ -1634,7 +1634,7 @@
       "date": "2026-04-21T15:02:45.000Z",
       "pseudo": {
         "source": "user",
-        "username": "api..."
+        "username": "[REDACTED_USERNAME:56502b095c]"
       },
       "fps": {
         "mfr": [],
@@ -1671,7 +1671,7 @@
       "date": "2026-04-21T15:48:04.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -1737,7 +1737,7 @@
       "date": "2026-04-21T17:19:47.000Z",
       "pseudo": {
         "source": "user",
-        "username": "N.D."
+        "username": "[REDACTED_USERNAME:890c6bf506]"
       },
       "fps": {
         "mfr": [],
@@ -1841,7 +1841,7 @@
       "date": "2026-04-22T03:43:01.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -1862,7 +1862,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#283 ð Universal Maintenance: Device Variants Synchronisation as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/283#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/283/issue_event/[REDACTED_EMAIL]>\r\n"
       },
       "forumInfo": null,
@@ -1881,7 +1881,7 @@
       "date": "2026-04-22T03:43:02.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -1903,8 +1903,8 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "## ð Maintenance Report\r\nThis PR automatically synchronizes new device variants and improves compatibility.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/283?email_source=notifications&amp;email_token=ACK"
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
+        "bodyExcerpt": "## ð Maintenance Report\r\nThis PR automatically synchronizes new device variants and improves compatibility.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/283?email_source=notifications&amp;email_token=[REDACTED_SECRET]"
       },
       "forumInfo": null,
       "crashInfo": null,
@@ -1922,7 +1922,7 @@
       "date": "2026-04-22T05:48:14.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -1941,7 +1941,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#284 Johan SDK3 Sync â 198 FPs added, 0 DP gaps as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/284#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/284/issue_event/[REDACTED_EMAIL]>\r\n"
       },
       "forumInfo": null,
@@ -1960,7 +1960,7 @@
       "date": "2026-04-22T05:48:16.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -1979,7 +1979,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "## Automated Johan SDK3 Sync\r\n\r\n### Fingerprints\r\n- **Added**: 198 new FPs auto-matched to existing drivers\r\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\r\n- **New Johan drivers**: 89 (not in our codebase)\r\n\r\n### Auto-Scaffold\r\n- **Scaffolded**: 0 new drivers created\r\n- **FPs added**: 0 uncovered FPs added to existing drivers\r\n- **Conflicts**: 79 cross-class PID conflicts\r\n\r\n### Conflict Audit\r\n- **High severity**: 79 cross-class PID conflicts\r\n- **MFR conflicts**: 0 real risk duplicate"
       },
       "forumInfo": null,
@@ -2038,7 +2038,7 @@
       "date": "2026-04-22T06:05:22.000Z",
       "pseudo": {
         "source": "user",
-        "username": "J.W."
+        "username": "[REDACTED_USERNAME:c052e91495]"
       },
       "fps": {
         "mfr": [],
@@ -2102,7 +2102,7 @@
       "date": "2026-04-22T07:15:56.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.U."
+        "username": "[REDACTED_USERNAME:0d5573bc53]"
       },
       "fps": {
         "mfr": [],
@@ -2128,7 +2128,7 @@
       "date": "2026-04-22T11:07:04.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -2154,7 +2154,7 @@
       "date": "2026-04-22T13:08:19.000Z",
       "pseudo": {
         "source": "user",
-        "username": "J.H."
+        "username": "[REDACTED_USERNAME:e25c3e254e]"
       },
       "fps": {
         "mfr": [],
@@ -2180,7 +2180,7 @@
       "date": "2026-04-23T03:45:01.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -2201,8 +2201,8 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\nee039d4db1394a85b504bf6a2bafac7ff5b1d5bf  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/283/changes/8522e425e6a723381f59fc3b2a317ae2da50e204..ee039d4db1394a85b504bf6a2bafac7ff5b1d5bf\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/283/before/8522e425e6a723381f59fc3b2a317ae2da50e204/after/[REDACTED_EMAIL]>\r"
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
+        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n[REDACTED_HEX]  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/283/changes/[REDACTED_HEX]..[REDACTED_HEX]\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/283/before/[REDACTED_HEX]/after/[REDACTED_EMAIL]>\r"
       },
       "forumInfo": null,
       "crashInfo": null,
@@ -2260,7 +2260,7 @@
       "date": "2026-05-07T21:30:51.000Z",
       "pseudo": {
         "source": "user",
-        "username": "F.L."
+        "username": "[REDACTED_USERNAME:baa0e983b9]"
       },
       "fps": {
         "mfr": [],
@@ -2288,7 +2288,7 @@
       "date": "2026-05-08T01:45:27.000Z",
       "pseudo": {
         "source": "user",
-        "username": "C.M."
+        "username": "[REDACTED_USERNAME:9202a5a81f]"
       },
       "fps": {
         "mfr": [],
@@ -2314,7 +2314,7 @@
       "date": "2026-05-08T06:33:51.000Z",
       "pseudo": {
         "source": "user",
-        "username": "xer..."
+        "username": "[REDACTED_USERNAME:b9c362f000]"
       },
       "fps": {
         "mfr": [],
@@ -2340,7 +2340,7 @@
       "date": "2026-05-08T08:18:20.000Z",
       "pseudo": {
         "source": "user",
-        "username": "E.L."
+        "username": "[REDACTED_USERNAME:8fc811ae51]"
       },
       "fps": {
         "mfr": [],
@@ -2366,7 +2366,7 @@
       "date": "2026-05-08T09:20:41.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.H."
+        "username": "[REDACTED_USERNAME:01d1363ebe]"
       },
       "fps": {
         "mfr": [],
@@ -2392,7 +2392,7 @@
       "date": "2026-05-08T10:16:19.000Z",
       "pseudo": {
         "source": "user",
-        "username": "V.L."
+        "username": "[REDACTED_USERNAME:5a015d63b3]"
       },
       "fps": {
         "mfr": [],
@@ -2418,7 +2418,7 @@
       "date": "2026-05-08T10:34:02.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -2444,7 +2444,7 @@
       "date": "2026-05-08T10:38:32.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.B."
+        "username": "[REDACTED_USERNAME:3b63eb5d23]"
       },
       "fps": {
         "mfr": [
@@ -2598,7 +2598,7 @@
       "date": "2026-05-08T11:00:00.000Z",
       "pseudo": {
         "source": "user",
-        "username": "A.L."
+        "username": "[REDACTED_USERNAME:5e7e6f2a52]"
       },
       "fps": {
         "mfr": [],
@@ -2624,7 +2624,7 @@
       "date": "2026-05-08T11:02:35.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.U."
+        "username": "[REDACTED_USERNAME:0d5573bc53]"
       },
       "fps": {
         "mfr": [],
@@ -2650,7 +2650,7 @@
       "date": "2026-05-08T11:29:43.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.G."
+        "username": "[REDACTED_USERNAME:450f897bc9]"
       },
       "fps": {
         "mfr": [],
@@ -2676,7 +2676,7 @@
       "date": "2026-05-08T11:38:28.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.U."
+        "username": "[REDACTED_USERNAME:0d5573bc53]"
       },
       "fps": {
         "mfr": [],
@@ -2702,7 +2702,7 @@
       "date": "2026-05-08T13:40:30.000Z",
       "pseudo": {
         "source": "user",
-        "username": "N.L."
+        "username": "[REDACTED_USERNAME:b2dbe7aa6a]"
       },
       "fps": {
         "mfr": [],
@@ -2728,7 +2728,7 @@
       "date": "2026-05-08T18:51:14.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.G."
+        "username": "[REDACTED_USERNAME:60b202dfa5]"
       },
       "fps": {
         "mfr": [],
@@ -2761,7 +2761,7 @@
       "date": "2026-05-08T20:56:59.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Sve..."
+        "username": "[REDACTED_USERNAME:e7bf95e6b0]"
       },
       "fps": {
         "mfr": [],
@@ -2787,7 +2787,7 @@
       "date": "2026-05-09T09:30:46.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.U."
+        "username": "[REDACTED_USERNAME:0d5573bc53]"
       },
       "fps": {
         "mfr": [],
@@ -2813,7 +2813,7 @@
       "date": "2026-05-09T10:26:02.000Z",
       "pseudo": {
         "source": "user",
-        "username": "R.U."
+        "username": "[REDACTED_USERNAME:0d5573bc53]"
       },
       "fps": {
         "mfr": [],
@@ -2839,7 +2839,7 @@
       "date": "2026-05-09T11:05:06.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -2870,7 +2870,7 @@
       "date": "2026-05-09T14:14:27.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Inv..."
+        "username": "[REDACTED_USERNAME:af70917183]"
       },
       "fps": {
         "mfr": [],
@@ -2896,7 +2896,7 @@
       "date": "2026-05-09T17:42:38.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Y.E."
+        "username": "[REDACTED_USERNAME:9329121cf0]"
       },
       "fps": {
         "mfr": [],
@@ -2922,7 +2922,7 @@
       "date": "2026-05-09T20:54:05.000Z",
       "pseudo": {
         "source": "github",
-        "username": "vladivdv-bot"
+        "username": "[REDACTED_USERNAME:d68b066038]"
       },
       "fps": {
         "mfr": [],
@@ -2941,7 +2941,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "vladivdv-bot",
+        "author": "[REDACTED_AUTHOR:d68b066038]",
         "bodyExcerpt": "Assigned #317 to @dlnraja.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/317#event[REDACTED_PHONE]\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/317/issue_event/[REDACTED_EMAIL]>\r\n"
       },
       "forumInfo": null,
@@ -2960,7 +2960,7 @@
       "date": "2026-05-09T20:54:05.000Z",
       "pseudo": {
         "source": "github",
-        "username": "vladivdv-bot"
+        "username": "[REDACTED_USERNAME:d68b066038]"
       },
       "fps": {
         "mfr": [],
@@ -2985,7 +2985,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "vladivdv-bot",
+        "author": "[REDACTED_AUTHOR:d68b066038]",
         "bodyExcerpt": "vladivdv-bot created an issue (dlnraja/com.tuya.zigbee#317)\r\n\r\n### What Feature / Enhancement?\r\n\r\nHello,\r\n\r\nFirst of all, thank you for your work on this application.\r\n\r\nI would like to report an issue with adding IR WiFi Tuya devices on the Homey Self-Hosted Server version.\r\n\r\nThe pairing process starts normally, and after entering the Tuya account login credentials, the application gets stuck on a white screen and never continues. No error message is shown.\r\n\r\nThe issue appears specifically on"
       },
       "forumInfo": null,
@@ -3004,7 +3004,7 @@
       "date": "2026-05-09T20:54:27.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -3025,7 +3025,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#317)\r\n\r\n<!-- tuya-issue-manager -->\r\nHi @vladivdv-bot,\r\n\r\nThank you for your detailed report and for your kind words about the application! I really appreciate it.\r\n\r\nI understand that you're experiencing an issue with adding IR WiFi Tuya devices on the Homey Self-Hosted Server version, where the pairing process gets stuck on a white screen after entering your Tuya account credentials. That sounds frustrating, and I want to help you wit"
       },
       "forumInfo": null,
@@ -3408,7 +3408,7 @@
       "date": "2026-05-10T11:38:30.000Z",
       "pseudo": {
         "source": "user",
-        "username": "D.P."
+        "username": "[REDACTED_USERNAME:4209e28255]"
       },
       "fps": {
         "mfr": [],
@@ -3436,7 +3436,7 @@
       "date": "2026-05-10T11:38:33.000Z",
       "pseudo": {
         "source": "github",
-        "username": "PDominikPL"
+        "username": "[REDACTED_USERNAME:1939d8f474]"
       },
       "fps": {
         "mfr": [],
@@ -3457,7 +3457,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "PDominikPL",
+        "author": "[REDACTED_AUTHOR:1939d8f474]",
         "bodyExcerpt": "PDominikPL left a comment (dlnraja/com.tuya.zigbee#305)\r\n\r\nHello @dlnraja. I see new version Universal Tuya Zigbee v7.5.9. I try remove App, delete device, add again and re-pair device. And I receive this error when i try re-pair. Where is the problem - Device or software or other? \r\n\r\n<img width=\"667\" height=\"851\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/4d37dade-10b7-42c3-8dc4-5901ede93405\" />\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dln"
       },
       "forumInfo": null,
@@ -3765,7 +3765,7 @@
       "date": "2026-05-10T19:06:54.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Dut..."
+        "username": "[REDACTED_USERNAME:5a281f247c]"
       },
       "fps": {
         "mfr": [],
@@ -3982,7 +3982,7 @@
       "date": "2026-05-11T04:59:00.000Z",
       "pseudo": {
         "source": "github",
-        "username": "vikinos"
+        "username": "[REDACTED_USERNAME:b7a95228d0]"
       },
       "fps": {
         "mfr": [
@@ -4135,7 +4135,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "vikinos",
+        "author": "[REDACTED_AUTHOR:b7a95228d0]",
         "bodyExcerpt": "vikinos left a comment (dlnraja/com.tuya.zigbee#276)\r\n\r\nIt seems that Temp and humidity are wrongly mapped...im getting temp 50C and outside is around 10C....\r\nProperty\tValue\r\nID\t0b92d0e5-abe6-4132-87bf-b28944e64625\r\nName\tVlhkomÄr\r\nClass\tsensor\r\nDriver\thomey:app:com.dlnraja.tuya.zigbee:climate_sensor\r\nReady\tYes\r\nAvailable\tYes\r\nWarning\tNo\r\nCustom icon\tNo\r\n\r\nData\r\nKey\tValue\r\ntoken\t\"659bb162-262a-41cb-864f-7026bafa7973\"\r\n\r\nSettings\r\nKey\tValue\r\nzb_product_id\t\"TS0601\"\r\nzb_manufacturer_name\t\"_TZE284_"
       },
       "forumInfo": null,
@@ -4232,7 +4232,7 @@
       "date": "2026-05-11T12:39:42.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -4342,7 +4342,7 @@
       "date": "2026-05-11T13:23:06.000Z",
       "pseudo": {
         "source": "user",
-        "username": "J.K."
+        "username": "[REDACTED_USERNAME:f8e30136e8]"
       },
       "fps": {
         "mfr": [
@@ -4389,7 +4389,7 @@
       "date": "2026-05-11T13:46:58.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Goo..."
+        "username": "[REDACTED_USERNAME:d8be0cb45d]"
       },
       "fps": {
         "mfr": [],
@@ -4415,7 +4415,7 @@
       "date": "2026-05-11T13:46:58.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Goo..."
+        "username": "[REDACTED_USERNAME:d8be0cb45d]"
       },
       "fps": {
         "mfr": [],
@@ -4441,7 +4441,7 @@
       "date": "2026-05-11T20:58:00.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -4467,7 +4467,7 @@
       "date": "2026-05-11T23:47:01.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Ope..."
+        "username": "[REDACTED_USERNAME:d6d1f19f16]"
       },
       "fps": {
         "mfr": [],
@@ -4493,7 +4493,7 @@
       "date": "2026-05-12T05:31:19.000Z",
       "pseudo": {
         "source": "user",
-        "username": "B.L."
+        "username": "[REDACTED_USERNAME:7d96d1592a]"
       },
       "fps": {
         "mfr": [],
@@ -4519,7 +4519,7 @@
       "date": "2026-05-12T06:32:53.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.7."
+        "username": "[REDACTED_USERNAME:c1f7fe9751]"
       },
       "fps": {
         "mfr": [],
@@ -4545,7 +4545,7 @@
       "date": "2026-05-12T08:16:05.000Z",
       "pseudo": {
         "source": "user",
-        "username": "V.L."
+        "username": "[REDACTED_USERNAME:5a015d63b3]"
       },
       "fps": {
         "mfr": [],
@@ -4571,7 +4571,7 @@
       "date": "2026-05-12T17:43:14.000Z",
       "pseudo": {
         "source": "user",
-        "username": "S.L."
+        "username": "[REDACTED_USERNAME:1832d79e55]"
       },
       "fps": {
         "mfr": [],
@@ -4597,7 +4597,7 @@
       "date": "2026-05-12T18:50:15.000Z",
       "pseudo": {
         "source": "user",
-        "username": "T.L."
+        "username": "[REDACTED_USERNAME:3e26118127]"
       },
       "fps": {
         "mfr": [],
@@ -4625,7 +4625,7 @@
       "date": "2026-05-12T19:13:49.000Z",
       "pseudo": {
         "source": "user",
-        "username": "N.D."
+        "username": "[REDACTED_USERNAME:890c6bf506]"
       },
       "fps": {
         "mfr": [],
@@ -4651,7 +4651,7 @@
       "date": "2026-05-13T06:01:50.000Z",
       "pseudo": {
         "source": "user",
-        "username": "J.P."
+        "username": "[REDACTED_USERNAME:dd05e2a9ae]"
       },
       "fps": {
         "mfr": [],
@@ -4677,7 +4677,7 @@
       "date": "2026-05-13T06:12:25.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -4696,7 +4696,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#320 Johan SDK3 Sync â 19 FPs added, 0 DP gaps as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/320#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/320/issue_event/[REDACTED_EMAIL]>\r\n"
       },
       "forumInfo": null,
@@ -4715,7 +4715,7 @@
       "date": "2026-05-13T06:12:26.000Z",
       "pseudo": {
         "source": "github",
-        "username": "github-actions[bot]"
+        "username": "[REDACTED_USERNAME:1578c373f6]"
       },
       "fps": {
         "mfr": [],
@@ -4734,7 +4734,7 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "github-actions[bot]",
+        "author": "[REDACTED_AUTHOR:1578c373f6]",
         "bodyExcerpt": "## Automated Johan SDK3 Sync\r\n\r\n### Fingerprints\r\n- **Added**: 19 new FPs auto-matched to existing drivers\r\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\r\n- **New Johan drivers**: 89 (not in our codebase)\r\n\r\n### Auto-Scaffold\r\n- **Scaffolded**: 0 new drivers created\r\n- **FPs added**: 0 uncovered FPs added to existing drivers\r\n- **Conflicts**: 33 cross-class PID conflicts\r\n\r\n### Conflict Audit\r\n- **High severity**: 33 cross-class PID conflicts\r\n- **MFR conflicts**: 0 real risk duplicates"
       },
       "forumInfo": null,
@@ -4753,7 +4753,7 @@
       "date": "2026-05-13T06:31:02.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.7."
+        "username": "[REDACTED_USERNAME:c1f7fe9751]"
       },
       "fps": {
         "mfr": [],
@@ -4784,7 +4784,7 @@
       "date": "2026-05-13T06:49:51.000Z",
       "pseudo": {
         "source": "user",
-        "username": "Zem..."
+        "username": "[REDACTED_USERNAME:9d4bfadc82]"
       },
       "fps": {
         "mfr": [],
