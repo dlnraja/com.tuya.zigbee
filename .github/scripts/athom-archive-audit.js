@@ -47,25 +47,83 @@ const WARN_FILE_KB  = 500;  // warn if single file > 500KB
 const ERROR_FILE_KB = 2048; // error if single file > 2MB (excluding known-large)
 const KNOWN_LARGE   = [
   'data/fingerprints.json',       // fingerprint DB — lazy-loaded
+  'data/mfs_db.json',             // AutonomousEnricher local-first runtime DB
   'app.json',                     // Homey manifest (412 drivers = large)
   'driver-mapping-database.json', // DriverMappingLoader.js runtime dep
 ]; // allowed to be large
 
-(async () => {
-  const ignoreWalk = require('ignore-walk');
+function globToRegExp(pattern) {
+  let p = pattern.replace(/\\/g, '/').replace(/^\//, '');
+  const dirOnly = p.endsWith('/');
+  if (dirOnly) p = p.slice(0, -1);
+  const esc = p.replace(/[.+^${}()|[\]\\]/g, '\\$&')
+    .replace(/\*\*/g, '::DOUBLE_STAR::')
+    .replace(/\*/g, '[^/]*')
+    .replace(/::DOUBLE_STAR::/g, '.*');
+  if (dirOnly) return new RegExp(`^${esc}(?:/|$)`);
+  if (!p.includes('/')) return new RegExp(`(^|/)${esc}$`);
+  return new RegExp(`^${esc}$`);
+}
 
+function loadIgnoreRules() {
+  const ignorePath = path.join(ROOT, '.homeyignore');
+  if (!fs.existsSync(ignorePath)) return [];
+  return fs.readFileSync(ignorePath, 'utf8')
+    .split(/\r?\n/)
+    .map(l => l.trim())
+    .filter(l => l && !l.startsWith('#'))
+    .map(raw => {
+      const negate = raw.startsWith('!');
+      const pattern = negate ? raw.slice(1) : raw;
+      return { negate, re: globToRegExp(pattern) };
+    });
+}
+
+function isIgnored(rel, rules) {
+  let ignored = false;
+  for (const rule of rules) {
+    if (rule.re.test(rel)) ignored = !rule.negate;
+  }
+  return ignored;
+}
+
+function walkFallback(dir, rules, out = []) {
+  let entries;
+  try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return out; }
+  for (const entry of entries) {
+    const full = path.join(dir, entry.name);
+    const rel = path.relative(ROOT, full).replace(/\\/g, '/');
+    if (rel === '.git' || rel.startsWith('.git/')) continue;
+    if (isIgnored(rel + (entry.isDirectory() ? '/' : ''), rules) || isIgnored(rel, rules)) continue;
+    if (entry.isDirectory()) walkFallback(full, rules, out);
+    else out.push(rel);
+  }
+  return out;
+}
+
+async function listPackedFiles() {
+  try {
+    const ignoreWalk = require('ignore-walk');
+    return await ignoreWalk({
+      path: ROOT,
+      ignoreFiles: ['.homeyignore'],
+      includeEmpty: false,
+      follow: false,
+    });
+  } catch (err) {
+    console.log(`[INFO] ignore-walk unavailable (${err.message}); using built-in .homeyignore fallback`);
+    return walkFallback(ROOT, loadIgnoreRules());
+  }
+}
+
+(async () => {
   console.log('\n╔══════════════════════════════════════════════════════╗');
   console.log('║  ATHOM ARCHIVE AUDIT');
   console.log(`║  ${new Date().toISOString()}`);
   console.log('╚══════════════════════════════════════════════════════╝\n');
 
   // ── 1. Walk the files that will be packed ──
-  const files = await ignoreWalk({
-    path: ROOT,
-    ignoreFiles: ['.homeyignore'],
-    includeEmpty: false,
-    follow: false,
-  });
+  const files = await listPackedFiles();
 
   let totalBytes = 0;
   const fileDetails = [];

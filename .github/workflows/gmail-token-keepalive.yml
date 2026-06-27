@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -44,14 +44,13 @@ jobs:
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: node .github/scripts/gmail-token-keepalive.js
       - name: Commit health state
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/privacy-redactor.js .github/state/gmail-token-health.json .github/state/_imap_alert.txt
           git add .github/state/gmail-token-health.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "IMAP health $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin master || true
@@ -60,9 +59,10 @@ jobs:
         continue-on-error: true
         if: always()
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -f ".github/state/_imap_alert.txt" ]; then
+            node .github/scripts/privacy-redactor.js .github/state/_imap_alert.txt
             gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] IMAP connection failing" \
               --body "$(cat .github/state/_imap_alert.txt)" \
               --label "automation" 2>/dev/null || true

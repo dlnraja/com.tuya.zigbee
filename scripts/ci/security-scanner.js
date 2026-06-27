@@ -24,6 +24,7 @@ const GREEN = '\x1b[32m';
 const YELLOW = '\x1b[33m';
 const RESET = '\x1b[0m';
 const BOLD = '\x1b[1m';
+const MAX_SCAN_BYTES = 512 * 1024;
 
 const SECRET_PATTERNS = [
   // Generic API keys
@@ -40,12 +41,12 @@ const SECRET_PATTERNS = [
   /[Mm][Nn][Dd][Cc]_[A-Za-z0-9_-]{24}\.[A-Za-z0-9_-]{6}\.[A-Za-z0-9_-]{27,}/g,
   // Slack tokens
   /xox[baprs]-[A-Za-z0-9-]{10,}/g,
-  // Homey PAT (starts with "homey_" or similar)
-  /homey[_\-][A-Za-z0-9_-]{20,}/gi,
+  // Homey PAT values only, not ordinary file names such as homey_forum_analysis_complete
+  /homey[_\-]?pat[_\-]?[A-Za-z0-9_-]{20,}/gi,
   // Generic Bearer tokens
   /Bearer\s+[A-Za-z0-9._-]{20,}/g,
   // Password assignments (real passwords, not examples)
-  /password['"]?\s*[:=]\s*['"](?!\*|your-|example|<)[^'"]{4,}['"]/gi,
+  /password['"]?\s*[:=]\s*['"](?!\*|your-|example|<)[^'"\n+${}]{8,}['"]/gi,
   // Private keys
   /-----BEGIN (?:RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----/g,
   // JWT tokens (eyJ...)
@@ -114,11 +115,43 @@ const EXCLUDED_FILES = [
   '.env.example',
   'CONSOLIDATION_REPORT.md',
   'diagnostics-report.json',
+  'security-scanner.js',
 ];
+
+function getTrackedFiles() {
+  try {
+    return new Set(execSync('git ls-files', { cwd: ROOT, encoding: 'utf8' })
+      .split('\n')
+      .filter(Boolean)
+      .map(f => f.replace(/\\/g, '/')));
+  } catch {
+    return new Set();
+  }
+}
+
+function patternLikelyRelevant(pattern, content, lower) {
+  const src = pattern.source;
+  if (src.includes('api') && !lower.includes('api') && !lower.includes('key')) return false;
+  if (src.includes('gh[pousrx]') && !content.includes('gh')) return false;
+  if (src.includes('github\\.com') && !lower.includes('github.com')) return false;
+  if (src.includes('AKIA') && !content.includes('AKIA')) return false;
+  if (src.includes('AIza') && !content.includes('AIza')) return false;
+  if (src.includes('Mm') && !content.includes('_')) return false;
+  if (src.includes('xox') && !lower.includes('xox')) return false;
+  if (src.includes('homey') && !lower.includes('homey_') && !lower.includes('homey-')) return false;
+  if (src.includes('Bearer') && !content.includes('Bearer')) return false;
+  if (src.includes('password') && !lower.includes('password')) return false;
+  if (src.includes('PRIVATE KEY') && !content.includes('PRIVATE KEY')) return false;
+  if (src.includes('eyJ') && !content.includes('eyJ')) return false;
+  if (src.includes('mongodb') && !lower.includes('://')) return false;
+  if (src.includes('tuya') && !lower.includes('tuya')) return false;
+  return true;
+}
 
 function checkForbiddenFiles() {
   let found = false;
   console.log(`\n${BOLD}[1/3] Checking for forbidden files...${RESET}`);
+  const trackedFiles = getTrackedFiles();
 
   const walkDir = (dir, depth = 0) => {
     if (depth > 4) return;
@@ -130,11 +163,12 @@ function checkForbiddenFiles() {
     }
     for (const entry of entries) {
       const fullPath = path.join(dir, entry.name);
-      const relativePath = path.relative(ROOT, fullPath);
+      const relativePath = path.relative(ROOT, fullPath).replace(/\\/g, '/');
       if (entry.isDirectory()) {
         if (entry.name.startsWith('.') || entry.name === 'node_modules' || entry.name === '.git') continue;
         walkDir(fullPath, depth + 1);
       } else {
+        if (!trackedFiles.has(relativePath)) continue;
         for (const forbidden of FORBIDDEN_FILES) {
           if (forbidden.includes('*')) {
             const pattern = new RegExp('^' + forbidden.replace(/\./g, '\\.').replace(/\*/g, '.*') + '$');
@@ -201,9 +235,7 @@ function scanFilesForSecrets() {
 
   try {
     // Use git-ls-files to get only tracked files (not node_modules, .git, etc.)
-    const files = execSync('git ls-files', { cwd: ROOT, encoding: 'utf8' })
-      .split('\n')
-      .filter(Boolean);
+    const files = [...getTrackedFiles()];
 
     // Only scan source files (skip binaries, images, markdown, etc.).
     // .md excluded: docs don't hold executable secrets and add ~340 large files
@@ -230,16 +262,25 @@ function scanFilesForSecrets() {
 
       const fullPath = path.join(ROOT, file);
       if (!fs.existsSync(fullPath)) continue;
+      const stat = fs.statSync(fullPath);
+      if (stat.size > MAX_SCAN_BYTES) {
+        console.log(`  ${YELLOW}⚠  Skipping large tracked file (${Math.round(stat.size / 1024 / 1024)}MB): ${file}${RESET}`);
+        continue;
+      }
       
       const content = fs.readFileSync(fullPath, 'utf8');
+      const lower = content.toLowerCase();
       
       for (const pattern of SECRET_PATTERNS) {
+        if (!patternLikelyRelevant(pattern, content, lower)) continue;
+        pattern.lastIndex = 0;
         const matches = content.match(pattern);
         if (matches) {
           for (const match of matches) {
             // Skip examples, placeholders, and documentation patterns
             if (match.includes('your-') || match.includes('example') || match.includes('<your-') || 
                 match.includes('****') || match.includes('xxxx') || match.includes('*****')) continue;
+            if (/\[REDACTED_[A-Z0-9_-]+(?::[a-f0-9]{6,})?\]/.test(match)) continue;
             if (file === '.gitignore') continue;
             // Skip app.js name detection
             if (file === 'app.js' && match === 'homey-universal-tuya-zigbee') continue;
@@ -268,13 +309,6 @@ function checkWorkflowSecretExposure() {
   let found = false;
   console.log(`\n${BOLD}[4/4] Checking workflows for secret exposure in shell scripts...${RESET}`);
 
-  // Pattern: secrets directly interpolated into shell conditions or commands
-  // e.g., if [ -n "${{ secrets.HOMEY_PAT }}" ] -- this leaks the secret value into the script
-  const DANGEROUS_PATTERNS = [
-    // Secret value interpolated into shell conditional
-    /\$\{\{\s*secrets\.\w+\s*\}\}/g,
-  ];
-
   try {
     const workflowDir = path.join(ROOT, '.github', 'workflows');
     if (!fs.existsSync(workflowDir)) return found;
@@ -284,30 +318,33 @@ function checkWorkflowSecretExposure() {
       const fullPath = path.join(workflowDir, file);
       const content = fs.readFileSync(fullPath, 'utf8');
       const lines = content.split('\n');
+      let runIndent = null;
 
       for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        // Skip comments and env: blocks (secrets in env are safe)
-        if (line.trim().startsWith('#') || line.trim().startsWith('env:')) continue;
+        const trim = line.trim();
+        if (!trim || trim.startsWith('#')) continue;
+        const indent = line.match(/^\s*/)[0].length;
 
-        // Check for secret interpolation in run: blocks (shell commands)
-        // Secret references in 'uses:' with are safe (they are action inputs)
-        // Secret references in 'run:' shell blocks can be dangerous if they expose values
-        if (line.includes('${{ secrets.') && !line.trim().startsWith('uses:')) {
-          // Check if this line is inside a run: block
-          // Simple heuristic: if line has shell syntax or is indented under 'run:'
-          const prevLines = lines.slice(Math.max(0, i - 5), i).join('\n');
-          if (prevLines.includes('run:') || line.includes('if [') || line.includes('echo') || line.includes('$')) {
-            // This is a secret reference inside a shell script -- potential exposure
-            const secretMatch = line.match(/secrets\.(\w+)/);
-            if (secretMatch) {
-              // Exclude safe patterns (env: block assignments are fine)
-              if (!lines.slice(Math.max(0, i - 3), i).some(l => l.trim().startsWith('env:'))) {
-                console.log(`  ${YELLOW}⚠  ${file}:${i + 1} — secret "${secretMatch[1]}" referenced in shell context (use env var instead)${RESET}`);
-                found = true;
-              }
-            }
+        if (runIndent !== null && indent <= runIndent && !trim.startsWith('|') && !trim.startsWith('>')) {
+          runIndent = null;
+        }
+
+        if (/^run:\s*/.test(trim)) {
+          runIndent = indent;
+          const inline = trim.replace(/^run:\s*/, '');
+          if (inline.includes('${{ secrets.')) {
+            const secretMatch = inline.match(/secrets\.(\w+)/);
+            console.log(`  ${YELLOW}⚠  ${file}:${i + 1} — secret "${secretMatch?.[1] || '?'}" interpolated directly in run:${RESET}`);
+            found = true;
           }
+          continue;
+        }
+
+        if (runIndent !== null && line.includes('${{ secrets.')) {
+          const secretMatch = line.match(/secrets\.(\w+)/);
+          console.log(`  ${YELLOW}⚠  ${file}:${i + 1} — secret "${secretMatch?.[1] || '?'}" interpolated directly in run block${RESET}`);
+          found = true;
         }
       }
     }

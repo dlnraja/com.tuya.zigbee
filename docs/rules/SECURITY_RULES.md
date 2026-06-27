@@ -23,6 +23,19 @@
 The project includes `scripts/ci/security-scanner.js` that runs:
 - **`npm run security-scan`** — scan tracked files for secrets
 - **`npx security-scan`** — alias via package.json
+- **`node .github/scripts/privacy-redactor.js <files...>`** — sanitize and block Gmail/Homey diagnostic outputs before commit or artifact upload
+
+## 📬 Gmail / Diagnostic Dump Privacy Rules
+
+Gmail and Homey diagnostic workflows are allowed to keep technical evidence only:
+
+1. Preserve Tuya/Homey debug facts: manufacturer names (`_TZE...`), product IDs (`TS0601`), DP numbers, clusters, capabilities, app versions and sanitized error classes.
+2. Redact or hash all personal/sensitive facts: email addresses, account names, usernames, phone numbers, IP/MAC addresses, local paths, IMAP UIDs, report owner IDs, tokens, passwords, API keys and raw JSON secrets.
+3. Never log the Gmail account identity. Use a stable alias from `privacy-redactor.js`.
+4. Never mark Gmail messages as read from automation unless a workflow is explicitly designed for mailbox operations. Diagnostic fetchers must use `markSeen: false`.
+5. Run `node .github/scripts/privacy-redactor.js` before every `git add`, `git commit`, `git push`, issue creation or artifact upload that includes `.github/state/` or `diagnostics/` data.
+6. Use `GITHUB_TOKEN` by default in workflows. Use `GH_PAT` only where cross-repository permissions are required and documented.
+7. Raw exports must remain local and ignored by git: `.github/state/gmail-raw/`, `gmail-dumps/`, `diagnostics/raw/` and `*.raw.json`.
 
 ## 📋 Pre-Commit Checklist
 
@@ -72,6 +85,13 @@ client_secret*.json
 .github/state/_token_*
 .github/state/*secret*
 .github/state/*credential*
+.github/state/gmail-raw/
+.github/state/*raw*.json
+.github/state/*gmail-dump*.json
+.github/state/*diagnostics-raw*.json
+diagnostics/raw/
+diagnostics/**/*.raw.json
+gmail-dumps/
 screenshots/
 screenshots-debug/
 promote-screenshots/
