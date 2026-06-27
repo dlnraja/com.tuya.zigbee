@@ -5,6 +5,7 @@ const IASZoneManager = require('../../lib/managers/IASZoneManager');
 
 let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
+const { estimate3VLithiumBattery } = require('../../lib/utils/BatteryCurveFallback');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const { containsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -1430,7 +1431,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         const voltage = data.batteryVoltage / 10;
         const battery = UnifiedBatteryHandler
           ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
-          : Math.round(Math.max(0, Math.min(100, ((voltage - 2.0) / 1.0) * 100)));
+          : estimate3VLithiumBattery(voltage);
         this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
         if (this.hasCapability('measure_battery')) {
           await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
