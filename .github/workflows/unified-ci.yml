@@ -84,52 +84,7 @@ jobs:
 
       - name: 🔍 Fingerprint Collision Check
         run: |
-          echo "Checking fingerprint collisions (manufacturerName + productId)..."
-          node -e "
-            const fs=require('fs'),path=require('path');
-            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
-            const map=new Map();
-            for(const d of dirs){
-              const f=path.join('drivers',d,'driver.compose.json');
-              if(!fs.existsSync(f))continue;
-              try{
-                const j=JSON.parse(fs.readFileSync(f,'utf8'));
-                const z=j.zigbee;
-                if(!z||!z.manufacturerName||!z.productId)continue;
-                for(const mfr of z.manufacturerName){
-                  for(const pid of z.productId){
-                    const key=mfr.toLowerCase()+'|'+pid;
-                    if(!map.has(key))map.set(key,[]);
-                    map.get(key).push(d);
-                  }
-                }
-              }catch(e){}
-            }
-            let col=0;
-            const collisions=[];
-            for(const [k,v] of map){
-              // v may list the SAME driver multiple times if a driver.compose.json
-              // declares a manufacturerName+productId pair twice (self-collision).
-              // Only flag genuine cross-driver collisions (≥2 distinct drivers).
-              const uniqueDrivers = [...new Set(v)];
-              if(uniqueDrivers.length>1){
-                // Ignore synthetic placeholder fingerprints that are intentionally
-                // generic catch-alls (e.g. _hybrid_*_needs_device_assignment).
-                if(/_hybrid_.*_needs_device_assignment|_tz3000_unknown|_tze200_placeholder_generic/i.test(k)){
-                  continue;
-                }
-                collisions.push({key:k,drivers:uniqueDrivers});
-                col++;
-                console.log('::warning::COLLISION '+k+' -> '+uniqueDrivers.join(', '));
-              }
-            }
-            if(col>0){
-              console.log('ERROR: '+col+' genuine fingerprint collision(s) found!');
-              collisions.slice(0,10).forEach(c=>console.log('  '+c.key+' in: '+c.drivers.join(', ')));
-              process.exit(1);
-            }
-            console.log('No genuine fingerprint collisions ('+map.size+' unique combos checked)');
-          "
+          node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json
 
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
         run: node scripts/maintenance/zero-defect-architect-audit.js

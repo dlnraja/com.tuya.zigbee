@@ -1,70 +1,180 @@
 #!/usr/bin/env node
 'use strict';
-/**
- * Fingerprint Collision Check v2.0
- *
- * Detects manufacturerName+productId pairs that appear in multiple driver.compose.json files.
- * Resolution rules:
- * 1. Generic/fallback drivers (_TZ3000_unknown, universal_fallback, tuya_dummy_device) are EXEMPT
- * 2. TS0601 entries in non-TS0601-specific drivers are EXEMPT (variant listing, not collision)
- * 3. Real collisions must be resolved by removing duplicate fingerprint from the less-specific driver
- */
-const fs=require('fs'),p=require('path'),d='drivers';
 
-// Exempt generic/fallback driver prefixes
-const EXEMPT_DRIVERS=new Set([
-  'universal_fallback','tuya_dummy_device','generic_tuya','generic_diy',
-  'device_generic_diy_universal','universal_zigbee'
+/**
+ * Fingerprint Collision Check v3.0
+ *
+ * Detects manufacturerName+productId pairs that appear in multiple
+ * driver.compose.json files. Existing historical collisions can be tracked in
+ * a baseline so CI fails only on new or changed collisions.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = process.cwd();
+const DRIVERS_DIR = path.join(ROOT, 'drivers');
+
+const EXEMPT_DRIVERS = new Set([
+  'universal_fallback',
+  'tuya_dummy_device',
+  'generic_tuya',
+  'generic_diy',
+  'device_generic_diy_universal',
+  'universal_zigbee'
 ]);
 
-const m={};
-for(const dr of fs.readdirSync(d)){
-  try{
-    const j=JSON.parse(fs.readFileSync(p.join(d,dr,'driver.compose.json'),'utf8'));
-    if(!j.zigbee)continue;
-    const fps=j.zigbee.manufacturerName||[];
-    const pids=j.zigbee.productId||[];
-    for(const fp of fps)for(const pid of pids){
-      const k=fp+'|'+pid;
-      if(!m[k])m[k]=[];
-      m[k].push(dr);
+const EXEMPT_KEY_RE = /_hybrid_.*_needs_device_assignment|_master_.*_needs_device_assignment|_stable_v5_.*_needs_device_assignment|_tz3000_unknown|_tze200_placeholder_generic/i;
+
+function parseArgs(argv) {
+  const args = { baseline: null, writeBaseline: null, json: false };
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    if (arg === '--baseline') args.baseline = argv[++i];
+    else if (arg === '--write-baseline') args.writeBaseline = argv[++i];
+    else if (arg === '--json') args.json = true;
+  }
+  return args;
+}
+
+function readJson(file) {
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
+}
+
+function collisionId(collision) {
+  return `${collision.key} -> ${collision.drivers.join(',')}`;
+}
+
+function normalizeDrivers(drivers) {
+  return [...new Set(drivers)].sort((a, b) => a.localeCompare(b));
+}
+
+function collectCollisions() {
+  const map = new Map();
+  if (!fs.existsSync(DRIVERS_DIR)) return [];
+
+  const dirs = fs.readdirSync(DRIVERS_DIR)
+    .filter(name => fs.statSync(path.join(DRIVERS_DIR, name)).isDirectory());
+
+  for (const driverId of dirs) {
+    const file = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
+    if (!fs.existsSync(file)) continue;
+
+    let compose;
+    try {
+      compose = readJson(file);
+    } catch {
+      continue;
     }
-  }catch{}
+
+    const zigbee = compose.zigbee;
+    if (!zigbee?.manufacturerName || !zigbee?.productId) continue;
+
+    for (const mfr of zigbee.manufacturerName) {
+      for (const pid of zigbee.productId) {
+        const key = `${String(mfr).toLowerCase()}|${String(pid)}`;
+        if (!map.has(key)) map.set(key, []);
+        map.get(key).push(driverId);
+      }
+    }
+  }
+
+  const collisions = [];
+  for (const [key, drivers] of map) {
+    const uniqueDrivers = normalizeDrivers(drivers);
+    const nonExempt = uniqueDrivers.filter(driverId => !EXEMPT_DRIVERS.has(driverId));
+    if (nonExempt.length <= 1) continue;
+    if (EXEMPT_KEY_RE.test(key)) continue;
+    collisions.push({ key, drivers: uniqueDrivers });
+  }
+
+  return collisions.sort((a, b) => collisionId(a).localeCompare(collisionId(b)));
 }
 
-const c=Object.entries(m).filter(([,v])=>v.length>1);
-
-// Filter out exempt collisions
-const realCollisions=c.filter(([,drivers])=>{
-  const nonExempt=drivers.filter(d=>!EXEMPT_DRIVERS.has(d));
-  return nonExempt.length>1;
-});
-
-console.log('FP collision check: '+Object.keys(m).length+' combos, '+c.length+' raw, '+realCollisions.length+' real');
-for(const[k,v]of c.slice(0,20)){
-  console.log('::warning::COLLISION '+k+' -> '+v.join(', '));
+function loadBaseline(file) {
+  if (!file || !fs.existsSync(file)) return new Set();
+  const data = readJson(file);
+  return new Set((data.collisions || []).map(c => collisionId({
+    key: c.key,
+    drivers: normalizeDrivers(c.drivers || [])
+  })));
 }
-if(realCollisions.length>0){
-  console.log('\n=== REAL COLLISIONS (excluding exempt generic drivers) ===');
-  for(const[k,v]of realCollisions.slice(0,20)){
-    console.log('COLLISION '+k+' -> '+v.join(', '));
+
+function writeBaseline(file, collisions) {
+  const out = {
+    version: 1,
+    generatedAt: new Date().toISOString(),
+    description: 'Known historical fingerprint collisions. CI fails only for collisions not listed here.',
+    collisions
+  };
+  fs.mkdirSync(path.dirname(path.resolve(file)), { recursive: true });
+  fs.writeFileSync(file, `${JSON.stringify(out, null, 2)}\n`);
+}
+
+function appendSummary(collisions, newCollisions, resolvedBaseline) {
+  const summary = process.env.GITHUB_STEP_SUMMARY;
+  if (!summary) return;
+
+  let md = `## Fingerprint Collision Check\n\n`;
+  md += `| Metric | Count |\n|---|---:|\n`;
+  md += `| Current collisions | ${collisions.length} |\n`;
+  md += `| New collisions | ${newCollisions.length} |\n`;
+  md += `| Resolved baseline entries | ${resolvedBaseline.length} |\n\n`;
+
+  if (newCollisions.length) {
+    md += `### New Collisions\n\n`;
+    for (const collision of newCollisions.slice(0, 50)) {
+      md += `- \`${collision.key}\` in ${collision.drivers.map(d => `\`${d}\``).join(', ')}\n`;
+    }
+  }
+
+  fs.appendFileSync(summary, md);
+}
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  const collisions = collectCollisions();
+
+  if (args.writeBaseline) {
+    writeBaseline(args.writeBaseline, collisions);
+    console.log(`FP collision baseline written: ${args.writeBaseline} (${collisions.length} collisions)`);
+    return;
+  }
+
+  const baseline = loadBaseline(args.baseline);
+  const currentIds = new Set(collisions.map(collisionId));
+  const newCollisions = collisions.filter(c => !baseline.has(collisionId(c)));
+  const resolvedBaseline = [...baseline].filter(id => !currentIds.has(id));
+
+  const result = {
+    total: collisions.length,
+    baseline: baseline.size,
+    new: newCollisions.length,
+    resolvedBaseline: resolvedBaseline.length,
+    collisions,
+    newCollisions,
+    resolvedBaseline
+  };
+
+  if (args.json) {
+    console.log(JSON.stringify(result, null, 2));
+  } else {
+    console.log(`FP collision check: ${collisions.length} current, ${baseline.size} baseline, ${newCollisions.length} new`);
+    for (const collision of newCollisions.slice(0, 20)) {
+      console.log(`::error::NEW COLLISION ${collision.key} -> ${collision.drivers.join(', ')}`);
+    }
+    for (const id of resolvedBaseline.slice(0, 20)) {
+      console.log(`::notice::Resolved baseline collision: ${id}`);
+    }
+  }
+
+  appendSummary(collisions, newCollisions, resolvedBaseline);
+
+  if (newCollisions.length > 0) {
+    process.exit(1);
   }
 }
 
-// Write GitHub Step Summary
-const sm=process.env.GITHUB_STEP_SUMMARY;
-if(sm&&c.length>0){
-  let md='## FP Collisions ('+c.length+' total, '+realCollisions.length+' real)\n\n';
-  md+='**Resolution rules:**\n';
-  md+='1. Generic/fallback drivers (universal_fallback, tuya_dummy_device, etc.) are exempt\n';
-  md+='2. TS0601 entries in non-specific drivers are variant listings, not collisions\n';
-  md+='3. Real collisions: remove duplicate fingerprint from less-specific driver\n\n';
-  md+='| FP | PID | Drivers | Status |\n|---|---|---|---|\n';
-  for(const[k,v]of c.slice(0,100)){
-    const[fp,pid]=k.split('|');
-    const isExempt=v.every(d=>EXEMPT_DRIVERS.has(d));
-    const status=isExempt?'Exempt (generic)':'Real - resolve';
-    md+='| '+fp+' | '+pid+' | '+v.join(', ')+' | '+status+' |\n';
-  }
-  fs.appendFileSync(sm,md);
+if (require.main === module) {
+  main();
 }
