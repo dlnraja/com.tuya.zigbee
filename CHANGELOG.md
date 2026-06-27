@@ -4,7 +4,12 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [9.0.117] - 2026-06-27
+## [9.0.119] - 2026-06-27
+
+v9.0.119: hardened CI lifecycle gates, normalized Homey manifest output, and refreshed fingerprint collision baseline.
+---
+
+ [9.0.117] - 2026-06-27
 
 v9.0.116:
 ---
