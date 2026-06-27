@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 100
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
