@@ -74,6 +74,9 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
           npx homey app build
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
           npm run prepare-publish
           PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
           if [ -d "$PUBLISH_DIR" ]; then cd "$PUBLISH_DIR"; fi

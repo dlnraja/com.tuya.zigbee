@@ -30,6 +30,7 @@ runs:
       run: |
         node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
         node scripts/maintenance/fix-large-images.js
+        node scripts/maintenance/optimize-build-images.cjs
 
     - name: Validate App
       shell: bash
