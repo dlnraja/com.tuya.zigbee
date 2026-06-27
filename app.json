@@ -66970,7 +66970,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_button_wireless_plug_needs_device_assignment",
+          "_STABLE_V5_BUTTON_WIRELESS_PLUG_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS011F",
           "TS0121",
@@ -70716,7 +70719,10 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_climate_sensor_device_needs_device_assignment",
+          "_STABLE_V5_CLIMATE_SENSOR_DEVICE_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -71032,7 +71038,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_climate_sensor_energy_needs_device_assignment",
+          "_STABLE_V5_CLIMATE_SENSOR_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -73689,7 +73698,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_device_din_rail_needs_device_assignment",
+          "_STABLE_V5_DEVICE_DIN_RAIL_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -74006,7 +74018,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_device_din_rail_meter_needs_device_assignment",
+          "_STABLE_V5_DEVICE_DIN_RAIL_METER_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -74450,7 +74465,10 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_device_floor_heating_thermostat_needs_device_assignment",
+          "_STABLE_V5_DEVICE_FLOOR_HEATING_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -80564,7 +80582,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_handheld_remote_4_buttons_needs_device_assignment",
+          "_STABLE_V5_HANDHELD_REMOTE_4_BUTTONS_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0044"
         ],
@@ -82462,7 +82483,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_lcdtemphumidsensor_plug_energy_needs_device_assignment",
+          "_STABLE_V5_LCDTEMPHUMIDSENSOR_PLUG_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -92562,7 +92586,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_remote_button_emergency_sos_needs_device_assignment",
+          "_STABLE_V5_REMOTE_BUTTON_EMERGENCY_SOS_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0215A"
         ],
@@ -92754,7 +92781,10 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_remote_button_wireless_needs_device_assignment",
+          "_STABLE_V5_REMOTE_BUTTON_WIRELESS_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0043",
           "TS011F",
@@ -93656,7 +93686,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_remote_button_wireless_plug_needs_device_assignment",
+          "_STABLE_V5_REMOTE_BUTTON_WIRELESS_PLUG_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS011F",
           "TS0121",
@@ -96098,7 +96131,10 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_sensor_contact_motion_needs_device_assignment",
+          "_STABLE_V5_SENSOR_CONTACT_MOTION_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -97144,7 +97180,10 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_sensor_contact_water_needs_device_assignment",
+          "_STABLE_V5_SENSOR_CONTACT_WATER_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601",
           "TS0207",
@@ -97508,7 +97547,10 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_sensor_illuminance_presence_needs_device_assignment",
+          "_STABLE_V5_SENSOR_ILLUMINANCE_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0225"
         ],
@@ -98125,7 +98167,10 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_sensor_motion_presence_needs_device_assignment",
+          "_STABLE_V5_SENSOR_MOTION_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0225",
           "TS0601"
@@ -99201,7 +99246,10 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_sensor_presence_radar_needs_device_assignment",
+          "_STABLE_V5_SENSOR_PRESENCE_RADAR_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0203",
           "TS0601",
@@ -100629,7 +100677,10 @@
         "large": "/drivers/sirentemphumidsensor/assets/images/large.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_sirentemphumidsensor_needs_device_assignment",
+          "_STABLE_V5_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -101969,7 +102020,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_smart_remote_4_buttons_needs_device_assignment",
+          "_STABLE_V5_SMART_REMOTE_4_BUTTONS_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0215A"
         ],
@@ -103035,6 +103089,10 @@
         "alarm_battery"
       ],
       "zigbee": {
+        "manufacturerName": [
+          "_stable_v5_switch_needs_device_assignment",
+          "_STABLE_V5_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601",
           "TS011F",
@@ -103046,7 +103104,6 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -108934,6 +108991,10 @@
         "alarm_battery"
       ],
       "zigbee": {
+        "manufacturerName": [
+          "_stable_v5_switch_usb_dongle_needs_device_assignment",
+          "_STABLE_V5_SWITCH_USB_DONGLE_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0003"
         ],
@@ -108960,8 +109021,7 @@
           "instruction": {
             "en": "Turn the switch on/off 3 times quickly"
           }
-        },
-        "manufacturerName": []
+        }
       },
       "images": {
         "small": "drivers/switch_3gang/assets/images/small.png",
@@ -113297,7 +113357,10 @@
         "xlarge": "drivers/usb_dongle_triple/assets/images/xlarge.png"
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_usb_dongle_triple_needs_device_assignment",
+          "_STABLE_V5_USB_DONGLE_TRIPLE_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0003"
         ],
@@ -115199,7 +115262,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_wall_remote_4_gang_needs_device_assignment",
+          "_STABLE_V5_WALL_REMOTE_4_GANG_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0044"
         ],
@@ -115370,7 +115436,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_wall_remote_4_gang_2_needs_device_assignment",
+          "_STABLE_V5_WALL_REMOTE_4_GANG_2_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS004F"
         ],
@@ -115526,7 +115595,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_wall_remote_4_gang_3_needs_device_assignment",
+          "_STABLE_V5_WALL_REMOTE_4_GANG_3_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0044"
         ],
@@ -115700,7 +115772,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_stable_v5_wall_remote_6_gang_needs_device_assignment",
+          "_STABLE_V5_WALL_REMOTE_6_GANG_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0046"
         ],

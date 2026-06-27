@@ -38,7 +38,11 @@
           6
         ]
       }
-    }
+    },
+    "manufacturerName": [
+      "_stable_v5_switch_needs_device_assignment",
+      "_STABLE_V5_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",

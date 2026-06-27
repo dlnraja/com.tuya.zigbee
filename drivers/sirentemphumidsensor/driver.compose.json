@@ -60,7 +60,11 @@
       "instruction": {
         "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
       }
-    }
+    },
+    "manufacturerName": [
+      "_stable_v5_sirentemphumidsensor_needs_device_assignment",
+      "_STABLE_V5_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "maintenanceActions": [
     {

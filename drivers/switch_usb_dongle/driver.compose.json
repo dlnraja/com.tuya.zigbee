@@ -44,7 +44,11 @@
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
-    }
+    },
+    "manufacturerName": [
+      "_stable_v5_switch_usb_dongle_needs_device_assignment",
+      "_STABLE_V5_SWITCH_USB_DONGLE_NEEDS_DEVICE_ASSIGNMENT"
+    ]
   },
   "images": {
     "small": "drivers/switch_3gang/assets/images/small.png",
