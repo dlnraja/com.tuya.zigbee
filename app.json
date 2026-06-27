@@ -132343,7 +132343,10 @@
         "button.push": {
           "title": {
             "en": "push"
-          }
+          },
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         },
         "button.1": {
           "title": {
@@ -177545,12 +177548,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          }
+          },
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          }
+          },
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         },
         "button.1": {
           "title": {
@@ -182656,7 +182665,10 @@
         "button.push": {
           "title": {
             "en": "push"
-          }
+          },
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         },
         "button.1": {
           "title": {
@@ -203819,6 +203831,26 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -205340,6 +205372,16 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
+        },
+        "button.toggle": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -206368,6 +206410,21 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -207235,6 +207292,26 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_3": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -208274,6 +208351,31 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
+        },
+        "button.toggle_1": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_2": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_3": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.toggle_4": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
+        },
+        "button.identify": {
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         }
       },
       "metadata": {
@@ -210169,12 +210271,18 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          }
+          },
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          }
+          },
+          "setable": false,
+          "maintenanceAction": true,
+          "getable": false
         },
         "button.1": {
           "title": {
