@@ -24,6 +24,26 @@ function isReservedName(filename) {
   return RESERVED_BASENAMES.has(base);
 }
 
+function dirStats(dir) {
+  let bytes = 0;
+  let files = 0;
+  const stack = [dir];
+  while (stack.length > 0) {
+    const current = stack.pop();
+    for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+      const full = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(full);
+      } else {
+        const stat = fs.statSync(full);
+        bytes += stat.size;
+        files++;
+      }
+    }
+  }
+  return { bytes, files };
+}
+
 // Best-effort sanitization of the source tree before copy. Runs the
 // dedicated kill-stray-nulls helper which uses \\?\ to delete reserved
 // files that vanilla fs cannot remove.
@@ -133,6 +153,19 @@ try {
     process.exit(1);
   }
   console.log('Success: app.json is under the 4MB Athom limit.');
+
+  // 4a) Archive budget guard. Homey may accept the upload but later mark the
+  // draft as processing_failed when the packed app is too heavy. Fail before
+  // publishing so CI points at the real root cause.
+  const publishStats = dirStats(destDir);
+  const publishMB = publishStats.bytes / (1024 * 1024);
+  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 32);
+  console.log(`Publish directory size: ${publishMB.toFixed(2)} MB across ${publishStats.files} files (limit ${maxPublishMB.toFixed(2)} MB).`);
+  if (publishMB > maxPublishMB) {
+    console.error(`FATAL: publish directory is ${publishMB.toFixed(2)} MB, above the ${maxPublishMB.toFixed(2)} MB safety limit.`);
+    console.error('Run: npm run build && node scripts/maintenance/optimize-build-images.cjs && npm run prepare-publish');
+    process.exit(1);
+  }
 
   // 4b) Permanent sdk:3 guard — Athom API REQUIRES this field.
   //     Auto-fix tooling has deleted it 4+ times (commits 160e58b83, b3311caa2, 5449d20f4, etc.)

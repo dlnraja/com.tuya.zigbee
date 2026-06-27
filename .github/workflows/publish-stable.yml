@@ -75,12 +75,20 @@ jobs:
       - name: Build App
         run: npx homey app build
       - name: Sanitize Built Manifest
-        run: node scripts/maintenance/sanitize-manifest.cjs .homeybuild/app.json
+        run: |
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs .homeybuild/app.json
+      - name: Prepare Publish Directory
+        run: npm run prepare-publish
       - name: Publish to Draft
         id: publish
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
+          PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
+          if [ -d "$PUBLISH_DIR" ]; then cd "$PUBLISH_DIR"; fi
+          npm install --omit=dev --no-audit --no-fund 2>/dev/null || true
           echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
           printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true
           echo "Draft publish completed"

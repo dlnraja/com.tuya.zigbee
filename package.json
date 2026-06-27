@@ -6,7 +6,8 @@
   "scripts": {
     "build": "homey app build",
     "prebuild": "node scripts/maintenance/kill-stray-nulls.cjs --force",
-    "postbuild": "node scripts/maintenance/fix-large-images.js && node scripts/maintenance/sanitize-manifest.cjs",
+    "postbuild": "node scripts/maintenance/fix-large-images.js && node scripts/maintenance/optimize-build-images.cjs && node scripts/maintenance/sanitize-manifest.cjs",
+    "optimize:build-images": "node scripts/maintenance/optimize-build-images.cjs",
     "prepare-publish": "node scripts/prepare-publish.js",
     "auto-publish": "node scripts/auto-publish.js",
     "check-build": "node scripts/check-build.js",

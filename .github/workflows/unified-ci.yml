@@ -162,7 +162,10 @@ jobs:
         run: npx homey app build
       
       - name: 🖼️ Fix Large Images
-        run: node scripts/maintenance/fix-large-images.js
+        run: |
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
       
       - name: 🧪 Regression Verification
         run: |
