@@ -1,7 +1,7 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
   require('../../lib/utils/CaseInsensitiveMatcher');
-const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
@@ -11,6 +11,7 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
+const { estimate3VLithiumBattery } = require('../../lib/utils/BatteryCurveFallback');
 const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
 
 // v5.5.733: HOBEIAN ZG-101ZL FIX - Import OnOffBoundCluster for outputCluster command reception
@@ -776,10 +777,10 @@ class Button1GangDevice extends ButtonDevice {
 
         this._powerCluster.on('attr.batteryVoltage', async (value) => {
           if (value !== undefined && value > 0) {
-            const voltage = safeMultiply(value, 10);
+            const voltage = safeDivide(value, 10);
             const battery = UnifiedBatteryHandler
               ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
-              : Math.round(Math.max(0, Math.min(100, ((voltage - 2.0) / 1.0) * 100)));
+              : estimate3VLithiumBattery(voltage);
             this.log(`[BUTTON1-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
@@ -919,5 +920,4 @@ class Button1GangDevice extends ButtonDevice {
 }
 
 module.exports = Button1GangDevice;
-
 

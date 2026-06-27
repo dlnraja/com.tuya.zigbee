@@ -11,6 +11,7 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 let UnifiedBatteryHandler = null;
 try { UnifiedBatteryHandler = require('../../lib/battery/UnifiedBatteryHandler'); } catch (e) { /* optional */ }
+const { estimate3VLithiumBattery } = require('../../lib/utils/BatteryCurveFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
@@ -1436,7 +1437,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         // v9.0.85: Fix ternary fallback — both branches were identical (crash on null)
         const battery = UnifiedBatteryHandler
           ? UnifiedBatteryHandler.calculateFromVoltage(voltage, "3V_2100")
-          : Math.round(Math.max(0, Math.min(100, ((voltage - 2.0) / 1.0) * 100)));
+          : estimate3VLithiumBattery(voltage);
         this.log(`[MOTION-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         if (this.hasCapability('measure_battery')) {
           await this.safeSetCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
@@ -1696,5 +1697,4 @@ class MotionSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = MotionSensorDevice;
-
 
