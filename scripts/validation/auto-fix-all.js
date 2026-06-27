@@ -71,26 +71,33 @@ fixJSON('button.X setable:false', () => {
   execSync('node scripts/validation/fix-button-capability-options.js --apply', { cwd: ROOT, stdio: 'pipe', timeout: 30000 });
 });
 
-// 3. Fix button.X in compiled app.json
-fixJSON('app.json button.X setable', () => {
+// 3. Keep compiled app.json aligned with Homey's generated output.
+//    Homey strips setable/getable/maintenanceAction from button.* capability
+//    options in the compiled manifest. Older auto-fixes re-injected them here,
+//    which made every publish cycle dirty again after validation.
+fixJSON('app.json button.X generated options', () => {
   const fp = path.join(ROOT, 'app.json');
   const c = JSON.parse(fs.readFileSync(fp, 'utf8'));
   let fixed = 0;
   for (const d of c.drivers || []) {
     const opts = d.capabilitiesOptions || {};
     for (const [cap, o] of Object.entries(opts)) {
-      if (cap.startsWith('button.') && o.setable !== false) {
-        o.setable = false; o.maintenanceAction = true; o.getable = false;
-        fixed++;
+      if (cap.startsWith('button.')) {
+        const before = JSON.stringify(o);
+        delete o.setable;
+        delete o.maintenanceAction;
+        delete o.getable;
+        if (Object.keys(o).length === 0) {
+          delete opts[cap];
+        }
+        if (JSON.stringify(o) !== before || !(cap in opts)) fixed++;
       }
     }
-    for (const cap of (d.capabilities || [])) {
-      if (cap.startsWith('button.') && !(cap in opts)) {
-        opts[cap] = { setable: false, maintenanceAction: true, getable: false };
-        fixed++;
-      }
+    if (Object.keys(opts).length === 0) {
+      delete d.capabilitiesOptions;
+    } else {
+      d.capabilitiesOptions = opts;
     }
-    d.capabilitiesOptions = opts;
   }
   if (fixed > 0) fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
 });

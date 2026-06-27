@@ -156,13 +156,25 @@ jobs:
           version: ${{ steps.bump_level.outputs.level }}
           changelog: ${{ steps.cl.outputs.text }}
 
-      - name: Sync package.json version
+      - name: Sync package manifests version
         run: |
           node -e "
-            const f=require('fs'), a=require('./app.json'), p=JSON.parse(f.readFileSync('package.json','utf8'));
-            p.version=a.version;
-            f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');
-            console.log('Synced package.json to v'+a.version);
+            const f=require('fs');
+            const app=JSON.parse(f.readFileSync('app.json','utf8'));
+            const version=app.version;
+            for (const file of ['package.json', 'package-lock.json']) {
+              if (!f.existsSync(file)) continue;
+              const json=JSON.parse(f.readFileSync(file,'utf8'));
+              json.version=version;
+              if (json.packages && json.packages['']) json.packages[''].version=version;
+              f.writeFileSync(file, JSON.stringify(json,null,2)+'\n');
+            }
+            if (f.existsSync('.homeycompose/app.json')) {
+              const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));
+              hc.version=version;
+              f.writeFileSync('.homeycompose/app.json', JSON.stringify(hc,null,2)+'\n');
+            }
+            console.log('Synced package manifests to v'+version);
           "
 
       - name: Read bumped version
@@ -350,10 +362,36 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node <<'NODE'
+          const fs = require('fs');
+          const app = JSON.parse(fs.readFileSync('app.json', 'utf8'));
+          const version = app.version;
+          for (const file of ['package.json', 'package-lock.json']) {
+            if (!fs.existsSync(file)) continue;
+            const json = JSON.parse(fs.readFileSync(file, 'utf8'));
+            json.version = version;
+            if (json.packages && json.packages['']) json.packages[''].version = version;
+            fs.writeFileSync(file, JSON.stringify(json, null, 2) + '\n');
+          }
+          if (fs.existsSync('.homeycompose/app.json')) {
+            const compose = JSON.parse(fs.readFileSync('.homeycompose/app.json', 'utf8'));
+            compose.version = version;
+            fs.writeFileSync('.homeycompose/app.json', JSON.stringify(compose, null, 2) + '\n');
+          }
+          if (fs.existsSync('.homeychangelog.json')) {
+            const changelog = JSON.parse(fs.readFileSync('.homeychangelog.json', 'utf8'));
+            const current = changelog[version] && String(changelog[version].en || '');
+            if (!current || /^y{20,}$/i.test(current) || /^v\d+\.\d+\.\d+:$/.test(current.trim())) {
+              changelog[version] = { en: `v${version}: automated publish, manifest sync, and Homey test promotion.` };
+              fs.writeFileSync('.homeychangelog.json', JSON.stringify(changelog, null, 2) + '\n');
+            }
+          }
+          NODE
           git add -A
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.info.outputs.version }}")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
-          git diff --cached --quiet || git commit -m "v${{ steps.info.outputs.version }}: ${D} drivers, ${F} FPs [skip ci]"
+          git diff --cached --quiet || git commit -m "v${VER}: ${D} drivers, ${F} FPs [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
