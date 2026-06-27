@@ -573,6 +573,12 @@
       ]
     }
   ],
+  "9.0.121": {
+    "en": "v9.0.121: stabilized post-publish manifest sync, changelog cleanup, and fingerprint collision baseline."
+  },
+  "9.0.120": {
+    "en": "v9.0.120: automated publish and fingerprint synchronization."
+  },
   "9.0.119": {
     "en": "v9.0.119: hardened CI lifecycle gates, normalized Homey manifest output, and refreshed fingerprint collision baseline."
   },
@@ -624,16 +630,10 @@
   "9.0.103": {
     "en": "v9.0.102:"
   },
-  "9.0.102": {
-    "en": "v9.0.102: automated maintenance, fingerprint refresh, and manifest synchronization."
+  "9.0.122": {
+    "en": "v9.0.121:"
   },
-  "9.0.101": {
-    "en": "v9.0.100:"
-  },
-  "9.0.120": {
-    "en": "v9.0.120: automated publish and fingerprint synchronization."
-  },
-  "9.0.121": {
-    "en": "v9.0.121: stabilized post-publish manifest sync, changelog cleanup, and fingerprint collision baseline."
+  "9.0.123": {
+    "en": "v9.0.123: automated publish, manifest sync, and Homey test promotion."
   }
 }
