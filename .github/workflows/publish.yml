@@ -70,6 +70,9 @@ jobs:
       - name: Validate (npx)
         run: npx homey app validate --level publish
 
+      - name: Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
       - name: Athom Validate (Docker)
         continue-on-error: true
         uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1

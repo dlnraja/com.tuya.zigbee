@@ -62,6 +62,9 @@ jobs:
       - name: 🔨 Build app
         run: npx homey app build
 
+      - name: 🧹 Sanitize generated manifest after build
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
       - name: 🔍 JS Syntax Check
         run: |
           FAIL=0
@@ -91,6 +94,9 @@ jobs:
 
       - name: 🔍 Validate (npx)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
+
+      - name: 🧹 Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
       - name: ✅ Summary
         if: success()

@@ -25,9 +25,10 @@ runs:
       shell: bash
       run: npx homey app build
 
-    - name: Optimize build (minify app.json + fix large.png)
+    - name: Optimize build (sanitize manifest + fix large.png)
       shell: bash
       run: |
+        node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
         node scripts/maintenance/fix-large-images.js
 
     - name: Validate App
@@ -35,6 +36,8 @@ runs:
       run: |
         cd .homeybuild
         npx homey app validate --level publish
+        cd "$GITHUB_WORKSPACE"
+        node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
     - name: Prepare Publish Directory
       shell: bash

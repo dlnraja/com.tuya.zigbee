@@ -76,6 +76,9 @@ jobs:
       - name: Validate App Manifest
         run: npx homey app validate --level=publish
 
+      - name: Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
   # 2. Analyse des Diagnostics (Simulation du dump email)
   analyze-diagnostics:
     name: 📧 Analyse des Crashs & Dump Emails
