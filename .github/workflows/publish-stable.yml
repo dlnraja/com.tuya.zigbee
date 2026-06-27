@@ -50,6 +50,8 @@ jobs:
           echo "SDK3 validated"
       - name: Validate App
         run: npx homey app validate --level publish
+      - name: Sanitize generated manifest after validation
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
   publish:
     name: "Publish to Draft"
@@ -72,6 +74,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Build App
         run: npx homey app build
+      - name: Sanitize Built Manifest
+        run: node scripts/maintenance/sanitize-manifest.cjs .homeybuild/app.json
       - name: Publish to Draft
         id: publish
         env:

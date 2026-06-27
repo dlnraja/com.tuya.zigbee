@@ -15,6 +15,10 @@ runs:
       shell: bash
       run: npx homey app build
 
+    - name: Sanitize Built Manifest
+      shell: bash
+      run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+
     - name: Prepare Publish Directory
       shell: bash
       run: npm run prepare-publish
