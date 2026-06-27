@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { sanitizeManifestFile } = require('./maintenance/sanitize-manifest.cjs');
+const { compactManifestFile } = require('./maintenance/compact-zigbee-identifiers.cjs');
 
 const srcDir = path.join(__dirname, '..', '.homeybuild');
 const destDir = path.join(os.tmpdir(), 'homey-publish-temp');
@@ -42,6 +43,10 @@ function dirStats(dir) {
     }
   }
   return { bytes, files };
+}
+
+function readJson(file) {
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
 // Best-effort sanitization of the source tree before copy. Runs the
@@ -121,7 +126,24 @@ try {
   }
   console.log('Mandatory manifests present: app.json, package.json');
 
-  // 4) Validate app.json size (Athom rejects > 4MB — hard fail, not warning).
+  // 4) Refuse stale build output before any upload. A previous local
+  // .homeybuild can otherwise publish an older version than source app.json.
+  try {
+    const sourceApp = readJson(path.join(__dirname, '..', 'app.json'));
+    const targetApp = readJson(path.join(destDir, 'app.json'));
+    const targetPackage = readJson(path.join(destDir, 'package.json'));
+    if (sourceApp.version !== targetApp.version || sourceApp.version !== targetPackage.version) {
+      console.error(`FATAL: stale build version mismatch (source=${sourceApp.version}, build=${targetApp.version}, package=${targetPackage.version}).`);
+      console.error('Run: npm run build && npm run prepare-publish');
+      process.exit(1);
+    }
+    console.log(`Build version guard: source/build/package all v${sourceApp.version}`);
+  } catch (e) {
+    console.error('FATAL: could not verify build version consistency:', e.message);
+    process.exit(1);
+  }
+
+  // 5) Validate app.json size (Athom rejects > 4MB — hard fail, not warning).
   //    Compact whitespace first — the raw file may be prettified.
   const destAppJson = path.join(destDir, 'app.json');
   try {
@@ -154,7 +176,32 @@ try {
   }
   console.log('Success: app.json is under the 4MB Athom limit.');
 
-  // 4a) Archive budget guard. Homey may accept the upload but later mark the
+  // 5a) Compact publish-only Zigbee identifier matrices.
+  // Athom's build server expands manufacturerName x productId. The source app
+  // intentionally carries broad support matrices, but the App Store backend
+  // currently fails them as a generic AggregateError.
+  try {
+    const compact = compactManifestFile(destAppJson);
+    if (compact.overTotalLimit) {
+      console.error(`FATAL: publish manifest still has ${compact.afterTotal} Zigbee identifier combinations after compaction.`);
+      console.error(`Limit: ${compact.maxTotalCombos}. Lower HOMEY_ZIGBEE_MAX_DRIVER_COMBOS or split broad drivers.`);
+      process.exit(1);
+    }
+    console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s).`);
+    if (compact.changed > 0) {
+      for (const c of compact.changes.slice(0, 12)) {
+        console.log(`  - ${c.id}: ${c.before} -> ${c.after} combos (mfr ${c.manufacturers}, product ${c.products})`);
+      }
+      if (compact.changes.length > 12) {
+        console.log(`  - ... ${compact.changes.length - 12} more driver(s) compacted`);
+      }
+    }
+  } catch (e) {
+    console.error('FATAL: Zigbee identifier compaction failed:', e.message);
+    process.exit(1);
+  }
+
+  // 5b) Archive budget guard. Homey may accept the upload but later mark the
   // draft as processing_failed when the packed app is too heavy. Fail before
   // publishing so CI points at the real root cause.
   const publishStats = dirStats(destDir);
@@ -167,7 +214,7 @@ try {
     process.exit(1);
   }
 
-  // 4b) Permanent sdk:3 guard — Athom API REQUIRES this field.
+  // 5c) Permanent sdk:3 guard — Athom API REQUIRES this field.
   //     Auto-fix tooling has deleted it 4+ times (commits 160e58b83, b3311caa2, 5449d20f4, etc.)
   try {
     const manifest = JSON.parse(fs.readFileSync(destAppJson));
