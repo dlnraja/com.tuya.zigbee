@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-15T00:03:15.397Z",
-  "score": 74,
+  "timestamp": "2026-06-26T22:52:40.331Z",
+  "score": 65,
   "dimensions": {
     "build": {
       "score": 100,
@@ -15,11 +15,11 @@
       "weight": 0.2
     },
     "workflows": {
-      "score": 75,
+      "score": 0,
       "weight": 0.15
     },
     "security": {
-      "score": 85,
+      "score": 100,
       "weight": 0.15
     }
   }

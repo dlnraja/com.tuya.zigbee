@@ -2,6 +2,7 @@
 'use strict';
 // v5.12.6: IMAP health checker — OAuth removed entirely
 const fs=require('fs'),path=require('path');
+const privacy=require('./privacy-redactor');
 const SD=path.join(__dirname,'..','state');
 const HF=path.join(SD,'gmail-token-health.json');
 let imap=null;try{imap=require('./gmail-imap-reader')}catch{}
@@ -24,6 +25,7 @@ async function main(){
     console.log('::error::Set GMAIL_EMAIL + GMAIL_APP_PASSWORD for email diagnostics (see SECRETS.md)');
     health.mode='imap';health.checks=(health.checks||[]).concat({time:now,ok:false,err:'missing_creds'}).slice(-30);
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
+    health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
     process.exit(0);
   }
@@ -32,11 +34,12 @@ async function main(){
     console.error('imapflow not installed. Run: npm install imapflow');
     health.checks=(health.checks||[]).concat({time:now,ok:false,err:'no_imapflow'}).slice(-30);
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
+    health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
     process.exit(1);
   }
 
-  console.log('IMAP health check — connecting as',e);
+  console.log('IMAP health check — connecting as',privacy.alias('account',e));
   try{
     const emails=await imap.readViaIMAP({maxResults:5});
     if(emails&&emails.length>=0){
@@ -55,18 +58,21 @@ async function main(){
       throw new Error('IMAP returned null — connection failed');
     }
   }catch(err){
-    console.error('IMAP FAILED:',err.message);
-    health.checks=(health.checks||[]).concat({time:now,ok:false,err:err.message}).slice(-30);
+    console.error('IMAP FAILED:',privacy.redact(err.message));
+    health.checks=(health.checks||[]).concat({time:now,ok:false,err:privacy.redact(err.message)}).slice(-30);
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
     if(health.consecutiveFails>=3){
       console.log('::warning::IMAP has failed '+health.consecutiveFails+' times. Check GMAIL_APP_PASSWORD.');
       const alertF=path.join(SD,'_imap_alert.txt');
       if(!fs.existsSync(alertF)){
-        fs.writeFileSync(alertF,'IMAP connection failed '+health.consecutiveFails+' times.\nLast error: '+err.message+'\n\nCheck:\n1. 2FA enabled on Google account\n2. App Password valid: https://myaccount.google.com/apppasswords\n3. gh secret set GMAIL_APP_PASSWORD with fresh password');
+        const alert='IMAP connection failed '+health.consecutiveFails+' times.\nLast error: '+privacy.redact(err.message)+'\n\nCheck:\n1. 2FA enabled on Google account\n2. App Password valid: https://myaccount.google.com/apppasswords\n3. gh secret set GMAIL_APP_PASSWORD with fresh password';
+        privacy.assertNoLeaks(alert,alertF);
+        fs.writeFileSync(alertF,alert);
       }
     }
   }
 
+  health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
   fs.writeFileSync(HF,JSON.stringify(health,null,2));
   console.log('Health saved. Mode: imap | Consecutive fails:',health.consecutiveFails);
 }

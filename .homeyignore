@@ -33,6 +33,7 @@ diagnostics/
 reports/
 logs/
 .archive/
+.git-rewrite/
 skills/
 scratch/
 tmp_artifacts/
@@ -88,6 +89,7 @@ package-lock.json
 
 # === Root-level dev artifacts (CRITICAL — causing Processing failed via 65MB+ archive) ===
 stable_app.json
+tuya_z2m.ts
 fix_build_errors.js
 full_diff.txt
 packed_files.txt

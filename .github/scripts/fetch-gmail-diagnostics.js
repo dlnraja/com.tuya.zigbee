@@ -3,6 +3,7 @@
 // v5.12.6: IMAP-only mode — OAuth removed entirely
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
+const privacy=require('./privacy-redactor');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
 let imap=null;try{imap=require('./gmail-imap-reader')}catch(err){console.error('gmail-imap-reader load error:',err.message)}
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
@@ -18,51 +19,36 @@ const save=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.string
 // === PII Sanitization: strip personal info, keep ONLY device data ===
 function sanitize(text){
   if(!text)return'';
-  let t=text;
-  // Standard PII
-  t=t.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,'[email]');
-  t=t.replace(/([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}/g,'[mac]');
-  t=t.replace(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,'[ip]');
-  t=t.replace(/([0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}/g,'[ipv6]');
-  t=t.replace(/\b[a-f0-9]{32,}\b/gi,function(m){if(m.length===16)return m;return'[token]'});
-  t=t.replace(/\+?\d[\d\s\-().]{8,}\d/g,'[phone]');
-  
-  // Sensitive identifiers and tokens (Generic patterns)
-  t=t.replace(/(?:key|token|password|secret|auth|bearer|pat|sid|api_key)[:\s\="']+([a-zA-Z0-9_\-\.]{12,})/gi,'$1: [scrubbed]');
-  t=t.replace(/ghp_[a-zA-Z0-9]{36}/g,'[github_token]');
-  t=t.replace(/ey[a-zA-Z0-9._-]{20,}/g,'[jwt_token]');
-
-  // Paths and Names
-  t=t.replace(/\/(?:home|Users|user|data|mnt|root)\/[^\s/]+/gi,'[path]');
-  t=t.replace(/[A-Z]:\\Users\\[^\s\\]+/gi,'[path]');
+  let t=privacy.redact(text);
   t=t.replace(/(?:dear|hi|hello|hey|regards|thanks|best)\s+([A-Z][a-z]+)/gi,'[greeting] [name]');
-  
-  // Clean trailing signatures/footers
   t=t.replace(/\n---+\n[\s\S]{0,500}$/,'');
   t=t.replace(/\nBest regards,[\s\S]*$/i,'');
   t=t.replace(/\nSent from my .*$/i,'');
-  
   return t;
+}
+function safeAlias(kind,value){
+  const v=String(value||'').trim();
+  return v.startsWith('[REDACTED_')?v:privacy.alias(kind,v);
 }
 function sanitizeFrom(from){
   if(!from)return'unknown';
   if(from.includes('notifications@github.com'))return'github';
   if(from.includes('community.homey.app'))return'forum';
   if(from.includes('athom.com')||from.includes('homey.app'))return'homey_system';
-  return'user';
+  if(from.startsWith('[REDACTED_'))return from;
+  return safeAlias('sender',from);
 }
 
 // v5.13.0: Extract safe pseudo (username without PII) from email metadata
 function extractSafePseudo(em){
   const p=em.pseudo||{};
-  if(p.source==='github'&&p.username)return{source:'github',username:p.username};
-  if(p.source==='forum'&&p.username)return{source:'forum',username:p.username};
+  if(p.source==='github'&&p.username)return{source:'github',username:safeAlias('pseudo',p.username)};
+  if(p.source==='forum'&&p.username)return{source:'forum',username:safeAlias('pseudo',p.username)};
   if(p.source==='homey_system')return{source:'homey_system',username:null};
   // User emails: only keep first name initial + last name initial
   if(p.displayName){
     const parts=p.displayName.split(/\s+/);
-    if(parts.length>=2)return{source:'user',username:parts[0][0]+'.'+parts[parts.length-1][0]+'.'};
-    return{source:'user',username:parts[0].substring(0,3)+'...'};
+    return{source:'user',username:safeAlias('pseudo',p.displayName)};
   }
   return{source:p.source||'unknown',username:null};
 }
@@ -171,23 +157,23 @@ function parseGitHub(em){
   // v5.13.0: Extract more GitHub context
   const repo=(em.subj.match(/([\w-]+\/[\w.-]+)/)||[])[1]||null;
   const labels=(body.match(/label[s]?:\s*([^\n]+)/i)||[])[1]||null;
-  const author=em.pseudo?.username||null;
+  const author=em.pseudo?.username?safeAlias('pseudo',em.pseudo.username):null;
   // Extract quoted issue body (first 500 chars of non-header content)
-  const bodyExcerpt=body.replace(/^[\s\S]*?(?:---\n|\n\n)/,'').substring(0,500);
-  return{issueNum,action,fps,isNew:!!action&&action.toLowerCase()==='opened',repo,labels,author,bodyExcerpt};
+  const bodyExcerpt=sanitize(body.replace(/^[\s\S]*?(?:---\n|\n\n)/,'').substring(0,500));
+  return privacy.redactObject({issueNum,action,fps,isNew:!!action&&action.toLowerCase()==='opened',repo,labels,author,bodyExcerpt});
 }
 
 // v5.13.0: Parse forum notification emails
 function parseForum(em){
   const body=em.body||'';
-  const topic=(em.subj.match(/(?:Re:\s*)?(.+)/)||[])[1]||em.subj;
-  const author=em.pseudo?.username||null;
+  const topic=sanitize((em.subj.match(/(?:Re:\s*)?(.+)/)||[])[1]||em.subj);
+  const author=em.pseudo?.username?safeAlias('pseudo',em.pseudo.username):null;
   const fps=exFP(body);
   // Extract device mentions and quoted content
   const quotedBlocks=(body.match(/>[^\n]+/g)||[]).map(q=>q.replace(/^>\s*/,'')).join(' ');
   const fpsFromQuotes=exFP(quotedBlocks);
   const allFps={mfr:[...new Set([...fps.mfr,...fpsFromQuotes.mfr])],pid:[...new Set([...fps.pid,...fpsFromQuotes.pid])]};
-  return{topic:topic.substring(0,120),author,fps:allFps,bodyExcerpt:body.substring(0,800)};
+  return privacy.redactObject({topic:topic.substring(0,120),author,fps:allFps,bodyExcerpt:sanitize(body.substring(0,800))});
 }
 
 // v5.13.0: Parse Homey crash/system emails
@@ -195,10 +181,10 @@ function parseCrash(em){
   const body=em.body||'';
   const cd=em.crashData||{};
   const fps=exFP(body);
-  return{fps,stackTraces:cd.stackTraces||[],crashApp:cd.crashApp||null,
+  return privacy.redactObject({fps,stackTraces:(cd.stackTraces||[]).map(sanitize),crashApp:cd.crashApp?sanitize(cd.crashApp):null,
     capabilities:cd.capabilities||[],clusters:cd.clusters||[],
     datapoints:cd.datapoints||[],zone:cd.zone||null,
-    bodyExcerpt:body.substring(0,1000)};
+    bodyExcerpt:sanitize(body.substring(0,1000))});
 }
 
 // Rate limiter: 4s between Gemini calls (max 15 RPM), cap 10/run
@@ -248,6 +234,7 @@ async function getOpenIssues(tk){
 // Create GitHub issue for critical findings (with dedup)
 async function mkIssue(title,body){
   const tk=process.env.GH_PAT||process.env.GITHUB_TOKEN;if(!tk)return null;
+  title=sanitize(title);body=sanitize(body);
   const shortTitle='[Diag] '+title.substring(0,80);
   const open=await getOpenIssues(tk);
   const key=title.toLowerCase().replace(/[^a-z0-9]/g,'').substring(0,40);
@@ -299,7 +286,7 @@ async function main(){
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
   if(!e||!p){console.error('IMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)');process.exit(1)}
   if(!imap){console.error('gmail-imap-reader not available. npm install imapflow');process.exit(1)}
-  console.log('IMAP-only mode — connecting as',e);
+  console.log('IMAP-only mode — connecting as',safeAlias('account',e));
   const emails=await imap.readViaIMAP();
   if(!emails||!emails.length){console.log('No emails retrieved via IMAP');process.exit(0)}
   console.log('IMAP OK:',emails.length,'emails');
@@ -309,7 +296,8 @@ async function main(){
   try{
     const h={mode:'imap',lastOk:new Date().toISOString(),consecutiveFails:0,emailsFetched:emails.length,
       checks:[{time:new Date().toISOString(),ok:true,mode:'imap'}]};
-    fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(HF,JSON.stringify(h,null,2));
+    const safeHealth=privacy.redactObject(h);privacy.assertNoLeaks(safeHealth,HF);
+    fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(HF,JSON.stringify(safeHealth,null,2));
   }catch{}
 
   const st=load(),idx=buildIndex(),res=[];
@@ -351,14 +339,15 @@ async function main(){
       pseudoMap.get(safePseudo.username).push({type,subj:safeSubj,date:em.date,fps:d.fps});
     }
 
-    const entry={id:em.id,type,subj:safeSubj,from:safeFrom,date:em.date,
+    const safeAI=ai?privacy.redactObject(ai):null;
+    const entry=privacy.redactObject({id:em.id,type,subj:safeSubj,from:safeFrom,date:em.date,
       pseudo:safePseudo,
-      fps:d.fps,errs:d.errs.map(e=>sanitize(e)),devices:d.devNames,xref,
+      fps:d.fps,errs:d.errs.map(e=>sanitize(e)),devices:d.devNames.map(n=>safeAlias('device',n)),xref,
       ghInfo,forumInfo:forumInfo?{topic:forumInfo.topic,author:forumInfo.author,fps:forumInfo.fps}:null,
       crashInfo:crashInfo?{stackTraces:(crashInfo.stackTraces||[]).map(s=>sanitize(s)),
         crashApp:crashInfo.crashApp,capabilities:crashInfo.capabilities,clusters:crashInfo.clusters}:null,
-      ai,homeyVersion:d.homeyVersion,appVersion:d.appVersion,
-      bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'};
+      ai:safeAI,homeyVersion:d.homeyVersion,appVersion:d.appVersion,
+      bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'});
     res.push(entry);
     done.add(em.id);
     console.log(' ['+type+'] '+safeSubj.substring(0,60)+(d.fps.mfr.length?' FP:'+d.fps.mfr.join(','):'')+
@@ -368,7 +357,7 @@ async function main(){
       const issBody='**Type:** '+type+'\n**From:** '+safeFrom+'\n\n'+
         '**Fingerprints:** '+JSON.stringify(d.fps)+'\n**Errors:** '+JSON.stringify(d.errs.map(e=>sanitize(e)))+'\n'+
         '**Cross-ref:** '+(xref.length?xref.map(x=>x.fingerprint+(x.supported?' (supported: '+x.drivers.join(',')+')':' **NEW**')).join(', '):'none')+'\n\n'+
-        '**AI Analysis:**\n- Severity: '+ai.severity+'\n- Summary: '+(ai.summary||'')+'\n- Root cause: '+(ai.rootCause||'')+'\n- Fix: '+(ai.fixSuggestion||'')+'\n- Needs new driver: '+(ai.needsNewDriver||false);
+        '**AI Analysis:**\n- Severity: '+safeAI.severity+'\n- Summary: '+(safeAI.summary||'')+'\n- Root cause: '+(safeAI.rootCause||'')+'\n- Fix: '+(safeAI.fixSuggestion||'')+'\n- Needs new driver: '+(safeAI.needsNewDriver||false);
       await mkIssue(safeSubj,issBody);
     }
   }
@@ -387,8 +376,10 @@ async function main(){
   save(st);
   const newFPs=res.flatMap(r=>(r.xref||[]).filter(x=>!x.supported).map(x=>x.fingerprint)).filter((v,i,a)=>a.indexOf(v)===i);
   const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
-  fs.writeFileSync(RF,JSON.stringify({timestamp:st.lastCheck,count:res.length,
-    byType:bt,newFingerprints:newFPs,deepResearch:impl,diagnostics:res},null,2));
+  const report=privacy.redactObject({timestamp:st.lastCheck,count:res.length,
+    byType:bt,newFingerprints:newFPs,deepResearch:impl,diagnostics:res});
+  privacy.assertNoLeaks(report,RF);
+  fs.writeFileSync(RF,JSON.stringify(report,null,2));
   console.log('Done:',res.length,'emails |',newFPs.length,'new FPs |',impl.added,'auto-added');
   console.log('By type:',JSON.stringify(bt));
 
@@ -518,6 +509,8 @@ async function main(){
       }
     }
 
+    yml=sanitize(yml);
+    privacy.assertNoLeaks(yml,YF);
     fs.writeFileSync(YF,yml);
     console.log('YAML cross-ref:',fpSeen.size,'fps,',pseudoMap.size,'users,',errMap.size,'error patterns');
   }catch(ye){console.log('YAML output error:',ye.message)}

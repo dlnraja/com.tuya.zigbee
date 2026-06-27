@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -42,8 +42,6 @@ jobs:
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
@@ -53,15 +51,17 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
+      - name: Privacy gate for Gmail outputs
+        run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
       - name: Commit state
         continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
           git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json 2>/dev/null || true
-          COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).emails?.length||0}catch(e){0}")
+          COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin master || true
@@ -91,6 +91,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json diagnostics
           git add diagnostics/ .github/state/diagnostics-*.json .github/state/homey-device-report.json 2>/dev/null || true
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
           git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
@@ -127,6 +128,7 @@ jobs:
         continue-on-error: true
         if: always()
         run: |
+          node .github/scripts/privacy-redactor.js .github/state/resolver-*.json .github/state/pattern-*.json
           git add .github/state/resolver-*.json .github/state/pattern-*.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "Resolved issues + patterns update [skip ci]"
           git pull --rebase origin master || true
@@ -136,10 +138,9 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: diagnostics-report
+          name: sanitized-diagnostics-report
           path: |
             .github/state/diagnostics-report.json
             diagnostics/summary.json
           retention-days: 30
-
 

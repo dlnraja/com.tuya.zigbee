@@ -57,4 +57,3 @@
 ### Wrong Energy (1 reports)
 **Fix:** Check energy divisor
 **Most affected:** `_TZE204_clrdrnya` (1x), `_TZE` (1x), `_TZE204_` (1x), `router` (1x), `vision` (1x), `lumi` (1x), `coordinator` (1x), `VISION` (1x), `_TZE204_CLRDRNYA` (1x), `_tze` (1x)
-

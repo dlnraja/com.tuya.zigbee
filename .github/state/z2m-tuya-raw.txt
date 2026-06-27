@@ -1804,7 +1804,7 @@ export const definitions: DefinitionWithExtend[] = [
                 // with a load tester may show 80%, but report 2.5V / 1%. This voltage
                 // calculation matches what ZHA does by default.
                 // https://github.com/Koenkk/zigbee2mqtt/discussions/17337
-                // https://github.com/zigpy/zha-device-handlers/blob/c6ed94a52a469e72b32ece2a92d528060c7fd034/zhaquirks/__init__.py#L195-L228
+                // https://github.com/zigpy/zha-device-handlers/blob/[REDACTED_HEX]/zhaquirks/__init__.py#L195-L228
                 voltageToPercentage: "3V_1500_2800",
             },
         },
@@ -4493,8 +4493,8 @@ export const definitions: DefinitionWithExtend[] = [
             tuya.whitelabel("Mercator Ikuü", "SSWRM-ZB", "Rotary dimmer mechanism", ["_TZE200_a0syesf5"]),
             tuya.whitelabel("Lonsonho", "EDM-1ZBB-EU", "Smart Dimmer Switch", ["_TZE200_0nauxa0p"]),
             tuya.whitelabel("ION Industries", "ID200W-ZIGB", "LED Zigbee Dimmer", ["_TZE200_ykgar0ow", "_TZE200_4mh6tyyo"]),
-            tuya.whitelabel("ION Industries", "90.500.090", "Zigbee Dimmer Master/Slave set", ["_TZE200_0hb4rdnp"]),
-            tuya.whitelabel("ION Industries", "90.500.040", "LED Zigbee Dimmer", ["_TZE200_gne0e6mk"]),
+            tuya.whitelabel("ION Industries", "[REDACTED_PHONE]", "Zigbee Dimmer Master/Slave set", ["_TZE200_0hb4rdnp"]),
+            tuya.whitelabel("ION Industries", "[REDACTED_PHONE]", "LED Zigbee Dimmer", ["_TZE200_gne0e6mk"]),
         ],
     },
     {
@@ -5731,7 +5731,7 @@ export const definitions: DefinitionWithExtend[] = [
                 // with a load tester may show 80%, but report 2.5V / 1%. This voltage
                 // calculation matches what ZHA does by default.
                 // https://github.com/Koenkk/zigbee2mqtt/discussions/17337
-                // https://github.com/zigpy/zha-device-handlers/blob/c6ed94a52a469e72b32ece2a92d528060c7fd034/zhaquirks/__init__.py#L195-L228
+                // https://github.com/zigpy/zha-device-handlers/blob/[REDACTED_HEX]/zhaquirks/__init__.py#L195-L228
                 voltageToPercentage: "3V_1500_2800",
             },
         },
@@ -11198,7 +11198,7 @@ export const definitions: DefinitionWithExtend[] = [
             // There are 6 timers. The default time is 06:00 20°C; 08:00 15°C; 11:30 15°C; 13:30 15°C; 17:00 22°C; 22:00 15°C.
             // Each segment occupies 4 bytes. If the temperature contains decimals, the data must be expanded 10 times.
             // If it does not contain decimals, it will be transmitted normally.
-            // For example, if it is 06:00 35.0, it will be transmitted as 06 00 01 5e. 6*4*3=72 bytes
+            // For example, if it is 06:00 35.0, it will be transmitted as [REDACTED_PHONE] 5e. 6*4*3=72 bytes
 
             // Climate Control
             e
@@ -16506,9 +16506,9 @@ export const definitions: DefinitionWithExtend[] = [
             ],
         },
         whiteLabel: [
-            tuya.whitelabel("Ltech", "TY-12-100-400-W1Z", "12W 100-400mA Zigbee CC Dimmable LED driver", ["_TZE200_86nbew0j"]),
+            tuya.whitelabel("Ltech", "TY-[REDACTED_PHONE]-W1Z", "12W 100-400mA Zigbee CC Dimmable LED driver", ["_TZE200_86nbew0j"]),
             tuya.whitelabel("Ltech", "TY-75-24-G2Z2", "150W 24V Zigbee CV tunable white LED driver", ["_TZE200_io0zdqh1"]),
-            tuya.whitelabel("Lifud", "LF-AAZ012-0400-42", "Zigbee dimmable LED driver 4-40W 220-240Vac", ["_TZE200_drs6j6m5"]),
+            tuya.whitelabel("Lifud", "LF-AAZ[REDACTED_PHONE]", "Zigbee dimmable LED driver 4-40W 220-240Vac", ["_TZE200_drs6j6m5"]),
             tuya.whitelabel("Lifud", "LF-GAZ150A6250-24", "Lifud Zigbee LED Driver CCT 150W 24V", ["_TZE200_ywe90lt0"]),
             tuya.whitelabel("Lifud", "LF-GAZ150B6250-24", "Lifud Zigbee LED Driver 150W 24V", ["_TZE204_drs6j6m5"]),
         ],
@@ -23360,7 +23360,7 @@ export const definitions: DefinitionWithExtend[] = [
         ],
         exposes: [
             e.enum("water_warning", ea.STATE, ["none", "alarm"]).withDescription("Water shortage warning"),
-            e.enum("battery_state", ea.STATE, ["low", "middle", "high"]).withDescription("low: 16.67%, middle:16.68-83.33%, high: 83.34-100%"),
+            e.enum("battery_state", ea.STATE, ["low", "middle", "high"]).withDescription("low: 16.67%, middle:[REDACTED_PHONE]%, high: [REDACTED_PHONE]%"),
             e.soil_moisture(),
             e.temperature(),
             e.humidity(),

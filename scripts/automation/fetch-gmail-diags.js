@@ -2,6 +2,7 @@ const imaps = require('imap-simple');
 const simpleParser = require('mailparser').simpleParser;
 const fs = require('fs');
 const path = require('path');
+const privacy = require('../../.github/scripts/privacy-redactor');
 
 const config = {
     imap: {
@@ -30,7 +31,7 @@ async function main() {
 
     let connection;
     try {
-        console.log(`Connecting to IMAP for ${config.imap.user}...`);
+        console.log(`Connecting to IMAP for ${privacy.alias('account', config.imap.user)}...`);
         connection = await imaps.connect(config);
         
         await connection.openBox('INBOX');
@@ -44,7 +45,7 @@ async function main() {
 
         const fetchOptions = {
             bodies: ['HEADER', 'TEXT', ''],
-            markSeen: true
+            markSeen: false
         };
 
         console.log('Searching for recent diagnostic emails...');
@@ -61,7 +62,8 @@ async function main() {
         let existingReports = [];
         if (fs.existsSync(outputFilePath)) {
             try {
-                existingReports = JSON.parse(fs.readFileSync(outputFilePath, 'utf8'));
+                const existing = JSON.parse(fs.readFileSync(outputFilePath, 'utf8'));
+                existingReports = Array.isArray(existing) ? existing : (existing.diagnostics || []);
             } catch (e) {
                 console.log('Could not parse existing reports, starting fresh.');
             }
@@ -72,6 +74,7 @@ async function main() {
             const allParts = msg.parts.find(part => part.which === '');
             if (allParts) {
                 const id = msg.attributes.uid;
+                const safeUid = privacy.digest(String(id), 12);
                 const idHeader = "Imap-Id: " + id + "\r\n";
                 const mail = await simpleParser(idHeader + allParts.body);
 
@@ -85,24 +88,31 @@ async function main() {
                 if (jsonMatch) {
                     try {
                         const parsedData = JSON.parse(jsonMatch[0]);
-                        existingReports.push({
+                        existingReports.push(privacy.redactObject({
+                            id: `legacy_imap_${safeUid}`,
                             date: mail.date,
-                            subject: mail.subject,
-                            uid: id,
+                            subject: privacy.redact(mail.subject || ''),
                             payload: parsedData
-                        });
-                        console.log(`Successfully parsed report from email UID ${id}`);
+                        }));
+                        console.log(`Successfully parsed report from email ${safeUid}`);
                     } catch (e) {
-                        console.log(`Failed to parse JSON in email UID ${id}: ${e.message}`);
+                        console.log(`Failed to parse JSON in email ${safeUid}: ${privacy.redact(e.message)}`);
                     }
                 } else {
-                    console.log(`No JSON block found in email UID ${id}`);
+                    console.log(`No JSON block found in email ${safeUid}`);
                 }
             }
         }
 
         fs.mkdirSync(path.dirname(outputFilePath), { recursive: true });
-        fs.writeFileSync(outputFilePath, JSON.stringify(existingReports, null, 2));
+        const report = privacy.redactObject({
+            timestamp: new Date().toISOString(),
+            source: 'legacy-imap',
+            count: existingReports.length,
+            diagnostics: existingReports.slice(-500)
+        });
+        privacy.assertNoLeaks(report, outputFilePath);
+        fs.writeFileSync(outputFilePath, JSON.stringify(report, null, 2));
         console.log(`Saved ${messages.length} reports to ${outputFilePath}`);
 
         connection.end();

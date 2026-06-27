@@ -1090,4 +1090,3 @@
 **Topic 26439 #5280** (@SunBeech)
 - MISSED: Post contains `matter` (supported in generic_tuya) but reply doesn't mention it
 - **Correction needed**: Reply should mention supported device
-

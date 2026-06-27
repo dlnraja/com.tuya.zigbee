@@ -2,30 +2,26 @@
 'use strict';
 // v5.13.0: Enhanced email reader — full MIME decode, pseudo extraction, RFC2047
 let ImapFlow; try { ImapFlow = require('imapflow').ImapFlow } catch {}
+const privacy = require('./privacy-redactor');
 const MBS = ['INBOX', '[Gmail]/All Mail', '[Gmail]/Tous les messages'];
 
 // === RFC 2047 decode (encoded headers like =?UTF-8?B?...?= or =?UTF-8?Q?...?=) ===
 
 function aggressiveSanitize(text) {
-  if (!text) return '';
-  let clean = text;
-  
-  // 1. Remove email addresses (keep domains like @github.com or @homey.app if needed, but safer to replace all)
-  clean = clean.replace(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z0-9_-]+)/gi, '[REDACTED_EMAIL]');
-  
-  // 2. Remove IP addresses (IPv4)
-  clean = clean.replace(/(?:[0-9]{1,3}.){3}[0-9]{1,3}/g, '[REDACTED_IP]');
-  
-  // 3. Remove common phone number patterns
-  clean = clean.replace(/\+?([0-9]{1,3})?[-. ]?\(?([0-9]{1,4})\)?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}/g, function(match) {
-    // Only redact if it looks like a phone number and not a diagnostic ID or timestamp
-    if (match.replace(/[^0-9]/g, '').length >= 8 && !match.includes(':')) {
-       return '[REDACTED_PHONE]';
-    }
-    return match;
-  });
+  return privacy.redact(text || '');
+}
 
-  return clean;
+function accountAlias(value) {
+  return privacy.alias('account', value || 'unknown');
+}
+
+function safeSender(addr) {
+  const from = String(addr || '').toLowerCase();
+  if (from.includes('notifications@github.com')) return 'notifications@github.com';
+  if (from.includes('community.homey.app')) return 'noreply@community.homey.app';
+  if (from.includes('athom.com')) return 'noreply@athom.com';
+  if (from.includes('homey.app')) return 'noreply@homey.app';
+  return accountAlias(from || 'unknown');
 }
 
 function decodeRFC2047(str) {
@@ -234,7 +230,7 @@ async function tryConnect(user, pass) {
     greetingTimeout: 30000,
     tls: { rejectUnauthorized: false }
   });
-  c.on('error', err => console.log('[IMAP] Socket event:', err.message));
+  c.on('error', err => console.log('[IMAP] Socket event:', aggressiveSanitize(err.message)));
   await c.connect();
   return c;
 }
@@ -252,9 +248,9 @@ async function readViaIMAP(opts = {}) {
   const since = (opts.afterDate || new Date(Date.now() - 30 * 864e5)).toISOString().split('T')[0];
   let c = null;
   for (const [u, p] of pairs) {
-    console.log('[IMAP] Trying', u, 'since', since);
-    try { c = await tryConnect(u, p); console.log('[IMAP] Auth OK as', u); break }
-    catch (err) { console.log('[IMAP] Auth FAIL for', u, '-', err.message); c = null }
+    console.log('[IMAP] Trying', accountAlias(u), 'since', since);
+    try { c = await tryConnect(u, p); console.log('[IMAP] Auth OK as', accountAlias(u)); break }
+    catch (err) { console.log('[IMAP] Auth FAIL for', accountAlias(u), '-', aggressiveSanitize(err.message)); c = null }
   }
   if (!c) { console.error('[IMAP] All credential pairs failed'); return null }
   try {
@@ -309,7 +305,7 @@ async function readViaIMAP(opts = {}) {
                   contentType = 'raw-fallback';
                 }
               } catch (pe) {
-                console.log('[IMAP] MIME parse error:', pe.message);
+                console.log('[IMAP] MIME parse error:', aggressiveSanitize(pe.message));
                 const raw = m.source.toString('utf8');
                 const parts = raw.split(/\r?\n\r?\n/);
                 if (parts.length > 1) body = parts.slice(1).join('\n').replace(/<[^>]+>/g, ' ');
@@ -335,20 +331,20 @@ async function readViaIMAP(opts = {}) {
               }
               
               out.push({
-              id: 'imap_' + uid,
-              subj,
-              from: fromAddr,
-              fromName,
+              id: 'imap_' + privacy.digest(String(uid), 12),
+              subj: aggressiveSanitize(subj),
+              from: safeSender(fromAddr),
+              fromName: aggressiveSanitize(fromName),
               date,
               body,
               bodyLength: body.length,
               contentType,
-              pseudo,
+              pseudo: privacy.redactObject(pseudo),
               crashData,
               mimeInfo,
               labels: []
             });
-          } catch (fe) { console.log('[IMAP] skip:', fe.message) }
+          } catch (fe) { console.log('[IMAP] skip:', aggressiveSanitize(fe.message)) }
         }
       }
       console.log('[IMAP] fetched', out.length, 'emails');
@@ -357,7 +353,7 @@ async function readViaIMAP(opts = {}) {
     console.log('[IMAP] OK:', out.length);
     return out;
   } catch (err) {
-    console.error('[IMAP] ERROR:', err.message, err.code || '');
+    console.error('[IMAP] ERROR:', aggressiveSanitize(err.message), err.code || '');
     try { await c.logout() } catch {}; try { c.close() } catch {};
     return null;
   }

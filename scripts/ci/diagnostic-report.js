@@ -43,6 +43,7 @@ const report = {
   fingerprints: { total: 0, uniqueMfrNames: 0, duplicates: 0, orphaned: 0, collisionDrivers: [] },
   workflows: { total: 0, unpinnedActions: 0, missingTimeout: 0, missingShell: 0, secretExposure: 0, unpinnedList: [] },
   security: { status: 'clean', forbiddenFiles: 0, gitTokens: 0, hardcodedSecrets: 0 },
+  warnings: [],
   health: {
     overallScore: 100,
     dimensions: {},
@@ -53,6 +54,17 @@ const report = {
   },
   overall: 'healthy',
 };
+
+function getTrackedFiles() {
+  try {
+    return new Set(execSync('git ls-files', { cwd: ROOT, encoding: 'utf8' })
+      .split('\n')
+      .filter(Boolean)
+      .map(f => f.replace(/\\/g, '/')));
+  } catch {
+    return new Set();
+  }
+}
 
 // ---- Predictive health scoring infrastructure ----
 
@@ -267,16 +279,19 @@ function checkDriverHealth() {
           report.drivers.missingConnectivity++;
         }
 
-        // Collect fingerprints for collision detection
+        const mfrs = (comp.zigbee && Array.isArray(comp.zigbee.manufacturerName))
+          ? comp.zigbee.manufacturerName
+          : [];
+        for (const m of mfrs) allMfrNames.add(m);
+        report.fingerprints.total += mfrs.length;
+
+        // Collect explicit Zigbee fingerprints for collision detection.
+        // Most Tuya devices in this repo use manufacturerName/productId instead.
         if (comp.zigbee && comp.zigbee.fingerprints) {
           for (const fp of comp.zigbee.fingerprints) {
             const key = `${fp.profileId || ''}:${fp.endpoint || ''}:${fp.clusterId || ''}:${fp.deviceId || ''}`;
             if (!fpKeyMap.has(key)) fpKeyMap.set(key, []);
             fpKeyMap.get(key).push(dir);
-
-            if (comp.zigbee.manufacturerName) {
-              for (const m of comp.zigbee.manufacturerName) allMfrNames.add(m);
-            }
           }
         }
       } catch {
@@ -432,6 +447,7 @@ function checkWorkflowHealth() {
 function checkSecurity() {
   // Check forbidden files
   const forbiddenNames = ['.env', '.env.local', '.env.production', 'credentials.json', 'token.json', '.netrc'];
+  const trackedFiles = getTrackedFiles();
   const walkDir = (dir, depth = 0) => {
     if (depth > 4) return;
     let entries;
@@ -441,6 +457,8 @@ function checkSecurity() {
         if (['.git', 'node_modules', 'temp', 'tmp'].includes(entry.name)) continue;
         walkDir(path.join(dir, entry.name), depth + 1);
       } else if (forbiddenNames.includes(entry.name)) {
+        const rel = path.relative(ROOT, path.join(dir, entry.name)).replace(/\\/g, '/');
+        if (!trackedFiles.has(rel)) continue;
         report.security.forbiddenFiles++;
       }
     }
@@ -496,16 +514,19 @@ function main() {
 
   // Overall health
   const issues = [];
+  const warnings = [];
   if (report.build.status !== 'valid') issues.push('build_invalid');
   if (report.drivers.invalid > 0) issues.push('invalid_drivers');
   if (report.drivers.emptyMfrName > 0) issues.push('empty_mfr_names');
   if (report.fingerprints.duplicates > 0) issues.push('fp_collisions');
-  if (report.workflows.unpinnedActions > 0) issues.push('unpinned_actions');
+  if (report.workflows.unpinnedActions > 0) warnings.push('unpinned_actions');
+  if (report.workflows.missingTimeout > 0) warnings.push('workflow_timeouts');
   if (report.workflows.secretExposure > 0) issues.push('secret_exposure');
   if (report.security.status !== 'clean') issues.push('security_issues');
 
   report.overall = issues.length === 0 ? 'healthy' : 'needs_attention';
   report.issues = issues;
+  report.warnings = warnings;
 
   // ---- Predictive Health Score ----
   const buildScore = report.build.status === 'valid' ? 100 : report.build.status === 'unknown' ? 50 : 0;

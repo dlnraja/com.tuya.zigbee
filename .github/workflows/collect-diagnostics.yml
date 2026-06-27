@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -48,6 +48,9 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/collect-diagnostics.js
+      - name: Privacy gate for collected diagnostics
+        if: always()
+        run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json
 
       - name: Commit diagnostics
         continue-on-error: true
@@ -56,6 +59,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -d "diagnostics" ] && [ "$(ls -A diagnostics/ 2>/dev/null)" ]; then
+            node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/homey-device-report.json
             git add diagnostics/
             if ! git diff --staged --quiet; then
               git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
@@ -79,6 +83,10 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/resolution-summary.js
 
+      - name: Privacy gate before artifact upload
+        if: always()
+        run: node .github/scripts/privacy-redactor.js diagnostics
+
       - name: Upload diagnostics artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -96,4 +104,3 @@ jobs:
           else
             echo "::warning::diagnostics/summary.json not found — diagnostics collection may have failed"
           fi
-

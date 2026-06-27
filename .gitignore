@@ -193,6 +193,13 @@ client_secret*.json
 .github/state/_token_*
 .github/state/*secret*
 .github/state/*credential*
+.github/state/gmail-raw/
+.github/state/*raw*.json
+.github/state/*gmail-dump*.json
+.github/state/*diagnostics-raw*.json
+diagnostics/raw/
+diagnostics/**/*.raw.json
+gmail-dumps/
 
 # Security: screenshots may contain credentials (login pages, etc.)
 screenshots/
