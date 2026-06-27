@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-27T06:55:57.431Z",
+  "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
+  "collisions": [
+    {
+      "key": "_tz3000_bpkijo14|Excellux",
+      "drivers": [
+        "climate_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "_tz3000_bpkijo14|TS0601",
+      "drivers": [
+        "climate_sensor",
+        "sensor_contact_zigbee"
+      ]
+    },
+    {
+      "key": "_tz3000_vtscrpmw|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "smartplug"
+      ]
+    },
+    {
+      "key": "_tze200_ga1maeof|TS0601",
+      "drivers": [
+        "soil_sensor",
+        "soilsensor"
+      ]
+    },
+    {
+      "key": "_tze200_myd45weu|TS0601",
+      "drivers": [
+        "sensor_contact_motion",
+        "soil_sensor",
+        "soilsensor",
+        "soilsensor_2"
+      ]
+    },
+    {
+      "key": "_tze284_myd45weu|TS0601",
+      "drivers": [
+        "soil_sensor",
+        "soilsensor_2"
+      ]
+    },
+    {
+      "key": "hobeian|TS0601",
+      "drivers": [
+        "switch_wall_8gang",
+        "switch_wireless"
+      ]
+    }
+  ]
+}
