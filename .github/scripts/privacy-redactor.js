@@ -34,6 +34,7 @@ function redact(text) {
 
     s = s.replace(/[A-Za-z]:\\Users\\[^\\\s,;:]+/gi, '[REDACTED_PATH]');
     s = s.replace(/\/(?:home|Users|root)\/[^\s/,:;]+/gi, '[REDACTED_PATH]');
+    s = s.replace(/https?:\/\/[^\s"',)]+(?:diagnostic|crash|log|debug)[^\s"',)]*/gi, '[REDACTED_DIAGNOSTIC_URL]');
     s = s.replace(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, m => alias('email', m.toLowerCase()));
     s = s.replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, '[REDACTED_IP]');
     s = s.replace(/\b(?:[0-9a-f]{1,4}:){2,7}[0-9a-f]{1,4}\b/gi, '[REDACTED_IPV6]');
@@ -90,6 +91,7 @@ const LEAK_PATTERNS = [
   ['jwt', /\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9._-]{10,}\b/g],
   ['bearer-token', /\bBearer\s+[A-Za-z0-9._-]{20,}\b/gi],
   ['user-path', /[A-Za-z]:\\Users\\[^\\\s,;:]+|\/(?:home|Users|root)\/[^\s/,:;]+/gi],
+  ['diagnostic-url', /https?:\/\/[^\s"',)]+(?:diagnostic|crash|log|debug)[^\s"',)]*/gi],
   ['secret-assignment', /(?:local[_-]?key|owner[_-]?id|uid|uuid|sid|token|secret|password|passwd|api[_-]?key|refresh[_-]?token|access[_-]?token|client[_-]?secret)\s*[:=]\s*["']?[^"',\s}]{8,}/gi]
 ];
 

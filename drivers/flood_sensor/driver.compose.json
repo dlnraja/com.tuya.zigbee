@@ -26,6 +26,9 @@
     "small": "/{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
+    "productId": [
+      "TS0207"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

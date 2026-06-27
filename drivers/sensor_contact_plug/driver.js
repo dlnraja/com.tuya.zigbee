@@ -98,7 +98,7 @@ class PlugSmartDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = args.delay || 10 * 1000;
-          setTimeout(() => args.device['setCapabilityValue']('onoff', true).catch(() => {}), delay);
+          this.homey.setTimeout(() => args.device['setCapabilityValue']('onoff', true).catch(() => {}), delay);
           return true;
         });
         this.log('[FLOW]  Registered: plug_smart_turn_on_delay');
@@ -112,7 +112,7 @@ class PlugSmartDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = args.delay || 10 * 1000;
-          setTimeout(() => args.device['setCapabilityValue']('onoff', false).catch(() => {}), delay);
+          this.homey.setTimeout(() => args.device['setCapabilityValue']('onoff', false).catch(() => {}), delay);
           return true;
         });
         this.log('[FLOW]  Registered: plug_smart_turn_off_delay');

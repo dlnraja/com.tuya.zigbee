@@ -32205,10 +32205,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Presence detected in room",
-          "nl": "Aanwezigheid gedetecteerd in kamer",
-          "fr": "Présence détectée dans la pièce",
-          "de": "Anwesenheit im Raum erkannt"
+          "en": "Presence detected in room [[device]]",
+          "nl": "Aanwezigheid gedetecteerd in kamer [[device]]",
+          "fr": "Présence détectée dans la pièce [[device]]",
+          "de": "Anwesenheit im Raum erkannt [[device]]"
         }
       },
       {
@@ -32262,10 +32262,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Presence cleared in room",
-          "nl": "Aanwezigheid opgeheven in kamer",
-          "fr": "Présence terminée dans la pièce",
-          "de": "Anwesenheit im Raum beendet"
+          "en": "Presence cleared in room [[device]]",
+          "nl": "Aanwezigheid opgeheven in kamer [[device]]",
+          "fr": "Présence terminée dans la pièce [[device]]",
+          "de": "Anwesenheit im Raum beendet [[device]]"
         }
       },
       {
@@ -32308,10 +32308,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Confidence changed",
-          "nl": "Vertrouwen gewijzigd",
-          "fr": "Confiance changée",
-          "de": "Vertrauen geändert"
+          "en": "Confidence changed [[device]]",
+          "nl": "Vertrouwen gewijzigd [[device]]",
+          "fr": "Confiance changée [[device]]",
+          "de": "Vertrauen geändert [[device]]"
         }
       },
       {
@@ -132343,10 +132343,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -150804,7 +150801,10 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_master_device_plug_energy_needs_device_assignment",
+          "_MASTER_DEVICE_PLUG_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0002",
           "TS0121",
@@ -153555,7 +153555,10 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_master_device_radiator_valve_needs_device_assignment",
+          "_MASTER_DEVICE_RADIATOR_VALVE_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "settings": [
         {
@@ -161928,6 +161931,9 @@
         "small": "//drivers/flood_sensor/assets/images/small.png"
       },
       "zigbee": {
+        "productId": [
+          "TS0207"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -163094,7 +163100,10 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_master_gas_sensor_switch_needs_device_assignment",
+          "_MASTER_GAS_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "images": {
         "small": "/drivers/switch_4gang/assets/images/small.png",
@@ -177536,18 +177545,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -182653,10 +182656,7 @@
         "button.push": {
           "title": {
             "en": "push"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -187467,7 +187467,10 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_master_sensor_climate_contact_needs_device_assignment",
+          "_MASTER_SENSOR_CLIMATE_CONTACT_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -188892,7 +188895,10 @@
         "zigbee"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_master_sensor_climate_motion_needs_device_assignment",
+          "_MASTER_SENSOR_CLIMATE_MOTION_NEEDS_DEVICE_ASSIGNMENT"
+        ],
         "productId": [
           "TS0601",
           "TS0225",
@@ -203813,26 +203819,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -205354,16 +205340,6 @@
           "maintenanceAction": true,
           "getable": false,
           "setable": false
-        },
-        "button.toggle": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -206392,21 +206368,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -207274,26 +207235,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -208333,31 +208274,6 @@
             "nl": "Batterij",
             "de": "Batterie"
           }
-        },
-        "button.toggle_1": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_2": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_3": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.toggle_4": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
-        },
-        "button.identify": {
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
         }
       },
       "metadata": {
@@ -210253,18 +210169,12 @@
         "button.toggle": {
           "title": {
             "en": "toggle"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.identify": {
           "title": {
             "en": "identify"
-          },
-          "setable": false,
-          "maintenanceAction": true,
-          "getable": false
+          }
         },
         "button.1": {
           "title": {
@@ -216623,7 +216533,10 @@
             ]
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_master_valve_dual_irrigation_needs_device_assignment",
+          "_MASTER_VALVE_DUAL_IRRIGATION_NEEDS_DEVICE_ASSIGNMENT"
+        ]
       },
       "images": {
         "small": "/drivers/valve_dual_irrigation/assets/images/small.png",
@@ -221596,6 +221509,9 @@
         "manufacturerName": [
           "_tz3000_85czd6fy",
           "_tz3000_6oabgtzv"
+        ],
+        "productId": [
+          "TS0207"
         ],
         "endpoints": {
           "1": {
@@ -230294,6 +230210,9 @@
           "_tz3000_nlsszmzl",
           "_tz3000_misw04hq",
           "_tz3000_wlquqiiz"
+        ],
+        "productId": [
+          "TS0207"
         ],
         "endpoints": {
           "1": {
