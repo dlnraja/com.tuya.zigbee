@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.117",
+  "version": "9.0.119",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -180330,20 +180330,8 @@
           "_TZE204_Z1TYSPQW",
           "_TZE200_57MBUHN0",
           "_TZE204_57MBUHN0",
-          "_TZE284_o3x45p96",
-          "_tze284_o3x45p96",
-          "_TZE284_p3dbf6qs",
-          "_tze284_p3dbf6qs",
           "_TZE200_p3dbf6qs",
-          "_tze200_p3dbf6qs",
-          "_TZE284_rv6iuyxb",
-          "_tze284_rv6iuyxb",
-          "_TZE284_c6wv4xyo",
-          "_tze284_c6wv4xyo",
-          "_TZE284_hvaxb2tc",
-          "_tze284_hvaxb2tc",
-          "_TZE204_o3x45p96",
-          "_tze204_o3x45p96"
+          "_tze200_p3dbf6qs"
         ],
         "productId": [
           "TV01-ZB",
@@ -188475,10 +188463,7 @@
         },
         "manufacturerName": [
           "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR",
-          "_generic_sensor_climate_lcdtemphumidsensor",
-          "_tze284_aao6qtcs",
-          "_tze200_vvmbj46n",
-          "_tze200_myd45weu"
+          "_generic_sensor_climate_lcdtemphumidsensor"
         ]
       }
     },
@@ -190854,12 +190839,7 @@
         },
         "manufacturerName": [
           "_GENERIC_SENSOR_CONTACT_CLIMATE",
-          "_generic_sensor_contact_climate",
-          "_tze284_oitavov2",
-          "_tze200_ga1maeof",
-          "_tze200_9cqcpkgb",
-          "_tze284_myd45weu",
-          "_tze200_2se8efxh"
+          "_generic_sensor_contact_climate"
         ]
       }
     },
@@ -191267,9 +191247,6 @@
           "_tze200_7hfcudw5",
           "_tze200_rxqls8v0",
           "_tze204_rxqls8v0",
-          "_TZE200_3towulqd",
-          "_tze200_3towulqd",
-          "_TZE200_bh3n6gk8",
           "_TZE200_myd45weu"
         ]
       },
@@ -193334,18 +193311,7 @@
         },
         "manufacturerName": [
           "_GENERIC_SENSOR_CONTACT_WATER",
-          "_generic_sensor_contact_water",
-          "_TZ3000_bpkijo14",
-          "_TZ3000_x8q36xwf",
-          "_TZ3000_402jjyro",
-          "_TZ3000_n2egfsli",
-          "_TZ3000_26fmupbb",
-          "_TZ3000_oxslv1c9",
-          "_TZ3000_2mbfxlzr",
-          "_TZ3000_bzxloft2",
-          "_TZ3000_yxqnffam",
-          "_TZ3000_996rpfy6",
-          "_TZE200_pay2byax"
+          "_generic_sensor_contact_water"
         ]
       }
     },
@@ -198712,8 +198678,7 @@
         },
         "manufacturerName": [
           "_GENERIC_SMARTPLUG_DINRAIL",
-          "_generic_smartplug_dinrail",
-          "_TZ3000_vtscrpmw"
+          "_generic_smartplug_dinrail"
         ]
       },
       "settings": [
@@ -199980,9 +199945,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_uri7ber7",
-          "hobeian",
-          "HOBEIAN"
+          "_tz3000_uri7ber7"
         ],
         "productId": [
           "TS004F",
@@ -203063,8 +203026,7 @@
           "_tze284_sgabhwa6",
           "_tze284_g2e6cpnw",
           "_TZE284_myd45weu",
-          "_TZE200_myd45weu",
-          "_TZE204_myd45weu"
+          "_TZE200_myd45weu"
         ],
         "productId": [
           "TS0601"
@@ -212396,9 +212358,6 @@
           "_tze200_ws8g8u0b",
           "_tze204_8gang001",
           "_tze204_ws8g8u0b",
-          "_TZ3000_blhvsaqf",
-          "_TZ3000_ysdv91bk",
-          "_TZ3000_hafsqare",
           "hobeian",
           "HOBEIAN"
         ],
@@ -214185,8 +214144,7 @@
           "_TZE204_qdihqf3l",
           "_TZE204_xby0s3ta",
           "_TZE200_A4B6TRRS",
-          "_TZE204_A4B6TRRS",
-          "_tze200_1ibpyhdc"
+          "_TZE204_A4B6TRRS"
         ],
         "productId": [
           "TS0601_thermo",
