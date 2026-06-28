@@ -333,12 +333,10 @@ function validateComposeFile(filePath) {
     const hasMeasure = capabilities.includes('measure_battery');
     const hasAlarm = capabilities.includes('alarm_battery');
     if (hasMeasure && hasAlarm) {
-      // It is allowed statically *only* if the device supports adaptive battery mixin dynamic pruning
-      // But log a warning to ensure the developer is doing this intentionally
-      report.warnings.push({
+      report.errors.push({
         file: filePath,
         type: 'DUAL_BATTERY',
-        message: 'Dual battery capabilities detected. Ensure device.js implements adaptive pruning!',
+        message: 'SDK v3 battery conflict: do not declare measure_battery and alarm_battery on the same driver. Keep measure_battery for percentage-capable devices, or alarm_battery for boolean-only devices.',
       });
     }
 

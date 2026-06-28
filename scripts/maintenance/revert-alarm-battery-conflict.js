@@ -4,7 +4,7 @@
  * 
  * RULES (source: apps-sdk-v3.developer.homey.app):
  * 1. NEVER use both measure_battery AND alarm_battery on same device
- * 2. Mains-powered devices should have NEITHER
+ * 2. Mains-only devices should have NEITHER
  * 3. WiFi drivers have their own auth/implementation — don't touch
  * 4. Kinetic/mechanical self-powered devices have NO battery
  * 5. Power source varies per variant — check compose, not driver name
@@ -38,24 +38,22 @@ for (const d of fs.readdirSync(DDIR)) {
     console.log(`⚡ ${d}: removed alarm_battery (conflicts with measure_battery)`);
   }
 
-  // === CHECK 2: Mains-powered check (from device.js) ===
-  const deviceFile = path.join(DDIR, d, 'device.js');
-  if (fs.existsSync(deviceFile)) {
-    const code = fs.readFileSync(deviceFile, 'utf8');
-    const isMainsPowered = /mainsPowered\s*\(\)\s*\{[^}]*return\s+true/s.test(code);
-    
-    if (isMainsPowered) {
-      // Mains-powered: remove both battery capabilities
-      for (const batCap of ['measure_battery', 'alarm_battery']) {
-        const idx = caps.indexOf(batCap);
-        if (idx >= 0) {
-          caps.splice(idx, 1);
-          modified = true;
-          mainsFix++;
-          console.log(`🔌 ${d}: removed ${batCap} (mainsPowered=true)`);
-        }
-      }
+  // === CHECK 2: Mains-powered check ===
+  // Do not remove measure_battery from static manifests based on a driver-wide
+  // mainsPowered getter. Many Tuya drivers are mixed: some variants are mains,
+  // while other productIds in the same driver are battery powered and need the
+  // default measure_battery capability to appear in Homey.
+  if (caps.includes('measure_battery')) {
+    const energy = compose.energy || {};
+    const hasBatteryMetadata = Array.isArray(energy.batteries) && energy.batteries.length > 0;
+    const isExplicitMainsOnly = energy.mains === true && !hasBatteryMetadata;
+    if (isExplicitMainsOnly) {
+      const idx = caps.indexOf('measure_battery');
+      caps.splice(idx, 1);
       compose.capabilities = caps;
+      modified = true;
+      mainsFix++;
+      console.log(`🔌 ${d}: removed measure_battery (explicit mains-only manifest)`);
     }
   }
 

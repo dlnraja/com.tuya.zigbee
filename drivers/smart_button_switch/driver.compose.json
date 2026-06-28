@@ -15,14 +15,19 @@
     "zigbee"
   ],
   "capabilities": [
-    "button.1"
+    "button.1",
+    "measure_battery"
   ],
   "images": {
     "large": "/drivers/smart_button_switch/assets/images/large.png",
     "small": "/drivers/smart_button_switch/assets/images/small.png",
     "xlarge": "/drivers/smart_button_switch/assets/images/xlarge.png"
   },
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
       "_tz3000_lq01",

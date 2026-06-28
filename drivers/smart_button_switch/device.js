@@ -12,12 +12,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  */
 class SmartButtonSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
 
-  get mainsPowered() { return true; }
-
   async onNodeInit({ zclNode }) {
-    // Auto-fix: Remove battery capabilities for mains-powered devices
-    await this.removeCapability('measure_battery').catch(() => {});
-    await this.removeCapability('alarm_battery').catch(() => {});
     await this._safeInvoke(async () => { this.buttonCount = 1;
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
