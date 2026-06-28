@@ -701,7 +701,7 @@ jobs:
         run: |
           # Follows GLOBAL_INVESTIGATION_PLAN.md Section 15 (Workflow Improvement Protocol)
           # All changes are attributed per Section 16 (Shadow Mode & Attribution Rules)
-          node .github/scripts/generate-ai-changelog.js
+          timeout --kill-after=10s 90s node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
       - name: Commit changelog updates
         run: |
           git config user.name "github-actions[bot]"
