@@ -63,7 +63,7 @@ const hdr  = (s) => console.log(C.bold + C.blue + '\n=== ' + s + ' ===' + C.rese
 
 // ─── SDK3 Required fields ────────────────────────────────────────────────────
 const SDK3_REQUIRED_TOP = [
-  'id', 'version', 'compatibility', 'sdkVersion', 'name', 'description',
+  'id', 'version', 'compatibility', 'sdk', 'name', 'description',
   'category', 'permissions', 'images', 'author'
 ];
 const SDK3_REQUIRED_DRIVER = ['id', 'name', 'class', 'capabilities', 'images'];

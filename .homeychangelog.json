@@ -1,6 +1,33 @@
 {
   "changelog": [
     {
+      "version": "9.0.145",
+      "date": "2026-06-29",
+      "summary": "Cross-source battery/button routing fixes and AggregateError guard",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Route _TZ3000_b4awzgct TS0041 to the 4-endpoint button driver with per-button flow cards."
+        },
+        {
+          "type": "fix",
+          "description": "Route _TZ3000_kfu8zapd TS0044 to button_wireless_4 and _TZ3000_qja6nq5z TS004F to smart_knob_rotary."
+        },
+        {
+          "type": "fix",
+          "description": "Route _TZE284_0ints6wl and HOBEIAN ZG-303Z soil sensors to soil_sensor and remove ZG-303Z climate fallback claims."
+        },
+        {
+          "type": "fix",
+          "description": "Treat TS004x ZCL battery value 200 as 100 percent and avoid measure_battery/alarm_battery dual writes."
+        },
+        {
+          "type": "test",
+          "description": "Add cross-source regression tests for public GitHub/forum battery and button cases."
+        }
+      ]
+    },
+    {
       "version": "9.0.53",
       "en": "CRITICAL: sdkVersion fix (Processing failed), Missing Capability Listener (setable:false), timer fallback, battery restore, duplicate method fix, HOBEIAN ZG-301Z, NFKD normalize, 87 fingerprints restored, Polos validator",
       "fr": "CRITIQUE: sdkVersion (Processing failed), Missing Capability Listener, fallback timer, batterie, HOBEIAN, NFKD, 87 fingerprints, Polos"
@@ -632,5 +659,8 @@
   },
   "9.0.144": {
     "en": "v9.0.144: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.145": {
+    "en": "v9.0.145: cross-source battery/button routing fixes for TS0041/TS0044/TS004F, ZG-303Z soil pairing, and AggregateError validator guard."
   }
 }
