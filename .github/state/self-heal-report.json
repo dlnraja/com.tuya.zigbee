@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-28T13:37:55.242Z",
+  "timestamp": "2026-06-28T14:04:23.761Z",
   "totalFiles": 0,
   "totalFixes": 943,
   "rules": {
@@ -48,7 +48,7 @@
         },
         {
           "file": "drivers/switch_3gang/device.js",
-          "detail": "Line 184: getDeviceTriggerCard without try-catch"
+          "detail": "Line 191: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/wall_dimmer_1gang_1way/device.js",
