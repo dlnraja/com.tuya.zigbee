@@ -28,7 +28,7 @@ const https     = require('https');
 
 let APP_JSON = {};
 try { APP_JSON = JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')); } catch(e) {}
-const APP_ID     = process.env.TARGET_APP_ID || APP_JSON.id || 'com.dlnraja.tuya.zigbee';
+const APP_ID     = process.env.TARGET_APP_ID || process.env.APP_ID || APP_JSON.id || 'com.dlnraja.tuya.zigbee';
 const BASE_URL   = 'https://tools.developer.homey.app';
 const EMAIL      = process.env.HOMEY_EMAIL    || '';
 const PASSWORD   = process.env.HOMEY_PASSWORD || '';
@@ -53,6 +53,17 @@ const REPORT = {
 };
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function stringifyMeta(meta) {
+  if (!meta) return '';
+  if (typeof meta === 'string') return meta;
+  try {
+    const text = JSON.stringify(meta);
+    return text === '{}' ? '' : text;
+  } catch {
+    return String(meta);
+  }
+}
 
 // ─── AthomAppsAPI Helper ─────────────────────────────────────────────────────
 async function getAthomApi() {
@@ -155,7 +166,8 @@ async function runApiMode() {
       console.log(`  Desc:     ${analysis.description}`);
       console.log(`  Archive:  ${analysis.archiveSize ? (analysis.archiveSize/1024/1024).toFixed(2)+' MB' : '❌ undefined'}`);
       if (hasUndefinedInUrl) console.log(`  ⚠️  URL contains /undefined/ — manifest not parsed!`);
-      if (build.stateMeta) console.log(`  StateMeta: ${JSON.stringify(build.stateMeta).slice(0, 200)}`);
+      const metaText = stringifyMeta(build.stateMeta || build.state_meta || build.error || build.errorMessage);
+      if (metaText) console.log(`  StateMeta: ${metaText.slice(0, 200)}`);
 
       REPORT.builds[buildId] = analysis;
 

@@ -13,21 +13,56 @@
  */
 'use strict';
 
-const https = require('https');
 const path = require('path');
 const fs = require('fs');
+const { execSync } = require('child_process');
 
-const APP_ID = 'com.dlnraja.tuya.zigbee';
+function readAppId() {
+  if (process.env.TARGET_APP_ID) return process.env.TARGET_APP_ID;
+  if (process.env.APP_ID) return process.env.APP_ID;
+  try {
+    const app = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'app.json'), 'utf8'));
+    if (app.id) return app.id;
+  } catch {
+    // Fall through to the historical master app id.
+  }
+  return 'com.dlnraja.tuya.zigbee';
+}
+
+const APP_ID = readAppId();
 const args = process.argv.slice(2);
 const JSON_MODE = args.includes('--json');
 const ALERT_MODE = args.includes('--alert');
 const LATEST_ONLY = args.includes('--latest');
 
 const log = (msg) => console.log(`[${new Date().toISOString()}] ${msg}`);
-const FAILED_STATES = new Set(['processing_failed', 'error', 'failed']);
+const FAILED_STATES = new Set(['processing_failed', 'error', 'failed', 'revoked']);
+const SUCCESS_STATES = new Set(['draft', 'test', 'live', 'published', 'ready']);
+
+function normalizeText(value) {
+  if (value === null || value === undefined || value === '') return '';
+  if (typeof value === 'string') return value;
+  if (value instanceof Error) return value.message;
+  if (typeof value !== 'object') return String(value);
+
+  for (const key of ['message', 'error', 'reason', 'detail', 'details', 'description', 'statusText']) {
+    if (value[key]) return normalizeText(value[key]);
+  }
+
+  try {
+    const json = JSON.stringify(value);
+    return json === '{}' ? '' : json;
+  } catch {
+    return String(value);
+  }
+}
+
+function rawStateMeta(build) {
+  return build.stateMeta || build.state_meta || build.error || build.errorMessage || build.feedback || build.message || '';
+}
 
 function stateMeta(build) {
-  return build.stateMeta || build.state_meta || build.error || build.errorMessage || '';
+  return normalizeText(rawStateMeta(build));
 }
 
 function isFailedBuild(build) {
@@ -35,7 +70,7 @@ function isFailedBuild(build) {
 }
 
 function isSuccessfulBuild(build) {
-  return !isFailedBuild(build) && ['draft', 'test', 'live', 'published'].includes(build.state);
+  return !isFailedBuild(build) && SUCCESS_STATES.has(build.state);
 }
 
 function statusIcon(build) {
@@ -45,23 +80,64 @@ function statusIcon(build) {
   return 'ℹ️';
 }
 
-async function getBuilds() {
-  const settingsPath = path.join(process.env.APPDATA || '', 'npm', 'node_modules', 'homey');
+function summarizeBuild(build) {
+  if (!build) return null;
+  const id = build.id || build.buildId || null;
+  return {
+    id,
+    version: build.version || null,
+    state: build.state || null,
+    stateMeta: rawStateMeta(build) || null,
+    failureDetail: stateMeta(build) || null,
+    createdAt: build.createdAt || build.created_at || null,
+    stateChangedAt: build.stateChangedAt || build.state_changed_at || null,
+    sdk: build.sdk ?? null,
+    platforms: build.platforms || null,
+    url: id ? `https://tools.developer.homey.app/apps/app/${APP_ID}/build/${id}` : null,
+  };
+}
+
+function resolveHomeyCliRoot() {
+  const candidates = [];
   try {
-    const AthomApi = require(settingsPath + '/services/AthomApi');
-    const { AthomAppsAPI } = require(settingsPath + '/node_modules/homey-api');
+    candidates.push(path.dirname(require.resolve('homey/package.json', { paths: [process.cwd(), __dirname] })));
+  } catch {
+    // package not installed locally; try global locations below.
+  }
+  if (process.env.APPDATA) {
+    candidates.push(path.join(process.env.APPDATA, 'npm', 'node_modules', 'homey'));
+  }
+  try {
+    candidates.push(path.join(execSync('npm root -g', { encoding: 'utf8', timeout: 5000 }).trim(), 'homey'));
+  } catch {
+    // npm may be unavailable in very small CI images.
+  }
+
+  const root = candidates.find((candidate) => candidate && fs.existsSync(path.join(candidate, 'services', 'AthomApi.js')));
+  if (!root) {
+    throw new Error('homey CLI modules not found. Run npm ci or npm install -g homey.');
+  }
+  return root;
+}
+
+async function getBuilds() {
+  try {
+    const homeyRoot = resolveHomeyCliRoot();
+    const AthomApi = require(path.join(homeyRoot, 'services', 'AthomApi'));
+    const { AthomAppsAPI } = require(path.join(homeyRoot, 'node_modules', 'homey-api'));
     const token = await AthomApi.createDelegationToken({ audience: 'apps' });
-    const api = new AthomAppsAPI();
-    const builds = await api.getBuilds({ '$token': token, appId: APP_ID });
+    const api = new AthomAppsAPI({ token });
+    const builds = await api.getBuilds({ '$token': token, appId: APP_ID, query: { limit: 1000 } });
     return Array.isArray(builds) ? builds : (builds.items || builds.data || []);
   } catch (e) {
-    log(`❌ Cannot load Athom API: ${e.message}`);
+    log(`❌ Cannot load Athom API for ${APP_ID}: ${e.message}`);
     return [];
   }
 }
 
 async function main() {
   log('═══ Dashboard Monitor ═══');
+  log(`App: ${APP_ID}`);
 
   const builds = await getBuilds();
   if (!builds.length) {
@@ -89,36 +165,49 @@ async function main() {
   log(`\nLatest ${showCount} builds:`);
   sorted.slice(0, showCount).forEach(b => {
     const meta = stateMeta(b);
-    const metaText = meta ? ` | stateMeta=${meta}` : '';
+    const metaText = meta ? ` | stateMeta=${meta.slice(0, 180)}` : '';
     const sdkText = b.sdk === undefined ? '' : ` | sdk=${b.sdk}`;
     log(`  ${statusIcon(b)} #${b.id}: v${b.version} | ${b.state}${sdkText}${metaText}`);
   });
 
   // Check for recurring failures
   const recentFailed = sorted.slice(0, 100).filter(isFailedBuild);
+  const latestBuild = sorted[0] || null;
+  const latestFailedBuild = sorted.find(isFailedBuild) || null;
+  const latestGoodBuild = sorted.find(isSuccessfulBuild) || null;
+  const latestIsFailed = latestBuild ? isFailedBuild(latestBuild) : false;
+
   if (recentFailed.length > 3) {
-    log(`\n⚠️ WARNING: ${recentFailed.length} failures in last 100 builds`);
+    const prefix = latestIsFailed ? '🚨' : 'ℹ️';
+    log(`\n${prefix} ${recentFailed.length} failures in last 100 builds`);
     const latestMeta = stateMeta(recentFailed[0]);
     log(`Latest failure detail: ${latestMeta || 'no stateMeta returned by Athom API'}`);
+    if (!latestIsFailed) {
+      log('Latest build is healthy; failures are historical and should not trigger republish.');
+    }
   }
 
   // Generate report
   const report = {
     timestamp: new Date().toISOString(),
+    appId: APP_ID,
     totalBuilds: builds.length,
     successful: successful.length,
     failed: failed.length,
     drafts: drafts.length,
     inTest: inTest.length,
-    latestBuild: sorted[0] ? {
-      id: sorted[0].id,
-      version: sorted[0].version,
-      state: sorted[0].state,
-      stateMeta: stateMeta(sorted[0]) || null,
-      createdAt: sorted[0].createdAt || sorted[0].created_at || null,
-      stateChangedAt: sorted[0].stateChangedAt || sorted[0].state_changed_at || null,
-      platforms: sorted[0].platforms || null,
-    } : null,
+    latestBuild: summarizeBuild(latestBuild),
+    latestBuilds: sorted.slice(0, showCount).map(summarizeBuild),
+    latestFailedBuild: summarizeBuild(latestFailedBuild),
+    latestGoodBuild: summarizeBuild(latestGoodBuild),
+    recentWindow: 100,
+    recentFailedCount: recentFailed.length,
+    currentStatus: {
+      latestIsFailed,
+      latestState: latestBuild?.state || null,
+      latestFailureDetail: latestIsFailed ? (stateMeta(latestBuild) || null) : null,
+      historicalFailuresOnly: recentFailed.length > 0 && !latestIsFailed,
+    },
     successRate: ((successful.length / builds.length) * 100).toFixed(1) + '%',
   };
 
@@ -132,9 +221,12 @@ async function main() {
   log(`\nReport saved to .github/state/dashboard-monitor-report.json`);
 
   // Alert on failures
-  if (ALERT_MODE && failed.length > 0) {
-    log(`\n🚨 ALERT: ${failed.length} builds in processing_failed state`);
-    log(`Latest failure detail: ${stateMeta(failed.sort((a, b) => (b.id || 0) - (a.id || 0))[0]) || 'no stateMeta returned by Athom API'}`);
+  if (ALERT_MODE && latestIsFailed) {
+    log(`\n🚨 ALERT: latest build #${latestBuild.id} is ${latestBuild.state}`);
+    log(`Latest failure detail: ${stateMeta(latestBuild) || 'no stateMeta returned by Athom API'}`);
+    process.exitCode = 1;
+  } else if (ALERT_MODE && recentFailed.length > 0) {
+    log(`\nℹ️ Historical failures found (${recentFailed.length}/100), but latest build is healthy.`);
   }
 
   log('\n═══ Monitor Complete ═══');

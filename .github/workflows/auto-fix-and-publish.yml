@@ -46,9 +46,24 @@ jobs:
         run: |
           # If last build is processing_failed, trigger a new publish
           LAST_STATE=$(node -e "
-          const report = require('./.github/state/dashboard-monitor-report.json');
-          const latest = report.latestBuilds?.[0];
-          if (latest && latest.state === 'processing_failed') {
+          const fs = require('fs');
+          const reportPath = './.github/state/dashboard-monitor-report.json';
+          if (!fs.existsSync(reportPath)) {
+            console.error('Dashboard report missing');
+            console.log('UNKNOWN');
+            process.exit(0);
+          }
+          const report = require(reportPath);
+          const ts = Date.parse(report.timestamp || '');
+          const maxAgeMs = Number(process.env.DASHBOARD_REPORT_MAX_AGE_MS || 30 * 60 * 1000);
+          if (!Number.isFinite(ts) || Date.now() - ts > maxAgeMs) {
+            console.error('Dashboard report stale or invalid timestamp:', report.timestamp || '(missing)');
+            console.log('STALE');
+            process.exit(0);
+          }
+          const latest = report.latestBuild || report.latestBuilds?.[0];
+          const failedStates = new Set(['processing_failed', 'error', 'failed', 'revoked']);
+          if ((report.currentStatus && report.currentStatus.latestIsFailed) || (latest && failedStates.has(latest.state))) {
             console.log('FAILED');
           } else {
             console.log('OK');
