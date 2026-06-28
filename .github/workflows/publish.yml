@@ -114,7 +114,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          node .github/scripts/generate-ai-changelog.js || echo "AI fallback"
+          timeout --kill-after=10s 90s node .github/scripts/generate-ai-changelog.js || echo "AI fallback"
           VER=$(node -p "require('./app.json').version")
           CL=$(node -e "const cl=require('./.homeychangelog.json');const v=process.argv[1];if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);" "$VER" 2>/dev/null || echo "")
           echo "ai_text=$CL" >> $GITHUB_OUTPUT

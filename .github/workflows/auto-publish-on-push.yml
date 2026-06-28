@@ -130,7 +130,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
+        run: timeout --kill-after=10s 90s node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
 
       - name: Extract Changelog
         id: cl
