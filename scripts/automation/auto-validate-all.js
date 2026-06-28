@@ -13,7 +13,7 @@
  *   3. Anti-pattern detection (banned code patterns)
  *   4. AggregateError risk detection (empty manufacturerName arrays, wildcards)
  *   5. Processing failed risk detection (missing try/catch, unsafe operations)
- *   6. Bundle size check (< 7MB limit)
+ *   6. Publish payload size check
  *   7. Driver compose consistency (manufacturerName + productId non-empty)
  *   8. Import path validation (correct relative paths)
  *   9. Settings key validation (zb_model_id, not zb_modelId)
@@ -39,7 +39,8 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
-const { execSync } = require('child_process');
+const { execSync, spawnSync } = require('child_process');
+const { isSyntheticManufacturer } = require('../maintenance/compact-zigbee-identifiers.cjs');
 
 // ── Paths ─────────────────────────────────────────────────────────────────────
 const ROOT = path.resolve(__dirname, '../..');
@@ -112,7 +113,7 @@ function error(...args) {
 }
 
 // ── File Discovery ────────────────────────────────────────────────────────────
-function findFiles(dir, extension, ignoreDirs = ['node_modules', '.git', '.cache', '.homeybuild', 'build', 'quarantine']) {
+function findFiles(dir, extension, ignoreDirs = ['node_modules', '.git', '.cache', '.homeybuild', '.homeycompose', '.archive', '.agents', 'build', 'quarantine', 'backup', 'tmp', 'temp', 'templates']) {
   const files = [];
   try {
     const entries = fs.readdirSync(dir);
@@ -131,6 +132,14 @@ function findFiles(dir, extension, ignoreDirs = ['node_modules', '.git', '.cache
     }
   } catch (_e) { /* skip */ }
   return files;
+}
+
+function existingFiles(paths) {
+  return paths.filter(file => fs.existsSync(file));
+}
+
+function stripInlineComment(line) {
+  return line.replace(/\/\/.*$/, '');
 }
 
 // ── Check 1: JavaScript Syntax Validation ─────────────────────────────────────
@@ -177,8 +186,26 @@ function checkJSONValidation() {
     'package.json': { required: ['name', 'version'], type: 'object' },
   };
 
-  // Validate root JSON files
-  const rootJsonFiles = findFiles(ROOT, '.json').filter(f => !f.includes('node_modules'));
+  // Validate deployable/runtime JSON only. The repo also stores archived CLI
+  // dumps and template snippets that are intentionally not valid JSON payloads.
+  const rootJsonFiles = [
+    ...existingFiles([
+      path.join(ROOT, 'app.json'),
+      path.join(ROOT, 'package.json'),
+      path.join(ROOT, 'package-lock.json'),
+      path.join(ROOT, '.homeychangelog.json'),
+      path.join(ROOT, 'driver-mapping-database.json'),
+    ]),
+    ...findFiles(path.join(ROOT, 'drivers'), '.json').filter(f => path.basename(f) === 'driver.compose.json'),
+    ...findFiles(path.join(ROOT, 'locales'), '.json'),
+    ...findFiles(path.join(ROOT, 'capabilities'), '.json'),
+    ...existingFiles([
+      path.join(ROOT, 'data', 'fingerprints.json'),
+      path.join(ROOT, 'lib', 'tuya', 'fingerprints.json'),
+      path.join(ROOT, 'lib', 'tuya', 'profiles.json'),
+      path.join(ROOT, 'lib', 'tuya', 'capability-map.json'),
+    ]),
+  ];
   for (const filePath of rootJsonFiles) {
     const relPath = path.relative(ROOT, filePath);
     try {
@@ -253,6 +280,16 @@ function checkAggregateErrorRisks() {
           });
           check.errors.push({ file: `drivers/${dir}`, type: 'aggregate-error-risk', message: `Wildcard: ${wildcards.join(', ')}` });
         }
+
+        const synthetic = config.zigbee.manufacturerName.filter(isSyntheticManufacturer);
+        if (synthetic.length > 0) {
+          results.aggregateErrorRisks.push({
+            driver: dir,
+            risk: 'SYNTHETIC_MANUFACTURER',
+            message: `Publish-only synthetic manufacturerName: ${synthetic.slice(0, 3).join(', ')}`,
+            severity: 'info',
+          });
+        }
       }
 
       // Risk 3: Empty productId array
@@ -324,19 +361,25 @@ function checkProcessingFailedRisks() {
         }
       }
 
-      // Risk 2: Linear battery formula
-      const batteryPattern = /\(voltage\s*-\s*2\.5\)\s*\/\s*0\.5/g;
-      let batteryMatch;
-      while ((batteryMatch = batteryPattern.exec(content)) !== null) {
-        const lineNum = content.substring(0, batteryMatch.index).split('\n').length;
-        results.processingFailedRisks.push({
-          file: relPath,
-          risk: 'LINEAR_BATTERY',
-          message: `Linear battery formula at line ${lineNum} (use UnifiedBatteryHandler)`,
-          severity: 'error',
-          line: lineNum,
-        });
-        check.errors.push({ file: relPath, message: `Linear battery formula at line ${lineNum}` });
+      // Risk 2: Linear battery formula. Skip comments because several files
+      // document the banned formula as a rule.
+      const batteryPattern = /\(voltage\s*-\s*2\.5\)\s*\/\s*0\.5/;
+      const lines = content.split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trim();
+        if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
+        const codeOnly = stripInlineComment(lines[i]);
+        if (batteryPattern.test(codeOnly)) {
+          const lineNum = i + 1;
+          results.processingFailedRisks.push({
+            file: relPath,
+            risk: 'LINEAR_BATTERY',
+            message: `Linear battery formula at line ${lineNum} (use UnifiedBatteryHandler)`,
+            severity: 'error',
+            line: lineNum,
+          });
+          check.errors.push({ file: relPath, message: `Linear battery formula at line ${lineNum}` });
+        }
       }
 
       // Risk 3: console.log/error/warn in production code
@@ -387,56 +430,38 @@ function checkBundleSize() {
   const startTime = Date.now();
   const check = { name: 'Bundle Size Check', status: 'pass', errors: [], warnings: [] };
 
-  const MAX_SIZE_MB = 7;
-  let totalSize = 0;
-  const fileSizes = [];
+  const gate = spawnSync(process.execPath, [path.join(ROOT, 'scripts', 'ci', 'publish-size-gate.cjs'), '--json'], {
+    cwd: ROOT,
+    encoding: 'utf8',
+    shell: false,
+  });
 
-  // Calculate total size of lib/ and drivers/
-  const dirs = [LIB_DIR, DRIVERS_DIR];
-  for (const dir of dirs) {
-    if (!fs.existsSync(dir)) continue;
-    const files = findFiles(dir, '.js').concat(findFiles(dir, '.json'));
-    for (const file of files) {
-      try {
-        const stat = fs.statSync(file);
-        totalSize += stat.size;
-        fileSizes.push({ path: path.relative(ROOT, file), size: stat.size });
-      } catch (_e) { /* skip */ }
-    }
-  }
-
-  // Add data/ files
-  const dataDir = path.join(ROOT, 'data');
-  if (fs.existsSync(dataDir)) {
-    const dataFiles = findFiles(dataDir, '.json');
-    for (const file of dataFiles) {
-      try {
-        const stat = fs.statSync(file);
-        totalSize += stat.size;
-        fileSizes.push({ path: path.relative(ROOT, file), size: stat.size });
-      } catch (_e) { /* skip */ }
-    }
-  }
-
-  const totalSizeMB = totalSize / (1024 * 1024);
-  results.bundleSize = {
-    totalBytes: totalSize,
-    totalMB: parseFloat(totalSizeMB.toFixed(2)),
-    maxMB: MAX_SIZE_MB,
-    withinLimit: totalSizeMB <= MAX_SIZE_MB,
-    largestFiles: fileSizes.sort((a, b) => b.size - a.size).slice(0, 10),
-  };
-
-  if (totalSizeMB > MAX_SIZE_MB) {
-    check.errors.push({ type: 'bundle-size', message: `Bundle size ${totalSizeMB.toFixed(2)}MB exceeds ${MAX_SIZE_MB}MB limit` });
+  let gateReport = null;
+  try {
+    gateReport = JSON.parse(gate.stdout || '{}');
+  } catch (e) {
+    check.errors.push({ type: 'bundle-size-gate', message: `Could not parse publish-size-gate output: ${e.message}` });
     check.status = 'fail';
-  } else if (totalSizeMB > MAX_SIZE_MB * 0.9) {
-    check.warnings.push({ type: 'bundle-size', message: `Bundle size ${totalSizeMB.toFixed(2)}MB is within 10% of limit` });
-    check.status = 'warn';
+  }
+
+  if (gate.error) {
+    check.errors.push({ type: 'bundle-size-gate', message: gate.error.message });
+    check.status = 'fail';
+  } else if (gate.status !== 0 || (gateReport && gateReport.ok === false)) {
+    for (const msg of (gateReport && gateReport.errors) || []) {
+      check.errors.push({ type: 'bundle-size-gate', message: msg });
+    }
+    check.status = 'fail';
+  } else if (gateReport) {
+    for (const msg of gateReport.warnings || []) {
+      check.warnings.push({ type: 'bundle-size-gate', message: msg });
+    }
+    if (check.warnings.length > 0) check.status = 'warn';
   }
 
   check.elapsed = Date.now() - startTime;
-  check.details = { totalMB: totalSizeMB.toFixed(2), maxMB: MAX_SIZE_MB };
+  check.details = gateReport ? { limits: gateReport.limits, checks: gateReport.checks } : {};
+  results.bundleSize = gateReport;
   results.checks.push(check);
   results.summary.totalChecks++;
   if (check.status === 'pass') results.summary.passed++;
@@ -564,21 +589,37 @@ function checkSettingsKeys() {
     const relPath = path.relative(ROOT, filePath);
     try {
       const content = fs.readFileSync(filePath, 'utf8');
+      const fileHasCanonicalSettings = content.includes('zb_model_id') || content.includes('zb_manufacturer_name');
 
-      // Check for incorrect settings keys
-      if (content.includes('zb_modelId') || content.includes('zb_manufacturerName')) {
-        results.settingsKeyIssues.push({
+      const lines = content.split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        const trimmed = lines[i].trim();
+        if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
+        const codeOnly = stripInlineComment(lines[i]);
+        if (!codeOnly.includes('zb_modelId') && !codeOnly.includes('zb_manufacturerName')) continue;
+
+        const legacyReadFallback = fileHasCanonicalSettings;
+        const issue = {
           file: relPath,
-          issue: 'INCORRECT_SETTINGS_KEY',
-          message: 'Use zb_model_id (not zb_modelId) and zb_manufacturer_name (not zb_manufacturerName)',
-        });
-        check.errors.push({ file: relPath, message: 'Incorrect settings key (zb_modelId/zb_manufacturerName)' });
+          issue: legacyReadFallback ? 'LEGACY_SETTINGS_FALLBACK' : 'INCORRECT_SETTINGS_KEY',
+          message: legacyReadFallback
+            ? 'Legacy zb_modelId/zb_manufacturerName read fallback kept for compatibility'
+            : 'Use zb_model_id (not zb_modelId) and zb_manufacturer_name (not zb_manufacturerName)',
+          line: i + 1,
+        };
+        results.settingsKeyIssues.push(issue);
+        if (legacyReadFallback) {
+          check.warnings.push({ file: relPath, message: `${issue.message} at line ${issue.line}` });
+        } else {
+          check.errors.push({ file: relPath, message: `Incorrect settings key at line ${issue.line}` });
+        }
       }
     } catch (e) { /* skip */ }
   }
 
   check.elapsed = Date.now() - startTime;
   if (check.errors.length > 0) check.status = 'fail';
+  else if (check.warnings.length > 0) check.status = 'warn';
   results.checks.push(check);
   results.summary.totalChecks++;
   if (check.status === 'pass') results.summary.passed++;
@@ -739,10 +780,10 @@ function generateReport() {
 
   // Bundle size
   if (results.bundleSize) {
-    lines.push('## Bundle Size');
-    lines.push(`- Total: ${results.bundleSize.totalMB} MB`);
-    lines.push(`- Limit: ${results.bundleSize.maxMB} MB`);
-    lines.push(`- Status: ${results.bundleSize.withinLimit ? 'WITHIN LIMIT' : 'EXCEEDS LIMIT'}`);
+    lines.push('## Publish Size');
+    for (const item of results.bundleSize.checks || []) {
+      lines.push(`- ${item.name}: ${item.mb} MB / ${item.limitMB} MB (${item.status})`);
+    }
     lines.push('');
   }
 
@@ -810,6 +851,13 @@ function generateReport() {
   return lines.join('\n');
 }
 
+function refreshSummary() {
+  results.summary.totalChecks = results.checks.length;
+  results.summary.passed = results.checks.filter(check => check.status === 'pass').length;
+  results.summary.failed = results.checks.filter(check => check.status === 'fail').length;
+  results.summary.warnings = results.checks.filter(check => check.status === 'warn').length;
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 function main() {
   const startTime = Date.now();
@@ -855,6 +903,7 @@ function main() {
 
   // Finalize
   results.duration = Date.now() - startTime;
+  refreshSummary();
 
   // Output
   if (JSON_OUTPUT) {
@@ -882,7 +931,10 @@ function main() {
 
     if (results.bundleSize) {
       log('');
-      log('cyan', `Bundle Size: ${results.bundleSize.totalMB} MB / ${results.bundleSize.maxMB} MB`);
+      const sizeSummary = (results.bundleSize.checks || [])
+        .map(item => `${item.name} ${item.mb}/${item.limitMB}MB`)
+        .join('; ');
+      log('cyan', `Publish Size: ${sizeSummary || 'no size checks reported'}`);
     }
 
     if (results.aggregateErrorRisks.length > 0) {

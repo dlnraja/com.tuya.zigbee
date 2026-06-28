@@ -53,7 +53,9 @@ const WIFI = id => {
 
 const drivers = app.drivers || [];
 const errors  = [];
+const warnings = [];
 const stats   = { zigbee:0, wifi:0, hybrid:0, virtual:0, fp:0 };
+const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_/;
 
 drivers.forEach(d => {
   const conn  = d.connectivity || [];
@@ -62,6 +64,12 @@ drivers.forEach(d => {
   const type  = hasZ&&isLan?'hybrid':hasZ?'zigbee':WIFI(d.id)?'wifi':'virtual';
   stats[type]++;
   if (d.zigbee?.manufacturerName) stats.fp += d.zigbee.manufacturerName.length;
+  const synthetic = Array.isArray(d.zigbee?.manufacturerName)
+    ? d.zigbee.manufacturerName.filter(m => typeof m === 'string' && SYNTHETIC_MANUFACTURER_RE.test(m))
+    : [];
+  if (synthetic.length > 0 && warnings.length < 12) {
+    warnings.push(d.id + ': ' + synthetic.slice(0, 2).join(', '));
+  }
   if ((type==='zigbee'||type==='hybrid') && !(d.zigbee?.manufacturerName?.length)) {
     errors.push('[' + type + '] ' + d.id);
   }
@@ -71,6 +79,10 @@ console.log('  v' + app.version + ' | Zigbee:' + stats.zigbee + ' WiFi:' + stats
             ' Hybrid:' + stats.hybrid + ' Virtual:' + stats.virtual + ' FPs:' + stats.fp);
 
 if (errors.length === 0) {
+  if (warnings.length > 0) {
+    console.warn(C.y + '  ⚠️  Synthetic manufacturer identifiers found in source; prepare-publish must prune them to reduce upload size:' + C.R);
+    warnings.forEach(w => console.warn(C.y + '    - ' + w + C.R));
+  }
   console.log(C.g + '  ✅ Dual-Layer PASS — Zéro AggregateError' + C.R);
   process.exit(0);
 } else {

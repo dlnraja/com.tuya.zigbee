@@ -32,6 +32,7 @@ const APP_ROOT = path.resolve(__dirname, '..');
 const APP_JSON = JSON.parse(fs.readFileSync(path.join(APP_ROOT, 'app.json'), 'utf8'));
 const APP_ID = APP_JSON.id;
 const APP_VERSION = APP_JSON.version;
+const MAX_ARCHIVE_MB = Number(process.env.HOMEY_ARCHIVE_MAX_MB || 20);
 
 const STATE = {
   PENDING: 'pending',
@@ -89,6 +90,12 @@ function ensureArchive() {
         err('Run: node scripts/maintenance/kill-stray-nulls.cjs --force --dir .homeybuild');
         process.exit(2);
       }
+      const archiveMB = sz / 1024 / 1024;
+      if (archiveMB > MAX_ARCHIVE_MB) {
+        err(`FATAL: archive ${c} is ${archiveMB.toFixed(2)} MB, above ${MAX_ARCHIVE_MB.toFixed(2)} MB safety limit.`);
+        err('Run: npm run build && npm run prepare-publish, then inspect large files with node scripts/ci/publish-size-gate.cjs');
+        process.exit(2);
+      }
       log(`Using archive: ${c} (${(sz / 1024 / 1024).toFixed(2)} MB)`);
       return c;
     }
@@ -141,6 +148,10 @@ async function uploadArchive(url, method, headers, archivePath) {
   const sz = fs.statSync(archivePath).size;
   if (sz === 0) {
     throw new Error(`FATAL: archive ${archivePath} is 0 bytes — refuse to upload (would cause processing_failed).`);
+  }
+  const archiveMB = sz / 1024 / 1024;
+  if (archiveMB > MAX_ARCHIVE_MB) {
+    throw new Error(`FATAL: archive ${archivePath} is ${archiveMB.toFixed(2)} MB, above ${MAX_ARCHIVE_MB.toFixed(2)} MB safety limit.`);
   }
   log(`Uploading ${sz} bytes to Athom storage...`);
 

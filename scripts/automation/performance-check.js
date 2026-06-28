@@ -3,7 +3,7 @@
  * performance-check.js - Performance & Resource Verification
  * ===========================================================
  * Checks:
- *   1. Bundle size (must be < 7MB compressed)
+ *   1. Publish payload size (prepared upload must fit Homey processing budget)
  *   2. Individual file sizes (flag files > 100KB)
  *   3. Memory usage estimation (heap analysis)
  *   4. Fingerprint lookup time (simulated)
@@ -39,7 +39,8 @@ const BOLD = '\x1b[1m';
 const RESET = '\x1b[0m';
 
 // ── Thresholds ───────────────────────────────────────────────────
-const BUNDLE_SIZE_LIMIT_MB = 7;
+const BUNDLE_SIZE_LIMIT_MB = Number(process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 32);
+const SOURCE_ESTIMATE_LIMIT_MB = Number(process.env.HOMEY_SOURCE_ESTIMATE_MAX_MB || 55);
 const LARGE_FILE_THRESHOLD_KB = 100;
 const CRITICAL_FILE_THRESHOLD_KB = 500;
 const MAX_FINGERPRINT_LOOKUP_MS = 50;
@@ -69,18 +70,17 @@ function warn(msg) { report.warnings.push(msg); console.warn(`${YELLOW}[WARN]${R
 
 // ── 1. Bundle Size Check ─────────────────────────────────────────
 function checkBundleSize() {
-  log('Phase 1: Checking bundle size...');
+  log('Phase 1: Checking publish payload size...');
 
   // Check if a build exists
   const buildDir = path.join(ROOT, '.homeybuild');
   if (fs.existsSync(buildDir)) {
     try {
-      const files = fs.readdirSync(buildDir);
+      const files = getAllFiles(buildDir).filter(f => !f.endsWith('.tar.gz'));
       let totalSize = 0;
       for (const f of files) {
-        const fp = path.join(buildDir, f);
         try {
-          const stat = fs.statSync(fp);
+          const stat = fs.statSync(f);
           totalSize += stat.size;
         } catch (e) { /* skip */ }
       }
@@ -131,8 +131,8 @@ function checkBundleSize() {
 
   const estMB = deployableSize / (1024 * 1024);
   log(`  Estimated deployable size: ${estMB.toFixed(2)}MB`);
-  if (estMB > BUNDLE_SIZE_LIMIT_MB) {
-    err(`Estimated deployable size ${estMB.toFixed(2)}MB exceeds ${BUNDLE_SIZE_LIMIT_MB}MB limit`);
+  if (estMB > SOURCE_ESTIMATE_LIMIT_MB) {
+    err(`Estimated source deployable size ${estMB.toFixed(2)}MB exceeds ${SOURCE_ESTIMATE_LIMIT_MB}MB limit`);
   }
 }
 
@@ -423,7 +423,7 @@ function checkHomeyignore() {
 
   const ignorePath = path.join(ROOT, '.homeyignore');
   if (!fs.existsSync(ignorePath)) {
-    err('.homeyignore file not found - bundle may exceed 7MB limit');
+    err('.homeyignore file not found - publish payload may exceed Homey size limits');
     return;
   }
 

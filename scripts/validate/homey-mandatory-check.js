@@ -46,6 +46,7 @@ const errors = [];
 const warnings = [];
 const fixed = [];
 const passed = [];
+const SYNTHETIC_MANUFACTURER_RE = /unknown|dummy|placeholder|needs_device_assignment|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_/;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 function fail(id, msg, fixFn) {
@@ -74,6 +75,9 @@ function ok(id, msg) {
 }
 function section(title) {
   if (!QUIET) console.log(`\n── ${title} ${'─'.repeat(Math.max(0, 60 - title.length))}`);
+}
+function isSyntheticManufacturer(value) {
+  return typeof value === 'string' && SYNTHETIC_MANUFACTURER_RE.test(value);
 }
 
 // ─── Read app.json safely ─────────────────────────────────────────────────────
@@ -371,11 +375,23 @@ if (app.drivers && Array.isArray(app.drivers)) {
   const WIFI = id => { const s = (id||'').toLowerCase(); return s.startsWith('wifi_') || s.includes('ewelink') || s.includes('sonoff'); };
   let zigbeeOk = 0, zigbeeFail = 0, wifi = 0, hybrid = 0, virtual = 0, generic = 0;
   const dualLayerErrors = [];
+  let syntheticCount = 0;
+  const syntheticExamples = [];
   app.drivers.forEach(d => {
     const conn = d.connectivity || [];
     const hasZ = !!d.zigbee;
     const isLan = conn.some(c => ['lan', 'cloud'].includes(c));
     const type = hasZ && isLan ? 'hybrid' : hasZ ? 'zigbee' : WIFI(d.id) ? 'wifi' : 'virtual';
+    if (hasZ) {
+      const mfs = Array.isArray(d.zigbee.manufacturerName) ? d.zigbee.manufacturerName : [];
+      const synthetic = mfs.filter(isSyntheticManufacturer);
+      if (synthetic.length > 0) {
+        syntheticCount += synthetic.length;
+        if (syntheticExamples.length < 5) {
+          syntheticExamples.push(`${d.id}: ${synthetic.slice(0, 2).join(', ')}`);
+        }
+      }
+    }
     if (type === 'hybrid') hybrid++;
     else if (type === 'zigbee') {
       const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
@@ -396,6 +412,9 @@ if (app.drivers && Array.isArray(app.drivers)) {
     fail('M09', `${dualLayerErrors.length} Zigbee drivers WITH fingerprints but WITHOUT manufacturerName (AggregateError). Examples: ${dualLayerErrors.slice(0,3).join(', ')}`);
   } else {
     ok('M09', `Dual-Layer OK: ${zigbeeOk} Zigbee + ${hybrid} Hybrid (manufacturerName ✓), ${generic} generic templates (exempt), WiFi=${wifi}, Virtual=${virtual}`);
+  }
+  if (syntheticCount > 0) {
+    warn('M09', `${syntheticCount} synthetic Zigbee manufacturer identifier(s) detected in source app.json. prepare-publish must prune them to reduce Athom upload size. Examples: ${syntheticExamples.join(' | ')}`);
   }
 }
 
