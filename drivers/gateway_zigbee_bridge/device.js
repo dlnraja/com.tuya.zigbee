@@ -29,7 +29,7 @@ class ZbbridgeDevice extends AutoAdaptiveDevice {
     this.log('ZbbridgeDevice initializing...');
     
     // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error(err));
     
     this.log('ZbbridgeDevice initialized - Power source:', this.powerSource || 'unknown');
   }

@@ -1,6 +1,6 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
-require('../../lib/utils/CaseInsensitiveMatcher');
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
@@ -348,7 +348,7 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
       this.homey.setTimeout(() => { if (this._destroyed) return; this.safeSetCapabilityValue('button.press', false).catch(this.error); }, 100);
     }
     try {
-      const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
+      const genericTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed', 'trigger'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }

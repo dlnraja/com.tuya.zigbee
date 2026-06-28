@@ -77,7 +77,7 @@ const SENSOR_CONFIGS = require('../../lib/data/SensorConfigs');
 const MANUFACTURER_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   for (const mfr of config.sensors) {
-    MANUFACTURER_CONFIG_MAP[normalize(mfr)] = { ...config, configName };
+    MANUFACTURER_CONFIG_MAP[CI.normalize(mfr)] = { ...config, configName };
   }
 }
 
@@ -2621,7 +2621,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
-
 
 
 

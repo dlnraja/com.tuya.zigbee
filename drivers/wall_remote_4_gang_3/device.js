@@ -21,7 +21,7 @@ class WallRemote4Gang3Device extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this.buttonCount = 4;
 
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     this.log('[WALL_REMOTE_4_GANG_3] 🔘 v10.0.0 initialized via ButtonDevice');
   }

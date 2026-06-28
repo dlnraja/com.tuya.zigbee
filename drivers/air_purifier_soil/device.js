@@ -30,7 +30,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode }).catch(err => this.log('[SOIL] Base init error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.log('[SOIL] Base init error:', err.message));
     this.log('Soil Sensor v5.5.317 Ready');
   }
 

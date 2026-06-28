@@ -12,7 +12,7 @@ class SceneSwitch6chDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this.buttonCount = 6;
 
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     this.log('[SCENE_SWITCH_6CH] Initialized via ButtonDevice');
   }

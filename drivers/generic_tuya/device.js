@@ -67,7 +67,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     // Initialize AutoAdaptiveDevice (handles Tuya EF00 + dynamic discovery)
     try {
-      await super.onNodeInit({ zclNode }).catch(err => this.error('[GENERIC] Parent init error:', err));
+      await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[GENERIC] Parent init error:', err));
     } catch (err) {
       this.error('[GENERIC] Await error:', err);
     }

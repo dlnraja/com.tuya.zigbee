@@ -94,7 +94,7 @@ class Button1GangDevice extends ButtonDevice {
     const availableEndpoints = Object.keys(zclNode?.endpoints || {});this.log(`[BUTTON1]  Available endpoints: ${availableEndpoints.join(', ')}`);
 
     // Initialize ButtonDevice (handles basic button detection + battery)
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
     // The device sends onOff commands (outputCluster 6) which need binding
