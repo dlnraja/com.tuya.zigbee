@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-21T09:51:25.848Z",
+  "timestamp": "2026-06-28T09:29:29.543Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
@@ -12,13 +12,32 @@
     "deepSearch": 0
   },
   "variants": {
-    "confirmed": 0,
-    "details": []
+    "confirmed": 2,
+    "details": [
+      {
+        "from": "_TZE204_seq9cm6u",
+        "variant": "_TZE200_seq9cm6u",
+        "driver": "bed_sensor",
+        "sources": [
+          "z2m",
+          "gh-issues(15)"
+        ]
+      },
+      {
+        "from": "_TZE284_seq9cm6u",
+        "variant": "_TZE200_seq9cm6u",
+        "driver": "bed_sensor",
+        "sources": [
+          "z2m",
+          "gh-issues(15)"
+        ]
+      }
+    ]
   },
   "classified": {
-    "total": 12,
+    "total": 13,
     "byMethod": {
-      "ai-single": 12
+      "ai-single": 13
     },
     "details": [
       {
@@ -32,7 +51,7 @@
       },
       {
         "fp": "_TZ3000_qamj2vnn",
-        "driver": "switch_1gang",
+        "driver": "bulb_dimmable",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -41,7 +60,7 @@
       },
       {
         "fp": "_TZ3000_tw4ztbp4",
-        "driver": "switch_1gang",
+        "driver": "bulb_dimmable",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -50,7 +69,7 @@
       },
       {
         "fp": "_TZ3000_avotanj3",
-        "driver": "switch_1gang",
+        "driver": "bulb_dimmable",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -68,7 +87,7 @@
       },
       {
         "fp": "_TZ3210_iymfxdis",
-        "driver": "plug_energy_monitor",
+        "driver": "switch_2gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -77,33 +96,6 @@
       },
       {
         "fp": "_TZ3002_xkxgfxsg",
-        "driver": "button_wireless_1",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "external"
-        ]
-      },
-      {
-        "fp": "_TZ3002_tlsvxhxc",
-        "driver": "button_wireless_2",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "external"
-        ]
-      },
-      {
-        "fp": "_TZ3000_imdfhhud",
-        "driver": "switch_1gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "external"
-        ]
-      },
-      {
-        "fp": "_TZ3210_amleyeej",
         "driver": "plug_energy_monitor",
         "method": "ai-single",
         "pids": [],
@@ -112,7 +104,16 @@
         ]
       },
       {
-        "fp": "_TZ3000_mnlsbthu",
+        "fp": "_TZ3002_tlsvxhxc",
+        "driver": "plug_energy_monitor",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
+        "fp": "_TZE200_seq9cm6u",
         "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
@@ -121,8 +122,35 @@
         ]
       },
       {
+        "fp": "_TZ3000_imdfhhud",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
+        "fp": "_TZ3210_amleyeej",
+        "driver": "switch_2gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
+        "fp": "_TZ3000_mnlsbthu",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
         "fp": "_TZB000_yqjaollc",
-        "driver": "button_wireless_3",
+        "driver": "button_wireless_1",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -132,9 +160,9 @@
     ]
   },
   "implemented": {
-    "added": 0,
-    "skipped": 0
+    "added": 1,
+    "skipped": 1
   },
   "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1633,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 12,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 35,\n        \"fix\": \"Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 18\n      }\n    ]\n  }\n}\n```"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"sources_scanned\": {\n      \"external\": 1607,\n      \"github\": 26,\n      \"forks\": 0,\n      \"johan\": 0,\n      \"gmail\": 0,\n      \"forum\": 0,\n      \"diagnostics\": 0,\n      \"deepSearch\": 0\n    },\n    \"confirmed_variants\": 2,\n    \"new_fingerprints_classified\": 13,\n    \"auto_implemented\": 1,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"id\": \"battery\",\n        \"count\": 35,\n        \"priority\": \"high\",\n        \"top_fingerprints\": [\n          [\"vision\", 27],\n          [\"VISION\", 27],\n          [\"SENSOR\", 18],\n          [\"TS0601\", 18],\n          [\"_TZE\", 16],\n          [\"_tze\", 16],\n          [\"coordinator\", 16],\n          [\"_TZ3000_\", 15],\n          [\"_tz3000_\", 15],\n          [\"tuya\", 13]\n        ],\n        \"fix\": \"Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit\",\n        \"files\": [\"drivers/{driver}/device.js\"]\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"id\": \"pairing\",\n        \"count\": 18,\n        \"priority\": \"medium\"\n      }\n    ]\n  }\n}\n```"
 }
