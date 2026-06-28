@@ -92,9 +92,12 @@ jobs:
             exit 1
           fi
           cd "$PUBLISH_DIR"
-          npm install --omit=dev --no-audit --no-fund 2>/dev/null || true
-          echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
-          printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true
+          npm ci --omit=dev --ignore-scripts --no-audit --no-fund || npm install --omit=dev --ignore-scripts --no-audit --no-fund
+          if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+            HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR" 2>&1
+          else
+            HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR" 2>&1
+          fi
           echo "Draft publish completed"
 
   promote:
