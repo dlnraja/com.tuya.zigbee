@@ -4,11 +4,33 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 
+const MAINS_POWERED_RADARS = new Set([
+  '_tze204_clrdrnya',
+  '_tze200_clrdrnya',
+  '_tze200_lyetpprm',
+  '_tze204_lyetpprm',
+  '_tze200_wukb7rhc',
+  '_tze204_wukb7rhc',
+  '_tze200_jva8ink8',
+  '_tze204_jva8ink8',
+]);
+
 /**
  * Motion Sensor Radar mmWave Device - v8.0.0 MODERNIZED
  * Advanced mmWave radar driver with decoupled inference and autonomous discovery.
  */
 class MotionSensorRadarDevice extends BatteryMixin(UnifiedSensorBase) {
+  get mainsPowered() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || this._manufacturerName || '').toLowerCase();
+    return MAINS_POWERED_RADARS.has(mfr);
+  }
+
+  get sensorCapabilities() {
+    if (this.mainsPowered) {
+      return ['alarm_motion', 'measure_luminance.distance', 'measure_luminance'];
+    }
+    return ['alarm_motion', 'measure_luminance.distance', 'measure_luminance', 'measure_battery'];
+  }
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
@@ -19,6 +41,7 @@ class MotionSensorRadarDevice extends BatteryMixin(UnifiedSensorBase) {
       
       // Parent handles standard sensor logic and discovery initialization
       await super.onNodeInit({ zclNode });
+      await this._removeMainsPoweredPhantomCapabilities();
 
       // Setup firmware info for inference tuning
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
@@ -26,10 +49,6 @@ class MotionSensorRadarDevice extends BatteryMixin(UnifiedSensorBase) {
 
       this.log('[MMWAVE] ✅ Ready');
     }, 'onNodeInit');
-  }
-
-  get sensorCapabilities() {
-    return ['alarm_motion', 'measure_luminance.distance', 'measure_luminance', 'measure_battery'];
   }
 
   /**
@@ -58,6 +77,10 @@ class MotionSensorRadarDevice extends BatteryMixin(UnifiedSensorBase) {
 
       case 4: // Battery
       case 15:
+        if (this.mainsPowered) {
+          this.log(`[MMWAVE] Skipping battery DP${dpId} on mains-powered radar`);
+          return;
+        }
         return this.safeSetCapabilityValue('measure_battery', value).catch(() => {});
     }
 
@@ -65,6 +88,16 @@ class MotionSensorRadarDevice extends BatteryMixin(UnifiedSensorBase) {
     if (this.universalDataHandler) {
       // In UnifiedSensorBase, handleDP usually takes care of it, 
       // but if we override onTuyaDP we should make sure fallbacks work.
+    }
+  }
+
+  async _removeMainsPoweredPhantomCapabilities() {
+    if (!this.mainsPowered) { return; }
+    for (const cap of ['measure_temperature', 'measure_humidity', 'measure_battery']) {
+      if (!this.hasCapability(cap)) { continue; }
+      await this.removeCapability(cap)
+        .then(() => this.log(`[MMWAVE] Removed unsupported mains-powered capability: ${cap}`))
+        .catch((err) => this.log(`[MMWAVE] Could not remove ${cap}: ${err.message}`));
     }
   }
 

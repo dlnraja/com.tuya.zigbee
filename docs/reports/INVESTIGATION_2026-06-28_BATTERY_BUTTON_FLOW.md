@@ -49,3 +49,32 @@ Remote note: `8c9c03badd chore(auto-heal): Apply Tuya self-heal repairs [skip ci
 ## Remaining non-blocking warnings
 
 Homey currently warns that some flow cards have no `titleFormatted`. Those cards validate for publish today. They should be filled later with argument-complete formats that do not use `[[device]]`.
+
+## Follow-up 2026-06-28 16:50 Europe/Paris - Radar and TS0041 routing
+
+Additional sources crossed: GitHub issues #420, #410, #412, forum thread `https://community.homey.app/t/140352`, local driver history for `motion_sensor_radar_mmwave`, `presence_sensor_radar`, `button_wireless_4`, `button_wireless_smart`, `smart_button_switch`, and `PhysicalButtonMixin`.
+
+Root causes found:
+
+1. Wenzhi `MTG235-ZB-RL` (`_TZE204_clrdrnya` / `_TZE200_clrdrnya`) was split across presence-radar and mmWave assumptions. The latest issue data maps DP1 to presence, DP9 to distance, and DP12 to illuminance, matching the mmWave driver better than the generic presence radar driver.
+2. Stable-v5 mmWave still exposed battery for some mains-powered radar variants, producing question-mark battery states on devices that do not report battery.
+3. Mains-powered mmWave devices could retain legacy `measure_battery`, `measure_temperature`, or `measure_humidity` capabilities from older pairings, causing Homey dashboard phantom readings.
+4. `_TZ3000_yj6k7vfo` reports as `TS0041`, but issue #412 shows four endpoints with on/off clusters. Treating only the product id as one-button caused the wrong driver/mixin assumptions.
+
+Actions:
+
+- Removed `_TZE204_clrdrnya` / `_TZE200_clrdrnya` from `presence_sensor_radar`; they now resolve through `motion_sensor_radar_mmwave`.
+- Added mains-powered mmWave capability selection, battery-DP skip logic, and startup cleanup for unsupported phantom capabilities.
+- Routed `_TZ3000_yj6k7vfo` to `button_wireless_4`, removed it from one-button drivers, and pinned `buttonCount: 4` in `PhysicalButtonMixin`.
+- Repaired the local `prepush` contract by replacing the missing `pre-push-intelligent.js` reference with existing gates: `precommit`, recursive validation, and publish validation.
+
+Validation:
+
+- `node --check` on touched JS files: pass.
+- Target fingerprint audit: `_TZE204_clrdrnya`, `_TZE200_clrdrnya`, and `_TZ3000_yj6k7vfo` each resolve to exactly one intended driver.
+- `npm run validate:recursive`: pass, 228/228 drivers, 0 critical errors.
+- `node scripts/_validate_all.js`: pass for JSON, JS brackets, and flow-card references.
+- `npm run precommit`: pass; historical warnings only.
+- `npm run validate:publish`: pass, with existing non-blocking `titleFormatted` warnings.
+- `npm run prepush`: pass; it now executes precommit, recursive validation, and publish validation successfully.
+- `git diff --check`: pass.
