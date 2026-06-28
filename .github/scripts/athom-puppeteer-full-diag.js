@@ -60,7 +60,11 @@ async function autoLogin(page, captured) {
   // Read CLI session
   const settingsPath = path.join(process.env.APPDATA||'','athom-cli','settings.json');
   if (!fs.existsSync(settingsPath)) {
-    log('[AUTH] ❌ CLI session not found — run: homey login');
+    log('[AUTH] CLI session not found; trying HOMEY_EMAIL/HOMEY_PASSWORD...');
+    if (process.env.HOMEY_EMAIL && process.env.HOMEY_PASSWORD) {
+      return await doManualLogin(page, captured);
+    }
+    log('[AUTH] ❌ No credentials available. Set HOMEY_EMAIL/HOMEY_PASSWORD or run: homey login');
     return false;
   }
   
