@@ -193,7 +193,6 @@ jobs:
           restore-keys: forum-
       - name: Run forum scan
         id: forum_scan
-        env:
         run: |
           node .github/scripts/scan-forum.js
           if [ -s /tmp/forum_issues.json ]; then
