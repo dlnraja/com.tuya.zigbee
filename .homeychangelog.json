@@ -573,6 +573,9 @@
       ]
     }
   ],
+  "9.0.139": {
+    "en": "v9.0.139: automated publish, manifest sync, and Homey test promotion."
+  },
   "9.0.138": {
     "en": "v9.0.138: automated publish, manifest sync, and Homey test promotion."
   },
@@ -627,10 +630,7 @@
   "9.0.121": {
     "en": "v9.0.121: stabilized post-publish manifest sync, changelog cleanup, and fingerprint collision baseline."
   },
-  "9.0.120": {
-    "en": "v9.0.120: automated publish and fingerprint synchronization."
-  },
-  "9.0.139": {
-    "en": "v9.0.139: automated publish, manifest sync, and Homey test promotion."
+  "9.0.140": {
+    "en": "v9.0.140: automated publish, manifest sync, and Homey test promotion."
   }
 }
