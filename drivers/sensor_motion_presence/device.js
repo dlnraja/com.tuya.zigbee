@@ -127,10 +127,10 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     }
   }
   async _triggerPresenceFlows(detected) {
-    const cardId = detected ? 'sensor_motion_presence_hybrid_presence_detected' : 'sensor_motion_presence_hybrid_presence_cleared';
-    try { await this.homey.flow.getTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
+    const cardId = detected ? 'sensor_motion_presence_presence_detected' : 'sensor_motion_presence_presence_cleared';
+    try { await this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
     if (detected) {
-      try { await this.homey.flow.getTriggerCard('sensor_motion_presence_hybrid_motion_detected').trigger(this, {}).catch(() => {}); } catch (e) {}
+      try { await this.homey.flow.getDeviceTriggerCard('sensor_motion_presence_motion_detected').trigger(this, {}).catch(() => {}); } catch (e) {}
     }
   }
   async _setupZclClusters(zclNode) {

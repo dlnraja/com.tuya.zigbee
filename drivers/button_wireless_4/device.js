@@ -13,7 +13,7 @@ class Button4GangDevice extends ButtonDevice {
     this.buttonCount = 4;
     this.gangCount = 4;
 
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     this.log('[BUTTON_WIRELESS_4] 🔘 v10.0.0 initialized via ButtonDevice');
   }

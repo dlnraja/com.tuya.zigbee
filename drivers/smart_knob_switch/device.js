@@ -14,7 +14,7 @@ class SmartKnobSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Butto
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.buttonCount = 1;
       this.log('[SMART_KNOB_SWITCH] v5.12.0 init - 1 button');
-      await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_KNOB_SWITCH] init err:', err.message));
+      await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[SMART_KNOB_SWITCH] init err:', err.message));
       this.log('[SMART_KNOB_SWITCH] ready');
      }, 'onNodeInit');
   }

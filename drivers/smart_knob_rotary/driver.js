@@ -40,8 +40,9 @@ class SmartKnobRotaryDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const val = args.device.getCapabilityValue('measure_co2') || 0;
-          return val > (args.threshold || 400);
+          const currentDim = Number(args.device.getCapabilityValue('dim') ?? 0) * 100;
+          const level = Number(args.level ?? args.threshold ?? 0);
+          return currentDim > level;
       });
       }
     } catch (err) { this.error(`Condition smart_knob_rotary_brightness_above: ${err.message}`); }
@@ -52,7 +53,9 @@ class SmartKnobRotaryDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device['setCapabilityValue']('dim', args.brightness || args.value || 1).catch(() => {});
+          const brightness = Number(args.brightness ?? args.value ?? 100);
+          const dim = Math.max(0, Math.min(1, brightness > 1 ? brightness / 100 : brightness));
+          await args.device.setCapabilityValue('dim', dim).catch(() => {});
           return true;
         });
       }

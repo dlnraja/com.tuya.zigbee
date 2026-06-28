@@ -12,7 +12,7 @@ class Button2GangDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this.buttonCount = 2;
 
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     this.log('[BUTTON_WIRELESS_2] 🔘 v10.0.0 initialized via ButtonDevice');
   }
