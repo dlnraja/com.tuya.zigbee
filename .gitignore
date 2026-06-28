@@ -118,6 +118,7 @@ coverage/
 # Cache files
 .cache/
 *.cache
+.diag/
 
 # OS files
 .DS_Store
@@ -189,6 +190,9 @@ oauth2.keys.json
 client_secret*.json
 
 # Security: token/secret files in state directory
+.github/state/**
+!.github/state/.gitkeep
+!.github/state/README.md
 .github/state/_new_refresh_token*
 .github/state/_token_*
 .github/state/*secret*
@@ -199,6 +203,8 @@ client_secret*.json
 .github/state/*diagnostics-raw*.json
 diagnostics/raw/
 diagnostics/**/*.raw.json
+diagnostics/**/*.json
+!diagnostics/reports/.gitkeep
 gmail-dumps/
 
 # Security: screenshots may contain credentials (login pages, etc.)
@@ -217,6 +223,9 @@ page-dump.html
 .netrc
 .npmrc
 !.npmrc.example
+
+# Security: local one-off fix scripts often contain private absolute paths
+.agents/fix_*.js
 
 # Temporary workspace directories and scratch scripts
 tmp/

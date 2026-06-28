@@ -22,6 +22,7 @@
     "publish": "homey app publish",
     "rename": "node scripts/fixes/RENAME_ALL_DUPLICATE_NAMES.js",
     "security-scan": "node scripts/ci/security-scanner.js",
+    "security:history": "node scripts/ci/history-secret-scanner.js",
     "security:diagnostics": "node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/gmail-token-health.json diagnostics",
     "security:full": "node scripts/ci/security-scanner.js && node scripts/ci/signature-audit.js",
     "test": "mocha test/**/*.test.js --timeout 5000",

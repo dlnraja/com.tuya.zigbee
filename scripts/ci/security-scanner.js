@@ -16,7 +16,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execFileSync, execSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '../..');
 const RED = '\x1b[31m';
@@ -24,7 +24,7 @@ const GREEN = '\x1b[32m';
 const YELLOW = '\x1b[33m';
 const RESET = '\x1b[0m';
 const BOLD = '\x1b[1m';
-const MAX_SCAN_BYTES = 512 * 1024;
+const MAX_SCAN_BYTES = 2 * 1024 * 1024;
 
 const SECRET_PATTERNS = [
   // Generic API keys
@@ -75,6 +75,33 @@ const FORBIDDEN_FILES = [
   '*.p12',
   '*.pfx',
   '*.keystore',
+];
+
+const FORBIDDEN_TRACKED_PATHS = [
+  {
+    pattern: /^\.github\/state\/(?!\.gitkeep$|README\.md$).+/,
+    reason: 'generated dashboard/forum/Gmail/diagnostic state can contain private operational data',
+  },
+  {
+    pattern: /^\.diag\/.+/,
+    reason: 'diagnostic tarballs can embed old app snapshots, private state, and cached dashboard data',
+  },
+  {
+    pattern: /^\.cache\/.+/,
+    reason: 'local cache entries can contain downloaded API responses or generated analysis artifacts',
+  },
+  {
+    pattern: /^diagnostics\/(?!README\.md$|reports\/\.gitkeep$).+/,
+    reason: 'local diagnostics can contain Homey IDs, crash context, and user environment details',
+  },
+  {
+    pattern: /^screenshots(?:\/|$)/,
+    reason: 'dashboard/login screenshots can expose account or session details',
+  },
+  {
+    pattern: /^\.agents\/fix_.*\.js$/,
+    reason: 'one-off local repair scripts often contain private absolute paths',
+  },
 ];
 
 const EXCLUDED_PATHS = [
@@ -150,8 +177,18 @@ function patternLikelyRelevant(pattern, content, lower) {
 
 function checkForbiddenFiles() {
   let found = false;
-  console.log(`\n${BOLD}[1/3] Checking for forbidden files...${RESET}`);
+  console.log(`\n${BOLD}[1/4] Checking for forbidden files and tracked private artifacts...${RESET}`);
   const trackedFiles = getTrackedFiles();
+
+  for (const file of trackedFiles) {
+    for (const rule of FORBIDDEN_TRACKED_PATHS) {
+      if (rule.pattern.test(file)) {
+        console.log(`  ${RED}⚠  FORBIDDEN TRACKED PATH: ${file}${RESET}`);
+        console.log(`  ${YELLOW}   → ${rule.reason}${RESET}`);
+        found = true;
+      }
+    }
+  }
 
   const walkDir = (dir, depth = 0) => {
     if (depth > 4) return;
@@ -186,13 +223,13 @@ function checkForbiddenFiles() {
   };
 
   walkDir(ROOT);
-  if (!found) console.log(`  ${GREEN}✓ No forbidden files found${RESET}`);
+  if (!found) console.log(`  ${GREEN}✓ No forbidden files or tracked private artifacts found${RESET}`);
   return found;
 }
 
 function checkGitConfigForTokens() {
   let found = false;
-  console.log(`\n${BOLD}[2/3] Checking git config for embedded tokens...${RESET}`);
+  console.log(`\n${BOLD}[2/4] Checking git config for embedded tokens...${RESET}`);
 
   try {
     const gitConfigPath = path.join(ROOT, '.git', 'config');
@@ -231,74 +268,79 @@ function checkGitConfigForTokens() {
 
 function scanFilesForSecrets() {
   let found = false;
-  console.log(`\n${BOLD}[3/3] Scanning tracked files for hardcoded secrets...${RESET}`);
+  console.log(`\n${BOLD}[3/4] Scanning tracked files for hardcoded secrets...${RESET}`);
 
   try {
-    // Use git-ls-files to get only tracked files (not node_modules, .git, etc.)
-    const files = [...getTrackedFiles()];
+    const grepPatterns = [
+      'gh[pousrx]_[A-Za-z0-9_]{36,}',
+      'github_pat_[A-Za-z0-9_]{20,}_[A-Za-z0-9_]{40,}',
+      'AKIA[0-9A-Z]{16}',
+      'AIza[0-9A-Za-z_-]{35}',
+      'xox[baprs]-[A-Za-z0-9-]{10,}',
+      '-----BEGIN (RSA |EC |DSA |OPENSSH )?PRIVATE KEY-----',
+      'eyJ[A-Za-z0-9_-]{10,}\\.eyJ[A-Za-z0-9_-]{10,}\\.[A-Za-z0-9_-]+',
+      'Bearer[[:space:]]+[A-Za-z0-9._-]{24,}',
+      '(mongodb|postgres|mysql|redis|amqp)://[^:[:space:]]+:[^@[:space:]]+@[^/[:space:]]+',
+      'homey[_-]?pat[_-]?[A-Za-z0-9_-]{20,}',
+      'tuya[_-]?(secret|token|api[_-]?secret)[[:space:]]*[:=][[:space:]]*[\\047"][A-Za-z0-9_-]{16,}[\\047"]',
+      'password[\\047"]?[[:space:]]*[:=][[:space:]]*[\\047"][^\\047"[:space:]]{8,}[\\047"]',
+    ];
+    const args = ['grep', '-I', '-n', '-E'];
+    for (const pattern of grepPatterns) args.push('-e', pattern);
+    args.push('--',
+      '.',
+      ':(exclude).git/**',
+      ':(exclude)node_modules/**',
+      ':(exclude).github/state/**',
+      ':(exclude).agents/skills/**',
+      ':(exclude).diag/**',
+      ':(exclude).cache/**',
+      ':(exclude)diagnostics/**',
+      ':(exclude)dumps/**',
+      ':(exclude)screenshots/**',
+      ':(exclude)docs/**',
+      ':(exclude)reports/**',
+      ':(exclude)test/**',
+      ':(exclude)tests/**',
+      ':(exclude)package-lock.json',
+      ':(exclude)scripts/ci/security-scanner.js',
+      ':(exclude)scripts/ci/history-secret-scanner.js',
+    );
 
-    // Only scan source files (skip binaries, images, markdown, etc.).
-    // .md excluded: docs don't hold executable secrets and add ~340 large files
-    // to scan, significantly slowing the scanner on this large repo.
-    const SCAN_EXTENSIONS = ['.js', '.json', '.yml', '.yaml', '.sh', '.env.example', '.ts'];
-    
-    for (const file of files) {
-      const ext = path.extname(file).toLowerCase();
-      if (!SCAN_EXTENSIONS.includes(ext)) continue;
-      
-      // Skip excluded paths
-      let excluded = false;
-      for (const excPath of EXCLUDED_PATHS) {
-        if (file.startsWith(excPath)) {
-          excluded = true;
-          break;
-        }
-      }
-      if (excluded) continue;
-      
-      // Skip excluded files
-      const baseName = path.basename(file);
-      if (EXCLUDED_FILES.includes(baseName)) continue;
+    let raw = '';
+    try {
+      raw = execFileSync('git', args, {
+        cwd: ROOT,
+        encoding: 'utf8',
+        maxBuffer: 16 * 1024 * 1024,
+        timeout: 60000,
+      });
+    } catch (err) {
+      raw = err.stdout || '';
+      if (err.status && err.status !== 1) throw err;
+    }
 
-      const fullPath = path.join(ROOT, file);
-      if (!fs.existsSync(fullPath)) continue;
-      const stat = fs.statSync(fullPath);
-      if (stat.size > MAX_SCAN_BYTES) {
-        console.log(`  ${YELLOW}⚠  Skipping large tracked file (${Math.round(stat.size / 1024 / 1024)}MB): ${file}${RESET}`);
-        continue;
-      }
-      
-      const content = fs.readFileSync(fullPath, 'utf8');
-      const lower = content.toLowerCase();
-      
-      for (const pattern of SECRET_PATTERNS) {
-        if (!patternLikelyRelevant(pattern, content, lower)) continue;
-        pattern.lastIndex = 0;
-        const matches = content.match(pattern);
-        if (matches) {
-          for (const match of matches) {
-            // Skip examples, placeholders, and documentation patterns
-            if (match.includes('your-') || match.includes('example') || match.includes('<your-') || 
-                match.includes('****') || match.includes('xxxx') || match.includes('*****')) continue;
-            if (/\[REDACTED_[A-Z0-9_-]+(?::[a-f0-9]{6,})?\]/.test(match)) continue;
-            if (file === '.gitignore') continue;
-            // Skip app.js name detection
-            if (file === 'app.js' && match === 'homey-universal-tuya-zigbee') continue;
-            
-            const sanitized = match.replace(/:[^:]*@/, ':*****@')
-              .replace(/gh[pousrx]_[A-Za-z0-9_]{36,}/g, 'ghx_****')
-              .replace(/AIza[0-9A-Za-z_-]{35}/g, 'AIza****')
-              .replace(/AKIA[0-9A-Z]{16}/g, 'AKIA****')
-              .replace(/password['"]?\s*[:=]\s*['"][^'"]{4,}['"]/gi, (m) => m.replace(/['"][^'"]{4,}['"]/, "'****'"));
-            
-            console.log(`  ${RED}⚠  SUSPICIOUS in ${file}: ${sanitized.substring(0, 200)}${RESET}`);
-            found = true;
-          }
-        }
-      }
+    const lines = raw.split(/\r?\n/).filter(Boolean);
+    for (const line of lines.slice(0, 200)) {
+      const sanitized = line
+        .replace(/gh[pousrx]_[A-Za-z0-9_]{36,}/g, 'ghx_****')
+        .replace(/github_pat_[A-Za-z0-9_]{20,}_[A-Za-z0-9_]{40,}/g, 'github_pat_****')
+        .replace(/AIza[0-9A-Za-z_-]{35}/g, 'AIza****')
+        .replace(/AKIA[0-9A-Z]{16}/g, 'AKIA****')
+        .replace(/xox[baprs]-[A-Za-z0-9-]{10,}/g, 'xox****')
+        .replace(/Bearer\s+[A-Za-z0-9._-]{24,}/g, 'Bearer ****')
+        .replace(/eyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]+/g, 'jwt.****')
+        .replace(/password['"]?\s*[:=]\s*['"][^'"]{4,}['"]/gi, (m) => m.replace(/['"][^'"]{4,}['"]/, "'****'"));
+      console.log(`  ${RED}⚠  SUSPICIOUS: ${sanitized.substring(0, 240)}${RESET}`);
+      found = true;
+    }
+    if (lines.length > 200) {
+      console.log(`  ${YELLOW}⚠  ${lines.length - 200} additional suspicious lines suppressed${RESET}`);
+      found = true;
     }
   } catch (err) {
     console.log(`  ${YELLOW}⚠  Scan error: ${err.message}${RESET}`);
+    found = true;
   }
 
   if (!found) console.log(`  ${GREEN}✓ No hardcoded secrets detected in tracked files${RESET}`);
@@ -374,8 +416,8 @@ async function main() {
   console.log(`${BOLD}${YELLOW}══════════════════════════════════════${RESET}\n`);
 
   if (totalIssues > 0) {
-    console.log(`${YELLOW}⚠  The findings above are from example/documentation files.${RESET}`);
-    console.log(`${YELLOW}   No actual credentials were found in the repository.${RESET}`);
+    console.log(`${YELLOW}⚠  Security findings were detected above.${RESET}`);
+    console.log(`${YELLOW}   Remove generated/private artifacts from Git, rotate any exposed credentials, then rerun this scanner.${RESET}`);
     if (gitTokenFound) {
       console.log(`${RED}🚨 CRITICAL: Git remote URL contains an embedded token!${RESET}`);
       console.log(`${YELLOW}   Fix: git remote set-url origin https://github.com/dlnraja/com.tuya.zigbee.git${RESET}`);

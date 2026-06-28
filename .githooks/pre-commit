@@ -209,32 +209,13 @@ else
   echo -e "${GREEN}  PASSED: Publish payload size gates${RESET}"
 fi
 
-# ─── 9. Security scan on staged .js files ────────────────────────────────────
-echo -e "${CYAN}[9/$TOTAL_CHECKS] Security scan on staged JS files...${RESET}"
-STAGED_JS=$(git diff --cached --name-only --diff-filter=ACM | grep '\.js$' | grep -v 'node_modules/' | grep -v '.github/scripts/temp/' || true)
-SEC_ERRORS=0
-if [ -n "$STAGED_JS" ]; then
-  while IFS= read -r file; do
-    if [ -f "$ROOT/$file" ]; then
-      # Check for eval() usage (security risk)
-      if grep -q 'eval(' "$ROOT/$file" 2>/dev/null; then
-        echo -e "${RED}  SECURITY: eval() found in $file${RESET}"
-        SEC_ERRORS=$((SEC_ERRORS + 1))
-      fi
-      # Check for hardcoded API keys / tokens (but skip comments)
-      HARDKEYS=$(grep -n -E '(sk-[a-zA-Z0-9]{20,}|ghp_[a-zA-Z0-9]{36}|AKIA[0-9A-Z]{16})' "$ROOT/$file" 2>/dev/null | grep -v '^[0-9]*:[[:space:]]*//' | grep -v '^[0-9]*:[[:space:]]*\*' || true)
-      if [ -n "$HARDKEYS" ]; then
-        echo -e "${RED}  SECURITY: Hardcoded secret found in $file${RESET}"
-        SEC_ERRORS=$((SEC_ERRORS + 1))
-      fi
-    fi
-  done <<< "$STAGED_JS"
-fi
-if [ $SEC_ERRORS -gt 0 ]; then
-  echo -e "${RED}  COMMIT BLOCKED — $SEC_ERRORS security issue(s) found!${RESET}"
+# ─── 9. Full security scan ───────────────────────────────────────────────────
+echo -e "${CYAN}[9/$TOTAL_CHECKS] Running full tracked-file security scan...${RESET}"
+if ! node "$ROOT/scripts/ci/security-scanner.js"; then
+  echo -e "${RED}  COMMIT BLOCKED — Security scanner found tracked private artifacts or secrets${RESET}"
   ERRORS=$((ERRORS + 1))
 else
-  echo -e "${GREEN}  PASSED: No security issues in staged JS files${RESET}"
+  echo -e "${GREEN}  PASSED: Full security scan${RESET}"
 fi
 
 # ─── Summary ─────────────────────────────────────────────────────────────────
