@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-21T22:56:12.965Z",
+  "timestamp": "2026-06-28T08:33:14.374Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -36,11 +36,11 @@
           16
         ],
         [
-          "_TZ3000_",
-          15
+          "COORDINATOR",
+          16
         ],
         [
-          "_tz3000_",
+          "_TZ3000_",
           15
         ],
         [
@@ -64,6 +64,10 @@
           15
         ],
         [
+          "TUYA",
+          15
+        ],
+        [
           "vision",
           13
         ],
@@ -76,11 +80,15 @@
           12
         ],
         [
-          "_tz3000_",
+          "coordinator",
           12
         ],
         [
-          "coordinator",
+          "COORDINATOR",
+          12
+        ],
+        [
+          "ROUTER",
           12
         ],
         [
@@ -90,14 +98,6 @@
         [
           "RELAY",
           7
-        ],
-        [
-          "SENSOR",
-          6
-        ],
-        [
-          "router",
-          6
         ]
       ],
       "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
@@ -112,6 +112,10 @@
       "priority": "high",
       "topFPs": [
         [
+          "TEST",
+          10
+        ],
+        [
           "zigbee2mqtt",
           7
         ],
@@ -125,10 +129,6 @@
         ],
         [
           "TS0601",
-          5
-        ],
-        [
-          "TEST",
           5
         ],
         [
@@ -166,6 +166,18 @@
           7
         ],
         [
+          "TUYA",
+          7
+        ],
+        [
+          "TEST",
+          6
+        ],
+        [
+          "ROUTER",
+          4
+        ],
+        [
           "_TZE",
           3
         ],
@@ -178,27 +190,15 @@
           3
         ],
         [
+          "EXAMPLE",
+          3
+        ],
+        [
           "_tze",
           3
         ],
         [
           "TS0601",
-          3
-        ],
-        [
-          "TEST",
-          3
-        ],
-        [
-          "_TZ3000_",
-          3
-        ],
-        [
-          "vision",
-          3
-        ],
-        [
-          "coordinator",
           3
         ]
       ],
@@ -226,12 +226,12 @@
           3
         ],
         [
-          "_tz3000_",
+          "TS011F",
           3
         ],
         [
-          "TS011F",
-          3
+          "ROUTER",
+          2
         ],
         [
           "_TZ3000_j1v25l17",
@@ -280,15 +280,19 @@
           2
         ],
         [
+          "COORDINATOR",
+          2
+        ],
+        [
+          "TEST",
+          2
+        ],
+        [
           "VISION",
           2
         ],
         [
           "_tze",
-          2
-        ],
-        [
-          "_tze204_",
           2
         ],
         [
@@ -298,10 +302,6 @@
         [
           "SENSOR",
           2
-        ],
-        [
-          "_TZE204_qyr2m29i",
-          1
         ]
       ],
       "fix": "Check TuyaEF00Manager.js:1912 — skip auto-convert when dpMappings has divisor !== 1",
@@ -324,11 +324,15 @@
           2
         ],
         [
-          "ZIGBEE2MQTT",
+          "DEBUG",
           2
         ],
         [
-          "_tz3000_",
+          "TEST",
+          2
+        ],
+        [
+          "ZIGBEE2MQTT",
           2
         ],
         [
@@ -349,10 +353,6 @@
         ],
         [
           "SONOFF",
-          1
-        ],
-        [
-          "_TZ3000_TSGQXDB4",
           1
         ]
       ],
@@ -390,19 +390,19 @@
           1
         ],
         [
+          "TUYA",
+          1
+        ],
+        [
+          "DECONZ",
+          1
+        ],
+        [
           "VISION",
           1
         ],
         [
           "_tze200_wfxuhoea",
-          1
-        ],
-        [
-          "_tze",
-          1
-        ],
-        [
-          "_tze200_",
           1
         ]
       ],
@@ -435,19 +435,15 @@
           1
         ],
         [
-          "_tz3000_xr3htd96",
-          1
-        ],
-        [
           "tuya",
           1
         ],
         [
-          "VISION",
+          "TUYA",
           1
         ],
         [
-          "_tz3000_",
+          "VISION",
           1
         ],
         [
@@ -468,6 +464,10 @@
       "count": 1,
       "priority": "low",
       "topFPs": [
+        [
+          "ROUTER",
+          2
+        ],
         [
           "_TZE204_clrdrnya",
           1
@@ -493,19 +493,15 @@
           1
         ],
         [
+          "LUMI",
+          1
+        ],
+        [
           "coordinator",
           1
         ],
         [
-          "VISION",
-          1
-        ],
-        [
-          "_TZE204_CLRDRNYA",
-          1
-        ],
-        [
-          "_tze204_clrdrnya",
+          "COORDINATOR",
           1
         ]
       ],
