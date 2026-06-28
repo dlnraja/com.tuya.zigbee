@@ -86,8 +86,12 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
-          if [ -d "$PUBLISH_DIR" ]; then cd "$PUBLISH_DIR"; fi
+          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+          if [ ! -d "$PUBLISH_DIR" ]; then
+            echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+            exit 1
+          fi
+          cd "$PUBLISH_DIR"
           npm install --omit=dev --no-audit --no-fund 2>/dev/null || true
           echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
           printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true

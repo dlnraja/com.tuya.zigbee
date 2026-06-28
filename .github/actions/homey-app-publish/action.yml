@@ -32,10 +32,12 @@ runs:
       env:
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
-        PUBLISH_DIR="${RUNNER_TEMP:-/tmp}/homey-publish-temp"
-        if [ -d "$PUBLISH_DIR" ]; then
-          cd "$PUBLISH_DIR"
+        PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+        if [ ! -d "$PUBLISH_DIR" ]; then
+          echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+          exit 1
         fi
+        cd "$PUBLISH_DIR"
         npm install --omit=dev --no-audit --no-fund
         node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR"
         HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
