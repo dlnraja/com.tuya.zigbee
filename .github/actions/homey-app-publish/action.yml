@@ -38,14 +38,15 @@ runs:
           exit 1
         fi
         cd "$PUBLISH_DIR"
-        npm install --omit=dev --no-audit --no-fund
+        npm ci --omit=dev --ignore-scripts --no-audit --no-fund || npm install --omit=dev --ignore-scripts --no-audit --no-fund
         node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR"
         HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
-        echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
-        set +o pipefail
-        yes y | npx homey app publish 2>&1
-        publish_status=${PIPESTATUS[1]}
-        set -o pipefail
+        if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+          HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR" 2>&1
+        else
+          HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR" 2>&1
+        fi
+        publish_status=$?
         APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
         exit "$publish_status"
