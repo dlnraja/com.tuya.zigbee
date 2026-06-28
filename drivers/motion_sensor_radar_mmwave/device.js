@@ -52,6 +52,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       
       // Parent handles standard sensor logic and discovery initialization
       await super.onNodeInit({ zclNode });
+      await this._removeMainsPoweredPhantomCapabilities();
 
       // Setup firmware info for inference tuning
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
@@ -97,7 +98,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
       case 9: // Distance (cm to m)
       case 102:
-        const distance = smartParse(value, null, { capability: 'measure_temperature' });
+        const distance = smartParse(value, dpId, { capability: 'measure_luminance.distance' });
         this._inference.updateDistance(distance);
         return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
 
@@ -120,6 +121,16 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
     if (this.universalDataHandler) {
       // In UnifiedSensorBase, handleDP usually takes care of it, 
       // but if we override onTuyaDP we should make sure fallbacks work.
+    }
+  }
+
+  async _removeMainsPoweredPhantomCapabilities() {
+    if (!this.mainsPowered) { return; }
+    for (const cap of ['measure_temperature', 'measure_humidity', 'measure_battery']) {
+      if (!this.hasCapability(cap)) { continue; }
+      await this.removeCapability(cap)
+        .then(() => this.log(`[MMWAVE] Removed unsupported mains-powered capability: ${cap}`))
+        .catch((err) => this.log(`[MMWAVE] Could not remove ${cap}: ${err.message}`));
     }
   }
 

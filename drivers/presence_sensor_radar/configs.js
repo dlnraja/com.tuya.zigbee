@@ -50,7 +50,6 @@ const SENSOR_CONFIGS = {
   'MAINS_POWERED_RADAR': {
     configName: 'MAINS_POWERED_RADAR',
     sensors: [
-      '_TZE204_clrdrnya', '_TZE200_clrdrnya',
       '_TZE204_lyetpprm', '_TZE200_lyetpprm',
       '_TZE204_wukb7rhc', '_TZE200_wukb7rhc',
       '_TZE204_jva8ink8', '_TZE200_jva8ink8',

@@ -12,7 +12,7 @@ const newScripts = {
   'master:full':                'node scripts/master-automation.js --fix --commit --push --verbose',
   'master:dry':                 'node scripts/master-automation.js --fix --dry-run --verbose',
   'check':                      'node scripts/master-automation.js --verbose',
-  'prepush':                    'node scripts/master-automation.js && node scripts/automation/pre-push-intelligent.js'
+  'prepush':                    'node scripts/master-automation.js && node scripts/automation/pre-push-dual-layer-gate.js'
 };
 
 Object.assign(pkg.scripts, newScripts);
