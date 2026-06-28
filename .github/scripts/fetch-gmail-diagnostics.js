@@ -13,6 +13,8 @@ const SF=path.join(SD,'diagnostics-state.json');
 const RF=path.join(SD,'diagnostics-report.json');
 const ROOT=path.join(__dirname,'..','..'),DD=path.join(ROOT,'drivers');
 const DRY=process.env.DRY_RUN==='true';
+const CI=process.env.CI==='true'||process.env.GITHUB_ACTIONS==='true';
+const intEnv=(name,fallback)=>{const n=Number.parseInt(process.env[name]||'',10);return Number.isFinite(n)?n:fallback};
 const load=()=>{try{return JSON.parse(fs.readFileSync(SF,'utf8'))}catch{return{lastCheck:null,processed:[]}}};
 const save=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stringify(s,null,2))};
 
@@ -187,13 +189,20 @@ function parseCrash(em){
     bodyExcerpt:sanitize(body.substring(0,1000))});
 }
 
-// Rate limiter: 4s between Gemini calls (max 15 RPM), cap 10/run
-let _aiCalls=0;const AI_MAX=10;
+// Rate limiter: AI is optional. CI/DRY runs prioritize deterministic crash extraction.
+let _aiCalls=0,_aiSkipLogged=false;
+const AI_MAX=Math.max(0,intEnv('GMAIL_DIAG_AI_MAX',(DRY||CI)?0:10));
+const AI_RETRIES=Math.max(0,intEnv('GMAIL_DIAG_AI_RETRIES',AI_MAX>0?1:0));
+const AI_TIMEOUT_MS=Math.max(1000,intEnv('GMAIL_DIAG_AI_TIMEOUT_MS',8000));
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 
 // Gemini AI analysis
 async function aiAnalyze(diag,subj,type,xref,bodyExcerpt){
   const gk=process.env.GOOGLE_API_KEY;if(!gk)return null;
+  if(AI_MAX<=0){
+    if(!_aiSkipLogged){console.log('AI analysis disabled for this diagnostics run');_aiSkipLogged=true}
+    return null;
+  }
   if(++_aiCalls>AI_MAX){console.log('AI quota guard: skip ('+_aiCalls+'/'+AI_MAX+')');return null;}
   if(_aiCalls>1)await delay(4000);
   const prompt='Analyze this Homey Zigbee email (type: '+type+').\n'+
@@ -211,7 +220,7 @@ async function aiAnalyze(diag,subj,type,xref,bodyExcerpt){
     const r=await fetchWithRetry('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gk,{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}],
-        generationConfig:{temperature:0.1,maxOutputTokens:600}})},{retries:2,label:'geminiAI'});
+        generationConfig:{temperature:0.1,maxOutputTokens:600}})},{retries:AI_RETRIES,label:'geminiAI',timeout:AI_TIMEOUT_MS,maxDelay:15000});
     if(!r.ok)return null;
     const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!t)return null;const j=t.match(/\{[\s\S]*\}/);
