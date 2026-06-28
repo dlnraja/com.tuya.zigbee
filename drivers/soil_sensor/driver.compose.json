@@ -14,6 +14,7 @@
     "alarm_water",
     "measure_ec",
     "measure_conductivity",
+    "measure_battery",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -67,7 +68,13 @@
       "setable": false
     }
   },
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA"
+    ]
+  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -101,7 +108,12 @@
       "_TZE2841000000_hdml1aav",
       "_TZE200_SH8V7FHD",
       "_TZE204_SH8V7FHD",
-      "_TZE204_pay2byax"
+      "_TZE204_pay2byax",
+      "_TZE284_0ints6wl",
+      "_TZE284_0INTS6WL",
+      "_tze284_0ints6wl",
+      "HOBEIAN",
+      "hobeian"
     ],
     "productId": [
       "ZG-303Z",
