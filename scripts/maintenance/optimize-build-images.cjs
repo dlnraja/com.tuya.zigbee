@@ -21,7 +21,7 @@ const DRIVERS_DIR = path.join(BUILD_DIR, 'drivers');
 
 const TARGETS = new Map([
   ['small.png', { max: 96, colors: 96 }],
-  ['large.png', { max: 320, colors: 128 }],
+  ['large.png', { max: 500, colors: 128 }],
   ['xlarge.png', { max: 500, colors: 160 }],
 ]);
 

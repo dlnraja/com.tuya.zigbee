@@ -4,7 +4,10 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { sanitizeManifestFile } = require('./maintenance/sanitize-manifest.cjs');
-const { compactManifestFile } = require('./maintenance/compact-zigbee-identifiers.cjs');
+const {
+  compactManifestFile,
+  isSyntheticManufacturer,
+} = require('./maintenance/compact-zigbee-identifiers.cjs');
 
 const srcDir = path.join(__dirname, '..', '.homeybuild');
 const destDir = path.join(os.tmpdir(), 'homey-publish-temp');
@@ -178,8 +181,8 @@ try {
 
   // 5a) Compact publish-only Zigbee identifier matrices.
   // Athom's build server expands manufacturerName x productId. The source app
-  // intentionally carries broad support matrices, but the App Store backend
-  // currently fails them as a generic AggregateError.
+  // intentionally carries broad support matrices, but the publish payload must
+  // stay small enough for the App Store processor.
   try {
     const compact = compactManifestFile(destAppJson);
     if (compact.overTotalLimit) {
@@ -187,7 +190,18 @@ try {
       console.error(`Limit: ${compact.maxTotalCombos}. Lower HOMEY_ZIGBEE_MAX_DRIVER_COMBOS or split broad drivers.`);
       process.exit(1);
     }
-    console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s).`);
+    console.log(`Zigbee identifier matrix: ${compact.beforeTotal} -> ${compact.afterTotal} combinations across ${(compact.changes || []).length} compacted driver(s), ${compact.pruned || 0} pruned synthetic driver(s).`);
+    if (compact.filteredSyntheticManufacturers > 0) {
+      console.log(`  - removed ${compact.filteredSyntheticManufacturers} synthetic manufacturer identifier(s) from publish manifest`);
+    }
+    if (compact.pruned > 0) {
+      for (const p of compact.prunedDrivers.slice(0, 12)) {
+        console.log(`  - pruned ${p.id}: ${p.reason} (mfr ${p.manufacturers}, product ${p.products})`);
+      }
+      if (compact.prunedDrivers.length > 12) {
+        console.log(`  - ... ${compact.prunedDrivers.length - 12} more synthetic driver(s) pruned`);
+      }
+    }
     if (compact.changed > 0) {
       for (const c of compact.changes.slice(0, 12)) {
         console.log(`  - ${c.id}: ${c.before} -> ${c.after} combos (mfr ${c.manufacturers}, product ${c.products})`);
@@ -196,6 +210,30 @@ try {
         console.log(`  - ... ${compact.changes.length - 12} more driver(s) compacted`);
       }
     }
+
+    const publishManifest = readJson(destAppJson);
+    const syntheticLeft = [];
+    for (const d of publishManifest.drivers || []) {
+      const names = Array.isArray(d.zigbee && d.zigbee.manufacturerName)
+        ? d.zigbee.manufacturerName
+        : [];
+      const badNames = names.filter(isSyntheticManufacturer);
+      if (badNames.length > 0) {
+        syntheticLeft.push({ id: d.id, count: badNames.length, samples: badNames.slice(0, 3) });
+      }
+    }
+    if (syntheticLeft.length > 0) {
+      console.error(`FATAL: publish manifest still contains synthetic Zigbee manufacturer identifiers in ${syntheticLeft.length} driver(s).`);
+      for (const item of syntheticLeft.slice(0, 12)) {
+        console.error(`  - ${item.id}: ${item.samples.join(', ')}${item.count > item.samples.length ? ` (+${item.count - item.samples.length})` : ''}`);
+      }
+      if (syntheticLeft.length > 12) {
+        console.error(`  - ... ${syntheticLeft.length - 12} more driver(s)`);
+      }
+      console.error('These placeholders bloat the publish manifest and must be pruned before upload.');
+      process.exit(1);
+    }
+    console.log('OK: no synthetic Zigbee manufacturer identifiers in publish manifest.');
   } catch (e) {
     console.error('FATAL: Zigbee identifier compaction failed:', e.message);
     process.exit(1);
@@ -211,6 +249,21 @@ try {
   if (publishMB > maxPublishMB) {
     console.error(`FATAL: publish directory is ${publishMB.toFixed(2)} MB, above the ${maxPublishMB.toFixed(2)} MB safety limit.`);
     console.error('Run: npm run build && node scripts/maintenance/optimize-build-images.cjs && npm run prepare-publish');
+    process.exit(1);
+  }
+  try {
+    const { spawnSync } = require('child_process');
+    const gate = spawnSync(process.execPath, [path.join(__dirname, 'ci', 'publish-size-gate.cjs')], {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'inherit',
+      shell: false,
+    });
+    if (gate.status !== 0) {
+      console.error('FATAL: publish payload size gate failed.');
+      process.exit(gate.status || 1);
+    }
+  } catch (e) {
+    console.error('FATAL: publish payload size gate crashed:', e.message);
     process.exit(1);
   }
 

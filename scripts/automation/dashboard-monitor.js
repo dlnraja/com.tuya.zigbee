@@ -24,6 +24,26 @@ const ALERT_MODE = args.includes('--alert');
 const LATEST_ONLY = args.includes('--latest');
 
 const log = (msg) => console.log(`[${new Date().toISOString()}] ${msg}`);
+const FAILED_STATES = new Set(['processing_failed', 'error', 'failed']);
+
+function stateMeta(build) {
+  return build.stateMeta || build.state_meta || build.error || build.errorMessage || '';
+}
+
+function isFailedBuild(build) {
+  return FAILED_STATES.has(build.state);
+}
+
+function isSuccessfulBuild(build) {
+  return !isFailedBuild(build) && ['draft', 'test', 'live', 'published'].includes(build.state);
+}
+
+function statusIcon(build) {
+  if (isFailedBuild(build)) return '❌';
+  if (build.state === 'test') return '✅';
+  if (build.state === 'draft') return '📝';
+  return 'ℹ️';
+}
 
 async function getBuilds() {
   const settingsPath = path.join(process.env.APPDATA || '', 'npm', 'node_modules', 'homey');
@@ -35,7 +55,7 @@ async function getBuilds() {
     const builds = await api.getBuilds({ '$token': token, appId: APP_ID });
     return Array.isArray(builds) ? builds : (builds.items || builds.data || []);
   } catch (e) {
-    log('❌ Cannot load Athom API:', e.message);
+    log(`❌ Cannot load Athom API: ${e.message}`);
     return [];
   }
 }
@@ -52,8 +72,8 @@ async function main() {
   log(`Total builds: ${builds.length}`);
 
   // Analyze builds
-  const successful = builds.filter(b => b.sdk === 3 && b.state !== 'processing_failed');
-  const failed = builds.filter(b => b.state === 'processing_failed');
+  const successful = builds.filter(isSuccessfulBuild);
+  const failed = builds.filter(isFailedBuild);
   const drafts = builds.filter(b => b.state === 'draft');
   const inTest = builds.filter(b => b.state === 'test');
 
@@ -63,20 +83,23 @@ async function main() {
   log(`In Test: ${inTest.length}`);
 
   // Latest builds
-  const sorted = builds.sort((a, b) => (b.id || 0) - (a.id || 0));
+  const sorted = builds.slice().sort((a, b) => (b.id || 0) - (a.id || 0));
   const showCount = LATEST_ONLY ? 5 : 10;
 
   log(`\nLatest ${showCount} builds:`);
   sorted.slice(0, showCount).forEach(b => {
-    const status = b.sdk === 3 ? '✅' : '❌';
-    log(`  ${status} #${b.id}: v${b.version} | ${b.state} | sdk=${b.sdk}`);
+    const meta = stateMeta(b);
+    const metaText = meta ? ` | stateMeta=${meta}` : '';
+    const sdkText = b.sdk === undefined ? '' : ` | sdk=${b.sdk}`;
+    log(`  ${statusIcon(b)} #${b.id}: v${b.version} | ${b.state}${sdkText}${metaText}`);
   });
 
   // Check for recurring failures
-  const recentFailed = failed.filter(b => b.id > builds.length - 100);
+  const recentFailed = sorted.slice(0, 100).filter(isFailedBuild);
   if (recentFailed.length > 3) {
     log(`\n⚠️ WARNING: ${recentFailed.length} failures in last 100 builds`);
-    log('Pattern: archive too large or malformed app.json');
+    const latestMeta = stateMeta(recentFailed[0]);
+    log(`Latest failure detail: ${latestMeta || 'no stateMeta returned by Athom API'}`);
   }
 
   // Generate report
@@ -87,7 +110,15 @@ async function main() {
     failed: failed.length,
     drafts: drafts.length,
     inTest: inTest.length,
-    latestBuild: sorted[0] ? { id: sorted[0].id, version: sorted[0].version, state: sorted[0].state } : null,
+    latestBuild: sorted[0] ? {
+      id: sorted[0].id,
+      version: sorted[0].version,
+      state: sorted[0].state,
+      stateMeta: stateMeta(sorted[0]) || null,
+      createdAt: sorted[0].createdAt || sorted[0].created_at || null,
+      stateChangedAt: sorted[0].stateChangedAt || sorted[0].state_changed_at || null,
+      platforms: sorted[0].platforms || null,
+    } : null,
     successRate: ((successful.length / builds.length) * 100).toFixed(1) + '%',
   };
 
@@ -103,7 +134,7 @@ async function main() {
   // Alert on failures
   if (ALERT_MODE && failed.length > 0) {
     log(`\n🚨 ALERT: ${failed.length} builds in processing_failed state`);
-    log('Most common cause: Archive too large (>7MB) or malformed app.json');
+    log(`Latest failure detail: ${stateMeta(failed.sort((a, b) => (b.id || 0) - (a.id || 0))[0]) || 'no stateMeta returned by Athom API'}`);
   }
 
   log('\n═══ Monitor Complete ═══');

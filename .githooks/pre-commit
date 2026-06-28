@@ -18,7 +18,7 @@ YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m'
 
-TOTAL_CHECKS=8
+TOTAL_CHECKS=9
 ERRORS=0
 
 echo ""
@@ -126,6 +126,17 @@ if [ -n "$STAGED_DRIVERS" ]; then
         echo -e "${RED}  BLOCKED: $file has manufacturerName: [] (causes AggregateError)${RESET}"
         MFR_ERRORS=$((MFR_ERRORS + 1))
       fi
+      SYNTHETIC_MFR=$(node -e "
+        const d = JSON.parse(require('fs').readFileSync('$ROOT/$file','utf8'));
+        const zig = d.zigbee || {};
+        const re = /unknown|dummy|placeholder|needs_device_assignment|^_generic_|^_GENERIC_|^_hybrid_|^_HYBRID_|^_master_|^_MASTER_/;
+        const bad = Array.isArray(zig.manufacturerName) ? zig.manufacturerName.filter(v => typeof v === 'string' && re.test(v)) : [];
+        if (bad.length) console.log(bad.slice(0, 3).join(', '));
+      " 2>/dev/null || true)
+      if [ -n "$SYNTHETIC_MFR" ]; then
+        echo -e "${YELLOW}  WARNING: $file has synthetic manufacturerName entries: $SYNTHETIC_MFR${RESET}"
+        echo -e "${YELLOW}           They must be pruned by prepare-publish to reduce Athom upload size.${RESET}"
+      fi
     fi
   done <<< "$STAGED_DRIVERS"
 fi
@@ -188,8 +199,18 @@ else
   echo -e "${GREEN}  PASSED: No console.log in staged driver files${RESET}"
 fi
 
-# ─── 8. Security scan on staged .js files ────────────────────────────────────
-echo -e "${CYAN}[8/$TOTAL_CHECKS] Security scan on staged JS files...${RESET}"
+# ─── 8. Publish payload size gate ────────────────────────────────────────────
+echo -e "${CYAN}[8/$TOTAL_CHECKS] Checking publish payload size gates...${RESET}"
+if ! node "$ROOT/scripts/ci/publish-size-gate.cjs"; then
+  echo -e "${RED}  COMMIT BLOCKED — Publish payload size gate FAILED${RESET}"
+  echo -e "${YELLOW}  Run: npm run build && npm run prepare-publish${RESET}"
+  ERRORS=$((ERRORS + 1))
+else
+  echo -e "${GREEN}  PASSED: Publish payload size gates${RESET}"
+fi
+
+# ─── 9. Security scan on staged .js files ────────────────────────────────────
+echo -e "${CYAN}[9/$TOTAL_CHECKS] Security scan on staged JS files...${RESET}"
 STAGED_JS=$(git diff --cached --name-only --diff-filter=ACM | grep '\.js$' | grep -v 'node_modules/' | grep -v '.github/scripts/temp/' || true)
 SEC_ERRORS=0
 if [ -n "$STAGED_JS" ]; then

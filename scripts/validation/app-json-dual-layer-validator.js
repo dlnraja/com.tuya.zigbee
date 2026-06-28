@@ -36,6 +36,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { isSyntheticManufacturer } = require('../maintenance/compact-zigbee-identifiers.cjs');
 
 // ─── Configuration ──────────────────────────────────────────────────────────
 const ROOT = path.resolve(__dirname, '../..');
@@ -128,11 +129,12 @@ async function validate() {
   const errors = [];
   const warnings = [];
   const fixes = [];
+  const syntheticDrivers = [];
   const stats = {
     total: drivers.length, zigbee: 0, wifi: 0,
     virtual: 0, hybrid: 0, unknown: 0,
     zigbeeOk: 0, zigbeeEmpty: 0, hybridOk: 0, hybridEmpty: 0,
-    totalFP: 0
+    totalFP: 0, syntheticFP: 0
   };
 
   // ── 1. Validation top-level ──────────────────────────────────────────────
@@ -177,6 +179,17 @@ async function validate() {
     const hasMF = d.zigbee && d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
     const fpCount = hasMF ? d.zigbee.manufacturerName.length : 0;
     stats.totalFP += fpCount;
+    if (hasMF) {
+      const syntheticMfs = d.zigbee.manufacturerName.filter(isSyntheticManufacturer);
+      if (syntheticMfs.length > 0) {
+        stats.syntheticFP += syntheticMfs.length;
+        syntheticDrivers.push({
+          id: d.id,
+          count: syntheticMfs.length,
+          samples: syntheticMfs.slice(0, 2)
+        });
+      }
+    }
 
     if (type === 'zigbee') {
       stats.zigbee++;
@@ -244,6 +257,15 @@ async function validate() {
   console.log('    Virtual   : ' + stats.virtual);
   console.log('    Unknown   : ' + stats.unknown);
   console.log('    Total FPs : ' + stats.totalFP.toLocaleString());
+  console.log('    Synthetic : ' + stats.syntheticFP.toLocaleString() + ' (publish-size prune)');
+
+  if (syntheticDrivers.length > 0) {
+    warnings.push(
+      'ManufacturerName synthétiques dans ' + syntheticDrivers.length +
+      ' driver(s), ex: ' + syntheticDrivers.slice(0, 5).map(d => d.id + ' [' + d.samples.join(', ') + ']').join('; ') +
+      '. prepare-publish doit les retirer pour réduire la taille upload Athom.'
+    );
+  }
 
   // ── 4. Corrections appliquées ────────────────────────────────────────────
   if (fixes.length > 0) {
@@ -292,11 +314,7 @@ function tryFixFromCompose(d, stableMap) {
     try {
       const compose = JSON.parse(fs.readFileSync(composePath));
       const mfs = compose.zigbee && compose.zigbee.manufacturerName;
-      if (mfs && mfs.length > 0) {
-        // Case-insensitive dedup
-        const uniq = [...new Set(mfs.map(m => m.trim()).filter(m => m))];
-        if (uniq.length > 0) fixedMfs = uniq;
-      }
+      if (mfs && mfs.length > 0) fixedMfs = uniqueRealManufacturers(mfs);
     } catch(e) { /* ignore */ }
   }
 
@@ -305,17 +323,13 @@ function tryFixFromCompose(d, stableMap) {
     const stableDriver = stableMap[d.id];
     if (stableDriver && stableDriver.zigbee && stableDriver.zigbee.manufacturerName) {
       const mfs = stableDriver.zigbee.manufacturerName;
-      if (mfs.length > 0) {
-        const uniq = [...new Set(mfs.map(m => m.trim()).filter(m => m))];
-        if (uniq.length > 0) fixedMfs = uniq;
-      }
+      if (mfs.length > 0) fixedMfs = uniqueRealManufacturers(mfs);
     }
   }
 
-  // Fallback: inject a safe, unique dummy placeholder name to avoid empty array AggregateError
-  if (!fixedMfs) {
-    fixedMfs = ["_TZE200_placeholder_generic"];
-  }
+  // Never invent placeholder fingerprints: they pass local non-empty checks but
+  // add payload without improving pairing.
+  if (!fixedMfs || fixedMfs.length === 0) return null;
 
   // Always write back to driver.compose.json to keep it persistent
   if (fixedMfs && fs.existsSync(composePath)) {
@@ -329,6 +343,19 @@ function tryFixFromCompose(d, stableMap) {
   }
 
   return fixedMfs;
+}
+
+function uniqueRealManufacturers(values) {
+  const out = [];
+  const seen = new Set();
+  for (const value of Array.isArray(values) ? values : []) {
+    if (typeof value !== 'string') continue;
+    const trimmed = value.trim();
+    if (!trimmed || isSyntheticManufacturer(trimmed) || seen.has(trimmed)) continue;
+    seen.add(trimmed);
+    out.push(trimmed);
+  }
+  return out.length > 0 ? out : null;
 }
 
 // ─── Entry point ─────────────────────────────────────────────────────────────

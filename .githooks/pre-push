@@ -24,9 +24,15 @@ if ! node "$ROOT/scripts/validate/homey-mandatory-check.js"; then
 fi
 
 # Athom server requirements check (O17-O21)
-echo -e "${CYAN}[2/2] Athom server requirements check...${RESET}"
+echo -e "${CYAN}[2/3] Athom server requirements check...${RESET}"
 if ! node "$ROOT/scripts/validate/validate-app-json.js"; then
   echo -e "${RED}❌ PUSH BLOCKED — Fix Athom server requirement errors first${RESET}"
+  exit 1
+fi
+
+echo -e "${CYAN}[3/3] Publish payload size gate...${RESET}"
+if ! node "$ROOT/scripts/ci/publish-size-gate.cjs"; then
+  echo -e "${RED}❌ PUSH BLOCKED — Publish payload too large for safe Homey processing${RESET}"
   exit 1
 fi
 
