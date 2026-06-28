@@ -141,10 +141,10 @@ jobs:
       - name: Bump
         if: steps.pat.outputs.ok == 'true'
         id: bump
-        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
-        with:
-          version: ${{ inputs.version || 'patch' }}
-          changelog: ${{ steps.cl.outputs.text }}
+        env:
+          BUMP_LEVEL: ${{ inputs.version || 'patch' }}
+          HOMEY_CHANGELOG: ${{ steps.cl.outputs.text }}
+        run: node .github/scripts/bump-homey-version.js
 
       - name: Sync package manifests and .homeycompose version
         if: steps.pat.outputs.ok == 'true'
