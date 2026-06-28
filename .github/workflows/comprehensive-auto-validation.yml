@@ -44,8 +44,8 @@ jobs:
       - name: 🛡️ STRICT_SYNTAX_GUARD Check
         run: node scripts/ci/STRICT_SYNTAX_GUARD.js
 
-      - name: 🧹 ESLint Quality Gate
-        run: npx eslint lib/ --ext .js
+      - name: 🧹 Homey Integrity Gate
+        run: npm run precommit
 
       - name: 🧪 Run Critical Unit Tests
         run: node --test test/critical/manufacturerResolver.test.js

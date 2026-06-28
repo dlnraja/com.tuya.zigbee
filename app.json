@@ -24308,6 +24308,123 @@
         ]
       },
       {
+        "id": "switch_3gang_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene action",
+          "fr": "Action scene gang 1",
+          "nl": "Gang 1 scene-actie",
+          "de": "Gang 1 Szenenaktion"
+        },
+        "tokens": [
+          {
+            "name": "gang",
+            "type": "number",
+            "title": {
+              "en": "Gang"
+            },
+            "example": 1
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": "on"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene action",
+          "fr": "Action scene gang 2",
+          "nl": "Gang 2 scene-actie",
+          "de": "Gang 2 Szenenaktion"
+        },
+        "tokens": [
+          {
+            "name": "gang",
+            "type": "number",
+            "title": {
+              "en": "Gang"
+            },
+            "example": 2
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": "off"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_gang3_scene",
+        "title": {
+          "en": "Gang 3 scene action",
+          "fr": "Action scene gang 3",
+          "nl": "Gang 3 scene-actie",
+          "de": "Gang 3 Szenenaktion"
+        },
+        "tokens": [
+          {
+            "name": "gang",
+            "type": "number",
+            "title": {
+              "en": "Gang"
+            },
+            "example": 3
+          },
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": "on"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
         "id": "switch_4gang_gang1_turned_on",
         "title": {
           "en": "Gang 1 turned on",

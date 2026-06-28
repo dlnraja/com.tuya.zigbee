@@ -349,6 +349,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js
 
   johanbendz-full:
     name: "JohanBendz Full Scanner"
@@ -423,6 +424,7 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-scan-spam.js || true
       - name: Cleanup (edit-based)
         continue-on-error: true
         env:

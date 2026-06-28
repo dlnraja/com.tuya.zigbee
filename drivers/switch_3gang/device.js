@@ -181,8 +181,16 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${epNum}_scene`)
-              .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            const sceneFlowIds = {
+              1: 'switch_3gang_gang1_scene',
+              2: 'switch_3gang_gang2_scene',
+              3: 'switch_3gang_gang3_scene',
+            };
+            const sceneFlowId = sceneFlowIds[epNum];
+            if (sceneFlowId) {
+              this.homey.flow.getDeviceTriggerCard(sceneFlowId)
+                .trigger(this, { gang: epNum, action: value ? 'on' : 'off' }, {}).catch(() => {});
+            }
             this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }
