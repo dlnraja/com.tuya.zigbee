@@ -40,6 +40,8 @@ jobs:
           cache: npm
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+      - name: Crash regression guard - Homey timer context
+        run: npm run check:timer-context
       - name: SDK3 Validation
         run: |
           SDK=$(node -p "require('./app.json').sdkVersion")
@@ -118,3 +120,17 @@ jobs:
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "?")
           echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
           echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY
+      - name: Full diagnostics sweep - sanitized
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/automation/dashboard-monitor.js --latest --json || true
+          node .github/scripts/homey-device-diagnostics.js || true
+          node .github/scripts/collect-diagnostics.js || true
+          node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json || true
