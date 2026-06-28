@@ -2,6 +2,7 @@
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -46,4 +47,3 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 }
 
 module.exports = DinRailSwitchDevice;
-

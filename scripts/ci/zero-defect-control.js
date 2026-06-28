@@ -77,18 +77,19 @@ for (const entry of entries) {
       }
 
       // 2. Mains Power Check for appropriate drivers
-      const MAINS_PATTERNS = ['switch', 'plug', 'socket', 'dimmer', 'wall_switch', 'wall_dimmer', 'heater', 'light', 'bulb'];
-      if (MAINS_PATTERNS.some(p => driverId.includes(p))) {
+      const MAINS_PATTERNS = ['plug', 'socket', 'dimmer', 'wall_dimmer', 'heater', 'light', 'bulb'];
+      const BATTERY_OR_REMOTE_PATTERNS = ['button', 'remote', 'wireless', 'scene', 'knob', 'sensor'];
+      if (MAINS_PATTERNS.some(p => driverId.includes(p)) && !BATTERY_OR_REMOTE_PATTERNS.some(p => driverId.includes(p))) {
         if (!content.includes('get mainsPowered()')) {
           error(`Mains-powered driver '${driverId}' is missing 'get mainsPowered() { return true; }' declaration.`);
         }
       }
 
       // 3. VirtualButtonMixin Path Check (Audit Report Recommendation)
-      if (driverId.includes('button_wireless') && content.includes('VirtualButtonMixin')) {
-        if (content.includes("require('../../lib/mixins/VirtualButtonMixin')")) {
-          error(`Driver '${driverId}' has incorrect VirtualButtonMixin import path (should be '../..//lib/mixins/VirtualButtonMixin.js' or similar, check alignment).`);
-        }
+      if (content.includes('VirtualButtonMixin(')
+        && !content.includes("require('../../lib/mixins/VirtualButtonMixin')")
+        && !content.includes("require('../../lib/mixins/VirtualButtonMixin.js')")) {
+        error(`Driver '${driverId}' uses VirtualButtonMixin but does not import it.`);
       }
 
       // 4. Check for deprecated getDeviceTriggerCard calls

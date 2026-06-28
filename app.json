@@ -23816,13 +23816,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turned on",
-          "fr": "[[device]] Allumé",
-          "nl": "[[device]] Aangezet",
-          "de": "[[device]] Eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_1gang_turned_off",
@@ -23843,13 +23837,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turned off",
-          "fr": "[[device]] Éteint",
-          "nl": "[[device]] Uitgezet",
-          "de": "[[device]] Ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_1gang_physical_on",
@@ -23870,13 +23858,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical ON",
-          "fr": "[[device]] Physique ON",
-          "nl": "[[device]] Fysiek AAN",
-          "de": "[[device]] Physisch EIN"
-        }
+        ]
       },
       {
         "id": "switch_1gang_physical_off",
@@ -23897,13 +23879,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical OFF",
-          "fr": "[[device]] Physique OFF",
-          "nl": "[[device]] Fysiek UIT",
-          "de": "[[device]] Physisch AUS"
-        }
+        ]
       },
       {
         "id": "switch_2gang_gang1_turned_on",
@@ -23924,13 +23900,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 turned on",
-          "fr": "[[device]] Gang 1 allumé",
-          "nl": "[[device]] Gang 1 aangezet",
-          "de": "[[device]] Gang 1 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_2gang_gang1_turned_off",
@@ -23951,13 +23921,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 turned off",
-          "fr": "[[device]] Gang 1 éteint",
-          "nl": "[[device]] Gang 1 uitgezet",
-          "de": "[[device]] Gang 1 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_2gang_gang2_turned_on",
@@ -23978,13 +23942,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 turned on",
-          "fr": "[[device]] Gang 2 allumé",
-          "nl": "[[device]] Gang 2 aangezet",
-          "de": "[[device]] Gang 2 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_2gang_gang2_turned_off",
@@ -24005,13 +23963,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 turned off",
-          "fr": "[[device]] Gang 2 éteint",
-          "nl": "[[device]] Gang 2 uitgezet",
-          "de": "[[device]] Gang 2 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_2gang_physical_gang1_on",
@@ -24032,13 +23984,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 1 ON",
-          "fr": "[[device]] Physique gang 1 ON",
-          "nl": "[[device]] Fysiek gang 1 AAN",
-          "de": "[[device]] Physisch gang 1 EIN"
-        }
+        ]
       },
       {
         "id": "switch_2gang_physical_gang1_off",
@@ -24059,13 +24005,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 1 OFF",
-          "fr": "[[device]] Physique gang 1 OFF",
-          "nl": "[[device]] Fysiek gang 1 UIT",
-          "de": "[[device]] Physisch gang 1 AUS"
-        }
+        ]
       },
       {
         "id": "switch_2gang_physical_gang2_on",
@@ -24086,13 +24026,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 2 ON",
-          "fr": "[[device]] Physique gang 2 ON",
-          "nl": "[[device]] Fysiek gang 2 AAN",
-          "de": "[[device]] Physisch gang 2 EIN"
-        }
+        ]
       },
       {
         "id": "switch_2gang_physical_gang2_off",
@@ -24113,13 +24047,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 2 OFF",
-          "fr": "[[device]] Physique gang 2 OFF",
-          "nl": "[[device]] Fysiek gang 2 UIT",
-          "de": "[[device]] Physisch gang 2 AUS"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang1_turned_on",
@@ -24140,13 +24068,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 turned on",
-          "fr": "[[device]] Gang 1 allumé",
-          "nl": "[[device]] Gang 1 aangezet",
-          "de": "[[device]] Gang 1 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang1_turned_off",
@@ -24167,13 +24089,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 turned off",
-          "fr": "[[device]] Gang 1 éteint",
-          "nl": "[[device]] Gang 1 uitgezet",
-          "de": "[[device]] Gang 1 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang2_turned_on",
@@ -24194,13 +24110,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 turned on",
-          "fr": "[[device]] Gang 2 allumé",
-          "nl": "[[device]] Gang 2 aangezet",
-          "de": "[[device]] Gang 2 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang2_turned_off",
@@ -24221,13 +24131,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 turned off",
-          "fr": "[[device]] Gang 2 éteint",
-          "nl": "[[device]] Gang 2 uitgezet",
-          "de": "[[device]] Gang 2 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang3_turned_on",
@@ -24248,13 +24152,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 3 turned on",
-          "fr": "[[device]] Gang 3 allumé",
-          "nl": "[[device]] Gang 3 aangezet",
-          "de": "[[device]] Gang 3 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang3_turned_off",
@@ -24275,13 +24173,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 3 turned off",
-          "fr": "[[device]] Gang 3 éteint",
-          "nl": "[[device]] Gang 3 uitgezet",
-          "de": "[[device]] Gang 3 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_3gang_physical_gang1_on",
@@ -24308,13 +24200,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 1 ON",
-          "fr": "[[device]] Physique gang 1 ON",
-          "nl": "[[device]] Fysiek gang 1 AAN",
-          "de": "[[device]] Physisch gang 1 EIN"
-        }
+        ]
       },
       {
         "id": "switch_3gang_physical_gang1_off",
@@ -24335,13 +24221,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 1 OFF",
-          "fr": "[[device]] Physique gang 1 OFF",
-          "nl": "[[device]] Fysiek gang 1 UIT",
-          "de": "[[device]] Physisch gang 1 AUS"
-        }
+        ]
       },
       {
         "id": "switch_3gang_physical_gang2_on",
@@ -24362,13 +24242,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 2 ON",
-          "fr": "[[device]] Physique gang 2 ON",
-          "nl": "[[device]] Fysiek gang 2 AAN",
-          "de": "[[device]] Physisch gang 2 EIN"
-        }
+        ]
       },
       {
         "id": "switch_3gang_physical_gang2_off",
@@ -24389,13 +24263,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 2 OFF",
-          "fr": "[[device]] Physique gang 2 OFF",
-          "nl": "[[device]] Fysiek gang 2 UIT",
-          "de": "[[device]] Physisch gang 2 AUS"
-        }
+        ]
       },
       {
         "id": "switch_3gang_physical_gang3_on",
@@ -24416,13 +24284,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 3 ON",
-          "fr": "[[device]] Physique gang 3 ON",
-          "nl": "[[device]] Fysiek gang 3 AAN",
-          "de": "[[device]] Physisch gang 3 EIN"
-        }
+        ]
       },
       {
         "id": "switch_3gang_physical_gang3_off",
@@ -24443,13 +24305,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 3 OFF",
-          "fr": "[[device]] Physique gang 3 OFF",
-          "nl": "[[device]] Fysiek gang 3 UIT",
-          "de": "[[device]] Physisch gang 3 AUS"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang1_turned_on",
@@ -24470,13 +24326,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 turned on",
-          "fr": "[[device]] Gang 1 allumé",
-          "nl": "[[device]] Gang 1 aangezet",
-          "de": "[[device]] Gang 1 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang1_turned_off",
@@ -24497,13 +24347,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 turned off",
-          "fr": "[[device]] Gang 1 éteint",
-          "nl": "[[device]] Gang 1 uitgezet",
-          "de": "[[device]] Gang 1 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang2_turned_on",
@@ -24524,13 +24368,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 turned on",
-          "fr": "[[device]] Gang 2 allumé",
-          "nl": "[[device]] Gang 2 aangezet",
-          "de": "[[device]] Gang 2 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang2_turned_off",
@@ -24551,13 +24389,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 turned off",
-          "fr": "[[device]] Gang 2 éteint",
-          "nl": "[[device]] Gang 2 uitgezet",
-          "de": "[[device]] Gang 2 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang3_turned_on",
@@ -24578,13 +24410,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 3 turned on",
-          "fr": "[[device]] Gang 3 allumé",
-          "nl": "[[device]] Gang 3 aangezet",
-          "de": "[[device]] Gang 3 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang3_turned_off",
@@ -24605,13 +24431,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 3 turned off",
-          "fr": "[[device]] Gang 3 éteint",
-          "nl": "[[device]] Gang 3 uitgezet",
-          "de": "[[device]] Gang 3 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang4_turned_on",
@@ -24632,13 +24452,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 4 turned on",
-          "fr": "[[device]] Gang 4 allumé",
-          "nl": "[[device]] Gang 4 aangezet",
-          "de": "[[device]] Gang 4 eingeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang4_turned_off",
@@ -24659,13 +24473,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 4 turned off",
-          "fr": "[[device]] Gang 4 éteint",
-          "nl": "[[device]] Gang 4 uitgezet",
-          "de": "[[device]] Gang 4 ausgeschaltet"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang1_on",
@@ -24686,13 +24494,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 1 ON",
-          "fr": "[[device]] Physique gang 1 ON",
-          "nl": "[[device]] Fysiek gang 1 AAN",
-          "de": "[[device]] Physisch gang 1 EIN"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang1_off",
@@ -24713,13 +24515,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 1 OFF",
-          "fr": "[[device]] Physique gang 1 OFF",
-          "nl": "[[device]] Fysiek gang 1 UIT",
-          "de": "[[device]] Physisch gang 1 AUS"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang2_on",
@@ -24740,13 +24536,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 2 ON",
-          "fr": "[[device]] Physique gang 2 ON",
-          "nl": "[[device]] Fysiek gang 2 AAN",
-          "de": "[[device]] Physisch gang 2 EIN"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang2_off",
@@ -24767,13 +24557,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 2 OFF",
-          "fr": "[[device]] Physique gang 2 OFF",
-          "nl": "[[device]] Fysiek gang 2 UIT",
-          "de": "[[device]] Physisch gang 2 AUS"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang3_on",
@@ -24794,13 +24578,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 3 ON",
-          "fr": "[[device]] Physique gang 3 ON",
-          "nl": "[[device]] Fysiek gang 3 AAN",
-          "de": "[[device]] Physisch gang 3 EIN"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang3_off",
@@ -24821,13 +24599,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 3 OFF",
-          "fr": "[[device]] Physique gang 3 OFF",
-          "nl": "[[device]] Fysiek gang 3 UIT",
-          "de": "[[device]] Physisch gang 3 AUS"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang4_on",
@@ -24848,13 +24620,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 4 ON",
-          "fr": "[[device]] Physique gang 4 ON",
-          "nl": "[[device]] Fysiek gang 4 AAN",
-          "de": "[[device]] Physisch gang 4 EIN"
-        }
+        ]
       },
       {
         "id": "switch_4gang_physical_gang4_off",
@@ -24875,13 +24641,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Physical gang 4 OFF",
-          "fr": "[[device]] Physique gang 4 OFF",
-          "nl": "[[device]] Fysiek gang 4 UIT",
-          "de": "[[device]] Physisch gang 4 AUS"
-        }
+        ]
       },
       {
         "id": "switch_dimmer_1gang_turned_on",
@@ -40695,13 +40455,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Is !{{on|off}}",
-          "fr": "[[device]] Est !{{allumé|éteint}}",
-          "nl": "[[device]] Is !{{aan|uit}}",
-          "de": "[[device]] Ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_2gang_gang1_is_on",
@@ -40722,13 +40476,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 is !{{on|off}}",
-          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
-          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_2gang_gang2_is_on",
@@ -40749,13 +40497,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 is !{{on|off}}",
-          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
-          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang1_is_on",
@@ -40776,13 +40518,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 is !{{on|off}}",
-          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
-          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang2_is_on",
@@ -40803,13 +40539,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 is !{{on|off}}",
-          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
-          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_3gang_gang3_is_on",
@@ -40830,13 +40560,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 3 is !{{on|off}}",
-          "fr": "[[device]] Gang 3 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 3 is !{{aan|uit}}",
-          "de": "[[device]] Gang 3 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang1_is_on",
@@ -40857,13 +40581,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 1 is !{{on|off}}",
-          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
-          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang2_is_on",
@@ -40884,13 +40602,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 2 is !{{on|off}}",
-          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
-          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang3_is_on",
@@ -40911,13 +40623,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 3 is !{{on|off}}",
-          "fr": "[[device]] Gang 3 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 3 is !{{aan|uit}}",
-          "de": "[[device]] Gang 3 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_4gang_gang4_is_on",
@@ -40938,13 +40644,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Gang 4 is !{{on|off}}",
-          "fr": "[[device]] Gang 4 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 4 is !{{aan|uit}}",
-          "de": "[[device]] Gang 4 ist !{{ein|aus}}"
-        }
+        ]
       },
       {
         "id": "switch_dimmer_1gang_is_on",
@@ -51536,13 +51236,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on",
-          "fr": "[[device]] Allumer",
-          "nl": "[[device]] Aanzetten",
-          "de": "[[device]] Einschalten"
-        }
+        ]
       },
       {
         "id": "switch_1gang_turn_off",
@@ -51563,13 +51257,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off",
-          "fr": "[[device]] Éteindre",
-          "nl": "[[device]] Uitzetten",
-          "de": "[[device]] Ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_1gang_toggle",
@@ -51590,13 +51278,7 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle",
-          "fr": "[[device]] Basculer",
-          "nl": "[[device]] Wisselen",
-          "de": "[[device]] Umschalten"
-        }
+        ]
       },
       {
         "id": "switch_1gang_set_backlight",
@@ -51828,13 +51510,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 1",
-          "fr": "[[device]] Allumer gang 1",
-          "nl": "[[device]] Gang 1 aanzetten",
-          "de": "[[device]] Gang 1 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_2gang_turn_off_gang1",
@@ -51855,13 +51531,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 1",
-          "fr": "[[device]] Éteindre gang 1",
-          "nl": "[[device]] Gang 1 uitzetten",
-          "de": "[[device]] Gang 1 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_2gang_turn_on_gang2",
@@ -51882,13 +51552,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 2",
-          "fr": "[[device]] Allumer gang 2",
-          "nl": "[[device]] Gang 2 aanzetten",
-          "de": "[[device]] Gang 2 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_2gang_turn_off_gang2",
@@ -51909,13 +51573,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 2",
-          "fr": "[[device]] Éteindre gang 2",
-          "nl": "[[device]] Gang 2 uitzetten",
-          "de": "[[device]] Gang 2 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_2gang_toggle_gang1",
@@ -51936,13 +51594,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 1",
-          "fr": "[[device]] Basculer gang 1",
-          "nl": "[[device]] Gang 1 wisselen",
-          "de": "[[device]] Gang 1 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_2gang_toggle_gang2",
@@ -51963,13 +51615,7 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 2",
-          "fr": "[[device]] Basculer gang 2",
-          "nl": "[[device]] Gang 2 wisselen",
-          "de": "[[device]] Gang 2 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_turn_on_gang1",
@@ -51990,13 +51636,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 1",
-          "fr": "[[device]] Allumer gang 1",
-          "nl": "[[device]] Gang 1 aanzetten",
-          "de": "[[device]] Gang 1 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_turn_off_gang1",
@@ -52017,13 +51657,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 1",
-          "fr": "[[device]] Éteindre gang 1",
-          "nl": "[[device]] Gang 1 uitzetten",
-          "de": "[[device]] Gang 1 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_turn_on_gang2",
@@ -52044,13 +51678,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 2",
-          "fr": "[[device]] Allumer gang 2",
-          "nl": "[[device]] Gang 2 aanzetten",
-          "de": "[[device]] Gang 2 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_turn_off_gang2",
@@ -52071,13 +51699,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 2",
-          "fr": "[[device]] Éteindre gang 2",
-          "nl": "[[device]] Gang 2 uitzetten",
-          "de": "[[device]] Gang 2 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_turn_on_gang3",
@@ -52098,13 +51720,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 3",
-          "fr": "[[device]] Allumer gang 3",
-          "nl": "[[device]] Gang 3 aanzetten",
-          "de": "[[device]] Gang 3 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_turn_off_gang3",
@@ -52125,13 +51741,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 3",
-          "fr": "[[device]] Éteindre gang 3",
-          "nl": "[[device]] Gang 3 uitzetten",
-          "de": "[[device]] Gang 3 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_toggle_gang1",
@@ -52152,13 +51762,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 1",
-          "fr": "[[device]] Basculer gang 1",
-          "nl": "[[device]] Gang 1 wisselen",
-          "de": "[[device]] Gang 1 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_toggle_gang2",
@@ -52179,13 +51783,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 2",
-          "fr": "[[device]] Basculer gang 2",
-          "nl": "[[device]] Gang 2 wisselen",
-          "de": "[[device]] Gang 2 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_3gang_toggle_gang3",
@@ -52206,13 +51804,7 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 3",
-          "fr": "[[device]] Basculer gang 3",
-          "nl": "[[device]] Gang 3 wisselen",
-          "de": "[[device]] Gang 3 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_on_gang1",
@@ -52233,13 +51825,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 1",
-          "fr": "[[device]] Allumer gang 1",
-          "nl": "[[device]] Gang 1 aanzetten",
-          "de": "[[device]] Gang 1 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_off_gang1",
@@ -52260,13 +51846,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 1",
-          "fr": "[[device]] Éteindre gang 1",
-          "nl": "[[device]] Gang 1 uitzetten",
-          "de": "[[device]] Gang 1 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_on_gang2",
@@ -52287,13 +51867,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 2",
-          "fr": "[[device]] Allumer gang 2",
-          "nl": "[[device]] Gang 2 aanzetten",
-          "de": "[[device]] Gang 2 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_off_gang2",
@@ -52314,13 +51888,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 2",
-          "fr": "[[device]] Éteindre gang 2",
-          "nl": "[[device]] Gang 2 uitzetten",
-          "de": "[[device]] Gang 2 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_on_gang3",
@@ -52341,13 +51909,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 3",
-          "fr": "[[device]] Allumer gang 3",
-          "nl": "[[device]] Gang 3 aanzetten",
-          "de": "[[device]] Gang 3 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_off_gang3",
@@ -52368,13 +51930,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 3",
-          "fr": "[[device]] Éteindre gang 3",
-          "nl": "[[device]] Gang 3 uitzetten",
-          "de": "[[device]] Gang 3 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_on_gang4",
@@ -52395,13 +51951,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn on gang 4",
-          "fr": "[[device]] Allumer gang 4",
-          "nl": "[[device]] Gang 4 aanzetten",
-          "de": "[[device]] Gang 4 einschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_turn_off_gang4",
@@ -52422,13 +51972,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Turn off gang 4",
-          "fr": "[[device]] Éteindre gang 4",
-          "nl": "[[device]] Gang 4 uitzetten",
-          "de": "[[device]] Gang 4 ausschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_toggle_gang1",
@@ -52449,13 +51993,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 1",
-          "fr": "[[device]] Basculer gang 1",
-          "nl": "[[device]] Gang 1 wisselen",
-          "de": "[[device]] Gang 1 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_toggle_gang2",
@@ -52476,13 +52014,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 2",
-          "fr": "[[device]] Basculer gang 2",
-          "nl": "[[device]] Gang 2 wisselen",
-          "de": "[[device]] Gang 2 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_toggle_gang3",
@@ -52503,13 +52035,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 3",
-          "fr": "[[device]] Basculer gang 3",
-          "nl": "[[device]] Gang 3 wisselen",
-          "de": "[[device]] Gang 3 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_4gang_toggle_gang4",
@@ -52530,13 +52056,7 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Toggle gang 4",
-          "fr": "[[device]] Basculer gang 4",
-          "nl": "[[device]] Gang 4 wisselen",
-          "de": "[[device]] Gang 4 umschalten"
-        }
+        ]
       },
       {
         "id": "switch_dimmer_1gang_turn_on",
@@ -56672,11 +56192,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set LED indicator mode [[mode]]",
-          "nl": "[[device]] Stel LED-indicator modus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_dimmer_1gang_1way_turn_on",
@@ -56823,11 +56339,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set LED indicator mode [[mode]]",
-          "nl": "[[device]] Stel LED-indicator modus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_1gang_1way_turn_on",
@@ -56941,13 +56453,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set power-on behavior [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in [[mode]]",
-          "de": "[[device]] Einschaltverhalten einstellen [[mode]]",
-          "fr": "[[device]] Définir le comportement à la mise sous tension [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_1gang_1way_set_switch_mode",
@@ -56995,13 +56501,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set external switch type [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in [[mode]]",
-          "de": "[[device]] Externen Schaltertyp einstellen [[mode]]",
-          "fr": "[[device]] Définir le type d'interrupteur externe [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_1gang_1way_set_scene_mode",
@@ -57044,11 +56544,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set scene mode [[mode]]",
-          "nl": "[[device]] Stel scènemodus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_2gang_1way_set_backlight",
@@ -57094,11 +56590,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set LED indicator mode [[mode]]",
-          "nl": "[[device]] Stel LED-indicator modus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_2gang_1way_set_power_on_behavior",
@@ -57146,13 +56638,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set power-on behavior [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in [[mode]]",
-          "de": "[[device]] Einschaltverhalten einstellen [[mode]]",
-          "fr": "[[device]] Définir le comportement à la mise sous tension [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_2gang_1way_set_switch_mode",
@@ -57200,13 +56686,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set external switch type [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in [[mode]]",
-          "de": "[[device]] Externen Schaltertyp einstellen [[mode]]",
-          "fr": "[[device]] Définir le type d'interrupteur externe [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_2gang_1way_set_scene_mode",
@@ -57249,11 +56729,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set scene mode [[mode]]",
-          "nl": "[[device]] Stel scènemodus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_2gang_1way_turn_on",
@@ -57497,11 +56973,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set LED indicator mode [[mode]]",
-          "nl": "[[device]] Stel LED-indicator modus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_3gang_1way_set_power_on_behavior",
@@ -57549,13 +57021,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set power-on behavior [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in [[mode]]",
-          "de": "[[device]] Einschaltverhalten einstellen [[mode]]",
-          "fr": "[[device]] Définir le comportement à la mise sous tension [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_3gang_1way_set_switch_mode",
@@ -57603,13 +57069,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set external switch type [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in [[mode]]",
-          "de": "[[device]] Externen Schaltertyp einstellen [[mode]]",
-          "fr": "[[device]] Définir le type d'interrupteur externe [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_3gang_1way_set_scene_mode",
@@ -57652,11 +57112,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set scene mode [[mode]]",
-          "nl": "[[device]] Stel scènemodus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_3gang_1way_turn_on",
@@ -57954,11 +57410,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set LED indicator mode [[mode]]",
-          "nl": "[[device]] Stel LED-indicator modus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_4gang_1way_set_power_on_behavior",
@@ -58006,13 +57458,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set power-on behavior [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in [[mode]]",
-          "de": "[[device]] Einschaltverhalten einstellen [[mode]]",
-          "fr": "[[device]] Définir le comportement à la mise sous tension [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_4gang_1way_set_switch_mode",
@@ -58060,13 +57506,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set external switch type [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in [[mode]]",
-          "de": "[[device]] Externen Schaltertyp einstellen [[mode]]",
-          "fr": "[[device]] Définir le type d'interrupteur externe [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_4gang_1way_set_scene_mode",
@@ -58109,11 +57549,7 @@
               }
             ]
           }
-        ],
-        "titleFormatted": {
-          "en": "[[device]] Set scene mode [[mode]]",
-          "nl": "[[device]] Stel scènemodus in [[mode]]"
-        }
+        ]
       },
       {
         "id": "wall_switch_4gang_1way_turn_on",
@@ -59137,8 +58573,7 @@
         "measure_voc",
         "measure_formaldehyde",
         "alarm_generic",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "subDevices": [],
       "capabilitiesOptions": {
@@ -59784,9 +59219,7 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -60256,10 +59689,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
         "onoff.channel2",
-        "dim.channel2",
-        "alarm_battery"
+        "dim.channel2"
       ],
       "energy": {
         "approximation": {
@@ -60627,8 +60058,7 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -61183,9 +60613,7 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -61676,9 +61104,7 @@
         "light_hue",
         "light_saturation",
         "light_temperature",
-        "light_mode",
-        "measure_battery",
-        "alarm_battery"
+        "light_mode"
       ],
       "energy": {
         "approximation": {
@@ -62272,9 +61698,7 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -62766,9 +62190,7 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "approximation": {
@@ -63092,8 +62514,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_generic",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -63612,8 +63033,7 @@
       },
       "class": "button",
       "capabilities": [
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_battery": {
@@ -64014,8 +63434,7 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -64515,8 +63934,7 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -65573,8 +64991,7 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -66078,8 +65495,7 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -66689,8 +66105,7 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -67183,8 +66598,7 @@
         "button.6",
         "button.7",
         "button.8",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -67704,10 +67118,8 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "measure_battery",
         "button.1",
-        "button.2",
-        "alarm_battery"
+        "button.2"
       ],
       "energy": {
         "batteries": [
@@ -68234,8 +67646,7 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -68956,8 +68367,7 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -71765,8 +71175,7 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "energy": {
         "batteries": [
@@ -72086,8 +71495,7 @@
         "measure_power.phase3",
         "measure_battery",
         "measure_temperature",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "energy": {
         "batteries": [
@@ -72153,8 +71561,7 @@
         "alarm_co",
         "measure_battery",
         "measure_co",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -72230,8 +71637,7 @@
         "alarm_contact",
         "measure_battery",
         "alarm_tamper",
-        "measure_luminance",
-        "alarm_battery"
+        "measure_luminance"
       ],
       "energy": {
         "batteries": [
@@ -74259,8 +73665,7 @@
         "windowcoverings_set",
         "windowcoverings_tilt_set",
         "alarm_generic",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -74910,8 +74315,7 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "meter_power.exported",
-        "alarm_battery"
+        "meter_power.exported"
       ],
       "energy": {
         "batteries": [
@@ -75223,15 +74627,13 @@
       "capabilities": [
         "alarm_motion",
         "alarm_contact",
-        "measure_battery",
         "alarm_generic",
         "alarm_tamper",
         "measure_power",
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "meter_power.exported",
-        "alarm_battery"
+        "meter_power.exported"
       ],
       "energy": {
         "batteries": [
@@ -75546,8 +74948,7 @@
         "measure_temperature.floor",
         "thermostat_mode",
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -75650,8 +75051,7 @@
         "measure_temperature.floor",
         "thermostat_mode",
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -75753,8 +75153,7 @@
       "capabilities": [
         "measure_battery",
         "measure_temperature",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -75928,8 +75327,7 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "energy": {
         "batteries": [
@@ -76266,8 +75664,7 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "energy": {
         "batteries": [
@@ -76823,9 +76220,7 @@
       "capabilities": [
         "dim",
         "onoff",
-        "measure_power",
-        "measure_battery",
-        "alarm_battery"
+        "measure_power"
       ],
       "energy": {
         "batteries": [
@@ -78134,8 +77529,7 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -78740,8 +78134,7 @@
         "alarm_motion",
         "alarm_contact",
         "measure_battery",
-        "locked",
-        "alarm_battery"
+        "locked"
       ],
       "energy": {
         "batteries": [
@@ -79062,8 +78455,7 @@
         "alarm_contact",
         "measure_battery",
         "alarm_generic",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -79408,8 +78800,7 @@
         "measure_power.phase1",
         "measure_power.phase2",
         "measure_power.phase3",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -79654,8 +79045,7 @@
         "onoff",
         "button.push",
         "finger_bot_mode",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "/drivers/fingerbot/assets/images/large.png",
@@ -79748,8 +79138,7 @@
       "capabilities": [
         "locked",
         "alarm_tamper",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -81011,8 +80400,7 @@
       "capabilities": [
         "alarm_generic",
         "measure_battery",
-        "onoff",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "batteries": [
@@ -81334,8 +80722,7 @@
         "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
       },
       "capabilities": [
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -81682,8 +81069,7 @@
       "capabilities": [
         "measure_battery",
         "measure_temperature",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -82182,8 +81568,7 @@
       ],
       "capabilities": [
         "button",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/handheld_remote_4_buttons/assets/images/large.png",
@@ -83301,8 +82686,7 @@
       "class": "sensor",
       "capabilities": [
         "measure_luminance",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -83968,8 +83352,7 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -84120,10 +83503,8 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "measure_battery",
         "measure_temperature",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "energy": {
         "batteries": [
@@ -84639,8 +84020,7 @@
         "dim",
         "light_temperature",
         "light_mode",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -84813,8 +84193,7 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -84890,8 +84269,7 @@
         "onoff",
         "light_hue",
         "light_saturation",
-        "light_mode",
-        "alarm_battery"
+        "light_mode"
       ],
       "energy": {
         "batteries": [
@@ -85247,8 +84625,7 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -85581,8 +84958,7 @@
         "light_mode",
         "dim",
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -85981,8 +85357,7 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -86638,8 +86013,7 @@
       "class": "sensor",
       "capabilities": [
         "measure_luminance",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance": {
@@ -86709,8 +86083,7 @@
         "locked",
         "lock_mode",
         "measure_battery",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -87062,8 +86435,7 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "meter_power",
-        "alarm_battery"
+        "meter_power"
       ],
       "energy": {
         "batteries": [
@@ -87554,8 +86926,7 @@
         "measure_luminance",
         "measure_temperature",
         "measure_humidity",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -88296,8 +87667,7 @@
       "capabilities": [
         "measure_battery",
         "measure_luminance",
-        "alarm_motion",
-        "alarm_battery"
+        "alarm_motion"
       ],
       "energy": {
         "batteries": [
@@ -88388,8 +87758,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -89151,9 +88520,7 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "batteries": [
@@ -90245,8 +89612,7 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -91290,8 +90656,7 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_power": {
@@ -91856,8 +91221,7 @@
         "measure_humidity",
         "alarm_human",
         "measure_battery",
-        "measure_luminance.distance",
-        "alarm_battery"
+        "measure_luminance.distance"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -93541,8 +92905,7 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -94510,8 +93873,7 @@
         "measure_battery",
         "onoff",
         "window_detection",
-        "child_lock",
-        "alarm_battery"
+        "child_lock"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -94700,8 +94062,7 @@
       "capabilities": [
         "alarm_water",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
@@ -94858,8 +94219,7 @@
         "button.3",
         "button.4",
         "measure_battery",
-        "alarm_generic",
-        "alarm_battery"
+        "alarm_generic"
       ],
       "images": {
         "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -95012,8 +94372,7 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -95495,8 +94854,7 @@
         "button.3",
         "button.4",
         "measure_battery",
-        "button",
-        "alarm_battery"
+        "button"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -95961,10 +95319,8 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "measure_battery",
         "button.1",
-        "button.2",
-        "alarm_battery"
+        "button.2"
       ],
       "energy": {
         "batteries": [
@@ -96491,8 +95847,7 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -96951,8 +96306,7 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -97017,8 +96371,7 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -97143,8 +96496,7 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -97274,8 +96626,7 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -97421,8 +96772,7 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -97616,8 +96966,7 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -97779,8 +97128,7 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -97952,8 +97300,7 @@
         "alarm_contact",
         "alarm_tamper",
         "measure_luminance",
-        "alarm_water",
-        "alarm_battery"
+        "alarm_water"
       ],
       "energy": {
         "batteries": [
@@ -98483,8 +97830,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_tamper",
-        "alarm_contact",
-        "alarm_battery"
+        "alarm_contact"
       ],
       "energy": {
         "batteries": [
@@ -98914,8 +98260,7 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -99532,8 +98877,7 @@
         "measure_battery",
         "alarm_tamper",
         "measure_luminance",
-        "alarm_water",
-        "alarm_battery"
+        "alarm_water"
       ],
       "energy": {
         "batteries": [
@@ -99896,8 +99240,7 @@
         "measure_humidity",
         "alarm_human",
         "measure_battery",
-        "measure_luminance.distance",
-        "alarm_battery"
+        "measure_luminance.distance"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -100516,8 +99859,7 @@
         "alarm_human",
         "measure_battery",
         "measure_luminance.distance",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -101135,8 +100477,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -101597,8 +100938,7 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -102219,8 +101559,7 @@
         "measure_battery",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "dim",
-        "alarm_battery"
+        "dim"
       ],
       "energy": {
         "batteries": [
@@ -102546,8 +101885,7 @@
         "alarm_motion",
         "measure_battery",
         "alarm_generic",
-        "onoff",
-        "alarm_battery"
+        "onoff"
       ],
       "energy": {
         "batteries": [
@@ -102943,8 +102281,7 @@
         "alarm_siren",
         "alarm_motion",
         "measure_battery",
-        "alarm_generic",
-        "alarm_battery"
+        "alarm_generic"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -103025,8 +102362,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_siren",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -103200,8 +102536,7 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/smart_button_switch/assets/images/large.png",
@@ -103629,8 +102964,7 @@
       "capabilities": [
         "button",
         "dim",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button": {
@@ -103727,8 +103061,7 @@
         "button.rotate_right",
         "button.press",
         "dim",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "button.rotate_left": {
@@ -103882,8 +103215,7 @@
       ],
       "capabilities": [
         "dim",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/smart_knob_switch/assets/images/large.png",
@@ -104096,8 +103428,7 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -104173,8 +103504,7 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button/assets/images/large.png",
@@ -104285,8 +103615,7 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button_2/assets/images/large.png",
@@ -104418,8 +103747,7 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -104708,8 +104036,7 @@
         "measure_battery",
         "measure_temperature",
         "measure_humidity",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -105165,8 +104492,7 @@
         "measure_battery",
         "alarm_water",
         "measure_ec",
-        "measure_conductivity",
-        "alarm_battery"
+        "measure_conductivity"
       ],
       "capabilitiesOptions": {
         "measure_humidity.soil": {
@@ -105553,8 +104879,7 @@
         "button.toggle_2",
         "button.identify",
         "measure_battery",
-        "button.toggle",
-        "alarm_battery"
+        "button.toggle"
       ],
       "zigbee": {
         "productId": [
@@ -106195,8 +105520,7 @@
         "measure_voltage",
         "measure_current",
         "button.toggle",
-        "button.identify",
-        "alarm_battery"
+        "button.identify"
       ],
       "zigbee": {
         "productId": [
@@ -108410,8 +107734,7 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -109368,8 +108691,7 @@
         "button.toggle_2",
         "button.toggle_3",
         "button.identify",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -110241,8 +109563,7 @@
         "button.toggle_3",
         "button.toggle_4",
         "button.identify",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -111370,8 +110691,7 @@
         "onoff",
         "measure_power",
         "meter_power",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -111647,8 +110967,7 @@
         "onoff.outlet2",
         "measure_power",
         "meter_power",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -112028,12 +111347,10 @@
         "button.toggle_2",
         "button.toggle_3",
         "button.identify",
-        "measure_battery",
         "onoff.usb2",
         "onoff.usb3",
         "measure_voltage",
-        "measure_current",
-        "alarm_battery"
+        "measure_current"
       ],
       "zigbee": {
         "productId": [
@@ -112687,8 +112004,7 @@
         "onoff.gang3",
         "onoff.gang4",
         "onoff.gang5",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -113315,8 +112631,7 @@
         "onoff.gang4",
         "onoff.gang5",
         "onoff.gang6",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -113972,8 +113287,7 @@
         "onoff.gang5",
         "onoff.gang6",
         "onoff.gang7",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -114424,8 +113738,7 @@
         "onoff.gang6",
         "onoff.gang7",
         "onoff.gang8",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -114835,8 +114148,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_generic",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -115364,8 +114676,7 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -115604,8 +114915,7 @@
         "thermostat_mode",
         "measure_battery",
         "onoff",
-        "measure_humidity",
-        "alarm_battery"
+        "measure_humidity"
       ],
       "platforms": [
         "local"
@@ -115894,8 +115204,7 @@
       },
       "class": "other",
       "capabilities": [
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {},
       "energy": {
@@ -116216,8 +115525,7 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -116665,8 +115973,7 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -117296,8 +116603,7 @@
         "dim.valve_3",
         "dim.valve_4",
         "measure_battery",
-        "onoff",
-        "alarm_battery"
+        "onoff"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -117463,8 +116769,7 @@
       "capabilities": [
         "onoff",
         "dim.valve",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -117532,8 +116837,7 @@
         "alarm_vibration",
         "measure_temperature",
         "measure_battery",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -118014,8 +117318,7 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_1_gang/assets/images/large.png",
@@ -118143,8 +117446,7 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_2_gang/assets/images/large.png",
@@ -118292,8 +117594,7 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_3_gang/assets/images/large.png",
@@ -118458,8 +117759,7 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_4_gang/assets/images/large.png",
@@ -118633,8 +117933,7 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
@@ -118791,8 +118090,7 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_4_gang_3/assets/images/large.png",
@@ -118968,8 +118266,7 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_6_gang/assets/images/large.png",
@@ -120345,8 +119642,7 @@
       "capabilities": [
         "alarm_water",
         "measure_battery",
-        "alarm_tamper",
-        "alarm_battery"
+        "alarm_tamper"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
@@ -120861,8 +120157,7 @@
         "alarm_water_low",
         "alarm_water_high",
         "alarm_water",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_water_level": {
@@ -121107,8 +120402,7 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -121231,8 +120525,7 @@
         "meter_water",
         "measure_temperature",
         "alarm_water",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -121624,8 +120917,7 @@
         "measure_humidity",
         "measure_pressure",
         "measure_luminance",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -122718,8 +122010,7 @@
         "locked",
         "measure_battery",
         "alarm_generic",
-        "alarm_contact",
-        "alarm_battery"
+        "alarm_contact"
       ],
       "pair": [
         {
@@ -125139,8 +124430,7 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "pair": [
         {
@@ -125559,8 +124849,7 @@
       "capabilities": [
         "onoff",
         "vacuumcleaner_state",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "pair": [
         {
@@ -125694,8 +124983,7 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "pair": [
         {
@@ -125831,8 +125119,7 @@
         "alarm_generic",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "pair": [
         {
@@ -128053,8 +127340,7 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "pair": [
         {

@@ -125,17 +125,15 @@ function runValidation() {
 
         const capabilities = compose.capabilities || [];
 
-        // Dual Battery Capability Verification (Adaptive battery paradigm)
+        // Dual Battery Capability Verification
         const hasMeasureBattery = capabilities.includes('measure_battery');
         const hasAlarmBattery = capabilities.includes('alarm_battery');
-        if (hasMeasureBattery || hasAlarmBattery) {
-          if (!hasMeasureBattery || !hasAlarmBattery) {
-            driverIssues.push({
-              level: 'warning',
-              rule: 'dual-battery-mismatch',
-              message: 'Adaptive Power Paradigm warning: Declare BOTH measure_battery and alarm_battery statically for dynamic runtime pruning.',
-            });
-          }
+        if (hasMeasureBattery && hasAlarmBattery) {
+          driverIssues.push({
+            level: 'error',
+            rule: 'dual-battery-conflict',
+            message: 'SDK v3 battery conflict: never declare measure_battery and alarm_battery together. Use measure_battery for percentage reports or alarm_battery for boolean-only low battery reports.',
+          });
         }
 
         // Energy Management & Approximation Conflicts

@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
@@ -11,8 +12,6 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * - BatteryMixin (tuya/v9.6.0) for standard battery monitoring
  */
 class SwitchWirelessDevice extends PhysicalButtonMixin(VirtualButtonMixin(BatteryMixin(ZigBeeDevice))) {
-
-  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.buttonCount = 1;

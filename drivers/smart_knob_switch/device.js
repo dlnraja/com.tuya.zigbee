@@ -1,6 +1,8 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * Smart Knob Switch - TS004F
@@ -9,7 +11,6 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  */
 class SmartKnobSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ButtonDevice)) {
 
-  get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.buttonCount = 1;
       this.log('[SMART_KNOB_SWITCH] v5.12.0 init - 1 button');

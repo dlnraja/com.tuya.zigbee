@@ -4,6 +4,7 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
