@@ -78,3 +78,21 @@ Validation:
 - `npm run validate:publish`: pass, with existing non-blocking `titleFormatted` warnings.
 - `npm run prepush`: pass; it now executes precommit, recursive validation, and publish validation successfully.
 - `git diff --check`: pass.
+
+## Follow-up 2026-06-28 17:28 Europe/Paris - TS0041 collision hardening
+
+The master CI failure showed the same Homey Compose risk applies to stable-v5: adding `TS0041` to generic `button_wireless_4` creates an implicit cartesian product with every 4-button manufacturer. Stable-v5 already has many historical broad collisions, so this fix keeps the new `_TZ3000_yj6k7vfo` support isolated instead of adding another broad TS0041 claim.
+
+Actions:
+
+- Removed `TS0041` and the `_TZ3000_yj6k7vfo` variants from generic `button_wireless_4`.
+- Added dedicated `button_wireless_4_ts0041` for only `_tz3000_yj6k7vfo`, `_TZ3000_yj6k7vfo`, and `_TZ3000_YJ6K7VFO` with `productId: TS0041`.
+- Reused the proven 4-button implementation and generated dedicated 4-gang Flow cards so Homey shows buttons 1-4 without adding switch/onoff semantics.
+- Set `gangCount = 4` for the shared 4-button implementation.
+
+Validation:
+
+- `npm run validate:recursive`: pass, 229/229 drivers, 0 critical errors.
+- `node scripts/_validate_all.js`: pass for JSON, JS brackets, and flow-card references.
+- `npm run validate:publish`: pass, existing non-blocking `titleFormatted` warnings only.
+- `npm run prepush`: pass; precommit, recursive validation, and publish validation all complete.
