@@ -18,7 +18,7 @@ class SceneSwitch4Device extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this.buttonCount = 4;
 
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
     // v10.1.1: E000 + DP cluster detection for scene switch devices
     await this._setupE000Detection(zclNode);

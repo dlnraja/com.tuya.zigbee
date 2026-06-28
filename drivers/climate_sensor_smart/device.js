@@ -6,7 +6,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode }).catch(() => {});
+    await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(() => {});
     if (this.mainsPowered && this.hasCapability('measure_battery')) {
       this.log('[SCENE-PANEL] Mains powered device detected. Dynamically pruning battery capability...');
       await this.removeCapability('measure_battery').catch(() => {});

@@ -186,6 +186,26 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
   }
 
+  _normalizeSoilMoisture(value, dpId = 'unknown') {
+    const moisture = Number(value);
+    if (!Number.isFinite(moisture)) {
+      this.log(`[SOIL] Ignoring non-numeric soil moisture DP${dpId}: ${String(value)}`);
+      return null;
+    }
+    return Math.max(0, Math.min(100, moisture));
+  }
+
+  _setAmbientHumidity(dpId, value) {
+    const humidity = Number(value);
+    if (!Number.isFinite(humidity)) {
+      this.log(`[SOIL] Ignoring non-numeric ambient humidity DP${dpId}: ${String(value)}`);
+      return;
+    }
+    if (this.hasCapability('measure_humidity')) {
+      this.safeSetCapabilityValue('measure_humidity', Math.max(0, Math.min(100, humidity))).catch(() => { });
+    }
+  }
+
   _handleDP(dpId, value) {
     const dp = Number(dpId);
     let parsedValue = value;
@@ -204,15 +224,23 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       return;
     }
 
-    if (dp === 2 || dp === 3 || dp === 109 || dp === 105) {
+    if (dp === 101 || dp === 109) {
+      this.log(`[SOIL] Ambient humidity DP${dp} = ${parsedValue}%`);
+      this._setAmbientHumidity(dp, parsedValue);
+      return;
+    }
+
+    if (dp === 2 || dp === 3 || dp === 105) {
       this.log(`[SOIL] Moisture DP${dp} = ${parsedValue}%`);
       let moisture = parsedValue;
       if (dp === 105 && moisture > 100) {moisture = safeMultiply(moisture, 10);}
+      const normalizedMoisture = this._normalizeSoilMoisture(moisture, dp);
+      if (normalizedMoisture === null) {return;}
       
       const targetCap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
-      this.safeSetCapabilityValue(targetCap, parseFloat(moisture)).catch(() => { });
+      this.safeSetCapabilityValue(targetCap, normalizedMoisture).catch(() => { });
       this._updateWaterAlarm();
-      this._triggerMoistureFlows(moisture);
+      this._triggerMoistureFlows(normalizedMoisture);
       return;
     }
 
@@ -244,18 +272,20 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   _triggerMoistureFlows(moisture) {
+    const normalizedMoisture = this._normalizeSoilMoisture(moisture, 'flow');
+    if (normalizedMoisture === null) {return;}
     if (this._flowTriggerMoistureChanged) {
-      this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);
+      this._flowTriggerMoistureChanged.trigger(this, { moisture: normalizedMoisture }).catch(this.error);
     }
     if (this._previousMoisture !== null) {
-      if (moisture < 30 && this._previousMoisture >= 30 && this._flowTriggerSoilDry) {
+      if (normalizedMoisture < 30 && this._previousMoisture >= 30 && this._flowTriggerSoilDry) {
         this._flowTriggerSoilDry.trigger(this, {}).catch(this.error);
       }
-      if (moisture > 70 && this._previousMoisture <= 70 && this._flowTriggerSoilWet) {
+      if (normalizedMoisture > 70 && this._previousMoisture <= 70 && this._flowTriggerSoilWet) {
         this._flowTriggerSoilWet.trigger(this, {}).catch(this.error);
       }
     }
-    this._previousMoisture = moisture;
+    this._previousMoisture = normalizedMoisture;
   }
 
   _triggerTemperatureFlows(temperature) {
@@ -275,4 +305,3 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 }
 
 module.exports = SoilSensorDevice;
-
