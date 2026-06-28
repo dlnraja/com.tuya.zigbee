@@ -67,5 +67,24 @@ Validation:
 - `node scripts/_validate_all.js`: pass.
 - `npm run precommit`: pass; security scanner clean.
 - `npm run validate:publish`: pass, with existing non-blocking `titleFormatted` warnings.
-- `npm run prepush`: pass; zero AggregateError, 8 historical TS0041 collision warnings only.
+- `npm run prepush`: pass; zero AggregateError. GitHub Actions later caught a TS0041 cartesian fingerprint collision that is fixed in the follow-up below.
 - `git diff --check`: pass.
+
+## Follow-up 2026-06-28 17:28 Europe/Paris - TS0041 collision hardening
+
+GitHub Actions source: Unified CI/CD Orchestrator run after commit `c15af9285c`. The strict fingerprint job failed on 8 new collisions, all caused by adding `TS0041` to the generic `button_wireless_4` driver. Homey Compose expands `manufacturerName x productId`, so every existing 4-button manufacturer in that driver also claimed `TS0041` and collided with `switch_1gang`.
+
+Actions:
+
+- Removed `TS0041` from generic `button_wireless_4`; it remains for normal `TS0044`/`TS004F`/`SNZB-01M`/`TS0014` routing.
+- Added dedicated `button_wireless_4_ts0041` for only `_tz3000_yj6k7vfo`, `_TZ3000_yj6k7vfo`, and `_TZ3000_YJ6K7VFO` with `productId: TS0041`.
+- Reused the proven 4-button implementation and generated dedicated 4-gang Flow cards so Homey shows buttons 1-4 without relying on switch capabilities.
+- Set `gangCount = 4` and made the fallback Flow card id use `this.driver.id`, avoiding hard-coded `button_wireless_4` ids.
+
+Validation:
+
+- `node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json`: pass, `0 current, 0 baseline, 0 new`.
+- `npm run validate:recursive`: pass, 430/430 drivers, 0 critical errors.
+- `node scripts/_validate_all.js`: pass, 3/3 checks.
+- `npm run validate:publish`: pass, existing non-blocking `titleFormatted` warnings only.
+- `npm run prepush`: pass, zero AggregateError and zero fingerprint collisions.

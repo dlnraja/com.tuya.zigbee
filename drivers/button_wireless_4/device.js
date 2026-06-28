@@ -20,6 +20,7 @@ class Button4GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.buttonCount = 4;
+    this.gangCount = 4;
 
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
 
@@ -218,7 +219,8 @@ class Button4GangDevice extends ButtonDevice {
 
     // Fallback: trigger flow card directly
     try {
-      const cardId = `button_wireless_4_button_4gang_button_${pressType === 'single' ? 'pressed' : pressType === 'double' ? 'double_press' : 'long_press'}`;
+      const driverId = this.driver?.id || 'button_wireless_4';
+      const cardId = `${driverId}_button_4gang_button_${pressType === 'single' ? 'pressed' : pressType === 'double' ? 'double_press' : 'long_press'}`;
       const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
       if (trigger) {
         await trigger.trigger(this, { button, pressType });
