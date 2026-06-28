@@ -1,14 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-27T18:12:25.314Z",
+  "generatedAt": "2026-06-28T11:03:44.308Z",
   "description": "Known historical fingerprint collisions. CI fails only for collisions not listed here.",
-  "collisions": [
-    {
-      "key": "_tze200_myd45weu|TS0601",
-      "drivers": [
-        "soilsensor",
-        "soilsensor_2"
-      ]
-    }
-  ]
+  "collisions": []
 }
