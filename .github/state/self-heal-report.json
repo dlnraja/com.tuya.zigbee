@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-28T14:10:05.565Z",
+  "timestamp": "2026-06-28T15:11:42.014Z",
   "totalFiles": 0,
-  "totalFixes": 943,
+  "totalFixes": 952,
   "rules": {
     "flow-card-try-catch": {
       "count": 31,
@@ -347,7 +347,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 860,
+      "count": 869,
       "files": [
         {
           "file": "drivers",
@@ -859,11 +859,27 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_uri7oadn|ts0041 found in: button_wireless_1, button_wireless_4"
+        },
+        {
+          "file": "drivers",
+          "detail": "sonoff|ts0041 found in: button_wireless_1, button_wireless_4"
+        },
+        {
+          "file": "drivers",
+          "detail": "ewelink|ts0041 found in: button_wireless_1, button_wireless_4"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_qzjcsmar|ts0043 found in: button_wireless_2, wall_remote_3_gang"
         },
         {
           "file": "drivers",
           "detail": "_tz3000_qzjcsmar|ts0044 found in: button_wireless_2, button_wireless_4"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qzjcsmar|ts0041 found in: button_wireless_2, button_wireless_4"
         },
         {
           "file": "drivers",
@@ -1019,11 +1035,19 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_b3mgfu0d|ts0041 found in: button_wireless_2, button_wireless_4"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_kaflzta4|ts004f found in: button_wireless_4, smart_knob"
         },
         {
           "file": "drivers",
           "detail": "_tyzb01_bagt1e4o|ts0014 found in: button_wireless_4, switch_4gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_11pg3ima|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
           "file": "drivers",
@@ -1035,11 +1059,19 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_a4xycprs|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_a4xycprs|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
           "file": "drivers",
           "detail": "_tz3000_a4xycprs|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_et7afzxz|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
           "file": "drivers",
@@ -1051,11 +1083,19 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_nuombroo|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_nuombroo|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
           "file": "drivers",
           "detail": "_tz3000_nuombroo|ts004f found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ufhtxr59|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
           "file": "drivers",
@@ -1067,6 +1107,10 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_vp6clf9d|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_vp6clf9d|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
@@ -1075,15 +1119,15 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_xabckq1v|ts0041 found in: button_wireless_4, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_xabckq1v|ts0044 found in: button_wireless_4, remote_button_wireless_wall"
         },
         {
           "file": "drivers",
           "detail": "_tz3000_xabckq1v|ts004f found in: button_wireless_4, remote_button_wireless_wall"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_yj6k7vfo|ts0041 found in: button_wireless_smart, smart_button_switch"
         },
         {
           "file": "drivers",
@@ -2419,10 +2463,6 @@
         },
         {
           "file": "drivers",
-          "detail": "_tze200_clrdrnya|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
-        },
-        {
-          "file": "drivers",
           "detail": "_tze200_holel4dk|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
         },
         {
@@ -2464,10 +2504,6 @@
         {
           "file": "drivers",
           "detail": "_tze203_ztc6ggyl|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze204_clrdrnya|ts0601 found in: motion_sensor_radar_mmwave, presence_sensor_radar"
         },
         {
           "file": "drivers",
