@@ -1,81 +1,51 @@
 {
-  "timestamp": "2026-06-28T14:57:21.698Z",
+  "timestamp": "2026-06-28T15:26:07.154Z",
   "version": "9.0.137",
   "phases": {
     "1a": {
       "errors": [],
       "warnings": [],
       "stats": {
-        "total": 429,
-        "zigbee": 377,
+        "total": 430,
+        "zigbee": 378,
         "wifi": 51,
         "virtual": 1,
         "hybrid": 0,
-        "ok": 377,
+        "ok": 378,
         "emptyMF": [],
-        "totalFP": 5041
+        "totalFP": 5042
       }
     },
     "1b": {
       "broken": [],
-      "total": 429
+      "total": 430
     },
     "1c": {
-      "missing": [],
-      "total": 858
+      "missing": [
+        "button_wireless_4_ts0041/small.png",
+        "button_wireless_4_ts0041/large.png"
+      ],
+      "total": 860
     },
     "1d": {
-      "collisions": 8,
-      "collisionMap": {
-        "_TZ3000_0HT8DNXJ|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_CZUYT8LZ|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_DZIAICT4|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_J61X9RXN|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_KFU8ZAPD|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_MH9PX7CQ|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_XWUVEIZV|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ],
-        "_TZ3000_EE8NRT2L|TS0041": [
-          "button_wireless_4",
-          "switch_1gang"
-        ]
-      }
+      "collisions": 0,
+      "collisionMap": {}
     }
   },
   "errors": [],
   "warnings": [
-    "COLLISIONS: 8"
+    "IMAGES: 2 manquantes"
   ],
   "fixes": [],
   "stats": {
-    "total": 429,
-    "zigbee": 377,
+    "total": 430,
+    "zigbee": 378,
     "wifi": 51,
     "virtual": 1,
     "hybrid": 0,
-    "ok": 377,
+    "ok": 378,
     "emptyMF": [],
-    "totalFP": 5041
+    "totalFP": 5042
   },
   "conclusion": "PASS"
 }
