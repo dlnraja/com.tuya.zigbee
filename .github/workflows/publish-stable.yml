@@ -155,12 +155,31 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: "true"
         run: |
-          node scripts/automation/dashboard-monitor.js --latest --json || true
-          node .github/scripts/homey-device-diagnostics.js || true
-          node .github/scripts/collect-diagnostics.js || true
-          node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json || true
+          run_diag() {
+            local seconds="$1"
+            shift
+            local label="$*"
+            echo "::group::${label}"
+            if timeout --kill-after=30s "${seconds}s" "$@"; then
+              echo "[diag] completed: ${label}"
+            else
+              local code=$?
+              echo "::warning title=Diagnostics command timed out or failed::${label} exited with code ${code}"
+            fi
+            echo "::endgroup::"
+          }
+
+          run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
+          run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
+          run_diag 120 node .github/scripts/homey-device-diagnostics.js
+          run_diag 120 node .github/scripts/collect-diagnostics.js
+          run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json
