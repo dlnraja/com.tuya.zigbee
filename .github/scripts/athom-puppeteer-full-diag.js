@@ -109,6 +109,10 @@ async function autoLogin(page, captured) {
 async function doManualLogin(page, captured) {
   const EMAIL = process.env.HOMEY_EMAIL;
   const PASSWORD = process.env.HOMEY_PASSWORD;
+
+  if (!/tools\.developer\.homey\.app|accounts\.athom\.com/i.test(page.url())) {
+    await page.goto(BASE, {waitUntil:'networkidle2'}).catch(()=>{});
+  }
   
   // Click LOG IN if visible
   await page.evaluate(()=>{
