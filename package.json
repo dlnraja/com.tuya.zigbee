@@ -50,7 +50,7 @@
     "titan:fix": "node scripts/ci/pre-commit-checks.js --fix",
     "sync:branches": "node scripts/automation/sync-branches.js",
     "sync:branches:dry": "node scripts/automation/sync-branches.js --dry-run",
-    "precommit": "node scripts/ci/titan-pre-commit.js && node scripts/ci/security-scanner.js && node scripts/validation/check-mixin-order.js",
+    "precommit": "node scripts/ci/titan-pre-commit.js && node scripts/ci/security-scanner.js && node scripts/validation/check-mixin-order.js && npm run check:timer-context",
     "precommit:full": "node scripts/ci/titan-pre-commit.js && node scripts/PRE_COMMIT_CHECKS.js && node scripts/ci/security-scanner.js && node scripts/ci/validate-all-yaml.js --json && node scripts/ci/check-flow-ids.js --json",
     "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
     "audit": "node scripts/COMPLETE_POWER_AUDIT.js",
@@ -107,7 +107,8 @@
     "skills:validate": "node scripts/automation/mega-audit.js",
     "skills:audit": "node scripts/PRE_COMMIT_CHECKS.js",
     "skills:security": "node scripts/ci/security-scanner.js",
-    "skills:prepush": "npm run precommit:full && npm test && npm run build-docs"
+    "skills:prepush": "npm run precommit:full && npm test && npm run build-docs",
+    "check:timer-context": "node scripts/validation/check-homey-timer-context.js"
   },
   "keywords": [
     "homey",
