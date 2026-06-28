@@ -151,10 +151,10 @@ jobs:
 
       - name: Bump version
         id: bump
-        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
-        with:
-          version: ${{ steps.bump_level.outputs.level }}
-          changelog: ${{ steps.cl.outputs.text }}
+        env:
+          BUMP_LEVEL: ${{ steps.bump_level.outputs.level }}
+          HOMEY_CHANGELOG: ${{ steps.cl.outputs.text }}
+        run: node .github/scripts/bump-homey-version.js
 
       - name: Sync package manifests version
         run: |

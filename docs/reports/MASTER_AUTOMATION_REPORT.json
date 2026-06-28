@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-28T15:26:07.154Z",
-  "version": "9.0.137",
+  "timestamp": "2026-06-28T16:17:16.068Z",
+  "version": "9.0.139",
   "phases": {
     "1a": {
       "errors": [],
@@ -13,7 +13,7 @@
         "hybrid": 0,
         "ok": 378,
         "emptyMF": [],
-        "totalFP": 5042
+        "totalFP": 5034
       }
     },
     "1b": {
@@ -21,10 +21,7 @@
       "total": 430
     },
     "1c": {
-      "missing": [
-        "button_wireless_4_ts0041/small.png",
-        "button_wireless_4_ts0041/large.png"
-      ],
+      "missing": [],
       "total": 860
     },
     "1d": {
@@ -33,9 +30,7 @@
     }
   },
   "errors": [],
-  "warnings": [
-    "IMAGES: 2 manquantes"
-  ],
+  "warnings": [],
   "fixes": [],
   "stats": {
     "total": 430,
@@ -45,7 +40,7 @@
     "hybrid": 0,
     "ok": 378,
     "emptyMF": [],
-    "totalFP": 5042
+    "totalFP": 5034
   },
   "conclusion": "PASS"
 }

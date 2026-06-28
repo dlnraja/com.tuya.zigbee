@@ -89,11 +89,11 @@ jobs:
           echo "📝 Changelog: $CHANGELOG"
       
       - name: Update App Version
-        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
         id: version
-        with:
-          version: ${{ github.event.inputs.version_type }}
-          changelog: ${{ steps.changelog.outputs.changelog }}
+        env:
+          BUMP_LEVEL: ${{ github.event.inputs.version_type }}
+          HOMEY_CHANGELOG: ${{ steps.changelog.outputs.changelog }}
+        run: node .github/scripts/bump-homey-version.js
       
       - name: Commit Version Changes
         run: |

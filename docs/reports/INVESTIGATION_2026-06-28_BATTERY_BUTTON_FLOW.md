@@ -88,3 +88,20 @@ Validation:
 - `node scripts/_validate_all.js`: pass, 3/3 checks.
 - `npm run validate:publish`: pass, existing non-blocking `titleFormatted` warnings only.
 - `npm run prepush`: pass, zero AggregateError and zero fingerprint collisions.
+
+## Follow-up 2026-06-28 18:14 Europe/Paris - Publish workflow Docker hardening
+
+GitHub Actions source: Auto-Publish on Push run `28328116030` after commit `27d7064b83`. The app code did not run yet; the job failed before checkout while building the external `athombv/github-action-homey-app-version` Docker action. Docker Hub timed out while resolving `node:lts-alpine`, so the publish path depended on an external container pull for a simple version bump.
+
+Actions:
+
+- Added `.github/scripts/bump-homey-version.js`, a repo-local Node version bumper for Homey app manifests.
+- Replaced the Docker-based version action in `auto-publish-on-push.yml`, the manual `publish.yml`, and the dormant `homey-app-cicd.yml.manual` template.
+- Preserved the existing `patch`/`minor`/`major` behavior, package and `.homeycompose` sync, `.homeychangelog.json` entry creation, and `steps.bump.outputs.version` contract.
+
+Validation:
+
+- `node --check .github/scripts/bump-homey-version.js`: pass.
+- YAML parse for `auto-publish-on-push.yml` and `publish.yml`: pass.
+- Isolated functional test: `9.0.139 -> 9.0.140` patch bump, with `app.json`, `package.json`, `.homeycompose/app.json`, and `.homeychangelog.json` synchronized.
+- `git diff --check`: pass.
