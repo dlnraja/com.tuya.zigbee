@@ -64,6 +64,11 @@ const PRIMARY_DRIVERS = [
   'device_din_rail', 'presence_sensor_radar', 'switch_1gang'
 ];
 
+const PRIMARY_BY_FINGERPRINT = new Map([
+  // Tuya TS0601 bed/presence pressure sensor; contact_sensor is only a generic fallback.
+  ['_tze200_seq9cm6u|TS0601'.toLowerCase(), 'bed_sensor'],
+]);
+
 let resolved = 0;
 let unresolved = 0;
 
@@ -72,8 +77,13 @@ for (const [key, entries] of fpMap) {
   if (uniqueDrivers.length > 1) {
     const [mfr, pid] = key.split('|');
 
-    // Pick the victim driver (the one NOT in PRIMARY_DRIVERS, or just the last one)
-    let victim = uniqueDrivers.find(d => !PRIMARY_DRIVERS.includes(d));
+    // Pick the victim driver. Some TS0601 families need explicit ownership because
+    // broad fallback drivers can otherwise win by directory order.
+    const preferredDriver = PRIMARY_BY_FINGERPRINT.get(key);
+    let victim = preferredDriver && uniqueDrivers.includes(preferredDriver)
+      ? uniqueDrivers.find(d => d !== preferredDriver)
+      : null;
+    if (!victim) victim = uniqueDrivers.find(d => !PRIMARY_DRIVERS.includes(d));
     if (!victim) victim = uniqueDrivers[1]; // fallback
 
     const change = {
