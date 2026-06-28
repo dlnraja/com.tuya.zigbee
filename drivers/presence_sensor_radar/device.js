@@ -11,8 +11,6 @@ const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
  * These devices report battery DPs but are actually mains-powered.
  */
 const MAINS_POWERED_RADARS = new Set([
-  '_tze204_clrdrnya',
-  '_tze200_clrdrnya',
   '_tze200_lyetpprm',
   '_tze204_lyetpprm',
   '_tze200_wukb7rhc',

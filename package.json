@@ -39,7 +39,7 @@
     "ai:generate": "node scripts/ai/driver-generator.js",
     "update": "node scripts/automation/update-all-links.js",
     "readme:update": "node scripts/automation/update-readme-proactive.js",
-    "prepush": "node scripts/master-automation.js && node scripts/automation/pre-push-intelligent.js",
+    "prepush": "node scripts/master-automation.js && node scripts/automation/pre-push-dual-layer-gate.js",
     "finalize": "powershell -ExecutionPolicy Bypass -File scripts/automation/finalize-all.ps1",
     "check:health": "node scripts/validation/check-driver-health.js",
     "check:wifi": "node scripts/validation/check-wifi-lifecycle.js",

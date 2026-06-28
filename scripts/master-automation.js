@@ -128,10 +128,12 @@ function phase1a_validateAppJson(app) {
   const errors    = [];
   const warnings  = [];
 
-  // Top-level SDK3 requis
-  const REQUIRED  = ['id','version','compatibility','sdkVersion','name','description','category','permissions','images','author'];
+  // Top-level SDK3 requis. `sdk` is the canonical SDK3 field; `sdkVersion`
+  // is accepted only for older generated manifests.
+  const REQUIRED  = ['id','version','compatibility','name','description','category','permissions','images','author'];
   REQUIRED.forEach(k => { if (!app[k]) errors.push('TOP: champ manquant: ' + k); });
-  if (app.sdk !== 3) errors.push('SDK doit être 3, trouvé: ' + app.sdk);
+  const sdkValue = app.sdk !== undefined ? app.sdk : app.sdkVersion;
+  if (sdkValue !== 3) errors.push('SDK doit être 3, trouvé: ' + sdkValue);
   if (!app.brandColor)           warnings.push('brandColor absent');
   if (!app.homeyCommunityTopicId)warnings.push('homeyCommunityTopicId absent');
 
