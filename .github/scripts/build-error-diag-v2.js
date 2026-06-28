@@ -20,7 +20,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const APP_ID = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
+function readAppJson() {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'app.json'), 'utf8'));
+  } catch {
+    return {};
+  }
+}
+
+const APP_JSON = readAppJson();
+const APP_ID = process.env.TARGET_APP_ID || process.env.APP_ID || APP_JSON.id || 'com.dlnraja.tuya.zigbee';
+const APP_VER = APP_JSON.version || 'unknown';
 const BUILD_ID = process.env.BUILD_ID || process.argv[2] || '';
 const HOMEY_EMAIL = process.env.HOMEY_EMAIL || '';
 const HOMEY_PASSWORD = process.env.HOMEY_PASSWORD || '';
@@ -34,29 +44,159 @@ function logErr(...a) { console.error('[diag-v2]', ...a); }
 const report = {
   timestamp: new Date().toISOString(),
   appId: APP_ID,
+  version: APP_VER,
   buildId: BUILD_ID,
+  noFailedBuildFound: false,
   tier1_api: null,
   tier2_puppeteer: null,
   rootCause: null,
 };
 
+function summarizeBuild(build) {
+  if (!build) return null;
+  return {
+    id: build.id || build.buildId || null,
+    version: build.version || null,
+    state: build.state || null,
+    stateMeta: build.stateMeta || build.state_meta || build.error || build.errorMessage || build.feedback || null,
+    createdAt: build.createdAt || build.created_at || null,
+    stateChangedAt: build.stateChangedAt || build.state_changed_at || null,
+    sdk: build.sdk ?? null,
+    size: build.size || null,
+  };
+}
+
+function summarizeLocalizedTextMap(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return value;
+  const languages = {};
+  let totalChars = 0;
+  for (const [lang, text] of Object.entries(value)) {
+    const len = typeof text === 'string' ? text.length : JSON.stringify(text || '').length;
+    languages[lang] = len;
+    totalChars += len;
+  }
+  return { languages, totalChars };
+}
+
+function sanitizeForReport(key, value, depth = 0) {
+  const lower = String(key || '').toLowerCase();
+  if (/token|secret|password|authorization|cookie|credential|session/.test(lower)) return '[REDACTED]';
+  if (/url|uri|link/.test(lower)) return value ? '[URL_REDACTED]' : value;
+  if (lower === 'env') {
+    if (!value || typeof value !== 'object') return value ? '[REDACTED]' : value;
+    return Object.fromEntries(Object.keys(value).map((envKey) => [envKey, '[REDACTED]']));
+  }
+  if (lower === 'readme' || lower === 'changelog') return summarizeLocalizedTextMap(value);
+  if (typeof value === 'string') {
+    if (/^https?:\/\//i.test(value)) return '[URL_REDACTED]';
+    return value.length > 500 ? `${value.slice(0, 500)}...[truncated ${value.length - 500} chars]` : value;
+  }
+  if (!value || typeof value !== 'object') return value;
+  if (depth > 4) return '[OBJECT_TRUNCATED]';
+  if (Array.isArray(value)) return value.slice(0, 50).map((item, idx) => sanitizeForReport(`${key}[${idx}]`, item, depth + 1));
+  return Object.fromEntries(Object.entries(value).map(([childKey, childValue]) => [
+    childKey,
+    sanitizeForReport(childKey, childValue, depth + 1),
+  ]));
+}
+
+function deriveBuildFindings(build) {
+  const urlFields = ['archiveUrl', 'icon', 'imageLarge', 'imageSmall'];
+  const undefinedUrlFields = urlFields.filter((field) => typeof build[field] === 'string' && build[field].includes('/undefined/'));
+  const diagnosticHints = [];
+  if (undefinedUrlFields.length > 0) {
+    diagnosticHints.push('url_has_undefined: Athom did not fully parse the processed manifest/assets');
+  }
+  if (!build.sdk) {
+    diagnosticHints.push('sdk_missing: processed build has no SDK field');
+  }
+  if (!Array.isArray(build.platforms) || build.platforms.length === 0) {
+    diagnosticHints.push('platforms_missing: processed build has no target platforms');
+  }
+  return {
+    urlHasUndefined: undefinedUrlFields.length > 0,
+    undefinedUrlFields,
+    diagnosticHints,
+  };
+}
+
+function resolveHomeyCliRoot() {
+  const candidates = [];
+  try {
+    candidates.push(path.dirname(require.resolve('homey/package.json', { paths: [process.cwd(), __dirname] })));
+  } catch {
+    // package not installed locally; try global locations below.
+  }
+
+  if (process.env.APPDATA) {
+    candidates.push(path.join(process.env.APPDATA, 'npm', 'node_modules', 'homey'));
+  }
+
+  try {
+    const { execSync } = require('child_process');
+    const globalRoot = execSync('npm root -g', { encoding: 'utf8', timeout: 5000 }).trim();
+    candidates.push(path.join(globalRoot, 'homey'));
+  } catch {
+    // npm may be unavailable in very small CI images.
+  }
+
+  return candidates.find((candidate) => candidate && fs.existsSync(path.join(candidate, 'services', 'AthomApi.js'))) || null;
+}
+
+function classifyRootCauseFromText(text) {
+  const s = String(text || '').toLowerCase();
+  if (/manufacturername|required property/.test(s)) return 'MANIFEST/ZIGBEE IDENTIFIERS';
+  if (/invalid sdk version|sdk version:\s*undefined|sdkversion/.test(s)) return 'MANIFEST/SDK ISSUE';
+  if (/socket hang up|econnreset|etimedout|network/.test(s)) return 'ATHOM TRANSIENT NETWORK';
+  if (/url_has_undefined|did not fully parse|manifest\/assets|sdk_missing|platforms_missing/.test(s)) return 'ATHOM PROCESSOR DID NOT PARSE MANIFEST';
+  if (/aggregateerror|aggregate error/.test(s)) return 'ATHOM AGGREGATEERROR (MANIFEST/DRIVER MATRIX)';
+  if (/quota|rate limit|limit exceeded|exceed|too many/.test(s)) return 'QUOTA/RATE LIMIT';
+  if (/size|large|big|byte|mb|archive/.test(s)) return 'ARCHIVE SIZE';
+  if (/not allowed|forbidden|permission|unauthorized|banned|suspend/.test(s)) return 'ACCOUNT/PERMISSION BLOCK';
+  if (/processing[_ -]?failed/.test(s)) return 'PROCESSING FAILED (NO DETAIL EXPOSED)';
+  return null;
+}
+
+function collectRootCauseText() {
+  const parts = [];
+  const add = (value) => {
+    if (value === null || value === undefined) return;
+    if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+      parts.push(String(value));
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach(add);
+      return;
+    }
+    if (typeof value === 'object') {
+      Object.values(value).forEach(add);
+    }
+  };
+
+  add(report.tier1_api?.summary?.stateMeta);
+  add(report.tier1_api?.autoDetectedBuild?.stateMeta);
+  add(report.tier1_api?.build?.stateMeta);
+  add(report.tier1_api?.build?.state_meta);
+  add(report.tier1_api?.build?.error);
+  add(report.tier1_api?.build?.errorMessage);
+  add(report.tier1_api?.build?.feedback);
+  add(report.tier1_api?.derivedFindings?.diagnosticHints);
+  add(report.tier1_api?.suspicious);
+  add(report.tier2_puppeteer?.pageText);
+  add(report.tier2_puppeteer?.afterLoginText);
+  add(report.tier2_puppeteer?.error);
+  return parts.join('\n');
+}
+
 // ─── Tier 1: API ──────────────────────────────────────────────────────────
 async function tier1Api() {
   log('TIER 1: API diagnostic');
-  let HOMEY_CLI_ROOT;
-  try {
-    HOMEY_CLI_ROOT = path.dirname(require.resolve('homey/package.json'));
-  } catch {
-    // Cross-platform fallback: find homey CLI in global node_modules
-    try {
-      const { execSync } = require('child_process');
-      const globalRoot = execSync('npm root -g', { encoding: 'utf8', timeout: 5000 }).trim();
-      HOMEY_CLI_ROOT = path.join(globalRoot, 'homey');
-    } catch {
-      log('TIER 1: homey CLI not found — skipping API diagnostic');
-      report.tier1_api = { error: 'homey CLI not installed' };
-      return;
-    }
+  const HOMEY_CLI_ROOT = resolveHomeyCliRoot();
+  if (!HOMEY_CLI_ROOT) {
+    log('TIER 1: homey CLI not found — skipping API diagnostic');
+    report.tier1_api = { error: 'homey CLI not installed' };
+    return;
   }
 
   let AthomApi, AthomAppsAPI;
@@ -74,22 +214,47 @@ async function tier1Api() {
 
   // Auto-detect latest failed build if none specified.
   let targetBuild = BUILD_ID;
+  let latestBuild = null;
+  let autoDetectedBuild = null;
   if (!targetBuild) {
     const builds = await api.getBuilds({ $token: token, appId: APP_ID, query: { limit: 30 } });
     const list = Array.isArray(builds) ? builds : (builds.data || []);
+    list.sort((a, b) => (b.id || 0) - (a.id || 0));
+    latestBuild = list[0] || null;
     const failed = list.find(b => /failed|error|revoked/i.test(b.state));
-    if (failed) { targetBuild = String(failed.id); report.buildId = targetBuild; log('auto-detected build #' + targetBuild); }
-    else { log('no failed build found'); return; }
+    if (failed) {
+      targetBuild = String(failed.id);
+      autoDetectedBuild = summarizeBuild(failed);
+      report.buildId = targetBuild;
+      log('auto-detected build #' + targetBuild);
+    }
+    else {
+      report.noFailedBuildFound = true;
+      report.tier1_api = {
+        failedBuildFound: false,
+        latestBuild: summarizeBuild(latestBuild),
+      };
+      log(`no failed build found in last 30; latest is #${latestBuild?.id || '?'} (${latestBuild?.state || 'unknown'})`);
+      return;
+    }
   }
 
   // Dump the FULL build object (every field — Athom may expose the error in
   // a field the high-level SDK doesn't surface by default).
   const build = await api.getBuild({ $token: token, appId: APP_ID, buildId: String(targetBuild) });
+  const derivedFindings = deriveBuildFindings(build);
   const buildDump = {};
   for (const k of Object.keys(build).sort()) {
-    buildDump[k] = build[k] === undefined ? 'UNDEFINED' : build[k];
+    buildDump[k] = build[k] === undefined ? 'UNDEFINED' : sanitizeForReport(k, build[k]);
   }
-  report.tier1_api = { buildId: targetBuild, build: buildDump };
+  report.tier1_api = {
+    buildId: targetBuild,
+    rawFieldCount: Object.keys(build).length,
+    rawFields: Object.keys(build).sort(),
+    autoDetectedBuild,
+    derivedFindings,
+    build: buildDump,
+  };
 
   // Highlight any field that looks like an error/feedback/validation message.
   const suspicious = {};
@@ -97,10 +262,11 @@ async function tier1Api() {
     const sv = String(v).toLowerCase();
     if (/error|fail|invalid|reject|feedback|validation|reason|message|exception|limit|quota|exceed/i.test(k) ||
         /error|fail|invalid|reject|exceed|quota|limit|not allowed|forbidden/i.test(sv)) {
-      suspicious[k] = v;
+      suspicious[k] = sanitizeForReport(k, v);
     }
   }
   report.tier1_api.suspicious = suspicious;
+  report.tier1_api.summary = summarizeBuild(build);
   log('build fields:', Object.keys(buildDump).length, '| suspicious:', Object.keys(suspicious).join(',') || 'none');
 
   // Crashes endpoint (may carry runtime build errors).
@@ -123,6 +289,7 @@ async function tier1Api() {
 
 // ─── Tier 2: Puppeteer (hard 90s cap + HTML dump) ─────────────────────────
 async function tier2Puppeteer() {
+  if (!report.buildId) { log('TIER 2: skipped (no failed build id to inspect)'); return; }
   if (!HOMEY_EMAIL || !HOMEY_PASSWORD) { log('TIER 2: skipped (no HOMEY_EMAIL/PASSWORD)'); return; }
   log('TIER 2: Puppeteer dashboard scrape (90s hard cap)');
   let puppeteer;
@@ -198,11 +365,8 @@ async function tier2Puppeteer() {
   try { await tier2Puppeteer(); } catch (e) { report.tier2_puppeteer = { error: e.message }; logErr('tier2 failed:', e.message.slice(0, 100)); }
 
   // Best-effort root cause guess from gathered data.
-  const allText = JSON.stringify(report).toLowerCase();
-  if (/not allowed|forbidden|permission|unauthorized|banned|suspend/i.test(allText)) report.rootCause = 'ACCOUNT/PERMISSION BLOCK';
-  else if (/quota|limit|exceed|too many|rate/i.test(allText)) report.rootCause = 'QUOTA/RATE LIMIT';
-  else if (/sdk|sdkversion|manifest|invalid version/i.test(allText)) report.rootCause = 'MANIFEST/SDK ISSUE';
-  else if (/size|large|big|byte|mb/i.test(allText)) report.rootCause = 'ARCHIVE SIZE';
+  const classified = classifyRootCauseFromText(collectRootCauseText());
+  if (classified) report.rootCause = classified;
   else if (report.tier2_puppeteer?.afterLoginText || report.tier2_puppeteer?.pageText) report.rootCause = 'SEE DASHBOARD TEXT (review manually)';
   else report.rootCause = 'UNKNOWN (API exposes no error; dashboard scrape inconclusive)';
 
