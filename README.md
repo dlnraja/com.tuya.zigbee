@@ -40,7 +40,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
 | **Flow Cards** | 4,864 |
 | **Unique Capabilities** | 170 |
-| **SVG Icons** | 727 |
+| **SVG Icons** | 729 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
