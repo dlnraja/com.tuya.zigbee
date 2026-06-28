@@ -10,7 +10,6 @@
   "capabilities": [
     "measure_luminance",
     "measure_battery",
-    "alarm_battery",
     "button.1"
   ],
   "energy": {

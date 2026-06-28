@@ -20,7 +20,7 @@
  *  8. case-insensitive-matching — Ensure all manufacturer comparisons use CaseInsensitiveMatcher (containsCI)
  *  9. duplicate-fingerprints — Flag pairing ambiguity across drivers
  *  10. punycode-deprecation  — Replace deprecated punycode module
- *  11. dual-battery-cleanup  — Ensure both battery capabilities are declared statically
+ *  11. dual-battery-cleanup  — Remove SDK3 measure_battery/alarm_battery conflicts
  *  12. energy-approximation-cleanup — Remove redundant energy.approximation on measuring devices
  */
 'use strict';
@@ -457,13 +457,14 @@ function rule_punycodeDeprecation() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// RULE 11: DUAL BATTERY CAPABILITY CLEANUP (Rule R7.1) - ADAPTIVE PARADIGM
-// Ensures BOTH measure_battery and alarm_battery are present statically in driver.compose.json
-// so that the driver is fully compiled to adapt to battery/mains variants at runtime!
+// RULE 11: DUAL BATTERY CAPABILITY CLEANUP
+// SDK3 rule: never declare measure_battery and alarm_battery together.
+// Runtime adaptation may add/remove capabilities, but static manifests must not
+// publish duplicate battery semantics.
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function rule_dualBatteryCleanup() {
-  log('\n📋 Rule 11: Dual Battery Capability Injection (Rule R7.1 - Adaptive Mode)');
+  log('\n📋 Rule 11: Dual Battery Capability Cleanup');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
@@ -472,28 +473,22 @@ function rule_dualBatteryCleanup() {
       const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
       const caps = compose.capabilities || [];
 
-      if (caps.includes('measure_battery') || caps.includes('alarm_battery')) {
-        const hasMeasure = caps.includes('measure_battery');
-        const hasAlarm = caps.includes('alarm_battery');
+      const hasMeasure = caps.includes('measure_battery');
+      const hasAlarm = caps.includes('alarm_battery');
 
-        if (!hasMeasure || !hasAlarm) {
-          const newCaps = [...caps];
-          if (!hasMeasure) newCaps.push('measure_battery');
-          if (!hasAlarm) newCaps.push('alarm_battery');
-          
-          compose.capabilities = newCaps;
-          safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
-          fixes++;
-          addFix('dual-battery-cleanup', file, 'Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation');
-          log(`  ✅ Fixed: ${path.relative(ROOT, file)} (declared both battery capabilities for adaptive power discovery)`);
-        }
+      if (hasMeasure && hasAlarm) {
+        compose.capabilities = caps.filter(cap => cap !== 'alarm_battery');
+        safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
+        fixes++;
+        addFix('dual-battery-cleanup', file, 'Removed alarm_battery because measure_battery is already declared');
+        log(`  ✅ Fixed: ${path.relative(ROOT, file)} (removed duplicate alarm_battery)`);
       }
     } catch (e) {
       report.errors.push({ rule: 'dual-battery-cleanup', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files updated for runtime battery/mains adaptation`);
+  log(`  → ${fixes} battery conflicts removed`);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════

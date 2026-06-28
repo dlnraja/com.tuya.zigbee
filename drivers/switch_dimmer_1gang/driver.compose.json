@@ -9,7 +9,6 @@
   "capabilities": [
     "onoff",
     "dim",
-    "measure_battery",
     "button.1"
   ],
   "capabilitiesOptions": {

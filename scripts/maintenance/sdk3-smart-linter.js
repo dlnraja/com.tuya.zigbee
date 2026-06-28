@@ -177,14 +177,17 @@ const RULES = [
   {
     id: 'sdk3-mains-has-battery',
     severity: 'warn',
-    desc: 'Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.',
+    desc: 'Mains-only manifest still declares battery capability.',
     test: (code, driverDir) => {
       const isMains = /mainsPowered\s*\(\)\s*\{[^}]*return\s+true/s.test(code);
       if (!isMains) return false;
       const compose = loadCompose(driverDir);
       if (!compose) return false;
       const caps = compose.capabilities || [];
-      return caps.includes('measure_battery') || caps.includes('alarm_battery');
+      const energy = compose.energy || {};
+      const hasBatteryMetadata = Array.isArray(energy.batteries) && energy.batteries.length > 0;
+      const isExplicitMainsOnly = energy.mains === true && !hasBatteryMetadata;
+      return isExplicitMainsOnly && (caps.includes('measure_battery') || caps.includes('alarm_battery'));
     },
     fix: null,
   },
