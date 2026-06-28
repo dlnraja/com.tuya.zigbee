@@ -48,6 +48,31 @@ function dirStats(dir) {
   return { bytes, files };
 }
 
+function removeIfExists(file, reason) {
+  if (!fs.existsSync(file)) return 0;
+  const stat = fs.statSync(file);
+  fs.rmSync(file, { force: true });
+  console.log(`Publish trim: removed ${path.relative(destDir, file)} (${(stat.size / 1024 / 1024).toFixed(2)} MB) — ${reason}`);
+  return stat.size;
+}
+
+function trimPublishOnlyFiles() {
+  let removed = 0;
+  if (process.env.HOMEY_INCLUDE_MFS_DB !== '1') {
+    removed += removeIfExists(
+      path.join(destDir, 'data', 'mfs_db.json'),
+      'offline enrichment cache; static driver fingerprints are already embedded',
+    );
+  }
+  removed += removeIfExists(
+    path.join(destDir, 'data', '_used_mfrs.json'),
+    'diagnostic manufacturer inventory, not loaded at runtime',
+  );
+  if (removed > 0) {
+    console.log(`Publish trim total: ${(removed / 1024 / 1024).toFixed(2)} MB`);
+  }
+}
+
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
@@ -239,12 +264,18 @@ try {
     process.exit(1);
   }
 
-  // 5b) Archive budget guard. Homey may accept the upload but later mark the
+  // 5b) Remove publish-only caches that are not required for runtime startup.
+  // Static app pairing support is already in app.json/driver.compose.json and
+  // DeviceFingerprintDB. Keeping the full MFS cache pushes Athom processing over
+  // the practical payload limit and surfaces as dashboard AggregateError.
+  trimPublishOnlyFiles();
+
+  // 5c) Archive budget guard. Homey may accept the upload but later mark the
   // draft as processing_failed when the packed app is too heavy. Fail before
   // publishing so CI points at the real root cause.
   const publishStats = dirStats(destDir);
   const publishMB = publishStats.bytes / (1024 * 1024);
-  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 32);
+  const maxPublishMB = Number(process.env.HOMEY_PUBLISH_SOURCE_MAX_MB || process.env.HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB || 24);
   console.log(`Publish directory size: ${publishMB.toFixed(2)} MB across ${publishStats.files} files (limit ${maxPublishMB.toFixed(2)} MB).`);
   if (publishMB > maxPublishMB) {
     console.error(`FATAL: publish directory is ${publishMB.toFixed(2)} MB, above the ${maxPublishMB.toFixed(2)} MB safety limit.`);

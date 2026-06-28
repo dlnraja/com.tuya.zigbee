@@ -17,10 +17,13 @@ const ROOT = path.resolve(__dirname, '../..');
 const ARGS = new Set(process.argv.slice(2));
 const JSON_MODE = ARGS.has('--json');
 const STRICT = ARGS.has('--strict');
+const CHECK_FINAL = ARGS.has('--final') || process.env.HOMEY_CHECK_FINAL_PUBLISH_DIR === '1';
 
 const LIMITS = {
   appJsonMB: numberEnv('HOMEY_APP_JSON_MAX_MB', 4),
   publishUncompressedMB: numberEnv('HOMEY_PUBLISH_MAX_UNCOMPRESSED_MB', 32),
+  publishSourceMB: numberEnv('HOMEY_PUBLISH_SOURCE_MAX_MB', 24),
+  publishFinalMB: numberEnv('HOMEY_PUBLISH_FINAL_MAX_MB', 24),
   archiveWarnMB: numberEnv('HOMEY_ARCHIVE_WARN_MB', 7),
   archiveMaxMB: numberEnv('HOMEY_ARCHIVE_MAX_MB', 20),
 };
@@ -162,11 +165,20 @@ function main() {
   );
 
   checkDirUnderLimit(
-    'Prepared publish directory',
+    'Prepared publish directory (source)',
     path.join(os.tmpdir(), 'homey-publish-temp'),
-    LIMITS.publishUncompressedMB,
+    LIMITS.publishSourceMB,
     { excludedExtensions: ['.gz'], excludedDirs: ['.homeybuild', 'node_modules', '.git', '.cache'] },
   );
+
+  if (CHECK_FINAL) {
+    checkDirUnderLimit(
+      'Final publish directory',
+      path.join(os.tmpdir(), 'homey-publish-temp'),
+      LIMITS.publishFinalMB,
+      { excludedExtensions: ['.gz'], excludedDirs: ['.homeybuild', '.git', '.cache'] },
+    );
+  }
 
   const appId = (() => {
     try {
