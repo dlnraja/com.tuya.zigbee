@@ -14,5 +14,83 @@
     "modelIds": [
       "TS0601"
     ]
+  },
+  "_TZE200_myd45weu": {
+    "driverId": "soilsensor_2",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "measure_humidity",
+      "measure_temperature",
+      "measure_battery"
+    ],
+    "dps": {
+      "3": {
+        "name": "soil_moisture",
+        "converter": "raw",
+        "capability": "measure_humidity"
+      },
+      "5": {
+        "name": "temperature",
+        "converter": "divideBy10",
+        "capability": "measure_temperature"
+      },
+      "14": {
+        "name": "battery_state",
+        "converter": "enum",
+        "values": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "15": {
+        "name": "battery",
+        "converter": "raw",
+        "capability": "measure_battery"
+      }
+    }
+  },
+  "_TZE284_myd45weu": {
+    "driverId": "soilsensor_2",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "measure_humidity",
+      "measure_temperature",
+      "measure_battery"
+    ],
+    "dps": {
+      "3": {
+        "name": "soil_moisture",
+        "converter": "raw",
+        "capability": "measure_humidity"
+      },
+      "5": {
+        "name": "temperature",
+        "converter": "divideBy10",
+        "capability": "measure_temperature"
+      },
+      "14": {
+        "name": "battery_state",
+        "converter": "enum",
+        "values": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "15": {
+        "name": "battery",
+        "converter": "raw",
+        "capability": "measure_battery"
+      }
+    }
   }
 }

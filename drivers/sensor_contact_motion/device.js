@@ -114,7 +114,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       // Fantem ZB003-x 4-in-1 multisensor
       // DP5=temp(÷10), DP6=humidity
       'FANTEM': {
-        patterns: ['_TZE200_7hfcudw5', '_TZE200_myd45weu',
+        patterns: ['_TZE200_7hfcudw5',
           '_TZE200_nlrfgpny', 'ZB003-X'],
         dp4: 'measure_battery',
         dp5: 'measure_temperature',
