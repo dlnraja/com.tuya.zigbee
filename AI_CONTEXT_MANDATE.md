@@ -2,9 +2,11 @@
 > [!IMPORTANT]
 > **CRITICAL MANDATE FOR ALL AI AGENTS & DEVELOPERS:**
 > Before proposing any code modification, adding a driver, or executing a task in this repository, you **MUST** read this context file in its entirety. This document acts as the single source of truth for the codebase architecture, historical evolutions, dual-app deployment mechanics, and strict validation requirements. **DO NOT DEVIATE** from the protocols and structures defined here.
-> 
+>
 > **MANDATORY SECOND STEP**: After reading this mandate, you **MUST** read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. It is the operational companion to this architectural mandate.
-> 
+>
+> **MANDATORY DIAGNOSTIC SAFETY STEP**: Any task involving Gmail crash logs, Homey dashboard diagnostics, forum/GitHub notification emails, or generated diagnostic artifacts must also follow [DIAGNOSTIC_HISTORY_RULES.md](docs/rules/DIAGNOSTIC_HISTORY_RULES.md) before collecting, summarizing, committing, or publishing results.
+>
 > **MANDATORY V9.0.39 UPDATE**: This mandate includes all v8.5.0–v9.0.39 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safeSetCapabilityValue()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 15/06/2026. See section 9 for the complete changelog.
 
 ---
@@ -310,6 +312,7 @@ All CI workflows include a `security` job that validates:
 | Development Rules | `docs/rules/DEVELOPMENT_RULES.md` | SDK3 development best practices |
 | Zigbee/Tuya Rules | `docs/rules/ZIGBEE_TUYA_RULES.md` | Tuya DP and ZCL protocol rules |
 | Critical Mistakes | `docs/rules/CRITICAL_MISTAKES.md` | Known anti-patterns and bugs |
+| Diagnostic History Rules | `docs/rules/DIAGNOSTIC_HISTORY_RULES.md` | Safe historical Gmail/Homey diagnostic recovery and gates |
 | Post-Promotion Protocol | `docs/rules/POST_PROMOTION_PROTOCOL.md` | Registry sync after release |
 | Project Index | `PROJECT_INDEX.md` | Full project structure overview |
 | Global Improvement Plan | `GLOBAL_IMPROVEMENT_PLAN.md` | Long-term improvement roadmap |

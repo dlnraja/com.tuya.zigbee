@@ -8,6 +8,29 @@ on:
   schedule:
     - cron: '0 22 * * 0'    # Weekly sweep (Sunday 22:00 UTC)
   workflow_dispatch:
+    inputs:
+      all_history:
+        description: "Fetch diagnostics from the historical baseline instead of the rolling window"
+        type: boolean
+        default: false
+        required: false
+      since:
+        description: "Optional start date for IMAP search, for example 2019-01-01"
+        required: false
+      max_results:
+        description: "Maximum matching emails to fetch"
+        default: "1000"
+        required: false
+      reprocess:
+        description: "Ignore processed state and rebuild the diagnostic chronology"
+        type: boolean
+        default: false
+        required: false
+      auto_implement:
+        description: "Allow fingerprint implementation from sanitized diagnostics"
+        type: boolean
+        default: false
+        required: false
 
 permissions:
   contents: write
@@ -51,9 +74,17 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
+          GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
+          GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GMAIL_DIAG_AUTO_IMPLEMENT: ${{ github.event.inputs.auto_implement || 'false' }}
+          DRY_RUN: ${{ github.event.inputs.auto_implement == 'true' && 'false' || 'true' }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
       - name: Privacy gate for Gmail outputs
         run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+      - name: Diagnostic history gate
+        run: npm run check:diag-history
       - name: Commit state
         continue-on-error: true
         run: |
@@ -103,6 +134,9 @@ jobs:
           else
             echo "No aggregated diagnostic changes to push"
           fi
+      - name: Diagnostic history gate after aggregation
+        if: always()
+        run: npm run check:diag-history
 
       - name: "Protocol Pattern Detection (Multi-Protocol)"
         if: always()
@@ -150,5 +184,6 @@ jobs:
           name: sanitized-diagnostics-report
           path: |
             .github/state/diagnostics-report.json
+            .github/state/diagnostics-crossref.yml
             diagnostics/summary.json
           retention-days: 30

@@ -96,6 +96,14 @@ function validateWorkflow(file) {
     addWarning(file, 'diagnostic workflow reads private sources but does not run privacy-redactor.js');
   }
 
+  if (/scripts\/automation\/fetch-gmail-diags\.js/.test(content)) {
+    addError(file, 'workflow uses legacy Gmail diagnostics fetcher; use .github/scripts/fetch-gmail-diagnostics.js with privacy and history gates');
+  }
+
+  if (/fetch-gmail-diagnostics\.js/.test(content) && !/(diagnostic-history-gate\.js|check:diag-history)/.test(content)) {
+    addWarning(file, 'Gmail diagnostics workflow should run diagnostic-history-gate.js after privacy-redactor.js');
+  }
+
   if (/git\s+push[^\n]*\|\|\s*(?:true|echo\b|:)/.test(content)) {
     addWarning(file, 'git push is masked with a best-effort fallback; use verified push for integration-critical writes');
   }

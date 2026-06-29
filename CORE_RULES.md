@@ -30,6 +30,8 @@ Every prompt, diagnosis, PR review, issue reply, forum reply, and automation pla
 
 Universal fixes for security, CI, publish verification, crash prevention, SDK3 validation, battery handling, physical buttons, endpoint mapping, and flow reliability are cross-app candidates by default. Always record whether the change should be master-only, stable-only, or propagated to both. Never copy App IDs, version metadata, publish secrets, or branch-specific store links across tracks.
 
+When the prompt involves Gmail crash logs, Homey dashboard diagnostics, forum/GitHub notification emails, or generated diagnostic artifacts, follow `docs/rules/DIAGNOSTIC_HISTORY_RULES.md`: collect through the sanitized IMAP/dashboard paths, run privacy redaction first, run `npm run check:diag-history`, and never commit raw diagnostic state.
+
 ### R1: safeSetCapabilityValue
 ```js
 // BANNED - crashes after device destroy:
