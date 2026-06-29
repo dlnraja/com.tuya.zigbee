@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-29T22:31:20.210Z",
+  "timestamp": "2026-06-29T23:24:20.396Z",
   "totalFiles": 0,
-  "totalFixes": 940,
+  "totalFixes": 938,
   "rules": {
     "flow-card-try-catch": {
       "count": 37,
@@ -371,7 +371,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 851,
+      "count": 849,
       "files": [
         {
           "file": "drivers",
@@ -2387,10 +2387,6 @@
         },
         {
           "file": "drivers",
-          "detail": "_tze200_myd45weu|ts0601 found in: motion_sensor, sensor_climate_contact, soil_sensor"
-        },
-        {
-          "file": "drivers",
           "detail": "_tze200_nlrfgpny|ts0601 found in: motion_sensor, siren"
         },
         {
@@ -3112,10 +3108,6 @@
         {
           "file": "drivers",
           "detail": "_tze200_9cqcpkgb|ts0601 found in: sensor_climate_contact, soil_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_myd45weu|ts0601 found in: sensor_climate_contact, soil_sensor"
         },
         {
           "file": "drivers",
