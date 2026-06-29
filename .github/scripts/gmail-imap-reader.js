@@ -46,6 +46,16 @@ function resolveSinceDate(opts) {
   return new Date(Date.now() - 30 * 864e5);
 }
 
+function resolveUntilDate(opts) {
+  const raw = opts.untilDate || opts.beforeDate || opts.until || opts.before || process.env.GMAIL_DIAG_UNTIL || null;
+  if (!raw) return null;
+  if (raw instanceof Date && Number.isFinite(raw.getTime())) return raw;
+  const parsed = new Date(String(raw));
+  if (Number.isFinite(parsed.getTime())) return parsed;
+  console.log('[IMAP] Invalid until date, ignoring:', aggressiveSanitize(String(raw)));
+  return null;
+}
+
 function resolveMaxResults(opts) {
   const allHistory = opts.allHistory || boolValue(process.env.GMAIL_DIAG_ALL_HISTORY);
   const fallback = allHistory ? 1000 : 100;
@@ -273,11 +283,14 @@ async function readViaIMAP(opts = {}) {
   if (ge && hp && !pairs.find(p => p[0] === ge && p[1] === hp)) pairs.push([ge, hp]);
   if (he && gp && !pairs.find(p => p[0] === he && p[1] === gp)) pairs.push([he, gp]);
   if (!pairs.length) { console.log('[IMAP] No credentials found'); return null }
-  const since = resolveSinceDate(opts).toISOString().split('T')[0];
+  const sinceDate = resolveSinceDate(opts);
+  const untilDate = resolveUntilDate(opts);
+  const since = sinceDate.toISOString().split('T')[0];
+  const before = untilDate ? untilDate.toISOString().split('T')[0] : null;
   const maxResults = resolveMaxResults(opts);
   let c = null;
   for (const [u, p] of pairs) {
-    console.log('[IMAP] Trying', accountAlias(u), 'since', since, 'max', maxResults);
+    console.log('[IMAP] Trying', accountAlias(u), 'since', since, 'before', before || 'now', 'max', maxResults);
     try { c = await tryConnect(u, p); console.log('[IMAP] Auth OK as', accountAlias(u)); break }
     catch (err) { console.log('[IMAP] Auth FAIL for', accountAlias(u), '-', aggressiveSanitize(err.message)); c = null }
   }
@@ -291,10 +304,12 @@ async function readViaIMAP(opts = {}) {
       const kws = ['_TZE', '_TZ3', 'TS0', 'TS1', 'TS02', 'TS06', 'TS05', 'TS11', '_TZ', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log', 'oom', 'heap limit', 'allocation failed', 'processing failed', 'AggregateError', 'Missing Capability Listener', 'capability listener', 'battery', 'button', 'flow card', 'homey', 'tuya', 'zigbee', 'athombv', 'com.tuya.zigbee', 'com.dlnraja.tuya.zigbee'];
       const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'noreply@homey.app', 'support@athom.com', 'support@homey.app', 'dev@athom.com', 'developer@athom.com'];
       const seqSet = new Set();
-      for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
-      for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
+      const dateCriteria = { since: new Date(since) };
+      if (before) dateCriteria.before = new Date(before);
+      for (const kw of kws) { try { (await c.search({ ...dateCriteria, subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
+      for (const fr of senders) { try { (await c.search({ ...dateCriteria, from: fr })).forEach(s => seqSet.add(s)) } catch {} }
       for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS0001', 'TS0002', 'TS0003', 'TS0004', 'TS011F', 'TS0201', 'TS0203', 'TS0501', 'TS0601', 'PJ-1203', 'PJ-1203A', '_TYZB01', '_TYST11', 'TS0011', 'TS0012', 'TS0013', 'TS0014', 'TS0015', 'TS0502', 'TS0503', 'TS0504', 'TS0505', 'TS0051', 'TS0052', 'TS0053', 'TS0054', 'TS110E', 'TS110F', 'TS0202', 'TS0204', 'TS0205', 'TS0207', 'TS0211', 'TS0212', 'TS0215', 'TS0216', 'TS0218', 'TS0222', 'TS0301', 'TS0302', 'TS0726', 'TS0801', 'TS1001', 'TS1101', 'TS1201', 'TS1301']) {
-        try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
+        try { (await c.search({ ...dateCriteria, body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
       const seqs = [...seqSet].sort((a, b) => b - a).slice(0, maxResults);
       console.log('[IMAP]', seqSet.size, 'relevant msgs, fetching', seqs.length);
