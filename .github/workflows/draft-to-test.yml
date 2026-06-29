@@ -13,13 +13,19 @@ on:
         required: false
         default: ""
       branch:
-        description: "Branch to promote from (master or stable-v5)"
+        description: "Branch to promote from"
         required: false
         default: "master"
         type: choice
         options:
           - master
           - stable-v5
+          - codex-diag-timeouts
+      post_forum:
+        description: "Post a Homey Community Forum update after promotion"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -117,7 +123,7 @@ jobs:
         run: echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
 
       - name: Post update to Homey Community Forum
-        if: steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success'
+        if: ${{ inputs.post_forum == true && (steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success') }}
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
