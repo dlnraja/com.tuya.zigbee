@@ -120,7 +120,9 @@ jobs:
 
       - name: Get app version
         id: app_ver
-        run: echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
+        run: |
+          VERSION="$(node -p "require('./app.json').version")"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
       - name: Post update to Homey Community Forum
         if: ${{ inputs.post_forum == true && (steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success') }}
