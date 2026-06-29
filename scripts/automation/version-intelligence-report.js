@@ -9,6 +9,7 @@ const STATE_DIR = path.join(ROOT, '.github', 'state');
 const REPORT_JSON = path.join(STATE_DIR, 'version-intelligence-report.json');
 const REPORT_MD = path.join(ROOT, 'docs', 'WORKING_VERSIONS_REFERENCE.md');
 const DASHBOARD_REPORT = path.join(STATE_DIR, 'dashboard-monitor-report.json');
+const MAX_MARKDOWN_ROWS = Number(process.env.VERSION_REPORT_MD_MAX_ROWS || 120);
 
 const CATEGORIES = [
   ['publish_processing', /\b(publish|processing|aggregate|athom|dashboard|build|rate limit|request rate)\b/i],
@@ -126,7 +127,7 @@ function markdownCell(value) {
 function renderMarkdown(report) {
   const app = report.app;
   const dashboard = report.dashboard;
-  const workingRows = dashboard.workingVersions.map(item => [
+  const workingRowsAll = dashboard.workingVersions.map(item => [
     item.version,
     item.latestBuildId || '',
     item.latestState || '',
@@ -135,13 +136,15 @@ function renderMarkdown(report) {
     item.lastSuccessfulAt || '',
     item.lastTestAt || '',
   ]);
-  const failedRows = dashboard.failedOnlyVersions.map(item => [
+  const failedRowsAll = dashboard.failedOnlyVersions.map(item => [
     item.version,
     item.latestBuildId || '',
     item.latestFailureDetail || '',
     item.failedBuilds,
     item.lastSeenAt || '',
   ]);
+  const workingRows = workingRowsAll.slice(0, MAX_MARKDOWN_ROWS);
+  const failedRows = failedRowsAll.slice(0, MAX_MARKDOWN_ROWS);
   const categoryRows = Object.entries(report.commitCategories)
     .sort((a, b) => b[1] - a[1])
     .map(([category, count]) => {
@@ -167,13 +170,19 @@ function renderMarkdown(report) {
     '',
     workingRows.length
       ? markdownTable(workingRows, ['Version', 'Latest Build', 'Latest State', 'Successful Builds', 'Failed Builds', 'Last Successful', 'Last Test'])
-      : 'Dashboard report did not include working version history yet. Run `node scripts/automation/dashboard-monitor.js --json` first.',
+      : 'Dashboard report did not include working version history yet. Run `node scripts/automation/dashboard-monitor.js --latest` first.',
+    workingRowsAll.length > workingRows.length
+      ? `Showing ${workingRows.length} newest working versions out of ${workingRowsAll.length}. Full details are in \`.github/state/version-intelligence-report.json\`.`
+      : '',
     '',
     '## Failed-Only Versions',
     '',
     failedRows.length
       ? markdownTable(failedRows, ['Version', 'Latest Build', 'Latest Failure', 'Failed Builds', 'Last Seen'])
       : 'No failed-only versions in the current dashboard window.',
+    failedRowsAll.length > failedRows.length
+      ? `Showing ${failedRows.length} newest failed-only versions out of ${failedRowsAll.length}. Full details are in \`.github/state/version-intelligence-report.json\`.`
+      : '',
     '',
     '## Commit Message Themes Since First Commit',
     '',

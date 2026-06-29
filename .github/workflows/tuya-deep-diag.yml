@@ -1,0 +1,154 @@
+name: "Tuya Deep Diagnostics Recovery"
+
+on:
+  workflow_dispatch:
+    inputs:
+      report_id:
+        description: "Optional Homey diagnostic/report ID to correlate"
+        required: false
+      good_build:
+        description: "Optional known-good Athom build id for dashboard comparison"
+        required: false
+      bad_build:
+        description: "Optional failing Athom build id for dashboard comparison"
+        required: false
+      all_history:
+        description: "Fetch historical Gmail diagnostics for correlation"
+        type: boolean
+        default: false
+        required: false
+      since:
+        description: "Optional start date for IMAP search, for example 2019-01-01"
+        required: false
+      until:
+        description: "Optional exclusive end date for IMAP search, for example 2024-01-01"
+        required: false
+      max_results:
+        description: "Maximum Gmail diagnostics to fetch per IMAP window"
+        default: "500"
+        required: false
+      max_total_results:
+        description: "Maximum Gmail diagnostics to keep across all IMAP windows"
+        default: "5000"
+        required: false
+      chunk_days:
+        description: "Split historical IMAP fetch into N-day windows; 0 disables chunking"
+        default: "0"
+        required: false
+      reprocess:
+        description: "Ignore processed Gmail diagnostic state"
+        type: boolean
+        default: false
+        required: false
+      download_archives:
+        description: "Download build archives during dashboard comparison"
+        type: boolean
+        default: false
+
+env:
+  NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
+permissions:
+  contents: read
+  issues: read
+
+concurrency:
+  group: tuya-deep-diag-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Crash regression guard - Homey timer context
+        run: npm run check:timer-context
+
+      - name: Fetch Gmail crash diagnostics
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_DIAG_AI_MAX: "0"
+          GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
+          GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
+          GMAIL_DIAG_UNTIL: ${{ github.event.inputs.until || '' }}
+          GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_MAX_TOTAL_RESULTS: ${{ github.event.inputs.max_total_results || github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_CHUNK_DAYS: ${{ github.event.inputs.chunk_days || '0' }}
+          GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
+          GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: "true"
+        run: node .github/scripts/fetch-gmail-diagnostics.js
+
+      - name: Homey dashboard and device diagnostics
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/automation/dashboard-monitor.js --latest || true
+          node scripts/automation/version-intelligence-report.js || true
+          node .github/scripts/homey-device-diagnostics.js || true
+          node .github/scripts/collect-diagnostics.js || true
+
+      - name: Athom Developer Dashboard full diag
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          TARGET_APP_ID: com.dlnraja.tuya.zigbee.stable
+        run: |
+          npm install puppeteer --no-save
+          ARGS=()
+          if [ -n "${{ github.event.inputs.good_build }}" ]; then ARGS+=("${{ github.event.inputs.good_build }}"); fi
+          if [ -n "${{ github.event.inputs.bad_build }}" ]; then ARGS+=("${{ github.event.inputs.bad_build }}"); fi
+          if [ "${{ github.event.inputs.download_archives }}" = "true" ]; then ARGS+=("--download"); fi
+          node .github/scripts/athom-puppeteer-full-diag.js "${ARGS[@]}"
+
+      - name: Privacy gate
+        if: always()
+        run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json
+
+      - name: Diagnostic history gate
+        if: always()
+        run: npm run check:diag-history --if-present
+
+      - name: Upload sanitized diagnostic artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tuya-deep-diag-${{ github.run_id }}
+          path: |
+            diagnostics/summary.json
+            .github/state/diagnostics-report.json
+            .github/state/homey-device-report.json
+            .github/state/dashboard-monitor-report.json
+            .github/state/version-intelligence-report.json
+            docs/WORKING_VERSIONS_REFERENCE.md
+            screenshots/full-diag-report.json
+          if-no-files-found: warn
+          retention-days: 14
