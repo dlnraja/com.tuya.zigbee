@@ -87,8 +87,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
           const num = safeMultiply(v, 1);
           if (num === null) {return null;}
           // Handle various Tuya temperature formats (x10, x100, or raw)
-          if (Math.abs(num) > 1000) {return num * 100;}
-          if (Math.abs(num) > 100) {return safeMultiply(num, 10);}
+          if (Math.abs(num) > 1000) {return safeDivide(num, 100);}
+          if (Math.abs(num) > 100) {return safeDivide(num, 10);}
           return num;
         }
       },
@@ -103,7 +103,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       102: { capability: 'measure_luminance', divisor: 1 },
       103: { setting: 'report_interval', min: 30, max: 1200 },
       104: { setting: 'soil_calibration', min: -30, max: 30 },
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeDivide(v, 10) : v },
       106: { capability: 'measure_ec', divisor: 1 },
       107: { setting: 'temperature_calibration', min: -20, max: 20 },
       109: { capability: 'measure_humidity', divisor: 1 },
@@ -233,7 +233,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (dp === 2 || dp === 3 || dp === 105) {
       this.log(`[SOIL] Moisture DP${dp} = ${parsedValue}%`);
       let moisture = parsedValue;
-      if (dp === 105 && moisture > 100) {moisture = safeMultiply(moisture, 10);}
+      if (dp === 105 && moisture > 100) {moisture = safeDivide(moisture, 10);}
       const normalizedMoisture = this._normalizeSoilMoisture(moisture, dp);
       if (normalizedMoisture === null) {return;}
       
@@ -246,11 +246,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     if (dp === 5 || dp === 1) {
       let temp = parsedValue;
-      if (dp === 1) {temp = safeMultiply(temp, 10);}
-      else {
-        if (Math.abs(temp) > 1000) {temp = temp * 100;}
-        else if (Math.abs(temp) > 100) {temp = safeMultiply(temp, 10);}
-      }
+      if (Math.abs(temp) > 1000) {temp = safeDivide(temp, 100);}
+      else if (Math.abs(temp) > 100) {temp = safeDivide(temp, 10);}
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
       this.safeSetCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
       this._triggerTemperatureFlows(temp);
