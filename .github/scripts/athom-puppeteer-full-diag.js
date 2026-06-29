@@ -34,10 +34,54 @@ const SHOTS_DIR   = path.join(__dirname,'..','..','screenshots');
 const REPORT_PATH = path.join(SHOTS_DIR,'full-diag-report.json');
 const SUM         = process.env.GITHUB_STEP_SUMMARY || null;
 
+let privacy = null;
+try { privacy = require('./privacy-redactor'); } catch {}
+
 function log(m) { console.log(m); if(SUM) try{fs.appendFileSync(SUM,m+'\n');}catch{} }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 fs.mkdirSync(SHOTS_DIR, {recursive:true});
+
+function safeUrl(value) {
+  const raw = String(value || '');
+  if (!raw) return raw;
+  try {
+    const url = new URL(raw);
+    url.username = '';
+    url.password = '';
+    url.search = '';
+    url.hash = '';
+    url.pathname = url.pathname
+      .split('/')
+      .map(segment => {
+        if (segment.length > 48) return '[REDACTED_SEGMENT]';
+        if (/^[A-Za-z0-9_-]{32,}$/.test(segment)) return '[REDACTED_SEGMENT]';
+        return segment;
+      })
+      .join('/');
+    return privacy?.redact ? privacy.redact(url.toString()) : url.toString();
+  } catch {
+    return privacy?.redact ? privacy.redact(raw) : raw;
+  }
+}
+
+function sanitizeReport(value, key = '') {
+  if (value === null || value === undefined) return value;
+  if (Array.isArray(value)) return value.map(item => sanitizeReport(item, key));
+  if (typeof value === 'object') {
+    const out = {};
+    for (const [childKey, childValue] of Object.entries(value)) {
+      out[childKey] = sanitizeReport(childValue, childKey);
+    }
+    return out;
+  }
+  if (typeof value === 'string') {
+    const lower = key.toLowerCase();
+    if (lower.includes('url') || /^https?:\/\//i.test(value)) return safeUrl(value);
+    return privacy?.redact ? privacy.redact(value) : value;
+  }
+  return value;
+}
 
 async function snap(page, name) {
   const p = path.join(SHOTS_DIR, name+'.png');
@@ -161,7 +205,7 @@ async function analyzeBuild(page, buildId, captured) {
   result.mainUrl = page.url();
   const mainText = await page.evaluate(()=>document.body?.innerText||'');
   result.bodyLen = mainText.length;
-  log(`  Page: ${result.bodyLen}c | URL: ${result.mainUrl}`);
+  log(`  Page: ${result.bodyLen}c | URL: ${safeUrl(result.mainUrl)}`);
   
   // Check for "Processing failed" indicator
   result.hasFailed = /processing.?failed/i.test(mainText);
@@ -286,7 +330,7 @@ async function analyzeBuild(page, buildId, captured) {
   if (captured.archiveUrls.length > 0) {
     result.archiveUrl = captured.archiveUrls.find(u => u.includes(buildId)) 
       || captured.archiveUrls[0];
-    log(`  Archive URL: ${result.archiveUrl}`);
+    log(`  Archive URL: ${safeUrl(result.archiveUrl)}`);
   }
   
   // Also check page links for .tgz or download
@@ -295,7 +339,7 @@ async function analyzeBuild(page, buildId, captured) {
     const dl = links.find(l => /\.tgz|\.tar\.gz|download|archive/i.test(l.href));
     return dl?.href || null;
   });
-  if (dlUrl) { result.archiveUrl = dlUrl; log(`  Download link: ${dlUrl}`); }
+  if (dlUrl) { result.archiveUrl = dlUrl; log(`  Download link: ${safeUrl(dlUrl)}`); }
   
   return result;
 }
@@ -305,7 +349,7 @@ async function analyzeBuild(page, buildId, captured) {
 // ===========================================================
 async function downloadArchive(url, dest, token) {
   return new Promise((resolve, reject) => {
-    log(`  [DL] ${url} → ${dest}`);
+    log(`  [DL] ${safeUrl(url)} → ${dest}`);
     const headers = token ? {'Authorization':`Bearer ${token}`} : {};
     const proto = url.startsWith('https') ? https : http;
     proto.get(url, {headers}, res => {
@@ -392,7 +436,7 @@ async function main() {
         }
         if (/\.tgz|\.tar\.gz|archive/i.test(u)) {
           captured.archiveUrls.push(u);
-          log(`  [NET] Archive URL: ${u.slice(0,100)}`);
+          log(`  [NET] Archive URL: ${safeUrl(u)}`);
         }
         captured.allUrls.push(u);
       } catch {}
@@ -402,7 +446,7 @@ async function main() {
         const u = res.url();
         if (u.includes('/build/') && u.includes('apps-api')) {
           const j = await res.json().catch(()=>null);
-          if (j?.archiveUrl) { captured.archiveUrls.push(j.archiveUrl); log(`  [NET] archiveUrl from resp: ${j.archiveUrl}`); }
+          if (j?.archiveUrl) { captured.archiveUrls.push(j.archiveUrl); log(`  [NET] archiveUrl from resp: ${safeUrl(j.archiveUrl)}`); }
         }
       } catch {}
     });
@@ -412,7 +456,7 @@ async function main() {
     const ok = await autoLogin(page, captured);
     if (!ok) { log('❌ Auth failed'); process.exit(1); }
     await snap(page, 'full-00-authed');
-    log(`  Current URL: ${page.url()}`);
+    log(`  Current URL: ${safeUrl(page.url())}`);
     
     // Analyze builds
     log('\n=== STEP 2: Analyze GOOD build #' + GOOD_BUILD + ' ===');
@@ -448,7 +492,9 @@ async function main() {
     report.comparison.differences.forEach(d => log(`  ⚠️  [${d.type}] ${d.desc || JSON.stringify(d.items?.slice(0,3))}`));
     
     // Save report
-    fs.writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
+    const safeReport = sanitizeReport(report);
+    if (privacy?.assertNoLeaks) privacy.assertNoLeaks(safeReport, REPORT_PATH);
+    fs.writeFileSync(REPORT_PATH, JSON.stringify(safeReport, null, 2));
     log(`\n[REPORT] ${REPORT_PATH}`);
     log(`[SCREENSHOTS] ${SHOTS_DIR}`);
     
