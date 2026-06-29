@@ -34,6 +34,7 @@
     "test:old": "node scripts/validation/validate-driver-schemas.js",
     "matrix": "node scripts/automation/generate-device-matrix.js",
     "coverage": "node scripts/automation/generate-coverage-stats.js",
+    "versions:report": "node scripts/automation/dashboard-monitor.js --latest && node scripts/automation/version-intelligence-report.js",
     "reports": "node scripts/automation/generate-all-reports.ps1",
     "ai:research": "node scripts/ai/web-research.js",
     "ai:analyze": "node scripts/ai/heuristic-analyzer.js",

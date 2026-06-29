@@ -16,6 +16,7 @@
 const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
+const { summarizeVersionHistory } = require('./build-history-utils');
 
 function readAppId() {
   if (process.env.TARGET_APP_ID) return process.env.TARGET_APP_ID;
@@ -195,6 +196,7 @@ async function main() {
   const latestFailedBuild = sorted.find(isFailedBuild) || null;
   const latestGoodBuild = sorted.find(isSuccessfulBuild) || null;
   const latestIsFailed = latestBuild ? isFailedBuild(latestBuild) : false;
+  const versionSummary = summarizeVersionHistory(sorted, { appId: APP_ID });
 
   if (recentFailed.length > 3) {
     const prefix = latestIsFailed ? '🚨' : 'ℹ️';
@@ -219,6 +221,19 @@ async function main() {
     latestBuilds: sorted.slice(0, showCount).map(summarizeBuild),
     latestFailedBuild: summarizeBuild(latestFailedBuild),
     latestGoodBuild: summarizeBuild(latestGoodBuild),
+    latestWorkingVersion: versionSummary.latestWorkingVersion,
+    latestTestVersion: versionSummary.latestTestVersion,
+    versionTotals: {
+      totalVersions: versionSummary.totalVersions,
+      workingVersions: versionSummary.workingVersionCount,
+      testVersions: versionSummary.testVersionCount,
+      failedOnlyVersions: versionSummary.failedOnlyVersionCount,
+    },
+    workingVersions: versionSummary.workingVersions,
+    testVersions: versionSummary.testVersions,
+    failedOnlyVersions: versionSummary.failedOnlyVersions,
+    failurePatterns: versionSummary.failurePatterns,
+    versionHistory: versionSummary.versionHistory,
     recentWindow: 100,
     recentFailedCount: recentFailed.length,
     currentStatus: {
