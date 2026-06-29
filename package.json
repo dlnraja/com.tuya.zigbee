@@ -104,7 +104,7 @@
     "hooks:install": "git config core.hooksPath .githooks && echo Hooks installed: pre-commit + pre-push",
     "hooks:uninstall": "git config --unset core.hooksPath && echo Hooks disabled",
     "prepublish:validate": "npm run check:all",
-    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "prepare": "node -e \"try{require('child_process').execFileSync('git',['config','core.hooksPath','.githooks'],{stdio:'ignore'})}catch(e){}\"",
     "skills:validate": "node scripts/automation/mega-audit.js",
     "skills:audit": "node scripts/PRE_COMMIT_CHECKS.js",
     "skills:security": "node scripts/ci/security-scanner.js",
