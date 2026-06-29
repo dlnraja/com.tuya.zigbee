@@ -65,6 +65,9 @@
   "5.11.216": {
     "en": "Fix diagnostic UI bugs, parse Tuya alarm payloads, auto-sync 80 community fingerprints, correct ZCL dividers"
   },
+  "5.11.219": {
+    "en": "Restore SDK3 button flow trigger routing, repair TS0041 four-button events, and harden stable publish diagnostics."
+  },
   "changelog": [
     {
       "version": "5.11.218",

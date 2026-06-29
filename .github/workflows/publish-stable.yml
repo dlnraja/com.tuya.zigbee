@@ -76,20 +76,27 @@ jobs:
         run: npx homey app build
       - name: Sanitize Built Manifest
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+      - name: Prepare Publish Directory
+        run: node scripts/prepare-publish.js
       - name: Publish to Draft
         id: publish
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
-          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
-          printf 'y\nn\ny\n' | npx homey app publish --path .homeybuild 2>&1 || true
+          if [ -z "$HOMEY_PAT" ]; then
+            echo "::error::HOMEY_PAT is required to publish the stable app"
+            exit 1
+          fi
+          echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null
+          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(),'homey-publish-temp')")"
+          node scripts/maintenance/sanitize-manifest.cjs "$PUBLISH_DIR/app.json"
+          HOMEY_HEADLESS=1 npx homey app publish --path "$PUBLISH_DIR"
           echo "Draft publish completed"
 
   promote:
     name: "Promote to Test"
     needs: [pre-validation, publish]
-    if: always() && needs.pre-validation.result == 'success'
+    if: needs.pre-validation.result == 'success' && needs.publish.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -116,6 +123,13 @@ jobs:
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
+      - name: Verify expected test build
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          VER=$(node -p "require('./app.json').version")
+          node scripts/automation/dashboard-monitor.js --latest --json --alert --require-builds --expect-version "$VER" --expect-state test
       - name: Summary
         if: always()
         run: |

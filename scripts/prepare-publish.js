@@ -7,6 +7,7 @@ const { sanitizeManifestFile } = require('./maintenance/sanitize-manifest.cjs');
 
 const srcDir = path.join(__dirname, '..', '.homeybuild');
 const destDir = path.join(os.tmpdir(), 'homey-publish-temp');
+const appRoot = path.join(__dirname, '..');
 
 // Windows reserved device names — these CANNOT be packed into a tar
 // archive: tar-stream hangs and Athom returns "processing_failed".
@@ -48,6 +49,21 @@ function sanitizeSourceTree() {
   }
 }
 
+function copyStoreMetadata() {
+  const metadataFiles = fs.readdirSync(appRoot)
+    .filter(name => (
+      name === 'README.txt'
+      || name === '.homeychangelog.json'
+      || /^README\.[a-z-]+\.txt$/i.test(name)
+    ));
+
+  for (const name of metadataFiles) {
+    fs.copySync(path.join(appRoot, name), path.join(destDir, name));
+  }
+
+  console.log(`Copied store metadata: ${metadataFiles.length ? metadataFiles.join(', ') : 'none'}`);
+}
+
 console.log(`Copying built files from ${srcDir} to ${destDir}...`);
 
 if (!fs.existsSync(srcDir)) {
@@ -81,6 +97,7 @@ try {
   // Copy everything except reserved-name entries
   fs.copySync(srcDir, destDir, { filter });
   console.log('Successfully copied all files.');
+  copyStoreMetadata();
 
   if (skippedReserved > 0) {
     console.error(`FATAL: ${skippedReserved} reserved-name file(s) were rejected during copy.`);
@@ -89,7 +106,7 @@ try {
   }
 
   // 3) Validate mandatory manifest files exist in destination.
-  const mustExist = ['app.json', 'package.json'];
+  const mustExist = ['app.json', 'package.json', 'README.txt', '.homeychangelog.json'];
   for (const f of mustExist) {
     const p = path.join(destDir, f);
     if (!fs.existsSync(p)) {

@@ -42,6 +42,16 @@ const LATEST_ONLY = args.includes('--latest');
 const REQUIRE_BUILDS = args.includes('--require-builds');
 const REPORT_PATH = path.join(process.cwd(), '.github', 'state', 'dashboard-monitor-report.json');
 
+function argValue(name) {
+  const exact = args.indexOf(name);
+  if (exact !== -1 && args[exact + 1]) return args[exact + 1];
+  const prefixed = args.find(arg => arg.startsWith(`${name}=`));
+  return prefixed ? prefixed.slice(name.length + 1) : '';
+}
+
+const EXPECTED_VERSION = argValue('--expect-version') || process.env.EXPECTED_APP_VERSION || '';
+const EXPECTED_STATE = argValue('--expect-state') || process.env.EXPECTED_BUILD_STATE || '';
+
 const FAILED_STATES = new Set(['processing_failed', 'error', 'failed', 'revoked']);
 const SUCCESS_STATES = new Set(['draft', 'test', 'live', 'published', 'ready']);
 
@@ -248,6 +258,12 @@ async function main() {
   const latestGoodBuild = sorted.find(isSuccessfulBuild) || null;
   const latestIsFailed = latestBuild ? isFailedBuild(latestBuild) : false;
   const recentFailed = sorted.slice(0, 100).filter(isFailedBuild);
+  const expectedBuild = EXPECTED_VERSION
+    ? sorted.find(build => (
+      String(build.version || '') === EXPECTED_VERSION
+      && (!EXPECTED_STATE || String(build.state || '') === EXPECTED_STATE)
+    ))
+    : null;
 
   if (!sorted.length) {
     log('No builds available from Athom APIs; writing limited dashboard report.');
@@ -279,6 +295,12 @@ async function main() {
     latestBuilds: sorted.slice(0, showCount).map(summarizeBuild),
     latestFailedBuild: summarizeBuild(latestFailedBuild),
     latestGoodBuild: summarizeBuild(latestGoodBuild),
+    expected: EXPECTED_VERSION ? {
+      version: EXPECTED_VERSION,
+      state: EXPECTED_STATE || null,
+      found: Boolean(expectedBuild),
+      build: summarizeBuild(expectedBuild),
+    } : null,
     recentWindow: 100,
     recentFailedCount: recentFailed.length,
     currentStatus: {
@@ -307,6 +329,12 @@ async function main() {
     process.exitCode = 1;
   } else if (ALERT_MODE && recentFailed.length > 0) {
     log(`Historical failures found (${recentFailed.length}/100), but latest build is healthy.`);
+  }
+
+  if (EXPECTED_VERSION && !expectedBuild) {
+    const stateText = EXPECTED_STATE ? ` in state ${EXPECTED_STATE}` : '';
+    log(`ALERT: expected v${EXPECTED_VERSION}${stateText} was not found in Athom builds.`);
+    process.exitCode = 1;
   }
 
   log('=== Monitor Complete ===');
