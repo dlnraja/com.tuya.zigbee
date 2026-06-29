@@ -3,6 +3,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
+const { sanitizeManifestFile } = require('./maintenance/sanitize-manifest.cjs');
 
 const srcDir = path.join(__dirname, '..', '.homeybuild');
 const destDir = path.join(os.tmpdir(), 'homey-publish-temp');
@@ -102,6 +103,16 @@ try {
   // 4) Validate app.json size (Athom rejects > 4MB — hard fail, not warning).
   //    Compact whitespace first — the raw file may be prettified.
   const destAppJson = path.join(destDir, 'app.json');
+  try {
+    const failures = sanitizeManifestFile(destAppJson);
+    if (failures > 0) {
+      console.error('FATAL: manifest sanitizer failed for publish app.json.');
+      process.exit(1);
+    }
+  } catch (e) {
+    console.error('FATAL: manifest sanitizer crashed:', e.message);
+    process.exit(1);
+  }
   try {
     const raw = JSON.parse(fs.readFileSync(destAppJson));
     const compact = JSON.stringify(raw);

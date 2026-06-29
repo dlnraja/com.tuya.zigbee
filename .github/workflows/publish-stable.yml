@@ -74,13 +74,16 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Build App
         run: npx homey app build
+      - name: Sanitize Built Manifest
+        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
       - name: Publish to Draft
         id: publish
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
           echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null || true
-          printf 'y\nn\ny\n' | npx homey app publish 2>&1 || true
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+          printf 'y\nn\ny\n' | npx homey app publish --path .homeybuild 2>&1 || true
           echo "Draft publish completed"
 
   promote:
