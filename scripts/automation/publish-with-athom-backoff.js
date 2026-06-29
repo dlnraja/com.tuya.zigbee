@@ -70,7 +70,6 @@ async function monitorBuilds() {
   await run(process.execPath, [
     'scripts/automation/dashboard-monitor.js',
     '--latest',
-    '--json',
     '--require-builds',
   ], { env: process.env });
 
@@ -94,12 +93,17 @@ async function waitForRateLimitToCoolDown() {
     status = await monitorBuilds();
   } catch (error) {
     log(`Preflight monitor unavailable, continuing to publish: ${error.message}`);
-    return;
+    return null;
+  }
+
+  if (status.healthy) {
+    log(`Healthy v${expectedVersion} build already exists: #${status.healthy.id} state=${status.healthy.state}; skipping duplicate publish.`);
+    return status;
   }
 
   const latest = status.latest;
   if (!latest || String(latest.version || '') !== expectedVersion || !isRateLimited(latest.failureDetail || latest.stateMeta)) {
-    return;
+    return status;
   }
 
   const changedAt = Date.parse(latest.stateChangedAt || latest.createdAt || '');
@@ -109,6 +113,7 @@ async function waitForRateLimitToCoolDown() {
     log(`Latest v${expectedVersion} failed due Athom rate limiting; waiting ${Math.ceil(waitMs / 1000)}s before retrying publish.`);
     await sleep(waitMs);
   }
+  return status;
 }
 
 async function publishOnce(attempt) {
@@ -125,7 +130,8 @@ async function publishOnce(attempt) {
 }
 
 async function main() {
-  await waitForRateLimitToCoolDown();
+  const preflightStatus = await waitForRateLimitToCoolDown();
+  if (preflightStatus?.healthy) return;
 
   let lastError = null;
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
