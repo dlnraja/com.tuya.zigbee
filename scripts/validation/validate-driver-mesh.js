@@ -97,14 +97,17 @@ for (const drvName of driverDirs) {
     }
   }
 
-  // ─── 8. Invariant I7 : boutons purs ont setable:false (règle cap guide) ───
-  const isSwitch = drvName.startsWith('switch') || drvName.startsWith('wall_switch') || drvName.startsWith('plug');
-  if (!isSwitch && composeCaps.some(c => c.startsWith('button.'))) {
+  // ─── 8. Invariant I7 : button.* = event/maintenance only ────────────────
+  // Homey/Google Assistant/Alexa voice control must use real stateful
+  // capabilities (onoff, dim, windowcoverings, locked, etc.). button.*
+  // capabilities are physical events or maintenance helpers, not voice commands.
+  if (composeCaps.some(c => c.startsWith('button.'))) {
     const opts = compose.capabilitiesOptions || {};
     for (const c of composeCaps) {
       if (!c.startsWith('button.')) continue;
-      if (opts[c]?.setable === true) {
-        warn(`${drvName}: button "${c}" a setable:true → Missing Capability Listener risk`);
+      const o = opts[c] || {};
+      if (o.getable !== false || o.setable !== false || o.maintenanceAction !== true) {
+        fail(`${drvName}: button "${c}" must be getable:false + setable:false + maintenanceAction:true`);
       }
     }
   }

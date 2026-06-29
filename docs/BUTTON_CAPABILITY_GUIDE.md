@@ -18,6 +18,28 @@ Physical wireless buttons (TS0041, TS0215A, scene switches, etc.) are **event-on
 - They don't have an "on" or "off" state to display
 - The `button.1` capability is configured with `maintenanceAction: true` which hides it from the main UI
 
+### Google Assistant / Alexa Voice Safety
+
+Homey expanded Google Assistant and Alexa device sync in Homey Pro v12.3.3 / Homey app v9.1.0, including more controllable devices, Google Assistant PIN protection for security devices, and per-device voice assistant exclusions. That makes it more important that this app does not expose `button.*` capabilities as voice commands.
+
+Rule for this app:
+
+- All `button.*` capabilities must be `getable: false`, `setable: false`, and `maintenanceAction: true`.
+- Real voice control must use stateful capabilities such as `onoff`, `dim`, `windowcoverings`, or `locked`.
+- Virtual helper buttons such as `button.toggle`, `button.toggle_1`, and `button.identify` are maintenance/event helpers only; exposing them as setable buttons risks loops, missing listener errors, and ambiguous Google Home/Alexa controls.
+- For locks, alarms, garage doors, and other security-sensitive devices, Homey's Google Assistant PIN/exclusion settings remain the user-facing safety layer; the app must still keep synthetic buttons non-commandable.
+
+Evidence behind this rule:
+
+- GitHub issue `#114` (`TS0041` / `_TZ3000_b4awzgct`) showed a Google Home advertised smart button where the real fixes were fingerprint case variants, event-only flows, and battery handling.
+- Upstream JohanBendz PR `#214` added Moes wall switches advertised for Alexa/Google Home; those devices are stateful switches and should be exposed through `onoff`, not extra virtual `button.*` command surfaces.
+- Mail/forum feedback around Homey Google Assistant/Alexa updates confirms broader voice sync, so the app needs an automated guard rather than relying on users to exclude devices manually.
+
+Automation:
+
+- Run `node scripts/validation/fix-button-capability-options.js --apply` to repair all driver compose files.
+- Run `npm run check:voice` to fail fast if any `button.*` capability becomes voice-commandable again.
+
 ### How to Use Wireless Buttons
 
 #### ✅ Correct Usage: Flow Triggers

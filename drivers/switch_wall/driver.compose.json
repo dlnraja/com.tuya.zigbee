@@ -655,12 +655,18 @@
     "button.toggle": {
       "title": {
         "en": "toggle"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.identify": {
       "title": {
         "en": "identify"
-      }
+      },
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     },
     "button.1": {
       "title": {
