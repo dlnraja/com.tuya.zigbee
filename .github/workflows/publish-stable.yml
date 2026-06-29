@@ -199,3 +199,4 @@ jobs:
           run_diag 120 node .github/scripts/homey-device-diagnostics.js
           run_diag 120 node .github/scripts/collect-diagnostics.js
           run_diag 60 node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json
+          run_diag 60 node scripts/ci/diagnostic-history-gate.js --json

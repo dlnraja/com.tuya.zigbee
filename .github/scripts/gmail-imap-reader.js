@@ -24,6 +24,34 @@ function safeSender(addr) {
   return accountAlias(from || 'unknown');
 }
 
+function boolValue(value) {
+  return /^(1|true|yes|on)$/i.test(String(value || '').trim());
+}
+
+function boundedInt(value, fallback, min, max) {
+  const n = Number.parseInt(String(value || ''), 10);
+  if (!Number.isFinite(n)) return fallback;
+  return Math.max(min, Math.min(max, n));
+}
+
+function resolveSinceDate(opts) {
+  const allHistory = opts.allHistory || boolValue(process.env.GMAIL_DIAG_ALL_HISTORY);
+  const raw = opts.afterDate || opts.since || process.env.GMAIL_DIAG_SINCE || (allHistory ? '2019-01-01' : null);
+  if (raw instanceof Date && Number.isFinite(raw.getTime())) return raw;
+  if (raw) {
+    const parsed = new Date(String(raw));
+    if (Number.isFinite(parsed.getTime())) return parsed;
+    console.log('[IMAP] Invalid since date, falling back to recent window:', aggressiveSanitize(String(raw)));
+  }
+  return new Date(Date.now() - 30 * 864e5);
+}
+
+function resolveMaxResults(opts) {
+  const allHistory = opts.allHistory || boolValue(process.env.GMAIL_DIAG_ALL_HISTORY);
+  const fallback = allHistory ? 1000 : 100;
+  return boundedInt(opts.maxResults || opts.max || process.env.GMAIL_DIAG_MAX_RESULTS, fallback, 1, 5000);
+}
+
 function decodeRFC2047(str) {
   if (!str) return '';
   return str.replace(/=\?([^?]+)\?([BbQq])\?([^?]*)\?=/g, (_, charset, enc, data) => {
@@ -245,10 +273,11 @@ async function readViaIMAP(opts = {}) {
   if (ge && hp && !pairs.find(p => p[0] === ge && p[1] === hp)) pairs.push([ge, hp]);
   if (he && gp && !pairs.find(p => p[0] === he && p[1] === gp)) pairs.push([he, gp]);
   if (!pairs.length) { console.log('[IMAP] No credentials found'); return null }
-  const since = (opts.afterDate || new Date(Date.now() - 30 * 864e5)).toISOString().split('T')[0];
+  const since = resolveSinceDate(opts).toISOString().split('T')[0];
+  const maxResults = resolveMaxResults(opts);
   let c = null;
   for (const [u, p] of pairs) {
-    console.log('[IMAP] Trying', accountAlias(u), 'since', since);
+    console.log('[IMAP] Trying', accountAlias(u), 'since', since, 'max', maxResults);
     try { c = await tryConnect(u, p); console.log('[IMAP] Auth OK as', accountAlias(u)); break }
     catch (err) { console.log('[IMAP] Auth FAIL for', accountAlias(u), '-', aggressiveSanitize(err.message)); c = null }
   }
@@ -259,7 +288,7 @@ async function readViaIMAP(opts = {}) {
     if (!lock) { await c.logout(); return null }
     const out = [];
     try {
-      const kws = ['_TZE', '_TZ3', 'TS0', 'TS1', 'TS02', 'TS06', 'TS05', 'TS11', '_TZ', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log', 'oom', 'heap limit', 'allocation failed', 'homey', 'tuya', 'zigbee', 'athombv', 'com.tuya.zigbee', 'com.dlnraja.tuya.zigbee'];
+      const kws = ['_TZE', '_TZ3', 'TS0', 'TS1', 'TS02', 'TS06', 'TS05', 'TS11', '_TZ', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log', 'oom', 'heap limit', 'allocation failed', 'processing failed', 'AggregateError', 'Missing Capability Listener', 'capability listener', 'battery', 'button', 'flow card', 'homey', 'tuya', 'zigbee', 'athombv', 'com.tuya.zigbee', 'com.dlnraja.tuya.zigbee'];
       const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'noreply@homey.app', 'support@athom.com', 'support@homey.app', 'dev@athom.com', 'developer@athom.com'];
       const seqSet = new Set();
       for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
@@ -267,7 +296,7 @@ async function readViaIMAP(opts = {}) {
       for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS0001', 'TS0002', 'TS0003', 'TS0004', 'TS011F', 'TS0201', 'TS0203', 'TS0501', 'TS0601', 'PJ-1203', 'PJ-1203A', '_TYZB01', '_TYST11', 'TS0011', 'TS0012', 'TS0013', 'TS0014', 'TS0015', 'TS0502', 'TS0503', 'TS0504', 'TS0505', 'TS0051', 'TS0052', 'TS0053', 'TS0054', 'TS110E', 'TS110F', 'TS0202', 'TS0204', 'TS0205', 'TS0207', 'TS0211', 'TS0212', 'TS0215', 'TS0216', 'TS0218', 'TS0222', 'TS0301', 'TS0302', 'TS0726', 'TS0801', 'TS1001', 'TS1101', 'TS1201', 'TS1301']) {
         try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
-      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 100);
+      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, maxResults);
       console.log('[IMAP]', seqSet.size, 'relevant msgs, fetching', seqs.length);
       if (seqs.length > 0) {
         const range = seqs.join(',');

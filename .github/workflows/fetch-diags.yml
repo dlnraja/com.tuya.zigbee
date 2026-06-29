@@ -3,7 +3,25 @@ name: Fetch Homey Diagnostics
 on:
   schedule:
     - cron: '0 */6 * * *' # Run every 6 hours
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      all_history:
+        description: "Fetch historical diagnostics instead of the rolling window"
+        type: boolean
+        default: false
+        required: false
+      since:
+        description: "Optional start date for IMAP search, for example 2019-01-01"
+        required: false
+      max_results:
+        description: "Maximum matching emails to fetch"
+        default: "500"
+        required: false
+      reprocess:
+        description: "Ignore processed state and rebuild the diagnostic chronology"
+        type: boolean
+        default: false
+        required: false
 
 permissions:
   contents: write
@@ -25,20 +43,37 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '22'
+          cache: npm
 
       - name: Install dependencies
-        run: npm install imap-simple mailparser --no-save
+        run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Fetch Diagnostics from Gmail
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: node scripts/automation/fetch-gmail-diags.js
+          GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
+          GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
+          GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GMAIL_DIAG_AI_MAX: "0"
+          DRY_RUN: "true"
+        run: node .github/scripts/fetch-gmail-diagnostics.js
+
+      - name: Privacy and diagnostic gates
+        run: |
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+          npm run check:diag-history
 
       - name: Commit and Push changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json
-          git add .github/state/diagnostics-report.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update diagnostics report from Gmail [skip ci]" && git push)
+          node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
+          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update diagnostics report from Gmail [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No sanitized diagnostic state changes to push"
+          fi

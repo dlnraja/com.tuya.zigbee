@@ -9,6 +9,8 @@ Every AI prompt, automation, issue response, PR review, diagnostic summary, and 
 
 Before changing code or writing an answer, classify the finding as master-only, stable-only, or cross-app. Security, diagnostics, SDK3 validation, publish verification, crash fixes, battery fixes, physical button fixes, endpoint mapping fixes, and flow reliability fixes are cross-app candidates by default. Keep branch separation strict: never copy App IDs, version metadata, publish settings, or store URLs between tracks.
 
+Diagnostic-history work must also follow `docs/rules/DIAGNOSTIC_HISTORY_RULES.md`: sanitize first, run `npm run check:diag-history`, and never commit raw Gmail/Homey/forum/GitHub diagnostic state.
+
 ### 1. Publication Rule
 **NEVER use `npx homey app publish` locally.**  
 Always publish via GitHub Actions by pushing to master/main branch.

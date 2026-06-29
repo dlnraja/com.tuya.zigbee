@@ -12,6 +12,20 @@ on:
       bad_build:
         description: "Optional failing Athom build id for dashboard comparison"
         required: false
+      all_history:
+        description: "Fetch historical Gmail diagnostics for correlation"
+        type: boolean
+        default: false
+        required: false
+      max_results:
+        description: "Maximum Gmail diagnostics to fetch"
+        default: "500"
+        required: false
+      reprocess:
+        description: "Ignore processed Gmail diagnostic state"
+        type: boolean
+        default: false
+        required: false
       download_archives:
         description: "Download build archives during dashboard comparison"
         type: boolean
@@ -58,6 +72,9 @@ jobs:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GMAIL_DIAG_AI_MAX: "0"
+          GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
+          GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -95,6 +112,10 @@ jobs:
       - name: Privacy gate
         if: always()
         run: node .github/scripts/privacy-redactor.js diagnostics .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json screenshots/full-diag-report.json
+
+      - name: Diagnostic history gate
+        if: always()
+        run: npm run check:diag-history
 
       - name: Upload sanitized diagnostic artifacts
         if: always()

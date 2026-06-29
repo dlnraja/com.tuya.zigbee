@@ -10,6 +10,7 @@
  *   - audit-flowcards.js output (flow card completeness)
  *   - diagnostic-report.js output (build, fingerprint, workflow, security)
  *   - fix-fingerprint-conflicts.js output (collision risks)
+ *   - diagnostic-history-gate.js output (Gmail/Homey crash history)
  *
  * Features:
  *   - Unified health score (0-100) with per-dimension breakdown
@@ -51,12 +52,13 @@ const report = {
     previousScore: null,
   },
   dimensions: {
-    codeQuality: { score: 100, weight: 0.20, issues: 0, details: '' },
-    driverHealth: { score: 100, weight: 0.25, issues: 0, details: '' },
-    flowCompleteness: { score: 100, weight: 0.15, issues: 0, details: '' },
-    fingerprintStability: { score: 100, weight: 0.15, issues: 0, details: '' },
+    codeQuality: { score: 100, weight: 0.18, issues: 0, details: '' },
+    driverHealth: { score: 100, weight: 0.22, issues: 0, details: '' },
+    flowCompleteness: { score: 100, weight: 0.14, issues: 0, details: '' },
+    fingerprintStability: { score: 100, weight: 0.14, issues: 0, details: '' },
     workflowIntegrity: { score: 100, weight: 0.10, issues: 0, details: '' },
-    securityPosture: { score: 100, weight: 0.15, issues: 0, details: '' },
+    securityPosture: { score: 100, weight: 0.12, issues: 0, details: '' },
+    diagnosticHistory: { score: 100, weight: 0.10, issues: 0, details: '' },
   },
   predictions: [],
   correlations: [],
@@ -104,7 +106,7 @@ function collectSubsystemData() {
   if (!JSON_OUTPUT) console.log('Collecting diagnostic data from all subsystems...\n');
 
   // 1. Bug Hunter (code quality)
-  if (!JSON_OUTPUT) console.log('  [1/5] Running bug-hunter...');
+  if (!JSON_OUTPUT) console.log('  [1/6] Running bug-hunter...');
   const bugHunter = runScript('scripts/ci/bug-hunter.js', ['--predictive']);
   if (bugHunter) {
     report.subsystems.bugHunter = bugHunter;
@@ -115,7 +117,7 @@ function collectSubsystemData() {
   }
 
   // 2. Validate Drivers (driver structural health)
-  if (!JSON_OUTPUT) console.log('  [2/5] Running validate-drivers...');
+  if (!JSON_OUTPUT) console.log('  [2/6] Running validate-drivers...');
   const validateDrivers = runScript('scripts/automation/validate-drivers.js', ['--predictive']);
   if (validateDrivers) {
     report.subsystems.validateDrivers = validateDrivers;
@@ -126,7 +128,7 @@ function collectSubsystemData() {
   }
 
   // 3. Audit Flow Cards (flow card completeness)
-  if (!JSON_OUTPUT) console.log('  [3/5] Running audit-flowcards...');
+  if (!JSON_OUTPUT) console.log('  [3/6] Running audit-flowcards...');
   const auditFlowcards = runScript('scripts/automation/audit-flowcards.js', ['--predictive']);
   if (auditFlowcards) {
     report.subsystems.auditFlowcards = auditFlowcards;
@@ -140,7 +142,7 @@ function collectSubsystemData() {
   }
 
   // 4. Diagnostic Report (build, fingerprints, workflows, security)
-  if (!JSON_OUTPUT) console.log('  [4/5] Running diagnostic-report...');
+  if (!JSON_OUTPUT) console.log('  [4/6] Running diagnostic-report...');
   const diagnosticReport = runScript('scripts/ci/diagnostic-report.js', ['--predictive']);
   if (diagnosticReport) {
     report.subsystems.diagnosticReport = diagnosticReport;
@@ -162,8 +164,18 @@ function collectSubsystemData() {
     }
   }
 
-  // 5. Fingerprint Conflicts (collision prediction)
-  if (!JSON_OUTPUT) console.log('  [5/5] Running fix-fingerprint-conflicts...');
+  // 5. Diagnostic History (Gmail/Homey crash and processing history)
+  if (!JSON_OUTPUT) console.log('  [5/6] Running diagnostic-history-gate...');
+  const diagnosticHistory = runScript('scripts/ci/diagnostic-history-gate.js');
+  if (diagnosticHistory) {
+    report.subsystems.diagnosticHistory = diagnosticHistory;
+    report.dimensions.diagnosticHistory.score = diagnosticHistory.score ?? 100;
+    report.dimensions.diagnosticHistory.issues = diagnosticHistory.categories?.reduce((sum, c) => sum + (c.count || 0), 0) || 0;
+    report.dimensions.diagnosticHistory.details = `${diagnosticHistory.diagnosticsAnalyzed || 0} entries, ${diagnosticHistory.categories?.length || 0} categories`;
+  }
+
+  // 6. Fingerprint Conflicts (collision prediction)
+  if (!JSON_OUTPUT) console.log('  [6/6] Running fix-fingerprint-conflicts...');
   const fingerprintConflicts = runScript('scripts/automation/fix-fingerprint-conflicts.js', ['--report-only', '--predictive']);
   if (fingerprintConflicts) {
     report.subsystems.fingerprintConflicts = fingerprintConflicts;
@@ -228,6 +240,18 @@ function analyzeCorrelations() {
       severity: 'medium',
       message: `Low flow card completeness (${flowScore}/100) with ${drvCount} drivers means most devices cannot be controlled via Homey flows. Users will be confused.`,
       affectedDimensions: ['flowCompleteness', 'driverHealth'],
+    });
+  }
+
+  // Correlation 5: Field diagnostics confirm local audit risk
+  const diagCats = report.subsystems.diagnosticHistory?.categories || [];
+  const fieldButtonBattery = diagCats.some(c => ['button_flow', 'battery_unknown', 'missing_capability_listener'].includes(c.id));
+  if (fieldButtonBattery && (flowScore < 85 || drvScore < 85)) {
+    correlations.push({
+      type: 'field-confirmed-ux-regression',
+      severity: 'high',
+      message: 'Historical diagnostics include button, battery, or capability-listener failures and local audits are below target. Prioritize flow/capability coverage before publishing.',
+      affectedDimensions: ['diagnosticHistory', 'flowCompleteness', 'driverHealth'],
     });
   }
 
