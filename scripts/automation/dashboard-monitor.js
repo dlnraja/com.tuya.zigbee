@@ -97,6 +97,19 @@ function summarizeBuild(build) {
   };
 }
 
+function normalizeBuilds(body) {
+  const list = Array.isArray(body) ? body : (body && (body.items || body.data || body.builds || body.results)) || [];
+  if (!Array.isArray(list)) return [];
+  return list
+    .filter(Boolean)
+    .map(build => ({
+      ...build,
+      id: build.id || build.buildId || build._id,
+      state: build.state || build.channel || build.status,
+      version: build.version || build.appVersion || build.semver,
+    }));
+}
+
 function resolveHomeyCliRoot() {
   const candidates = [];
   try {
@@ -124,11 +137,17 @@ async function getBuilds() {
   try {
     const homeyRoot = resolveHomeyCliRoot();
     const AthomApi = require(path.join(homeyRoot, 'services', 'AthomApi'));
-    const { AthomAppsAPI } = require(path.join(homeyRoot, 'node_modules', 'homey-api'));
+    let homeyApi = null;
+    try {
+      homeyApi = require(path.join(homeyRoot, 'node_modules', 'homey-api'));
+    } catch {
+      homeyApi = require('homey-api');
+    }
+    const { AthomAppsAPI } = homeyApi;
     const token = await AthomApi.createDelegationToken({ audience: 'apps' });
     const api = new AthomAppsAPI({ token });
-    const builds = await api.getBuilds({ '$token': token, appId: APP_ID, query: { limit: 1000 } });
-    return Array.isArray(builds) ? builds : (builds.items || builds.data || []);
+    const body = await api.getBuilds({ '$token': token, appId: APP_ID, query: { limit: 1000 } });
+    return normalizeBuilds(body);
   } catch (e) {
     log(`❌ Cannot load Athom API for ${APP_ID}: ${e.message}`);
     return [];

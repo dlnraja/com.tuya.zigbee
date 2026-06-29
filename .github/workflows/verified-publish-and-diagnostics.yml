@@ -147,13 +147,39 @@ jobs:
           HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node scripts/ci/publish-size-gate.cjs --strict --final
           echo "✅ Build and publish payload prepared."
 
-      - name: 🚀 Publish to Test Channel
-        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      - name: 🚀 Publish Prepared Payload to Draft
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then
+            echo "::error::HOMEY_PAT is required to publish the app"
+            exit 1
+          fi
+          PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+          VER="$(node -p "require('./app.json').version")"
+          if [ ! -d "$PUBLISH_DIR" ]; then
+            echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
+            exit 1
+          fi
+          (
+            cd "$PUBLISH_DIR"
+            npm ci --omit=dev --ignore-scripts --no-audit --no-fund || npm install --omit=dev --ignore-scripts --no-audit --no-fund
+          )
+          node scripts/maintenance/prune-publish-payload.cjs "$PUBLISH_DIR"
+          HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node scripts/ci/publish-size-gate.cjs --strict --final
+          node scripts/automation/publish-with-athom-backoff.js \
+            --path "$PUBLISH_DIR" \
+            --expect-version "$VER" \
+            --attempts 2 \
+            --post-publish-wait-ms 120000 \
+            --rate-cooldown-ms 900000
 
       - name: 🔍 Vérification Post-Publication
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
           echo "🌐 URL de Vérification :"
           echo "https://homey.app/en-us/app/com.dlnraja.tuya.zigbee/Universal-Tuya/test/"
-          echo "⏳ Attendre 2-5 minutes pour la mise à jour du store..."
+          node scripts/automation/dashboard-monitor.js --latest --json --alert
