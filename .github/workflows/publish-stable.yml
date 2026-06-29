@@ -57,7 +57,7 @@ jobs:
     name: "Publish to Draft"
     needs: pre-validation
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v5
         with:
@@ -81,6 +81,7 @@ jobs:
       - name: Publish to Draft
         id: publish
         env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
           if [ -z "$HOMEY_PAT" ]; then
@@ -89,8 +90,14 @@ jobs:
           fi
           # The Homey CLI reads HOMEY_PAT directly in headless CI.
           PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(),'homey-publish-temp')")"
+          VER="$(node -p "require('./app.json').version")"
           node scripts/maintenance/sanitize-manifest.cjs "$PUBLISH_DIR/app.json"
-          HOMEY_HEADLESS=1 npx homey app publish --path "$PUBLISH_DIR"
+          node scripts/automation/publish-with-athom-backoff.js \
+            --path "$PUBLISH_DIR" \
+            --expect-version "$VER" \
+            --attempts 2 \
+            --post-publish-wait-ms 120000 \
+            --rate-cooldown-ms 900000
           echo "Draft publish completed"
 
   promote:
