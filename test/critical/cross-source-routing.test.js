@@ -103,5 +103,15 @@ describe('stable cross-source routing regressions', function() {
         100
       );
     }
+
+    const ts0041Profile = UnifiedBatteryHandler.lookupBatteryProfile('', 'TS0041');
+    assert.strictEqual(ts0041Profile.zcl200IsPercent, true, 'TS0041 product fallback should treat ZCL 200 as 100%');
+    const ts0041Options = {
+      batteryType: ts0041Profile.chemistry,
+      treat200AsSentinel: !ts0041Profile.zcl200IsPercent,
+    };
+    assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(200, ts0041Options), 100);
+    assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(150, ts0041Options), 75);
+    assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(255, ts0041Options), null);
   });
 });
