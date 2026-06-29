@@ -14,6 +14,7 @@ All AI agents are encouraged to draw inspiration from and utilize the skill patt
 - **`@codebase-audit-pre-push`**: Run this logic before any push to ensure production readiness.
 
 ## 🏗️ Architectural Guardrails
+0. **Cross-App Prompt Mandate**: Every AI prompt and automation result must benefit both app tracks by default: `master` / `com.dlnraja.tuya.zigbee` and `stable-v5` / `com.dlnraja.tuya.zigbee.stable`. Before answering or patching, classify whether the discovery is master-only, stable-only, or a safe cross-app candidate. Never copy App IDs, versions, publish metadata, or branch-specific store links between tracks.
 1. **Hybrid Driver System**: NEVER create a standalone driver if a device can be handled by `HybridDriverSystem.js`.
 2. **Tuya DP Protocol**: Always prefer the `TuyaUnifiedParser.js` and DP-mapping logic for Tuya-specific devices.
 3. **IR Engine**: Use `lib/ir/IRCodeLibrary.js` for all IR-related code generation. Follow the Zosung Base64 format.

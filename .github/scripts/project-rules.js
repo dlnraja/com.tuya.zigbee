@@ -58,6 +58,12 @@ try {
 const PROJECT_RULES = [
 '## Tuya Unified Zigbee - Project Rules for AI',
 '',
+'### CROSS-APP PROMPT RULE (ALWAYS ACTIVE)',
+'- Every AI prompt, automation result, PR review, issue reply, forum reply, diagnostic summary, and code plan must evaluate both maintained app tracks before responding or patching.',
+'- Tracks: master / com.dlnraja.tuya.zigbee and stable-v5 / com.dlnraja.tuya.zigbee.stable.',
+'- Security, CI, publish verification, diagnostics, crash prevention, SDK3 validation, battery, physical button, endpoint mapping, pairing, and flow reliability fixes are cross-app candidates by default.',
+'- Always decide: master-only, stable-only, or both. Never copy App IDs, versions, publish secrets, store URLs, or branch-specific release metadata across tracks.',
+'',
 '### REFERENCE DOCUMENTATION (CRITICAL)',
 '- Homey SDK Docs: apps.developer.homey.app (MUST consult for SDK, capabilities, flows, and pairing rules)',
 '- Internal Rules: docs/rules/DEVELOPMENT_RULES.md, docs/rules/CRITICAL_MISTAKES.md',
@@ -124,4 +130,11 @@ const PROJECT_RULES = [
 '- Issues: https://github.com/dlnraja/com.tuya.zigbee/issues',
 ].join('\n');
 
-module.exports = { PROJECT_RULES, ARCHITECTURE_SUMMARY, LOADED_RULES };
+const CROSS_APP_PROMPT_RULE = [
+  'CROSS-APP PROMPT RULE: evaluate both maintained app tracks before responding or patching.',
+  'Tracks: master/com.dlnraja.tuya.zigbee and stable-v5/com.dlnraja.tuya.zigbee.stable.',
+  'Classify the finding as master-only, stable-only, or both; cross-app candidates include security, CI, publish verification, diagnostics, crash, SDK3, battery, button, endpoint, pairing, and flow fixes.',
+  'Never copy App IDs, versions, publish secrets, store URLs, or branch-specific release metadata across tracks.',
+].join(' ');
+
+module.exports = { PROJECT_RULES, ARCHITECTURE_SUMMARY, LOADED_RULES, CROSS_APP_PROMPT_RULE };

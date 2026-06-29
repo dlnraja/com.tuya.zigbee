@@ -2,6 +2,13 @@
 
 ##  CRITICAL RULES
 
+### 0. Cross-App Prompt Benefit Rule
+Every AI prompt, automation, issue response, PR review, diagnostic summary, and code change must benefit both maintained app tracks whenever safely possible:
+- `master` / `com.dlnraja.tuya.zigbee`
+- `stable-v5` / `com.dlnraja.tuya.zigbee.stable`
+
+Before changing code or writing an answer, classify the finding as master-only, stable-only, or cross-app. Security, diagnostics, SDK3 validation, publish verification, crash fixes, battery fixes, physical button fixes, endpoint mapping fixes, and flow reliability fixes are cross-app candidates by default. Keep branch separation strict: never copy App IDs, version metadata, publish settings, or store URLs between tracks.
+
 ### 1. Publication Rule
 **NEVER use `npx homey app publish` locally.**  
 Always publish via GitHub Actions by pushing to master/main branch.

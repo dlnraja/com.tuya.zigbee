@@ -5,7 +5,7 @@
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const{PROJECT_RULES,ARCHITECTURE_SUMMARY,LOADED_RULES}=require('./project-rules');
+const{PROJECT_RULES,ARCHITECTURE_SUMMARY,LOADED_RULES,CROSS_APP_PROMPT_RULE}=require('./project-rules');
 
 // Circuit breaker: skip providers down recently
 const _cb={};
@@ -188,7 +188,9 @@ async function callAI(text,sysPrompt,opts={}){
   // 8. GitHub Models 
   const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
   if (ghToken && cbOk('gh-models')) {
-    const ghSys = fullSysPrompt.length > 6000 ? sysPrompt.substring(0, 5000) + '...' : fullSysPrompt;
+    const ghSys = fullSysPrompt.length > 6000
+      ? CROSS_APP_PROMPT_RULE + '\n\n' + sysPrompt.substring(0, 5000) + '...'
+      : fullSysPrompt;
     console.log('  Trying GitHub Models...');
     const res = await callAIEngine(
       'https://models.inference.ai.azure.com/chat/completions',
