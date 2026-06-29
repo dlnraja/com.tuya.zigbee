@@ -62,6 +62,10 @@ function resolveMaxResults(opts) {
   return boundedInt(opts.maxResults || opts.max || process.env.GMAIL_DIAG_MAX_RESULTS, fallback, 1, 5000);
 }
 
+function resolveFetchBatchSize(opts) {
+  return boundedInt(opts.fetchBatchSize || process.env.GMAIL_DIAG_FETCH_BATCH_SIZE, 250, 50, 1000);
+}
+
 function decodeRFC2047(str) {
   if (!str) return '';
   return str.replace(/=\?([^?]+)\?([BbQq])\?([^?]*)\?=/g, (_, charset, enc, data) => {
@@ -288,6 +292,7 @@ async function readViaIMAP(opts = {}) {
   const since = sinceDate.toISOString().split('T')[0];
   const before = untilDate ? untilDate.toISOString().split('T')[0] : null;
   const maxResults = resolveMaxResults(opts);
+  const fetchBatchSize = resolveFetchBatchSize(opts);
   let c = null;
   for (const [u, p] of pairs) {
     console.log('[IMAP] Trying', accountAlias(u), 'since', since, 'before', before || 'now', 'max', maxResults);
@@ -314,57 +319,59 @@ async function readViaIMAP(opts = {}) {
       const seqs = [...seqSet].sort((a, b) => b - a).slice(0, maxResults);
       console.log('[IMAP]', seqSet.size, 'relevant msgs, fetching', seqs.length);
       if (seqs.length > 0) {
-        const range = seqs.join(',');
-        for await (const m of c.fetch(range, { envelope: true, source: true })) {
-          try {
-            const rawSubj = m.envelope?.subject || '';
-            const subj = decodeRFC2047(rawSubj);
-            const fromRaw = m.envelope?.from?.[0] || {};
-            const fromAddr = fromRaw.address || '';
-            const fromName = decodeRFC2047(fromRaw.name || '');
-            const date = m.envelope?.date?.toISOString() || '';
-            const uid = m.uid || m.seq || out.length + 1;
+        for (let i = 0; i < seqs.length; i += fetchBatchSize) {
+          const range = seqs.slice(i, i + fetchBatchSize).join(',');
+          console.log('[IMAP] fetch batch', Math.floor(i / fetchBatchSize) + 1, 'size', Math.min(fetchBatchSize, seqs.length - i));
+          for await (const m of c.fetch(range, { envelope: true, source: true })) {
+            try {
+              const rawSubj = m.envelope?.subject || '';
+              const subj = decodeRFC2047(rawSubj);
+              const fromRaw = m.envelope?.from?.[0] || {};
+              const fromAddr = fromRaw.address || '';
+              const fromName = decodeRFC2047(fromRaw.name || '');
+              const date = m.envelope?.date?.toISOString() || '';
+              const uid = m.uid || m.seq || out.length + 1;
 
-            // Full MIME parsing
-            let body = subj;
-            let contentType = 'unknown';
-            let crashData = null;
-            let mimeInfo = null;
-            if (m.source) {
-              try {
-                const mime = parseMIME(m.source);
-                mimeInfo = { parts: mime.parts, headerKeys: Object.keys(mime.headers) };
-                // Prefer text/plain, fall back to converted HTML
-                if (mime.textPlain && mime.textPlain.trim().length > 10) {
-                  body = mime.textPlain;
-                  contentType = 'text/plain';
-                } else if (mime.textHtml) {
-                  body = htmlToText(mime.textHtml);
-                  contentType = 'text/html->text';
-                } else {
-                  // Fallback: raw split
+              // Full MIME parsing
+              let body = subj;
+              let contentType = 'unknown';
+              let crashData = null;
+              let mimeInfo = null;
+              if (m.source) {
+                try {
+                  const mime = parseMIME(m.source);
+                  mimeInfo = { parts: mime.parts, headerKeys: Object.keys(mime.headers) };
+                  // Prefer text/plain, fall back to converted HTML
+                  if (mime.textPlain && mime.textPlain.trim().length > 10) {
+                    body = mime.textPlain;
+                    contentType = 'text/plain';
+                  } else if (mime.textHtml) {
+                    body = htmlToText(mime.textHtml);
+                    contentType = 'text/html->text';
+                  } else {
+                    // Fallback: raw split
+                    const raw = m.source.toString('utf8');
+                    const parts = raw.split(/\r?\n\r?\n/);
+                    if (parts.length > 1) body = parts.slice(1).join('\n').replace(/<[^>]+>/g, ' ');
+                    contentType = 'raw-fallback';
+                  }
+                } catch (pe) {
+                  console.log('[IMAP] MIME parse error:', aggressiveSanitize(pe.message));
                   const raw = m.source.toString('utf8');
                   const parts = raw.split(/\r?\n\r?\n/);
                   if (parts.length > 1) body = parts.slice(1).join('\n').replace(/<[^>]+>/g, ' ');
                   contentType = 'raw-fallback';
                 }
-              } catch (pe) {
-                console.log('[IMAP] MIME parse error:', aggressiveSanitize(pe.message));
-                const raw = m.source.toString('utf8');
-                const parts = raw.split(/\r?\n\r?\n/);
-                if (parts.length > 1) body = parts.slice(1).join('\n').replace(/<[^>]+>/g, ' ');
-                contentType = 'raw-fallback';
               }
-            }
 
-            // Limit body to 256KB to keep massive crash logs in their entirety without truncating
-            body = body.substring(0, 256000);
+              // Limit body to 256KB to keep massive crash logs in their entirety without truncating
+              body = body.substring(0, 256000);
 
-            // Extract pseudo/username
-            const pseudo = extractPseudo(fromName + ' <' + fromAddr + '>', null, body);
+              // Extract pseudo/username
+              const pseudo = extractPseudo(fromName + ' <' + fromAddr + '>', null, body);
 
-            // Extract crash data
-            crashData = extractCrashData(body);
+              // Extract crash data
+              crashData = extractCrashData(body);
 
             
               // Aggressive privacy sanitization
@@ -375,20 +382,21 @@ async function readViaIMAP(opts = {}) {
               }
               
               out.push({
-              id: 'imap_' + privacy.digest(String(uid), 12),
-              subj: aggressiveSanitize(subj),
-              from: safeSender(fromAddr),
-              fromName: aggressiveSanitize(fromName),
-              date,
-              body,
-              bodyLength: body.length,
-              contentType,
-              pseudo: privacy.redactObject(pseudo),
-              crashData,
-              mimeInfo,
-              labels: []
-            });
-          } catch (fe) { console.log('[IMAP] skip:', aggressiveSanitize(fe.message)) }
+                id: 'imap_' + privacy.digest(String(uid), 12),
+                subj: aggressiveSanitize(subj),
+                from: safeSender(fromAddr),
+                fromName: aggressiveSanitize(fromName),
+                date,
+                body,
+                bodyLength: body.length,
+                contentType,
+                pseudo: privacy.redactObject(pseudo),
+                crashData,
+                mimeInfo,
+                labels: []
+              });
+            } catch (fe) { console.log('[IMAP] skip:', aggressiveSanitize(fe.message)) }
+          }
         }
       }
       console.log('[IMAP] fetched', out.length, 'emails');
