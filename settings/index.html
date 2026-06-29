@@ -393,6 +393,8 @@
 
   <script>
     var Homey = null;
+    var tuyaSecretConfigured = false;
+    var smartThingsSecretConfigured = false;
 
     function show(id, t) {
       var e = document.getElementById(id);
@@ -408,15 +410,17 @@
       if (!Homey) { show('err-msg-st', 'App not ready yet'); return; }
       var cid = document.getElementById('st-cid').value.trim(),
           sec = document.getElementById('st-sec').value.trim();
-      if (!cid || !sec) { show('err-msg-st', 'Client ID and Secret required'); return; }
-      
+      if (!cid || (!sec && !smartThingsSecretConfigured)) { show('err-msg-st', 'Client ID and Secret required'); return; }
+
       Homey.set('smartthings_client_id', cid, function(e) {
         if (e) { show('err-msg-st', 'Save failed: ' + e.message); return; }
-        Homey.set('smartthings_client_secret', sec, function(e2) {
+        function done(e2) {
           if (e2) { show('err-msg-st', 'Save failed: ' + e2.message); return; }
           show('ok-msg-st', 'SmartThings Credentials saved!');
-          updateSTSecretStatus(true);
-        });
+          updateSTSecretStatus(sec ? true : smartThingsSecretConfigured);
+        }
+        if (sec) Homey.set('smartthings_client_secret', sec, done);
+        else done();
       });
     }
 
@@ -431,6 +435,7 @@
     }
 
     function updateSTSecretStatus(has) {
+      smartThingsSecretConfigured = !!has;
       var el = document.getElementById('st-sec-status');
       if (has) {
         el.textContent = 'Secret is configured';
@@ -446,18 +451,20 @@
       var a = document.getElementById('aid').value.trim(),
           s = document.getElementById('as').value.trim(),
           r = document.getElementById('reg').value;
-      if (!a || !s) { show('err-msg', 'Access ID and Secret required'); return; }
-      
+      if (!a || (!s && !tuyaSecretConfigured)) { show('err-msg', 'Access ID and Secret required'); return; }
+
       Homey.set('tuya_cloud_access_id', a, function(e) {
         if (e) { show('err-msg', 'Save failed: ' + e.message); return; }
-        Homey.set('tuya_cloud_access_secret', s, function(e2) {
+        function saveRegion(e2) {
           if (e2) { show('err-msg', 'Save failed: ' + e2.message); return; }
           Homey.set('tuya_cloud_region', r, function(e3) {
             if (e3) { show('err-msg', 'Save failed: ' + e3.message); return; }
             show('ok-msg', 'Credentials saved!');
-            updateSecretStatus(true);
+            updateSecretStatus(s ? true : tuyaSecretConfigured);
           });
-        });
+        }
+        if (s) Homey.set('tuya_cloud_access_secret', s, saveRegion);
+        else saveRegion();
       });
     }
 
@@ -481,6 +488,7 @@
     }
 
     function updateSecretStatus(has) {
+      tuyaSecretConfigured = !!has;
       var el = document.getElementById('sec-status');
       if (has) {
         el.textContent = 'Secret is configured';

@@ -84,7 +84,7 @@ function checkoutBaseBranch() {
 }
 
 function abortMergeQuietly() {
-  git('merge --abort 2>/dev/null || true');
+  git('merge --abort');
 }
 
 function verifyIntegrated(prNumber, prData) {
@@ -93,8 +93,9 @@ function verifyIntegrated(prNumber, prData) {
   }
 
   gitRequired('fetch origin master');
-  const containingBranches = gitRequired(`branch -r --contains ${prData.headRefOid}`);
-  if (!containingBranches.split(/\s+/).includes('origin/master')) {
+  try {
+    gitRequired(`merge-base --is-ancestor ${prData.headRefOid} origin/master`);
+  } catch {
     throw new Error(`PR #${prNumber} head ${prData.headRefOid} is not reachable from origin/master`);
   }
 
@@ -499,7 +500,7 @@ function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles
   const branch = prData.headRefName;
   if (branch && branch !== 'master' && branch !== 'main') {
     log(`  Deleting branch: ${branch}`);
-    git(`push origin --delete ${branch} 2>/dev/null`);
+    git(`push origin --delete ${branch}`);
   }
 
   // Clean up temp file

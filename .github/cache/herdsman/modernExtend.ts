@@ -179,6 +179,8 @@ function getAttributeValue<Cl extends string | number, Custom extends TCustomClu
     } catch {
         // Some vendor-specific raw attributes are intentionally not present in a cluster definition.
     }
+
+    return undefined;
 }
 
 export async function setupAttributes<Cl extends string | number, Custom extends TCustomCluster | undefined = undefined>(

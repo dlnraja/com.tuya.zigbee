@@ -153,3 +153,27 @@ Validation:
 - `npm test`: pass.
 - `npm run precommit:full`: pass, with existing broad warnings only.
 - `git diff --check`: pass.
+
+## Follow-up 2026-06-29 21:58 Europe/Paris - Johan TS0041 `_TZ3000_b4awzgct`
+
+Sources crossed: GitHub issue #333/Johan TS0041 diagnostic, historical button commits, local `BUTTON_CAPABILITY_GUIDE`, `REGRESSION_ANALYSIS_v5.11`, Gemini PR review sweep for PRs #244/#310/#341/#343/#344/#345/#346/#429/#431/#433/#434/#435/#436, and current Homey Compose collision behavior.
+
+Root cause:
+
+- `_TZ3000_B4AWZGCT` was still routed through `button_wireless_1`, but the diagnostic shows a TS0041 device with four button endpoints. That made Homey expose the wrong driver surface: one `button.1`, missing button flows 2-4, and unreliable battery handling for the physical 4-button device.
+- The earlier TS0041 hardening correctly created `button_wireless_4_ts0041` for `_TZ3000_yj6k7vfo`, but did not include the older `_TZ3000_b4awzgct` case variants reported by Johan/Lalla80111.
+
+Actions:
+
+- Removed `_TZ3000_B4AWZGCT` from `button_wireless_1`.
+- Added `_tz3000_b4awzgct`, `_TZ3000_b4awzgct`, and `_TZ3000_B4AWZGCT` to `button_wireless_4_ts0041`, alongside the existing `_tz3000_yj6k7vfo` variants.
+- Updated `app.json` to keep the published Homey manifest aligned with the driver compose files.
+- Extended `scripts/ci/check-button-flow-routing.js` so future precommit checks fail if known 4-endpoint TS0041 manufacturers are routed back to the 1-button driver or if the dedicated TS0041 wrapper loses `productId: TS0041`.
+- Repaired `npm run build-docs` to use the active Device Finder generator, avoiding stale docs/pages output.
+
+Validation:
+
+- `node --check scripts/ci/check-button-flow-routing.js`: pass.
+- `npm run check:button-flows`: pass, 34 drivers checked, 0 errors.
+- `node .github/scripts/fp-collision-check.js --baseline .github/fingerprint-collision-baseline.json`: pass, 0 current, 0 baseline, 0 new.
+- `npm run check:voice`: pass, 430 drivers and 642 `button.*` capabilities checked.
