@@ -51,25 +51,22 @@ runs:
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
         PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(), 'homey-publish-temp')")"
+        VER="$(node -p "require('./app.json').version")"
         if [ ! -d "$PUBLISH_DIR" ]; then
           echo "::error::Prepared publish directory is missing: $PUBLISH_DIR"
           exit 1
         fi
-        cd "$PUBLISH_DIR"
-        npm ci --omit=dev --ignore-scripts --no-audit --no-fund || npm install --omit=dev --ignore-scripts --no-audit --no-fund
+        (
+          cd "$PUBLISH_DIR"
+          npm ci --omit=dev --ignore-scripts --no-audit --no-fund || npm install --omit=dev --ignore-scripts --no-audit --no-fund
+        )
         node "$GITHUB_WORKSPACE/scripts/maintenance/prune-publish-payload.cjs" "$PUBLISH_DIR"
         HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node "$GITHUB_WORKSPACE/scripts/ci/publish-size-gate.cjs" --strict --final
-        set +e
-        publish_output=$(HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" homey app publish --path "$PUBLISH_DIR" 2>&1)
-        publish_status=$?
-        set -e
-        printf '%s\n' "$publish_output"
         APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
-        if [ "$publish_status" -ne 0 ]; then
-          if printf '%s\n' "$publish_output" | grep -Eiq 'already been published|currently in review'; then
-            echo "::warning::Homey reports this version is already published or in review; continuing so test promotion can proceed."
-            exit 0
-          fi
-          exit "$publish_status"
-        fi
+        node "$GITHUB_WORKSPACE/scripts/automation/publish-with-athom-backoff.js" \
+          --path "$PUBLISH_DIR" \
+          --expect-version "$VER" \
+          --attempts 2 \
+          --post-publish-wait-ms 120000 \
+          --rate-cooldown-ms 900000
