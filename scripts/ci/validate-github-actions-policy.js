@@ -41,6 +41,7 @@ function read(file) {
 }
 
 function workflowFiles() {
+  if (!fs.existsSync(WORKFLOWS_DIR)) return [];
   return fs.readdirSync(WORKFLOWS_DIR)
     .filter(name => /\.ya?ml$/i.test(name))
     .sort()
@@ -51,9 +52,9 @@ function hasRun(content, pattern) {
   return pattern.test(content);
 }
 
-function parseWorkflow(file) {
+function parseWorkflow(file, content) {
   try {
-    return yaml.load(read(file));
+    return yaml.load(content);
   } catch (err) {
     errors.push(`${rel(file)}: YAML parse failed: ${err.message}`);
     return null;
@@ -71,7 +72,7 @@ function addWarning(file, message) {
 function validateWorkflow(file) {
   const name = path.basename(file);
   const content = read(file);
-  const doc = parseWorkflow(file);
+  const doc = parseWorkflow(file, content);
   if (!doc) return;
 
   if (BLOCKING_WORKFLOWS_REQUIRING_VOICE.has(name) && !hasRun(content, /npm\s+run\s+check:voice\b/)) {
@@ -114,6 +115,7 @@ function validateWorkflow(file) {
 
   const jobs = doc.jobs && typeof doc.jobs === 'object' ? doc.jobs : {};
   for (const [jobName, job] of Object.entries(jobs)) {
+    if (!job || typeof job !== 'object') continue;
     const steps = Array.isArray(job.steps) ? job.steps : [];
     for (const step of steps) {
       if (!step || typeof step !== 'object') continue;
@@ -147,12 +149,13 @@ function validateSmartMergeScript() {
   }
 }
 
-for (const file of workflowFiles()) validateWorkflow(file);
+const files = workflowFiles();
+for (const file of files) validateWorkflow(file);
 validateSmartMergeScript();
 
 const report = {
   timestamp: new Date().toISOString(),
-  workflowsChecked: workflowFiles().length,
+  workflowsChecked: files.length,
   errors: errors.length,
   warnings: warnings.length,
   errorDetails: errors,
