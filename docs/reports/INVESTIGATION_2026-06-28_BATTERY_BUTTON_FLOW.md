@@ -105,3 +105,51 @@ Validation:
 - YAML parse for `auto-publish-on-push.yml` and `publish.yml`: pass.
 - Isolated functional test: `9.0.139 -> 9.0.140` patch bump, with `app.json`, `package.json`, `.homeycompose/app.json`, and `.homeychangelog.json` synchronized.
 - `git diff --check`: pass.
+
+## Follow-up 2026-06-29 20:32 Europe/Paris - Full Gmail diagnostic recovery and lifecycle hardening
+
+Sources crossed:
+
+- GitHub Actions Gmail Diagnostics Auto-Analysis run `28394162348` on branch `harden-github-actions-from-v90147`.
+- Sanitized artifact `sanitized-diagnostics-report` only; raw Gmail, crash payloads, dashboard payloads, secrets, and PII were not committed.
+- PR #436 checks after commit `e87083acc3`.
+- Local diagnostics gates: `privacy-redactor.js`, `diagnostic-history-gate.js`, flow/button/voice/security/precommit checks.
+
+Diagnostic recovery result:
+
+- Historical window: `2019-01-01` to `2026-06-29`, single-window IMAP run, `maxResults=20000`, `maxTotalResults=20000`, `chunkDays=0`, `reprocess=true`, `autoImplement=false`.
+- Messages matched and fetched: `10742`.
+- Types: `general=6091`, `github=2213`, `crash_report=765`, `device_issue=544`, `diagnostic=530`, `bug_report=293`, `interview=151`, `changelog=130`, `homey_system=25`.
+- Diagnostic categories: `runtime_crash=819`, `button_flow=314`, `battery_unknown=131`, `security_privacy=126`, `missing_capability_listener=4`.
+- Cross-reference summary: `637` fingerprints, `343` pseudonymous users, `1015` error patterns.
+- New fingerprint candidates: `291`; deep research was intentionally disabled (`autoImplement=false`).
+- Privacy: workflow privacy gate sanitized generated files; local privacy re-check on the downloaded artifact scanned 4 files and required 0 additional sanitizations.
+
+Root-cause interpretation:
+
+1. Button and flow regressions are now covered by the dedicated button-flow registration patch and `check:button-flows`; the full history still records old invalid card ids, but current flow/card gates report 0 duplicates and 0 button-flow routing errors.
+2. Battery unknown reports correlate with old DP/ZCL battery gaps and overly broad mains heuristics. Current branch already restores button-device battery persistence/fallbacks and low-battery flow routes; remaining history is now used as regression input, not as raw state.
+3. Runtime crashes include old `SourceCredits` missing-module reports, timer/lifecycle crashes after Homey app destruction, and retry/timer mistakes. `SourceCredits` now exists and is safe-required; this follow-up hardens the remaining lifecycle and retry paths found in current code.
+4. Security/privacy signals are handled as process guardrails: diagnostics remain sanitized artifacts, `security-scan` is clean, and auto-implementation from email remains off unless explicitly requested.
+
+Actions:
+
+- Raised Gmail diagnostic history fetch capacity to `20000` and confirmed that full historical recovery works in one pass.
+- Added batched IMAP fetching so the mailbox fetch phase can process the full 10742-message corpus without annual chunk timeouts.
+- Corrected `drivers/switch/device.js` reporting retries: the 60-second delay is now the actual timer delay, retries stop after destruction, and retry failures preserve error context.
+- Added safe Homey app access in EF00 paths (`TuyaEF00Manager`, `TuyaEF00Base`) before app-level DP flow triggers or app-level manager lookups.
+- Hardened dynamic/background app access in `UniversalFlowCardLoader`, `SelfHealingDevice`, and `AutonomousEnricher`.
+
+Validation:
+
+- GitHub Actions Gmail run `28394162348`: success.
+- PR #436 checks after `e87083acc3`: pass for production build, strict validation, validate, quality checks, syntax-check, AI-assisted smart merge, and security shield.
+- `node --check` on touched JS files: pass.
+- `npm run check:timer-context`: pass.
+- `npm run check:flows`: pass, 420 files, 4781 unique cards, 0 duplicates.
+- `npm run check:button-flows`: pass, 34 checked, 0 errors, 0 warnings.
+- `npm run check:voice`: pass, 430 drivers and 642 `button.*` capabilities checked as event/maintenance-only.
+- `npm run security-scan`: clean.
+- `npm test`: pass.
+- `npm run precommit:full`: pass, with existing broad warnings only.
+- `git diff --check`: pass.
