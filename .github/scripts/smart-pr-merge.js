@@ -43,6 +43,64 @@ function git(cmd) {
   }
 }
 
+function sh(value) {
+  return `'${String(value).replace(/'/g, `'\\''`)}'`;
+}
+
+function runRequired(command, options = {}) {
+  try {
+    return execSync(command, {
+      encoding: 'utf8',
+      timeout: options.timeout || 60000,
+      env: options.env || process.env,
+    }).trim();
+  } catch (e) {
+    const stdout = e.stdout?.toString().trim();
+    const stderr = e.stderr?.toString().trim();
+    const detail = [stdout, stderr, e.message].filter(Boolean).join('\n');
+    throw new Error(`${command} failed\n${detail}`);
+  }
+}
+
+function gitRequired(cmd, options = {}) {
+  return runRequired(`git ${cmd}`, options);
+}
+
+function ghRequired(cmd, options = {}) {
+  return runRequired(`gh ${cmd}`, {
+    ...options,
+    env: { ...process.env, GH_TOKEN: GH },
+  });
+}
+
+function configureGitIdentity() {
+  gitRequired('config user.name "github-actions[bot]"');
+  gitRequired('config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+}
+
+function checkoutBaseBranch() {
+  gitRequired('fetch origin master');
+  gitRequired('checkout -B master origin/master');
+}
+
+function abortMergeQuietly() {
+  git('merge --abort 2>/dev/null || true');
+}
+
+function verifyIntegrated(prNumber, prData) {
+  if (!prData.headRefOid) {
+    throw new Error(`PR #${prNumber} has no headRefOid; refusing to report a merge without verification`);
+  }
+
+  gitRequired('fetch origin master');
+  const containingBranches = gitRequired(`branch -r --contains ${prData.headRefOid}`);
+  if (!containingBranches.split(/\s+/).includes('origin/master')) {
+    throw new Error(`PR #${prNumber} head ${prData.headRefOid} is not reachable from origin/master`);
+  }
+
+  log(`  ✅ Verified PR #${prNumber} head is reachable from origin/master`);
+}
+
 // Classify what a PR changes
 function classifyChanges(files) {
   const cats = { drivers: [], fingerprints: [], scripts: [], workflows: [], deps: [], docs: [], other: [] };
@@ -419,8 +477,10 @@ function generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFi
   return lines.join('\n');
 }
 
-// Close a PR with a human-readable summary, then delete the branch
+// Comment on a merged PR only after verifying the head commit reached master.
 function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles) {
+  verifyIntegrated(prNumber, prData);
+
   const summary = generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFiles || []);
 
   // Write comment to temp file to avoid shell escaping issues with backticks, quotes, etc.
@@ -435,10 +495,7 @@ function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles
     gh(`pr comment ${prNumber} -R ${REPO} --body "✅ PR #${prNumber} merged via Smart Auto-Merge"`);
   }
 
-  // Close the PR with a human-readable closing comment
-  gh(`pr close ${prNumber} -R ${REPO} --comment "Merged into master — all changes integrated successfully. See above comment for details."`);
-
-  // Delete the remote branch (cleanup)
+  // Delete the remote branch (cleanup). GitHub's merge API may already have done this.
   const branch = prData.headRefName;
   if (branch && branch !== 'master' && branch !== 'main') {
     log(`  Deleting branch: ${branch}`);
@@ -448,7 +505,7 @@ function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles
   // Clean up temp file
   try { fs.unlinkSync(tmpFile); } catch {}
 
-  log(`  ✅ PR #${prNumber} closed with detailed summary and branch deleted`);
+  log(`  ✅ PR #${prNumber} verified, commented, and branch cleanup attempted`);
 }
 
 // Process a single PR
@@ -456,7 +513,7 @@ async function processPR(prNumber) {
   log(`\n### Processing PR #${prNumber}`);
 
   // Get PR info
-  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,body,files,labels,state,mergeable`);
+  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,headRefOid,body,files,labels,state,mergeable`);
   if (!prJson) {
     log(`  Could not fetch PR #${prNumber}`);
     return false;
@@ -489,6 +546,8 @@ async function processPR(prNumber) {
   if (prData.mergeable === 'CONFLICTING') {
     log('  ⚠️ PR has merge conflicts');
 
+    checkoutBaseBranch();
+
     // Fetch the PR branch
     git(`fetch origin pull/${prNumber}/head:pr-${prNumber}`);
 
@@ -504,12 +563,14 @@ async function processPR(prNumber) {
       validation.checks.forEach(c => log(`  ${c}`));
 
       if (validation.valid && risk <= 5) {
-        git(`commit -m "Merge PR #${prNumber}: ${prData.title} (conflicts resolved) [skip ci]"`);
-        git('push origin HEAD');
+        configureGitIdentity();
+        gitRequired(`commit -m ${sh(`Merge PR #${prNumber}: ${prData.title} (conflicts resolved) [skip ci]`)}`);
+        gitRequired('push origin HEAD:refs/heads/master');
         closePR(prNumber, prData, cats, risk, reasons, 'conflict-resolved', conflict.files);
         return true;
       } else {
-        git('reset --hard HEAD~1');
+        abortMergeQuietly();
+        git('reset --hard origin/master');
         log(`  Validation failed or risk too high (${risk}/10), labeling for review`);
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
         gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Tentative de résolution automatique des conflits**\n\nLe merge a été tenté mais la validation a échoué ou le risque est trop élevé (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vérifier manuellement avant de fusionner.\n\n_🤖 Smart PR Auto-Merge_"`);
@@ -529,20 +590,22 @@ async function processPR(prNumber) {
     if (risk <= 4) {
       log('  Low risk, auto-merging...');
 
-      // Validate first by checking out the PR branch
-      git(`fetch origin pull/${prNumber}/head:pr-${prNumber}`);
-      git(`merge --no-commit --no-ff pr-${prNumber}`);
+      // Validate first by checking out master and merging the PR branch locally.
+      checkoutBaseBranch();
+      gitRequired(`fetch origin pull/${prNumber}/head:pr-${prNumber}`);
+      gitRequired(`merge --no-commit --no-ff pr-${prNumber}`);
 
       const validation = validateMerge();
       validation.checks.forEach(c => log(`  ${c}`));
 
       if (validation.valid) {
-        git(`commit -m "Merge PR #${prNumber}: ${prData.title} [skip ci]"`);
-        git('push origin HEAD');
+        abortMergeQuietly();
+        ghRequired(`pr merge ${prNumber} -R ${REPO} --merge --delete-branch --subject ${sh(`Merge PR #${prNumber}: ${prData.title}`)}`);
         closePR(prNumber, prData, cats, risk, reasons, 'clean');
         return true;
       } else {
-        git('merge --abort 2>/dev/null || git reset --hard HEAD');
+        abortMergeQuietly();
+        git('reset --hard origin/master');
         log('  Validation failed, requesting review');
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review"`);
         gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Validation échouée**\n\nLe merge a été tenté mais la validation du code a échoué. Vérifiez les erreurs de syntaxe dans les drivers.\n\nChecks: ${validation.checks.join(' | ')}\n\n_🤖 Smart PR Auto-Merge_"`);
