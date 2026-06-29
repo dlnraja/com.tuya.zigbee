@@ -22,11 +22,6 @@ class SceneSwitch4Driver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
-
-    
     this.log('SceneSwitch4Driver v5.5.696 initialized');
     this._registerFlowCards();
   
@@ -50,7 +45,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
 
     for (const triggerId of mainTriggers) {
       try {
-        const card = homey.flow.getTriggerCard(triggerId);
+          const card = homey.flow.getDeviceTriggerCard(triggerId);
 
         if (card) {
           card.registerRunListener(async (args, state) => {
@@ -72,7 +67,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
       for (const pressType of buttonPressTypes) {
         const buttonTriggerId = `${driverId}_button_${i}_${pressType}`;
         try {
-          const card = homey.flow.getTriggerCard(buttonTriggerId);
+          const card = homey.flow.getDeviceTriggerCard(buttonTriggerId);
 
           if (card) {
             card.registerRunListener(async (args, state) => {
@@ -88,7 +83,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
     }
 
     try {
-      const batteryCard = homey.flow.getTriggerCard('scene_switch_4_battery_changed');
+      const batteryCard = homey.flow.getDeviceTriggerCard('scene_switch_4_battery_changed');
 
       if (batteryCard) {
         batteryCard.registerRunListener(async (args, state) => true);

@@ -42,16 +42,18 @@ input,select{width:100%;padding:7px;border:1px solid #ccc;border-radius:5px;font
 <label class="sw"><input type="checkbox" id="sa" onchange="setToggle('experimental_smart_adapt',this.checked)"><span class="sl"></span></label></div></div>
 <div class="card"><b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.</div>
 <script>
-var Homey=null;
+var Homey=null,tuyaSecretConfigured=false;
 function show(id,t){var e=document.getElementById(id);e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
 function saveCreds(){
 if(!Homey){show('err-msg','App not ready yet');return}
 var a=document.getElementById('aid').value.trim(),s=document.getElementById('as').value.trim(),r=document.getElementById('reg').value;
-if(!a||!s){show('err-msg','Access ID and Secret required');return}
+if(!a||(!s&&!tuyaSecretConfigured)){show('err-msg','Access ID and Secret required');return}
 Homey.set('tuya_cloud_access_id',a,function(e){if(e){show('err-msg','Save failed: '+e.message);return}
-Homey.set('tuya_cloud_access_secret',s,function(e2){if(e2){show('err-msg','Save failed: '+e2.message);return}
-Homey.set('tuya_cloud_region',r,function(e3){if(e3){show('err-msg','Save failed: '+e3.message);return}
-show('ok-msg','Credentials saved!');updateSecretStatus(true)})})})
+function saveRegion(){Homey.set('tuya_cloud_region',r,function(e3){if(e3){show('err-msg','Save failed: '+e3.message);return}
+show('ok-msg','Credentials saved!');updateSecretStatus(s?true:tuyaSecretConfigured)})}
+if(s){Homey.set('tuya_cloud_access_secret',s,function(e2){if(e2){show('err-msg','Save failed: '+e2.message);return}saveRegion()})}
+else{saveRegion()}
+})
 }
 function clearCreds(){
 if(!Homey){show('err-msg','App not ready yet');return}
@@ -65,6 +67,7 @@ if(!Homey){return}
 Homey.set(key,val,function(e){if(e){show('err-msg','Failed: '+e.message)}})
 }
 function updateSecretStatus(has){
+tuyaSecretConfigured=!!has;
 var el=document.getElementById('sec-status');
 if(has){el.textContent='Secret is configured';el.className='ss on'}
 else{el.textContent='No secret saved';el.className='ss'}

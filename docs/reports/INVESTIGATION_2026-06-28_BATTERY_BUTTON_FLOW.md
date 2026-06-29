@@ -96,3 +96,33 @@ Validation:
 - `node scripts/_validate_all.js`: pass for JSON, JS brackets, and flow-card references.
 - `npm run validate:publish`: pass, existing non-blocking `titleFormatted` warnings only.
 - `npm run prepush`: pass; precommit, recursive validation, and publish validation all complete.
+
+## Follow-up 2026-06-29 22:20 Europe/Paris - Stable TS0041, DP, and precommit hardening
+
+Additional stable-v5 pass after the main app PR hardening found three regressions that could return through generated data or older DP paths:
+
+1. `_TZ3000_B4AWZGCT` and `_TZ3000_YJ6K7VFO` were correctly routed in the driver manifests, but stale conflict CSV data still documented them as `button_wireless_1`.
+2. Stable lacked the new button-flow and voice-safety gates in `precommit`, so a generated manifest could reintroduce broken button flows or voice-assistant command surfaces.
+3. `BaseUnifiedDevice.setTuyaDpValue()` used bare `addCapability()` / `setCapabilityValue()` calls and one Tuya DP path bypassed the guarded setter, risking noisy failures after deleted devices, unsupported DP capabilities, or sleeping battery devices.
+
+Actions:
+
+- Added `scripts/ci/check-button-flow-routing.js` and wired it into `npm run precommit`.
+- Added `scripts/validation/check-google-assistant-voice-safety.js` and wired it into `npm run precommit`.
+- Kept known four-endpoint TS0041 variants pinned to `button_wireless_4_ts0041` and blocked stale `button_wireless_1` conflict-data regressions.
+- Restored flow-helper registration for legacy smart/remote/wall button drivers that declared button flow cards but had empty or mismatched driver init code.
+- Removed duplicate flow-registration guards from `button_wireless_smart`, `remote_button_wireless_wall`, and `scene_switch_4`.
+- Updated stale manufacturer conflict data for `_TZ3000_B4AWZGCT` and `_TZ3000_YJ6K7VFO`.
+- Hardened DP capability writes through `safeSetCapabilityValue()` and suppressed expected deleted/unavailable-device setter failures.
+- Fixed settings secret preservation so changing Access ID or region no longer requires re-entering an already stored secret.
+- Pointed `build-docs` at the existing Device Finder generator.
+
+Validation:
+
+- `npm run check:button-flows`: pass, 28 drivers checked, 0 errors, 0 warnings.
+- `npm run check:voice`: pass, 229 drivers checked, 126 `button.*` capabilities checked.
+- `npm run precommit`: pass, zero errors and zero actionable warnings.
+- `npm test`: pass, 21 Mocha tests plus 12 TAP tests.
+- `npm run prepush`: pass, including recursive validation and Homey publish validation.
+- `npm run build-docs`: pass, Device Finder regenerated for 229 drivers and 14197 fingerprints.
+- `git diff --check`: pass.

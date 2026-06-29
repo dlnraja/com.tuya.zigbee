@@ -30,10 +30,6 @@ class Button1GangDriver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
-
      // v5.5.533: SDK3 CRITICAL - must call super first!
     this.log('Button1GangDriver v5.5.533 initialized');
 
