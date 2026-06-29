@@ -133,16 +133,19 @@ jobs:
           node-version: '22'
           cache: npm
 
-      - name: Install Homey CLI
-        run: npm install -g @athombv/homey-cli
+      - name: Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Build App
         run: |
           echo "📦 Building version ${{ github.event.inputs.target_version }}..."
-          # Note: Normalement géré par homey app publish, mais simulé ici pour le log
-          # homey app build
-          # ls -lh com.dlnraja.tuya.zigbee-*.tar.gz
-          echo "✅ Build simulé pour l'artifact."
+          npx homey app build
+          node scripts/maintenance/fix-large-images.js
+          node scripts/maintenance/optimize-build-images.cjs
+          node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+          npm run prepare-publish
+          HOMEY_CHECK_FINAL_PUBLISH_DIR=1 node scripts/ci/publish-size-gate.cjs --strict --final
+          echo "✅ Build and publish payload prepared."
 
       - name: 🚀 Publish to Test Channel
         uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
