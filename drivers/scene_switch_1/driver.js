@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 
 class SceneSwitch1Driver extends ZigBeeDriver {
 
@@ -16,6 +17,7 @@ class SceneSwitch1Driver extends ZigBeeDriver {
     this._buttonDoubleTrigger = this.homey.flow.getDeviceTriggerCard('scene_switch_1_button_double_press');
     this._buttonLongTrigger = this.homey.flow.getDeviceTriggerCard('scene_switch_1_button_long_press');
     this._batteryChangedTrigger = this.homey.flow.getDeviceTriggerCard('scene_switch_1_battery_changed');
+    registerButtonFlowCards(this, 'scene_switch_1', 1);
 
     this.log('SceneSwitch1Driver flow triggers registered');
   }

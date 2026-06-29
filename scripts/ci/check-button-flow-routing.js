@@ -1,0 +1,150 @@
+#!/usr/bin/env node
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+
+const ROOT = path.resolve(__dirname, '../..');
+const DRIVERS_DIR = path.join(ROOT, 'drivers');
+const JSON_OUTPUT = process.argv.includes('--json');
+
+const report = {
+  timestamp: new Date().toISOString(),
+  checked: 0,
+  errors: [],
+  warnings: [],
+};
+
+function readJson(file) {
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
+}
+
+function addError(driver, message, details = {}) {
+  report.errors.push({ driver, message, ...details });
+}
+
+function addWarning(driver, message, details = {}) {
+  report.warnings.push({ driver, message, ...details });
+}
+
+function getTriggers(flow) {
+  return Array.isArray(flow?.triggers) ? flow.triggers : [];
+}
+
+function extractButtonPattern(triggers) {
+  const matches = new Map();
+  for (const card of triggers) {
+    const id = card?.id || '';
+    const match = id.match(/^(.+)_button_(\d+)gang_button(?:_|$)/);
+    if (!match) continue;
+    const prefix = match[1];
+    const count = Number(match[2]);
+    const key = `${prefix}:${count}`;
+    if (!matches.has(key)) {
+      matches.set(key, { prefix, count, ids: [] });
+    }
+    matches.get(key).ids.push(id);
+  }
+  return [...matches.values()];
+}
+
+function hasExactHelperCall(driverJs, prefix, count) {
+  const escapedPrefix = prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(`registerButtonFlowCards\\s*\\(\\s*this\\s*,\\s*['"]${escapedPrefix}['"]\\s*,\\s*${count}\\s*\\)`);
+  return pattern.test(driverJs);
+}
+
+function hasDynamicThisIdHelperCall(driverJs, count) {
+  const hasThisIdAlias = /\b(?:const|let|var)\s+\w+\s*=\s*this\.id\b/.test(driverJs);
+  const pattern = new RegExp(`registerButtonFlowCards\\s*\\(\\s*this\\s*,\\s*\\w+\\s*,\\s*${count}\\s*\\)`);
+  return hasThisIdAlias && pattern.test(driverJs);
+}
+
+function loadDriverSource(driverPath) {
+  const source = fs.readFileSync(driverPath, 'utf8');
+  const reexport = source.match(/module\.exports\s*=\s*require\(\s*['"]([^'"]+)['"]\s*\)/);
+  if (!reexport) {
+    return source;
+  }
+  const target = path.resolve(path.dirname(driverPath), reexport[1]);
+  const targetPath = target.endsWith('.js') ? target : `${target}.js`;
+  if (!fs.existsSync(targetPath)) {
+    return source;
+  }
+  return `${source}\n${fs.readFileSync(targetPath, 'utf8')}`;
+}
+
+function run() {
+  const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
+  const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
+  for (const required of ['triple', 'release', '_battery_low']) {
+    if (!helperText.includes(required)) {
+      addError('FlowCardHelper', `Button helper no longer registers ${required} routes`);
+    }
+  }
+
+  const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
+    .filter(entry => entry.isDirectory())
+    .map(entry => entry.name);
+
+  for (const driverName of driverDirs) {
+    const flowPath = path.join(DRIVERS_DIR, driverName, 'driver.flow.compose.json');
+    const driverPath = path.join(DRIVERS_DIR, driverName, 'driver.js');
+    if (!fs.existsSync(flowPath) || !fs.existsSync(driverPath)) continue;
+
+    let flow;
+    try {
+      flow = readJson(flowPath);
+    } catch (err) {
+      addError(driverName, `Invalid driver.flow.compose.json: ${err.message}`);
+      continue;
+    }
+
+    const patterns = extractButtonPattern(getTriggers(flow));
+    if (patterns.length === 0) continue;
+    report.checked++;
+
+    const driverJs = loadDriverSource(driverPath);
+    const hasCustomRunListeners = driverJs.includes('registerRunListener') || driverJs.includes('onRunListener');
+    const helperCalls = [...driverJs.matchAll(/registerButtonFlowCards\s*\(\s*this\s*,\s*['"]([^'"]+)['"]\s*,\s*(\d+)\s*\)/g)]
+      .map(match => ({ prefix: match[1], count: Number(match[2]) }));
+
+    for (const pattern of patterns) {
+      if (
+        hasExactHelperCall(driverJs, pattern.prefix, pattern.count) ||
+        hasDynamicThisIdHelperCall(driverJs, pattern.count) ||
+        hasCustomRunListeners
+      ) {
+        continue;
+      }
+      addError(driverName, 'Button flow helper does not match declared flow-card IDs', {
+        expected: `registerButtonFlowCards(this, '${pattern.prefix}', ${pattern.count})`,
+        found: helperCalls,
+        examples: pattern.ids.slice(0, 3),
+      });
+    }
+
+    const helperIndex = driverJs.indexOf('registerButtonFlowCards');
+    const beforeHelper = helperIndex === -1 ? driverJs : driverJs.slice(0, helperIndex);
+    const guardCount = (beforeHelper.match(/if\s*\(\s*this\._flowCardsRegistered\s*\)/g) || []).length;
+    if (guardCount > 1) {
+      addWarning(driverName, 'Flow registration guard appears duplicated before helper call');
+    }
+  }
+}
+
+run();
+
+if (JSON_OUTPUT) {
+  console.log(JSON.stringify(report, null, 2));
+} else {
+  console.log(`Button flow routing: ${report.checked} drivers checked, ${report.errors.length} errors, ${report.warnings.length} warnings`);
+  for (const err of report.errors) {
+    console.error(`ERROR [${err.driver}] ${err.message}`);
+  }
+  for (const warn of report.warnings) {
+    console.warn(`WARN [${warn.driver}] ${warn.message}`);
+  }
+}
+
+process.exit(report.errors.length > 0 ? 1 : 0);

@@ -10,7 +10,7 @@
  * - Flow Card completeness: every capability should have associated flow cards
  * - Duplicate flow card IDs
  * - Invalid flow card argument types
- * - Flow cards with missing run handlers in device.js
+ * - Flow cards with missing run handlers in device.js/driver.js
  *
  * Predictive completeness analysis:
  * - Health score per driver (0-100) based on flow card coverage
@@ -32,7 +32,7 @@ const JSON_OUTPUT = process.argv.includes('--json');
 const PREDICTIVE = process.argv.includes('--predictive') || JSON_OUTPUT;
 const APP_JSON = path.join(ROOT, 'app.json');
 const STATE_DIR = path.resolve(__dirname, '../../.github/state');
-const { log, summary } = createLogger('Flow Card Audit');
+const { log, summary } = createLogger('Flow Card Audit', { silent: JSON_OUTPUT });
 
 // ---- Predictive completeness infrastructure ----
 
@@ -177,13 +177,13 @@ function generatePredictions(driverFlowHealthMap, allCapabilities) {
     predictions.push({
       type: 'silent-flow-failure',
       severity: 'high',
-      message: `${noRunHandlers.length} driver(s) define action/condition flow cards but have no registerRunListener in device.js. These flow cards will appear in the UI but do nothing when triggered.`,
+      message: `${noRunHandlers.length} driver(s) define action/condition flow cards but have no registerRunListener in device.js or driver.js. These flow cards will appear in the UI but do nothing when triggered.`,
       affectedDrivers: noRunHandlers.map(h => h.name),
     });
     recommendations.push({
       priority: 1,
       category: 'correctness',
-      action: 'Add registerRunListener handlers in device.js for each flow card action/condition.',
+      action: 'Add registerRunListener handlers in device.js or driver.js for each flow card action/condition.',
       affectedCount: noRunHandlers.length,
     });
   }
@@ -230,6 +230,7 @@ function generatePredictions(driverFlowHealthMap, allCapabilities) {
 const VALID_ARG_TYPES = new Set([
   'device', 'text', 'number', 'autocomplete', 'dropdown',
   'checkbox', 'color', 'date', 'time', 'textarea',
+  'range',
 ]);
 
 // Capabilities that typically need flow cards
@@ -242,6 +243,7 @@ function auditDriverFlowCards(name, d) {
   const driverPath = path.join(DRIVERS_DIR, name);
   const flowPath = path.join(driverPath, 'driver.flow.compose.json');
   const devicePath = path.join(driverPath, 'device.js');
+  const driverJsPath = path.join(driverPath, 'driver.js');
 
   // Collect all flow card IDs for duplicate detection
   const allCardIds = new Map();
@@ -327,26 +329,20 @@ function auditDriverFlowCards(name, d) {
     }
   }
 
-  // Check if device.js has flow card run handlers when flow cards exist
-  if (fs.existsSync(devicePath) && hasAnyFlowCards) {
-    const deviceJs = fs.readFileSync(devicePath, 'utf8');
-    // Look for registerRunListener or onRunListener patterns
-    const hasRunHandlers = deviceJs.includes('registerRunListener') || deviceJs.includes('onRunListener');
-    if (!hasRunHandlers) {
-      // Only warn if there are actual flow cards with args (not simple trigger-only cards)
-      if (totalActions > 0 || totalConditions > 0) {
-        log('warn', name, 'Flow cards defined but no registerRunListener found in device.js');
-      }
-    }
+  const sourceFiles = [devicePath, driverJsPath].filter(fs.existsSync);
+  const sourceText = sourceFiles.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+  const hasKnownFlowHelper = /\bregister(Button|SOS)FlowCards\b/.test(sourceText);
+  const hasRunHandlers = hasAnyFlowCards && (
+    sourceText.includes('registerRunListener') ||
+    sourceText.includes('onRunListener') ||
+    hasKnownFlowHelper
+  );
+  if (hasAnyFlowCards && !hasRunHandlers && (totalActions > 0 || totalConditions > 0)) {
+    log('warn', name, 'Flow cards define actions/conditions but no registerRunListener found in device.js or driver.js');
   }
 
   // ---- Predictive health scoring for this driver ----
   const deviceExists = fs.existsSync(devicePath);
-  let hasRunHandlers = false;
-  if (deviceExists && hasAnyFlowCards) {
-    const deviceJs = fs.readFileSync(devicePath, 'utf8');
-    hasRunHandlers = deviceJs.includes('registerRunListener') || deviceJs.includes('onRunListener');
-  }
   const flowHealth = calculateFlowCardHealth(
     name, d.caps || [],
     { triggers: totalTriggers, conditions: totalConditions, actions: totalActions },

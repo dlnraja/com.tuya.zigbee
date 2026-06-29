@@ -8,7 +8,7 @@
  *   1. JSON syntax validation for all driver.flow.compose.json files
  *   2. Required field validation (id, title, args, tokens)
  *   3. Duplicate ID detection across all drivers
- *   4. Consistency with device.js registration (registerRunListener)
+ *   4. Consistency with device.js/driver.js registration (registerRunListener)
  *   5. Capability-to-flow-card coverage analysis
  *   6. App.json flow card consistency
  *
@@ -276,7 +276,7 @@ function checkDuplicateIds() {
 
 function checkDeviceJsConsistency(driverName, flowData) {
   const devicePath = path.join(DRIVERS_DIR, driverName, 'device.js');
-  if (!fs.existsSync(devicePath)) return;
+  const driverPath = path.join(DRIVERS_DIR, driverName, 'driver.js');
 
   let totalActions = 0;
   let totalConditions = 0;
@@ -289,13 +289,17 @@ function checkDeviceJsConsistency(driverName, flowData) {
   if (totalActions === 0 && totalConditions === 0) return;
 
   try {
-    const deviceJs = fs.readFileSync(devicePath, 'utf8');
-    const hasRunHandler = deviceJs.includes('registerRunListener') || deviceJs.includes('onRunListener');
+    const sourceFiles = [devicePath, driverPath].filter(fs.existsSync);
+    const sourceText = sourceFiles.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+    const hasKnownFlowHelper = /\bregister(Button|SOS)FlowCards\b/.test(sourceText);
+    const hasRunHandler = sourceText.includes('registerRunListener') ||
+      sourceText.includes('onRunListener') ||
+      hasKnownFlowHelper;
 
     if (!hasRunHandler) {
       report.deviceJsConsistency.inconsistent++;
       addIssue(SEV.WARN, 'device_js', driverName,
-        `Flow cards define ${totalActions} action(s) / ${totalConditions} condition(s) but device.js has no registerRunListener`, {
+        `Flow cards define ${totalActions} action(s) / ${totalConditions} condition(s) but device.js/driver.js has no registerRunListener`, {
           actions: totalActions, conditions: totalConditions,
         });
     } else {

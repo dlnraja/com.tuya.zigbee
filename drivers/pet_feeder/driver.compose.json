@@ -68,21 +68,6 @@
       }
     }
   },
-  "flow": {
-    "triggers": [],
-    "conditions": [
-      {
-        "id": "pet_feeder_food_ok",
-        "title": {
-          "en": "Food level !{{is|isn't}} OK",
-          "fr": "Niveau nourriture !{{est|n'est pas}} OK",
-          "nl": "Voerniveau !{{is|is niet}} OK",
-          "de": "Futterniveau !{{ist|ist nicht}} OK"
-        }
-      }
-    ],
-    "actions": []
-  },
   "images": {
     "small": "/drivers/pet_feeder/assets/images/small.png",
     "large": "/drivers/pet_feeder/assets/images/large.png",
