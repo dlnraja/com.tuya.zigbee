@@ -132,9 +132,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/ docs/
-          git diff --cached --quiet || git commit -m "auto: batch close/respond state update [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: batch close/respond state update [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No state changes to push"
+          fi
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
@@ -169,4 +172,3 @@ jobs:
               if(r.evolutionSummary)console.log('\n### Evolution\n'+r.evolutionSummary);
             " >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
           fi
-

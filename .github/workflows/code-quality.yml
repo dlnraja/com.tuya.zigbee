@@ -9,7 +9,14 @@ on:
     branches: [master, main, stable-v5]
   push:
     branches: [master, main, stable-v5]
-    paths: ['**.js', 'drivers/**/*.json']
+    paths:
+      - '**.js'
+      - 'drivers/**/*.json'
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'package*.json'
+      - 'scripts/ci/**'
+      - 'scripts/validation/**'
   workflow_dispatch:
 
 permissions:
@@ -40,6 +47,12 @@ jobs:
 
       - name: 📦 Install dependencies
         run: npm ci || npm install
+
+      - name: 🛡️ GitHub Actions & YAML Policy Gate
+        run: npm run check:yaml
+
+      - name: 🗣️ Google Assistant / Alexa Voice-Safety Gate
+        run: npm run check:voice
 
       - name: 🔍 TITAN v2 Pattern Checks
         run: |

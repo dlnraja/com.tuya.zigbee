@@ -172,10 +172,13 @@ jobs:
             D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
             F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
             VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-            git commit -m "Device enrichment v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs [skip ci]" || true
-            git pull --rebase origin master || true
-            git push || true
-            echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY
+            if ! git diff --staged --quiet; then
+              git commit -m "Device enrichment v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs [skip ci]"
+              bash scripts/ci/verified-git-push.sh master
+              echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "No staged enrichment changes to push"
+            fi
           fi
 
       - name: 📋 Summary
@@ -185,5 +188,4 @@ jobs:
           echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
           echo "2. Check Zigbee2MQTT for new Tuya converters" >> $GITHUB_STEP_SUMMARY
           echo "3. Update manufacturer database if needed" >> $GITHUB_STEP_SUMMARY
-
 

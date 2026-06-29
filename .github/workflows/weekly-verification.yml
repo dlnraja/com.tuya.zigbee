@@ -126,6 +126,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A drivers/ .github/state/
-          git diff --cached --quiet || git commit -m "auto: fork verification integration [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: fork verification integration [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No fork verification changes to push"
+          fi

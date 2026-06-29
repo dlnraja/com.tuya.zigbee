@@ -63,9 +63,12 @@ jobs:
           git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json 2>/dev/null || true
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No Gmail diagnostic state changes to push"
+          fi
       - name: Homey Device Diagnostics
         if: always()
         continue-on-error: true
@@ -94,9 +97,12 @@ jobs:
           node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/homey-device-report.json diagnostics
           git add diagnostics/ .github/state/diagnostics-*.json .github/state/homey-device-report.json 2>/dev/null || true
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).count||0}catch(e){0}")
-          git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No aggregated diagnostic changes to push"
+          fi
 
       - name: "Protocol Pattern Detection (Multi-Protocol)"
         if: always()
@@ -130,9 +136,12 @@ jobs:
         run: |
           node .github/scripts/privacy-redactor.js .github/state/resolver-*.json .github/state/pattern-*.json
           git add .github/state/resolver-*.json .github/state/pattern-*.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "Resolved issues + patterns update [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Resolved issues + patterns update [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No resolver state changes to push"
+          fi
 
       - name: Upload diagnostics
         if: always()
@@ -143,4 +152,3 @@ jobs:
             .github/state/diagnostics-report.json
             diagnostics/summary.json
           retention-days: 30
-

@@ -186,9 +186,5 @@ jobs:
             Co-authored-by: Tuya Enrichment Bot <bot@tuya-engine.local>"
             
             echo "✅ Changes committed"
+            bash scripts/ci/verified-git-push.sh "${GITHUB_REF_NAME:-master}"
           fi
-
-      - name: 🚀 Push to branch
-        if: inputs.dry_run != 'true'
-        run: |
-          git push origin HEAD || echo "⚠️ Push failed (may need manual merge)"

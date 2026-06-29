@@ -113,8 +113,17 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      - name: Assert promotion result
+        run: |
+          if [ "${{ steps.puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.api.outcome }}" != "success" ] && \
+             [ "${{ steps.retry.outcome }}" != "success" ]; then
+            echo "::error::All draft-to-test promotion tiers failed"
+            exit 1
+          fi
+
       - name: Verify test version
-        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/verify-test-version.js

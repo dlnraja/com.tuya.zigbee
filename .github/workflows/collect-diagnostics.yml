@@ -63,8 +63,7 @@ jobs:
             git add diagnostics/
             if ! git diff --staged --quiet; then
               git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
-              git pull --rebase origin master || true
-              git push || echo "::warning::Push failed (non-fatal)"
+              bash scripts/ci/verified-git-push.sh master
             else
               echo "No diagnostic changes to commit"
             fi

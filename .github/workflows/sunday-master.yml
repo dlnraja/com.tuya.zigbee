@@ -251,6 +251,9 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
+      - name: Privacy gate for Gmail diagnostics
+        if: always()
+        run: node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
 
   device-diagnostics:
     name: "Homey Device Diagnostics"
@@ -270,6 +273,9 @@ jobs:
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
+      - name: Privacy gate for Homey diagnostics
+        if: always()
+        run: node .github/scripts/privacy-redactor.js .github/state/homey-device-report.json .github/state/diagnostics-report.json diagnostics
 
   external-sources:
     name: "Smart Device Scanner (11 sources)"
@@ -486,9 +492,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
           git add .github/state/ 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "Resolved issues + patterns update [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Resolved issues + patterns update [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No resolver changes to push"
+          fi
 
   enrichment:
     name: "Smart Enrichment (DP-aware)"
@@ -631,9 +640,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
           git add -A
-          git diff --cached --quiet || git commit -m "Updated patterns and state [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Updated patterns and state [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No smart processor changes to push"
+          fi
 
   ai-battle:
     name: "Master AI Battle Orchestrator"
@@ -672,9 +684,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
           git add -A drivers/ .github/state/
-          git diff --cached --quiet || git commit -m "New device variants + driver updates [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "New device variants + driver updates [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No AI battle changes to push"
+          fi
 
   generate-changelog:
     name: "AI Changelog Generation"
@@ -707,9 +722,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add CHANGELOG.md README.md .homeychangelog.json
-          git diff --cached --quiet || git commit -m "docs: changelog update [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: changelog update [skip ci]"
+            bash scripts/ci/verified-git-push.sh master
+          else
+            echo "No changelog changes to push"
+          fi
 
   update-forum-thread:
     needs: [generate-changelog]
