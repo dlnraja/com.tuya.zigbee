@@ -131,7 +131,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "[[device]] [[mode]] Set LED indicator mode",
+        "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+      }
     },
     {
       "id": "wall_dimmer_1gang_1way_turn_on",

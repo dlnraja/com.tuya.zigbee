@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.11.218",
+  "version": "5.11.219",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -24339,7 +24339,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turned on",
+          "fr": "[[device]] Allumé",
+          "nl": "[[device]] Aangezet",
+          "de": "[[device]] Eingeschaltet"
+        }
       },
       {
         "id": "switch_1gang_turned_off",
@@ -24360,7 +24366,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turned off",
+          "fr": "[[device]] Éteint",
+          "nl": "[[device]] Uitgezet",
+          "de": "[[device]] Ausgeschaltet"
+        }
       },
       {
         "id": "switch_1gang_physical_on",
@@ -24381,7 +24393,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical ON",
+          "fr": "[[device]] Physique ON",
+          "nl": "[[device]] Fysiek AAN",
+          "de": "[[device]] Physisch EIN"
+        }
       },
       {
         "id": "switch_1gang_physical_off",
@@ -24402,7 +24420,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical OFF",
+          "fr": "[[device]] Physique OFF",
+          "nl": "[[device]] Fysiek UIT",
+          "de": "[[device]] Physisch AUS"
+        }
       },
       {
         "id": "switch_2gang_gang1_turned_on",
@@ -24423,7 +24447,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 turned on",
+          "fr": "[[device]] Gang 1 allumé",
+          "nl": "[[device]] Gang 1 aangezet",
+          "de": "[[device]] Gang 1 eingeschaltet"
+        }
       },
       {
         "id": "switch_2gang_gang1_turned_off",
@@ -24444,7 +24474,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 turned off",
+          "fr": "[[device]] Gang 1 éteint",
+          "nl": "[[device]] Gang 1 uitgezet",
+          "de": "[[device]] Gang 1 ausgeschaltet"
+        }
       },
       {
         "id": "switch_2gang_gang2_turned_on",
@@ -24465,7 +24501,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 turned on",
+          "fr": "[[device]] Gang 2 allumé",
+          "nl": "[[device]] Gang 2 aangezet",
+          "de": "[[device]] Gang 2 eingeschaltet"
+        }
       },
       {
         "id": "switch_2gang_gang2_turned_off",
@@ -24486,7 +24528,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 turned off",
+          "fr": "[[device]] Gang 2 éteint",
+          "nl": "[[device]] Gang 2 uitgezet",
+          "de": "[[device]] Gang 2 ausgeschaltet"
+        }
       },
       {
         "id": "switch_2gang_physical_gang1_on",
@@ -24507,7 +24555,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 1 ON",
+          "fr": "[[device]] Physique gang 1 ON",
+          "nl": "[[device]] Fysiek gang 1 AAN",
+          "de": "[[device]] Physisch gang 1 EIN"
+        }
       },
       {
         "id": "switch_2gang_physical_gang1_off",
@@ -24528,7 +24582,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 1 OFF",
+          "fr": "[[device]] Physique gang 1 OFF",
+          "nl": "[[device]] Fysiek gang 1 UIT",
+          "de": "[[device]] Physisch gang 1 AUS"
+        }
       },
       {
         "id": "switch_2gang_physical_gang2_on",
@@ -24549,7 +24609,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 2 ON",
+          "fr": "[[device]] Physique gang 2 ON",
+          "nl": "[[device]] Fysiek gang 2 AAN",
+          "de": "[[device]] Physisch gang 2 EIN"
+        }
       },
       {
         "id": "switch_2gang_physical_gang2_off",
@@ -24570,7 +24636,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 2 OFF",
+          "fr": "[[device]] Physique gang 2 OFF",
+          "nl": "[[device]] Fysiek gang 2 UIT",
+          "de": "[[device]] Physisch gang 2 AUS"
+        }
       },
       {
         "id": "switch_3gang_gang1_turned_on",
@@ -24591,7 +24663,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 turned on",
+          "fr": "[[device]] Gang 1 allumé",
+          "nl": "[[device]] Gang 1 aangezet",
+          "de": "[[device]] Gang 1 eingeschaltet"
+        }
       },
       {
         "id": "switch_3gang_gang1_turned_off",
@@ -24612,7 +24690,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 turned off",
+          "fr": "[[device]] Gang 1 éteint",
+          "nl": "[[device]] Gang 1 uitgezet",
+          "de": "[[device]] Gang 1 ausgeschaltet"
+        }
       },
       {
         "id": "switch_3gang_gang2_turned_on",
@@ -24633,7 +24717,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 turned on",
+          "fr": "[[device]] Gang 2 allumé",
+          "nl": "[[device]] Gang 2 aangezet",
+          "de": "[[device]] Gang 2 eingeschaltet"
+        }
       },
       {
         "id": "switch_3gang_gang2_turned_off",
@@ -24654,7 +24744,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 turned off",
+          "fr": "[[device]] Gang 2 éteint",
+          "nl": "[[device]] Gang 2 uitgezet",
+          "de": "[[device]] Gang 2 ausgeschaltet"
+        }
       },
       {
         "id": "switch_3gang_gang3_turned_on",
@@ -24675,7 +24771,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 turned on",
+          "fr": "[[device]] Gang 3 allumé",
+          "nl": "[[device]] Gang 3 aangezet",
+          "de": "[[device]] Gang 3 eingeschaltet"
+        }
       },
       {
         "id": "switch_3gang_gang3_turned_off",
@@ -24696,7 +24798,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 turned off",
+          "fr": "[[device]] Gang 3 éteint",
+          "nl": "[[device]] Gang 3 uitgezet",
+          "de": "[[device]] Gang 3 ausgeschaltet"
+        }
       },
       {
         "id": "switch_3gang_physical_gang1_on",
@@ -24723,7 +24831,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 1 ON",
+          "fr": "[[device]] Physique gang 1 ON",
+          "nl": "[[device]] Fysiek gang 1 AAN",
+          "de": "[[device]] Physisch gang 1 EIN"
+        }
       },
       {
         "id": "switch_3gang_physical_gang1_off",
@@ -24744,7 +24858,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 1 OFF",
+          "fr": "[[device]] Physique gang 1 OFF",
+          "nl": "[[device]] Fysiek gang 1 UIT",
+          "de": "[[device]] Physisch gang 1 AUS"
+        }
       },
       {
         "id": "switch_3gang_physical_gang2_on",
@@ -24765,7 +24885,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 2 ON",
+          "fr": "[[device]] Physique gang 2 ON",
+          "nl": "[[device]] Fysiek gang 2 AAN",
+          "de": "[[device]] Physisch gang 2 EIN"
+        }
       },
       {
         "id": "switch_3gang_physical_gang2_off",
@@ -24786,7 +24912,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 2 OFF",
+          "fr": "[[device]] Physique gang 2 OFF",
+          "nl": "[[device]] Fysiek gang 2 UIT",
+          "de": "[[device]] Physisch gang 2 AUS"
+        }
       },
       {
         "id": "switch_3gang_physical_gang3_on",
@@ -24807,7 +24939,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 3 ON",
+          "fr": "[[device]] Physique gang 3 ON",
+          "nl": "[[device]] Fysiek gang 3 AAN",
+          "de": "[[device]] Physisch gang 3 EIN"
+        }
       },
       {
         "id": "switch_3gang_physical_gang3_off",
@@ -24828,7 +24966,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 3 OFF",
+          "fr": "[[device]] Physique gang 3 OFF",
+          "nl": "[[device]] Fysiek gang 3 UIT",
+          "de": "[[device]] Physisch gang 3 AUS"
+        }
       },
       {
         "id": "switch_3gang_gang1_scene",
@@ -24867,7 +25011,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 scene action",
+          "fr": "[[device]] Action scene gang 1",
+          "nl": "[[device]] Gang 1 scene-actie",
+          "de": "[[device]] Gang 1 Szenenaktion"
+        }
       },
       {
         "id": "switch_3gang_gang2_scene",
@@ -24906,7 +25056,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 scene action",
+          "fr": "[[device]] Action scene gang 2",
+          "nl": "[[device]] Gang 2 scene-actie",
+          "de": "[[device]] Gang 2 Szenenaktion"
+        }
       },
       {
         "id": "switch_3gang_gang3_scene",
@@ -24945,7 +25101,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 scene action",
+          "fr": "[[device]] Action scene gang 3",
+          "nl": "[[device]] Gang 3 scene-actie",
+          "de": "[[device]] Gang 3 Szenenaktion"
+        }
       },
       {
         "id": "switch_4gang_gang1_turned_on",
@@ -24966,7 +25128,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 turned on",
+          "fr": "[[device]] Gang 1 allumé",
+          "nl": "[[device]] Gang 1 aangezet",
+          "de": "[[device]] Gang 1 eingeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang1_turned_off",
@@ -24987,7 +25155,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 turned off",
+          "fr": "[[device]] Gang 1 éteint",
+          "nl": "[[device]] Gang 1 uitgezet",
+          "de": "[[device]] Gang 1 ausgeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang2_turned_on",
@@ -25008,7 +25182,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 turned on",
+          "fr": "[[device]] Gang 2 allumé",
+          "nl": "[[device]] Gang 2 aangezet",
+          "de": "[[device]] Gang 2 eingeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang2_turned_off",
@@ -25029,7 +25209,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 turned off",
+          "fr": "[[device]] Gang 2 éteint",
+          "nl": "[[device]] Gang 2 uitgezet",
+          "de": "[[device]] Gang 2 ausgeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang3_turned_on",
@@ -25050,7 +25236,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 turned on",
+          "fr": "[[device]] Gang 3 allumé",
+          "nl": "[[device]] Gang 3 aangezet",
+          "de": "[[device]] Gang 3 eingeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang3_turned_off",
@@ -25071,7 +25263,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 turned off",
+          "fr": "[[device]] Gang 3 éteint",
+          "nl": "[[device]] Gang 3 uitgezet",
+          "de": "[[device]] Gang 3 ausgeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang4_turned_on",
@@ -25092,7 +25290,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 4 turned on",
+          "fr": "[[device]] Gang 4 allumé",
+          "nl": "[[device]] Gang 4 aangezet",
+          "de": "[[device]] Gang 4 eingeschaltet"
+        }
       },
       {
         "id": "switch_4gang_gang4_turned_off",
@@ -25113,7 +25317,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 4 turned off",
+          "fr": "[[device]] Gang 4 éteint",
+          "nl": "[[device]] Gang 4 uitgezet",
+          "de": "[[device]] Gang 4 ausgeschaltet"
+        }
       },
       {
         "id": "switch_4gang_physical_gang1_on",
@@ -25134,7 +25344,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 1 ON",
+          "fr": "[[device]] Physique gang 1 ON",
+          "nl": "[[device]] Fysiek gang 1 AAN",
+          "de": "[[device]] Physisch gang 1 EIN"
+        }
       },
       {
         "id": "switch_4gang_physical_gang1_off",
@@ -25155,7 +25371,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 1 OFF",
+          "fr": "[[device]] Physique gang 1 OFF",
+          "nl": "[[device]] Fysiek gang 1 UIT",
+          "de": "[[device]] Physisch gang 1 AUS"
+        }
       },
       {
         "id": "switch_4gang_physical_gang2_on",
@@ -25176,7 +25398,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 2 ON",
+          "fr": "[[device]] Physique gang 2 ON",
+          "nl": "[[device]] Fysiek gang 2 AAN",
+          "de": "[[device]] Physisch gang 2 EIN"
+        }
       },
       {
         "id": "switch_4gang_physical_gang2_off",
@@ -25197,7 +25425,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 2 OFF",
+          "fr": "[[device]] Physique gang 2 OFF",
+          "nl": "[[device]] Fysiek gang 2 UIT",
+          "de": "[[device]] Physisch gang 2 AUS"
+        }
       },
       {
         "id": "switch_4gang_physical_gang3_on",
@@ -25218,7 +25452,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 3 ON",
+          "fr": "[[device]] Physique gang 3 ON",
+          "nl": "[[device]] Fysiek gang 3 AAN",
+          "de": "[[device]] Physisch gang 3 EIN"
+        }
       },
       {
         "id": "switch_4gang_physical_gang3_off",
@@ -25239,7 +25479,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 3 OFF",
+          "fr": "[[device]] Physique gang 3 OFF",
+          "nl": "[[device]] Fysiek gang 3 UIT",
+          "de": "[[device]] Physisch gang 3 AUS"
+        }
       },
       {
         "id": "switch_4gang_physical_gang4_on",
@@ -25260,7 +25506,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 4 ON",
+          "fr": "[[device]] Physique gang 4 ON",
+          "nl": "[[device]] Fysiek gang 4 AAN",
+          "de": "[[device]] Physisch gang 4 EIN"
+        }
       },
       {
         "id": "switch_4gang_physical_gang4_off",
@@ -25281,7 +25533,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Physical gang 4 OFF",
+          "fr": "[[device]] Physique gang 4 OFF",
+          "nl": "[[device]] Fysiek gang 4 UIT",
+          "de": "[[device]] Physisch gang 4 AUS"
+        }
       },
       {
         "id": "switch_dimmer_1gang_turned_on",
@@ -41095,7 +41353,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Is !{{on|off}}",
+          "fr": "[[device]] Est !{{allumé|éteint}}",
+          "nl": "[[device]] Is !{{aan|uit}}",
+          "de": "[[device]] Ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_2gang_gang1_is_on",
@@ -41116,7 +41380,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 is !{{on|off}}",
+          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
+          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_2gang_gang2_is_on",
@@ -41137,7 +41407,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 is !{{on|off}}",
+          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
+          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_3gang_gang1_is_on",
@@ -41158,7 +41434,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 is !{{on|off}}",
+          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
+          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_3gang_gang2_is_on",
@@ -41179,7 +41461,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 is !{{on|off}}",
+          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
+          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_3gang_gang3_is_on",
@@ -41200,7 +41488,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 is !{{on|off}}",
+          "fr": "[[device]] Gang 3 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 3 is !{{aan|uit}}",
+          "de": "[[device]] Gang 3 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_4gang_gang1_is_on",
@@ -41221,7 +41515,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 1 is !{{on|off}}",
+          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
+          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_4gang_gang2_is_on",
@@ -41242,7 +41542,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 2 is !{{on|off}}",
+          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
+          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_4gang_gang3_is_on",
@@ -41263,7 +41569,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 3 is !{{on|off}}",
+          "fr": "[[device]] Gang 3 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 3 is !{{aan|uit}}",
+          "de": "[[device]] Gang 3 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_4gang_gang4_is_on",
@@ -41284,7 +41596,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Gang 4 is !{{on|off}}",
+          "fr": "[[device]] Gang 4 est !{{allumé|éteint}}",
+          "nl": "[[device]] Gang 4 is !{{aan|uit}}",
+          "de": "[[device]] Gang 4 ist !{{ein|aus}}"
+        }
       },
       {
         "id": "switch_dimmer_1gang_is_on",
@@ -51876,7 +52194,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on",
+          "fr": "[[device]] Allumer",
+          "nl": "[[device]] Aanzetten",
+          "de": "[[device]] Einschalten"
+        }
       },
       {
         "id": "switch_1gang_turn_off",
@@ -51897,7 +52221,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off",
+          "fr": "[[device]] Éteindre",
+          "nl": "[[device]] Uitzetten",
+          "de": "[[device]] Ausschalten"
+        }
       },
       {
         "id": "switch_1gang_toggle",
@@ -51918,7 +52248,13 @@
             "type": "device",
             "filter": "driver_id=switch_1gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle",
+          "fr": "[[device]] Basculer",
+          "nl": "[[device]] Wisselen",
+          "de": "[[device]] Umschalten"
+        }
       },
       {
         "id": "switch_1gang_set_backlight",
@@ -52150,7 +52486,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 1",
+          "fr": "[[device]] Allumer gang 1",
+          "nl": "[[device]] Gang 1 aanzetten",
+          "de": "[[device]] Gang 1 einschalten"
+        }
       },
       {
         "id": "switch_2gang_turn_off_gang1",
@@ -52171,7 +52513,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 1",
+          "fr": "[[device]] Éteindre gang 1",
+          "nl": "[[device]] Gang 1 uitzetten",
+          "de": "[[device]] Gang 1 ausschalten"
+        }
       },
       {
         "id": "switch_2gang_turn_on_gang2",
@@ -52192,7 +52540,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 2",
+          "fr": "[[device]] Allumer gang 2",
+          "nl": "[[device]] Gang 2 aanzetten",
+          "de": "[[device]] Gang 2 einschalten"
+        }
       },
       {
         "id": "switch_2gang_turn_off_gang2",
@@ -52213,7 +52567,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 2",
+          "fr": "[[device]] Éteindre gang 2",
+          "nl": "[[device]] Gang 2 uitzetten",
+          "de": "[[device]] Gang 2 ausschalten"
+        }
       },
       {
         "id": "switch_2gang_toggle_gang1",
@@ -52234,7 +52594,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 1",
+          "fr": "[[device]] Basculer gang 1",
+          "nl": "[[device]] Gang 1 wisselen",
+          "de": "[[device]] Gang 1 umschalten"
+        }
       },
       {
         "id": "switch_2gang_toggle_gang2",
@@ -52255,7 +52621,13 @@
             "type": "device",
             "filter": "driver_id=switch_2gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 2",
+          "fr": "[[device]] Basculer gang 2",
+          "nl": "[[device]] Gang 2 wisselen",
+          "de": "[[device]] Gang 2 umschalten"
+        }
       },
       {
         "id": "switch_3gang_turn_on_gang1",
@@ -52276,7 +52648,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 1",
+          "fr": "[[device]] Allumer gang 1",
+          "nl": "[[device]] Gang 1 aanzetten",
+          "de": "[[device]] Gang 1 einschalten"
+        }
       },
       {
         "id": "switch_3gang_turn_off_gang1",
@@ -52297,7 +52675,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 1",
+          "fr": "[[device]] Éteindre gang 1",
+          "nl": "[[device]] Gang 1 uitzetten",
+          "de": "[[device]] Gang 1 ausschalten"
+        }
       },
       {
         "id": "switch_3gang_turn_on_gang2",
@@ -52318,7 +52702,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 2",
+          "fr": "[[device]] Allumer gang 2",
+          "nl": "[[device]] Gang 2 aanzetten",
+          "de": "[[device]] Gang 2 einschalten"
+        }
       },
       {
         "id": "switch_3gang_turn_off_gang2",
@@ -52339,7 +52729,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 2",
+          "fr": "[[device]] Éteindre gang 2",
+          "nl": "[[device]] Gang 2 uitzetten",
+          "de": "[[device]] Gang 2 ausschalten"
+        }
       },
       {
         "id": "switch_3gang_turn_on_gang3",
@@ -52360,7 +52756,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 3",
+          "fr": "[[device]] Allumer gang 3",
+          "nl": "[[device]] Gang 3 aanzetten",
+          "de": "[[device]] Gang 3 einschalten"
+        }
       },
       {
         "id": "switch_3gang_turn_off_gang3",
@@ -52381,7 +52783,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 3",
+          "fr": "[[device]] Éteindre gang 3",
+          "nl": "[[device]] Gang 3 uitzetten",
+          "de": "[[device]] Gang 3 ausschalten"
+        }
       },
       {
         "id": "switch_3gang_toggle_gang1",
@@ -52402,7 +52810,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 1",
+          "fr": "[[device]] Basculer gang 1",
+          "nl": "[[device]] Gang 1 wisselen",
+          "de": "[[device]] Gang 1 umschalten"
+        }
       },
       {
         "id": "switch_3gang_toggle_gang2",
@@ -52423,7 +52837,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 2",
+          "fr": "[[device]] Basculer gang 2",
+          "nl": "[[device]] Gang 2 wisselen",
+          "de": "[[device]] Gang 2 umschalten"
+        }
       },
       {
         "id": "switch_3gang_toggle_gang3",
@@ -52444,7 +52864,13 @@
             "type": "device",
             "filter": "driver_id=switch_3gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 3",
+          "fr": "[[device]] Basculer gang 3",
+          "nl": "[[device]] Gang 3 wisselen",
+          "de": "[[device]] Gang 3 umschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_on_gang1",
@@ -52465,7 +52891,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 1",
+          "fr": "[[device]] Allumer gang 1",
+          "nl": "[[device]] Gang 1 aanzetten",
+          "de": "[[device]] Gang 1 einschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_off_gang1",
@@ -52486,7 +52918,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 1",
+          "fr": "[[device]] Éteindre gang 1",
+          "nl": "[[device]] Gang 1 uitzetten",
+          "de": "[[device]] Gang 1 ausschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_on_gang2",
@@ -52507,7 +52945,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 2",
+          "fr": "[[device]] Allumer gang 2",
+          "nl": "[[device]] Gang 2 aanzetten",
+          "de": "[[device]] Gang 2 einschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_off_gang2",
@@ -52528,7 +52972,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 2",
+          "fr": "[[device]] Éteindre gang 2",
+          "nl": "[[device]] Gang 2 uitzetten",
+          "de": "[[device]] Gang 2 ausschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_on_gang3",
@@ -52549,7 +52999,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 3",
+          "fr": "[[device]] Allumer gang 3",
+          "nl": "[[device]] Gang 3 aanzetten",
+          "de": "[[device]] Gang 3 einschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_off_gang3",
@@ -52570,7 +53026,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 3",
+          "fr": "[[device]] Éteindre gang 3",
+          "nl": "[[device]] Gang 3 uitzetten",
+          "de": "[[device]] Gang 3 ausschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_on_gang4",
@@ -52591,7 +53053,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn on gang 4",
+          "fr": "[[device]] Allumer gang 4",
+          "nl": "[[device]] Gang 4 aanzetten",
+          "de": "[[device]] Gang 4 einschalten"
+        }
       },
       {
         "id": "switch_4gang_turn_off_gang4",
@@ -52612,7 +53080,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Turn off gang 4",
+          "fr": "[[device]] Éteindre gang 4",
+          "nl": "[[device]] Gang 4 uitzetten",
+          "de": "[[device]] Gang 4 ausschalten"
+        }
       },
       {
         "id": "switch_4gang_toggle_gang1",
@@ -52633,7 +53107,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 1",
+          "fr": "[[device]] Basculer gang 1",
+          "nl": "[[device]] Gang 1 wisselen",
+          "de": "[[device]] Gang 1 umschalten"
+        }
       },
       {
         "id": "switch_4gang_toggle_gang2",
@@ -52654,7 +53134,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 2",
+          "fr": "[[device]] Basculer gang 2",
+          "nl": "[[device]] Gang 2 wisselen",
+          "de": "[[device]] Gang 2 umschalten"
+        }
       },
       {
         "id": "switch_4gang_toggle_gang3",
@@ -52675,7 +53161,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 3",
+          "fr": "[[device]] Basculer gang 3",
+          "nl": "[[device]] Gang 3 wisselen",
+          "de": "[[device]] Gang 3 umschalten"
+        }
       },
       {
         "id": "switch_4gang_toggle_gang4",
@@ -52696,7 +53188,13 @@
             "type": "device",
             "filter": "driver_id=switch_4gang"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] Toggle gang 4",
+          "fr": "[[device]] Basculer gang 4",
+          "nl": "[[device]] Gang 4 wisselen",
+          "de": "[[device]] Gang 4 umschalten"
+        }
       },
       {
         "id": "switch_dimmer_1gang_turn_on",
@@ -56832,7 +57330,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set LED indicator mode",
+          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+        }
       },
       {
         "id": "wall_dimmer_1gang_1way_turn_on",
@@ -56979,7 +57481,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set LED indicator mode",
+          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_turn_on",
@@ -57093,7 +57599,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set power-on behavior",
+          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
+          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
+          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_set_switch_mode",
@@ -57141,7 +57653,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set external switch type",
+          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
+          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_set_scene_mode",
@@ -57184,7 +57702,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set scene mode",
+          "nl": "[[device]] [[mode]] Stel scènemodus in"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_set_backlight",
@@ -57230,7 +57752,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set LED indicator mode",
+          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_set_power_on_behavior",
@@ -57278,7 +57804,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set power-on behavior",
+          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
+          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
+          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_set_switch_mode",
@@ -57326,7 +57858,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set external switch type",
+          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
+          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_set_scene_mode",
@@ -57369,7 +57907,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set scene mode",
+          "nl": "[[device]] [[mode]] Stel scènemodus in"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_turn_on",
@@ -57613,7 +58155,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set LED indicator mode",
+          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_set_power_on_behavior",
@@ -57661,7 +58207,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set power-on behavior",
+          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
+          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
+          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_set_switch_mode",
@@ -57709,7 +58261,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set external switch type",
+          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
+          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_set_scene_mode",
@@ -57752,7 +58310,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set scene mode",
+          "nl": "[[device]] [[mode]] Stel scènemodus in"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_turn_on",
@@ -58050,7 +58612,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set LED indicator mode",
+          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_set_power_on_behavior",
@@ -58098,7 +58664,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set power-on behavior",
+          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
+          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
+          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_set_switch_mode",
@@ -58146,7 +58718,13 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set external switch type",
+          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
+          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_set_scene_mode",
@@ -58189,7 +58767,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[device]] [[mode]] Set scene mode",
+          "nl": "[[device]] [[mode]] Stel scènemodus in"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_turn_on",
@@ -64126,9 +64708,6 @@
           "_tz3000_arfwfgre",
           "_TZ3000_arfwfgre",
           "_TZ3000_ARFWFGRE",
-          "_tz3000_b4awzgct",
-          "_TZ3000_b4awzgct",
-          "_TZ3000_B4AWZGCT",
           "_tz3000_bsvqrux3",
           "_TZ3000_bsvqrux3",
           "_TZ3000_BSVQRUX3",
@@ -66285,9 +66864,6 @@
           "_tz3000_4fjiwweb",
           "_TZ3000_4fjiwweb",
           "_TZ3000_4FJIWWEB",
-          "_tz3000_qja6nq5z",
-          "_TZ3000_qja6nq5z",
-          "_TZ3000_QJA6NQ5Z",
           "_tz3000_kjfzuycl",
           "_TZ3000_kjfzuycl",
           "_TZ3000_KJFZUYCL",
@@ -66805,7 +67381,10 @@
         "manufacturerName": [
           "_tz3000_yj6k7vfo",
           "_TZ3000_yj6k7vfo",
-          "_TZ3000_YJ6K7VFO"
+          "_TZ3000_YJ6K7VFO",
+          "_tz3000_b4awzgct",
+          "_TZ3000_b4awzgct",
+          "_TZ3000_B4AWZGCT"
         ],
         "productId": [
           "TS0041"
@@ -71079,9 +71658,6 @@
           "_tze284_0dvm9mva",
           "_TZE284_0dvm9mva",
           "_TZE284_0DVM9MVA",
-          "_tze284_0ints6wl",
-          "_TZE284_0ints6wl",
-          "_TZE284_0INTS6WL",
           "_tze284_16m4bgsv",
           "_TZE284_16m4bgsv",
           "_TZE284_16M4BGSV",
@@ -71811,7 +72387,6 @@
           "SNZB-02LD",
           "SNZB-02WD",
           "THS317-ET",
-          "ZG-303Z",
           "TY0201",
           "TS1201",
           "RH3052"
@@ -74903,6 +75478,10 @@
             "hint": {
               "en": "Run full open/close cycle for position calibration",
               "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+            },
+            "titleFormatted": {
+              "en": "Calibrate curtain motor",
+              "nl": "Kalibreer gordijnmotor"
             }
           },
           {
@@ -74914,6 +75493,10 @@
             "hint": {
               "en": "Reset current position to fully closed",
               "nl": "Reset huidige positie naar volledig gesloten"
+            },
+            "titleFormatted": {
+              "en": "Reset position to 0%",
+              "nl": "Reset positie naar 0%"
             }
           },
           {
@@ -74926,6 +75509,11 @@
             "hint": {
               "en": "Stop curtain movement and hold at current position",
               "nl": "Stop gordijn beweging en houd huidige positie vast"
+            },
+            "titleFormatted": {
+              "en": "Hold curtain position",
+              "nl": "Gordijn positie vasthouden",
+              "fr": "Maintenir position rideau"
             }
           },
           {
@@ -74945,7 +75533,12 @@
                 "label": "%",
                 "labelMultiplier": 1
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "[[position]] Open curtain partially",
+              "nl": "[[position]] Gordijn gedeeltelijk openen",
+              "fr": "[[position]] Ouvrir rideau partiellement"
+            }
           }
         ]
       },
@@ -84249,7 +84842,11 @@
                   }
                 ]
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "[[brand]] [[command]] Send TV Command",
+              "fr": "[[brand]] [[command]] Envoyer une commande TV"
+            }
           },
           {
             "id": "ir_blaster_send_ac_command",
@@ -84317,7 +84914,11 @@
                   }
                 ]
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "[[brand]] [[command]] Send AC Command",
+              "fr": "[[brand]] [[command]] Envoyer une commande Clim"
+            }
           }
         ]
       },
@@ -89463,11 +90064,23 @@
               "fr": "Animal nourri",
               "nl": "Huisdier is gevoerd",
               "de": "Tier wurde gefüttert"
+            },
+            "titleFormatted": {
+              "en": "Pet was fed",
+              "fr": "Animal nourri",
+              "nl": "Huisdier is gevoerd",
+              "de": "Tier wurde gefüttert"
             }
           },
           {
             "id": "pet_feeder_food_low",
             "title": {
+              "en": "Food level is low",
+              "fr": "Niveau de nourriture bas",
+              "nl": "Voerniveau is laag",
+              "de": "Futterniveau ist niedrig"
+            },
+            "titleFormatted": {
               "en": "Food level is low",
               "fr": "Niveau de nourriture bas",
               "nl": "Voerniveau is laag",
@@ -89483,6 +90096,12 @@
               "fr": "Niveau nourriture !{{est|n'est pas}} OK",
               "nl": "Voerniveau !{{is|is niet}} OK",
               "de": "Futterniveau !{{ist|ist nicht}} OK"
+            },
+            "titleFormatted": {
+              "en": "Food level !{{is|isn't}} OK",
+              "fr": "Niveau nourriture !{{est|n'est pas}} OK",
+              "nl": "Voerniveau !{{is|is niet}} OK",
+              "de": "Futterniveau !{{ist|ist nicht}} OK"
             }
           }
         ],
@@ -89490,6 +90109,12 @@
           {
             "id": "pet_feeder_feed_now",
             "title": {
+              "en": "Feed now",
+              "fr": "Distribuer maintenant",
+              "nl": "Nu voeren",
+              "de": "Jetzt füttern"
+            },
+            "titleFormatted": {
               "en": "Feed now",
               "fr": "Distribuer maintenant",
               "nl": "Nu voeren",
@@ -93779,7 +94404,11 @@
                 },
                 "example": "confort"
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "Heating mode changed",
+              "fr": "Mode chauffage changé"
+            }
           },
           {
             "id": "pilot_signal_sent",
@@ -93796,13 +94425,21 @@
                 },
                 "example": "confort"
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "Pilot wire signal sent",
+              "fr": "Signal fil pilote envoyé"
+            }
           }
         ],
         "conditions": [
           {
             "id": "radiator_is_heating",
             "title": {
+              "en": "Radiator !{{is|isn't}} heating",
+              "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
+            },
+            "titleFormatted": {
               "en": "Radiator !{{is|isn't}} heating",
               "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
             }
@@ -93844,7 +94481,11 @@
                   }
                 ]
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "Heating mode !{{is|isn't}} [[mode]]",
+              "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+            }
           }
         ],
         "actions": [
@@ -93897,7 +94538,11 @@
                   }
                 ]
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "Set heating mode to [[mode]]",
+              "fr": "Régler mode chauffage sur [[mode]]"
+            }
           },
           {
             "id": "send_pilot_signal",
@@ -93936,7 +94581,11 @@
                   }
                 ]
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "Send pilot wire signal [[signal]]",
+              "fr": "Envoyer signal fil pilote [[signal]]"
+            }
           },
           {
             "id": "set_temperature_offset",
@@ -93959,7 +94608,13 @@
                 "step": 0.5,
                 "label": "°C"
               }
-            ]
+            ],
+            "titleFormatted": {
+              "en": "[[offset]] Set temperature offset",
+              "nl": "[[offset]] Temperatuur offset instellen",
+              "fr": "[[offset]] Définir offset température",
+              "de": "[[offset]] Temperatur-Offset einstellen"
+            }
           }
         ]
       },
@@ -104246,7 +104901,10 @@
           "_TZ3000_RRJR1Q0U",
           "_tz3000_ugi8ky6u",
           "_TZ3000_ugi8ky6u",
-          "_TZ3000_UGI8KY6U"
+          "_TZ3000_UGI8KY6U",
+          "_tz3000_qja6nq5z",
+          "_TZ3000_qja6nq5z",
+          "_TZ3000_QJA6NQ5Z"
         ],
         "productId": [
           "TS004F",
@@ -109738,11 +110396,19 @@
             "title": {
               "en": "Physical button pressed (On)",
               "fr": "Bouton physique pressé (On)"
+            },
+            "titleFormatted": {
+              "en": "Physical button pressed (On)",
+              "fr": "Bouton physique pressé (On)"
             }
           },
           {
             "id": "switch_2gang_physical_off",
             "title": {
+              "en": "Physical button pressed (Off)",
+              "fr": "Bouton physique pressé (Off)"
+            },
+            "titleFormatted": {
               "en": "Physical button pressed (Off)",
               "fr": "Bouton physique pressé (Off)"
             }
@@ -109752,11 +110418,19 @@
             "title": {
               "en": "Gang 2 physical button (On)",
               "fr": "Bouton physique Gang 2 (On)"
+            },
+            "titleFormatted": {
+              "en": "Gang 2 physical button (On)",
+              "fr": "Bouton physique Gang 2 (On)"
             }
           },
           {
             "id": "switch_2gang_physical_gang2_off",
             "title": {
+              "en": "Gang 2 physical button (Off)",
+              "fr": "Bouton physique Gang 2 (Off)"
+            },
+            "titleFormatted": {
               "en": "Gang 2 physical button (Off)",
               "fr": "Bouton physique Gang 2 (Off)"
             }

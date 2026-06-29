@@ -81,11 +81,23 @@
           "fr": "Animal nourri",
           "nl": "Huisdier is gevoerd",
           "de": "Tier wurde gefüttert"
+        },
+        "titleFormatted": {
+          "en": "Pet was fed",
+          "fr": "Animal nourri",
+          "nl": "Huisdier is gevoerd",
+          "de": "Tier wurde gefüttert"
         }
       },
       {
         "id": "pet_feeder_food_low",
         "title": {
+          "en": "Food level is low",
+          "fr": "Niveau de nourriture bas",
+          "nl": "Voerniveau is laag",
+          "de": "Futterniveau ist niedrig"
+        },
+        "titleFormatted": {
           "en": "Food level is low",
           "fr": "Niveau de nourriture bas",
           "nl": "Voerniveau is laag",
@@ -101,6 +113,12 @@
           "fr": "Niveau nourriture !{{est|n'est pas}} OK",
           "nl": "Voerniveau !{{is|is niet}} OK",
           "de": "Futterniveau !{{ist|ist nicht}} OK"
+        },
+        "titleFormatted": {
+          "en": "Food level !{{is|isn't}} OK",
+          "fr": "Niveau nourriture !{{est|n'est pas}} OK",
+          "nl": "Voerniveau !{{is|is niet}} OK",
+          "de": "Futterniveau !{{ist|ist nicht}} OK"
         }
       }
     ],
@@ -108,6 +126,12 @@
       {
         "id": "pet_feeder_feed_now",
         "title": {
+          "en": "Feed now",
+          "fr": "Distribuer maintenant",
+          "nl": "Nu voeren",
+          "de": "Jetzt füttern"
+        },
+        "titleFormatted": {
           "en": "Feed now",
           "fr": "Distribuer maintenant",
           "nl": "Nu voeren",

@@ -918,11 +918,19 @@
         "title": {
           "en": "Physical button pressed (On)",
           "fr": "Bouton physique pressé (On)"
+        },
+        "titleFormatted": {
+          "en": "Physical button pressed (On)",
+          "fr": "Bouton physique pressé (On)"
         }
       },
       {
         "id": "switch_2gang_physical_off",
         "title": {
+          "en": "Physical button pressed (Off)",
+          "fr": "Bouton physique pressé (Off)"
+        },
+        "titleFormatted": {
           "en": "Physical button pressed (Off)",
           "fr": "Bouton physique pressé (Off)"
         }
@@ -932,11 +940,19 @@
         "title": {
           "en": "Gang 2 physical button (On)",
           "fr": "Bouton physique Gang 2 (On)"
+        },
+        "titleFormatted": {
+          "en": "Gang 2 physical button (On)",
+          "fr": "Bouton physique Gang 2 (On)"
         }
       },
       {
         "id": "switch_2gang_physical_gang2_off",
         "title": {
+          "en": "Gang 2 physical button (Off)",
+          "fr": "Bouton physique Gang 2 (Off)"
+        },
+        "titleFormatted": {
           "en": "Gang 2 physical button (Off)",
           "fr": "Bouton physique Gang 2 (Off)"
         }

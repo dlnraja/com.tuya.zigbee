@@ -111,7 +111,7 @@ function validateJSFile(filePath) {
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
+      if (!trimmed || trimmed.startsWith('#!') || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*')) continue;
 
       const codeOnly = line
         .replace(/\/\/.*$/, '')
@@ -469,19 +469,52 @@ console.log('\n' + '═'.repeat(75));
 console.log(`${colors.bold}📊 AUDIT SUMMARY${colors.reset}`);
 console.log('═'.repeat(75));
 
-if (report.errors.length === 0 && report.warnings.length === 0) {
+const LEGACY_ADVISORY_TYPES = new Set([
+  'NAN_SAFETY_RISK',
+  'MANUAL_IDENTITY_COMPARE',
+  'HARDCODED_DIVISOR',
+  'MISSING_SUPER_INIT',
+]);
+const actionableWarnings = report.warnings.filter(w => !LEGACY_ADVISORY_TYPES.has(w.type));
+const legacyAdvisories = report.warnings.filter(w => LEGACY_ADVISORY_TYPES.has(w.type));
+
+function printGroupedAdvisories(advisories) {
+  const grouped = advisories.reduce((acc, item) => {
+    if (!acc[item.type]) acc[item.type] = { count: 0, samples: [] };
+    acc[item.type].count += 1;
+    if (acc[item.type].samples.length < 3) {
+      acc[item.type].samples.push(path.relative(ROOT, item.file));
+    }
+    return acc;
+  }, {});
+
+  Object.entries(grouped)
+    .sort((a, b) => b[1].count - a[1].count)
+    .forEach(([type, data]) => {
+      const samples = Array.from(new Set(data.samples)).join(', ');
+      console.log(`     [${colors.yellow}${type}${colors.reset}] ${data.count} advisory item(s); samples: ${colors.cyan}${samples}${colors.reset}`);
+    });
+}
+
+if (report.errors.length === 0 && actionableWarnings.length === 0 && legacyAdvisories.length === 0) {
   console.log(`\n  ${colors.green}${colors.bold}🎉 EXCELLENT! 100% Purity Passed. Zero errors, zero warnings.${colors.reset}\n`);
   console.log(`  🚀 The repository is perfectly sanitized and ready for push/publish!`);
   console.log('═'.repeat(75) + '\n');
   process.exit(0);
 }
 
-if (report.warnings.length > 0) {
-  console.log(`\n  ${colors.yellow}${colors.bold}⚠️  WARNINGS LOGGED (${report.warnings.length}):${colors.reset}`);
-  report.warnings.forEach(w => {
+if (actionableWarnings.length > 0) {
+  console.log(`\n  ${colors.yellow}${colors.bold}⚠️  ACTIONABLE WARNINGS (${actionableWarnings.length}):${colors.reset}`);
+  actionableWarnings.forEach(w => {
     console.log(`     [${colors.yellow}${w.type}${colors.reset}] in ${colors.cyan}${path.relative(ROOT, w.file)}${colors.reset}`);
     console.log(`     └─ ${w.message}\n`);
   });
+}
+
+if (legacyAdvisories.length > 0) {
+  console.log(`\n  ${colors.yellow}${colors.bold}ℹ️  LEGACY ADVISORIES SUMMARIZED (${legacyAdvisories.length}):${colors.reset}`);
+  printGroupedAdvisories(legacyAdvisories);
+  console.log(`\n  These are historical technical-debt signals kept visible without flooding the precommit output.`);
 }
 
 if (report.errors.length > 0) {
@@ -494,9 +527,14 @@ if (report.errors.length > 0) {
   console.log(`\n  ${colors.red}${colors.bold}🛑 INTEGRITY GATE REJECTED. Please resolve critical errors before pushing/publishing.${colors.reset}\n`);
   console.log('═'.repeat(75) + '\n');
   process.exit(1);
+} else if (actionableWarnings.length > 0) {
+  console.log('═'.repeat(75));
+  console.log(`\n  ${colors.green}${colors.bold}🚀 INTEGRITY GATE PASSED (with actionable warnings). Code is safe to commit.${colors.reset}\n`);
+  console.log('═'.repeat(75) + '\n');
+  process.exit(0);
 } else {
   console.log('═'.repeat(75));
-  console.log(`\n  ${colors.green}${colors.bold}🚀 INTEGRITY GATE PASSED (with warnings). Code is safe to commit!${colors.reset}\n`);
+  console.log(`\n  ${colors.green}${colors.bold}🚀 INTEGRITY GATE PASSED. Zero errors, zero actionable warnings.${colors.reset}\n`);
   console.log('═'.repeat(75) + '\n');
   process.exit(0);
 }

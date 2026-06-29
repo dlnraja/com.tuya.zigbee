@@ -345,7 +345,11 @@
             },
             "example": "confort"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Heating mode changed",
+          "fr": "Mode chauffage changé"
+        }
       },
       {
         "id": "pilot_signal_sent",
@@ -362,13 +366,21 @@
             },
             "example": "confort"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Pilot wire signal sent",
+          "fr": "Signal fil pilote envoyé"
+        }
       }
     ],
     "conditions": [
       {
         "id": "radiator_is_heating",
         "title": {
+          "en": "Radiator !{{is|isn't}} heating",
+          "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
+        },
+        "titleFormatted": {
           "en": "Radiator !{{is|isn't}} heating",
           "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
         }
@@ -410,7 +422,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Heating mode !{{is|isn't}} [[mode]]",
+          "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+        }
       }
     ],
     "actions": [
@@ -463,7 +479,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set heating mode to [[mode]]",
+          "fr": "Régler mode chauffage sur [[mode]]"
+        }
       },
       {
         "id": "send_pilot_signal",
@@ -502,7 +522,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Send pilot wire signal [[signal]]",
+          "fr": "Envoyer signal fil pilote [[signal]]"
+        }
       },
       {
         "id": "set_temperature_offset",
@@ -525,7 +549,13 @@
             "step": 0.5,
             "label": "°C"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[offset]] Set temperature offset",
+          "nl": "[[offset]] Temperatuur offset instellen",
+          "fr": "[[offset]] Définir offset température",
+          "de": "[[offset]] Temperatur-Offset einstellen"
+        }
       }
     ]
   },

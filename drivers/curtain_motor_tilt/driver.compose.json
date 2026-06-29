@@ -144,6 +144,10 @@
         "hint": {
           "en": "Run full open/close cycle for position calibration",
           "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+        },
+        "titleFormatted": {
+          "en": "Calibrate curtain motor",
+          "nl": "Kalibreer gordijnmotor"
         }
       },
       {
@@ -155,6 +159,10 @@
         "hint": {
           "en": "Reset current position to fully closed",
           "nl": "Reset huidige positie naar volledig gesloten"
+        },
+        "titleFormatted": {
+          "en": "Reset position to 0%",
+          "nl": "Reset positie naar 0%"
         }
       },
       {
@@ -167,6 +175,11 @@
         "hint": {
           "en": "Stop curtain movement and hold at current position",
           "nl": "Stop gordijn beweging en houd huidige positie vast"
+        },
+        "titleFormatted": {
+          "en": "Hold curtain position",
+          "nl": "Gordijn positie vasthouden",
+          "fr": "Maintenir position rideau"
         }
       },
       {
@@ -186,7 +199,12 @@
             "label": "%",
             "labelMultiplier": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[position]] Open curtain partially",
+          "nl": "[[position]] Gordijn gedeeltelijk openen",
+          "fr": "[[position]] Ouvrir rideau partiellement"
+        }
       }
     ]
   },

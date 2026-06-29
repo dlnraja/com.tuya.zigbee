@@ -281,7 +281,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "[[device]] [[mode]] Set LED indicator mode",
+        "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+      }
     },
     {
       "id": "wall_switch_4gang_1way_set_power_on_behavior",
@@ -324,7 +328,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "[[device]] [[mode]] Set power-on behavior",
+        "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
+        "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
+        "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+      }
     },
     {
       "id": "wall_switch_4gang_1way_set_switch_mode",
@@ -367,7 +377,13 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "[[device]] [[mode]] Set external switch type",
+        "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
+        "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
+        "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+      }
     },
     {
       "id": "wall_switch_4gang_1way_set_scene_mode",
@@ -405,7 +421,11 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "[[device]] [[mode]] Set scene mode",
+        "nl": "[[device]] [[mode]] Stel scènemodus in"
+      }
     },
     {
       "id": "wall_switch_4gang_1way_turn_on",

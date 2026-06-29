@@ -49,7 +49,6 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       'measure_humidity', 
       'measure_luminance', 
       'measure_battery', 
-      'alarm_battery',
       'alarm_water', 
       'measure_ec'
     ];

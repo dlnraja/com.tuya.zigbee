@@ -379,7 +379,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[brand]] [[command]] Send TV Command",
+          "fr": "[[brand]] [[command]] Envoyer une commande TV"
+        }
       },
       {
         "id": "ir_blaster_send_ac_command",
@@ -447,7 +451,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[brand]] [[command]] Send AC Command",
+          "fr": "[[brand]] [[command]] Envoyer une commande Clim"
+        }
       }
     ]
   }
