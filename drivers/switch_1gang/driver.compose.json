@@ -1106,6 +1106,16 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "button.toggle": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
+    },
+    "button.identify": {
+      "setable": false,
+      "maintenanceAction": true,
+      "getable": false
     }
   },
   "metadata": {
