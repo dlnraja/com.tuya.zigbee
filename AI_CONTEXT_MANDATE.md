@@ -23,6 +23,9 @@ The repository maintains two parallel, completely independent app environments t
 2. **Manifest Ingestion**: `app.json` in `master` must NEVER have its ID changed to stable, and vice versa. Always double-check `app.json` before committing!
 3. **Migration Integrity**: Never force an update that breaks existing device pairings. The `stable-v5` app must remain fully backwards-compatible with standard Homey Zigbee interfaces.
 
+### 🧭 Cross-App Prompt Mandate:
+Every prompt, AI automation, issue reply, PR review, diagnostic summary, and code investigation must evaluate the impact on **both** app tracks before answering or changing code. Universal fixes (crash prevention, security redaction, diagnostics, SDK3 validation, publish verification, battery handling, physical buttons, endpoint mapping, and flow reliability) are cross-app candidates by default. The agent must explicitly decide whether the finding should be applied to `master`, `stable-v5`, both, or intentionally kept on one track, while preserving branch isolation and never copying App IDs, version metadata, store URLs, or release-only settings across tracks.
+
 ---
 
 ## 🏛️ 2. The "Sculptor & Statue" (Shadow vs Runtime) Architecture
