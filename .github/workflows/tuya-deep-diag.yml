@@ -109,7 +109,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          node scripts/automation/dashboard-monitor.js --latest --json || true
+          node scripts/automation/dashboard-monitor.js --latest || true
+          node scripts/automation/version-intelligence-report.js || true
           node .github/scripts/homey-device-diagnostics.js || true
           node .github/scripts/collect-diagnostics.js || true
 
@@ -134,7 +135,7 @@ jobs:
 
       - name: Diagnostic history gate
         if: always()
-        run: npm run check:diag-history
+        run: npm run check:diag-history --if-present
 
       - name: Upload sanitized diagnostic artifacts
         if: always()
@@ -146,6 +147,8 @@ jobs:
             .github/state/diagnostics-report.json
             .github/state/homey-device-report.json
             .github/state/dashboard-monitor-report.json
+            .github/state/version-intelligence-report.json
+            docs/WORKING_VERSIONS_REFERENCE.md
             screenshots/full-diag-report.json
           if-no-files-found: warn
           retention-days: 14
