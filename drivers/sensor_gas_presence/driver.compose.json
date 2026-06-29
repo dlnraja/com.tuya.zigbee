@@ -687,7 +687,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "[[test_type]] Run self-test",
+          "fr": "[[test_type]] Lancer auto-test"
+        }
       }
     ]
   },

@@ -8,7 +8,7 @@
  * - O17: No 'icon' field in app.json
  * - O18: No *.json wildcard in .homeyignore
  * - O19: category must be string
- * - O20: No api field / homey:manager:api permission
+ * - O20: api.js must match app.json api field / no homey:manager:api permission
  */
 'use strict';
 
@@ -47,11 +47,20 @@ if (Array.isArray(app.category)) {
   fail('O19: category field missing or invalid type');
 }
 
-// O20: No api field / no homey:manager:api
+// O20: api.js must match app.json api field / no homey:manager:api
+const apiJsExists = fs.existsSync(path.join(ROOT, 'api.js'));
 if (app.api) {
-  warn(`O20: app.json has 'api' field (absent in stable-v5). This may trigger longer Athom review.`);
+  if (apiJsExists) {
+    ok('O20: app.json api field present for api.js');
+  } else {
+    warn(`O20: app.json has 'api' field but api.js is missing.`);
+  }
 } else {
-  ok('O20: No api field in app.json');
+  if (apiJsExists) {
+    fail('O20: api.js exists but app.json has no api field. Homey logs a runtime warning and API routes are not declared.');
+  } else {
+    ok('O20: No api field in app.json');
+  }
 }
 if (Array.isArray(app.permissions) && app.permissions.includes('homey:manager:api')) {
   warn(`O20: homey:manager:api permission present — triggers thorough review, may delay publish`);
@@ -165,7 +174,11 @@ try {
   } else {
     ok(`Version consistent: ${app.version}`);
   }
-  if (!cl[app.version]) {
+  const hasChangelogEntry = Boolean(
+    cl[app.version] ||
+    (Array.isArray(cl.changelog) && cl.changelog.some(entry => entry && entry.version === app.version))
+  );
+  if (!hasChangelogEntry) {
     warn(`No changelog entry for v${app.version} in .homeychangelog.json`);
   } else {
     ok(`Changelog entry exists for v${app.version}`);

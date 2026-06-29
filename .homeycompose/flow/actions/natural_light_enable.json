@@ -14,5 +14,9 @@
       "type": "device",
       "filter": "driver_id=bulb_rgbw|driver_id=bulb_rgb_cct|driver_id=bulb_tunable_white|driver_id=led_strip"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Enable Natural Light (Solar Sync)",
+    "fr": "Activer Natural Light (Synchro Solaire)"
+  }
 }

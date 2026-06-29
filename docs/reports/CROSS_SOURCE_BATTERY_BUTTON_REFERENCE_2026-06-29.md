@@ -16,6 +16,10 @@ Privacy rule: this reference intentionally keeps only public source links, local
 | 2026-06-21 | JohanBendz issue [#1407](https://github.com/JohanBendz/com.tuya.zigbee/issues/1407) | `_TZ3000_b4awzgct` / `TS0041`: bot previously mapped it to one-button/generic paths, but open feedback plus dlnraja #333 show it needs 4-endpoint handling. |
 | 2026-06-21 to 2026-06-28 | JohanBendz issue [#1415](https://github.com/JohanBendz/com.tuya.zigbee/issues/1415) | HOBEIAN `ZG-303Z` soil sensor was incorrectly associated with scene/fallback logic. Correct route is soil sensor by model/product, not broad HOBEIAN fallback. |
 | 2026-06-27 | JohanBendz issue [#1420](https://github.com/JohanBendz/com.tuya.zigbee/issues/1420) | `_TZ3000_qja6nq5z` / `TS004F` Moes rotary knob was mapped to `switch_4_gang_metering`; correct route is rotary smart knob. |
+| 2026-06-28 21:11-21:12 Europe/Paris | Private crash emails, v9.0.141 | Motion sensor crash in `_handleMotionWithHoldoff`: detached/unsafe timer path led to `_destroyed` access after scheduler callback. |
+| 2026-06-29 05:49 Europe/Paris | Latest Homey forum diagnostic follow-up | Moes 4-button pairing issue correlated with private v9.0.144 diagnostic: TS004x routing fixed in v9.0.145, but runtime warnings remained. |
+| 2026-06-29 morning Europe/Paris | Private v9.0.144 diagnostics | Startup warnings: generated drivers calling `_getFlowCard` without a driver helper, duplicate run listeners, optional GreenPower custom registration failure, `api.js` without manifest API section, and feature module `setInterval` missing scheduler context. |
+| 2026-06-20 15:28 Europe/Paris | Private stable v5.11.216 diagnostic | Stable warnings: stale `_hybrid_` flow IDs and `smart_knob_rotary` class-load crash; later crash emails matched the motion holdoff timer pattern. |
 | Local rules | [PROJECT_INDEX.md](../../PROJECT_INDEX.md), [CORE_RULES.md](../../CORE_RULES.md), [CRITICAL_MISTAKES.md](../rules/CRITICAL_MISTAKES.md) | Enforce no `measure_battery` + `alarm_battery` on the same driver; virtual/physical buttons need flow-safe paths; HOBEIAN must be isolated by product/model instead of global brand capture. |
 
 ## Evolution and regression chain
@@ -26,6 +30,9 @@ Privacy rule: this reference intentionally keeps only public source links, local
 4. Battery handling was over-defensive: ZCL `batteryPercentageRemaining=200` was treated as an unknown sentinel by default, but for TS004x remotes it is the standard 100% value. That explains stable devices showing `?` battery even when interviews contain valid powerConfiguration data.
 5. Soil support suffered from two independent issues: `_TZE284_0ints6wl` had an exact-string mismatch, and `ZG-303Z` remained in climate fallback drivers. This made support look present in docs/bot replies while pairing still failed or routed wrong.
 6. `_TZ3000_qja6nq5z` was a semantic routing bug: `TS004F` can mean a scene remote/knob, not a metered four-gang switch. Routing it to `switch_4_gang_metering` created wrong capabilities and wrong UI expectations.
+7. The latest v9 diagnostics showed a second class of regressions after routing was fixed: generated driver files assumed `_getFlowCard` existed on `ZigBeeDriver`, while the helper only existed on device/capability mixins. That produced noisy startup errors and prevented generated trigger listeners from registering.
+8. Feature module startup failed because `SolarElevation` used `this.homey.setInterval` without receiving `homey`. The exception stopped all feature flow registrations in the same try block.
+9. The `api.js` warning was a manifest mismatch: the API handlers existed, but `.homeycompose/app.json` and generated `app.json` did not declare the top-level `api` section.
 
 ## Root causes
 
@@ -37,6 +44,12 @@ Privacy rule: this reference intentionally keeps only public source links, local
 | HOBEIAN `ZG-303Z` | Product claimed by climate fallback; broad brand history caused wrong route | Soil sensor can be treated as climate/scene/fallback | `ZG-303Z` removed from climate fallbacks; HOBEIAN + `ZG-303Z` retained in soil route. |
 | Moes `_TZ3000_qja6nq5z` | Rotary knob mapped to 4-gang metering switch | Wrong Homey capabilities, wrong UI, wrong flow surface | `_TZ3000_qja6nq5z` moved to `smart_knob_rotary`; removed from `switch_4_gang_metering`; `TS004F` removed from that metering switch. |
 | Runtime battery bridge | Legacy ZCL bridge wrote both `measure_battery` and `alarm_battery` | SDK v3 capability conflict risk | Bridge now writes `measure_battery` when present, otherwise `alarm_battery`. |
+| Generated driver flow listeners | `_getFlowCard` helper existed on device mixins, not on driver prototypes | Startup logs show `_getFlowCard is not a function`; generated flow triggers do not register | Added driver-level `_getFlowCard` support and flow-card run-listener guard. |
+| Duplicate flow listener warnings | Flow cards can be registered by both global managers and driver-local code | `Run listener was already registered` warning storm | Wrapped Homey flow card getters so duplicate listener registration is skipped quietly in production. |
+| Feature flow modules | `SolarElevation` lacked a Homey scheduler reference | `Feature modules failed: ... setInterval` and all feature cards skipped | Injected `homey` into `SolarElevation` and added scheduler fallback helpers. |
+| App API manifest | `api.js` existed without top-level `api` declaration | Homey warning at startup | Added `getDevices` and `replaceDevice` API declarations to compose and generated manifests. |
+| GreenPower custom cluster | 0x0021 is standard/native; broad custom registration is optional and noisy | Non-critical startup error from `GreenPowerCluster` registration | Skipped custom registration and let Homey SDK/native cluster path handle 0x0021. |
+| Base battery paths | Some direct reads still treated ZCL `200` as unavailable | Batteries can remain unknown even though normalized handler accepts `200` | Updated direct BaseUnifiedDevice and smart knob reads to keep `200 => 100%`. |
 
 ## Files changed by this pass
 
@@ -56,6 +69,12 @@ Privacy rule: this reference intentionally keeps only public source links, local
 | [lib/ZigbeeClusterManager.js](../../lib/ZigbeeClusterManager.js) | Prevented dual battery capability writes. |
 | [scripts/validation/app-json-dual-layer-validator.js](../../scripts/validation/app-json-dual-layer-validator.js) | Removed false `sdkVersion` AggregateError gate; the repo uses canonical `sdk: 3`, with `sdkVersion` only treated as legacy by other validators. |
 | [test/critical/cross-source-routing.test.js](../../test/critical/cross-source-routing.test.js) | Added regression tests for the public GitHub/forum cases above. |
+| [lib/flow/DriverFlowCardSupport.js](../../lib/flow/DriverFlowCardSupport.js) | Added driver-level flow helper and duplicate run-listener guard. |
+| [app.js](../../app.js) | Installs flow safety early and injects Homey into feature schedulers. |
+| [lib/features/SolarElevation.js](../../lib/features/SolarElevation.js) | Uses injected Homey scheduler with native fallback. |
+| [lib/zigbee/registerClusters.js](../../lib/zigbee/registerClusters.js) | Skips custom GreenPower 0x0021 registration. |
+| [api.js](../../api.js) plus manifests | API handlers now have manifest declarations. |
+| [lib/devices/BaseUnifiedDevice.js](../../lib/devices/BaseUnifiedDevice.js) and [drivers/smart_knob_rotary/device.js](../../drivers/smart_knob_rotary/device.js) | Direct battery reads now treat ZCL `200` as 100%. |
 
 ## Re-pair note
 

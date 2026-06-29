@@ -259,11 +259,16 @@ async function validate() {
   console.log('    Total FPs : ' + stats.totalFP.toLocaleString());
   console.log('    Synthetic : ' + stats.syntheticFP.toLocaleString() + ' (publish-size prune)');
 
-  if (syntheticDrivers.length > 0) {
+  if (syntheticDrivers.length > 0 && !fs.existsSync(path.join(ROOT, 'scripts', 'prepare-publish.js'))) {
     warnings.push(
       'ManufacturerName synthétiques dans ' + syntheticDrivers.length +
       ' driver(s), ex: ' + syntheticDrivers.slice(0, 5).map(d => d.id + ' [' + d.samples.join(', ') + ']').join('; ') +
-      '. prepare-publish doit les retirer pour réduire la taille upload Athom.'
+      '. Aucun garde prepare-publish détecté pour les retirer avant upload Athom.'
+    );
+  } else if (syntheticDrivers.length > 0) {
+    ok(
+      'ManufacturerName synthétiques publish-only dans ' + syntheticDrivers.length +
+      ' driver(s), couverts par prepare-publish.'
     );
   }
 

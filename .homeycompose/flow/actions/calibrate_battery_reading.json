@@ -52,5 +52,11 @@
         "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Calibrate battery reading [[device]] [[reference_voltage]] [[reference_percentage]]",
+    "fr": "Calibrer la lecture de la batterie [[device]] [[reference_voltage]] [[reference_percentage]]",
+    "nl": "Batterij uitlezing kalibreren [[device]] [[reference_voltage]] [[reference_percentage]]",
+    "de": "Batterieablesung kalibrieren [[device]] [[reference_voltage]] [[reference_percentage]]"
+  }
 }

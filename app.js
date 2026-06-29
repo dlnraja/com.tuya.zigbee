@@ -21,6 +21,7 @@ const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
 const FeatureFlowCards = require('./lib/flow/FeatureFlowCards');
+const { installDriverFlowCardSupport, installHomeyFlowCardSafety } = require('./lib/flow/DriverFlowCardSupport');
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
@@ -61,6 +62,8 @@ const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 const SessionManager = require('./lib/session/SessionManager');
 const HealthMonitor = require('./lib/health/HealthMonitor');
 const SanityFilter = require('./lib/filter/SanityFilter');
+
+installDriverFlowCardSupport();
 
 // v9.1.0: New feature modules (Ideas #41, #44, #86, #87, #96, #98, #99)
 const DeviceGroupManager = require('./lib/groups/DeviceGroupManager');
@@ -115,6 +118,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
   async onInit() {
     this.initializeSettings();
+    installHomeyFlowCardSafety(this.homey, this);
 
     process.on('unhandledRejection', (reason, promise) => {
       try {
@@ -373,7 +377,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     // v9.1.0: Initialize feature modules and register their flow cards
     try {
-      this.solarElevation = new SolarElevation({ logger: this.log.bind(this) });
+      this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
       this.transitionEngine = new TransitionEngine();
       this.energyHistoryStore = new EnergyHistoryStore(this.homey);
       await this.energyHistoryStore.initialize();

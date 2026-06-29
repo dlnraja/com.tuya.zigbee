@@ -117,7 +117,11 @@ class SmartKnobRotaryDevice extends TuyaZigbeeDevice {
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining  / 2);
+          const rawBattery = batteryStatus.batteryPercentageRemaining;
+          if (rawBattery === 255 || rawBattery === 0xFFFF) return;
+          const batteryValue = rawBattery === 200
+            ? 100
+            : Math.round(rawBattery > 100 ? rawBattery / 2 : rawBattery);
           await this.safeSetCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }

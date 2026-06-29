@@ -1,6 +1,33 @@
 {
   "changelog": [
     {
+      "version": "9.0.146",
+      "date": "2026-06-29",
+      "summary": "Latest diagnostic warning cleanup for generated drivers, feature timers, API manifest, GreenPower startup and battery reads",
+      "changes": [
+        {
+          "type": "fix",
+          "description": "Install driver flow-card compatibility helpers so generated drivers can resolve trigger cards without _getFlowCard startup errors."
+        },
+        {
+          "type": "fix",
+          "description": "Guard duplicate flow-card run listener registration to stop warning storms after repeated driver initialization."
+        },
+        {
+          "type": "fix",
+          "description": "Bind SolarElevation timers to the Homey scheduler context and avoid feature module startup failures."
+        },
+        {
+          "type": "fix",
+          "description": "Declare API routes in the manifest and skip custom GreenPower cluster registration handled by the SDK."
+        },
+        {
+          "type": "fix",
+          "description": "Normalize direct battery read paths so Tuya ZCL value 200 is reported as 100 percent instead of unknown."
+        }
+      ]
+    },
+    {
       "version": "9.0.145",
       "date": "2026-06-29",
       "summary": "Cross-source battery/button routing fixes and AggregateError guard",
