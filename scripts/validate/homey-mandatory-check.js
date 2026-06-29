@@ -10,7 +10,7 @@
  *   O17 — No 'icon' field in app.json (App.js:618)
  *   O18 — No *.json wildcard in .homeyignore
  *   O19 — category must be STRING (not array) for Athom server
- *   O20 — No api field / homey:manager:api permission (causes review delays)
+ *   O20 — api.js must match app.json api field / no homey:manager:api permission
  *   O21 — README.txt REQUIRED (App.js:1427 throws if missing)
  *   M01 — assets/icon.svg required (App.js:618 iconHash)
  *   M02 — assets/images/small.png + large.png required (App Store)
@@ -163,10 +163,17 @@ if (Array.isArray(app.category)) {
   fail('O19', `category is missing or wrong type: ${typeof app.category}`);
 }
 
-// ─── O20 — No api / homey:manager:api ────────────────────────────────────────
-section('O20 — No api field / homey:manager:api');
+// ─── O20 — api.js / homey:manager:api ────────────────────────────────────────
+section('O20 — API manifest / homey:manager:api');
+const apiJsExists = fs.existsSync(path.join(ROOT, 'api.js'));
 if (app.api) {
-  warn('O20', 'api field present — absent in stable-v5, may cause longer Athom review');
+  if (apiJsExists) {
+    ok('O20', 'api manifest present for api.js');
+  } else {
+    warn('O20', 'api field present but api.js is missing');
+  }
+} else if (apiJsExists) {
+  fail('O20', 'api.js exists but app.json has no api field; Homey will warn and API routes are not declared');
 }
 if (Array.isArray(app.permissions) && app.permissions.includes('homey:manager:api')) {
   warn('O20', 'homey:manager:api permission — triggers thorough review (App.js validate warning)');
@@ -414,7 +421,12 @@ if (app.drivers && Array.isArray(app.drivers)) {
     ok('M09', `Dual-Layer OK: ${zigbeeOk} Zigbee + ${hybrid} Hybrid (manufacturerName ✓), ${generic} generic templates (exempt), WiFi=${wifi}, Virtual=${virtual}`);
   }
   if (syntheticCount > 0) {
-    warn('M09', `${syntheticCount} synthetic Zigbee manufacturer identifier(s) detected in source app.json. prepare-publish must prune them to reduce Athom upload size. Examples: ${syntheticExamples.join(' | ')}`);
+    const publishGuard = fs.existsSync(path.join(ROOT, 'scripts', 'prepare-publish.js'));
+    if (publishGuard) {
+      ok('M09', `${syntheticCount} publish-only synthetic Zigbee manufacturer identifier(s) guarded by prepare-publish pruning. Examples: ${syntheticExamples.join(' | ')}`);
+    } else {
+      warn('M09', `${syntheticCount} synthetic Zigbee manufacturer identifier(s) detected in source app.json without prepare-publish guard. Examples: ${syntheticExamples.join(' | ')}`);
+    }
   }
 }
 

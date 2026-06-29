@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.144",
+  "version": "9.0.146",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -90,5 +90,15 @@
   "brandColor": "#00E6A0",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
-  "sdk": 3
+  "sdk": 3,
+  "api": {
+    "getDevices": {
+      "method": "get",
+      "path": "/getDevices"
+    },
+    "replaceDevice": {
+      "method": "post",
+      "path": "/replaceDevice"
+    }
+  }
 }
