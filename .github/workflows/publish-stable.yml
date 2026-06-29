@@ -87,7 +87,7 @@ jobs:
             echo "::error::HOMEY_PAT is required to publish the stable app"
             exit 1
           fi
-          echo "$HOMEY_PAT" | npx homey login --token 2>/dev/null
+          # The Homey CLI reads HOMEY_PAT directly in headless CI.
           PUBLISH_DIR="$(node -p "require('path').join(require('os').tmpdir(),'homey-publish-temp')")"
           node scripts/maintenance/sanitize-manifest.cjs "$PUBLISH_DIR/app.json"
           HOMEY_HEADLESS=1 npx homey app publish --path "$PUBLISH_DIR"
