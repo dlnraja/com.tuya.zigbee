@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-06-29T11:02:40.641Z",
+  "timestamp": "2026-06-29T20:46:20.390Z",
   "totalFiles": 0,
-  "totalFixes": 936,
+  "totalFixes": 940,
   "rules": {
     "flow-card-try-catch": {
-      "count": 33,
+      "count": 37,
       "files": [
         {
           "file": "drivers/button_wireless_4/device.js",
@@ -45,6 +45,22 @@
         {
           "file": "drivers/remote_dimmer/device.js",
           "detail": "Line 138: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.js",
+          "detail": "Line 29: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.js",
+          "detail": "Line 30: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.js",
+          "detail": "Line 31: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.js",
+          "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/switch_3gang/device.js",
@@ -88,19 +104,19 @@
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2654: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2677: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2668: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2691: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2702: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2725: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2832: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2855: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/ButtonDevice.js",
