@@ -627,6 +627,9 @@
       ]
     }
   ],
+  "9.0.146": {
+    "en": "v9.0.146: diagnostic warning cleanup for generated driver flow cards, Homey timer-safe SolarElevation, API manifest routes, GreenPower startup noise, and Tuya battery reads."
+  },
   "9.0.143": {
     "en": "v9.0.143: automated publish, manifest sync, and Homey test promotion."
   },
