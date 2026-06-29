@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-28T20:21:48.762Z",
+  "timestamp": "2026-06-29T07:32:25.744Z",
   "totalFiles": 0,
-  "totalFixes": 940,
+  "totalFixes": 934,
   "rules": {
     "flow-card-try-catch": {
       "count": 31,
@@ -104,7 +104,7 @@
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
-          "detail": "Line 3406: getDeviceTriggerCard without try-catch"
+          "detail": "Line 3410: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSwitchBase.js",
@@ -347,7 +347,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 857,
+      "count": 851,
       "files": [
         {
           "file": "drivers",
@@ -1199,14 +1199,6 @@
         },
         {
           "file": "drivers",
-          "detail": "_tze284_0ints6wl|ts0601 found in: climate_sensor, soil_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_0ints6wl|zg-303z found in: climate_sensor, soil_sensor"
-        },
-        {
-          "file": "drivers",
           "detail": "_tze284_chbyv06x|ts0601 found in: climate_sensor, gas_detector"
         },
         {
@@ -1671,23 +1663,11 @@
         },
         {
           "file": "drivers",
-          "detail": "_tze200_wqashyqo|zg-303z found in: climate_sensor, soil_sensor"
-        },
-        {
-          "file": "drivers",
           "detail": "_tze200_npj9bug3|ts0601 found in: climate_sensor, soil_sensor"
         },
         {
           "file": "drivers",
-          "detail": "_tze200_npj9bug3|zg-303z found in: climate_sensor, soil_sensor"
-        },
-        {
-          "file": "drivers",
           "detail": "_tze284_65gzcss7|ts0601 found in: climate_sensor, soil_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_65gzcss7|zg-303z found in: climate_sensor, soil_sensor"
         },
         {
           "file": "drivers",
@@ -1696,10 +1676,6 @@
         {
           "file": "drivers",
           "detail": "_tze284_hdml1aav|ts0601 found in: climate_sensor, soil_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_hdml1aav|zg-303z found in: climate_sensor, soil_sensor"
         },
         {
           "file": "drivers",
