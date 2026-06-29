@@ -34,7 +34,7 @@
     "test:coverage": "nyc mocha test/**/*.test.js",
     "lint": "eslint lib/ drivers/ --ext .js",
     "lint:fix": "eslint lib/ drivers/ --ext .js --fix",
-    "build-docs": "node scripts/docs/generate-drivers-index.js && node scripts/docs/generate-pages.js",
+    "build-docs": "node .github/scripts/generate-device-finder.js",
     "test:old": "node scripts/validation/validate-driver-schemas.js",
     "matrix": "node scripts/automation/generate-device-matrix.js",
     "coverage": "node scripts/automation/generate-coverage-stats.js",

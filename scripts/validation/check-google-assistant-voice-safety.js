@@ -31,9 +31,11 @@ function readJson(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
-for (const driverName of fs.readdirSync(DRIVERS_DIR)) {
+for (const entry of fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })) {
+  if (!entry.isDirectory()) continue;
+
+  const driverName = entry.name;
   const driverDir = path.join(DRIVERS_DIR, driverName);
-  if (!fs.statSync(driverDir).isDirectory()) continue;
 
   const composePath = path.join(driverDir, 'driver.compose.json');
   if (!fs.existsSync(composePath)) continue;

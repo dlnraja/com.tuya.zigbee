@@ -144,8 +144,8 @@ function validateSmartMergeScript() {
   if (/git\(`push origin HEAD`\)/.test(content)) {
     errors.push(`${rel(SMART_MERGE_SCRIPT)}: unqualified git push origin HEAD can create false merges`);
   }
-  if (!/branch -r --contains/.test(content)) {
-    errors.push(`${rel(SMART_MERGE_SCRIPT)}: must verify merged head with branch -r --contains`);
+  if (!/merge-base --is-ancestor/.test(content)) {
+    errors.push(`${rel(SMART_MERGE_SCRIPT)}: must verify merged head with merge-base --is-ancestor`);
   }
 }
 

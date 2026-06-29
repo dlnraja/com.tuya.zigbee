@@ -74,6 +74,69 @@ function loadDriverSource(driverPath) {
   return `${source}\n${fs.readFileSync(targetPath, 'utf8')}`;
 }
 
+function normalizeArray(value) {
+  if (Array.isArray(value)) return value;
+  if (typeof value === 'string') return [value];
+  return [];
+}
+
+function loadDriverCompose(driverName) {
+  const composePath = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
+  if (!fs.existsSync(composePath)) {
+    addError(driverName, 'Missing driver.compose.json for known button routing guard');
+    return null;
+  }
+  try {
+    return readJson(composePath);
+  } catch (err) {
+    addError(driverName, `Invalid driver.compose.json: ${err.message}`);
+    return null;
+  }
+}
+
+function getManufacturerNames(compose) {
+  return normalizeArray(compose?.zigbee?.manufacturerName);
+}
+
+function getProductIds(compose) {
+  return normalizeArray(compose?.zigbee?.productId);
+}
+
+function validateKnownTs0041Routing() {
+  const oneButton = loadDriverCompose('button_wireless_1');
+  const fourButtonTs0041 = loadDriverCompose('button_wireless_4_ts0041');
+  if (!oneButton || !fourButtonTs0041) return;
+
+  const oneButtonManufacturers = new Set(getManufacturerNames(oneButton));
+  const fourButtonManufacturers = new Set(getManufacturerNames(fourButtonTs0041));
+  const fourButtonProducts = new Set(getProductIds(fourButtonTs0041));
+  const fourEndpointManufacturers = [
+    '_tz3000_yj6k7vfo',
+    '_TZ3000_yj6k7vfo',
+    '_TZ3000_YJ6K7VFO',
+    '_tz3000_b4awzgct',
+    '_TZ3000_b4awzgct',
+    '_TZ3000_B4AWZGCT',
+  ];
+
+  if (!fourButtonProducts.has('TS0041')) {
+    addError('button_wireless_4_ts0041', 'Known 4-endpoint TS0041 wrapper lost productId TS0041');
+  }
+
+  for (const manufacturerName of fourEndpointManufacturers) {
+    if (!fourButtonManufacturers.has(manufacturerName)) {
+      addError('button_wireless_4_ts0041', 'Known 4-endpoint TS0041 manufacturer missing from dedicated 4-button wrapper', {
+        manufacturerName,
+      });
+    }
+    if (oneButtonManufacturers.has(manufacturerName)) {
+      addError('button_wireless_1', 'Known 4-endpoint TS0041 manufacturer is routed to 1-button driver', {
+        manufacturerName,
+      });
+    }
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -82,6 +145,8 @@ function run() {
       addError('FlowCardHelper', `Button helper no longer registers ${required} routes`);
     }
   }
+
+  validateKnownTs0041Routing();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())

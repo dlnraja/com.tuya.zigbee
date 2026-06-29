@@ -221,7 +221,7 @@ function rule_probeDedup() {
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // RULE 4: FLOW CARD TRY-CATCH SAFETY
-// Wrap bare getDeviceTriggerCard calls in try-catch blocks
+// Wrap bare getTriggerCard calls in try-catch blocks
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function rule_flowCardTryCatch() {
@@ -234,15 +234,15 @@ function rule_flowCardTryCatch() {
     const lines = code.split('\n');
 
     for (let i = 0; i < lines.length; i++) {
-      if (/getDeviceTriggerCard/.test(lines[i])) {
+      if (/\.getTriggerCard\s*\(/.test(lines[i]) || /\.getDeviceTriggerCard\s*\(/.test(lines[i])) {
         let inTry = false;
         for (let j = Math.max(0, i - 5); j <= i; j++) {
           if (/try\s*\{/.test(lines[j])) inTry = true;
         }
         if (!inTry) {
           warnings++;
-          addFix('flow-card-try-catch', file, `Line ${i + 1}: getDeviceTriggerCard without try-catch`);
-          if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1} — bare getDeviceTriggerCard`);
+          addFix('flow-card-try-catch', file, `Line ${i + 1}: getTriggerCard without try-catch`);
+          if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1} — bare getTriggerCard`);
         }
       }
     }
