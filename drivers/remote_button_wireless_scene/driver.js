@@ -27,20 +27,8 @@ class ButtonWireless2GangDriver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
-
-     // v5.5.533: SDK3 CRITICAL
     this.log('ButtonWireless2GangDriver v5.5.533 initialized');
-    registerButtonFlowCards(this, 'button_wireless_2', 2);
-  
-  
-  
-  
-  
-  
-  
+    registerButtonFlowCards(this, 'remote_button_wireless_scene_button_wireless_2', 2);
   }
 }
 

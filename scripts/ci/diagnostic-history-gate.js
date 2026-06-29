@@ -50,7 +50,7 @@ const CATEGORY_DEFS = [
     label: 'Button and flow trigger regressions',
     severity: 'high',
     re: /button|remote_button|virtual_button|button\.push|flow card|trigger card|flow trigger/i,
-    checks: ['check:flows'],
+    checks: ['check:flows', 'check:button-flows'],
     nodeChecks: ['scripts/automation/audit-flowcards.js'],
   },
   {

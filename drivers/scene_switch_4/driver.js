@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 
 class SceneSwitch4Driver extends ZigBeeDriver {
   /**
@@ -21,20 +22,9 @@ async onInit() {
     if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) {return;}
-    this._flowCardsRegistered = true;
-
-    
     this.log('SceneSwitch4Driver v5.5.696 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
+    registerButtonFlowCards(this, 'scene_switch_4', 4);
   }
 
   _registerFlowCards() {
