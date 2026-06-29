@@ -7273,12 +7273,43 @@
     ]
   },
   "_TZE200_myd45weu": {
-    "driverId": "plug_smart",
-    "type": "plug",
-    "powerSource": "mains",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "capabilities": [
+      "measure_humidity.soil",
+      "measure_temperature",
+      "measure_battery"
+    ],
+    "dps": {
+      "3": {
+        "name": "soil_moisture",
+        "converter": "raw",
+        "capability": "measure_humidity.soil"
+      },
+      "5": {
+        "name": "temperature",
+        "converter": "divideBy10",
+        "capability": "measure_temperature"
+      },
+      "14": {
+        "name": "battery_state",
+        "converter": "enum",
+        "values": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "15": {
+        "name": "battery",
+        "converter": "raw",
+        "capability": "measure_battery"
+      }
+    }
   },
   "_TZE200_n1aauwb4": {
     "driverId": "switch_1gang",
@@ -11423,12 +11454,43 @@
     ]
   },
   "_TZE284_myd45weu": {
-    "driverId": "plug_smart",
-    "type": "plug",
-    "powerSource": "mains",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
-    ]
+    ],
+    "capabilities": [
+      "measure_humidity.soil",
+      "measure_temperature",
+      "measure_battery"
+    ],
+    "dps": {
+      "3": {
+        "name": "soil_moisture",
+        "converter": "raw",
+        "capability": "measure_humidity.soil"
+      },
+      "5": {
+        "name": "temperature",
+        "converter": "divideBy10",
+        "capability": "measure_temperature"
+      },
+      "14": {
+        "name": "battery_state",
+        "converter": "enum",
+        "values": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "15": {
+        "name": "battery",
+        "converter": "raw",
+        "capability": "measure_battery"
+      }
+    }
   },
   "_TZE284_nhgdf6qr": {
     "driverId": "soil_sensor",

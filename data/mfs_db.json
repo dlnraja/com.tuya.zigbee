@@ -72149,24 +72149,23 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "soilsensor_2",
+      "deviceType": "soil_sensor",
+      "driverHint": "soil_sensor",
       "capabilities": [
+        "measure_humidity.soil",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "alarm_battery",
-        "alarm_contact",
-        "alarm_tamper",
-        "measure_luminance",
         "alarm_water",
-        "alarm_motion"
+        "measure_ec",
+        "measure_conductivity"
       ],
       "powerSource": "battery",
       "sources": [
         "local",
         "z2m",
-        "hubitat"
+        "hubitat",
+        "homey-forum"
       ],
       "sourceDetails": {
         "local": 4,
@@ -72182,23 +72181,23 @@
         "TS0601"
       ],
       "variants": [],
-      "deviceType": "sensor",
-      "driverHint": "soilsensor_2",
+      "deviceType": "soil_sensor",
+      "driverHint": "soil_sensor",
       "capabilities": [
+        "measure_humidity.soil",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
-        "alarm_battery",
-        "alarm_contact",
-        "alarm_tamper",
-        "measure_luminance",
-        "alarm_water"
+        "alarm_water",
+        "measure_ec",
+        "measure_conductivity"
       ],
       "powerSource": "battery",
       "sources": [
         "local",
         "z2m",
-        "hubitat"
+        "hubitat",
+        "homey-forum"
       ],
       "sourceDetails": {
         "local": 3,
@@ -134053,8 +134052,8 @@
     "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_TZE200_myd45weu": {
-    "driverId": "motion_sensor",
-    "source": "auto-sync",
+    "driverId": "soil_sensor",
+    "source": "homey-forum-2097",
     "addedAt": "2026-06-26T14:42:09.180Z"
   },
   "_TZE200_nlrfgpny": {
@@ -136378,8 +136377,8 @@
     "addedAt": "2026-06-26T14:42:09.183Z"
   },
   "_tze284_myd45weu": {
-    "driverId": "sensor_climate_contact",
-    "source": "auto-sync",
+    "driverId": "soil_sensor",
+    "source": "homey-forum-2097",
     "addedAt": "2026-06-26T14:42:09.183Z"
   },
   "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR": {
@@ -143773,8 +143772,9 @@
     "source": "auto-sync"
   },
   "_tze200_myd45weu": {
-    "driverId": "sensor_climate_contact",
-    "source": "auto-sync"
+    "driverId": "soil_sensor",
+    "source": "homey-forum-2097",
+    "addedAt": "2026-06-30T00:00:00.000Z"
   },
   "_tze200_7hfcudw5": {
     "driverId": "sensor_contact_motion",
@@ -143867,5 +143867,10 @@
   "_tze200_sh1btabb": {
     "driverId": "water_valve_smart",
     "source": "auto-sync"
+  },
+  "_TZE284_myd45weu": {
+    "driverId": "soil_sensor",
+    "source": "homey-forum-2097",
+    "addedAt": "2026-06-30T00:00:00.000Z"
   }
 }
