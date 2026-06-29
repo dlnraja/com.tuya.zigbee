@@ -17,9 +17,20 @@ on:
       since:
         description: "Optional start date for IMAP search, for example 2019-01-01"
         required: false
+      until:
+        description: "Optional exclusive end date for IMAP search, for example 2024-01-01"
+        required: false
       max_results:
-        description: "Maximum matching emails to fetch"
+        description: "Maximum matching emails to fetch per IMAP window"
         default: "1000"
+        required: false
+      max_total_results:
+        description: "Maximum matching emails to keep across all IMAP windows"
+        default: "5000"
+        required: false
+      chunk_days:
+        description: "Split historical IMAP fetch into N-day windows; 0 disables chunking"
+        default: "0"
         required: false
       reprocess:
         description: "Ignore processed state and rebuild the diagnostic chronology"
@@ -76,7 +87,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
           GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
+          GMAIL_DIAG_UNTIL: ${{ github.event.inputs.until || '' }}
           GMAIL_DIAG_MAX_RESULTS: ${{ github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_MAX_TOTAL_RESULTS: ${{ github.event.inputs.max_total_results || github.event.inputs.max_results || '100' }}
+          GMAIL_DIAG_CHUNK_DAYS: ${{ github.event.inputs.chunk_days || '0' }}
+          GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
           GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
           GMAIL_DIAG_AUTO_IMPLEMENT: ${{ github.event.inputs.auto_implement || 'false' }}
           DRY_RUN: ${{ github.event.inputs.auto_implement == 'true' && 'false' || 'true' }}

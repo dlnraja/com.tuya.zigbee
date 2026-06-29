@@ -35,15 +35,38 @@ function boundedInt(value,fallback,min,max){
 function parseFetchOptions(argv){
   const allHistory=argFlag(argv,['--all-history','--history'])||boolEnv('GMAIL_DIAG_ALL_HISTORY',false);
   const since=argVal(argv,['--since','--after'])||process.env.GMAIL_DIAG_SINCE||(allHistory?'2019-01-01':null);
+  const until=argVal(argv,['--until','--before'])||process.env.GMAIL_DIAG_UNTIL||null;
   const maxFallback=allHistory?1000:100;
   const maxResults=boundedInt(argVal(argv,['--max-results','--max'])||process.env.GMAIL_DIAG_MAX_RESULTS,maxFallback,1,5000);
+  const maxTotalResults=boundedInt(argVal(argv,['--max-total-results','--max-total'])||process.env.GMAIL_DIAG_MAX_TOTAL_RESULTS,maxResults,1,20000);
+  const chunkDays=boundedInt(argVal(argv,['--chunk-days'])||process.env.GMAIL_DIAG_CHUNK_DAYS,0,0,3650);
   const reprocess=argFlag(argv,['--reprocess','--replay'])||boolEnv('GMAIL_DIAG_REPROCESS',false);
-  const stateLimit=boundedInt(process.env.GMAIL_DIAG_STATE_LIMIT,allHistory?5000:500,100,20000);
+  const stateLimit=boundedInt(process.env.GMAIL_DIAG_STATE_LIMIT,allHistory?Math.max(5000,maxTotalResults):500,100,20000);
   const autoImplement=argFlag(argv,['--implement','--auto-implement'])||boolEnv('GMAIL_DIAG_AUTO_IMPLEMENT',false);
-  return{allHistory,since,maxResults,reprocess,stateLimit,autoImplement};
+  return{allHistory,since,until,maxResults,maxTotalResults,chunkDays,reprocess,stateLimit,autoImplement};
 }
 const load=()=>{try{return JSON.parse(fs.readFileSync(SF,'utf8'))}catch{return{lastCheck:null,processed:[]}}};
 const save=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stringify(s,null,2))};
+
+function toYmd(date){return date.toISOString().split('T')[0]}
+function addDays(date,days){const d=new Date(date);d.setUTCDate(d.getUTCDate()+days);return d}
+function buildFetchWindows(opts){
+  if(!opts.chunkDays||!opts.since)return[{since:opts.since,until:opts.until||null}];
+  const start=new Date(opts.since);
+  const end=opts.until?new Date(opts.until):addDays(new Date(),1);
+  if(!Number.isFinite(start.getTime())||!Number.isFinite(end.getTime())||end<=start){
+    return[{since:opts.since,until:opts.until||null}];
+  }
+  const windows=[];
+  let cursor=start;
+  while(cursor<end&&windows.length<100){
+    const next=addDays(cursor,opts.chunkDays);
+    const until=next<end?next:end;
+    windows.push({since:toYmd(cursor),until:toYmd(until)});
+    cursor=until;
+  }
+  return windows.length?windows:[{since:opts.since,until:opts.until||null}];
+}
 
 const ISSUE_CATEGORIES=[
   {id:'aggregate_error',label:'AggregateError / Zigbee startup',severity:'critical',re:/aggregateerror|empty manufacturername|manufacturername arrays?|zigbee initialization/i,checks:['npm run validate:mfr-empty','npm run check:athom','npm run precommit:full']},
@@ -373,17 +396,32 @@ async function main(){
   if(!imap){console.error('gmail-imap-reader not available. npm install imapflow');process.exit(1)}
   console.log('IMAP-only mode — connecting as',safeAlias('account',e));
   console.log('Diagnostics fetch options:',JSON.stringify({mode:fetchOptions.allHistory?'all-history':'recent',
-    since:fetchOptions.since||'rolling-30-days',maxResults:fetchOptions.maxResults,
+    since:fetchOptions.since||'rolling-30-days',until:fetchOptions.until||'now',
+    maxResults:fetchOptions.maxResults,maxTotalResults:fetchOptions.maxTotalResults,
+    chunkDays:fetchOptions.chunkDays,
     reprocess:fetchOptions.reprocess,autoImplement:fetchOptions.autoImplement}));
-  const emails=await imap.readViaIMAP({afterDate:fetchOptions.since,maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+  const windows=buildFetchWindows(fetchOptions);
+  const emails=[],seenEmailIds=new Set();
+  for(const win of windows){
+    if(emails.length>=fetchOptions.maxTotalResults)break;
+    console.log('IMAP window:',JSON.stringify(win));
+    const batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
+      maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+    for(const em of(batch||[])){
+      if(seenEmailIds.has(em.id))continue;
+      seenEmailIds.add(em.id);
+      emails.push(em);
+      if(emails.length>=fetchOptions.maxTotalResults)break;
+    }
+  }
   if(!emails||!emails.length){console.log('No emails retrieved via IMAP');process.exit(0)}
-  console.log('IMAP OK:',emails.length,'emails');
+  console.log('IMAP OK:',emails.length,'emails across',windows.length,'window(s)');
 
   // Track IMAP health (replaces old OAuth health tracking)
   const HF=path.join(SD,'gmail-token-health.json');
   try{
     const h={mode:'imap',lastOk:new Date().toISOString(),consecutiveFails:0,emailsFetched:emails.length,
-      checks:[{time:new Date().toISOString(),ok:true,mode:'imap'}]};
+      checks:[{time:new Date().toISOString(),ok:true,mode:'imap',windows:windows.length}]};
     const safeHealth=privacy.redactObject(h);privacy.assertNoLeaks(safeHealth,HF);
     fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(HF,JSON.stringify(safeHealth,null,2));
   }catch{}
@@ -473,6 +511,7 @@ async function main(){
   const history=analyzeHistory(res);
   const report=privacy.redactObject({timestamp:st.lastCheck,count:res.length,
     run:{mode:fetchOptions.allHistory?'all-history':'recent',since:fetchOptions.since||'rolling-30-days',
+      until:fetchOptions.until||'now',chunkDays:fetchOptions.chunkDays,maxTotalResults:fetchOptions.maxTotalResults,
       maxResults:fetchOptions.maxResults,reprocess:fetchOptions.reprocess,stateLimit:fetchOptions.stateLimit,
       fetched:emails.length,skippedAlreadyProcessed},
     byType:bt,newFingerprints:newFPs,history,deepResearch:impl,diagnostics:res});
@@ -490,7 +529,10 @@ async function main(){
     yml+='run:\n';
     yml+='  mode: '+(fetchOptions.allHistory?'all-history':'recent')+'\n';
     yml+='  since: '+(fetchOptions.since||'rolling-30-days')+'\n';
+    yml+='  until: '+(fetchOptions.until||'now')+'\n';
     yml+='  max_results: '+fetchOptions.maxResults+'\n';
+    yml+='  max_total_results: '+fetchOptions.maxTotalResults+'\n';
+    yml+='  chunk_days: '+fetchOptions.chunkDays+'\n';
     yml+='  reprocess: '+fetchOptions.reprocess+'\n';
     yml+='  skipped_already_processed: '+skippedAlreadyProcessed+'\n\n';
 
