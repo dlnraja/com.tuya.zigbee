@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 'use strict';
 // fix-button-capability-options.js — Corrige capabilitiesOptions pour les boutons
-// ROOT CAUSE : setable:true → Homey exige registerCapabilityListener
-// FIX : setable:false + maintenanceAction:true (event-only, pas de listener requis)
-// Doc de référence : docs/BUTTON_CAPABILITY_GUIDE.md lignes 148-152
+// ROOT CAUSE : button.* setable/getable ambigu → Homey peut attendre un listener,
+// et les assistants vocaux peuvent interpréter des boutons virtuels comme des
+// commandes alors que les vrais contrôles passent par onoff/windowcoverings/etc.
+// FIX : button.* = event/maintenance only, jamais une commande vocale.
+// Doc de référence : docs/BUTTON_CAPABILITY_GUIDE.md
 
 const fs = require('fs');
 const path = require('path');
@@ -28,19 +30,13 @@ function processDriver(driverDir) {
   const hasButton = caps.some(c => c.startsWith('button.'));
   if (!hasButton) return;
 
-  // Skip les switches (ils ont button.X pour double-clic mais setable:true est légitime)
-  // On ne corrige QUE les boutons purs (event-only)
-  const isSwitch = driverName.startsWith('switch') || driverName === 'switch' ||
-                   driverName.startsWith('wall_switch') || driverName.startsWith('plug');
-  if (isSwitch) return;
-
   const opts = content.capabilitiesOptions || {};
   let changed = false;
 
   for (const capId of caps) {
     if (!capId.startsWith('button.')) continue;
     if (!opts[capId]) opts[capId] = {};
-    // FIX : setable doit être false (event-only), pas true
+    // FIX : setable doit être false (event/maintenance-only), pas true
     if (opts[capId].setable !== false) {
       opts[capId].setable = false;
       changed = true;
@@ -70,7 +66,7 @@ function processDriver(driverDir) {
       try { JSON.parse(fs.readFileSync(composePath, 'utf8')); }
       catch (e) { console.error(`❌ Corruption: ${path.basename(driverDir)}`); return; }
       fixed++;
-      console.log(`✅ ${path.basename(driverDir)}: button caps → setable:false + maintenanceAction:true`);
+      console.log(`✅ ${path.basename(driverDir)}: button caps → getable:false + setable:false + maintenanceAction:true`);
     } else {
       console.log(`🔍 ${path.basename(driverDir)}: needs fix (dry-run)`);
     }
