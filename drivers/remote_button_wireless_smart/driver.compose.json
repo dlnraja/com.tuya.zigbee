@@ -45,7 +45,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3000_kjfzuycl"
+    ],
     "productId": [
       "TS0601",
       "TS0215A"
