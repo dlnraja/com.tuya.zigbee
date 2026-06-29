@@ -25,6 +25,15 @@ function appDriver(driverId) {
   return driver;
 }
 
+function driverFlowCompose(driverId) {
+  return readJson(path.join('drivers', driverId, 'driver.flow.compose.json'));
+}
+
+function appFlowTriggerIds() {
+  const app = readJson('app.json');
+  return new Set((app.flow?.triggers || []).map(trigger => trigger.id));
+}
+
 function lowerValues(values = []) {
   return values.map(value => String(value).toLowerCase());
 }
@@ -75,6 +84,38 @@ describe('stable cross-source routing regressions', function() {
 
     for (const source of [driverCompose('button_wireless_1'), appDriver('button_wireless_1')]) {
       assertNotIncludesCI(source.zigbee.manufacturerName, '_TZ3000_b4awzgct');
+    }
+  });
+
+  it('publishes exact flow cards used by button devices', () => {
+    const appIds = appFlowTriggerIds();
+    for (const { driverId, buttonCount } of [
+      { driverId: 'button_wireless_1', buttonCount: 1 },
+      { driverId: 'button_wireless_4', buttonCount: 4 },
+      { driverId: 'button_wireless_4_ts0041', buttonCount: 4 }
+    ]) {
+      const composeIds = new Set((driverFlowCompose(driverId).triggers || []).map(trigger => trigger.id));
+      const requiredIds = [
+        `${driverId}_button_${buttonCount}gang_button_pressed`,
+        `${driverId}_button_${buttonCount}gang_button_double_press`,
+        `${driverId}_button_${buttonCount}gang_button_long_press`,
+        `${driverId}_button_${buttonCount}gang_button_multi_press`,
+        `${driverId}_battery_low`
+      ];
+
+      for (let button = 1; button <= buttonCount; button++) {
+        for (const suffix of ['pressed', 'double', 'long', 'triple', 'release']) {
+          requiredIds.push(`${driverId}_button_${buttonCount}gang_button_${button}_${suffix}`);
+        }
+      }
+
+      for (const id of requiredIds) {
+        assert(composeIds.has(id), `${driverId} driver.flow.compose.json missing ${id}`);
+        assert(appIds.has(id), `app.json missing ${id}`);
+      }
+
+      const dupIds = [...appIds].filter(id => id.startsWith(`${driverId}_`) && /_dup_[a-z0-9]+$/.test(id));
+      assert.deepStrictEqual(dupIds, [], `${driverId} must not publish duplicate-suffixed flow ids`);
     }
   });
 
