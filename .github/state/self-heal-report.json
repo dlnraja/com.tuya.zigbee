@@ -1,11 +1,15 @@
 {
-  "timestamp": "2026-06-29T08:04:11.333Z",
+  "timestamp": "2026-06-29T08:40:58.803Z",
   "totalFiles": 0,
-  "totalFixes": 934,
+  "totalFixes": 936,
   "rules": {
     "flow-card-try-catch": {
-      "count": 31,
+      "count": 33,
       "files": [
+        {
+          "file": "drivers/button_wireless_4/device.js",
+          "detail": "Line 236: getDeviceTriggerCard without try-catch"
+        },
         {
           "file": "drivers/curtain_motor/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
@@ -117,6 +121,10 @@
         {
           "file": "lib/devices/WallTouchDevice.js",
           "detail": "Line 201: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/drivers/BaseZigBeeDriver.js",
+          "detail": "Line 125: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/flow/AdvancedFlowCardManager.js",
