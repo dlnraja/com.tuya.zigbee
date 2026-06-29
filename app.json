@@ -5983,6 +5983,243 @@
         }
       },
       {
+        "id": "button_wireless_1_button_1gang_button_pressed_dup_wack0",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_double_press_dup_aursz",
+        "title": {
+          "en": "Button double-pressed",
+          "fr": "Bouton double-cliqué"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button double-pressed",
+          "fr": "Bouton double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_long_press_dup_lx1bs",
+        "title": {
+          "en": "Button long-pressed",
+          "fr": "Bouton pressé longtemps"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button long-pressed",
+          "fr": "Bouton pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_multi_press_dup_zzjnd",
+        "title": {
+          "en": "Button multi-pressed",
+          "fr": "Bouton multi-cliqué"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Press count",
+              "fr": "Nombre de pressions"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button multi-pressed",
+          "fr": "Bouton multi-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_pressed_dup_uqtp8",
+        "title": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_double_dup_mk2ax",
+        "title": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_long_dup_k5n4v",
+        "title": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_triple_dup_mbm87",
+        "title": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_release_dup_zzkbq",
+        "title": {
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_1_battery_low_dup_9u6py",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_smart"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
         "id": "ceiling_fan_turned_on",
         "title": {
           "en": "Turned on",
@@ -15939,6 +16176,529 @@
         }
       },
       {
+        "id": "button_wireless_4_button_4gang_button_pressed_dup_tswkk",
+        "title": {
+          "en": "A button was pressed",
+          "fr": "Un bouton a été appuyé"
+        },
+        "hint": {
+          "en": "Triggers when any button is pressed. Use the button token in your flow.",
+          "fr": "Se déclenche quand un bouton est appuyé. Utilisez le jeton bouton dans votre flow."
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "A button was pressed",
+          "fr": "Un bouton a été appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_double_press_dup_puzdv",
+        "title": {
+          "en": "A button was double-pressed",
+          "fr": "Un bouton a été double-cliqué"
+        },
+        "hint": {
+          "en": "Triggers when any button is double-pressed.",
+          "fr": "Se déclenche quand un bouton est double-cliqué."
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "A button was double-pressed",
+          "fr": "Un bouton a été double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_long_press_dup_aje2l",
+        "title": {
+          "en": "A button was long-pressed",
+          "fr": "Un bouton a été appuyé longtemps"
+        },
+        "hint": {
+          "en": "Triggers when any button is long-pressed.",
+          "fr": "Se déclenche quand un bouton est appuyé longtemps."
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "A button was long-pressed",
+          "fr": "Un bouton a été appuyé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_multi_press_dup_wa92p",
+        "title": {
+          "en": "A button was multi-pressed",
+          "fr": "Un bouton a été multi-cliqué"
+        },
+        "hint": {
+          "en": "Triggers when any button is pressed multiple times.",
+          "fr": "Se déclenche quand un bouton est appuyé plusieurs fois."
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Press count",
+              "fr": "Nombre de pressions"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "A button was multi-pressed",
+          "fr": "Un bouton a été multi-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_1_pressed_dup_zehs8",
+        "title": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_1_double_dup_gdhry",
+        "title": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_1_long_dup_4vld0",
+        "title": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_2_pressed_dup_y5ngc",
+        "title": {
+          "en": "Button 2 pressed",
+          "fr": "Bouton 2 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 pressed",
+          "fr": "Bouton 2 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_2_double_dup_90wl1",
+        "title": {
+          "en": "Button 2 double-pressed",
+          "fr": "Bouton 2 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 double-pressed",
+          "fr": "Bouton 2 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_2_long_dup_nxvuv",
+        "title": {
+          "en": "Button 2 long-pressed",
+          "fr": "Bouton 2 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 long-pressed",
+          "fr": "Bouton 2 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_3_pressed_dup_ryzz7",
+        "title": {
+          "en": "Button 3 pressed",
+          "fr": "Bouton 3 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 pressed",
+          "fr": "Bouton 3 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_3_double_dup_0efve",
+        "title": {
+          "en": "Button 3 double-pressed",
+          "fr": "Bouton 3 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 double-pressed",
+          "fr": "Bouton 3 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_3_long_dup_pmav1",
+        "title": {
+          "en": "Button 3 long-pressed",
+          "fr": "Bouton 3 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 long-pressed",
+          "fr": "Bouton 3 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_4_pressed_dup_q80zi",
+        "title": {
+          "en": "Button 4 pressed",
+          "fr": "Bouton 4 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 pressed",
+          "fr": "Bouton 4 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_4_double_dup_ivohw",
+        "title": {
+          "en": "Button 4 double-pressed",
+          "fr": "Bouton 4 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 double-pressed",
+          "fr": "Bouton 4 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_4_long_dup_8ka50",
+        "title": {
+          "en": "Button 4 long-pressed",
+          "fr": "Bouton 4 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 long-pressed",
+          "fr": "Bouton 4 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_1_triple_dup_9gv21",
+        "title": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_2_triple_dup_sovs4",
+        "title": {
+          "en": "Button 2 triple-pressed",
+          "fr": "Bouton 2 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 triple-pressed",
+          "fr": "Bouton 2 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_3_triple_dup_mvs1k",
+        "title": {
+          "en": "Button 3 triple-pressed",
+          "fr": "Bouton 3 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 triple-pressed",
+          "fr": "Bouton 3 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_4_triple_dup_ar4oi",
+        "title": {
+          "en": "Button 4 triple-pressed",
+          "fr": "Bouton 4 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 triple-pressed",
+          "fr": "Bouton 4 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_1_release_dup_ytxbp",
+        "title": {
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_2_release_dup_bej82",
+        "title": {
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_3_release_dup_0nd5h",
+        "title": {
+          "en": "Button 3 released - after hold",
+          "fr": "Bouton 3 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 3 released - after hold",
+          "fr": "Bouton 3 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_4_button_4gang_button_4_release_dup_m8tvy",
+        "title": {
+          "en": "Button 4 released - after hold",
+          "fr": "Bouton 4 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 4 released - after hold",
+          "fr": "Bouton 4 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_4_battery_low_dup_s96ch",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_handheld"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
         "id": "remote_button_wireless_plug_turned_on",
         "title": {
           "en": "Turned on",
@@ -16125,6 +16885,243 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=remote_button_wireless_plug"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_pressed_dup_fx4vl",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_double_press_dup_9wdli",
+        "title": {
+          "en": "Button double-pressed",
+          "fr": "Bouton double-cliqué"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button double-pressed",
+          "fr": "Bouton double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_long_press_dup_lnaf8",
+        "title": {
+          "en": "Button long-pressed",
+          "fr": "Bouton pressé longtemps"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button long-pressed",
+          "fr": "Bouton pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_multi_press_dup_mdmy2",
+        "title": {
+          "en": "Button multi-pressed",
+          "fr": "Bouton multi-cliqué"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Press count",
+              "fr": "Nombre de pressions"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button multi-pressed",
+          "fr": "Bouton multi-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_pressed_dup_xt270",
+        "title": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_double_dup_ir66a",
+        "title": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_long_dup_ehxex",
+        "title": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 pressé longtemps"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_triple_dup_3oihw",
+        "title": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        }
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_release_dup_1a8jh",
+        "title": {
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
+        }
+      },
+      {
+        "id": "button_wireless_1_battery_low_dup_9ul0y",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=remote_button_wireless_wall"
           }
         ],
         "titleFormatted": {
