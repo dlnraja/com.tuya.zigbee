@@ -26,7 +26,7 @@
     "security:diagnostics": "node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/gmail-token-health.json diagnostics",
     "diag:gmail": "node .github/scripts/fetch-gmail-diagnostics.js",
     "diag:gmail:history": "node .github/scripts/fetch-gmail-diagnostics.js --all-history --max-results 1000 --max-total-results 10000 --chunk-days 365 --reprocess",
-    "diag:gmail:history:full": "node .github/scripts/fetch-gmail-diagnostics.js --all-history --max-results 5000 --max-total-results 20000 --chunk-days 365 --reprocess",
+    "diag:gmail:history:full": "node .github/scripts/fetch-gmail-diagnostics.js --all-history --max-results 20000 --max-total-results 20000 --reprocess",
     "check:diag-history": "node scripts/ci/diagnostic-history-gate.js --json",
     "security:full": "node scripts/ci/security-scanner.js && node scripts/ci/signature-audit.js",
     "test": "mocha test/**/*.test.js --timeout 5000",

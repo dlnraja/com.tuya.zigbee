@@ -15,7 +15,7 @@ These rules apply to Gmail crash logs, Homey developer dashboard diagnostics, fo
 - Use `npm run diag:gmail:history` or workflow dispatch `all_history=true` to rebuild the chronology from the historical baseline.
 - Use `GMAIL_DIAG_SINCE` or `--since YYYY-MM-DD` when a smaller replay window is enough.
 - Use `GMAIL_DIAG_UNTIL` or `--until YYYY-MM-DD` to split old history into date windows.
-- Use `GMAIL_DIAG_CHUNK_DAYS` or `--chunk-days 365` for full historical recovery; each window still goes through privacy redaction.
+- Prefer a single full-history run first (`--max-results 20000 --max-total-results 20000`); use `GMAIL_DIAG_CHUNK_DAYS` or `--chunk-days 365` only when the mailbox search itself times out.
 - Use `GMAIL_DIAG_MAX_RESULTS` / `--max-results` per window and `GMAIL_DIAG_MAX_TOTAL_RESULTS` / `--max-total-results` for the full run bound.
 - Use `npm run diag:gmail:history:full` only for explicit manual recovery with secrets available.
 - Use `--reprocess` only when rebuilding summaries, not during normal scheduled sweeps.

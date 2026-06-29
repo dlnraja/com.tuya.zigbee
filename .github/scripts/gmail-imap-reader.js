@@ -59,7 +59,7 @@ function resolveUntilDate(opts) {
 function resolveMaxResults(opts) {
   const allHistory = opts.allHistory || boolValue(process.env.GMAIL_DIAG_ALL_HISTORY);
   const fallback = allHistory ? 1000 : 100;
-  return boundedInt(opts.maxResults || opts.max || process.env.GMAIL_DIAG_MAX_RESULTS, fallback, 1, 5000);
+  return boundedInt(opts.maxResults || opts.max || process.env.GMAIL_DIAG_MAX_RESULTS, fallback, 1, 20000);
 }
 
 function resolveFetchBatchSize(opts) {
