@@ -34,7 +34,8 @@
   },
   "zigbee": {
     "productId": [
-      "TS0101"
+      "TS0101",
+      "TS0049"
     ],
     "endpoints": {
       "1": {
@@ -55,7 +56,9 @@
       }
     },
     "manufacturerName": [
-      "_TZE200_dummy"
+      "_TZE200_dummy",
+      "_TZ3000_pnzfdr9y",
+      "_TZ3000_br3laukf"
     ]
   },
   "version": "1.0.0",
