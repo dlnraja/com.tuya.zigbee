@@ -4,6 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { summarizeVersionHistory } = require('./build-history-utils');
 
 let fetchWithRetry = null;
 let privacy = null;
@@ -258,6 +259,7 @@ async function main() {
   const latestGoodBuild = sorted.find(isSuccessfulBuild) || null;
   const latestIsFailed = latestBuild ? isFailedBuild(latestBuild) : false;
   const recentFailed = sorted.slice(0, 100).filter(isFailedBuild);
+  const versionSummary = summarizeVersionHistory(sorted, { appId: APP_ID });
   const expectedBuild = EXPECTED_VERSION
     ? sorted.find(build => (
       String(build.version || '') === EXPECTED_VERSION
@@ -295,6 +297,19 @@ async function main() {
     latestBuilds: sorted.slice(0, showCount).map(summarizeBuild),
     latestFailedBuild: summarizeBuild(latestFailedBuild),
     latestGoodBuild: summarizeBuild(latestGoodBuild),
+    latestWorkingVersion: versionSummary.latestWorkingVersion,
+    latestTestVersion: versionSummary.latestTestVersion,
+    versionTotals: {
+      totalVersions: versionSummary.totalVersions,
+      workingVersions: versionSummary.workingVersionCount,
+      testVersions: versionSummary.testVersionCount,
+      failedOnlyVersions: versionSummary.failedOnlyVersionCount,
+    },
+    workingVersions: versionSummary.workingVersions,
+    testVersions: versionSummary.testVersions,
+    failedOnlyVersions: versionSummary.failedOnlyVersions,
+    failurePatterns: versionSummary.failurePatterns,
+    versionHistory: versionSummary.versionHistory,
     expected: EXPECTED_VERSION ? {
       version: EXPECTED_VERSION,
       state: EXPECTED_STATE || null,

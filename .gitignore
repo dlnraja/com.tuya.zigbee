@@ -166,6 +166,8 @@ scripts/sync/data/
 .github/state/new-fork-fps.json
 .github/state/spam-scan-results.json
 .github/state/external-sources-data.json
+.github/state/dashboard-monitor-report.json
+.github/state/version-intelligence-report.json
 
 # Claude Code session files
 .claude/
