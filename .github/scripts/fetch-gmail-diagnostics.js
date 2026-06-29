@@ -37,7 +37,7 @@ function parseFetchOptions(argv){
   const since=argVal(argv,['--since','--after'])||process.env.GMAIL_DIAG_SINCE||(allHistory?'2019-01-01':null);
   const until=argVal(argv,['--until','--before'])||process.env.GMAIL_DIAG_UNTIL||null;
   const maxFallback=allHistory?1000:100;
-  const maxResults=boundedInt(argVal(argv,['--max-results','--max'])||process.env.GMAIL_DIAG_MAX_RESULTS,maxFallback,1,5000);
+  const maxResults=boundedInt(argVal(argv,['--max-results','--max'])||process.env.GMAIL_DIAG_MAX_RESULTS,maxFallback,1,20000);
   const maxTotalResults=boundedInt(argVal(argv,['--max-total-results','--max-total'])||process.env.GMAIL_DIAG_MAX_TOTAL_RESULTS,maxResults,1,20000);
   const chunkDays=boundedInt(argVal(argv,['--chunk-days'])||process.env.GMAIL_DIAG_CHUNK_DAYS,0,0,3650);
   const reprocess=argFlag(argv,['--reprocess','--replay'])||boolEnv('GMAIL_DIAG_REPROCESS',false);
