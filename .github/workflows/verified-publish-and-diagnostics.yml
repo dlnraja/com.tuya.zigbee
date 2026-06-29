@@ -50,6 +50,15 @@ jobs:
       - name: Install Dependencies
         run: npm ci --ignore-scripts
 
+      - name: 🛡️ GitHub Actions & YAML Policy Gate
+        run: npm run check:yaml
+
+      - name: ⏱️ Homey Timer Context Guard
+        run: npm run check:timer-context
+
+      - name: 🗣️ Google Assistant / Alexa Voice-Safety Gate
+        run: npm run check:voice
+
       - name: 🚫 Syntax Guard (Prevent Recursive Crashes)
         run: |
           echo "🔍 Vérification stricte de la syntaxe sur tous les fichiers critiques..."

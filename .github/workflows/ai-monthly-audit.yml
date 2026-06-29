@@ -42,13 +42,13 @@ jobs:
       # LAYER 1: Full history checkout
       # ──────────────────────────────────────────────
       - name: Checkout with full history
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js 20
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
 

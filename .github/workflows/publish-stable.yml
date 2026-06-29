@@ -42,6 +42,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
+      - name: Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
       - name: SDK3 Validation
         run: |
           SDK=$(node -p "require('./app.json').sdkVersion")
@@ -132,6 +134,7 @@ jobs:
         continue-on-error: true
         run: npm install puppeteer --no-save
       - name: Promote via Browser (Puppeteer)
+        id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -139,10 +142,22 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: node .github/scripts/auto-promote-puppeteer.js
       - name: Promote via API (PAT)
+        id: promote_api
+        if: steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
+      - name: Verify draft promotion result
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::error::All stable draft-to-test promotion tiers failed"
+            exit 1
+          fi
+          node .github/scripts/verify-test-version.js
       - name: Summary
         if: always()
         run: |

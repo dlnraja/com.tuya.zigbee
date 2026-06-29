@@ -42,6 +42,15 @@ jobs:
       
       - name: Install dependencies
         run: npm ci || npm install
+
+      - name: 🛡️ GitHub Actions & YAML Policy Gate
+        run: npm run check:yaml
+
+      - name: ⏱️ Homey Timer Context Guard
+        run: npm run check:timer-context
+
+      - name: 🗣️ Google Assistant / Alexa Voice-Safety Gate
+        run: npm run check:voice
       
       - name: 🛡️ Dual-Layer AggregateError Gate (BLOQUANT)
         run: |

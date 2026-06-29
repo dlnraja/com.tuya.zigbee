@@ -20,17 +20,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 100
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
+          cache: npm
 
       - name: Install deps
         run: npm ci --prefer-offline --no-audit || npm install --no-audit
+
+      - name: 🗣️ Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
 
       - name: 🤖 Run auto-fix-all
         run: node scripts/validation/auto-fix-all.js || true
@@ -75,13 +79,29 @@ jobs:
             echo "trigger_publish=true" >> $GITHUB_ENV
           fi
 
+      - name: 🔐 Redact dashboard diagnostics before committing
+        if: always()
+        run: node .github/scripts/privacy-redactor.js .github/state/dashboard-monitor-report.json || true
+
       - name: 💾 Commit fixes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --staged --quiet || git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
-          git push || true
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
+            BRANCH="${GITHUB_REF_NAME:-master}"
+            git fetch origin "$BRANCH"
+            git pull --rebase origin "$BRANCH"
+            git push origin HEAD:"refs/heads/$BRANCH"
+            git fetch origin "$BRANCH"
+            git merge-base --is-ancestor HEAD "origin/$BRANCH" || {
+              echo "::error::Auto-fix commit HEAD is not reachable from origin/$BRANCH after push"
+              exit 1
+            }
+          else
+            echo "No auto-fix changes to commit"
+          fi
 
       - name: 🚀 Publish if needed
         if: env.trigger_publish == 'true' || github.event_name == 'workflow_dispatch'

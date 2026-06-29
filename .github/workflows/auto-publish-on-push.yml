@@ -53,6 +53,12 @@ jobs:
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
 
+      - name: GitHub Actions & YAML policy gate
+        run: npm run check:yaml
+
+      - name: Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
+
       # ─────────────────────────────────────────────────────────────
       # 2. CHECK SECRETS
       # ─────────────────────────────────────────────────────────────
@@ -353,6 +359,19 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
 
+      - name: Verify draft promotion result
+        if: steps.check_pat.outputs.has_pat == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::error::All draft-to-test promotion tiers failed"
+            exit 1
+          fi
+          node .github/scripts/verify-test-version.js
+
       - name: Regenerate README & Docs
         if: always()
         continue-on-error: true
@@ -399,8 +418,14 @@ jobs:
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
           git diff --cached --quiet || git commit -m "v${VER}: ${D} drivers, ${F} FPs [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          git fetch origin master
+          git pull --rebase origin master
+          git push origin HEAD:refs/heads/master
+          git fetch origin master
+          git merge-base --is-ancestor HEAD origin/master || {
+            echo "::error::Bot commit HEAD is not reachable from origin/master after push"
+            exit 1
+          }
 
       - name: Full diagnostics sweep - sanitized
         if: always()

@@ -42,9 +42,9 @@ jobs:
         run: |
           npm ci --prefer-offline --no-audit || npm install
           node .github/scripts/homey-device-diagnostics.js || true
+          node .github/scripts/privacy-redactor.js .github/state/homey-device-report.json .github/state/diagnostics-report.json diagnostics || true
           
       - name: Send Secure Email Notification
         run: |
           echo "Event triggered in the repository: ${{ github.event_name }}"
           echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
-

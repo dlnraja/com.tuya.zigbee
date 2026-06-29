@@ -56,6 +56,12 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
+      - name: GitHub Actions & YAML policy gate
+        run: npm run check:yaml
+      - name: Homey timer context guard
+        run: npm run check:timer-context
+      - name: Google Assistant / Alexa voice-safety gate
+        run: npm run check:voice
       - name: 🛡️ Check Git Conflicts
         run: npm run validate:conflicts
 
@@ -191,7 +197,9 @@ jobs:
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
           git tag -f "v${{ steps.bump.outputs.version }}"
-          git push origin HEAD --tags --force
+          BRANCH="${GITHUB_REF_NAME:-master}"
+          git push origin HEAD:"refs/heads/$BRANCH"
+          git push origin -f "v${{ steps.bump.outputs.version }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -252,10 +260,24 @@ jobs:
 
       - name: "Tier 3: Promote via API (PAT fallback)"
         if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
+        id: promote_api
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
+
+      - name: Verify draft promotion result
+        if: steps.pat.outputs.ok == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::error::All draft-to-test promotion tiers failed"
+            exit 1
+          fi
+          node .github/scripts/verify-test-version.js
 
       - name: Upload promote screenshots
         if: always()

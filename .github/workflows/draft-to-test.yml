@@ -116,6 +116,18 @@ jobs:
         id: app_ver
         run: echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
 
+      - name: Verify draft promotion result
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
+             [ "${{ steps.promote_api.outcome }}" != "success" ]; then
+            echo "::error::All draft-to-test promotion tiers failed"
+            exit 1
+          fi
+          node .github/scripts/verify-test-version.js
+
       - name: Post update to Homey Community Forum
         if: steps.promote_puppeteer.outcome == 'success' || steps.promote_oauth.outcome == 'success' || steps.promote_api.outcome == 'success'
         continue-on-error: true

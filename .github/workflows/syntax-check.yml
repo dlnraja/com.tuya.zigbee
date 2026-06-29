@@ -5,10 +5,28 @@ name: 🔍 Syntax Check & SDK3 Validation
 on:
   push:
     branches: [master, stable-v5]
-    paths: ['lib/**', 'drivers/**', 'app.js', 'app.json']
+    paths:
+      - 'lib/**'
+      - 'drivers/**'
+      - 'app.js'
+      - 'app.json'
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'package*.json'
+      - 'scripts/ci/**'
+      - 'scripts/validation/**'
   pull_request:
     branches: [master, stable-v5]
-    paths: ['lib/**', 'drivers/**', 'app.js', 'app.json']
+    paths:
+      - 'lib/**'
+      - 'drivers/**'
+      - 'app.js'
+      - 'app.json'
+      - '.github/workflows/**'
+      - '.github/actions/**'
+      - 'package*.json'
+      - 'scripts/ci/**'
+      - 'scripts/validation/**'
 
 permissions:
   contents: read
@@ -37,6 +55,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci || npm install
+
+      - name: Check GitHub Actions policy
+        run: npm run check:yaml
+
+      - name: Check Google Assistant / Alexa voice safety
+        run: npm run check:voice
 
       - name: Check JS syntax (lib/)
         run: |
