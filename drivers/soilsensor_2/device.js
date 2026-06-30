@@ -78,29 +78,57 @@ class soilsensor2 extends TuyaSpecificClusterDevice {
     switch (dp) {
       case dataPoints.humidity:
         this.log("Humidity: " + value);
-        this.safeSetCapabilityValue('measure_humidity', value).catch(this.error);
+        await this._safeSetSoilCapability('measure_humidity', value);
         break;
 
       case dataPoints.temperature:
         this.log("Temparature: " + value/10);
-        this.safeSetCapabilityValue('measure_temperature', value/10).catch(this.error);
+        await this._safeSetSoilCapability('measure_temperature', value / 10);
         break;
 
       case dataPoints.battery:
         this.log("Battery: " + value);
-        this.safeSetCapabilityValue('measure_battery', value).catch(this.error);
+        await this._safeSetSoilCapability('measure_battery', value);
         break;
 
       case dataPoints.battery_state:
         this.log("Battery state: " + value);
         var batAlarm = value === 0 ? true : false;
-        this.safeSetCapabilityValue('alarm_battery', batAlarm).catch(this.error);
+        await this._safeSetSoilCapability('alarm_battery', batAlarm);
         break;
 
       default:
         // Log any unhandled datapoint traffic
         this.log(`Unhandled datapoint detected. DP: ${dp}, Value: ${value}, DataType: ${data.datatype}`);
         break;
+    }
+  }
+
+  async _safeSetSoilCapability(capability, value) {
+    if (value === undefined || (typeof value === 'number' && !Number.isFinite(value))) {
+      this.log(`[SOIL2] Ignoring invalid ${capability} value: ${value}`);
+      return undefined;
+    }
+
+    if (typeof this.hasCapability === 'function' && !this.hasCapability(capability)) {
+      this.log(`[SOIL2] Capability ${capability} is not available on this device`);
+      return undefined;
+    }
+
+    const setter = typeof this.safeSetCapabilityValue === 'function'
+      ? this.safeSetCapabilityValue.bind(this)
+      : (typeof this.setCapabilityValue === 'function' ? this.setCapabilityValue.bind(this) : null);
+
+    if (!setter) {
+      this.error(`[SOIL2] No capability setter available for ${capability}`);
+      return undefined;
+    }
+
+    try {
+      return await setter(capability, value);
+    } catch (err) {
+      this.error(`[SOIL2] Failed to set ${capability}:`, err);
+      return undefined;
     }
   }
 

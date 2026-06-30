@@ -373,7 +373,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
 
     // v9.1.0: Initialize feature modules and register their flow cards
     try {
-      this.solarElevation = new SolarElevation({ logger: this.log.bind(this) });
+      this.solarElevation = new SolarElevation({ homey: this.homey, logger: this.log.bind(this) });
       this.transitionEngine = new TransitionEngine();
       this.energyHistoryStore = new EnergyHistoryStore(this.homey);
       await this.energyHistoryStore.initialize();
