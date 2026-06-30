@@ -32726,7 +32726,13 @@
             "name": "device",
             "filter": "driverId=presence_detector"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Presence detected in room [[device]]",
+          "nl": "Aanwezigheid gedetecteerd in kamer [[device]]",
+          "fr": "Présence détectée dans la pièce [[device]]",
+          "de": "Anwesenheit im Raum erkannt [[device]]"
+        }
       },
       {
         "id": "virtual_presence_cleared",
@@ -32777,7 +32783,13 @@
             "name": "device",
             "filter": "driverId=presence_detector"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Presence cleared in room [[device]]",
+          "nl": "Aanwezigheid opgeheven in kamer [[device]]",
+          "fr": "Présence terminée dans la pièce [[device]]",
+          "de": "Anwesenheit im Raum beendet [[device]]"
+        }
       },
       {
         "id": "virtual_presence_confidence_changed",
@@ -32817,7 +32829,13 @@
             "name": "device",
             "filter": "driverId=presence_detector"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Confidence changed [[device]]",
+          "nl": "Vertrouwen gewijzigd [[device]]",
+          "fr": "Confiance changée [[device]]",
+          "de": "Vertrauen geändert [[device]]"
+        }
       },
       {
         "id": "presence_sensor_ceiling_turned_on",
@@ -74855,7 +74873,13 @@
             "name": "device",
             "filter": "driverId=presence_detector"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Room !{{is|is not}} occupied [[device]]",
+          "nl": "Kamer !{{is|is niet}} bezet [[device]]",
+          "fr": "La pièce !{{est|n'est pas}} occupée [[device]]",
+          "de": "Raum !{{ist|ist nicht}} besetzt [[device]]"
+        }
       },
       {
         "id": "virtual_presence_confidence_above",
@@ -74892,7 +74916,13 @@
               "en": "50"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Confidence !{{is above|is not above}} [[device]] [[threshold]]",
+          "nl": "Vertrouwen !{{is boven|is niet boven}} [[device]] [[threshold]]",
+          "fr": "Confiance !{{est au-dessus|n'est pas au-dessus}} [[device]] [[threshold]]",
+          "de": "Vertrauen !{{ist über|ist nicht über}} [[device]] [[threshold]]"
+        }
       },
       {
         "id": "presence_sensor_ceiling_is_on",
@@ -82049,7 +82079,13 @@
               "de": "Der tatsächliche Batterieprozentswert bei der gemessenen Spannung"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Calibrate battery reading [[device]] [[reference_voltage]] [[reference_percentage]]",
+          "fr": "Calibrer la lecture de la batterie [[device]] [[reference_voltage]] [[reference_percentage]]",
+          "nl": "Batterij uitlezing kalibreren [[device]] [[reference_voltage]] [[reference_percentage]]",
+          "de": "Batterieablesung kalibrieren [[device]] [[reference_voltage]] [[reference_percentage]]"
+        }
       },
       {
         "id": "capability_historical_value",
@@ -82092,7 +82128,13 @@
             "max": 1440,
             "step": 1
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Retrieve historical capability value [[device]] [[capability]] [[minutes_ago]]",
+          "nl": "Historische capaciteitswaarde ophalen [[device]] [[capability]] [[minutes_ago]]",
+          "de": "Historischen Fähigkeitswert abrufen [[device]] [[capability]] [[minutes_ago]]",
+          "fr": "Récupérer la valeur historique de la capacité [[device]] [[capability]] [[minutes_ago]]"
+        }
       },
       {
         "id": "condition_evaluate_set",
@@ -82134,7 +82176,10 @@
               "en": "Condition set evaluated"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Evaluate condition set [[condition_set_id]] [[device]]"
+        }
       },
       {
         "id": "energy_export_data",
@@ -82278,7 +82323,10 @@
               "en": "Error rate (%)"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Run health prediction [[device]]"
+        }
       },
       {
         "id": "natural_light_disable",
@@ -82401,7 +82449,12 @@
             "type": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Check Device OTA Firmware Updates [[device]]",
+          "fr": "Vérifier Mises à Jour (OTA) de l'appareil [[device]]",
+          "nl": "OTA firmware updates controleren [[device]]"
+        }
       },
       {
         "id": "presence_force_in_zone",
@@ -82415,7 +82468,7 @@
           {
             "name": "device",
             "type": "device",
-            "filter": "driver_id=presence_detector"
+            "filter": "driverId=presence_detector"
           },
           {
             "name": "force_state",
@@ -82454,7 +82507,10 @@
               "en": "New state"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Force presence in zone [[force_state]]"
+        }
       },
       {
         "id": "resetEnergyMeter",
@@ -82564,7 +82620,10 @@
               "en": "Created schedule ID"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Create schedule [[device]] [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]]"
+        }
       },
       {
         "id": "set_power_on_behavior",
@@ -82596,7 +82655,13 @@
               "de": "off / on / previous"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set Power On Behavior [[behavior]]",
+          "fr": "Définir Comportement à la Mise sous Tension [[behavior]]",
+          "nl": "Gedrag bij inschakelen instellen [[behavior]]",
+          "de": "Einschaltverhalten einstellen [[behavior]]"
+        }
       },
       {
         "id": "set_software_child_lock",
@@ -82614,7 +82679,11 @@
             "name": "locked",
             "type": "checkbox"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set Software Child Lock [[locked]]",
+          "fr": "DÃ©finir SÃ©curitÃ© Enfant Logicielle [[locked]]"
+        }
       },
       {
         "id": "solar_set_adaptive_lighting",
@@ -82886,6 +82955,9 @@
             }
           }
         ],
+        "titleFormatted": {
+          "en": "Start effect [[effect_name]] [[effect_speed]] [[effect_color_0]] [[effect_color_1]] [[effect_color_2]] [[effect_color_3]] [[effect_color_4]] [[effect_color_5]] [[effect_color_6]] [[effect_color_7]] [[effect_color_8]]"
+        },
         "id": "start_effect"
       },
       {
@@ -82926,7 +82998,13 @@
               "fr": "Marche/Arrêt"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Set sub-capability [[device]] [[capability]] [[value]]",
+          "fr": "Définir sous-capacité [[device]] [[capability]] [[value]]",
+          "nl": "Sub-capability instellen [[device]] [[capability]] [[value]]",
+          "de": "Sub-Fähigkeit setzen [[device]] [[capability]] [[value]]"
+        }
       },
       {
         "id": "sub_capability_toggle",
@@ -82958,7 +83036,13 @@
               "fr": "onoff.gang2"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Toggle sub-capability [[device]] [[capability]]",
+          "fr": "Basculer sous-capacitÃ© [[device]] [[capability]]",
+          "nl": "Sub-capability omschakelen [[device]] [[capability]]",
+          "de": "Sub-FÃ¤higkeit umschalten [[device]] [[capability]]"
+        }
       },
       {
         "id": "switch_multi_gang_turn_off",
@@ -83014,7 +83098,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn off Gang.. [[device]] [[gang]]",
+          "fr": "Eteindre Bouton.. [[device]] [[gang]]"
+        }
       },
       {
         "id": "switch_multi_gang_turn_on",
@@ -83070,7 +83158,11 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turn on Gang.. [[device]] [[gang]]",
+          "fr": "Allumer Bouton.. [[device]] [[gang]]"
+        }
       },
       {
         "id": "tariff_set_rate",
@@ -83285,7 +83377,10 @@
               }
             ]
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Start smooth transition [[device]] [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]]"
+        }
       },
       {
         "id": "tuya_dp_send",
@@ -83323,7 +83418,13 @@
               "fr": "Valeur"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Send Tuya DP [[device]] [[dp]] [[value]]",
+          "fr": "Envoyer DP Tuya [[device]] [[dp]] [[value]]",
+          "nl": "Tuya DP verzenden [[device]] [[dp]] [[value]]",
+          "de": "Tuya DP senden [[device]] [[dp]] [[value]]"
+        }
       },
       {
         "id": "tuya_dp_send_typed",
@@ -83402,7 +83503,11 @@
               "en": "Value"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Send typed Tuya DP [[device]] [[dp]] [[dp_type]] [[value]]",
+          "fr": "Envoyer DP Tuya typé [[device]] [[dp]] [[dp_type]] [[value]]"
+        }
       },
       {
         "id": "virtual_presence_force_clear_all",
@@ -103978,7 +104083,13 @@
             "name": "device",
             "filter": "driverId=presence_detector"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Force presence in room [[device]]",
+          "nl": "Aanwezigheid forceren in kamer [[device]]",
+          "fr": "Forcer la présence dans la pièce [[device]]",
+          "de": "Anwesenheit im Raum erzwingen [[device]]"
+        }
       },
       {
         "id": "virtual_presence_force_clear",
@@ -104005,7 +104116,13 @@
             "name": "device",
             "filter": "driverId=presence_detector"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Clear presence in room [[device]]",
+          "nl": "Aanwezigheid wissen in kamer [[device]]",
+          "fr": "Effacer la présence dans la pièce [[device]]",
+          "de": "Anwesenheit im Raum löschen [[device]]"
+        }
       },
       {
         "id": "presence_sensor_ceiling_turn_on",

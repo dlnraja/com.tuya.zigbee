@@ -98,5 +98,8 @@
         }
       ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Start smooth transition [[device]] [[capability]] [[from_value]] [[to_value]] [[duration_seconds]] [[easing]]"
+  }
 }

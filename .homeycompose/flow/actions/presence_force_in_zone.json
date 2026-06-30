@@ -10,7 +10,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driver_id=presence_detector"
+      "filter": "driverId=presence_detector"
     },
     {
       "name": "force_state",
@@ -49,5 +49,8 @@
         "en": "New state"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Force presence in zone [[force_state]]"
+  }
 }
