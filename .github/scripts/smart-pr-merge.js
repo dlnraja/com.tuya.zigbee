@@ -87,6 +87,14 @@ function abortMergeQuietly() {
   git('merge --abort');
 }
 
+function restoreBaseBranchQuietly() {
+  abortMergeQuietly();
+  git('restore --staged .');
+  git('restore .');
+  git('fetch origin master');
+  git('checkout -B master origin/master');
+}
+
 function verifyIntegrated(prNumber, prData) {
   if (!prData.headRefOid) {
     throw new Error(`PR #${prNumber} has no headRefOid; refusing to report a merge without verification`);
@@ -570,8 +578,7 @@ async function processPR(prNumber) {
         closePR(prNumber, prData, cats, risk, reasons, 'conflict-resolved', conflict.files);
         return true;
       } else {
-        abortMergeQuietly();
-        git('reset --hard origin/master');
+        restoreBaseBranchQuietly();
         log(`  Validation failed or risk too high (${risk}/10), labeling for review`);
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
         gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Tentative de résolution automatique des conflits**\n\nLe merge a été tenté mais la validation a échoué ou le risque est trop élevé (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vérifier manuellement avant de fusionner.\n\n_🤖 Smart PR Auto-Merge_"`);
@@ -605,8 +612,7 @@ async function processPR(prNumber) {
         closePR(prNumber, prData, cats, risk, reasons, 'clean');
         return true;
       } else {
-        abortMergeQuietly();
-        git('reset --hard origin/master');
+        restoreBaseBranchQuietly();
         log('  Validation failed, requesting review');
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review"`);
         gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Validation échouée**\n\nLe merge a été tenté mais la validation du code a échoué. Vérifiez les erreurs de syntaxe dans les drivers.\n\nChecks: ${validation.checks.join(' | ')}\n\n_🤖 Smart PR Auto-Merge_"`);
@@ -662,8 +668,7 @@ async function main() {
         const result = await processPR(pr.number);
         if (result) merged = true;
         // Reset to master between PRs
-        git('checkout master');
-        git('reset --hard origin/master');
+        restoreBaseBranchQuietly();
       }
     }
   } else {

@@ -63,6 +63,16 @@ function assertRuntimeFingerprint(file, driverId, humidityCapability) {
   }
 }
 
+function assertRuntimeFingerprintEntry(file, manufacturer, driverId) {
+  const fingerprints = maybeReadJson(file);
+  if (!fingerprints) return;
+
+  const entry = fingerprints[manufacturer];
+  assert(entry, `${file} missing ${manufacturer}`);
+  assert.strictEqual(entry.driverId, driverId, `${file} must route ${manufacturer} to ${driverId}`);
+  assert.strictEqual(entry.powerSource, 'battery', `${manufacturer} must stay battery-powered`);
+}
+
 describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
   it('pairs the myd45weu soil sensors only with the soil driver', () => {
     const soilDriverId = findPrimarySoilDriver();
@@ -84,6 +94,33 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
         assert(!includesCI(source.zigbee?.manufacturerName, '_TZE200_myd45weu'), `${wrongDriverId} must not claim _TZE200_myd45weu`);
       }
     }
+  });
+
+  it('routes issue #428 _TZE284_0ints6wl to soil_sensor, not climate_sensor', () => {
+    const reportedVariants = ['_tze284_0ints6wl', '_TZE284_0ints6wl', '_TZE284_0INTS6WL'];
+
+    for (const source of [driverCompose('soil_sensor'), appDriver('soil_sensor')]) {
+      for (const manufacturer of reportedVariants) {
+        assert(includesCI(source.zigbee.manufacturerName, manufacturer), `soil_sensor must claim ${manufacturer}`);
+      }
+      assert(includesCI(source.zigbee.productId, 'TS0601'));
+      assert(source.capabilities.includes('measure_humidity.soil'), 'soil_sensor must expose soil moisture');
+      assert(source.capabilities.includes('measure_ec'), 'soil_sensor must expose EC');
+    }
+
+    for (const source of [driverCompose('climate_sensor'), appDriver('climate_sensor')]) {
+      for (const manufacturer of reportedVariants) {
+        assert(!includesCI(source.zigbee?.manufacturerName, manufacturer), `climate_sensor must not claim ${manufacturer}`);
+      }
+    }
+
+    assertRuntimeFingerprintEntry('lib/tuya/fingerprints.json', '_TZE284_0ints6wl', 'soil_sensor');
+    assertRuntimeFingerprintEntry('data/fingerprints.json', '_TZE284_0ints6wl', 'soil_sensor');
+
+    const DeviceFingerprintDB = require('../../lib/DeviceFingerprintDB');
+    const profile = DeviceFingerprintDB.lookup('_TZE284_0ints6wl', 'TS0601');
+    assert(profile, '_TZE284_0ints6wl must have a runtime fingerprint');
+    assert.strictEqual(profile.driver, 'soil_sensor');
   });
 
   it('keeps runtime fingerprints and DP meanings aligned with the soil profile', () => {

@@ -92,5 +92,13 @@
         "capability": "measure_battery"
       }
     }
+  },
+  "_TZE284_0ints6wl": {
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
   }
 }
