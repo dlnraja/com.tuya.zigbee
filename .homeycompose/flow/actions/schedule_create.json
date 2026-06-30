@@ -69,5 +69,8 @@
         "en": "Created schedule ID"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Create schedule [[device]] [[schedule_name]] [[capability]] [[capability_value]] [[cron_expression]] [[interval_minutes]]"
+  }
 }

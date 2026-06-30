@@ -39,5 +39,11 @@
       "max": 1440,
       "step": 1
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Retrieve historical capability value [[device]] [[capability]] [[minutes_ago]]",
+    "nl": "Historische capaciteitswaarde ophalen [[device]] [[capability]] [[minutes_ago]]",
+    "de": "Historischen Fähigkeitswert abrufen [[device]] [[capability]] [[minutes_ago]]",
+    "fr": "Récupérer la valeur historique de la capacité [[device]] [[capability]] [[minutes_ago]]"
+  }
 }
