@@ -211,19 +211,33 @@ class Button4GangDevice extends ButtonDevice {
    * triggers the flow card directly.
    */
   async _triggerButton4Gang(button, pressType) {
-    // Use mixin's trigger if available
-    if (typeof this._triggerPhysicalFlow === 'function') {
-      this._triggerPhysicalFlow(button, pressType);
+    const btn = Math.max(1, Math.min(4, Number(button) || 1));
+    const type = ['single', 'double', 'long', 'multi', 'release'].includes(pressType)
+      ? pressType
+      : resolvePressType(pressType, '4G');
+    const count = type === 'multi' ? 3 : type === 'double' ? 2 : 1;
+
+    if (typeof this.triggerButtonPress === 'function') {
+      await this.triggerButtonPress(btn, type, count, { source: 'physical' });
       return;
     }
 
     // Fallback: trigger flow card directly
     try {
       const driverId = this.driver?.id || 'button_wireless_4';
-      const cardId = `${driverId}_button_4gang_button_${pressType === 'single' ? 'pressed' : pressType === 'double' ? 'double_press' : 'long_press'}`;
+      const suffix = type === 'single'
+        ? 'button_pressed'
+        : type === 'double'
+          ? 'button_double_press'
+          : type === 'multi'
+            ? 'button_multi_press'
+            : type === 'release'
+              ? 'button_release'
+              : 'button_long_press';
+      const cardId = `${driverId}_button_4gang_${suffix}`;
       const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
       if (trigger) {
-        await trigger.trigger(this, { button, pressType });
+        await trigger.trigger(this, { button: String(btn), pressType: type, count }, { button: String(btn), count });
       }
     } catch (e) {
       this.log(`[E000-4G] Flow trigger error: ${e.message}`);
