@@ -51,11 +51,17 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   /**
    * Filter physical button triggers to only process the gang assigned to this device.
    */
-  triggerButtonPress(button, type = 'single', options = {}) {
+  triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
     if (this._gangNumber !== undefined && button !== this._gangNumber) {
       return; // Ignore events for other gangs
     }
-    return super.triggerButtonPress(button, type, options);
+    const tokens = typeof countOrOptions === 'number'
+      ? { clicks: countOrOptions }
+      : { ...(countOrOptions || {}) };
+    if (options?.source) {
+      tokens.source = options.source;
+    }
+    return this._triggerPhysicalFlow(button, type, { ...tokens, _internalTrigger: true });
   }
 
   /**
