@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T00:38:04.532Z",
+  "timestamp": "2026-06-30T01:21:19.851Z",
   "totalFiles": 0,
   "totalFixes": 938,
   "rules": {
@@ -120,7 +120,7 @@
         },
         {
           "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 1242: getDeviceTriggerCard without try-catch"
+          "detail": "Line 1311: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
