@@ -468,7 +468,7 @@ async function processPR(prNumber) {
   log(`\n### Processing PR #${prNumber}`);
 
   // Get PR info
-  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,body,files,labels,state,mergeable`);
+  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,body,files,labels,state,isDraft,mergeable`);
   if (!prJson) {
     log(`  Could not fetch PR #${prNumber}`);
     return false;
@@ -479,6 +479,11 @@ async function processPR(prNumber) {
 
   if (prData.state !== 'OPEN') {
     log(`  PR #${prNumber} is ${prData.state}, skipping`);
+    return false;
+  }
+
+  if (prData.isDraft) {
+    log(`  PR #${prNumber} is draft; validating metadata only and skipping auto-merge`);
     return false;
   }
 
