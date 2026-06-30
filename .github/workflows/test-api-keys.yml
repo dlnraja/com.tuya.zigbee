@@ -2,7 +2,7 @@ name: "Test AI API Keys Health"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0' # Weekly on Sunday
+    - cron: '15 0 * * 0' # Weekly on Sunday, staggered after auto-repair
 
 defaults:
   run:

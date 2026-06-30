@@ -59,9 +59,19 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /stepWithOnOff/);
     assert.match(source, /attr\.presentValue/);
     assert.match(source, /_emitCommand/);
+    assert.match(source, /this\.cleanup\(\{ silent: true \}\)/);
+    assert.match(source, /epId === 'getDeviceEndpoint'/);
+    assert.match(source, /typeof cluster\?\.removeListener === 'function'/);
+    assert(
+      source.indexOf("if (lower.includes('on')) return 'on';") <
+      source.indexOf("if (lower.includes('off')) return 'off';"),
+      'onOff commands must classify commandOnWithTimedOff as on before checking off'
+    );
     assert.match(base, /multistateInput/);
     assert.match(base, /resolvePressType\(sceneId, 'CMD-scene'\)/);
     assert.match(base, /resolvePressType\(value, 'CMD-multistate'\)/);
+    assert.match(base, /try \{\s+const flowTrigger = this\.homey\?\.flow\?\.getDeviceTriggerCard/);
+    assert.match(base, /rawLower\.includes\('on'\)[\s\S]*rawLower\.includes\('off'\)/);
   });
 
   it('keeps wall-switch button filters away from missing super trigger handlers', function() {
