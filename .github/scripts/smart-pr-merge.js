@@ -522,7 +522,7 @@ async function processPR(prNumber) {
   log(`\n### Processing PR #${prNumber}`);
 
   // Get PR info
-  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,headRefOid,body,files,labels,state,mergeable`);
+  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,headRefOid,body,files,labels,state,isDraft,mergeable`);
   if (!prJson) {
     log(`  Could not fetch PR #${prNumber}`);
     return false;
@@ -533,6 +533,11 @@ async function processPR(prNumber) {
 
   if (prData.state !== 'OPEN') {
     log(`  PR #${prNumber} is ${prData.state}, skipping`);
+    return false;
+  }
+
+  if (prData.isDraft) {
+    log(`  PR #${prNumber} is draft; validating metadata only and skipping auto-merge`);
     return false;
   }
 
@@ -608,7 +613,15 @@ async function processPR(prNumber) {
 
       if (validation.valid) {
         abortMergeQuietly();
-        ghRequired(`pr merge ${prNumber} -R ${REPO} --merge --delete-branch --subject ${sh(`Merge PR #${prNumber}: ${prData.title}`)}`);
+        try {
+          ghRequired(`pr merge ${prNumber} -R ${REPO} --merge --delete-branch --subject ${sh(`Merge PR #${prNumber}: ${prData.title}`)}`);
+        } catch (e) {
+          if (/still a draft/i.test(e.message)) {
+            log(`  PR #${prNumber} became draft during merge; validation passed, skipping auto-merge`);
+            return false;
+          }
+          throw e;
+        }
         closePR(prNumber, prData, cats, risk, reasons, 'clean');
         return true;
       } else {
