@@ -84,6 +84,9 @@ jobs:
       - name: Validate (npx)
         run: npx homey app validate --level publish
 
+      - name: Normalize generated Flow manifest
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
+
       - name: Sanitize generated manifest after validation
         run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
 
