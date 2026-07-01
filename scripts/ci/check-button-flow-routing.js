@@ -164,6 +164,52 @@ function validateKnownTs0041Routing() {
   }
 }
 
+function validateKnownTs0044Routing() {
+  const fourButton = loadDriverCompose('button_wireless_4');
+  const switchOneGang = loadDriverCompose('switch_1gang');
+  const handheld = loadDriverCompose('remote_button_wireless_handheld');
+  if (!fourButton || !switchOneGang || !handheld) return;
+
+  const fourButtonManufacturers = new Set(getManufacturerNames(fourButton));
+  const switchManufacturers = new Set(getManufacturerNames(switchOneGang));
+  const handheldManufacturers = new Set(getManufacturerNames(handheld));
+  const handheldProducts = new Set(getProductIds(handheld));
+  const forumManufacturers = [
+    '_tz3000_u3nv1jwk',
+    '_TZ3000_u3nv1jwk',
+    '_TZ3000_U3NV1JWK',
+  ];
+
+  for (const manufacturerName of forumManufacturers) {
+    if (!fourButtonManufacturers.has(manufacturerName)) {
+      addError('button_wireless_4', 'Forum TS0044 manufacturer missing from E000-capable 4-button driver', {
+        manufacturerName,
+      });
+    }
+    if (switchManufacturers.has(manufacturerName)) {
+      addError('switch_1gang', 'Forum TS0044 manufacturer is routed to switch_1gang instead of button_wireless_4', {
+        manufacturerName,
+      });
+    }
+    if (handheldManufacturers.has(manufacturerName)) {
+      addError('remote_button_wireless_handheld', 'Forum TS0044 manufacturer is routed to legacy handheld driver instead of button_wireless_4', {
+        manufacturerName,
+      });
+    }
+  }
+
+  if (handheldProducts.has('TS0044')) {
+    addError('remote_button_wireless_handheld', 'Legacy handheld driver must not claim generic TS0044 without an exact manufacturer');
+  }
+
+  if (
+    !handheldManufacturers.has('_disabled_remote_button_wireless_handheld_needs_exact_fingerprint') ||
+    !handheldProducts.has('DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD')
+  ) {
+    addError('remote_button_wireless_handheld', 'Legacy handheld driver lost its non-matchable manifest-valid sentinel');
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -174,6 +220,7 @@ function run() {
   }
 
   validateKnownTs0041Routing();
+  validateKnownTs0044Routing();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
