@@ -67128,7 +67128,10 @@
           "_TZ3000_XABCKQ1V",
           "_tz3000_u3nv1jwk",
           "_TZ3000_u3nv1jwk",
-          "_TZ3000_U3NV1JWK"
+          "_TZ3000_U3NV1JWK",
+          "_tz3000_rco1yzb1",
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_RCO1YZB1"
         ],
         "productId": [
           "TS0044",
@@ -67157,6 +67160,7 @@
               1,
               5,
               6,
+              8,
               18,
               57344
             ]
@@ -67165,6 +67169,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -67173,6 +67178,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -67181,6 +67187,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -105473,9 +105480,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_rco1yzb1",
-          "_TZ3000_rco1yzb1",
-          "_TZ3000_RCO1YZB1",
           "_tz3000_yirp2pgd",
           "_TZ3000_yirp2pgd",
           "_TZ3000_YIRP2PGD"

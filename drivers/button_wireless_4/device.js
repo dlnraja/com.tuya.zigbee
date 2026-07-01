@@ -4,7 +4,10 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 /**
- * Button4GangDevice - v10.1.1 TS0044/TS004F E000 Fix
+ * Button4GangDevice - v10.1.2 TS0044/TS004F E000/LevelControl Fix
+ *
+ * FIX v10.1.2: Added LevelControl command listeners for TS004F remotes that
+ *   emit step/move/stop instead of Scenes or proprietary E000 commands.
  *
  * FIX v10.1.1: Added E000 BoundCluster + direct E000 cluster listeners + Tuya DP
  *   button decoding for TS0044 4-button remotes (e.g. _TZ3000_u3nv1jwk).
@@ -24,12 +27,13 @@ class Button4GangDevice extends ButtonDevice {
 
     await Promise.resolve().then(() => super.onNodeInit({ zclNode })).catch(err => this.error('[INIT] Error:', err.message));
 
-    // v10.1.1: E000 cluster detection for TS0044/TS004F devices
+    // v10.1.2: E000 + LevelControl cluster detection for TS0044/TS004F devices
     await this._setupE000Detection(zclNode);
+    await this._setupLevelControlDetection(zclNode);
     await this._setupTuyaDPButtonDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
-    this.log('[BUTTON_WIRELESS_4] v10.1.1 initialized with E000 + DP support');
+    this.log('[BUTTON_WIRELESS_4] v10.1.2 initialized with E000 + LevelControl + DP support');
   }
 
   /**
@@ -120,6 +124,72 @@ class Button4GangDevice extends ButtonDevice {
       }
     } catch (e) {
       this.log(`[E000-4G] BoundCluster not available: ${e.message}`);
+    }
+  }
+
+  /**
+   * v10.1.2: Setup LevelControl (0x0008) detection
+   * Z2M/ZHA/deCONZ/Hubitat TS004F variants report arrow/dimmer-style actions as
+   * step/move/stop commands on endpoints 1-4. Map them back to Homey button flows.
+   */
+  async _setupLevelControlDetection(zclNode) {
+    const eventMap = [
+      { names: ['commandStep', 'commandStepWithOnOff', 'step', 'stepWithOnOff'], pressType: 'single' },
+      { names: ['commandMove', 'commandMoveWithOnOff', 'move', 'moveWithOnOff'], pressType: 'long' },
+      { names: ['commandStop', 'commandStopWithOnOff', 'stop', 'stopWithOnOff'], pressType: 'release' },
+      { names: ['commandMoveToLevel', 'commandMoveToLevelWithOnOff', 'moveToLevel', 'moveToLevelWithOnOff'], pressType: 'single' },
+    ];
+
+    for (let ep = 1; ep <= 4; ep++) {
+      const endpoint = zclNode?.endpoints?.[ep];
+      const level = endpoint?.clusters?.levelControl ||
+        endpoint?.clusters?.genLevelCtrl ||
+        endpoint?.clusters?.[8] ||
+        endpoint?.clusters?.['8'];
+
+      if (!level || typeof level.on !== 'function') continue;
+
+      const trigger = async (pressType, payload = {}, source = 'level') => {
+        const direction = payload?.stepMode === 0 || payload?.moveMode === 0
+          ? 'up'
+          : payload?.stepMode === 1 || payload?.moveMode === 1
+            ? 'down'
+            : 'unknown';
+        const key = `level_${pressType}_${direction}`;
+        if (this._isDeduped(ep, key)) return;
+        this.log(`[LEVEL-4G] EP${ep} ${source} ${direction} -> Button ${ep} ${pressType}`);
+        await this._triggerButton4Gang(ep, pressType);
+      };
+
+      for (const { names, pressType } of eventMap) {
+        for (const eventName of names) {
+          try {
+            level.on(eventName, async (payload = {}) => trigger(pressType, payload, eventName));
+          } catch (e) {
+            // Some SDK cluster shims reject unknown command listener names.
+          }
+        }
+      }
+
+      try {
+        level.on('command', async (commandName, payload = {}) => {
+          const name = String(commandName || '').toLowerCase();
+          if (name.includes('stop')) return trigger('release', payload, commandName);
+          if (name.includes('move')) return trigger('long', payload, commandName);
+          if (name.includes('step')) return trigger('single', payload, commandName);
+          return null;
+        });
+      } catch (e) {
+        // Optional generic listener; direct command listeners above remain active.
+      }
+
+      try {
+        if (typeof level.bind === 'function') await level.bind();
+      } catch (e) {
+        this.log(`[LEVEL-4G] EP${ep} bind skipped: ${e.message}`);
+      }
+
+      this.log(`[LEVEL-4G] EP${ep} LevelControl detection ready`);
     }
   }
 
@@ -231,7 +301,9 @@ class Button4GangDevice extends ButtonDevice {
           ? 'button_double_press'
           : type === 'multi'
             ? 'button_multi_press'
-            : 'button_long_press';
+            : type === 'release'
+              ? 'button_release'
+              : 'button_long_press';
       const cardId = `${driverId}_button_4gang_${suffix}`;
       const trigger = this.homey?.flow?.getDeviceTriggerCard(cardId);
       if (trigger) {

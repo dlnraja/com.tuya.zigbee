@@ -52,6 +52,7 @@
     "fix:auto": "node scripts/validation/auto-fix-common-issues.js",
     "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive",
     "security:diagnostics": "node .github/scripts/privacy-redactor.js .github/state/diagnostics-report.json .github/state/diagnostics-crossref.yml .github/state/gmail-token-health.json .github/state/homey-device-report.json .github/state/dashboard-monitor-report.json .github/state/version-intelligence-report.json screenshots/full-diag-report.json diagnostics",
+    "check:diag-history": "node scripts/ci/diagnostic-history-gate.js --json",
     "generate-driver": "node .github/scripts/generate-driver.js",
     "check:timer-context": "node scripts/validation/check-homey-timer-context.js",
     "check:button-flows": "node scripts/ci/check-button-flow-routing.js",

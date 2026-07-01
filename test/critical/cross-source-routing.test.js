@@ -123,16 +123,61 @@ describe('stable cross-source routing regressions', function() {
     for (const source of [driverCompose('smart_knob_rotary'), appDriver('smart_knob_rotary')]) {
       assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_qja6nq5z');
       assertIncludesAll(source.zigbee.manufacturerName, ['_tz3000_qja6nq5z', '_TZ3000_qja6nq5z', '_TZ3000_QJA6NQ5Z']);
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_gwkzibhs');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_ugi8ky6u');
     }
 
     for (const source of [driverCompose('button_wireless_4'), appDriver('button_wireless_4')]) {
       assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_kfu8zapd');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_xabckq1v');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_czuyt8lz');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_b3mgfu0d');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_rco1yzb1');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_abrsvsou');
+      assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_4fjiwweb');
       assertNotIncludesCI(source.zigbee.manufacturerName, '_TZ3000_qja6nq5z');
+    }
+
+    for (const source of [driverCompose('smart_remote_1_button'), appDriver('smart_remote_1_button')]) {
+      assertNotIncludesCI(source.zigbee.manufacturerName, '_TZ3000_rco1yzb1');
+    }
+
+    const DeviceFingerprintDB = require('../../lib/DeviceFingerprintDB');
+    for (const manufacturer of ['_TZ3000_kfu8zapd', '_TZ3000_xabckq1v', '_TZ3000_czuyt8lz', '_TZ3000_b3mgfu0d', '_TZ3000_rco1yzb1']) {
+      const profile = DeviceFingerprintDB.lookup(manufacturer, 'TS004F');
+      assert.strictEqual(profile.driver, 'button_wireless_4', `${manufacturer} must use button_wireless_4 for TS004F`);
+    }
+    for (const manufacturer of ['_TZ3000_qja6nq5z', '_TZ3000_gwkzibhs', '_TZ3000_ugi8ky6u']) {
+      const profile = DeviceFingerprintDB.lookup(manufacturer, 'TS004F');
+      assert.strictEqual(profile.driver, 'smart_knob_rotary', `${manufacturer} must use smart_knob_rotary for TS004F`);
     }
   });
 
+  it('keeps TS004F LevelControl physical actions wired for 4-button remotes', () => {
+    for (const [endpointId, endpoint] of Object.entries(driverCompose('button_wireless_4').zigbee.endpoints)) {
+      assert(endpoint.clusters.includes(8), `endpoint ${endpointId} must include LevelControl cluster 0x0008`);
+    }
+
+    const source = fs.readFileSync(path.join(ROOT, 'drivers/button_wireless_4/device.js'), 'utf8');
+    assert.match(source, /_setupLevelControlDetection/);
+    assert.match(source, /commandStep/);
+    assert.match(source, /commandMove/);
+    assert.match(source, /commandStop/);
+    assert.match(source, /button_release/);
+  });
+
   it('keeps TS004x ZCL battery value 200 as 100 percent for known remotes', () => {
-    for (const manufacturer of ['_TZ3000_b4awzgct', '_TZ3000_yj6k7vfo', '_TZ3000_kfu8zapd', '_TZ3000_qja6nq5z']) {
+    for (const manufacturer of [
+      '_TZ3000_b4awzgct',
+      '_TZ3000_yj6k7vfo',
+      '_TZ3000_kfu8zapd',
+      '_TZ3000_xabckq1v',
+      '_TZ3000_czuyt8lz',
+      '_TZ3000_b3mgfu0d',
+      '_TZ3000_rco1yzb1',
+      '_TZ3000_qja6nq5z',
+      '_TZ3000_gwkzibhs',
+    ]) {
       const profile = UnifiedBatteryHandler.lookupBatteryProfile(manufacturer, 'TS004F');
       assert.strictEqual(profile.zcl200IsPercent, true, `${manufacturer} should treat ZCL 200 as 100%`);
       assert.strictEqual(

@@ -1840,12 +1840,27 @@
     ]
   },
   "_TZ3000_gwkzibhs": {
-    "driverId": "power_meter",
-    "type": "energy_meter",
-    "powerSource": "mains",
+    "driverId": "smart_knob_rotary",
+    "type": "button",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
     "modelIds": [
-      "TS0601"
-    ]
+      "TS004F"
+    ],
+    "capabilities": [
+      "measure_battery"
+    ],
+    "clusters": [
+      0,
+      1,
+      6,
+      8,
+      4096
+    ],
+    "endpoints": [
+      1
+    ],
+    "notes": "TS004F rotary knob routed away from generic button/switch drivers"
   },
   "_TZ3000_gzvniqjb": {
     "driverId": "generic_tuya",
@@ -3158,12 +3173,27 @@
     ]
   },
   "_TZ3000_qja6nq5z": {
-    "driverId": "power_meter",
-    "type": "energy_meter",
-    "powerSource": "mains",
+    "driverId": "smart_knob_rotary",
+    "type": "button",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
     "modelIds": [
-      "TS0601"
-    ]
+      "TS004F"
+    ],
+    "capabilities": [
+      "measure_battery"
+    ],
+    "clusters": [
+      0,
+      1,
+      6,
+      8,
+      4096
+    ],
+    "endpoints": [
+      1
+    ],
+    "notes": "TS004F rotary knob routed away from generic button/switch drivers"
   },
   "_TZ3000_qlai3277": {
     "driverId": "water_leak_sensor",
