@@ -62,6 +62,8 @@ jobs:
           echo "SDK3 validated"
       - name: Validate App
         run: npx homey app validate --level publish
+      - name: Normalize generated Flow manifest
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
 
   publish:
     name: "Publish to Draft"

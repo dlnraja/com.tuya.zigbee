@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "postbuild": "node scripts/maintenance/fix-large-images.js",
+    "fix:generated-flow-args": "node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json",
     "validate": "homey app validate",
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",

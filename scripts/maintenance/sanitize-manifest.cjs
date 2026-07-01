@@ -86,6 +86,32 @@ function stripDuplicateFlowCards(manifest) {
   return stripped;
 }
 
+function dedupeFlowArgs(manifest) {
+  let stripped = 0;
+  const flow = manifest.flow || {};
+  for (const type of ['triggers', 'conditions', 'actions']) {
+    const cards = flow[type];
+    if (!Array.isArray(cards)) continue;
+
+    for (const card of cards) {
+      if (!card || !Array.isArray(card.args)) continue;
+      const seen = new Set();
+      const args = [];
+      for (const arg of card.args) {
+        const name = arg && arg.name;
+        if (name && seen.has(name)) {
+          stripped++;
+          continue;
+        }
+        if (name) seen.add(name);
+        args.push(arg);
+      }
+      card.args = args;
+    }
+  }
+  return stripped;
+}
+
 function sanitizeManifestFile(manifestPath) {
   const label = path.relative(APP_ROOT, manifestPath).replace(/\\/g, '/') || manifestPath;
   if (!fs.existsSync(manifestPath)) {
@@ -114,6 +140,12 @@ function sanitizeManifestFile(manifestPath) {
   if (duplicateFlowCards > 0) {
     changes += duplicateFlowCards;
     log(`${label}: stripped ${duplicateFlowCards} duplicate-suffixed flow card(s).`);
+  }
+
+  const duplicateArgs = dedupeFlowArgs(manifest);
+  if (duplicateArgs > 0) {
+    changes += duplicateArgs;
+    log(`${label}: stripped ${duplicateArgs} duplicate generated Flow arg(s).`);
   }
 
   const isTrackedRootManifest = path.resolve(manifestPath) === path.join(APP_ROOT, 'app.json');
@@ -155,4 +187,4 @@ if (require.main === module) {
   process.exit(failures > 0 ? 1 : 0);
 }
 
-module.exports = { sanitizeManifestFile, stripDuplicateFlowCards, stripGeneratedButtonOptions };
+module.exports = { sanitizeManifestFile, stripDuplicateFlowCards, stripGeneratedButtonOptions, dedupeFlowArgs };

@@ -1,6 +1,6 @@
 # Homey Online Guidelines Reference
 
-Generated: 2026-07-01T16:27:36.671Z
+Generated: 2026-07-01T16:44:38.640Z
 
 ## Official Docs Checked
 

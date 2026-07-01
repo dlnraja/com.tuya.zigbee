@@ -20,6 +20,7 @@ const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
+require('./lib/drivers/ZigBeeDriverFlowCardPatch');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');

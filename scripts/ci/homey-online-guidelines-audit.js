@@ -8,6 +8,9 @@ const ROOT = path.resolve(__dirname, '../..');
 const APP_JSON = path.join(ROOT, 'app.json');
 const PACKAGE_JSON = path.join(ROOT, 'package.json');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
+const APP_JS = path.join(ROOT, 'app.js');
+const API_JS = path.join(ROOT, 'api.js');
+const FLOW_CARD_PATCH = 'lib/drivers/ZigBeeDriverFlowCardPatch';
 
 const DOC_SOURCES = [
   { name: 'Homey App Store Guidelines', url: 'https://apps.developer.homey.app/app-store/guidelines', freshness: 'last updated 21 days ago on 2026-07-01' },
@@ -141,6 +144,10 @@ function auditManifest(app, pkg, report) {
       pushError(report, 'APP_REQUIRED_FIELD', 'app.json', `Missing required app manifest field: ${field}`);
     }
   }
+
+  if (fs.existsSync(API_JS) && (!app.api || Object.keys(app.api).length === 0)) {
+    pushError(report, 'APP_API_SECTION_REQUIRED', 'app.json', 'api.js exists, so app.json must declare a top-level api section for Homey ManagerApi');
+  }
 }
 
 function auditDriver(driverId, driver, report) {
@@ -214,6 +221,32 @@ function auditFlows(app, report) {
   }
 }
 
+function listDriverJsFiles() {
+  if (!fs.existsSync(DRIVERS_DIR)) return [];
+  return fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
+    .filter(entry => entry.isDirectory())
+    .map(entry => path.join(DRIVERS_DIR, entry.name, 'driver.js'))
+    .filter(file => fs.existsSync(file));
+}
+
+function auditRuntimeCrashGates(report) {
+  const appJs = fs.existsSync(APP_JS) ? fs.readFileSync(APP_JS, 'utf8') : '';
+  const hasFlowCardPatch = appJs.includes(FLOW_CARD_PATCH) && fs.existsSync(path.join(ROOT, `${FLOW_CARD_PATCH}.js`));
+  const flowCardDrivers = listDriverJsFiles()
+    .filter(file => fs.readFileSync(file, 'utf8').includes('._getFlowCard('))
+    .map(file => path.relative(ROOT, file).replace(/\\/g, '/'));
+
+  if (flowCardDrivers.length > 0 && !hasFlowCardPatch) {
+    pushError(
+      report,
+      'FLOW_CARD_PATCH_REQUIRED',
+      'app.js',
+      'Drivers call _getFlowCard; app.js must load ZigBeeDriverFlowCardPatch so direct ZigBeeDriver subclasses do not crash at runtime',
+      { drivers: flowCardDrivers.slice(0, 25), total: flowCardDrivers.length }
+    );
+  }
+}
+
 function renderMarkdown(report) {
   const lines = [];
   lines.push('# Homey Online Guidelines Reference');
@@ -273,6 +306,7 @@ function main() {
   const app = readJson(APP_JSON);
   const pkg = readJson(PACKAGE_JSON);
   auditManifest(app, pkg, report);
+  auditRuntimeCrashGates(report);
 
   const drivers = collectDrivers(app, report);
   report.stats.drivers = drivers.size;
