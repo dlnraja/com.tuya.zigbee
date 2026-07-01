@@ -89,19 +89,19 @@
           "values": [
             {
               "id": "manual",
-              "label": {
+              "title": {
                 "en": "Manual"
               }
             },
             {
               "id": "program",
-              "label": {
+              "title": {
                 "en": "Program"
               }
             },
             {
               "id": "eco",
-              "label": {
+              "title": {
                 "en": "Eco"
               }
             }
@@ -132,19 +132,19 @@
           "values": [
             {
               "id": "manual",
-              "label": {
+              "title": {
                 "en": "Manual"
               }
             },
             {
               "id": "program",
-              "label": {
+              "title": {
                 "en": "Program"
               }
             },
             {
               "id": "eco",
-              "label": {
+              "title": {
                 "en": "Eco"
               }
             }

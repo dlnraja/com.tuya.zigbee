@@ -56,19 +56,19 @@
           "values": [
             {
               "id": "bool",
-              "label": {
+              "title": {
                 "en": "Boolean"
               }
             },
             {
               "id": "number",
-              "label": {
+              "title": {
                 "en": "Number"
               }
             },
             {
               "id": "string",
-              "label": {
+              "title": {
                 "en": "String"
               }
             }

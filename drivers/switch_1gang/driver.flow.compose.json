@@ -192,15 +192,15 @@
           "values": [
             {
               "id": "off",
-              "label": "Off"
+              "title": "Off"
             },
             {
               "id": "normal",
-              "label": "Normal"
+              "title": "Normal"
             },
             {
               "id": "inverted",
-              "label": "Inverted"
+              "title": "Inverted"
             }
           ],
           "title": {
@@ -224,19 +224,19 @@
           "values": [
             {
               "id": "white",
-              "label": "White"
+              "title": "White"
             },
             {
               "id": "red",
-              "label": "Red"
+              "title": "Red"
             },
             {
               "id": "blue",
-              "label": "Blue"
+              "title": "Blue"
             },
             {
               "id": "green",
-              "label": "Green"
+              "title": "Green"
             }
           ],
           "title": {
@@ -336,15 +336,15 @@
           "values": [
             {
               "id": "off",
-              "label": "Off"
+              "title": "Off"
             },
             {
               "id": "on",
-              "label": "On"
+              "title": "On"
             },
             {
               "id": "previous",
-              "label": "Previous state"
+              "title": "Previous state"
             }
           ],
           "title": {

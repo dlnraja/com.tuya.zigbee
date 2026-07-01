@@ -39,14 +39,26 @@ console.log('══════════════════════�
 console.log('  🤖 AUTO-FIX-ALL — Automated Fixes Pipeline');
 console.log('═══════════════════════════════════════════════\n');
 
-// 1. Fix sdk/sdkVersion conflict
-fixJSON('sdk/sdkVersion conflict', () => {
+// 1. Fix sdk/sdkVersion conflict. `sdk` is the canonical SDK3 field in the
+// current Homey manifest; keep it and only drop the legacy alias.
+fixJSON('sdk/sdkVersion normalization', () => {
   for (const p of ['.homeycompose/app.json', 'app.json']) {
     const fp = path.join(ROOT, p);
     if (!fs.existsSync(fp)) continue;
     const c = JSON.parse(fs.readFileSync(fp, 'utf8'));
-    if ('sdk' in c) {
-      delete c.sdk;
+    let changed = false;
+    if ('sdkVersion' in c && !('sdk' in c)) {
+      c.sdk = c.sdkVersion;
+      delete c.sdkVersion;
+      changed = true;
+    } else if ('sdkVersion' in c && 'sdk' in c) {
+      delete c.sdkVersion;
+      changed = true;
+    } else if (!('sdk' in c) && !('sdkVersion' in c)) {
+      c.sdk = 3;
+      changed = true;
+    }
+    if (changed) {
       fs.writeFileSync(fp, JSON.stringify(c, null, 2) + '\n', 'utf8');
     }
   }

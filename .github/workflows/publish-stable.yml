@@ -42,6 +42,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
+      - name: Homey online guidelines / app-store audit
+        run: npm run check:homey-guidelines
       - name: Fingerprint catalog / device-name audit
         run: npm run check:fingerprint-catalog
       - name: Button and TS004F flow routing gate
@@ -52,7 +54,7 @@ jobs:
         run: npm run check:diag-history
       - name: SDK3 Validation
         run: |
-          SDK=$(node -p "require('./app.json').sdkVersion")
+          SDK=$(node -p "require('./app.json').sdk || require('./app.json').sdkVersion")
           if [ "$SDK" != "3" ]; then
             echo "::error::Invalid SDK: $SDK (expected 3)"
             exit 1
@@ -183,6 +185,7 @@ jobs:
 
           run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
           run_diag 60 npm run check:fingerprint-catalog
+          run_diag 60 npm run check:homey-guidelines
           run_diag 60 npm run check:button-flows
           run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
           run_diag 120 node .github/scripts/homey-device-diagnostics.js

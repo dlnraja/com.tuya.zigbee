@@ -317,7 +317,7 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Always Off",
                 "fr": "Toujours éteint",
                 "nl": "Altijd uit",
@@ -326,7 +326,7 @@
             },
             {
               "id": "relay",
-              "label": {
+              "title": {
                 "en": "Follow Relay",
                 "fr": "Suivre relais",
                 "nl": "Volg relais",
@@ -335,7 +335,7 @@
             },
             {
               "id": "inverted",
-              "label": {
+              "title": {
                 "en": "Inverted",
                 "fr": "Inversé",
                 "nl": "Omgekeerd",
@@ -344,7 +344,7 @@
             },
             {
               "id": "always_on",
-              "label": {
+              "title": {
                 "en": "Always On",
                 "fr": "Toujours allumé",
                 "nl": "Altijd aan",
@@ -385,7 +385,7 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Start OFF",
                 "fr": "Démarrer éteint",
                 "nl": "Start UIT",
@@ -394,7 +394,7 @@
             },
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "Start ON",
                 "fr": "Démarrer allumé",
                 "nl": "Start AAN",
@@ -403,7 +403,7 @@
             },
             {
               "id": "memory",
-              "label": {
+              "title": {
                 "en": "Remember state",
                 "fr": "Mémoriser état",
                 "nl": "Onthoud staat",
