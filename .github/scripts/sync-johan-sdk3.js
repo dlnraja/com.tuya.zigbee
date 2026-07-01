@@ -7,7 +7,35 @@ const STATE=path.join(__dirname,'..','state');
 const REPORT=path.join(STATE,'johan-sdk3-sync.json');
 fs.mkdirSync(STATE,{recursive:true});
 
+const GENERIC_PRODUCT_IDS = new Set([
+  'TS0001', 'TS0002', 'TS0003', 'TS0004',
+  'TS0011', 'TS0012', 'TS0013', 'TS0014',
+  'TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS0046', 'TS004F',
+  'TS011F', 'TS0121', 'TS0201', 'TS0202', 'TS0203', 'TS0501A',
+  'TS0601', 'TS110E', 'TS130F',
+]);
+
 function run(cmd,cwd){try{return ex(cmd,{encoding:'utf8',cwd:cwd||ROOT,timeout:60000}).trim();}catch(e){return '';}}
+
+function isLikelyManufacturerName(value){
+  const v=String(value||'').trim();
+  if(!v||/dummy|needs_device_assignment|xxxx/i.test(v))return false;
+  return /^_(?:TZ|TY|TYST|TYZB|TZB|TZE200|TZE204|TZE210|TZE284|TZE608|TZ3000|TZ3002|TZ3008|TZ300A|TZ3040|TZ3210|TZ3218|TZ321C|TZ3290)[A-Za-z0-9_]+$/.test(v)
+    || /^TUYATEC-[A-Za-z0-9]+$/i.test(v)
+    || /^LUMI\.[A-Za-z0-9_.-]+$/i.test(v)
+    || /^OWON$/i.test(v);
+}
+
+function isLikelyProductId(value){
+  const v=String(value||'').trim();
+  if(!v||isLikelyManufacturerName(v)||/dummy|xxxx|needs_device_assignment/i.test(v))return false;
+  return /^(?:TS\d{4}[A-Z]?|TS\d{4}_[A-Za-z0-9_.-]+|RH\d+|TY\d+|ZB[A-Za-z0-9_.-]+|ZBP[A-Za-z0-9_.-]+|ZBEACON|SM\d+|LUMI\.[A-Za-z0-9_.-]+)$/i.test(v);
+}
+
+function isSpecificProductId(value){
+  const v=String(value||'').trim();
+  return isLikelyProductId(v)&&!GENERIC_PRODUCT_IDS.has(v.toUpperCase());
+}
 
 function loadOurFPs(){
   const fps=new Map();
@@ -44,16 +72,27 @@ function loadJohanFPs(){
 
 function findBestDriver(fp,johanDriver,johanPids){
   const ddir=path.join(ROOT,'drivers');
+  const sameDriverFile=path.join(ddir,johanDriver,'driver.compose.json');
+  if(fs.existsSync(sameDriverFile)){
+    try{
+      return {driver:johanDriver,file:sameDriverFile,json:JSON.parse(fs.readFileSync(sameDriverFile,'utf8')),reason:'same_driver'};
+    }catch{}
+  }
+
+  const specificPids=(johanPids||[]).filter(isSpecificProductId);
+  if(!specificPids.length)return null;
+
+  const matches=[];
   for(const d of fs.readdirSync(ddir)){
     const cf=path.join(ddir,d,'driver.compose.json');
     if(!fs.existsSync(cf))continue;
     try{
       const r=JSON.parse(fs.readFileSync(cf,'utf8'));
       const pids=r.zigbee?.productId||[];
-      if(johanPids.some(p=>pids.includes(p)))return {driver:d,file:cf,json:r};
+      if(specificPids.some(p=>pids.includes(p)))matches.push({driver:d,file:cf,json:r,reason:'specific_pid'});
     }catch{}
   }
-  return null;
+  return matches.length===1?matches[0]:null;
 }
 
 function addFPtoDriver(driverPath,json,fp,newPids){
@@ -62,7 +101,7 @@ function addFPtoDriver(driverPath,json,fp,newPids){
     json.zigbee.manufacturerName.push(fp);
     changed=true;
   }
-  for(const pid of newPids){
+  for(const pid of (newPids||[]).filter(isLikelyProductId)){
     if(!json.zigbee.productId.includes(pid)){
       json.zigbee.productId.push(pid);
       changed=true;
@@ -239,16 +278,22 @@ async function main(){
   // Step 3: Auto-add safe missing FPs
   console.log('Step 3: Auto-adding safe FPs...');
   for(const item of missing){
+    if(!isLikelyManufacturerName(item.fp)){
+      console.log('  SKIP '+item.fp+' (invalid or placeholder manufacturerName)');
+      report.skipped.push({fp:item.fp,johanDriver:item.driver,pids:item.pids,reason:'invalid_manufacturer'});
+      continue;
+    }
     const match=findBestDriver(item.fp,item.driver,item.pids);
     if(match){
-      const ok=addFPtoDriver(match.file,match.json,item.fp,item.pids.filter(p=>!match.json.zigbee.productId.includes(p)));
+      const validNewPids=item.pids.filter(p=>isLikelyProductId(p)&&!match.json.zigbee.productId.includes(p));
+      const ok=addFPtoDriver(match.file,match.json,item.fp,validNewPids);
       if(ok){
-        console.log('  ADDED '+item.fp+' -> '+match.driver);
-        report.added.push({fp:item.fp,driver:match.driver,pids:item.pids});
+        console.log('  ADDED '+item.fp+' -> '+match.driver+' ('+match.reason+')');
+        report.added.push({fp:item.fp,driver:match.driver,pids:item.pids,addedPids:validNewPids,reason:match.reason});
       }
     }else{
-      console.log('  SKIP '+item.fp+' (no matching driver for PIDs: '+item.pids.join(',')+')');
-      report.skipped.push({fp:item.fp,johanDriver:item.driver,pids:item.pids});
+      console.log('  SKIP '+item.fp+' (no exact driver or specific PID match; PIDs: '+item.pids.join(',')+')');
+      report.skipped.push({fp:item.fp,johanDriver:item.driver,pids:item.pids,reason:'no_exact_driver_or_specific_pid'});
     }
   }
 
