@@ -43,6 +43,45 @@ const ARG_TYPES = new Set([
   'text',
 ]);
 
+const REQUIRED_DRIVER_FILES = [
+  'driver.compose.json',
+  'driver.js',
+  'device.js',
+  path.join('assets', 'icon.svg'),
+  path.join('assets', 'images', 'small.png'),
+  path.join('assets', 'images', 'large.png'),
+];
+
+const CLASS_PRIMARY_CAPABILITY_RULES = {
+  button: [/^button(?:\.|$)/, /^measure_battery$/, /^alarm_battery$/],
+  curtain: [/^windowcoverings_/, /^onoff(?:[._]|$)/, /^dim(?:[._]|$)/],
+  fan: [/^onoff(?:[._]|$)/, /^dim(?:[._]|$)/, /^fan_/],
+  garagedoor: [/^garagedoor_/, /^onoff(?:[._]|$)/],
+  heater: [/^onoff(?:[._]|$)/, /^target_temperature$/, /^thermostat_mode$/, /^measure_temperature$/],
+  light: [/^onoff(?:[._]|$)/, /^dim(?:[._]|$)/, /^light_/],
+  lock: [/^locked(?:[._]|$)/],
+  remote: [/^button(?:\.|$)/],
+  socket: [/^onoff(?:[._]|$)/, /^measure_power$/, /^meter_power$/],
+  speaker: [/^onoff(?:[._]|$)/, /^volume_/],
+  thermostat: [/^target_temperature$/, /^thermostat_mode$/, /^measure_temperature$/],
+  vacuumcleaner: [/^vacuumcleaner_/],
+  windowcoverings: [/^windowcoverings_/],
+};
+
+const BUTTON_FLOW_TRIGGERS = [
+  'button_pressed',
+  'button_double_press',
+  'button_long_press',
+  'button_release',
+  'button_multi_press',
+];
+
+const EXTENDED_BUTTON_FLOW_TRIGGERS = [
+  'button_triple_clicked',
+  'remote_button_pressed',
+  'virtual_button_pressed',
+];
+
 function parseArgs(argv) {
   const args = { json: false, writeReport: null };
   for (let index = 0; index < argv.length; index++) {
@@ -155,9 +194,24 @@ function auditDriver(driverId, driver, report) {
   const appDriver = driver.app || {};
   const compose = driver.compose || {};
   const caps = new Set([...(appDriver.capabilities || []), ...(compose.capabilities || [])]);
+  const driverClass = manifest.class || appDriver.class;
+  const driverDir = path.join(DRIVERS_DIR, driverId);
+  const missingFiles = REQUIRED_DRIVER_FILES
+    .filter(file => !fs.existsSync(path.join(driverDir, file)))
+    .map(file => file.replace(/\\/g, '/'));
 
   if (!titleText(manifest.name)) pushError(report, 'DRIVER_NAME_REQUIRED', driverId, 'Driver needs a user-facing English name');
-  if (!manifest.class && !appDriver.class) pushWarning(report, 'DRIVER_CLASS_MISSING', driverId, 'Driver has no class; Homey UI/device grouping may be weaker');
+  if (missingFiles.length > 0) {
+    pushError(report, 'DRIVER_UI_FILES_REQUIRED', driverId, 'Driver needs compose, runtime files, icon, and small/large images for complete Homey UI representation', { missingFiles });
+  }
+  if (!driverClass) pushWarning(report, 'DRIVER_CLASS_MISSING', driverId, 'Driver has no class; Homey UI/device grouping may be weaker');
+  if (caps.size === 0) {
+    pushError(report, 'DRIVER_CAPABILITIES_REQUIRED', driverId, 'Driver needs at least one capability so it has a visible/actionable Homey UI surface');
+  }
+  const primaryRules = CLASS_PRIMARY_CAPABILITY_RULES[driverClass];
+  if (primaryRules && ![...caps].some(capability => primaryRules.some(rule => rule.test(capability)))) {
+    pushError(report, 'DRIVER_PRIMARY_UI_CAPABILITY_REQUIRED', driverId, `Driver class "${driverClass}" needs a matching primary capability for Homey UI controls`, { capabilities: [...caps] });
+  }
   if (caps.has('measure_battery') && caps.has('alarm_battery')) {
     pushError(report, 'BATTERY_CAPABILITY_CONFLICT', driverId, 'Do not expose measure_battery and alarm_battery on the same driver');
   }
@@ -171,6 +225,26 @@ function auditDriver(driverId, driver, report) {
 
 function auditFlows(app, report) {
   const flow = app.flow || {};
+  const triggerIds = new Set((flow.triggers || []).map(card => card.id));
+  const hasButtonDrivers = (app.drivers || []).some(driver => {
+    const capabilities = driver.capabilities || [];
+    return driver.class === 'button' ||
+      driver.class === 'remote' ||
+      capabilities.some(capability => /^button(?:\.|$)/.test(capability));
+  });
+  if (hasButtonDrivers) {
+    for (const id of BUTTON_FLOW_TRIGGERS) {
+      if (!triggerIds.has(id)) {
+        pushError(report, 'BUTTON_FLOW_TRIGGER_REQUIRED', `triggers.${id}`, 'Button/remote drivers need the core Homey Flow trigger set');
+      }
+    }
+    for (const id of EXTENDED_BUTTON_FLOW_TRIGGERS) {
+      if (!triggerIds.has(id)) {
+        pushWarning(report, 'BUTTON_FLOW_TRIGGER_EXTENDED_MISSING', `triggers.${id}`, 'Extended button/remote/virtual Flow trigger is missing; compatibility is reduced for advanced button variants');
+      }
+    }
+  }
+
   const seen = new Map();
   for (const group of ['triggers', 'conditions', 'actions']) {
     for (const card of flow[group] || []) {

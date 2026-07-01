@@ -56,6 +56,10 @@
     "zigbee"
   ],
   "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -67,6 +71,9 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "onoff": {
+      "setOnDim": false
     }
   },
   "class": "light"
