@@ -94,6 +94,7 @@ describe('forum routing regressions', () => {
       const profile = DeviceFingerprintDB.lookup(manufacturer, 'TS004F');
       assert.strictEqual(profile.driver, 'button_wireless_4', `${manufacturer} must use button_wireless_4 for TS004F`);
     }
+    assertDriverDoesNotClaim('button_wireless_2', '_TZ3000_b3mgfu0d');
     assertDriverDoesNotClaim('smart_remote_1_button', '_TZ3000_rco1yzb1');
 
     for (const manufacturer of rotaryManufacturers) {
