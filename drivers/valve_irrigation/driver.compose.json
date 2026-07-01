@@ -5,7 +5,7 @@
     "nl": "Irrigatieklep",
     "de": "Bewässerungsventil"
   },
-  "class": "thermostat",
+  "class": "other",
   "capabilities": [
     "dim.valve_1",
     "dim.valve_2",
@@ -164,5 +164,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "valve_irrigation",
+  "version": "1.0.0"
 }

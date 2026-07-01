@@ -286,6 +286,24 @@
         }
       },
       {
+        "id": "button_triple_clicked",
+        "title": {
+          "en": "Button was triple-clicked - software",
+          "fr": "Bouton triple-cliquÃ© (Logiciel)"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button was triple-clicked - software [[device]]",
+          "fr": "Bouton triple-cliquÃ© (Logiciel) [[device]]"
+        }
+      },
+      {
         "id": "knob_rotated",
         "title": {
           "en": "Knob rotated",
@@ -334,6 +352,48 @@
           "fr": "[[device]] Molette tournée",
           "nl": "[[device]] Draaiknop gedraaid",
           "de": "[[device]] Drehknopf gedreht"
+        }
+      },
+      {
+        "id": "remote_button_pressed",
+        "title": {
+          "en": "Remote button pressed",
+          "fr": "Bouton de télécommande appuyé",
+          "nl": "Afstandsbediening knop ingedrukt",
+          "de": "Fernbedienungstaste gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": 1
+          },
+          {
+            "name": "scene",
+            "type": "string",
+            "title": {
+              "en": "Scene / Action",
+              "fr": "Scène / Action"
+            },
+            "example": "single"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Remote button pressed [[device]]",
+          "fr": "Bouton de télécommande appuyé [[device]]",
+          "nl": "Afstandsbediening knop ingedrukt [[device]]",
+          "de": "Fernbedienungstaste gedrückt [[device]]"
         }
       },
       {
@@ -732,6 +792,48 @@
         "titleFormatted": {
           "en": "[[device]] Tuya raw DP received [[dp]]",
           "fr": "[[device]] DP Tuya brut reçu [[dp]]"
+        }
+      },
+      {
+        "id": "virtual_button_pressed",
+        "title": {
+          "en": "Virtual button pressed in app",
+          "fr": "Bouton virtuel appuyé dans l'app",
+          "nl": "Virtuele knop ingedrukt in app",
+          "de": "Virtuelle Taste in App gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "gang",
+            "type": "number",
+            "title": {
+              "en": "Gang / Button",
+              "fr": "Bouton / Canal"
+            },
+            "example": 1
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "title": {
+              "en": "Action Type",
+              "fr": "Type d'action"
+            },
+            "example": "toggle"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Virtual button pressed in app [[device]]",
+          "fr": "Bouton virtuel appuyé dans l'app [[device]]",
+          "nl": "Virtuele knop ingedrukt in app [[device]]",
+          "de": "Virtuelle Taste in App gedrückt [[device]]"
         }
       },
       {
@@ -97770,7 +97872,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "button.1"
       ],
       "energy": {
         "batteries": [
@@ -97822,6 +97925,17 @@
           }
         }
       ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "id": "remote_dimmer"
     },
     {
@@ -104673,7 +104787,8 @@
       ],
       "capabilities": [
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "button.1"
       ],
       "images": {
         "large": "drivers/smart_knob_switch/assets/images/large.png",
@@ -104763,7 +104878,18 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     },
     {
       "name": {
@@ -104962,7 +105088,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "button.1"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button/assets/images/large.png",
@@ -105050,7 +105177,18 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     },
     {
       "id": "smart_remote_1_button_2",
@@ -118064,7 +118202,7 @@
         "nl": "Irrigatieklep",
         "de": "Bewässerungsventil"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "dim.valve_1",
         "dim.valve_2",
@@ -118224,7 +118362,8 @@
           }
         }
       ],
-      "id": "valve_irrigation"
+      "id": "valve_irrigation",
+      "version": "1.0.0"
     },
     {
       "name": {
@@ -118233,7 +118372,7 @@
         "nl": "Enkelvoudige Klep",
         "de": "Einzelventil"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "onoff",
         "dim.valve",
@@ -118291,7 +118430,8 @@
           }
         }
       ],
-      "id": "valve_single"
+      "id": "valve_single",
+      "version": "1.0.0"
     },
     {
       "name": {
@@ -125506,7 +125646,8 @@
       },
       "class": "remote",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "button.1"
       ],
       "pair": [
         {
@@ -125621,7 +125762,19 @@
           }
         }
       ],
-      "id": "wifi_ir_remote"
+      "id": "wifi_ir_remote",
+      "version": "1.0.0",
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     },
     {
       "name": {
@@ -128939,7 +129092,9 @@
         "es": "Repetidor de señal Zigbee"
       },
       "class": "other",
-      "capabilities": [],
+      "capabilities": [
+        "button.1"
+      ],
       "zigbee": {
         "manufacturerName": [
           "_tz3000_1mxvlhmq",
@@ -129026,7 +129181,19 @@
           }
         }
       ],
-      "id": "zigbee_repeater"
+      "id": "zigbee_repeater",
+      "version": "1.0.0",
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     }
   ],
   "capabilities": {
