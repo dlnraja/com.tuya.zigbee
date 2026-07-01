@@ -105,7 +105,12 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
       }
       assert(includesCI(source.zigbee.productId, 'TS0601'));
       assert(source.capabilities.includes('measure_humidity.soil'), 'soil_sensor must expose soil moisture');
+      assert(source.capabilities.includes('measure_battery'), 'soil_sensor must expose battery for sleepy TS0601 soil sensors');
       assert(source.capabilities.includes('measure_ec'), 'soil_sensor must expose EC');
+      for (const cluster of [0, 4, 5, 60672, 61184]) {
+        const clusters = source.zigbee?.endpoints?.['1']?.clusters || [];
+        assert(clusters.includes(cluster), `soil_sensor endpoint 1 must match issue #428 cluster ${cluster}`);
+      }
     }
 
     for (const source of [driverCompose('climate_sensor'), appDriver('climate_sensor')]) {
