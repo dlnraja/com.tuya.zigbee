@@ -73,7 +73,7 @@
       "args": [
         {
           "type": "number",
-          "name": "duration",
+          "name": "duration_seconds",
           "min": 0,
           "max": 65535,
           "step": 1,
@@ -93,9 +93,9 @@
         }
       ],
       "titleFormatted": {
-        "en": "Switch on siren for X Seconds [[duration]]",
-        "de": "Sirene für X Sekunden einschalten [[duration]]",
-        "nl": "Zet sirene aan voor X seconden [[duration]]"
+        "en": "Switch on siren for X Seconds [[duration_seconds]]",
+        "de": "Sirene für X Sekunden einschalten [[duration_seconds]]",
+        "nl": "Zet sirene aan voor X seconden [[duration_seconds]]"
       }
     },
     {

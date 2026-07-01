@@ -180,7 +180,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
             this.log('[FLOW] Action: Device not available');
             return false;
           }
-          const duration = args.duration || 30;
+          const duration = args.duration_seconds ?? args.duration ?? 30;
           this.log(`[FLOW] Action: Set duration to ${duration}s`);
           try {
             // Send to standard DP7 + NEO DP103

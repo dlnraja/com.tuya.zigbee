@@ -46,7 +46,7 @@ jobs:
         run: npm run check:voice
       - name: SDK3 Validation
         run: |
-          SDK=$(node -p "require('./app.json').sdkVersion")
+          SDK=$(node -p "require('./app.json').sdk || require('./app.json').sdkVersion")
           if [ "$SDK" != "3" ]; then
             echo "::error::Invalid SDK: $SDK (expected 3)"
             exit 1
