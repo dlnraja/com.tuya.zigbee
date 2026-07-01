@@ -205,5 +205,51 @@
       }
     },
     "notes": "Nedis/ne4pikwm compatible radiator valve variant."
+  },
+  "_TZ3000_qja6nq5z": {
+    "driverId": "smart_knob_rotary",
+    "type": "button",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
+    "modelIds": [
+      "TS004F"
+    ],
+    "capabilities": [
+      "measure_battery"
+    ],
+    "clusters": [
+      0,
+      1,
+      6,
+      8,
+      4096
+    ],
+    "endpoints": [
+      1
+    ],
+    "notes": "TS004F rotary knob routed away from generic button/switch drivers"
+  },
+  "_TZ3000_gwkzibhs": {
+    "driverId": "smart_knob_rotary",
+    "type": "button",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
+    "modelIds": [
+      "TS004F"
+    ],
+    "capabilities": [
+      "measure_battery"
+    ],
+    "clusters": [
+      0,
+      1,
+      6,
+      8,
+      4096
+    ],
+    "endpoints": [
+      1
+    ],
+    "notes": "TS004F rotary knob routed away from generic button/switch drivers"
   }
 }

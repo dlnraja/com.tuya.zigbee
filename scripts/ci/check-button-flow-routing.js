@@ -107,6 +107,11 @@ function getProductIds(compose) {
   return normalizeArray(compose?.zigbee?.productId);
 }
 
+function hasCI(values, expected) {
+  const target = String(expected).toLowerCase();
+  return normalizeArray(values).some(value => String(value).toLowerCase() === target);
+}
+
 function validateConflictData(manufacturerName) {
   const conflictFiles = [
     path.join(ROOT, 'scripts', 'data', 'manufacturer_conflicts.csv'),
@@ -210,6 +215,104 @@ function validateKnownTs0044Routing() {
   }
 }
 
+function validateKnownTs004fRouting() {
+  const fourButton = loadDriverCompose('button_wireless_4');
+  const smartKnob = loadDriverCompose('smart_knob_rotary');
+  const genericButton = loadDriverCompose('button_wireless');
+  const smartRemoteOne = loadDriverCompose('smart_remote_1_button');
+  if (!fourButton || !smartKnob || !genericButton || !smartRemoteOne) return;
+
+  const fourButtonManufacturers = getManufacturerNames(fourButton);
+  const smartKnobManufacturers = getManufacturerNames(smartKnob);
+  const genericButtonManufacturers = getManufacturerNames(genericButton);
+  const smartRemoteOneManufacturers = getManufacturerNames(smartRemoteOne);
+  const fourButtonProducts = getProductIds(fourButton);
+  const fourButtonTs004fManufacturers = [
+    '_TZ3000_kfu8zapd',
+    '_TZ3000_xabckq1v',
+    '_TZ3000_czuyt8lz',
+    '_TZ3000_b3mgfu0d',
+    '_TZ3000_rco1yzb1',
+    '_TZ3000_abrsvsou',
+    '_TZ3000_4fjiwweb',
+  ];
+  const rotaryManufacturers = [
+    '_TZ3000_qja6nq5z',
+    '_TZ3000_gwkzibhs',
+    '_TZ3000_ugi8ky6u',
+  ];
+
+  if (!fourButtonProducts.includes('TS004F')) {
+    addError('button_wireless_4', 'Moes/Lidl TS004F variants lost the 4-button productId');
+  }
+
+  for (const manufacturerName of fourButtonTs004fManufacturers) {
+    if (!hasCI(fourButtonManufacturers, manufacturerName)) {
+      addError('button_wireless_4', 'Known TS004F 4-button manufacturer missing from 4-button driver', {
+        manufacturerName,
+      });
+    }
+  }
+
+  for (const manufacturerName of rotaryManufacturers) {
+    if (!hasCI(smartKnobManufacturers, manufacturerName)) {
+      addError('smart_knob_rotary', 'Known TS004F rotary knob missing from rotary driver', {
+        manufacturerName,
+      });
+    }
+    if (hasCI(fourButtonManufacturers, manufacturerName)) {
+      addError('button_wireless_4', 'Known TS004F rotary knob is routed to generic 4-button driver', {
+        manufacturerName,
+      });
+    }
+    if (hasCI(genericButtonManufacturers, manufacturerName)) {
+      addError('button_wireless', 'Known TS004F rotary knob is still routed to generic button driver', {
+        manufacturerName,
+      });
+    }
+  }
+
+  if (hasCI(smartRemoteOneManufacturers, '_TZ3000_rco1yzb1')) {
+    addError('smart_remote_1_button', 'Lidl/Moes TS004F LevelControl remote is routed to 1-button driver');
+  }
+
+  const missingLevelCluster = Object.entries(fourButton?.zigbee?.endpoints || {})
+    .filter(([, endpoint]) => !normalizeArray(endpoint.clusters).includes(8))
+    .map(([endpointId]) => endpointId);
+  if (missingLevelCluster.length) {
+    addError('button_wireless_4', 'Known TS004F 4-button driver lost LevelControl cluster metadata', {
+      endpoints: missingLevelCluster,
+    });
+  }
+
+  const driverSource = fs.readFileSync(path.join(DRIVERS_DIR, 'button_wireless_4', 'device.js'), 'utf8');
+  for (const required of ['_setupLevelControlDetection', 'commandStep', 'commandMove', 'commandStop']) {
+    if (!driverSource.includes(required)) {
+      addError('button_wireless_4', `Known TS004F 4-button driver lost ${required} physical-event handling`);
+    }
+  }
+
+  const DeviceFingerprintDB = require(path.join(ROOT, 'lib', 'DeviceFingerprintDB'));
+  for (const manufacturerName of fourButtonTs004fManufacturers) {
+    const profile = DeviceFingerprintDB.lookup(manufacturerName, 'TS004F');
+    if (profile?.driver !== 'button_wireless_4') {
+      addError('DeviceFingerprintDB', 'Known TS004F 4-button fingerprint is not compound-routed to button_wireless_4', {
+        manufacturerName,
+        profile,
+      });
+    }
+  }
+  for (const manufacturerName of rotaryManufacturers) {
+    const profile = DeviceFingerprintDB.lookup(manufacturerName, 'TS004F');
+    if (profile?.driver !== 'smart_knob_rotary') {
+      addError('DeviceFingerprintDB', 'Known TS004F rotary fingerprint is not compound-routed to smart_knob_rotary', {
+        manufacturerName,
+        profile,
+      });
+    }
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -221,6 +324,7 @@ function run() {
 
   validateKnownTs0041Routing();
   validateKnownTs0044Routing();
+  validateKnownTs004fRouting();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
