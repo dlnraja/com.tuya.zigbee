@@ -11,6 +11,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_luminance",
+    "measure_battery",
     "alarm_water",
     "measure_ec",
     "measure_conductivity",
@@ -67,7 +68,13 @@
       "setable": false
     }
   },
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -115,7 +122,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          4,
+          5,
+          60672,
+          61184
         ]
       }
     }
