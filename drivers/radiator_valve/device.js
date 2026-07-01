@@ -27,6 +27,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    */
   get dpProfile() {
     const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
+    const matchesMfr = ids => ids.some(id => mfr.toLowerCase().includes(id.toLowerCase()));
+
+    const nedisIds = ['_TZE284_ne4pikwm', '_tze284_ne4pikwm', '_TZE200_ne4pikwm', '_tze200_ne4pikwm', 'ne4pikwm'];
+    if (matchesMfr(nedisIds)) return 'nedis';
+
     const me167Ids = [
       '_TZE284_o3x45p96', '_tze284_o3x45p96',
       '_TZE284_p3dbf6qs', '_tze284_p3dbf6qs',
@@ -34,13 +39,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE284_rv6iuyxb', '_tze284_rv6iuyxb',
       '_TZE284_c6wv4xyo', '_tze284_c6wv4xyo',
       '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
-      '_TZE204_o3x45p96', '_tze204_o3x45p96',
-      '_tze200_ne4pikwm', '_TZE284_ne4pikwm'
+      '_TZE204_o3x45p96', '_tze204_o3x45p96'
     ];
-    if (me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) return 'me167';
-    
-    const nedisIds = ['_TZE284_ne4pikwm', '_tze284_ne4pikwm', 'ne4pikwm'];
-    if (nedisIds.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) return 'nedis';
+    if (matchesMfr(me167Ids)) return 'me167';
     
     return 'standard';
   }
@@ -209,5 +210,4 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 }
 
 module.exports = RadiatorValveDevice;
-
 

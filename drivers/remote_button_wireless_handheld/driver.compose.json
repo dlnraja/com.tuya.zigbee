@@ -72,14 +72,6 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_u3nv1jwk",
-      "_TZ3000_u3nv1jwk",
-      "_TZ3000_U3NV1JWK"
-    ],
-    "productId": [
-      "TS0044"
-    ],
     "learnmode": {
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
