@@ -137,6 +137,9 @@ describe('stable cross-source routing regressions', function() {
       assertIncludesCI(source.zigbee.manufacturerName, '_TZ3000_4fjiwweb');
       assertNotIncludesCI(source.zigbee.manufacturerName, '_TZ3000_qja6nq5z');
     }
+    for (const source of [driverCompose('button_wireless_2'), appDriver('button_wireless_2')]) {
+      assertNotIncludesCI(source.zigbee.manufacturerName, '_TZ3000_b3mgfu0d');
+    }
 
     for (const source of [driverCompose('smart_remote_1_button'), appDriver('smart_remote_1_button')]) {
       assertNotIncludesCI(source.zigbee.manufacturerName, '_TZ3000_rco1yzb1');

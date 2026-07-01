@@ -217,12 +217,14 @@ function validateKnownTs0044Routing() {
 
 function validateKnownTs004fRouting() {
   const fourButton = loadDriverCompose('button_wireless_4');
+  const twoButton = loadDriverCompose('button_wireless_2');
   const smartKnob = loadDriverCompose('smart_knob_rotary');
   const genericButton = loadDriverCompose('button_wireless');
   const smartRemoteOne = loadDriverCompose('smart_remote_1_button');
-  if (!fourButton || !smartKnob || !genericButton || !smartRemoteOne) return;
+  if (!fourButton || !twoButton || !smartKnob || !genericButton || !smartRemoteOne) return;
 
   const fourButtonManufacturers = getManufacturerNames(fourButton);
+  const twoButtonManufacturers = getManufacturerNames(twoButton);
   const smartKnobManufacturers = getManufacturerNames(smartKnob);
   const genericButtonManufacturers = getManufacturerNames(genericButton);
   const smartRemoteOneManufacturers = getManufacturerNames(smartRemoteOne);
@@ -252,6 +254,12 @@ function validateKnownTs004fRouting() {
         manufacturerName,
       });
     }
+  }
+
+  if (hasCI(twoButtonManufacturers, '_TZ3000_b3mgfu0d')) {
+    addError('button_wireless_2', 'Known TS004F b3mgfu0d fingerprint must not collide with 2-button TS0014/TS0044 routes', {
+      manufacturerName: '_TZ3000_b3mgfu0d',
+    });
   }
 
   for (const manufacturerName of rotaryManufacturers) {
