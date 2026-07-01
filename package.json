@@ -56,7 +56,7 @@
     "titan:fix": "node scripts/ci/pre-commit-checks.js --fix",
     "sync:branches": "node scripts/automation/sync-branches.js",
     "sync:branches:dry": "node scripts/automation/sync-branches.js --dry-run",
-    "precommit": "node scripts/ci/titan-pre-commit.js && node scripts/ci/security-scanner.js && node scripts/validation/check-mixin-order.js && npm run check:timer-context && npm run check:voice",
+    "precommit": "node scripts/ci/titan-pre-commit.js && node scripts/ci/security-scanner.js && node scripts/validation/check-mixin-order.js && npm run check:button-flows && npm run check:timer-context && npm run check:voice",
     "precommit:full": "node scripts/ci/titan-pre-commit.js && node scripts/PRE_COMMIT_CHECKS.js && node scripts/ci/security-scanner.js && npm run check:yaml && node scripts/ci/check-flow-ids.js --json && npm run check:button-flows && npm run check:voice && npm run check:diag-history",
     "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
     "audit": "node scripts/COMPLETE_POWER_AUDIT.js",

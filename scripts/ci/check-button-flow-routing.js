@@ -55,9 +55,14 @@ function hasExactHelperCall(driverJs, prefix, count) {
 }
 
 function hasDynamicThisIdHelperCall(driverJs, count) {
-  const hasThisIdAlias = /\b(?:const|let|var)\s+\w+\s*=\s*this\.id\b/.test(driverJs);
+  const hasThisIdAlias = /\b(?:const|let|var)\s+\w+\s*=\s*(?:this\.id|resolveDriverId\(this\)|this\.id\s*\|\|)/.test(driverJs);
   const pattern = new RegExp(`registerButtonFlowCards\\s*\\(\\s*this\\s*,\\s*\\w+\\s*,\\s*${count}\\s*\\)`);
   return hasThisIdAlias && pattern.test(driverJs);
+}
+
+function hasInlineThisIdHelperCall(driverJs, count) {
+  const pattern = new RegExp(`registerButtonFlowCards\\s*\\(\\s*this\\s*,\\s*this\\.id\\s*\\|\\|\\s*['"][^'"]+['"]\\s*,\\s*${count}\\s*\\)`);
+  return pattern.test(driverJs);
 }
 
 function loadDriverSource(driverPath) {
@@ -102,6 +107,27 @@ function getProductIds(compose) {
   return normalizeArray(compose?.zigbee?.productId);
 }
 
+function validateConflictData(manufacturerName) {
+  const conflictFiles = [
+    path.join(ROOT, 'scripts', 'data', 'manufacturer_conflicts.csv'),
+    path.join(ROOT, 'scripts', 'data', 'true_manufacturer_conflicts.csv'),
+  ];
+  for (const file of conflictFiles) {
+    if (!fs.existsSync(file)) continue;
+    const rel = path.relative(ROOT, file);
+    const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+    for (const [index, line] of lines.entries()) {
+      if (!line.includes(manufacturerName)) continue;
+      if (line.includes('button_wireless_1')) {
+        addError(rel, 'Known 4-endpoint TS0041 manufacturer is still documented as button_wireless_1', {
+          manufacturerName,
+          line: index + 1,
+        });
+      }
+    }
+  }
+}
+
 function validateKnownTs0041Routing() {
   const oneButton = loadDriverCompose('button_wireless_1');
   const fourButtonTs0041 = loadDriverCompose('button_wireless_4_ts0041');
@@ -134,6 +160,53 @@ function validateKnownTs0041Routing() {
         manufacturerName,
       });
     }
+    validateConflictData(manufacturerName);
+  }
+}
+
+function validateKnownTs0044Routing() {
+  const fourButton = loadDriverCompose('button_wireless_4');
+  const switchOneGang = loadDriverCompose('switch_1gang');
+  const handheld = loadDriverCompose('remote_button_wireless_handheld');
+  if (!fourButton || !switchOneGang || !handheld) return;
+
+  const fourButtonManufacturers = new Set(getManufacturerNames(fourButton));
+  const switchManufacturers = new Set(getManufacturerNames(switchOneGang));
+  const handheldManufacturers = new Set(getManufacturerNames(handheld));
+  const handheldProducts = new Set(getProductIds(handheld));
+  const forumManufacturers = [
+    '_tz3000_u3nv1jwk',
+    '_TZ3000_u3nv1jwk',
+    '_TZ3000_U3NV1JWK',
+  ];
+
+  for (const manufacturerName of forumManufacturers) {
+    if (!fourButtonManufacturers.has(manufacturerName)) {
+      addError('button_wireless_4', 'Forum TS0044 manufacturer missing from E000-capable 4-button driver', {
+        manufacturerName,
+      });
+    }
+    if (switchManufacturers.has(manufacturerName)) {
+      addError('switch_1gang', 'Forum TS0044 manufacturer is routed to switch_1gang instead of button_wireless_4', {
+        manufacturerName,
+      });
+    }
+    if (handheldManufacturers.has(manufacturerName)) {
+      addError('remote_button_wireless_handheld', 'Forum TS0044 manufacturer is routed to legacy handheld driver instead of button_wireless_4', {
+        manufacturerName,
+      });
+    }
+  }
+
+  if (handheldProducts.has('TS0044')) {
+    addError('remote_button_wireless_handheld', 'Legacy handheld driver must not claim generic TS0044 without an exact manufacturer');
+  }
+
+  if (
+    !handheldManufacturers.has('_disabled_remote_button_wireless_handheld_needs_exact_fingerprint') ||
+    !handheldProducts.has('DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD')
+  ) {
+    addError('remote_button_wireless_handheld', 'Legacy handheld driver lost its non-matchable manifest-valid sentinel');
   }
 }
 
@@ -147,6 +220,7 @@ function run() {
   }
 
   validateKnownTs0041Routing();
+  validateKnownTs0044Routing();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
@@ -178,6 +252,7 @@ function run() {
       if (
         hasExactHelperCall(driverJs, pattern.prefix, pattern.count) ||
         hasDynamicThisIdHelperCall(driverJs, pattern.count) ||
+        hasInlineThisIdHelperCall(driverJs, pattern.count) ||
         hasCustomRunListeners
       ) {
         continue;
