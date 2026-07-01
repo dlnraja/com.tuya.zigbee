@@ -70,6 +70,48 @@ describe('forum routing regressions', () => {
     assert.match(source, /_setupTuyaDPButtonDetection/);
   });
 
+  it('routes recent Johan activity fingerprints to their functional drivers', () => {
+    const routes = [
+      ['_TZ3000_ovyaisip', 'TS0001', 'wall_switch_1gang_1way'],
+      ['_TZ3000_pk8tgtdb', 'TS0001', 'wall_switch_1gang_1way'],
+      ['_TZ3000_yervjnlj', 'TS0003', 'wall_switch_3gang_1way'],
+      ['_TZ3000_eqsair32', 'TS0003', 'switch_3gang'],
+      ['_TZ3000_qxcnwv26', 'TS0003', 'switch_3gang'],
+      ['_TZE204_q76rtoa9', 'TS0601', 'siren'],
+      ['_TZE200_lvkk0hdg', 'TS0601', 'water_tank_monitor'],
+      ['_TZE204_r0jdjrvi', 'TS0601', 'curtain_motor_tilt'],
+      ['_TZE200_cirvgep4', 'TS0601', 'climate_sensor'],
+      ['_TZE204_cirvgep4', 'TS0601', 'climate_sensor'],
+      ['_TZ3000_kaflzta4', 'TS004F', 'smart_knob'],
+    ];
+
+    const RuntimeFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
+    const CompoundFingerprintDB = require('../../lib/DeviceFingerprintDB');
+
+    for (const [manufacturer, modelId, driverId] of routes) {
+      assertDriverClaims(driverId, manufacturer);
+      assert.strictEqual(
+        CompoundFingerprintDB.lookup(manufacturer, modelId)?.driver,
+        driverId,
+        `${manufacturer}+${modelId} must have an exact compound route`
+      );
+      assert.strictEqual(
+        RuntimeFingerprintDB.getDriverId(manufacturer, modelId),
+        driverId,
+        `${manufacturer}+${modelId} must resolve to ${driverId}`
+      );
+    }
+
+    for (const manufacturer of ['_TZ3000_ovyaisip', '_TZ3000_pk8tgtdb', '_TZ3000_yervjnlj', '_TZ3000_kaflzta4']) {
+      assertDriverDoesNotClaim('climate_sensor', manufacturer);
+    }
+    assertDriverDoesNotClaim('air_purifier', '_TZE200_cirvgep4');
+    assertDriverDoesNotClaim('air_purifier', '_TZE204_cirvgep4');
+    assertDriverDoesNotClaim('generic_diy', '_TZE200_lvkk0hdg');
+    assertDriverDoesNotClaim('presence_sensor_radar', '_TZE204_r0jdjrvi');
+    assertDriverDoesNotClaim('button_wireless_4', '_TZ3000_kaflzta4');
+  });
+
   it('routes Nedis ne4pikwm radiator valves to TRV handling, not climate fallback', () => {
     for (const manufacturer of ['_TZE284_ne4pikwm', '_TZE200_ne4pikwm']) {
       assertDriverClaims('radiator_valve', manufacturer);
