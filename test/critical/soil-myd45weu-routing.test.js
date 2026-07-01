@@ -18,6 +18,26 @@ function maybeReadJson(relativePath) {
   return fs.existsSync(file) ? readJson(relativePath) : null;
 }
 
+function maybeReadRuntimeCatalog(relativePath) {
+  const file = path.join(ROOT, relativePath);
+  if (!fs.existsSync(file)) return null;
+  if (relativePath.endsWith('.js')) {
+    delete require.cache[require.resolve(file)];
+    return require(file);
+  }
+  return readJson(relativePath);
+}
+
+function findRuntimeFingerprintEntry(catalog, manufacturer) {
+  if (!catalog) return null;
+  if (Array.isArray(catalog)) {
+    return catalog.find(entry => normalize(entry.manufacturerName) === normalize(manufacturer)) || null;
+  }
+
+  const key = Object.keys(catalog).find(item => normalize(item) === normalize(manufacturer));
+  return key ? { manufacturerName: key, ...catalog[key] } : null;
+}
+
 function normalize(value) {
   return String(value).toLowerCase();
 }
@@ -64,12 +84,13 @@ function assertRuntimeFingerprint(file, driverId, humidityCapability) {
 }
 
 function assertRuntimeFingerprintEntry(file, manufacturer, driverId) {
-  const fingerprints = maybeReadJson(file);
+  const fingerprints = maybeReadRuntimeCatalog(file);
   if (!fingerprints) return;
 
-  const entry = fingerprints[manufacturer];
+  const entry = findRuntimeFingerprintEntry(fingerprints, manufacturer);
   assert(entry, `${file} missing ${manufacturer}`);
   assert.strictEqual(entry.driverId, driverId, `${file} must route ${manufacturer} to ${driverId}`);
+  assert.strictEqual(entry.type, 'soil_sensor', `${manufacturer} must stay typed as soil_sensor in ${file}`);
   assert.strictEqual(entry.powerSource, 'battery', `${manufacturer} must stay battery-powered`);
 }
 
@@ -121,6 +142,9 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
 
     assertRuntimeFingerprintEntry('lib/tuya/fingerprints.json', '_TZE284_0ints6wl', 'soil_sensor');
     assertRuntimeFingerprintEntry('data/fingerprints.json', '_TZE284_0ints6wl', 'soil_sensor');
+    assertRuntimeFingerprintEntry('lib/data/new_fingerprints.json', '_TZE284_0ints6wl', 'soil_sensor');
+    assertRuntimeFingerprintEntry('lib/data/new_fingerprints.js', '_TZE284_0ints6wl', 'soil_sensor');
+    assertRuntimeFingerprintEntry('lib/data/smart_fingerprints.js', '_TZE284_0ints6wl', 'soil_sensor');
 
     const DeviceFingerprintDB = require('../../lib/DeviceFingerprintDB');
     const profile = DeviceFingerprintDB.lookup('_TZE284_0ints6wl', 'TS0601');
