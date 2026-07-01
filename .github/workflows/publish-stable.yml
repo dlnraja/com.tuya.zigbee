@@ -42,6 +42,8 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
       - name: Crash regression guard - Homey timer context
         run: npm run check:timer-context
+      - name: Fingerprint catalog / device-name audit
+        run: npm run check:fingerprint-catalog
       - name: Button and TS004F flow routing gate
         run: npm run check:button-flows
       - name: Google Assistant / Alexa voice-safety gate
@@ -180,6 +182,7 @@ jobs:
           }
 
           run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
+          run_diag 60 npm run check:fingerprint-catalog
           run_diag 60 npm run check:button-flows
           run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
           run_diag 120 node .github/scripts/homey-device-diagnostics.js

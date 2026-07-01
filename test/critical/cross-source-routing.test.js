@@ -203,4 +203,16 @@ describe('stable cross-source routing regressions', function() {
     assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(150, ts0041Options), 75);
     assert.strictEqual(UnifiedBatteryHandler.normalizeZigbeeValue(255, ts0041Options), null);
   });
+
+  it('uses exact manufacturerName+deviceId routes before mfr-only fingerprint catalogs', () => {
+    const runtimeDb = require('../../lib/tuya/DeviceFingerprintDB');
+
+    assert.strictEqual(runtimeDb.getDriverId('_TZ3000_kfu8zapd', 'TS004F'), 'button_wireless_4');
+    assert.strictEqual(runtimeDb.getDriverId('_TZ3002_pzao9ls1', 'TS0726'), 'wall_switch_4gang_1way');
+    assert.strictEqual(runtimeDb.getDriverId('_TZE200_8ygsuhe1', 'TS0601'), 'air_quality_comprehensive');
+
+    const profile = runtimeDb.getFingerprint('_TZE200_8ygsuhe1', 'TS0601');
+    assert.strictEqual(profile.driverId, 'air_quality_comprehensive');
+    assert.deepStrictEqual(profile.modelIds, ['TS0601']);
+  });
 });
