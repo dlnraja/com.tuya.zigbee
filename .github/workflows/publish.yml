@@ -68,6 +68,8 @@ jobs:
       - name: 🔍 Verify Fingerprints Integrity
         continue-on-error: false
         run: npm run validate:fingerprints
+      - name: Fingerprint catalog / device-name audit
+        run: npm run check:fingerprint-catalog
 
       - name: 🔍 Verify Flows Integrity
         continue-on-error: false
@@ -312,6 +314,7 @@ jobs:
             echo "::endgroup::"
           }
 
+          run_diag 60 npm run check:fingerprint-catalog
           run_diag 60 npm run check:button-flows
           run_diag 180 node .github/scripts/fetch-gmail-diagnostics.js
           run_diag 90 node scripts/automation/dashboard-monitor.js --latest --json
