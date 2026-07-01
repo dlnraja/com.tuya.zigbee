@@ -4235,30 +4235,6 @@
       "TS0003"
     ]
   },
-  "_TZ3000_u3nv1jwk": {
-    "driverId": "button_wireless_4",
-    "type": "remote",
-    "powerSource": "battery",
-    "batteryType": "CR2032",
-    "modelIds": [
-      "TS0044"
-    ],
-    "capabilities": [
-      "measure_battery"
-    ],
-    "clusters": [
-      0,
-      1,
-      6
-    ],
-    "endpoints": [
-      1,
-      2,
-      3,
-      4
-    ],
-    "notes": "Each button is an endpoint (1-4). Uses genOnOff commands. Battery via genPowerCfg."
-  },
   "_TZ3000_u3oupgdy": {
     "driverId": "bulb_dimmable",
     "type": "light",
@@ -12875,5 +12851,110 @@
     "modelIds": [
       "TS0601"
     ]
+  },
+  "_TZ3000_u3nv1jwk": {
+    "driverId": "button_wireless_4",
+    "type": "remote",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
+    "modelIds": [
+      "TS0044"
+    ],
+    "capabilities": [
+      "measure_battery"
+    ],
+    "clusters": [
+      0,
+      1,
+      6,
+      57344
+    ],
+    "endpoints": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "notes": "Homey forum TS0044 4-button remote (_TZ3000_u3nv1jwk): route to E000/DP-capable button driver."
+  },
+  "_TZE284_ne4pikwm": {
+    "driverId": "radiator_valve",
+    "type": "trv",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "target_temperature",
+      "measure_temperature",
+      "thermostat_mode",
+      "measure_battery",
+      "child_lock"
+    ],
+    "dps": {
+      "1": {
+        "name": "state",
+        "capability": "onoff"
+      },
+      "2": {
+        "name": "mode",
+        "capability": "thermostat_mode"
+      },
+      "16": {
+        "name": "target_temperature",
+        "capability": "target_temperature",
+        "divisor": 10
+      },
+      "24": {
+        "name": "local_temperature",
+        "capability": "measure_temperature",
+        "divisor": 10
+      },
+      "40": {
+        "name": "child_lock",
+        "capability": "child_lock"
+      }
+    },
+    "notes": "Homey forum Nedis radiator valve: avoid climate_sensor fallback."
+  },
+  "_TZE200_ne4pikwm": {
+    "driverId": "radiator_valve",
+    "type": "trv",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "target_temperature",
+      "measure_temperature",
+      "thermostat_mode",
+      "measure_battery",
+      "child_lock"
+    ],
+    "dps": {
+      "1": {
+        "name": "state",
+        "capability": "onoff"
+      },
+      "2": {
+        "name": "mode",
+        "capability": "thermostat_mode"
+      },
+      "16": {
+        "name": "target_temperature",
+        "capability": "target_temperature",
+        "divisor": 10
+      },
+      "24": {
+        "name": "local_temperature",
+        "capability": "measure_temperature",
+        "divisor": 10
+      },
+      "40": {
+        "name": "child_lock",
+        "capability": "child_lock"
+      }
+    },
+    "notes": "Nedis/ne4pikwm compatible radiator valve variant."
   }
 }
