@@ -16,12 +16,12 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   get gangCount() { return 3; }
 
   get switchCapabilities() {
-    const { subDeviceId } = this.getData();
+    const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
     return subDeviceId ? ['onoff'] : super.switchCapabilities;
   }
 
   get dpMappings() {
-    const { subDeviceId } = this.getData();
+    const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
     const mappings = { ...super.dpMappings };
     
     // v9.7.3: For sub-devices, map the specific Tuya DP to the 'onoff' capability
@@ -38,7 +38,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
     await this._safeInvoke(async () => {
-      const { subDeviceId } = this.getData();
+      const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
       if (subDeviceId === 'secondSwitch') {
         this._gangNumber = 2;
       } else if (subDeviceId === 'thirdSwitch') {
