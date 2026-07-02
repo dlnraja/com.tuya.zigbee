@@ -325,6 +325,8 @@ class Button4GangDevice extends ButtonDevice {
       : resolvePressType(pressType, '4G');
     const count = type === 'multi' ? 3 : type === 'double' ? 2 : 1;
 
+    if (this._isDeduped(btn, `flow_${type}`, 750)) return;
+
     if (typeof this.triggerButtonPress === 'function') {
       await this.triggerButtonPress(btn, type, count, { source: 'physical' });
       return;
@@ -355,10 +357,10 @@ class Button4GangDevice extends ButtonDevice {
   /**
    * v10.1.1: Debounce helper for E000 onOff commands
    */
-  _isDeduped(ep, cmd) {
+  _isDeduped(ep, cmd, windowMs = 500) {
     const now = Date.now();
     const key = `${ep}_${cmd}`;
-    if (now - (this._e000Dedup?.[key] || 0) < 500) return true;
+    if (now - (this._e000Dedup?.[key] || 0) < windowMs) return true;
     if (!this._e000Dedup) this._e000Dedup = {};
     this._e000Dedup[key] = now;
     return false;
