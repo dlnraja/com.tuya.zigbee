@@ -83,14 +83,15 @@ function assertRuntimeFingerprint(file, driverId, humidityCapability) {
   }
 }
 
-function assertRuntimeFingerprintEntry(file, manufacturer, driverId) {
+function assertRuntimeFingerprintEntry(file, manufacturer, driverId, options = {}) {
   const fingerprints = maybeReadRuntimeCatalog(file);
   if (!fingerprints) return;
 
   const entry = findRuntimeFingerprintEntry(fingerprints, manufacturer);
+  const allowedTypes = options.allowedTypes || ['soil_sensor'];
   assert(entry, `${file} missing ${manufacturer}`);
   assert.strictEqual(entry.driverId, driverId, `${file} must route ${manufacturer} to ${driverId}`);
-  assert.strictEqual(entry.type, 'soil_sensor', `${manufacturer} must stay typed as soil_sensor in ${file}`);
+  assert(allowedTypes.includes(entry.type), `${manufacturer} must stay typed as ${allowedTypes.join(' or ')} in ${file}`);
   assert.strictEqual(entry.powerSource, 'battery', `${manufacturer} must stay battery-powered`);
 }
 
@@ -150,6 +151,36 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
     const profile = DeviceFingerprintDB.lookup('_TZE284_0ints6wl', 'TS0601');
     assert(profile, '_TZE284_0ints6wl must have a runtime fingerprint');
     assert.strictEqual(profile.driver, 'soil_sensor');
+  });
+
+  it('routes issue #398 _TZE284_oitavov2 to soil_sensor, not air purifier fallbacks', () => {
+    const manufacturer = '_TZE284_oitavov2';
+
+    for (const source of [driverCompose('soil_sensor'), appDriver('soil_sensor')]) {
+      assert(includesCI(source.zigbee.manufacturerName, manufacturer), 'soil_sensor must claim _TZE284_oitavov2');
+      assert(includesCI(source.zigbee.productId, 'TS0601'));
+      assert(source.capabilities.includes('measure_humidity.soil'), 'soil_sensor must expose soil moisture');
+      assert(source.capabilities.includes('measure_battery'), 'soil_sensor must expose battery');
+    }
+
+    for (const wrongDriverId of ['air_purifier_soil', 'device_air_purifier_soil', 'climate_sensor']) {
+      const composePath = path.join(ROOT, 'drivers', wrongDriverId, 'driver.compose.json');
+      const appDriverData = readJson('app.json').drivers.find(item => item.id === wrongDriverId);
+      for (const source of [fs.existsSync(composePath) ? driverCompose(wrongDriverId) : null, appDriverData].filter(Boolean)) {
+        assert(!includesCI(source.zigbee?.manufacturerName, manufacturer), `${wrongDriverId} must not claim ${manufacturer}`);
+      }
+    }
+
+    assertRuntimeFingerprintEntry('lib/tuya/fingerprints.json', manufacturer, 'soil_sensor', { allowedTypes: ['soil', 'soil_sensor'] });
+    assertRuntimeFingerprintEntry('lib/data/new_fingerprints.json', manufacturer, 'soil_sensor');
+
+    const DeviceFingerprintDB = require('../../lib/DeviceFingerprintDB');
+    const profile = DeviceFingerprintDB.lookup(manufacturer, 'TS0601');
+    assert(profile, `${manufacturer} must have a compound fingerprint`);
+    assert.strictEqual(profile.driver, 'soil_sensor');
+    assert.strictEqual(DeviceFingerprintDB.getDPMeaning(manufacturer, 'TS0601', 3).capability, 'measure_humidity.soil');
+    assert.strictEqual(DeviceFingerprintDB.getDPMeaning(manufacturer, 'TS0601', 5).divisor, 10);
+    assert.strictEqual(DeviceFingerprintDB.getDPMeaning(manufacturer, 'TS0601', 15).capability, 'measure_battery');
   });
 
   it('keeps runtime fingerprints and DP meanings aligned with the soil profile', () => {
