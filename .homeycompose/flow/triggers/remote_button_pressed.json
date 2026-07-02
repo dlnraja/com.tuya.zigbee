@@ -29,7 +29,8 @@
   "args": [
     {
       "type": "device",
-      "name": "device"
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button"
     }
   ],
   "titleFormatted": {

@@ -92,6 +92,16 @@
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "sdk": 3,
+  "api": {
+    "getDevices": {
+      "method": "GET",
+      "path": "/devices"
+    },
+    "replaceDevice": {
+      "method": "POST",
+      "path": "/replace"
+    }
+  },
   "flow": {
     "triggers": [
       {
@@ -147,7 +157,8 @@
         "args": [
           {
             "name": "device",
-            "type": "device"
+            "type": "device",
+            "filter": "capabilities=onoff"
           }
         ],
         "titleFormatted": {
@@ -548,17 +559,18 @@
       {
         "id": "button_triple_clicked",
         "title": {
-          "en": "Button was triple-clicked (Software)",
+          "en": "Button was triple-clicked - software",
           "fr": "Bouton triple-cliquÃ© (Logiciel)"
         },
         "args": [
           {
             "name": "device",
-            "type": "device"
+            "type": "device",
+            "filter": "capabilities=button.1,capabilities=button"
           }
         ],
         "titleFormatted": {
-          "en": "Button was triple-clicked (Software) [[device]]",
+          "en": "Button was triple-clicked - software [[device]]",
           "fr": "Bouton triple-cliquÃ© (Logiciel) [[device]]"
         }
       },
@@ -1094,7 +1106,7 @@
       {
         "id": "overload_detected",
         "title": {
-          "en": "Overload detected (Safety Cutoff)",
+          "en": "Overload detected - safety cutoff",
           "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©)"
         },
         "args": [
@@ -1115,7 +1127,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Overload detected (Safety Cutoff) [[device]]",
+          "en": "Overload detected - safety cutoff [[device]]",
           "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©) [[device]]"
         }
       },
@@ -1225,7 +1237,8 @@
         "args": [
           {
             "name": "device",
-            "type": "device"
+            "type": "device",
+            "filter": "capabilities=measure_presence_confidence,capabilities=alarm_presence"
           }
         ],
         "titleFormatted": {
@@ -1264,7 +1277,8 @@
         "args": [
           {
             "type": "device",
-            "name": "device"
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
           }
         ],
         "titleFormatted": {
@@ -2027,7 +2041,8 @@
         "args": [
           {
             "type": "device",
-            "name": "device"
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
           }
         ],
         "titleFormatted": {
@@ -21458,10 +21473,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -21474,10 +21489,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -23184,7 +23199,7 @@
       {
         "id": "doorwindowsensor_alarm_contact_true",
         "title": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23197,7 +23212,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23206,7 +23221,7 @@
       {
         "id": "doorwindowsensor_alarm_contact_false",
         "title": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23219,7 +23234,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23250,7 +23265,7 @@
       {
         "id": "doorwindowsensor_2_alarm_contact_true",
         "title": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23263,7 +23278,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23272,7 +23287,7 @@
       {
         "id": "doorwindowsensor_2_alarm_contact_false",
         "title": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23285,7 +23300,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23316,7 +23331,7 @@
       {
         "id": "doorwindowsensor_3_alarm_contact_true",
         "title": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23329,7 +23344,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23338,7 +23353,7 @@
       {
         "id": "doorwindowsensor_3_alarm_contact_false",
         "title": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23351,7 +23366,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23382,7 +23397,7 @@
       {
         "id": "doorwindowsensor_4_alarm_contact_true",
         "title": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23395,7 +23410,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -23404,7 +23419,7 @@
       {
         "id": "doorwindowsensor_4_alarm_contact_false",
         "title": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -23417,7 +23432,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -32720,11 +32735,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           }
         ],
         "titleFormatted": {
@@ -32777,11 +32787,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           }
         ],
         "titleFormatted": {
@@ -32823,11 +32828,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           }
         ],
         "titleFormatted": {
@@ -46260,7 +46260,7 @@
       {
         "id": "smart_door_window_sensor_alarm_contact_true",
         "title": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -46273,7 +46273,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact detected (opened)",
+          "en": "Contact detected - opened",
           "fr": "Contact détecté (ouvert)",
           "nl": "Contact gedetecteerd (geopend)",
           "de": "Kontakt erkannt (geöffnet)"
@@ -46282,7 +46282,7 @@
       {
         "id": "smart_door_window_sensor_alarm_contact_false",
         "title": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -46295,7 +46295,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact cleared (closed)",
+          "en": "Contact cleared - closed",
           "fr": "Contact libéré (fermé)",
           "nl": "Contact vrijgegeven (gesloten)",
           "de": "Kontakt freigegeben (geschlossen)"
@@ -50037,10 +50037,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -50053,10 +50053,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -51271,10 +51271,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -51287,10 +51287,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -59280,10 +59280,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -59296,10 +59296,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -61415,10 +61415,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -61431,10 +61431,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -65999,10 +65999,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -66015,10 +66015,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -66031,10 +66031,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 2)"
+          "en": "Turned on physically - gang 2"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 2)"
+          "en": "Turned on physically - gang 2"
         }
       },
       {
@@ -66047,10 +66047,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 2)"
+          "en": "Turned off physically - gang 2"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 2)"
+          "en": "Turned off physically - gang 2"
         }
       },
       {
@@ -66063,10 +66063,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -66079,10 +66079,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -66095,10 +66095,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 2)"
+          "en": "Turned on physically - gang 2"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 2)"
+          "en": "Turned on physically - gang 2"
         }
       },
       {
@@ -66111,10 +66111,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 2)"
+          "en": "Turned off physically - gang 2"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 2)"
+          "en": "Turned off physically - gang 2"
         }
       },
       {
@@ -66127,10 +66127,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 3)"
+          "en": "Turned on physically - gang 3"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 3)"
+          "en": "Turned on physically - gang 3"
         }
       },
       {
@@ -66143,10 +66143,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 3)"
+          "en": "Turned off physically - gang 3"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 3)"
+          "en": "Turned off physically - gang 3"
         }
       },
       {
@@ -66159,10 +66159,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 1)"
+          "en": "Turned on physically - gang 1"
         }
       },
       {
@@ -66175,10 +66175,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 1)"
+          "en": "Turned off physically - gang 1"
         }
       },
       {
@@ -66191,10 +66191,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 2)"
+          "en": "Turned on physically - gang 2"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 2)"
+          "en": "Turned on physically - gang 2"
         }
       },
       {
@@ -66207,10 +66207,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 2)"
+          "en": "Turned off physically - gang 2"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 2)"
+          "en": "Turned off physically - gang 2"
         }
       },
       {
@@ -66223,10 +66223,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 3)"
+          "en": "Turned on physically - gang 3"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 3)"
+          "en": "Turned on physically - gang 3"
         }
       },
       {
@@ -66239,10 +66239,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 3)"
+          "en": "Turned off physically - gang 3"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 3)"
+          "en": "Turned off physically - gang 3"
         }
       },
       {
@@ -66255,10 +66255,10 @@
           }
         ],
         "title": {
-          "en": "Turned on - physical (Gang 4)"
+          "en": "Turned on physically - gang 4"
         },
         "titleFormatted": {
-          "en": "Turned on - physical (Gang 4)"
+          "en": "Turned on physically - gang 4"
         }
       },
       {
@@ -66271,10 +66271,10 @@
           }
         ],
         "title": {
-          "en": "Turned off - physical (Gang 4)"
+          "en": "Turned off physically - gang 4"
         },
         "titleFormatted": {
-          "en": "Turned off - physical (Gang 4)"
+          "en": "Turned off physically - gang 4"
         }
       },
       {
@@ -71846,7 +71846,7 @@
       {
         "id": "doorwindowsensor_alarm_contact_active",
         "title": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71859,7 +71859,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71868,7 +71868,7 @@
       {
         "id": "doorwindowsensor_2_alarm_contact_active",
         "title": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71881,7 +71881,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71890,7 +71890,7 @@
       {
         "id": "doorwindowsensor_3_alarm_contact_active",
         "title": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71903,7 +71903,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71912,7 +71912,7 @@
       {
         "id": "doorwindowsensor_4_alarm_contact_active",
         "title": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -71925,7 +71925,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -74867,11 +74867,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           }
         ],
         "titleFormatted": {
@@ -74900,11 +74895,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           },
           {
             "name": "threshold",
@@ -77893,7 +77883,7 @@
       {
         "id": "smart_door_window_sensor_alarm_contact_active",
         "title": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -77906,7 +77896,7 @@
           }
         ],
         "titleFormatted": {
-          "en": "Contact !{{is|is not}} detected (opened)",
+          "en": "Contact !{{is|is not}} detected - opened",
           "fr": "Contact !{{est|n'est pas}} détecté (ouvert)",
           "nl": "Contact !{{is|is niet}} gedetecteerd (geopend)",
           "de": "Kontakt !{{wird|wird nicht}} erkannt (geöffnet)"
@@ -82331,7 +82321,7 @@
       {
         "id": "natural_light_disable",
         "title": {
-          "en": "Disable Natural Light (Solar Sync)",
+          "en": "Disable Natural Light - solar sync",
           "fr": "DÃ©sactiver Natural Light (Synchro Solaire)"
         },
         "args": [
@@ -82345,7 +82335,7 @@
       {
         "id": "natural_light_enable",
         "title": {
-          "en": "Enable Natural Light (Solar Sync)",
+          "en": "Enable Natural Light - solar sync",
           "fr": "Activer Natural Light (Synchro Solaire)"
         },
         "hint": {
@@ -91664,7 +91654,7 @@
             "filter": "driver_id=device_air_purifier_siren"
           },
           {
-            "name": "duration",
+            "name": "duration_seconds",
             "type": "number",
             "min": 1,
             "max": 300,
@@ -91675,10 +91665,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Set alarm duration [[duration]]",
-          "nl": "Alarmduur instellen [[duration]]",
-          "fr": "DÃ©finir la durÃ©e de l'alarme [[duration]]",
-          "de": "Alarmdauer einstellen [[duration]]"
+          "en": "Set alarm duration [[duration_seconds]]",
+          "nl": "Alarmduur instellen [[duration_seconds]]",
+          "fr": "DÃ©finir la durÃ©e de l'alarme [[duration_seconds]]",
+          "de": "Alarmdauer einstellen [[duration_seconds]]"
         }
       },
       {
@@ -99673,7 +99663,7 @@
             }
           },
           {
-            "name": "duration",
+            "name": "duration_seconds",
             "type": "number",
             "title": {
               "en": "Duration (seconds)",
@@ -99789,10 +99779,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-          "nl": "Leer IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-          "de": "IR-Code Lernen [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-          "fr": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]"
+          "en": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+          "nl": "Leer IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+          "de": "IR-Code Lernen [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+          "fr": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
         }
       },
       {
@@ -104077,11 +104067,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           }
         ],
         "titleFormatted": {
@@ -104110,11 +104095,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=presence_detector"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driverId=presence_detector"
           }
         ],
         "titleFormatted": {
@@ -107715,7 +107695,7 @@
             "filter": "driver_id=siren"
           },
           {
-            "name": "duration",
+            "name": "duration_seconds",
             "type": "number",
             "min": 1,
             "max": 300,
@@ -107726,10 +107706,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Set alarm duration [[duration]]",
-          "nl": "Alarmduur instellen [[duration]]",
-          "fr": "Définir la durée de l'alarme [[duration]]",
-          "de": "Alarmdauer einstellen [[duration]]"
+          "en": "Set alarm duration [[duration_seconds]]",
+          "nl": "Alarmduur instellen [[duration_seconds]]",
+          "fr": "Définir la durée de l'alarme [[duration_seconds]]",
+          "de": "Alarmdauer einstellen [[duration_seconds]]"
         }
       },
       {
@@ -107980,7 +107960,7 @@
           },
           {
             "type": "number",
-            "name": "duration",
+            "name": "duration_seconds",
             "min": 0,
             "max": 65535,
             "step": 1,
@@ -108000,9 +107980,9 @@
           }
         ],
         "titleFormatted": {
-          "en": "Switch on siren for X Seconds [[duration]]",
-          "de": "Sirene für X Sekunden einschalten [[duration]]",
-          "nl": "Zet sirene aan voor X seconden [[duration]]"
+          "en": "Switch on siren for X Seconds [[duration_seconds]]",
+          "de": "Sirene für X Sekunden einschalten [[duration_seconds]]",
+          "nl": "Zet sirene aan voor X seconden [[duration_seconds]]"
         }
       },
       {
@@ -109976,15 +109956,15 @@
             "values": [
               {
                 "id": "off",
-                "label": "Off"
+                "title": "Off"
               },
               {
                 "id": "normal",
-                "label": "Normal"
+                "title": "Normal"
               },
               {
                 "id": "inverted",
-                "label": "Inverted"
+                "title": "Inverted"
               }
             ],
             "title": {
@@ -110013,19 +109993,19 @@
             "values": [
               {
                 "id": "white",
-                "label": "White"
+                "title": "White"
               },
               {
                 "id": "red",
-                "label": "Red"
+                "title": "Red"
               },
               {
                 "id": "blue",
-                "label": "Blue"
+                "title": "Blue"
               },
               {
                 "id": "green",
-                "label": "Green"
+                "title": "Green"
               }
             ],
             "title": {
@@ -110150,15 +110130,15 @@
             "values": [
               {
                 "id": "off",
-                "label": "Off"
+                "title": "Off"
               },
               {
                 "id": "on",
-                "label": "On"
+                "title": "On"
               },
               {
                 "id": "previous",
-                "label": "Previous state"
+                "title": "Previous state"
               }
             ],
             "title": {
@@ -120804,10 +120784,7 @@
           "_TZE204_upagmta9",
           "_TZE204_utkemkbs",
           "_TZE204_9yapgbuv",
-          "_TZE200_cirvgep4",
-          "_TZE204_cirvgep4",
           "_TZE200_9yapgbuv",
-          "_tze20x_xxxxxxxx",
           "_TZE200_3p5ydos3",
           "_TZE200_whpb9yts",
           "_TZE200_ebwgzdqq",
@@ -120953,7 +120930,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_climate_needs_device_assignment",
           "_hybrid_air_purifier_climate_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_CLIMATE_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -121367,7 +121343,6 @@
         },
         "manufacturerName": [
           "_GENERIC_AIR_PURIFIER_CONTACT",
-          "_GENERIC_AIR_PURIFIER_CONTACT",
           "_generic_air_purifier_contact"
         ]
       }
@@ -121521,7 +121496,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_curtain_needs_device_assignment",
           "_hybrid_air_purifier_curtain_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_CURTAIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -121917,7 +121891,6 @@
         },
         "manufacturerName": [
           "_hybrid_air_purifier_dimmer_needs_device_assignment",
-          "_hybrid_air_purifier_dimmer_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -122009,7 +121982,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_din_needs_device_assignment",
           "_hybrid_air_purifier_din_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -122105,7 +122077,6 @@
         },
         "manufacturerName": [
           "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment",
-          "_hybrid_air_purifier_lcdtemphumidsensor_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_LCDTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -122181,7 +122152,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_motion_needs_device_assignment",
           "_hybrid_air_purifier_motion_needs_device_assignment",
           "_TZ3000_jl7qyupf",
           "_TZ3000_lmlsduws",
@@ -123122,7 +123092,6 @@
         },
         "manufacturerName": [
           "_GENERIC_AIR_PURIFIER_QUALITY",
-          "_GENERIC_AIR_PURIFIER_QUALITY",
           "_generic_air_purifier_quality"
         ]
       }
@@ -123234,7 +123203,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_siren_needs_device_assignment",
           "_hybrid_air_purifier_siren_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -123534,7 +123502,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_air_purifier_soil_needs_device_assignment",
           "_hybrid_air_purifier_soil_needs_device_assignment",
           "_HYBRID_AIR_PURIFIER_SOIL_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -125127,7 +125094,6 @@
         },
         "manufacturerName": [
           "_hybrid_blaster_remote_needs_device_assignment",
-          "_hybrid_blaster_remote_needs_device_assignment",
           "_HYBRID_BLASTER_REMOTE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -125182,7 +125148,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_boiler_switch_energy_needs_device_assignment",
           "_hybrid_boiler_switch_energy_needs_device_assignment",
           "_HYBRID_BOILER_SWITCH_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -125990,8 +125955,6 @@
           "_TZ3210_DDIGCA5N",
           "_TZ3210_JLF1NEPW",
           "_TZ3210_RWMITWJ4",
-          "lumi.light.cwopcn02",
-          "lumi.light.cwopcn03",
           "_tz3000_riwp3k79",
           "_tz3000_kdpxju99",
           "LUMI.LIGHT.CWOPCN02",
@@ -127327,7 +127290,6 @@
         },
         "manufacturerName": [
           "_hybrid_bulb_rgb_rgbw_needs_device_assignment",
-          "_hybrid_bulb_rgb_rgbw_needs_device_assignment",
           "_HYBRID_BULB_RGB_RGBW_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -127380,7 +127342,6 @@
           "_tzb210_uoiqhjqe",
           "_tz3210_b3kiq1i0",
           "_tz3000_evag0pvn",
-          "SONOFF",
           "_tz3210_jaap6jeb",
           "sonoff"
         ],
@@ -129024,14 +128985,7 @@
           "ts0043",
           "ts0044",
           "_tz3400_",
-          "ts0041",
-          "ts0042",
-          "ts0043",
-          "ts0044",
           "_TZ3000_qgwcxxws",
-          "_TZ3000_abrsvsou",
-          "_TZ3000_4fjiwweb",
-          "_TZ3000_qja6nq5z",
           "_TZ3000_ixla93vd",
           "_TZ3000_uri7ongn",
           "_TYZB02_keyjqthh",
@@ -129984,7 +129938,6 @@
           "_TZ3000_zl1kmjqx",
           "_TZ3000_xiuox57i",
           "_tz3400_key8kk7r",
-          "_TZ3000_b3mgfu0d",
           "_TZE204_d7lpruvi",
           "_TZE284_d7lpruvi",
           "_tze204_hkdl5fmv",
@@ -129992,27 +129945,10 @@
           "_tz3210_2putqrmw",
           "_tzn3000_cfnprab5",
           "_TZ3210_tqlv4ug4",
-          "TUYATEC-O6SNCwd6",
-          "TUYATEC-nzrrvgco",
-          "_tyzb01_hlla45kx",
-          "_tyzb01_iuepbmpv",
           "_TZ3000_ew31dmgx",
-          "_TZ3000_CPHMQ0Q7",
-          "_TZ3000_MRAOVVMM",
-          "_TZ3000_GZNH2XLA",
-          "_TZ3000_1H2X4AKH",
-          "_TZ3000_DKSBTRZS",
           "_TZ3000_ww6drja5",
           "_TZ3000_fukaa7nc",
-          "_TZ3000_88IQNHVD",
           "_TZ3000_wzmuk9ai",
-          "_TZ3000_JAK16DLL",
-          "_TZ3000_1OBWWNMQ",
-          "_TZ3000_VMPBYGS5",
-          "_tyzb02_keyjhapk",
-          "_tz3000_5e235jpa",
-          "_tyzb02_key8kk7r",
-          "_tz3000_qzjcsmar",
           "_TZ3000_ee8nrt2l",
           "_TZ3000_a4xycprs",
           "_TZ3000_r0pmi2p3",
@@ -130934,6 +130870,7 @@
               1,
               5,
               6,
+              8,
               18,
               57344
             ]
@@ -130942,6 +130879,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -130950,6 +130888,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -130958,6 +130897,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -130977,8 +130917,31 @@
           "_tz3290_yyax9ajf",
           "SONOFF",
           "_tz3000_kjfzuycl",
-          "SONOFF",
-          "sonoff"
+          "sonoff",
+          "_tz3000_u3nv1jwk",
+          "_TZ3000_u3nv1jwk",
+          "_TZ3000_U3NV1JWK",
+          "_tz3000_kfu8zapd",
+          "_TZ3000_kfu8zapd",
+          "_TZ3000_KFU8ZAPD",
+          "_tz3000_xabckq1v",
+          "_TZ3000_xabckq1v",
+          "_TZ3000_XABCKQ1V",
+          "_tz3000_czuyt8lz",
+          "_TZ3000_czuyt8lz",
+          "_TZ3000_CZUYT8LZ",
+          "_tz3000_b3mgfu0d",
+          "_TZ3000_b3mgfu0d",
+          "_TZ3000_B3MGFU0D",
+          "_tz3000_rco1yzb1",
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_RCO1YZB1",
+          "_tz3000_abrsvsou",
+          "_TZ3000_abrsvsou",
+          "_TZ3000_ABRSVSOU",
+          "_tz3000_4fjiwweb",
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_4FJIWWEB"
         ]
       },
       "images": {
@@ -133447,7 +133410,6 @@
         },
         "manufacturerName": [
           "_hybrid_button_wireless_fingerbot_needs_device_assignment",
-          "_hybrid_button_wireless_fingerbot_needs_device_assignment",
           "_HYBRID_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -135409,7 +135371,6 @@
         },
         "manufacturerName": [
           "_GENERIC_BUTTON_WIRELESS_SWITCH",
-          "_GENERIC_BUTTON_WIRELESS_SWITCH",
           "_generic_button_wireless_switch"
         ]
       }
@@ -135664,7 +135625,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_BUTTON_WIRELESS_USB",
           "_GENERIC_BUTTON_WIRELESS_USB",
           "_generic_button_wireless_usb"
         ]
@@ -136059,7 +136019,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_button_wireless_valve_needs_device_assignment",
           "_hybrid_button_wireless_valve_needs_device_assignment",
           "_HYBRID_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -137388,6 +137347,12 @@
           "_TZE284_E2BEDVO9",
           "_TZE284_E4PF6L87",
           "_TZE284_EEKPF0FT",
+          "_tze200_cirvgep4",
+          "_TZE200_cirvgep4",
+          "_TZE200_CIRVGEP4",
+          "_tze204_cirvgep4",
+          "_TZE204_cirvgep4",
+          "_TZE204_CIRVGEP4",
           "_TZE284_HDYJYQJM",
           "_TZE284_HECSEJSB",
           "_TZE284_HHRTIQ0X",
@@ -137541,28 +137506,22 @@
           "_TZE284_65gzcss7",
           "_TZE284_gyzlwu5q",
           "_TZE284_hdml1aav",
-          "OWON",
           "_tyst11_fzo2pocs",
           "_tyst11_pisltm67",
           "_tz3000_2xlvlnez",
           "_tz3000_c8zfad4a",
           "_tz3000_f09j9qjb",
           "_tz3000_j6adk9id",
-          "_tz3000_kaflzta4",
           "_tz3000_mq4wujmp",
           "_tz3000_nsa76jai",
-          "_tz3000_ovyaisip",
-          "_tz3000_pk8tgtdb",
           "_tz3000_t9qqxn70",
           "_tz3000_ugi8ky6u",
           "_tz3000_vjhcenzo",
           "_tz3000_vn88ezar",
           "_tz3000_ww6drja5ts011f",
-          "_tz3000_yervjnlj",
           "_tz3210_fgwhjm9j",
           "_tze200_dhke3p9w",
           "_tze200_lawxy9e2",
-          "_tze200_ne4pikwm",
           "_tze200_nvodulvi",
           "_tze200_oc7xqqbs",
           "_tze200_rjxqso4a",
@@ -137578,16 +137537,13 @@
           "_tze204_rkbxtclc",
           "_tze204_unsxl4ir",
           "_tze204_xalsoe3m",
-          "_tze284_0ints6wl",
           "_tze284_6kijc7nd",
           "_tze284_chbyv06x",
           "_tze284_d0ypnbvn",
           "_tze284_dhke3p9w",
           "_tze284_fncxk3ob",
           "_tze284_fzo2pocs",
-          "_tze284_ne4pikwm",
           "_tze284_rjxqso4a",
-          "_TYZB01_CBIEZPDS",
           "owon"
         ],
         "productId": [
@@ -138360,7 +138316,6 @@
         },
         "manufacturerName": [
           "_GENERIC_CLIMATE_SENSOR_DEVICE",
-          "_GENERIC_CLIMATE_SENSOR_DEVICE",
           "_generic_climate_sensor_device"
         ]
       }
@@ -138744,7 +138699,6 @@
         },
         "manufacturerName": [
           "_hybrid_climate_sensor_dimmer_needs_device_assignment",
-          "_hybrid_climate_sensor_dimmer_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -138827,7 +138781,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_energy_needs_device_assignment",
           "_hybrid_climate_sensor_energy_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -139218,7 +139171,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_CLIMATE_SENSOR_GAS",
           "_GENERIC_CLIMATE_SENSOR_GAS",
           "_generic_climate_sensor_gas"
         ]
@@ -139886,7 +139838,6 @@
         },
         "manufacturerName": [
           "_hybrid_climate_sensor_plug_needs_device_assignment",
-          "_hybrid_climate_sensor_plug_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -140006,7 +139957,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_presence_needs_device_assignment",
           "_hybrid_climate_sensor_presence_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -140726,7 +140676,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_climate_sensor_smart_needs_device_assignment",
           "_hybrid_climate_sensor_smart_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -141476,7 +141425,6 @@
         },
         "manufacturerName": [
           "_hybrid_climate_sensor_switch_needs_device_assignment",
-          "_hybrid_climate_sensor_switch_needs_device_assignment",
           "_HYBRID_CLIMATE_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -141630,8 +141578,6 @@
           }
         },
         "manufacturerName": [
-          "LUMI.SENSOR_MAGNET",
-          "LUMI.SENSOR_MAGNET.AQ2",
           "LUMI.SENSOR_MAGNET",
           "LUMI.SENSOR_MAGNET.AQ2",
           "_tz3000_bpkijo14",
@@ -142388,7 +142334,6 @@
         },
         "manufacturerName": [
           "_hybrid_contact_sensor_curtain_needs_device_assignment",
-          "_hybrid_contact_sensor_curtain_needs_device_assignment",
           "_HYBRID_CONTACT_SENSOR_CURTAIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -142760,7 +142705,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_dimmer_needs_device_assignment",
           "_hybrid_contact_sensor_dimmer_needs_device_assignment",
           "_HYBRID_CONTACT_SENSOR_DIMMER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -143435,7 +143379,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_contact_sensor_plug_needs_device_assignment",
           "_hybrid_contact_sensor_plug_needs_device_assignment",
           "_HYBRID_CONTACT_SENSOR_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -144195,7 +144138,6 @@
         },
         "manufacturerName": [
           "_hybrid_contact_sensor_switch_needs_device_assignment",
-          "_hybrid_contact_sensor_switch_needs_device_assignment",
           "_HYBRID_CONTACT_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -144575,7 +144517,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_CONTACT_SENSOR_ZIGBEE",
           "_GENERIC_CONTACT_SENSOR_ZIGBEE",
           "_generic_contact_sensor_zigbee"
         ]
@@ -145647,6 +145588,9 @@
           "_TZE200_nogaemzt",
           "_TZE200_nueqqe6k",
           "_TZE200_r0jdjrvi",
+          "_tze204_r0jdjrvi",
+          "_TZE204_r0jdjrvi",
+          "_TZE204_R0JDJRVI",
           "_TZE200_rddyvrci",
           "_TZE200_rmymn92d",
           "_TZE200_xaabybja",
@@ -146217,7 +146161,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_needs_device_assignment",
-          "_hybrid_device_air_purifier_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -146523,7 +146466,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_din_needs_device_assignment",
-          "_hybrid_device_air_purifier_din_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -146635,7 +146577,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_floor_needs_device_assignment",
-          "_hybrid_device_air_purifier_floor_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_FLOOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -146736,7 +146677,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_humidifier_needs_device_assignment",
-          "_hybrid_device_air_purifier_humidifier_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_HUMIDIFIER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -146826,7 +146766,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_led_needs_device_assignment",
           "_hybrid_device_air_purifier_led_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_LED_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -147222,7 +147161,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_motion_needs_device_assignment",
-          "_hybrid_device_air_purifier_motion_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_MOTION_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -147554,7 +147492,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_presence_needs_device_assignment",
           "_hybrid_device_air_purifier_presence_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -148201,7 +148138,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_quality_needs_device_assignment",
-          "_hybrid_device_air_purifier_quality_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_QUALITY_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -148570,18 +148506,11 @@
         "manufacturerName": [
           "_TZE200_dummy",
           "_TZE284_o3x45p96",
-          "_TZE284_o3x45p96",
-          "_TZE284_P3DBF6QS",
           "_TZE284_P3DBF6QS",
           "_TZE200_p3dbf6qs",
-          "_TZE200_p3dbf6qs",
-          "_TZE284_rv6iuyxb",
           "_TZE284_rv6iuyxb",
           "_TZE284_c6wv4xyo",
-          "_TZE284_c6wv4xyo",
           "_TZE284_hvaxb2tc",
-          "_TZE284_hvaxb2tc",
-          "_TZE204_o3x45p96",
           "_TZE204_o3x45p96"
         ]
       },
@@ -148928,7 +148857,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_air_purifier_siren_needs_device_assignment",
-          "_hybrid_device_air_purifier_siren_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_SIREN_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -149246,7 +149174,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_smart_needs_device_assignment",
           "_hybrid_device_air_purifier_smart_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -149624,7 +149551,6 @@
         ],
         "manufacturerName": [
           "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE",
-          "_GENERIC_DEVICE_AIR_PURIFIER_SMOKE",
           "_generic_device_air_purifier_smoke"
         ]
       }
@@ -149930,7 +149856,6 @@
         },
         "manufacturerName": [
           "_GENERIC_DEVICE_AIR_PURIFIER_SOIL",
-          "_GENERIC_DEVICE_AIR_PURIFIER_SOIL",
           "_generic_device_air_purifier_soil"
         ]
       }
@@ -149975,7 +149900,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_air_purifier_thermostat_needs_device_assignment",
           "_hybrid_device_air_purifier_thermostat_needs_device_assignment",
           "_HYBRID_DEVICE_AIR_PURIFIER_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -150274,7 +150198,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_DEVICE_AIR_PURIFIER_WATER",
           "_GENERIC_DEVICE_AIR_PURIFIER_WATER",
           "_generic_device_air_purifier_water"
         ]
@@ -150647,7 +150570,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_din_rail_meter_needs_device_assignment",
-          "_hybrid_device_din_rail_meter_needs_device_assignment",
           "_HYBRID_DEVICE_DIN_RAIL_METER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -150994,7 +150916,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_floor_heating_needs_device_assignment",
-          "_hybrid_device_floor_heating_needs_device_assignment",
           "_HYBRID_DEVICE_FLOOR_HEATING_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -151134,7 +151055,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_floor_heating_thermostat_needs_device_assignment",
-          "_hybrid_device_floor_heating_thermostat_needs_device_assignment",
           "_HYBRID_DEVICE_FLOOR_HEATING_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -151241,7 +151161,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL",
           "_GENERIC_DEVICE_GENERIC_DIY_UNIVERSAL",
           "_generic_device_generic_diy_universal"
         ]
@@ -151429,20 +151348,6 @@
           "TRADFRI",
           "tuya",
           "woox",
-          "blitzwolf",
-          "bw-",
-          "girier",
-          "IKEA",
-          "lidl",
-          "lonsonho",
-          "lumi",
-          "nas-",
-          "neo",
-          "signify",
-          "smartthings",
-          "TRADFRI",
-          "tuya",
-          "woox",
           "BLITZWOLF",
           "BW-",
           "GIRIER",
@@ -151571,7 +151476,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_master_device_plug_energy_needs_device_assignment",
           "_master_device_plug_energy_needs_device_assignment",
           "_MASTER_DEVICE_PLUG_ENERGY_NEEDS_DEVICE_ASSIGNMENT"
         ],
@@ -152889,7 +152793,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_device_plug_energy_monitor_needs_device_assignment",
           "_hybrid_device_plug_energy_monitor_needs_device_assignment",
           "_HYBRID_DEVICE_PLUG_ENERGY_MONITOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -154312,7 +154215,6 @@
         },
         "manufacturerName": [
           "_master_device_radiator_valve_needs_device_assignment",
-          "_master_device_radiator_valve_needs_device_assignment",
           "_MASTER_DEVICE_RADIATOR_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -154985,7 +154887,6 @@
         },
         "manufacturerName": [
           "_hybrid_device_radiator_valve_thermostat_needs_device_assignment",
-          "_hybrid_device_radiator_valve_thermostat_needs_device_assignment",
           "_HYBRID_DEVICE_RADIATOR_VALVE_THERMOSTAT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -155007,6 +154908,8 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -155079,6 +154982,8 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -155234,7 +155139,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_0_10v_needs_device_assignment",
           "_hybrid_dimmer_0_10v_needs_device_assignment",
           "_HYBRID_DIMMER_0_10V_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -155464,7 +155368,6 @@
         },
         "manufacturerName": [
           "_hybrid_dimmer_1_gang_2_needs_device_assignment",
-          "_hybrid_dimmer_1_gang_2_needs_device_assignment",
           "_HYBRID_DIMMER_1_GANG_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -155569,7 +155472,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_1_gang_tuya_needs_device_assignment",
           "_hybrid_dimmer_1_gang_tuya_needs_device_assignment",
           "_HYBRID_DIMMER_1_GANG_TUYA_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -156063,7 +155965,6 @@
         },
         "manufacturerName": [
           "_hybrid_dimmer_4ch_needs_device_assignment",
-          "_hybrid_dimmer_4ch_needs_device_assignment",
           "_HYBRID_DIMMER_4CH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -156122,7 +156023,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_air_purifier_needs_device_assignment",
           "_hybrid_dimmer_air_purifier_needs_device_assignment",
           "_HYBRID_DIMMER_AIR_PURIFIER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -156532,7 +156432,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_bulb_dimmable_needs_device_assignment",
           "_hybrid_dimmer_bulb_dimmable_needs_device_assignment",
           "_HYBRID_DIMMER_BULB_DIMMABLE_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -157194,8 +157093,6 @@
           "_TZ3000_hurauima",
           "_TZ3002_tdf2m4ch",
           "_TZ3000_sfibawtr",
-          "TS110E",
-          "TS110F",
           "ts110e",
           "ts110f"
         ]
@@ -158436,7 +158333,6 @@
         },
         "manufacturerName": [
           "_hybrid_dimmer_wall_switch_needs_device_assignment",
-          "_hybrid_dimmer_wall_switch_needs_device_assignment",
           "_HYBRID_DIMMER_WALL_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -158825,7 +158721,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_dimmer_wall_water_needs_device_assignment",
           "_hybrid_dimmer_wall_water_needs_device_assignment",
           "_HYBRID_DIMMER_WALL_WATER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -159246,108 +159141,6 @@
           "test",
           "texas instruments",
           "ti",
-          "tube",
-          "tube's zb",
-          "xyzroe",
-          "z-stack",
-          "z2m",
-          "z2t",
-          "zbbridge",
-          "zha",
-          "zigbee home",
-          "zigbee home automation",
-          "zigbee router",
-          "zigbee_home",
-          "zigbee-router",
-          "zigbee2mqtt",
-          "zigbee2tasmota",
-          "zigbeehome",
-          "zigbeerouter",
-          "zigstar",
-          "znrf52",
-          "zstack",
-          "zzh",
-          "zzh!",
-          "arduino",
-          "cc1352",
-          "cc1352p",
-          "cc2530",
-          "cc2531",
-          "cc2652",
-          "cc2652p",
-          "cc2652r",
-          "cc2652rb",
-          "cod.m",
-          "conbee",
-          "coordinator",
-          "custom",
-          "debug",
-          "deconz",
-          "demo",
-          "dev",
-          "development",
-          "diy",
-          "diyruz",
-          "dresden elektronik",
-          "e104",
-          "e18",
-          "e72",
-          "ebyte",
-          "efr32",
-          "efr32mg",
-          "efr32mg21",
-          "efr32mg22",
-          "egony",
-          "electrolama",
-          "esp-idf",
-          "esp32",
-          "esp32-c6",
-          "esp32-h2",
-          "esp32c6",
-          "esp32h2",
-          "espidf",
-          "espressif",
-          "example",
-          "gio",
-          "gio.zigbee",
-          "hobby",
-          "home_automation",
-          "homeautomation",
-          "homemade",
-          "hue essentials",
-          "jn5168",
-          "jn5169",
-          "lumi.router",
-          "maker",
-          "modkam",
-          "nordic",
-          "nrf52",
-          "nrf52840",
-          "nxp",
-          "open source",
-          "opensource",
-          "phoscon",
-          "platformio",
-          "popp",
-          "prototype",
-          "ptvo",
-          "ptvo.info",
-          "ptvo.switch",
-          "raspbee",
-          "rf-star",
-          "rfstar",
-          "router",
-          "sample",
-          "silabs",
-          "silicon labs",
-          "slaesh",
-          "slzb-06",
-          "slzb-07",
-          "smartthings",
-          "sonoff zbbridge",
-          "tasmota",
-          "test",
-          "texas instruments",
           "tube",
           "tube's zb",
           "xyzroe",
@@ -160190,7 +159983,6 @@
         },
         "manufacturerName": [
           "_hybrid_door_controller_garage_needs_device_assignment",
-          "_hybrid_door_controller_garage_needs_device_assignment",
           "_HYBRID_DOOR_CONTROLLER_GARAGE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -160862,12 +160654,6 @@
           "tuyatec-g3gl6cgy",
           "tuyatec-bfq2i2sy",
           "tuyatec-abkehqus",
-          "tuyatec-g3gl6cgy",
-          "tuyatec-bfq2i2sy",
-          "tuyatec-abkehqus",
-          "tuyatec-g3gl6cgy",
-          "tuyatec-bfq2i2sy",
-          "tuyatec-abkehqus",
           "TUYATEC-G3GL6CGY",
           "TUYATEC-BFQ2I2SY",
           "TUYATEC-ABKEHQUS"
@@ -161173,7 +160959,6 @@
         },
         "manufacturerName": [
           "_hybrid_double_power_point_needs_device_assignment",
-          "_hybrid_double_power_point_needs_device_assignment",
           "_HYBRID_DOUBLE_POWER_POINT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -161347,7 +161132,6 @@
         },
         "manufacturerName": [
           "_hybrid_double_power_point_2_needs_device_assignment",
-          "_hybrid_double_power_point_2_needs_device_assignment",
           "_HYBRID_DOUBLE_POWER_POINT_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -161491,7 +161275,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_energy_meter_din_needs_device_assignment",
           "_hybrid_energy_meter_din_needs_device_assignment",
           "_HYBRID_ENERGY_METER_DIN_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -163457,7 +163240,6 @@
         },
         "manufacturerName": [
           "_hybrid_gas_sensor_needs_device_assignment",
-          "_hybrid_gas_sensor_needs_device_assignment",
           "_HYBRID_GAS_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -163785,7 +163567,6 @@
           }
         },
         "manufacturerName": [
-          "_master_gas_sensor_switch_needs_device_assignment",
           "_master_gas_sensor_switch_needs_device_assignment",
           "_MASTER_GAS_SENSOR_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -164723,7 +164504,6 @@
           "dlnraja",
           "efekta",
           "legrand",
-          "legrand",
           "lumi router",
           "slzb",
           "sonoffzigbee",
@@ -164776,32 +164556,8 @@
           "_TZE284_9cqcpkgb",
           "_TZE204_mvtclclq",
           "_TZ3000_imaccztn",
-          "dln",
-          "dln-diy",
-          "dlnraja",
-          "efekta",
-          "legrand",
-          "legrand",
-          "lumi router",
-          "slzb",
-          "sonoffzigbee",
-          "schneider electric",
-          "schneider",
-          "wiser",
-          "danfoss",
-          "bosch",
-          "rbsh",
-          "niko",
-          "niko nv",
-          "d5x84yu",
-          "netatmo",
-          "ti router",
-          "ti.router",
-          "zig-a-zig-ah",
-          "zigfred",
           "_TZ3000_mw1pqqqt",
           "_TZ3000_9ni6xxld",
-          "_TZE200_lvkk0hdg",
           "_tz3210_emqmwtym",
           "_tze200_spyvfeti",
           "DLN",
@@ -165219,172 +164975,6 @@
           "_tz3210_jaap6jeb",
           "MÃœLLER LICHT",
           "_TZE204_2imwyigp",
-          "3REALITY",
-          "ADURO",
-          "ADUROSMART",
-          "AJAX",
-          "ALDI",
-          "ALLEGION",
-          "AONE",
-          "ATSMART",
-          "AUGUST",
-          "AURORA",
-          "AURORA LIGHTING",
-          "BERKER",
-          "BINGOELEC",
-          "BITRON HOME",
-          "BITRON VIDEO",
-          "bosch",
-          "BRK",
-          "BROAN",
-          "BTICINO",
-          "BUSCH-JAEGER",
-          "CENTRALITE",
-          "CLIMAX",
-          "CLIMAX TECHNOLOGY",
-          "COMAP",
-          "CONNECTIVITY STANDARDS ALLIANCE",
-          "COOPER",
-          "COSWALL",
-          "CREE INC.",
-          "DANALOCK",
-          "DANFOSS A/S",
-          "DAWON",
-          "DAWON DNS",
-          "DEVELCO",
-          "DEVELCO PRODUCTS A/S",
-          "diyruz",
-          "DOME",
-          "dresden elektronik",
-          "EATON",
-          "EATON CORPORATION",
-          "ECOLINK",
-          "ECOSMART",
-          "ECOZY",
-          "EDP",
-          "ELKO",
-          "ELTAKO",
-          "ENBRIGHTEN",
-          "EUROTRONIC TECHNOLOGY",
-          "FEIT",
-          "FEIT ELECTRIC",
-          "FINDER",
-          "FIRST ALERT",
-          "FRIENT",
-          "FRIENT A/S",
-          "GEWISS",
-          "GIRA",
-          "GLEDOPTO",
-          "GOCONTROL",
-          "HAGER",
-          "HEIMANTECHNOLOGY",
-          "HEIMGARD",
-          "HUE",
-          "ILUMINIZE",
-          "ILUX",
-          "INNR",
-          "INNR LIGHTING B.V.",
-          "ITEAD",
-          "JASCO",
-          "JASCO PRODUCTS",
-          "JUNG",
-          "KEEN",
-          "KONKE",
-          "KONYKS",
-          "KOREAKOSS",
-          "KOSS",
-          "KTNNKG",
-          "LEDVANCE",
-          "LEEDARSON",
-          "LEEDARSON LIGHTING",
-          "LEVITON MANUFACTURING",
-          "LIFX",
-          "LINEAR",
-          "LINKIND",
-          "LIVARNO",
-          "LIVARNO LUX",
-          "LIVOLO",
-          "LUTRON ELECTRONICS",
-          "MATTER",
-          "MDT",
-          "MEDION",
-          "MERTEN",
-          "MIBOXER",
-          "MLI",
-          "MONOPRICE",
-          "MULLER LICHT",
-          "MÜLLER LICHT",
-          "NAMRON",
-          "NANOLEAF",
-          "NEO COOLCAM",
-          "NORTEK",
-          "NUKI",
-          "NUTONE",
-          "OSRAM",
-          "PAULMANN",
-          "PAULMANN LICHT",
-          "PAULMANN LICHT GMBH",
-          "PERENIO",
-          "PHILIPS HUE",
-          "phoscon",
-          "popp",
-          "REV",
-          "REVOGNI",
-          "RING LLC",
-          "ROB",
-          "ROBB",
-          "ROBERT BOSCH GMBH",
-          "RYRA",
-          "SALUS",
-          "SAMJIN",
-          "SAMSUNG",
-          "SAMSUNG ELECTRONICS",
-          "SASWELL",
-          "SECURIFI",
-          "SENGLED",
-          "SENGLED INC.",
-          "SENGOKU",
-          "SERCOMM",
-          "SHINASYSTEM",
-          "SINOPE",
-          "SINOPE TECHNOLOGIES",
-          "SITERWELL",
-          "SMARTECH",
-          "SMARTTHINGS INC.",
-          "SMARTVILL",
-          "SPECTRUM BRANDS",
-          "SR-ZG",
-          "STELPRO",
-          "SWANN",
-          "TEDEE",
-          "TERNCY",
-          "THIRD REALITY",
-          "THIRD REALITY, INC",
-          "THREAD",
-          "TINT",
-          "TRUST",
-          "TRUST INTERNATIONAL",
-          "U-TEC",
-          "ULTRALOQ",
-          "UTEC",
-          "VIMAR",
-          "VISION",
-          "WALLPAD",
-          "WEINZIERL",
-          "WINNERS",
-          "wiser",
-          "WIZ",
-          "WOOLLEY",
-          "YAGUSMART",
-          "YALE",
-          "YEELIGHT",
-          "YOOLAX",
-          "ZEN",
-          "ZEN THERMOSTAT",
-          "ZIGBEE ALLIANCE",
-          "zigbee2mqtt",
-          "MÃœLLER LICHT",
-          "MÃœLLER LICHT",
           "3reality",
           "aduro",
           "adurosmart",
@@ -166019,7 +165609,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_hvac_air_conditioner_needs_device_assignment",
           "_hybrid_hvac_air_conditioner_needs_device_assignment",
           "_HYBRID_HVAC_AIR_CONDITIONER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -166794,20 +166383,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "TUYATEC-1G3TAWNP",
-          "TUYATEC-1UXX9CCI",
-          "tuyatec-abkehqus",
-          "tuyatec-bfq2i2sy",
-          "TUYATEC-GQHXIXYK",
-          "TUYATEC-HAOIUWZY",
-          "TUYATEC-OJMXEIKG",
-          "TUYATEC-OJMXEIKQ",
-          "TUYATEC-PRHS1RSD",
-          "TUYATEC-QUN7VQ14",
-          "TUYATEC-RIUJ5XZS",
-          "TUYATEC-V3UXBUXY",
-          "TUYATEC-VMGH3FXD",
-          "TUYATEC-YG5DCBFU",
           "TUYATEC-1G3TAWNP",
           "TUYATEC-1UXX9CCI",
           "tuyatec-abkehqus",
@@ -167716,7 +167291,6 @@
         },
         "manufacturerName": [
           "_hybrid_illuminance_sensor_needs_device_assignment",
-          "_hybrid_illuminance_sensor_needs_device_assignment",
           "_HYBRID_ILLUMINANCE_SENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -168597,7 +168171,6 @@
         },
         "manufacturerName": [
           "_hybrid_lcdtemphumidsensor_2_needs_device_assignment",
-          "_hybrid_lcdtemphumidsensor_2_needs_device_assignment",
           "_HYBRID_LCDTEMPHUMIDSENSOR_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -168754,7 +168327,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_lcdtemphumidsensor_3_needs_device_assignment",
           "_hybrid_lcdtemphumidsensor_3_needs_device_assignment",
           "_HYBRID_LCDTEMPHUMIDSENSOR_3_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -173312,8 +172884,6 @@
           "_TZ3000_VMPBYGS5",
           "SONOFF",
           "ewelink",
-          "SONOFF",
-          "ewelink",
           "sonoff",
           "EWELINK"
         ],
@@ -173820,14 +173390,6 @@
           "_TZE204_MCHXVE9O",
           "_TZE204_SNDKANFR",
           "_TZE284_0ZSE7XQG",
-          "TUYATEC-BD5FAF9P",
-          "TUYATEC-SMMLGUJU",
-          "TUYATEC-ZW6HXAFZ",
-          "TUYATEC-BD5FAF9P",
-          "TUYATEC-ZW6HXAFZ",
-          "_TZ3000_MMTWJMAQ",
-          "_TZ3000_C8OZAH8N",
-          "_TZ3000_Y56PGPGS",
           "tuyatec-bd5faf9p",
           "tuyatec-smmlguju",
           "tuyatec-zw6hxafz"
@@ -174328,7 +173890,6 @@
         },
         "manufacturerName": [
           "_GENERIC_MOTION_SENSOR_2",
-          "_GENERIC_MOTION_SENSOR_2",
           "_generic_motion_sensor_2"
         ]
       },
@@ -174388,8 +173949,6 @@
           "_TZE200_1IBPYHON",
           "_TZE204_1IBPYHON",
           "_tze200_clrdrnya",
-          "_tze200_clrdrnya",
-          "_tze204_clrdrnya",
           "_tze204_clrdrnya",
           "_TZE284_0WFZACEL",
           "_TZE284_ZY6WJM01",
@@ -175657,7 +175216,6 @@
         },
         "manufacturerName": [
           "_hybrid_outdoor_2_socket_needs_device_assignment",
-          "_hybrid_outdoor_2_socket_needs_device_assignment",
           "_HYBRID_OUTDOOR_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -176279,17 +175837,6 @@
           "TUYATEC-deetibst",
           "TUYATEC-dgtxmihe",
           "TUYATEC-b5g40alm",
-          "TUYATEC-lha8pbwd",
-          "TUYATEC-zn9wyqtr",
-          "TUYATEC-dxnohkpd",
-          "TUYATEC-53o41joc",
-          "TUYATEC-deetibst",
-          "TUYATEC-dgtxmihe",
-          "TUYATEC-b5g40alm",
-          "TUYATEC-53o41joc",
-          "TUYATEC-deetibst",
-          "TUYATEC-dgtxmihe",
-          "TUYATEC-b5g40alm",
           "tuyatec-lha8pbwd",
           "tuyatec-zn9wyqtr",
           "tuyatec-dxnohkpd",
@@ -176450,8 +175997,6 @@
           "_TZ3210_cehuw1lw",
           "_TZ3210_5CT6E7YE",
           "_TZ3000_qystbcjg",
-          "ck-bl702-swp-01(7020)",
-          "E-WELINK",
           "_TZ3000_fqoynhku",
           "_tze200_f91miyhj",
           "_tze284_bjzrowv2",
@@ -176973,7 +176518,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_plug_smart_needs_device_assignment",
           "_hybrid_plug_smart_needs_device_assignment",
           "_HYBRID_PLUG_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -178324,7 +177868,6 @@
         },
         "manufacturerName": [
           "_hybrid_plug_smart_switch_needs_device_assignment",
-          "_hybrid_plug_smart_switch_needs_device_assignment",
           "_HYBRID_PLUG_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -179655,23 +179198,12 @@
           "_TZE200_bh3n6gk8",
           "_TZE200_s6hzw8g2",
           "_TZE200_xpq2rzhq",
-          "ZG-204ZE",
-          "ZGAF-205L",
-          "_TZE204_r0jdjrvi",
-          "_TZE204_r0jdjrvi",
-          "_TZE204_grgol3xp",
           "_TZE204_grgol3xp",
           "_TZE204_uli8wasj",
-          "_TZE204_uli8wasj",
-          "_TZE284_ztqnh5cg",
           "_TZE284_ztqnh5cg",
           "_TZE284_sbyx0lm6",
-          "_TZE284_sbyx0lm6",
-          "_TZE284_rlytpmij",
           "_TZE284_rlytpmij",
           "_TZE284_bquwrqh1",
-          "_TZE284_bquwrqh1",
-          "_TZ3000_8bxrzyxz",
           "_TZ3000_8bxrzyxz",
           "zg-204ze",
           "zgaf-205l"
@@ -179994,7 +179526,6 @@
         },
         "manufacturerName": [
           "_hybrid_radar_sensor_2_needs_device_assignment",
-          "_hybrid_radar_sensor_2_needs_device_assignment",
           "_HYBRID_RADAR_SENSOR_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -180198,7 +179729,6 @@
         },
         "manufacturerName": [
           "_GENERIC_RADAR_SENSOR_CEILING",
-          "_GENERIC_RADAR_SENSOR_CEILING",
           "_generic_radar_sensor_ceiling"
         ]
       },
@@ -180301,7 +179831,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_radiator_controller_needs_device_assignment",
           "_hybrid_radiator_controller_needs_device_assignment",
           "_HYBRID_RADIATOR_CONTROLLER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -180986,7 +180515,12 @@
           "_TZE200_57MBUHN0",
           "_TZE204_57MBUHN0",
           "_TZE200_p3dbf6qs",
-          "_TZE200_p3dbf6qs"
+          "_tze284_ne4pikwm",
+          "_TZE284_ne4pikwm",
+          "_TZE284_NE4PIKWM",
+          "_tze200_ne4pikwm",
+          "_TZE200_ne4pikwm",
+          "_TZE200_NE4PIKWM"
         ],
         "productId": [
           "TV01-ZB",
@@ -182186,7 +181720,6 @@
           "_tz3000_rco1yzb1",
           "_tz3000_an5rjiwd",
           "_tz3000_xwh1e22x",
-          "SONOFF",
           "sonoff"
         ],
         "productId": [
@@ -183338,7 +182871,6 @@
         },
         "manufacturerName": [
           "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
-          "_hybrid_remote_button_wireless_fingerbot_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_FINGERBOT_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -183404,8 +182936,11 @@
         }
       },
       "zigbee": {
+        "manufacturerName": [
+          "_disabled_remote_button_wireless_handheld_needs_exact_fingerprint"
+        ],
         "productId": [
-          "TS0044"
+          "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -183456,10 +182991,7 @@
               57344
             ]
           }
-        },
-        "manufacturerName": [
-          "_tz3000_u3nv1jwk"
-        ]
+        }
       },
       "images": {
         "small": "/drivers/button_wireless_4/assets/images/small.png",
@@ -184234,7 +183766,6 @@
         },
         "manufacturerName": [
           "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG",
-          "_GENERIC_REMOTE_BUTTON_WIRELESS_PLUG",
           "_generic_remote_button_wireless_plug"
         ]
       }
@@ -184619,7 +184150,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_remote_button_wireless_scene_needs_device_assignment",
           "_hybrid_remote_button_wireless_scene_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_SCENE_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -185660,7 +185190,6 @@
         },
         "manufacturerName": [
           "_hybrid_remote_button_wireless_valve_needs_device_assignment",
-          "_hybrid_remote_button_wireless_valve_needs_device_assignment",
           "_HYBRID_REMOTE_BUTTON_WIRELESS_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -186133,6 +185662,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186204,6 +185737,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186238,8 +185775,6 @@
           "_TZ3000_qd7hej8u",
           "_TZ3210_mja6r5ix",
           "_TZ3000_q50zhdsc",
-          "eWeLight",
-          "eWeLight",
           "eWeLight",
           "ewelight",
           "EWELIGHT"
@@ -186286,6 +185821,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186357,6 +185896,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186428,6 +185971,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186502,6 +186049,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186573,6 +186124,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186651,6 +186206,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186724,6 +186283,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186796,6 +186359,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -186867,6 +186434,10 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -187510,7 +187081,6 @@
         "manufacturerName": [
           "_tz3000_iszegwpd",
           "HOBEIAN",
-          "HOBEIAN",
           "hobeian"
         ],
         "productId": [
@@ -187682,7 +187252,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_scene_switch_6ch_needs_device_assignment",
           "_hybrid_scene_switch_6ch_needs_device_assignment",
           "_HYBRID_SCENE_SWITCH_6CH_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -187901,7 +187470,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_master_sensor_climate_contact_needs_device_assignment",
           "_master_sensor_climate_contact_needs_device_assignment",
           "_MASTER_SENSOR_CLIMATE_CONTACT_NEEDS_DEVICE_ASSIGNMENT"
         ],
@@ -188890,7 +188458,6 @@
         },
         "manufacturerName": [
           "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR",
-          "_GENERIC_SENSOR_CLIMATE_LCDTEMPHUMIDSENSOR",
           "_generic_sensor_climate_lcdtemphumidsensor"
         ]
       }
@@ -189320,7 +188887,6 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_master_sensor_climate_motion_needs_device_assignment",
           "_master_sensor_climate_motion_needs_device_assignment",
           "_MASTER_SENSOR_CLIMATE_MOTION_NEEDS_DEVICE_ASSIGNMENT"
         ],
@@ -189976,7 +189542,6 @@
         },
         "manufacturerName": [
           "_hybrid_sensor_climate_presence_needs_device_assignment",
-          "_hybrid_sensor_climate_presence_needs_device_assignment",
           "_HYBRID_SENSOR_CLIMATE_PRESENCE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -190124,7 +189689,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sensor_climate_smart_needs_device_assignment",
           "_hybrid_sensor_climate_smart_needs_device_assignment",
           "_HYBRID_SENSOR_CLIMATE_SMART_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -191248,7 +190812,6 @@
         },
         "manufacturerName": [
           "_GENERIC_SENSOR_CONTACT_CLIMATE",
-          "_GENERIC_SENSOR_CONTACT_CLIMATE",
           "_generic_sensor_contact_climate"
         ]
       }
@@ -191717,7 +191280,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sensor_contact_plug_needs_device_assignment",
           "_hybrid_sensor_contact_plug_needs_device_assignment",
           "_HYBRID_SENSOR_CONTACT_PLUG_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -192394,7 +191956,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
           "HOBEIAN",
           "hobeian"
         ],
@@ -193703,7 +193264,6 @@
         },
         "manufacturerName": [
           "_GENERIC_SENSOR_CONTACT_WATER",
-          "_GENERIC_SENSOR_CONTACT_WATER",
           "_generic_sensor_contact_water"
         ]
       }
@@ -193826,19 +193386,6 @@
           "_TZE200_2m38mh6k",
           "_tze200_nklqjk62",
           "_tze204_2m38mh6k",
-          "tuyatec-ktge2vqt",
-          "TUYATEC-0l6xaqmi",
-          "TUYATEC-7qunn4gq",
-          "TUYATEC-crr8qb0p",
-          "TUYATEC-ip9ganvw",
-          "TUYATEC-kbqf60nt",
-          "TUYATEC-r9hgssol",
-          "TUYATEC-rkqiqvcs",
-          "TUYATEC-sb6t7ett",
-          "TUYATEC-trhrga6p",
-          "Immax",
-          "Visonic",
-          "TUYATEC-3tipnsrx",
           "TUYATEC-KTGE2VQT",
           "tuyatec-0l6xaqmi",
           "tuyatec-7qunn4gq",
@@ -195014,8 +194561,6 @@
           "ts0222",
           "_TZE284_zofmmt9s",
           "_TZE204_hewlydpz",
-          "zg-106z",
-          "ts0222",
           "_TZE200_ef5m00u2",
           "_TZE204_ef5m00u2",
           "_TZE200_f18u9bm9",
@@ -196736,7 +196281,6 @@
         ],
         "manufacturerName": [
           "_hybrid_sensor_motion_radar_needs_device_assignment",
-          "_hybrid_sensor_motion_radar_needs_device_assignment",
           "_HYBRID_SENSOR_MOTION_RADAR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -197844,7 +197388,6 @@
         },
         "manufacturerName": [
           "_hybrid_shutter_roller_controller_needs_device_assignment",
-          "_hybrid_shutter_roller_controller_needs_device_assignment",
           "_HYBRID_SHUTTER_ROLLER_CONTROLLER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -198157,6 +197700,8 @@
           "_TZE200_T1BLO2BJ",
           "_TZE200_WNVHLCGL",
           "_TZE204_NLRFGPNY",
+          "_tze204_q76rtoa9",
+          "_TZE204_q76rtoa9",
           "_TZE204_Q76RTOA9",
           "_TZE204_t1blo2bj",
           "_TZE284_NLRFGPNY"
@@ -198533,7 +198078,6 @@
         },
         "manufacturerName": [
           "_hybrid_siren_sirentemphumidsensor_needs_device_assignment",
-          "_hybrid_siren_sirentemphumidsensor_needs_device_assignment",
           "_HYBRID_SIREN_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -198619,7 +198163,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_sirentemphumidsensor_needs_device_assignment",
           "_hybrid_sirentemphumidsensor_needs_device_assignment",
           "_HYBRID_SIRENTEMPHUMIDSENSOR_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -199045,7 +198588,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SMARTPLUG_DINRAIL",
           "_GENERIC_SMARTPLUG_DINRAIL",
           "_generic_smartplug_dinrail"
         ]
@@ -199682,7 +199224,6 @@
         },
         "manufacturerName": [
           "_hybrid_smart_heater_needs_device_assignment",
-          "_hybrid_smart_heater_needs_device_assignment",
           "_HYBRID_SMART_HEATER_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -199992,7 +199533,6 @@
         },
         "manufacturerName": [
           "_hybrid_smart_irrigation_valve_needs_device_assignment",
-          "_hybrid_smart_irrigation_valve_needs_device_assignment",
           "_HYBRID_SMART_IRRIGATION_VALVE_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -200068,6 +199608,8 @@
         },
         "manufacturerName": [
           "_tz3000_kaflzta4",
+          "_TZ3000_kaflzta4",
+          "_TZ3000_KAFLZTA4",
           "_tz3000_g9g2xnch",
           "_tz3000_r0o2dahu"
         ]
@@ -200193,7 +199735,16 @@
           "_tz3000_csflgqj2",
           "_tz3000_pcqjmcud",
           "_tz3000_pzui3skt",
-          "_TZ3000_rrjr1q0u"
+          "_TZ3000_rrjr1q0u",
+          "_tz3000_qja6nq5z",
+          "_TZ3000_qja6nq5z",
+          "_TZ3000_QJA6NQ5Z",
+          "_tz3000_gwkzibhs",
+          "_TZ3000_gwkzibhs",
+          "_TZ3000_GWKZIBHS",
+          "_tz3000_ugi8ky6u",
+          "_TZ3000_ugi8ky6u",
+          "_TZ3000_UGI8KY6U"
         ],
         "productId": [
           "TS004F",
@@ -200614,7 +200165,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_rco1yzb1",
           "_tz3000_yirp2pgd"
         ],
         "productId": [
@@ -200804,7 +200354,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_remote_4_buttons_needs_device_assignment",
           "_hybrid_smart_remote_4_buttons_needs_device_assignment",
           "_HYBRID_SMART_REMOTE_4_BUTTONS_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -201056,7 +200605,6 @@
         },
         "manufacturerName": [
           "_hybrid_smart_screen_switch_needs_device_assignment",
-          "_hybrid_smart_screen_switch_needs_device_assignment",
           "_HYBRID_SMART_SCREEN_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -201122,7 +200670,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smart_switch_needs_device_assignment",
           "_hybrid_smart_switch_needs_device_assignment",
           "_HYBRID_SMART_SWITCH_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -201203,7 +200750,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SMARTPLUG",
           "_GENERIC_SMARTPLUG",
           "_generic_smartplug"
         ]
@@ -201456,7 +201002,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_smartplug_2_socket_needs_device_assignment",
           "_hybrid_smartplug_2_socket_needs_device_assignment",
           "_HYBRID_SMARTPLUG_2_SOCKET_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -202003,7 +201548,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SMOKE_SENSOR",
           "_GENERIC_SMOKE_SENSOR",
           "_generic_smoke_sensor"
         ]
@@ -202788,7 +202332,6 @@
         },
         "manufacturerName": [
           "_hybrid_socket_power_strip_four_two_needs_device_assignment",
-          "_hybrid_socket_power_strip_four_two_needs_device_assignment",
           "_HYBRID_SOCKET_POWER_STRIP_FOUR_TWO_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -202814,6 +202357,7 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
+        "measure_battery",
         "alarm_water",
         "measure_ec",
         "measure_conductivity",
@@ -202867,7 +202411,13 @@
           }
         }
       },
-      "energy": {},
+      "energy": {
+        "batteries": [
+          "AAA",
+          "CR2032",
+          "CR2450"
+        ]
+      },
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
@@ -202890,6 +202440,9 @@
           "_TZE21C_i2ij4rb3",
           "_TZE2841000000_hdml1aav",
           "_TZE284_0INTS6W",
+          "_tze284_0ints6wl",
+          "_TZE284_0ints6wl",
+          "_TZE284_0INTS6WL",
           "_TZE284_2NHQASJH",
           "_TZE284_2se8efxh",
           "_TZE284_4XSYPNEY",
@@ -202912,7 +202465,11 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              4,
+              5,
+              60672,
+              61184
             ]
           }
         }
@@ -203143,7 +202700,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_soil_sensor_ec_needs_device_assignment",
           "_hybrid_soil_sensor_ec_needs_device_assignment",
           "_HYBRID_SOIL_SENSOR_EC_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -203403,7 +202959,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SR_ZS_SWITCH",
           "_GENERIC_SR_ZS_SWITCH",
           "_generic_sr_zs_switch"
         ]
@@ -204104,7 +203659,6 @@
         },
         "manufacturerName": [
           "_GENERIC_SWITCH",
-          "_GENERIC_SWITCH",
           "_generic_switch"
         ]
       }
@@ -204171,7 +203725,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_switch_1_gang_needs_device_assignment",
           "_hybrid_switch_1_gang_needs_device_assignment",
           "_HYBRID_SWITCH_1_GANG_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -204283,7 +203836,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SWITCH_1_GANG_METERING",
           "_GENERIC_SWITCH_1_GANG_METERING",
           "_generic_switch_1_gang_metering"
         ]
@@ -204806,7 +204358,6 @@
           "_TZE284_3regm3h6",
           "_TZE204_ouy7vpm1",
           "_tz3000_famkxci2",
-          "_tz3000_u3nv1jwk",
           "_TZ3000_pjb1ua0m",
           "_TYZB01_4MDQXXNN",
           "_TYZB01_M6EC2PGJ",
@@ -204866,9 +204417,6 @@
           "_TZE200_tgeqdjgk",
           "_TZ3000_kqvb5akv",
           "_TZ3000_HAFSQARE",
-          "BSEED",
-          "TZE204_7sjncirf",
-          "TZE204_7sjncirf",
           "_tz3000_ptjcjise",
           "bseed",
           "tze204_7sjncirf",
@@ -205781,7 +205329,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_switch_2_gang_metering_needs_device_assignment",
           "_hybrid_switch_2_gang_metering_needs_device_assignment",
           "_HYBRID_SWITCH_2_GANG_METERING_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -206800,6 +206347,8 @@
           "_tz3000_avky2mvc",
           "_tz3000_pv4puuxi",
           "_tz3000_qxcnwv26",
+          "_TZ3000_qxcnwv26",
+          "_TZ3000_QXCNWV26",
           "_tz3000_sznawwyw",
           "_tz3000_ypgri8yz",
           "_tz3000_avotanj3",
@@ -206808,6 +206357,8 @@
           "_tz3000_amdymr85",
           "_TZ3210_n0wbkysi",
           "_TZ3000_V4L4B0LP",
+          "_tz3000_eqsair32",
+          "_TZ3000_eqsair32",
           "_TZ3000_EQSAIR32",
           "_TZ3000_mw1pqqqt",
           "_TZ3000_HBIC3KA3"
@@ -207495,7 +207046,6 @@
           "_TZE200_fsb6zw01",
           "_TZE200_ewxhg6o9",
           "_tz3000_402vrq2i",
-          "_tz3000_gwkzibhs",
           "_tze200_rks0sgb7",
           "_tze204_q9xty0ad",
           "_TZ3000_1fqpj6qz",
@@ -207804,7 +207354,6 @@
           "_tz3210_imaccztn",
           "_TZ3000_mmkbptmx",
           "_TZE200_aqnazj70",
-          "LELLKI",
           "_TZ3000_qkixdnon",
           "_TZ302_pzao9ls1",
           "lellki"
@@ -208739,7 +208288,6 @@
         "manufacturerName": [
           "_TZ3000_typdpbpg",
           "HOBEIAN",
-          "HOBEIAN",
           "hobeian"
         ],
         "productId": [
@@ -209031,7 +208579,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_zloso4jk",
-          "HOBEIAN",
           "HOBEIAN",
           "hobeian"
         ],
@@ -209380,7 +208927,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3218_7FIYO3KV",
-          "HOBEIAN",
           "HOBEIAN",
           "hobeian"
         ],
@@ -210339,7 +209885,6 @@
         },
         "manufacturerName": [
           "_hybrid_switch_wall_needs_device_assignment",
-          "_hybrid_switch_wall_needs_device_assignment",
           "_HYBRID_SWITCH_WALL_NEEDS_DEVICE_ASSIGNMENT"
         ]
       }
@@ -210979,7 +210524,6 @@
           }
         },
         "manufacturerName": [
-          "_GENERIC_SWITCH_WALL_5GANG",
           "_GENERIC_SWITCH_WALL_5GANG",
           "_generic_switch_wall_5gang"
         ]
@@ -211780,7 +211324,6 @@
         "manufacturerName": [
           "_tyzb01_7gang001",
           "_tz3000_7gang001",
-          "HOBEIAN",
           "HOBEIAN",
           "_TZ3000_BLHVSAQF",
           "_TZ3000_YSDV91BK",
@@ -212637,7 +212180,6 @@
       "zigbee": {
         "manufacturerName": [
           "HOBEIAN",
-          "HOBEIAN",
           "hobeian"
         ],
         "productId": [
@@ -213195,13 +212737,6 @@
           "_TZ3000_8ybe88nf",
           "_TZ3000_fie1dpkm",
           "_TZ3000_f2bw0b6k",
-          "TUYATEC-1UXX9CCI",
-          "TUYATEC-HAOIUWZY",
-          "TUYATEC-RIUJ5XZS",
-          "TUYATEC-V3UXBUXY",
-          "tuyatec-g3gl6cgy",
-          "tuyatec-bfq2i2sy",
-          "tuyatec-abkehqus",
           "tuyatec-1uxx9cci",
           "tuyatec-haoiuwzy",
           "tuyatec-riuj5xzs",
@@ -213359,8 +212894,6 @@
           "_tza226_ueagguan",
           "_tyzb01_a082h2cc",
           "_tz3000_rufdtfyv",
-          "TUYATEC-QUN7VQ14",
-          "TUYATEC-QUN7VQ14",
           "TUYATEC-QUN7VQ14",
           "tuyatec-qun7vq14"
         ],
@@ -213712,7 +213245,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_temphumidsensor4_needs_device_assignment",
           "_hybrid_temphumidsensor4_needs_device_assignment",
           "_HYBRID_TEMPHUMIDSENSOR4_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -214509,6 +214041,9 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -214580,6 +214115,9 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -214651,6 +214189,9 @@
         "zigbee"
       ],
       "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature",
         "button.1"
       ],
       "capabilitiesOptions": {
@@ -214763,7 +214304,6 @@
         },
         "manufacturerName": [
           "_GENERIC_TUYA_DUMMY_DEVICE",
-          "_GENERIC_TUYA_DUMMY_DEVICE",
           "_generic_tuya_dummy_device"
         ]
       }
@@ -214816,7 +214356,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_ultrasonic_heat_meter_needs_device_assignment",
           "_hybrid_ultrasonic_heat_meter_needs_device_assignment",
           "_HYBRID_ULTRASONIC_HEAT_METER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -214887,7 +214426,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_ultrasonic_water_meter_needs_device_assignment",
           "_hybrid_ultrasonic_water_meter_needs_device_assignment",
           "_HYBRID_ULTRASONIC_WATER_METER_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -215262,53 +214800,6 @@
           "_TZE200_",
           "_TZE204_",
           "_TZE284_",
-          "lidl livarno",
-          "nous",
-          "tuyatec",
-          "ewelink",
-          "Aqara",
-          "Aubess",
-          "Avatto",
-          "Bitron",
-          "danfoss",
-          "Eco-DIM",
-          "EcoDim",
-          "Eurotronic",
-          "Heiman",
-          "IKEA of Sweden",
-          "LIDL Home",
-          "legrand",
-          "Moes",
-          "Philips",
-          "Robb SMARRT",
-          "schneider electric",
-          "Signify Netherlands B.V.",
-          "Silvercrest",
-          "Sunricher",
-          "Xiaomi",
-          "Zemismart",
-          "ewelink",
-          "Aqara",
-          "Aubess",
-          "Avatto",
-          "Bitron",
-          "danfoss",
-          "Eco-DIM",
-          "EcoDim",
-          "Eurotronic",
-          "Heiman",
-          "IKEA of Sweden",
-          "LIDL Home",
-          "legrand",
-          "Moes",
-          "Philips",
-          "Robb SMARRT",
-          "schneider electric",
-          "Signify Netherlands B.V.",
-          "Silvercrest",
-          "Sunricher",
-          "Xiaomi",
-          "Zemismart",
           "LIDL LIVARNO",
           "NOUS",
           "TUYATEC",
@@ -216509,7 +216000,6 @@
         },
         "manufacturerName": [
           "_master_valve_dual_irrigation_needs_device_assignment",
-          "_master_valve_dual_irrigation_needs_device_assignment",
           "_MASTER_VALVE_DUAL_IRRIGATION_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -216718,7 +216208,7 @@
         "nl": "Enkelvoudige Klep",
         "de": "Einzelventil"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "onoff",
         "dim.valve",
@@ -217026,7 +216516,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
           "HOBEIAN",
           "hobeian"
         ],
@@ -218070,7 +217559,6 @@
         },
         "manufacturerName": [
           "_hybrid_wall_remote_4_gang_2_needs_device_assignment",
-          "_hybrid_wall_remote_4_gang_2_needs_device_assignment",
           "_HYBRID_WALL_REMOTE_4_GANG_2_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -218204,7 +217692,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_remote_4_gang_3_needs_device_assignment",
           "_hybrid_wall_remote_4_gang_3_needs_device_assignment",
           "_HYBRID_WALL_REMOTE_4_GANG_3_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -218345,7 +217832,6 @@
           }
         },
         "manufacturerName": [
-          "_hybrid_wall_remote_6_gang_needs_device_assignment",
           "_hybrid_wall_remote_6_gang_needs_device_assignment",
           "_HYBRID_WALL_REMOTE_6_GANG_NEEDS_DEVICE_ASSIGNMENT"
         ]
@@ -218843,7 +218329,6 @@
         },
         "manufacturerName": [
           "_hybrid_wall_switch_1_gang_tuya_needs_device_assignment",
-          "_hybrid_wall_switch_1_gang_tuya_needs_device_assignment",
           "_HYBRID_WALL_SWITCH_1_GANG_TUYA_NEEDS_DEVICE_ASSIGNMENT"
         ]
       },
@@ -218900,7 +218385,13 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_vw40zqp4"
+          "_tz3000_vw40zqp4",
+          "_tz3000_ovyaisip",
+          "_TZ3000_ovyaisip",
+          "_TZ3000_OVYAISIP",
+          "_tz3000_pk8tgtdb",
+          "_TZ3000_pk8tgtdb",
+          "_TZ3000_PK8TGTDB"
         ],
         "productId": [
           "TS0001",
@@ -219200,7 +218691,6 @@
         "manufacturerName": [
           "_tz3000_xk5udnd6",
           "_tz3000_z1uezkpi",
-          "HOBEIAN",
           "HOBEIAN",
           "hobeian"
         ],
@@ -219703,7 +219193,8 @@
           "_tz3000_f09j9qjb",
           "_tz3000_vjhcenzo",
           "_tz3000_yervjnlj",
-          "HOBEIAN",
+          "_TZ3000_yervjnlj",
+          "_TZ3000_YERVJNLJ",
           "HOBEIAN",
           "hobeian"
         ],
@@ -220407,7 +219898,6 @@
           "_TZ3000_tyg4yiat",
           "_TZ3002_PZAO9LS1",
           "_TZ3000_mrduubod",
-          "HOBEIAN",
           "HOBEIAN",
           "hobeian"
         ],
@@ -221360,8 +220850,6 @@
           "_TYZB01_ttvdudvx",
           "_TZ3000_zojh9vz7",
           "_TZ3000_gsat0axs",
-          "LUMI.SENSOR_WLEAK",
-          "LUMI.SENSOR_WLEAK.AQ1",
           "_TZ3000_pattern",
           "lumi.sensor_wleak",
           "lumi.sensor_wleak.aq1"
@@ -221715,9 +221203,6 @@
           "_tz3000_e6ekbxts",
           "_TYST11_qq9mpfhw",
           "_TZE200_qq9mpfhw",
-          "tuyatec-bduz1xxp",
-          "tuyatec-h4wnrtck",
-          "tuyatec-ktev3uwq",
           "TUYATEC-BDUZ1XXP",
           "TUYATEC-H4WNRTCK",
           "TUYATEC-KTEV3UWQ"

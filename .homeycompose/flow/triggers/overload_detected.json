@@ -1,7 +1,7 @@
 {
   "id": "overload_detected",
   "title": {
-    "en": "Overload detected (Safety Cutoff)",
+    "en": "Overload detected - safety cutoff",
     "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©)"
   },
   "args": [
@@ -22,7 +22,7 @@
     }
   ],
   "titleFormatted": {
-    "en": "Overload detected (Safety Cutoff) [[device]]",
+    "en": "Overload detected - safety cutoff [[device]]",
     "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©) [[device]]"
   }
 }

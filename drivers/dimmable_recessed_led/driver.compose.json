@@ -49,6 +49,8 @@
     "zigbee"
   ],
   "capabilities": [
+    "onoff",
+    "dim",
     "button.1"
   ],
   "capabilitiesOptions": {
@@ -60,6 +62,10 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "onoff": {
+      "setOnDim": false
     }
-  }
+  },
+  "class": "light"
 }

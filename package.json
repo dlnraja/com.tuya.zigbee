@@ -16,6 +16,7 @@
     "fix-empty-mfr": "node scripts/fix-empty-mfr.js",
     "diag-build": "node .github/scripts/athom-build-error-diag.js",
     "find-size": "node scripts/find-size.js",
+    "fix:generated-flow-args": "node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json",
     "validate": "homey app validate",
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",
@@ -56,8 +57,8 @@
     "titan:fix": "node scripts/ci/pre-commit-checks.js --fix",
     "sync:branches": "node scripts/automation/sync-branches.js",
     "sync:branches:dry": "node scripts/automation/sync-branches.js --dry-run",
-    "precommit": "node scripts/ci/titan-pre-commit.js && node scripts/ci/security-scanner.js && node scripts/validation/check-mixin-order.js && npm run check:timer-context && npm run check:voice",
-    "precommit:full": "node scripts/ci/titan-pre-commit.js && node scripts/PRE_COMMIT_CHECKS.js && node scripts/ci/security-scanner.js && npm run check:yaml && node scripts/ci/check-flow-ids.js --json && npm run check:button-flows && npm run check:voice && npm run check:diag-history",
+    "precommit": "node scripts/ci/titan-pre-commit.js && node scripts/ci/security-scanner.js && node scripts/validation/check-mixin-order.js && npm run check:homey-guidelines && npm run check:fingerprint-catalog && npm run check:button-flows && npm run check:timer-context && npm run check:voice",
+    "precommit:full": "node scripts/ci/titan-pre-commit.js && node scripts/PRE_COMMIT_CHECKS.js && node scripts/ci/security-scanner.js && npm run check:yaml && node scripts/ci/check-flow-ids.js --json && npm run check:homey-guidelines && npm run check:fingerprint-catalog && npm run check:button-flows && npm run check:voice && npm run check:diag-history",
     "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
     "audit": "node scripts/COMPLETE_POWER_AUDIT.js",
     "clean": "node scripts/CLEAN_APP_JSON.js",
@@ -104,6 +105,8 @@
     "check:yaml": "node scripts/ci/validate-all-yaml.js --json && node scripts/ci/validate-github-actions-policy.js",
     "check:actions": "node scripts/ci/validate-github-actions-policy.js",
     "check:flows": "node scripts/ci/check-flow-ids.js --json",
+    "check:homey-guidelines": "node scripts/ci/homey-online-guidelines-audit.js",
+    "check:fingerprint-catalog": "node scripts/ci/fingerprint-catalog-audit.js",
     "check:button-flows": "node scripts/ci/check-button-flow-routing.js --json",
     "check:bloat": "node scripts/ci/find-bloat.js --json",
     "diag:build": "node .github/scripts/athom-build-error-diag.js",
@@ -132,7 +135,7 @@
   "author": "Dylan L.N. Raja",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=22.0.0",
     "homey": ">=12.2.0"
   },
   "dependencies": {

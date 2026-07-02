@@ -259,7 +259,7 @@
       },
       "args": [
         {
-          "name": "duration",
+          "name": "duration_seconds",
           "type": "number",
           "min": 1,
           "max": 300,
@@ -270,10 +270,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set alarm duration [[duration]]",
-        "nl": "Alarmduur instellen [[duration]]",
-        "fr": "DÃ©finir la durÃ©e de l'alarme [[duration]]",
-        "de": "Alarmdauer einstellen [[duration]]"
+        "en": "Set alarm duration [[duration_seconds]]",
+        "nl": "Alarmduur instellen [[duration_seconds]]",
+        "fr": "DÃ©finir la durÃ©e de l'alarme [[duration_seconds]]",
+        "de": "Alarmdauer einstellen [[duration_seconds]]"
       }
     },
     {

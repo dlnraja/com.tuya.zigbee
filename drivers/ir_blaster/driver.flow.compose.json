@@ -370,7 +370,7 @@
           }
         },
         {
-          "name": "duration",
+          "name": "duration_seconds",
           "type": "number",
           "title": {
             "en": "Duration (seconds)",
@@ -486,10 +486,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-        "nl": "Leer IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-        "de": "IR-Code Lernen [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-        "fr": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]"
+        "en": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "nl": "Leer IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "de": "IR-Code Lernen [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+        "fr": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
       }
     },
     {

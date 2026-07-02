@@ -72,6 +72,8 @@ jobs:
         id: pr
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          EVENT_PR_HEAD_SHA: ${{ github.event.pull_request.head.sha || '' }}
+          EVENT_PR_BASE_REF: ${{ github.event.pull_request.base.ref || '' }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             PR_NUM="${{ inputs.pr_number }}"
@@ -86,6 +88,8 @@ jobs:
           else
             echo "mode=single" >> $GITHUB_OUTPUT
             echo "number=${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+            echo "head_sha=$EVENT_PR_HEAD_SHA" >> $GITHUB_OUTPUT
+            echo "base_ref=$EVENT_PR_BASE_REF" >> $GITHUB_OUTPUT
           fi
 
       - name: "Validate & Smart Merge"
@@ -93,6 +97,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          PR_HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          EXPECTED_PR_HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          PR_BASE_REF: ${{ steps.pr.outputs.base_ref }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -109,4 +116,6 @@ jobs:
         run: |
           echo "## Smart PR Merge" >> $GITHUB_STEP_SUMMARY
           echo "Mode: ${{ steps.pr.outputs.mode }}" >> $GITHUB_STEP_SUMMARY
+          echo "PR head SHA: ${{ steps.pr.outputs.head_sha || 'resolved-at-runtime' }}" >> $GITHUB_STEP_SUMMARY
+          echo "PR base ref: ${{ steps.pr.outputs.base_ref || 'resolved-at-runtime' }}" >> $GITHUB_STEP_SUMMARY
           echo "Result: ${{ steps.merge.outcome }}" >> $GITHUB_STEP_SUMMARY

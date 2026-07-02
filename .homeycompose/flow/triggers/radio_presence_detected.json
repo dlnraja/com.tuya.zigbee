@@ -11,7 +11,8 @@
   "args": [
     {
       "name": "device",
-      "type": "device"
+      "type": "device",
+      "filter": "capabilities=measure_presence_confidence,capabilities=alarm_presence"
     }
   ],
   "titleFormatted": {
