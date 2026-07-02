@@ -12264,7 +12264,7 @@
   },
   "_TZE284_oitavov2": {
     "driverId": "soil_sensor",
-    "type": "soil",
+    "type": "soil_sensor",
     "powerSource": "battery",
     "batteryType": "AAA",
     "modelIds": [
@@ -12272,6 +12272,7 @@
     ],
     "capabilities": [
       "measure_temperature",
+      "measure_humidity.soil",
       "measure_humidity",
       "measure_battery"
     ],
@@ -12287,7 +12288,7 @@
       "3": {
         "name": "soil_moisture",
         "converter": "raw",
-        "capability": "measure_humidity"
+        "capability": "measure_humidity.soil"
       },
       "5": {
         "name": "temperature",
@@ -12307,6 +12308,11 @@
         "name": "battery",
         "converter": "raw",
         "capability": "measure_battery"
+      },
+      "109": {
+        "name": "humidity",
+        "converter": "raw",
+        "capability": "measure_humidity"
       }
     }
   },

@@ -375,10 +375,11 @@ async function findAndPromote(page, captured) {
 
   if (APP_VERSION) {
     const currentVersionState = await page.evaluate((version, versionRegex, rowSelector) => {
+      const rx = versionRegex ? new RegExp(versionRegex.source, String(versionRegex.flags || '').replace(/g/g, '')) : null;
       const matchesVersion = (value) => {
         if (!version) return true;
-        if (!versionRegex) return false;
-        return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+        if (!rx) return false;
+        return rx.test(String(value || ''));
       };
       const buildChunksFromBody = () => {
         const bodyText = (document.body?.innerText || '').replace(/\s+/g, ' ').trim();
@@ -390,6 +391,7 @@ async function findAndPromote(page, captured) {
             return bodyText.slice(match.index, next ? next.index : Math.min(bodyText.length, match.index + 700)).trim();
           });
         }
+        if (!versionRegex) return [];
         const flags = versionRegex.flags.includes('g') ? versionRegex.flags : `${versionRegex.flags}g`;
         const direct = [...bodyText.matchAll(new RegExp(versionRegex.source, flags))];
         return direct.map(match => bodyText.slice(Math.max(0, match.index - 80), Math.min(bodyText.length, match.index + 320)).trim());
@@ -426,22 +428,26 @@ async function findAndPromote(page, captured) {
   // Strategy 1: Click "SUBMISSION >" link next to first draft build row
   log('  Strategy 1: Find SUBMISSION link for draft');
   const clicked = await page.evaluate((version, versionRegex, rowSelector) => {
+    const rx = versionRegex ? new RegExp(versionRegex.source, String(versionRegex.flags || '').replace(/g/g, '')) : null;
     const matchesVersion = (value) => {
       if (!version) return true;
-      if (!versionRegex) return false;
-      return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+      if (!rx) return false;
+      return rx.test(String(value || ''));
     };
     const collectRows = () => {
       const rows = [...document.querySelectorAll(rowSelector)];
       const seen = new Set(rows);
       for (const el of document.querySelectorAll('div, li, section, article')) {
-        const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        const rawText = el.textContent || '';
+        if (!/draft/i.test(rawText) || !matchesVersion(rawText)) continue;
+        const text = rawText.replace(/\s+/g, ' ').trim();
         if (text.length < 20 || text.length > 1200) continue;
-        if (!/draft/i.test(text) || !matchesVersion(text)) continue;
         let node = el;
         while (node.parentElement) {
-          const parentText = (node.parentElement.textContent || '').replace(/\s+/g, ' ').trim();
-          if (parentText.length > 1200 || !/draft/i.test(parentText) || !matchesVersion(parentText)) break;
+          const parentRaw = node.parentElement.textContent || '';
+          if (!/draft/i.test(parentRaw) || !matchesVersion(parentRaw)) break;
+          const parentText = parentRaw.replace(/\s+/g, ' ').trim();
+          if (parentText.length > 1200) break;
           node = node.parentElement;
         }
         if (!seen.has(node)) {
@@ -542,17 +548,19 @@ async function findAndPromote(page, captured) {
   // Strategy 2: Click on the draft row first, then look for promote
   log('  No direct promote button found, trying row click...');
   const rowClicked = await page.evaluate((version, versionRegex, rowSelector) => {
+    const rx = versionRegex ? new RegExp(versionRegex.source, String(versionRegex.flags || '').replace(/g/g, '')) : null;
     const matchesVersion = (value) => {
       if (!version) return true;
-      if (!versionRegex) return false;
-      return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+      if (!rx) return false;
+      return rx.test(String(value || ''));
     };
     const rows = [...document.querySelectorAll(rowSelector)];
     const seen = new Set(rows);
     for (const el of document.querySelectorAll('div, li, section, article')) {
-      const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      const rawText = el.textContent || '';
+      if (!/draft/i.test(rawText) || !matchesVersion(rawText)) continue;
+      const text = rawText.replace(/\s+/g, ' ').trim();
       if (text.length < 20 || text.length > 1200) continue;
-      if (!/draft/i.test(text) || !matchesVersion(text)) continue;
       if (!seen.has(el)) {
         seen.add(el);
         rows.push(el);
