@@ -402,17 +402,34 @@ async function main(){
     reprocess:fetchOptions.reprocess,autoImplement:fetchOptions.autoImplement}));
   const windows=buildFetchWindows(fetchOptions);
   const emails=[],seenEmailIds=new Set();
+  let imapConnectionFailed=false;
   for(const win of windows){
     if(emails.length>=fetchOptions.maxTotalResults)break;
     console.log('IMAP window:',JSON.stringify(win));
     const batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
       maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
-    for(const em of(batch||[])){
+    if(batch===null){
+      imapConnectionFailed=true;
+      continue;
+    }
+    if(!Array.isArray(batch)){
+      imapConnectionFailed=true;
+      console.error('IMAP returned an invalid response; refusing to treat this as an empty mailbox');
+      continue;
+    }
+    for(const em of batch){
       if(seenEmailIds.has(em.id))continue;
       seenEmailIds.add(em.id);
       emails.push(em);
       if(emails.length>=fetchOptions.maxTotalResults)break;
     }
+  }
+  if(imapConnectionFailed&&!emails.length){
+    console.error('::error::IMAP connection failed before diagnostics could be fetched. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD secrets, then rerun Gmail Diagnostics.');
+    process.exit(1);
+  }
+  if(imapConnectionFailed){
+    console.log('::warning::At least one IMAP window failed, but diagnostics were fetched from another window.');
   }
   if(!emails||!emails.length){console.log('No emails retrieved via IMAP');process.exit(0)}
   console.log('IMAP OK:',emails.length,'emails across',windows.length,'window(s)');
