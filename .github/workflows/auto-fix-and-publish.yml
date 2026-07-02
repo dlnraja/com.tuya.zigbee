@@ -119,14 +119,28 @@ jobs:
             exit 1
           fi
           cd "$PUBLISH_DIR"
-          npm ci --omit=dev --ignore-scripts --no-audit --no-fund || npm install --omit=dev --ignore-scripts --no-audit --no-fund
-          set +e
-          if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
-            publish_output=$(HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR" 2>&1)
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci --omit=dev --ignore-scripts --no-audit --no-fund
           else
-            publish_output=$(HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR" 2>&1)
+            npm install --omit=dev --ignore-scripts --no-audit --no-fund
           fi
+          run_homey_cli_publish() {
+            if [ -x "$GITHUB_WORKSPACE/node_modules/.bin/homey" ]; then
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" "$GITHUB_WORKSPACE/node_modules/.bin/homey" app publish --path "$PUBLISH_DIR"
+            else
+              HOMEY_HEADLESS=1 HOMEY_PAT="$HOMEY_PAT" npx homey app publish --path "$PUBLISH_DIR"
+            fi
+          }
+          set +e
+          publish_output=$(run_homey_cli_publish 2>&1)
           publish_status=$?
+          if [ "$publish_status" -ne 0 ] && printf '%s\n' "$publish_output" | grep -Eiq 'Timeout after [0-9]+ms|fetch failed|ETIMEDOUT|ECONNRESET|ECONNABORTED'; then
+            echo "::warning::Homey CLI publish hit a transient API timeout; retrying via direct Athom Apps API with extended timeouts."
+            fallback_output=$(HOMEY_PAT="$HOMEY_PAT" HOMEY_API_TIMEOUT_MS="${HOMEY_API_TIMEOUT_MS:-60000}" HOMEY_BUILD_POLL_TIMEOUT_MS="${HOMEY_BUILD_POLL_TIMEOUT_MS:-240000}" node "$GITHUB_WORKSPACE/scripts/direct-api-publish.js" --path "$PUBLISH_DIR" 2>&1)
+            fallback_status=$?
+            publish_output="$(printf '%s\n%s' "$publish_output" "$fallback_output")"
+            publish_status=$fallback_status
+          fi
           set -e
           printf '%s\n' "$publish_output"
           if [ "$publish_status" -ne 0 ]; then

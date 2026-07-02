@@ -21,18 +21,36 @@
 
 const fs = require('fs');
 const path = require('path');
-const { spawnSync } = require('child_process');
+const os = require('os');
+const zlib = require('zlib');
+const { pipeline } = require('stream/promises');
 
-// Resolve the global homey CLI install (avoids relying on the app's own node_modules).
-const HOMEY_CLI_ROOT = 'C:/Users/HP/AppData/Roaming/npm/node_modules/homey';
-const AthomApi = require(path.join(HOMEY_CLI_ROOT, 'services/AthomApi'));
-const AthomAppsAPI = require(path.join(HOMEY_CLI_ROOT, 'node_modules/homey-api/lib/AthomAppsAPI'));
+function argValue(name) {
+  const index = process.argv.indexOf(name);
+  if (index === -1) return null;
+  return process.argv[index + 1] || null;
+}
 
-const APP_ROOT = path.resolve(__dirname, '..');
+const APP_ROOT = path.resolve(argValue('--path') || process.env.HOMEY_PUBLISH_PATH || path.join(__dirname, '..'));
 const APP_JSON = JSON.parse(fs.readFileSync(path.join(APP_ROOT, 'app.json'), 'utf8'));
 const APP_ID = APP_JSON.id;
 const APP_VERSION = APP_JSON.version;
 const MAX_ARCHIVE_MB = Number(process.env.HOMEY_ARCHIVE_MAX_MB || 20);
+const API_TIMEOUT_MS = Number(process.env.HOMEY_API_TIMEOUT_MS || 60000);
+const BUILD_POLL_TIMEOUT_MS = Number(process.env.HOMEY_BUILD_POLL_TIMEOUT_MS || 240000);
+const BUILD_POLL_INTERVAL_MS = Number(process.env.HOMEY_BUILD_POLL_INTERVAL_MS || 5000);
+const REPO_ROOT = path.resolve(__dirname, '..');
+const MODULE_PATHS = [APP_ROOT, REPO_ROOT, process.cwd()];
+
+function resolveModule(id, extraPaths = []) {
+  return require.resolve(id, { paths: [...extraPaths, ...MODULE_PATHS] });
+}
+
+const homeyPackageRoot = path.dirname(resolveModule('homey/package.json'));
+const AthomApi = require(resolveModule('homey/lib/AthomApi'));
+const AthomAppsAPI = require(resolveModule('homey-api/lib/AthomAppsAPI', [homeyPackageRoot]));
+const tar = require(resolveModule('tar-fs', [homeyPackageRoot]));
+const fetch = require(resolveModule('node-fetch', [homeyPackageRoot]));
 
 const STATE = {
   PENDING: 'pending',
@@ -62,8 +80,9 @@ async function buildApi() {
 async function listBuilds(api, token) {
   const builds = await api.getBuilds({
     $token: token,
+    $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
-    query: { limit: 50 },
+    $query: { limit: 50 },
   });
   const list = Array.isArray(builds) ? builds : (builds?.data || []);
   list.sort((a, b) => (b.id || 0) - (a.id || 0));
@@ -77,7 +96,6 @@ async function listBuilds(api, token) {
 }
 
 function ensureArchive() {
-  // Prefer a freshly-built .homeybuild/<app>.tar.gz
   const candidates = [
     path.join(APP_ROOT, '.homeybuild', `${APP_ID}.tar.gz`),
     path.join(APP_ROOT, '.homeybuild', 'app.tar.gz'),
@@ -100,20 +118,51 @@ function ensureArchive() {
       return c;
     }
   }
-  log('No archive found, building via `homey app build`...');
-  const r = spawnSync('npx', ['homey', 'app', 'build'], { cwd: APP_ROOT, stdio: 'inherit', shell: true });
-  if (r.status !== 0) throw new Error('homey app build failed');
-  for (const c of candidates) {
-    if (fs.existsSync(c)) return c;
-  }
-  throw new Error('No archive produced by build');
+  return null;
+}
+
+async function packDirectory(appPath) {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'homey-direct-publish-'));
+  const archivePath = path.join(tmpDir, `${APP_ID}.tar.gz`);
+  let appSize = 0;
+  let numFiles = 0;
+
+  await pipeline(
+    tar.pack(appPath, {
+      dereference: true,
+      map(header) {
+        if (header.type === 'file') numFiles += 1;
+        return header;
+      },
+      ignore(name) {
+        const rel = path.relative(appPath, name).replace(/\\/g, '/');
+        if (!rel) return false;
+        if (rel.startsWith('.')) return true;
+        if (rel.includes('/.git/')) return true;
+        return false;
+      },
+    }).on('data', (chunk) => {
+      appSize += chunk.length;
+    }),
+    zlib.createGzip(),
+    fs.createWriteStream(archivePath),
+  );
+
+  const archiveMB = fs.statSync(archivePath).size / 1024 / 1024;
+  log(`Packed ${numFiles} files from ${appPath} (${(appSize / 1024 / 1024).toFixed(2)} MB raw, ${archiveMB.toFixed(2)} MB gz).`);
+  return archivePath;
 }
 
 async function pollBuildState(api, token, buildId, { timeoutMs = 180000, intervalMs = 5000 } = {}) {
   const deadline = Date.now() + timeoutMs;
   let last = null;
   while (Date.now() < deadline) {
-    const b = await api.getBuild({ $token: token, appId: APP_ID, buildId });
+    const b = await api.getBuild({
+      $token: token,
+      $timeout: API_TIMEOUT_MS,
+      appId: APP_ID,
+      buildId,
+    });
     const state = b?.state;
     if (state !== last) {
       log(`Build #${buildId} state: ${state} (approved=${b?.approved})`);
@@ -135,16 +184,16 @@ async function setChannel(api, token, buildId, channel) {
   log(`Setting build #${buildId} channel to "${channel}"...`);
   const res = await api.updateBuildChannel({
     $token: token,
+    $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
     buildId,
-    body: { channel },
+    channel,
   });
   log('Channel update result:', JSON.stringify(res));
   return res;
 }
 
 async function uploadArchive(url, method, headers, archivePath) {
-  const fetch = require(path.join(HOMEY_CLI_ROOT, 'node_modules/node-fetch'));
   const sz = fs.statSync(archivePath).size;
   if (sz === 0) {
     throw new Error(`FATAL: archive ${archivePath} is 0 bytes — refuse to upload (would cause processing_failed).`);
@@ -208,7 +257,7 @@ async function uploadArchive(url, method, headers, archivePath) {
  */
 function readChangelog() {
   try {
-  const clPath = path.join(APP_ROOT, '.homeychangelog.json');
+    const clPath = path.join(APP_ROOT, '.homeychangelog.json');
     if (!fs.existsSync(clPath)) {
       log('No .homeychangelog.json found, using generic changelog.');
       return { en: `v${APP_VERSION}: maintenance release` };
@@ -232,21 +281,54 @@ function readChangelog() {
   }
 }
 
+function readReadme() {
+  const readme = {};
+  const englishPath = path.join(APP_ROOT, 'README.txt');
+  if (fs.existsSync(englishPath)) {
+    readme.en = fs.readFileSync(englishPath, 'utf8');
+  }
+
+  for (const entry of fs.readdirSync(APP_ROOT, { withFileTypes: true })) {
+    if (!entry.isFile()) continue;
+    const match = /^README\.([a-z]{2})\.txt$/i.exec(entry.name);
+    if (!match) continue;
+    readme[match[1].toLowerCase()] = fs.readFileSync(path.join(APP_ROOT, entry.name), 'utf8');
+  }
+
+  if (!readme.en) {
+    readme.en = `${APP_ID} v${APP_VERSION}`;
+  }
+  return readme;
+}
+
+function readEnv() {
+  const envPath = path.join(APP_ROOT, 'env.json');
+  if (!fs.existsSync(envPath)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(envPath, 'utf8'));
+  } catch (e) {
+    throw new Error(`Invalid env.json: ${e.message}`);
+  }
+}
+
 async function main() {
   const argv = process.argv.slice(2);
   const doChannel = argv.includes('--channel')
     ? argv[argv.indexOf('--channel') + 1]
     : null;
   const listOnly = argv.includes('--list');
-  const skipBuild = argv.includes('--skip-build');
 
   log(`App: ${APP_ID} v${APP_VERSION}`);
+  log(`Path: ${APP_ROOT}`);
+  log(`API timeout: ${API_TIMEOUT_MS}ms`);
   const { api, token } = await buildApi();
 
   await listBuilds(api, token);
   if (listOnly) return;
 
   const changelog = readChangelog();
+  const readme = readReadme();
+  const env = readEnv();
   log(`Changelog (en): ${changelog.en.slice(0, 80)}${changelog.en.length > 80 ? '…' : ''}`);
 
   log(`Creating new build for ${APP_ID}@${APP_VERSION}...`);
@@ -256,11 +338,12 @@ async function main() {
   // made the API see no named params → server returned "Invalid Version: undefined".
   const created = await api.createBuild({
     $token: token,
+    $timeout: API_TIMEOUT_MS,
     appId: APP_ID,
     version: APP_VERSION,
     changelog,
-    env: {},
-    readme: {},
+    env,
+    readme,
   });
 
   const { url, method, headers, buildId } = created;
@@ -270,15 +353,14 @@ async function main() {
   }
   log(`Created build #${buildId}. Upload target ready.`);
 
-  // --skip-build: reuse an existing archive instead of rebuilding.
-  // (Previously both branches of this ternary were identical, making
-  // the flag a no-op. Now the intent is explicit: skipBuild just means
-  // "do not force a rebuild even if the archive is stale".)
-  const archivePath = ensureArchive();
+  const archivePath = ensureArchive() || await packDirectory(APP_ROOT);
   await uploadArchive(url, method, headers, archivePath);
 
   log('Polling Athom until the build is processed...');
-  const finalBuild = await pollBuildState(api, token, buildId);
+  const finalBuild = await pollBuildState(api, token, buildId, {
+    timeoutMs: BUILD_POLL_TIMEOUT_MS,
+    intervalMs: BUILD_POLL_INTERVAL_MS,
+  });
   log(`Build #${buildId} final state: ${finalBuild.state}`);
 
   if (doChannel) {
