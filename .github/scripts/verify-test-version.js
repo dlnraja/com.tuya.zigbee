@@ -5,6 +5,10 @@ const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const { fetchWithRetry } = require('./retry-helper');
+const {
+  createClient: createHomeyAppsClient,
+  getBuilds: getSdkBuilds,
+} = require('./homey-apps-api-client');
 
 const ROOT = path.join(__dirname, '..', '..');
 const APP = process.env.APP_ID || 'com.dlnraja.tuya.zigbee';
@@ -145,6 +149,39 @@ async function directVerify(expectedVersion) {
   return false;
 }
 
+async function sdkVerify(expectedVersion) {
+  try {
+    const client = await createHomeyAppsClient({ log });
+    const builds = normalizeBuilds(await getSdkBuilds(client, APP, { limit: 100 }));
+    if (!builds.length) {
+      log('Homey SDK returned no builds');
+      return null;
+    }
+
+    const result = classifyBuilds(builds, expectedVersion);
+    log(`Homey SDK builds: ${builds.length} total, ${result.test.length} test, ${result.draft.length} draft`);
+
+    if (result.inTest) {
+      log(`OK: v${expectedVersion} is on test channel`);
+      return true;
+    }
+
+    if (result.inDraft) {
+      log(`v${expectedVersion} is still in draft`);
+      return false;
+    }
+
+    const latestText = result.latest
+      ? `latest v${result.latest.version || '?'} ${result.latest.state || 'unknown'} #${result.latest.id || '?'}`
+      : 'latest unavailable';
+    log(`v${expectedVersion} not found via Homey SDK (${latestText})`);
+    return false;
+  } catch (error) {
+    log(`Homey SDK verify warning: ${error.message}`);
+    return null;
+  }
+}
+
 function readDashboardReport(expectedVersion) {
   if (!fs.existsSync(REPORT_PATH)) return false;
   const report = JSON.parse(fs.readFileSync(REPORT_PATH, 'utf8'));
@@ -233,7 +270,9 @@ async function main() {
   const delayMs = Number(process.env.HOMEY_TEST_VERIFY_DELAY_MS || 30000);
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     log(`Verification attempt ${attempt}/${maxAttempts}`);
-    if (await directVerify(version)) return;
+    const sdkResult = await sdkVerify(version);
+    if (sdkResult === true) return;
+    if (sdkResult === null && await directVerify(version)) return;
     if (dashboardFallback(version)) return;
     if (attempt < maxAttempts) await sleep(delayMs);
   }

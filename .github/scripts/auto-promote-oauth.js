@@ -199,9 +199,10 @@ async function promoteRaw(apiTk) {
   const pid=selection.build.id||selection.build._id;
   const base=r.url.substring(0,r.url.indexOf('/app/'));
   const pr=await fetch(base+'/app/'+APP+'/build/'+pid+'/channel',{
-    method:'PUT',headers:{...hd,'Content-Type':'application/json'},
+    method:'POST',headers:{...hd,'Content-Type':'application/json'},
     body:JSON.stringify({channel:'test'})});
-  log('  Promote: '+pr.status);
-  if(!pr.ok) throw new Error('promote '+pr.status);
+  const text=pr.ok?'':await pr.text().catch(()=>'');
+  log('  Promote: '+pr.status+(text?' '+text.slice(0,200):''));
+  if(!pr.ok) throw new Error('promote '+pr.status+(text?': '+text.slice(0,200):''));
   log('  Promoted!');
 }

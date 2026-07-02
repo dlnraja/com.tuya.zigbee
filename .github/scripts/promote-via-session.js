@@ -59,6 +59,7 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   log('  [SessAPI] Using build id='+pid);
   const bodies=[{channel:'test'},{state:'test'},{channel:'test',state:'test'}];
   const eps=[
+    ['POST',`${BASE}/app/${APP}/build/${pid}/channel`],
     ['PUT',`${BASE}/app/${APP}/build/${pid}`],
     ['PUT',`${BASE}/app/${APP}/build/${pid}/channel`],
     ['POST',`${BASE}/app/${APP}/build/${pid}/publish`],
