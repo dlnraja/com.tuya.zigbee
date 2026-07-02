@@ -98,7 +98,10 @@ describe('button flow runtime routing guards', function() {
 
       assert.doesNotMatch(source, /super\.triggerButtonPress/);
       assert.match(source, new RegExp(`get gangCount\\(\\) \\{ return ${gangCount}; \\}`));
-      assert.match(source, /get switchCapabilities\(\)/);
+      assert.match(
+        source,
+        /get switchCapabilities\s*\(\)\s*\{\s*const\s*\{\s*subDeviceId\s*\}\s*=\s*\(typeof\s+this\.getData\s*===\s*['"]function['"]\s*&&\s*this\.getData\(\)\)\s*\|\|\s*\{\};?\s*return\s+subDeviceId\s*\?\s*\[\s*['"]onoff['"]\s*\]\s*:\s*super\.switchCapabilities;?\s*\}/
+      );
       assert.match(source, /this\._isSubDevice = Boolean\(subDeviceId\)/);
       assert.match(source, /if \(this\._isSubDevice && this\._gangNumber !== undefined && button !== this\._gangNumber\)/);
       assert.match(source, /const targetGang = this\._isSubDevice \? this\._gangNumber : gang/);
