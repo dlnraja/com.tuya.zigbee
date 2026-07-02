@@ -151,6 +151,58 @@ describe('dynamic DP auto discovery', function() {
     assert(report.dps['15']);
   });
 
+  it('extracts Tuya datapoints after ZCL/Tuya headers without duplicate offset noise', function() {
+    const device = createDevice(['measure_battery']);
+    const analyzer = new IntelligentFrameAnalyzer(device);
+    const payload = Buffer.from([
+      0x09, 0x42, 0x01, 0x00, 0x00,
+      0x0f, 0x02, 0x00, 0x04, 0x00, 0x00, 0x00, 0x5a
+    ]);
+
+    const decoded = analyzer.parse(1, 0xEF00, { Payload: payload, CommandID: 0x00 }, { lqi: 120 });
+
+    assert.strictEqual(decoded.datapoints.length, 1);
+    assert.strictEqual(decoded.datapoints[0].dpId, 15);
+    assert.strictEqual(decoded.datapoints[0].value, 90);
+  });
+
+  it('preserves normalized raw frame diagnostics when no Buffer payload is present', function() {
+    const device = createDevice(['measure_battery']);
+    const discovery = new IntelligentDPAutoDiscovery(device);
+
+    discovery.recordFrame({
+      clusterId: 0xEF00,
+      commandId: 0x01,
+      rawLength: 13,
+      rawPrefix: '09420100000f',
+      datapoints: [{ dpId: 15, dpType: 'value', value: 90 }]
+    });
+
+    const recent = discovery.getLearningReport().frames.recent[0];
+    assert.strictEqual(recent.rawLength, 13);
+    assert.strictEqual(recent.rawPrefix, '09420100000f');
+  });
+
+  it('does not re-apply discovered capability after the standard mapping handled it', async function() {
+    const device = createDevice(['measure_battery']);
+    device._dpAutoDiscovery = {
+      applyDiscoveredValue: () => ({
+        capability: 'measure_battery',
+        type: 'battery_percent',
+        value: 90,
+        confidence: 65
+      })
+    };
+    const logger = new TuyaDPDataLogger(device);
+
+    logger._autoUpdateCapability(15, 90);
+    await new Promise(resolve => setImmediate(resolve));
+
+    assert.deepStrictEqual(device.calls.setCapability, [
+      { cap: 'measure_battery', value: 90 }
+    ]);
+  });
+
   it('routes discovered button DP events through the existing button trigger path', async function() {
     const device = createDevice(['button.1']);
     device.tuyaEF00Manager = new EventEmitter();

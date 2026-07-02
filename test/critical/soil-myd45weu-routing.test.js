@@ -83,15 +83,14 @@ function assertRuntimeFingerprint(file, driverId, humidityCapability) {
   }
 }
 
-function assertRuntimeFingerprintEntry(file, manufacturer, driverId, options = {}) {
+function assertRuntimeFingerprintEntry(file, manufacturer, driverId) {
   const fingerprints = maybeReadRuntimeCatalog(file);
   if (!fingerprints) return;
 
   const entry = findRuntimeFingerprintEntry(fingerprints, manufacturer);
-  const allowedTypes = options.allowedTypes || ['soil_sensor'];
   assert(entry, `${file} missing ${manufacturer}`);
   assert.strictEqual(entry.driverId, driverId, `${file} must route ${manufacturer} to ${driverId}`);
-  assert(allowedTypes.includes(entry.type), `${manufacturer} must stay typed as ${allowedTypes.join(' or ')} in ${file}`);
+  assert.strictEqual(entry.type, 'soil_sensor', `${manufacturer} must stay typed as soil_sensor in ${file}`);
   assert.strictEqual(entry.powerSource, 'battery', `${manufacturer} must stay battery-powered`);
 }
 
@@ -171,7 +170,7 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
       }
     }
 
-    assertRuntimeFingerprintEntry('lib/tuya/fingerprints.json', manufacturer, 'soil_sensor', { allowedTypes: ['soil', 'soil_sensor'] });
+    assertRuntimeFingerprintEntry('lib/tuya/fingerprints.json', manufacturer, 'soil_sensor');
     assertRuntimeFingerprintEntry('lib/data/new_fingerprints.json', manufacturer, 'soil_sensor');
 
     const DeviceFingerprintDB = require('../../lib/DeviceFingerprintDB');
