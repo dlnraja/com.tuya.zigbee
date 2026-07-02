@@ -47,6 +47,10 @@ jobs:
       - name: Validate Sanitized Homey Guidelines
         run: npm run check:homey-guidelines
 
+      - name: Drop Volatile Self-Heal Report
+        if: github.event_name != 'pull_request'
+        run: git restore -- .github/state/self-heal-report.json 2>/dev/null || true
+
       - name: Commit Auto-Repairs
         if: github.event_name != 'pull_request'
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -55,4 +59,4 @@ jobs:
           branch: ${{ github.head_ref || github.ref_name }}
           commit_user_name: "TuyaBot"
           commit_user_email: "bot@tuya-zigbee.local"
-          file_pattern: "drivers/*/driver.compose.json app.json .github/state/*.json"
+          file_pattern: "drivers/*/driver.compose.json app.json"
