@@ -12,6 +12,7 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_human",
+    "onoff",
     "measure_battery",
     "measure_luminance.distance",
     "alarm_motion.zone1",
@@ -99,6 +100,14 @@
         "de": "Bewegungsklassifikation"
       }
     },
+    "onoff": {
+      "title": {
+        "en": "Relay",
+        "fr": "Relais",
+        "nl": "Relais",
+        "de": "Relais"
+      }
+    },
     "button.1": {
       "title": {
         "en": "Button 1",
@@ -127,6 +136,7 @@
       "_TZE200_5B5NOETO",
       "_TZE200_7GCLUKJS",
       "_TZE200_AR0SLWND",
+      "_TZE200_CLRDRNYA",
       "_TZE200_cq8lu23i",
       "_TZE200_CRQ3R3LA",
       "_TZE200_F1PVDGOH",
@@ -152,6 +162,7 @@
       "_TZE200_SFIY5TFS",
       "_TZE200_SFIY8PUU",
       "_TZE200_SGFMFPIY",
+      "_TZE200_SBYX0LM6",
       "_TZE200_sgpeacqp",
       "_TZE200_TYFFVOIJ",
       "_TZE200_XPQ2RBER",
@@ -168,6 +179,7 @@
       "_TZE204_B8VXCT9L",
       "_TZE204_BMDSP6BS",
       "_TZE204_BVFLD3XC",
+      "_TZE204_CLRDRNYA",
       "_TZE204_DTZZIY1E",
       "_TZE204_E5M9C5HL",
       "_TZE204_EX3RCDHA",
@@ -197,6 +209,7 @@
       "_TZE204_QOMXLRYD",
       "_TZE204_RHGSBACQ",
       "_TZE204_SBKGEILO",
+      "_TZE204_SBYX0LM6",
       "_TZE204_SFIY5TFS",
       "_TZE204_SFIY8PUU",
       "_TZE204_SGFMFPIY",
