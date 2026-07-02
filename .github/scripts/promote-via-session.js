@@ -2,6 +2,11 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const {
+  selectPromotionTarget,
+  sortBuildsDesc,
+  summarizeBuild,
+} = require('./homey-build-selection');
 
 // Read App ID dynamically from app.json
 let APP = 'com.dlnraja.tuya.zigbee';
@@ -43,21 +48,12 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   }
   if(!builds){log('  [SessAPI] No builds');return false;}
   log('  [SessAPI] '+builds.length+' builds, first: '+JSON.stringify(Object.keys(builds[0]||{})));
-  if(builds[0]) log('  [SessAPI] b0: ch='+builds[0].channel+' st='+builds[0].status+' state='+builds[0].state);
-  const last=builds[builds.length-1];
-  if(last) log('  [SessAPI] bLast: id='+last.id+' state='+last.state+' v='+last.version);
-  const drafts=builds.filter(b=>/draft/i.test(b.channel||b.status||b.state||''));
-  if(!drafts.length) return 'no-draft';
-  drafts.sort((a,b)=>(b.id||0)-(a.id||0));
-  // Prefer draft matching current app version, fallback to newest by ID
-  let draft=drafts[0];
-  if(APP_VERSION){
-    const vMatch=drafts.find(d=>d.version===APP_VERSION);
-    if(vMatch){draft=vMatch;log('  [SessAPI] Matched draft to current version '+APP_VERSION);}
-  }
-  log('  [SessAPI] Draft: id='+draft.id+' v='+draft.version+' state='+draft.state+' ('+drafts.length+' drafts)');
-  // Log top 3 drafts for debugging
-  drafts.slice(0,3).forEach((d,i)=>log('  [SessAPI]   #'+(i+1)+': id='+d.id+' v='+d.version+' state='+d.state));
+  sortBuildsDesc(builds).slice(0,5).forEach((b,i)=>log('  [SessAPI] recent #'+(i+1)+': '+summarizeBuild(b)));
+  const selection = selectPromotionTarget(builds, APP_VERSION);
+  log('  [SessAPI] Selection: '+selection.status+' '+summarizeBuild(selection.build));
+  if(selection.status === 'already-test') return true;
+  if(selection.status !== 'promote') return selection.status;
+  const draft=selection.build;
   if(dry) return false;
   const pid=draft.id||draft._id;
   log('  [SessAPI] Using build id='+pid);
