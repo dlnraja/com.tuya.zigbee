@@ -417,7 +417,7 @@ jobs:
           }
           NODE
           git restore -- .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots 2>/dev/null || true
-          for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md package.json package-lock.json; do
+          for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs package.json package-lock.json; do
             [ -e "$path" ] && git add "$path"
           done
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.info.outputs.version }}")
