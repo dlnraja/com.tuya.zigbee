@@ -30,7 +30,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_snzbbgvi"
+      "_tz3210_snzbbgvi",
+      "_tze284_aaeasoll",
+      "_TZE284_aaeasoll",
+      "_TZE284_AAEASOLL"
     ],
     "productId": [
       "TS0601",
@@ -40,7 +43,12 @@
       "1": {
         "clusters": [
           0,
-          6
+          1,
+          4,
+          5,
+          1024,
+          60672,
+          61184
         ]
       }
     }

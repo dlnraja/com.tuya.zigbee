@@ -137062,7 +137062,6 @@
           "_TZE284_A1OVDOBN",
           "_TZE284_A9OJZNJ8",
           "_TZE284_AAEAIFEZ",
-          "_TZE284_AAEASOLL",
           "_TZE284_AAGRXLBD",
           "_TZE284_AAI5GRIX",
           "_TZE284_AC0FHFIQ",
@@ -172215,7 +172214,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3210_snzbbgvi"
+          "_tz3210_snzbbgvi",
+          "_tze284_aaeasoll",
+          "_TZE284_aaeasoll",
+          "_TZE284_AAEASOLL"
         ],
         "productId": [
           "TS0601",
@@ -172225,7 +172227,12 @@
           "1": {
             "clusters": [
               0,
-              6
+              1,
+              4,
+              5,
+              1024,
+              60672,
+              61184
             ]
           }
         }
@@ -180873,8 +180880,7 @@
           "TS0207_rain",
           "TS0601",
           "TS0207",
-          "ZG-223Z",
-          "ZG-222Z"
+          "ZG-223Z"
         ],
         "endpoints": {
           "1": {
@@ -215754,7 +215760,13 @@
         },
         "manufacturerName": [
           "_master_valve_dual_irrigation_needs_device_assignment",
-          "_MASTER_VALVE_DUAL_IRRIGATION_NEEDS_DEVICE_ASSIGNMENT"
+          "_MASTER_VALVE_DUAL_IRRIGATION_NEEDS_DEVICE_ASSIGNMENT",
+          "_tze284_eaet5qt5",
+          "_TZE284_eaet5qt5",
+          "_TZE284_EAET5QT5",
+          "_tze284_fhvpaltk",
+          "_TZE284_fhvpaltk",
+          "_TZE284_FHVPALTK"
         ]
       },
       "images": {
@@ -215872,8 +215884,6 @@
           "_tze200_yxcgyjf1",
           "_tze204_4fblxpma",
           "_tze204_81isopgh",
-          "_tze284_eaet5qt5",
-          "_tze284_fhvpaltk",
           "_tze200_xlppj4f5",
           "_tze204_xlppj4f5",
           "_tze200_jt50ea5d",

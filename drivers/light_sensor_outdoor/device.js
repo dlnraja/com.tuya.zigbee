@@ -1,5 +1,5 @@
 'use strict';
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { zclMeasuredValueToLux } = require('../../lib/utils/tuyaUtils.js');
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
@@ -40,8 +40,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     const illum = ep1?.clusters?.illuminanceMeasurement || ep1?.clusters?.[1024];
     if (illum?.on) {
       illum.on('attr.measuredValue', (val) => {
-        const lux = Math.pow(10, val - 1 * 10000 );
-        this.safeSetCapabilityValue('measure_luminance', Math.round(lux)).catch(() => {});
+        this.safeSetCapabilityValue('measure_luminance', zclMeasuredValueToLux(val)).catch(() => {});
       });
     }
 
@@ -83,4 +82,3 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
   }
 }
 module.exports = LightSensorOutdoorDevice;
-
