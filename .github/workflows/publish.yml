@@ -278,6 +278,7 @@ jobs:
         run: node .github/scripts/auto-publish-draft.js
 
       - name: Verify draft promotion result
+        id: verify_test
         if: steps.pat.outputs.ok == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -285,8 +286,7 @@ jobs:
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
-            echo "::error::All draft-to-test promotion tiers failed"
-            exit 1
+            echo "::warning::All draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
           node .github/scripts/verify-test-version.js
 
