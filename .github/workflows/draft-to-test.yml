@@ -117,14 +117,14 @@ jobs:
         run: echo "version=$(node -p \"require('./app.json').version\")" >> $GITHUB_OUTPUT
 
       - name: Verify draft promotion result
+        id: verify_test
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
-            echo "::error::All draft-to-test promotion tiers failed"
-            exit 1
+            echo "::warning::All draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
           node .github/scripts/verify-test-version.js
 
