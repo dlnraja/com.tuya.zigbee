@@ -15,6 +15,11 @@ const {
   sortBuildsDesc,
   summarizeBuild,
 } = require('./homey-build-selection');
+const {
+  createClient: createHomeyAppsClient,
+  getBuilds: getSdkBuilds,
+  updateBuildChannel,
+} = require('./homey-apps-api-client');
 
 // Dynamically read App ID and version from app.json
 const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
@@ -107,6 +112,46 @@ async function promoteBuild(token, buildId, apiBase) {
   return false;
 }
 
+async function promoteWithHomeySdk(version) {
+  log('\n### Step 2: Homey SDK list/promote');
+  const client = await createHomeyAppsClient({ log });
+  let builds = await getSdkBuilds(client, APP, { limit: 100 });
+  if (!builds.length) throw new Error('HomeySDK returned no builds');
+
+  log('Found ' + builds.length + ' build(s) via HomeySDK');
+  sortBuildsDesc(builds).slice(0, 10).forEach(b => log('  ' + summarizeBuild(b)));
+
+  let selection = selectPromotionTarget(builds, version);
+  log('SDK selection: ' + selection.status + ' ' + summarizeBuild(selection.build));
+  if (selection.status === 'already-test') {
+    log('\nv' + version + ' is already on test. Nothing to promote.');
+    return true;
+  }
+
+  for (let retry = 1; selection.status !== 'promote' && retry <= 3; retry++) {
+    log('\nNo current-version draft via HomeySDK. Retry ' + retry + '/3 — waiting 60s for Athom...');
+    await new Promise(r => setTimeout(r, 60000));
+    builds = await getSdkBuilds(client, APP, { limit: 100 });
+    selection = selectPromotionTarget(builds, version);
+    log('SDK retry selection: ' + selection.status + ' ' + summarizeBuild(selection.build));
+    if (selection.status === 'already-test') return true;
+  }
+
+  if (selection.status !== 'promote') return false;
+
+  const buildId = selection.build.id || selection.build._id;
+  if (!buildId) throw new Error('Selected draft has no build id');
+  if (DRY) {
+    log('\nDRY RUN - would promote build ' + buildId + ' to test via HomeySDK');
+    return true;
+  }
+
+  log('\nPromoting build ' + buildId + ' to test via HomeySDK updateBuildChannel...');
+  const result = await updateBuildChannel(client, APP, buildId, 'test');
+  log('  HomeySDK updateBuildChannel result: ' + JSON.stringify(result || {}));
+  return true;
+}
+
 async function main() {
   const ver = appJson.version || 'unknown';
   log('## Auto-Publish Draft -> Test');
@@ -121,8 +166,16 @@ async function main() {
     token = PAT;
   }
 
+  try {
+    if (await promoteWithHomeySdk(ver)) return;
+    log('  HomeySDK found no current-version draft; falling back to raw API retries.');
+  } catch (error) {
+    log('  HomeySDK strategy failed: ' + error.message);
+    log('  Falling back to raw API strategy.');
+  }
+
   // Step 2: List builds and find drafts
-  log('\n### Step 2: List builds');
+  log('\n### Step 3: List builds');
   let result = await getBuilds(token);
   if (!result) {
     // v5.11.27: Try again with raw PAT if delegation token was used
@@ -187,7 +240,7 @@ async function main() {
   if (DRY) { log('\nDRY RUN - would promote ' + toPromote.length + ' build(s)'); return; }
 
   // Step 4: Promote
-  log('\n### Step 3: Promote to test');
+  log('\n### Step 4: Promote to test');
   let promoted = 0;
   for (const b of toPromote) {
     const bid = b.id || b._id;
