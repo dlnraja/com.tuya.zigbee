@@ -166,6 +166,21 @@ describe('dynamic DP auto discovery', function() {
     assert.strictEqual(decoded.datapoints[0].value, 90);
   });
 
+  it('accepts zero-length Tuya datapoints without treating them as offset noise', function() {
+    const device = createDevice();
+    const analyzer = new IntelligentFrameAnalyzer(device);
+    const payload = Buffer.from([0x0a, 0x03, 0x00, 0x00]);
+
+    const decoded = analyzer.parse(1, 0xEF00, { Payload: payload, CommandID: 0x00 }, { lqi: 120 });
+    const report = device._dpAutoDiscovery.getLearningReport();
+
+    assert.strictEqual(decoded.datapoints.length, 1);
+    assert.strictEqual(decoded.datapoints[0].dpId, 10);
+    assert.strictEqual(decoded.datapoints[0].length, 0);
+    assert.strictEqual(decoded.datapoints[0].value, '');
+    assert(report.dps['10']);
+  });
+
   it('preserves normalized raw frame diagnostics when no Buffer payload is present', function() {
     const device = createDevice(['measure_battery']);
     const discovery = new IntelligentDPAutoDiscovery(device);
