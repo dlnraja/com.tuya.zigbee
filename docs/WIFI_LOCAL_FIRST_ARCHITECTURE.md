@@ -424,16 +424,17 @@
   │    ├─ Token with TTL (auto-refresh)                             │
   │    └─ 15s HTTP timeout ← v9.0.40                               │
   │                                                                 │
-  │  Layer 4: Key Recovery (self-healing)                           │
-  │    ├─ Max 3 attempts, 1h cooldown ← v9.0.40                    │
-  │    ├─ Uses cloud API credentials from app settings              │
-  │    └─ Updates local_key without re-pairing                      │
+  │  Layer 4: Key Recovery (explicit repair / opt-in fallback)      │
+  │    ├─ Disabled by default for local-first devices               │
+  │    ├─ Repair can refresh the local_key when user requests it    │
+  │    └─ Automatic cloud recovery requires explicit policy opt-in  │
   │                                                                 │
   │  Layer 5: Runtime Isolation                                     │
   │    ├─ 100% local on Homey Pro                                   │
   │    ├─ Zero cloud calls during normal operation                  │
   │    ├─ No secrets in app bundle                                  │
-  │    └─ Cloud only for pairing + key recovery                     │
+  │    ├─ Cloud only for optional pairing/key repair                │
+  │    └─ No automatic cloud fallback by default                    │
   │                                                                 │
   └─────────────────────────────────────────────────────────────────┘
 ```
@@ -492,7 +493,8 @@
   │  ├─ ✅ HTTP timeout (15s) prevents cloud API hang              │
   │  ├─ ✅ Token expire calculation fixed (seconds→ms)             │
   │  ├─ ✅ sendCommand now refreshes token before send             │
-  │  ├─ ✅ Key recovery rate-limited (3 attempts, 1h cooldown)     │
+  │  ├─ ✅ Key recovery rate-limited and opt-in for runtime        │
+  │  ├─ ✅ LAN discovery timers no longer require Homey context    │
   │  ├─ ✅ MQTT reconnect with exponential backoff                  │
   │  ├─ ✅ Mixin order standardized (14 files)                     │
   │  └─ ✅ Missing imports added (2 files)                         │

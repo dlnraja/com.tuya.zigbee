@@ -23,16 +23,16 @@ input:focus,select:focus{border-color:#00E6A0;outline:none;box-shadow:0 0 0 2px 
 details{margin-bottom:8px;font-size:11px}details summary{cursor:pointer;font-weight:600;color:#00a870}
 </style></head><body>
 <h2>Tuya WiFi Setup</h2>
-<p class="sub">100% local control after initial key retrieval</p>
+<p class="sub">Local-first LAN control. Cloud only if you choose key retrieval.</p>
 <div class="tabs">
-<div class="tab active" data-t="ez">Easy Login</div>
+<div class="tab" data-t="ez">Easy Login</div>
 <div class="tab" data-t="sl">Smart Life Login</div>
 <div class="tab" data-t="iot">IoT Platform</div>
-<div class="tab" data-t="man">Manual</div>
+<div class="tab active" data-t="man">Local / Ad hoc</div>
 </div>
 
 <!-- TAB 0: Easy Login (email+password only, uses saved creds) -->
-<div id="p-ez" class="pnl active">
+<div id="p-ez" class="pnl">
 <div class="box">
 <b>Easiest method</b> - Just enter your Smart Life / Tuya Smart email and password.<br>
 Requires IoT credentials saved in <b>App Settings</b> (one-time setup).
@@ -103,9 +103,9 @@ Same setup as above but without email/password (uses linked account).
 </div>
 
 <!-- TAB 3: Manual -->
-<div id="p-man" class="pnl">
+<div id="p-man" class="pnl active">
 <div class="box2">
-<b>Manual entry</b> - Enter Device ID and Local Key directly.
+<b>Local / ad hoc</b> - Enter Device ID and Local Key directly. Homey connects on LAN first.
 Get these from <b>tinytuya wizard</b>, browser extension, or iot.tuya.com API Explorer.
 </div>
 <div class="fg"><label>Device ID *</label><input type="text" id="m_did" placeholder="e.g. bf1234abcdef567890"/></div>
