@@ -286,11 +286,14 @@ jobs:
           }
           GATE
 
+      - name: Normalize Homey manifest before validation
+        run: npm run fix:generated-flow-args
+
       - name: Official Homey validator
         run: npx homey app validate --level publish
 
       - name: Sanitize generated manifest after validation
-        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
 
       # ─────────────────────────────────────────────────────────────
       # 6. PUBLISH
@@ -413,7 +416,10 @@ jobs:
             }
           }
           NODE
-          git add -A
+          git restore -- .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots 2>/dev/null || true
+          for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md package.json package-lock.json; do
+            [ -e "$path" ] && git add "$path"
+          done
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.info.outputs.version }}")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || echo 0)
