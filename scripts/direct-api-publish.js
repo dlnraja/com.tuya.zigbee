@@ -147,18 +147,17 @@ async function packDirectory(appPath) {
     tar.pack(appPath, {
       dereference: true,
       map(header) {
-        if (header.type === 'file') numFiles += 1;
+        if (header.type === 'file') {
+          numFiles += 1;
+          appSize += header.size || 0;
+        }
         return header;
       },
       ignore(name) {
         const rel = path.relative(appPath, name).replace(/\\/g, '/');
         if (!rel) return false;
-        if (rel.startsWith('.')) return true;
-        if (rel.includes('/.git/')) return true;
-        return false;
+        return rel.split('/').some(seg => seg.startsWith('.'));
       },
-    }).on('data', (chunk) => {
-      appSize += chunk.length;
     }),
     zlib.createGzip(),
     fs.createWriteStream(archivePath),
@@ -369,8 +368,20 @@ async function main() {
   }
   log(`Created build #${buildId}. Upload target ready.`);
 
-  const archivePath = ensureArchive() || await packDirectory(APP_ROOT);
-  await uploadArchive(url, method, headers, archivePath);
+  const existingArchive = ensureArchive();
+  const archivePath = existingArchive || await packDirectory(APP_ROOT);
+  const cleanupArchive = !existingArchive && archivePath && path.basename(path.dirname(archivePath)).startsWith('homey-direct-publish-');
+  try {
+    await uploadArchive(url, method, headers, archivePath);
+  } finally {
+    if (cleanupArchive) {
+      try {
+        fs.rmSync(path.dirname(archivePath), { recursive: true, force: true });
+      } catch (cleanupErr) {
+        log(`Warning: could not clean temporary archive: ${cleanupErr.message}`);
+      }
+    }
+  }
 
   log('Polling Athom until the build is processed...');
   const finalBuild = await pollBuildState(api, token, buildId, {
