@@ -1,14 +1,23 @@
 {
-  "timestamp": "2026-06-30T01:21:19.851Z",
+  "timestamp": "2026-07-02T04:57:00.459Z",
   "totalFiles": 0,
-  "totalFixes": 938,
+  "totalFixes": 934,
   "rules": {
+    "fingerprint-case": {
+      "count": 1,
+      "files": [
+        {
+          "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        }
+      ]
+    },
     "flow-card-try-catch": {
       "count": 37,
       "files": [
         {
           "file": "drivers/button_wireless_4/device.js",
-          "detail": "Line 236: getDeviceTriggerCard without try-catch"
+          "detail": "Line 308: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/curtain_motor/device.js",
@@ -104,23 +113,19 @@
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2684: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2685: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2698: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2699: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2732: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib/devices/BaseUnifiedDevice.js",
-          "detail": "Line 2862: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2733: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 1311: getDeviceTriggerCard without try-catch"
+          "detail": "Line 1323: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
@@ -141,6 +146,10 @@
         {
           "file": "lib/drivers/BaseZigBeeDriver.js",
           "detail": "Line 125: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/drivers/ZigBeeDriverFlowCardPatch.js",
+          "detail": "Line 7: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/flow/AdvancedFlowCardManager.js",
@@ -230,11 +239,7 @@
         },
         {
           "file": "drivers/radiator_valve/device.js",
-          "detail": "Line 40: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "drivers/radiator_valve/device.js",
-          "detail": "Line 43: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 30: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "drivers/rain_sensor/device.js",
@@ -333,6 +338,10 @@
           "detail": "Line 13: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
+          "file": "lib/tuya/DeviceFingerprintDB.js",
+          "detail": "Line 251: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
           "file": "lib/tuya/TuyaDataPointsZ2M.js",
           "detail": "Line 1329: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
@@ -371,7 +380,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 849,
+      "count": 844,
       "files": [
         {
           "file": "drivers",
@@ -1039,14 +1048,6 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_b3mgfu0d|ts0044 found in: button_wireless_2, button_wireless_4"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_kaflzta4|ts004f found in: button_wireless_4, smart_knob"
-        },
-        {
-          "file": "drivers",
           "detail": "_tyzb01_bagt1e4o|ts0014 found in: button_wireless_4, switch_4gang"
         },
         {
@@ -1163,10 +1164,6 @@
         },
         {
           "file": "drivers",
-          "detail": "_tze200_ne4pikwm|ts0601 found in: climate_sensor, radiator_valve"
-        },
-        {
-          "file": "drivers",
           "detail": "_tze200_nvodulvi|ts0601 found in: climate_sensor, dimmer_wall_1gang"
         },
         {
@@ -1240,10 +1237,6 @@
         {
           "file": "drivers",
           "detail": "_tze284_fzo2pocs|ts0601 found in: climate_sensor, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze284_ne4pikwm|ts0601 found in: climate_sensor, radiator_valve"
         },
         {
           "file": "drivers",
@@ -2056,10 +2049,6 @@
         {
           "file": "drivers",
           "detail": "_tze200_ol5jlkkr|ts0601 found in: curtain_motor_tilt, switch_1gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze204_r0jdjrvi|ts0601 found in: curtain_motor_tilt, presence_sensor_radar"
         },
         {
           "file": "drivers",
