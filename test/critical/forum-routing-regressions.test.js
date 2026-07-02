@@ -249,9 +249,11 @@ describe('forum routing regressions', () => {
     assert.strictEqual(zclMeasuredValueToLux(10001), 10);
     assert.strictEqual(zclMeasuredValueToLux(20001), 100);
     assert.strictEqual(zclMeasuredValueToLux(30001), 1000);
+    assert.strictEqual(zclMeasuredValueToLux(0xFFFF), 0);
 
     assert.match(read('drivers/light_sensor_outdoor/device.js'), /zclMeasuredValueToLux/);
     assert.match(read('lib/adapters/ZclToHomeyMap.js'), /zclMeasuredValueToLux/);
+    assert.match(read('.github/scripts/athom-build-error-diag.js'), /createCDPSession/);
     assert.doesNotMatch(read('drivers/light_sensor_outdoor/device.js'), /val - 1 \* 10000/);
   });
 
