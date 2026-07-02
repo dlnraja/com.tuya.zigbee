@@ -1,17 +1,18 @@
 {
   "id": "button_triple_clicked",
   "title": {
-    "en": "Button was triple-clicked (Software)",
+    "en": "Button was triple-clicked - software",
     "fr": "Bouton triple-cliquÃ© (Logiciel)"
   },
   "args": [
     {
       "name": "device",
-      "type": "device"
+      "type": "device",
+      "filter": "capabilities=button.1,capabilities=button"
     }
   ],
   "titleFormatted": {
-    "en": "Button was triple-clicked (Software) [[device]]",
+    "en": "Button was triple-clicked - software [[device]]",
     "fr": "Bouton triple-cliquÃ© (Logiciel) [[device]]"
   }
 }

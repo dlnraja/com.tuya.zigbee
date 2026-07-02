@@ -68,20 +68,20 @@
       "id": "switch_1gang_physical_gang1_on",
       "args": [],
       "title": {
-        "en": "Turned on - physical (Gang 1)"
+        "en": "Turned on physically - gang 1"
       },
       "titleFormatted": {
-        "en": "Turned on - physical (Gang 1)"
+        "en": "Turned on physically - gang 1"
       }
     },
     {
       "id": "switch_1gang_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Turned off - physical (Gang 1)"
+        "en": "Turned off physically - gang 1"
       },
       "titleFormatted": {
-        "en": "Turned off - physical (Gang 1)"
+        "en": "Turned off physically - gang 1"
       }
     }
   ],
@@ -164,15 +164,15 @@
           "values": [
             {
               "id": "off",
-              "label": "Off"
+              "title": "Off"
             },
             {
               "id": "normal",
-              "label": "Normal"
+              "title": "Normal"
             },
             {
               "id": "inverted",
-              "label": "Inverted"
+              "title": "Inverted"
             }
           ],
           "title": {
@@ -196,19 +196,19 @@
           "values": [
             {
               "id": "white",
-              "label": "White"
+              "title": "White"
             },
             {
               "id": "red",
-              "label": "Red"
+              "title": "Red"
             },
             {
               "id": "blue",
-              "label": "Blue"
+              "title": "Blue"
             },
             {
               "id": "green",
-              "label": "Green"
+              "title": "Green"
             }
           ],
           "title": {
@@ -308,15 +308,15 @@
           "values": [
             {
               "id": "off",
-              "label": "Off"
+              "title": "Off"
             },
             {
               "id": "on",
-              "label": "On"
+              "title": "On"
             },
             {
               "id": "previous",
-              "label": "Previous state"
+              "title": "Previous state"
             }
           ],
           "title": {

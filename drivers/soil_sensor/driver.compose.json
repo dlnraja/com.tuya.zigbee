@@ -11,6 +11,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_luminance",
+    "measure_battery",
     "alarm_water",
     "measure_ec",
     "measure_conductivity",
@@ -67,7 +68,13 @@
       "setable": false
     }
   },
-  "energy": {},
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -90,6 +97,9 @@
       "_TZE21C_i2ij4rb3",
       "_TZE2841000000_hdml1aav",
       "_TZE284_0INTS6W",
+      "_tze284_0ints6wl",
+      "_TZE284_0ints6wl",
+      "_TZE284_0INTS6WL",
       "_TZE284_2NHQASJH",
       "_TZE284_2se8efxh",
       "_TZE284_4XSYPNEY",
@@ -112,7 +122,11 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          4,
+          5,
+          60672,
+          61184
         ]
       }
     }

@@ -80,6 +80,20 @@ jobs:
         id: audit
         continue-on-error: true
         run: node .github/scripts/driver-conflict-audit.js
+
+      - name: Classify PR safety
+        id: safety
+        run: |
+          HIGH="${{ steps.audit.outputs.high_conflicts || '0' }}"
+          MFR="${{ steps.audit.outputs.mfr_conflicts || '0' }}"
+          SPLIT="${{ steps.audit.outputs.split_suggestions || '0' }}"
+          if [ "$HIGH" != "0" ] || [ "$MFR" != "0" ] || [ "$SPLIT" != "0" ]; then
+            echo "draft=true" >> "$GITHUB_OUTPUT"
+            echo "labels=fingerprints,automated,upstream,needs-review,conflict-audit" >> "$GITHUB_OUTPUT"
+          else
+            echo "draft=false" >> "$GITHUB_OUTPUT"
+            echo "labels=fingerprints,automated,upstream" >> "$GITHUB_OUTPUT"
+          fi
       - name: Validate JSON
         if: steps.sync.outputs.has_changes == 'true'
         run: |
@@ -102,8 +116,9 @@ jobs:
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "auto: sync Johan SDK3 FPs (${{ steps.sync.outputs.added }} added) [skip ci]"
+          commit-message: "auto: sync Johan SDK3 FPs (${{ steps.sync.outputs.added }} added)"
           title: "Johan SDK3 Sync — ${{ steps.sync.outputs.added }} FPs added, ${{ steps.sync.outputs.gaps }} DP gaps"
+          draft: ${{ steps.safety.outputs.draft == 'true' }}
           body: |
             ## Automated Johan SDK3 Sync
 
@@ -123,7 +138,14 @@ jobs:
             - **Split suggestions**: ${{ steps.audit.outputs.split_suggestions || '0' }}
 
             ### Report
-            See `.github/state/johan-sdk3-sync.json`, `driver-scaffold-report.json`, `driver-conflict-audit.json`
+            Reports are uploaded as the `johan-sdk3-sync-report` workflow artifact:
+            - `johan-sdk3-sync.json`
+            - `driver-scaffold-report.json`
+            - `driver-conflict-audit.json`
+
+            ### Safety
+            - Draft mode: `${{ steps.safety.outputs.draft }}`
+            - CI is intentionally enabled for this PR; do not use `[skip ci]` for sync branches with routing/conflict risk.
 
             ### Review checklist
             - [ ] Verify new FPs are in the correct drivers
@@ -132,7 +154,7 @@ jobs:
             - [ ] Review conflict audit — split drivers if needed
             - [ ] Validate with `npx homey app validate`
           branch: auto/johan-sdk3-sync
-          labels: fingerprints,automated,upstream
+          labels: ${{ steps.safety.outputs.labels }}
           delete-branch: true
 
       - name: Summary

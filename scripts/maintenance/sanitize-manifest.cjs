@@ -64,6 +64,32 @@ function stripGeneratedButtonOptions(manifest) {
   return stripped;
 }
 
+function dedupeFlowArgs(manifest) {
+  let stripped = 0;
+  const flow = manifest.flow || {};
+  for (const type of ['triggers', 'conditions', 'actions']) {
+    const cards = flow[type];
+    if (!Array.isArray(cards)) continue;
+
+    for (const card of cards) {
+      if (!card || !Array.isArray(card.args)) continue;
+      const seen = new Set();
+      const args = [];
+      for (const arg of card.args) {
+        const name = arg && arg.name;
+        if (name && seen.has(name)) {
+          stripped++;
+          continue;
+        }
+        if (name) seen.add(name);
+        args.push(arg);
+      }
+      card.args = args;
+    }
+  }
+  return stripped;
+}
+
 function sanitizeManifestFile(manifestPath) {
   const label = path.relative(APP_ROOT, manifestPath).replace(/\\/g, '/') || manifestPath;
   if (!fs.existsSync(manifestPath)) {
@@ -115,7 +141,16 @@ function sanitizeManifestFile(manifestPath) {
     log(`${label}: stripped ${buttonStripped} generated button.* option flag(s).`);
   }
 
-  // 4) Drop the generator comment from build/publish manifests only
+  // 4) De-duplicate generated Flow args by name. Homey Compose can inject
+  //    a second device arg after validation when titleFormatted references
+  //    [[device]]. Keeping one arg preserves validation and Flow runtime.
+  const duplicateArgs = dedupeFlowArgs(manifest);
+  if (duplicateArgs > 0) {
+    changes += duplicateArgs;
+    log(`${label}: stripped ${duplicateArgs} duplicate generated Flow arg(s).`);
+  }
+
+  // 5) Drop the generator comment from build/publish manifests only
   //    (keep the tracked root app.json stable).
   const isTrackedRootManifest = path.resolve(manifestPath) === path.join(APP_ROOT, 'app.json');
   if (!isTrackedRootManifest && manifest._comment !== undefined) {
@@ -131,7 +166,7 @@ function sanitizeManifestFile(manifestPath) {
     log(`${label}: manifest already clean — no changes.`);
   }
 
-  // 5) Report suspicious drivers (informational, non-blocking).
+  // 6) Report suspicious drivers (informational, non-blocking).
   const suspicious = getDrivers(manifest).filter(
     d => d.zigbee && (!d.zigbee.manufacturerName || (Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0))
   );
@@ -148,4 +183,4 @@ if (require.main === module) {
   process.exit(failures > 0 ? 1 : 0);
 }
 
-module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions };
+module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs };
