@@ -9,6 +9,7 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const { promoteViaBrowserSession } = require('./promote-via-session');
+const { versionTextRegex } = require('./homey-build-selection');
 
 // Dynamically read App ID from app.json
 const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
@@ -30,6 +31,9 @@ const SUM = process.env.GITHUB_STEP_SUMMARY || null;
 
 function log(m) { console.log(m); if (SUM) try { fs.appendFileSync(SUM, m+'\n'); } catch {} }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+function browserRegexPayload(regex) {
+  return regex ? { source: regex.source, flags: regex.flags } : null;
+}
 async function waitReady(page, label, ms = 6000) {
   await sleep(ms);
   try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 10000 }); } catch {}
@@ -354,18 +358,23 @@ async function findAndPromote(page, captured) {
   }
 
   if (APP_VERSION) {
-    const currentVersionState = await page.evaluate((version) => {
+    const currentVersionState = await page.evaluate((version, versionRegex) => {
+      const matchesVersion = (value) => {
+        if (!version) return true;
+        if (!versionRegex) return false;
+        return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+      };
       const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="item"], [class*="build"]')];
       const matching = rows
         .map(row => (row.textContent || '').replace(/\s+/g, ' ').trim())
-        .filter(text => text.includes(version));
+        .filter(text => matchesVersion(text));
       return {
         count: matching.length,
         hasDraft: matching.some(text => /\bdraft\b/i.test(text)),
         hasTest: matching.some(text => /\btest\b/i.test(text)),
         sample: matching[0] || '',
       };
-    }, APP_VERSION);
+    }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)));
     log(`  Current version row check: count=${currentVersionState.count}, draft=${currentVersionState.hasDraft}, test=${currentVersionState.hasTest}`);
     if (currentVersionState.sample) log('  Current version sample: ' + currentVersionState.sample.slice(0, 220));
     if (currentVersionState.hasTest) {
@@ -382,11 +391,17 @@ async function findAndPromote(page, captured) {
 
   // Strategy 1: Click "SUBMISSION >" link next to first draft build row
   log('  Strategy 1: Find SUBMISSION link for draft');
-  const clicked = await page.evaluate((version) => {
+  const clicked = await page.evaluate((version, versionRegex) => {
+    const matchesVersion = (value) => {
+      if (!version) return true;
+      if (!versionRegex) return false;
+      return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+    };
     const rows = [...document.querySelectorAll('tr')];
     for (const row of rows) {
-      if (!/draft/i.test(row.textContent)) continue;
-      if (version && !row.textContent.includes(version)) continue;
+      const rowText = row.textContent || '';
+      if (!/draft/i.test(rowText)) continue;
+      if (!matchesVersion(rowText)) continue;
       const link = row.querySelector('a');
       if (link && /submission/i.test(link.textContent)) {
         link.click();
@@ -404,7 +419,7 @@ async function findAndPromote(page, captured) {
       }
     }
     return null;
-  }, APP_VERSION);
+  }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)));
 
   if (clicked) {
     log(`  ${clicked}`);
@@ -466,17 +481,22 @@ async function findAndPromote(page, captured) {
 
   // Strategy 2: Click on the draft row first, then look for promote
   log('  No direct promote button found, trying row click...');
-  const rowClicked = await page.evaluate((version) => {
+  const rowClicked = await page.evaluate((version, versionRegex) => {
+    const matchesVersion = (value) => {
+      if (!version) return true;
+      if (!versionRegex) return false;
+      return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+    };
     const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="item"], [class*="build"]')];
     for (const r of rows) {
       const text = r.textContent || '';
-      if (text.toLowerCase().includes('draft') && (!version || text.includes(version))) {
+      if (text.toLowerCase().includes('draft') && matchesVersion(text)) {
         r.click();
         return true;
       }
     }
     return false;
-  }, APP_VERSION);
+  }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)));
 
   if (rowClicked) {
     log('  Clicked draft row');
