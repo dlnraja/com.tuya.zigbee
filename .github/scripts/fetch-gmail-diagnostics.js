@@ -387,13 +387,60 @@ async function researchAndImplement(allNewFPs,idx){
   return{researched,added,details};
 }
 
+function runSummary(fetchOptions,extra={}){
+  return{mode:fetchOptions.allHistory?'all-history':'recent',since:fetchOptions.since||'rolling-30-days',
+    until:fetchOptions.until||'now',chunkDays:fetchOptions.chunkDays,maxTotalResults:fetchOptions.maxTotalResults,
+    maxResults:fetchOptions.maxResults,reprocess:fetchOptions.reprocess,stateLimit:fetchOptions.stateLimit,
+    ...extra};
+}
+
+function writeAccessFailureReport(fetchOptions,code,message,extra={}){
+  const now=new Date().toISOString();
+  const report=privacy.redactObject({timestamp:now,count:0,
+    run:runSummary(fetchOptions,extra),
+    access:{gmail:{ok:false,mode:'imap',code,message:privacy.redact(message)}},
+    byType:{},newFingerprints:[],
+    history:{diagnosticsAnalyzed:0,score:0,status:'blocked',categories:[],recommendedChecks:[],topErrors:[],latestEvents:[],missingGuardrails:[]},
+    deepResearch:{researched:0,added:0,details:[],autoImplement:fetchOptions.autoImplement},
+    diagnostics:[],
+    errors:[{source:'gmail',code,message:privacy.redact(message)}]});
+  fs.mkdirSync(SD,{recursive:true});
+  privacy.assertNoLeaks(report,RF);
+  fs.writeFileSync(RF,JSON.stringify(report,null,2));
+  const HF=path.join(SD,'gmail-token-health.json');
+  let consecutiveFails=1,lastOk=null,previousChecks=[];
+  try{
+    const existing=JSON.parse(fs.readFileSync(HF,'utf8'));
+    if(existing){
+      consecutiveFails=(Number(existing.consecutiveFails)||0)+1;
+      lastOk=existing.lastOk||null;
+      previousChecks=Array.isArray(existing.checks)?existing.checks.slice(-19):[];
+    }
+  }catch{}
+  const check={time:now,ok:false,mode:'imap',code,message:privacy.redact(message)};
+  const health=privacy.redactObject({mode:'imap',lastOk,lastFail:now,consecutiveFails,
+    errorCode:code,checks:[...previousChecks,check]});
+  privacy.assertNoLeaks(health,HF);
+  fs.writeFileSync(HF,JSON.stringify(health,null,2));
+}
+
 async function main(){
   const fetchOptions=parseFetchOptions(process.argv.slice(2));
   // v5.12.6: IMAP-only — no OAuth, no token expiry, permanent
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
-  if(!e||!p){console.error('IMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)');process.exit(1)}
-  if(!imap){console.error('gmail-imap-reader not available. npm install imapflow');process.exit(1)}
+  if(!e||!p){
+    const msg='IMAP credentials missing. Refresh the Gmail app credential, then rerun Gmail diagnostics.';
+    console.error('IMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)');
+    writeAccessFailureReport(fetchOptions,'missing_imap_credentials',msg);
+    process.exit(1);
+  }
+  if(!imap){
+    const msg='gmail-imap-reader is unavailable. Install the IMAP dependencies before rerunning Gmail diagnostics.';
+    console.error('gmail-imap-reader not available. npm install imapflow');
+    writeAccessFailureReport(fetchOptions,'imap_reader_unavailable',msg);
+    process.exit(1);
+  }
   console.log('IMAP-only mode — connecting as',safeAlias('account',e));
   console.log('Diagnostics fetch options:',JSON.stringify({mode:fetchOptions.allHistory?'all-history':'recent',
     since:fetchOptions.since||'rolling-30-days',until:fetchOptions.until||'now',
@@ -431,7 +478,9 @@ async function main(){
     }
   }
   if(imapConnectionFailed&&!emails.length){
+    const msg='IMAP connection failed before diagnostics could be fetched. Refresh the Gmail app credential, then rerun Gmail Diagnostics.';
     console.error('::error::IMAP connection failed before diagnostics could be fetched. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD secrets, then rerun Gmail Diagnostics.');
+    writeAccessFailureReport(fetchOptions,'imap_connection_failed',msg,{windows:windows.length,fetched:0});
     process.exit(1);
   }
   if(imapConnectionFailed){
@@ -533,10 +582,7 @@ async function main(){
   const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
   const history=analyzeHistory(res);
   const report=privacy.redactObject({timestamp:st.lastCheck,count:res.length,
-    run:{mode:fetchOptions.allHistory?'all-history':'recent',since:fetchOptions.since||'rolling-30-days',
-      until:fetchOptions.until||'now',chunkDays:fetchOptions.chunkDays,maxTotalResults:fetchOptions.maxTotalResults,
-      maxResults:fetchOptions.maxResults,reprocess:fetchOptions.reprocess,stateLimit:fetchOptions.stateLimit,
-      fetched:emails.length,skippedAlreadyProcessed},
+    run:runSummary(fetchOptions,{fetched:emails.length,skippedAlreadyProcessed}),
     byType:bt,newFingerprints:newFPs,history,deepResearch:impl,diagnostics:res});
   privacy.assertNoLeaks(report,RF);
   fs.writeFileSync(RF,JSON.stringify(report,null,2));
