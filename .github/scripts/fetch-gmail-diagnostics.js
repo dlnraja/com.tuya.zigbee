@@ -406,8 +406,14 @@ async function main(){
   for(const win of windows){
     if(emails.length>=fetchOptions.maxTotalResults)break;
     console.log('IMAP window:',JSON.stringify(win));
-    const batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
-      maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+    let batch;
+    try{
+      batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
+        maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+    }catch(err){
+      console.error('IMAP read error:',privacy.redact(err.message));
+      batch=null;
+    }
     if(batch===null){
       imapConnectionFailed=true;
       continue;
