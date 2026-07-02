@@ -360,6 +360,7 @@ jobs:
         run: node .github/scripts/auto-publish-draft.js
 
       - name: Verify draft promotion result
+        id: verify_test
         if: steps.check_pat.outputs.has_pat == 'true'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -367,8 +368,7 @@ jobs:
           if [ "${{ steps.promote_puppeteer.outcome }}" != "success" ] && \
              [ "${{ steps.promote_oauth.outcome }}" != "success" ] && \
              [ "${{ steps.promote_api.outcome }}" != "success" ]; then
-            echo "::error::All draft-to-test promotion tiers failed"
-            exit 1
+            echo "::warning::All draft-to-test promotion tiers returned non-success; verifying actual Homey channel state before failing."
           fi
           node .github/scripts/verify-test-version.js
 
@@ -472,9 +472,12 @@ jobs:
           APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
           echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ] && [ "${{ steps.verify_test.outcome }}" == "success" ]; then
             echo "✅ Published to Homey App Store (Test channel)" >> $GITHUB_STEP_SUMMARY
             echo "[Install test version](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+            echo "⚠️ Published draft build, but Homey test promotion was not confirmed" >> $GITHUB_STEP_SUMMARY
+            echo "[Open Homey test page](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
           else
             echo "⚠️ Validated only — HOMEY_PAT not set" >> $GITHUB_STEP_SUMMARY
           fi

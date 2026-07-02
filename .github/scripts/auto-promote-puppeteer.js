@@ -34,6 +34,22 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 function browserRegexPayload(regex) {
   return regex ? { source: regex.source, flags: regex.flags } : null;
 }
+
+const BUILD_ROW_SELECTOR = [
+  'tr',
+  '[role="row"]',
+  '[data-rowindex]',
+  '[class*="MuiDataGrid-row"]',
+  '[class*="MuiTableRow"]',
+  '[class*="row"]',
+  '[class*="item"]',
+  '[class*="build"]',
+].join(', ');
+
+function browserBuildRowSelector() {
+  return BUILD_ROW_SELECTOR;
+}
+
 async function waitReady(page, label, ms = 6000) {
   await sleep(ms);
   try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 10000 }); } catch {}
@@ -358,23 +374,28 @@ async function findAndPromote(page, captured) {
   }
 
   if (APP_VERSION) {
-    const currentVersionState = await page.evaluate((version, versionRegex) => {
+    const currentVersionState = await page.evaluate((version, versionRegex, rowSelector) => {
       const matchesVersion = (value) => {
         if (!version) return true;
         if (!versionRegex) return false;
         return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
       };
-      const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="item"], [class*="build"]')];
+      const rows = [...document.querySelectorAll(rowSelector)];
       const matching = rows
         .map(row => (row.textContent || '').replace(/\s+/g, ' ').trim())
+        .filter(Boolean)
         .filter(text => matchesVersion(text));
+      if (!matching.length) {
+        const bodyText = (document.body?.innerText || '').replace(/\s+/g, ' ').trim();
+        if (matchesVersion(bodyText)) matching.push(bodyText);
+      }
       return {
         count: matching.length,
         hasDraft: matching.some(text => /\bdraft\b/i.test(text)),
         hasTest: matching.some(text => /\btest\b/i.test(text)),
         sample: matching[0] || '',
       };
-    }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)));
+    }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)), browserBuildRowSelector());
     log(`  Current version row check: count=${currentVersionState.count}, draft=${currentVersionState.hasDraft}, test=${currentVersionState.hasTest}`);
     if (currentVersionState.sample) log('  Current version sample: ' + currentVersionState.sample.slice(0, 220));
     if (currentVersionState.hasTest) {
@@ -391,13 +412,13 @@ async function findAndPromote(page, captured) {
 
   // Strategy 1: Click "SUBMISSION >" link next to first draft build row
   log('  Strategy 1: Find SUBMISSION link for draft');
-  const clicked = await page.evaluate((version, versionRegex) => {
+  const clicked = await page.evaluate((version, versionRegex, rowSelector) => {
     const matchesVersion = (value) => {
       if (!version) return true;
       if (!versionRegex) return false;
       return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
     };
-    const rows = [...document.querySelectorAll('tr')];
+    const rows = [...document.querySelectorAll(rowSelector)];
     for (const row of rows) {
       const rowText = row.textContent || '';
       if (!/draft/i.test(rowText)) continue;
@@ -406,6 +427,12 @@ async function findAndPromote(page, captured) {
       if (link && /submission/i.test(link.textContent)) {
         link.click();
         return 'SUBMISSION link in draft row: ' + link.href;
+      }
+      const rowAction = [...row.querySelectorAll('button, a, [role="button"]')]
+        .find(el => /submission|publish|release|promote|test|actions?/i.test(el.textContent || el.getAttribute('aria-label') || el.getAttribute('title') || ''));
+      if (rowAction) {
+        rowAction.click();
+        return 'Action in draft row: ' + ((rowAction.textContent || rowAction.getAttribute('aria-label') || rowAction.getAttribute('title') || '').trim() || rowAction.tagName);
       }
       const anyLink = [...row.querySelectorAll('a')].find(a => a.href);
       if (anyLink) { anyLink.click(); return 'Link in draft row: ' + anyLink.href; }
@@ -419,7 +446,7 @@ async function findAndPromote(page, captured) {
       }
     }
     return null;
-  }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)));
+  }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)), browserBuildRowSelector());
 
   if (clicked) {
     log(`  ${clicked}`);
@@ -481,13 +508,13 @@ async function findAndPromote(page, captured) {
 
   // Strategy 2: Click on the draft row first, then look for promote
   log('  No direct promote button found, trying row click...');
-  const rowClicked = await page.evaluate((version, versionRegex) => {
+  const rowClicked = await page.evaluate((version, versionRegex, rowSelector) => {
     const matchesVersion = (value) => {
       if (!version) return true;
       if (!versionRegex) return false;
       return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
     };
-    const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="item"], [class*="build"]')];
+    const rows = [...document.querySelectorAll(rowSelector)];
     for (const r of rows) {
       const text = r.textContent || '';
       if (text.toLowerCase().includes('draft') && matchesVersion(text)) {
@@ -496,7 +523,7 @@ async function findAndPromote(page, captured) {
       }
     }
     return false;
-  }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)));
+  }, APP_VERSION, browserRegexPayload(versionTextRegex(APP_VERSION)), browserBuildRowSelector());
 
   if (rowClicked) {
     log('  Clicked draft row');
