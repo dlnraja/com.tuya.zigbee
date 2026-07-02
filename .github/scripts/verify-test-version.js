@@ -229,11 +229,13 @@ async function main() {
   log('## Verify Test Version');
   log(`Expected: v${version}`);
 
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
-    log(`Verification attempt ${attempt}/3`);
+  const maxAttempts = Number(process.env.HOMEY_TEST_VERIFY_ATTEMPTS || 6);
+  const delayMs = Number(process.env.HOMEY_TEST_VERIFY_DELAY_MS || 30000);
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    log(`Verification attempt ${attempt}/${maxAttempts}`);
     if (await directVerify(version)) return;
     if (dashboardFallback(version)) return;
-    if (attempt < 3) await sleep(15000);
+    if (attempt < maxAttempts) await sleep(delayMs);
   }
 
   log(`v${version} was not confirmed on the Homey test channel`);

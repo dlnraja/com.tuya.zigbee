@@ -380,14 +380,27 @@ async function findAndPromote(page, captured) {
         if (!versionRegex) return false;
         return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
       };
+      const buildChunksFromBody = () => {
+        const bodyText = (document.body?.innerText || '').replace(/\s+/g, ' ').trim();
+        if (!bodyText) return [];
+        const markers = [...bodyText.matchAll(/#\d+\s+v?\d+\.\d+\.\d+/gi)];
+        if (markers.length) {
+          return markers.map((match, index) => {
+            const next = markers[index + 1];
+            return bodyText.slice(match.index, next ? next.index : Math.min(bodyText.length, match.index + 700)).trim();
+          });
+        }
+        const flags = versionRegex.flags.includes('g') ? versionRegex.flags : `${versionRegex.flags}g`;
+        const direct = [...bodyText.matchAll(new RegExp(versionRegex.source, flags))];
+        return direct.map(match => bodyText.slice(Math.max(0, match.index - 80), Math.min(bodyText.length, match.index + 320)).trim());
+      };
       const rows = [...document.querySelectorAll(rowSelector)];
       const matching = rows
         .map(row => (row.textContent || '').replace(/\s+/g, ' ').trim())
         .filter(Boolean)
         .filter(text => matchesVersion(text));
       if (!matching.length) {
-        const bodyText = (document.body?.innerText || '').replace(/\s+/g, ' ').trim();
-        if (matchesVersion(bodyText)) matching.push(bodyText);
+        matching.push(...buildChunksFromBody().filter(text => matchesVersion(text)));
       }
       return {
         count: matching.length,
@@ -418,7 +431,27 @@ async function findAndPromote(page, captured) {
       if (!versionRegex) return false;
       return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
     };
-    const rows = [...document.querySelectorAll(rowSelector)];
+    const collectRows = () => {
+      const rows = [...document.querySelectorAll(rowSelector)];
+      const seen = new Set(rows);
+      for (const el of document.querySelectorAll('div, li, section, article')) {
+        const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+        if (text.length < 20 || text.length > 1200) continue;
+        if (!/draft/i.test(text) || !matchesVersion(text)) continue;
+        let node = el;
+        while (node.parentElement) {
+          const parentText = (node.parentElement.textContent || '').replace(/\s+/g, ' ').trim();
+          if (parentText.length > 1200 || !/draft/i.test(parentText) || !matchesVersion(parentText)) break;
+          node = node.parentElement;
+        }
+        if (!seen.has(node)) {
+          seen.add(node);
+          rows.push(node);
+        }
+      }
+      return rows;
+    };
+    const rows = collectRows();
     for (const row of rows) {
       const rowText = row.textContent || '';
       if (!/draft/i.test(rowText)) continue;
@@ -515,6 +548,16 @@ async function findAndPromote(page, captured) {
       return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
     };
     const rows = [...document.querySelectorAll(rowSelector)];
+    const seen = new Set(rows);
+    for (const el of document.querySelectorAll('div, li, section, article')) {
+      const text = (el.textContent || '').replace(/\s+/g, ' ').trim();
+      if (text.length < 20 || text.length > 1200) continue;
+      if (!/draft/i.test(text) || !matchesVersion(text)) continue;
+      if (!seen.has(el)) {
+        seen.add(el);
+        rows.push(el);
+      }
+    }
     for (const r of rows) {
       const text = r.textContent || '';
       if (text.toLowerCase().includes('draft') && matchesVersion(text)) {
