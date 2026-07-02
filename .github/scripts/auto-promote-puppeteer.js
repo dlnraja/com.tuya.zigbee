@@ -19,6 +19,7 @@ try {
   console.error('Warning: could not read app.json:', e.message);
 }
 const APP_ID = process.env.TARGET_APP_ID || appJson.id || 'com.dlnraja.tuya.zigbee';
+const APP_VERSION = appJson.version ? String(appJson.version).replace(/^v/i, '') : null;
 
 const BASE = 'https://tools.developer.homey.app';
 const VERSIONS_URL = `${BASE}/apps/app/${APP_ID}/versions`;
@@ -352,14 +353,40 @@ async function findAndPromote(page, captured) {
     return false;
   }
 
+  if (APP_VERSION) {
+    const currentVersionState = await page.evaluate((version) => {
+      const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="item"], [class*="build"]')];
+      const matching = rows
+        .map(row => (row.textContent || '').replace(/\s+/g, ' ').trim())
+        .filter(text => text.includes(version));
+      return {
+        count: matching.length,
+        hasDraft: matching.some(text => /\bdraft\b/i.test(text)),
+        hasTest: matching.some(text => /\btest\b/i.test(text)),
+        sample: matching[0] || '',
+      };
+    }, APP_VERSION);
+    log(`  Current version row check: count=${currentVersionState.count}, draft=${currentVersionState.hasDraft}, test=${currentVersionState.hasTest}`);
+    if (currentVersionState.sample) log('  Current version sample: ' + currentVersionState.sample.slice(0, 220));
+    if (currentVersionState.hasTest) {
+      log('  Current version is already on test.');
+      return true;
+    }
+    if (!currentVersionState.hasDraft) {
+      log('  No draft row for current version; ignoring historical draft rows.');
+      return false;
+    }
+  }
+
   if (DRY) { log('  DRY RUN - not clicking'); return false; }
 
   // Strategy 1: Click "SUBMISSION >" link next to first draft build row
   log('  Strategy 1: Find SUBMISSION link for draft');
-  const clicked = await page.evaluate(() => {
+  const clicked = await page.evaluate((version) => {
     const rows = [...document.querySelectorAll('tr')];
     for (const row of rows) {
       if (!/draft/i.test(row.textContent)) continue;
+      if (version && !row.textContent.includes(version)) continue;
       const link = row.querySelector('a');
       if (link && /submission/i.test(link.textContent)) {
         link.click();
@@ -377,7 +404,7 @@ async function findAndPromote(page, captured) {
       }
     }
     return null;
-  });
+  }, APP_VERSION);
 
   if (clicked) {
     log(`  ${clicked}`);
@@ -439,16 +466,17 @@ async function findAndPromote(page, captured) {
 
   // Strategy 2: Click on the draft row first, then look for promote
   log('  No direct promote button found, trying row click...');
-  const rowClicked = await page.evaluate(() => {
+  const rowClicked = await page.evaluate((version) => {
     const rows = [...document.querySelectorAll('tr, [class*="row"], [class*="item"], [class*="build"]')];
     for (const r of rows) {
-      if ((r.textContent || '').toLowerCase().includes('draft')) {
+      const text = r.textContent || '';
+      if (text.toLowerCase().includes('draft') && (!version || text.includes(version))) {
         r.click();
         return true;
       }
     }
     return false;
-  });
+  }, APP_VERSION);
 
   if (rowClicked) {
     log('  Clicked draft row');

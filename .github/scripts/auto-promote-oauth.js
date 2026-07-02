@@ -2,6 +2,10 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const {
+  selectPromotionTarget,
+  summarizeBuild,
+} = require('./homey-build-selection');
 
 // Dynamically read App ID from app.json
 const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
@@ -12,6 +16,7 @@ try {
   console.error('Warning: could not read app.json:', e.message);
 }
 const APP = appJson.id || 'com.dlnraja.tuya.zigbee';
+const APP_VERSION = appJson.version || '';
 
 const E = process.env.HOMEY_EMAIL, P = process.env.HOMEY_PASSWORD;
 const SUM = process.env.GITHUB_STEP_SUMMARY;
@@ -152,9 +157,11 @@ async function promoteViaCloudApi(rawToken) {
       log('  CloudAPI deleg('+aud+'): obtained');
       const api = new AthomAppsAPI({token});
       const builds = await api.getBuilds({appId:APP});
-      const draft = builds.find(b=>/draft/i.test(b.channel||''));
-      if(!draft){log('  No draft');process.exit(0)}
-      await api.updateBuildChannel({appId:APP,buildId:draft.id||draft._id,channel:'test'});
+      const selection = selectPromotionTarget(builds, APP_VERSION);
+      log('  CloudAPI selection: '+selection.status+' '+summarizeBuild(selection.build));
+      if(selection.status === 'already-test') return;
+      if(selection.status !== 'promote'){log('  No current-version draft to promote');process.exit(0)}
+      await api.updateBuildChannel({appId:APP,buildId:selection.build.id||selection.build._id,channel:'test'});
       log('  Promoted via CloudAPI!'); return;
     } catch(e){log('  CloudAPI('+aud+'): '+e.message)}
   }
@@ -169,10 +176,12 @@ async function promoteWithSdk(apiTk) {
   }
   const builds = await api.getBuilds({appId:APP});
   log('  Builds: '+builds.length);
-  const draft = builds.find(b=>/draft/i.test(b.channel||''));
-  if(!draft){log('  No draft');process.exit(0)}
-  log('  Draft: '+(draft.id||draft._id));
-  await api.updateBuildChannel({appId:APP,buildId:draft.id||draft._id,channel:'test'});
+  const selection = selectPromotionTarget(builds, APP_VERSION);
+  log('  Selection: '+selection.status+' '+summarizeBuild(selection.build));
+  if(selection.status === 'already-test') return;
+  if(selection.status !== 'promote'){log('  No current-version draft to promote');process.exit(0)}
+  log('  Draft: '+(selection.build.id||selection.build._id));
+  await api.updateBuildChannel({appId:APP,buildId:selection.build.id||selection.build._id,channel:'test'});
   log('  Promoted!');
 }
 async function promoteRaw(apiTk) {
@@ -183,9 +192,11 @@ async function promoteRaw(apiTk) {
   if(!ok){const t=await r.text().catch(()=>'');log('  '+t);throw new Error('builds '+r.status+': '+t)}
   const d=await r.json();
   const arr=Array.isArray(d)?d:(d.builds||[]);
-  const draft=arr.find(b=>/draft/i.test(b.channel||''));
-  if(!draft){log('  No draft');process.exit(0)}
-  const pid=draft.id||draft._id;
+  const selection = selectPromotionTarget(arr, APP_VERSION);
+  log('  Selection: '+selection.status+' '+summarizeBuild(selection.build));
+  if(selection.status === 'already-test') return;
+  if(selection.status !== 'promote'){log('  No current-version draft to promote');process.exit(0)}
+  const pid=selection.build.id||selection.build._id;
   const base=r.url.substring(0,r.url.indexOf('/app/'));
   const pr=await fetch(base+'/app/'+APP+'/build/'+pid+'/channel',{
     method:'PUT',headers:{...hd,'Content-Type':'application/json'},
