@@ -23,7 +23,7 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
 
   async _processDPUpdate(dps) {
     if (this._destroyed) return;
-    super._processDPUpdate(dps);
+    await super._processDPUpdate(dps);
     this.log('[WIFI-TANK] Raw DPs:', JSON.stringify(dps));
     
     // DP 1 - liquid_state
@@ -68,19 +68,19 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
         const val = newSettings[key];
         switch (key) {
           case 'installation_height': // DP19
-            await this.set({ dps: 19, set: val });
+            await this._setDP(19, val);
             this.log(`[WIFI-TANK] Sent DP19 installation_height = ${val}mm`);
             break;
           case 'liquid_depth_max': // DP21
-            await this.set({ dps: 21, set: val });
+            await this._setDP(21, val);
             this.log(`[WIFI-TANK] Sent DP21 liquid_depth_max = ${val}mm`);
             break;
           case 'max_set': // DP7
-            await this.set({ dps: 7, set: val });
+            await this._setDP(7, val);
             this.log(`[WIFI-TANK] Sent DP7 max_set = ${val}%`);
             break;
           case 'min_set': // DP8
-            await this.set({ dps: 8, set: val });
+            await this._setDP(8, val);
             this.log(`[WIFI-TANK] Sent DP8 min_set = ${val}%`);
             break;
         }
