@@ -4,6 +4,22 @@ function normalizeVersion(version) {
   return String(version || '').trim().replace(/^v/i, '');
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function versionTextRegex(version) {
+  const normalized = normalizeVersion(version);
+  if (!normalized) return null;
+  return new RegExp(`(?:^|[^0-9.])${escapeRegExp(normalized)}(?:[^0-9.]|$)`);
+}
+
+function textHasVersion(text, version) {
+  const regex = versionTextRegex(version);
+  if (!regex) return false;
+  return regex.test(String(text || ''));
+}
+
 function rawBuildId(build) {
   return build?.id || build?.buildId || build?._id || null;
 }
@@ -47,7 +63,8 @@ function sortBuildsDesc(builds) {
 }
 
 function isDraft(build) {
-  return buildState(build) === 'draft';
+  const state = buildState(build);
+  return state === 'draft' || state === '' || state === 'none';
 }
 
 function isTest(build) {
@@ -89,6 +106,8 @@ function selectPromotionTarget(rawBuilds, expectedVersion) {
 
 module.exports = {
   normalizeVersion,
+  versionTextRegex,
+  textHasVersion,
   numericBuildId,
   buildState,
   normalizeBuild,
