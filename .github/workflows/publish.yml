@@ -81,6 +81,9 @@ jobs:
       - name: Diagnostic history gate
         run: npm run check:diag-history
 
+      - name: Normalize generated Flow manifest before validation
+        run: npm run fix:generated-flow-args
+
       - name: Validate (npx)
         run: npx homey app validate --level publish
 
@@ -203,7 +206,10 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git restore -- .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots 2>/dev/null || true
+          for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md package.json package-lock.json; do
+            [ -e "$path" ] && git add "$path"
+          done
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"

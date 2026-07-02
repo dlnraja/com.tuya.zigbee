@@ -82,7 +82,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add -A
+          git restore -- .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots 2>/dev/null || true
+          for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json; do
+            [ -e "$path" ] && git add "$path"
+          done
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "fix: auto-fix for #${ISSUE} — ${{ steps.bug.outputs.summary }}"
           git push origin "$BRANCH"

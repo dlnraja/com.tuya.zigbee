@@ -107,7 +107,10 @@ function stripDeviceTitleFormatted(manifest) {
   return stripped;
 }
 
-function sanitizeManifestFile(manifestPath) {
+function sanitizeManifestFile(manifestPath, options = {}) {
+  const opts = options && typeof options === 'object' ? options : {};
+  const dryRun = opts.dryRun === true || process.env.DRY_RUN === 'true';
+  const onChanges = typeof opts.onChanges === 'function' ? opts.onChanges : null;
   const label = path.relative(APP_ROOT, manifestPath).replace(/\\/g, '/') || manifestPath;
   if (!fs.existsSync(manifestPath)) {
     log(`No ${label} found — nothing to sanitize.`);
@@ -186,8 +189,13 @@ function sanitizeManifestFile(manifestPath) {
   }
 
   if (changes > 0) {
-    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
-    log(`${label}: wrote ${changes} change(s).`);
+    if (onChanges) onChanges(changes);
+    if (dryRun) {
+      log(`${label}: dry-run would write ${changes} change(s).`);
+    } else {
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+      log(`${label}: wrote ${changes} change(s).`);
+    }
   } else {
     log(`${label}: manifest already clean — no changes.`);
   }

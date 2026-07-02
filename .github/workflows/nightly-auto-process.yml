@@ -119,8 +119,14 @@ jobs:
           node scripts/automation/fix-empty-catches.js --verbose
         continue-on-error: true
 
+      - name: Normalize Homey manifest before validation
+        run: npm run fix:generated-flow-args
+
       - name: 📦 Validate Homey App
         run: npx homey app validate --level publish
+
+      - name: Normalize Homey manifest after validation
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
 
       - name: 🎯 Zero-Defect Ultimate Validation (v8.0.0)
         continue-on-error: true

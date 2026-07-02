@@ -27,6 +27,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { sanitizeManifestFile } = require('./sanitize-manifest.cjs');
 
 const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -78,6 +79,51 @@ function safeWrite(file, content) {
   }
   fs.writeFileSync(file, content, 'utf8');
   return true;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 13: GENERATED MANIFEST SANITIZATION
+// Keeps Homey-generated app.json artifacts from reintroducing Flow/device arg,
+// button option, and compiled titleFormatted regressions.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_generatedManifestSanitize() {
+  log('\n📋 Rule 13: Generated Manifest Sanitization');
+  const appPath = path.join(ROOT, 'app.json');
+  let changes = 0;
+  let status = 0;
+
+  try {
+    status = sanitizeManifestFile(appPath, {
+      dryRun: DRY,
+      onChanges: count => { changes = count; },
+    });
+  } catch (e) {
+    report.errors.push({
+      rule: 'generated-manifest-sanitize',
+      file: appPath,
+      error: e.message,
+    });
+    log(`  → app.json sanitization crashed: ${e.message}`);
+    return;
+  }
+
+  if (status !== 0) {
+    report.errors.push({
+      rule: 'generated-manifest-sanitize',
+      file: appPath,
+      error: 'sanitize-manifest failed for app.json',
+    });
+    log('  → app.json sanitization failed');
+    return;
+  }
+
+  if (changes > 0) {
+    addFix('generated-manifest-sanitize', appPath, `Sanitized ${changes} generated Homey manifest artifact(s)`);
+    log(`  ✅ ${DRY ? 'Would sanitize' : 'Sanitized'} ${changes} app.json generated artifact(s)`);
+  } else {
+    log('  → app.json already clean');
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -551,6 +597,7 @@ async function main() {
   rule_energyBatteries();
   rule_dualBatteryCleanup();
   rule_energyApproximationCleanup();
+  rule_generatedManifestSanitize();
 
   // DETECTION RULES (report only, manual fixes recommended)
   rule_flowCardTryCatch();
@@ -567,7 +614,7 @@ async function main() {
   log('  SELF-HEAL REPORT');
   log('═══════════════════════════════════════════════════════════════════════');
 
-  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'dual-battery-cleanup', 'energy-approximation-cleanup'];
+  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'dual-battery-cleanup', 'energy-approximation-cleanup', 'generated-manifest-sanitize'];
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
   let totalAutoFixes = 0;

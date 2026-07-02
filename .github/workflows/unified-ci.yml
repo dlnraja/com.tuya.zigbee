@@ -76,8 +76,14 @@ jobs:
           console.log('✅ Dual-Layer: PASS — Zéro AggregateError');
           GATE
 
+      - name: Normalize Homey manifest before validation
+        run: npm run fix:generated-flow-args
+
       - name: 🏠 Homey Validate
         run: npx homey app validate --level publish
+
+      - name: Normalize Homey manifest after validation
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
       
       - name: 🛡️ Fleetwood Integrity & Manifest Gateway
         run: node scripts/PRE_COMMIT_CHECKS.js
