@@ -10,7 +10,6 @@ const STATE=path.join(__dirname,'..','state');
 const REPORT=path.join(STATE,'homey-device-report.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const APP='com.dlnraja.tuya.zigbee';
-if(!TOKENS.length){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(1);}
 function log(t){console.log(t);if(SUM)fs.appendFileSync(SUM,t+'\n');}
 async function api(url){
   const r=await fetchWithRetry(url,{headers:{'Authorization':'Bearer '+PAT}},{retries:3,label:'homeyAPI'});
@@ -30,22 +29,61 @@ function getLocalFPs(){
   }catch{}
   return fps;
 }
+function baseReport(){
+  return{date:new Date().toISOString(),appId:APP,status:'incomplete',
+    auth:{tokensProvided:TOKENS.length,authenticated:false,canListHomeys:false},
+    homeys:[],localFPs:getLocalFPs().size,warnings:[],errors:[]};
+}
+function addIssue(report,level,code,message){
+  const target=level==='error'?report.errors:report.warnings;
+  target.push({source:'homey_device_diagnostics',code,message:privacy.redact(message)});
+}
+function saveReport(report){
+  fs.mkdirSync(STATE,{recursive:true});
+  const safe=privacy.redactObject(report);privacy.assertNoLeaks(safe,REPORT);
+  fs.writeFileSync(REPORT,JSON.stringify(safe,null,2)+'\n');
+}
+if(!TOKENS.length){
+  const report=baseReport();
+  addIssue(report,'error','missing_homey_credential','Homey runtime diagnostics could not run because no credential is configured.');
+  saveReport(report);
+  console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');
+  process.exit(1);
+}
 async function main(){
   log('## Homey Device Diagnostics');
+  const report=baseReport();
   let me=null;
   for(const t of TOKENS){
     PAT=t;
-    try{me=await api('https://api.athom.com/user/me');log('Auth OK (token ****)');break;}catch(e){log('Token **** failed: '+privacy.redact(e.message));}
+    try{me=await api('https://api.athom.com/user/me');report.auth.authenticated=true;log('Auth OK (token ****)');break;}catch(e){
+      addIssue(report,'warning','homey_auth_attempt_failed','A Homey credential failed authentication: '+privacy.redact(e.message));
+      log('Token **** failed: '+privacy.redact(e.message));
+    }
   }
-  if(!me){log('::error::All tokens failed for api.athom.com');process.exit(0);}
+  if(!me){
+    addIssue(report,'error','homey_auth_failed','All configured Homey credentials failed authentication.');
+    saveReport(report);
+    log('::error::All tokens failed for api.athom.com');
+    process.exit(1);
+  }
   log('User: '+privacy.alias('homey-user',(me.id||me.email||me.firstname||'unknown')));
   let homeys=[];
-  try{homeys=await api('https://api.athom.com/user/me/homey');}catch(e){log('::warning::Cannot list Homeys: '+privacy.redact(e.message)+' (PAT scope may be limited)');}
-  if(!homeys||!homeys.length){log('No Homeys found (try a full-scope OAuth token)');return;}
+  try{homeys=await api('https://api.athom.com/user/me/homey');report.auth.canListHomeys=true;}catch(e){
+    addIssue(report,'warning','homey_list_failed','Cannot list Homeys through the current Homey credential: '+privacy.redact(e.message));
+    log('::warning::Cannot list Homeys: '+privacy.redact(e.message)+' (PAT scope may be limited)');
+  }
+  if(!homeys||!homeys.length){
+    addIssue(report,'warning','homey_runtime_unavailable','No Homeys were accessible, so live runtime crash/device diagnostics were not collected.');
+    saveReport(report);
+    log('No Homeys found (try a full-scope OAuth token)');
+    return;
+  }
   log('Found '+homeys.length+' Homey(s)');
   const localFPs=getLocalFPs();
+  report.localFPs=localFPs.size;
+  report.status='complete';
   log('Local fingerprints: '+localFPs.size);
-  const report={date:new Date().toISOString(),homeys:[],localFPs:localFPs.size};
   for(const h of homeys){
     log('\n### Homey: '+homeyAlias(h.id||h.name));
     const base='https://'+h.id+'.connect.athom.com/api';
@@ -81,9 +119,7 @@ async function main(){
     if(zigbee?.nodes)hReport.zigbeeRouters=(Object.values(zigbee.nodes).filter(n=>n.type==='router')).length;
     report.homeys.push(hReport);
   }
-  fs.mkdirSync(STATE,{recursive:true});
-  const safe=privacy.redactObject(report);privacy.assertNoLeaks(safe,REPORT);
-  fs.writeFileSync(REPORT,JSON.stringify(safe,null,2)+'\n');
+  saveReport(report);
   log('\nReport saved to '+path.relative(process.cwd(),REPORT));
 }
 main().catch(e=>{console.error('Fatal:',privacy.redact(e.message));process.exit(1);});
