@@ -119,11 +119,11 @@ jobs:
              [ "${{ steps.oauth.outcome }}" != "success" ] && \
              [ "${{ steps.api.outcome }}" != "success" ] && \
              [ "${{ steps.retry.outcome }}" != "success" ]; then
-            echo "::error::All draft-to-test promotion tiers failed"
-            exit 1
+            echo "::warning::All draft-to-test promotion tiers returned non-success; verify-test-version will check actual Homey channel state."
           fi
 
       - name: Verify test version
+        id: verify_test
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/verify-test-version.js
