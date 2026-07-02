@@ -1,23 +1,14 @@
 {
-  "timestamp": "2026-07-02T04:57:00.459Z",
+  "timestamp": "2026-07-02T16:47:14.672Z",
   "totalFiles": 0,
-  "totalFixes": 934,
+  "totalFixes": 933,
   "rules": {
-    "fingerprint-case": {
-      "count": 1,
-      "files": [
-        {
-          "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 37,
       "files": [
         {
           "file": "drivers/button_wireless_4/device.js",
-          "detail": "Line 308: getDeviceTriggerCard without try-catch"
+          "detail": "Line 310: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/curtain_motor/device.js",
@@ -125,7 +116,7 @@
         },
         {
           "file": "lib/devices/ButtonDevice.js",
-          "detail": "Line 1323: getDeviceTriggerCard without try-catch"
+          "detail": "Line 1345: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib/devices/UnifiedSensorBase.js",
