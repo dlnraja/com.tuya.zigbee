@@ -75,11 +75,34 @@ describe('button flow runtime routing guards', function() {
   });
 
   it('keeps wall-switch button filters away from missing super trigger handlers', function() {
-    for (const driverId of ['wall_switch_2gang_1way', 'wall_switch_3gang_1way', 'wall_switch_4gang_1way']) {
+    const expectedGangCounts = {
+      wall_switch_2gang_1way: 2,
+      wall_switch_3gang_1way: 3,
+      wall_switch_4gang_1way: 4,
+    };
+
+    for (const [driverId, gangCount] of Object.entries(expectedGangCounts)) {
       const source = read(`drivers/${driverId}/device.js`);
 
+      assert.match(source, new RegExp(`get gangCount\\(\\) \\{ return ${gangCount}; \\}`));
+      assert.match(source, /const \{ subDeviceId \} = typeof this\.getData === 'function' \? this\.getData\(\) : \{\}/);
+      assert.match(source, /return subDeviceId \? \['onoff'\] : super\.switchCapabilities/);
+      assert.match(source, /this\._isSubDevice = Boolean\(subDeviceId\)/);
       assert.doesNotMatch(source, /super\.triggerButtonPress/);
+      assert.match(source, /this\._isSubDevice && this\._gangNumber !== undefined && button !== this\._gangNumber/);
       assert.match(source, /_triggerPhysicalFlow\(button, type, \{ \.\.\.tokens, _internalTrigger: true \}\)/);
+      assert.match(source, /const targetGang = this\._isSubDevice && this\._gangNumber \? this\._gangNumber : gang/);
     }
+  });
+
+  it('registers Homey UI button capabilities for mixed switch/button devices', function() {
+    const source = read('lib/mixins/VirtualButtonMixin.js');
+
+    assert.match(source, /hasDedicatedButtonCapabilityRouter/);
+    assert.match(source, /typeof this\._registerButtonCapabilityListeners === 'function'/);
+    assert.match(source, /this\.registerCapabilityListener\(cap, async \(\) =>/);
+    assert.match(source, /triggerButtonPress\(i, 'single', 1, \{ source: 'virtual' \}\)/);
+    assert.match(source, /_triggerPhysicalFlow\?\.\(i, 'single', \{ source: 'virtual', _internalTrigger: true \}\)/);
+    assert.match(source, /return true/);
   });
 });

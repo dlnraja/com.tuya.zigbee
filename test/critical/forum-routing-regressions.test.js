@@ -70,6 +70,34 @@ describe('forum routing regressions', () => {
     assert.match(source, /_setupTuyaDPButtonDetection/);
   });
 
+  it('routes Moes/BSEED TS0014 _TZ3000_mrduubod to the 4-gang wall switch with UI buttons', () => {
+    assertDriverClaims('wall_switch_4gang_1way', '_TZ3000_mrduubod');
+    assertFingerprint('data/fingerprints.json', '_TZ3000_mrduubod', 'wall_switch_4gang_1way');
+
+    const RuntimeFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
+    const CompoundFingerprintDB = require('../../lib/DeviceFingerprintDB');
+    const compound = CompoundFingerprintDB.lookup('_TZ3000_mrduubod', 'TS0014');
+
+    assert.strictEqual(compound?.driver, 'wall_switch_4gang_1way');
+    assert.strictEqual(compound?.powerSource, 'mains');
+    assert.strictEqual(RuntimeFingerprintDB.getDriverId('_TZ3000_mrduubod', 'TS0014'), 'wall_switch_4gang_1way');
+    assert.strictEqual(RuntimeFingerprintDB.getPowerInfo('_TZ3000_mrduubod', 'TS0014')?.powerSource, 'mains');
+
+    for (const source of [appDriver('wall_switch_4gang_1way'), composeDriver('wall_switch_4gang_1way')]) {
+      assert(includesCI(source.zigbee?.productId, 'TS0014'), 'wall_switch_4gang_1way must claim TS0014');
+      for (const capability of ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4', 'button.1', 'button.2', 'button.3', 'button.4']) {
+        assert(source.capabilities.includes(capability), `wall_switch_4gang_1way missing ${capability}`);
+      }
+      assert(!source.energy?.batteries, 'mains TS0014 wall switch must not advertise batteries');
+      assert(!source.capabilitiesOptions?.measure_battery, 'mains TS0014 wall switch must not expose measure_battery metadata');
+      for (const endpointId of ['1', '2', '3', '4']) {
+        const clusters = source.zigbee?.endpoints?.[endpointId]?.clusters || [];
+        assert(clusters.includes(57344), `endpoint ${endpointId} missing Tuya E000 cluster`);
+        assert(clusters.includes(57345), `endpoint ${endpointId} missing Tuya E001 cluster`);
+      }
+    }
+  });
+
   it('routes recent Johan activity fingerprints to their functional drivers', () => {
     const routes = [
       ['_TZ3000_ovyaisip', 'TS0001', 'wall_switch_1gang_1way'],
