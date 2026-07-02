@@ -82,11 +82,14 @@ jobs:
 
           echo "✅ Patterns de crash critiques vérifiés et absents."
 
+      - name: Normalize Homey manifest before validation
+        run: npm run fix:generated-flow-args
+
       - name: Validate App Manifest
         run: npx homey app validate --level=publish
 
       - name: Sanitize generated manifest after validation
-        run: node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
 
   # 2. Analyse des Diagnostics (Simulation du dump email)
   analyze-diagnostics:
