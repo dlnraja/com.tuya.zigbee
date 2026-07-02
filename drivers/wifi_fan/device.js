@@ -7,13 +7,32 @@ class WiFiFanDevice extends TuyaLocalDevice {
   // does not add a false measure_battery capability (fixes false-battery reports).
   get mainsPowered() { return true; }
 
+  _getFanSpeedRange() {
+    const min = Number(this.getSetting?.('fan_speed_min'));
+    const max = Number(this.getSetting?.('fan_speed_max'));
+    if (Number.isFinite(min) && Number.isFinite(max) && max > min) {
+      return { min, max };
+    }
+    return { min: 0, max: 100 };
+  }
+
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2':  { capability: null },
       '3':  { capability: 'dim', writable: true,
-        transform: (v) => Math.max(0, Math.min(1, v / 100)),
-        reverseTransform: (v) => Math.round(v * 100) },
+        transform: (v) => {
+          const val = Number(v);
+          if (!Number.isFinite(val)) return 0;
+          const { min, max } = this._getFanSpeedRange();
+          return Math.max(0, Math.min(1, (val - min) / (max - min)));
+        },
+        reverseTransform: (v) => {
+          const val = Number(v);
+          const { min, max } = this._getFanSpeedRange();
+          if (!Number.isFinite(val)) return min;
+          return Math.round(min + (Math.max(0, Math.min(1, val)) * (max - min)));
+        } },
       '4':  { capability: null },
       '6':  { capability: null },
       '8':  { capability: null },
