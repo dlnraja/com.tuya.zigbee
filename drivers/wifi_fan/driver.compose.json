@@ -100,6 +100,28 @@
               }
             }
           ]
+        },
+        {
+          "id": "fan_speed_min",
+          "type": "number",
+          "label": {
+            "en": "Fan speed DP minimum"
+          },
+          "hint": {
+            "en": "Raw DP value for 0% speed. Keep 0 for percentage-based fans; use 1 for fans that expect 1-6."
+          },
+          "value": 0
+        },
+        {
+          "id": "fan_speed_max",
+          "type": "number",
+          "label": {
+            "en": "Fan speed DP maximum"
+          },
+          "hint": {
+            "en": "Raw DP value for 100% speed. Keep 100 for percentage-based fans; use 6 for fans that expect 1-6."
+          },
+          "value": 100
         }
       ]
     }
