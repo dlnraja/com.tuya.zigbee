@@ -19,6 +19,9 @@ Module._load = function loadWithHomeyMock(request, parent, isMain) {
 const { parseDPValue, stringifyDPValue } = require('../../lib/tuya-local/DPValueParser');
 const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+const TuyaLocalDriver = require('../../lib/tuya-local/TuyaLocalDriver');
+const TuyaDeviceDiscovery = require('../../lib/tuya-local/TuyaDeviceDiscovery');
+const TuyaUDPDiscovery = require('../../lib/tuya-local/TuyaUDPDiscovery');
 const TuyaCloudAPI = require('../../lib/tuya-local/TuyaCloudAPI');
 const TuyaSmartLifeAuth = require('../../lib/tuya-local/TuyaSmartLifeAuth');
 const { ERROR_CATEGORY, classifyError } = require('../../lib/utils/ErrorClassifier');
@@ -82,6 +85,65 @@ describe('SmartLife/Tuya WiFi regressions', () => {
     await client.destroy();
 
     assert(refreshes >= 1);
+  });
+
+  it('keeps LAN discovery scans independent from Homey timer APIs', async () => {
+    const discovery = new TuyaDeviceDiscovery({ log: { log: () => {}, error: () => {} }, timeout: 1 });
+    discovery._startListening = () => {};
+
+    const devices = await discovery.scan(1);
+
+    assert.deepStrictEqual(devices, []);
+  });
+
+  it('settles LAN discovery scans when stopped before timeout', async () => {
+    const discovery = new TuyaDeviceDiscovery({ log: { log: () => {}, error: () => {} }, timeout: 1000 });
+    discovery._startListening = () => {};
+
+    const pending = discovery.scan(1000);
+    discovery.stop();
+    const devices = await pending;
+
+    assert.deepStrictEqual(devices, []);
+  });
+
+  it('keeps global UDP discovery cleanup independent from Homey timer APIs', async () => {
+    const discovery = new TuyaUDPDiscovery({ log: () => {} });
+    let boundPorts = 0;
+    discovery._bindSocket = async () => { boundPorts++; };
+
+    await discovery.start();
+    await discovery.stop();
+
+    assert.strictEqual(boundPorts, 3);
+  });
+
+  it('stamps manually paired Tuya WiFi devices as local-first ad-hoc without cloud fallback', () => {
+    const driver = Object.create(TuyaLocalDriver.prototype);
+    const descriptor = driver._toLocalFirstPairDevice({
+      id: 'bf1234567890abcdef',
+      local_key: '0123456789abcdef',
+      ip: '192.168.1.50',
+      version: '3.5',
+      name: 'Desk Plug',
+    }, 'ad_hoc');
+
+    assert.strictEqual(descriptor.store.wifi_connection_policy.strategy, 'local_first');
+    assert.strictEqual(descriptor.store.wifi_connection_policy.pairingMode, 'ad_hoc');
+    assert.strictEqual(descriptor.store.wifi_connection_policy.cloudFallback, false);
+    assert.strictEqual(descriptor.store.wifi_connection_policy.localDiscovery, true);
+    assert.strictEqual(descriptor.settings.ip_address, '192.168.1.50');
+    assert.strictEqual(descriptor.settings.protocol_version, '3.5');
+  });
+
+  it('keeps Tuya WiFi cloud key recovery opt-in for local-first devices', () => {
+    const device = Object.create(TuyaLocalDevice.prototype);
+
+    device.getStoreValue = () => undefined;
+    assert.strictEqual(TuyaLocalDevice.prototype._allowsCloudKeyRecovery.call(device), false);
+
+    device.getStoreValue = key => key === 'wifi_connection_policy' ? { cloudFallback: true } : undefined;
+    assert.strictEqual(TuyaLocalDevice.prototype._allowsCloudKeyRecovery.call(device), true);
   });
 
   it('settles command timeouts even after the local client is destroyed', async () => {

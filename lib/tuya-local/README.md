@@ -53,9 +53,9 @@ Manual entry ──────────────────────�
 | File | Purpose |
 |------|---------|
 | `TuyaSmartLifeAuth.js` | Authentication: QR scan + IoT Platform + token management |
-| `TuyaDeviceDiscovery.js` | UDP LAN discovery on ports 6666/6667 |
+| `TuyaDeviceDiscovery.js` | UDP LAN discovery on ports 6666/6667/6668 |
 | `TuyaLocalDevice.js` | Base device class: tuyapi wrapper with reconnect + heartbeat |
-| `TuyaLocalDriver.js` | Pairing driver: 3 methods + cloud device list + LAN discovery |
+| `TuyaLocalDriver.js` | Local-first pairing driver: ad-hoc manual + optional cloud key lookup + LAN discovery |
 | `TuyaZigbeeBridge.js` | Zigbee gateway bridge: sub-device control via gateway TCP |
 | `TuyaCloudAPI.js` | Legacy Tuya Open API client (IoT Platform method) |
 | `TuyaCloudMQTT.js` | Real-time cloud MQTT updates (optional, AES-ECB/GCM) |
@@ -146,9 +146,9 @@ Manual entry > device_id + local_key + IP
 | File | Purpose |
 |------|---------|
 | `TuyaSmartLifeAuth.js` | Authentication: QR scan + IoT Platform + token management |
-| `TuyaDeviceDiscovery.js` | UDP LAN discovery on ports 6666/6667 |
+| `TuyaDeviceDiscovery.js` | UDP LAN discovery on ports 6666/6667/6668 |
 | `TuyaLocalDevice.js` | Base device class: tuyapi wrapper with reconnect + heartbeat |
-| `TuyaLocalDriver.js` | Pairing driver: 3 methods + cloud device list + LAN discovery |
+| `TuyaLocalDriver.js` | Local-first pairing driver: ad-hoc manual + optional cloud key lookup + LAN discovery |
 | `TuyaZigbeeBridge.js` | Zigbee gateway bridge: sub-device control via gateway TCP |
 | `TuyaCloudAPI.js` | Legacy Tuya Open API client (IoT Platform method) |
 | `TuyaCloudMQTT.js` | Real-time cloud MQTT updates (optional, AES-ECB/GCM) |
