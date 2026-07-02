@@ -12,6 +12,7 @@ const fs = require('fs');
 const path = require('path');
 
 const DRIVERS_DIR = path.join(__dirname, '..', '..', 'drivers');
+const ROOT_DIR = path.join(__dirname, '..', '..');
 const WIFI_PREFIX = 'wifi_';
 
 let errors = 0;
@@ -96,12 +97,60 @@ function scanDrivers() {
     checkFile(driverPath, driver);
   }
 
+  checkSharedWiFiLocalFirstLayer();
+
   console.log(`\n📊 Results: ${errors} errors, ${warnings} warnings`);
   if (errors > 0) {
     console.log('❌ FAILED - Fix errors before committing');
     process.exit(1);
   } else {
     console.log('✅ PASSED');
+  }
+}
+
+function checkSharedWiFiLocalFirstLayer() {
+  const required = [
+    {
+      file: path.join(ROOT_DIR, 'lib', 'tuya-local', 'TuyaLocalDriver.js'),
+      tokens: ['createWiFiConnectionStore', 'pairingMode', 'cloudFallback: false'],
+      message: 'Tuya pairing must stamp devices with local-first/ad-hoc policy and cloud fallback disabled',
+    },
+    {
+      file: path.join(ROOT_DIR, 'lib', 'tuya-local', 'TuyaLocalDevice.js'),
+      tokens: ['_allowsCloudKeyRecovery', 'Cloud key recovery skipped by local-first policy'],
+      message: 'Tuya runtime must keep cloud key recovery opt-in',
+    },
+    {
+      file: path.join(ROOT_DIR, 'lib', 'ewelink-local', 'EweLinkLocalDriver.js'),
+      tokens: ['createWiFiConnectionStore', "pairingMode:'ad_hoc'"],
+      message: 'eWeLink pairing must stamp devices with local-first/ad-hoc policy',
+    },
+  ];
+
+  for (const item of required) {
+    const relPath = path.relative(process.cwd(), item.file);
+    if (!fs.existsSync(item.file)) {
+      log('ERROR', relPath, item.message);
+      continue;
+    }
+    const content = fs.readFileSync(item.file, 'utf8');
+    for (const token of item.tokens) {
+      if (!content.includes(token)) {
+        log('ERROR', relPath, `${item.message} (missing ${token})`);
+      }
+    }
+  }
+
+  for (const rel of [
+    path.join('lib', 'tuya-local', 'TuyaDeviceDiscovery.js'),
+    path.join('lib', 'tuya-local', 'TuyaUDPDiscovery.js'),
+  ]) {
+    const file = path.join(ROOT_DIR, rel);
+    if (!fs.existsSync(file)) continue;
+    const content = fs.readFileSync(file, 'utf8');
+    if (/this\.homey\.(setTimeout|setInterval)/.test(content)) {
+      log('ERROR', path.relative(process.cwd(), file), 'LAN discovery helper uses Homey timers without a Homey context');
+    }
   }
 }
 
