@@ -10,6 +10,11 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const { fetchWithRetry } = require('./retry-helper');
+const {
+  selectPromotionTarget,
+  sortBuildsDesc,
+  summarizeBuild,
+} = require('./homey-build-selection');
 
 // Dynamically read App ID and version from app.json
 const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
@@ -139,48 +144,41 @@ async function main() {
   const builds = result.builds;
   const apiBase = result.base;
   log('Found ' + builds.length + ' build(s) via ' + apiBase);
-  for (const b of builds.slice(0, 10)) {
-    const id = b.id || b._id || 'unknown';
-    const bv = b.version || 'unknown';
-    const ch = b.channel || b.status || 'none';
-    log('  ' + id + ' v' + bv + ' channel=' + ch);
+  sortBuildsDesc(builds).slice(0, 10).forEach(b => log('  ' + summarizeBuild(b)));
+
+  // Step 3: Promote only the current app.json version. Historical drafts can
+  // remain in Athom's list for months and must not be retried automatically.
+  let selection = selectPromotionTarget(builds, ver);
+  log('Selection: ' + selection.status + ' ' + summarizeBuild(selection.build));
+  if (selection.status === 'already-test') {
+    log('\nv' + ver + ' is already on test. Nothing to promote.');
+    return;
   }
 
-  // Step 3: Find draft builds to promote (matching current version or any draft)
-  const drafts = builds.filter(b => {
-    const ch = String(b.channel || b.status || '').toLowerCase();
-    return ch === 'draft' || ch === '' || ch === 'none';
-  });
-
-  // Sort by id desc to get latest first (Athom API returns unsorted)
-  drafts.sort((a, b) => (b.id || 0) - (a.id || 0));
-
-  // Prefer builds matching current app.json version
-  const verDrafts = drafts.filter(b => b.version === ver);
-  const toPromote = verDrafts.length > 0 ? verDrafts : drafts;
+  const toPromote = selection.status === 'promote' ? [selection.build] : [];
 
   if (!toPromote.length) {
     // v5.11.80: Retry — Athom may still be processing the draft
     for (let retry = 1; retry <= 3; retry++) {
-      log('\nNo draft builds yet. Retry ' + retry + '/3 — waiting 60s for Athom...');
+      log('\nNo current-version draft yet. Retry ' + retry + '/3 — waiting 60s for Athom...');
       await new Promise(r => setTimeout(r, 60000));
       const r2 = await getBuilds(token);
       if (r2) {
-        const d2 = r2.builds.filter(b => {
-          const ch = String(b.channel || b.status || '').toLowerCase();
-          return ch === 'draft' || ch === '' || ch === 'none';
-        });
-        const vd2 = d2.filter(b => b.version === ver);
-        const tp2 = vd2.length > 0 ? vd2 : d2;
-        if (tp2.length) {
-          toPromote.push(...tp2);
-          log('Found ' + tp2.length + ' draft build(s) after retry ' + retry);
+        selection = selectPromotionTarget(r2.builds, ver);
+        log('Retry selection: ' + selection.status + ' ' + summarizeBuild(selection.build));
+        if (selection.status === 'already-test') {
+          log('v' + ver + ' reached test after retry ' + retry);
+          return;
+        }
+        if (selection.status === 'promote') {
+          toPromote.push(selection.build);
+          log('Found current-version draft after retry ' + retry);
           break;
         }
       }
     }
     if (!toPromote.length) {
-      log('\nNo draft builds to promote after retries. All builds already have a channel.');
+      log('\nNo current-version draft to promote after retries; ignoring historical drafts.');
       return;
     }
   }
