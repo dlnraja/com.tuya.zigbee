@@ -47,7 +47,21 @@ function resolveModule(id, extraPaths = []) {
 }
 
 const homeyPackageRoot = path.dirname(resolveModule('homey/package.json'));
-const AthomApi = require(resolveModule('homey/lib/AthomApi'));
+function requireAthomApi() {
+  const candidates = ['homey/services/AthomApi', 'homey/lib/AthomApi'];
+  const errors = [];
+  for (const id of candidates) {
+    try {
+      const mod = require(resolveModule(id));
+      if (typeof mod.createDelegationToken === 'function') return mod;
+      errors.push(`${id}: createDelegationToken missing`);
+    } catch (error) {
+      errors.push(`${id}: ${error.message}`);
+    }
+  }
+  throw new Error(`Cannot load Homey AthomApi (${errors.join(' | ')})`);
+}
+const AthomApi = requireAthomApi();
 const AthomAppsAPI = require(resolveModule('homey-api/lib/AthomAppsAPI', [homeyPackageRoot]));
 const tar = require(resolveModule('tar-fs', [homeyPackageRoot]));
 const fetch = require(resolveModule('node-fetch', [homeyPackageRoot]));
@@ -72,7 +86,9 @@ function log(...args) { console.log('[direct-publish]', ...args); }
 function err(...args) { console.error('[direct-publish]', ...args); }
 
 async function buildApi() {
-  const token = await AthomApi.createDelegationToken({ audience: 'apps' });
+  const tokenObj = await AthomApi.createDelegationToken({ audience: 'apps' });
+  const token = tokenObj?.token || tokenObj?.access_token || tokenObj;
+  if (!token) throw new Error('Homey apps delegation token missing');
   const api = new AthomAppsAPI({ token });
   return { api, token };
 }
