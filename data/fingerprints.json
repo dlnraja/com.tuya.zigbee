@@ -149,6 +149,40 @@
     ],
     "notes": "Homey forum TS0044 4-button remote (_TZ3000_u3nv1jwk): route to E000/DP-capable button driver."
   },
+  "_TZ3000_mrduubod": {
+    "driverId": "wall_switch_4gang_1way",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0014"
+    ],
+    "capabilities": [
+      "onoff",
+      "onoff.gang2",
+      "onoff.gang3",
+      "onoff.gang4",
+      "button.1",
+      "button.2",
+      "button.3",
+      "button.4"
+    ],
+    "clusters": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      57344,
+      57345
+    ],
+    "endpoints": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "notes": "Homey forum #2099 / Johan #1413 Moes TS0014 4-gang switch: use wall_switch_4gang_1way, ignore false Basic powerSource=battery."
+  },
   "_TZE284_ne4pikwm": {
     "driverId": "radiator_valve",
     "type": "trv",
