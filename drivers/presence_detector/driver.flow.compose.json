@@ -45,13 +45,7 @@
           "name": "device",
           "filter": "driverId=presence_detector"
         }
-      ],
-      "titleFormatted": {
-        "en": "Presence detected in room [[device]]",
-        "nl": "Aanwezigheid gedetecteerd in kamer [[device]]",
-        "fr": "Présence détectée dans la pièce [[device]]",
-        "de": "Anwesenheit im Raum erkannt [[device]]"
-      }
+      ]
     },
     {
       "id": "virtual_presence_cleared",
@@ -97,13 +91,7 @@
           "name": "device",
           "filter": "driverId=presence_detector"
         }
-      ],
-      "titleFormatted": {
-        "en": "Presence cleared in room [[device]]",
-        "nl": "Aanwezigheid opgeheven in kamer [[device]]",
-        "fr": "Présence terminée dans la pièce [[device]]",
-        "de": "Anwesenheit im Raum beendet [[device]]"
-      }
+      ]
     },
     {
       "id": "virtual_presence_confidence_changed",
@@ -138,13 +126,7 @@
           "name": "device",
           "filter": "driverId=presence_detector"
         }
-      ],
-      "titleFormatted": {
-        "en": "Confidence changed [[device]]",
-        "nl": "Vertrouwen gewijzigd [[device]]",
-        "fr": "Confiance changée [[device]]",
-        "de": "Vertrauen geändert [[device]]"
-      }
+      ]
     }
   ],
   "conditions": [
@@ -168,13 +150,7 @@
           "name": "device",
           "filter": "driverId=presence_detector"
         }
-      ],
-      "titleFormatted": {
-        "en": "Room !{{is|is not}} occupied [[device]]",
-        "nl": "Kamer !{{is|is niet}} bezet [[device]]",
-        "fr": "La pièce !{{est|n'est pas}} occupée [[device]]",
-        "de": "Raum !{{ist|ist nicht}} besetzt [[device]]"
-      }
+      ]
     },
     {
       "id": "virtual_presence_confidence_above",
@@ -206,13 +182,7 @@
             "en": "50"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Confidence !{{is above|is not above}} [[device]] [[threshold]]",
-        "nl": "Vertrouwen !{{is boven|is niet boven}} [[device]] [[threshold]]",
-        "fr": "Confiance !{{est au-dessus|n'est pas au-dessus}} [[device]] [[threshold]]",
-        "de": "Vertrauen !{{ist über|ist nicht über}} [[device]] [[threshold]]"
-      }
+      ]
     }
   ],
   "actions": [
@@ -236,13 +206,7 @@
           "name": "device",
           "filter": "driverId=presence_detector"
         }
-      ],
-      "titleFormatted": {
-        "en": "Force presence in room [[device]]",
-        "nl": "Aanwezigheid forceren in kamer [[device]]",
-        "fr": "Forcer la présence dans la pièce [[device]]",
-        "de": "Anwesenheit im Raum erzwingen [[device]]"
-      }
+      ]
     },
     {
       "id": "virtual_presence_force_clear",
@@ -264,13 +228,7 @@
           "name": "device",
           "filter": "driverId=presence_detector"
         }
-      ],
-      "titleFormatted": {
-        "en": "Clear presence in room [[device]]",
-        "nl": "Aanwezigheid wissen in kamer [[device]]",
-        "fr": "Effacer la présence dans la pièce [[device]]",
-        "de": "Anwesenheit im Raum löschen [[device]]"
-      }
+      ]
     }
   ]
 }
