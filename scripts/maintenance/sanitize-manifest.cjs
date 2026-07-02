@@ -90,6 +90,23 @@ function dedupeFlowArgs(manifest) {
   return stripped;
 }
 
+function stripDeviceTitleFormatted(manifest) {
+  let stripped = 0;
+  const flow = manifest.flow || {};
+  for (const type of ['triggers', 'conditions', 'actions']) {
+    const cards = flow[type];
+    if (!Array.isArray(cards)) continue;
+
+    for (const card of cards) {
+      if (!card || !card.titleFormatted) continue;
+      if (!JSON.stringify(card.titleFormatted).includes('[[device]]')) continue;
+      delete card.titleFormatted;
+      stripped++;
+    }
+  }
+  return stripped;
+}
+
 function sanitizeManifestFile(manifestPath) {
   const label = path.relative(APP_ROOT, manifestPath).replace(/\\/g, '/') || manifestPath;
   if (!fs.existsSync(manifestPath)) {
@@ -150,7 +167,16 @@ function sanitizeManifestFile(manifestPath) {
     log(`${label}: stripped ${duplicateArgs} duplicate generated Flow arg(s).`);
   }
 
-  // 5) Drop the generator comment from build/publish manifests only
+  // 5) Strip device-token titleFormatted strings from compiled Flow cards.
+  //    Athom's publish validator rejects [[device]] in titleFormatted for
+  //    some generated driver conditions, even when local validation passes.
+  const deviceTitleFormatted = stripDeviceTitleFormatted(manifest);
+  if (deviceTitleFormatted > 0) {
+    changes += deviceTitleFormatted;
+    log(`${label}: stripped ${deviceTitleFormatted} device titleFormatted Flow card(s).`);
+  }
+
+  // 6) Drop the generator comment from build/publish manifests only
   //    (keep the tracked root app.json stable).
   const isTrackedRootManifest = path.resolve(manifestPath) === path.join(APP_ROOT, 'app.json');
   if (!isTrackedRootManifest && manifest._comment !== undefined) {
@@ -166,7 +192,7 @@ function sanitizeManifestFile(manifestPath) {
     log(`${label}: manifest already clean — no changes.`);
   }
 
-  // 6) Report suspicious drivers (informational, non-blocking).
+  // 7) Report suspicious drivers (informational, non-blocking).
   const suspicious = getDrivers(manifest).filter(
     d => d.zigbee && (!d.zigbee.manufacturerName || (Array.isArray(d.zigbee.manufacturerName) && d.zigbee.manufacturerName.length === 0))
   );
@@ -183,4 +209,4 @@ if (require.main === module) {
   process.exit(failures > 0 ? 1 : 0);
 }
 
-module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs };
+module.exports = { sanitizeManifestFile, stripGeneratedButtonOptions, dedupeFlowArgs, stripDeviceTitleFormatted };
