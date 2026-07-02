@@ -34,6 +34,7 @@ const PASSWORD     = process.env.HOMEY_PASSWORD;
 const SUM          = process.env.GITHUB_STEP_SUMMARY || null;
 const REPORT_PATH  = path.join(__dirname,'..','..','screenshots','build-error-report.json');
 const DRY          = process.env.DRY_RUN === 'true';
+const NAV_TIMEOUT_MS = Math.max(30000, Number(process.env.HOMEY_DIAG_NAV_TIMEOUT_MS || process.env.DIAG_NAV_TIMEOUT_MS || 90000) || 90000);
 
 function log(m) {
   console.log(m);
@@ -54,8 +55,39 @@ async function waitReady(page, label, ms = 5000) {
   await sleep(ms);
   // ponytail: NETWORK_IDLE - timeout is expected for slow loads; non-fatal
   try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 8000 }); } catch { /* ponytail: timeout OK */ }
-  const len = await page.evaluate(() => document.body?.innerText?.length || 0);
+  const len = await safeEvaluate(page, label, () => document.body?.innerText?.length || 0, 0);
   log(`  [wait:${label}] ${len} chars`);
+}
+
+async function safeEvaluate(page, label, fn, fallback) {
+  try {
+    return await page.evaluate(fn);
+  } catch (err) {
+    log(`  [EVAL] ${label} warning: ${err.message}`);
+    return fallback;
+  }
+}
+
+async function setPageTimeouts(page) {
+  if (!page) return;
+  try { page.setDefaultNavigationTimeout(NAV_TIMEOUT_MS); } catch { /* best-effort */ }
+  try { page.setDefaultTimeout(Math.min(NAV_TIMEOUT_MS, 60000)); } catch { /* best-effort */ }
+}
+
+async function gotoBestEffort(page, url, label) {
+  try {
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
+    return true;
+  } catch (err) {
+    log(`  [NAV] ${label} navigation warning: ${err.message}`);
+    try { await page.evaluate(() => window.stop()); } catch { /* best-effort */ }
+    try {
+      const client = typeof page._client === 'function' ? page._client() : null;
+      await client?.send?.('Page.stopLoading');
+    } catch { /* best-effort */ }
+    await waitReady(page, `${label}-after-timeout`, 5000).catch(() => {});
+    return false;
+  }
 }
 
 // === Same login flow as auto-promote-puppeteer.js ===
@@ -109,7 +141,7 @@ async function doLogin(page) {
 
 // === Extract error message from build submission/detail page ===
 async function extractBuildError(page) {
-  const text = await page.evaluate(() => {
+  const text = await safeEvaluate(page, 'extract-build-error', () => {
     // All visible text
     const body = document.body?.innerText || '';
     
@@ -135,6 +167,12 @@ async function extractBuildError(page) {
       errorLines: errorLines.slice(0, 20),
       url: window.location.href,
     };
+  }, {
+    bodyText: '',
+    errorTexts: [],
+    logTexts: [],
+    errorLines: [],
+    url: '',
   });
   return text;
 }
@@ -176,6 +214,7 @@ async function main() {
   // Determine the target build. If none provided, auto-detect the latest
   // processing_failed build via the Athom Apps API (no Puppeteer needed for that).
   let targetBuild = TARGET_BUILD;
+  let targetBuildInfo = null;
   if (!targetBuild) {
     log('[STEP 0] No build ID provided — auto-detecting latest failed build via API...');
     try {
@@ -189,6 +228,7 @@ async function main() {
       const failed = list.find(b => b.state === 'processing_failed' || b.state === 'error' || b.state === 'revoked');
       if (failed) {
         targetBuild = String(failed.id || failed.buildId);
+        targetBuildInfo = failed;
         log(`[STEP 0] Auto-detected latest failed build: #${targetBuild} (state=${failed.state}, v${failed.version})`);
       } else {
         log('[STEP 0] No failed build found in last 50 — nothing to diagnose.');
@@ -212,21 +252,27 @@ async function main() {
       const { launchWithSession } = require('./athom-session-inject');
       sessionCtx = await launchWithSession({
         headless: 'new',
-        launchOptions: { defaultViewport: { width: 1280, height: 900 } }
+        launchOptions: {
+          defaultViewport: { width: 1280, height: 900 },
+          protocolTimeout: NAV_TIMEOUT_MS + 30000,
+        }
       });
       browser = sessionCtx.browser;
       page = sessionCtx.page;
+      await setPageTimeouts(page);
       log('[STEP 1] CLI session injected — browser launched.');
     } catch (sessionErr) {
       log(`[STEP 1] CLI session unavailable (${sessionErr.message.split('\n')[0]}). Falling back to email/password login.`);
       const puppeteer = require('puppeteer');
       browser = await puppeteer.launch({
         headless: 'new',
+        protocolTimeout: NAV_TIMEOUT_MS + 30000,
         defaultViewport: { width: 1280, height: 900 },
         args: ['--no-sandbox', '--disable-setuid-sandbox']
       });
       page = await browser.newPage();
-      await page.goto(`${BASE}/apps/app/${APP_ID}/versions`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await setPageTimeouts(page);
+      await gotoBestEffort(page, `${BASE}/apps/app/${APP_ID}/versions`, 'versions');
       const loggedIn = await doLogin(page);
       if (!loggedIn) { log('[LOGIN] ❌ Login failed — check HOMEY_EMAIL/HOMEY_PASSWORD secrets'); return; }
       log('[STEP 1] Email/password login successful.');
@@ -238,7 +284,7 @@ async function main() {
     const buildUrl = `${BASE}/apps/app/${APP_ID}/build/${bid}`;
 
       log(`  Navigating to: ${buildUrl}`);
-      await page.goto(buildUrl, { waitUntil: 'domcontentloaded' });
+      await gotoBestEffort(page, buildUrl, `build-${bid}`);
       await waitReady(page, `build-${bid}`, 8000);
       await snap(page, `diag-03-build-${bid}`);
 
@@ -262,14 +308,18 @@ async function main() {
       }
 
       // Save HTML dump for deeper analysis
-      const html = await page.evaluate(() => document.documentElement.outerHTML);
+      const html = await safeEvaluate(page, `html-dump-${bid}`, () => document.documentElement.outerHTML, '<html><body>HTML dump unavailable</body></html>');
       const dumpDir = path.join(__dirname,'..','..','screenshots');
       fs.mkdirSync(dumpDir, { recursive: true });
       fs.writeFileSync(path.join(dumpDir, `build-${bid}-dump.html`), html);
       log(`  HTML dump saved: screenshots/build-${bid}-dump.html`);
 
       report.builds[bid] = {
-        version: APP_VER,
+        version: targetBuildInfo?.version || APP_VER,
+        currentAppVersion: APP_VER,
+        state: targetBuildInfo?.state || null,
+        createdAt: targetBuildInfo?.createdAt || targetBuildInfo?.created_at || null,
+        stateChangedAt: targetBuildInfo?.stateChangedAt || targetBuildInfo?.state_changed_at || null,
         errorType: classification.type,
         fix: classification.fix,
         errorLines: errorData.errorLines.slice(0,10),

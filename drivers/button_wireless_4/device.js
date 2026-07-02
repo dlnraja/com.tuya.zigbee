@@ -51,7 +51,13 @@ class Button4GangDevice extends ButtonDevice {
       if (!endpoint) continue;
 
       // Try registered tuyaE000 cluster (from TuyaE000Cluster.js)
-      const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
+      const e000Cluster = endpoint.clusters?.tuyaE000 ||
+        endpoint.clusters?.tuyaE000Cluster ||
+        endpoint.clusters?.manuSpecificTuyaE000 ||
+        endpoint.clusters?.[57344] ||
+        endpoint.clusters?.['57344'] ||
+        endpoint.clusters?.[0xE000] ||
+        endpoint.clusters?.['0xE000'];
       if (e000Cluster && typeof e000Cluster.on === 'function') {
         this.log(`[E000-4G] EP${ep} tuyaE000 cluster available`);
         const cmdNames = ['cmd0', 'cmd1', 'cmd2', 'cmd3', 'cmd4', 'cmd5', 'cmd6', 'cmdFD', 'cmdFE', 'cmdFF'];
@@ -253,11 +259,12 @@ class Button4GangDevice extends ButtonDevice {
     try {
       if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
       const orig = zclNode.handleFrame.bind(zclNode);
-      zclNode.handleFrame = async (epId, cId, f, m) => {
-        if (cId === 57344 || cId === 0xE000) {
-          const d = f?.data;
-          this.log(`[E000-4G-RAW] EP${epId} E000 frame`);
-          let btn = epId;
+      zclNode.handleFrame = async (...args) => {
+        const raw = this._decodeRawFrameArgs(args);
+        if (raw && (raw.clusterId === 57344 || raw.clusterId === 0xE000)) {
+          const d = raw.data;
+          this.log(`[E000-4G-RAW] EP${raw.endpointId} E000 frame`);
+          let btn = raw.endpointId;
           let pt = 'single';
           if (d?.length >= 2 && d[0] >= 1 && d[0] <= 4) {
             btn = d[0];
@@ -267,12 +274,43 @@ class Button4GangDevice extends ButtonDevice {
           }
           await this._triggerButton4Gang(btn, pt);
         }
-        return orig(epId, cId, f, m);
+        return orig(...args);
       };
       this.log('[E000-4G-RAW] Frame interceptor ready');
     } catch (e) {
       this.log(`[E000-4G-RAW] Setup failed: ${e.message}`);
     }
+  }
+
+  _decodeRawFrameArgs(args) {
+    const [first, second, third] = args;
+    const endpointId = typeof first === 'number'
+      ? first
+      : Number(first?.endpointId ?? first?.endpoint?.ID ?? first?.endpoint?.id ?? third?.endpointId ?? 1);
+    const clusterId = Number(
+      typeof second === 'number'
+        ? second
+        : second?.clusterId ?? second?.id ?? first?.clusterId ?? first?.cluster?.id ?? third?.clusterId
+    );
+    const frame = typeof second === 'number' ? third : (second?.frame || first?.frame || third);
+    const data = this._extractRawFrameData(frame);
+
+    if (!Number.isFinite(clusterId)) return null;
+    return {
+      endpointId: Number.isFinite(endpointId) && endpointId >= 1 ? endpointId : 1,
+      clusterId,
+      data,
+    };
+  }
+
+  _extractRawFrameData(frame) {
+    if (Buffer.isBuffer(frame)) return frame;
+    if (Buffer.isBuffer(frame?.data)) return frame.data;
+    if (Buffer.isBuffer(frame?.payload)) return frame.payload;
+    if (Buffer.isBuffer(frame?.command?.data)) return frame.command.data;
+    if (Array.isArray(frame?.data)) return Buffer.from(frame.data);
+    if (Array.isArray(frame?.payload)) return Buffer.from(frame.payload);
+    return null;
   }
 
   /**

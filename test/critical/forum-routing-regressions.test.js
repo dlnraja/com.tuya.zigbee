@@ -49,6 +49,12 @@ function assertDriverHasNoProductId(driverId, productId) {
   }
 }
 
+function assertDriverHasProductId(driverId, productId) {
+  for (const source of [appDriver(driverId), composeDriver(driverId)]) {
+    assert(includesCI(source.zigbee?.productId, productId), `${driverId} must claim productId ${productId}`);
+  }
+}
+
 function assertFingerprint(file, manufacturerName, driverId) {
   const fingerprints = readJson(file);
   const entry = fingerprints[manufacturerName] ||
@@ -70,6 +76,8 @@ describe('forum routing regressions', () => {
     const source = read('drivers/button_wireless_4/device.js');
     assert.match(source, /_setupE000Detection/);
     assert.match(source, /_setupTuyaDPButtonDetection/);
+    assert.match(source, /_decodeRawFrameArgs/);
+    assert.match(source, /orig\(\.\.\.args\)/);
   });
 
   it('routes Moes/Lidl TS004F physical button variants to transport-aware drivers', () => {
@@ -191,6 +199,60 @@ describe('forum routing regressions', () => {
     const source = read('drivers/radiator_valve/device.js');
     assert(source.indexOf('const nedisIds') < source.indexOf('const me167Ids'), 'Nedis must be matched before ME167');
     assert.doesNotMatch(source, /includesCI\(me167Ids, id\)/);
+  });
+
+  it('routes latest Homey forum reports away from stale generated fallbacks', () => {
+    const RuntimeFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
+    const CompoundFingerprintDB = require('../../lib/DeviceFingerprintDB');
+
+    assertDriverClaims('light_sensor_outdoor', '_TZE284_aaeasoll');
+    assertDriverDoesNotClaim('climate_sensor', '_TZE284_aaeasoll');
+    assertFingerprint('data/fingerprints.json', '_TZE284_aaeasoll', 'light_sensor_outdoor');
+    assertFingerprint('lib/tuya/fingerprints.json', '_TZE284_aaeasoll', 'light_sensor_outdoor');
+    assert.strictEqual(CompoundFingerprintDB.lookup('_TZE284_aaeasoll', 'TS0601')?.driver, 'light_sensor_outdoor');
+    assert.strictEqual(RuntimeFingerprintDB.getDriverId('_TZE284_aaeasoll', 'TS0601'), 'light_sensor_outdoor');
+
+    for (const manufacturer of ['_TZE284_fhvpaltk', '_TZE284_eaet5qt5']) {
+      assertDriverClaims('valve_dual_irrigation', manufacturer);
+      assertDriverDoesNotClaim('valve_irrigation', manufacturer);
+      assertDriverDoesNotClaim('curtain_motor', manufacturer);
+      assertFingerprint('data/fingerprints.json', manufacturer, 'valve_dual_irrigation');
+      assertFingerprint('lib/tuya/fingerprints.json', manufacturer, 'valve_dual_irrigation');
+      assert.strictEqual(CompoundFingerprintDB.lookup(manufacturer, 'TS0601')?.driver, 'valve_dual_irrigation');
+      assert.strictEqual(RuntimeFingerprintDB.getDriverId(manufacturer, 'TS0601'), 'valve_dual_irrigation');
+    }
+
+    assertDriverClaims('soil_sensor', '_TZE200_npj9bug3');
+    assertDriverDoesNotClaim('climate_sensor', '_TZE200_npj9bug3');
+    assertDriverDoesNotClaim('curtain_motor', '_TZE200_npj9bug3');
+    assertFingerprint('data/fingerprints.json', '_TZE200_npj9bug3', 'soil_sensor');
+    assertFingerprint('lib/tuya/fingerprints.json', '_TZE200_npj9bug3', 'soil_sensor');
+    assert.strictEqual(CompoundFingerprintDB.lookup('_TZE200_npj9bug3', 'TS0601')?.driver, 'soil_sensor');
+    assert.strictEqual(CompoundFingerprintDB.getDPMeaning('_TZE200_npj9bug3', 'TS0601', 111).capability, 'measure_humidity.soil');
+    assert.strictEqual(RuntimeFingerprintDB.getDriverId('_TZE200_npj9bug3', 'TS0601'), 'soil_sensor');
+
+    assertDriverHasProductId('water_leak_sensor', 'ZG-222Z');
+    assertDriverHasNoProductId('rain_sensor', 'ZG-222Z');
+    assert.strictEqual(CompoundFingerprintDB.lookup('HOBEIAN', 'ZG-222Z')?.driver, 'water_leak_sensor');
+    assert.strictEqual(RuntimeFingerprintDB.getDriverId('HOBEIAN', 'ZG-222Z'), 'water_leak_sensor');
+
+    assertDriverHasProductId('motion_sensor', 'SNZB-03');
+    assert.strictEqual(CompoundFingerprintDB.lookup('eWeLink', 'SNZB-03')?.driver, 'motion_sensor');
+    assert.strictEqual(RuntimeFingerprintDB.getDriverId('eWeLink', 'SNZB-03'), 'motion_sensor');
+  });
+
+  it('uses the ZCL illuminance conversion formula consistently', () => {
+    const { zclMeasuredValueToLux } = require('../../lib/utils/tuyaUtils');
+
+    assert.strictEqual(zclMeasuredValueToLux(0), 0);
+    assert.strictEqual(zclMeasuredValueToLux(1), 1);
+    assert.strictEqual(zclMeasuredValueToLux(10001), 10);
+    assert.strictEqual(zclMeasuredValueToLux(20001), 100);
+    assert.strictEqual(zclMeasuredValueToLux(30001), 1000);
+
+    assert.match(read('drivers/light_sensor_outdoor/device.js'), /zclMeasuredValueToLux/);
+    assert.match(read('lib/adapters/ZclToHomeyMap.js'), /zclMeasuredValueToLux/);
+    assert.doesNotMatch(read('drivers/light_sensor_outdoor/device.js'), /val - 1 \* 10000/);
   });
 
   it('uses exact manufacturerName+deviceId routes before mfr-only fingerprint catalogs', () => {
