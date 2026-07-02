@@ -9,6 +9,14 @@ const DDIR=path.join(ROOT,'drivers');
 const anonId=id=>id?crypto.createHash('sha256').update(id).digest('hex').slice(0,12):'unk';
 const loadJ=f=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
 const saveJ=(f,d)=>{const safe=privacy.redactObject(d);privacy.assertNoLeaks(safe,f);fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,JSON.stringify(safe,null,2))};
+function pushSourceIssues(summary,source,issues,level){
+  if(!Array.isArray(issues))return;
+  for(const issue of issues){
+    const msg=typeof issue==='string'?issue:(issue?.message||issue?.err||issue?.error||issue?.code);
+    if(!msg)continue;
+    summary.errors.push({err:privacy.redact(msg),source,level:level||issue?.level||'error',code:issue?.code||null});
+  }
+}
 
 function buildIdx(){
   const idx=new Map();
@@ -28,6 +36,12 @@ async function main(){
 
   // Source 1: Gmail diagnostics report
   const gmailR=loadJ(path.join(SD,'diagnostics-report.json'));
+  if(gmailR){
+    pushSourceIssues(summary,'gmail',gmailR.errors,'error');
+    if(gmailR.access?.gmail?.ok===false){
+      summary.sources.gmail_access='unavailable';
+    }
+  }
   if(gmailR?.diagnostics){
     summary.sources.gmail=gmailR.diagnostics.length;
     for(const d of gmailR.diagnostics){
@@ -39,6 +53,13 @@ async function main(){
 
   // Source 2: Homey device report (from homey-device-diagnostics.js)
   const homeyR=loadJ(path.join(SD,'homey-device-report.json'));
+  if(homeyR){
+    pushSourceIssues(summary,'homey_report',homeyR.errors,'error');
+    pushSourceIssues(summary,'homey_report',homeyR.warnings,'warning');
+    if(!homeyR.auth?.canListHomeys){
+      summary.sources.homey_runtime='unavailable';
+    }
+  }
   if(homeyR?.homeys){
     summary.sources.homey_report=homeyR.homeys.length;
     for(const h of homeyR.homeys){

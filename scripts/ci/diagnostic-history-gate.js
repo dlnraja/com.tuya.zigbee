@@ -108,6 +108,9 @@ function npmScripts() {
 }
 
 function normalizeError(value) {
+  if (value && typeof value === 'object') {
+    value = value.err || value.error || value.message || value.code || JSON.stringify(value);
+  }
   return privacy.redact(String(value || '').replace(/\s+/g, ' ').trim()).substring(0, 180);
 }
 
@@ -117,11 +120,27 @@ function textFor(entry) {
     entry.subj,
     entry.subject,
     entry.error,
+    entry.err,
     entry.message,
+    entry.code,
     entry.crashInfo && entry.crashInfo.crashApp,
     Array.isArray(entry.errs) ? entry.errs.join(' ') : '',
     entry.crashInfo && Array.isArray(entry.crashInfo.stackTraces) ? entry.crashInfo.stackTraces.join(' ') : '',
   ].filter(Boolean).join(' ');
+}
+
+function aggregateErrorEntry(error) {
+  if (error && typeof error === 'object') {
+    const message = error.err || error.error || error.message || error.code || JSON.stringify(error);
+    return {
+      type: 'aggregate_error',
+      error: message,
+      code: error.code || null,
+      level: error.level || null,
+      source: error.source || 'aggregate',
+    };
+  }
+  return { type: 'aggregate_error', error, source: 'aggregate' };
 }
 
 function entriesFromSources(sources) {
@@ -134,7 +153,7 @@ function entriesFromSources(sources) {
     entries.push(...aggregate.reports.map(e => ({ ...e, source: 'aggregate' })));
   }
   if (aggregate && Array.isArray(aggregate.errors)) {
-    entries.push(...aggregate.errors.map(e => ({ type: 'aggregate_error', error: e, source: 'aggregate' })));
+    entries.push(...aggregate.errors.map(aggregateErrorEntry));
   }
   return entries;
 }
