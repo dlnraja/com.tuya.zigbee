@@ -59,10 +59,11 @@ async function dashboardFallback(ver, log) {
 
     log(`  Looking for version ${ver} to promote to test...`);
     const promoted = await page.evaluate((version, versionRegex) => {
+      const rx = versionRegex ? new RegExp(versionRegex.source, String(versionRegex.flags || '').replace(/g/g, '')) : null;
       const matchesVersion = (value) => {
         if (!version) return true;
-        if (!versionRegex) return false;
-        return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+        if (!rx) return false;
+        return rx.test(String(value || ''));
       };
       const rows = Array.from(document.querySelectorAll('tr'));
       const targetRow = rows.find(r => matchesVersion(r.textContent) && /\bdraft\b/i.test(r.textContent || ''));

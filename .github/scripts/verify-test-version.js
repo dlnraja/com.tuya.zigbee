@@ -266,8 +266,8 @@ async function main() {
   log('## Verify Test Version');
   log(`Expected: v${version}`);
 
-  const maxAttempts = Number(process.env.HOMEY_TEST_VERIFY_ATTEMPTS || 6);
-  const delayMs = Number(process.env.HOMEY_TEST_VERIFY_DELAY_MS || 30000);
+  const maxAttempts = parseInt(process.env.HOMEY_TEST_VERIFY_ATTEMPTS, 10) || 6;
+  const delayMs = parseInt(process.env.HOMEY_TEST_VERIFY_DELAY_MS, 10) || 30000;
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     log(`Verification attempt ${attempt}/${maxAttempts}`);
     const sdkResult = await sdkVerify(version);
