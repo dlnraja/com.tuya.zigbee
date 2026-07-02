@@ -7,7 +7,9 @@
     "es": "Repetidor de señal Zigbee"
   },
   "class": "other",
-  "capabilities": [],
+  "capabilities": [
+    "button.1"
+  ],
   "zigbee": {
     "manufacturerName": [
       "_tz3000_1mxvlhmq",
@@ -93,5 +95,18 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "zigbee_repeater",
+  "version": "1.0.0",
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

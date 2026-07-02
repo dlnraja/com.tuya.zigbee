@@ -20,6 +20,69 @@ const REPO = 'dlnraja/com.tuya.zigbee';
 const GH = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
 const AI_KEY = process.env.GOOGLE_API_KEY;
 const SUM = process.env.GITHUB_STEP_SUMMARY;
+let activeBaseRef = process.env.PR_BASE_REF || 'master';
+
+function isFullSha(value) {
+  return /^[a-f0-9]{40}$/i.test(String(value || '').trim());
+}
+
+function shortSha(value) {
+  const sha = String(value || '').trim();
+  return sha ? sha.slice(0, 12) : 'unknown';
+}
+
+function safeRefName(value) {
+  const ref = String(value || '').trim();
+  if (!/^[A-Za-z0-9._/-]+$/.test(ref)) {
+    throw new Error(`Unsafe git ref name: ${ref}`);
+  }
+  return ref;
+}
+
+function getEventHeadSha() {
+  const candidates = [
+    process.env.PR_HEAD_SHA,
+    process.env.EXPECTED_PR_HEAD_SHA,
+    process.env.GITHUB_HEAD_SHA,
+  ];
+
+  if (process.env.GITHUB_EVENT_PATH && fs.existsSync(process.env.GITHUB_EVENT_PATH)) {
+    try {
+      const event = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8'));
+      candidates.push(
+        event?.pull_request?.head?.sha,
+        event?.workflow_run?.head_sha,
+        event?.check_suite?.head_sha,
+        event?.after
+      );
+    } catch (e) {
+      log(`  Warning: could not parse GitHub event payload for SHA detection: ${e.message}`);
+    }
+  }
+
+  return candidates.find(isFullSha) || '';
+}
+
+function normalizePrData(prNumber, prData, stage = 'current') {
+  if (!prData || typeof prData !== 'object') {
+    throw new Error(`PR #${prNumber} returned invalid metadata`);
+  }
+
+  activeBaseRef = prData.baseRefName || activeBaseRef || 'master';
+  const eventSha = getEventHeadSha();
+  if (eventSha && prData.headRefOid && eventSha !== prData.headRefOid) {
+    log(`  Notice: ${stage} event SHA ${shortSha(eventSha)} is stale; using current PR head ${shortSha(prData.headRefOid)}`);
+  }
+
+  if (prData.headRefOid) {
+    log(`  Head SHA (${stage}): ${shortSha(prData.headRefOid)}`);
+  }
+  if (prData.baseRefName) {
+    log(`  Base branch (${stage}): ${prData.baseRefName}`);
+  }
+
+  return prData;
+}
 
 function log(msg) {
   console.log(msg);
@@ -41,6 +104,78 @@ function git(cmd) {
   } catch (e) {
     return e.stdout?.toString().trim() || '';
   }
+}
+
+function sh(value) {
+  return `'${String(value).replace(/'/g, `'\\''`)}'`;
+}
+
+function runRequired(command, options = {}) {
+  try {
+    return execSync(command, {
+      encoding: 'utf8',
+      timeout: options.timeout || 60000,
+      env: options.env || process.env,
+    }).trim();
+  } catch (e) {
+    const stdout = e.stdout?.toString().trim();
+    const stderr = e.stderr?.toString().trim();
+    const detail = [stdout, stderr, e.message].filter(Boolean).join('\n');
+    throw new Error(`${command} failed\n${detail}`);
+  }
+}
+
+function gitRequired(cmd, options = {}) {
+  return runRequired(`git ${cmd}`, options);
+}
+
+function ghRequired(cmd, options = {}) {
+  return runRequired(`gh ${cmd}`, {
+    ...options,
+    env: { ...process.env, GH_TOKEN: GH },
+  });
+}
+
+function configureGitIdentity() {
+  gitRequired('config user.name "github-actions[bot]"');
+  gitRequired('config user.email "41898282+github-actions[bot]@users.noreply.github.com"');
+}
+
+function checkoutBaseBranch(baseRefName = activeBaseRef) {
+  const base = safeRefName(baseRefName || 'master');
+  activeBaseRef = base;
+  gitRequired(`fetch origin ${base}`);
+  gitRequired(`checkout -B ${base} origin/${base}`);
+}
+
+function abortMergeQuietly() {
+  git('merge --abort');
+}
+
+function restoreBaseBranchQuietly(baseRefName = activeBaseRef) {
+  abortMergeQuietly();
+  git('restore --staged .');
+  git('restore .');
+  const base = safeRefName(baseRefName || 'master');
+  activeBaseRef = base;
+  git(`fetch origin ${base}`);
+  git(`checkout -B ${base} origin/${base}`);
+}
+
+function verifyIntegrated(prNumber, prData) {
+  if (!prData.headRefOid) {
+    throw new Error(`PR #${prNumber} has no headRefOid; refusing to report a merge without verification`);
+  }
+
+  const base = safeRefName(prData.baseRefName || activeBaseRef || 'master');
+  gitRequired(`fetch origin ${base}`);
+  try {
+    gitRequired(`merge-base --is-ancestor ${prData.headRefOid} origin/${base}`);
+  } catch {
+    throw new Error(`PR #${prNumber} head ${prData.headRefOid} is not reachable from origin/${base}`);
+  }
+
+  log(`  ✅ Verified PR #${prNumber} head ${shortSha(prData.headRefOid)} is reachable from origin/${base}`);
 }
 
 // Classify what a PR changes
@@ -112,6 +247,63 @@ function checkConflicts(branch) {
   // Abort the merge attempt
   git('merge --abort');
   return { hasConflicts, output: result };
+}
+
+function readPrData(prNumber, stage = 'current') {
+  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,headRefOid,baseRefName,body,files,labels,state,isDraft,mergeable`);
+  if (!prJson) {
+    throw new Error(`Could not fetch PR #${prNumber}`);
+  }
+
+  let prData;
+  try {
+    prData = JSON.parse(prJson);
+  } catch (e) {
+    throw new Error(`Invalid PR JSON for #${prNumber}: ${e.message}`);
+  }
+
+  return normalizePrData(prNumber, prData, stage);
+}
+
+function fetchPrHead(prNumber, prData) {
+  const localRef = safeRefName(`pr-${prNumber}`);
+  gitRequired(`fetch --force origin pull/${prNumber}/head:${localRef}`);
+  const fetchedSha = gitRequired(`rev-parse ${localRef}`);
+
+  if (prData.headRefOid && fetchedSha !== prData.headRefOid) {
+    const fresh = readPrData(prNumber, 'refetched-after-fetch');
+    if (fresh.headRefOid !== fetchedSha) {
+      throw new Error(`Fetched PR #${prNumber} SHA ${shortSha(fetchedSha)} does not match GitHub head ${shortSha(fresh.headRefOid)}`);
+    }
+    Object.assign(prData, fresh);
+  }
+
+  log(`  Fetched PR head ${shortSha(fetchedSha)} into ${localRef}`);
+  return localRef;
+}
+
+function ensureHeadStillCurrent(prNumber, validatedHeadSha, stage) {
+  const fresh = readPrData(prNumber, stage);
+  if (!fresh.headRefOid) {
+    log(`  Warning: PR #${prNumber} has no head SHA at ${stage}; skipping guarded merge`);
+    return { ok: false, prData: fresh };
+  }
+
+  if (fresh.headRefOid !== validatedHeadSha) {
+    log(`  SHA changed after validation: validated ${shortSha(validatedHeadSha)}, current ${shortSha(fresh.headRefOid)}. Skipping merge; next run will validate the new head.`);
+    return { ok: false, prData: fresh };
+  }
+
+  return { ok: true, prData: fresh };
+}
+
+function mergePrWithHeadGuard(prNumber, prData) {
+  const sha = prData.headRefOid;
+  if (!sha) {
+    throw new Error(`PR #${prNumber} has no head SHA; refusing unguarded merge`);
+  }
+
+  ghRequired(`pr merge ${prNumber} -R ${REPO} --merge --delete-branch --match-head-commit ${sha} --subject ${sh(`Merge PR #${prNumber}: ${prData.title}`)}`);
 }
 
 // Resolve conflicts intelligently
@@ -419,8 +611,10 @@ function generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFi
   return lines.join('\n');
 }
 
-// Close a PR with a human-readable summary, then delete the branch
+// Comment on a merged PR only after verifying the head commit reached the base branch.
 function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles) {
+  verifyIntegrated(prNumber, prData);
+
   const summary = generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFiles || []);
 
   // Write comment to temp file to avoid shell escaping issues with backticks, quotes, etc.
@@ -435,38 +629,38 @@ function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles
     gh(`pr comment ${prNumber} -R ${REPO} --body "✅ PR #${prNumber} merged via Smart Auto-Merge"`);
   }
 
-  // Close the PR with a human-readable closing comment
-  gh(`pr close ${prNumber} -R ${REPO} --comment "Merged into master — all changes integrated successfully. See above comment for details."`);
-
-  // Delete the remote branch (cleanup)
+  // Delete the remote branch (cleanup). GitHub's merge API may already have done this.
   const branch = prData.headRefName;
   if (branch && branch !== 'master' && branch !== 'main') {
     log(`  Deleting branch: ${branch}`);
-    git(`push origin --delete ${branch} 2>/dev/null`);
+    git(`push origin --delete ${branch}`);
   }
 
   // Clean up temp file
   try { fs.unlinkSync(tmpFile); } catch {}
 
-  log(`  ✅ PR #${prNumber} closed with detailed summary and branch deleted`);
+  log(`  ✅ PR #${prNumber} verified, commented, and branch cleanup attempted`);
 }
 
 // Process a single PR
 async function processPR(prNumber) {
   log(`\n### Processing PR #${prNumber}`);
 
-  // Get PR info
-  const prJson = gh(`pr view ${prNumber} -R ${REPO} --json title,author,headRefName,body,files,labels,state,mergeable`);
-  if (!prJson) {
-    log(`  Could not fetch PR #${prNumber}`);
+  let prData;
+  try {
+    prData = readPrData(prNumber, 'initial');
+  } catch (e) {
+    log(`  ${e.message}`);
     return false;
   }
 
-  let prData;
-  try { prData = JSON.parse(prJson); } catch { log('  Invalid PR JSON'); return false; }
-
   if (prData.state !== 'OPEN') {
     log(`  PR #${prNumber} is ${prData.state}, skipping`);
+    return false;
+  }
+
+  if (prData.isDraft) {
+    log(`  PR #${prNumber} is draft; validating metadata only and skipping auto-merge`);
     return false;
   }
 
@@ -489,11 +683,11 @@ async function processPR(prNumber) {
   if (prData.mergeable === 'CONFLICTING') {
     log('  ⚠️ PR has merge conflicts');
 
-    // Fetch the PR branch
-    git(`fetch origin pull/${prNumber}/head:pr-${prNumber}`);
+    checkoutBaseBranch(prData.baseRefName);
+    const prRef = fetchPrHead(prNumber, prData);
 
-    const conflict = await resolveConflicts(`pr-${prNumber}`, {
-      headRef: `pr-${prNumber}`,
+    const conflict = await resolveConflicts(prRef, {
+      headRef: prRef,
       prNumber
     });
 
@@ -504,12 +698,21 @@ async function processPR(prNumber) {
       validation.checks.forEach(c => log(`  ${c}`));
 
       if (validation.valid && risk <= 5) {
-        git(`commit -m "Merge PR #${prNumber}: ${prData.title} (conflicts resolved) [skip ci]"`);
-        git('push origin HEAD');
+        const current = ensureHeadStillCurrent(prNumber, prData.headRefOid, 'pre-conflict-merge-push');
+        if (!current.ok) {
+          restoreBaseBranchQuietly(prData.baseRefName);
+          return false;
+        }
+        Object.assign(prData, current.prData);
+
+        configureGitIdentity();
+        gitRequired(`commit -m ${sh(`Merge PR #${prNumber}: ${prData.title} (conflicts resolved) [skip ci]`)}`);
+        const base = safeRefName(prData.baseRefName || activeBaseRef || 'master');
+        gitRequired(`push origin HEAD:refs/heads/${base}`);
         closePR(prNumber, prData, cats, risk, reasons, 'conflict-resolved', conflict.files);
         return true;
       } else {
-        git('reset --hard HEAD~1');
+        restoreBaseBranchQuietly();
         log(`  Validation failed or risk too high (${risk}/10), labeling for review`);
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
         gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Tentative de résolution automatique des conflits**\n\nLe merge a été tenté mais la validation a échoué ou le risque est trop élevé (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vérifier manuellement avant de fusionner.\n\n_🤖 Smart PR Auto-Merge_"`);
@@ -524,25 +727,42 @@ async function processPR(prNumber) {
   }
 
   // No conflicts — validate and merge
-  if (prData.mergeable === 'MERGEABLE' || !prData.mergeable) {
+  if (prData.mergeable === 'MERGEABLE' || prData.mergeable === 'UNKNOWN' || !prData.mergeable) {
     // For low-risk changes, auto-merge
     if (risk <= 4) {
       log('  Low risk, auto-merging...');
 
-      // Validate first by checking out the PR branch
-      git(`fetch origin pull/${prNumber}/head:pr-${prNumber}`);
-      git(`merge --no-commit --no-ff pr-${prNumber}`);
+      // Validate first by checking out the PR base and merging the exact PR head locally.
+      checkoutBaseBranch(prData.baseRefName);
+      const prRef = fetchPrHead(prNumber, prData);
+      const validatedHeadSha = prData.headRefOid;
+      gitRequired(`merge --no-commit --no-ff ${prRef}`);
 
       const validation = validateMerge();
       validation.checks.forEach(c => log(`  ${c}`));
 
       if (validation.valid) {
-        git(`commit -m "Merge PR #${prNumber}: ${prData.title} [skip ci]"`);
-        git('push origin HEAD');
+        abortMergeQuietly();
+        const current = ensureHeadStillCurrent(prNumber, validatedHeadSha, 'pre-clean-merge');
+        if (!current.ok) {
+          restoreBaseBranchQuietly(prData.baseRefName);
+          return false;
+        }
+        Object.assign(prData, current.prData);
+
+        try {
+          mergePrWithHeadGuard(prNumber, prData);
+        } catch (e) {
+          if (/still a draft/i.test(e.message)) {
+            log(`  PR #${prNumber} became draft during merge; validation passed, skipping auto-merge`);
+            return false;
+          }
+          throw e;
+        }
         closePR(prNumber, prData, cats, risk, reasons, 'clean');
         return true;
       } else {
-        git('merge --abort 2>/dev/null || git reset --hard HEAD');
+        restoreBaseBranchQuietly();
         log('  Validation failed, requesting review');
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review"`);
         gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Validation échouée**\n\nLe merge a été tenté mais la validation du code a échoué. Vérifiez les erreurs de syntaxe dans les drivers.\n\nChecks: ${validation.checks.join(' | ')}\n\n_🤖 Smart PR Auto-Merge_"`);
@@ -598,8 +818,7 @@ async function main() {
         const result = await processPR(pr.number);
         if (result) merged = true;
         // Reset to master between PRs
-        git('checkout master');
-        git('reset --hard origin/master');
+        restoreBaseBranchQuietly();
       }
     }
   } else {

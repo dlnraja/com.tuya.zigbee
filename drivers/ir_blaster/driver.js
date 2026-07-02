@@ -70,10 +70,11 @@ class IrBlasterDriver extends ZigBeeDriver {
           return false;
         }
 
-        const { code_name, duration, protocol, frequency, category } = args;
+        const { code_name, protocol, frequency, category } = args;
+        const duration = args.duration_seconds ?? args.duration ?? 30;
         this.log(`Enhanced IR learning: "${code_name}" - ${protocol}@${frequency}Hz for ${duration}s`);
 
-        await device._enableAdvancedLearnMode(duration || 30, {
+        await device._enableAdvancedLearnMode(duration, {
           protocol: protocol || 'auto',
           frequency: frequency || 38000,
           codeName: code_name,

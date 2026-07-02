@@ -99,7 +99,6 @@
   "brandColor": "#00E6A0",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
-  "sdkVersion": 3,
   "sdk": 3,
   "flow": {
     "triggers": [
@@ -287,6 +286,24 @@
         }
       },
       {
+        "id": "button_triple_clicked",
+        "title": {
+          "en": "Button was triple-clicked - software",
+          "fr": "Bouton triple-cliquÃ© (Logiciel)"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Button was triple-clicked - software [[device]]",
+          "fr": "Bouton triple-cliquÃ© (Logiciel) [[device]]"
+        }
+      },
+      {
         "id": "knob_rotated",
         "title": {
           "en": "Knob rotated",
@@ -335,6 +352,48 @@
           "fr": "[[device]] Molette tournée",
           "nl": "[[device]] Draaiknop gedraaid",
           "de": "[[device]] Drehknopf gedreht"
+        }
+      },
+      {
+        "id": "remote_button_pressed",
+        "title": {
+          "en": "Remote button pressed",
+          "fr": "Bouton de télécommande appuyé",
+          "nl": "Afstandsbediening knop ingedrukt",
+          "de": "Fernbedienungstaste gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": 1
+          },
+          {
+            "name": "scene",
+            "type": "string",
+            "title": {
+              "en": "Scene / Action",
+              "fr": "Scène / Action"
+            },
+            "example": "single"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Remote button pressed [[device]]",
+          "fr": "Bouton de télécommande appuyé [[device]]",
+          "nl": "Afstandsbediening knop ingedrukt [[device]]",
+          "de": "Fernbedienungstaste gedrückt [[device]]"
         }
       },
       {
@@ -733,6 +792,48 @@
         "titleFormatted": {
           "en": "[[device]] Tuya raw DP received [[dp]]",
           "fr": "[[device]] DP Tuya brut reçu [[dp]]"
+        }
+      },
+      {
+        "id": "virtual_button_pressed",
+        "title": {
+          "en": "Virtual button pressed in app",
+          "fr": "Bouton virtuel appuyé dans l'app",
+          "nl": "Virtuele knop ingedrukt in app",
+          "de": "Virtuelle Taste in App gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "gang",
+            "type": "number",
+            "title": {
+              "en": "Gang / Button",
+              "fr": "Bouton / Canal"
+            },
+            "example": 1
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "title": {
+              "en": "Action Type",
+              "fr": "Type d'action"
+            },
+            "example": "toggle"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Virtual button pressed in app [[device]]",
+          "fr": "Bouton virtuel appuyé dans l'app [[device]]",
+          "nl": "Virtuele knop ingedrukt in app [[device]]",
+          "de": "Virtuelle Taste in App gedrückt [[device]]"
         }
       },
       {
@@ -17550,13 +17651,13 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               }
@@ -17609,13 +17710,13 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               }
@@ -17668,13 +17769,13 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               }
@@ -17929,7 +18030,7 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1",
                   "fr": "Bouton 1",
                   "nl": "Knop 1",
@@ -17938,7 +18039,7 @@
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2",
                   "fr": "Bouton 2",
                   "nl": "Knop 2",
@@ -17947,7 +18048,7 @@
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3",
                   "fr": "Bouton 3",
                   "nl": "Knop 3",
@@ -18003,7 +18104,7 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1",
                   "fr": "Bouton 1",
                   "nl": "Knop 1",
@@ -18012,7 +18113,7 @@
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2",
                   "fr": "Bouton 2",
                   "nl": "Knop 2",
@@ -18021,7 +18122,7 @@
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3",
                   "fr": "Bouton 3",
                   "nl": "Knop 3",
@@ -18077,7 +18178,7 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1",
                   "fr": "Bouton 1",
                   "nl": "Knop 1",
@@ -18086,7 +18187,7 @@
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2",
                   "fr": "Bouton 2",
                   "nl": "Knop 2",
@@ -18095,7 +18196,7 @@
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3",
                   "fr": "Bouton 3",
                   "nl": "Knop 3",
@@ -18443,25 +18544,25 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Button 4"
                 }
               }
@@ -18514,25 +18615,25 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Button 4"
                 }
               }
@@ -18585,25 +18686,25 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Button 4"
                 }
               }
@@ -19481,37 +19582,37 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Button 4"
                 }
               },
               {
                 "id": "5",
-                "label": {
+                "title": {
                   "en": "Button 5"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Button 6"
                 }
               }
@@ -19564,37 +19665,37 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Button 4"
                 }
               },
               {
                 "id": "5",
-                "label": {
+                "title": {
                   "en": "Button 5"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Button 6"
                 }
               }
@@ -19647,37 +19748,37 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Button 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Button 4"
                 }
               },
               {
                 "id": "5",
-                "label": {
+                "title": {
                   "en": "Button 5"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Button 6"
                 }
               }
@@ -20292,13 +20393,13 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               }
@@ -20351,13 +20452,13 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               }
@@ -20410,13 +20511,13 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Button 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Button 2"
                 }
               }
@@ -23907,25 +24008,25 @@
             "values": [
               {
                 "id": "5",
-                "label": {
+                "title": {
                   "en": "Scene 5"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Scene 6"
                 }
               },
               {
                 "id": "7",
-                "label": {
+                "title": {
                   "en": "Scene 7"
                 }
               },
               {
                 "id": "8",
-                "label": {
+                "title": {
                   "en": "Scene 8"
                 }
               }
@@ -24548,11 +24649,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": {
@@ -24574,11 +24670,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_1gang"
           }
         ],
@@ -24602,11 +24693,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": {
@@ -24628,11 +24714,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_1gang"
           }
         ],
@@ -24656,11 +24737,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -24682,11 +24758,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -24710,11 +24781,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -24736,11 +24802,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -24764,11 +24825,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -24790,11 +24846,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -24818,11 +24869,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -24844,11 +24890,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -24872,11 +24913,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -24898,11 +24934,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -24926,11 +24957,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -24952,11 +24978,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -24980,11 +25001,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -25006,11 +25022,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -25040,11 +25051,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -25066,11 +25072,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -25094,11 +25095,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -25120,11 +25116,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -25148,11 +25139,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -25174,11 +25160,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -25220,11 +25201,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -25264,11 +25240,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -25310,11 +25281,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -25336,11 +25302,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25364,11 +25325,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25390,11 +25346,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25418,11 +25369,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25444,11 +25390,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25472,11 +25413,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25498,11 +25434,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25526,11 +25457,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25552,11 +25478,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25580,11 +25501,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25606,11 +25522,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25634,11 +25545,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25660,11 +25566,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -25688,11 +25589,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25715,11 +25611,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -25741,11 +25632,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -33216,25 +33102,25 @@
             "values": [
               {
                 "id": "leftUp",
-                "label": {
+                "title": {
                   "en": "Upper Left Button Pressed"
                 }
               },
               {
                 "id": "rightUp",
-                "label": {
+                "title": {
                   "en": "Upper Right Button Pressed"
                 }
               },
               {
                 "id": "leftDown",
-                "label": {
+                "title": {
                   "en": "Lower Left Button Pressed"
                 }
               },
               {
                 "id": "rightDown",
-                "label": {
+                "title": {
                   "en": "Lower Right Button Pressed"
                 }
               }
@@ -36706,37 +36592,37 @@
             "values": [
               {
                 "id": "raw",
-                "label": {
+                "title": {
                   "en": "Raw"
                 }
               },
               {
                 "id": "bool",
-                "label": {
+                "title": {
                   "en": "Bool"
                 }
               },
               {
                 "id": "value",
-                "label": {
+                "title": {
                   "en": "Value"
                 }
               },
               {
                 "id": "string",
-                "label": {
+                "title": {
                   "en": "String"
                 }
               },
               {
                 "id": "enum",
-                "label": {
+                "title": {
                   "en": "Enum"
                 }
               },
               {
                 "id": "bitmap",
-                "label": {
+                "title": {
                   "en": "Bitmap"
                 }
               }
@@ -39010,7 +38896,7 @@
             "values": [
               {
                 "id": "NEC",
-                "label": {
+                "title": {
                   "en": "NEC",
                   "nl": "NEC",
                   "de": "NEC"
@@ -39018,7 +38904,7 @@
               },
               {
                 "id": "RC5",
-                "label": {
+                "title": {
                   "en": "RC5",
                   "nl": "RC5",
                   "de": "RC5"
@@ -39026,7 +38912,7 @@
               },
               {
                 "id": "RC6",
-                "label": {
+                "title": {
                   "en": "RC6",
                   "nl": "RC6",
                   "de": "RC6"
@@ -39034,7 +38920,7 @@
               },
               {
                 "id": "SONY",
-                "label": {
+                "title": {
                   "en": "Sony",
                   "nl": "Sony",
                   "de": "Sony"
@@ -39042,7 +38928,7 @@
               },
               {
                 "id": "SAMSUNG",
-                "label": {
+                "title": {
                   "en": "Samsung",
                   "nl": "Samsung",
                   "de": "Samsung"
@@ -39050,7 +38936,7 @@
               },
               {
                 "id": "PRONTOHEX",
-                "label": {
+                "title": {
                   "en": "ProntoHex",
                   "nl": "ProntoHex",
                   "de": "ProntoHex"
@@ -41562,11 +41448,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": {
@@ -41588,11 +41469,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -41616,11 +41492,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -41642,11 +41513,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -41670,11 +41536,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -41696,11 +41557,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -41724,11 +41580,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -41750,11 +41601,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -41778,11 +41624,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -41804,11 +41645,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -42723,28 +42559,28 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off",
                   "fr": "Arrêt"
                 }
               },
               {
                 "id": "heat",
-                "label": {
+                "title": {
                   "en": "Heat",
                   "fr": "Chauffage"
                 }
               },
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto",
                   "fr": "Auto"
                 }
               },
               {
                 "id": "cool",
-                "label": {
+                "title": {
                   "en": "Cool",
                   "fr": "Refroidissement"
                 }
@@ -43244,19 +43080,19 @@
             "values": [
               {
                 "id": "low",
-                "label": {
+                "title": {
                   "en": "Low"
                 }
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "Normal"
                 }
               },
               {
                 "id": "high",
-                "label": {
+                "title": {
                   "en": "High"
                 }
               }
@@ -43514,19 +43350,19 @@
             "values": [
               {
                 "id": "manual",
-                "label": {
+                "title": {
                   "en": "Manual"
                 }
               },
               {
                 "id": "program",
-                "label": {
+                "title": {
                   "en": "Program"
                 }
               },
               {
                 "id": "eco",
-                "label": {
+                "title": {
                   "en": "Eco"
                 }
               }
@@ -43656,19 +43492,19 @@
             "values": [
               {
                 "id": "low",
-                "label": {
+                "title": {
                   "en": "Low"
                 }
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "Normal"
                 }
               },
               {
                 "id": "high",
-                "label": {
+                "title": {
                   "en": "High"
                 }
               }
@@ -43953,37 +43789,37 @@
             "values": [
               {
                 "id": "bool",
-                "label": {
+                "title": {
                   "en": "Bool (true/false)"
                 }
               },
               {
                 "id": "value",
-                "label": {
+                "title": {
                   "en": "Value (integer)"
                 }
               },
               {
                 "id": "enum",
-                "label": {
+                "title": {
                   "en": "Enum (0-255)"
                 }
               },
               {
                 "id": "string",
-                "label": {
+                "title": {
                   "en": "String (text)"
                 }
               },
               {
                 "id": "raw",
-                "label": {
+                "title": {
                   "en": "Raw (hex bytes)"
                 }
               },
               {
                 "id": "bitmap",
-                "label": {
+                "title": {
                   "en": "Bitmap (bitmask)"
                 }
               }
@@ -48487,7 +48323,7 @@
             }
           },
           {
-            "name": "duration",
+            "name": "duration_seconds",
             "type": "number",
             "title": {
               "en": "Duration (seconds)",
@@ -48514,7 +48350,7 @@
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto-detect",
                   "nl": "Auto-detectie",
                   "de": "Auto-Erkennung"
@@ -48522,7 +48358,7 @@
               },
               {
                 "id": "NEC",
-                "label": {
+                "title": {
                   "en": "NEC",
                   "nl": "NEC",
                   "de": "NEC"
@@ -48530,7 +48366,7 @@
               },
               {
                 "id": "RC5",
-                "label": {
+                "title": {
                   "en": "RC5",
                   "nl": "RC5",
                   "de": "RC5"
@@ -48538,7 +48374,7 @@
               },
               {
                 "id": "RC6",
-                "label": {
+                "title": {
                   "en": "RC6",
                   "nl": "RC6",
                   "de": "RC6"
@@ -48546,7 +48382,7 @@
               },
               {
                 "id": "SONY",
-                "label": {
+                "title": {
                   "en": "Sony",
                   "nl": "Sony",
                   "de": "Sony"
@@ -48554,7 +48390,7 @@
               },
               {
                 "id": "SAMSUNG",
-                "label": {
+                "title": {
                   "en": "Samsung",
                   "nl": "Samsung",
                   "de": "Samsung"
@@ -48562,7 +48398,7 @@
               },
               {
                 "id": "PRONTOHEX",
-                "label": {
+                "title": {
                   "en": "ProntoHex",
                   "nl": "ProntoHex",
                   "de": "ProntoHex"
@@ -48603,10 +48439,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-          "nl": "Leer IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-          "de": "IR-Code Lernen [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]",
-          "fr": "Learn IR Code [[code_name]] [[duration]] [[protocol]] [[frequency]] [[category]]"
+          "en": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+          "nl": "Leer IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+          "de": "IR-Code Lernen [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]",
+          "fr": "Learn IR Code [[code_name]] [[duration_seconds]] [[protocol]] [[frequency]] [[category]]"
         }
       },
       {
@@ -48652,7 +48488,7 @@
             "values": [
               {
                 "id": "",
-                "label": {
+                "title": {
                   "en": "Auto (recommended)",
                   "nl": "Auto (aanbevolen)",
                   "de": "Auto (empfohlen)"
@@ -48660,7 +48496,7 @@
               },
               {
                 "id": "NEC",
-                "label": {
+                "title": {
                   "en": "NEC",
                   "nl": "NEC",
                   "de": "NEC"
@@ -48668,7 +48504,7 @@
               },
               {
                 "id": "RC5",
-                "label": {
+                "title": {
                   "en": "RC5",
                   "nl": "RC5",
                   "de": "RC5"
@@ -48676,7 +48512,7 @@
               },
               {
                 "id": "RC6",
-                "label": {
+                "title": {
                   "en": "RC6",
                   "nl": "RC6",
                   "de": "RC6"
@@ -48684,7 +48520,7 @@
               },
               {
                 "id": "SONY",
-                "label": {
+                "title": {
                   "en": "Sony",
                   "nl": "Sony",
                   "de": "Sony"
@@ -48692,7 +48528,7 @@
               },
               {
                 "id": "SAMSUNG",
-                "label": {
+                "title": {
                   "en": "Samsung",
                   "nl": "Samsung",
                   "de": "Samsung"
@@ -48700,7 +48536,7 @@
               },
               {
                 "id": "PRONTOHEX",
-                "label": {
+                "title": {
                   "en": "ProntoHex",
                   "nl": "ProntoHex",
                   "de": "ProntoHex"
@@ -48831,37 +48667,37 @@
             "values": [
               {
                 "id": "cool",
-                "label": {
+                "title": {
                   "en": "Cool"
                 }
               },
               {
                 "id": "heat",
-                "label": {
+                "title": {
                   "en": "Heat"
                 }
               },
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto"
                 }
               },
               {
                 "id": "dry",
-                "label": {
+                "title": {
                   "en": "Dry"
                 }
               },
               {
                 "id": "fan_only",
-                "label": {
+                "title": {
                   "en": "Fan Only"
                 }
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off"
                 }
               }
@@ -48886,25 +48722,25 @@
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto"
                 }
               },
               {
                 "id": "low",
-                "label": {
+                "title": {
                   "en": "Low"
                 }
               },
               {
                 "id": "medium",
-                "label": {
+                "title": {
                   "en": "Medium"
                 }
               },
               {
                 "id": "high",
-                "label": {
+                "title": {
                   "en": "High"
                 }
               }
@@ -49428,63 +49264,63 @@
             "values": [
               {
                 "id": "Power",
-                "label": {
+                "title": {
                   "en": "Power",
                   "fr": "Alimentation"
                 }
               },
               {
                 "id": "Mute",
-                "label": {
+                "title": {
                   "en": "Mute",
                   "fr": "Sourdine"
                 }
               },
               {
                 "id": "Volume Up",
-                "label": {
+                "title": {
                   "en": "Volume Up",
                   "fr": "Volume +"
                 }
               },
               {
                 "id": "Volume Down",
-                "label": {
+                "title": {
                   "en": "Volume Down",
                   "fr": "Volume -"
                 }
               },
               {
                 "id": "Channel Up",
-                "label": {
+                "title": {
                   "en": "Channel Up",
                   "fr": "Chaîne +"
                 }
               },
               {
                 "id": "Channel Down",
-                "label": {
+                "title": {
                   "en": "Channel Down",
                   "fr": "Chaîne -"
                 }
               },
               {
                 "id": "Source",
-                "label": {
+                "title": {
                   "en": "Source",
                   "fr": "Source"
                 }
               },
               {
                 "id": "Menu",
-                "label": {
+                "title": {
                   "en": "Menu",
                   "fr": "Menu"
                 }
               },
               {
                 "id": "OK",
-                "label": {
+                "title": {
                   "en": "OK",
                   "fr": "OK"
                 }
@@ -50926,7 +50762,7 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "fr": "Toujours éteint",
                   "nl": "Altijd uit",
@@ -50935,7 +50771,7 @@
               },
               {
                 "id": "relay",
-                "label": {
+                "title": {
                   "en": "Follow Relay",
                   "fr": "Suivre relais",
                   "nl": "Volg relais",
@@ -50944,7 +50780,7 @@
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "Inverted",
                   "fr": "Inversé",
                   "nl": "Omgekeerd",
@@ -50953,7 +50789,7 @@
               },
               {
                 "id": "always_on",
-                "label": {
+                "title": {
                   "en": "Always On",
                   "fr": "Toujours allumé",
                   "nl": "Altijd aan",
@@ -50999,7 +50835,7 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Start OFF",
                   "fr": "Démarrer éteint",
                   "nl": "Start UIT",
@@ -51008,7 +50844,7 @@
               },
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "Start ON",
                   "fr": "Démarrer allumé",
                   "nl": "Start AAN",
@@ -51017,7 +50853,7 @@
               },
               {
                 "id": "memory",
-                "label": {
+                "title": {
                   "en": "Remember state",
                   "fr": "Mémoriser état",
                   "nl": "Onthoud staat",
@@ -51720,7 +51556,7 @@
             "values": [
               {
                 "id": "low",
-                "label": {
+                "title": {
                   "en": "Low",
                   "nl": "Laag",
                   "fr": "Bas",
@@ -51729,7 +51565,7 @@
               },
               {
                 "id": "medium",
-                "label": {
+                "title": {
                   "en": "Medium",
                   "nl": "Gemiddeld",
                   "fr": "Moyen",
@@ -51738,7 +51574,7 @@
               },
               {
                 "id": "high",
-                "label": {
+                "title": {
                   "en": "High",
                   "nl": "Hoog",
                   "fr": "Haut",
@@ -51770,7 +51606,7 @@
             "filter": "driver_id=siren"
           },
           {
-            "name": "duration",
+            "name": "duration_seconds",
             "type": "number",
             "min": 1,
             "max": 300,
@@ -51781,10 +51617,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "Set alarm duration [[duration]]",
-          "nl": "Alarmduur instellen [[duration]]",
-          "fr": "Définir la durée de l'alarme [[duration]]",
-          "de": "Alarmdauer einstellen [[duration]]"
+          "en": "Set alarm duration [[duration_seconds]]",
+          "nl": "Alarmduur instellen [[duration_seconds]]",
+          "fr": "Définir la durée de l'alarme [[duration_seconds]]",
+          "de": "Alarmdauer einstellen [[duration_seconds]]"
         }
       },
       {
@@ -51817,126 +51653,126 @@
             "values": [
               {
                 "id": "0",
-                "label": {
+                "title": {
                   "en": "Doorbell Chime",
                   "fr": "Sonnette"
                 }
               },
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Für Elise",
                   "fr": "Pour Élise"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Westminster Chimes",
                   "fr": "Carillon Westminster"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "4-Key Chime",
                   "fr": "Carillon 4 notes"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "William Tell Overture",
                   "fr": "Guillaume Tell"
                 }
               },
               {
                 "id": "5",
-                "label": {
+                "title": {
                   "en": "Mozart Piano",
                   "fr": "Mozart Piano"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Space Alarm",
                   "fr": "Alarme Spatiale"
                 }
               },
               {
                 "id": "7",
-                "label": {
+                "title": {
                   "en": "Klaxon",
                   "fr": "Klaxon"
                 }
               },
               {
                 "id": "8",
-                "label": {
+                "title": {
                   "en": "Meep Meep",
                   "fr": "Bip Bip"
                 }
               },
               {
                 "id": "9",
-                "label": {
+                "title": {
                   "en": "Wheep",
                   "fr": "Sifflement"
                 }
               },
               {
                 "id": "10",
-                "label": {
+                "title": {
                   "en": "Barking Dog",
                   "fr": "Chien qui aboie"
                 }
               },
               {
                 "id": "11",
-                "label": {
+                "title": {
                   "en": "Alarm Siren",
                   "fr": "Sirène d'alarme"
                 }
               },
               {
                 "id": "12",
-                "label": {
+                "title": {
                   "en": "Doorbell 2",
                   "fr": "Sonnette 2"
                 }
               },
               {
                 "id": "13",
-                "label": {
+                "title": {
                   "en": "Old Phone",
                   "fr": "Vieux téléphone"
                 }
               },
               {
                 "id": "14",
-                "label": {
+                "title": {
                   "en": "Police Siren",
                   "fr": "Sirène Police"
                 }
               },
               {
                 "id": "15",
-                "label": {
+                "title": {
                   "en": "Evacuation Bell",
                   "fr": "Cloche Évacuation"
                 }
               },
               {
                 "id": "16",
-                "label": {
+                "title": {
                   "en": "Clock Alarm",
                   "fr": "Réveil"
                 }
               },
               {
                 "id": "17",
-                "label": {
+                "title": {
                   "en": "Fire Alarm",
                   "fr": "Alarme Incendie"
                 }
@@ -52403,11 +52239,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": {
@@ -52430,11 +52261,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_1gang"
           }
         ],
         "titleFormatted": {
@@ -52456,11 +52282,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_1gang"
           }
         ],
@@ -52488,15 +52309,15 @@
             "values": [
               {
                 "id": "off",
-                "label": "Off"
+                "title": "Off"
               },
               {
                 "id": "normal",
-                "label": "Normal"
+                "title": "Normal"
               },
               {
                 "id": "inverted",
-                "label": "Inverted"
+                "title": "Inverted"
               }
             ],
             "title": {
@@ -52525,19 +52346,19 @@
             "values": [
               {
                 "id": "white",
-                "label": "White"
+                "title": "White"
               },
               {
                 "id": "red",
-                "label": "Red"
+                "title": "Red"
               },
               {
                 "id": "blue",
-                "label": "Blue"
+                "title": "Blue"
               },
               {
                 "id": "green",
-                "label": "Green"
+                "title": "Green"
               }
             ],
             "title": {
@@ -52662,15 +52483,15 @@
             "values": [
               {
                 "id": "off",
-                "label": "Off"
+                "title": "Off"
               },
               {
                 "id": "on",
-                "label": "On"
+                "title": "On"
               },
               {
                 "id": "previous",
-                "label": "Previous state"
+                "title": "Previous state"
               }
             ],
             "title": {
@@ -52695,11 +52516,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -52721,11 +52537,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -52749,11 +52560,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -52775,11 +52581,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -52803,11 +52604,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -52829,11 +52625,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ],
@@ -52857,11 +52648,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -52883,11 +52669,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -52911,11 +52692,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -52937,11 +52713,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -52965,11 +52736,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -52991,11 +52757,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -53019,11 +52780,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -53045,11 +52801,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ],
@@ -53073,11 +52824,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -53099,11 +52845,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -53127,11 +52868,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -53153,11 +52889,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -53181,11 +52912,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -53207,11 +52933,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -53235,11 +52956,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -53261,11 +52977,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -53289,11 +53000,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -53315,11 +53021,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -53343,11 +53044,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -53370,11 +53066,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=switch_4gang"
           }
         ],
         "titleFormatted": {
@@ -53396,11 +53087,6 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "device",
-            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ],
@@ -54090,7 +53776,7 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off",
                   "fr": "Éteint",
                   "nl": "Uit",
@@ -54099,7 +53785,7 @@
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "Normal (LED when ON)",
                   "fr": "Normal",
                   "nl": "Normaal",
@@ -54108,7 +53794,7 @@
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "Inverted (LED when OFF)",
                   "fr": "Inversé",
                   "nl": "Omgekeerd",
@@ -54148,7 +53834,7 @@
             "values": [
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "ON state",
                   "fr": "État ON",
                   "nl": "AAN",
@@ -54157,7 +53843,7 @@
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "OFF state",
                   "fr": "État OFF",
                   "nl": "UIT",
@@ -54175,37 +53861,37 @@
             "values": [
               {
                 "id": "red",
-                "label": {
+                "title": {
                   "en": "Red"
                 }
               },
               {
                 "id": "blue",
-                "label": {
+                "title": {
                   "en": "Blue"
                 }
               },
               {
                 "id": "green",
-                "label": {
+                "title": {
                   "en": "Green"
                 }
               },
               {
                 "id": "white",
-                "label": {
+                "title": {
                   "en": "White"
                 }
               },
               {
                 "id": "yellow",
-                "label": {
+                "title": {
                   "en": "Yellow"
                 }
               },
               {
                 "id": "cyan",
-                "label": {
+                "title": {
                   "en": "Cyan"
                 }
               }
@@ -54333,19 +54019,19 @@
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -54819,7 +54505,7 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off",
                   "fr": "Éteint",
                   "nl": "Uit",
@@ -54828,7 +54514,7 @@
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "Normal (LED when ON)",
                   "fr": "Normal",
                   "nl": "Normaal",
@@ -54837,7 +54523,7 @@
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "Inverted (LED when OFF)",
                   "fr": "Inversé",
                   "nl": "Omgekeerd",
@@ -54877,7 +54563,7 @@
             "values": [
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "ON state",
                   "fr": "État ON",
                   "nl": "AAN",
@@ -54886,7 +54572,7 @@
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "OFF state",
                   "fr": "État OFF",
                   "nl": "UIT",
@@ -54904,37 +54590,37 @@
             "values": [
               {
                 "id": "red",
-                "label": {
+                "title": {
                   "en": "Red"
                 }
               },
               {
                 "id": "blue",
-                "label": {
+                "title": {
                   "en": "Blue"
                 }
               },
               {
                 "id": "green",
-                "label": {
+                "title": {
                   "en": "Green"
                 }
               },
               {
                 "id": "white",
-                "label": {
+                "title": {
                   "en": "White"
                 }
               },
               {
                 "id": "yellow",
-                "label": {
+                "title": {
                   "en": "Yellow"
                 }
               },
               {
                 "id": "cyan",
-                "label": {
+                "title": {
                   "en": "Cyan"
                 }
               }
@@ -55062,19 +54748,19 @@
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -55614,7 +55300,7 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off",
                   "fr": "Éteint",
                   "nl": "Uit",
@@ -55623,7 +55309,7 @@
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "Normal (LED when ON)",
                   "fr": "Normal",
                   "nl": "Normaal",
@@ -55632,7 +55318,7 @@
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "Inverted (LED when OFF)",
                   "fr": "Inversé",
                   "nl": "Omgekeerd",
@@ -55672,7 +55358,7 @@
             "values": [
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "ON state",
                   "fr": "État ON",
                   "nl": "AAN",
@@ -55681,7 +55367,7 @@
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "OFF state",
                   "fr": "État OFF",
                   "nl": "UIT",
@@ -55699,37 +55385,37 @@
             "values": [
               {
                 "id": "red",
-                "label": {
+                "title": {
                   "en": "Red"
                 }
               },
               {
                 "id": "blue",
-                "label": {
+                "title": {
                   "en": "Blue"
                 }
               },
               {
                 "id": "green",
-                "label": {
+                "title": {
                   "en": "Green"
                 }
               },
               {
                 "id": "white",
-                "label": {
+                "title": {
                   "en": "White"
                 }
               },
               {
                 "id": "yellow",
-                "label": {
+                "title": {
                   "en": "Yellow"
                 }
               },
               {
                 "id": "cyan",
-                "label": {
+                "title": {
                   "en": "Cyan"
                 }
               }
@@ -55857,19 +55543,19 @@
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -56475,7 +56161,7 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off",
                   "fr": "Éteint",
                   "nl": "Uit",
@@ -56484,7 +56170,7 @@
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "Normal (LED when ON)",
                   "fr": "Normal",
                   "nl": "Normaal",
@@ -56493,7 +56179,7 @@
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "Inverted (LED when OFF)",
                   "fr": "Inversé",
                   "nl": "Omgekeerd",
@@ -56533,7 +56219,7 @@
             "values": [
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "ON state",
                   "fr": "État ON",
                   "nl": "AAN",
@@ -56542,7 +56228,7 @@
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "OFF state",
                   "fr": "État OFF",
                   "nl": "UIT",
@@ -56560,37 +56246,37 @@
             "values": [
               {
                 "id": "red",
-                "label": {
+                "title": {
                   "en": "Red"
                 }
               },
               {
                 "id": "blue",
-                "label": {
+                "title": {
                   "en": "Blue"
                 }
               },
               {
                 "id": "green",
-                "label": {
+                "title": {
                   "en": "Green"
                 }
               },
               {
                 "id": "white",
-                "label": {
+                "title": {
                   "en": "White"
                 }
               },
               {
                 "id": "yellow",
-                "label": {
+                "title": {
                   "en": "Yellow"
                 }
               },
               {
                 "id": "cyan",
-                "label": {
+                "title": {
                   "en": "Cyan"
                 }
               }
@@ -56718,19 +56404,19 @@
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -56921,21 +56607,21 @@
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off",
                   "fr": "Arrêt"
                 }
               },
               {
                 "id": "heat",
-                "label": {
+                "title": {
                   "en": "Heat",
                   "fr": "Chauffage"
                 }
               },
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto",
                   "fr": "Auto"
                 }
@@ -57024,14 +56710,14 @@
             "values": [
               {
                 "id": "true",
-                "label": {
+                "title": {
                   "en": "Enabled",
                   "fr": "Activé"
                 }
               },
               {
                 "id": "false",
-                "label": {
+                "title": {
                   "en": "Disabled",
                   "fr": "Désactivé"
                 }
@@ -57065,35 +56751,35 @@
             "values": [
               {
                 "id": "comfort",
-                "label": {
+                "title": {
                   "en": "Comfort (21°C)",
                   "fr": "Confort (21°C)"
                 }
               },
               {
                 "id": "eco",
-                "label": {
+                "title": {
                   "en": "Eco (18°C)",
                   "fr": "Éco (18°C)"
                 }
               },
               {
                 "id": "away",
-                "label": {
+                "title": {
                   "en": "Away (15°C)",
                   "fr": "Absent (15°C)"
                 }
               },
               {
                 "id": "sleep",
-                "label": {
+                "title": {
                   "en": "Sleep (19°C)",
                   "fr": "Nuit (19°C)"
                 }
               },
               {
                 "id": "boost",
-                "label": {
+                "title": {
                   "en": "Boost (25°C)",
                   "fr": "Boost (25°C)"
                 }
@@ -57514,31 +57200,26 @@
             "filter": "driver_id=wall_dimmer_1gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_dimmer_1gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "0",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "On when Light ON (Normal)",
                   "nl": "Aan wanneer Licht AAN (Normaal)"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "On when Light OFF (Inverted)",
                   "nl": "Aan wanneer Licht UIT (Omgekeerd)"
                 }
@@ -57665,31 +57346,26 @@
             "filter": "driver_id=wall_switch_1gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_1gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "On when Switch ON (Normal)",
                   "nl": "Aan wanneer Schakelaar AAN (Normaal)"
                 }
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "On when Switch OFF (Inverted)",
                   "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
                 }
@@ -57783,31 +57459,26 @@
             "filter": "driver_id=wall_switch_1gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_1gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "Always On",
                   "nl": "Altijd Aan"
                 }
               },
               {
                 "id": "memory",
-                "label": {
+                "title": {
                   "en": "Last State",
                   "nl": "Laatste status"
                 }
@@ -57837,31 +57508,26 @@
             "filter": "driver_id=wall_switch_1gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_1gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "toggle",
-                "label": {
+                "title": {
                   "en": "Toggle",
                   "nl": "Tuimelschakelaar"
                 }
               },
               {
                 "id": "state",
-                "label": {
+                "title": {
                   "en": "State (Rocker)",
                   "nl": "Status (Wipschakelaar)"
                 }
               },
               {
                 "id": "momentary",
-                "label": {
+                "title": {
                   "en": "Momentary (Push Button)",
                   "nl": "Pulsdrukknop"
                 }
@@ -57889,29 +57555,24 @@
             "filter": "driver_id=wall_switch_1gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_1gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -57936,31 +57597,26 @@
             "filter": "driver_id=wall_switch_2gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_2gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "On when Switch ON",
                   "nl": "Aan bij AAN"
                 }
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
                 }
@@ -57988,31 +57644,26 @@
             "filter": "driver_id=wall_switch_2gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_2gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "Always On",
                   "nl": "Altijd Aan"
                 }
               },
               {
                 "id": "memory",
-                "label": {
+                "title": {
                   "en": "Last State",
                   "nl": "Laatste status"
                 }
@@ -58042,31 +57693,26 @@
             "filter": "driver_id=wall_switch_2gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_2gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "toggle",
-                "label": {
+                "title": {
                   "en": "Toggle",
                   "nl": "Tuimelschakelaar"
                 }
               },
               {
                 "id": "state",
-                "label": {
+                "title": {
                   "en": "State (Rocker)",
                   "nl": "Status (Wipschakelaar)"
                 }
               },
               {
                 "id": "momentary",
-                "label": {
+                "title": {
                   "en": "Momentary (Push Button)",
                   "nl": "Pulsdrukknop"
                 }
@@ -58094,29 +57740,24 @@
             "filter": "driver_id=wall_switch_2gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_2gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -58339,31 +57980,26 @@
             "filter": "driver_id=wall_switch_3gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_3gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "On when Switch ON",
                   "nl": "Aan bij AAN"
                 }
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
                 }
@@ -58391,31 +58027,26 @@
             "filter": "driver_id=wall_switch_3gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_3gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "Always On",
                   "nl": "Altijd Aan"
                 }
               },
               {
                 "id": "memory",
-                "label": {
+                "title": {
                   "en": "Last State",
                   "nl": "Laatste status"
                 }
@@ -58445,31 +58076,26 @@
             "filter": "driver_id=wall_switch_3gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_3gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "toggle",
-                "label": {
+                "title": {
                   "en": "Toggle",
                   "nl": "Tuimelschakelaar"
                 }
               },
               {
                 "id": "state",
-                "label": {
+                "title": {
                   "en": "State (Rocker)",
                   "nl": "Status (Wipschakelaar)"
                 }
               },
               {
                 "id": "momentary",
-                "label": {
+                "title": {
                   "en": "Momentary (Push Button)",
                   "nl": "Pulsdrukknop"
                 }
@@ -58497,29 +58123,24 @@
             "filter": "driver_id=wall_switch_3gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_3gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -58796,31 +58417,26 @@
             "filter": "driver_id=wall_switch_4gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_4gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "normal",
-                "label": {
+                "title": {
                   "en": "On when Switch ON",
                   "nl": "Aan bij AAN"
                 }
               },
               {
                 "id": "inverted",
-                "label": {
+                "title": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
                 }
@@ -58848,31 +58464,26 @@
             "filter": "driver_id=wall_switch_4gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_4gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Always Off",
                   "nl": "Altijd Uit"
                 }
               },
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "Always On",
                   "nl": "Altijd Aan"
                 }
               },
               {
                 "id": "memory",
-                "label": {
+                "title": {
                   "en": "Last State",
                   "nl": "Laatste status"
                 }
@@ -58902,31 +58513,26 @@
             "filter": "driver_id=wall_switch_4gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_4gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "toggle",
-                "label": {
+                "title": {
                   "en": "Toggle",
                   "nl": "Tuimelschakelaar"
                 }
               },
               {
                 "id": "state",
-                "label": {
+                "title": {
                   "en": "State (Rocker)",
                   "nl": "Status (Wipschakelaar)"
                 }
               },
               {
                 "id": "momentary",
-                "label": {
+                "title": {
                   "en": "Momentary (Push Button)",
                   "nl": "Pulsdrukknop"
                 }
@@ -58954,29 +58560,24 @@
             "filter": "driver_id=wall_switch_4gang_1way"
           },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_4gang_1way"
-          },
-          {
             "name": "mode",
             "type": "dropdown",
             "values": [
               {
                 "id": "auto",
-                "label": {
+                "title": {
                   "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
-                "label": {
+                "title": {
                   "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
-                "label": {
+                "title": {
                   "en": "Both (Load + scene)"
                 }
               }
@@ -59430,13 +59031,13 @@
             "values": [
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "Privacy ON (camera off)"
                 }
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Privacy OFF (camera on)"
                 }
               }
@@ -59464,19 +59065,19 @@
             "values": [
               {
                 "id": "0",
-                "label": {
+                "title": {
                   "en": "Auto"
                 }
               },
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Off"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "On"
                 }
               }
@@ -59504,25 +59105,25 @@
             "values": [
               {
                 "id": "0",
-                "label": {
+                "title": {
                   "en": "Up"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Right"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Down"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Left"
                 }
               }
@@ -59615,19 +59216,19 @@
             "values": [
               {
                 "id": "bool",
-                "label": {
+                "title": {
                   "en": "Boolean"
                 }
               },
               {
                 "id": "number",
-                "label": {
+                "title": {
                   "en": "Number"
                 }
               },
               {
                 "id": "string",
-                "label": {
+                "title": {
                   "en": "String"
                 }
               }
@@ -59658,19 +59259,19 @@
             "values": [
               {
                 "id": "manual",
-                "label": {
+                "title": {
                   "en": "Manual"
                 }
               },
               {
                 "id": "program",
-                "label": {
+                "title": {
                   "en": "Program"
                 }
               },
               {
                 "id": "eco",
-                "label": {
+                "title": {
                   "en": "Eco"
                 }
               }
@@ -59752,43 +59353,43 @@
             "values": [
               {
                 "id": "1",
-                "label": {
+                "title": {
                   "en": "Socket 1"
                 }
               },
               {
                 "id": "2",
-                "label": {
+                "title": {
                   "en": "Socket 2"
                 }
               },
               {
                 "id": "3",
-                "label": {
+                "title": {
                   "en": "Socket 3"
                 }
               },
               {
                 "id": "4",
-                "label": {
+                "title": {
                   "en": "Socket 4"
                 }
               },
               {
                 "id": "5",
-                "label": {
+                "title": {
                   "en": "Socket 5"
                 }
               },
               {
                 "id": "6",
-                "label": {
+                "title": {
                   "en": "Socket 6"
                 }
               },
               {
                 "id": "usb",
-                "label": {
+                "title": {
                   "en": "USB"
                 }
               }
@@ -59800,13 +59401,13 @@
             "values": [
               {
                 "id": "on",
-                "label": {
+                "title": {
                   "en": "On"
                 }
               },
               {
                 "id": "off",
-                "label": {
+                "title": {
                   "en": "Off"
                 }
               }
@@ -66032,9 +65633,6 @@
           "_tz3400_key8kk7r",
           "_TZ3400_key8kk7r",
           "_TZ3400_KEY8KK7R",
-          "_tz3000_b3mgfu0d",
-          "_TZ3000_b3mgfu0d",
-          "_TZ3000_B3MGFU0D",
           "_tze204_d7lpruvi",
           "_TZE204_d7lpruvi",
           "_TZE204_D7LPRUVI",
@@ -67009,9 +66607,6 @@
           "_tz3000_j70oanab",
           "_TZ3000_j70oanab",
           "_TZ3000_J70OANAB",
-          "_tz3000_kaflzta4",
-          "_TZ3000_kaflzta4",
-          "_TZ3000_KAFLZTA4",
           "_tz3000_kfu8zapd",
           "_TZ3000_kfu8zapd",
           "_TZ3000_KFU8ZAPD",
@@ -67125,7 +66720,13 @@
           "_TZ3290_IXD9MVV4",
           "_tz3000_xabckq1v",
           "_TZ3000_xabckq1v",
-          "_TZ3000_XABCKQ1V"
+          "_TZ3000_XABCKQ1V",
+          "_tz3000_u3nv1jwk",
+          "_TZ3000_u3nv1jwk",
+          "_TZ3000_U3NV1JWK",
+          "_tz3000_rco1yzb1",
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_RCO1YZB1"
         ],
         "productId": [
           "TS0044",
@@ -67154,6 +66755,7 @@
               1,
               5,
               6,
+              8,
               18,
               57344
             ]
@@ -67162,6 +66764,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -67170,6 +66773,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -67178,6 +66782,7 @@
             "clusters": [
               0,
               6,
+              8,
               18,
               57344
             ]
@@ -70466,9 +70071,6 @@
           "_tz3000_jak16dll",
           "_TZ3000_jak16dll",
           "_TZ3000_JAK16DLL",
-          "_tz3000_kaflzta4",
-          "_TZ3000_kaflzta4",
-          "_TZ3000_KAFLZTA4",
           "_tz3000_kkerjand",
           "_TZ3000_kkerjand",
           "_TZ3000_KKERJAND",
@@ -70523,18 +70125,12 @@
           "_tz3000_os0wy3vh",
           "_TZ3000_os0wy3vh",
           "_TZ3000_OS0WY3VH",
-          "_tz3000_ovyaisip",
-          "_TZ3000_ovyaisip",
-          "_TZ3000_OVYAISIP",
           "_tz3000_p26flek3",
           "_TZ3000_p26flek3",
           "_TZ3000_P26FLEK3",
           "_tz3000_piuensvr",
           "_TZ3000_piuensvr",
           "_TZ3000_PIUENSVR",
-          "_tz3000_pk8tgtdb",
-          "_TZ3000_pk8tgtdb",
-          "_TZ3000_PK8TGTDB",
           "_tz3000_qaaysllp",
           "_TZ3000_qaaysllp",
           "_TZ3000_QAAYSLLP",
@@ -70610,9 +70206,6 @@
           "_tz3000_xr3htd96",
           "_TZ3000_xr3htd96",
           "_TZ3000_XR3HTD96",
-          "_tz3000_yervjnlj",
-          "_TZ3000_yervjnlj",
-          "_TZ3000_YERVJNLJ",
           "_tz3000_yupc0pb7",
           "_TZ3000_yupc0pb7",
           "_TZ3000_YUPC0PB7",
@@ -71078,9 +70671,6 @@
           "_tze200_na5qlzow",
           "_TZE200_na5qlzow",
           "_TZE200_NA5QLZOW",
-          "_tze200_ne4pikwm",
-          "_TZE200_ne4pikwm",
-          "_TZE200_NE4PIKWM",
           "_tze200_nhyj64w2",
           "_TZE200_nhyj64w2",
           "_TZE200_NHYJ64W2",
@@ -72098,9 +71688,6 @@
           "_tze284_mrffaamu",
           "_TZE284_mrffaamu",
           "_TZE284_MRFFAAMU",
-          "_tze284_ne4pikwm",
-          "_TZE284_ne4pikwm",
-          "_TZE284_NE4PIKWM",
           "_tze284_nhgdf6qr",
           "_TZE284_nhgdf6qr",
           "_TZE284_NHGDF6QR",
@@ -93482,9 +93069,6 @@
           "_tze200_holel4dk",
           "_TZE200_holel4dk",
           "_TZE200_HOLEL4DK",
-          "_tze204_r0jdjrvi",
-          "_TZE204_r0jdjrvi",
-          "_TZE204_R0JDJRVI",
           "_tze204_ikvncluo",
           "_TZE204_ikvncluo",
           "_TZE204_IKVNCLUO",
@@ -96880,12 +96464,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_u3nv1jwk",
-          "_TZ3000_u3nv1jwk",
-          "_TZ3000_U3NV1JWK"
+          "_disabled_remote_button_wireless_handheld_needs_exact_fingerprint"
         ],
         "productId": [
-          "TS0044"
+          "DISABLED_REMOTE_BUTTON_WIRELESS_HANDHELD"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -98272,7 +97854,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "button.1"
       ],
       "energy": {
         "batteries": [
@@ -98324,6 +97907,17 @@
           }
         }
       ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      },
       "id": "remote_dimmer"
     },
     {
@@ -105175,7 +104769,8 @@
       ],
       "capabilities": [
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "button.1"
       ],
       "images": {
         "large": "drivers/smart_knob_switch/assets/images/large.png",
@@ -105265,7 +104860,18 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     },
     {
       "name": {
@@ -105464,7 +105070,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "button.1"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button/assets/images/large.png",
@@ -105478,9 +105085,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_rco1yzb1",
-          "_TZ3000_rco1yzb1",
-          "_TZ3000_RCO1YZB1",
           "_tz3000_yirp2pgd",
           "_TZ3000_yirp2pgd",
           "_TZ3000_YIRP2PGD"
@@ -105555,7 +105159,18 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     },
     {
       "id": "smart_remote_1_button_2",
@@ -106650,7 +106265,11 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              4,
+              5,
+              60672,
+              61184
             ]
           }
         }
@@ -108896,9 +108515,6 @@
           "_tz3000_famkxci2",
           "_TZ3000_famkxci2",
           "_TZ3000_FAMKXCI2",
-          "_tz3000_u3nv1jwk",
-          "_TZ3000_u3nv1jwk",
-          "_TZ3000_U3NV1JWK",
           "_tz3000_pjb1ua0m",
           "_TZ3000_pjb1ua0m",
           "_TZ3000_PJB1UA0M",
@@ -118572,7 +118188,7 @@
         "nl": "Irrigatieklep",
         "de": "Bewässerungsventil"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "dim.valve_1",
         "dim.valve_2",
@@ -118732,7 +118348,8 @@
           }
         }
       ],
-      "id": "valve_irrigation"
+      "id": "valve_irrigation",
+      "version": "1.0.0"
     },
     {
       "name": {
@@ -118741,7 +118358,7 @@
         "nl": "Enkelvoudige Klep",
         "de": "Einzelventil"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "onoff",
         "dim.valve",
@@ -118799,7 +118416,8 @@
           }
         }
       ],
-      "id": "valve_single"
+      "id": "valve_single",
+      "version": "1.0.0"
     },
     {
       "name": {
@@ -126014,7 +125632,8 @@
       },
       "class": "remote",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "button.1"
       ],
       "pair": [
         {
@@ -126129,7 +125748,19 @@
           }
         }
       ],
-      "id": "wifi_ir_remote"
+      "id": "wifi_ir_remote",
+      "version": "1.0.0",
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     },
     {
       "name": {
@@ -129447,7 +129078,9 @@
         "es": "Repetidor de señal Zigbee"
       },
       "class": "other",
-      "capabilities": [],
+      "capabilities": [
+        "button.1"
+      ],
       "zigbee": {
         "manufacturerName": [
           "_tz3000_1mxvlhmq",
@@ -129534,7 +129167,19 @@
           }
         }
       ],
-      "id": "zigbee_repeater"
+      "id": "zigbee_repeater",
+      "version": "1.0.0",
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1"
+          },
+          "maintenanceAction": true,
+          "getable": false,
+          "setable": false
+        }
+      }
     }
   ],
   "capabilities": {

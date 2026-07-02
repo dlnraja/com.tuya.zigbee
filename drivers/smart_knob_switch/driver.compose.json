@@ -17,7 +17,8 @@
   ],
   "capabilities": [
     "dim",
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "images": {
     "large": "drivers/smart_knob_switch/assets/images/large.png",
@@ -107,5 +108,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

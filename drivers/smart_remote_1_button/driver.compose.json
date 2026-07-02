@@ -15,7 +15,8 @@
     "zigbee"
   ],
   "capabilities": [
-    "measure_battery"
+    "measure_battery",
+    "button.1"
   ],
   "images": {
     "large": "drivers/smart_remote_1_button/assets/images/large.png",
@@ -29,9 +30,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_rco1yzb1",
-      "_TZ3000_rco1yzb1",
-      "_TZ3000_RCO1YZB1",
       "_tz3000_yirp2pgd",
       "_TZ3000_yirp2pgd",
       "_TZ3000_YIRP2PGD"
@@ -106,5 +104,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  }
 }

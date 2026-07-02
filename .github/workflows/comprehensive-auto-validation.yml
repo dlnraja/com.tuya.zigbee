@@ -63,6 +63,8 @@ jobs:
 
       - name: 🔍 Homey Publish-Level Validation
         run: npx homey app validate --level publish
+      - name: Normalize generated Flow manifest
+        run: npm run fix:generated-flow-args && npm run check:homey-guidelines
 
       - name: 🎯 Zero-Defect Master Validation (v5.13.6)
         run: node scripts/_validate_all.js

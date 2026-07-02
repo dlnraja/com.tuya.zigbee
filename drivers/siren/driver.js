@@ -99,7 +99,8 @@ class TuyaSirenDriver extends ZigBeeDriver {
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device || args.device._isInitializing) return false;
-          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(7, args.duration || 30, 'value').catch(() => {}); }
+          const duration = args.duration_seconds ?? args.duration ?? 30;
+          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(7, duration, 'value').catch(() => {}); }
           return true;
         });
       }

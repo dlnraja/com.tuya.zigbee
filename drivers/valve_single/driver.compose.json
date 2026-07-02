@@ -5,7 +5,7 @@
     "nl": "Enkelvoudige Klep",
     "de": "Einzelventil"
   },
-  "class": "thermostat",
+  "class": "other",
   "capabilities": [
     "onoff",
     "dim.valve",
@@ -62,5 +62,7 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "valve_single",
+  "version": "1.0.0"
 }

@@ -1092,7 +1092,7 @@
           "values": [
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "Off",
                 "fr": "Éteint",
                 "nl": "Uit",
@@ -1101,7 +1101,7 @@
             },
             {
               "id": "normal",
-              "label": {
+              "title": {
                 "en": "Normal (LED when ON)",
                 "fr": "Normal",
                 "nl": "Normaal",
@@ -1110,7 +1110,7 @@
             },
             {
               "id": "inverted",
-              "label": {
+              "title": {
                 "en": "Inverted (LED when OFF)",
                 "fr": "Inversé",
                 "nl": "Omgekeerd",
@@ -1145,7 +1145,7 @@
           "values": [
             {
               "id": "on",
-              "label": {
+              "title": {
                 "en": "ON state",
                 "fr": "État ON",
                 "nl": "AAN",
@@ -1154,7 +1154,7 @@
             },
             {
               "id": "off",
-              "label": {
+              "title": {
                 "en": "OFF state",
                 "fr": "État OFF",
                 "nl": "UIT",
@@ -1172,37 +1172,37 @@
           "values": [
             {
               "id": "red",
-              "label": {
+              "title": {
                 "en": "Red"
               }
             },
             {
               "id": "blue",
-              "label": {
+              "title": {
                 "en": "Blue"
               }
             },
             {
               "id": "green",
-              "label": {
+              "title": {
                 "en": "Green"
               }
             },
             {
               "id": "white",
-              "label": {
+              "title": {
                 "en": "White"
               }
             },
             {
               "id": "yellow",
-              "label": {
+              "title": {
                 "en": "Yellow"
               }
             },
             {
               "id": "cyan",
-              "label": {
+              "title": {
                 "en": "Cyan"
               }
             }
@@ -1302,19 +1302,19 @@
           "values": [
             {
               "id": "auto",
-              "label": {
+              "title": {
                 "en": "Auto (Normal + flows)"
               }
             },
             {
               "id": "magic",
-              "label": {
+              "title": {
                 "en": "Magic (Scene only)"
               }
             },
             {
               "id": "both",
-              "label": {
+              "title": {
                 "en": "Both (Load + scene)"
               }
             }
