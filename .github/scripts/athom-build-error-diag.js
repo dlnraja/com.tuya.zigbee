@@ -80,14 +80,33 @@ async function gotoBestEffort(page, url, label) {
     return true;
   } catch (err) {
     log(`  [NAV] ${label} navigation warning: ${err.message}`);
-    try { await page.evaluate(() => window.stop()); } catch { /* best-effort */ }
-    try {
-      const client = typeof page._client === 'function' ? page._client() : null;
-      await client?.send?.('Page.stopLoading');
-    } catch { /* best-effort */ }
+    await stopLoadingBestEffort(page, label);
     await waitReady(page, `${label}-after-timeout`, 5000).catch(() => {});
     return false;
   }
+}
+
+async function getCdpClient(page) {
+  if (!page) return null;
+  if (typeof page._client === 'function') {
+    try { return page._client(); } catch { /* older/newer Puppeteer shape */ }
+  }
+  if (typeof page.target === 'function') {
+    try { return await page.target().createCDPSession(); } catch { /* best-effort */ }
+  }
+  return null;
+}
+
+async function stopLoadingBestEffort(page, label) {
+  try {
+    const client = await getCdpClient(page);
+    await client?.send?.('Page.stopLoading');
+  } catch { /* best-effort */ }
+
+  const stopPromise = page.evaluate(() => window.stop()).catch(err => {
+    log(`  [NAV] ${label} window.stop warning: ${err.message}`);
+  });
+  await Promise.race([stopPromise, sleep(2000)]);
 }
 
 // === Same login flow as auto-promote-puppeteer.js ===
