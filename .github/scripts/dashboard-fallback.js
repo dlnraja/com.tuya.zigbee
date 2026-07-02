@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 const { fetchWithRetry } = require('./retry-helper');
+const { selectPromotionTarget, summarizeBuild, versionTextRegex } = require('./homey-build-selection');
 const APP = 'com.dlnraja.tuya.zigbee';
+
+function browserRegexPayload(regex) {
+  return regex ? { source: regex.source, flags: regex.flags } : null;
+}
 
 async function dashboardFallback(ver, log) {
   log = log || console.log;
@@ -53,9 +58,14 @@ async function dashboardFallback(ver, log) {
     await new Promise(r => setTimeout(r, 5000));
 
     log(`  Looking for version ${ver} to promote to test...`);
-    const promoted = await page.evaluate((version) => {
+    const promoted = await page.evaluate((version, versionRegex) => {
+      const matchesVersion = (value) => {
+        if (!version) return true;
+        if (!versionRegex) return false;
+        return new RegExp(versionRegex.source, versionRegex.flags).test(String(value || ''));
+      };
       const rows = Array.from(document.querySelectorAll('tr'));
-      const targetRow = rows.find(r => r.textContent.includes(version) && r.textContent.includes('draft'));
+      const targetRow = rows.find(r => matchesVersion(r.textContent) && /\bdraft\b/i.test(r.textContent || ''));
       if (!targetRow) return false;
 
       const buttons = Array.from(targetRow.querySelectorAll('button'));
@@ -73,7 +83,7 @@ async function dashboardFallback(ver, log) {
         return true;
       }
       return false;
-    }, ver);
+    }, ver, browserRegexPayload(versionTextRegex(ver)));
 
     if (promoted) {
       log('  Successfully clicked promote to test button via Puppeteer.');
@@ -124,9 +134,16 @@ async function _tryApiPromote(token, ver, log) {
     const br = await fetchWithRetry(`${BASE}/app/${APP}/build`, { headers: h }, { retries: 2, label: 'athom' });
     const builds = await br.json();
     const list = Array.isArray(builds) ? builds : builds.builds || builds.data || [];
-    const draft = list.find(b => (!b.channel || b.channel === 'draft') && b.version === ver)
-      || list.find(b => !b.channel || b.channel === 'draft');
-    if (!draft) { log('  No draft build found'); return false; }
+    const selection = selectPromotionTarget(list, ver);
+    if (selection.status === 'already-test') {
+      log(`  Current version already on test: ${summarizeBuild(selection.build)}`);
+      return true;
+    }
+    if (selection.status !== 'promote') {
+      log(`  No promotable draft for requested version ${ver}: ${selection.status} (${summarizeBuild(selection.build)})`);
+      return false;
+    }
+    const draft = selection.build;
     const buildId = draft.id || draft._id;
     log(`  Found draft build ${buildId} v${draft.version}`);
 
