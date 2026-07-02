@@ -87,15 +87,35 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git restore -- .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots 2>/dev/null || true
-          for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json; do
-            [ -e "$path" ] && git add "$path"
-          done
+          restore_volatile_artifacts() {
+            for path in .github/state diagnostics screenshots screenshots-debug promote-screenshots push-promote-screenshots .homeybuild; do
+              git restore -- "$path" 2>/dev/null || true
+            done
+          }
+          stage_auto_fix_paths() {
+            for path in drivers lib app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .cursorrules AI_INSTRUCTIONS.md package.json package-lock.json; do
+              [ -e "$path" ] && git add "$path"
+            done
+          }
+          restore_volatile_artifacts
+          stage_auto_fix_paths
           if ! git diff --staged --quiet; then
             git commit -m "🤖 auto-fix-all: automated fixes [skip ci]"
             BRANCH="${GITHUB_REF_NAME:-master}"
+            restore_volatile_artifacts
+            if ! git diff --quiet || ! git diff --cached --quiet; then
+              echo "::group::Remaining tracked changes before rebase"
+              git status --short
+              echo "::endgroup::"
+              echo "::error::Uncommitted tracked changes remain before rebase"
+              exit 1
+            fi
             git fetch origin "$BRANCH"
-            git pull --rebase origin "$BRANCH"
+            if ! git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
+              git rebase "origin/$BRANCH"
+            else
+              echo "origin/$BRANCH is already an ancestor of HEAD; skipping rebase"
+            fi
             git push origin HEAD:"refs/heads/$BRANCH"
             git fetch origin "$BRANCH"
             git merge-base --is-ancestor HEAD "origin/$BRANCH" || {
