@@ -13,7 +13,12 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 
   get mainsPowered() { return true; }
 
-  get gangCount() { return 1; }
+  get gangCount() { return 3; }
+
+  get switchCapabilities() {
+    const { subDeviceId } = typeof this.getData === 'function' ? this.getData() : {};
+    return subDeviceId ? ['onoff'] : super.switchCapabilities;
+  }
 
   get dpMappings() {
     const { subDeviceId } = this.getData();
@@ -31,12 +36,13 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       const { subDeviceId } = this.getData();
+      this._isSubDevice = Boolean(subDeviceId);
       if (subDeviceId === 'secondSwitch') {
         this._gangNumber = 2;
       } else if (subDeviceId === 'thirdSwitch') {
         this._gangNumber = 3;
       } else {
-        this._gangNumber = 1;
+        this._gangNumber = null;
       }
       this.log(`[WALL-3G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
@@ -48,7 +54,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
    * Filter physical button triggers to only process the gang assigned to this device.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
-    if (this._gangNumber !== undefined && button !== this._gangNumber) {
+    if (this._isSubDevice && this._gangNumber !== undefined && button !== this._gangNumber) {
       return; // Ignore events for other gangs
     }
     const tokens = typeof countOrOptions === 'number'
@@ -64,7 +70,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
    * Map UI commands to the correct Zigbee/Tuya gang.
    */
   _setGangOnOff(gang, value) {
-    const targetGang = this._gangNumber || gang;
+    const targetGang = this._isSubDevice && this._gangNumber ? this._gangNumber : gang;
     return super._setGangOnOff(targetGang, value);
   }
 
