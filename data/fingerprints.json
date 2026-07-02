@@ -405,5 +405,152 @@
       1
     ],
     "notes": "TS004F rotary knob routed away from generic button/switch drivers"
+  },
+  "_TZE204_rzdkn5rx": {
+    "driverId": "boiler_switch_energy",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "measure_voltage",
+      "measure_current",
+      "meter_power",
+      "measure_temperature",
+      "button.1"
+    ],
+    "dps": {
+      "1": {
+        "name": "state",
+        "capability": "onoff"
+      },
+      "6": {
+        "name": "current",
+        "capability": "measure_current",
+        "smartDivisor": true
+      },
+      "7": {
+        "name": "power",
+        "capability": "measure_power",
+        "smartDivisor": true
+      },
+      "8": {
+        "name": "voltage",
+        "capability": "measure_voltage",
+        "smartDivisor": true
+      },
+      "9": {
+        "name": "energy",
+        "capability": "meter_power",
+        "smartDivisor": true
+      },
+      "12": {
+        "name": "temperature",
+        "capability": "measure_temperature",
+        "smartDivisor": true
+      }
+    },
+    "notes": "Hubitat-compatible Zemismart TS0601 rzdkn5rx 1-gang/boiler switch route."
+  },
+  "_TZE28C100000_rzdkn5rx": {
+    "driverId": "boiler_switch_energy",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "measure_voltage",
+      "measure_current",
+      "meter_power",
+      "measure_temperature",
+      "button.1"
+    ],
+    "dps": {
+      "1": {
+        "name": "state",
+        "capability": "onoff"
+      },
+      "6": {
+        "name": "current",
+        "capability": "measure_current",
+        "smartDivisor": true
+      },
+      "7": {
+        "name": "power",
+        "capability": "measure_power",
+        "smartDivisor": true
+      },
+      "8": {
+        "name": "voltage",
+        "capability": "measure_voltage",
+        "smartDivisor": true
+      },
+      "9": {
+        "name": "energy",
+        "capability": "meter_power",
+        "smartDivisor": true
+      },
+      "12": {
+        "name": "temperature",
+        "capability": "measure_temperature",
+        "smartDivisor": true
+      }
+    },
+    "notes": "Homey forum 26439 #5484 exact Zemismart ZN-LRL1E/30A water boiler switch manufacturer code."
+  },
+  "_TZE28C1000000_rzdkn5rx": {
+    "driverId": "boiler_switch_energy",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "measure_voltage",
+      "measure_current",
+      "meter_power",
+      "measure_temperature",
+      "button.1"
+    ],
+    "dps": {
+      "1": {
+        "name": "state",
+        "capability": "onoff"
+      },
+      "6": {
+        "name": "current",
+        "capability": "measure_current",
+        "smartDivisor": true
+      },
+      "7": {
+        "name": "power",
+        "capability": "measure_power",
+        "smartDivisor": true
+      },
+      "8": {
+        "name": "voltage",
+        "capability": "measure_voltage",
+        "smartDivisor": true
+      },
+      "9": {
+        "name": "energy",
+        "capability": "meter_power",
+        "smartDivisor": true
+      },
+      "12": {
+        "name": "temperature",
+        "capability": "measure_temperature",
+        "smartDivisor": true
+      }
+    },
+    "notes": "Normalized TZE28C1000000 prefix sibling for Homey forum 26439 #5484 Zemismart boiler switch."
   }
 }

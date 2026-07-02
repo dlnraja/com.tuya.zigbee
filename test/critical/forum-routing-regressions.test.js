@@ -236,6 +236,22 @@ describe('forum routing regressions', () => {
     assert.strictEqual(CompoundFingerprintDB.lookup('HOBEIAN', 'ZG-222Z')?.driver, 'water_leak_sensor');
     assert.strictEqual(RuntimeFingerprintDB.getDriverId('HOBEIAN', 'ZG-222Z'), 'water_leak_sensor');
 
+    for (const manufacturer of ['_TZE204_rzdkn5rx', '_TZE28C100000_rzdkn5rx', '_TZE28C1000000_rzdkn5rx']) {
+      assertDriverClaims('boiler_switch_energy', manufacturer);
+      assertDriverDoesNotClaim('switch_1gang', manufacturer);
+      assertDriverDoesNotClaim('generic_tuya', manufacturer);
+      assertFingerprint('data/fingerprints.json', manufacturer, 'boiler_switch_energy');
+      assertFingerprint('lib/tuya/fingerprints.json', manufacturer, 'boiler_switch_energy');
+      assert.strictEqual(CompoundFingerprintDB.lookup(manufacturer, 'TS0601')?.driver, 'boiler_switch_energy');
+      assert.strictEqual(RuntimeFingerprintDB.getDriverId(manufacturer, 'TS0601'), 'boiler_switch_energy');
+      assert.strictEqual(CompoundFingerprintDB.getDPMeaning(manufacturer, 'TS0601', 1).capability, 'onoff');
+    }
+    const boilerCompose = composeDriver('boiler_switch_energy');
+    assert(!boilerCompose.capabilities.includes('measure_battery'), 'boiler switch must not expose a phantom battery');
+    assert(!boilerCompose.energy?.batteries, 'boiler switch must not publish static battery metadata');
+    assert.match(read('drivers/boiler_switch_energy/device.js'), /initVirtualButtons/);
+    assert.match(read('drivers/boiler_switch_energy/device.js'), /this\._initializing = true[\s\S]+this\._initialized = true[\s\S]+finally/);
+
     assertDriverHasProductId('motion_sensor', 'SNZB-03');
     assert.strictEqual(CompoundFingerprintDB.lookup('eWeLink', 'SNZB-03')?.driver, 'motion_sensor');
     assert.strictEqual(RuntimeFingerprintDB.getDriverId('eWeLink', 'SNZB-03'), 'motion_sensor');
