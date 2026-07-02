@@ -35,8 +35,17 @@ jobs:
       - name: Run Master Self-Heal Engine
         run: node scripts/maintenance/master-self-heal.js --ci
 
+      - name: Sanitize Generated Manifest Before Validation
+        run: npm run fix:generated-flow-args
+
       - name: Validate App.json
         run: npm run validate || npx homey app validate
+
+      - name: Sanitize Generated Manifest After Validation
+        run: npm run fix:generated-flow-args
+
+      - name: Validate Sanitized Homey Guidelines
+        run: npm run check:homey-guidelines
 
       - name: Commit Auto-Repairs
         if: github.event_name != 'pull_request'
