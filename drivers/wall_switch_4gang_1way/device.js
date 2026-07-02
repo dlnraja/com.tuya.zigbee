@@ -13,7 +13,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 
   get mainsPowered() { return true; }
 
-  get gangCount() { return 1; }
+  get gangCount() { return 4; }
+
+  get switchCapabilities() {
+    const { subDeviceId } = this.getData();
+    return subDeviceId ? ['onoff'] : super.switchCapabilities;
+  }
 
   get dpMappings() {
     const { subDeviceId } = this.getData();
@@ -45,6 +50,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       } else {
         this._gangNumber = 1;
       }
+      this._isSubDevice = Boolean(subDeviceId);
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
       await this.initVirtualButtons();
@@ -56,7 +62,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
    * Filter physical button triggers to only process the gang assigned to this device.
    */
   triggerButtonPress(button, type = 'single', countOrOptions = {}, options = {}) {
-    if (this._gangNumber !== undefined && button !== this._gangNumber) {
+    if (this._isSubDevice && this._gangNumber !== undefined && button !== this._gangNumber) {
       return; // Ignore events for other gangs
     }
     const tokens = typeof countOrOptions === 'number'
@@ -72,7 +78,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
    * Map UI commands to the correct Zigbee/Tuya gang.
    */
   _setGangOnOff(gang, value) {
-    const targetGang = this._gangNumber || gang;
+    const targetGang = this._isSubDevice ? this._gangNumber : gang;
     return super._setGangOnOff(targetGang, value);
   }
 

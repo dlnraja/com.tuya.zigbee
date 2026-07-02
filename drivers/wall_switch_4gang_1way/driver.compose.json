@@ -21,10 +21,7 @@
     "approximation": {
       "usageOn": 100,
       "usageOff": 1
-    },
-    "batteries": [
-      "CR2032"
-    ]
+    }
   },
   "platforms": [
     "local"
@@ -115,7 +112,9 @@
           3,
           4,
           5,
-          6
+          6,
+          57344,
+          57345
         ]
       },
       "3": {
@@ -124,7 +123,9 @@
           3,
           4,
           5,
-          6
+          6,
+          57344,
+          57345
         ]
       },
       "4": {
@@ -133,7 +134,9 @@
           3,
           4,
           5,
-          6
+          6,
+          57344,
+          57345
         ]
       }
     },
@@ -374,14 +377,6 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
     }
   }
 }

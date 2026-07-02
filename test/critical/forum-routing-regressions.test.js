@@ -261,11 +261,33 @@ describe('forum routing regressions', () => {
     const runtimeDb = require('../../lib/tuya/DeviceFingerprintDB');
 
     assert.strictEqual(runtimeDb.getDriverId('_TZ3000_kfu8zapd', 'TS004F'), 'button_wireless_4');
+    assert.strictEqual(runtimeDb.getDriverId('_TZ3000_mrduubod', 'TS0014'), 'wall_switch_4gang_1way');
     assert.strictEqual(runtimeDb.getDriverId('_TZ3002_pzao9ls1', 'TS0726'), 'wall_switch_4gang_1way');
     assert.strictEqual(runtimeDb.getDriverId('_TZE200_8ygsuhe1', 'TS0601'), 'air_quality_comprehensive');
+
+    const switchProfile = runtimeDb.getFingerprint('_TZ3000_mrduubod', 'TS0014');
+    assert.strictEqual(switchProfile.driverId, 'wall_switch_4gang_1way');
+    assert.strictEqual(switchProfile.powerSource, 'mains');
+    assert.deepStrictEqual(switchProfile.modelIds, ['TS0014']);
 
     const profile = runtimeDb.getFingerprint('_TZE200_8ygsuhe1', 'TS0601');
     assert.strictEqual(profile.driverId, 'air_quality_comprehensive');
     assert.deepStrictEqual(profile.modelIds, ['TS0601']);
+  });
+
+  it('keeps Moes TS0014 4-gang switch UI and endpoint metadata complete', () => {
+    const compose = composeDriver('wall_switch_4gang_1way');
+
+    assertDriverClaims('wall_switch_4gang_1way', '_TZ3000_mrduubod');
+    assertDriverHasProductId('wall_switch_4gang_1way', 'TS0014');
+    for (const cap of ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4', 'button.1', 'button.2', 'button.3', 'button.4']) {
+      assert(compose.capabilities.includes(cap), `wall_switch_4gang_1way must expose ${cap}`);
+    }
+    assert(!compose.energy?.batteries, 'Moes TS0014 wall switch must not publish static battery metadata');
+    assert(!compose.capabilitiesOptions?.measure_battery, 'Moes TS0014 wall switch must not expose stale battery options');
+    for (const endpointId of ['1', '2', '3', '4']) {
+      assert(compose.zigbee.endpoints[endpointId].clusters.includes(57344), `endpoint ${endpointId} must include Tuya 0xE000`);
+      assert(compose.zigbee.endpoints[endpointId].clusters.includes(57345), `endpoint ${endpointId} must include Tuya 0xE001`);
+    }
   });
 });
