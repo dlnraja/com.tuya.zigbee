@@ -396,7 +396,7 @@ jobs:
             done
           }
           stage_publish_metadata() {
-            for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs package.json package-lock.json; do
+            for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .github/scripts/_stats.json package.json package-lock.json; do
               [ -e "$path" ] && git add "$path"
             done
           }
