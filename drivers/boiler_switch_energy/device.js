@@ -14,6 +14,8 @@ class BoilerSwitchEnergyDevice extends PhysicalButtonMixin(VirtualButtonMixin(Un
 
   get mainsPowered() { return true; }
 
+  get gangCount() { return 1; }
+
   get dpMappings() {
     return {
       ...super.dpMappings,
@@ -28,11 +30,20 @@ class BoilerSwitchEnergyDevice extends PhysicalButtonMixin(VirtualButtonMixin(Un
   }
 
   async onNodeInit({ zclNode }) {
-    if (this._initialized) return;
-    this._initialized = true;
+    if (this._initialized || this._initializing) return;
+    this._initializing = true;
 
-    await super.onNodeInit({ zclNode });
-    this.log('[BoilerSwitchEnergy] Initialized');
+    try {
+      await super.onNodeInit({ zclNode });
+      await this.removeCapability('measure_battery').catch(() => {});
+      await this.removeCapability('alarm_battery').catch(() => {});
+      await this.initPhysicalButtonDetection?.(zclNode);
+      await this.initVirtualButtons?.();
+      this._initialized = true;
+      this.log('[BoilerSwitchEnergy] Initialized with mains-safe energy and button handling');
+    } finally {
+      this._initializing = false;
+    }
   }
 
   onDeleted() {

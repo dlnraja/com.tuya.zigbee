@@ -13088,5 +13088,59 @@
       }
     },
     "notes": "Nedis/ne4pikwm compatible radiator valve variant."
+  },
+  "_TZE204_rzdkn5rx": {
+    "driverId": "boiler_switch_energy",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "measure_voltage",
+      "measure_current",
+      "meter_power",
+      "measure_temperature",
+      "button.1"
+    ],
+    "notes": "Hubitat-compatible Zemismart TS0601 rzdkn5rx 1-gang/boiler switch route."
+  },
+  "_TZE28C100000_rzdkn5rx": {
+    "driverId": "boiler_switch_energy",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "measure_voltage",
+      "measure_current",
+      "meter_power",
+      "measure_temperature",
+      "button.1"
+    ],
+    "notes": "Homey forum 26439 #5484 exact Zemismart ZN-LRL1E/30A water boiler switch manufacturer code."
+  },
+  "_TZE28C1000000_rzdkn5rx": {
+    "driverId": "boiler_switch_energy",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "onoff",
+      "measure_power",
+      "measure_voltage",
+      "measure_current",
+      "meter_power",
+      "measure_temperature",
+      "button.1"
+    ],
+    "notes": "Normalized TZE28C1000000 prefix sibling for Homey forum 26439 #5484 Zemismart boiler switch."
   }
 }
