@@ -5,11 +5,25 @@ const { getSensorConfig, transformPresence } = require('./configs');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
 const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
+const { UniversalDPSender } = require('../../lib/tuya/UniversalDPSender');
 
 /**
  * Known mains-powered mmWave radar manufacturers (230V AC ceiling/wall radars).
  * These devices report battery DPs but are actually mains-powered.
  */
+const MTG_RELAY_RADARS = [
+  '_tze204_sbyx0lm6',
+  '_tze204_clrdrnya',
+  '_tze204_dtzziy1e',
+  '_tze204_iaeejhvf',
+  '_tze204_mtoaryre',
+  '_tze200_mp902om5',
+  '_tze204_pfayrzcw',
+  '_tze284_4qznlkbu',
+  '_tze200_clrdrnya',
+  '_tze200_sbyx0lm6',
+];
+
 const MAINS_POWERED_RADARS = new Set([
   '_tze200_lyetpprm',
   '_tze204_lyetpprm',
@@ -17,6 +31,7 @@ const MAINS_POWERED_RADARS = new Set([
   '_tze204_wukb7rhc',
   '_tze200_jva8ink8',
   '_tze204_jva8ink8',
+  ...MTG_RELAY_RADARS,
 ]);
 
 /**
@@ -34,6 +49,33 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (config && config.mainsPowered) return true;
     const mfr = (MfrHelper.getManufacturerName(this) || '').toLowerCase();
     return MAINS_POWERED_RADARS.has(mfr);
+  }
+
+  get sensorCapabilities() {
+    const config = this._getRadarConfig();
+    const caps = new Set(['alarm_motion', 'alarm_human', 'button.1']);
+    const noBattery = this.mainsPowered
+      || config.noBatteryCapability
+      || config.suppressBatteryCapability
+      || config.disableBatteryReporting;
+
+    const addCap = (capability) => {
+      if (!capability) {return;}
+      if (capability === 'measure_battery' && noBattery) {return;}
+      if (capability === 'alarm_battery' && noBattery) {return;}
+      if (capability === 'measure_temperature' && config.noTemperature) {return;}
+      if (capability === 'measure_humidity' && config.noHumidity) {return;}
+      if (capability === 'onoff' && !config.hasRelay) {return;}
+      caps.add(capability);
+    };
+
+    if (config.hasIlluminance) {caps.add('measure_luminance');}
+
+    for (const mapping of Object.values(config.dpMap || {})) {
+      addCap(mapping.cap);
+    }
+
+    return Array.from(caps);
   }
 
   /**
@@ -61,6 +103,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this._inference = new IntelligentPresenceInference(this);
     this._discovery = new IntelligentDPAutoDiscovery(this);
 
+    await this._applyRadarCapabilityProfile();
+    this._registerRadarCapabilityListeners();
+
     // Idea #21: Initialize multi-zone capabilities if config supports it
     await this._initMultiZoneCapabilities();
 
@@ -77,22 +122,147 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this.log('[RADAR] Ready');
   }
 
+  _ensureInference() {
+    if (!this._inference) {
+      this._inference = new IntelligentPresenceInference(this);
+    }
+    return this._inference;
+  }
+
+  _ensureDiscovery() {
+    if (!this._discovery) {
+      this._discovery = new IntelligentDPAutoDiscovery(this);
+    }
+    return this._discovery;
+  }
+
+  async _applyRadarCapabilityProfile() {
+    const requiredCaps = new Set(this.sensorCapabilities);
+    const staleCaps = [
+      'measure_battery',
+      'alarm_battery',
+      'measure_temperature',
+      'measure_humidity',
+      'onoff',
+      'alarm_motion.zone1',
+      'alarm_motion.zone2',
+      'alarm_motion.zone3',
+      'measure_luminance.distance.zone1',
+      'measure_luminance.distance.zone2',
+      'measure_luminance.distance.zone3',
+      'measure_motion.classification',
+    ];
+
+    for (const cap of requiredCaps) {
+      if (!this.hasCapability(cap)) {
+        await this.addCapability(cap).catch(e => this.log(`[RADAR] Could not add ${cap}: ${e.message}`));
+      }
+    }
+
+    for (const cap of staleCaps) {
+      if (this.hasCapability(cap) && !requiredCaps.has(cap)) {
+        await this.removeCapability(cap).catch(e => this.log(`[RADAR] Could not remove stale ${cap}: ${e.message}`));
+      }
+    }
+
+    if (this.mainsPowered) {
+      await this.setStoreValue('powerSource', 'mains').catch(() => {});
+      await this.setStoreValue('battery', false).catch(() => {});
+    }
+  }
+
+  _registerRadarCapabilityListeners() {
+    const config = this._getRadarConfig();
+    if (!config.hasRelay || !this.hasCapability('onoff') || this._radarRelayListenerRegistered) {return;}
+
+    try {
+      this.registerCapabilityListener('onoff', async (value) => {
+        const dp = Number(config.relayDp || 108);
+        const sent = await this._sendRadarDP(dp, value ? 1 : 0, config.relayType || 'enum');
+        if (!sent) {
+          throw new Error(`Relay DP${dp} write failed`);
+        }
+        return true;
+      });
+      this._radarRelayListenerRegistered = true;
+      this.log(`[RADAR] Relay capability registered on DP${config.relayDp || 108}`);
+    } catch (err) {
+      this.log('[RADAR] Relay listener registration failed:', err.message);
+    }
+  }
+
+  async _sendRadarDP(dp, value, type = 'value') {
+    try {
+      if (!this._radarDPSender) {
+        this._radarDPSender = new UniversalDPSender(this);
+      }
+      return await this._radarDPSender.sendTuyaDP(dp, value, type);
+    } catch (err) {
+      this.error(`[RADAR] DP${dp} send failed:`, err.message);
+      return false;
+    }
+  }
+
+  _convertRadarSettingValue(value, mapping = {}) {
+    if (mapping.enumMap && Object.prototype.hasOwnProperty.call(mapping.enumMap, value)) {
+      return mapping.enumMap[value];
+    }
+    if (mapping.divisor && typeof value === 'number') {
+      return value / mapping.divisor;
+    }
+    return value;
+  }
+
+  _toRadarDPValue(value, mapping = {}) {
+    if (mapping.reverseEnumMap && Object.prototype.hasOwnProperty.call(mapping.reverseEnumMap, value)) {
+      return mapping.reverseEnumMap[value];
+    }
+    if (mapping.divisor && typeof value === 'number') {
+      return Math.round(value * mapping.divisor);
+    }
+    return value;
+  }
+
+  _getRadarDPType(mapping = {}) {
+    if (mapping.type === 'enum' || mapping.type === 'enum_onoff') {return 'enum';}
+    if (mapping.type === 'bool' || mapping.type === 'presence_bool') {return 'bool';}
+    return 'value';
+  }
+
+  _handleDP(dpId, rawValue) {
+    const dp = parseInt(dpId, 10);
+    const config = this._getRadarConfig();
+    const mapping = config.dpMap?.[dp];
+
+    if (mapping) {
+      this._sendTimeSyncIfNeeded?.();
+      this.updateRadioActivity?.();
+      const value = this._parseValue ? this._parseValue(rawValue) : rawValue;
+      return this._handleStaticDP(dp, value, mapping, config);
+    }
+
+    return super._handleDP(dpId, rawValue);
+  }
+
   /**
    * Main Tuya DP processing entry point
    */
   onTuyaDP(dpId, value, dpType) {
     const config = this._getRadarConfig();
-    const mapping = config.dpMap?.[dpId];
+    const dp = parseInt(dpId, 10);
+    const mapping = config.dpMap?.[dp];
 
     // 1. Process via static config if matched
     if (mapping) {
-      return this._handleStaticDP(dpId, value, mapping, config);
+      const parsedValue = this._parseValue ? this._parseValue(value) : value;
+      return this._handleStaticDP(dp, parsedValue, mapping, config);
     }
 
     // 2. Fallback: Intelligent Auto-Discovery
-    const discovered = this._discovery.analyzeDP(dpId, value);
+    const discovery = this._ensureDiscovery();
+    const discovered = discovery.analyzeDP(dp, value);
     if (discovered && discovered.confidence >= 60) {
-      const result = this._discovery.applyDiscoveredValue(dpId, value);
+      const result = discovery.applyDiscoveredValue(dp, value);
       if (result) {
         this.log(`[RADAR] 🧠 Auto-Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
         return this.safeSetCapabilityValue(result.capability, result.value).catch(() => { });
@@ -109,6 +279,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   _handleStaticDP(dpId, value, mapping, config) {
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
+      const inference = this._ensureInference();
       // v9.7.6: Use enumMap from mapping if available (e.g., gkfbdvyx: {0:false, 1:true, 2:true})
       let presence;
       if (mapping.enumMap) {
@@ -120,12 +291,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       // Integrate with inference engine if needed
       if (mapping.useInference) {
-        presence = this._inference.updatePresenceDP(value);
+        presence = inference.updatePresenceDP(value);
       } else {
-        this._inference.updatePresenceDP(value); // Keep in sync
+        inference.updatePresenceDP(value); // Keep in sync
       }
 
       if (presence !== null) {
+        this.safeSetCapabilityValue('alarm_human', presence).catch(() => {});
         return this.safeSetCapabilityValue('alarm_motion', presence).catch(() => {});
       }
       return;
@@ -157,7 +329,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       } else {
         distance = value / (mapping.divisor || 100);
       }
-      this._inference.updateDistance(distance);
+      this._ensureInference().updateDistance(distance);
       return this.safeSetCapabilityValue('measure_luminance.distance', distance).catch(() => {});
     }
 
@@ -183,8 +355,19 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         lux = smartParse(value, dpId, { capability: 'measure_luminance' });
       } else if (mapping.divisor) {lux = value / mapping.divisor;}
 
-      this._inference.updateLux(lux);
+      this._ensureInference().updateLux(lux);
       return this.safeSetCapabilityValue('measure_luminance', lux).catch(() => {});
+    }
+
+    // C2. Handle relay status DPs.
+    if (mapping.cap === 'onoff') {
+      let relayOn;
+      if (mapping.enumMap && Object.prototype.hasOwnProperty.call(mapping.enumMap, value)) {
+        relayOn = mapping.enumMap[value];
+      } else {
+        relayOn = value === true || value === 1 || value === '1' || value === 'ON' || value === 'on';
+      }
+      return this.safeSetCapabilityValue('onoff', !!relayOn).catch(() => {});
     }
 
     // D. Handle battery DPs - ignore for mains-powered radars
@@ -201,6 +384,16 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         battery = value / (mapping.divisor || 1);
       }
       return this.safeSetCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
+    }
+
+    // E. Setting/internal feedback DPs: store the decoded value for diagnostics.
+    if (!mapping.cap && (mapping.setting || mapping.internal)) {
+      const key = mapping.setting || mapping.internal;
+      const converted = this._convertRadarSettingValue(value, mapping);
+      this.setStoreValue(`radar_${key}`, converted).catch(() => {});
+      if (mapping.setting && this.getSetting?.(mapping.setting) !== undefined) {
+        this.setSettings({ [mapping.setting]: converted }).catch(() => {});
+      }
     }
   }
 
@@ -229,6 +422,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // 2. DP Refresh
     this.homey.setTimeout(() => { if (this._destroyed) return; this._requestDPRefresh(zclNode); }, 3000);
+
+    if (this._getRadarConfig().needsPolling === false) {
+      this.log('[RADAR] Periodic DP polling disabled by device profile');
+      return;
+    }
 
     // 3. Periodic polling (60s)
     this._pollingInterval = this.homey.setInterval(() => {
@@ -323,11 +521,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       if (dpId) {
         let value = newSettings[key];
         const dpConfig = config.dpMap[dpId];
-        if (dpConfig.divisor) {value = Math.round(value * dpConfig.divisor);}
+        value = this._toRadarDPValue(value, dpConfig);
+        const dpType = this._getRadarDPType(dpConfig);
         
         this.log(`[RADAR] ⚙️ Syncing ${key} → DP${dpId} value=${value}`);
-        if (this.sendTuyaCommand) {
-          await this.sendTuyaCommand(parseInt(dpId), value, 'value').catch(e => this.error(e));
+        const sent = await this._sendRadarDP(parseInt(dpId, 10), value, dpType);
+        if (!sent) {
+          this.error(`[RADAR] Failed syncing ${key} to DP${dpId}`);
         }
       }
     }

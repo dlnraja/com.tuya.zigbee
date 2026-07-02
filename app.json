@@ -136832,7 +136832,6 @@
           "_TZE200_RSJ5PU8Y",
           "_TZE200_RTRMFADK",
           "_TZE200_S1XGTH2U",
-          "_TZE200_SBYX0LM6",
           "_TZE200_SFQYHVPV",
           "_TZE200_SNFDQLLF",
           "_TZE200_SNLOY4RW",
@@ -137188,7 +137187,6 @@
           "_TZE204_n8dljorx",
           "_tze204_oisqyl4o",
           "_TYST11_ps5v5jor",
-          "_TZE204_sbyx0lm6",
           "_TYST11_udank5zs",
           "_tze204_ux5v4tgb",
           "_TZE204_v6ossqfy",
@@ -173683,8 +173681,6 @@
           "_TZ3218_T9YNFZ4X",
           "_TZE200_1IBPYHON",
           "_TZE204_1IBPYHON",
-          "_tze200_clrdrnya",
-          "_tze204_clrdrnya",
           "_TZE284_0WFZACEL",
           "_TZE284_ZY6WJM01",
           "_TZE284_gnpflcoq",
@@ -178689,6 +178685,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_human",
+        "onoff",
         "measure_battery",
         "measure_luminance.distance",
         "alarm_motion.zone1",
@@ -178781,6 +178778,14 @@
             "en": "Button 1",
             "fr": "Bouton 1"
           }
+        },
+        "onoff": {
+          "title": {
+            "en": "Relay",
+            "fr": "Relais",
+            "nl": "Relais",
+            "de": "Relais"
+          }
         }
       },
       "subDevices": [],
@@ -178801,6 +178806,7 @@
           "_TZE200_5B5NOETO",
           "_TZE200_7GCLUKJS",
           "_TZE200_AR0SLWND",
+          "_TZE200_CLRDRNYA",
           "_TZE200_cq8lu23i",
           "_TZE200_CRQ3R3LA",
           "_TZE200_F1PVDGOH",
@@ -178826,6 +178832,7 @@
           "_TZE200_SFIY5TFS",
           "_TZE200_SFIY8PUU",
           "_TZE200_SGFMFPIY",
+          "_TZE200_SBYX0LM6",
           "_TZE200_sgpeacqp",
           "_TZE200_TYFFVOIJ",
           "_TZE200_XPQ2RBER",
@@ -178842,6 +178849,7 @@
           "_TZE204_B8VXCT9L",
           "_TZE204_BMDSP6BS",
           "_TZE204_BVFLD3XC",
+          "_TZE204_CLRDRNYA",
           "_TZE204_DTZZIY1E",
           "_TZE204_E5M9C5HL",
           "_TZE204_EX3RCDHA",
@@ -178871,6 +178879,7 @@
           "_TZE204_QOMXLRYD",
           "_TZE204_RHGSBACQ",
           "_TZE204_SBKGEILO",
+          "_TZE204_SBYX0LM6",
           "_TZE204_SFIY5TFS",
           "_TZE204_SFIY8PUU",
           "_TZE204_SGFMFPIY",
@@ -194265,6 +194274,7 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_human",
+        "onoff",
         "measure_battery",
         "measure_luminance.distance",
         "button.1"
@@ -194285,6 +194295,14 @@
           "title": {
             "en": "Button 1",
             "fr": "Bouton 1"
+          }
+        },
+        "onoff": {
+          "title": {
+            "en": "Relay",
+            "fr": "Relais",
+            "nl": "Relais",
+            "de": "Relais"
           }
         }
       },
