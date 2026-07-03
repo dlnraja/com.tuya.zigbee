@@ -48,13 +48,14 @@
     "capabilities": [
       "measure_humidity",
       "measure_temperature",
+      "measure_humidity.soil",
       "measure_battery"
     ],
     "dps": {
       "3": {
         "name": "soil_moisture",
         "converter": "raw",
-        "capability": "measure_humidity"
+        "capability": "measure_humidity.soil"
       },
       "5": {
         "name": "temperature",
@@ -87,13 +88,14 @@
     "capabilities": [
       "measure_humidity",
       "measure_temperature",
+      "measure_humidity.soil",
       "measure_battery"
     ],
     "dps": {
       "3": {
         "name": "soil_moisture",
         "converter": "raw",
-        "capability": "measure_humidity"
+        "capability": "measure_humidity.soil"
       },
       "5": {
         "name": "temperature",
