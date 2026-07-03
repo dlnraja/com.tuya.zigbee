@@ -725,5 +725,8 @@
   },
   "9.0.175": {
     "en": "v9.0.162: automated publish, manifest sync, and Homey test promotion."
+  },
+  "9.0.176": {
+    "en": "Stability improvements and Homey test publication retry after transient processing failure."
   }
 }
