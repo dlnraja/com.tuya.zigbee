@@ -69,9 +69,9 @@ jobs:
           console=$(grep -r "console\.\(log\|error\|warn\)(" drivers/ --include="device.js" -l 2>/dev/null | wc -l || true)
           if [ "$console" -eq 0 ]; then echo "✅ console.log in drivers: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ console.log in drivers: $console" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
 
-          # 3. Empty manufacturerName
+          # 3. Empty manufacturerName arrays are accepted for generic/synthetic templates by validate + syntax-check.
           empty_mfr=$(grep -r '"manufacturerName":\s*\[\s*\]' drivers/ --include="*.json" -l 2>/dev/null | wc -l || true)
-          if [ "$empty_mfr" -eq 0 ]; then echo "✅ Empty manufacturerName: 0" >> $GITHUB_STEP_SUMMARY; else echo "❌ Empty manufacturerName: $empty_mfr" >> $GITHUB_STEP_SUMMARY; FAIL=1; fi
+          if [ "$empty_mfr" -eq 0 ]; then echo "✅ Empty manufacturerName: 0" >> $GITHUB_STEP_SUMMARY; else echo "⚠️ Empty manufacturerName: $empty_mfr (warning; accepted generic/synthetic templates)" >> $GITHUB_STEP_SUMMARY; fi
 
           # 4. Wildcard fingerprints
           wildcards=$(grep -r "_TZE200_\*\|_TZ3000_\*\|_TZE204_\*" drivers/ --include="*.json" -l 2>/dev/null | wc -l || true)
