@@ -64,6 +64,9 @@ jobs:
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
           GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
           GMAIL_DIAG_UNTIL: ${{ github.event.inputs.until || '' }}
@@ -107,5 +110,5 @@ jobs:
       - name: Assert Gmail diagnostics access
         if: always() && steps.gmail_fetch.outputs.exit_code != '0'
         run: |
-          echo "::error::Gmail diagnostics could not authenticate via IMAP. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD secrets, then rerun Fetch Homey Diagnostics."
+          echo "::error::Gmail diagnostics could not authenticate via IMAP or OAuth fallback. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets, then rerun Fetch Homey Diagnostics."
           exit 1
