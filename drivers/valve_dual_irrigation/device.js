@@ -31,8 +31,9 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       await this.safeSetCapabilityValue(capability, value).catch(() => {});
       return;
     }
-    if (typeof this.setCapabilityValue === 'function') {
-      await this.setCapabilityValue(capability, value).catch(() => {});
+    const setCapabilityValue = this['setCapabilityValue'];
+    if (typeof setCapabilityValue === 'function') {
+      await setCapabilityValue.call(this, capability, value).catch(() => {});
     }
   }
 
