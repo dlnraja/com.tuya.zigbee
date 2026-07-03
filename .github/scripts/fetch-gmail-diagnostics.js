@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.6: IMAP-only mode — OAuth removed entirely
+// v5.13.2: IMAP primary with OAuth fallback when Gmail app-password auth breaks
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const privacy=require('./privacy-redactor');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
 let imap=null;try{imap=require('./gmail-imap-reader')}catch(err){console.error('gmail-imap-reader load error:',err.message)}
+let oauth=null;try{oauth=require('./gmail-oauth-reader')}catch(err){console.error('gmail-oauth-reader load error:',err.message)}
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 let KB=null;try{KB=require('./bug-knowledge-base')}catch{}
 const SD=path.join(__dirname,'..','state');
@@ -396,9 +397,10 @@ function runSummary(fetchOptions,extra={}){
 
 function writeAccessFailureReport(fetchOptions,code,message,extra={}){
   const now=new Date().toISOString();
+  const mode=extra.mode||'imap';
   const report=privacy.redactObject({timestamp:now,count:0,
     run:runSummary(fetchOptions,extra),
-    access:{gmail:{ok:false,mode:'imap',code,message:privacy.redact(message)}},
+    access:{gmail:{ok:false,mode,code,message:privacy.redact(message)}},
     byType:{},newFingerprints:[],
     history:{diagnosticsAnalyzed:0,score:0,status:'blocked',categories:[],recommendedChecks:[],topErrors:[],latestEvents:[],missingGuardrails:[]},
     deepResearch:{researched:0,added:0,details:[],autoImplement:fetchOptions.autoImplement},
@@ -417,8 +419,8 @@ function writeAccessFailureReport(fetchOptions,code,message,extra={}){
       previousChecks=Array.isArray(existing.checks)?existing.checks.slice(-19):[];
     }
   }catch{}
-  const check={time:now,ok:false,mode:'imap',code,message:privacy.redact(message)};
-  const health=privacy.redactObject({mode:'imap',lastOk,lastFail:now,consecutiveFails,
+  const check={time:now,ok:false,mode,code,message:privacy.redact(message)};
+  const health=privacy.redactObject({mode,lastOk,lastFail:now,consecutiveFails,
     errorCode:code,checks:[...previousChecks,check]});
   privacy.assertNoLeaks(health,HF);
   fs.writeFileSync(HF,JSON.stringify(health,null,2));
@@ -426,22 +428,25 @@ function writeAccessFailureReport(fetchOptions,code,message,extra={}){
 
 async function main(){
   const fetchOptions=parseFetchOptions(process.argv.slice(2));
-  // v5.12.6: IMAP-only — no OAuth, no token expiry, permanent
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
-  if(!e||!p){
-    const msg='IMAP credentials missing. Refresh the Gmail app credential, then rerun Gmail diagnostics.';
-    console.error('IMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)');
-    writeAccessFailureReport(fetchOptions,'missing_imap_credentials',msg);
+  const hasImapCredentials=Boolean(e&&p);
+  const hasOAuthCredentials=Boolean(oauth&&oauth.hasOAuthCredentials&&oauth.hasOAuthCredentials());
+  if(!hasImapCredentials&&!hasOAuthCredentials){
+    const msg='Gmail credentials missing. Set GMAIL_EMAIL/GMAIL_APP_PASSWORD or Gmail OAuth secrets, then rerun Gmail diagnostics.';
+    console.error('Gmail credentials missing. Set IMAP credentials or GMAIL_CLIENT_ID + GMAIL_CLIENT_SECRET + GMAIL_REFRESH_TOKEN.');
+    writeAccessFailureReport(fetchOptions,'missing_gmail_credentials',msg,{mode:'imap+oauth'});
     process.exit(1);
   }
-  if(!imap){
+  if(hasImapCredentials&&!imap&&!hasOAuthCredentials){
     const msg='gmail-imap-reader is unavailable. Install the IMAP dependencies before rerunning Gmail diagnostics.';
     console.error('gmail-imap-reader not available. npm install imapflow');
     writeAccessFailureReport(fetchOptions,'imap_reader_unavailable',msg);
     process.exit(1);
   }
-  console.log('IMAP-only mode — connecting as',safeAlias('account',e));
+  console.log('Gmail diagnostics mode — IMAP primary, OAuth fallback:',hasOAuthCredentials?'available':'unavailable');
+  if(hasImapCredentials)console.log('IMAP primary — connecting as',safeAlias('account',e));
+  else console.log('IMAP primary unavailable — missing GMAIL_EMAIL/GMAIL_APP_PASSWORD');
   console.log('Diagnostics fetch options:',JSON.stringify({mode:fetchOptions.allHistory?'all-history':'recent',
     since:fetchOptions.since||'rolling-30-days',until:fetchOptions.until||'now',
     maxResults:fetchOptions.maxResults,maxTotalResults:fetchOptions.maxTotalResults,
@@ -449,27 +454,44 @@ async function main(){
     reprocess:fetchOptions.reprocess,autoImplement:fetchOptions.autoImplement}));
   const windows=buildFetchWindows(fetchOptions);
   const emails=[],seenEmailIds=new Set();
-  let imapConnectionFailed=false;
+  let imapConnectionFailed=false,oauthConnectionFailed=false;
+  const modesUsed=new Set();
   for(const win of windows){
     if(emails.length>=fetchOptions.maxTotalResults)break;
-    console.log('IMAP window:',JSON.stringify(win));
+    console.log('Gmail window:',JSON.stringify(win));
     let batch;
-    try{
-      batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
-        maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
-    }catch(err){
-      console.error('IMAP read error:',privacy.redact(err.message));
-      batch=null;
+    let mode=null;
+    if(hasImapCredentials&&imap){
+      try{
+        batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
+          maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+      }catch(err){
+        console.error('IMAP read error:',privacy.redact(err.message));
+        batch=null;
+      }
+      if(Array.isArray(batch))mode='imap';
+      else{
+        imapConnectionFailed=true;
+        if(batch!==null)console.error('IMAP returned an invalid response; trying OAuth fallback if available');
+      }
     }
-    if(batch===null){
-      imapConnectionFailed=true;
-      continue;
+    if(!Array.isArray(batch)&&hasOAuthCredentials&&oauth){
+      console.log('OAuth fallback window:',JSON.stringify(win));
+      try{
+        batch=await oauth.readViaOAuth({afterDate:win.since,untilDate:win.until,
+          maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+        if(Array.isArray(batch))mode='oauth';
+        else oauthConnectionFailed=true;
+      }catch(err){
+        oauthConnectionFailed=true;
+        batch=null;
+        console.error('OAuth read error:',privacy.redact(err.message));
+      }
     }
     if(!Array.isArray(batch)){
-      imapConnectionFailed=true;
-      console.error('IMAP returned an invalid response; refusing to treat this as an empty mailbox');
       continue;
     }
+    modesUsed.add(mode||'unknown');
     for(const em of batch){
       if(seenEmailIds.has(em.id))continue;
       seenEmailIds.add(em.id);
@@ -477,23 +499,30 @@ async function main(){
       if(emails.length>=fetchOptions.maxTotalResults)break;
     }
   }
-  if(imapConnectionFailed&&!emails.length){
-    const msg='IMAP connection failed before diagnostics could be fetched. Refresh the Gmail app credential, then rerun Gmail Diagnostics.';
-    console.error('::error::IMAP connection failed before diagnostics could be fetched. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD secrets, then rerun Gmail Diagnostics.');
-    writeAccessFailureReport(fetchOptions,'imap_connection_failed',msg,{windows:windows.length,fetched:0});
+  if((imapConnectionFailed||oauthConnectionFailed)&&!emails.length){
+    const code=hasOAuthCredentials?'gmail_auth_failed':'imap_connection_failed';
+    const msg=hasOAuthCredentials
+      ? 'IMAP and OAuth Gmail access both failed before diagnostics could be fetched. Refresh Gmail IMAP app password and OAuth refresh token secrets, then rerun Gmail Diagnostics.'
+      : 'IMAP connection failed before diagnostics could be fetched. Refresh the Gmail app credential, then rerun Gmail Diagnostics.';
+    console.error('::error::Gmail diagnostics could not authenticate. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, if using OAuth fallback, GMAIL_REFRESH_TOKEN secrets.');
+    writeAccessFailureReport(fetchOptions,code,msg,{windows:windows.length,fetched:0,mode:hasOAuthCredentials?'imap+oauth':'imap'});
     process.exit(1);
   }
   if(imapConnectionFailed){
-    console.log('::warning::At least one IMAP window failed, but diagnostics were fetched from another window.');
+    console.log('::warning::At least one IMAP window failed, but diagnostics were fetched via',Array.from(modesUsed).join('+')||'fallback');
   }
-  if(!emails||!emails.length){console.log('No emails retrieved via IMAP');process.exit(0)}
-  console.log('IMAP OK:',emails.length,'emails across',windows.length,'window(s)');
+  if(oauthConnectionFailed&&hasOAuthCredentials&&!modesUsed.has('oauth')){
+    console.log('::warning::OAuth fallback did not fetch diagnostics.');
+  }
+  if(!emails||!emails.length){console.log('No emails retrieved via Gmail diagnostics');process.exit(0)}
+  const successMode=Array.from(modesUsed).join('+')||'unknown';
+  console.log('Gmail diagnostics OK:',emails.length,'emails across',windows.length,'window(s), mode:',successMode);
 
-  // Track IMAP health (replaces old OAuth health tracking)
+  // Track Gmail diagnostics health.
   const HF=path.join(SD,'gmail-token-health.json');
   try{
-    const h={mode:'imap',lastOk:new Date().toISOString(),consecutiveFails:0,emailsFetched:emails.length,
-      checks:[{time:new Date().toISOString(),ok:true,mode:'imap',windows:windows.length}]};
+    const h={mode:successMode,lastOk:new Date().toISOString(),consecutiveFails:0,emailsFetched:emails.length,
+      checks:[{time:new Date().toISOString(),ok:true,mode:successMode,windows:windows.length}]};
     const safeHealth=privacy.redactObject(h);privacy.assertNoLeaks(safeHealth,HF);
     fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(HF,JSON.stringify(safeHealth,null,2));
   }catch{}
@@ -582,7 +611,7 @@ async function main(){
   const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
   const history=analyzeHistory(res);
   const report=privacy.redactObject({timestamp:st.lastCheck,count:res.length,
-    run:runSummary(fetchOptions,{fetched:emails.length,skippedAlreadyProcessed}),
+    run:runSummary(fetchOptions,{fetched:emails.length,skippedAlreadyProcessed,authMode:successMode}),
     byType:bt,newFingerprints:newFPs,history,deepResearch:impl,diagnostics:res});
   privacy.assertNoLeaks(report,RF);
   fs.writeFileSync(RF,JSON.stringify(report,null,2));
@@ -600,6 +629,7 @@ async function main(){
     yml+='  since: '+(fetchOptions.since||'rolling-30-days')+'\n';
     yml+='  until: '+(fetchOptions.until||'now')+'\n';
     yml+='  max_results: '+fetchOptions.maxResults+'\n';
+    yml+='  auth_mode: '+successMode+'\n';
     yml+='  max_total_results: '+fetchOptions.maxTotalResults+'\n';
     yml+='  chunk_days: '+fetchOptions.chunkDays+'\n';
     yml+='  reprocess: '+fetchOptions.reprocess+'\n';
@@ -742,7 +772,7 @@ async function main(){
   }catch(ye){console.log('YAML output error:',ye.message)}
 
 if(process.env.GITHUB_STEP_SUMMARY){
-    let sm='## Gmail Diagnostics (IMAP)\n| Metric | Count |\n|---|---|\n';
+    let sm='## Gmail Diagnostics ('+successMode+')\n| Metric | Count |\n|---|---|\n';
     sm+='| Emails | '+res.length+' |\n| New FPs | '+newFPs.length+' |\n';
     sm+='| Skipped already processed | '+skippedAlreadyProcessed+' |\n';
     sm+='| Researched | '+impl.researched+' |\n| Auto-added | '+impl.added+' |\n';
