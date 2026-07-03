@@ -16,7 +16,7 @@ class BoilerSwitchEnergyDriver extends ZigBeeDriver {
       try {
         this.homey.flow.getDeviceTriggerCard(id);
       } catch (e) {
-        this.error(`Trigger ${id} registration error: ${e.message}`);
+        this.log(`[FLOW] Optional trigger ${id} not declared, skipping`);
       }
     }
 
