@@ -60,6 +60,11 @@
 - **Purpose**: Auto-publish draft when code is pushed to master
 - **Condition**: Only on master branch
 
+### auto-fix-and-publish.yml
+- **Trigger**: Push to master/stable-v5, schedule every 6 hours, manual dispatch
+- **Purpose**: Run self-healing checks, monitor Athom/Homey builds, and recover failed publish processing
+- **Recovery rule**: If the latest Athom build for the current `app.json` version is failed (`processing_failed`, `error`, `failed`, or `revoked`), the workflow bumps the patch version before republishing. This prevents invalid same-version republishes after transient Athom processor errors such as `socket hang up`.
+
 ### draft-to-test.yml
 - **Trigger**: Manual dispatch
 - **Purpose**: Promote draft version to test channel
