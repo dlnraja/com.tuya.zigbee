@@ -211,7 +211,7 @@ function readDashboardReport(expectedVersion) {
   const failedCurrent = [expectedBuild, latest, latestFailed]
     .filter(Boolean)
     .find(build => normalizeVersion(build.version) === normalizeVersion(expectedVersion)
-      && build.state && build.state !== 'test');
+      && build.state && String(build.state).toLowerCase() !== 'test');
   if (failedCurrent) {
     const detail = failedCurrent.failureDetail || failedCurrent.stateMeta || 'no failure detail returned by Athom API';
     log(`Dashboard monitor reports v${expectedVersion} ${failedCurrent.state} build #${failedCurrent.id || '?'} (${detail})`);

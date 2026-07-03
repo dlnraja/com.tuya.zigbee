@@ -17,7 +17,11 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 
   get switchCapabilities() {
     const { subDeviceId } = (typeof this.getData === 'function' && this.getData()) || {};
-    return subDeviceId ? ['onoff'] : super.switchCapabilities;
+    if (subDeviceId) { return ['onoff']; }
+    return [
+      ...super.switchCapabilities,
+      ...Array.from({ length: this.gangCount }, (_, index) => `button.${index + 1}`),
+    ];
   }
 
   get dpMappings() {
@@ -54,6 +58,9 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
       await super.onNodeInit({ zclNode });
       await this.initVirtualButtons();
+      if (typeof this._registerButtonCapabilityListeners === 'function') {
+        this._registerButtonCapabilityListeners();
+      }
       this.log(`[WALL-4G] v9.7.3 - Unified initialization complete for Gang ${this._gangNumber}`);
     }, 'onNodeInit');
   }

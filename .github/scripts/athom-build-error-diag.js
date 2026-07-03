@@ -63,8 +63,9 @@ function isFailedBuild(build) {
 }
 
 function chooseFailedBuild(builds) {
+  if (!Array.isArray(builds)) return null;
   const currentVersion = normalizeVersion(APP_VER);
-  return [...builds].filter(isFailedBuild).sort((a, b) => {
+  return builds.filter(isFailedBuild).sort((a, b) => {
     const aCurrent = normalizeVersion(a.version) === currentVersion ? 1 : 0;
     const bCurrent = normalizeVersion(b.version) === currentVersion ? 1 : 0;
     if (aCurrent !== bCurrent) return bCurrent - aCurrent;

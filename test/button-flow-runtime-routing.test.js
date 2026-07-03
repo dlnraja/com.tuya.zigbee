@@ -98,10 +98,15 @@ describe('button flow runtime routing guards', function() {
 
       assert.doesNotMatch(source, /super\.triggerButtonPress/);
       assert.match(source, new RegExp(`get gangCount\\(\\) \\{ return ${gangCount}; \\}`));
-      assert.match(
-        source,
-        /get switchCapabilities\s*\(\)\s*\{\s*const\s*\{\s*subDeviceId\s*\}\s*=\s*\(typeof\s+this\.getData\s*===\s*['"]function['"]\s*&&\s*this\.getData\(\)\)\s*\|\|\s*\{\};?\s*return\s+subDeviceId\s*\?\s*\[\s*['"]onoff['"]\s*\]\s*:\s*super\.switchCapabilities;?\s*\}/
-      );
+      assert.match(source, /if \(subDeviceId\) \{ return \['onoff'\]; \}/);
+      assert.match(source, /\.\.\.super\.switchCapabilities/);
+      assert.match(source, /Array\.from\(\{ length: this\.gangCount \}/);
+      assert.match(source, /button\.\$\{index \+ 1\}/);
+      assert.match(source, /this\._registerButtonCapabilityListeners\(\)/);
+
+      const driverSource = read('drivers/' + driverId + '/driver.js');
+      assert.match(driverSource, /BaseZigBeeDriver/);
+      assert.match(driverSource, /extends BaseZigBeeDriver/);
       assert.match(source, /this\._isSubDevice = Boolean\(subDeviceId\)/);
       assert.match(source, /if \(this\._isSubDevice && this\._gangNumber !== undefined && button !== this\._gangNumber\)/);
       assert.match(source, /const targetGang = this\._isSubDevice \? this\._gangNumber : gang/);
@@ -122,6 +127,7 @@ describe('button flow runtime routing guards', function() {
   it('routes mixed switch button UI and flow actions through real gang commands', async function() {
     const switchBase = read('lib/devices/UnifiedSwitchBase.js');
     const flowHelper = read('lib/drivers/FlowGangControl.js');
+    const baseDriver = read('lib/drivers/BaseZigBeeDriver.js');
     const drivers = [
       'drivers/switch_2gang/driver.js',
       'drivers/switch_3gang/driver.js',
@@ -134,8 +140,14 @@ describe('button flow runtime routing guards', function() {
     assert.match(switchBase, /_registerButtonCapabilityListeners\(\)/);
     assert.match(switchBase, /this\.registerCapabilityListener\(capability, async \(\) =>/);
     assert.match(switchBase, /this\._triggerPhysicalFlow\(gang, 'single', \{ source: 'virtual', _internalTrigger: true \}\)/);
-    assert.match(switchBase, /await this\._setGangOnOff\(gang, !currentValue\)/);
+    assert.match(switchBase, /await setGangOnOff\(this, gang, 'toggle'\)/);
+    assert.match(switchBase, /throw dpErr/);
+    assert.match(switchBase, /throw e/);
     assert.match(flowHelper, /device\._setGangOnOff\(gang, nextValue\)/);
+    assert.match(flowHelper, /isMissingCapabilityListenerError/);
+    assert.match(baseDriver, /'wall_switch_2gang'/);
+    assert.match(baseDriver, /'wall_switch_3gang'/);
+    assert.match(baseDriver, /'wall_switch_4gang'/);
 
     for (const driver of drivers) {
       const source = read(driver);
@@ -160,6 +172,21 @@ describe('button flow runtime routing guards', function() {
     await setGangOnOff(fakeDevice, 2, 'toggle');
     assert.deepStrictEqual(commands, [[2, false]]);
     assert.strictEqual(values['onoff.gang2'], false);
+
+    const fallbackValues = { onoff: false };
+    const missingListenerDevice = {
+      hasCapability: cap => Object.prototype.hasOwnProperty.call(fallbackValues, cap),
+      getCapabilityValue: cap => fallbackValues[cap],
+      triggerCapabilityListener: async () => { throw new Error('Missing Capability Listener: onoff'); },
+      setCapabilityValue: async (cap, value) => { fallbackValues[cap] = value; },
+    };
+    await setGangOnOff(missingListenerDevice, 1, true);
+    assert.strictEqual(fallbackValues.onoff, true);
+
+    const offlineDevice = {
+      triggerCapabilityListener: async () => { throw new Error('Zigbee timeout'); },
+    };
+    await assert.rejects(() => setGangOnOff(offlineDevice, 1, true), /Zigbee timeout/);
 
     await setAllGangsOnOff(fakeDevice, 2, true);
     assert.deepStrictEqual(commands.slice(-2), [[1, true], [2, true]]);

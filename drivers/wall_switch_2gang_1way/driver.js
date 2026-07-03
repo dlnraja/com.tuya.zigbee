@@ -1,13 +1,13 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangControl');
 
 /**
  * Wall Switch 2-Gang 1-Way Driver (BSEED Sub-Device)
  * v5.8.73: PacketNinja sub-device architecture — each gang = separate Homey device card
  */
-class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
+class WallSwitch2Gang1WayDriver extends BaseZigBeeDriver {
 
   async onInit() {
     this.log('Wall Switch 2-Gang 1-Way Driver initialized');
@@ -101,11 +101,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) {return false;}
-            try {
-              await setGangOnOff(args.device, ep, val);
-            } catch (e) {
-              args.device.error('Flow Action Error:', e);
-            }
+            await setGangOnOff(args.device, ep, val);
             return true;
           });
         }
