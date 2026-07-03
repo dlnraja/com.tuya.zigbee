@@ -5270,9 +5270,8 @@ const tuyaModernExtend = {
 
                 entity
                     .command("manuSpecificTuya", "tuyaWeatherSync", {payload: pld})
-                    .catch(
-                        (error) => () =>
-                            logger.warning(`Failed to sync weather for '${utils.isGroup(entity) ? entity.groupID : entity.ID}' (${error})`, NS),
+                    .catch((error) =>
+                        logger.warning(() => `Failed to sync weather for '${utils.isGroup(entity) ? entity.groupID : entity.ID}' (${error})`, NS),
                     );
 
                 return {state: {[key]: value}};
