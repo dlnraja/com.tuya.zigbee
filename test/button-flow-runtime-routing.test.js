@@ -118,4 +118,52 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /await this\.triggerButtonPress\(i, 'single', 1, \{ source: 'virtual' \}\)/);
     assert.match(source, /await this\._triggerPhysicalFlow\?\.\(i, 'single', \{ source: 'virtual', _internalTrigger: true \}\)/);
   });
+
+  it('routes mixed switch button UI and flow actions through real gang commands', async function() {
+    const switchBase = read('lib/devices/UnifiedSwitchBase.js');
+    const flowHelper = read('lib/drivers/FlowGangControl.js');
+    const drivers = [
+      'drivers/switch_2gang/driver.js',
+      'drivers/switch_3gang/driver.js',
+      'drivers/switch_4gang/driver.js',
+      'drivers/wall_switch_2gang_1way/driver.js',
+      'drivers/wall_switch_3gang_1way/driver.js',
+      'drivers/wall_switch_4gang_1way/driver.js',
+    ];
+
+    assert.match(switchBase, /_registerButtonCapabilityListeners\(\)/);
+    assert.match(switchBase, /this\.registerCapabilityListener\(capability, async \(\) =>/);
+    assert.match(switchBase, /this\._triggerPhysicalFlow\(gang, 'single', \{ source: 'virtual', _internalTrigger: true \}\)/);
+    assert.match(switchBase, /await this\._setGangOnOff\(gang, !currentValue\)/);
+    assert.match(flowHelper, /device\._setGangOnOff\(gang, nextValue\)/);
+
+    for (const driver of drivers) {
+      const source = read(driver);
+      assert.match(source, /FlowGangControl/);
+      assert.doesNotMatch(source, /\['setCapabilityValue'\]\(cap/);
+    }
+
+    const { setGangOnOff, setAllGangsOnOff } = require('../lib/drivers/FlowGangControl');
+    const commands = [];
+    const values = { onoff: false, 'onoff.gang2': true };
+    const fakeDevice = {
+      hasCapability: cap => Object.prototype.hasOwnProperty.call(values, cap),
+      getCapabilityValue: cap => values[cap],
+      _setGangOnOff: async (gang, value) => {
+        commands.push([gang, value]);
+      },
+      setCapabilityValue: async (cap, value) => {
+        values[cap] = value;
+      },
+    };
+
+    await setGangOnOff(fakeDevice, 2, 'toggle');
+    assert.deepStrictEqual(commands, [[2, false]]);
+    assert.strictEqual(values['onoff.gang2'], false);
+
+    await setAllGangsOnOff(fakeDevice, 2, true);
+    assert.deepStrictEqual(commands.slice(-2), [[1, true], [2, true]]);
+    assert.strictEqual(values.onoff, true);
+    assert.strictEqual(values['onoff.gang2'], true);
+  });
 });

@@ -60,6 +60,7 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Fetch Diagnostics from Gmail
+        id: gmail_fetch
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -73,14 +74,24 @@ jobs:
           GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
           GMAIL_DIAG_AI_MAX: "0"
           DRY_RUN: "true"
-        run: node .github/scripts/fetch-gmail-diagnostics.js
+        run: |
+          set +e
+          node .github/scripts/fetch-gmail-diagnostics.js
+          code=$?
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -ne 0 ]; then
+            echo "::warning::Gmail diagnostics fetch failed with exit code $code; privacy gates and sanitized state commit will still run."
+          fi
+          exit 0
 
       - name: Privacy and diagnostic gates
+        if: always()
         run: |
           node .github/scripts/privacy-redactor.js .github/state/diagnostics-state.json .github/state/diagnostics-report.json .github/state/gmail-token-health.json .github/state/diagnostics-crossref.yml diagnostics
           npm run check:diag-history
 
       - name: Commit and Push changes
+        if: always()
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -92,3 +103,9 @@ jobs:
           else
             echo "No sanitized diagnostic state changes to push"
           fi
+
+      - name: Assert Gmail diagnostics access
+        if: always() && steps.gmail_fetch.outputs.exit_code != '0'
+        run: |
+          echo "::error::Gmail diagnostics could not authenticate via IMAP. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD secrets, then rerun Fetch Homey Diagnostics."
+          exit 1
