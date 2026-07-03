@@ -14,7 +14,6 @@ async function main(){
 
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
-  let failed=false;
 
   if(!e||!p){
     console.error('IMAP credentials missing.');
@@ -28,7 +27,8 @@ async function main(){
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
     health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exit(1);
+    process.exitCode = 1;
+    return;
   }
 
   if(!imap){
@@ -37,7 +37,8 @@ async function main(){
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
     health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exit(1);
+    process.exitCode = 1;
+    return;
   }
 
   console.log('IMAP health check — connecting as',privacy.alias('account',e));
@@ -59,7 +60,7 @@ async function main(){
       throw new Error('IMAP returned null — connection failed');
     }
   }catch(err){
-    failed=true;
+    process.exitCode = 1;
     console.error('IMAP FAILED:',privacy.redact(err.message));
     health.checks=(health.checks||[]).concat({time:now,ok:false,err:privacy.redact(err.message)}).slice(-30);
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
@@ -77,6 +78,13 @@ async function main(){
   health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
   fs.writeFileSync(HF,JSON.stringify(health,null,2));
   console.log('Health saved. Mode: imap | Consecutive fails:',health.consecutiveFails);
-  if(failed) process.exit(1);
 }
-main().catch(e=>{console.error(e.message);process.exit(1)});
+main()
+  .then(() => {
+    if (process.exitCode) setImmediate(() => process.exit(process.exitCode));
+  })
+  .catch(e => {
+    console.error(e.message);
+    process.exitCode = 1;
+    setImmediate(() => process.exit(process.exitCode));
+  });

@@ -453,7 +453,11 @@ jobs:
           fi
           git fetch origin master
           if ! git merge-base --is-ancestor origin/master HEAD; then
-            git rebase origin/master
+            if ! git rebase -X ours origin/master; then
+              echo "::warning::Generated publish metadata conflicted with origin/master; dropping metadata commit and keeping origin/master."
+              git rebase --abort || true
+              git reset --hard origin/master
+            fi
           else
             echo "origin/master is already an ancestor of HEAD; skipping rebase"
           fi
