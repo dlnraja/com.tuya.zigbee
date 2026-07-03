@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangControl');
 
 class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
   async onInit() {
@@ -58,9 +59,9 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
 
     // Virtual control
     const simpleActions = [
-      { id: `${P}_turn_on`, fn: async (d) => { await d['setCapabilityValue']('onoff', true); } },
-      { id: `${P}_turn_off`, fn: async (d) => { await d['setCapabilityValue']('onoff', false); } },
-      { id: `${P}_toggle`, fn: async (d) => { const v = d.getCapabilityValue('onoff'); await d['setCapabilityValue']('onoff', !v); } },
+      { id: `${P}_turn_on`, fn: async (d) => setGangOnOff(d, 1, true) },
+      { id: `${P}_turn_off`, fn: async (d) => setGangOnOff(d, 1, false) },
+      { id: `${P}_toggle`, fn: async (d) => setGangOnOff(d, 1, 'toggle') },
     ];
 
     for (const { id, fn } of simpleActions) {
@@ -97,13 +98,8 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) {return false;}
-            const cap = ep === 1 ? 'onoff' : `onoff.gang${  ep}`;
             try {
-              if (val === 'toggle') {
-                await args.device['setCapabilityValue'](cap, !args.device.getCapabilityValue(cap));
-              } else {
-                await args.device['setCapabilityValue'](cap, val);
-              }
+              await setGangOnOff(args.device, ep, val);
             } catch (e) {
               args.device.error('Flow Action Error:', e);
             }
@@ -127,11 +123,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) {return false;}
-            const numGangs = 3;
-            for (let ep = 1; ep <= numGangs; ep++) {
-              const cap = ep === 1 ? 'onoff' : `onoff.gang${  ep}`;
-              await args.device['setCapabilityValue'](cap, val).catch(() => {});
-            }
+            await setAllGangsOnOff(args.device, 3, val);
             return true;
           });
         }
