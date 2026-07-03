@@ -104,6 +104,7 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
       assert(includesCI(source.zigbee.manufacturerName, '_TZE284_myd45weu'));
       assert(includesCI(source.zigbee.manufacturerName, '_TZE200_myd45weu'));
       assert(includesCI(source.zigbee.productId, 'TS0601'));
+      assert(source.capabilities.includes('measure_humidity.soil'), `${soilDriverId} must expose soil moisture`);
       assert(source.capabilities.includes('measure_battery'), `${soilDriverId} must expose measure_battery`);
     }
 
@@ -184,7 +185,7 @@ describe('TS0601 _TZE284/_TZE200_myd45weu soil sensor routing', () => {
 
   it('keeps runtime fingerprints and DP meanings aligned with the soil profile', () => {
     const soilDriverId = findPrimarySoilDriver();
-    const humidityCapability = soilDriverId === 'soilsensor_2' ? 'measure_humidity' : 'measure_humidity.soil';
+    const humidityCapability = 'measure_humidity.soil';
 
     assertRuntimeFingerprint('lib/tuya/fingerprints.json', soilDriverId, humidityCapability);
     assertRuntimeFingerprint('data/fingerprints.json', soilDriverId, humidityCapability);
