@@ -399,6 +399,9 @@ jobs:
             for path in app.json .homeycompose .homeychangelog.json CHANGELOG.md README.md docs .github/scripts/_stats.json package.json package-lock.json; do
               [ -e "$path" ] && git add "$path"
             done
+            for path in drivers/*/driver.compose.json; do
+              [ -e "$path" ] && git add "$path"
+            done
           }
           node scripts/maintenance/sanitize-manifest.cjs app.json .homeybuild/app.json || true
           node <<'NODE'
