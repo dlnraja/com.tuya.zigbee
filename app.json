@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "9.0.172",
+  "version": "9.0.173",
   "compatibility": ">=12.2.0",
   "platforms": [
     "local"
@@ -124966,9 +124966,7 @@
           "_tz3210_taw0fc13",
           "_TZ3210_V5YQUXMA",
           "_tz3210_wuheyhvm",
-          "_TZ3210_YLUVWHJC",
-          "_TZ3000_9CPUACA6",
-          "_TZ3000_DBOU1AP4"
+          "_TZ3210_YLUVWHJC"
         ],
         "productId": [
           "TS0501A",
@@ -125699,8 +125697,6 @@
           "_TZ3210_DDIGCA5N",
           "_TZ3210_JLF1NEPW",
           "_TZ3210_RWMITWJ4",
-          "_tz3000_riwp3k79",
-          "_tz3000_kdpxju99",
           "LUMI.LIGHT.CWOPCN02",
           "LUMI.LIGHT.CWOPCN03"
         ]
@@ -127643,9 +127639,7 @@
         },
         "manufacturerName": [
           "_tz3210_ngqk6jia",
-          "_tz3210_p9ao60da",
-          "_tz3000_obacbukl",
-          "_tz3000_kdpxju99"
+          "_tz3210_p9ao60da"
         ]
       },
       "settings": [
@@ -154679,10 +154673,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3210_invesber",
-          "_TZ3000_DBOU1AP4"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0502B"
         ],
@@ -166634,16 +166625,11 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_DBOU1AP4",
           "_tz3000_sosdczdl",
           "_tz3000_evag0pvn",
           "_TZ3000_RYLAOZUC",
           "_TZ3000_5FKUFHN1",
-          "_TZ3000_ZW7WR5UO",
-          "_tz3000_oborybow",
-          "_TZ3000_9CPUACA6",
-          "_tz3000_kdpxju99",
-          "_tz3000_riwp3k79"
+          "_TZ3000_ZW7WR5UO"
         ],
         "productId": [
           "TS0601",
@@ -168588,12 +168574,8 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_tz3210_iystcadi",
           "_tzb210_ngnt8kni",
           "_tzb210_endmggws",
-          "_tz3000_obacbukl",
-          "_tz3000_riwp3k79",
-          "_tz3210_r0xgkft5",
           "_tz3210_p9ao60da",
           "_TZ3000_iystcadi"
         ],
@@ -168681,7 +168663,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3210_iystcadi",
           "_tzb210_3dxbg9ks",
           "_TZ3000_iystcadi"
         ],
@@ -168754,7 +168735,6 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_tz3210_iystcadi",
           "_TZ3000_iystcadi"
         ],
         "productId": [
@@ -169876,7 +169856,6 @@
           "_tz3210_bcplf4ds",
           "_tz3210_dxrjkpi6",
           "_tz3210_h1zvcpwd",
-          "_tz3210_iystcadi",
           "_tz3210_jkbdrvvf",
           "_tz3210_ksqwlz9v",
           "_tz3210_lezkafxf",
@@ -169897,7 +169876,6 @@
           "_TZ3000_RYLAOZUC",
           "_TZ3000_5FKUFHN1",
           "_TZ3000_ZW7WR5UO",
-          "_tz3210_zdrhqmo0",
           "_TZ3000_iystcadi"
         ],
         "productId": [
@@ -170314,19 +170292,14 @@
           "_tz3210_95txyzbx",
           "_tz3210_dse8ogfy",
           "_tz3210_emqmwtym",
-          "_tz3210_k1pe6ibm",
           "_tz3290_gnl5a6a5",
           "_tzb210_aavhaadb",
           "_tzb210_g01ie5wu",
           "_tzb210_quinzf3w",
-          "_tz3000_obacbukl",
           "_TZB210_lmqquxus",
           "_tz3210_778drfdt",
-          "_tz3000_keabpigv",
-          "_tz3210_zdrhqmo0",
           "_tz3000_4g7vxuqk",
           "_tz3000_mn9k8nhm",
-          "_tz3000_oborybow",
           "_tz3000_rnnzvseu",
           "_tz3210_quinzf3w",
           "_TZ3210_keabpigv"
@@ -170844,11 +170817,7 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_utagpnzs",
-          "_tz3000_5bsf8vaj",
-          "_tz3210_invesber"
-        ],
+        "manufacturerName": [],
         "endpoints": {
           "1": {
             "clusters": [
@@ -171853,7 +171822,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_keabpigv",
           "_TZ3210_keabpigv",
           "_tyzb01_keabpigv",
           "_tz3000_9fvm3mis",
@@ -175719,7 +175687,6 @@
           "_tz3000_7issjl2q",
           "_tz3000_dd8wwzcy",
           "_tz3000_hhiodez3",
-          "_tz3000_i8l0nqdu",
           "_tz3000_iksasdbv",
           "_tz3000_jvzvulen",
           "_tz3000_lelb6ejs",
@@ -185530,8 +185497,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_12sxjap4",
-          "_tz3000_hlijwsai",
           "_TZ3000_qd7hej8u",
           "_TZ3210_mja6r5ix",
           "_TZ3000_q50zhdsc",
@@ -185765,7 +185730,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_gek6snaj",
-          "_tz3210_iystcadi",
           "_TZ3000_iystcadi"
         ],
         "productId": [
@@ -185841,9 +185805,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_DBOU1AP4"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0505A"
         ],
@@ -185919,7 +185881,6 @@
         "manufacturerName": [
           "_TZ3000_dl4pxp1r",
           "_TZ3000_qqjaziws",
-          "_tz3000_i8l0nqdu",
           "_TZ3000_ukuvyhaa",
           "_tz3210_eejm8dcr"
         ],
@@ -185998,10 +185959,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_9cpuaca6",
-          "_tz3210_r0xgkft5"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0505A",
           "TS0505B"
@@ -186226,10 +186184,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_utagpnzs",
-          "_tz3000_5bsf8vaj"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0505A"
         ],
@@ -213841,9 +213796,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_oborybow"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0502A"
         ],
@@ -214612,17 +214565,12 @@
           "SUNRICHER",
           "XIAOMI",
           "ZEMISMART",
-          "_TZ3210_invesber",
-          "_TZ3210_zdrhqmo0",
           "_TZ3000_dbou1ap4",
           "_TZ3000_keabpigv",
           "_TZ3000_12sxjap4",
           "_TZ3000_hlijwsai",
-          "_TZ3210_iystcadi",
           "_TZ3000_riwp3k79",
-          "_TZ3000_obacbukl",
           "_TZ3000_i8l0nqdu",
-          "_TZ3210_k1pe6ibm",
           "_TZ3000_9cpuaca6",
           "_TZ3210_r0xgkft5",
           "_TZ3000_kdpxju99",
