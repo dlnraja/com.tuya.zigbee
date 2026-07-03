@@ -2,6 +2,7 @@
 'use strict';
 
 const privacy = require('./privacy-redactor');
+const { fetchWithRetry } = require('./retry-helper');
 const {
   parseMIME,
   htmlToText,
@@ -114,22 +115,25 @@ async function refreshAccessToken() {
     grant_type: 'refresh_token'
   });
 
-  const res = await fetch(TOKEN_URL, {
+  const res = await fetchWithRetry(TOKEN_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: params.toString()
-  });
+  }, { retries: 2, label: 'oauthTokenRefresh' });
 
   if (!res.ok) {
     const errText = privacy.redact(await res.text());
     throw new Error(`OAuth token refresh failed: ${res.status} ${errText}`);
   }
   const data = await res.json();
+  if (!data || !data.access_token) {
+    throw new Error('OAuth token refresh response did not contain an access_token');
+  }
   return data.access_token;
 }
 
 async function gmailGet(accessToken, url) {
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+  const res = await fetchWithRetry(url, { headers: { Authorization: `Bearer ${accessToken}` } }, { retries: 2, label: 'gmailApi' });
   if (!res.ok) {
     const errText = privacy.redact(await res.text());
     throw new Error(`Gmail API request failed: ${res.status} ${errText}`);
@@ -146,8 +150,10 @@ async function searchMessages(accessToken, query, remaining) {
     url.searchParams.set('maxResults', String(Math.min(500, remaining - out.length)));
     if (pageToken) url.searchParams.set('pageToken', pageToken);
     const data = await gmailGet(accessToken, url.toString());
-    out.push(...(data.messages || []));
-    pageToken = data.nextPageToken || null;
+    const messages = (data && data.messages) || [];
+    if (messages.length === 0) break;
+    out.push(...messages);
+    pageToken = (data && data.nextPageToken) || null;
   } while (pageToken && out.length < remaining);
   return out.slice(0, remaining);
 }
@@ -159,11 +165,15 @@ async function getRawMessage(accessToken, id) {
 
 function toEmailRecord(message) {
   const raw = base64UrlDecode(message.raw || '');
-  const mime = parseMIME(raw);
+  const mime = parseMIME(raw) || {};
   const headers = mime.headers || {};
   const subject = decodeRFC2047(headers.subject || message.snippet || '');
   const fromParsed = parseFromHeader(headers.from || '');
-  const date = headers.date ? new Date(headers.date).toISOString() : '';
+  let date = '';
+  if (headers.date) {
+    const parsedDate = new Date(headers.date);
+    if (Number.isFinite(parsedDate.getTime())) date = parsedDate.toISOString();
+  }
   let body = subject;
   let contentType = 'unknown';
   if (mime.textPlain && mime.textPlain.trim().length > 10) {

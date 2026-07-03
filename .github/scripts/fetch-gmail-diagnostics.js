@@ -458,7 +458,7 @@ async function main(){
   const modesUsed=new Set();
   for(const win of windows){
     if(emails.length>=fetchOptions.maxTotalResults)break;
-    console.log('IMAP window:',JSON.stringify(win));
+    console.log('Gmail window:',JSON.stringify(win));
     let batch;
     let mode=null;
     if(hasImapCredentials&&imap){
@@ -474,8 +474,6 @@ async function main(){
         imapConnectionFailed=true;
         if(batch!==null)console.error('IMAP returned an invalid response; trying OAuth fallback if available');
       }
-    }else{
-      imapConnectionFailed=true;
     }
     if(!Array.isArray(batch)&&hasOAuthCredentials&&oauth){
       console.log('OAuth fallback window:',JSON.stringify(win));
@@ -491,7 +489,6 @@ async function main(){
       }
     }
     if(!Array.isArray(batch)){
-      if(!hasOAuthCredentials)oauthConnectionFailed=true;
       continue;
     }
     modesUsed.add(mode||'unknown');
@@ -502,7 +499,7 @@ async function main(){
       if(emails.length>=fetchOptions.maxTotalResults)break;
     }
   }
-  if(imapConnectionFailed&&!emails.length){
+  if((imapConnectionFailed||oauthConnectionFailed)&&!emails.length){
     const code=hasOAuthCredentials?'gmail_auth_failed':'imap_connection_failed';
     const msg=hasOAuthCredentials
       ? 'IMAP and OAuth Gmail access both failed before diagnostics could be fetched. Refresh Gmail IMAP app password and OAuth refresh token secrets, then rerun Gmail Diagnostics.'
