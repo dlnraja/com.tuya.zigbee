@@ -13,6 +13,7 @@
   ],
   "capabilities": [
     "measure_temperature",
+    "measure_humidity.soil",
     "measure_humidity",
     "measure_battery",
     "button.1"
@@ -65,6 +66,14 @@
       "maintenanceAction": true,
       "getable": false,
       "setable": false
+    },
+    "measure_humidity.soil": {
+      "title": {
+        "en": "Soil Moisture",
+        "fr": "Humidite du Sol",
+        "nl": "Bodemvochtigheid",
+        "de": "Bodenfeuchtigkeit"
+      }
     }
   }
 }

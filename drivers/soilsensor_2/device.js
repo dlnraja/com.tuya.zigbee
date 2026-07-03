@@ -78,6 +78,7 @@ class soilsensor2 extends TuyaSpecificClusterDevice {
     switch (dp) {
       case dataPoints.humidity:
         this.log("Humidity: " + value);
+        await this._safeSetSoilCapability('measure_humidity.soil', value);
         await this._safeSetSoilCapability('measure_humidity', value);
         break;
 
