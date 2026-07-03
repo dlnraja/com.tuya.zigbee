@@ -40,7 +40,6 @@ jobs:
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: IMAP health check
-        continue-on-error: true
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
