@@ -42,6 +42,43 @@ function log(m) {
   if (SUM) try { fs.appendFileSync(SUM, m+'\n'); } catch { /* ponytail: best-effort summary */ }
 }
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+const FAILED_BUILD_STATES = new Set(['processing_failed', 'error', 'revoked']);
+
+function normalizeVersion(version) {
+  return String(version || '').replace(/^v/i, '');
+}
+
+function buildIdNumber(build) {
+  const id = build?.id || build?.buildId || build?._id || 0;
+  const n = Number(id);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function buildTimestamp(build) {
+  return Date.parse(build?.stateChangedAt || build?.state_changed_at || build?.createdAt || build?.created_at || '') || 0;
+}
+
+function isFailedBuild(build) {
+  return FAILED_BUILD_STATES.has(String(build?.state || '').toLowerCase());
+}
+
+function chooseFailedBuild(builds) {
+  const currentVersion = normalizeVersion(APP_VER);
+  return [...builds].filter(isFailedBuild).sort((a, b) => {
+    const aCurrent = normalizeVersion(a.version) === currentVersion ? 1 : 0;
+    const bCurrent = normalizeVersion(b.version) === currentVersion ? 1 : 0;
+    if (aCurrent !== bCurrent) return bCurrent - aCurrent;
+    const at = buildTimestamp(a);
+    const bt = buildTimestamp(b);
+    if (at !== bt) return bt - at;
+    return buildIdNumber(b) - buildIdNumber(a);
+  })[0] || null;
+}
+
+function buildLabel(build) {
+  if (!build) return 'unknown build';
+  return `#${build.id || build.buildId || build._id || '?'} (state=${build.state || '?'}, v${build.version || '?'})`;
+}
 
 async function snap(page, name) {
   const dir = path.join(__dirname,'..','..','screenshots');
@@ -244,11 +281,11 @@ async function main() {
       const api = new AthomAppsAPI({ token });
       const builds = await api.getBuilds({ $token: token, appId: APP_ID, query: { limit: 50 } });
       const list = Array.isArray(builds) ? builds : (builds.data || builds || []);
-      const failed = list.find(b => b.state === 'processing_failed' || b.state === 'error' || b.state === 'revoked');
+      const failed = chooseFailedBuild(list);
       if (failed) {
-        targetBuild = String(failed.id || failed.buildId);
+        targetBuild = String(failed.id || failed.buildId || failed._id);
         targetBuildInfo = failed;
-        log(`[STEP 0] Auto-detected latest failed build: #${targetBuild} (state=${failed.state}, v${failed.version})`);
+        log('[STEP 0] Auto-detected latest failed build: ' + buildLabel(failed));
       } else {
         log('[STEP 0] No failed build found in last 50 — nothing to diagnose.');
         return;
