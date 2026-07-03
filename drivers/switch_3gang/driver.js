@@ -1,6 +1,7 @@
 'use strict';
 
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
+const { setGangOnOff } = require('../../lib/drivers/FlowGangControl');
 
 class TuyaZigbeeDriver extends BaseZigBeeDriver {
 async onInit() {
@@ -43,8 +44,8 @@ async onInit() {
     // ACTIONS
     ['gang1', 'gang2', 'gang3'].forEach((gang, idx) => {
       try {
-        const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-        
+        const gangNumber = idx + 1;
+
         ['turn_on', 'turn_off', 'toggle'].forEach(action => {
           try {
             const id = `${P}_${action}_${gang}`;
@@ -52,8 +53,8 @@ async onInit() {
             if (card) {
               card.registerRunListener(async (args) => {
                 if (!args.device) {return false;}
-                const val = action === 'turn_on' ? true : action === 'turn_off' ? false : !args.device.getCapabilityValue(cap);
-                await args.device['setCapabilityValue'](cap, val);
+                const val = action === 'turn_on' ? true : action === 'turn_off' ? false : 'toggle';
+                await setGangOnOff(args.device, gangNumber, val);
                 return true;
               });
             }
