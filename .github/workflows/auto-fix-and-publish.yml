@@ -45,39 +45,19 @@ jobs:
         run: timeout 30 node scripts/automation/dashboard-monitor.js --latest || true
 
       - name: 📋 Check processing_failed builds
+        id: processing_check
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/processing-failure-republish-check.js
+
+      - name: 🔁 Bump version for Homey recovery publish
+        if: env.publish_recovery_requires_bump == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          BUMP_LEVEL: patch
+          HOMEY_CHANGELOG: ${{ env.publish_recovery_changelog || 'Stability improvements and Homey test publication retry.' }}
         run: |
-          # If last build is processing_failed, trigger a new publish
-          LAST_STATE=$(node -e "
-          const fs = require('fs');
-          const reportPath = './.github/state/dashboard-monitor-report.json';
-          if (!fs.existsSync(reportPath)) {
-            console.error('Dashboard report missing');
-            console.log('UNKNOWN');
-            process.exit(0);
-          }
-          const report = require(reportPath);
-          const ts = Date.parse(report.timestamp || '');
-          const maxAgeMs = Number(process.env.DASHBOARD_REPORT_MAX_AGE_MS || 30 * 60 * 1000);
-          if (!Number.isFinite(ts) || Date.now() - ts > maxAgeMs) {
-            console.error('Dashboard report stale or invalid timestamp:', report.timestamp || '(missing)');
-            console.log('STALE');
-            process.exit(0);
-          }
-          const latest = report.latestBuild || report.latestBuilds?.[0];
-          const failedStates = new Set(['processing_failed', 'error', 'failed', 'revoked']);
-          if ((report.currentStatus && report.currentStatus.latestIsFailed) || (latest && failedStates.has(latest.state))) {
-            console.log('FAILED');
-          } else {
-            console.log('OK');
-          }
-          " 2>/dev/null || echo "UNKNOWN")
-          echo "Last build state: $LAST_STATE"
-          if [ "$LAST_STATE" = "FAILED" ]; then
-            echo "⚠️ Last build processing_failed — will trigger publish"
-            echo "trigger_publish=true" >> $GITHUB_ENV
-          fi
+          echo "Recovery publish reason: ${publish_recovery_reason:-manual workflow dispatch}"
+          node .github/scripts/bump-homey-version.js
 
       - name: 🔐 Redact dashboard diagnostics before committing
         if: always()
