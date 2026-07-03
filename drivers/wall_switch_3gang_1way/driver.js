@@ -1,9 +1,9 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 const { setGangOnOff, setAllGangsOnOff } = require('../../lib/drivers/FlowGangControl');
 
-class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
+class WallSwitch3Gang1WayDriver extends BaseZigBeeDriver {
   async onInit() {
     this.log('Wall Switch 3-Gang 1-Way Driver initialized');
     this._registerFlowCards();
@@ -98,11 +98,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) {return false;}
-            try {
-              await setGangOnOff(args.device, ep, val);
-            } catch (e) {
-              args.device.error('Flow Action Error:', e);
-            }
+            await setGangOnOff(args.device, ep, val);
             return true;
           });
         }
