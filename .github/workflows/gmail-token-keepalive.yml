@@ -1,0 +1,72 @@
+name: Gmail IMAP Health Check
+# <!-- badges:start -->
+# [![Gmail IMAP Health Check](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml)
+# <!-- badges:end -->
+
+
+# v5.12.7: IMAP-only daily health check
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily 08:00 UTC
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: gmail-keepalive
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  imap-health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: IMAP health check
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: node .github/scripts/gmail-token-keepalive.js
+      - name: Commit health state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/privacy-redactor.js .github/state/gmail-token-health.json .github/state/_imap_alert.txt
+          git add .github/state/gmail-token-health.json 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "IMAP health $(date -u +%Y-%m-%d) [skip ci]"
+            git push origin HEAD:${GITHUB_REF_NAME:-master}
+          else
+            echo "No IMAP health changes to push"
+          fi
+      - name: Alert if IMAP failing
+        continue-on-error: true
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f ".github/state/_imap_alert.txt" ]; then
+            node .github/scripts/privacy-redactor.js .github/state/_imap_alert.txt
+            gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] IMAP connection failing" \
+              --body "$(cat .github/state/_imap_alert.txt)" \
+              --label "automation" 2>/dev/null || true
+            rm -f .github/state/_imap_alert.txt
+          fi
