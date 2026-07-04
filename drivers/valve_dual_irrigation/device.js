@@ -58,18 +58,30 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     // Register capability listeners for BOTH valves
     this.registerCapabilityListener('onoff.valve_1', async (value) => {
       this.log(`[VALVE-2] Setting Valve 1 = ${value}`);
-      // Insoma valves often require explicit 1/0 as bool
-      await this.sendDP(1, value ? true : false, 'bool');
-      await this.safeSetCapabilityValue?.('onoff.valve_1', Boolean(value)).catch(() => {});
+      await this._sendValveDP(1, 'onoff.valve_1', value);
       });
 
     this.registerCapabilityListener('onoff.valve_2', async (value) => {
       this.log(`[VALVE-2] Setting Valve 2 = ${value}`);
-      await this.sendDP(2, value ? true : false, 'bool');
-      await this.safeSetCapabilityValue?.('onoff.valve_2', Boolean(value)).catch(() => {});
+      await this._sendValveDP(2, 'onoff.valve_2', value);
       });
 
     this.log('[VALVE-2]  Ready (Dual Engine v7.4.4)');
+  }
+
+  async _sendValveDP(dp, capability, value) {
+    const sent = await this.sendDP(dp, Boolean(value), 'bool');
+    if (!this._isValveDPSendSuccess(sent)) {
+      throw new Error(`valve_dp_${dp}_not_sent`);
+    }
+    await this.safeSetCapabilityValue?.(capability, Boolean(value)).catch(() => {});
+    return true;
+  }
+
+  _isValveDPSendSuccess(result) {
+    if (result === true) {return true;}
+    if (!result || typeof result !== 'object') {return false;}
+    return result.success === true || result.status === 'success';
   }
 
   // Override sendDP to keep dual-valve actions working across manager variants.
@@ -83,8 +95,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       if (typeof manager.sendDPWithConfirmation === 'function') {
         const result = await manager.sendDPWithConfirmation(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
         if (result?.success) {return true;}
-      }
-      if (typeof manager._sendDPRaw === 'function') {
+      } else if (typeof manager._sendDPRaw === 'function') {
         const sent = await manager._sendDPRaw(dp, value, type);
         if (sent) {return true;}
       }
