@@ -1,0 +1,36 @@
+{
+  "id": "boiler_switch_energy_turned_on",
+  "title": {
+    "en": "Boiler switch turned on",
+    "fr": "Interrupteur chaudiere allume"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff,measure_power"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "power",
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      }
+    },
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "fr": "Temperature"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Boiler switch turned on [[device]]",
+    "fr": "Interrupteur chaudiere allume [[device]]"
+  }
+}
