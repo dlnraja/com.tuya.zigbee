@@ -71,7 +71,13 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      # v5.12.6: IMAP-only — OAuth removed
+      - name: IMAP health preflight
+        continue-on-error: true
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: node .github/scripts/gmail-token-keepalive.js
+      # v5.12.7: IMAP-only diagnostics with health preflight
       - name: Fetch diagnostics via IMAP
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}

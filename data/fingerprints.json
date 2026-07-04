@@ -554,5 +554,46 @@
       }
     },
     "notes": "Normalized TZE28C1000000 prefix sibling for Homey forum 26439 #5484 Zemismart boiler switch."
+  },
+  "_TZE204_myd45weu": {
+    "driverId": "soilsensor_2",
+    "type": "soil_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ],
+    "capabilities": [
+      "measure_humidity",
+      "measure_temperature",
+      "measure_humidity.soil",
+      "measure_battery"
+    ],
+    "dps": {
+      "3": {
+        "name": "soil_moisture",
+        "converter": "raw",
+        "capability": "measure_humidity.soil"
+      },
+      "5": {
+        "name": "temperature",
+        "converter": "divideBy10",
+        "capability": "measure_temperature"
+      },
+      "14": {
+        "name": "battery_state",
+        "converter": "enum",
+        "values": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "15": {
+        "name": "battery",
+        "converter": "raw",
+        "capability": "measure_battery"
+      }
+    },
+    "notes": "TZE204 soil temperature/moisture variant; aligned with myd45weu soil profile and Johan #1416 diagnostic context."
   }
 }

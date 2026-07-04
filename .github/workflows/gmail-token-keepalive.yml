@@ -4,10 +4,10 @@ name: Gmail IMAP Health Check
 # <!-- badges:end -->
 
 
-# v5.12.6: IMAP-only — OAuth keepalive replaced by IMAP health check
+# v5.12.7: IMAP-only daily health check
 on:
   schedule:
-    - cron: '0 8 * * 1'  # Weekly Monday 08:00 UTC
+    - cron: '0 8 * * *'  # Daily 08:00 UTC
   workflow_dispatch:
   workflow_call:
 
