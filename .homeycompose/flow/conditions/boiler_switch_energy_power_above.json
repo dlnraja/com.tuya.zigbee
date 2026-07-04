@@ -1,0 +1,30 @@
+{
+  "id": "boiler_switch_energy_power_above",
+  "title": {
+    "en": "Boiler power is above [[threshold]] W",
+    "fr": "La puissance chaudiere est au-dessus de [[threshold]] W"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=measure_power"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "fr": "Seuil"
+      },
+      "min": 0,
+      "max": 10000,
+      "step": 10,
+      "value": 1000
+    }
+  ],
+  "titleFormatted": {
+    "en": "Boiler power is above [[threshold]] W [[device]]",
+    "fr": "La puissance chaudiere est au-dessus de [[threshold]] W [[device]]"
+  }
+}
