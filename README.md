@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.177 |
+| **App Version** | v9.0.178 |
 | **Device Fingerprints** | 5,036+ |
 | **Unique Product IDs** | 570 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-07-03 |
+| **Last Updated** | 2026-07-04 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -62,7 +62,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | 10 | `universal_zigbee` | 105 |
 | 11 | `generic_diy` | 83 |
 | 12 | `wall_thermostat` | 73 |
-| 13 | `air_purifier` | 70 |
+| 13 | `air_purifier` | 69 |
 | 14 | `switch_4gang` | 66 |
 | 15 | `light_bulb_rgb_rgbw` | 65 |
 | 16 | `dimmer_wall_1gang` | 54 |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.178** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.177** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.176** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.175** | v9.0.162: automated publish, manifest sync, and Homey test promotion. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.167** | v9.0.162: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.166** | v9.0.162: automated publish, manifest sync, and Homey test promotion. |
 | **v9.0.165** | v9.0.162: automated publish, manifest sync, and Homey test promotion. |
-| **v9.0.164** | v9.0.162: automated publish, manifest sync, and Homey test promotion. |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-07-03*
+*Last updated: 2026-07-04*
