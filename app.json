@@ -13,10 +13,10 @@
     "fr": "Tuya Unified (Stable)"
   },
   "description": {
-    "en": "Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
-    "nl": "Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
-    "de": "Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
-    "fr": "Moteur Tuya Unified : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
+    "en": "Local-first Tuya control with self-healing fleet stability and adaptive lighting",
+    "nl": "Lokale Tuya-bediening met zelfherstellende vlootstabiliteit en adaptieve verlichting",
+    "de": "Lokale Tuya-Steuerung mit selbstheilender Flottenstabilitaet und adaptiver Beleuchtung",
+    "fr": "Controle local Tuya avec stabilite auto-reparatrice et eclairage adaptatif"
   },
   "tags": {
     "en": [
@@ -96,7 +96,7 @@
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
-  "brandColor": "#00E6A0",
+  "brandColor": "#008C73",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "sdk": 3,
@@ -24652,10 +24652,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turned on",
-          "fr": "[[device]] Allumé",
-          "nl": "[[device]] Aangezet",
-          "de": "[[device]] Eingeschaltet"
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
         }
       },
       {
@@ -24674,10 +24674,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turned off",
-          "fr": "[[device]] Éteint",
-          "nl": "[[device]] Uitgezet",
-          "de": "[[device]] Ausgeschaltet"
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
         }
       },
       {
@@ -24696,10 +24696,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical ON",
-          "fr": "[[device]] Physique ON",
-          "nl": "[[device]] Fysiek AAN",
-          "de": "[[device]] Physisch EIN"
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
         }
       },
       {
@@ -24718,10 +24718,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical OFF",
-          "fr": "[[device]] Physique OFF",
-          "nl": "[[device]] Fysiek UIT",
-          "de": "[[device]] Physisch AUS"
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
         }
       },
       {
@@ -24740,10 +24740,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 turned on",
-          "fr": "[[device]] Gang 1 allumé",
-          "nl": "[[device]] Gang 1 aangezet",
-          "de": "[[device]] Gang 1 eingeschaltet"
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
         }
       },
       {
@@ -24762,10 +24762,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 turned off",
-          "fr": "[[device]] Gang 1 éteint",
-          "nl": "[[device]] Gang 1 uitgezet",
-          "de": "[[device]] Gang 1 ausgeschaltet"
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
         }
       },
       {
@@ -24784,10 +24784,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 turned on",
-          "fr": "[[device]] Gang 2 allumé",
-          "nl": "[[device]] Gang 2 aangezet",
-          "de": "[[device]] Gang 2 eingeschaltet"
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
         }
       },
       {
@@ -24806,10 +24806,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 turned off",
-          "fr": "[[device]] Gang 2 éteint",
-          "nl": "[[device]] Gang 2 uitgezet",
-          "de": "[[device]] Gang 2 ausgeschaltet"
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
         }
       },
       {
@@ -24828,10 +24828,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 1 ON",
-          "fr": "[[device]] Physique gang 1 ON",
-          "nl": "[[device]] Fysiek gang 1 AAN",
-          "de": "[[device]] Physisch gang 1 EIN"
+          "en": "Physical gang 1 ON",
+          "fr": "Physique gang 1 ON",
+          "nl": "Fysiek gang 1 AAN",
+          "de": "Physisch gang 1 EIN"
         }
       },
       {
@@ -24850,10 +24850,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 1 OFF",
-          "fr": "[[device]] Physique gang 1 OFF",
-          "nl": "[[device]] Fysiek gang 1 UIT",
-          "de": "[[device]] Physisch gang 1 AUS"
+          "en": "Physical gang 1 OFF",
+          "fr": "Physique gang 1 OFF",
+          "nl": "Fysiek gang 1 UIT",
+          "de": "Physisch gang 1 AUS"
         }
       },
       {
@@ -24872,10 +24872,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 2 ON",
-          "fr": "[[device]] Physique gang 2 ON",
-          "nl": "[[device]] Fysiek gang 2 AAN",
-          "de": "[[device]] Physisch gang 2 EIN"
+          "en": "Physical gang 2 ON",
+          "fr": "Physique gang 2 ON",
+          "nl": "Fysiek gang 2 AAN",
+          "de": "Physisch gang 2 EIN"
         }
       },
       {
@@ -24894,10 +24894,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 2 OFF",
-          "fr": "[[device]] Physique gang 2 OFF",
-          "nl": "[[device]] Fysiek gang 2 UIT",
-          "de": "[[device]] Physisch gang 2 AUS"
+          "en": "Physical gang 2 OFF",
+          "fr": "Physique gang 2 OFF",
+          "nl": "Fysiek gang 2 UIT",
+          "de": "Physisch gang 2 AUS"
         }
       },
       {
@@ -24916,10 +24916,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 turned on",
-          "fr": "[[device]] Gang 1 allumé",
-          "nl": "[[device]] Gang 1 aangezet",
-          "de": "[[device]] Gang 1 eingeschaltet"
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
         }
       },
       {
@@ -24938,10 +24938,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 turned off",
-          "fr": "[[device]] Gang 1 éteint",
-          "nl": "[[device]] Gang 1 uitgezet",
-          "de": "[[device]] Gang 1 ausgeschaltet"
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
         }
       },
       {
@@ -24960,10 +24960,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 turned on",
-          "fr": "[[device]] Gang 2 allumé",
-          "nl": "[[device]] Gang 2 aangezet",
-          "de": "[[device]] Gang 2 eingeschaltet"
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
         }
       },
       {
@@ -24982,10 +24982,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 turned off",
-          "fr": "[[device]] Gang 2 éteint",
-          "nl": "[[device]] Gang 2 uitgezet",
-          "de": "[[device]] Gang 2 ausgeschaltet"
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
         }
       },
       {
@@ -25004,10 +25004,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 turned on",
-          "fr": "[[device]] Gang 3 allumé",
-          "nl": "[[device]] Gang 3 aangezet",
-          "de": "[[device]] Gang 3 eingeschaltet"
+          "en": "Gang 3 turned on",
+          "fr": "Gang 3 allumé",
+          "nl": "Gang 3 aangezet",
+          "de": "Gang 3 eingeschaltet"
         }
       },
       {
@@ -25026,10 +25026,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 turned off",
-          "fr": "[[device]] Gang 3 éteint",
-          "nl": "[[device]] Gang 3 uitgezet",
-          "de": "[[device]] Gang 3 ausgeschaltet"
+          "en": "Gang 3 turned off",
+          "fr": "Gang 3 éteint",
+          "nl": "Gang 3 uitgezet",
+          "de": "Gang 3 ausgeschaltet"
         }
       },
       {
@@ -25054,10 +25054,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 1 ON",
-          "fr": "[[device]] Physique gang 1 ON",
-          "nl": "[[device]] Fysiek gang 1 AAN",
-          "de": "[[device]] Physisch gang 1 EIN"
+          "en": "Physical gang 1 ON",
+          "fr": "Physique gang 1 ON",
+          "nl": "Fysiek gang 1 AAN",
+          "de": "Physisch gang 1 EIN"
         }
       },
       {
@@ -25076,10 +25076,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 1 OFF",
-          "fr": "[[device]] Physique gang 1 OFF",
-          "nl": "[[device]] Fysiek gang 1 UIT",
-          "de": "[[device]] Physisch gang 1 AUS"
+          "en": "Physical gang 1 OFF",
+          "fr": "Physique gang 1 OFF",
+          "nl": "Fysiek gang 1 UIT",
+          "de": "Physisch gang 1 AUS"
         }
       },
       {
@@ -25098,10 +25098,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 2 ON",
-          "fr": "[[device]] Physique gang 2 ON",
-          "nl": "[[device]] Fysiek gang 2 AAN",
-          "de": "[[device]] Physisch gang 2 EIN"
+          "en": "Physical gang 2 ON",
+          "fr": "Physique gang 2 ON",
+          "nl": "Fysiek gang 2 AAN",
+          "de": "Physisch gang 2 EIN"
         }
       },
       {
@@ -25120,10 +25120,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 2 OFF",
-          "fr": "[[device]] Physique gang 2 OFF",
-          "nl": "[[device]] Fysiek gang 2 UIT",
-          "de": "[[device]] Physisch gang 2 AUS"
+          "en": "Physical gang 2 OFF",
+          "fr": "Physique gang 2 OFF",
+          "nl": "Fysiek gang 2 UIT",
+          "de": "Physisch gang 2 AUS"
         }
       },
       {
@@ -25142,10 +25142,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 3 ON",
-          "fr": "[[device]] Physique gang 3 ON",
-          "nl": "[[device]] Fysiek gang 3 AAN",
-          "de": "[[device]] Physisch gang 3 EIN"
+          "en": "Physical gang 3 ON",
+          "fr": "Physique gang 3 ON",
+          "nl": "Fysiek gang 3 AAN",
+          "de": "Physisch gang 3 EIN"
         }
       },
       {
@@ -25164,10 +25164,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 3 OFF",
-          "fr": "[[device]] Physique gang 3 OFF",
-          "nl": "[[device]] Fysiek gang 3 UIT",
-          "de": "[[device]] Physisch gang 3 AUS"
+          "en": "Physical gang 3 OFF",
+          "fr": "Physique gang 3 OFF",
+          "nl": "Fysiek gang 3 UIT",
+          "de": "Physisch gang 3 AUS"
         }
       },
       {
@@ -25204,10 +25204,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 scene action",
-          "fr": "[[device]] Action scene gang 1",
-          "nl": "[[device]] Gang 1 scene-actie",
-          "de": "[[device]] Gang 1 Szenenaktion"
+          "en": "Gang 1 scene action",
+          "fr": "Action scene gang 1",
+          "nl": "Gang 1 scene-actie",
+          "de": "Gang 1 Szenenaktion"
         }
       },
       {
@@ -25244,10 +25244,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 scene action",
-          "fr": "[[device]] Action scene gang 2",
-          "nl": "[[device]] Gang 2 scene-actie",
-          "de": "[[device]] Gang 2 Szenenaktion"
+          "en": "Gang 2 scene action",
+          "fr": "Action scene gang 2",
+          "nl": "Gang 2 scene-actie",
+          "de": "Gang 2 Szenenaktion"
         }
       },
       {
@@ -25284,10 +25284,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 scene action",
-          "fr": "[[device]] Action scene gang 3",
-          "nl": "[[device]] Gang 3 scene-actie",
-          "de": "[[device]] Gang 3 Szenenaktion"
+          "en": "Gang 3 scene action",
+          "fr": "Action scene gang 3",
+          "nl": "Gang 3 scene-actie",
+          "de": "Gang 3 Szenenaktion"
         }
       },
       {
@@ -25306,10 +25306,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 turned on",
-          "fr": "[[device]] Gang 1 allumé",
-          "nl": "[[device]] Gang 1 aangezet",
-          "de": "[[device]] Gang 1 eingeschaltet"
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
         }
       },
       {
@@ -25328,10 +25328,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 turned off",
-          "fr": "[[device]] Gang 1 éteint",
-          "nl": "[[device]] Gang 1 uitgezet",
-          "de": "[[device]] Gang 1 ausgeschaltet"
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
         }
       },
       {
@@ -25350,10 +25350,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 turned on",
-          "fr": "[[device]] Gang 2 allumé",
-          "nl": "[[device]] Gang 2 aangezet",
-          "de": "[[device]] Gang 2 eingeschaltet"
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
         }
       },
       {
@@ -25372,10 +25372,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 turned off",
-          "fr": "[[device]] Gang 2 éteint",
-          "nl": "[[device]] Gang 2 uitgezet",
-          "de": "[[device]] Gang 2 ausgeschaltet"
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
         }
       },
       {
@@ -25394,10 +25394,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 turned on",
-          "fr": "[[device]] Gang 3 allumé",
-          "nl": "[[device]] Gang 3 aangezet",
-          "de": "[[device]] Gang 3 eingeschaltet"
+          "en": "Gang 3 turned on",
+          "fr": "Gang 3 allumé",
+          "nl": "Gang 3 aangezet",
+          "de": "Gang 3 eingeschaltet"
         }
       },
       {
@@ -25416,10 +25416,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 turned off",
-          "fr": "[[device]] Gang 3 éteint",
-          "nl": "[[device]] Gang 3 uitgezet",
-          "de": "[[device]] Gang 3 ausgeschaltet"
+          "en": "Gang 3 turned off",
+          "fr": "Gang 3 éteint",
+          "nl": "Gang 3 uitgezet",
+          "de": "Gang 3 ausgeschaltet"
         }
       },
       {
@@ -25438,10 +25438,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 4 turned on",
-          "fr": "[[device]] Gang 4 allumé",
-          "nl": "[[device]] Gang 4 aangezet",
-          "de": "[[device]] Gang 4 eingeschaltet"
+          "en": "Gang 4 turned on",
+          "fr": "Gang 4 allumé",
+          "nl": "Gang 4 aangezet",
+          "de": "Gang 4 eingeschaltet"
         }
       },
       {
@@ -25460,10 +25460,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 4 turned off",
-          "fr": "[[device]] Gang 4 éteint",
-          "nl": "[[device]] Gang 4 uitgezet",
-          "de": "[[device]] Gang 4 ausgeschaltet"
+          "en": "Gang 4 turned off",
+          "fr": "Gang 4 éteint",
+          "nl": "Gang 4 uitgezet",
+          "de": "Gang 4 ausgeschaltet"
         }
       },
       {
@@ -25482,10 +25482,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 1 ON",
-          "fr": "[[device]] Physique gang 1 ON",
-          "nl": "[[device]] Fysiek gang 1 AAN",
-          "de": "[[device]] Physisch gang 1 EIN"
+          "en": "Physical gang 1 ON",
+          "fr": "Physique gang 1 ON",
+          "nl": "Fysiek gang 1 AAN",
+          "de": "Physisch gang 1 EIN"
         }
       },
       {
@@ -25504,10 +25504,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 1 OFF",
-          "fr": "[[device]] Physique gang 1 OFF",
-          "nl": "[[device]] Fysiek gang 1 UIT",
-          "de": "[[device]] Physisch gang 1 AUS"
+          "en": "Physical gang 1 OFF",
+          "fr": "Physique gang 1 OFF",
+          "nl": "Fysiek gang 1 UIT",
+          "de": "Physisch gang 1 AUS"
         }
       },
       {
@@ -25526,10 +25526,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 2 ON",
-          "fr": "[[device]] Physique gang 2 ON",
-          "nl": "[[device]] Fysiek gang 2 AAN",
-          "de": "[[device]] Physisch gang 2 EIN"
+          "en": "Physical gang 2 ON",
+          "fr": "Physique gang 2 ON",
+          "nl": "Fysiek gang 2 AAN",
+          "de": "Physisch gang 2 EIN"
         }
       },
       {
@@ -25548,10 +25548,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 2 OFF",
-          "fr": "[[device]] Physique gang 2 OFF",
-          "nl": "[[device]] Fysiek gang 2 UIT",
-          "de": "[[device]] Physisch gang 2 AUS"
+          "en": "Physical gang 2 OFF",
+          "fr": "Physique gang 2 OFF",
+          "nl": "Fysiek gang 2 UIT",
+          "de": "Physisch gang 2 AUS"
         }
       },
       {
@@ -25570,10 +25570,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 3 ON",
-          "fr": "[[device]] Physique gang 3 ON",
-          "nl": "[[device]] Fysiek gang 3 AAN",
-          "de": "[[device]] Physisch gang 3 EIN"
+          "en": "Physical gang 3 ON",
+          "fr": "Physique gang 3 ON",
+          "nl": "Fysiek gang 3 AAN",
+          "de": "Physisch gang 3 EIN"
         }
       },
       {
@@ -25592,10 +25592,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 3 OFF",
-          "fr": "[[device]] Physique gang 3 OFF",
-          "nl": "[[device]] Fysiek gang 3 UIT",
-          "de": "[[device]] Physisch gang 3 AUS"
+          "en": "Physical gang 3 OFF",
+          "fr": "Physique gang 3 OFF",
+          "nl": "Fysiek gang 3 UIT",
+          "de": "Physisch gang 3 AUS"
         }
       },
       {
@@ -25614,10 +25614,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 4 ON",
-          "fr": "[[device]] Physique gang 4 ON",
-          "nl": "[[device]] Fysiek gang 4 AAN",
-          "de": "[[device]] Physisch gang 4 EIN"
+          "en": "Physical gang 4 ON",
+          "fr": "Physique gang 4 ON",
+          "nl": "Fysiek gang 4 AAN",
+          "de": "Physisch gang 4 EIN"
         }
       },
       {
@@ -25636,10 +25636,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Physical gang 4 OFF",
-          "fr": "[[device]] Physique gang 4 OFF",
-          "nl": "[[device]] Fysiek gang 4 UIT",
-          "de": "[[device]] Physisch gang 4 AUS"
+          "en": "Physical gang 4 OFF",
+          "fr": "Physique gang 4 OFF",
+          "nl": "Fysiek gang 4 UIT",
+          "de": "Physisch gang 4 AUS"
         }
       },
       {
@@ -41451,10 +41451,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Is !{{on|off}}",
-          "fr": "[[device]] Est !{{allumé|éteint}}",
-          "nl": "[[device]] Is !{{aan|uit}}",
-          "de": "[[device]] Ist !{{ein|aus}}"
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
         }
       },
       {
@@ -41473,10 +41473,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 is !{{on|off}}",
-          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
-          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
         }
       },
       {
@@ -41495,10 +41495,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 is !{{on|off}}",
-          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
-          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
         }
       },
       {
@@ -41517,10 +41517,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 is !{{on|off}}",
-          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
-          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
         }
       },
       {
@@ -41539,10 +41539,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 is !{{on|off}}",
-          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
-          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
         }
       },
       {
@@ -41561,10 +41561,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 is !{{on|off}}",
-          "fr": "[[device]] Gang 3 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 3 is !{{aan|uit}}",
-          "de": "[[device]] Gang 3 ist !{{ein|aus}}"
+          "en": "Gang 3 is !{{on|off}}",
+          "fr": "Gang 3 est !{{allumé|éteint}}",
+          "nl": "Gang 3 is !{{aan|uit}}",
+          "de": "Gang 3 ist !{{ein|aus}}"
         }
       },
       {
@@ -41583,10 +41583,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 1 is !{{on|off}}",
-          "fr": "[[device]] Gang 1 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 1 is !{{aan|uit}}",
-          "de": "[[device]] Gang 1 ist !{{ein|aus}}"
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
         }
       },
       {
@@ -41605,10 +41605,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 2 is !{{on|off}}",
-          "fr": "[[device]] Gang 2 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 2 is !{{aan|uit}}",
-          "de": "[[device]] Gang 2 ist !{{ein|aus}}"
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
         }
       },
       {
@@ -41627,10 +41627,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 3 is !{{on|off}}",
-          "fr": "[[device]] Gang 3 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 3 is !{{aan|uit}}",
-          "de": "[[device]] Gang 3 ist !{{ein|aus}}"
+          "en": "Gang 3 is !{{on|off}}",
+          "fr": "Gang 3 est !{{allumé|éteint}}",
+          "nl": "Gang 3 is !{{aan|uit}}",
+          "de": "Gang 3 ist !{{ein|aus}}"
         }
       },
       {
@@ -41649,10 +41649,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Gang 4 is !{{on|off}}",
-          "fr": "[[device]] Gang 4 est !{{allumé|éteint}}",
-          "nl": "[[device]] Gang 4 is !{{aan|uit}}",
-          "de": "[[device]] Gang 4 ist !{{ein|aus}}"
+          "en": "Gang 4 is !{{on|off}}",
+          "fr": "Gang 4 est !{{allumé|éteint}}",
+          "nl": "Gang 4 is !{{aan|uit}}",
+          "de": "Gang 4 ist !{{ein|aus}}"
         }
       },
       {
@@ -52242,10 +52242,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on",
-          "fr": "[[device]] Allumer",
-          "nl": "[[device]] Aanzetten",
-          "de": "[[device]] Einschalten"
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
         }
       },
       {
@@ -52264,10 +52264,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off",
-          "fr": "[[device]] Éteindre",
-          "nl": "[[device]] Uitzetten",
-          "de": "[[device]] Ausschalten"
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
         }
       },
       {
@@ -52286,10 +52286,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle",
-          "fr": "[[device]] Basculer",
-          "nl": "[[device]] Wisselen",
-          "de": "[[device]] Umschalten"
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
         }
       },
       {
@@ -52519,10 +52519,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 1",
-          "fr": "[[device]] Allumer gang 1",
-          "nl": "[[device]] Gang 1 aanzetten",
-          "de": "[[device]] Gang 1 einschalten"
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
         }
       },
       {
@@ -52541,10 +52541,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 1",
-          "fr": "[[device]] Éteindre gang 1",
-          "nl": "[[device]] Gang 1 uitzetten",
-          "de": "[[device]] Gang 1 ausschalten"
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
         }
       },
       {
@@ -52563,10 +52563,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 2",
-          "fr": "[[device]] Allumer gang 2",
-          "nl": "[[device]] Gang 2 aanzetten",
-          "de": "[[device]] Gang 2 einschalten"
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
         }
       },
       {
@@ -52585,10 +52585,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 2",
-          "fr": "[[device]] Éteindre gang 2",
-          "nl": "[[device]] Gang 2 uitzetten",
-          "de": "[[device]] Gang 2 ausschalten"
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
         }
       },
       {
@@ -52607,10 +52607,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 1",
-          "fr": "[[device]] Basculer gang 1",
-          "nl": "[[device]] Gang 1 wisselen",
-          "de": "[[device]] Gang 1 umschalten"
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
         }
       },
       {
@@ -52629,10 +52629,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 2",
-          "fr": "[[device]] Basculer gang 2",
-          "nl": "[[device]] Gang 2 wisselen",
-          "de": "[[device]] Gang 2 umschalten"
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
         }
       },
       {
@@ -52651,10 +52651,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 1",
-          "fr": "[[device]] Allumer gang 1",
-          "nl": "[[device]] Gang 1 aanzetten",
-          "de": "[[device]] Gang 1 einschalten"
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
         }
       },
       {
@@ -52673,10 +52673,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 1",
-          "fr": "[[device]] Éteindre gang 1",
-          "nl": "[[device]] Gang 1 uitzetten",
-          "de": "[[device]] Gang 1 ausschalten"
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
         }
       },
       {
@@ -52695,10 +52695,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 2",
-          "fr": "[[device]] Allumer gang 2",
-          "nl": "[[device]] Gang 2 aanzetten",
-          "de": "[[device]] Gang 2 einschalten"
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
         }
       },
       {
@@ -52717,10 +52717,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 2",
-          "fr": "[[device]] Éteindre gang 2",
-          "nl": "[[device]] Gang 2 uitzetten",
-          "de": "[[device]] Gang 2 ausschalten"
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
         }
       },
       {
@@ -52739,10 +52739,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 3",
-          "fr": "[[device]] Allumer gang 3",
-          "nl": "[[device]] Gang 3 aanzetten",
-          "de": "[[device]] Gang 3 einschalten"
+          "en": "Turn on gang 3",
+          "fr": "Allumer gang 3",
+          "nl": "Gang 3 aanzetten",
+          "de": "Gang 3 einschalten"
         }
       },
       {
@@ -52761,10 +52761,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 3",
-          "fr": "[[device]] Éteindre gang 3",
-          "nl": "[[device]] Gang 3 uitzetten",
-          "de": "[[device]] Gang 3 ausschalten"
+          "en": "Turn off gang 3",
+          "fr": "Éteindre gang 3",
+          "nl": "Gang 3 uitzetten",
+          "de": "Gang 3 ausschalten"
         }
       },
       {
@@ -52783,10 +52783,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 1",
-          "fr": "[[device]] Basculer gang 1",
-          "nl": "[[device]] Gang 1 wisselen",
-          "de": "[[device]] Gang 1 umschalten"
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
         }
       },
       {
@@ -52805,10 +52805,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 2",
-          "fr": "[[device]] Basculer gang 2",
-          "nl": "[[device]] Gang 2 wisselen",
-          "de": "[[device]] Gang 2 umschalten"
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
         }
       },
       {
@@ -52827,10 +52827,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 3",
-          "fr": "[[device]] Basculer gang 3",
-          "nl": "[[device]] Gang 3 wisselen",
-          "de": "[[device]] Gang 3 umschalten"
+          "en": "Toggle gang 3",
+          "fr": "Basculer gang 3",
+          "nl": "Gang 3 wisselen",
+          "de": "Gang 3 umschalten"
         }
       },
       {
@@ -52849,10 +52849,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 1",
-          "fr": "[[device]] Allumer gang 1",
-          "nl": "[[device]] Gang 1 aanzetten",
-          "de": "[[device]] Gang 1 einschalten"
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
         }
       },
       {
@@ -52871,10 +52871,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 1",
-          "fr": "[[device]] Éteindre gang 1",
-          "nl": "[[device]] Gang 1 uitzetten",
-          "de": "[[device]] Gang 1 ausschalten"
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
         }
       },
       {
@@ -52893,10 +52893,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 2",
-          "fr": "[[device]] Allumer gang 2",
-          "nl": "[[device]] Gang 2 aanzetten",
-          "de": "[[device]] Gang 2 einschalten"
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
         }
       },
       {
@@ -52915,10 +52915,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 2",
-          "fr": "[[device]] Éteindre gang 2",
-          "nl": "[[device]] Gang 2 uitzetten",
-          "de": "[[device]] Gang 2 ausschalten"
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
         }
       },
       {
@@ -52937,10 +52937,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 3",
-          "fr": "[[device]] Allumer gang 3",
-          "nl": "[[device]] Gang 3 aanzetten",
-          "de": "[[device]] Gang 3 einschalten"
+          "en": "Turn on gang 3",
+          "fr": "Allumer gang 3",
+          "nl": "Gang 3 aanzetten",
+          "de": "Gang 3 einschalten"
         }
       },
       {
@@ -52959,10 +52959,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 3",
-          "fr": "[[device]] Éteindre gang 3",
-          "nl": "[[device]] Gang 3 uitzetten",
-          "de": "[[device]] Gang 3 ausschalten"
+          "en": "Turn off gang 3",
+          "fr": "Éteindre gang 3",
+          "nl": "Gang 3 uitzetten",
+          "de": "Gang 3 ausschalten"
         }
       },
       {
@@ -52981,10 +52981,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn on gang 4",
-          "fr": "[[device]] Allumer gang 4",
-          "nl": "[[device]] Gang 4 aanzetten",
-          "de": "[[device]] Gang 4 einschalten"
+          "en": "Turn on gang 4",
+          "fr": "Allumer gang 4",
+          "nl": "Gang 4 aanzetten",
+          "de": "Gang 4 einschalten"
         }
       },
       {
@@ -53003,10 +53003,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Turn off gang 4",
-          "fr": "[[device]] Éteindre gang 4",
-          "nl": "[[device]] Gang 4 uitzetten",
-          "de": "[[device]] Gang 4 ausschalten"
+          "en": "Turn off gang 4",
+          "fr": "Éteindre gang 4",
+          "nl": "Gang 4 uitzetten",
+          "de": "Gang 4 ausschalten"
         }
       },
       {
@@ -53025,10 +53025,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 1",
-          "fr": "[[device]] Basculer gang 1",
-          "nl": "[[device]] Gang 1 wisselen",
-          "de": "[[device]] Gang 1 umschalten"
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
         }
       },
       {
@@ -53047,10 +53047,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 2",
-          "fr": "[[device]] Basculer gang 2",
-          "nl": "[[device]] Gang 2 wisselen",
-          "de": "[[device]] Gang 2 umschalten"
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
         }
       },
       {
@@ -53069,10 +53069,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 3",
-          "fr": "[[device]] Basculer gang 3",
-          "nl": "[[device]] Gang 3 wisselen",
-          "de": "[[device]] Gang 3 umschalten"
+          "en": "Toggle gang 3",
+          "fr": "Basculer gang 3",
+          "nl": "Gang 3 wisselen",
+          "de": "Gang 3 umschalten"
         }
       },
       {
@@ -53091,10 +53091,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] Toggle gang 4",
-          "fr": "[[device]] Basculer gang 4",
-          "nl": "[[device]] Gang 4 wisselen",
-          "de": "[[device]] Gang 4 umschalten"
+          "en": "Toggle gang 4",
+          "fr": "Basculer gang 4",
+          "nl": "Gang 4 wisselen",
+          "de": "Gang 4 umschalten"
         }
       },
       {
@@ -57228,8 +57228,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set LED indicator mode",
-          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+          "en": "[[mode]] Set LED indicator mode",
+          "nl": "[[mode]] Stel LED-indicator modus in"
         }
       },
       {
@@ -57374,8 +57374,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set LED indicator mode",
-          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+          "en": "[[mode]] Set LED indicator mode",
+          "nl": "[[mode]] Stel LED-indicator modus in"
         }
       },
       {
@@ -57487,10 +57487,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set power-on behavior",
-          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
-          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
-          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+          "en": "[[mode]] Set power-on behavior",
+          "nl": "[[mode]] Stel inschakelgedrag in",
+          "de": "[[mode]] Einschaltverhalten einstellen",
+          "fr": "[[mode]] Définir le comportement à la mise sous tension"
         }
       },
       {
@@ -57536,10 +57536,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set external switch type",
-          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
-          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
-          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+          "en": "[[mode]] Set external switch type",
+          "nl": "[[mode]] Stel extern schakelaartype in",
+          "de": "[[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[mode]] Définir le type d'interrupteur externe"
         }
       },
       {
@@ -57580,8 +57580,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set scene mode",
-          "nl": "[[device]] [[mode]] Stel scènemodus in"
+          "en": "[[mode]] Set scene mode",
+          "nl": "[[mode]] Stel scènemodus in"
         }
       },
       {
@@ -57625,8 +57625,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set LED indicator mode",
-          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+          "en": "[[mode]] Set LED indicator mode",
+          "nl": "[[mode]] Stel LED-indicator modus in"
         }
       },
       {
@@ -57672,10 +57672,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set power-on behavior",
-          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
-          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
-          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+          "en": "[[mode]] Set power-on behavior",
+          "nl": "[[mode]] Stel inschakelgedrag in",
+          "de": "[[mode]] Einschaltverhalten einstellen",
+          "fr": "[[mode]] Définir le comportement à la mise sous tension"
         }
       },
       {
@@ -57721,10 +57721,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set external switch type",
-          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
-          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
-          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+          "en": "[[mode]] Set external switch type",
+          "nl": "[[mode]] Stel extern schakelaartype in",
+          "de": "[[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[mode]] Définir le type d'interrupteur externe"
         }
       },
       {
@@ -57765,8 +57765,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set scene mode",
-          "nl": "[[device]] [[mode]] Stel scènemodus in"
+          "en": "[[mode]] Set scene mode",
+          "nl": "[[mode]] Stel scènemodus in"
         }
       },
       {
@@ -58008,8 +58008,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set LED indicator mode",
-          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+          "en": "[[mode]] Set LED indicator mode",
+          "nl": "[[mode]] Stel LED-indicator modus in"
         }
       },
       {
@@ -58055,10 +58055,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set power-on behavior",
-          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
-          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
-          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+          "en": "[[mode]] Set power-on behavior",
+          "nl": "[[mode]] Stel inschakelgedrag in",
+          "de": "[[mode]] Einschaltverhalten einstellen",
+          "fr": "[[mode]] Définir le comportement à la mise sous tension"
         }
       },
       {
@@ -58104,10 +58104,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set external switch type",
-          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
-          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
-          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+          "en": "[[mode]] Set external switch type",
+          "nl": "[[mode]] Stel extern schakelaartype in",
+          "de": "[[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[mode]] Définir le type d'interrupteur externe"
         }
       },
       {
@@ -58148,8 +58148,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set scene mode",
-          "nl": "[[device]] [[mode]] Stel scènemodus in"
+          "en": "[[mode]] Set scene mode",
+          "nl": "[[mode]] Stel scènemodus in"
         }
       },
       {
@@ -58445,8 +58445,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set LED indicator mode",
-          "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+          "en": "[[mode]] Set LED indicator mode",
+          "nl": "[[mode]] Stel LED-indicator modus in"
         }
       },
       {
@@ -58492,10 +58492,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set power-on behavior",
-          "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
-          "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
-          "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+          "en": "[[mode]] Set power-on behavior",
+          "nl": "[[mode]] Stel inschakelgedrag in",
+          "de": "[[mode]] Einschaltverhalten einstellen",
+          "fr": "[[mode]] Définir le comportement à la mise sous tension"
         }
       },
       {
@@ -58541,10 +58541,10 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set external switch type",
-          "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
-          "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
-          "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+          "en": "[[mode]] Set external switch type",
+          "nl": "[[mode]] Stel extern schakelaartype in",
+          "de": "[[mode]] Externen Schaltertyp einstellen",
+          "fr": "[[mode]] Définir le type d'interrupteur externe"
         }
       },
       {
@@ -58585,8 +58585,8 @@
           }
         ],
         "titleFormatted": {
-          "en": "[[device]] [[mode]] Set scene mode",
-          "nl": "[[device]] [[mode]] Stel scènemodus in"
+          "en": "[[mode]] Set scene mode",
+          "nl": "[[mode]] Stel scènemodus in"
         }
       },
       {
