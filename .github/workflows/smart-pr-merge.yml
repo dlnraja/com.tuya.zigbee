@@ -94,7 +94,10 @@ jobs:
           PR_HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
           EXPECTED_PR_HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
           PR_BASE_REF: ${{ steps.pr.outputs.base_ref }}
-        run: node .github/scripts/smart-pr-merge.js "${{ steps.pr.outputs.mode }}" "${{ steps.pr.outputs.number }}"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          node .github/scripts/smart-pr-merge.js "${{ steps.pr.outputs.mode }}" "${{ steps.pr.outputs.number }}"
 
       - name: "Verify smart merge result"
         if: steps.merge.outputs.merged == 'true'
