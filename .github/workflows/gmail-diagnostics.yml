@@ -42,6 +42,11 @@ on:
         type: boolean
         default: false
         required: false
+      require_access:
+        description: "Fail the workflow when Gmail IMAP and OAuth diagnostics access are both unavailable"
+        type: boolean
+        default: false
+        required: false
 
 permissions:
   contents: write
@@ -71,14 +76,17 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: IMAP health preflight
+      - name: Gmail auth health preflight
         continue-on-error: true
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: node .github/scripts/gmail-token-keepalive.js
-      # v5.12.7: IMAP-only diagnostics with health preflight
-      - name: Fetch diagnostics via IMAP
+      # v5.13.3: IMAP diagnostics with OAuth fallback and health preflight
+      - name: Fetch diagnostics via Gmail
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -103,6 +111,7 @@ jobs:
           GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
           GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
           GMAIL_DIAG_AUTO_IMPLEMENT: ${{ github.event.inputs.auto_implement || 'false' }}
+          GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
           DRY_RUN: ${{ github.event.inputs.auto_implement == 'true' && 'false' || 'true' }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
       - name: Privacy gate for Gmail outputs

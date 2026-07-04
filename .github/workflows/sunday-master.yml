@@ -246,11 +246,15 @@ jobs:
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GMAIL_DIAG_AI_MAX: "0"
+          GMAIL_DIAG_REQUIRE_ACCESS: "false"
           DRY_RUN: "true"
         run: node .github/scripts/fetch-gmail-diagnostics.js
       - name: Privacy gate for Gmail diagnostics
