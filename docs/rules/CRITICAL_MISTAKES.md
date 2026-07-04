@@ -271,3 +271,4 @@
 - **TS0014 route** : `_TZ3000_mrduubod|TS0014` belongs to `wall_switch_4gang_1way`, never generic `switch_4gang`.
 - **Energy** : ZCL `currentSummationDelivered` must not be multiplied by 1000 before writing `meter_power`.
 - **Actuator flows** : flow actions must call the outbound command path before updating local Homey state.
+- **Soil TS0601 route** : `_TZE200_npj9bug3|TS0601` and `_TZE284_myd45weu|TS0601` belong to `soil_sensor`, never generic `climate_sensor` or legacy `soilsensor_2`.
