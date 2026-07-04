@@ -6,6 +6,11 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
+const TRUE_VALUES = new Set([true, 1, '1', 'true', 'open', 'on']);
+
+function isTuyaTrue(value) {
+  return TRUE_VALUES.has(typeof value === 'string' ? value.toLowerCase() : value);
+}
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -33,7 +38,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     if (this.isGardenTimer) {
       return {
         ...parentMappings,
-        1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+        1: { capability: 'onoff', transform: isTuyaTrue },
         5: { capability: 'meter_water', divisor: 1000 },
         7: { capability: 'measure_battery', transform: (v) => {
           if (v > 100) {return Math.min(100, Math.round(((v - 2000) / 1000) * 100));} // raw mV conversion fallback
@@ -44,7 +49,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
     }
     return {
       ...parentMappings,
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      1: { capability: 'onoff', transform: isTuyaTrue },
       2: { capability: null, internal: 'month_consumption' },
       3: { capability: null, internal: 'daily_consumption' },
       5: { capability: 'meter_water', divisor: 1000 },
@@ -57,7 +62,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
         if (v < 2700) {return 0;}
         return Math.round(((v - 2700) / 300) * 100);
       }},
-      12: { capability: 'alarm_water', transform: (v) => v === 1 || v === true },
+      12: { capability: 'alarm_water', transform: isTuyaTrue },
       15: { capability: null, setting: 'auto_clean' },
       21: { capability: null, internal: 'flow_rate' },
     };
@@ -81,7 +86,7 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unifi
    * Action card helper called from driver
    */
   async setValve(value) {
-    const target = value === true || value === 1 || value === '1' || value === 'open' || value === 'on';
+    const target = isTuyaTrue(value);
     this.log('[WATER-VALVE] setValve called with:', target);
     await this._setOnOff(target);
     await this.safeSetCapabilityValue('onoff', target).catch(() => {});
