@@ -18,14 +18,16 @@ Scope: Homey Community forum feedback processed on 2026-07-04, focused on recent
 - ZCL metering `currentSummationDelivered` conversions no longer multiply by 1000 on the affected stable drivers; values are parsed as kWh through the smart divisor path or divided down.
 - `water_valve_smart` action card now calls the real outbound control path via `_setOnOff()` before updating Homey state, so flows do not only change the UI.
 - `UnifiedPlugBase._setOnOff()` now falls back to Tuya DP1 when ZCL on/off is unavailable or fails, improving TS0601/EF00 local-first control.
+- Soil TS0601 `_TZE200_npj9bug3` and `_TZE284_myd45weu` are locked to `soil_sensor`; `_TZE200_npj9bug3` was removed from the generic `climate_sensor` route to avoid pairing as the wrong class.
 
 ## CI locks added
 
 - `scripts/ci/check-button-flow-routing.js` now guards the forum #2099 TS0014 route and rejects any future generic `switch_4gang` claim for `_TZ3000_mrduubod`.
 - The same CI script asserts that `UnifiedSwitchBase` retains the `button.N` listener fallback and that wall switch drivers declaring `button.N` inherit that base.
+- The CI script also rejects future `climate_sensor` or legacy `soilsensor_2` claims for the forum TS0601 soil fingerprints.
 
 ## Remaining support notes
 
 - Forum diagnostics IDs expire quickly; ask users to submit fresh diagnostics immediately after reproducing button/valve events.
-- For soil sensors, exact fingerprints already route `_TZE200_npj9bug3` and `_TZE284_myd45weu`; if a device still appears as unknown, request the full interview, not only a diagnostic ID.
+- For soil sensors, exact fingerprints now route `_TZE200_npj9bug3` and `_TZE284_myd45weu` to `soil_sensor`; if a device still appears as unknown, request the full interview, not only a diagnostic ID.
 - For energy reports, collect raw `currentSummationDelivered`, multiplier/divisor attributes, and current app version before changing divisors again.

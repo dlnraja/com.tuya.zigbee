@@ -7390,9 +7390,9 @@
     ]
   },
   "_TZE200_npj9bug3": {
-    "driverId": "curtain_motor",
-    "type": "cover",
-    "powerSource": "mains",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]

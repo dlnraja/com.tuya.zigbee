@@ -103,3 +103,4 @@ L1. `button.N` capabilities need a capability listener fallback. If a wall switc
 L2. Forum #2099 TS0014 `_TZ3000_mrduubod` belongs to `wall_switch_4gang_1way`, not generic `switch_4gang`.
 L3. ZCL `currentSummationDelivered` must never be multiplied by 1000 before writing `meter_power`; use SmartDivisorManager or divide to kWh.
 L4. Flow actions that control actuators must call the outbound device command path (`_setOnOff`, `_setGangOnOff`, `_setDP`, or equivalent) before updating local Homey state.
+L5. Forum TS0601 soil fingerprints `_TZE200_npj9bug3` and `_TZE284_myd45weu` belong to `soil_sensor`, never generic `climate_sensor` or legacy `soilsensor_2`.
