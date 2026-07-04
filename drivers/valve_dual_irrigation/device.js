@@ -26,16 +26,6 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     const normalized = String(type || 'value').toLowerCase();
     return ({ raw: 0, bool: 1, boolean: 1, value: 2, string: 3, enum: 4, bitmap: 5 })[normalized] ?? 2;
   }
-  async _safeSetValveCapability(capability, value) {
-    if (typeof this.safeSetCapabilityValue === 'function') {
-      await this.safeSetCapabilityValue(capability, value).catch(() => {});
-      return;
-    }
-    const setCapabilityValue = this['setCapabilityValue'];
-    if (typeof setCapabilityValue === 'function') {
-      await setCapabilityValue.call(this, capability, value).catch(() => {});
-    }
-  }
 
   get dpMappings() {
     return {
@@ -88,8 +78,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
 
     if (manager) {
       if (typeof manager.sendDP === 'function') {
-        const sent = await manager.sendDP(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
-        if (sent !== false) {return sent;}
+        return manager.sendDP(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
       }
       if (typeof manager.sendDPWithConfirmation === 'function') {
         const result = await manager.sendDPWithConfirmation(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
