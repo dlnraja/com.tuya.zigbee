@@ -34,6 +34,21 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
 
+  _getSmartMeterParseOptions() {
+    const settings = this.getSettings?.() || {};
+    const data = this.getData?.() || {};
+    return {
+      capability: 'meter_power',
+      manufacturerName: settings.zb_manufacturer_name
+        || this.getStoreValue?.('zb_manufacturer_name')
+        || this.getStoreValue?.('manufacturerName')
+        || '',
+      deviceId: data.id || data.ieeeAddress || data.ieeeAddr || this.getStoreValue?.('ieeeAddress') || '',
+      protocol: 'zigbee',
+      defaultDivisor: 1000,
+    };
+  }
+
   async setSceneMode(mode) {
     this.log('[SCENE] Setting scene mode to:', mode);
     await this.setSettings({ scene_mode: mode }).catch(() => {});
@@ -173,8 +188,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
-        meteringCluster.on('attr.current summation delivered', (value) => {
-          const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
+        meteringCluster.on('attr.currentSummationDelivered', (value) => {
+          const kwh = smartParse(value, 'currentSummationDelivered', this._getSmartMeterParseOptions()) || 0;
           this.log(`[ZCL-DATA] switch.energy raw=${value}  ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
@@ -294,7 +309,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        const kwh = smartParse(attrs.currentSummationDelivered, null, { capability: 'meter_power' }) || 0;
+        const kwh = smartParse(attrs.currentSummationDelivered, 'currentSummationDelivered', this._getSmartMeterParseOptions()) || 0;
         this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
