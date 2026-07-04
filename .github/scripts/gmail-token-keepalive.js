@@ -27,7 +27,8 @@ async function main(){
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
     health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exit(0);
+    process.exitCode = 1;
+    return;
   }
 
   if(!imap){
@@ -36,7 +37,8 @@ async function main(){
     health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
     health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exit(1);
+    process.exitCode = 1;
+    return;
   }
 
   console.log('IMAP health check — connecting as',privacy.alias('account',e));
@@ -76,4 +78,12 @@ async function main(){
   fs.writeFileSync(HF,JSON.stringify(health,null,2));
   console.log('Health saved. Mode: imap | Consecutive fails:',health.consecutiveFails);
 }
-main().catch(e=>{console.error(e.message);process.exit(1)});
+main()
+  .then(() => {
+    if (process.exitCode) setImmediate(() => process.exit(process.exitCode));
+  })
+  .catch(e => {
+    console.error(e.message);
+    process.exitCode = 1;
+    setImmediate(() => process.exit(process.exitCode));
+  });
