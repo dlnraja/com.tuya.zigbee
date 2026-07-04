@@ -358,6 +358,70 @@
         ]
       },
       {
+        "id": "boiler_switch_energy_turned_off",
+        "title": {
+          "en": "Boiler switch turned off",
+          "fr": "Interrupteur chaudiere eteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff,measure_power"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power",
+              "fr": "Puissance"
+            }
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Temperature"
+            }
+          }
+        ]
+      },
+      {
+        "id": "boiler_switch_energy_turned_on",
+        "title": {
+          "en": "Boiler switch turned on",
+          "fr": "Interrupteur chaudiere allume"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff,measure_power"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power",
+              "fr": "Puissance"
+            }
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Temperature"
+            }
+          }
+        ]
+      },
+      {
         "id": "button_double_press",
         "title": {
           "en": "Button double-pressed",
@@ -66358,6 +66422,58 @@
               "nl": "Gezondheidsstatus",
               "de": "Gesundheitsstatus"
             }
+          }
+        ]
+      },
+      {
+        "id": "boiler_switch_energy_power_above",
+        "title": {
+          "en": "Boiler power is above [[threshold]] W",
+          "fr": "La puissance chaudiere est au-dessus de [[threshold]] W"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_power"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "fr": "Seuil"
+            },
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "value": 1000
+          }
+        ]
+      },
+      {
+        "id": "boiler_switch_energy_temperature_above",
+        "title": {
+          "en": "Boiler temperature is above [[threshold]] C",
+          "fr": "La temperature chaudiere est au-dessus de [[threshold]] C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_temperature"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "fr": "Seuil"
+            },
+            "min": -40,
+            "max": 150,
+            "step": 0.5,
+            "value": 50
           }
         ]
       },
