@@ -321,6 +321,74 @@ function validateKnownTs004fRouting() {
   }
 }
 
+function validateKnownTs0014WallSwitchRouting() {
+  const wallSwitch = loadDriverCompose('wall_switch_4gang_1way');
+  const genericSwitch = loadDriverCompose('switch_4gang');
+  if (!wallSwitch || !genericSwitch) return;
+
+  const wallManufacturers = getManufacturerNames(wallSwitch);
+  const wallProducts = getProductIds(wallSwitch);
+  const genericManufacturers = getManufacturerNames(genericSwitch);
+  const forumManufacturer = '_TZ3000_mrduubod';
+
+  if (!hasCI(wallManufacturers, forumManufacturer)) {
+    addError('wall_switch_4gang_1way', 'Forum #2099 Moes TS0014 manufacturer missing from BSEED wall switch driver', {
+      manufacturerName: forumManufacturer,
+    });
+  }
+
+  if (!hasCI(wallProducts, 'TS0014')) {
+    addError('wall_switch_4gang_1way', 'Forum #2099 Moes TS0014 route lost productId TS0014');
+  }
+
+  if (hasCI(genericManufacturers, forumManufacturer)) {
+    addError('switch_4gang', 'Forum #2099 Moes TS0014 must not be claimed by generic switch_4gang', {
+      manufacturerName: forumManufacturer,
+    });
+  }
+
+  const DeviceFingerprintDB = require(path.join(ROOT, 'lib', 'DeviceFingerprintDB'));
+  const profile = DeviceFingerprintDB.lookup(forumManufacturer, 'TS0014');
+  if (profile?.driver !== 'wall_switch_4gang_1way') {
+    addError('DeviceFingerprintDB', 'Forum #2099 Moes TS0014 is not compound-routed to wall_switch_4gang_1way', {
+      manufacturerName: forumManufacturer,
+      profile,
+    });
+  }
+}
+
+function validateSwitchButtonCapabilityFallback() {
+  const basePath = path.join(ROOT, 'lib', 'devices', 'UnifiedSwitchBase.js');
+  const baseSource = fs.existsSync(basePath) ? fs.readFileSync(basePath, 'utf8') : '';
+  const requiredSnippets = [
+    '_registerButtonCapabilityListeners',
+    'registerCapabilityListener(capability',
+    'this._registerButtonCapabilityListeners()',
+    '_triggerPhysicalFlow',
+  ];
+
+  for (const snippet of requiredSnippets) {
+    if (!baseSource.includes(snippet)) {
+      addError('UnifiedSwitchBase', 'Switch base lost button.N capability listener fallback', { snippet });
+    }
+  }
+
+  for (const driverName of ['wall_switch_1gang_1way', 'wall_switch_2gang_1way', 'wall_switch_3gang_1way', 'wall_switch_4gang_1way']) {
+    const compose = loadDriverCompose(driverName);
+    if (!compose) continue;
+    const buttonCaps = normalizeArray(compose.capabilities).filter(capability => /^button\.\d+$/.test(capability));
+    if (!buttonCaps.length) continue;
+
+    const devicePath = path.join(DRIVERS_DIR, driverName, 'device.js');
+    const deviceSource = fs.existsSync(devicePath) ? fs.readFileSync(devicePath, 'utf8') : '';
+    if (!deviceSource.includes('UnifiedSwitchBase')) {
+      addError(driverName, 'Driver declares button.N capabilities without inheriting UnifiedSwitchBase fallback listeners', {
+        buttonCaps,
+      });
+    }
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -333,6 +401,8 @@ function run() {
   validateKnownTs0041Routing();
   validateKnownTs0044Routing();
   validateKnownTs004fRouting();
+  validateKnownTs0014WallSwitchRouting();
+  validateSwitchButtonCapabilityFallback();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())

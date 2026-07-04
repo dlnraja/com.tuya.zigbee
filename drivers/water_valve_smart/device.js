@@ -72,6 +72,14 @@ class WaterValveSmartDevice extends PhysicalButtonMixin(VirtualButtonMixin(Batte
     }, 'onNodeInit');
   }
 
+  async setValve(value) {
+    const target = value === true || value === 1 || value === '1' || value === 'open' || value === 'on';
+    this.log('[WATER-VALVE] setValve called with:', target);
+    await this._setOnOff(target);
+    await this.safeSetCapabilityValue('onoff', target).catch(() => {});
+    return true;
+  }
+
   onDeleted() {
     this.log('Device deleted, cleaning up');
   }

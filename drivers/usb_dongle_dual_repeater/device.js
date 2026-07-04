@@ -206,7 +206,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
         this.log('[USB_DONGLE] Setting up metering listeners' );
 
         metering.on('attr.currentSummationDelivered', value => {
-          const kWh = value * 1000;
+          const kWh = value / 1000;
           this.log('[USB_DONGLE] Energy:', kWh, 'kWh');
           if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
       });
@@ -222,7 +222,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = data.currentSummationDelivered * 1000;if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
+            const kWh = data.currentSummationDelivered / 1000;if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
           }
         }).catch(() => {});
       }
@@ -242,4 +242,3 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 }
 
 module.exports = UsbDongleDualRepeaterDevice;
-

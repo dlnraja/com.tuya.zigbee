@@ -1,5 +1,6 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -173,7 +174,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
         meteringCluster.on('attr.current summation delivered', (value) => {
-          const kwh = value * 1000; // Typically in Wh
+          const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
           this.log(`[ZCL-DATA] switch.energy raw=${value}  ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
@@ -293,7 +294,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.safeSetCapabilityValue('meter_power', attrs.currentSummationDelivered * 1000).catch(() => { });
+        const kwh = smartParse(attrs.currentSummationDelivered, null, { capability: 'meter_power' }) || 0;
+        this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {
@@ -456,4 +458,3 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 }
 
 module.exports = Switch2GangDevice;
-
