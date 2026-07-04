@@ -13,17 +13,31 @@ const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
  */
 class ValveDualIrrigationDevice extends BaseUnifiedDevice {
 
+  _isValveOn(value) {
+    if (typeof value === 'boolean') {return value;}
+    if (typeof value === 'number') {return value === 1;}
+    if (typeof value === 'string') {
+      return ['1', 'true', 'on', 'open', 'opened', 'running', 'watering'].includes(value.toLowerCase());
+    }
+    return false;
+  }
+
+  _toTuyaDPType(type) {
+    const normalized = String(type || 'value').toLowerCase();
+    return ({ raw: 0, bool: 1, boolean: 1, value: 2, string: 3, enum: 4, bitmap: 5 })[normalized] ?? 2;
+  }
+
   get dpMappings() {
     return {
       // Valve 1
-      1: { capability: 'onoff.valve_1', transform: (v) => v === 1 || v === true },
-      104: { capability: 'onoff.valve_1', transform: (v) => v === 1 || v === 0 }, // Status reporting
+      1: { capability: 'onoff.valve_1', transform: (v) => this._isValveOn(v) },
+      104: { capability: 'onoff.valve_1', transform: (v) => this._isValveOn(v) }, // Status reporting
       13: { capability: 'countdown_remaining' },
       25: { internal: 'duration_1' },
 
       // Valve 2
-      2: { capability: 'onoff.valve_2', transform: (v) => v === 1 || v === true },
-      105: { capability: 'onoff.valve_2', transform: (v) => v === 1 || v === 0 }, // Status reporting
+      2: { capability: 'onoff.valve_2', transform: (v) => this._isValveOn(v) },
+      105: { capability: 'onoff.valve_2', transform: (v) => this._isValveOn(v) }, // Status reporting
       14: { capability: 'countdown_remaining' },
       26: { internal: 'duration_2' },
 
@@ -46,23 +60,46 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       this.log(`[VALVE-2] Setting Valve 1 = ${value}`);
       // Insoma valves often require explicit 1/0 as bool
       await this.sendDP(1, value ? true : false, 'bool');
+      await this.safeSetCapabilityValue?.('onoff.valve_1', Boolean(value)).catch(() => {});
       });
 
     this.registerCapabilityListener('onoff.valve_2', async (value) => {
       this.log(`[VALVE-2] Setting Valve 2 = ${value}`);
       await this.sendDP(2, value ? true : false, 'bool');
+      await this.safeSetCapabilityValue?.('onoff.valve_2', Boolean(value)).catch(() => {});
       });
 
     this.log('[VALVE-2]  Ready (Dual Engine v7.4.4)');
   }
 
-  // Override sendDP to ensure tuyaEF00Manager is used
+  // Override sendDP to keep dual-valve actions working across manager variants.
   async sendDP(dp, value, type = 'bool') {
-    if (this.tuyaEF00Manager) {
-      return this.tuyaEF00Manager.sendDP(dp, value, type);
+    const manager = this.tuyaEF00Manager || this._tuyaEF00Manager;
+
+    if (manager) {
+      if (typeof manager.sendDP === 'function') {
+        return manager.sendDP(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
+      }
+      if (typeof manager.sendDPWithConfirmation === 'function') {
+        const result = await manager.sendDPWithConfirmation(dp, value, type, { retries: 1, timeout: 2500, expectEcho: false });
+        if (result?.success) {return true;}
+      }
+      if (typeof manager._sendDPRaw === 'function') {
+        const sent = await manager._sendDPRaw(dp, value, type);
+        if (sent) {return true;}
+      }
+      if (typeof manager.sendTuyaDP === 'function') {
+        const sent = await manager.sendTuyaDP(dp, this._toTuyaDPType(type), value);
+        if (sent) {return true;}
+      }
     }
-    this.error('[VALVE-2]  Error: tuyaEF00Manager not initialized');
-    throw new Error('tuya_manager_not_found');
+
+    if (typeof this._sendTuyaDP === 'function') {
+      return this._sendTuyaDP(dp, value, type);
+    }
+
+    this.error('[VALVE-2] Error: no Tuya DP sender available');
+    throw new Error('tuya_dp_sender_not_found');
   }
 
   /**
