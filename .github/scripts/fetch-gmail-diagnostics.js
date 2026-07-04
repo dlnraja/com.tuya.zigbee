@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.6: IMAP-only mode — OAuth removed entirely
+// v5.13.2: IMAP primary with OAuth fallback when Gmail app-password auth breaks
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const privacy=require('./privacy-redactor');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
 let imap=null;try{imap=require('./gmail-imap-reader')}catch(err){console.error('gmail-imap-reader load error:',err.message)}
+let oauth=null;try{oauth=require('./gmail-oauth-reader')}catch(err){console.error('gmail-oauth-reader load error:',err.message)}
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 let KB=null;try{KB=require('./bug-knowledge-base')}catch{}
 const SD=path.join(__dirname,'..','state');
@@ -15,8 +16,69 @@ const ROOT=path.join(__dirname,'..','..'),DD=path.join(ROOT,'drivers');
 const DRY=process.env.DRY_RUN==='true';
 const CI=process.env.CI==='true'||process.env.GITHUB_ACTIONS==='true';
 const intEnv=(name,fallback)=>{const n=Number.parseInt(process.env[name]||'',10);return Number.isFinite(n)?n:fallback};
+const boolEnv=(name,fallback=false)=>{const v=process.env[name];return v===undefined?fallback:/^(1|true|yes|on)$/i.test(String(v).trim())};
+function argVal(argv,names){
+  for(const name of names){
+    const idx=argv.indexOf(name);
+    if(idx!==-1&&argv[idx+1])return argv[idx+1];
+    const pref=name+'=';
+    const hit=argv.find(a=>a.startsWith(pref));
+    if(hit)return hit.slice(pref.length);
+  }
+  return null;
+}
+function argFlag(argv,names){return names.some(name=>argv.includes(name))}
+function boundedInt(value,fallback,min,max){
+  const n=Number.parseInt(String(value||''),10);
+  if(!Number.isFinite(n))return fallback;
+  return Math.max(min,Math.min(max,n));
+}
+function parseFetchOptions(argv){
+  const allHistory=argFlag(argv,['--all-history','--history'])||boolEnv('GMAIL_DIAG_ALL_HISTORY',false);
+  const since=argVal(argv,['--since','--after'])||process.env.GMAIL_DIAG_SINCE||(allHistory?'2019-01-01':null);
+  const until=argVal(argv,['--until','--before'])||process.env.GMAIL_DIAG_UNTIL||null;
+  const maxFallback=allHistory?1000:100;
+  const maxResults=boundedInt(argVal(argv,['--max-results','--max'])||process.env.GMAIL_DIAG_MAX_RESULTS,maxFallback,1,20000);
+  const maxTotalResults=boundedInt(argVal(argv,['--max-total-results','--max-total'])||process.env.GMAIL_DIAG_MAX_TOTAL_RESULTS,maxResults,1,20000);
+  const chunkDays=boundedInt(argVal(argv,['--chunk-days'])||process.env.GMAIL_DIAG_CHUNK_DAYS,0,0,3650);
+  const reprocess=argFlag(argv,['--reprocess','--replay'])||boolEnv('GMAIL_DIAG_REPROCESS',false);
+  const stateLimit=boundedInt(process.env.GMAIL_DIAG_STATE_LIMIT,allHistory?Math.max(5000,maxTotalResults):500,100,20000);
+  const autoImplement=argFlag(argv,['--implement','--auto-implement'])||boolEnv('GMAIL_DIAG_AUTO_IMPLEMENT',false);
+  const requireAccess=argFlag(argv,['--require-access'])||boolEnv('GMAIL_DIAG_REQUIRE_ACCESS',false);
+  return{allHistory,since,until,maxResults,maxTotalResults,chunkDays,reprocess,stateLimit,autoImplement,requireAccess};
+}
 const load=()=>{try{return JSON.parse(fs.readFileSync(SF,'utf8'))}catch{return{lastCheck:null,processed:[]}}};
 const save=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stringify(s,null,2))};
+
+function toYmd(date){return date.toISOString().split('T')[0]}
+function addDays(date,days){const d=new Date(date);d.setUTCDate(d.getUTCDate()+days);return d}
+function buildFetchWindows(opts){
+  if(!opts.chunkDays||!opts.since)return[{since:opts.since,until:opts.until||null}];
+  const start=new Date(opts.since);
+  const end=opts.until?new Date(opts.until):addDays(new Date(),1);
+  if(!Number.isFinite(start.getTime())||!Number.isFinite(end.getTime())||end<=start){
+    return[{since:opts.since,until:opts.until||null}];
+  }
+  const windows=[];
+  let cursor=start;
+  while(cursor<end&&windows.length<100){
+    const next=addDays(cursor,opts.chunkDays);
+    const until=next<end?next:end;
+    windows.push({since:toYmd(cursor),until:toYmd(until)});
+    cursor=until;
+  }
+  return windows.length?windows:[{since:opts.since,until:opts.until||null}];
+}
+
+const ISSUE_CATEGORIES=[
+  {id:'aggregate_error',label:'AggregateError / Zigbee startup',severity:'critical',re:/aggregateerror|empty manufacturername|manufacturername arrays?|zigbee initialization/i,checks:['npm run validate:mfr-empty','npm run check:athom','npm run precommit:full']},
+  {id:'processing_failed',label:'Athom processing failed / publish',severity:'critical',re:/processing failed|publish failed|build failed|athom.*build|homey app validate|homey app publish/i,checks:['npm run check:yaml','npm run validate:publish','npm run diag:build']},
+  {id:'missing_capability_listener',label:'Missing capability listener',severity:'high',re:/missing capability listener|capability listener|setable|settable/i,checks:['npm run check:flows','npm run check:voice','node scripts/PRE_COMMIT_CHECKS.js']},
+  {id:'button_flow',label:'Button / flow trigger',severity:'high',re:/button|remote_button|virtual_button|button\.push|flow card|trigger card|flow trigger/i,checks:['npm run check:flows','node scripts/automation/audit-flowcards.js --json']},
+  {id:'battery_unknown',label:'Battery reporting unknown',severity:'high',re:/battery|measure_battery|alarm_battery|powerconfiguration|question mark|\?\?|unknown battery/i,checks:['node scripts/ci/bug-hunter.js --json','node scripts/automation/validate-drivers.js --json']},
+  {id:'runtime_crash',label:'Runtime crash / exception',severity:'high',re:/crash|uncaught|typeerror|cannot read|unhandled|heap|oom|allocation failed/i,checks:['node scripts/ci/bug-hunter.js --json','npm run check:timer-context']},
+  {id:'security_privacy',label:'Security / privacy signal',severity:'critical',re:/token|secret|password|local[_ -]?key|privacy|leak/i,checks:['npm run security:diagnostics','npm run security-scan']}
+];
 
 // === PII Sanitization: strip personal info, keep ONLY device data ===
 function sanitize(text){
@@ -49,6 +111,7 @@ function extractSafePseudo(em){
   if(p.source==='homey_system')return{source:'homey_system',username:null};
   // User emails: only keep first name initial + last name initial
   if(p.displayName){
+    const parts=p.displayName.split(/\s+/);
     return{source:'user',username:safeAlias('pseudo',p.displayName)};
   }
   return{source:p.source||'unknown',username:null};
@@ -188,6 +251,44 @@ function parseCrash(em){
     bodyExcerpt:sanitize(body.substring(0,1000))});
 }
 
+function normalizeErr(err){
+  return sanitize(String(err||'').replace(/\s+/g,' ').trim()).substring(0,180);
+}
+
+function analyzeHistory(entries){
+  const categories=new Map(),checks=new Map(),errors=new Map(),chronology=[];
+  for(const r of entries){
+    const text=[r.type,r.subj,(r.errs||[]).join(' '),r.crashInfo?.crashApp,(r.crashInfo?.stackTraces||[]).join(' ')].filter(Boolean).join(' ');
+    const matched=[];
+    for(const cat of ISSUE_CATEGORIES){
+      if(cat.re.test(text)){
+        matched.push(cat.id);
+        if(!categories.has(cat.id))categories.set(cat.id,{id:cat.id,label:cat.label,severity:cat.severity,count:0,checks:cat.checks});
+        categories.get(cat.id).count++;
+        for(const check of cat.checks)checks.set(check,(checks.get(check)||0)+1);
+      }
+    }
+    for(const e of(r.errs||[])){
+      const n=normalizeErr(e);
+      if(n)errors.set(n,(errors.get(n)||0)+1);
+    }
+    if(matched.length){
+      chronology.push({date:r.date||'unknown',type:r.type,subj:r.subj,categories:matched,
+        fps:r.fps,errors:(r.errs||[]).map(normalizeErr).filter(Boolean).slice(0,5)});
+    }
+  }
+  const topCategories=[...categories.values()].sort((a,b)=>b.count-a.count||a.id.localeCompare(b.id));
+  const topErrors=[...errors.entries()].sort((a,b)=>b[1]-a[1]).slice(0,25).map(([error,count])=>({error,count}));
+  const recommendedChecks=[...checks.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0]))
+    .map(([command,weight])=>({command,weight}));
+  return privacy.redactObject({
+    categories:topCategories,
+    topErrors,
+    recommendedChecks,
+    chronology:chronology.sort((a,b)=>String(a.date).localeCompare(String(b.date))).slice(-200)
+  });
+}
+
 // Rate limiter: AI is optional. CI/DRY runs prioritize deterministic crash extraction.
 let _aiCalls=0,_aiSkipLogged=false;
 const AI_MAX=Math.max(0,intEnv('GMAIL_DIAG_AI_MAX',(DRY||CI)?0:10));
@@ -288,37 +389,165 @@ async function researchAndImplement(allNewFPs,idx){
   return{researched,added,details};
 }
 
+function runSummary(fetchOptions,extra={}){
+  return{mode:fetchOptions.allHistory?'all-history':'recent',since:fetchOptions.since||'rolling-30-days',
+    until:fetchOptions.until||'now',chunkDays:fetchOptions.chunkDays,maxTotalResults:fetchOptions.maxTotalResults,
+    maxResults:fetchOptions.maxResults,reprocess:fetchOptions.reprocess,stateLimit:fetchOptions.stateLimit,
+    requireAccess:fetchOptions.requireAccess,...extra};
+}
+
+function writeAccessFailureReport(fetchOptions,code,message,extra={}){
+  const now=new Date().toISOString();
+  const mode=extra.mode||'imap';
+  const report=privacy.redactObject({timestamp:now,count:0,
+    run:runSummary(fetchOptions,extra),
+    access:{gmail:{ok:false,mode,code,message:privacy.redact(message)}},
+    byType:{},newFingerprints:[],
+    history:{diagnosticsAnalyzed:0,score:0,status:'blocked',categories:[],recommendedChecks:[],topErrors:[],latestEvents:[],missingGuardrails:[]},
+    deepResearch:{researched:0,added:0,details:[],autoImplement:fetchOptions.autoImplement},
+    diagnostics:[],
+    errors:[{source:'gmail',code,message:privacy.redact(message)}]});
+  fs.mkdirSync(SD,{recursive:true});
+  privacy.assertNoLeaks(report,RF);
+  fs.writeFileSync(RF,JSON.stringify(report,null,2));
+  const HF=path.join(SD,'gmail-token-health.json');
+  let consecutiveFails=1,lastOk=null,previousChecks=[];
+  try{
+    const existing=JSON.parse(fs.readFileSync(HF,'utf8'));
+    if(existing){
+      consecutiveFails=(Number(existing.consecutiveFails)||0)+1;
+      lastOk=existing.lastOk||null;
+      previousChecks=Array.isArray(existing.checks)?existing.checks.slice(-19):[];
+    }
+  }catch{}
+  const check={time:now,ok:false,mode,code,message:privacy.redact(message)};
+  const health=privacy.redactObject({mode,lastOk,lastFail:now,consecutiveFails,
+    errorCode:code,checks:[...previousChecks,check]});
+  privacy.assertNoLeaks(health,HF);
+  fs.writeFileSync(HF,JSON.stringify(health,null,2));
+}
+
+function finishAccessFailure(fetchOptions,code,message,extra={}){
+  writeAccessFailureReport(fetchOptions,code,message,extra);
+  const hint='Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, when OAuth fallback is used, GMAIL_REFRESH_TOKEN secrets.';
+  if(fetchOptions.requireAccess){
+    console.error('::error::'+message+' '+hint);
+    process.exit(1);
+  }
+  console.log('::warning::'+message+' '+hint+' Continuing because GMAIL_DIAG_REQUIRE_ACCESS is false.');
+  process.exit(0);
+}
+
 async function main(){
-  // v5.12.6: IMAP-only — no OAuth, no token expiry, permanent
+  const fetchOptions=parseFetchOptions(process.argv.slice(2));
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
-  if(!e||!p){console.error('IMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)');process.exit(1)}
-  if(!imap){console.error('gmail-imap-reader not available. npm install imapflow');process.exit(1)}
-  console.log('IMAP-only mode — connecting as',safeAlias('account',e));
-  const emails=await imap.readViaIMAP();
-  if(!emails||!emails.length){console.log('No emails retrieved via IMAP');process.exit(0)}
-  console.log('IMAP OK:',emails.length,'emails');
+  const hasImapCredentials=Boolean(e&&p);
+  const hasOAuthCredentials=Boolean(oauth&&oauth.hasOAuthCredentials&&oauth.hasOAuthCredentials());
+  if(!hasImapCredentials&&!hasOAuthCredentials){
+    const msg='Gmail credentials missing. Set GMAIL_EMAIL/GMAIL_APP_PASSWORD or Gmail OAuth secrets, then rerun Gmail diagnostics.';
+    console.error('Gmail credentials missing. Set IMAP credentials or GMAIL_CLIENT_ID + GMAIL_CLIENT_SECRET + GMAIL_REFRESH_TOKEN.');
+    finishAccessFailure(fetchOptions,'missing_gmail_credentials',msg,{mode:'imap+oauth'});
+  }
+  if(hasImapCredentials&&!imap&&!hasOAuthCredentials){
+    const msg='gmail-imap-reader is unavailable. Install the IMAP dependencies before rerunning Gmail diagnostics.';
+    console.error('gmail-imap-reader not available. npm install imapflow');
+    finishAccessFailure(fetchOptions,'imap_reader_unavailable',msg);
+  }
+  console.log('Gmail diagnostics mode — IMAP primary, OAuth fallback:',hasOAuthCredentials?'available':'unavailable');
+  if(hasImapCredentials)console.log('IMAP primary — connecting as',safeAlias('account',e));
+  else console.log('IMAP primary unavailable — missing GMAIL_EMAIL/GMAIL_APP_PASSWORD');
+  console.log('Diagnostics fetch options:',JSON.stringify({mode:fetchOptions.allHistory?'all-history':'recent',
+    since:fetchOptions.since||'rolling-30-days',until:fetchOptions.until||'now',
+    maxResults:fetchOptions.maxResults,maxTotalResults:fetchOptions.maxTotalResults,
+    chunkDays:fetchOptions.chunkDays,
+    reprocess:fetchOptions.reprocess,autoImplement:fetchOptions.autoImplement}));
+  const windows=buildFetchWindows(fetchOptions);
+  const emails=[],seenEmailIds=new Set();
+  let imapConnectionFailed=false,oauthConnectionFailed=false;
+  const modesUsed=new Set();
+  for(const win of windows){
+    if(emails.length>=fetchOptions.maxTotalResults)break;
+    console.log('Gmail window:',JSON.stringify(win));
+    let batch;
+    let mode=null;
+    if(hasImapCredentials&&imap){
+      try{
+        batch=await imap.readViaIMAP({afterDate:win.since,untilDate:win.until,
+          maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+      }catch(err){
+        console.error('IMAP read error:',privacy.redact(err.message));
+        batch=null;
+      }
+      if(Array.isArray(batch))mode='imap';
+      else{
+        imapConnectionFailed=true;
+        if(batch!==null)console.error('IMAP returned an invalid response; trying OAuth fallback if available');
+      }
+    }
+    if(!Array.isArray(batch)&&hasOAuthCredentials&&oauth){
+      console.log('OAuth fallback window:',JSON.stringify(win));
+      try{
+        batch=await oauth.readViaOAuth({afterDate:win.since,untilDate:win.until,
+          maxResults:fetchOptions.maxResults,allHistory:fetchOptions.allHistory});
+        if(Array.isArray(batch))mode='oauth';
+        else oauthConnectionFailed=true;
+      }catch(err){
+        oauthConnectionFailed=true;
+        batch=null;
+        console.error('OAuth read error:',privacy.redact(err.message));
+      }
+    }
+    if(!Array.isArray(batch)){
+      continue;
+    }
+    modesUsed.add(mode||'unknown');
+    for(const em of batch){
+      if(seenEmailIds.has(em.id))continue;
+      seenEmailIds.add(em.id);
+      emails.push(em);
+      if(emails.length>=fetchOptions.maxTotalResults)break;
+    }
+  }
+  if((imapConnectionFailed||oauthConnectionFailed)&&!emails.length){
+    const code=hasOAuthCredentials?'gmail_auth_failed':'imap_connection_failed';
+    const msg=hasOAuthCredentials
+      ? 'IMAP and OAuth Gmail access both failed before diagnostics could be fetched. Refresh Gmail IMAP app password and OAuth refresh token secrets, then rerun Gmail Diagnostics.'
+      : 'IMAP connection failed before diagnostics could be fetched. Refresh the Gmail app credential, then rerun Gmail Diagnostics.';
+    console.error('::error::Gmail diagnostics could not authenticate. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, if using OAuth fallback, GMAIL_REFRESH_TOKEN secrets.');
+    finishAccessFailure(fetchOptions,code,msg,{windows:windows.length,fetched:0,mode:hasOAuthCredentials?'imap+oauth':'imap'});
+  }
+  if(imapConnectionFailed){
+    console.log('::warning::At least one IMAP window failed, but diagnostics were fetched via',Array.from(modesUsed).join('+')||'fallback');
+  }
+  if(oauthConnectionFailed&&hasOAuthCredentials&&!modesUsed.has('oauth')){
+    console.log('::warning::OAuth fallback did not fetch diagnostics.');
+  }
+  if(!emails||!emails.length){console.log('No emails retrieved via Gmail diagnostics');process.exit(0)}
+  const successMode=Array.from(modesUsed).join('+')||'unknown';
+  console.log('Gmail diagnostics OK:',emails.length,'emails across',windows.length,'window(s), mode:',successMode);
 
-  // Track IMAP health (replaces old OAuth health tracking)
+  // Track Gmail diagnostics health.
   const HF=path.join(SD,'gmail-token-health.json');
   try{
-    const h={mode:'imap',lastOk:new Date().toISOString(),consecutiveFails:0,emailsFetched:emails.length,
-      checks:[{time:new Date().toISOString(),ok:true,mode:'imap'}]};
+    const h={mode:successMode,lastOk:new Date().toISOString(),consecutiveFails:0,emailsFetched:emails.length,
+      checks:[{time:new Date().toISOString(),ok:true,mode:successMode,windows:windows.length}]};
     const safeHealth=privacy.redactObject(h);privacy.assertNoLeaks(safeHealth,HF);
     fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(HF,JSON.stringify(safeHealth,null,2));
   }catch{}
 
   const st=load(),idx=buildIndex(),res=[];
-  const done=new Set(st.processed||[]);
+  const done=new Set(fetchOptions.reprocess?[]:(st.processed||[]));
   const pidx=idx.pidx||new Map();
   console.log('Driver index:',idx.size,'mfrs +',pidx.size,'pids across',new Set([...idx.values(),...pidx.values()].flat()).size,'drivers');
   const allNewFPs=new Set();
+  let skippedAlreadyProcessed=0;
 
   // v5.13.0: Pseudo tracking for cross-referencing
   const pseudoMap=new Map(); // username -> [{type, subj, date, fps}]
 
   for(const em of emails){
-    if(done.has(em.id))continue;
+    if(done.has(em.id)){skippedAlreadyProcessed++;continue}
     const type=classify(em);
     const d=parse(em.body);
     const xref=crossRef(d,idx);
@@ -354,6 +583,7 @@ async function main(){
       ghInfo,forumInfo:forumInfo?{topic:forumInfo.topic,author:forumInfo.author,fps:forumInfo.fps}:null,
       crashInfo:crashInfo?{stackTraces:(crashInfo.stackTraces||[]).map(s=>sanitize(s)),
         crashApp:crashInfo.crashApp,capabilities:crashInfo.capabilities,clusters:crashInfo.clusters}:null,
+      kbMatch:d.kbMatch,
       ai:safeAI,homeyVersion:d.homeyVersion,appVersion:d.appVersion,
       bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'});
     res.push(entry);
@@ -372,20 +602,26 @@ async function main(){
 
   // Deep research new FPs from emails (filter garbage first)
   const newFPList=[...allNewFPs].filter(fp=>isValidTuyaFP(fp));
-  let impl={researched:0,added:0,details:[]};
-  if(newFPList.length>0){
+  let impl={researched:0,added:0,details:[],autoImplement:fetchOptions.autoImplement};
+  if(newFPList.length>0&&fetchOptions.autoImplement){
     console.log('\n=== Deep Research: '+newFPList.length+' new FPs ===');
     impl=await researchAndImplement(newFPList,idx);
+    impl.autoImplement=true;
     console.log('Researched:',impl.researched,'Added:',impl.added);
+  }else if(newFPList.length>0){
+    impl.skipped='auto implementation disabled; rerun with --implement or GMAIL_DIAG_AUTO_IMPLEMENT=true';
+    console.log('Deep research candidates:',newFPList.length,'(auto implementation disabled)');
   }
 
   st.lastCheck=new Date().toISOString();
-  st.processed=[...done].slice(-500);
+  st.processed=[...done].slice(-fetchOptions.stateLimit);
   save(st);
   const newFPs=res.flatMap(r=>(r.xref||[]).filter(x=>!x.supported).map(x=>x.fingerprint)).filter((v,i,a)=>a.indexOf(v)===i);
   const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
+  const history=analyzeHistory(res);
   const report=privacy.redactObject({timestamp:st.lastCheck,count:res.length,
-    byType:bt,newFingerprints:newFPs,deepResearch:impl,diagnostics:res});
+    run:runSummary(fetchOptions,{fetched:emails.length,skippedAlreadyProcessed,authMode:successMode}),
+    byType:bt,newFingerprints:newFPs,history,deepResearch:impl,diagnostics:res});
   privacy.assertNoLeaks(report,RF);
   fs.writeFileSync(RF,JSON.stringify(report,null,2));
   console.log('Done:',res.length,'emails |',newFPs.length,'new FPs |',impl.added,'auto-added');
@@ -397,6 +633,16 @@ async function main(){
     let yml='# Diagnostics Cross-Reference (auto-generated)\n';
     yml+='# Generated: '+st.lastCheck+'\n';
     yml+='# Emails processed: '+res.length+'\n\n';
+    yml+='run:\n';
+    yml+='  mode: '+(fetchOptions.allHistory?'all-history':'recent')+'\n';
+    yml+='  since: '+(fetchOptions.since||'rolling-30-days')+'\n';
+    yml+='  until: '+(fetchOptions.until||'now')+'\n';
+    yml+='  max_results: '+fetchOptions.maxResults+'\n';
+    yml+='  auth_mode: '+successMode+'\n';
+    yml+='  max_total_results: '+fetchOptions.maxTotalResults+'\n';
+    yml+='  chunk_days: '+fetchOptions.chunkDays+'\n';
+    yml+='  reprocess: '+fetchOptions.reprocess+'\n';
+    yml+='  skipped_already_processed: '+skippedAlreadyProcessed+'\n\n';
 
     // v5.13.1: Priority-ranked fingerprint cross-ref with protocol + KB + actions
     yml+='fingerprints:\n';
@@ -474,6 +720,17 @@ async function main(){
       }
     }
 
+    if(history.categories.length){
+      yml+='\ndiagnostic_categories:\n';
+      for(const c of history.categories){
+        yml+='  - id: '+c.id+'\n';
+        yml+='    label: "'+c.label.replace(/"/g,"'")+'"\n';
+        yml+='    severity: '+c.severity+'\n';
+        yml+='    count: '+c.count+'\n';
+        yml+='    checks: ['+c.checks.map(x=>'"'+x.replace(/"/g,"'")+'"').join(', ')+']\n';
+      }
+    }
+
     // v5.13.1: KB matches summary
     const kbResults=res.filter(r=>r.kbMatch);
     if(kbResults.length){
@@ -524,9 +781,16 @@ async function main(){
   }catch(ye){console.log('YAML output error:',ye.message)}
 
 if(process.env.GITHUB_STEP_SUMMARY){
-    let sm='## Gmail Diagnostics (IMAP)\n| Metric | Count |\n|---|---|\n';
+    let sm='## Gmail Diagnostics ('+successMode+')\n| Metric | Count |\n|---|---|\n';
     sm+='| Emails | '+res.length+' |\n| New FPs | '+newFPs.length+' |\n';
+    sm+='| Skipped already processed | '+skippedAlreadyProcessed+' |\n';
     sm+='| Researched | '+impl.researched+' |\n| Auto-added | '+impl.added+' |\n';
+    if(history.categories.length){
+      sm+='\n**Diagnostic categories:**\n'+history.categories.slice(0,8).map(c=>'- '+c.label+': '+c.count+' ('+c.severity+')').join('\n')+'\n';
+    }
+    if(history.recommendedChecks.length){
+      sm+='\n**Recommended checks:**\n'+history.recommendedChecks.slice(0,8).map(c=>'- `'+c.command+'`').join('\n')+'\n';
+    }
     if(newFPs.length)sm+='\n**New FPs:** '+newFPs.map(f=>'`'+f+'`').join(', ')+'\n';
     if(impl.details.length)sm+='\n**Implemented:**\n'+impl.details.map(d=>'- `'+d.fp+'` -> '+d.driver).join('\n')+'\n';
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,sm);

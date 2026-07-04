@@ -37,6 +37,10 @@ jobs:
         env:
           GMAIL_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD || secrets.HOMEY_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_DIAG_REQUIRE_ACCESS: "false"
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           DRY_RUN: false
