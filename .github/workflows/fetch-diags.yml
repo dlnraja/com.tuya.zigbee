@@ -33,6 +33,11 @@ on:
         type: boolean
         default: false
         required: false
+      require_access:
+        description: "Fail the workflow when Gmail IMAP and OAuth diagnostics access are both unavailable"
+        type: boolean
+        default: false
+        required: false
 
 permissions:
   contents: write
@@ -75,6 +80,7 @@ jobs:
           GMAIL_DIAG_CHUNK_DAYS: ${{ github.event.inputs.chunk_days || '0' }}
           GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
           GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
           GMAIL_DIAG_AI_MAX: "0"
           DRY_RUN: "true"
         run: |
@@ -108,7 +114,7 @@ jobs:
           fi
 
       - name: Assert Gmail diagnostics access
-        if: always() && steps.gmail_fetch.outputs.exit_code != '0'
+        if: always() && steps.gmail_fetch.outputs.exit_code != '0' && github.event.inputs.require_access == 'true'
         run: |
           echo "::error::Gmail diagnostics could not authenticate via IMAP or OAuth fallback. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets, then rerun Fetch Homey Diagnostics."
           exit 1

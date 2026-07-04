@@ -1,90 +1,136 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.6: IMAP health checker — OAuth removed entirely
+// v5.13.3: Gmail auth health checker - IMAP primary with OAuth fallback.
 const fs=require('fs'),path=require('path');
 const privacy=require('./privacy-redactor');
 const SD=path.join(__dirname,'..','state');
 const HF=path.join(SD,'gmail-token-health.json');
+const ALERT=path.join(SD,'_gmail_alert.txt');
 let imap=null;try{imap=require('./gmail-imap-reader')}catch{}
+let oauth=null;try{oauth=require('./gmail-oauth-reader')}catch{}
+
+function readHealth(){
+  try{return JSON.parse(fs.readFileSync(HF,'utf8'))}catch{return{mode:'gmail',checks:[],lastOk:null,consecutiveFails:0}}
+}
+
+function hasImapCredentials(){
+  return Boolean((process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL)&&(process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD));
+}
+
+function hasOAuthCredentials(){
+  return Boolean(oauth&&oauth.hasOAuthCredentials&&oauth.hasOAuthCredentials());
+}
+
+function safeWriteJson(file,obj){
+  const safe=privacy.redactObject(obj);
+  privacy.assertNoLeaks(safe,file);
+  fs.writeFileSync(file,JSON.stringify(safe,null,2));
+}
+
+function appendCheck(health,check){
+  health.checks=(health.checks||[]).concat(privacy.redactObject(check)).slice(-30);
+}
+
+function writeAlert(health,imapResult,oauthResult){
+  const lines=[
+    'Gmail diagnostics authentication failed '+health.consecutiveFails+' consecutive time(s).',
+    'IMAP: '+imapResult.code,
+    'OAuth: '+oauthResult.code,
+    '',
+    'Refresh GitHub Actions secrets:',
+    '1. GMAIL_EMAIL',
+    '2. GMAIL_APP_PASSWORD from https://myaccount.google.com/apppasswords',
+    '3. GMAIL_REFRESH_TOKEN if OAuth fallback is still used',
+    '',
+    'No secret values were written to this report.'
+  ];
+  const alert=privacy.redact(lines.join('\n'));
+  privacy.assertNoLeaks(alert,ALERT);
+  fs.writeFileSync(ALERT,alert);
+}
+
+async function tryImap(){
+  if(!hasImapCredentials())return{ok:false,mode:'imap',code:'missing_imap_credentials',message:'GMAIL_EMAIL/GMAIL_APP_PASSWORD not configured'};
+  if(!imap)return{ok:false,mode:'imap',code:'imap_reader_unavailable',message:'gmail-imap-reader unavailable'};
+  const email=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
+  console.log('IMAP health check - connecting as',privacy.alias('account',email));
+  try{
+    const emails=await imap.readViaIMAP({maxResults:5});
+    if(Array.isArray(emails))return{ok:true,mode:'imap',count:emails.length};
+    return{ok:false,mode:'imap',code:'imap_null_response',message:'IMAP returned no response'};
+  }catch(err){
+    return{ok:false,mode:'imap',code:'imap_read_failed',message:privacy.redact(err.message)};
+  }
+}
+
+async function tryOAuth(){
+  if(!hasOAuthCredentials())return{ok:false,mode:'oauth',code:'missing_oauth_credentials',message:'Gmail OAuth secrets not configured'};
+  console.log('OAuth health check - using refresh-token fallback');
+  try{
+    const emails=await oauth.readViaOAuth({maxResults:5});
+    if(Array.isArray(emails))return{ok:true,mode:'oauth',count:emails.length};
+    return{ok:false,mode:'oauth',code:'oauth_null_response',message:'OAuth returned no response'};
+  }catch(err){
+    return{ok:false,mode:'oauth',code:'oauth_read_failed',message:privacy.redact(err.message)};
+  }
+}
 
 async function main(){
   fs.mkdirSync(SD,{recursive:true});
   const now=new Date().toISOString();
-  let health;try{health=JSON.parse(fs.readFileSync(HF,'utf8'))}catch{health={mode:'imap',checks:[],lastOk:null,consecutiveFails:0}}
+  const health=readHealth();
 
-  const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
-  const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
-
-  if(!e||!p){
-    console.error('IMAP credentials missing.');
-    console.error('Setup (30 seconds):');
-    console.error('  1. https://myaccount.google.com/apppasswords');
-    console.error('  2. Generate App Password for Mail');
-    console.error('  3. gh secret set GMAIL_EMAIL');
-    console.error('  4. gh secret set GMAIL_APP_PASSWORD');
-    console.log('::error::Set GMAIL_EMAIL + GMAIL_APP_PASSWORD for email diagnostics (see SECRETS.md)');
-    health.mode='imap';health.checks=(health.checks||[]).concat({time:now,ok:false,err:'missing_creds'}).slice(-30);
-    health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
-    health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
-    fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exitCode = 1;
+  const imapResult=await tryImap();
+  if(imapResult.ok){
+    console.log('IMAP OK:',imapResult.count,'emails fetched (health check)');
+    health.mode='imap';
+    health.lastOk=now;
+    health.consecutiveFails=0;
+    health.emailsFetched=imapResult.count;
+    health.requiresSecretRefresh=false;
+    health.action='none';
+    delete health.lastFail;
+    appendCheck(health,{time:now,ok:true,mode:'imap',count:imapResult.count});
+    safeWriteJson(HF,health);
+    console.log('Health saved. Mode: imap | Consecutive fails:',health.consecutiveFails);
     return;
   }
 
-  if(!imap){
-    console.error('imapflow not installed. Run: npm install imapflow');
-    health.checks=(health.checks||[]).concat({time:now,ok:false,err:'no_imapflow'}).slice(-30);
-    health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
-    health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
-    fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exitCode = 1;
+  console.log('::warning::IMAP health failed: '+imapResult.code);
+  const oauthResult=await tryOAuth();
+  if(oauthResult.ok){
+    console.log('OAuth OK:',oauthResult.count,'emails fetched (health check)');
+    health.mode='oauth';
+    health.lastOk=now;
+    health.lastImapFail=now;
+    health.consecutiveFails=0;
+    health.emailsFetched=oauthResult.count;
+    health.requiresSecretRefresh=imapResult.code!=='missing_imap_credentials';
+    health.action=health.requiresSecretRefresh?'refresh_imap_app_password':'none';
+    appendCheck(health,{time:now,ok:true,mode:'oauth',count:oauthResult.count,imapFallbackReason:imapResult.code});
+    safeWriteJson(HF,health);
+    console.log('Health saved. Mode: oauth fallback | Consecutive fails:',health.consecutiveFails);
     return;
   }
 
-  console.log('IMAP health check — connecting as',privacy.alias('account',e));
-  try{
-    const emails=await imap.readViaIMAP({maxResults:5});
-    if(emails&&emails.length>=0){
-      console.log('IMAP OK:',emails.length,'emails fetched (health check)');
-      health.mode='imap';
-      health.lastOk=now;
-      health.consecutiveFails=0;
-      health.emailsFetched=emails.length;
-      health.checks=(health.checks||[]).concat({time:now,ok:true,mode:'imap',count:emails.length}).slice(-30);
-      // Clear any old OAuth fields
-      delete health.tokenSetDate;delete health.daysLeft;delete health.daysOld;
-      delete health.expiryEstimate;delete health.testingMode;
-      delete health.refreshTokenExpiresH;delete health.refreshTokenExpiresAt;
-      console.log('IMAP health: OK (no token expiry, permanent)');
-    } else {
-      throw new Error('IMAP returned null — connection failed');
-    }
-  }catch(err){
-    process.exitCode = 1;
-    console.error('IMAP FAILED:',privacy.redact(err.message));
-    health.checks=(health.checks||[]).concat({time:now,ok:false,err:privacy.redact(err.message)}).slice(-30);
-    health.consecutiveFails=(health.consecutiveFails||0)+1;health.lastFail=now;
-    if(health.consecutiveFails>=3){
-      console.log('::warning::IMAP has failed '+health.consecutiveFails+' times. Check GMAIL_APP_PASSWORD.');
-      const alertF=path.join(SD,'_imap_alert.txt');
-      if(!fs.existsSync(alertF)){
-        const alert='IMAP connection failed '+health.consecutiveFails+' times.\nLast error: '+privacy.redact(err.message)+'\n\nCheck:\n1. 2FA enabled on Google account\n2. App Password valid: https://myaccount.google.com/apppasswords\n3. gh secret set GMAIL_APP_PASSWORD with fresh password';
-        privacy.assertNoLeaks(alert,alertF);
-        fs.writeFileSync(alertF,alert);
-      }
-    }
-  }
-
-  health=privacy.redactObject(health);privacy.assertNoLeaks(health,HF);
-  fs.writeFileSync(HF,JSON.stringify(health,null,2));
-  console.log('Health saved. Mode: imap | Consecutive fails:',health.consecutiveFails);
+  console.error('Gmail auth health failed. IMAP:',imapResult.code,'OAuth:',oauthResult.code);
+  health.mode='imap+oauth';
+  health.lastFail=now;
+  health.consecutiveFails=(Number(health.consecutiveFails)||0)+1;
+  health.requiresSecretRefresh=true;
+  health.action='refresh_gmail_actions_secrets';
+  health.errorCode=oauthResult.code==='missing_oauth_credentials'?imapResult.code:'gmail_auth_failed';
+  appendCheck(health,{time:now,ok:false,mode:'imap+oauth',imap:imapResult.code,oauth:oauthResult.code});
+  safeWriteJson(HF,health);
+  if(health.consecutiveFails>=3)writeAlert(health,imapResult,oauthResult);
+  console.log('::error::Gmail diagnostics authentication failed. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets.');
+  process.exitCode=1;
 }
+
 main()
-  .then(() => {
-    if (process.exitCode) setImmediate(() => process.exit(process.exitCode));
-  })
-  .catch(e => {
-    console.error(e.message);
-    process.exitCode = 1;
-    setImmediate(() => process.exit(process.exitCode));
+  .then(()=>{if(process.exitCode)setImmediate(()=>process.exit(process.exitCode))})
+  .catch(e=>{
+    console.error(privacy.redact(e.message));
+    process.exitCode=1;
+    setImmediate(()=>process.exit(process.exitCode));
   });

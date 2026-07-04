@@ -1,10 +1,10 @@
-name: Gmail IMAP Health Check
+name: Gmail Auth Health Check
 # <!-- badges:start -->
-# [![Gmail IMAP Health Check](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml)
+# [![Gmail Auth Health Check](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml/badge.svg)](https://github.com/dlnraja/com.tuya.zigbee/actions/workflows/gmail-token-keepalive.yml)
 # <!-- badges:end -->
 
 
-# v5.12.7: IMAP-only daily health check
+# v5.13.3: IMAP primary daily health check with OAuth fallback
 on:
   schedule:
     - cron: '0 8 * * *'  # Daily 08:00 UTC
@@ -27,7 +27,7 @@ defaults:
     shell: bash
 
 jobs:
-  imap-health:
+  gmail-auth-health:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -39,34 +39,41 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: IMAP health check
+      - name: Gmail auth health check
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: node .github/scripts/gmail-token-keepalive.js
       - name: Commit health state
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          node .github/scripts/privacy-redactor.js .github/state/gmail-token-health.json .github/state/_imap_alert.txt
+          node .github/scripts/privacy-redactor.js .github/state/gmail-token-health.json .github/state/_gmail_alert.txt .github/state/_imap_alert.txt
           git add .github/state/gmail-token-health.json 2>/dev/null || true
           if ! git diff --staged --quiet; then
-            git commit -m "IMAP health $(date -u +%Y-%m-%d) [skip ci]"
+            git commit -m "Gmail auth health $(date -u +%Y-%m-%d) [skip ci]"
             bash scripts/ci/verified-git-push.sh master
           else
-            echo "No IMAP health changes to push"
+            echo "No Gmail auth health changes to push"
           fi
-      - name: Alert if IMAP failing
+      - name: Alert if Gmail auth failing
         continue-on-error: true
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f ".github/state/_imap_alert.txt" ]; then
-            node .github/scripts/privacy-redactor.js .github/state/_imap_alert.txt
-            gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] IMAP connection failing" \
-              --body "$(cat .github/state/_imap_alert.txt)" \
+          ALERT=".github/state/_gmail_alert.txt"
+          if [ ! -f "$ALERT" ] && [ -f ".github/state/_imap_alert.txt" ]; then
+            ALERT=".github/state/_imap_alert.txt"
+          fi
+          if [ -f "$ALERT" ]; then
+            node .github/scripts/privacy-redactor.js "$ALERT"
+            gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] Gmail diagnostics authentication failing" \
+              --body "$(cat "$ALERT")" \
               --label "automation" 2>/dev/null || true
-            rm -f .github/state/_imap_alert.txt
+            rm -f .github/state/_gmail_alert.txt .github/state/_imap_alert.txt
           fi

@@ -40,6 +40,11 @@ on:
         type: boolean
         default: false
         required: false
+      require_access:
+        description: "Fail the workflow when Gmail IMAP and OAuth diagnostics access are both unavailable"
+        type: boolean
+        default: false
+        required: false
       download_archives:
         description: "Download build archives during dashboard comparison"
         type: boolean
@@ -85,6 +90,9 @@ jobs:
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GMAIL_DIAG_AI_MAX: "0"
           GMAIL_DIAG_ALL_HISTORY: ${{ github.event.inputs.all_history || 'false' }}
           GMAIL_DIAG_SINCE: ${{ github.event.inputs.since || '' }}
@@ -94,6 +102,7 @@ jobs:
           GMAIL_DIAG_CHUNK_DAYS: ${{ github.event.inputs.chunk_days || '0' }}
           GMAIL_DIAG_STATE_LIMIT: ${{ github.event.inputs.max_total_results || '5000' }}
           GMAIL_DIAG_REPROCESS: ${{ github.event.inputs.reprocess || 'false' }}
+          GMAIL_DIAG_REQUIRE_ACCESS: ${{ github.event.inputs.require_access || 'false' }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
