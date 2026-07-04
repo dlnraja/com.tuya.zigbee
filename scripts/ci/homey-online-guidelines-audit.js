@@ -11,15 +11,18 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const APP_JS = path.join(ROOT, 'app.js');
 const API_JS = path.join(ROOT, 'api.js');
 const FLOW_CARD_PATCH = 'lib/drivers/ZigBeeDriverFlowCardPatch';
+const README_FILES = ['README.txt', 'README.nl.txt', 'README.de.txt', 'README.fr.txt'];
 
 const DOC_SOURCES = [
-  { name: 'Homey App Store Guidelines', url: 'https://apps.developer.homey.app/app-store/guidelines', freshness: 'last updated 21 days ago on 2026-07-01' },
-  { name: 'Homey Capabilities', url: 'https://apps.developer.homey.app/the-basics/devices/capabilities', freshness: 'last updated 3 months ago on 2026-07-01' },
-  { name: 'Homey Flow', url: 'https://apps.developer.homey.app/the-basics/flow', freshness: 'last updated 5 months ago on 2026-07-01' },
-  { name: 'Homey Flow Tokens', url: 'https://apps.developer.homey.app/the-basics/flow/tokens', freshness: 'last updated 3 months ago on 2026-07-01' },
-  { name: 'Homey Zigbee', url: 'https://apps.developer.homey.app/wireless/zigbee', freshness: 'last updated 2 months ago on 2026-07-01' },
-  { name: 'Homey Compose', url: 'https://apps.developer.homey.app/advanced/homey-compose', freshness: 'last updated 4 months ago on 2026-07-01' },
-  { name: 'Node.js 22 Upgrade Guide', url: 'https://apps.developer.homey.app/upgrade-guides/node-22', freshness: 'last updated 7 months ago on 2026-07-01' },
+  { name: 'Homey App Store Guidelines', url: 'https://apps.developer.homey.app/app-store/guidelines', freshness: 'official docs observed 2026-07-04; page refreshed recently (~3 weeks)' },
+  { name: 'Homey App Manifest', url: 'https://apps.developer.homey.app/the-basics/app/manifest', freshness: 'official docs observed 2026-07-04; page refreshed recently (~1 month)' },
+  { name: 'Homey App Permissions', url: 'https://apps.developer.homey.app/the-basics/app/permissions', freshness: 'official docs observed 2026-07-04; page refreshed recently (~5 months)' },
+  { name: 'Homey Publishing', url: 'https://apps.developer.homey.app/app-store/publishing', freshness: 'official docs observed 2026-07-04; validate at publish level before submission' },
+  { name: 'Homey Capabilities', url: 'https://apps.developer.homey.app/the-basics/devices/capabilities', freshness: 'official docs observed 2026-07-04; page refreshed recently (~3 months)' },
+  { name: 'Homey Flow', url: 'https://apps.developer.homey.app/the-basics/flow', freshness: 'official docs observed 2026-07-04; page refreshed recently (~5 months)' },
+  { name: 'Homey Zigbee', url: 'https://apps.developer.homey.app/wireless/zigbee', freshness: 'official docs observed 2026-07-04; page refreshed recently (~2 months)' },
+  { name: 'Homey Compose', url: 'https://apps.developer.homey.app/advanced/homey-compose', freshness: 'official docs observed 2026-07-04; app.json is generated from compose files' },
+  { name: 'Node.js 22 Upgrade Guide', url: 'https://apps.developer.homey.app/upgrade-guides/node-22', freshness: 'official docs observed 2026-07-04; Node 22 remains the CI runtime target' },
 ];
 
 const OPEN_SOURCE_SAMPLES = [
@@ -31,6 +34,12 @@ const OPEN_SOURCE_SAMPLES = [
 ];
 
 const TOKEN_TYPES = new Set(['boolean', 'image', 'number', 'string', 'uri']);
+const ALLOWED_APP_CATEGORIES = new Set(['lights', 'video', 'music', 'appliances', 'security', 'climate', 'tools', 'internet', 'localization', 'energy']);
+const APP_IMAGE_SIZES = {
+  small: [250, 175],
+  large: [500, 350],
+  xlarge: [1000, 700],
+};
 const ARG_TYPES = new Set([
   'autocomplete',
   'checkbox',
@@ -115,6 +124,31 @@ function titleText(title) {
   return '';
 }
 
+function localizedEntries(value) {
+  if (typeof value === 'string') return [['en', value]];
+  if (value && typeof value === 'object') return Object.entries(value).filter(([, text]) => typeof text === 'string');
+  return [];
+}
+
+function wordCount(text) {
+  return String(text || '').trim().split(/\s+/).filter(Boolean).length;
+}
+
+function readPngSize(file) {
+  if (!fs.existsSync(file)) return null;
+  const data = fs.readFileSync(file);
+  if (data.length < 24 || data.toString('ascii', 1, 4) !== 'PNG') return null;
+  return { width: data.readUInt32BE(16), height: data.readUInt32BE(20) };
+}
+
+function hexLuminance(hex) {
+  const match = String(hex || '').trim().match(/^#?([0-9a-f]{6})$/i);
+  if (!match) return null;
+  const parts = match[1].match(/.{2}/g).map(value => Number.parseInt(value, 16) / 255);
+  const linear = parts.map(value => (value <= 0.03928 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
+}
+
 function addIssue(report, type, code, scope, message, details) {
   report[type].push({ code, scope, message, details });
   report.summaryByCode[code] = (report.summaryByCode[code] || 0) + 1;
@@ -183,9 +217,79 @@ function auditManifest(app, pkg, report) {
       pushError(report, 'APP_REQUIRED_FIELD', 'app.json', `Missing required app manifest field: ${field}`);
     }
   }
+  if (!ALLOWED_APP_CATEGORIES.has(app.category)) {
+    pushError(report, 'APP_CATEGORY_INVALID', 'app.json', 'App category must be one of the current Homey App Store categories', { category: app.category });
+  }
+  if (!Array.isArray(app.platforms) || app.platforms.length === 0) {
+    pushError(report, 'APP_PLATFORMS_REQUIRED', 'app.json', 'App manifest must declare supported Homey platforms');
+  }
+  if (app.platforms && app.platforms.includes('cloud') && (!app.support || !String(app.support).startsWith('https://'))) {
+    pushWarning(report, 'CLOUD_SUPPORT_URL_RECOMMENDED', 'app.json', 'Verified/cloud apps need a support URL; keep local-only apps on platforms: ["local"] unless cloud is intentionally supported');
+  }
+  if (!Array.isArray(app.permissions)) {
+    pushError(report, 'APP_PERMISSIONS_ARRAY_REQUIRED', 'app.json', 'permissions must be an array; leave it empty when the app needs no privileged Homey APIs');
+  } else if (app.permissions.length > 0) {
+    pushWarning(report, 'APP_PERMISSIONS_MINIMIZE', 'app.json', 'Homey docs recommend requesting only permissions the app actually needs; new permissions also affect automatic updates', { permissions: app.permissions });
+  }
+  if (app.brandColor !== undefined) {
+    const luminance = hexLuminance(app.brandColor);
+    if (luminance === null) pushError(report, 'APP_BRAND_COLOR_INVALID', 'app.json', 'brandColor must be a HEX color string');
+    else if (luminance > 0.55) pushWarning(report, 'APP_BRAND_COLOR_TOO_BRIGHT', 'app.json', 'Homey Manifest docs say brandColor must not be very bright', { brandColor: app.brandColor, luminance: Number(luminance.toFixed(3)) });
+  }
+  const names = localizedEntries(app.name);
+  for (const [lang, name] of names) {
+    if (wordCount(name) > 4) pushWarning(report, 'APP_NAME_TOO_LONG', `app.json:name.${lang}`, 'Homey App Store guidelines recommend a short name of 4 words or less', { name });
+    if (/\b(homey|athom)\b/i.test(name)) pushError(report, 'APP_NAME_RESERVED_WORD', `app.json:name.${lang}`, 'App names may not use Homey or Athom trademarks', { name });
+    if (/\b(zigbee|z-wave|infrared|433\s*mhz|868\s*mhz)\b/i.test(name)) pushWarning(report, 'APP_NAME_PROTOCOL_WORD', `app.json:name.${lang}`, 'App Store guidelines discourage protocol names in app names', { name });
+  }
+  const englishName = titleText(app.name).toLowerCase();
+  for (const [lang, description] of localizedEntries(app.description)) {
+    const trimmed = description.trim();
+    if (trimmed.length > 150) pushWarning(report, 'APP_DESCRIPTION_TOO_LONG', `app.json:description.${lang}`, 'Description should be a concise App Store one-liner', { length: trimmed.length });
+    if (/https?:\/\//i.test(trimmed)) pushError(report, 'APP_DESCRIPTION_URL', `app.json:description.${lang}`, 'Description must not contain URLs');
+    if (englishName && trimmed.toLowerCase().includes(englishName)) pushWarning(report, 'APP_DESCRIPTION_REPEATS_NAME', `app.json:description.${lang}`, 'Description should not repeat the app name; use a short value proposition instead', { description: trimmed });
+    if (/^(adds support|integrates|control .+ with\b)/i.test(trimmed)) pushWarning(report, 'APP_DESCRIPTION_GENERIC_SUPPORT', `app.json:description.${lang}`, 'Avoid generic "adds support" or "integrates" phrasing in the App Store description', { description: trimmed });
+  }
+  for (const [key, expected] of Object.entries(APP_IMAGE_SIZES)) {
+    const rel = app.images && app.images[key];
+    if (!rel) {
+      if (key !== 'xlarge') pushError(report, 'APP_IMAGE_REQUIRED', `app.json:images.${key}`, 'App Store requires small and large app images');
+      continue;
+    }
+    const size = readPngSize(path.join(ROOT, String(rel).replace(/^\//, '')));
+    if (!size) {
+      pushError(report, 'APP_IMAGE_UNREADABLE', `app.json:images.${key}`, 'App image must be a readable PNG file', { image: rel });
+      continue;
+    }
+    if (size.width !== expected[0] || size.height !== expected[1]) {
+      pushError(report, 'APP_IMAGE_SIZE_INVALID', `app.json:images.${key}`, 'App Store app image has the wrong resolution', { image: rel, actual: `${size.width}x${size.height}`, expected: `${expected[0]}x${expected[1]}` });
+    }
+  }
 
   if (fs.existsSync(API_JS) && (!app.api || Object.keys(app.api).length === 0)) {
     pushError(report, 'APP_API_SECTION_REQUIRED', 'app.json', 'api.js exists, so app.json must declare a top-level api section for Homey ManagerApi');
+  }
+}
+
+function auditReadmes(report) {
+  for (const file of README_FILES) {
+    const full = path.join(ROOT, file);
+    if (!fs.existsSync(full)) {
+      if (file === 'README.txt') pushError(report, 'README_REQUIRED', file, 'Homey App Store requires README.txt');
+      continue;
+    }
+    const text = fs.readFileSync(full, 'utf8').trim();
+    const paragraphs = text.split(/\r?\n\s*\r?\n/).filter(Boolean);
+    if (/https?:\/\/|www\./i.test(text)) pushError(report, 'README_URL_FORBIDDEN', file, 'Homey App Store guidelines do not allow URLs in readme.txt');
+    if (/^\s{0,3}(#{1,6}\s|[-*+]\s|\d+\.\s)/m.test(text) || /(```|__|\*\*)/.test(text)) {
+      pushError(report, 'README_MARKDOWN_FORBIDDEN', file, 'Homey readme.txt is plain text; Markdown/list formatting is not rendered and is not allowed');
+    }
+    if (/\b(changelog|release notes|what'?s new|version\s+\d+\.\d+)/i.test(text)) {
+      pushError(report, 'README_CHANGELOG_FORBIDDEN', file, 'Use .homeychangelog.json for changes; do not put a changelog in the readme');
+    }
+    if (paragraphs.length > 2 || text.length > 1200) {
+      pushWarning(report, 'README_TOO_LONG', file, 'Homey App Store guidelines recommend one or two concise paragraphs', { paragraphs: paragraphs.length, length: text.length });
+    }
   }
 }
 
@@ -380,6 +484,7 @@ function main() {
   const app = readJson(APP_JSON);
   const pkg = readJson(PACKAGE_JSON);
   auditManifest(app, pkg, report);
+  auditReadmes(report);
   auditRuntimeCrashGates(report);
 
   const drivers = collectDrivers(app, report);

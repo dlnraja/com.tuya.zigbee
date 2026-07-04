@@ -12,10 +12,10 @@
     "fr": "Tuya Unified (Stable)"
   },
   "description": {
-    "en": "Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
-    "nl": "Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
-    "de": "Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
-    "fr": "Moteur Tuya Unified : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
+    "en": "Local-first Tuya control with self-healing fleet stability and adaptive lighting",
+    "nl": "Lokale Tuya-bediening met zelfherstellende vlootstabiliteit en adaptieve verlichting",
+    "de": "Lokale Tuya-Steuerung mit selbstheilender Flottenstabilitaet und adaptiver Beleuchtung",
+    "fr": "Controle local Tuya avec stabilite auto-reparatrice et eclairage adaptatif"
   },
   "tags": {
     "en": [
@@ -95,7 +95,7 @@
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
-  "brandColor": "#00E6A0",
+  "brandColor": "#008C73",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "sdk": 3

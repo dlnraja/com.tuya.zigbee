@@ -8,18 +8,12 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Turned on",
-        "fr": "[[device]] Allumé",
-        "nl": "[[device]] Aangezet",
-        "de": "[[device]] Eingeschaltet"
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       }
     },
     {
@@ -30,18 +24,12 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Turned off",
-        "fr": "[[device]] Éteint",
-        "nl": "[[device]] Uitgezet",
-        "de": "[[device]] Ausgeschaltet"
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       }
     },
     {
@@ -52,18 +40,12 @@
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Physical ON",
-        "fr": "[[device]] Physique ON",
-        "nl": "[[device]] Fysiek AAN",
-        "de": "[[device]] Physisch EIN"
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
       }
     },
     {
@@ -74,18 +56,12 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Physical OFF",
-        "fr": "[[device]] Physique OFF",
-        "nl": "[[device]] Fysiek UIT",
-        "de": "[[device]] Physisch AUS"
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
       }
     }
   ],
@@ -98,18 +74,12 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Is !{{on|off}}",
-        "fr": "[[device]] Est !{{allumé|éteint}}",
-        "nl": "[[device]] Is !{{aan|uit}}",
-        "de": "[[device]] Ist !{{ein|aus}}"
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
       }
     }
   ],
@@ -122,18 +92,12 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Turn on",
-        "fr": "[[device]] Allumer",
-        "nl": "[[device]] Aanzetten",
-        "de": "[[device]] Einschalten"
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
       }
     },
     {
@@ -144,18 +108,12 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Turn off",
-        "fr": "[[device]] Éteindre",
-        "nl": "[[device]] Uitzetten",
-        "de": "[[device]] Ausschalten"
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
       }
     },
     {
@@ -166,18 +124,12 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=switch_1gang"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "[[device]] Toggle",
-        "fr": "[[device]] Basculer",
-        "nl": "[[device]] Wisselen",
-        "de": "[[device]] Umschalten"
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
       }
     },
     {

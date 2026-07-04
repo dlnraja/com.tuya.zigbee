@@ -178,11 +178,6 @@
       },
       "args": [
         {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=wall_switch_3gang_1way"
-        },
-        {
           "name": "mode",
           "type": "dropdown",
           "values": [
@@ -211,8 +206,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "[[device]] [[mode]] Set LED indicator mode",
-        "nl": "[[device]] [[mode]] Stel LED-indicator modus in"
+        "en": "[[mode]] Set LED indicator mode",
+        "nl": "[[mode]] Stel LED-indicator modus in"
       }
     },
     {
@@ -224,11 +219,6 @@
         "fr": "Définir le comportement à la mise sous tension"
       },
       "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=wall_switch_3gang_1way"
-        },
         {
           "name": "mode",
           "type": "dropdown",
@@ -258,10 +248,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "[[device]] [[mode]] Set power-on behavior",
-        "nl": "[[device]] [[mode]] Stel inschakelgedrag in",
-        "de": "[[device]] [[mode]] Einschaltverhalten einstellen",
-        "fr": "[[device]] [[mode]] Définir le comportement à la mise sous tension"
+        "en": "[[mode]] Set power-on behavior",
+        "nl": "[[mode]] Stel inschakelgedrag in",
+        "de": "[[mode]] Einschaltverhalten einstellen",
+        "fr": "[[mode]] Définir le comportement à la mise sous tension"
       }
     },
     {
@@ -273,11 +263,6 @@
         "fr": "Définir le type d'interrupteur externe"
       },
       "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=wall_switch_3gang_1way"
-        },
         {
           "name": "mode",
           "type": "dropdown",
@@ -307,10 +292,10 @@
         }
       ],
       "titleFormatted": {
-        "en": "[[device]] [[mode]] Set external switch type",
-        "nl": "[[device]] [[mode]] Stel extern schakelaartype in",
-        "de": "[[device]] [[mode]] Externen Schaltertyp einstellen",
-        "fr": "[[device]] [[mode]] Définir le type d'interrupteur externe"
+        "en": "[[mode]] Set external switch type",
+        "nl": "[[mode]] Stel extern schakelaartype in",
+        "de": "[[mode]] Externen Schaltertyp einstellen",
+        "fr": "[[mode]] Définir le type d'interrupteur externe"
       }
     },
     {
@@ -320,11 +305,6 @@
         "nl": "Stel scènemodus in"
       },
       "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=wall_switch_3gang_1way"
-        },
         {
           "name": "mode",
           "type": "dropdown",
@@ -351,8 +331,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "[[device]] [[mode]] Set scene mode",
-        "nl": "[[device]] [[mode]] Stel scènemodus in"
+        "en": "[[mode]] Set scene mode",
+        "nl": "[[mode]] Stel scènemodus in"
       }
     },
     {
