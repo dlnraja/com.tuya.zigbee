@@ -736,6 +736,7 @@ async function processPR(prNumber) {
       checkoutBaseBranch(prData.baseRefName);
       const prRef = fetchPrHead(prNumber, prData);
       const validatedHeadSha = prData.headRefOid;
+      configureGitIdentity();
       gitRequired(`merge --no-commit --no-ff ${prRef}`);
 
       const validation = validateMerge();
