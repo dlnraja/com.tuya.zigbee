@@ -10,7 +10,7 @@
     {
       "name": "device",
       "type": "device",
-      "filter": "driverId=presence_detector"
+      "filter": "driver_id=presence_detector"
     },
     {
       "name": "force_state",

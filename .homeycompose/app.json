@@ -12,10 +12,10 @@
     "fr": "Unified Smart Home Engine"
   },
   "description": {
-    "en": "Unified Smart Home Engine: High-performance local-first control for Tuya, eWeLink, SmartThings & more",
-    "nl": "Unified Smart Home Engine: Hoogwaardige lokale bediening voor Tuya, eWeLink, SmartThings & meer",
-    "de": "Unified Smart Home Engine: Leistungsstarke lokale Steuerung für Tuya, eWeLink, SmartThings & mehr",
-    "fr": "Unified Smart Home Engine : Contrôle local multi-protocoles pour Tuya, eWeLink, SmartThings & plus"
+    "en": "High-performance local-first control for Tuya, eWeLink, SmartThings and compatible devices",
+    "nl": "Hoogwaardige lokale bediening voor Tuya, eWeLink, SmartThings en compatibele apparaten",
+    "de": "Leistungsstarke lokale Steuerung fuer Tuya, eWeLink, SmartThings und kompatible Geraete",
+    "fr": "Controle local haute performance pour Tuya, eWeLink, SmartThings et appareils compatibles"
   },
   "tags": {
     "en": [
@@ -87,7 +87,7 @@
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
-  "brandColor": "#00E6A0",
+  "brandColor": "#008C73",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "sdk": 3,
