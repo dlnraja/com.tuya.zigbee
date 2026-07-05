@@ -9,7 +9,19 @@ on:
   schedule:
     - cron: '0 8 * * *'  # Daily 08:00 UTC
   workflow_dispatch:
+    inputs:
+      strict:
+        description: "Fail the workflow when Gmail access is unavailable"
+        type: boolean
+        default: false
+        required: false
   workflow_call:
+    inputs:
+      strict:
+        description: "Fail the workflow when Gmail access is unavailable"
+        type: boolean
+        default: false
+        required: false
 
 permissions:
   contents: write
@@ -46,6 +58,7 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_HEALTH_STRICT: ${{ inputs.strict || 'false' }}
         run: node .github/scripts/gmail-token-keepalive.js
       - name: Commit health state
         if: always()
@@ -72,8 +85,19 @@ jobs:
           fi
           if [ -f "$ALERT" ]; then
             node .github/scripts/privacy-redactor.js "$ALERT"
-            gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] Gmail diagnostics authentication failing" \
-              --body "$(cat "$ALERT")" \
-              --label "automation" 2>/dev/null || true
+            TITLE="[Alert] Gmail diagnostics authentication failing"
+            EXISTING="$(gh issue list -R dlnraja/com.tuya.zigbee \
+              --state open \
+              --search "$TITLE in:title" \
+              --json number \
+              --jq '.[0].number // empty' 2>/dev/null || true)"
+            if [ -n "$EXISTING" ]; then
+              gh issue comment -R dlnraja/com.tuya.zigbee "$EXISTING" \
+                --body "$(cat "$ALERT")" 2>/dev/null || true
+            else
+              gh issue create -R dlnraja/com.tuya.zigbee --title "$TITLE" \
+                --body "$(cat "$ALERT")" \
+                --label "automation" 2>/dev/null || true
+            fi
             rm -f .github/state/_gmail_alert.txt .github/state/_imap_alert.txt
           fi
