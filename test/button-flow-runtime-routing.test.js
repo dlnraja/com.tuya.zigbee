@@ -58,6 +58,8 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /_handleDeviceSpecificDP\s*\(dpId, value, mapping\)/);
     assert.match(source, /onTuyaDP\s*\(dpId, value, dpType\)/);
     assert.match(source, /_hasMissingButtonBatteryValue\s*\(/);
+    assert.match(source, /const validDpFrame = dp > 0 && dp <= 200/);
+    assert.match(source, /if \(this\._isButtonBatteryDP\(dp\)\) \{\s+reports\.push\(\{ dp, value \}\)/);
     assert.match(source, /_handleTuyaBatteryDP\(dpId, value\)/);
   });
 
