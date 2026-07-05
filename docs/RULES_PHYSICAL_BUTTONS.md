@@ -10,8 +10,10 @@
     *   If `isAppCommand(gang)` is `false`, the report is a physical event.
     *   **Action**: Use `_triggerPhysicalFlow(gang, value)` and then `_safeSetCapability(gangId, value)`.
 *   **Rule 1.3: Physical Execution (Zero Defect)**
-    *   Flow Action cards MUST use `triggerCapabilityListener()` instead of `setCapabilityValue()` to ensure actual physical relay switching.
-    *   **Action**: Implement fallback in `HybridSwitchBase` to route flow commands through listeners.
+    *   Flow Action cards MUST NOT write `setCapabilityValue()` directly when the device is expected to actuate physically.
+    *   Commands MUST enter a protocol-aware path that first calls `markAppCommand(gang, value)` and then sends the actual ZCL/Tuya-DP command.
+    *   `triggerCapabilityListener()` is only a fallback for devices without a direct protocol router. Since v9.0.103, button and switch mixins prefer direct ZCL/Tuya-DP dispatch to avoid echo loops and missing-listener crashes.
+    *   **Action**: Keep physical execution centralized in `VirtualButtonMixin`, `PhysicalButtonMixin`, `UnifiedSwitchBase`, or equivalent base routers.
 
 ## 2. Hardening (Anti-Burst & SDK 3 Safety)
 *   **Rule 2.1: ZCL Burst Debounce**
