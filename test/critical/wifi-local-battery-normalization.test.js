@@ -26,6 +26,7 @@ function createLocalDevice() {
     6: { capability: 'measure_battery' },
     15: { capability: 'measure_battery' },
     33: { capability: 'measure_battery' },
+    102: { capability: 'measure_battery' },
     20: { capability: 'measure_power', divisor: 10 },
   };
   device.values = values;
@@ -78,5 +79,9 @@ describe('Wi-Fi local battery normalization', function() {
 
     assert.strictEqual(device.values.measure_battery, 74);
     assert.strictEqual(device.store.last_battery_percentage, undefined);
+
+    await device._onData({ dps: { 102: 1 } });
+
+    assert.strictEqual(device.values.measure_battery, 74);
   });
 });
