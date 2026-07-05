@@ -522,6 +522,30 @@ function validateIssue439Ts1201IrRouting() {
   }
 }
 
+function validateUnifiedBatteryCascade() {
+  const handlerPath = path.join(ROOT, 'lib', 'battery', 'UnifiedBatteryHandler.js');
+  const source = fs.existsSync(handlerPath) ? fs.readFileSync(handlerPath, 'utf8') : '';
+  const requiredSnippets = [
+    'BATTERY_CORE_PERCENT_DPS = [4, 15, 101]',
+    'BATTERY_EXTENDED_PERCENT_DPS = [10, 21, 100, 102, 104, 105, 121]',
+    'BATTERY_PROFILE_ONLY_PERCENT_DPS = [2, 7, 13]',
+    'BATTERY_STATE_DPS = [3, 14]',
+    'const VOLTAGE_DPS = [33, 35, 247]',
+    'normalizeTuyaBatteryValue',
+    'normalizeVoltage',
+    'normalizeStoredBattery',
+    'STORED_BATTERY_KEYS',
+    'raw <= 2 && !profileMatches',
+    'getTuyaBatteryDPs({ profile: this._profile })',
+  ];
+
+  for (const snippet of requiredSnippets) {
+    if (!source.includes(snippet)) {
+      addError('UnifiedBatteryHandler', 'Unified battery cascade lost historical fallback coverage', { snippet });
+    }
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -539,6 +563,7 @@ function run() {
   validateSwitchButtonCapabilityFallback();
   validateButtonRuntimeCoverage();
   validateIssue439Ts1201IrRouting();
+  validateUnifiedBatteryCascade();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
