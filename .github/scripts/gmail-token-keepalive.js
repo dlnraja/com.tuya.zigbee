@@ -9,6 +9,13 @@ const ALERT=path.join(SD,'_gmail_alert.txt');
 let imap=null;try{imap=require('./gmail-imap-reader')}catch{}
 let oauth=null;try{oauth=require('./gmail-oauth-reader')}catch{}
 
+function boolEnv(name,fallback=false){
+  const v=process.env[name];
+  return v===undefined?fallback:/^(1|true|yes|on)$/i.test(String(v).trim());
+}
+
+const STRICT=boolEnv('GMAIL_HEALTH_STRICT',boolEnv('GMAIL_DIAG_REQUIRE_ACCESS',false));
+
 function readHealth(){
   try{return JSON.parse(fs.readFileSync(HF,'utf8'))}catch{return{mode:'gmail',checks:[],lastOk:null,consecutiveFails:0}}
 }
@@ -41,6 +48,8 @@ function writeAlert(health,imapResult,oauthResult){
     '1. GMAIL_EMAIL',
     '2. GMAIL_APP_PASSWORD from https://myaccount.google.com/apppasswords',
     '3. GMAIL_REFRESH_TOKEN if OAuth fallback is still used',
+    '',
+    'The scheduled health workflow records this as an alert without failing unless strict mode is enabled.',
     '',
     'No secret values were written to this report.'
   ];
@@ -123,8 +132,13 @@ async function main(){
   appendCheck(health,{time:now,ok:false,mode:'imap+oauth',imap:imapResult.code,oauth:oauthResult.code});
   safeWriteJson(HF,health);
   if(health.consecutiveFails>=3)writeAlert(health,imapResult,oauthResult);
-  console.log('::error::Gmail diagnostics authentication failed. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets.');
-  process.exitCode=1;
+  const msg='Gmail diagnostics authentication failed. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets.';
+  if(STRICT){
+    console.log('::error::'+msg);
+    process.exitCode=1;
+    return;
+  }
+  console.log('::warning::'+msg+' Health state was written; continuing because GMAIL_HEALTH_STRICT is false.');
 }
 
 main()

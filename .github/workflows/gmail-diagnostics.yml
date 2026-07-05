@@ -84,6 +84,7 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_HEALTH_STRICT: "false"
         run: node .github/scripts/gmail-token-keepalive.js
       # v5.13.3: IMAP diagnostics with OAuth fallback and health preflight
       - name: Fetch diagnostics via Gmail
