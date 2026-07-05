@@ -1531,9 +1531,9 @@
   },
   {
     "manufacturerName": "_TZE204_myd45weu",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601",
       "TS0222"
@@ -1541,9 +1541,9 @@
   },
   {
     "manufacturerName": "_TZE284_myd45weu",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]
@@ -9834,9 +9834,9 @@
   },
   {
     "manufacturerName": "_TZE200_npj9bug3",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]

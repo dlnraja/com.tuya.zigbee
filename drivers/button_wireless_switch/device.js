@@ -63,7 +63,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     const meteringCluster = endpoint.clusters.metering || endpoint.clusters.seMetering || endpoint.clusters[0x0702];
     if (meteringCluster && typeof meteringCluster.on === 'function') {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        const kwh = value * 1000;
+        const kwh = value / 1000;
         if (this.hasCapability('meter_power')) this.safeSetCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
       });
       this._readMeteringAttributes(meteringCluster);
@@ -91,7 +91,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     try {
       const attrs = await cluster.readAttributes(['currentSummationDelivered']).catch(() => ({}));
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.safeSetCapabilityValue('meter_power', attrs.currentSummationDelivered * 1000).catch(() => { });
+        this.safeSetCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => { });
       }
     } catch (e) {
       this.log('[SWITCH-2G] Initial metering read failed:', e.message);

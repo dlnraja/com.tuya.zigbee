@@ -265,3 +265,10 @@
 - **Règle** : Ne JAMAIS forcer `HOBEIAN` globalement dans `BOT_FORCED_DISCOVERY.json`. Router par `productId` (ZG-301Z → switch_1gang, ZG-204ZM → presence_sensor_radar).
 - **Bug** : Le forçage global causait la prolifération HOBEIAN dans 64 drivers.
 - **Validé** : HOBEIAN retiré du BOT_FORCED_DISCOVERY (session 2026-06-21).
+
+### R36: Forum Feedback Regression Locks
+- **Button UI** : every `button.N` capability on wall switches must keep a runtime listener fallback in `UnifiedSwitchBase`.
+- **TS0014 route** : `_TZ3000_mrduubod|TS0014` belongs to `wall_switch_4gang_1way`, never generic `switch_4gang`.
+- **Energy** : ZCL `currentSummationDelivered` must not be multiplied by 1000 before writing `meter_power`.
+- **Actuator flows** : flow actions must call the outbound command path before updating local Homey state.
+- **Soil TS0601 route** : `_TZE200_npj9bug3|TS0601` and `_TZE284_myd45weu|TS0601` belong to `soil_sensor`, never generic `climate_sensor` or legacy `soilsensor_2`.

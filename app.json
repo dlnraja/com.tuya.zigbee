@@ -202330,6 +202330,15 @@
           "_TZE284_9cqcpkgb",
           "_TZE284_A0GSPFYZ",
           "_TZE284_AA03YZHS",
+          "_tze200_myd45weu",
+          "_TZE200_myd45weu",
+          "_TZE200_MYD45WEU",
+          "_tze204_myd45weu",
+          "_TZE204_myd45weu",
+          "_TZE204_MYD45WEU",
+          "_tze284_myd45weu",
+          "_TZE284_myd45weu",
+          "_TZE284_MYD45WEU",
           "_TZE284_FQYTFMYK",
           "_TZE284_FQYTFYMK",
           "_TZE284_NPJ9BUG3",
@@ -202702,12 +202711,10 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE284_myd45weu",
-          "_TZE200_myd45weu",
-          "_TZE204_myd45weu"
+          "_disabled_soilsensor_2_migrated_to_soil_sensor"
         ],
         "productId": [
-          "TS0601"
+          "DISABLED_SOILSENSOR_2"
         ],
         "endpoints": {
           "1": {
