@@ -9832,9 +9832,9 @@
   },
   {
     "manufacturerName": "_TZE200_npj9bug3",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]

@@ -96,3 +96,11 @@ K2. Types: 0=Raw 1=Bool 2=Value 3=String 4=Enum 5=Bitmap
 K3. DP values may need division: temp/10, hum/10, battery/2
 K4. Some manufacturers send raw C (no division needed) - check per fingerprint
 K5. Multi-DP frames: single report contains multiple DPs, parse ALL of them
+
+## L. FORUM FEEDBACK REGRESSION LOCKS
+
+L1. `button.N` capabilities need a capability listener fallback. If a wall switch declares `button.1`, `button.2`, etc., `UnifiedSwitchBase._registerButtonCapabilityListeners()` must exist and must be called from init.
+L2. Forum #2099 TS0014 `_TZ3000_mrduubod` belongs to `wall_switch_4gang_1way`, not generic `switch_4gang`.
+L3. ZCL `currentSummationDelivered` must never be multiplied by 1000 before writing `meter_power`; use SmartDivisorManager or divide to kWh.
+L4. Flow actions that control actuators must call the outbound device command path (`_setOnOff`, `_setGangOnOff`, `_setDP`, or equivalent) before updating local Homey state.
+L5. Forum TS0601 soil fingerprints `_TZE200_npj9bug3` and `_TZE284_myd45weu` belong to `soil_sensor`, never generic `climate_sensor` or legacy `soilsensor_2`.
