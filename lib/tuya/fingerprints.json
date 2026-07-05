@@ -7909,7 +7909,7 @@
     ]
   },
   "_TZE200_myd45weu": {
-    "driverId": "soilsensor_2",
+    "driverId": "soil_sensor",
     "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -8108,8 +8108,8 @@
     ]
   },
   "_TZE200_nw1r9hp6": {
-    "driverId": "device_radiator_valve",
-    "type": "thermostat",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"
@@ -10541,8 +10541,8 @@
     ]
   },
   "_TZE204_myd45weu": {
-    "driverId": "device_radiator_valve",
-    "type": "thermostat",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
       "TS0601"
@@ -12243,7 +12243,7 @@
     ]
   },
   "_TZE284_myd45weu": {
-    "driverId": "soilsensor_2",
+    "driverId": "soil_sensor",
     "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
