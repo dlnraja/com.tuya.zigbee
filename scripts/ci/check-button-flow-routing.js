@@ -447,8 +447,18 @@ function validateButtonRuntimeCoverage() {
     '_recordButtonPressForBatteryEstimate',
     '_estimateButtonBatteryFallback',
     '_setupButtonBatteryDPListeners',
+    '_queryButtonBatteryDPs',
+    '_restoreButtonBatteryFromStore',
     '_isButtonBatteryDP',
     '_hasMissingButtonBatteryValue',
+    'BUTTON_BATTERY_CORE_PERCENT_DPS',
+    'BUTTON_BATTERY_EXTENDED_PERCENT_DPS',
+    'BUTTON_BATTERY_PERCENT_DPS',
+    'BUTTON_BATTERY_STATE_DPS',
+    'BUTTON_BATTERY_VOLTAGE_DPS',
+    'raw <= 2',
+    'last_battery_percent',
+    'battery_voltage_mv',
     '_onDPReceived',
     '_handleDeviceSpecificDP',
     'last_battery_estimated',
@@ -468,6 +478,50 @@ function validateButtonRuntimeCoverage() {
   }
 }
 
+function validateIssue439Ts1201IrRouting() {
+  const irFingerprints = [
+    '_tz3290_8xzb2ghn',
+    '_tz3290_rlkmy85q4pzoxobl',
+    '_tz3290_uc8lwbi2',
+    '_tz3290_yac64inudpovoaba',
+    '_tz3290_785fbxik',
+    '_tz3290_nkpxapoz',
+    '_tz3290_yyax9ajf',
+  ];
+  const irCompose = loadDriverCompose('ir_blaster');
+  if (!irCompose) return;
+
+  const irManufacturers = getManufacturerNames(irCompose);
+  for (const manufacturerName of irFingerprints) {
+    if (!hasCI(irManufacturers, manufacturerName)) {
+      addError('ir_blaster', 'Issue #439 TS1201 IR fingerprint missing from ir_blaster', { manufacturerName });
+    }
+  }
+
+  if (!hasCI(getProductIds(irCompose), 'TS1201')) {
+    addError('ir_blaster', 'Issue #439 TS1201 IR driver lost productId TS1201');
+  }
+  if (!normalizeArray(irCompose.capabilities).includes('measure_battery')) {
+    addError('ir_blaster', 'Issue #439 TS1201 IR driver lost measure_battery support');
+  }
+
+  for (const driverName of ['button_wireless_2', 'button_wireless_4', 'climate_sensor']) {
+    const compose = loadDriverCompose(driverName);
+    if (!compose) continue;
+    const manufacturers = getManufacturerNames(compose);
+    for (const manufacturerName of irFingerprints) {
+      if (hasCI(manufacturers, manufacturerName)) {
+        addError(driverName, 'Issue #439 TS1201 IR fingerprint must not route to button/climate drivers', {
+          manufacturerName,
+        });
+      }
+    }
+    if (driverName === 'climate_sensor' && hasCI(getProductIds(compose), 'TS1201')) {
+      addError('climate_sensor', 'Issue #439 TS1201 productId must not be claimed by climate_sensor');
+    }
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -484,6 +538,7 @@ function run() {
   validateForumSoilSensorRouting();
   validateSwitchButtonCapabilityFallback();
   validateButtonRuntimeCoverage();
+  validateIssue439Ts1201IrRouting();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())

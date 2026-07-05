@@ -52,8 +52,17 @@ describe('button flow runtime routing guards', function() {
     const source = read('lib/devices/ButtonDevice.js');
 
     assert.match(source, /_isButtonBatteryDP\s*\(dp\)/);
-    assert.match(source, /\[3, 4, 14, 15, 101\]\.includes\(Number\(dp\)\)/);
+    assert.match(source, /const BUTTON_BATTERY_CORE_PERCENT_DPS = \[4, 15, 101\]/);
+    assert.match(source, /const BUTTON_BATTERY_EXTENDED_PERCENT_DPS = \[10, 21, 100, 102, 104, 105, 121\]/);
+    assert.match(source, /BUTTON_BATTERY_EXTENDED_PERCENT_DPS\.includes\(Number\(dp\)\) && raw <= 2/);
+    assert.match(source, /const BUTTON_BATTERY_STATE_DPS = \[3, 14\]/);
+    assert.match(source, /const BUTTON_BATTERY_VOLTAGE_DPS = \[33, 35, 247\]/);
+    assert.match(source, /BUTTON_BATTERY_DPS\.includes\(Number\(dp\)\)/);
     assert.match(source, /_setupButtonBatteryDPListeners\s*\(/);
+    assert.match(source, /_queryButtonBatteryDPs\s*\(/);
+    assert.match(source, /_restoreButtonBatteryFromStore\s*\(/);
+    assert.match(source, /last_battery_percent/);
+    assert.match(source, /battery_voltage_mv/);
     assert.match(source, /_onDPReceived\s*\(dpId, value, dpType = null\)/);
     assert.match(source, /_handleDeviceSpecificDP\s*\(dpId, value, mapping\)/);
     assert.match(source, /onTuyaDP\s*\(dpId, value, dpType\)/);
