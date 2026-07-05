@@ -446,6 +446,11 @@ function validateButtonRuntimeCoverage() {
     '_pulseButtonCapability',
     '_recordButtonPressForBatteryEstimate',
     '_estimateButtonBatteryFallback',
+    '_setupButtonBatteryDPListeners',
+    '_isButtonBatteryDP',
+    '_hasMissingButtonBatteryValue',
+    '_onDPReceived',
+    '_handleDeviceSpecificDP',
     'last_battery_estimated',
     'remote_button_pressed',
   ];
