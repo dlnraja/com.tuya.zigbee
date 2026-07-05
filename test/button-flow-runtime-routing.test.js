@@ -48,6 +48,21 @@ describe('button flow runtime routing guards', function() {
     assert.match(source, /_tryCard\('button_release'/);
   });
 
+  it('routes 2-button TS0042 battery DPs before Homey can stay on unknown battery', function() {
+    const source = read('lib/devices/ButtonDevice.js');
+
+    assert.match(source, /_isButtonBatteryDP\s*\(dp\)/);
+    assert.match(source, /\[3, 4, 14, 15, 101\]\.includes\(Number\(dp\)\)/);
+    assert.match(source, /_setupButtonBatteryDPListeners\s*\(/);
+    assert.match(source, /_onDPReceived\s*\(dpId, value, dpType = null\)/);
+    assert.match(source, /_handleDeviceSpecificDP\s*\(dpId, value, mapping\)/);
+    assert.match(source, /onTuyaDP\s*\(dpId, value, dpType\)/);
+    assert.match(source, /_hasMissingButtonBatteryValue\s*\(/);
+    assert.match(source, /const validDpFrame = dp > 0 && dp <= 200/);
+    assert.match(source, /if \(this\._isButtonBatteryDP\(dp\)\) \{\s+reports\.push\(\{ dp, value \}\)/);
+    assert.match(source, /_handleTuyaBatteryDP\(dpId, value\)/);
+  });
+
   it('keeps multi-endpoint button command capture broad across SDK event styles', function() {
     const source = read('lib/zigbee/MultiEndpointCommandListener.js');
     const base = read('lib/devices/BaseUnifiedDevice.js');
