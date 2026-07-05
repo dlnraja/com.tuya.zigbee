@@ -81,26 +81,12 @@ const LEARNING_STATES = {
  */
 class IrBlasterDevice extends ZigBeeDevice {
 
-  get mainsPowered() { return true; }
+  get mainsPowered() { return false; }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.13.3: IR blasters are USB-powered, remove battery capthis.log('IR Blaster initializing...');
+    this._zclNode = zclNode;
+    await this._setupBatteryReporting(zclNode);
+    this.log('IR Blaster initializing...');
 
     // v5.5.356: Initialize enhanced IR storage system
     this._learnedCodes = this.getStoreValue('learned_codes') || {};
@@ -110,9 +96,6 @@ class IrBlasterDevice extends ZigBeeDevice {
     this._learningState = LEARNING_STATES.IDLE;
     this._protocolAnalysis = {};
     this._deviceCapabilities = null;
-
-    // Store zclNode reference
-    this._zclNode = zclNode;
 
     // Get device info
     await irBlasterInit.init(this);
@@ -173,6 +156,138 @@ class IrBlasterDevice extends ZigBeeDevice {
     await this._setupAdvancedClusterListeners(zclNode);
 
     this.log('IR Blaster initialized successfully with enhanced features');
+  }
+
+  /**
+   * Z2M TS1201 variants expose fz.battery via genPowerCfg.
+   */
+  _getPowerCfgCluster(zclNode = this._zclNode) {
+    const endpoints = zclNode?.endpoints || {};
+    for (const endpoint of Object.values(endpoints)) {
+      const cluster = endpoint?.clusters?.powerConfiguration ||
+        endpoint?.clusters?.genPowerCfg ||
+        endpoint?.clusters?.[0x0001] ||
+        endpoint?.clusters?.[1];
+      if (cluster) {return cluster;}
+    }
+    return null;
+  }
+
+  _voltageToBatteryPercent(rawVoltage) {
+    const raw = Number(rawVoltage);
+    if (!Number.isFinite(raw) || raw <= 0) {return null;}
+
+    let voltage = null;
+    if (raw > 1000 && raw <= 6000) {voltage = raw / 1000;}
+    else if (raw > 100 && raw <= 600) {voltage = raw / 100;}
+    else if (raw > 20 && raw <= 60) {voltage = raw / 10;}
+    else if (raw >= 1.5 && raw <= 6) {voltage = raw;}
+    if (voltage === null) {return null;}
+
+    const curve = [[3.3,100],[3.1,98],[3.0,95],[2.9,85],[2.8,70],[2.7,50],[2.6,30],[2.5,15],[2.4,8],[2.2,2],[2.0,0]];
+    if (voltage >= curve[0][0]) {return 100;}
+    for (let i = 0; i < curve.length - 1; i++) {
+      const high = curve[i];
+      const low = curve[i + 1];
+      if (voltage <= high[0] && voltage >= low[0]) {
+        const ratio = (voltage - low[0]) / (high[0] - low[0]);
+        return Math.round(low[1] + ratio * (high[1] - low[1]));
+      }
+    }
+    return 0;
+  }
+
+  _normalizeBatteryPercentage(rawValue) {
+    const raw = Number(rawValue);
+    if (!Number.isFinite(raw) || raw < 0 || raw === 255 || raw === 0xFFFF) {return null;}
+    if (raw === 200) {return 100;}
+    if (raw > 1000 && raw <= 6000) {return this._voltageToBatteryPercent(raw);}
+    if (raw > 100 && raw < 200) {return Math.round(raw / 2);}
+    if (raw <= 100) {return Math.round(raw);}
+    return null;
+  }
+
+  async _setBatteryPercentage(percent, source) {
+    if (!this.hasCapability?.('measure_battery')) {return false;}
+    if (percent === null || percent === undefined || !Number.isFinite(Number(percent))) {return false;}
+    const value = Math.max(0, Math.min(100, Math.round(Number(percent))));
+    const setter = typeof this.safeSetCapabilityValue === 'function'
+      ? this.safeSetCapabilityValue.bind(this)
+      : this.setCapabilityValue.bind(this);
+    await setter('measure_battery', value).catch((err) => {
+      this.log(`[IR-BATTERY] Failed to set battery from ${source}: ${err.message}`);
+    });
+    await this.setStoreValue('last_battery_percentage', value).catch(() => {});
+    await this.setStoreValue('last_battery_source', source).catch(() => {});
+    await this.setStoreValue('last_battery_time', Date.now()).catch(() => {});
+    this.log(`[IR-BATTERY] ${source}: ${value}%`);
+    return true;
+  }
+
+  async _handleBatteryAttributes(attrs, source) {
+    if (!attrs) {return false;}
+
+    if (attrs.batteryPercentageRemaining !== undefined) {
+      const percent = this._normalizeBatteryPercentage(attrs.batteryPercentageRemaining);
+      if (percent !== null) {
+        return this._setBatteryPercentage(percent, `${source} percentage`);
+      }
+    }
+
+    if (attrs.batteryVoltage !== undefined) {
+      const percent = this._voltageToBatteryPercent(attrs.batteryVoltage);
+      if (percent !== null) {
+        await this.setStoreValue('batteryVoltage', attrs.batteryVoltage).catch(() => {});
+        return this._setBatteryPercentage(percent, `${source} voltage`);
+      }
+    }
+
+    return false;
+  }
+
+  async _setupBatteryReporting(zclNode) {
+    if (!this.hasCapability?.('measure_battery')) {return;}
+
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        },
+      ]);
+      this.log('[IR-BATTERY] Attribute reporting configured');
+    } catch (err) {
+      this.log('[IR-BATTERY] Attribute reporting unavailable:', err.message);
+    }
+
+    const cluster = this._getPowerCfgCluster(zclNode);
+    if (!cluster) {
+      const stored = this.getStoreValue?.('last_battery_percentage');
+      await this._setBatteryPercentage(stored, 'stored fallback');
+      return;
+    }
+
+    if (typeof cluster.on === 'function' && !cluster._irBatteryBound) {
+      cluster.on('attr.batteryPercentageRemaining', (value) => {
+        this._setBatteryPercentage(this._normalizeBatteryPercentage(value), 'ZCL report percentage').catch(() => {});
+      });
+      cluster.on('attr.batteryVoltage', (value) => {
+        this.setStoreValue('batteryVoltage', value).catch(() => {});
+        this._setBatteryPercentage(this._voltageToBatteryPercent(value), 'ZCL report voltage').catch(() => {});
+      });
+      cluster._irBatteryBound = true;
+    }
+
+    if (typeof cluster.readAttributes === 'function') {
+      const attrs = await cluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch((err) => {
+        this.log('[IR-BATTERY] Initial read failed:', err.message);
+        return null;
+      });
+      await this._handleBatteryAttributes(attrs, 'ZCL initial read');
+    }
   }
 
   /**
@@ -1380,4 +1495,3 @@ class IrBlasterDevice extends ZigBeeDevice {
 }
 
 module.exports = IrBlasterDevice;
-
