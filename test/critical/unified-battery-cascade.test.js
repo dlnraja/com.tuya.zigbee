@@ -106,4 +106,30 @@ describe('unified battery cascade', function() {
     assert.strictEqual(store.last_battery_estimated, true);
     assert.strictEqual(store.last_battery_source, 'estimated-default');
   });
+
+  it('replaces estimated battery state with real Tuya DP metadata', function() {
+    const values = { measure_battery: 50 };
+    const store = { last_battery_estimated: true };
+    const device = {
+      getStoreValue: key => store[key],
+      setStoreValue: async (key, value) => {
+        store[key] = value;
+      },
+      getCapabilityValue: capability => values[capability] ?? null,
+      hasCapability: cap => cap === 'measure_battery',
+      setCapabilityValue: async (cap, value) => {
+        values[cap] = value;
+      },
+      emit: () => {},
+      log: () => {},
+      error: () => {},
+    };
+    const handler = new UnifiedBatteryHandler(device);
+
+    handler._handleTuyaBatteryDP(15, 86);
+
+    assert.strictEqual(values.measure_battery, 86);
+    assert.strictEqual(store.last_battery_estimated, false);
+    assert.strictEqual(store.last_battery_source, 'tuya-dp-15');
+  });
 });
