@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v9.0.189 |
+| **App Version** | v9.0.190 |
 | **Device Fingerprints** | 5,044+ |
 | **Unique Product IDs** | 571 |
 | **Drivers** | 430 (380 Zigbee + 50 WiFi) |
@@ -102,6 +102,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **vchangelog** | [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object  |
+| **v9.0.190** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.189** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.188** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.187** | Stability improvements and Homey test publication retry after transient processing failure. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v9.0.179** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.178** | Stability improvements and Homey test publication retry after transient processing failure. |
 | **v9.0.177** | Stability improvements and Homey test publication retry after transient processing failure. |
-| **v9.0.176** | Stability improvements and Homey test publication retry after transient processing failure. |
 
 <!-- CHANGELOG_END -->
 
