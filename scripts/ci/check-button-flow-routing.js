@@ -439,6 +439,30 @@ function validateSwitchButtonCapabilityFallback() {
   }
 }
 
+function validateButtonRuntimeCoverage() {
+  const buttonDevicePath = path.join(ROOT, 'lib', 'devices', 'ButtonDevice.js');
+  const source = fs.existsSync(buttonDevicePath) ? fs.readFileSync(buttonDevicePath, 'utf8') : '';
+  const requiredSnippets = [
+    '_pulseButtonCapability',
+    '_recordButtonPressForBatteryEstimate',
+    '_estimateButtonBatteryFallback',
+    'last_battery_estimated',
+    'remote_button_pressed',
+  ];
+
+  for (const snippet of requiredSnippets) {
+    if (!source.includes(snippet)) {
+      addError('ButtonDevice', 'Button runtime lost stable UI/battery fallback coverage', { snippet });
+    }
+  }
+
+  const legacyManagerPath = path.join(ROOT, 'lib', 'ButtonRemoteManager.js');
+  const legacySource = fs.existsSync(legacyManagerPath) ? fs.readFileSync(legacyManagerPath, 'utf8') : '';
+  if (!legacySource.includes('_pulseButtonCapability')) {
+    addError('ButtonRemoteManager', 'Legacy remote manager no longer pulses visible button capabilities');
+  }
+}
+
 function run() {
   const helperPath = path.join(ROOT, 'lib', 'FlowCardHelper.js');
   const helperText = fs.existsSync(helperPath) ? fs.readFileSync(helperPath, 'utf8') : '';
@@ -454,6 +478,7 @@ function run() {
   validateKnownTs0014WallSwitchRouting();
   validateForumSoilSensorRouting();
   validateSwitchButtonCapabilityFallback();
+  validateButtonRuntimeCoverage();
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR, { withFileTypes: true })
     .filter(entry => entry.isDirectory())
