@@ -13,8 +13,16 @@ function readHealth(){
   try{return JSON.parse(fs.readFileSync(HF,'utf8'))}catch{return{mode:'gmail',checks:[],lastOk:null,consecutiveFails:0}}
 }
 
+function boolEnv(name,fallback=false){
+  const v=process.env[name];
+  const s=String(v||'').trim();
+  return v===undefined||s===''?fallback:/^(1|true|yes|on)$/i.test(s);
+}
+
 function hasImapCredentials(){
-  return Boolean((process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL)&&(process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD));
+  const email=String(process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL||'').trim();
+  const password=String(process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD||'').trim();
+  return Boolean(email&&password);
 }
 
 function hasOAuthCredentials(){
@@ -52,7 +60,7 @@ function writeAlert(health,imapResult,oauthResult){
 async function tryImap(){
   if(!hasImapCredentials())return{ok:false,mode:'imap',code:'missing_imap_credentials',message:'GMAIL_EMAIL/GMAIL_APP_PASSWORD not configured'};
   if(!imap)return{ok:false,mode:'imap',code:'imap_reader_unavailable',message:'gmail-imap-reader unavailable'};
-  const email=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
+  const email=String(process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL||'').trim();
   console.log('IMAP health check - connecting as',privacy.alias('account',email));
   try{
     const emails=await imap.readViaIMAP({maxResults:5});
@@ -79,6 +87,7 @@ async function main(){
   fs.mkdirSync(SD,{recursive:true});
   const now=new Date().toISOString();
   const health=readHealth();
+  const strict=boolEnv('GMAIL_HEALTH_STRICT',boolEnv('GMAIL_DIAG_REQUIRE_ACCESS',false));
 
   const imapResult=await tryImap();
   if(imapResult.ok){
@@ -123,8 +132,13 @@ async function main(){
   appendCheck(health,{time:now,ok:false,mode:'imap+oauth',imap:imapResult.code,oauth:oauthResult.code});
   safeWriteJson(HF,health);
   if(health.consecutiveFails>=3)writeAlert(health,imapResult,oauthResult);
-  console.log('::error::Gmail diagnostics authentication failed. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets.');
-  process.exitCode=1;
+  const message='Gmail diagnostics authentication failed. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and GMAIL_REFRESH_TOKEN secrets.';
+  if(strict){
+    console.log('::error::'+message);
+    process.exitCode=1;
+    return;
+  }
+  console.log('::warning::'+message+' Continuing because GMAIL_HEALTH_STRICT is false.');
 }
 
 main()

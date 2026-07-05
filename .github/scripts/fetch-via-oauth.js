@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const privacy = require('./privacy-redactor');
 
 // Target ID to search for
 const TARGET_ID = '5f100d21-0df6-42f8-a57c-fe6a09285819';
@@ -25,7 +26,7 @@ async function refreshAccessToken(clientId, clientSecret, refreshToken) {
   });
 
   if (!res.ok) {
-    const errText = await res.text();
+    const errText = privacy.redact(await res.text());
     throw new Error(`Failed to refresh access token: ${res.status} ${errText}`);
   }
 
@@ -42,7 +43,7 @@ async function searchMessages(accessToken, query) {
   });
 
   if (!res.ok) {
-    const errText = await res.text();
+    const errText = privacy.redact(await res.text());
     throw new Error(`Failed to search messages: ${res.status} ${errText}`);
   }
 
@@ -59,7 +60,7 @@ async function getMessage(accessToken, messageId) {
   });
 
   if (!res.ok) {
-    const errText = await res.text();
+    const errText = privacy.redact(await res.text());
     throw new Error(`Failed to fetch message ${messageId}: ${res.status} ${errText}`);
   }
 
@@ -87,9 +88,9 @@ function extractMessageBody(message) {
 }
 
 async function main() {
-  const clientId = process.env.GMAIL_CLIENT_ID;
-  const clientSecret = process.env.GMAIL_CLIENT_SECRET;
-  const refreshToken = process.env.GMAIL_REFRESH_TOKEN;
+  const clientId = String(process.env.GMAIL_CLIENT_ID || '').trim();
+  const clientSecret = String(process.env.GMAIL_CLIENT_SECRET || '').trim();
+  const refreshToken = String(process.env.GMAIL_REFRESH_TOKEN || '').trim();
 
   if (!clientId || !clientSecret || !refreshToken) {
     console.error('Error: Gmail OAuth2 credentials (GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN) are missing in the environment.');
@@ -121,8 +122,10 @@ async function main() {
       extractedBody: bodyText
     };
 
+    const safeReportData = privacy.redactObject(reportData);
+    privacy.assertNoLeaks(safeReportData, OUTPUT_FILE);
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(reportData, null, 2));
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(safeReportData, null, 2));
     console.log(`Success! Diagnostic report saved to ${OUTPUT_FILE}`);
   } catch (error) {
     console.error('Fatal execution error:', error.message);

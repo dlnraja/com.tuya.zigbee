@@ -1,6 +1,4 @@
 'use strict';
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
-const MAINS = '_TZ3290_gnl5a6a5xvql7c2a';
 
 async function init(dev) {
   let mfr = '';
@@ -13,7 +11,7 @@ async function init(dev) {
     dev.log('[IR] ' + mfr + ' / ' + mdl);
   } catch (e) {}
 
-  if (mfr === MAINS) {
+  if (dev.mainsPowered) {
     await dev.removeCapability('measure_battery').catch(() => {});
   } else if (dev.hasCapability('measure_battery')) {
     try {

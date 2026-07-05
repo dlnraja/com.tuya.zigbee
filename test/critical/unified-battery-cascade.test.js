@@ -31,6 +31,10 @@ describe('unified battery cascade', function() {
     assert.strictEqual(UnifiedBatteryHandler.normalizeTuyaBatteryValue(14, 2), 100);
     assert.strictEqual(UnifiedBatteryHandler.normalizeTuyaBatteryValue(14, true, { stateMode: 'low_bool' }), 10);
     assert.strictEqual(UnifiedBatteryHandler.normalizeTuyaBatteryValue(14, false, { stateMode: 'low_bool' }), 100);
+    assert.strictEqual(
+      UnifiedBatteryHandler.normalizeTuyaBatteryValue(14, false, { stateMode: 'low_bool', lastValue: null }),
+      100
+    );
     assert.strictEqual(UnifiedBatteryHandler.normalizeTuyaBatteryValue(15, 200), 100);
     assert.strictEqual(UnifiedBatteryHandler.normalizeTuyaBatteryValue(121, 88), 88);
     assert.strictEqual(UnifiedBatteryHandler.normalizeTuyaBatteryValue(102, 1), null);

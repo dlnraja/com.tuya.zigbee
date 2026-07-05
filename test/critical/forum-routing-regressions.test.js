@@ -110,6 +110,11 @@ describe('forum routing regressions', () => {
       ['_TZE204_r0jdjrvi', 'TS0601', 'curtain_motor_tilt'],
       ['_TZE200_cirvgep4', 'TS0601', 'climate_sensor'],
       ['_TZE204_cirvgep4', 'TS0601', 'climate_sensor'],
+      ['Wing', 'TS0201', 'climate_sensor'],
+      ['Zbeacon', 'TH01', 'climate_sensor'],
+      ['_TZ3210_jlf1nepw', 'TS011F', 'plug_energy_monitor'],
+      ['_TZE28C1000000_81yrt3lo', 'TS0601', 'power_clamp_meter'],
+      ['_TZE204_xtrnjaoz', 'TS0601', 'curtain_motor'],
       ['_TZ3000_kaflzta4', 'TS004F', 'smart_knob'],
     ];
 
@@ -138,6 +143,8 @@ describe('forum routing regressions', () => {
     assertDriverDoesNotClaim('generic_diy', '_TZE200_lvkk0hdg');
     assertDriverDoesNotClaim('presence_sensor_radar', '_TZE204_r0jdjrvi');
     assertDriverDoesNotClaim('button_wireless_4', '_TZ3000_kaflzta4');
+    assertDriverDoesNotClaim('bulb_rgb', '_TZ3210_jlf1nepw');
+    assertDriverDoesNotClaim('climate_sensor', '_TZE204_xtrnjaoz');
   });
 
   it('routes Nedis ne4pikwm radiator valves to TRV handling, not climate fallback', () => {

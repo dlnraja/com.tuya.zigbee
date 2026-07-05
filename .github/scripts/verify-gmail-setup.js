@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 // v5.12.6: IMAP verifier — OAuth removed
+const privacy = require('./privacy-redactor');
 async function main(){
-  const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
-  const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
+  const e=String(process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL||'').trim();
+  const p=String(process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD||'').trim();
   console.log('=== Gmail IMAP Verifier ===');
   if(!e||!p){
     console.log('MISSING: GMAIL_EMAIL + GMAIL_APP_PASSWORD');
@@ -20,7 +21,7 @@ async function main(){
     console.log('Run: npm install imapflow');
     process.exit(1);
   }
-  console.log('Connecting as',e,'...');
+  console.log('Connecting as',privacy.alias('account',e),'...');
   const emails=await imap.readViaIMAP({maxResults:5});
   if(!emails){
     console.log('FAIL: IMAP returned null — check credentials or 2FA');
@@ -30,8 +31,8 @@ async function main(){
   }
   console.log('OK: IMAP connected, fetched',emails.length,'emails');
   if(emails.length>0){
-    console.log('Latest:',emails[0].subj?.substring(0,80));
-    console.log('From:',emails[0].from);
+    console.log('Latest:',privacy.redact(emails[0].subj?.substring(0,80)||''));
+    console.log('From:',privacy.redact(emails[0].from||''));
     console.log('Date:',emails[0].date);
   }
   console.log('\nIMAP is working. No token expiry — permanent.');

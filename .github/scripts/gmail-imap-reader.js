@@ -238,8 +238,10 @@ async function tryConnect(user, pass) {
 async function readViaIMAP(opts = {}) {
   if (!ImapFlow) return null;
   const pairs = [];
-  const ge = opts.email || process.env.GMAIL_EMAIL, gp = process.env.GMAIL_APP_PASSWORD;
-  const he = process.env.HOMEY_EMAIL, hp = process.env.HOMEY_PASSWORD;
+  const ge = String(opts.email || process.env.GMAIL_EMAIL || '').trim();
+  const gp = String(process.env.GMAIL_APP_PASSWORD || '').trim();
+  const he = String(process.env.HOMEY_EMAIL || '').trim();
+  const hp = String(process.env.HOMEY_PASSWORD || '').trim();
   if (ge && gp) pairs.push([ge, gp]);
   if (he && hp && (he !== ge || hp !== gp)) pairs.push([he, hp]);
   if (ge && hp && !pairs.find(p => p[0] === ge && p[1] === hp)) pairs.push([ge, hp]);

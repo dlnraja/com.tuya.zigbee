@@ -9,6 +9,12 @@ on:
   schedule:
     - cron: '0 8 * * *'  # Daily 08:00 UTC
   workflow_dispatch:
+    inputs:
+      strict:
+        description: "Fail the workflow when Gmail IMAP and OAuth health checks cannot authenticate"
+        type: boolean
+        default: false
+        required: false
   workflow_call:
 
 permissions:
@@ -46,6 +52,7 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_HEALTH_STRICT: ${{ github.event.inputs.strict || 'false' }}
         run: node .github/scripts/gmail-token-keepalive.js
       - name: Commit health state
         if: always()

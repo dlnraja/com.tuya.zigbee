@@ -57,7 +57,11 @@ function resolveMaxResults(opts) {
 }
 
 function hasOAuthCredentials() {
-  return Boolean(process.env.GMAIL_CLIENT_ID && process.env.GMAIL_CLIENT_SECRET && process.env.GMAIL_REFRESH_TOKEN);
+  return Boolean(
+    String(process.env.GMAIL_CLIENT_ID || '').trim() &&
+    String(process.env.GMAIL_CLIENT_SECRET || '').trim() &&
+    String(process.env.GMAIL_REFRESH_TOKEN || '').trim()
+  );
 }
 
 function accountAlias(value) {
@@ -103,9 +107,9 @@ function buildQueries(opts) {
 }
 
 async function refreshAccessToken() {
-  const clientId = process.env.GMAIL_CLIENT_ID;
-  const clientSecret = process.env.GMAIL_CLIENT_SECRET;
-  const refreshToken = process.env.GMAIL_REFRESH_TOKEN;
+  const clientId = String(process.env.GMAIL_CLIENT_ID || '').trim();
+  const clientSecret = String(process.env.GMAIL_CLIENT_SECRET || '').trim();
+  const refreshToken = String(process.env.GMAIL_REFRESH_TOKEN || '').trim();
   if (!clientId || !clientSecret || !refreshToken) return null;
 
   const params = new URLSearchParams({

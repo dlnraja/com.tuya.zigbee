@@ -16,7 +16,7 @@ const ROOT=path.join(__dirname,'..','..'),DD=path.join(ROOT,'drivers');
 const DRY=process.env.DRY_RUN==='true';
 const CI=process.env.CI==='true'||process.env.GITHUB_ACTIONS==='true';
 const intEnv=(name,fallback)=>{const n=Number.parseInt(process.env[name]||'',10);return Number.isFinite(n)?n:fallback};
-const boolEnv=(name,fallback=false)=>{const v=process.env[name];return v===undefined?fallback:/^(1|true|yes|on)$/i.test(String(v).trim())};
+const boolEnv=(name,fallback=false)=>{const v=process.env[name];const s=String(v||'').trim();return v===undefined||s===''?fallback:/^(1|true|yes|on)$/i.test(s)};
 function argVal(argv,names){
   for(const name of names){
     const idx=argv.indexOf(name);
@@ -440,8 +440,8 @@ function finishAccessFailure(fetchOptions,code,message,extra={}){
 
 async function main(){
   const fetchOptions=parseFetchOptions(process.argv.slice(2));
-  const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
-  const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
+  const e=String(process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL||'').trim();
+  const p=String(process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD||'').trim();
   const hasImapCredentials=Boolean(e&&p);
   const hasOAuthCredentials=Boolean(oauth&&oauth.hasOAuthCredentials&&oauth.hasOAuthCredentials());
   if(!hasImapCredentials&&!hasOAuthCredentials){
@@ -514,7 +514,8 @@ async function main(){
     const msg=hasOAuthCredentials
       ? 'IMAP and OAuth Gmail access both failed before diagnostics could be fetched. Refresh Gmail IMAP app password and OAuth refresh token secrets, then rerun Gmail Diagnostics.'
       : 'IMAP connection failed before diagnostics could be fetched. Refresh the Gmail app credential, then rerun Gmail Diagnostics.';
-    console.error('::error::Gmail diagnostics could not authenticate. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, if using OAuth fallback, GMAIL_REFRESH_TOKEN secrets.');
+    const annotation = fetchOptions.requireAccess ? '::error::' : '::warning::';
+    console.error(annotation+'Gmail diagnostics could not authenticate. Refresh GMAIL_EMAIL/GMAIL_APP_PASSWORD and, if using OAuth fallback, GMAIL_REFRESH_TOKEN secrets.');
     finishAccessFailure(fetchOptions,code,msg,{windows:windows.length,fetched:0,mode:hasOAuthCredentials?'imap+oauth':'imap'});
   }
   if(imapConnectionFailed){

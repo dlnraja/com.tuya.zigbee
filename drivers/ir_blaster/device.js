@@ -27,6 +27,23 @@ const CMD_DONE_SENDING = 0x04;
 const CMD_DONE_RECEIVING = 0x05;
 const CMD_ACK = 0x0B;
 
+const BATTERY_POWERED_MANUFACTURERS = new Set([
+  '_tz3290_7v1k4vufotpowp9z',
+  '_tz3290_785fbxik',
+  '_tz3290_8xzb2ghn',
+  '_tz3290_j37rooaxrcdcqo5n',
+  '_tz3290_nkpxapoz',
+  '_tz3290_ot6ewjvmejq5ekhl',
+  '_tz3290_rlkmy85q4pzoxobl',
+  '_tz3290_uc8lwbi2',
+  '_tz3290_yac64inudpovoaba',
+  '_tz3290_yyax9ajf',
+]);
+
+const MAINS_POWERED_MANUFACTURERS = new Set([
+  '_tz3290_gnl5a6a5xvql7c2a',
+]);
+
 // v5.5.356: IR Protocol constants from research
 const IR_PROTOCOLS = {
   UNKNOWN: 0,
@@ -81,11 +98,38 @@ const LEARNING_STATES = {
  */
 class IrBlasterDevice extends ZigBeeDevice {
 
-  get mainsPowered() { return false; }
+  get mainsPowered() {
+    const identity = this._getPowerIdentity();
+
+    if (identity.powerSource.includes('mains') ||
+      identity.powerSource.includes('dc') ||
+      identity.powerSource.includes('usb')) {
+      return true;
+    }
+
+    if (MAINS_POWERED_MANUFACTURERS.has(identity.manufacturerName)) {
+      return true;
+    }
+
+    if (identity.powerSource.includes('battery') ||
+      BATTERY_POWERED_MANUFACTURERS.has(identity.manufacturerName)) {
+      return false;
+    }
+
+    if (identity.productId === 'TS1201' &&
+      (this._getPowerCfgCluster(this._zclNode) || identity.deviceType === 'enddevice' || identity.receiveWhenIdle === false)) {
+      return false;
+    }
+
+    return true;
+  }
 
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
-    await this._setupBatteryReporting(zclNode);
+    await this._syncPowerCapabilities();
+    if (!this.mainsPowered) {
+      await this._setupBatteryReporting(zclNode);
+    }
     this.log('IR Blaster initializing...');
 
     // v5.5.356: Initialize enhanced IR storage system
@@ -99,6 +143,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     // Get device info
     await irBlasterInit.init(this);
+    await this._syncPowerCapabilities();
 
     // v5.5.356: Setup enhanced IR clusters first
     await this._setupAdvancedIRClusters(zclNode);
@@ -156,6 +201,58 @@ class IrBlasterDevice extends ZigBeeDevice {
     await this._setupAdvancedClusterListeners(zclNode);
 
     this.log('IR Blaster initialized successfully with enhanced features');
+  }
+
+  _getPowerIdentity() {
+    const settings = this.getSettings?.() || {};
+    const store = this.getStore?.() || {};
+    const data = this.getData?.() || {};
+
+    return {
+      manufacturerName: String(
+        settings.zb_manufacturer_name ||
+        store.manufacturerName ||
+        store.zb_manufacturer_name ||
+        data.manufacturerName ||
+        data.zb_manufacturer_name ||
+        ''
+      ).toLowerCase(),
+      productId: String(
+        settings.zb_model_id ||
+        store.modelId ||
+        store.productId ||
+        store.zb_model_id ||
+        data.modelId ||
+        data.productId ||
+        data.zb_model_id ||
+        ''
+      ).toUpperCase(),
+      powerSource: String(
+        settings.powerSource ||
+        store.powerSource ||
+        data.powerSource ||
+        ''
+      ).toLowerCase(),
+      deviceType: String(
+        settings.deviceType ||
+        store.deviceType ||
+        data.deviceType ||
+        ''
+      ).toLowerCase(),
+      receiveWhenIdle: settings.receiveWhenIdle ?? store.receiveWhenIdle ?? data.receiveWhenIdle,
+    };
+  }
+
+  async _syncPowerCapabilities() {
+    if (!this.mainsPowered) {return true;}
+    if (!this.hasCapability?.('measure_battery')) {return true;}
+
+    await this.removeCapability('measure_battery').catch((err) => {
+      this.log('[IR-BATTERY] Failed to remove battery capability from mains-powered IR blaster:', err.message);
+    });
+    await this.setStoreValue?.('last_battery_source', 'mains-powered').catch(() => {});
+    this.log('[IR-BATTERY] Removed measure_battery from mains-powered IR blaster');
+    return false;
   }
 
   /**
@@ -246,6 +343,10 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   async _setupBatteryReporting(zclNode) {
+    if (this.mainsPowered) {
+      await this._syncPowerCapabilities();
+      return;
+    }
     if (!this.hasCapability?.('measure_battery')) {return;}
 
     try {
