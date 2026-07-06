@@ -1075,7 +1075,7 @@ const sonoffExtend = {
                     // Rebuild bitmap from current states
                     let bitmap = 0;
                     for (let z = 1; z <= exposedZoneCount; z++) {
-                        if (meta.state?.[`enable_occupancy_zone_${z}`]) {
+                        if (meta.state[`enable_occupancy_zone_${z}`]) {
                             if (mergeFirstTwoZone && z === 1) {
                                 bitmap |= 0b11; // bit0 + bit1
                             } else {
@@ -2105,7 +2105,7 @@ const sonoffExtend = {
                         return;
                     }
 
-                    const temporaryMode: KeyValueAny = utils.isObject(meta.state?.temporary_mode) ? {...meta.state.temporary_mode} : {};
+                    const temporaryMode: KeyValueAny = utils.isObject(meta.state.temporary_mode) ? {...meta.state.temporary_mode} : {};
                     if (!isValidTargetTemperature(temporaryMode.target_temperature)) {
                         delete temporaryMode.target_temperature;
                     }
@@ -3296,19 +3296,8 @@ const sonoffExtend = {
                         partialValue[scalarToCompositeKey[key]] = value;
                     }
 
-                    const stateValue = meta.state?.manual_default_settings;
-                    const current = {
-                        irrigation_duration: 10,
-                        ...(hasFlowMeter
-                            ? {
-                                  irrigation_mode: "duration",
-                                  irrigation_amount_unit: "liter",
-                                  irrigation_amount: 10,
-                                  fail_safe: 10,
-                              }
-                            : {}),
-                        ...(utils.isObject(stateValue) ? stateValue : {}),
-                    };
+                    const stateValue = meta.state.manual_default_settings;
+                    const current = utils.isObject(stateValue) ? stateValue : {};
                     const nextValue = {...current, ...partialValue};
 
                     if (hasFlowMeter && (typeof nextValue.irrigation_mode !== "string" || modeMap[nextValue.irrigation_mode] === undefined)) {
@@ -3438,7 +3427,7 @@ const sonoffExtend = {
                         partialValue[scalarToCompositeKey[key]] = value;
                     }
 
-                    const stateValue = meta.state?.seasonal_watering_adjustment;
+                    const stateValue = meta.state.seasonal_watering_adjustment;
                     const current = utils.isObject(stateValue) ? stateValue : {};
                     const nextValue = {...current, ...partialValue};
 
@@ -3730,7 +3719,7 @@ const sonoffExtend = {
                         partialValue[key] = value;
                     }
 
-                    const stateValue = meta.state?.valve_alarm_settings;
+                    const stateValue = meta.state.valve_alarm_settings;
                     const current = utils.isObject(stateValue) ? stateValue : {};
                     const nextValue = {...current, ...partialValue};
                     const state = {
@@ -4585,9 +4574,8 @@ const sonoffExtend = {
                         utils.assertObject(value, key);
                         Object.assign(partialValue, value);
                     } else if (key in weekdayScalarToCompositeKey) {
-                        const endpointSuffix = meta.endpoint_name ? `_${meta.endpoint_name}` : "";
-                        const reportState = meta.state?.[`irrigation_plan_report${endpointSuffix}`] ?? meta.state?.irrigation_plan_report;
-                        const settingsState = meta.state?.[`irrigation_plan_settings${endpointSuffix}`] ?? meta.state?.irrigation_plan_settings;
+                        const reportState = meta.state.irrigation_plan_report;
+                        const settingsState = meta.state.irrigation_plan_settings;
                         const reportWeekDays = utils.isObject(reportState) ? reportState.loop_type_week_days : undefined;
                         const settingsWeekDays = utils.isObject(settingsState) ? settingsState.loop_type_week_days : undefined;
                         partialValue.loop_type_week_days = {
@@ -4599,10 +4587,9 @@ const sonoffExtend = {
                         partialValue[scalarToCompositeKey[key]] = value;
                     }
 
-                    const endpointSuffix = meta.endpoint_name ? `_${meta.endpoint_name}` : "";
-                    const stateValue = meta.state?.[`irrigation_plan_settings${endpointSuffix}`] ?? meta.state?.irrigation_plan_settings;
+                    const stateValue = meta.state.irrigation_plan_settings;
                     const reportKey = meta.endpoint_name ? `irrigation_plan_report_${meta.endpoint_name}` : "irrigation_plan_report";
-                    const reportValue = meta.state?.[reportKey];
+                    const reportValue = meta.state[reportKey];
                     const current = utils.isObject(stateValue) ? stateValue : utils.isObject(reportValue) ? reportValue : {};
                     const nextValue = {...current, ...partialValue};
                     const parseIntWithDefault = (fieldName: string, defaultValue: number, min: number, max: number): number | undefined => {
@@ -5197,7 +5184,7 @@ const sonoffExtend = {
 
                     if ((value.type === "day_of_hour" || value.type === "day_of_month") && typeof meta.state?.consumption_records === "string") {
                         try {
-                            const existing = JSON.parse(meta.state?.consumption_records) as typeof value;
+                            const existing = JSON.parse(meta.state.consumption_records) as typeof value;
                             if (existing.type === value.type && existing.offset === value.offset && Array.isArray(existing.records)) {
                                 const mergedByRange = new Map<string, NonNullable<typeof value.records>[number]>();
                                 for (const record of existing.records) {
@@ -7284,7 +7271,7 @@ export const definitions: DefinitionWithExtend[] = [
                     // Make sure power = 0 when turned OFF
                     // https://github.com/Koenkk/zigbee2mqtt/issues/28470
                     if ("acCurrentCurrentValue" in msg.data) {
-                        return {current: meta.state?.state === "ON" ? msg.data.acCurrentCurrentValue / 1000 : 0};
+                        return {current: meta.state.state === "ON" ? msg.data.acCurrentCurrentValue / 1000 : 0};
                     }
                 },
             }),
@@ -7310,7 +7297,7 @@ export const definitions: DefinitionWithExtend[] = [
                     // Make sure power = 0 when turned OFF
                     // https://github.com/Koenkk/zigbee2mqtt/issues/28470
                     if ("acCurrentPowerValue" in msg.data) {
-                        return {power: meta.state?.state === "ON" ? msg.data.acCurrentPowerValue / 1000 : 0};
+                        return {power: meta.state.state === "ON" ? msg.data.acCurrentPowerValue / 1000 : 0};
                     }
                 },
             }),
@@ -7411,7 +7398,7 @@ export const definitions: DefinitionWithExtend[] = [
                     // Make sure power = 0 when turned OFF
                     // https://github.com/Koenkk/zigbee2mqtt/issues/28470
                     if ("acCurrentCurrentValue" in msg.data) {
-                        return {current: meta.state?.state === "ON" ? msg.data.acCurrentCurrentValue / 1000 : 0};
+                        return {current: meta.state.state === "ON" ? msg.data.acCurrentCurrentValue / 1000 : 0};
                     }
                 },
             }),
@@ -7437,7 +7424,7 @@ export const definitions: DefinitionWithExtend[] = [
                     // Make sure power = 0 when turned OFF
                     // https://github.com/Koenkk/zigbee2mqtt/issues/28470
                     if ("acCurrentPowerValue" in msg.data) {
-                        return {power: meta.state?.state === "ON" ? msg.data.acCurrentPowerValue / 1000 : 0};
+                        return {power: meta.state.state === "ON" ? msg.data.acCurrentPowerValue / 1000 : 0};
                     }
                 },
             }),
@@ -9901,6 +9888,13 @@ export const definitions: DefinitionWithExtend[] = [
                 unit: "%",
             }),
         ],
+        configure: async (device, coordinatorEndpoint) => {
+            const endpoint = device.getEndpoint(1);
+            if (!endpoint) {
+                throw new Error("Endpoint 1 not found");
+            }
+            await reporting.bind(endpoint, coordinatorEndpoint, ["genOnOff"]);
+        },
         ota: true,
     },
 ];

@@ -4050,6 +4050,9 @@ export const definitions: DefinitionWithExtend[] = [
             tuya.whitelabel("Tuya", "TS0505B_2_2", "Zigbee GU10/E14 5W smart bulb", ["_TZ3210_it1u8ahz"]),
         ],
         extend: [tuya.modernExtend.tuyaLight({colorTemp: {range: [153, 500]}, color: {modes: ["hs"], applyRedFix: true}})],
+        // https://github.com/Koenkk/zigbee2mqtt/issues/32204
+        toZigbee: [tz.on_off, tuya.tz.led_control],
+        fromZigbee: [fz.on_off, tuya.fz.led_controller, fz.brightness],
         configure: (device, coordinatorEndpoint) => {
             device.getEndpoint(1).saveClusterAttributeKeyValue("lightingColorCtrl", {colorCapabilities: 29});
         },
@@ -6565,7 +6568,14 @@ export const definitions: DefinitionWithExtend[] = [
         exposes: [e.battery(), e.temperature(), e.humidity(), e.battery_voltage()],
     },
     {
-        fingerprint: tuya.fingerprint("TS011F", ["_TZ3000_3zofvcaa", "_TZ3000_pvlvoxvt", "_TZ3000_lqb7lcq9", "_TZ3210_urjf5u18", "_TZ3210_8n4dn1ne"]),
+        fingerprint: tuya.fingerprint("TS011F", [
+            "_TZ3000_3zofvcaa",
+            "_TZ3000_pvlvoxvt",
+            "_TZ3000_lqb7lcq9",
+            "_TZ3210_lqb7lcq9",
+            "_TZ3210_urjf5u18",
+            "_TZ3210_8n4dn1ne",
+        ]),
         model: "TS011F_2_gang_2_usb_wall",
         vendor: "Tuya",
         description: "2 gang 2 usb wall outlet",
@@ -6591,6 +6601,7 @@ export const definitions: DefinitionWithExtend[] = [
         },
         whiteLabel: [
             tuya.whitelabel("Nova Digital", "NTS2-W-B", "2 gang 2 usb wall outlet 4x2", ["_TZ3000_lqb7lcq9"]),
+            tuya.whitelabel("Nova Digital", "SA-WK", "Safira Full Switch 1 gang + socket 20A + USB-A + USB-C 4x2", ["_TZ3210_lqb7lcq9"]),
             tuya.whitelabel("AVATTO", "ZWOT12", "2 gang 2 usb wall outlet 4x2", ["_TZ3210_urjf5u18"]),
             tuya.whitelabel("Coibeu", "ZB414", "2 gang 2 usb wall outlet 4x2", ["_TZ3210_8n4dn1ne"]),
         ],
@@ -11735,16 +11746,19 @@ export const definitions: DefinitionWithExtend[] = [
         model: "TS0726_1_gang",
         vendor: "Tuya",
         description: "1 gang switch with neutral wire",
-        extend: [tuya.modernExtend.tuyaBase()],
+        extend: [
+            tuya.modernExtend.tuyaBase(),
+            m.enumLookup({
+                name: "indicator_mode",
+                lookup: {none: 0, relay: 1, pos: 2},
+                cluster: "genOnOff",
+                attribute: {ID: 0x8001, type: DataType.ENUM8},
+                description: "Mode of the indicator light",
+            }),
+        ],
         fromZigbee: [fz.on_off, tuya.fz.power_on_behavior_2, fzLocal.TS0726_action],
         toZigbee: [tz.on_off, tuya.tz.power_on_behavior_2, tzLocal.TS0726_switch_mode],
-        exposes: (device) => {
-            const exposes = [e.switch(), e.power_on_behavior(), e.enum("switch_mode", ea.STATE_SET, ["switch", "scene"]), e.action(["scene_1"])];
-            if (utils.isDummyDevice(device) || device.manufacturerName === "_TZ3000_ovbvmhiq") {
-                exposes.push(e.enum("indicator_mode", ea.ALL, ["none", "relay", "pos"]));
-            }
-            return exposes;
-        },
+        exposes: [e.switch(), e.power_on_behavior(), e.enum("switch_mode", ea.STATE_SET, ["switch", "scene"]), e.action(["scene_1"])],
         configure: async (device, coordinatorEndpoint) => {
             await tuya.configureMagicPacket(device, coordinatorEndpoint);
             await reporting.bind(device.getEndpoint(1), coordinatorEndpoint, ["genOnOff"]);
@@ -11755,21 +11769,24 @@ export const definitions: DefinitionWithExtend[] = [
         model: "TS0726_2_gang",
         vendor: "Tuya",
         description: "2 gang switch with neutral wire",
-        extend: [tuya.modernExtend.tuyaBase()],
+        extend: [
+            tuya.modernExtend.tuyaBase(),
+            m.enumLookup({
+                name: "indicator_mode",
+                lookup: {none: 0, relay: 1, pos: 2},
+                cluster: "genOnOff",
+                attribute: {ID: 0x8001, type: DataType.ENUM8},
+                description: "Mode of the indicator light",
+            }),
+        ],
         fromZigbee: [fz.on_off, tuya.fz.power_on_behavior_2, fzLocal.TS0726_action],
         toZigbee: [tz.on_off, tuya.tz.power_on_behavior_2, tzLocal.TS0726_switch_mode],
-        exposes: (device) => {
-            const exposes = [
-                ...[1, 2].map((ep) => e.switch().withEndpoint(`l${ep}`)),
-                ...[1, 2].map((ep) => e.power_on_behavior().withEndpoint(`l${ep}`)),
-                ...[1, 2].map((ep) => e.enum("switch_mode", ea.STATE_SET, ["switch", "scene"]).withEndpoint(`l${ep}`)),
-                e.action(["scene_1", "scene_2"]),
-            ];
-            if (utils.isDummyDevice(device) || device.manufacturerName === "_TZ3000_icoxotza") {
-                exposes.push(e.enum("indicator_mode", ea.ALL, ["none", "relay", "pos"]));
-            }
-            return exposes;
-        },
+        exposes: [
+            ...[1, 2].map((ep) => e.switch().withEndpoint(`l${ep}`)),
+            ...[1, 2].map((ep) => e.power_on_behavior().withEndpoint(`l${ep}`)),
+            ...[1, 2].map((ep) => e.enum("switch_mode", ea.STATE_SET, ["switch", "scene"]).withEndpoint(`l${ep}`)),
+            e.action(["scene_1", "scene_2"]),
+        ],
         endpoint: (device) => {
             return {l1: 1, l2: 2};
         },
@@ -14677,7 +14694,7 @@ export const definitions: DefinitionWithExtend[] = [
         },
     },
     {
-        zigbeeModel: ["ZG-204ZM"],
+        zigbeeModel: ["ZG-204ZM", "AY205Z"],
         fingerprint: tuya.fingerprint("TS0601", ["_TZE200_2aaelwxk", "_TZE200_kb5noeto", "_TZE200_tyffvoij", "_TZE200_yflzeeqj"]),
         model: "ZG-204ZM",
         vendor: "Tuya",
@@ -14755,6 +14772,14 @@ export const definitions: DefinitionWithExtend[] = [
                 [123, "motion_detection_sensitivity", tuya.valueConverter.raw],
             ],
         },
+        whiteLabel: [
+            {
+                model: "AY205Z",
+                vendor: "AOYAN",
+                description: "PIR 24Ghz human presence sensor",
+                fingerprint: [{modelID: "AY205Z", manufacturerName: "AOYAN"}],
+            },
+        ],
     },
     {
         fingerprint: tuya.fingerprint("TS0601", ["_TZE284_bw4ayyeh"]),
@@ -23213,11 +23238,19 @@ export const definitions: DefinitionWithExtend[] = [
         },
     },
     {
-        zigbeeModel: ["ZG-102ZM"],
+        zigbeeModel: ["ZG-102ZM", "AY02SZ"],
         fingerprint: tuya.fingerprint("TS0601", ["_TZE200_wzk0x7fq", "_TZE200_jfw0a4aa"]),
         model: "ZG-102ZM",
         vendor: "HOBEIAN",
         description: "Vibration sensor",
+        whiteLabel: [
+            {
+                model: "AY02SZ",
+                vendor: "AOYAN",
+                description: "Vibration sensor",
+                fingerprint: [{modelID: "AY02SZ", manufacturerName: "AOYAN"}],
+            },
+        ],
         extend: [tuya.modernExtend.tuyaBase({dp: true})],
         exposes: [
             e.vibration(),
@@ -23852,7 +23885,7 @@ export const definitions: DefinitionWithExtend[] = [
         },
     },
     {
-        zigbeeModel: ["ZG-204ZH"],
+        zigbeeModel: ["ZG-204ZH", "AY208Z"],
         fingerprint: tuya.fingerprint("TS0601", ["_TZE200_vuqzj1ej", "_TZE200_hdih4foa"]),
         model: "ZG-204ZH",
         vendor: "HOBEIAN",
@@ -23941,6 +23974,14 @@ export const definitions: DefinitionWithExtend[] = [
                 [123, "motion_detection_sensitivity", tuya.valueConverter.raw],
             ],
         },
+        whiteLabel: [
+            {
+                model: "AY208Z",
+                vendor: "AOYAN",
+                description: "24G millimeter wave human presence sensor",
+                fingerprint: [{modelID: "AY208Z", manufacturerName: "AOYAN"}],
+            },
+        ],
     },
     {
         fingerprint: tuya.fingerprint("TS0601", ["_TZE284_z5jz7wpo"]),
