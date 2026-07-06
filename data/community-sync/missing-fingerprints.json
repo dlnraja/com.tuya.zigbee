@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-06-29T07:55:55.993Z",
+  "timestamp": "2026-07-06T07:43:56.538Z",
   "localStats": {
-    "manufacturerNames": 4798,
-    "productIds": 562
+    "manufacturerNames": 4710,
+    "productIds": 571
   },
   "z2mStats": {
     "manufacturerNames": 50,
-    "productIds": 1720
+    "productIds": 1728
   },
   "missingManufacturerNames": [
     {
@@ -25,32 +25,7 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZ3000_mw1pqqqt",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZ3000_9ni6xxld",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZ3000_abrsvsou",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_hl0ss9oa",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_y4mdop0b",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_vs0skpuc",
+      "value": "_TZE200_a8sdabtg",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -80,11 +55,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZE200_lvkk0hdg",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "_TZ3210_emqmwtym",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -95,27 +65,7 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZE284_0ints6wl",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "_TZE284_yzr43ayq",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_cq8lu23i",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_4pm4pekt",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE200_y8jijhba",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -140,48 +90,28 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "_TZE204_gm8h14wy",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "_TZE204_trwaxi57",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_ccgyhbvd",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_y8ficeai",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE284_7e6v8u9f",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_apiu8k13",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_he9apaui",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "_TZE204_fhv95pf1",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
     {
       "value": "DTS1XM9",
       "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "eWeLink",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "Danfoss",
+      "source": "danfoss",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "Schneider Electric",
+      "source": "schneider_electric",
       "suggestedDriver": "generic_diy"
     },
     {
@@ -322,6 +252,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY205Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "SM0202",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -337,6 +272,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY02SZ",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "AY-303Z",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -347,7 +287,17 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "AY208Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "ZS-304Z",
+      "source": "tuya",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "AY-204ZX",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -492,29 +442,9 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SWV-ZF2",
-      "source": "sonoff",
-      "suggestedDriver": "water_valve_smart"
-    },
-    {
-      "value": "SNZB-02B",
-      "source": "sonoff",
-      "suggestedDriver": "climate_sensor"
-    },
-    {
-      "value": "SNZB-02M",
-      "source": "sonoff",
-      "suggestedDriver": "climate_sensor"
-    },
-    {
       "value": "BASIC-ZB1GSP",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "SNZB-06P24",
-      "source": "sonoff",
-      "suggestedDriver": "presence_sensor_radar"
     },
     {
       "value": "MINI-ZB1GSP",
@@ -527,14 +457,14 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SNZB-09P",
+      "value": "MINI-ZB1GS",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SNZB-03PR2",
+      "value": "SNZB-02UL",
       "source": "sonoff",
-      "suggestedDriver": "motion_sensor"
+      "suggestedDriver": "climate_sensor"
     },
     {
       "value": "devi_f",
@@ -2638,6 +2568,11 @@
     },
     {
       "value": "lumi.curtain.acn04",
+      "source": "lumi",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "lumi.curtain.acn018",
       "source": "lumi",
       "suggestedDriver": "generic_diy"
     },
@@ -7733,6 +7668,11 @@
     },
     {
       "value": "929004610502",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929004610601",
       "source": "philips",
       "suggestedDriver": "generic_diy"
     },

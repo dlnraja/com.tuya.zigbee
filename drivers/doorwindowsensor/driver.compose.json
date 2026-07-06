@@ -26,7 +26,8 @@
   },
   "zigbee": {
     "productId": [
-      "RH3001"
+      "RH3001",
+      "TS0203"
     ],
     "endpoints": {
       "1": {
@@ -52,9 +53,10 @@
       "tuyatec-g3gl6cgy",
       "tuyatec-bfq2i2sy",
       "tuyatec-abkehqus",
-      "TUYATEC-G3GL6CGY",
-      "TUYATEC-BFQ2I2SY",
-      "TUYATEC-ABKEHQUS"
+      "tuyatec-g3gl6cgy",
+      "tuyatec-bfq2i2sy",
+      "tuyatec-abkehqus",
+      "_tz3000_n2egfsli"
     ]
   },
   "version": "1.0.0",
