@@ -33,7 +33,6 @@
   "zigbee": {
     "manufacturerName": [
       "OWON",
-      "_TYZB01_CBIEZPDS",
       "_TYZB01_ZQVWKA4K",
       "_TZ1800_LADPNGDX",
       "_TZ2000_LXVYCLN5",
@@ -165,7 +164,6 @@
       "_TZE200_9M4KMBFU",
       "_TZE200_A0GVBDGV",
       "_TZE200_A1OVDOBN",
-      "_TZE200_A8SDABTG",
       "_TZE200_A8Z0G46U",
       "_TZE200_AAO6QTCS",
       "_TZE200_AUIN8MZR",
@@ -530,11 +528,11 @@
       "_TZE284_E4PF6L87",
       "_TZE284_EEKPF0FT",
       "_tze200_cirvgep4",
-      "_TZE200_cirvgep4",
-      "_TZE200_CIRVGEP4",
+      "_tze200_cirvgep4",
+      "_tze200_cirvgep4",
       "_tze204_cirvgep4",
-      "_TZE204_cirvgep4",
-      "_TZE204_CIRVGEP4",
+      "_tze204_cirvgep4",
+      "_tze204_cirvgep4",
       "_TZE284_HDYJYQJM",
       "_TZE284_HECSEJSB",
       "_TZE284_HHRTIQ0X",
@@ -612,8 +610,6 @@
       "_TZE600_WXQ8DPHA",
       "_TZE200_nnrfa68v",
       "_TZE200_znbl8dj5",
-      "_TZE200_qoy0ekbd",
-      "_TZE204_a8sdabtg",
       "_tze204_nnrfa68v",
       "_TZ3000_kvwjujy9",
       "_TZE284_1fuxihti",
@@ -661,7 +657,6 @@
       "_tze200_eekpf0ft",
       "_TZE204_eekpf0ft",
       "_tze200_khah2lkr",
-      "_TZE204_qoy0ekbd",
       "_tze204_v9hkz2yn",
       "_tze200_v9hkz2yn",
       "_tze204_ves1ycwx",
@@ -725,7 +720,7 @@
       "_tze284_fncxk3ob",
       "_tze284_fzo2pocs",
       "_tze284_rjxqso4a",
-      "owon"
+      "OWON"
     ],
     "productId": [
       "TS0201",
@@ -754,7 +749,8 @@
       "RH3052",
       "Excellux",
       "SNZB-02B",
-      "SNZB-02M"
+      "SNZB-02M",
+      "SNZB-02UL"
     ],
     "endpoints": {
       "1": {

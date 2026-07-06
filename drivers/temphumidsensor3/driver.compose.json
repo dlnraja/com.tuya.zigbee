@@ -29,7 +29,9 @@
   },
   "zigbee": {
     "productId": [
-      "SNTZ003"
+      "SNTZ003",
+      "TS0201",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -56,7 +58,8 @@
       "_TZE200_A8SDABTG",
       "_TZE204_a8sdabtg",
       "_TZE200_qoy0ekbd",
-      "_TZE204_qoy0ekbd"
+      "_TZE204_qoy0ekbd",
+      "_TZE200_A8SDABTG"
     ]
   },
   "version": "1.0.0",
