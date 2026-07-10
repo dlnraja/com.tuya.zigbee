@@ -39,7 +39,7 @@
     ]
   },
   "_TZE200_myd45weu": {
-    "driverId": "soilsensor_2",
+    "driverId": "soil_sensor",
     "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -79,7 +79,7 @@
     }
   },
   "_TZE284_myd45weu": {
-    "driverId": "soilsensor_2",
+    "driverId": "soil_sensor",
     "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -556,7 +556,7 @@
     "notes": "Normalized TZE28C1000000 prefix sibling for Homey forum 26439 #5484 Zemismart boiler switch."
   },
   "_TZE204_myd45weu": {
-    "driverId": "soilsensor_2",
+    "driverId": "soil_sensor",
     "type": "soil_sensor",
     "powerSource": "battery",
     "modelIds": [
